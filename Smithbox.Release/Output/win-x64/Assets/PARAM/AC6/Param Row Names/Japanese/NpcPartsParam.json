@@ -1,0 +1,665 @@
+{
+  "Name": "NpcPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "TEST"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "juggernaut armor -- ジャガーノート装甲"
+      ]
+    },
+    {
+      "ID": 31500010,
+      "Entries": [
+        "juggernaut weakness -- ジャガーノート弱点"
+      ]
+    },
+    {
+      "ID": 36000010,
+      "Entries": [
+        "Shell shield right -- シェルシールド\u3000右"
+      ]
+    },
+    {
+      "ID": 36000020,
+      "Entries": [
+        "Shell shield left -- シェルシールド\u3000左"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "c4000 Adolf humanoid body -- c4000 アードルフ人型本体"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "c4000 Adolf tank part front (penetration during AA) -- c4000 アードルフタンク部位 前方(AA時貫通)"
+      ]
+    },
+    {
+      "ID": 40000030,
+      "Entries": [
+        "c4000 Adolf tank part hind legs (hit when AA) -- c4000 アードルフタンク部位 後脚(AA時ヒット)"
+      ]
+    },
+    {
+      "ID": 41500010,
+      "Entries": [
+        "Special attack MT arm armor -- 特攻MT腕装甲"
+      ]
+    },
+    {
+      "ID": 41500020,
+      "Entries": [
+        "Special attack MTPA -- 特攻MTPA"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "c5020 Heavy guard mechanism Inside the main furnace -- c5020 重ガードメカ 本体炉内部"
+      ]
+    },
+    {
+      "ID": 50200020,
+      "Entries": [
+        "c5020 Heavy guard mecha Upper body armored part other than the furnace door (penetration at AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分(AA時貫通)"
+      ]
+    },
+    {
+      "ID": 50200030,
+      "Entries": [
+        "c5020 Heavy guard mecha Upper body armored part other than the furnace door Left arm (penetration during AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分 左腕(AA時貫通)"
+      ]
+    },
+    {
+      "ID": 50200040,
+      "Entries": [
+        "c5020 Heavy guard mechanism upper body furnace door -- c5020 重ガードメカ 上半身炉扉"
+      ]
+    },
+    {
+      "ID": 50200050,
+      "Entries": [
+        "c5020 Heavy guard mechanism upper body furnace interior -- c5020 重ガードメカ 上半身炉内部"
+      ]
+    },
+    {
+      "ID": 50200060,
+      "Entries": [
+        "c5020 Heavy guard mechanism Upper body except for the furnace door, arm joint part turns off when death -- c5020 重ガードメカ 上半身炉扉以外 腕関節部分死亡時消す"
+      ]
+    },
+    {
+      "ID": 50200080,
+      "Entries": [
+        "c5020 Heavy guard mecha Upper body armored part other than the furnace door (hit during AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分(AA時ヒット)"
+      ]
+    },
+    {
+      "ID": 51200010,
+      "Entries": [
+        "c5120 military US drone PA -- c5120 軍事用USドローン\u3000PA"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "Pharaon engine right -- ファラオンエンジン右"
+      ]
+    },
+    {
+      "ID": 60500020,
+      "Entries": [
+        "Pharaon engine left -- ファラオンエンジン左"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "sandworm exterior -- サンドワーム外装"
+      ]
+    },
+    {
+      "ID": 62500010,
+      "Entries": [
+        "sandworm mouth -- サンドワーム口"
+      ]
+    },
+    {
+      "ID": 62500020,
+      "Entries": [
+        "Sandworm mouth_barrier -- サンドワーム口_バリア"
+      ]
+    },
+    {
+      "ID": 62500030,
+      "Entries": [
+        "Sandworm body_01 -- サンドワーム体_01"
+      ]
+    },
+    {
+      "ID": 62500040,
+      "Entries": [
+        "Sandworm body_02 -- サンドワーム体_02"
+      ]
+    },
+    {
+      "ID": 62500050,
+      "Entries": [
+        "Sandworm body_03 -- サンドワーム体_03"
+      ]
+    },
+    {
+      "ID": 62500060,
+      "Entries": [
+        "Sandworm body_04 -- サンドワーム体_04"
+      ]
+    },
+    {
+      "ID": 62500070,
+      "Entries": [
+        "Sandworm body_05 -- サンドワーム体_05"
+      ]
+    },
+    {
+      "ID": 62500080,
+      "Entries": [
+        "Sandworm body_06 -- サンドワーム体_06"
+      ]
+    },
+    {
+      "ID": 62500090,
+      "Entries": [
+        "Sandworm body_07 -- サンドワーム体_07"
+      ]
+    },
+    {
+      "ID": 62500100,
+      "Entries": [
+        "Sandworm body_08 -- サンドワーム体_08"
+      ]
+    },
+    {
+      "ID": 62500110,
+      "Entries": [
+        "Sandworm body_09 -- サンドワーム体_09"
+      ]
+    },
+    {
+      "ID": 62500120,
+      "Entries": [
+        "Sandworm body_10 -- サンドワーム体_10"
+      ]
+    },
+    {
+      "ID": 62500130,
+      "Entries": [
+        "Sandworm body_11 -- サンドワーム体_11"
+      ]
+    },
+    {
+      "ID": 62500140,
+      "Entries": [
+        "Sandworm body_12 -- サンドワーム体_12"
+      ]
+    },
+    {
+      "ID": 62500150,
+      "Entries": [
+        "Sandworm body_13 -- サンドワーム体_13"
+      ]
+    },
+    {
+      "ID": 62500160,
+      "Entries": [
+        "Sandworm body_14 -- サンドワーム体_14"
+      ]
+    },
+    {
+      "ID": 62500170,
+      "Entries": [
+        "Sandworm body_15 -- サンドワーム体_15"
+      ]
+    },
+    {
+      "ID": 62500180,
+      "Entries": [
+        "Sandworm body_reserve 1 -- サンドワーム体_予備1"
+      ]
+    },
+    {
+      "ID": 62500190,
+      "Entries": [
+        "Sandworm body_reserve 2 -- サンドワーム体_予備2"
+      ]
+    },
+    {
+      "ID": 62500200,
+      "Entries": [
+        "Sandworm body_reserve 3 -- サンドワーム体_予備3"
+      ]
+    },
+    {
+      "ID": 62500210,
+      "Entries": [
+        "Sandworm body_reserve 4 -- サンドワーム体_予備4"
+      ]
+    },
+    {
+      "ID": 62500220,
+      "Entries": [
+        "Sandworm body_Reserve 5 -- サンドワーム体_予備5"
+      ]
+    },
+    {
+      "ID": 62500230,
+      "Entries": [
+        "Sandworm body_Reserve 6 -- サンドワーム体_予備6"
+      ]
+    },
+    {
+      "ID": 62500240,
+      "Entries": [
+        "Sandworm body_preliminary 7 -- サンドワーム体_予備7"
+      ]
+    },
+    {
+      "ID": 62500250,
+      "Entries": [
+        "Sandworm body_Reserve 8 -- サンドワーム体_予備8"
+      ]
+    },
+    {
+      "ID": 62500260,
+      "Entries": [
+        "Sandworm body_Reserve 9 -- サンドワーム体_予備9"
+      ]
+    },
+    {
+      "ID": 62500270,
+      "Entries": [
+        "Sandworm body_Reserve 10 -- サンドワーム体_予備10"
+      ]
+    },
+    {
+      "ID": 62500280,
+      "Entries": [
+        "Sandworm body_Reserve 11 -- サンドワーム体_予備11"
+      ]
+    },
+    {
+      "ID": 62500290,
+      "Entries": [
+        "sandworm barrier -- サンドワームバリア"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 mining ship joint weakness -- c6400 採掘艦 関節弱点"
+      ]
+    },
+    {
+      "ID": 64000010,
+      "Entries": [
+        "c6400 mining ship joint weakness -- c6400 採掘艦 関節弱点"
+      ]
+    },
+    {
+      "ID": 64200010,
+      "Entries": [
+        "c6420 mining ship eyeball -- c6420 採掘艦目玉"
+      ]
+    },
+    {
+      "ID": 64200020,
+      "Entries": [
+        "c6420 mining ship eyeball -- c6420 採掘艦目玉"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "Sniper turret invincibility when shielded -- スナイパー\u3000盾有時の砲塔無敵化"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "c7390 D layer giant cannon Anemone except for the weak point of the neck -- c7390\u3000D層巨大砲台 アネモネ\u3000首の弱点以外"
+      ]
+    },
+    {
+      "ID": 73900010,
+      "Entries": [
+        "c7390 D layer giant cannon anemone neck weakness -- c7390\u3000D層巨大砲台 アネモネ\u3000首の弱点"
+      ]
+    },
+    {
+      "ID": 73900020,
+      "Entries": [
+        "AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "Amphibious assault ship upper bridge -- 強襲揚陸艦\u3000上部艦橋"
+      ]
+    },
+    {
+      "ID": 74000010,
+      "Entries": [
+        "Amphibious assault ship bow -- 強襲揚陸艦\u3000艦首"
+      ]
+    },
+    {
+      "ID": 74000020,
+      "Entries": [
+        "Amphibious assault ship railgun -- 強襲揚陸艦\u3000レールガン"
+      ]
+    },
+    {
+      "ID": 74000030,
+      "Entries": [
+        "Amphibious assault ship lower bridge -- 強襲揚陸艦\u3000下部艦橋"
+      ]
+    },
+    {
+      "ID": 74000040,
+      "Entries": [
+        "Amphibious assault ship unused -- 強襲揚陸艦\u3000未使用"
+      ]
+    },
+    {
+      "ID": 74000050,
+      "Entries": [
+        "Amphibious assault ship no damage -- 強襲揚陸艦\u3000ダメージ無し"
+      ]
+    },
+    {
+      "ID": 74000060,
+      "Entries": [
+        "Amphibious assault ship upper bridge for large missile launch support -- 強襲揚陸艦\u3000上部艦橋 大型ミサイル発射支援用"
+      ]
+    },
+    {
+      "ID": 84200000,
+      "Entries": [
+        "c8420 marine carrier -- c8420 海上母艦"
+      ]
+    },
+    {
+      "ID": 84300000,
+      "Entries": [
+        "c8430 battleship (far -- c8430 戦艦（遠"
+      ]
+    },
+    {
+      "ID": 84400000,
+      "Entries": [
+        "c8440 battleship (near) -- c8440 戦艦（近"
+      ]
+    },
+    {
+      "ID": 85320110,
+      "Entries": [
+        "c8532 Mining ship 1st car right elbow -- c8532 採掘艦\u30001両目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 85320111,
+      "Entries": [
+        "c8532 Mining ship 1st car left elbow -- c8532 採掘艦\u30001両目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 85320120,
+      "Entries": [
+        "c8532 Mining ship 2nd car right elbow -- c8532 採掘艦\u30002両目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 85320121,
+      "Entries": [
+        "c8532 Mining ship 2nd car left elbow -- c8532 採掘艦\u30002両目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 85320130,
+      "Entries": [
+        "c8532 Mining ship 3rd car right elbow -- c8532 採掘艦\u30003両目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 85320131,
+      "Entries": [
+        "c8532 Mining ship 3rd car left elbow -- c8532 採掘艦\u30003両目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 85320210,
+      "Entries": [
+        "c8532 Mining ship connection part 1-2 right -- c8532 採掘艦\u3000接続部1－2\u3000右"
+      ]
+    },
+    {
+      "ID": 85320211,
+      "Entries": [
+        "c8532 Mining ship connection part 1-2 left -- c8532 採掘艦\u3000接続部1－2\u3000左"
+      ]
+    },
+    {
+      "ID": 85320220,
+      "Entries": [
+        "c8532 Mining ship connection part 2-3 right -- c8532 採掘艦\u3000接続部2－3\u3000右"
+      ]
+    },
+    {
+      "ID": 85320221,
+      "Entries": [
+        "c8532 Mining ship connection part 2-3 left -- c8532 採掘艦\u3000接続部2－3\u3000左"
+      ]
+    },
+    {
+      "ID": 85320310,
+      "Entries": [
+        "c8532 mining ship 1st car core -- c8532 採掘艦\u30001両目\u3000コア"
+      ]
+    },
+    {
+      "ID": 85320320,
+      "Entries": [
+        "c8532 mining ship 2nd car core -- c8532 採掘艦\u30002両目\u3000コア"
+      ]
+    },
+    {
+      "ID": 85320330,
+      "Entries": [
+        "c8532 mining ship 3rd car core -- c8532 採掘艦\u30003両目\u3000コア"
+      ]
+    },
+    {
+      "ID": 85350010,
+      "Entries": [
+        "c8535 Mining ship Highlight Weakness -- c8535 採掘艦\u3000目玉 弱点"
+      ]
+    },
+    {
+      "ID": 85350020,
+      "Entries": [
+        "c8535 Mining ship eyeball part destruction -- c8535 採掘艦\u3000目玉 部位破壊"
+      ]
+    },
+    {
+      "ID": 85350030,
+      "Entries": [
+        "c8535 Mining ship eyeball part destruction -- c8535 採掘艦\u3000目玉 部位破壊"
+      ]
+    },
+    {
+      "ID": 85350040,
+      "Entries": [
+        "c8535 Mining ship eyeball part destruction -- c8535 採掘艦\u3000目玉 部位破壊"
+      ]
+    },
+    {
+      "ID": 85350050,
+      "Entries": [
+        "c8535 Mining ship eyeball part destruction -- c8535 採掘艦\u3000目玉 部位破壊"
+      ]
+    },
+    {
+      "ID": 85360010,
+      "Entries": [
+        "c8536 mining ship drill base -- c8536 採掘艦\u3000ドリル 付け根"
+      ]
+    },
+    {
+      "ID": 85360020,
+      "Entries": [
+        "c8536 Mining ship drill blade part -- c8536 採掘艦\u3000ドリル 刃部分"
+      ]
+    },
+    {
+      "ID": 85360100,
+      "Entries": [
+        "c8536 Mining ship drill part destruction front drill lower blade dp500 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000前ドリル\u3000下刃\u3000ｄｐ500"
+      ]
+    },
+    {
+      "ID": 85360110,
+      "Entries": [
+        "c8536 Mining ship drill part destruction front drill front blade dp501 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000前ドリル\u3000前刃\u3000ｄｐ501"
+      ]
+    },
+    {
+      "ID": 85360120,
+      "Entries": [
+        "c8536 Mining ship drill part destruction front drill left blade dp502 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000前ドリル\u3000左刃\u3000ｄｐ502"
+      ]
+    },
+    {
+      "ID": 85360130,
+      "Entries": [
+        "c8536 Mining ship drill part destruction front drill right blade dp503 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000前ドリル\u3000右刃\u3000ｄｐ503"
+      ]
+    },
+    {
+      "ID": 85360140,
+      "Entries": [
+        "c8536 Mining ship drill part destruction left drill lower blade dp504 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000左ドリル\u3000下刃\u3000ｄｐ504"
+      ]
+    },
+    {
+      "ID": 85360150,
+      "Entries": [
+        "c8536 Mining ship drill part destruction left drill front blade dp505 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000左ドリル\u3000前刃\u3000ｄｐ505"
+      ]
+    },
+    {
+      "ID": 85360160,
+      "Entries": [
+        "c8536 Mining ship drill part destruction left drill left blade dp506 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000左ドリル\u3000左刃\u3000ｄｐ506"
+      ]
+    },
+    {
+      "ID": 85360170,
+      "Entries": [
+        "c8536 Mining ship drill part destruction left drill right blade dp507 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000左ドリル\u3000右刃\u3000ｄｐ507"
+      ]
+    },
+    {
+      "ID": 85360180,
+      "Entries": [
+        "c8536 Mining ship drill part destruction right drill lower blade dp508 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000右ドリル\u3000下刃\u3000ｄｐ508"
+      ]
+    },
+    {
+      "ID": 85360190,
+      "Entries": [
+        "c8536 Mining ship drill part destruction right drill front blade dp509 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000右ドリル\u3000前刃\u3000ｄｐ509"
+      ]
+    },
+    {
+      "ID": 85360200,
+      "Entries": [
+        "c8536 Mining ship drill part destruction right drill left blade dp510 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000右ドリル\u3000左刃\u3000ｄｐ510"
+      ]
+    },
+    {
+      "ID": 85360210,
+      "Entries": [
+        "c8536 Mining ship drill part destruction right drill right blade dp511 -- c8536 採掘艦\u3000ドリル 部位破壊\u3000右ドリル\u3000右刃\u3000ｄｐ511"
+      ]
+    },
+    {
+      "ID": 85370010,
+      "Entries": [
+        "c8536 Mining ship knee cover 1 -- c8536 採掘艦\u3000膝カバー\u30001"
+      ]
+    },
+    {
+      "ID": 85370020,
+      "Entries": [
+        "c8536 Mining ship knee cover 2 -- c8536 採掘艦\u3000膝カバー\u30002"
+      ]
+    },
+    {
+      "ID": 85370030,
+      "Entries": [
+        "c8536 Mining ship knee cover 3 -- c8536 採掘艦\u3000膝カバー\u30003"
+      ]
+    },
+    {
+      "ID": 85370040,
+      "Entries": [
+        "c8536 Mining ship knee cover 4 -- c8536 採掘艦\u3000膝カバー\u30004"
+      ]
+    },
+    {
+      "ID": 85380010,
+      "Entries": [
+        "c8536 mining ship fire control -- c8536 採掘艦\u3000火器管制"
+      ]
+    },
+    {
+      "ID": 93000010,
+      "Entries": [
+        "c9300 Ueda test machine part 1 -- c9300 上田テストマシン\u3000部位 1"
+      ]
+    },
+    {
+      "ID": 93000020,
+      "Entries": [
+        "c9300 Ueda test machine part 2 -- c9300 上田テストマシン\u3000部位 2"
+      ]
+    },
+    {
+      "ID": 93000030,
+      "Entries": [
+        "c9300 Ueda test machine part 3 -- c9300 上田テストマシン\u3000部位 3"
+      ]
+    },
+    {
+      "ID": 93000040,
+      "Entries": [
+        "c9300 Ueda test machine part 4 -- c9300 上田テストマシン\u3000部位 4"
+      ]
+    }
+  ]
+}

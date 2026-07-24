@@ -1,0 +1,1877 @@
+{
+    "list": [
+        {
+            "ID": "GX00",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Decal",
+                    "Type": 4,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "[PaintDecal] SlotNo",
+                    "Type": 1,
+                    "Min": 0,
+                    "Max": 3,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX00",
+            "Unk04": 101,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX00",
+            "Unk04": 102,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Unknown",
+                    "Type": 1,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 1,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 1,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 1,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX01",
+            "Unk04": 101,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "BlendMaskIntensity",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 100,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX02",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "[POM] HeightScale",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "[POM] ShadowCoefficient",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "[POM] MinSampleCount",
+                    "Type": 1,
+                    "Min": 8,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "[POM] MaxSampleCount",
+                    "Type": 1,
+                    "Min": 8,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX03",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "[Emissive] EmissiveIntensity",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 8,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX04",
+            "Unk04": 100,
+            "Category": "Tessellation",
+            "Items": [
+                {
+                    "Name": "Displacement mapping",
+                    "Type": 4,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Tessellation Mode",
+                    "Type": 3,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": {
+                        "0": "NoTessellation",
+                        "1": "FlatTessellation",
+                        "2": "PNTriangle"
+                    }
+                },
+                {
+                    "Name": "Tess Factor (Edge)",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 64,
+                    "Enum": null
+                },
+                {
+                    "Name": "Tess Factor (Inside)",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 64,
+                    "Enum": null
+                },
+                {
+                    "Name": "Back Face Cull",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 5,
+                    "Enum": null
+                },
+                {
+                    "Name": "Distance-Min",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1000,
+                    "Enum": null
+                },
+                {
+                    "Name": "Distance-Max",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1000,
+                    "Enum": null
+                },
+                {
+                    "Name": "Displacement Bias",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 5,
+                    "Enum": null
+                },
+                {
+                    "Name": "Displacement Height [m]",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX05",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "[Translucency] TranslucencyScale",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX06",
+            "Unk04": 101,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "SnowMaskIntensity",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 100,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX07",
+            "Unk04": 104,
+            "Category": "Water",
+            "Items": [
+                {
+                    "Name": "Normal1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Diffuse1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Diffuse1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Diffuse2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Diffuse2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "FresnelMin",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "FresnelMax",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "ReflectionOffset",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "RefractionOffset",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "DepthFogColor R",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "DepthFogColor G",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "DepthFogColor B",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "DepthFogColor A",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "DepthFogDensity",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 40,
+                    "Enum": null
+                },
+                {
+                    "Name": "Transparency",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "waterFadeRange",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "waterFadeRange2",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal3 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal3 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": -10,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX08",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Frozen Threshold",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Frozen Pow",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX09",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Parallax1 Offset",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Parallax1 MiddleHeight",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Parallax2 Offset",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Parallax2 MiddleHeight",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX12",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "[POM][2nd] HeightScale",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX13",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "BlendMaskIntensity",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 100,
+                    "Enum": null
+                },
+                {
+                    "Name": "BlendMaskFaceRange",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 100,
+                    "Enum": null
+                },
+                {
+                    "Name": "BlendRate",
+                    "Type": 0,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX14",
+            "Unk04": 101,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "[AlbedoColor] Color R",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "[AlbedoColor] Color G",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "[AlbedoColor] Color B",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "[AlbedoColor] Multiplier",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 100,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX15",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Unknown",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX20",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Albedo1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Albedo1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX21",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Albedo2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Albedo2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX22",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Reflectance1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Reflectance1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX23",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Reflectance2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Reflectance2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX24",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Shininess1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Shininess1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX25",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Shininess2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Shininess2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX26",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Normal1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX27",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Normal2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Normal2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX28",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "DetailNormal1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "DetailNormal1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX29",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "DetailNormal2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "DetailNormal2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX30",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Displacement1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Displacement1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX31",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Displacement2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Displacement2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX32",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Emissive1 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Emissive1 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX33",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "Emissive2 ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Emissive2 ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX34",
+            "Unk04": 100,
+            "Category": "Texture Scroll",
+            "Items": [
+                {
+                    "Name": "BlendMask ScrollSpeedU",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "BlendMask ScrollSpeedV",
+                    "Type": 2,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX35",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "EnvMap-Dol BlendRate",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX36",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "FlowMap TilingScaleOffset X",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap TilingScaleOffset Y",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap TilingScaleOffset Z",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap TilingScaleOffset W",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX37",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "FlowMap Intensity X",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 3,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap Intensity Y",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 3,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap Intensity Z",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 3,
+                    "Enum": null
+                },
+                {
+                    "Name": "FlowMap Intensity W",
+                    "Type": 2,
+                    "Min": -1,
+                    "Max": 3,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX39",
+            "Unk04": 100,
+            "Category": null,
+            "Items": [
+                {
+                    "Name": "Soft Volume",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 10,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX80",
+            "Unk04": 100,
+            "Category": "[Damaged]",
+            "Items": [
+                {
+                    "Name": "Damage Rate",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 1,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        },
+        {
+            "ID": "GX81",
+            "Unk04": 100,
+            "Category": "[Damaged]",
+            "Items": [
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "DamagedNormal Tiling X",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "DamagedNormal Tiling Y",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "DamagedNormal Tiling Z",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "DamagedNormal Tiling W",
+                    "Type": 2,
+                    "Min": 0,
+                    "Max": 128,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                },
+                {
+                    "Name": "Unknown",
+                    "Type": 0,
+                    "Min": null,
+                    "Max": null,
+                    "Enum": null
+                }
+            ]
+        }
+    ]
+}

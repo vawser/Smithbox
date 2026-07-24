@@ -1,0 +1,47 @@
+{
+  "Key": "WEAPON_SIMPLE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_SIMPLE_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield"
+        }
+      ]
+    }
+  ]
+}

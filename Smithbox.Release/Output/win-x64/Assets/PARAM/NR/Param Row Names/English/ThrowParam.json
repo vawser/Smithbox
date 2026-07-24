@@ -1,0 +1,8075 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Inescapable Frenzy] Player (Right Hand) -> Player"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Inescapable Frenzy] Player (Left Hand) -> Player"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Player"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "[Backstab] Player -> Player"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "[Riposte] Player -> Player"
+      ]
+    },
+    {
+      "ID": 10201020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Blaidd"
+      ]
+    },
+    {
+      "ID": 10210020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 10250020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Crucible Knight"
+      ]
+    },
+    {
+      "ID": 10300020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 10301020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 10302020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 10306020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 10306120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 10307020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 10308020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Imp"
+      ]
+    },
+    {
+      "ID": 10315020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 10320020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 10320120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 10330020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 10332020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Silver Tear"
+      ]
+    },
+    {
+      "ID": 10335020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 10336020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 10336120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 10337020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 10337120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Putrid Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 10340020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 10345020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 10345120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 10346020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 10347020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 10347120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 10350020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 10351020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Crypt Skeleton"
+      ]
+    },
+    {
+      "ID": 10355020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 10360020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 10361020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 10362020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 10365020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 10366020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 10366120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 10366220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 10366420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 10366520,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 10366620,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 10370020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 10370120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Perfumer"
+      ]
+    },
+    {
+      "ID": 10370220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Sorcerer"
+      ]
+    },
+    {
+      "ID": 10370320,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Page"
+      ]
+    },
+    {
+      "ID": 10370420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 10375020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 10380020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 10381020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 10385020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 10386020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Avionette"
+      ]
+    },
+    {
+      "ID": 10390020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 10390120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 10395020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 10397020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 10405020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 10410020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 10410120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 10412020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 10430020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 10431020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 10431120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 10431220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 10431320,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 10431420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 10431520,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 10431620,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 10432120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 10435020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 10435120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 10435220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 10435320,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 10435420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 10435520,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 10435620,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 10435820,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 10437020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437320,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437520,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437620,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 10437720,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 10438020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 10438120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 10438220,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 10438320,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 10438420,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 10438520,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 10438620,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 10482020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 10700020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 10905120,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 10910020,
+      "Entries": [
+        "[Lifesteal Fist] Player -> "
+      ]
+    },
+    {
+      "ID": 11201000,
+      "Entries": [
+        "[Backstab] Player -> Blaidd"
+      ]
+    },
+    {
+      "ID": 11210000,
+      "Entries": [
+        "[Backstab] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 11214000,
+      "Entries": [
+        "[Backstab] Player -> Omen"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "[Backstab] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "[Backstab] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 11302000,
+      "Entries": [
+        "[Backstab] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 11306000,
+      "Entries": [
+        "[Backstab] Player -> Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 11306100,
+      "Entries": [
+        "[Backstab] Player -> Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 11307000,
+      "Entries": [
+        "[Backstab] Player -> "
+      ]
+    },
+    {
+      "ID": 11308000,
+      "Entries": [
+        "[Backstab] Player -> Imp"
+      ]
+    },
+    {
+      "ID": 11315000,
+      "Entries": [
+        "[Backstab] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 11317000,
+      "Entries": [
+        "[Backstab] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 11320000,
+      "Entries": [
+        "[Backstab] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 11320100,
+      "Entries": [
+        "[Backstab] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 11330000,
+      "Entries": [
+        "[Backstab] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 11335000,
+      "Entries": [
+        "[Backstab] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 11336000,
+      "Entries": [
+        "[Backstab] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 11336100,
+      "Entries": [
+        "[Backstab] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 11340000,
+      "Entries": [
+        "[Backstab] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 11345000,
+      "Entries": [
+        "[Backstab] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 11345100,
+      "Entries": [
+        "[Backstab] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 11347000,
+      "Entries": [
+        "[Backstab] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 11347100,
+      "Entries": [
+        "[Backstab] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 11350000,
+      "Entries": [
+        "[Backstab] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 11351000,
+      "Entries": [
+        "[Backstab] Player -> Crypt Skeleton"
+      ]
+    },
+    {
+      "ID": 11355000,
+      "Entries": [
+        "[Backstab] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 11361000,
+      "Entries": [
+        "[Backstab] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 11362000,
+      "Entries": [
+        "[Backstab] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 11365000,
+      "Entries": [
+        "[Backstab] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 11366000,
+      "Entries": [
+        "[Backstab] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 11366100,
+      "Entries": [
+        "[Backstab] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 11366200,
+      "Entries": [
+        "[Backstab] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 11366400,
+      "Entries": [
+        "[Backstab] Player -> Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 11366500,
+      "Entries": [
+        "[Backstab] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 11370000,
+      "Entries": [
+        "[Backstab] Player -> Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 11370100,
+      "Entries": [
+        "[Backstab] Player -> Perfumer"
+      ]
+    },
+    {
+      "ID": 11370200,
+      "Entries": [
+        "[Backstab] Player -> Sorcerer"
+      ]
+    },
+    {
+      "ID": 11370300,
+      "Entries": [
+        "[Backstab] Player -> Page"
+      ]
+    },
+    {
+      "ID": 11370400,
+      "Entries": [
+        "[Backstab] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 11375000,
+      "Entries": [
+        "[Backstab] Player -> "
+      ]
+    },
+    {
+      "ID": 11380000,
+      "Entries": [
+        "[Backstab] Player -> Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 11381000,
+      "Entries": [
+        "[Backstab] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 11385000,
+      "Entries": [
+        "[Backstab] Player -> Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 11386000,
+      "Entries": [
+        "[Backstab] Player -> Avionette"
+      ]
+    },
+    {
+      "ID": 11390000,
+      "Entries": [
+        "[Backstab] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 11390100,
+      "Entries": [
+        "[Backstab] Player -> Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 11395000,
+      "Entries": [
+        "[Backstab] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 11397000,
+      "Entries": [
+        "[Backstab] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "[Backstab] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 11405000,
+      "Entries": [
+        "[Backstab] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 11410000,
+      "Entries": [
+        "[Backstab] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 11410100,
+      "Entries": [
+        "[Backstab] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 11430000,
+      "Entries": [
+        "[Backstab] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 11431000,
+      "Entries": [
+        "[Backstab] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 11431100,
+      "Entries": [
+        "[Backstab] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 11431200,
+      "Entries": [
+        "[Backstab] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 11431300,
+      "Entries": [
+        "[Backstab] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 11431400,
+      "Entries": [
+        "[Backstab] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 11431500,
+      "Entries": [
+        "[Backstab] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 11431600,
+      "Entries": [
+        "[Backstab] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 11432100,
+      "Entries": [
+        "[Backstab] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 11435000,
+      "Entries": [
+        "[Backstab] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 11435100,
+      "Entries": [
+        "[Backstab] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 11435200,
+      "Entries": [
+        "[Backstab] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 11435300,
+      "Entries": [
+        "[Backstab] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 11435400,
+      "Entries": [
+        "[Backstab] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 11435500,
+      "Entries": [
+        "[Backstab] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 11435600,
+      "Entries": [
+        "[Backstab] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 11435800,
+      "Entries": [
+        "[Backstab] Player -> "
+      ]
+    },
+    {
+      "ID": 11437000,
+      "Entries": [
+        "[Backstab] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437100,
+      "Entries": [
+        "[Backstab] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437200,
+      "Entries": [
+        "[Backstab] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437300,
+      "Entries": [
+        "[Backstab] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437400,
+      "Entries": [
+        "[Backstab] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437500,
+      "Entries": [
+        "[Backstab] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437600,
+      "Entries": [
+        "[Backstab] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 11437700,
+      "Entries": [
+        "[Backstab] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 11438000,
+      "Entries": [
+        "[Backstab] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 11438100,
+      "Entries": [
+        "[Backstab] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 11438200,
+      "Entries": [
+        "[Backstab] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 11438300,
+      "Entries": [
+        "[Backstab] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 11438400,
+      "Entries": [
+        "[Backstab] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 11438500,
+      "Entries": [
+        "[Backstab] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 11438600,
+      "Entries": [
+        "[Backstab] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 11446000,
+      "Entries": [
+        "[Backstab] Player -> Flame Chariot"
+      ]
+    },
+    {
+      "ID": 11482000,
+      "Entries": [
+        "[Backstab] Player -> "
+      ]
+    },
+    {
+      "ID": 11581000,
+      "Entries": [
+        "[Backstab] Player -> Demi-human Swordmaster"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "[Backstab] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 11905100,
+      "Entries": [
+        "[Backstab] Player -> "
+      ]
+    },
+    {
+      "ID": 12210000,
+      "Entries": [
+        "[Stealth] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 12214000,
+      "Entries": [
+        "[Stealth] Player -> Omen"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "[Stealth] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 12301000,
+      "Entries": [
+        "[Stealth] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 12302000,
+      "Entries": [
+        "[Stealth] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 12320000,
+      "Entries": [
+        "[Stealth] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 12320100,
+      "Entries": [
+        "[Stealth] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 12330000,
+      "Entries": [
+        "[Stealth] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 12335000,
+      "Entries": [
+        "[Stealth] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 12340000,
+      "Entries": [
+        "[Stealth] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 12345000,
+      "Entries": [
+        "[Stealth] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 12350000,
+      "Entries": [
+        "[Stealth] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 12355000,
+      "Entries": [
+        "[Stealth] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 12360000,
+      "Entries": [
+        "[Stealth] Player -> Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 12366000,
+      "Entries": [
+        "[Stealth] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 12381000,
+      "Entries": [
+        "[Stealth] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 12390000,
+      "Entries": [
+        "[Stealth] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 12405000,
+      "Entries": [
+        "[Stealth] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 12430000,
+      "Entries": [
+        "[Stealth] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 12431000,
+      "Entries": [
+        "[Stealth] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 12458000,
+      "Entries": [
+        "[Stealth] Player -> Wormface"
+      ]
+    },
+    {
+      "ID": 12905100,
+      "Entries": [
+        "[Stealth] Player -> "
+      ]
+    },
+    {
+      "ID": 13201000,
+      "Entries": [
+        "[Riposte] Player -> Blaidd"
+      ]
+    },
+    {
+      "ID": 13210000,
+      "Entries": [
+        "[Riposte] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 13212000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13213000,
+      "Entries": [
+        "[Riposte] Player -> Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 13214000,
+      "Entries": [
+        "[Riposte] Player -> Omen"
+      ]
+    },
+    {
+      "ID": 13219000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13250000,
+      "Entries": [
+        "[Riposte] Player -> Crucible Knight"
+      ]
+    },
+    {
+      "ID": 13300000,
+      "Entries": [
+        "[Riposte] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 13301000,
+      "Entries": [
+        "[Riposte] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 13302000,
+      "Entries": [
+        "[Riposte] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 13305000,
+      "Entries": [
+        "[Riposte] Player -> Commander"
+      ]
+    },
+    {
+      "ID": 13306000,
+      "Entries": [
+        "[Riposte] Player -> Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 13306100,
+      "Entries": [
+        "[Riposte] Player -> Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 13307000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13308000,
+      "Entries": [
+        "[Riposte] Player -> Imp"
+      ]
+    },
+    {
+      "ID": 13310000,
+      "Entries": [
+        "[Riposte] Player -> Bell Bearing Hunter (Elemer)"
+      ]
+    },
+    {
+      "ID": 13315000,
+      "Entries": [
+        "[Riposte] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 13317000,
+      "Entries": [
+        "[Riposte] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 13320000,
+      "Entries": [
+        "[Riposte] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 13320100,
+      "Entries": [
+        "[Riposte] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 13330000,
+      "Entries": [
+        "[Riposte] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 13332000,
+      "Entries": [
+        "[Riposte] Player -> Silver Tear"
+      ]
+    },
+    {
+      "ID": 13335000,
+      "Entries": [
+        "[Riposte] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 13336000,
+      "Entries": [
+        "[Riposte] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 13336100,
+      "Entries": [
+        "[Riposte] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 13337000,
+      "Entries": [
+        "[Riposte] Player -> Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 13337100,
+      "Entries": [
+        "[Riposte] Player -> Putrid Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 13340000,
+      "Entries": [
+        "[Riposte] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 13345000,
+      "Entries": [
+        "[Riposte] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 13345100,
+      "Entries": [
+        "[Riposte] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 13346000,
+      "Entries": [
+        "[Riposte] Player -> Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 13347000,
+      "Entries": [
+        "[Riposte] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 13347100,
+      "Entries": [
+        "[Riposte] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 13350000,
+      "Entries": [
+        "[Riposte] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 13351000,
+      "Entries": [
+        "[Riposte] Player -> Crypt Skeleton"
+      ]
+    },
+    {
+      "ID": 13355000,
+      "Entries": [
+        "[Riposte] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 13356000,
+      "Entries": [
+        "[Riposte] Player -> Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 13357000,
+      "Entries": [
+        "[Riposte] Player -> Godskin Noble"
+      ]
+    },
+    {
+      "ID": 13360000,
+      "Entries": [
+        "[Riposte] Player -> Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 13361000,
+      "Entries": [
+        "[Riposte] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 13362000,
+      "Entries": [
+        "[Riposte] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 13365000,
+      "Entries": [
+        "[Riposte] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 13366000,
+      "Entries": [
+        "[Riposte] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 13366100,
+      "Entries": [
+        "[Riposte] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 13366200,
+      "Entries": [
+        "[Riposte] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 13366400,
+      "Entries": [
+        "[Riposte] Player -> Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 13366500,
+      "Entries": [
+        "[Riposte] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 13366600,
+      "Entries": [
+        "[Riposte] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 13370000,
+      "Entries": [
+        "[Riposte] Player -> Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 13370100,
+      "Entries": [
+        "[Riposte] Player -> Perfumer"
+      ]
+    },
+    {
+      "ID": 13370200,
+      "Entries": [
+        "[Riposte] Player -> Sorcerer"
+      ]
+    },
+    {
+      "ID": 13370300,
+      "Entries": [
+        "[Riposte] Player -> Page"
+      ]
+    },
+    {
+      "ID": 13370400,
+      "Entries": [
+        "[Riposte] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 13375000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13380000,
+      "Entries": [
+        "[Riposte] Player -> Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 13381000,
+      "Entries": [
+        "[Riposte] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 13385000,
+      "Entries": [
+        "[Riposte] Player -> Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 13386000,
+      "Entries": [
+        "[Riposte] Player -> Avionette"
+      ]
+    },
+    {
+      "ID": 13390000,
+      "Entries": [
+        "[Riposte] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 13390100,
+      "Entries": [
+        "[Riposte] Player -> Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 13395000,
+      "Entries": [
+        "[Riposte] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 13397000,
+      "Entries": [
+        "[Riposte] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 13405000,
+      "Entries": [
+        "[Riposte] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 13410000,
+      "Entries": [
+        "[Riposte] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 13410100,
+      "Entries": [
+        "[Riposte] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 13412000,
+      "Entries": [
+        "[Riposte] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 13426000,
+      "Entries": [
+        "[Riposte] Player -> Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 13429000,
+      "Entries": [
+        "[Riposte] Player -> Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 13430000,
+      "Entries": [
+        "[Riposte] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 13431000,
+      "Entries": [
+        "[Riposte] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 13431100,
+      "Entries": [
+        "[Riposte] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 13431200,
+      "Entries": [
+        "[Riposte] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 13431300,
+      "Entries": [
+        "[Riposte] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 13431400,
+      "Entries": [
+        "[Riposte] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 13431500,
+      "Entries": [
+        "[Riposte] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 13431600,
+      "Entries": [
+        "[Riposte] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 13432100,
+      "Entries": [
+        "[Riposte] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 13434000,
+      "Entries": [
+        "[Riposte] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 13435000,
+      "Entries": [
+        "[Riposte] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 13435100,
+      "Entries": [
+        "[Riposte] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 13435200,
+      "Entries": [
+        "[Riposte] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 13435300,
+      "Entries": [
+        "[Riposte] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 13435400,
+      "Entries": [
+        "[Riposte] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 13435500,
+      "Entries": [
+        "[Riposte] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 13435600,
+      "Entries": [
+        "[Riposte] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 13435800,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13437000,
+      "Entries": [
+        "[Riposte] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437100,
+      "Entries": [
+        "[Riposte] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437200,
+      "Entries": [
+        "[Riposte] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437300,
+      "Entries": [
+        "[Riposte] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437400,
+      "Entries": [
+        "[Riposte] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437500,
+      "Entries": [
+        "[Riposte] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437600,
+      "Entries": [
+        "[Riposte] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 13437700,
+      "Entries": [
+        "[Riposte] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 13438000,
+      "Entries": [
+        "[Riposte] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 13438100,
+      "Entries": [
+        "[Riposte] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 13438200,
+      "Entries": [
+        "[Riposte] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 13438300,
+      "Entries": [
+        "[Riposte] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 13438400,
+      "Entries": [
+        "[Riposte] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 13438500,
+      "Entries": [
+        "[Riposte] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 13438600,
+      "Entries": [
+        "[Riposte] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 13457000,
+      "Entries": [
+        "[Riposte] Player -> Small Wormface"
+      ]
+    },
+    {
+      "ID": 13469000,
+      "Entries": [
+        "[Riposte] Player -> Grafted Scion"
+      ]
+    },
+    {
+      "ID": 13482000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13581000,
+      "Entries": [
+        "[Riposte] Player -> Demi-human Swordmaster"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "[Riposte] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 13710000,
+      "Entries": [
+        "[Riposte] Player -> Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 13758000,
+      "Entries": [
+        "[Riposte] Player -> Heolstor the Nightlord"
+      ]
+    },
+    {
+      "ID": 13790000,
+      "Entries": [
+        "[Riposte] Player -> Nameless King"
+      ]
+    },
+    {
+      "ID": 13905100,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 13910000,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 14201000,
+      "Entries": [
+        "[Stance Break] Player -> Blaidd (Front)"
+      ]
+    },
+    {
+      "ID": 14201001,
+      "Entries": [
+        "[Stance Break] Player -> Blaidd (Back)"
+      ]
+    },
+    {
+      "ID": 14203100,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14203101,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14210000,
+      "Entries": [
+        "[Stance Break] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 14210001,
+      "Entries": [
+        "[Stance Break] Player -> Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 14211000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14212000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14212001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14213000,
+      "Entries": [
+        "[Stance Break] Player -> Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 14213001,
+      "Entries": [
+        "[Stance Break] Player -> Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 14214000,
+      "Entries": [
+        "[Stance Break] Player -> Omen"
+      ]
+    },
+    {
+      "ID": 14214001,
+      "Entries": [
+        "[Stance Break] Player -> Omen"
+      ]
+    },
+    {
+      "ID": 14219000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14220000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14227000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Crab"
+      ]
+    },
+    {
+      "ID": 14227200,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14227400,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14227600,
+      "Entries": [
+        "[Stance Break] Player -> Giant Death Crab"
+      ]
+    },
+    {
+      "ID": 14250000,
+      "Entries": [
+        "[Stance Break] Player -> Crucible Knight"
+      ]
+    },
+    {
+      "ID": 14250001,
+      "Entries": [
+        "[Stance Break] Player -> Crucible Knight"
+      ]
+    },
+    {
+      "ID": 14300000,
+      "Entries": [
+        "[Stance Break] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 14300001,
+      "Entries": [
+        "[Stance Break] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 14301000,
+      "Entries": [
+        "[Stance Break] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 14301001,
+      "Entries": [
+        "[Stance Break] Player -> Banished Knight"
+      ]
+    },
+    {
+      "ID": 14302000,
+      "Entries": [
+        "[Stance Break] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 14302001,
+      "Entries": [
+        "[Stance Break] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 14305000,
+      "Entries": [
+        "[Stance Break] Player -> Commander"
+      ]
+    },
+    {
+      "ID": 14305001,
+      "Entries": [
+        "[Stance Break] Player -> Commander"
+      ]
+    },
+    {
+      "ID": 14306000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 14306001,
+      "Entries": [
+        "[Stance Break] Player -> Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 14306100,
+      "Entries": [
+        "[Stance Break] Player -> Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 14306101,
+      "Entries": [
+        "[Stance Break] Player -> Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 14307000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14307001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14308000,
+      "Entries": [
+        "[Stance Break] Player -> Imp"
+      ]
+    },
+    {
+      "ID": 14308001,
+      "Entries": [
+        "[Stance Break] Player -> Imp"
+      ]
+    },
+    {
+      "ID": 14310000,
+      "Entries": [
+        "[Stance Break] Player -> Bell Bearing Hunter (Elemer)"
+      ]
+    },
+    {
+      "ID": 14310001,
+      "Entries": [
+        "[Stance Break] Player -> Bell Bearing Hunter (Elemer)"
+      ]
+    },
+    {
+      "ID": 14315000,
+      "Entries": [
+        "[Stance Break] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 14315001,
+      "Entries": [
+        "[Stance Break] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 14317000,
+      "Entries": [
+        "[Stance Break] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 14317001,
+      "Entries": [
+        "[Stance Break] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 14318000,
+      "Entries": [
+        "[Stance Break] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 14318100,
+      "Entries": [
+        "[Stance Break] Player -> Red Wolf"
+      ]
+    },
+    {
+      "ID": 14320000,
+      "Entries": [
+        "[Stance Break] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 14320001,
+      "Entries": [
+        "[Stance Break] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 14320100,
+      "Entries": [
+        "[Stance Break] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 14320101,
+      "Entries": [
+        "[Stance Break] Player -> Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 14321001,
+      "Entries": [
+        "[Stance Break] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 14330000,
+      "Entries": [
+        "[Stance Break] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 14330001,
+      "Entries": [
+        "[Stance Break] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 14332000,
+      "Entries": [
+        "[Stance Break] Player -> Silver Tear"
+      ]
+    },
+    {
+      "ID": 14335000,
+      "Entries": [
+        "[Stance Break] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 14335001,
+      "Entries": [
+        "[Stance Break] Player -> Crystalian"
+      ]
+    },
+    {
+      "ID": 14336000,
+      "Entries": [
+        "[Stance Break] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 14336001,
+      "Entries": [
+        "[Stance Break] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 14336100,
+      "Entries": [
+        "[Stance Break] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 14336101,
+      "Entries": [
+        "[Stance Break] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 14337000,
+      "Entries": [
+        "[Stance Break] Player -> Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 14337001,
+      "Entries": [
+        "[Stance Break] Player -> Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 14337100,
+      "Entries": [
+        "[Stance Break] Player -> Putrid Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 14337101,
+      "Entries": [
+        "[Stance Break] Player -> Putrid Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 14340000,
+      "Entries": [
+        "[Stance Break] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 14340001,
+      "Entries": [
+        "[Stance Break] Player -> Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 14345000,
+      "Entries": [
+        "[Stance Break] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 14345001,
+      "Entries": [
+        "[Stance Break] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 14345100,
+      "Entries": [
+        "[Stance Break] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 14345101,
+      "Entries": [
+        "[Stance Break] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 14346000,
+      "Entries": [
+        "[Stance Break] Player -> Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 14346001,
+      "Entries": [
+        "[Stance Break] Player -> Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 14347000,
+      "Entries": [
+        "[Stance Break] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 14347001,
+      "Entries": [
+        "[Stance Break] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 14347100,
+      "Entries": [
+        "[Stance Break] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 14347101,
+      "Entries": [
+        "[Stance Break] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 14350000,
+      "Entries": [
+        "[Stance Break] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 14350001,
+      "Entries": [
+        "[Stance Break] Player -> Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 14351000,
+      "Entries": [
+        "[Stance Break] Player -> Crypt Skeleton"
+      ]
+    },
+    {
+      "ID": 14351001,
+      "Entries": [
+        "[Stance Break] Player -> Crypt Skeleton"
+      ]
+    },
+    {
+      "ID": 14355000,
+      "Entries": [
+        "[Stance Break] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 14355001,
+      "Entries": [
+        "[Stance Break] Player -> Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 14356000,
+      "Entries": [
+        "[Stance Break] Player -> Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 14356001,
+      "Entries": [
+        "[Stance Break] Player -> Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 14357000,
+      "Entries": [
+        "[Stance Break] Player -> Godskin Noble"
+      ]
+    },
+    {
+      "ID": 14357001,
+      "Entries": [
+        "[Stance Break] Player -> Godskin Noble"
+      ]
+    },
+    {
+      "ID": 14360000,
+      "Entries": [
+        "[Stance Break] Player -> Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 14360001,
+      "Entries": [
+        "[Stance Break] Player -> Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 14361000,
+      "Entries": [
+        "[Stance Break] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 14361001,
+      "Entries": [
+        "[Stance Break] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 14362000,
+      "Entries": [
+        "[Stance Break] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 14362001,
+      "Entries": [
+        "[Stance Break] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 14363000,
+      "Entries": [
+        "[Stance Break] Player -> Huge Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 14365000,
+      "Entries": [
+        "[Stance Break] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 14365001,
+      "Entries": [
+        "[Stance Break] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 14366000,
+      "Entries": [
+        "[Stance Break] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 14366001,
+      "Entries": [
+        "[Stance Break] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 14366100,
+      "Entries": [
+        "[Stance Break] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 14366101,
+      "Entries": [
+        "[Stance Break] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 14366200,
+      "Entries": [
+        "[Stance Break] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 14366201,
+      "Entries": [
+        "[Stance Break] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 14366401,
+      "Entries": [
+        "[Stance Break] Player -> Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 14366402,
+      "Entries": [
+        "[Stance Break] Player -> Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 14366500,
+      "Entries": [
+        "[Stance Break] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 14366501,
+      "Entries": [
+        "[Stance Break] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 14366600,
+      "Entries": [
+        "[Stance Break] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 14366601,
+      "Entries": [
+        "[Stance Break] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 14367000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14367001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14370000,
+      "Entries": [
+        "[Stance Break] Player -> Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 14370001,
+      "Entries": [
+        "[Stance Break] Player -> Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 14370100,
+      "Entries": [
+        "[Stance Break] Player -> Perfumer"
+      ]
+    },
+    {
+      "ID": 14370101,
+      "Entries": [
+        "[Stance Break] Player -> Perfumer"
+      ]
+    },
+    {
+      "ID": 14370200,
+      "Entries": [
+        "[Stance Break] Player -> Sorcerer"
+      ]
+    },
+    {
+      "ID": 14370201,
+      "Entries": [
+        "[Stance Break] Player -> Sorcerer"
+      ]
+    },
+    {
+      "ID": 14370300,
+      "Entries": [
+        "[Stance Break] Player -> Page"
+      ]
+    },
+    {
+      "ID": 14370301,
+      "Entries": [
+        "[Stance Break] Player -> Page"
+      ]
+    },
+    {
+      "ID": 14370400,
+      "Entries": [
+        "[Stance Break] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 14370401,
+      "Entries": [
+        "[Stance Break] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 14375000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14375001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14380000,
+      "Entries": [
+        "[Stance Break] Player -> Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 14380001,
+      "Entries": [
+        "[Stance Break] Player -> Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 14381000,
+      "Entries": [
+        "[Stance Break] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 14381001,
+      "Entries": [
+        "[Stance Break] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 14385000,
+      "Entries": [
+        "[Stance Break] Player -> Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 14385001,
+      "Entries": [
+        "[Stance Break] Player -> Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 14386000,
+      "Entries": [
+        "[Stance Break] Player -> Avionette"
+      ]
+    },
+    {
+      "ID": 14386001,
+      "Entries": [
+        "[Stance Break] Player -> Avionette"
+      ]
+    },
+    {
+      "ID": 14390000,
+      "Entries": [
+        "[Stance Break] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 14390001,
+      "Entries": [
+        "[Stance Break] Player -> Fire Monk"
+      ]
+    },
+    {
+      "ID": 14390100,
+      "Entries": [
+        "[Stance Break] Player -> Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 14390101,
+      "Entries": [
+        "[Stance Break] Player -> Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 14391000,
+      "Entries": [
+        "[Stance Break] Player -> Fire Prelate"
+      ]
+    },
+    {
+      "ID": 14391001,
+      "Entries": [
+        "[Stance Break] Player -> Fire Prelate"
+      ]
+    },
+    {
+      "ID": 14395000,
+      "Entries": [
+        "[Stance Break] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 14395001,
+      "Entries": [
+        "[Stance Break] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 14397000,
+      "Entries": [
+        "[Stance Break] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 14397001,
+      "Entries": [
+        "[Stance Break] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 14400000,
+      "Entries": [
+        "[Stance Break] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 14400001,
+      "Entries": [
+        "[Stance Break] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 14402000,
+      "Entries": [
+        "[Stance Break] Player -> Royal Revenant"
+      ]
+    },
+    {
+      "ID": 14402100,
+      "Entries": [
+        "[Stance Break] Player -> Alt Royal Revenant"
+      ]
+    },
+    {
+      "ID": 14405000,
+      "Entries": [
+        "[Stance Break] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 14405001,
+      "Entries": [
+        "[Stance Break] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 14409000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Rat"
+      ]
+    },
+    {
+      "ID": 14410000,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 14410001,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 14410100,
+      "Entries": [
+        "[Stance Break] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 14410101,
+      "Entries": [
+        "[Stance Break] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 14412000,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 14412001,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 14413000,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human Queen"
+      ]
+    },
+    {
+      "ID": 14422000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14424000,
+      "Entries": [
+        "[Stance Break] Player -> Fingercreeper"
+      ]
+    },
+    {
+      "ID": 14426000,
+      "Entries": [
+        "[Stance Break] Player -> Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 14427000,
+      "Entries": [
+        "[Stance Break] Player -> Elder Lion"
+      ]
+    },
+    {
+      "ID": 14428000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 14428001,
+      "Entries": [
+        "[Stance Break] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 14428002,
+      "Entries": [
+        "[Stance Break] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 14429000,
+      "Entries": [
+        "[Stance Break] Player -> Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 14430000,
+      "Entries": [
+        "[Stance Break] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 14430001,
+      "Entries": [
+        "[Stance Break] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 14431000,
+      "Entries": [
+        "[Stance Break] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 14431001,
+      "Entries": [
+        "[Stance Break] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 14431100,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 14431101,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 14431200,
+      "Entries": [
+        "[Stance Break] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 14431201,
+      "Entries": [
+        "[Stance Break] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 14431300,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 14431301,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 14431400,
+      "Entries": [
+        "[Stance Break] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 14431401,
+      "Entries": [
+        "[Stance Break] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 14431500,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 14431501,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 14431600,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 14431601,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 14432100,
+      "Entries": [
+        "[Stance Break] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 14434000,
+      "Entries": [
+        "[Stance Break] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 14434001,
+      "Entries": [
+        "[Stance Break] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 14435000,
+      "Entries": [
+        "[Stance Break] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 14435001,
+      "Entries": [
+        "[Stance Break] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 14435100,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 14435101,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 14435200,
+      "Entries": [
+        "[Stance Break] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 14435201,
+      "Entries": [
+        "[Stance Break] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 14435300,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 14435301,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 14435400,
+      "Entries": [
+        "[Stance Break] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 14435401,
+      "Entries": [
+        "[Stance Break] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 14435500,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 14435501,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 14435600,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 14435601,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 14435800,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14435801,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14437000,
+      "Entries": [
+        "[Stance Break] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437001,
+      "Entries": [
+        "[Stance Break] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437100,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437101,
+      "Entries": [
+        "[Stance Break] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437200,
+      "Entries": [
+        "[Stance Break] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437201,
+      "Entries": [
+        "[Stance Break] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437300,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437301,
+      "Entries": [
+        "[Stance Break] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437400,
+      "Entries": [
+        "[Stance Break] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437401,
+      "Entries": [
+        "[Stance Break] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437500,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437501,
+      "Entries": [
+        "[Stance Break] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437600,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437601,
+      "Entries": [
+        "[Stance Break] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 14437700,
+      "Entries": [
+        "[Stance Break] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 14437701,
+      "Entries": [
+        "[Stance Break] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 14438000,
+      "Entries": [
+        "[Stance Break] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 14438001,
+      "Entries": [
+        "[Stance Break] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 14438100,
+      "Entries": [
+        "[Stance Break] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 14438101,
+      "Entries": [
+        "[Stance Break] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 14438200,
+      "Entries": [
+        "[Stance Break] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 14438201,
+      "Entries": [
+        "[Stance Break] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 14438300,
+      "Entries": [
+        "[Stance Break] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 14438301,
+      "Entries": [
+        "[Stance Break] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 14438400,
+      "Entries": [
+        "[Stance Break] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 14438401,
+      "Entries": [
+        "[Stance Break] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 14438500,
+      "Entries": [
+        "[Stance Break] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 14438501,
+      "Entries": [
+        "[Stance Break] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 14438600,
+      "Entries": [
+        "[Stance Break] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 14438601,
+      "Entries": [
+        "[Stance Break] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 14440000,
+      "Entries": [
+        "[Stance Break] Player -> Land Squirt"
+      ]
+    },
+    {
+      "ID": 14442000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14442001,
+      "Entries": [
+        "[Riposte] Player -> "
+      ]
+    },
+    {
+      "ID": 14444100,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14444200,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14446000,
+      "Entries": [
+        "[Stance Break] Player -> Flame Chariot"
+      ]
+    },
+    {
+      "ID": 14448000,
+      "Entries": [
+        "[Stance Break] Player -> Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 14448200,
+      "Entries": [
+        "[Stance Break] Player -> Rotten Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 14450000,
+      "Entries": [
+        "[Stance Break] Player -> Flying Dragon"
+      ]
+    },
+    {
+      "ID": 14450100,
+      "Entries": [
+        "[Stance Break] Player -> Rotten Dragon"
+      ]
+    },
+    {
+      "ID": 14450200,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14450300,
+      "Entries": [
+        "[Stance Break] Player -> Ice Dragon"
+      ]
+    },
+    {
+      "ID": 14450500,
+      "Entries": [
+        "[Stance Break] Player -> Small Flying Dragon"
+      ]
+    },
+    {
+      "ID": 14451000,
+      "Entries": [
+        "[Stance Break] Player -> Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 14451100,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14452000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14455000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Dog"
+      ]
+    },
+    {
+      "ID": 14456000,
+      "Entries": [
+        "[Stance Break] Player -> Giant Crow"
+      ]
+    },
+    {
+      "ID": 14456100,
+      "Entries": [
+        "[Stance Break] Player -> Giant Blood Crow"
+      ]
+    },
+    {
+      "ID": 14457000,
+      "Entries": [
+        "[Stance Break] Player -> Small Wormface"
+      ]
+    },
+    {
+      "ID": 14457001,
+      "Entries": [
+        "[Stance Break] Player -> Small Wormface"
+      ]
+    },
+    {
+      "ID": 14458000,
+      "Entries": [
+        "[Stance Break] Player -> Wormface"
+      ]
+    },
+    {
+      "ID": 14460000,
+      "Entries": [
+        "[Stance Break] Player -> Troll"
+      ]
+    },
+    {
+      "ID": 14460100,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14460200,
+      "Entries": [
+        "[Stance Break] Player -> Snowfield Troll"
+      ]
+    },
+    {
+      "ID": 14460300,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14460400,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14462000,
+      "Entries": [
+        "[Stance Break] Player -> Naturalborn of the Void (Astel)"
+      ]
+    },
+    {
+      "ID": 14463000,
+      "Entries": [
+        "[Stance Break] Player -> Runebear"
+      ]
+    },
+    {
+      "ID": 14464000,
+      "Entries": [
+        "[Stance Break] Player -> Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 14465000,
+      "Entries": [
+        "[Stance Break] Player -> Dragonkin Soldier"
+      ]
+    },
+    {
+      "ID": 14466000,
+      "Entries": [
+        "[Stance Break] Player -> Guardian Golem (One Side)"
+      ]
+    },
+    {
+      "ID": 14466001,
+      "Entries": [
+        "[Stance Break] Player -> Guardian Golem (Other Side)"
+      ]
+    },
+    {
+      "ID": 14467000,
+      "Entries": [
+        "[Stance Break] Player -> Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 14468000,
+      "Entries": [
+        "[Stance Break] Player -> Falling-star Beast"
+      ]
+    },
+    {
+      "ID": 14469000,
+      "Entries": [
+        "[Stance Break] Player -> Grafted Scion"
+      ]
+    },
+    {
+      "ID": 14472000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14472001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14472100,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14472101,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14473000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14475000,
+      "Entries": [
+        "[Stance Break] Player -> Grafted Monarch (Godrick)"
+      ]
+    },
+    {
+      "ID": 14475001,
+      "Entries": [
+        "[Stance Break] Player -> Grafted Monarch (Godrick)"
+      ]
+    },
+    {
+      "ID": 14476000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14477000,
+      "Entries": [
+        "[Stance Break] Player -> Valiant Gargoyle"
+      ]
+    },
+    {
+      "ID": 14480000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14480001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14481000,
+      "Entries": [
+        "[Stance Break] Player -> Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 14481100,
+      "Entries": [
+        "[Stance Break] Player -> Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 14482000,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14482001,
+      "Entries": [
+        "[Stance Break] Player -> "
+      ]
+    },
+    {
+      "ID": 14490000,
+      "Entries": [
+        "[Stance Break] Player -> Caligo, Miasma of Night"
+      ]
+    },
+    {
+      "ID": 14490001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14491000,
+      "Entries": [
+        "[Stance Break] Player -> Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 14491100,
+      "Entries": [
+        "[Stance Break] Player -> Great Wyrm"
+      ]
+    },
+    {
+      "ID": 14498000,
+      "Entries": [
+        "[Stance Break] Player -> Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 14501000,
+      "Entries": [
+        "[Stance Break] Player -> Golden Hippopotamus (Large)"
+      ]
+    },
+    {
+      "ID": 14501100,
+      "Entries": [
+        "[Stance Break] Player -> Golden Hippopotamus"
+      ]
+    },
+    {
+      "ID": 14581000,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human Swordmaster"
+      ]
+    },
+    {
+      "ID": 14581001,
+      "Entries": [
+        "[Stance Break] Player -> Demi-human Swordmaster"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "[Stance Break] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 14700001,
+      "Entries": [
+        "[Stance Break] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 14710000,
+      "Entries": [
+        "[Stance Break] Player -> Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 14710001,
+      "Entries": [
+        "[Stance Break] Player -> Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 14750000,
+      "Entries": [
+        "[Stance Break] Player -> Gladius, Beast of Night"
+      ]
+    },
+    {
+      "ID": 14751000,
+      "Entries": [
+        "[Stance Break] Player -> Adel, Baron of Night"
+      ]
+    },
+    {
+      "ID": 14751100,
+      "Entries": [
+        "[Stance Break] Player -> Adel, Baron of Night (Everdark)"
+      ]
+    },
+    {
+      "ID": 14752000,
+      "Entries": [
+        "[Stance Break] Player -> Gnoster, Wisdom of Night (Moth - Gnoster)"
+      ]
+    },
+    {
+      "ID": 14753000,
+      "Entries": [
+        "[Stance Break] Player -> Faurtis Stoneshield (Shears - Gnoster)"
+      ]
+    },
+    {
+      "ID": 14754000,
+      "Entries": [
+        "[Stance Break] Player -> Maris, Fathon of Night"
+      ]
+    },
+    {
+      "ID": 14756000,
+      "Entries": [
+        "[Stance Break] Player -> Libra, Creature of Night"
+      ]
+    },
+    {
+      "ID": 14756001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14758000,
+      "Entries": [
+        "[Stance Break] Player -> Heolstor the Nightlord"
+      ]
+    },
+    {
+      "ID": 14758001,
+      "Entries": [
+        "[Stance Break] Player -> Heolstor the Nightlord"
+      ]
+    },
+    {
+      "ID": 14760000,
+      "Entries": [
+        "[Stance Break] Player -> Fulghor, Champion of Nightglow"
+      ]
+    },
+    {
+      "ID": 14770000,
+      "Entries": [
+        "[Stance Break] Player -> Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 14771000,
+      "Entries": [
+        "[Stance Break] Player -> Centipede Demon"
+      ]
+    },
+    {
+      "ID": 14780000,
+      "Entries": [
+        "[Stance Break] Player -> Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 14780001,
+      "Entries": [
+        "[Stance Break] Player -> Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 14782000,
+      "Entries": [
+        "[Stance Break] Player -> Smelter Demon"
+      ]
+    },
+    {
+      "ID": 14782001,
+      "Entries": [
+        "[Stance Break] Player -> Smelter Demon"
+      ]
+    },
+    {
+      "ID": 14790000,
+      "Entries": [
+        "[Stance Break] Player -> Nameless King"
+      ]
+    },
+    {
+      "ID": 14790001,
+      "Entries": [
+        "[Stance Break] Player -> Nameless King"
+      ]
+    },
+    {
+      "ID": 14791000,
+      "Entries": [
+        "[Stance Break] Player -> King of the Storm (Mount - Nameless King)"
+      ]
+    },
+    {
+      "ID": 14792000,
+      "Entries": [
+        "[Stance Break] Player -> Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 15446000,
+      "Entries": [
+        "[Plunge] Player -> Flame Chariot"
+      ]
+    },
+    {
+      "ID": 16315000,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315001,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315002,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315003,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315004,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315005,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315006,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16315007,
+      "Entries": [
+        "[Dismount] Player -> Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 16317000,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317001,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317002,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317003,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317004,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317005,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317006,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16317007,
+      "Entries": [
+        "[Dismount] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 16320000,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320001,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320002,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320003,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320004,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320005,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320006,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16320007,
+      "Entries": [
+        "[Dismount] Player -> Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 16330000,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330001,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330002,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330003,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330004,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330005,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330006,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16330007,
+      "Entries": [
+        "[Dismount] Player -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 16395000,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395001,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395002,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395003,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395004,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395005,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395006,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16395007,
+      "Entries": [
+        "[Dismount] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 16400000,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400001,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400002,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400003,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400004,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400005,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400006,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16400007,
+      "Entries": [
+        "[Dismount] Player -> Revenant Follower"
+      ]
+    },
+    {
+      "ID": 16405000,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405001,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405002,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405003,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405004,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405005,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405006,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16405007,
+      "Entries": [
+        "[Dismount] Player -> Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 16435000,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435001,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435002,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435003,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435004,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435005,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435006,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435007,
+      "Entries": [
+        "[Dismount] Player -> Generic Knight"
+      ]
+    },
+    {
+      "ID": 16435100,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435101,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435102,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435103,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435104,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435105,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435106,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435107,
+      "Entries": [
+        "[Dismount] Player -> Godrick Knight"
+      ]
+    },
+    {
+      "ID": 16435200,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435201,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435202,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435203,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435204,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435205,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435206,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435207,
+      "Entries": [
+        "[Dismount] Player -> Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 16435300,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435301,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435302,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435303,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435304,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435305,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435306,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435307,
+      "Entries": [
+        "[Dismount] Player -> Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 16435400,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435401,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435402,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435403,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435404,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435405,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435406,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435407,
+      "Entries": [
+        "[Dismount] Player -> Redmane Knight"
+      ]
+    },
+    {
+      "ID": 16435500,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435501,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435502,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435503,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435504,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435505,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435506,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435507,
+      "Entries": [
+        "[Dismount] Player -> Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 16435600,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435601,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435602,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435603,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435604,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435605,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435606,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435607,
+      "Entries": [
+        "[Dismount] Player -> Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 16435800,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435801,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435802,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435803,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435804,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435805,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435806,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 16435807,
+      "Entries": [
+        "[Dismount] Player -> "
+      ]
+    },
+    {
+      "ID": 17227000,
+      "Entries": [
+        "[Sleep] Player -> Giant Crab"
+      ]
+    },
+    {
+      "ID": 17227200,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17227400,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17227600,
+      "Entries": [
+        "[Sleep] Player -> Giant Death Crab"
+      ]
+    },
+    {
+      "ID": 17300000,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300001,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300002,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300003,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300004,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300005,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300006,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17300007,
+      "Entries": [
+        "[Sleep] Player -> Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302000,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302001,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302002,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302003,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302004,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302005,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302006,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17302007,
+      "Entries": [
+        "[Sleep] Player -> Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 17307000,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307001,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307002,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307003,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307004,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307005,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307006,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17307007,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17317000,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317001,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317002,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317003,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317004,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317005,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317006,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17317007,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 17318000,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318001,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318002,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318003,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318004,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318005,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318006,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318007,
+      "Entries": [
+        "[Sleep] Player -> Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 17318100,
+      "Entries": [
+        "[Sleep] Player -> Red Wolf"
+      ]
+    },
+    {
+      "ID": 17336000,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336001,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336002,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336003,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336004,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336005,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336006,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336007,
+      "Entries": [
+        "[Sleep] Player -> Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336100,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336101,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336102,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336103,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336104,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336105,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336106,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17336107,
+      "Entries": [
+        "[Sleep] Player -> Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 17345000,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345001,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345002,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345003,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345004,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345005,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345006,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345007,
+      "Entries": [
+        "[Sleep] Player -> Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345100,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345101,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345102,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345103,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345104,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345105,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345106,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17345107,
+      "Entries": [
+        "[Sleep] Player -> Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 17347000,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347001,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347002,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347003,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347004,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347005,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347006,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347007,
+      "Entries": [
+        "[Sleep] Player -> Albinauric"
+      ]
+    },
+    {
+      "ID": 17347100,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347101,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347102,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347103,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347104,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347105,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347106,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17347107,
+      "Entries": [
+        "[Sleep] Player -> Large Albinauric"
+      ]
+    },
+    {
+      "ID": 17356000,
+      "Entries": [
+        "[Sleep] Player -> Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 17357000,
+      "Entries": [
+        "[Sleep] Player -> Godskin Noble"
+      ]
+    },
+    {
+      "ID": 17361000,
+      "Entries": [
+        "[Sleep] Player -> Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 17362000,
+      "Entries": [
+        "[Sleep] Player -> Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 17363000,
+      "Entries": [
+        "[Sleep] Player -> Huge Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 17365000,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365001,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365002,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365003,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365004,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365005,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365006,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17365007,
+      "Entries": [
+        "[Sleep] Player -> Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 17366000,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366001,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366002,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366003,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366004,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366005,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366006,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366007,
+      "Entries": [
+        "[Sleep] Player -> Commoner"
+      ]
+    },
+    {
+      "ID": 17366100,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366101,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366102,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366103,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366104,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366105,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366106,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366107,
+      "Entries": [
+        "[Sleep] Player -> Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366200,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366201,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366202,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366203,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366204,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366205,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366206,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366207,
+      "Entries": [
+        "[Sleep] Player -> Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 17366500,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366501,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366502,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366503,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366504,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366505,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366506,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366507,
+      "Entries": [
+        "[Sleep] Player -> Gostoc (Commoner)"
+      ]
+    },
+    {
+      "ID": 17366600,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366601,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366602,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366603,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366604,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366605,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366606,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17366607,
+      "Entries": [
+        "[Sleep] Player -> Goldmask"
+      ]
+    },
+    {
+      "ID": 17367000,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367001,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367002,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367003,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367004,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367005,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367006,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17367007,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17370400,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370401,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370402,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370403,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370404,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370405,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370406,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17370407,
+      "Entries": [
+        "[Sleep] Player -> Battlemage"
+      ]
+    },
+    {
+      "ID": 17375000,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375001,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375002,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375003,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375004,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375005,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375006,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17375007,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17381000,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381001,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381002,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381003,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381004,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381005,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381006,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17381007,
+      "Entries": [
+        "[Sleep] Player -> Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 17395000,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395001,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395002,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395003,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395004,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395005,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395006,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17395007,
+      "Entries": [
+        "[Sleep] Player -> Man-serpent"
+      ]
+    },
+    {
+      "ID": 17397000,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397001,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397002,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397003,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397004,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397005,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397006,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17397007,
+      "Entries": [
+        "[Sleep] Player -> Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 17409000,
+      "Entries": [
+        "[Sleep] Player -> Giant Rat"
+      ]
+    },
+    {
+      "ID": 17410000,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410001,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410002,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410003,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410004,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410005,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410006,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410007,
+      "Entries": [
+        "[Sleep] Player -> Demi-human"
+      ]
+    },
+    {
+      "ID": 17410100,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410101,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410102,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410103,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410104,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410105,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410106,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17410107,
+      "Entries": [
+        "[Sleep] Player -> Large Demi-human"
+      ]
+    },
+    {
+      "ID": 17412000,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412001,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412002,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412003,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412004,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412005,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412006,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17412007,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Chief"
+      ]
+    },
+    {
+      "ID": 17413000,
+      "Entries": [
+        "[Sleep] Player -> Demi-human Queen"
+      ]
+    },
+    {
+      "ID": 17422000,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17428000,
+      "Entries": [
+        "[Sleep] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 17428002,
+      "Entries": [
+        "[Sleep] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 17428003,
+      "Entries": [
+        "[Sleep] Player -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 17430000,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430001,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430002,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430003,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430004,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430005,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430006,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17430007,
+      "Entries": [
+        "[Sleep] Player -> Wandering Noble"
+      ]
+    },
+    {
+      "ID": 17431000,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431001,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431002,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431003,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431004,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431005,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431006,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431007,
+      "Entries": [
+        "[Sleep] Player -> Generic Soldier"
+      ]
+    },
+    {
+      "ID": 17431100,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431101,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431102,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431103,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431104,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431105,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431106,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431107,
+      "Entries": [
+        "[Sleep] Player -> Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 17431200,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431201,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431202,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431203,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431204,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431205,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431206,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431207,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 17431300,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431301,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431302,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431303,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431304,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431305,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431306,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431307,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 17431400,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431401,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431402,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431403,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431404,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431405,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431406,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431407,
+      "Entries": [
+        "[Sleep] Player -> Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 17431500,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431501,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431502,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431503,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431504,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431505,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431506,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431507,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 17431600,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431601,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431602,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431603,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431604,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431605,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431606,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17431607,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 17432100,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432101,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432102,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432103,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432104,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432105,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432106,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17432107,
+      "Entries": [
+        "[Sleep] Player -> Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 17434000,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434001,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434002,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434003,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434004,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434006,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17434007,
+      "Entries": [
+        "[Sleep] Player -> Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 17437000,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437001,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437002,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437003,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437004,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437005,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437006,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437007,
+      "Entries": [
+        "[Sleep] Player -> Generic Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437100,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437101,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437102,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437103,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437104,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437105,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437106,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437107,
+      "Entries": [
+        "[Sleep] Player -> Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437200,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437201,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437202,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437203,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437204,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437205,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437206,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437207,
+      "Entries": [
+        "[Sleep] Player -> Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437300,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437301,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437302,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437303,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437304,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437305,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437306,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437307,
+      "Entries": [
+        "[Sleep] Player -> Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437400,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437401,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437402,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437403,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437404,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437405,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437406,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437407,
+      "Entries": [
+        "[Sleep] Player -> Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437500,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437501,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437502,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437503,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437504,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437505,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437506,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437507,
+      "Entries": [
+        "[Sleep] Player -> Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437600,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437601,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437602,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437603,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437604,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437605,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437606,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437607,
+      "Entries": [
+        "[Sleep] Player -> Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 17437700,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437701,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437702,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437703,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437704,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437705,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437706,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17437707,
+      "Entries": [
+        "[Sleep] Player -> Highwayman"
+      ]
+    },
+    {
+      "ID": 17438000,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438001,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438002,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438003,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438004,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438005,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438006,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438007,
+      "Entries": [
+        "[Sleep] Player -> Starcaller"
+      ]
+    },
+    {
+      "ID": 17438100,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438101,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438102,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438103,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438104,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438105,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438106,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438107,
+      "Entries": [
+        "[Sleep] Player -> Guilty"
+      ]
+    },
+    {
+      "ID": 17438200,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438201,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438202,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438203,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438204,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438205,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438206,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438207,
+      "Entries": [
+        "[Sleep] Player -> Miner"
+      ]
+    },
+    {
+      "ID": 17438300,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438301,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438302,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438303,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438304,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438305,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438306,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438307,
+      "Entries": [
+        "[Sleep] Player -> Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438400,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438401,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438402,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438403,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438404,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438405,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438406,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438407,
+      "Entries": [
+        "[Sleep] Player -> Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 17438500,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438501,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438502,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438503,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438504,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438505,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438506,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438507,
+      "Entries": [
+        "[Sleep] Player -> Mushroom Mage"
+      ]
+    },
+    {
+      "ID": 17438600,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438601,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438602,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438603,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438604,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438605,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438606,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17438607,
+      "Entries": [
+        "[Sleep] Player -> Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 17442000,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17446000,
+      "Entries": [
+        "[Sleep] Player -> Flame Chariot"
+      ]
+    },
+    {
+      "ID": 17448000,
+      "Entries": [
+        "[Sleep] Player -> Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 17448200,
+      "Entries": [
+        "[Sleep] Player -> Rotten Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 17450000,
+      "Entries": [
+        "[Sleep] Player -> Flying Dragon"
+      ]
+    },
+    {
+      "ID": 17450100,
+      "Entries": [
+        "[Sleep] Player -> Rotten Dragon"
+      ]
+    },
+    {
+      "ID": 17450200,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17450300,
+      "Entries": [
+        "[Sleep] Player -> Ice Dragon"
+      ]
+    },
+    {
+      "ID": 17450500,
+      "Entries": [
+        "[Sleep] Player -> Small Flying Dragon"
+      ]
+    },
+    {
+      "ID": 17455000,
+      "Entries": [
+        "[Sleep] Player -> Giant Dog"
+      ]
+    },
+    {
+      "ID": 17456000,
+      "Entries": [
+        "[Sleep] Player -> Giant Crow"
+      ]
+    },
+    {
+      "ID": 17456100,
+      "Entries": [
+        "[Sleep] Player -> Giant Blood Crow"
+      ]
+    },
+    {
+      "ID": 17460000,
+      "Entries": [
+        "[Sleep] Player -> Troll"
+      ]
+    },
+    {
+      "ID": 17460100,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17460200,
+      "Entries": [
+        "[Sleep] Player -> Snowfield Troll"
+      ]
+    },
+    {
+      "ID": 17460300,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17460400,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17463000,
+      "Entries": [
+        "[Sleep] Player -> Runebear"
+      ]
+    },
+    {
+      "ID": 17700000,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700001,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700002,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700003,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700004,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700005,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700006,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700007,
+      "Entries": [
+        "[Sleep] Player -> Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 17700100,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700101,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700102,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700103,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700104,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700105,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700106,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 17700107,
+      "Entries": [
+        "[Sleep] Player -> "
+      ]
+    },
+    {
+      "ID": 20428000,
+      "Entries": [
+        "[NPC Grab] Giant Ant -> Nox Warrior"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[NPC Riposte] Player -> Player"
+      ]
+    },
+    {
+      "ID": 31355000,
+      "Entries": [
+        "[NPC Backstab] Sanguine Noble -> Player"
+      ]
+    },
+    {
+      "ID": 31366000,
+      "Entries": [
+        "[NPC Backstab] Commoner -> Player"
+      ]
+    },
+    {
+      "ID": 33301000,
+      "Entries": [
+        "[NPC Riposte] Banished Knight -> Player"
+      ]
+    },
+    {
+      "ID": 33355000,
+      "Entries": [
+        "[NPC Riposte] Sanguine Noble -> Player"
+      ]
+    },
+    {
+      "ID": 34201000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34201010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34210000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34210010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34212000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34213000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34214000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34219000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34220000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34227000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34227200,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34227400,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34227600,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34250000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34307000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34308000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34310000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34332000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34340000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34340010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34345000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34356000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34360000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34365000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366110,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366120,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366130,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366140,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366200,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366210,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366220,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366230,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366240,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34366400,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34367000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34370000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34375000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34380000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34395000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34395010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34402000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34411000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34413000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34414000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34417000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34420000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34420100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34422000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34424000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34424010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34428000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34432100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34432110,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34442000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34447000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34456000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34456100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34458000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34462000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34462010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34462020,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34463000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34464000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34464010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34468000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34468010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34471000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34472100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34472110,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34472120,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34475000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34498000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34501000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34501100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34581000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34750000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34751000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34751010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34751100,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34751110,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34752000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34770000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34770010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34770020,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34771000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34781000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34790000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34790010,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 34792000,
+      "Entries": [
+        "[NPC Grab] "
+      ]
+    },
+    {
+      "ID": 36210000,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210001,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210002,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210003,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210004,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210005,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210006,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36210007,
+      "Entries": [
+        "[NPC Dismount] Black Knife Assassin -> Player"
+      ]
+    },
+    {
+      "ID": 36330000,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330001,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330002,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330003,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330004,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330005,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330006,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36330007,
+      "Entries": [
+        "[NPC Dismount] Nox Warrior -> Player"
+      ]
+    },
+    {
+      "ID": 36370300,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370301,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370302,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370303,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370304,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370305,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370306,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36370307,
+      "Entries": [
+        "[NPC Dismount] Page -> Player"
+      ]
+    },
+    {
+      "ID": 36405000,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405001,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405002,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405003,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405004,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405005,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405006,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36405007,
+      "Entries": [
+        "[NPC Dismount] Kaiden Sellsword -> Player"
+      ]
+    },
+    {
+      "ID": 36434000,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434001,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434002,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434003,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434004,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434005,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434006,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    },
+    {
+      "ID": 36434007,
+      "Entries": [
+        "[NPC Dismount] Mad Pumpkin Head -> Player"
+      ]
+    }
+  ]
+}

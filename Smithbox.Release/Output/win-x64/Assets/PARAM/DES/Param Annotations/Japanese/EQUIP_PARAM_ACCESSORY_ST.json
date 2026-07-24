@@ -1,0 +1,88 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipModelCategory",
+      "Name": "装備モデル種別",
+      "Description": "装備モデルの種別"
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "装備モデル性別",
+      "Description": "装備モデルの性別"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "装備モデル番号",
+      "Description": "装備モデルの番号"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニューアイコンID"
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "装飾カテゴリ",
+      "Description": "防具のカテゴリ"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "行動ID(=Skill)"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "基本価格",
+      "Description": "基本価格"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "ショップレベル",
+      "Description": "お店で販売できるレベル"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortID",
+      "Description": ""
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "トロフィー",
+      "Description": ""
+    },
+    {
+      "Field": "pad_3",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_4",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

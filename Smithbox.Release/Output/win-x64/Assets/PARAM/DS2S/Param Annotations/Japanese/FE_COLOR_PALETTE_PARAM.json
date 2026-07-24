@@ -1,0 +1,23 @@
+{
+  "Param": "FE_COLOR_PALETTE_PARAM",
+  "Type": "FE_COLOR_PALETTE_PARAM",
+  "Name": "FE_COLOR_PALETTE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "red",
+      "Name": "赤",
+      "Description": ""
+    },
+    {
+      "Field": "green",
+      "Name": "緑",
+      "Description": ""
+    },
+    {
+      "Field": "blue",
+      "Name": "青",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "itemlot",
+  "Instances": [
+    {
+      "DisplayName": "Itemlot: Character",
+      "Param": "ItemLotParam2_Chr"
+    },
+    {
+      "DisplayName": "Itemlot: Other",
+      "Param": "ItemLotParam2_Other"
+    },
+    {
+      "DisplayName": "Itemlot: Server Event",
+      "Param": "ItemLotParam2_SvrEvent"
+    }
+  ]
+}

@@ -1,0 +1,1403 @@
+{
+  "Name": "LogicEzStateSharedParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Input test -- 入力テスト"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Platoon Action Update Distance (m) -- 小隊行動更新距離（m）"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Platoon action update time (seconds) -- 小隊行動更新時間（秒）"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Platoon Action Limit Point Attack Suppression -- 小隊行動制限ポイント\u3000攻撃抑制"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Platoon Action Restriction Points Watching -- 小隊行動制限ポイント\u3000観戦"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Platoon Action Restriction Point Withdrawal -- 小隊行動制限ポイント\u3000撤退"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Support → Suppressed Horse Level Change Guarantee Time (seconds) -- 活→抑 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Active ← Suppressed Nojima Level Variation Guarantee Time (seconds) -- 活←抑 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Control → Kannojima Level Change Guarantee Time (seconds) -- 抑→観 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Control ← Nojima Level Change Guarantee Time (seconds) -- 抑←観 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Activity ← Nojima Level Change Guarantee Time (seconds) -- 活←観 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Kan→ Removal Nojima Level Change Guarantee Time (seconds) -- 観→撤 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "Kan← Removal Nojima Level Change Guarantee Time (seconds) -- 観←撤 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        "Active ← Removal Nojima Level Change Guarantee Time (seconds) -- 活←撤 野次馬レベル変動保証時間（秒）"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Time (seconds) not to become a field horse after damage -- ダメージ後野次馬にならない時間（秒）"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Maximum distance calculation value variation due to HP decrease -- HP減少による距離計算値変動最大"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Maximum distance calculation value variation due to being away from Generator -- Generatorから離れた事による距離計算値変動最大"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Maximum distance calculation value variation due to being out of front of the target -- ターゲットの正面から外れる事による距離計算値変動最大"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "LV1 Thought Weight Score: Super Oversized -- LV1 思考重み点数：超超特大"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "LV1 Thought Weight: Super Oversized -- LV1 思考重み点数：超特大"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "LV1 Thought Weight: Oversized -- LV1 思考重み点数：特大"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "LV1 Thought Weight: Large -- LV1 思考重み点数：大"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "LV1 Thought Weight: Medium -- LV1 思考重み点数：中"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "LV1 Thought Weight: Small -- LV1 思考重み点数：小"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "LV1 Thought Weight: Ignore -- LV1 思考重み点数：無視"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "LV2 Thought Weight Score: Super Oversized -- LV2 思考重み点数：超超特大"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "LV2 Thought Weight: Super Oversized -- LV2 思考重み点数：超特大"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "LV2 Thought Weight: Oversized -- LV2 思考重み点数：特大"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "LV2 Thought Weight: Large -- LV2 思考重み点数：大"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "LV2 Thought Weight: Medium -- LV2 思考重み点数：中"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "LV2 Thought Weight: Small -- LV2 思考重み点数：小"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "LV2 Thought Weight: Ignore -- LV2 思考重み点数：無視"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "LV3 Thought Weight Score: Super Oversized -- LV3 思考重み点数：超超特大"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "LV3 Thought Weight: Super Oversized -- LV3 思考重み点数：超特大"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "LV3 Thought Weight: Oversized -- LV3 思考重み点数：特大"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "LV3 Thought Weight: Large -- LV3 思考重み点数：大"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "LV3 Thought Weight: Medium -- LV3 思考重み点数：中"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "LV3 Thought Weight: Small -- LV3 思考重み点数：小"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "LV3 Thought Weight: Ignore -- LV3 思考重み点数：無視"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "LV4 Thought Weight Score: Super Oversized -- LV4 思考重み点数：超超特大"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "LV4 Thought Weight: Super Oversized -- LV4 思考重み点数：超特大"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "LV4 Thought Weight: Oversized -- LV4 思考重み点数：特大"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "LV4 Thought Weight: Large -- LV4 思考重み点数：大"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "LV4 Thought Weight: Medium -- LV4 思考重み点数：中"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "LV4 Thought Weight: Small -- LV4 思考重み点数：小"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "LV4 Thought Weight: Ignore -- LV4 思考重み点数：無視"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "LV5 Thought Weight Score: Super Oversized -- LV5 思考重み点数：超超特大"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "LV5 Thought Weight: Super Oversized -- LV5 思考重み点数：超特大"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "LV5 Thought Weight: Oversized -- LV5 思考重み点数：特大"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "LV5 Thought Weight: Large -- LV5 思考重み点数：大"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "LV5 Thought Weight: Medium -- LV5 思考重み点数：中"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "LV5 Thought Weight: Small -- LV5 思考重み点数：小"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "LV5 Thought Weight: Ignore -- LV5 思考重み点数：無視"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Bullet speed: Stop (0m/s)\u00A0 -- 弾速度：停止\u3000（0m/s)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Bullet speed: Extra slow (5m/s)\u00A0 -- 弾速度：特遅\u3000（5m/s)"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Bullet speed: Slow (10m/s)\u00A0 -- 弾速度：遅\u3000\u3000（10m/s)"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Bullet speed: Medium (25m/s)\u00A0 -- 弾速度：中\u3000\u3000（25m/s)"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Bullet speed: Speed (35m/s)\u00A0 -- 弾速度：速\u3000\u3000（35m/s)"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Bullet speed: Speed (45m/s)\u00A0 -- 弾速度：特速\u3000（45m/s)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Item Chase Table Extremely Low LV1 -- アイテム追撃テーブル\u3000極低 LV1"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Item Chase Table Extremely Low LV2 -- アイテム追撃テーブル\u3000極低 LV2"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Item Chase Table Extremely Low LV3 -- アイテム追撃テーブル\u3000極低 LV3"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Item Chase Table Extremely Low LV4 -- アイテム追撃テーブル\u3000極低 LV4"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Item Chase Table Extremely Low LV5 -- アイテム追撃テーブル\u3000極低 LV5"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Item Chase Table Low LV1 -- アイテム追撃テーブル\u3000低 LV1"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Item Chase Table Low LV2 -- アイテム追撃テーブル\u3000低 LV2"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Item Chase Table Low LV3 -- アイテム追撃テーブル\u3000低 LV3"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Item Chase Table Low LV4 -- アイテム追撃テーブル\u3000低 LV4"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Item Chase Table Low LV5 -- アイテム追撃テーブル\u3000低 LV5"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Item Chase Table In LV1 -- アイテム追撃テーブル\u3000中 LV1"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Item Chase Table In LV2 -- アイテム追撃テーブル\u3000中 LV2"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Item Chase Table In LV3 -- アイテム追撃テーブル\u3000中 LV3"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Item Chase Table In LV4 -- アイテム追撃テーブル\u3000中 LV4"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "Item Chase Table Lv5 -- アイテム追撃テーブル\u3000中 LV5"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Item Chase Table High LV1 -- アイテム追撃テーブル\u3000高 LV1"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Item Chase Table High LV2 -- アイテム追撃テーブル\u3000高 LV2"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Item Chase Table High LV3 -- アイテム追撃テーブル\u3000高 LV3"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "Item Chase Table High LV4 -- アイテム追撃テーブル\u3000高 LV4"
+      ]
+    },
+    {
+      "ID": 4034,
+      "Entries": [
+        "Item Chase Table High LV5 -- アイテム追撃テーブル\u3000高 LV5"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Item Chase Table Extreme Lylv1 -- アイテム追撃テーブル\u3000極高 LV1"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "Item Chase Table Extreme Lylv2 -- アイテム追撃テーブル\u3000極高 LV2"
+      ]
+    },
+    {
+      "ID": 4042,
+      "Entries": [
+        "Item Chase Table Extreme Lylv3 -- アイテム追撃テーブル\u3000極高 LV3"
+      ]
+    },
+    {
+      "ID": 4043,
+      "Entries": [
+        "Item Chase Table Extreme Lylv4 -- アイテム追撃テーブル\u3000極高 LV4"
+      ]
+    },
+    {
+      "ID": 4044,
+      "Entries": [
+        "Item Chase Table Extreme Lylv5 -- アイテム追撃テーブル\u3000極高 LV5"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Item Chase Table Other 1 LV1 -- アイテム追撃テーブル\u3000その他1 LV1"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "Item Chase Table Other 1 LV2 -- アイテム追撃テーブル\u3000その他1 LV2"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "Item Chase Table Other 1 LV3 -- アイテム追撃テーブル\u3000その他1 LV3"
+      ]
+    },
+    {
+      "ID": 4053,
+      "Entries": [
+        "Item Chase Table Other 1 LV4 -- アイテム追撃テーブル\u3000その他1 LV4"
+      ]
+    },
+    {
+      "ID": 4054,
+      "Entries": [
+        "Item Chase Table Other 1 LV5 -- アイテム追撃テーブル\u3000その他1 LV5"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Item Chase Table Other 2 LV1 -- アイテム追撃テーブル\u3000その他2 LV1"
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        "Item Chase Table Other 2 LV2 -- アイテム追撃テーブル\u3000その他2 LV2"
+      ]
+    },
+    {
+      "ID": 4062,
+      "Entries": [
+        "Item Chase Table Other 2 LV3 -- アイテム追撃テーブル\u3000その他2 LV3"
+      ]
+    },
+    {
+      "ID": 4063,
+      "Entries": [
+        "Item Chase Table Other 2 LV4 -- アイテム追撃テーブル\u3000その他2 LV4"
+      ]
+    },
+    {
+      "ID": 4064,
+      "Entries": [
+        "Item Chase Table Other 2 LV5 -- アイテム追撃テーブル\u3000その他2 LV5"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Item Chase Table Other 3 LV1 -- アイテム追撃テーブル\u3000その他3 LV1"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "Item Chase Table Other 3 LV2 -- アイテム追撃テーブル\u3000その他3 LV2"
+      ]
+    },
+    {
+      "ID": 4072,
+      "Entries": [
+        "Item Chase Table Other 3 LV3 -- アイテム追撃テーブル\u3000その他3 LV3"
+      ]
+    },
+    {
+      "ID": 4073,
+      "Entries": [
+        "Item Chase Table Other 3 LV4 -- アイテム追撃テーブル\u3000その他3 LV4"
+      ]
+    },
+    {
+      "ID": 4074,
+      "Entries": [
+        "Item Chase Table Other 3 LV5 -- アイテム追撃テーブル\u3000その他3 LV5"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Guard collapse table very low LV1 -- ガード崩れテーブル\u3000極低 LV1"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Guard collapse table very low LV2 -- ガード崩れテーブル\u3000極低 LV2"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Guard collapse table very low LV3 -- ガード崩れテーブル\u3000極低 LV3"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Guard collapse table very low LV4 -- ガード崩れテーブル\u3000極低 LV4"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Guard collapse table very low LV5 -- ガード崩れテーブル\u3000極低 LV5"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Guard collapse table low LV1 -- ガード崩れテーブル\u3000低 LV1"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Guard collapse table Low LV2 -- ガード崩れテーブル\u3000低 LV2"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Guard collapse table low LV3 -- ガード崩れテーブル\u3000低 LV3"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "Guard collapse table Low LV4 -- ガード崩れテーブル\u3000低 LV4"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Guard collapse table Low LV5 -- ガード崩れテーブル\u3000低 LV5"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Guard collapse table in LV1 -- ガード崩れテーブル\u3000中 LV1"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Guard collapse table in LV2 -- ガード崩れテーブル\u3000中 LV2"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Guard collapse table in LV3 -- ガード崩れテーブル\u3000中 LV3"
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "Guard collapse table in LV4 -- ガード崩れテーブル\u3000中 LV4"
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "Guard collapse table in LV5 -- ガード崩れテーブル\u3000中 LV5"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Guard collapse table high LV1 -- ガード崩れテーブル\u3000高 LV1"
+      ]
+    },
+    {
+      "ID": 5031,
+      "Entries": [
+        "Guard collapse table High LV2 -- ガード崩れテーブル\u3000高 LV2"
+      ]
+    },
+    {
+      "ID": 5032,
+      "Entries": [
+        "Guard collapse table high LV3 -- ガード崩れテーブル\u3000高 LV3"
+      ]
+    },
+    {
+      "ID": 5033,
+      "Entries": [
+        "Guard collapse table High LV4 -- ガード崩れテーブル\u3000高 LV4"
+      ]
+    },
+    {
+      "ID": 5034,
+      "Entries": [
+        "Guard collapse table High LV5 -- ガード崩れテーブル\u3000高 LV5"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Guard collapse table extremely high LV1 -- ガード崩れテーブル\u3000極高 LV1"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "Guard collapse table extremely high LV2 -- ガード崩れテーブル\u3000極高 LV2"
+      ]
+    },
+    {
+      "ID": 5042,
+      "Entries": [
+        "Guard collapse table extremely high LV3 -- ガード崩れテーブル\u3000極高 LV3"
+      ]
+    },
+    {
+      "ID": 5043,
+      "Entries": [
+        "Guard collapse table extremely high LV4 -- ガード崩れテーブル\u3000極高 LV4"
+      ]
+    },
+    {
+      "ID": 5044,
+      "Entries": [
+        "Guard collapse table extremely high LV5 -- ガード崩れテーブル\u3000極高 LV5"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Guard collapse table Other 1 LV1 -- ガード崩れテーブル\u3000その他1 LV1"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "Guard collapse table Other 1 LV2 -- ガード崩れテーブル\u3000その他1 LV2"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "Guard collapse table Other 1 LV3 -- ガード崩れテーブル\u3000その他1 LV3"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "Guard collapse table Other 1 LV4 -- ガード崩れテーブル\u3000その他1 LV4"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "Guard collapse table Other 1 LV5 -- ガード崩れテーブル\u3000その他1 LV5"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Guard collapse table Other 2 LV1 -- ガード崩れテーブル\u3000その他2 LV1"
+      ]
+    },
+    {
+      "ID": 5061,
+      "Entries": [
+        "Guard collapse table Other 2 LV2 -- ガード崩れテーブル\u3000その他2 LV2"
+      ]
+    },
+    {
+      "ID": 5062,
+      "Entries": [
+        "Guard collapse table Other 2 LV3 -- ガード崩れテーブル\u3000その他2 LV3"
+      ]
+    },
+    {
+      "ID": 5063,
+      "Entries": [
+        "Guard collapse table Other 2 LV4 -- ガード崩れテーブル\u3000その他2 LV4"
+      ]
+    },
+    {
+      "ID": 5064,
+      "Entries": [
+        "Guard collapse table Other 2 LV5 -- ガード崩れテーブル\u3000その他2 LV5"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "Guard collapse table Other 3 LV1 -- ガード崩れテーブル\u3000その他3 LV1"
+      ]
+    },
+    {
+      "ID": 5071,
+      "Entries": [
+        "Guard collapse table Other 3 LV2 -- ガード崩れテーブル\u3000その他3 LV2"
+      ]
+    },
+    {
+      "ID": 5072,
+      "Entries": [
+        "Guard collapse table Other 3 LV3 -- ガード崩れテーブル\u3000その他3 LV3"
+      ]
+    },
+    {
+      "ID": 5073,
+      "Entries": [
+        "Guard collapse table Other 3 LV4 -- ガード崩れテーブル\u3000その他3 LV4"
+      ]
+    },
+    {
+      "ID": 5074,
+      "Entries": [
+        "Guard collapse table Other 3 LV5 -- ガード崩れテーブル\u3000その他3 LV5"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Behind The Attack Table Extremely Low LV1 -- 背後攻撃テーブル\u3000極低 LV1"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Behind The Attack Table Extremely Low LV2 -- 背後攻撃テーブル\u3000極低 LV2"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Behind The Attack Table Extremely Low LV3 -- 背後攻撃テーブル\u3000極低 LV3"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Behind The Attack Table Extremely Low LV4 -- 背後攻撃テーブル\u3000極低 LV4"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Behind The Attack Table Extremely Low LV5 -- 背後攻撃テーブル\u3000極低 LV5"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Behind The Attack Table Low LV1 -- 背後攻撃テーブル\u3000低 LV1"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Behind-The-Scenes Attack Table Low LV2 -- 背後攻撃テーブル\u3000低 LV2"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Behind-the-scenes attack table Low LV3 -- 背後攻撃テーブル\u3000低 LV3"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Behind The Attack Table Low LV4 -- 背後攻撃テーブル\u3000低 LV4"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Behind The Attack Table Low LV5 -- 背後攻撃テーブル\u3000低 LV5"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Lv1 in the back attack table -- 背後攻撃テーブル\u3000中 LV1"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Lv2 in the back attack table -- 背後攻撃テーブル\u3000中 LV2"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Lv3 in the back attack table -- 背後攻撃テーブル\u3000中 LV3"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Lv4 in the back attack table -- 背後攻撃テーブル\u3000中 LV4"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "Lv5 in the back attack table -- 背後攻撃テーブル\u3000中 LV5"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Behind The Attack Table High LV1 -- 背後攻撃テーブル\u3000高 LV1"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Behind The Attack Table High LV2 -- 背後攻撃テーブル\u3000高 LV2"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Behind The Attack Table High LV3 -- 背後攻撃テーブル\u3000高 LV3"
+      ]
+    },
+    {
+      "ID": 6033,
+      "Entries": [
+        "Behind The Attack Table High LV4 -- 背後攻撃テーブル\u3000高 LV4"
+      ]
+    },
+    {
+      "ID": 6034,
+      "Entries": [
+        "Behind The Attack Table High LV5 -- 背後攻撃テーブル\u3000高 LV5"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Behind The Attack Table Extremely High LV1 -- 背後攻撃テーブル\u3000極高 LV1"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Behind The Attack Table Extremely High LV2 -- 背後攻撃テーブル\u3000極高 LV2"
+      ]
+    },
+    {
+      "ID": 6042,
+      "Entries": [
+        "Behind The Attack Table Extremely High LV3 -- 背後攻撃テーブル\u3000極高 LV3"
+      ]
+    },
+    {
+      "ID": 6043,
+      "Entries": [
+        "Behind The Attack Table Extremely High LV4 -- 背後攻撃テーブル\u3000極高 LV4"
+      ]
+    },
+    {
+      "ID": 6044,
+      "Entries": [
+        "Behind The Attack Table Extremely High LV5 -- 背後攻撃テーブル\u3000極高 LV5"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Behind The Attack Table Other 1 LV1 -- 背後攻撃テーブル\u3000その他1 LV1"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "Behind-the-scenes attack table Other 1 LV2 -- 背後攻撃テーブル\u3000その他1 LV2"
+      ]
+    },
+    {
+      "ID": 6052,
+      "Entries": [
+        "Behind-the-scenes attack table Other 1 LV3 -- 背後攻撃テーブル\u3000その他1 LV3"
+      ]
+    },
+    {
+      "ID": 6053,
+      "Entries": [
+        "Behind The Attack Table Other 1 LV4 -- 背後攻撃テーブル\u3000その他1 LV4"
+      ]
+    },
+    {
+      "ID": 6054,
+      "Entries": [
+        "Behind The Attack Table Other 1 LV5 -- 背後攻撃テーブル\u3000その他1 LV5"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Behind The Attack Table Other 2 LV1 -- 背後攻撃テーブル\u3000その他2 LV1"
+      ]
+    },
+    {
+      "ID": 6061,
+      "Entries": [
+        "Behind The Attack Table Other 2 LV2 -- 背後攻撃テーブル\u3000その他2 LV2"
+      ]
+    },
+    {
+      "ID": 6062,
+      "Entries": [
+        "Behind The Attack Table Other 2 LV3 -- 背後攻撃テーブル\u3000その他2 LV3"
+      ]
+    },
+    {
+      "ID": 6063,
+      "Entries": [
+        "Behind The Attack Table Other 2 LV4 -- 背後攻撃テーブル\u3000その他2 LV4"
+      ]
+    },
+    {
+      "ID": 6064,
+      "Entries": [
+        "Behind The Attack Table Other 2 LV5 -- 背後攻撃テーブル\u3000その他2 LV5"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Behind-the-scenes attack table Other 3 LV1 -- 背後攻撃テーブル\u3000その他3 LV1"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "Behind-the-scenes attack table Other 3 LV2 -- 背後攻撃テーブル\u3000その他3 LV2"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "Behind-the-scenes attack table Other 3 LV3 -- 背後攻撃テーブル\u3000その他3 LV3"
+      ]
+    },
+    {
+      "ID": 6073,
+      "Entries": [
+        "Behind-the-scenes attack table Other 3 LV4 -- 背後攻撃テーブル\u3000その他3 LV4"
+      ]
+    },
+    {
+      "ID": 6074,
+      "Entries": [
+        "Behind-the-scenes attack table Other 3 LV5 -- 背後攻撃テーブル\u3000その他3 LV5"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Recovery Table Extremely Low LV1 -- 回復テーブル\u3000極低 LV1"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Recovery Table Extremely Low LV2 -- 回復テーブル\u3000極低 LV2"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Recovery Table Extremely Low LV3 -- 回復テーブル\u3000極低 LV3"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Recovery Table Extremely Low LV4 -- 回復テーブル\u3000極低 LV4"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Recovery Table Extremely Low LV5 -- 回復テーブル\u3000極低 LV5"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Recovery Table Low LV1 -- 回復テーブル\u3000低 LV1"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "Recovery Table Low LV2 -- 回復テーブル\u3000低 LV2"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "Recovery Table Low LV3 -- 回復テーブル\u3000低 LV3"
+      ]
+    },
+    {
+      "ID": 7013,
+      "Entries": [
+        "Recovery Table Low LV4 -- 回復テーブル\u3000低 LV4"
+      ]
+    },
+    {
+      "ID": 7014,
+      "Entries": [
+        "Recovery Table Low LV5 -- 回復テーブル\u3000低 LV5"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Recovery table in LV1 -- 回復テーブル\u3000中 LV1"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "Recovery table in LV2 -- 回復テーブル\u3000中 LV2"
+      ]
+    },
+    {
+      "ID": 7022,
+      "Entries": [
+        "Recovery table in LV3 -- 回復テーブル\u3000中 LV3"
+      ]
+    },
+    {
+      "ID": 7023,
+      "Entries": [
+        "Recovery table in LV4 -- 回復テーブル\u3000中 LV4"
+      ]
+    },
+    {
+      "ID": 7024,
+      "Entries": [
+        "Recovery table in LV5 -- 回復テーブル\u3000中 LV5"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Recovery Table High LV1 -- 回復テーブル\u3000高 LV1"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "Recovery Table High LV2 -- 回復テーブル\u3000高 LV2"
+      ]
+    },
+    {
+      "ID": 7032,
+      "Entries": [
+        "Recovery Table High LV3 -- 回復テーブル\u3000高 LV3"
+      ]
+    },
+    {
+      "ID": 7033,
+      "Entries": [
+        "Recovery Table High LV4 -- 回復テーブル\u3000高 LV4"
+      ]
+    },
+    {
+      "ID": 7034,
+      "Entries": [
+        "Recovery Table High LV5 -- 回復テーブル\u3000高 LV5"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "Recovery Table Extremely High LV1 -- 回復テーブル\u3000極高 LV1"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "Recovery Table ExtremeLy High LV2 -- 回復テーブル\u3000極高 LV2"
+      ]
+    },
+    {
+      "ID": 7042,
+      "Entries": [
+        "Recovery Table ExtremeLy High LV3 -- 回復テーブル\u3000極高 LV3"
+      ]
+    },
+    {
+      "ID": 7043,
+      "Entries": [
+        "Recovery Table ExtremeLy High LV4 -- 回復テーブル\u3000極高 LV4"
+      ]
+    },
+    {
+      "ID": 7044,
+      "Entries": [
+        "Recovery Table ExtremeLy High LV5 -- 回復テーブル\u3000極高 LV5"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Recovery Table Other 1 LV1 -- 回復テーブル\u3000その他1 LV1"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "Recovery Table Other 1 LV2 -- 回復テーブル\u3000その他1 LV2"
+      ]
+    },
+    {
+      "ID": 7052,
+      "Entries": [
+        "Recovery Table Other 1 LV3 -- 回復テーブル\u3000その他1 LV3"
+      ]
+    },
+    {
+      "ID": 7053,
+      "Entries": [
+        "Recovery Table Other 1 LV4 -- 回復テーブル\u3000その他1 LV4"
+      ]
+    },
+    {
+      "ID": 7054,
+      "Entries": [
+        "Recovery Table Other 1 LV5 -- 回復テーブル\u3000その他1 LV5"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "Recovery Table Other 2 LV1 -- 回復テーブル\u3000その他2 LV1"
+      ]
+    },
+    {
+      "ID": 7061,
+      "Entries": [
+        "Recovery Table Other 2 LV2 -- 回復テーブル\u3000その他2 LV2"
+      ]
+    },
+    {
+      "ID": 7062,
+      "Entries": [
+        "Recovery Table Other 2 LV3 -- 回復テーブル\u3000その他2 LV3"
+      ]
+    },
+    {
+      "ID": 7063,
+      "Entries": [
+        "Recovery Table Other 2 LV4 -- 回復テーブル\u3000その他2 LV4"
+      ]
+    },
+    {
+      "ID": 7064,
+      "Entries": [
+        "Recovery Table Other 2 LV5 -- 回復テーブル\u3000その他2 LV5"
+      ]
+    },
+    {
+      "ID": 7070,
+      "Entries": [
+        "Recovery Table Other 3 LV1 -- 回復テーブル\u3000その他3 LV1"
+      ]
+    },
+    {
+      "ID": 7071,
+      "Entries": [
+        "Recovery Table Other 3 LV2 -- 回復テーブル\u3000その他3 LV2"
+      ]
+    },
+    {
+      "ID": 7072,
+      "Entries": [
+        "Recovery Table Other 3 LV3 -- 回復テーブル\u3000その他3 LV3"
+      ]
+    },
+    {
+      "ID": 7073,
+      "Entries": [
+        "Recovery Table Other 3 LV4 -- 回復テーブル\u3000その他3 LV4"
+      ]
+    },
+    {
+      "ID": 7074,
+      "Entries": [
+        "Recovery Table Other 3 LV5 -- 回復テーブル\u3000その他3 LV5"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Is it on the screen: Left magnification -- スクリーン内に存在するか：左倍率"
+      ]
+    },
+    {
+      "ID": 10501,
+      "Entries": [
+        "Is it present in the screen: Right magnification -- スクリーン内に存在するか：右倍率"
+      ]
+    },
+    {
+      "ID": 10502,
+      "Entries": [
+        "Is it present in the screen: up magnification -- スクリーン内に存在するか：上倍率"
+      ]
+    },
+    {
+      "ID": 10503,
+      "Entries": [
+        "Does it exist on the screen: Lower magnification -- スクリーン内に存在するか：下倍率"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "LV1 Action Loop Time Circumferential Magnification -- LV1 行動ループ時間周回増加倍率"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "LV2 Action Loop Time Circumferential Magnification -- LV2 行動ループ時間周回増加倍率"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "LV3 Action Loop Time Circumferential Magnification -- LV3 行動ループ時間周回増加倍率"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "LV4 Action Loop Time Circumferential Magnification -- LV4 行動ループ時間周回増加倍率"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "LV5 Action Loop Time Circumferential Magnification -- LV5 行動ループ時間周回増加倍率"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "LV1 Action Loop Time Circumferential Reduction Magnification -- LV1 行動ループ時間周回減少倍率"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "LV2 Action Loop Time Circumferential Reduction Magnification -- LV2 行動ループ時間周回減少倍率"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        "LV3 Action Loop Time Circumferential Reduction Magnification -- LV3 行動ループ時間周回減少倍率"
+      ]
+    },
+    {
+      "ID": 20103,
+      "Entries": [
+        "LV4 Action Loop Time Circumferential Reduction Magnification -- LV4 行動ループ時間周回減少倍率"
+      ]
+    },
+    {
+      "ID": 20104,
+      "Entries": [
+        "LV5 Action Loop Time Circumferential Reduction Magnification -- LV5 行動ループ時間周回減少倍率"
+      ]
+    }
+  ]
+}

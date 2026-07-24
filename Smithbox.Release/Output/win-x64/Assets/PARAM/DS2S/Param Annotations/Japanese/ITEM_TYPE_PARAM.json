@@ -1,0 +1,63 @@
+{
+  "Param": "ITEM_TYPE_PARAM",
+  "Type": "ITEM_TYPE_PARAM",
+  "Name": "ITEM_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "itemIdWhenFailure",
+      "Name": "使用失敗時アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemUseMaxSpeed",
+      "Name": "アイテム使用 最大速度倍率(倍)",
+      "Description": ""
+    },
+    {
+      "Field": "itemUseMaxSpeedChangeSec",
+      "Name": "アイテム使用 最大速度 変更時間(Sec)",
+      "Description": ""
+    },
+    {
+      "Field": "itemUseMaxSpeedReturnSec",
+      "Name": "アイテム使用 最大速度 復帰時間(Sec)",
+      "Description": ""
+    },
+    {
+      "Field": "itemMotionType",
+      "Name": "アイテム使用モーション",
+      "Description": ""
+    },
+    {
+      "Field": "ladderItemMotionType",
+      "Name": "梯子アイテム使用モーション",
+      "Description": ""
+    },
+    {
+      "Field": "itemCateType",
+      "Name": "アイテムカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "itemMotionArmType",
+      "Name": "アイテム使用腕種類",
+      "Description": ""
+    },
+    {
+      "Field": "itemModelType",
+      "Name": "放置モデル",
+      "Description": ""
+    },
+    {
+      "Field": "itemSpecialReset",
+      "Name": "アイテム特殊リセット",
+      "Description": ""
+    },
+    {
+      "Field": "canMoveRepository",
+      "Name": "倉庫移動許可",
+      "Description": ""
+    }
+  ]
+}

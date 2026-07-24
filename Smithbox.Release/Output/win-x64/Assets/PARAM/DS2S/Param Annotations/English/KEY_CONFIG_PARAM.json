@@ -1,0 +1,383 @@
+{
+  "Param": "KEY_CONFIG_PARAM",
+  "Type": "KEY_CONFIG_PARAM",
+  "Name": "KEY_CONFIG_PARAM",
+  "Description": "Defines the game's input binding configuration, mapping player actions (movement, camera control, combat, menu navigation, and system actions) to control inputs, including primary and secondary (additional) bindings.",
+  "Fields": [
+    {
+      "Field": "moveAdvance",
+      "Name": "Move Forward",
+      "Description": "Primary input for moving the player character forward."
+    },
+    {
+      "Field": "moveAdvanceAdd",
+      "Name": "Move Forward (Additional Input)",
+      "Description": "Secondary input binding for moving the player character forward."
+    },
+    {
+      "Field": "moveRecession",
+      "Name": "Move Backward",
+      "Description": "Primary input for moving the player character backward."
+    },
+    {
+      "Field": "moveRecessionAdd",
+      "Name": "Move Backward (Additional Input)",
+      "Description": "Secondary input binding for moving the player character backward."
+    },
+    {
+      "Field": "moveRight",
+      "Name": "Move Right",
+      "Description": "Primary input for moving the player character to the right."
+    },
+    {
+      "Field": "moveRightAdd",
+      "Name": "Move Right (Additional Input)",
+      "Description": "Secondary input binding for moving the player character to the right."
+    },
+    {
+      "Field": "moveLeft",
+      "Name": "Move Left",
+      "Description": "Primary input for moving the player character to the left."
+    },
+    {
+      "Field": "moveLeftAdd",
+      "Name": "Move Left (Additional Input)",
+      "Description": "Secondary input binding for moving the player character to the left."
+    },
+    {
+      "Field": "parallelMoveAdvance",
+      "Name": "Walk (Strafe/Parallel Move)",
+      "Description": "Input for switching to or performing controlled parallel movement mode."
+    },
+    {
+      "Field": "dashMoveAdvance",
+      "Name": "Dash / Sprint",
+      "Description": "Input for initiating a fast movement dash or sprint action."
+    },
+    {
+      "Field": "cameraUp",
+      "Name": "Camera Move Up",
+      "Description": "Primary input for moving the camera upward."
+    },
+    {
+      "Field": "cameraUpAdd",
+      "Name": "Camera Move Up (Additional Input)",
+      "Description": "Secondary input for moving the camera upward."
+    },
+    {
+      "Field": "cameraDown",
+      "Name": "Camera Move Down",
+      "Description": "Primary input for moving the camera downward."
+    },
+    {
+      "Field": "cameraDownAdd",
+      "Name": "Camera Move Down (Additional Input)",
+      "Description": "Secondary input for moving the camera downward."
+    },
+    {
+      "Field": "cameraRight",
+      "Name": "Camera Move Right",
+      "Description": "Primary input for rotating/moving the camera to the right."
+    },
+    {
+      "Field": "cameraRightAdd",
+      "Name": "Camera Move Right (Additional Input)",
+      "Description": "Secondary input for camera right movement."
+    },
+    {
+      "Field": "cameraLeft",
+      "Name": "Camera Move Left",
+      "Description": "Primary input for rotating/moving the camera to the left."
+    },
+    {
+      "Field": "cameraLeftAdd",
+      "Name": "Camera Move Left (Additional Input)",
+      "Description": "Secondary input for camera left movement."
+    },
+    {
+      "Field": "lockonAndReset",
+      "Name": "Lock-On / Reset Camera",
+      "Description": "Toggles target lock-on or resets camera depending on context."
+    },
+    {
+      "Field": "lockonAndResetAdd",
+      "Name": "Lock-On / Reset Camera (Additional Input)",
+      "Description": "Secondary binding for lock-on or camera reset."
+    },
+    {
+      "Field": "changeSelectMagic",
+      "Name": "Switch Magic",
+      "Description": "Cycles or changes selected magic/spells."
+    },
+    {
+      "Field": "changeSelectMagicAdd",
+      "Name": "Switch Magic (Additional Input)",
+      "Description": "Secondary binding for switching magic."
+    },
+    {
+      "Field": "changeSelectItem",
+      "Name": "Switch Item",
+      "Description": "Cycles or changes selected consumable item."
+    },
+    {
+      "Field": "changeSelectItemAdd",
+      "Name": "Switch Item (Additional Input)",
+      "Description": "Secondary binding for switching items."
+    },
+    {
+      "Field": "changeSelectRWeapon",
+      "Name": "Switch Right Weapon",
+      "Description": "Changes the equipped right-hand weapon."
+    },
+    {
+      "Field": "changeSelectRWeaponAdd",
+      "Name": "Switch Right Weapon (Additional Input)",
+      "Description": "Secondary binding for right-hand weapon switching."
+    },
+    {
+      "Field": "changeSelectLWeapon",
+      "Name": "Switch Left Weapon",
+      "Description": "Changes the equipped left-hand weapon."
+    },
+    {
+      "Field": "changeSelectLWeaponAdd",
+      "Name": "Switch Left Weapon (Additional Input)",
+      "Description": "Secondary binding for left-hand weapon switching."
+    },
+    {
+      "Field": "weakAttackRight",
+      "Name": "Right Hand Weak Attack",
+      "Description": "Performs a light attack using the right-hand weapon."
+    },
+    {
+      "Field": "weakAttackRightAdd",
+      "Name": "Right Hand Weak Attack (Additional Input)",
+      "Description": "Secondary binding for right-hand light attack."
+    },
+    {
+      "Field": "strongAttackRight",
+      "Name": "Right Hand Strong Attack",
+      "Description": "Performs a heavy attack using the right-hand weapon."
+    },
+    {
+      "Field": "strongAttackRightAdd",
+      "Name": "Right Hand Strong Attack (Additional Input)",
+      "Description": "Secondary binding for right-hand heavy attack."
+    },
+    {
+      "Field": "weakAttackLeft",
+      "Name": "Left Hand Weak Attack",
+      "Description": "Performs a light attack using the left-hand weapon."
+    },
+    {
+      "Field": "weakAttackLeftAdd",
+      "Name": "Left Hand Weak Attack (Additional Input)",
+      "Description": "Secondary binding for left-hand light attack."
+    },
+    {
+      "Field": "strongAttackLeft",
+      "Name": "Left Hand Strong Attack",
+      "Description": "Performs a heavy attack using the left-hand weapon."
+    },
+    {
+      "Field": "strongAttackLeftAdd",
+      "Name": "Left Hand Strong Attack (Additional Input)",
+      "Description": "Secondary binding for left-hand heavy attack."
+    },
+    {
+      "Field": "useItem",
+      "Name": "Use Item",
+      "Description": "Uses the currently selected item."
+    },
+    {
+      "Field": "useItemAdd",
+      "Name": "Use Item (Additional Input)",
+      "Description": "Secondary binding for item usage."
+    },
+    {
+      "Field": "operation",
+      "Name": "Context Action",
+      "Description": "Performs context-sensitive interaction actions such as examining or interacting."
+    },
+    {
+      "Field": "operationAdd",
+      "Name": "Context Action (Additional Input)",
+      "Description": "Secondary binding for context actions."
+    },
+    {
+      "Field": "switchingTwoHandsRight",
+      "Name": "Two-Hand Weapon Toggle",
+      "Description": "Switches right-hand weapon to two-handed use or back."
+    },
+    {
+      "Field": "switchingTwoHandsRightAdd",
+      "Name": "Two-Hand Weapon Toggle (Additional Input)",
+      "Description": "Secondary binding for two-hand weapon toggle."
+    },
+    {
+      "Field": "showMenu",
+      "Name": "Open Menu",
+      "Description": "Opens the main system/menu interface."
+    },
+    {
+      "Field": "showMenuAdd",
+      "Name": "Open Menu (Additional Input)",
+      "Description": "Secondary binding for opening the menu."
+    },
+    {
+      "Field": "selectUp",
+      "Name": "Navigate Up",
+      "Description": "Moves selection cursor upward in menus."
+    },
+    {
+      "Field": "selectUpAdd",
+      "Name": "Navigate Up (Additional Input)",
+      "Description": "Secondary binding for menu upward navigation."
+    },
+    {
+      "Field": "selectDown",
+      "Name": "Navigate Down",
+      "Description": "Moves selection cursor downward in menus."
+    },
+    {
+      "Field": "selectDownAdd",
+      "Name": "Navigate Down (Additional Input)",
+      "Description": "Secondary binding for menu downward navigation."
+    },
+    {
+      "Field": "selectRight",
+      "Name": "Navigate Right",
+      "Description": "Moves selection cursor to the right in menus."
+    },
+    {
+      "Field": "selectRightAdd",
+      "Name": "Navigate Right (Additional Input)",
+      "Description": "Secondary binding for menu right navigation."
+    },
+    {
+      "Field": "selectLeft",
+      "Name": "Navigate Left",
+      "Description": "Moves selection cursor to the left in menus."
+    },
+    {
+      "Field": "selectLeftAdd",
+      "Name": "Navigate Left (Additional Input)",
+      "Description": "Secondary binding for menu left navigation."
+    },
+    {
+      "Field": "select",
+      "Name": "Confirm / Accept",
+      "Description": "Confirms selection or activates selected menu option."
+    },
+    {
+      "Field": "selectAdd",
+      "Name": "Confirm (Additional Input)",
+      "Description": "Secondary confirm input binding."
+    },
+    {
+      "Field": "cancel",
+      "Name": "Cancel / Back",
+      "Description": "Cancels an action or returns to the previous menu."
+    },
+    {
+      "Field": "cancelAdd",
+      "Name": "Cancel (Additional Input)",
+      "Description": "Secondary cancel/back input binding."
+    },
+    {
+      "Field": "unk58",
+      "Name": "Unknown 58",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk59",
+      "Name": "Unknown 59",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk60",
+      "Name": "Unknown 60",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk61",
+      "Name": "Unknown 61",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk62",
+      "Name": "Unknown 62",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk63",
+      "Name": "Unknown 63",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk64",
+      "Name": "Unknown 64",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk65",
+      "Name": "Unknown 65",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk66",
+      "Name": "Unknown 66",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk67",
+      "Name": "Unknown 67",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk68",
+      "Name": "Unknown 68",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk69",
+      "Name": "Unknown 69",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk70",
+      "Name": "Unknown 70",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk71",
+      "Name": "Unknown 71",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk72",
+      "Name": "Unknown 72",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk73",
+      "Name": "Unknown 73",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk74",
+      "Name": "Unknown 74",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "unk75",
+      "Name": "Unknown 75",
+      "Description": "Unidentified input slot (likely reserved or unused)."
+    },
+    {
+      "Field": "padding",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "ProjectType": 8,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Archive: ER Regulations",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/www.nexusmods.com/eldenring/mods/4262/@ER Regulations]",
+        "[Header]Description",
+        "Archive of all Elden Ring regulations. Needed if you wish to upgrade params from older versions to the latest version."
+    ]
+}

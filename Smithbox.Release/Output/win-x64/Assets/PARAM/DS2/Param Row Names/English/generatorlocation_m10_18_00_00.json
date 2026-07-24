@@ -1,0 +1,527 @@
+{
+  "Name": "generatorlocation_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "[GEN:90] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[GEN:91] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "[GEN:135] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "[GEN:136] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "[GEN:245] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "[GEN:246] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 566,
+      "Entries": [
+        "[GEN:566] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 567,
+      "Entries": [
+        "[GEN:567] Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 844,
+      "Entries": [
+        "[GEN:844] Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 938,
+      "Entries": [
+        "[GEN:938] Forlorn"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[GEN:1110] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[GEN:1220] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[GEN:1500] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[GEN:1510] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[GEN:2110] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[GEN:2201] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "[GEN:2301] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "[GEN:2605] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[GEN:2610] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Stray Dog"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] Stray Dog"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "[GEN:3501] Stray Dog"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "[GEN:3502] Stray Dog"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[GEN:3510] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "[GEN:3511] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[GEN:3520] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[GEN:3600] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "[GEN:3620] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "[GEN:3630] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[GEN:3700] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[GEN:3710] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[GEN:3800] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[GEN:3810] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[GEN:4110] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[GEN:4120] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[GEN:4210] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "[GEN:4220] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        "[GEN:4230] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "[GEN:4300] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "[GEN:4301] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "[GEN:4302] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[GEN:4500] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4540,
+      "Entries": [
+        "[GEN:4540] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "[GEN:4550] Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "[GEN:4560] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[GEN:4600] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[GEN:4610] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "[GEN:4720] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "[GEN:4800] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "[GEN:4810] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 4850,
+      "Entries": [
+        "[GEN:4850] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[GEN:5010] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "[GEN:5011] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[GEN:5030] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "[GEN:5040] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "[GEN:5041] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "[GEN:5050] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[GEN:5200] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[GEN:5201] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "[GEN:5210] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "[GEN:5211] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "[GEN:5220] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        "[GEN:5221] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "[GEN:5230] Undead Jailer"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[GEN:6020] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "[GEN:6030] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "[GEN:6040] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "[GEN:6050] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[GEN:6100] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[GEN:6110] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "[GEN:6120] Stray Dog"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] NO MATCH"
+      ]
+    }
+  ]
+}

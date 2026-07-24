@@ -1,0 +1,29 @@
+{
+  "Key": "CHR_GRAB_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_GRAB_ACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrower"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The side that was thrown"
+        }
+      ]
+    }
+  ]
+}

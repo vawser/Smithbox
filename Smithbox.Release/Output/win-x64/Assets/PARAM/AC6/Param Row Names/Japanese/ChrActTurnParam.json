@@ -1,0 +1,1553 @@
+{
+  "Name": "ChrActTurnParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "AC - Normal -- AC - 通常時"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "AC - normal turn before firing -- AC - 通常時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "AC - When dashing -- AC - ダッシュ時"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "AC - Fast dash -- AC - 高速ダッシュ時"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "AC - when boosted -- AC - ブースト時"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "AC - Boost during stealth -- AC - ステルス中ブースト時"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "AC - Turn before firing when boosting -- AC - ブースト時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "AC - when braking -- AC - ブレーキ時"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "AC - when moving in the air -- AC - 空中移動時"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "AC - Turn before firing when moving in the air -- AC - 空中移動時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "AC - Boost turning -- AC - ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "AC - Air boost turning -- AC - 空中ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "AC - 180 degree turn when turning boost -- AC - ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "AC - 180 degree turn during air boost turning -- AC - 空中ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "AC - When moving to Breho -- AC - ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "AC - When moving in mid-air Breho -- AC - 空中ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "AC - when cover is reversed -- AC - カバー反転時"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "AC - large quick boost -- AC - 大クイックブースト時"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "AC - QB time -- AC - QB時"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "AC - When kicking against a wall -- AC - 壁蹴り時"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "AC_Quadrupod - Normal time -- AC_四脚 - 通常時"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "AC_quadruped - when dashing -- AC_四脚 - ダッシュ時"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "AC_Quadruped - During high speed dash -- AC_四脚 - 高速ダッシュ時"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "AC_quadruped - when boosted -- AC_四脚 - ブースト時"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "AC_quadruped - when braking -- AC_四脚 - ブレーキ時"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "AC_Quadruped - When moving in the air -- AC_四脚 - 空中移動時"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "AC_quadruped - when turning boost -- AC_四脚 - ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "AC_Quadruped - When turning with air boost -- AC_四脚 - 空中ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "AC_Quadruped - Boost turning_180 degree turn -- AC_四脚 - ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 1065,
+      "Entries": [
+        "AC_Quadruped - Air boost turning_180 degree turn -- AC_四脚 - 空中ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "AC_Quadruped - When moving Breho -- AC_四脚 - ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        "AC_Quadruped - When moving in mid-air Breho -- AC_四脚 - 空中ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "AC_quadruped - when cover is reversed -- AC_四脚 - カバー反転時"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "AC_quadruped - at large quick boost -- AC_四脚 - 大クイックブースト時"
+      ]
+    },
+    {
+      "ID": 1095,
+      "Entries": [
+        "AC Quadruped - QB -- AC 四脚 - QB時"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "AC_Tank - Normal time -- AC_タンク - 通常時"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "AC_Tank - Turn before firing normally -- AC_タンク - 通常時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "AC_Tank - When dashing -- AC_タンク - ダッシュ時"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "AC_Tank - During high speed dash -- AC_タンク - 高速ダッシュ時"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "AC_Tank - When boosted -- AC_タンク - ブースト時"
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        "AC_Tank - Turn before firing when boosting -- AC_タンク - ブースト時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "AC_tank - during braking -- AC_タンク - ブレーキ時"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "AC_Tank - When moving in the air -- AC_タンク - 空中移動時"
+      ]
+    },
+    {
+      "ID": 3049,
+      "Entries": [
+        "AC_Tank - Turn before firing when moving in the air -- AC_タンク - 空中移動時射撃前旋回"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "AC_Tank - When turning boost -- AC_タンク - ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 3055,
+      "Entries": [
+        "AC_Tank - Air boost turning -- AC_タンク - 空中ブースト旋回時"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "AC_Tank - Boost turning_180 degree turn -- AC_タンク - ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        "AC_Tank - Air boost turning_180 degree turn -- AC_タンク - 空中ブースト旋回時_180度ターン"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "AC_Tank - When moving Breho -- AC_タンク - ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 3075,
+      "Entries": [
+        "AC_Tank - When moving in mid-air Breho -- AC_タンク - 空中ブレホ移動時"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "AC_Tank - When cover is reversed -- AC_タンク - カバー反転時"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "AC_Tank - Large quick boost -- AC_タンク - 大クイックブースト時"
+      ]
+    },
+    {
+      "ID": 3095,
+      "Entries": [
+        "AC Tank - At QB -- AC タンク - QB時"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "AC_Tank - Drift -- AC_タンク - ドリフト"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "AC - Turn at QB start -- AC - QB開始時旋回"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "AC - Quadruped_QB movement -- AC - 四脚_QB移動時"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "AC - Reverse joint charging attack_charging stage -- AC - 逆関節溜め攻撃_溜め段階"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "AC - Reverse joint charge attack_stepping -- AC - 逆関節溜め攻撃_踏み込み"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Bipod_Basic - Normal time -- 二脚_基本 - 通常時"
+      ]
+    },
+    {
+      "ID": 10000001,
+      "Entries": [
+        "Bipod_Basic - Normal time_Cannot rotate -- 二脚_基本 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 10000009,
+      "Entries": [
+        "Bipod_Basic - Normal time_Rapid turning -- 二脚_基本 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Bipod_Basics - Walking/running -- 二脚_基本 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 10000015,
+      "Entries": [
+        "Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Bipod_Basics - Boost running/braking -- 二脚_基本 - ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 10000021,
+      "Entries": [
+        "Bipod_Basic - Boost running/Brake_Turning not possible -- 二脚_基本 - ブースト走行/ブレーキ_旋回不可"
+      ]
+    },
+    {
+      "ID": 10000029,
+      "Entries": [
+        "Bipod_Basics - Boost running/Brake_Rapid turning -- 二脚_基本 - ブースト走行/ブレーキ_急速旋回"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "Bipod_Basics - Slope sliding -- 二脚_基本 - 斜面滑り"
+      ]
+    },
+    {
+      "ID": 10000031,
+      "Entries": [
+        "Bipod_Basic - Slope sliding_Cannot turn -- 二脚_基本 - 斜面滑り_旋回不可"
+      ]
+    },
+    {
+      "ID": 10000039,
+      "Entries": [
+        "Bipod_Basics - Slope sliding_Rapid turning -- 二脚_基本 - 斜面滑り_急速旋回"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "Bipod_Basics - General aerial movement -- 二脚_基本 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 10000041,
+      "Entries": [
+        "Bipod_Basics - General aerial movement_Turning not possible -- 二脚_基本 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 10000049,
+      "Entries": [
+        "Bipod_Basics - General aerial movement_Rapid turning -- 二脚_基本 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "Bipod_Basics - Quick turn rotation_Basics -- 二脚_基本 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 10000051,
+      "Entries": [
+        "Bipod_Basics - Quick turn turning_Asab start -- 二脚_基本 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 10000052,
+      "Entries": [
+        "Bipod_Basics - Quick turn rotation_Camera QT -- 二脚_基本 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 10000080,
+      "Entries": [
+        "Bipod_Basic - Whole body attack turning brake -- 二脚_基本 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 10000090,
+      "Entries": [
+        "Bipod_Basic - Cannot rotate -- 二脚_基本 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Bipod_Lightweight - Normal time -- 二脚_軽量 - 通常時"
+      ]
+    },
+    {
+      "ID": 10100001,
+      "Entries": [
+        "Bipod_Lightweight - Normal time_Cannot rotate -- 二脚_軽量 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 10100009,
+      "Entries": [
+        "Bipod_Lightweight - Normal time_Rapid turning -- 二脚_軽量 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Bipod_lightweight - when walking/running -- 二脚_軽量 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 10100015,
+      "Entries": [
+        "Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Bipod_lightweight - boost running/braking -- 二脚_軽量 - ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 10100021,
+      "Entries": [
+        "Bipod_Lightweight - Boost running/Brake_Cannot turn -- 二脚_軽量 - ブースト走行/ブレーキ_旋回不可"
+      ]
+    },
+    {
+      "ID": 10100029,
+      "Entries": [
+        "Bipod_lightweight - boost running/brake_rapid turning -- 二脚_軽量 - ブースト走行/ブレーキ_急速旋回"
+      ]
+    },
+    {
+      "ID": 10100030,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding -- 二脚_軽量 - 斜面滑り"
+      ]
+    },
+    {
+      "ID": 10100031,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding_Cannot turn -- 二脚_軽量 - 斜面滑り_旋回不可"
+      ]
+    },
+    {
+      "ID": 10100039,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding_Rapid turning -- 二脚_軽量 - 斜面滑り_急速旋回"
+      ]
+    },
+    {
+      "ID": 10100040,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement -- 二脚_軽量 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 10100041,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement_Cannot turn -- 二脚_軽量 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 10100049,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement_Rapid turning -- 二脚_軽量 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 10100050,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn rotation_Basics -- 二脚_軽量 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 10100051,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn turning_Asab start -- 二脚_軽量 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 10100052,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn rotation_Camera QT -- 二脚_軽量 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 10100080,
+      "Entries": [
+        "Bipod_Lightweight - Whole body attack turning brake -- 二脚_軽量 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 10100090,
+      "Entries": [
+        "Bipod_lightweight - cannot rotate -- 二脚_軽量 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Bipod_Weight - Normal -- 二脚_重量 - 通常時"
+      ]
+    },
+    {
+      "ID": 10200001,
+      "Entries": [
+        "Bipod_Weight - Normal time_Cannot rotate -- 二脚_重量 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 10200009,
+      "Entries": [
+        "Bipod_Weight - Normal time_Rapid turning -- 二脚_重量 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "Bipod_Weight - Walking/running -- 二脚_重量 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 10200015,
+      "Entries": [
+        "Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 10200020,
+      "Entries": [
+        "Bipod_Weight - Boost travel/brake -- 二脚_重量 - ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 10200021,
+      "Entries": [
+        "Bipod_weight - boost running/brake_unable to turn -- 二脚_重量 - ブースト走行/ブレーキ_旋回不可"
+      ]
+    },
+    {
+      "ID": 10200029,
+      "Entries": [
+        "Bipod_weight - boost running/brake_rapid turning -- 二脚_重量 - ブースト走行/ブレーキ_急速旋回"
+      ]
+    },
+    {
+      "ID": 10200030,
+      "Entries": [
+        "Bipod_weight - Slope sliding -- 二脚_重量 - 斜面滑り"
+      ]
+    },
+    {
+      "ID": 10200031,
+      "Entries": [
+        "Bipod_weight - Slope slipping_unable to turn -- 二脚_重量 - 斜面滑り_旋回不可"
+      ]
+    },
+    {
+      "ID": 10200039,
+      "Entries": [
+        "Bipod_weight - Slope sliding_rapid turning -- 二脚_重量 - 斜面滑り_急速旋回"
+      ]
+    },
+    {
+      "ID": 10200040,
+      "Entries": [
+        "Bipod_weight - General aerial movement -- 二脚_重量 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 10200041,
+      "Entries": [
+        "Bipod_weight - General aerial movement_no turning -- 二脚_重量 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 10200049,
+      "Entries": [
+        "Bipod_Weight - General aerial movement_Rapid turning -- 二脚_重量 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 10200050,
+      "Entries": [
+        "Bipod_Weight - Quick turn rotation_Basics -- 二脚_重量 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 10200051,
+      "Entries": [
+        "Bipod_weight - Quick turn turning_assab start -- 二脚_重量 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 10200052,
+      "Entries": [
+        "Bipod_weight - quick turn rotation_camera QT -- 二脚_重量 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 10200080,
+      "Entries": [
+        "Bipod_weight - Whole body attack turning brake -- 二脚_重量 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 10200090,
+      "Entries": [
+        "Bipod_weight - cannot rotate -- 二脚_重量 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Reverse joint_basics - normal time -- 逆関節_基本 - 通常時"
+      ]
+    },
+    {
+      "ID": 11000001,
+      "Entries": [
+        "Reverse joint_basic - Normal time_unable to rotate -- 逆関節_基本 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 11000009,
+      "Entries": [
+        "Reverse joint_Basics - Normal time_Rapid turning -- 逆関節_基本 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 11000010,
+      "Entries": [
+        "Reverse joint_basics - Walking/running -- 逆関節_基本 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 11000015,
+      "Entries": [
+        "Reverse joint_basics - Asabu time -- 逆関節_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 11000020,
+      "Entries": [
+        "Reverse joint_basics - boost driving/braking -- 逆関節_基本 - ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 11000021,
+      "Entries": [
+        "Reverse joint_basics - boost running/brake_turning not possible -- 逆関節_基本 - ブースト走行/ブレーキ_旋回不可"
+      ]
+    },
+    {
+      "ID": 11000029,
+      "Entries": [
+        "Reverse joint_basics - boost driving/brake_rapid turning -- 逆関節_基本 - ブースト走行/ブレーキ_急速旋回"
+      ]
+    },
+    {
+      "ID": 11000030,
+      "Entries": [
+        "Reverse joint_basics - slope sliding -- 逆関節_基本 - 斜面滑り"
+      ]
+    },
+    {
+      "ID": 11000031,
+      "Entries": [
+        "Reverse joint_basics - Slope sliding_unable to turn -- 逆関節_基本 - 斜面滑り_旋回不可"
+      ]
+    },
+    {
+      "ID": 11000039,
+      "Entries": [
+        "Reverse joint_basics - Slope sliding_rapid turning -- 逆関節_基本 - 斜面滑り_急速旋回"
+      ]
+    },
+    {
+      "ID": 11000040,
+      "Entries": [
+        "Reverse joint_basics - General aerial movement -- 逆関節_基本 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 11000041,
+      "Entries": [
+        "Reverse joints_Basics - General aerial movement_No turning possible -- 逆関節_基本 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 11000049,
+      "Entries": [
+        "Reverse joint_Basics - General aerial movement_Rapid turning -- 逆関節_基本 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 11000050,
+      "Entries": [
+        "Reverse joint_basics - Quick turn rotation_basics -- 逆関節_基本 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 11000051,
+      "Entries": [
+        "Reverse joint_basics - quick turn rotation_assab start -- 逆関節_基本 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 11000052,
+      "Entries": [
+        "Reverse joint_Basics - Quick turn rotation_Camera QT -- 逆関節_基本 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 11000080,
+      "Entries": [
+        "Reverse joint_basics - whole body attack turning brake -- 逆関節_基本 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 11000090,
+      "Entries": [
+        "Reverse joint_basics - cannot rotate -- 逆関節_基本 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Quadruped_Basic - Normal time -- 四脚_基本 - 通常時"
+      ]
+    },
+    {
+      "ID": 12000001,
+      "Entries": [
+        "Quadruped_Basic - Normal time_Cannot turn -- 四脚_基本 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 12000009,
+      "Entries": [
+        "Quadruped_Basics - Normal_Rapid turning -- 四脚_基本 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 12000010,
+      "Entries": [
+        "Quadruped_Basics - Walking/running -- 四脚_基本 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 12000015,
+      "Entries": [
+        "Quadruped_Basic - Asabu time -- 四脚_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 12000020,
+      "Entries": [
+        "Quadruped_Basics - Boost running/braking -- 四脚_基本 - ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 12000021,
+      "Entries": [
+        "Quadruped_Basic - Boost running/Brake_Turning not possible -- 四脚_基本 - ブースト走行/ブレーキ_旋回不可"
+      ]
+    },
+    {
+      "ID": 12000029,
+      "Entries": [
+        "Quadruped_Basics - Boost running/Brake_Rapid turning -- 四脚_基本 - ブースト走行/ブレーキ_急速旋回"
+      ]
+    },
+    {
+      "ID": 12000030,
+      "Entries": [
+        "Quadruped_Basics - Slope sliding -- 四脚_基本 - 斜面滑り"
+      ]
+    },
+    {
+      "ID": 12000031,
+      "Entries": [
+        "Quadruped_Basic - Slope sliding_Cannot turn -- 四脚_基本 - 斜面滑り_旋回不可"
+      ]
+    },
+    {
+      "ID": 12000039,
+      "Entries": [
+        "Quadruped_Basics - Slope sliding_Rapid turning -- 四脚_基本 - 斜面滑り_急速旋回"
+      ]
+    },
+    {
+      "ID": 12000040,
+      "Entries": [
+        "Quadruped_Basics - General aerial movement -- 四脚_基本 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 12000041,
+      "Entries": [
+        "Quadrupeds_Basics - General aerial movement_No turning possible -- 四脚_基本 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 12000049,
+      "Entries": [
+        "Quadruped_Basics - General aerial movement_Rapid turning -- 四脚_基本 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 12000050,
+      "Entries": [
+        "Quadruped_Basics - Quick Turn Rotation_Basics -- 四脚_基本 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 12000051,
+      "Entries": [
+        "Quadruped_Basic - Quick turn rotation_Assab start -- 四脚_基本 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 12000052,
+      "Entries": [
+        "Quadruped_Basics - Quick turn rotation_Camera QT -- 四脚_基本 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 12000053,
+      "Entries": [
+        "Quadruped_Basics - Quick turn turning_Spot turning -- 四脚_基本 - クイックターン旋回_その場旋回"
+      ]
+    },
+    {
+      "ID": 12000080,
+      "Entries": [
+        "Quadruped_Basic - Whole body attack turning brake -- 四脚_基本 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 12000090,
+      "Entries": [
+        "Quadruped_Basic - Cannot rotate -- 四脚_基本 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Tank_Basic - Normal time -- タンク_基本 - 通常時"
+      ]
+    },
+    {
+      "ID": 13000001,
+      "Entries": [
+        "Tank_Basic - Normal time_Cannot turn -- タンク_基本 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 13000009,
+      "Entries": [
+        "Tank_Basics-Normal_Rapid turning -- タンク_基本 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 13000010,
+      "Entries": [
+        "Tank_Basics - Walking/running -- タンク_基本 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 13000011,
+      "Entries": [
+        "Tank_Basics - Boost driving_Turning not possible -- タンク_基本 - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13000015,
+      "Entries": [
+        "Tank_Basic - Asabu time -- タンク_基本 - アサブ時"
+      ]
+    },
+    {
+      "ID": 13000019,
+      "Entries": [
+        "Tank_Basics - Boost driving_Rapid turning -- タンク_基本 - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13000020,
+      "Entries": [
+        "Tank_Basics - Boost driving -- タンク_基本 - ブースト走行"
+      ]
+    },
+    {
+      "ID": 13000021,
+      "Entries": [
+        "Tank_Basics - Boost driving_Turning not possible -- タンク_基本 - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13000029,
+      "Entries": [
+        "Tank_Basics - Boost driving_Rapid turning -- タンク_基本 - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13000040,
+      "Entries": [
+        "Tank_Basics - General aerial movement -- タンク_基本 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 13000041,
+      "Entries": [
+        "Tank_Basics - General aerial movement_No turning possible -- タンク_基本 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 13000049,
+      "Entries": [
+        "Tank_Basics - General air movement_Rapid turning -- タンク_基本 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 13000050,
+      "Entries": [
+        "Tank_Basics - Quick turn rotation_Basics -- タンク_基本 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 13000051,
+      "Entries": [
+        "Tank_Basics - Quick turn turning_Asab start -- タンク_基本 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 13000052,
+      "Entries": [
+        "Tank_Basics - Quick turn rotation_Camera QT -- タンク_基本 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 13000053,
+      "Entries": [
+        "Tank_Basics - Quick turn turning_Turning on the spot -- タンク_基本 - クイックターン旋回_その場旋回"
+      ]
+    },
+    {
+      "ID": 13000080,
+      "Entries": [
+        "Tank_Basics - Whole body attack turning brake -- タンク_基本 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 13000090,
+      "Entries": [
+        "Tank_Basic - Cannot turn -- タンク_基本 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 13000100,
+      "Entries": [
+        "Tank_Basics - Drift -- タンク_基本 - ドリフト"
+      ]
+    },
+    {
+      "ID": 13000101,
+      "Entries": [
+        "Tank_Basic - Drift_Cannot turn -- タンク_基本 - ドリフト_旋回不可"
+      ]
+    },
+    {
+      "ID": 13000109,
+      "Entries": [
+        "Tank_Basics - Drift_Rapid turning -- タンク_基本 - ドリフト_急速旋回"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "Tank_Hover - Normal -- タンク_ホバー - 通常時"
+      ]
+    },
+    {
+      "ID": 13100001,
+      "Entries": [
+        "Tank_Hover - Normal time_Cannot turn -- タンク_ホバー - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 13100009,
+      "Entries": [
+        "Tank_Hover - Normal_Rapid turning -- タンク_ホバー - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 13100010,
+      "Entries": [
+        "Tank_Hover - When walking/running -- タンク_ホバー - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 13100011,
+      "Entries": [
+        "Tank_Hover - Boost running_Cannot turn -- タンク_ホバー - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13100015,
+      "Entries": [
+        "Tank_Hover - Asabu time -- タンク_ホバー - アサブ時"
+      ]
+    },
+    {
+      "ID": 13100019,
+      "Entries": [
+        "Tank_Hover - Boost driving_Rapid turning -- タンク_ホバー - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13100020,
+      "Entries": [
+        "Tank_Hover - Boost driving -- タンク_ホバー - ブースト走行"
+      ]
+    },
+    {
+      "ID": 13100021,
+      "Entries": [
+        "Tank_Hover - Boost running_Cannot turn -- タンク_ホバー - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13100029,
+      "Entries": [
+        "Tank_Hover - Boost driving_Rapid turning -- タンク_ホバー - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13100040,
+      "Entries": [
+        "Tank_Hover - General aerial movement -- タンク_ホバー - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 13100041,
+      "Entries": [
+        "Tank_Hover - General aerial movement_Cannot turn -- タンク_ホバー - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 13100049,
+      "Entries": [
+        "Tank_Hover - General aerial movement_Rapid turning -- タンク_ホバー - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 13100050,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Basics -- タンク_ホバー - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 13100051,
+      "Entries": [
+        "Tank_Hover - Quick turn rotation_Asab start -- タンク_ホバー - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 13100052,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Camera QT -- タンク_ホバー - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 13100053,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Turn on the spot -- タンク_ホバー - クイックターン旋回_その場旋回"
+      ]
+    },
+    {
+      "ID": 13100080,
+      "Entries": [
+        "Tank_Hover - Full body attack turning brake -- タンク_ホバー - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 13100090,
+      "Entries": [
+        "Tank_Hover - Cannot rotate -- タンク_ホバー - 旋回不可"
+      ]
+    },
+    {
+      "ID": 13100100,
+      "Entries": [
+        "Tank_Hover - Drift -- タンク_ホバー - ドリフト"
+      ]
+    },
+    {
+      "ID": 13100101,
+      "Entries": [
+        "Tank_Hover - Drift_Cannot turn -- タンク_ホバー - ドリフト_旋回不可"
+      ]
+    },
+    {
+      "ID": 13100109,
+      "Entries": [
+        "Tank_Hover - Drift_Rapid Turn -- タンク_ホバー - ドリフト_急速旋回"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "Tank_Wheelchair - Normal time -- タンク_車椅子 - 通常時"
+      ]
+    },
+    {
+      "ID": 13200001,
+      "Entries": [
+        "Tank_Wheelchair - Normal time_Cannot turn -- タンク_車椅子 - 通常時_旋回不可"
+      ]
+    },
+    {
+      "ID": 13200009,
+      "Entries": [
+        "Tank_Wheelchair - Normal time_Rapid turning -- タンク_車椅子 - 通常時_急速旋回"
+      ]
+    },
+    {
+      "ID": 13200010,
+      "Entries": [
+        "Tank_Wheelchair - Walking/running -- タンク_車椅子 - 歩行・走行時"
+      ]
+    },
+    {
+      "ID": 13200011,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Cannot turn -- タンク_車椅子 - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13200015,
+      "Entries": [
+        "Tank_Wheelchair - At Asab -- タンク_車椅子 - アサブ時"
+      ]
+    },
+    {
+      "ID": 13200019,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Rapid turning -- タンク_車椅子 - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13200020,
+      "Entries": [
+        "Tank_Wheelchair - Boost running -- タンク_車椅子 - ブースト走行"
+      ]
+    },
+    {
+      "ID": 13200021,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Cannot turn -- タンク_車椅子 - ブースト走行_旋回不可"
+      ]
+    },
+    {
+      "ID": 13200029,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Rapid turning -- タンク_車椅子 - ブースト走行_急速旋回"
+      ]
+    },
+    {
+      "ID": 13200040,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement -- タンク_車椅子 - 空中移動全般"
+      ]
+    },
+    {
+      "ID": 13200041,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement_Cannot turn -- タンク_車椅子 - 空中移動全般_旋回不可"
+      ]
+    },
+    {
+      "ID": 13200049,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement_Rapid turning -- タンク_車椅子 - 空中移動全般_急速旋回"
+      ]
+    },
+    {
+      "ID": 13200050,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Basics -- タンク_車椅子 - クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 13200051,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Asab start -- タンク_車椅子 - クイックターン旋回_アサブ開始"
+      ]
+    },
+    {
+      "ID": 13200052,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Camera QT -- タンク_車椅子 - クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 13200053,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn turning_Turning on the spot -- タンク_車椅子 - クイックターン旋回_その場旋回"
+      ]
+    },
+    {
+      "ID": 13200080,
+      "Entries": [
+        "Tank_Wheelchair - Full body attack turning brake -- タンク_車椅子 - 全身攻撃旋回ブレーキ"
+      ]
+    },
+    {
+      "ID": 13200090,
+      "Entries": [
+        "Tank_Wheelchair - cannot turn -- タンク_車椅子 - 旋回不可"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "Tank_Wheelchair - Drift -- タンク_車椅子 - ドリフト"
+      ]
+    },
+    {
+      "ID": 13200101,
+      "Entries": [
+        "Tank_Wheelchair - Drift_Cannot turn -- タンク_車椅子 - ドリフト_旋回不可"
+      ]
+    },
+    {
+      "ID": 13200109,
+      "Entries": [
+        "Tank_Wheelchair - Drift_Rapid turning -- タンク_車椅子 - ドリフト_急速旋回"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Common legs - Rapid turning_Normal -- 脚部共通 - 急速旋回_通常時"
+      ]
+    },
+    {
+      "ID": 19000010,
+      "Entries": [
+        "Common legs - rapid turning_boost driving -- 脚部共通 - 急速旋回_ブースト走行"
+      ]
+    },
+    {
+      "ID": 19000020,
+      "Entries": [
+        "Common legs - Rapid turning_boost running/braking -- 脚部共通 - 急速旋回_ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 19000030,
+      "Entries": [
+        "Common legs - rapid turning_slope sliding -- 脚部共通 - 急速旋回_斜面滑り"
+      ]
+    },
+    {
+      "ID": 19000040,
+      "Entries": [
+        "Common legs - Rapid turning_Aerial movement in general -- 脚部共通 - 急速旋回_空中移動全般"
+      ]
+    },
+    {
+      "ID": 19000050,
+      "Entries": [
+        "Common legs - Rapid turning_Quick turn turning -- 脚部共通 - 急速旋回_クイックターン旋回"
+      ]
+    },
+    {
+      "ID": 19000052,
+      "Entries": [
+        "Common legs - Rapid turning_Quick turn turning (Camera QT) -- 脚部共通 - 急速旋回_クイックターン旋回（カメラQT）"
+      ]
+    },
+    {
+      "ID": 19000100,
+      "Entries": [
+        "Common legs - rapid turning_drift -- 脚部共通 - 急速旋回_ドリフト"
+      ]
+    },
+    {
+      "ID": 20000080,
+      "Entries": [
+        "Common to tanks - Brejo turning ① -- タンク共通 - ブレホ旋回①"
+      ]
+    },
+    {
+      "ID": 20000081,
+      "Entries": [
+        "Common to tanks - Brejo turning ② -- タンク共通 - ブレホ旋回②"
+      ]
+    },
+    {
+      "ID": 20000082,
+      "Entries": [
+        "Common to tanks - Brejo turning ③ -- タンク共通 - ブレホ旋回③"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Hand weapon_Buzz type - Stance_Normal (walking/running) -- 手武器_バズ系 - 構え_通常時（歩行・走行）"
+      ]
+    },
+    {
+      "ID": 20400015,
+      "Entries": [
+        "Hand weapon_buzz type - stance_assab -- 手武器_バズ系 - 構え_アサブ時"
+      ]
+    },
+    {
+      "ID": 20400020,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Boost Travel/Brake -- 手武器_バズ系 - 構え_ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 20400030,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Slope Slip -- 手武器_バズ系 - 構え_斜面滑り"
+      ]
+    },
+    {
+      "ID": 20400040,
+      "Entries": [
+        "Hand weapons_Buzz type - Stance_Aerial movement in general -- 手武器_バズ系 - 構え_空中移動全般"
+      ]
+    },
+    {
+      "ID": 20400050,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Quick Turn Rotation_Basic -- 手武器_バズ系 - 構え_クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 20400052,
+      "Entries": [
+        "Hand weapon_Buzz type - Stance_Quick turn rotation_Camera QT -- 手武器_バズ系 - 構え_クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 20400080,
+      "Entries": [
+        "Hand weapon_Buzz type - stance_Full body attack -- 手武器_バズ系 - 構え_全身攻撃中"
+      ]
+    },
+    {
+      "ID": 20400090,
+      "Entries": [
+        "Hand weapon_buzz type - Stance_unable to turn -- 手武器_バズ系 - 構え_旋回不可"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "Hand Weapon_Gray-Stance_Normal (Walking/Running) -- 手武器_グレ系 - 構え_通常時（歩行・走行）"
+      ]
+    },
+    {
+      "ID": 20600015,
+      "Entries": [
+        "Hand weapon_Gre type - Stance_Assab -- 手武器_グレ系 - 構え_アサブ時"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "Hand Weapon_Gray Series - Stance_Boost Travel/Brake -- 手武器_グレ系 - 構え_ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 20600030,
+      "Entries": [
+        "Hand Weapon_Gray-Stance_Slope Slip -- 手武器_グレ系 - 構え_斜面滑り"
+      ]
+    },
+    {
+      "ID": 20600040,
+      "Entries": [
+        "Hand Weapon_Gre type - Stance_Aerial movement in general -- 手武器_グレ系 - 構え_空中移動全般"
+      ]
+    },
+    {
+      "ID": 20600050,
+      "Entries": [
+        "Hand Weapon_Gre type - Stance_Quick Turn Rotation_Basic -- 手武器_グレ系 - 構え_クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 20600052,
+      "Entries": [
+        "Hand Weapon_Gray Series - Stance_Quick Turn Rotation_Camera QT -- 手武器_グレ系 - 構え_クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 20600080,
+      "Entries": [
+        "Hand weapon_Gre type - Stance_Full body attack -- 手武器_グレ系 - 構え_全身攻撃中"
+      ]
+    },
+    {
+      "ID": 20600090,
+      "Entries": [
+        "Hand weapon_Gray type - Stance_Cannot turn -- 手武器_グレ系 - 構え_旋回不可"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Normal (walking/running) -- 肩武器_実弾（バズ、グレ）系 - 構え_通常時（歩行・走行）"
+      ]
+    },
+    {
+      "ID": 30100015,
+      "Entries": [
+        "Shoulder weapon_live ammunition (buzz, gray) type - stance_assab -- 肩武器_実弾（バズ、グレ）系 - 構え_アサブ時"
+      ]
+    },
+    {
+      "ID": 30100020,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Boost running/brake -- 肩武器_実弾（バズ、グレ）系 - 構え_ブースト走行/ブレーキ"
+      ]
+    },
+    {
+      "ID": 30100030,
+      "Entries": [
+        "Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Slope Slip -- 肩武器_実弾（バズ、グレ）系 - 構え_斜面滑り"
+      ]
+    },
+    {
+      "ID": 30100040,
+      "Entries": [
+        "Shoulder weapons_Live bullets (buzz, gray) - Stance_Aerial movement in general -- 肩武器_実弾（バズ、グレ）系 - 構え_空中移動全般"
+      ]
+    },
+    {
+      "ID": 30100050,
+      "Entries": [
+        "Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Quick Turn Rotation_Basics -- 肩武器_実弾（バズ、グレ）系 - 構え_クイックターン旋回_基本"
+      ]
+    },
+    {
+      "ID": 30100052,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Quick turn rotation_Camera QT -- 肩武器_実弾（バズ、グレ）系 - 構え_クイックターン旋回_カメラQT"
+      ]
+    },
+    {
+      "ID": 30100080,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Full body attack -- 肩武器_実弾（バズ、グレ）系 - 構え_全身攻撃中"
+      ]
+    },
+    {
+      "ID": 30100090,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Cannot turn -- 肩武器_実弾（バズ、グレ）系 - 構え_旋回不可"
+      ]
+    }
+  ]
+}

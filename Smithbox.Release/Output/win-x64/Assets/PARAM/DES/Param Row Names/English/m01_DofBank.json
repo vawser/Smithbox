@@ -1,0 +1,389 @@
+{
+  "Name": "m01_DofBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "temple"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Underworld"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For poly drama (p01-c00"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For poly drama (p01-c01-A"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For poly drama (p01-c01-B"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For poly drama (p01-c01-C"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For poly drama (p01-c02-pre"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For poly drama (p01-c02-A"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "For poly drama (p01-c02-B"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "For poly drama (p01-c02-C"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "For poly drama (p01-c03-A"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "For poly drama (p01-c03-B"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For poly drama (p01-c04"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Poly drama (p02-general"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "For poly drama (p03-A"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "For poly drama (p03-B"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "For poly drama (p00001-cut-05"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "For poly drama (p00001-cut-06-01"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "For poly drama (p00001-cut-06-02"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "For poly drama (p00001-cut-07"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "For polyplay (p06_c00-SwordDrop-A"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "For polyplay (p06_c00-SwordDrop-B"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "For poly drama (p10-c10"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "For poly drama (p10-c20"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "For poly drama (p10-c30-A"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "For poly drama (p10-c30-B"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "For poly drama (p10-c30-C"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "For poly drama (p10-c40-B"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "For poly drama (p10-c40"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "For poly drama (p10-c50-A"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "For poly drama (p10-c50-B"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "For poly drama (p10-c50-C"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "For poly drama (p10-c50-D"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "For poly drama (p10-c50-E"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Poly drama (p15-c20-heroineUp"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "For poly drama (p15-c10-A"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "For poly drama (p15-c30-talking"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "For poly drama (p15-c40-A"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "For poly drama (p15-c40-B"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

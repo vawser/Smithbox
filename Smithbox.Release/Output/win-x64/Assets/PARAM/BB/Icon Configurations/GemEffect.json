@@ -1,0 +1,8 @@
+{
+  "Name": "GemEffect",
+  "File": "common",
+  "InternalFiles": [
+    "MENU_Icon_07001"
+  ],
+  "SubTexturePrefix": "ICON_"
+}

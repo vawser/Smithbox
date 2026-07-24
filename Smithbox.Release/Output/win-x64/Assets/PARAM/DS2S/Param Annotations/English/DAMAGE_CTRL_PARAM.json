@@ -1,0 +1,313 @@
+{
+  "Param": "DAMAGE_CTRL_PARAM",
+  "Type": "DAMAGE_CTRL_PARAM",
+  "Name": "DAMAGE_CTRL_PARAM",
+  "Description": "Defines how an attack behaves when dealing damage, including hit reactions, guard interactions, knockback, stagger, environmental effects, vibration feedback, and distance-based damage scaling.",
+  "Fields": [
+    {
+      "Field": "attackType",
+      "Name": "Attack Attribute",
+      "Description": "Specifies the attack or damage attribute type used by this damage entry."
+    },
+    {
+      "Field": "objBreak",
+      "Name": "Allow Object Destruction",
+      "Description": "Determines whether the attack can destroy breakable world objects."
+    },
+    {
+      "Field": "armorBreak",
+      "Name": "Ignore Armor Attribute",
+      "Description": "Determines whether the attack ignores armor protection."
+    },
+    {
+      "Field": "guardBreak",
+      "Name": "Ignore Guard Attribute",
+      "Description": "Determines whether the attack ignores guard protection."
+    },
+    {
+      "Field": "negatePoiseRate",
+      "Name": "Poise Negation %",
+      "Description": "Percentage of the target's poise resistance ignored by the attack."
+    },
+    {
+      "Field": "negateCutDamageRate",
+      "Name": "Shield Damage Reduction Negation %",
+      "Description": "Percentage of shield damage reduction ignored by the attack."
+    },
+    {
+      "Field": "damageWeightType",
+      "Name": "Attack Weight Type",
+      "Description": "Specifies the weight category used for hit reactions and stagger calculations."
+    },
+    {
+      "Field": "damageMotion",
+      "Name": "Damage Animation",
+      "Description": "Animation played when the target takes damage."
+    },
+    {
+      "Field": "deadMotion",
+      "Name": "Death Animation",
+      "Description": "Animation played when the target dies."
+    },
+    {
+      "Field": "deadDamageMotion",
+      "Name": "Death Damage Animation",
+      "Description": "Damage reaction animation played when the target receives a fatal hit."
+    },
+    {
+      "Field": "isInstantDeath",
+      "Name": "Instant Death Flag",
+      "Description": "Determines whether the attack causes immediate death."
+    },
+    {
+      "Field": "stun",
+      "Name": "Stun Value",
+      "Description": "Amount of stun buildup inflicted by the attack."
+    },
+    {
+      "Field": "isDamageStaminaAlways",
+      "Name": "Always Damages Stamina",
+      "Description": "Determines whether the attack always inflicts stamina damage."
+    },
+    {
+      "Field": "isHollowOnlyDamage",
+      "Name": "Hollow-Only Damage",
+      "Description": "Determines whether the damage only affects hollow or undead-type targets."
+    },
+    {
+      "Field": "downStiff",
+      "Name": "Knockdown Recovery Time [sec]",
+      "Description": "Duration the target remains incapacitated after being knocked down."
+    },
+    {
+      "Field": "downStiffShortCut",
+      "Name": "Knockdown Recovery Reduction Time [sec]",
+      "Description": "Amount of time removed from the knockdown recovery duration."
+    },
+    {
+      "Field": "damageRotateSpeed",
+      "Name": "Damage Rotation Speed [deg/sec]",
+      "Description": "Maximum turning speed allowed while reacting to damage."
+    },
+    {
+      "Field": "blowUpAccel",
+      "Name": "Launch Upward Velocity [m/sec]",
+      "Description": "Initial upward velocity applied when the target is launched."
+    },
+    {
+      "Field": "blowBrake",
+      "Name": "Launch Deceleration [m/sec²]",
+      "Description": "Deceleration applied to launched movement."
+    },
+    {
+      "Field": "lowerDmgStartTimeRate",
+      "Name": "Lower Body Damage Crouch Transition %",
+      "Description": "Multiplier affecting the transition time into a crouched lower-body damage state."
+    },
+    {
+      "Field": "lowerDmgEndTimeRate",
+      "Name": "Lower Body Damage Recovery %",
+      "Description": "Multiplier affecting the recovery time from a lower-body damage state."
+    },
+    {
+      "Field": "guardStiffRate",
+      "Name": "Guard Stiffness %",
+      "Description": "Multiplier affecting guard stun duration."
+    },
+    {
+      "Field": "guardReactionSpeed",
+      "Name": "Guard Reaction Speed [m/sec]",
+      "Description": "Movement speed applied during guard recoil."
+    },
+    {
+      "Field": "guardReactionAddRate",
+      "Name": "Guard Reaction Additive %",
+      "Description": "Additional scaling factor applied to guard recoil."
+    },
+    {
+      "Field": "guardReactionDecelerationSpeed",
+      "Name": "Guard Reaction Deceleration Speed [m/sec]",
+      "Description": "Rate at which guard recoil movement slows down."
+    },
+    {
+      "Field": "guardReactionDecelerationTime",
+      "Name": "Guard Reaction Deceleration Speed [m/sec]",
+      "Description": "Rate at which guard recoil movement slows down."
+    },
+    {
+      "Field": "guardRotationSpeed",
+      "Name": "Guard Rotation Speed [deg/sec]",
+      "Description": "Turning speed allowed while in guard recoil."
+    },
+    {
+      "Field": "guardAttackLevelType",
+      "Name": "Guard Deflection Level",
+      "Description": "Specifies the guard impact or deflection strength level."
+    },
+    {
+      "Field": "isForceLower",
+      "Name": "Force Lower-Body Damage",
+      "Description": "Forces the target into a lower-body damage reaction."
+    },
+    {
+      "Field": "objDamage",
+      "Name": "Object Damage Value",
+      "Description": "Damage dealt to destructible objects."
+    },
+    {
+      "Field": "objAttackAttr",
+      "Name": "Object Attack Attribute",
+      "Description": "Attack attribute used specifically against objects."
+    },
+    {
+      "Field": "cameraRumble",
+      "Name": "Camera Shake Parameter ID",
+      "Description": "Reference ID for the camera shake effect triggered by the attack."
+    },
+    {
+      "Field": "padRumble",
+      "Name": "Controller Vibration Parameter ID",
+      "Description": "Reference ID for controller vibration settings triggered by the attack."
+    },
+    {
+      "Field": "rumbleTime",
+      "Name": "Vibration Duration [sec]",
+      "Description": "Length of controller or camera vibration."
+    },
+    {
+      "Field": "rumbleDecStartRange",
+      "Name": "Vibration Falloff Start Distance [m]",
+      "Description": "Distance at which vibration intensity begins to decrease."
+    },
+    {
+      "Field": "rumbleDecEndRange",
+      "Name": "Vibration Falloff End Distance [m]",
+      "Description": "Distance at which vibration effect fully fades out."
+    },
+    {
+      "Field": "windPriority",
+      "Name": "Wind Priority",
+      "Description": "Priority level of the wind effect generated by the attack."
+    },
+    {
+      "Field": "windRadius",
+      "Name": "Wind Radius [m]",
+      "Description": "Radius affected by the generated wind effect."
+    },
+    {
+      "Field": "windMinSpeed",
+      "Name": "Minimum Wind Speed [m/s]",
+      "Description": "Minimum wind force generated by the attack."
+    },
+    {
+      "Field": "windMaxSpeed",
+      "Name": "Maximum Wind Speed [m/s]",
+      "Description": "Maximum wind force generated by the attack."
+    },
+    {
+      "Field": "windFrequency",
+      "Name": "Wind Frequency",
+      "Description": "Frequency or oscillation rate of the wind effect."
+    },
+    {
+      "Field": "windGinStartDistance",
+      "Name": "Wind Falloff Start Distance",
+      "Description": "Distance at which wind attenuation processing begins."
+    },
+    {
+      "Field": "windLife",
+      "Name": "Wind Lifetime Extension",
+      "Description": "Additional lifetime duration for the wind effect."
+    },
+    {
+      "Field": "windCateId",
+      "Name": "Wind Influence Category",
+      "Description": "Category ID defining which objects or systems are affected by the wind effect."
+    },
+    {
+      "Field": "staggerTime",
+      "Name": "Stagger Duration",
+      "Description": "Amount of time the target remains staggered."
+    },
+    {
+      "Field": "staggerMoveRate",
+      "Name": "Stagger Movement %",
+      "Description": "Movement speed multiplier while staggered."
+    },
+    {
+      "Field": "staggerRotRate",
+      "Name": "Stagger Rotation %",
+      "Description": "Rotation speed multiplier while staggered."
+    },
+    {
+      "Field": "damageMotionWeightDisable",
+      "Name": "Disable Weight Calculation",
+      "Description": "Disables weight-based hit reaction calculations."
+    },
+    {
+      "Field": "headShotDisable",
+      "Name": "Disable Headshots",
+      "Description": "Prevents the attack from triggering headshot effects or bonuses."
+    },
+    {
+      "Field": "isWet",
+      "Name": "Applies Wet Status",
+      "Description": "Determines whether the attack applies a wet or soaked state."
+    },
+    {
+      "Field": "damageImpactPowerType",
+      "Name": "Damage Impact Force Type",
+      "Description": "Specifies the physical impact force category of the attack."
+    },
+    {
+      "Field": "wetId",
+      "Name": "Wet Category",
+      "Description": "Category ID for the wet status effect applied by the attack."
+    },
+    {
+      "Field": "pushBackRate",
+      "Name": "Pushback Application %",
+      "Description": "Multiplier affecting how much pushback force is applied."
+    },
+    {
+      "Field": "poiseDamage",
+      "Name": "Poise Damage",
+      "Description": "Amount of poise damage inflicted by the attack."
+    },
+    {
+      "Field": "damageDistDecrementStart",
+      "Name": "Damage Falloff Start Distance",
+      "Description": "Distance at which damage attenuation begins."
+    },
+    {
+      "Field": "damageDistDecrementEnd",
+      "Name": "Damage Falloff End Distance",
+      "Description": "Distance at which maximum damage attenuation is reached."
+    },
+    {
+      "Field": "damageDecrementHpMaxRate",
+      "Name": "Maximum HP Damage Falloff %",
+      "Description": "Minimum multiplier applied to HP damage after full distance attenuation."
+    },
+    {
+      "Field": "damageDecrementStaminaMaxRate",
+      "Name": "Maximum Stamina Damage Falloff %",
+      "Description": "Minimum multiplier applied to stamina damage after full distance attenuation."
+    },
+    {
+      "Field": "damageDecrementStunMaxRate",
+      "Name": "Maximum Stun Falloff %",
+      "Description": "Minimum multiplier applied to stun buildup after full distance attenuation."
+    },
+    {
+      "Field": "damageDecrementPoiseMaxRate",
+      "Name": "Maximum Poise Damage Falloff %",
+      "Description": "Minimum multiplier applied to poise damage after full distance attenuation."
+    },
+    {
+      "Field": "damageDecrementKnockBackMaxRate",
+      "Name": "Maximum Knockback Falloff %",
+      "Description": "Minimum multiplier applied to knockback distance after full distance attenuation."
+    }
+  ]
+}

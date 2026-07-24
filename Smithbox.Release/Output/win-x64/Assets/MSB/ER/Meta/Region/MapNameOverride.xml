@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a map name override area in the map." />
+  
+  <Field>
+    <TextID
+    AltName="Text ID"
+    Wiki="The FMG id to use for popup titlecards. Negative values apply when entering, Positive values apply on map load."
+    FmgRef="Title_Locations" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

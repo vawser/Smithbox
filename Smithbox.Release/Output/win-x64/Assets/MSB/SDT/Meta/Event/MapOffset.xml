@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents the offsets this map has applied to its constituent parts." />
+  
+  <Field>
+    <Position
+    AltName="Position"
+    Wiki="Location of the map."
+    PositionProperty="" />
+    
+    <RotationY
+    AltName="Rotation: Y"
+    Wiki="Rotation on the y-axis for the map, in degrees." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,461 @@
+{
+  "Name": "generatorlocation_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 30,
+      "Entries": [
+        "[GEN:30] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[GEN:32] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[GEN:60] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[GEN:61] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 656,
+      "Entries": [
+        "[GEN:656] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 657,
+      "Entries": [
+        "[GEN:657] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[GEN:800] Giant Lord"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[GEN:1120] Giant"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[GEN:1130] Giant"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[GEN:1210] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[GEN:1211] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "[GEN:1212] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[GEN:1230] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1231,
+      "Entries": [
+        "[GEN:1231] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1232,
+      "Entries": [
+        "[GEN:1232] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1233,
+      "Entries": [
+        "[GEN:1233] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1234,
+      "Entries": [
+        "[GEN:1234] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 1235,
+      "Entries": [
+        "[GEN:1235] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 1236,
+      "Entries": [
+        "[GEN:1236] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1237,
+      "Entries": [
+        "[GEN:1237] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1238,
+      "Entries": [
+        "[GEN:1238] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1239,
+      "Entries": [
+        "[GEN:1239] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "[GEN:1240] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] Giant"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[GEN:1310] Giant"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "[GEN:1311] Giant"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[GEN:1330] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "[GEN:1331] Giant"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Elite Giant"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Elite Giant"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[GEN:2201] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "[GEN:2202] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "[GEN:2230] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "[GEN:2301] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "[GEN:2302] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "[GEN:2303] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Elite Giant"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[GEN:2410] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2411,
+      "Entries": [
+        "[GEN:2411] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2412,
+      "Entries": [
+        "[GEN:2412] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "[GEN:2420] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 2421,
+      "Entries": [
+        "[GEN:2421] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[GEN:2510] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "[GEN:2511] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "[GEN:2520] Giant"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[GEN:2610] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "[GEN:2620] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "[GEN:2630] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2640,
+      "Entries": [
+        "[GEN:2640] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[GEN:2900] Giant"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[GEN:2910] Giant"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "[GEN:2920] Giant"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Elite Giant"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "[GEN:3011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "[GEN:3012] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "[GEN:3021] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "[GEN:3022] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "[GEN:3031] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 3032,
+      "Entries": [
+        "[GEN:3032] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Elite Giant"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[GEN:3111] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "[GEN:3112] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[GEN:3120] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[GEN:3121] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "[GEN:3122] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[GEN:3130] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "[GEN:3131] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 3132,
+      "Entries": [
+        "[GEN:3132] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "[GEN:9990] Giant"
+      ]
+    }
+  ]
+}

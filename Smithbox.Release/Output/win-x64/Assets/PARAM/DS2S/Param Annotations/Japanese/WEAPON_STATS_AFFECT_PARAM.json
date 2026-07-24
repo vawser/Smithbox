@@ -1,0 +1,513 @@
+{
+  "Param": "WEAPON_STATS_AFFECT_PARAM",
+  "Type": "WEAPON_STATS_AFFECT_PARAM",
+  "Name": "WEAPON_STATS_AFFECT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseValueScale",
+      "Name": "強化ベース値 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "menuBaseValueScale",
+      "Name": "メニュー用 強化ベース値 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength0",
+      "Name": "ステータス影響倍率 物理 筋力 0",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity0",
+      "Name": "ステータス影響倍率 物理 技量 0",
+      "Description": ""
+    },
+    {
+      "Field": "magic0",
+      "Name": "ステータス影響倍率 魔力 0",
+      "Description": ""
+    },
+    {
+      "Field": "thunder0",
+      "Name": "ステータス影響倍率 雷 0",
+      "Description": ""
+    },
+    {
+      "Field": "fire0",
+      "Name": "ステータス影響倍率 炎 0",
+      "Description": ""
+    },
+    {
+      "Field": "dark0",
+      "Name": "ステータス影響倍率 闇 0",
+      "Description": ""
+    },
+    {
+      "Field": "poison0",
+      "Name": "ステータス影響倍率 毒 0",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding0",
+      "Name": "ステータス影響倍率 出血 0",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant0",
+      "Name": "ステータス影響倍率 物理 魔力 0",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength1",
+      "Name": "ステータス影響倍率 物理 筋力 1",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity1",
+      "Name": "ステータス影響倍率 物理 技量 1",
+      "Description": ""
+    },
+    {
+      "Field": "magic1",
+      "Name": "ステータス影響倍率 魔力 1",
+      "Description": ""
+    },
+    {
+      "Field": "thunder1",
+      "Name": "ステータス影響倍率 雷 1",
+      "Description": ""
+    },
+    {
+      "Field": "fire1",
+      "Name": "ステータス影響倍率 炎 1",
+      "Description": ""
+    },
+    {
+      "Field": "dark1",
+      "Name": "ステータス影響倍率 闇 1",
+      "Description": ""
+    },
+    {
+      "Field": "poison1",
+      "Name": "ステータス影響倍率 毒 1",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding1",
+      "Name": "ステータス影響倍率 出血 1",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant1",
+      "Name": "ステータス影響倍率 物理 魔力 1",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength2",
+      "Name": "ステータス影響倍率 物理 筋力 2",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity2",
+      "Name": "ステータス影響倍率 物理 技量 2",
+      "Description": ""
+    },
+    {
+      "Field": "magic2",
+      "Name": "ステータス影響倍率 魔力 2",
+      "Description": ""
+    },
+    {
+      "Field": "thunder2",
+      "Name": "ステータス影響倍率 雷 2",
+      "Description": ""
+    },
+    {
+      "Field": "fire2",
+      "Name": "ステータス影響倍率 炎 2",
+      "Description": ""
+    },
+    {
+      "Field": "dark2",
+      "Name": "ステータス影響倍率 闇 2",
+      "Description": ""
+    },
+    {
+      "Field": "poison2",
+      "Name": "ステータス影響倍率 毒 2",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding2",
+      "Name": "ステータス影響倍率 出血 2",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant2",
+      "Name": "ステータス影響倍率 物理 魔力 2",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength3",
+      "Name": "ステータス影響倍率 物理 筋力 3",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity3",
+      "Name": "ステータス影響倍率 物理 技量 3",
+      "Description": ""
+    },
+    {
+      "Field": "magic3",
+      "Name": "ステータス影響倍率 魔力 3",
+      "Description": ""
+    },
+    {
+      "Field": "thunder3",
+      "Name": "ステータス影響倍率 雷 3",
+      "Description": ""
+    },
+    {
+      "Field": "fire3",
+      "Name": "ステータス影響倍率 炎 3",
+      "Description": ""
+    },
+    {
+      "Field": "dark3",
+      "Name": "ステータス影響倍率 闇 3",
+      "Description": ""
+    },
+    {
+      "Field": "poison3",
+      "Name": "ステータス影響倍率 毒 3",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding3",
+      "Name": "ステータス影響倍率 出血 3",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant3",
+      "Name": "ステータス影響倍率 物理 魔力 3",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength4",
+      "Name": "ステータス影響倍率 物理 筋力 4",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity4",
+      "Name": "ステータス影響倍率 物理 技量 4",
+      "Description": ""
+    },
+    {
+      "Field": "magic4",
+      "Name": "ステータス影響倍率 魔力 4",
+      "Description": ""
+    },
+    {
+      "Field": "thunder4",
+      "Name": "ステータス影響倍率 雷 4",
+      "Description": ""
+    },
+    {
+      "Field": "fire4",
+      "Name": "ステータス影響倍率 炎 4",
+      "Description": ""
+    },
+    {
+      "Field": "dark4",
+      "Name": "ステータス影響倍率 闇 4",
+      "Description": ""
+    },
+    {
+      "Field": "poison4",
+      "Name": "ステータス影響倍率 毒 4",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding4",
+      "Name": "ステータス影響倍率 出血 4",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant4",
+      "Name": "ステータス影響倍率 物理 魔力 4",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength5",
+      "Name": "ステータス影響倍率 物理 筋力 5",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity5",
+      "Name": "ステータス影響倍率 物理 技量 5",
+      "Description": ""
+    },
+    {
+      "Field": "magic5",
+      "Name": "ステータス影響倍率 魔力 5",
+      "Description": ""
+    },
+    {
+      "Field": "thunder5",
+      "Name": "ステータス影響倍率 雷 5",
+      "Description": ""
+    },
+    {
+      "Field": "fire5",
+      "Name": "ステータス影響倍率 炎 5",
+      "Description": ""
+    },
+    {
+      "Field": "dark5",
+      "Name": "ステータス影響倍率 闇 5",
+      "Description": ""
+    },
+    {
+      "Field": "poison5",
+      "Name": "ステータス影響倍率 毒 5",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding5",
+      "Name": "ステータス影響倍率 出血 5",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant5",
+      "Name": "ステータス影響倍率 物理 魔力 5",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength6",
+      "Name": "ステータス影響倍率 物理 筋力 6",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity6",
+      "Name": "ステータス影響倍率 物理 技量 6",
+      "Description": ""
+    },
+    {
+      "Field": "magic6",
+      "Name": "ステータス影響倍率 魔力 6",
+      "Description": ""
+    },
+    {
+      "Field": "thunder6",
+      "Name": "ステータス影響倍率 雷 6",
+      "Description": ""
+    },
+    {
+      "Field": "fire6",
+      "Name": "ステータス影響倍率 炎 6",
+      "Description": ""
+    },
+    {
+      "Field": "dark6",
+      "Name": "ステータス影響倍率 闇 6",
+      "Description": ""
+    },
+    {
+      "Field": "poison6",
+      "Name": "ステータス影響倍率 毒 6",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding6",
+      "Name": "ステータス影響倍率 出血 6",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant6",
+      "Name": "ステータス影響倍率 物理 魔力 6",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength7",
+      "Name": "ステータス影響倍率 物理 筋力 7",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity7",
+      "Name": "ステータス影響倍率 物理 技量 7",
+      "Description": ""
+    },
+    {
+      "Field": "magic7",
+      "Name": "ステータス影響倍率 魔力 7",
+      "Description": ""
+    },
+    {
+      "Field": "thunder7",
+      "Name": "ステータス影響倍率 雷 7",
+      "Description": ""
+    },
+    {
+      "Field": "fire7",
+      "Name": "ステータス影響倍率 炎 7",
+      "Description": ""
+    },
+    {
+      "Field": "dark7",
+      "Name": "ステータス影響倍率 闇 7",
+      "Description": ""
+    },
+    {
+      "Field": "poison7",
+      "Name": "ステータス影響倍率 毒 7",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding7",
+      "Name": "ステータス影響倍率 出血 7",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant7",
+      "Name": "ステータス影響倍率 物理 魔力 7",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength8",
+      "Name": "ステータス影響倍率 物理 筋力 8",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity8",
+      "Name": "ステータス影響倍率 物理 技量 8",
+      "Description": ""
+    },
+    {
+      "Field": "magic8",
+      "Name": "ステータス影響倍率 魔力 8",
+      "Description": ""
+    },
+    {
+      "Field": "thunder8",
+      "Name": "ステータス影響倍率 雷 8",
+      "Description": ""
+    },
+    {
+      "Field": "fire8",
+      "Name": "ステータス影響倍率 炎 8",
+      "Description": ""
+    },
+    {
+      "Field": "dark8",
+      "Name": "ステータス影響倍率 闇 8",
+      "Description": ""
+    },
+    {
+      "Field": "poison8",
+      "Name": "ステータス影響倍率 毒 8",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding8",
+      "Name": "ステータス影響倍率 出血 8",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant8",
+      "Name": "ステータス影響倍率 物理 魔力 8",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength9",
+      "Name": "ステータス影響倍率 物理 筋力 9",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity9",
+      "Name": "ステータス影響倍率 物理 技量 9",
+      "Description": ""
+    },
+    {
+      "Field": "magic9",
+      "Name": "ステータス影響倍率 魔力 9",
+      "Description": ""
+    },
+    {
+      "Field": "thunder9",
+      "Name": "ステータス影響倍率 雷 9",
+      "Description": ""
+    },
+    {
+      "Field": "fire9",
+      "Name": "ステータス影響倍率 炎 9",
+      "Description": ""
+    },
+    {
+      "Field": "dark9",
+      "Name": "ステータス影響倍率 闇 9",
+      "Description": ""
+    },
+    {
+      "Field": "poison9",
+      "Name": "ステータス影響倍率 毒 9",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding9",
+      "Name": "ステータス影響倍率 出血 9",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant9",
+      "Name": "ステータス影響倍率 物理 魔力 9",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByStrength10",
+      "Name": "ステータス影響倍率 物理 筋力 10",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByDexterity10",
+      "Name": "ステータス影響倍率 物理 技量 10",
+      "Description": ""
+    },
+    {
+      "Field": "magic10",
+      "Name": "ステータス影響倍率 魔力 10",
+      "Description": ""
+    },
+    {
+      "Field": "thunder10",
+      "Name": "ステータス影響倍率 雷 10",
+      "Description": ""
+    },
+    {
+      "Field": "fire10",
+      "Name": "ステータス影響倍率 炎 10",
+      "Description": ""
+    },
+    {
+      "Field": "dark10",
+      "Name": "ステータス影響倍率 闇 10",
+      "Description": ""
+    },
+    {
+      "Field": "poison10",
+      "Name": "ステータス影響倍率 毒 10",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding10",
+      "Name": "ステータス影響倍率 出血 10",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchant10",
+      "Name": "ステータス影響倍率 物理 魔力 10",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "Name": "ItemLotParam",
+  "Groups": [
+    {
+      "Key": "General",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "General"
+        }
+      ],
+      "Fields": [
+        "lotItem_Rarity",
+        "getItemFlagId",
+        "GameClearOffset",
+        "canExecByFriendlyGhost",
+        "canExecByHostileGhost"
+      ]
+    },
+    {
+      "Key": "Lot 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 1"
+        }
+      ],
+      "Fields": [
+        "lotItemId01",
+        "lotItemCategory01",
+        "lotItemNum01",
+        "lotItemBasePoint01",
+        "enableLuck01",
+        "getItemFlagId01"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint01",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 2"
+        }
+      ],
+      "Fields": [
+        "lotItemId02",
+        "lotItemCategory02",
+        "lotItemNum02",
+        "lotItemBasePoint02",
+        "enableLuck02",
+        "getItemFlagId02"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint02",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 3"
+        }
+      ],
+      "Fields": [
+        "lotItemId03",
+        "lotItemCategory03",
+        "lotItemNum03",
+        "lotItemBasePoint03",
+        "enableLuck03",
+        "getItemFlagId03"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint03",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 4"
+        }
+      ],
+      "Fields": [
+        "lotItemId04",
+        "lotItemCategory04",
+        "lotItemNum04",
+        "lotItemBasePoint04",
+        "enableLuck04",
+        "getItemFlagId04"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint04",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 5"
+        }
+      ],
+      "Fields": [
+        "lotItemId05",
+        "lotItemCategory05",
+        "lotItemNum05",
+        "lotItemBasePoint05",
+        "enableLuck05",
+        "getItemFlagId05"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint05",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 6"
+        }
+      ],
+      "Fields": [
+        "lotItemId06",
+        "lotItemCategory06",
+        "lotItemNum06",
+        "lotItemBasePoint06",
+        "enableLuck06",
+        "getItemFlagId06"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint06",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 7"
+        }
+      ],
+      "Fields": [
+        "lotItemId07",
+        "lotItemCategory07",
+        "lotItemNum07",
+        "lotItemBasePoint07",
+        "enableLuck07",
+        "getItemFlagId07"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint07",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 8"
+        }
+      ],
+      "Fields": [
+        "lotItemId08",
+        "lotItemCategory08",
+        "lotItemNum08",
+        "lotItemBasePoint08",
+        "enableLuck08",
+        "getItemFlagId08"
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint08",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
+    },
+    {
+      "Key": "Cumultative",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cumultative"
+        }
+      ],
+      "Fields": [
+        "cumulateNumFlagId",
+        "cumulateNumMax",
+        "cumulateLotPoint01",
+        "cumulateLotPoint02",
+        "cumulateLotPoint03",
+        "cumulateLotPoint04",
+        "cumulateLotPoint05",
+        "cumulateLotPoint06",
+        "cumulateLotPoint07",
+        "cumulateLotPoint08",
+        "cumulateReset01",
+        "cumulateReset02",
+        "cumulateReset03",
+        "cumulateReset04",
+        "cumulateReset05",
+        "cumulateReset06",
+        "cumulateReset07",
+        "cumulateReset08"
+      ]
+    }
+  ]
+}

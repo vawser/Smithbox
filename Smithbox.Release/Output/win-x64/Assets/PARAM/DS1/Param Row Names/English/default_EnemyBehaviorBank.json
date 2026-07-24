@@ -1,0 +1,137 @@
+{
+  "Name": "default_EnemyBehaviorBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "do nothing"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Snake Soldier"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Snake soldier licking meat"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Serpent bow soldier (outside the fort 0000)"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Serpent bow soldier (Fort Yagura 0001-0002)"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Serpent bow soldier (Fort bay window 0003)"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Snakebow Soldier (Lava Square)"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Proto Dragon Demon"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Crocodile"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "knight"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "stealth"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "rotting human"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Zako enemy for intern"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Ordinary Enemy for Intern"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Intern Boss Enemy"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Knight [provisional]"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Covert [temporary]"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Rot human [provisional]"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Slug [provisional]"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Plague rat"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "Standby enemy for test map"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Prototype Fat Medium Boss"
+      ]
+    }
+  ]
+}

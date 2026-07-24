@@ -1,0 +1,18 @@
+{
+  "Param": "DIRECTION_CAMERA_PARAM_ST",
+  "Type": "DIRECTION_CAMERA_PARAM_ST",
+  "Name": "DIRECTION_CAMERA_PARAM_ST",
+  "Description": "Rumble Camera data",
+  "Fields": [
+    {
+      "Field": "isUseOption",
+      "Name": "Affected by Production Camera Toggle",
+      "Description": "Is it affected by the production camera ON / OFF option?"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

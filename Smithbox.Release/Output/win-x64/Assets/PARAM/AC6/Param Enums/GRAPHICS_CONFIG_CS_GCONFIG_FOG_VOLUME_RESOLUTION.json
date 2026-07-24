@@ -1,0 +1,38 @@
+{
+  "Key": "GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fog Volume: 1 by 1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fog Volume: 2 by 2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fog Volume: 4 by 4"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "337",
+  "name": "Hollow",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sleeping on Floor"
+    },
+    {
+      "value": "3",
+      "name": "Kneeling "
+    },
+    {
+      "value": "4",
+      "name": "Writhing on Floor"
+    },
+    {
+      "value": "5",
+      "name": "Standing Prayer"
+    },
+    {
+      "value": "6",
+      "name": "Kneeling Prayer"
+    },
+    {
+      "value": "7",
+      "name": "Banging on Wall"
+    },
+    {
+      "value": "9",
+      "name": "Sitting"
+    },
+    {
+      "value": "10",
+      "name": "Rising from Ground"
+    },
+    {
+      "value": "11",
+      "name": "Dropping Down"
+    },
+    {
+      "value": "15",
+      "name": "Lying Down"
+    },
+    {
+      "value": "17",
+      "name": "Hanging from Ledge"
+    }
+  ]
+}

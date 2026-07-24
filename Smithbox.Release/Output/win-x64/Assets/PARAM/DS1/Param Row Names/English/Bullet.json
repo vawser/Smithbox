@@ -1,0 +1,3791 @@
+{
+  "Name": "Bullet",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Magic test"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Funnel test"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Flying Dragon Breath Test"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Evil eye [throw]"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Evil eye [landing]"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Genki ball LV1_ test [throw]"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Genki ball LV2_ test [throw]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Genki ball LV3_ test [throw]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Genki ball LV1_ test [landing]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Genki Ball LV2_ Test [Arrival]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Genki ball LV3_ test [landing]"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Bonfire recovery effect"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Item] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Item] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Item] Firebomb"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Item] Firebomb - HitBullet"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "[Item] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "[Item] Black Firebomb - HitBullet"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Item] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[Item] Alluring Skull - HitBullet"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Again B [parent]"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Again B [child]"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Item] Prism Stone"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[Item] Prism Stone -HitBullet"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[Item] Prism Stone -HitBullet"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Sleep Ball [Parent]"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Sleeping Ball [Child]"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Item] Dung Pie"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Item] Dung Pie - HitBullet"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[Item] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "[Item] Lloyd's Talisman - HitBullet"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "[Item] Bloodred Moss Clump"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "[Item] Bloodred Moss Clump - HitBullet"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "[Item] Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "[Item] Purple Moss Clump - HitBullet"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "[Item] Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "[Item] Blooming Purple Moss Clump - HitBullet"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "all-purpose treatment [condition recovery]"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "All-purpose treatment [Bleeding resistance recovery]"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "All-purpose treatment [Recovery of poison resistance]"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "All-around treatment"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Resurrection Stone [Resurrection Effect]"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Resurrection Stone [Humanity Recovery Effect]"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Item] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "[Item] Divine Blessing - HitBullet"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "[Item] Divine Blessing - HitBullet"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "[Item] Divine Blessing - HitBullet"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "[Item] Divine Blessing - HitBullet"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "[Item] Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "[Item] Dragon Head Stone 1"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "[Item] Dragon Head Stone 2"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "[Item] Dragon Head Stone 3"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "[Item] Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "[Item] Dragon Torso Stone 1"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "[Item] Dragon Torso Stone 2"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "[Item] Dragon Torso Stone 3"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "[Item] Dragon Torso Stone - HitBullet"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "[Item] Dragon Torso Stone - HitBullet 1"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "[Item] Dragon Torso Stone - HitBullet 2"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "[Item] Dragon Torso Stone - HitBullet 3"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "[Item] Hello Carving"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "[Item] Hello Carving - HitBullet"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "[Item] Thank you Carving"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "[Item] Thank you Carving - HitBullet"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "[Item] Very good! Carving"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "[Item] Very good! Carving - HitBullet"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "[Item] I'm sorry Carving"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "[Item] I'm sorry Carving - HitBullet"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "[Item] Help me! Carving"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "[Item] Help me! Carving - HitBullet"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Item] Silver Pendant"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Standard Arrow"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Large Arrow"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Feather Arrow"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Poison Arrow"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Moonlight Arrow"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Dragonslayer Arrow"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Gough's Great Arrow"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Standard Bolt"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [1 Shot]"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[58] Old dragon straight sword [2 bullets]"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[58] Old dragon straight sword [3 bullets]"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [4 Shots]"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [5 Shots]"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [6 Shots]"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [7 Shots]"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [8 Shots]"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [9 Shots]"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [10 Shots]"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [11 Shots]"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[58] Old dragon's straight sword [12 shots]"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [13 Shots]"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [14 Shots]"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "[58] Old Dragon's Straight Sword [15 Shots]"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[77] Great Sword of Stone [Gravity]"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[79] Moonlight_One hand [Light wave]"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[79] Moonlight _ Both hands [Light wave]"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[79] Moonlight _ Both hands [Landing explosion]"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[94] Rock Shield [Hazuki]"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "[94] Great Shield of Rock [SA Enhancement]"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[104] Iron Ax [Shock wave]"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[106] Dragon King's Big Ax [Slap Shockwave]"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[62] Hammer of Law Judgment [Range Damage]"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[65] Sixth Magic Spear [Other Biquilt]"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[68] Dragon Hunting Spear"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[68] Dragon Hunting Spear [1 Shot]"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[68] Dragon Hunting Spear [2 Shots]"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[68] Dragon Hunting Spear [3 Shots]"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "[68] Dragon Hunting Spear [4 Shots]"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "[68] Dragon Hunting Spear [5 Shots]"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[92] Small shield of crystal ring [Shock wave]"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[98] Old Dragon's Great Sword"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [1 Shot]"
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "[98] Great sword of the old dragon [2 bullets]"
+      ]
+    },
+    {
+      "ID": 1133,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [3 Shots]"
+      ]
+    },
+    {
+      "ID": 1134,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [4 Shots]"
+      ]
+    },
+    {
+      "ID": 1135,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [5 Shots]"
+      ]
+    },
+    {
+      "ID": 1136,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [6 Shots]"
+      ]
+    },
+    {
+      "ID": 1137,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [7 Shots]"
+      ]
+    },
+    {
+      "ID": 1138,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [8 Shots]"
+      ]
+    },
+    {
+      "ID": 1139,
+      "Entries": [
+        "[98] Great Dragon Sword [9 Shots]"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [10 Shots]"
+      ]
+    },
+    {
+      "ID": 1141,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [11 Shots]"
+      ]
+    },
+    {
+      "ID": 1142,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [12 Shots]"
+      ]
+    },
+    {
+      "ID": 1143,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [13 Shots]"
+      ]
+    },
+    {
+      "ID": 1144,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [14 Shots]"
+      ]
+    },
+    {
+      "ID": 1145,
+      "Entries": [
+        "[98] Old Dragon's Great Sword [15 Shots]"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Ryuken (Step Attack)"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "[135] Black Dragon Great Sword [Slapping Shockwave]"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Undead Rapport"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Iron Flesh - HitBullet"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Iron Flesh - HitBullet"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Aural Decoy"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Aural Decoy - HitBullet"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Vow of Silence"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Vow of Silence - HitBullet"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "Vow of Silence - HitBullet"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Tranquil Walk of Peace - HitBullet"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Poison Mist - HitBullet"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Toxic Mist - HitBullet"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "Chameleon - HitBullet"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Poison treatment [condition recovery]"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "Poison Treatment [Resilience Recovery]"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Remedy"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "Remedy - HitBullet"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "Remedy - HitBullet"
+      ]
+    },
+    {
+      "ID": 2930,
+      "Entries": [
+        "Remedy - HitBullet"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Homing Soulmass - HitBullet"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Homing Crystal Soulmass - HitBullet"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Soothing Sunlight - Level 1"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Soothing Sunlight - Level 2"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Soothing Sunlight - Level 3"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Soothing Sunlight - Level 4"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Bountiful Sunlight - Level 1"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Bountiful Sunlight - Level 2"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Bountiful Sunlight - Level 3"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Bountiful Sunlight - Level 4"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Acid Surge - HitBullet"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Fire Orb - HitBullet"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Great Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Great Chaos Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Great Chaos Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "Great Chaos Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "Great Chaos Fireball - HitBullet"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Gravelord Sword Dance - Level 1"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "Gravelord Sword Dance - Level 2"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "Gravelord Sword Dance - Level 3"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Gravelord Sword Dance - HitBullet"
+      ]
+    },
+    {
+      "ID": 6411,
+      "Entries": [
+        "Gravelord Sword Dance - Level 1 - HitBullet"
+      ]
+    },
+    {
+      "ID": 6412,
+      "Entries": [
+        "Gravelord Sword Dance - Level 2 - HitBullet"
+      ]
+    },
+    {
+      "ID": 6413,
+      "Entries": [
+        "Gravelord Sword Dance - Level 3 - HitBullet"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 1"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 2"
+      ]
+    },
+    {
+      "ID": 6503,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 3"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Gravelord Greatsword Dance - HitBullet"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 1 - HitBullet"
+      ]
+    },
+    {
+      "ID": 6512,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 2 - HitBullet"
+      ]
+    },
+    {
+      "ID": 6513,
+      "Entries": [
+        "Gravelord Greatsword Dance - Level 3 - HitBullet"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Combustion - HitBullet"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Great Combustion - HitBullet"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "firing 3 [bullet]"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "firing 3 [landing]"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Firestorm - HitBullet"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Fire Tempest - HitBullet"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Chaos Storm - HitBullet"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Chaos Storm - HitBullet"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Great Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Great Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Great Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Great Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "Great Lightning Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Sunlight Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Sunlight Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Sunlight Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "Sunlight Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 9250,
+      "Entries": [
+        "Sunlight Spear - HitBullet"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Force - Level 1"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Force - Level 2"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Force - Level 3"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Force - Level 4"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Wrath of the Gods - Level 1"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Wrath of the Gods - Level 2"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Wrath of the Gods - Level 3"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Wrath of the Gods - Level 4"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "Emit Force - Level 1"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Emit Force - Level 2"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Emit Force - Level 3"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "Emit Force - Level 4"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Emit Force - HitBullet"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "Emit Force - Level 1 - HitBullet"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "Emit Force - Level 2 - HitBullet"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "Emit Force - Level 3 - HitBullet"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "Emit Force - Level 4 - HitBullet"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Dragon transformation _ whole body [head]"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Dragon transformation _ whole body [body]"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "Fire Surge"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 11410,
+      "Entries": [
+        "Chaos Fire Whip - HitBullet"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11520,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11530,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11540,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11550,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11560,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11570,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11580,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11590,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11610,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11620,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11630,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11640,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 11650,
+      "Entries": [
+        "White Dragon Breath - HitBullet"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Causal response [throw]"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Causal response [landing]"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Soul Drain 1"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Soul Drain 2"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Dark Bead"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 14210,
+      "Entries": [
+        "Dark Fog - HitBullet"
+      ]
+    },
+    {
+      "ID": 14300,
+      "Entries": [
+        "Pursuers"
+      ]
+    },
+    {
+      "ID": 14310,
+      "Entries": [
+        "Pursuers - HitBullet"
+      ]
+    },
+    {
+      "ID": 14400,
+      "Entries": [
+        "Black Flame"
+      ]
+    },
+    {
+      "ID": 14410,
+      "Entries": [
+        "Black Flame - HitBullet"
+      ]
+    },
+    {
+      "ID": 19901,
+      "Entries": [
+        "Resuscitation [throw]"
+      ]
+    },
+    {
+      "ID": 19902,
+      "Entries": [
+        "Resuscitation [landing]"
+      ]
+    },
+    {
+      "ID": 19905,
+      "Entries": [
+        "Restoration of others"
+      ]
+    },
+    {
+      "ID": 19906,
+      "Entries": [
+        "Black ghost retreat [throw]"
+      ]
+    },
+    {
+      "ID": 19907,
+      "Entries": [
+        "Black ghost landing [landing]"
+      ]
+    },
+    {
+      "ID": 19908,
+      "Entries": [
+        "Corrosion cloud [throw]"
+      ]
+    },
+    {
+      "ID": 19909,
+      "Entries": [
+        "Corrosion cloud [landing_corrosion]"
+      ]
+    },
+    {
+      "ID": 19910,
+      "Entries": [
+        "Fire bolt"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "[Infested Ghoul] Throwing a live head"
+      ]
+    },
+    {
+      "ID": 22300,
+      "Entries": [
+        "[Stray Demon] Forward magic [throw]"
+      ]
+    },
+    {
+      "ID": 22301,
+      "Entries": [
+        "[Stray Demon] Forward magic [landing]"
+      ]
+    },
+    {
+      "ID": 22305,
+      "Entries": [
+        "[Stray Demon] Self-centered magic [throw]"
+      ]
+    },
+    {
+      "ID": 22306,
+      "Entries": [
+        "[Stray Demon] Self-centered magic [landing]"
+      ]
+    },
+    {
+      "ID": 22310,
+      "Entries": [
+        "[Firesage Demon] forward magic [throw]"
+      ]
+    },
+    {
+      "ID": 22311,
+      "Entries": [
+        "[Firesage Demon] Forward magic [landing]"
+      ]
+    },
+    {
+      "ID": 22312,
+      "Entries": [
+        "[Firesage Demon] Self-centered magic [throw]"
+      ]
+    },
+    {
+      "ID": 22313,
+      "Entries": [
+        "[Firesage Demon] Self-centered magic [landing]"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "[Batwing Demon] Spear Throw 1"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "[Prowling Demon] Lightning Magic"
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        "[Iron Golem] Ax to vacuum wave"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "[Smough] Thunder Explosion with Hip Attack"
+      ]
+    },
+    {
+      "ID": 23700,
+      "Entries": [
+        "[Channeler] Magic Launch 1"
+      ]
+    },
+    {
+      "ID": 23701,
+      "Entries": [
+        "[Channeler] Magic Launch 2 (Long)"
+      ]
+    },
+    {
+      "ID": 23702,
+      "Entries": [
+        "[Channeler] Magic Washi (for allies)"
+      ]
+    },
+    {
+      "ID": 23703,
+      "Entries": [
+        "[Channeler] Masashita Wasshoi (for yourself)"
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        "[Stone Knight] Earth Knight_Gravity"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "[Painting Guardian] knife throwing"
+      ]
+    },
+    {
+      "ID": 24100,
+      "Entries": [
+        "[Silver Knight] Launch of a large bow"
+      ]
+    },
+    {
+      "ID": 24300,
+      "Entries": [
+        "[Demonic Statue] Breath (Front / Long)"
+      ]
+    },
+    {
+      "ID": 24301,
+      "Entries": [
+        "[Demonic Statue] Breath (Swing)"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "[Hollow] bow shooting"
+      ]
+    },
+    {
+      "ID": 25200,
+      "Entries": [
+        "[Undead Assassin] Throwing knife"
+      ]
+    },
+    {
+      "ID": 25300,
+      "Entries": [
+        "[Blowdart Hollow] Blow Arrow"
+      ]
+    },
+    {
+      "ID": 25400,
+      "Entries": [
+        "[Hollow Warrior] Throw the bottle"
+      ]
+    },
+    {
+      "ID": 25401,
+      "Entries": [
+        "[Hollow Warrior]  tying bullet from “throwing a bottle”"
+      ]
+    },
+    {
+      "ID": 25402,
+      "Entries": [
+        "[Hollow Warrior] Spreading Flame from \"Splice Bullet\""
+      ]
+    },
+    {
+      "ID": 25500,
+      "Entries": [
+        "[Hollow Soldier] Bowgun Shooting"
+      ]
+    },
+    {
+      "ID": 25600,
+      "Entries": [
+        "[Balder Knight] Bowgun Shooting"
+      ]
+    },
+    {
+      "ID": 25900,
+      "Entries": [
+        "[Unknown] Shooting"
+      ]
+    },
+    {
+      "ID": 26500,
+      "Entries": [
+        "[Necromancer] Fire magic from skeletons"
+      ]
+    },
+    {
+      "ID": 26501,
+      "Entries": [
+        "[Necromancer] Pow the ashes"
+      ]
+    },
+    {
+      "ID": 26700,
+      "Entries": [
+        "[Ghost (Male)] magic launch"
+      ]
+    },
+    {
+      "ID": 26800,
+      "Entries": [
+        "[Ghost (Female)] Push out baby"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "[Serpent Mage] Spit the venom"
+      ]
+    },
+    {
+      "ID": 27001,
+      "Entries": [
+        "[Serpent Mage] Magic launch"
+      ]
+    },
+    {
+      "ID": 27100,
+      "Entries": [
+        "[Crystal Golem] hit the ground"
+      ]
+    },
+    {
+      "ID": 27101,
+      "Entries": [
+        "[Crystal Golem] Striking the ground (Derivation 1)"
+      ]
+    },
+    {
+      "ID": 27102,
+      "Entries": [
+        "[Crystal Golem] Striking the ground (Derivation 2)"
+      ]
+    },
+    {
+      "ID": 27103,
+      "Entries": [
+        "[Crystal Golem] hitting the ground (derivation 3)"
+      ]
+    },
+    {
+      "ID": 27104,
+      "Entries": [
+        "[Crystal Golem] hitting the ground (derivation 4)"
+      ]
+    },
+    {
+      "ID": 27105,
+      "Entries": [
+        "[Crystal Golem] hitting the ground (derived 5)"
+      ]
+    },
+    {
+      "ID": 27106,
+      "Entries": [
+        "[Crystal Golem] Striking the ground (Derivation 6)"
+      ]
+    },
+    {
+      "ID": 27107,
+      "Entries": [
+        "[Crystal Golem] Striking the ground (Derivation 7)"
+      ]
+    },
+    {
+      "ID": 27110,
+      "Entries": [
+        "[Crystal Golem (Gold)] Striking the ground"
+      ]
+    },
+    {
+      "ID": 27111,
+      "Entries": [
+        "[Crystal Golem (Gold)] hit the ground [child]"
+      ]
+    },
+    {
+      "ID": 27112,
+      "Entries": [
+        "[Crystal Golem (Gold)] Hit the ground [grandchild]"
+      ]
+    },
+    {
+      "ID": 27113,
+      "Entries": [
+        "[Crystal Golem (Gold)] Striking the ground [Great Son]"
+      ]
+    },
+    {
+      "ID": 27114,
+      "Entries": [
+        "[Crystal Golem (Gold)] Hit the ground [Genso]"
+      ]
+    },
+    {
+      "ID": 27300,
+      "Entries": [
+        "[Priscilla] breath (foot)"
+      ]
+    },
+    {
+      "ID": 27301,
+      "Entries": [
+        "[Priscilla] breath (slight swing)"
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "[Crystal Hollow] bow shooting"
+      ]
+    },
+    {
+      "ID": 28110,
+      "Entries": [
+        "[Infested Barbarian] throw rock"
+      ]
+    },
+    {
+      "ID": 28300,
+      "Entries": [
+        "[Hollow Phalanx] Spear Throw"
+      ]
+    },
+    {
+      "ID": 28400,
+      "Entries": [
+        "[Engorged Hollow] Spit the venom of blood"
+      ]
+    },
+    {
+      "ID": 28401,
+      "Entries": [
+        "[Engorged Hollow] Mass squirting of toxic blood at death"
+      ]
+    },
+    {
+      "ID": 28402,
+      "Entries": [
+        "[Engorged Hollow] Spell 1"
+      ]
+    },
+    {
+      "ID": 28403,
+      "Entries": [
+        "[Engorged Hollow] Spell 2"
+      ]
+    },
+    {
+      "ID": 28600,
+      "Entries": [
+        "[Giant] Throwing 1"
+      ]
+    },
+    {
+      "ID": 28601,
+      "Entries": [
+        "[Giant] throwing 2"
+      ]
+    },
+    {
+      "ID": 28602,
+      "Entries": [
+        "[Giant] throwing 3"
+      ]
+    },
+    {
+      "ID": 28607,
+      "Entries": [
+        "[Giant] fire pot [for the middle]"
+      ]
+    },
+    {
+      "ID": 28608,
+      "Entries": [
+        "[Giant] flame jar [tie]"
+      ]
+    },
+    {
+      "ID": 28609,
+      "Entries": [
+        "[Giant] fire jar [landing]"
+      ]
+    },
+    {
+      "ID": 28610,
+      "Entries": [
+        "[Giant] Event throwing 1"
+      ]
+    },
+    {
+      "ID": 28611,
+      "Entries": [
+        "[Giant] event throwing 2"
+      ]
+    },
+    {
+      "ID": 28612,
+      "Entries": [
+        "[Giant] Event throwing 3"
+      ]
+    },
+    {
+      "ID": 28613,
+      "Entries": [
+        "[Giant] event throwing 4"
+      ]
+    },
+    {
+      "ID": 28614,
+      "Entries": [
+        "[Giant] Event throwing 5"
+      ]
+    },
+    {
+      "ID": 28615,
+      "Entries": [
+        "[Giant] Event throwing 6"
+      ]
+    },
+    {
+      "ID": 28700,
+      "Entries": [
+        "[Royal Sentinel] Miracles / Angry of God"
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "[Skeleton] Arrow"
+      ]
+    },
+    {
+      "ID": 29010,
+      "Entries": [
+        "[Skeleton] Large bow and arrow"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "[Mosquito] venomous squirt"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "[Slime] dropping drops"
+      ]
+    },
+    {
+      "ID": 32200,
+      "Entries": [
+        "[Chaos Bug] discharge liquid"
+      ]
+    },
+    {
+      "ID": 32300,
+      "Entries": [
+        "[Moonlight Butterfly] Magic Spear"
+      ]
+    },
+    {
+      "ID": 32301,
+      "Entries": [
+        "[Moonlight Butterfly] magic spear (for direction)"
+      ]
+    },
+    {
+      "ID": 32302,
+      "Entries": [
+        "[Moonlight Butterfly] Magic spear (for stage 2)"
+      ]
+    },
+    {
+      "ID": 32310,
+      "Entries": [
+        "[Moonlight Butterfly] Magic spear (large)"
+      ]
+    },
+    {
+      "ID": 32320,
+      "Entries": [
+        "[Moonlight Butterfly] Magic Spear (Oversized)"
+      ]
+    },
+    {
+      "ID": 32321,
+      "Entries": [
+        "[Moonlight Butterfly] Magic Spear (Oversized) [Arrival]"
+      ]
+    },
+    {
+      "ID": 32330,
+      "Entries": [
+        "[Moonlight Butterfly] range explosion"
+      ]
+    },
+    {
+      "ID": 32400,
+      "Entries": [
+        "[Chaos Eater] Digestive juice"
+      ]
+    },
+    {
+      "ID": 32401,
+      "Entries": [
+        "[Chaos Eater] Digestive juice (long distance)"
+      ]
+    },
+    {
+      "ID": 32700,
+      "Entries": [
+        "[Basilisk] Petrified breath"
+      ]
+    },
+    {
+      "ID": 32701,
+      "Entries": [
+        "[Basilisk] jump & breath"
+      ]
+    },
+    {
+      "ID": 32702,
+      "Entries": [
+        "[Basilisk] Jump & Breath Impact For SFX"
+      ]
+    },
+    {
+      "ID": 32703,
+      "Entries": [
+        "[Basilisk] For jump & breath landing headache"
+      ]
+    },
+    {
+      "ID": 33200,
+      "Entries": [
+        "[Pinwheel] Magic Square A"
+      ]
+    },
+    {
+      "ID": 33201,
+      "Entries": [
+        "[Pinwheel] Magic Square A (upside down)"
+      ]
+    },
+    {
+      "ID": 33202,
+      "Entries": [
+        "[Pinwheel] Back Step & Magic Square A"
+      ]
+    },
+    {
+      "ID": 33203,
+      "Entries": [
+        "[Pinwheel] Back Step & Magic Square A (upside down)"
+      ]
+    },
+    {
+      "ID": 33300,
+      "Entries": [
+        "[Pisaca] Bishacha_Spit"
+      ]
+    },
+    {
+      "ID": 33410,
+      "Entries": [
+        "[Flaming Attack Dog] Spit Flame"
+      ]
+    },
+    {
+      "ID": 33800,
+      "Entries": [
+        "[Leech] mucus"
+      ]
+    },
+    {
+      "ID": 33900,
+      "Entries": [
+        "[Burrower] Spitting liquid in a short distance"
+      ]
+    },
+    {
+      "ID": 33901,
+      "Entries": [
+        "[Burrower] Spit to a long distance"
+      ]
+    },
+    {
+      "ID": 33902,
+      "Entries": [
+        "[Burrower] Spit on base (ground)"
+      ]
+    },
+    {
+      "ID": 33903,
+      "Entries": [
+        "[Burrower] Spit a liquid far away (ground)"
+      ]
+    },
+    {
+      "ID": 33904,
+      "Entries": [
+        "[Burrower] Spit mucus (wall)"
+      ]
+    },
+    {
+      "ID": 33906,
+      "Entries": [
+        "[Burrower] Mucous / Front (ceiling)"
+      ]
+    },
+    {
+      "ID": 33907,
+      "Entries": [
+        "[Burrower] mucus, right (ceiling)"
+      ]
+    },
+    {
+      "ID": 33908,
+      "Entries": [
+        "[Burrower] mucus, left (ceiling)"
+      ]
+    },
+    {
+      "ID": 33909,
+      "Entries": [
+        "[Burrower] Mucus / Back (ceiling)"
+      ]
+    },
+    {
+      "ID": 34000,
+      "Entries": [
+        "[Cragspider] Magma from umbilical cord"
+      ]
+    },
+    {
+      "ID": 34001,
+      "Entries": [
+        "[Cragspider] Magma from umbilical cord [landing]"
+      ]
+    },
+    {
+      "ID": 34100,
+      "Entries": [
+        "[Frog-Ray] mucus"
+      ]
+    },
+    {
+      "ID": 34101,
+      "Entries": [
+        "[Frog-Ray] Slime (at the time of jump)"
+      ]
+    },
+    {
+      "ID": 34200,
+      "Entries": [
+        "[Undead Dragon] Assid Breath"
+      ]
+    },
+    {
+      "ID": 34201,
+      "Entries": [
+        "[Undead Dragon] Assid Breath (for right)"
+      ]
+    },
+    {
+      "ID": 34202,
+      "Entries": [
+        "[Undead Dragon] Assid Breath (Left)"
+      ]
+    },
+    {
+      "ID": 34203,
+      "Entries": [
+        "[Undead Dragon]  Front Breath"
+      ]
+    },
+    {
+      "ID": 34204,
+      "Entries": [
+        "[Undead Dragon] Wide Angle Breath"
+      ]
+    },
+    {
+      "ID": 34205,
+      "Entries": [
+        "[Undead Dragon] Float and breath right below"
+      ]
+    },
+    {
+      "ID": 34206,
+      "Entries": [
+        "[Undead Dragon] Floats and breathes right below (child bullet)"
+      ]
+    },
+    {
+      "ID": 34207,
+      "Entries": [
+        "[Undead Dragon (Valley of the Drakes)] breath to the right"
+      ]
+    },
+    {
+      "ID": 34208,
+      "Entries": [
+        "[Undead Dragon (Valley of the Drakes)] breath in front"
+      ]
+    },
+    {
+      "ID": 34209,
+      "Entries": [
+        "[Undead Dragon (Valley of the Drakes)] Breath to the left"
+      ]
+    },
+    {
+      "ID": 34300,
+      "Entries": [
+        "[Hellkite Drake] A point breath 1"
+      ]
+    },
+    {
+      "ID": 34301,
+      "Entries": [
+        "[Hellkite Drake] A → B"
+      ]
+    },
+    {
+      "ID": 34302,
+      "Entries": [
+        "[Hellkite Drake] B point breath 1"
+      ]
+    },
+    {
+      "ID": 34303,
+      "Entries": [
+        "[Hellkite Drake] B point breath 2"
+      ]
+    },
+    {
+      "ID": 34304,
+      "Entries": [
+        "[Hellkite Drake] B point fly off and breath 1"
+      ]
+    },
+    {
+      "ID": 34305,
+      "Entries": [
+        "[Hellkite Drake] B point fly-off breath 2"
+      ]
+    },
+    {
+      "ID": 34700,
+      "Entries": [
+        "[Sanctuary Guardian (Old)] Wind with wings"
+      ]
+    },
+    {
+      "ID": 34701,
+      "Entries": [
+        "[Sanctuary Guardian (Old)] Breath 1"
+      ]
+    },
+    {
+      "ID": 34710,
+      "Entries": [
+        "[Sanctuary Guardian] Win the wind with wings"
+      ]
+    },
+    {
+      "ID": 34711,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 1 Dummy"
+      ]
+    },
+    {
+      "ID": 34712,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 2 dummy"
+      ]
+    },
+    {
+      "ID": 34713,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath 1"
+      ]
+    },
+    {
+      "ID": 34714,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial Breath 2R"
+      ]
+    },
+    {
+      "ID": 34715,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath 2L"
+      ]
+    },
+    {
+      "ID": 34716,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath (child)"
+      ]
+    },
+    {
+      "ID": 34717,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath (grandchild)"
+      ]
+    },
+    {
+      "ID": 34718,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath (great grandson)"
+      ]
+    },
+    {
+      "ID": 34719,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial Breath (Genso)"
+      ]
+    },
+    {
+      "ID": 34720,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath (next grandson)"
+      ]
+    },
+    {
+      "ID": 34721,
+      "Entries": [
+        "[Sanctuary Guardian] step turning breath"
+      ]
+    },
+    {
+      "ID": 34722,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 1"
+      ]
+    },
+    {
+      "ID": 34723,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 2"
+      ]
+    },
+    {
+      "ID": 34724,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 1 (for passage) Dummy"
+      ]
+    },
+    {
+      "ID": 34725,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 2 (for passage) dummy"
+      ]
+    },
+    {
+      "ID": 34726,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 1 (for passage)"
+      ]
+    },
+    {
+      "ID": 34727,
+      "Entries": [
+        "[Sanctuary Guardian] Breath 2 (for passage)"
+      ]
+    },
+    {
+      "ID": 34728,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial Breath 2R (Near)"
+      ]
+    },
+    {
+      "ID": 34729,
+      "Entries": [
+        "[Sanctuary Guardian] Aerial breath 2L (near)"
+      ]
+    },
+    {
+      "ID": 34910,
+      "Entries": [
+        "[Evil Vagrant] Spiky launch_Damage level available"
+      ]
+    },
+    {
+      "ID": 34911,
+      "Entries": [
+        "[Evil Vagrant] Spiky launch (right) _With damage level"
+      ]
+    },
+    {
+      "ID": 34912,
+      "Entries": [
+        "[Evil Vagrant] Spiky launch (left side) _With damage level"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "[Mass Of Souls] Slime bullet (close)"
+      ]
+    },
+    {
+      "ID": 35001,
+      "Entries": [
+        "[Mass Of Souls] Slime bullet (far)"
+      ]
+    },
+    {
+      "ID": 35010,
+      "Entries": [
+        "[Wisp] Suicide [throwing]"
+      ]
+    },
+    {
+      "ID": 35011,
+      "Entries": [
+        "[Wisp] self-destruction [landing]"
+      ]
+    },
+    {
+      "ID": 35200,
+      "Entries": [
+        "[Drake] Top and bottom breath"
+      ]
+    },
+    {
+      "ID": 35201,
+      "Entries": [
+        "[Drake] Left and right breath (close)"
+      ]
+    },
+    {
+      "ID": 35202,
+      "Entries": [
+        "[Drake] Left and right breath (medium)"
+      ]
+    },
+    {
+      "ID": 35203,
+      "Entries": [
+        "[Drake] Left and right breath (far)"
+      ]
+    },
+    {
+      "ID": 35204,
+      "Entries": [
+        "[Drake] Descent breath"
+      ]
+    },
+    {
+      "ID": 35205,
+      "Entries": [
+        "[Drake] Breath landing"
+      ]
+    },
+    {
+      "ID": 35206,
+      "Entries": [
+        "[Drake] Front breath (ground)"
+      ]
+    },
+    {
+      "ID": 35207,
+      "Entries": [
+        "[Drake] Swing Breath (ground)"
+      ]
+    },
+    {
+      "ID": 35208,
+      "Entries": [
+        "[Drake] Breath & Backstep (ground)"
+      ]
+    },
+    {
+      "ID": 35209,
+      "Entries": [
+        "[Drake] Leaving breath (ground)"
+      ]
+    },
+    {
+      "ID": 35210,
+      "Entries": [
+        "[Drake] Leaving breath (moving forward)"
+      ]
+    },
+    {
+      "ID": 35211,
+      "Entries": [
+        "[Drake] Leaving Breath clockwise"
+      ]
+    },
+    {
+      "ID": 35212,
+      "Entries": [
+        "[Drake] Ascent & Glide & Breath"
+      ]
+    },
+    {
+      "ID": 35213,
+      "Entries": [
+        "[Drake] Ascending breath & jump"
+      ]
+    },
+    {
+      "ID": 35300,
+      "Entries": [
+        "[Hydra] A Point → B Point Movement_Breath"
+      ]
+    },
+    {
+      "ID": 35301,
+      "Entries": [
+        "[Hydra] B → C → Breath"
+      ]
+    },
+    {
+      "ID": 35303,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 1"
+      ]
+    },
+    {
+      "ID": 35304,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 2"
+      ]
+    },
+    {
+      "ID": 35305,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 3"
+      ]
+    },
+    {
+      "ID": 35306,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 4"
+      ]
+    },
+    {
+      "ID": 35307,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 5"
+      ]
+    },
+    {
+      "ID": 35308,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 6"
+      ]
+    },
+    {
+      "ID": 35309,
+      "Entries": [
+        "[Hydra] Near Breath_Neck 7"
+      ]
+    },
+    {
+      "ID": 35310,
+      "Entries": [
+        "[Hydra] Breath_Neck 1"
+      ]
+    },
+    {
+      "ID": 35311,
+      "Entries": [
+        "[Hydra] Breath_Neck 2"
+      ]
+    },
+    {
+      "ID": 35312,
+      "Entries": [
+        "[Hydra] Breath_Neck 3"
+      ]
+    },
+    {
+      "ID": 35313,
+      "Entries": [
+        "[Hydra] Distant Breath_Neck 4"
+      ]
+    },
+    {
+      "ID": 35314,
+      "Entries": [
+        "[Hydra] Breath_Neck 5"
+      ]
+    },
+    {
+      "ID": 35315,
+      "Entries": [
+        "[Hydra] Breath_Neck 6"
+      ]
+    },
+    {
+      "ID": 35316,
+      "Entries": [
+        "[Hydra] Breath_Neck 7"
+      ]
+    },
+    {
+      "ID": 35330,
+      "Entries": [
+        "[Hydra] A Point → B Point Movement_Breath_Head 1"
+      ]
+    },
+    {
+      "ID": 35331,
+      "Entries": [
+        "[Hydra] A Point → B Point Movement_Breath_Head 2"
+      ]
+    },
+    {
+      "ID": 35332,
+      "Entries": [
+        "[Hydra] A Point → B Point Movement_Breath_Neck 3"
+      ]
+    },
+    {
+      "ID": 35333,
+      "Entries": [
+        "[Hydra] A point → B point movement_Breath_Neck 4"
+      ]
+    },
+    {
+      "ID": 35334,
+      "Entries": [
+        "[Hydra] A point → B point movement_Breath_Neck 5"
+      ]
+    },
+    {
+      "ID": 35335,
+      "Entries": [
+        "[Hydra] Point A → Point B Movement_Breath_Head 6"
+      ]
+    },
+    {
+      "ID": 35336,
+      "Entries": [
+        "[Hydra] Point A → B Point Movement_Breath_Head 7"
+      ]
+    },
+    {
+      "ID": 35350,
+      "Entries": [
+        "[Hydra] B → Move to point A_Breath_Head 1"
+      ]
+    },
+    {
+      "ID": 35351,
+      "Entries": [
+        "[Hydra] B Point → A Point Movement_Breath_Head 2"
+      ]
+    },
+    {
+      "ID": 35352,
+      "Entries": [
+        "[Hydra] Point B → A Point Movement_Breath_Neck 3"
+      ]
+    },
+    {
+      "ID": 35353,
+      "Entries": [
+        "[Hydra] Point B → A Point Movement_Breath_Head 4"
+      ]
+    },
+    {
+      "ID": 35354,
+      "Entries": [
+        "[Hydra] B Point → A Point Movement_Breath_Head 5"
+      ]
+    },
+    {
+      "ID": 35355,
+      "Entries": [
+        "[Hydra] Point B → A point move_Breath_Head 6"
+      ]
+    },
+    {
+      "ID": 35356,
+      "Entries": [
+        "[Hydra] B → Move to A_Breath_Head 7"
+      ]
+    },
+    {
+      "ID": 35360,
+      "Entries": [
+        "[Hydra] Breath [Arrival (child)]"
+      ]
+    },
+    {
+      "ID": 35361,
+      "Entries": [
+        "[Hydra] Move Breath [Arrival (child)]"
+      ]
+    },
+    {
+      "ID": 35363,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 1"
+      ]
+    },
+    {
+      "ID": 35364,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 2"
+      ]
+    },
+    {
+      "ID": 35365,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 3"
+      ]
+    },
+    {
+      "ID": 35366,
+      "Entries": [
+        "[Hydra] Beast_Breath 2_Neck 4"
+      ]
+    },
+    {
+      "ID": 35367,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 5"
+      ]
+    },
+    {
+      "ID": 35368,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 6"
+      ]
+    },
+    {
+      "ID": 35369,
+      "Entries": [
+        "[Hydra] Breath 2_Neck 7"
+      ]
+    },
+    {
+      "ID": 35370,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation_neck 1"
+      ]
+    },
+    {
+      "ID": 35371,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation_neck 2"
+      ]
+    },
+    {
+      "ID": 35372,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation_neck 3"
+      ]
+    },
+    {
+      "ID": 35373,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation_neck 4"
+      ]
+    },
+    {
+      "ID": 35374,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation_neck 5"
+      ]
+    },
+    {
+      "ID": 35375,
+      "Entries": [
+        "[Hydra] Smoke SFX generation_neck 6"
+      ]
+    },
+    {
+      "ID": 35376,
+      "Entries": [
+        "[Hydra] Smoke SFX generation_neck 7"
+      ]
+    },
+    {
+      "ID": 35377,
+      "Entries": [
+        "[Hydra] Sand smoke SFX generation [landing]"
+      ]
+    },
+    {
+      "ID": 40900,
+      "Entries": [
+        "[Marvellous Chester] arrow"
+      ]
+    },
+    {
+      "ID": 40901,
+      "Entries": [
+        "[Marvellous Chester] Rose"
+      ]
+    },
+    {
+      "ID": 41500,
+      "Entries": [
+        "[Knight Artorias] Left hand tackle [Body]"
+      ]
+    },
+    {
+      "ID": 41501,
+      "Entries": [
+        "[Knight Artorias] Left hand tackle [Arrival]"
+      ]
+    },
+    {
+      "ID": 41510,
+      "Entries": [
+        "[Knight Artorias] Self-enhancement"
+      ]
+    },
+    {
+      "ID": 41600,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 1"
+      ]
+    },
+    {
+      "ID": 41610,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 2 [Throw]"
+      ]
+    },
+    {
+      "ID": 41611,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 2 [Arrival _ Poison]"
+      ]
+    },
+    {
+      "ID": 41620,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 3"
+      ]
+    },
+    {
+      "ID": 41621,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 3 (above)"
+      ]
+    },
+    {
+      "ID": 41622,
+      "Entries": [
+        "[Bloathead Sorcerer] Magic 3 (below)"
+      ]
+    },
+    {
+      "ID": 41700,
+      "Entries": [
+        "[Humanity Phantom (Large)] Attack"
+      ]
+    },
+    {
+      "ID": 41710,
+      "Entries": [
+        "[Humanity Phantom (Medium)] Attack"
+      ]
+    },
+    {
+      "ID": 41720,
+      "Entries": [
+        "[Humanity Phantom (Small)] Attack"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Manus, Father of the Abyss] Dummy 1"
+      ]
+    },
+    {
+      "ID": 45009,
+      "Entries": [
+        "[Manus, Father of the Abyss] Magic 1_Body"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Manus, Father of the Abyss] Magic 2"
+      ]
+    },
+    {
+      "ID": 45011,
+      "Entries": [
+        "[Manus, Father of the Abyss] Magic 2_Final"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Manus, Father of the Abyss] Magic 3_Dummy"
+      ]
+    },
+    {
+      "ID": 45021,
+      "Entries": [
+        "[Manus, Father of the Abyss] Magic 3_Body"
+      ]
+    },
+    {
+      "ID": 45100,
+      "Entries": [
+        "[Kalameet] straight breath"
+      ]
+    },
+    {
+      "ID": 45101,
+      "Entries": [
+        "[Kalameet] Linear Breath_1"
+      ]
+    },
+    {
+      "ID": 45102,
+      "Entries": [
+        "[Kalameet] Linear Breath_2"
+      ]
+    },
+    {
+      "ID": 45103,
+      "Entries": [
+        "[Kalameet] Linear Breath_3rd Shot"
+      ]
+    },
+    {
+      "ID": 45110,
+      "Entries": [
+        "[Kalameet] Fan type breath"
+      ]
+    },
+    {
+      "ID": 45120,
+      "Entries": [
+        "[Kalameet] rising breath"
+      ]
+    },
+    {
+      "ID": 45121,
+      "Entries": [
+        "[Kalameet] Rising Breath Impact"
+      ]
+    },
+    {
+      "ID": 45130,
+      "Entries": [
+        "[Kalameet] 180 Turning_Breath"
+      ]
+    },
+    {
+      "ID": 45140,
+      "Entries": [
+        "[Kalameet] Event Attack (Distant) Breath"
+      ]
+    },
+    {
+      "ID": 45141,
+      "Entries": [
+        "[Kalameet] Event Attack (Distant) Breath Landed"
+      ]
+    },
+    {
+      "ID": 45160,
+      "Entries": [
+        "[Kalameet] Event Attack (Near) Breath"
+      ]
+    },
+    {
+      "ID": 45161,
+      "Entries": [
+        "[Kalameet] Event Attack (Near) Breath Landed"
+      ]
+    },
+    {
+      "ID": 45170,
+      "Entries": [
+        "[Kalameet] direct breath"
+      ]
+    },
+    {
+      "ID": 45171,
+      "Entries": [
+        "[Kalameet] Breathe landing directly below"
+      ]
+    },
+    {
+      "ID": 45172,
+      "Entries": [
+        "[Kalameet] Breath directly below"
+      ]
+    },
+    {
+      "ID": 45180,
+      "Entries": [
+        "[Kalameet] Cliff Breath 1"
+      ]
+    },
+    {
+      "ID": 45181,
+      "Entries": [
+        "[Kalameet] Cliff Breath Breath 1 Shot"
+      ]
+    },
+    {
+      "ID": 45190,
+      "Entries": [
+        "[Kalameet] Cliff Breath 2"
+      ]
+    },
+    {
+      "ID": 45191,
+      "Entries": [
+        "[Kalameet] Cliff Breath Breath 2 Shot"
+      ]
+    },
+    {
+      "ID": 45200,
+      "Entries": [
+        "[Kalameet] Shock across the bridge"
+      ]
+    },
+    {
+      "ID": 51400,
+      "Entries": [
+        "c5140（DS２プロト）_飛竜の眷属_ブレス弾丸"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "[Centipede Demon] fireball first"
+      ]
+    },
+    {
+      "ID": 52001,
+      "Entries": [
+        "[Centipede Demon] fireball second"
+      ]
+    },
+    {
+      "ID": 52002,
+      "Entries": [
+        "[Centipede Demon] throwing a huge fireball [throwing]"
+      ]
+    },
+    {
+      "ID": 52003,
+      "Entries": [
+        "[Centipede Demon] throwing a huge fireball [landing]"
+      ]
+    },
+    {
+      "ID": 52200,
+      "Entries": [
+        "[Gravelord Nito] Self-centered explosion [throw]"
+      ]
+    },
+    {
+      "ID": 52201,
+      "Entries": [
+        "[Gravelord Nito] Self-centered explosion [landing]"
+      ]
+    },
+    {
+      "ID": 52310,
+      "Entries": [
+        "[Bed Of Chaos] Bombardment bullet"
+      ]
+    },
+    {
+      "ID": 52311,
+      "Entries": [
+        "[Bed Of Chaos] Breath landing"
+      ]
+    },
+    {
+      "ID": 52600,
+      "Entries": [
+        "[Gaping Dragon] Gero [Throwing]"
+      ]
+    },
+    {
+      "ID": 52601,
+      "Entries": [
+        "[Gaping Dragon] Gero [Arrival]"
+      ]
+    },
+    {
+      "ID": 52700,
+      "Entries": [
+        "[Dragonslayer Ornstein] Raise and throw lightning"
+      ]
+    },
+    {
+      "ID": 52701,
+      "Entries": [
+        "[Dragonslayer Ornstein] Thunder fire"
+      ]
+    },
+    {
+      "ID": 52710,
+      "Entries": [
+        "[Dragonslayer Ornstein (Giant)] Raise and throw lightning"
+      ]
+    },
+    {
+      "ID": 52711,
+      "Entries": [
+        "[Dragonslayer Ornstein (Giant)] Hip Attack_Lightning Explosion"
+      ]
+    },
+    {
+      "ID": 52712,
+      "Entries": [
+        "[Dragonslayer Ornstein (Giant)] One-handed Thundering"
+      ]
+    },
+    {
+      "ID": 52800,
+      "Entries": [
+        "[Chaos Witch Quelaag] Magma breath"
+      ]
+    },
+    {
+      "ID": 52801,
+      "Entries": [
+        "[Chaos Witch Quelaag] Magma breath (right)"
+      ]
+    },
+    {
+      "ID": 52802,
+      "Entries": [
+        "[Chaos Witch Quelaag] Magma breath (left)"
+      ]
+    },
+    {
+      "ID": 52803,
+      "Entries": [
+        "[Chaos Witch Quelaag] magma [landing]"
+      ]
+    },
+    {
+      "ID": 52804,
+      "Entries": [
+        "[Chaos Witch Quelaag] Strong breath"
+      ]
+    },
+    {
+      "ID": 52805,
+      "Entries": [
+        "[Chaos Witch Quelaag] Self-centered explosion [throwing]"
+      ]
+    },
+    {
+      "ID": 52806,
+      "Entries": [
+        "[Chaos Witch Quelaag] self-centered explosion [landing]"
+      ]
+    },
+    {
+      "ID": 52807,
+      "Entries": [
+        "[Chaos Witch Quelaag] Butt flame"
+      ]
+    },
+    {
+      "ID": 52808,
+      "Entries": [
+        "[Chaos Witch Quelaag] For strong breath magma impact generation"
+      ]
+    },
+    {
+      "ID": 52809,
+      "Entries": [
+        "[Chaos Witch Quelaag] Forward jump breath"
+      ]
+    },
+    {
+      "ID": 52810,
+      "Entries": [
+        "[Chaos Witch Quelaag] Forward jump Breath for magma impact"
+      ]
+    },
+    {
+      "ID": 52900,
+      "Entries": [
+        "[Seath the Scaleless] Breath"
+      ]
+    },
+    {
+      "ID": 52901,
+      "Entries": [
+        "[Seath the Scaleless] Breath (short-range sweeping) [Arrival]"
+      ]
+    },
+    {
+      "ID": 52902,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Long distance sweeping)"
+      ]
+    },
+    {
+      "ID": 52903,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Long distance sweeping) [Arrival]"
+      ]
+    },
+    {
+      "ID": 52904,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Front)"
+      ]
+    },
+    {
+      "ID": 52905,
+      "Entries": [
+        "[Seath the Scaleless] breath (front) [landing]"
+      ]
+    },
+    {
+      "ID": 52906,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Front): Slow ver."
+      ]
+    },
+    {
+      "ID": 52907,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Long distance sweeping)"
+      ]
+    },
+    {
+      "ID": 52908,
+      "Entries": [
+        "[Seath the Scaleless] self-centered explosion"
+      ]
+    },
+    {
+      "ID": 52909,
+      "Entries": [
+        "[Seath the Scaleless] Self-centered explosion [grandchild]"
+      ]
+    },
+    {
+      "ID": 52910,
+      "Entries": [
+        "[Seath the Scaleless] Self-centered explosion (for continued damage) [Parent]"
+      ]
+    },
+    {
+      "ID": 52911,
+      "Entries": [
+        "[Seath the Scaleless] Self-centered explosion (for continuing damage)"
+      ]
+    },
+    {
+      "ID": 52912,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 1"
+      ]
+    },
+    {
+      "ID": 52913,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 2"
+      ]
+    },
+    {
+      "ID": 52914,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 3"
+      ]
+    },
+    {
+      "ID": 52915,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 4"
+      ]
+    },
+    {
+      "ID": 52916,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 5"
+      ]
+    },
+    {
+      "ID": 52917,
+      "Entries": [
+        "[Seath the Scaleless] Self center explosion_Submunition 6"
+      ]
+    },
+    {
+      "ID": 52920,
+      "Entries": [
+        "[Seath the Scaleless] Breath (Ultra short distance sweeping)"
+      ]
+    },
+    {
+      "ID": 52921,
+      "Entries": [
+        "[Seath the Scaleless] Breath"
+      ]
+    },
+    {
+      "ID": 52922,
+      "Entries": [
+        "[Seath the Scaleless] Self-centered explosion_First match"
+      ]
+    },
+    {
+      "ID": 52923,
+      "Entries": [
+        "[Seath the Scaleless] Self-centered explosion (Damage continuation / First match)"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "[Undead King Ja-Yearl] Seoul Energy Explosion"
+      ]
+    },
+    {
+      "ID": 53200,
+      "Entries": [
+        "[Gwyndolin] bow"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "[Gwyndolin] Induction"
+      ]
+    },
+    {
+      "ID": 53211,
+      "Entries": [
+        "[Gwyndolin] Induction 2"
+      ]
+    },
+    {
+      "ID": 53220,
+      "Entries": [
+        "[Gwyndolin] Extremely thick"
+      ]
+    },
+    {
+      "ID": 53500,
+      "Entries": [
+        "[Gargoyle] Swing breath"
+      ]
+    },
+    {
+      "ID": 53501,
+      "Entries": [
+        "[Gargoyle] Breath from the air"
+      ]
+    },
+    {
+      "ID": 53510,
+      "Entries": [
+        "[Gargoyle] Swing breath"
+      ]
+    },
+    {
+      "ID": 53511,
+      "Entries": [
+        "[Gargoyle] Breath from the air"
+      ]
+    },
+    {
+      "ID": 53900,
+      "Entries": [
+        "[Four Kings] Self-centered explosion"
+      ]
+    },
+    {
+      "ID": 53901,
+      "Entries": [
+        "[Four Kings] Dark Bullet"
+      ]
+    },
+    {
+      "ID": 53902,
+      "Entries": [
+        "[Four Kings] Fire a huge dark aura"
+      ]
+    },
+    {
+      "ID": 54000,
+      "Entries": [
+        "[Bed of Chaos] Throw a flame with your right hand (right direction)"
+      ]
+    },
+    {
+      "ID": 54001,
+      "Entries": [
+        "[Bed of Chaos] Throw a flame with your right hand (left direction)"
+      ]
+    },
+    {
+      "ID": 54002,
+      "Entries": [
+        "[Bed of Chaos] Self-centered flame"
+      ]
+    },
+    {
+      "ID": 54003,
+      "Entries": [
+        "[Bed of Chaos] Magma bullet"
+      ]
+    },
+    {
+      "ID": 54004,
+      "Entries": [
+        "[Bed of Chaos] Remaining magma"
+      ]
+    },
+    {
+      "ID": 54005,
+      "Entries": [
+        "[Bed of Chaos] Throw the flame [Arrive]"
+      ]
+    },
+    {
+      "ID": 54010,
+      "Entries": [
+        "[Bed of Chaos] Storm of Fire_Point Decision Bullet"
+      ]
+    },
+    {
+      "ID": 54011,
+      "Entries": [
+        "[Bed of Chaos] Fire Storm_Parent"
+      ]
+    },
+    {
+      "ID": 54012,
+      "Entries": [
+        "[Bed of Chaos] Fire Storm_Child"
+      ]
+    },
+    {
+      "ID": 54013,
+      "Entries": [
+        "[Bed of Chaos] Magma Bullet 2"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Royal Castle 1"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Royal Castle 1 Gargoyle statue blowing fire"
+      ]
+    }
+  ]
+}

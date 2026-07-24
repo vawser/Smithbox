@@ -1,0 +1,4 @@
+##Make sure to use the compare menu first.
+##Once the additional regulation is loaded, its name should appear in both the menu and at the top of the field list.
+newvar regulationFolderName:mod;
+auxparam $regulationFolderName .*: modified && unique ID: paste;

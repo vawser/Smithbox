@@ -1,0 +1,125 @@
+{
+  "Name": "OsReinforce",
+  "Entries": [
+    {
+      "ID": 5050,
+      "Entries": [
+        "assault boost kick -- アサルトブーストキック"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "weapon hanger -- 武器ハンガー"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Lifting of restrictions on sorties due to excessive leg loading weight -- 脚部積載重量過多出撃制限解除"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "free aim -- フリーエイム"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "quick camera turn -- クイックカメラターン"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "assault armor -- アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "installation barrier -- 設置バリア"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "following barrier -- 追従バリア"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "emergency barrier -- 緊急バリア"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Enhanced live bullet attribute bullets -- 実弾属性弾強化"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Explosive bullet reinforcement -- 爆発属性弾強化"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "EN attribute bullet enhancement -- EN属性弾強化"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Enhancement of fighting weapons -- 格闘武器強化"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "critical hit -- クリティカルヒット"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Improved hacking performance -- ハッキング性能アップ"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Damage cut (integrated)_Actual bullet damage multiplier & required points -- ダメージカット(統合)_実弾ダメージ倍率&必要ポイント"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Damage cut (integrated)_EN damage multiplier -- ダメージカット(統合)_ENダメージ倍率"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Damage cut (integrated)_Explosion damage multiplier -- ダメージカット(統合)_爆発ダメージ倍率"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Damage cut (integrated)_Coral damage multiplier -- ダメージカット(統合)_コーラルダメージ倍率"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Increased recovery amount -- 回復量増加"
+      ]
+    }
+  ]
+}

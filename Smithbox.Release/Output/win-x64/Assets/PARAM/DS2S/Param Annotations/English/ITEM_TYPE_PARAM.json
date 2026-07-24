@@ -1,0 +1,63 @@
+{
+  "Param": "ITEM_TYPE_PARAM",
+  "Type": "ITEM_TYPE_PARAM",
+  "Name": "ITEM_TYPE_PARAM",
+  "Description": "Defines item type behavior, usage animations, movement speed modifiers, inventory handling, and category-specific settings.",
+  "Fields": [
+    {
+      "Field": "itemIdWhenFailure",
+      "Name": "Failure Item ID",
+      "Description": "Item ID granted or used when item activation fails."
+    },
+    {
+      "Field": "itemUseMaxSpeed",
+      "Name": "Maximum Item Use Speed Multiplier",
+      "Description": "Maximum movement or animation speed multiplier applied while using the item."
+    },
+    {
+      "Field": "itemUseMaxSpeedChangeSec",
+      "Name": "Max Speed Transition Time (Sec)",
+      "Description": "Time required to transition to the maximum item use speed multiplier."
+    },
+    {
+      "Field": "itemUseMaxSpeedReturnSec",
+      "Name": "Max Speed Recovery Time (Sec)",
+      "Description": "Time required to return from the maximum item use speed multiplier to normal speed."
+    },
+    {
+      "Field": "itemMotionType",
+      "Name": "Item Use Animation",
+      "Description": "Specifies the animation type used when the item is activated."
+    },
+    {
+      "Field": "ladderItemMotionType",
+      "Name": "Ladder Item Use Animation",
+      "Description": "Specifies the animation type used when activating the item while on a ladder."
+    },
+    {
+      "Field": "itemCateType",
+      "Name": "Item Category",
+      "Description": "General category classification for the item type."
+    },
+    {
+      "Field": "itemMotionArmType",
+      "Name": "Item Use Arm Type",
+      "Description": "Determines which arm or hand configuration is used during the item use animation."
+    },
+    {
+      "Field": "itemModelType",
+      "Name": "Idle Model Type",
+      "Description": "Specifies the model or display type shown when the item is idle or equipped."
+    },
+    {
+      "Field": "itemSpecialReset",
+      "Name": "Special Item Reset",
+      "Description": "Controls whether special item-related states or effects are reset after use."
+    },
+    {
+      "Field": "canMoveRepository",
+      "Name": "Allow Storage Transfer",
+      "Description": "Determines whether the item can be moved to storage or repository."
+    }
+  ]
+}

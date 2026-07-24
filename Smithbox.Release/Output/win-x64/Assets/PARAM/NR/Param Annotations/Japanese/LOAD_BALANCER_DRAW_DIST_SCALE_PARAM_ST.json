@@ -1,0 +1,118 @@
+{
+  "Param": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
+  "Type": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
+  "Name": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Lv00",
+      "Name": "Lv00",
+      "Description": "Lv00 描画距離スケール"
+    },
+    {
+      "Field": "Lv01",
+      "Name": "Lv01",
+      "Description": "Lv01 描画距離スケール"
+    },
+    {
+      "Field": "Lv02",
+      "Name": "Lv02",
+      "Description": "Lv02 描画距離スケール"
+    },
+    {
+      "Field": "Lv03",
+      "Name": "Lv03",
+      "Description": "Lv03 描画距離スケール"
+    },
+    {
+      "Field": "Lv04",
+      "Name": "Lv04",
+      "Description": "Lv04 描画距離スケール"
+    },
+    {
+      "Field": "Lv05",
+      "Name": "Lv05",
+      "Description": "Lv05 描画距離スケール"
+    },
+    {
+      "Field": "Lv06",
+      "Name": "Lv06",
+      "Description": "Lv06 描画距離スケール"
+    },
+    {
+      "Field": "Lv07",
+      "Name": "Lv07",
+      "Description": "Lv07 描画距離スケール"
+    },
+    {
+      "Field": "Lv08",
+      "Name": "Lv08",
+      "Description": "Lv08 描画距離スケール"
+    },
+    {
+      "Field": "Lv09",
+      "Name": "Lv09",
+      "Description": "Lv09 描画距離スケール"
+    },
+    {
+      "Field": "Lv10",
+      "Name": "Lv10",
+      "Description": "Lv10 描画距離スケール"
+    },
+    {
+      "Field": "Lv11",
+      "Name": "Lv11",
+      "Description": "Lv11 描画距離スケール"
+    },
+    {
+      "Field": "Lv12",
+      "Name": "Lv12",
+      "Description": "Lv12 描画距離スケール"
+    },
+    {
+      "Field": "Lv13",
+      "Name": "Lv13",
+      "Description": "Lv13 描画距離スケール"
+    },
+    {
+      "Field": "Lv14",
+      "Name": "Lv14",
+      "Description": "Lv14 描画距離スケール"
+    },
+    {
+      "Field": "Lv15",
+      "Name": "Lv15",
+      "Description": "Lv15 描画距離スケール"
+    },
+    {
+      "Field": "Lv16",
+      "Name": "Lv16",
+      "Description": "Lv16 描画距離スケール"
+    },
+    {
+      "Field": "Lv17",
+      "Name": "Lv17",
+      "Description": "Lv17 描画距離スケール"
+    },
+    {
+      "Field": "Lv18",
+      "Name": "Lv18",
+      "Description": "Lv18 描画距離スケール"
+    },
+    {
+      "Field": "Lv19",
+      "Name": "Lv19",
+      "Description": "Lv19 描画距離スケール"
+    },
+    {
+      "Field": "Lv20",
+      "Name": "Lv20",
+      "Description": "Lv20 描画距離スケール"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予備",
+      "Description": "予備"
+    }
+  ]
+}

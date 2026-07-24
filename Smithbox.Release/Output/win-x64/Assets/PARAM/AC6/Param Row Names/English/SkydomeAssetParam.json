@@ -1,0 +1,287 @@
+{
+  "Name": "SkydomeAssetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't spoil it"
+      ]
+    },
+    {
+      "ID": 3300030,
+      "Entries": [
+        "Ice field_Fuel base_Evening (18:30) Midnight sun"
+      ]
+    },
+    {
+      "ID": 3300040,
+      "Entries": [
+        "Ice field_Fuel base_Night ver1"
+      ]
+    },
+    {
+      "ID": 3300060,
+      "Entries": [
+        "Ice field_Fuel base_Late night B(05:00)"
+      ]
+    },
+    {
+      "ID": 3400040,
+      "Entries": [
+        "Ice field_old spaceport_evening"
+      ]
+    },
+    {
+      "ID": 3400050,
+      "Entries": [
+        "Ice Field_Old Spaceport_Night (Raven Battle)"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Great ice field_morning"
+      ]
+    },
+    {
+      "ID": 3600060,
+      "Entries": [
+        "Great Ice Field_Late Night B"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "A layer_Tutorial CS"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Western Belius - Grid 086"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Western Belius - Grid 086"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Western Belius - Grid 086"
+      ]
+    },
+    {
+      "ID": 10100030,
+      "Entries": [
+        "Western Belius - Grid 086"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "A layer_Collapse_Morning"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Atmosphere - LOC Station 31"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "Atmosphere - LOC Station 31"
+      ]
+    },
+    {
+      "ID": 30000032,
+      "Entries": [
+        "Atmosphere - LOC Station 31"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Alean Ocean - Xylem, the Floating City"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "Alean Ocean - Xylem, the Floating City"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "Atmosphere - Xylem Upper Districts"
+      ]
+    },
+    {
+      "ID": 20200010,
+      "Entries": [
+        "Atmosphere - Xylem Upper Districts"
+      ]
+    },
+    {
+      "ID": 20200030,
+      "Entries": [
+        "Atmosphere - Xylem Upper Districts"
+      ]
+    },
+    {
+      "ID": 20200050,
+      "Entries": [
+        "Atmosphere - Xylem Upper Districts"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Atmosphere - Xylem Drive Block/Control Block"
+      ]
+    },
+    {
+      "ID": 20300040,
+      "Entries": [
+        "Atmosphere - Xylem Drive Block/Control Block"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "Institute City"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "Institute City"
+      ]
+    },
+    {
+      "ID": 41100040,
+      "Entries": [
+        "Institute City"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Southern Belius - Contaminated City"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Southern Belius - Contaminated City"
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        "Southern Belius - Contaminated City"
+      ]
+    },
+    {
+      "ID": 50000040,
+      "Entries": [
+        "Southern Belius - Contaminated City"
+      ]
+    },
+    {
+      "ID": 50000060,
+      "Entries": [
+        "Southern Belius - Contaminated City"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Southern Belius - Gallia Dam Complex"
+      ]
+    },
+    {
+      "ID": 50100030,
+      "Entries": [
+        "Southern Belius - Gallia Dam Complex"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "Central Belius - The Wall"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "Central Belius - The Wall"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "Central Belius - The Wall"
+      ]
+    },
+    {
+      "ID": 50300040,
+      "Entries": [
+        "Central Belius - The Wall"
+      ]
+    },
+    {
+      "ID": 50300050,
+      "Entries": [
+        "Central Belius - The Wall"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Northern Belius - Watchpoint Delta"
+      ]
+    },
+    {
+      "ID": 50400040,
+      "Entries": [
+        "Northern Belius - Watchpoint Delta"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Northern Belius - BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 50500040,
+      "Entries": [
+        "Northern Belius - BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Western Belius - Bona Dea Dunes"
+      ]
+    },
+    {
+      "ID": 50600040,
+      "Entries": [
+        "Western Belius - Bona Dea Dunes"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "C-end"
+      ]
+    }
+  ]
+}

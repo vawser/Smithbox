@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="DS1">
+	<event id="0" name="Fade Screen in from Color">
+		<u8 name="Red"/>
+		<u8 name="Green"/>
+		<u8 name="Blue"/>
+		<u8 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="1" name="Fade Screen out to Color">
+		<u8 name="Red"/>
+		<u8 name="Green"/>
+		<u8 name="Blue"/>
+		<u8 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="20" name="Event 20">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="24" name="Event 24">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="96" name="Spawn One Shot FFX">
+		<s32 name="FFX ID" aliasEnum="Particle"/>
+		<s32 name="Dummy Poly ID"/>
+		<s32 name="Slot ID"/>
+		<s32/>
+	</event>
+	<event id="102" name="Event 102">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="128" name="Play Sound - General">
+		<s32 name="Sound Type">
+			<entry value="0" name="(a) Environment"/>
+			<entry value="1" name="(c) Character"/>
+			<entry value="2" name="(f) Menu SE"/>
+			<entry value="3" name="(o) Object"/>
+			<entry value="4" name="(p) Cutscene SE"/>
+			<entry value="5" name="(s) SFX"/>
+			<entry value="6" name="(m) BGM"/>
+			<entry value="7" name="(v) Voice"/>
+			<entry value="8" name="(x) Floor Material Determined"/>
+			<entry value="9" name="(b) Armor Material Determined"/>
+			<entry value="10" name="(g) Ghost"/>
+		</s32>
+		<s32 name="Sound ID" aliasEnum="Sound"/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="130" name="PlaySound_Remo_PlayerVoice">
+		<s32 name="SoundType">
+			<entry value="0" name="0: (a) Environment"/>
+			<entry value="1" name="1: (c) Character"/>
+			<entry value="2" name="2: (f) Menu SE"/>
+			<entry value="3" name="3: (o) Object"/>
+			<entry value="4" name="4: (p) Cutscene SE"/>
+			<entry value="5" name="5: (s) SFX"/>
+			<entry value="6" name="6: (m) BGM"/>
+			<entry value="7" name="7: (v) Voice"/>
+			<entry value="8" name="8: (x) Floor Material Determined"/>
+			<entry value="9" name="9: (b) Armor Material Determined"/>
+			<entry value="10" name="10: (g) Ghost"/>
+		</s32>
+		<s32 name="SoundID"/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="160" name="Cutscene - Set Opacity Keyframe">
+		<u8 name="Opacity at Event Start"/>
+		<u8 name="Opacity at Event End"/>
+		<u8 assert="0"/>
+		<u8 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="161" name="Decal on Landing">
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="162" name="Debug Fade Out">
+		<f32 name="Fade Out"/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="176" name="Event 176">
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="180" name="Remo180">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="183" name="Event 183">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="196" name="Debug String Print - C_ARSN_BumpBlendDecal">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="197" name="Fade Out">
+		<f32 name="Ghost Main"/>
+		<f32 name="Ghost Sub"/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="198" name="Model Param Modifier [198]">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="199" name="Model Param Modifier [199]">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="200" name="Model Param Modifier [200]">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="208" name="Event 208">
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="209" name="Event 209">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="210" name="Event 210">
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="217" name="Event 217">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="219" name="Event 219">
+		<s32/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="224" name="Set Turn Speed">
+		<f32 name="Turn Speed"/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="225" name="Set Stamina Regeneration Percentage">
+		<s16/>
+		<s16/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="232" name="Allow Vertical Torso Aim">
+		<u8 name="Upward Angle Limit"/>
+		<u8 name="Downward Angle Limit"/>
+		<u8 name="Upward Angle Threshold"/>
+		<u8 name="Downward Angle Threshold"/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="233" name="Change Character Draw Mask">
+		<u8 name="Mask 1"/>
+		<u8 name="Mask 2"/>
+		<u8 name="Mask 3"/>
+		<u8 name="Mask 4"/>
+		<u8 name="Mask 5"/>
+		<u8 name="Mask 6"/>
+		<u8 name="Mask 7"/>
+		<u8 name="Mask 8"/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+	<event id="234" name="Havok - Add Offset to Next Anim ID">
+		<s32 name="Offset"/>
+		<s32/>
+		<s32/>
+		<s32/>
+	</event>
+</event_template>

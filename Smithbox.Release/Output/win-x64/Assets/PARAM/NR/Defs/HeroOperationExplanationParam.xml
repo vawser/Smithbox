@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>HERO_OPERATION_EXPLANATION_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="u8 heroId"/>
+    <Field Def="u8 displaySlot"/>
+    <Field Def="dummy8 midPadding[2]"/>
+    <Field Def="s32 hintTextId"/>
+    <Field Def="s32 spEffectId"/>
+    <Field Def="s32 shortcutTextId"/>
+  </Fields>
+</PARAMDEF>

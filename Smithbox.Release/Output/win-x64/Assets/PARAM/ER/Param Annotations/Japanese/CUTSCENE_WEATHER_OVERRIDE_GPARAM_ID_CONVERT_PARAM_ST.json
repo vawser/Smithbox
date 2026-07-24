@@ -1,0 +1,13 @@
+{
+  "Param": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
+  "Type": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
+  "Name": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weatherOverrideGparamId",
+      "Name": "カットシーン天候上書きGparamサフィックスID",
+      "Description": "s00_00_0000_WeatherOverride_??.gparamの??の部分のIDです"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "MAP_OBJECT_DOOR_PARAM",
+  "Type": "MAP_OBJECT_DOOR_PARAM",
+  "Name": "MAP_OBJECT_DOOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "doorType",
+      "Name": "扉タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "openKeyGuideParam",
+      "Name": "開く際のキーガイドパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "closeKeyGuideParam",
+      "Name": "閉じる際のキーガイドパラメータID",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "Key": "ITEM_LOT_TICKET_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_TICKET_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chief"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
+    },
+    {
+      "Key": "4000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rhea"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "S rare"
+        }
+      ]
+    }
+  ]
+}

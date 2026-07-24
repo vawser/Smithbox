@@ -1,0 +1,41 @@
+{
+  "Name": "HeroMenuCameraParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "[Character Selection] Tall Hero"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Character Selection] Standard Hero"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Character Selection] Short Hero"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[Change Garb] Tall Hero"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[Change Garb] Standard Hero"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[Change Garb] Short Hero"
+      ]
+    }
+  ]
+}

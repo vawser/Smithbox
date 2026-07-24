@@ -1,0 +1,58 @@
+{
+  "Param": "RETARGET_ANIM_SET_PARAM_ST",
+  "Type": "RETARGET_ANIM_SET_PARAM_ST",
+  "Name": "RETARGET_ANIM_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "BaseAnimId",
+      "Name": "ベースアニメID",
+      "Description": "基準となるアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_begin",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_01",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_02",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_03",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_04",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_05",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_06",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "ReTargetAnimId_end",
+      "Name": "リターゲット対象アニメID",
+      "Description": "基準アニメを元にリターゲットするアニメID"
+    },
+    {
+      "Field": "tailPadding",
+      "Name": "末尾パディング",
+      "Description": "末尾パディング"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "THRUSTERS_SFX_ID_PARAM_PC_ST",
+  "Type": "THRUSTERS_SFX_ID_PARAM_PC_ST",
+  "Name": "THRUSTERS_SFX_ID_PARAM_PC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId0",
+      "Name": "カラータイプ00",
+      "Description": "カラータイプ00のときのSFXID"
+    },
+    {
+      "Field": "sfxId1",
+      "Name": "カラータイプ01",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId2",
+      "Name": "カラータイプ02",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId3",
+      "Name": "カラータイプ03",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId4",
+      "Name": "カラータイプ04",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId5",
+      "Name": "カラータイプ05",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId6",
+      "Name": "カラータイプ06",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId7",
+      "Name": "カラータイプ07",
+      "Description": ""
+    }
+  ]
+}

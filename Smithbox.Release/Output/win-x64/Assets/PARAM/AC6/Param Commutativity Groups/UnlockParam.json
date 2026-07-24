@@ -1,0 +1,19 @@
+{
+  "Name": "UnlockParam",
+  "Params": [
+    "UnlockParam_Archive",
+    "UnlockParam_Archive_Logs",
+    "UnlockParam_Archive_Terms",
+    "UnlockParam_Archive_Tips",
+    "UnlockParam_DecalImage",
+    "UnlockParam_DLC",
+    "UnlockParam_EmblemPiece",
+    "UnlockParam_Equipment",
+    "UnlockParam_MenuCommand",
+    "UnlockParam_NamePlate_Solo",
+    "UnlockParam_NamePlate_Team",
+    "UnlockParam_NpAcArena",
+    "UnlockParam_OsPoint",
+    "UnlockParam_Trophy"
+  ]
+}

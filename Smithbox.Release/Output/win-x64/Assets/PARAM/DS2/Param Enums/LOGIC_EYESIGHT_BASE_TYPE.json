@@ -1,0 +1,38 @@
+{
+  "Key": "LOGIC_EYESIGHT_BASE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_EYESIGHT_BASE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light/dark"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark/light"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Common"
+        }
+      ]
+    }
+  ]
+}

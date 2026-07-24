@@ -1,0 +1,238 @@
+{
+  "Param": "SMALLBASE_AND_SPOT_DEFINE_ST",
+  "Type": "SMALLBASE_AND_SPOT_DEFINE_ST",
+  "Name": "SMALLBASE_AND_SPOT_DEFINE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "mapId1",
+      "Name": "mapId1",
+      "Description": ""
+    },
+    {
+      "Field": "mapId2",
+      "Name": "mapId2",
+      "Description": ""
+    },
+    {
+      "Field": "mapId3",
+      "Name": "mapId3",
+      "Description": ""
+    },
+    {
+      "Field": "mapId4",
+      "Name": "mapId4",
+      "Description": ""
+    },
+    {
+      "Field": "mapId5",
+      "Name": "mapId5",
+      "Description": ""
+    },
+    {
+      "Field": "mapId6",
+      "Name": "mapId6",
+      "Description": ""
+    },
+    {
+      "Field": "mapId7",
+      "Name": "mapId7",
+      "Description": ""
+    },
+    {
+      "Field": "mapId8",
+      "Name": "mapId8",
+      "Description": ""
+    },
+    {
+      "Field": "mapId9",
+      "Name": "mapId9",
+      "Description": ""
+    },
+    {
+      "Field": "mapId10",
+      "Name": "mapId10",
+      "Description": ""
+    },
+    {
+      "Field": "mapId11",
+      "Name": "mapId11",
+      "Description": ""
+    },
+    {
+      "Field": "mapId12",
+      "Name": "mapId12",
+      "Description": ""
+    },
+    {
+      "Field": "mapId13",
+      "Name": "mapId13",
+      "Description": ""
+    },
+    {
+      "Field": "mapId14",
+      "Name": "mapId14",
+      "Description": ""
+    },
+    {
+      "Field": "mapId15",
+      "Name": "mapId15",
+      "Description": ""
+    },
+    {
+      "Field": "mapId16",
+      "Name": "mapId16",
+      "Description": ""
+    },
+    {
+      "Field": "mapId17",
+      "Name": "mapId17",
+      "Description": ""
+    },
+    {
+      "Field": "mapId18",
+      "Name": "mapId18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "worldMapPointIconId1",
+      "Name": "worldMapPointIconId1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11b",
+      "Name": "unknown_11b",
+      "Description": ""
+    },
+    {
+      "Field": "detailIconId1",
+      "Name": "detailIconId1",
+      "Description": ""
+    },
+    {
+      "Field": "detailIconId2",
+      "Name": "detailIconId2",
+      "Description": ""
+    },
+    {
+      "Field": "detailIconId3",
+      "Name": "detailIconId3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13b",
+      "Name": "unknown_13b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14a",
+      "Name": "unknown_14a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14b",
+      "Name": "unknown_14b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15a",
+      "Name": "unknown_15a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15b",
+      "Name": "unknown_15b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16a",
+      "Name": "unknown_16a",
+      "Description": ""
+    },
+    {
+      "Field": "invasionIcon",
+      "Name": "invasionIcon",
+      "Description": ""
+    },
+    {
+      "Field": "invasionWeight",
+      "Name": "invasionWeight",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17b",
+      "Name": "unknown_17b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22a",
+      "Name": "unknown_22a",
+      "Description": ""
+    },
+    {
+      "Field": "worldMapPointIconId2",
+      "Name": "worldMapPointIconId2",
+      "Description": ""
+    },
+    {
+      "Field": "worldMapPointIconId3",
+      "Name": "worldMapPointIconId3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "unknown_23b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23c",
+      "Name": "unknown_23c",
+      "Description": ""
+    },
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    }
+  ]
+}

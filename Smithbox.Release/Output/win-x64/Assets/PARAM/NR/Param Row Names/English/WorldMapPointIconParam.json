@@ -1,0 +1,251 @@
+{
+  "Name": "WorldMapPointIconParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Grace"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Church"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Ruins"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Township"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Evergaol"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Sorcerer's Rise"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Fort"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Main Encampment"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Castle"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Spectral Hawk Tree"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Field Boss"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Scarab"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Merchant"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Sorcerer's Rise 2"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Great Church"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Scale-bearing Merchant"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Cave Entrance ?"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Field Boss [Hard]"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Church [Looted]"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Evergaol [Open]"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Sorcerer's Rise [Unlocked]"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Sorcerer's Rise [Looted]"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Sorcerer's Rise 2 [Unlocked]"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Sorcerer's Rise 2 [Looted]"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Mutated Field Boss"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Mutated Field Boss [Hard]"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Mission Objective"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Shifting Earth Objective"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Buried Treasure"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Second day tree"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Spiritstream"
+      ]
+    }
+  ]
+}

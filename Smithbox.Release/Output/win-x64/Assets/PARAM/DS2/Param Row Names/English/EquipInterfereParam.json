@@ -1,0 +1,3371 @@
+{
+  "Name": "EquipInterfereParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9916,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9917,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9918,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9919,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9921,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9922,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9923,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9926,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9927,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9932,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9933,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9934,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9935,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9936,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9939,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9941,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9942,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9943,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9951,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9952,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9953,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 199180,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 199181,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 199182,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 199183,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11001100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11001101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11001102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11001103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11010100,
+      "Entries": [
+        "Pate's Helm"
+      ]
+    },
+    {
+      "ID": 11010101,
+      "Entries": [
+        "Pate's Armor"
+      ]
+    },
+    {
+      "ID": 11010102,
+      "Entries": [
+        "Pate's Gloves"
+      ]
+    },
+    {
+      "ID": 11010103,
+      "Entries": [
+        "Pate's Trousers"
+      ]
+    },
+    {
+      "ID": 11020100,
+      "Entries": [
+        "Thief Mask"
+      ]
+    },
+    {
+      "ID": 11020101,
+      "Entries": [
+        "Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 11020102,
+      "Entries": [
+        "Black Leather Gloves"
+      ]
+    },
+    {
+      "ID": 11020103,
+      "Entries": [
+        "Black Leather Boots"
+      ]
+    },
+    {
+      "ID": 11030100,
+      "Entries": [
+        "Wanderer Hood"
+      ]
+    },
+    {
+      "ID": 11030101,
+      "Entries": [
+        "Wanderer Coat"
+      ]
+    },
+    {
+      "ID": 11030102,
+      "Entries": [
+        "Wanderer Manchettes"
+      ]
+    },
+    {
+      "ID": 11030103,
+      "Entries": [
+        "Wanderer Boots"
+      ]
+    },
+    {
+      "ID": 11040100,
+      "Entries": [
+        "Hunter's Hat"
+      ]
+    },
+    {
+      "ID": 11040101,
+      "Entries": [
+        "Leather Armor"
+      ]
+    },
+    {
+      "ID": 11040102,
+      "Entries": [
+        "Leather Gloves"
+      ]
+    },
+    {
+      "ID": 11040103,
+      "Entries": [
+        "Leather Boots"
+      ]
+    },
+    {
+      "ID": 11041100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11050100,
+      "Entries": [
+        "Knight Helm"
+      ]
+    },
+    {
+      "ID": 11050101,
+      "Entries": [
+        "Knight Armor"
+      ]
+    },
+    {
+      "ID": 11050102,
+      "Entries": [
+        "Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 11050103,
+      "Entries": [
+        "Knight Leggings"
+      ]
+    },
+    {
+      "ID": 11060100,
+      "Entries": [
+        "Elite Knight Helm"
+      ]
+    },
+    {
+      "ID": 11060101,
+      "Entries": [
+        "Elite Knight Armor"
+      ]
+    },
+    {
+      "ID": 11060102,
+      "Entries": [
+        "Elite Knight Gloves"
+      ]
+    },
+    {
+      "ID": 11060103,
+      "Entries": [
+        "Elite Knight Leggings"
+      ]
+    },
+    {
+      "ID": 11070100,
+      "Entries": [
+        "Tattered Cloth Hood"
+      ]
+    },
+    {
+      "ID": 11070101,
+      "Entries": [
+        "Tattered Cloth Robe"
+      ]
+    },
+    {
+      "ID": 11070102,
+      "Entries": [
+        "Tattered Cloth Manchettes"
+      ]
+    },
+    {
+      "ID": 11070103,
+      "Entries": [
+        "Heavy Boots"
+      ]
+    },
+    {
+      "ID": 11080100,
+      "Entries": [
+        "Brigand Hood"
+      ]
+    },
+    {
+      "ID": 11080101,
+      "Entries": [
+        "Brigand Armor"
+      ]
+    },
+    {
+      "ID": 11080102,
+      "Entries": [
+        "Brigand Gauntlets"
+      ]
+    },
+    {
+      "ID": 11080103,
+      "Entries": [
+        "Brigand Trousers"
+      ]
+    },
+    {
+      "ID": 11090100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11090101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11090102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11090103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11100100,
+      "Entries": [
+        "Imported Hood"
+      ]
+    },
+    {
+      "ID": 11100101,
+      "Entries": [
+        "Imported Tunic"
+      ]
+    },
+    {
+      "ID": 11100102,
+      "Entries": [
+        "Imported Manchettes"
+      ]
+    },
+    {
+      "ID": 11100103,
+      "Entries": [
+        "Imported Trousers"
+      ]
+    },
+    {
+      "ID": 11110100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11110101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11110102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11110103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11120100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11120101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11120102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11120103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11130100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11130101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11130102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11130103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11140100,
+      "Entries": [
+        "Traveling Merchant Hat"
+      ]
+    },
+    {
+      "ID": 11140101,
+      "Entries": [
+        "Traveling Merchant Coat"
+      ]
+    },
+    {
+      "ID": 11140102,
+      "Entries": [
+        "Traveling Merchant Gloves"
+      ]
+    },
+    {
+      "ID": 11140103,
+      "Entries": [
+        "Traveling Merchant Boots"
+      ]
+    },
+    {
+      "ID": 11150100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11150101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11150102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11150103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11160100,
+      "Entries": [
+        "Havel's Helm"
+      ]
+    },
+    {
+      "ID": 11160101,
+      "Entries": [
+        "Havel's Armor"
+      ]
+    },
+    {
+      "ID": 11160102,
+      "Entries": [
+        "Havel's Gauntlets"
+      ]
+    },
+    {
+      "ID": 11160103,
+      "Entries": [
+        "Havel's Leggings"
+      ]
+    },
+    {
+      "ID": 11170100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11170101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11170102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11170103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11180100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11180101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11180102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11180103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11190100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11190101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11190102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11190103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11210100,
+      "Entries": [
+        "Jester's Cap"
+      ]
+    },
+    {
+      "ID": 11210101,
+      "Entries": [
+        "Jester's Robes"
+      ]
+    },
+    {
+      "ID": 11210102,
+      "Entries": [
+        "Jester's Gloves"
+      ]
+    },
+    {
+      "ID": 11210103,
+      "Entries": [
+        "Jester's Tights"
+      ]
+    },
+    {
+      "ID": 11220100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11220101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11220102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11220103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11230100,
+      "Entries": [
+        "Moon Hat"
+      ]
+    },
+    {
+      "ID": 11230101,
+      "Entries": [
+        "Astrologist's Robe"
+      ]
+    },
+    {
+      "ID": 11230102,
+      "Entries": [
+        "Astrologist's Gauntlets"
+      ]
+    },
+    {
+      "ID": 11230103,
+      "Entries": [
+        "Astrologist's Bottoms"
+      ]
+    },
+    {
+      "ID": 11240100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11240101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11240102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11240103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11250100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11250101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11250102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11250103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11270100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11270101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11270102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11270103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11280100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11280101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11280102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11280103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11290100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11290101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11290102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11290103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11300100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11300101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11300102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11300103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11310100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11310101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11310102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11310103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11320100,
+      "Entries": [
+        "Faraam Helm"
+      ]
+    },
+    {
+      "ID": 11320101,
+      "Entries": [
+        "Faraam Armor"
+      ]
+    },
+    {
+      "ID": 11320102,
+      "Entries": [
+        "Faraam Gauntlets"
+      ]
+    },
+    {
+      "ID": 11320103,
+      "Entries": [
+        "Faraam Boots"
+      ]
+    },
+    {
+      "ID": 11330100,
+      "Entries": [
+        "Black Dragon Helm"
+      ]
+    },
+    {
+      "ID": 11330101,
+      "Entries": [
+        "Black Dragon Armor"
+      ]
+    },
+    {
+      "ID": 11330102,
+      "Entries": [
+        "Black Dragon Gauntlets"
+      ]
+    },
+    {
+      "ID": 11330103,
+      "Entries": [
+        "Black Dragon Leggings"
+      ]
+    },
+    {
+      "ID": 11340100,
+      "Entries": [
+        "Xanthous Crown"
+      ]
+    },
+    {
+      "ID": 11340101,
+      "Entries": [
+        "Xanthous Overcoat"
+      ]
+    },
+    {
+      "ID": 11340102,
+      "Entries": [
+        "Xanthous Gloves"
+      ]
+    },
+    {
+      "ID": 11340103,
+      "Entries": [
+        "Xanthous Waistcloth"
+      ]
+    },
+    {
+      "ID": 11350100,
+      "Entries": [
+        "Mask of Judgment"
+      ]
+    },
+    {
+      "ID": 11350101,
+      "Entries": [
+        "Robe of Judgment"
+      ]
+    },
+    {
+      "ID": 11350102,
+      "Entries": [
+        "Manchettes ofJudgment"
+      ]
+    },
+    {
+      "ID": 11350103,
+      "Entries": [
+        "Tights of Judgment"
+      ]
+    },
+    {
+      "ID": 11360100,
+      "Entries": [
+        "Helm of Aurous"
+      ]
+    },
+    {
+      "ID": 11360101,
+      "Entries": [
+        "Armor of Aurous"
+      ]
+    },
+    {
+      "ID": 11360102,
+      "Entries": [
+        "Gauntlets of Aurous"
+      ]
+    },
+    {
+      "ID": 11360103,
+      "Entries": [
+        "Leggings of Aurous"
+      ]
+    },
+    {
+      "ID": 11361100,
+      "Entries": [
+        "Helm of Aurous"
+      ]
+    },
+    {
+      "ID": 11361101,
+      "Entries": [
+        "Armor of Aurous"
+      ]
+    },
+    {
+      "ID": 11361102,
+      "Entries": [
+        "Gauntlets of Aurous"
+      ]
+    },
+    {
+      "ID": 11361103,
+      "Entries": [
+        "Leggings of Aurous"
+      ]
+    },
+    {
+      "ID": 11370100,
+      "Entries": [
+        "Monastery Headcloth"
+      ]
+    },
+    {
+      "ID": 11370101,
+      "Entries": [
+        "Monastery Longshirt"
+      ]
+    },
+    {
+      "ID": 11370102,
+      "Entries": [
+        "Monastery Long Gloves"
+      ]
+    },
+    {
+      "ID": 11370103,
+      "Entries": [
+        "Monastery Skirt"
+      ]
+    },
+    {
+      "ID": 11380100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11380101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11380102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11380103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11390100,
+      "Entries": [
+        "Dingy Hood"
+      ]
+    },
+    {
+      "ID": 11390101,
+      "Entries": [
+        "Dingy Robe"
+      ]
+    },
+    {
+      "ID": 11390102,
+      "Entries": [
+        "Dingy Cuffs"
+      ]
+    },
+    {
+      "ID": 11390103,
+      "Entries": [
+        "Blood-stained Skirt"
+      ]
+    },
+    {
+      "ID": 11430100,
+      "Entries": [
+        "Durgo's Hat"
+      ]
+    },
+    {
+      "ID": 11440102,
+      "Entries": [
+        "Engraved Gauntlets"
+      ]
+    },
+    {
+      "ID": 11450101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11460103,
+      "Entries": [
+        "Flying Feline Boots"
+      ]
+    },
+    {
+      "ID": 11470100,
+      "Entries": [
+        "Moon Butterfly Hat"
+      ]
+    },
+    {
+      "ID": 11470101,
+      "Entries": [
+        "Moon Butterfly Wings"
+      ]
+    },
+    {
+      "ID": 11470102,
+      "Entries": [
+        "Moon Butterfly Cuffs"
+      ]
+    },
+    {
+      "ID": 11470103,
+      "Entries": [
+        "Moon Butterfly Skirt"
+      ]
+    },
+    {
+      "ID": 11480100,
+      "Entries": [
+        "Catarina Helm"
+      ]
+    },
+    {
+      "ID": 11480101,
+      "Entries": [
+        "Catarina Armor"
+      ]
+    },
+    {
+      "ID": 11480102,
+      "Entries": [
+        "Catarina Gauntlets"
+      ]
+    },
+    {
+      "ID": 11480103,
+      "Entries": [
+        "Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 11490100,
+      "Entries": [
+        "Alva Helm"
+      ]
+    },
+    {
+      "ID": 11490101,
+      "Entries": [
+        "Alva Armor"
+      ]
+    },
+    {
+      "ID": 11490102,
+      "Entries": [
+        "Alva Gauntlets"
+      ]
+    },
+    {
+      "ID": 11490103,
+      "Entries": [
+        "Alva Leggings"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "Black Witch Veil"
+      ]
+    },
+    {
+      "ID": 11500101,
+      "Entries": [
+        "Black Witch Robe"
+      ]
+    },
+    {
+      "ID": 11500102,
+      "Entries": [
+        "Black Witch Gloves"
+      ]
+    },
+    {
+      "ID": 11500103,
+      "Entries": [
+        "Black Witch Trousers"
+      ]
+    },
+    {
+      "ID": 11501100,
+      "Entries": [
+        "Black Witch Hat"
+      ]
+    },
+    {
+      "ID": 11502100,
+      "Entries": [
+        "Black Witch Domino Mask"
+      ]
+    },
+    {
+      "ID": 11600100,
+      "Entries": [
+        "Drakeblood Helm"
+      ]
+    },
+    {
+      "ID": 11600101,
+      "Entries": [
+        "Drakeblood Armor"
+      ]
+    },
+    {
+      "ID": 11600102,
+      "Entries": [
+        "Drakeblood Gauntlets"
+      ]
+    },
+    {
+      "ID": 11600103,
+      "Entries": [
+        "Drakeblood Leggings"
+      ]
+    },
+    {
+      "ID": 11610100,
+      "Entries": [
+        "Northwarder Hood"
+      ]
+    },
+    {
+      "ID": 11610101,
+      "Entries": [
+        "Northwarder Robe"
+      ]
+    },
+    {
+      "ID": 11610102,
+      "Entries": [
+        "Northwarder Manchettes"
+      ]
+    },
+    {
+      "ID": 11610103,
+      "Entries": [
+        "Northwarder Trousers"
+      ]
+    },
+    {
+      "ID": 11630100,
+      "Entries": [
+        "Crown of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 11640100,
+      "Entries": [
+        "Crown of the Ivory King"
+      ]
+    },
+    {
+      "ID": 11650100,
+      "Entries": [
+        "Crown of the Sunken King"
+      ]
+    },
+    {
+      "ID": 11660100,
+      "Entries": [
+        "Old Bell Helm"
+      ]
+    },
+    {
+      "ID": 11670100,
+      "Entries": [
+        "Hollow Skin"
+      ]
+    },
+    {
+      "ID": 11680100,
+      "Entries": [
+        "Pharros Mask"
+      ]
+    },
+    {
+      "ID": 11690103,
+      "Entries": [
+        "Flower Skirt"
+      ]
+    },
+    {
+      "ID": 11700100,
+      "Entries": [
+        "Minotaur Helm"
+      ]
+    },
+    {
+      "ID": 11710100,
+      "Entries": [
+        "Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 12020100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12020101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12020102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12020103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12021100,
+      "Entries": [
+        "Royal Soldier Helm"
+      ]
+    },
+    {
+      "ID": 12021101,
+      "Entries": [
+        "Royal Soldier Armor"
+      ]
+    },
+    {
+      "ID": 12021102,
+      "Entries": [
+        "Royal Soldier Gauntlets"
+      ]
+    },
+    {
+      "ID": 12021103,
+      "Entries": [
+        "Royal Soldier Leggings"
+      ]
+    },
+    {
+      "ID": 12030100,
+      "Entries": [
+        "Hollow Infantry Helm"
+      ]
+    },
+    {
+      "ID": 12030101,
+      "Entries": [
+        "Hollow Infantry Armor"
+      ]
+    },
+    {
+      "ID": 12030102,
+      "Entries": [
+        "Hollow Infantry Gloves"
+      ]
+    },
+    {
+      "ID": 12030103,
+      "Entries": [
+        "Hollow Infantry Boots"
+      ]
+    },
+    {
+      "ID": 12031100,
+      "Entries": [
+        "Infantry Helm"
+      ]
+    },
+    {
+      "ID": 12031101,
+      "Entries": [
+        "Infantry Armor"
+      ]
+    },
+    {
+      "ID": 12031102,
+      "Entries": [
+        "Infantry Gloves"
+      ]
+    },
+    {
+      "ID": 12031103,
+      "Entries": [
+        "Infantry Boots"
+      ]
+    },
+    {
+      "ID": 12060100,
+      "Entries": [
+        "White Priest Headpiece"
+      ]
+    },
+    {
+      "ID": 12060101,
+      "Entries": [
+        "White Priest Robe"
+      ]
+    },
+    {
+      "ID": 12060102,
+      "Entries": [
+        "White Priest Gloves"
+      ]
+    },
+    {
+      "ID": 12060103,
+      "Entries": [
+        "White Priest Skirt"
+      ]
+    },
+    {
+      "ID": 12062100,
+      "Entries": [
+        "Priestess Headpiece"
+      ]
+    },
+    {
+      "ID": 12062101,
+      "Entries": [
+        "Priestess Robe"
+      ]
+    },
+    {
+      "ID": 12062102,
+      "Entries": [
+        "Priestess Gloves"
+      ]
+    },
+    {
+      "ID": 12062103,
+      "Entries": [
+        "Priestess Skirt"
+      ]
+    },
+    {
+      "ID": 12080100,
+      "Entries": [
+        "Rogue Hood"
+      ]
+    },
+    {
+      "ID": 12080101,
+      "Entries": [
+        "Rogue Armor"
+      ]
+    },
+    {
+      "ID": 12080102,
+      "Entries": [
+        "Rogue Gauntlets"
+      ]
+    },
+    {
+      "ID": 12080103,
+      "Entries": [
+        "Rogue Leggings"
+      ]
+    },
+    {
+      "ID": 12110100,
+      "Entries": [
+        "Spiked Bandit Helm"
+      ]
+    },
+    {
+      "ID": 12110101,
+      "Entries": [
+        "Bandit Armor"
+      ]
+    },
+    {
+      "ID": 12110102,
+      "Entries": [
+        "Bandit Gauntlets"
+      ]
+    },
+    {
+      "ID": 12110103,
+      "Entries": [
+        "Bandit Boots"
+      ]
+    },
+    {
+      "ID": 12130100,
+      "Entries": [
+        "Varangian Helm"
+      ]
+    },
+    {
+      "ID": 12130101,
+      "Entries": [
+        "Varangian Armor"
+      ]
+    },
+    {
+      "ID": 12130102,
+      "Entries": [
+        "Varangian Cuffs"
+      ]
+    },
+    {
+      "ID": 12130103,
+      "Entries": [
+        "Varangian Leggings"
+      ]
+    },
+    {
+      "ID": 12180100,
+      "Entries": [
+        "Black Hollow Mage Hood"
+      ]
+    },
+    {
+      "ID": 12180101,
+      "Entries": [
+        "Black Hollow Mage Robe"
+      ]
+    },
+    {
+      "ID": 12180102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12180103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12181100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12181101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12181102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12181103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12182100,
+      "Entries": [
+        "White Hollow Mage Hood"
+      ]
+    },
+    {
+      "ID": 12182101,
+      "Entries": [
+        "White Hollow Mage Robe"
+      ]
+    },
+    {
+      "ID": 12182102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12182103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12190101,
+      "Entries": [
+        "Lion Mage Robe"
+      ]
+    },
+    {
+      "ID": 12190102,
+      "Entries": [
+        "Lion Mage Cuffs"
+      ]
+    },
+    {
+      "ID": 12190103,
+      "Entries": [
+        "Lion Mage Skirt"
+      ]
+    },
+    {
+      "ID": 12220100,
+      "Entries": [
+        "Steel Helm"
+      ]
+    },
+    {
+      "ID": 12220101,
+      "Entries": [
+        "Steel Armor"
+      ]
+    },
+    {
+      "ID": 12220102,
+      "Entries": [
+        "Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 12220103,
+      "Entries": [
+        "Steel Leggings"
+      ]
+    },
+    {
+      "ID": 12221100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12230100,
+      "Entries": [
+        "Shadow Mask"
+      ]
+    },
+    {
+      "ID": 12230101,
+      "Entries": [
+        "Shadow Top"
+      ]
+    },
+    {
+      "ID": 12230102,
+      "Entries": [
+        "Shadow Gauntlets"
+      ]
+    },
+    {
+      "ID": 12230103,
+      "Entries": [
+        "Shadow Leggings"
+      ]
+    },
+    {
+      "ID": 12240100,
+      "Entries": [
+        "Manikin Mask"
+      ]
+    },
+    {
+      "ID": 12240101,
+      "Entries": [
+        "Manikin Top"
+      ]
+    },
+    {
+      "ID": 12240102,
+      "Entries": [
+        "Manikin Gloves"
+      ]
+    },
+    {
+      "ID": 12240103,
+      "Entries": [
+        "Manikin Boots"
+      ]
+    },
+    {
+      "ID": 12270100,
+      "Entries": [
+        "Prisoner's Hood"
+      ]
+    },
+    {
+      "ID": 12270101,
+      "Entries": [
+        "Prisoner's Tatters"
+      ]
+    },
+    {
+      "ID": 12270102,
+      "Entries": [
+        "Prisoner's Gloves"
+      ]
+    },
+    {
+      "ID": 12270103,
+      "Entries": [
+        "Prisoner's Waistcloth"
+      ]
+    },
+    {
+      "ID": 12271100,
+      "Entries": [
+        "Prisoner's Hood"
+      ]
+    },
+    {
+      "ID": 12271101,
+      "Entries": [
+        "Prisoner's Tatters"
+      ]
+    },
+    {
+      "ID": 12310100,
+      "Entries": [
+        "Archdrake Helm"
+      ]
+    },
+    {
+      "ID": 12310101,
+      "Entries": [
+        "Archdrake Robes"
+      ]
+    },
+    {
+      "ID": 12310102,
+      "Entries": [
+        "Archdrake Gloves"
+      ]
+    },
+    {
+      "ID": 12310103,
+      "Entries": [
+        "Archdrake Boots"
+      ]
+    },
+    {
+      "ID": 12340100,
+      "Entries": [
+        "Gyrm Helm"
+      ]
+    },
+    {
+      "ID": 12340101,
+      "Entries": [
+        "Gyrm Armor"
+      ]
+    },
+    {
+      "ID": 12340102,
+      "Entries": [
+        "Gyrm Gloves"
+      ]
+    },
+    {
+      "ID": 12340103,
+      "Entries": [
+        "Gyrm Boots"
+      ]
+    },
+    {
+      "ID": 12350100,
+      "Entries": [
+        "Gyrm Warrior Helm"
+      ]
+    },
+    {
+      "ID": 12350101,
+      "Entries": [
+        "Gyrm Warrior Armor"
+      ]
+    },
+    {
+      "ID": 12350102,
+      "Entries": [
+        "Gyrm Warrior Gloves"
+      ]
+    },
+    {
+      "ID": 12350103,
+      "Entries": [
+        "Gyrm Warrior Boots"
+      ]
+    },
+    {
+      "ID": 12351100,
+      "Entries": [
+        "Gyrm Warrior Greathelm"
+      ]
+    },
+    {
+      "ID": 12360100,
+      "Entries": [
+        "Dark Mask"
+      ]
+    },
+    {
+      "ID": 12360101,
+      "Entries": [
+        "Dark Armor"
+      ]
+    },
+    {
+      "ID": 12360102,
+      "Entries": [
+        "Dark Gauntlets"
+      ]
+    },
+    {
+      "ID": 12360103,
+      "Entries": [
+        "Dark Leggings"
+      ]
+    },
+    {
+      "ID": 12370100,
+      "Entries": [
+        "Warlock Mask"
+      ]
+    },
+    {
+      "ID": 12460100,
+      "Entries": [
+        "Tseldora Cap"
+      ]
+    },
+    {
+      "ID": 12460101,
+      "Entries": [
+        "Tseldora Robe"
+      ]
+    },
+    {
+      "ID": 12460102,
+      "Entries": [
+        "Tseldora Manchettes"
+      ]
+    },
+    {
+      "ID": 12460103,
+      "Entries": [
+        "Tseldora Trousers"
+      ]
+    },
+    {
+      "ID": 12480100,
+      "Entries": [
+        "Peasant Hat"
+      ]
+    },
+    {
+      "ID": 12480101,
+      "Entries": [
+        "Peasant Attire"
+      ]
+    },
+    {
+      "ID": 12480102,
+      "Entries": [
+        "Peasant Long Gloves"
+      ]
+    },
+    {
+      "ID": 12480103,
+      "Entries": [
+        "Peasant Trousers"
+      ]
+    },
+    {
+      "ID": 12510100,
+      "Entries": [
+        "Ironclad Helm"
+      ]
+    },
+    {
+      "ID": 12510101,
+      "Entries": [
+        "Ironclad Armor"
+      ]
+    },
+    {
+      "ID": 12510102,
+      "Entries": [
+        "Ironclad Gauntlets"
+      ]
+    },
+    {
+      "ID": 12510103,
+      "Entries": [
+        "Ironclad Leggings"
+      ]
+    },
+    {
+      "ID": 12512100,
+      "Entries": [
+        "Old Ironclad Helm"
+      ]
+    },
+    {
+      "ID": 12512101,
+      "Entries": [
+        "Old Ironclad Armor"
+      ]
+    },
+    {
+      "ID": 12512102,
+      "Entries": [
+        "Old Ironclad Gauntlets"
+      ]
+    },
+    {
+      "ID": 12512103,
+      "Entries": [
+        "Old Ironclad Leggings"
+      ]
+    },
+    {
+      "ID": 12520100,
+      "Entries": [
+        "Royal Swordsman Helm"
+      ]
+    },
+    {
+      "ID": 12520101,
+      "Entries": [
+        "Royal Swordsman Armor"
+      ]
+    },
+    {
+      "ID": 12520102,
+      "Entries": [
+        "Royal Swordsman Gloves"
+      ]
+    },
+    {
+      "ID": 12520103,
+      "Entries": [
+        "Royal Swordsman Leggings"
+      ]
+    },
+    {
+      "ID": 12530100,
+      "Entries": [
+        "Syan's Helm"
+      ]
+    },
+    {
+      "ID": 12530101,
+      "Entries": [
+        "Syan's Armor"
+      ]
+    },
+    {
+      "ID": 12530102,
+      "Entries": [
+        "Syan's Gloves"
+      ]
+    },
+    {
+      "ID": 12530103,
+      "Entries": [
+        "Syan's Leggings"
+      ]
+    },
+    {
+      "ID": 12540100,
+      "Entries": [
+        "Bone Crown"
+      ]
+    },
+    {
+      "ID": 12540101,
+      "Entries": [
+        "Bone King Robe"
+      ]
+    },
+    {
+      "ID": 12540102,
+      "Entries": [
+        "Bone King Cuffs"
+      ]
+    },
+    {
+      "ID": 12540103,
+      "Entries": [
+        "Bone King Skirt"
+      ]
+    },
+    {
+      "ID": 13010100,
+      "Entries": [
+        "Heide Knight Greathelm"
+      ]
+    },
+    {
+      "ID": 13010101,
+      "Entries": [
+        "Heide Knight Chainmail"
+      ]
+    },
+    {
+      "ID": 13010102,
+      "Entries": [
+        "Heide Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 13010103,
+      "Entries": [
+        "Heide Knight Leggings"
+      ]
+    },
+    {
+      "ID": 13011100,
+      "Entries": [
+        "Heide Knight Iron Mask"
+      ]
+    },
+    {
+      "ID": 13040101,
+      "Entries": [
+        "Singer's Dress"
+      ]
+    },
+    {
+      "ID": 13050100,
+      "Entries": [
+        "Smelter Demon Helm"
+      ]
+    },
+    {
+      "ID": 13050101,
+      "Entries": [
+        "Smelter Demon Armor"
+      ]
+    },
+    {
+      "ID": 13050102,
+      "Entries": [
+        "Smelter Demon Gauntlets"
+      ]
+    },
+    {
+      "ID": 13050103,
+      "Entries": [
+        "Smelter Demon Leggings"
+      ]
+    },
+    {
+      "ID": 13060100,
+      "Entries": [
+        "Alonne Captain Helm"
+      ]
+    },
+    {
+      "ID": 13060101,
+      "Entries": [
+        "Alonne Captain Armor"
+      ]
+    },
+    {
+      "ID": 13060102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13060103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13061100,
+      "Entries": [
+        "Alonne Knight Helm"
+      ]
+    },
+    {
+      "ID": 13061101,
+      "Entries": [
+        "Alonne Knight Armor"
+      ]
+    },
+    {
+      "ID": 13061102,
+      "Entries": [
+        "Alonne Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 13061103,
+      "Entries": [
+        "Alonne Knight Leggings"
+      ]
+    },
+    {
+      "ID": 13070100,
+      "Entries": [
+        "Vengarl's Helm"
+      ]
+    },
+    {
+      "ID": 13070101,
+      "Entries": [
+        "Vengarl's Armor"
+      ]
+    },
+    {
+      "ID": 13070102,
+      "Entries": [
+        "Vengarl's Gloves"
+      ]
+    },
+    {
+      "ID": 13070103,
+      "Entries": [
+        "Vengarl's Boots"
+      ]
+    },
+    {
+      "ID": 13080101,
+      "Entries": [
+        "Lion Warrior Cape"
+      ]
+    },
+    {
+      "ID": 13080102,
+      "Entries": [
+        "Lion Warrior Cuffs"
+      ]
+    },
+    {
+      "ID": 13080103,
+      "Entries": [
+        "Lion Warrior Skirt"
+      ]
+    },
+    {
+      "ID": 13081100,
+      "Entries": [
+        "Lion Warrior Helm"
+      ]
+    },
+    {
+      "ID": 13081101,
+      "Entries": [
+        "Red Lion Warrior Cape"
+      ]
+    },
+    {
+      "ID": 13081103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13120100,
+      "Entries": [
+        "Grave Warden Mask"
+      ]
+    },
+    {
+      "ID": 13120101,
+      "Entries": [
+        "Grave Warden Top"
+      ]
+    },
+    {
+      "ID": 13120102,
+      "Entries": [
+        "Grave Warden Cuffs"
+      ]
+    },
+    {
+      "ID": 13120103,
+      "Entries": [
+        "Grave Warden Bottoms"
+      ]
+    },
+    {
+      "ID": 13130100,
+      "Entries": [
+        "Falconer Helm"
+      ]
+    },
+    {
+      "ID": 13130101,
+      "Entries": [
+        "Falconer Armor"
+      ]
+    },
+    {
+      "ID": 13130102,
+      "Entries": [
+        "Falconer Gloves"
+      ]
+    },
+    {
+      "ID": 13130103,
+      "Entries": [
+        "Falconer Boots"
+      ]
+    },
+    {
+      "ID": 13140100,
+      "Entries": [
+        "Rusted Mastodon Helm"
+      ]
+    },
+    {
+      "ID": 13140101,
+      "Entries": [
+        "Rusted Mastodon Armor"
+      ]
+    },
+    {
+      "ID": 13140102,
+      "Entries": [
+        "Rusted Mastodon Gauntlets"
+      ]
+    },
+    {
+      "ID": 13140103,
+      "Entries": [
+        "Rusted Mastodon Leggings"
+      ]
+    },
+    {
+      "ID": 13150100,
+      "Entries": [
+        "Mastodon Helm"
+      ]
+    },
+    {
+      "ID": 13150101,
+      "Entries": [
+        "Mastodon Armor"
+      ]
+    },
+    {
+      "ID": 13150102,
+      "Entries": [
+        "Mastodon Gauntlets"
+      ]
+    },
+    {
+      "ID": 13150103,
+      "Entries": [
+        "Mastodon Leggings"
+      ]
+    },
+    {
+      "ID": 13160100,
+      "Entries": [
+        "Desert Sorceress Hood"
+      ]
+    },
+    {
+      "ID": 13160101,
+      "Entries": [
+        "Desert Sorceress Top"
+      ]
+    },
+    {
+      "ID": 13160102,
+      "Entries": [
+        "Desert Sorceress Gloves"
+      ]
+    },
+    {
+      "ID": 13160103,
+      "Entries": [
+        "Desert Sorceress Skirt"
+      ]
+    },
+    {
+      "ID": 13170100,
+      "Entries": [
+        "Dragon Acolyte Mask"
+      ]
+    },
+    {
+      "ID": 13170101,
+      "Entries": [
+        "Dragon Acolyte Robe"
+      ]
+    },
+    {
+      "ID": 13170102,
+      "Entries": [
+        "Dragon Acolyte Gloves"
+      ]
+    },
+    {
+      "ID": 13170103,
+      "Entries": [
+        "Dragon Acolyte Boots"
+      ]
+    },
+    {
+      "ID": 13171100,
+      "Entries": [
+        "Dragon Sage Hood"
+      ]
+    },
+    {
+      "ID": 13250100,
+      "Entries": [
+        "Ruin Helm"
+      ]
+    },
+    {
+      "ID": 13250101,
+      "Entries": [
+        "Ruin Armor"
+      ]
+    },
+    {
+      "ID": 13250102,
+      "Entries": [
+        "Ruin Gauntlets"
+      ]
+    },
+    {
+      "ID": 13250103,
+      "Entries": [
+        "Ruin Leggings"
+      ]
+    },
+    {
+      "ID": 13300100,
+      "Entries": [
+        "Old Knight Helm"
+      ]
+    },
+    {
+      "ID": 13300101,
+      "Entries": [
+        "Old Knight Armor"
+      ]
+    },
+    {
+      "ID": 13300102,
+      "Entries": [
+        "Old Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 13300103,
+      "Entries": [
+        "Old Knight Leggings"
+      ]
+    },
+    {
+      "ID": 13310100,
+      "Entries": [
+        "Drakekeeper Helm"
+      ]
+    },
+    {
+      "ID": 13310101,
+      "Entries": [
+        "Drakekeeper Armor"
+      ]
+    },
+    {
+      "ID": 13310102,
+      "Entries": [
+        "Drakekeeper Gauntlets"
+      ]
+    },
+    {
+      "ID": 13310103,
+      "Entries": [
+        "Drakekeeper Boots"
+      ]
+    },
+    {
+      "ID": 13320100,
+      "Entries": [
+        "Throne Defender Helm"
+      ]
+    },
+    {
+      "ID": 13320101,
+      "Entries": [
+        "Throne Defender Armor"
+      ]
+    },
+    {
+      "ID": 13320102,
+      "Entries": [
+        "Throne Defender Gauntlets"
+      ]
+    },
+    {
+      "ID": 13320103,
+      "Entries": [
+        "Throne Defender Leggings"
+      ]
+    },
+    {
+      "ID": 13330100,
+      "Entries": [
+        "Velstadt's Helm"
+      ]
+    },
+    {
+      "ID": 13330101,
+      "Entries": [
+        "Velstadt's Armor"
+      ]
+    },
+    {
+      "ID": 13330102,
+      "Entries": [
+        "Velstadt's Gauntlets"
+      ]
+    },
+    {
+      "ID": 13330103,
+      "Entries": [
+        "Velstadt's Leggings"
+      ]
+    },
+    {
+      "ID": 13340100,
+      "Entries": [
+        "Throne Watcher Helm"
+      ]
+    },
+    {
+      "ID": 13340101,
+      "Entries": [
+        "Throne Watcher Armor"
+      ]
+    },
+    {
+      "ID": 13340102,
+      "Entries": [
+        "Throne Watcher Gauntlets"
+      ]
+    },
+    {
+      "ID": 13340103,
+      "Entries": [
+        "Throne Watcher Leggings"
+      ]
+    },
+    {
+      "ID": 15040100,
+      "Entries": [
+        "Looking Glass Mask"
+      ]
+    },
+    {
+      "ID": 15040101,
+      "Entries": [
+        "Looking Glass Armor"
+      ]
+    },
+    {
+      "ID": 15040102,
+      "Entries": [
+        "Looking Glass Gauntlets"
+      ]
+    },
+    {
+      "ID": 15040103,
+      "Entries": [
+        "Looking Glass Leggings"
+      ]
+    },
+    {
+      "ID": 15060101,
+      "Entries": [
+        "Agdayne's Black Robe"
+      ]
+    },
+    {
+      "ID": 15060102,
+      "Entries": [
+        "Agdayne's Cuffs"
+      ]
+    },
+    {
+      "ID": 15060103,
+      "Entries": [
+        "Agdayne's Kilt"
+      ]
+    },
+    {
+      "ID": 15090100,
+      "Entries": [
+        "Leydia Black Hood"
+      ]
+    },
+    {
+      "ID": 15090101,
+      "Entries": [
+        "Leydia Black Robe"
+      ]
+    },
+    {
+      "ID": 15100100,
+      "Entries": [
+        "Insolent Helm"
+      ]
+    },
+    {
+      "ID": 15100101,
+      "Entries": [
+        "Insolent Armor"
+      ]
+    },
+    {
+      "ID": 15100102,
+      "Entries": [
+        "Insolent Gloves"
+      ]
+    },
+    {
+      "ID": 15100103,
+      "Entries": [
+        "Insolent Boots"
+      ]
+    },
+    {
+      "ID": 15110100,
+      "Entries": [
+        "Imperious Helm"
+      ]
+    },
+    {
+      "ID": 15110101,
+      "Entries": [
+        "Imperious Armor"
+      ]
+    },
+    {
+      "ID": 15110102,
+      "Entries": [
+        "Imperious Gloves"
+      ]
+    },
+    {
+      "ID": 15110103,
+      "Entries": [
+        "Imperious Leggings"
+      ]
+    },
+    {
+      "ID": 15120100,
+      "Entries": [
+        "Leydia White Hood"
+      ]
+    },
+    {
+      "ID": 15120101,
+      "Entries": [
+        "Leydia White Robe"
+      ]
+    },
+    {
+      "ID": 15120102,
+      "Entries": [
+        "Leydia Gauntlets"
+      ]
+    },
+    {
+      "ID": 15120103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15130100,
+      "Entries": [
+        "King's Crown"
+      ]
+    },
+    {
+      "ID": 15130101,
+      "Entries": [
+        "King's Armor"
+      ]
+    },
+    {
+      "ID": 15130102,
+      "Entries": [
+        "King's Gauntlets"
+      ]
+    },
+    {
+      "ID": 15130103,
+      "Entries": [
+        "King's Leggings"
+      ]
+    },
+    {
+      "ID": 16100100,
+      "Entries": [
+        "Dragonrider Helm"
+      ]
+    },
+    {
+      "ID": 16100101,
+      "Entries": [
+        "Dragonrider Armor"
+      ]
+    },
+    {
+      "ID": 16100102,
+      "Entries": [
+        "Dragonrider Gauntlets"
+      ]
+    },
+    {
+      "ID": 16100103,
+      "Entries": [
+        "Dragonrider Leggings"
+      ]
+    },
+    {
+      "ID": 16180100,
+      "Entries": [
+        "Executioner Helm"
+      ]
+    },
+    {
+      "ID": 16180101,
+      "Entries": [
+        "Executioner Armor"
+      ]
+    },
+    {
+      "ID": 16180102,
+      "Entries": [
+        "Executioner Gauntlets"
+      ]
+    },
+    {
+      "ID": 16180103,
+      "Entries": [
+        "Executioner Leggings"
+      ]
+    },
+    {
+      "ID": 16260100,
+      "Entries": [
+        "Penal Mask"
+      ]
+    },
+    {
+      "ID": 16260101,
+      "Entries": [
+        "Penal Straightjacket"
+      ]
+    },
+    {
+      "ID": 16260102,
+      "Entries": [
+        "Penal Handcuffs"
+      ]
+    },
+    {
+      "ID": 16260103,
+      "Entries": [
+        "Penal Skirt"
+      ]
+    },
+    {
+      "ID": 16510100,
+      "Entries": [
+        "Fume Sorcerer Mask"
+      ]
+    },
+    {
+      "ID": 16510101,
+      "Entries": [
+        "Fume Sorcerer Robes"
+      ]
+    },
+    {
+      "ID": 16510102,
+      "Entries": [
+        "Fume Sorcerer Gloves"
+      ]
+    },
+    {
+      "ID": 16510103,
+      "Entries": [
+        "Fume Sorcerer Boots"
+      ]
+    },
+    {
+      "ID": 16590100,
+      "Entries": [
+        "Rampart Golem Helm"
+      ]
+    },
+    {
+      "ID": 16590101,
+      "Entries": [
+        "Rampart Golem Armor"
+      ]
+    },
+    {
+      "ID": 16590102,
+      "Entries": [
+        "Rampart Golem Gauntlets"
+      ]
+    },
+    {
+      "ID": 16590103,
+      "Entries": [
+        "Rampart Golem Leggings"
+      ]
+    },
+    {
+      "ID": 16650100,
+      "Entries": [
+        "Sanctum Knight Helm"
+      ]
+    },
+    {
+      "ID": 16650101,
+      "Entries": [
+        "Sanctum Knight Armor"
+      ]
+    },
+    {
+      "ID": 16650102,
+      "Entries": [
+        "Sanctum Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 16650103,
+      "Entries": [
+        "Sanctum Knight Leggings"
+      ]
+    },
+    {
+      "ID": 16660102,
+      "Entries": [
+        "Sanctum Soldier Gauntlet"
+      ]
+    },
+    {
+      "ID": 16700100,
+      "Entries": [
+        "Sanctum Priestess Tiara"
+      ]
+    },
+    {
+      "ID": 16750100,
+      "Entries": [
+        "Raime's Helm"
+      ]
+    },
+    {
+      "ID": 16750101,
+      "Entries": [
+        "Raime's Armor"
+      ]
+    },
+    {
+      "ID": 16750102,
+      "Entries": [
+        "Raime's Gauntlets"
+      ]
+    },
+    {
+      "ID": 16750103,
+      "Entries": [
+        "Raime's Leggings"
+      ]
+    },
+    {
+      "ID": 16770101,
+      "Entries": [
+        "Retainer Robe"
+      ]
+    },
+    {
+      "ID": 16800100,
+      "Entries": [
+        "Alonne's Helm"
+      ]
+    },
+    {
+      "ID": 16800101,
+      "Entries": [
+        "Alonne's Armor"
+      ]
+    },
+    {
+      "ID": 16800102,
+      "Entries": [
+        "Alonne's Gauntlets"
+      ]
+    },
+    {
+      "ID": 16800103,
+      "Entries": [
+        "Alonne's Leggings"
+      ]
+    },
+    {
+      "ID": 16880100,
+      "Entries": [
+        "Loyce Helm"
+      ]
+    },
+    {
+      "ID": 16880101,
+      "Entries": [
+        "Loyce Armor"
+      ]
+    },
+    {
+      "ID": 16880102,
+      "Entries": [
+        "Loyce Gauntlets"
+      ]
+    },
+    {
+      "ID": 16880103,
+      "Entries": [
+        "Loyce Leggings"
+      ]
+    },
+    {
+      "ID": 16890100,
+      "Entries": [
+        "Charred Loyce Helm"
+      ]
+    },
+    {
+      "ID": 16890101,
+      "Entries": [
+        "Charred Loyce Armor"
+      ]
+    },
+    {
+      "ID": 16890102,
+      "Entries": [
+        "Charred Loyce Gauntlets"
+      ]
+    },
+    {
+      "ID": 16890103,
+      "Entries": [
+        "Charred Loyce Leggings"
+      ]
+    },
+    {
+      "ID": 16900100,
+      "Entries": [
+        "Ivory King Helm"
+      ]
+    },
+    {
+      "ID": 16900101,
+      "Entries": [
+        "Ivory King Armor"
+      ]
+    },
+    {
+      "ID": 16900102,
+      "Entries": [
+        "Ivory King Gauntlets"
+      ]
+    },
+    {
+      "ID": 16900103,
+      "Entries": [
+        "Ivory King Leggings"
+      ]
+    },
+    {
+      "ID": 16940100,
+      "Entries": [
+        "Hood of the Forlorn"
+      ]
+    },
+    {
+      "ID": 16940101,
+      "Entries": [
+        "Armor of the Forlorn"
+      ]
+    },
+    {
+      "ID": 16940102,
+      "Entries": [
+        "Gauntlets of the Forlorn"
+      ]
+    },
+    {
+      "ID": 16940103,
+      "Entries": [
+        "Leggings of the Forlorn"
+      ]
+    },
+    {
+      "ID": 17210101,
+      "Entries": [
+        "Llewellyn Armor"
+      ]
+    },
+    {
+      "ID": 17210102,
+      "Entries": [
+        "Llewellyn Gloves"
+      ]
+    },
+    {
+      "ID": 17210103,
+      "Entries": [
+        "Llewellyn Shoes"
+      ]
+    },
+    {
+      "ID": 17240100,
+      "Entries": [
+        "Drangleic Helm"
+      ]
+    },
+    {
+      "ID": 17240101,
+      "Entries": [
+        "Drangleic Mail"
+      ]
+    },
+    {
+      "ID": 17240102,
+      "Entries": [
+        "Drangleic Gauntlets"
+      ]
+    },
+    {
+      "ID": 17240103,
+      "Entries": [
+        "Drangleic Leggings"
+      ]
+    },
+    {
+      "ID": 17420100,
+      "Entries": [
+        "Creighton's Steel Mask"
+      ]
+    },
+    {
+      "ID": 17420101,
+      "Entries": [
+        "Creighton's Chainmail"
+      ]
+    },
+    {
+      "ID": 17420102,
+      "Entries": [
+        "Creighton's Chain Gloves"
+      ]
+    },
+    {
+      "ID": 17420103,
+      "Entries": [
+        "Creighton's Chain Leggings"
+      ]
+    },
+    {
+      "ID": 17430100,
+      "Entries": [
+        "Benhart's Knight Helm"
+      ]
+    },
+    {
+      "ID": 17430101,
+      "Entries": [
+        "Benhart's Armor"
+      ]
+    },
+    {
+      "ID": 17430102,
+      "Entries": [
+        "Benhart's Gauntlets"
+      ]
+    },
+    {
+      "ID": 17430103,
+      "Entries": [
+        "Benhart's Boots"
+      ]
+    },
+    {
+      "ID": 17440100,
+      "Entries": [
+        "Standard Helm"
+      ]
+    },
+    {
+      "ID": 17440101,
+      "Entries": [
+        "Hard Leather Armor"
+      ]
+    },
+    {
+      "ID": 17440102,
+      "Entries": [
+        "Hard Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 17440103,
+      "Entries": [
+        "Hard Leather Boots"
+      ]
+    },
+    {
+      "ID": 17510100,
+      "Entries": [
+        "Cale's Helm"
+      ]
+    },
+    {
+      "ID": 17510101,
+      "Entries": [
+        "Cale's Leather Armor"
+      ]
+    },
+    {
+      "ID": 17510103,
+      "Entries": [
+        "Cale's Shoes"
+      ]
+    },
+    {
+      "ID": 17520100,
+      "Entries": [
+        "Lucatiel's Mask"
+      ]
+    },
+    {
+      "ID": 17520101,
+      "Entries": [
+        "Lucatiel's Vest"
+      ]
+    },
+    {
+      "ID": 17520102,
+      "Entries": [
+        "Lucatiel's Gloves"
+      ]
+    },
+    {
+      "ID": 17520103,
+      "Entries": [
+        "Lucatiel's Trousers"
+      ]
+    },
+    {
+      "ID": 17521100,
+      "Entries": [
+        "Mirrah Hat"
+      ]
+    },
+    {
+      "ID": 17530100,
+      "Entries": [
+        "Bell Keeper Helmet"
+      ]
+    },
+    {
+      "ID": 17530101,
+      "Entries": [
+        "Bell Keeper Bellyband"
+      ]
+    },
+    {
+      "ID": 17530102,
+      "Entries": [
+        "Bell Keeper Cuffs"
+      ]
+    },
+    {
+      "ID": 17530103,
+      "Entries": [
+        "Bell Keeper Trousers"
+      ]
+    },
+    {
+      "ID": 17550100,
+      "Entries": [
+        "Mad Warrior Mask"
+      ]
+    },
+    {
+      "ID": 17550101,
+      "Entries": [
+        "Mad Warrior Armor"
+      ]
+    },
+    {
+      "ID": 17550102,
+      "Entries": [
+        "Mad Warrior Gauntlets"
+      ]
+    },
+    {
+      "ID": 17550103,
+      "Entries": [
+        "Mad Warrior Leggings"
+      ]
+    },
+    {
+      "ID": 17630101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 17680100,
+      "Entries": [
+        "Black Hood"
+      ]
+    },
+    {
+      "ID": 17680101,
+      "Entries": [
+        "Black Robes"
+      ]
+    },
+    {
+      "ID": 17680102,
+      "Entries": [
+        "Black Gloves"
+      ]
+    },
+    {
+      "ID": 17680103,
+      "Entries": [
+        "Black Boots"
+      ]
+    },
+    {
+      "ID": 17690100,
+      "Entries": [
+        "Saint's Hood"
+      ]
+    },
+    {
+      "ID": 17690101,
+      "Entries": [
+        "Saint's Dress"
+      ]
+    },
+    {
+      "ID": 17690102,
+      "Entries": [
+        "Saint's Long Gloves"
+      ]
+    },
+    {
+      "ID": 17690103,
+      "Entries": [
+        "Saint's Trousers"
+      ]
+    },
+    {
+      "ID": 17700100,
+      "Entries": [
+        "Hexer's Hood"
+      ]
+    },
+    {
+      "ID": 17700101,
+      "Entries": [
+        "Hexer's Robe"
+      ]
+    },
+    {
+      "ID": 17700102,
+      "Entries": [
+        "Hexer's Gloves"
+      ]
+    },
+    {
+      "ID": 17700103,
+      "Entries": [
+        "Hexer's Boots"
+      ]
+    },
+    {
+      "ID": 17710100,
+      "Entries": [
+        "Chaos Hood"
+      ]
+    },
+    {
+      "ID": 17710101,
+      "Entries": [
+        "Chaos Robe"
+      ]
+    },
+    {
+      "ID": 17710102,
+      "Entries": [
+        "Chaos Gloves"
+      ]
+    },
+    {
+      "ID": 17710103,
+      "Entries": [
+        "Chaos Boots"
+      ]
+    },
+    {
+      "ID": 17830100,
+      "Entries": [
+        "Nahr Alma Hood"
+      ]
+    },
+    {
+      "ID": 17830101,
+      "Entries": [
+        "Nahr Alma Robes"
+      ]
+    },
+    {
+      "ID": 17950100,
+      "Entries": [
+        "Targray's Helm"
+      ]
+    },
+    {
+      "ID": 17950101,
+      "Entries": [
+        "Targray's Armor"
+      ]
+    },
+    {
+      "ID": 17950102,
+      "Entries": [
+        "Targray's Manifers"
+      ]
+    },
+    {
+      "ID": 17950103,
+      "Entries": [
+        "Targray's Leggings"
+      ]
+    },
+    {
+      "ID": 19000101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19010101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19020101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19030101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

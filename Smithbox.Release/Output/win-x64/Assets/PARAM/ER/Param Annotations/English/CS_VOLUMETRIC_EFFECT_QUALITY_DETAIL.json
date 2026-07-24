@@ -1,0 +1,93 @@
+{
+  "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "Fog Enabled",
+      "Description": "Fog enabled"
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "Fog Shadow Enabled",
+      "Description": "Fog shadow permission"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "Shadow Sample Count Offset",
+      "Description": "Shadow sample count offset."
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "Local Light Distance Scale",
+      "Description": "Local light calculation distance scale (0 does not calculate local light)"
+    },
+    {
+      "Field": "fogVolueSizeScaler",
+      "Name": "Fog Volume Size Scaler",
+      "Description": "Fog volume size scaler"
+    },
+    {
+      "Field": "fogVolueSizeDivider",
+      "Name": "Fog Volume Size Division",
+      "Description": "Fog volume size division"
+    },
+    {
+      "Field": "fogVolumeDepthScaler",
+      "Name": "Fog Volume Depth Slice Scaler",
+      "Description": "Fog Volume Depth Slice Scaler"
+    },
+    {
+      "Field": "fogVolumeDepthDivider",
+      "Name": "Fog Volume Depth Slice Division",
+      "Description": "Fog volume depth slice division"
+    },
+    {
+      "Field": "fogVolumeEnabled",
+      "Name": "Arranged Fog Volume Enabled",
+      "Description": "Arranged fog volume enabled"
+    },
+    {
+      "Field": "fogVolumeUpScaleType",
+      "Name": "Upscale Type",
+      "Description": "Method type at the time of upscale"
+    },
+    {
+      "Field": "fogVolumeEdgeCorrectionLevel",
+      "Name": "Edge Correction Level",
+      "Description": "Edge correction level performed only at bilateral (0- invalid, edge redraw permission at 1- 1 / 2x1 / 2 resolution, edge redraw permission with parameter reduction at 2- 1 / 2x1 / 2 + 1x1 resolution, 3 - 1 / 2x1 / 2 + 1x1 resolution edge redraw permission)"
+    },
+    {
+      "Field": "fogVolumeRayMarcingSampleCountOffset",
+      "Name": "Ray Sample Count Offset",
+      "Description": "Offset of sampling number during ray marching"
+    },
+    {
+      "Field": "fogVolumeShadowEnabled",
+      "Name": "Fog Volume Shadow Enabled",
+      "Description": "Shadow permission (refers to shadow processing due to density changes in the area, where shadows are cast on the area)"
+    },
+    {
+      "Field": "fogVolumeForceShadowing",
+      "Name": "Fog Volume - Force Shadowing",
+      "Description": "Forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)"
+    },
+    {
+      "Field": "fogVolumeResolution",
+      "Name": "Fog Volume Resolution",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

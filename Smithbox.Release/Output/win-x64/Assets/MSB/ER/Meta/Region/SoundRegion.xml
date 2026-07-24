@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a sound region in the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT01
+    AltName="Unknown: 0x1"
+    Wiki="" />
+    
+    <UnkT02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <UnkT03
+    AltName="Unknown: 0x3"
+    Wiki="" />
+    
+    <WwiseEnvPlaceTypeID
+    AltName="Wwise Environment Place Type ID"
+    Wiki="The environmenta place type ID for the Wwise sounds." 
+    ParamRef="WwiseValueToStrParam_EnvPlaceType" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

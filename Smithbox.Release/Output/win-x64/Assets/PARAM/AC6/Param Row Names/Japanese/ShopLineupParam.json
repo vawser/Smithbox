@@ -1,0 +1,1493 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Bay Ram] Bay Ram_HEAD_Full Set -- [ベイラム]ベイラム_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Bay Ram] Bay Ram_HEAD_Head A -- [ベイラム]ベイラム_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Heavy Crest] Heavy Crest_HEAD_Full Set -- [重クレスト]重クレスト_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_HEAD_Full set -- [レイレナード]レイレナード_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_HEAD_Head A -- [レイレナード]レイレナード_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Mirage] Mirage_HEAD_Full set -- [ミラージュ]ミラージュ_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Mirage] Mirage_HEAD_Head A -- [ミラージュ]ミラージュ_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Label] Label_HEAD_Full set -- [ラベール]ラベール_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[Label] Label_HEAD_Head A -- [ラベール]ラベール_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Iqbal] Iqbal_HEAD_Full set -- [イクバール]イクバール_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Iqbal]Iqbal_HEAD_Head A -- [イクバール]イクバール_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Cuba] Cuba_HEAD_Full set -- [キューバ]キューバ_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[PBA]JUDO_HEAD_Full set -- [PBA]JUDO_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[Troll] Troll_HEAD_Full set -- [トロル]トロル_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[R&D] Scavenger (old)_HEAD_Full set -- [R&D]スカベンジャー(旧)_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[R&D] Scavenger (new)_HEAD_Head A -- [R&D]スカベンジャー(新)_HEAD_頭A"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "[One-off] Kawamori_HEAD_Full set -- [ワンオフ]カワモリ_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "[One-off] Yanase_HEAD_Full set -- [ワンオフ]ヤナセ_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[PBA] JUDO_HEAD_Full set for jailbreak mission -- 脱獄ミッション用[PBA]JUDO_HEAD_フルセット"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Bay Ram] Bay Ram_CORE_Full Set -- [ベイラム]ベイラム_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Heavy Crest] Heavy Crest_CORE_Full Set -- [重クレスト]重クレスト_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_CORE_Full Set -- [レイレナード]レイレナード_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Mirage] Mirage_CORE_Full set -- [ミラージュ]ミラージュ_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Label] Label_CORE_Full set -- [ラベール]ラベール_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Iqbal] Iqbal_CORE_Full set -- [イクバール]イクバール_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Cuba] Cuba_CORE_Full set -- [キューバ]キューバ_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "[PBA]JUDO_CORE_Full set -- [PBA]JUDO_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "[Troll] Troll_CORE_Full set -- [トロル]トロル_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "[R&D] Scavenger (old)_CORE_Full set -- [R&D]スカベンジャー(旧)_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[One-off] Kawamori_CORE_Full set -- [ワンオフ]カワモリ_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[One-off] Yanase_CORE_Full set -- [ワンオフ]ヤナセ_CORE_フルセット"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Bayram] Bayram_ARMS_Full set -- [ベイラム]ベイラム_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Heavy Crest] Heavy Crest_ARMS_Full Set -- [重クレスト]重クレスト_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_ARMS_Full Set -- [レイレナード]レイレナード_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Mirage] Mirage_ARMS_Full set -- [ミラージュ]ミラージュ_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Mirage] Mirage_ARMS_Arm A -- [ミラージュ]ミラージュ_ARMS_腕A"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Label] Label_ARMS_Full set -- [ラベール]ラベール_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Iqbal] Iqbal_ARMS_Full set -- [イクバール]イクバール_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Cuba] Cuba_ARMS_Full set -- [キューバ]キューバ_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[PBA]JUDO_ARMS_Full set -- [PBA]JUDO_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[Troll] Troll_ARMS_Full set -- [トロル]トロル_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[R&D] Scavenger (old)_ARMS_Full set -- [R&D]スカベンジャー(旧)_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[One-off] Kawamori_ARMS_Full set -- [ワンオフ]カワモリ_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[One-off] Yanase_ARMS_Full set -- [ワンオフ]ヤナセ_ARMS_フルセット"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Bay Lamb] Bay Lamb_LEGS_Bipod -- [ベイラム]ベイラム_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Heavy Crest] Heavy Crest_LEGS_Bipod -- [重クレスト]重クレスト_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_LEGS_Bipod -- [レイレナード]レイレナード_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Mirage] Mirage_LEGS_bipod -- [ミラージュ]ミラージュ_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Label] Labelle_LEGS_Bipod -- [ラベール]ラベール_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Iqbal]Iqbal_LEGS_bipod -- [イクバール]イクバール_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Cuba] Cuba_LEGS_bipod -- [キューバ]キューバ_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "[PBA]JUDO_LEGS_Bipod -- [PBA]JUDO_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "[Troll]Troll_LEGS_Bipod -- [トロル]トロル_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "[R&D] Scavenger (old)_LEGS_Bipod -- [R&D]スカベンジャー(旧)_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[One-off] Kawamori_LEGS_bipod -- [ワンオフ]カワモリ_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[One-off] Yanase_LEGS_bipod -- [ワンオフ]ヤナセ_LEGS_二脚"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Ray Leonard] Ray Leonard_LEGS_Reverse joint -- [レイレナード]レイレナード_LEGS_逆関節"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Iqbal]Iqbal_LEGS_reverse joint -- [イクバール]イクバール_LEGS_逆関節"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[R&D]Scavenger_LEGS_Reverse joint -- [R&D]スカベンジャー_LEGS_逆関節"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Mirage] Mirage_LEGS_quadruped -- [ミラージュ]ミラージュ_LEGS_四脚"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Bay Ram] Bay Ram_LEGS_Tank -- [ベイラム]ベイラム_LEGS_タンク"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Label] Labelle_LEGS_Tank -- [ラベール]ラベール_LEGS_タンク"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[Cuba] Cuba_LEGS_Tank -- [キューバ]キューバ_LEGS_タンク"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "BS_A_1080 Hekanto Cale Booster -- BS_A_1080 へカントケイルブースター"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "BS_A_5010 Label Booster -- BS_A_5010 ラベールブースター"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "BS_A_8030 PBA Booster -- BS_A_8030 PBAブースター"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "BS_A_8060 Yanase Booster -- BS_A_8060 ヤナセブースター"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "1st generation generator -- 第1世代ジェネレータ"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "2nd generation generator A-1 -- 第2世代ジェネレータ A-1"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "2nd generation generator A-2 -- 第2世代ジェネレータ A-2"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "2nd generation generator B-1 -- 第2世代ジェネレータ B-1"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "2nd generation generator B-2 -- 第2世代ジェネレータ B-2"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "2nd generation generator C -- 第2世代ジェネレータ C"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "3rd generation generator 1 -- 第3世代ジェネレータ 1"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "3rd generation generator 2 -- 第3世代ジェネレータ 2"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Melange generator 1 -- メランジ系ジェネレータ 1"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "Melange generator 2 -- メランジ系ジェネレータ 2"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "1st generation FCS -- 第1世代FCS"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "2nd generation FCS A-1 -- 第2世代FCS A-1"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "2nd generation FCS A-2 -- 第2世代FCS A-2"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "2nd generation FCS A-3 -- 第2世代FCS A-3"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "2nd generation FCS B-1 -- 第2世代FCS B-1"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "2nd generation FCS B-2 -- 第2世代FCS B-2"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "3rd generation FCS 1 -- 第3世代FCS 1"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "3rd generation FCS 2 -- 第3世代FCS 2"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Melange type FCS 1 -- メランジ系FCS 1"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Melange type FCS 2 -- メランジ系FCS 2"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Semi-auto rifle_standard type -- セミオートライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Assault rifle_n-point burst -- アサルトライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Assault rifle_standard type -- アサルトライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Machine gun_n point burst -- マシンガン_n点バースト"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "Machine gun_standard type -- マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "Gatling gun_standard type -- ガトリングガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Bazooka_light but low power -- バズーカ_軽めだが威力-低"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "Bazooka_Standard type -- バズーカ_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "Bazooka_heavy but powerful -- バズーカ_重いが威力-大"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "Shotgun_Collection performance-low Lucky 13 -- ショットガン_集弾性能-低 ラッキー13"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "Shotgun_Standard type -- ショットガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "Shotgun_Collection performance-High -- ショットガン_集弾性能-高"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "Grenade rifle_standard type -- グレネードライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大"
+      ]
+    },
+    {
+      "ID": 11180,
+      "Entries": [
+        "Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち"
+      ]
+    },
+    {
+      "ID": 11190,
+      "Entries": [
+        "Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "Handgun_One shot is heavy -- ハンドガン_一発が重い"
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "Throwing gun_2 shots (smoke) -- 投擲銃_2連射（スモーク）"
+      ]
+    },
+    {
+      "ID": 11230,
+      "Entries": [
+        "Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）"
+      ]
+    },
+    {
+      "ID": 11240,
+      "Entries": [
+        "Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）"
+      ]
+    },
+    {
+      "ID": 11250,
+      "Entries": [
+        "Grenade_Lightweight type -- グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 11260,
+      "Entries": [
+        "Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        "Laser rifle_standard type -- レーザーライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11280,
+      "Entries": [
+        "Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い"
+      ]
+    },
+    {
+      "ID": 11290,
+      "Entries": [
+        "Plasma rifle_standard type -- プラズマライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い"
+      ]
+    },
+    {
+      "ID": 11310,
+      "Entries": [
+        "Plasma rifle_weight type -- プラズマライフル_重量タイプ"
+      ]
+    },
+    {
+      "ID": 11320,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 11330,
+      "Entries": [
+        "Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル"
+      ]
+    },
+    {
+      "ID": 11340,
+      "Entries": [
+        "Machine gun for escape mission_Standard type -- 脱出ミッション用マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11350,
+      "Entries": [
+        "Shotgun for escape mission_Lucky 13 -- 脱出ミッション用ショットガン_ラッキー13"
+      ]
+    },
+    {
+      "ID": 11360,
+      "Entries": [
+        "Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 11370,
+      "Entries": [
+        "Semi-auto rifle_standard type -- セミオートライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11380,
+      "Entries": [
+        "Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 11390,
+      "Entries": [
+        "Assault rifle_n-point burst -- アサルトライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "Assault rifle_standard type -- アサルトライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11410,
+      "Entries": [
+        "Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 11420,
+      "Entries": [
+        "Machine gun_n point burst -- マシンガン_n点バースト"
+      ]
+    },
+    {
+      "ID": 11430,
+      "Entries": [
+        "Machine gun_standard type -- マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11440,
+      "Entries": [
+        "Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視"
+      ]
+    },
+    {
+      "ID": 11450,
+      "Entries": [
+        "Gatling gun_standard type -- ガトリングガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11460,
+      "Entries": [
+        "Bazooka_light but low power -- バズーカ_軽めだが威力-低"
+      ]
+    },
+    {
+      "ID": 11470,
+      "Entries": [
+        "Bazooka_Standard type -- バズーカ_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11480,
+      "Entries": [
+        "Bazooka_heavy but powerful -- バズーカ_重いが威力-大"
+      ]
+    },
+    {
+      "ID": 11490,
+      "Entries": [
+        "Shotgun_Collection performance-low Lucky 13 -- ショットガン_集弾性能-低 ラッキー13"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "Shotgun_Standard type -- ショットガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "Shotgun_Collection performance-High -- ショットガン_集弾性能-高"
+      ]
+    },
+    {
+      "ID": 11520,
+      "Entries": [
+        "Grenade rifle_standard type -- グレネードライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11530,
+      "Entries": [
+        "Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大"
+      ]
+    },
+    {
+      "ID": 11540,
+      "Entries": [
+        "Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち"
+      ]
+    },
+    {
+      "ID": 11550,
+      "Entries": [
+        "Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射"
+      ]
+    },
+    {
+      "ID": 11560,
+      "Entries": [
+        "Handgun_One shot is heavy -- ハンドガン_一発が重い"
+      ]
+    },
+    {
+      "ID": 11570,
+      "Entries": [
+        "Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）"
+      ]
+    },
+    {
+      "ID": 11580,
+      "Entries": [
+        "Throwing gun_2 shots (smoke) -- 投擲銃_2連射（スモーク）"
+      ]
+    },
+    {
+      "ID": 11590,
+      "Entries": [
+        "Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）"
+      ]
+    },
+    {
+      "ID": 11610,
+      "Entries": [
+        "Grenade_Lightweight type -- グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 11620,
+      "Entries": [
+        "Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 11630,
+      "Entries": [
+        "Laser rifle_standard type -- レーザーライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11640,
+      "Entries": [
+        "Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い"
+      ]
+    },
+    {
+      "ID": 11650,
+      "Entries": [
+        "Plasma rifle_standard type -- プラズマライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11660,
+      "Entries": [
+        "Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い"
+      ]
+    },
+    {
+      "ID": 11670,
+      "Entries": [
+        "Plasma rifle_weight type -- プラズマライフル_重量タイプ"
+      ]
+    },
+    {
+      "ID": 11680,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 11690,
+      "Entries": [
+        "Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル"
+      ]
+    },
+    {
+      "ID": 11700,
+      "Entries": [
+        "Bazooka for jailbreak mission_Standard type -- 脱獄ミッション用バズーカ_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11710,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke) -- 脱獄ミッション用投擲銃_2連射（スモーク）"
+      ]
+    },
+    {
+      "ID": 11720,
+      "Entries": [
+        "Laser Blade_M・AI Unique -- レーザーブレード_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 11730,
+      "Entries": [
+        "PA breaker -- PAブレイカー"
+      ]
+    },
+    {
+      "ID": 11740,
+      "Entries": [
+        "plasma broadsword -- プラズマブロードソード"
+      ]
+    },
+    {
+      "ID": 11750,
+      "Entries": [
+        "laser naginata -- レーザー薙刀"
+      ]
+    },
+    {
+      "ID": 11760,
+      "Entries": [
+        "laser dagger -- レーザーダガー"
+      ]
+    },
+    {
+      "ID": 11770,
+      "Entries": [
+        "chainsaw -- チェーンソー"
+      ]
+    },
+    {
+      "ID": 11780,
+      "Entries": [
+        "electromagnetic hammer -- 電磁ハンマー"
+      ]
+    },
+    {
+      "ID": 11790,
+      "Entries": [
+        "exploding pile -- 爆裂パイル"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "electromagnetic baton -- 電磁警棒"
+      ]
+    },
+    {
+      "ID": 11810,
+      "Entries": [
+        "[test] Proximity diffusion bullet -- 【test】近接拡散弾"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "PA Buckler_High instantaneous output Jasga Shield -- PAバックラー_瞬間出力高い ジャスガシールド"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "PA shield_standard type -- PAシールド_標準タイプ"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Plasma missile_standard type -- プラズマミサイル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "AI missile_multi-stage guidance -- AIミサイル_多段誘導"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "twin missiles -- 連装ミサイル"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "vertical missile -- 垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "explosive cable missile -- 爆導索ミサイル"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "Back missile_2Way -- 背ミサイル_2Way"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "Back missile_fission missile -- 背ミサイル_分裂ミサイル"
+      ]
+    },
+    {
+      "ID": 13080,
+      "Entries": [
+        "Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 13090,
+      "Entries": [
+        "Shoulder bazooka_spread -- 肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける"
+      ]
+    },
+    {
+      "ID": 13130,
+      "Entries": [
+        "Anti-worm firearm -- 対ワーム用火器"
+      ]
+    },
+    {
+      "ID": 13140,
+      "Entries": [
+        "Plasma missile_standard type -- プラズマミサイル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 13150,
+      "Entries": [
+        "Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む"
+      ]
+    },
+    {
+      "ID": 13160,
+      "Entries": [
+        "AI missile_multi-stage guidance -- AIミサイル_多段誘導"
+      ]
+    },
+    {
+      "ID": 13170,
+      "Entries": [
+        "twin missiles -- 連装ミサイル"
+      ]
+    },
+    {
+      "ID": 13180,
+      "Entries": [
+        "vertical missile -- 垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 13190,
+      "Entries": [
+        "depleted uranium missile -- 劣化ウランミサイル"
+      ]
+    },
+    {
+      "ID": 13200,
+      "Entries": [
+        "Back missile_2Way -- 背ミサイル_2Way"
+      ]
+    },
+    {
+      "ID": 13210,
+      "Entries": [
+        "Back missile_fission missile -- 背ミサイル_分裂ミサイル"
+      ]
+    },
+    {
+      "ID": 13220,
+      "Entries": [
+        "Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 13230,
+      "Entries": [
+        "[test] Needle missile_typeA -- 【test】ニードルミサイル_typeA"
+      ]
+    },
+    {
+      "ID": 13240,
+      "Entries": [
+        "[test] Needle missile_typeB -- 【test】ニードルミサイル_typeB"
+      ]
+    },
+    {
+      "ID": 13250,
+      "Entries": [
+        "[test] Container missile_typeA -- 【test】コンテナミサイル_typeA"
+      ]
+    },
+    {
+      "ID": 13260,
+      "Entries": [
+        "[test] Container missile_typeB -- 【test】コンテナミサイル_typeB"
+      ]
+    },
+    {
+      "ID": 13270,
+      "Entries": [
+        "[test] Cluster missile_typeA -- 【test】クラスターミサイル_typeA"
+      ]
+    },
+    {
+      "ID": 13280,
+      "Entries": [
+        "[test] Cluster missile_typeB -- 【test】クラスターミサイル_typeB"
+      ]
+    },
+    {
+      "ID": 13290,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst) -- 【test】単発式ファンネル（実弾3点バースト）"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "[test] Single-shot funnel (laser) -- 【test】単発式ファンネル（レーザー）"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka) -- 【test】置き射撃武器（実弾バズーカ）"
+      ]
+    },
+    {
+      "ID": 13320,
+      "Entries": [
+        "[test] Stationary shooting weapon (laser) -- 【test】置き射撃武器（レーザー）"
+      ]
+    },
+    {
+      "ID": 13330,
+      "Entries": [
+        "Shoulder bazooka_spread -- 肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 13340,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大"
+      ]
+    },
+    {
+      "ID": 13350,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化"
+      ]
+    },
+    {
+      "ID": 13360,
+      "Entries": [
+        "Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける"
+      ]
+    },
+    {
+      "ID": 13370,
+      "Entries": [
+        "Anti-worm firearm -- 対ワーム用火器"
+      ]
+    },
+    {
+      "ID": 13380,
+      "Entries": [
+        "Auxiliary booster_EN silhouette -- 補助ブースター_EN系シルエット"
+      ]
+    },
+    {
+      "ID": 13390,
+      "Entries": [
+        "Auxiliary Booster_M・AI Unique -- 補助ブースター_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "Auxiliary booster_live bullet silhouette -- 補助ブースター_実弾系シルエット"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "1st generation FCS -- 第1世代FCS"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "2nd generation FCS A-1 -- 第2世代FCS A-1"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        "1st generation generator -- 第1世代ジェネレータ"
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        "2nd generation generator A-1 -- 第2世代ジェネレータ A-1"
+      ]
+    },
+    {
+      "ID": 900008,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(HD)2 -- 【アセンテスト用】ミラージュAC_SB(HD)2"
+      ]
+    },
+    {
+      "ID": 900009,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(BD)2 -- 【アセンテスト用】ミラージュAC_SB(BD)2"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(AM)2 -- 【アセンテスト用】ミラージュAC_SB(AM)2"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "[For Ascentest] Mirage AC_TR(LG)2_M -- 【アセンテスト用】ミラージュAC_TR(LG)2_M"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_SB(HD)2 -- 【アセンテスト用】重量実弾AC_SB(HD)2"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_SB(BD)2 -- 【アセンテスト用】重量実弾AC_SB(BD)2"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "[For Ascentest] Heavy live bullet AC_SB(AM)2 -- 【アセンテスト用】重量実弾AC_SB(AM)2"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_TR(LG)2_M -- 【アセンテスト用】重量実弾AC_TR(LG)2_M"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "FNR left shoulder_orbit cannon -- FNR\u3000左肩_オービットキャノン"
+      ]
+    },
+    {
+      "ID": 900017,
+      "Entries": [
+        "FNR\u3000Left shoulder_surface control missile -- FNR\u3000左肩_面制圧型ミサイル"
+      ]
+    },
+    {
+      "ID": 900018,
+      "Entries": [
+        "FNR right hand_silencer rifle -- FNR\u3000右手_サイレンサーライフル"
+      ]
+    },
+    {
+      "ID": 900019,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (left dummy) -- FNR\u3000両肩_垂直ミサイル(左ダミー)"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "FNR left hand_blade -- FNR\u3000左手_ブレード"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "FNR left hand_laser whip -- FNR\u3000左手_レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "FNR left hand_chain hammer (WP_A_9210) -- FNR\u3000左手_チェインハンマー（WP_A_9210）"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "FNR left hand pile -- FNR\u3000左手パイル"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "80_Nakanishi test shield -- 80_中西テスト用\u3000シールド"
+      ]
+    }
+  ]
+}

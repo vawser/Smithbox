@@ -1,0 +1,203 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "dmy -- dmy"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Light Source / Ninja Cancer -- 光源/忍者がんどう"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Shuriken"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Firecrackers"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Flame Vent"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Mist Raven"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Sabimaru"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Umbrella"
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Divine Abduction"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Whistle"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.\FlverShader\FlverShader.vert.spv
+.\FlverShader\FlverShader.frag.spv
+.\FlverShader\FlverShader_selected.vert.spv
+.\FlverShader\FlverShader_selected.frag.spv
+.\FlverShader\FlverShader_blend.vert.spv
+.\FlverShader\FlverShader_blend.frag.spv
+.\FlverShader\FlverShader_blend_selected.vert.spv
+.\FlverShader\FlverShader_blend_selected.frag.spv
+.\FlverShader\FlverShader_blendmask.vert.spv
+.\FlverShader\FlverShader_blendmask.frag.spv
+.\FlverShader\FlverShader_blendmask_selected.vert.spv
+.\FlverShader\FlverShader_blendmask_selected.frag.spv

@@ -1,0 +1,18 @@
+{
+  "Param": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
+  "Type": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
+  "Name": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "priority",
+      "Name": "破壊優先度",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

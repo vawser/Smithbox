@@ -1,0 +1,389 @@
+{
+  "Name": "m14_PointLightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0沼"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0影待"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0クラーグ"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B1爛れ上部"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B1廃都"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B1廃都内部"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "イザリス"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1下層遺跡"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1爛れ下部"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B0沼"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "B0影待"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B0クラーグ"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "B1爛れ上部"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "B1廃都"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "B1廃都内部"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "イザリス"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "B1下層遺跡"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "B1爛れ下部"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn140000"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn140110-111Arm"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn140111"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn140110"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn140120"
+      ]
+    }
+  ]
+}

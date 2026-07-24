@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="/menu/tex/icon/bonfire_area/ic_area_010160000.tpf" width="256" height="128" type="Bonfire Area">
+    <SubTexture name="ICON_10160000.png" x="0" y="0" width="256"  height="128" originalWidth="256" originalHeight="128" half="0"/>
+</TextureAtlas>

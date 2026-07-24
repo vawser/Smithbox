@@ -1,0 +1,29 @@
+{
+  "Name": "JigglerBehaviorWorldFixParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 43010001,
+      "Entries": [
+        "parallel to the ground"
+      ]
+    },
+    {
+      "ID": 43010002,
+      "Entries": [
+        "parallel to the ground"
+      ]
+    },
+    {
+      "ID": 43010003,
+      "Entries": [
+        "parallel to the ground"
+      ]
+    }
+  ]
+}

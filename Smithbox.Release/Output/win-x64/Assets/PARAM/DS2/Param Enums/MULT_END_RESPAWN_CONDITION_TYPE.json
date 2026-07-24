@@ -1,0 +1,29 @@
+{
+  "Key": "MULT_END_RESPAWN_CONDITION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULT_END_RESPAWN_CONDITION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Original state"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Refresh"
+        }
+      ]
+    }
+  ]
+}

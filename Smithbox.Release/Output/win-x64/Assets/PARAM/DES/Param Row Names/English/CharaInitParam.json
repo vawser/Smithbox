@@ -1,0 +1,737 @@
+{
+  "Name": "CharaInitParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Soldier for tutorial"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Hunter for tutorial"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Tutorial wizard"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Cleric for tutorial"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "tutorial character"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grave Robber Blige"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "For wandering ghosts in Mine 1"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Old Fort 2 Uru-sama confinement NPC"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Ojo 4 Three Musketeers A"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Ojo 4 Three Musketeers B"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Ojo 4 Three Musketeers C"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Saint Urbain"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Hyena Patch (Old Fort)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Prince of Ostrava"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Billor"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Wanderer Skillville"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Hyena patch (pit)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Gal Vinland"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "wise man flake"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Yurt, Lord of Silence"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Lord Rydell in Black"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "princess knight selenium"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "witch yuria"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "old king doran"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Believers of God Part 1"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Believers of God Part 2"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Believers of God Part 3"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Savvy"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Master Satsuki"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Miralda the Condemned"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Lord Rydell in Black, Black"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Princess Knight Selene Black"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Condemned Miralda Black"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Wanderer Skill Ville Black"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "master satsuki black"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Gal Vinland Black"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Prince of Ostrava, Black"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Beyor (for fighting wyverns)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Prince Ostrava (Castle 1)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Prince Ostrava (Castle 2)"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Prison Castle 1 Black Ghost (in front of the church)"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "unholy 2 black ghost"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Mine 2 Black Ghost 1"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Mine 2 Black Ghost 2"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Okina Summon Black NPC"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "soldier"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "knight"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "hunter"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Shinto priest"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "magician"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Wanderer"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "savage tribe"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "bandit"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "temple knight"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "nobility"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Wanderer [Strongest Character Backup]"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Prison Castle 1 Black Ghost (in front of the church)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Prison Castle 3 Black Ghost A"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Prison Castle 3 Black Ghost B (for single)"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "unholy 2 black ghost"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Mine 2 Black Ghost 1"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Mine 2 Black Ghost 2"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Wandering ghost for tutorial 1"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Wandering ghost for tutorial 2"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Wandering ghost for tutorial 3"
+      ]
+    },
+    {
+      "ID": 3999,
+      "Entries": [
+        "Black ghost for exclusive use of Okina poly drama"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Debug Player (Medium)"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Debug Player (Arima Custom)"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Debug Player (Middle Equipment_Takenouchi Custom)"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Debug player (for damage testing)"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Debug Player (Medium _ Custom)"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Debug player (for network check)"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Warrior _ Difficulty 1 _ Royal Castle 1"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Warrior _ Difficulty 2 _ Royal Castle 2 / Tunnel 1"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Warrior_Difficulty 3_Unclean 1/Jail 1"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Warrior _ difficulty 4 _ old fort 1"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Soldier_Danger 5_Tunnel 2/Jail 2"
+      ]
+    },
+    {
+      "ID": 9106,
+      "Entries": [
+        "Soldier_Damage 6_Tunnel 3/Castle 3"
+      ]
+    },
+    {
+      "ID": 9107,
+      "Entries": [
+        "Warrior_Difficulty 7_Castle 3/Unclean 2"
+      ]
+    },
+    {
+      "ID": 9108,
+      "Entries": [
+        "Warrior_Damage 8_Old Fort 2"
+      ]
+    },
+    {
+      "ID": 9109,
+      "Entries": [
+        "Warrior_Difficulty 9_Unclean 3/Old Fort 3"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Warrior _ Difficulty 10 _ Royal Castle 4"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "Soldier_Difficulty 11_Just before clearing/Second round"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "Hunter_Disaster 1_Royal Castle 1"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "Hunter_Disaster 2_Castle 2/Tunnel 1"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "Hunter_Difficulty 3_Unclean 1/Jail 1"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "Hunter_Disaster 4_Old Fort 1"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "Hunter_Disaster 5_Tunnel 2/Castle 2"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "Hunter_Disaster 6_Tunnel 3/Castle 3"
+      ]
+    },
+    {
+      "ID": 9207,
+      "Entries": [
+        "Hunter_Difficulty 7_Castle 3/Unclean 2"
+      ]
+    },
+    {
+      "ID": 9208,
+      "Entries": [
+        "Hunter_Disaster 8_Old Fort 2"
+      ]
+    },
+    {
+      "ID": 9209,
+      "Entries": [
+        "Hunter_Difficulty 9_Unclean 3/Old Fort 3"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Hunter _ Difficulty 10 _ Royal Castle 4"
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        "Hunter_Difficulty 11_Just before clearing/Second round"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "Magic_Damage 1_Castle 1"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Magic_Difficulty 2_Castle 2/Tunnel 1"
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        "Magic_Difficulty 3_Unclean 1/Castle 1"
+      ]
+    },
+    {
+      "ID": 9304,
+      "Entries": [
+        "Magic_Difficulty 4_Old Fort 1"
+      ]
+    },
+    {
+      "ID": 9305,
+      "Entries": [
+        "Magic_Difficulties 5_ Tunnels 2 / Prison Castle 2"
+      ]
+    },
+    {
+      "ID": 9306,
+      "Entries": [
+        "Magic_Difficulty 6_Tunnel 3/Castle 3"
+      ]
+    },
+    {
+      "ID": 9307,
+      "Entries": [
+        "Magic_Difficulty 7_Castle 3/Unclean 2"
+      ]
+    },
+    {
+      "ID": 9308,
+      "Entries": [
+        "Magic_Hardness 8_Old Fort 2"
+      ]
+    },
+    {
+      "ID": 9309,
+      "Entries": [
+        "Magic_Difficulty 9_Unclean 3/Old Fort 3"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        "Magic_Hardness 10_Castle 4"
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        "Magic_Difficulty 11_Just before clearing/Second round"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "Shinto priest_difficulty 1_royal castle 1"
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        "Shinto priest_difficulty 2_royal castle 2/pit 1"
+      ]
+    },
+    {
+      "ID": 9403,
+      "Entries": [
+        "Shinto priest_difficulty 3_unclean 1/prison castle 1"
+      ]
+    },
+    {
+      "ID": 9404,
+      "Entries": [
+        "Priest _ difficulty 4 _ old fort 1"
+      ]
+    },
+    {
+      "ID": 9405,
+      "Entries": [
+        "Shinto priest_Difficulties 5_Tunnel 2/Jail 2"
+      ]
+    },
+    {
+      "ID": 9406,
+      "Entries": [
+        "Shinto priest_difficulty 6_pit 3/prison castle 3"
+      ]
+    },
+    {
+      "ID": 9407,
+      "Entries": [
+        "Shinto priest_difficulty 7_royal castle 3/impurity 2"
+      ]
+    },
+    {
+      "ID": 9408,
+      "Entries": [
+        "Priest _ difficulty 8 _ old fort 2"
+      ]
+    },
+    {
+      "ID": 9409,
+      "Entries": [
+        "Shinto priest_difficulty 9_unclean 3/old fort 3"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Priest _ difficulty 10 _ royal castle 4"
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        "Shinto priest_Difficulty 11_Just before clearing/2nd round"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "Debug player (for equipment status check)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Debug player (for network check)"
+      ]
+    }
+  ]
+}

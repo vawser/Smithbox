@@ -1,0 +1,389 @@
+{
+  "Name": "m08_FogBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Channel (unused)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "water surface"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Indoors (near the entrance)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Indoor (back)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "distant view"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "light that shines"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Basic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "distant view"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "celestial sphere"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "blood letters"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "distant tree"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "river"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "For poly drama (p80000"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "For poly drama (p80200"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "distant view"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "celestial sphere"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "magma"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "For poly drama (p80000-A"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "For poly drama (p80000-B"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "For poly drama (p80000-MaxFog"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "m99_97_00_00[Nakajima test]"
+      ]
+    }
+  ]
+}

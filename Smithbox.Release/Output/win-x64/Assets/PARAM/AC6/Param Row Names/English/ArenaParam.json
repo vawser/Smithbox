@@ -1,0 +1,257 @@
+{
+  "Name": "ArenaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "\"Invincible\" Rummy / MAD STOMP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Index Dunham / BURN PICKAXE"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "G6 Red / HERMIT"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Nosaac / BITTER PROMISE"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "V.VI Maeterlinck / INFECTION"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Little Ziyi / YUE YU"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "V.VII Swinburne / GUIDANCE"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "G3 Wu Huahai / LI LONG"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Ring Freddie / CANDLE RING"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "V.V Hawkins / RECONFIG"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "G5 Iguazu / HEAD BRINGER"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Rokumonsen / SHINOBI"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "G4 Volta / CANNON HEAD"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "V.VIII Pater / DUAL NATURE"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Sulla / ENTANGLE"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "\"Chatty\" Stick / CIRCUS"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Middle Flatwell / TSUBASA"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "V.III O'Keeffe / BARREN FLOWER"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "\"Cinder\" Carla / FULL COURSE"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Coldcall / DEADSLED"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "V.IV Rusty / STEEL HAZE"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "\"Honest\" Brute / MILK TOOTH"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "G2 Nile / DEEP DOWN"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "V.II Snail / OPEN FAITH"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Chartreuse / UMBER OX"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Thumb Dolmayan / ASTGHIK"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "King / ASTER CROWN"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "G1 Michigan / LIGER TAIL"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "V.I Freud / LOCKSMITH"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "51-001 K / MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "51-011 AL / TRAINER"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "51-012 AL / TESTER"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "51-002 K / MIND BETA"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "51-013 BE / CORPORATION"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "51-014 BE / RUBICONIAN"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "51-003 K / MIND GAMMA"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "51-015 GA / INSTITUTE"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "51-016 GA / NIGHTFALL"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "51-101 R / STEEL HAZE ORTUS"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "51-201 W / IB-C03: HAL 826"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Ayre / ECHO (Classified Subject)"
+      ]
+    }
+  ]
+}

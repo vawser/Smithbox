@@ -1,0 +1,3474 @@
+{
+  "Name": "MagicTableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "(0% weight)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table>"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table>"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Sorcery] Great Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Sorcery] Swift Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Sorcery] Glintstone Cometshard"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "[Sorcery] Comet"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Sorcery] Shard Spiral"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Sorcery] Glintstone Stars"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Sorcery] Star Shower"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Sorcery] Crystal Barrage"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "[Sorcery] Glintstone Arc"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "[Sorcery] Cannon of Haima"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "[Sorcery] Crystal Burst"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Sorcery] Shatter Earth"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[Sorcery] Rock Blaster"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[Sorcery] Gavel of Haima"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "[Sorcery] Terra Magica"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Sorcery] Comet Azur"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[Sorcery] Founding Rain of Stars"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "[Sorcery] Stars of Ruin"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "[Sorcery] Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "[Sorcery] Carian Phalanx"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "[Sorcery] Greatblade Phalanx"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "[Sorcery] Rennala's Full Moon"
+      ]
+    },
+    {
+      "ID": 4361,
+      "Entries": [
+        "[Sorcery] Ranni's Dark Moon"
+      ]
+    },
+    {
+      "ID": 4370,
+      "Entries": [
+        "[Sorcery] Magic Downpour"
+      ]
+    },
+    {
+      "ID": 4380,
+      "Entries": [
+        "[Sorcery] Loretta's Greatbow"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "[Sorcery] Loretta's Mastery"
+      ]
+    },
+    {
+      "ID": 4390,
+      "Entries": [
+        "[Sorcery] Magic Glintblade"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[Sorcery] Glintstone Icecrag"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "[Sorcery] Zamor Ice Storm"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "[Sorcery] Freezing Mist"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "[Sorcery] Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 4431,
+      "Entries": [
+        "[Sorcery] Adula's Moonblade"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "[Sorcery] Carian Slicer"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "[Sorcery] Carian Piercer"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "[Sorcery] Scholar's Armament"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "[Sorcery] Scholar's Shield"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "[Sorcery] Frozen Armament"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[Sorcery] Shattering Crystal"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "[Sorcery] Crystal Release"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "[Sorcery] Crystal Torrent"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[Sorcery] Ambush Shard"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[Sorcery] Night Shard"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "[Sorcery] Night Comet"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "[Sorcery] Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "[Sorcery] Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 4641,
+      "Entries": [
+        "[Sorcery] Carian Retaliation (Level 3)"
+      ]
+    },
+    {
+      "ID": 4642,
+      "Entries": [
+        "[Sorcery] Carian Retaliation (Level 4)"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "[Sorcery] Eternal Darkness"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "[Sorcery] Meteorite"
+      ]
+    },
+    {
+      "ID": 4701,
+      "Entries": [
+        "[Sorcery] Meteorite of Astel"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "[Sorcery] Rock Sling"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "[Sorcery] Gravity Well"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "[Sorcery] Collapsing Stars"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "[Sorcery] Magma Shot"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "[Sorcery] Gelmir's Fury"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "[Sorcery] Roiling Magma"
+      ]
+    },
+    {
+      "ID": 4830,
+      "Entries": [
+        "[Sorcery] Rykard's Rancor"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "[Sorcery] Briars of Sin"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "[Sorcery] Briars of Punishment"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Sorcery] Rancorcall"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Sorcery] Ancient Death Rancor"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Sorcery] Explosive Ghostflame"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[Sorcery] Tibia's Summons"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "[Incantation] Death Lightning"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[Sorcery] Oracle Bubbles"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "[Sorcery] Great Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Incantation] Catch Flame"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Incantation] O, Flame!"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Incantation] Flame Sling"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[Incantation] Flame, Fall Upon Them"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "[Incantation] Whirl, O Flame!"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "[Incantation] Flame, Grant Me Strength"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "[Incantation] Flame, Protect Me"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[Incantation] Giantsflame Take Thee"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[Incantation] Flame of The Fell God"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "[Incantation] Burn, O Flame!"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "[Incantation] Black Flame"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "[Incantation] Surge, O Flame!"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "[Incantation] Scouring Black Flame"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "[Incantation] Black Flame Ritual"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "[Incantation] Black Flame Blade"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "[Incantation] Black Flame's Protection"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "[Incantation] Noble Presence"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[Incantation] Bloodflame Talons"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[Incantation] Bloodboon"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "[Incantation] Bloodflame Blade"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "[Incantation] Barrier of Gold"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "[Incantation] Protection of The Erdtree"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "[Incantation] Rejection"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "[Incantation] Wrath of Gold"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "[Incantation] Urgent Heal"
+      ]
+    },
+    {
+      "ID": 6421,
+      "Entries": [
+        "[Incantation] Heal"
+      ]
+    },
+    {
+      "ID": 6422,
+      "Entries": [
+        "[Incantation] Great Heal"
+      ]
+    },
+    {
+      "ID": 6423,
+      "Entries": [
+        "[Incantation] Lord's Heal"
+      ]
+    },
+    {
+      "ID": 6424,
+      "Entries": [
+        "[Incantation] Erdtree Heal"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "[Incantation] Blessing's Boon"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "[Incantation] Blessing of The Erdtree"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "[Incantation] Flame Fortification"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "[Incantation] Magic Fortification"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "[Incantation] Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 6480,
+      "Entries": [
+        "[Incantation] Divine Fortification"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "[Incantation] Lord's Divine Fortification"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "[Incantation] Shadow Bait"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "[Incantation] Darkness"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[Incantation] Golden Vow"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "[Incantation] Discus of Light"
+      ]
+    },
+    {
+      "ID": 6701,
+      "Entries": [
+        "[Incantation] Triple Rings of Light"
+      ]
+    },
+    {
+      "ID": 6710,
+      "Entries": [
+        "[Incantation] Radagon's Rings of Light"
+      ]
+    },
+    {
+      "ID": 6720,
+      "Entries": [
+        "[Incantation] Elden Stars"
+      ]
+    },
+    {
+      "ID": 6730,
+      "Entries": [
+        "[Incantation] Law of Regression"
+      ]
+    },
+    {
+      "ID": 6740,
+      "Entries": [
+        "[Incantation] Immutable Shield"
+      ]
+    },
+    {
+      "ID": 6750,
+      "Entries": [
+        "[Incantation] Litany of Proper Death"
+      ]
+    },
+    {
+      "ID": 6760,
+      "Entries": [
+        "[Incantation] Law of Causality"
+      ]
+    },
+    {
+      "ID": 6770,
+      "Entries": [
+        "[Incantation] Order's Blade"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "[Incantation] Bestial Sling"
+      ]
+    },
+    {
+      "ID": 6810,
+      "Entries": [
+        "[Incantation] Stone of Gurranq"
+      ]
+    },
+    {
+      "ID": 6820,
+      "Entries": [
+        "[Incantation] Beast Claw"
+      ]
+    },
+    {
+      "ID": 6830,
+      "Entries": [
+        "[Incantation] Gurranq's Beast Claw"
+      ]
+    },
+    {
+      "ID": 6840,
+      "Entries": [
+        "[Incantation] Bestial Vitality"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "[Incantation] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "[Incantation] Ancient Dragons' Lightning Strike"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "[Incantation] Lightning Strike"
+      ]
+    },
+    {
+      "ID": 6921,
+      "Entries": [
+        "[Incantation] Frozen Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        "[Incantation] Honed Bolt"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "[Incantation] Ancient Dragons' Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6941,
+      "Entries": [
+        "[Incantation] Fortissax's Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "[Incantation] Lansseax's Glaive"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "[Incantation] Electrify Armament"
+      ]
+    },
+    {
+      "ID": 6971,
+      "Entries": [
+        "[Incantation] Dragonbolt Blessing"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Incantation] Dragonfire"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Incantation] Agheel's Flame"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Incantation] Magma Breath"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[Incantation] Theodorix's Magma"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[Incantation] Dragonice"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "[Incantation] Borealis's Mist"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[Incantation] Rotten Breath"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "[Incantation] Ekzykes's Decay"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "[Incantation] Glintstone Breath"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "[Incantation] Smarag's Glint Breath"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "[Incantation] Placidusax's Ruin"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "[Incantation] Dragonclaw"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "[Incantation] Dragonmaw"
+      ]
+    },
+    {
+      "ID": 7090,
+      "Entries": [
+        "[Incantation] Greyoll's Roar"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "[Incantation] Pest Threads"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "[Incantation] Swarm of Flies"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "[Incantation] Poison Mist"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "[Incantation] Poison Armament"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "[Incantation] Scarlet Aeonia"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "[Incantation] The Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "[Incantation] Unendurable Frenzy"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "[Incantation] Frenzied Burst"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "[Incantation] Howl of Shabriri"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Tail"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Horns"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Breath"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "[Incantation] Black Blade"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "[Incantation] Fire's Deadly Sin"
+      ]
+    },
+    {
+      "ID": 7903,
+      "Entries": [
+        "[Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Maiden's Mist",
+        "<Table> [Sorcery] Oracle Bubbles"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Great Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> Incantation: Poison Armament",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> Incantation: Poison Armament",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Golden Lightning Fortification",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Scarlet Aeonia"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3300100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3304000,
+      "Entries": [
+        "[Sorcery] Shattering Crystal"
+      ]
+    },
+    {
+      "ID": 3304100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3305000,
+      "Entries": [
+        "[Sorcery] Magma Shot"
+      ]
+    },
+    {
+      "ID": 3305100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3306000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3306100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3309000,
+      "Entries": [
+        "[Sorcery] Rennala's Full Moon"
+      ]
+    },
+    {
+      "ID": 3309100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3312000,
+      "Entries": [
+        "[Sorcery] Shatter Earth"
+      ]
+    },
+    {
+      "ID": 3312100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3313000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3313100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3317000,
+      "Entries": [
+        "[Sorcery] Magic Glintblade"
+      ]
+    },
+    {
+      "ID": 3317100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3318000,
+      "Entries": [
+        "[Sorcery] Rancorcall"
+      ]
+    },
+    {
+      "ID": 3318100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3319000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3319100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3320000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3320100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3321000,
+      "Entries": [
+        "[Sorcery] Carian Slicer"
+      ]
+    },
+    {
+      "ID": 3321100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3323000,
+      "Entries": [
+        "[Sorcery] Comet Azur"
+      ]
+    },
+    {
+      "ID": 3323100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3324000,
+      "Entries": [
+        "[Sorcery] Stars of Ruin"
+      ]
+    },
+    {
+      "ID": 3324100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3325000,
+      "Entries": [
+        "[Sorcery] Gravity Well"
+      ]
+    },
+    {
+      "ID": 3325100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3326000,
+      "Entries": [
+        "[Sorcery] Briars of Punishment"
+      ]
+    },
+    {
+      "ID": 3326100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3327000,
+      "Entries": [
+        "[Sorcery] Shattering Crystal"
+      ]
+    },
+    {
+      "ID": 3327100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3328000,
+      "Entries": [
+        "[Sorcery] Night Comet"
+      ]
+    },
+    {
+      "ID": 3328100,
+      "Entries": [
+        "<Table> [Sorcery] Glintstone Pebble",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "[Incantation] Rejection"
+      ]
+    },
+    {
+      "ID": 3400100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3401000,
+      "Entries": [
+        "[Incantation] Black Flame"
+      ]
+    },
+    {
+      "ID": 3401100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3402000,
+      "Entries": [
+        "[Incantation] Flame Sling"
+      ]
+    },
+    {
+      "ID": 3402100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3403000,
+      "Entries": [
+        "[Incantation] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 3403100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3404000,
+      "Entries": [
+        "[Incantation] Bestial Sling"
+      ]
+    },
+    {
+      "ID": 3404100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3406000,
+      "Entries": [
+        "[Incantation] Discus of Light"
+      ]
+    },
+    {
+      "ID": 3406100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3407000,
+      "Entries": [
+        "[Incantation] Wrath of Gold"
+      ]
+    },
+    {
+      "ID": 3407100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3408000,
+      "Entries": [
+        "[Incantation] Dragonfire"
+      ]
+    },
+    {
+      "ID": 3408100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> [Incantation] The Flame of Frenzy",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 3409000,
+      "Entries": [
+        "[Incantation] The Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 3409100,
+      "Entries": [
+        "<Table> [Incantation] Death Lightning",
+        "<Table> [Incantation] Catch Flame",
+        "<Table> [Incantation] O, Flame!",
+        "<Table> [Incantation] Flame Sling",
+        "<Table> [Incantation] Flame, Fall Upon Them",
+        "<Table> [Incantation] Whirl, O Flame!",
+        "<Table> [Incantation] Flame, Grant Me Strength",
+        "<Table> [Incantation] Flame, Protect Me",
+        "<Table> [Incantation] Giantsflame Take Thee",
+        "<Table> [Incantation] Flame of The Fell God",
+        "<Table> [Incantation] Burn, O Flame!",
+        "<Table> [Incantation] Black Flame",
+        "<Table> [Incantation] Surge, O Flame!",
+        "<Table> [Incantation] Scouring Black Flame",
+        "<Table> [Incantation] Black Flame Ritual",
+        "<Table> [Incantation] Black Flame Blade",
+        "<Table> [Incantation] Black Flame's Protection",
+        "<Table> [Incantation] Noble Presence",
+        "<Table> [Incantation] Bloodflame Talons",
+        "<Table> [Incantation] Bloodboon",
+        "<Table> [Incantation] Bloodflame Blade",
+        "<Table> [Incantation] Barrier of Gold",
+        "<Table> [Incantation] Protection of The Erdtree",
+        "<Table> [Incantation] Rejection",
+        "<Table> [Incantation] Wrath of Gold",
+        "<Table> [Incantation] Urgent Heal",
+        "<Table> [Incantation] Heal",
+        "<Table> [Incantation] Great Heal",
+        "<Table> [Incantation] Lord's Heal",
+        "<Table> [Incantation] Erdtree Heal",
+        "<Table> [Incantation] Blessing's Boon",
+        "<Table> [Incantation] Blessing of The Erdtree",
+        "<Table> [Incantation] Flame Fortification",
+        "<Table> [Incantation] Magic Fortification",
+        "<Table> [Incantation] Lightning Fortification",
+        "<Table> [Incantation] Divine Fortification",
+        "<Table> [Incantation] Lord's Divine Fortification",
+        "<Table> [Incantation] Shadow Bait",
+        "<Table> [Incantation] Darkness",
+        "<Table> [Incantation] Golden Vow",
+        "<Table> [Incantation] Discus of Light",
+        "<Table> [Incantation] Triple Rings of Light",
+        "<Table> [Incantation] Radagon's Rings of Light",
+        "<Table> [Incantation] Elden Stars",
+        "<Table> [Incantation] Law of Regression",
+        "<Table> [Incantation] Immutable Shield",
+        "<Table> [Incantation] Litany of Proper Death",
+        "<Table> [Incantation] Law of Causality",
+        "<Table> [Incantation] Order's Blade",
+        "<Table> [Incantation] Bestial Sling",
+        "<Table> [Incantation] Stone of Gurranq",
+        "<Table> [Incantation] Beast Claw",
+        "<Table> [Incantation] Gurranq's Beast Claw",
+        "<Table> [Incantation] Bestial Vitality",
+        "<Table> [Incantation] Lightning Spear",
+        "<Table> [Incantation] Ancient Dragons' Lightning Strike",
+        "<Table> [Incantation] Lightning Strike",
+        "<Table> [Incantation] Frozen Lightning Spear",
+        "<Table> [Incantation] Honed Bolt",
+        "<Table> [Incantation] Ancient Dragons' Lightning Spear",
+        "<Table> [Incantation] Fortissax's Lightning Spear",
+        "<Table> [Incantation] Lansseax's Glaive",
+        "<Table> [Incantation] Electrify Armament",
+        "<Table> [Incantation] Dragonbolt Blessing",
+        "<Table> [Incantation] Dragonfire",
+        "<Table> [Incantation] Agheel's Flame",
+        "<Table> [Incantation] Magma Breath",
+        "<Table> [Incantation] Theodorix's Magma",
+        "<Table> [Incantation] Dragonice",
+        "<Table> [Incantation] Borealis's Mist",
+        "<Table> [Incantation] Rotten Breath",
+        "<Table> [Incantation] Ekzykes's Decay",
+        "<Table> [Incantation] Glintstone Breath",
+        "<Table> [Incantation] Smarag's Glint Breath",
+        "<Table> [Incantation] Placidusax's Ruin",
+        "<Table> [Incantation] Dragonclaw",
+        "<Table> [Incantation] Dragonmaw",
+        "<Table> [Incantation] Greyoll's Roar",
+        "<Table> [Incantation] Pest Threads",
+        "<Table> [Incantation] Swarm of Flies",
+        "<Table> [Incantation] Poison Mist",
+        "<Table> [Incantation] Poison Armament",
+        "<Table> [Incantation] Scarlet Aeonia",
+        "<Table> (0% weight)",
+        "<Table> [Incantation] Unendurable Frenzy",
+        "<Table> [Incantation] Frenzied Burst",
+        "<Table> [Incantation] Howl of Shabriri",
+        "<Table> [Incantation] Aspects of the Crucible: Tail",
+        "<Table> [Incantation] Aspects of the Crucible: Horns",
+        "<Table> [Incantation] Aspects of the Crucible: Breath",
+        "<Table> [Incantation] Black Blade",
+        "<Table> [Incantation] Fire's Deadly Sin",
+        "<Table> [Incantation] Golden Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 4000100,
+      "Entries": [
+        "<Table> (0% weight)",
+        "<Table> [Sorcery] Great Glintstone Shard",
+        "<Table> [Sorcery] Swift Glintstone Shard",
+        "<Table> [Sorcery] Glintstone Cometshard",
+        "<Table> [Sorcery] Comet",
+        "<Table> [Sorcery] Shard Spiral",
+        "<Table> [Sorcery] Glintstone Stars",
+        "<Table> [Sorcery] Star Shower",
+        "<Table> [Sorcery] Crystal Barrage",
+        "<Table> [Sorcery] Glintstone Arc",
+        "<Table> [Sorcery] Cannon of Haima",
+        "<Table> [Sorcery] Crystal Burst",
+        "<Table> [Sorcery] Shatter Earth",
+        "<Table> [Sorcery] Rock Blaster",
+        "<Table> [Sorcery] Gavel of Haima",
+        "<Table> [Sorcery] Terra Magica",
+        "<Table> [Sorcery] Comet Azur",
+        "<Table> [Sorcery] Founding Rain of Stars",
+        "<Table> [Sorcery] Stars of Ruin",
+        "<Table> [Sorcery] Glintblade Phalanx",
+        "<Table> [Sorcery] Carian Phalanx",
+        "<Table> [Sorcery] Greatblade Phalanx",
+        "<Table> [Sorcery] Rennala's Full Moon",
+        "<Table> [Sorcery] Ranni's Dark Moon",
+        "<Table> [Sorcery] Magic Downpour",
+        "<Table> [Sorcery] Loretta's Greatbow",
+        "<Table> [Sorcery] Loretta's Mastery",
+        "<Table> [Sorcery] Magic Glintblade",
+        "<Table> [Sorcery] Glintstone Icecrag",
+        "<Table> [Sorcery] Zamor Ice Storm",
+        "<Table> [Sorcery] Freezing Mist",
+        "<Table> [Sorcery] Carian Greatsword",
+        "<Table> [Sorcery] Adula's Moonblade",
+        "<Table> [Sorcery] Carian Slicer",
+        "<Table> [Sorcery] Carian Piercer",
+        "<Table> [Sorcery] Scholar's Armament",
+        "<Table> [Sorcery] Scholar's Shield",
+        "<Table> [Sorcery] Frozen Armament",
+        "<Table> [Sorcery] Shattering Crystal",
+        "<Table> [Sorcery] Crystal Release",
+        "<Table> [Sorcery] Crystal Torrent",
+        "<Table> [Sorcery] Ambush Shard",
+        "<Table> [Sorcery] Night Shard",
+        "<Table> [Sorcery] Night Comet",
+        "<Table> [Sorcery] Thops's Barrier",
+        "<Table> [Sorcery] Carian Retaliation",
+        "<Table> [Sorcery] Eternal Darkness",
+        "<Table> [Sorcery] Meteorite",
+        "<Table> [Sorcery] Meteorite of Astel",
+        "<Table> [Sorcery] Rock Sling",
+        "<Table> [Sorcery] Gravity Well",
+        "<Table> [Sorcery] Collapsing Stars",
+        "<Table> [Sorcery] Magma Shot",
+        "<Table> [Sorcery] Gelmir's Fury",
+        "<Table> [Sorcery] Roiling Magma",
+        "<Table> [Sorcery] Rykard's Rancor",
+        "<Table> [Sorcery] Briars of Sin",
+        "<Table> [Sorcery] Briars of Punishment",
+        "<Table> [Sorcery] Rancorcall",
+        "<Table> [Sorcery] Ancient Death Rancor",
+        "<Table> [Sorcery] Explosive Ghostflame",
+        "<Table> [Sorcery] Tibia's Summons",
+        "<Table> [Sorcery] Oracle Bubbles",
+        "<Table> [Sorcery] Great Oracular Bubble",
+        "<Table> [Sorcery] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "(0% weight)"
+      ]
+    }
+  ]
+}

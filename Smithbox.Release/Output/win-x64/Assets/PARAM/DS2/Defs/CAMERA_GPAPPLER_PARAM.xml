@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CAMERA_GPAPPLER_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 cameraType = 10">
+            <DisplayName>カメラ挙動タイプ</DisplayName>
+            <Enum>CAMERA_TYPE</Enum>
+            <EditFlags>Lock</EditFlags>
+            <Minimum>10</Minimum>
+            <Maximum>10</Maximum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 cameraBasePosType">
+            <DisplayName>カメラ基準点タイプ</DisplayName>
+            <Enum>CAMERA_BASE_POS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 copyStartDirection">
+            <DisplayName>開始時向きを元のカメラに合わせる</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 startTransType">
+            <DisplayName>切り替え開始時補間タイプ</DisplayName>
+            <Enum>CAMERA_INTERPOLATE_TYPE</Enum>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 endTransType">
+            <DisplayName>切り替え終了時補間タイプ</DisplayName>
+            <Enum>CAMERA_INTERPOLATE_TYPE</Enum>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 inCameraStartTransType">
+            <DisplayName>カメラ開始時補間タイプ</DisplayName>
+            <Enum>CAMERA_INTERPOLATE_TYPE</Enum>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 inCameraEndTransType">
+            <DisplayName>カメラ終了時補間タイプ</DisplayName>
+            <Enum>CAMERA_INTERPOLATE_TYPE</Enum>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u8 rayCollidesExecType">
+            <DisplayName>レイヒット時処理タイプ</DisplayName>
+            <Enum>CAMERA_COLLIDES_EXEC_TYPE</Enum>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 sphereCollidesExecType">
+            <DisplayName>球ヒット時処理タイプ</DisplayName>
+            <Enum>CAMERA_COLLIDES_EXEC_TYPE</Enum>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 selectType">
+            <DisplayName>複数存在時の分岐判定タイプ</DisplayName>
+            <Enum>CAMERA_GRAPPLER_SELECT_TYPE</Enum>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="dummy8 reserved[2]">
+            <DisplayName>ダミー</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 startTransTime">
+            <DisplayName>切り替え開始時補間時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 endTransTime">
+            <DisplayName>切り替え終了時補間時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 inCameraStartTransTime">
+            <DisplayName>カメラ開始時補間時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 inCameraEndTransTime">
+            <DisplayName>カメラ終了時補間時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 rayWidth = 0.2">
+            <DisplayName>レイ太さ</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 sphereSize = 0.5">
+            <DisplayName>球サイズ</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

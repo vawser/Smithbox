@@ -1,0 +1,83 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "hand weapon -- 手武器"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "melee weapon -- 格闘武器"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "shoulder weapon -- 肩武器"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "double shoulder weapon -- 両肩武器"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "shield weapon -- 盾武器"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Shield weapon_Omnidirectional shield -- 盾武器_全方位シールド"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "extensions -- エクステ"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "FNR weapon mount -- FNR\u3000武器マウント"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "FNR Shield -- FNR\u3000盾"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "FNR stealth cloak test -- FNR\u3000ステルスマントtest"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "FNR Right Shoulder_Combined Weapon -- FNR\u3000右肩_合体武器"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "FNR vehicle confirmation parts -- FNR\u3000ビークル確認用パーツ"
+      ]
+    }
+  ]
+}

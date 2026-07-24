@@ -1,0 +1,17 @@
+{
+  "Key": "Hero",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Hero"
+      }
+  ],
+  "Params": [
+    "HeroParam",
+    "HeroMenuCameraParam",
+    "HeroMenuParam",
+    "HeroOperationExplanationParam",
+    "HeroStatusParam",
+    "PersonalScenarioParam"
+  ]
+}

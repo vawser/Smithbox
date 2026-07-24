@@ -1,0 +1,29 @@
+{
+  "Key": "OBJACT_CHR_SORB_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJACT_CHR_SORB_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

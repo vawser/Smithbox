@@ -1,0 +1,275 @@
+{
+  "Name": "AtkNpcOperationPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't erase it -- 消さないように"
+      ]
+    },
+    {
+      "ID": 80100010,
+      "Entries": [
+        "c8010 High Altitude Sna [Weapon 1] Sna -- c8010\u3000高所スナ 【武器1】スナ"
+      ]
+    },
+    {
+      "ID": 80100020,
+      "Entries": [
+        "c8010 High Altitude Sna [Weapon 2] Gatling -- c8010\u3000高所スナ 【武器2】ガトリング"
+      ]
+    },
+    {
+      "ID": 80200010,
+      "Entries": [
+        "c8020 Guntank [Weapon 1] Mortar -- c8020\u3000ガンタンク 【武器1】迫撃砲"
+      ]
+    },
+    {
+      "ID": 80200020,
+      "Entries": [
+        "c8020 Guntank [Weapon 2] Hand Rocket -- c8020\u3000ガンタンク 【武器2】ハンドロケット"
+      ]
+    },
+    {
+      "ID": 80300000,
+      "Entries": [
+        "c8030 Pyle MT (Shotgun [Weapon 1] Pyle -- c8030 パイルMT（ショットガン\u3000【武器1】パイル"
+      ]
+    },
+    {
+      "ID": 80300010,
+      "Entries": [
+        "c8030 Pyle MT (Shotgun [Weapon 2] Shotgun -- c8030 パイルMT（ショットガン\u3000【武器2】ショットガン"
+      ]
+    },
+    {
+      "ID": 80400010,
+      "Entries": [
+        "c8040 Large Drone (Call Friend [Weapon 1] Sonar -- c8040\u3000大ドローン（仲間呼び 【武器1】ソナー"
+      ]
+    },
+    {
+      "ID": 80400020,
+      "Entries": [
+        "c8040 Large Drone (Call Friend [Weapon 2] Call Friend -- c8040\u3000大ドローン（仲間呼び 【武器2】仲間呼び"
+      ]
+    },
+    {
+      "ID": 80400030,
+      "Entries": [
+        "c8040 Large Drone (Call Friend [Weapon 3] Barrier Deployment -- c8040\u3000大ドローン（仲間呼び 【武器3】バリア展開"
+      ]
+    },
+    {
+      "ID": 80500000,
+      "Entries": [
+        "c8050 Dropship [Weapon 1] Deploy -- c8050 ドロップシップ\u3000【武器1】出撃させる"
+      ]
+    },
+    {
+      "ID": 80500010,
+      "Entries": [
+        "c8050 Dropship [Weapon 2] Gatling -- c8050 ドロップシップ\u3000【武器2】ガトリング"
+      ]
+    },
+    {
+      "ID": 80600000,
+      "Entries": [
+        "c8060 Gunship [Weapon 1] Diffusion missile -- c8060 ガンシップ\u3000【武器1】拡散ミサイル"
+      ]
+    },
+    {
+      "ID": 80600010,
+      "Entries": [
+        "c8060 Gunship [Weapon 2] Rocket -- c8060 ガンシップ\u3000【武器2】ロケット"
+      ]
+    },
+    {
+      "ID": 80600020,
+      "Entries": [
+        "c8060 Gunship [Weapon 3] Gatling -- c8060 ガンシップ\u3000【武器3】ガトリング"
+      ]
+    },
+    {
+      "ID": 80700010,
+      "Entries": [
+        "c8070 Irradiation laser [Weapon 1] Laser -- c8070 照射レーザー\u3000【武器1】レーザー"
+      ]
+    },
+    {
+      "ID": 80900010,
+      "Entries": [
+        "c8090 Fighter [Weapon 1] Machine gun -- c8090 戦闘機\u3000【武器1】マシンガン"
+      ]
+    },
+    {
+      "ID": 81000010,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 1] Handgun -- c8100 盾持ちMT（ヒートロッド 【武器1】ハンドガン"
+      ]
+    },
+    {
+      "ID": 81000020,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 2] Charge Heat Rod -- c8100 盾持ちMT（ヒートロッド 【武器2】突進ヒートロッド"
+      ]
+    },
+    {
+      "ID": 81000030,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 3] Guard -- c8100 盾持ちMT（ヒートロッド 【武器3】ガード"
+      ]
+    },
+    {
+      "ID": 81000040,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 4] Heat Rod Combo 1 -- c8100 盾持ちMT（ヒートロッド 【武器4】ヒートロッド\u3000コンボ1"
+      ]
+    },
+    {
+      "ID": 81000050,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 5] Guard Mod) -- c8100 盾持ちMT（ヒートロッド 【武器5】ガード改"
+      ]
+    },
+    {
+      "ID": 81000060,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod [Weapon 6] Heat Rod Combo 2 -- c8100 盾持ちMT（ヒートロッド 【武器6】ヒートロッド\u3000コンボ2"
+      ]
+    },
+    {
+      "ID": 81100010,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 1] Rifle -- c8110\u3000無色MT\u3000【武器1】ライフル"
+      ]
+    },
+    {
+      "ID": 81100020,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 2] Blade 1 -- c8110\u3000無色MT\u3000【武器2】ブレード１"
+      ]
+    },
+    {
+      "ID": 81100030,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 3] Cover action -- c8110\u3000無色MT\u3000【武器3】カバーアクション"
+      ]
+    },
+    {
+      "ID": 81100040,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 4] Blade 2 -- c8110\u3000無色MT\u3000【武器4】ブレード２"
+      ]
+    },
+    {
+      "ID": 81100060,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 6] Reload test -- c8110\u3000無色MT\u3000【武器6】リロードテスト"
+      ]
+    },
+    {
+      "ID": 81100080,
+      "Entries": [
+        "c8110 Colorless MT [Weapon 8] Looking around -- c8110\u3000無色MT\u3000【武器8】キョロキョロ"
+      ]
+    },
+    {
+      "ID": 82000010,
+      "Entries": [
+        "c8200 Walla Walla Bug [Weapon 1] Scratch -- c8200 ワラワラ虫\u3000【武器1】ひっかき"
+      ]
+    },
+    {
+      "ID": 82000020,
+      "Entries": [
+        "c8200 Walla Walla Bug [Weapon 2] Pounce -- c8200 ワラワラ虫\u3000【武器2】飛びかかり"
+      ]
+    },
+    {
+      "ID": 82000030,
+      "Entries": [
+        "c8200 Walla Walla Bug [Weapon 3] Assault -- c8200 ワラワラ虫\u3000【武器3】突撃"
+      ]
+    },
+    {
+      "ID": 82100010,
+      "Entries": [
+        "c8210 Wara Walla Bug (Large) [Weapon 1] Scratch -- c8210 ワラワラ虫（大）\u3000【武器1】ひっかき"
+      ]
+    },
+    {
+      "ID": 82100020,
+      "Entries": [
+        "c8210 Warawalla Bug (Large) [Weapon 2] Pounce -- c8210 ワラワラ虫（大）\u3000【武器2】飛びかかり"
+      ]
+    },
+    {
+      "ID": 82100030,
+      "Entries": [
+        "c8210 Walla Walla Bug (Large) [Weapon 3] Assault -- c8210 ワラワラ虫（大）\u3000【武器3】突撃"
+      ]
+    },
+    {
+      "ID": 82100040,
+      "Entries": [
+        "c8210 Walla Walla Bug (Large) [Weapon 4] Assault -- c8210 ワラワラ虫（大）\u3000【武器4】突撃"
+      ]
+    },
+    {
+      "ID": 82100050,
+      "Entries": [
+        "c8210 Walla Walla Bug (Large) [Weapon 5] Light Bullet -- c8210 ワラワラ虫（大）\u3000【武器5】光弾"
+      ]
+    },
+    {
+      "ID": 85100000,
+      "Entries": [
+        "c8510 Shield Holder MT (Bazooka [Weapon 0] Shield -- c8510 盾持ちMT（バズーカ\u3000【武器0】盾"
+      ]
+    },
+    {
+      "ID": 85100010,
+      "Entries": [
+        "c8510 Shield Holder MT (Bazooka [Weapon 1] Bazooka -- c8510 盾持ちMT（バズーカ\u3000【武器1】バズーカ"
+      ]
+    },
+    {
+      "ID": 85100020,
+      "Entries": [
+        "c8510 Shield Holder MT (Bazooka [Weapon 2] Missile -- c8510 盾持ちMT（バズーカ\u3000【武器2】ミサイル"
+      ]
+    },
+    {
+      "ID": 85100030,
+      "Entries": [
+        "c8510 Shield Holder MT (Bazooka [Weapon 3] Turn around boost -- c8510 盾持ちMT（バズーカ\u3000【武器3】振り向きブースト"
+      ]
+    },
+    {
+      "ID": 90310010,
+      "Entries": [
+        "c9031 Drone [Weapon 1] -- c9031\u3000ドローン 【武器1】"
+      ]
+    },
+    {
+      "ID": 90310030,
+      "Entries": [
+        "c9031 Drone [Weapon 3] -- c9031\u3000ドローン 【武器3】"
+      ]
+    },
+    {
+      "ID": 92010010,
+      "Entries": [
+        "c9031 Drone [Weapon 1] Machine gun -- c9031\u3000ドローン 【武器1】マシンガン"
+      ]
+    },
+    {
+      "ID": 92010020,
+      "Entries": [
+        "c9031 Drone [Weapon 2] Missile -- c9031\u3000ドローン 【武器2】ミサイル"
+      ]
+    }
+  ]
+}

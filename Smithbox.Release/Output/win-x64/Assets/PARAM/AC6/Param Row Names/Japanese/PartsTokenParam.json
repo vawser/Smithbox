@@ -1,0 +1,575 @@
+{
+  "Name": "PartsTokenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test_Pla 1 -- テスト_プラ1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test_Pla 2 -- テスト_プラ2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Test_Pla 3 -- テスト_プラ3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Test_Gold 1 -- テスト_金1"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Test_Friday 2 -- テスト_金2"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Test_Gold 3 -- テスト_金3"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Test_Silver 1 -- テスト_銀1"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Test_Silver 2 -- テスト_銀2"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Test_Silver 3 -- テスト_銀3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test_Copper 1 -- テスト_銅1"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Test_Copper 2 -- テスト_銅2"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Test_Copper 3 -- テスト_銅3"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Sub-mission: Defeat Transport Helicopter_c3400: Quadruped MT: Snap + Blade + Throwing Grey_0 -- サブ・ミッション：輸送ヘリ撃破_c3400:四脚MT:スナ＋ブレード＋投擲グレ_0"
+      ]
+    },
+    {
+      "ID": 798000,
+      "Entries": [
+        "Submission: First AC Battle _▼npac_1270_Onboarding AC_0 -- サブミッション：初AC戦\u3000_▼npac_1270_オンボーディングAC_0"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "West Pines Dam Destruction_▼npac_1170_Ash People A_1 -- ウェストパインズ・ダム破壊_▼npac_1170_灰の民A_1"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "West Pines Dam Destruction_c3400: Quadruped MT: Snap + Blade + Throwing Gray_0 -- ウェストパインズ・ダム破壊_c3400:四脚MT:スナ＋ブレード＋投擲グレ_0"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "Crossing the wall_c3020: Communist MT: Shotgun + Shield_20 -- 壁越え_c3020:共産MT:ショットガン＋盾_20"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "Crossing the wall_c3020: Communist MT: Shotgun + Shield_30 -- 壁越え_c3020:共産MT:ショットガン＋盾_30"
+      ]
+    },
+    {
+      "ID": 203040,
+      "Entries": [
+        "Crossing the wall_c3020: Communist MT: Shotgun + Shield_40 -- 壁越え_c3020:共産MT:ショットガン＋盾_40"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Scavenging_▼npac_1180_Ash People B_0 -- スカベンジング_▼npac_1180_灰の民B_0"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Coordinates indicated by string_▼npac_1020_string AC_0 -- 文字列が示す座標_▼npac_1020_文字列AC_0"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Big Bridge_c3400: Quadruped MT: Snap + Blade + Throwing Gray_0 -- ビッグ・ブリッジ_c3400:四脚MT:スナ＋ブレード＋投擲グレ_0"
+      ]
+    },
+    {
+      "ID": 212010,
+      "Entries": [
+        "Big Bridge_c3400: Quadruped MT: Snap + Blade + Throwing Gray_10 -- ビッグ・ブリッジ_c3400:四脚MT:スナ＋ブレード＋投擲グレ_10"
+      ]
+    },
+    {
+      "ID": 212020,
+      "Entries": [
+        "Big Bridge_▼npac_2110_Independent Mercenary A_20 -- ビッグ・ブリッジ_▼npac_2110_独立傭兵A_20"
+      ]
+    },
+    {
+      "ID": 212025,
+      "Entries": [
+        "Big Bridge_▼npac_2090_Drunker_25 -- ビッグ・ブリッジ_▼npac_2090_ドランカー_25"
+      ]
+    },
+    {
+      "ID": 212030,
+      "Entries": [
+        "Big Bridge_c4150: Special attack MT: Ren mass + men mass + men lie + double bar_30 -- ビッグ・ブリッジ_c4150:特攻MT:連ミサ＋面ミサ＋面ライ＋ダブバル_30"
+      ]
+    },
+    {
+      "ID": 212040,
+      "Entries": [
+        "Big Bridge_c4150: Special attack MT: Ren mass + men mass + men lie + double bar_40 -- ビッグ・ブリッジ_c4150:特攻MT:連ミサ＋面ミサ＋面ライ＋ダブバル_40"
+      ]
+    },
+    {
+      "ID": 212060,
+      "Entries": [
+        "Big Bridge_c4150: Special attack MT: Ren mass + men mass + men lie + double bar_60 -- ビッグ・ブリッジ_c4150:特攻MT:連ミサ＋面ミサ＋面ライ＋ダブバル_60"
+      ]
+    },
+    {
+      "ID": 212062,
+      "Entries": [
+        "Big Bridge_c3600: Construction Machinery Spider: Hammer + Circular Saw + Landmine_62 -- ビッグ・ブリッジ_c3600:建機クモ:ハンロケ＋丸のこ＋地雷_62"
+      ]
+    },
+    {
+      "ID": 212064,
+      "Entries": [
+        "Big Bridge_c3600: Construction Machinery Spider: Hammer + Circular Saw + Mine_64 -- ビッグ・ブリッジ_c3600:建機クモ:ハンロケ＋丸のこ＋地雷_64"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Continental shell_c5300:Suicide satellite:_0 -- 大陸殻_c5300:自爆衛星:_0"
+      ]
+    },
+    {
+      "ID": 218010,
+      "Entries": [
+        "Continental shell_c5300:Suicide satellite:_10 -- 大陸殻_c5300:自爆衛星:_10"
+      ]
+    },
+    {
+      "ID": 218020,
+      "Entries": [
+        "Continental shell_c5300:Suicide satellite:_20 -- 大陸殻_c5300:自爆衛星:_20"
+      ]
+    },
+    {
+      "ID": 218030,
+      "Entries": [
+        "Continental shell_c5300:Suicide satellite:_30 -- 大陸殻_c5300:自爆衛星:_30"
+      ]
+    },
+    {
+      "ID": 301110,
+      "Entries": [
+        "Encounter with the organization_ver2_c3400: Quadruped MT: Mashi + Throwing gear + Loading platform gear_10 -- 組織との出会い_ver2_c3400:四脚MT:マシ＋投擲グレ＋荷台グレ_10"
+      ]
+    },
+    {
+      "ID": 303010,
+      "Entries": [
+        "Fuel base explosion_c3250: Regular army AC: Sniper rifle_10 -- 燃料基地爆破_c3250:正規軍AC:スナイパーライフル_10"
+      ]
+    },
+    {
+      "ID": 303015,
+      "Entries": [
+        "Fuel base explosion_c3250: Regular army AC: Sniper rifle_15 -- 燃料基地爆破_c3250:正規軍AC:スナイパーライフル_15"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "Mine sabotage_c3250: Regular army AC: Sniper rifle_0 -- 坑道破壊工作_c3250:正規軍AC:スナイパーライフル_0"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "Search: In front of the wall_▼npac_2040_Number 6_0 -- 探索：壁前_▼npac_2040_ナンバー6_0"
+      ]
+    },
+    {
+      "ID": 217010,
+      "Entries": [
+        "Exploration: In front of the wall_c3400: Quadruped MT: Mashi + 3 consecutive buzz + shield_10 -- 探索：壁前_c3400:四脚MT:マシ＋3連バズ＋盾_10"
+      ]
+    },
+    {
+      "ID": 217020,
+      "Entries": [
+        "Search: In front of the wall_▼npac_1040_Assassin_20 -- 探索：壁前_▼npac_1040_刺客_20"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "City on the Sea_c3100: Flying MT: EN Shotgun + Blade + Mass_10 -- 洋上の都市_c3100:飛行型MT:ENショットガン＋ブレード＋ミサ_10"
+      ]
+    },
+    {
+      "ID": 510500,
+      "Entries": [
+        "City on the Sea [ALT]_▼npac_2080_Ash People E (Strong JUDO)_0 -- 洋上の都市【ALT】_▼npac_2080_灰の民E（強JUDO）_0"
+      ]
+    },
+    {
+      "ID": 799000,
+      "Entries": [
+        "Sub-mission (annihilation behind the wall)_▼npac_1190_Ash People C_0 -- サブ・ミッション（壁裏殲滅）_▼npac_1190_灰の民C_0"
+      ]
+    },
+    {
+      "ID": 304330,
+      "Entries": [
+        "Old spaceport attack_c3250: Regular army AC: Normal_30 -- 旧宇宙港襲撃_c3250:正規軍AC:ノーマル_30"
+      ]
+    },
+    {
+      "ID": 304340,
+      "Entries": [
+        "Old spaceport attack_c3250: Regular army AC: Diffusion buzz_40 -- 旧宇宙港襲撃_c3250:正規軍AC:拡散バズ_40"
+      ]
+    },
+    {
+      "ID": 304350,
+      "Entries": [
+        "Old spaceport attack_c3250: Regular army AC: Diffusion buzz_50 -- 旧宇宙港襲撃_c3250:正規軍AC:拡散バズ_50"
+      ]
+    },
+    {
+      "ID": 332010,
+      "Entries": [
+        "Collapsed continental shell_c4150: Special attack MT: consecutive mass + men mass + men lie + double bar_10 -- 崩落した大陸殻_c4150:特攻MT:連ミサ＋面ミサ＋面ライ＋ダブバル_10"
+      ]
+    },
+    {
+      "ID": 332020,
+      "Entries": [
+        "Collapsed continental shell_c4150: Special attack MT: Renmasa + Menmasa + Menrai + Doubbar_20 -- 崩落した大陸殻_c4150:特攻MT:連ミサ＋面ミサ＋面ライ＋ダブバル_20"
+      ]
+    },
+    {
+      "ID": 332030,
+      "Entries": [
+        "Collapsed continental shell_c4150: Special attack MT: PA + consecutive mass + men mass + men lie + double bar_30 -- 崩落した大陸殻_c4150:特攻MT:PA＋連ミサ＋面ミサ＋面ライ＋ダブバル_30"
+      ]
+    },
+    {
+      "ID": 332040,
+      "Entries": [
+        "Collapsed continental shell_c3400: Quadruped MT: Mashi + Throwing gear + Loading platform gear_40 -- 崩落した大陸殻_c3400:四脚MT:マシ＋投擲グレ＋荷台グレ_40"
+      ]
+    },
+    {
+      "ID": 332050,
+      "Entries": [
+        "Collapsed continental shell_▼npac_1100_Collapsed layer A AC_50 -- 崩落した大陸殻_▼npac_1100_崩落A層AC_50"
+      ]
+    },
+    {
+      "ID": 795000,
+      "Entries": [
+        "Sub Mission (Imperial Base)_▼npac_1000_Ace A_0 -- サブ・ミッション（帝国基地）_▼npac_1000_エースA_0"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Rail Road_c3700:Deleter: PA Breaker + Head Bal + Chest Rapid Fire + PA Shield_0 -- レイル・ロード_c3700:デリーター:PAブレイカー＋頭バル＋胸速射＋PA盾_0"
+      ]
+    },
+    {
+      "ID": 401010,
+      "Entries": [
+        "Rail Road_c3700:Deleter: PA Breaker + Head Bal + Chest Rapid Fire + PA Shield_10 -- レイル・ロード_c3700:デリーター:PAブレイカー＋頭バル＋胸速射＋PA盾_10"
+      ]
+    },
+    {
+      "ID": 401020,
+      "Entries": [
+        "Rail Road_▼npac_1140_Wild Geese A_20 -- レイル・ロード_▼npac_1140_ワイルドギースA_20"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "Railroad [ALT]_▼npac_1010_Ace B_0 -- レイル・ロード【ALT】_▼npac_1010_エースB_0"
+      ]
+    },
+    {
+      "ID": 402010,
+      "Entries": [
+        "Cavern and Furnace_c3700:Deleter:Ace type *Armor may change_10 -- 大空洞と炉_c3700:デリーター:エースタイプ\u3000※武装変更の可能性あり_10"
+      ]
+    },
+    {
+      "ID": 402020,
+      "Entries": [
+        "Cavern and Furnace_c3700:Deleter:Ace type *Armor may change_20 -- 大空洞と炉_c3700:デリーター:エースタイプ\u3000※武装変更の可能性あり_20"
+      ]
+    },
+    {
+      "ID": 402030,
+      "Entries": [
+        "Large cavity and furnace_▼npac_1110_Unmanned core AC_30 -- 大空洞と炉_▼npac_1110_炉心の無人AC_30"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "AC battle at the power plant_▼npac_1080_Number 4 (Reinforced Human Company A)_0 -- 発電所でのAC戦_▼npac_1080_ナンバー4（強化人間中隊A）_0"
+      ]
+    },
+    {
+      "ID": 411010,
+      "Entries": [
+        "AC battle at the power plant_▼npac_1090_Number 7 (Reinforced Human Company B)_10 -- 発電所でのAC戦_▼npac_1090_ナンバー7（強化人間中隊B）_10"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Biological weapon_▼npac_1050_Ash (early model)_0 -- 生体兵器_▼npac_1050_アッシュ（前期機体）_0"
+      ]
+    },
+    {
+      "ID": 402610,
+      "Entries": [
+        "Biological Weapon [ALT]_▼npac_1190_Ash People C_10 -- 生体兵器【ALT】_▼npac_1190_灰の民C_10"
+      ]
+    },
+    {
+      "ID": 403030,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_30 -- 廃墟_c5250:サンフラワー:_30"
+      ]
+    },
+    {
+      "ID": 403040,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_40 -- 廃墟_c5250:サンフラワー:_40"
+      ]
+    },
+    {
+      "ID": 403050,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_50 -- 廃墟_c5250:サンフラワー:_50"
+      ]
+    },
+    {
+      "ID": 403060,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_60 -- 廃墟_c5250:サンフラワー:_60"
+      ]
+    },
+    {
+      "ID": 403070,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_70 -- 廃墟_c5250:サンフラワー:_70"
+      ]
+    },
+    {
+      "ID": 403080,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_80 -- 廃墟_c5250:サンフラワー:_80"
+      ]
+    },
+    {
+      "ID": 403090,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_90 -- 廃墟_c5250:サンフラワー:_90"
+      ]
+    },
+    {
+      "ID": 403100,
+      "Entries": [
+        "Ruins_c5250: Sunflower:_100 -- 廃墟_c5250:サンフラワー:_100"
+      ]
+    },
+    {
+      "ID": 403110,
+      "Entries": [
+        "Ruins_c5250:Sunflower:_110 -- 廃墟_c5250:サンフラワー:_110"
+      ]
+    },
+    {
+      "ID": 403120,
+      "Entries": [
+        "Ruins_c3500: Old World MT: [For D layer] [Poison] Grekya + Rapid Fire + Chest Mass_120 -- 廃墟_c3500:旧世界MT:【D層用】【毒】グレキャ＋速射＋胸ミサ_120"
+      ]
+    },
+    {
+      "ID": 403130,
+      "Entries": [
+        "Ruins_c3500: Old World MT: [For D layer] [Poison] Grekya + Rapid Fire + Chest Mass_130 -- 廃墟_c3500:旧世界MT:【D層用】【毒】グレキャ＋速射＋胸ミサ_130"
+      ]
+    },
+    {
+      "ID": 403140,
+      "Entries": [
+        "Ruins_▼npac_2010_Wild Geese E_140 -- 廃墟_▼npac_2010_ワイルドギースE_140"
+      ]
+    },
+    {
+      "ID": 403150,
+      "Entries": [
+        "Ruins_▼npac_2050_Number 5_150 -- 廃墟_▼npac_2050_ナンバー5_150"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Straight city invasion_c3250: Regular army AC: Reinforcement type: Additional booster_0 -- ストレート市街侵攻_c3250:正規軍AC:強化タイプ：追加ブースター_0"
+      ]
+    },
+    {
+      "ID": 502010,
+      "Entries": [
+        "Straight city invasion_▼npac_1200_number 1_10 -- ストレート市街侵攻_▼npac_1200_ナンバー1_10"
+      ]
+    },
+    {
+      "ID": 202500,
+      "Entries": [
+        "West Pines Dam Destruction [ALT]_▼npac_1150_Wild Geese B_0 -- ウェストパインズ・ダム破壊【ALT】_▼npac_1150_ワイルドギースB_0"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Area withdrawal support_c3400: Quadruped MT: Dabgato + 9 consecutive buzz_0 -- 領域離脱援護_c3400:四脚MT:ダブガト＋9連バズ_0"
+      ]
+    },
+    {
+      "ID": 214020,
+      "Entries": [
+        "Area withdrawal support_▼npac_2000 Wild Geese D_20 -- 領域離脱援護_▼npac_2000ワイルドギースD_20"
+      ]
+    },
+    {
+      "ID": 224010,
+      "Entries": [
+        "Multiple dam defense_▼npac_2130_dead strongman_10 -- 多重ダム防衛_▼npac_2130_死んだ強者_10"
+      ]
+    },
+    {
+      "ID": 224020,
+      "Entries": [
+        "Multiple dam defense_▼npac_2120_Independent mercenary B_20 -- 多重ダム防衛_▼npac_2120_独立傭兵B_20"
+      ]
+    },
+    {
+      "ID": 793000,
+      "Entries": [
+        "Sub mission (hole in the ice field)_▼npac_1160_Wild Geese C (surprise target A)_0 -- サブ・ミッション（氷原の穴）_▼npac_1160_ワイルドギースC（奇襲対象A）_0"
+      ]
+    },
+    {
+      "ID": 505000,
+      "Entries": [
+        "Straight city reverse driving_▼npac_1070_Number 2_0 -- ストレート市街逆走_▼npac_1070_ナンバー2_0"
+      ]
+    },
+    {
+      "ID": 505010,
+      "Entries": [
+        "Straight city reverse driving_▼npac_1120_Carla_10 -- ストレート市街逆走_▼npac_1120_カーラ_10"
+      ]
+    },
+    {
+      "ID": 505020,
+      "Entries": [
+        "Straight city reverse run_▼npac_1210_Karla's men_20 -- ストレート市街逆走_▼npac_1210_カーラの部下_20"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "A-layer indoor search_c3400: Quadruped MT: Snap + Blade + Throwing Grey_0 -- A層屋内捜索_c3400:四脚MT:スナ＋ブレード＋投擲グレ_0"
+      ]
+    },
+    {
+      "ID": 223010,
+      "Entries": [
+        "A-layer indoor search_c3600: Construction machine spider: Shell shield + Dubhan location_10 -- A層屋内捜索_c3600:建機クモ:シェルシールド＋ダブハンロケ_10"
+      ]
+    },
+    {
+      "ID": 223020,
+      "Entries": [
+        "A-layer indoor search_c3600: Construction machine spider: Shell shield + Dubhan location_20 -- A層屋内捜索_c3600:建機クモ:シェルシールド＋ダブハンロケ_20"
+      ]
+    },
+    {
+      "ID": 223030,
+      "Entries": [
+        "A-layer indoor search_c3600: Construction machine spider: Shell shield + Dubhan location_30 -- A層屋内捜索_c3600:建機クモ:シェルシールド＋ダブハンロケ_30"
+      ]
+    },
+    {
+      "ID": 794000,
+      "Entries": [
+        "Sub mission (cave and furnace)_▼npac_2060_number 3_0 -- サブ・ミッション（大空洞と炉）_▼npac_2060_ナンバー3_0"
+      ]
+    },
+    {
+      "ID": 410020,
+      "Entries": [
+        "Railroad Reverse Run_▼npac_2020_Wild Geese F_20 -- レイルロード逆走_▼npac_2020_ワイルドギースF_20"
+      ]
+    }
+  ]
+}

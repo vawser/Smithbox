@@ -1,0 +1,284 @@
+{
+  "Entries": [
+    {
+      "Key": "REND_WTF",
+      "Text": "WTF"
+    },
+    {
+      "Key": "REND_DbgPrim_Empty",
+      "Text": "DbgPrim 几何体为空且没有子项。出现了问题..."
+    },
+    {
+      "Key": "REND_Invalid_Axis",
+      "Text": "选择有效的轴"
+    },
+    {
+      "Key": "REND_Listener_Tab_Name_Column",
+      "Text": "名称"
+    },
+    {
+      "Key": "REND_Listener_Tab_Name_Column_TT",
+      "Text": "此资源的名称。"
+    },
+    {
+      "Key": "REND_Listener_Tab_Load_State_Column",
+      "Text": "加载状态"
+    },
+    {
+      "Key": "REND_Listener_Tab_Load_State_Column_TT",
+      "Text": "此资源的加载状态。"
+    },
+    {
+      "Key": "REND_Listener_Tab_Access_Level_Column",
+      "Text": "访问级别"
+    },
+    {
+      "Key": "REND_Listener_Tab_Access_Level_Column_TT",
+      "Text": "此资源的访问级别。"
+    },
+    {
+      "Key": "REND_Listener_Tab_Reference_Count_Column",
+      "Text": "引用计数"
+    },
+    {
+      "Key": "REND_Listener_Tab_Reference_Count_Column_TT",
+      "Text": "此资源的引用计数。"
+    },
+    {
+      "Key": "REND_Listener_Tab_Action_Select_TT",
+      "Text": "选择此资源。"
+    },
+    {
+      "Key": "REND_Listener_Tab_Loaded_State",
+      "Text": "已加载"
+    },
+    {
+      "Key": "REND_Listener_Tab_Unloaded_State",
+      "Text": "未加载"
+    },
+    {
+      "Key": "REND_Listener_Tab_Action_Unload_TT",
+      "Text": "卸载此资源。"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Tab_Name_Column",
+      "Text": "名称"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Tab_Name_Column_TT",
+      "Text": "此资源的名称。"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Action_Select_TT",
+      "Text": "选择此资源。"
+    },
+    {
+      "Key": "REND_Tool_Resource_Monitor",
+      "Text": "资源监视器"
+    },
+    {
+      "Key": "REND_Tool_Listener_Tab",
+      "Text": "侦听器"
+    },
+    {
+      "Key": "REND_Tool_Mesh_Provider_Tab",
+      "Text": "网格提供程序"
+    },
+    {
+      "Key": "REND_Resource_Load_Tasks",
+      "Text": "资源加载任务"
+    },
+    {
+      "Key": "REND_Path_Builder_Failed_File_VFS",
+      "Text": "在 VFS 中未找到文件：{0}。"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Wrong_Form",
+      "Text": "网格提供程序存在但形式错误。"
+    },
+    {
+      "Key": "REND_Resource_Load_Failed",
+      "Text": "在资源加载过程中读取 {0} 失败。"
+    },
+    {
+      "Key": "REND_TPF_Load_Failed",
+      "Text": "加载 TPF 失败：\n文件路径：{0}\n虚拟路径：{1}\n访问级别：{2}"
+    },
+    {
+      "Key": "REND_Binder_TPF_Load_Failed",
+      "Text": "加载 Binder TPF 失败：\n名称：{0}\nBinder 路径：{1}\nBinder 虚拟路径：{2}\n访问级别：{3}"
+    },
+    {
+      "Key": "REND_Binder_Load_Failed",
+      "Text": "加载 Binder 失败：\nBinder 路径：{0}\nBinder 虚拟路径：{1}\n访问级别：{2}"
+    },
+    {
+      "Key": "REND_Job_Finished",
+      "Text": "任务：{0} - 已完成"
+    },
+    {
+      "Key": "REND_Resource_Pipeline_Load_Error_File_Path",
+      "Text": "资源管线加载错误：\n文件路径请求\n值：{0}\n虚拟路径：{1}\n访问级别：{2}"
+    },
+    {
+      "Key": "REND_Resource_Pipeline_Load_Error_File_Data",
+      "Text": "资源管线加载错误：\n文件字节请求\n虚拟路径：{0}\n访问级别：{1}"
+    },
+    {
+      "Key": "REND_Unhandled_Resource_Type",
+      "Text": "未处理的资源类型"
+    },
+    {
+      "Key": "REND_Job_Additional_Textures",
+      "Text": "正在加载附加纹理"
+    },
+    {
+      "Key": "REND_Job_World_Map_Textures",
+      "Text": "正在加载世界地图纹理"
+    },
+    {
+      "Key": "REND_FlverResource_Load_Failed",
+      "Text": "FlverResource：加载 {0} 失败"
+    },
+    {
+      "Key": "REND_FlverResource_Vertex_Read_Not_Implemented",
+      "Text": "未实现 {0} 顶点的读取。"
+    },
+    {
+      "Key": "REND_FlverResource_Float4_Invalid",
+      "Text": "Float4 Normal W 不是整数：{0}"
+    },
+    {
+      "Key": "REND_FlverResource_Normal_Read_Not_Implemented",
+      "Text": "未实现 {0} 法线的读取。"
+    },
+    {
+      "Key": "REND_FlverResource_UV_Read_Not_Implemented",
+      "Text": "未实现 {0} UV 的读取。"
+    },
+    {
+      "Key": "REND_FlverResource_Tangent_Read_Not_Implemented",
+      "Text": "未实现 {0} 切线的读取。"
+    },
+    {
+      "Key": "REND_FlverResource_BufferLayout_Read_Not_Implemented",
+      "Text": "未实现 {0} 缓冲区布局类型的读取。"
+    },
+    {
+      "Key": "REND_HavokCollisionResource_Load_Failed",
+      "Text": "HavokCollisionResource：加载 {0} 失败"
+    },
+    {
+      "Key": "REND_HavokNavmeshResource_Load_Failed",
+      "Text": "HavokNavmeshResource：加载 {0} 失败"
+    },
+    {
+      "Key": "REND_NVMNavmeshResource_Load_Failed",
+      "Text": "NVMNavmeshResource：加载 {0} 失败"
+    },
+    {
+      "Key": "REND_TextureResource_Bad_Init",
+      "Text": "TextureResource：空的构造函数无效。"
+    },
+    {
+      "Key": "REND_TextureResource_Missing_Texture_Descriptor",
+      "Text": "无法分配纹理描述符。"
+    },
+    {
+      "Key": "REND_Buffer_Failed_Allocation_Migration",
+      "Text": "在缓冲区调整大小期间，迁移 {0} 处的分配失败。"
+    },
+    {
+      "Key": "REND_Buffer_GPU_Allocation_Failed",
+      "Text": "即使调整大小后 GPU 分配仍然失败。请求：{0} 字节，缓冲区大小：{1} 字节。"
+    },
+    {
+      "Key": "REND_Buffer_Not_Staging",
+      "Text": "对非暂存缓冲区调用了 FlushIfNeeded。"
+    },
+    {
+      "Key": "REND_Buffer_Copy_To_Not_Staging",
+      "Text": "尝试将数据复制到非暂存缓冲区。"
+    },
+    {
+      "Key": "REND_Buffer_Map_Vertex_Non_Staging",
+      "Text": "尝试映射非暂存的顶点缓冲区。"
+    },
+    {
+      "Key": "REND_Buffer_Unmap_Vertex_Non_Staging",
+      "Text": "尝试取消映射非暂存的顶点缓冲区。"
+    },
+    {
+      "Key": "REND_Buffer_Map_Index_Non_Staging",
+      "Text": "尝试映射非暂存的索引缓冲区。"
+    },
+    {
+      "Key": "REND_Buffer_Unmap_Index_Non_Staging",
+      "Text": "尝试取消映射非暂存的索引缓冲区。"
+    },
+    {
+      "Key": "REND_Renderable_Out_of_Index_Range",
+      "Text": "可渲染索引 {0} 超出范围 [0, {1})"
+    },
+    {
+      "Key": "REND_SceneRenderer_Null_Pipeline",
+      "Text": "管线为空"
+    },
+    {
+      "Key": "REND_SceneRenderer_Invalid_Buffer_Index",
+      "Text": "无效的缓冲区索引"
+    },
+    {
+      "Key": "REND_Picking_Results_Not_Ready",
+      "Text": "选取结果未就绪时无法获取选择"
+    },
+    {
+      "Key": "REND_Unknown_DDS_Type",
+      "Text": "未知的 DDS 类型：{0}"
+    },
+    {
+      "Key": "REND_Unimplemented_DXGI_Type",
+      "Text": "未实现的 DXGI 类型：{0}"
+    },
+    {
+      "Key": "REND_Invalid_TPF_Texture_BlockSize",
+      "Text": "TPF 纹理格式 {0} 的 BlockSize 未知。"
+    },
+    {
+      "Key": "REND_Texture_Load_Error",
+      "Text": "加载纹理时出错：\n名称：{0}\n格式：{1}\n"
+    },
+    {
+      "Key": "REND_Shoebox_Layout_Load_Failed",
+      "Text": "加载 Shoebox 布局：{0} 失败。"
+    },
+    {
+      "Key": "REND_IconManager_TPF_Read_Failed",
+      "Text": "读取 TPF：{0} 失败。"
+    },
+    {
+      "Key": "REND_OpenGL_Texture_Upload_Error",
+      "Text": "OpenGL 纹理上传错误：{0}"
+    },
+    {
+      "Key": "REND_OpenGL_Unsupported_DDS_Format",
+      "Text": "不支持的 DDS 格式：{0}"
+    },
+    {
+      "Key": "REND_Vulkan_Missing_Texture_Descriptor",
+      "Text": "无法分配纹理描述符。"
+    },
+    {
+      "Key": "REND_Vulkan_TPF_Fill_Fail",
+      "Text": "填充 TPF 失败"
+    },
+    {
+      "Key": "REND_Mesh_Layout_Invalid_Type",
+      "Text": "无效的布局类型"
+    },
+    {
+      "Key": "REND_Unsupported_Pixel_Format",
+      "Text": "不支持的像素格式 ({0})"
+    }
+  ]
+}

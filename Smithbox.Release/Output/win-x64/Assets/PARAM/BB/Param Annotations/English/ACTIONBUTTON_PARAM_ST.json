@@ -1,0 +1,118 @@
+{
+  "Param": "ACTIONBUTTON_PARAM_ST",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ACTIONBUTTON_PARAM_ST",
+  "Description": "Prompts near bonfires, ladders, etc.",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "Region Type",
+      "Description": "Range shape (cylinder, prism, capsule)"
+    },
+    {
+      "Field": "padding1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "Dummy Poly [1]",
+      "Description": "Specify the Damipoli ID that is the center of the bottom of the range. If there is no Damipoly or -1 is entered, the center coordinates will be the reference."
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "Dummy Poly [2]",
+      "Description": "Used only when the range type is a capsule. Additional Damipoly (capsule) that creates a line segment with two Damipoly"
+    },
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "Radius (cylinder / capsule)"
+    },
+    {
+      "Field": "angle",
+      "Name": "Angle",
+      "Description": "Angle (cylinder)"
+    },
+    {
+      "Field": "depth",
+      "Name": "Depth",
+      "Description": "Depth (prism)"
+    },
+    {
+      "Field": "width",
+      "Name": "Width",
+      "Description": "Width (prism)"
+    },
+    {
+      "Field": "height",
+      "Name": "Height",
+      "Description": "Height (cylinder / prism)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "Bottom Height Offset",
+      "Description": "How much to raise or lower the Y coordinate of the bottom (cylinder / prism)"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "Angle Difference Check Type",
+      "Description": "Angle difference judgment type (cylinder / prism)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "Allowable Angle Difference",
+      "Description": "Allowable angle difference (cylinder / prism)"
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "Textbox Type",
+      "Description": "Text box type"
+    },
+    {
+      "Field": "padding3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Text ID to display"
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "Invalid Flag",
+      "Description": "If this flag is ON, the action button will not appear and no judgment will be made."
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "Grayout Flag",
+      "Description": "If this flag is ON, the action button will be grayed out and no judgment will be made."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": ""
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "Execution Invalid Time",
+      "Description": "Invalid time after execution (-infinite by value)"
+    },
+    {
+      "Field": "execButtonCircle",
+      "Name": "Execution Button",
+      "Description": ""
+    },
+    {
+      "Field": "padding4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

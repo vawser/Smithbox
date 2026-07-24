@@ -1,0 +1,98 @@
+{
+  "Param": "GEM_DROP_DOPING_PARAM_ST",
+  "Type": "GEM_DROP_DOPING_PARAM_ST",
+  "Name": "GEM_DROP_DOPING_PARAM_ST",
+  "Description": "Unused",
+  "Fields": [
+    {
+      "Field": "rankMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rankMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalDistributionAve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalDistributionSigma",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeE",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlotTypeF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

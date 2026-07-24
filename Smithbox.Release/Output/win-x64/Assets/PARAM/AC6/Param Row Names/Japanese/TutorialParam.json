@@ -1,0 +1,1206 @@
+{
+  "Name": "TutorialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1401000,
+      "Entries": [
+        "Key guide_move -- キーガイド_移動"
+      ]
+    },
+    {
+      "ID": 1401010,
+      "Entries": [
+        "Key guide_move + boost move -- キーガイド_移動+ブースト移動"
+      ]
+    },
+    {
+      "ID": 1401020,
+      "Entries": [
+        "Key Guide_Move + Boost Move + Jump -- キーガイド_移動+ブースト移動+ジャンプ"
+      ]
+    },
+    {
+      "ID": 1401030,
+      "Entries": [
+        "[TIPS available] Time stop_Looking back & EN -- [TIPS有]時止め_振り返り＆EN"
+      ]
+    },
+    {
+      "ID": 1401100,
+      "Entries": [
+        "[TIPS available] Time stop_lock assist -- [TIPS有]時止め_ロックアシスト"
+      ]
+    },
+    {
+      "ID": 1401110,
+      "Entries": [
+        "Key guide_lock assist + right hand shooting -- キーガイド_ロックアシスト+右手射撃"
+      ]
+    },
+    {
+      "ID": 1401111,
+      "Entries": [
+        "target operation -- ターゲット操作"
+      ]
+    },
+    {
+      "ID": 1401112,
+      "Entries": [
+        "Target operation key guide -- ターゲット操作キーガイド"
+      ]
+    },
+    {
+      "ID": 1401113,
+      "Entries": [
+        "target assist -- ターゲットアシスト"
+      ]
+    },
+    {
+      "ID": 1401114,
+      "Entries": [
+        "Target assist key guide -- ターゲットアシストキーガイド"
+      ]
+    },
+    {
+      "ID": 1401115,
+      "Entries": [
+        "Tutorial: Targeting"
+      ]
+    },
+    {
+      "ID": 1401116,
+      "Entries": [
+        "Tutorial: Target Assist"
+      ]
+    },
+    {
+      "ID": 1401117,
+      "Entries": [
+        "Key guide_Right shoulder weapon + multi-lock -- キーガイド_右肩武器+マルチロック"
+      ]
+    },
+    {
+      "ID": 1401120,
+      "Entries": [
+        "Key guide_Left hand fighting + QB -- キーガイド_左手格闘+QB"
+      ]
+    },
+    {
+      "ID": 1401121,
+      "Entries": [
+        "[No TIPS] Time stop_QB usage -- [TIPS無し]時止め_QB使い方"
+      ]
+    },
+    {
+      "ID": 1401122,
+      "Entries": [
+        "Key Guide_Quick Boost -- キーガイド_クイックブースト"
+      ]
+    },
+    {
+      "ID": 1401126,
+      "Entries": [
+        "[With TIPS] Key Guide_Quick Boost -- [TIPS有]キーガイド_クイックブースト",
+        "[With TIPS] Key Guide_Quick Boost -- [TIPS有]キーガイド_クイックブースト"
+      ]
+    },
+    {
+      "ID": 1401131,
+      "Entries": [
+        "Key guide_Right shoulder weapon + multi-lock -- キーガイド_右肩武器+マルチロック"
+      ]
+    },
+    {
+      "ID": 1401140,
+      "Entries": [
+        "Key guide_recovery -- キーガイド_回復"
+      ]
+    },
+    {
+      "ID": 1401141,
+      "Entries": [
+        "[TIPS available] Time stop_How to recover -- [TIPS有]時止め_回復やりかた"
+      ]
+    },
+    {
+      "ID": 1401200,
+      "Entries": [
+        "Time stop_Asab -- 時止め_アサブ"
+      ]
+    },
+    {
+      "ID": 1401201,
+      "Entries": [
+        "Asabu key guide -- アサブキーガイド"
+      ]
+    },
+    {
+      "ID": 1401210,
+      "Entries": [
+        "Key guide_Asabu + right hand + left hand (unnecessary, but leave it in case) -- キーガイド_アサブ+右手+左手(不要だが一応残す)"
+      ]
+    },
+    {
+      "ID": 1401270,
+      "Entries": [
+        "Key Guide_Fighting Battle -- キーガイド_格闘戦"
+      ]
+    },
+    {
+      "ID": 1401280,
+      "Entries": [
+        "Key guide_shooting battle -- キーガイド_射撃戦"
+      ]
+    },
+    {
+      "ID": 1401290,
+      "Entries": [
+        "Key guide_QB avoidance -- キーガイド_QB回避"
+      ]
+    },
+    {
+      "ID": 1401300,
+      "Entries": [
+        "[TIPS available] Time stop_Vertical catapult -- [TIPS有]時止め_垂直カタパルト"
+      ]
+    },
+    {
+      "ID": 1401310,
+      "Entries": [
+        "Key guide_Vertical catapult -- キーガイド_垂直カタパルト"
+      ]
+    },
+    {
+      "ID": 1401410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1411000,
+      "Entries": [
+        "[No TIPS] Time stop_Jailbreak_Starting time -- [TIPS無し]時止め_脱獄_開始時"
+      ]
+    },
+    {
+      "ID": 1411010,
+      "Entries": [
+        "Key guide_Jailbreak_No jamming bullets -- キーガイド_脱獄_ジャミング弾なし"
+      ]
+    },
+    {
+      "ID": 1411100,
+      "Entries": [
+        "[No TIPS] Time stop_Jailbreak_Jamming bullet explanation -- [TIPS無し]時止め_脱獄_ジャミング弾説明"
+      ]
+    },
+    {
+      "ID": 1411110,
+      "Entries": [
+        "Key guide_Jailbreak_With jamming bullets -- キーガイド_脱獄_ジャミング弾有り"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "[No TIPS] Lock on -- [TIPS無し]ロックオン"
+      ]
+    },
+    {
+      "ID": 1500001,
+      "Entries": [
+        "lock-on key guide -- ロックオンキーガイド"
+      ]
+    },
+    {
+      "ID": 1500005,
+      "Entries": [
+        "[With TIPS] Lock on -- [TIPS有り]ロックオン"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "reload -- リロード"
+      ]
+    },
+    {
+      "ID": 1500011,
+      "Entries": [
+        "reload key guide -- リロードキーガイド"
+      ]
+    },
+    {
+      "ID": 1500015,
+      "Entries": [
+        "reload -- リロード"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "[No TI] Missile lock -- [TI無し]ミサイルロック"
+      ]
+    },
+    {
+      "ID": 1500101,
+      "Entries": [
+        "missile lock key guide -- ミサイルロックキーガイド"
+      ]
+    },
+    {
+      "ID": 1500105,
+      "Entries": [
+        "[With TIPS] Missile lock -- [TIPS有り]ミサイルロック"
+      ]
+    },
+    {
+      "ID": 1500200,
+      "Entries": [
+        "[With TIPS] Melee weapons -- [TIPS有り]ミ近接武器"
+      ]
+    },
+    {
+      "ID": 1500201,
+      "Entries": [
+        "Melee weapon key guide -- 近接武器キーガイド"
+      ]
+    },
+    {
+      "ID": 1500205,
+      "Entries": [
+        "[With TIPS] Melee weapons -- [TIPS有り]ミ近接武器"
+      ]
+    },
+    {
+      "ID": 1500300,
+      "Entries": [
+        "[With TIPS] Wall Hack Radar -- [TIPS有り]ウォールハックレーダー"
+      ]
+    },
+    {
+      "ID": 1500301,
+      "Entries": [
+        "wall hack radar key guide -- ウォールハックレーダーキーガイド"
+      ]
+    },
+    {
+      "ID": 1501000,
+      "Entries": [
+        "Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃"
+      ]
+    },
+    {
+      "ID": 1501001,
+      "Entries": [
+        "Shooting weapons and charge attack key guide -- 射撃武器とチャージ攻撃キーガイド"
+      ]
+    },
+    {
+      "ID": 1501005,
+      "Entries": [
+        "Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃"
+      ]
+    },
+    {
+      "ID": 1501010,
+      "Entries": [
+        "Shock value and stagger -- 衝撃値とスタッガー"
+      ]
+    },
+    {
+      "ID": 1501011,
+      "Entries": [
+        "Shock value and stagger key guide -- 衝撃値とスタッガーキーガイド"
+      ]
+    },
+    {
+      "ID": 1501015,
+      "Entries": [
+        "Shock value and stagger -- 衝撃値とスタッガー"
+      ]
+    },
+    {
+      "ID": 1501020,
+      "Entries": [
+        "critical -- クリティカル"
+      ]
+    },
+    {
+      "ID": 1501021,
+      "Entries": [
+        "critical key guide -- クリティカルキーガイド"
+      ]
+    },
+    {
+      "ID": 1501025,
+      "Entries": [
+        "critical -- クリティカル"
+      ]
+    },
+    {
+      "ID": 1501100,
+      "Entries": [
+        "Residual impact value -- 衝撃値の残留"
+      ]
+    },
+    {
+      "ID": 1501101,
+      "Entries": [
+        "Impact value residual key guide -- 衝撃値の残留キーガイド"
+      ]
+    },
+    {
+      "ID": 1501105,
+      "Entries": [
+        "Residual impact value -- 衝撃値の残留"
+      ]
+    },
+    {
+      "ID": 1501200,
+      "Entries": [
+        "Defense by shield -- シールドによる防御"
+      ]
+    },
+    {
+      "ID": 1501201,
+      "Entries": [
+        "Shield defense key guide -- シールドによる防御キーガイド"
+      ]
+    },
+    {
+      "ID": 1501205,
+      "Entries": [
+        "Defense by shield -- シールドによる防御"
+      ]
+    },
+    {
+      "ID": 1501210,
+      "Entries": [
+        "Danger attack and just guard -- 危険攻撃とジャストガード"
+      ]
+    },
+    {
+      "ID": 1501211,
+      "Entries": [
+        "Danger Attack and Just Guard Key Guide -- 危険攻撃とジャストガードキーガイド"
+      ]
+    },
+    {
+      "ID": 1501215,
+      "Entries": [
+        "Danger attack and just guard -- 危険攻撃とジャストガード"
+      ]
+    },
+    {
+      "ID": 1501300,
+      "Entries": [
+        "Combat with Assault Boost -- アサルトブーストを使用した戦闘"
+      ]
+    },
+    {
+      "ID": 1501301,
+      "Entries": [
+        "Combat key guide with assault boost -- アサルトブーストを使用した戦闘キーガイド"
+      ]
+    },
+    {
+      "ID": 1501305,
+      "Entries": [
+        "Combat with Assault Boost -- アサルトブーストを使用した戦闘"
+      ]
+    },
+    {
+      "ID": 1501400,
+      "Entries": [
+        "undiscovered bonus -- 未発見ボーナス"
+      ]
+    },
+    {
+      "ID": 1501401,
+      "Entries": [
+        "Undiscovered Bonus Key Guide -- 未発見ボーナスキーガイド"
+      ]
+    },
+    {
+      "ID": 1501405,
+      "Entries": [
+        "undiscovered bonus -- 未発見ボーナス"
+      ]
+    },
+    {
+      "ID": 1502000,
+      "Entries": [
+        "Double trigger and shooting recoil -- ダブルトリガーと射撃反動"
+      ]
+    },
+    {
+      "ID": 1502001,
+      "Entries": [
+        "Double trigger and shooting recoil key guide -- ダブルトリガーと射撃反動キーガイド"
+      ]
+    },
+    {
+      "ID": 1502005,
+      "Entries": [
+        "Double trigger and shooting recoil -- ダブルトリガーと射撃反動"
+      ]
+    },
+    {
+      "ID": 1502011,
+      "Entries": [
+        "reload key guide -- リロードキーガイド"
+      ]
+    },
+    {
+      "ID": 1502100,
+      "Entries": [
+        "Changes in mobility due to assembly -- アセンブルによる機動力の変化"
+      ]
+    },
+    {
+      "ID": 1502101,
+      "Entries": [
+        "Key guide for changing mobility through assembly -- アセンブルによる機動力の変化キーガイド"
+      ]
+    },
+    {
+      "ID": 1502105,
+      "Entries": [
+        "Changes in mobility due to assembly -- アセンブルによる機動力の変化"
+      ]
+    },
+    {
+      "ID": 1502110,
+      "Entries": [
+        "Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化"
+      ]
+    },
+    {
+      "ID": 1502111,
+      "Entries": [
+        "Key guide to changes in EN efficiency due to assembly -- アセンブルによるEN効率の変化キーガイド"
+      ]
+    },
+    {
+      "ID": 1502115,
+      "Entries": [
+        "Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化"
+      ]
+    },
+    {
+      "ID": 1502200,
+      "Entries": [
+        "Weapon effective range and FCS -- 武装の有効距離とFCS"
+      ]
+    },
+    {
+      "ID": 1502201,
+      "Entries": [
+        "Weapon effective range and FCS key guide -- 武装の有効距離とFCSキーガイド"
+      ]
+    },
+    {
+      "ID": 1502205,
+      "Entries": [
+        "Weapon effective range and FCS -- 武装の有効距離とFCS"
+      ]
+    },
+    {
+      "ID": 1502300,
+      "Entries": [
+        "Combat in high-mobility vehicles -- 高機動機体での戦闘"
+      ]
+    },
+    {
+      "ID": 1502301,
+      "Entries": [
+        "Combat key guide for high-mobility vehicles -- 高機動機体での戦闘キーガイド"
+      ]
+    },
+    {
+      "ID": 1502305,
+      "Entries": [
+        "Combat in high-mobility vehicles -- 高機動機体での戦闘"
+      ]
+    },
+    {
+      "ID": 1503000,
+      "Entries": [
+        "Characteristics of reverse joint legs -- 逆関節脚部の特徴"
+      ]
+    },
+    {
+      "ID": 1503001,
+      "Entries": [
+        "Features key guide of reverse joint legs -- 逆関節脚部の特徴キーガイド"
+      ]
+    },
+    {
+      "ID": 1503005,
+      "Entries": [
+        "Characteristics of reverse joint legs -- 逆関節脚部の特徴"
+      ]
+    },
+    {
+      "ID": 1503010,
+      "Entries": [
+        "explosive weapon -- 爆発系武装"
+      ]
+    },
+    {
+      "ID": 1503011,
+      "Entries": [
+        "Explosive weapon key guide -- 爆発系武装キーガイド"
+      ]
+    },
+    {
+      "ID": 1503015,
+      "Entries": [
+        "explosive weapon -- 爆発系武装"
+      ]
+    },
+    {
+      "ID": 1503100,
+      "Entries": [
+        "Weapon attributes -- 武器の属性"
+      ]
+    },
+    {
+      "ID": 1503101,
+      "Entries": [
+        "Weapon attribute key guide -- 武器の属性キーガイド"
+      ]
+    },
+    {
+      "ID": 1503105,
+      "Entries": [
+        "Weapon attributes -- 武器の属性"
+      ]
+    },
+    {
+      "ID": 1503110,
+      "Entries": [
+        "overheat armament -- オーバーヒート武装"
+      ]
+    },
+    {
+      "ID": 1503111,
+      "Entries": [
+        "Overheat Armed Key Guide -- オーバーヒート武装キーガイド"
+      ]
+    },
+    {
+      "ID": 1503115,
+      "Entries": [
+        "overheat armament -- オーバーヒート武装"
+      ]
+    },
+    {
+      "ID": 1503200,
+      "Entries": [
+        "Weapon usage based on attributes -- 属性による武器の使い分け"
+      ]
+    },
+    {
+      "ID": 1503201,
+      "Entries": [
+        "Key guide to how to use weapons based on attributes -- 属性による武器の使い分けキーガイド"
+      ]
+    },
+    {
+      "ID": 1503205,
+      "Entries": [
+        "Weapon usage based on attributes -- 属性による武器の使い分け"
+      ]
+    },
+    {
+      "ID": 1503210,
+      "Entries": [
+        "Ricochet -- 跳弾"
+      ]
+    },
+    {
+      "ID": 1504000,
+      "Entries": [
+        "Features of quadrupeds -- 四脚の特徴"
+      ]
+    },
+    {
+      "ID": 1504001,
+      "Entries": [
+        "Four-legged feature key guide -- 四脚の特徴キーガイド"
+      ]
+    },
+    {
+      "ID": 1504005,
+      "Entries": [
+        "Features of quadrupeds -- 四脚の特徴"
+      ]
+    },
+    {
+      "ID": 1504011,
+      "Entries": [
+        "Features of quadruped: key guide in the middle -- 四脚の特徴\u3000中ほどのキーガイド"
+      ]
+    },
+    {
+      "ID": 1504100,
+      "Entries": [
+        "Attack while hovering -- ホバリング中攻撃"
+      ]
+    },
+    {
+      "ID": 1504101,
+      "Entries": [
+        "Hovering attack key guide -- ホバリング中攻撃キーガイド"
+      ]
+    },
+    {
+      "ID": 1504105,
+      "Entries": [
+        "Attack while hovering -- ホバリング中攻撃"
+      ]
+    },
+    {
+      "ID": 1504111,
+      "Entries": [
+        "Hovering Medium Attack Grenade Key Guide -- ホバリング中攻撃グレネードキーガイド"
+      ]
+    },
+    {
+      "ID": 1504112,
+      "Entries": [
+        "Hovering mid-attack grenade key guide difference -- ホバリング中攻撃グレネードキーガイド 差分"
+      ]
+    },
+    {
+      "ID": 1504200,
+      "Entries": [
+        "quadrupedal tactics -- 四脚の戦術"
+      ]
+    },
+    {
+      "ID": 1504201,
+      "Entries": [
+        "quadruped tactical key guide -- 四脚の戦術キーガイド"
+      ]
+    },
+    {
+      "ID": 1504205,
+      "Entries": [
+        "quadrupedal tactics -- 四脚の戦術"
+      ]
+    },
+    {
+      "ID": 1505000,
+      "Entries": [
+        "Tank characteristics -- タンクの特徴"
+      ]
+    },
+    {
+      "ID": 1505001,
+      "Entries": [
+        "Tank Features Key Guide -- タンクの特徴キーガイド"
+      ]
+    },
+    {
+      "ID": 1505005,
+      "Entries": [
+        "Tank characteristics -- タンクの特徴"
+      ]
+    },
+    {
+      "ID": 1505002,
+      "Entries": [
+        "drift turn -- ドリフトターン"
+      ]
+    },
+    {
+      "ID": 1505007,
+      "Entries": [
+        "drift turn -- ドリフトターン"
+      ]
+    },
+    {
+      "ID": 1505011,
+      "Entries": [
+        "Tank Features Key Guide 2 -- タンクの特徴キーガイド2"
+      ]
+    },
+    {
+      "ID": 1509090,
+      "Entries": [
+        "Benefits of target assist off -- ターゲットアシストoffの利点"
+      ]
+    },
+    {
+      "ID": 1506000,
+      "Entries": [
+        "final exam -- 最終試験"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Prolo when defeated -- プロロ 敗北時"
+      ]
+    },
+    {
+      "ID": 1600005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1601000,
+      "Entries": [
+        "Over the wall, when defeated -- 壁越え\u3000敗北時"
+      ]
+    },
+    {
+      "ID": 1602000,
+      "Entries": [
+        "String Defeat -- 文字列\u3000敗北時"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "assemble tutorial -- アセンブルチュートリアル"
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        "Story mission tutorial -- ストーリーミッションチュートリアル"
+      ]
+    },
+    {
+      "ID": 2001100,
+      "Entries": [
+        "free mission tutorial -- フリーミッションチュートリアル"
+      ]
+    },
+    {
+      "ID": 2002000,
+      "Entries": [
+        "Shop (purchase) tutorial -- ショップ(購入)チュートリアル"
+      ]
+    },
+    {
+      "ID": 2002010,
+      "Entries": [
+        "Shop (Sell) Tutorial -- ショップ(売却)チュートリアル"
+      ]
+    },
+    {
+      "ID": 2003000,
+      "Entries": [
+        "coloring tutorial -- カラーリングチュートリアル"
+      ]
+    },
+    {
+      "ID": 2003100,
+      "Entries": [
+        "marking tutorial -- マーキングチュートリアル"
+      ]
+    },
+    {
+      "ID": 2003300,
+      "Entries": [
+        "Image creation tutorial -- イメージ作成チュートリアル"
+      ]
+    },
+    {
+      "ID": 2004000,
+      "Entries": [
+        "arena tutorial -- アリーナチュートリアル"
+      ]
+    },
+    {
+      "ID": 2004100,
+      "Entries": [
+        "online arena tutorial -- オンラインアリーナチュートリアル"
+      ]
+    },
+    {
+      "ID": 2004101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004110,
+      "Entries": [
+        "online arena tutorial -- オンラインアリーナチュートリアル"
+      ]
+    },
+    {
+      "ID": 2004120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        "ACDATA tutorial -- ACDATAチュートリアル"
+      ]
+    },
+    {
+      "ID": 2006000,
+      "Entries": [
+        "ACTEST tutorial -- ACTESTチュートリアル"
+      ]
+    },
+    {
+      "ID": 2007000,
+      "Entries": [
+        "TRAININGTutorial -- TRAININGチュートリアル"
+      ]
+    },
+    {
+      "ID": 2008000,
+      "Entries": [
+        "ARCHIVE tutorial -- ARCHIVEチュートリアル"
+      ]
+    },
+    {
+      "ID": 2008100,
+      "Entries": [
+        "TIPS tutorial -- TIPSチュートリアル"
+      ]
+    },
+    {
+      "ID": 2009000,
+      "Entries": [
+        "OS enhancement tutorial -- OS強化チュートリアル"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Pilot data tutorial -- パイロットデータチュートリアル"
+      ]
+    },
+    {
+      "ID": 2011000,
+      "Entries": [
+        "nameplate tutorial -- ネームプレートチュートリアル"
+      ]
+    },
+    {
+      "ID": 2012000,
+      "Entries": [
+        "nameplate shop tutorial -- ネームプレートショップチュートリアル"
+      ]
+    },
+    {
+      "ID": 2013000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2014000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Menu release announcement Parts shop related -- メニュー解放告知\u3000パーツショップ関連"
+      ]
+    },
+    {
+      "ID": 2100010,
+      "Entries": [
+        "Menu release announcement Parts shop update -- メニュー解放告知\u3000パーツショップ更新"
+      ]
+    },
+    {
+      "ID": 2101000,
+      "Entries": [
+        "Menu release announcement Arena related -- メニュー解放告知\u3000アリーナ関連"
+      ]
+    },
+    {
+      "ID": 2101010,
+      "Entries": [
+        "Menu release announcement Arena related 2 -- メニュー解放告知\u3000アリーナ関連2"
+      ]
+    },
+    {
+      "ID": 2101020,
+      "Entries": [
+        "Menu release announcement Arena related 3 -- メニュー解放告知\u3000アリーナ関連3"
+      ]
+    },
+    {
+      "ID": 2101030,
+      "Entries": [
+        "Menu release announcement Arena related 4 -- メニュー解放告知\u3000アリーナ関連4"
+      ]
+    },
+    {
+      "ID": 2101040,
+      "Entries": [
+        "Menu release announcement Arena related 4 -- メニュー解放告知\u3000アリーナ関連4"
+      ]
+    },
+    {
+      "ID": 2102000,
+      "Entries": [
+        "Menu release announcement Mission replay -- メニュー解放告知\u3000ミッションリプレイ"
+      ]
+    },
+    {
+      "ID": 2103000,
+      "Entries": [
+        "Menu release announcement Tremo release 1 -- メニュー解放告知\u3000トレモ解禁1"
+      ]
+    },
+    {
+      "ID": 2103010,
+      "Entries": [
+        "Menu release announcement Tremo release 2 -- メニュー解放告知\u3000トレモ解禁2"
+      ]
+    },
+    {
+      "ID": 2103020,
+      "Entries": [
+        "Menu release announcement Tremo release 3 -- メニュー解放告知\u3000トレモ解禁3"
+      ]
+    },
+    {
+      "ID": 2104000,
+      "Entries": [
+        "Menu release announcement Strong enemy token -- メニュー解放告知\u3000強敵トークン"
+      ]
+    },
+    {
+      "ID": 2105000,
+      "Entries": [
+        "Menu release announcement AC Design -- メニュー解放告知\u3000ACデザイン"
+      ]
+    },
+    {
+      "ID": 2106000,
+      "Entries": [
+        "ice worm -- アイスワーム"
+      ]
+    },
+    {
+      "ID": 2107000,
+      "Entries": [
+        "Menu release announcement Tremo release 1 -- メニュー解放告知\u3000トレモ解禁1"
+      ]
+    },
+    {
+      "ID": 2107010,
+      "Entries": [
+        "Menu release announcement Tremo release 2 -- メニュー解放告知\u3000トレモ解禁2"
+      ]
+    },
+    {
+      "ID": 2107020,
+      "Entries": [
+        "Menu release announcement Tremo release 1 -- メニュー解放告知\u3000トレモ解禁1"
+      ]
+    },
+    {
+      "ID": 2107030,
+      "Entries": [
+        "Menu release announcement Tremo release 2 -- メニュー解放告知\u3000トレモ解禁2"
+      ]
+    },
+    {
+      "ID": 2107040,
+      "Entries": [
+        "Menu release announcement Tremo release 3 -- メニュー解放告知\u3000トレモ解禁3"
+      ]
+    },
+    {
+      "ID": 2107050,
+      "Entries": [
+        "Menu release announcement Strong enemy token -- メニュー解放告知\u3000強敵トークン"
+      ]
+    },
+    {
+      "ID": 2107070,
+      "Entries": [
+        "Menu release announcement AC Design -- メニュー解放告知\u3000ACデザイン"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "log hunt -- ログハント"
+      ]
+    },
+    {
+      "ID": 2201000,
+      "Entries": [
+        "ARM UNIT parts -- ARM UNITパーツ"
+      ]
+    },
+    {
+      "ID": 2202000,
+      "Entries": [
+        "BACK UNIT parts -- BACK UNITパーツ"
+      ]
+    },
+    {
+      "ID": 2203000,
+      "Entries": [
+        "HEAD parts -- HEADパーツ"
+      ]
+    },
+    {
+      "ID": 2204000,
+      "Entries": [
+        "CORE parts -- COREパーツ"
+      ]
+    },
+    {
+      "ID": 2205000,
+      "Entries": [
+        "ARMS parts -- ＡＲＭＳパーツ"
+      ]
+    },
+    {
+      "ID": 2206000,
+      "Entries": [
+        "LEGS parts -- LEGSパーツ"
+      ]
+    },
+    {
+      "ID": 2207000,
+      "Entries": [
+        "BOOSTER parts -- BOOSTERパーツ"
+      ]
+    },
+    {
+      "ID": 2208000,
+      "Entries": [
+        "FCS parts -- FCSパーツ"
+      ]
+    },
+    {
+      "ID": 2209000,
+      "Entries": [
+        "GENERATOR parts -- GENERATORパーツ"
+      ]
+    },
+    {
+      "ID": 2210000,
+      "Entries": [
+        "assault armor -- アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 2211000,
+      "Entries": [
+        "pulse armor -- パルスアーマー"
+      ]
+    },
+    {
+      "ID": 2212000,
+      "Entries": [
+        "pulse protection -- パルスプロテクション"
+      ]
+    },
+    {
+      "ID": 2213000,
+      "Entries": [
+        "terminal armor -- ターミナルアーマー"
+      ]
+    },
+    {
+      "ID": 2214000,
+      "Entries": [
+        "weight control -- ウェイトコントロール"
+      ]
+    },
+    {
+      "ID": 2215000,
+      "Entries": [
+        "boost kick -- ブーストキック"
+      ]
+    },
+    {
+      "ID": 2216000,
+      "Entries": [
+        "weapon hanger -- ウェポンハンガー"
+      ]
+    },
+    {
+      "ID": 2217000,
+      "Entries": [
+        "manual aim -- マニュアルエイム"
+      ]
+    },
+    {
+      "ID": 2218000,
+      "Entries": [
+        "quick turn -- クイックターン"
+      ]
+    },
+    {
+      "ID": 2219000,
+      "Entries": [
+        "up in flames -- 炎上"
+      ]
+    },
+    {
+      "ID": 2220000,
+      "Entries": [
+        "Stan -- スタン"
+      ]
+    },
+    {
+      "ID": 2221000,
+      "Entries": [
+        "Basic operations -- 基本操作"
+      ]
+    },
+    {
+      "ID": 2222000,
+      "Entries": [
+        "Interrupt operation -- 中断操作"
+      ]
+    },
+    {
+      "ID": 2223000,
+      "Entries": [
+        "System abnormality: camera interference -- システム異常：カメラ妨害"
+      ]
+    }
+  ]
+}

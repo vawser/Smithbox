@@ -1,0 +1,119 @@
+{
+  "Name": "NightBossMenuParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Tricephalos / Gladius"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Gaping Jaw / Adel"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Sentient Pest / Gnoster"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Augur / Maris"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Equilibrious Beast / Libra"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Darkdrift Knight / Fulghor"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Fissure in the Fog / Caligo"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Night Aspect / Heolstor"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Balancers / Harmonia"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dreglord / Straghess"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Everdark Sovereign] Tricephalos / Gladius"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Everdark Sovereign] Gaping Jaw / Adel"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Everdark Sovereign] Sentient Pest / Gnoster"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Everdark Sovereign] Augur / Maris"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Everdark Sovereign] Equilibrious Beast / Libra"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "[Everdark Sovereign] Darkdrift Knight / Fulghor"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[Everdark Sovereign] Fissure in the Fog / Caligo"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "[Salvation's Standard-Bearers] Balancers / Harmonia"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "The Deep of Night"
+      ]
+    }
+  ]
+}

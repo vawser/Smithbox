@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MESSAGEBOX_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 msgCategory = 204">
+      <DisplayName>カテゴリ</DisplayName>
+      <Enum>MSGBOX_MSG_CATE</Enum>
+      <Description>メッセージツールの種類</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>1</SortID>
+      <UnkC8>テキスト</UnkC8>
+    </Field>
+    <Field Def="u8 requestPause">
+      <DisplayName>ポーズ</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>ポーズをかけるか</Description>
+      <Maximum>65535</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[5]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s8 singleActivityCtrl">
+      <DisplayName>シングルプレイ</DisplayName>
+      <Enum>MSGBOX_AUTONAVI_CTRL_TYPE</Enum>
+      <Description>シングルプレイ用自動遷移に対する制御</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>選択結果による自動遷移の制御</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad1[7]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s8 multiActivityCtrl">
+      <DisplayName>マルチプレイ</DisplayName>
+      <Enum>MSGBOX_AUTONAVI_CTRL_TYPE</Enum>
+      <Description>マルチプレイ用自動遷移に対する制御</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>選択結果による自動遷移の制御</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad2[7]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>900</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,63 @@
+{
+  "Param": "NPC_AI_ACTION_PARAM_ST",
+  "Type": "NPC_AI_ACTION_PARAM_ST",
+  "Name": "NPC_AI_ACTION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "moveDir",
+      "Name": "移動方向入力",
+      "Description": "入力する移動方向"
+    },
+    {
+      "Field": "key1",
+      "Name": "キー入力1",
+      "Description": "入力するキー"
+    },
+    {
+      "Field": "key2",
+      "Name": "キー入力2",
+      "Description": "入力するキー"
+    },
+    {
+      "Field": "key3",
+      "Name": "キー入力3",
+      "Description": "入力するキー"
+    },
+    {
+      "Field": "bMoveDirHold",
+      "Name": "移動方向入力は長押し？",
+      "Description": "入力する移動方向を長押し扱いするか"
+    },
+    {
+      "Field": "bKeyHold1",
+      "Name": "キー入力1は長押し？",
+      "Description": "入力するキーを長押扱いするか"
+    },
+    {
+      "Field": "bKeyHold2",
+      "Name": "キー入力2は長押し？",
+      "Description": "入力するキーを長押扱いするか"
+    },
+    {
+      "Field": "bKeyHold3",
+      "Name": "キー入力3は長押し？",
+      "Description": "入力するキーを長押扱いするか"
+    },
+    {
+      "Field": "gestureId",
+      "Name": "ジェスチャーID（どれかのキー入力がGESTUREの時のみ有効）",
+      "Description": "ジェスチャーID"
+    },
+    {
+      "Field": "bLifeEndSuccess",
+      "Name": "寿命まで成功にしない",
+      "Description": "これがONならAIのゴールが寿命まで成功にならない"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

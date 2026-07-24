@@ -1,0 +1,16 @@
+{
+    "ProjectType": 9,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Layered Maps",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Armored Core VI makes use of a layered map system, where each mission-specific map overlays a base map, which contains all of the shared level map objects.",
+        "For example, the mission Illegal Entry is represented by the m01_01_00_00 MSB file. If you open this individually, all you will see are the mission-specific map objects, which tend to be enemies, events and regions.",
+        "To see the actual level, you will need to load the m10_00_00_00 MSB file too. This is the base map, and contains the assets that comprise much of each mission's level geometry.",
+        ""
+    ]
+}

@@ -1,0 +1,73 @@
+{
+  "Param": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Type": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Name": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Description": "Defines physical properties, durability, break behavior, and physics response characteristics for different map object instance types.",
+  "Fields": [
+    {
+      "Field": "sizeType",
+      "Name": "Size Type",
+      "Description": "Defines whether the object is classified as small or large for gameplay and physics handling."
+    },
+    {
+      "Field": "weightType",
+      "Name": "Weight Type",
+      "Description": "Defines the object's weight category, affecting physics and interaction behavior."
+    },
+    {
+      "Field": "breakAction",
+      "Name": "Breakable Action Type",
+      "Description": "Defines which player actions can break this object type."
+    },
+    {
+      "Field": "durabilityType",
+      "Name": "Durability Type",
+      "Description": "Defines structural durability of the object."
+    },
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "Hit points of the object; determines how much damage it can take before breaking."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "impact",
+      "Name": "Impact Resistance",
+      "Description": "Resistance against collision forces and physical impacts."
+    },
+    {
+      "Field": "mass",
+      "Name": "Mass",
+      "Description": "Physical mass of the object used in physics simulation."
+    },
+    {
+      "Field": "friction",
+      "Name": "Friction Coefficient",
+      "Description": "Determines how much the object resists sliding against surfaces."
+    },
+    {
+      "Field": "restitution",
+      "Name": "Bounciness",
+      "Description": "Determines how much the object bounces after impact."
+    },
+    {
+      "Field": "objAttackAttr",
+      "Name": "Object Damage Attack Attribute",
+      "Description": "Defines the attack or damage attribute type applied by or to the object."
+    },
+    {
+      "Field": "rumbleScale",
+      "Name": "Hit Rumble Strength",
+      "Description": "Maximum intensity of camera or controller shake when the object is hit."
+    },
+    {
+      "Field": "rumbleTime",
+      "Name": "Hit Rumble Duration",
+      "Description": "Duration of the rumble/shake effect when the object is hit."
+    }
+  ]
+}

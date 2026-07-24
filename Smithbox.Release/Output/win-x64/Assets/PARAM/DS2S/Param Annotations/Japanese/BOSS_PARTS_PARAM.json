@@ -1,0 +1,33 @@
+{
+  "Param": "BOSS_PARTS_PARAM",
+  "Type": "BOSS_PARTS_PARAM",
+  "Name": "BOSS_PARTS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hpCategory",
+      "Name": "ＨＰ部位番号",
+      "Description": ""
+    },
+    {
+      "Field": "damageAnimId",
+      "Name": "ダメージアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "material",
+      "Name": "材質",
+      "Description": ""
+    },
+    {
+      "Field": "deffence",
+      "Name": "防御力",
+      "Description": ""
+    }
+  ]
+}

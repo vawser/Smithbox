@@ -1,0 +1,103 @@
+{
+  "ID": "ライトシャフト",
+  "Name": "Light Shaft",
+  "Description": "Volumetric lighting effect that simulates visible beams of light scattering through participating media such as fog, dust, or haze, often enhanced by directional light occlusion and camera exposure response.",
+  "Fields": [
+    {
+      "ID": "ライトシャフトアルファ",
+      "Name": "Light Shaft Alpha",
+      "Description": "Overall opacity of light shafts, controlling the visibility and blending strength of volumetric light beams in the scene.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト有効",
+      "Name": "Is Light Shaft Enabled",
+      "Description": "Enables or disables volumetric light shaft rendering in the current scene or lighting context.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ライトシャフト抑制値",
+      "Name": "Light Shaft Suppression Value: 1",
+      "Description": "Primary suppression factor that reduces light shaft intensity, typically used to prevent overexposure or excessive bloom in volumetric lighting.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト減衰",
+      "Name": "Light Shaft Damping: 1",
+      "Description": "Primary damping coefficient controlling how quickly light shafts attenuate with distance or scattering depth.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト抑制値2",
+      "Name": "Light Shaft Suppression Value: 2",
+      "Description": "Secondary suppression factor used for fine-tuning additional intensity reduction or layered volumetric control.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト減衰2",
+      "Name": "Light Shaft Damping: 2",
+      "Description": "Secondary damping parameter providing additional control over light shaft falloff behavior in complex lighting conditions.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト収束度",
+      "Name": "Light Shaft Convergence Degree",
+      "Description": "Controls how strongly light rays converge toward a focal direction, affecting beam tightness and directional focus.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト平行長さ",
+      "Name": "Light Shaft Parallel Length",
+      "Description": "Defines the distance over which light shafts maintain parallel alignment before diverging or fading.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト平行開始する角度",
+      "Name": "Light Shaft Angle: Start to Run Parallel",
+      "Description": "Angle threshold at which light shafts begin transitioning into a parallel beam configuration relative to the light direction.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフト平行完了する角度",
+      "Name": "Light Shaft Angle: Parallel",
+      "Description": "Angle at which light shafts are fully parallelized, producing maximum beam alignment and directional coherence.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフトフェードアウト開始する角度",
+      "Name": "Right Light Shaft Angle: Fade Out Start",
+      "Description": "Angle threshold where light shafts begin fading out due to directional misalignment or occlusion.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ライトシャフトフェードアウト完了する角度",
+      "Name": "Right Light Shaft Angle: Fade Out Complete",
+      "Description": "Angle at which light shafts are fully faded out, resulting in complete disappearance of volumetric beam contribution.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "TOUGHNESS_PARAM_ST",
+  "Type": "TOUGHNESS_PARAM_ST",
+  "Name": "TOUGHNESS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "correctionRate",
+      "Name": "武器強靭度補正倍率",
+      "Description": "強靭度を求める際に武器の「強靭度補正倍率」に掛かる補正倍率です"
+    },
+    {
+      "Field": "minToughness",
+      "Name": "最低 強靭度",
+      "Description": "強靭度期間開始時に適用される現在強靭度の下限値です。強靭度開始時に強靭度がこの値を下回る場合は、この値まで回復します。"
+    },
+    {
+      "Field": "isNonEffectiveCorrectionForMin",
+      "Name": "最低強靭値が強靭度倍率の影響を受けない",
+      "Description": "強靭度 補正倍率を、最低 強靭度に、適用しなくなります"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": "pad"
+    },
+    {
+      "Field": "spEffectId",
+      "Name": "特殊効果ID",
+      "Description": "強靭度期間中にかかる差換え特殊効果Idです。-1の場合は通常の差換えルールが適用されます。プレイヤーキャラでしか使われません"
+    },
+    {
+      "Field": "proCorrectionRate",
+      "Name": "防具強靭度補正倍率",
+      "Description": "強靭度を求める際に防具の「強靭度補正倍率」に掛かる補正倍率です"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

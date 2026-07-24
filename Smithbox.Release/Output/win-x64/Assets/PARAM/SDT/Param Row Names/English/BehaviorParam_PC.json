@@ -1,0 +1,3671 @@
+{
+  "Name": "BehaviorParam_PC",
+  "Entries": [
+    {
+      "ID": 4,
+      "Entries": [
+        "For destroying automatic patrol objects"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Dummy for debug"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dummy - Hits Nothing"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Impact\n"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Right foot for SFX"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Left foot for SFX"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "Right hand for SFX"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "Left hand for SFX"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Deathblow Initiation - Posture Break"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Deathblow Initiation - Backstab"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Deathblow Initiation - Crouching Backstab"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Deathblow Initiation - Plunging"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Deathblow Initiation - Grappling Hook"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "Deathblow Initiation - Anti-air"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Deathblow Initiation - Hug Wall Left"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Deathblow Initiation - Hug Wall Right"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Deathblow Initiation - Ledge Hang"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "Deathblow Initiation - Jump Kick Break"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Deathblow Initiation - Corrupted Monk - Finisher"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Deathblow Initiation - Owl - Finisher"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Deathblow Initiation - Guardian Ape - Finisher"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Deathblow Initiation - Genichiro - Finisher"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Deathblow Initiation - Lady Butterfly - Finisher"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Deathblow Initiation - Isshin - Finisher"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Deathblow Initiation - Demon of Hatred - Finisher"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "Mikiri Counter - Break"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 842,
+      "Entries": [
+        "Mikiri Counter - Break"
+      ]
+    },
+    {
+      "ID": 843,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Jump Kick"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Kick Dash"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "Grappling Hook Pull"
+      ]
+    },
+    {
+      "ID": 105000000,
+      "Entries": [
+        "Kusabimaru Thrust 1"
+      ]
+    },
+    {
+      "ID": 105000001,
+      "Entries": [
+        "Kusabimaru Thrust 2"
+      ]
+    },
+    {
+      "ID": 105000006,
+      "Entries": [
+        "Kusabimaru Thrust"
+      ]
+    },
+    {
+      "ID": 105000010,
+      "Entries": [
+        "Kusabimaru Light Attack 1"
+      ]
+    },
+    {
+      "ID": 105000011,
+      "Entries": [
+        "Kusabimaru Light Attack 2"
+      ]
+    },
+    {
+      "ID": 105000012,
+      "Entries": [
+        "Kusabimaru Light Attack 3"
+      ]
+    },
+    {
+      "ID": 105000013,
+      "Entries": [
+        "Kusabimaru Light Attack 4"
+      ]
+    },
+    {
+      "ID": 105000014,
+      "Entries": [
+        "Kusabimaru Light Attack 5"
+      ]
+    },
+    {
+      "ID": 105000016,
+      "Entries": [
+        "Kusabimaru Light Attack"
+      ]
+    },
+    {
+      "ID": 105000020,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000021,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000025,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000026,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000030,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000031,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000035,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000036,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000040,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000041,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000050,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000051,
+      "Entries": [
+        "Kusabimaru Guard Attack"
+      ]
+    },
+    {
+      "ID": 105000060,
+      "Entries": [
+        "Jump Attack 1"
+      ]
+    },
+    {
+      "ID": 105000061,
+      "Entries": [
+        "Jump Attack 2"
+      ]
+    },
+    {
+      "ID": 105000062,
+      "Entries": [
+        "Jump Attack 3"
+      ]
+    },
+    {
+      "ID": 105000065,
+      "Entries": [
+        "Grappling Hook Attack 1"
+      ]
+    },
+    {
+      "ID": 105000066,
+      "Entries": [
+        "Grappling Hook Attack 2"
+      ]
+    },
+    {
+      "ID": 105000070,
+      "Entries": [
+        "Kusabimaru Dash Attack"
+      ]
+    },
+    {
+      "ID": 105000075,
+      "Entries": [
+        "Kusabimaru Crouch Attack"
+      ]
+    },
+    {
+      "ID": 105000076,
+      "Entries": [
+        "Kusabimaru Crouch Attack Under Floor"
+      ]
+    },
+    {
+      "ID": 105000080,
+      "Entries": [
+        "Kusabimaru Hanging Attack"
+      ]
+    },
+    {
+      "ID": 105000085,
+      "Entries": [
+        "Kusabimaru Enfeebled Attack"
+      ]
+    },
+    {
+      "ID": 105000086,
+      "Entries": [
+        "Kusabimaru Underwater Thrust 1"
+      ]
+    },
+    {
+      "ID": 105000087,
+      "Entries": [
+        "Kusabimaru Underwater Thrust 2"
+      ]
+    },
+    {
+      "ID": 105000088,
+      "Entries": [
+        "Kusabimaru Underwater Attack 1"
+      ]
+    },
+    {
+      "ID": 105000089,
+      "Entries": [
+        "Kusabimaru Underwater Attack 2"
+      ]
+    },
+    {
+      "ID": 105000090,
+      "Entries": [
+        "Kusabimaru Guard"
+      ]
+    },
+    {
+      "ID": 105000100,
+      "Entries": [
+        "Chasing Slice - Shuriken"
+      ]
+    },
+    {
+      "ID": 105000105,
+      "Entries": [
+        "Chasing Slice - Firecracker"
+      ]
+    },
+    {
+      "ID": 105000110,
+      "Entries": [
+        "Living Force - Flame Vent"
+      ]
+    },
+    {
+      "ID": 105000115,
+      "Entries": [
+        "Fang and Blade - Loaded Axe - Kusabimaru Part"
+      ]
+    },
+    {
+      "ID": 105000120,
+      "Entries": [
+        "Fang and Blade - Mist Raven - Ground attack"
+      ]
+    },
+    {
+      "ID": 105000121,
+      "Entries": [
+        "Fang and Blade - Mist Raven - Aerial attack"
+      ]
+    },
+    {
+      "ID": 105000130,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000131,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000132,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000133,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000134,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000135,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000136,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000137,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000138,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000140,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000141,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000142,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000143,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000144,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000145,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000146,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000147,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000148,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000150,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000151,
+      "Entries": [
+        "Sabimaru - Kusabimaru Attack"
+      ]
+    },
+    {
+      "ID": 105000160,
+      "Entries": [
+        "Living Force - Divine Abduction"
+      ]
+    },
+    {
+      "ID": 105000165,
+      "Entries": [
+        "Chasing Slice - Loaded Spear"
+      ]
+    },
+    {
+      "ID": 105000166,
+      "Entries": [
+        "Fang and Blade - Loaded Spear"
+      ]
+    },
+    {
+      "ID": 105000170,
+      "Entries": [
+        "Projected Force - Finger Whistle"
+      ]
+    },
+    {
+      "ID": 105000180,
+      "Entries": [
+        "Bestowal Ninjutsu Blood"
+      ]
+    },
+    {
+      "ID": 105000181,
+      "Entries": [
+        "Bestowal Ninjutsu Poison"
+      ]
+    },
+    {
+      "ID": 105000182,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal"
+      ]
+    },
+    {
+      "ID": 105000183,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105000184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105000185,
+      "Entries": [
+        "Living Force - Divine Abudction Addidtional Attack"
+      ]
+    },
+    {
+      "ID": 105000186,
+      "Entries": [
+        "Living Force - Golden Vortex Addidtional Attack"
+      ]
+    },
+    {
+      "ID": 105000190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 105000191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 105000192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 105000193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105000280,
+      "Entries": [
+        "Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105000281,
+      "Entries": [
+        "Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105000290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 105000295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 105000300,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000301,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000360,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000361,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000370,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000371,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000380,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000381,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000400,
+      "Entries": [
+        "Puppeteer Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000410,
+      "Entries": [
+        "Puppeteer Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000500,
+      "Entries": [
+        "Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000510,
+      "Entries": [
+        "Poison Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000520,
+      "Entries": [
+        "Lifesteal Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 105000600,
+      "Entries": [
+        "Deathblow Damage"
+      ]
+    },
+    {
+      "ID": 105000610,
+      "Entries": [
+        "Deathblow Damage"
+      ]
+    },
+    {
+      "ID": 105000620,
+      "Entries": [
+        "Deathblow Damage"
+      ]
+    },
+    {
+      "ID": 105000640,
+      "Entries": [
+        "Deathblow Damage - Backstab"
+      ]
+    },
+    {
+      "ID": 105000650,
+      "Entries": [
+        "Deathblow Damage - Crouching Backstab"
+      ]
+    },
+    {
+      "ID": 105000660,
+      "Entries": [
+        "Deathblow Damage - Plunging"
+      ]
+    },
+    {
+      "ID": 105000661,
+      "Entries": [
+        "Deathblow Damage - Plunging on Bull"
+      ]
+    },
+    {
+      "ID": 105000680,
+      "Entries": [
+        "Deathblow Damage - Grappling Hook"
+      ]
+    },
+    {
+      "ID": 105000690,
+      "Entries": [
+        "Deathblow Damage - Anti-air"
+      ]
+    },
+    {
+      "ID": 105000700,
+      "Entries": [
+        "Deathblow Damage - Wall Hug"
+      ]
+    },
+    {
+      "ID": 105000720,
+      "Entries": [
+        "Deathblow Damage - Ledge Hang"
+      ]
+    },
+    {
+      "ID": 105000790,
+      "Entries": [
+        "Ninjutsu Kanji Info for Enemy - Bloodsmoke"
+      ]
+    },
+    {
+      "ID": 105000791,
+      "Entries": [
+        "Ninjutsu Kanji Info for Enemy - Puppeteer"
+      ]
+    },
+    {
+      "ID": 105000792,
+      "Entries": [
+        "Ninjutsu Kanji Info for Enemy - Bestowal"
+      ]
+    },
+    {
+      "ID": 105000800,
+      "Entries": [
+        "Deathblow Damage - Finisher"
+      ]
+    },
+    {
+      "ID": 105000899,
+      "Entries": [
+        "Enfeeble Buildup Removal"
+      ]
+    },
+    {
+      "ID": 105000990,
+      "Entries": [
+        "Mikiri Counter - Break"
+      ]
+    },
+    {
+      "ID": 105000991,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 105000992,
+      "Entries": [
+        "Mikiri Counter - Break"
+      ]
+    },
+    {
+      "ID": 105000993,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 105000994,
+      "Entries": [
+        "Resurrection - Boss Sensing Dummy Attack"
+      ]
+    },
+    {
+      "ID": 105000910,
+      "Entries": [
+        "Ceramic Shard"
+      ]
+    },
+    {
+      "ID": 105000911,
+      "Entries": [
+        "Ceramic Shard - Ledge Hang"
+      ]
+    },
+    {
+      "ID": 105000912,
+      "Entries": [
+        "Ceramic Shard - Peeping Left"
+      ]
+    },
+    {
+      "ID": 105000913,
+      "Entries": [
+        "Ceramic Shard - Peeping Right"
+      ]
+    },
+    {
+      "ID": 105001200,
+      "Entries": [
+        "Whirlwind Slash 1"
+      ]
+    },
+    {
+      "ID": 105001201,
+      "Entries": [
+        "Whirlwind Slash 2"
+      ]
+    },
+    {
+      "ID": 105002200,
+      "Entries": [
+        "Nightjar Slash"
+      ]
+    },
+    {
+      "ID": 105002201,
+      "Entries": [
+        "Nightjar Slash Reversal"
+      ]
+    },
+    {
+      "ID": 105003200,
+      "Entries": [
+        "Ichimonji 1 - Charged"
+      ]
+    },
+    {
+      "ID": 105003201,
+      "Entries": [
+        "Ichimonji 1"
+      ]
+    },
+    {
+      "ID": 105003210,
+      "Entries": [
+        "Ichimonji 2"
+      ]
+    },
+    {
+      "ID": 105004200,
+      "Entries": [
+        "Dragon Flash - Charged"
+      ]
+    },
+    {
+      "ID": 105004201,
+      "Entries": [
+        "Dragon Flash - Charged - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105004210,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 1"
+      ]
+    },
+    {
+      "ID": 105004215,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 2 - Dummy Parent"
+      ]
+    },
+    {
+      "ID": 105004220,
+      "Entries": [
+        "Dragon Flash"
+      ]
+    },
+    {
+      "ID": 105004221,
+      "Entries": [
+        "Dragon Flash - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105004230,
+      "Entries": [
+        "Dragon Flash - Bullet"
+      ]
+    },
+    {
+      "ID": 105005200,
+      "Entries": [
+        "Ashina Cross 1"
+      ]
+    },
+    {
+      "ID": 105005201,
+      "Entries": [
+        "Ashina Cross 2"
+      ]
+    },
+    {
+      "ID": 105005202,
+      "Entries": [
+        "Ashina Cross 1 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105005203,
+      "Entries": [
+        "Ashina Cross 2 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105005210,
+      "Entries": [
+        "One Mind - Initial Attack"
+      ]
+    },
+    {
+      "ID": 105005211,
+      "Entries": [
+        "One Mind - Initial Attack - Bestowal"
+      ]
+    },
+    {
+      "ID": 105005212,
+      "Entries": [
+        "One Mind - Initial Attack - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 105005213,
+      "Entries": [
+        "One Mind - Initial Attack - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 105005214,
+      "Entries": [
+        "One Mind - Initial Attack - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 105005215,
+      "Entries": [
+        "One Mind - Initial Attack - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 105005216,
+      "Entries": [
+        "One Mind - Initial Attack - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105005220,
+      "Entries": [
+        "One Mind - Continuous Attack Parent"
+      ]
+    },
+    {
+      "ID": 105005221,
+      "Entries": [
+        "One Mind - Continuous Attack 1"
+      ]
+    },
+    {
+      "ID": 105005222,
+      "Entries": [
+        "One Mind - Continuous Attack 2"
+      ]
+    },
+    {
+      "ID": 105005223,
+      "Entries": [
+        "One Mind - Continuous Attack 3"
+      ]
+    },
+    {
+      "ID": 105005230,
+      "Entries": [
+        "One Mind - Continuous Attack SFX"
+      ]
+    },
+    {
+      "ID": 105005240,
+      "Entries": [
+        "One Mind - Final Attack"
+      ]
+    },
+    {
+      "ID": 105005241,
+      "Entries": [
+        "One Mind - Final Attack - Bestowal"
+      ]
+    },
+    {
+      "ID": 105005242,
+      "Entries": [
+        "One Mind - Final Attack - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 105005243,
+      "Entries": [
+        "One Mind - Final Attack - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 105005244,
+      "Entries": [
+        "One Mind - Final Attack - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 105005245,
+      "Entries": [
+        "One Mind - Final Attack - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 105005246,
+      "Entries": [
+        "One Mind - Final Attack - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105007200,
+      "Entries": [
+        "Mortal Draw 1 - Charged"
+      ]
+    },
+    {
+      "ID": 105007201,
+      "Entries": [
+        "Mortal Draw 1"
+      ]
+    },
+    {
+      "ID": 105007210,
+      "Entries": [
+        "Mortal Draw 2 - Charged"
+      ]
+    },
+    {
+      "ID": 105007211,
+      "Entries": [
+        "Mortal Draw 2"
+      ]
+    },
+    {
+      "ID": 105007220,
+      "Entries": [
+        "Mortal Draw 1 - Charged - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105007221,
+      "Entries": [
+        "Mortal Draw 1 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105007230,
+      "Entries": [
+        "Mortal Draw 2 - Charged - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105007231,
+      "Entries": [
+        "Mortal Draw 2 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105007999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 105008200,
+      "Entries": [
+        "Senpou Leaping Kicks / High Monk - Initial Kick Up"
+      ]
+    },
+    {
+      "ID": 105008201,
+      "Entries": [
+        "Senpou Leaping Kicks / High Monk - Initial Kick Down"
+      ]
+    },
+    {
+      "ID": 105008210,
+      "Entries": [
+        "Senpou Leaping Kicks / High Monk - Follow-up Kick 1"
+      ]
+    },
+    {
+      "ID": 105008211,
+      "Entries": [
+        "Senpou Leaping Kicks / High Monk - Follow-up Kick 2"
+      ]
+    },
+    {
+      "ID": 105008220,
+      "Entries": [
+        "High Monk - Sword Slash 1"
+      ]
+    },
+    {
+      "ID": 105008221,
+      "Entries": [
+        "High Monk - Sword Slash 2"
+      ]
+    },
+    {
+      "ID": 105008230,
+      "Entries": [
+        "High Monk - Final Kick"
+      ]
+    },
+    {
+      "ID": 105009200,
+      "Entries": [
+        "Praying Strikes - Exorcism - Charged"
+      ]
+    },
+    {
+      "ID": 105009201,
+      "Entries": [
+        "Praying Stikes - 1"
+      ]
+    },
+    {
+      "ID": 105009210,
+      "Entries": [
+        "Praying Stikes - 2"
+      ]
+    },
+    {
+      "ID": 105009220,
+      "Entries": [
+        "Praying Stikes - Exorcism - 3"
+      ]
+    },
+    {
+      "ID": 105009251,
+      "Entries": [
+        "Praying Strikes - Aerial"
+      ]
+    },
+    {
+      "ID": 105010200,
+      "Entries": [
+        "Shadowfall / Shadowrush - Stab - Charged"
+      ]
+    },
+    {
+      "ID": 105010210,
+      "Entries": [
+        "Shadowfall / Shadowrush - Stab"
+      ]
+    },
+    {
+      "ID": 105010215,
+      "Entries": [
+        "Shadowfall / Shadowrush - Kick"
+      ]
+    },
+    {
+      "ID": 105010220,
+      "Entries": [
+        "Shadowfall - Aerial Attack 1"
+      ]
+    },
+    {
+      "ID": 105010221,
+      "Entries": [
+        "Shadowfall - Aerial Attack 2"
+      ]
+    },
+    {
+      "ID": 105020200,
+      "Entries": [
+        "Floating Passage - 1"
+      ]
+    },
+    {
+      "ID": 105020201,
+      "Entries": [
+        "Floating Passage - 2"
+      ]
+    },
+    {
+      "ID": 105020202,
+      "Entries": [
+        "Floating Passage - 3"
+      ]
+    },
+    {
+      "ID": 105020203,
+      "Entries": [
+        "Floating Passage - 4"
+      ]
+    },
+    {
+      "ID": 105020209,
+      "Entries": [
+        "Floating Passage - 5"
+      ]
+    },
+    {
+      "ID": 105021200,
+      "Entries": [
+        "Spiral Cloud Passage - 1"
+      ]
+    },
+    {
+      "ID": 105021201,
+      "Entries": [
+        "Spiral Cloud Passage - 2"
+      ]
+    },
+    {
+      "ID": 105021202,
+      "Entries": [
+        "Spiral Cloud Passage - 3"
+      ]
+    },
+    {
+      "ID": 105021203,
+      "Entries": [
+        "Spiral Cloud Passage - 4"
+      ]
+    },
+    {
+      "ID": 105021204,
+      "Entries": [
+        "Spiral Cloud Passage - 5"
+      ]
+    },
+    {
+      "ID": 105021205,
+      "Entries": [
+        "Spiral Cloud Passage - 6"
+      ]
+    },
+    {
+      "ID": 105021206,
+      "Entries": [
+        "Spiral Cloud Passage - 7"
+      ]
+    },
+    {
+      "ID": 105021207,
+      "Entries": [
+        "Spiral Cloud Passage - 8"
+      ]
+    },
+    {
+      "ID": 105021208,
+      "Entries": [
+        "Spiral Cloud Passage - 9"
+      ]
+    },
+    {
+      "ID": 105021220,
+      "Entries": [
+        "Spiral Cloud Passage - 1 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021221,
+      "Entries": [
+        "Spiral Cloud Passage - 2 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021222,
+      "Entries": [
+        "Spiral Cloud Passage - 3 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021223,
+      "Entries": [
+        "Spiral Cloud Passage - 4 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021224,
+      "Entries": [
+        "Spiral Cloud Passage - 5 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021225,
+      "Entries": [
+        "Spiral Cloud Passage - 6 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021226,
+      "Entries": [
+        "Spiral Cloud Passage - 7 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021227,
+      "Entries": [
+        "Spiral Cloud Passage - 8 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021228,
+      "Entries": [
+        "Spiral Cloud Passage - 9 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105021229,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 105021999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 105030200,
+      "Entries": [
+        "Sakura Dance 1"
+      ]
+    },
+    {
+      "ID": 105030201,
+      "Entries": [
+        "Sakura Dance 2"
+      ]
+    },
+    {
+      "ID": 105030202,
+      "Entries": [
+        "Sakura Dance 3"
+      ]
+    },
+    {
+      "ID": 105030205,
+      "Entries": [
+        "Sakura Dance 1 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030206,
+      "Entries": [
+        "Sakura Dance 2 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030207,
+      "Entries": [
+        "Sakura Dance 3 - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030210,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 105030211,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 105030212,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 105030215,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030216,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030217,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 105030220,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 105030221,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 105030222,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 105030225,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 105030226,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 105030227,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 105030230,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 105030231,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 105030232,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 105030235,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 105030236,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 105030237,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 105030240,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 105030241,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 105030242,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 105030245,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 105030246,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 105030247,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 105030250,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 105030251,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 105030252,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 105030255,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 105030256,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 105030257,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 105030260,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 105030261,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 105030262,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 105030265,
+      "Entries": [
+        "Sakura Dance 1 - Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105030266,
+      "Entries": [
+        "Sakura Dance 2 - Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 105030267,
+      "Entries": [
+        "Sakura Dance 3 - Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107000100,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107000110,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107000150,
+      "Entries": [
+        "Shuriken Throw 1"
+      ]
+    },
+    {
+      "ID": 107000160,
+      "Entries": [
+        "Shuriken Throw 2"
+      ]
+    },
+    {
+      "ID": 107000184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107000190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107000191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107000192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107000193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107000195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107000196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107000290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107000295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107002100,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107002110,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107002150,
+      "Entries": [
+        "Gouging Top - Throw 1"
+      ]
+    },
+    {
+      "ID": 107002160,
+      "Entries": [
+        "Gouging Top - Throw 2"
+      ]
+    },
+    {
+      "ID": 107003100,
+      "Entries": [
+        "Phantom Kunai Charge - Throw 1"
+      ]
+    },
+    {
+      "ID": 107003110,
+      "Entries": [
+        "Phantom Kunai Charge - Throw 2"
+      ]
+    },
+    {
+      "ID": 107003120,
+      "Entries": [
+        "Phantom Kunai Charge - Butterfly - Parent"
+      ]
+    },
+    {
+      "ID": 107003150,
+      "Entries": [
+        "Phantom Kunai - Throw 1"
+      ]
+    },
+    {
+      "ID": 107003160,
+      "Entries": [
+        "Phantom Kunai - Throw 2"
+      ]
+    },
+    {
+      "ID": 107003170,
+      "Entries": [
+        "Phantom Kunai - Butterfly Parent"
+      ]
+    },
+    {
+      "ID": 107004100,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004101,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004102,
+      "Entries": [
+        "Sen Throw Charge - Little Money"
+      ]
+    },
+    {
+      "ID": 107004103,
+      "Entries": [
+        "Sen Throw Charge - Some Money"
+      ]
+    },
+    {
+      "ID": 107004104,
+      "Entries": [
+        "Sen Throw Charge - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 107004110,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004111,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004112,
+      "Entries": [
+        "Sen Throw - Little Money"
+      ]
+    },
+    {
+      "ID": 107004113,
+      "Entries": [
+        "Sen Throw - Some Money"
+      ]
+    },
+    {
+      "ID": 107004114,
+      "Entries": [
+        "Sen Throw - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 107004150,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004151,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004152,
+      "Entries": [
+        "Sen Throw Charge - Little Money"
+      ]
+    },
+    {
+      "ID": 107004153,
+      "Entries": [
+        "Sen Throw Charge - Some Money"
+      ]
+    },
+    {
+      "ID": 107004154,
+      "Entries": [
+        "Sen Throw Charge - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 107004160,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004161,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 107004162,
+      "Entries": [
+        "Sen Throw - Little Money"
+      ]
+    },
+    {
+      "ID": 107004163,
+      "Entries": [
+        "Sen Throw - Some Money"
+      ]
+    },
+    {
+      "ID": 107004164,
+      "Entries": [
+        "Sen Throw - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 107005100,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107005110,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 107005150,
+      "Entries": [
+        "Lazulite Shuriken - Throw 1"
+      ]
+    },
+    {
+      "ID": 107005160,
+      "Entries": [
+        "Lazulite Shuriken - Throw 2"
+      ]
+    },
+    {
+      "ID": 107100100,
+      "Entries": [
+        "Firecracker - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107100110,
+      "Entries": [
+        "Firecracker Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107100120,
+      "Entries": [
+        "Firecracker - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107100130,
+      "Entries": [
+        "Firecracker Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107100150,
+      "Entries": [
+        "Firecracker - Parent"
+      ]
+    },
+    {
+      "ID": 107100160,
+      "Entries": [
+        "Firecracker Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 107100184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107100190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107100191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107100192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107100193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107100195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107100196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107100290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107100295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107102100,
+      "Entries": [
+        "Long Spark - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107102110,
+      "Entries": [
+        "Long Spark Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107102120,
+      "Entries": [
+        "Long Spark - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107102130,
+      "Entries": [
+        "Long Spark Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107102150,
+      "Entries": [
+        "Long Spark - Parent"
+      ]
+    },
+    {
+      "ID": 107102160,
+      "Entries": [
+        "Long Spark Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 107103100,
+      "Entries": [
+        "Purple Fume Spark - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107103110,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107103120,
+      "Entries": [
+        "Purple Fume Spark - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107103130,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 107103150,
+      "Entries": [
+        "Purple Fume Spark - Parent"
+      ]
+    },
+    {
+      "ID": 107103160,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 107200100,
+      "Entries": [
+        "Flame Vent Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107200110,
+      "Entries": [
+        "Flame Vent - Normal"
+      ]
+    },
+    {
+      "ID": 107200120,
+      "Entries": [
+        "Flame Vent - Aerial"
+      ]
+    },
+    {
+      "ID": 107200130,
+      "Entries": [
+        "Flame Vent - Flamethrower Start"
+      ]
+    },
+    {
+      "ID": 107200131,
+      "Entries": [
+        "Flame Vent - Flamethrower Loop"
+      ]
+    },
+    {
+      "ID": 107200140,
+      "Entries": [
+        "Flame Vent - Dummy for Living Force"
+      ]
+    },
+    {
+      "ID": 107200184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107200190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107200191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107200192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107200193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107200195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107200196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107200290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107200295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107200297,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107200999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 107203100,
+      "Entries": [
+        "Lazulite Sacred Flame - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107203110,
+      "Entries": [
+        "Lazulite Sacred Flame - Normal"
+      ]
+    },
+    {
+      "ID": 107203120,
+      "Entries": [
+        "Lazulite Sacred Flame - Aerial"
+      ]
+    },
+    {
+      "ID": 107203130,
+      "Entries": [
+        "Lazulite Sacred Flame - Flamethrower Start"
+      ]
+    },
+    {
+      "ID": 107203131,
+      "Entries": [
+        "Lazulite Sacred Flame - Flamethrower Loop"
+      ]
+    },
+    {
+      "ID": 107203140,
+      "Entries": [
+        "Lazulite Sacred Flame - Dummy for Living Force"
+      ]
+    },
+    {
+      "ID": 107203292,
+      "Entries": [
+        "Lazulite Sacred Flame - Far reaching Anti-apparition"
+      ]
+    },
+    {
+      "ID": 107300100,
+      "Entries": [
+        "Axe - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107300101,
+      "Entries": [
+        "Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107300102,
+      "Entries": [
+        "Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107300110,
+      "Entries": [
+        "Axe - Normal"
+      ]
+    },
+    {
+      "ID": 107300121,
+      "Entries": [
+        "Axe - Aerial"
+      ]
+    },
+    {
+      "ID": 107300122,
+      "Entries": [
+        "Axe - Aerial Loop / Landing"
+      ]
+    },
+    {
+      "ID": 107300184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107300190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107300191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107300192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107300193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107300195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107300196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107300290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107300295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107302100,
+      "Entries": [
+        "Sparking Axe - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107302101,
+      "Entries": [
+        "Sparking Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107302102,
+      "Entries": [
+        "Sparking Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107302110,
+      "Entries": [
+        "Sparking Axe - Normal"
+      ]
+    },
+    {
+      "ID": 107302121,
+      "Entries": [
+        "Sparking Axe - Aerial"
+      ]
+    },
+    {
+      "ID": 107302122,
+      "Entries": [
+        "Sparking Axe - Aerial Loop / Landing"
+      ]
+    },
+    {
+      "ID": 107302130,
+      "Entries": [
+        "Sparking Axe - Explosion"
+      ]
+    },
+    {
+      "ID": 107302297,
+      "Entries": [
+        "Sparking Axe - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107303100,
+      "Entries": [
+        "Lazulite Axe - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107303101,
+      "Entries": [
+        "Lazulite Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107303102,
+      "Entries": [
+        "Lazulite Axe - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107303110,
+      "Entries": [
+        "Lazulite Axe - Normal"
+      ]
+    },
+    {
+      "ID": 107303121,
+      "Entries": [
+        "Lazulite Axe - Aerial"
+      ]
+    },
+    {
+      "ID": 107303122,
+      "Entries": [
+        "Lazulite Axe - Aerial Loop / Landing"
+      ]
+    },
+    {
+      "ID": 107303130,
+      "Entries": [
+        "Lazulite Axe - Explosion"
+      ]
+    },
+    {
+      "ID": 107303140,
+      "Entries": [
+        "Lazulite Axe - Snap Seed Effect"
+      ]
+    },
+    {
+      "ID": 107400184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107400190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107400191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107400192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107400193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107400195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107400196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107400290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107400295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107400999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 107402100,
+      "Entries": [
+        "Great Feather Mist Raven - Activation Parent"
+      ]
+    },
+    {
+      "ID": 107402297,
+      "Entries": [
+        "Great Feather Mist Raven - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107500100,
+      "Entries": [
+        "Sabimaru - Hit 1"
+      ]
+    },
+    {
+      "ID": 107500102,
+      "Entries": [
+        "Sabimaru - Hit 3"
+      ]
+    },
+    {
+      "ID": 107500104,
+      "Entries": [
+        "Sabimaru - Hit 5"
+      ]
+    },
+    {
+      "ID": 107500105,
+      "Entries": [
+        "Sabimaru - Hit 6"
+      ]
+    },
+    {
+      "ID": 107500110,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 1"
+      ]
+    },
+    {
+      "ID": 107500111,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 2"
+      ]
+    },
+    {
+      "ID": 107500112,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 3"
+      ]
+    },
+    {
+      "ID": 107500113,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 4"
+      ]
+    },
+    {
+      "ID": 107500114,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 5"
+      ]
+    },
+    {
+      "ID": 107500115,
+      "Entries": [
+        "Improved Sabimaru Follow-up - Hit 6"
+      ]
+    },
+    {
+      "ID": 107500140,
+      "Entries": [
+        "Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107500141,
+      "Entries": [
+        "Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107500184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107500190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107500191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107500192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107500193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107500195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107500196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107500290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107500295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107502100,
+      "Entries": [
+        "Piercing Sabimaru - Hit 1"
+      ]
+    },
+    {
+      "ID": 107502102,
+      "Entries": [
+        "Piercing Sabimaru - Hit 3"
+      ]
+    },
+    {
+      "ID": 107502104,
+      "Entries": [
+        "Piercing Sabimaru - Hit 5"
+      ]
+    },
+    {
+      "ID": 107502105,
+      "Entries": [
+        "Piercing Sabimaru - Hit 6"
+      ]
+    },
+    {
+      "ID": 107502110,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 1"
+      ]
+    },
+    {
+      "ID": 107502111,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 3"
+      ]
+    },
+    {
+      "ID": 107502112,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 3"
+      ]
+    },
+    {
+      "ID": 107502113,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 4"
+      ]
+    },
+    {
+      "ID": 107502114,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 5"
+      ]
+    },
+    {
+      "ID": 107502115,
+      "Entries": [
+        "Piercing Sabimaru Follow-up - Hit 6"
+      ]
+    },
+    {
+      "ID": 107502140,
+      "Entries": [
+        "Piercing Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107502141,
+      "Entries": [
+        "Piercing Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107503100,
+      "Entries": [
+        "Lazulite Sabimaru - Hit 1"
+      ]
+    },
+    {
+      "ID": 107503102,
+      "Entries": [
+        "Lazulite Sabimaru - Hit 3"
+      ]
+    },
+    {
+      "ID": 107503104,
+      "Entries": [
+        "Lazulite Sabimaru - Hit 5"
+      ]
+    },
+    {
+      "ID": 107503105,
+      "Entries": [
+        "Lazulite Sabimaru - Hit 6"
+      ]
+    },
+    {
+      "ID": 107503110,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 1"
+      ]
+    },
+    {
+      "ID": 107503111,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 2"
+      ]
+    },
+    {
+      "ID": 107503112,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 3"
+      ]
+    },
+    {
+      "ID": 107503113,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 4"
+      ]
+    },
+    {
+      "ID": 107503114,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 5"
+      ]
+    },
+    {
+      "ID": 107503115,
+      "Entries": [
+        "Lazulite Sabimaru Follow-up - Hit 6"
+      ]
+    },
+    {
+      "ID": 107503140,
+      "Entries": [
+        "Lazulite Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107503141,
+      "Entries": [
+        "Lazulite Sabimaru - Aerial - Hit 1"
+      ]
+    },
+    {
+      "ID": 107503150,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 107503151,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 107503152,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 107600100,
+      "Entries": [
+        "Loaded Umbrella Guard"
+      ]
+    },
+    {
+      "ID": 107600200,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 1"
+      ]
+    },
+    {
+      "ID": 107600210,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 2"
+      ]
+    },
+    {
+      "ID": 107600211,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 2 SFX"
+      ]
+    },
+    {
+      "ID": 107600220,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 3"
+      ]
+    },
+    {
+      "ID": 107600221,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 3 SFX"
+      ]
+    },
+    {
+      "ID": 107600240,
+      "Entries": [
+        "Projected Force - Umbrella"
+      ]
+    },
+    {
+      "ID": 107600241,
+      "Entries": [
+        "Projected Force - Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 107600242,
+      "Entries": [
+        "Projected Force - Poison Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 107600243,
+      "Entries": [
+        "Projected Force - Lifesteal Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 107600244,
+      "Entries": [
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Orange Wind Enchantment "
+      ]
+    },
+    {
+      "ID": 107600245,
+      "Entries": [
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Gold Wind Enchantment "
+      ]
+    },
+    {
+      "ID": 107600270,
+      "Entries": [
+        "Suzaku's Lotus Umbrella Weapon Effect"
+      ]
+    },
+    {
+      "ID": 107600271,
+      "Entries": [
+        "Phoenix's Lilac Umbrella Weapon Effect"
+      ]
+    },
+    {
+      "ID": 107600290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107600295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107600999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 107602297,
+      "Entries": [
+        "Suzaku's Lotus Umbrella - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107603292,
+      "Entries": [
+        "Phoenix's Lilac Umbrella - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 107603293,
+      "Entries": [
+        "Phoenix's Lilac Umbrella - Anti-apparition far reach"
+      ]
+    },
+    {
+      "ID": 107700100,
+      "Entries": [
+        "Divine Abduction - Wind Collect"
+      ]
+    },
+    {
+      "ID": 107700101,
+      "Entries": [
+        "Divine Abduction Attack (1 -> 0 charges)"
+      ]
+    },
+    {
+      "ID": 107700110,
+      "Entries": [
+        "Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 107700120,
+      "Entries": [
+        "Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 107700140,
+      "Entries": [
+        "Divine Abduction - Living Force Dummy"
+      ]
+    },
+    {
+      "ID": 107700184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107700190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107700191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107700192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107700193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107700195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107700196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107701100,
+      "Entries": [
+        "Double Divine Abduction - Wind Collect"
+      ]
+    },
+    {
+      "ID": 107701101,
+      "Entries": [
+        "Double Divine Abduction Attack (2 -> 1 charges)"
+      ]
+    },
+    {
+      "ID": 107701110,
+      "Entries": [
+        "Double Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 107701111,
+      "Entries": [
+        "Double Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 107701120,
+      "Entries": [
+        "Double Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 107701121,
+      "Entries": [
+        "Double Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 107702100,
+      "Entries": [
+        "Golden Vortex - Wind Collect"
+      ]
+    },
+    {
+      "ID": 107702101,
+      "Entries": [
+        "Golden Vortex Attack (2 -> 1 charges)"
+      ]
+    },
+    {
+      "ID": 107702110,
+      "Entries": [
+        "Golden Vortex - Turn"
+      ]
+    },
+    {
+      "ID": 107702111,
+      "Entries": [
+        "Golden Vortex - Turn"
+      ]
+    },
+    {
+      "ID": 107702120,
+      "Entries": [
+        "Golden Vortex - Wind Gather"
+      ]
+    },
+    {
+      "ID": 107702121,
+      "Entries": [
+        "Golden Vortex - Wind Gather"
+      ]
+    },
+    {
+      "ID": 107702140,
+      "Entries": [
+        "Golden Vortex - Living Force Dummy"
+      ]
+    },
+    {
+      "ID": 107800100,
+      "Entries": [
+        "Spear Thrust Type - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107800101,
+      "Entries": [
+        "Spear Thrust Type - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107800102,
+      "Entries": [
+        "Spear Thrust Type - Single Thrust / Charge Final - Tip"
+      ]
+    },
+    {
+      "ID": 107800103,
+      "Entries": [
+        "Spear Thrust Type / Normal - Single Thrust / Charge Final - Middle"
+      ]
+    },
+    {
+      "ID": 107800104,
+      "Entries": [
+        "Spear Thrust Type / Normal - Single Thrust / Charge Final - Root"
+      ]
+    },
+    {
+      "ID": 107800105,
+      "Entries": [
+        "Spear Thrust Type - Single Thrust / Charge Final - Tip"
+      ]
+    },
+    {
+      "ID": 107800106,
+      "Entries": [
+        "Spear Thrust Type / Normal - Single Thrust / Charge Final - Middle"
+      ]
+    },
+    {
+      "ID": 107800107,
+      "Entries": [
+        "Spear Thrust Type / Normal - Single Thrust / Charge Final - Root"
+      ]
+    },
+    {
+      "ID": 107800110,
+      "Entries": [
+        "Spear Thrust Type / Normal - Pull - Beginning"
+      ]
+    },
+    {
+      "ID": 107800115,
+      "Entries": [
+        "Spear Thrust Type / Normal - Pull - Tip"
+      ]
+    },
+    {
+      "ID": 107800116,
+      "Entries": [
+        "Spear Thrust Type / Normal - Middle"
+      ]
+    },
+    {
+      "ID": 107800117,
+      "Entries": [
+        "Spear Thrust Type / Normal - Root"
+      ]
+    },
+    {
+      "ID": 107800184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107800190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107800191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107800192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107800193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107800195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107800196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107800290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 107800295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107802100,
+      "Entries": [
+        "Spear Cleave Type - Charge - Tip"
+      ]
+    },
+    {
+      "ID": 107802101,
+      "Entries": [
+        "Spear Cleave Type - Charge - Middle"
+      ]
+    },
+    {
+      "ID": 107802102,
+      "Entries": [
+        "Spear Cleave Type - Charge Final - Root"
+      ]
+    },
+    {
+      "ID": 107802105,
+      "Entries": [
+        "Spear Cleave Type - Single Thrust - Tip"
+      ]
+    },
+    {
+      "ID": 107802106,
+      "Entries": [
+        "Spear Cleave Type - Single Thrust - Middle"
+      ]
+    },
+    {
+      "ID": 107802107,
+      "Entries": [
+        "Spear Cleave Type - Single Thrust - Root"
+      ]
+    },
+    {
+      "ID": 107802110,
+      "Entries": [
+        "Spear Cleave Type - Pull - Beginning"
+      ]
+    },
+    {
+      "ID": 107802115,
+      "Entries": [
+        "Spear Cleave Type - Pull - Tip"
+      ]
+    },
+    {
+      "ID": 107802116,
+      "Entries": [
+        "Spear Cleave Type - Pull - Middle"
+      ]
+    },
+    {
+      "ID": 107802117,
+      "Entries": [
+        "Spear Cleave Type - Pull - Root"
+      ]
+    },
+    {
+      "ID": 107803100,
+      "Entries": [
+        "Spiral Spear - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 107803101,
+      "Entries": [
+        "Spiral Spear - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 107803102,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Tip"
+      ]
+    },
+    {
+      "ID": 107803103,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Middle"
+      ]
+    },
+    {
+      "ID": 107803104,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Root"
+      ]
+    },
+    {
+      "ID": 107803105,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Tip"
+      ]
+    },
+    {
+      "ID": 107803106,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Middle"
+      ]
+    },
+    {
+      "ID": 107803107,
+      "Entries": [
+        "Spiral Spear - Single Thrust / Charge Final - Root"
+      ]
+    },
+    {
+      "ID": 107803110,
+      "Entries": [
+        "Spiral Spear - Pull - Beginning"
+      ]
+    },
+    {
+      "ID": 107803115,
+      "Entries": [
+        "Spiral Spear - Pull - Tip"
+      ]
+    },
+    {
+      "ID": 107803116,
+      "Entries": [
+        "Spiral Spear - Pull - Middle"
+      ]
+    },
+    {
+      "ID": 107803117,
+      "Entries": [
+        "Spiral Spear - Pull - Root"
+      ]
+    },
+    {
+      "ID": 107804100,
+      "Entries": [
+        "Leaping Flame - Charge - Tip"
+      ]
+    },
+    {
+      "ID": 107804101,
+      "Entries": [
+        "Leaping Flame - Charge - Middle"
+      ]
+    },
+    {
+      "ID": 107804102,
+      "Entries": [
+        "Leaping Flame - Charge - Root"
+      ]
+    },
+    {
+      "ID": 107804105,
+      "Entries": [
+        "Leaping Flame - Single Thrust - Tip"
+      ]
+    },
+    {
+      "ID": 107804106,
+      "Entries": [
+        "Leaping Flame - Single Thrust - Middle"
+      ]
+    },
+    {
+      "ID": 107804107,
+      "Entries": [
+        "Leaping Flame - Single Thrust - Root"
+      ]
+    },
+    {
+      "ID": 107804110,
+      "Entries": [
+        "Leaping Flame - Pull - Beginning"
+      ]
+    },
+    {
+      "ID": 107804115,
+      "Entries": [
+        "Leaping Flame - Pull - Tip"
+      ]
+    },
+    {
+      "ID": 107804116,
+      "Entries": [
+        "Leaping Flame - Pull - Middle"
+      ]
+    },
+    {
+      "ID": 107804117,
+      "Entries": [
+        "Leaping Flame - Pull - Root"
+      ]
+    },
+    {
+      "ID": 107804297,
+      "Entries": [
+        "Leaping Flame - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 107900100,
+      "Entries": [
+        "Finger Whistle No Lock - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107900101,
+      "Entries": [
+        "Finger Whistle No Lock - Parent"
+      ]
+    },
+    {
+      "ID": 107900110,
+      "Entries": [
+        "Finger Whistle Lock - Charge"
+      ]
+    },
+    {
+      "ID": 107900111,
+      "Entries": [
+        "Finger Whistle Lock - Charge Release"
+      ]
+    },
+    {
+      "ID": 107900112,
+      "Entries": [
+        "Finger Whistle Lock - Hanging"
+      ]
+    },
+    {
+      "ID": 107900114,
+      "Entries": [
+        "Finger Whistle Lock - Peeping Left"
+      ]
+    },
+    {
+      "ID": 107900115,
+      "Entries": [
+        "Finger Whistle Lock - Peeping Right"
+      ]
+    },
+    {
+      "ID": 107900175,
+      "Entries": [
+        "Finger Whistle - Living Force - Charge Bullet"
+      ]
+    },
+    {
+      "ID": 107900176,
+      "Entries": [
+        "Finger Whistle - Living Force - Bullet"
+      ]
+    },
+    {
+      "ID": 107900184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107900190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107900191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107900192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 107900193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 107900195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107900196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107900999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 107902100,
+      "Entries": [
+        "Malcontent No Lock - Charge Parent"
+      ]
+    },
+    {
+      "ID": 107902101,
+      "Entries": [
+        "Malcontent No Lock - Parent"
+      ]
+    },
+    {
+      "ID": 107902110,
+      "Entries": [
+        "Malcontent Lock - Charge"
+      ]
+    },
+    {
+      "ID": 107902111,
+      "Entries": [
+        "Malcontent Lock - Charge Release"
+      ]
+    },
+    {
+      "ID": 107902112,
+      "Entries": [
+        "Malcontent Lock - Hanging"
+      ]
+    },
+    {
+      "ID": 107902114,
+      "Entries": [
+        "Malcontent Lock - Peeping Left"
+      ]
+    },
+    {
+      "ID": 107902115,
+      "Entries": [
+        "Malcontent Lock - Peeping Right"
+      ]
+    },
+    {
+      "ID": 107902175,
+      "Entries": [
+        "Malcontent - Living Force - Charge Bullet"
+      ]
+    },
+    {
+      "ID": 107902176,
+      "Entries": [
+        "Malcontent - Living Force - Bullet"
+      ]
+    },
+    {
+      "ID": 109500000,
+      "Entries": [
+        "Grappling Hook Stab"
+      ]
+    },
+    {
+      "ID": 150100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150200010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150300000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150300010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150400010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

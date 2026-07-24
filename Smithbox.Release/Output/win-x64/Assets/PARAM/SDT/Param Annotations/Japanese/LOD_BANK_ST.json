@@ -1,0 +1,88 @@
+{
+  "Param": "LOD_BANK_ST",
+  "Type": "LOD_BANK_ST",
+  "Name": "LOD_BANK_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "LODレベル0-1境界距離[m]",
+      "Description": "切り替わる中心。マイナス値の場合は、LOD1、LOD2に切り替わらない。"
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "LODレベル0-1遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "LODレベル1-2境界距離[m]",
+      "Description": "切り替わる中心。マイナス値の場合は、LOD2に切り替わらない。"
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "LODレベル1-2遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "textureLod",
+      "Name": "テクスチャLOD",
+      "Description": "テクスチャLOD(0:無効, 1:有効)"
+    },
+    {
+      "Field": "draw_BorderDist",
+      "Name": "描画境界距離[m]",
+      "Description": "切り替わる中心。マイナス値の場合は、常に描画します。"
+    },
+    {
+      "Field": "draw_PlayDist",
+      "Name": "描画遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "shadowDraw_BorderDist",
+      "Name": "影描画境界距離[m]",
+      "Description": "切り替わる中心。マイナス値の場合は、常に描画します。"
+    },
+    {
+      "Field": "shadowDraw_PlayDist",
+      "Name": "影描画遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "motionBlur_BorderDist",
+      "Name": "モーションブラー描画境界距離[m]",
+      "Description": "切り替え距離。マイナス値の場合は、常に描画します。"
+    },
+    {
+      "Field": "motionBlur_PlayDist",
+      "Name": "モーションブラー描画遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "type",
+      "Name": "タイプ",
+      "Description": "タイプ"
+    },
+    {
+      "Field": "lodCrossFadeEnable",
+      "Name": "LOD間のクロスフェード有効",
+      "Description": "1でクロスフェード有効。0で無効。"
+    },
+    {
+      "Field": "dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "lodCrossFadeTime",
+      "Name": "LOD間のクロスフェード時間[秒]",
+      "Description": "「LOD間のクロスフェード有効」が有効な場合に使用されるパラメータです。0.0秒の場合、時間ではなく距離でクロスフェードを行います。"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

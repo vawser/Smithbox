@@ -1,0 +1,44 @@
+{
+  "Name": "BehaviorParam",
+  "Groups": [
+    {
+      "Key": "Variation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Variation"
+        }
+      ],
+      "Fields": [
+        "variationId",
+        "behaviorJudgeId"
+      ]
+    },
+    {
+      "Key": "Category",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Category"
+        }
+      ],
+      "Fields": [
+        "category",
+        "ezStateBehaviorType_old"
+      ]
+    },
+    {
+      "Key": "Reference",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reference"
+        }
+      ],
+      "Fields": [
+        "refId",
+        "refType"
+      ]
+    }
+  ]
+}

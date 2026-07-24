@@ -1,0 +1,88 @@
+{
+  "Param": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
+  "Type": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
+  "Name": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "unk_01",
+      "Name": "unk_01",
+      "Description": ""
+    },
+    {
+      "Field": "unk_02",
+      "Name": "unk_02",
+      "Description": ""
+    },
+    {
+      "Field": "unk_03",
+      "Name": "unk_03",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04",
+      "Name": "unk_04",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05",
+      "Name": "unk_05",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06",
+      "Name": "unk_06",
+      "Description": ""
+    },
+    {
+      "Field": "unk_07",
+      "Name": "unk_07",
+      "Description": ""
+    },
+    {
+      "Field": "unk_08",
+      "Name": "unk_08",
+      "Description": ""
+    },
+    {
+      "Field": "rank",
+      "Name": "rank",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_1",
+      "Name": "itemLotId_1",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_2",
+      "Name": "itemLotId_2",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_3",
+      "Name": "itemLotId_3",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_4",
+      "Name": "itemLotId_4",
+      "Description": ""
+    },
+    {
+      "Field": "unk_14",
+      "Name": "unk_14",
+      "Description": ""
+    },
+    {
+      "Field": "unk_15",
+      "Name": "unk_15",
+      "Description": ""
+    }
+  ]
+}

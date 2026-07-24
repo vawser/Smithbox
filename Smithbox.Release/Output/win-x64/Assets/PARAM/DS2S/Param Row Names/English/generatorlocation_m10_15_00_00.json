@@ -1,0 +1,395 @@
+{
+  "Name": "generatorlocation_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "[GEN:90] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[GEN:91] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[GEN:160] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "[GEN:161] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[GEN:205] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "[GEN:530] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "[GEN:531] Aslatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "[GEN:532] Painting Guardian Phantom"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "[GEN:540] Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[GEN:800] Guardian Dragon [Boss]"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Kobold"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[GEN:1011] Kobold"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[GEN:1012] Kobold"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "[GEN:1013] Kobold"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "[GEN:1014] Kobold"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Basilisk"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 1850,
+      "Entries": [
+        "[GEN:1850] Mimic"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Ogre"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Ogre"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Basilisk"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "[GEN:3220] Basilisk"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "[GEN:3801] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 3802,
+      "Entries": [
+        "[GEN:3802] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[GEN:4030] Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[GEN:4060] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        "[GEN:4061] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 4062,
+      "Entries": [
+        "[GEN:4062] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 4063,
+      "Entries": [
+        "[GEN:4063] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Dragon Skeleton"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Ogre"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Ogre"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Forlorn"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Forlorn"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Forlorn"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Forlorn"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "[GEN:7100] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "[GEN:7101] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "[GEN:7102] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[GEN:8010] Mimic"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "[GEN:8011] Mimic"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "[GEN:8012] Mimic"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "[GEN:8013] Mimic"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "[GEN:8014] Mimic"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[GEN:8020] Undead Aberration"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "[GEN:8030] Ogre"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "[GEN:8040] Basilisk"
+      ]
+    },
+    {
+      "ID": 8041,
+      "Entries": [
+        "[GEN:8041] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8042,
+      "Entries": [
+        "[GEN:8042] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8043,
+      "Entries": [
+        "[GEN:8043] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[GEN:8500] Prowling Magus"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "[GEN:8510] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8511,
+      "Entries": [
+        "[GEN:8511] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "[GEN:8600] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "[GEN:8601] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Looking Glass Phantom"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] Looking Glass Phantom"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "[GEN:9004] Looking Glass Phantom"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[GEN:9010] Giant Basilisk"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "[GEN:9100] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "[GEN:9101] Hunting Dog"
+      ]
+    }
+  ]
+}

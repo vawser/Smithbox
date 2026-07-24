@@ -1,0 +1,14 @@
+{
+  "id": "813",
+  "name": "Felicia the Brave",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

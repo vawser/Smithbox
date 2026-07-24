@@ -1,0 +1,47 @@
+{
+  "Key": "CHR_EMISSIVE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_EMISSIVE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0 Valid"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 Valid"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0 and 1 Valid"
+        }
+      ]
+    }
+  ]
+}

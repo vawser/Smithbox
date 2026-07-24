@@ -1,0 +1,22 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Render Groups",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Render Groups are used by the game to determine what should render and what shouldn't.",
+        "They consist of Display Groups and Draw Groups.",
+        "When a Display Group is active, Map Objects with that Draw Group will render.",
+        "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.",
+        "CollisionName references will be targeted by Smithbox when using 'Set Selection'/'Get Selection' instead of your actual selection.",
+        "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.",
+        "Color indicates which Render Groups selected Map Object is using.",
+        "[Highlight@Red]: Selection uses this Display Group.",
+        "[Highlight@Green]: Selection uses this Draw Group.",
+        "[Highlight@Yellow]: Selection uses both."
+    ]
+}

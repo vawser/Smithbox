@@ -1,0 +1,14 @@
+{
+  "id": "511",
+  "name": "Imperious Knight",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

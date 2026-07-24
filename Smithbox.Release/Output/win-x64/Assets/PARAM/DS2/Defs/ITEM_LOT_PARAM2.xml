@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>ITEM_LOT_PARAM2</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 lotDropType">
+            <DisplayName>抽選ドロップタイプ</DisplayName>
+            <Enum>ITEM_LOT_DROP_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 lotCount = 1">
+            <DisplayName>抽選回数</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="dummy8 padding[2]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>60091</SortID>
+        </Field>
+        <Field Def="u8 itemNum1">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20000</SortID>
+        </Field>
+        <Field Def="u8 itemNum2">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20010</SortID>
+        </Field>
+        <Field Def="u8 itemNum3">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20020</SortID>
+        </Field>
+        <Field Def="u8 itemNum4">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20030</SortID>
+        </Field>
+        <Field Def="u8 itemNum5">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20040</SortID>
+        </Field>
+        <Field Def="u8 itemNum6">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20050</SortID>
+        </Field>
+        <Field Def="u8 itemNum7">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20060</SortID>
+        </Field>
+        <Field Def="u8 itemNum8">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20070</SortID>
+        </Field>
+        <Field Def="u8 itemNum9">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20080</SortID>
+        </Field>
+        <Field Def="u8 itemNum10">
+            <DisplayName>個数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20090</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel1">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30000</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel2">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30010</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel3">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30020</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel4">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30030</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel5">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30040</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel6">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30050</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel7">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30060</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel8">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30070</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel9">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30080</SortID>
+        </Field>
+        <Field Def="u8 reinforceLevel10">
+            <DisplayName>強化レベル</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>30090</SortID>
+        </Field>
+        <Field Def="u8 attribute1">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40000</SortID>
+        </Field>
+        <Field Def="u8 attribute2">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40010</SortID>
+        </Field>
+        <Field Def="u8 attribute3">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40020</SortID>
+        </Field>
+        <Field Def="u8 attribute4">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40030</SortID>
+        </Field>
+        <Field Def="u8 attribute5">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40040</SortID>
+        </Field>
+        <Field Def="u8 attribute6">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40050</SortID>
+        </Field>
+        <Field Def="u8 attribute7">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40060</SortID>
+        </Field>
+        <Field Def="u8 attribute8">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40070</SortID>
+        </Field>
+        <Field Def="u8 attribute9">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40080</SortID>
+        </Field>
+        <Field Def="u8 attribute10">
+            <DisplayName>属性</DisplayName>
+            <Enum>ITEM_LOT_ATTR_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40090</SortID>
+        </Field>
+        <Field Def="u8 bExFlag1">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60000</SortID>
+        </Field>
+        <Field Def="u8 bExFlag2">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60010</SortID>
+        </Field>
+        <Field Def="u8 bExFlag3">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60020</SortID>
+        </Field>
+        <Field Def="u8 bExFlag4">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60030</SortID>
+        </Field>
+        <Field Def="u8 bExFlag5">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60040</SortID>
+        </Field>
+        <Field Def="u8 bExFlag6">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60050</SortID>
+        </Field>
+        <Field Def="u8 bExFlag7">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60060</SortID>
+        </Field>
+        <Field Def="u8 bExFlag8">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60070</SortID>
+        </Field>
+        <Field Def="u8 bExFlag9">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60080</SortID>
+        </Field>
+        <Field Def="u8 bExFlag10">
+            <DisplayName>【通常】再入手可能/【確定取得】抽選終了後</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60090</SortID>
+        </Field>
+        <Field Def="u32 itemId1">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10000</SortID>
+        </Field>
+        <Field Def="u32 itemId2">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10010</SortID>
+        </Field>
+        <Field Def="u32 itemId3">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10020</SortID>
+        </Field>
+        <Field Def="u32 itemId4">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10030</SortID>
+        </Field>
+        <Field Def="u32 itemId5">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10040</SortID>
+        </Field>
+        <Field Def="u32 itemId6">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10050</SortID>
+        </Field>
+        <Field Def="u32 itemId7">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10060</SortID>
+        </Field>
+        <Field Def="u32 itemId8">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10070</SortID>
+        </Field>
+        <Field Def="u32 itemId9">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10080</SortID>
+        </Field>
+        <Field Def="u32 itemId10">
+            <DisplayName>アイテムID</DisplayName>
+            <Enum>ITEM_PARAM_ID_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10090</SortID>
+        </Field>
+        <Field Def="f32 itemWeight1">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50000</SortID>
+        </Field>
+        <Field Def="f32 itemWeight2">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50010</SortID>
+        </Field>
+        <Field Def="f32 itemWeight3">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50020</SortID>
+        </Field>
+        <Field Def="f32 itemWeight4">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50030</SortID>
+        </Field>
+        <Field Def="f32 itemWeight5">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50040</SortID>
+        </Field>
+        <Field Def="f32 itemWeight6">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50050</SortID>
+        </Field>
+        <Field Def="f32 itemWeight7">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50060</SortID>
+        </Field>
+        <Field Def="f32 itemWeight8">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50070</SortID>
+        </Field>
+        <Field Def="f32 itemWeight9">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50080</SortID>
+        </Field>
+        <Field Def="f32 itemWeight10">
+            <DisplayName>抽選重み</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>50090</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

@@ -1,0 +1,3210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THRUSTERS_PARAM_NPC_ST</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 DummyID = -1">
+      <DisplayName>ダミポリID</DisplayName>
+      <Description>SFX発生ダミポリ位置(-1:配置位置)ダミポリID。ダミポリID範囲は0～999.1000,10000の位はカテゴリ番号</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 main_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>200</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="s16 main_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="s8 main_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>900</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="dummy8 main_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19981</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>950</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>951</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="dummy8 main_pad1[1]">
+      <SortID>19982</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="f32 main_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>980</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="s32 subFront_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1200</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="s16 subFront_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1400</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1800</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="s8 subFront_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1900</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 subFront_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19983</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1950</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1951</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 subFront_pad1[1]">
+      <SortID>19984</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="f32 subFront_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1980</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="s32 subBack_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2200</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="s16 subBack_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2300</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2700</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2400</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2800</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="s8 subBack_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2900</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 subBack_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19985</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>2950</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>2951</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 subBack_pad1[1]">
+      <SortID>19986</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="f32 subBack_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2980</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="s32 subLeft_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3200</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="s16 subLeft_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3300</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3700</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3400</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3500</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3600</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3800</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="s8 subLeft_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3900</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 subLeft_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19987</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>3950</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>3951</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 subLeft_pad1[1]">
+      <SortID>19988</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="f32 subLeft_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>3980</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="s32 subRight_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4200</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="s16 subRight_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4300</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4700</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4400</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4500</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4600</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4800</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="s8 subRight_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4900</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 subRight_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19989</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>4950</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>4951</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 subRight_pad1[1]">
+      <SortID>19990</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="f32 subRight_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4980</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="s32 qbFront_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>5200</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="s16 qbFront_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>5300</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5700</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5400</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_IsFollowDmyPoly:1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5500</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5600</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5800</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="s8 qbFront_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5900</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbFront_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19991</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>5950</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>5951</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbFront_pad1[1]">
+      <SortID>19992</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="f32 qbFront_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5980</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="s32 qbBack_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>6200</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="s16 qbBack_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6300</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6700</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6400</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_IsFollowDmyPoly:1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6500</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6600</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6800</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="s8 qbBack_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>6900</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbBack_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19993</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>6950</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>6951</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbBack_pad1[1]">
+      <SortID>19994</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="f32 qbBack_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6980</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="s32 qbLeft_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>7200</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="s16 qbLeft_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7300</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7700</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7400</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_IsFollowDmyPoly:1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7500</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7600</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7800</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="s8 qbLeft_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7900</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbLeft_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19995</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>7950</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>7951</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbLeft_pad1[1]">
+      <SortID>19996</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="f32 qbLeft_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7980</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="s32 qbRight_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8200</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="s16 qbRight_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8300</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8700</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8400</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_IsFollowDmyPoly:1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8500</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8600</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8800</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="s8 qbRight_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>8900</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbRight_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19997</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>8950</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>8951</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbRight_pad1[1]">
+      <SortID>19998</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="f32 qbRight_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>8980</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="s32 lift_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1120</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="s16 lift_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1130</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1170</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1140</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1150</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1160</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1180</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="s8 lift_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1190</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="dummy8 lift_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>19999</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1195</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1196</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="dummy8 lift_pad1[1]">
+      <SortID>20000</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="f32 lift_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1198</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="s32 unique01_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10200</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="s16 unique01_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10300</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10700</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10400</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10500</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10600</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10800</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="s8 unique01_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10900</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique01_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20001</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>10950</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="u8 unique01_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>10951</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique01_pad1[1]">
+      <SortID>20002</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="f32 unique01_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10980</SortID>
+      <UnkB8>unique01</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク01</UnkC8>
+    </Field>
+    <Field Def="s32 unique02_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>11200</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="s16 unique02_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>11300</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11700</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11400</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11500</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11600</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11800</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="s8 unique02_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>11900</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique02_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20003</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>11950</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="u8 unique02_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>11951</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique02_pad1[1]">
+      <SortID>20004</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="f32 unique02_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>11980</SortID>
+      <UnkB8>unique02</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク02</UnkC8>
+    </Field>
+    <Field Def="s32 unique03_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>12200</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="s16 unique03_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>12300</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12700</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12400</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12500</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12600</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12800</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="s8 unique03_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>12900</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique03_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20005</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>12950</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="u8 unique03_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>12951</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique03_pad1[1]">
+      <SortID>20006</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="f32 unique03_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>12980</SortID>
+      <UnkB8>unique03</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク03</UnkC8>
+    </Field>
+    <Field Def="s32 unique04_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>13200</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="s16 unique04_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>13300</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13700</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13400</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13500</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13600</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13800</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="s8 unique04_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>13900</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique04_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20007</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>13950</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="u8 unique04_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>13951</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique04_pad1[1]">
+      <SortID>20008</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="f32 unique04_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>13980</SortID>
+      <UnkB8>unique04</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク04</UnkC8>
+    </Field>
+    <Field Def="s32 unique05_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>14200</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="s16 unique05_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14300</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14700</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14400</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14500</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14600</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14800</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="s8 unique05_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>14900</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique05_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20009</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>14950</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="u8 unique05_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>14951</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique05_pad1[1]">
+      <SortID>20010</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="f32 unique05_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>14980</SortID>
+      <UnkB8>unique05</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク05</UnkC8>
+    </Field>
+    <Field Def="s32 unique06_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>15200</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="s16 unique06_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>15300</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15700</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15400</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15500</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15600</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15800</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="s8 unique06_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>15900</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique06_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20011</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>15950</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="u8 unique06_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>15951</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique06_pad1[1]">
+      <SortID>20012</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="f32 unique06_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>15980</SortID>
+      <UnkB8>unique06</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク06</UnkC8>
+    </Field>
+    <Field Def="s32 unique07_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>16200</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="s16 unique07_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>16300</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>16700</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>16400</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>16500</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>16600</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>16800</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="s8 unique07_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>16900</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique07_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20013</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>16950</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="u8 unique07_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>16951</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique07_pad1[1]">
+      <SortID>20014</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="f32 unique07_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>16980</SortID>
+      <UnkB8>unique07</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク07</UnkC8>
+    </Field>
+    <Field Def="s32 unique08_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>17200</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="s16 unique08_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>17300</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>17700</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>17400</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>17500</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>17600</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>17800</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="s8 unique08_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>17900</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique08_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20015</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>17950</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="u8 unique08_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>17951</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique08_pad1[1]">
+      <SortID>20016</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="f32 unique08_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>17980</SortID>
+      <UnkB8>unique08</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク08</UnkC8>
+    </Field>
+    <Field Def="s32 unique09_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>18200</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="s16 unique09_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>18300</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>18700</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>18400</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>18500</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>18600</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>18800</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="s8 unique09_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>18900</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique09_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20017</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>18950</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="u8 unique09_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>18951</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique09_pad1[1]">
+      <SortID>20018</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="f32 unique09_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>18980</SortID>
+      <UnkB8>unique09</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク09</UnkC8>
+    </Field>
+    <Field Def="s32 unique10_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>19200</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="s16 unique10_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>19300</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19700</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19400</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19500</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19600</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19800</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="s8 unique10_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>19900</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique10_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20019</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>19950</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="u8 unique10_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>19951</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="dummy8 unique10_pad1[1]">
+      <SortID>20020</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="f32 unique10_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>19980</SortID>
+      <UnkB8>unique10</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ユニーク10</UnkC8>
+    </Field>
+    <Field Def="s32 brakeFront_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>9120</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="s16 brakeFront_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9130</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9170</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9140</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9150</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9160</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9180</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="s8 brakeFront_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9190</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeFront_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20021</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9195</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9196</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeFront_pad1[1]">
+      <SortID>20022</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="f32 brakeFront_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9198</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="s32 brakeBack_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>9220</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="s16 brakeBack_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9230</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9270</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9240</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9250</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9260</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9280</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="s8 brakeBack_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9290</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeBack_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20023</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9295</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9296</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeBack_pad1[1]">
+      <SortID>20024</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="f32 brakeBack_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9298</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="s32 brakeLeft_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>9320</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="s16 brakeLeft_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9330</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9370</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9340</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9350</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9360</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9380</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="s8 brakeLeft_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9390</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeLeft_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20025</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9395</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9396</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeLeft_pad1[1]">
+      <SortID>20026</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="f32 brakeLeft_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9398</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="s32 brakeRight_SFXID = -1">
+      <Description>スラスターのSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>9420</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="s16 brakeRight_SlotNO = -1">
+      <DisplayName>管理スロット番号</DisplayName>
+      <Description>-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9430</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_useRPCType:1">
+      <DisplayName>使用するRPC</DisplayName>
+      <Enum>THRUSTERS_RPC_TYPE</Enum>
+      <Description>キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9470</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_IsHorizontal:1">
+      <DisplayName>方向を維持</DisplayName>
+      <Enum>THRUSTERS_KEEP_DIRECTION_TYPE</Enum>
+      <Description>0:方向を維持する、1:水平に合わせる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9440</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_IsFollowDmyPoly:1 = 1">
+      <DisplayName>ダミポリに追従</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>ダミポリに追従させるか。0:しない、1:追従させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9450</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_IsEraseActionEnd:1 = 1">
+      <DisplayName>アクション終了時にSFXを削除</DisplayName>
+      <Enum>THRUSTERS_ON_OFF_TYPE</Enum>
+      <Description>アクション終了時にSFXを削除するか。0:しない、1:削除する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9460</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_camouFlageShow:1">
+      <DisplayName>姿隠しで消さないか</DisplayName>
+      <Enum>THRUSTERS_CAMOUFLAGE_SHOW_TYPE</Enum>
+      <Description>姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9480</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="s8 brakeRight_TurnMoveDirType:2">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラの移動方向に合わせてダミポリ向きを変更する場合に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9490</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeRight_pad:1">
+      <DisplayName>pad:3</DisplayName>
+      <SortID>20027</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9495</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>9496</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeRight_pad1[1]">
+      <SortID>20028</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="f32 brakeRight_Scale = 1">
+      <DisplayName>スケール</DisplayName>
+      <Description>SFXのスケール値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9498</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_PARAM_NPC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

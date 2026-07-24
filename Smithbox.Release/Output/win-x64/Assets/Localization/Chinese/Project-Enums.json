@@ -1,0 +1,109 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECT_Enum_ProjectType_Undefined",
+      "Text": "未定义"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DES",
+      "Text": "恶魔之魂"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS1",
+      "Text": "黑暗之魂：受死版"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS1R",
+      "Text": "黑暗之魂：重制版"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS2",
+      "Text": "黑暗之魂 II"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS2S",
+      "Text": "黑暗之魂 II：原罪学者"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS3",
+      "Text": "黑暗之魂 III"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_BB",
+      "Text": "血源诅咒"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_SDT",
+      "Text": "只狼：影逝二度"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_ER",
+      "Text": "艾尔登法环"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_AC6",
+      "Text": "装甲核心 VI：境界天火"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_NR",
+      "Text": "艾尔登法环：黑夜君临"
+    },
+
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_None",
+      "Text": "无"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Cutscenes",
+      "Text": "过场动画"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Event_Flags",
+      "Text": "事件标志"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Gparams",
+      "Text": "图形参数"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Pieces",
+      "Text": "地图部件"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Names",
+      "Text": "地图名称"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Movies",
+      "Text": "影片"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Particles",
+      "Text": "粒子"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Parts",
+      "Text": "零件"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Sounds",
+      "Text": "音效"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Talk_Scripts",
+      "Text": "对话脚本"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Time_Acts",
+      "Text": "时间动作"
+    }
+  ]
+}

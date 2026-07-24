@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GAMEDATA_UNLOCK_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 unlockType">
+      <DisplayName>タイプ</DisplayName>
+      <Enum>GAMEDATA_UNLOCK_TYPE</Enum>
+      <Description>解放条件の種別</Description>
+      <Maximum>-294967297</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 refID">
+      <DisplayName>参照ID</DisplayName>
+      <Description>解放判定用ID。タイプにより対象が異なる</Description>
+      <Maximum>-294967297</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 pad_0[8]">
+      <DisplayName>reserved</DisplayName>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

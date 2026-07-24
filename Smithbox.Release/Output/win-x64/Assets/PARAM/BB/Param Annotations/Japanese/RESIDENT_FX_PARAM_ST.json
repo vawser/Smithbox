@@ -1,0 +1,23 @@
+{
+  "Param": "RESIDENT_FX_PARAM_ST",
+  "Type": "RESIDENT_FX_PARAM_ST",
+  "Name": "RESIDENT_FX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFXID",
+      "Description": "SFXID"
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "ダミポリID",
+      "Description": " ダミポリID"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": "pad"
+    }
+  ]
+}

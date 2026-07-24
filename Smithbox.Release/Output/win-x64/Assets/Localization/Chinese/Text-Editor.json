@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_DisplayName",
+      "Text": "GetFmgDisplayName({0}): 未定义 ID '{1}'，位于 '{2}' 容器。枚举: {3}, FMG: '{4}', 来源: '{5}'。"
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_InternalName",
+      "Text": "GetFmgInternalName({0}): 未定义 ID '{1}'，位于 '{2}' 容器。枚举: {3}, FMG: '{4}', 来源: '{5}'。"
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_FmgGrouping",
+      "Text": "GetFmgInternalName({0}): 未定义 ID '{1}'，位于 '{2}' 容器。枚举: {3}, FMG: '{4}', 来源: '{5}'。"
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_DlcGrouping",
+      "Text": "{0}: {1} 未定义。"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Modified_Only",
+      "Text": "仅已修改"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Unique_Only",
+      "Text": "仅独有"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Text": "追加"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
+      "Text": "覆盖"
+    }
+  ]
+}

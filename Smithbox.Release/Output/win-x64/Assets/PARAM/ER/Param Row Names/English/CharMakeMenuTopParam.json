@@ -1,0 +1,1223 @@
+{
+  "Name": "CharMakeMenuTopParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Name"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Body Type"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Age"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Origin"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Keepsake"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Choose Base Template"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Detailed Appearance"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Age"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Voice"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Alter Skin Color"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Alter Face & Hair"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Adjust Face Template"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Bone Structure"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Form Ephasis"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Apparent Age"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Facial Aesthetic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Face Structure"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Facial Balance"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Nose Size"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Nose/Forehead Ratio"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Face Protrusion"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Vert. Face Ratio"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Facial Feature Slant"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Horiz. Face Ratio"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Forehead/Glabella"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Forehead Depth"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Forehead Protrusion"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Nose Bridge Height"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Bridge Protrusion 1"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Bridge Protrusion 2"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Nose Bridge Width"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Brow Ridge"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Brow Ridge Height"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Inner Brow Ridge"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Outer Brow Ridge"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Eyes"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Eye Position"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Eye Size"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Eye Slant"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Eye Spacing"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Nose Ridge"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Nose Ridge Depth"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Nose Ridge Length"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Nose Position"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Nose Tip Height"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Nose Protrusion"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Nose Height"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Nose Slant"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Nostrils"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Nostril Slant"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Nostril Size"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Nostril Width"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Cheeks"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Cheekbone Height"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Cheekbone Depth"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Cheekbone Width"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Cheekbone Protrusion"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Cheeks"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Lips"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Lip Shape"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Mouth Expression"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Lip Fullness"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Lip Size"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Lip Protrusion"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Lip Thickness"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Mouth"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Mouth Protrusion"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Mouth Slant"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Occlusion"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Mouth Position"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Mouth Width"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Mouth-Chin Distance"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Chin"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Chin Tip Position"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Chin Length"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Chin Protrusion"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Chin Depth"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Chin Size"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Chin Height"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Chin Width"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Jaw"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Jaw Protrusion"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Jaw Width"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Lower Jaw"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Jaw Contour"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Hair Color"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Luster (Hair)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Root Darkness (Hair)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "White Hairs (Hair)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Eyebrows"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Brows"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Brow Color"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Luster (Eyebrows)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Root Darkness (Eyebrows)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "White Hairs (Eyebrows)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Facial Hair"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Beard"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Beard Color"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Luster (Facial Hair)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Root Darkness (Facial Hair)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "White Hair (Facial Hair)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Stubble"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Eyelaches"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Eyelaches"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Eyelach Color"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Eyes"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Right Iris Size"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Right Iris Color"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Right Eye Clouding"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Right Eye Clouding Color"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Right Eye White Color"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Right Eye Position"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Left Iris Size"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Left Iris Color"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Left Eye Clouding"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Left Eye Clouding Color"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Left Eye White Color"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Left Eye Position"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Eye Alteration"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Skin Features"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Pores"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Skin Luster"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Dark Circles"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Dark Circle Color"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Cosmetics"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Eyeliner"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Eyeline Color"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Eyeshadow (Upper)"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Eyeshadow Color (Upper)"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Eyeshadow (Lower)"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Eyeshadow Color (Lower)"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Cheeks"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Cheek Color"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Lipstick"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Lipstick Color"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Tattoo/Mark/Eyepatch"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Tattoo/Mark"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Tattoo/Mark Color"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Tweak Tattoo/Mark"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Position (Vert.)"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Position (Horiz.)"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Angle"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Expansion"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Flip"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Eyepatch"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Eyepatch Color"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Similair Face"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Alter Body"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Head"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Abdomen"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Arms"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Legs"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Body Hair"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Body Hair Color"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Masculature"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Burn Marks"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Save to Favorites"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Load Favorite"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Finish"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Finish Cosmetics"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Finish Cosmetics"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

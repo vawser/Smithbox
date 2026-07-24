@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_BEHAVIOR_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 tutorialID">
+      <DisplayName>チュートリアルID</DisplayName>
+      <Description>チュートリアルパラのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 enableHelpMenu">
+      <DisplayName>ヘルプメニュー</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>ヘルプメニューの有無</Description>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[27]">
+      <DisplayName>----</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,43 @@
+{
+  "Param": "CULT_SETTING_PARAM_ST",
+  "Type": "CULT_SETTING_PARAM_ST",
+  "Name": "CULT_SETTING_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "carryGrabLength",
+      "Name": "運び受付距離",
+      "Description": "掴みおよび儀式を開始できる距離"
+    },
+    {
+      "Field": "carryGrabAngle",
+      "Name": "運び受付角度",
+      "Description": "掴みおよび儀式を開始できる角度"
+    },
+    {
+      "Field": "cultDead_GlobalFlagId",
+      "Name": "儀式死体化 初回",
+      "Description": "初回の儀式判定に使うグローバルフラグID。“-1”はフラグなしとして扱う"
+    },
+    {
+      "Field": "cultDead_Probability",
+      "Name": "儀式死体化 確率",
+      "Description": "初回以降の「儀式死体化 確率タイプ」の発生率。分子を指定、分母は\u30001000\u3000とする"
+    },
+    {
+      "Field": "cultDeadType_First",
+      "Name": "儀式死体化 初回タイプ",
+      "Description": "初回倒した時の必ず発生する儀式タイプ"
+    },
+    {
+      "Field": "cultDeadType_Probability",
+      "Name": "儀式死体化 確率タイプ",
+      "Description": "初回以降倒した時に確率で発生する儀式タイプ"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

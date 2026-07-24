@@ -1,0 +1,341 @@
+{
+  "Name": "AttackElementCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (for testing) -- デフォルト(テスト用)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test: Use weapons to thunder strength and skill -- テスト：武器で、筋力と技量を雷にする"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Molotov cocktail -- 火炎瓶"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Thunder bottle -- 雷瓶"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Holy water bottle -- 聖水瓶"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Throw knife -- 投げナイフ"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Crown stone -- 竜頭石"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Dragon body stone Lvl2 -- 竜体石Lvl2"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Weapon: Normal -- 武器：通常"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "Weapon: Holy Regen -- 武器：神聖リジェネ"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "Weapon: Luck correction -- 武器：運補正"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Weapon: Cardinal Spear -- 武器：枢機卿団の槍"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Weapon: Sullivan&#39;s Longbow -- 武器：サリヴァーンのロングボウ"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Weapon: Blue Astra Straight Sword -- 武器：青いアストラ直剣"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Magic-1x -- 魔術-等倍"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Magic-Low Magnification (0.8) -- 魔術-低倍率（0.8）"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "Magic-Low Magnification (0.87) -- 魔術-低倍率（0.87）"
+      ]
+    },
+    {
+      "ID": 20120,
+      "Entries": [
+        "Magic-Low Magnification (0.95) -- 魔術-低倍率（0.95）"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Magic-High Magnification (1.1) -- 魔術-高倍率（1.1）"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "Magic-High Magnification (1.2) -- 魔術-高倍率（1.2）"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Spell-Low Magnification (0.8) -- 呪術-低倍率(0.8)"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Magic-Rock spitting -- 呪術-岩吐き"
+      ]
+    },
+    {
+      "ID": 42060,
+      "Entries": [
+        "Miracle-Sacred Storm -- 奇跡-神聖の嵐"
+      ]
+    },
+    {
+      "ID": 42070,
+      "Entries": [
+        "Miracle-God&#39;s Wrath -- 奇跡-神の怒り"
+      ]
+    },
+    {
+      "ID": 42080,
+      "Entries": [
+        "Miracle-Unleashing Force -- 奇跡-放つフォース"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Dark wand -- 闇の杖"
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        "Dark Talisman -- 闇のタリスマン"
+      ]
+    },
+    {
+      "ID": 10010020,
+      "Entries": [
+        "Dark tin -- 闇のすず"
+      ]
+    },
+    {
+      "ID": 10010030,
+      "Entries": [
+        "Magic miracle tin -- 魔術奇跡のすず"
+      ]
+    },
+    {
+      "ID": 10041000,
+      "Entries": [
+        "Dragon&#39;s messenger&#39;s sword (Moonlight of the missing moon) _Arts one shot (magical power) -- 竜の御使の曲剣（欠け月のムーンライト）_アーツワンショット（魔力）"
+      ]
+    },
+    {
+      "ID": 10061700,
+      "Entries": [
+        "The Great Sword of the Old King of Eating (Blue) -- 蝕の老王の大剣（青）_アーツ構え派生R2（魔力）"
+      ]
+    },
+    {
+      "ID": 10062700,
+      "Entries": [
+        "Twin Prince Combined Sword_Arts Position Derived R2 (Flame) -- 双皇子合体剣_アーツ構え派生R2（炎）"
+      ]
+    },
+    {
+      "ID": 10063200,
+      "Entries": [
+        "Moonlight Great Sword_Normal Reservoir (Magic Power) -- 月光大剣_通常溜め（魔力）"
+      ]
+    },
+    {
+      "ID": 10063210,
+      "Entries": [
+        "Moonlight Great Sword_Arts One Shot (Magic Power) -- 月光大剣_アーツワンショット（魔力）"
+      ]
+    },
+    {
+      "ID": 10063400,
+      "Entries": [
+        "Las Boss Sword_Arts One Shot (Flame) -- ラスボス剣_アーツワンショット（炎）"
+      ]
+    },
+    {
+      "ID": 10062600,
+      "Entries": [
+        "Two Princes (elder brother) oversized sword_arts stepping on (flame) -- 双皇子（兄）の特大剣_アーツ踏み込み（炎）"
+      ]
+    },
+    {
+      "ID": 10071200,
+      "Entries": [
+        "Firewood Demon_Arts One Shot (Flame) -- 薪デーモン_アーツワンショット（炎）"
+      ]
+    },
+    {
+      "ID": 10071100,
+      "Entries": [
+        "Dragon Guardian Knight&#39;s Ax_Arts One Shot (Lightning) -- 竜の守護騎士の斧_アーツワンショット（雷）"
+      ]
+    },
+    {
+      "ID": 10081700,
+      "Entries": [
+        "Gargoyle Torch_Arts Patience Derived R2 (Flame) -- ガーゴイルのトーチ_アーツ我慢派生R2（炎）"
+      ]
+    },
+    {
+      "ID": 10081900,
+      "Entries": [
+        "Ash Demon Otsuchi_Arts Patience Derived R2 (Flame) -- 灰のデーモン大槌_アーツ我慢派生R2（炎）"
+      ]
+    },
+    {
+      "ID": 10091800,
+      "Entries": [
+        "Cardinal Spear (Physical Faith) -- 枢機卿団の槍（信仰を物理）"
+      ]
+    },
+    {
+      "ID": 10091814,
+      "Entries": [
+        "Cardinal Spear (Physical Faith): Sacred Derivation -- 枢機卿団の槍（信仰を物理）：神聖派生"
+      ]
+    },
+    {
+      "ID": 10091815,
+      "Entries": [
+        "Cardinal Spear (Physical Faith): Derived from the Dead -- 枢機卿団の槍（信仰を物理）：亡者派生"
+      ]
+    },
+    {
+      "ID": 10092200,
+      "Entries": [
+        "Dragon Hunting Spear_Arts Assault (Lightning) -- 竜狩りの槍_アーツ突撃（雷）"
+      ]
+    },
+    {
+      "ID": 10091100,
+      "Entries": [
+        "Gargoyle Spear_Arts Assault R2 Derived (Flame) -- ガーゴイルの槍_アーツ突撃R2派生（炎）"
+      ]
+    },
+    {
+      "ID": 10091600,
+      "Entries": [
+        "Storm King&#39;s Sword Spear_Arts One Shot (Lightning) -- 嵐の王の剣槍_アーツワンショット（雷）"
+      ]
+    },
+    {
+      "ID": 10101600,
+      "Entries": [
+        "Moonlight Witch&#39;s Spear_Arts One Shot (Flame) -- 月光魔女の槍_アーツワンショット（炎）"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "Firewood Demon Knuckle_Arts Rotation (Flame) -- 薪のデーモンのナックル_アーツ回転（炎）"
+      ]
+    },
+    {
+      "ID": 10110310,
+      "Entries": [
+        "Firewood Demon Knuckle_Arts Rotation Derived R2 (Flame) -- 薪のデーモンのナックル_アーツ回転派生R2（炎）"
+      ]
+    },
+    {
+      "ID": 10131000,
+      "Entries": [
+        "Maggot&#39;s Wand (Luck as Magic) -- 蛆人の杖（運を魔力に）"
+      ]
+    },
+    {
+      "ID": 10131100,
+      "Entries": [
+        "Cardinal&#39;s Wand (Faith as Magic) -- 枢機卿団の大杖（信仰を魔力に）"
+      ]
+    },
+    {
+      "ID": 10131200,
+      "Entries": [
+        "Sullivan&#39;s Spear (Faith to Magic) -- サリヴァーンの槍（信仰を魔力に）"
+      ]
+    },
+    {
+      "ID": 10141300,
+      "Entries": [
+        "Sullivan&#39;s Longbow_Arts One Shot (Magic) -- サリヴァーンのロングボウ_アーツワンショット（魔力）"
+      ]
+    },
+    {
+      "ID": 10160400,
+      "Entries": [
+        "Tracker&#39;s dual wield sword_right hand (magical power) -- 追跡者の二刀曲剣_右手（魔力）"
+      ]
+    },
+    {
+      "ID": 10160410,
+      "Entries": [
+        "Tracker&#39;s dual wield sword_left hand (flame) -- 追跡者の二刀曲剣_左手（炎）"
+      ]
+    },
+    {
+      "ID": 10160420,
+      "Entries": [
+        "Tracker&#39;s dual wield sword_left hand (for weapon side display) -- 追跡者の二刀曲剣_左手（武器側表示用）"
+      ]
+    }
+  ]
+}

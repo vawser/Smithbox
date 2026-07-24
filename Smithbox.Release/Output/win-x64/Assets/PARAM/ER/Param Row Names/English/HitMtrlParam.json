@@ -1,0 +1,311 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stock"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Rock"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dirt"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Ore"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Scarlet Tree"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron Grate"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Scarlet Mushroom"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Shallow Poison Swamp"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Rain Dirt"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Scarlet Swamp"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Lake of Rot"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

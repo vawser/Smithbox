@@ -1,0 +1,328 @@
+{
+  "Param": "WEAPON_ACTION_CATEGORY_PARAM",
+  "Type": "WEAPON_ACTION_CATEGORY_PARAM",
+  "Name": "WEAPON_ACTION_CATEGORY_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkIdSingle1HandNormal1st",
+      "Name": "攻撃アニメ 片手 弱1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandNormal2nd",
+      "Name": "攻撃アニメ 片手 弱2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandStrong1st",
+      "Name": "攻撃アニメ 片手 強1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandStrong2nd",
+      "Name": "攻撃アニメ 片手 強2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandDash",
+      "Name": "攻撃アニメ 片手 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandRolling",
+      "Name": "攻撃アニメ 片手 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandStep",
+      "Name": "攻撃アニメ 片手 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandDown",
+      "Name": "攻撃アニメ 片手 ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandFall",
+      "Name": "攻撃アニメ 片手 落下",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle1HandJump",
+      "Name": "攻撃アニメ 片手 ジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandNormal1st",
+      "Name": "攻撃アニメ 両手 弱１段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandNormal2nd",
+      "Name": "攻撃アニメ 両手 弱２段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandStrong1st",
+      "Name": "攻撃アニメ 両手 強１段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandStrong2nd",
+      "Name": "攻撃アニメ 両手 強２段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandDash",
+      "Name": "攻撃アニメ 両手 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandRolling",
+      "Name": "攻撃アニメ 両手 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandStep",
+      "Name": "攻撃アニメ 両手 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandDown",
+      "Name": "攻撃アニメ 両手 ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandFall",
+      "Name": "攻撃アニメ 両手 落下",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdSingle2HandJump",
+      "Name": "攻撃アニメ 両手 ジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandNormal1st",
+      "Name": "攻撃アニメ 二刀流 弱1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandNormal2nd",
+      "Name": "攻撃アニメ 二刀流 弱2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandStrong1st",
+      "Name": "攻撃アニメ 二刀流 強1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandStrong2nd",
+      "Name": "攻撃アニメ 二刀流 強2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandDash",
+      "Name": "攻撃アニメ 二刀流 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandRolling",
+      "Name": "攻撃アニメ 二刀流 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandStep",
+      "Name": "攻撃アニメ 二刀流 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandDown",
+      "Name": "攻撃アニメ 二刀流 ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandFall",
+      "Name": "攻撃アニメ 二刀流 落下",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual1HandJump",
+      "Name": "攻撃アニメ 二刀流 ジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandNormal1st",
+      "Name": "攻撃アニメ 二刀流両手 弱1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandNormal2nd",
+      "Name": "攻撃アニメ 二刀流両手 弱2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandStrong1st",
+      "Name": "攻撃アニメ 二刀流両手 強1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandStrong2nd",
+      "Name": "攻撃アニメ 二刀流両手 強2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandDash",
+      "Name": "攻撃アニメ 二刀流両手 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandRolling",
+      "Name": "攻撃アニメ 二刀流両手 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandStep",
+      "Name": "攻撃アニメ 二刀流両手 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandDown",
+      "Name": "攻撃アニメ 二刀流両手 ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandFall",
+      "Name": "攻撃アニメ 二刀流両手 落下",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdDual2HandJump",
+      "Name": "攻撃アニメ 二刀流両手 ジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandNormal1st",
+      "Name": "攻撃アニメ 左片手 弱1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandNormal2nd",
+      "Name": "攻撃アニメ 左片手 弱2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandStrong1st",
+      "Name": "攻撃アニメ 左片手 強1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandStrong2nd",
+      "Name": "攻撃アニメ 左片手 強2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandDash",
+      "Name": "攻撃アニメ 左片手 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandRolling",
+      "Name": "攻撃アニメ 左片手 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandStep",
+      "Name": "攻撃アニメ 左片手 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandDown",
+      "Name": "攻撃アニメ 左片手 ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandFall",
+      "Name": "攻撃アニメ 左片手 落下",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdLeft1HandJump",
+      "Name": "攻撃アニメ 左片手 ジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdOppositeSingle2HandNormal",
+      "Name": "攻撃アニメ 両手逆腕 弱",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdOppositeSingle2HandStrong",
+      "Name": "攻撃アニメ 両手逆腕 強",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdOppositeDual2HandNormal1st",
+      "Name": "攻撃アニメ 二刀流両手逆腕 弱1",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdOppositeDual2HandNormal2nd",
+      "Name": "攻撃アニメ 二刀流両手逆腕 弱2",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdOppositeDual2HandStrong",
+      "Name": "攻撃アニメ 二刀流両手逆腕 強",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardBreak1Hand",
+      "Name": "攻撃アニメ 片手 ガード崩し",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardBreak2Hand",
+      "Name": "攻撃アニメ 両手 ガード崩し",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardNormal1st",
+      "Name": "攻撃アニメ ガード構え 弱1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardNormal2nd",
+      "Name": "攻撃アニメ ガード構え 弱2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardStrong1st",
+      "Name": "攻撃アニメ ガード構え 強1段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardStrong2nd",
+      "Name": "攻撃アニメ ガード構え 強2段目",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdParryBreakStab",
+      "Name": "攻撃アニメ パリィブレイクスタブ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdGuardBreakStab",
+      "Name": "攻撃アニメ ガードブレイクスタブ",
+      "Description": ""
+    },
+    {
+      "Field": "atkIdBackStab",
+      "Name": "攻撃アニメ バックスタブ",
+      "Description": ""
+    }
+  ]
+}

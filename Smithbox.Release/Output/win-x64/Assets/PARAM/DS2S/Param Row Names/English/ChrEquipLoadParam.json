@@ -1,0 +1,263 @@
+{
+  "Name": "ChrEquipLoadParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Load ratio Maximum percentage [%] -- 荷重割合 最大割合 [%]"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Load anime blending rate [%] -- 荷重アニメブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Speed Reduction Rate Translation [%] -- 速度 低下割合 平行移動 [%]"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Speed Decrease Percentage Walking [%] -- 速度 低下割合 歩行 [%]"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Speed Down Dashes [%] -- 速度 低下割合 ダッシュ [%]"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Speed Decrease Rate Wobble [%] -- 速度 低下割合 ふらつき [%]"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Acceleration Decrease Percentage Translation [%] -- 加速度 低下割合 平行移動 [%]"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Acceleration Decrease Percentage Walking [%] -- 加速度 低下割合 歩行 [%]"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Acceleration Decrease Dash [%] -- 加速度 低下割合 ダッシュ [%]"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Acceleration Decrease Rate Wobble [%] -- 加速度 低下割合 ふらつき [%]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Stop acceleration Decrease percentage Translation [%] -- 停止加速度 低下割合 平行移動 [%]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Stop acceleration Decrease percentage walking [%] -- 停止加速度 低下割合 歩行 [%]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Stop acceleration Decrease dashes [%] -- 停止加速度 低下割合 ダッシュ [%]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Stop acceleration Decrease rate wobble [%] -- 停止加速度 低下割合 ふらつき [%]"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Turning speed Decrease percentage Lock-on move [%] -- 旋回速度 低下割合 ロックオン移動 [%]"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Turning speed Decrease percentage Walking [%] -- 旋回速度 低下割合 歩行 [%]"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Turning speed Decrease Dashes [%] -- 旋回速度 低下割合 ダッシュ [%]"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Turning speed Decrease percentage Lock-on dash [%] -- 旋回速度 低下割合 ロックオンダッシュ [%]"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Turning speed Decrease rate wobbly [%] -- 旋回速度 低下割合 ふらつき [%]"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Fall damage addition correction [%] -- 落下ダメージ加算補正 [%]"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Jump Weight Anime Blend Ratio [%] -- ジャンプ 重量アニメ ブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Step Weight Anime Blend Ratio [%] -- ステップ 重量アニメ ブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Step Decrease Distance [%] -- ステップ 低下割合 距離 [%]"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Rolling Weight Anime Blend Ing Rate [%] -- ローリング 重量アニメ ブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Rolling Decrease Percentage Distance [%] -- ローリング 低下割合 距離 [%]"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Stamina Out Rolling Playback Factor [X] -- スタミナ切れローリング 再生倍率 [倍]"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Stamina Out Rolling Decrease Percentage Distance [%] -- スタミナ切れローリング 低下割合 距離 [%]"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Ladder animation speed Decrease percentage [%] -- はしごアニメ速度 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Stamina recovery Decrease percentage [%] -- スタミナ回復量 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Stamina Consumption Dash Decrease Percentage [%] -- スタミナ消費量 ダッシュ 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Stamina Consumption Ladder Dash Decrease Percentage [%] -- スタミナ消費量 はしごダッシュ 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Stamina Consumption Rope Slide Down Decrease Percentage [%] -- スタミナ消費量 ロープ滑り降り 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Jump attack up rate Decrease rate [%] -- ジャンプ攻撃 上昇速度 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Jump attack horizontal speed decrease percentage [%] -- ジャンプ攻撃 水平速度 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Jump fall attack Rise rate Decrease rate [%] -- ジャンプ落下攻撃 上昇速度 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Jump fall ing horizontal speed Decrease rate [%] -- ジャンプ落下攻撃 水平速度 低下割合 [%]"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Stamina Out Step Playback Factor [Double] -- スタミナ切れステップ 再生倍率 [倍]"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Stamina Cut Step Decrease Percentage Distance [%] -- スタミナ切れステップ 低下割合 距離 [%]"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Dash Blend Maximum [%] -- ダッシュブレンド最大値 [%]"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Dash blending speed [%] -- ダッシュブレンド入り速度 [%]"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Dash Blend Return Speed [%] -- ダッシュブレンド戻り速度 [%]"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Dash blending judgment speed (normal) [%] -- ダッシュブレンド入り判定速度（通常） [%]"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Dash blend ing judgment speed (lock movement) [%] -- ダッシュブレンド入り判定速度（ロック移動） [%]"
+      ]
+    }
+  ]
+}

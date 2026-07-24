@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>FACE_EDIT_PARAM_COLOR_PRESET</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="f32 red">
+            <DisplayName>赤</DisplayName>
+            <Description>赤</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 green">
+            <DisplayName>緑</DisplayName>
+            <Description>緑</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 blue">
+            <DisplayName>青</DisplayName>
+            <Description>青</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

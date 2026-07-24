@@ -1,0 +1,11 @@
+{
+  "Name": "ChrEquipWeaponParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Player Character -- プレイヤーキャラクタ"
+      ]
+    }
+  ]
+}

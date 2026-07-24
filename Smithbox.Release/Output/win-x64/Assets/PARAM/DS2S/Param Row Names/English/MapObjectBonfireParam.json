@@ -1,0 +1,503 @@
+{
+  "Name": "MapObjectBonfireParam",
+  "Entries": [
+    {
+      "ID": 650,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 655,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "Fire Keeper's Dwelling - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Far Fire - Majula"
+      ]
+    },
+    {
+      "ID": 10655,
+      "Entries": [
+        "Cardinal Tower - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 10660,
+      "Entries": [
+        "Soldier's Rest - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 10670,
+      "Entries": [
+        "Crestfallen's Retreat - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 10675,
+      "Entries": [
+        "The Place Unbeknownst - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 11650,
+      "Entries": [
+        "Tower of Prayer - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 11655,
+      "Entries": [
+        "Crumbled Ruins - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 11660,
+      "Entries": [
+        "Rhoy's Resting Place - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 11670,
+      "Entries": [
+        "Rise of the Dead - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 14650,
+      "Entries": [
+        "Lower Brightstone Cove - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 14655,
+      "Entries": [
+        "Royal Army Campsite - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 14660,
+      "Entries": [
+        "Chapel Threshold - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 15650,
+      "Entries": [
+        "Foregarden - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 15655,
+      "Entries": [
+        "Ritual Site - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 16650,
+      "Entries": [
+        "Straid's Cell - The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 16655,
+      "Entries": [
+        "Exile Holding Cells - The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 16660,
+      "Entries": [
+        "The Tower Apart - The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 16665,
+      "Entries": [
+        "Upper Ramparts - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 16670,
+      "Entries": [
+        "McDuff's Workshop - The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 16675,
+      "Entries": [
+        "Servant's Quarters - The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 16685,
+      "Entries": [
+        "The Saltfort - Sinners' Rise"
+      ]
+    },
+    {
+      "ID": 17650,
+      "Entries": [
+        "The Mines - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 17655,
+      "Entries": [
+        "Lower Earthen Peak - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 17665,
+      "Entries": [
+        "Poison Pool - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 17670,
+      "Entries": [
+        "Central Earthen Peak - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 17675,
+      "Entries": [
+        "Upper Earthen Peak - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 18650,
+      "Entries": [
+        "Unseen Path to Heide - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 19650,
+      "Entries": [
+        "Ironhearth Hall - Iron Keep"
+      ]
+    },
+    {
+      "ID": 19655,
+      "Entries": [
+        "Threshold Bridge - Iron Keep"
+      ]
+    },
+    {
+      "ID": 19660,
+      "Entries": [
+        "Eygil's Idol - Iron Keep"
+      ]
+    },
+    {
+      "ID": 19665,
+      "Entries": [
+        "Belfry Sol Approach - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 21650,
+      "Entries": [
+        "King's Gate - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 21655,
+      "Entries": [
+        "Central Castle Drangleic - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 21660,
+      "Entries": [
+        "Forgotten Chamber - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 21665,
+      "Entries": [
+        "Underneath Castle Drangleic - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 23650,
+      "Entries": [
+        "Undead Refuge - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 23655,
+      "Entries": [
+        "Bridge Approach - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 23660,
+      "Entries": [
+        "Undead Lockaway - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 23665,
+      "Entries": [
+        "Undead Purgatory - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 24650,
+      "Entries": [
+        "Undead Ditch - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 24655,
+      "Entries": [
+        "Undead Crypt Entrance - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 25650,
+      "Entries": [
+        "Black Gulch Mouth - Black Gulch"
+      ]
+    },
+    {
+      "ID": 25655,
+      "Entries": [
+        "Central Gutter - The Gutter"
+      ]
+    },
+    {
+      "ID": 25660,
+      "Entries": [
+        "Hidden Chamber - Black Gulch"
+      ]
+    },
+    {
+      "ID": 25665,
+      "Entries": [
+        "Upper Gutter - The Gutter"
+      ]
+    },
+    {
+      "ID": 27650,
+      "Entries": [
+        "Dragon Aerie - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 27655,
+      "Entries": [
+        "Shrine Entrance - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 29650,
+      "Entries": [
+        "Old Akelarre - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 31650,
+      "Entries": [
+        "Tower of Flame - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 31655,
+      "Entries": [
+        "Heide's Ruin - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 31660,
+      "Entries": [
+        "The Blue Cathedral - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 32655,
+      "Entries": [
+        "Ruined Fork Road - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 32660,
+      "Entries": [
+        "Shaded Ruins - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 33655,
+      "Entries": [
+        "Gyrm's Respite - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 33660,
+      "Entries": [
+        "Ordeal's End - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 34650,
+      "Entries": [
+        "Grave Entrance - Grave of Saints"
+      ]
+    },
+    {
+      "ID": 34655,
+      "Entries": [
+        "Harvel's Resting Place - Grave of Saints"
+      ]
+    },
+    {
+      "ID": 35650,
+      "Entries": [
+        "Sanctum Walk - Shulva, Sanctum City"
+      ]
+    },
+    {
+      "ID": 35655,
+      "Entries": [
+        "Priestess's Chamber - Shulva, Sanctum City"
+      ]
+    },
+    {
+      "ID": 35665,
+      "Entries": [
+        "Sanctum Nadir - Dragon's Rest"
+      ]
+    },
+    {
+      "ID": 35670,
+      "Entries": [
+        "Hidden Sanctum Chamber - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 35675,
+      "Entries": [
+        "Lair of the Imperfect - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 35680,
+      "Entries": [
+        "Sanctum Interior - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 35685,
+      "Entries": [
+        "Tower of Prayer - Shulva, Sanctum City"
+      ]
+    },
+    {
+      "ID": 36650,
+      "Entries": [
+        "Throne Floor - Brume Tower"
+      ]
+    },
+    {
+      "ID": 36655,
+      "Entries": [
+        "Foyer - Brume Tower"
+      ]
+    },
+    {
+      "ID": 36660,
+      "Entries": [
+        "Brume Tower Upper Floor"
+      ]
+    },
+    {
+      "ID": 36665,
+      "Entries": [
+        "Iron Passage - Iron Passage"
+      ]
+    },
+    {
+      "ID": 36670,
+      "Entries": [
+        "Lowermost Floor - Brume Tower"
+      ]
+    },
+    {
+      "ID": 36675,
+      "Entries": [
+        "The Smelter Throne - Brume Tower"
+      ]
+    },
+    {
+      "ID": 37650,
+      "Entries": [
+        "Outer Wall - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 37660,
+      "Entries": [
+        "Abandoned Dwelling - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 37665,
+      "Entries": [
+        "Lower Garrison - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 37670,
+      "Entries": [
+        "Grand Cathedral - Grand Cathedral"
+      ]
+    },
+    {
+      "ID": 37675,
+      "Entries": [
+        "Expulsion Chamber - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 37685,
+      "Entries": [
+        "Inner Wall - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 62650,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62651,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62652,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62653,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

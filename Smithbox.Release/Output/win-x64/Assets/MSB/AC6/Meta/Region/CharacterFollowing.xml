@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a character following region." />
+  
+  <Field>
+    <CharacterFollowing_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <CharacterFollowing_UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

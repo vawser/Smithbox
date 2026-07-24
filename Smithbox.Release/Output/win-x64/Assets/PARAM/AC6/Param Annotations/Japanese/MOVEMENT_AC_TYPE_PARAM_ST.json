@@ -1,0 +1,1113 @@
+{
+  "Param": "MOVEMENT_AC_TYPE_PARAM_ST",
+  "Type": "MOVEMENT_AC_TYPE_PARAM_ST",
+  "Name": "MOVEMENT_AC_TYPE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "pad5",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedKMPH",
+      "Name": "ジャンプ水平移動最高速度[km/h]",
+      "Description": "ジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "jumpHorizontalAccelMPSS",
+      "Name": "ジャンプ水平移動加速度[m/s^2]",
+      "Description": "ジャンプ時の水平移動加速度"
+    },
+    {
+      "Field": "jumpUpperMaxSpeedKMPH",
+      "Name": "ジャンプ垂直移動最高速度[km/h]",
+      "Description": "ジャンプ時の垂直移動最高速度"
+    },
+    {
+      "Field": "jumpUpperAccelMPSS",
+      "Name": "ジャンプ垂直移動加速度[m/s^2]",
+      "Description": "ジャンプ時の垂直移動加速度"
+    },
+    {
+      "Field": "pad6",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostMaxSpeedKMPH",
+      "Name": "クイックブースト最高速度[km/h]",
+      "Description": "QB最高速度"
+    },
+    {
+      "Field": "quickBoostAccelMPSS",
+      "Name": "クイックブースト加速度[m/s^2]",
+      "Description": "QB加速度"
+    },
+    {
+      "Field": "landingHorizontalBrakeUseSlowKMH",
+      "Name": "この速度以下で低速接地ブレーキ[km/h]",
+      "Description": "この速度以下になると低速接地ブレーキが使われる"
+    },
+    {
+      "Field": "landingHorizontalBrakeUseFastKMH",
+      "Name": "この速度以上で高速接地ブレーキ[km/h]",
+      "Description": "この速度以上になると高速接地ブレーキが使われる"
+    },
+    {
+      "Field": "landingHorizontalSlowBrakeMPSS",
+      "Name": "低速接地水平ブレーキ[m/s^2]",
+      "Description": "低速時の接地ブレーキ"
+    },
+    {
+      "Field": "landingHorizontalFastBrakeMPSS",
+      "Name": "高速接地水平ブレーキ[m/s^2]",
+      "Description": "高速時の接地ブレーキ"
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "空中最高水平速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高水平速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "flyUpBrakeMPSS",
+      "Name": "空中最高上昇速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高上昇速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "quickBoostUpperMaxSpeedKMPH",
+      "Name": "クイックブースト上昇最高速度[km/h]",
+      "Description": "QB時上昇最高速度"
+    },
+    {
+      "Field": "quickBoostUpperAccelMPSS",
+      "Name": "クイックブースト上昇加速度[m/s^2]",
+      "Description": "QB時上昇加速度"
+    },
+    {
+      "Field": "pad7",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAccelTimeSec",
+      "Name": "クイックブースト加速度時間[sec]",
+      "Description": "QB加速時間"
+    },
+    {
+      "Field": "movementToAnimMoveBrakeMPSS",
+      "Name": "制御移動→アニメ移動でのブレーキ[m/s^2]",
+      "Description": "Movementでの移動からアニメ移動に切り替えた時のブレーキ"
+    },
+    {
+      "Field": "guardBrakeRateAtBoost",
+      "Name": "ブーストから割り込みガードした際のブレーキ倍率",
+      "Description": "ブーストから割り込みガードした際のブレーキ倍率"
+    },
+    {
+      "Field": "guardBrakeRateAtQuickBoost",
+      "Name": "QBから割り込みでガードした際のブレーキ倍率",
+      "Description": "QBから割り込みでガードした際のブレーキ倍率"
+    },
+    {
+      "Field": "guardBrakeRateAtNormalBrake",
+      "Name": "ブレーキから割り込みでガードした際のブレーキ倍率",
+      "Description": "ブレーキから割り込みでガードした際のブレーキ倍率"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveSwitchBackGroundBrakeMPSS",
+      "Name": "地上ブースト切り返し時ブレーキ[m/s^2]",
+      "Description": "地上ブースト移動の切り返し時ブレーキ"
+    },
+    {
+      "Field": "boostMoveSwitchBackFlyBrakeMPSS",
+      "Name": "空中ブースト切り返し時ブレーキ[m/s^2]",
+      "Description": "空中ブースト移動の切り返し時ブレーキ"
+    },
+    {
+      "Field": "boostMoveSubGroundAccelMPSS",
+      "Name": "地上ブースト移動方向補正加速度[m/s^2]",
+      "Description": "地上ブースト移動の移動方向補正用加速度"
+    },
+    {
+      "Field": "boostMoveSubFlyAccelMPSS",
+      "Name": "空中ブースト移動方向補正加速度[m/s^2]",
+      "Description": "空中ブースト移動の移動方向補正用加速度"
+    },
+    {
+      "Field": "assaultBoostSubAccelMPSS",
+      "Name": "アサルトブースト移動方向補正加速度[m/s^2]",
+      "Description": "アサルトブースト移動の移動方向補正用加速度"
+    },
+    {
+      "Field": "bladeHomingSubAccelMPSS",
+      "Name": "システムブレホ移動方向補正加速度[m/s^2]",
+      "Description": "システムブレホの移動方向補正用加速度"
+    },
+    {
+      "Field": "pad9",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "minStiffSpeedKMPH",
+      "Name": "最小硬直時間になる速度[km/h]",
+      "Description": "この速度以下で着地した時に最小硬直時間になる"
+    },
+    {
+      "Field": "minStiffTimeSec",
+      "Name": "最小硬直時間[sec]",
+      "Description": "最小着地硬直時間"
+    },
+    {
+      "Field": "maxStiffSpeedKMPH",
+      "Name": "【補正計算グラフパラに移動】最大硬直時間になる速度[km/h]",
+      "Description": "この速度以上で着地した時に最大硬直時間になる"
+    },
+    {
+      "Field": "maxStiffTimeSec",
+      "Name": "最大硬直時間[sec]",
+      "Description": "最大着地硬直時間"
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "実際の移動量を反映する割合",
+      "Description": "この値が小さいほど重量感が増す"
+    },
+    {
+      "Field": "tankTurnOffset_CenterOffset",
+      "Name": "【タンク旋回オフセット】旋回の中心位置オフセット",
+      "Description": "タンクの旋回軸のオフセット（前が+）"
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffset",
+      "Name": "【タンク旋回オフセット】前方向最大オフセット（前移動最高速度時）",
+      "Description": "旋回軸の中心からのオフセット"
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffset",
+      "Name": "【タンク旋回オフセット】後ろ方向最大オフセット（後ろ移動最高速度時）",
+      "Description": "旋回軸の中心からのオフセット"
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
+      "Name": "【タンク旋回オフセット】前方向最大オフセットになる前方向速度[km/h]",
+      "Description": "前方向最大オフセットがかかるようになる最高速度"
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
+      "Name": "【タンク旋回オフセット】後ろ方向最大オフセットになる後ろ方向速度[km/h]",
+      "Description": "後ろ方向最大オフセットがかかるようになる最高速度"
+    },
+    {
+      "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
+      "Name": "【タンク旋回オフセット】移動方向と速度方向の最大ズレ角度[deg]",
+      "Description": "移動方向と速度方向のズレによるオフセットが最大になる角度"
+    },
+    {
+      "Field": "assaultBoostSideAvoidSubAccelMPSS",
+      "Name": "アサルトブースト横回避移動方向補正加速度[m/s^2]",
+      "Description": "アサルトブースト横回避移動の移動方向補正用加速度"
+    },
+    {
+      "Field": "quickBoostAddSpeedToBoostMaxSpeedKMPH",
+      "Name": "ダッシュブースト中クイックブースト最高速度加算値[km/h]",
+      "Description": "ダッシュブースト中にクイックブーストした際に、ダッシュブースト最高速度に加算される値"
+    },
+    {
+      "Field": "quickTurn_MaxTurnAngleDeg",
+      "Name": "クイックターン最大旋回角度[deg]",
+      "Description": "クイックターンでの最大旋回角度"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurn_MaxTurnTimeSec",
+      "Name": "クイックターン最大旋回時間[sec]",
+      "Description": "クイックターンの最大旋回時間"
+    },
+    {
+      "Field": "roundDashMaxSpeedKMPH",
+      "Name": "ダッシュ回り込み最高速度[km/h]",
+      "Description": "ダッシュ回りこみの時の最高速度"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashAccelMPSS",
+      "Name": "ダッシュ回り込み加速度[m/s^2]",
+      "Description": "ダッシュ回りこみの加速度"
+    },
+    {
+      "Field": "roundDashBrakeMPSS",
+      "Name": "ダッシュ回り込みブレーキ[m/s^2]",
+      "Description": "ダッシュ回りこみのブレーキ"
+    },
+    {
+      "Field": "bladeBrakeFromBoostMPSS",
+      "Name": "ブーストorダッシュからの格闘攻撃時のブレーキ量[m/s^2]",
+      "Description": "ブーストorダッシュからの格闘攻撃時に使用されるブレーキ量"
+    },
+    {
+      "Field": "bladeBrakeFromQuickBoostMPSS",
+      "Name": "クイックブーストからの格闘攻撃時のブレーキ量[m/s^2]",
+      "Description": "クイックブーストからの格闘攻撃時に使用されるブレーキ量"
+    },
+    {
+      "Field": "roundDashFallAccelMPSS",
+      "Name": "ダッシュ回り込み急降下加速度[m/s^2]",
+      "Description": "ダッシュ回りこみの急降下加速度"
+    },
+    {
+      "Field": "cunterBoostBrakeMPSS",
+      "Name": "ブースト逆噴射時ブレーキ量[m/s^2]",
+      "Description": "ブースターを逆噴射した時のブレーキ量"
+    },
+    {
+      "Field": "cunterBoostBrakeMaxTimeSec",
+      "Name": "ブースト逆噴射時最大まで時間[sec]",
+      "Description": "ブースターを逆噴射した時のブレーキ量が最大になるまでの時間（秒）"
+    },
+    {
+      "Field": "flyBoostBrakeMPSS",
+      "Name": "飛行ブースト時最大ブレーキ量[m/s^2]",
+      "Description": "飛行ブーストでニュートラルや切り返し移動した時のブレーキ量"
+    },
+    {
+      "Field": "flyBoostBrakeMaxTimeSec",
+      "Name": "飛行ブースト時最大ブレーキまで時間[sec]",
+      "Description": "飛行ブーストでニュートラルや切り返し移動した時のブレーキ量が最大になるまでの時間（秒）"
+    },
+    {
+      "Field": "uTurnBrakeMPSS",
+      "Name": "ブースト中Uターン時最大ブレーキ量[m/s^2]",
+      "Description": "ブースト移動中の１８０度ターンのときのブレーキ量"
+    },
+    {
+      "Field": "upperQuickBoostMaxSpeedKMPH",
+      "Name": "上昇クイックブースト上昇最高速度[km/h]",
+      "Description": "上昇QB最高速度"
+    },
+    {
+      "Field": "upperQuickBoostAccelMPSS",
+      "Name": "上昇クイックブースト上昇加速度[m/s^2]",
+      "Description": "上昇QB加速度"
+    },
+    {
+      "Field": "upperQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "上昇クイックブースト水平方向最高速度[km/h]",
+      "Description": "上昇QB水平方向の最高速度"
+    },
+    {
+      "Field": "upperQuickBoostHorizontalAccelMPSS",
+      "Name": "上昇クイックブースト水平方向加速度[m/s^2]",
+      "Description": "上昇QB水平方向の加速度"
+    },
+    {
+      "Field": "fallQuickBoostAccelMPSS",
+      "Name": "急降下クイックブースト加速度[m/s^2]",
+      "Description": "急降下QB加速度"
+    },
+    {
+      "Field": "fallQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "急降下クイックブースト水平方向最高速度[km/h]",
+      "Description": "急降下QB水平方向の最高速度"
+    },
+    {
+      "Field": "fallQuickBoostHorizontalAccelMPSS",
+      "Name": "急降下クイックブースト水平方向加速度[m/s^2]",
+      "Description": "急降下QB水平方向の加速度"
+    },
+    {
+      "Field": "bladeHomingHorizontalMaxSpeedKMPH",
+      "Name": "ブレホ水平移動最高速度[km/h]",
+      "Description": "ブレホ水平移動の最高速度"
+    },
+    {
+      "Field": "bladeHomingHorizontalAccelMPSS",
+      "Name": "ブレホ水平移動加速度[m/s^2]",
+      "Description": "ブレホ水平移動の加速度"
+    },
+    {
+      "Field": "slidingMaxSpeedKMPH",
+      "Name": "スライディング最高速度[km/h]",
+      "Description": "スライディング最高速度"
+    },
+    {
+      "Field": "slidingBoostAccelMPSS",
+      "Name": "スライディング加速度[m/s^2]",
+      "Description": "スライディング加速度"
+    },
+    {
+      "Field": "bladeHomingLandBrakeMPSS",
+      "Name": "地上ブレホブレーキ量[m/s^2]",
+      "Description": "地上ブレホ中のブレーキ量"
+    },
+    {
+      "Field": "bladeHomingFlyBrakeMPSS",
+      "Name": "空中ブレホブレーキ量[m/s^2]",
+      "Description": "空中ブレホ中のブレーキ量"
+    },
+    {
+      "Field": "damageBrake_BeginBrakeMPSS",
+      "Name": "【ダメージブレーキ】開始時ブレーキ[m/s^2]",
+      "Description": "ダメージブレーキ開始時のブレーキ量"
+    },
+    {
+      "Field": "damageBrake_PeakBrakeMPSS",
+      "Name": "【ダメージブレーキ】ピーク時ブレーキ[m/s^2]",
+      "Description": "ダメージブレーキのピークブレーキ量"
+    },
+    {
+      "Field": "damageBrake_BeginToPeakTimeSec",
+      "Name": "【ダメージブレーキ】開始からピークまでの時間[sec]",
+      "Description": "ダメージブレーキ開始からピークまでかかる時間"
+    },
+    {
+      "Field": "wireMoveMaxSpeedKMPH",
+      "Name": "ワイヤー移動最高速度[km/h]",
+      "Description": "ワイヤー移動の最高速度"
+    },
+    {
+      "Field": "wireMoveAccelMPSS",
+      "Name": "ワイヤー移動加速度[m/s^2]",
+      "Description": "ワイヤー移動の加速度"
+    },
+    {
+      "Field": "damageBrake_TimerResetDelayTime",
+      "Name": "【ダメージブレーキ】経過時間リセット猶予時間[sec]",
+      "Description": "ノックバック速度が0になってからダメージブレーキ用タイマーがリセットするまでの時間"
+    },
+    {
+      "Field": "flyDownBrakeMPSS",
+      "Name": "空中最高下降速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高下降速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "landDeadBrakeMPSS",
+      "Name": "死亡時地上ブレーキ量[m/s^2]",
+      "Description": "死亡しているときの地上ブレーキ量"
+    },
+    {
+      "Field": "flyDeadBrakeMPSS",
+      "Name": "死亡時空中ブレーキ量[m/s^2]",
+      "Description": "死亡しているときの空中ブレーキ量"
+    },
+    {
+      "Field": "BladeHomingAccelTimeSec",
+      "Name": "ブレホ加速度時間[sec]",
+      "Description": "ブレホ加速時間"
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedFromVehicleKMPH",
+      "Name": "ビークルからのジャンプ水平移動最高速度[km/h]",
+      "Description": "ビークルからのジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "jumpHorizontalAccelFromVehicleMPSS",
+      "Name": "ビークルからのジャンプ水平移動加速度[m/s^2]",
+      "Description": "ビークルからのジャンプ時の水平移動加速度"
+    },
+    {
+      "Field": "jumpUpperMaxSpeedFromVehicleKMPH",
+      "Name": "ビークルからのジャンプ垂直移動最高速度[km/h]",
+      "Description": "ビークルからのジャンプ時の垂直移動最高速度"
+    },
+    {
+      "Field": "jumpUpperAccelFromVehicleMPSS",
+      "Name": "ビークルからのジャンプ垂直移動加速度[m/s^2]",
+      "Description": "ビークルからのジャンプ時の垂直移動加速度"
+    },
+    {
+      "Field": "wallJumpMaxSpeedKMPH_H",
+      "Name": "三角飛び水平最高速度[km/h]",
+      "Description": "三角飛びの水平最高速度"
+    },
+    {
+      "Field": "wallJumpAccelMPSS_H",
+      "Name": "三角飛び水平加速度[m/s^2]",
+      "Description": "三角飛びの水平加速度"
+    },
+    {
+      "Field": "wallJumpAccelTimeSec",
+      "Name": "三角飛び加速時間[sec]",
+      "Description": "三角飛びの加速時間"
+    },
+    {
+      "Field": "wallJumpAddUpMaxSpeedKMPH",
+      "Name": "三角飛び追加上昇最高速度[km/h]",
+      "Description": "三角飛びで追加する上昇最高速度"
+    },
+    {
+      "Field": "wallJumpAddUpAccelMPSS",
+      "Name": "三角飛び追加上昇加速度[m/s^2]",
+      "Description": "三角飛びで追加する上昇加速度"
+    },
+    {
+      "Field": "stealthDashBoostMaxSpeedKMPH",
+      "Name": "ステルスダッシュブースト最高速度[km/h]",
+      "Description": "ステルス時ダッシュブースト時の最高速度"
+    },
+    {
+      "Field": "stealthDashBoostStartAccelMPSS",
+      "Name": "ステルスダッシュブースト開始加速度[m/s^2]",
+      "Description": "ステルス時ダッシュブースト時の開始加速度"
+    },
+    {
+      "Field": "stealthDashBoostMaxAccelMPSS",
+      "Name": "ステルスダッシュブースト最高加速度[m/s^2]",
+      "Description": "ステルス時ダッシュブースト時の最高加速度"
+    },
+    {
+      "Field": "stealthDashBoostBeginAccelTimeSec",
+      "Name": "ステルスダッシュブースト開始加速度継続時間[sec]",
+      "Description": "ステルス時ダッシュブースト開始加速度の継続時間"
+    },
+    {
+      "Field": "stealthDashBoostBeginToMaxAccelTimeSec",
+      "Name": "ステルスダッシュブースト開始→最高加速度時間[sec]",
+      "Description": "ステルス時ダッシュブースト開始時加速度から最高加速度になるまでの時間"
+    },
+    {
+      "Field": "slopeEffectUpMinDeg",
+      "Name": "【坂道効果】効果が始まる最小上り角度[度]",
+      "Description": "上り坂道で速度効果がかかり始める角度"
+    },
+    {
+      "Field": "slopeEffectUpMaxDeg",
+      "Name": "【坂道効果】効果が最大になる上り角度[度]",
+      "Description": "上り坂道で速度効果が最大になる角度"
+    },
+    {
+      "Field": "slopeEffectDownMinDeg",
+      "Name": "【坂道効果】効果が始まる最小下り角度[度]",
+      "Description": "下り坂道で速度効果がかかり始める角度"
+    },
+    {
+      "Field": "slopeEffectDownMaxDeg",
+      "Name": "【坂道効果】効果が最大になる下り角度[度]",
+      "Description": "下り坂道で速度効果が最大になる角度"
+    },
+    {
+      "Field": "slopeEffectUpMaxAccelRate",
+      "Name": "【坂道効果】上り最大加速度係数",
+      "Description": "上り坂道での最大加速係数"
+    },
+    {
+      "Field": "slopeEffectUpMaxSpeedRate",
+      "Name": "【坂道効果】上り最大速度係数",
+      "Description": "上り坂道での最大速度係数"
+    },
+    {
+      "Field": "slopeEffectDownMaxAccelRate",
+      "Name": "【坂道効果】下り最大加速度係数",
+      "Description": "下り坂道での最大加速係数"
+    },
+    {
+      "Field": "slopeEffectDownMaxSpeedRate",
+      "Name": "【坂道効果】下り最大速度係数",
+      "Description": "下り坂道での最大速度係数"
+    },
+    {
+      "Field": "wallJumpMaxSpeedKMPH_V",
+      "Name": "三角飛び垂直最高速度[km/h]",
+      "Description": "三角飛びの垂直最高速度"
+    },
+    {
+      "Field": "wallJumpAccelMPSS_V",
+      "Name": "三角飛び垂直加速度[m/s^2]",
+      "Description": "三角飛びの垂直加速度"
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "最低保証アニメ移動加速度[m/s^2]",
+      "Description": "アニメ移動するときの最低保証加速度"
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "低速ブレーキアニメ再生[km/h]",
+      "Description": "この値以下の水平速度のときにで低速用ブレーキアニメ切り替えを行います"
+    },
+    {
+      "Field": "jumpHorizontalMinSpeedKMPH",
+      "Name": "ジャンプ水平移動最低速度[km/h]",
+      "Description": "ジャンプ時の水平移動最低速度"
+    },
+    {
+      "Field": "jumpUpperMinSpeedKMPH",
+      "Name": "ジャンプ垂直移動最低速度[km/h]",
+      "Description": "ジャンプ時の垂直移動最低速度"
+    },
+    {
+      "Field": "propellerFlyBoostHorizontalMinSpeedKMH",
+      "Name": "プロペラ時飛行ブースト水平移動最低速度[km/h]",
+      "Description": "プロペラ時飛行ブースト水平移動時の最低速度"
+    },
+    {
+      "Field": "propellerFlyBoostHorizontalMaxSpeedKMH",
+      "Name": "プロペラ時飛行ブースト水平移動最高速度[km/h]",
+      "Description": "プロペラ時飛行ブースト水平移動時の最高速度"
+    },
+    {
+      "Field": "freeFallMaxHorizontalSpeedKMPH",
+      "Name": "自由落下水平最高速度[km/h]",
+      "Description": "自由落下時の最高速度"
+    },
+    {
+      "Field": "freeFallMaxHorizontalAccelMPSS",
+      "Name": "自由落下水平加速度[m/s^2]",
+      "Description": "自由落下時の開始加速度"
+    },
+    {
+      "Field": "quickBoostAccelAnimTimeFrame",
+      "Name": "クイックブースト加速時間[F]",
+      "Description": "QBの速度をパラメータ調整"
+    },
+    {
+      "Field": "quickBoostSpeedKeepTimeFrame",
+      "Name": "クイックブースト最高速度維持時間[F]",
+      "Description": "QBの速度をパラメータ調整"
+    },
+    {
+      "Field": "quickBoostMaxSpeedForAnimKMPH",
+      "Name": "アニメ移動量版クイックブースト最高速度[km/h]",
+      "Description": "アニメ版QBの最高速度指定"
+    },
+    {
+      "Field": "hyperBoostHorizontalMaxSpeedKMPH",
+      "Name": "大QB水平移動最高速度[km/h]",
+      "Description": "大QB時の水平移動最高速度"
+    },
+    {
+      "Field": "hyperBoostHorizontalAccelMPSS",
+      "Name": "大QB水平移動加速度[m/s^2]",
+      "Description": "大QB時の水平移動加速度"
+    },
+    {
+      "Field": "hyperBoostUpperMaxSpeedKMPH",
+      "Name": "大QB「上昇/降下ボタン押下中」垂直移動最高速度[km/h]",
+      "Description": "大QB時の垂直移動最高速度"
+    },
+    {
+      "Field": "hyperBoostUpperAccelMPSS",
+      "Name": "大QB「上昇/降下ボタン押下中」垂直移動加速度[m/s^2]",
+      "Description": "大QB時の垂直移動加速度"
+    },
+    {
+      "Field": "hyperBoostUpperBrakeMPSS",
+      "Name": "大QB垂直移動ブレーキ量[m/s^2]",
+      "Description": "大QB時の垂直移動ブレーキ量"
+    },
+    {
+      "Field": "hyperBoostUpperMoveHorizontalSpeedRate",
+      "Name": "大QB垂直移動時の水平移動速度補正割合",
+      "Description": "大QB時の垂直移動時に掛かる水平移動速度の補正割合"
+    },
+    {
+      "Field": "hyperBoostUpperMoveHorizontalBrakeMPSS",
+      "Name": "大QB垂直移動時の水平移動ブレーキ量[m/s^2]",
+      "Description": "大QB垂直移動時の水平移動ブレーキ量"
+    },
+    {
+      "Field": "tankLandMaxSpeedKMPH",
+      "Name": "タンク地上移動_歩行時_最高速度[km/h]",
+      "Description": "タンク地上移動 - 歩行時の最高速度"
+    },
+    {
+      "Field": "tankLandAccelMPSS",
+      "Name": "タンク地上移動_歩行時_加速度[m/s^2]",
+      "Description": "タンク地上移動 - 歩行時の加速度"
+    },
+    {
+      "Field": "tankLandTurnMaxSpeedRate",
+      "Name": "タンク地上移動_左右移動時の水平移動速度補正割合",
+      "Description": "タンク地上移動_左右移動時の水平移動速度補正割合"
+    },
+    {
+      "Field": "tankLandTurnMaxAngle",
+      "Name": "タンク地上移動_左右移動時の水平移動速度補正角度[deg]",
+      "Description": "タンク地上移動_左右移動時の水平移動速度補正角度"
+    },
+    {
+      "Field": "tankLandBoostMaxSpeedKMPH",
+      "Name": "タンク地上移動_走行時_最高速度[km/h]",
+      "Description": "タンク地上移動 - 走行時最高速度"
+    },
+    {
+      "Field": "tankLandBoostAccelMPSS",
+      "Name": "タンク地上移動_走行時_加速度[m/s^2]",
+      "Description": "タンク地上移動 - 走行時加速度"
+    },
+    {
+      "Field": "tankLandBoostBrakeMPSS",
+      "Name": "タンク地上移動_走行時_ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 走行時ブレーキ量"
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MinAng",
+      "Name": "斜面移動の最小角度時最高速度[km/h]",
+      "Description": "斜面移動 - 最小角度時の最高滑り降り速度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MaxAng",
+      "Name": "斜面移動の最大角度時最高速度[km/h]",
+      "Description": "斜面移動 - 最大角度時の最高滑り降り速度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MinAng",
+      "Name": "斜面移動の最小角度時最高加速度[m/s^2]",
+      "Description": "斜面移動 - 最小角度時の最高滑り降り加速度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MaxAng",
+      "Name": "斜面移動の最大角度時最高加速度[m/s^2]",
+      "Description": "斜面移動 - 最大角度時の最高滑り降り加速度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMinAngDeg",
+      "Name": "斜面移動の最高速度最小角度[deg]",
+      "Description": "斜面移動 - 滑り降り速度の最小斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMaxAngDeg",
+      "Name": "斜面移動の最高速度最大角度[deg]",
+      "Description": "斜面移動 - 滑り降り速度の最大斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMinAngDeg",
+      "Name": "斜面移動の最高加速度最小角度[deg]",
+      "Description": "斜面移動 - 滑り降り加速度の最小斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMaxAngDeg",
+      "Name": "斜面移動の最高加速度最大角度[deg]",
+      "Description": "斜面移動 - 滑り降り加速度の最大斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MinAng",
+      "Name": "斜面移動の最小角度時減速率",
+      "Description": "斜面移動 - 最小角度時、パッドを上り方向に入力時減速率"
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MaxAng",
+      "Name": "斜面移動の最大角度時減速率",
+      "Description": "斜面移動 - 最大角度時、パッドを上り方向に入力時減速率"
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MinAng",
+      "Name": "斜面移動の最小角度時加速率",
+      "Description": "斜面移動 - 最小角度時、パッドを下り方向に入力時加速率"
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MaxAng",
+      "Name": "斜面移動の最大角度時加速率",
+      "Description": "斜面移動 - 最大角度時、パッドを下り方向に入力時加速率"
+    },
+    {
+      "Field": "slopeSlideMoveDecayMinAngDeg",
+      "Name": "斜面移動の減速率最小角度[deg]",
+      "Description": "斜面移動 - 減速率の最小斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveDecayMaxAngDeg",
+      "Name": "斜面移動の減速率最大角度[deg]",
+      "Description": "斜面移動 - 減速率の最大斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveAccelMinAngDeg",
+      "Name": "斜面移動の加速率最小角度[deg]",
+      "Description": "斜面移動 - 加速率の最小斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveAccelMaxAngDeg",
+      "Name": "斜面移動の加速率最大角度[deg]",
+      "Description": "斜面移動 - 加速率の最大斜面角度"
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveSpeed",
+      "Name": "斜面移動の左右移動速度[km/h]",
+      "Description": "斜面移動 - 左右移動の最高速度"
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveAccel",
+      "Name": "斜面移動の左右移動加速度[m/s^2]",
+      "Description": "斜面移動 - 左右移動の加速度"
+    },
+    {
+      "Field": "hyperJumpHorizontalMaxSpeedKMPH",
+      "Name": "大ジャンプ水平移動最高速度[km/h]",
+      "Description": "大ジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "hyperJumpHorizontalAccelMPSS",
+      "Name": "大ジャンプ水平移動加速度[m/s^2]",
+      "Description": "大ジャンプ時の水平移動加速度"
+    },
+    {
+      "Field": "hyperJumpUpperMaxSpeedKMPH",
+      "Name": "大ジャンプ垂直移動最高速度[km/h]",
+      "Description": "大ジャンプ時の垂直移動最高速度"
+    },
+    {
+      "Field": "hyperJumpUpperAccelMPSS",
+      "Name": "大ジャンプ垂直移動加速度[m/s^2]",
+      "Description": "大ジャンプ時の垂直移動加速度"
+    },
+    {
+      "Field": "hyperJumpUpperBrakeMPSS",
+      "Name": "大ジャンプ水平移動ブレーキ量[m/s^2]",
+      "Description": "大ジャンプ時の水平移動ブレーキ量"
+    },
+    {
+      "Field": "hyperJumpHorizontalInitSpeedKMPH",
+      "Name": "大ジャンプ水平移動初速[km/h]",
+      "Description": "大ジャンプ時の水平移動の初速"
+    },
+    {
+      "Field": "tankLandBrakeMPSS",
+      "Name": "タンク地上移動_歩行時_ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 歩行時ブレーキ量"
+    },
+    {
+      "Field": "tankLandDashMaxSpeedKMPH",
+      "Name": "タンク地上移動_ダッシュ時_最高速度[km/h]",
+      "Description": "タンク地上移動 - ダッシュ時最高速度"
+    },
+    {
+      "Field": "tankLandDashAccelMPSS",
+      "Name": "タンク地上移動_ダッシュ時_加速度[m/s^2]",
+      "Description": "タンク地上移動 - ダッシュ時加速度"
+    },
+    {
+      "Field": "tankLandDashBrakeMPSS",
+      "Name": "タンク地上移動_ダッシュ時_ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - ダッシュ時ブレーキ量"
+    },
+    {
+      "Field": "tankLandDriftBrake_ToMaxTimeSec",
+      "Name": "タンクドリフトブレーキ_最大ブレーキまでの時間[sec]",
+      "Description": "タンクドリフトで使うブレーキで最小値から最大値になる時間"
+    },
+    {
+      "Field": "tankLandDriftBrake_MinMPSS",
+      "Name": "タンクドリフトブレーキ_最小ブレーキ量[m/s^2]",
+      "Description": "タンクドリフトで使う最小ブレーキ"
+    },
+    {
+      "Field": "tankLandDriftBrake_MaxMPSS",
+      "Name": "タンクドリフトブレーキ_最大ブレーキ量[m/s^2]",
+      "Description": "タンクドリフトで使う最大ブレーキ"
+    },
+    {
+      "Field": "hyperBoostAutosightingUpperMaxSpeedKMPH",
+      "Name": "大QBオートサイティング時垂直移動最高速度[km/h]",
+      "Description": "オートサイティング中の大QB時の垂直移動最高速度"
+    },
+    {
+      "Field": "hyperBoostAutosightingUpperAccelMPSS",
+      "Name": "大QBオートサイティング時垂直移動加速度[m/s^2]",
+      "Description": "オートサイティング中の大QB時の垂直移動加速度"
+    },
+    {
+      "Field": "hyperBoostAutosightingUpBtnUpperMaxSpeedKMPH",
+      "Name": "大QBオートサイティング時上昇ボタン押下中垂直移動最高速度[km/h]",
+      "Description": "オートサイティング中の大QB上昇ボタン押下時の垂直移動最高速度"
+    },
+    {
+      "Field": "hyperBoostAutosightingUpBtnUpperAccelMPSS",
+      "Name": "大QBオートサイティング時上昇ボタン押下中垂直移動加速度[m/s^2]",
+      "Description": "オートサイティング中の大QB上昇ボタン押下時の垂直移動加速度"
+    },
+    {
+      "Field": "hyperBoostDownMaxSpeedKMPH",
+      "Name": "大QB下降最高速度[km/h]",
+      "Description": "大QB時の非上昇時下降最高速度"
+    },
+    {
+      "Field": "hyperBoostDownAccelMPSS",
+      "Name": "大QB下降垂直加速度[m/s^2]",
+      "Description": "大QB時の非上昇時下降加速度"
+    },
+    {
+      "Field": "boostToWalkRunBrakeMPSS",
+      "Name": "ブースト→歩行走行ブレーキ量[m/s^2]",
+      "Description": "制御プログラム「ブースト移動→歩行走行」で使うブレーキ量"
+    },
+    {
+      "Field": "upperBoostV2HorizontalMaxSpeedKMPH",
+      "Name": "【ブースト上昇v2】水平移動最高速度[km/h]",
+      "Description": "ブースト上昇v2時の水平移動最高速度"
+    },
+    {
+      "Field": "upperBoostV2HorizontalAccelMPSS",
+      "Name": "【ブースト上昇v2】水平移動加速度[m/s^2]",
+      "Description": "ブースト上昇v2時の水平移動加速度"
+    },
+    {
+      "Field": "upperBoostV2UpMaxSpeedKMPH",
+      "Name": "【ブースト上昇v2】上昇移動最高速度[km/h]",
+      "Description": "ブースト上昇v2時の上昇移動最高速度"
+    },
+    {
+      "Field": "upperBoostV2UpAccelMPSS",
+      "Name": "【ブースト上昇v2】上昇移動加速度[m/s^2]",
+      "Description": "ブースト上昇v2時の上昇移動加速度"
+    },
+    {
+      "Field": "upperBoostV2DownMaxSpeedKMPH",
+      "Name": "【ブースト上昇v2】下降移動最高速度[km/h]",
+      "Description": "ブースト上昇v2時の下降移動最高速度"
+    },
+    {
+      "Field": "upperBoostV2DownAccelMPSS",
+      "Name": "【ブースト上昇v2】下降移動加速度[m/s^2]",
+      "Description": "ブースト上昇v2時の下降移動加速度"
+    },
+    {
+      "Field": "upperBoostV2UpMaxAlt",
+      "Name": "【ブースト上昇v2】最高高度[m]",
+      "Description": "ブースト上昇v2の最高高度"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "boostStartAccel_GroundCondSpeedKMH",
+      "Name": "地上ブースト初期加速と判定する速度[km/h]",
+      "Description": "地上ブースト時に初期加速と判断する速度"
+    },
+    {
+      "Field": "boostStartAccel_GroundAccelMPSS",
+      "Name": "地上ブースト時初期加速度[m/s^2]",
+      "Description": "地上ブースト時の初期加速度"
+    },
+    {
+      "Field": "boostStartAccel_FlyCondSpeedKMH",
+      "Name": "空中ブースト初期加速と判定する速度[km/h]",
+      "Description": "空中ブースト時に初期加速と判断する速度"
+    },
+    {
+      "Field": "boostStartAccel_FlyAccelMPSS",
+      "Name": "空中ブースト時初期加速度[m/s^2]",
+      "Description": "空中ブースト時の初期加速度"
+    },
+    {
+      "Field": "blowDeadBrake_BeginBrakeMPSS",
+      "Name": "【吹っ飛び死亡ブレーキ】開始時ブレーキ[m/s^2]",
+      "Description": "吹っ飛び死亡待機ブレーキ開始時のブレーキ量"
+    },
+    {
+      "Field": "blowDeadBrake_PeakBrakeMPSS",
+      "Name": "【吹っ飛び死亡ブレーキ】ピーク時ブレーキ[m/s^2]",
+      "Description": "吹っ飛び死亡待機ブレーキのピークブレーキ量"
+    },
+    {
+      "Field": "blowDeadBrake_BeginToPeakTimeSec",
+      "Name": "【吹っ飛び死亡ブレーキ】開始からピークまでの時間[sec]",
+      "Description": "吹っ飛び死亡待機ブレーキ開始からピークまでかかる時間"
+    },
+    {
+      "Field": "blowDeadBrake_TimerResetDelayTime",
+      "Name": "【吹っ飛び死亡ブレーキ】経過時間リセット猶予時間[sec]",
+      "Description": "ノックバック速度が0になってから吹っ飛び死亡待機ブレーキ用タイマーがリセットするまでの時間"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostChangePerfStartAccelMPSS",
+      "Name": "上昇ブースト開始加速度_ブースト性能変化空間[[m/s^2]",
+      "Description": "上昇ブースト開始加速度(特殊効果「ブースト性能変化空間」がかかっているとき)"
+    },
+    {
+      "Field": "upperBoostChangePerfMaxAccelMPSS",
+      "Name": "上昇ブースト最高加速度_ブースト性能変化空間[[m/s^2]",
+      "Description": "上昇ブースト時の最高加速度(特殊効果「ブースト性能変化空間」がかかっているとき)"
+    },
+    {
+      "Field": "pad_4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandOutDirBrakeMPSS",
+      "Name": "タンク地上移動_歩行時_移動方向外ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 歩行時の移動方向以外に働くブレーキ量"
+    },
+    {
+      "Field": "tankLandRunOutDirBrakeMPSS",
+      "Name": "タンク地上移動_走行時_移動方向外ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 走行時の移動方向以外に働くブレーキ量"
+    },
+    {
+      "Field": "tankLandDashOutDirBrakeMPSS",
+      "Name": "タンク地上移動_ダッシュ時_移動方向外ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - ダッシュ時の移動方向以外に働くブレーキ量"
+    },
+    {
+      "Field": "tankLandSwitchBackMaxSpeedKMPH",
+      "Name": "タンク地上移動_切り返し時_最高速度[km/h]",
+      "Description": "タンク地上移動 - 切り返し時最高速度"
+    },
+    {
+      "Field": "tankLandSwitchBackAccelMPSS",
+      "Name": "タンク地上移動_切り返し時_加速度[m/s^2]",
+      "Description": "タンク地上移動 - 切り返し時加速度"
+    },
+    {
+      "Field": "tankLandSwitchBackBrakeMPSS",
+      "Name": "タンク地上移動_切り返し時_ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 切り返し時ブレーキ量"
+    },
+    {
+      "Field": "tankLandSwitchBackOutDirBrakeMPSS",
+      "Name": "タンク地上移動_切り返し時_移動方向外ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - 切り返し時の移動方向以外に働くブレーキ量"
+    },
+    {
+      "Field": "tankLandDriftMaxSpeedKMPH",
+      "Name": "タンク地上移動_ドリフト時_最高速度[km/h]",
+      "Description": "タンク地上移動 - ドリフト時最高速度"
+    },
+    {
+      "Field": "tankLandDriftAccelMPSS",
+      "Name": "タンク地上移動_ドリフト時_加速度[m/s^2]",
+      "Description": "タンク地上移動 - ドリフト時加速度"
+    },
+    {
+      "Field": "tankLandDriftBrakeMPSS",
+      "Name": "タンク地上移動_ドリフト時_ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - ドリフト時ブレーキ量"
+    },
+    {
+      "Field": "tankLandDriftOutDirBrakeMPSS",
+      "Name": "タンク地上移動_ドリフト時_移動方向外ブレーキ量[m/s^2]",
+      "Description": "タンク地上移動 - ドリフト時の移動方向以外に働くブレーキ量"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_UpperMaxSpeedKMH",
+      "Name": "【四脚ホバリング】上昇最高速度[km/h]",
+      "Description": "大ジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "fourLegFlyMove_DownMaxSpeedKMH",
+      "Name": "【四脚ホバリング】下降最高速度[km/h]",
+      "Description": "大ジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "fourLegFlyMove_HorizontalMaxSpeedKMH",
+      "Name": "【四脚ホバリング】水平最高速度[km/h]",
+      "Description": "大ジャンプ時の水平移動最高速度"
+    },
+    {
+      "Field": "fourLegFlyMove_HorizontalAccelMPSS",
+      "Name": "【四脚ホバリング】水平加速度[m/s^2]",
+      "Description": "大ジャンプ時の水平移動加速度"
+    },
+    {
+      "Field": "fourLegFlyMove_StartCondSpeedH",
+      "Name": "【四脚ホバリング】初期加速と判定する水平速度[km/h]",
+      "Description": "空中ブースト時に初期加速と判断する速度"
+    },
+    {
+      "Field": "fourLegFlyMove_StartAccelH",
+      "Name": "【四脚ホバリング】初期水平加速度[m/s^2]",
+      "Description": "空中ブースト時の初期加速度"
+    },
+    {
+      "Field": "fourLegFlyMove_SwtichBackBrake",
+      "Name": "【四脚ホバリング】切り返し時ブレーキ[m/s^2]",
+      "Description": "空中ブースト移動の切り返し時ブレーキ"
+    },
+    {
+      "Field": "fourLegFlyMove_SubAccel",
+      "Name": "【四脚ホバリング】移動方向補正加速度[m/s^2]",
+      "Description": "空中ブースト移動の移動方向補正用加速度"
+    },
+    {
+      "Field": "tankLandTurnBrakeMaxSpeedKMPH",
+      "Name": "タンク地上移動_歩行時_旋回中最高速度[km/h]",
+      "Description": "タンク地上移動 - 旋回中の歩行時の最高速度"
+    },
+    {
+      "Field": "tankLandTurnBrakeBoostMaxSpeedKMPH",
+      "Name": "タンク地上移動_走行時_旋回中最高速度[km/h]",
+      "Description": "タンク地上移動 - 旋回中の走行時最高速度"
+    },
+    {
+      "Field": "tankLandTurnBrakeDashMaxSpeedKMPH",
+      "Name": "タンク地上移動_ダッシュ時_旋回中最高速度[km/h]",
+      "Description": "タンク地上移動 - 旋回中のダッシュ時最高速度"
+    },
+    {
+      "Field": "tankLandTurnBrakeDriftMaxSpeedKMPH",
+      "Name": "タンク地上移動_ドリフト時_旋回中最高速度[km/h]",
+      "Description": "タンク地上移動 - 旋回中のドリフト時最高速度"
+    },
+    {
+      "Field": "tankLandTurnSpeedDPS",
+      "Name": "タンク地上移動_旋回中とみなす角速度[deg/s]",
+      "Description": "タンク地上移動 - 旋回中とみなす角速度"
+    },
+    {
+      "Field": "tankLandTurnBrakeStartTimeSec",
+      "Name": "タンク地上移動_旋回中の減速を始める時間[s]",
+      "Description": "タンク地上移動 - 旋回中速度になり始める時間"
+    },
+    {
+      "Field": "tankLandTurnBrakeEndTimeSec",
+      "Name": "タンク地上移動_旋回中の減速が完了する時間[s]",
+      "Description": "タンク地上移動 - 旋回中速度に完全になる時間"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

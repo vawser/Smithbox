@@ -1,0 +1,353 @@
+{
+  "Name": "ThrowCounterParam",
+  "Entries": [
+    {
+      "ID": 34210000,
+      "Entries": [
+        "Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 34213000,
+      "Entries": [
+        "Morgott"
+      ]
+    },
+    {
+      "ID": 34214000,
+      "Entries": [
+        "Omen"
+      ]
+    },
+    {
+      "ID": 34227000,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 34227200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34227400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34227600,
+      "Entries": [
+        "Giant Death Crab"
+      ]
+    },
+    {
+      "ID": 34250000,
+      "Entries": [
+        "Crucible Knight"
+      ]
+    },
+    {
+      "ID": 34308000,
+      "Entries": [
+        "Imp"
+      ]
+    },
+    {
+      "ID": 34310000,
+      "Entries": [
+        "Bell Bearing Hunter / Elemer of the Briar"
+      ]
+    },
+    {
+      "ID": 34340000,
+      "Entries": [
+        "Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 34345000,
+      "Entries": [
+        "Misbegotten"
+      ]
+    },
+    {
+      "ID": 34356000,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 34360000,
+      "Entries": [
+        "Alabaster Lord"
+      ]
+    },
+    {
+      "ID": 34365000,
+      "Entries": [
+        "Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 34366100,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 34366110,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 34366120,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 34366130,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 34366140,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 34366200,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 34366210,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 34366220,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 34366230,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 34366240,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 34366400,
+      "Entries": [
+        "Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 34395000,
+      "Entries": [
+        "Man-Serpent"
+      ]
+    },
+    {
+      "ID": 34411000,
+      "Entries": [
+        "Demi-Human Shaman"
+      ]
+    },
+    {
+      "ID": 34413000,
+      "Entries": [
+        "Demi-Human Queen"
+      ]
+    },
+    {
+      "ID": 34414000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34420000,
+      "Entries": [
+        "Man-Bat"
+      ]
+    },
+    {
+      "ID": 34420100,
+      "Entries": [
+        "Operatic Bat"
+      ]
+    },
+    {
+      "ID": 34422000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34424000,
+      "Entries": [
+        "Fingercreeper"
+      ]
+    },
+    {
+      "ID": 34428000,
+      "Entries": [
+        "Giant Ant"
+      ]
+    },
+    {
+      "ID": 34432000,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 34432100,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 34447000,
+      "Entries": [
+        "Abductor Virgin"
+      ]
+    },
+    {
+      "ID": 34456000,
+      "Entries": [
+        "Giant Crow"
+      ]
+    },
+    {
+      "ID": 34458000,
+      "Entries": [
+        "Large Wormface"
+      ]
+    },
+    {
+      "ID": 34462000,
+      "Entries": [
+        "Astel, Naturalborn of the Void"
+      ]
+    },
+    {
+      "ID": 34463000,
+      "Entries": [
+        "Runebear"
+      ]
+    },
+    {
+      "ID": 34464000,
+      "Entries": [
+        "Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 34468000,
+      "Entries": [
+        "Falling-star Beast"
+      ]
+    },
+    {
+      "ID": 34498000,
+      "Entries": [
+        "Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 34501000,
+      "Entries": [
+        "Golden Hippopotamus"
+      ]
+    },
+    {
+      "ID": 34501100,
+      "Entries": [
+        "Golden Hippopotamus (Golden Wings)"
+      ]
+    },
+    {
+      "ID": 34581000,
+      "Entries": [
+        "Demi-Human Swordmaster"
+      ]
+    },
+    {
+      "ID": 34750000,
+      "Entries": [
+        "Gladius - Beast of Night"
+      ]
+    },
+    {
+      "ID": 34751000,
+      "Entries": [
+        "Adel - Baron of Night"
+      ]
+    },
+    {
+      "ID": 34751100,
+      "Entries": [
+        "Adel - Baron of Night (Lightning Fang)"
+      ]
+    },
+    {
+      "ID": 34752000,
+      "Entries": [
+        "Gnoster - Wisdom of Night (Moth)"
+      ]
+    },
+    {
+      "ID": 34760000,
+      "Entries": [
+        "Fulghor - Champion of Nightglow"
+      ]
+    },
+    {
+      "ID": 34770000,
+      "Entries": [
+        "Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 34771000,
+      "Entries": [
+        "Centipede Demon"
+      ]
+    },
+    {
+      "ID": 34781000,
+      "Entries": [
+        "Freja Spiderling"
+      ]
+    },
+    {
+      "ID": 34790000,
+      "Entries": [
+        "Nameless King"
+      ]
+    },
+    {
+      "ID": 34792000,
+      "Entries": [
+        "Dancer of the Boreal Valley"
+      ]
+    }
+  ]
+}

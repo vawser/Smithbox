@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="/menu/tex/icon/vow/vi_0003.tpf" width="64" height="64" type="Vow">
+    <SubTexture name="ICON_3.png" x="0" y="0" width="64"  height="64" originalWidth="64" originalHeight="64" half="0"/>
+</TextureAtlas>

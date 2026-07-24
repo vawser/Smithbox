@@ -1,0 +1,56 @@
+{
+  "Key": "JIGGLER_CALC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "JIGGLER_CALC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Position only"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rotation only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Position -> Rotation"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed to World"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Percentage from Specified Joint"
+        }
+      ]
+    }
+  ]
+}

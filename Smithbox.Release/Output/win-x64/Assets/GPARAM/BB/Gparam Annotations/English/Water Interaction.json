@@ -1,0 +1,63 @@
+{
+  "ID": "WaterInteraction-Editor",
+  "Name": "Water Interaction",
+  "Description": "Covers parameters relating to water interactions.",
+  "Fields": [
+    {
+      "ID": "WaterInteraction-Enable",
+      "Name": "Enable Water Interaction",
+      "Description": "Enables or disables dynamic water interaction effects such as ripples and disturbances.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "WaterInteraction-Screen Space Enable",
+      "Name": "Enable Screen Space",
+      "Description": "Enables screen-space simulation for water interactions, allowing effects to be calculated based on what’s visible on screen.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "WaterInteraction - Create Distance",
+      "Name": "Creation Distance",
+      "Description": "Maximum distance from the camera at which water interaction effects are generated.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - Delete Distance",
+      "Name": "Deletion Distance",
+      "Description": "Distance beyond which water interaction effects are removed to save performance.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - MaxResolution",
+      "Name": "Max Resolution",
+      "Description": "Sets the maximum resolution of the water interaction simulation buffer.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace TexelSize",
+      "Name": "Screen Space Texel Size",
+      "Description": "Defines the sampling resolution of the screen space water interaction buffer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace Max Resolution",
+      "Name": "Screen Space Max Resolution",
+      "Description": "Sets the maximum resolution used for screen space water interaction simulation.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

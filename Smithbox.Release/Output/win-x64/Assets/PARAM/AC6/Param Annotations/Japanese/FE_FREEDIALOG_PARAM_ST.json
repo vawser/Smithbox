@@ -1,0 +1,88 @@
+{
+  "Param": "FE_FREEDIALOG_PARAM_ST",
+  "Type": "FE_FREEDIALOG_PARAM_ST",
+  "Name": "FE_FREEDIALOG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "DialogGroup",
+      "Name": "ダイアロググループ",
+      "Description": "ダイアログの制御グループ"
+    },
+    {
+      "Field": "DisplayTime",
+      "Name": "表示時間(秒)",
+      "Description": "表示時間(0で無制限)"
+    },
+    {
+      "Field": "BaseRect_left",
+      "Name": "下地の位置(左)",
+      "Description": "下地のX座標（左端 0 ～右端100)"
+    },
+    {
+      "Field": "BaseRect_top",
+      "Name": "下地の位置(上)",
+      "Description": "下地のY座標（上端 0 ～下端100)"
+    },
+    {
+      "Field": "BaseRect_w",
+      "Name": "下地の幅",
+      "Description": "下地の幅（0～画面全体幅100)"
+    },
+    {
+      "Field": "BaseRect_h",
+      "Name": "下地の高さ",
+      "Description": "下地の高さ（0～画面全体高100)"
+    },
+    {
+      "Field": "BaseColor_r",
+      "Name": "下地色 R",
+      "Description": "下地の色 R成分"
+    },
+    {
+      "Field": "BaseColor_g",
+      "Name": "下地色 G",
+      "Description": "下地の色 G成分"
+    },
+    {
+      "Field": "BaseColor_b",
+      "Name": "下地色 B",
+      "Description": "下地の色 B成分"
+    },
+    {
+      "Field": "BaseColor_a",
+      "Name": "下地色 A",
+      "Description": "下地の色 A成分(0 透明～255 不透明)"
+    },
+    {
+      "Field": "FontColor_r",
+      "Name": "テキスト色 R",
+      "Description": "テキストの色 R成分"
+    },
+    {
+      "Field": "FontColor_g",
+      "Name": "テキスト色 G",
+      "Description": "テキストの色 G成分"
+    },
+    {
+      "Field": "FontColor_b",
+      "Name": "テキスト色 B",
+      "Description": "テキストの色 B成分"
+    },
+    {
+      "Field": "FontColor_a",
+      "Name": "テキスト色 A",
+      "Description": "テキストの色 A成分(0 透明～255 不透明)"
+    },
+    {
+      "Field": "FontScale",
+      "Name": "フォントの大きさ",
+      "Description": "フォントの表示倍率"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約",
+      "Description": "ダミー"
+    }
+  ]
+}

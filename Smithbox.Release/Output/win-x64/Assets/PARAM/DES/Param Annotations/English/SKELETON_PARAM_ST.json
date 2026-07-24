@@ -1,0 +1,33 @@
+{
+  "Param": "SKELETON_PARAM_ST",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SKELETON_PARAM_ST",
+  "Description": "Determines the parameters for character skeleton and foot inverse kinematics .",
+  "Fields": [
+    {
+      "Field": "neckTurnPriority",
+      "Name": "Neck Turn Priority",
+      "Description": "The lower it is, the faster it will turn. -1 does not turn the head."
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "Neck Turn Maximum Rotation",
+      "Description": "The maximum rotation angle for this joint. Can't bend beyond this angle."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnGain",
+      "Name": "Neck Turn Gain",
+      "Description": "The amount of gain for neck turning. The higher the value, the faster it turns."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

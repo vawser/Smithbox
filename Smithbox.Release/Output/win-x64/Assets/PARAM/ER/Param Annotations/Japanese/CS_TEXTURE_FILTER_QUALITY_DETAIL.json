@@ -1,0 +1,23 @@
+{
+  "Param": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Type": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Name": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "filter",
+      "Name": "フィルター",
+      "Description": "フィルター"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnisoLevel",
+      "Name": "アニソレベル",
+      "Description": "アニソレベル"
+    }
+  ]
+}

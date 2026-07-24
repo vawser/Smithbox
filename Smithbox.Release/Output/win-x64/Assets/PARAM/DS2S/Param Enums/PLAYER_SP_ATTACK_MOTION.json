@@ -1,0 +1,308 @@
+{
+  "Key": "PLAYER_SP_ATTACK_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_SP_ATTACK_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "20010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Throw and Grab (Medium)"
+        }
+      ]
+    },
+    {
+      "Key": "20010282",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Throw and Grab (Large)"
+        }
+      ]
+    },
+    {
+      "Key": "20010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "20010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "20010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Guard Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "21010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "21010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "21010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: 1H Guard Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "25010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Guard Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Standard)"
+        }
+      ]
+    },
+    {
+      "Key": "25010331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Wyvern)"
+        }
+      ]
+    },
+    {
+      "Key": "25010332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Elite Giant)"
+        }
+      ]
+    },
+    {
+      "Key": "25010334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Primal Knight)"
+        }
+      ]
+    },
+    {
+      "Key": "25010335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Flame Lizard)"
+        }
+      ]
+    },
+    {
+      "Key": "25010336",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Fall Stab (Giant Lord)"
+        }
+      ]
+    },
+    {
+      "Key": "29010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "29010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "29010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Guard Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "29010330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (Standard)"
+        }
+      ]
+    },
+    {
+      "Key": "29010331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (Wyvern)"
+        }
+      ]
+    },
+    {
+      "Key": "29010332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (Elite Giant)"
+        }
+      ]
+    },
+    {
+      "Key": "29010334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (Primal Knight)"
+        }
+      ]
+    },
+    {
+      "Key": "29010335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (Flame Lizard)"
+        }
+      ]
+    },
+    {
+      "Key": "29010336",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 1H Fall Stab (G)"
+        }
+      ]
+    },
+    {
+      "Key": "32010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 1H Throw and Grab (Medium)"
+        }
+      ]
+    },
+    {
+      "Key": "32010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "32010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "32010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 1H Guard Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "36010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 1H Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "36010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 1H Parry Break Stab"
+        }
+      ]
+    },
+    {
+      "Key": "36010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 1H Guard Break Stab"
+        }
+      ]
+    }
+  ]
+}

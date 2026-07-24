@@ -1,0 +1,353 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Important Places - Dilapidated Temple"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Important Places - Upper Tower - Kuro's Room"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Important Places - Inner Sanctum"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Dragonspring - Hirata Estate"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Estate Path"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Bamboo Thicket Slope"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Hirata Estate - Main Hall"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Hirata Audience Chamber"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Hirata Estate - Hidden Temple"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Dilapidated Temple"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Ashina Outskirts"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Outskirts Wall - Gate Path"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Outskirts Wall - Stairway"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Underbridge Valley"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Ashina Castle Gate Fortress"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Ashina Castle Gate"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Flames of Hatred"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Ashina Castle"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Upper Tower - Antechamber"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Upper Tower - Ashina Dojo"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Castle Tower Lookout"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Upper Tower - Kuro's Room"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Old Grave"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "Great Serpent Shrine"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Abandoned Dungeon Entrance"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Ashina Reservoir"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "Near Secret Passage"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Underground Waterway"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Bottomless Hole"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Ashina Depths"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Poison Pool"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Guardian Ape's Burrow"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Hidden Forest"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Mibu Village"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Water Mill"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "Wedding Cave Door"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Under-Shrine Valley"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Sunken Valley"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Gun Fort"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Riven Cave"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "Bodhisattva Valley"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "Guardian Ape's Watering Hole"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Senpou Temple, Mt. Kongo"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Shugendo"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Temple Grounds"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Main Hall"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Inner Sanctum"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Sunken Valley Cavern"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Bell Demon's Temple"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Fountainhead Palace"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Vermilion Bride"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Mibu Manor"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Flower Viewing Stage"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Great Sakura"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "Palace Grounds"
+      ]
+    },
+    {
+      "ID": 2506,
+      "Entries": [
+        "Feeding Grounds"
+      ]
+    },
+    {
+      "ID": 2507,
+      "Entries": [
+        "Near Pot Noble"
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        "Sanctuary"
+      ]
+    }
+  ]
+}

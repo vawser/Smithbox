@@ -1,0 +1,23 @@
+{
+  "Param": "MENU_BEHAVIOR_PARAM",
+  "Type": "MENU_BEHAVIOR_PARAM",
+  "Name": "MENU_BEHAVIOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "tutorialID",
+      "Name": "チュートリアルID",
+      "Description": "チュートリアルパラのID"
+    },
+    {
+      "Field": "enableHelpMenu",
+      "Name": "ヘルプメニュー",
+      "Description": "ヘルプメニューの有無"
+    },
+    {
+      "Field": "reserved",
+      "Name": "----",
+      "Description": "予約"
+    }
+  ]
+}

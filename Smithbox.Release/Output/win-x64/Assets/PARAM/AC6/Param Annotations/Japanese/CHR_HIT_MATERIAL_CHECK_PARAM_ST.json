@@ -1,0 +1,63 @@
+{
+  "Param": "CHR_HIT_MATERIAL_CHECK_PARAM_ST",
+  "Type": "CHR_HIT_MATERIAL_CHECK_PARAM_ST",
+  "Name": "CHR_HIT_MATERIAL_CHECK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "HitMaterialId_0",
+      "Name": "ヒットマテリアルID 0",
+      "Description": "接地しているかチェックする地面のマテリアルID 0"
+    },
+    {
+      "Field": "HitMaterialId_1",
+      "Name": "ヒットマテリアルID 1",
+      "Description": "接地しているかチェックする地面のマテリアルID 1"
+    },
+    {
+      "Field": "HitMaterialId_2",
+      "Name": "ヒットマテリアルID 2",
+      "Description": "接地しているかチェックする地面のマテリアルID 2"
+    },
+    {
+      "Field": "HitMaterialId_3",
+      "Name": "ヒットマテリアルID 3",
+      "Description": "接地しているかチェックする地面のマテリアルID 3"
+    },
+    {
+      "Field": "HitMaterialId_4",
+      "Name": "ヒットマテリアルID 4",
+      "Description": "接地しているかチェックする地面のマテリアルID 4"
+    },
+    {
+      "Field": "HitMaterialId_5",
+      "Name": "ヒットマテリアルID 5",
+      "Description": "接地しているかチェックする地面のマテリアルID 5"
+    },
+    {
+      "Field": "HitMaterialId_6",
+      "Name": "ヒットマテリアルID 6",
+      "Description": "接地しているかチェックする地面のマテリアルID 6"
+    },
+    {
+      "Field": "HitMaterialId_7",
+      "Name": "ヒットマテリアルID 7",
+      "Description": "接地しているかチェックする地面のマテリアルID 7"
+    },
+    {
+      "Field": "HitMaterialId_8",
+      "Name": "ヒットマテリアルID 8",
+      "Description": "接地しているかチェックする地面のマテリアルID 8"
+    },
+    {
+      "Field": "HitMaterialId_9",
+      "Name": "ヒットマテリアルID 9",
+      "Description": "接地しているかチェックする地面のマテリアルID 9"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,521 @@
+{
+  "Name": "FootIKSetupParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[c0000] Left leg"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[c0000] Right leg"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[c0001] Left leg"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[c0001] Right leg"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "[c0002] Left leg"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "[c0002] Right leg"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "[c0100] Left leg front"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "[c0100] Right leg front"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "[c0100] Back left leg"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "[c0100] Right leg back"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "[c0200] Left leg"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "[c0200] Right leg"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "[c0300] Left leg"
+      ]
+    },
+    {
+      "ID": 3000010,
+      "Entries": [
+        "[c0300] Right leg"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[c3000] Left leg"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "[c3000] Right leg"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "[c3001] Left leg"
+      ]
+    },
+    {
+      "ID": 30010010,
+      "Entries": [
+        "[c3001] Right leg"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "[c3002] Left leg"
+      ]
+    },
+    {
+      "ID": 30020010,
+      "Entries": [
+        "[c3002] Right leg"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "[c3020] Left leg"
+      ]
+    },
+    {
+      "ID": 30200010,
+      "Entries": [
+        "[c3020] Right leg"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "[c3050] Left leg"
+      ]
+    },
+    {
+      "ID": 30500010,
+      "Entries": [
+        "[c3050] Right leg"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "[c3100] Left leg"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "[c3100] Right leg"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "[c3200] Left leg"
+      ]
+    },
+    {
+      "ID": 32000010,
+      "Entries": [
+        "[c3200] Right leg"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "[c3250] Left leg"
+      ]
+    },
+    {
+      "ID": 32500010,
+      "Entries": [
+        "[c3250] Right leg"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "[c3260] Left leg"
+      ]
+    },
+    {
+      "ID": 32600010,
+      "Entries": [
+        "[c3260] Right leg"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "[c3300] Left leg"
+      ]
+    },
+    {
+      "ID": 33000010,
+      "Entries": [
+        "[c3300] Right leg"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "[c3400] Front left leg"
+      ]
+    },
+    {
+      "ID": 34000010,
+      "Entries": [
+        "[c3400] Right leg front"
+      ]
+    },
+    {
+      "ID": 34000020,
+      "Entries": [
+        "[c3400] Back left leg"
+      ]
+    },
+    {
+      "ID": 34000030,
+      "Entries": [
+        "[c3400] Right leg back"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "[c3500] Left leg"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "[c3500] Right leg"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "[c3600] Left leg front"
+      ]
+    },
+    {
+      "ID": 36000010,
+      "Entries": [
+        "[c3600] Right leg front"
+      ]
+    },
+    {
+      "ID": 36000020,
+      "Entries": [
+        "[c3600] Left leg back"
+      ]
+    },
+    {
+      "ID": 36000030,
+      "Entries": [
+        "[c3600] Right leg back"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "[c3700] Left leg"
+      ]
+    },
+    {
+      "ID": 37000010,
+      "Entries": [
+        "[c3700] Right leg"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "[c4000] Left leg front"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "[c4000] Right leg front"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "[c4000] Back left leg"
+      ]
+    },
+    {
+      "ID": 40000030,
+      "Entries": [
+        "[c4000] Right leg back"
+      ]
+    },
+    {
+      "ID": 40000040,
+      "Entries": [
+        "[c4000] Left leg (humanoid)"
+      ]
+    },
+    {
+      "ID": 40000050,
+      "Entries": [
+        "[c4000] Right leg (humanoid)"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "[c4100] Left leg"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "[c4100] Right leg"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "[c4150] Front left leg"
+      ]
+    },
+    {
+      "ID": 41500010,
+      "Entries": [
+        "[c4150] Back left leg"
+      ]
+    },
+    {
+      "ID": 41500020,
+      "Entries": [
+        "[c4150] Right leg back"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "[c4200] Left leg"
+      ]
+    },
+    {
+      "ID": 42000010,
+      "Entries": [
+        "[c4200] Right leg"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "[c4201] Left leg"
+      ]
+    },
+    {
+      "ID": 42010010,
+      "Entries": [
+        "[c4201] Right leg"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "[c4250] Left leg"
+      ]
+    },
+    {
+      "ID": 42500010,
+      "Entries": [
+        "[c4250] Right leg"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "[c5000] Left leg front"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "[c5000] Right leg front"
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        "[c5000] Back left leg"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "[c5010] Front left leg"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "[c5010] Right leg front"
+      ]
+    },
+    {
+      "ID": 50100020,
+      "Entries": [
+        "[c5010] Back left leg"
+      ]
+    },
+    {
+      "ID": 50100030,
+      "Entries": [
+        "[c5010] Right leg back"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "[c6100] Left front leg"
+      ]
+    },
+    {
+      "ID": 61000010,
+      "Entries": [
+        "[c6100] Right front leg"
+      ]
+    },
+    {
+      "ID": 61000020,
+      "Entries": [
+        "[c6100] Left middle leg"
+      ]
+    },
+    {
+      "ID": 61000030,
+      "Entries": [
+        "[c6100] Right middle leg"
+      ]
+    },
+    {
+      "ID": 61000040,
+      "Entries": [
+        "[c6100] Left hind leg"
+      ]
+    },
+    {
+      "ID": 61000050,
+      "Entries": [
+        "[c6100]Right hind leg"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "[c8131] Left leg"
+      ]
+    },
+    {
+      "ID": 81310010,
+      "Entries": [
+        "[c8131] Right leg"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "[c8135] Left leg"
+      ]
+    },
+    {
+      "ID": 81350010,
+      "Entries": [
+        "[c8135] Right leg"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "[c8145] Left leg"
+      ]
+    },
+    {
+      "ID": 81450010,
+      "Entries": [
+        "[c8145] Right leg"
+      ]
+    },
+    {
+      "ID": 93090000,
+      "Entries": [
+        "[c9309] Front left leg"
+      ]
+    },
+    {
+      "ID": 93090010,
+      "Entries": [
+        "[c9309] Right leg front"
+      ]
+    },
+    {
+      "ID": 93090020,
+      "Entries": [
+        "[c9309] Left leg back"
+      ]
+    },
+    {
+      "ID": 93090030,
+      "Entries": [
+        "[c9309] Right leg back"
+      ]
+    }
+  ]
+}

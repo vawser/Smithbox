@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Behavior",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "Within Params and Time Action Events (TAE), behavior data is associated with some action and its effects, such as speffects, stamina cost, and various state changes.",
+        "",
+        "Within Havok Behavior files (HKX), behavior data is what manages animations and state transitions for characters."
+    ]
+}

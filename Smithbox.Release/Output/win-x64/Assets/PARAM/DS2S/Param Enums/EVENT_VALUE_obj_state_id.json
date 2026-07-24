@@ -1,0 +1,2315 @@
+{
+  "Key": "EVENT_VALUE_obj_state_id",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_obj_state_id"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Prohibited to use"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: System spare 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: System spare 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3: System spare 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4: System spare 4"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5: System spare 5"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6: System spare 6"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7: System spare 7"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8: System spare 8"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9: System spare 9"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10: OBJ initial state 1"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11: OBJ initial state 2"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12: OBJ initial state 3"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13: OBJ initial state 4"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "14: OBJ initial state 5"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "15: OBJ initial state 6"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16: OBJ initial state 7"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "17: OBJ initial state 8"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "18: OBJ initial state 9"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "19: OBJ initial state 10"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20: OBJ end state 1"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "21: OBJ end state 2"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "22: OBJ end state 3"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "23: OBJ end state 4"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "24: OBJ end state 5"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "25: OBJ end state 6"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "26: OBJ end state 7"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "27: OBJ end state 8"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "28: OBJ end state 9"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "29: OBJ end status 10"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "30: OBJ standby state 1"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "31: OBJ standby state 2"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "32: OBJ standby state 3"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "33: OBJ standby state 4"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "34: OBJ standby state 5"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "35: OBJ standby state 6"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "36: OBJ standby state 7"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "37: OBJ standby state 8"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "38: OBJ standby state 9"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "39: OBJ standby state 10"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40: OBJ standby state 11"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "41: OBJ standby state 12"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "42: OBJ standby state 13"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "43: OBJ standby state 14"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "44: OBJ standby state 15"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "45: OBJ standby state 16"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "46: OBJ standby state 17"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "47: OBJ standby state 18"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "48: OBJ standby state 19"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "49: OBJ standby state 20"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50: Destroying 1"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "51: Destroying 2"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "52: Destroying 3"
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "53: Destroying 4"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "54: Destroying 5"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "55: Destroying 6"
+        }
+      ]
+    },
+    {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "56: Destroying 7"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "57: Destroying 8"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "58: Destroying 9"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "59: Destroying 10"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60: Destroying 11"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "61: Destroying 12"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62: Destroying 13"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63: Destroying 14"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64: Destroying 15"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "65: Destroying 16"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "66: Destroying 17"
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "67: Destroying 18"
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "68: Destroying 19"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "69: Destroying 20"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "70: 1 in action"
+        }
+      ]
+    },
+    {
+      "Key": "71",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "71: 2 in action"
+        }
+      ]
+    },
+    {
+      "Key": "72",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "72: 3 in action"
+        }
+      ]
+    },
+    {
+      "Key": "73",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "73: 4 in action"
+        }
+      ]
+    },
+    {
+      "Key": "74",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "74: 5 in action"
+        }
+      ]
+    },
+    {
+      "Key": "75",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "75: 6 in action"
+        }
+      ]
+    },
+    {
+      "Key": "76",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "76: 7 in action"
+        }
+      ]
+    },
+    {
+      "Key": "77",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "77: 8 in action"
+        }
+      ]
+    },
+    {
+      "Key": "78",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "78: 9 in action"
+        }
+      ]
+    },
+    {
+      "Key": "79",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "79: 10 in action"
+        }
+      ]
+    },
+    {
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "80: 11 in action"
+        }
+      ]
+    },
+    {
+      "Key": "81",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "81: 12 in action"
+        }
+      ]
+    },
+    {
+      "Key": "82",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "82: 13 in action"
+        }
+      ]
+    },
+    {
+      "Key": "83",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "83: 14 in action"
+        }
+      ]
+    },
+    {
+      "Key": "84",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "84: 15 in action"
+        }
+      ]
+    },
+    {
+      "Key": "85",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "85: 16 in action"
+        }
+      ]
+    },
+    {
+      "Key": "86",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "86: 17 in action"
+        }
+      ]
+    },
+    {
+      "Key": "87",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "87: 18 in action"
+        }
+      ]
+    },
+    {
+      "Key": "88",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "88: 19 in action"
+        }
+      ]
+    },
+    {
+      "Key": "89",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "89: 20 in action"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "90: 21 in action"
+        }
+      ]
+    },
+    {
+      "Key": "91",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "91: 22 in action"
+        }
+      ]
+    },
+    {
+      "Key": "92",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "92: 23 in action"
+        }
+      ]
+    },
+    {
+      "Key": "93",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "93: 24 in action"
+        }
+      ]
+    },
+    {
+      "Key": "94",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "94: 25 in action"
+        }
+      ]
+    },
+    {
+      "Key": "95",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "95: 26 in action"
+        }
+      ]
+    },
+    {
+      "Key": "96",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "96: 27 in action"
+        }
+      ]
+    },
+    {
+      "Key": "97",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "97: 28 in action"
+        }
+      ]
+    },
+    {
+      "Key": "98",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "98: 29 in action"
+        }
+      ]
+    },
+    {
+      "Key": "99",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "99: 30 in action"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "100: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "101: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "103: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "104: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "105: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "106: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "107: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "108: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "109: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "110: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "111: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "112: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "113: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "114: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "115: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "116: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "117: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "118: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "119: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "120: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "121: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "122: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "123: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "124: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "126: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "127: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "128: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "129: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "130: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "131: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "132: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "133: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "134",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "134: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "135: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "136: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "137: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "138: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "139: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "140: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "141: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "142",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "142: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "143: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "144",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "144: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "145: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "146: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "147",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "147: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "148",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "148: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "149",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "149: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "150: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "151: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "152: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "153: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "154: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "155: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "156: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "157: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "158: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "159: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "160: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "161: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "162: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "163",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "163: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "164: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "165: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "166",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "166: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "167",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "167: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "168",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "168: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "169",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "169: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "170: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "171: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "172: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "173: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "174",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "174: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "175",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "175: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "176",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "176: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "177",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "177: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "178",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "178: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "179",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "179: Unique state"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "180: Others"
+        }
+      ]
+    },
+    {
+      "Key": "181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "181: Others"
+        }
+      ]
+    },
+    {
+      "Key": "182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "182: Others"
+        }
+      ]
+    },
+    {
+      "Key": "183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "183: Others"
+        }
+      ]
+    },
+    {
+      "Key": "184",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "184: Others"
+        }
+      ]
+    },
+    {
+      "Key": "185",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "185: Others"
+        }
+      ]
+    },
+    {
+      "Key": "186",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "186: Others"
+        }
+      ]
+    },
+    {
+      "Key": "187",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "187: Others"
+        }
+      ]
+    },
+    {
+      "Key": "188",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "188: Others"
+        }
+      ]
+    },
+    {
+      "Key": "189",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "189: Others"
+        }
+      ]
+    },
+    {
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "190: Others"
+        }
+      ]
+    },
+    {
+      "Key": "191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "191: Others"
+        }
+      ]
+    },
+    {
+      "Key": "192",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "192: Others"
+        }
+      ]
+    },
+    {
+      "Key": "193",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "193: Others"
+        }
+      ]
+    },
+    {
+      "Key": "194",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "194: Others"
+        }
+      ]
+    },
+    {
+      "Key": "195",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "195: Others"
+        }
+      ]
+    },
+    {
+      "Key": "196",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "196: Others"
+        }
+      ]
+    },
+    {
+      "Key": "197",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "197: Others"
+        }
+      ]
+    },
+    {
+      "Key": "198",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "198: Others"
+        }
+      ]
+    },
+    {
+      "Key": "199",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "199: Others"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "200: test"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "201: Test"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "202: Test"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "203: Test"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "204: Test"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "205: Test"
+        }
+      ]
+    },
+    {
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "206: Test"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "207: Test"
+        }
+      ]
+    },
+    {
+      "Key": "208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "208: Test"
+        }
+      ]
+    },
+    {
+      "Key": "209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "209: Test"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "210: Test"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "211: Test"
+        }
+      ]
+    },
+    {
+      "Key": "212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "212: Test"
+        }
+      ]
+    },
+    {
+      "Key": "213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "213: Test"
+        }
+      ]
+    },
+    {
+      "Key": "214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "214: Test"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "215: Test"
+        }
+      ]
+    },
+    {
+      "Key": "216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "216: Test"
+        }
+      ]
+    },
+    {
+      "Key": "217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "217: Test"
+        }
+      ]
+    },
+    {
+      "Key": "218",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "218: Test"
+        }
+      ]
+    },
+    {
+      "Key": "219",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "219: Test"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "220: Test"
+        }
+      ]
+    },
+    {
+      "Key": "221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "221: Test"
+        }
+      ]
+    },
+    {
+      "Key": "222",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "222: Test"
+        }
+      ]
+    },
+    {
+      "Key": "223",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "223: Test"
+        }
+      ]
+    },
+    {
+      "Key": "224",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "224: Test"
+        }
+      ]
+    },
+    {
+      "Key": "225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "225: Test"
+        }
+      ]
+    },
+    {
+      "Key": "226",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226: Test"
+        }
+      ]
+    },
+    {
+      "Key": "227",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "227: Test"
+        }
+      ]
+    },
+    {
+      "Key": "228",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "228: Test"
+        }
+      ]
+    },
+    {
+      "Key": "229",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "229: Test"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "230: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "231",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "231: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "232",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "232: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "233",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "233: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "234",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "234: System reserve"
+        }
+      ]
+    },
+    {
+      "Key": "235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "235: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "236",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "236: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "237",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "237: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "238",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "238: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "239",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "239: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "240: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "241: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "242",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "242: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "243",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "243: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "244",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "244: System reserve"
+        }
+      ]
+    },
+    {
+      "Key": "245",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "245: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "246",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "246: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "247",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "247: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "248",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "248: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "249",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "249: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "250: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "251: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "252: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "253: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "254: System spare"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    }
+  ]
+}

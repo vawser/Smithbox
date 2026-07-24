@@ -1,0 +1,1847 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Effect] Gnoster Parasite (Egg)"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "[Effect] Gnoster Parasite (Hatched)"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "[NPC] Dead Maiden (Head)"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "[NPC] Dead Maiden (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "[NPC] Dead Maiden (Arms)"
+      ]
+    },
+    {
+      "ID": 1000300,
+      "Entries": [
+        "[NPC] Dead Maiden (Legs)"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "[Wylder] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "[Wylder] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5000200,
+      "Entries": [
+        "[Wylder] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5000300,
+      "Entries": [
+        "[Wylder] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5000900,
+      "Entries": [
+        "[Wylder] Change Skill to Bird (Legs)"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "[Guardian] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "[Guardian] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5001200,
+      "Entries": [
+        "[Guardian] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "[Guardian] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5002000,
+      "Entries": [
+        "[Ironeye] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5002100,
+      "Entries": [
+        "[Ironeye] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5002200,
+      "Entries": [
+        "[Ironeye] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5002300,
+      "Entries": [
+        "[Ironeye] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5002500,
+      "Entries": [
+        "[Ironeye] No Quiver (Traitor) [Model]"
+      ]
+    },
+    {
+      "ID": 5003000,
+      "Entries": [
+        "[Duchess] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5003100,
+      "Entries": [
+        "[Duchess] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5003200,
+      "Entries": [
+        "[Duchess] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5003300,
+      "Entries": [
+        "[Duchess] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5003500,
+      "Entries": [
+        "[Duchess] Priestess [Model]"
+      ]
+    },
+    {
+      "ID": 5003900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5004000,
+      "Entries": [
+        "[Raider] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5004100,
+      "Entries": [
+        "[Raider] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5004200,
+      "Entries": [
+        "[Raider] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5004300,
+      "Entries": [
+        "[Raider] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5005000,
+      "Entries": [
+        "[Revenant] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5005100,
+      "Entries": [
+        "[Revenant] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5005200,
+      "Entries": [
+        "[Revenant] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5005300,
+      "Entries": [
+        "[Revenant] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5005500,
+      "Entries": [
+        "[Revenant] Chloe (Remembrance) [Model]"
+      ]
+    },
+    {
+      "ID": 5005600,
+      "Entries": [
+        "[Revenant] Doll (Remembrance) [Model]"
+      ]
+    },
+    {
+      "ID": 5006000,
+      "Entries": [
+        "[Recluse] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5006100,
+      "Entries": [
+        "[Recluse] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5006200,
+      "Entries": [
+        "[Recluse] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5006300,
+      "Entries": [
+        "[Recluse] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5007000,
+      "Entries": [
+        "[Executor] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5007100,
+      "Entries": [
+        "[Executor] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5007200,
+      "Entries": [
+        "[Executor] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5007300,
+      "Entries": [
+        "[Executor] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5008000,
+      "Entries": [
+        "[Scholar] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5008100,
+      "Entries": [
+        "[Scholar] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5008200,
+      "Entries": [
+        "[Scholar] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5008300,
+      "Entries": [
+        "[Scholar] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5009000,
+      "Entries": [
+        "[Undertaker] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5009100,
+      "Entries": [
+        "[Undertaker] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5009200,
+      "Entries": [
+        "[Undertaker] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5009300,
+      "Entries": [
+        "[Undertaker] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "[Wylder] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5010100,
+      "Entries": [
+        "[Wylder] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5010200,
+      "Entries": [
+        "[Wylder] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5010300,
+      "Entries": [
+        "[Wylder] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5011000,
+      "Entries": [
+        "[Guardian] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5011100,
+      "Entries": [
+        "[Guardian] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5011200,
+      "Entries": [
+        "[Guardian] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5011300,
+      "Entries": [
+        "[Guardian] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5012000,
+      "Entries": [
+        "[Ironeye] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5012100,
+      "Entries": [
+        "[Ironeye] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5012200,
+      "Entries": [
+        "[Ironeye] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5012300,
+      "Entries": [
+        "[Ironeye] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5013000,
+      "Entries": [
+        "[Duchess] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5013100,
+      "Entries": [
+        "[Duchess] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5013200,
+      "Entries": [
+        "[Duchess] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5013300,
+      "Entries": [
+        "[Duchess] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5014000,
+      "Entries": [
+        "[Raider] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5014100,
+      "Entries": [
+        "[Raider] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5014200,
+      "Entries": [
+        "[Raider] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5014300,
+      "Entries": [
+        "[Raider] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5015000,
+      "Entries": [
+        "[Revenant] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5015100,
+      "Entries": [
+        "[Revenant] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5015200,
+      "Entries": [
+        "[Revenant] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5015300,
+      "Entries": [
+        "[Revenant] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5016000,
+      "Entries": [
+        "[Recluse] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5016100,
+      "Entries": [
+        "[Recluse] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5016200,
+      "Entries": [
+        "[Recluse] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5016300,
+      "Entries": [
+        "[Recluse] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5017000,
+      "Entries": [
+        "[Executor] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5017100,
+      "Entries": [
+        "[Executor] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5017200,
+      "Entries": [
+        "[Executor] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5017300,
+      "Entries": [
+        "[Executor] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5018000,
+      "Entries": [
+        "[Scholar] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5018100,
+      "Entries": [
+        "[Scholar] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5018200,
+      "Entries": [
+        "[Scholar] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5018300,
+      "Entries": [
+        "[Scholar] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5019000,
+      "Entries": [
+        "[Undertaker] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5019100,
+      "Entries": [
+        "[Undertaker] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5019200,
+      "Entries": [
+        "[Undertaker] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5019300,
+      "Entries": [
+        "[Undertaker] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "[Wylder] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5020100,
+      "Entries": [
+        "[Wylder] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5020200,
+      "Entries": [
+        "[Wylder] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5020300,
+      "Entries": [
+        "[Wylder] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5021000,
+      "Entries": [
+        "[Guardian] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5021100,
+      "Entries": [
+        "[Guardian] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5021200,
+      "Entries": [
+        "[Guardian] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5021300,
+      "Entries": [
+        "[Guardian] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5022000,
+      "Entries": [
+        "[Ironeye] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5022100,
+      "Entries": [
+        "[Ironeye] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5022200,
+      "Entries": [
+        "[Ironeye] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5022300,
+      "Entries": [
+        "[Ironeye] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5023000,
+      "Entries": [
+        "[Duchess] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5023100,
+      "Entries": [
+        "[Duchess] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5023200,
+      "Entries": [
+        "[Duchess] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5023300,
+      "Entries": [
+        "[Duchess] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5024000,
+      "Entries": [
+        "[Raider] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5024100,
+      "Entries": [
+        "[Raider] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5024200,
+      "Entries": [
+        "[Raider] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5024300,
+      "Entries": [
+        "[Raider] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5025000,
+      "Entries": [
+        "[Revenant] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5025100,
+      "Entries": [
+        "[Revenant] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5025200,
+      "Entries": [
+        "[Revenant] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5025300,
+      "Entries": [
+        "[Revenant] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5026000,
+      "Entries": [
+        "[Recluse] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5026100,
+      "Entries": [
+        "[Recluse] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5026200,
+      "Entries": [
+        "[Recluse] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5026300,
+      "Entries": [
+        "[Recluse] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5027000,
+      "Entries": [
+        "[Executor] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5027100,
+      "Entries": [
+        "[Executor] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5027200,
+      "Entries": [
+        "[Executor] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5027300,
+      "Entries": [
+        "[Executor] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5028000,
+      "Entries": [
+        "[Scholar] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5028100,
+      "Entries": [
+        "[Scholar] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5028200,
+      "Entries": [
+        "[Scholar] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5028300,
+      "Entries": [
+        "[Scholar] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5029000,
+      "Entries": [
+        "[Undertaker] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5029100,
+      "Entries": [
+        "[Undertaker] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5029200,
+      "Entries": [
+        "[Undertaker] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5029300,
+      "Entries": [
+        "[Undertaker] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "[Wylder] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5030100,
+      "Entries": [
+        "[Wylder] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5030200,
+      "Entries": [
+        "[Wylder] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5030300,
+      "Entries": [
+        "[Wylder] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5031000,
+      "Entries": [
+        "[Guardian] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5031100,
+      "Entries": [
+        "[Guardian] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5031200,
+      "Entries": [
+        "[Guardian] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5031300,
+      "Entries": [
+        "[Guardian] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5032000,
+      "Entries": [
+        "[Ironeye] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5032100,
+      "Entries": [
+        "[Ironeye] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5032200,
+      "Entries": [
+        "[Ironeye] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5032300,
+      "Entries": [
+        "[Ironeye] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5033000,
+      "Entries": [
+        "[Duchess] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5033100,
+      "Entries": [
+        "[Duchess] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5033200,
+      "Entries": [
+        "[Duchess] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5033300,
+      "Entries": [
+        "[Duchess] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5034000,
+      "Entries": [
+        "[Raider] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5034100,
+      "Entries": [
+        "[Raider] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5034200,
+      "Entries": [
+        "[Raider] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5034300,
+      "Entries": [
+        "[Raider] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5034400,
+      "Entries": [
+        "[Raider] White Horn [Model]"
+      ]
+    },
+    {
+      "ID": 5035000,
+      "Entries": [
+        "[Revenant] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5035100,
+      "Entries": [
+        "[Revenant] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5035200,
+      "Entries": [
+        "[Revenant] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5035300,
+      "Entries": [
+        "[Revenant] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5036000,
+      "Entries": [
+        "[Recluse] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5036100,
+      "Entries": [
+        "[Recluse] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5036200,
+      "Entries": [
+        "[Recluse] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5036300,
+      "Entries": [
+        "[Recluse] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5037000,
+      "Entries": [
+        "[Executor] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5037100,
+      "Entries": [
+        "[Executor] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5037200,
+      "Entries": [
+        "[Executor] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5037300,
+      "Entries": [
+        "[Executor] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5038000,
+      "Entries": [
+        "[Scholar] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5038100,
+      "Entries": [
+        "[Scholar] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5038200,
+      "Entries": [
+        "[Scholar] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5038300,
+      "Entries": [
+        "[Scholar] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5039000,
+      "Entries": [
+        "[Undertaker] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5039100,
+      "Entries": [
+        "[Undertaker] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5039200,
+      "Entries": [
+        "[Undertaker] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5039300,
+      "Entries": [
+        "[Undertaker] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5050000,
+      "Entries": [
+        "[Wylder] Abysswalker (Head)"
+      ]
+    },
+    {
+      "ID": 5050100,
+      "Entries": [
+        "[Wylder] Abysswalker (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5050200,
+      "Entries": [
+        "[Wylder] Abysswalker (Arms)"
+      ]
+    },
+    {
+      "ID": 5050300,
+      "Entries": [
+        "[Wylder] Abysswalker (Legs)"
+      ]
+    },
+    {
+      "ID": 5051000,
+      "Entries": [
+        "[Guardian] Sunlight Knight (Head)"
+      ]
+    },
+    {
+      "ID": 5051100,
+      "Entries": [
+        "[Guardian] Sunlight Knight (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5051200,
+      "Entries": [
+        "[Guardian] Sunlight Knight (Arms)"
+      ]
+    },
+    {
+      "ID": 5051300,
+      "Entries": [
+        "[Guardian] Sunlight Knight (Legs)"
+      ]
+    },
+    {
+      "ID": 5052000,
+      "Entries": [
+        "[Ironeye] Ringfinger (Head)"
+      ]
+    },
+    {
+      "ID": 5052100,
+      "Entries": [
+        "[Ironeye] Ringfinger (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5052200,
+      "Entries": [
+        "[Ironeye] Ringfinger (Arms)"
+      ]
+    },
+    {
+      "ID": 5052300,
+      "Entries": [
+        "[Ironeye] Ringfinger (Legs)"
+      ]
+    },
+    {
+      "ID": 5053000,
+      "Entries": [
+        "[Duchess] Black Leather (Head)"
+      ]
+    },
+    {
+      "ID": 5053100,
+      "Entries": [
+        "[Duchess] Black Leather (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5053200,
+      "Entries": [
+        "[Duchess] Black Leather (Arms)"
+      ]
+    },
+    {
+      "ID": 5053300,
+      "Entries": [
+        "[Duchess] Black Leather (Legs)"
+      ]
+    },
+    {
+      "ID": 5054000,
+      "Entries": [
+        "[Raider] Rock-like (Head)"
+      ]
+    },
+    {
+      "ID": 5054100,
+      "Entries": [
+        "[Raider] Rock-like (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5054200,
+      "Entries": [
+        "[Raider] Rock-like (Arms)"
+      ]
+    },
+    {
+      "ID": 5054300,
+      "Entries": [
+        "[Raider] Rock-like (Legs)"
+      ]
+    },
+    {
+      "ID": 5055000,
+      "Entries": [
+        "[Revenant] The Sister in the Painting (Head)"
+      ]
+    },
+    {
+      "ID": 5055100,
+      "Entries": [
+        "[Revenant] The Sister in the Painting (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5055200,
+      "Entries": [
+        "[Revenant] The Sister in the Painting (Arms)"
+      ]
+    },
+    {
+      "ID": 5055300,
+      "Entries": [
+        "[Revenant] The Sister in the Painting (Legs)"
+      ]
+    },
+    {
+      "ID": 5056000,
+      "Entries": [
+        "[Recluse] Heretic Sorcerer (Head)"
+      ]
+    },
+    {
+      "ID": 5056100,
+      "Entries": [
+        "[Recluse] Heretic Sorcerer (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5056200,
+      "Entries": [
+        "[Recluse] Heretic Sorcerer (Arms)"
+      ]
+    },
+    {
+      "ID": 5056300,
+      "Entries": [
+        "[Recluse] Heretic Sorcerer (Legs)"
+      ]
+    },
+    {
+      "ID": 5057000,
+      "Entries": [
+        "[Executor] Thorns (Head)"
+      ]
+    },
+    {
+      "ID": 5057100,
+      "Entries": [
+        "[Executor] Thorns (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5057200,
+      "Entries": [
+        "[Executor] Thorns (Arms)"
+      ]
+    },
+    {
+      "ID": 5057300,
+      "Entries": [
+        "[Executor] Thorns (Legs)"
+      ]
+    },
+    {
+      "ID": 5060000,
+      "Entries": [
+        "[Wylder] Lion Knight (Head)"
+      ]
+    },
+    {
+      "ID": 5060100,
+      "Entries": [
+        "[Wylder] Lion Knight (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5060200,
+      "Entries": [
+        "[Wylder] Lion Knight (Arms)"
+      ]
+    },
+    {
+      "ID": 5060300,
+      "Entries": [
+        "[Wylder] Lion Knight (Legs)"
+      ]
+    },
+    {
+      "ID": 5061000,
+      "Entries": [
+        "[Guardian] Wayfarer (Head)"
+      ]
+    },
+    {
+      "ID": 5061100,
+      "Entries": [
+        "[Guardian] Wayfarer (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5061200,
+      "Entries": [
+        "[Guardian] Wayfarer (Arms)"
+      ]
+    },
+    {
+      "ID": 5061300,
+      "Entries": [
+        "[Guardian] Wayfarer (Legs)"
+      ]
+    },
+    {
+      "ID": 5062000,
+      "Entries": [
+        "[Ironeye] Sellsword (Head)"
+      ]
+    },
+    {
+      "ID": 5062100,
+      "Entries": [
+        "[Ironeye] Sellsword (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5062200,
+      "Entries": [
+        "[Ironeye] Sellsword (Arms)"
+      ]
+    },
+    {
+      "ID": 5062300,
+      "Entries": [
+        "[Ironeye] Sellsword (Legs)"
+      ]
+    },
+    {
+      "ID": 5063000,
+      "Entries": [
+        "[Duchess] Wraith (Head)"
+      ]
+    },
+    {
+      "ID": 5063100,
+      "Entries": [
+        "[Duchess] Wraith (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5063200,
+      "Entries": [
+        "[Duchess] Wraith (Arms)"
+      ]
+    },
+    {
+      "ID": 5063300,
+      "Entries": [
+        "[Duchess] Wraith (Legs)"
+      ]
+    },
+    {
+      "ID": 5064000,
+      "Entries": [
+        "[Raider] Catarina (Head)"
+      ]
+    },
+    {
+      "ID": 5064100,
+      "Entries": [
+        "[Raider] Catarina (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5064200,
+      "Entries": [
+        "[Raider] Catarina (Arms)"
+      ]
+    },
+    {
+      "ID": 5064300,
+      "Entries": [
+        "[Raider] Catarina (Legs)"
+      ]
+    },
+    {
+      "ID": 5065000,
+      "Entries": [
+        "[Revenant] Dragon School (Head)"
+      ]
+    },
+    {
+      "ID": 5065100,
+      "Entries": [
+        "[Revenant] Dragon School (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5065200,
+      "Entries": [
+        "[Revenant] Dragon School (Arms)"
+      ]
+    },
+    {
+      "ID": 5065300,
+      "Entries": [
+        "[Revenant] Dragon School (Legs)"
+      ]
+    },
+    {
+      "ID": 5066000,
+      "Entries": [
+        "[Recluse] Emerald Fate (Head)"
+      ]
+    },
+    {
+      "ID": 5066100,
+      "Entries": [
+        "[Recluse] Emerald Fate (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5066200,
+      "Entries": [
+        "[Recluse] Emerald Fate (Arms)"
+      ]
+    },
+    {
+      "ID": 5066300,
+      "Entries": [
+        "[Recluse] Emerald Fate (Legs)"
+      ]
+    },
+    {
+      "ID": 5067000,
+      "Entries": [
+        "[Executor] Sable Church (Head)"
+      ]
+    },
+    {
+      "ID": 5067100,
+      "Entries": [
+        "[Executor] Sable Church (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5067200,
+      "Entries": [
+        "[Executor] Sable Church (Arms)"
+      ]
+    },
+    {
+      "ID": 5067300,
+      "Entries": [
+        "[Executor] Sable Church (Legs)"
+      ]
+    },
+    {
+      "ID": 5068000,
+      "Entries": [
+        "[Scholar] Pardoner (Head)"
+      ]
+    },
+    {
+      "ID": 5068100,
+      "Entries": [
+        "[Scholar] Pardoner (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5068200,
+      "Entries": [
+        "[Scholar] Pardoner (Arms)"
+      ]
+    },
+    {
+      "ID": 5068300,
+      "Entries": [
+        "[Scholar] Pardoner (Legs)"
+      ]
+    },
+    {
+      "ID": 5069000,
+      "Entries": [
+        "[Undertaker] Brass (Head)"
+      ]
+    },
+    {
+      "ID": 5069100,
+      "Entries": [
+        "[Undertaker] Brass (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5069200,
+      "Entries": [
+        "[Undertaker] Brass (Arms)"
+      ]
+    },
+    {
+      "ID": 5069300,
+      "Entries": [
+        "[Undertaker] Brass (Legs)"
+      ]
+    },
+    {
+      "ID": 5078000,
+      "Entries": [
+        "[Scholar] Xanthous (Head)"
+      ]
+    },
+    {
+      "ID": 5078100,
+      "Entries": [
+        "[Scholar] Xanthous (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5078200,
+      "Entries": [
+        "[Scholar] Xanthous (Arms)"
+      ]
+    },
+    {
+      "ID": 5078300,
+      "Entries": [
+        "[Scholar] Xanthous (Legs)"
+      ]
+    },
+    {
+      "ID": 5079000,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Head)"
+      ]
+    },
+    {
+      "ID": 5079100,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5079200,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Arms)"
+      ]
+    },
+    {
+      "ID": 5079300,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Legs)"
+      ]
+    }
+  ]
+}

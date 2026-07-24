@@ -1,0 +1,14 @@
+{
+  "id": "760",
+  "name": "Milfanito ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

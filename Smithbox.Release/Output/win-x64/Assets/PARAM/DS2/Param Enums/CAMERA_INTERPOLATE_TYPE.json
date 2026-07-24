@@ -1,0 +1,56 @@
+{
+  "Key": "CAMERA_INTERPOLATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_INTERPOLATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No interpolation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Instant switching"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Linear interpolation"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quadratic interpolation"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quadratic curve interpolation 2"
+        }
+      ]
+    }
+  ]
+}

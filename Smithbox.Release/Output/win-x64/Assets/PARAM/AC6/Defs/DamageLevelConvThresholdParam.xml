@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DAMAGE_LEVEL_CONV_THRESHOLD_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 threshold_00 = -1">
+      <DisplayName>閾値0衝撃値</DisplayName>
+      <Description>区間0になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 pad0_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="s32 threshold_01 = -1">
+      <DisplayName>閾値1衝撃値</DisplayName>
+      <Description>区間1になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad1_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1102</SortID>
+    </Field>
+    <Field Def="s32 threshold_002 = -1">
+      <DisplayName>閾値2衝撃値</DisplayName>
+      <Description>区間2になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 pad2_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1103</SortID>
+    </Field>
+    <Field Def="s32 threshold_03 = -1">
+      <DisplayName>閾値3衝撃値</DisplayName>
+      <Description>区間3になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="dummy8 pad3_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1104</SortID>
+    </Field>
+    <Field Def="s32 threshold_04 = -1">
+      <DisplayName>閾値4衝撃値</DisplayName>
+      <Description>区間4になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="dummy8 pad4_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1105</SortID>
+    </Field>
+    <Field Def="s32 threshold_05 = -1">
+      <DisplayName>閾値5衝撃値</DisplayName>
+      <Description>区間5になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="dummy8 pad5_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1106</SortID>
+    </Field>
+    <Field Def="s32 threshold_06 = -1">
+      <DisplayName>閾値6衝撃値</DisplayName>
+      <Description>区間6になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="dummy8 pad6_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1107</SortID>
+    </Field>
+    <Field Def="s32 threshold_07 = -1">
+      <DisplayName>閾値7衝撃値</DisplayName>
+      <Description>区間7になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="dummy8 pad7_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1108</SortID>
+    </Field>
+    <Field Def="s32 threshold_08 = -1">
+      <DisplayName>閾値8衝撃値</DisplayName>
+      <Description>区間8になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="dummy8 pad8_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1109</SortID>
+    </Field>
+    <Field Def="s32 threshold_09 = -1">
+      <DisplayName>閾値9衝撃値</DisplayName>
+      <Description>区間9になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 pad9_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="s32 threshold_10 = -1">
+      <DisplayName>閾値10衝撃値</DisplayName>
+      <Description>区間10になる衝撃値の閾値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="dummy8 pad10_2[12]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1111</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1112</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

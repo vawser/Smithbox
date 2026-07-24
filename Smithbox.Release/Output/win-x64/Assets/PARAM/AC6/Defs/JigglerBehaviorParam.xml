@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>JIGGLER_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 minAccelMPSS">
+      <DisplayName>効き始める最小加速度[m/s^2]</DisplayName>
+      <Description>回転し始める最小加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 maxAccelMPSS">
+      <DisplayName>効きが最大になる加速度[m/s^2]</DisplayName>
+      <Description>回転力が最大になる加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 minSpeedKMH">
+      <DisplayName>効き始める最小速度[km/h]</DisplayName>
+      <Description>回転し始める最小速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 maxSpeedKMH">
+      <DisplayName>効きが最大になる速度[km/h]</DisplayName>
+      <Description>回転力が最大になる速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 rotAccelScaleX">
+      <DisplayName>回転力（X軸回転）</DisplayName>
+      <Description>X軸の速度、加速度を回転させる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 rotAccelScaleY">
+      <DisplayName>回転力（Y軸回転）</DisplayName>
+      <Description>Y軸の速度、加速度を回転させる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="f32 rotDecayValueX">
+      <DisplayName>減衰力（X軸回転）</DisplayName>
+      <Description>X軸の角速度を減衰させる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 rotDecayValueY">
+      <DisplayName>減衰力（Y軸回転）</DisplayName>
+      <Description>Y軸の角速度を減衰させる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="f32 limitMinAngReflecRateX">
+      <DisplayName>X軸回転が最小限界角度になったときの跳ね返り率</DisplayName>
+      <Description>X軸回転が最小限界角度になったときの跳ね返り率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 limitMaxAngReflecRateX">
+      <DisplayName>X軸回転が最大限界角度になったときの跳ね返り率</DisplayName>
+      <Description>X軸回転が最大限界角度になったときの跳ね返り率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="f32 limitMinAngReflecRateY">
+      <DisplayName>Y軸回転が最小限界角度になったときの跳ね返り率</DisplayName>
+      <Description>Y軸回転が最小限界角度になったときの跳ね返り率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 limitMaxAngReflecRateY">
+      <DisplayName>Y軸回転が最大限界角度になったときの跳ね返り率</DisplayName>
+      <Description>Y軸回転が最大限界角度になったときの跳ね返り率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="dummy8 reserved3[16]">
+      <DisplayName>パディング3</DisplayName>
+      <SortID>1111</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

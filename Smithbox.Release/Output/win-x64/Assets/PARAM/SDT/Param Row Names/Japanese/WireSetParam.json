@@ -1,0 +1,149 @@
+{
+  "Name": "WireSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal state (default) -- 通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 9620000,
+      "Entries": [
+        "Protomap_normal -- プロトマップ_通常"
+      ]
+    },
+    {
+      "ID": 9620010,
+      "Entries": [
+        "Protomap_Snake area -- プロトマップ_蛇エリア"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Samurai residence_Expansion of recognition range -- 武家屋敷_認識範囲拡大"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "Castle_valley crossing -- 城下_谷渡り"
+      ]
+    },
+    {
+      "ID": 1100210,
+      "Entries": [
+        "Castle_Cavalry Warrior Boss Map -- 城下_騎馬武者ボスマップ"
+      ]
+    },
+    {
+      "ID": 1100220,
+      "Entries": [
+        "Castle_Busshi Demon_Battlefield Ruins -- 城下_仏師鬼_戦場跡"
+      ]
+    },
+    {
+      "ID": 1101200,
+      "Entries": [
+        "Honjo_wire to the valley side -- 本城_渓谷側へのワイヤー"
+      ]
+    },
+    {
+      "ID": 1101210,
+      "Entries": [
+        "Wire to Honjo_Tokugawa kite -- 本城_徳川\u3000凧へのワイヤー"
+      ]
+    },
+    {
+      "ID": 1101220,
+      "Entries": [
+        "Honjo_Ninja Army Wire to Uchibori Takebashi -- 本城_忍軍\u3000内堀竹橋へのワイヤー"
+      ]
+    },
+    {
+      "ID": 1102200,
+      "Entries": [
+        "Hidden prison _ Turn off the off-screen display inside the well -- 隠し牢_井戸内で画面外表示を切る"
+      ]
+    },
+    {
+      "ID": 1102210,
+      "Entries": [
+        "Hidden prison_loophole Maebori -- 隠し牢_抜け穴前堀"
+      ]
+    },
+    {
+      "ID": 1300200,
+      "Entries": [
+        "Dungeon_Immortal Execution Table -- 地下牢_不死の処刑台"
+      ]
+    },
+    {
+      "ID": 1700100,
+      "Entries": [
+        "Valley_Yasha Monkey_Bodhisattva Lake -- 渓谷_夜叉猿_菩薩湖"
+      ]
+    },
+    {
+      "ID": 1700110,
+      "Entries": [
+        "Valley_wide valley_dive -- 渓谷_広い谷_ダイブ"
+      ]
+    },
+    {
+      "ID": 1700120,
+      "Entries": [
+        "Valley_Snake Persimmon Room -- 渓谷_蛇柿部屋"
+      ]
+    },
+    {
+      "ID": 2000200,
+      "Entries": [
+        "Temple map_valley crossing -- 寺マップ_谷渡り"
+      ]
+    },
+    {
+      "ID": 2000201,
+      "Entries": [
+        "Temple map_infinite corridor -- 寺マップ_無限回廊"
+      ]
+    },
+    {
+      "ID": 2500100,
+      "Entries": [
+        "Submerged City_Sea of Clouds_Mermaid Dragon_Short Distance -- 水没都_雲海_人魚竜_近距離"
+      ]
+    },
+    {
+      "ID": 2500110,
+      "Entries": [
+        "Submerged city_sea of clouds_mermaid dragon_long distance -- 水没都_雲海_人魚竜_遠距離距離"
+      ]
+    },
+    {
+      "ID": 2500200,
+      "Entries": [
+        "Submerged city_sea of clouds_old dragon -- 水没都_雲海_翁竜"
+      ]
+    },
+    {
+      "ID": 9990200,
+      "Entries": [
+        "Temple design map _ valley crossing -- 寺設計マップ_谷渡り"
+      ]
+    },
+    {
+      "ID": 9990201,
+      "Entries": [
+        "Temple design map_infinite corridor -- 寺設計マップ_無限回廊"
+      ]
+    },
+    {
+      "ID": 9990210,
+      "Entries": [
+        "Castle_Cavalry Warrior Boss Map -- 城下_騎馬武者ボスマップ"
+      ]
+    }
+  ]
+}

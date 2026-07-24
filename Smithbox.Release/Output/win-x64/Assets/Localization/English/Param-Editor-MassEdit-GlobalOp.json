@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_GlobalOp_Clear_TT",
+      "Text": "Clears clipboard param and rows."
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_Hint_1",
+      "Text": "variable name"
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_Hint_2",
+      "Text": "value"
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_TT",
+      "Text": "Creates a variable with the given value, and the type of that value."
+    },
+    {
+      "Key": "PARAM_GlobalOp_ClearVars_Hint",
+      "Text": "Deletes all variables."
+    }
+  ]
+}

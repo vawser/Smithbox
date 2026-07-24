@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>OBJECT_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s16 hp = -1">
+      <DisplayName>HP</DisplayName>
+      <Description>破壊までの耐久力(-1:破壊不可)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 defense">
+      <DisplayName>防御力</DisplayName>
+      <Description>この値以下の攻撃力はダメージなし</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 extRefTexId = -1">
+      <DisplayName>外部参照テクスチャID</DisplayName>
+      <Description>mAA/mAA_????.tpf(-1:なし)(AA:エリア番号)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s16 materialId = -1">
+      <DisplayName>材質ID</DisplayName>
+      <Description>マテリアルID。床材質と同じ扱い。-1のときは今までと同じ挙動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 animBreakIdMax">
+      <DisplayName>アニメ破壊ID最大値</DisplayName>
+      <Description>アニメ破壊IDが0番から何番までか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 isCamHit:1">
+      <DisplayName>カメラが当たるか</DisplayName>
+      <Description>カメラが当たるか(0:当たらない, 1:当たる)</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 isBreakByPlayerCollide:1">
+      <DisplayName>プレイヤ衝突で壊れるか</DisplayName>
+      <Description>プレイヤが接触したときに壊れ(0:ない, 1:る)</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 isAnimBreak:1">
+      <DisplayName>アニメ破壊か</DisplayName>
+      <Description>アニメ破壊か(0:物理破壊, 1:アニメ破壊)</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 isPenetrationBulletHit:1">
+      <DisplayName>貫通弾丸が当たるか</DisplayName>
+      <Description>貫通弾丸が当たるか(0:当たらない, 1:当たる)</Description>
+      <Maximum>1</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 isChrHit:1 = 1">
+      <DisplayName>キャラが当たるか</DisplayName>
+      <Description>キャラが当たるか(0:当たらない, 1:当たる)</Description>
+      <Maximum>1</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="u8 isAttackBacklash:1 = 1">
+      <DisplayName>攻撃を弾くか</DisplayName>
+      <Description>攻撃を弾くか(0:弾かない, 1:弾く)</Description>
+      <Maximum>1</Maximum>
+      <SortID>950</SortID>
+    </Field>
+    <Field Def="u8 isDisableBreakForFirstAppear:1">
+      <DisplayName>初期出現用破壊禁止</DisplayName>
+      <Description>プレイヤの初期出現で壊れ(0:る, 1:ない)</Description>
+      <Maximum>1</Maximum>
+      <SortID>450</SortID>
+    </Field>
+    <Field Def="u8 isLadder:1">
+      <DisplayName>ハシゴか</DisplayName>
+      <Description>ハシゴか(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>970</SortID>
+    </Field>
+    <Field Def="u8 isAnimPauseOnRemoPlay:1">
+      <DisplayName>ポリ劇中アニメを停止するか</DisplayName>
+      <Description>ポリ劇中アニメを停止するか(0:しない, 1:する)</Description>
+      <Maximum>1</Maximum>
+      <SortID>980</SortID>
+    </Field>
+    <Field Def="u8 isDamageNoHit:1">
+      <DisplayName>ダメージが当たらないか</DisplayName>
+      <Description>ダメージが当たらない(0:当たる, 1:当たらない)</Description>
+      <Maximum>1</Maximum>
+      <SortID>375</SortID>
+    </Field>
+    <Field Def="u8 isMoveObj:1">
+      <DisplayName>移動オブジェか</DisplayName>
+      <Description>移動オブジェか(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>975</SortID>
+    </Field>
+    <Field Def="dummy8 pad_1:5">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+      <SortID>1201</SortID>
+    </Field>
+    <Field Def="s8 defaultLodParamId = -1">
+      <DisplayName>デフォルトLODパラムID</DisplayName>
+      <Description>デフォルトLODパラムID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 breakSfxId = -1">
+      <DisplayName>破壊時SFXID</DisplayName>
+      <Description>オブジェ破壊時のSFXID(-1:デフォルト(80))</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 navimeshFlag">
+      <DisplayName>ナビメッシュフラグ</DisplayName>
+      <Enum>OBJECT_NAVIMESH_FLAG</Enum>
+      <Description>オブジェから設定されるナビメッシュフラグ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="dummy8 pad_2[1]">
+      <DisplayName>パディング2</DisplayName>
+      <Description>pad2</Description>
+      <SortID>1202</SortID>
+    </Field>
+    <Field Def="u16 paintRenderTargetSize = 256">
+      <DisplayName>ペイントレンダーターゲットサイズ[pix]</DisplayName>
+      <Description>ペイントレンダーターゲットサイズ[pix]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>4096</Maximum>
+      <Increment>128</Increment>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="s32 breakAiSoundId">
+      <DisplayName>破壊時発生AI音ID</DisplayName>
+      <Description>破壊時に発生させるAI音ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="dummy8 pad_3[8]">
+      <DisplayName>パディング3</DisplayName>
+      <Description>pad3</Description>
+      <SortID>1203</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

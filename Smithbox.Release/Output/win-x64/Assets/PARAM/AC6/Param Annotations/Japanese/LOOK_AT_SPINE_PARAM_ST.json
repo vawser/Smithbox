@@ -1,0 +1,268 @@
+{
+  "Param": "LOOK_AT_SPINE_PARAM_ST",
+  "Type": "LOOK_AT_SPINE_PARAM_ST",
+  "Name": "LOOK_AT_SPINE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseRate",
+      "Name": "基準割合",
+      "Description": "基準割合"
+    },
+    {
+      "Field": "spineBoneRateXZ",
+      "Name": "腰（BD_Root）間接の左右割合",
+      "Description": "腰（BD_Root）間接の左右割合"
+    },
+    {
+      "Field": "clavicleBoneRateXZ",
+      "Name": "肩関節の左右割合",
+      "Description": "肩関節の左右割合"
+    },
+    {
+      "Field": "handBoneRateXZ",
+      "Name": "手首間接の左右割合",
+      "Description": "手首間接の左右割合"
+    },
+    {
+      "Field": "spineBoneRateY",
+      "Name": "腰（BD_Root）間接の上割合",
+      "Description": "腰（BD_Root）間接の上割合"
+    },
+    {
+      "Field": "clavicleBoneRateY",
+      "Name": "肩関節の上割合",
+      "Description": "肩関節の上割合"
+    },
+    {
+      "Field": "handBoneRateY",
+      "Name": "手首間接の上割合",
+      "Description": "手首間接の上割合"
+    },
+    {
+      "Field": "spineRotLeftMax",
+      "Name": "腰の左向く限界角度(-180～180)",
+      "Description": "腰の左向く限界角度(-180～180)"
+    },
+    {
+      "Field": "spineRotRightMax",
+      "Name": "腰の右向く限界角度(-180～180)",
+      "Description": "腰の右向く限界角度(-180～180)"
+    },
+    {
+      "Field": "spineRotUpMax",
+      "Name": "腰の上向く限界角度(-180～180)",
+      "Description": "腰の上向く限界角度(-180～180)"
+    },
+    {
+      "Field": "spineRotDownMax",
+      "Name": "腰の下向く限界角度(-180～180)",
+      "Description": "腰の下向く限界角度(-180～180)"
+    },
+    {
+      "Field": "spine1BoneRateXZ",
+      "Name": "腰（SpineA）間接の左右割合",
+      "Description": "腰（SpineA）間接の左右割合"
+    },
+    {
+      "Field": "spine1BoneRateY",
+      "Name": "腰（SpineA）間接の上下割合",
+      "Description": "腰（SpineA）間接の上下割合"
+    },
+    {
+      "Field": "flyRootRotUpMax",
+      "Name": "空中射撃時の体の傾きの上方向限界角度(-180～180)",
+      "Description": "空中での体の上向く限界角度(-180～180)"
+    },
+    {
+      "Field": "flyRootRotDownMax",
+      "Name": "空中射撃時の体の傾きの下方向限界角度(-180～180)",
+      "Description": "空中での体の下向く限界角度(-180～180)"
+    },
+    {
+      "Field": "flyRootBoneRateY",
+      "Name": "空中射撃時の体の傾きの上割合",
+      "Description": "空中でのRoot間接の上割合"
+    },
+    {
+      "Field": "flySpineBoneRateY",
+      "Name": "空中腰（BD_Root）間接の上割合",
+      "Description": "空中での腰（BD_Root）間接の上割合"
+    },
+    {
+      "Field": "flySpine1BoneRateY",
+      "Name": "空中腰（SpineA）間接の上下割合",
+      "Description": "空中での腰（SpineA）間接の上下割合"
+    },
+    {
+      "Field": "flyClavicleBoneRateY",
+      "Name": "空中肩関節の上割合",
+      "Description": "空中での肩関節の上割合"
+    },
+    {
+      "Field": "flyHandBoneRateY",
+      "Name": "空中手首間接の上割合",
+      "Description": "空中での手首間接の上割合"
+    },
+    {
+      "Field": "spineAexABoneRateXZ",
+      "Name": "腰（SpineA_EX_A）間接の左右割合",
+      "Description": "腰（SpineA_EX_A）間接の左右割合"
+    },
+    {
+      "Field": "spineAexABoneRateY",
+      "Name": "腰（SpineA_EX_A）間接の上下割合",
+      "Description": "腰（SpineA_EX_A）間接の上下割合"
+    },
+    {
+      "Field": "flySpineAexABoneRateY",
+      "Name": "空中腰（SpineA_EX_A）間接の上下割合",
+      "Description": "空中での腰（SpineA_EX_A）間接の上下割合"
+    },
+    {
+      "Field": "spineAexBBoneRateXZ",
+      "Name": "腰（SpineA_EX_B）間接の左右割合",
+      "Description": "腰（SpineA_EX_B）間接の左右割合"
+    },
+    {
+      "Field": "spineAexBBoneRateY",
+      "Name": "腰（SpineA_EX_B）間接の上下割合",
+      "Description": "腰（SpineA_EX_B）間接の上下割合"
+    },
+    {
+      "Field": "flySpineAexBBoneRateY",
+      "Name": "空中腰（SpineA_EX_B）間接の上下割合",
+      "Description": "空中での腰（SpineA_EX_B）間接の上下割合"
+    },
+    {
+      "Field": "pelvisBoneRateXZ",
+      "Name": "股関節（Pelvis）間接の左右割合",
+      "Description": "股関節（Pelvis）間接の左右割合"
+    },
+    {
+      "Field": "pelvisBoneRateY",
+      "Name": "股関節（Pelvis）間接の上下割合",
+      "Description": "股関節（Pelvis）間接の上下割合"
+    },
+    {
+      "Field": "flyPelvisBoneRateY",
+      "Name": "空中股関節（Pelvis）間接の上下割合",
+      "Description": "空中での股関節（Pelvis）間接の上下割合"
+    },
+    {
+      "Field": "spineBoneRateYD",
+      "Name": "腰（BD_Root）間接の下割合",
+      "Description": "腰（BD_Root）間接の下割合"
+    },
+    {
+      "Field": "clavicleBoneRateYD",
+      "Name": "肩関節の下割合",
+      "Description": "肩関節の下割合"
+    },
+    {
+      "Field": "handBoneRateYD",
+      "Name": "手首間接の下割合",
+      "Description": "手首間接の下割合"
+    },
+    {
+      "Field": "flyRootBoneRateYD",
+      "Name": "空中射撃時の体の傾きの下割合",
+      "Description": "空中でのRoot間接の下割合"
+    },
+    {
+      "Field": "flySpineBoneRateYD",
+      "Name": "空中腰（BD_Root）間接の下割合",
+      "Description": "空中での腰（BD_Root）間接の下割合"
+    },
+    {
+      "Field": "flyClavicleBoneRateYD",
+      "Name": "空中肩関節の下割合",
+      "Description": "空中での肩関節の下割合"
+    },
+    {
+      "Field": "flyHandBoneRateYD",
+      "Name": "空中手首間接の下割合",
+      "Description": "空中での手首間接の下割合"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "TAEで指定したときのパラメータの優先度"
+    },
+    {
+      "Field": "bParentRateTakeOver",
+      "Name": "腕や肩を親関節が目標角度になってなくても目標角度に向ける",
+      "Description": "腕を先に向けて腰を遅らせるときにONにする"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotAngDegPerSecXZ",
+      "Name": "全体の水平回転速度_射撃開始時[deg/sec]",
+      "Description": "腰、腕のLookAt全体の最高角速度"
+    },
+    {
+      "Field": "lookAtRotAngDegPerSecY",
+      "Name": "全体の垂直回転速度_射撃開始時[deg/sec]",
+      "Description": "腰、腕のLookAt全体の最高角速度"
+    },
+    {
+      "Field": "spineRotAngDegPerSecXZ",
+      "Name": "腰の水平回転速度[deg/sec]",
+      "Description": "腰の最高角速度"
+    },
+    {
+      "Field": "spineRotAngDegPerSecY",
+      "Name": "腰の垂直回転速度[deg/sec]",
+      "Description": "腰の最高角速度"
+    },
+    {
+      "Field": "armRotAngDegPerSecXZ",
+      "Name": "腕の水平回転速度[deg/sec]",
+      "Description": "腕の最高角速度"
+    },
+    {
+      "Field": "armRotAngDegPerSecY",
+      "Name": "腕の垂直回転速度[deg/sec]",
+      "Description": "腕の最高角速度"
+    },
+    {
+      "Field": "lookAtDisableRotAngDegPerSecXZ",
+      "Name": "【廃止予定】全体の水平回転速度_射撃終了時[deg/sec]",
+      "Description": "腰、腕のLookAt全体の最高角速度（非射撃時）"
+    },
+    {
+      "Field": "lookAtDisableRotAngDegPerSecY",
+      "Name": "【廃止予定】全体の垂直回転速度_射撃終了時[deg/sec]",
+      "Description": "腰、腕のLookAt全体の最高角速度（非射撃時）"
+    },
+    {
+      "Field": "lookAtDisableRotTimeSec",
+      "Name": "全体の射撃終了時回転時間[sec]",
+      "Description": "腰、腕のLookAt全体のLookAt解除時間"
+    },
+    {
+      "Field": "lookAtDisableFlyRotTimeSec",
+      "Name": "全体の空中射撃終了時回転時間[sec]",
+      "Description": "腰、腕のLookAt全体のLookAt解除時間（空中用）"
+    },
+    {
+      "Field": "changeParamIntpTimeSec",
+      "Name": "このパラメータに切り替わったときの補間時間[sec]",
+      "Description": "他のパラメータから切り替わってきたときの補間時間"
+    },
+    {
+      "Field": "switchTargetIntpTimeSec",
+      "Name": "ターゲットが切り替わったときの補間時間[sec]",
+      "Description": "ターゲットが切り替わったときにLookAt方向を変えるための補間時間"
+    },
+    {
+      "Field": "reserved4",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

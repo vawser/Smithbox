@@ -1,0 +1,472 @@
+{
+  "Entries": [
+    {
+      "Key": "VIEWPORT_Disabled_Window",
+      "Text": "已禁用..."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Direction",
+      "Text": "光线方向"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Direct_Light_Mult",
+      "Text": "直射光倍数"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Indirect_Light_Mult",
+      "Text": "间接光倍数"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Brightness",
+      "Text": "亮度"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Overlay",
+      "Text": "叠加"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Controls",
+      "Text": "控制"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Controls_TT",
+      "Text": "切换左上角控制指示的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Profiling",
+      "Text": "性能分析"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Profiling_TT",
+      "Text": "切换左上角性能分析信息的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment",
+      "Text": "位移增量"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment_TT",
+      "Text": "切换左上角当前位移增量的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment",
+      "Text": "旋转增量"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment_TT",
+      "Text": "切换左上角当前旋转增量的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip",
+      "Text": "视口提示"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT",
+      "Text": "切换悬停时视口提示的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb",
+      "Text": "放置球"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb_TT",
+      "Text": "切换视口内放置球的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Camera",
+      "Text": "摄像机"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Mode",
+      "Text": "视图模式"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Mode_TT",
+      "Text": ""
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Parameters",
+      "Text": "视图参数"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Parameters_TT",
+      "Text": ""
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Near_Clip",
+      "Text": "近裁剪面"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Near_Clip_TT",
+      "Text": "设置在视口中渲染实体的最小距离。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Far_Clip",
+      "Text": "远裁剪面"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Far_Clip_TT",
+      "Text": "设置在视口中渲染实体的最大距离。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_FOV",
+      "Text": "摄像机视野"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_FOV_TT",
+      "Text": "设置摄像机的视野。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Sensitivity",
+      "Text": "摄像机灵敏度"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Sensitivity_TT",
+      "Text": "控制摄像机转向的鼠标灵敏度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Slow",
+      "Text": "摄像机速度（慢速模式）"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Slow_TT",
+      "Text": "设置移动时按下左或右 Shift 键时摄像机的移动速度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Normal",
+      "Text": "摄像机速度（默认模式）"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Normal_TT",
+      "Text": "设置正常移动时摄像机的移动速度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Fast",
+      "Text": "摄像机速度（快速模式）"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Fast_TT",
+      "Text": "设置移动时按下左或右 Ctrl 键时摄像机的移动速度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Near_Clip",
+      "Text": "近裁剪面"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Near_Clip_TT",
+      "Text": "设置在视口中渲染实体的最小距离。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Far_Clip",
+      "Text": "远裁剪面"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Far_Clip_TT",
+      "Text": "设置在视口中渲染实体的最大距离。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity",
+      "Text": "平移灵敏度"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT",
+      "Text": "鼠标平移的灵敏度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Size",
+      "Text": "大小"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Size_TT",
+      "Text": "设置视图在世界单位中的高度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Angle",
+      "Text": "角度"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Angle_TT",
+      "Text": "设置视图的角度。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Scaling",
+      "Text": "缩放"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Scaling_TT",
+      "Text": "设置视图的缩放比例。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings",
+      "Text": "重置摄像机设置"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Render",
+      "Text": "渲染"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Scene_Lighting",
+      "Text": "场景光照"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Environment_Map",
+      "Text": "环境贴图"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Action_Default",
+      "Text": "默认"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Gizmos",
+      "Text": "操控器"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Settings",
+      "Text": "设置"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Quick_View",
+      "Text": "视口提示"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Display_Nodes",
+      "Text": "显示节点"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Placement_Orb",
+      "Text": "放置球"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Display",
+      "Text": "显示"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Display_TT",
+      "Text": "切换操控器的显示。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Input_Size",
+      "Text": "大小"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Mode",
+      "Text": "模式"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Translate",
+      "Text": "平移"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Translate_TT",
+      "Text": "将操控器设置为平移模式。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate",
+      "Text": "旋转"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate_TT",
+      "Text": "将操控器设置为旋转模式。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Scale",
+      "Text": "缩放"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Scale_TT",
+      "Text": "将操控器设置为缩放模式。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Space",
+      "Text": "坐标系"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_Local",
+      "Text": "本地"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_Local_TT",
+      "Text": "根据选中对象的本地位置放置操控器原点。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World",
+      "Text": "世界"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World_TT",
+      "Text": "根据选中对象的世界位置放置操控器原点。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Origin",
+      "Text": "原点"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_World",
+      "Text": "世界"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_World_TT",
+      "Text": "根据世界位置定向操控器原点。"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box",
+      "Text": "边界框"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT",
+      "Text": "根据边界框定向操控器原点。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering",
+      "Text": "启用渲染"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering_TT",
+      "Text": "是否在视口中渲染对象。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing",
+      "Text": "启用纹理"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing_TT",
+      "Text": "是否在视口中渲染纹理。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Culling",
+      "Text": "启用裁剪"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Culling_TT",
+      "Text": "是否剔除视口中摄像机视锥体外的对象。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks",
+      "Text": "启用模型遮罩"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT",
+      "Text": "是否尝试根据实体 NpcParam 标志隐藏模型遮罩。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Orb_Distance",
+      "Text": "球距离"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Orb_Distance_TT",
+      "Text": "确定放置球在摄像机前方的距离。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Dummy_Size",
+      "Text": "虚拟体大小"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Dummy_Size_TT",
+      "Text": "确定虚拟多边形网格的半径。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Node_Size",
+      "Text": "节点大小"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Node_Size_TT",
+      "Text": "确定节点网格的半径。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Model_Load_Header",
+      "Text": "模型加载"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Model_Load_Header_TT",
+      "Text": "切换地图加载时加载的模型。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Map_Pieces",
+      "Text": "地图部件"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Objects",
+      "Text": "对象"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Collisions",
+      "Text": "碰撞"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Navmeshes",
+      "Text": "导航网格"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Texture_Load_Header",
+      "Text": "纹理加载"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Texture_Load_Header_TT",
+      "Text": "切换地图加载时加载的纹理。"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Map_Pieces",
+      "Text": "地图部件"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Objects",
+      "Text": "对象"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Misc",
+      "Text": "杂项"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Parts",
+      "Text": "部件"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Perspective_Controls",
+      "Text": "在视口中按住鼠标将启用摄像机控制。\n使用 WASD 进行导航。\n使用鼠标右键旋转摄像机。\n按住 Shift 可临时加速，按住 Ctrl 可临时减速。\n滚动鼠标滚轮调整整体速度。\n按住 Ctrl、Alt 并左键单击进行框选。"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_OrthoOblique_Controls",
+      "Text": "在视口中按住鼠标将启用摄像机控制。\n使用鼠标中键平移屏幕。\n使用鼠标右键旋转摄像机。\n按住鼠标右键并滚动鼠标滚轮调整缩放。\n按住 Ctrl、Alt 并左键单击进行框选。"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Cull_Time",
+      "Text": "裁剪时间: {0} 毫秒"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Work_Creation_Time",
+      "Text": "工作创建时间: {0} 毫秒"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Scene_Render_CPU_Time",
+      "Text": "场景渲染 CPU 时间: {0} 毫秒"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Visible_Objects",
+      "Text": "可见对象: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Vertex_Buffers_Size",
+      "Text": "顶点缓冲区大小: {0} MB"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Index_Buffers_Size",
+      "Text": "索引缓冲区大小: {0} MB"
+    }
+  ]
+}

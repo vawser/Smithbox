@@ -1,0 +1,938 @@
+{
+  "Key": "WEAPON_TYPE_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_TYPE_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Template"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire of sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "爪"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hook claw"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "拳"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger (100 counters)"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger (counter 130)"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger (counter 150)"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken (counter 100)"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken (counter 140)"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鞭"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "91",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "槍"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword (counter 100)"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword (counter 130)"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword (counter 130)"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-Katana (two-handed)"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword (counter 150)"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword (100 counters)"
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "142",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reason Catalyst - Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle (for Immortal one-handed axe)"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword (100 counters)"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "163",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword (counter 150)"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword (counter 130)"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed Omagariken (Counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer (counter 100)"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer catalyst"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladle"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed mallet (for cleric)"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer (counter 130)"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "245",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer (long hammer)"
+        }
+      ]
+    },
+    {
+      "Key": "246",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long axe"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "271",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax (counter 120)"
+        }
+      ]
+    },
+    {
+      "Key": "275",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One handed ax (heavy 110)"
+        }
+      ]
+    },
+    {
+      "Key": "276",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One handed ax (heavy 120)"
+        }
+      ]
+    },
+    {
+      "Key": "277",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One handed ax (heavy 100)"
+        }
+      ]
+    },
+    {
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax (double-edged 100)"
+        }
+      ]
+    },
+    {
+      "Key": "281",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax (double-edged 110)"
+        }
+      ]
+    },
+    {
+      "Key": "285",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two handed ax (single edge 100)"
+        }
+      ]
+    },
+    {
+      "Key": "286",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax (crescent ax)"
+        }
+      ]
+    },
+    {
+      "Key": "287",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two handed ax (single edge 110)"
+        }
+      ]
+    },
+    {
+      "Key": "290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (chant 100)"
+        }
+      ]
+    },
+    {
+      "Key": "331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great staff (chant 105)"
+        }
+      ]
+    },
+    {
+      "Key": "332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 105)"
+        }
+      ]
+    },
+    {
+      "Key": "333",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 110)"
+        }
+      ]
+    },
+    {
+      "Key": "334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 120)"
+        }
+      ]
+    },
+    {
+      "Key": "335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 125)"
+        }
+      ]
+    },
+    {
+      "Key": "336",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 135)"
+        }
+      ]
+    },
+    {
+      "Key": "337",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff (Chant 140)"
+        }
+      ]
+    },
+    {
+      "Key": "338",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Staff (Chant 125)"
+        }
+      ]
+    },
+    {
+      "Key": "339",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great staff (chant 100)"
+        }
+      ]
+    },
+    {
+      "Key": "340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic miracle catalyst"
+        }
+      ]
+    },
+    {
+      "Key": "341",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Staff (Chanting 110)"
+        }
+      ]
+    },
+    {
+      "Key": "350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (chant 100)"
+        }
+      ]
+    },
+    {
+      "Key": "351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (only with Saint)"
+        }
+      ]
+    },
+    {
+      "Key": "352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (chant 105)"
+        }
+      ]
+    },
+    {
+      "Key": "353",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (Chanting 120)"
+        }
+      ]
+    },
+    {
+      "Key": "354",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (chant 130)"
+        }
+      ]
+    },
+    {
+      "Key": "355",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (circular)"
+        }
+      ]
+    },
+    {
+      "Key": "356",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (Chanting 140)"
+        }
+      ]
+    },
+    {
+      "Key": "357",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell (chant 145)"
+        }
+      ]
+    },
+    {
+      "Key": "358",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell - Dark Arts Only (Chanting 145)"
+        }
+      ]
+    },
+    {
+      "Key": "360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (range 35)"
+        }
+      ]
+    },
+    {
+      "Key": "361",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (range 45)"
+        }
+      ]
+    },
+    {
+      "Key": "362",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (range 50)"
+        }
+      ]
+    },
+    {
+      "Key": "363",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (range 60)"
+        }
+      ]
+    },
+    {
+      "Key": "364",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (range 65)"
+        }
+      ]
+    },
+    {
+      "Key": "365",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow (Queen's bow)"
+        }
+      ]
+    },
+    {
+      "Key": "370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow (normal)"
+        }
+      ]
+    },
+    {
+      "Key": "371",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long bow (long)"
+        }
+      ]
+    },
+    {
+      "Key": "380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow (range 35)"
+        }
+      ]
+    },
+    {
+      "Key": "381",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow (shield cloth 45)"
+        }
+      ]
+    },
+    {
+      "Key": "385",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed rapid-fire bow (range 35)"
+        }
+      ]
+    },
+    {
+      "Key": "386",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow (range 40)"
+        }
+      ]
+    },
+    {
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield parry"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield spell parry"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield parry (counter 100)"
+        }
+      ]
+    },
+    {
+      "Key": "431",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield parry (counter 110)"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield spell parry"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield shield bash"
+        }
+      ]
+    },
+    {
+      "Key": "460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large Shield Surreal Bash"
+        }
+      ]
+    },
+    {
+      "Key": "461",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Shield Spell Parry"
+        }
+      ]
+    },
+    {
+      "Key": "465",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great shield-left"
+        }
+      ]
+    },
+    {
+      "Key": "466",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great shield-right"
+        }
+      ]
+    },
+    {
+      "Key": "470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
+    },
+    {
+      "Key": "480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Binoculars"
+        }
+      ]
+    }
+  ]
+}

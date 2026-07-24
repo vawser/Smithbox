@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Properties_Header_Properties",
+      "Text": "{0} 的属性"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Header_Properties_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_Properties_Controls_Hint",
+      "Text": "按住左 Ctrl 键并滚动鼠标滚轮进行缩放。\n按 {0} 将缩放级别重置为 100%。"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_SizeY",
+      "Text": "大小: Y"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_SizeX",
+      "Text": "大小: X"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_RelPosX",
+      "Text": "相对位置: X"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_RelPosY",
+      "Text": "相对位置: Y"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Format",
+      "Text": "格式"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Icon",
+      "Text": "图标"
+    }
+  ]
+}

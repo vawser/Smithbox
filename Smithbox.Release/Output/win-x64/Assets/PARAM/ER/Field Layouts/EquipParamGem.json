@@ -1,0 +1,187 @@
+{
+  "Name": "EquipParamGem",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "sortGroupId",
+        "rank",
+        "rarity",
+        "iconId"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "mountValue",
+        "sellValue",
+        "saleValue"
+      ]
+    },
+    {
+      "Key": "Sword Arts",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sword Arts"
+        }
+      ],
+      "Fields": [
+        "swordArtsParamId",
+        "isSpecialSwordArt",
+        "mountWepTextId"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId_forAtk0",
+        "spEffectId_forAtk1",
+        "spEffectId_forAtk2",
+        "spEffectMsgId0",
+        "spEffectMsgId1"
+      ]
+    },
+    {
+      "Key": "Affinity",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Affinity"
+        }
+      ],
+      "Fields": [
+        "defaultWepAttr",
+        "configurableWepAttr00",
+        "configurableWepAttr01",
+        "configurableWepAttr02",
+        "configurableWepAttr03",
+        "configurableWepAttr04",
+        "configurableWepAttr05",
+        "configurableWepAttr06",
+        "configurableWepAttr07",
+        "configurableWepAttr08",
+        "configurableWepAttr09",
+        "configurableWepAttr10",
+        "configurableWepAttr11",
+        "configurableWepAttr12",
+        "configurableWepAttr13",
+        "configurableWepAttr14",
+        "configurableWepAttr15",
+        "configurableWepAttr16",
+        "configurableWepAttr17",
+        "configurableWepAttr18",
+        "configurableWepAttr19",
+        "configurableWepAttr20",
+        "configurableWepAttr21",
+        "configurableWepAttr22",
+        "configurableWepAttr23"
+      ]
+    },
+    {
+      "Key": "Availability",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Availability"
+        }
+      ],
+      "Fields": [
+        "canMountWep_Dagger",
+        "canMountWep_SwordNormal",
+        "canMountWep_SwordLarge",
+        "canMountWep_SwordGigantic",
+        "canMountWep_SaberNormal",
+        "canMountWep_SaberLarge",
+        "canMountWep_katana",
+        "canMountWep_SwordDoubleEdge",
+        "canMountWep_SwordPierce",
+        "canMountWep_RapierHeavy",
+        "canMountWep_AxeNormal",
+        "canMountWep_AxeLarge",
+        "canMountWep_HammerNormal",
+        "canMountWep_HammerLarge",
+        "canMountWep_Flail",
+        "canMountWep_SpearNormal",
+        "canMountWep_SpearLarge",
+        "canMountWep_SpearHeavy",
+        "canMountWep_SpearAxe",
+        "canMountWep_Sickle",
+        "canMountWep_Knuckle",
+        "canMountWep_Claw",
+        "canMountWep_Whip",
+        "canMountWep_AxhammerLarge",
+        "canMountWep_ShieldSmall",
+        "canMountWep_ShieldNormal",
+        "canMountWep_ShieldLarge",
+        "canMountWep_Torch",
+        "canMountWep_BowSmall",
+        "canMountWep_BowNormal",
+        "canMountWep_BowLarge",
+        "canMountWep_ClossBow",
+        "canMountWep_Ballista",
+        "canMountWep_Staff",
+        "canMountWep_Sorcery",
+        "canMountWep_Talisman",
+        "canMountWep_HandToHand",
+        "canMountWep_PerfumeBottle",
+        "canMountWep_ThrustingShield",
+        "canMountWep_ThrowingWeapon",
+        "canMountWep_ReverseHandSword",
+        "canMountWep_LightGreatsword",
+        "canMountWep_GreatKatana",
+        "canMountWep_BeastClaw"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "isDiscard",
+        "isDrop",
+        "isDeposit",
+        "disableMultiDropShare"
+      ]
+    },
+    {
+      "Key": "Log",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Log"
+        }
+      ],
+      "Fields": [
+        "showDialogCondType",
+        "showLogCondType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Key": "WEP_HANG_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_HANG_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do Not Override"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Hide"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Visible"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Visible"
+        }
+      ]
+    }
+  ]
+}

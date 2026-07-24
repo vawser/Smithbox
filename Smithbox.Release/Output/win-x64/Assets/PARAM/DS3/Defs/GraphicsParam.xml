@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GRAPHICS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 HitBulletDecalOffset_HitIns">
+      <DisplayName>HIT INSに弾丸が当たった時のデカール発生位置オフセット</DisplayName>
+      <Description>HIT INSに当たった時に発生するデカールの発生位置を法線方向にこの値だけオフセットする</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 TorchEmissiveIntensity">
+      <DisplayName>松明エミッシブ強度</DisplayName>
+      <Description>松明のエミッシブ強度の最大値。指定フレームかけてこの値になる。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 TorchEmissiveFadeFrame">
+      <DisplayName>松明エミッシブ強度フェードフレーム</DisplayName>
+      <Description>松明のエミッシブ強度が変更されるときのフェード時間。60フレームで１秒換算。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 Reserved02">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 CharaWetDecalFadeRange">
+      <DisplayName>キャラが濡れた時のデカールフェード範囲</DisplayName>
+      <Description>キャラが濡れた時にデカールを消すフェード範囲</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 ClothGravityYInWater = -9.8">
+      <DisplayName>水中時のクロス重力（Y軸）</DisplayName>
+      <Description>水中時のクロス重力（Y軸）。現実世界の重力の場合は、-9.8になります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 ClothDampingInWater = 1">
+      <DisplayName>水中時のクロスダンピング</DisplayName>
+      <Description>水中時のクロスダンピング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 Reserved06">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 Reserved07">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 Reserved08">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 Reserved09">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 Reserved10">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 Reserved11">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 Reserved12">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 Reserved13">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 Reserved14">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 Reserved15">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 Reserved16">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 Reserved17">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 Reserved18">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 Reserved19">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 Reserved20">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s32 Reserved21">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s32 Reserved22">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s32 Reserved23">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s32 Reserved24">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s32 Reserved25">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s32 Reserved26">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s32 Reserved27">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s32 Reserved28">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 Reserved29">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s32 Reserved30">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s32 Reserved31">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 Reserved32">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s32 Reserved33">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 Reserved34">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s32 Reserved35">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s32 Reserved36">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s32 Reserved37">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s32 Reserved38">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 Reserved39">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s32 Reserved40">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s32 Reserved41">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="s32 Reserved42">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="s32 Reserved43">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="s32 Reserved44">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="s32 Reserved45">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="s32 Reserved46">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="s32 Reserved47">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="s32 Reserved48">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s32 Reserved49">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="s32 Reserved50">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="s32 Reserved51">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="s32 Reserved52">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="s32 Reserved53">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="s32 Reserved54">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="s32 Reserved55">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="s32 Reserved56">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="s32 Reserved57">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="s32 Reserved58">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s32 Reserved59">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="s32 Reserved60">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="s32 Reserved61">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="s32 Reserved62">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="s32 Reserved63">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>65</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

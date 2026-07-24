@@ -1,0 +1,75 @@
+{
+  "Name": "ReTargetAnimSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用",
+        "For copying -- コピー用"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "cutscene catapult jump -- カットシーンカタパルトジャンプ"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "cutscene catapult jump -- カットシーンカタパルトジャンプ",
+        "cutscene catapult jump -- カットシーンカタパルトジャンプ"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "cutscene catapult jump -- カットシーンカタパルトジャンプ"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "For checking tank waist height -- タンク腰の高さ確認用",
+        "For checking tank waist height -- タンク腰の高さ確認用"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "For checking tank waist height -- タンク腰の高さ確認用",
+        "For checking tank waist height -- タンク腰の高さ確認用"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CHR_EQUIP_MODEL_PARAM_ST</ParamType>
+  <Index>83</Index>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 equipModelCategory" />
+    <Field Def="u8 equipModelGender" />
+    <Field Def="u8 unknown0x2" />
+    <Field Def="u8 unknown0x3" />
+    <Field Def="u8 unknown0x4" />
+    <Field Def="u8 unknown0x5" />
+    <Field Def="u8 unknown0x6" />
+    <Field Def="u8 unknown0x7" />
+    <Field Def="u16 equipModelId" />
+    <Field Def="u16 unknown0xa" />
+  </Fields>
+</PARAMDEF>

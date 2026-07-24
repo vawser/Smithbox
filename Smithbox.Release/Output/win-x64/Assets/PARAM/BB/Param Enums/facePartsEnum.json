@@ -1,0 +1,155 @@
+{
+  "Key": "facePartsEnum",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "facePartsEnum"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Standard, Age: Young"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Standard, Age: Mature"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Standard, Age: Aged"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Standard, Age: Gael"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Thick, Age: Young"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Thick, Age: Mature"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Thick, Age: Aged"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Standard, Body Hair: Thick, Age: Gael"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Standard, Age: Young"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Standard, Age: Mature"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Standard, Age: Aged"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Standard, Age: Gael"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Thick, Age: Young"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Thick, Age: Mature"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Thick, Age: Aged"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Musculature: Muscular, Body Hair: Thick, Age: Gael"
+        }
+      ]
+    }
+  ]
+}

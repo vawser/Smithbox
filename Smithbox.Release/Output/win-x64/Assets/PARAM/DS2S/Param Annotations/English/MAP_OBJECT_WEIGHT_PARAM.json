@@ -1,0 +1,18 @@
+{
+  "Param": "MAP_OBJECT_WEIGHT_PARAM",
+  "Type": "MAP_OBJECT_WEIGHT_PARAM",
+  "Name": "MAP_OBJECT_WEIGHT_PARAM",
+  "Description": "Defines how object weight affects physical simulation, including movement speed reduction on impact and gravity scaling behavior.",
+  "Fields": [
+    {
+      "Field": "speedScale",
+      "Name": "Collision Speed Multiplier",
+      "Description": "Multiplier applied to object speed when it collides or experiences impact forces."
+    },
+    {
+      "Field": "gravityFactor",
+      "Name": "Gravity Acceleration Multiplier",
+      "Description": "Scales the effect of gravity on the object, affecting how strongly it falls."
+    }
+  ]
+}

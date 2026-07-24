@@ -1,0 +1,13 @@
+{
+  "Param": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Type": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Name": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "activateRange",
+      "Name": "アクティベート距離",
+      "Description": "配置SEを有効化する距離(m) (0以下：常に有効化)"
+    }
+  ]
+}

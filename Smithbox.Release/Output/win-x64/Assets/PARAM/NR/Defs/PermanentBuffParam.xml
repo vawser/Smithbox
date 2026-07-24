@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>PERMANENT_BUFF_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 spEffectId"/>
+    <Field Def="s32 iconId"/>
+    <Field Def="s32 secondaryIconId"/>
+    <Field Def="u16 displayNumericValue"/>
+    <Field Def="u16 displayPercentageSymbol"/>
+    <Field Def="s32 numericValue"/>
+    <Field Def="s32 graceSpEffectId"/>
+  </Fields>
+</PARAMDEF>

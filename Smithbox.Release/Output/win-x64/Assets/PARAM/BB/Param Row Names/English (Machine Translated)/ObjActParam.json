@@ -1,0 +1,1121 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "need"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "General-purpose door sample"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "General-purpose door (left open) sample"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Double door sample"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Double door sample _ Pull to open"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Double door sample _ Push to open"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "General-purpose lever sample"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Treasure Chest"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "m24_00_ lever _ Orphanage _ Outside"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "m24_00_ door _ Cathedral"
+      ]
+    },
+    {
+      "ID": 471,
+      "Entries": [
+        "m24_00_ door _ Orphanage 2F"
+      ]
+    },
+    {
+      "ID": 472,
+      "Entries": [
+        "m24_00_ door _ Orphanage 1F"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "m24_00_ door _ Cathedral gate with lock"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "test_ Door Test"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "test_ Door Test"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "test_ Door Test"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "m10_01_ Church Gate Lever"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "m10_01_ Church bell lever"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "m10_01_ Hammer Tower Door (top)"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "m10_01_ General-purpose door _00 (Castle town 2 connection)"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "m10_01_ General-purpose door _00 (Church Prison)"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "m10_01_ General-purpose door _00 (Kagiminka)"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "m10_01_ General-purpose door _01"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "m10_01_ General-purpose door _02"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "m10_01_ General-purpose door _03"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "m10_01_ General-purpose door _04 (Lower row)"
+      ]
+    },
+    {
+      "ID": 1315,
+      "Entries": [
+        "m10_00_ General-purpose door _05"
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        "m10_01_ General-purpose door _07 (confinement room)"
+      ]
+    },
+    {
+      "ID": 1318,
+      "Entries": [
+        "m10_01_ General-purpose door _08"
+      ]
+    },
+    {
+      "ID": 1465,
+      "Entries": [
+        "m10_02_ Lift room door"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "m 11_00_ General Purpose Handle"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "m11_00_ General-purpose door"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "General-purpose treasure chest (small)"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "General purpose treasure chest (medium)"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "General-purpose treasure chest (large)"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "m12_01_ The door that imprisons Goh"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "m24_00_ First Door"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "m13_00_ Graveyard Lever (Push)"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "m13_00_ Graveyard Lever (Pull)"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "m13_00_ Coffin ( enter )"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "m13_00_ Coffin (coming out)"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "m14_00_ Bell Lever"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "m15_00_ Prison cell"
+      ]
+    },
+    {
+      "ID": 5720,
+      "Entries": [
+        "m15_01_ Interior door"
+      ]
+    },
+    {
+      "ID": 5721,
+      "Entries": [
+        "m15_01_ Interior door (inner lock)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "m16_00_ Water gate lever"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "m16_00_ Abyssal General-Purpose Lever"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "m16_00_ Door to the Little Londo Ruins"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "m17_00_ Crystal Tower General Purpose Lever"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "m17_00_ Alarm lever"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "m17_00_ Jail Door A"
+      ]
+    },
+    {
+      "ID": 8537,
+      "Entries": [
+        "m18_01_ General-purpose door ( 2F (Front)"
+      ]
+    },
+    {
+      "ID": 8538,
+      "Entries": [
+        "m18_01_ General-purpose door (inner lock)"
+      ]
+    },
+    {
+      "ID": 8539,
+      "Entries": [
+        "m18_01_ General-purpose door ( 2F Back)"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "m18_01_ General-purpose door"
+      ]
+    },
+    {
+      "ID": 8541,
+      "Entries": [
+        "m18_01_ Large church door"
+      ]
+    },
+    {
+      "ID": 8544,
+      "Entries": [
+        "m18_01_ Church Door (Small)"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "cannon"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "m20_00 Elevator call lever"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "m20_00 B2 Door to"
+      ]
+    },
+    {
+      "ID": 9921,
+      "Entries": [
+        "m20_00 Door lift"
+      ]
+    },
+    {
+      "ID": 9922,
+      "Entries": [
+        "m20_00 B4 Door to"
+      ]
+    },
+    {
+      "ID": 9923,
+      "Entries": [
+        "m20_00 In front of the boss room"
+      ]
+    },
+    {
+      "ID": 9924,
+      "Entries": [
+        "m20_00 B2 Door to"
+      ]
+    },
+    {
+      "ID": 9927,
+      "Entries": [
+        "m29_02 1F Lockable door"
+      ]
+    },
+    {
+      "ID": 9928,
+      "Entries": [
+        "m29_02 2F Lockable door"
+      ]
+    },
+    {
+      "ID": 9929,
+      "Entries": [
+        "m29_02 3F Lockable door"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "m29_ Dungeon Locked Door"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "m29_01 1F Upper lockable door"
+      ]
+    },
+    {
+      "ID": 9932,
+      "Entries": [
+        "m29_01 2F Middle lockable door"
+      ]
+    },
+    {
+      "ID": 9933,
+      "Entries": [
+        "m29_01 3F Middle lockable door"
+      ]
+    },
+    {
+      "ID": 9934,
+      "Entries": [
+        "m29_01 3F Locked door in front of the boss"
+      ]
+    },
+    {
+      "ID": 9941,
+      "Entries": [
+        "Treasure Chest (Small)"
+      ]
+    },
+    {
+      "ID": 9942,
+      "Entries": [
+        "Treasure Chest (Medium)"
+      ]
+    },
+    {
+      "ID": 9943,
+      "Entries": [
+        "Treasure Chest (Large)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Default (to be removed)"
+      ]
+    },
+    {
+      "ID": 11305,
+      "Entries": [
+        "m10_01_ Hammer Tower Door (bottom)"
+      ]
+    },
+    {
+      "ID": 11312,
+      "Entries": [
+        "m10_01_ General-purpose door (lock)"
+      ]
+    },
+    {
+      "ID": 11315,
+      "Entries": [
+        "m10_00_ General-purpose door (lock)"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "m16_00 Water gate lever door"
+      ]
+    },
+    {
+      "ID": 17401,
+      "Entries": [
+        "m17_00_ Jail Door B"
+      ]
+    },
+    {
+      "ID": 19921,
+      "Entries": [
+        "m20_10 Door lift"
+      ]
+    },
+    {
+      "ID": 19922,
+      "Entries": [
+        "m20_00 B4 Door to"
+      ]
+    },
+    {
+      "ID": 19923,
+      "Entries": [
+        "m20_10 Door lift ( One Way )"
+      ]
+    },
+    {
+      "ID": 19924,
+      "Entries": [
+        "m20_10 Door lift"
+      ]
+    },
+    {
+      "ID": 19930,
+      "Entries": [
+        "m29_ Dungeon Locked Door"
+      ]
+    },
+    {
+      "ID": 19931,
+      "Entries": [
+        "m29_01 1F Upper lockable door"
+      ]
+    },
+    {
+      "ID": 19932,
+      "Entries": [
+        "m29_01 2F Middle lockable door"
+      ]
+    },
+    {
+      "ID": 19933,
+      "Entries": [
+        "m29_01 3F Middle lockable door"
+      ]
+    },
+    {
+      "ID": 19934,
+      "Entries": [
+        "m29_01 3F Locked door in front of the boss"
+      ]
+    },
+    {
+      "ID": 27401,
+      "Entries": [
+        "m17_00_ The Great Jail"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Lever (outside the orphanage) / Elevator up and down)"
+      ]
+    },
+    {
+      "ID": 2010010,
+      "Entries": [
+        "Door (starting room)"
+      ]
+    },
+    {
+      "ID": 2010020,
+      "Entries": [
+        "Door (Cathedral)"
+      ]
+    },
+    {
+      "ID": 2010030,
+      "Entries": [
+        "Door (Orphanage 1F/2F )"
+      ]
+    },
+    {
+      "ID": 2200010,
+      "Entries": [
+        "m22_00_ door _ entrance"
+      ]
+    },
+    {
+      "ID": 2200020,
+      "Entries": [
+        "m22_00_ lever"
+      ]
+    },
+    {
+      "ID": 2200030,
+      "Entries": [
+        "m22_00_ door _ After the boss room"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "m23_00_ One-way door _ Pull to open"
+      ]
+    },
+    {
+      "ID": 2300001,
+      "Entries": [
+        "m23_00_ One-way door _ Push to open"
+      ]
+    },
+    {
+      "ID": 2300010,
+      "Entries": [
+        "m23_00_ Double door _ One-way door"
+      ]
+    },
+    {
+      "ID": 2300011,
+      "Entries": [
+        "m23_00_ Double door _ Warning Door"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "m24_00_ lever _ Orphanage _ Outside"
+      ]
+    },
+    {
+      "ID": 2400010,
+      "Entries": [
+        "m24_00_ door _ Cathedral"
+      ]
+    },
+    {
+      "ID": 2400020,
+      "Entries": [
+        "m24_00_ door _ Orphanage 2F"
+      ]
+    },
+    {
+      "ID": 2400030,
+      "Entries": [
+        "m24_00_ door _ Orphanage 1F"
+      ]
+    },
+    {
+      "ID": 2400040,
+      "Entries": [
+        "m24_00_ door _ Cathedral gate with lock"
+      ]
+    },
+    {
+      "ID": 2400050,
+      "Entries": [
+        "m24_00_ First door of the second half"
+      ]
+    },
+    {
+      "ID": 2400060,
+      "Entries": [
+        "Treasure Chest (Medium)"
+      ]
+    },
+    {
+      "ID": 2400070,
+      "Entries": [
+        "Treasure Chest (Large)"
+      ]
+    },
+    {
+      "ID": 2400080,
+      "Entries": [
+        "m24_00_Forest Door"
+      ]
+    },
+    {
+      "ID": 2400090,
+      "Entries": [
+        "m24_00_ door _ Reality Base Entrance"
+      ]
+    },
+    {
+      "ID": 2400091,
+      "Entries": [
+        "m24_00_ door _ Cathedral Quarter AC Connection Tower Bottom Floor"
+      ]
+    },
+    {
+      "ID": 2400100,
+      "Entries": [
+        "m24_00_ door _ Cathedral Quarter C Second half entrance"
+      ]
+    },
+    {
+      "ID": 2400110,
+      "Entries": [
+        "m24_00 door _ Cathedral Quarter A The connecting door between the ruins and the"
+      ]
+    },
+    {
+      "ID": 2400999,
+      "Entries": [
+        "m24_00_ Cannon firing (tentative)"
+      ]
+    },
+    {
+      "ID": 2410000,
+      "Entries": [
+        "m24_01_ lever _ General purpose"
+      ]
+    },
+    {
+      "ID": 2410001,
+      "Entries": [
+        "m24_01_ lever _ Boss Key"
+      ]
+    },
+    {
+      "ID": 2410010,
+      "Entries": [
+        "m24_01_ Double door"
+      ]
+    },
+    {
+      "ID": 2410020,
+      "Entries": [
+        "m24_01_ Cannon firing"
+      ]
+    },
+    {
+      "ID": 2410030,
+      "Entries": [
+        "m24_01_ Double door _E3 Version start point"
+      ]
+    },
+    {
+      "ID": 2410040,
+      "Entries": [
+        "m24_01_ Small door _ Push to open"
+      ]
+    },
+    {
+      "ID": 2410050,
+      "Entries": [
+        "m24_01_ Small door _ Openable"
+      ]
+    },
+    {
+      "ID": 2410060,
+      "Entries": [
+        "m24_01_ door _ Ohashi Back"
+      ]
+    },
+    {
+      "ID": 2410070,
+      "Entries": [
+        "m24_01_ Small door _ Openable _ One Way"
+      ]
+    },
+    {
+      "ID": 2410080,
+      "Entries": [
+        "m24_01_ door _ Gascoigne Boss Room"
+      ]
+    },
+    {
+      "ID": 2410090,
+      "Entries": [
+        "m24_01_ door _SC Iron bar door"
+      ]
+    },
+    {
+      "ID": 2420000,
+      "Entries": [
+        "m24_02_ lever"
+      ]
+    },
+    {
+      "ID": 2420010,
+      "Entries": [
+        "m24_02_ Orphanage2F Small door _ No key"
+      ]
+    },
+    {
+      "ID": 2420020,
+      "Entries": [
+        "m24_02_ Double door with lock _ Orphanage 1F"
+      ]
+    },
+    {
+      "ID": 2420030,
+      "Entries": [
+        "m24_02_ Double door _ Orphanage 2F"
+      ]
+    },
+    {
+      "ID": 2420040,
+      "Entries": [
+        "m24_02_ Orphanage 2F Small door _ One Way"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "m25_00 Bookshelf lock lever"
+      ]
+    },
+    {
+      "ID": 2500010,
+      "Entries": [
+        "m25_00 SC Elevator lever"
+      ]
+    },
+    {
+      "ID": 2600000,
+      "Entries": [
+        "m26_00_ lever"
+      ]
+    },
+    {
+      "ID": 2600010,
+      "Entries": [
+        "m26_00_ Chapel Door"
+      ]
+    },
+    {
+      "ID": 2600020,
+      "Entries": [
+        "m26_00_ Evil Eye Bridge Door _ table"
+      ]
+    },
+    {
+      "ID": 2600021,
+      "Entries": [
+        "m26_00_ Evil Eye Bridge Door _ back"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Lever (Shortcut / Elevator up and down)"
+      ]
+    },
+    {
+      "ID": 2700010,
+      "Entries": [
+        "m27_00_ One-way door _ Windmill"
+      ]
+    },
+    {
+      "ID": 2700020,
+      "Entries": [
+        "m27_00_ Door to University"
+      ]
+    },
+    {
+      "ID": 2700030,
+      "Entries": [
+        "m27_00_ Shortcut Gate"
+      ]
+    },
+    {
+      "ID": 2800000,
+      "Entries": [
+        "m28_00_ One-way door 00"
+      ]
+    },
+    {
+      "ID": 2800010,
+      "Entries": [
+        "m28_00_ Double door"
+      ]
+    },
+    {
+      "ID": 2800020,
+      "Entries": [
+        "m28_00 Double door small 04_ indoor 3_ Pusher"
+      ]
+    },
+    {
+      "ID": 2900000,
+      "Entries": [
+        "m29_ Lockable door _1F Main block exit"
+      ]
+    },
+    {
+      "ID": 2900010,
+      "Entries": [
+        "m29_ Lockable door_2F Main block exit"
+      ]
+    },
+    {
+      "ID": 2900020,
+      "Entries": [
+        "m29_ Lockable door _3F Main block exit"
+      ]
+    },
+    {
+      "ID": 2900030,
+      "Entries": [
+        "m29_ Lockable door _4F Main block exit"
+      ]
+    },
+    {
+      "ID": 2900100,
+      "Entries": [
+        "m29_00 Block door front"
+      ]
+    },
+    {
+      "ID": 2900101,
+      "Entries": [
+        "m29_00 Back of block door"
+      ]
+    },
+    {
+      "ID": 2901900,
+      "Entries": [
+        "m29_00 Big boss door"
+      ]
+    },
+    {
+      "ID": 2901910,
+      "Entries": [
+        "m29_00 Mid-boss door"
+      ]
+    },
+    {
+      "ID": 2901920,
+      "Entries": [
+        "m29_00 Small boss door"
+      ]
+    },
+    {
+      "ID": 2902000,
+      "Entries": [
+        "m29_00 Main block door lever"
+      ]
+    },
+    {
+      "ID": 2910000,
+      "Entries": [
+        "m20_00 Lift the door _ table"
+      ]
+    },
+    {
+      "ID": 2910010,
+      "Entries": [
+        "m20_10 Lift the door _ back"
+      ]
+    },
+    {
+      "ID": 2911000,
+      "Entries": [
+        "m20_00 Block door lift _ table"
+      ]
+    },
+    {
+      "ID": 2911010,
+      "Entries": [
+        "m20_10 Block door lift _ back"
+      ]
+    },
+    {
+      "ID": 2923000,
+      "Entries": [
+        "m29_ Block Treasure Chest"
+      ]
+    },
+    {
+      "ID": 2924000,
+      "Entries": [
+        "m29_ Black Treasure Chest"
+      ]
+    },
+    {
+      "ID": 2931100,
+      "Entries": [
+        "m29_00_ Drawbridge Lever"
+      ]
+    },
+    {
+      "ID": 2932000,
+      "Entries": [
+        "m29_00_ Cannon firing"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "m32_00_ Main Door _ Nightmare Classroom _ Hometown"
+      ]
+    },
+    {
+      "ID": 3200001,
+      "Entries": [
+        "m32_00_ Main Door _ Nightmare Classroom _TR Go"
+      ]
+    },
+    {
+      "ID": 3200020,
+      "Entries": [
+        "m32_00_ Small door _ Pull to open"
+      ]
+    },
+    {
+      "ID": 3200021,
+      "Entries": [
+        "m32_00_ Small door _ Push to open"
+      ]
+    },
+    {
+      "ID": 3200030,
+      "Entries": [
+        "m32_00_ Double door _ Pull to open _ With lock"
+      ]
+    },
+    {
+      "ID": 3200040,
+      "Entries": [
+        "m32_00_ Double door _ terrace"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "m34_00_ Double door _ large"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "m34_00_ Double door _ small"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "m34_00_ lever"
+      ]
+    },
+    {
+      "ID": 3500020,
+      "Entries": [
+        "m35_00_ Main Door _ patient B"
+      ]
+    },
+    {
+      "ID": 3500030,
+      "Entries": [
+        "m35_00_ Main Door _ Female Hunter"
+      ]
+    },
+    {
+      "ID": 3500040,
+      "Entries": [
+        "m35_00_ Dungeon Door _ Normal key"
+      ]
+    },
+    {
+      "ID": 3500041,
+      "Entries": [
+        "m35_00_ Dungeon Door _ Killer Key"
+      ]
+    },
+    {
+      "ID": 3500060,
+      "Entries": [
+        "m35_00_ General-purpose door"
+      ]
+    },
+    {
+      "ID": 3500061,
+      "Entries": [
+        "m35_00_ General-purpose door _ a letter"
+      ]
+    },
+    {
+      "ID": 3500062,
+      "Entries": [
+        "m35_00_ General-purpose door _ Female doctor"
+      ]
+    },
+    {
+      "ID": 3500063,
+      "Entries": [
+        "m35_00_ General-purpose door"
+      ]
+    },
+    {
+      "ID": 3500070,
+      "Entries": [
+        "m35_00_ Special Door _ key"
+      ]
+    },
+    {
+      "ID": 3500100,
+      "Entries": [
+        "m35_00_ lever _ key"
+      ]
+    },
+    {
+      "ID": 3500110,
+      "Entries": [
+        "m35_00_ Rotating Lever"
+      ]
+    },
+    {
+      "ID": 9900000,
+      "Entries": [
+        "m99_XX_ Coffin"
+      ]
+    },
+    {
+      "ID": 9999999,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "Param": "BEHAVIOR_PARAM_ST",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BEHAVIOR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "variationId",
+      "Name": "行動バリエーションID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。実機上では直接使用しません。"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "行動判定ID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。このIDはTimeActEditorで入力される行動判定IDと一致させます。実機上では直接使用しません。"
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "未使用",
+      "Description": "未使用"
+    },
+    {
+      "Field": "refType",
+      "Name": "参照IDタイプ",
+      "Description": "下記、3つのIDを間違わないように指定."
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング0",
+      "Description": "パディング0."
+    },
+    {
+      "Field": "atkParamId",
+      "Name": "攻撃パラメータID",
+      "Description": "攻撃力などを指定."
+    },
+    {
+      "Field": "bulletParamId",
+      "Name": "飛び道具パラメータID",
+      "Description": "飛び道具の飛び方と、攻撃力を指定."
+    },
+    {
+      "Field": "spEffectId",
+      "Name": "特殊効果ID",
+      "Description": "特殊効果を指定."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX バリエーションID",
+      "Description": "ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）"
+    },
+    {
+      "Field": "category",
+      "Name": "カテゴリ",
+      "Description": "スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する\r\n"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": "パディング1."
+    },
+    {
+      "Field": "stamina",
+      "Name": "消費スタミナ",
+      "Description": "行動時の消費スタミナ量を設定."
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP",
+      "Description": "行動時の消費MP量を設定."
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング3",
+      "Description": ""
+    },
+    {
+      "Field": "atkType",
+      "Name": "攻撃タイプ",
+      "Description": "攻撃属性が何かを指定する."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "攻撃材質",
+      "Description": "攻撃時のSEに使用."
+    },
+    {
+      "Field": "defMaterial",
+      "Name": "防御材質【SE】",
+      "Description": "ガード時のSEに使用."
+    },
+    {
+      "Field": "atkSize",
+      "Name": "サイズ",
+      "Description": "攻撃時のSEに使用（予備／デフォルト0）."
+    },
+    {
+      "Field": "defSfxMaterial",
+      "Name": "防御材質【SFX】",
+      "Description": "ガード時のSFXに使用."
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング2",
+      "Description": "パディング2."
+    }
+  ]
+}

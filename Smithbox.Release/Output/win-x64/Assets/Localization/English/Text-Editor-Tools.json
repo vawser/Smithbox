@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Tools_Header_Text_Entry_Creator",
+      "Text": "Text Entry Creator"
+    },
+    {
+      "Key": "TEXT_Tools_Header_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "TEXT_Tools_Language_Sync",
+      "Text": "Language Sync"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Search",
+      "Text": "Text Search"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Replacement",
+      "Text": "Text Replacement"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Merge",
+      "Text": "Text Merge"
+    },
+    {
+      "Key": "TEXT_Tools_Menu_Header_View",
+      "Text": "View"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Entry_Creator",
+      "Text": "Text Entry Creator"
+    },
+    {
+      "Key": "TEXT_Tools_View_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "TEXT_Tools_View_Language_Sync",
+      "Text": "Language Sync"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Search",
+      "Text": "Text Search"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Replacement",
+      "Text": "Text Replacement"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Merge",
+      "Text": "Text Merge"
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_PASS",
+      "Text": "Selected text entry has been copied to the clipboard."
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_FAIL",
+      "Text": "Clipboard copy failed."
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_Result",
+      "Text": "Text Entry Contents copied to clipboard."
+    }
+  ]
+}

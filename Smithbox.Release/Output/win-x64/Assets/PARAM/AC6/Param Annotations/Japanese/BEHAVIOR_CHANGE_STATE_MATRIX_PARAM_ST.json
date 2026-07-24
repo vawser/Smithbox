@@ -1,0 +1,128 @@
+{
+  "Param": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
+  "Type": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
+  "Name": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "state00",
+      "Name": "地上",
+      "Description": ""
+    },
+    {
+      "Field": "state01",
+      "Name": "ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "state02",
+      "Name": "しゃがみ",
+      "Description": ""
+    },
+    {
+      "Field": "state03",
+      "Name": "カバー",
+      "Description": ""
+    },
+    {
+      "Field": "state04",
+      "Name": "落下",
+      "Description": ""
+    },
+    {
+      "Field": "state05",
+      "Name": "空中ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "state06",
+      "Name": "クイックブースト",
+      "Description": ""
+    },
+    {
+      "Field": "state07",
+      "Name": "斜面滑り",
+      "Description": ""
+    },
+    {
+      "Field": "state08",
+      "Name": "乗車中",
+      "Description": ""
+    },
+    {
+      "Field": "state09",
+      "Name": "浮遊",
+      "Description": ""
+    },
+    {
+      "Field": "state10",
+      "Name": "カバー乗り出し",
+      "Description": ""
+    },
+    {
+      "Field": "state11",
+      "Name": "タンク地上",
+      "Description": ""
+    },
+    {
+      "Field": "state12",
+      "Name": "タンク落下",
+      "Description": ""
+    },
+    {
+      "Field": "state13",
+      "Name": "VOB",
+      "Description": ""
+    },
+    {
+      "Field": "state14",
+      "Name": "地上死亡",
+      "Description": ""
+    },
+    {
+      "Field": "state15",
+      "Name": "空中死亡",
+      "Description": ""
+    },
+    {
+      "Field": "state16",
+      "Name": "状態16",
+      "Description": ""
+    },
+    {
+      "Field": "state17",
+      "Name": "状態17",
+      "Description": ""
+    },
+    {
+      "Field": "state18",
+      "Name": "状態18",
+      "Description": ""
+    },
+    {
+      "Field": "state19",
+      "Name": "状態19",
+      "Description": ""
+    },
+    {
+      "Field": "TransitionActionAiType",
+      "Name": "遷移Ai行動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "※パディング0",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "※パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "NoticeStateID",
+      "Name": "AI通知遷移ID",
+      "Description": ""
+    }
+  ]
+}

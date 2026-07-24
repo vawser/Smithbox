@@ -1,0 +1,23 @@
+{
+  "Param": "EMBLEM_PIECE_SPEC_ST",
+  "Type": "EMBLEM_PIECE_SPEC_ST",
+  "Name": "EMBLEM_PIECE_SPEC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PieceID",
+      "Name": "Decal Texture ID",
+      "Description": "Piece identification ID. Used for texture file name MENU_EmblemPiece_xxxxxxxx"
+    },
+    {
+      "Field": "CategoryID",
+      "Name": "Category ID",
+      "Description": "Which tab in menu emblem will appear in. Menu uses text 212110 + offset"
+    },
+    {
+      "Field": "reserved_",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

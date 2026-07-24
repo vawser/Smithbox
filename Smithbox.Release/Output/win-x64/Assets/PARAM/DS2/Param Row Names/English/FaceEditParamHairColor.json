@@ -1,0 +1,65 @@
+{
+  "Name": "FaceEditParamHairColor",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Hair Color Set 1 -- 髪の色セット1"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Hair Color Set 2 -- 髪の色セット2"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Hair Color Set 3 -- 髪の色セット3"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Hair Color Set 4 -- 髪の色セット4"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Hair Color Set 5 -- 髪の色セット5"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Hair Color Set 6 -- 髪の色セット6"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Hair Color Set 7 -- 髪の色セット7"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Hair Color Set 8 -- 髪の色セット8"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hair Color Set 9 -- 髪の色セット9"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Hair Color Set 10 -- 髪の色セット10"
+      ]
+    }
+  ]
+}

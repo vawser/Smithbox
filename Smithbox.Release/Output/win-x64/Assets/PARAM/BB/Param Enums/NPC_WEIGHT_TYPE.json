@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_WEIGHT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_WEIGHT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy"
+        }
+      ]
+    }
+  ]
+}

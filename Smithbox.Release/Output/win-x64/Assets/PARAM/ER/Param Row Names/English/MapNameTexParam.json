@@ -1,0 +1,203 @@
+{
+  "Name": "MapNameTexParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Limgrave"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Limgrave"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Stormhill"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Stormhill"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Weeping Peninsula"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Weeping Peninsula"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Liurnia of the Lakes"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Liurnia of the Lakes"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Bellum Highway"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Bellum Highway"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Moonlight Altar"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Moonlight Altar"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Capital Outskirts"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Capital Outskirts"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Mt. Gelmir"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Mt. Gelmir"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Forbidden Lands"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Forbidden Lands"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Greyoll's Dragonbarrow"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Greyoll's Dragonbarrow"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Swamp of Aeonia"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Swamp of Aeonia"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Mountaintops of the Giants"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Mountaintops of the Giants"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Flame Peak"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Flame Peak"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

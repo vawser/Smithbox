@@ -1,0 +1,63 @@
+{
+  "Param": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Type": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Name": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "MapAiSightType",
+      "Name": "マップ視界タイプ",
+      "Description": "マップ視界タイプ"
+    },
+    {
+      "Field": "SoundIndoorType",
+      "Name": "サウンド屋内、完全屋内振り分け",
+      "Description": "マップGD設定の「屋内」をサウンド用の「屋内」、「完全屋内」どちらに振り分けるかを設定します(SEQ09833)"
+    },
+    {
+      "Field": "ReverbDefaultType",
+      "Name": "リバーブデフォルト設定",
+      "Description": "このマップのリバーブデフォルトタイプを指定します"
+    },
+    {
+      "Field": "Reserve0",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "MapAdditionalSoundBankId",
+      "Name": "マップ追加バンクID",
+      "Description": "追加で読み込むサウンドの「マップ追加バンク」のIDを指定します(-1:マップ追加バンクなし)(SEQ15725)"
+    },
+    {
+      "Field": "OverrideGIResolution_XSS",
+      "Name": "GI解像度上書き設定_XSSプラット",
+      "Description": "XSS(Xbox SeriesS,Lockhart)で使用するGI解像度上書きします"
+    },
+    {
+      "Field": "OverrideGIResolution_XSX",
+      "Name": "GI解像度上書き設定_XSXプラット",
+      "Description": "XSX(Xbox SeriesX,Anaconda)で使用するGI解像度上書きします"
+    },
+    {
+      "Field": "Reserve1",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

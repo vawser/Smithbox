@@ -1,0 +1,183 @@
+{
+  "Param": "ATTACHEFFECT_PARAM_ST",
+  "Type": "ATTACHEFFECT_PARAM_ST",
+  "Name": "ATTACHEFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "onHitSpEffect",
+      "Name": "onHitSpEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "passiveSpEffectId_1",
+      "Name": "passiveSpEffectId_1",
+      "Description": ""
+    },
+    {
+      "Field": "passiveSpEffectId_2",
+      "Name": "passiveSpEffectId_2",
+      "Description": ""
+    },
+    {
+      "Field": "passiveSpEffectId_3",
+      "Name": "passiveSpEffectId_3",
+      "Description": ""
+    },
+    {
+      "Field": "compatibilityId",
+      "Name": "compatibilityId",
+      "Description": ""
+    },
+    {
+      "Field": "attachTextId",
+      "Name": "attachTextId",
+      "Description": ""
+    },
+    {
+      "Field": "isPersistentEffect",
+      "Name": "isPersistentEffect",
+      "Description": ""
+    },
+    {
+      "Field": "isNumericEffect",
+      "Name": "isNumericEffect",
+      "Description": ""
+    },
+    {
+      "Field": "isStrongestEffect",
+      "Name": "isStrongestEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8a4",
+      "Name": "unknown_8a4",
+      "Description": ""
+    },
+    {
+      "Field": "isDebuff",
+      "Name": "isDebuff",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8c",
+      "Name": "unknown_8c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8d",
+      "Name": "unknown_8d",
+      "Description": ""
+    },
+    {
+      "Field": "displayPercentageSymbol",
+      "Name": "displayPercentageSymbol",
+      "Description": ""
+    },
+    {
+      "Field": "allowWylder",
+      "Name": "allowWylder",
+      "Description": ""
+    },
+    {
+      "Field": "allowGuardian",
+      "Name": "allowGuardian",
+      "Description": ""
+    },
+    {
+      "Field": "allowIroneye",
+      "Name": "allowIroneye",
+      "Description": ""
+    },
+    {
+      "Field": "allowDuchess",
+      "Name": "allowDuchess",
+      "Description": ""
+    },
+    {
+      "Field": "allowRaider",
+      "Name": "allowRaider",
+      "Description": ""
+    },
+    {
+      "Field": "allowRevenant",
+      "Name": "allowRevenant",
+      "Description": ""
+    },
+    {
+      "Field": "allowRecluse",
+      "Name": "allowRecluse",
+      "Description": ""
+    },
+    {
+      "Field": "allowExecutor",
+      "Name": "allowExecutor",
+      "Description": ""
+    },
+    {
+      "Field": "allowScholar",
+      "Name": "allowScholar",
+      "Description": ""
+    },
+    {
+      "Field": "allowUndertaker",
+      "Name": "allowUndertaker",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9c3",
+      "Name": "unknown_9c3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9d",
+      "Name": "unknown_9d",
+      "Description": ""
+    },
+    {
+      "Field": "statusIconId",
+      "Name": "statusIconId",
+      "Description": ""
+    },
+    {
+      "Field": "overrideBaseEffectId",
+      "Name": "overrideBaseEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "displayedModifierValue",
+      "Name": "displayedModifierValue",
+      "Description": ""
+    },
+    {
+      "Field": "overrideEffectId",
+      "Name": "overrideEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "attachFilterParamId",
+      "Name": "attachFilterParamId",
+      "Description": ""
+    },
+    {
+      "Field": "exclusivityId",
+      "Name": "exclusivityId",
+      "Description": ""
+    },
+    {
+      "Field": "permanentSpEffectId",
+      "Name": "permanentSpEffectId",
+      "Description": ""
+    }
+  ]
+}

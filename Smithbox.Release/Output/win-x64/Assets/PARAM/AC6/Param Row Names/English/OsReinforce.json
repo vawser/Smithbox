@@ -1,0 +1,125 @@
+{
+  "Name": "OsReinforce",
+  "Entries": [
+    {
+      "ID": 5050,
+      "Entries": [
+        "Boost Kick"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "Weapon Bay"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Weight Control"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Manual Aiming"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "Quick Turn"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Assault Armor"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Pulse Protection"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Pulse Armor"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Terminal Armor"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Kinetic Weapons - Fire Control Tuning"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Explosive Weapons - Fuse Control Tuning"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Energy Weapons - Output Control Tuning"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Melee Weapons - Drive Control Tuning"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Direct Hit Modifier - Damage Tuning"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Access Speed - Optimization"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "ACS - Dynamic Deflection Control Tuning - Kinetic"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "ACS - Dynamic Deflection Control Tuning - Energy"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "ACS - Dynamic Deflection Control Tuning - Explosive"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "ACS - Dynamic Deflection Control Tuning - Coral"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Repair Kits - Optimization"
+      ]
+    }
+  ]
+}

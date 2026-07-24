@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_PROTECTOR_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="u8 equipModelCategory = 1">
+      <DisplayName>装備モデル種別</DisplayName>
+      <Enum>EQUIP_MODEL_CATEGORY</Enum>
+      <Description>装備モデルの種別.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u8 equipModelGender">
+      <DisplayName>装備モデル性別</DisplayName>
+      <Enum>EQUIP_MODEL_GENDER</Enum>
+      <Description>装備モデルの性別.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 equipModelId">
+      <DisplayName>装備モデル番号</DisplayName>
+      <Description>装備モデルの番号.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 iconIdM">
+      <DisplayName>男用アイコンID</DisplayName>
+      <Description>男用メニューアイコンID.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 iconIdF">
+      <DisplayName>女用アイコンID</DisplayName>
+      <Description>女用メニューアイコンID.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 protectorCategory">
+      <DisplayName>防具カテゴリ</DisplayName>
+      <Enum>PROTECTOR_CATEGORY</Enum>
+      <Description>防具のカテゴリ.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u8 headEquip = 1">
+      <DisplayName>頭装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>頭装備か.</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bodyEquip">
+      <DisplayName>胴装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>胴装備か.</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 armEquip">
+      <DisplayName>腕装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>腕装備か.</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 legEquip">
+      <DisplayName>脚装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>脚装備か.</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 defenseMaterial = 50">
+      <DisplayName>防御材質【SE】</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>移動/防御時のSE用.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u8 defenseMaterialSfx = 50">
+      <DisplayName>防御材質【SFX】</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>移動/防御時のSFX用.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u8 useFaceScale">
+      <DisplayName>顔スケールを使用するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>顔スケールを使用するか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u32 wanderingEquipId">
+      <DisplayName>徘徊装備ID</DisplayName>
+      <Description>徘徊ゴースト用の差し替え装備ID.</Description>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg].</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="u16 durability = 100">
+      <DisplayName>耐久度</DisplayName>
+      <Description>初期耐久度.</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 durabilityMax = 100">
+      <DisplayName>耐久度最大値</DisplayName>
+      <Description>新品耐久度.</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 defensePhysics = 100">
+      <DisplayName>物理防御力</DisplayName>
+      <Description>物理攻撃のダメージ防御.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 defenseMagic = 100">
+      <DisplayName>魔法防御力</DisplayName>
+      <Description>魔法攻撃のダメージ防御.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 defenseFire = 100">
+      <DisplayName>炎防御力</DisplayName>
+      <Description>炎攻撃のダメージ防御.</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 defenseSlash">
+      <DisplayName>斬撃防御力</DisplayName>
+      <Description>攻撃タイプを見て、斬撃属性のときは、防御力を減少させる</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 defenseBlow">
+      <DisplayName>打撃防御力</DisplayName>
+      <Description>攻撃属性を見て、打撃属性のときは、防御力を減少させる.</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 defenseThrust">
+      <DisplayName>刺突防御力</DisplayName>
+      <Description>攻撃属性を見て、打撃属性のときは、防御力を減少させる.</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 resistPoison = 100">
+      <DisplayName>毒耐性</DisplayName>
+      <Description>毒状態異常へのかかりにくさ</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 resistDisease = 100">
+      <DisplayName>疫病耐性</DisplayName>
+      <Description>疫病状態異常へのかかりにくさ</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 resistBlood = 100">
+      <DisplayName>出欠耐性</DisplayName>
+      <Description>出血状態異常へのかかりにくさ</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 repelVal = 10">
+      <DisplayName>はじき値</DisplayName>
+      <Description>敵の攻撃のはじき返し判定に利用.</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 basicPrice">
+      <DisplayName>基本価格</DisplayName>
+      <Description>基本価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="s16 shopLv">
+      <DisplayName>ショップレベル</DisplayName>
+      <Description>お店で販売できるレベル</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 knockBack">
+      <DisplayName>ノックバックカット率</DisplayName>
+      <Description>ノックバックの減少値.</Description>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="u16 knockbackBounceRate">
+      <DisplayName>ノックバック反発率</DisplayName>
+      <Description>ノックバックの反発率.</Description>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_4[2]">
+      <DisplayName>パディング</DisplayName>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 residentSpEffectBehaviorId">
+      <DisplayName>常駐特殊効果行動ID0</DisplayName>
+      <Description>常駐特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s16 trophySGradeId = -1">
+      <DisplayName>トロフィー</DisplayName>
+      <Description>トロフィーシステムに関係あるか？</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_5[2]">
+      <DisplayName>pad</DisplayName>
+    </Field>
+    <Field Def="s32 fixPrice">
+      <DisplayName>修理価格</DisplayName>
+      <Description>修理基本価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="s32 qwcId = -1">
+      <DisplayName>QWCID</DisplayName>
+      <Description>QWCのパラメタID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag00">
+      <DisplayName>#00#非表示</DisplayName>
+      <Description>前髪の先</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag01">
+      <DisplayName>#01#非表示</DisplayName>
+      <Description>前髪の根元</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag02">
+      <DisplayName>#02#非表示</DisplayName>
+      <Description>もみあげ</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag03">
+      <DisplayName>#03#非表示</DisplayName>
+      <Description>頭頂部</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag04">
+      <DisplayName>#04#非表示</DisplayName>
+      <Description>頭頂部</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag05">
+      <DisplayName>#05#非表示</DisplayName>
+      <Description>後ろ髪</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag06">
+      <DisplayName>#06#非表示</DisplayName>
+      <Description>後ろ髪の先</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag07">
+      <DisplayName>#07#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag08">
+      <DisplayName>#08#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag09">
+      <DisplayName>#09#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag10">
+      <DisplayName>#10#非表示</DisplayName>
+      <Description>襟</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag11">
+      <DisplayName>#11#非表示</DisplayName>
+      <Description>襟回り</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag12">
+      <DisplayName>#12#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag13">
+      <DisplayName>#13#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag14">
+      <DisplayName>#14#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag15">
+      <DisplayName>#15#非表示</DisplayName>
+      <Description>頭巾の裾</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag16">
+      <DisplayName>#16#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag17">
+      <DisplayName>#17#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag18">
+      <DisplayName>#18#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag19">
+      <DisplayName>#19#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag20">
+      <DisplayName>#20#非表示</DisplayName>
+      <Description>袖A</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag21">
+      <DisplayName>#21#非表示</DisplayName>
+      <Description>袖B</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag22">
+      <DisplayName>#22#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag23">
+      <DisplayName>#23#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag24">
+      <DisplayName>#24#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag25">
+      <DisplayName>#25#非表示</DisplayName>
+      <Description>腕</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag26">
+      <DisplayName>#26#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag27">
+      <DisplayName>#27#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag28">
+      <DisplayName>#28#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag29">
+      <DisplayName>#29#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag30">
+      <DisplayName>#30#非表示</DisplayName>
+      <Description>ベルト</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 invisibleFlag31">
+      <DisplayName>#31#非表示</DisplayName>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleM_ScaleX = 1">
+      <DisplayName>男横顔拡大スケール</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleM_ScaleZ = 1">
+      <DisplayName>男前顔拡大スケール</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleM_MaxX = 1">
+      <DisplayName>男横顔拡大最大倍率</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>2</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleM_MaxZ = 1">
+      <DisplayName>男前顔拡大最大倍率</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>2</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleF_ScaleX = 1">
+      <DisplayName>女横顔拡大スケール</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleF_ScaleZ = 1">
+      <DisplayName>女前顔拡大スケール</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleF_MaxX = 1">
+      <DisplayName>女横顔拡大最大倍率</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>2</Maximum>
+    </Field>
+    <Field Def="f32 faceScaleF_MaxZ = 1">
+      <DisplayName>女前顔拡大最大倍率</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>2</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

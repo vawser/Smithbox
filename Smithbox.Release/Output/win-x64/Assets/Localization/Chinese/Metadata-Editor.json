@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Header_Editor_Mode",
+      "Text": "当前模式"
+    },
+    {
+      "Key": "META_Header_Editor_Mode_TT",
+      "Text": ""
+    },
+    {
+      "Key": "META_Select_Project_First",
+      "Text": "选择 a project first."
+    },
+    {
+      "Key": "META_Header_Param_Def",
+      "Text": "PARAMDEF 编辑器"
+    },
+    {
+      "Key": "META_Header_Param_Def_TT",
+      "Text": ""
+    },
+    {
+      "Key": "META_Header_Param_Meta",
+      "Text": "PARAM Meta 编辑器"
+    },
+    {
+      "Key": "META_Header_Param_Meta_TT",
+      "Text": ""
+    }
+  ]
+}

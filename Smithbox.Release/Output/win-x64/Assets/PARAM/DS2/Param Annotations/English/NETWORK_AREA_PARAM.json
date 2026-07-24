@@ -1,0 +1,73 @@
+{
+  "Param": "NETWORK_AREA_PARAM",
+  "Type": "NETWORK_AREA_PARAM",
+  "Name": "NETWORK_AREA_PARAM",
+  "Description": "Defines network region grid settings and multiplayer feature availability within specific world areas, including message, ghost, and invasion systems.",
+  "Fields": [
+    {
+      "Field": "cellSizeX",
+      "Name": "Cell Size: X",
+      "Description": "Width of a single network grid cell."
+    },
+    {
+      "Field": "cellSizeY",
+      "Name": "Cell Size: Y",
+      "Description": "Height of a single network grid cell."
+    },
+    {
+      "Field": "cellSizeZ",
+      "Name": "Cell Size: Z",
+      "Description": "Depth of a single network grid cell."
+    },
+    {
+      "Field": "cellOffsetX",
+      "Name": "Cell Offset: X",
+      "Description": "X-axis offset applied to the network grid positioning."
+    },
+    {
+      "Field": "cellOffsetY",
+      "Name": "Cell Offset: Y",
+      "Description": "Y-axis offset applied to the network grid positioning."
+    },
+    {
+      "Field": "cellOffsetZ",
+      "Name": "Cell Offset: Z",
+      "Description": "Z-axis offset applied to the network grid positioning."
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "Enable Bloodstains and Death Phantoms",
+      "Description": "Determines whether bloodstains and death replays are visible in this area."
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "Enable Blood Messages",
+      "Description": "Determines whether player-written blood messages are visible."
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "Enable Ghosts",
+      "Description": "Determines whether ghost replays of other players are shown."
+    },
+    {
+      "Field": "enableMultiPlay",
+      "Name": "Enable Multiplayer",
+      "Description": "Enables or disables multiplayer interactions in this area."
+    },
+    {
+      "Field": "enableRingSearch",
+      "Name": "Enable Ring Search",
+      "Description": "Allows ring-based matchmaking or search systems in this area."
+    },
+    {
+      "Field": "enableBreakInSearch",
+      "Name": "Enable Invasion Search",
+      "Description": "Allows matchmaking for invasion-style multiplayer encounters."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

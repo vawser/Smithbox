@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Window_Mode_Selection",
+      "Text": "Editor Mode"
+    },
+    {
+      "Key": "META_Window_Project_Aliases",
+      "Text": "Project Aliases"
+    },
+    {
+      "Key": "META_Window_Project_Enums",
+      "Text": "Project Enums"
+    },
+    {
+      "Key": "META_Window_Param_Def_Editor",
+      "Text": "PARAMDEF Editor"
+    },
+    {
+      "Key": "META_Window_Param_Meta_Editor",
+      "Text": "PARAM Meta Editor"
+    }
+  ]
+}

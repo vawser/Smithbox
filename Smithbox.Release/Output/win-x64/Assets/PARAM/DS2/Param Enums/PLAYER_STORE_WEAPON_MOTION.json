@@ -1,0 +1,47 @@
+{
+  "Key": "PLAYER_STORE_WEAPON_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_STORE_WEAPON_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hang on the shoulder"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put on the back"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hang on the waist"
+        }
+      ]
+    }
+  ]
+}

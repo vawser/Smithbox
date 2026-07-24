@@ -1,0 +1,89 @@
+{
+  "Name": "MultiMPEstusFlaskBonusParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Shirorei -- 白霊"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Gold spirit (sun) -- 金霊（太陽）"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "White berserker -- 白バーサーカー"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Dark spirit (sign) -- 闇霊（サイン）"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Red gold spirit (sign) -- 赤金霊（サイン）"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Red Berserker (Sign) -- 赤バーサーカー（サイン）"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Dark spirit (intrusion) -- 闇霊（乱入）"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Red gold spirit (intrusion) -- 赤金霊（乱入）"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Red Berserker (Intrusion) -- 赤バーサーカー（乱入）"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Red Scare Spirit 1 -- 赤狩り霊１"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Red Scare Spirit 2 -- 赤狩り霊２"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Map Guardian Spirit (Forest) -- マップ守護霊(森)"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Map Guardian Spirit (Anor) -- マップ守護霊(アノール)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a world map point in the map." />
+  
+  <Field>
+    <WorldMapPointParamID
+    AltName="World Map Point Param ID"
+    Wiki="Determines which WorldMapPointParam to use."
+    ParamRef="WorldMapPointParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

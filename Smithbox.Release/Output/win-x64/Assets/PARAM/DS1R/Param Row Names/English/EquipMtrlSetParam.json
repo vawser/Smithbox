@@ -1,0 +1,1661 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal +0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal +5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal +6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal +7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal +8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal +9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal +10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Normal +11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Normal +12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Normal +13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Normal +14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal +15"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Crystal +0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Crystal +1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Crystal +2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Crystal +3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Crystal +4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Crystal +5"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Lightning +0"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Lightning +1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Lightning +2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Lightning +3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Lightning +4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Lightning +5"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Raw +0"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Raw +1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Raw +2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Raw +3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Raw +4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Raw +5"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Magic +0"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Magic +1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Magic +2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Magic +3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Magic +4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Magic +5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Magic +6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Magic +7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Magic +8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Magic +9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Magic +10"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Enchanted +0"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Enchanted +1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Enchanted +2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Enchanted +3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Enchanted +4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Enchanted +5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Divine +0"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Divine +1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Divine +2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Divine +3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Divine +4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Divine +5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Divine +6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Divine +7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Divine +8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Divine +9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Divine +10"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Occult +0"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Occult +1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Occult +2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Occult +3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Occult +4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Occult +5"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Fire +0"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Fire +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Fire +2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Fire +3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Fire +4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Fire +5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Fire +6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Fire +7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Fire +8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Fire +9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Fire +10"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Chaos +0"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Chaos +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Chaos +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Chaos +3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Chaos +4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Chaos +5"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Dragon Scale +0"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Dragon Scale +1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Dragon Scale +2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Dragon Scale +3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Dragon Scale +4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Dragon Scale +5"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Twinkling Titanite +0"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Twinkling Titanite +1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Twinkling Titanite +2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Twinkling Titanite +3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Twinkling Titanite +4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Twinkling Titanite +5"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Sif]"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Gwyn]"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Quelaag]"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Ornstein]"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Moonlight Buttefly]"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Demon Titanite +0 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Demon Titanite +1 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "Demon Titanite +2 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "Demon Titanite +3 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "Demon Titanite +4 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1805,
+      "Entries": [
+        "Demon Titanite +5 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Smough]"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Priscilla]"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Gwyndolin]"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Dragon Scale +0 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Dragon Scale +1 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Dragon Scale +2 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Dragon Scale +3 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Dragon Scale +4 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Dragon Scale +5 [Core of Iron Golem]"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Demon Titanite +0"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Demon Titanite +1"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Demon Titanite +2"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Demon Titanite +3"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Demon Titanite +4"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "Demon Titanite +5"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Artorias]"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Demon Titanite +0 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Demon Titanite +1 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Demon Titanite +2 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Demon Titanite +3 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Demon Titanite +4 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "Demon Titanite +5 [Soul of Manus]"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Hidden Body"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Hush"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Aural Decoy"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 3540,
+      "Entries": [
+        "Fall Control"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Resist Curse"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Remedy"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Dark Bead"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "Pursuers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Fire Surge"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Undead Rapport"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Power Within"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "Black Flame"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Escape Death"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Seek Guidance"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Karmic Justice"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "Vow of Silence"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Armor - Normal +0"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Armor - Normal +1"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Armor - Normal +2"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Armor - Normal +3"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Armor - Normal +4"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Armor - Normal +5"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "Armor - Normal +6"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "Armor - Normal +7"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "Armor - Normal +8"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "Armor - Normal +9"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Armor - Normal +10"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Armor - Twinkling +0"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Armor - Twinkling +1"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Armor - Twinkling +2"
+      ]
+    },
+    {
+      "ID": 7103,
+      "Entries": [
+        "Armor - Twinkling +3"
+      ]
+    },
+    {
+      "ID": 7104,
+      "Entries": [
+        "Armor - Twinkling +4"
+      ]
+    },
+    {
+      "ID": 7105,
+      "Entries": [
+        "Armor - Twinkling +5"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Armor - Normal +0"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Armor - Normal +1"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Armor - Normal +2"
+      ]
+    },
+    {
+      "ID": 7203,
+      "Entries": [
+        "Armor - Normal +3"
+      ]
+    },
+    {
+      "ID": 7204,
+      "Entries": [
+        "Armor - Normal +4"
+      ]
+    },
+    {
+      "ID": 7205,
+      "Entries": [
+        "Armor - Normal +5"
+      ]
+    },
+    {
+      "ID": 7206,
+      "Entries": [
+        "Armor - Normal +6"
+      ]
+    },
+    {
+      "ID": 7207,
+      "Entries": [
+        "Armor - Normal +7"
+      ]
+    },
+    {
+      "ID": 7208,
+      "Entries": [
+        "Armor - Normal +8"
+      ]
+    },
+    {
+      "ID": 7209,
+      "Entries": [
+        "Armor - Normal +9"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Armor - Normal +10"
+      ]
+    }
+  ]
+}

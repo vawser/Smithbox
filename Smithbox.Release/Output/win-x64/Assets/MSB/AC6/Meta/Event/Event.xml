@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an event within the map." />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of this map object." />
+    
+    <EventID
+    AltName="Event ID"
+    Wiki="The ID of this map object in the event system." />
+    
+    <TypeIndex
+    AltName="Type ID"
+    Wiki="" />
+    
+    <PartName
+    AltName="Part Name"
+    Wiki="The part referenced by the event."
+    MapRef="Part-Part" />
+    
+    <PartIndex
+    IndexProperty="" />
+    
+    <RegionName
+    AltName="Region Name"
+    Wiki="The region referenced by the event."
+    MapRef="Part-Part" />
+    
+    <RegionIndex
+    IndexProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the part in event scripts." 
+    EntityIdentifier="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

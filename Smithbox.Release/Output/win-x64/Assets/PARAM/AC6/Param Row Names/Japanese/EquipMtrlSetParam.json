@@ -1,0 +1,173 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "basic -- 基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Basic +1 -- 基本＋１"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Basic +2 -- 基本＋２"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Basic +3 -- 基本＋３"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Basic +4 -- 基本＋４"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Basic +5 -- 基本＋５"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[FNR] Replenishment bullet item (live bullet) -- 【FNR】補充用弾丸アイテム(実弾)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[FNR] Replenishment bullet item (EN) -- 【FNR】補充用弾丸アイテム(EN)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[FNR] Beacon -- 【FNR】ビーコン"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[FNR] Smoke grenade -- 【FNR】スモークグレネード"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[FNR] Flare -- 【FNR】フレア"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[FNR] Grenade -- 【FNR】手榴弾"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[FNR] Est bottle imitation test -- 【FNR】エスト瓶もどきテスト"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[FNR] Grenade_Kira test_Cracker -- 【FNR】手榴弾_吉良テスト_クラッカー"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[FNR] Grenade_Kira test_Throwing drone -- 【FNR】手榴弾_吉良テスト_投擲ドローン"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[FNR] +0 Unreinforced -- 【FNR】 +0\u3000未強化"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[FNR] +1 -- 【FNR】 +1"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[FNR] +2 -- 【FNR】 +2"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[FNR] +3 -- 【FNR】 +3"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[FNR] +4 -- 【FNR】 +4"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "[FNR] +5 -- 【FNR】 +5"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[FNR] +6 -- 【FNR】 +6"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[FNR] +7 -- 【FNR】 +7"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "[FNR] +8 -- 【FNR】 +8"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "[FNR] +9 -- 【FNR】 +9"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[FNR] +10 -- 【FNR】 +10"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[FNR test] Weapon synthesis -- 【FNRテスト】武器合成"
+      ]
+    }
+  ]
+}

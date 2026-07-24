@@ -1,0 +1,558 @@
+{
+  "Param": "PLAYER_STATUS_PARAM",
+  "Type": "PLAYER_STATUS_PARAM",
+  "Name": "PLAYER_STATUS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "genderType",
+      "Name": "性別",
+      "Description": ""
+    },
+    {
+      "Field": "livingType",
+      "Name": "生死",
+      "Description": ""
+    },
+    {
+      "Field": "bodyType",
+      "Name": "体型",
+      "Description": ""
+    },
+    {
+      "Field": "pad01",
+      "Name": "パディング01",
+      "Description": ""
+    },
+    {
+      "Field": "soulLevel",
+      "Name": "ソウルレベル",
+      "Description": ""
+    },
+    {
+      "Field": "lifeForceLevel",
+      "Name": "生命力",
+      "Description": ""
+    },
+    {
+      "Field": "soulPoint",
+      "Name": "ソウル総量",
+      "Description": ""
+    },
+    {
+      "Field": "stayingPowerLevel",
+      "Name": "持久力",
+      "Description": ""
+    },
+    {
+      "Field": "attunementLevel",
+      "Name": "記憶力",
+      "Description": ""
+    },
+    {
+      "Field": "vitalityLevel",
+      "Name": "体力",
+      "Description": ""
+    },
+    {
+      "Field": "strengthLevel",
+      "Name": "筋力",
+      "Description": ""
+    },
+    {
+      "Field": "dexterityLevel",
+      "Name": "技量",
+      "Description": ""
+    },
+    {
+      "Field": "intelligenceLevel",
+      "Name": "理力",
+      "Description": ""
+    },
+    {
+      "Field": "faithLevel",
+      "Name": "信仰",
+      "Description": ""
+    },
+    {
+      "Field": "enduranceLevel",
+      "Name": "耐久力",
+      "Description": ""
+    },
+    {
+      "Field": "quicknessLevel",
+      "Name": "敏捷",
+      "Description": ""
+    },
+    {
+      "Field": "luckLevel",
+      "Name": "運",
+      "Description": ""
+    },
+    {
+      "Field": "facePresetNo",
+      "Name": "FG時顔プリセット番号",
+      "Description": ""
+    },
+    {
+      "Field": "pad00",
+      "Name": "パディング00",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem01",
+      "Name": "ベルトスロット 01 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem02",
+      "Name": "ベルトスロット 02 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem03",
+      "Name": "ベルトスロット 03 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem04",
+      "Name": "ベルトスロット 04 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem05",
+      "Name": "ベルトスロット 05 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem06",
+      "Name": "ベルトスロット 06 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem07",
+      "Name": "ベルトスロット 07 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem08",
+      "Name": "ベルトスロット 08 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem09",
+      "Name": "ベルトスロット 09 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem10",
+      "Name": "ベルトスロット 10 [アイテム]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem01Num",
+      "Name": "ベルトスロット .01 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem02Num",
+      "Name": "ベルトスロット .02 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem03Num",
+      "Name": "ベルトスロット .03 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem04Num",
+      "Name": "ベルトスロット .04 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem05Num",
+      "Name": "ベルトスロット .05 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem06Num",
+      "Name": "ベルトスロット .06 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem07Num",
+      "Name": "ベルトスロット .07 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem08Num",
+      "Name": "ベルトスロット .08 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem09Num",
+      "Name": "ベルトスロット .09 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem10Num",
+      "Name": "ベルトスロット .10 [アイテム数]",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem01",
+      "Name": "スペルスロット 01 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem02",
+      "Name": "スペルスロット 02 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem03",
+      "Name": "スペルスロット 03 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem04",
+      "Name": "スペルスロット 04 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem05",
+      "Name": "スペルスロット 05 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem06",
+      "Name": "スペルスロット 06 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem07",
+      "Name": "スペルスロット 07 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem08",
+      "Name": "スペルスロット 08 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem09",
+      "Name": "スペルスロット 09 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotItem10",
+      "Name": "スペルスロット 10 アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon01",
+      "Name": "右武器 01",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon02",
+      "Name": "右武器 02",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon03",
+      "Name": "右武器 03",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon01",
+      "Name": "左武器 01",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon02",
+      "Name": "左武器 02",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon03",
+      "Name": "左武器 03",
+      "Description": ""
+    },
+    {
+      "Field": "headArmor",
+      "Name": "頭防具",
+      "Description": ""
+    },
+    {
+      "Field": "bodyArmor",
+      "Name": "胴防具",
+      "Description": ""
+    },
+    {
+      "Field": "armArmor",
+      "Name": "腕防具",
+      "Description": ""
+    },
+    {
+      "Field": "legArmor",
+      "Name": "足防具",
+      "Description": ""
+    },
+    {
+      "Field": "ringSlot01",
+      "Name": "指輪 01 ID",
+      "Description": ""
+    },
+    {
+      "Field": "ringSlot02",
+      "Name": "指輪 02 ID",
+      "Description": ""
+    },
+    {
+      "Field": "ringSlot03",
+      "Name": "指輪 03 ID",
+      "Description": ""
+    },
+    {
+      "Field": "ringSlot04",
+      "Name": "指輪 04 ID",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon01Enhanced",
+      "Name": "右武器 01 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon01Attribute",
+      "Name": "右武器 01 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyR1",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon02Enhanced",
+      "Name": "右武器 02 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon02Attribute",
+      "Name": "右武器 02 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyR2",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon03Enhanced",
+      "Name": "右武器 03 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon03Attribute",
+      "Name": "右武器 03 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyR3",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon01Enhanced",
+      "Name": "左武器 01 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon01Attribute",
+      "Name": "左武器 01 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyL1",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon02Enhanced",
+      "Name": "左武器 02 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon02Attribute",
+      "Name": "左武器 02 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyL2",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon03Enhanced",
+      "Name": "左武器 03 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon03Attribute",
+      "Name": "左武器 03 付与属性",
+      "Description": ""
+    },
+    {
+      "Field": "dummyL3",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "headArmorEnhanced",
+      "Name": "頭防具 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "bodyArmorEnhanced",
+      "Name": "胴防具 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "armArmorEnhanced",
+      "Name": "腕防具 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "legArmorEnhanced",
+      "Name": "足防具 強化段階",
+      "Description": ""
+    },
+    {
+      "Field": "bagItemParam01",
+      "Name": "アイテムセット01",
+      "Description": ""
+    },
+    {
+      "Field": "bagItemParam02",
+      "Name": "アイテムセット02",
+      "Description": ""
+    },
+    {
+      "Field": "bagItemParam03",
+      "Name": "アイテムセット03",
+      "Description": ""
+    },
+    {
+      "Field": "estusFlaskLvUsableCount",
+      "Name": "エスト瓶強化レベル 使用回数",
+      "Description": ""
+    },
+    {
+      "Field": "estusFlaskLvHealPoint",
+      "Name": "エスト瓶強化レベル 回復量",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "arrowSlot01",
+      "Name": "矢 01 ID",
+      "Description": ""
+    },
+    {
+      "Field": "arrowSlot02",
+      "Name": "矢 02 ID",
+      "Description": ""
+    },
+    {
+      "Field": "boltSlot01",
+      "Name": "ボルト 01 ID",
+      "Description": ""
+    },
+    {
+      "Field": "boltSlot02",
+      "Name": "ボルト 02 ID",
+      "Description": ""
+    },
+    {
+      "Field": "arrowSlot01Num",
+      "Name": "矢 01 本数",
+      "Description": ""
+    },
+    {
+      "Field": "arrowSlot02Num",
+      "Name": "矢 02 本数",
+      "Description": ""
+    },
+    {
+      "Field": "boltSlot01Num",
+      "Name": "ボルト 01 本数",
+      "Description": ""
+    },
+    {
+      "Field": "boltSlot02Num",
+      "Name": "ボルト 02 本数",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot01",
+      "Name": "ジェスチャー 01 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot02",
+      "Name": "ジェスチャー 02 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot03",
+      "Name": "ジェスチャー 03 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot04",
+      "Name": "ジェスチャー 04 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot05",
+      "Name": "ジェスチャー 05 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot06",
+      "Name": "ジェスチャー 06 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot07",
+      "Name": "ジェスチャー 07 ID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureSlot08",
+      "Name": "ジェスチャー 08 ID",
+      "Description": ""
+    },
+    {
+      "Field": "vowType",
+      "Name": "誓約",
+      "Description": ""
+    },
+    {
+      "Field": "vowLevel",
+      "Name": "誓約レベル",
+      "Description": ""
+    },
+    {
+      "Field": "vowContribution",
+      "Name": "誓約貢献度",
+      "Description": ""
+    }
+  ]
+}

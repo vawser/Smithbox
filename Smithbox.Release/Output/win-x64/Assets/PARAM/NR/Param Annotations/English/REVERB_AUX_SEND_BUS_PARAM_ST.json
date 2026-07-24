@@ -1,0 +1,13 @@
+{
+  "Param": "REVERB_AUX_SEND_BUS_PARAM_ST",
+  "Type": "REVERB_AUX_SEND_BUS_PARAM_ST",
+  "Name": "REVERB_AUX_SEND_BUS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ReverbAuxSendBusName",
+      "Name": "Reverb Aux Send Bus Name",
+      "Description": "ReverbAuxSendBus name"
+    }
+  ]
+}

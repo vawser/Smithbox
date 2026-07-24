@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>EQUIP_INTERFERE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 interfereId0">
+            <DisplayName>干渉設定ID</DisplayName>
+            <EditFlags>Lock</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityNeck0 = 127">
+            <DisplayName>首-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityElbowRight0 = 127">
+            <DisplayName>右腕-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 cullingValueElbowRight0 = 127">
+            <DisplayName>右腕-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityElbowLeft0 = 127">
+            <DisplayName>左腕-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 cullingValueElbowLeft0 = 127">
+            <DisplayName>左腕-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityWaist0 = 127">
+            <DisplayName>腰-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 cullingValueWaist0 = 127">
+            <DisplayName>腰-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 clothCtrlType0">
+            <DisplayName>クロス制御設定</DisplayName>
+            <Enum>EQUIP_CLOTH_CTRL_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup00_0">
+            <DisplayName>カリンググループ０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup01_0">
+            <DisplayName>カリンググループ１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup02_0">
+            <DisplayName>カリンググループ２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup03_0">
+            <DisplayName>カリンググループ３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup04_0">
+            <DisplayName>カリンググループ４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup05_0">
+            <DisplayName>カリンググループ５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup06_0">
+            <DisplayName>カリンググループ６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup07_0">
+            <DisplayName>カリンググループ７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup08_0">
+            <DisplayName>カリンググループ８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup09_0">
+            <DisplayName>カリンググループ９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup10_0">
+            <DisplayName>カリンググループ１０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup11_0">
+            <DisplayName>カリンググループ１１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup12_0">
+            <DisplayName>カリンググループ１２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup13_0">
+            <DisplayName>カリンググループ１３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup14_0">
+            <DisplayName>カリンググループ１４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup15_0">
+            <DisplayName>カリンググループ１５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup16_0">
+            <DisplayName>カリンググループ１６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup17_0">
+            <DisplayName>カリンググループ１７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup18_0">
+            <DisplayName>カリンググループ１８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup19_0">
+            <DisplayName>カリンググループ１９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup20_0">
+            <DisplayName>カリンググループ２０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup21_0">
+            <DisplayName>カリンググループ２１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup22_0">
+            <DisplayName>カリンググループ２２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup23_0">
+            <DisplayName>カリンググループ２３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup24_0">
+            <DisplayName>カリンググループ２４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup25_0">
+            <DisplayName>カリンググループ２５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup26_0">
+            <DisplayName>カリンググループ２６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup27_0">
+            <DisplayName>カリンググループ２７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup28_0">
+            <DisplayName>カリンググループ２８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup29_0">
+            <DisplayName>カリンググループ２９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup30_0">
+            <DisplayName>カリンググループ３０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup31_0">
+            <DisplayName>カリンググループ３１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup32_0">
+            <DisplayName>カリンググループ３２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup33_0">
+            <DisplayName>カリンググループ３３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup34_0">
+            <DisplayName>カリンググループ３４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup35_0">
+            <DisplayName>カリンググループ３５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup36_0">
+            <DisplayName>カリンググループ３６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup37_0">
+            <DisplayName>カリンググループ３７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup38_0">
+            <DisplayName>カリンググループ３８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup39_0">
+            <DisplayName>カリンググループ３９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup40_0">
+            <DisplayName>カリンググループ４０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup41_0">
+            <DisplayName>カリンググループ４１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup42_0">
+            <DisplayName>カリンググループ４２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup43_0">
+            <DisplayName>カリンググループ４３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup44_0">
+            <DisplayName>カリンググループ４４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup45_0">
+            <DisplayName>カリンググループ４５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup46_0">
+            <DisplayName>カリンググループ４６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup47_0">
+            <DisplayName>カリンググループ４７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup48_0">
+            <DisplayName>カリンググループ４８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup49_0">
+            <DisplayName>カリンググループ４９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup50_0">
+            <DisplayName>カリンググループ５０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup51_0">
+            <DisplayName>カリンググループ５１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup52_0">
+            <DisplayName>カリンググループ５２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup53_0">
+            <DisplayName>カリンググループ５３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup54_0">
+            <DisplayName>カリンググループ５４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>64</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup55_0">
+            <DisplayName>カリンググループ５５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>65</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup56_0">
+            <DisplayName>カリンググループ５６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>66</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup57_0">
+            <DisplayName>カリンググループ５７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>67</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup58_0">
+            <DisplayName>カリンググループ５８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>68</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup59_0">
+            <DisplayName>カリンググループ５９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>69</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup60_0">
+            <DisplayName>カリンググループ６０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup61_0">
+            <DisplayName>カリンググループ６１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>71</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup62_0">
+            <DisplayName>カリンググループ６２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>72</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup63_0">
+            <DisplayName>カリンググループ６３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>73</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityNeck1 = 127">
+            <DisplayName>首-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>74</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityElbowRight1 = 127">
+            <DisplayName>右腕-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>75</SortID>
+        </Field>
+        <Field Def="u8 cullingValueElbowRight1 = 127">
+            <DisplayName>右腕-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>76</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityElbowLeft1 = 127">
+            <DisplayName>左腕-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>77</SortID>
+        </Field>
+        <Field Def="u8 cullingValueElbowLeft1 = 127">
+            <DisplayName>左腕-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>78</SortID>
+        </Field>
+        <Field Def="u8 cullingPriorityWaist1 = 127">
+            <DisplayName>腰-表示優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>79</SortID>
+        </Field>
+        <Field Def="u8 cullingValueWaist1 = 127">
+            <DisplayName>腰-カリング値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="u8 clothCtrlType1">
+            <DisplayName>クロス制御設定</DisplayName>
+            <Enum>EQUIP_CLOTH_CTRL_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>81</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup00_1">
+            <DisplayName>カリンググループ０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>82</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup01_1">
+            <DisplayName>カリンググループ１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>83</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup02_1">
+            <DisplayName>カリンググループ２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>84</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup03_1">
+            <DisplayName>カリンググループ３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>85</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup04_1">
+            <DisplayName>カリンググループ４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>86</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup05_1">
+            <DisplayName>カリンググループ５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>87</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup06_1">
+            <DisplayName>カリンググループ６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>88</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup07_1">
+            <DisplayName>カリンググループ７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>89</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup08_1">
+            <DisplayName>カリンググループ８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup09_1">
+            <DisplayName>カリンググループ９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>91</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup10_1">
+            <DisplayName>カリンググループ１０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>92</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup11_1">
+            <DisplayName>カリンググループ１１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>93</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup12_1">
+            <DisplayName>カリンググループ１２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>94</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup13_1">
+            <DisplayName>カリンググループ１３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>95</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup14_1">
+            <DisplayName>カリンググループ１４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>96</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup15_1">
+            <DisplayName>カリンググループ１５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>97</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup16_1">
+            <DisplayName>カリンググループ１６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>98</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup17_1">
+            <DisplayName>カリンググループ１７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>99</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup18_1">
+            <DisplayName>カリンググループ１８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup19_1">
+            <DisplayName>カリンググループ１９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup20_1">
+            <DisplayName>カリンググループ２０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup21_1">
+            <DisplayName>カリンググループ２１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>103</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup22_1">
+            <DisplayName>カリンググループ２２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>104</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup23_1">
+            <DisplayName>カリンググループ２３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>105</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup24_1">
+            <DisplayName>カリンググループ２４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>106</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup25_1">
+            <DisplayName>カリンググループ２５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>107</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup26_1">
+            <DisplayName>カリンググループ２６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>108</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup27_1">
+            <DisplayName>カリンググループ２７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>109</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup28_1">
+            <DisplayName>カリンググループ２８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup29_1">
+            <DisplayName>カリンググループ２９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>111</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup30_1">
+            <DisplayName>カリンググループ３０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>112</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup31_1">
+            <DisplayName>カリンググループ３１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>113</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup32_1">
+            <DisplayName>カリンググループ３２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>114</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup33_1">
+            <DisplayName>カリンググループ３３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>115</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup34_1">
+            <DisplayName>カリンググループ３４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>116</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup35_1">
+            <DisplayName>カリンググループ３５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>117</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup36_1">
+            <DisplayName>カリンググループ３６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>118</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup37_1">
+            <DisplayName>カリンググループ３７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>119</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup38_1">
+            <DisplayName>カリンググループ３８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup39_1">
+            <DisplayName>カリンググループ３９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>121</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup40_1">
+            <DisplayName>カリンググループ４０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>122</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup41_1">
+            <DisplayName>カリンググループ４１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>123</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup42_1">
+            <DisplayName>カリンググループ４２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>124</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup43_1">
+            <DisplayName>カリンググループ４３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>125</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup44_1">
+            <DisplayName>カリンググループ４４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>126</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup45_1">
+            <DisplayName>カリンググループ４５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>127</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup46_1">
+            <DisplayName>カリンググループ４６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>128</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup47_1">
+            <DisplayName>カリンググループ４７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>129</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup48_1">
+            <DisplayName>カリンググループ４８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup49_1">
+            <DisplayName>カリンググループ４９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>131</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup50_1">
+            <DisplayName>カリンググループ５０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>132</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup51_1">
+            <DisplayName>カリンググループ５１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>133</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup52_1">
+            <DisplayName>カリンググループ５２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>134</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup53_1">
+            <DisplayName>カリンググループ５３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>135</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup54_1">
+            <DisplayName>カリンググループ５４</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>136</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup55_1">
+            <DisplayName>カリンググループ５５</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>137</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup56_1">
+            <DisplayName>カリンググループ５６</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>138</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup57_1">
+            <DisplayName>カリンググループ５７</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>139</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup58_1">
+            <DisplayName>カリンググループ５８</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>140</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup59_1">
+            <DisplayName>カリンググループ５９</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>141</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup60_1">
+            <DisplayName>カリンググループ６０</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>142</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup61_1">
+            <DisplayName>カリンググループ６１</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>143</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup62_1">
+            <DisplayName>カリンググループ６２</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>144</SortID>
+        </Field>
+        <Field Def="u8 cullingGroup63_1">
+            <DisplayName>カリンググループ６３</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_CTRL</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>145</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

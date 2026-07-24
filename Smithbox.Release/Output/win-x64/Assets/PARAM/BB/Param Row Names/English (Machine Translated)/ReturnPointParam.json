@@ -1,0 +1,527 @@
+{
+  "Name": "ReturnPointParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 2102950,
+      "Entries": [
+        "Location 00_ Gravestone _ Ground 0"
+      ]
+    },
+    {
+      "ID": 2102951,
+      "Entries": [
+        "Location 01_ Gravestone _ Ground 1"
+      ]
+    },
+    {
+      "ID": 2102952,
+      "Entries": [
+        "Location 00_ Gravestone _ Ground 1"
+      ]
+    },
+    {
+      "ID": 2102953,
+      "Entries": [
+        "Location 01_ Gravestone _ Ground 2"
+      ]
+    },
+    {
+      "ID": 2102954,
+      "Entries": [
+        "Location 04_ Gravestone _ Quick Dungeon"
+      ]
+    },
+    {
+      "ID": 2102955,
+      "Entries": [
+        "Location 05_ Gravestone _ Channel Dungeon 1"
+      ]
+    },
+    {
+      "ID": 2102956,
+      "Entries": [
+        "Location 06_ Gravestone _ Channel Dungeon 2"
+      ]
+    },
+    {
+      "ID": 2102957,
+      "Entries": [
+        "Location 07_ Gravestone _ Channel Dungeon 3"
+      ]
+    },
+    {
+      "ID": 2102958,
+      "Entries": [
+        "Location 08_ Gravestone _ Channel Dungeon 4"
+      ]
+    },
+    {
+      "ID": 2102959,
+      "Entries": [
+        "Location 09_ Gravestone _ Channel Dungeon 5"
+      ]
+    },
+    {
+      "ID": 2102960,
+      "Entries": [
+        "Location 10_ Gravestone _ Channel Dungeon 6"
+      ]
+    },
+    {
+      "ID": 2102961,
+      "Entries": [
+        "Location 11_ Restart point when you die at the base"
+      ]
+    },
+    {
+      "ID": 2102962,
+      "Entries": [
+        "Location 12_ After the first police death drama"
+      ]
+    },
+    {
+      "ID": 2112950,
+      "Entries": [
+        "Reality Base _ Inside the building"
+      ]
+    },
+    {
+      "ID": 2202950,
+      "Entries": [
+        "Cemetery Street _ chair _ start"
+      ]
+    },
+    {
+      "ID": 2202951,
+      "Entries": [
+        "Cemetery Street _ chair _ Defeat the Eye Collector"
+      ]
+    },
+    {
+      "ID": 2302950,
+      "Entries": [
+        "ruins _ chair _ start"
+      ]
+    },
+    {
+      "ID": 2302951,
+      "Entries": [
+        "ruins _ chair _ Defeat the Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 2302952,
+      "Entries": [
+        "ruins _ chair _ Defeat Storm Beast (Bone)"
+      ]
+    },
+    {
+      "ID": 2402950,
+      "Entries": [
+        "Cathedral Quarter A_ chair _ start"
+      ]
+    },
+    {
+      "ID": 2402951,
+      "Entries": [
+        "Cathedral Quarter A_ chair _ Defeat the Saint Beast"
+      ]
+    },
+    {
+      "ID": 2412950,
+      "Entries": [
+        "Cathedral Quarter B_ chair _ Clinic"
+      ]
+    },
+    {
+      "ID": 2412951,
+      "Entries": [
+        "Cathedral Quarter B_ chair _ On top of the ladder"
+      ]
+    },
+    {
+      "ID": 2412952,
+      "Entries": [
+        "Cathedral Quarter B_ chair _ Defeat the Parish Priest"
+      ]
+    },
+    {
+      "ID": 2412953,
+      "Entries": [
+        "Cathedral Quarter B_ chair _ Defeat Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 2412959,
+      "Entries": [
+        "Cathedral Quarter B_ special _ Starting point"
+      ]
+    },
+    {
+      "ID": 2422950,
+      "Entries": [
+        "Cathedral Quarter A_ chair _C Start (Towards Otoko)"
+      ]
+    },
+    {
+      "ID": 2422951,
+      "Entries": [
+        "Cathedral Quarter C_ chair _Defeat Moon Child"
+      ]
+    },
+    {
+      "ID": 2422952,
+      "Entries": [
+        "Cathedral Quarter C_ chair _ Defeat the Messengers from the Moon"
+      ]
+    },
+    {
+      "ID": 2502950,
+      "Entries": [
+        "Old castle _ chair _ start"
+      ]
+    },
+    {
+      "ID": 2502951,
+      "Entries": [
+        "Old castle _ chair _ Queen's Chamber"
+      ]
+    },
+    {
+      "ID": 2502952,
+      "Entries": [
+        "Old castle _ chair _ Defeat the King's Reaper"
+      ]
+    },
+    {
+      "ID": 2502958,
+      "Entries": [
+        "Old castle _ special _ When warping from the cemetery 2"
+      ]
+    },
+    {
+      "ID": 2502959,
+      "Entries": [
+        "Old castle _ special _ When warping from the cemetery 2"
+      ]
+    },
+    {
+      "ID": 2602950,
+      "Entries": [
+        "Trap Lord _ chair _ start"
+      ]
+    },
+    {
+      "ID": 2602951,
+      "Entries": [
+        "Trap Lord _ chair _ Defeat Death and Darkness Lesser"
+      ]
+    },
+    {
+      "ID": 2602952,
+      "Entries": [
+        "Trap Lord _ chair _ Defeat the Nightmare Lord"
+      ]
+    },
+    {
+      "ID": 2602953,
+      "Entries": [
+        "Trap Lord _ chair _ First SC In front of the elevator"
+      ]
+    },
+    {
+      "ID": 2602958,
+      "Entries": [
+        "Trap Lord _ special _ When I warped from the Nightmare Classroom 2"
+      ]
+    },
+    {
+      "ID": 2602959,
+      "Entries": [
+        "Trap Lord _ special _ When I warped from the Nightmare Classroom"
+      ]
+    },
+    {
+      "ID": 2702950,
+      "Entries": [
+        "forest _ chair _start"
+      ]
+    },
+    {
+      "ID": 2702951,
+      "Entries": [
+        "forest _ chair _ Defeat the Snake Ball"
+      ]
+    },
+    {
+      "ID": 2802950,
+      "Entries": [
+        "Sacrifice Street _ chair _ start"
+      ]
+    },
+    {
+      "ID": 2802951,
+      "Entries": [
+        "Sacrifice Street _ chair _ Defeat the evil"
+      ]
+    },
+    {
+      "ID": 2802952,
+      "Entries": [
+        "Sacrifice Street _ chair _ Church 1F"
+      ]
+    },
+    {
+      "ID": 2802953,
+      "Entries": [
+        "Sacrifice Street _ chair _ Church 2F"
+      ]
+    },
+    {
+      "ID": 2802956,
+      "Entries": [
+        "Sacrifice Street _ special _ When you warp to the university after clearing it 2"
+      ]
+    },
+    {
+      "ID": 2802957,
+      "Entries": [
+        "Sacrifice Street _ special _ When I was kidnapped by a kidnapper 2"
+      ]
+    },
+    {
+      "ID": 2802958,
+      "Entries": [
+        "Sacrifice Street _ special _ When you warp to the university after clearing it"
+      ]
+    },
+    {
+      "ID": 2802959,
+      "Entries": [
+        "Sacrifice Street _ special _ When I was kidnapped by a kidnapper"
+      ]
+    },
+    {
+      "ID": 2902950,
+      "Entries": [
+        "Dungeons _ chair 0"
+      ]
+    },
+    {
+      "ID": 2902951,
+      "Entries": [
+        "Dungeons _ chair 1"
+      ]
+    },
+    {
+      "ID": 2902952,
+      "Entries": [
+        "Dungeons _ chair 2"
+      ]
+    },
+    {
+      "ID": 2902953,
+      "Entries": [
+        "Dungeons _ chair 3"
+      ]
+    },
+    {
+      "ID": 2902954,
+      "Entries": [
+        "Dungeons _ chair 4"
+      ]
+    },
+    {
+      "ID": 2902955,
+      "Entries": [
+        "Dungeons _chair 5"
+      ]
+    },
+    {
+      "ID": 2902956,
+      "Entries": [
+        "Dungeons _ chair 6"
+      ]
+    },
+    {
+      "ID": 2902957,
+      "Entries": [
+        "Dungeons _ chair 7"
+      ]
+    },
+    {
+      "ID": 2902958,
+      "Entries": [
+        "Dungeons _ chair 8"
+      ]
+    },
+    {
+      "ID": 2902959,
+      "Entries": [
+        "Dungeons _ chair 9"
+      ]
+    },
+    {
+      "ID": 3202950,
+      "Entries": [
+        "University _ chair _ start"
+      ]
+    },
+    {
+      "ID": 3202951,
+      "Entries": [
+        "Nightmare School _ chair _1F"
+      ]
+    },
+    {
+      "ID": 3202952,
+      "Entries": [
+        "University _ chair _ Defeat the Idiot Spider"
+      ]
+    },
+    {
+      "ID": 3202953,
+      "Entries": [
+        "Nightmare School _ chair _2F"
+      ]
+    },
+    {
+      "ID": 3202956,
+      "Entries": [
+        "Nightmare Classroom _ special _ When warping in with the Evil God Throw 2"
+      ]
+    },
+    {
+      "ID": 3202957,
+      "Entries": [
+        "Nightmare Classroom _ special _ When warping in after the sacrifice boss 2"
+      ]
+    },
+    {
+      "ID": 3202958,
+      "Entries": [
+        "Nightmare Classroom _ special _ When warping in with the Evil God Throw"
+      ]
+    },
+    {
+      "ID": 3202959,
+      "Entries": [
+        "Nightmare Classroom _ special _ When warping in after the sacrifice boss"
+      ]
+    },
+    {
+      "ID": 3302950,
+      "Entries": [
+        "hometown _ chair _ start"
+      ]
+    },
+    {
+      "ID": 3302951,
+      "Entries": [
+        "hometown _ chair _ Defeat the Evil God"
+      ]
+    },
+    {
+      "ID": 3302958,
+      "Entries": [
+        "hometown _ special_ When I warped from the Nightmare Classroom 2"
+      ]
+    },
+    {
+      "ID": 3302959,
+      "Entries": [
+        "hometown _ special _ When I warped from the Nightmare Classroom"
+      ]
+    },
+    {
+      "ID": 3402950,
+      "Entries": [
+        "Cathedral Quarter D_ chair _ Starting Point"
+      ]
+    },
+    {
+      "ID": 3402951,
+      "Entries": [
+        "Cathedral Quarter D_ chair _ Midpoint"
+      ]
+    },
+    {
+      "ID": 3402952,
+      "Entries": [
+        "Cathedral Quarter D_ chair _ Defeat Ludwig"
+      ]
+    },
+    {
+      "ID": 3402953,
+      "Entries": [
+        "Cathedral Quarter D_ chair _ Parishioner Ω Defeat"
+      ]
+    },
+    {
+      "ID": 3402955,
+      "Entries": [
+        "Cathedral Quarter D_ special _TGS"
+      ]
+    },
+    {
+      "ID": 3402958,
+      "Entries": [
+        "Cathedral Quarter D_ special _ Cathedral Quarter A When you warp from 2"
+      ]
+    },
+    {
+      "ID": 3402959,
+      "Entries": [
+        "Cathedral Quarter D_ special _ Cathedral Quarter A When you warp from"
+      ]
+    },
+    {
+      "ID": 3502950,
+      "Entries": [
+        "Clock Tower _ chair _ Starting Point"
+      ]
+    },
+    {
+      "ID": 3502951,
+      "Entries": [
+        "Clock Tower _ chair _ Defeat the female hunter"
+      ]
+    },
+    {
+      "ID": 3502952,
+      "Entries": [
+        "Clock Tower _ chair _ patient B Defeat"
+      ]
+    },
+    {
+      "ID": 3602950,
+      "Entries": [
+        "fishing village _ chair _ Starting Point"
+      ]
+    },
+    {
+      "ID": 3602951,
+      "Entries": [
+        "fishing village_ chair _ Midpoint"
+      ]
+    },
+    {
+      "ID": 3602952,
+      "Entries": [
+        "fishing village _ chair _ Defeat the last boss"
+      ]
+    },
+    {
+      "ID": 9902950,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

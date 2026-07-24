@@ -1,0 +1,23 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_GeneratorType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "usually -- 通常"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "EN(Blue) -- EN(青)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "coral -- コーラル"
+      ]
+    }
+  ]
+}

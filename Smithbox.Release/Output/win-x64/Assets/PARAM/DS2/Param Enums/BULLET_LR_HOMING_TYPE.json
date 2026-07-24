@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_LR_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_LR_HOMING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left and right"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right only"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>ESTUS_FLASK_LV_DATA_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 spEffectId = -1">
+            <DisplayName>特殊効果ID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 usableCount = 1">
+            <DisplayName>使用回数</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="dummy8 padding[3]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>201</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

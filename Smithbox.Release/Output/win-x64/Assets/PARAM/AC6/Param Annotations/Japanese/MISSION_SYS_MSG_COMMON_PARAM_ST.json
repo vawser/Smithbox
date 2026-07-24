@@ -1,0 +1,103 @@
+{
+  "Param": "MISSION_SYS_MSG_COMMON_PARAM_ST",
+  "Type": "MISSION_SYS_MSG_COMMON_PARAM_ST",
+  "Name": "MISSION_SYS_MSG_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "playEventFlagId0",
+      "Name": "再生条件イベントフラグ0",
+      "Description": "再生条件イベントフラグ0"
+    },
+    {
+      "Field": "talkParamId0",
+      "Name": "会話パラメータID0",
+      "Description": "会話パラメータID0"
+    },
+    {
+      "Field": "playEventFlagId1",
+      "Name": "再生条件イベントフラグ1",
+      "Description": "再生条件イベントフラグ1"
+    },
+    {
+      "Field": "talkParamId1",
+      "Name": "会話パラメータID1",
+      "Description": "会話パラメータID1"
+    },
+    {
+      "Field": "playEventFlagId2",
+      "Name": "再生条件イベントフラグ2",
+      "Description": "再生条件イベントフラグ2"
+    },
+    {
+      "Field": "talkParamId2",
+      "Name": "会話パラメータID2",
+      "Description": "会話パラメータID2"
+    },
+    {
+      "Field": "playEventFlagId3",
+      "Name": "再生条件イベントフラグ3",
+      "Description": "再生条件イベントフラグ3"
+    },
+    {
+      "Field": "talkParamId3",
+      "Name": "会話パラメータID3",
+      "Description": "会話パラメータID3"
+    },
+    {
+      "Field": "playEventFlagId4",
+      "Name": "再生条件イベントフラグ4",
+      "Description": "再生条件イベントフラグ4"
+    },
+    {
+      "Field": "talkParamId4",
+      "Name": "会話パラメータID4",
+      "Description": "会話パラメータID4"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "優先度・・・低い方が優先"
+    },
+    {
+      "Field": "dispLimitNum",
+      "Name": "メッセージの表示回数制限",
+      "Description": "メッセージの表示回数制限"
+    },
+    {
+      "Field": "dispCoolTime",
+      "Name": "メッセージの最低表示間隔[s]",
+      "Description": "メッセージの最低表示間隔[s]"
+    },
+    {
+      "Field": "answerCategoryOffsetId",
+      "Name": "掛け合いメッセージカテゴリID",
+      "Description": "掛け合いメッセージカテゴリID・・・-1なら掛け合いなしとする"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

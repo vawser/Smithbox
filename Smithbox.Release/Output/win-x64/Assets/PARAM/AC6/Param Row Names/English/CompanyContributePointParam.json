@@ -1,0 +1,161 @@
+{
+  "Name": "CompanyContributePointParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Prologue clear"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Dam Destruction Clear without betraying"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Dam Destruction Betray and Clear"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Mining ship destroyed clear"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "String clear"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Clear over the wall"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "Jesse Rescue 1 Clear"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "VOB capture clear"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "Jesse Rescue 2 Clear"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "Clear over the sea"
+      ]
+    },
+    {
+      "ID": 99999000,
+      "Entries": [
+        "Test_Company A to 100"
+      ]
+    },
+    {
+      "ID": 99999001,
+      "Entries": [
+        "Test_CompanyB to 200"
+      ]
+    },
+    {
+      "ID": 99999002,
+      "Entries": [
+        "Test_Company C to 300"
+      ]
+    },
+    {
+      "ID": 99999003,
+      "Entries": [
+        "Test_CompanyD to 400"
+      ]
+    },
+    {
+      "ID": 99999004,
+      "Entries": [
+        "Test_Company E to 500"
+      ]
+    },
+    {
+      "ID": 99999110,
+      "Entries": [
+        "bay rum 100"
+      ]
+    },
+    {
+      "ID": 99999120,
+      "Entries": [
+        "bay rum 200"
+      ]
+    },
+    {
+      "ID": 99999130,
+      "Entries": [
+        "bay rum 300"
+      ]
+    },
+    {
+      "ID": 99999210,
+      "Entries": [
+        "Elkano 100"
+      ]
+    },
+    {
+      "ID": 99999220,
+      "Entries": [
+        "Elcano 200"
+      ]
+    },
+    {
+      "ID": 99999230,
+      "Entries": [
+        "Elkano 300"
+      ]
+    },
+    {
+      "ID": 99999310,
+      "Entries": [
+        "Rembrandt 100"
+      ]
+    },
+    {
+      "ID": 99999320,
+      "Entries": [
+        "Rembrandt 200"
+      ]
+    },
+    {
+      "ID": 99999330,
+      "Entries": [
+        "Rembrandt 300"
+      ]
+    },
+    {
+      "ID": 99999410,
+      "Entries": [
+        "Bayrum Elcano 100 200"
+      ]
+    }
+  ]
+}

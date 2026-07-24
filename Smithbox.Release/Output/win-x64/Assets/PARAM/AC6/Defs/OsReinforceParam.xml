@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>OS_REINFORCE_PARAM_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>990011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>990012</SortID>
+    </Field>
+    <Field Def="u8 maxLevel = 1">
+      <DisplayName>最大レベル</DisplayName>
+      <Description>最大レベル</Description>
+      <Minimum>1</Minimum>
+      <Maximum>5</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 iconId = 1">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンID</Description>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[14]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990013</SortID>
+    </Field>
+    <Field Def="s32 addVal_lv1">
+      <DisplayName>Lv1強化値</DisplayName>
+      <Description>強化値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>レベル1</UnkC8>
+    </Field>
+    <Field Def="s32 exp_lv1">
+      <DisplayName>Lv1必要ポイント</DisplayName>
+      <Description>このレベルになる必要ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>レベル1</UnkC8>
+    </Field>
+    <Field Def="s32 textId_lv1">
+      <DisplayName>Lv1テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>レベル1</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_lv1_0[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990014</SortID>
+    </Field>
+    <Field Def="s32 addVal_lv2">
+      <DisplayName>Lv2強化値</DisplayName>
+      <Description>強化値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>レベル2</UnkC8>
+    </Field>
+    <Field Def="s32 exp_lv2">
+      <DisplayName>Lv2必要ポイント</DisplayName>
+      <Description>このレベルになる必要ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>レベル2</UnkC8>
+    </Field>
+    <Field Def="s32 textId_lv2">
+      <DisplayName>Lv2テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>レベル2</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_lv2_0[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990015</SortID>
+    </Field>
+    <Field Def="s32 addVal_lv3">
+      <DisplayName>Lv3強化値</DisplayName>
+      <Description>強化値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>レベル3</UnkC8>
+    </Field>
+    <Field Def="s32 exp_lv3">
+      <DisplayName>Lv3必要ポイント</DisplayName>
+      <Description>このレベルになる必要ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>レベル3</UnkC8>
+    </Field>
+    <Field Def="s32 textId_lv3">
+      <DisplayName>Lv3テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>レベル3</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_lv3_0[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990016</SortID>
+    </Field>
+    <Field Def="s32 addVal_lv4">
+      <DisplayName>Lv4強化値</DisplayName>
+      <Description>強化値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>レベル4</UnkC8>
+    </Field>
+    <Field Def="s32 exp_lv4">
+      <DisplayName>Lv4必要ポイント</DisplayName>
+      <Description>このレベルになる必要ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>レベル4</UnkC8>
+    </Field>
+    <Field Def="s32 textId_lv4">
+      <DisplayName>Lv4テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>レベル4</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_lv4_0[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990017</SortID>
+    </Field>
+    <Field Def="s32 addVal_lv5">
+      <DisplayName>Lv5強化値</DisplayName>
+      <Description>強化値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>レベル5</UnkC8>
+    </Field>
+    <Field Def="s32 exp_lv5">
+      <DisplayName>Lv5必要ポイント</DisplayName>
+      <Description>このレベルになる必要ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>レベル5</UnkC8>
+    </Field>
+    <Field Def="s32 textId_lv5">
+      <DisplayName>Lv5テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>レベル5</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_lv5_0[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990018</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990019</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

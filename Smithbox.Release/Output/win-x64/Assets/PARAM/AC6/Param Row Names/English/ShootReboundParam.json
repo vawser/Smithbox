@@ -1,0 +1,311 @@
+{
+  "Name": "ShootReboundParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Machine gun shooting_right"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Machine gun shooting_left"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Rifle shooting_right"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Rifle shooting_left"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Hand gun_right"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Handgun_Left"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "rifle_right"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "rifle_left"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Assault rifle_right"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Assault rifle_left"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "machine gun_right"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Machine gun_left"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Gatling gun_right"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Gatling gun_left"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Bazooka_right"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Bazooka_left"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "shotgun_right"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "shotgun_left"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Grenade rifle_right"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "Grenade rifle_left"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Hand gun_right"
+      ]
+    },
+    {
+      "ID": 2071,
+      "Entries": [
+        "Handgun_Left"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Large caliber handgun_right"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "Large caliber handgun_left"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Hand missile (burst)_right"
+      ]
+    },
+    {
+      "ID": 2091,
+      "Entries": [
+        "Hand missile (burst)_left"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Hand missile (single shot)_right"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Hand missile (single shot)_left"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Laser rifle_right"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Laser rifle_left"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Plasma rifle_right"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "Plasma rifle_left"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Vibration pulse gun_right"
+      ]
+    },
+    {
+      "ID": 2131,
+      "Entries": [
+        "Vibration pulse gun_left"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Flame radiation_right"
+      ]
+    },
+    {
+      "ID": 2141,
+      "Entries": [
+        "Flame radiation_left"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Laser shotgun_right"
+      ]
+    },
+    {
+      "ID": 2151,
+      "Entries": [
+        "Laser shotgun_left"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Burst rifle (normal 3-point burst)_right"
+      ]
+    },
+    {
+      "ID": 2161,
+      "Entries": [
+        "Burst rifle (normal 3-point burst)_left"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Linear rifle (charge burst)_right"
+      ]
+    },
+    {
+      "ID": 2171,
+      "Entries": [
+        "Linear rifle (charge burst)_left"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Laser rifle (charge burst)_right"
+      ]
+    },
+    {
+      "ID": 2181,
+      "Entries": [
+        "Laser rifle (charge burst)_left"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Laser shotgun_right"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "laser shotgun)_left"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Laser rifle (melange)_right"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Laser rifle (melange)_left"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Shotgun (WP1510)_Right"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Shotgun (WP1510)_Left"
+      ]
+    }
+  ]
+}

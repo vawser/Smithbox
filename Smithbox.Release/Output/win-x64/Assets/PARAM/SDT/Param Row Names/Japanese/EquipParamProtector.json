@@ -1,0 +1,239 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Mysterious boushi -- ふしぎなぼうし"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Protagonist _ head -- 主人公_頭"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Protagonist _ torso -- 主人公_胴"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Protagonist_arm_prosthesis -- 主人公_腕_義手"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Protagonist _ legs -- 主人公_脚"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Protagonist _ arm _ raw -- 主人公_腕_生身"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Protagonist_arm_deficiency -- 主人公_腕_欠損"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Protagonist _ body _ with sword without immortality -- 主人公_胴_刀あり不死斬りなし"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Protagonist _ body _ no sword no immortal sword -- 主人公_胴_刀なし不死斬りなし"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Protagonist _ legs _ barefoot -- 主人公_脚_裸足"
+      ]
+    },
+    {
+      "ID": 162000,
+      "Entries": [
+        "Protagonist_arm_prosthesis_high resolution -- 主人公_腕_義手_高解像度"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Protagonist_head_Busshi -- 主人公_頭_仏師"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Protagonist _ body _ Buddhist teacher -- 主人公_胴_仏師"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Protagonist_arm_Busshi -- 主人公_腕_仏師"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Protagonist_Legs_Busshi -- 主人公_脚_仏師"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Protagonist _head_shura -- 主人公_頭_修羅"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Protagonist _ torso _ shura _ immortal slash -- 主人公_胴_修羅_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Protagonist _ torso _ shura _ no immortal slash -- 主人公_胴_修羅_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Protagonist _arm_prosthetic hand_shura -- 主人公_腕_義手_修羅"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Protagonist_Legs_Shura -- 主人公_脚_修羅"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Protagonist _ Hair _ Shura -- 主人公_髪_修羅"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Protagonist _ Head _ Ashina Ninja -- 主人公_頭_葦名忍者"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Protagonist _ torso _ reed name ninja _ immortal slash -- 主人公_胴_葦名忍者_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 431000,
+      "Entries": [
+        "Protagonist _ torso _ reed name ninja _ no immortal slash -- 主人公_胴_葦名忍者_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Protagonist _ Arm _ Prosthetic Hand _ Ashina Ninja -- 主人公_腕_義手_葦名忍者"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Protagonist _ Legs _ Ashina Ninja -- 主人公_脚_葦名忍者"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Protagonist _ head _ tengu -- 主人公_頭_天狗"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Protagonist _ torso _ tengu _ immortal slash -- 主人公_胴_天狗_不死斬りあり"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "Protagonist _ torso _ tengu _ no immortal slash -- 主人公_胴_天狗_不死斬りなし"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Protagonist _ arm _ prosthetic hand _ tengu -- 主人公_腕_義手_天狗"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Protagonist _ legs _ tengu -- 主人公_脚_天狗"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Protagonist _ Head _ Ashina Ninja -- 主人公_頭_葦名忍者"
+      ]
+    },
+    {
+      "ID": 641000,
+      "Entries": [
+        "Protagonist _ torso _ reed name ninja -- 主人公_胴_葦名忍者"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Protagonist _ Arm _ Prosthetic Hand _ Ashina Ninja -- 主人公_腕_義手_葦名忍者"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Protagonist _ Legs _ Ashina Ninja -- 主人公_脚_葦名忍者"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Always dying _ torso -- 常に瀕死_胴"
+      ]
+    },
+    {
+      "ID": 901100,
+      "Entries": [
+        "Always Jasuga _ torso -- 常にジャスガ_胴"
+      ]
+    },
+    {
+      "ID": 901200,
+      "Entries": [
+        "Underwater cross confirmation _ torso -- 水中クロス確認_胴"
+      ]
+    },
+    {
+      "ID": 901300,
+      "Entries": [
+        "8 HP_ torso -- HP8個_胴"
+      ]
+    }
+  ]
+}

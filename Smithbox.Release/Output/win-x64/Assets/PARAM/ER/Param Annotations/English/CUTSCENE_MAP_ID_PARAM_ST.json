@@ -1,0 +1,88 @@
+{
+  "Param": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Type": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Name": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "Disable Param - Debug",
+      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayMapId",
+      "Name": "Play Map ID",
+      "Description": "Please enter the map number to be played back as an 8-digit number. This is the map number used as the reference in the cutscene. If you do not specify the correct map number, the playback position will shift."
+    },
+    {
+      "Field": "RequireMapId0",
+      "Name": "Require Map ID 0",
+      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+    },
+    {
+      "Field": "RequireMapId1",
+      "Name": "Require Map ID 1",
+      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+    },
+    {
+      "Field": "RequireMapId2",
+      "Name": "Require Map ID 2",
+      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+    },
+    {
+      "Field": "RefCamPosHitPartsID",
+      "Name": "Hit Part ID for Reference Camera",
+      "Description": "Hit part ID for calculating camera position during loading"
+    },
+    {
+      "Field": "reserved_2_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ClientDisableViewTimeForProgress",
+      "Name": "Client Load View - Progress Bar Time",
+      "Description": "The number of seconds used to display the progress of the loading screen progress bar that is displayed when the guest side cannot play in the multi. [GR] SEQ22843 [Cutscene] Players who have not read the map number required for display during cutscene playback will see the screen go dark."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HitParts_0",
+      "Name": "Hit Parts [0]",
+      "Description": "Hit parts waiting to be read 0"
+    },
+    {
+      "Field": "HitParts_1",
+      "Name": "Hit Parts [1]",
+      "Description": "Hit parts waiting to be read 1"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "Name": "HandIKParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "FNR right hand_rifle (weapon transformation test) -- FNR\u3000右手_ライフル（武器変形テスト）"
+      ]
+    },
+    {
+      "ID": 291100,
+      "Entries": [
+        "FNR right hand_shotgun -- FNR\u3000右手_ショットガン"
+      ]
+    },
+    {
+      "ID": 291200,
+      "Entries": [
+        "FNR right hand_machine gun -- FNR\u3000右手_マシンガン"
+      ]
+    },
+    {
+      "ID": 291300,
+      "Entries": [
+        "FNR right hand_bazooka -- FNR\u3000右手_バズーカ"
+      ]
+    },
+    {
+      "ID": 291400,
+      "Entries": [
+        "FNR Right Hand_Handgun -- FNR\u3000右手_ハンドガン"
+      ]
+    },
+    {
+      "ID": 291500,
+      "Entries": [
+        "FNR Right Hand_Railgun -- FNR\u3000右手_レールガン"
+      ]
+    },
+    {
+      "ID": 291600,
+      "Entries": [
+        "FNR Right hand_Cannon -- FNR\u3000右手_キャノン"
+      ]
+    },
+    {
+      "ID": 291700,
+      "Entries": [
+        "FNR right hand_laser rifle -- FNR\u3000右手_レーザーライフル"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "FNR Rifle -- FNR\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "FNR assault rifle -- FNR\u3000アサルトライフル"
+      ]
+    },
+    {
+      "ID": 5000200,
+      "Entries": [
+        "FNR machine gun -- FNR\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 5000300,
+      "Entries": [
+        "FNR Gatling Gun -- FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5000400,
+      "Entries": [
+        "FNR Bazooka -- FNR\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 5000500,
+      "Entries": [
+        "FNR Shotgun -- FNR\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 5000600,
+      "Entries": [
+        "FNR hand missile -- FNR\u3000ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 5000700,
+      "Entries": [
+        "FNR hand rocket -- FNR\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 5000800,
+      "Entries": [
+        "FNR Grenade Rifle -- FNR\u3000グレネードライフル"
+      ]
+    },
+    {
+      "ID": 5000900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser) -- FNR\u3000レーザーライフル（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "FNR plasma rifle -- FNR\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "FNR Handgun -- FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5001200,
+      "Entries": [
+        "FNR large caliber handgun -- FNR\u3000大口径ハンドガン"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle -- FNR\u3000振動パルスライフル"
+      ]
+    },
+    {
+      "ID": 5001400,
+      "Entries": [
+        "FNR Flamethrower -- FNR\u3000火炎放射器"
+      ]
+    },
+    {
+      "ID": 5001500,
+      "Entries": [
+        "FNR irradiation laser -- FNR\u3000照射レーザー"
+      ]
+    },
+    {
+      "ID": 5001600,
+      "Entries": [
+        "FNR bolt action rifle -- FNR\u3000ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 5001700,
+      "Entries": [
+        "FNR 3-point burst rifle -- FNR\u30003点バーストライフル"
+      ]
+    },
+    {
+      "ID": 5100200,
+      "Entries": [
+        "[test] FNR Gatling gun -- 【test】FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5100300,
+      "Entries": [
+        "[test] FNR handgun -- 【test】FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "FNR Rifle -- FNR\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 5500100,
+      "Entries": [
+        "FNR assault rifle -- FNR\u3000アサルトライフル"
+      ]
+    },
+    {
+      "ID": 5500200,
+      "Entries": [
+        "FNR machine gun -- FNR\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 5500300,
+      "Entries": [
+        "FNR Gatling Gun -- FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5500400,
+      "Entries": [
+        "FNR Bazooka -- FNR\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 5500500,
+      "Entries": [
+        "FNR Shotgun -- FNR\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 5500600,
+      "Entries": [
+        "FNR hand missile -- FNR\u3000ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 5500700,
+      "Entries": [
+        "FNR hand rocket -- FNR\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 5500800,
+      "Entries": [
+        "FNR Grenade Rifle -- FNR\u3000グレネードライフル"
+      ]
+    },
+    {
+      "ID": 5500900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser) -- FNR\u3000レーザーライフル（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 5501000,
+      "Entries": [
+        "FNR plasma rifle -- FNR\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 5501100,
+      "Entries": [
+        "FNR Handgun -- FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5501200,
+      "Entries": [
+        "FNR large caliber handgun -- FNR\u3000大口径ハンドガン"
+      ]
+    },
+    {
+      "ID": 5501300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle -- FNR\u3000振動パルスライフル"
+      ]
+    },
+    {
+      "ID": 5501400,
+      "Entries": [
+        "FNR Flamethrower -- FNR\u3000火炎放射器"
+      ]
+    },
+    {
+      "ID": 5501500,
+      "Entries": [
+        "FNR irradiation laser -- FNR\u3000照射レーザー"
+      ]
+    },
+    {
+      "ID": 5501600,
+      "Entries": [
+        "FNR bolt action rifle -- FNR\u3000ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 5501700,
+      "Entries": [
+        "FNR 3-point burst rifle -- FNR\u30003点バーストライフル"
+      ]
+    }
+  ]
+}

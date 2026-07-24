@@ -1,0 +1,143 @@
+{
+  "Param": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Type": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Name": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "None",
+      "Description": "No dual-wielding permission or category applied."
+    },
+    {
+      "Field": "unarmed",
+      "Name": "Dual-Wielding: Unarmed",
+      "Description": "Allows dual-wielding behavior while unarmed."
+    },
+    {
+      "Field": "fist",
+      "Name": "Dual-Wielding: Fist Weapon",
+      "Description": "Allows dual-wielding for fist-based weapons or martial arts equipment."
+    },
+    {
+      "Field": "dagger",
+      "Name": "Dual-Wielding: Dagger",
+      "Description": "Allows dual-wielding for dagger-type weapons."
+    },
+    {
+      "Field": "thrustingSword",
+      "Name": "Dual-Wielding: Thrusting Sword",
+      "Description": "Allows dual-wielding for thrusting sword-type weapons."
+    },
+    {
+      "Field": "sword",
+      "Name": "Dual-Wielding: Straight Sword",
+      "Description": "Allows dual-wielding for one-handed swords."
+    },
+    {
+      "Field": "doublelBlade",
+      "Name": "Dual-Wielding: Twinblade",
+      "Description": "Allows dual-wielding for twinblade-style weapons."
+    },
+    {
+      "Field": "hammer",
+      "Name": "Dual-Wielding: One-Handed Hammer",
+      "Description": "Allows dual-wielding for one-handed hammer-type weapons."
+    },
+    {
+      "Field": "greatSword",
+      "Name": "Dual-Wielding: Greatsword",
+      "Description": "Allows dual-wielding for two-handed sword-class weapons."
+    },
+    {
+      "Field": "axe",
+      "Name": "Dual-Wielding: One-Handed Axe",
+      "Description": "Allows dual-wielding for one-handed axe-type weapons."
+    },
+    {
+      "Field": "greatHammer",
+      "Name": "Dual-Wielding: Great Hammer",
+      "Description": "Allows dual-wielding for large hammer-type weapons."
+    },
+    {
+      "Field": "ultraGreatSword",
+      "Name": "Dual-Wielding: Ultra Greatsword",
+      "Description": "Allows dual-wielding for ultra-large greatsword-type weapons."
+    },
+    {
+      "Field": "greatAxe",
+      "Name": "Dual-Wielding: Great Axe",
+      "Description": "Allows dual-wielding for large axe-type weapons."
+    },
+    {
+      "Field": "scythe",
+      "Name": "Dual-Wielding: Scythe",
+      "Description": "Allows dual-wielding for scythe-type weapons."
+    },
+    {
+      "Field": "halberd",
+      "Name": "Dual-Wielding: Halberd",
+      "Description": "Allows dual-wielding for halberd-type polearm weapons."
+    },
+    {
+      "Field": "spear",
+      "Name": "Dual-Wielding: Spear",
+      "Description": "Allows dual-wielding for spear-type weapons."
+    },
+    {
+      "Field": "lance",
+      "Name": "Dual-Wielding: Lance",
+      "Description": "Allows dual-wielding for charge-type lance weapons."
+    },
+    {
+      "Field": "whip",
+      "Name": "Dual-Wielding: Whip",
+      "Description": "Allows dual-wielding for whip-type weapons."
+    },
+    {
+      "Field": "bow",
+      "Name": "Dual-Wielding: Bow",
+      "Description": "Allows dual-wielding for bow-type ranged weapons."
+    },
+    {
+      "Field": "burstBow",
+      "Name": "Dual-Wielding: Rapid-Fire Bow",
+      "Description": "Allows dual-wielding for rapid-fire bow variants."
+    },
+    {
+      "Field": "wand",
+      "Name": "Dual-Wielding: Wand",
+      "Description": "Allows dual-wielding for wand-type casting weapons."
+    },
+    {
+      "Field": "bell",
+      "Name": "Dual-Wielding: Bell",
+      "Description": "Allows dual-wielding for bell-type casting tools."
+    },
+    {
+      "Field": "rightShield",
+      "Name": "Dual-Wielding: Right-Hand Shield",
+      "Description": "Allows dual-wielding shields in the right hand slot."
+    },
+    {
+      "Field": "leftShield",
+      "Name": "Dual-Wielding: Left-Hand Shield",
+      "Description": "Allows dual-wielding shields in the left hand slot."
+    },
+    {
+      "Field": "claw",
+      "Name": "Dual-Wielding: Claw",
+      "Description": "Allows dual-wielding for claw-type weapons."
+    },
+    {
+      "Field": "unk0",
+      "Name": "Dual-Wielding: Unknown Type 0",
+      "Description": "Unknown or unused dual-wielding category."
+    },
+    {
+      "Field": "unk1",
+      "Name": "Dual-Wielding: Unknown Type 1",
+      "Description": "Unknown or unused dual-wielding category."
+    }
+  ]
+}

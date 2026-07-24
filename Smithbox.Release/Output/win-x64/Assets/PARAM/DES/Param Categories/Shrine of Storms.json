@@ -1,0 +1,23 @@
+{
+  "Key": "Shrine of Storms",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Shrine of Storms"
+      }
+  ],
+  "Params": [
+    "m03_DofBank",
+    "m03_EnvLightTexBank",
+    "m03_FogBank",
+    "m03_LensFlareBank",
+    "m03_LensFlareExBank",
+    "m03_LightBank",
+    "m03_LightScatteringBank",
+    "m03_PointLightBank",
+    "m03_ShadowBank",
+    "m03_ToneCorrectBank",
+    "m03_ToneMapBank",
+    "s03_LightBank"
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "Name": "ItemLotParam",
+  "TotalChanceLot": {
+      "ChanceSet": [
+        "itemWeight1",
+        "itemWeight2",
+        "itemWeight3",
+        "itemWeight4",
+        "itemWeight5",
+        "itemWeight6",
+        "itemWeight7",
+        "itemWeight8",
+        "itemWeight9",
+        "itemWeight10"
+     ]
+  },
+  "Groups": [
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "lotDropType",
+        "lotCount"
+      ]
+    },
+    {
+      "Key": "Lot 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 1"
+        }
+      ],
+      "Fields": [
+        "itemNum1",
+        "reinforceLevel1",
+        "attribute1",
+        "bExFlag1",
+        "itemId1",
+        "itemWeight1"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight1",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 2"
+        }
+      ],
+      "Fields": [
+        "itemNum2",
+        "reinforceLevel2",
+        "attribute2",
+        "bExFlag2",
+        "itemId2",
+        "itemWeight2"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight2",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 3"
+        }
+      ],
+      "Fields": [
+        "itemNum3",
+        "reinforceLevel3",
+        "attribute3",
+        "bExFlag3",
+        "itemId3",
+        "itemWeight3"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight3",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 4"
+        }
+      ],
+      "Fields": [
+        "itemNum4",
+        "reinforceLevel4",
+        "attribute4",
+        "bExFlag4",
+        "itemId4",
+        "itemWeight4"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight4",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 5"
+        }
+      ],
+      "Fields": [
+        "itemNum5",
+        "reinforceLevel5",
+        "attribute5",
+        "bExFlag5",
+        "itemId5",
+        "itemWeight5"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight5",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 6"
+        }
+      ],
+      "Fields": [
+        "itemNum6",
+        "reinforceLevel6",
+        "attribute6",
+        "bExFlag6",
+        "itemId6",
+        "itemWeight6"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight6",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 7"
+        }
+      ],
+      "Fields": [
+        "itemNum7",
+        "reinforceLevel7",
+        "attribute7",
+        "bExFlag7",
+        "itemId7",
+        "itemWeight7"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight7",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 8"
+        }
+      ],
+      "Fields": [
+        "itemNum8",
+        "reinforceLevel8",
+        "attribute8",
+        "bExFlag8",
+        "itemId8",
+        "itemWeight8"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight8",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 9",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 9"
+        }
+      ],
+      "Fields": [
+        "itemNum9",
+        "reinforceLevel9",
+        "attribute9",
+        "bExFlag9",
+        "itemId9",
+        "itemWeight9"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight9",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 10",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 10"
+        }
+      ],
+      "Fields": [
+        "itemNum10",
+        "reinforceLevel10",
+        "attribute10",
+        "bExFlag10",
+        "itemId10",
+        "itemWeight10"
+      ],
+      "ChanceLot": {
+          "TargetField": "itemWeight10",
+          "ChanceSet": [
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
+         ]
+      }
+    }
+  ]
+}

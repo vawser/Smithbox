@@ -1,0 +1,47 @@
+{
+  "Key": "MAGIC_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAGIC_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pyromancy"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow Magic (Magic 4)"
+        }
+      ]
+    }
+  ]
+}

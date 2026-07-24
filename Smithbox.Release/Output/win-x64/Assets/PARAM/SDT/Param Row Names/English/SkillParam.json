@@ -1,0 +1,539 @@
+{
+  "Name": "SkillParam",
+  "Entries": [
+    {
+      "ID": 2,
+      "Entries": [
+        "Mid Air Deflection"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Run and Slide"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Mid-air Combat Arts"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Vault Over"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Whirlwind Slash"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Shadowrush"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Suppress Presence"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Suppress Sound"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Shinobi Eyes"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "A Shinobi's Karma: Body"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "A Shinobi's Karma: Mind"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Breath of Life: Light"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Chasing Slice"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Fang and Blade"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Projected Force"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Living Force"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Grappling Hook Attack"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Mid-air Prosthetic Tool"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Nightjar Slash"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Nightjar Slash Reversal"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Emma's Medicine: Potency"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Emma's Medicine: Aroma"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Sculptor's Karma: Blood"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Sculptor's Karma: Scars"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Ichimonji"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Ichimonji: Double"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Ashina Cross"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Breath of Nature: Light"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Ascending Carp"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Descending Carp"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Flowing Water"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Praying Strikes"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Praying Strikes - Exorcism"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Senpou Leaping Kicks"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "High Monk"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Virtuous Deed"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Most Virtuous Deed"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Devotion"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "High Monk"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Shadowrush"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Ashina Cross"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Living Force"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Shadowfall"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Spiral Cloud Passage"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Empowered Mortal Draw"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Shinobi Medicine Rank 1"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Shinobi Medicine Rank 2"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Shinobi Medicine Rank 3"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "A Beast's Karma"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Breath of Life: Shadow"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Breath of Nature: Shadow"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Mibu Breathing Technique"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Anti-air Deathblow"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Mortal Draw"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Dragon Flash"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Floating Passage"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "One Mind"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Spinning Shuriken"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Gouging Top"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Phantom Kunai"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Sen Throw"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Lazulite Shuriken"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Spring-load Firecracker"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Long Spark"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Purple Fume Spark"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Spring-load Flame Vent"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Okinaga's Flame Vent"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Lazulite Sacred Flame"
+      ]
+    },
+    {
+      "ID": 731,
+      "Entries": [
+        "Spring-load Axe"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "Sparking Axe"
+      ]
+    },
+    {
+      "ID": 733,
+      "Entries": [
+        "Lazulite Axe"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "Aged Feather Mist Raven"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "Great Feather Mist Raven"
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        "Improved Sabimaru"
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        "Piercing Sabimaru"
+      ]
+    },
+    {
+      "ID": 753,
+      "Entries": [
+        "Lazulite Sabimaru"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "Loaded Umbrella - Magnet"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "Suzaku's Lotus Umbrella"
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        "Phoenix's Lilac Umbrella"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "Double Divine Abduction"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "Golden Vortex"
+      ]
+    },
+    {
+      "ID": 781,
+      "Entries": [
+        "Loaded Spear Thrust type"
+      ]
+    },
+    {
+      "ID": 782,
+      "Entries": [
+        "Loaded Spear Cleave type"
+      ]
+    },
+    {
+      "ID": 783,
+      "Entries": [
+        "Spiral Spear"
+      ]
+    },
+    {
+      "ID": 784,
+      "Entries": [
+        "Leaping Flame"
+      ]
+    },
+    {
+      "ID": 791,
+      "Entries": [
+        "Mountain Echo"
+      ]
+    },
+    {
+      "ID": 792,
+      "Entries": [
+        "Malcontent"
+      ]
+    }
+  ]
+}

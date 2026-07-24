@@ -1,0 +1,208 @@
+{
+  "Param": "REINFORCE_PARAM_WEAPON_ST",
+  "Type": "REINFORCE_PARAM_WEAPON_ST",
+  "Name": "REINFORCE_PARAM_WEAPON_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "physicsAtkRate",
+      "Name": "物理攻撃力基本値",
+      "Description": "物理攻撃力の補正値"
+    },
+    {
+      "Field": "magicAtkRate",
+      "Name": "魔法攻撃力基本値",
+      "Description": "魔法攻撃力の補正値"
+    },
+    {
+      "Field": "fireAtkRate",
+      "Name": "炎攻撃力基本値",
+      "Description": "炎攻撃力の補正値"
+    },
+    {
+      "Field": "thunderAtkRate",
+      "Name": "電撃攻撃力基本値",
+      "Description": "電撃攻撃力の補正値"
+    },
+    {
+      "Field": "staminaAtkRate",
+      "Name": "スタミナ攻撃力",
+      "Description": "スタミナ攻撃力の補正値"
+    },
+    {
+      "Field": "saWeaponAtkRate",
+      "Name": "SA武器攻撃力",
+      "Description": "スーパーアーマー武器攻撃色の補正値"
+    },
+    {
+      "Field": "saDurabilityRate",
+      "Name": "SA耐久値",
+      "Description": "SA耐久力の補正値"
+    },
+    {
+      "Field": "correctStrengthRate",
+      "Name": "筋力補正",
+      "Description": "筋力補正の補正値"
+    },
+    {
+      "Field": "correctAgilityRate",
+      "Name": "俊敏補正",
+      "Description": "俊敏補正の補正値"
+    },
+    {
+      "Field": "correctMagicRate",
+      "Name": "魔力補正",
+      "Description": "魔力補正の補正値"
+    },
+    {
+      "Field": "correctFaithRate",
+      "Name": "信仰補正",
+      "Description": "信仰補正の補正値"
+    },
+    {
+      "Field": "physicsGuardCutRate",
+      "Name": "ガード時物理攻撃カット率",
+      "Description": "ガード時物理攻撃カット率の補正値"
+    },
+    {
+      "Field": "magicGuardCutRate",
+      "Name": "ガード時魔法攻撃カット率",
+      "Description": "ガード時魔法攻撃カット率の補正値"
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "ガード時炎攻撃カット率",
+      "Description": "ガード時炎攻撃カット率の補正値"
+    },
+    {
+      "Field": "thunderGuardCutRate",
+      "Name": "ガード時電撃攻撃カット率",
+      "Description": "ガード時電撃攻撃カット率の補正値"
+    },
+    {
+      "Field": "poisonGuardResistRate",
+      "Name": "ガード時毒攻撃カット率",
+      "Description": "ガード時毒攻撃カット率の補正値"
+    },
+    {
+      "Field": "diseaseGuardResistRate",
+      "Name": "ガード時疫病攻撃カット率",
+      "Description": "ガード時疫病攻撃カット率の補正値"
+    },
+    {
+      "Field": "bloodGuardResistRate",
+      "Name": "ガード時出血攻撃カット率",
+      "Description": "ガード時出血攻撃カット率の補正値"
+    },
+    {
+      "Field": "curseGuardResistRate",
+      "Name": "ガード時呪攻撃カット率",
+      "Description": "ガード時呪い攻撃カット率の補正値"
+    },
+    {
+      "Field": "staminaGuardDefRate",
+      "Name": "ガード時スタミナ防御力",
+      "Description": "ガード時スタミナ防御力の補正値"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果ID1の加算補正値"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果ID2",
+      "Description": "特殊効果ID2の加算補正値"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果ID3",
+      "Description": "特殊効果ID3の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "常駐特殊効果ID1",
+      "Description": "常駐特殊効果ID1の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "常駐特殊効果ID2",
+      "Description": "常駐特殊効果ID2の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "常駐特殊効果ID3",
+      "Description": "常駐特殊効果ID3の加算補正値"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "素材ID加算値",
+      "Description": "素材パラメータIDの加算補正値"
+    },
+    {
+      "Field": "maxReinforceLevel",
+      "Name": "最大強化武器レベル用レベル値",
+      "Description": "最大強化武器レベル用レベル値"
+    },
+    {
+      "Field": "darkAtkRate",
+      "Name": "闇攻撃力基本値",
+      "Description": "闇攻撃力の補正値"
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "ガード時闇攻撃カット率",
+      "Description": "ガード時闇攻撃カット率の補正値"
+    },
+    {
+      "Field": "correctLuckRate",
+      "Name": "運補正",
+      "Description": "運補正の補正値"
+    },
+    {
+      "Field": "freezeGuardDefRate",
+      "Name": "ガード時冷気攻撃カット率",
+      "Description": "ガード時冷気攻撃カット率の補正値"
+    },
+    {
+      "Field": "reinforcePriceRate",
+      "Name": "強化価格補正値",
+      "Description": "武器パラメータの強化価格に乗算する補正値"
+    },
+    {
+      "Field": "baseChangePriceRate",
+      "Name": "進化価格補正値",
+      "Description": "武器パラメータの進化価格に乗算する補正値"
+    },
+    {
+      "Field": "enableGemRank",
+      "Name": "装着可能魔石ランク",
+      "Description": "装着可能魔石ランク"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "sleepGuardDefRate",
+      "Name": "ガード時睡眠攻撃カット率",
+      "Description": "ガード時睡眠攻撃カット率の補正値"
+    },
+    {
+      "Field": "madnessGuardDefRate",
+      "Name": "ガード時発狂攻撃カット率",
+      "Description": "ガード時発狂攻撃カット率の補正値"
+    },
+    {
+      "Field": "baseAtkRate",
+      "Name": "加算攻撃力倍率",
+      "Description": "加算攻撃力倍率"
+    },
+    {
+      "Field": "correctSpellScalingRate",
+      "Name": "correctSpellScalingRate",
+      "Description": ""
+    }
+  ]
+}

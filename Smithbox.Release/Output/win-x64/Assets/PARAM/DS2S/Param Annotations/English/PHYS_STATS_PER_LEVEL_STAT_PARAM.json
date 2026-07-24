@@ -1,0 +1,223 @@
+{
+  "Param": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Type": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Name": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Description": "Defines character statistics, attack power, resistances, and gameplay modifiers granted at each level or stat value.",
+  "Fields": [
+    {
+      "Field": "levelStatusValue",
+      "Name": "Level Status Value",
+      "Description": "The level or stat value associated with this parameter entry."
+    },
+    {
+      "Field": "spellSlot",
+      "Name": "Spell Slots",
+      "Description": "Number of available spell attunement slots."
+    },
+    {
+      "Field": "spellUsesLevel",
+      "Name": "Spell Uses Level",
+      "Description": "Determines spell usage capacity or spell cast count scaling."
+    },
+    {
+      "Field": "hpMax",
+      "Name": "Maximum HP",
+      "Description": "Maximum health points granted at this level."
+    },
+    {
+      "Field": "staminaMax",
+      "Name": "Maximum Stamina",
+      "Description": "Maximum stamina value."
+    },
+    {
+      "Field": "equipLoadMax",
+      "Name": "Maximum Equip Load [kg]",
+      "Description": "Maximum equipment weight the character can carry."
+    },
+    {
+      "Field": "physicalAttackByStrength",
+      "Name": "Strength Physical Attack",
+      "Description": "Physical attack power scaling derived from Strength."
+    },
+    {
+      "Field": "physicalAttackByDexterity",
+      "Name": "Dexterity Physical Attack",
+      "Description": "Physical attack power scaling derived from Dexterity."
+    },
+    {
+      "Field": "magicAttack",
+      "Name": "Magic Attack",
+      "Description": "Magic attack power value."
+    },
+    {
+      "Field": "flameAttack",
+      "Name": "Fire Attack",
+      "Description": "Fire attack power value."
+    },
+    {
+      "Field": "lightningAttack",
+      "Name": "Lightning Attack",
+      "Description": "Lightning attack power value."
+    },
+    {
+      "Field": "darkAttack",
+      "Name": "Dark Attack",
+      "Description": "Dark attack power value."
+    },
+    {
+      "Field": "weaponBreakAdditionalEffect",
+      "Name": "Weapon Break Additional Effect Attack",
+      "Description": "Additional effect attack power related to weapon durability damage."
+    },
+    {
+      "Field": "bleedingAdditionalEffect",
+      "Name": "Bleed Additional Effect Attack",
+      "Description": "Additional effect attack power for bleed buildup."
+    },
+    {
+      "Field": "poisonAdditionalEffect",
+      "Name": "Poison Additional Effect Attack",
+      "Description": "Additional effect attack power for poison buildup."
+    },
+    {
+      "Field": "curseAdditionalEffect",
+      "Name": "Curse Additional Effect Attack",
+      "Description": "Additional effect attack power for curse buildup."
+    },
+    {
+      "Field": "chantingTimeCorrectScale",
+      "Name": "Casting Time Correction Scale",
+      "Description": "Multiplier affecting spell casting speed."
+    },
+    {
+      "Field": "criticalAttackCorrectScale",
+      "Name": "Critical Attack Correction Scale",
+      "Description": "Multiplier affecting critical attack damage."
+    },
+    {
+      "Field": "fluctuationCorrectScaleMin",
+      "Name": "Minimum Variation Correction Scale",
+      "Description": "Minimum multiplier for variation-based corrections."
+    },
+    {
+      "Field": "fluctuationCorrectScaleMax",
+      "Name": "Maximum Variation Correction Scale",
+      "Description": "Maximum multiplier for variation-based corrections."
+    },
+    {
+      "Field": "weaponBreakResistance",
+      "Name": "Weapon Break Resistance [%]",
+      "Description": "Resistance against weapon durability damage effects."
+    },
+    {
+      "Field": "bleedingResistance",
+      "Name": "Bleed Resistance [%]",
+      "Description": "Resistance against bleed buildup."
+    },
+    {
+      "Field": "poisonResistance",
+      "Name": "Poison Resistance [%]",
+      "Description": "Resistance against poison buildup."
+    },
+    {
+      "Field": "petrifactionResistance",
+      "Name": "Petrification Resistance [%]",
+      "Description": "Resistance against petrification effects."
+    },
+    {
+      "Field": "curseResistance",
+      "Name": "Curse Resistance [%]",
+      "Description": "Resistance against curse effects."
+    },
+    {
+      "Field": "magicResistance",
+      "Name": "Magic Resistance [%]",
+      "Description": "Resistance against magic damage."
+    },
+    {
+      "Field": "flameResistance",
+      "Name": "Fire Resistance [%]",
+      "Description": "Resistance against fire damage."
+    },
+    {
+      "Field": "lightningResistance",
+      "Name": "Lightning Resistance [%]",
+      "Description": "Resistance against lightning damage."
+    },
+    {
+      "Field": "darkResistance",
+      "Name": "Dark Resistance [%]",
+      "Description": "Resistance against dark damage."
+    },
+    {
+      "Field": "stepInvincibleTimeRate",
+      "Name": "Step Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during stepping."
+    },
+    {
+      "Field": "rollingInvincibleTimeRate",
+      "Name": "Rolling Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during rolling."
+    },
+    {
+      "Field": "jumpInvincibleTimeRate",
+      "Name": "Jump Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during jumping."
+    },
+    {
+      "Field": "changeEquipSpeedScale",
+      "Name": "Equipment Change Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of equipment switching."
+    },
+    {
+      "Field": "useItemSpeedScale",
+      "Name": "Item Use Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of item usage."
+    },
+    {
+      "Field": "blockSpeedScale",
+      "Name": "Guard Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of entering a guarding stance."
+    },
+    {
+      "Field": "defense",
+      "Name": "Defense",
+      "Description": "Overall defensive power value."
+    },
+    {
+      "Field": "itemDropTicketCount",
+      "Name": "Item Drop Ticket Count",
+      "Description": "Controls item drop probability using a ticket-based system."
+    },
+    {
+      "Field": "misfireChestTrapTicketCount",
+      "Name": "Chest Trap Misfire Ticket Count",
+      "Description": "Controls the probability of treasure chest traps failing to activate."
+    },
+    {
+      "Field": "criticalTicketCount",
+      "Name": "Critical Ticket Count",
+      "Description": "Controls critical hit probability using a ticket-based system."
+    },
+    {
+      "Field": "additionalHp",
+      "Name": "Additional Maximum HP",
+      "Description": "Additional bonus HP added on top of the base maximum HP."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByAbyss",
+      "Name": "Abyss Attack Power",
+      "Description": "Attack power related to abyss-type damage or effects."
+    },
+    {
+      "Field": "poise",
+      "Name": "Poise",
+      "Description": "Determines resistance to staggering and interruption."
+    }
+  ]
+}

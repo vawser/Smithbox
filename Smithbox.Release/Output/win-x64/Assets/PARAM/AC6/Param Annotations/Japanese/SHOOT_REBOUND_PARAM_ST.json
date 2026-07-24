@@ -1,0 +1,193 @@
+{
+  "Param": "SHOOT_REBOUND_PARAM_ST",
+  "Type": "SHOOT_REBOUND_PARAM_ST",
+  "Name": "SHOOT_REBOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "制御ボーン名",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName1",
+      "Name": "制御ボーン名",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName2",
+      "Name": "制御ボーン名",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName3",
+      "Name": "制御ボーン名",
+      "Description": ""
+    },
+    {
+      "Field": "reboundLength",
+      "Name": "反動距離(m)",
+      "Description": ""
+    },
+    {
+      "Field": "animFrame",
+      "Name": "アニメ尺(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "dummy01",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey1_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey1_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey1_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey2_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey2_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey2_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey3_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey3_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey3_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey4_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey4_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey4_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey5_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey5_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey5_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey6_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey6_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey6_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey7_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey7_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey7_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey8_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey8_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey8_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey9_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey9_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey9_dummy",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey10_boundFrame",
+      "Name": "反動キー(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey10_boundRate",
+      "Name": "反動割合(％)",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey10_dummy",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

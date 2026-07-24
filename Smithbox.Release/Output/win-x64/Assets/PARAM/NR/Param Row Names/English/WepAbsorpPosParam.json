@@ -1,0 +1,497 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Claws"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Colossal Sword"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Curved Sword (Alt)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Hammer"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Flail"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Great Hammer"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Great Spear"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Catalyst"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Greatbow"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Small Shield"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Medium Shield"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Scythe"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Light Bow"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Coded Sword"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Ornamental Straight Sword"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Cipher Pata"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Starscourge Greatsword"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Guardian's Greatshield"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Small Shield (Alt)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Skill - Wylder] Claw Shot"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Ultimate - Wylder] Onslaught Stake"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "[Ultimate - Ironeye] Single Shot"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "[Extra - Ironeye] Stowed Single Shot"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "[Skill - Ironeye] Marking"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "[Skill - Duchess] Restage"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "[Ultimate - Duchess] Finale"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "[Ultimate - Raider] Totem Stela"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "[Skill - Revenant] Summon Spirit"
+      ]
+    },
+    {
+      "ID": 551,
+      "Entries": [
+        "Revenant's Cursed Claws"
+      ]
+    },
+    {
+      "ID": 552,
+      "Entries": [
+        "[Ultimate - Revenant] Immortal March/Cursed Claw Helper"
+      ]
+    },
+    {
+      "ID": 553,
+      "Entries": [
+        "[Extra - Revenant] Cursed Claw Helper"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "[Skill - Recluse] Magic Cocktail"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "[Skill - Executor] Cursed Sword"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "[Skill - Scholar] Analyze"
+      ]
+    },
+    {
+      "ID": 581,
+      "Entries": [
+        "[Ultimate - Scholar] Communion"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "[Skill - Undertaker] Trance"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "[Ultimate - Undertaker] Loathsome Hex"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Spectral Hawk"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

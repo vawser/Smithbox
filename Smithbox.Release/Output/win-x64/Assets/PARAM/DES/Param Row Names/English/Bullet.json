@@ -1,0 +1,1007 @@
+{
+  "Name": "Bullet",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "magic test"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "funnel test"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "fireball test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "magic arrow"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "fire bolt"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Fireball [Bullet]"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "ignition"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "penetrating beam"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Meteor [Throw]"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Self-Centered Explosion [Throw]"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Poison Cloud [Throw]"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Poison Cloud [Attack_Poison]"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Corrosion Cloud [Throw]"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Corrosion Cloud [Impact_Corrosion]"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Death Cloud [Throw]"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Death Cloud [Arrival_Plague]"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Recovery of others"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "auditory hallucination [throw]"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "auditory hallucination"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "soul steel"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Self-centered explosion [landing]"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Revive [Throw]"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Resurrection [Impact]"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Black Ghost Retreat [Throw]"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Black Ghost Hit [Hit]"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Anti-Magic [Throw]"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Anti-Magic [Hit]"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Meteor [Arrival]"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Funnel [Floating]"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Funnel [Bullet]"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Fireball [Arrival]"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "throwing knife"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "poison throwing knife"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Molotov cocktail [throw]"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Molotov cocktail [landing]"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Soul Coin [Throw]"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Soul Coin [Arrival]"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Signpost Stone [Throw]"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Signpost Stone [Hit]"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "covert african throwing knives"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "high attack arrow"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "long range arrow"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "precision arrow"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "fire arrow"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "poison arrow"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "arrow"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "special arrows"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "cheap arrows"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Heavy arrow with high attack power"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Dangerous thick arrow"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "cheap heavy arrows"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Common Soldier Bowgun"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "assassin knife thrower"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "King's Shield Javelin"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Phalanx chibi spear injection"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Molotov cocktail ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Regular Soldier Bowgun ★Oujou 1 Only★"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Jailer Fireball"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Kami-Sama Fireball"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "snake soldier bow"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Kami-sama magic square activation attack"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Skeleton _ bow and arrow"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "scale miner_rock"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Giant spider fireball"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Large spider thread"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Octopus head_Self-centered explosion [Throw]"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Octopus head_self-centered explosion [landing]"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Fly-catcher Flying flies"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Octopus man sleep paralysis"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Flies fly (fast)"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Storm Beast Scale"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Chimera_Roar 1"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "fake kamisama laser"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Gargoyle_Bowgun shooting"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Old man in yellow _ miracle [throw]"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Old man in yellow_miracle [landing]"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Old Man in Yellow_Summon (Preliminary)"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "Old man in yellow _ chair flying (preliminary)"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "Old man in yellow _ Fireball"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "Wyvern Chief Breath"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "c7230_King Lendl_Shock wave vertical"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "c7230_King Lendl_Shock wave Horizontal"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "c7230_King Lendl_Shock wave 45°"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "c7230_King Lendl_Shock wave -45°"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "c7230_Lendl King_Wide Range Attack [Throw]"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "c7230_King Lendl_Wide range attack [landing]"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Wyvern Chief Reservation"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Wyvern Chief Reservation"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Wyvern Chief Reservation"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Wyvern leader Explosive ball on impact"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Chimera_Scream [Throw]"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Chimera_Scream [Attack]"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Fly flies from the shoulder [bullet]"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Flies fly from the shoulder [reservoir]"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Fly Trap_Fly Explosion [Throw]"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Fly Takakari_Fly Explosion [Landing]"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Leech Demon_Hirudama"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "Octopus man powerful magic"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "Octopus man_Self-centered explosion (for SFX)"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Child stingray wind shooting"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Baby stingray wind shooting landing"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Rock earthworm_lava injection"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Rock Earthworm_Lava Shower [Throw]"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Rock Earthworm_Lava Shower [Landing]"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Jailer_Fire Magic [Bullet]"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Prisoner_Fire Magic [Landing]"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "c2081_Prisoner_Fire magic"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "c2081_ jailer _ ignition"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Scale Miner_Rock 2"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Scale Miner_Rock 2 Impact"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Light slug Light slime"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "Giant Spider Fireball 2"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "Large spider thread 2"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Storm Beast Son Missile"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Large spider close-range flame direct hit"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "Large spider Close-range flame Landing"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "Large spider thread 2 spreads in the middle"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "centipede _ vomit"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "Small centipede _ vomit"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "Slug mucus"
+      ]
+    },
+    {
+      "ID": 377,
+      "Entries": [
+        "Large mosquito poisonous blood normal"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "Large mosquito poisonous blood full stomach"
+      ]
+    },
+    {
+      "ID": 379,
+      "Entries": [
+        "Chimera Soul Arrow"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "c4010_Wizard_Finger beam [Throw]"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "(unused)"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "Corruption (Magician) _ Poison Cloud [Throw]"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "Corruption (Magician) _ Poison Cloud [Arrival _ Poison]"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Floating] LV4"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Bullet] LV4"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Floating] LV3"
+      ]
+    },
+    {
+      "ID": 387,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Bullet] LV3"
+      ]
+    },
+    {
+      "ID": 388,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Floating] LV2"
+      ]
+    },
+    {
+      "ID": 389,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Bullet] LV2"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Floating] LV1"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Prison Castle 3 Boss Funnel [Bullet] LV1"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "Libra_Self-centered Explosion [Throw]"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "Libra_Self-centered explosion [landing]"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "Captive ball magic arrow"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "Big bear _ death explosion [throw]"
+      ]
+    },
+    {
+      "ID": 396,
+      "Entries": [
+        "Large tardigrade_death explosion [landing]"
+      ]
+    },
+    {
+      "ID": 397,
+      "Entries": [
+        "Medium tardigrade_Death Explosion [Throw]"
+      ]
+    },
+    {
+      "ID": 398,
+      "Entries": [
+        "Medium tardigrade_death explosion [landing]"
+      ]
+    },
+    {
+      "ID": 399,
+      "Entries": [
+        "Scale Miner_Rock 3"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Scale Miner_Rock 4"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Scale Miner_Rock 5"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Scale Miner_Rock 6"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Scale Miner_Rock 7"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Scale Miner_Rock 8"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Royal Castle 2 Barista Arrow"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Prison Castle 1 Puppet Gimmick Arrow"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Tunnel 1 Explosive Barrel [Throw]"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Tunnel 1 Explosive barrel [landing]"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Old Fort 1 Trap spear"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Tunnel 2 Will-O-Wisp [Throw]"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Tunnel 2 Will-o-Wisp [Landing]"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Old Fort 2 Will-O-Wisp [Throw]"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Old Fort 2 Will-O-Wisp [Landing]"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Small) [Throw]"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Small) [Hit]"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Large) [Throw]"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Large) [Hit]"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Tunnel 2 Only for Will-O-Wisp Troco [Landing]"
+      ]
+    }
+  ]
+}

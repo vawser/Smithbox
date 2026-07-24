@@ -1,0 +1,13 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Entity Group Id",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A secondary entity id which can be used to manage multiple entities at once, in EMEVD instructions which support it"
+    ]
+}

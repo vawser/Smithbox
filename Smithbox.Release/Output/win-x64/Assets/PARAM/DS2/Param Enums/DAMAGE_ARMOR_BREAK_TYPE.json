@@ -1,0 +1,38 @@
+{
+  "Key": "DAMAGE_ARMOR_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ARMOR_BREAK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Toughness disabled"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hyper armor disabled"
+        }
+      ]
+    }
+  ]
+}

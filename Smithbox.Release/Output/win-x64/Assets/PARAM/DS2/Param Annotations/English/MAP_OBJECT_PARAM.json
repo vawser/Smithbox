@@ -1,0 +1,78 @@
+{
+  "Param": "MAP_OBJECT_PARAM",
+  "Type": "MAP_OBJECT_PARAM",
+  "Name": "MAP_OBJECT_PARAM",
+  "Description": "Defines core behavioral, animation, material, movement, navigation, and interaction settings for general map objects.",
+  "Fields": [
+    {
+      "Field": "animSpeedBaseRate",
+      "Name": "Base Animation Speed",
+      "Description": "Default playback speed multiplier for object animations."
+    },
+    {
+      "Field": "animSpeedOverwrteRate",
+      "Name": "Animation Speed Override Rate",
+      "Description": "Multiplier that overrides or modifies the base animation speed."
+    },
+    {
+      "Field": "animSpeedSharplyRate",
+      "Name": "Rapid Action Animation Speed Multiplier",
+      "Description": "Speed multiplier applied during sudden or fast-opening actions."
+    },
+    {
+      "Field": "material",
+      "Name": "Material Type",
+      "Description": "Defines the physical and visual material properties of the object."
+    },
+    {
+      "Field": "moveDumyPolyId",
+      "Name": "Movement Correction Dummy Poly ID",
+      "Description": "Dummy polygon used to adjust or correct object positioning during movement."
+    },
+    {
+      "Field": "moveType",
+      "Name": "Movement Type",
+      "Description": "Defines how the object moves or behaves in motion."
+    },
+    {
+      "Field": "weaponStorage",
+      "Name": "Weapon Storage Setting",
+      "Description": "Defines whether or how weapons can be stored or attached to the object."
+    },
+    {
+      "Field": "rotationType",
+      "Name": "Rotation Type",
+      "Description": "Defines how the object rotates or pivots in the world."
+    },
+    {
+      "Field": "timeActId",
+      "Name": "Time Act ID",
+      "Description": "Identifier for time-based scripted behavior or animation sequences."
+    },
+    {
+      "Field": "breakLogicSoundVolume",
+      "Name": "Break Sound Volume",
+      "Description": "Volume level of sound effects triggered when the object breaks."
+    },
+    {
+      "Field": "naviCtrlType",
+      "Name": "Navigation Control Type",
+      "Description": "Defines how AI navigation interacts with or perceives this object."
+    },
+    {
+      "Field": "sharplyAnimEnable",
+      "Name": "Enable Rapid Action Animation",
+      "Description": "Allows the object to use accelerated animation during specific actions."
+    },
+    {
+      "Field": "enableDecal",
+      "Name": "Enable Decal Application",
+      "Description": "Determines whether decals (e.g. blood, scorch marks) can be applied to this object."
+    },
+    {
+      "Field": "unk1C",
+      "Name": "Unknown Field 1C",
+      "Description": "Unidentified or unused parameter; purpose not yet determined."
+    }
+  ]
+}

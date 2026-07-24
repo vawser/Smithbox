@@ -1,0 +1,191 @@
+{
+  "Name": "TutorialActJudgeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Ascend"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Quick Boost"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Boost Move"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Assault Boost: Start"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Vertical Launch"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Assault Boost: Cancel"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Repair Kit"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Target Switching"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Target Assist ON/OFF"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Rapid-Fire Both Hand Weapons"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Drift Turn"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Hover"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Use Right Hand Weapon: Shoot"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Use Right Hand Weapon: Charge"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Use Right Hand Weapon: Guard"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Use Right Hand Weapon: Reload"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Use Left Hand Weapon: Shoot"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Use Left Hand Weapon: Charge"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Use Left Hand Weapon: Melee"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Use Left Hand Weapon: Melee - Chain"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Use Left Hand Weapon: Melee - Charge"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Use Left Hand Weapon: Reload"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Use Right Hand Weapon: Interupt Charge"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Use Left Hand Weapon: Interupt Charge"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Use Right Shoulder Weapon: Normal Fire"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Use Right Shoulder Weapon: Guard Attack"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Use Right Shoulder Weapon: Multi-Lock Attack"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Use Left Shoulder Weapon: Normal Fire"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Use Left Shoulder Weapon: Shield"
+      ]
+    }
+  ]
+}

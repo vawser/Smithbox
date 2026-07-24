@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_SFX_DELETE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SFX_DELETE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Emitter Stopped"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deletion"
+        }
+      ]
+    }
+  ]
+}

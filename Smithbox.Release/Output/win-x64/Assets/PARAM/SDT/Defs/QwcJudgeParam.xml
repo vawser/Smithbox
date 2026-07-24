@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>QWC_JUDGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s16 pcJudgeUnderWB = -200">
+      <DisplayName>PC-黒条件（下限）</DisplayName>
+      <Description>PC白黒属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 pcJudgeTopWB = 200">
+      <DisplayName>PC-白条件（上限）</DisplayName>
+      <Description>PC白黒属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 pcJudgeUnderLR = -200">
+      <DisplayName>PC-左条件（下限）</DisplayName>
+      <Description>PC左右属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 pcJudgeTopLR = 200">
+      <DisplayName>PC-右条件（上限）</DisplayName>
+      <Description>PC左右属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s16 areaJudgeUnderWB = -200">
+      <DisplayName>エリア-黒条件（下限）</DisplayName>
+      <Description>エリア白黒属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s16 areaJudgeTopWB = 200">
+      <DisplayName>エリア-白条件（上限）</DisplayName>
+      <Description>エリア白黒属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s16 areaJudgeUnderLR = -200">
+      <DisplayName>エリア-左条件（下限）</DisplayName>
+      <Description>エリア左右属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s16 areaJudgeTopLR = 200">
+      <DisplayName>エリア-右条件（上限）</DisplayName>
+      <Description>エリア左右属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>800</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

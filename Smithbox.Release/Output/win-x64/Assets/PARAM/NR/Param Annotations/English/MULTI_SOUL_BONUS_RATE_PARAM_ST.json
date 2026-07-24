@@ -1,0 +1,93 @@
+{
+  "Param": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Type": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Name": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "Rune Reward Multiplier - Host",
+      "Description": "Host reward soul multiplier"
+    },
+    {
+      "Field": "WhiteGhost_None",
+      "Name": "Rune Reward Multiplier - White Phantom - None",
+      "Description": "Cooperation sign white spirit reward soul multiplier"
+    },
+    {
+      "Field": "WhiteGhost_Umbasa",
+      "Name": "Rune Reward Multiplier - White Phantom - Gold",
+      "Description": "Cooperative sign gold spirit reward soul multiplier"
+    },
+    {
+      "Field": "WhiteGhost_Berserker",
+      "Name": "Rune Reward Multiplier - White Phantom - Berserker",
+      "Description": "Cooperation sign white Berserker reward soul multiplier"
+    },
+    {
+      "Field": "BlackGhost_None_Sign",
+      "Name": "Rune Reward Multiplier - Black Phantom - None",
+      "Description": "Hostile sign red spirit reward soul multiplier"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Sign",
+      "Name": "Rune Reward Multiplier - Black Phantom - Gold",
+      "Description": "Hostile sign red gold spirit reward soul multiplier"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Sign",
+      "Name": "Rune Reward Multiplier - Black Phantom - Berserker",
+      "Description": "Hostile sign red berserker reward soul multiplier"
+    },
+    {
+      "Field": "BlackGhost_None_Invade",
+      "Name": "Rune Reward Multiplier - Black Phantom - None - Invade",
+      "Description": "Invasion reward Soul multiplier"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Invade",
+      "Name": "Rune Reward Multiplier - Black Phantom - Gold - Invade",
+      "Description": "Invasion Orb's Red Gold Spirit Reward Soul Multiplier"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Invade",
+      "Name": "Rune Reward Multiplier - Black Phantom - Berserker - Invade",
+      "Description": "Invasion Orb Red Berserker Reward Soul Multiplier"
+    },
+    {
+      "Field": "RedHunter1",
+      "Name": "Rune Reward Multiplier - Red Hunter [1]",
+      "Description": "Relief guest reward soul multiplier"
+    },
+    {
+      "Field": "RedHunter2",
+      "Name": "Rune Reward Multiplier - Red Hunter [2]",
+      "Description": "Red Scare Spirit 2 Reward Soul Multiplier"
+    },
+    {
+      "Field": "GuardianOfForest",
+      "Name": "Rune Reward Multiplier - Forest Guardian",
+      "Description": "Map Guardian Spirit (Forest) Reward Soul Magnification"
+    },
+    {
+      "Field": "GuardianOfAnor",
+      "Name": "Rune Reward Multiplier - Darkmoon Blade",
+      "Description": "Map Guardian Spirit (Anor) Reward Soul Multiplier"
+    },
+    {
+      "Field": "BattleRoyal",
+      "Name": "Rune Reward Multiplier - Arena",
+      "Description": "Arena reward soul multiplier"
+    },
+    {
+      "Field": "YellowMonk",
+      "Name": "Rune Reward Multiplier - Yellow Monk",
+      "Description": "Yellow robe's old man's reward soul multiplier"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "Name": "CultSettingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "for test -- テスト用"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Ritual test: optional -- 儀式テスト：任意"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Ritual test: Level up -- 儀式テスト：レベルアップ"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Ritual test: Reassign status -- 儀式テスト：ステータス振りなおし"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Ritual test: reset the deceased -- 儀式テスト：亡者度リセット"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Ritual test: Atonement -- 儀式テスト：贖罪"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Ritual test: Summon NPC White Spirit -- 儀式テスト：ＮＰＣ白霊召喚"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Ritual test: boss -- 儀式テスト：ボス"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Ritual test: No intrusion -- 儀式テスト：侵入禁止"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Ritual test: Random A -- 儀式テスト：ランダムＡ"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Dead soldier -- 亡者兵士"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "blue -- ブルー"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Poor dead -- 貧民亡者"
+      ]
+    },
+    {
+      "ID": 128000,
+      "Entries": [
+        "New Royal Castle Knight -- 新王城騎士"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Wax dead -- 蝋の死人"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Slave spirit -- 奴隷霊"
+      ]
+    },
+    {
+      "ID": 137000,
+      "Entries": [
+        "Crucifixion B -- 磔亡者B"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Snakeman assassin -- 蛇人の暗殺者"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Silver knight -- 銀騎士"
+      ]
+    },
+    {
+      "ID": 144000,
+      "Entries": [
+        "Pilgrimage dead -- 巡礼亡者"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "New Jailer -- 新獄吏"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Dark Race -- ダークレイス"
+      ]
+    }
+  ]
+}

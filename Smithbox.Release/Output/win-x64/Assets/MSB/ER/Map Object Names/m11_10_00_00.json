@@ -1,0 +1,129 @@
+{
+  "Name": "m11_10_00_00",
+  "Entries": [
+    {
+      "ID": "ObjAct 宝箱000",
+      "Name": "ObjEct Treasure Chest 000"
+    },
+    {
+      "ID": "ObjAct 宝箱001",
+      "Name": "ObjAct Treasure Chest 001"
+    },
+    {
+      "ID": "ObjAct 両開き扉 円卓奥の間入り口",
+      "Name": "ObjAct Double-door entrance to the room behind the round table"
+    },
+    {
+      "ID": "NPC疑似マルチ 暗黒円卓空間",
+      "Name": "NPC Pseudo-Multiplayer Dark Round Table Space"
+    },
+    {
+      "ID": "宝死体000",
+      "Name": "Treasure Corpse 000"
+    },
+    {
+      "ID": "宝死体070",
+      "Name": "Treasure Corpse 070"
+    },
+    {
+      "ID": "宝死体071",
+      "Name": "Treasure Corpse 071"
+    },
+    {
+      "ID": "血文字 糞食いヒント",
+      "Name": "Blood writing, feces-eating hints"
+    },
+    {
+      "ID": "サウンド遮蔽",
+      "Name": "sound shielding"
+    },
+    {
+      "ID": "サウンド遮蔽 {2}",
+      "Name": "Sound shielding {2}"
+    },
+    {
+      "ID": "領域 NPC 鍛冶屋1\u3000初期状態",
+      "Name": "Area NPC Blacksmith 1 - Initial State"
+    },
+    {
+      "ID": "領域 NPC疑似マルチ 暗黒円卓空間 トリガー",
+      "Name": "Domain NPC Pseudo-Multiplayer Dark Round Table Space Trigger"
+    },
+    {
+      "ID": "領域 NPC疑似マルチ 暗黒円卓空間 逆敵起動",
+      "Name": "Domain NPC Pseudo-Multiplayer Dark Round Table Space Counter-Enemy Activation"
+    },
+    {
+      "ID": "領域 NPC疑似マルチ 暗黒円卓空間 侵入ポイント",
+      "Name": "Area NPC Pseudo-Multiplayer Dark Round Table Space Invasion Point"
+    },
+    {
+      "ID": "領域 マリカ像周辺",
+      "Name": "Area around the Malika statue"
+    },
+    {
+      "ID": "領域 マリカ像周辺 {2}",
+      "Name": "Area around the Malika statue {2}"
+    },
+    {
+      "ID": "領域 マリカ像周辺 composite",
+      "Name": "Region: Composite image of Malika"
+    },
+    {
+      "ID": "領域 闇霊侵入 拠点1Fの敵 トリガー領域",
+      "Name": "Area Dark Spirit Invasion Enemy on Base 1F Trigger Area"
+    },
+    {
+      "ID": "領域 闇霊侵入 拠点1Fの敵 出現ポイント",
+      "Name": "Area: Dark Spirit Invasion - Enemy Spawn Points on Base 1F"
+    },
+    {
+      "ID": "領域 非戦闘エリア（排他）",
+      "Name": "Area: Non-combat zone (exclusive)"
+    },
+    {
+      "ID": "領域 非戦闘エリア（排他） COMPSITE00",
+      "Name": "Area: Non-combat zone (exclusive) COMPSITE00"
+    },
+    {
+      "ID": "領域 非戦闘エリア（排他） COMPSITE01",
+      "Name": "Area: Non-combat zone (exclusive) COMPSITE01"
+    },
+    {
+      "ID": "領域 非戦闘エリア（排他） COMPSITE02",
+      "Name": "Area: Non-combat zone (exclusive) COMPSITE02"
+    },
+    {
+      "ID": "領域 非戦闘エリア（排他） COMPSITE03",
+      "Name": "Area: Non-combat zone (exclusive) COMPSITE03"
+    },
+    {
+      "ID": "サウンド_拠点炎上",
+      "Name": "Sound_Base on fire"
+    },
+    {
+      "ID": "サウンド汎用場所タイプ_[26] 鍛冶屋ミュート",
+      "Name": "Sound general location type_[26] Blacksmith mute"
+    },
+    {
+      "ID": "サウンド汎用場所タイプ_[26] 鍛冶屋ミュート {2}",
+      "Name": "Sound General Location Type_[26] Blacksmith Mute {2}"
+    },
+    {
+      "ID": "サウンド汎用場所タイプ_[26] 鍛冶屋ミュート {3}",
+      "Name": "Sound General Location Type_[26] Blacksmith Mute {3}"
+    },
+    {
+      "ID": "領域 マリカ像周辺復帰point",
+      "Name": "Area: Marika statue area return point"
+    },
+    {
+      "ID": "領域 拠点1F脱出スペル 復帰ポイント",
+      "Name": "Area Base 1F Escape Spell Respawn Point"
+    },
+    {
+      "ID": "領域 周回保留時復帰ポイント",
+      "Name": "Area Loop Resting Point"
+    }
+  ]
+}

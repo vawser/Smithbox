@@ -1,0 +1,3907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TENTATIVE_PLAYER_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 PlayerFootEffect_bySFX = 1">
+      <DisplayName>プレイヤーのフットエフェクトのSFX識別子[3桁]</DisplayName>
+      <Description>フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 MoveNotchAngleDeg = 3">
+      <DisplayName>移動方向の段階角度[度]</DisplayName>
+      <Description>パッド入力方向をこの角度刻みでの入力方向に補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>225</SortID>
+    </Field>
+    <Field Def="f32 MovementGravity = 100">
+      <DisplayName>移動制御用重力加速度[m/s^2]</DisplayName>
+      <Description>移動制御で使われる重力加速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 HighSpeedBrakeStartSpeedKMH = 250">
+      <DisplayName>この速度以上で高速ブレーキ状態にする[kmh]</DisplayName>
+      <Description>この速度以上でキャラステートを高速ブレーキに遷移する条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s16 BoostRestartSpeedKMH = 200">
+      <DisplayName>この速度以上でブースト吹かし直し[km/h]</DisplayName>
+      <Description>加速方向に速度がこの速度以上になったらブースと吹かし直し速度の条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s16 BrakeStartSpeedKMH = 40">
+      <DisplayName>この速度以上でブレーキ状態にする[kmh]</DisplayName>
+      <Description>この速度以上でキャラステートをブレーキに遷移する条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s16 BrakeEndSpeedKMH = 40">
+      <DisplayName>この速度以下でブレーキ状態を解除する[kmh]</DisplayName>
+      <Description>この速度以下でキャラステートをブレーキから解除する条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s16 StiffThresholdAltM = 5">
+      <DisplayName>この高さ以下から落下した時は硬直しない[m]</DisplayName>
+      <Description>地面を離れてからの最高々度がこの高さ以下なら硬直を発動しない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="s16 TurnStartAngleDeg_90 = 45">
+      <DisplayName>向きとパッドの差がこの角度以上なら90度旋回[度]</DisplayName>
+      <Description>キャラの向きとパッドの向きがこの角度以上になったら90度旋回条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="s16 TurnStartAngleDeg_180 = 110">
+      <DisplayName>向きとパッドの差がこの角度以上なら180度旋回[度]</DisplayName>
+      <Description>キャラの向きとパッドの向きがこの角度以上になったら180度旋回条件を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s8 BoostDirSpeedRate_Side = 100">
+      <DisplayName>ブースト移動時速度率（横）[％]</DisplayName>
+      <Description>ブースト移動時で射撃しながら横移動した時の最高速度がこの割合になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s8 BoostDirSpeedRate_Back = 100">
+      <DisplayName>ブースト移動時速度率（後ろ）[％]</DisplayName>
+      <Description>ブースト移動時で射撃しながら後ろ移動した時の最高速度がこの割合になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s8 BoostDirAccelRate_Side = 100">
+      <DisplayName>ブースト移動時加速率（横）[％]</DisplayName>
+      <Description>ブースト移動時で射撃しながら横移動した時の加速度がこの割合になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="s8 BoostDirAccelRate_Back = 100">
+      <DisplayName>ブースト移動時加速率（後ろ）[％]</DisplayName>
+      <Description>ブースト移動時で射撃しながら後ろ移動した時の加速度がこの割合になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="u8 BoostDirDownAngleDeg = 45">
+      <DisplayName>ブースト左右後移動して速度が落ちていると判定する角度[度]</DisplayName>
+      <Description>前方からこの角度以上の角度でブースト左右移動で速度が落ちている</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s8 pad_03">
+      <DisplayName>パディング</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s16 LookTargetLeftTurnAngleDeg = -60">
+      <DisplayName>旋回開始時の正面方向旋回で左旋回するときの角度[度]</DisplayName>
+      <Description>旋回開始時の正面方向との角度差がこの角度以下なら左旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="s16 LookTargetRightTurnAngleDeg = 60">
+      <DisplayName>旋回開始時の正面方向旋回で右旋回するときの角度[度]</DisplayName>
+      <Description>旋回開始時の正面方向との角度差がこの角度以上なら右旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="s16 LookTargetLeftTurnAngleDegAtTurning = -30">
+      <DisplayName>旋回中の正面方向旋回で左旋回するときの角度[度]</DisplayName>
+      <Description>旋回中の正面方向との角度差がこの角度以下なら左旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="s16 LookTargetRightTurnAngleDegAtTurning = 30">
+      <DisplayName>旋回中の正面方向旋回で右旋回するときの角度[度]</DisplayName>
+      <Description>旋回中の正面方向との角度差がこの角度以上なら右旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 LookTargetLeftLargeTurnAngleDeg = -120">
+      <DisplayName>旋回開始時の正面方向旋回で左旋回するときの角度（大）[度]</DisplayName>
+      <Description>旋回開始時の正面方向との角度差がこの角度以下なら左旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="s16 LookTargetRightLargeTurnAngleDeg = 120">
+      <DisplayName>旋回開始時の正面方向旋回で右旋回するときの角度（大）[度]</DisplayName>
+      <Description>旋回開始時の正面方向との角度差がこの角度以上なら右旋回</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 lockRangeHorizontalScreenRatio = 0.45">
+      <DisplayName>【通常ロック】ロック範囲水平画面割合[rate]</DisplayName>
+      <Description>「FNR-8128」「FNR-12304」ロック範囲が画角より小さくしたい場合使用。使用中敵撃破後のロック範囲が無効化される。使用したくない場合は1と設定してください</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 lockRangeVerticalScreenRatio = 0.55">
+      <DisplayName>【通常ロック】ロック範囲垂直画面割合[rate] 	</DisplayName>
+      <Description>「FNR-8128」「FNR-12304」ロック範囲が画角より小さくしたい場合使用。使用中敵撃破後のロック範囲が無効化される。使用したくない場合は1と設定してください</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="u8 BoostSwitchBackCondAngleDeg">
+      <DisplayName>ブースト移動で切り返しと判定する角度[度]</DisplayName>
+      <Description>ブースト移動で切り返しブレーキが働く入力方向と移動方向との角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 FourLegFlyMoveSwitchBackCondAngleDeg">
+      <DisplayName>四脚ホバリングで切り返しと判定する角度[度]</DisplayName>
+      <Description>四脚ホバリングで切り返しブレーキが働く入力方向と移動方向との角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="dummy8 pad_04[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 PlayerGlideFootEffect_bySFX = 1">
+      <DisplayName>プレイヤーのフットエフェクト(滑走)のSFX識別子[3桁]</DisplayName>
+      <Description>滑走時のフットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 DelayTurn_MaxTurnAngDegPerSec = -1">
+      <DisplayName>【遅延旋回】最高旋回速度[deg/sec]</DisplayName>
+      <Description>遅延旋回時のモデルの最高旋回速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="s16 UnlockAfterCrossingAngleThreshold = 180">
+      <DisplayName>【通常ロック】すれ違い時ロック解除用角度閾値[deg]</DisplayName>
+      <Description>片方向の角度（つまり180度の場合はすれ違い時ロックが解除される機能がOFFになる）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1499</SortID>
+    </Field>
+    <Field Def="f32 lookTargetOffsetLerpSpeed = 0.01">
+      <DisplayName>【通常ロック】Lookターゲットオフセットの補間速度[rad/sec]</DisplayName>
+      <Description>Lookターゲットオフセットの補間速度（セミオートロック用）</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1495</SortID>
+    </Field>
+    <Field Def="f32 freeCameraMaxOffsetTimeForSemiAutoLock = 1">
+      <DisplayName>【通常ロック】セミオートロック中フリーカメラ状態、最大オフセットまでの時間[sec]</DisplayName>
+      <Description>右スティック連続入力時間がこの値を越えたらオフセットが中央に戻り始める</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1495</SortID>
+    </Field>
+    <Field Def="f32 AutoPullCamIfPlayerOutOfScreenLerpRateVertical = 0.3">
+      <DisplayName>【カメラ】自機が画面外に出る際カメラ自動引きの戻り補間率垂直(0.0～1.0)</DisplayName>
+      <Description>カメラが引いてから戻る際にの補間率（自動処理で引いた分だけに適用）</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>887</SortID>
+    </Field>
+    <Field Def="f32 DisableLockPrevAutoSightingTargetTime">
+      <DisplayName>【通常ロック】前のオートサイティングターゲットにロックオンできない時間[sec]</DisplayName>
+      <Description>セミオートロック中右スティックを押し倒してから、この時間の間に、さっきのオートサイティングにロックオンできなくなる</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1498</SortID>
+    </Field>
+    <Field Def="f32 boosterLocomotionReturnLerpTime = 1">
+      <DisplayName>ブースターロコモーション回復補間時間[秒]</DisplayName>
+      <Description>TAEからスラスターSFXの再生が指定された際にブースターが回転するが、TAE終了後デフォルト方向に戻るには必要な補間時間[秒]</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>155</SortID>
+    </Field>
+    <Field Def="f32 FocusPointMaxDistance = 300">
+      <DisplayName>【カメラ】フリーカメラ時の注視点の最大距離[m]</DisplayName>
+      <Description>注視点とはカメラからレーザーを出し衝突したら衝突点、しなかったら最大距離の点。カメラが引く際に注視点を中心に回転することがある。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="f32 AutoPullCamIfPlayerOutOfScreenMaxDistance = 50">
+      <DisplayName>【カメラ】自機が画面外に出る際カメラ自動引きの最大距離[m]</DisplayName>
+      <Description>壁に衝突する場合は、壁衝突の結果に従う</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>885</SortID>
+    </Field>
+    <Field Def="f32 AutoPullCamIfPlayerOutOfScreenMarginHorizontal = 0.2">
+      <DisplayName>【カメラ】自機が画面外に出る際カメラ自動引きのマージン(0.0～1.0)(水平)</DisplayName>
+      <Description>0.0：自機がギリギリ画面の辺界に止まるようにカメラが引く；1.0：自機が画面中央に止まるようにカメラが引く</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>886</SortID>
+    </Field>
+    <Field Def="f32 AutoPullCamIfPlayerOutOfScreenLerpRateHorizontal = 0.3">
+      <DisplayName>【カメラ】自機が画面外に出る際カメラ自動引きの戻り補間率水平(0.0～1.0)</DisplayName>
+      <Description>カメラが引いてから戻る際にの補間率（自動処理で引いた分だけに適用）</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>887</SortID>
+    </Field>
+    <Field Def="f32 PadSuperDashReleaseTimeSec = 1.2">
+      <DisplayName>猛ダッシュボタンを離してから実際に離した扱いにするまでの時間[s]</DisplayName>
+      <Description>猛ダッシュボタンを離してからこの時間が経過するまで押している扱い</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>370</SortID>
+    </Field>
+    <Field Def="f32 PadHoldTimeSec = 0.2">
+      <DisplayName>パッド長押し判定時間[s]</DisplayName>
+      <Description>パッドの長押し判定でこの時間が経過したら長押し扱い</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>380</SortID>
+    </Field>
+    <Field Def="f32 ShieldChargePadHoldTimeSec = 0.4">
+      <DisplayName>シールドチャージでQBをこの時間押したらシールドチャージ[秒]</DisplayName>
+      <Description>QBを長押しでこの時間押したらシールドチャージボタンも押したことにする</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>390</SortID>
+    </Field>
+    <Field Def="f32 PadPushL3_ToBoostTimeSec = 1">
+      <DisplayName>L3押してからブーストダッシュになるまでの時間[s]</DisplayName>
+      <Description>L3押してからこの時間押し続けるとブーストダッシュになる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>375</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeFixedValueAtNormalGuard = 30">
+      <DisplayName>【無効化中】スタミナ減少固定減衰値_通常ガード</DisplayName>
+      <Description>【無効化中】通常ガード時のスタミナ減少値の固定減少量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeRateAtNormalGuard = 0.5">
+      <DisplayName>【無効化中】スタミナ減少減衰係数_通常ガード</DisplayName>
+      <Description>【無効化中】通常ガード時にスタミナ減少値にかかる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeFixedValueAtActiveGuard = 200">
+      <DisplayName>【無効化中】スタミナ減少固定減衰値_強ガード</DisplayName>
+      <Description>【無効化中】強ガード時のスタミナ減少値の固定減少量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeRateAtActiveGuard = 0.3">
+      <DisplayName>【無効化中】スタミナ減少減衰係数_強ガード</DisplayName>
+      <Description>【無効化中】強ガード時にスタミナ減少値にかかる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeFixedValueAtShieldBarrier = 200">
+      <DisplayName>スタミナ減少固定減衰値_SHIELD_BARREIR</DisplayName>
+      <Description>盾バリアに被弾時のスタミナ減少値の固定減少量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>435</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeRateAtShieldBarrier = 0.3">
+      <DisplayName>スタミナ減少減衰係数_SHIELD_BARRIER</DisplayName>
+      <Description>盾バリアに被弾時にスタミナ減少値にかかる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>436</SortID>
+    </Field>
+    <Field Def="s16 DashStaminaMaxValue = 250">
+      <DisplayName>ダッシュスタミナの最大値</DisplayName>
+      <Description>ダッシュスタミナの最大値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>450</SortID>
+    </Field>
+    <Field Def="s16 DashStaminaHealValuePerSec = 9999">
+      <DisplayName>1秒間に回復するダッシュスタミナ</DisplayName>
+      <Description>1秒間に回復するダッシュスタミナの値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>460</SortID>
+    </Field>
+    <Field Def="s16 DashStaminaDrainValuePerSec = 100">
+      <DisplayName>1秒間に消費するダッシュスタミナ</DisplayName>
+      <Description>1秒間に消費するダッシュスタミナの値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>470</SortID>
+    </Field>
+    <Field Def="s16 ChrActCondFallSpeedKMH = 50">
+      <DisplayName>この速度[km/h]以上の下方向速度でChrActの落下条件を満たす</DisplayName>
+      <Description>この速度以上の下方向速度でChrActの「落下しているとみなす速度」を満たす</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="f32 DashStaminaCoolTimeSec = 1">
+      <DisplayName>ダッシュしてから次にダッシュできるまでの時間[sec]</DisplayName>
+      <Description>ダッシュしてからスタミナ回復を始める時間も兼ねている</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>490</SortID>
+    </Field>
+    <Field Def="s32 flyLimitAlt = -1">
+      <DisplayName>飛行限界高度[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 AimModeTrgettingAreaSearchRayDist">
+      <DisplayName>エイムモード時索敵視界ターゲット検索レイキャスト距離</DisplayName>
+      <Description>エイムモード時索敵視界ターゲット検索レイキャスト距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s16 reserve_06">
+      <DisplayName>予約領域</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 jumpAltSpMiddelPadRate">
+      <DisplayName>【高度指定ジャンプ】ジャンプ時に中間角度とみなすパッドの傾き具合  </DisplayName>
+      <Description>高度指定ジャンプ開始時に中間角度とみなすパッドの入力具合</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>165</SortID>
+    </Field>
+    <Field Def="f32 jumpAltSpMaxPadRate">
+      <DisplayName>【高度指定ジャンプ】ジャンプ時に最大角度とみなすパッドの傾き具合  </DisplayName>
+      <Description>高度指定ジャンプ開始時に最大角度とみなすパッドの入力具合</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>165</SortID>
+    </Field>
+    <Field Def="u8 WallJump_WallMovePadAngDeg">
+      <DisplayName>【三角飛び】壁方向に移動しようとしているとみなすパッド方向角度差[deg]</DisplayName>
+      <Description>三角飛びで壁方向に移動しようとしているとみなすパッド方向角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>7315</SortID>
+    </Field>
+    <Field Def="u8 WallJump_MiddlePadAngDeg">
+      <DisplayName>【三角飛び】方向決定時に中間角度とみなすパッド方向角度差[deg]</DisplayName>
+      <Description>三角飛びで方向決定時に中間角度とみなすパッド方向角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>7315</SortID>
+    </Field>
+    <Field Def="u8 WallJump_MaxPadAngDeg">
+      <DisplayName>【三角飛び】方向決定時に最大角度とみなすパッド方向角度差[deg]</DisplayName>
+      <Description>三角飛びで方向決定時に最大角度とみなすパッド方向角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>7315</SortID>
+    </Field>
+    <Field Def="dummy8 pad_05[5]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>100000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_06[2]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>100001</SortID>
+    </Field>
+    <Field Def="u16 FallThrowActiveFallSpeedKMH = 50">
+      <DisplayName>落下投げが有効になる落下速度[km/h]</DisplayName>
+      <Description>この速度以上の速度で落下していたら落下投げ発動可能</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>570</SortID>
+    </Field>
+    <Field Def="u16 FallBrakeStartSpeedKMH = 750">
+      <DisplayName>自由落下ブレーキ開始速度[km/h]</DisplayName>
+      <Description>自由落下時にブレーキが掛かり始める速度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u16 FallMaxSpeedKMH = 1500">
+      <DisplayName>自由落下最高速度[km/h]</DisplayName>
+      <Description>自由落下時の最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u16 PropellerFallBrakeStartSpeedKMH = 750">
+      <DisplayName>プロペラ時自由落下ブレーキ開始速度[km/h]</DisplayName>
+      <Description>プロペラ時の自由落下時にブレーキが掛かり始める速度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u16 PropellerFallMaxSpeedKMH = 1500">
+      <DisplayName>プロペラ時自由落下最高速度[km/h]</DisplayName>
+      <Description>プロペラ時の自由落下時の最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 stabilityBaseVal">
+      <DisplayName>安定性能ベース値</DisplayName>
+      <Description>自機の安定性能ベース値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 RunDelayReleaseTimeSec = 0.1">
+      <DisplayName>走行（遅延開放）の入力で開放判定される時間[s]</DisplayName>
+      <Description>ChrBehaviorでパッド入力の「走行（遅延開放）」を選択した時は走行が解除されてからこの時間経過後に解除扱いになる</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>590</SortID>
+    </Field>
+    <Field Def="f32 WalkToRunPadRate = 0.5">
+      <DisplayName>歩行→走行に切り替えるパッドの傾き具合</DisplayName>
+      <Description>パッドの傾き具合がこの値以上になると走行ステートに移る条件を満たす（1で最も傾いている）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s32 ShootActLockCamParamId">
+      <DisplayName>射撃アクション時のロックカメラパラメータID</DisplayName>
+      <Description>射撃アクション時のロックカメラパラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>610</SortID>
+    </Field>
+    <Field Def="s32 ShootActRumbleId = 50">
+      <DisplayName>射撃アクション時の振動ID</DisplayName>
+      <Description>射撃アクション時の振動ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>620</SortID>
+    </Field>
+    <Field Def="f32 TurnBrakeMPSS = 110">
+      <DisplayName>旋回ブレーキ[m/s^2]</DisplayName>
+      <Description>自機の向きと加速方向（パッドの入力方向）がずれたときにかかるブレーキの最大値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>630</SortID>
+    </Field>
+    <Field Def="u8 TurnBrakeMinAngleDeg = 10">
+      <DisplayName>旋回ブレーキが効き始めるキャラと加速方向との最小角度差[度]</DisplayName>
+      <Description>キャラの向きと加速方向がこの角度以上ずれたら旋回ブレーキが効き始める</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>640</SortID>
+    </Field>
+    <Field Def="u8 TurnBrakeMaxAngleDeg = 80">
+      <DisplayName>旋回ブレーキが効くキャラと加速方向との最大角度差[度]</DisplayName>
+      <Description>キャラの向きと加速方向がこの角度以上ずれたら最大旋回ブレーキ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>650</SortID>
+    </Field>
+    <Field Def="u16 TurnBrakeMinSpeedKMH = 100">
+      <DisplayName>旋回ブレーキが効くようになる最低速度[km/h]</DisplayName>
+      <Description>この速度未満のときは旋回ブレーキが発動しない</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>660</SortID>
+    </Field>
+    <Field Def="f32 TurnBrakeMinBrakeRate = 0.1">
+      <DisplayName>旋回ブレーキの最小ブレーキ率</DisplayName>
+      <Description>最小角度差を超えたらこの率からブレーキ率がかかり始める</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>670</SortID>
+    </Field>
+    <Field Def="f32 KeepLockWhenTgtInvisibleTime = 0.5">
+      <DisplayName>ターゲットが見えなくになってからロックの維持時間[sec]</DisplayName>
+      <Description>ロックターゲットが壁に遮られる場合ロックオンの維持時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1498</SortID>
+    </Field>
+    <Field Def="s32 QuickBoostActLockCamParamId = 11100">
+      <DisplayName>QBアクション時のロックカメラパラメータID</DisplayName>
+      <Description>QBアクション時のロックカメラパラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>690</SortID>
+    </Field>
+    <Field Def="f32 CameraHorizontalRotMarginDeg = 12">
+      <DisplayName>【カメラ】カメラが水平移動を始める角度[deg]</DisplayName>
+      <Description>画面内を左右に移動する際にカメラが水平移動するまでの中心からの角度</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 chrTransChaseRateForNormal = 0.2">
+      <DisplayName>【カメラ】通常用キャラ並進追尾率(0.0～1.0)</DisplayName>
+      <Description>カメラの注視点がキャラを追いかける割合。小さいほど遅く追尾</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="f32 lockCamParamLerpRate = 0.15">
+      <DisplayName>【カメラ】ロックカメラパラム補間率(0.0～1.0)</DisplayName>
+      <Description>カメラのパラメータIDが切り替わった際の補間割合。小さいほどゆっくり</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>720</SortID>
+    </Field>
+    <Field Def="s16 ZTiltStartXSpeedKMH = 100">
+      <DisplayName>【カメラ】Ｚ回転を開始する横速度[km/h]</DisplayName>
+      <Description>自機のカメラに対するX方向の速度がこれ以上ならば、カメラが斜めに傾きはじめる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>730</SortID>
+    </Field>
+    <Field Def="s16 ZTiltMaxXSpeedKMH = 300">
+      <DisplayName>【カメラ】Ｚ回転が最大になる横速度[km/h]</DisplayName>
+      <Description>自機のカメラに対するX方向の速度がこれ以上ならば、カメラが最大まで斜めに傾く</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>740</SortID>
+    </Field>
+    <Field Def="s16 MaxZTiltAngleDeg = 8">
+      <DisplayName>【カメラ】Ｚ回転の最大角度[deg]</DisplayName>
+      <Description>カメラが最大まで斜めに傾いた時の角度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="s16 ZTiltInterpolateFrame = 40">
+      <DisplayName>【カメラ】Z回転中の補間フレーム</DisplayName>
+      <Description>カメラを傾ける際の補間フレーム。このフレーム経過すると目標角度に到達する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>760</SortID>
+    </Field>
+    <Field Def="s16 ZTiltEndInterpolateFrame = 20">
+      <DisplayName>【カメラ】Z回転終了時の補間フレーム</DisplayName>
+      <Description>カメラの傾きを戻す間の補間フレーム。このフレーム経過すると目標角度に到達する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>770</SortID>
+    </Field>
+    <Field Def="s16 Camera_rotSpeedRate_onQuickTurn = 250">
+      <DisplayName>【カメラ】クイックターン中XY軸回転速度倍率[％]</DisplayName>
+      <Description>クイックターン中にカメラを加速する倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>780</SortID>
+    </Field>
+    <Field Def="f32 Camera_rotSpeed_Min = 100">
+      <DisplayName>【カメラ】XY軸回転速度最小値[deg/sec]</DisplayName>
+      <Description>カメラを横方向にゆっくり回す時の速度の最低値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>790</SortID>
+    </Field>
+    <Field Def="f32 Camera_rotSpeed_Max = 100">
+      <DisplayName>【カメラ】XY軸回転速度最大値[deg/sec]</DisplayName>
+      <Description>カメラを横方向にゆっくり回す時の速度の最大値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 Camera_rotHiSpeed_Min = 180">
+      <DisplayName>【カメラ】XY軸高速回転速度最小値[deg/sec]</DisplayName>
+      <Description>カメラを横方向に大きく回す時の速度の最小値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>810</SortID>
+    </Field>
+    <Field Def="f32 Camera_rotHiSpeed_Max = 180">
+      <DisplayName>【カメラ】XY軸高速回転速度最大値[deg/sec]</DisplayName>
+      <Description>カメラを横方向に大きく回す時の速度の最大値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>820</SortID>
+    </Field>
+    <Field Def="f32 PassiveGuardSpecRate = 0.8">
+      <DisplayName>【ガード】受動ガード時のガード性能率</DisplayName>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>830</SortID>
+    </Field>
+    <Field Def="s8 Camera_BladeHoming_UpAngleDeg = 30">
+      <DisplayName>【カメラ】ブレホで上方向扱いになるカメラ角度[deg]</DisplayName>
+      <Description>カメラが上方向にこの角度以上向いたら上方向</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>840</SortID>
+    </Field>
+    <Field Def="s8 Camera_BladeHoming_DownAngleDeg = 30">
+      <DisplayName>【カメラ】ブレホで下方向扱いになるカメラ角度[deg]</DisplayName>
+      <Description>カメラが下方向にこの角度以下向いたら下方向</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>850</SortID>
+    </Field>
+    <Field Def="s8 isOverShoulderViewOnlyLeftSide = 1">
+      <DisplayName>【カメラ】肩越し視点時に必ず左に寄せるか？</DisplayName>
+      <Description>肩越し視点時に必ず左に寄せるか？(1:必ず左 0:左右のどちらか近い方)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>860</SortID>
+    </Field>
+    <Field Def="s8 pad_01">
+      <DisplayName>パディング</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 jumpMaxSpeedInputTimeSec">
+      <DisplayName>ジャンプ最高速度になるまでのパッド入力時間[sec]</DisplayName>
+      <Description>ジャンプ入力をこの時間継続すると最高ジャンプ力</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="f32 LookAtSpinePerf = 10">
+      <DisplayName>【LookAt】腰の旋回性能（％/Sec)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>890</SortID>
+    </Field>
+    <Field Def="u16 TankGroundMoveAddAnim_MinAccelMPSS">
+      <DisplayName>【タンク移動加算アニメ】再生する最低加速度[m/s^2]</DisplayName>
+      <Description>タンク移動加算アニメ制御でこの加速度以上かつ↓を満たしたときにならアニメを再生する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u16 TankGroundMoveAddAnim_ChangeAccelMPSS">
+      <DisplayName>【タンク移動加算アニメ】加速度がこの値以上に変化したら再生[m/s^2]</DisplayName>
+      <Description>タンク移動加算アニメ制御で加速度がこの値以上変化した、かつ↑を満たしたときにならアニメを再生する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="f32 LastPositionInNaviVolume_UpdateDistance = 100">
+      <DisplayName>【AI】ナビボリュームにいた座標の更新距離[m]</DisplayName>
+      <Description>前回ナビボリュームにいた位置からこの距離以上に離れたらナビボリュームにいた位置を更新</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9500</SortID>
+    </Field>
+    <Field Def="f32 LookAtArmPerf = 1">
+      <DisplayName>【LookAt】腕の旋回性能（％/Sec)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>920</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftClavicleRate = 1">
+      <DisplayName>【LookAt】左肩の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>930</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftClavicleMin = -60">
+      <DisplayName>【LookAt】左肩の下の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>940</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftClavicleMax = 80">
+      <DisplayName>【LookAt】左肩の上の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>950</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftUpperArmRate = 1">
+      <DisplayName>【LookAt】左肩の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>960</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftUpperArmMin = -80">
+      <DisplayName>【LookAt】左肩の左側の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>970</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftUpperArmMax = 10">
+      <DisplayName>【LookAt】左肩の右側の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>980</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftHandRate = 1">
+      <DisplayName>【LookAt】左手の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftHandMin = -30">
+      <DisplayName>【LookAt】左手の下限限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 LookAtLeftHandMax = 30">
+      <DisplayName>【LookAt】左手の上限限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightClavicleRate = 1">
+      <DisplayName>【LookAt】右肩の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightClavicleMin = -60">
+      <DisplayName>【LookAt】右肩の下の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1030</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightClavicleMax = 80">
+      <DisplayName>【LookAt】右肩の上の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1040</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightUpperArmRate = 1">
+      <DisplayName>【LookAt】右肩の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightUpperArmMin = -10">
+      <DisplayName>【LookAt】右肩の左側の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1060</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightUpperArmMax = 80">
+      <DisplayName>【LookAt】右肩の右側の限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1070</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightHandRate = 1">
+      <DisplayName>【LookAt】右手の補正率(0.0～1.0)</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1080</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightHandMin = -30">
+      <DisplayName>【LookAt】右手の下限限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1090</SortID>
+    </Field>
+    <Field Def="f32 LookAtRightHandMax = 30">
+      <DisplayName>【LookAt】右手の上限限界角度(-180～180)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 PropellerPartsAnimRate = 0.5">
+      <DisplayName>プロペラパーツ時の制御の補間率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="f32 knockBackMultiFrameHitIntervalTimeSec = 0.5">
+      <DisplayName>ノックバックの多段ヒット時に次のノックバックが発生するまでの時間[秒]</DisplayName>
+      <Description>ノックバック発生後、同じダメージがヒットし続けたときにこの時間後にノックバックが再び発生</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="f32 knockBackRateAtAutoGuard = 1">
+      <DisplayName>通常ガード時のノックバックする距離の倍率</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="f32 knockBackRateAtActiveGuard = 0.8">
+      <DisplayName>強ガード時のノックバックする距離の倍率</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="f32 knockBackRateInAir = 1">
+      <DisplayName>空中で被弾した際のノックバックする距離の倍率</DisplayName>
+      <Description>空中で被弾した場合にノックバック距離にかかる倍率。ガード中の場合、それぞれの倍率にさらにかかる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="f32 bladeHoming_ModelRotAngSpeedDegPerSec = -1">
+      <DisplayName>ブレホ時モデル上下回転角速度初期値[deg/s]</DisplayName>
+      <Description>ブレホ時のモデル上下回転角度速度デフォルト値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2035</SortID>
+    </Field>
+    <Field Def="f32 unricochetAngle = 5">
+      <DisplayName>跳弾しない入射角度[deg]</DisplayName>
+      <Description>設定した数値以上の入射角度を持つ弾のみ跳弾するようになります。[0～180度]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1170</SortID>
+    </Field>
+    <Field Def="u32 ricochetProbability = 60">
+      <DisplayName>跳弾する確率(％)</DisplayName>
+      <Description>跳弾する確立(％)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>1180</SortID>
+    </Field>
+    <Field Def="f32 upperAngleAtRicochet = 10">
+      <DisplayName>跳弾後に飛ぶ上方向のとりえる角度（乱数）[deg]</DisplayName>
+      <Description>跳弾後の弾の上方向角度[0～90度]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1190</SortID>
+    </Field>
+    <Field Def="f32 lowerAngleAtRicochet = 15">
+      <DisplayName>跳弾後に飛ぶ下方向のとりえる角度（乱数）[deg]</DisplayName>
+      <Description>跳弾後の弾の下方向角度[0～90度]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 originalVecRateAtRicochet = 0.5">
+      <DisplayName>跳弾直後の弾の方向が、盾の真横方向からどれほど元の方向と同じか</DisplayName>
+      <Description>どれほど跳弾前の方向に弾が似ているか「0.0～1.0」0.0で盾の真横方向、1.0で跳弾前と同じ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1210</SortID>
+    </Field>
+    <Field Def="f32 originalVecRateAtLast = 0.5">
+      <DisplayName>跳弾後の最終的な弾の方向が、盾の真横方向からどれほど元の方向と同じか</DisplayName>
+      <Description>どれほど跳弾前の方向に弾が似ているか「0.0～1.0」0.0で盾の真横方向、1.0で跳弾前と同じ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1220</SortID>
+    </Field>
+    <Field Def="f32 changeVelocityTimeFromRicochetting = 0.05">
+      <DisplayName>跳弾直後の方向から最終的な弾の方向に遷移する時間(秒)</DisplayName>
+      <Description>何秒かけて跳弾後の最終的な弾の方向に向かうか</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1230</SortID>
+    </Field>
+    <Field Def="s32 noEquipDummyWepId = -1">
+      <DisplayName>武器なし用ダミー武器ID 	</DisplayName>
+      <Description>武器がないときのダミー装備武器ID（手武器以外）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3570</SortID>
+    </Field>
+    <Field Def="f32 AimActLockRangeScale = 1.5">
+      <DisplayName>エイム時ロック距離補正値</DisplayName>
+      <Description>エイム時にロック距離(2次ロックも含めて)を伸ばす倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 bladehoming_InertiaCondAngleDeg">
+      <DisplayName>慣性ブレホ発生角度[deg]</DisplayName>
+      <Description>ChrBehavior「ターゲット方向と水平移動方向のなす角度が慣性ブレホ発生角度以下」の判定角度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2040</SortID>
+    </Field>
+    <Field Def="f32 RideAccelRate = 2">
+      <DisplayName>乗車時の加速率</DisplayName>
+      <Description>通常の速度 * 値 = 車の速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1250</SortID>
+    </Field>
+    <Field Def="f32 RideSlopeThreshold = 25">
+      <DisplayName>乗車時に滑り出すスロープ角度</DisplayName>
+      <Description>滑るようになる坂の角度[0～90度]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>1</Increment>
+      <SortID>1260</SortID>
+    </Field>
+    <Field Def="u8 QuickTurnRotAngleDeg = 180">
+      <DisplayName>クイックターン：旋回角度[deg]</DisplayName>
+      <Description>クイックターンで何度回転するか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1270</SortID>
+    </Field>
+    <Field Def="s8 IsNoShootPredictionRateSubWhenFreeCamera">
+      <DisplayName>【予測率】カメラ非固定中は予測率を減算しない</DisplayName>
+      <Description>0: 減算する、1: 減算しない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1491</SortID>
+    </Field>
+    <Field Def="u8 IsRicochetNoResetResidualImpactSubTimer">
+      <DisplayName>【自機】跳弾では残留衝撃値の減少加速タイマーをリセットしない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>跳弾になったときに残留衝撃値の減少加速タイマーをリセットしないか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8201</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_14[1]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 QuickTurnRotTimeSec = 0.2">
+      <DisplayName>クイックターン：旋回時間[sec]</DisplayName>
+      <Description>クイックターン実行時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 QuickTurnInputRate = 0.2">
+      <DisplayName>クイックターン：入力しきい値</DisplayName>
+      <Description>クイックターン発動入力のスティック入力量</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1310</SortID>
+    </Field>
+    <Field Def="f32 RevLegsQb_MoveRotVertAngDeg">
+      <DisplayName>逆関節専用_空中QB追加垂直角度[deg]</DisplayName>
+      <Description>逆脚空中QBの移動角度</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1320</SortID>
+    </Field>
+    <Field Def="s32 noHandEquipDummyWepId = -1">
+      <DisplayName>素手用ダミー武器ID 	</DisplayName>
+      <Description>手武器がないときのダミー装備武器ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3570</SortID>
+    </Field>
+    <Field Def="f32 overShoulderRadLerpRateInQuickCameraTurn = 0.1">
+      <DisplayName>【カメラ】クイックカメラターン時カメラ肩越し角度の補間率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="f32 guardSuccessfulBrakingTimeSec">
+      <DisplayName>ガード成功時に減速する時間[sec]</DisplayName>
+      <Description>ガード成功時に減速する時間[sec]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1330</SortID>
+    </Field>
+    <Field Def="f32 guardSuccessfulBrakeRate = 0.3">
+      <DisplayName>ガード成功時に速度にかかる係数</DisplayName>
+      <Description>ガード成功時に速度にかかる係数。 0で速度ゼロ、1で速度変化無し</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1340</SortID>
+    </Field>
+    <Field Def="f32 chrHeightMinForCameraWallCheck = 3.5">
+      <DisplayName>【カメラ】壁衝突チェック用自機頭部の高さ下限[m]</DisplayName>
+      <Description>壁衝突チェックは自機頭部の高さを使っているが、自機死亡アニメ時低すぎると地面にぶつかるため、この値で調整</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>20</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="u16 FlyBoostMove180Turn_StopSpeedKMH = 150">
+      <DisplayName>空中180度ターンで停止扱いにする速度[km/h]</DisplayName>
+      <Description>空中180度ターンでこの速度以下になったらブレーキやめて停止扱いに</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1360</SortID>
+    </Field>
+    <Field Def="s16 padding_03">
+      <DisplayName>パディング</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 LockTargetMarking_TimeOutSec = 10">
+      <DisplayName>【ターゲットマーキング】範囲外に出たときに忘れるまでの時間[秒]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1453</SortID>
+    </Field>
+    <Field Def="f32 roundDashForceEndTime = 0.65">
+      <DisplayName>ダッシュ回りこみの終了時間[sec]</DisplayName>
+      <Description>ダッシュ回りこみでこの時間が経過したら目標位置に到着してなくても終了</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1380</SortID>
+    </Field>
+    <Field Def="f32 roundDashGoalOffset = 15">
+      <DisplayName>ダッシュ回りこみの目標位置をターゲットの位置からこの距離だけ離す[m]</DisplayName>
+      <Description>ダッシュ回りこみの目標位置をターゲットの位置からこの距離だけ離した位置にする</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1390</SortID>
+    </Field>
+    <Field Def="u8 roundDashStartRoundAngleDeg = 20">
+      <DisplayName>ダッシュ回りこみの最初の回りこみ角度[度]</DisplayName>
+      <Description>ダッシュ回りこみで最初に向かう角度、ターゲット方向からこの角度ずれた方向に移動開始</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 roundDashGoalAngleDeg = 70">
+      <DisplayName>ダッシュ回りこみの最終目標角度[度]</DisplayName>
+      <Description>ダッシュ回りこみでターゲットへの方向からこの角度を回した角度を目標位置に設定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1410</SortID>
+    </Field>
+    <Field Def="u8 roundDashMaxRoundAngleDeg = 40">
+      <DisplayName>ダッシュ回りこみで最大回りこみをする角度[度]</DisplayName>
+      <Description>ダッシュ回りこみでターゲットからの方向からこの角度まで初期回り込み角度になる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1420</SortID>
+    </Field>
+    <Field Def="u8 roundDashEndRoundAngleDeg = 100">
+      <DisplayName>ダッシュ回りこみで目標位置に直進し始める角度[度]</DisplayName>
+      <Description>ダッシュ回りこみでターゲットからの方向からこの角度まで来た時に目標位置に直進する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1430</SortID>
+    </Field>
+    <Field Def="u16 roundDashEndSpeedKMPH = 50">
+      <DisplayName>ダッシュ回りこみで終了したと判定する速度[km/h]</DisplayName>
+      <Description>ダッシュ回りこみで目標角度に到着したあとこの速度以下になったら制御終了</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1440</SortID>
+    </Field>
+    <Field Def="u16 LockTargetMarking_ForgetDist = 1000">
+      <DisplayName>【ターゲットマーキング】この距離以上離れたらマーキング解除</DisplayName>
+      <Description>【ターゲットマーキング】ターゲットとの距離がこれ以上離れたらマーキングを解除</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>1450</SortID>
+    </Field>
+    <Field Def="u16 LockTargetMarking_ChachDist = 800">
+      <DisplayName>【ターゲットマーキング】マーキング補足距離</DisplayName>
+      <Description>【ターゲットマーキング】ターゲットをマーキングする距離。角度と合わせて使う</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>1451</SortID>
+    </Field>
+    <Field Def="u8 LockTargetMarking_ChachAngleDeg = 45">
+      <DisplayName>【ターゲットマーキング】マーキング補足角度[度]</DisplayName>
+      <Description>【ターゲットマーキング】ターゲットをマーキングする角度。距離と合わせて使う</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>1452</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_18[1]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 LockTargetChangeWaitTimeMouse = 0.1">
+      <DisplayName>【マウス】マウス移動によるターゲット切り替え待ち時間[sec]</DisplayName>
+      <Description>マウス移動によるターゲット切り替え待ち時間[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>7385</SortID>
+    </Field>
+    <Field Def="f32 LockTargetChangeMouseInputCoefficient = 500">
+      <DisplayName>【マウス】ターゲット切り替え時マウス入力の係数</DisplayName>
+      <Description>マウス入力からターゲット切り替え用入力へ変換する時の係数。マウス感度にあんまり影響されないつもり</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>7385</SortID>
+    </Field>
+    <Field Def="s32 unk200" />
+    <Field Def="f32 bladeBrakeTimeScale = 19.2">
+      <DisplayName>【ブレホ】ブレーキ時間係数</DisplayName>
+      <Description>ブレホブレーキの時間にかかる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 bladeBrakeDecayRate = 2.4">
+      <DisplayName>【ブレホ】ブレーキ減衰係数</DisplayName>
+      <Description>ブレホブレーキの時間経過による減衰係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="u16 bladeBrakeGoalSpeedKMH = 200">
+      <DisplayName>【ブレホ】ブレーキ目標速度[km/h]</DisplayName>
+      <Description>ブレホブレーキでどこまで速度を落とすか</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="u16 reserve_37">
+      <DisplayName>予約領域</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 brakeRandMinRate = 0.3">
+      <DisplayName>ブレーキブレ：最小ブレーキ率</DisplayName>
+      <Description>ブレーキブレ：最小ブレーキ率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 brakeRandMaxRate = 2">
+      <DisplayName>ブレーキブレ：最大ブレーキ率</DisplayName>
+      <Description>ブレーキブレ：最大ブレーキ率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1510</SortID>
+    </Field>
+    <Field Def="f32 brakeRandGenMinTimeSec = 0.02">
+      <DisplayName>ブレーキブレ：ブレ率最小抽選間隔[sec]</DisplayName>
+      <Description>ブレーキブレ：ブレ率最小抽選間隔[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1520</SortID>
+    </Field>
+    <Field Def="f32 brakeRandGenMaxTimeSec = 0.2">
+      <DisplayName>ブレーキブレ：ブレ率最大抽選間隔[sec]</DisplayName>
+      <Description>ブレーキブレ：ブレ率最大抽選間隔[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1530</SortID>
+    </Field>
+    <Field Def="s32 endPermanentStunStateValue">
+      <DisplayName>ハメ抜け発生値[point]</DisplayName>
+      <Description>ハメ抜け発生値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>2950</SortID>
+    </Field>
+    <Field Def="f32 chrTransChaseRateForQuickCameraTurnX = -1">
+      <DisplayName>【カメラ】クイックカメラターン時キャラ追尾率左右(0.0～1.0)</DisplayName>
+      <Description>クイックカメラターンの間に旋回中心を自機にするためのパラメータ、マイナスで上書きしない</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="f32 chrTransChaseRateForQuickCameraTurnX_LerpRate = -1">
+      <DisplayName>【カメラ】クイックカメラターン時キャラ追尾率（左右）の補間率(0.0～1.0)</DisplayName>
+      <Description>クイックカメラターンの間に旋回中心を自機にするためのパラメータ、マイナスで上書きしない</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="f32 turnFootSfx_MinTurnSpeed = 30">
+      <DisplayName>旋回時足元SFX：最小旋回速度[deg/sec]</DisplayName>
+      <Description>旋回時に足元から出すSFX：この旋回速度以上で旋回率が上がり始める</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1550</SortID>
+    </Field>
+    <Field Def="f32 turnFootSfx_MaxTurnSpeed = 80">
+      <DisplayName>旋回時足元SFX：最大旋回速度[deg/sec]</DisplayName>
+      <Description>旋回時に足元から出すSFX：この旋回速度以上で旋回率MAX</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1560</SortID>
+    </Field>
+    <Field Def="u32 turnFootSfx_SfxId = 111033">
+      <DisplayName>旋回時足元SFX：SFXID</DisplayName>
+      <Description>旋回時に足元から出すSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>1570</SortID>
+    </Field>
+    <Field Def="f32 turnFootSfx_MinBrakeRate = 0.1">
+      <DisplayName>旋回時足元SFX：最小ブレーキ率</DisplayName>
+      <Description>旋回時に足元から出すSFX：最小ブレーキ率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1580</SortID>
+    </Field>
+    <Field Def="u16 turnFootSfx_MinSpeedKMH = 30">
+      <DisplayName>旋回時足元SFX：最小速度[km/h]</DisplayName>
+      <Description>旋回時に足元から出すSFX：この速度以上で速度率が上がり始める</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1590</SortID>
+    </Field>
+    <Field Def="u16 turnFootSfx_MaxSpeedKMH = 250">
+      <DisplayName>旋回時足元SFX：最大速度[km/h]</DisplayName>
+      <Description>旋回時に足元から出すSFX：この速度以上で速度率MAX</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s32 hangWeaponLAttachDmyPolyId">
+      <DisplayName>格納時吸着ダミポリID(左側)</DisplayName>
+      <Description>武器格納時につけるオフセット込みのダミポリID（デバッグで有効にしたときのみ使用）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s32 hangWeaponRAttachDmyPolyId">
+      <DisplayName>格納時吸着ダミポリID(右側)</DisplayName>
+      <Description>武器格納時につけるオフセット込みのダミポリID（デバッグで有効にしたときのみ使用）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 jumpableHeightOnBoostMove = 1.5">
+      <DisplayName>ブースト移動中にジャンプ可能な地面からの高さ</DisplayName>
+      <Description>ブースト移動中に不意に浮いたタイミングでジャンプできるための許容する高さ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1620</SortID>
+    </Field>
+    <Field Def="f32 partsModelForceMoveTime = 3">
+      <DisplayName>パーツモデルの破壊後に必ず物理が有効な時間</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1630</SortID>
+    </Field>
+    <Field Def="f32 partsModelForceStopTime = 15">
+      <DisplayName>パーツモデルの破壊後に強制的に物理が停止するまでの時間</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1640</SortID>
+    </Field>
+    <Field Def="s32 heavyWeightAddAnimRightId = -1">
+      <DisplayName>重量級加算右手用アニメID</DisplayName>
+      <Description>重量級加算アニメの右手用アニメID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8900</SortID>
+    </Field>
+    <Field Def="s32 heavyWeightAddAnimLeftId = -1">
+      <DisplayName>重量級加算左手用アニメID</DisplayName>
+      <Description>重量級加算アニメの左手用アニメID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8900</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_41[20]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>100003</SortID>
+    </Field>
+    <Field Def="f32 slopeSpine_MaxSpeedKMH = 50">
+      <DisplayName>【斜面の腰傾き】[ブースト]腰が振られるときの最大速度[km/h]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1660</SortID>
+    </Field>
+    <Field Def="f32 slopeSpine_StopRate = -0.3">
+      <DisplayName>【斜面の腰傾き】[ブースト]停止時の腰の傾き率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1670</SortID>
+    </Field>
+    <Field Def="f32 slopeSpine_MaxSpeedRate = 1">
+      <DisplayName>【斜面の腰傾き】[ブースト]腰が振られるときの最大速度時の傾き率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1680</SortID>
+    </Field>
+    <Field Def="f32 slopeSpine_MinSpeedBlendRate = 0.01">
+      <DisplayName>【斜面の腰傾き】[ブースト]停止時の腰のブレンド率</DisplayName>
+      <Description>毎フレームこのブレンド率で腰が傾いていきます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1690</SortID>
+    </Field>
+    <Field Def="f32 slopeSpine_MaxSpeedBlendRate = 0.1">
+      <DisplayName>【斜面の腰傾き】[ブースト]腰が振られるときの最大速度時の腰のブレンド率</DisplayName>
+      <Description>毎フレームこのブレンド率で腰が傾いていきます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="f32 flyLookAt_BeginHeight = 10">
+      <DisplayName>【空中射撃】空中LookAt開始高さ[m]</DisplayName>
+      <Description>空中での射撃時に状態を傾けるときの開始の高さ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1105</SortID>
+    </Field>
+    <Field Def="f32 flyLookAt_MaxHeight = 25">
+      <DisplayName>【空中射撃】空中LookAt傾き最大距離[m]</DisplayName>
+      <Description>空中での射撃時の傾きが開始処理から最大になるまでの移動高さ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1106</SortID>
+    </Field>
+    <Field Def="f32 keepShootStandbyTimeAfterTargetDisappear = 1">
+      <DisplayName>【ビヘイビア】ターゲットがいなくなってから射撃待機を維持する時間[s]</DisplayName>
+      <Description>ロックターゲットがいた/いなくなったで切り替える時、アニメがパカパカにならないためのもの</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>680</SortID>
+    </Field>
+    <Field Def="f32 lockRangeDistanceAfterKillClose">
+      <DisplayName>【通常ロック】敵撃破後ロック対象の選択範囲（近）[m]</DisplayName>
+      <Description>近距離視野内の敵が優先に選択される、かつ後ろの敵も選択できる</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 lockRangeDistanceAfterKillFar">
+      <DisplayName>【通常ロック】敵撃破後ロック対象の選択範囲（遠）[m]</DisplayName>
+      <Description>遠距離以外の敵は選択しない</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 lockRangeAngleWhenSwitchTarget = 90">
+      <DisplayName>【通常ロック】手動切り替える時ロック対象の選択範囲角度[deg]（0-180）</DisplayName>
+      <Description>自機中心の片方の角度で、90であれば前方、180であれば一週</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 lockRangeDistanceForBackLock = 200">
+      <DisplayName>【通常ロック】後ろにも切り替えられる範囲[m]</DisplayName>
+      <Description>自機中心</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 ZTiltInterpolateFrameSlowMagnification = 1">
+      <DisplayName>【カメラ】Z回転中の補間フレーム遅延倍率</DisplayName>
+      <Description>【カメラ】Z回転中の補間フレームにかける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>774</SortID>
+    </Field>
+    <Field Def="f32 ZTiltEndInterpolateFrameSlowMagnification = 1">
+      <DisplayName>【カメラ】Z回転終了時の補間フレーム遅延倍率</DisplayName>
+      <Description>【カメラ】Z回転終了時の補間フレームにかける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>775</SortID>
+    </Field>
+    <Field Def="f32 raycastToAboveObjectLength = 1000">
+      <DisplayName>頭上に物があるかチェックするレイキャスト長さ[m]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 raycastToAboveObjectInterval = 1">
+      <DisplayName>頭上に物があるかチェックする間隔[sec]</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedRate = 1">
+      <DisplayName>バリア着弾後の速度倍率</DisplayName>
+      <Description>バリアに当たった際に弾丸の速度にかかる値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedMin">
+      <DisplayName>バリア着弾後の最低速度[m/s]</DisplayName>
+      <Description>バリアに当たった後の弾丸の最低速度[m/s] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3550</SortID>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedMax">
+      <DisplayName>バリア着弾後の最高速度[m/s]</DisplayName>
+      <Description>バリアに当たった後の弾丸の最高速度[m/s] ※0で最高速度無限</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3560</SortID>
+    </Field>
+    <Field Def="f32 triggerContinueTimeToMultiLock = 1">
+      <DisplayName>【ミサイルロック】マルチロックになる長押し時間[s]</DisplayName>
+      <Description>【ミサイルロック】マルチロックになる長押し時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>1490</SortID>
+    </Field>
+    <Field Def="f32 bladeKeepLockTime">
+      <DisplayName>【ブレホ】カメラロック最低保障時間[sec]</DisplayName>
+      <Description>ブレホ時のカメラロック最低保障時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2030</SortID>
+    </Field>
+    <Field Def="f32 mouseBaseCoefficient = 0.0005">
+      <DisplayName>【マウス】感度の基礎係数</DisplayName>
+      <Description>ベースとしたマウスの感度係数</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1E-05</Increment>
+      <SortID>7380</SortID>
+    </Field>
+    <Field Def="f32 mouseCoefficientMin = 0.1">
+      <DisplayName>【マウス】感度の下限</DisplayName>
+      <Description>マウス感度0のときの値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7380</SortID>
+    </Field>
+    <Field Def="f32 mouseCoefficientMax = 1.1">
+      <DisplayName>【マウス】感度の上限</DisplayName>
+      <Description>マウス感度10のときの値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7380</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxMoveDirFwdDirErrAngDeg">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】移動方向と速度方向の最大ズレ角度[deg]</DisplayName>
+      <Description>移動方向と速度方向のズレによるオフセットが最大になる角度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6021</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_CenterOffset">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】旋回の中心位置オフセット</DisplayName>
+      <Description>タンクの旋回軸のオフセット（前が+）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxFwdOffset">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】前方向最大オフセット（前移動最高速度時）</DisplayName>
+      <Description>旋回軸の中心からのオフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxBackOffset">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】後ろ方向最大オフセット（後ろ移動最高速度時）</DisplayName>
+      <Description>旋回軸の中心からのオフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="s16 tankTurnOffset_MaxFwdOffsetSpeedKMH">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】前方向最大オフセットになる前方向速度[km/h]</DisplayName>
+      <Description>前方向最大オフセットがかかるようになる最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="s16 tankTurnOffset_MaxBackOffsetSpeedKMH">
+      <DisplayName>【廃止予定】【タンク旋回オフセット】後ろ方向最大オフセットになる後ろ方向速度[km/h]</DisplayName>
+      <Description>後ろ方向最大オフセットがかかるようになる最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="f32 chrBehaviorCond_MoveLookAtErrAngDeg">
+      <DisplayName>「上半身が目標方向に向いているか」の許容角度差[deg]</DisplayName>
+      <Description>ChrBehaviorの条件「移動関連その他」「上半身が目標方向に向いているか」がtrueになる最大角度差</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1105</SortID>
+    </Field>
+    <Field Def="f32 assaultBoostGroundAlt">
+      <DisplayName>アサルトブースト中の地面からの高さ</DisplayName>
+      <Description>アサブ中の地面からの高さ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1625</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_53[32]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>100004</SortID>
+    </Field>
+    <Field Def="s32 unk30c" />
+    <Field Def="dummy8 reserve_53_2[2]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>100005</SortID>
+    </Field>
+    <Field Def="u16 scanAngle = 360">
+      <DisplayName>【スキャン】スキャン角度[度]</DisplayName>
+      <Description>スキャンが有効な角度</Description>
+      <Maximum>360</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 scanSpEffectId">
+      <DisplayName>【スキャン】壁越しロック特殊効果ID</DisplayName>
+      <Description>スキャン範囲内にいた敵に適応する特殊効果ID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 scanDist">
+      <DisplayName>【スキャン】スキャン距離[m]</DisplayName>
+      <Description>スキャンが有効な角度有効な距離</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 scanEffectWaitTime">
+      <DisplayName>【スキャン】スキャン効果待機時間[s]</DisplayName>
+      <Description>スキャンが有効になるまでの待機時間(走査線の演出終了待ち)</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 reconRange = 100">
+      <DisplayName>【リコン】認識範囲[m]</DisplayName>
+      <Description>【リコン】認識範囲[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>65500</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_51[6]">
+      <DisplayName>予約領域51</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeFixedValueAtPA = 200">
+      <DisplayName>スタミナ減少固定減衰値_PA</DisplayName>
+      <Description>PAバリアに被弾時のスタミナ減少値の固定減少量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>437</SortID>
+    </Field>
+    <Field Def="f32 SpConsumeRateAtPA = 0.3">
+      <DisplayName>スタミナ減少減衰係数_PA</DisplayName>
+      <Description>PAバリアに被弾時にスタミナ減少値にかかる係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>438</SortID>
+    </Field>
+    <Field Def="f32 slopeDashSpine_MaxSpeedKMH = 50">
+      <DisplayName>【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度[km/h]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1701</SortID>
+    </Field>
+    <Field Def="f32 slopeDashSpine_StopRate = -0.3">
+      <DisplayName>【斜面の腰傾き】[ダッシュ]停止時の腰の傾き率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1702</SortID>
+    </Field>
+    <Field Def="f32 slopeDashSpine_MaxSpeedRate = 1">
+      <DisplayName>【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度時の傾き率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1703</SortID>
+    </Field>
+    <Field Def="f32 slopeDashSpine_MinSpeedBlendRate = 0.01">
+      <DisplayName>【斜面の腰傾き】[ダッシュ]停止時の腰のブレンド率</DisplayName>
+      <Description>毎フレームこのブレンド率で腰が傾いていきます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1704</SortID>
+    </Field>
+    <Field Def="f32 slopeDashSpine_MaxSpeedBlendRate = 0.1">
+      <DisplayName>【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度時の腰のブレンド率</DisplayName>
+      <Description>毎フレームこのブレンド率で腰が傾いていきます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1705</SortID>
+    </Field>
+    <Field Def="f32 lookingCameraJudgeThresholdAngleDeg = 45">
+      <DisplayName>【カメラ】自機がカメラ側を向いていると判定する角度</DisplayName>
+      <Description>自機がカメラ側を向いている判断するカメラ正面ベクトルと自機正面ベクトルのXZ平面での成す角</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>880</SortID>
+    </Field>
+    <Field Def="f32 shootTargetOffsetDistanceAtUnlock = 800">
+      <DisplayName>【射撃地点】キャラからの距離[m] </DisplayName>
+      <Description>フリーカメラ時(非ロック時等操作可能な際）に攻撃地点となる箇所までのプレイヤーからの距離</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1760</SortID>
+    </Field>
+    <Field Def="f32 chrFrontScoreDirectionWeightWhenUnlock = 5000">
+      <DisplayName>【通常ロック】仮ロック時スコア計算に方向部分の重み</DisplayName>
+      <Description>大きくなると画面中央に一番近い敵が選択される、小さくなると自機一番近い敵が選択される</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 completelyInvisibleCheckVerticalAngle = 50">
+      <DisplayName>【通常ロック】壁はみ出しチェックの角度範囲（垂直）[deg]</DisplayName>
+      <Description>画面外でも角度以内であればはみ出しチェックを行う。縦画角以上の値に設定すべき。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1497</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_258[28]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 stealth_ChangeTime = 3">
+      <DisplayName>【ステルス】切り替え時間[秒]</DisplayName>
+      <Description>ステルスモードの切り替え演出時間（秒)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="u16 stealth_power">
+      <DisplayName>【ステルス】性能値</DisplayName>
+      <Description>レーダー性能と比較して，レーダーによって検知されるかを決める性能値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1801</SortID>
+    </Field>
+    <Field Def="u16 deadEffectMaxTime">
+      <DisplayName>【死亡演出】死亡演出最長時間[s]</DisplayName>
+      <Description>【死亡演出】死亡演出最長時間[s]</Description>
+      <Maximum>9999</Maximum>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="f32 fallDeadDamageRate = 0.34">
+      <DisplayName>【落下死亡床】落下ダメージ割合</DisplayName>
+      <Description>レーダー性能と比較して，レーダーによって検知されるかを決める性能値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 ShootPredictionRateRecoverRateWhenFreeCamera = 1">
+      <DisplayName>【予測率】カメラ非固定中予測率回復倍率</DisplayName>
+      <Description>カメラ非固定中のみ、FCSの予測精度による回復に、この倍率がかかり、回復を早める事ができる</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1491</SortID>
+    </Field>
+    <Field Def="f32 ShootPredictionRateAddBaseRateByDistWhenFreeCamera">
+      <DisplayName>【予測率】カメラ非固定中 距離補正底上げ値(加算)</DisplayName>
+      <Description>カメラ非固定中のみ、FCSの距離補正の値に、この値が ” 加算 ” され、予測の最低値が上昇する</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1491</SortID>
+    </Field>
+    <Field Def="f32 scanOutlineDisableDistOffset">
+      <DisplayName>【スキャン】アウトライン非表示距離オフセット[m]</DisplayName>
+      <Description>カメラと自機の距離＋○mより手前はアウトライン非表示</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 scanOutlineFadeDist">
+      <DisplayName>【スキャン】アウトラインフェード距離[m]</DisplayName>
+      <Description>カメラと自機の距離＋アウトライン非表示距離オフセットからフェード完了するまでの距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 scanOutlineDisableDistOffset_forDown">
+      <DisplayName>【スキャン】下方向アウトライン非表示距離オフセット[m]</DisplayName>
+      <Description>下を見ている時：カメラと自機の距離＋○mより手前はアウトライン非表示</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 scanOutlineFadeDist_forDown">
+      <DisplayName>【スキャン】下方向アウトラインフェード距離[m]</DisplayName>
+      <Description>下を見ている時：カメラと自機の距離＋アウトライン非表示距離オフセットからフェード完了するまでの距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 wireMove_BaseOffsetY = 7">
+      <DisplayName>【ワイヤー】基準高さオフセット</DisplayName>
+      <Description>【ワイヤー】基準高さオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 wireMove_MaxDist = 600">
+      <DisplayName>【ワイヤー】最高距離</DisplayName>
+      <Description>【ワイヤー】最高距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2101</SortID>
+    </Field>
+    <Field Def="f32 wireMove_MaxAccelDist = 30">
+      <DisplayName>【ワイヤー】この距離以上でワイヤー引き寄せ力が最大に</DisplayName>
+      <Description>【ワイヤー】この距離以上でワイヤー引き寄せ力が最大に</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2102</SortID>
+    </Field>
+    <Field Def="f32 wireMove_MinAccelDist = 10">
+      <DisplayName>【ワイヤー】この距離以下でワイヤー引き寄せしないように</DisplayName>
+      <Description>【ワイヤー】この距離以下でワイヤー引き寄せしないように</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2103</SortID>
+    </Field>
+    <Field Def="f32 wireMove_AccelSubBrakeRatePerSec = 2">
+      <DisplayName>【ワイヤー】加速中ブレーキ率減少値[/sec]</DisplayName>
+      <Description>【ワイヤー】加速中ブレーキ率減少値[/sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2104</SortID>
+    </Field>
+    <Field Def="f32 wireMove_NoAccelAddBrakeRatePerSec = 0.1">
+      <DisplayName>【ワイヤー】伸びようとするときのブレーキ率増加値[/sec]</DisplayName>
+      <Description>【ワイヤー】伸びようとするときのブレーキ率増加値[/sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2105</SortID>
+    </Field>
+    <Field Def="f32 wireMove_AccelGravityRate = 0.1">
+      <DisplayName>【ワイヤー】引寄せ中重力率</DisplayName>
+      <Description>【ワイヤー】引寄せ中重力率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2106</SortID>
+    </Field>
+    <Field Def="f32 wireMove_VerticalOffsetMinAngDeg = 10">
+      <DisplayName>【ワイヤー】オフセットがかかリ始めるカメラの最小垂直角度[度]</DisplayName>
+      <Description>【ワイヤー】オフセットがかかリ始めるカメラの最小垂直角度[度]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2107</SortID>
+    </Field>
+    <Field Def="f32 wireMove_VerticalOffsetMaxAngDeg = 30">
+      <DisplayName>【ワイヤー】オフセットが最もかかるカメラの最大垂直角度[度]</DisplayName>
+      <Description>【ワイヤー】オフセットが最もかかるカメラの最大垂直角度[度]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2108</SortID>
+    </Field>
+    <Field Def="f32 wireMove_VerticalOffsetMinWireDist = 30">
+      <DisplayName>【ワイヤー】オフセットがかからなくなる最低ワイヤー長さ</DisplayName>
+      <Description>【ワイヤー】オフセットがかからなくなる最低ワイヤー長さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2109</SortID>
+    </Field>
+    <Field Def="f32 wireMove_VerticalOffsetMaxWireDist = 60">
+      <DisplayName>【ワイヤー】オフセットが最もかかるようになる最高ワイヤー長さ</DisplayName>
+      <Description>【ワイヤー】オフセットが最もかかるようになる最高ワイヤー長さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2110</SortID>
+    </Field>
+    <Field Def="f32 wireMove_VerticalOffsetDist = 40">
+      <DisplayName>【ワイヤー】最大オフセット距離</DisplayName>
+      <Description>【ワイヤー】最大オフセット距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2111</SortID>
+    </Field>
+    <Field Def="s16 camRotSpeedPerOnThrowing = 30">
+      <DisplayName>【カメラ】投げ演出中のカメラ回転速度倍率[%]</DisplayName>
+      <Description>【カメラ】投げ演出中のカメラ回転速度倍率[%]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>880</SortID>
+    </Field>
+    <Field Def="s16 camReturnLimitDegOnThrowing = 30">
+      <DisplayName>【カメラ】手動操作から投げ演出に戻すカメラの回転量限界値[deg]</DisplayName>
+      <Description>【カメラ】手動操作から投げ演出に戻すカメラの回転量限界値[deg]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>880</SortID>
+    </Field>
+    <Field Def="u32 hacking_atkpower">
+      <DisplayName>【ハッキング】ハッキング攻撃力[point/sec] </DisplayName>
+      <Description>【ハッキング】ハッキング攻撃力[point/sec] </Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 hacking_range">
+      <DisplayName>【ハッキング】ハッキング距離[m] </DisplayName>
+      <Description>【ハッキング】ハッキング距離[m] </Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 normalLock_MaxDist">
+      <DisplayName>【通常ロック】通常ロック距離[m]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 missileLock_MaxDist">
+      <DisplayName>【ミサイルロック】ミサイルロック距離[m]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1490</SortID>
+    </Field>
+    <Field Def="u8 missileLock_MaxLockNum">
+      <DisplayName>【ミサイルロック】ミサイルマルチロック数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>1490</SortID>
+    </Field>
+    <Field Def="u8 multiLockTaretNumMax = 1">
+      <DisplayName>マルチロックターゲット上限</DisplayName>
+      <Description>マルチロック時にロックカウントを分散させる上限ターゲット数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1490</SortID>
+    </Field>
+    <Field Def="s16 normalLock_1stLockDist = -1">
+      <DisplayName>1次ロック開始距離[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1490</SortID>
+    </Field>
+    <Field Def="f32 geomLockEnableRange">
+      <DisplayName>【ロック】アセットロック可能範囲[m]</DisplayName>
+      <Description>アセットに対するロック可能範囲</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 lockRangeAngleAfterKill">
+      <DisplayName>【通常ロック】敵撃破後ロック対象の選択角度[deg]（0-180）</DisplayName>
+      <Description>画面外てもこの角度以内であれば自動ロックオンできる。カメラ中心の片方の角度で、90であれば前方、180であれば一週</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 LockSiteHeightScale">
+      <DisplayName>ロックサイト縦幅倍率</DisplayName>
+      <Description>ロックサイト縦幅倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 LockSiteWidthScale">
+      <DisplayName>ロックサイト横幅倍率</DisplayName>
+      <Description>ロックサイト横幅倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3001</SortID>
+    </Field>
+    <Field Def="f32 EnableSearchDistance">
+      <DisplayName>探知距離[m]</DisplayName>
+      <Description>敵を探知可能な距離[m]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3570</SortID>
+    </Field>
+    <Field Def="f32 EnableSearchDistanceAfterHack">
+      <DisplayName>ハッキング後探知距離[m]</DisplayName>
+      <Description>レーダーをハッキング後の敵を探知可能な距離[m]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3571</SortID>
+    </Field>
+    <Field Def="f32 LockOnRangeOutRemineTime = 1">
+      <DisplayName>ロック範囲外れたあとの追従時間[sec]</DisplayName>
+      <Description>視点ロック中にロックオン範囲から外れた後も視点ロック対象として追従うする時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>1492</SortID>
+    </Field>
+    <Field Def="f32 waitTimeAfterQuickCameraTurn">
+      <DisplayName>【カメラ】クイックカメラターン後待機時間[sec]</DisplayName>
+      <Description>ビヘイビア用</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>889</SortID>
+    </Field>
+    <Field Def="f32 boostMoveModelUpDown_IntpRate = 0.9">
+      <DisplayName>【ブースト移動上下補間】補間率</DisplayName>
+      <Description>ブースト移動で上下の移動をどれくらい補間するか（0：補間なし、1：追従しない）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 boostMoveModelUpDown_LimitDistU = 1.5">
+      <DisplayName>【ブースト移動上下補間】最大補間距離・上</DisplayName>
+      <Description>ブースト移動で上下の移動のカプセルとモデルの限界距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 boostMoveModelUpDown_LimitDistD = 3">
+      <DisplayName>【ブースト移動上下補間】最大補間距離・下</DisplayName>
+      <Description>ブースト移動で上下の移動のカプセルとモデルの限界距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 boostMoveModelUpDown_SlopeRate = 0.05">
+      <DisplayName>【ブースト移動上下補間】坂道補正率</DisplayName>
+      <Description>ブースト移動で上下の移動の坂道補正率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_253[20]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 cover_RayCastLength">
+      <DisplayName>【カバー】チェック用レイキャスト長さ</DisplayName>
+      <Description>【カバー】チェック用レイキャストをこの長さ＋キャラ半径分出す</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 cover_RayCastSideOffsetRate">
+      <DisplayName>【カバー】チェックレイ横方向オフセット率</DisplayName>
+      <Description>【カバー】チェックレイ横方向のキャラサイズに対するオフセット率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 rockonSmokeRatePlayer">
+      <DisplayName>煙幕時視界倍率_プレイヤー</DisplayName>
+      <Description>煙幕時視界倍率_プレイヤー</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1511</SortID>
+    </Field>
+    <Field Def="f32 rockonSmokeRateEnemy">
+      <DisplayName>煙幕時視界倍率_エネミー</DisplayName>
+      <Description>煙幕時視界倍率_エネミー</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1512</SortID>
+    </Field>
+    <Field Def="s32 unk430" />
+    <Field Def="f32 tankTexScroll_FowardScale = 30">
+      <DisplayName>【タンク】無限軌道の前後のテクスチャスクロールスケール</DisplayName>
+      <Description>タンクのテクスチャスクロールの速度(Km/h)に対するスケール値</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 tankTexScroll_RotationScale = 30">
+      <DisplayName>【タンク】無限軌道の旋回のテクスチャスクロールスケール</DisplayName>
+      <Description>タンクのテクスチャスクロールの旋回速度に対するスケール値</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6001</SortID>
+    </Field>
+    <Field Def="f32 funnelPointInterval = 1">
+      <DisplayName>【ファンネル】位置更新間隔[sec]</DisplayName>
+      <Description>【ファンネル】位置更新間隔[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 funnelPointRange_Max = 20">
+      <DisplayName>【ファンネル】追従上限距離[m]</DisplayName>
+      <Description>【ファンネル】追従上限距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6101</SortID>
+    </Field>
+    <Field Def="f32 funnelPointRange_Min = 15">
+      <DisplayName>【ファンネル】追従下限距離[m]</DisplayName>
+      <Description>【ファンネル】追従下限距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6102</SortID>
+    </Field>
+    <Field Def="f32 funnelPointAngle_Max = 45">
+      <DisplayName>【ファンネル】追従上限角度[度]</DisplayName>
+      <Description>【ファンネル】追従上限角度[度]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6103</SortID>
+    </Field>
+    <Field Def="f32 funnelPointAngle_Min">
+      <DisplayName>【ファンネル】追従下限角度[度]</DisplayName>
+      <Description>【ファンネル】追従下限角度[度]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6104</SortID>
+    </Field>
+    <Field Def="f32 funnelReturnTime = 10">
+      <DisplayName>【ファンネル】戻り開始時間[sec]</DisplayName>
+      <Description>【ファンネル】戻り開始時間[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6105</SortID>
+    </Field>
+    <Field Def="f32 funnelReturnRange = 20">
+      <DisplayName>【ファンネル】戻り距離[m]</DisplayName>
+      <Description>【ファンネル】戻り距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6106</SortID>
+    </Field>
+    <Field Def="f32 funnelFinishRange = 1">
+      <DisplayName>【ファンネル】終了距離[m]</DisplayName>
+      <Description>【ファンネル】終了距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6107</SortID>
+    </Field>
+    <Field Def="f32 wallJumpInputTime = 0.2">
+      <DisplayName>【三角とび】判定時間[sec]</DisplayName>
+      <Description>【三角とび】判定時間[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 wallJumpKeepTime = 0.2">
+      <DisplayName>【三角とび】継続時間[sec]</DisplayName>
+      <Description>【三角とび】継続時間[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 funnelReturnLifeTime = 2">
+      <DisplayName>【ファンネル】戻り時間[sec]</DisplayName>
+      <Description>【ファンネル】戻り時間[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6108</SortID>
+    </Field>
+    <Field Def="f32 funnelShootLength = 1">
+      <DisplayName>【ファンネル】射撃可能距離[m]</DisplayName>
+      <Description>【ファンネル】射撃可能距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6109</SortID>
+    </Field>
+    <Field Def="f32 funnelPointBrake">
+      <DisplayName>【ファンネル】目標位置到達時ブレーキ[m/s^2] </DisplayName>
+      <Description>【ファンネル】目標位置到達時ブレーキ[m/s^2] </Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="f32 funnelReturnPointRange_Max = 20">
+      <DisplayName>【ファンネル】戻り上限距離[m]</DisplayName>
+      <Description>【ファンネル】戻り上限距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6111</SortID>
+    </Field>
+    <Field Def="f32 funnelReturnPointRange_Min = 15">
+      <DisplayName>【ファンネル】戻り下限距離[m]</DisplayName>
+      <Description>【ファンネル】戻り下限距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6112</SortID>
+    </Field>
+    <Field Def="f32 funnelArrivalLength">
+      <DisplayName>【ファンネル】到達判定距離[m]</DisplayName>
+      <Description>【ファンネル】到達判定距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6113</SortID>
+    </Field>
+    <Field Def="f32 funnelMoveKeepTime = 0.5">
+      <DisplayName>【ファンネル】移動継続時間[sec]</DisplayName>
+      <Description>【ファンネル】移動継続時間[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6114</SortID>
+    </Field>
+    <Field Def="f32 funnelShootStartTime = -1">
+      <DisplayName>【ファンネル】射撃開始時間[sec]</DisplayName>
+      <Description>【ファンネル】射撃開始時間[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6109</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_260[30]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="u16 DeadLockOnDisableWaiteFrame">
+      <DisplayName>死亡時ロックオン自動解除待機秒数[1/30s]</DisplayName>
+      <Description>死亡したときにロックを無効化するのを待機するフレーム数</Description>
+      <Maximum>300</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 wallThroughLockRange">
+      <DisplayName>壁越しロックオン上限距離</DisplayName>
+      <Description>壁越しにロックオンできる距離</Description>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1510</SortID>
+    </Field>
+    <Field Def="s32 fpsBarrierDurable">
+      <DisplayName>【FPSバリア】耐久値 </DisplayName>
+      <Description>【FPSバリア】耐久値 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60000</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 fpsBarrierTimeSecTillRegene">
+      <DisplayName>【FPSバリア】回復開始までの時間[sec] </DisplayName>
+      <Description>【FPSバリア】回復開始までの時間[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 fpsBarrierTimeSecTillRegeneDanger">
+      <DisplayName>【FPSバリア】回復開始までの時間(危険域)[sec] </DisplayName>
+      <Description>【FPSバリア】回復開始までの時間(危険域)[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 fpsBarrierRegeneAmount">
+      <DisplayName>【FPSバリア】バリア回復量[point] </DisplayName>
+      <Description>【FPSバリア】バリア回復量[point] </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 fpsBarrierRegeneAmountDanger">
+      <DisplayName>【FPSバリア】バリア回復量(危険域)[point] </DisplayName>
+      <Description>【FPSバリア】バリア回復量(危険域)[point] </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 fpsBarrierRegeneIntervalSec">
+      <DisplayName>【FPSバリア】バリア回復間隔[sec] </DisplayName>
+      <Description>【FPSバリア】バリア回復間隔[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 fpsBarrierRegeneIntervalSecDanger">
+      <DisplayName>【FPSバリア】バリア回復間隔(危険域)[sec] </DisplayName>
+      <Description>【FPSバリア】バリア回復間隔(危険域)[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 fpsBarrierDangerThresholdPercent">
+      <DisplayName>【FPSバリア】危険域閾値[％]</DisplayName>
+      <Description>【FPSバリア】危険域閾値[％]</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_261[8]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_263[8]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 hyperQBRollAngle = 40">
+      <DisplayName>大QB最大左右傾き角度[deg]</DisplayName>
+      <Description>大QB中左右最大傾き角度[deg]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>7280</SortID>
+    </Field>
+    <Field Def="f32 hyperQBRollRate = 0.15">
+      <DisplayName>大QB左右傾き倍率</DisplayName>
+      <Description>大QB中左右傾き速度倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7280</SortID>
+    </Field>
+    <Field Def="f32 hyperQBPitchAngle">
+      <DisplayName>大QB上昇最大傾き角度[deg]</DisplayName>
+      <Description>大QB上昇時最大傾き角度[deg]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7280</SortID>
+    </Field>
+    <Field Def="f32 hyperQBPitchRate">
+      <DisplayName>大QB上昇傾き速度倍率</DisplayName>
+      <Description>大QB上昇時傾き速度倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7280</SortID>
+    </Field>
+    <Field Def="u32 freeCamParamID">
+      <DisplayName>【カメラ】フリーカメラのパラムID</DisplayName>
+      <Description>フリー（肩越しではない）視点カメラ用ロックカメラのパラムID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>870</SortID>
+    </Field>
+    <Field Def="u32 overShoulderCamParamID = 1">
+      <DisplayName>【カメラ】肩越しカメラのパラムID</DisplayName>
+      <Description>肩越し視点カメラ用ロックカメラのパラムID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>871</SortID>
+    </Field>
+    <Field Def="f32 consumeEN_propellerMove">
+      <DisplayName>プロペラ移動継続EN消費[point/sec]</DisplayName>
+      <Description>プロペラ移動継続EN消費[point/sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7220</SortID>
+    </Field>
+    <Field Def="s32 consumeFixedEN_HyperJump">
+      <DisplayName>大ジャンプ固定EN消費[point]</DisplayName>
+      <Description>大ジャンプ固定EN消費[point]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7230</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_34[8]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>100006</SortID>
+    </Field>
+    <Field Def="s32 EN_MinValue = -300">
+      <DisplayName>EN下限値</DisplayName>
+      <Description>EN下限値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="s32 consumeFixedEN_WallJump">
+      <DisplayName>三角飛び固定EN消費[point]</DisplayName>
+      <Description>三角飛び固定EN消費[point]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7270</SortID>
+    </Field>
+    <Field Def="f32 playerChrHitHeight = 9">
+      <DisplayName>自機当たり高さ(対キャラ)</DisplayName>
+      <Description>自機当たり高さ(対キャラ)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7300</SortID>
+    </Field>
+    <Field Def="f32 playerChrHitRadius = 6">
+      <DisplayName>自機当たり半径(対キャラ)</DisplayName>
+      <Description>自機当たり半径(対キャラ)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7301</SortID>
+    </Field>
+    <Field Def="f32 playerMapHitHeight = 12">
+      <DisplayName>自機当たり高さ(対マップ)</DisplayName>
+      <Description>自機当たり高さ(対マップ)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7302</SortID>
+    </Field>
+    <Field Def="f32 playerMapHitRadius = 3">
+      <DisplayName>自機当たり半径(対マップ)</DisplayName>
+      <Description>自機当たり半径(対マップ)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7303</SortID>
+    </Field>
+    <Field Def="f32 playerWeight = 7500">
+      <DisplayName>自機重さ</DisplayName>
+      <Description>自機重さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>100</Increment>
+      <SortID>7304</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_262[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 consumeFixedEN_Jump">
+      <DisplayName>ジャンプ固定EN消費[point]</DisplayName>
+      <Description>ジャンプ固定EN消費[point]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7229</SortID>
+    </Field>
+    <Field Def="f32 completelyInvisibleCheckMaxDistance = 300">
+      <DisplayName>【通常ロック】壁はみ出しチェックの距離範囲[m]</DisplayName>
+      <Description>距離以内の敵だけに壁はみ出しのチェックを行う。この値が大きすぎるとチェックの間隔時間が増える</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1496</SortID>
+    </Field>
+    <Field Def="f32 completelyInvisibleCheckHorizontalAngle = 80">
+      <DisplayName>【通常ロック】壁はみ出しチェックの角度範囲（水平）[deg]</DisplayName>
+      <Description>画面外でも角度以内であればはみ出しチェックを行う。横画角以上の値に設定すべき。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1497</SortID>
+    </Field>
+    <Field Def="f32 camMapHitHeight = 9.5">
+      <DisplayName>【カメラ】対マップ当たり球：足元からの高さ</DisplayName>
+      <Description>【カメラ】対マップ当たり球：足元からの高さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7320</SortID>
+    </Field>
+    <Field Def="f32 camMapHitRadius = 1">
+      <DisplayName>【カメラ】対マップ当たり球：半径</DisplayName>
+      <Description>【カメラ】対マップ当たり球：半径</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7321</SortID>
+    </Field>
+    <Field Def="f32 camOwnerHitHeight = 10">
+      <DisplayName>【カメラ】対自機当たり球：足元からの高さ</DisplayName>
+      <Description>【カメラ】対自機当たり球：足元からの高さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7322</SortID>
+    </Field>
+    <Field Def="f32 camOwnerHitRadius = 1">
+      <DisplayName>【カメラ】対自機当たり球：半径</DisplayName>
+      <Description>【カメラ】対自機当たり球：半径</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7323</SortID>
+    </Field>
+    <Field Def="f32 camOwnerHitIntpRate = 0.2">
+      <DisplayName>【カメラ】対自機当たり：補間率</DisplayName>
+      <Description>【カメラ】対自機当たり：補間率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7324</SortID>
+    </Field>
+    <Field Def="f32 pointMoveSpeed">
+      <DisplayName>2点間移動速度</DisplayName>
+      <Description>2点間移動速度</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="f32 cover_RayCastMoveOffset">
+      <DisplayName>【カバー】進行方向チェック用オフセット距離 </DisplayName>
+      <Description>【カバー】移動方向に対して設定した距離分ずらして位置から壁当たり判定を行う。 </Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 talkId1 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその１</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その１</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 lerpTimeMaxAfterMeleeAttackCam = 1">
+      <DisplayName>【カメラ】格闘攻撃カメラ後の補間の最大時間[sec]</DisplayName>
+      <Description>格闘攻撃カメラ終了後徐々に補間する最大時間[sec]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 lerpRateTargetAfterLerpTimeAfterMeleeAttackCam = 0.6">
+      <DisplayName>【カメラ】格闘攻撃カメラ後の補間時間が終わってからの補間率の目標値</DisplayName>
+      <Description>格闘攻撃カメラ終了後徐々に補間する時間が終わってからの補間率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 lerpRateLerpRateAfterLerpTimeAfterMeleeAttackCam = 0.1">
+      <DisplayName>【カメラ】格闘攻撃カメラ後の補間時間が終わってからの補間率の補間率</DisplayName>
+      <Description>格闘攻撃カメラ終了後徐々に補間する時間が終わってからの補間率の補間率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 finishLerpDistanceAfterMeleeAttackCam = 30">
+      <DisplayName>【カメラ】格闘攻撃カメラ後の補間が完了になる距離閾値[m]</DisplayName>
+      <Description>格闘攻撃カメラ終了後補間が終わったかどうかの判定距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 finishLerpAngleAfterMeleeAttackCam = 1">
+      <DisplayName>【カメラ】格闘攻撃カメラ後の補間が完了になる角度閾値[deg]</DisplayName>
+      <Description>格闘攻撃カメラ終了後補間が終わったかどうかの判定角度[deg]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="s32 talkId2 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその２</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その２</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="f32 wallJumpLimitCountResetRayBeginOffset = 0.5">
+      <DisplayName>【三角跳び】回数制限リセットチェックレイキャストの開始高さオフセット</DisplayName>
+      <Description>三角跳びの回数リセットチェック用レイキャストの開始高さオフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7310</SortID>
+    </Field>
+    <Field Def="f32 wallJumpLimitCountResetRayEndOffset = -0.1">
+      <DisplayName>【三角跳び】回数制限リセットチェックレイキャストの終点高さオフセット</DisplayName>
+      <Description>三角跳びの回数リセットチェック用レイキャストの終了高さオフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7310</SortID>
+    </Field>
+    <Field Def="u32 wallJumpLimitCountResetSpEffectId = 200001969">
+      <DisplayName>【三角跳び】回数制限特殊効果ID</DisplayName>
+      <Description>三角跳びの回数制限でかかる特殊効果ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>399999999</Maximum>
+      <SortID>7310</SortID>
+    </Field>
+    <Field Def="s16 backDmg_BackDmgAngDeg">
+      <DisplayName>背後ダメージ角度閾値[deg]</DisplayName>
+      <Description>背後ダメージになる角度の閾値（後ろからの角度）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="s16 backDmg_FwdDmgAngDeg">
+      <DisplayName>前方ダメージ角度閾値[deg]</DisplayName>
+      <Description>前方ダメージになる角度の閾値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_BackDmgScale = 1">
+      <DisplayName>背後ダメージ倍率</DisplayName>
+      <Description>背後ダメージのときのダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_BackSpDmgScale = 1">
+      <DisplayName>背後スタミナダメージ倍率</DisplayName>
+      <Description>背後ダメージのときのスタミナダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_BackSaDmgScale = 1">
+      <DisplayName>背後SAダメージ倍率</DisplayName>
+      <Description>背後ダメージのときのSAダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_FwdDmgScale = 1">
+      <DisplayName>前方ダメージ倍率</DisplayName>
+      <Description>前方ダメージのときのダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_FwdSpDmgScale = 1">
+      <DisplayName>前方スタミナダメージ倍率 </DisplayName>
+      <Description>前方ダメージのときのスタミナダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_FwdSaDmgScale = 1">
+      <DisplayName>前方SAダメージ倍率</DisplayName>
+      <Description>前方ダメージのときのSAダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_SideDmgScale = 1">
+      <DisplayName>側面ダメージ倍率 </DisplayName>
+      <Description>側面ダメージのときのダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_SideSpDmgScale = 1">
+      <DisplayName>側面スタミナダメージ倍率</DisplayName>
+      <Description>側面ダメージのときのスタミナダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="f32 backDmg_SideSaDmgScale = 1">
+      <DisplayName>側面SAダメージ倍率</DisplayName>
+      <Description>側面ダメージのときのSAダメージ倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6950</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_36[4]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <SortID>100007</SortID>
+    </Field>
+    <Field Def="f32 bullet_OverRangeDecayRate_P">
+      <DisplayName>射程超過時の威力減衰率_自機(%)</DisplayName>
+      <Description>自機の弾丸が射程外になったときの威力割合</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3490</SortID>
+    </Field>
+    <Field Def="f32 bullet_OverRangeDecayRate_E">
+      <DisplayName>射程超過時の威力減衰率_敵キャラ(%)</DisplayName>
+      <Description>敵の弾丸が射程外になったときの威力割合</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3490</SortID>
+    </Field>
+    <Field Def="u8 slope_UpMoveCancelAngleDeg">
+      <DisplayName>【斜面】斜面方向への移動が発生しなくなる斜面角度[deg]</DisplayName>
+      <Description>自機がこの斜面角度以上を登ろうとしたときに加速度と最高速度をカットする</Description>
+      <Maximum>90</Maximum>
+      <SortID>7400</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_270[3]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s16 bodyTrunk_BodyGaugePoint">
+      <DisplayName>本体体幹ゲージ</DisplayName>
+      <Description>本体体幹ゲージ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="s16 bodyTrunk_ActionGaugePoint">
+      <DisplayName>アクション体幹ゲージ</DisplayName>
+      <Description>アクション体幹ゲージ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="s32 talkId3 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその３</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その３</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8020</SortID>
+    </Field>
+    <Field Def="s32 talkId4 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその４</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その４</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8030</SortID>
+    </Field>
+    <Field Def="s32 talkId5 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその５</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その５</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8040</SortID>
+    </Field>
+    <Field Def="s32 talkId6 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその６</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その６</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8050</SortID>
+    </Field>
+    <Field Def="s32 talkId7 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその７</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その７</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8060</SortID>
+    </Field>
+    <Field Def="s32 talkId8 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその８</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その８</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8070</SortID>
+    </Field>
+    <Field Def="s32 talkId9 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその９</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その９</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8080</SortID>
+    </Field>
+    <Field Def="s32 talkId10 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその１０</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その１０</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8090</SortID>
+    </Field>
+    <Field Def="s32 talkId11 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその１１</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その１１</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="s32 talkId12 = -1">
+      <DisplayName>【会話】ローカルプレイヤーの会話IDその１２</DisplayName>
+      <Description>【会話】ローカルプレイヤーの会話ID その１２</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8110</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_271[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 precedeInput_InputTimeSec">
+      <DisplayName>先行入力時間[s]</DisplayName>
+      <Description>先行入力を保持する時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="f32 addImpactDisableTimeSec = 2.5">
+      <DisplayName>衝撃無敵時間[秒]</DisplayName>
+      <Description>「ステートを抜けたとき、衝撃無敵発動」のステートを抜けたときの衝撃値無効時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="f32 lockTargetCandidateAngleRangeWhenSwitchWithStick = 45">
+      <DisplayName>【通常ロック】スティック入力によるロックターゲット切り替え時候補の許容角度[deg]</DisplayName>
+      <Description>今のロックターゲット→次のターゲットの（画面内の）方向がスティック入力方向となす角度がこの値以内の場合だけ候補として考慮</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1499</SortID>
+    </Field>
+    <Field Def="f32 bodyTrunk_PointHealWaitTimeSec = 1">
+      <DisplayName>体幹回復待機時間(sec)</DisplayName>
+      <Description>体幹回復を待機する時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="u32 bodyTrunk_PointHealPerSec = 1000">
+      <DisplayName>体幹回復値(point/sec)</DisplayName>
+      <Description>体幹回復を回復する１秒あたりのポイント</Description>
+      <Maximum>999999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="f32 AirRagister_BrakeRate">
+      <DisplayName>【調整基準】汎用ブレーキ係数</DisplayName>
+      <Description>空気抵抗のブレーキ係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7050</SortID>
+    </Field>
+    <Field Def="f32 residualImpactSubSpeed_EnMaxSwitchWaitTimeSec">
+      <DisplayName>EN最大時の残留衝撃値揮発速度_切り替わり待機時間[s]</DisplayName>
+      <Description>ENが最大になってから『補正計算グラフパラメータ』の《残留衝撃値_EN減少時揮発速度[point/s]》から《残留衝撃値_EN最大時揮発速度[point/s]》に切り替わるまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="f32 QB_MassBase = 5000">
+      <DisplayName>【調整基準】機体重量</DisplayName>
+      <Description>機体重量の調整値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7050</SortID>
+    </Field>
+    <Field Def="f32 meleeAttackCamDistanceRange = 50">
+      <DisplayName>【カメラ】格闘攻撃カメラの有効距離[m]</DisplayName>
+      <Description>ロックターゲットとの距離がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 meleeAttackCamAngleRangeHorizontal = 90">
+      <DisplayName>【カメラ】格闘攻撃カメラの有効角度（水平）[deg]</DisplayName>
+      <Description>ロックターゲットとの水平方向角度がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 meleeAttackCamAngleRangeVertical = 45">
+      <DisplayName>【カメラ】格闘攻撃カメラの有効角度（垂直）[deg]</DisplayName>
+      <Description>ロックターゲットとの垂直方向角度がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>1</Increment>
+      <SortID>7330</SortID>
+    </Field>
+    <Field Def="f32 coreChargeEnemyDamageDist">
+      <DisplayName>【コア特殊機能】近距離でダメージを与えたと判定する距離[m]</DisplayName>
+      <Description>コア特殊機能のチャージで敵にダメージを与えたときに有効な距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8500</SortID>
+    </Field>
+    <Field Def="s32 coreChargeEnemyDamageSpEffectId = -1">
+      <DisplayName>【コア特殊機能】近距離でダメージを与えたときにかかる特殊効果ID</DisplayName>
+      <Description>コア特殊機能のチャージで敵にダメージを与えたときにかける特殊効果</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>8501</SortID>
+    </Field>
+    <Field Def="f32 coreChargeEnemyDeadDist">
+      <DisplayName>【コア特殊機能】近距離で撃破したと判定する距離[m]</DisplayName>
+      <Description>コア特殊機能のチャージで敵を倒したときに有効な距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8502</SortID>
+    </Field>
+    <Field Def="s32 coreChargeEnemyDeadSpEffectId = -1">
+      <DisplayName>【コア特殊機能】近距離で撃破したときにかかる特殊効果ID</DisplayName>
+      <Description>コア特殊機能のチャージで敵に倒したときにかける特殊効果</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>8503</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Curse1_Player">
+      <DisplayName>プレイヤー耐性値回復量_呪1[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_呪1[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Curse2_Player">
+      <DisplayName>プレイヤー耐性値回復量_呪2[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_呪2[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9110</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Burn_Player">
+      <DisplayName>プレイヤー耐性値回復量_炎上[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_炎上[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9120</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Stun_Player">
+      <DisplayName>プレイヤー耐性値回復量_スタン[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_スタン[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9130</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_HighPlasma_Player">
+      <DisplayName>プレイヤー耐性値回復量_強プラズマ[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_強プラズマ[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9140</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_DepletedUraniumToxic_Player">
+      <DisplayName>プレイヤー耐性値回復量_劣化ウラン毒[point/s]</DisplayName>
+      <Description>プレイヤー耐性値回復量_劣化ウラン毒[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9150</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Curse1_Enemy">
+      <DisplayName>エネミー耐性値回復量_呪1[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_呪1[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Curse2_Enemy">
+      <DisplayName>エネミー耐性値回復量_呪2[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_呪2[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9210</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Burn_Enemy">
+      <DisplayName>エネミー耐性値回復量_炎上[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_炎上[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9220</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_Stun_Enemy">
+      <DisplayName>エネミー耐性値回復量_スタン[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_スタン[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9230</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_HighPlasma_Enemy">
+      <DisplayName>エネミー耐性値回復量_強プラズマ[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_強プラズマ[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9240</SortID>
+    </Field>
+    <Field Def="f32 resistRecoverPoint_DepletedUraniumToxic_Enemy">
+      <DisplayName>エネミー耐性値回復量_劣化ウラン毒[point/s]</DisplayName>
+      <Description>エネミー耐性値回復量_劣化ウラン毒[point/s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9250</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_110[16]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 purge_FadeOutTime">
+      <DisplayName>【パージ】フェードアウト時間時間[s]</DisplayName>
+      <Description>パージした後のパーツがフェードアウトを開始してから完全に消えるまでの時間[s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9300</SortID>
+    </Field>
+    <Field Def="f32 purge_FadeOutBeginTime">
+      <DisplayName>【パージ】フェードアウト開始時間[s]</DisplayName>
+      <Description>パージした後のフェードアウトを開始するまでの時間[s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9301</SortID>
+    </Field>
+    <Field Def="f32 purge_FadeOutDist">
+      <DisplayName>【パージ】フェードアウト開始距離[m]</DisplayName>
+      <Description>パージした後の挙動が安定してからフェードアウトを開始するまでのプレイヤーとの距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9302</SortID>
+    </Field>
+    <Field Def="f32 magazine_FadeOutTime">
+      <DisplayName>【マガジン】フェードアウト時間時間[s]</DisplayName>
+      <Description>マガジンを排出した後のマガジンがフェードアウトを開始してから完全に消えるまでの時間[s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9303</SortID>
+    </Field>
+    <Field Def="f32 magazine_FadeOutBeginTime">
+      <DisplayName>【マガジン】フェードアウト開始時間[s]</DisplayName>
+      <Description>マガジンを排出した後のフェードアウトを開始するまでの時間[s]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9304</SortID>
+    </Field>
+    <Field Def="f32 magazine_FadeOutDist">
+      <DisplayName>【マガジン】フェードアウト開始距離[m]</DisplayName>
+      <Description>マガジンを排出した後の挙動が安定してからフェードアウトを開始するまでのプレイヤーとの距離[m]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9305</SortID>
+    </Field>
+    <Field Def="f32 quickCameraTurnRequestMinInputThreshold = 0.5">
+      <DisplayName>【カメラ】クイックカメラターンのために右スティック入力の最小値（0.0～1.0）</DisplayName>
+      <Description>クイックカメラターンになるために右スティック入力は一瞬でもこの値以上になる必要がある</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>888</SortID>
+    </Field>
+    <Field Def="f32 quickCameraTurnShortTimeThreshold = 0.3">
+      <DisplayName>【カメラ】クイックカメラターンの（スティック）最大入力時間[sec]</DisplayName>
+      <Description>右スティックを押し倒し始めてから放して０まで戻る間の時間がこの値以下になる場合のみ、クイックカメラターンが発動する</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>888</SortID>
+    </Field>
+    <Field Def="f32 quickCameraTurnRotateLerpRate = 0.5">
+      <DisplayName>【カメラ】クイックカメラターン回転補間率（0.0～1.0）</DisplayName>
+      <Description>クイックカメラターン旋回時の補間率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>888</SortID>
+    </Field>
+    <Field Def="f32 AutoPullCamIfPlayerOutOfScreenMarginVertical = 0.2">
+      <DisplayName>【カメラ】自機が画面外に出る際カメラ自動引きのマージン(0.0～1.0)(垂直)</DisplayName>
+      <Description>0.0：自機がギリギリ画面の辺界に止まるようにカメラが引く；1.0：自機が画面中央に止まるようにカメラが引く</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>886</SortID>
+    </Field>
+    <Field Def="s16 quickCameraTurnInputRange = 90">
+      <DisplayName>【カメラ】クイックカメラターンの入力受付角度[deg]</DisplayName>
+      <Description>クイックカメラターンとして認識できる右スティックの入力方向範囲。下方向を中心に左右両方へ広がる。</Description>
+      <Minimum>1</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>888</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_111[2]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 asm_AjustMinHeightObjA">
+      <DisplayName>【アセンブリ】肩武器の第一高さ調節のスライド量下限[m]</DisplayName>
+      <Description>肩武器装備時の高さ調整する最初の関節の稼働下限</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8610</SortID>
+    </Field>
+    <Field Def="f32 asm_AjustMaxHeightObjA = 1.4">
+      <DisplayName>【アセンブリ】肩武器の第一高さ調節のスライド量上限[m]</DisplayName>
+      <Description>肩武器装備時の高さ調整する最初の関節の稼働上限</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="f32 repair_effectTime = 2">
+      <DisplayName>【リペア】演出時間[s]</DisplayName>
+      <Description>回復演出時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9400</SortID>
+    </Field>
+    <Field Def="f32 repair_fadeTime = 0.2">
+      <DisplayName>【リペア】フェードイン・アウト時間[s]</DisplayName>
+      <Description>回復演出する際のフェード時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9401</SortID>
+    </Field>
+    <Field Def="f32 repair_lineEffectTime = 0.8">
+      <DisplayName>【リペア】走査線の下から上に行くまでの時間[s]</DisplayName>
+      <Description>回復演出する際の走査線の下から上に行くまでの時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9402</SortID>
+    </Field>
+    <Field Def="f32 repair_lineAlpha = 0.8">
+      <DisplayName>【リペア】走査線の表示強度</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>32</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9403</SortID>
+    </Field>
+    <Field Def="f32 repair_dispRange = 1">
+      <DisplayName>【リペア】走査線の表示範囲[m]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9404</SortID>
+    </Field>
+    <Field Def="f32 repair_UVScaleU = 1">
+      <DisplayName>【リペア】走査線のUVスケールU</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9406</SortID>
+    </Field>
+    <Field Def="f32 repair_UVScaleV = 1">
+      <DisplayName>【リペア】走査線のUVスケールV</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9407</SortID>
+    </Field>
+    <Field Def="f32 repair_UVScrollSpeedU = 1">
+      <DisplayName>【リペア】走査線のUVスクロール速度U</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9408</SortID>
+    </Field>
+    <Field Def="f32 repair_UVScrollSpeedV = 1">
+      <DisplayName>【リペア】走査線のUVスクロール速度V</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9409</SortID>
+    </Field>
+    <Field Def="f32 repair_dispFadeRange = 2">
+      <DisplayName>【リペア】走査線のフェード幅[m]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9405</SortID>
+    </Field>
+    <Field Def="f32 fallOutInvincibleTime = 2">
+      <DisplayName>落下復帰後無敵時間[s]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10001</SortID>
+    </Field>
+    <Field Def="f32 onlieArenaRespawnInvincibleTime = 2">
+      <DisplayName>マルチリスポーン後無敵時間[s]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10002</SortID>
+    </Field>
+    <Field Def="f32 camFade_playerModelTargetAlpha = 0.2">
+      <DisplayName>【カメラフェード】ディザ強度</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10100</SortID>
+    </Field>
+    <Field Def="f32 camFade_playerFadeDist = 18">
+      <DisplayName>【カメラフェード】カメラ距離</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10101</SortID>
+    </Field>
+    <Field Def="f32 asm_DamageVisualScale = 1">
+      <DisplayName>【ダメージ表現】ダメージ割合スケール</DisplayName>
+      <Description>減ったHP割合に対してのスケール値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10200</SortID>
+    </Field>
+    <Field Def="f32 tank_RollMaxPerSec = 5">
+      <DisplayName>【タンク】１秒間に追従できる左右傾き最大角度</DisplayName>
+      <Description>１秒間での左右への最大傾き角度</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6010</SortID>
+    </Field>
+    <Field Def="f32 tank_FrontUpMaxPerSec = 75">
+      <DisplayName>【タンク】１秒間に前方が上に上がるときの追従できる傾き最大角度</DisplayName>
+      <Description>１秒間での上への最大傾き角度</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6011</SortID>
+    </Field>
+    <Field Def="f32 tank_FrontDownMaxPerSec = 45">
+      <DisplayName>【タンク】１秒間に前方が下に下がるときの追従できる傾き最大角度</DisplayName>
+      <Description>１秒間での下への最大傾き角度</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6012</SortID>
+    </Field>
+    <Field Def="u8 tank_NormalAvgFrame = 10">
+      <DisplayName>【タンク】法線の平均化フレーム</DisplayName>
+      <Description>傾き計算に使用する法線の平均化するフレーム数</Description>
+      <Minimum>1</Minimum>
+      <Maximum>30</Maximum>
+      <SortID>6013</SortID>
+    </Field>
+    <Field Def="u8 respawn_LineColorR = 255">
+      <DisplayName>【リスポン】走査線色[R]</DisplayName>
+      <SortID>9410</SortID>
+    </Field>
+    <Field Def="u8 respawn_LineColorG = 255">
+      <DisplayName>【リスポン】走査線色[G]</DisplayName>
+      <SortID>9411</SortID>
+    </Field>
+    <Field Def="u8 respawn_LineColorB = 255">
+      <DisplayName>【リスポン】走査線色[B]</DisplayName>
+      <SortID>9412</SortID>
+    </Field>
+    <Field Def="f32 respawn_fadeTime = 0.2">
+      <DisplayName>【リスポン】フェードイン・アウト時間[s]</DisplayName>
+      <Description>リスポン演出する際のフェード時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9421</SortID>
+    </Field>
+    <Field Def="f32 respawn_lineEffectTime = 0.8">
+      <DisplayName>【リスポン】走査線の下から上に行くまでの時間[s]</DisplayName>
+      <Description>リスポン演出する際の走査線の下から上に行くまでの時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9422</SortID>
+    </Field>
+    <Field Def="f32 respawn_lineAlpha = 0.8">
+      <DisplayName>【リスポン】走査線の表示強度</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>32</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9423</SortID>
+    </Field>
+    <Field Def="f32 respawn_dispRange = 1">
+      <DisplayName>【リスポン】走査線の表示範囲[m]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9424</SortID>
+    </Field>
+    <Field Def="f32 respawn_UVScaleU = 1">
+      <DisplayName>【リスポン】走査線のUVスケールU</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9426</SortID>
+    </Field>
+    <Field Def="f32 respawn_UVScaleV = 1">
+      <DisplayName>【リスポン】走査線のUVスケールV</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9427</SortID>
+    </Field>
+    <Field Def="f32 respawn_UVScrollSpeedU = 1">
+      <DisplayName>【リスポン】走査線のUVスクロール速度U</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9428</SortID>
+    </Field>
+    <Field Def="f32 respawn_UVScrollSpeedV = 1">
+      <DisplayName>【リスポン】走査線のUVスクロール速度V</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9429</SortID>
+    </Field>
+    <Field Def="f32 respawn_dispFadeRange = 2">
+      <DisplayName>【リスポン】走査線のフェード幅[m]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9425</SortID>
+    </Field>
+    <Field Def="f32 fallOutSpEffectDelayTime">
+      <DisplayName>落下復帰時特殊効果（テキスト演出）ディレイ[s]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    
+    <Field Def="f32 unk_0x6fc" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x700" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x704" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x708" FirstVersion="10810030" />
+    
+    <Field Def="dummy8 reserve_999[308]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,395 @@
+{
+  "Name": "MixcraftMagicParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "[FFF] Pure Fire - Whirlwind of Flame"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "[MMM] Pure Magic - Encircling Magic"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "[LLL] Pure Lightning - Lightning Step"
+      ]
+    },
+    {
+      "ID": 80030,
+      "Entries": [
+        "[HHH] Pure Holy - Divine Protection"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "[FFM] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80101,
+      "Entries": [
+        "[FMM] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80102,
+      "Entries": [
+        "[FMF] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80103,
+      "Entries": [
+        "[MMF] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80104,
+      "Entries": [
+        "[MFF] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80105,
+      "Entries": [
+        "[MFM] Magic/Fire - Wraith Flame"
+      ]
+    },
+    {
+      "ID": 80110,
+      "Entries": [
+        "[FFL] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80111,
+      "Entries": [
+        "[FLL] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80112,
+      "Entries": [
+        "[FLF] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80113,
+      "Entries": [
+        "[LLF] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80114,
+      "Entries": [
+        "[LFF] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80115,
+      "Entries": [
+        "[LML] Fire/Lightning - Flamebolt"
+      ]
+    },
+    {
+      "ID": 80120,
+      "Entries": [
+        "[FFH] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80121,
+      "Entries": [
+        "[FHH] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80122,
+      "Entries": [
+        "[FHF] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80123,
+      "Entries": [
+        "[HHF] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80124,
+      "Entries": [
+        "[HFF] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80125,
+      "Entries": [
+        "[HFH] Fire/Holy - Warm Torch"
+      ]
+    },
+    {
+      "ID": 80130,
+      "Entries": [
+        "[MML] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80131,
+      "Entries": [
+        "[MLL] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80132,
+      "Entries": [
+        "[MLM] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80133,
+      "Entries": [
+        "[LLM] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80134,
+      "Entries": [
+        "[LMM] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80135,
+      "Entries": [
+        "[LML] Magic/Lightning - Magic Blade"
+      ]
+    },
+    {
+      "ID": 80140,
+      "Entries": [
+        "[MMH] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80141,
+      "Entries": [
+        "[MHH] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80142,
+      "Entries": [
+        "[MHM] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80143,
+      "Entries": [
+        "[HHM] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80144,
+      "Entries": [
+        "[HMM] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80145,
+      "Entries": [
+        "[HMH] Magic/Holy - Magic Veil"
+      ]
+    },
+    {
+      "ID": 80150,
+      "Entries": [
+        "[LLH] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80151,
+      "Entries": [
+        "[LHH] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80152,
+      "Entries": [
+        "[LHL] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80153,
+      "Entries": [
+        "[HHL] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80154,
+      "Entries": [
+        "[HLL] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80155,
+      "Entries": [
+        "[HLH] Lightning/Holy - Lightning Parry"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "[FML] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80201,
+      "Entries": [
+        "[FLM] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80202,
+      "Entries": [
+        "[MFL] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80203,
+      "Entries": [
+        "[MLF] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80204,
+      "Entries": [
+        "[LFM] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80205,
+      "Entries": [
+        "[LMF] Magic/Fire/Lightning - Gravity Orb"
+      ]
+    },
+    {
+      "ID": 80210,
+      "Entries": [
+        "[FMH] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80211,
+      "Entries": [
+        "[FHM] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80212,
+      "Entries": [
+        "[MFH] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80213,
+      "Entries": [
+        "[MHF] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80214,
+      "Entries": [
+        "[HFM] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80215,
+      "Entries": [
+        "[HMF] Magic/Fire/Holy - Affinity Breath"
+      ]
+    },
+    {
+      "ID": 80220,
+      "Entries": [
+        "[FLH] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80221,
+      "Entries": [
+        "[FHL] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80222,
+      "Entries": [
+        "[LFH] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80223,
+      "Entries": [
+        "[LHF] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80224,
+      "Entries": [
+        "[HFL] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80225,
+      "Entries": [
+        "[HLF] Fire/Lightning/Holy - Lightning Rod"
+      ]
+    },
+    {
+      "ID": 80230,
+      "Entries": [
+        "[MLH] Magic/Lightning/Holy - Cold Storm"
+      ]
+    },
+    {
+      "ID": 80231,
+      "Entries": [
+        "[MHL] Magic/Lightning/Holy - Cold Storm"
+      ]
+    },
+    {
+      "ID": 80232,
+      "Entries": [
+        "[LMH] Magic/Lightning/Holy - Cold Storm"
+      ]
+    },
+    {
+      "ID": 80233,
+      "Entries": [
+        "[LHM] Magic/Lightning/Holy - Cold Storm"
+      ]
+    },
+    {
+      "ID": 80234,
+      "Entries": [
+        "[HML] Magic/Lightning/Holy - Cold Storm"
+      ]
+    },
+    {
+      "ID": 80235,
+      "Entries": [
+        "[HLM] Magic/Lightning/Holy - Cold Storm"
+      ]
+    }
+  ]
+}

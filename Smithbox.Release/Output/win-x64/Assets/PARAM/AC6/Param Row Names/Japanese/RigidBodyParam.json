@@ -1,0 +1,107 @@
+{
+  "Name": "RigidBodyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For medium-sized aircraft -- 中型機体用"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For large aircraft -- 大型機体用"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For super large aircraft -- 超大型機体用"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For small assets -- 小アセット用"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For medium assets -- 中アセット用"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "For large assets -- 大アセット用"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Large asset_for tanks -- 大アセット_タンク用"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "For extra large assets -- 特大アセット用"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "huge fuel tank -- 巨大燃料タンク"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "physical test -- 物理テスト"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "physics test 2 -- 物理テスト2"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "For leaving atari -- アタリ残す用"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "For large assets_test -- 大アセット用_テスト"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "mass is 0 -- 質量が0"
+      ]
+    },
+    {
+      "ID": 853001,
+      "Entries": [
+        "c8530: for bit -- c8530：ビット用"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "9200 Reverse joint Body (Nakanishi test -- 9200 逆関節 Body(中西テスト"
+      ]
+    }
+  ]
+}

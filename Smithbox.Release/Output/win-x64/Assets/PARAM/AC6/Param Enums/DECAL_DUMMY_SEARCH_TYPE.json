@@ -1,0 +1,38 @@
+{
+  "Key": "DECAL_DUMMY_SEARCH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_DUMMY_SEARCH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left-hand Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right-hand Weapon"
+        }
+      ]
+    }
+  ]
+}

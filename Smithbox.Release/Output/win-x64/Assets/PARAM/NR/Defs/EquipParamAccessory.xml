@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>EQUIP_PARAM_ACCESSORY_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="f32 weight"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 sellValue"/>
+    <Field Def="s32 sortId"/>
+    <Field Def="s16 iconId"/>
+    <Field Def="s16 unknown_2"/>
+    <Field Def="s16 accessoryGroup"/>
+    <Field Def="u8 unknown_3"/>
+    <Field Def="u8 rarity"/>
+    <Field Def="u8 sortGroupId"/>
+    <Field Def="s8 unknown_4"/>
+    <Field Def="u8 unknown_5a:1"/> <!-- 1 for all used talismans-->
+	<Field Def="u8 unknown_5b:1"/>
+	<Field Def="u8 isDrop:1"/>
+	<Field Def="u8 unknown_5d:1"/>
+	<Field Def="u8 unknown_5e:1"/>
+	<Field Def="u8 unknown_5f:1"/>
+	<Field Def="u8 unknown_5g:1"/>
+	<Field Def="u8 enableVisualCodex:1"/>
+    <Field Def="u8 unknown_6"/>
+    <Field Def="s32 spEffectId_1"/>
+    <Field Def="s32 spEffectId_2"/>
+    <Field Def="s32 spEffectId_3"/>
+    
+    <Field Def="dummy8 endPadding[20]"/>
+  </Fields>
+</PARAMDEF>

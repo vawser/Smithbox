@@ -1,0 +1,3383 @@
+{
+  "Param": "NPC_PARAM_ST",
+  "Type": "NPC_PARAM_ST",
+  "Name": "NPC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "enAutoRecoveryControlParamID",
+      "Name": "EN自然回復制御パラメータID",
+      "Description": "スタミナ制御パラメータのIDと紐づく"
+    },
+    {
+      "Field": "deadMoveForceRate",
+      "Name": "死体ラグドールのフォースの影響率",
+      "Description": "死体ラグドールのフォースの影響率"
+    },
+    {
+      "Field": "nameId",
+      "Name": "NPC名ID",
+      "Description": "NPC名メッセージパラメータ用ID"
+    },
+    {
+      "Field": "behaviorVariationId",
+      "Name": "行動バリエーションID",
+      "Description": "行動バリエーションのためのID"
+    },
+    {
+      "Field": "hitHeight",
+      "Name": "対マップあたりの高さ[m]",
+      "Description": "対キャラ当たりカプセルの高さ."
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "対マップあたりの半径[m]",
+      "Description": "対キャラ当たりカプセルの半径."
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量."
+    },
+    {
+      "Field": "hitYOffset",
+      "Name": "表示位置Yオフセット[m]",
+      "Description": "モデル表示位置のY（高さ）方向のオフセット。あたり位置より浮かせることができる。"
+    },
+    {
+      "Field": "hp",
+      "Name": "ＨＰ",
+      "Description": "死亡猶予."
+    },
+    {
+      "Field": "mp",
+      "Name": "ＭＰ",
+      "Description": "魔法使用量."
+    },
+    {
+      "Field": "defeatScore",
+      "Name": "撃破スコア",
+      "Description": "死亡時に、キャラクターが取得できるソウル量."
+    },
+    {
+      "Field": "itemLotId_1",
+      "Name": "アイテム抽選ID_1",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "itemLotId_2",
+      "Name": "アイテム抽選ID_2",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "itemLotId_3",
+      "Name": "アイテム抽選ID_3",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "itemLotId_4",
+      "Name": "アイテム抽選ID_4",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "itemLotId_5",
+      "Name": "アイテム抽選ID_5",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "itemLotId_6",
+      "Name": "アイテム抽選ID_6",
+      "Description": "死亡時に取得するアイテムの抽選IDを指定"
+    },
+    {
+      "Field": "humanityLotId",
+      "Name": "人間性抽選ID",
+      "Description": "死亡時に取得する人間性の抽選IDを指定"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "常駐特殊効果0",
+      "Description": "常駐特殊効果0"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "常駐特殊効果1",
+      "Description": "常駐特殊効果1"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "常駐特殊効果2",
+      "Description": "常駐特殊効果2"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "常駐特殊効果3",
+      "Description": "常駐特殊効果3"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "常駐特殊効果4",
+      "Description": "常駐特殊効果4"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "常駐特殊効果5",
+      "Description": "常駐特殊効果5"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "常駐特殊効果6",
+      "Description": "常駐特殊効果6"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "常駐特殊効果7",
+      "Description": "常駐特殊効果7"
+    },
+    {
+      "Field": "GameClearSpEffectID",
+      "Name": "周回ボーナス用特殊効果ＩＤ",
+      "Description": "周回ボーナス用特殊効果ＩＤ"
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "実弾攻撃カット率_ガード中[％]",
+      "Description": "ガード時のダメージカット率を各攻撃ごとに設定"
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "EN攻撃カット率_ガード中[％]",
+      "Description": "ガード攻撃でない場合は、0を入れる"
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "爆発/燃焼攻撃力カット率_ガード中[％]",
+      "Description": "爆発/燃焼攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "thunGuardCutRate",
+      "Name": "コーラル攻撃力カット率_ガード中[％]",
+      "Description": "コーラル攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "アニメIDオフセット1",
+      "Description": "すべてのアニメをこの数だけずらしたIDで再生します。なければ元のアニメIDを参照します。"
+    },
+    {
+      "Field": "moveAnimId",
+      "Name": "移動アニメパラメータID",
+      "Description": "移動アニメパラメータ参照ID"
+    },
+    {
+      "Field": "spMoveAnimId1",
+      "Name": "特殊移動アニメパラメータID0",
+      "Description": "特殊移動アニメパラメータ参照ID"
+    },
+    {
+      "Field": "spMoveAnimId2",
+      "Name": "特殊移動アニメパラメータID1",
+      "Description": "特殊移動アニメパラメータ参照ID"
+    },
+    {
+      "Field": "networkWarpDist",
+      "Name": "ネットワークワープ判定距離[m/秒]",
+      "Description": "ネットワークの同期で、補完移動でなくワープさせる距離。スピードの速い人（exドラゴン)は長めにしてあげる必要がある。"
+    },
+    {
+      "Field": "dbgBehaviorR1",
+      "Name": "R1",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorL1",
+      "Name": "L1",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorR2",
+      "Name": "R2",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorL2",
+      "Name": "L2",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRL",
+      "Name": "□",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRR",
+      "Name": "○",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRD",
+      "Name": "×",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRU",
+      "Name": "△",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLL",
+      "Name": "←",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLR",
+      "Name": "→",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLD",
+      "Name": "↓",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLU",
+      "Name": "↑",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "animIdOffset2",
+      "Name": "アニメIDオフセット2",
+      "Description": "すべてのアニメをこの数だけずらしたIDで再生します。なければアニメIDオフセット1のアニメIDを参照します。"
+    },
+    {
+      "Field": "partsDamageRate1",
+      "Name": "ダメージグループ1ダメージ倍率",
+      "Description": "部位1に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate2",
+      "Name": "ダメージグループ2ダメージ倍率",
+      "Description": "部位2に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate3",
+      "Name": "ダメージグループ3ダメージ倍率",
+      "Description": "部位3に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate4",
+      "Name": "ダメージグループ4ダメージ倍率",
+      "Description": "部位4に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate5",
+      "Name": "ダメージグループ5ダメージ倍率",
+      "Description": "部位5に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate6",
+      "Name": "ダメージグループ6ダメージ倍率",
+      "Description": "部位6に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate7",
+      "Name": "ダメージグループ7ダメージ倍率",
+      "Description": "部位7に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate8",
+      "Name": "ダメージグループ8ダメージ倍率",
+      "Description": "部位8に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "weakPartsDamageRate",
+      "Name": "弱点部位ダメージ倍率",
+      "Description": "弱点部位に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "superArmorRecoverCorrection",
+      "Name": "SA回復時間補正値",
+      "Description": "スーパーアーマー回復時間用の補正値"
+    },
+    {
+      "Field": "superArmorBrakeKnockbackDist",
+      "Name": "SAブレイク時ノックバック距離",
+      "Description": "SAブレイクの時だけに使えるノックバック距離"
+    },
+    {
+      "Field": "stamina",
+      "Name": "スタミナ",
+      "Description": "スタミナ総量."
+    },
+    {
+      "Field": "staminaRecoverBaseVel",
+      "Name": "スタミナ回復基本速度[point/s]",
+      "Description": "スタミナ回復基本速度[point/s]"
+    },
+    {
+      "Field": "def_phys",
+      "Name": "実弾防御力",
+      "Description": "実弾攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_slash",
+      "Name": "斬撃防御力[％]",
+      "Description": "攻撃属性を見て、斬撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_blow",
+      "Name": "打撃防御力[％]",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_thrust",
+      "Name": "刺突防御力[％]",
+      "Description": "攻撃属性を見て、刺突属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_mag",
+      "Name": "EN防御力",
+      "Description": "EN攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_fire",
+      "Name": "爆発/燃焼防御力",
+      "Description": "爆発/燃焼攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_thunder",
+      "Name": "コーラル防御力",
+      "Description": "コーラル攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "はじき防御力",
+      "Description": "敵の攻撃のはじき判定に使用。//ガード以外の通常攻撃でもはじけるようにするためのものです.//硬い表皮の敵は、何もしなくてもはじかれることがある…みたいな感じ通常の敵なら関係ないです."
+    },
+    {
+      "Field": "resist_burn",
+      "Name": "炎上耐性",
+      "Description": "炎上状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_stun",
+      "Name": "スタン耐性",
+      "Description": "スタン状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_highPlasma",
+      "Name": "強プラズマ耐性",
+      "Description": "強プラズマ状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_curse",
+      "Name": "呪耐性",
+      "Description": "呪状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "ghostModelId",
+      "Name": "徘徊ゴースト時差し替えモデルID",
+      "Description": "徘徊ゴースト化したときの差し替えモデル、テクスチャID"
+    },
+    {
+      "Field": "normalChangeResouceId",
+      "Name": "通常時差し替えリソースID",
+      "Description": "通常時のリソースID差し替え（むやみに使わないこと）"
+    },
+    {
+      "Field": "guardAngle",
+      "Name": "ガード範囲[deg]",
+      "Description": "武器のガード時の防御発生範囲角度.保留中"
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "斬撃攻撃カット率_ガード中[％]",
+      "Description": "攻撃タイプを見て、斬撃属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "打撃攻撃カット率_ガード中[％]",
+      "Description": "攻撃タイプを見て、打撃属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "刺突攻撃カット率_ガード中[％]",
+      "Description": "攻撃タイプを見て、刺突属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "superArmorDurability",
+      "Name": "SA耐久力",
+      "Description": "スーパーアーマー耐久値"
+    },
+    {
+      "Field": "normalChangeTexChrId",
+      "Name": "通常時差し替えテクスチャキャラID",
+      "Description": "通常時差し替えテクスチャキャラID（むやみに使わないこと）"
+    },
+    {
+      "Field": "dropType",
+      "Name": "ドロップアイテムの表示形式",
+      "Description": "アイテムドロップ時の表示方法(死体発光orアイテム表示)"
+    },
+    {
+      "Field": "isFloorActivateWait",
+      "Name": "床判定によるキャラ無効化の対象とするか",
+      "Description": "床判定によるキャラ無効化の対象とする.以前は移動タイプ「飛行」ならばfalseだったが明示的にNPCパラで設定するように"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "ノックバックパラメータID",
+      "Description": "ノックバック時に使用するパラメータIDを設定"
+    },
+    {
+      "Field": "fallDamageDump",
+      "Name": "落下ダメージ軽減補正[％]",
+      "Description": "落下ダメージ軽減補正[％]"
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "スタミナ攻撃カット率_ガード中[％]",
+      "Description": "ガード成功時に、敵のスタミナ攻撃に対する防御力"
+    },
+    {
+      "Field": "pcAttrB",
+      "Name": "PC-黒",
+      "Description": "QWC変化量\u3000PC属性値黒"
+    },
+    {
+      "Field": "pcAttrW",
+      "Name": "PC-白",
+      "Description": "QWC変化量\u3000PC属性値白"
+    },
+    {
+      "Field": "pcAttrL",
+      "Name": "PC-左",
+      "Description": "QWC変化量\u3000PC属性値左"
+    },
+    {
+      "Field": "pcAttrR",
+      "Name": "PC-右",
+      "Description": "QWC変化量\u3000PC属性値右"
+    },
+    {
+      "Field": "areaAttrB",
+      "Name": "エリア-黒",
+      "Description": "QWC変化量\u3000エリア属性値黒"
+    },
+    {
+      "Field": "areaAttrW",
+      "Name": "エリア-白",
+      "Description": "QWC変化量\u3000エリア属性値白"
+    },
+    {
+      "Field": "areaAttrL",
+      "Name": "エリア-左",
+      "Description": "QWC変化量\u3000エリア属性値左"
+    },
+    {
+      "Field": "areaAttrR",
+      "Name": "エリア-右",
+      "Description": "QWC変化量\u3000エリア属性値右"
+    },
+    {
+      "Field": "mpRecoverBaseVel",
+      "Name": "MP回復基本速度[％/s]",
+      "Description": "MP回復基本速度[％/s]"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "はじき時ダメージ減衰率[%]",
+      "Description": "攻撃をはじいた時にダメージを減衰する値を設定"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "デフォルトLODパラムID",
+      "Description": "デフォルトLODパラムID(-1：なし)"
+    },
+    {
+      "Field": "drawType",
+      "Name": "描画タイプ",
+      "Description": "描画タイプ"
+    },
+    {
+      "Field": "npcType",
+      "Name": "NPCタイプ",
+      "Description": "NPCの種類.ザコ敵/ボス敵が区別されていればOK"
+    },
+    {
+      "Field": "teamType",
+      "Name": "チームタイプ",
+      "Description": "NPCの攻撃が当たる/当たらない、狙う/狙わない設定"
+    },
+    {
+      "Field": "moveType",
+      "Name": "移動タイプ",
+      "Description": "移動方法。これにより制御が変更される。AIの移動方法や空中アクティベート条件に接地判定するかどうかなど"
+    },
+    {
+      "Field": "lockDist",
+      "Name": "ロック距離",
+      "Description": "ロックオンできる距離[m]"
+    },
+    {
+      "Field": "materialSe_Weak1",
+      "Name": "弱点防御材質1【SE】",
+      "Description": "弱点部位ダメージを受けた時に鳴らすSEを判定する。1"
+    },
+    {
+      "Field": "materialSfx_Weak1",
+      "Name": "弱点防御材質1【SFX】",
+      "Description": "弱点部位ダメージを受けた時に発生するSFXを判定する。1"
+    },
+    {
+      "Field": "partsDamageType",
+      "Name": "部位ダメージ適用攻撃",
+      "Description": "部位ダメージを適用する攻撃タイプを設定する"
+    },
+    {
+      "Field": "forwardUndulationLimit",
+      "Name": "起伏にあわせる最大前後角度",
+      "Description": "起伏に前後の角度を合わせる場合の上限角度。全長が長い場合には低めに設定したほうがよいです。(FootIKがある場合はFootIKの値が使われます)"
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "ガードレベル",
+      "Description": "ガードしたとき、敵の攻撃をどのガードモーションで受けるか？を決める"
+    },
+    {
+      "Field": "burnSfxType",
+      "Name": "燃焼SFXタイプ",
+      "Description": "燃焼時のSFXタイプ"
+    },
+    {
+      "Field": "burnGuardResist",
+      "Name": "炎上耐性カット率_ガード中[％]",
+      "Description": "炎上にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "stunGuardResist",
+      "Name": "スタン攻撃カット率_ガード中[％]",
+      "Description": "スタンにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "highPlasmaGuardResist",
+      "Name": "強プラズマ攻撃カット率_ガード中[％]",
+      "Description": "強プラズマにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "curseGuardResist",
+      "Name": "呪攻撃カット率[％]",
+      "Description": "呪にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "parryAttack",
+      "Name": "パリィ攻撃力",
+      "Description": "パリィ攻撃力。パリィする側が使用"
+    },
+    {
+      "Field": "parryDefence",
+      "Name": "パリィ防御力",
+      "Description": "パリィ防御力。パリィされる側が使用。"
+    },
+    {
+      "Field": "sfxSize",
+      "Name": "SFXサイズ",
+      "Description": "SFXサイズ"
+    },
+    {
+      "Field": "pushOutCamRegionRadius",
+      "Name": "カメラ押し出し領域半径[m]",
+      "Description": "カメラ押し出し領域半径[m]"
+    },
+    {
+      "Field": "hitStopType",
+      "Name": "ヒットストップするか",
+      "Description": "ヒットストップ処理を行うかどうかの設定"
+    },
+    {
+      "Field": "ladderEndChkOffsetTop",
+      "Name": "はしご上終端オフセット[1/10m]",
+      "Description": "はしご終端判定用オフセット上側"
+    },
+    {
+      "Field": "ladderEndChkOffsetLow",
+      "Name": "はしご下終端オフセット[1/10m]",
+      "Description": "はしご終端判定用オフセット下側"
+    },
+    {
+      "Field": "useRagdollCamHit",
+      "Name": "カメラヒットあたりラグドール",
+      "Description": "敵のラグドールにカメラがあたるか。(プレイヤにも当たるときのみ有効)"
+    },
+    {
+      "Field": "disableClothRigidHit",
+      "Name": "クロスリジッドヒットを無効",
+      "Description": "クロスリジッドが自分に当たらないようにしたければ○"
+    },
+    {
+      "Field": "useRagdoll",
+      "Name": "あたりラグドール",
+      "Description": "敵のラグドールにプレイヤーがあたるか。デカキャラだけはラグドールにもプレイヤーがあたるようにしたいので、この設定でオンオフ."
+    },
+    {
+      "Field": "isWeakA",
+      "Name": "特攻Aか",
+      "Description": "特攻Aか。特攻Aダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isGhost",
+      "Name": "霊体か",
+      "Description": "霊体か。ダメージ計算等が専用になります徘徊ゴーストと混同しないように注意"
+    },
+    {
+      "Field": "isNoDamageMotion",
+      "Name": "ダメージ0のときにダメージモーションなしか",
+      "Description": "ダメージ0のときにダメージモーションを再生しないか。"
+    },
+    {
+      "Field": "isUnduration",
+      "Name": "起伏に角度をあわせるか",
+      "Description": "キャラの前後回転を地面の起伏に合わせるか。飛行キャラの場合は使用不可"
+    },
+    {
+      "Field": "isChangeWanderGhost",
+      "Name": "徘徊ゴーストになるか",
+      "Description": "プレイヤーがクライアントのときに徘徊ゴーストになるか"
+    },
+    {
+      "Field": "modelDispMask0",
+      "Name": "モデル表示マスク0",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask1",
+      "Name": "モデル表示マスク1",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask2",
+      "Name": "モデル表示マスク2",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask3",
+      "Name": "モデル表示マスク3",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask4",
+      "Name": "モデル表示マスク4",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask5",
+      "Name": "モデル表示マスク5",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask6",
+      "Name": "モデル表示マスク6",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask7",
+      "Name": "モデル表示マスク7",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask8",
+      "Name": "モデル表示マスク8",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask9",
+      "Name": "モデル表示マスク9",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask10",
+      "Name": "モデル表示マスク10",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask11",
+      "Name": "モデル表示マスク11",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask12",
+      "Name": "モデル表示マスク12",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask13",
+      "Name": "モデル表示マスク13",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask14",
+      "Name": "モデル表示マスク14",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask15",
+      "Name": "モデル表示マスク15",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "isEnableNeckTurn",
+      "Name": "首振り有効にするか",
+      "Description": "パラムウィーバで設定された首振りを有効にするか。"
+    },
+    {
+      "Field": "disableRespawn",
+      "Name": "リスポン禁止か",
+      "Description": "リスポンを禁止するか"
+    },
+    {
+      "Field": "isMoveAnimWait",
+      "Name": "移動アニメを待つか",
+      "Description": "移動アニメをアニメが終わるまで再生するか。（カゲロウ龍の様に。）"
+    },
+    {
+      "Field": "isCrowd",
+      "Name": "群集用処理軽減するか",
+      "Description": "群集時の処理負荷軽減を行なうか。赤子用（できればファランクスも）"
+    },
+    {
+      "Field": "isWeakB",
+      "Name": "特攻Bか",
+      "Description": "特攻Bか。特攻Bダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakC",
+      "Name": "特攻Cか",
+      "Description": "特攻Cか。特攻Cダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakD",
+      "Name": "特攻Dか",
+      "Description": "特攻Dか。特攻Dダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "doesAlwaysUseSpecialTurn",
+      "Name": "常時特殊旋回するか",
+      "Description": "常時特殊旋回を実行するか(旋回移動先にナビメッシュがない場合も特殊旋回を継続実行します)"
+    },
+    {
+      "Field": "vowType",
+      "Name": "誓約",
+      "Description": "誓約タイプ(なし：０)"
+    },
+    {
+      "Field": "disableInitializeDead",
+      "Name": "初期死亡しない",
+      "Description": "初期死亡をしない場合にTRUE、殺してセーブしても死体再現されません。"
+    },
+    {
+      "Field": "isHitRumble",
+      "Name": "ヒット時振動するか",
+      "Description": "ヒット時振動をする場合TRUE。亡者など、普通のヒットストップと変えたいときにつかう。"
+    },
+    {
+      "Field": "isSmoothTurn",
+      "Name": "スムーズ旋回するか",
+      "Description": "ルート移動でのノード間旋回時、補間を行うか否か"
+    },
+    {
+      "Field": "isWeakE",
+      "Name": "特攻Eか",
+      "Description": "特攻Eか。特攻Eダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakF",
+      "Name": "特攻Fか",
+      "Description": "特攻Fか。特攻Fダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "modelDispMask16",
+      "Name": "モデル表示マスク16",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask17",
+      "Name": "モデル表示マスク17",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask18",
+      "Name": "モデル表示マスク18",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask19",
+      "Name": "モデル表示マスク19",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask20",
+      "Name": "モデル表示マスク20",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask21",
+      "Name": "モデル表示マスク21",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask22",
+      "Name": "モデル表示マスク22",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask23",
+      "Name": "モデル表示マスク23",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask24",
+      "Name": "モデル表示マスク24",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask25",
+      "Name": "モデル表示マスク25",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask26",
+      "Name": "モデル表示マスク26",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask27",
+      "Name": "モデル表示マスク27",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask28",
+      "Name": "モデル表示マスク28",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask29",
+      "Name": "モデル表示マスク29",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask30",
+      "Name": "モデル表示マスク30",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask31",
+      "Name": "モデル表示マスク31",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "itemSearchRadius",
+      "Name": "ドロップアイテム半径補正",
+      "Description": "通常のItem検索判定の円柱半径に、補正として足し合わせる半径(敵ドロップアイテムに適用。大きなキャラなどで使用する)"
+    },
+    {
+      "Field": "chrHitHeight",
+      "Name": "対キャラあたりの高さ[m]",
+      "Description": "対キャラ当たりカプセルの高さ."
+    },
+    {
+      "Field": "chrHitRadius",
+      "Name": "対キャラあたりの半径[m]",
+      "Description": "対キャラ当たりカプセルの半径."
+    },
+    {
+      "Field": "specialTurnType",
+      "Name": "特殊旋回のタイプ",
+      "Description": "特殊旋回のタイプ"
+    },
+    {
+      "Field": "bitPad3",
+      "Name": "bitPadding",
+      "Description": "ソウルはボス入手か"
+    },
+    {
+      "Field": "isBulletOwner_byObject",
+      "Name": "オブジェクト扱いの弾丸オーナか",
+      "Description": "弾丸のオーナーとなった場合、弾丸に関連するダメージ計算などをオブジェのものを適用するようにするフラグ。勢力別ダメージ補正で使用。"
+    },
+    {
+      "Field": "isUseLowHitFootIk",
+      "Name": "ロウヒットFootIKを使うか？",
+      "Description": "ロウヒット用のFootIkフィルターを使用するか"
+    },
+    {
+      "Field": "isNpcPlayerCalculatePvPDamage",
+      "Name": "NpcPlayerのときPvPのダメージ補正制御を適用するか",
+      "Description": "NpcPlayerのときにPvPダメージ計算時に「プレイヤー」としてダメージ計算するのかを決める。無効の場合は「敵」扱い。"
+    },
+    {
+      "Field": "isIntegrateRaycastCheckRoof",
+      "Name": "インテグレートレイキャストで天井の高さを見るか？",
+      "Description": "インテグレート（持ち上げ床判定）で30cm固定持ち上げではなく、天井が低いことを考慮して天井の高さを求めてから持ち上げ判定を行うようにするフラグ。処理負荷の増加に注意"
+    },
+    {
+      "Field": "isDisableIntegrateWithRaycast",
+      "Name": "持ち上げ/吸着処理を無効にするか？",
+      "Description": "持ち上げ/吸着処理を無効化するか、無効化すると1.5mの段差乗り上げが機能しないがカプセル移動でほぼほぼ問題ないはず、有効な状態だと吸着処理でマップ抜けすることがある模様"
+    },
+    {
+      "Field": "isHugeEnemy",
+      "Name": "巨大敵か",
+      "Description": "巨大敵か"
+    },
+    {
+      "Field": "isLegacyBoss",
+      "Name": "レガシーボスか",
+      "Description": "レガシーのボス扱いか"
+    },
+    {
+      "Field": "def_dark",
+      "Name": "闇防御力",
+      "Description": "闇攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "threatLv",
+      "Name": "脅威度",
+      "Description": "脅威度。0ならPCが見つかっても「見つかりそうFE」を表示しない"
+    },
+    {
+      "Field": "specialTurnDistanceThreshold",
+      "Name": "特殊旋回の使用距離の閾値[m]",
+      "Description": "ターゲットとの距離が設定された閾値以上の場合に、特殊旋回を行う"
+    },
+    {
+      "Field": "autoFootEffectSfxId",
+      "Name": "フットエフェクト識別子",
+      "Description": "自動フットエフェクトで使用するSFX識別子。（XYYZZZのZZZ）"
+    },
+    {
+      "Field": "materialSe1",
+      "Name": "防御材質1【SE】",
+      "Description": "ダメージを受けたときに鳴らすＳＥを判定する。1.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSfx1",
+      "Name": "防御材質1【SFX】",
+      "Description": "ダメージを受けたときに発生するSFXを判定する。1.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSe_Weak2",
+      "Name": "弱点防御材質2【SE】",
+      "Description": "弱点部位ダメージを受けた時に鳴らすSEを判定する。2"
+    },
+    {
+      "Field": "materialSfx_Weak2",
+      "Name": "弱点防御材質2【SFX】",
+      "Description": "弱点部位ダメージを受けた時に発生するSFXを判定する。2"
+    },
+    {
+      "Field": "materialSe2",
+      "Name": "防御材質2【SE】",
+      "Description": "ダメージを受けたときに鳴らすＳＥを判定する。2.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSfx2",
+      "Name": "防御材質2【SFX】",
+      "Description": "ダメージを受けたときに発生するSFXを判定する。2.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "常駐特殊効果8",
+      "Description": "常駐特殊効果8"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "常駐特殊効果9",
+      "Description": "常駐特殊効果9"
+    },
+    {
+      "Field": "spEffectID10",
+      "Name": "常駐特殊効果10",
+      "Description": "常駐特殊効果10"
+    },
+    {
+      "Field": "spEffectID11",
+      "Name": "常駐特殊効果11",
+      "Description": "常駐特殊効果11"
+    },
+    {
+      "Field": "spEffectID12",
+      "Name": "常駐特殊効果12",
+      "Description": "常駐特殊効果12"
+    },
+    {
+      "Field": "spEffectID13",
+      "Name": "常駐特殊効果13",
+      "Description": "常駐特殊効果13"
+    },
+    {
+      "Field": "spEffectID14",
+      "Name": "常駐特殊効果14",
+      "Description": "常駐特殊効果14"
+    },
+    {
+      "Field": "spEffectID15",
+      "Name": "常駐特殊効果15",
+      "Description": "常駐特殊効果15"
+    },
+    {
+      "Field": "autoFootEffectDecalId",
+      "Name": "フットデカールID",
+      "Description": "フットエフェクト発生時に貼られるデカール。床材質も考慮される"
+    },
+    {
+      "Field": "toughness",
+      "Name": "強靭度",
+      "Description": "強靭度の基本値"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "強靭度 回復時間補正値",
+      "Description": "強靭度の回復時間用の補正値"
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "無属性ダメージ倍率",
+      "Description": "無属性ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "斬撃ダメージ倍率",
+      "Description": "斬撃ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "打撃ダメージ倍率",
+      "Description": "打撃ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "刺突ダメージ倍率",
+      "Description": "刺突ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "ENダメージ倍率",
+      "Description": "ENダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "爆発/燃焼ダメージ倍率",
+      "Description": "爆発/燃焼ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "コーラルダメージ倍率",
+      "Description": "コーラルダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "闇ダメージ倍率",
+      "Description": "闇ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "闇攻撃力カット率_ガード中[％]",
+      "Description": "闇攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "clothUpdateOffset",
+      "Name": "クロス更新優先度オフセット[m]",
+      "Description": "クロス更新優先度オフセット[m]"
+    },
+    {
+      "Field": "npcPlayerWeightType",
+      "Name": "NPCプレイヤー時重量設定",
+      "Description": "NPCプレイヤーのときに適用される装備重量タイプ"
+    },
+    {
+      "Field": "normalChangeModelId",
+      "Name": "通常時差し替えモデルID",
+      "Description": "通常時の差し替えモデル、テクスチャID"
+    },
+    {
+      "Field": "normalChangeAnimChrId",
+      "Name": "通常時差し替えアニメキャラID",
+      "Description": "対象のアニメを指定IDのAnibndで差し替える"
+    },
+    {
+      "Field": "paintRenderTargetSize",
+      "Name": "ペイントレンダーターゲットサイズ[pix]",
+      "Description": "ペイントレンダーターゲットサイズ[pix]"
+    },
+    {
+      "Field": "DamageMaterialThreshold",
+      "Name": "ダメージマテリアル変更閾値",
+      "Description": "ダメージマテリアルに差し替える被弾率(0:ダメージ無し、100死亡)"
+    },
+    {
+      "Field": "sideUndulationLimit",
+      "Name": "起伏にあわせる最大左右角度",
+      "Description": "起伏に左右の角度を合わせる場合の上限角度。全長が長い場合には低めに設定したほうがよいです。(FootIKがある場合はFootIKの値が使われます)"
+    },
+    {
+      "Field": "SfxResBankId",
+      "Name": "SFXリソースバンクID",
+      "Description": "SFXリソースバンクIDが指定できます -1：キャラID(リソース名)のバンクを使用"
+    },
+    {
+      "Field": "phantomShaderId",
+      "Name": "適用シェーダーID",
+      "Description": "適用するファントムパラメータ.xlsmのID"
+    },
+    {
+      "Field": "multiPlayCorrectionParamId",
+      "Name": "マルチプレイ補正パラメータID",
+      "Description": "マルチプレイ補正パラメータID"
+    },
+    {
+      "Field": "maxAnkleAngle",
+      "Name": "FootIK足首の制限角度",
+      "Description": "FootIK足首の制限角度（-1：制限なし）"
+    },
+    {
+      "Field": "resist_depletedUraniumToxic",
+      "Name": "劣化ウラン毒耐性",
+      "Description": "劣化ウラン毒状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "depletedUraniumToxicGuardResist",
+      "Name": "劣化ウラン毒攻撃カット率_ガード中[％]",
+      "Description": "劣化ウラン毒に対する攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "teamTypeByGiantNut",
+      "Name": "チームタイプ(巨人の木の実の種適応後)",
+      "Description": "巨人の木の実の種の効果適応後に刺し変わるチームタイプ。NPCの攻撃が当たる/当たらない、狙う/狙わない設定"
+    },
+    {
+      "Field": "lockCameraParamId",
+      "Name": "ロックカメラパラメータID",
+      "Description": "ロックオンされた際にカメラに適用させるロックカメラパラメータのID。最も優先度が高い。-1なら未使用"
+    },
+    {
+      "Field": "spEffectID16",
+      "Name": "常駐特殊効果16",
+      "Description": "常駐特殊効果16"
+    },
+    {
+      "Field": "spEffectID17",
+      "Name": "常駐特殊効果17",
+      "Description": "常駐特殊効果17"
+    },
+    {
+      "Field": "spEffectID18",
+      "Name": "常駐特殊効果18",
+      "Description": "常駐特殊効果18"
+    },
+    {
+      "Field": "spEffectID19",
+      "Name": "常駐特殊効果19",
+      "Description": "常駐特殊効果19"
+    },
+    {
+      "Field": "spEffectID20",
+      "Name": "常駐特殊効果20",
+      "Description": "常駐特殊効果20"
+    },
+    {
+      "Field": "spEffectID21",
+      "Name": "常駐特殊効果21",
+      "Description": "常駐特殊効果21"
+    },
+    {
+      "Field": "spEffectID22",
+      "Name": "常駐特殊効果22",
+      "Description": "常駐特殊効果22"
+    },
+    {
+      "Field": "spEffectID23",
+      "Name": "常駐特殊効果23",
+      "Description": "常駐特殊効果23"
+    },
+    {
+      "Field": "spEffectID24",
+      "Name": "常駐特殊効果24",
+      "Description": "常駐特殊効果24"
+    },
+    {
+      "Field": "spEffectID25",
+      "Name": "常駐特殊効果25",
+      "Description": "常駐特殊効果25"
+    },
+    {
+      "Field": "spEffectID26",
+      "Name": "常駐特殊効果26",
+      "Description": "常駐特殊効果26"
+    },
+    {
+      "Field": "spEffectID27",
+      "Name": "常駐特殊効果27",
+      "Description": "常駐特殊効果27"
+    },
+    {
+      "Field": "spEffectID28",
+      "Name": "常駐特殊効果28",
+      "Description": "常駐特殊効果28"
+    },
+    {
+      "Field": "spEffectID29",
+      "Name": "常駐特殊効果29",
+      "Description": "常駐特殊効果29"
+    },
+    {
+      "Field": "spEffectID30",
+      "Name": "常駐特殊効果30",
+      "Description": "常駐特殊効果30"
+    },
+    {
+      "Field": "spEffectID31",
+      "Name": "常駐特殊効果31",
+      "Description": "常駐特殊効果31"
+    },
+    {
+      "Field": "disableLockOnAng",
+      "Name": "ロック不可領域の中心角[deg]",
+      "Description": "敵の真下に円錐状のロックオン不可領域を作る。円錐の広さの角度。TAEから一時的に変更可能"
+    },
+    {
+      "Field": "clothOffLodLevel",
+      "Name": "クロスOffLODレベル",
+      "Description": "クロスの処理を切るLODレベルを設定する"
+    },
+    {
+      "Field": "movementType",
+      "Name": "移動制御タイプ",
+      "Description": "「移動制御パラメータ.xlsm」でどのパラメータを使うか"
+    },
+    {
+      "Field": "estusFlaskRecoveryParamId",
+      "Name": "HPエスト瓶／MPエスト瓶回復数パラメータID",
+      "Description": "キャラクター死亡時に値と同じ エスト使用回数回復パラメータ.xlsm\u3000のデータIDを取得してエスト瓶を回復させる。 -1なら未使用"
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "ロール名テキストID",
+      "Description": "召喚時のロール名を指定する。-1:対象霊体のデフォルトロール名を使用。0:表示なし。1以上:テキストＩＤとして利用。"
+    },
+    {
+      "Field": "estusFlaskLotPoint",
+      "Name": "HP&MPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のHP/MPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "hpEstusFlaskLotPoint",
+      "Name": "HPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のMPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "mpEstusFlaskLotPoint",
+      "Name": "MPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のMPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "estusFlaskRecovery_failedLotPointAdd",
+      "Name": "HP&MPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "HP/MPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "hpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "HPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "HPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "mpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "MPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "MPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "WanderGhostPhantomId",
+      "Name": "ファントムシェーダを使用して徘徊ゴーストになるか",
+      "Description": "ゲスト側でだけ指定されたIDのファントムシェーダIDを指定して幻影化"
+    },
+    {
+      "Field": "movementTypeParamId",
+      "Name": "移動制御タイプパラメータID",
+      "Description": "移動制御タイプで指定した「移動制御パラメータ.xlsm」のどのIDを使うか"
+    },
+    {
+      "Field": "chrActTurnParamIdOffset",
+      "Name": "旋回パラメータのIDオフセット",
+      "Description": "ステートから指定している旋回パラメータIDにこの値を足したものが実際に使うパラメータID"
+    },
+    {
+      "Field": "weaponId0",
+      "Name": "武器0",
+      "Description": "1番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId1",
+      "Name": "武器1",
+      "Description": "2番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId2",
+      "Name": "武器2",
+      "Description": "3番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId3",
+      "Name": "武器3",
+      "Description": "4番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "vehicleParamId",
+      "Name": "ビークルパラメータID",
+      "Description": "ビークルパラメータのID"
+    },
+    {
+      "Field": "debrisForceMoveTime",
+      "Name": "モデル破片の物理が必ず有効な時間[秒]",
+      "Description": "破壊後のモデルが最低でも何秒間物理が働くか。安定していても、この時間中は物理が有効になる"
+    },
+    {
+      "Field": "debrisForceStopTime",
+      "Name": "モデル破片の物理の最大有効時間[秒]",
+      "Description": "破壊後のモデルが何秒間物理が働くか。安定していればこの時間より先に抜け出す。"
+    },
+    {
+      "Field": "blastDamageAttachSfxId",
+      "Name": "爆発被弾時アタッチSfxId",
+      "Description": "爆発ダメージを受けた際、その場所にアタッチするSfxのID"
+    },
+    {
+      "Field": "weaponId4",
+      "Name": "武器4",
+      "Description": "5番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId5",
+      "Name": "武器5",
+      "Description": "6番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId6",
+      "Name": "武器6",
+      "Description": "7番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId7",
+      "Name": "武器7",
+      "Description": "8番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId8",
+      "Name": "武器8",
+      "Description": "9番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId9",
+      "Name": "武器9",
+      "Description": "10番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId10",
+      "Name": "武器10",
+      "Description": "11番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId11",
+      "Name": "武器11",
+      "Description": "12番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId12",
+      "Name": "武器12",
+      "Description": "13番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId13",
+      "Name": "武器13",
+      "Description": "14番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId14",
+      "Name": "武器14",
+      "Description": "15番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId15",
+      "Name": "武器15",
+      "Description": "16番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId16",
+      "Name": "武器16",
+      "Description": "17番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId17",
+      "Name": "武器17",
+      "Description": "18番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId18",
+      "Name": "武器18",
+      "Description": "19番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId19",
+      "Name": "武器19",
+      "Description": "20番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId20",
+      "Name": "武器20",
+      "Description": "21番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId21",
+      "Name": "武器21",
+      "Description": "22番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId22",
+      "Name": "武器22",
+      "Description": "23番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId23",
+      "Name": "武器23",
+      "Description": "24番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId24",
+      "Name": "武器24",
+      "Description": "25番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId25",
+      "Name": "武器25",
+      "Description": "26番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId26",
+      "Name": "武器26",
+      "Description": "27番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId27",
+      "Name": "武器27",
+      "Description": "28番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId28",
+      "Name": "武器28",
+      "Description": "29番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId29",
+      "Name": "武器29",
+      "Description": "30番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId30",
+      "Name": "武器30",
+      "Description": "31番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "weaponId31",
+      "Name": "武器31",
+      "Description": "32番目の武器のID。-1で装備無し"
+    },
+    {
+      "Field": "hacking_EnduranceValue",
+      "Name": "ハッキング耐久値",
+      "Description": "ハッキング耐久値 "
+    },
+    {
+      "Field": "isDummyChr",
+      "Name": "ダミーキャラか？",
+      "Description": "ダミーキャラかどうか"
+    },
+    {
+      "Field": "isNoImpactPlayerMove",
+      "Name": "プレイヤーの移動を阻害しない",
+      "Description": "プレイヤーの移動を阻害しない"
+    },
+    {
+      "Field": "isRagdollMaterialSoftContact",
+      "Name": "ラグドール物理挙動に材質が影響するか",
+      "Description": "ラグドール物理挙動に材質が影響するか"
+    },
+    {
+      "Field": "isPredictionShootMasterBase",
+      "Name": "このNPCを狙っているときの予測射撃の予測をマスター基準で行うか",
+      "Description": "このNPCを狙っているときに予測射撃の予測をマスター基準で行うか"
+    },
+    {
+      "Field": "isUseTankMove",
+      "Name": "タンク制御使うか",
+      "Description": "タンク用の制御（車輪のアニメや斜面での傾きなど）を有効にする場合は設定してください"
+    },
+    {
+      "Field": "isUseDeadRagdoll",
+      "Name": "死亡時にあたりラグドールを残すか",
+      "Description": "死亡したときにラグドールの剛体の質量が０のときにボスラグドールにする場合はこのチェックを入れる"
+    },
+    {
+      "Field": "isPushOutCamRegionRadius",
+      "Name": "カメラ押し出し領域半径有効か",
+      "Description": "カメラ押し出し領域半径[m]によるカメラ押し出しを有効化するか"
+    },
+    {
+      "Field": "isNoGrabReceive",
+      "Name": "掴み攻撃を受けないか",
+      "Description": "掴み攻撃を受けるか"
+    },
+    {
+      "Field": "staminaGuardDef_InGuardRelease",
+      "Name": "スタミナ攻撃カット率_ガード解除中[％] ",
+      "Description": "ガード解除中のスタミナ攻撃カット率"
+    },
+    {
+      "Field": "SAGuardCutRate",
+      "Name": "SA攻撃カット率_ガード中[％] ",
+      "Description": "ガード中のSA攻撃カット率"
+    },
+    {
+      "Field": "SAGuardCutRate_InGuardRelease",
+      "Name": "SA攻撃カット率_ガード解除中[％] ",
+      "Description": "ガード解除中のSA攻撃カット率"
+    },
+    {
+      "Field": "physGuardCutRate_InGuardRelease",
+      "Name": "実弾攻撃カット率_ガード解除中[％] ",
+      "Description": "ガード解除中の実弾攻撃カット率"
+    },
+    {
+      "Field": "isVisibleEnemySearchStateFE",
+      "Name": "索敵状態FE表示するか ",
+      "Description": "敵頭上に表示される索敵状態のFEを表示するか "
+    },
+    {
+      "Field": "minimapIconType",
+      "Name": "ミニマップアイコンタイプ",
+      "Description": "ミニマップに表示するアイコンの種類"
+    },
+    {
+      "Field": "DeadLockOnDisableWaiteFrame",
+      "Name": "死亡時ロックオン自動解除待機秒数[1/30s]",
+      "Description": "死亡したときにロックを無効化するのを待機するフレーム数"
+    },
+    {
+      "Field": "SA_DurabilityRecoveryBase",
+      "Name": "SA基礎回復量[point/s]",
+      "Description": "SA基礎回復量"
+    },
+    {
+      "Field": "RecoverSpStartDrainAfterSec",
+      "Name": "スタミナ回復待機時間[sec]",
+      "Description": "スタミナが減少してから回復するまでの時間[秒]"
+    },
+    {
+      "Field": "EnemyScanEventFlagId",
+      "Name": "情報開示イベントフラグID",
+      "Description": "敵スキャン時に参照する、情報開示イベントフラグ"
+    },
+    {
+      "Field": "EnemyScanTextId",
+      "Name": "スキャン時表示テキストID",
+      "Description": "敵スキャン時に表示するテキストのID"
+    },
+    {
+      "Field": "isVisibleApBar",
+      "Name": "APバーの初期表示設定",
+      "Description": "APバーの表示設定の初期状態"
+    },
+    {
+      "Field": "receiveDmgHitStopType",
+      "Name": "攻撃を受けたときのハードヒット設定",
+      "Description": "ダメージを受けたときにヒットストップ処理を行うかどうかの設定"
+    },
+    {
+      "Field": "npcMaterialId",
+      "Name": "マテリアルパラメータID",
+      "Description": "カラーリング違いなどの表現用のマテリアルパラメータID"
+    },
+    {
+      "Field": "npcPartsParamIdBegin",
+      "Name": "NPC部位パラメータID始点",
+      "Description": "NPC部位パラメータの始点"
+    },
+    {
+      "Field": "npcPartsParamIdEnd",
+      "Name": "NPC部位パラメータID終点",
+      "Description": "NPC部位パラメータの終点"
+    },
+    {
+      "Field": "coverActionWidthLength",
+      "Name": "カバーアクション左右判定発生距離",
+      "Description": "カバーアクション左右判定発生距離"
+    },
+    {
+      "Field": "coverActionHeightLength",
+      "Name": "カバーアクション判定発生高さ",
+      "Description": "カバーアクション判定発生高さ"
+    },
+    {
+      "Field": "weaponDmyId0",
+      "Name": "武器0吸着ダミポリID",
+      "Description": "1番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId1",
+      "Name": "武器1吸着ダミポリID",
+      "Description": "2番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId2",
+      "Name": "武器2吸着ダミポリID",
+      "Description": "3番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId3",
+      "Name": "武器3吸着ダミポリID",
+      "Description": "4番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId4",
+      "Name": "武器4吸着ダミポリID",
+      "Description": "5番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId5",
+      "Name": "武器5吸着ダミポリID",
+      "Description": "6番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId6",
+      "Name": "武器6吸着ダミポリID",
+      "Description": "7番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId7",
+      "Name": "武器7吸着ダミポリID",
+      "Description": "8番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId8",
+      "Name": "武器8吸着ダミポリID",
+      "Description": "9番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId9",
+      "Name": "武器9吸着ダミポリID",
+      "Description": "10番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId10",
+      "Name": "武器10吸着ダミポリID",
+      "Description": "11番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId11",
+      "Name": "武器11吸着ダミポリID",
+      "Description": "12番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId12",
+      "Name": "武器12吸着ダミポリID",
+      "Description": "13番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId13",
+      "Name": "武器13吸着ダミポリID",
+      "Description": "14番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId14",
+      "Name": "武器14吸着ダミポリID",
+      "Description": "15番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId15",
+      "Name": "武器15吸着ダミポリID",
+      "Description": "16番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId16",
+      "Name": "武器16吸着ダミポリID",
+      "Description": "17番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId17",
+      "Name": "武器17吸着ダミポリID",
+      "Description": "18番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId18",
+      "Name": "武器18吸着ダミポリID",
+      "Description": "19番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId19",
+      "Name": "武器19吸着ダミポリID",
+      "Description": "20番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId20",
+      "Name": "武器20吸着ダミポリID",
+      "Description": "21番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId21",
+      "Name": "武器21吸着ダミポリID",
+      "Description": "22番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId22",
+      "Name": "武器22吸着ダミポリID",
+      "Description": "23番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId23",
+      "Name": "武器23吸着ダミポリID",
+      "Description": "24番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId24",
+      "Name": "武器24吸着ダミポリID",
+      "Description": "25番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId25",
+      "Name": "武器25吸着ダミポリID",
+      "Description": "26番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId26",
+      "Name": "武器26吸着ダミポリID",
+      "Description": "27番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId27",
+      "Name": "武器27吸着ダミポリID",
+      "Description": "28番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId28",
+      "Name": "武器28吸着ダミポリID",
+      "Description": "29番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId29",
+      "Name": "武器29吸着ダミポリID",
+      "Description": "30番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId30",
+      "Name": "武器30吸着ダミポリID",
+      "Description": "31番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "weaponDmyId31",
+      "Name": "武器31吸着ダミポリID",
+      "Description": "32番目の武器の吸着ダミポリID"
+    },
+    {
+      "Field": "coverActionUpwardHeight",
+      "Name": "カバーアクション上判定発生高さ",
+      "Description": "カバーアクション上判定発生高さ"
+    },
+    {
+      "Field": "coverActionCoverLength",
+      "Name": "カバーアクション遮蔽判定発生距離",
+      "Description": "カバーアクション遮蔽判定発生距離"
+    },
+    {
+      "Field": "equipWeaponPresetId",
+      "Name": "プリセット番号",
+      "Description": "装備パーツのパラメータID"
+    },
+    {
+      "Field": "lockTargetDist",
+      "Name": "被ロック距離",
+      "Description": "被ロック距離[m]"
+    },
+    {
+      "Field": "operationPartsCategory",
+      "Name": "稼動許可タイプオフセット",
+      "Description": "稼動許可タイプオフセット"
+    },
+    {
+      "Field": "jumpEdgeCapDist_FindPath",
+      "Name": "ジャンプエッジ利用可能パス検索判定\u3000距離[m]",
+      "Description": "ジャンプエッジ利用可能パス検索判定\u3000距離[m]"
+    },
+    {
+      "Field": "jumpEdgeCapHeight_FindPath",
+      "Name": "ジャンプエッジ利用可能パス検索判定\u3000高さ[m]",
+      "Description": "ジャンプエッジ利用可能パス検索判定\u3000高さ[m]"
+    },
+    {
+      "Field": "jumpEdgeCapDist_JumpCtrl",
+      "Name": "ジャンプ力\u3000距離[m]",
+      "Description": "ジャンプ力\u3000距離[m]"
+    },
+    {
+      "Field": "jumpEdgeCapHeight_JumpCtrl",
+      "Name": "ジャンプ力\u3000高さ[m]",
+      "Description": "ジャンプ力\u3000高さ[m]"
+    },
+    {
+      "Field": "loadAssetId",
+      "Name": "読み込みアセットID",
+      "Description": "キャラロード時に関連して読み込むアセットID（キャラが動的に生成するなど用。"
+    },
+    {
+      "Field": "RetargetReferenceChrId",
+      "Name": "リターゲット参照キャラID",
+      "Description": "モーションのリターゲット先の指定の際に参照するキャラID"
+    },
+    {
+      "Field": "partsBreakVariationId",
+      "Name": "パーツ破損バリエーションID",
+      "Description": "パーツ破損バリエーションID"
+    },
+    {
+      "Field": "retargetMoveRate",
+      "Name": "リターゲット移動量倍率",
+      "Description": "リターゲット時の移動量の倍率"
+    },
+    {
+      "Field": "pad11_0",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "deathAnimType_GroundNormal",
+      "Name": "死亡アニメタイプ【地上通常】",
+      "Description": "死亡アニメタイプ【地上通常】"
+    },
+    {
+      "Field": "deathAnimType_GroundNormal_RandNum",
+      "Name": "地上通常死亡ランダム数",
+      "Description": "死亡アニメタイプ【地上通常】のランダム数"
+    },
+    {
+      "Field": "deathAnimType_GroundLol",
+      "Name": "死亡アニメタイプ【地上よろけ死亡】",
+      "Description": "死亡アニメタイプ【地上よろけ死亡】"
+    },
+    {
+      "Field": "deathAnimType_GroundFast",
+      "Name": "死亡アニメタイプ【地上高速移動中】",
+      "Description": "死亡アニメタイプ【地上高速移動中】"
+    },
+    {
+      "Field": "deathAnimType_GroundBlow",
+      "Name": "死亡アニメタイプ【地上吹っ飛び】",
+      "Description": "死亡アニメタイプ【地上吹っ飛び】"
+    },
+    {
+      "Field": "pad11_1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "deathAnimType_FlyNormal",
+      "Name": "死亡アニメタイプ【空中通常】",
+      "Description": "死亡アニメタイプ【空中通常】"
+    },
+    {
+      "Field": "deathAnimType_FlyNormal_RandNum",
+      "Name": "空中通常死亡ランダム数",
+      "Description": "死亡アニメタイプ【空中通常】のランダム数"
+    },
+    {
+      "Field": "deathAnimType_FlyLol",
+      "Name": "死亡アニメタイプ【空中よろけ死亡】",
+      "Description": "死亡アニメタイプ【空中よろけ死亡】"
+    },
+    {
+      "Field": "deathAnimType_FlyFast",
+      "Name": "死亡アニメタイプ【空中高速移動中】",
+      "Description": "死亡アニメタイプ【空中高速移動中】"
+    },
+    {
+      "Field": "deathAnimType_FlyBlow",
+      "Name": "死亡アニメタイプ【空中吹っ飛び】",
+      "Description": "死亡アニメタイプ【空中吹っ飛び】"
+    },
+    {
+      "Field": "pad11_2",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "deathAnimType_HoverNormal",
+      "Name": "死亡アニメタイプ【浮遊通常】",
+      "Description": "死亡アニメタイプ【浮遊通常】"
+    },
+    {
+      "Field": "deathAnimType_HoverNormal_RandNum",
+      "Name": "浮遊通常死亡ランダム数",
+      "Description": "死亡アニメタイプ【浮遊通常】のランダム数"
+    },
+    {
+      "Field": "deathAnimType_HoverLol",
+      "Name": "死亡アニメタイプ【浮遊よろけ死亡】",
+      "Description": "死亡アニメタイプ【浮遊よろけ死亡】"
+    },
+    {
+      "Field": "deathAnimType_HoverFast",
+      "Name": "死亡アニメタイプ【浮遊高速移動中】",
+      "Description": "死亡アニメタイプ【浮遊高速移動中】"
+    },
+    {
+      "Field": "deathAnimType_HoverBlow",
+      "Name": "死亡アニメタイプ【浮遊吹っ飛び】",
+      "Description": "死亡アニメタイプ【浮遊吹っ飛び】"
+    },
+    {
+      "Field": "pad11_3",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "chrBehAnimFourDirTurnRate",
+      "Name": "前後左右アニメ\u3000腰の旋回速度係数",
+      "Description": "ChrBehaviorの前後左右アニメの見た目旋回速度の割合"
+    },
+    {
+      "Field": "undulationCorrectGain",
+      "Name": "起伏にあわせる補正ゲイン値",
+      "Description": "起伏に角度を合わせる際の速度を設定する(FootIKがある場合はFootIKの値が使われます)"
+    },
+    {
+      "Field": "chrBehCtrlType",
+      "Name": "【敵】ChrBehavior制御タイプ",
+      "Description": "ChrBehavior判定用制御タイプ"
+    },
+    {
+      "Field": "pad12",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "knockbackRate",
+      "Name": "ノックバック倍率",
+      "Description": "攻撃パラメータの「ノックバック威力(速度)[m/s]」に対する倍率"
+    },
+    {
+      "Field": "paGaugeMax",
+      "Name": "PA_ゲージ量[point]",
+      "Description": "PAゲージの上限値[point]\u3000旧名：PA_ゲージ上限値[point]。各展開タイプで共通のパラメータ。"
+    },
+    {
+      "Field": "paGaugeRecoverPerSec",
+      "Name": "PA_展開型_ゲージ回復速度[point/sec]",
+      "Description": "展開型PAのPA展開可能・PA展開不可時の、PAゲージの1秒あたりの回復量[point/秒]"
+    },
+    {
+      "Field": "paGaugeRecoverDelayTimeSec",
+      "Name": "PA_展開型_ゲージ回復待機時間[sec]",
+      "Description": "展開型PAの最後にPAゲージ減少してからゲージ回復し始めるまでの時間[sec]。"
+    },
+    {
+      "Field": "paRecoverGaugePoint",
+      "Name": "PA_復帰ゲージ値[point]",
+      "Description": "PA崩壊後、PAを展開できるようになるPAゲージ値[point]。各展開タイプで共通のパラメータ。"
+    },
+    {
+      "Field": "isUseDeadChrCapsule",
+      "Name": "死亡後もキャラのカプセルを残すか",
+      "Description": "死亡したときにキャラヒットカプセルを残す場合はこれにチェックを入れる"
+    },
+    {
+      "Field": "alwaysGuardMode",
+      "Name": "常時ガード判定するか？",
+      "Description": "ガードを常時展開状態にしておくか"
+    },
+    {
+      "Field": "isPulseSpAtkGuard",
+      "Name": "パルス特攻対象のガードか？",
+      "Description": "パルス特攻のガードか"
+    },
+    {
+      "Field": "isNoBladeHomingHitTargetDirMove",
+      "Name": "ブレホの移動ベクトル固定から除外",
+      "Description": "ブレホ中このNPCにヒットしても移動ベクトルを固定しないか"
+    },
+    {
+      "Field": "isRicochetNoResetResidualImpactSubTimer",
+      "Name": "【敵】跳弾では残留衝撃値の減少加速タイマーをリセットしない",
+      "Description": "跳弾したときに残留衝撃値の減少加速タイマーをリセットしないようにするか"
+    },
+    {
+      "Field": "isCurveLaserRiflePenetration",
+      "Name": "自機コーラルライフルの二段チャージ格闘攻撃が貫通するか",
+      "Description": "[FNR-38068] 【FNR】自機コーラルライフル二段チャージ格闘攻撃の貫通設定改修"
+    },
+    {
+      "Field": "isDispFlatLayer",
+      "Name": "アイスワームの点滅防止処理をするか",
+      "Description": "[FNR-31877] 【BNEI】PS5-EU-グラフィック-Dアイスワーム撃破-「リトライミッション」を行うと、ミッション開始時にワームが短時間点滅する"
+    },
+    {
+      "Field": "pad13_1_bit",
+      "Name": "pad13_bit",
+      "Description": ""
+    },
+    {
+      "Field": "pad13_2",
+      "Name": "pad13_2",
+      "Description": ""
+    },
+    {
+      "Field": "physicsPaGuardCutRate",
+      "Name": "PA_ガード時実弾攻撃カット率[％]",
+      "Description": "PAガードによるカット率：実弾攻撃"
+    },
+    {
+      "Field": "magicPaGuardCutRate",
+      "Name": "PA_ガード時EN攻撃カット率[％]",
+      "Description": "PAガードによるカット率：EN攻撃"
+    },
+    {
+      "Field": "firePaGuardCutRate",
+      "Name": "PA_ガード時爆発/燃焼攻撃力カット率[％]",
+      "Description": "PAガードによるカット率：爆発/燃焼攻撃力"
+    },
+    {
+      "Field": "thunderPaGuardCutRate",
+      "Name": "PA_ガード時コーラル攻撃力カット率[％]",
+      "Description": "PAガードによるカット率：コーラル攻撃力"
+    },
+    {
+      "Field": "darkPaGuardCutRate",
+      "Name": "PA_ガード時闇攻撃力カット率[％]",
+      "Description": "PAガードによるカット率：闇攻撃力"
+    },
+    {
+      "Field": "burnPaGuardResistRate",
+      "Name": "PA_炎上耐性カット率[％]",
+      "Description": "PAガードによるカット率：炎上耐性"
+    },
+    {
+      "Field": "stunPaGuardResistRate",
+      "Name": "PA_スタン攻撃カット率[％]",
+      "Description": "PAガードによるカット率：スタン攻撃"
+    },
+    {
+      "Field": "highPlasmaPaGuardResistRate",
+      "Name": "PA_強プラズマ攻撃カット率[％]",
+      "Description": "PAガードによるカット率：強プラズマ攻撃"
+    },
+    {
+      "Field": "cursePaGuardResistRate",
+      "Name": "PA_呪攻撃カット率[％]",
+      "Description": "PAガードによるカット率：呪攻撃"
+    },
+    {
+      "Field": "saPaGuardCutRate",
+      "Name": "PA_ガード時SA攻撃カット率[％]",
+      "Description": "PAガードによるカット率：SA攻撃"
+    },
+    {
+      "Field": "staminaPaGuardCutRate",
+      "Name": "PA_ガード時スタミナ攻撃力カット率[％]",
+      "Description": "PAガードによるカット率：スタミナ攻撃力"
+    },
+    {
+      "Field": "paPaGuardCutRate",
+      "Name": "PA_ガード時PA減衰カット率[％]",
+      "Description": "PAガードによるカット率：PA攻撃\u3000旧名：PA_ガード時PA攻撃カット率[％]"
+    },
+    {
+      "Field": "paGuardBaseDmypolyId",
+      "Name": "PA_ガード基準ダミポリID",
+      "Description": "PAガードのガード方向基準となるダミポリID。-1でマスター位置"
+    },
+    {
+      "Field": "paGuardDirectionHorizontalDeg",
+      "Name": "PA_ガード方向_水平[deg]",
+      "Description": "PAガードの水平方向"
+    },
+    {
+      "Field": "paGuardDirectionVerticalDeg",
+      "Name": "PA_ガード方向_垂直[deg]",
+      "Description": "PAガードの垂直方向"
+    },
+    {
+      "Field": "paGuardRangeHorizontalDeg",
+      "Name": "PA_ガード範囲_水平[deg]",
+      "Description": "PAガードの水平範囲。ガード方向を中心とした範囲。"
+    },
+    {
+      "Field": "paGuardRangeVerticalDeg",
+      "Name": "PA_ガード範囲_垂直[deg]",
+      "Description": "PAガードの垂直範囲。ガード方向を中心とした範囲。"
+    },
+    {
+      "Field": "paTurnOnSfxId",
+      "Name": "PA_展開時SfxId",
+      "Description": "PA展開時に発行するSFXのID"
+    },
+    {
+      "Field": "paTurnOnSfxDmypoly",
+      "Name": "PA_展開時Sfxダミポリ",
+      "Description": "PA展開時に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paOnSfxId",
+      "Name": "PA_展開中SfxId",
+      "Description": "PA展開中に発行するSFXのID"
+    },
+    {
+      "Field": "paOnSfxDmypoly",
+      "Name": "PA_展開中Sfxダミポリ",
+      "Description": "PA展開中に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paTurnOffSfxId",
+      "Name": "PA_解除時SfxId",
+      "Description": "PA解除時に発行するSFXのID"
+    },
+    {
+      "Field": "paTurnOffSfxDmypoly",
+      "Name": "PA_解除時Sfxダミポリ",
+      "Description": "PA解除時に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paBreakdownSfxId",
+      "Name": "PA_崩壊時SfxId",
+      "Description": "PA崩壊時に発行するSFXのID"
+    },
+    {
+      "Field": "paBreakdownSfxDmypoly",
+      "Name": "PA_崩壊時Sfxダミポリ",
+      "Description": "PA崩壊時に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paBrokenSfxId",
+      "Name": "PA_崩壊中SfxId",
+      "Description": "PA崩壊中に発行するSFXのID"
+    },
+    {
+      "Field": "paBrokenSfxDmypoly",
+      "Name": "PA_崩壊中Sfxダミポリ",
+      "Description": "PA崩壊中に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paRecoverSfxId",
+      "Name": "PA_復帰時SfxId",
+      "Description": "PA復帰時に発行するSFXのID"
+    },
+    {
+      "Field": "paRecoverSfxDmypoly",
+      "Name": "PA_復帰時Sfxダミポリ",
+      "Description": "PA復帰時に発行するSFXのダミポリ"
+    },
+    {
+      "Field": "paDefSeMaterial",
+      "Name": "PA_防御SE材質",
+      "Description": "PAの防御材質（SE用）"
+    },
+    {
+      "Field": "paDefSfxMaterial",
+      "Name": "PA_防御SFX材質",
+      "Description": "PAの防御材質（SFX用）"
+    },
+    {
+      "Field": "guardBaseDmypolyId",
+      "Name": "ガード基準ダミポリID",
+      "Description": "ガードのガード方向基準となるダミポリID。-1でマスター位置"
+    },
+    {
+      "Field": "doForceIntegrateWithRaycastForSlope",
+      "Name": "斜面にハマると強制持ち上げ/吸着処理にするか",
+      "Description": "斜面に一定時間ハマり続けると強制持ち上げをするように"
+    },
+    {
+      "Field": "isDeadFadeOut",
+      "Name": "死亡後にフェードアウトするか？",
+      "Description": "破壊ラグドール安定化後にフェードアウトするかどうか"
+    },
+    {
+      "Field": "isCharaActivateRightAfterDisableGravity",
+      "Name": "キャラ作成直後重力無効か？",
+      "Description": "キャラ作成直後に2フレームほど接地してない時間があるのでそのときに落下すると困る人でONにする"
+    },
+    {
+      "Field": "pad13_3_bit",
+      "Name": "pad13_3_bit:7",
+      "Description": ""
+    },
+    {
+      "Field": "pad13_4",
+      "Name": "pad13_4",
+      "Description": ""
+    },
+    {
+      "Field": "guardDirectionHorizontalDeg",
+      "Name": "ガード方向_水平[deg]",
+      "Description": "ガードの水平方向"
+    },
+    {
+      "Field": "guardDirectionVerticalDeg",
+      "Name": "ガード方向_垂直[deg]",
+      "Description": "ガードの垂直方向"
+    },
+    {
+      "Field": "guardRangeHorizontalDeg",
+      "Name": "ガード範囲_水平[deg]",
+      "Description": "ガードの水平範囲。ガード方向を中心とした範囲。"
+    },
+    {
+      "Field": "guardRangeVerticalDeg",
+      "Name": "ガード範囲_垂直[deg]",
+      "Description": "ガードの垂直範囲。ガード方向を中心とした範囲。"
+    },
+    {
+      "Field": "guardDefSeMaterial",
+      "Name": "ガード時防御SE材質",
+      "Description": "ガード時の防御材質（SE用）"
+    },
+    {
+      "Field": "guardDefSfxMaterial",
+      "Name": "ガード時防御SFX材質",
+      "Description": "ガード時の防御材質（SFX用）"
+    },
+    {
+      "Field": "energyConsumeType",
+      "Name": "【NPAC】EN消費ルール",
+      "Description": "EN消費ルール"
+    },
+    {
+      "Field": "pad5",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "atkActParamId_00",
+      "Name": "攻撃アクションパラメータID_武器0",
+      "Description": "1番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_01",
+      "Name": "攻撃アクションパラメータID_武器1",
+      "Description": "2番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_02",
+      "Name": "攻撃アクションパラメータID_武器2",
+      "Description": "3番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_03",
+      "Name": "攻撃アクションパラメータID_武器3",
+      "Description": "4番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_04",
+      "Name": "攻撃アクションパラメータID_武器4",
+      "Description": "5番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_05",
+      "Name": "攻撃アクションパラメータID_武器5",
+      "Description": "6番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_06",
+      "Name": "攻撃アクションパラメータID_武器6",
+      "Description": "7番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_07",
+      "Name": "攻撃アクションパラメータID_武器7",
+      "Description": "8番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_08",
+      "Name": "攻撃アクションパラメータID_武器8",
+      "Description": "9番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_09",
+      "Name": "攻撃アクションパラメータID_武器9",
+      "Description": "10番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_10",
+      "Name": "攻撃アクションパラメータID_武器10",
+      "Description": "11番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_11",
+      "Name": "攻撃アクションパラメータID_武器11",
+      "Description": "12番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_12",
+      "Name": "攻撃アクションパラメータID_武器12",
+      "Description": "13番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_13",
+      "Name": "攻撃アクションパラメータID_武器13",
+      "Description": "14番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_14",
+      "Name": "攻撃アクションパラメータID_武器14",
+      "Description": "15番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_15",
+      "Name": "攻撃アクションパラメータID_武器15",
+      "Description": "16番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_16",
+      "Name": "攻撃アクションパラメータID_武器16",
+      "Description": "17番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_17",
+      "Name": "攻撃アクションパラメータID_武器17",
+      "Description": "18番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_18",
+      "Name": "攻撃アクションパラメータID_武器18",
+      "Description": "19番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_19",
+      "Name": "攻撃アクションパラメータID_武器19",
+      "Description": "20番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_20",
+      "Name": "攻撃アクションパラメータID_武器20",
+      "Description": "21番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_21",
+      "Name": "攻撃アクションパラメータID_武器21",
+      "Description": "22番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_22",
+      "Name": "攻撃アクションパラメータID_武器22",
+      "Description": "23番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_23",
+      "Name": "攻撃アクションパラメータID_武器23",
+      "Description": "24番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_24",
+      "Name": "攻撃アクションパラメータID_武器24",
+      "Description": "25番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_25",
+      "Name": "攻撃アクションパラメータID_武器25",
+      "Description": "26番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_26",
+      "Name": "攻撃アクションパラメータID_武器26",
+      "Description": "27番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_27",
+      "Name": "攻撃アクションパラメータID_武器27",
+      "Description": "28番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_28",
+      "Name": "攻撃アクションパラメータID_武器28",
+      "Description": "29番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_29",
+      "Name": "攻撃アクションパラメータID_武器29",
+      "Description": "30番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_30",
+      "Name": "攻撃アクションパラメータID_武器30",
+      "Description": "31番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "atkActParamId_31",
+      "Name": "攻撃アクションパラメータID_武器31",
+      "Description": "32番目の武器の攻撃アクションパラメータID。-1で装備無し"
+    },
+    {
+      "Field": "wepBulletNum_00",
+      "Name": "マガジンの弾数_武器0",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_01",
+      "Name": "マガジンの弾数_武器1",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_02",
+      "Name": "マガジンの弾数_武器2",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_03",
+      "Name": "マガジンの弾数_武器3",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_04",
+      "Name": "マガジンの弾数_武器4",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_05",
+      "Name": "マガジンの弾数_武器5",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_06",
+      "Name": "マガジンの弾数_武器6",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_07",
+      "Name": "マガジンの弾数_武器7",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_08",
+      "Name": "マガジンの弾数_武器8",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_09",
+      "Name": "マガジンの弾数_武器9",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_10",
+      "Name": "マガジンの弾数_武器10",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_11",
+      "Name": "マガジンの弾数_武器11",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_12",
+      "Name": "マガジンの弾数_武器12",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_13",
+      "Name": "マガジンの弾数_武器13",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_14",
+      "Name": "マガジンの弾数_武器14",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_15",
+      "Name": "マガジンの弾数_武器15",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_16",
+      "Name": "マガジンの弾数_武器16",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_17",
+      "Name": "マガジンの弾数_武器17",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_18",
+      "Name": "マガジンの弾数_武器18",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_19",
+      "Name": "マガジンの弾数_武器19",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_20",
+      "Name": "マガジンの弾数_武器20",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_21",
+      "Name": "マガジンの弾数_武器21",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_22",
+      "Name": "マガジンの弾数_武器22",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_23",
+      "Name": "マガジンの弾数_武器23",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_24",
+      "Name": "マガジンの弾数_武器24",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_25",
+      "Name": "マガジンの弾数_武器25",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_26",
+      "Name": "マガジンの弾数_武器26",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_27",
+      "Name": "マガジンの弾数_武器27",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_28",
+      "Name": "マガジンの弾数_武器28",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_29",
+      "Name": "マガジンの弾数_武器29",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_30",
+      "Name": "マガジンの弾数_武器30",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "wepBulletNum_31",
+      "Name": "マガジンの弾数_武器31",
+      "Description": "マガジンの弾数（-1で無限）"
+    },
+    {
+      "Field": "secondLock_LockRateDecayTimeSec",
+      "Name": "ロック減衰時間[sec]",
+      "Description": "攻撃アクションパラのロック距離から離れたときにロック割合を0にするまでの時間"
+    },
+    {
+      "Field": "thrustersParamID",
+      "Name": "スラスターパラメータID",
+      "Description": "スラスターパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId",
+      "Name": "LookAtパラメータID1",
+      "Description": "攻撃ステート991で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtDirType",
+      "Name": "LookAt方向タイプ1",
+      "Description": "攻撃ステート991で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "enableAddImpact",
+      "Name": "衝撃値を蓄積するか？",
+      "Description": "衝撃値を蓄積するかどうか"
+    },
+    {
+      "Field": "thrustersColorType",
+      "Name": "スラスターカラータイプ",
+      "Description": "スラスターのSFX差し替えタイプ"
+    },
+    {
+      "Field": "enableImpactGaugeFE",
+      "Name": "衝撃値FEを表示するか？",
+      "Description": "衝撃値FEを表示するかどうか"
+    },
+    {
+      "Field": "damageLevelConvThresholdParamID",
+      "Name": "ダメージレベル変換閾値ID",
+      "Description": ""
+    },
+    {
+      "Field": "physicalShield_HP",
+      "Name": "実盾_HP",
+      "Description": "実盾_HP"
+    },
+    {
+      "Field": "physicalShield_GuardBaseDmypoly",
+      "Name": "実盾_ガード基準ダミポリ",
+      "Description": "実盾_ガード基準ダミポリ"
+    },
+    {
+      "Field": "physicalShield_NeutralDamageCutRate",
+      "Name": "実盾_無属性ダメージ倍率",
+      "Description": "実盾_無属性ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_SlashDamageCutRate",
+      "Name": "実盾_斬撃ダメージ倍率",
+      "Description": "実盾_斬撃ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_BlowDamageCutRate",
+      "Name": "実盾_打撃ダメージ倍率",
+      "Description": "実盾_打撃ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_ThrustDamageCutRate",
+      "Name": "実盾_刺突ダメージ倍率",
+      "Description": "実盾_刺突ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_MagicDamageCutRate",
+      "Name": "実盾_ENダメージ倍率",
+      "Description": "実盾_ENダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_FireDamageCutRate",
+      "Name": "実盾_爆発/燃焼ダメージ倍率",
+      "Description": "実盾_爆発/燃焼ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_ThunderDamageCutRate",
+      "Name": "実盾_コーラルダメージ倍率",
+      "Description": "実盾_コーラルダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_DarkDamageCutRate",
+      "Name": "実盾_闇ダメージ倍率",
+      "Description": "実盾_闇ダメージ倍率"
+    },
+    {
+      "Field": "physicalShield_BurnGuardResist",
+      "Name": "実盾_炎上耐性カット率[％]",
+      "Description": "実盾_炎上耐性カット率[％]"
+    },
+    {
+      "Field": "physicalShield_StunGuardResist",
+      "Name": "実盾_スタン攻撃カット率[％]",
+      "Description": "実盾_スタン攻撃カット率[％]"
+    },
+    {
+      "Field": "physicalShield_HighPlasmaGuardResist",
+      "Name": "実盾_強プラズマ攻撃カット率[％]",
+      "Description": "実盾_強プラズマ攻撃カット率[％]"
+    },
+    {
+      "Field": "physicalShield_CurseGuardResist",
+      "Name": "実盾_呪攻撃カット率[％]",
+      "Description": "実盾_呪攻撃カット率[％]"
+    },
+    {
+      "Field": "physicalShield_DepletedUraniumToxicGuardResist",
+      "Name": "実盾_劣化ウラン毒攻撃カット率[％]",
+      "Description": "実盾_劣化ウラン毒攻撃カット率[％]"
+    },
+    {
+      "Field": "pad15_1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "physicalShield_IsWeakA",
+      "Name": "実盾_特攻Aか",
+      "Description": "実盾_特攻Aか"
+    },
+    {
+      "Field": "physicalShield_IsWeakB",
+      "Name": "実盾_特攻Bか",
+      "Description": "実盾_特攻Bか"
+    },
+    {
+      "Field": "physicalShield_IsWeakC",
+      "Name": "実盾_特攻Cか",
+      "Description": "実盾_特攻Cか"
+    },
+    {
+      "Field": "physicalShield_IsWeakD",
+      "Name": "実盾_特攻Dか",
+      "Description": "実盾_特攻Dか"
+    },
+    {
+      "Field": "physicalShield_IsWeakE",
+      "Name": "実盾_特攻Eか",
+      "Description": "実盾_特攻Eか"
+    },
+    {
+      "Field": "physicalShield_IsWeakF",
+      "Name": "実盾_特攻Fか",
+      "Description": "実盾_特攻Fか"
+    },
+    {
+      "Field": "pad15",
+      "Name": "pad15",
+      "Description": ""
+    },
+    {
+      "Field": "physicalShield_DefPhys",
+      "Name": "実盾_実弾防御力",
+      "Description": "実盾_実弾防御力"
+    },
+    {
+      "Field": "physicalShield_DefSlash",
+      "Name": "実盾_斬撃防御力[％]",
+      "Description": "実盾_斬撃防御力[％]"
+    },
+    {
+      "Field": "physicalShield_DefBlow",
+      "Name": "実盾_打撃防御力[％]",
+      "Description": "実盾_打撃防御力[％]"
+    },
+    {
+      "Field": "physicalShield_DefThrust",
+      "Name": "実盾_刺突防御力[％]",
+      "Description": "実盾_刺突防御力[％]"
+    },
+    {
+      "Field": "physicalShield_DefMagic",
+      "Name": "実盾_EN防御力",
+      "Description": "実盾_EN防御力"
+    },
+    {
+      "Field": "physicalShield_DefFire",
+      "Name": "実盾_爆発/燃焼防御力",
+      "Description": "実盾_爆発/燃焼防御力"
+    },
+    {
+      "Field": "physicalShield_DefThunder",
+      "Name": "実盾_コーラル防御力",
+      "Description": "実盾_コーラル防御力"
+    },
+    {
+      "Field": "physicalShield_DefDark",
+      "Name": "実盾_闇防御力",
+      "Description": "実盾_闇防御力"
+    },
+    {
+      "Field": "physicalShield_DirectionHorizontalDeg",
+      "Name": "実盾_ガード方向_水平[deg]",
+      "Description": "実盾_ガード方向_水平[deg]"
+    },
+    {
+      "Field": "physicalShield_DirectionVerticalDeg",
+      "Name": "実盾_ガード方向_垂直[deg]",
+      "Description": "実盾_ガード方向_垂直[deg]"
+    },
+    {
+      "Field": "physicalShield_RangeHorizontalDeg",
+      "Name": "実盾_ガード範囲_水平[deg]",
+      "Description": "実盾_ガード範囲_水平[deg]"
+    },
+    {
+      "Field": "physicalShield_RangeVerticalDeg",
+      "Name": "実盾_ガード範囲_垂直[deg]",
+      "Description": "実盾_ガード範囲_垂直[deg]"
+    },
+    {
+      "Field": "pad16",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "bodyLookAtParamId2",
+      "Name": "LookAtパラメータID2",
+      "Description": "攻撃ステート992で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId3",
+      "Name": "LookAtパラメータID3",
+      "Description": "攻撃ステート993で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId4",
+      "Name": "LookAtパラメータID4",
+      "Description": "攻撃ステート994で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId5",
+      "Name": "LookAtパラメータID5",
+      "Description": "攻撃ステート995で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId6",
+      "Name": "LookAtパラメータID6",
+      "Description": "攻撃ステート996で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId7",
+      "Name": "LookAtパラメータID7",
+      "Description": "攻撃ステート997で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtParamId8",
+      "Name": "LookAtパラメータID8",
+      "Description": "攻撃ステート998で使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "bodyLookAtDirType2",
+      "Name": "LookAt方向タイプ2",
+      "Description": "攻撃ステート992で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType3",
+      "Name": "LookAt方向タイプ3",
+      "Description": "攻撃ステート993で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType4",
+      "Name": "LookAt方向タイプ4",
+      "Description": "攻撃ステート994で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType5",
+      "Name": "LookAt方向タイプ5",
+      "Description": "攻撃ステート995で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType6",
+      "Name": "LookAt方向タイプ6",
+      "Description": "攻撃ステート996で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType7",
+      "Name": "LookAt方向タイプ7",
+      "Description": "攻撃ステート997で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "bodyLookAtDirType8",
+      "Name": "LookAt方向タイプ8",
+      "Description": "攻撃ステート998で使用するLookAtで向ける方向"
+    },
+    {
+      "Field": "lookAtDeadType",
+      "Name": "死亡時LookAtタイプ",
+      "Description": "死亡したときのLookAt挙動"
+    },
+    {
+      "Field": "pad17",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "residualImpactSubPointPerSec",
+      "Name": "残留衝撃値揮発速度[point/s]",
+      "Description": "残留衝撃値が時間あたりに揮発する量"
+    },
+    {
+      "Field": "residualImpactSubRate_Guard",
+      "Name": "残留衝撃値揮発速度_ガード中倍率",
+      "Description": "ガード中の残留衝撃値揮発速度の倍率"
+    },
+    {
+      "Field": "paOpen_PaDecayCutRate",
+      "Name": "PA_展開時_PA減衰カット率[％]",
+      "Description": "PA展開直後中に参照するパラメータ。PA減衰カット率に対応する。"
+    },
+    {
+      "Field": "paOpen_PerfStayTimeSec",
+      "Name": "PA_展開時性能維持時間[sec]",
+      "Description": "PA展開直後状態を継続する時間[sec]。各展開タイプで共通のパラメータ。"
+    },
+    {
+      "Field": "paOpen_PerfRecastTimeSec",
+      "Name": "PA_展開時性能リキャスト時間[sec]",
+      "Description": "PA展開直後状態に再度遷移できるようになるまでのリキャスト時間[sec]。各展開タイプで共通のパラメータ。"
+    },
+    {
+      "Field": "paOpen_PerfTimeSfxId",
+      "Name": "PA_展開時性能中SfxId",
+      "Description": "PA展開直後状態中のSFXID。"
+    },
+    {
+      "Field": "paOpen_PerfTimeSfxDmyId",
+      "Name": "PA_展開時性能中Sfxダミポリ",
+      "Description": "PA展開直後状態中のSFX用ダミポリ。"
+    },
+    {
+      "Field": "paOpen_PerfEndSfxId",
+      "Name": "PA_展開時性能終了SfxId",
+      "Description": "PA展開直後状態から展開中状態に遷移した際のSFXID。"
+    },
+    {
+      "Field": "paOpen_PerfEndSfxDmyId",
+      "Name": "PA_展開時性能終了Sfxダミポリ",
+      "Description": "PA展開直後状態から展開中状態に遷移した際のSFX用ダミポリ。"
+    },
+    {
+      "Field": "paOpen_RecastSfxId",
+      "Name": "PA_リキャスト中展開時SfxId",
+      "Description": "PAリキャスト中に展開した際のSFXID。"
+    },
+    {
+      "Field": "paOpen_RecastSfxDmyId",
+      "Name": "PA_リキャスト中展開時Sfxダミポリ",
+      "Description": "PAリキャスト中に展開した際のSFX用ダミポリ。"
+    },
+    {
+      "Field": "paGaugeRecoverEmerDelayTimeSec",
+      "Name": "PA_展開型_展開中ゲージ消費速度[point/sec]",
+      "Description": "展開型PAのPA展開直後・PA展開中時の、PAゲージの1秒あたりの現象量[point/秒]"
+    },
+    {
+      "Field": "paGaugeOpenSubPointPerSec",
+      "Name": "PA_展開型_緊急時ゲージ回復待機時間[sec]",
+      "Description": "展開型PAのPA展開直後・PA展開中時にPAゲージが0を割って（PAブレイク発生）からゲージ回復し始めるまでの時間[sec]。"
+    },
+    {
+      "Field": "receiveDamageDirTypeForStopBullet",
+      "Name": "止まっている弾丸のダメージを受けたときのダメージ方向タイプ",
+      "Description": "爆発など止まっている弾丸のダメージを受けたときのダメージ方向タイプ"
+    },
+    {
+      "Field": "pad18",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "completelyInvisibleCheckMaxDistance",
+      "Name": "壁はみ出しチェックの距離範囲[m]",
+      "Description": "0 以上の値を設定すると、この NPC に対する範囲だけがとりパラの対応パラメータとの大きい値を取る"
+    },
+    {
+      "Field": "completelyInvisibleCheckHorizontalAngle",
+      "Name": "壁はみ出しチェックの角度範囲（水平）[deg]",
+      "Description": "0 以上の値を設定すると、この NPC に対する範囲だけがとりパラの対応パラメータとの大きい値を取る"
+    },
+    {
+      "Field": "completelyInvisibleCheckVerticalAngle",
+      "Name": "壁はみ出しチェックの角度範囲（垂直）[deg]",
+      "Description": "0 以上の値を設定すると、この NPC に対する範囲だけがとりパラの対応パラメータとの大きい値を取る"
+    },
+    {
+      "Field": "depletedUraniumToxicPaGuardResistRate",
+      "Name": "PA_劣化ウラン毒攻撃カット率[％]",
+      "Description": "PAガードによるカット率：劣化ウラン毒攻撃"
+    },
+    {
+      "Field": "stabilityVal",
+      "Name": "安定性能補正値 \t",
+      "Description": "安定性能補正値"
+    },
+    {
+      "Field": "paEmerGaugeRecoverPointPerSec",
+      "Name": "PA_展開型_緊急時ゲージ回復速度[point/sec]",
+      "Description": "緊急時の1秒あたりのゲージ回復量"
+    },
+    {
+      "Field": "bPaOpenGaugeRecoverDelay",
+      "Name": "PA_展開型_展開中ゲージ回復ディレイかけるか",
+      "Description": "展開中にゲージの回復ディレイを掛けるか"
+    },
+    {
+      "Field": "pad22",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "paOpenGaugeRecoverScale",
+      "Name": "PA_展開型_展開中ゲージ回復速度倍率[%]",
+      "Description": "展開中のゲージ回復速度の倍率"
+    },
+    {
+      "Field": "criticalDefSfxMaterial",
+      "Name": "クリティカル時追加SFX防御材質",
+      "Description": "クリティカルを受けたときのSFX材質"
+    },
+    {
+      "Field": "deadEffectMaxTime",
+      "Name": "死亡演出最長時間[s]",
+      "Description": "死亡演出最長時間"
+    },
+    {
+      "Field": "openingDeadForceHide",
+      "Name": "死亡再現時強制非表示",
+      "Description": "死亡再現時に非表示にするか"
+    },
+    {
+      "Field": "openingDeadDefaultVisible",
+      "Name": "死亡再現時デフォルト設定",
+      "Description": "マップスタジオでデフォルト設定したときの死亡時再現設定"
+    },
+    {
+      "Field": "staggerCriticalRate",
+      "Name": "被よろけクリティカル倍率[%]",
+      "Description": "被よろけ時のカット率減少の係数"
+    },
+    {
+      "Field": "impactPaGuardCutRate",
+      "Name": "PA_衝撃値カット率[％]",
+      "Description": "PAガードによるカット率：衝撃値"
+    },
+    {
+      "Field": "RicochetedDistRate",
+      "Name": "跳弾距離倍率",
+      "Description": "跳弾距離にかかる倍率"
+    },
+    {
+      "Field": "hacking_RecoverDelayTimeSec",
+      "Name": "ハッキング耐久力自然回復ディレイ[s]",
+      "Description": "ハッキング耐久値が回復し始めるまでの時間"
+    },
+    {
+      "Field": "hacking_RecoverValPerSec",
+      "Name": "ハッキング耐久力自然回復量[point/s]",
+      "Description": "ハッキング耐久値の回復量"
+    },
+    {
+      "Field": "bulletPenetrateDef",
+      "Name": "対弾丸貫通強度",
+      "Description": "弾丸被弾時の貫通強度"
+    },
+    {
+      "Field": "pad20",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "bRicochetedDistOverwrite",
+      "Name": "【廃止】跳弾距離補正上書きするか",
+      "Description": "跳弾補正距離を直接上書きするか"
+    },
+    {
+      "Field": "wepPoseAddAnimDefaultSlot",
+      "Name": "武器構え独立加算デフォルト番号",
+      "Description": "武器構え姿勢加算_アニメのデフォルト番号"
+    },
+    {
+      "Field": "bPredictionUpdateNoSkip",
+      "Name": "予測射撃の更新を省略しない",
+      "Description": "省略更新時でも予測射撃の精度を落とさないようにするか"
+    },
+    {
+      "Field": "doCutNaviByBoundingBox",
+      "Name": "キャラの直下を通行不可にするか",
+      "Description": "TRUEになる場合、このキャラのバウンディングボックスによってナビメッシュをシルエットする（動けないかつ死亡後もヒットが残るキャラ限定）"
+    },
+    {
+      "Field": "RicochetedDistOverwriteDist",
+      "Name": "【廃止】跳弾距離補正上書き値[m]",
+      "Description": "補正する跳弾補正距離"
+    },
+    {
+      "Field": "DmgCutRate_Phys",
+      "Name": "実弾攻撃_カット率[％]",
+      "Description": "ガードしてないときの実弾カット率"
+    },
+    {
+      "Field": "DmgCutRate_Mag",
+      "Name": "EN攻撃_カット率[％]",
+      "Description": "ガードしてないときのENカット率"
+    },
+    {
+      "Field": "DmgCutRate_Fire",
+      "Name": "爆発/燃焼攻撃力_カット率[％]",
+      "Description": "ガードしてないときの爆発/燃焼カット率"
+    },
+    {
+      "Field": "DmgCutRate_Thunder",
+      "Name": "コーラル攻撃力_カット率[％]",
+      "Description": "ガードしてないときのコーラルカット率"
+    },
+    {
+      "Field": "DmgCutRate_Dark",
+      "Name": "闇攻撃力_カット率[％]",
+      "Description": "ガードしてないときの闇カット率"
+    },
+    {
+      "Field": "DmgCutRate_Burn",
+      "Name": "炎上耐性_カット率[％]",
+      "Description": "ガードしてないときの炎上カット率"
+    },
+    {
+      "Field": "DmgCutRate_Stun",
+      "Name": "スタン攻撃_カット率[％]",
+      "Description": "ガードしてないときのスタンカット率"
+    },
+    {
+      "Field": "DmgCutRate_HighPlasma",
+      "Name": "強プラズマ攻撃_カット率[％]",
+      "Description": "ガードしてないときの強プラズマカット率"
+    },
+    {
+      "Field": "DmgCutRate_DepletedUraniumToxic",
+      "Name": "劣化ウラン毒攻撃_カット率[％] \t",
+      "Description": "ガードしてないときの劣化ウラン毒カット率"
+    },
+    {
+      "Field": "DmgCutRate_Curse",
+      "Name": "呪攻撃_カット率[％]",
+      "Description": "ガードしてないときの呪カット率"
+    },
+    {
+      "Field": "DmgCutRate_Sa",
+      "Name": "SA攻撃_カット率[％]",
+      "Description": "ガードしてないときのSAカット率"
+    },
+    {
+      "Field": "DmgCutRate_Stamina",
+      "Name": "スタミナ攻撃力_カット率[％]",
+      "Description": "ガードしてないときのスタミナカット率"
+    },
+    {
+      "Field": "spEffectId_AiBattleState",
+      "Name": "戦闘状態になったらかかる特殊効果",
+      "Description": "AIが戦闘状態になったらかかる特殊効果"
+    },
+    {
+      "Field": "spEffectId_AiNoBattleState",
+      "Name": "戦闘状態が解除されたらかかる特殊効果 \t",
+      "Description": "AIが非戦闘状態になったらかかる特殊効果"
+    },
+    {
+      "Field": "wepPoseAddAnimId0",
+      "Name": "武器構え姿勢加算_アニメID0",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId1",
+      "Name": "武器構え姿勢加算_アニメID1",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId2",
+      "Name": "武器構え姿勢加算_アニメID2",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId3",
+      "Name": "武器構え姿勢加算_アニメID3",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId4",
+      "Name": "武器構え姿勢加算_アニメID4",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId5",
+      "Name": "武器構え姿勢加算_アニメID5",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId6",
+      "Name": "武器構え姿勢加算_アニメID6",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "wepPoseAddAnimId7",
+      "Name": "武器構え姿勢加算_アニメID7",
+      "Description": "武器構え姿勢加算_アニメID"
+    },
+    {
+      "Field": "physicalShield_VsImpact",
+      "Name": "実盾_耐衝撃",
+      "Description": "攻撃パラ：PA貫通力と合わせてPAカット率の算出に用いる。"
+    },
+    {
+      "Field": "defeatOsReinfExp",
+      "Name": "撃破時獲得経験値",
+      "Description": "死亡時に獲得できるOS強化の経験値"
+    },
+    {
+      "Field": "updateActivatePriolity",
+      "Name": "更新とアクティベイトの優先度",
+      "Description": "アクティベート・更新レベルの決定に使用する。大きいほどプレイヤーから離れていても更新レベルが下がらない。"
+    },
+    {
+      "Field": "attenuationVariationId",
+      "Name": "可聴距離バリエーションID",
+      "Description": "SEの可聴距離を変更するために指定するID"
+    },
+    {
+      "Field": "guardImpactCutRatePercent",
+      "Name": "衝撃値カット率_ガード中[％]",
+      "Description": "ガード時の衝撃値カット率"
+    },
+    {
+      "Field": "justGuardKeepTimeSec",
+      "Name": "ジャスガ判定持続時間[sec]",
+      "Description": "ガード時のジャスガ判定持続時間"
+    },
+    {
+      "Field": "justGuardReloadTimeSec",
+      "Name": "ジャスガ判定再発動時間[sec]",
+      "Description": "ガード時のジャスガ判定再発動時間"
+    },
+    {
+      "Field": "justGuardImpactCutRatePercent",
+      "Name": "衝撃値カット率_ジャスガ[％]",
+      "Description": "ガード時(ジャスガ)の衝撃値カット率"
+    },
+    {
+      "Field": "guardOpenStartSfxId",
+      "Name": "ガード時SfxId",
+      "Description": "ガード展開時SFXID。"
+    },
+    {
+      "Field": "guardOpenStartSfxDmyId",
+      "Name": "ガード時Sfxダミポリ",
+      "Description": "ガード展開時SFX用ダミポリ。"
+    },
+    {
+      "Field": "guardOpenStaySfxId",
+      "Name": "ガード中SfxId",
+      "Description": "ガード展開中SFXID。"
+    },
+    {
+      "Field": "guardOpenStaySfxDmyId",
+      "Name": "ガード中Sfxダミポリ",
+      "Description": "ガード展開中SFX用ダミポリ。"
+    },
+    {
+      "Field": "guardOpenEndSfxId",
+      "Name": "ガード解除時SfxId",
+      "Description": "ガード解除SFXID。"
+    },
+    {
+      "Field": "guardOpenEndSfxDmyId",
+      "Name": "ガード解除時Sfxダミポリ",
+      "Description": "ガード解除SFXダミポリ。"
+    },
+    {
+      "Field": "guardInitOpenStartSfxId",
+      "Name": "ジャスガ時SfxId",
+      "Description": "ジャストガード展開時SFXID。"
+    },
+    {
+      "Field": "guardInitOpenStartDmyId",
+      "Name": "ジャスガ時Sfxダミポリ",
+      "Description": "ジャストガード展開時SFX用ダミポリ。"
+    },
+    {
+      "Field": "guardInitOpenStaySfxId",
+      "Name": "ジャスガ中SfxId",
+      "Description": "ジャストガード展開中SFXID。"
+    },
+    {
+      "Field": "guardInitOpenStayDmyId",
+      "Name": "ジャスガ中Sfxダミポリ",
+      "Description": "ジャストガード展開中SFX用ダミポリ。"
+    },
+    {
+      "Field": "hardCoreSpEffectID",
+      "Name": "ハードコアモード時特殊効果",
+      "Description": "ハードコアモード時の常駐特殊効果"
+    },
+    {
+      "Field": "physicalShield_guardImpactCutRatePercent",
+      "Name": "実盾_衝撃値カット率_ガード中[％]",
+      "Description": "実盾ガード時の衝撃値カット率"
+    },
+    {
+      "Field": "physicalShield_justGuardImpactCutRatePercent",
+      "Name": "実盾_衝撃値カット率_ジャスガ[％]",
+      "Description": "実盾ガード時(ジャスガ)の衝撃値カット率"
+    },
+    {
+      "Field": "physicalShield_justGuardKeepTimeSec",
+      "Name": "実盾_ジャスガ判定持続時間[sec]",
+      "Description": "実盾ガード時のジャスガ判定持続時間"
+    },
+    {
+      "Field": "physicalShield_justGuardReloadTimeSec",
+      "Name": "実盾_ジャスガ判定再発動時間[sec]",
+      "Description": "実盾ガード時のジャスガ判定再発動時間"
+    },
+    {
+      "Field": "pad_26",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "stayPa_Radius",
+      "Name": "設置PA_半径[m]",
+      "Description": "設置PAの半径"
+    },
+    {
+      "Field": "stayPa_MaxHp",
+      "Name": "設置PA_最大耐久値[point]",
+      "Description": "設置PAの最大耐久値"
+    },
+    {
+      "Field": "stayPa_AddHpPerSec",
+      "Name": "設置PA_耐久値増減速度[point/sec]",
+      "Description": "設置PAの1秒間に増える耐久値"
+    },
+    {
+      "Field": "stayPa_DefMaterialSfx",
+      "Name": "設置PA_防御SFX材質",
+      "Description": "設置PAのSFX材質"
+    },
+    {
+      "Field": "stayPa_DefMaterialSe",
+      "Name": "設置PA_防御SE材質",
+      "Description": "設置PAのSE材質"
+    },
+    {
+      "Field": "stayPa_LaunchSfxId",
+      "Name": "設置PA_展開時SfxId",
+      "Description": "設置PA展開時のSFXID"
+    },
+    {
+      "Field": "stayPa_LaunchKeepSfxId",
+      "Name": "設置PA_展開中SfxId",
+      "Description": "設置PA展開中のSFXID"
+    },
+    {
+      "Field": "stayPa_BreakSfxId",
+      "Name": "設置PA_崩壊時SfxId",
+      "Description": "設置PA崩壊時のSFXID"
+    },
+    {
+      "Field": "stayPa_ReleaseSfxId",
+      "Name": "設置PA_解除時SfxId",
+      "Description": "設置PA解除時のSFXID"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

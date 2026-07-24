@@ -1,0 +1,2106 @@
+{
+  "Name": "JigglerBaseParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Left shoulder_L_ClavicleLink"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Right shoulder_R_ClavicleLink"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Torso_SpineB"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Middle part of the fuselage"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Middle part of the fuselage"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Light MT - Body_03_ex_01"
+      ]
+    },
+    {
+      "ID": 3020001,
+      "Entries": [
+        "Light MT - L_Clavicle"
+      ]
+    },
+    {
+      "ID": 3020002,
+      "Entries": [
+        "Light MT - L_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020003,
+      "Entries": [
+        "Light MT - R_Clavicle"
+      ]
+    },
+    {
+      "ID": 3020004,
+      "Entries": [
+        "Light MT - R_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020006,
+      "Entries": [
+        "Light MT - L_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020007,
+      "Entries": [
+        "Light MT - L_Arm_03"
+      ]
+    },
+    {
+      "ID": 3020008,
+      "Entries": [
+        "Light MT - R_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020009,
+      "Entries": [
+        "Light MT - R_Arm_03"
+      ]
+    },
+    {
+      "ID": 3020010,
+      "Entries": [
+        "Light MT - L_Leg_01"
+      ]
+    },
+    {
+      "ID": 3020011,
+      "Entries": [
+        "Light MT - L_Leg_03"
+      ]
+    },
+    {
+      "ID": 3020012,
+      "Entries": [
+        "Light MT - R_Leg_01"
+      ]
+    },
+    {
+      "ID": 3020013,
+      "Entries": [
+        "Light MT - R_Leg_03"
+      ]
+    },
+    {
+      "ID": 3050000,
+      "Entries": [
+        "PCA Subject Guard MT - L_body_ex_01"
+      ]
+    },
+    {
+      "ID": 3050001,
+      "Entries": [
+        "PCA Subject Guard MT - R_body_ex_01"
+      ]
+    },
+    {
+      "ID": 3150000,
+      "Entries": [
+        "Juggernaut - LG_L_Track0_Armor2"
+      ]
+    },
+    {
+      "ID": 3150001,
+      "Entries": [
+        "Juggernaut - LG_L_Track1_Armor2"
+      ]
+    },
+    {
+      "ID": 3150002,
+      "Entries": [
+        "Juggernaut - LG_R_Track0_Armor2"
+      ]
+    },
+    {
+      "ID": 3150003,
+      "Entries": [
+        "Juggernaut - LG_R_Track1_Armor2"
+      ]
+    },
+    {
+      "ID": 3150004,
+      "Entries": [
+        "Juggernaut - Assault_13"
+      ]
+    },
+    {
+      "ID": 3150005,
+      "Entries": [
+        "Juggernaut - Assault_14"
+      ]
+    },
+    {
+      "ID": 3150006,
+      "Entries": [
+        "Juggernaut - Assault_15"
+      ]
+    },
+    {
+      "ID": 3150007,
+      "Entries": [
+        "Juggernaut - Assault_17"
+      ]
+    },
+    {
+      "ID": 3150008,
+      "Entries": [
+        "Juggernaut - Assault_18"
+      ]
+    },
+    {
+      "ID": 3150009,
+      "Entries": [
+        "Juggernaut - Assault_19"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Smart Cleaner - Cannon_002"
+      ]
+    },
+    {
+      "ID": 5020001,
+      "Entries": [
+        "Smart Cleaner - Body_EX_000"
+      ]
+    },
+    {
+      "ID": 5020002,
+      "Entries": [
+        "Smart Cleaner - Body_EX_001"
+      ]
+    },
+    {
+      "ID": 5020003,
+      "Entries": [
+        "Smart Cleaner - Skirt_000"
+      ]
+    },
+    {
+      "ID": 5020004,
+      "Entries": [
+        "Smart Cleaner - Skirt_001"
+      ]
+    },
+    {
+      "ID": 5020005,
+      "Entries": [
+        "Smart Cleaner - Skirt_002"
+      ]
+    },
+    {
+      "ID": 5020006,
+      "Entries": [
+        "Smart Cleaner - Skirt_003"
+      ]
+    },
+    {
+      "ID": 5020007,
+      "Entries": [
+        "Smart Cleaner - Skirt_004"
+      ]
+    },
+    {
+      "ID": 5020008,
+      "Entries": [
+        "Smart Cleaner - Skirt_005"
+      ]
+    },
+    {
+      "ID": 5020009,
+      "Entries": [
+        "Smart Cleaner - Skirt_006"
+      ]
+    },
+    {
+      "ID": 5020010,
+      "Entries": [
+        "Smart Cleaner - Skirt_007"
+      ]
+    },
+    {
+      "ID": 5020011,
+      "Entries": [
+        "Smart Cleaner - Skirt_008"
+      ]
+    },
+    {
+      "ID": 5020012,
+      "Entries": [
+        "Smart Cleaner - Skirt_009"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_60"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_61"
+      ]
+    },
+    {
+      "ID": 5100002,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_62"
+      ]
+    },
+    {
+      "ID": 5100003,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_63"
+      ]
+    },
+    {
+      "ID": 5100004,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_70"
+      ]
+    },
+    {
+      "ID": 5100005,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_71"
+      ]
+    },
+    {
+      "ID": 5100006,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_72"
+      ]
+    },
+    {
+      "ID": 5100007,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_73"
+      ]
+    },
+    {
+      "ID": 5100008,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_75"
+      ]
+    },
+    {
+      "ID": 5100009,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_76"
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_77"
+      ]
+    },
+    {
+      "ID": 5100011,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_78"
+      ]
+    },
+    {
+      "ID": 5100012,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_80"
+      ]
+    },
+    {
+      "ID": 5100013,
+      "Entries": [
+        "Quadcopter - Attach_Dmypoly_81"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300002,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300003,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300004,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300005,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300006,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300007,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300008,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300009,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300010,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300011,
+      "Entries": [
+        "Tiny Laser Drone - L_FrontCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300012,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300013,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300014,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300015,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300016,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300017,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300018,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300019,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300020,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300021,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300022,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300023,
+      "Entries": [
+        "Tiny Laser Drone - R_FrontCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300024,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300025,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300026,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300027,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300028,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300029,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300030,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300031,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300032,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300033,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300034,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300035,
+      "Entries": [
+        "Tiny Laser Drone - L_RearCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300036,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300037,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300038,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300039,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300040,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300041,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300042,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300043,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300044,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300045,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300046,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300047,
+      "Entries": [
+        "Tiny Laser Drone - R_RearCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_01"
+      ]
+    },
+    {
+      "ID": 5500001,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_02"
+      ]
+    },
+    {
+      "ID": 5500002,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_03"
+      ]
+    },
+    {
+      "ID": 5500003,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_04"
+      ]
+    },
+    {
+      "ID": 5500004,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_05"
+      ]
+    },
+    {
+      "ID": 5500005,
+      "Entries": [
+        "Mealworm - Thoracic_Scale_06"
+      ]
+    },
+    {
+      "ID": 5500006,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_01"
+      ]
+    },
+    {
+      "ID": 5500007,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_02"
+      ]
+    },
+    {
+      "ID": 5500008,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_03"
+      ]
+    },
+    {
+      "ID": 5500009,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_04"
+      ]
+    },
+    {
+      "ID": 5500010,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_05"
+      ]
+    },
+    {
+      "ID": 5500011,
+      "Entries": [
+        "Mealworm - Abdomen_Scale_06"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Sea Spider - L1_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100001,
+      "Entries": [
+        "Sea Spider - L1_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100002,
+      "Entries": [
+        "Sea Spider - L2_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100003,
+      "Entries": [
+        "Sea Spider - L2_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100004,
+      "Entries": [
+        "Sea Spider - L3_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100005,
+      "Entries": [
+        "Sea Spider - L3_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100006,
+      "Entries": [
+        "Sea Spider - R1_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100007,
+      "Entries": [
+        "Sea Spider - R1_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100008,
+      "Entries": [
+        "Sea Spider - R2_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100009,
+      "Entries": [
+        "Sea Spider - R2_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100010,
+      "Entries": [
+        "Sea Spider - R3_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100011,
+      "Entries": [
+        "Sea Spider - R3_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100012,
+      "Entries": [
+        "Sea Spider - L1_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100013,
+      "Entries": [
+        "Sea Spider - L1_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100014,
+      "Entries": [
+        "Sea Spider - L2_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100015,
+      "Entries": [
+        "Sea Spider - L2_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100016,
+      "Entries": [
+        "Sea Spider - L3_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100017,
+      "Entries": [
+        "Sea Spider - L3_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100018,
+      "Entries": [
+        "Sea Spider - R1_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100019,
+      "Entries": [
+        "Sea Spider - R1_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100020,
+      "Entries": [
+        "Sea Spider - R2_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100021,
+      "Entries": [
+        "Sea Spider - R2_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100022,
+      "Entries": [
+        "Sea Spider - R3_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100023,
+      "Entries": [
+        "Sea Spider - R3_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100024,
+      "Entries": [
+        "Sea Spider - L1_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100025,
+      "Entries": [
+        "Sea Spider - L2_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100026,
+      "Entries": [
+        "Sea Spider - L3_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100027,
+      "Entries": [
+        "Sea Spider - R1_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100028,
+      "Entries": [
+        "Sea Spider - R2_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100029,
+      "Entries": [
+        "Sea Spider - R3_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 7390000,
+      "Entries": [
+        "Nepenthes - BarrelCable_A_01"
+      ]
+    },
+    {
+      "ID": 7390001,
+      "Entries": [
+        "Nepenthes - BarrelCable_A_02"
+      ]
+    },
+    {
+      "ID": 7390002,
+      "Entries": [
+        "Nepenthes - BarrelCable_B_01"
+      ]
+    },
+    {
+      "ID": 7390003,
+      "Entries": [
+        "Nepenthes - BarrelCable_B_02"
+      ]
+    },
+    {
+      "ID": 7390004,
+      "Entries": [
+        "Nepenthes - BarrelCable_C_01"
+      ]
+    },
+    {
+      "ID": 7390005,
+      "Entries": [
+        "Nepenthes - BarrelCable_C_02"
+      ]
+    },
+    {
+      "ID": 7390006,
+      "Entries": [
+        "Nepenthes - BarrelCable_D_01"
+      ]
+    },
+    {
+      "ID": 7390007,
+      "Entries": [
+        "Nepenthes - BarrelCable_D_02"
+      ]
+    },
+    {
+      "ID": 7390008,
+      "Entries": [
+        "Nepenthes - BarrelCable_E_01"
+      ]
+    },
+    {
+      "ID": 7390009,
+      "Entries": [
+        "Nepenthes - BarrelCable_E_02"
+      ]
+    },
+    {
+      "ID": 7390010,
+      "Entries": [
+        "Nepenthes - BarrelCable_F_01"
+      ]
+    },
+    {
+      "ID": 7390011,
+      "Entries": [
+        "Nepenthes - BarrelCable_F_02"
+      ]
+    },
+    {
+      "ID": 8131000,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131001,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131002,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131003,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131004,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131005,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131006,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131007,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131008,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131009,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131010,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131011,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135000,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135001,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135002,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135003,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135004,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8135005,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8145000,
+      "Entries": [
+        "Enforcer (Flight Mode) - Radar_arm_02"
+      ]
+    },
+    {
+      "ID": 8145001,
+      "Entries": [
+        "Enforcer (Flight Mode) - Radar_arm_03"
+      ]
+    },
+    {
+      "ID": 8145002,
+      "Entries": [
+        "Enforcer (Flight Mode) - L_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8145003,
+      "Entries": [
+        "Enforcer (Flight Mode) - R_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8145005,
+      "Entries": [
+        "Enforcer (Flight Mode)"
+      ]
+    },
+    {
+      "ID": 9307000,
+      "Entries": [
+        "body test"
+      ]
+    },
+    {
+      "ID": 9307001,
+      "Entries": [
+        "waist test"
+      ]
+    },
+    {
+      "ID": 9307002,
+      "Entries": [
+        "right arm test"
+      ]
+    },
+    {
+      "ID": 9307003,
+      "Entries": [
+        "left arm test"
+      ]
+    },
+    {
+      "ID": 9307004,
+      "Entries": [
+        "right thigh test"
+      ]
+    },
+    {
+      "ID": 9307005,
+      "Entries": [
+        "left thigh test"
+      ]
+    },
+    {
+      "ID": 9307006,
+      "Entries": [
+        "right shin test"
+      ]
+    },
+    {
+      "ID": 9307007,
+      "Entries": [
+        "left shin test"
+      ]
+    },
+    {
+      "ID": 9307008,
+      "Entries": [
+        "right cover test"
+      ]
+    },
+    {
+      "ID": 9307009,
+      "Entries": [
+        "left cover test"
+      ]
+    },
+    {
+      "ID": 9308000,
+      "Entries": [
+        "Track L_1"
+      ]
+    },
+    {
+      "ID": 9308001,
+      "Entries": [
+        "Track L_2"
+      ]
+    },
+    {
+      "ID": 9308002,
+      "Entries": [
+        "Track L_3"
+      ]
+    },
+    {
+      "ID": 9308003,
+      "Entries": [
+        "Track L_4"
+      ]
+    },
+    {
+      "ID": 9308004,
+      "Entries": [
+        "Track L_5"
+      ]
+    },
+    {
+      "ID": 9308005,
+      "Entries": [
+        "Track L_6"
+      ]
+    },
+    {
+      "ID": 9308006,
+      "Entries": [
+        "Track R_1"
+      ]
+    },
+    {
+      "ID": 9308007,
+      "Entries": [
+        "Track R_2"
+      ]
+    },
+    {
+      "ID": 9308008,
+      "Entries": [
+        "Track R_3"
+      ]
+    },
+    {
+      "ID": 21080000,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21080001,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21080002,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21080003,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21080004,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21080005,
+      "Entries": [
+        "CS-5000 MAIN DISH (RAD)"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Attach parts test on core"
+      ]
+    },
+    {
+      "ID": 21400001,
+      "Entries": [
+        "Attach parts test on core"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "AC-2000 TOOL ARM (RAD)",
+        "AC-2000 TOOL ARM (RAD)"
+      ]
+    },
+    {
+      "ID": 31400001,
+      "Entries": [
+        "AC-2000 TOOL ARM (RAD)"
+      ]
+    },
+    {
+      "ID": 41510000,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510001,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510002,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510003,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510004,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510005,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510006,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510007,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510008,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510009,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510010,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510011,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510012,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510013,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510014,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510015,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510016,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510017,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510018,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510019,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510020,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 41510021,
+      "Entries": [
+        "LG-022T BORNEMISSZA (BALAM)"
+      ]
+    },
+    {
+      "ID": 43010000,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010001,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010002,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010003,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010004,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010005,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010006,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 43010007,
+      "Entries": [
+        "NACHTREIHER/42E (SCHNEIDER)"
+      ]
+    },
+    {
+      "ID": 44010000,
+      "Entries": [
+        "VP-422 (ARQUEBUS CORP)"
+      ]
+    },
+    {
+      "ID": 44010001,
+      "Entries": [
+        "VP-422 (ARQUEBUS CORP)"
+      ]
+    },
+    {
+      "ID": 46320000,
+      "Entries": [
+        "06-042 MIND BETA (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 46320001,
+      "Entries": [
+        "06-042 MIND BETA (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 46320002,
+      "Entries": [
+        "06-042 MIND BETA (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 46320003,
+      "Entries": [
+        "06-042 MIND BETA (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 37010000,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 37010001,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 37010002,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 37010003,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010000,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010001,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010002,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010003,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010004,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010005,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010006,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010007,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010008,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010009,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010010,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010011,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010012,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010013,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010014,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47010015,
+      "Entries": [
+        "EL-TL-10 (FIREMZA)"
+      ]
+    },
+    {
+      "ID": 47510000,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510001,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510002,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510003,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510004,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510005,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510006,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510007,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510008,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 47510009,
+      "Entries": [
+        "EL-TL-11 (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 48030000,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48030001,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48030002,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48030003,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48031000,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48031001,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48031002,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48031003,
+      "Entries": [
+        "AL-J-121 BASHO (BAWS)"
+      ]
+    },
+    {
+      "ID": 48060000,
+      "Entries": [
+        "EL-PL-00 ALBA (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 48060001,
+      "Entries": [
+        "EL-PL-00 ALBA (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 48060002,
+      "Entries": [
+        "EL-PL-00 ALBA (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 48060003,
+      "Entries": [
+        "EL-PL-00 ALBA (ELCANO FOUNDRY)"
+      ]
+    },
+    {
+      "ID": 29100000,
+      "Entries": [
+        "Biped torso test"
+      ]
+    },
+    {
+      "ID": 29100001,
+      "Entries": [
+        "Biped torso test"
+      ]
+    },
+    {
+      "ID": 39100000,
+      "Entries": [
+        "bipedal arm test"
+      ]
+    },
+    {
+      "ID": 39100001,
+      "Entries": [
+        "bipedal arm test"
+      ]
+    },
+    {
+      "ID": 39100002,
+      "Entries": [
+        "bipedal arm test"
+      ]
+    },
+    {
+      "ID": 39100003,
+      "Entries": [
+        "bipedal arm test"
+      ]
+    },
+    {
+      "ID": 49100000,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100001,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100002,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100003,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100004,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100005,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100006,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100007,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 49100008,
+      "Entries": [
+        "Bipod foot test"
+      ]
+    },
+    {
+      "ID": 50910000,
+      "Entries": [
+        "rifle test"
+      ]
+    },
+    {
+      "ID": 59810000,
+      "Entries": [
+        "Attach parts test"
+      ]
+    },
+    {
+      "ID": 59810001,
+      "Entries": [
+        "Attach parts test"
+      ]
+    },
+    {
+      "ID": 55710000,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710001,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710002,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710011,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710012,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710100,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55710110,
+      "Entries": [
+        "BO-044 HUXLEY Bullet Orbit (BALAM)"
+      ]
+    },
+    {
+      "ID": 55720000,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720001,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720002,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720011,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720012,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720100,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 55720110,
+      "Entries": [
+        "45-091 ORBT Laser Orbit (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 60420000,
+      "Entries": [
+        "Resident: WP_E_0420_01"
+      ]
+    },
+    {
+      "ID": 60420001,
+      "Entries": [
+        "Resident: WP_E_0420_16"
+      ]
+    },
+    {
+      "ID": 63000000,
+      "Entries": [
+        "Resident: WP_E_3000_02"
+      ]
+    },
+    {
+      "ID": 63000001,
+      "Entries": [
+        "Resident: WP_E_3000_03"
+      ]
+    },
+    {
+      "ID": 63020000,
+      "Entries": [
+        "Resident: WP_E_3020_02"
+      ]
+    },
+    {
+      "ID": 63040000,
+      "Entries": [
+        "Resident: WP_E_3040_01"
+      ]
+    },
+    {
+      "ID": 63040001,
+      "Entries": [
+        "Resident: WP_E_3040_02"
+      ]
+    },
+    {
+      "ID": 63161000,
+      "Entries": [
+        "Resident: WP_E_3161_03"
+      ]
+    },
+    {
+      "ID": 63161001,
+      "Entries": [
+        "Resident: WP_E_3161_07"
+      ]
+    },
+    {
+      "ID": 63350000,
+      "Entries": [
+        "Resident: L_WP_E_3350_01"
+      ]
+    },
+    {
+      "ID": 63350001,
+      "Entries": [
+        "Resident: R_WP_E_3350_01"
+      ]
+    },
+    {
+      "ID": 63350002,
+      "Entries": [
+        "Resident: L_WP_E_3350_02"
+      ]
+    },
+    {
+      "ID": 63350003,
+      "Entries": [
+        "Resident: R_WP_E_3350_02"
+      ]
+    },
+    {
+      "ID": 63351000,
+      "Entries": [
+        "Resident: L_WP_E_3351_01"
+      ]
+    },
+    {
+      "ID": 63351001,
+      "Entries": [
+        "Resident: R_WP_E_3351_01"
+      ]
+    },
+    {
+      "ID": 63351002,
+      "Entries": [
+        "Resident: L_WP_E_3351_02"
+      ]
+    },
+    {
+      "ID": 63351003,
+      "Entries": [
+        "Resident: R_WP_E_3351_02"
+      ]
+    },
+    {
+      "ID": 63370000,
+      "Entries": [
+        "Umigumo main gun vertical vibration"
+      ]
+    },
+    {
+      "ID": 63460000,
+      "Entries": [
+        "Resident: L_WP_E_3460_02"
+      ]
+    },
+    {
+      "ID": 63460001,
+      "Entries": [
+        "Resident: R_WP_E_3460_02"
+      ]
+    },
+    {
+      "ID": 63760000,
+      "Entries": [
+        "Resident: WP_E_3760_02"
+      ]
+    },
+    {
+      "ID": 66000000,
+      "Entries": [
+        "Resident: WP_E_6000_04"
+      ]
+    },
+    {
+      "ID": 66000001,
+      "Entries": [
+        "Resident: WP_E_6000_05"
+      ]
+    },
+    {
+      "ID": 66050000,
+      "Entries": [
+        "Resident: WP_E_6050_05"
+      ]
+    },
+    {
+      "ID": 66190000,
+      "Entries": [
+        "Resident: WP_E_6190_R_Shield_001"
+      ]
+    },
+    {
+      "ID": 66190001,
+      "Entries": [
+        "Resident: WP_E_6190_L_Shield_001"
+      ]
+    },
+    {
+      "ID": 66190002,
+      "Entries": [
+        "Resident: WP_E_6190_R_Shield_004"
+      ]
+    },
+    {
+      "ID": 66190003,
+      "Entries": [
+        "Resident: WP_E_6190_L_Shield_004"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Param": "TONE_CORRECT_BANK",
+  "Type": "TONE_CORRECT_BANK",
+  "Name": "TONE_CORRECT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "brightnessR",
+      "Name": "輝度R",
+      "Description": "輝度"
+    },
+    {
+      "Field": "brightnessG",
+      "Name": "輝度G",
+      "Description": "輝度"
+    },
+    {
+      "Field": "brightnessB",
+      "Name": "輝度B",
+      "Description": "輝度"
+    },
+    {
+      "Field": "contrastR",
+      "Name": "コントラストR",
+      "Description": "コントラスト"
+    },
+    {
+      "Field": "contrastG",
+      "Name": "コントラストG",
+      "Description": "コントラスト"
+    },
+    {
+      "Field": "contrastB",
+      "Name": "コントラストB",
+      "Description": "コントラスト"
+    },
+    {
+      "Field": "saturation",
+      "Name": "彩度",
+      "Description": "彩度"
+    },
+    {
+      "Field": "hue",
+      "Name": "色相",
+      "Description": "色相"
+    },
+    {
+      "Field": "sfxMultiplier",
+      "Name": "sfxMultiplier",
+      "Description": ""
+    }
+  ]
+}

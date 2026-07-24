@@ -1,0 +1,56 @@
+{
+  "Key": "ITEM_UI_DISPLAY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_UI_DISPLAY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Common (No Color)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Uncommon (Blue)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very Rare (Yellow)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Common (No Color)"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rare (Purple)"
+        }
+      ]
+    }
+  ]
+}

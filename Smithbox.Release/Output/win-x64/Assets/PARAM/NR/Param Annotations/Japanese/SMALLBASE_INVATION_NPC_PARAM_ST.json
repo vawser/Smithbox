@@ -1,0 +1,33 @@
+{
+  "Param": "SMALLBASE_INVATION_NPC_PARAM_ST",
+  "Type": "SMALLBASE_INVATION_NPC_PARAM_ST",
+  "Name": "SMALLBASE_INVATION_NPC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "npcParamId",
+      "Name": "npcParamId",
+      "Description": ""
+    },
+    {
+      "Field": "npcThinkId",
+      "Name": "npcThinkId",
+      "Description": ""
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "charaInitParamId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    }
+  ]
+}

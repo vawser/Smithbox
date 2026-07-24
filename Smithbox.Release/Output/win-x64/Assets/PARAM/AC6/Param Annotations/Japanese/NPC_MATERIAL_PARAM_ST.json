@@ -1,0 +1,58 @@
+{
+  "Param": "NPC_MATERIAL_PARAM_ST",
+  "Type": "NPC_MATERIAL_PARAM_ST",
+  "Name": "NPC_MATERIAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "materialParamId",
+      "Name": "マテリアル拡張パラメータID",
+      "Description": "マテリアル拡張パラメータのID"
+    },
+    {
+      "Field": "Param0",
+      "Name": "Param0（R)",
+      "Description": "設定するパラメータ（色の場合はR)"
+    },
+    {
+      "Field": "Param1",
+      "Name": "Param1（G)",
+      "Description": "設定するパラメータ（色の場合はG)"
+    },
+    {
+      "Field": "Param2",
+      "Name": "Param2（B)",
+      "Description": "設定するパラメータ（色の場合はB)"
+    },
+    {
+      "Field": "Param3",
+      "Name": "Param4（Intensity)",
+      "Description": "設定するパラメータ（色の場合はIntensity)"
+    },
+    {
+      "Field": "materialId",
+      "Name": "マテリアルID",
+      "Description": "変更するマテリアルID(matxmlで設定しているID）-1で全部のマテリアル"
+    }
+  ]
+}

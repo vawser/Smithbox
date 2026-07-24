@@ -1,0 +1,14 @@
+{
+  "id": "703",
+  "name": "Human Nashandra",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Param": "INTRUDE_POINT_PARAM",
+  "Type": "INTRUDE_POINT_PARAM",
+  "Name": "INTRUDE_POINT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "playAreaId",
+      "Name": "プレイ領域ID",
+      "Description": ""
+    },
+    {
+      "Field": "intrudePriority",
+      "Name": "優先度",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

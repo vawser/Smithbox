@@ -1,0 +1,233 @@
+{
+  "Name": "MultiPlayCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not erase"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test Data 2"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Normal Enemy"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Strong Enemy"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Boss"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

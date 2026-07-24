@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_VISIBLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_VISIBLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Displayed"
+        }
+      ]
+    }
+  ]
+}

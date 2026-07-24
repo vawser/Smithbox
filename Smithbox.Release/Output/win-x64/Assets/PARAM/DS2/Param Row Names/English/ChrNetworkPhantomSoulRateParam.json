@@ -1,0 +1,113 @@
+{
+  "Name": "ChrNetworkPhantomSoulRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None (host or NPC) -- 無（ホストまたはNPC）"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "White Spirit -- 白霊"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Small White Spirit -- 小白霊"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Golden Spirit -- 金霊"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Small Gold Spirit -- 小金霊"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Relief Blue Spirit -- 救援青霊"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Retaliation Blue Spirit -- 報復青霊"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Dark Spirit (Sign) -- 闇霊（サイン）"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Dark Spirits -- 闇霊（乱入）"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Red Spirit (Sign) -- 赤霊（サイン）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Red Spirit (Intruding) -- 赤霊（乱入）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Bell Guard Ashes -- 鐘守灰霊"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "The King of Mice -- ねずみの王灰霊"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Dragon Spirit -- 竜霊"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Mirror Knight Spirit -- ミラーナイト霊"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Deep Spirit -- 深淵霊"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    }
+  ]
+}

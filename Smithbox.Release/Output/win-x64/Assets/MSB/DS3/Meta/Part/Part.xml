@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a part within the map." />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of this part" />
+  
+    <SibPath
+    AltName="Model Placeholder Path"
+    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
+    
+    <ModelName
+    AltName="Model Name"
+    Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
+    ModelNameLink="" />
+    
+    <ModelIndex
+    IndexProperty="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+    <Scale
+    AltName="Scale"
+    Wiki="Scale of the map object, only meaningful for map pieces and objects."
+    ScaleProperty="" />
+    
+    <MapStudioLayer
+    AltName="Ceremony Layer"
+    Wiki="A bitmask that determines which ceremonies the part appears in." />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <BackreadGroups
+    AltName="Load Group"
+    Wiki="Controls when the map object is loaded." 
+    ArrayProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
+    
+    <EntityGroups
+    AltName="Entity ID Group"
+    Wiki="The entity ID group this map object belongs to." 
+    ArrayProperty="" />
+    
+    <UnkE04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkE05
+    AltName="Unknown: 0x5"
+    Wiki="" />
+    
+    <LanternID
+    AltName="Lantern ID"
+    Wiki="The light parameters to use for the lantern when this map object is touched by the player." />
+    
+    <LodParamID
+    AltName="LOD Param ID"
+    Wiki="The level of detail parameters to use when this map object is visible to the player."  />
+    
+    <UnkE0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <PointLightShadowSource
+    AltName="Is Point Light Shadow Source"
+    Wiki="Is this map object to be considered a point light shadow source." 
+    IsBool="" />
+    
+    <ShadowSource
+    AltName="Is Shadow Source"
+    Wiki="Is this map object to be considered a shadow source." 
+    IsBool="" />
+    
+    <ShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="Is this map object to be considered a shadow destination." 
+    IsBool="" />
+    
+    <IsShadowOnly
+    AltName="Is Shadow only"
+    Wiki="Is this map object only rendered when calculating the shadow pass." 
+    IsBool="" />
+    
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="Is this map object drawn by the reflection camera." 
+    IsBool="" />
+    
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="Is this map object only drawn within the reflection camera." 
+    IsBool="" />
+    
+    <UseDepthBiasFloat
+    AltName="Use Depth Bias Float"
+    Wiki="" 
+    IsBool="" />
+    
+    <DisablePointLightEffect
+    AltName="Disable Point Light Effect"
+    Wiki="" 
+    IsBool="" />
+    
+    <UnkE18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    
+    <GparamConfig
+    AltName="GPARAM Configuration"
+    Wiki="" />
+    
+    <LightSetID
+    AltName="Light Set ID"
+    Wiki="The ID of the value set from LightSet ParamEditor to use." />
+    
+    <FogParamID
+    AltName="Fog ID"
+    Wiki="The ID of the value set from FogParamEditor to use." />
+    
+    <LightScatteringID
+    AltName="Light Scattering ID"
+    Wiki="The ID of the value set from LightScattering : ParamEditor to use." />
+    
+    <EnvMapID
+    AltName="Environmental Map ID"
+    Wiki="The ID of the value set from Env Map:Editor to use." />
+    
+    
+    <SceneGparamConfig
+    AltName="Scene GPARAM Configuration"
+    Wiki="" />
+    
+    <ShadowParamID
+    AltName="Shadow ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <DofGlareQualityID
+    AltName="Depth of Field Glare ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <ToneMapID
+    AltName="Tone Map ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <DofID
+    AltName="Depth of Field ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <BloomID
+    AltName="Bloom ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <ColorGradingID
+    AltName="Color Grading ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <FeedbackBlurID
+    AltName="Feedback Blur ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <MotionBlurID
+    AltName="Motion Blur ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <AntiAliasID
+    AltName="Anti-Aliasing ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <SSAO_ID
+    AltName="Screen-space Ambient Occlusion ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <LightShaftID
+    AltName="Light Shaft ID"
+    Wiki="The ID of the value set from this GPARAM field to use." />
+    
+    <EventIDs
+    AltName="Event ID"
+    Wiki="The event ID for this part." 
+    ArrayProperty="" />
+    
+    <TransitionTime
+    AltName="Transition Duration"
+    Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = default time." />
+  </Field>
+  <Enums>
+  </Enums>
+</MSBMETA>

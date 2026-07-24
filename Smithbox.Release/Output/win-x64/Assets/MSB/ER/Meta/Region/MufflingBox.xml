@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a muffling box in the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <UnkT40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

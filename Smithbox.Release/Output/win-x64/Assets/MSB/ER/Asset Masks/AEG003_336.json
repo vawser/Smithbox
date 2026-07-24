@@ -1,0 +1,107 @@
+{
+  "model": "AEG003_336",
+  "section_one": [],
+  "section_two": [],
+  "section_three": [
+    {
+      "mask": "00",
+      "name": "Sitting slumped , left leg raised"
+    },
+    {
+      "mask": "01",
+      "name": "Laying face down, arms up"
+    },
+    {
+      "mask": "10",
+      "name": "Laying face down, arms down"
+    },
+    {
+      "mask": "20",
+      "name": "Laying face up, left hand on chest, right leg raised"
+    },
+    {
+      "mask": "21",
+      "name": "Laying face up, arms down"
+    },
+    {
+      "mask": "22",
+      "name": "Laying face up, left hand on chest, right arm reaching for the sky"
+    },
+    {
+      "mask": "30",
+      "name": "Laying belly down, legs and left arm hanging over object"
+    },
+    {
+      "mask": "31",
+      "name": "Laying belly down, arms and legs hanging over a wall"
+    },
+    {
+      "mask": "32",
+      "name": "Laying belly down, arms and legs hanging over a wall, legs raised"
+    },
+    {
+      "mask": "33",
+      "name": "Laying belly down, slumped over ledge, hanging by legs"
+    },
+    {
+      "mask": "34",
+      "name": "Laying belly down, arms over ledge"
+    },
+    {
+      "mask": "35",
+      "name": "Laying belly down, arms and legs hanging over a wall"
+    },
+    {
+      "mask": "40",
+      "name": "Laying belly down, arms and legs hanging over a wall"
+    },
+    {
+      "mask": "41",
+      "name": "Laying face down, slumped over legde, legs facing ground"
+    },
+    {
+      "mask": "50",
+      "name": "Sitting up, legs forward"
+    },
+    {
+      "mask": "51",
+      "name": "Sitting up, cross legged"
+    },
+    {
+      "mask": "60",
+      "name": "Laying face down, arms up"
+    },
+    {
+      "mask": "61",
+      "name": "Sitting slouched, legs down a ledge"
+    },
+    {
+      "mask": "62",
+      "name": "Sitting slouched, head near knees"
+    },
+    {
+      "mask": "63",
+      "name": "Kneeling on left knee"
+    },
+    {
+      "mask": "64",
+      "name": "Leaning on wall to left"
+    },
+    {
+      "mask": "65",
+      "name": "Impaled by invisible object and screaming"
+    },
+    {
+      "mask": "66",
+      "name": "On hands and knees reaching out for something"
+    },
+    {
+      "mask": "67",
+      "name": "Leaning on wall to right, right arm up"
+    },
+    {
+      "mask": "68",
+      "name": "Sitting on knees, clutching item VFX"
+    }
+  ]
+}

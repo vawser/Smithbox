@@ -1,0 +1,34 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "DSMS",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Original Author",
+        "Katalash",
+        "",
+        "[Header]Core Development Team",
+        "Katalash",
+        "Philiquaz",
+        "King bore haha (george)",
+        "",
+        "[Header]Additional Contributors",
+        "Thefifthmatt",
+        "Shadowth117",
+        "Nordgaren",
+        "ivi",
+        "Vawser",
+        "",
+        "[Header]Special Thanks",
+        "TKGP",
+        "Meowmaritus",
+        "Radai",
+        "Moonlight Ruin",
+        "Evan (HalfGrownHollow)",
+        "MyMaidisKitchenAid",
+        ""
+    ]
+}

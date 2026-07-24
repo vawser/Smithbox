@@ -1,0 +1,887 @@
+{
+  "Name": "PresetEmblemSpec",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Preset emblem: Lizard -- プリセットエンブレム：リザード"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Preset emblem: Cat -- プリセットエンブレム：キャット"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Preset emblem: Knight -- プリセットエンブレム：ナイト"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Preset emblem: Plant -- プリセットエンブレム：プラント"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Preset emblem: Breakstar -- プリセットエンブレム：ブレイクスター"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Preset emblem: Spider -- プリセットエンブレム：スパイダー"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Preset emblem: Panther -- プリセットエンブレム：パンサー"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Preset emblem: Unicorn -- プリセットエンブレム：ユニコーン"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Preset emblem: Ammonite -- プリセットエンブレム：アンモナイト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Preset emblem: shark fin -- プリセットエンブレム：シャークフィン"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Preset emblem: Pawn -- プリセットエンブレム：ポーン"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Preset emblem: Soldier -- プリセットエンブレム：ソルジャー"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Preset emblem: Grenade -- プリセットエンブレム：グレネード"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Preset emblem: Bullet -- プリセットエンブレム：バレット"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Preset emblem: Sighting -- プリセットエンブレム：サイティング"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Preset decal data 1 -- プリセットデカールデータ1"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Preset decal data 2 -- プリセットデカールデータ2"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Preset decal data 3 -- プリセットデカールデータ3"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Preset decal data 4 -- プリセットデカールデータ4"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Preset decal data 5 -- プリセットデカールデータ5"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Preset decal data 6 -- プリセットデカールデータ6"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Preset decal data 7 -- プリセットデカールデータ7"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Preset decal data 8 -- プリセットデカールデータ8"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Preset decal data 9 -- プリセットデカールデータ9"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Preset decal data 10 -- プリセットデカールデータ10"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Preset decal data 11 -- プリセットデカールデータ11"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Preset decal data 12 -- プリセットデカールデータ12"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Preset decal data 13 -- プリセットデカールデータ13"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Preset decal data 14 -- プリセットデカールデータ14"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Preset decal data 15 -- プリセットデカールデータ15"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Preset decal data 16 -- プリセットデカールデータ16"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Preset decal data 17 -- プリセットデカールデータ17"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Preset decal data 18 -- プリセットデカールデータ18"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Preset decal data 19 -- プリセットデカールデータ19"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Preset decal data 20 -- プリセットデカールデータ20"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Preset decal data 21 -- プリセットデカールデータ21"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Preset decal data 22 -- プリセットデカールデータ22"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Preset decal data 23 -- プリセットデカールデータ23"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Preset decal data 24 -- プリセットデカールデータ24"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Preset decal data 25 -- プリセットデカールデータ25"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Preset decal data 26 -- プリセットデカールデータ26"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Preset decal data 27 -- プリセットデカールデータ27"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "Preset decal data 28 -- プリセットデカールデータ28"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "Preset decal data 29 -- プリセットデカールデータ29"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "Preset decal data 30 -- プリセットデカールデータ30"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Preset decal data 31 -- プリセットデカールデータ31"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Preset decal data 32 -- プリセットデカールデータ32"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Preset decal data 33 -- プリセットデカールデータ33"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Preset decal data 34 -- プリセットデカールデータ34"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Preset decal data 35 -- プリセットデカールデータ35"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "Preset decal data 36 -- プリセットデカールデータ36"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Preset decal data 37 -- プリセットデカールデータ37"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Preset decal data 38 -- プリセットデカールデータ38"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Preset decal data 39 -- プリセットデカールデータ39"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Preset decal data 40 -- プリセットデカールデータ40"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Preset decal data 41 -- プリセットデカールデータ41"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Preset decal data 42 -- プリセットデカールデータ42"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Preset decal data 43 -- プリセットデカールデータ43"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Preset decal data 44 -- プリセットデカールデータ44"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Preset decal data 45 -- プリセットデカールデータ45"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Preset decal data 46 -- プリセットデカールデータ46"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Preset decal data 47 -- プリセットデカールデータ47"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "red gun 13 -- レッドガン13"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "G6 red -- G6 レッド"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "G5 Iguazu -- G5 イグアス"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "G4 Volta -- G4 ヴォルタ"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "G3 Five Flower Sea -- G3 五花海"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "G2 Nile -- G2 ナイル"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "G1 Michigan -- G1 ミシガン"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "V.VIII Pater -- V.VIII ペイター"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "V.VII Swinburne -- V.VII スウィンバーン"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "V.VI Maeterlinck -- V.VI メーテルリンク"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "V.V Hawkins -- V.V ホーキンス"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "V.IV Rusty -- V.IV ラスティ"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "V.III O'Keeffe -- V.III オキーフ"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "V.II Snail -- V.II スネイル"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "V.I Freud -- V.I フロイト"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "index dunham -- インデックス・ダナム"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "little ziyi -- リトル・ツィイー"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "ring freddy -- リング・フレディ"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "middle flat -- ミドル・フラット"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Sam Dolmayan -- サム・ドルマヤン"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Rokumonsen -- 六文銭"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Rusty (late) -- ラスティ(後期)"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Invincible Rummy -- インビンシブル・ラミー"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "chatty stick -- チャティ・スティック"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "Honest Bluetooth -- オーネスト・ブルートゥ"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Cinder Kara -- シンダー・カーラ"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "walter -- ウォルター"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "northark -- ノーザーク"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "Sulla -- スッラ"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "cold call -- コールドコール"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "kate -- ケイト"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "chartreuse -- シャルトルーズ"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "king -- キング"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Default emblem: Broken Raven -- デフォルトエンブレム：ブロークンレイヴン"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "Verification F: Independent Mercenary -- 検証F：独立傭兵"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "gift of air -- エアの贈り物"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Corporate emblem: Bayram -- 企業系エンブレム:ベイラム"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Corporate emblem: Darfon -- 企業系エンブレム:ダ―フォン"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Corporate emblem: Red gun -- 企業系エンブレム:レッドガン"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Corporate emblem:Archibus -- 企業系エンブレム:アーキバス"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Corporate emblem:Archibus ADD -- 企業系エンブレム:アーキバスADD"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Corporate emblem: Schneider -- 企業系エンブレム:シュナイダー"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Corporate emblem:VAPL -- 企業系エンブレム:VAPL"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Corporate emblem: Vesper -- 企業系エンブレム:ヴェスパー"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Corporate emblem: Furon -- 企業系エンブレム:ファーロン"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Corporate emblem: Merinit -- 企業系エンブレム:メリニット"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Corporate emblem: Takigawa -- 企業系エンブレム:タキガワ"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Corporate emblem: BAWS -- 企業系エンブレム:BAWS"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Corporate emblem: Elcano -- 企業系エンブレム:エルカノ"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Corporate emblem: Rubiconist -- 企業系エンブレム:ルビコニスト"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Corporate emblem: RaD -- 企業系エンブレム:RaD"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Corporate emblem: Giken -- 企業系エンブレム:技研"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "corporate emblem;overshear -- 企業系エンブレム;オーバーシアー"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Corporate emblem: All Mind -- 企業系エンブレム:オールマインド"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Corporate emblem: Blockade organization -- 企業系エンブレム:封鎖機構"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Mind α -- マインドα"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Mind β -- マインドβ"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "mind gamma -- マインドγ"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "trainer -- トレーナー"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "tester -- テスター"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Verification C: Company -- 検証C：企業"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Verification D: Rubiconian -- 検証D：ルビコニアン"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Verification E: Giken -- 検証E：技研"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "simulator raven -- シミュレーターのレイヴン"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "simulator rusty -- シミュレーターのラスティ"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "simulator walter -- シミュレーターのウォルター"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "air -- エア"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Emblem \"High Mercenary\" -- エンブレム「高等傭兵」"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Emblem \"Combat Skills Verification Program Completed\" -- エンブレム「戦闘技能検証プログラム完了」"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Hunter Grade 15 All battle logs recovered -- ハンターグレード15\u3000戦闘ログ全件回収完了"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Rubicon Omniscience All information logs collected -- ルビコン全知\u3000情報ログ全件回収完了"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Emblem \"Integration Program Completed\" -- エンブレム「インテグレーション・プログラム完了」"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "stargazer -- スターゲイザー"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "perfect mercenary -- パーフェクトマーセナリー"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Number 7 (Reinforced Human Company B) Decal -- ナンバー7（強化人間中隊B）デカール"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Number 5 decal -- ナンバー5\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Number 6 decal -- ナンバー6\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Early Ash Decal -- アッシュ前期 デカール"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Number 4 decal -- ナンバー4\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Number 2 decal -- ナンバー2\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Number 1 Decal -- ナンバー1\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Number 3 decal -- ナンバー3\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Late Ash Decal -- アッシュ後期\u3000デカール"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "lester decal -- レスターデカール"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "lester decal -- レスターデカール"
+      ]
+    }
+  ]
+}

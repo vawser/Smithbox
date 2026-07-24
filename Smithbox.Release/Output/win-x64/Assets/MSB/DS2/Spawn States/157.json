@@ -1,0 +1,26 @@
+{
+  "id": "157",
+  "name": "Skeleton (Armored)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Ground Rise"
+    },
+    {
+      "value": "3",
+      "name": "Disassembled"
+    },
+    {
+      "value": "4",
+      "name": "Ground Rise with Skull Attachment"
+    }
+  ]
+}

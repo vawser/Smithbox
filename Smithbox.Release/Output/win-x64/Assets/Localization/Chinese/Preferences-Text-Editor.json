@@ -1,0 +1,180 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_TextEditor_Primary_Language",
+      "Text": "主要语言"
+    },
+    {
+      "Key": "PREF_TextEditor_Primary_Language_TT",
+      "Text": "决定哪种语言被视为其他各种功能的默认语言。"
+    },
+    {
+      "Key": "PREF_TextEditor_Include_Vanilla_Cache",
+      "Text": "启用差异检查器"
+    },
+    {
+      "Key": "PREF_TextEditor_Include_Vanilla_Cache_TT",
+      "Text": "启用后，唯一和已修改的行将被高亮显示。"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers",
+      "Text": "显示过时容器"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers_TT",
+      "Text": "启用后，列表中会显示过时容器。这些是游戏（当前项目类型）不再读取的容器。"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only",
+      "Text": "仅显示主要分类"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only_TT",
+      "Text": "启用后，列表中仅显示主要分类的容器。"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers",
+      "Text": "隐藏未使用容器"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers_TT",
+      "Text": "启用后，未使用的容器将不再显示在列表中。"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Community_Names",
+      "Text": "显示社区名称"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Community_Names_TT",
+      "Text": "启用后，容器的社区名称将代替原始文件名使用。"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Source_Path",
+      "Text": "显示源路径"
+    },
+    {
+      "Key": "PREF_TextEditor_Container_List_Display_Source_Path_TT",
+      "Text": "启用后，容器的源路径将显示在其工具提示中。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Grouped_Display",
+      "Text": "启用分组显示"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Grouped_Display_TT",
+      "Text": "启用后，属于条目组的非标题文件将被隐藏。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Display_ID",
+      "Text": "显示 ID"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Display_ID_TT",
+      "Text": "启用后，文本文件的 FMG ID 将与其名称一起列出。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names",
+      "Text": "显示社区名称"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names_TT",
+      "Text": "启用后，文本文件的社区名称将代替原始文件名显示。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text",
+      "Text": "显示空值"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text_TT",
+      "Text": "启用后，空文本将显示为 '<null>'。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name",
+      "Text": "截断名称"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name_TT",
+      "Text": "启用后，条目名称如果过长将被截断。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check",
+      "Text": "重复时忽略 ID 检查"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check_TT",
+      "Text": "启用后，复制将产生与源具有相同条目 ID 的条目。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries",
+      "Text": "启用分组条目"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries_TT",
+      "Text": "启用后，构成标题、摘要、描述和效果组的条目将全部显示在文本条目窗口中。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID",
+      "Text": "忽略 ID 检查"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID_TT",
+      "Text": "启用后，将允许会导致重复 ID 的 ID 更改。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries",
+      "Text": "导出入分组条目"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries_TT",
+      "Text": "启用后，分组源条目的其他成员将在导出时包含在内。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export",
+      "Text": "启用快速导出"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export_TT",
+      "Text": "启用后，导出文件将自动命名，而不是向用户显示导出文本提示。每次都会覆盖现有的快速导出文件。"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only",
+      "Text": "仅显示主要"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only_TT",
+      "Text": "启用后，选择下拉菜单中仅显示您的主要分类。"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix",
+      "Text": "为同步文本添加前缀"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix_TT",
+      "Text": "启用后，同步语言容器中的所有文本都会添加前缀。"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Prefix",
+      "Text": "要添加的前缀"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Prefix_TT",
+      "Text": "添加到同步文本的前缀。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Include_ID",
+      "Text": "包含 ID"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Include_ID_TT",
+      "Text": "启用后，条目 ID 将包含在保存的剪贴板文本中。"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines",
+      "Text": "转义换行符"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines_TT",
+      "Text": "启用后，换行符被转义，使保存的剪贴板文本不包含实际换行符。"
+    }
+  ]
+}

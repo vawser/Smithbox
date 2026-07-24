@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_THINK_CHANGE_STATE_ACTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_CHANGE_STATE_ACTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do Nothing"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "React immediately"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "React after turning toward target"
+        }
+      ]
+    }
+  ]
+}

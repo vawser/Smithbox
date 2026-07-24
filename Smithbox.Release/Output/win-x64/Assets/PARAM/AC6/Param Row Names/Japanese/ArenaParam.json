@@ -1,0 +1,257 @@
+{
+  "Name": "ArenaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "29(F) / 20900000_Drunker -- 29(F) / 20900000_ドランカー"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "28(F) / 11700000_Ash People A -- 28(F) / 11700000_灰の民A"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "27(F) / 20200000_Wild Geese F -- 27(F) / 20200000_ワイルドギースF"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "26(E) / 21100000_Independent Mercenary A -- 26(E) / 21100000_独立傭兵A"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "25(E) / 20500000_Number 5 -- 25(E) / 20500000_ナンバー5"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "24(E) / 11800000_Ash People B -- 24(E) / 11800000_灰の民B"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "23(E) / 20400000_Number 6 -- 23(E) / 20400000_ナンバー6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "22(D) / 20100000_Wild Geese E -- 22(D) / 20100000_ワイルドギースE"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "21(D) / 20700000_Ash People D -- 21(D) / 20700000_灰の民D"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "20(D) / 10800000_Number 4 (Reinforced Human Company A) -- 20(D) / 10800000_ナンバー4（強化人間中隊A）"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "19(D) / 11400000_G5 Iguazu -- 19(D) / 11400000_G5 イグアス"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "18(D) / 10400000_Assassin -- 18(D) / 10400000_刺客"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "17(C) / 11500000_Wild Geese B -- 17(C) / 11500000_ワイルド・ギースB"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "16(C) / 10900000_Number 7 (Reinforced Human Company B) -- 16(C) / 10900000_ナンバー7（強化人間中隊B）"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "15(C) / 10200000_String AC -- 15(C) / 10200000_文字列AC"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "14(C) / 12100000_Karla's subordinate -- 14(C) / 12100000_カーラの部下"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "13(C) / 11900000_Ash People C -- 13(C) / 11900000_灰の民C"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "12(B) / 20600000_Number 3 -- 12(B) / 20600000_ナンバー3"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "11(B) / 11200000_Carla -- 11(B) / 11200000_カーラ"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "10(B) / 10100000_Ace of Decisive Battle B -- 10(B) / 10100000_決戦のエースB"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "09(B) / 10500000_Ash (early model) For doping -- 09(B) / 10500000_アッシュ（前期機体）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "08(B) / 11000000_Collapse A layer AC -- 08(B) / 11000000_崩落A層AC"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "07(A) / 20000000_Wild Geese D -- 07(A) / 20000000_ワイルドギースD"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "06(A) / 10700000_Number 2 -- 06(A) / 10700000_ナンバー2"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "05(A) / 21200000_Independent Mercenary B -- 05(A) / 21200000_独立傭兵B"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "04(A) / 20800000_Ash People E (Strong JUDO) For doping -- 04(A) / 20800000_灰の民E（強JUDO）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "03(S) / 21300000_Dead Strongman -- 03(S) / 21300000_死んだ強者"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "02(S) / 11600000_Wild Geese C -- 02(S) / 11600000_ワイルド・ギースC"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "01(S) / 12000000_Number 1 -- 01(S) / 12000000_ナンバー1"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "CASE-1/21400000_Simulator unmanned AC -- CASE-1 / 21400000_シミュレーター無人AC"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "CASE-2 / 12600000_Test Teacher -- CASE-2 / 12600000_テスト先生"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "CASE-3 / 12700000_For onboarding -- CASE-3 / 12700000_オンボーディング用"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "CASE-4 / 10300000_Yuriya -- CASE-4 / 10300000_ユーリヤ"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "CASE-5 / 20300000_Bayram battle data -- CASE-5 / 20300000_ベイラムの戦闘データ"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "CASE-6 / 21000000_Drunker battle data -- CASE-6 / 21000000_ドランカーの戦闘データ"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "CASE-7 / 10310000_Yuriya (All Mind) -- CASE-7 / 10310000_ユーリヤ（オールマインド）"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "CASE-8 / 11100000_Unmanned AC in the reactor core -- CASE-8 / 11100000_炉心の無人AC"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "CASE-9 / 10000000_Ace of decisive battle A for doping -- CASE-9 / 10000000_決戦のエースA\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "CASE-RLF / 10600000_Ash (late model) for doping -- CASE-RLF / 10600000_アッシュ（後期機体）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "CASE-RRI / 11300000_Leicester -- CASE-RRI / 11300000_レスター"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "CASE-AYR / 12500000_Win for doping -- CASE-AYR / 12500000_ウィン\u3000ドーピング用"
+      ]
+    }
+  ]
+}

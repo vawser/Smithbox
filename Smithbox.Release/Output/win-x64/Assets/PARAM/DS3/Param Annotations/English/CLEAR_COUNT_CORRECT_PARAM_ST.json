@@ -1,0 +1,148 @@
+{
+  "Param": "CLEAR_COUNT_CORRECT_PARAM_ST",
+  "Type": "CLEAR_COUNT_CORRECT_PARAM_ST",
+  "Name": "CLEAR_COUNT_CORRECT_PARAM_ST",
+  "Description": "New Game Plus corrections",
+  "Fields": [
+    {
+      "Field": "HP",
+      "Name": "Enemy - Max HP Multiplier",
+      "Description": ""
+    },
+    {
+      "Field": "Mana",
+      "Name": "Enemy - Max FP Multiplier",
+      "Description": ""
+    },
+    {
+      "Field": "Stamina",
+      "Name": "Enemy - Max Stamina Multiplier",
+      "Description": ""
+    },
+    {
+      "Field": "PhysDmg",
+      "Name": "Enemy - Damage Multiplier: Physical",
+      "Description": ""
+    },
+    {
+      "Field": "slashDmg",
+      "Name": "Enemy - Damage Multiplier: Slash",
+      "Description": ""
+    },
+    {
+      "Field": "blowDmg",
+      "Name": "Enemy - Damage Multiplier: Strike",
+      "Description": ""
+    },
+    {
+      "Field": "thrustDmg",
+      "Name": "Enemy - Damage Multiplier: Thrust",
+      "Description": ""
+    },
+    {
+      "Field": "neutral",
+      "Name": "Enemy - Damage Multiplier: Standard",
+      "Description": ""
+    },
+    {
+      "Field": "MagicDmg",
+      "Name": "Enemy - Damage Multiplier: Magic",
+      "Description": ""
+    },
+    {
+      "Field": "FireDmg",
+      "Name": "Enemy - Damage Multiplier: Fire",
+      "Description": ""
+    },
+    {
+      "Field": "ThunderDmg",
+      "Name": "Enemy - Damage Multiplier: Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "DarkDmg",
+      "Name": "Enemy - Damage Multiplier: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "PhysResist",
+      "Name": "Enemy - Defence Multiplier: Physical",
+      "Description": ""
+    },
+    {
+      "Field": "MagicResist",
+      "Name": "Enemy - Defence Multiplier: Magic",
+      "Description": ""
+    },
+    {
+      "Field": "FireResist",
+      "Name": "Enemy - Defence Multiplier: Fire",
+      "Description": ""
+    },
+    {
+      "Field": "ThunderResist",
+      "Name": "Enemy - Defence Multiplier: Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "DarkResist",
+      "Name": "Enemy - Defence Multiplier: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "StaminaDmg",
+      "Name": "Enemy - Damage Multiplier: Stamina",
+      "Description": ""
+    },
+    {
+      "Field": "MpRecover",
+      "Name": "Enemy - Drop Multiplier: Souls",
+      "Description": ""
+    },
+    {
+      "Field": "PoisonResist",
+      "Name": "Enemy - Resistance Multiplier: Poison",
+      "Description": ""
+    },
+    {
+      "Field": "ToxicResist",
+      "Name": "Enemy - Resistance Multiplier: Toxic",
+      "Description": ""
+    },
+    {
+      "Field": "BleedResist",
+      "Name": "Enemy - Resistance Multiplier: Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "CurseResist",
+      "Name": "Enemy - Resistance Multiplier: Curse",
+      "Description": ""
+    },
+    {
+      "Field": "FrostResist",
+      "Name": "Enemy - Resistance Multiplier: Frost",
+      "Description": ""
+    },
+    {
+      "Field": "HpRecover",
+      "Name": "Enemy - Damage Taken Multiplier: Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "subMpRecover",
+      "Name": "Enemy - Damage Taken Multiplier: Poise",
+      "Description": ""
+    },
+    {
+      "Field": "subHpRecover",
+      "Name": "Enemy - Damage Taken Multiplier: Frost",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

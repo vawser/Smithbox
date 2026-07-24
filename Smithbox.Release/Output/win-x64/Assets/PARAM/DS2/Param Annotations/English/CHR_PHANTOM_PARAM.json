@@ -1,0 +1,138 @@
+{
+  "Param": "CHR_PHANTOM_PARAM",
+  "Type": "CHR_PHANTOM_PARAM",
+  "Name": "CHR_PHANTOM_PARAM",
+  "Description": "Defines visual rendering and blending parameters for phantom (ghost-like network entities), including color, lighting response, and transparency behavior.",
+  "Fields": [
+    {
+      "Field": "edgeColorR",
+      "Name": "Edge Color: Red",
+      "Description": "Red channel of the outline (edge) color."
+    },
+    {
+      "Field": "edgeColorG",
+      "Name": "Edge Color: Green",
+      "Description": "Green channel of the outline (edge) color."
+    },
+    {
+      "Field": "edgeColorB",
+      "Name": "Edge Color: Blue",
+      "Description": "Blue channel of the outline (edge) color."
+    },
+    {
+      "Field": "edgeColorA",
+      "Name": "Edge Color: Alpha",
+      "Description": "Opacity of the outline (edge) color."
+    },
+    {
+      "Field": "frontColorR",
+      "Name": "Front Color: Red",
+      "Description": "Red channel of the main surface color."
+    },
+    {
+      "Field": "frontColorG",
+      "Name": "Front Color: Green",
+      "Description": "Green channel of the main surface color."
+    },
+    {
+      "Field": "frontColorB",
+      "Name": "Front Color: Blue",
+      "Description": "Blue channel of the main surface color."
+    },
+    {
+      "Field": "frontColorA",
+      "Name": "Front Color: Alpha",
+      "Description": "Opacity of the main surface color."
+    },
+    {
+      "Field": "diffMulColorR",
+      "Name": "Diffuse Multiplier: Red",
+      "Description": "Red channel used to scale diffuse lighting contribution."
+    },
+    {
+      "Field": "diffMulColorG",
+      "Name": "Diffuse Multiplier: Green",
+      "Description": "Green channel used to scale diffuse lighting contribution."
+    },
+    {
+      "Field": "diffMulColorB",
+      "Name": "Diffuse Multiplier: Blue",
+      "Description": "Blue channel used to scale diffuse lighting contribution."
+    },
+    {
+      "Field": "diffMulColorA",
+      "Name": "Diffuse Multiplier: Alpha",
+      "Description": "Alpha multiplier for diffuse lighting influence."
+    },
+    {
+      "Field": "specMulColorR",
+      "Name": "Specular Multiplier: Red",
+      "Description": "Red channel used to scale specular highlights."
+    },
+    {
+      "Field": "specMulColorG",
+      "Name": "Specular Multiplier: Green",
+      "Description": "Green channel used to scale specular highlights."
+    },
+    {
+      "Field": "specMulColorB",
+      "Name": "Specular Multiplier: Blue",
+      "Description": "Blue channel used to scale specular highlights."
+    },
+    {
+      "Field": "specMulColorA",
+      "Name": "Specular Multiplier: Alpha",
+      "Description": "Alpha multiplier for specular highlight intensity."
+    },
+    {
+      "Field": "lightColorR",
+      "Name": "Light Color: Red",
+      "Description": "Red channel of the applied lighting tint."
+    },
+    {
+      "Field": "lightColorG",
+      "Name": "Light Color: Green",
+      "Description": "Green channel of the applied lighting tint."
+    },
+    {
+      "Field": "lightColorB",
+      "Name": "Light Color: Blue",
+      "Description": "Blue channel of the applied lighting tint."
+    },
+    {
+      "Field": "lightColorA",
+      "Name": "Light Color: Alpha",
+      "Description": "Opacity of the lighting tint effect."
+    },
+    {
+      "Field": "blendRate",
+      "Name": "Blend Rate",
+      "Description": "Controls how strongly phantom rendering blends with the base material."
+    },
+    {
+      "Field": "alpha",
+      "Name": "Alpha",
+      "Description": "Overall transparency of the phantom object."
+    },
+    {
+      "Field": "blendType",
+      "Name": "Alpha Blend Mode",
+      "Description": "Determines the blending method used for transparency rendering."
+    },
+    {
+      "Field": "isEdgeSubtract",
+      "Name": "Subtract Edge Color",
+      "Description": "If enabled, edge color is subtracted instead of added during rendering."
+    },
+    {
+      "Field": "isFrontSubtract",
+      "Name": "Subtract Front Color",
+      "Description": "If enabled, front surface color is subtracted instead of added during rendering."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Reserved",
+      "Description": "Unused reserved field for future expansion."
+    }
+  ]
+}

@@ -1,0 +1,1295 @@
+{
+  "Name": "ItemLotLvdepParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For operation check"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Try"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Seoul 0 】"
+      ]
+    },
+    {
+      "ID": 151010,
+      "Entries": [
+        "Seoul 2 】"
+      ]
+    },
+    {
+      "ID": 151020,
+      "Entries": [
+        "Seoul 4 】"
+      ]
+    },
+    {
+      "ID": 151030,
+      "Entries": [
+        "Seoul 6 】"
+      ]
+    },
+    {
+      "ID": 151040,
+      "Entries": [
+        "Seoul 7 】"
+      ]
+    },
+    {
+      "ID": 151050,
+      "Entries": [
+        "Seoul 7 】"
+      ]
+    },
+    {
+      "ID": 151060,
+      "Entries": [
+        "Seoul 7 】"
+      ]
+    },
+    {
+      "ID": 151100,
+      "Entries": [
+        "Seoul 1 】"
+      ]
+    },
+    {
+      "ID": 151110,
+      "Entries": [
+        "Seoul 3 】"
+      ]
+    },
+    {
+      "ID": 151120,
+      "Entries": [
+        "Seoul 5 】"
+      ]
+    },
+    {
+      "ID": 151130,
+      "Entries": [
+        "Seoul 7 】"
+      ]
+    },
+    {
+      "ID": 151140,
+      "Entries": [
+        "Seoul 8 】"
+      ]
+    },
+    {
+      "ID": 151150,
+      "Entries": [
+        "Seoul 8 】"
+      ]
+    },
+    {
+      "ID": 151160,
+      "Entries": [
+        "Seoul 8 】"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300030,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300040,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300050,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300060,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300110,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300120,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300130,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300140,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300150,
+      "Entries": [
+        "Weapon strengthening material [Rare]"
+      ]
+    },
+    {
+      "ID": 300160,
+      "Entries": [
+        "Weapon strengthening material [Rare]"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300210,
+      "Entries": [
+        "Weapon Enhancement Material [Common]"
+      ]
+    },
+    {
+      "ID": 300220,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300230,
+      "Entries": [
+        "Weapon upgrade material [Uncommon]"
+      ]
+    },
+    {
+      "ID": 300240,
+      "Entries": [
+        "Weapon strengthening material [Rare]"
+      ]
+    },
+    {
+      "ID": 300250,
+      "Entries": [
+        "Weapon strengthening material [Rare]"
+      ]
+    },
+    {
+      "ID": 300260,
+      "Entries": [
+        "Weapon strengthening material [Rare]"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602010,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602020,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602030,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602040,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602050,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602060,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602100,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602110,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602120,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602130,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602140,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602150,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602160,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602200,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602210,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602220,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602230,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602240,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602250,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602260,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602300,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602310,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602320,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602330,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602340,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602350,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602360,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602400,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602410,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602420,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602430,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602440,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602450,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602460,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602500,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602510,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602520,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602530,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602540,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602550,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602560,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602600,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602610,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602620,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602630,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602640,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602650,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 602660,
+      "Entries": [
+        "Procedurally Generated Holy Grail: Multiplayer"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "Ritual Materials [Common A 】level 2"
+      ]
+    },
+    {
+      "ID": 700020,
+      "Entries": [
+        "Ritual Materials [Common A 】level 3"
+      ]
+    },
+    {
+      "ID": 700030,
+      "Entries": [
+        "Ritual Materials [Common A 】level 4"
+      ]
+    },
+    {
+      "ID": 700040,
+      "Entries": [
+        "Ritual Materials [Common A 】level 5"
+      ]
+    },
+    {
+      "ID": 700050,
+      "Entries": [
+        "Ritual Materials [Common A 】level 6"
+      ]
+    },
+    {
+      "ID": 700060,
+      "Entries": [
+        "Ritual Materials [Common A 】level 7"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Ritual Materials [Common A 】level 2"
+      ]
+    },
+    {
+      "ID": 700110,
+      "Entries": [
+        "Ritual Materials [Common A 】level 3"
+      ]
+    },
+    {
+      "ID": 700120,
+      "Entries": [
+        "Ritual Materials [Common A 】level 4"
+      ]
+    },
+    {
+      "ID": 700130,
+      "Entries": [
+        "Ritual Materials [Common A 】level 5"
+      ]
+    },
+    {
+      "ID": 700140,
+      "Entries": [
+        "Ritual Materials [Common A 】level 5"
+      ]
+    },
+    {
+      "ID": 700150,
+      "Entries": [
+        "Ritual Materials [Common A 】level 6"
+      ]
+    },
+    {
+      "ID": 700160,
+      "Entries": [
+        "Ritual Materials [Common A 】level 7"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700510,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700520,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700530,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700540,
+      "Entries": [
+        "Ritual Materials [Common A 】level 1"
+      ]
+    },
+    {
+      "ID": 700550,
+      "Entries": [
+        "Ritual Materials [Common A 】level 6"
+      ]
+    },
+    {
+      "ID": 700560,
+      "Entries": [
+        "Ritual Materials [Common A 】level 7"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 701010,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 701020,
+      "Entries": [
+        "Ritual Materials [Common B 】level 3"
+      ]
+    },
+    {
+      "ID": 701030,
+      "Entries": [
+        "Ritual Materials [Common B 】level 3"
+      ]
+    },
+    {
+      "ID": 701040,
+      "Entries": [
+        "Ritual Materials [Common B 】level 5"
+      ]
+    },
+    {
+      "ID": 701050,
+      "Entries": [
+        "Ritual Materials [Common B 】level 6"
+      ]
+    },
+    {
+      "ID": 701060,
+      "Entries": [
+        "Ritual Materials [Common B 】level 7"
+      ]
+    },
+    {
+      "ID": 701100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 701110,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 701120,
+      "Entries": [
+        "Ritual Materials [Common B 】level 3"
+      ]
+    },
+    {
+      "ID": 701130,
+      "Entries": [
+        "Ritual Materials [Common B 】level 4"
+      ]
+    },
+    {
+      "ID": 701140,
+      "Entries": [
+        "Ritual Materials [Common B 】level 5"
+      ]
+    },
+    {
+      "ID": 701150,
+      "Entries": [
+        "Ritual Materials [Common B 】level 6"
+      ]
+    },
+    {
+      "ID": 701160,
+      "Entries": [
+        "Ritual Materials [Common B 】level 7"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Ritual Materials [Common C 】level 1"
+      ]
+    },
+    {
+      "ID": 702010,
+      "Entries": [
+        "Ritual Materials [Common C 】level 2"
+      ]
+    },
+    {
+      "ID": 702020,
+      "Entries": [
+        "Ritual Materials [Common C 】level 3"
+      ]
+    },
+    {
+      "ID": 702030,
+      "Entries": [
+        "Ritual Materials [Common C 】level 4"
+      ]
+    },
+    {
+      "ID": 702040,
+      "Entries": [
+        "Ritual Materials [Common C 】level 5"
+      ]
+    },
+    {
+      "ID": 702050,
+      "Entries": [
+        "Ritual Materials [Common C 】level 6"
+      ]
+    },
+    {
+      "ID": 702060,
+      "Entries": [
+        "Ritual Materials [Common C 】level 7"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710010,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710020,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710030,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710040,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 1"
+      ]
+    },
+    {
+      "ID": 710050,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 3"
+      ]
+    },
+    {
+      "ID": 710060,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 3"
+      ]
+    },
+    {
+      "ID": 710100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710110,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710120,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710130,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 710140,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 1"
+      ]
+    },
+    {
+      "ID": 710150,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 3"
+      ]
+    },
+    {
+      "ID": 710160,
+      "Entries": [
+        "Ritual Materials [Uncommon A 】level 3"
+      ]
+    },
+    {
+      "ID": 711000,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711010,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711020,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711030,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711040,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level1"
+      ]
+    },
+    {
+      "ID": 711050,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level 3"
+      ]
+    },
+    {
+      "ID": 711060,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level 3"
+      ]
+    },
+    {
+      "ID": 711100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711110,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711120,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711130,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 711140,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level1"
+      ]
+    },
+    {
+      "ID": 711150,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level 3"
+      ]
+    },
+    {
+      "ID": 711160,
+      "Entries": [
+        "Ritual Materials [Uncommon B 】level 3"
+      ]
+    },
+    {
+      "ID": 712000,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 712010,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 1"
+      ]
+    },
+    {
+      "ID": 712020,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 1"
+      ]
+    },
+    {
+      "ID": 712030,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 2"
+      ]
+    },
+    {
+      "ID": 712040,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 2"
+      ]
+    },
+    {
+      "ID": 712050,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 3"
+      ]
+    },
+    {
+      "ID": 712060,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 3"
+      ]
+    },
+    {
+      "ID": 712100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 712110,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 1"
+      ]
+    },
+    {
+      "ID": 712120,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 1"
+      ]
+    },
+    {
+      "ID": 712130,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 2"
+      ]
+    },
+    {
+      "ID": 712140,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 2"
+      ]
+    },
+    {
+      "ID": 712150,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 3"
+      ]
+    },
+    {
+      "ID": 712160,
+      "Entries": [
+        "Ritual Materials [Uncommon C 】level 3"
+      ]
+    },
+    {
+      "ID": 713000,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713010,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713020,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713030,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713040,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 2"
+      ]
+    },
+    {
+      "ID": 713050,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 3"
+      ]
+    },
+    {
+      "ID": 713060,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 3"
+      ]
+    },
+    {
+      "ID": 713100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 713110,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 713120,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713130,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 1"
+      ]
+    },
+    {
+      "ID": 713140,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 2"
+      ]
+    },
+    {
+      "ID": 713150,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 3"
+      ]
+    },
+    {
+      "ID": 713160,
+      "Entries": [
+        "Ritual Materials [Uncommon D 】level 3"
+      ]
+    },
+    {
+      "ID": 714000,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714010,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714020,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714030,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 1"
+      ]
+    },
+    {
+      "ID": 714040,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714050,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 3"
+      ]
+    },
+    {
+      "ID": 714060,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 3"
+      ]
+    },
+    {
+      "ID": 714100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714110,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714120,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714130,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 1"
+      ]
+    },
+    {
+      "ID": 714140,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 714150,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 3"
+      ]
+    },
+    {
+      "ID": 714160,
+      "Entries": [
+        "Ritual Materials [Uncommon E 】level 3"
+      ]
+    },
+    {
+      "ID": 715100,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 715110,
+      "Entries": [
+        "Ritual Materials [Uncommon F 】level 1"
+      ]
+    },
+    {
+      "ID": 715120,
+      "Entries": [
+        "Ritual Materials [Uncommon F 】level 1"
+      ]
+    },
+    {
+      "ID": 715130,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 715140,
+      "Entries": [
+        "Replacement Items"
+      ]
+    },
+    {
+      "ID": 715150,
+      "Entries": [
+        "Ritual Materials [Uncommon F 】level 1"
+      ]
+    },
+    {
+      "ID": 715160,
+      "Entries": [
+        "Ritual Materials [Uncommon F 】level 1"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Operation check test: Lv00 : Wine of Life"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "Operation check test: Lv20 : Pile Bunker"
+      ]
+    },
+    {
+      "ID": 900040,
+      "Entries": [
+        "Operation check test: Lv40 : Immortal Pilgrim _ head"
+      ]
+    },
+    {
+      "ID": 900060,
+      "Entries": [
+        "Operation check test: Lv60 : Dark Walk"
+      ]
+    },
+    {
+      "ID": 900099,
+      "Entries": [
+        "Operation check test: Lv99 ：Attack power up"
+      ]
+    },
+    {
+      "ID": 900100,
+      "Entries": [
+        "Operation check test 2 : Lv00 : Wine of Life"
+      ]
+    },
+    {
+      "ID": 900120,
+      "Entries": [
+        "Operation check test 2 : Lv20 : Green flowers and grass"
+      ]
+    },
+    {
+      "ID": 900140,
+      "Entries": [
+        "Operation check test 2 : Lv40 : Flame Pot"
+      ]
+    },
+    {
+      "ID": 900160,
+      "Entries": [
+        "Operation check test 2 : Lv60 : Seoul [Large]"
+      ]
+    },
+    {
+      "ID": 900199,
+      "Entries": [
+        "Operation check test 2 : Lv99 : Soul of the Storm Beast"
+      ]
+    }
+  ]
+}

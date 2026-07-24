@@ -1,0 +1,161 @@
+{
+  "Name": "FootSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stone -- 石"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "concrete -- コンクリ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "glass -- ガラス"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle) -- 水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle level) -- 水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee) -- 水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water (waist and above) -- 水（腰以上）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "underwater -- 水底"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Swamp (puddle level) -- 沼（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Swamp (about ankle length) -- 沼（足首程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Swamp (below the knee) -- 沼（膝下）"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Swamp (waist above) -- 沼（腰以上）"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Coal tar (about the size of a puddle) -- コールタール（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Coal tar (about ankle size) -- コールタール（足首程度）"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Coal tar (below the knee) -- コールタール（膝下）"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Coal tar (above waist height) -- コールタール（腰以上）"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Melange water surface (about ankle level) -- メランジ水面（足首程度）"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Melange water surface (below the knees) -- メランジ水面（膝下）"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Melange water surface (above waist) -- メランジ水面（腰以上）"
+      ]
+    }
+  ]
+}

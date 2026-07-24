@@ -1,0 +1,48 @@
+{
+  "Param": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Type": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Name": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "jumpSpecifyAlt_GoalAlt",
+      "Name": "到達高度[m]",
+      "Description": "ジャンプ開始からどれだけの高度まで行くか"
+    },
+    {
+      "Field": "jumpSpecifyAlt_GravityScale",
+      "Name": "重力倍率",
+      "Description": "ジャンプ中の重力倍率"
+    },
+    {
+      "Field": "jumpSpecifyAlt_PrevSpeedRateH",
+      "Name": "直前の速度の引き継ぎ倍率_水平",
+      "Description": "開始時に水平方向の速度をどれだけ引き継ぐか"
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxSpeedKMPH",
+      "Name": "水平最高速度[km/h]",
+      "Description": "ジャンプ中の水平最高速度"
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxAccelMPSS",
+      "Name": "水平加速度[m/s^2]",
+      "Description": "ジャンプ中の水平加速度"
+    },
+    {
+      "Field": "jumpSpecifyAlt_MiddleInputAngDeg",
+      "Name": "斜めジャンプ時中間角度",
+      "Description": "ジャンプ開始時の入力に応じた上昇角度"
+    },
+    {
+      "Field": "jumpSpecifyAlt_MaxInputAngDeg",
+      "Name": "斜めジャンプ時最大角度",
+      "Description": "ジャンプ開始時の入力に応じた上昇角度"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

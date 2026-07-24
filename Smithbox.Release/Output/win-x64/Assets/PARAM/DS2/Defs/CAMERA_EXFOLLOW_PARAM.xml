@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CAMERA_EXFOLLOW_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 cameraType = 7">
+            <DisplayName>カメラ挙動タイプ</DisplayName>
+            <Enum>CAMERA_TYPE</Enum>
+            <EditFlags>Lock</EditFlags>
+            <Minimum>7</Minimum>
+            <Maximum>7</Maximum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 cameraBasePosType">
+            <DisplayName>カメラ基準点タイプ</DisplayName>
+            <Enum>CAMERA_BASE_POS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="dummy8 reserved0[2]">
+            <DisplayName>ダミー</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="angle32 fovY = 43">
+            <DisplayName>画角(deg)</DisplayName>
+            <Minimum>10</Minimum>
+            <Maximum>120</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 hitCollision = 0.05">
+            <DisplayName>コリジョンサイズ</DisplayName>
+            <Maximum>5</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 targetOffsetX">
+            <DisplayName>基準点(X軸) オフセット(m)</DisplayName>
+            <Minimum>-50</Minimum>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 targetOffsetY = 1.42">
+            <DisplayName>基準点(Y軸) オフセット(m)</DisplayName>
+            <Minimum>-50</Minimum>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 targetOffsetZ">
+            <DisplayName>基準点(Z軸) オフセット(m)</DisplayName>
+            <Minimum>-50</Minimum>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 distance = 4">
+            <DisplayName>カメラ距離目標[m]</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 lrMoveDistanceMax = 0.3">
+            <DisplayName>左右移動による視点距離率用最大距離[m]</DisplayName>
+            <Maximum>50</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 lrMoveRateMin = 0.1">
+            <DisplayName>左右移動による視点距離率最小値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 lrMoveRateMax = 0.99">
+            <DisplayName>左右移動による視点距離率最大値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 fulcrumDistRate = 0.5">
+            <DisplayName>支点距離率(1.0:カメラとの距離</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 transChaseRate = 0.1">
+            <DisplayName>キャラ並進追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 transChaseRateEscapeWall = 0.15">
+            <DisplayName>壁回避用キャラ並進追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 targetTransChaseRate = 0.3">
+            <DisplayName>ターゲット並進追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 targetRotXChaseRate = 0.3">
+            <DisplayName>ターゲットX軸回転追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 targetChaseRateXZForNormal = 0.1">
+            <DisplayName>通常用ターゲットＸＺ追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 targetChaseRateXZForEscapeWall = 0.15">
+            <DisplayName>壁回避用ターゲットＸＺ追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 targetChaseRateY = 0.03">
+            <DisplayName>ターゲットＹ軸追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="angle32 targetChaseRateMinAng = 0.01">
+            <DisplayName>ターゲット追尾率最小角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="angle32 targetChaseRateMaxAng = 0.02">
+            <DisplayName>ターゲット追尾率最大角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 targetChaseDistRate = 0.4">
+            <DisplayName>ターゲット距離追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="f32 targetChaseRateAtLockXZ = 0.4">
+            <DisplayName>ロック中ターゲットＸＺ追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="f32 targetChaseRateAtLockY = 0.3">
+            <DisplayName>ロック中ターゲットＹ追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="angle32 targetChaseRateMinAngAtLock">
+            <DisplayName>ロック中ターゲット追尾率最小角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="angle32 targetChaseRateMaxAngAtLock">
+            <DisplayName>ロック中ターゲット追尾率最大角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 transChaseByCtrlEndWaitTime">
+            <DisplayName>操作終了による並進追尾待ち時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="f32 transChaseByCtrlEndReleaseTime = 1">
+            <DisplayName>操作終了による並進追尾解放時間[sec]</DisplayName>
+            <Minimum>0.001</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 rotCtrlEndWaitTime = 2">
+            <DisplayName>回転操作終了待ち時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 rotCtrlEndReleaseTime = 1">
+            <DisplayName>回転操作終了解放時間[sec]</DisplayName>
+            <Minimum>0.001</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 rotHiSpeedRateIncTime = 0.6">
+            <DisplayName>高速回転率増加時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="angle32 rotRangeMinX = -40">
+            <DisplayName>X軸回転最小値[deg]</DisplayName>
+            <Minimum>-360</Minimum>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="angle32 rotRangeMaxX = 70">
+            <DisplayName>X軸回転最大値[deg]</DisplayName>
+            <Minimum>-360</Minimum>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="angle32 rotRangeMinXAtLock = -40">
+            <DisplayName>ロック中X軸回転最小値[deg]</DisplayName>
+            <Minimum>-360</Minimum>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="angle32 rotRangeMaxXAtLock = 40">
+            <DisplayName>ロック中X軸回転最大値[deg]</DisplayName>
+            <Minimum>-360</Minimum>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 rotRangeLerpBeginHeight = 0.5">
+            <DisplayName>ロック中X軸回転補間開始高さ[m]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 rotRangeLerpEndHeight = 2">
+            <DisplayName>ロック中X軸回転補間終了高さ[m]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="angle32 rotSpeedX_Min = 80">
+            <DisplayName>X軸回転速度[deg/sec]最小値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="angle32 rotSpeedX_Max = 240">
+            <DisplayName>X軸回転速度[deg/sec]最大値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="angle32 rotSpeedY_Min = 80">
+            <DisplayName>Y軸回転速度[deg/sec]最小値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="angle32 rotSpeedY_Max = 240">
+            <DisplayName>Y軸回転速度[deg/sec]最大値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="angle32 rotHiSpeedX_Min = 180">
+            <DisplayName>X軸高速回転速度[deg/sec]最小値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="angle32 rotHiSpeedX_Max = 500">
+            <DisplayName>X軸高速回転速度[deg/sec]最大値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="angle32 rotHiSpeedY_Min = 180">
+            <DisplayName>Y軸高速回転速度[deg/sec]最小値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="angle32 rotHiSpeedY_Max = 500">
+            <DisplayName>Y軸高速回転速度[deg/sec]最大値</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="angle32 directPitchAng = 60">
+            <DisplayName>ダイレクトピッチ角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 directPitchRate = 0.06">
+            <DisplayName>ダイレクトピッチレート(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="f32 lockRotChaseRate = 0.1">
+            <DisplayName>ロック回転追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="angle32 lockRotChasePlayAng = 3">
+            <DisplayName>ロック回転追尾遊び角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="f32 lockRotXShiftRatio = 0.6">
+            <DisplayName>ロックX回転シフト率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 forceFrontLockTime = 0.3">
+            <DisplayName>強制前方ロック時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u32 updateTargetRotXByLock">
+            <DisplayName>ロックでターゲットX軸回転を更新するか</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="u32 updateTargetRotXByFrontLock">
+            <DisplayName>前方ロックでターゲットX軸回転を更新するか</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="u32 enableLockCamAdjust">
+            <DisplayName>ロックカメラ調整が有効か</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="dummy8 reserved1[4]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>81</SortID>
+        </Field>
+        <Field Def="angle32 lockCamAdjustRotX_Max = 6">
+            <DisplayName>ロックカメラ調整X軸回転[deg]最大値</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="angle32 lockCamAdjustRotY_Max = 8">
+            <DisplayName>ロックカメラ調整Y軸回転[deg]最大値</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="f32 lockCamAdjustRotChaseRate = 0.3">
+            <DisplayName>ロックカメラ調整回転追尾率</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="angle32 escapeWallRotAddY = 60">
+            <DisplayName>壁回避Y軸回転加算値[deg/sec]</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="angle32 escapeWallRotMaxY = 240">
+            <DisplayName>壁回避Y軸回転最大値[deg/sec]</DisplayName>
+            <Maximum>1080</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="f32 escapeWallRotDampRatio = 0.55">
+            <DisplayName>壁回避回転減衰率</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="angle32 escapeWallWingAngY = 5">
+            <DisplayName>壁回避羽角度[deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="f32 escapeWallWingLen = 2">
+            <DisplayName>壁回避羽長[m]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="f32 escapeWallWingRadius = 0.01">
+            <DisplayName>壁回避羽半径[m]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="f32 escapeWallWingSeparate = 0.34">
+            <DisplayName>壁回避羽間隔[m]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>64</SortID>
+        </Field>
+        <Field Def="f32 resetMinTime = 0.1">
+            <DisplayName>リセットにかかる最小時間[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>65</SortID>
+        </Field>
+        <Field Def="f32 resetMaxTime = 0.5">
+            <DisplayName>リセットにかかる最大時間[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>66</SortID>
+        </Field>
+        <Field Def="f32 resetSpeedChangeRate = 3">
+            <DisplayName>リセット速度の変化レート</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>20</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>67</SortID>
+        </Field>
+        <Field Def="f32 parameterApplyTime = 0.5">
+            <DisplayName>パラメータ適用時間</DisplayName>
+            <Maximum>30</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>68</SortID>
+        </Field>
+        <Field Def="f32 transChaseRateLock = 0.1">
+            <DisplayName>ロック中キャラ並進追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>69</SortID>
+        </Field>
+        <Field Def="f32 targetChaseDistRateLock = 0.4">
+            <DisplayName>ロック中ターゲット距離追尾率(0.0～1.0)</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="f32 lockRotChaseRateMaxTime = 0.4">
+            <DisplayName>ロック回転追尾率適用時間[sec]</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>71</SortID>
+        </Field>
+        <Field Def="u32 useRotationBrake = 1">
+            <DisplayName>回転操作にブレーキを使用するか</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>72</SortID>
+        </Field>
+        <Field Def="u32 useRotationBrakeReverseAdjust = 1">
+            <DisplayName>回転にブレーキ逆方向時補正を有効にするか</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>73</SortID>
+        </Field>
+        <Field Def="f32 rotaitionBrakeTimeNormalSpeedX = 0.195">
+            <DisplayName>通常Ｘ回転ブレーキ時間[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>74</SortID>
+        </Field>
+        <Field Def="f32 rotationBrakeAddTimelHighSpeedX = 0.125">
+            <DisplayName>高速時Ｘ回転ブレーキ時間加算量[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>75</SortID>
+        </Field>
+        <Field Def="f32 rotaitionBrakeTimeNormalSpeedY = 0.195">
+            <DisplayName>通常Ｙ回転ブレーキ時間[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>76</SortID>
+        </Field>
+        <Field Def="f32 rotationBrakeAddTimelHighSpeedY = 0.125">
+            <DisplayName>高速時Ｙ回転ブレーキ時間加算量[sec]</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>77</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

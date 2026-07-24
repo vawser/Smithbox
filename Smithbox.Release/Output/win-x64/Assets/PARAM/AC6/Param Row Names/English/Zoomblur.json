@@ -1,0 +1,47 @@
+{
+  "Name": "Zoomblur",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "boost move"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "big QB"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Tank_QB attack"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Tank_QB Stomp"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "fast movement"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Event] Catapult movement"
+      ]
+    }
+  ]
+}

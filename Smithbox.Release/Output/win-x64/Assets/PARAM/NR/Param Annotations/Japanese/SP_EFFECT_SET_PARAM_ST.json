@@ -1,0 +1,28 @@
+{
+  "Param": "SP_EFFECT_SET_PARAM_ST",
+  "Type": "SP_EFFECT_SET_PARAM_ST",
+  "Name": "SP_EFFECT_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果ID1"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果ID2",
+      "Description": "特殊効果ID2"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果ID3",
+      "Description": "特殊効果ID3"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "特殊効果ID4",
+      "Description": "特殊効果ID4"
+    }
+  ]
+}

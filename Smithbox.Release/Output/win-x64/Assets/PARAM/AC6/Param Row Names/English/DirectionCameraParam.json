@@ -1,0 +1,41 @@
+{
+  "Name": "DirectionCameraParam",
+  "Entries": [
+    {
+      "ID": 80,
+      "Entries": [
+        "Front unprotected camera"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Front unprotected production camera (pull out)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Front unprotected production camera (for hammering)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Front unprotected production camera (for large sword)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Rear unprotected production camera"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Rear unprotected production camera (for mallet)"
+      ]
+    }
+  ]
+}

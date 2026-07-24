@@ -1,0 +1,29 @@
+{
+  "Key": "ATK_ACT_PARAM_SHOOT_INDICATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_ACT_PARAM_SHOOT_INDICATION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong Shot Warning"
+        }
+      ]
+    }
+  ]
+}

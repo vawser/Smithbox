@@ -1,0 +1,38 @@
+{
+  "Key": "COMBO_ROUTE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "COMBO_ROUTE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Root"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Derivation 1"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Derivation 2"
+        }
+      ]
+    }
+  ]
+}

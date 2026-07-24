@@ -1,0 +1,23 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "General purpose"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC For"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Enemy General old"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "Name": "EquipmentMenuManageCategoryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default - None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "melee weapon"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Hand Weapons - Live Bullets"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Hand Weapons - Missile Type"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Hand weapons - EN series"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Hand Weapons - Special Type"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "shield"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Shoulder weapon - missile type"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Shoulder weapon - live ammunition type"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Shoulder weapon - EN series"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Shoulder Weapon - Special Type"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "extension"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "ARMS"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "ARMS - UNK"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "ARMS - UNK"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "ARMS - UNK"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "LEGS - BIPEDAL"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "LEGS - TETRAPOD"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "FCS"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "GENERATOR"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "BOOSTER"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "LEGS - TANK"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "LEGS - REVERSE JOINT"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "LINEAR RIFLE"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "ASSAULT RIFLE"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "BURST ASSAULT RIFLE"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "BURST RIFLE"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "MACHINE GUN"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "BURST MACHINE GUN"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "GATLING GUN"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "SHOTGUN"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "NEEDLE GUN"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "HANDGUN"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "BURST HANDGUN"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "STUN GUN"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "GRENADE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "BAZOOKA"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "DETONATING BAZOOKA"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "MISSILE LAUNCHER (Hand)"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER (Hand)"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "FLAMETHROWER"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "STUN BOMB LAUNCHER"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "PULSE GUN"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "LASER RIFLE"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "LASER HANDGUN"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "LASER SHOTGUN (WUERGER/66E)"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "LASER SHOTGUN (VP-66LS)"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "PLASMA RIFLE"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "CORAL RIFLE (IA-C01W6: NB-REDSHIFT)"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "CORAL RIFLE (IB-C03W1: WLT 011)"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "MULTI ENERGY RIFLE"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "MISSILE LAUNCHER (Back)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER (Back)"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "GRENADE CANNON (EARSHOT)"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "GRENADE CANNON (SONGBIRDS)"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "SPREAD BAZOOKA"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "PULSE CANNON"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "LASER CANNON"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "PLASMA CANNON"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "DIFFUSE LASER CANNON"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "LIGHT WAVE CANNON"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "BULLET ORBIT"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "LASER ORBIT"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "LASER TURRET"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "LASER DRONE"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "PULSE SHIELD"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "PULSE BUCKLER"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "PULSE SCUTUM"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "CORAL SHIELD"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "PULSE BLADE"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "LASER BLADE"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "LIGHT WAVE BLADE"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "LASER SLICER"
+      ]
+    },
+    {
+      "ID": 1540,
+      "Entries": [
+        "LASER LANCE"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "EXPLOSIVE THROWER"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "CHAINSAW"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "STUN BATON"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "PILE BUNKER"
+      ]
+    },
+    {
+      "ID": 1590,
+      "Entries": [
+        "CORAL OSCILLATOR (IB-C03W2: WLT 101)"
+      ]
+    },
+    {
+      "ID": 1591,
+      "Entries": [
+        "CORAL OSCILLATOR (IA-C01W7: ML-REDSHIFT)"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "PLASMA THROWER"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "LASER DAGGER"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "EXPANSION - PULSE ARMOR"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "EXPANSION - PULSE PROTECTION"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "EXPANSION - TERMINA ARMOR"
+      ]
+    }
+  ]
+}

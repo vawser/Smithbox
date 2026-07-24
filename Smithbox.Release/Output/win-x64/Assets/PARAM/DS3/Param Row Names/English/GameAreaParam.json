@@ -1,0 +1,479 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test One"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Lat _ Bastards"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Ojo 1_ Phalanx (main body)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Ojo 2_ King's Shield"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Ojo 3_ King's Sword"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Ojo 4_ King"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "The old Fort 1_ referee"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Old Fort 2_ Storm Warrior"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Old Fort 3_ Storm Beast"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "1_-sama"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Jail 2_ Chimera"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "3_ Summon NPC"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Unholy 1_ Leech Daemon"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Unholy 2_ flies bummed"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Unholy 3_ Saint Lee Bra"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "1_, Large spider"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Mine 2_ Flame Phantom"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Mine 3_ Dragon Demon (mine)"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Tutorial _ Deb Daemon"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "2_ the Castle"
+      ]
+    },
+    {
+      "ID": 1010700,
+      "Entries": [
+        "1_ Castle"
+      ]
+    },
+    {
+      "ID": 1010750,
+      "Entries": [
+        "1_-Natal Demon Castle"
+      ]
+    },
+    {
+      "ID": 1010800,
+      "Entries": [
+        "Castle 1_ Gargoyle"
+      ]
+    },
+    {
+      "ID": 1100160,
+      "Entries": [
+        "Painting World _ semi-dragon Priscilla"
+      ]
+    },
+    {
+      "ID": 1200800,
+      "Entries": [
+        "Forest Garden _ The Wolf of the Holy Sword"
+      ]
+    },
+    {
+      "ID": 1200801,
+      "Entries": [
+        "Forest Garden _ Dragon"
+      ]
+    },
+    {
+      "ID": 1210401,
+      "Entries": [
+        "Past Forest _ black Dragon"
+      ]
+    },
+    {
+      "ID": 1210800,
+      "Entries": [
+        "Past Forest _ Gold Chimera"
+      ]
+    },
+    {
+      "ID": 1210820,
+      "Entries": [
+        "Past Forest _ al-Triana"
+      ]
+    },
+    {
+      "ID": 1210840,
+      "Entries": [
+        "Lord of the past forest"
+      ]
+    },
+    {
+      "ID": 1300800,
+      "Entries": [
+        "Cemetery 1_ Three Haori"
+      ]
+    },
+    {
+      "ID": 1310800,
+      "Entries": [
+        "Cemetery 2_ Tomb King NITs"
+      ]
+    },
+    {
+      "ID": 1400800,
+      "Entries": [
+        "Shadow Town _ the Witch of the Flame Klagspider"
+      ]
+    },
+    {
+      "ID": 1410400,
+      "Entries": [
+        "Waste City _ The Fat Demon"
+      ]
+    },
+    {
+      "ID": 1410600,
+      "Entries": [
+        "Waste City _ what continues to sore"
+      ]
+    },
+    {
+      "ID": 1410700,
+      "Entries": [
+        "Disused City _ Mucademon"
+      ]
+    },
+    {
+      "ID": 1410800,
+      "Entries": [
+        "The disused city _ the King"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Ojo 1_ Iron Golem"
+      ]
+    },
+    {
+      "ID": 1510650,
+      "Entries": [
+        "Ojo 2_ mother Brother"
+      ]
+    },
+    {
+      "ID": 1510801,
+      "Entries": [
+        "Ojo 2_ Huge Griffith"
+      ]
+    },
+    {
+      "ID": 1510811,
+      "Entries": [
+        "Ojo 2_ Lightningsmow"
+      ]
+    },
+    {
+      "ID": 1600800,
+      "Entries": [
+        "The Abyss"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Crystal Tower _ Sheath"
+      ]
+    },
+    {
+      "ID": 1800800,
+      "Entries": [
+        "The Great Tomb _ the King of firewood"
+      ]
+    },
+    {
+      "ID": 1810800,
+      "Entries": [
+        "Tutorial _ Mini Deb Daemon"
+      ]
+    },
+    {
+      "ID": 1810810,
+      "Entries": [
+        "Tutorial _ Deb Daemon"
+      ]
+    },
+    {
+      "ID": 2010800,
+      "Entries": [
+        "Religious District"
+      ]
+    },
+    {
+      "ID": 2910400,
+      "Entries": [
+        "Dungeon A_ Beast of Flames"
+      ]
+    },
+    {
+      "ID": 2920800,
+      "Entries": [
+        "Dungeon B_ Beast of Flames"
+      ]
+    },
+    {
+      "ID": 3000800,
+      "Entries": [
+        "Vordt of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 3000830,
+      "Entries": [
+        "Oceiros, the Consumed King"
+      ]
+    },
+    {
+      "ID": 3000899,
+      "Entries": [
+        "Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 3010800,
+      "Entries": [
+        "Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 3100800,
+      "Entries": [
+        "Curse-rotted Greatwood"
+      ]
+    },
+    {
+      "ID": 3200800,
+      "Entries": [
+        "Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 3200851,
+      "Entries": [
+        "The Nameless King"
+      ]
+    },
+    {
+      "ID": 3300801,
+      "Entries": [
+        "Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 3300850,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 3410830,
+      "Entries": [
+        "The Twin Princes"
+      ]
+    },
+    {
+      "ID": 3500800,
+      "Entries": [
+        "Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 3700800,
+      "Entries": [
+        "Pontiff Sulyvahn"
+      ]
+    },
+    {
+      "ID": 3700850,
+      "Entries": [
+        "Aldrich, Devourer of Gods"
+      ]
+    },
+    {
+      "ID": 3800800,
+      "Entries": [
+        "High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 3800830,
+      "Entries": [
+        "Old Demon King"
+      ]
+    },
+    {
+      "ID": 3900800,
+      "Entries": [
+        "Yhorm the Giant"
+      ]
+    },
+    {
+      "ID": 4000800,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 4000830,
+      "Entries": [
+        "Champion Gundyr"
+      ]
+    },
+    {
+      "ID": 4100800,
+      "Entries": [
+        "Soul of Cinder"
+      ]
+    },
+    {
+      "ID": 4500800,
+      "Entries": [
+        "Sister Friede"
+      ]
+    },
+    {
+      "ID": 4500860,
+      "Entries": [
+        "Champion's Gravetender & Gravetender Greatwolf"
+      ]
+    },
+    {
+      "ID": 5000801,
+      "Entries": [
+        "The Demon Prince"
+      ]
+    },
+    {
+      "ID": 5000802,
+      "Entries": [
+        "The Demon Prince"
+      ]
+    },
+    {
+      "ID": 5100800,
+      "Entries": [
+        "Halflight, Spear of the Church"
+      ]
+    },
+    {
+      "ID": 5100850,
+      "Entries": [
+        "Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 5110800,
+      "Entries": [
+        "Slave Knight Gael"
+      ]
+    },
+    {
+      "ID": 9901010,
+      "Entries": [
+        "Boss Seoul Get verified"
+      ]
+    },
+    {
+      "ID": 9990000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9990010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "SoundIDSpatialSetting",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "footsteps"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "landing sound"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "scraping sound"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "brake sound"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "driving sound"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Own weapon (test)"
+      ]
+    }
+  ]
+}

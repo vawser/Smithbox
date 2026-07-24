@@ -1,0 +1,713 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Need"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Treasure Chest"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Treasure Chest - Default"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "M93_01_ Door _ Candle Room"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "M93_01_ Door _ Candle Room"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "M96_00 Door Concept Map _ Entrance"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "M96_00 Door Concept Map _ Temple entrance"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "M96_00 Door Concept Map _ Distant Entrance"
+      ]
+    },
+    {
+      "ID": 475,
+      "Entries": [
+        "M20_01_ Door _ Orphanage 2f_ Small"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Test_ Door Test"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Test_ Door Test"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Versatile door for FDP_ testing (double doors)"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Door with key for FDP_ test (double doors)"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Key door for FDP_ test"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "General purpose door for FDP_ test (single open)"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "FDP_ Test door with key (single open)"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "Key door for FDP_ test (single open)"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "FDP_ test for Play"
+      ]
+    },
+    {
+      "ID": 90014,
+      "Entries": [
+        "FDP_ Test (Play-AB operation confirmation B"
+      ]
+    },
+    {
+      "ID": 90015,
+      "Entries": [
+        "FDP_ Test (Play-AB operation confirmation B"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "High Wall of Lothric -"
+      ]
+    },
+    {
+      "ID": 300301,
+      "Entries": [
+        "High Wall of Lothric - Wooden Door - Warp Room"
+      ]
+    },
+    {
+      "ID": 300310,
+      "Entries": [
+        "High Wall of Lothric - Jail Door - Wall Lift Top / Mimic Room Exit - One-way"
+      ]
+    },
+    {
+      "ID": 300311,
+      "Entries": [
+        "High Wall of Lothric - Jail Door - Darkwraith Lift - Lift Chamber Key"
+      ]
+    },
+    {
+      "ID": 300312,
+      "Entries": [
+        "High Wall of Lothric - Jail Door - Entrance to Mimic room - One-way"
+      ]
+    },
+    {
+      "ID": 300313,
+      "Entries": [
+        "High Wall of Lothric - Jail Door - Greirat Cell - Cell Key"
+      ]
+    },
+    {
+      "ID": 300320,
+      "Entries": [
+        "High Wall of Lothric - Wooden Door - CKG Shortcut back to start"
+      ]
+    },
+    {
+      "ID": 300330,
+      "Entries": [
+        "High Wall of Lothric -"
+      ]
+    },
+    {
+      "ID": 300370,
+      "Entries": [
+        "High Wall of Lothric - Door - Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 300371,
+      "Entries": [
+        "High Wall of Lothric -"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "High Wall of Lothric -"
+      ]
+    },
+    {
+      "ID": 300510,
+      "Entries": [
+        "High Wall of Lothric - Lever - Lift"
+      ]
+    },
+    {
+      "ID": 302420,
+      "Entries": [
+        "Grand Archives - Lever - Lift"
+      ]
+    },
+    {
+      "ID": 304873,
+      "Entries": [
+        "Lothric Castle - Lever - Lift"
+      ]
+    },
+    {
+      "ID": 304874,
+      "Entries": [
+        "Lothric Castle -"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "Undead Settlement - Jail Door - Grave Key"
+      ]
+    },
+    {
+      "ID": 310301,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 310302,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 310310,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 310311,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 310320,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 310500,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 312100,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 314027,
+      "Entries": [
+        "Undead Settlement -  Door _ before the Sniper tower"
+      ]
+    },
+    {
+      "ID": 314028,
+      "Entries": [
+        "Undead Settlement -  Door _ Elephant Boss room ago"
+      ]
+    },
+    {
+      "ID": 314029,
+      "Entries": [
+        "Undead Settlement -"
+      ]
+    },
+    {
+      "ID": 324012,
+      "Entries": [
+        "Archdragon Peak - Levers _ Ohgane"
+      ]
+    },
+    {
+      "ID": 324051,
+      "Entries": [
+        "Archdragon Peak - Bridge Elevator"
+      ]
+    },
+    {
+      "ID": 329250,
+      "Entries": [
+        "Archdragon Peak -"
+      ]
+    },
+    {
+      "ID": 330052,
+      "Entries": [
+        "Farron Keep/ROS -"
+      ]
+    },
+    {
+      "ID": 331312,
+      "Entries": [
+        "Farron Keep/ROS -  lever poison swamp forest elevator"
+      ]
+    },
+    {
+      "ID": 331321,
+      "Entries": [
+        "Farron Keep/ROS - Front door boss"
+      ]
+    },
+    {
+      "ID": 332100,
+      "Entries": [
+        "Farron Keep/ROS - Shokta Doors"
+      ]
+    },
+    {
+      "ID": 340320,
+      "Entries": [
+        "Grand Archives -"
+      ]
+    },
+    {
+      "ID": 340330,
+      "Entries": [
+        "Grand Archives - Grand Archives Key"
+      ]
+    },
+    {
+      "ID": 341020,
+      "Entries": [
+        "Grand Archives - Wax Pool (Map Piece)"
+      ]
+    },
+    {
+      "ID": 342100,
+      "Entries": [
+        "Grand Archives - Wax Pool"
+      ]
+    },
+    {
+      "ID": 342200,
+      "Entries": [
+        "Grand Archives - Bookcase Lever"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "Cathedral of the Deep - Elevator Levers"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "Cathedral of the Deep - Big Door of Cathedral"
+      ]
+    },
+    {
+      "ID": 350021,
+      "Entries": [
+        "Cathedral of the Deep - Level Shutter"
+      ]
+    },
+    {
+      "ID": 350022,
+      "Entries": [
+        "Cathedral of the Deep -"
+      ]
+    },
+    {
+      "ID": 350023,
+      "Entries": [
+        "Cathedral of the Deep -"
+      ]
+    },
+    {
+      "ID": 350206,
+      "Entries": [
+        "Cathedral of the Deep -  Main Gate"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "Cathedral of the Deep -"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Cathedral of the Deep - Double Door"
+      ]
+    },
+    {
+      "ID": 360320,
+      "Entries": [
+        "M36_00 double door in front of boss"
+      ]
+    },
+    {
+      "ID": 360330,
+      "Entries": [
+        "m36_00 Double Door Shotka"
+      ]
+    },
+    {
+      "ID": 370301,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Landmark Church Plaza Door"
+      ]
+    },
+    {
+      "ID": 370302,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Garden Building Door"
+      ]
+    },
+    {
+      "ID": 370303,
+      "Entries": [
+        "Irithyll of the Boreal Valley -"
+      ]
+    },
+    {
+      "ID": 370502,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Lever"
+      ]
+    },
+    {
+      "ID": 370508,
+      "Entries": [
+        "Irithyll of the Boreal Valley -"
+      ]
+    },
+    {
+      "ID": 381060,
+      "Entries": [
+        "Catacombs of Carthus - Door"
+      ]
+    },
+    {
+      "ID": 381080,
+      "Entries": [
+        "Catacombs of Carthus - Lever"
+      ]
+    },
+    {
+      "ID": 382002,
+      "Entries": [
+        "Catacombs of Carthus - Double Door"
+      ]
+    },
+    {
+      "ID": 390300,
+      "Entries": [
+        "Irithyll Dungeon - Normal Door"
+      ]
+    },
+    {
+      "ID": 390301,
+      "Entries": [
+        "Irithyll Dungeon - Fence Doors _ Outside"
+      ]
+    },
+    {
+      "ID": 390302,
+      "Entries": [
+        "Irithyll Dungeon - Fence Door _ inside"
+      ]
+    },
+    {
+      "ID": 390305,
+      "Entries": [
+        "Irithyll Dungeon - door one-way door"
+      ]
+    },
+    {
+      "ID": 390306,
+      "Entries": [
+        "Irithyll Dungeon - Door (Large) one-way door"
+      ]
+    },
+    {
+      "ID": 390310,
+      "Entries": [
+        "Irithyll Dungeon - Jailer's Key Ring"
+      ]
+    },
+    {
+      "ID": 390320,
+      "Entries": [
+        "Irithyll Dungeon - Jailbreaker's Key"
+      ]
+    },
+    {
+      "ID": 390330,
+      "Entries": [
+        "Irithyll Dungeon -"
+      ]
+    },
+    {
+      "ID": 390340,
+      "Entries": [
+        "Irithyll Dungeon - Old Cell Key"
+      ]
+    },
+    {
+      "ID": 390350,
+      "Entries": [
+        "Irithyll Dungeon - Jailer's Key Ring"
+      ]
+    },
+    {
+      "ID": 390360,
+      "Entries": [
+        "Irithyll Dungeon - Jailer's Key Ring"
+      ]
+    },
+    {
+      "ID": 390500,
+      "Entries": [
+        "Irithyll Dungeon - Dungeon Shotka Elebator"
+      ]
+    },
+    {
+      "ID": 400005,
+      "Entries": [
+        "Firelink Shrine -"
+      ]
+    },
+    {
+      "ID": 400340,
+      "Entries": [
+        "Firelink Shrine - Room Door"
+      ]
+    },
+    {
+      "ID": 400510,
+      "Entries": [
+        "Firelink Shrine - Lever"
+      ]
+    },
+    {
+      "ID": 450300,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 450310,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 450315,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 450320,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 450510,
+      "Entries": [
+        "Ariandel - Contraption Key"
+      ]
+    },
+    {
+      "ID": 450520,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 450530,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 456301,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 456500,
+      "Entries": [
+        "Ariandel -"
+      ]
+    },
+    {
+      "ID": 510300,
+      "Entries": [
+        "The Ringed City -"
+      ]
+    },
+    {
+      "ID": 510301,
+      "Entries": [
+        "The Ringed City -"
+      ]
+    },
+    {
+      "ID": 510302,
+      "Entries": [
+        "The Ringed City -"
+      ]
+    },
+    {
+      "ID": 510310,
+      "Entries": [
+        "The Ringed City -"
+      ]
+    },
+    {
+      "ID": 510505,
+      "Entries": [
+        "The Ringed City -"
+      ]
+    },
+    {
+      "ID": 1000370,
+      "Entries": [
+        "M96_00 Door Concept Map _ Temple entrance"
+      ]
+    },
+    {
+      "ID": 1000371,
+      "Entries": [
+        "M96_00 Door Concept Map _ Distant Entrance"
+      ]
+    },
+    {
+      "ID": 1300311,
+      "Entries": [
+        "M30_00_ Door _ Wall Shortcut 1"
+      ]
+    },
+    {
+      "ID": 1314027,
+      "Entries": [
+        "m31_00_ Door _ before the Sniper tower"
+      ]
+    },
+    {
+      "ID": 1324051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1400340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1456500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2300311,
+      "Entries": [
+        "M30_00_ Door _ Wall Shortcut 2"
+      ]
+    },
+    {
+      "ID": 2400340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3400340,
+      "Entries": [
+        "Firelink Shrine - Tower Key"
+      ]
+    }
+  ]
+}

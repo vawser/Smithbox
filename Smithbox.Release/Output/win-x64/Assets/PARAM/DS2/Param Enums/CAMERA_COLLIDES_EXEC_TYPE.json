@@ -1,0 +1,47 @@
+{
+  "Key": "CAMERA_COLLIDES_EXEC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_COLLIDES_EXEC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera end"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Movement stop"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move to a safe location"
+        }
+      ]
+    }
+  ]
+}

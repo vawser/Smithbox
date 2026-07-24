@@ -1,0 +1,65 @@
+{
+  "Name": "HeroParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Wylder"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Guardian"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Ironeye"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Duchess"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Raider"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Revenant"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Recluse"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Executor"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Scholar"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Undertaker"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "Param": "WEAPON_REINFORCE_PARAM",
+  "Type": "WEAPON_REINFORCE_PARAM",
+  "Name": "WEAPON_REINFORCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minimumPhysical",
+      "Name": "物理攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumMagic",
+      "Name": "魔力攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumThunder",
+      "Name": "雷攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumFire",
+      "Name": "炎攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumDark",
+      "Name": "闇攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumPoison",
+      "Name": "毒攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumBleeding",
+      "Name": "出血攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumPetrifaction",
+      "Name": "石化攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "minimumCurse",
+      "Name": "呪攻撃力の最小値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumPhysical",
+      "Name": "物理攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumMagic",
+      "Name": "魔力攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumThunder",
+      "Name": "雷攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumFire",
+      "Name": "炎攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumDark",
+      "Name": "闇攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumPoison",
+      "Name": "毒攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumBleeding",
+      "Name": "出血攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumPetrifaction",
+      "Name": "石化攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maximumCurse",
+      "Name": "呪攻撃力の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "maxLevel",
+      "Name": "強化最大レベル",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "statsAffectId",
+      "Name": "ステータス影響倍率設定",
+      "Description": ""
+    },
+    {
+      "Field": "physical",
+      "Name": "物理カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "magic",
+      "Name": "魔力カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "thunder",
+      "Name": "雷カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fire",
+      "Name": "炎カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "dark",
+      "Name": "闇カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "poison",
+      "Name": "毒カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "bleeding",
+      "Name": "出血カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "petrifaction",
+      "Name": "石化カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "curse",
+      "Name": "呪カット率 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate0",
+      "Name": "受け能力 0",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate1",
+      "Name": "受け能力 1",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate2",
+      "Name": "受け能力 2",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate3",
+      "Name": "受け能力 3",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate4",
+      "Name": "受け能力 4",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate5",
+      "Name": "受け能力 5",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate6",
+      "Name": "受け能力 6",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate7",
+      "Name": "受け能力 7",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate8",
+      "Name": "受け能力 8",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate9",
+      "Name": "受け能力 9",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityRate10",
+      "Name": "受け能力 10",
+      "Description": ""
+    },
+    {
+      "Field": "physicalRate",
+      "Name": "初期属性値 物理",
+      "Description": ""
+    },
+    {
+      "Field": "magicRate",
+      "Name": "初期属性値 魔力",
+      "Description": ""
+    },
+    {
+      "Field": "thunderRate",
+      "Name": "初期属性値 雷",
+      "Description": ""
+    },
+    {
+      "Field": "fireRate",
+      "Name": "初期属性値 炎",
+      "Description": ""
+    },
+    {
+      "Field": "darkRate",
+      "Name": "初期属性値 闇",
+      "Description": ""
+    },
+    {
+      "Field": "poisonRate",
+      "Name": "初期属性値 毒",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingRate",
+      "Name": "初期属性値 出血",
+      "Description": ""
+    },
+    {
+      "Field": "petrifactionRate",
+      "Name": "初期属性値 石化",
+      "Description": ""
+    },
+    {
+      "Field": "curseRate",
+      "Name": "初期属性値 呪",
+      "Description": ""
+    },
+    {
+      "Field": "addMagicRate",
+      "Name": "属性変動値 魔法",
+      "Description": ""
+    },
+    {
+      "Field": "addThunderRate",
+      "Name": "属性変動値 雷",
+      "Description": ""
+    },
+    {
+      "Field": "addFireRate",
+      "Name": "属性変動値 炎",
+      "Description": ""
+    },
+    {
+      "Field": "addDarkRate",
+      "Name": "属性変動値 闇",
+      "Description": ""
+    },
+    {
+      "Field": "addPoisonRate",
+      "Name": "属性変動値 毒",
+      "Description": ""
+    },
+    {
+      "Field": "addBleedRate",
+      "Name": "属性変動値 出血",
+      "Description": ""
+    },
+    {
+      "Field": "addPhysicalRateByCrude",
+      "Name": "属性変動値 物理(粗製)",
+      "Description": ""
+    },
+    {
+      "Field": "addPhysicalRateByEnchanted",
+      "Name": "属性変動値 物理(魔力)",
+      "Description": ""
+    },
+    {
+      "Field": "addPhysicalRateByAbyss",
+      "Name": "属性変動値 物理(深淵)",
+      "Description": ""
+    },
+    {
+      "Field": "attrSpec",
+      "Name": "属性強化可否",
+      "Description": ""
+    },
+    {
+      "Field": "attrCost",
+      "Name": "属性強化コスト",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceCost",
+      "Name": "Lv強化コスト",
+      "Description": ""
+    }
+  ]
+}

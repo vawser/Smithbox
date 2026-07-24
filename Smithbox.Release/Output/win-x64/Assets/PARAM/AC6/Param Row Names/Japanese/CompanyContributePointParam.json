@@ -1,0 +1,161 @@
+{
+  "Name": "CompanyContributePointParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Prologue clear -- プロローグ\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Dam Destruction Clear without betraying -- ダム破壊\u3000裏切らずにクリア"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Dam Destruction Betray and Clear -- ダム破壊\u3000裏切ってクリア"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Mining ship destroyed clear -- 採掘艦破壊\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "String clear -- 文字列\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Clear over the wall -- 壁越え\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "Jesse Rescue 1 Clear -- ジェシー救出１\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "VOB capture clear -- VOB奪取\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "Jesse Rescue 2 Clear -- ジェシー救出２\u3000クリア"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "Clear over the sea -- 海越え\u3000クリア"
+      ]
+    },
+    {
+      "ID": 99999000,
+      "Entries": [
+        "Test_Company A to 100 -- テスト_企業A に 100"
+      ]
+    },
+    {
+      "ID": 99999001,
+      "Entries": [
+        "Test_CompanyB to 200 -- テスト_企業B に 200"
+      ]
+    },
+    {
+      "ID": 99999002,
+      "Entries": [
+        "Test_Company C to 300 -- テスト_企業C に 300"
+      ]
+    },
+    {
+      "ID": 99999003,
+      "Entries": [
+        "Test_CompanyD to 400 -- テスト_企業D に 400"
+      ]
+    },
+    {
+      "ID": 99999004,
+      "Entries": [
+        "Test_Company E to 500 -- テスト_企業E に 500"
+      ]
+    },
+    {
+      "ID": 99999110,
+      "Entries": [
+        "bay rum 100 -- ベイラム\u3000100"
+      ]
+    },
+    {
+      "ID": 99999120,
+      "Entries": [
+        "bay rum 200 -- ベイラム\u3000200"
+      ]
+    },
+    {
+      "ID": 99999130,
+      "Entries": [
+        "bay rum 300 -- ベイラム\u3000300"
+      ]
+    },
+    {
+      "ID": 99999210,
+      "Entries": [
+        "Elkano 100 -- エルカノ\u3000100"
+      ]
+    },
+    {
+      "ID": 99999220,
+      "Entries": [
+        "Elcano 200 -- エルカノ\u3000200"
+      ]
+    },
+    {
+      "ID": 99999230,
+      "Entries": [
+        "Elkano 300 -- エルカノ\u3000300"
+      ]
+    },
+    {
+      "ID": 99999310,
+      "Entries": [
+        "Rembrandt 100 -- レンブラント\u3000100"
+      ]
+    },
+    {
+      "ID": 99999320,
+      "Entries": [
+        "Rembrandt 200 -- レンブラント\u3000200"
+      ]
+    },
+    {
+      "ID": 99999330,
+      "Entries": [
+        "Rembrandt 300 -- レンブラント\u3000300"
+      ]
+    },
+    {
+      "ID": 99999410,
+      "Entries": [
+        "Bayrum Elcano 100 200 -- ベイラム\u3000エルカノ\u3000100\u3000200"
+      ]
+    }
+  ]
+}

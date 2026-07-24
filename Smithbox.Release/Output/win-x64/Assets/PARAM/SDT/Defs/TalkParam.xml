@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TALK_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 textId = -1">
+      <DisplayName>PC性別が男：テキストID</DisplayName>
+      <Description>PC性別が男：メッセージを指定-&gt;メニュー</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+    </Field>
+    <Field Def="s32 textId_female = -1">
+      <DisplayName>PC性別が女：テキストID</DisplayName>
+      <Description>PC性別が女：メッセージを指定-&gt;メニュー</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 timeout">
+      <DisplayName>ボイス再生タイムアウト時間 </DisplayName>
+      <Description>ボイス再生タイムアウト時間 </Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="dummy8 pad[4]">
+      <DisplayName>padding</DisplayName>
+      <SortID>9999999</SortID>
+    </Field>
+    <Field Def="s32 soundId_pc = -1">
+      <DisplayName>PC：PC性別が男：サウンドID</DisplayName>
+      <Description>PC：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="s32 soundId0 = -1">
+      <DisplayName>会話参加者0：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者0：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="s32 soundId1 = -1">
+      <DisplayName>会話参加者1：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者1：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="s32 soundId2 = -1">
+      <DisplayName>会話参加者2：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者2：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="s32 soundId3 = -1">
+      <DisplayName>会話参加者3：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者3：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="s32 soundId4 = -1">
+      <DisplayName>会話参加者4：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者4：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>6000</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="s32 soundId5 = -1">
+      <DisplayName>会話参加者5：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者5：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>7000</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="s32 soundId6 = -1">
+      <DisplayName>会話参加者6：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者6：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>8000</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="s32 soundId7 = -1">
+      <DisplayName>会話参加者7：PC性別が男：サウンドID</DisplayName>
+      <Description>会話参加者7：PC性別が男：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>9000</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="s32 soundId0_pc_female = -1">
+      <DisplayName>PC：PC性別が女：サウンドID</DisplayName>
+      <Description>PC：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>1100</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="s32 soundId0_female = -1">
+      <DisplayName>会話参加者0：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者0：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>2100</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="s32 soundId1_female = -1">
+      <DisplayName>会話参加者1：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者1：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>3100</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="s32 soundId2_female = -1">
+      <DisplayName>会話参加者2：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者2：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>4100</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="s32 soundId3_female = -1">
+      <DisplayName>会話参加者3：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者3：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>5100</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="s32 soundId4_female = -1">
+      <DisplayName>会話参加者4：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者4：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>6100</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="s32 soundId5_female = -1">
+      <DisplayName>会話参加者5：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者5：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>7100</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="s32 soundId6_female = -1">
+      <DisplayName>会話参加者6：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者6：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>8100</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="s32 soundId7_female = -1">
+      <DisplayName>会話参加者7：PC性別が女：サウンドID</DisplayName>
+      <Description>会話参加者7：PC性別が女：サウンド（ボイス）ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>9100</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget_pc">
+      <DisplayName>PC：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>PC：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>1200</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget0">
+      <DisplayName>会話参加者0：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者0：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>2200</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget1">
+      <DisplayName>会話参加者1：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者1：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>3200</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget2">
+      <DisplayName>会話参加者2：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者2：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>4200</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget3">
+      <DisplayName>会話参加者3：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者3：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>5200</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget4">
+      <DisplayName>会話参加者4：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者4：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>6200</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget5">
+      <DisplayName>会話参加者5：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者5：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>7200</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget6">
+      <DisplayName>会話参加者6：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者6：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>8200</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtTarget7">
+      <DisplayName>会話参加者7：LookAt対象</DisplayName>
+      <Enum>TALK_PARAM_LOOKAT</Enum>
+      <Description>会話参加者7：LookAt対象</Description>
+      <Maximum>128</Maximum>
+      <SortID>9200</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation_pc = 100">
+      <DisplayName>PC：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>PC：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>1300</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation0 = 100">
+      <DisplayName>会話参加者0：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者0：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>2300</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation1 = 100">
+      <DisplayName>会話参加者1：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者1：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>3300</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation2 = 100">
+      <DisplayName>会話参加者2：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者2：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>4300</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation3 = 100">
+      <DisplayName>会話参加者3：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者3：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>5300</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation4 = 100">
+      <DisplayName>会話参加者4：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者4：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>6300</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation5 = 100">
+      <DisplayName>会話参加者5：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者5：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>7300</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation6 = 100">
+      <DisplayName>会話参加者6：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者6：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>8300</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="u8 talkAnimation7 = 100">
+      <DisplayName>会話参加者7：字幕芝居</DisplayName>
+      <Enum>TALK_PARAM_ANIMATION</Enum>
+      <Description>会話参加者7：会話中のアニメーション</Description>
+      <Maximum>100</Maximum>
+      <SortID>9300</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart_pc = -1">
+      <DisplayName>PC：口パク開始時間</DisplayName>
+      <Description>PC：口パク開始時間。-1で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1400</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart0 = -1">
+      <DisplayName>会話参加者0：口パク開始時間</DisplayName>
+      <Description>会話参加者0：口パク開始時間。-1で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2400</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart1 = -1">
+      <DisplayName>会話参加者1：口パク開始時間</DisplayName>
+      <Description>会話参加者1：口パク開始時間。-1で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3400</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart2 = -1">
+      <DisplayName>会話参加者2：口パク開始時間</DisplayName>
+      <Description>会話参加者2：口パク開始時間。-1で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>4400</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart3 = -1">
+      <DisplayName>会話参加者3：口パク開始時間</DisplayName>
+      <Description>会話参加者3：口パク開始時間。-2で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>5400</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart4 = -1">
+      <DisplayName>会話参加者4：口パク開始時間</DisplayName>
+      <Description>会話参加者4：口パク開始時間。-3で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6400</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart5 = -1">
+      <DisplayName>会話参加者5：口パク開始時間</DisplayName>
+      <Description>会話参加者5：口パク開始時間。-4で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7400</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart6 = -1">
+      <DisplayName>会話参加者6：口パク開始時間</DisplayName>
+      <Description>会話参加者6：口パク開始時間。-5で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>8400</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncStart7 = -1">
+      <DisplayName>会話参加者7：口パク開始時間</DisplayName>
+      <Description>会話参加者7：口パク開始時間。-6で口パク無し</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>9400</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime_pc = -1">
+      <DisplayName>PC：口パク継続時間</DisplayName>
+      <Description>PC：口パク継続時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1410</SortID>
+      <UnkC8>プレイヤー</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime0 = -1">
+      <DisplayName>会話参加者0：口パク継続時間</DisplayName>
+      <Description>会話参加者0：口パク継続時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2410</SortID>
+      <UnkC8>会話参加者0</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime1 = -1">
+      <DisplayName>会話参加者1：口パク継続時間</DisplayName>
+      <Description>会話参加者1：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3410</SortID>
+      <UnkC8>会話参加者1</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime2 = -1">
+      <DisplayName>会話参加者2：口パク継続時間</DisplayName>
+      <Description>会話参加者2：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>4410</SortID>
+      <UnkC8>会話参加者2</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime3 = -1">
+      <DisplayName>会話参加者3：口パク継続時間</DisplayName>
+      <Description>会話参加者3：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>5410</SortID>
+      <UnkC8>会話参加者3</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime4 = -1">
+      <DisplayName>会話参加者4：口パク継続時間</DisplayName>
+      <Description>会話参加者4：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6410</SortID>
+      <UnkC8>会話参加者4</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime5 = -1">
+      <DisplayName>会話参加者5：口パク継続時間</DisplayName>
+      <Description>会話参加者5：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7410</SortID>
+      <UnkC8>会話参加者5</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime6 = -1">
+      <DisplayName>会話参加者6：口パク継続時間</DisplayName>
+      <Description>会話参加者6：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>8410</SortID>
+      <UnkC8>会話参加者6</UnkC8>
+    </Field>
+    <Field Def="s16 lipSyncTime7 = -1">
+      <DisplayName>会話参加者7：口パク継続時間</DisplayName>
+      <Description>会話参加者7：口パク開始時間。-1で口パクずっと継続</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>9410</SortID>
+      <UnkC8>会話参加者7</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad1[2]">
+      <DisplayName>padding1</DisplayName>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

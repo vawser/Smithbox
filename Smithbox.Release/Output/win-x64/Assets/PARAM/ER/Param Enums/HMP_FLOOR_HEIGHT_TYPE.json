@@ -1,0 +1,29 @@
+{
+  "Key": "HMP_FLOOR_HEIGHT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HMP_FLOOR_HEIGHT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force to Reflective Surface Height"
+        }
+      ]
+    }
+  ]
+}

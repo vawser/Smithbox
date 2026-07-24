@@ -1,0 +1,68 @@
+{
+  "Param": "SHOP_LINEUP_PARAM",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "SHOP_LINEUP_PARAM",
+  "Description": "Handles items purchased in shops",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "",
+      "Description": "Product being sold"
+    },
+    {
+      "Field": "value",
+      "Name": "",
+      "Description": "Purchase price, overwrties the saleValue in EquipParamGoods"
+    },
+    {
+      "Field": "mtrlId",
+      "Name": "",
+      "Description": "Defines items needed to trade in order to purchase this item"
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "",
+      "Description": "Event Flag that is turned on once the item is purchased, cannot be purchased again while the event flag is on"
+    },
+    {
+      "Field": "flagId_forRelease",
+      "Name": "",
+      "Description": "Event flag needed to unlock this item"
+    },
+    {
+      "Field": "sellQuantity",
+      "Name": "",
+      "Description": "Amount of items sold -1=Unlimited"
+    },
+    {
+      "Field": "shopType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipType",
+      "Name": "",
+      "Description": "Determines what type of item is sold"
+    },
+    {
+      "Field": "value_SAN",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "value_Add",
+      "Name": "",
+      "Description": "Adds a flat amount to the saleValue in EquipParamGoods"
+    },
+    {
+      "Field": "value_Magnification",
+      "Name": "",
+      "Description": "Multiplies the saleValue in EquipParamGoods"
+    }
+  ]
+}

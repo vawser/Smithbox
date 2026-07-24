@@ -1,0 +1,29 @@
+{
+  "Name": "LookAtHeadParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard aircraft"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Quadruped _ two-handed"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "quadruped"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Standard head (speed: normal)"
+      ]
+    }
+  ]
+}

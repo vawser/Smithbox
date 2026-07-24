@@ -1,0 +1,138 @@
+{
+  "Param": "NETWORK_MSG_PARAM_ST",
+  "Type": "NETWORK_MSG_PARAM_ST",
+  "Name": "NETWORK_MSG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "優先度"
+    },
+    {
+      "Field": "forcePlay",
+      "Name": "強制割り込み",
+      "Description": "強制割り込み"
+    },
+    {
+      "Field": "pad1",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "normalWhite",
+      "Name": "白霊（白サイン）",
+      "Description": "白霊（白サイン）"
+    },
+    {
+      "Field": "umbasaWhite",
+      "Name": "太陽霊（白サイン）",
+      "Description": "太陽霊（白サイン）"
+    },
+    {
+      "Field": "berserkerWhite",
+      "Name": "バーサーカー霊（白サイン）",
+      "Description": "バーサーカー霊（白サイン）"
+    },
+    {
+      "Field": "sinnerHeroWhite",
+      "Name": "罪人英雄霊（白サイン ）",
+      "Description": "罪人英雄霊（白サイン ）"
+    },
+    {
+      "Field": "normalBlack",
+      "Name": "闇霊（赤サイン）",
+      "Description": "闇霊（赤サイン）"
+    },
+    {
+      "Field": "umbasaBlack",
+      "Name": "太陽霊（赤サイン）",
+      "Description": "太陽霊（赤サイン）"
+    },
+    {
+      "Field": "berserkerBlack",
+      "Name": "バーサーカー霊（赤サイン）",
+      "Description": "バーサーカー霊（赤サイン）"
+    },
+    {
+      "Field": "forceJoinBlack",
+      "Name": "闇霊（乱入）",
+      "Description": "闇霊（乱入）"
+    },
+    {
+      "Field": "forceJoinUmbasaBlack",
+      "Name": "太陽霊（乱入）",
+      "Description": "太陽霊（乱入）"
+    },
+    {
+      "Field": "forceJoinBerserkerBlack",
+      "Name": "バーサーカー霊（乱入）",
+      "Description": "バーサーカー霊（乱入）"
+    },
+    {
+      "Field": "sinnerHunterVisitor",
+      "Name": "罪人狩り霊（訪問）",
+      "Description": "罪人狩り霊（訪問）"
+    },
+    {
+      "Field": "redHunterVisitor",
+      "Name": "赤狩り霊（訪問）",
+      "Description": "赤狩り霊（訪問）"
+    },
+    {
+      "Field": "guardianOfBossVisitor",
+      "Name": "ボス守護霊（訪問）",
+      "Description": "ボス守護霊（訪問）"
+    },
+    {
+      "Field": "guardianOfForestMapVisitor",
+      "Name": "マップ守護霊_森（訪問）",
+      "Description": "マップ守護霊_森（訪問）"
+    },
+    {
+      "Field": "guardianOfAnolisVisitor",
+      "Name": "マップ守護霊_アノール（訪問）",
+      "Description": "マップ守護霊_アノール（訪問）"
+    },
+    {
+      "Field": "rosaliaBlack",
+      "Name": "ロザリア霊（赤サイン）",
+      "Description": "ロザリア霊（赤サイン）"
+    },
+    {
+      "Field": "forceJoinRosaliaBlack",
+      "Name": "ロザリア霊（乱入）",
+      "Description": "ロザリア霊（乱入）"
+    },
+    {
+      "Field": "redHunterVisitor2",
+      "Name": "赤狩り霊2（訪問）",
+      "Description": "赤狩り霊2（訪問）"
+    },
+    {
+      "Field": "npc1",
+      "Name": "NPC擬似マルチ1",
+      "Description": "NPC擬似マルチ1"
+    },
+    {
+      "Field": "npc2",
+      "Name": "NPC擬似マルチ2",
+      "Description": "NPC擬似マルチ2"
+    },
+    {
+      "Field": "npc3",
+      "Name": "NPC擬似マルチ3",
+      "Description": "NPC擬似マルチ3"
+    },
+    {
+      "Field": "npc4",
+      "Name": "NPC擬似マルチ4",
+      "Description": "NPC擬似マルチ4"
+    },
+    {
+      "Field": "pad2",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

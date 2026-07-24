@@ -1,0 +1,23 @@
+{
+  "Param": "INTRUDE_POINT_PARAM",
+  "Type": "INTRUDE_POINT_PARAM",
+  "Name": "INTRUDE_POINT_PARAM",
+  "Description": "Defines invasion/intrusion point settings used for multiplayer or scripted entry locations.",
+  "Fields": [
+    {
+      "Field": "playAreaId",
+      "Name": "Play Area ID",
+      "Description": "ID of the play area or region associated with this intrusion point."
+    },
+    {
+      "Field": "intrudePriority",
+      "Name": "Intrusion Priority",
+      "Description": "Priority value used to determine intrusion point selection order."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

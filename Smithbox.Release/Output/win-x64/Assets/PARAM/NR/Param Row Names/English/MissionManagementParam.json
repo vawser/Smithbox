@@ -1,0 +1,119 @@
+{
+  "Name": "MissionManagementParam",
+  "Entries": [
+    {
+      "ID": 101,
+      "Entries": [
+        "Personal Scenario (Wylder): Mission 1 - Grindstone Collection"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Personal Scenario (Wylder): Mission 2 - Silver Droplet"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Personal Scenario (Guardian): Mission 1 - Corrupted Pilgrim"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Personal Scenario (Guardian): Mission 2 - Defeat Golem"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Personal Scenario (Guardian): Mission 3 - Baphomet Trade"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Personal Scenario (Ironeye): Mission 1 - Eliminate the Sick"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Personal Scenario (Ironeye): Mission 2 - Defeat the Sinners"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Personal Scenario (Ironeye): Mission 3 - Defeat the Centaur"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Personal Scenario (Duchess): Mission 1 - Collect Flowers"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Personal Scenario (Duchess): Mission 2 - Find News"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Personal Scenario (Raider): Mission 1 - Before the Hazama Cup Final"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Personal Scenario (Revenant): Mission 1 - Defeat the Night Servant"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Personal Scenario (Revenant): Mission 2 - Unused"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Personal Scenario (Recluse): Mission 1 - ?"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Personal Scenario (Recluse): Mission 2 - ?"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Personal Scenario (Executor): Mission 1 - ?"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Personal Scenario (Executor): Mission 2 - ?"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Personal Scenario (Executor): Mission 3 - ?"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

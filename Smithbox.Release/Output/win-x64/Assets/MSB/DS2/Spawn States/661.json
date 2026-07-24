@@ -1,0 +1,14 @@
+{
+  "id": "661",
+  "name": "Ice Stallion",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

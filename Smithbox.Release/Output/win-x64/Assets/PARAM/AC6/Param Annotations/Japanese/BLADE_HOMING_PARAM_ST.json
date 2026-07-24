@@ -1,0 +1,53 @@
+{
+  "Param": "BLADE_HOMING_PARAM_ST",
+  "Type": "BLADE_HOMING_PARAM_ST",
+  "Name": "BLADE_HOMING_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "maxSpeedKMPH",
+      "Name": "最高速度[km/h]",
+      "Description": "最高速度[km/h]"
+    },
+    {
+      "Field": "accelMPSS",
+      "Name": "加速度[m/s^2]",
+      "Description": "加速度[m/s^2]"
+    },
+    {
+      "Field": "endBrakeMPSS",
+      "Name": "終了時ブレーキ[m/s^2]",
+      "Description": "終了時ブレーキ[m/s^2]"
+    },
+    {
+      "Field": "accelTime",
+      "Name": "加速時間[sec]",
+      "Description": "加速時間[sec]"
+    },
+    {
+      "Field": "endLength",
+      "Name": "終了距離[m]",
+      "Description": "終了距離[m]"
+    },
+    {
+      "Field": "maxAngLR",
+      "Name": "限界角度\u3000左右[deg]",
+      "Description": "限界角度\u3000左右[deg]"
+    },
+    {
+      "Field": "maxAngUD",
+      "Name": "限界角度\u3000上下[deg]",
+      "Description": "限界角度\u3000上下[deg]"
+    },
+    {
+      "Field": "maxSpeedKeepTime",
+      "Name": "最高速度維持時間[sec]",
+      "Description": "最高速度維持時間[sec]"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予備",
+      "Description": ""
+    }
+  ]
+}

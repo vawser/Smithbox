@@ -1,0 +1,8781 @@
+{
+  "Param": "ItemTableParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Name": "Example"
+    },
+    {
+      "ID": 1000000,
+      "Name": "All Consumables"
+    },
+    {
+      "ID": 1000001,
+      "Name": "Common Consumables"
+    },
+    {
+      "ID": 1000002,
+      "Name": "Uncommon Consumables"
+    },
+    {
+      "ID": 1000003,
+      "Name": "Rare Consumables"
+    },
+    {
+      "ID": 1000004,
+      "Name": "Legendary Consumables"
+    },
+    {
+      "ID": 1200600,
+      "Name": "Sorcerer's Rise"
+    },
+    {
+      "ID": 1200601,
+      "Name": "Sorceror's Rise Item"
+    },
+    {
+      "ID": 1200602,
+      "Name": "Sorceror's Rise Tear"
+    },
+    {
+      "ID": 1200603,
+      "Name": "Sorceror's Rise Talisman"
+    },
+    {
+      "ID": 1201600,
+      "Name": "Ruined Rise"
+    },
+    {
+      "ID": 1201601,
+      "Name": "Ruined Rise Item"
+    },
+    {
+      "ID": 1201602,
+      "Name": "Ruined Rise Tear"
+    },
+    {
+      "ID": 1201603,
+      "Name": "Ruined Rise Talisman"
+    },
+    {
+      "ID": 2000001,
+      "Name": "Common"
+    },
+    {
+      "ID": 2000002,
+      "Name": "Uncommon"
+    },
+    {
+      "ID": 2000003,
+      "Name": "Rare"
+    },
+    {
+      "ID": 2000004,
+      "Name": "Legendary"
+    },
+    {
+      "ID": 2000008,
+      "Name": "Unique"
+    },
+    {
+      "ID": 2000011,
+      "Name": "Common-"
+    },
+    {
+      "ID": 2000012,
+      "Name": "Common~"
+    },
+    {
+      "ID": 2000013,
+      "Name": "Common+"
+    },
+    {
+      "ID": 2000024,
+      "Name": "Uncommon-"
+    },
+    {
+      "ID": 2000025,
+      "Name": "Uncommon~"
+    },
+    {
+      "ID": 2000026,
+      "Name": "Uncommon+"
+    },
+    {
+      "ID": 2000051,
+      "Name": "Common Untyped"
+    },
+    {
+      "ID": 2000052,
+      "Name": "Uncommon Untyped"
+    },
+    {
+      "ID": 2000053,
+      "Name": "Rare Untyped"
+    },
+    {
+      "ID": 2000058,
+      "Name": "Unique Untyped"
+    },
+    {
+      "ID": 2000061,
+      "Name": "Common- Untyped"
+    },
+    {
+      "ID": 2000101,
+      "Name": "Common Elemental"
+    },
+    {
+      "ID": 2000102,
+      "Name": "Uncommon Elemental"
+    },
+    {
+      "ID": 2000103,
+      "Name": "Rare Elemental"
+    },
+    {
+      "ID": 2000108,
+      "Name": "Unique Elemental"
+    },
+    {
+      "ID": 2000501,
+      "Name": "Common Fire"
+    },
+    {
+      "ID": 2000502,
+      "Name": "Uncommon Fire"
+    },
+    {
+      "ID": 2000503,
+      "Name": "Rare Fire"
+    },
+    {
+      "ID": 2000508,
+      "Name": "Unique Fire"
+    },
+    {
+      "ID": 2000551,
+      "Name": "Common Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000552,
+      "Name": "Uncommon Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000553,
+      "Name": "Rare Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000558,
+      "Name": "Unique Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000601,
+      "Name": "Common Lightning"
+    },
+    {
+      "ID": 2000602,
+      "Name": "Uncommon Lightning"
+    },
+    {
+      "ID": 2000603,
+      "Name": "Rare Lightning"
+    },
+    {
+      "ID": 2000608,
+      "Name": "Unique Lightning"
+    },
+    {
+      "ID": 2000651,
+      "Name": "Common Lightning (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000652,
+      "Name": "Uncommon Lightning (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000653,
+      "Name": "Rare Lightning (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000658,
+      "Name": "Unique Lightning (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000701,
+      "Name": "Common Holy"
+    },
+    {
+      "ID": 2000702,
+      "Name": "Uncommon Holy"
+    },
+    {
+      "ID": 2000703,
+      "Name": "Rare Holy"
+    },
+    {
+      "ID": 2000708,
+      "Name": "Unique Holy"
+    },
+    {
+      "ID": 2000751,
+      "Name": "Common Holy (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000752,
+      "Name": "Uncommon Holy (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000753,
+      "Name": "Rare Holy (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000758,
+      "Name": "Unique Holy (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000801,
+      "Name": "Common Magic"
+    },
+    {
+      "ID": 2000802,
+      "Name": "Uncommon Magic"
+    },
+    {
+      "ID": 2000803,
+      "Name": "Rare Magic"
+    },
+    {
+      "ID": 2000808,
+      "Name": "Unique Magic"
+    },
+    {
+      "ID": 2000851,
+      "Name": "Common Magic (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000852,
+      "Name": "Uncommon Magic (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000853,
+      "Name": "Rare Magic (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000858,
+      "Name": "Unique Magic (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000901,
+      "Name": "Common Frost"
+    },
+    {
+      "ID": 2000902,
+      "Name": "Uncommon Frost"
+    },
+    {
+      "ID": 2000903,
+      "Name": "Rare Frost"
+    },
+    {
+      "ID": 2000908,
+      "Name": "Unique Frost"
+    },
+    {
+      "ID": 2000951,
+      "Name": "Common Frost (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000952,
+      "Name": "Uncommon Frost (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000953,
+      "Name": "Rare Frost (Extra Weapon Types)"
+    },
+    {
+      "ID": 2000958,
+      "Name": "Unique Frost (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001001,
+      "Name": "Common Poison"
+    },
+    {
+      "ID": 2001002,
+      "Name": "Uncommon Poison"
+    },
+    {
+      "ID": 2001003,
+      "Name": "Rare Poison"
+    },
+    {
+      "ID": 2001008,
+      "Name": "Unique Poison"
+    },
+    {
+      "ID": 2001051,
+      "Name": "Common Poison (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001052,
+      "Name": "Uncommon Poison (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001053,
+      "Name": "Rare Poison (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001058,
+      "Name": "Unique Poison (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001101,
+      "Name": "Common Blood"
+    },
+    {
+      "ID": 2001102,
+      "Name": "Uncommon Blood"
+    },
+    {
+      "ID": 2001103,
+      "Name": "Rare Blood"
+    },
+    {
+      "ID": 2001108,
+      "Name": "Unique Blood"
+    },
+    {
+      "ID": 2001151,
+      "Name": "Common Blood (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001152,
+      "Name": "Uncommon Blood (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001153,
+      "Name": "Rare Blood (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001158,
+      "Name": "Unique Blood (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001201,
+      "Name": "Common Occult"
+    },
+    {
+      "ID": 2001202,
+      "Name": "Uncommon Occult"
+    },
+    {
+      "ID": 2001203,
+      "Name": "Rare Occult"
+    },
+    {
+      "ID": 2001208,
+      "Name": "Unique Occult"
+    },
+    {
+      "ID": 2001251,
+      "Name": "Common Occult (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001252,
+      "Name": "Uncommon Occult (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001253,
+      "Name": "Rare Occult (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001258,
+      "Name": "Unique Occult (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001301,
+      "Name": "Common Rot"
+    },
+    {
+      "ID": 2001302,
+      "Name": "Uncommon Rot"
+    },
+    {
+      "ID": 2001303,
+      "Name": "Rare Rot"
+    },
+    {
+      "ID": 2001308,
+      "Name": "Unique Rot"
+    },
+    {
+      "ID": 2001351,
+      "Name": "Common Rot (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001352,
+      "Name": "Uncommon Rot (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001353,
+      "Name": "Rare Rot (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001358,
+      "Name": "Unique Rot (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001401,
+      "Name": "Common Sleep"
+    },
+    {
+      "ID": 2001402,
+      "Name": "Uncommon Sleep"
+    },
+    {
+      "ID": 2001403,
+      "Name": "Rare Sleep"
+    },
+    {
+      "ID": 2001408,
+      "Name": "Unique Sleep"
+    },
+    {
+      "ID": 2001451,
+      "Name": "Common Sleep (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001452,
+      "Name": "Uncommon Sleep (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001453,
+      "Name": "Rare Sleep (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001458,
+      "Name": "Unique Sleep (Extra Weapon Types)"
+    },
+    {
+      "ID": 2001503,
+      "Name": "Rare Madness"
+    },
+    {
+      "ID": 2001508,
+      "Name": "Unique Madness"
+    },
+    {
+      "ID": 2002001,
+      "Name": "Common Elemental By Type"
+    },
+    {
+      "ID": 2002002,
+      "Name": "Uncommon Elemental By Type"
+    },
+    {
+      "ID": 2002003,
+      "Name": "Rare Elemental By Type"
+    },
+    {
+      "ID": 2002008,
+      "Name": "Unique Elemental By Type"
+    },
+    {
+      "ID": 2003001,
+      "Name": "Common Status By Type"
+    },
+    {
+      "ID": 2003002,
+      "Name": "Uncommon Status By Type"
+    },
+    {
+      "ID": 2003003,
+      "Name": "Rare Status By Type"
+    },
+    {
+      "ID": 2003008,
+      "Name": "Unique Status By Type"
+    },
+    {
+      "ID": 2003101,
+      "Name": "Common Poison/Blood"
+    },
+    {
+      "ID": 2003102,
+      "Name": "Uncommon Poison/Blood"
+    },
+    {
+      "ID": 2003103,
+      "Name": "Rare Poison/Blood"
+    },
+    {
+      "ID": 2003108,
+      "Name": "Unique Poison/Blood"
+    },
+    {
+      "ID": 2003201,
+      "Name": "Common Frost/Occult/Sleep"
+    },
+    {
+      "ID": 2003202,
+      "Name": "Uncommon Frost/Occult/Sleep"
+    },
+    {
+      "ID": 2003203,
+      "Name": "Rare Frost/Occult/Sleep"
+    },
+    {
+      "ID": 2003208,
+      "Name": "Unique Frost/Occult/Sleep"
+    },
+    {
+      "ID": 2004001,
+      "Name": "Common Shield"
+    },
+    {
+      "ID": 2004002,
+      "Name": "Uncommon Shield"
+    },
+    {
+      "ID": 2004003,
+      "Name": "Rare Shield"
+    },
+    {
+      "ID": 2004101,
+      "Name": "Small Shield (Weighted Uncommon)"
+    },
+    {
+      "ID": 2004102,
+      "Name": "Medium Shield (Weighted Uncommon)"
+    },
+    {
+      "ID": 2004103,
+      "Name": "Greatshield (Weighted Uncommon)"
+    },
+    {
+      "ID": 2004201,
+      "Name": "Small Shield (Weighted Common)"
+    },
+    {
+      "ID": 2004202,
+      "Name": "Medium Shield (Weighted Common)"
+    },
+    {
+      "ID": 2004203,
+      "Name": "Greatshield (Weighted Common)"
+    },
+    {
+      "ID": 2005001,
+      "Name": "Common Ranged"
+    },
+    {
+      "ID": 2005002,
+      "Name": "Uncommon Ranged"
+    },
+    {
+      "ID": 2005003,
+      "Name": "Rare Ranged"
+    },
+    {
+      "ID": 2006000,
+      "Name": "Staff"
+    },
+    {
+      "ID": 2007000,
+      "Name": "Seal"
+    },
+    {
+      "ID": 2007001,
+      "Name": "Common Seal"
+    },
+    {
+      "ID": 2100001,
+      "Name": "Common (Weighted A)"
+    },
+    {
+      "ID": 2100002,
+      "Name": "Uncommon (Weighted A)"
+    },
+    {
+      "ID": 2100003,
+      "Name": "Rare (Weighted A)"
+    },
+    {
+      "ID": 2100004,
+      "Name": "Legendary (Weighted A)"
+    },
+    {
+      "ID": 2100024,
+      "Name": "Uncommon- (Weighted A)"
+    },
+    {
+      "ID": 2100025,
+      "Name": "Uncommon~ (Weighted A)"
+    },
+    {
+      "ID": 2100026,
+      "Name": "Uncommon+ (Weighted A)"
+    },
+    {
+      "ID": 2100051,
+      "Name": "Common Untyped (Weighted A)"
+    },
+    {
+      "ID": 2100052,
+      "Name": "Uncommon Untyped (Weighted A)"
+    },
+    {
+      "ID": 2100053,
+      "Name": "Rare Untyped (Weighted A)"
+    },
+    {
+      "ID": 2100101,
+      "Name": "Common Elemental (Weighted A)"
+    },
+    {
+      "ID": 2100102,
+      "Name": "Uncommon Elemental (Weighted A)"
+    },
+    {
+      "ID": 2100103,
+      "Name": "Rare Elemental (Weighted A)"
+    },
+    {
+      "ID": 2100108,
+      "Name": "Unique Elemental (Weighted A)"
+    },
+    {
+      "ID": 2100501,
+      "Name": "Common Fire (Weighted A)"
+    },
+    {
+      "ID": 2100502,
+      "Name": "Uncommon Fire (Weighted A)"
+    },
+    {
+      "ID": 2100503,
+      "Name": "Rare Fire (Weighted A)"
+    },
+    {
+      "ID": 2100508,
+      "Name": "Unique Fire (Weighted A)"
+    },
+    {
+      "ID": 2100551,
+      "Name": "Common Fire (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100552,
+      "Name": "Uncommon Fire (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100553,
+      "Name": "Rare Fire (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100558,
+      "Name": "Unique Fire (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100601,
+      "Name": "Common Lightning (Weighted A)"
+    },
+    {
+      "ID": 2100602,
+      "Name": "Uncommon Lightning (Weighted A)"
+    },
+    {
+      "ID": 2100603,
+      "Name": "Rare Lightning (Weighted A)"
+    },
+    {
+      "ID": 2100608,
+      "Name": "Unique Lightning (Weighted A)"
+    },
+    {
+      "ID": 2100651,
+      "Name": "Common Lightning (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100652,
+      "Name": "Uncommon Lightning (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100653,
+      "Name": "Rare Lightning (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100658,
+      "Name": "Unique Lightning (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100701,
+      "Name": "Common Holy (Weighted A)"
+    },
+    {
+      "ID": 2100702,
+      "Name": "Uncommon Holy (Weighted A)"
+    },
+    {
+      "ID": 2100703,
+      "Name": "Rare Holy (Weighted A)"
+    },
+    {
+      "ID": 2100708,
+      "Name": "Unique Holy (Weighted A)"
+    },
+    {
+      "ID": 2100751,
+      "Name": "Common Holy (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100752,
+      "Name": "Uncommon Holy (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100753,
+      "Name": "Rare Holy (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100758,
+      "Name": "Unique Holy (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100801,
+      "Name": "Common Magic (Weighted A)"
+    },
+    {
+      "ID": 2100802,
+      "Name": "Uncommon Magic (Weighted A)"
+    },
+    {
+      "ID": 2100803,
+      "Name": "Rare Magic (Weighted A)"
+    },
+    {
+      "ID": 2100808,
+      "Name": "Unique Magic (Weighted A)"
+    },
+    {
+      "ID": 2100851,
+      "Name": "Common Magic (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100852,
+      "Name": "Uncommon Magic (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100853,
+      "Name": "Rare Magic (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100858,
+      "Name": "Unique Magic (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100901,
+      "Name": "Common Frost (Weighted A)"
+    },
+    {
+      "ID": 2100902,
+      "Name": "Uncommon Frost (Weighted A)"
+    },
+    {
+      "ID": 2100903,
+      "Name": "Rare Frost (Weighted A)"
+    },
+    {
+      "ID": 2100908,
+      "Name": "Unique Frost (Weighted A)"
+    },
+    {
+      "ID": 2100951,
+      "Name": "Common Frost (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100952,
+      "Name": "Uncommon Frost (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100953,
+      "Name": "Rare Frost (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2100958,
+      "Name": "Unique Frost (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101001,
+      "Name": "Common Poison (Weighted A)"
+    },
+    {
+      "ID": 2101002,
+      "Name": "Uncommon Poison (Weighted A)"
+    },
+    {
+      "ID": 2101003,
+      "Name": "Rare Poison (Weighted A)"
+    },
+    {
+      "ID": 2101008,
+      "Name": "Unique Poison (Weighted A)"
+    },
+    {
+      "ID": 2101051,
+      "Name": "Common Poison (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101052,
+      "Name": "Uncommon Poison (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101053,
+      "Name": "Rare Poison (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101058,
+      "Name": "Unique Poison (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101101,
+      "Name": "Common Blood (Weighted A)"
+    },
+    {
+      "ID": 2101102,
+      "Name": "Uncommon Blood (Weighted A)"
+    },
+    {
+      "ID": 2101103,
+      "Name": "Rare Blood (Weighted A)"
+    },
+    {
+      "ID": 2101108,
+      "Name": "Unique Blood (Weighted A)"
+    },
+    {
+      "ID": 2101151,
+      "Name": "Common Blood (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101152,
+      "Name": "Uncommon Blood (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101153,
+      "Name": "Rare Blood (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101158,
+      "Name": "Unique Blood (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101201,
+      "Name": "Common Occult (Weighted A)"
+    },
+    {
+      "ID": 2101202,
+      "Name": "Uncommon Occult (Weighted A)"
+    },
+    {
+      "ID": 2101203,
+      "Name": "Rare Occult (Weighted A)"
+    },
+    {
+      "ID": 2101208,
+      "Name": "Unique Occult (Weighted A)"
+    },
+    {
+      "ID": 2101251,
+      "Name": "Common Occult (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101252,
+      "Name": "Uncommon Occult (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101253,
+      "Name": "Rare Occult (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101258,
+      "Name": "Unique Occult (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101301,
+      "Name": "Common Rot (Weighted A)"
+    },
+    {
+      "ID": 2101302,
+      "Name": "Uncommon Rot (Weighted A)"
+    },
+    {
+      "ID": 2101303,
+      "Name": "Rare Rot (Weighted A)"
+    },
+    {
+      "ID": 2101308,
+      "Name": "Unique Rot (Weighted A)"
+    },
+    {
+      "ID": 2101351,
+      "Name": "Common Rot (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101352,
+      "Name": "Uncommon Rot (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101353,
+      "Name": "Rare Rot (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101358,
+      "Name": "Unique Rot (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101401,
+      "Name": "Common Sleep (Weighted A)"
+    },
+    {
+      "ID": 2101402,
+      "Name": "Uncommon Sleep (Weighted A)"
+    },
+    {
+      "ID": 2101403,
+      "Name": "Rare Sleep (Weighted A)"
+    },
+    {
+      "ID": 2101408,
+      "Name": "Unique Sleep (Weighted A)"
+    },
+    {
+      "ID": 2101451,
+      "Name": "Common Sleep (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101452,
+      "Name": "Uncommon Sleep (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101453,
+      "Name": "Rare Sleep (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2101458,
+      "Name": "Unique Sleep (Weighted A, Extra Weapon Types)"
+    },
+    {
+      "ID": 2102001,
+      "Name": "Common Elemental By Type (Weighted A)"
+    },
+    {
+      "ID": 2102002,
+      "Name": "Uncommon Elemental By Type (Weighted A)"
+    },
+    {
+      "ID": 2102003,
+      "Name": "Rare Elemental By Type (Weighted A)"
+    },
+    {
+      "ID": 2103001,
+      "Name": "Common Status By Type (Weighted A)"
+    },
+    {
+      "ID": 2103002,
+      "Name": "Uncommon Status By Type (Weighted A)"
+    },
+    {
+      "ID": 2103003,
+      "Name": "Rare Status By Type (Weighted A)"
+    },
+    {
+      "ID": 2103101,
+      "Name": "Common Poison/Blood (Weighted A)"
+    },
+    {
+      "ID": 2103102,
+      "Name": "Uncommon Poison/Blood (Weighted A)"
+    },
+    {
+      "ID": 2103103,
+      "Name": "Rare Poison/Blood (Weighted A)"
+    },
+    {
+      "ID": 2103201,
+      "Name": "Common Frost/Occult/Sleep (Weighted A)"
+    },
+    {
+      "ID": 2103202,
+      "Name": "Uncommon Frost/Occult/Sleep (Weighted A)"
+    },
+    {
+      "ID": 2103203,
+      "Name": "Rare Frost/Occult/Sleep (Weighted A)"
+    },
+    {
+      "ID": 2200001,
+      "Name": "Common (Weighted B)"
+    },
+    {
+      "ID": 2200002,
+      "Name": "Uncommon (Weighted B)"
+    },
+    {
+      "ID": 2200003,
+      "Name": "Rare (Weighted B)"
+    },
+    {
+      "ID": 2200004,
+      "Name": "Legendary (Weighted B)"
+    },
+    {
+      "ID": 2200024,
+      "Name": "Uncommon- (Weighted B)"
+    },
+    {
+      "ID": 2200025,
+      "Name": "Uncommon~ (Weighted B)"
+    },
+    {
+      "ID": 2200026,
+      "Name": "Uncommon+ (Weighted B)"
+    },
+    {
+      "ID": 2200051,
+      "Name": "Common Untyped (Weighted B)"
+    },
+    {
+      "ID": 2200052,
+      "Name": "Uncommon Untyped (Weighted B)"
+    },
+    {
+      "ID": 2200053,
+      "Name": "Rare Untyped (Weighted B)"
+    },
+    {
+      "ID": 2200101,
+      "Name": "Common Elemental (Weighted B)"
+    },
+    {
+      "ID": 2200102,
+      "Name": "Uncommon Elemental (Weighted B)"
+    },
+    {
+      "ID": 2200103,
+      "Name": "Rare Elemental (Weighted B)"
+    },
+    {
+      "ID": 2200108,
+      "Name": "Unique Elemental (Weighted B)"
+    },
+    {
+      "ID": 2200501,
+      "Name": "Common Fire (Weighted B)"
+    },
+    {
+      "ID": 2200502,
+      "Name": "Uncommon Fire (Weighted B)"
+    },
+    {
+      "ID": 2200503,
+      "Name": "Rare Fire (Weighted B)"
+    },
+    {
+      "ID": 2200508,
+      "Name": "Unique Fire (Weighted B)"
+    },
+    {
+      "ID": 2200551,
+      "Name": "Common Fire (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200552,
+      "Name": "Uncommon Fire (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200553,
+      "Name": "Rare Fire (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200558,
+      "Name": "Unique Fire (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200601,
+      "Name": "Common Lightning (Weighted B)"
+    },
+    {
+      "ID": 2200602,
+      "Name": "Uncommon Lightning (Weighted B)"
+    },
+    {
+      "ID": 2200603,
+      "Name": "Rare Lightning (Weighted B)"
+    },
+    {
+      "ID": 2200608,
+      "Name": "Unique Lightning (Weighted B)"
+    },
+    {
+      "ID": 2200651,
+      "Name": "Common Lightning (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200652,
+      "Name": "Uncommon Lightning (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200653,
+      "Name": "Rare Lightning (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200658,
+      "Name": "Unique Lightning (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200701,
+      "Name": "Common Holy (Weighted B)"
+    },
+    {
+      "ID": 2200702,
+      "Name": "Uncommon Holy (Weighted B)"
+    },
+    {
+      "ID": 2200703,
+      "Name": "Rare Holy (Weighted B)"
+    },
+    {
+      "ID": 2200708,
+      "Name": "Unique Holy (Weighted B)"
+    },
+    {
+      "ID": 2200751,
+      "Name": "Common Holy (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200752,
+      "Name": "Uncommon Holy (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200753,
+      "Name": "Rare Holy (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200758,
+      "Name": "Unique Holy (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200801,
+      "Name": "Common Magic (Weighted B)"
+    },
+    {
+      "ID": 2200802,
+      "Name": "Uncommon Magic (Weighted B)"
+    },
+    {
+      "ID": 2200803,
+      "Name": "Rare Magic (Weighted B)"
+    },
+    {
+      "ID": 2200808,
+      "Name": "Unique Magic (Weighted B)"
+    },
+    {
+      "ID": 2200851,
+      "Name": "Common Magic (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200852,
+      "Name": "Uncommon Magic (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200853,
+      "Name": "Rare Magic (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200858,
+      "Name": "Unique Magic (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200901,
+      "Name": "Common Frost (Weighted B)"
+    },
+    {
+      "ID": 2200902,
+      "Name": "Uncommon Frost (Weighted B)"
+    },
+    {
+      "ID": 2200903,
+      "Name": "Rare Frost (Weighted B)"
+    },
+    {
+      "ID": 2200908,
+      "Name": "Unique Frost (Weighted B)"
+    },
+    {
+      "ID": 2200951,
+      "Name": "Common Frost (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200952,
+      "Name": "Uncommon Frost (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200953,
+      "Name": "Rare Frost (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2200958,
+      "Name": "Unique Frost (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201001,
+      "Name": "Common Poison (Weighted B)"
+    },
+    {
+      "ID": 2201002,
+      "Name": "Uncommon Poison (Weighted B)"
+    },
+    {
+      "ID": 2201003,
+      "Name": "Rare Poison (Weighted B)"
+    },
+    {
+      "ID": 2201008,
+      "Name": "Unique Poison (Weighted B)"
+    },
+    {
+      "ID": 2201051,
+      "Name": "Common Poison (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201052,
+      "Name": "Uncommon Poison (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201053,
+      "Name": "Rare Poison (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201058,
+      "Name": "Unique Poison (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201101,
+      "Name": "Common Blood (Weighted B)"
+    },
+    {
+      "ID": 2201102,
+      "Name": "Uncommon Blood (Weighted B)"
+    },
+    {
+      "ID": 2201103,
+      "Name": "Rare Blood (Weighted B)"
+    },
+    {
+      "ID": 2201108,
+      "Name": "Unique Blood (Weighted B)"
+    },
+    {
+      "ID": 2201151,
+      "Name": "Common Blood (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201152,
+      "Name": "Uncommon Blood (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201153,
+      "Name": "Rare Blood (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201158,
+      "Name": "Unique Blood (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201201,
+      "Name": "Common Occult (Weighted B)"
+    },
+    {
+      "ID": 2201202,
+      "Name": "Uncommon Occult (Weighted B)"
+    },
+    {
+      "ID": 2201203,
+      "Name": "Rare Occult (Weighted B)"
+    },
+    {
+      "ID": 2201208,
+      "Name": "Unique Occult (Weighted B)"
+    },
+    {
+      "ID": 2201251,
+      "Name": "Common Occult (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201252,
+      "Name": "Uncommon Occult (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201253,
+      "Name": "Rare Occult (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201258,
+      "Name": "Unique Occult (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201301,
+      "Name": "Common Rot (Weighted B)"
+    },
+    {
+      "ID": 2201302,
+      "Name": "Uncommon Rot (Weighted B)"
+    },
+    {
+      "ID": 2201303,
+      "Name": "Rare Rot (Weighted B)"
+    },
+    {
+      "ID": 2201308,
+      "Name": "Unique Rot (Weighted B)"
+    },
+    {
+      "ID": 2201351,
+      "Name": "Common Rot (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201352,
+      "Name": "Uncommon Rot (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201353,
+      "Name": "Rare Rot (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201358,
+      "Name": "Unique Rot (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201401,
+      "Name": "Common Sleep (Weighted B)"
+    },
+    {
+      "ID": 2201402,
+      "Name": "Uncommon Sleep (Weighted B)"
+    },
+    {
+      "ID": 2201403,
+      "Name": "Rare Sleep (Weighted B)"
+    },
+    {
+      "ID": 2201408,
+      "Name": "Unique Sleep (Weighted B)"
+    },
+    {
+      "ID": 2201451,
+      "Name": "Common Sleep (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201452,
+      "Name": "Uncommon Sleep (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201453,
+      "Name": "Rare Sleep (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2201458,
+      "Name": "Unique Sleep (Weighted B, Extra Weapon Types)"
+    },
+    {
+      "ID": 2202001,
+      "Name": "Common Elemental By Type (Weighted B)"
+    },
+    {
+      "ID": 2202002,
+      "Name": "Uncommon Elemental By Type (Weighted B)"
+    },
+    {
+      "ID": 2202003,
+      "Name": "Rare Elemental By Type (Weighted B)"
+    },
+    {
+      "ID": 2202008,
+      "Name": "Unique Elemental By Type (Weighted B)"
+    },
+    {
+      "ID": 2203001,
+      "Name": "Common Status By Type (Weighted B)"
+    },
+    {
+      "ID": 2203002,
+      "Name": "Uncommon Status By Type (Weighted B)"
+    },
+    {
+      "ID": 2203003,
+      "Name": "Rare Status By Type (Weighted B)"
+    },
+    {
+      "ID": 2203008,
+      "Name": "Unique Status By Type (Weighted B)"
+    },
+    {
+      "ID": 2203101,
+      "Name": "Common Poison/Blood (Weighted B)"
+    },
+    {
+      "ID": 2203102,
+      "Name": "Uncommon Poison/Blood (Weighted B)"
+    },
+    {
+      "ID": 2203103,
+      "Name": "Rare Poison/Blood (Weighted B)"
+    },
+    {
+      "ID": 2203108,
+      "Name": "Unique Poison/Blood (Weighted B)"
+    },
+    {
+      "ID": 2203201,
+      "Name": "Common Frost/Occult/Sleep (Weighted B)"
+    },
+    {
+      "ID": 2203202,
+      "Name": "Uncommon Frost/Occult/Sleep (Weighted B)"
+    },
+    {
+      "ID": 2203203,
+      "Name": "Rare Frost/Occult/Sleep (Weighted B)"
+    },
+    {
+      "ID": 2203208,
+      "Name": "Unique Frost/Occult/Sleep (Weighted B)"
+    },
+    {
+      "ID": 3000200,
+      "Name": "Uncommon For Class Weighted Low"
+    },
+    {
+      "ID": 3000201,
+      "Name": "Uncommon For Class Weighted High"
+    },
+    {
+      "ID": 3000250,
+      "Name": "Uncommon Untyped For Class (Weighted Light Bow)"
+    },
+    {
+      "ID": 3000251,
+      "Name": "Uncommon Untyped For Class (Weighted Bow)"
+    },
+    {
+      "ID": 3000300,
+      "Name": "Rare For Class"
+    },
+    {
+      "ID": 3000310,
+      "Name": "Unique For Class"
+    },
+    {
+      "ID": 3000400,
+      "Name": "Legendary For Class"
+    },
+    {
+      "ID": 3000502,
+      "Name": "Uncommon Fire For Class"
+    },
+    {
+      "ID": 3000503,
+      "Name": "Rare Fire For Class"
+    },
+    {
+      "ID": 3000508,
+      "Name": "Unique Fire For Class"
+    },
+    {
+      "ID": 3000602,
+      "Name": "Uncommon Lightning For Class"
+    },
+    {
+      "ID": 3000603,
+      "Name": "Rare Lightning For Class"
+    },
+    {
+      "ID": 3000608,
+      "Name": "Unique Lightning For Class"
+    },
+    {
+      "ID": 3000702,
+      "Name": "Uncommon Holy For Class"
+    },
+    {
+      "ID": 3000703,
+      "Name": "Rare Holy For Class"
+    },
+    {
+      "ID": 3000708,
+      "Name": "Unique Holy For Class"
+    },
+    {
+      "ID": 3000802,
+      "Name": "Uncommon Magic For Class"
+    },
+    {
+      "ID": 3000803,
+      "Name": "Rare Magic For Class"
+    },
+    {
+      "ID": 3000808,
+      "Name": "Unique Magic For Class"
+    },
+    {
+      "ID": 3000902,
+      "Name": "Uncommon Frost For Class"
+    },
+    {
+      "ID": 3000903,
+      "Name": "Rare Frost For Class"
+    },
+    {
+      "ID": 3000908,
+      "Name": "Unique Frost For Class"
+    },
+    {
+      "ID": 3001002,
+      "Name": "Uncommon Poison For Class"
+    },
+    {
+      "ID": 3001003,
+      "Name": "Rare Poison For Class"
+    },
+    {
+      "ID": 3001008,
+      "Name": "Unique Poison For Class"
+    },
+    {
+      "ID": 3001102,
+      "Name": "Uncommon Blood For Class"
+    },
+    {
+      "ID": 3001103,
+      "Name": "Rare Blood For Class"
+    },
+    {
+      "ID": 3001108,
+      "Name": "Unique Blood For Class"
+    },
+    {
+      "ID": 3001202,
+      "Name": "Uncommon Occult For Class"
+    },
+    {
+      "ID": 3001203,
+      "Name": "Rare Occult For Class"
+    },
+    {
+      "ID": 3001208,
+      "Name": "Unique Occult For Class"
+    },
+    {
+      "ID": 3001302,
+      "Name": "Uncommon Rot For Class"
+    },
+    {
+      "ID": 3001303,
+      "Name": "Rare Rot For Class"
+    },
+    {
+      "ID": 3001308,
+      "Name": "Unique Rot For Class"
+    },
+    {
+      "ID": 3001402,
+      "Name": "Uncommon Sleep For Class"
+    },
+    {
+      "ID": 3001403,
+      "Name": "Rare Sleep For Class"
+    },
+    {
+      "ID": 3001408,
+      "Name": "Unique Sleep For Class"
+    },
+    {
+      "ID": 3009000,
+      "Name": "+3 Storm Ruler Weapon"
+    },
+    {
+      "ID": 4200000,
+      "Name": "Power Table: 1"
+    },
+    {
+      "ID": 4200100,
+      "Name": "Power Table: 2"
+    },
+    {
+      "ID": 4200101,
+      "Name": "Power Table: 3"
+    },
+    {
+      "ID": 4200102,
+      "Name": "Power Table: 4"
+    },
+    {
+      "ID": 4200103,
+      "Name": "Power Table: 5"
+    },
+    {
+      "ID": 4200104,
+      "Name": "Power Table: 6"
+    },
+    {
+      "ID": 4200105,
+      "Name": "Power Table: 7"
+    },
+    {
+      "ID": 4200200,
+      "Name": "Power Table: 8"
+    },
+    {
+      "ID": 4200210,
+      "Name": "Power Table: 9"
+    },
+    {
+      "ID": 4200214,
+      "Name": "Power Table: 10"
+    },
+    {
+      "ID": 4200216,
+      "Name": "Power Table: 11"
+    },
+    {
+      "ID": 4200217,
+      "Name": "Power Table: 12"
+    },
+    {
+      "ID": 4200220,
+      "Name": "Power Table: 13"
+    },
+    {
+      "ID": 4200224,
+      "Name": "Power Table: 14"
+    },
+    {
+      "ID": 4200226,
+      "Name": "Power Table: 15"
+    },
+    {
+      "ID": 4200300,
+      "Name": "Power Table: 16"
+    },
+    {
+      "ID": 4200301,
+      "Name": "Power Table: 17"
+    },
+    {
+      "ID": 4200302,
+      "Name": "Power Table: 18"
+    },
+    {
+      "ID": 4200303,
+      "Name": "Power Table: 19"
+    },
+    {
+      "ID": 4200304,
+      "Name": "Power Table: 20"
+    },
+    {
+      "ID": 4200305,
+      "Name": "Power Table: 21"
+    },
+    {
+      "ID": 7010001,
+      "Name": "Common Frost Mixed More Elemental"
+    },
+    {
+      "ID": 7010002,
+      "Name": "Uncommon Frost Mixed More Elemental"
+    },
+    {
+      "ID": 7010003,
+      "Name": "Rare Frost Mixed More Elemental"
+    },
+    {
+      "ID": 7010008,
+      "Name": "Unique Frost Mixed More Elemental"
+    },
+    {
+      "ID": 7010011,
+      "Name": "Common Frost Mixed Less Elemental"
+    },
+    {
+      "ID": 7010012,
+      "Name": "Uncommon Frost Mixed Less Elemental"
+    },
+    {
+      "ID": 7010013,
+      "Name": "Rare Frost Mixed Less Elemental"
+    },
+    {
+      "ID": 7010018,
+      "Name": "Unique Frost Mixed Less Elemental"
+    },
+    {
+      "ID": 7010021,
+      "Name": "Common Frost Mixed More Untyped"
+    },
+    {
+      "ID": 7010022,
+      "Name": "Uncommon Frost Mixed More Untyped"
+    },
+    {
+      "ID": 7010023,
+      "Name": "Rare Frost Mixed More Untyped"
+    },
+    {
+      "ID": 7010028,
+      "Name": "Unique Frost Mixed More Untyped"
+    },
+    {
+      "ID": 7010051,
+      "Name": "Common Untyped/Frost"
+    },
+    {
+      "ID": 7010052,
+      "Name": "Uncommon Untyped/Frost"
+    },
+    {
+      "ID": 7010053,
+      "Name": "Rare Untyped/Frost"
+    },
+    {
+      "ID": 7010058,
+      "Name": "Unique Untyped/Frost"
+    },
+    {
+      "ID": 7010061,
+      "Name": "Common Untyped/Frost B"
+    },
+    {
+      "ID": 7010062,
+      "Name": "Uncommon Untyped/Frost B"
+    },
+    {
+      "ID": 7010063,
+      "Name": "Rare Untyped/Frost B"
+    },
+    {
+      "ID": 7010068,
+      "Name": "Unique Untyped/Frost B"
+    },
+    {
+      "ID": 7010071,
+      "Name": "Common Untyped/Frost"
+    },
+    {
+      "ID": 7010072,
+      "Name": "Uncommon Untyped/Frost"
+    },
+    {
+      "ID": 7010073,
+      "Name": "Rare Untyped/Frost"
+    },
+    {
+      "ID": 7010078,
+      "Name": "Unique Untyped/Frost"
+    },
+    {
+      "ID": 7020001,
+      "Name": "Common Fire Mixed More Elemental"
+    },
+    {
+      "ID": 7020002,
+      "Name": "Uncommon Fire Mixed More Elemental"
+    },
+    {
+      "ID": 7020003,
+      "Name": "Rare Fire Mixed More Elemental"
+    },
+    {
+      "ID": 7020008,
+      "Name": "Unique Fire Mixed More Elemental"
+    },
+    {
+      "ID": 7020051,
+      "Name": "Common Untyped/Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 7020052,
+      "Name": "Uncommon Untyped/Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 7020053,
+      "Name": "Rare Untyped/Fire (Extra Weapon Types)"
+    },
+    {
+      "ID": 7020058,
+      "Name": "Unique Untyped/Fire"
+    },
+    {
+      "ID": 7030001,
+      "Name": "Common Rot Mixed More Elemental"
+    },
+    {
+      "ID": 7030002,
+      "Name": "Uncommon Rot Mixed More Elemental"
+    },
+    {
+      "ID": 7030003,
+      "Name": "Rare Rot Mixed More Elemental"
+    },
+    {
+      "ID": 7030008,
+      "Name": "Unique Rot Mixed More Elemental"
+    },
+    {
+      "ID": 7030011,
+      "Name": "Common Rot Mixed Less Elemental"
+    },
+    {
+      "ID": 7030012,
+      "Name": "Uncommon Rot Mixed Less Elemental"
+    },
+    {
+      "ID": 7030013,
+      "Name": "Rare Rot Mixed Less Elemental"
+    },
+    {
+      "ID": 7030018,
+      "Name": "Unique Rot Mixed Less Elemental"
+    },
+    {
+      "ID": 7030021,
+      "Name": "Common Rot Mixed More Untyped"
+    },
+    {
+      "ID": 7030022,
+      "Name": "Uncommon Rot Mixed More Untyped"
+    },
+    {
+      "ID": 7030023,
+      "Name": "Rare Rot Mixed More Untyped"
+    },
+    {
+      "ID": 7030028,
+      "Name": "Unique Rot Mixed More Untyped"
+    },
+    {
+      "ID": 7030051,
+      "Name": "Common Untyped/Rot"
+    },
+    {
+      "ID": 7030052,
+      "Name": "Uncommon Untyped/Rot"
+    },
+    {
+      "ID": 7030053,
+      "Name": "Rare Untyped/Rot"
+    },
+    {
+      "ID": 7030058,
+      "Name": "Unique Untyped/Rot"
+    },
+    {
+      "ID": 7030061,
+      "Name": "Common Untyped/Rot B"
+    },
+    {
+      "ID": 7030062,
+      "Name": "Uncommon Untyped/Rot B"
+    },
+    {
+      "ID": 7030063,
+      "Name": "Rare Untyped/Rot B"
+    },
+    {
+      "ID": 7030068,
+      "Name": "Unique Untyped/Rot B"
+    },
+    {
+      "ID": 7030071,
+      "Name": "Common Untyped/Rot"
+    },
+    {
+      "ID": 7030072,
+      "Name": "Uncommon Untyped/Rot"
+    },
+    {
+      "ID": 7030073,
+      "Name": "Rare Untyped/Rot"
+    },
+    {
+      "ID": 7030078,
+      "Name": "Unique Untyped/Rot"
+    },
+    {
+      "ID": 7040001,
+      "Name": "Common Magic Mixed More Elemental"
+    },
+    {
+      "ID": 7040002,
+      "Name": "Uncommon Magic Mixed More Elemental"
+    },
+    {
+      "ID": 7040003,
+      "Name": "Rare Magic Mixed More Elemental"
+    },
+    {
+      "ID": 7040008,
+      "Name": "Unique Magic Mixed More Elemental"
+    },
+    {
+      "ID": 7040051,
+      "Name": "Common Untyped/Magic"
+    },
+    {
+      "ID": 7040052,
+      "Name": "Uncommon Untyped/Magic"
+    },
+    {
+      "ID": 7040053,
+      "Name": "Rare Untyped/Magic"
+    },
+    {
+      "ID": 7040058,
+      "Name": "Unique Untyped/Magic"
+    },
+    {
+      "ID": 7110001,
+      "Name": "Common Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110002,
+      "Name": "Uncommon Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110003,
+      "Name": "Rare Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110051,
+      "Name": "Common Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110052,
+      "Name": "Uncommon Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110053,
+      "Name": "Rare Untyped/Elemental/Poison/Blood"
+    },
+    {
+      "ID": 7110151,
+      "Name": "Common Untyped/Ranged"
+    },
+    {
+      "ID": 7110152,
+      "Name": "Uncommon Untyped/Ranged"
+    },
+    {
+      "ID": 7110153,
+      "Name": "Rare Untyped/Ranged"
+    },
+    {
+      "ID": 7110801,
+      "Name": "Common Mixed Magic"
+    },
+    {
+      "ID": 7110802,
+      "Name": "Uncommon Mixed Magic"
+    },
+    {
+      "ID": 7110803,
+      "Name": "Rare Mixed Magic"
+    },
+    {
+      "ID": 7110851,
+      "Name": "Common Untyped/Magic"
+    },
+    {
+      "ID": 7110852,
+      "Name": "Uncommon Untyped/Magic"
+    },
+    {
+      "ID": 7110853,
+      "Name": "Rare Untyped/Magic"
+    },
+    {
+      "ID": 7120001,
+      "Name": "Common Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120002,
+      "Name": "Uncommon Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120003,
+      "Name": "Rare Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120051,
+      "Name": "Common Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120052,
+      "Name": "Uncommon Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120053,
+      "Name": "Rare Mixed Untyped (Weighted A)"
+    },
+    {
+      "ID": 7120501,
+      "Name": "Common Mixed Fire (Weighted A)"
+    },
+    {
+      "ID": 7120502,
+      "Name": "Uncommon Mixed Fire (Weighted A)"
+    },
+    {
+      "ID": 7120503,
+      "Name": "Rare Mixed Fire (Weighted A)"
+    },
+    {
+      "ID": 7120551,
+      "Name": "Common Untyped/Fire (Weighted A)"
+    },
+    {
+      "ID": 7120552,
+      "Name": "Uncommon Untyped/Fire (Weighted A)"
+    },
+    {
+      "ID": 7120553,
+      "Name": "Rare Untyped/Fire (Weighted A)"
+    },
+    {
+      "ID": 7120601,
+      "Name": "Common Mixed Lightning (Weighted A)"
+    },
+    {
+      "ID": 7120602,
+      "Name": "Uncommon Mixed Lightning (Weighted A)"
+    },
+    {
+      "ID": 7120603,
+      "Name": "Rare Mixed Lightning (Weighted A)"
+    },
+    {
+      "ID": 7120651,
+      "Name": "Common Untyped/Lightning (Weighted A)"
+    },
+    {
+      "ID": 7120652,
+      "Name": "Uncommon Untyped/Lightning (Weighted A)"
+    },
+    {
+      "ID": 7120653,
+      "Name": "Rare Untyped/Lightning (Weighted A)"
+    },
+    {
+      "ID": 7130001,
+      "Name": "Common Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130002,
+      "Name": "Uncommon Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130003,
+      "Name": "Rare Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130051,
+      "Name": "Common Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130052,
+      "Name": "Uncommon Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130053,
+      "Name": "Rare Mixed Untyped (Weighted B)"
+    },
+    {
+      "ID": 7130601,
+      "Name": "Common Mixed Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130602,
+      "Name": "Uncommon Mixed Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130603,
+      "Name": "Rare Mixed Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130651,
+      "Name": "Common Untyped/Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130652,
+      "Name": "Uncommon Untyped/Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130653,
+      "Name": "Rare Untyped/Lightning (Weighted B)"
+    },
+    {
+      "ID": 7130701,
+      "Name": "Common Mixed Holy (Weighted B)"
+    },
+    {
+      "ID": 7130702,
+      "Name": "Uncommon Mixed Holy (Weighted B)"
+    },
+    {
+      "ID": 7130703,
+      "Name": "Rare Mixed Holy (Weighted B)"
+    },
+    {
+      "ID": 7130751,
+      "Name": "Common Untyped/Holy (Weighted B)"
+    },
+    {
+      "ID": 7130752,
+      "Name": "Uncommon Untyped/Holy (Weighted B)"
+    },
+    {
+      "ID": 7130753,
+      "Name": "Rare Untyped/Holy (Weighted B)"
+    },
+    {
+      "ID": 7130801,
+      "Name": "Common Mixed Magic (Weighted B)"
+    },
+    {
+      "ID": 7130802,
+      "Name": "Uncommon Mixed Magic (Weighted B)"
+    },
+    {
+      "ID": 7130803,
+      "Name": "Rare Mixed Magic (Weighted B)"
+    },
+    {
+      "ID": 7130851,
+      "Name": "Common Untyped/Magic (Weighted B)"
+    },
+    {
+      "ID": 7130852,
+      "Name": "Uncommon Untyped/Magic (Weighted B)"
+    },
+    {
+      "ID": 7130853,
+      "Name": "Rare Untyped/Magic (Weighted B)"
+    },
+    {
+      "ID": 7130901,
+      "Name": "Common Mixed Frost (Weighted B)"
+    },
+    {
+      "ID": 7130902,
+      "Name": "Uncommon Mixed Frost (Weighted B)"
+    },
+    {
+      "ID": 7130903,
+      "Name": "Rare Mixed Frost (Weighted B)"
+    },
+    {
+      "ID": 7130951,
+      "Name": "Common Untyped/Frost (Weighted B)"
+    },
+    {
+      "ID": 7130952,
+      "Name": "Uncommon Untyped/Frost (Weighted B)"
+    },
+    {
+      "ID": 7130953,
+      "Name": "Rare Untyped/Frost (Weighted B)"
+    },
+    {
+      "ID": 7131001,
+      "Name": "Common Mixed Poison (Weighted B)"
+    },
+    {
+      "ID": 7131002,
+      "Name": "Uncommon Mixed Poison (Weighted B)"
+    },
+    {
+      "ID": 7131003,
+      "Name": "Rare Mixed Poison (Weighted B)"
+    },
+    {
+      "ID": 7131051,
+      "Name": "Common Untyped/Poison (Weighted B)"
+    },
+    {
+      "ID": 7131052,
+      "Name": "Uncommon Untyped/Poison (Weighted B)"
+    },
+    {
+      "ID": 7131053,
+      "Name": "Rare Untyped/Poison (Weighted B)"
+    },
+    {
+      "ID": 7131101,
+      "Name": "Common Mixed Blood (Weighted B)"
+    },
+    {
+      "ID": 7131102,
+      "Name": "Uncommon Mixed Blood (Weighted B)"
+    },
+    {
+      "ID": 7131103,
+      "Name": "Rare Mixed Blood (Weighted B)"
+    },
+    {
+      "ID": 7131151,
+      "Name": "Common Untyped/Blood (Weighted B)"
+    },
+    {
+      "ID": 7131152,
+      "Name": "Uncommon Untyped/Blood (Weighted B)"
+    },
+    {
+      "ID": 7131153,
+      "Name": "Rare Untyped/Blood (Weighted B)"
+    },
+    {
+      "ID": 7131401,
+      "Name": "Common Mixed Sleep (Weighted B)"
+    },
+    {
+      "ID": 7131402,
+      "Name": "Uncommon Mixed Sleep (Weighted B)"
+    },
+    {
+      "ID": 7131403,
+      "Name": "Rare Mixed Sleep (Weighted B)"
+    },
+    {
+      "ID": 7131451,
+      "Name": "Common Untyped/Sleep (Weighted B)"
+    },
+    {
+      "ID": 7131452,
+      "Name": "Uncommon Untyped/Sleep (Weighted B)"
+    },
+    {
+      "ID": 7131453,
+      "Name": "Rare Untyped/Sleep (Weighted B)"
+    },
+    {
+      "ID": 7140001,
+      "Name": "Common Mixed Untyped"
+    },
+    {
+      "ID": 7140002,
+      "Name": "Uncommon Mixed Untyped"
+    },
+    {
+      "ID": 7140003,
+      "Name": "Rare Mixed Untyped"
+    },
+    {
+      "ID": 7140051,
+      "Name": "Common Mixed Untyped"
+    },
+    {
+      "ID": 7140052,
+      "Name": "Uncommon Mixed Untyped"
+    },
+    {
+      "ID": 7140053,
+      "Name": "Rare Mixed Untyped"
+    },
+    {
+      "ID": 7140501,
+      "Name": "Common Mixed Fire"
+    },
+    {
+      "ID": 7140502,
+      "Name": "Uncommon Mixed Fire"
+    },
+    {
+      "ID": 7140503,
+      "Name": "Rare Mixed Fire"
+    },
+    {
+      "ID": 7140551,
+      "Name": "Common Untyped/Fire"
+    },
+    {
+      "ID": 7140552,
+      "Name": "Uncommon Untyped/Fire"
+    },
+    {
+      "ID": 7140553,
+      "Name": "Rare Untyped/Fire"
+    },
+    {
+      "ID": 7140701,
+      "Name": "Common Mixed Holy"
+    },
+    {
+      "ID": 7140702,
+      "Name": "Uncommon Mixed Holy"
+    },
+    {
+      "ID": 7140703,
+      "Name": "Rare Mixed Holy"
+    },
+    {
+      "ID": 7140751,
+      "Name": "Common Untyped/Holy"
+    },
+    {
+      "ID": 7140752,
+      "Name": "Uncommon Untyped/Holy"
+    },
+    {
+      "ID": 7140753,
+      "Name": "Rare Untyped/Holy"
+    },
+    {
+      "ID": 7900500,
+      "Name": "Uncommon Fire Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900501,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900502,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900503,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900550,
+      "Name": "Uncommon Fire Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900551,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900580,
+      "Name": "Uncommon Fire Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900581,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900582,
+      "Name": "Uncommon Fire Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900600,
+      "Name": "Uncommon Lightning Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900601,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900602,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900603,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900650,
+      "Name": "Uncommon Lightning Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900651,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900680,
+      "Name": "Uncommon Lightning Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900681,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900682,
+      "Name": "Uncommon Lightning Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900700,
+      "Name": "Uncommon Holy Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900701,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900702,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900703,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900750,
+      "Name": "Uncommon Holy Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900751,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900780,
+      "Name": "Uncommon Holy Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900781,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900782,
+      "Name": "Uncommon Holy Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900800,
+      "Name": "Uncommon Magic Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900801,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900802,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900803,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900850,
+      "Name": "Uncommon Magic Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900851,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900880,
+      "Name": "Uncommon Magic Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900881,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900882,
+      "Name": "Uncommon Magic Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900900,
+      "Name": "Uncommon Frost Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900901,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900902,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900903,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900950,
+      "Name": "Uncommon Frost Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900951,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900980,
+      "Name": "Uncommon Frost Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7900981,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7900982,
+      "Name": "Uncommon Frost Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901000,
+      "Name": "Uncommon Poison Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901001,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901002,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901003,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901050,
+      "Name": "Uncommon Poison Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901051,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901080,
+      "Name": "Uncommon Poison Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901081,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901082,
+      "Name": "Uncommon Poison Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901100,
+      "Name": "Uncommon Blood Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901101,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901102,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901103,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901150,
+      "Name": "Uncommon Blood Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901151,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901180,
+      "Name": "Uncommon Blood Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901181,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901182,
+      "Name": "Uncommon Blood Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901200,
+      "Name": "Uncommon Occult Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901201,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901202,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901203,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901250,
+      "Name": "Uncommon Occult Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901251,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901280,
+      "Name": "Uncommon Occult Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901281,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901282,
+      "Name": "Uncommon Occult Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901300,
+      "Name": "Uncommon Rot Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901301,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901302,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901303,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901350,
+      "Name": "Uncommon Rot Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901351,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901380,
+      "Name": "Uncommon Rot Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901381,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901382,
+      "Name": "Uncommon Rot Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901400,
+      "Name": "Uncommon Sleep Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901401,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901402,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901403,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901450,
+      "Name": "Uncommon Sleep Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901451,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901480,
+      "Name": "Uncommon Sleep Or Untyped For Class (LWB)"
+    },
+    {
+      "ID": 7901481,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7901482,
+      "Name": "Uncommon Sleep Or Untyped For Class (WB)"
+    },
+    {
+      "ID": 7910020,
+      "Name": "Uncommon Weighted Low"
+    },
+    {
+      "ID": 7910021,
+      "Name": "Uncommon Weighted High"
+    },
+    {
+      "ID": 10000001,
+      "Name": "Common Dagger"
+    },
+    {
+      "ID": 10000002,
+      "Name": "Uncommon Dagger"
+    },
+    {
+      "ID": 10000003,
+      "Name": "Rare Dagger"
+    },
+    {
+      "ID": 10000011,
+      "Name": "Common- Dagger"
+    },
+    {
+      "ID": 10000012,
+      "Name": "Common~ Dagger"
+    },
+    {
+      "ID": 10000013,
+      "Name": "Common+ Dagger"
+    },
+    {
+      "ID": 10000024,
+      "Name": "Uncommon- Dagger"
+    },
+    {
+      "ID": 10000025,
+      "Name": "Uncommon~ Dagger"
+    },
+    {
+      "ID": 10000026,
+      "Name": "Uncommon+ Dagger"
+    },
+    {
+      "ID": 10000051,
+      "Name": "Common Untyped Dagger"
+    },
+    {
+      "ID": 10000052,
+      "Name": "Uncommon Untyped Dagger"
+    },
+    {
+      "ID": 10000061,
+      "Name": "Common- Untyped Dagger"
+    },
+    {
+      "ID": 10000062,
+      "Name": "Common~ Untyped Dagger"
+    },
+    {
+      "ID": 10000063,
+      "Name": "Common+ Untyped Dagger"
+    },
+    {
+      "ID": 10000074,
+      "Name": "Uncommon- Untyped Dagger"
+    },
+    {
+      "ID": 10000075,
+      "Name": "Uncommon~ Untyped Dagger"
+    },
+    {
+      "ID": 10000076,
+      "Name": "Uncommon+ Untyped Dagger"
+    },
+    {
+      "ID": 10000101,
+      "Name": "Common Elemental Dagger"
+    },
+    {
+      "ID": 10000102,
+      "Name": "Uncommon Elemental Dagger"
+    },
+    {
+      "ID": 10000111,
+      "Name": "Common- Elemental Dagger"
+    },
+    {
+      "ID": 10000113,
+      "Name": "Common+ Elemental Dagger"
+    },
+    {
+      "ID": 10000124,
+      "Name": "Uncommon- Elemental Dagger"
+    },
+    {
+      "ID": 10000125,
+      "Name": "Uncommon~ Elemental Dagger"
+    },
+    {
+      "ID": 10000126,
+      "Name": "Uncommon+ Elemental Dagger"
+    },
+    {
+      "ID": 10000501,
+      "Name": "Common Fire Dagger"
+    },
+    {
+      "ID": 10000502,
+      "Name": "Uncommon Fire Dagger"
+    },
+    {
+      "ID": 10000511,
+      "Name": "Common- Fire Dagger"
+    },
+    {
+      "ID": 10000513,
+      "Name": "Common+ Fire Dagger"
+    },
+    {
+      "ID": 10000524,
+      "Name": "Uncommon- Fire Dagger"
+    },
+    {
+      "ID": 10000525,
+      "Name": "Uncommon~ Fire Dagger"
+    },
+    {
+      "ID": 10000526,
+      "Name": "Uncommon+ Fire Dagger"
+    },
+    {
+      "ID": 10000601,
+      "Name": "Common Lightning Dagger"
+    },
+    {
+      "ID": 10000602,
+      "Name": "Uncommon Lightning Dagger"
+    },
+    {
+      "ID": 10000611,
+      "Name": "Common- Lightning Dagger"
+    },
+    {
+      "ID": 10000613,
+      "Name": "Common+ Lightning Dagger"
+    },
+    {
+      "ID": 10000624,
+      "Name": "Uncommon- Lightning Dagger"
+    },
+    {
+      "ID": 10000625,
+      "Name": "Uncommon~ Lightning Dagger"
+    },
+    {
+      "ID": 10000626,
+      "Name": "Uncommon+ Lightning Dagger"
+    },
+    {
+      "ID": 10000701,
+      "Name": "Common Holy Dagger"
+    },
+    {
+      "ID": 10000702,
+      "Name": "Uncommon Holy Dagger"
+    },
+    {
+      "ID": 10000703,
+      "Name": "Rare Holy Dagger"
+    },
+    {
+      "ID": 10000711,
+      "Name": "Common- Holy Dagger"
+    },
+    {
+      "ID": 10000713,
+      "Name": "Common+ Holy Dagger"
+    },
+    {
+      "ID": 10000724,
+      "Name": "Uncommon- Holy Dagger"
+    },
+    {
+      "ID": 10000725,
+      "Name": "Uncommon~ Holy Dagger"
+    },
+    {
+      "ID": 10000726,
+      "Name": "Uncommon+ Holy Dagger"
+    },
+    {
+      "ID": 10000801,
+      "Name": "Common Magic Dagger"
+    },
+    {
+      "ID": 10000802,
+      "Name": "Uncommon Magic Dagger"
+    },
+    {
+      "ID": 10000803,
+      "Name": "Rare Magic Dagger"
+    },
+    {
+      "ID": 10000811,
+      "Name": "Common- Magic Dagger"
+    },
+    {
+      "ID": 10000813,
+      "Name": "Common+ Magic Dagger"
+    },
+    {
+      "ID": 10000824,
+      "Name": "Uncommon- Magic Dagger"
+    },
+    {
+      "ID": 10000825,
+      "Name": "Uncommon~ Magic Dagger"
+    },
+    {
+      "ID": 10000826,
+      "Name": "Uncommon+ Magic Dagger"
+    },
+    {
+      "ID": 10000901,
+      "Name": "Common Frost Dagger"
+    },
+    {
+      "ID": 10000902,
+      "Name": "Uncommon Frost Dagger"
+    },
+    {
+      "ID": 10000911,
+      "Name": "Common- Frost Dagger"
+    },
+    {
+      "ID": 10000913,
+      "Name": "Common+ Frost Dagger"
+    },
+    {
+      "ID": 10000924,
+      "Name": "Uncommon- Frost Dagger"
+    },
+    {
+      "ID": 10000925,
+      "Name": "Uncommon~ Frost Dagger"
+    },
+    {
+      "ID": 10000926,
+      "Name": "Uncommon+ Frost Dagger"
+    },
+    {
+      "ID": 10001001,
+      "Name": "Common Poison Dagger"
+    },
+    {
+      "ID": 10001002,
+      "Name": "Uncommon Poison Dagger"
+    },
+    {
+      "ID": 10001011,
+      "Name": "Common- Poison Dagger"
+    },
+    {
+      "ID": 10001013,
+      "Name": "Common+ Poison Dagger"
+    },
+    {
+      "ID": 10001024,
+      "Name": "Uncommon- Poison Dagger"
+    },
+    {
+      "ID": 10001025,
+      "Name": "Uncommon~ Poison Dagger"
+    },
+    {
+      "ID": 10001026,
+      "Name": "Uncommon+ Poison Dagger"
+    },
+    {
+      "ID": 10001101,
+      "Name": "Common Blood Dagger"
+    },
+    {
+      "ID": 10001102,
+      "Name": "Uncommon Blood Dagger"
+    },
+    {
+      "ID": 10001103,
+      "Name": "Rare Blood Dagger"
+    },
+    {
+      "ID": 10001111,
+      "Name": "Common- Blood Dagger"
+    },
+    {
+      "ID": 10001113,
+      "Name": "Common+ Blood Dagger"
+    },
+    {
+      "ID": 10001124,
+      "Name": "Uncommon- Blood Dagger"
+    },
+    {
+      "ID": 10001125,
+      "Name": "Uncommon~ Blood Dagger"
+    },
+    {
+      "ID": 10001126,
+      "Name": "Uncommon+ Blood Dagger"
+    },
+    {
+      "ID": 10001201,
+      "Name": "Common Occult Dagger"
+    },
+    {
+      "ID": 10001202,
+      "Name": "Uncommon Occult Dagger"
+    },
+    {
+      "ID": 10001211,
+      "Name": "Common- Occult Dagger"
+    },
+    {
+      "ID": 10001213,
+      "Name": "Common+ Occult Dagger"
+    },
+    {
+      "ID": 10001224,
+      "Name": "Uncommon- Occult Dagger"
+    },
+    {
+      "ID": 10001225,
+      "Name": "Uncommon~ Occult Dagger"
+    },
+    {
+      "ID": 10001226,
+      "Name": "Uncommon+ Occult Dagger"
+    },
+    {
+      "ID": 10001301,
+      "Name": "Common Rot Dagger"
+    },
+    {
+      "ID": 10001302,
+      "Name": "Uncommon Rot Dagger"
+    },
+    {
+      "ID": 10001303,
+      "Name": "Rare Rot Dagger"
+    },
+    {
+      "ID": 10001401,
+      "Name": "Common Sleep Dagger"
+    },
+    {
+      "ID": 10001402,
+      "Name": "Uncommon Sleep Dagger"
+    },
+    {
+      "ID": 10001403,
+      "Name": "Rare Sleep Dagger"
+    },
+    {
+      "ID": 10005003,
+      "Name": "Unique Dagger"
+    },
+    {
+      "ID": 10005703,
+      "Name": "Unique Holy Dagger"
+    },
+    {
+      "ID": 10005803,
+      "Name": "Unique Magic Dagger"
+    },
+    {
+      "ID": 10006103,
+      "Name": "Unique Blood Dagger"
+    },
+    {
+      "ID": 10006303,
+      "Name": "Unique Rot Dagger"
+    },
+    {
+      "ID": 10006403,
+      "Name": "Unique Sleep Dagger"
+    },
+    {
+      "ID": 20000001,
+      "Name": "Common Straight Sword"
+    },
+    {
+      "ID": 20000002,
+      "Name": "Uncommon Straight Sword"
+    },
+    {
+      "ID": 20000003,
+      "Name": "Rare Straight Sword"
+    },
+    {
+      "ID": 20000004,
+      "Name": "Legendary Straight Sword"
+    },
+    {
+      "ID": 20000011,
+      "Name": "Common- Straight Sword"
+    },
+    {
+      "ID": 20000012,
+      "Name": "Common~ Straight Sword"
+    },
+    {
+      "ID": 20000013,
+      "Name": "Common+ Straight Sword"
+    },
+    {
+      "ID": 20000024,
+      "Name": "Uncommon- Straight Sword"
+    },
+    {
+      "ID": 20000025,
+      "Name": "Uncommon~ Straight Sword"
+    },
+    {
+      "ID": 20000026,
+      "Name": "Uncommon+ Straight Sword"
+    },
+    {
+      "ID": 20000051,
+      "Name": "Common Untyped Straight Sword"
+    },
+    {
+      "ID": 20000052,
+      "Name": "Uncommon Untyped Straight Sword"
+    },
+    {
+      "ID": 20000061,
+      "Name": "Common- Untyped Straight Sword"
+    },
+    {
+      "ID": 20000062,
+      "Name": "Common~ Untyped Straight Sword"
+    },
+    {
+      "ID": 20000063,
+      "Name": "Common+ Untyped Straight Sword"
+    },
+    {
+      "ID": 20000074,
+      "Name": "Uncommon- Untyped Straight Sword"
+    },
+    {
+      "ID": 20000075,
+      "Name": "Uncommon~ Untyped Straight Sword"
+    },
+    {
+      "ID": 20000076,
+      "Name": "Uncommon+ Untyped Straight Sword"
+    },
+    {
+      "ID": 20000101,
+      "Name": "Common Elemental Straight Sword"
+    },
+    {
+      "ID": 20000102,
+      "Name": "Uncommon Elemental Straight Sword"
+    },
+    {
+      "ID": 20000111,
+      "Name": "Common- Elemental Straight Sword"
+    },
+    {
+      "ID": 20000112,
+      "Name": "Common~ Elemental Straight Sword"
+    },
+    {
+      "ID": 20000113,
+      "Name": "Common+ Elemental Straight Sword"
+    },
+    {
+      "ID": 20000124,
+      "Name": "Uncommon- Elemental Straight Sword"
+    },
+    {
+      "ID": 20000125,
+      "Name": "Uncommon~ Elemental Straight Sword"
+    },
+    {
+      "ID": 20000126,
+      "Name": "Uncommon+ Elemental Straight Sword"
+    },
+    {
+      "ID": 20000501,
+      "Name": "Common Fire Straight Sword"
+    },
+    {
+      "ID": 20000502,
+      "Name": "Uncommon Fire Straight Sword"
+    },
+    {
+      "ID": 20000504,
+      "Name": "Legendary Fire Straight Sword"
+    },
+    {
+      "ID": 20000511,
+      "Name": "Common- Fire Straight Sword"
+    },
+    {
+      "ID": 20000512,
+      "Name": "Common~ Fire Straight Sword"
+    },
+    {
+      "ID": 20000513,
+      "Name": "Common+ Fire Straight Sword"
+    },
+    {
+      "ID": 20000524,
+      "Name": "Uncommon- Fire Straight Sword"
+    },
+    {
+      "ID": 20000525,
+      "Name": "Uncommon~ Fire Straight Sword"
+    },
+    {
+      "ID": 20000526,
+      "Name": "Uncommon+ Fire Straight Sword"
+    },
+    {
+      "ID": 20000601,
+      "Name": "Common Lightning Straight Sword"
+    },
+    {
+      "ID": 20000602,
+      "Name": "Uncommon Lightning Straight Sword"
+    },
+    {
+      "ID": 20000611,
+      "Name": "Common- Lightning Straight Sword"
+    },
+    {
+      "ID": 20000612,
+      "Name": "Common~ Lightning Straight Sword"
+    },
+    {
+      "ID": 20000613,
+      "Name": "Common+ Lightning Straight Sword"
+    },
+    {
+      "ID": 20000624,
+      "Name": "Uncommon- Lightning Straight Sword"
+    },
+    {
+      "ID": 20000625,
+      "Name": "Uncommon~ Lightning Straight Sword"
+    },
+    {
+      "ID": 20000626,
+      "Name": "Uncommon+ Lightning Straight Sword"
+    },
+    {
+      "ID": 20000701,
+      "Name": "Common Holy Straight Sword"
+    },
+    {
+      "ID": 20000702,
+      "Name": "Uncommon Holy Straight Sword"
+    },
+    {
+      "ID": 20000703,
+      "Name": "Rare Holy Straight Sword"
+    },
+    {
+      "ID": 20000711,
+      "Name": "Common- Holy Straight Sword"
+    },
+    {
+      "ID": 20000712,
+      "Name": "Common~ Holy Straight Sword"
+    },
+    {
+      "ID": 20000713,
+      "Name": "Common+ Holy Straight Sword"
+    },
+    {
+      "ID": 20000724,
+      "Name": "Uncommon- Holy Straight Sword"
+    },
+    {
+      "ID": 20000725,
+      "Name": "Uncommon~ Holy Straight Sword"
+    },
+    {
+      "ID": 20000726,
+      "Name": "Uncommon+ Holy Straight Sword"
+    },
+    {
+      "ID": 20000801,
+      "Name": "Common Magic Straight Sword"
+    },
+    {
+      "ID": 20000802,
+      "Name": "Uncommon Magic Straight Sword"
+    },
+    {
+      "ID": 20000803,
+      "Name": "Rare Magic Straight Sword"
+    },
+    {
+      "ID": 20000804,
+      "Name": "Legendary Magic Straight Sword"
+    },
+    {
+      "ID": 20000811,
+      "Name": "Common- Magic Straight Sword"
+    },
+    {
+      "ID": 20000812,
+      "Name": "Common~ Magic Straight Sword"
+    },
+    {
+      "ID": 20000813,
+      "Name": "Common+ Magic Straight Sword"
+    },
+    {
+      "ID": 20000824,
+      "Name": "Uncommon- Magic Straight Sword"
+    },
+    {
+      "ID": 20000825,
+      "Name": "Uncommon~ Magic Straight Sword"
+    },
+    {
+      "ID": 20000826,
+      "Name": "Uncommon+ Magic Straight Sword"
+    },
+    {
+      "ID": 20000901,
+      "Name": "Common Frost Straight Sword"
+    },
+    {
+      "ID": 20000902,
+      "Name": "Uncommon Frost Straight Sword"
+    },
+    {
+      "ID": 20000911,
+      "Name": "Common- Frost Straight Sword"
+    },
+    {
+      "ID": 20000912,
+      "Name": "Common~ Frost Straight Sword"
+    },
+    {
+      "ID": 20000913,
+      "Name": "Common+ Frost Straight Sword"
+    },
+    {
+      "ID": 20000924,
+      "Name": "Uncommon- Frost Straight Sword"
+    },
+    {
+      "ID": 20000925,
+      "Name": "Uncommon~ Frost Straight Sword"
+    },
+    {
+      "ID": 20000926,
+      "Name": "Uncommon+ Frost Straight Sword"
+    },
+    {
+      "ID": 20001001,
+      "Name": "Common Poison Straight Sword"
+    },
+    {
+      "ID": 20001002,
+      "Name": "Uncommon Poison Straight Sword"
+    },
+    {
+      "ID": 20001011,
+      "Name": "Common- Poison Straight Sword"
+    },
+    {
+      "ID": 20001012,
+      "Name": "Common~ Poison Straight Sword"
+    },
+    {
+      "ID": 20001013,
+      "Name": "Common+ Poison Straight Sword"
+    },
+    {
+      "ID": 20001024,
+      "Name": "Uncommon- Poison Straight Sword"
+    },
+    {
+      "ID": 20001025,
+      "Name": "Uncommon~ Poison Straight Sword"
+    },
+    {
+      "ID": 20001026,
+      "Name": "Uncommon+ Poison Straight Sword"
+    },
+    {
+      "ID": 20001101,
+      "Name": "Common Blood Straight Sword"
+    },
+    {
+      "ID": 20001102,
+      "Name": "Uncommon Blood Straight Sword"
+    },
+    {
+      "ID": 20001111,
+      "Name": "Common- Blood Straight Sword"
+    },
+    {
+      "ID": 20001112,
+      "Name": "Common~ Blood Straight Sword"
+    },
+    {
+      "ID": 20001113,
+      "Name": "Common+ Blood Straight Sword"
+    },
+    {
+      "ID": 20001124,
+      "Name": "Uncommon- Blood Straight Sword"
+    },
+    {
+      "ID": 20001125,
+      "Name": "Uncommon~ Blood Straight Sword"
+    },
+    {
+      "ID": 20001126,
+      "Name": "Uncommon+ Blood Straight Sword"
+    },
+    {
+      "ID": 20001201,
+      "Name": "Common Occult Straight Sword"
+    },
+    {
+      "ID": 20001202,
+      "Name": "Uncommon Occult Straight Sword"
+    },
+    {
+      "ID": 20001211,
+      "Name": "Common- Occult Straight Sword"
+    },
+    {
+      "ID": 20001212,
+      "Name": "Common~ Occult Straight Sword"
+    },
+    {
+      "ID": 20001213,
+      "Name": "Common+ Occult Straight Sword"
+    },
+    {
+      "ID": 20001224,
+      "Name": "Uncommon- Occult Straight Sword"
+    },
+    {
+      "ID": 20001225,
+      "Name": "Uncommon~ Occult Straight Sword"
+    },
+    {
+      "ID": 20001226,
+      "Name": "Uncommon+ Occult Straight Sword"
+    },
+    {
+      "ID": 20001301,
+      "Name": "Common Rot Straight Sword"
+    },
+    {
+      "ID": 20001302,
+      "Name": "Uncommon Rot Straight Sword"
+    },
+    {
+      "ID": 20001303,
+      "Name": "Rare Rot Straight Sword"
+    },
+    {
+      "ID": 20001304,
+      "Name": "Legendary Rot Straight Sword"
+    },
+    {
+      "ID": 20001401,
+      "Name": "Common Sleep Straight Sword"
+    },
+    {
+      "ID": 20001402,
+      "Name": "Uncommon Sleep Straight Sword"
+    },
+    {
+      "ID": 20001403,
+      "Name": "Rare Sleep Straight Sword"
+    },
+    {
+      "ID": 20001404,
+      "Name": "Legendary Sleep Straight Sword"
+    },
+    {
+      "ID": 20005003,
+      "Name": "Unique Straight Sword"
+    },
+    {
+      "ID": 20005703,
+      "Name": "Unique Holy Straight Sword"
+    },
+    {
+      "ID": 20005803,
+      "Name": "Unique Magic Straight Sword"
+    },
+    {
+      "ID": 20006303,
+      "Name": "Unique Rot Straight Sword"
+    },
+    {
+      "ID": 20006403,
+      "Name": "Unique Sleep Straight Sword"
+    },
+    {
+      "ID": 30000001,
+      "Name": "Common Greatsword"
+    },
+    {
+      "ID": 30000002,
+      "Name": "Uncommon Greatsword"
+    },
+    {
+      "ID": 30000003,
+      "Name": "Rare Greatsword"
+    },
+    {
+      "ID": 30000004,
+      "Name": "Legendary Greatsword"
+    },
+    {
+      "ID": 30000012,
+      "Name": "Common~ Greatsword"
+    },
+    {
+      "ID": 30000013,
+      "Name": "Common+ Greatsword"
+    },
+    {
+      "ID": 30000024,
+      "Name": "Uncommon- Greatsword"
+    },
+    {
+      "ID": 30000025,
+      "Name": "Uncommon~ Greatsword"
+    },
+    {
+      "ID": 30000026,
+      "Name": "Uncommon+ Greatsword"
+    },
+    {
+      "ID": 30000051,
+      "Name": "Common Untyped Greatsword"
+    },
+    {
+      "ID": 30000052,
+      "Name": "Uncommon Untyped Greatsword"
+    },
+    {
+      "ID": 30000062,
+      "Name": "Common~ Untyped Greatsword"
+    },
+    {
+      "ID": 30000063,
+      "Name": "Common+ Untyped Greatsword"
+    },
+    {
+      "ID": 30000074,
+      "Name": "Uncommon- Untyped Greatsword"
+    },
+    {
+      "ID": 30000075,
+      "Name": "Uncommon~ Untyped Greatsword"
+    },
+    {
+      "ID": 30000076,
+      "Name": "Uncommon+ Untyped Greatsword"
+    },
+    {
+      "ID": 30000101,
+      "Name": "Common Elemental Greatsword"
+    },
+    {
+      "ID": 30000102,
+      "Name": "Uncommon Elemental Greatsword"
+    },
+    {
+      "ID": 30000501,
+      "Name": "Common Fire Greatsword"
+    },
+    {
+      "ID": 30000502,
+      "Name": "Uncommon Fire Greatsword"
+    },
+    {
+      "ID": 30000503,
+      "Name": "Rare Fire Greatsword"
+    },
+    {
+      "ID": 30000504,
+      "Name": "Legendary Fire Greatsword"
+    },
+    {
+      "ID": 30000601,
+      "Name": "Common Lightning Greatsword"
+    },
+    {
+      "ID": 30000602,
+      "Name": "Uncommon Lightning Greatsword"
+    },
+    {
+      "ID": 30000701,
+      "Name": "Common Holy Greatsword"
+    },
+    {
+      "ID": 30000702,
+      "Name": "Uncommon Holy Greatsword"
+    },
+    {
+      "ID": 30000703,
+      "Name": "Rare Holy Greatsword"
+    },
+    {
+      "ID": 30000704,
+      "Name": "Legendary Holy Greatsword"
+    },
+    {
+      "ID": 30000801,
+      "Name": "Common Magic Greatsword"
+    },
+    {
+      "ID": 30000802,
+      "Name": "Uncommon Magic Greatsword"
+    },
+    {
+      "ID": 30000803,
+      "Name": "Rare Magic Greatsword"
+    },
+    {
+      "ID": 30000804,
+      "Name": "Legendary Magic Greatsword"
+    },
+    {
+      "ID": 30000901,
+      "Name": "Common Frost Greatsword"
+    },
+    {
+      "ID": 30000902,
+      "Name": "Uncommon Frost Greatsword"
+    },
+    {
+      "ID": 30000903,
+      "Name": "Rare Frost Greatsword"
+    },
+    {
+      "ID": 30000904,
+      "Name": "Legendary Frost Greatsword"
+    },
+    {
+      "ID": 30001001,
+      "Name": "Common Poison Greatsword"
+    },
+    {
+      "ID": 30001002,
+      "Name": "Uncommon Poison Greatsword"
+    },
+    {
+      "ID": 30001101,
+      "Name": "Common Blood Greatsword"
+    },
+    {
+      "ID": 30001102,
+      "Name": "Uncommon Blood Greatsword"
+    },
+    {
+      "ID": 30001103,
+      "Name": "Rare Blood Greatsword"
+    },
+    {
+      "ID": 30001201,
+      "Name": "Common Occult Greatsword"
+    },
+    {
+      "ID": 30001202,
+      "Name": "Uncommon Occult Greatsword"
+    },
+    {
+      "ID": 30001301,
+      "Name": "Common Rot Greatsword"
+    },
+    {
+      "ID": 30001302,
+      "Name": "Uncommon Rot Greatsword"
+    },
+    {
+      "ID": 30001303,
+      "Name": "Rare Rot Greatsword"
+    },
+    {
+      "ID": 30001304,
+      "Name": "Legendary Rot Greatsword"
+    },
+    {
+      "ID": 30001401,
+      "Name": "Common Sleep Greatsword"
+    },
+    {
+      "ID": 30001402,
+      "Name": "Uncommon Sleep Greatsword"
+    },
+    {
+      "ID": 30001403,
+      "Name": "Rare Sleep Greatsword"
+    },
+    {
+      "ID": 30001404,
+      "Name": "Legendary Sleep Greatsword"
+    },
+    {
+      "ID": 30005003,
+      "Name": "Unique Greatsword"
+    },
+    {
+      "ID": 30005503,
+      "Name": "Unique Fire Greatsword"
+    },
+    {
+      "ID": 30005703,
+      "Name": "Unique Holy Greatsword"
+    },
+    {
+      "ID": 30005803,
+      "Name": "Unique Magic Greatsword"
+    },
+    {
+      "ID": 30005903,
+      "Name": "Unique Frost Greatsword"
+    },
+    {
+      "ID": 30006103,
+      "Name": "Unique Blood Greatsword"
+    },
+    {
+      "ID": 30006303,
+      "Name": "Unique Rot Greatsword"
+    },
+    {
+      "ID": 30006403,
+      "Name": "Unique Sleep Greatsword"
+    },
+    {
+      "ID": 40000001,
+      "Name": "Common Colossal Sword"
+    },
+    {
+      "ID": 40000002,
+      "Name": "Uncommon Colossal Sword"
+    },
+    {
+      "ID": 40000003,
+      "Name": "Rare Colossal Sword"
+    },
+    {
+      "ID": 40000004,
+      "Name": "Legendary Colossal Sword"
+    },
+    {
+      "ID": 40000012,
+      "Name": "Common~ Colossal Sword"
+    },
+    {
+      "ID": 40000013,
+      "Name": "Common+ Colossal Sword"
+    },
+    {
+      "ID": 40000024,
+      "Name": "Uncommon- Colossal Sword"
+    },
+    {
+      "ID": 40000025,
+      "Name": "Uncommon~ Colossal Sword"
+    },
+    {
+      "ID": 40000026,
+      "Name": "Uncommon+ Colossal Sword"
+    },
+    {
+      "ID": 40000051,
+      "Name": "Common Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000052,
+      "Name": "Uncommon Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000062,
+      "Name": "Common~ Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000063,
+      "Name": "Common+ Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000074,
+      "Name": "Uncommon- Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000075,
+      "Name": "Uncommon~ Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000076,
+      "Name": "Uncommon+ Untyped Colossal Sword"
+    },
+    {
+      "ID": 40000101,
+      "Name": "Common Elemental Colossal Sword"
+    },
+    {
+      "ID": 40000102,
+      "Name": "Uncommon Elemental Colossal Sword"
+    },
+    {
+      "ID": 40000501,
+      "Name": "Common Fire Colossal Sword"
+    },
+    {
+      "ID": 40000502,
+      "Name": "Uncommon Fire Colossal Sword"
+    },
+    {
+      "ID": 40000503,
+      "Name": "Rare Fire Colossal Sword"
+    },
+    {
+      "ID": 40000601,
+      "Name": "Common Lightning Colossal Sword"
+    },
+    {
+      "ID": 40000602,
+      "Name": "Uncommon Lightning Colossal Sword"
+    },
+    {
+      "ID": 40000701,
+      "Name": "Common Holy Colossal Sword"
+    },
+    {
+      "ID": 40000702,
+      "Name": "Uncommon Holy Colossal Sword"
+    },
+    {
+      "ID": 40000704,
+      "Name": "Legendary Holy Colossal Sword"
+    },
+    {
+      "ID": 40000801,
+      "Name": "Common Magic Colossal Sword"
+    },
+    {
+      "ID": 40000802,
+      "Name": "Uncommon Magic Colossal Sword"
+    },
+    {
+      "ID": 40000803,
+      "Name": "Rare Magic Colossal Sword"
+    },
+    {
+      "ID": 40000804,
+      "Name": "Legendary Magic Colossal Sword"
+    },
+    {
+      "ID": 40000901,
+      "Name": "Common Frost Colossal Sword"
+    },
+    {
+      "ID": 40000902,
+      "Name": "Uncommon Frost Colossal Sword"
+    },
+    {
+      "ID": 40001001,
+      "Name": "Common Poison Colossal Sword"
+    },
+    {
+      "ID": 40001002,
+      "Name": "Uncommon Poison Colossal Sword"
+    },
+    {
+      "ID": 40001201,
+      "Name": "Common Occult Colossal Sword"
+    },
+    {
+      "ID": 40001202,
+      "Name": "Uncommon Occult Colossal Sword"
+    },
+    {
+      "ID": 40001301,
+      "Name": "Common Rot Colossal Sword"
+    },
+    {
+      "ID": 40001302,
+      "Name": "Uncommon Rot Colossal Sword"
+    },
+    {
+      "ID": 40001303,
+      "Name": "Rare Rot Colossal Sword"
+    },
+    {
+      "ID": 40001304,
+      "Name": "Legendary Rot Colossal Sword"
+    },
+    {
+      "ID": 40001401,
+      "Name": "Common Sleep Colossal Sword"
+    },
+    {
+      "ID": 40001402,
+      "Name": "Uncommon Sleep Colossal Sword"
+    },
+    {
+      "ID": 40001403,
+      "Name": "Rare Sleep Colossal Sword"
+    },
+    {
+      "ID": 40001404,
+      "Name": "Legendary Sleep Colossal Sword"
+    },
+    {
+      "ID": 40005003,
+      "Name": "Unique Colossal Sword"
+    },
+    {
+      "ID": 40005503,
+      "Name": "Unique Fire Colossal Sword"
+    },
+    {
+      "ID": 40005803,
+      "Name": "Unique Magic Colossal Sword"
+    },
+    {
+      "ID": 40006303,
+      "Name": "Unique Rot Colossal Sword"
+    },
+    {
+      "ID": 40006403,
+      "Name": "Unique Sleep Colossal Sword"
+    },
+    {
+      "ID": 50000001,
+      "Name": "Common Thrusting Sword"
+    },
+    {
+      "ID": 50000002,
+      "Name": "Uncommon Thrusting Sword"
+    },
+    {
+      "ID": 50000003,
+      "Name": "Rare Thrusting Sword"
+    },
+    {
+      "ID": 50000011,
+      "Name": "Common- Thrusting Sword"
+    },
+    {
+      "ID": 50000012,
+      "Name": "Common~ Thrusting Sword"
+    },
+    {
+      "ID": 50000024,
+      "Name": "Uncommon- Thrusting Sword"
+    },
+    {
+      "ID": 50000026,
+      "Name": "Uncommon+ Thrusting Sword"
+    },
+    {
+      "ID": 50000051,
+      "Name": "Common Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000052,
+      "Name": "Uncommon Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000053,
+      "Name": "Rare Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000061,
+      "Name": "Common- Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000062,
+      "Name": "Common~ Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000074,
+      "Name": "Uncommon- Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000076,
+      "Name": "Uncommon+ Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50000101,
+      "Name": "Common Elemental Thrusting Sword"
+    },
+    {
+      "ID": 50000102,
+      "Name": "Uncommon Elemental Thrusting Sword"
+    },
+    {
+      "ID": 50000103,
+      "Name": "Rare Elemental Thrusting Sword"
+    },
+    {
+      "ID": 50000501,
+      "Name": "Common Fire Thrusting Sword"
+    },
+    {
+      "ID": 50000502,
+      "Name": "Uncommon Fire Thrusting Sword"
+    },
+    {
+      "ID": 50000503,
+      "Name": "Rare Fire Thrusting Sword"
+    },
+    {
+      "ID": 50000601,
+      "Name": "Common Lightning Thrusting Sword"
+    },
+    {
+      "ID": 50000602,
+      "Name": "Uncommon Lightning Thrusting Sword"
+    },
+    {
+      "ID": 50000603,
+      "Name": "Rare Lightning Thrusting Sword"
+    },
+    {
+      "ID": 50000701,
+      "Name": "Common Holy Thrusting Sword"
+    },
+    {
+      "ID": 50000702,
+      "Name": "Uncommon Holy Thrusting Sword"
+    },
+    {
+      "ID": 50000703,
+      "Name": "Rare Holy Thrusting Sword"
+    },
+    {
+      "ID": 50000801,
+      "Name": "Common Magic Thrusting Sword"
+    },
+    {
+      "ID": 50000802,
+      "Name": "Uncommon Magic Thrusting Sword"
+    },
+    {
+      "ID": 50000803,
+      "Name": "Rare Magic Thrusting Sword"
+    },
+    {
+      "ID": 50000901,
+      "Name": "Common Frost Thrusting Sword"
+    },
+    {
+      "ID": 50000902,
+      "Name": "Uncommon Frost Thrusting Sword"
+    },
+    {
+      "ID": 50000903,
+      "Name": "Rare Frost Thrusting Sword"
+    },
+    {
+      "ID": 50001001,
+      "Name": "Common Poison Thrusting Sword"
+    },
+    {
+      "ID": 50001002,
+      "Name": "Uncommon Poison Thrusting Sword"
+    },
+    {
+      "ID": 50001003,
+      "Name": "Rare Poison Thrusting Sword"
+    },
+    {
+      "ID": 50001101,
+      "Name": "Common Blood Thrusting Sword"
+    },
+    {
+      "ID": 50001102,
+      "Name": "Uncommon Blood Thrusting Sword"
+    },
+    {
+      "ID": 50001103,
+      "Name": "Rare Blood Thrusting Sword"
+    },
+    {
+      "ID": 50001201,
+      "Name": "Common Occult Thrusting Sword"
+    },
+    {
+      "ID": 50001202,
+      "Name": "Uncommon Occult Thrusting Sword"
+    },
+    {
+      "ID": 50001203,
+      "Name": "Rare Occult Thrusting Sword"
+    },
+    {
+      "ID": 50001301,
+      "Name": "Common Rot Thrusting Sword"
+    },
+    {
+      "ID": 50001302,
+      "Name": "Uncommon Rot Thrusting Sword"
+    },
+    {
+      "ID": 50001303,
+      "Name": "Rare Rot Thrusting Sword"
+    },
+    {
+      "ID": 50001401,
+      "Name": "Common Sleep Thrusting Sword"
+    },
+    {
+      "ID": 50001402,
+      "Name": "Uncommon Sleep Thrusting Sword"
+    },
+    {
+      "ID": 50001403,
+      "Name": "Rare Sleep Thrusting Sword"
+    },
+    {
+      "ID": 50005003,
+      "Name": "Unique Thrusting Sword"
+    },
+    {
+      "ID": 50005053,
+      "Name": "Unique Untyped Thrusting Sword"
+    },
+    {
+      "ID": 50005103,
+      "Name": "Unique Elemental Thrusting Sword"
+    },
+    {
+      "ID": 50005503,
+      "Name": "Unique Fire Thrusting Sword"
+    },
+    {
+      "ID": 50005603,
+      "Name": "Unique Lightning Thrusting Sword"
+    },
+    {
+      "ID": 50005703,
+      "Name": "Unique Holy Thrusting Sword"
+    },
+    {
+      "ID": 50005803,
+      "Name": "Unique Magic Thrusting Sword"
+    },
+    {
+      "ID": 50005903,
+      "Name": "Unique Frost Thrusting Sword"
+    },
+    {
+      "ID": 50006003,
+      "Name": "Unique Poison Thrusting Sword"
+    },
+    {
+      "ID": 50006103,
+      "Name": "Unique Blood Thrusting Sword"
+    },
+    {
+      "ID": 50006203,
+      "Name": "Unique Occult Thrusting Sword"
+    },
+    {
+      "ID": 50006303,
+      "Name": "Unique Rot Thrusting Sword"
+    },
+    {
+      "ID": 50006403,
+      "Name": "Unique Sleep Thrusting Sword"
+    },
+    {
+      "ID": 60000001,
+      "Name": "Common Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000002,
+      "Name": "Uncommon Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000003,
+      "Name": "Rare Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000004,
+      "Name": "Legendary Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000013,
+      "Name": "Common+ Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000026,
+      "Name": "Uncommon+ Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000051,
+      "Name": "Common Untyped Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000052,
+      "Name": "Uncommon Untyped Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000063,
+      "Name": "Common+ Untyped Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000076,
+      "Name": "Uncommon+ Untyped Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000101,
+      "Name": "Common Elemental Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000102,
+      "Name": "Uncommon Elemental Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000501,
+      "Name": "Common Fire Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000502,
+      "Name": "Uncommon Fire Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000601,
+      "Name": "Common Lightning Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000602,
+      "Name": "Uncommon Lightning Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000604,
+      "Name": "Legendary Lightning Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000701,
+      "Name": "Common Holy Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000702,
+      "Name": "Uncommon Holy Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000801,
+      "Name": "Common Magic Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000802,
+      "Name": "Uncommon Magic Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000901,
+      "Name": "Common Frost Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60000902,
+      "Name": "Uncommon Frost Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001001,
+      "Name": "Common Poison Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001002,
+      "Name": "Uncommon Poison Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001101,
+      "Name": "Common Blood Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001102,
+      "Name": "Uncommon Blood Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001103,
+      "Name": "Rare Blood Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001201,
+      "Name": "Common Occult Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001202,
+      "Name": "Uncommon Occult Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001301,
+      "Name": "Common Rot Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001302,
+      "Name": "Uncommon Rot Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001303,
+      "Name": "Rare Rot Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001304,
+      "Name": "Legendary Rot Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001401,
+      "Name": "Common Sleep Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001402,
+      "Name": "Uncommon Sleep Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001403,
+      "Name": "Rare Sleep Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60001404,
+      "Name": "Legendary Sleep Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60005003,
+      "Name": "Unique Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60006103,
+      "Name": "Unique Blood Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60006303,
+      "Name": "Unique Rot Heavy Thrusting Sword"
+    },
+    {
+      "ID": 60006403,
+      "Name": "Unique Sleep Heavy Thrusting Sword"
+    },
+    {
+      "ID": 70000001,
+      "Name": "Common Curved Sword"
+    },
+    {
+      "ID": 70000002,
+      "Name": "Uncommon Curved Sword"
+    },
+    {
+      "ID": 70000003,
+      "Name": "Rare Curved Sword"
+    },
+    {
+      "ID": 70000004,
+      "Name": "Legendary Curved Sword"
+    },
+    {
+      "ID": 70000011,
+      "Name": "Common- Curved Sword"
+    },
+    {
+      "ID": 70000012,
+      "Name": "Common~ Curved Sword"
+    },
+    {
+      "ID": 70000013,
+      "Name": "Common+ Curved Sword"
+    },
+    {
+      "ID": 70000024,
+      "Name": "Uncommon- Colossal Sword"
+    },
+    {
+      "ID": 70000025,
+      "Name": "Uncommon~ Curved Sword"
+    },
+    {
+      "ID": 70000026,
+      "Name": "Uncommon+ Curved Sword"
+    },
+    {
+      "ID": 70000051,
+      "Name": "Common Untyped Curved Sword"
+    },
+    {
+      "ID": 70000052,
+      "Name": "Uncommon Untyped Curved Sword"
+    },
+    {
+      "ID": 70000053,
+      "Name": "Rare Untyped Curved Sword"
+    },
+    {
+      "ID": 70000061,
+      "Name": "Common- Untyped Curved Sword"
+    },
+    {
+      "ID": 70000062,
+      "Name": "Common~ Untyped Curved Sword"
+    },
+    {
+      "ID": 70000063,
+      "Name": "Common+ Untyped Curved Sword"
+    },
+    {
+      "ID": 70000074,
+      "Name": "Uncommon- Untyped Curved Sword"
+    },
+    {
+      "ID": 70000075,
+      "Name": "Uncommon~ Untyped Curved Sword"
+    },
+    {
+      "ID": 70000076,
+      "Name": "Uncommon+ Untyped Curved Sword"
+    },
+    {
+      "ID": 70000101,
+      "Name": "Common Elemental Curved Sword"
+    },
+    {
+      "ID": 70000102,
+      "Name": "Uncommon Elemental Curved Sword"
+    },
+    {
+      "ID": 70000103,
+      "Name": "Rare Elemental Curved Sword"
+    },
+    {
+      "ID": 70000501,
+      "Name": "Common Fire Curved Sword"
+    },
+    {
+      "ID": 70000502,
+      "Name": "Uncommon Fire Curved Sword"
+    },
+    {
+      "ID": 70000503,
+      "Name": "Rare Fire Curved Sword"
+    },
+    {
+      "ID": 70000601,
+      "Name": "Common Lightning Curved Sword"
+    },
+    {
+      "ID": 70000602,
+      "Name": "Uncommon Lightning Curved Sword"
+    },
+    {
+      "ID": 70000603,
+      "Name": "Rare Lightning Curved Sword"
+    },
+    {
+      "ID": 70000701,
+      "Name": "Common Holy Curved Sword"
+    },
+    {
+      "ID": 70000702,
+      "Name": "Uncommon Holy Curved Sword"
+    },
+    {
+      "ID": 70000703,
+      "Name": "Rare Holy Curved Sword"
+    },
+    {
+      "ID": 70000704,
+      "Name": "Legendary Holy Curved Sword"
+    },
+    {
+      "ID": 70000801,
+      "Name": "Common Magic Curved Sword"
+    },
+    {
+      "ID": 70000802,
+      "Name": "Uncommon Magic Curved Sword"
+    },
+    {
+      "ID": 70000803,
+      "Name": "Rare Magic Curved Sword"
+    },
+    {
+      "ID": 70000901,
+      "Name": "Common Frost Curved Sword"
+    },
+    {
+      "ID": 70000902,
+      "Name": "Uncommon Frost Curved Sword"
+    },
+    {
+      "ID": 70000903,
+      "Name": "Rare Frost Curved Sword"
+    },
+    {
+      "ID": 70001001,
+      "Name": "Common Poison Curved Sword"
+    },
+    {
+      "ID": 70001002,
+      "Name": "Uncommon Poison Curved Sword"
+    },
+    {
+      "ID": 70001003,
+      "Name": "Rare Poison Curved Sword"
+    },
+    {
+      "ID": 70001101,
+      "Name": "Common Blood Curved Sword"
+    },
+    {
+      "ID": 70001102,
+      "Name": "Uncommon Blood Curved Sword"
+    },
+    {
+      "ID": 70001103,
+      "Name": "Rare Blood Curved Sword"
+    },
+    {
+      "ID": 70001201,
+      "Name": "Common Occult Curved Sword"
+    },
+    {
+      "ID": 70001202,
+      "Name": "Uncommon Occult Curved Sword"
+    },
+    {
+      "ID": 70001203,
+      "Name": "Rare Occult Curved Sword"
+    },
+    {
+      "ID": 70001301,
+      "Name": "Common Rot Curved Sword"
+    },
+    {
+      "ID": 70001302,
+      "Name": "Uncommon Rot Curved Sword"
+    },
+    {
+      "ID": 70001303,
+      "Name": "Rare Rot Curved Sword"
+    },
+    {
+      "ID": 70001304,
+      "Name": "Legendary Rot Curved Sword"
+    },
+    {
+      "ID": 70001401,
+      "Name": "Common Sleep Curved Sword"
+    },
+    {
+      "ID": 70001402,
+      "Name": "Uncommon Sleep Curved Sword"
+    },
+    {
+      "ID": 70001403,
+      "Name": "Rare Sleep Curved Sword"
+    },
+    {
+      "ID": 70001404,
+      "Name": "Legendary Sleep Curved Sword"
+    },
+    {
+      "ID": 70005003,
+      "Name": "Unique Curved Sword"
+    },
+    {
+      "ID": 70005053,
+      "Name": "Unique Untyped Curved Sword"
+    },
+    {
+      "ID": 70005103,
+      "Name": "Unique Elemental Curved Sword"
+    },
+    {
+      "ID": 70005503,
+      "Name": "Unique Fire Curved Sword"
+    },
+    {
+      "ID": 70005603,
+      "Name": "Unique Lightning Curved Sword"
+    },
+    {
+      "ID": 70005703,
+      "Name": "Unique Holy Curved Sword"
+    },
+    {
+      "ID": 70005803,
+      "Name": "Unique Magic Curved Sword"
+    },
+    {
+      "ID": 70005903,
+      "Name": "Unique Frost Curved Sword"
+    },
+    {
+      "ID": 70006003,
+      "Name": "Unique Poison Curved Sword"
+    },
+    {
+      "ID": 70006103,
+      "Name": "Unique Blood Curved Sword"
+    },
+    {
+      "ID": 70006203,
+      "Name": "Unique Occult Curved Sword"
+    },
+    {
+      "ID": 70006303,
+      "Name": "Unique Rot Curved Sword"
+    },
+    {
+      "ID": 70006403,
+      "Name": "Unique Sleep Curved Sword"
+    },
+    {
+      "ID": 80000001,
+      "Name": "Common Curved Greatsword"
+    },
+    {
+      "ID": 80000002,
+      "Name": "Uncommon Curved Greatsword"
+    },
+    {
+      "ID": 80000003,
+      "Name": "Rare Curved Greatsword"
+    },
+    {
+      "ID": 80000004,
+      "Name": "Legendary Curved Greatsword"
+    },
+    {
+      "ID": 80000012,
+      "Name": "Common~ Curved Greatsword"
+    },
+    {
+      "ID": 80000024,
+      "Name": "Uncommon- Curved Greatsword"
+    },
+    {
+      "ID": 80000025,
+      "Name": "Uncommon~ Curved Greatsword"
+    },
+    {
+      "ID": 80000026,
+      "Name": "Uncommon+ Curved Greatsword"
+    },
+    {
+      "ID": 80000051,
+      "Name": "Common Untyped Curved Greatsword"
+    },
+    {
+      "ID": 80000052,
+      "Name": "Uncommon Untyped Curved Greatsword"
+    },
+    {
+      "ID": 80000062,
+      "Name": "Common~ Untyped Curved Greatsword"
+    },
+    {
+      "ID": 80000074,
+      "Name": "Uncommon- Untyped Curved Greatsword"
+    },
+    {
+      "ID": 80000075,
+      "Name": "Uncommon~ Untyped Curved Greatsword"
+    },
+    {
+      "ID": 80000101,
+      "Name": "Common Elemental Curved Greatsword"
+    },
+    {
+      "ID": 80000102,
+      "Name": "Uncommon Elemental Curved Greatsword"
+    },
+    {
+      "ID": 80000501,
+      "Name": "Common Fire Curved Greatsword"
+    },
+    {
+      "ID": 80000502,
+      "Name": "Uncommon Fire Curved Greatsword"
+    },
+    {
+      "ID": 80000503,
+      "Name": "Rare Fire Curved Greatsword"
+    },
+    {
+      "ID": 80000601,
+      "Name": "Common Lightning Curved Greatsword"
+    },
+    {
+      "ID": 80000602,
+      "Name": "Uncommon Lightning Curved Greatsword"
+    },
+    {
+      "ID": 80000701,
+      "Name": "Common Holy Curved Greatsword"
+    },
+    {
+      "ID": 80000702,
+      "Name": "Uncommon Holy Curved Greatsword"
+    },
+    {
+      "ID": 80000801,
+      "Name": "Common Magic Curved Greatsword"
+    },
+    {
+      "ID": 80000802,
+      "Name": "Uncommon Magic Curved Greatsword"
+    },
+    {
+      "ID": 80000803,
+      "Name": "Rare Magic Curved Greatsword"
+    },
+    {
+      "ID": 80000901,
+      "Name": "Common Frost Curved Greatsword"
+    },
+    {
+      "ID": 80000902,
+      "Name": "Uncommon Frost Curved Greatsword"
+    },
+    {
+      "ID": 80000903,
+      "Name": "Rare Frost Curved Greatsword"
+    },
+    {
+      "ID": 80001001,
+      "Name": "Common Poison Curved Greatsword"
+    },
+    {
+      "ID": 80001002,
+      "Name": "Uncommon Poison Curved Greatsword"
+    },
+    {
+      "ID": 80001101,
+      "Name": "Common Blood Curved Greatsword"
+    },
+    {
+      "ID": 80001102,
+      "Name": "Uncommon Blood Curved Greatsword"
+    },
+    {
+      "ID": 80001104,
+      "Name": "Legendary Blood Curved Greatsword"
+    },
+    {
+      "ID": 80001201,
+      "Name": "Common Occult Curved Greatsword"
+    },
+    {
+      "ID": 80001202,
+      "Name": "Uncommon Occult Curved Greatsword"
+    },
+    {
+      "ID": 80001301,
+      "Name": "Common Rot Curved Greatsword"
+    },
+    {
+      "ID": 80001302,
+      "Name": "Uncommon Rot Curved Greatsword"
+    },
+    {
+      "ID": 80001303,
+      "Name": "Rare Rot Curved Greatsword"
+    },
+    {
+      "ID": 80001304,
+      "Name": "Legendary Rot Curved Greatsword"
+    },
+    {
+      "ID": 80001401,
+      "Name": "Common Sleep Curved Greatsword"
+    },
+    {
+      "ID": 80001402,
+      "Name": "Uncommon Sleep Curved Greatsword"
+    },
+    {
+      "ID": 80001403,
+      "Name": "Rare Sleep Curved Greatsword"
+    },
+    {
+      "ID": 80001404,
+      "Name": "Legendary Sleep Curved Greatsword"
+    },
+    {
+      "ID": 80005003,
+      "Name": "Unique Curved Greatsword"
+    },
+    {
+      "ID": 80005503,
+      "Name": "Unique Fire Curved Greatsword"
+    },
+    {
+      "ID": 80005803,
+      "Name": "Unique Magic Curved Greatsword"
+    },
+    {
+      "ID": 80005903,
+      "Name": "Unique Frost Curved Greatsword"
+    },
+    {
+      "ID": 80006303,
+      "Name": "Unique Rot Curved Greatsword"
+    },
+    {
+      "ID": 80006403,
+      "Name": "Unique Sleep Curved Greatsword"
+    },
+    {
+      "ID": 90000001,
+      "Name": "Common Katana"
+    },
+    {
+      "ID": 90000002,
+      "Name": "Uncommon Katana"
+    },
+    {
+      "ID": 90000003,
+      "Name": "Rare Katana"
+    },
+    {
+      "ID": 90000004,
+      "Name": "Legendary Katana"
+    },
+    {
+      "ID": 90000012,
+      "Name": "Common~ Katana"
+    },
+    {
+      "ID": 90000024,
+      "Name": "Uncommon- Katana"
+    },
+    {
+      "ID": 90000025,
+      "Name": "Uncommon~ Katana"
+    },
+    {
+      "ID": 90000026,
+      "Name": "Uncommon+ Katana"
+    },
+    {
+      "ID": 90000051,
+      "Name": "Common Untyped Katana"
+    },
+    {
+      "ID": 90000052,
+      "Name": "Uncommon Untyped Katana"
+    },
+    {
+      "ID": 90000062,
+      "Name": "Common~ Untyped Katana"
+    },
+    {
+      "ID": 90000074,
+      "Name": "Uncommon- Untyped Katana"
+    },
+    {
+      "ID": 90000075,
+      "Name": "Uncommon~ Untyped Katana"
+    },
+    {
+      "ID": 90000076,
+      "Name": "Uncommon+ Untyped Katana"
+    },
+    {
+      "ID": 90000101,
+      "Name": "Common Elemental Katana"
+    },
+    {
+      "ID": 90000102,
+      "Name": "Uncommon Elemental Katana"
+    },
+    {
+      "ID": 90000501,
+      "Name": "Common Fire Katana"
+    },
+    {
+      "ID": 90000502,
+      "Name": "Uncommon Fire Katana"
+    },
+    {
+      "ID": 90000503,
+      "Name": "Rare Fire Katana"
+    },
+    {
+      "ID": 90000601,
+      "Name": "Common Lightning Katana"
+    },
+    {
+      "ID": 90000602,
+      "Name": "Uncommon Lightning Katana"
+    },
+    {
+      "ID": 90000701,
+      "Name": "Common Holy Katana"
+    },
+    {
+      "ID": 90000702,
+      "Name": "Uncommon Holy Katana"
+    },
+    {
+      "ID": 90000801,
+      "Name": "Common Magic Katana"
+    },
+    {
+      "ID": 90000802,
+      "Name": "Uncommon Magic Katana"
+    },
+    {
+      "ID": 90000803,
+      "Name": "Rare Magic Katana"
+    },
+    {
+      "ID": 90000901,
+      "Name": "Common Frost Katana"
+    },
+    {
+      "ID": 90000902,
+      "Name": "Uncommon Frost Katana"
+    },
+    {
+      "ID": 90001001,
+      "Name": "Common Poison Katana"
+    },
+    {
+      "ID": 90001002,
+      "Name": "Uncommon Poison Katana"
+    },
+    {
+      "ID": 90001101,
+      "Name": "Common Blood Katana"
+    },
+    {
+      "ID": 90001102,
+      "Name": "Uncommon Blood Katana"
+    },
+    {
+      "ID": 90001103,
+      "Name": "Rare Blood Katana"
+    },
+    {
+      "ID": 90001104,
+      "Name": "Legendary Blood Katana"
+    },
+    {
+      "ID": 90001201,
+      "Name": "Common Occult Katana"
+    },
+    {
+      "ID": 90001202,
+      "Name": "Uncommon Occult Katana"
+    },
+    {
+      "ID": 90001301,
+      "Name": "Common Rot Katana"
+    },
+    {
+      "ID": 90001302,
+      "Name": "Uncommon Rot Katana"
+    },
+    {
+      "ID": 90001303,
+      "Name": "Rare Rot Katana"
+    },
+    {
+      "ID": 90001304,
+      "Name": "Legendary Rot Katana"
+    },
+    {
+      "ID": 90001401,
+      "Name": "Common Sleep Katana"
+    },
+    {
+      "ID": 90001402,
+      "Name": "Uncommon Sleep Katana"
+    },
+    {
+      "ID": 90001403,
+      "Name": "Rare Sleep Katana"
+    },
+    {
+      "ID": 90001404,
+      "Name": "Legendary Sleep Katana"
+    },
+    {
+      "ID": 90005003,
+      "Name": "Unique Katana"
+    },
+    {
+      "ID": 90005503,
+      "Name": "Unique Fire Katana"
+    },
+    {
+      "ID": 90005803,
+      "Name": "Unique Magic Katana"
+    },
+    {
+      "ID": 90006103,
+      "Name": "Unique Blood Katana"
+    },
+    {
+      "ID": 90006303,
+      "Name": "Unique Rot Katana"
+    },
+    {
+      "ID": 90006403,
+      "Name": "Unique Sleep Katana"
+    },
+    {
+      "ID": 100000001,
+      "Name": "Common Twinblade"
+    },
+    {
+      "ID": 100000002,
+      "Name": "Uncommon Twinblade"
+    },
+    {
+      "ID": 100000003,
+      "Name": "Rare Twinblade"
+    },
+    {
+      "ID": 100000012,
+      "Name": "Common~ Twinblade"
+    },
+    {
+      "ID": 100000024,
+      "Name": "Uncommon- Twinblade"
+    },
+    {
+      "ID": 100000025,
+      "Name": "Uncommon~ Twinblade"
+    },
+    {
+      "ID": 100000026,
+      "Name": "Uncommon+ Twinblade"
+    },
+    {
+      "ID": 100000051,
+      "Name": "Common Untyped Twinblade"
+    },
+    {
+      "ID": 100000052,
+      "Name": "Uncommon Untyped Twinblade"
+    },
+    {
+      "ID": 100000053,
+      "Name": "Rare Untyped Twinblade"
+    },
+    {
+      "ID": 100000062,
+      "Name": "Common~ Untyped Twinblade"
+    },
+    {
+      "ID": 100000074,
+      "Name": "Uncommon- Untyped Twinblade"
+    },
+    {
+      "ID": 100000075,
+      "Name": "Uncommon~ Untyped Twinblade"
+    },
+    {
+      "ID": 100000076,
+      "Name": "Uncommon+ Untyped Twinblade"
+    },
+    {
+      "ID": 100000101,
+      "Name": "Common Elemental Twinblade"
+    },
+    {
+      "ID": 100000102,
+      "Name": "Uncommon Elemental Twinblade"
+    },
+    {
+      "ID": 100000501,
+      "Name": "Common Fire Twinblade"
+    },
+    {
+      "ID": 100000502,
+      "Name": "Uncommon Fire Twinblade"
+    },
+    {
+      "ID": 100000503,
+      "Name": "Rare Fire Twinblade"
+    },
+    {
+      "ID": 100000601,
+      "Name": "Common Lightning Twinblade"
+    },
+    {
+      "ID": 100000602,
+      "Name": "Uncommon Lightning Twinblade"
+    },
+    {
+      "ID": 100000701,
+      "Name": "Common Holy Twinblade"
+    },
+    {
+      "ID": 100000702,
+      "Name": "Uncommon Holy Twinblade"
+    },
+    {
+      "ID": 100000703,
+      "Name": "Rare Holy Twinblade"
+    },
+    {
+      "ID": 100000801,
+      "Name": "Common Magic Twinblade"
+    },
+    {
+      "ID": 100000802,
+      "Name": "Uncommon Magic Twinblade"
+    },
+    {
+      "ID": 100000901,
+      "Name": "Common Frost Twinblade"
+    },
+    {
+      "ID": 100000902,
+      "Name": "Uncommon Frost Twinblade"
+    },
+    {
+      "ID": 100001001,
+      "Name": "Common Poison Twinblade"
+    },
+    {
+      "ID": 100001002,
+      "Name": "Uncommon Poison Twinblade"
+    },
+    {
+      "ID": 100001101,
+      "Name": "Common Blood Twinblade"
+    },
+    {
+      "ID": 100001102,
+      "Name": "Uncommon Blood Twinblade"
+    },
+    {
+      "ID": 100001103,
+      "Name": "Rare Blood Twinblade"
+    },
+    {
+      "ID": 100001201,
+      "Name": "Common Occult Twinblade"
+    },
+    {
+      "ID": 100001202,
+      "Name": "Uncommon Occult Twinblade"
+    },
+    {
+      "ID": 100001301,
+      "Name": "Common Rot Twinblade"
+    },
+    {
+      "ID": 100001302,
+      "Name": "Uncommon Rot Twinblade"
+    },
+    {
+      "ID": 100001303,
+      "Name": "Rare Rot Twinblade"
+    },
+    {
+      "ID": 100001401,
+      "Name": "Common Sleep Twinblade"
+    },
+    {
+      "ID": 100001402,
+      "Name": "Uncommon Sleep Twinblade"
+    },
+    {
+      "ID": 100001403,
+      "Name": "Rare Sleep Twinblade"
+    },
+    {
+      "ID": 100005003,
+      "Name": "Unique Twinblade"
+    },
+    {
+      "ID": 100005053,
+      "Name": "Unique Untyped Twinblade"
+    },
+    {
+      "ID": 100005503,
+      "Name": "Unique Fire Twinblade"
+    },
+    {
+      "ID": 100005703,
+      "Name": "Unique Holy Twinblade"
+    },
+    {
+      "ID": 100006103,
+      "Name": "Unique Blood Twinblade"
+    },
+    {
+      "ID": 100006303,
+      "Name": "Unique Rot Twinblade"
+    },
+    {
+      "ID": 100006403,
+      "Name": "Unique Sleep Twinblade"
+    },
+    {
+      "ID": 110000001,
+      "Name": "Common Hammer"
+    },
+    {
+      "ID": 110000002,
+      "Name": "Uncommon Hammer"
+    },
+    {
+      "ID": 110000003,
+      "Name": "Rare Hammer"
+    },
+    {
+      "ID": 110000004,
+      "Name": "Legendary Hammer"
+    },
+    {
+      "ID": 110000011,
+      "Name": "Common- Hammer"
+    },
+    {
+      "ID": 110000012,
+      "Name": "Common~ Hammer"
+    },
+    {
+      "ID": 110000013,
+      "Name": "Common+ Hammer"
+    },
+    {
+      "ID": 110000024,
+      "Name": "Uncommon- Hammer"
+    },
+    {
+      "ID": 110000025,
+      "Name": "Uncommon~ Hammer"
+    },
+    {
+      "ID": 110000026,
+      "Name": "Uncommon+ Hammer"
+    },
+    {
+      "ID": 110000051,
+      "Name": "Common Untyped Hammer"
+    },
+    {
+      "ID": 110000052,
+      "Name": "Uncommon Untyped Hammer"
+    },
+    {
+      "ID": 110000061,
+      "Name": "Common- Untyped Hammer"
+    },
+    {
+      "ID": 110000062,
+      "Name": "Common~ Untyped Hammer"
+    },
+    {
+      "ID": 110000063,
+      "Name": "Common+ Untyped Hammer"
+    },
+    {
+      "ID": 110000074,
+      "Name": "Uncommon- Untyped Hammer"
+    },
+    {
+      "ID": 110000075,
+      "Name": "Uncommon~ Untyped Hammer"
+    },
+    {
+      "ID": 110000076,
+      "Name": "Uncommon+ Untyped Hammer"
+    },
+    {
+      "ID": 110000101,
+      "Name": "Common Elemental Hammer"
+    },
+    {
+      "ID": 110000102,
+      "Name": "Uncommon Elemental Hammer"
+    },
+    {
+      "ID": 110000501,
+      "Name": "Common Fire Hammer"
+    },
+    {
+      "ID": 110000502,
+      "Name": "Uncommon Fire Hammer"
+    },
+    {
+      "ID": 110000601,
+      "Name": "Common Lightning Hammer"
+    },
+    {
+      "ID": 110000602,
+      "Name": "Uncommon Lightning Hammer"
+    },
+    {
+      "ID": 110000701,
+      "Name": "Common Holy Hammer"
+    },
+    {
+      "ID": 110000702,
+      "Name": "Uncommon Holy Hammer"
+    },
+    {
+      "ID": 110000703,
+      "Name": "Rare Holy Hammer"
+    },
+    {
+      "ID": 110000704,
+      "Name": "Legendary Holy Hammer"
+    },
+    {
+      "ID": 110000801,
+      "Name": "Common Magic Hammer"
+    },
+    {
+      "ID": 110000802,
+      "Name": "Uncommon Magic Hammer"
+    },
+    {
+      "ID": 110000803,
+      "Name": "Rare Magic Hammer"
+    },
+    {
+      "ID": 110000901,
+      "Name": "Common Frost Hammer"
+    },
+    {
+      "ID": 110000902,
+      "Name": "Uncommon Frost Hammer"
+    },
+    {
+      "ID": 110001001,
+      "Name": "Common Poison Hammer"
+    },
+    {
+      "ID": 110001002,
+      "Name": "Uncommon Poison Hammer"
+    },
+    {
+      "ID": 110001102,
+      "Name": "Uncommon Blood Hammer"
+    },
+    {
+      "ID": 110001301,
+      "Name": "Common Rot Hammer"
+    },
+    {
+      "ID": 110001302,
+      "Name": "Uncommon Rot Hammer"
+    },
+    {
+      "ID": 110001303,
+      "Name": "Rare Rot Hammer"
+    },
+    {
+      "ID": 110001304,
+      "Name": "Legendary Rot Hammer"
+    },
+    {
+      "ID": 110001401,
+      "Name": "Common Sleep Hammer"
+    },
+    {
+      "ID": 110001402,
+      "Name": "Uncommon Sleep Hammer"
+    },
+    {
+      "ID": 110001403,
+      "Name": "Rare Sleep Hammer"
+    },
+    {
+      "ID": 110001404,
+      "Name": "Legendary Sleep Hammer"
+    },
+    {
+      "ID": 110005003,
+      "Name": "Unique Hammer"
+    },
+    {
+      "ID": 110005703,
+      "Name": "Unique Holy Hammer"
+    },
+    {
+      "ID": 110005803,
+      "Name": "Unique Magic Hammer"
+    },
+    {
+      "ID": 110006303,
+      "Name": "Unique Rot Hammer"
+    },
+    {
+      "ID": 110006403,
+      "Name": "Unique Sleep Hammer"
+    },
+    {
+      "ID": 120000001,
+      "Name": "Common Great Hammer"
+    },
+    {
+      "ID": 120000002,
+      "Name": "Uncommon Great Hammer"
+    },
+    {
+      "ID": 120000003,
+      "Name": "Rare Great Hammer"
+    },
+    {
+      "ID": 120000004,
+      "Name": "Legendary Great Hammer"
+    },
+    {
+      "ID": 120000013,
+      "Name": "Common+ Great Hammer"
+    },
+    {
+      "ID": 120000024,
+      "Name": "Uncommon- Great Hammer"
+    },
+    {
+      "ID": 120000025,
+      "Name": "Uncommon~ Great Hammer"
+    },
+    {
+      "ID": 120000026,
+      "Name": "Uncommon+ Great Hammer"
+    },
+    {
+      "ID": 120000051,
+      "Name": "Common Untyped Great Hammer"
+    },
+    {
+      "ID": 120000052,
+      "Name": "Uncommon Untyped Great Hammer"
+    },
+    {
+      "ID": 120000063,
+      "Name": "Common+ Untyped Great Hammer"
+    },
+    {
+      "ID": 120000074,
+      "Name": "Uncommon- Untyped Great Hammer"
+    },
+    {
+      "ID": 120000075,
+      "Name": "Uncommon~ Untyped Great Hammer"
+    },
+    {
+      "ID": 120000076,
+      "Name": "Uncommon+ Untyped Great Hammer"
+    },
+    {
+      "ID": 120000101,
+      "Name": "Common Elemental Great Hammer"
+    },
+    {
+      "ID": 120000102,
+      "Name": "Uncommon Elemental Great Hammer"
+    },
+    {
+      "ID": 120000501,
+      "Name": "Common Fire Great Hammer"
+    },
+    {
+      "ID": 120000502,
+      "Name": "Uncommon Fire Great Hammer"
+    },
+    {
+      "ID": 120000503,
+      "Name": "Rare Fire Great Hammer"
+    },
+    {
+      "ID": 120000504,
+      "Name": "Legendary Fire Great Hammer"
+    },
+    {
+      "ID": 120000601,
+      "Name": "Common Lightning Great Hammer"
+    },
+    {
+      "ID": 120000602,
+      "Name": "Uncommon Lightning Great Hammer"
+    },
+    {
+      "ID": 120000701,
+      "Name": "Common Holy Great Hammer"
+    },
+    {
+      "ID": 120000702,
+      "Name": "Uncommon Holy Great Hammer"
+    },
+    {
+      "ID": 120000703,
+      "Name": "Rare Holy Great Hammer"
+    },
+    {
+      "ID": 120000801,
+      "Name": "Common Magic Great Hammer"
+    },
+    {
+      "ID": 120000802,
+      "Name": "Uncommon Magic Great Hammer"
+    },
+    {
+      "ID": 120000901,
+      "Name": "Common Frost Great Hammer"
+    },
+    {
+      "ID": 120000902,
+      "Name": "Uncommon Frost Great Hammer"
+    },
+    {
+      "ID": 120001001,
+      "Name": "Common Poison Great Hammer"
+    },
+    {
+      "ID": 120001002,
+      "Name": "Uncommon Poison Great Hammer"
+    },
+    {
+      "ID": 120001102,
+      "Name": "Uncommon Blood Great Hammer"
+    },
+    {
+      "ID": 120001201,
+      "Name": "Common Occult Great Hammer"
+    },
+    {
+      "ID": 120001202,
+      "Name": "Uncommon Occult Great Hammer"
+    },
+    {
+      "ID": 120001301,
+      "Name": "Common Rot Great Hammer"
+    },
+    {
+      "ID": 120001302,
+      "Name": "Uncommon Rot Great Hammer"
+    },
+    {
+      "ID": 120001303,
+      "Name": "Rare Rot Great Hammer"
+    },
+    {
+      "ID": 120001304,
+      "Name": "Legendary Rot Great Hammer"
+    },
+    {
+      "ID": 120001401,
+      "Name": "Common Sleep Great Hammer"
+    },
+    {
+      "ID": 120001402,
+      "Name": "Uncommon Sleep Great Hammer"
+    },
+    {
+      "ID": 120001403,
+      "Name": "Rare Sleep Great Hammer"
+    },
+    {
+      "ID": 120001404,
+      "Name": "Legendary Sleep Great Hammer"
+    },
+    {
+      "ID": 120005003,
+      "Name": "Unique Great Hammer"
+    },
+    {
+      "ID": 120005503,
+      "Name": "Unique Fire Great Hammer"
+    },
+    {
+      "ID": 120005703,
+      "Name": "Unique Holy Great Hammer"
+    },
+    {
+      "ID": 120006303,
+      "Name": "Unique Rot Great Hammer"
+    },
+    {
+      "ID": 120006403,
+      "Name": "Unique Sleep Great Hammer"
+    },
+    {
+      "ID": 130000001,
+      "Name": "Common Flail"
+    },
+    {
+      "ID": 130000002,
+      "Name": "Uncommon Flail"
+    },
+    {
+      "ID": 130000003,
+      "Name": "Rare Flail"
+    },
+    {
+      "ID": 130000004,
+      "Name": "Legendary Flail"
+    },
+    {
+      "ID": 130000011,
+      "Name": "Common- Flail"
+    },
+    {
+      "ID": 130000024,
+      "Name": "Uncommon- Flail"
+    },
+    {
+      "ID": 130000026,
+      "Name": "Uncommon+ Flail"
+    },
+    {
+      "ID": 130000051,
+      "Name": "Common Untyped Flail"
+    },
+    {
+      "ID": 130000052,
+      "Name": "Uncommon Untyped Flail"
+    },
+    {
+      "ID": 130000061,
+      "Name": "Common- Untyped Flail"
+    },
+    {
+      "ID": 130000074,
+      "Name": "Uncommon- Untyped Flail"
+    },
+    {
+      "ID": 130000076,
+      "Name": "Uncommon+ Untyped Flail"
+    },
+    {
+      "ID": 130000101,
+      "Name": "Common Elemental Flail"
+    },
+    {
+      "ID": 130000102,
+      "Name": "Uncommon Elemental Flail"
+    },
+    {
+      "ID": 130000501,
+      "Name": "Common Fire Flail"
+    },
+    {
+      "ID": 130000502,
+      "Name": "Uncommon Fire Flail"
+    },
+    {
+      "ID": 130000601,
+      "Name": "Common Lightning Flail"
+    },
+    {
+      "ID": 130000602,
+      "Name": "Uncommon Lightning Flail"
+    },
+    {
+      "ID": 130000701,
+      "Name": "Common Holy Flail"
+    },
+    {
+      "ID": 130000702,
+      "Name": "Uncommon Holy Flail"
+    },
+    {
+      "ID": 130000801,
+      "Name": "Common Magic Flail"
+    },
+    {
+      "ID": 130000802,
+      "Name": "Uncommon Magic Flail"
+    },
+    {
+      "ID": 130000803,
+      "Name": "Rare Magic Flail"
+    },
+    {
+      "ID": 130000804,
+      "Name": "Legendary Magic Flail"
+    },
+    {
+      "ID": 130000901,
+      "Name": "Common Frost Flail"
+    },
+    {
+      "ID": 130000902,
+      "Name": "Uncommon Frost Flail"
+    },
+    {
+      "ID": 130001001,
+      "Name": "Common Poison Flail"
+    },
+    {
+      "ID": 130001002,
+      "Name": "Uncommon Poison Flail"
+    },
+    {
+      "ID": 130001101,
+      "Name": "Common Blood Flail"
+    },
+    {
+      "ID": 130001102,
+      "Name": "Uncommon Blood Flail"
+    },
+    {
+      "ID": 130001201,
+      "Name": "Common Occult Flail"
+    },
+    {
+      "ID": 130001202,
+      "Name": "Uncommon Occult Flail"
+    },
+    {
+      "ID": 130001301,
+      "Name": "Common Rot Flail"
+    },
+    {
+      "ID": 130001302,
+      "Name": "Uncommon Rot Flail"
+    },
+    {
+      "ID": 130001303,
+      "Name": "Rare Rot Flail"
+    },
+    {
+      "ID": 130001304,
+      "Name": "Legendary Rot Flail"
+    },
+    {
+      "ID": 130001401,
+      "Name": "Common Sleep Flail"
+    },
+    {
+      "ID": 130001402,
+      "Name": "Uncommon Sleep Flail"
+    },
+    {
+      "ID": 130001403,
+      "Name": "Rare Sleep Flail"
+    },
+    {
+      "ID": 130001404,
+      "Name": "Legendary Sleep Flail"
+    },
+    {
+      "ID": 130005003,
+      "Name": "Unique Flail"
+    },
+    {
+      "ID": 130005803,
+      "Name": "Unique Magic Flail"
+    },
+    {
+      "ID": 130006303,
+      "Name": "Unique Rot Flail"
+    },
+    {
+      "ID": 130006403,
+      "Name": "Unique Sleep Flail"
+    },
+    {
+      "ID": 140000001,
+      "Name": "Common Axe"
+    },
+    {
+      "ID": 140000002,
+      "Name": "Uncommon Axe"
+    },
+    {
+      "ID": 140000003,
+      "Name": "Rare Axe"
+    },
+    {
+      "ID": 140000011,
+      "Name": "Common- Axe"
+    },
+    {
+      "ID": 140000012,
+      "Name": "Common~ Axe"
+    },
+    {
+      "ID": 140000013,
+      "Name": "Common+ Axe"
+    },
+    {
+      "ID": 140000024,
+      "Name": "Uncommon- Axe"
+    },
+    {
+      "ID": 140000025,
+      "Name": "Uncommon~ Axe"
+    },
+    {
+      "ID": 140000026,
+      "Name": "Uncommon+ Axe"
+    },
+    {
+      "ID": 140000051,
+      "Name": "Common Untyped Axe"
+    },
+    {
+      "ID": 140000052,
+      "Name": "Uncommon Untyped Axe"
+    },
+    {
+      "ID": 140000053,
+      "Name": "Rare Untyped Axe"
+    },
+    {
+      "ID": 140000061,
+      "Name": "Common- Untyped Axe"
+    },
+    {
+      "ID": 140000062,
+      "Name": "Common~ Untyped Axe"
+    },
+    {
+      "ID": 140000063,
+      "Name": "Common+ Untyped Axe"
+    },
+    {
+      "ID": 140000074,
+      "Name": "Uncommon- Untyped Axe"
+    },
+    {
+      "ID": 140000075,
+      "Name": "Uncommon~ Untyped Axe"
+    },
+    {
+      "ID": 140000076,
+      "Name": "Uncommon+ Untyped Axe"
+    },
+    {
+      "ID": 140000101,
+      "Name": "Common Elemental Axe"
+    },
+    {
+      "ID": 140000102,
+      "Name": "Uncommon Elemental Axe"
+    },
+    {
+      "ID": 140000103,
+      "Name": "Rare Elemental Axe"
+    },
+    {
+      "ID": 140000501,
+      "Name": "Common Fire Axe"
+    },
+    {
+      "ID": 140000502,
+      "Name": "Uncommon Fire Axe"
+    },
+    {
+      "ID": 140000503,
+      "Name": "Rare Fire Axe"
+    },
+    {
+      "ID": 140000601,
+      "Name": "Common Lightning Axe"
+    },
+    {
+      "ID": 140000602,
+      "Name": "Uncommon Lightning Axe"
+    },
+    {
+      "ID": 140000603,
+      "Name": "Rare Lightning Axe"
+    },
+    {
+      "ID": 140000701,
+      "Name": "Common Holy Axe"
+    },
+    {
+      "ID": 140000702,
+      "Name": "Uncommon Holy Axe"
+    },
+    {
+      "ID": 140000703,
+      "Name": "Rare Holy Axe"
+    },
+    {
+      "ID": 140000801,
+      "Name": "Common Magic Axe"
+    },
+    {
+      "ID": 140000802,
+      "Name": "Uncommon Magic Axe"
+    },
+    {
+      "ID": 140000803,
+      "Name": "Rare Magic Axe"
+    },
+    {
+      "ID": 140000901,
+      "Name": "Common Frost Axe"
+    },
+    {
+      "ID": 140000902,
+      "Name": "Uncommon Frost Axe"
+    },
+    {
+      "ID": 140000903,
+      "Name": "Rare Frost Axe"
+    },
+    {
+      "ID": 140001001,
+      "Name": "Common Poison Axe"
+    },
+    {
+      "ID": 140001002,
+      "Name": "Uncommon Poison Axe"
+    },
+    {
+      "ID": 140001003,
+      "Name": "Rare Poison Axe"
+    },
+    {
+      "ID": 140001101,
+      "Name": "Common Blood Axe"
+    },
+    {
+      "ID": 140001201,
+      "Name": "Common Occult Axe"
+    },
+    {
+      "ID": 140001202,
+      "Name": "Uncommon Occult Axe"
+    },
+    {
+      "ID": 140001203,
+      "Name": "Rare Occult Axe"
+    },
+    {
+      "ID": 140001301,
+      "Name": "Common Rot Axe"
+    },
+    {
+      "ID": 140001302,
+      "Name": "Uncommon Rot Axe"
+    },
+    {
+      "ID": 140001303,
+      "Name": "Rare Rot Axe"
+    },
+    {
+      "ID": 140001401,
+      "Name": "Common Sleep Axe"
+    },
+    {
+      "ID": 140001402,
+      "Name": "Uncommon Sleep Axe"
+    },
+    {
+      "ID": 140001403,
+      "Name": "Rare Sleep Axe"
+    },
+    {
+      "ID": 140005003,
+      "Name": "Unique Axe"
+    },
+    {
+      "ID": 140005053,
+      "Name": "Unique Untyped Axe"
+    },
+    {
+      "ID": 140005103,
+      "Name": "Unique Elemental Axe"
+    },
+    {
+      "ID": 140005503,
+      "Name": "Unique Fire Axe"
+    },
+    {
+      "ID": 140005603,
+      "Name": "Unique Lightning Axe"
+    },
+    {
+      "ID": 140005703,
+      "Name": "Unique Holy Axe"
+    },
+    {
+      "ID": 140005803,
+      "Name": "Unique Magic Axe"
+    },
+    {
+      "ID": 140005903,
+      "Name": "Unique Frost Axe"
+    },
+    {
+      "ID": 140006003,
+      "Name": "Unique Poison Axe"
+    },
+    {
+      "ID": 140006203,
+      "Name": "Unique Occult Axe"
+    },
+    {
+      "ID": 140006303,
+      "Name": "Unique Rot Axe"
+    },
+    {
+      "ID": 140006403,
+      "Name": "Unique Sleep Axe"
+    },
+    {
+      "ID": 150000001,
+      "Name": "Common Greataxe"
+    },
+    {
+      "ID": 150000002,
+      "Name": "Uncommon Greataxe"
+    },
+    {
+      "ID": 150000003,
+      "Name": "Rare Greataxe"
+    },
+    {
+      "ID": 150000004,
+      "Name": "Legendary Greataxe"
+    },
+    {
+      "ID": 150000013,
+      "Name": "Common+ Greataxe"
+    },
+    {
+      "ID": 150000024,
+      "Name": "Uncommon- Greataxe"
+    },
+    {
+      "ID": 150000025,
+      "Name": "Uncommon~ Greataxe"
+    },
+    {
+      "ID": 150000026,
+      "Name": "Uncommon+ Greataxe"
+    },
+    {
+      "ID": 150000051,
+      "Name": "Common Untyped Greataxe"
+    },
+    {
+      "ID": 150000052,
+      "Name": "Uncommon Untyped Greataxe"
+    },
+    {
+      "ID": 150000053,
+      "Name": "Rare Untyped Greataxe"
+    },
+    {
+      "ID": 150000063,
+      "Name": "Common+ Untyped Greataxe"
+    },
+    {
+      "ID": 150000074,
+      "Name": "Uncommon- Untyped Greataxe"
+    },
+    {
+      "ID": 150000075,
+      "Name": "Uncommon~ Untyped Greataxe"
+    },
+    {
+      "ID": 150000076,
+      "Name": "Uncommon+ Untyped Greataxe"
+    },
+    {
+      "ID": 150000101,
+      "Name": "Common Elemental Greataxe"
+    },
+    {
+      "ID": 150000102,
+      "Name": "Uncommon Elemental Greataxe"
+    },
+    {
+      "ID": 150000103,
+      "Name": "Rare Elemental Greataxe"
+    },
+    {
+      "ID": 150000501,
+      "Name": "Common Fire Greataxe"
+    },
+    {
+      "ID": 150000502,
+      "Name": "Uncommon Fire Greataxe"
+    },
+    {
+      "ID": 150000503,
+      "Name": "Rare Fire Greataxe"
+    },
+    {
+      "ID": 150000601,
+      "Name": "Common Lightning Greataxe"
+    },
+    {
+      "ID": 150000602,
+      "Name": "Uncommon Lightning Greataxe"
+    },
+    {
+      "ID": 150000603,
+      "Name": "Rare Lightning Greataxe"
+    },
+    {
+      "ID": 150000701,
+      "Name": "Common Holy Greataxe"
+    },
+    {
+      "ID": 150000702,
+      "Name": "Uncommon Holy Greataxe"
+    },
+    {
+      "ID": 150000703,
+      "Name": "Rare Holy Greataxe"
+    },
+    {
+      "ID": 150000801,
+      "Name": "Common Magic Greataxe"
+    },
+    {
+      "ID": 150000802,
+      "Name": "Uncommon Magic Greataxe"
+    },
+    {
+      "ID": 150000803,
+      "Name": "Rare Magic Greataxe"
+    },
+    {
+      "ID": 150000901,
+      "Name": "Common Frost Greataxe"
+    },
+    {
+      "ID": 150000902,
+      "Name": "Uncommon Frost Greataxe"
+    },
+    {
+      "ID": 150000903,
+      "Name": "Rare Frost Greataxe"
+    },
+    {
+      "ID": 150001001,
+      "Name": "Common Poison Greataxe"
+    },
+    {
+      "ID": 150001002,
+      "Name": "Uncommon Poison Greataxe"
+    },
+    {
+      "ID": 150001003,
+      "Name": "Rare Poison Greataxe"
+    },
+    {
+      "ID": 150001102,
+      "Name": "Uncommon Blood Greataxe"
+    },
+    {
+      "ID": 150001201,
+      "Name": "Common Occult Greataxe"
+    },
+    {
+      "ID": 150001202,
+      "Name": "Uncommon Occult Greataxe"
+    },
+    {
+      "ID": 150001203,
+      "Name": "Rare Occult Greataxe"
+    },
+    {
+      "ID": 150001301,
+      "Name": "Common Rot Greataxe"
+    },
+    {
+      "ID": 150001302,
+      "Name": "Uncommon Rot Greataxe"
+    },
+    {
+      "ID": 150001303,
+      "Name": "Rare Rot Greataxe"
+    },
+    {
+      "ID": 150001304,
+      "Name": "Legendary Rot Greataxe"
+    },
+    {
+      "ID": 150001401,
+      "Name": "Common Sleep Greataxe"
+    },
+    {
+      "ID": 150001402,
+      "Name": "Uncommon Sleep Greataxe"
+    },
+    {
+      "ID": 150001403,
+      "Name": "Rare Sleep Greataxe"
+    },
+    {
+      "ID": 150001404,
+      "Name": "Legendary Sleep Greataxe"
+    },
+    {
+      "ID": 150005003,
+      "Name": "Unique Greataxe"
+    },
+    {
+      "ID": 150005053,
+      "Name": "Unique Untyped Greataxe"
+    },
+    {
+      "ID": 150005103,
+      "Name": "Unique Elemental Greataxe"
+    },
+    {
+      "ID": 150005503,
+      "Name": "Unique Fire Greataxe"
+    },
+    {
+      "ID": 150005603,
+      "Name": "Unique Lightning Greataxe"
+    },
+    {
+      "ID": 150005703,
+      "Name": "Unique Holy Greataxe"
+    },
+    {
+      "ID": 150005803,
+      "Name": "Unique Magic Greataxe"
+    },
+    {
+      "ID": 150005903,
+      "Name": "Unique Frost Greataxe"
+    },
+    {
+      "ID": 150006003,
+      "Name": "Unique Poison Greataxe"
+    },
+    {
+      "ID": 150006203,
+      "Name": "Unique Occult Greataxe"
+    },
+    {
+      "ID": 150006303,
+      "Name": "Unique Rot Greataxe"
+    },
+    {
+      "ID": 150006403,
+      "Name": "Unique Sleep Greataxe"
+    },
+    {
+      "ID": 160000001,
+      "Name": "Common Spear"
+    },
+    {
+      "ID": 160000002,
+      "Name": "Uncommon Spear"
+    },
+    {
+      "ID": 160000003,
+      "Name": "Rare Spear"
+    },
+    {
+      "ID": 160000004,
+      "Name": "Legendary Spear"
+    },
+    {
+      "ID": 160000011,
+      "Name": "Common- Spear"
+    },
+    {
+      "ID": 160000012,
+      "Name": "Common~ Spear"
+    },
+    {
+      "ID": 160000013,
+      "Name": "Common+ Spear"
+    },
+    {
+      "ID": 160000024,
+      "Name": "Uncommon- Spear"
+    },
+    {
+      "ID": 160000025,
+      "Name": "Uncommon~ Spear"
+    },
+    {
+      "ID": 160000026,
+      "Name": "Uncommon+ Spear"
+    },
+    {
+      "ID": 160000051,
+      "Name": "Common Untyped Spear"
+    },
+    {
+      "ID": 160000052,
+      "Name": "Uncommon Untyped Spear"
+    },
+    {
+      "ID": 160000053,
+      "Name": "Rare Untyped Spear"
+    },
+    {
+      "ID": 160000061,
+      "Name": "Common- Untyped Spear"
+    },
+    {
+      "ID": 160000062,
+      "Name": "Common~ Untyped Spear"
+    },
+    {
+      "ID": 160000063,
+      "Name": "Common+ Untyped Spear"
+    },
+    {
+      "ID": 160000074,
+      "Name": "Uncommon- Untyped Spear"
+    },
+    {
+      "ID": 160000075,
+      "Name": "Uncommon~ Untyped Spear"
+    },
+    {
+      "ID": 160000076,
+      "Name": "Uncommon+ Untyped Spear"
+    },
+    {
+      "ID": 160000101,
+      "Name": "Common Elemental Spear"
+    },
+    {
+      "ID": 160000102,
+      "Name": "Uncommon Elemental Spear"
+    },
+    {
+      "ID": 160000501,
+      "Name": "Common Fire Spear"
+    },
+    {
+      "ID": 160000502,
+      "Name": "Uncommon Fire Spear"
+    },
+    {
+      "ID": 160000503,
+      "Name": "Rare Fire Spear"
+    },
+    {
+      "ID": 160000601,
+      "Name": "Common Lightning Spear"
+    },
+    {
+      "ID": 160000602,
+      "Name": "Uncommon Lightning Spear"
+    },
+    {
+      "ID": 160000604,
+      "Name": "Legendary Lightning Spear"
+    },
+    {
+      "ID": 160000701,
+      "Name": "Common Holy Spear"
+    },
+    {
+      "ID": 160000702,
+      "Name": "Uncommon Holy Spear"
+    },
+    {
+      "ID": 160000703,
+      "Name": "Rare Holy Spear"
+    },
+    {
+      "ID": 160000801,
+      "Name": "Common Magic Spear"
+    },
+    {
+      "ID": 160000802,
+      "Name": "Uncommon Magic Spear"
+    },
+    {
+      "ID": 160000803,
+      "Name": "Rare Magic Spear"
+    },
+    {
+      "ID": 160000901,
+      "Name": "Common Frost Spear"
+    },
+    {
+      "ID": 160000902,
+      "Name": "Uncommon Frost Spear"
+    },
+    {
+      "ID": 160001001,
+      "Name": "Common Poison Spear"
+    },
+    {
+      "ID": 160001002,
+      "Name": "Uncommon Poison Spear"
+    },
+    {
+      "ID": 160001101,
+      "Name": "Common Blood Spear"
+    },
+    {
+      "ID": 160001102,
+      "Name": "Uncommon Blood Spear"
+    },
+    {
+      "ID": 160001103,
+      "Name": "Rare Blood Spear"
+    },
+    {
+      "ID": 160001201,
+      "Name": "Common Occult Spear"
+    },
+    {
+      "ID": 160001202,
+      "Name": "Uncommon Occult Spear"
+    },
+    {
+      "ID": 160001301,
+      "Name": "Common Rot Spear"
+    },
+    {
+      "ID": 160001302,
+      "Name": "Uncommon Rot Spear"
+    },
+    {
+      "ID": 160001303,
+      "Name": "Rare Rot Spear"
+    },
+    {
+      "ID": 160001304,
+      "Name": "Legendary Rot Spear"
+    },
+    {
+      "ID": 160001401,
+      "Name": "Common Sleep Spear"
+    },
+    {
+      "ID": 160001402,
+      "Name": "Uncommon Sleep Spear"
+    },
+    {
+      "ID": 160001403,
+      "Name": "Rare Sleep Spear"
+    },
+    {
+      "ID": 160001404,
+      "Name": "Legendary Sleep Spear"
+    },
+    {
+      "ID": 160005003,
+      "Name": "Unique Spear"
+    },
+    {
+      "ID": 160005053,
+      "Name": "Unique Untyped Spear"
+    },
+    {
+      "ID": 160005503,
+      "Name": "Unique Fire Spear"
+    },
+    {
+      "ID": 160005703,
+      "Name": "Unique Holy Spear"
+    },
+    {
+      "ID": 160005803,
+      "Name": "Unique Magic Spear"
+    },
+    {
+      "ID": 160006103,
+      "Name": "Unique Blood Spear"
+    },
+    {
+      "ID": 160006303,
+      "Name": "Unique Rot Spear"
+    },
+    {
+      "ID": 160006403,
+      "Name": "Unique Sleep Spear"
+    },
+    {
+      "ID": 170000001,
+      "Name": "Common Heavy Spear"
+    },
+    {
+      "ID": 170000002,
+      "Name": "Uncommon Great Spear"
+    },
+    {
+      "ID": 170000003,
+      "Name": "Rare Great Spear"
+    },
+    {
+      "ID": 170000004,
+      "Name": "Legendary Heavy Spear"
+    },
+    {
+      "ID": 170000013,
+      "Name": "Common+ Heavy Spear"
+    },
+    {
+      "ID": 170000024,
+      "Name": "Uncommon- Heavy Spear"
+    },
+    {
+      "ID": 170000026,
+      "Name": "Uncommon+ Heavy Spear"
+    },
+    {
+      "ID": 170000051,
+      "Name": "Common Untyped Heavy Spear"
+    },
+    {
+      "ID": 170000052,
+      "Name": "Uncommon Untyped Heavy Spear"
+    },
+    {
+      "ID": 170000063,
+      "Name": "Common+ Untyped Heavy Spear"
+    },
+    {
+      "ID": 170000074,
+      "Name": "Uncommon- Untyped Heavy Spear"
+    },
+    {
+      "ID": 170000101,
+      "Name": "Common Elemental Heavy Spear"
+    },
+    {
+      "ID": 170000501,
+      "Name": "Common Fire Heavy Spear"
+    },
+    {
+      "ID": 170000503,
+      "Name": "Rare Fire Heavy Spear"
+    },
+    {
+      "ID": 170000504,
+      "Name": "Legendary Fire Heavy Spear"
+    },
+    {
+      "ID": 170000601,
+      "Name": "Common Lightning Heavy Spear"
+    },
+    {
+      "ID": 170000701,
+      "Name": "Common Holy Heavy Spear"
+    },
+    {
+      "ID": 170000702,
+      "Name": "Uncommon Holy Heavy Spear"
+    },
+    {
+      "ID": 170000703,
+      "Name": "Rare Holy Heavy Spear"
+    },
+    {
+      "ID": 170000801,
+      "Name": "Common Magic Heavy Spear"
+    },
+    {
+      "ID": 170000901,
+      "Name": "Common Frost Heavy Spear"
+    },
+    {
+      "ID": 170001001,
+      "Name": "Common Poison Heavy Spear"
+    },
+    {
+      "ID": 170001104,
+      "Name": "Legendary Blood Heavy Spear"
+    },
+    {
+      "ID": 170001201,
+      "Name": "Common Occult Heavy Spear"
+    },
+    {
+      "ID": 170001301,
+      "Name": "Common Rot Heavy Spear"
+    },
+    {
+      "ID": 170001302,
+      "Name": "Uncommon Rot Heavy Spear"
+    },
+    {
+      "ID": 170001303,
+      "Name": "Rare Rot Heavy Spear"
+    },
+    {
+      "ID": 170001304,
+      "Name": "Legendary Rot Heavy Spear"
+    },
+    {
+      "ID": 170001401,
+      "Name": "Common Sleep Heavy Spear"
+    },
+    {
+      "ID": 170001402,
+      "Name": "Uncommon Sleep Heavy Spear"
+    },
+    {
+      "ID": 170001403,
+      "Name": "Rare Sleep Heavy Spear"
+    },
+    {
+      "ID": 170001404,
+      "Name": "Legendary Sleep Heavy Spear"
+    },
+    {
+      "ID": 170005003,
+      "Name": "Unique Heavy Spear"
+    },
+    {
+      "ID": 170005503,
+      "Name": "Unique Fire Heavy Spear"
+    },
+    {
+      "ID": 170005703,
+      "Name": "Unique Holy Heavy Spear"
+    },
+    {
+      "ID": 170006303,
+      "Name": "Unique Rot Heavy Spear"
+    },
+    {
+      "ID": 170006403,
+      "Name": "Unique Sleep Heavy Spear"
+    },
+    {
+      "ID": 180000001,
+      "Name": "Common Halberd"
+    },
+    {
+      "ID": 180000002,
+      "Name": "Uncommon Halberd"
+    },
+    {
+      "ID": 180000003,
+      "Name": "Rare Halberd"
+    },
+    {
+      "ID": 180000011,
+      "Name": "Common- Halberd"
+    },
+    {
+      "ID": 180000012,
+      "Name": "Common~ Halberd"
+    },
+    {
+      "ID": 180000013,
+      "Name": "Common+ Halberd"
+    },
+    {
+      "ID": 180000024,
+      "Name": "Uncommon- Halberd"
+    },
+    {
+      "ID": 180000025,
+      "Name": "Uncommon~ Halberd"
+    },
+    {
+      "ID": 180000026,
+      "Name": "Uncommon+ Halberd"
+    },
+    {
+      "ID": 180000051,
+      "Name": "Common Untyped Halberd"
+    },
+    {
+      "ID": 180000052,
+      "Name": "Uncommon Untyped Halberd"
+    },
+    {
+      "ID": 180000053,
+      "Name": "Rare Untyped Halberd"
+    },
+    {
+      "ID": 180000061,
+      "Name": "Common- Untyped Halberd"
+    },
+    {
+      "ID": 180000062,
+      "Name": "Common~ Untyped Halberd"
+    },
+    {
+      "ID": 180000063,
+      "Name": "Common+ Untyped Halberd"
+    },
+    {
+      "ID": 180000074,
+      "Name": "Uncommon- Untyped Halberd"
+    },
+    {
+      "ID": 180000075,
+      "Name": "Uncommon~ Untyped Halberd"
+    },
+    {
+      "ID": 180000076,
+      "Name": "Uncommon+ Untyped Halberd"
+    },
+    {
+      "ID": 180000101,
+      "Name": "Common Elemental Halberd"
+    },
+    {
+      "ID": 180000102,
+      "Name": "Uncommon Elemental Halberd"
+    },
+    {
+      "ID": 180000103,
+      "Name": "Rare Elemental Halberd"
+    },
+    {
+      "ID": 180000501,
+      "Name": "Common Fire Halberd"
+    },
+    {
+      "ID": 180000502,
+      "Name": "Uncommon Fire Halberd"
+    },
+    {
+      "ID": 180000601,
+      "Name": "Common Lightning Halberd"
+    },
+    {
+      "ID": 180000602,
+      "Name": "Uncommon Lightning Halberd"
+    },
+    {
+      "ID": 180000701,
+      "Name": "Common Holy Halberd"
+    },
+    {
+      "ID": 180000702,
+      "Name": "Uncommon Holy Halberd"
+    },
+    {
+      "ID": 180000703,
+      "Name": "Rare Holy Halberd"
+    },
+    {
+      "ID": 180000801,
+      "Name": "Common Magic Halberd"
+    },
+    {
+      "ID": 180000802,
+      "Name": "Uncommon Magic Halberd"
+    },
+    {
+      "ID": 180000803,
+      "Name": "Rare Magic Halberd"
+    },
+    {
+      "ID": 180000901,
+      "Name": "Common Frost Halberd"
+    },
+    {
+      "ID": 180000902,
+      "Name": "Uncommon Frost Halberd"
+    },
+    {
+      "ID": 180001001,
+      "Name": "Common Poison Halberd"
+    },
+    {
+      "ID": 180001002,
+      "Name": "Uncommon Poison Halberd"
+    },
+    {
+      "ID": 180001101,
+      "Name": "Common Blood Halberd"
+    },
+    {
+      "ID": 180001102,
+      "Name": "Uncommon Blood Halberd"
+    },
+    {
+      "ID": 180001201,
+      "Name": "Common Occult Halberd"
+    },
+    {
+      "ID": 180001202,
+      "Name": "Uncommon Occult Halberd"
+    },
+    {
+      "ID": 180001301,
+      "Name": "Common Rot Halberd"
+    },
+    {
+      "ID": 180001302,
+      "Name": "Uncommon Rot Halberd"
+    },
+    {
+      "ID": 180001303,
+      "Name": "Rare Rot Halberd"
+    },
+    {
+      "ID": 180001401,
+      "Name": "Common Sleep Halberd"
+    },
+    {
+      "ID": 180001402,
+      "Name": "Uncommon Sleep Halberd"
+    },
+    {
+      "ID": 180001403,
+      "Name": "Rare Sleep Halberd"
+    },
+    {
+      "ID": 180005003,
+      "Name": "Unique Halberd"
+    },
+    {
+      "ID": 180005053,
+      "Name": "Unique Untyped Halberd"
+    },
+    {
+      "ID": 180005103,
+      "Name": "Unique Elemental Halberd"
+    },
+    {
+      "ID": 180005703,
+      "Name": "Unique Holy Halberd"
+    },
+    {
+      "ID": 180005803,
+      "Name": "Unique Magic Halberd"
+    },
+    {
+      "ID": 180006303,
+      "Name": "Unique Rot Halberd"
+    },
+    {
+      "ID": 180006403,
+      "Name": "Unique Sleep Halberd"
+    },
+    {
+      "ID": 190000001,
+      "Name": "Common Scythe"
+    },
+    {
+      "ID": 190000002,
+      "Name": "Uncommon Scythe"
+    },
+    {
+      "ID": 190000003,
+      "Name": "Rare Scythe"
+    },
+    {
+      "ID": 190000012,
+      "Name": "Common~ Scythe"
+    },
+    {
+      "ID": 190000025,
+      "Name": "Uncommon~ Scythe"
+    },
+    {
+      "ID": 190000051,
+      "Name": "Common Untyped Scythe"
+    },
+    {
+      "ID": 190000052,
+      "Name": "Uncommon Untyped Scythe"
+    },
+    {
+      "ID": 190000062,
+      "Name": "Common~ Untyped Scythe"
+    },
+    {
+      "ID": 190000075,
+      "Name": "Uncommon~ Untyped Scythe"
+    },
+    {
+      "ID": 190000101,
+      "Name": "Common Elemental Scythe"
+    },
+    {
+      "ID": 190000102,
+      "Name": "Uncommon Elemental Scythe"
+    },
+    {
+      "ID": 190000501,
+      "Name": "Common Fire Scythe"
+    },
+    {
+      "ID": 190000502,
+      "Name": "Uncommon Fire Scythe"
+    },
+    {
+      "ID": 190000601,
+      "Name": "Common Lightning Scythe"
+    },
+    {
+      "ID": 190000602,
+      "Name": "Uncommon Lightning Scythe"
+    },
+    {
+      "ID": 190000701,
+      "Name": "Common Holy Scythe"
+    },
+    {
+      "ID": 190000702,
+      "Name": "Uncommon Holy Scythe"
+    },
+    {
+      "ID": 190000703,
+      "Name": "Rare Holy Scythe"
+    },
+    {
+      "ID": 190000801,
+      "Name": "Common Magic Scythe"
+    },
+    {
+      "ID": 190000802,
+      "Name": "Uncommon Magic Scythe"
+    },
+    {
+      "ID": 190000901,
+      "Name": "Common Frost Scythe"
+    },
+    {
+      "ID": 190000902,
+      "Name": "Uncommon Frost Scythe"
+    },
+    {
+      "ID": 190001001,
+      "Name": "Common Poison Scythe"
+    },
+    {
+      "ID": 190001002,
+      "Name": "Uncommon Poison Scythe"
+    },
+    {
+      "ID": 190001101,
+      "Name": "Common Blood Scythe"
+    },
+    {
+      "ID": 190001102,
+      "Name": "Uncommon Blood Scythe"
+    },
+    {
+      "ID": 190001103,
+      "Name": "Rare Blood Scythe"
+    },
+    {
+      "ID": 190001301,
+      "Name": "Common Rot Scythe"
+    },
+    {
+      "ID": 190001302,
+      "Name": "Uncommon Rot Scythe"
+    },
+    {
+      "ID": 190001303,
+      "Name": "Rare Rot Scythe"
+    },
+    {
+      "ID": 190001401,
+      "Name": "Common Sleep Scythe"
+    },
+    {
+      "ID": 190001402,
+      "Name": "Uncommon Sleep Scythe"
+    },
+    {
+      "ID": 190001403,
+      "Name": "Rare Sleep Scythe"
+    },
+    {
+      "ID": 190005003,
+      "Name": "Unique Scythe"
+    },
+    {
+      "ID": 190005703,
+      "Name": "Unique Holy Scythe"
+    },
+    {
+      "ID": 190006103,
+      "Name": "Unique Blood Scythe"
+    },
+    {
+      "ID": 190006303,
+      "Name": "Unique Rot Scythe"
+    },
+    {
+      "ID": 190006403,
+      "Name": "Unique Sleep Scythe"
+    },
+    {
+      "ID": 200000001,
+      "Name": "Common Whip"
+    },
+    {
+      "ID": 200000002,
+      "Name": "Uncommon Whip"
+    },
+    {
+      "ID": 200000003,
+      "Name": "Rare Whip"
+    },
+    {
+      "ID": 200000004,
+      "Name": "Legendary Whip"
+    },
+    {
+      "ID": 200000011,
+      "Name": "Common- Whip"
+    },
+    {
+      "ID": 200000025,
+      "Name": "Uncommon~ Whip"
+    },
+    {
+      "ID": 200000026,
+      "Name": "Uncommon+ Whip"
+    },
+    {
+      "ID": 200000051,
+      "Name": "Common Untyped Whip"
+    },
+    {
+      "ID": 200000052,
+      "Name": "Uncommon Untyped Whip"
+    },
+    {
+      "ID": 200000053,
+      "Name": "Rare Untyped Whip"
+    },
+    {
+      "ID": 200000061,
+      "Name": "Common- Untyped Whip"
+    },
+    {
+      "ID": 200000075,
+      "Name": "Uncommon~ Untyped Whip"
+    },
+    {
+      "ID": 200000076,
+      "Name": "Uncommon+ Untyped Whip"
+    },
+    {
+      "ID": 200000101,
+      "Name": "Common Elemental Whip"
+    },
+    {
+      "ID": 200000102,
+      "Name": "Uncommon Elemental Whip"
+    },
+    {
+      "ID": 200000103,
+      "Name": "Rare Elemental Whip"
+    },
+    {
+      "ID": 200000501,
+      "Name": "Common Fire Whip"
+    },
+    {
+      "ID": 200000502,
+      "Name": "Uncommon Fire Whip"
+    },
+    {
+      "ID": 200000503,
+      "Name": "Rare Fire Whip"
+    },
+    {
+      "ID": 200000504,
+      "Name": "Legendary Fire Whip"
+    },
+    {
+      "ID": 200000601,
+      "Name": "Common Lightning Whip"
+    },
+    {
+      "ID": 200000602,
+      "Name": "Uncommon Lightning Whip"
+    },
+    {
+      "ID": 200000603,
+      "Name": "Rare Lightning Whip"
+    },
+    {
+      "ID": 200000701,
+      "Name": "Common Holy Whip"
+    },
+    {
+      "ID": 200000702,
+      "Name": "Uncommon Holy Whip"
+    },
+    {
+      "ID": 200000703,
+      "Name": "Rare Holy Whip"
+    },
+    {
+      "ID": 200000901,
+      "Name": "Common Frost Whip"
+    },
+    {
+      "ID": 200000902,
+      "Name": "Uncommon Frost Whip"
+    },
+    {
+      "ID": 200000903,
+      "Name": "Rare Frost Whip"
+    },
+    {
+      "ID": 200001102,
+      "Name": "Uncommon Blood Whip"
+    },
+    {
+      "ID": 200001103,
+      "Name": "Rare Blood Whip"
+    },
+    {
+      "ID": 200001201,
+      "Name": "Common Occult Whip"
+    },
+    {
+      "ID": 200001202,
+      "Name": "Uncommon Occult Whip"
+    },
+    {
+      "ID": 200001203,
+      "Name": "Rare Occult Whip"
+    },
+    {
+      "ID": 200001301,
+      "Name": "Common Rot Whip"
+    },
+    {
+      "ID": 200001302,
+      "Name": "Uncommon Rot Whip"
+    },
+    {
+      "ID": 200001303,
+      "Name": "Rare Rot Whip"
+    },
+    {
+      "ID": 200001304,
+      "Name": "Legendary Rot Whip"
+    },
+    {
+      "ID": 200001401,
+      "Name": "Common Sleep Whip"
+    },
+    {
+      "ID": 200001402,
+      "Name": "Uncommon Sleep Whip"
+    },
+    {
+      "ID": 200001403,
+      "Name": "Rare Sleep Whip"
+    },
+    {
+      "ID": 200001404,
+      "Name": "Legendary Sleep Whip"
+    },
+    {
+      "ID": 200005003,
+      "Name": "Unique Whip"
+    },
+    {
+      "ID": 200005053,
+      "Name": "Unique Untyped Whip"
+    },
+    {
+      "ID": 200005103,
+      "Name": "Unique Elemental Whip"
+    },
+    {
+      "ID": 200005503,
+      "Name": "Unique Fire Whip"
+    },
+    {
+      "ID": 200005603,
+      "Name": "Unique Lightning Whip"
+    },
+    {
+      "ID": 200005703,
+      "Name": "Unique Holy Whip"
+    },
+    {
+      "ID": 200005903,
+      "Name": "Unique Frost Whip"
+    },
+    {
+      "ID": 200006103,
+      "Name": "Unique Blood Whip"
+    },
+    {
+      "ID": 200006203,
+      "Name": "Unique Occult Whip"
+    },
+    {
+      "ID": 200006303,
+      "Name": "Unique Rot Whip"
+    },
+    {
+      "ID": 200006403,
+      "Name": "Unique Sleep Whip"
+    },
+    {
+      "ID": 210000001,
+      "Name": "Common Fist"
+    },
+    {
+      "ID": 210000002,
+      "Name": "Uncommon Fist"
+    },
+    {
+      "ID": 210000003,
+      "Name": "Rare Fist"
+    },
+    {
+      "ID": 210000004,
+      "Name": "Legendary Fist"
+    },
+    {
+      "ID": 210000011,
+      "Name": "Common- Fist"
+    },
+    {
+      "ID": 210000013,
+      "Name": "Common+ Fist"
+    },
+    {
+      "ID": 210000024,
+      "Name": "Uncommon- Fist"
+    },
+    {
+      "ID": 210000025,
+      "Name": "Uncommon~ Fist"
+    },
+    {
+      "ID": 210000026,
+      "Name": "Uncommon+ Fist"
+    },
+    {
+      "ID": 210000051,
+      "Name": "Common Untyped Fist"
+    },
+    {
+      "ID": 210000052,
+      "Name": "Uncommon Untyped Fist"
+    },
+    {
+      "ID": 210000061,
+      "Name": "Common- Untyped Fist"
+    },
+    {
+      "ID": 210000063,
+      "Name": "Common+ Untyped Fist"
+    },
+    {
+      "ID": 210000074,
+      "Name": "Uncommon- Untyped Fist"
+    },
+    {
+      "ID": 210000075,
+      "Name": "Uncommon~ Untyped Fist"
+    },
+    {
+      "ID": 210000076,
+      "Name": "Uncommon+ Untyped Fist"
+    },
+    {
+      "ID": 210000101,
+      "Name": "Common Elemental Fist"
+    },
+    {
+      "ID": 210000102,
+      "Name": "Uncommon Elemental Fist"
+    },
+    {
+      "ID": 210000501,
+      "Name": "Common Fire Fist"
+    },
+    {
+      "ID": 210000502,
+      "Name": "Uncommon Fire Fist"
+    },
+    {
+      "ID": 210000504,
+      "Name": "Legendary Fire Fist"
+    },
+    {
+      "ID": 210000601,
+      "Name": "Common Lightning Fist"
+    },
+    {
+      "ID": 210000602,
+      "Name": "Uncommon Lightning Fist"
+    },
+    {
+      "ID": 210000603,
+      "Name": "Rare Lightning Fist"
+    },
+    {
+      "ID": 210000701,
+      "Name": "Common Holy Fist"
+    },
+    {
+      "ID": 210000702,
+      "Name": "Uncommon Holy Fist"
+    },
+    {
+      "ID": 210000703,
+      "Name": "Rare Holy Fist"
+    },
+    {
+      "ID": 210000803,
+      "Name": "Rare Magic Fist"
+    },
+    {
+      "ID": 210000901,
+      "Name": "Common Frost Fist"
+    },
+    {
+      "ID": 210000902,
+      "Name": "Uncommon Frost Fist"
+    },
+    {
+      "ID": 210001101,
+      "Name": "Common Blood Fist"
+    },
+    {
+      "ID": 210001102,
+      "Name": "Uncommon Blood Fist"
+    },
+    {
+      "ID": 210001301,
+      "Name": "Common Rot Fist"
+    },
+    {
+      "ID": 210001302,
+      "Name": "Uncommon Rot Fist"
+    },
+    {
+      "ID": 210001303,
+      "Name": "Rare Rot Fist"
+    },
+    {
+      "ID": 210001304,
+      "Name": "Legendary Rot Fist"
+    },
+    {
+      "ID": 210001401,
+      "Name": "Common Sleep Fist"
+    },
+    {
+      "ID": 210001402,
+      "Name": "Uncommon Sleep Fist"
+    },
+    {
+      "ID": 210001403,
+      "Name": "Rare Sleep Fist"
+    },
+    {
+      "ID": 210001404,
+      "Name": "Legendary Sleep Fist"
+    },
+    {
+      "ID": 210005003,
+      "Name": "Unique Fist"
+    },
+    {
+      "ID": 210005603,
+      "Name": "Unique Lightning Fist"
+    },
+    {
+      "ID": 210005703,
+      "Name": "Unique Holy Fist"
+    },
+    {
+      "ID": 210005803,
+      "Name": "Unique Magic Fist"
+    },
+    {
+      "ID": 210006303,
+      "Name": "Unique Rot Fist"
+    },
+    {
+      "ID": 210006403,
+      "Name": "Unique Sleep Fist"
+    },
+    {
+      "ID": 220000001,
+      "Name": "Common Claw"
+    },
+    {
+      "ID": 220000002,
+      "Name": "Uncommon Claw"
+    },
+    {
+      "ID": 220000003,
+      "Name": "Rare Claw"
+    },
+    {
+      "ID": 220000011,
+      "Name": "Common- Claw"
+    },
+    {
+      "ID": 220000025,
+      "Name": "Uncommon~ Claw"
+    },
+    {
+      "ID": 220000026,
+      "Name": "Uncommon+ Claw"
+    },
+    {
+      "ID": 220000051,
+      "Name": "Common Untyped Claw"
+    },
+    {
+      "ID": 220000052,
+      "Name": "Uncommon Untyped Claw"
+    },
+    {
+      "ID": 220000053,
+      "Name": "Rare Untyped Claw"
+    },
+    {
+      "ID": 220000061,
+      "Name": "Common- Untyped Claw"
+    },
+    {
+      "ID": 220000075,
+      "Name": "Uncommon~ Untyped Claw"
+    },
+    {
+      "ID": 220000076,
+      "Name": "Uncommon+ Untyped Claw"
+    },
+    {
+      "ID": 220000101,
+      "Name": "Common Elemental Claw"
+    },
+    {
+      "ID": 220000102,
+      "Name": "Uncommon Elemental Claw"
+    },
+    {
+      "ID": 220000103,
+      "Name": "Rare Elemental Claw"
+    },
+    {
+      "ID": 220000501,
+      "Name": "Common Fire Claw"
+    },
+    {
+      "ID": 220000502,
+      "Name": "Uncommon Fire Claw"
+    },
+    {
+      "ID": 220000503,
+      "Name": "Rare Fire Claw"
+    },
+    {
+      "ID": 220000601,
+      "Name": "Common Lightning Claw"
+    },
+    {
+      "ID": 220000602,
+      "Name": "Uncommon Lightning Claw"
+    },
+    {
+      "ID": 220000603,
+      "Name": "Rare Lightning Claw"
+    },
+    {
+      "ID": 220000701,
+      "Name": "Common Holy Claw"
+    },
+    {
+      "ID": 220000702,
+      "Name": "Uncommon Holy Claw"
+    },
+    {
+      "ID": 220000703,
+      "Name": "Rare Holy Claw"
+    },
+    {
+      "ID": 220000901,
+      "Name": "Common Frost Claw"
+    },
+    {
+      "ID": 220000902,
+      "Name": "Uncommon Frost Claw"
+    },
+    {
+      "ID": 220000903,
+      "Name": "Rare Frost Claw"
+    },
+    {
+      "ID": 220001002,
+      "Name": "Uncommon Poison Claw"
+    },
+    {
+      "ID": 220001101,
+      "Name": "Common Blood Claw"
+    },
+    {
+      "ID": 220001102,
+      "Name": "Uncommon Blood Claw"
+    },
+    {
+      "ID": 220001103,
+      "Name": "Rare Blood Claw"
+    },
+    {
+      "ID": 220001301,
+      "Name": "Common Rot Claw"
+    },
+    {
+      "ID": 220001302,
+      "Name": "Uncommon Rot Claw"
+    },
+    {
+      "ID": 220001303,
+      "Name": "Rare Rot Claw"
+    },
+    {
+      "ID": 220001401,
+      "Name": "Common Sleep Claw"
+    },
+    {
+      "ID": 220001402,
+      "Name": "Uncommon Sleep Claw"
+    },
+    {
+      "ID": 220001403,
+      "Name": "Rare Sleep Claw"
+    },
+    {
+      "ID": 220005003,
+      "Name": "Unique Claw"
+    },
+    {
+      "ID": 220005053,
+      "Name": "Unique Untyped Claw"
+    },
+    {
+      "ID": 220005103,
+      "Name": "Unique Elemental Claw"
+    },
+    {
+      "ID": 220005503,
+      "Name": "Unique Fire Claw"
+    },
+    {
+      "ID": 220005603,
+      "Name": "Unique Lightning Claw"
+    },
+    {
+      "ID": 220005703,
+      "Name": "Unique Holy Claw"
+    },
+    {
+      "ID": 220005903,
+      "Name": "Unique Frost Claw"
+    },
+    {
+      "ID": 220006103,
+      "Name": "Unique Blood Claw"
+    },
+    {
+      "ID": 220006303,
+      "Name": "Unique Rot Claw"
+    },
+    {
+      "ID": 220006403,
+      "Name": "Unique Sleep Claw"
+    },
+    {
+      "ID": 230000001,
+      "Name": "Common Colossal Weapon"
+    },
+    {
+      "ID": 230000002,
+      "Name": "Uncommon Colossal Weapon"
+    },
+    {
+      "ID": 230000003,
+      "Name": "Rare Colossal Weapon"
+    },
+    {
+      "ID": 230000004,
+      "Name": "Legendary Colossal Weapon"
+    },
+    {
+      "ID": 230000013,
+      "Name": "Common+ Colossal Weapon"
+    },
+    {
+      "ID": 230000024,
+      "Name": "Uncommon- Colossal Weapon"
+    },
+    {
+      "ID": 230000025,
+      "Name": "Uncommon~ Colossal Weapon"
+    },
+    {
+      "ID": 230000026,
+      "Name": "Uncommon+ Colossal Weapon"
+    },
+    {
+      "ID": 230000051,
+      "Name": "Common Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000052,
+      "Name": "Uncommon Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000053,
+      "Name": "Rare Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000063,
+      "Name": "Common+ Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000074,
+      "Name": "Uncommon- Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000075,
+      "Name": "Uncommon~ Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000076,
+      "Name": "Uncommon+ Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230000101,
+      "Name": "Common Elemental Colossal Weapon"
+    },
+    {
+      "ID": 230000102,
+      "Name": "Uncommon Elemental Colossal Weapon"
+    },
+    {
+      "ID": 230000103,
+      "Name": "Rare Elemental Colossal Weapon"
+    },
+    {
+      "ID": 230000501,
+      "Name": "Common Fire Colossal Weapon"
+    },
+    {
+      "ID": 230000502,
+      "Name": "Uncommon Fire Colossal Weapon"
+    },
+    {
+      "ID": 230000503,
+      "Name": "Rare Fire Colossal Weapon"
+    },
+    {
+      "ID": 230000601,
+      "Name": "Common Lightning Colossal Weapon"
+    },
+    {
+      "ID": 230000602,
+      "Name": "Uncommon Lightning Colossal Weapon"
+    },
+    {
+      "ID": 230000603,
+      "Name": "Rare Lightning Colossal Weapon"
+    },
+    {
+      "ID": 230000701,
+      "Name": "Common Holy Colossal Weapon"
+    },
+    {
+      "ID": 230000702,
+      "Name": "Uncommon Holy Colossal Weapon"
+    },
+    {
+      "ID": 230000703,
+      "Name": "Rare Holy Colossal Weapon"
+    },
+    {
+      "ID": 230000801,
+      "Name": "Common Magic Colossal Weapon"
+    },
+    {
+      "ID": 230000802,
+      "Name": "Uncommon Magic Colossal Weapon"
+    },
+    {
+      "ID": 230000803,
+      "Name": "Rare Magic Colossal Weapon"
+    },
+    {
+      "ID": 230000901,
+      "Name": "Common Frost Colossal Weapon"
+    },
+    {
+      "ID": 230000902,
+      "Name": "Uncommon Frost Colossal Weapon"
+    },
+    {
+      "ID": 230000903,
+      "Name": "Rare Frost Colossal Weapon"
+    },
+    {
+      "ID": 230001001,
+      "Name": "Common Poison Colossal Weapon"
+    },
+    {
+      "ID": 230001002,
+      "Name": "Uncommon Poison Colossal Weapon"
+    },
+    {
+      "ID": 230001003,
+      "Name": "Rare Poison Colossal Weapon"
+    },
+    {
+      "ID": 230001103,
+      "Name": "Rare Blood Colossal Weapon"
+    },
+    {
+      "ID": 230001201,
+      "Name": "Common Occult Colossal Weapon"
+    },
+    {
+      "ID": 230001202,
+      "Name": "Uncommon Occult Colossal Weapon"
+    },
+    {
+      "ID": 230001203,
+      "Name": "Rare Occult Colossal Weapon"
+    },
+    {
+      "ID": 230001301,
+      "Name": "Common Rot Colossal Weapon"
+    },
+    {
+      "ID": 230001302,
+      "Name": "Uncommon Rot Colossal Weapon"
+    },
+    {
+      "ID": 230001303,
+      "Name": "Rare Rot Colossal Weapon"
+    },
+    {
+      "ID": 230001304,
+      "Name": "Legendary Rot Colossal Weapon"
+    },
+    {
+      "ID": 230001401,
+      "Name": "Common Sleep Colossal Weapon"
+    },
+    {
+      "ID": 230001402,
+      "Name": "Uncommon Sleep Colossal Weapon"
+    },
+    {
+      "ID": 230001403,
+      "Name": "Rare Sleep Colossal Weapon"
+    },
+    {
+      "ID": 230001404,
+      "Name": "Legendary Sleep Colossal Weapon"
+    },
+    {
+      "ID": 230005003,
+      "Name": "Unique Colossal Weapon"
+    },
+    {
+      "ID": 230005053,
+      "Name": "Unique Untyped Colossal Weapon"
+    },
+    {
+      "ID": 230005103,
+      "Name": "Unique Elemental Colossal Weapon"
+    },
+    {
+      "ID": 230005503,
+      "Name": "Unique Fire Colossal Weapon"
+    },
+    {
+      "ID": 230005603,
+      "Name": "Unique Lightning Colossal Weapon"
+    },
+    {
+      "ID": 230005703,
+      "Name": "Unique Holy Colossal Weapon"
+    },
+    {
+      "ID": 230005803,
+      "Name": "Unique Magic Colossal Weapon"
+    },
+    {
+      "ID": 230005903,
+      "Name": "Unique Frost Colossal Weapon"
+    },
+    {
+      "ID": 230006003,
+      "Name": "Unique Poison Colossal Weapon"
+    },
+    {
+      "ID": 230006103,
+      "Name": "Unique Blood Colossal Weapon"
+    },
+    {
+      "ID": 230006203,
+      "Name": "Unique Occult Colossal Weapon"
+    },
+    {
+      "ID": 230006303,
+      "Name": "Unique Rot Colossal Weapon"
+    },
+    {
+      "ID": 230006403,
+      "Name": "Unique Sleep Colossal Weapon"
+    },
+    {
+      "ID": 240000001,
+      "Name": "Common Torch"
+    },
+    {
+      "ID": 240000002,
+      "Name": "Uncommon Torch"
+    },
+    {
+      "ID": 240000003,
+      "Name": "Rare Torch"
+    },
+    {
+      "ID": 240000011,
+      "Name": "Common- Torch"
+    },
+    {
+      "ID": 240000013,
+      "Name": "Common+ Torch"
+    },
+    {
+      "ID": 240000024,
+      "Name": "Uncommon- Torch"
+    },
+    {
+      "ID": 240000026,
+      "Name": "Uncommon+ Torch"
+    },
+    {
+      "ID": 240000501,
+      "Name": "Common Fire Torch"
+    },
+    {
+      "ID": 240000502,
+      "Name": "Uncommon Fire Torch"
+    },
+    {
+      "ID": 240000702,
+      "Name": "Uncommon Holy Torch"
+    },
+    {
+      "ID": 240000803,
+      "Name": "Rare Magic Torch"
+    },
+    {
+      "ID": 240000903,
+      "Name": "Rare Frost Torch"
+    },
+    {
+      "ID": 240001403,
+      "Name": "Rare Sleep Torch"
+    },
+    {
+      "ID": 300000001,
+      "Name": "Common Small Shield"
+    },
+    {
+      "ID": 300000002,
+      "Name": "Uncommon Small Shield"
+    },
+    {
+      "ID": 300000003,
+      "Name": "Rare Small Shield"
+    },
+    {
+      "ID": 300000011,
+      "Name": "Common- Small Shield"
+    },
+    {
+      "ID": 300000012,
+      "Name": "Common~ Small Shield"
+    },
+    {
+      "ID": 300000013,
+      "Name": "Common+ Small Shield"
+    },
+    {
+      "ID": 300000024,
+      "Name": "Uncommon- Small Shield"
+    },
+    {
+      "ID": 300000025,
+      "Name": "Uncommon~ Small Shield"
+    },
+    {
+      "ID": 300000026,
+      "Name": "Uncommon+ Small Shield"
+    },
+    {
+      "ID": 300000051,
+      "Name": "Common Untyped Small Shield"
+    },
+    {
+      "ID": 300000052,
+      "Name": "Uncommon Untyped Small Shield"
+    },
+    {
+      "ID": 300000053,
+      "Name": "Rare Untyped Small Shield"
+    },
+    {
+      "ID": 300000061,
+      "Name": "Common- Untyped Small Shield"
+    },
+    {
+      "ID": 300000062,
+      "Name": "Common~ Untyped Small Shield"
+    },
+    {
+      "ID": 300000063,
+      "Name": "Common+ Untyped Small Shield"
+    },
+    {
+      "ID": 300000074,
+      "Name": "Uncommon- Untyped Small Shield"
+    },
+    {
+      "ID": 300000075,
+      "Name": "Uncommon~ Untyped Small Shield"
+    },
+    {
+      "ID": 300000076,
+      "Name": "Uncommon+ Untyped Small Shield"
+    },
+    {
+      "ID": 300000101,
+      "Name": "Common Elemental Small Shield"
+    },
+    {
+      "ID": 300000102,
+      "Name": "Uncommon Elemental Small Shield"
+    },
+    {
+      "ID": 300000103,
+      "Name": "Rare Elemental Small Shield"
+    },
+    {
+      "ID": 300000701,
+      "Name": "Common Holy Small Shield"
+    },
+    {
+      "ID": 300000702,
+      "Name": "Uncommon Holy Small Shield"
+    },
+    {
+      "ID": 300000703,
+      "Name": "Rare Holy Small Shield"
+    },
+    {
+      "ID": 300000801,
+      "Name": "Common Magic Small Shield"
+    },
+    {
+      "ID": 300000802,
+      "Name": "Uncommon Magic Small Shield"
+    },
+    {
+      "ID": 300000803,
+      "Name": "Rare Magic Small Shield"
+    },
+    {
+      "ID": 300001003,
+      "Name": "Rare Poison Small Shield"
+    },
+    {
+      "ID": 300001103,
+      "Name": "Rare Blood Small Shield"
+    },
+    {
+      "ID": 300005003,
+      "Name": "Unique Small Shield"
+    },
+    {
+      "ID": 300005053,
+      "Name": "Unique Untyped Small Shield"
+    },
+    {
+      "ID": 300005103,
+      "Name": "Unique Elemental Small Shield"
+    },
+    {
+      "ID": 300005703,
+      "Name": "Unique Holy Small Shield"
+    },
+    {
+      "ID": 300005803,
+      "Name": "Unique Magic Small Shield"
+    },
+    {
+      "ID": 300006003,
+      "Name": "Unique Poison Small Shield"
+    },
+    {
+      "ID": 300006103,
+      "Name": "Unique Blood Small Shield"
+    },
+    {
+      "ID": 310000001,
+      "Name": "Common Medium Shield"
+    },
+    {
+      "ID": 310000002,
+      "Name": "Uncommon Medium Shield"
+    },
+    {
+      "ID": 310000003,
+      "Name": "Rare Medium Shield"
+    },
+    {
+      "ID": 310000011,
+      "Name": "Common- Medium Shield"
+    },
+    {
+      "ID": 310000012,
+      "Name": "Common~ Medium Shield"
+    },
+    {
+      "ID": 310000013,
+      "Name": "Common+ Medium Shield"
+    },
+    {
+      "ID": 310000024,
+      "Name": "Uncommon- Medium Shield"
+    },
+    {
+      "ID": 310000025,
+      "Name": "Uncommon~ Medium Shield"
+    },
+    {
+      "ID": 310000026,
+      "Name": "Uncommon+ Medium Shield"
+    },
+    {
+      "ID": 310000051,
+      "Name": "Common Untyped Medium Shield"
+    },
+    {
+      "ID": 310000052,
+      "Name": "Uncommon Untyped Medium Shield"
+    },
+    {
+      "ID": 310000053,
+      "Name": "Rare Untyped Medium Shield"
+    },
+    {
+      "ID": 310000061,
+      "Name": "Common- Untyped Medium Shield"
+    },
+    {
+      "ID": 310000062,
+      "Name": "Common~ Untyped Medium Shield"
+    },
+    {
+      "ID": 310000063,
+      "Name": "Common+ Untyped Medium Shield"
+    },
+    {
+      "ID": 310000074,
+      "Name": "Uncommon- Untyped Medium Shield"
+    },
+    {
+      "ID": 310000075,
+      "Name": "Uncommon~ Untyped Medium Shield"
+    },
+    {
+      "ID": 310000076,
+      "Name": "Uncommon+ Untyped Medium Shield"
+    },
+    {
+      "ID": 310000101,
+      "Name": "Common Elemental Medium Shield"
+    },
+    {
+      "ID": 310000102,
+      "Name": "Uncommon Elemental Medium Shield"
+    },
+    {
+      "ID": 310000103,
+      "Name": "Rare Elemental Medium Shield"
+    },
+    {
+      "ID": 310000701,
+      "Name": "Common Holy Medium Shield"
+    },
+    {
+      "ID": 310000702,
+      "Name": "Uncommon Holy Medium Shield"
+    },
+    {
+      "ID": 310000703,
+      "Name": "Rare Holy Medium Shield"
+    },
+    {
+      "ID": 310000801,
+      "Name": "Common Magic Medium Shield"
+    },
+    {
+      "ID": 310000802,
+      "Name": "Uncommon Magic Medium Shield"
+    },
+    {
+      "ID": 310000803,
+      "Name": "Rare Magic Medium Shield"
+    },
+    {
+      "ID": 310001101,
+      "Name": "Common Blood Medium Shield"
+    },
+    {
+      "ID": 310005003,
+      "Name": "Unique Medium Shield"
+    },
+    {
+      "ID": 310005053,
+      "Name": "Unique Untyped Medium Shield"
+    },
+    {
+      "ID": 310005103,
+      "Name": "Unique Elemental Medium Shield"
+    },
+    {
+      "ID": 310005703,
+      "Name": "Unique Holy Medium Shield"
+    },
+    {
+      "ID": 310005803,
+      "Name": "Unique Magic Medium Shield"
+    },
+    {
+      "ID": 320000001,
+      "Name": "Common Greatshield"
+    },
+    {
+      "ID": 320000002,
+      "Name": "Uncommon Greatshield"
+    },
+    {
+      "ID": 320000003,
+      "Name": "Rare Greatshield"
+    },
+    {
+      "ID": 320000013,
+      "Name": "Common+ Greatshield"
+    },
+    {
+      "ID": 320000024,
+      "Name": "Uncommon- Greatshield"
+    },
+    {
+      "ID": 320000025,
+      "Name": "Uncommon~ Greatshield"
+    },
+    {
+      "ID": 320000026,
+      "Name": "Uncommon+ Greatshield"
+    },
+    {
+      "ID": 320000051,
+      "Name": "Common Untyped Greatshield"
+    },
+    {
+      "ID": 320000052,
+      "Name": "Uncommon Untyped Greatshield"
+    },
+    {
+      "ID": 320000053,
+      "Name": "Rare Untyped Greatshield"
+    },
+    {
+      "ID": 320000063,
+      "Name": "Common+ Untyped Greatshield"
+    },
+    {
+      "ID": 320000074,
+      "Name": "Uncommon- Untyped Greatshield"
+    },
+    {
+      "ID": 320000075,
+      "Name": "Uncommon~ Untyped Greatshield"
+    },
+    {
+      "ID": 320000076,
+      "Name": "Uncommon+ Untyped Greatshield"
+    },
+    {
+      "ID": 320000101,
+      "Name": "Common Elemental Greatshield"
+    },
+    {
+      "ID": 320000102,
+      "Name": "Uncommon Elemental Greatshield"
+    },
+    {
+      "ID": 320000103,
+      "Name": "Rare Elemental Greatshield"
+    },
+    {
+      "ID": 320000503,
+      "Name": "Rare Fire Greatshield"
+    },
+    {
+      "ID": 320000701,
+      "Name": "Common Holy Greatshield"
+    },
+    {
+      "ID": 320000702,
+      "Name": "Uncommon Holy Greatshield"
+    },
+    {
+      "ID": 320000703,
+      "Name": "Rare Holy Greatshield"
+    },
+    {
+      "ID": 320001003,
+      "Name": "Rare Poison Greatshield"
+    },
+    {
+      "ID": 320001102,
+      "Name": "Uncommon Blood Greatshield"
+    },
+    {
+      "ID": 320005003,
+      "Name": "Unique Greatshield"
+    },
+    {
+      "ID": 320005053,
+      "Name": "Unique Untyped Greatshield"
+    },
+    {
+      "ID": 320005103,
+      "Name": "Unique Elemental Greatshield"
+    },
+    {
+      "ID": 320005503,
+      "Name": "Unique Fire Greatshield"
+    },
+    {
+      "ID": 320005703,
+      "Name": "Unique Holy Greatshield"
+    },
+    {
+      "ID": 320006003,
+      "Name": "Unique Poison Greatshield"
+    },
+    {
+      "ID": 330000001,
+      "Name": "Common Staff"
+    },
+    {
+      "ID": 330000002,
+      "Name": "Uncommon Staff"
+    },
+    {
+      "ID": 330000003,
+      "Name": "Rare Staff"
+    },
+    {
+      "ID": 330000004,
+      "Name": "Legendary Staff"
+    },
+    {
+      "ID": 330000011,
+      "Name": "Common- Staff"
+    },
+    {
+      "ID": 330000012,
+      "Name": "Common~ Staff"
+    },
+    {
+      "ID": 330000013,
+      "Name": "Common+ Staff"
+    },
+    {
+      "ID": 330000024,
+      "Name": "Uncommon- Staff"
+    },
+    {
+      "ID": 330000025,
+      "Name": "Uncommon~ Staff"
+    },
+    {
+      "ID": 330000026,
+      "Name": "Uncommon+ Staff"
+    },
+    {
+      "ID": 330001102,
+      "Name": "Uncommon Blood Staff"
+    },
+    {
+      "ID": 330001302,
+      "Name": "Uncommon Rot Staff"
+    },
+    {
+      "ID": 330005003,
+      "Name": "Unique Staff"
+    },
+    {
+      "ID": 340000001,
+      "Name": "Common Seal"
+    },
+    {
+      "ID": 340000002,
+      "Name": "Uncommon Seal"
+    },
+    {
+      "ID": 340000003,
+      "Name": "Rare Seal"
+    },
+    {
+      "ID": 340000011,
+      "Name": "Common- Seal"
+    },
+    {
+      "ID": 340000024,
+      "Name": "Uncommon- Seal"
+    },
+    {
+      "ID": 340000025,
+      "Name": "Uncommon~ Seal"
+    },
+    {
+      "ID": 340000026,
+      "Name": "Uncommon+ Seal"
+    },
+    {
+      "ID": 340005003,
+      "Name": "Unique Seal"
+    },
+    {
+      "ID": 400000001,
+      "Name": "Common Light Bow"
+    },
+    {
+      "ID": 400000002,
+      "Name": "Uncommon Light Bow"
+    },
+    {
+      "ID": 400000011,
+      "Name": "Common- Light Bow"
+    },
+    {
+      "ID": 400000013,
+      "Name": "Common+ Light Bow"
+    },
+    {
+      "ID": 400000024,
+      "Name": "Uncommon- Light Bow"
+    },
+    {
+      "ID": 400000025,
+      "Name": "Uncommon~ Light Bow"
+    },
+    {
+      "ID": 400000051,
+      "Name": "Common Untyped Light Bow"
+    },
+    {
+      "ID": 400000052,
+      "Name": "Uncommon Untyped Light Bow"
+    },
+    {
+      "ID": 400000501,
+      "Name": "Common Fire Light Bow"
+    },
+    {
+      "ID": 400000502,
+      "Name": "Uncommon Fire Light Bow"
+    },
+    {
+      "ID": 400000601,
+      "Name": "Common Lightning Light Bow"
+    },
+    {
+      "ID": 400000602,
+      "Name": "Uncommon Lightning Light Bow"
+    },
+    {
+      "ID": 400000701,
+      "Name": "Common Holy Light Bow"
+    },
+    {
+      "ID": 400000702,
+      "Name": "Uncommon Holy Light Bow"
+    },
+    {
+      "ID": 400000801,
+      "Name": "Common Magic Light Bow"
+    },
+    {
+      "ID": 400000802,
+      "Name": "Uncommon Magic Light Bow"
+    },
+    {
+      "ID": 400000901,
+      "Name": "Common Frost Light Bow"
+    },
+    {
+      "ID": 400000902,
+      "Name": "Uncommon Frost Light Bow"
+    },
+    {
+      "ID": 400001001,
+      "Name": "Common Poison Light Bow"
+    },
+    {
+      "ID": 400001002,
+      "Name": "Uncommon Poison Light Bow"
+    },
+    {
+      "ID": 400001101,
+      "Name": "Common Blood Light Bow"
+    },
+    {
+      "ID": 400001102,
+      "Name": "Uncommon Blood Light Bow"
+    },
+    {
+      "ID": 400001301,
+      "Name": "Common Rot Light Bow"
+    },
+    {
+      "ID": 400001302,
+      "Name": "Uncommon Rot Light Bow"
+    },
+    {
+      "ID": 400001401,
+      "Name": "Common Sleep Light Bow"
+    },
+    {
+      "ID": 400001402,
+      "Name": "Uncommon Sleep Light Bow"
+    },
+    {
+      "ID": 410000001,
+      "Name": "Common Bow"
+    },
+    {
+      "ID": 410000002,
+      "Name": "Uncommon Bow"
+    },
+    {
+      "ID": 410000003,
+      "Name": "Rare Bow"
+    },
+    {
+      "ID": 410000012,
+      "Name": "Common~ Bow"
+    },
+    {
+      "ID": 410000026,
+      "Name": "Uncommon+ Bow"
+    },
+    {
+      "ID": 410000051,
+      "Name": "Common Untyped Bow"
+    },
+    {
+      "ID": 410000052,
+      "Name": "Uncommon Untyped Bow"
+    },
+    {
+      "ID": 410000053,
+      "Name": "Rare Untyped Bow"
+    },
+    {
+      "ID": 410000501,
+      "Name": "Common Fire Bow"
+    },
+    {
+      "ID": 410000502,
+      "Name": "Uncommon Fire Bow"
+    },
+    {
+      "ID": 410000503,
+      "Name": "Rare Fire Bow"
+    },
+    {
+      "ID": 410000601,
+      "Name": "Common Lightning Bow"
+    },
+    {
+      "ID": 410000602,
+      "Name": "Uncommon Lightning Bow"
+    },
+    {
+      "ID": 410000603,
+      "Name": "Rare Lightning Bow"
+    },
+    {
+      "ID": 410000701,
+      "Name": "Common Holy Bow"
+    },
+    {
+      "ID": 410000702,
+      "Name": "Uncommon Holy Bow"
+    },
+    {
+      "ID": 410000703,
+      "Name": "Rare Holy Bow"
+    },
+    {
+      "ID": 410000801,
+      "Name": "Common Magic Bow"
+    },
+    {
+      "ID": 410000802,
+      "Name": "Uncommon Magic Bow"
+    },
+    {
+      "ID": 410000803,
+      "Name": "Rare Magic Bow"
+    },
+    {
+      "ID": 410000901,
+      "Name": "Common Frost Bow"
+    },
+    {
+      "ID": 410000902,
+      "Name": "Uncommon Frost Bow"
+    },
+    {
+      "ID": 410000903,
+      "Name": "Rare Frost Bow"
+    },
+    {
+      "ID": 410001001,
+      "Name": "Common Poison Bow"
+    },
+    {
+      "ID": 410001002,
+      "Name": "Uncommon Poison Bow"
+    },
+    {
+      "ID": 410001003,
+      "Name": "Rare Poison Bow"
+    },
+    {
+      "ID": 410001101,
+      "Name": "Common Blood Bow"
+    },
+    {
+      "ID": 410001102,
+      "Name": "Uncommon Blood Bow"
+    },
+    {
+      "ID": 410001103,
+      "Name": "Rare Blood Bow"
+    },
+    {
+      "ID": 410001301,
+      "Name": "Common Rot Bow"
+    },
+    {
+      "ID": 410001302,
+      "Name": "Uncommon Rot Bow"
+    },
+    {
+      "ID": 410001303,
+      "Name": "Rare Rot Bow"
+    },
+    {
+      "ID": 410001401,
+      "Name": "Common Sleep Bow"
+    },
+    {
+      "ID": 410001402,
+      "Name": "Uncommon Sleep Bow"
+    },
+    {
+      "ID": 410001403,
+      "Name": "Rare Sleep Bow"
+    },
+    {
+      "ID": 410005003,
+      "Name": "Unique Bow"
+    },
+    {
+      "ID": 410005053,
+      "Name": "Unique Untyped Bow"
+    },
+    {
+      "ID": 410005503,
+      "Name": "Unique Fire Bow"
+    },
+    {
+      "ID": 410005603,
+      "Name": "Unique Lightning Bow"
+    },
+    {
+      "ID": 410005703,
+      "Name": "Unique Holy Bow"
+    },
+    {
+      "ID": 410005803,
+      "Name": "Unique Magic Bow"
+    },
+    {
+      "ID": 410005903,
+      "Name": "Unique Frost Bow"
+    },
+    {
+      "ID": 410006003,
+      "Name": "Unique Poison Bow"
+    },
+    {
+      "ID": 410006103,
+      "Name": "Unique Blood Bow"
+    },
+    {
+      "ID": 410006303,
+      "Name": "Unique Rot Bow"
+    },
+    {
+      "ID": 410006403,
+      "Name": "Unique Sleep Bow"
+    },
+    {
+      "ID": 420000001,
+      "Name": "Common Greatbow"
+    },
+    {
+      "ID": 420000002,
+      "Name": "Uncommon Greatbow"
+    },
+    {
+      "ID": 420000003,
+      "Name": "Rare Greatbow"
+    },
+    {
+      "ID": 420000004,
+      "Name": "Legendary Greatbow"
+    },
+    {
+      "ID": 420000013,
+      "Name": "Common+ Greatbow"
+    },
+    {
+      "ID": 420000025,
+      "Name": "Uncommon~ Greatbow"
+    },
+    {
+      "ID": 420000051,
+      "Name": "Common Untyped Greatbow"
+    },
+    {
+      "ID": 420000052,
+      "Name": "Uncommon Untyped Greatbow"
+    },
+    {
+      "ID": 420000053,
+      "Name": "Rare Untyped Greatbow"
+    },
+    {
+      "ID": 420000703,
+      "Name": "Rare Holy Greatbow"
+    },
+    {
+      "ID": 420005003,
+      "Name": "Unique Greatbow"
+    },
+    {
+      "ID": 420005053,
+      "Name": "Unique Untyped Greatbow"
+    },
+    {
+      "ID": 420005703,
+      "Name": "Unique Holy Greatbow"
+    },
+    {
+      "ID": 430000001,
+      "Name": "Common Crossbow"
+    },
+    {
+      "ID": 430000002,
+      "Name": "Uncommon Crossbow"
+    },
+    {
+      "ID": 430000003,
+      "Name": "Rare Crossbow"
+    },
+    {
+      "ID": 430000011,
+      "Name": "Common- Crossbow"
+    },
+    {
+      "ID": 430000012,
+      "Name": "Common~ Crossbow"
+    },
+    {
+      "ID": 430000013,
+      "Name": "Common+ Crossbow"
+    },
+    {
+      "ID": 430000025,
+      "Name": "Uncommon~ Crossbow"
+    },
+    {
+      "ID": 430000051,
+      "Name": "Common Untyped Crossbow"
+    },
+    {
+      "ID": 430000052,
+      "Name": "Uncommon Untyped Crossbow"
+    },
+    {
+      "ID": 430000053,
+      "Name": "Rare Untyped Crossbow"
+    },
+    {
+      "ID": 430000802,
+      "Name": "Uncommon Magic Crossbow"
+    },
+    {
+      "ID": 430005003,
+      "Name": "Unique Crossbow"
+    },
+    {
+      "ID": 430005053,
+      "Name": "Unique Untyped Crossbow"
+    },
+    {
+      "ID": 440000002,
+      "Name": "Uncommon Ballista"
+    },
+    {
+      "ID": 440000003,
+      "Name": "Rare Ballista"
+    },
+    {
+      "ID": 440000025,
+      "Name": "Uncommon~ Ballista"
+    },
+    {
+      "ID": 440000052,
+      "Name": "Uncommon Untyped Ballista"
+    },
+    {
+      "ID": 440000053,
+      "Name": "Rare Untyped Ballista"
+    },
+    {
+      "ID": 440005003,
+      "Name": "Unique Ballista"
+    },
+    {
+      "ID": 440005053,
+      "Name": "Unique Untyped Ballista"
+    }
+  ]
+}

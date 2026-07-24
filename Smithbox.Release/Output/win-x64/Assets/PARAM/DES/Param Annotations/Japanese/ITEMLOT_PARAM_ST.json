@@ -1,0 +1,368 @@
+{
+  "Param": "ITEMLOT_PARAM_ST",
+  "Type": "ITEMLOT_PARAM_ST",
+  "Name": "ITEMLOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lotItem_Rarity",
+      "Name": "レアリティ設定",
+      "Description": "宝箱などに、どれくらい貴重なアイテムが入っているかを指定する"
+    },
+    {
+      "Field": "Pad0",
+      "Name": "パディング0",
+      "Description": "パディング"
+    },
+    {
+      "Field": "lotItemCategory01",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId01",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum01",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint01",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体100％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint01",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint01",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck01",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory02",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId02",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum02",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint02",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体101％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint02",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint02",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck02",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad2",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory03",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId03",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum03",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint03",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体102％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint03",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint03",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck03",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad3",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory04",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId04",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum04",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint04",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体103％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint04",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint04",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck04",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad4",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory05",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId05",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum05",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint05",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体104％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint05",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint05",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck05",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad5",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory06",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId06",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum06",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint06",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体105％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint06",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint06",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck06",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad6",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory07",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId07",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum07",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint07",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体106％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint07",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint07",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck07",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad7",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory08",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemId08",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemNum08",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemBasePoint08",
+      "Name": "基本出現ポイント",
+      "Description": "アイテムの基本的な出現ポイント（大体107％で数値を入力していく"
+    },
+    {
+      "Field": "QWCBasePoint08",
+      "Name": "ＱＷＣ基本出現ポイント",
+      "Description": "そのアイテムのＱＷＣによる基本的な出現しやすさ"
+    },
+    {
+      "Field": "QWCAppliesPoint08",
+      "Name": "ＱＷＣ黒白適用開始値",
+      "Description": "【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定"
+    },
+    {
+      "Field": "enableLuck08",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "Pad8",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "hostOnlyItemCate",
+      "Name": "ホストオンリーアイテムのカテゴリ",
+      "Description": "シングルプレイ時・マルチプレイのホストのみ取得可能のアイテムカテゴリ"
+    },
+    {
+      "Field": "hostOnlyItemId",
+      "Name": "ホストオンリーアイテムのID",
+      "Description": "シングルプレイ時・マルチプレイのホストのみ取得可能のアイテムID"
+    },
+    {
+      "Field": "hostOnlyItemNum",
+      "Name": "ホストオンリーアイテムの個数",
+      "Description": "シングルプレイ時・マルチプレイのホストのみ取得可能のアイテム個数"
+    },
+    {
+      "Field": "Pad9",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "eventId",
+      "Name": "アクションID",
+      "Description": "この抽選パラメータを有効/無効かを監視するイベントID(-1、0：イベントID無視)"
+    },
+    {
+      "Field": "Pad10",
+      "Name": "パディング2",
+      "Description": ""
+    }
+  ]
+}

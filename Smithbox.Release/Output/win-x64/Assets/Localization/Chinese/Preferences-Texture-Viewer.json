@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Character_Aliases",
+      "Text": "显示角色别名"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Character_Aliases_TT",
+      "Text": "启用后，显示角色别名。"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases",
+      "Text": "显示资源别名"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases_TT",
+      "Text": "启用后，显示资源（对象）别名。"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases",
+      "Text": "显示部件别名"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases_TT",
+      "Text": "启用后，显示部件别名。"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries",
+      "Text": "显示低细节条目"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries_TT",
+      "Text": "启用后，显示低细节条目。"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases",
+      "Text": "显示粒子别名"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases_TT",
+      "Text": "启用后，显示粒子别名。"
+    }
+  ]
+}

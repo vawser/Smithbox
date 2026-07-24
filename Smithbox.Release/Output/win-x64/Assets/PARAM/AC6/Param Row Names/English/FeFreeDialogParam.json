@@ -1,0 +1,191 @@
+{
+  "Name": "FeFreeDialogParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Sample: Upper left (small)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Sample: Upper left (large)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Sample: Center (small)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Sample: Center (large)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mission dialogue 1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "mission dialogue 2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "mission dialogue 3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Mission dialogue 2-1"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Mission dialogue 2-2"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Mission dialogue 2-3"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Mission dialogue 3-1"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Mission dialogue 3-2"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Mission dialogue 3-3"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "subtitle test"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Image production test 01"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Image production test 02"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Image production test 03"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Image production test 04"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Image production test 05"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Image production test 06"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "blackout mock"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Mission log: top left, middle"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Mission log: Upper left, 1st grade"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Mission log: Upper left, 2nd grade"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Submission log: top left, middle"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Submission log: Upper left, 1st grade"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Submission log: Upper left, 2nd grade"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Out of area warning display"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "on center display"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "center display bottom"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "test display"
+      ]
+    }
+  ]
+}

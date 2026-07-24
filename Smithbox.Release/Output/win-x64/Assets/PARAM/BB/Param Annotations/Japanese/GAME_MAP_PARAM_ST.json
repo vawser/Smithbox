@@ -1,0 +1,28 @@
+{
+  "Param": "GAME_MAP_PARAM_ST",
+  "Type": "GAME_MAP_PARAM_ST",
+  "Name": "GAME_MAP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "settingNo_timeSlotA",
+      "Name": "１５時_ライトグループID",
+      "Description": "１５時_ライトグループID"
+    },
+    {
+      "Field": "settingNo_timeSlotB",
+      "Name": "夕方_ライトグループID",
+      "Description": "夕方_ライトグループID"
+    },
+    {
+      "Field": "settingNo_timeSlotC",
+      "Name": "夜_ライトグループID",
+      "Description": "夜_ライトグループID"
+    },
+    {
+      "Field": "settingNo_timeSlotD",
+      "Name": "異様な月_ライトグループID",
+      "Description": "異様な月_ライトグループID"
+    }
+  ]
+}

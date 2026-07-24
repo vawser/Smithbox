@@ -1,0 +1,1433 @@
+{
+  "Name": "generatorlocation_m10_14_00_00",
+  "Entries": [
+    {
+      "ID": 55,
+      "Entries": [
+        "[GEN:55] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[GEN:56] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[GEN:57] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "[GEN:58] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[GEN:65] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[GEN:66] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "[GEN:265] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "[GEN:266] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[GEN:310] Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[GEN:311] Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[GEN:520] Bowman Guthry"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "[GEN:521] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "[GEN:526] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "[GEN:527] Ashen Knight Boyd"
+      ]
+    },
+    {
+      "ID": 528,
+      "Entries": [
+        "[GEN:528] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 529,
+      "Entries": [
+        "[GEN:529] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "[GEN:803] The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "[GEN:911] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 926,
+      "Entries": [
+        "[GEN:926] Forlorn"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[GEN:1011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[GEN:1012] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[GEN:1110] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[GEN:1111] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[GEN:1112] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[GEN:1113] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[GEN:1120] Undead Boar"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "[GEN:1121] Undead Boar"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "[GEN:1122] Small Boar"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[GEN:1140] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[GEN:1150] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "[GEN:1160] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1161,
+      "Entries": [
+        "[GEN:1161] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1162,
+      "Entries": [
+        "[GEN:1162] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[GEN:1180] Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 1181,
+      "Entries": [
+        "[GEN:1181] Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "[GEN:1190] Undead Boar"
+      ]
+    },
+    {
+      "ID": 1195,
+      "Entries": [
+        "[GEN:1195] Mimic"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[GEN:1200] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[GEN:1210] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[GEN:1220] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[GEN:1230] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1231,
+      "Entries": [
+        "[GEN:1231] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "[GEN:1240] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "[GEN:1250] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[GEN:1260] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "[GEN:1270] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "[GEN:1280] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[GEN:1301] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[GEN:1310] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[GEN:1320] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[GEN:2010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[GEN:2020] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[GEN:2030] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[GEN:2040] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[GEN:2050] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[GEN:2102] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "[GEN:2104] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "[GEN:2106] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        "[GEN:2108] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[GEN:2110] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        "[GEN:2112] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        "[GEN:2113] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "[GEN:2114] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        "[GEN:2115] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2116,
+      "Entries": [
+        "[GEN:2116] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2117,
+      "Entries": [
+        "[GEN:2117] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Hollow Priest"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "[GEN:2250] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2260,
+      "Entries": [
+        "[GEN:2260] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[GEN:2310] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "[GEN:2320] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[GEN:2510] Hollow Priest"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "[GEN:2511] Hollow Priest"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "[GEN:2520] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "[GEN:2521] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 2522,
+      "Entries": [
+        "[GEN:2522] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 2530,
+      "Entries": [
+        "[GEN:2530] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2531,
+      "Entries": [
+        "[GEN:2531] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2532,
+      "Entries": [
+        "[GEN:2532] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2533,
+      "Entries": [
+        "[GEN:2533] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2534,
+      "Entries": [
+        "[GEN:2534] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[GEN:2700] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[GEN:2710] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "[GEN:2720] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 2740,
+      "Entries": [
+        "[GEN:2740] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "[GEN:3011] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "[GEN:3012] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "[GEN:3013] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[GEN:3040] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[GEN:3050] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[GEN:3060] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[GEN:3090] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "[GEN:3105] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[GEN:3120] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[GEN:3130] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "[GEN:3140] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[GEN:3150] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[GEN:3160] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "[GEN:3170] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[GEN:3510] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "[GEN:3550] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3551,
+      "Entries": [
+        "[GEN:3551] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3552,
+      "Entries": [
+        "[GEN:3552] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3553,
+      "Entries": [
+        "[GEN:3553] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3554,
+      "Entries": [
+        "[GEN:3554] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3555,
+      "Entries": [
+        "[GEN:3555] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3556,
+      "Entries": [
+        "[GEN:3556] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3557,
+      "Entries": [
+        "[GEN:3557] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3558,
+      "Entries": [
+        "[GEN:3558] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3590,
+      "Entries": [
+        "[GEN:3590] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 3591,
+      "Entries": [
+        "[GEN:3591] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Basilisk"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[GEN:4010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "[GEN:4011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "[GEN:4012] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "[GEN:4013] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "[GEN:4014] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "[GEN:4090] Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[GEN:4210] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[GEN:4500] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "[GEN:4501] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "[GEN:4502] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4503,
+      "Entries": [
+        "[GEN:4503] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[GEN:4600] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[GEN:4610] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[GEN:5010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "[GEN:5011] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "[GEN:5012] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "[GEN:5013] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "[GEN:5014] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[GEN:5020] Basilisk"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[GEN:5030] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "[GEN:5110] Dual Wielding Swordsman Phantom"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "[GEN:5250] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5251,
+      "Entries": [
+        "[GEN:5251] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 5252,
+      "Entries": [
+        "[GEN:5252] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 5253,
+      "Entries": [
+        "[GEN:5253] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 5254,
+      "Entries": [
+        "[GEN:5254] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "[GEN:5300] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 5390,
+      "Entries": [
+        "[GEN:5390] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "[GEN:5500] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "[GEN:5510] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "[GEN:5520] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        "[GEN:5530] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5540,
+      "Entries": [
+        "[GEN:5540] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "[GEN:5700] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5701,
+      "Entries": [
+        "[GEN:5701] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5702,
+      "Entries": [
+        "[GEN:5702] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5703,
+      "Entries": [
+        "[GEN:5703] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 5704,
+      "Entries": [
+        "[GEN:5704] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5705,
+      "Entries": [
+        "[GEN:5705] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[GEN:6001] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[GEN:6002] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[GEN:6003] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[GEN:6004] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[GEN:6005] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "[GEN:6006] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "[GEN:6007] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "[GEN:6008] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "[GEN:6009] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "[GEN:6011] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[GEN:6020] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "[GEN:6050] Porcine Peasant Phantom"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[GEN:6100] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "[GEN:6101] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "[GEN:6102] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "[GEN:6103] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "[GEN:6104] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "[GEN:6105] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6106,
+      "Entries": [
+        "[GEN:6106] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[GEN:6200] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "[GEN:6201] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "[GEN:6202] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "[GEN:6203] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "[GEN:6204] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "[GEN:6205] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "[GEN:6206] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[GEN:7004] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[GEN:7005] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[GEN:7006] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "[GEN:7007] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "[GEN:7008] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "[GEN:7009] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[GEN:7010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[GEN:7011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[GEN:7030] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "[GEN:7031] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7032,
+      "Entries": [
+        "[GEN:7032] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "[GEN:7040] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "[GEN:7050] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "[GEN:7051] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "[GEN:7300] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "[GEN:7301] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 7302,
+      "Entries": [
+        "[GEN:7302] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7303,
+      "Entries": [
+        "[GEN:7303] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "[GEN:7500] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7501,
+      "Entries": [
+        "[GEN:7501] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 7502,
+      "Entries": [
+        "[GEN:7502] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "[GEN:7510] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "[GEN:7520] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7521,
+      "Entries": [
+        "[GEN:7521] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[GEN:8001] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[GEN:8002] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "[GEN:8003] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "[GEN:8004] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[GEN:8005] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[GEN:8010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "[GEN:8011] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "[GEN:8012] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "[GEN:8013] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "[GEN:8014] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "[GEN:8015] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[GEN:8500] Lord Tseldora"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Voice Marker (Creighton/Pate)"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[GEN:9500] Poison Moth"
+      ]
+    }
+  ]
+}

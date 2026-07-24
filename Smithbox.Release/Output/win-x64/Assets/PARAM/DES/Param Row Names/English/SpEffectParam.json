@@ -1,0 +1,2441 @@
+{
+  "Name": "SpEffectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test_firebolt"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "test_enchant weapon"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "test_cure"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[System] SOSsign"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "test_cureitems"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[System] kickout"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[System] leaveSession"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[System] Parameter change when ghosting"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[System] Parameter change in black"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[System] Black_Soulsign"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[System] Black_ForceJoinSoulsign"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[System] BloodSign"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[System] Soul Steel [Multi]"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[System] Evaluation effect"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[System] Equipped with a point light source"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "PG test"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[QWC] Area_NPC_+1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[QWC] Area_NPC_+2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[QWC] Area_NPC_+3"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "[QWC] Area_NPC_-1"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[QWC] Area_NPC_-2"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "[QWC] Area_NPC_-3"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[QWC] Area_Black_+1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "[QWC] Area_Black_+2"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "[QWC] Area_White_+1"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "[QWC] Area_White_+2"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "[QWC] Area_Gray_+1"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "[QWC] Area_Gray_+2"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "[QWC] Area_Gray_-1"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "[QWC] Area_Gray_-2"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[QWC] Player_Black_+1"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "[QWC] Player_Black_+2"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "[QWC] Player_White_+1"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "[QWC] Player_White_+2"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "[QWC] Player_Gray_+1"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "[QWC] Player_Gray_+2"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "[QWC] Player_Gray_-1"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "[QWC] Player_Gray_-2"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Enhancement for Weapon Enchantment"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Enhancements for higher weapon enchantments"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Enhanced for Cursed Enchantments"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "protective membrane"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "water screen"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "perfect shield"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Poison for Poison Cloud"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Corrosion for corrosion clouds"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Plague for Deathcloud"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Recovery of others_HP recovery"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "auditory hallucination"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Hidden"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "black ghosting"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Soul Steel [AI]"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Soul Steel [PC]"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Recovery from Others_Recovery of Abnormal Status"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "HP recovery"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Large recovery of HP"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "revive when dead"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "regenerate"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "status ailment recovery"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "ghost camouflage"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "Gate"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "resuscitation"
+      ]
+    },
+    {
+      "ID": 1515,
+      "Entries": [
+        "black ghost go away"
+      ]
+    },
+    {
+      "ID": 1516,
+      "Entries": [
+        "anti magic"
+      ]
+    },
+    {
+      "ID": 1517,
+      "Entries": [
+        "detoxification"
+      ]
+    },
+    {
+      "ID": 1518,
+      "Entries": [
+        "Antimagic (for user)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Equipment weight up"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Increased load weight"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "pinch attack power up"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Pinch defense up"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Stamina recovery up"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "MP recovery up"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Weak “Regenerate”"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "fire resistance"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "poison resistance"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "magic sensitive"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "magic desensitization"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "magical nature"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "sincere prayer"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "strong ghost"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "white hope"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "black hope"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Weak “Hidden”"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Light \"Ghost Camouflage\""
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "cat landing"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Pheromones"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "greed"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "cherish"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Aim for vital points"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "miraculous nature"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Bleed resistance"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "plague resistance"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Potion A"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Potion B"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Potion C"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Potion D"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Potion E"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "MP Potion A"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "MP Potion B"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Antidote A"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Antidote B"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Panacea"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "whetstone"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "rosin"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Burning pine resin"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "stone of light"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "poison throwing knife"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "soul coin"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "telescope"
+      ]
+    },
+    {
+      "ID": 3023,
+      "Entries": [
+        "Gate"
+      ]
+    },
+    {
+      "ID": 3024,
+      "Entries": [
+        "resuscitation medicine"
+      ]
+    },
+    {
+      "ID": 3026,
+      "Entries": [
+        "hemostatic agent"
+      ]
+    },
+    {
+      "ID": 3027,
+      "Entries": [
+        "Phalanx DS"
+      ]
+    },
+    {
+      "ID": 3028,
+      "Entries": [
+        "King's Shield DS"
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        "King's Sword DS"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Lendl DS"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "Referee DS"
+      ]
+    },
+    {
+      "ID": 3032,
+      "Entries": [
+        "Storm Warrior DS"
+      ]
+    },
+    {
+      "ID": 3033,
+      "Entries": [
+        "Storm Beast DS"
+      ]
+    },
+    {
+      "ID": 3034,
+      "Entries": [
+        "Kamisama DS"
+      ]
+    },
+    {
+      "ID": 3035,
+      "Entries": [
+        "Chimera DS"
+      ]
+    },
+    {
+      "ID": 3036,
+      "Entries": [
+        "Old Man in Yellow DS"
+      ]
+    },
+    {
+      "ID": 3037,
+      "Entries": [
+        "Hiru Demon DS"
+      ]
+    },
+    {
+      "ID": 3038,
+      "Entries": [
+        "Fly Colossus DS"
+      ]
+    },
+    {
+      "ID": 3039,
+      "Entries": [
+        "Libra DS"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Large Spider DS"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Fire Giant DS"
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        "Dragon Demon DS"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Heroine DS"
+      ]
+    },
+    {
+      "ID": 3044,
+      "Entries": [
+        "Fat Demon DS"
+      ]
+    },
+    {
+      "ID": 3045,
+      "Entries": [
+        "Hiryuko DS"
+      ]
+    },
+    {
+      "ID": 3046,
+      "Entries": [
+        "Flying dragon parent DS"
+      ]
+    },
+    {
+      "ID": 3047,
+      "Entries": [
+        "Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 3048,
+      "Entries": [
+        "Bad End DS"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Nameless Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "The pure soul of an unnamed warrior"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Skilled Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Pure Soul of a Skilled Warrior"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Renowned Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Pure Soul of a Famous Warrior"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Legendary Warrior Soul"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Pure Soul of a Legendary Warrior"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "infinity gate"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Continuous damage floor [pit 1 lava]"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Continuous damage floor [Hirumuma]"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Continuous damage floor [poison slow]"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Continuous damage floor [Blood swamp slow foot]"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Continuous damage [Thread]"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "PC Black Ghost [Old Man in Yellow] Doping"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "PC Black Ghost [Old Man in Yellow] Head SFX"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "After continuous damage floor [Hirumuma]"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "After continuous damage floor [poison]"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "After Continuous Damage Floor [Blood Swamp]"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Rumbling cannonball Doping"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Gunpowder barrel doping"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "Continuous damage floor [pit 2 lava]"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "Continuous Damage Floor [Mine Boss Lava]"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "sleep paralysis"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Flame monster 1st stage"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Fire monster 2nd stage"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Fire monster 3rd stage"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Fire monster 4th stage"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Thread covered"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Flycatcher"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "Forced ghost 1st stage"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "Forced ghost 2nd stage"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "Forced ghost 3rd stage"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "gold run enhancement"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Phalanx doping with chibi sticking"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Phalanx Doping with more tiny sticks"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "chimera enhancement"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Covered with leeches"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Okina Summon Black NPC Enhancement"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "Corrupt Man_Poison Attack"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "Slave Soldier_Flame Dagger (Royal Castle 1)"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "General soldier use recovery items"
+      ]
+    },
+    {
+      "ID": 5019,
+      "Entries": [
+        "Knight use recovery items"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Plague Mouse_Plague Attack"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "blood mite _ poisonous blood"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Black Octopus Head_Soul Steel"
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "Centipede_corrosion attack"
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "Bleeding attack (weak resistance/weak effect)"
+      ]
+    },
+    {
+      "ID": 5025,
+      "Entries": [
+        "Bleeding attack (strong resistance/strong effect)"
+      ]
+    },
+    {
+      "ID": 5026,
+      "Entries": [
+        "slug _ poisonous mucus"
+      ]
+    },
+    {
+      "ID": 5027,
+      "Entries": [
+        "Large mosquito_venomous blood_normal time"
+      ]
+    },
+    {
+      "ID": 5028,
+      "Entries": [
+        "Large mosquito _ poisonous blood _ full stomach"
+      ]
+    },
+    {
+      "ID": 5029,
+      "Entries": [
+        "Corrupt Man_For Poison Cloud"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Corrupt Man_Poison Attack"
+      ]
+    },
+    {
+      "ID": 5031,
+      "Entries": [
+        "King Lendor Exclusive Soul Steel"
+      ]
+    },
+    {
+      "ID": 5032,
+      "Entries": [
+        "Kamisama Magic Square_Kinbari"
+      ]
+    },
+    {
+      "ID": 5033,
+      "Entries": [
+        "For NPC overweight doping"
+      ]
+    },
+    {
+      "ID": 5034,
+      "Entries": [
+        "No damage against fire"
+      ]
+    },
+    {
+      "ID": 5035,
+      "Entries": [
+        "Remnants of Soul invalid"
+      ]
+    },
+    {
+      "ID": 5036,
+      "Entries": [
+        "For NPC doping (3.0x damage)"
+      ]
+    },
+    {
+      "ID": 5037,
+      "Entries": [
+        "For NPC doping (1.5x defense)"
+      ]
+    },
+    {
+      "ID": 5038,
+      "Entries": [
+        "For NPC doping (defense x2.0)"
+      ]
+    },
+    {
+      "ID": 5039,
+      "Entries": [
+        "For NPC doping (fire resistant)"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "For NPC doping (double damage)"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "For NPC doping (0.5x damage)"
+      ]
+    },
+    {
+      "ID": 5042,
+      "Entries": [
+        "For Doran reverse doping"
+      ]
+    },
+    {
+      "ID": 5043,
+      "Entries": [
+        "Soul Steal Disabled"
+      ]
+    },
+    {
+      "ID": 5044,
+      "Entries": [
+        "Leech demon recovery"
+      ]
+    },
+    {
+      "ID": 5045,
+      "Entries": [
+        "Prison Castle 3 Doping level +5 to +1"
+      ]
+    },
+    {
+      "ID": 5046,
+      "Entries": [
+        "Prison Castle 3 Doping level +0 to -5"
+      ]
+    },
+    {
+      "ID": 5047,
+      "Entries": [
+        "Prison 3 Doping level -6 to -10"
+      ]
+    },
+    {
+      "ID": 5048,
+      "Entries": [
+        "Prison Castle 3 Doping Level -11~"
+      ]
+    },
+    {
+      "ID": 5049,
+      "Entries": [
+        "For NPC doping (MP recovery)"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Leech Demon Recovery HP 100%~"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "Leech Demon Recovery HP 70%~"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "Leech Demon Recovery HP 40%~"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "Poison immunity"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "No Bleeding"
+      ]
+    },
+    {
+      "ID": 5055,
+      "Entries": [
+        "plague invalid"
+      ]
+    },
+    {
+      "ID": 5056,
+      "Entries": [
+        "Immunity to Poison and Bleeding"
+      ]
+    },
+    {
+      "ID": 5057,
+      "Entries": [
+        "Poison & Plague Immunity"
+      ]
+    },
+    {
+      "ID": 5058,
+      "Entries": [
+        "Immune to Bleeding & Plague"
+      ]
+    },
+    {
+      "ID": 5059,
+      "Entries": [
+        "Poison & Bleeding & Plague Immunity"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Prisoner_Poison Attack"
+      ]
+    },
+    {
+      "ID": 5061,
+      "Entries": [
+        "Slave Soldier_Flame Dagger (Royal Castle 2)"
+      ]
+    },
+    {
+      "ID": 5062,
+      "Entries": [
+        "Royal Castle 1, 2 Prince Lendl (Defense x2.0)"
+      ]
+    },
+    {
+      "ID": 5063,
+      "Entries": [
+        "Royal Castle 3 Prince Lendl (Defense x2.0)"
+      ]
+    },
+    {
+      "ID": 5064,
+      "Entries": [
+        "Royal Castle 2, 3, 4 Biyo (Defense x2.5)"
+      ]
+    },
+    {
+      "ID": 5065,
+      "Entries": [
+        "Prison Castle 3 Older NPC Enhancement"
+      ]
+    },
+    {
+      "ID": 5066,
+      "Entries": [
+        "Phalanx Chibi Sticky Doping"
+      ]
+    },
+    {
+      "ID": 5067,
+      "Entries": [
+        "King's Shield Level 1 Left Foot"
+      ]
+    },
+    {
+      "ID": 5068,
+      "Entries": [
+        "King's Shield Level 2 Left Foot"
+      ]
+    },
+    {
+      "ID": 5069,
+      "Entries": [
+        "King's Shield Level 3 Left Foot"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "King's Shield Level 1 Right Leg"
+      ]
+    },
+    {
+      "ID": 5071,
+      "Entries": [
+        "King's Shield Level 2 Right Leg"
+      ]
+    },
+    {
+      "ID": 5072,
+      "Entries": [
+        "King's Shield Level 3 Right Leg"
+      ]
+    },
+    {
+      "ID": 5073,
+      "Entries": [
+        "Referee Abdominal Bleeding"
+      ]
+    },
+    {
+      "ID": 5074,
+      "Entries": [
+        "NPC stamina attack power multiplier level 1"
+      ]
+    },
+    {
+      "ID": 5075,
+      "Entries": [
+        "NPC stamina attack power multiplier level 2"
+      ]
+    },
+    {
+      "ID": 5076,
+      "Entries": [
+        "NPC stamina attack power multiplier level 3"
+      ]
+    },
+    {
+      "ID": 5077,
+      "Entries": [
+        "NPC stamina attack power multiplier level 4"
+      ]
+    },
+    {
+      "ID": 5078,
+      "Entries": [
+        "NPC stamina attack power multiplier level 5"
+      ]
+    },
+    {
+      "ID": 5079,
+      "Entries": [
+        "NPC stamina attack power multiplier level 6"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "NPC stamina attack power multiplier level 7"
+      ]
+    },
+    {
+      "ID": 5081,
+      "Entries": [
+        "NPC stamina attack power multiplier level 8"
+      ]
+    },
+    {
+      "ID": 5082,
+      "Entries": [
+        "NPC stamina attack power multiplier level 9"
+      ]
+    },
+    {
+      "ID": 5083,
+      "Entries": [
+        "Libra recovery"
+      ]
+    },
+    {
+      "ID": 5084,
+      "Entries": [
+        "For strengthening Doran"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Bleeding_1"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Bleeding_2"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Bleeding_3"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Bleeding_4"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Bleeding_5"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Bleeding_6"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Bleeding_7"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Bleeding_8"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Bleeding_9"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Bleeding_10"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Poison 1"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Poison 2"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Poison 3"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Poison 4"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Poison 5"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Poison 6"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "torch light"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Max MP Up_Silver Catalyst"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Maximum MP Down_Insanity Catalyst"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        "Respond to fire [Dragon Stone]"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "MP Recovery [equipment]"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "HP Recovery [equipment]"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Item drop rate up"
+      ]
+    },
+    {
+      "ID": 6033,
+      "Entries": [
+        "plague_baby's nails"
+      ]
+    },
+    {
+      "ID": 6034,
+      "Entries": [
+        "Get Soul_Needle of Anguish"
+      ]
+    },
+    {
+      "ID": 6035,
+      "Entries": [
+        "Fire Resistance_Bone Smasher"
+      ]
+    },
+    {
+      "ID": 6036,
+      "Entries": [
+        "Fire Resistance_Bone Smasher +1"
+      ]
+    },
+    {
+      "ID": 6037,
+      "Entries": [
+        "Fire Resistance_Bone Smasher +2"
+      ]
+    },
+    {
+      "ID": 6038,
+      "Entries": [
+        "Fire Resistance_Bone Smasher +3"
+      ]
+    },
+    {
+      "ID": 6039,
+      "Entries": [
+        "Fire Resistance_Bone Smasher +4"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Fire Resistance_Bone Smasher +5"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "MP Recovery_Misericorde"
+      ]
+    },
+    {
+      "ID": 6042,
+      "Entries": [
+        "MP Recovery_Pole of Phosphorescence"
+      ]
+    },
+    {
+      "ID": 6043,
+      "Entries": [
+        "MP Recovery_Misericorde +1"
+      ]
+    },
+    {
+      "ID": 6044,
+      "Entries": [
+        "MP Recovery_Misericorde +2"
+      ]
+    },
+    {
+      "ID": 6045,
+      "Entries": [
+        "MP Recovery_Misericorde +3"
+      ]
+    },
+    {
+      "ID": 6046,
+      "Entries": [
+        "MP Recovery_Misericorde +4"
+      ]
+    },
+    {
+      "ID": 6047,
+      "Entries": [
+        "MP Recovery_Misericorde +5"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Magic Sensitive_Kris Knife"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "Magic Sensitivity_Kris Knife +1"
+      ]
+    },
+    {
+      "ID": 6052,
+      "Entries": [
+        "Magic Sensitivity_Kris Knife +2"
+      ]
+    },
+    {
+      "ID": 6053,
+      "Entries": [
+        "Magic Sensitivity_Kris Knife +3"
+      ]
+    },
+    {
+      "ID": 6054,
+      "Entries": [
+        "Magic Sensitivity_Chris Knife +4"
+      ]
+    },
+    {
+      "ID": 6055,
+      "Entries": [
+        "Magic Sensitivity_Kris Knife +5"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Magic Defense Up_Rune Sword"
+      ]
+    },
+    {
+      "ID": 6061,
+      "Entries": [
+        "Magic Defense Up_Runesword +1"
+      ]
+    },
+    {
+      "ID": 6062,
+      "Entries": [
+        "Magic Defense Up_Runesword +2"
+      ]
+    },
+    {
+      "ID": 6063,
+      "Entries": [
+        "Magic Defense Up_Rune Sword +3"
+      ]
+    },
+    {
+      "ID": 6064,
+      "Entries": [
+        "Magic Defense Up_Rune Sword +4"
+      ]
+    },
+    {
+      "ID": 6065,
+      "Entries": [
+        "Magic Defense Up_Runesword +5"
+      ]
+    },
+    {
+      "ID": 6066,
+      "Entries": [
+        "Magic Defense Up_Rune Shield"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "You also receive damage_no pattern"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Makoto_self damage"
+      ]
+    },
+    {
+      "ID": 6081,
+      "Entries": [
+        "Bleeding Makoto"
+      ]
+    },
+    {
+      "ID": 6082,
+      "Entries": [
+        "Bleeding_Makoto +1"
+      ]
+    },
+    {
+      "ID": 6083,
+      "Entries": [
+        "Bleeding_Makoto +2"
+      ]
+    },
+    {
+      "ID": 6084,
+      "Entries": [
+        "Bleeding_Makoto +3"
+      ]
+    },
+    {
+      "ID": 6085,
+      "Entries": [
+        "Bleeding_Makoto +4"
+      ]
+    },
+    {
+      "ID": 6086,
+      "Entries": [
+        "Bleeding_Makoto +5"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Poison and Plague Resistance_Istarel"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Poison and Plague Resistance_Isterel +1"
+      ]
+    },
+    {
+      "ID": 6092,
+      "Entries": [
+        "Poison and Plague Resistance_Istarel +2"
+      ]
+    },
+    {
+      "ID": 6093,
+      "Entries": [
+        "Poison and Plague Resistance_Istarel +3"
+      ]
+    },
+    {
+      "ID": 6094,
+      "Entries": [
+        "Poison and Plague Resistance_Istarel +4"
+      ]
+    },
+    {
+      "ID": 6095,
+      "Entries": [
+        "Poison and Plague Resistance_Istarel +5"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "HP Recovery_Meat Cutting Knife"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Corrosion_Malice Lance"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "HP Recovery_Pavese"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "HP Recovery_Pavese +1"
+      ]
+    },
+    {
+      "ID": 6112,
+      "Entries": [
+        "HP Recovery_Pavese +2"
+      ]
+    },
+    {
+      "ID": 6113,
+      "Entries": [
+        "HP Recovery_Pavese +3"
+      ]
+    },
+    {
+      "ID": 6114,
+      "Entries": [
+        "HP Recovery_Pavese +4"
+      ]
+    },
+    {
+      "ID": 6115,
+      "Entries": [
+        "HP Recovery_Pavese +5"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield"
+      ]
+    },
+    {
+      "ID": 6121,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield +1"
+      ]
+    },
+    {
+      "ID": 6122,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield +2"
+      ]
+    },
+    {
+      "ID": 6123,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield +3"
+      ]
+    },
+    {
+      "ID": 6124,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield +4"
+      ]
+    },
+    {
+      "ID": 6125,
+      "Entries": [
+        "Magic Insensitivity_Breast Shield +5"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Max MP Up_Silver Coronet"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Magic Sensitive_Yellow Crown"
+      ]
+    },
+    {
+      "ID": 6132,
+      "Entries": [
+        "Acquired Soul Up_Silver Bracelet"
+      ]
+    },
+    {
+      "ID": 6135,
+      "Entries": [
+        "plague_baby's nails"
+      ]
+    },
+    {
+      "ID": 6136,
+      "Entries": [
+        "Plague_Baby Claw +1"
+      ]
+    },
+    {
+      "ID": 6137,
+      "Entries": [
+        "Plague_Baby Claw +2"
+      ]
+    },
+    {
+      "ID": 6138,
+      "Entries": [
+        "Plague_Baby Claw +3"
+      ]
+    },
+    {
+      "ID": 6139,
+      "Entries": [
+        "Plague_Baby Claw +4"
+      ]
+    },
+    {
+      "ID": 6140,
+      "Entries": [
+        "Plague_Baby Claw +5"
+      ]
+    },
+    {
+      "ID": 6141,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword"
+      ]
+    },
+    {
+      "ID": 6142,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword +1"
+      ]
+    },
+    {
+      "ID": 6143,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword +2"
+      ]
+    },
+    {
+      "ID": 6144,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword +3"
+      ]
+    },
+    {
+      "ID": 6145,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword +4"
+      ]
+    },
+    {
+      "ID": 6146,
+      "Entries": [
+        "Increase pinch attack power_Groom Sword +5"
+      ]
+    },
+    {
+      "ID": 6150,
+      "Entries": [
+        "MP recovery [missing month] +1"
+      ]
+    },
+    {
+      "ID": 6151,
+      "Entries": [
+        "MP recovery [missing month] +2"
+      ]
+    },
+    {
+      "ID": 6152,
+      "Entries": [
+        "MP recovery [missing month] +3"
+      ]
+    },
+    {
+      "ID": 6160,
+      "Entries": [
+        "HP Recovery [Blessing] +1"
+      ]
+    },
+    {
+      "ID": 6161,
+      "Entries": [
+        "HP Recovery [Blessing] +2"
+      ]
+    },
+    {
+      "ID": 6162,
+      "Entries": [
+        "HP Recovery [Blessing] +3"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "MP Recovery_Pole of Phosphorescence"
+      ]
+    },
+    {
+      "ID": 6171,
+      "Entries": [
+        "MP Recovery_Phosphorescence Pole +1"
+      ]
+    },
+    {
+      "ID": 6172,
+      "Entries": [
+        "MP Recovery_Phosphorescence Pole +2"
+      ]
+    },
+    {
+      "ID": 6173,
+      "Entries": [
+        "MP Recovery_Phosphorescence Pole +3"
+      ]
+    },
+    {
+      "ID": 6174,
+      "Entries": [
+        "MP Recovery_Phosphorescence Pole +4"
+      ]
+    },
+    {
+      "ID": 6175,
+      "Entries": [
+        "MP Recovery_Phosphorescence Pole +5"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed"
+      ]
+    },
+    {
+      "ID": 6181,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed +1"
+      ]
+    },
+    {
+      "ID": 6182,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed +2"
+      ]
+    },
+    {
+      "ID": 6183,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed +3"
+      ]
+    },
+    {
+      "ID": 6184,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed +4"
+      ]
+    },
+    {
+      "ID": 6185,
+      "Entries": [
+        "Poison and Plague Resistance_Bramed +5"
+      ]
+    },
+    {
+      "ID": 6190,
+      "Entries": [
+        "Magic Defense Up_Rune Shield"
+      ]
+    },
+    {
+      "ID": 6191,
+      "Entries": [
+        "Magic Defense Up_Rune Shield +1"
+      ]
+    },
+    {
+      "ID": 6192,
+      "Entries": [
+        "Magic Defense Up_Rune Shield +2"
+      ]
+    },
+    {
+      "ID": 6193,
+      "Entries": [
+        "Magic Defense Up_Rune Shield +3"
+      ]
+    },
+    {
+      "ID": 6194,
+      "Entries": [
+        "Magic Defense Up_Rune Shield +4"
+      ]
+    },
+    {
+      "ID": 6195,
+      "Entries": [
+        "Magic Defense Up_Rune Shield +5"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Stamina Recovery Down_Head_Level 1"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "Stamina Recovery Down_Head_Level 2"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "Stamina Recovery Down_Head_Level 3"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "Stamina Recovery Down_Head_Level 4"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Stamina recovery down_torso_level 1"
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        "Stamina recovery down_torso_level 2"
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        "Stamina recovery down_torso_level 3"
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        "Stamina recovery down_torso_level 4"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Stamina Recovery Down_Arms_Level 1"
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        "Stamina Recovery Down_Arms_Level 2"
+      ]
+    },
+    {
+      "ID": 6222,
+      "Entries": [
+        "Stamina Recovery Down_Arms_Level 3"
+      ]
+    },
+    {
+      "ID": 6223,
+      "Entries": [
+        "Stamina Recovery Down_Arms_Level 4"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "Stamina Recovery Down_Leg_Level 1"
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        "Stamina Recovery Down_Leg_Level 2"
+      ]
+    },
+    {
+      "ID": 6232,
+      "Entries": [
+        "Stamina Recovery Down_Leg_Level 3"
+      ]
+    },
+    {
+      "ID": 6233,
+      "Entries": [
+        "Stamina Recovery Down_Leg_Level 4"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "Icon display only_Misericorde_Meat cleaver"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Level 1 Royal Castle 1 Exclusive Reverse Doping"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "level 2"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "level 3"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "level 4"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "level 5"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "level 6"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "level 7"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "level 8"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "level 9"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "level 10"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "soul black"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Round Power Up [Test]"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Orbit Power Up_ Level 1"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "Orbit Power Up_ Level 2"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "Orbit Power Up_ Level 3"
+      ]
+    },
+    {
+      "ID": 7404,
+      "Entries": [
+        "Orbit Power Up_ Level 4"
+      ]
+    },
+    {
+      "ID": 7405,
+      "Entries": [
+        "Orbit Power Up_ Level 5"
+      ]
+    },
+    {
+      "ID": 7406,
+      "Entries": [
+        "Orbit Power Up_Level 6"
+      ]
+    },
+    {
+      "ID": 7407,
+      "Entries": [
+        "Orbit Power Up_Level 7"
+      ]
+    },
+    {
+      "ID": 7408,
+      "Entries": [
+        "Orbit Power Up_ Level 8"
+      ]
+    },
+    {
+      "ID": 7409,
+      "Entries": [
+        "Orbit Power Up_ Level 9"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Orbit Power Up_ Level 10"
+      ]
+    },
+    {
+      "ID": 7415,
+      "Entries": [
+        "Orbit Power Up_ For Level 5 Boss"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Multi-doping_white alone"
+      ]
+    },
+    {
+      "ID": 7501,
+      "Entries": [
+        "Multi-doping_white two people"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Reverse doping for tutorial"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Flame straw test (sieve)"
+      ]
+    }
+  ]
+}

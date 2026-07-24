@@ -1,0 +1,14 @@
+{
+  "id": "866",
+  "name": "Ruined Alfis",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

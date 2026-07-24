@@ -1,0 +1,13 @@
+{
+  "Param": "SFX_BLOCK_RES_SHARE_PARAM",
+  "Type": "SFX_BLOCK_RES_SHARE_PARAM",
+  "Name": "SFX_BLOCK_RES_SHARE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

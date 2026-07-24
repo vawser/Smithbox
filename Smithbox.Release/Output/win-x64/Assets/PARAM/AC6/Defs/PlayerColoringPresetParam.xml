@@ -1,0 +1,1690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PLAYER_COLORING_PRESET</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 slot0_PatternID">
+      <DisplayName>0_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 slot0_MaterialProperty_0">
+      <DisplayName>0_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 slot0_MaterialProperty_1">
+      <DisplayName>0_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 slot0_reserved_[5]">
+      <DisplayName>0_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>337</SortID>
+    </Field>
+    <Field Def="u8 slot0_BaseR">
+      <DisplayName>0_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 slot0_BaseG">
+      <DisplayName>0_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 slot0_BaseB">
+      <DisplayName>0_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 slot0_BaseA">
+      <DisplayName>0_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 slot0_SubR">
+      <DisplayName>0_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 slot0_SubG">
+      <DisplayName>0_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 slot0_SubB">
+      <DisplayName>0_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 slot0_SubA">
+      <DisplayName>0_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 slot0_SupportR">
+      <DisplayName>0_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 slot0_SupportG">
+      <DisplayName>0_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 slot0_SupportB">
+      <DisplayName>0_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u8 slot0_SupportA">
+      <DisplayName>0_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 slot0_OptionalR">
+      <DisplayName>0_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 slot0_OptionalG">
+      <DisplayName>0_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 slot0_OptionalB">
+      <DisplayName>0_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 slot0_OptionalA">
+      <DisplayName>0_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 slot0_DeviceR">
+      <DisplayName>0_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 slot0_DeviceG">
+      <DisplayName>0_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 slot0_DeviceB">
+      <DisplayName>0_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 slot0_DeviceA">
+      <DisplayName>0_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 slot1_PatternID">
+      <DisplayName>1_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 slot1_MaterialProperty_0">
+      <DisplayName>1_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 slot1_MaterialProperty_1">
+      <DisplayName>1_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="dummy8 slot1_reserved_[5]">
+      <DisplayName>1_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>338</SortID>
+    </Field>
+    <Field Def="u8 slot1_BaseR">
+      <DisplayName>1_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u8 slot1_BaseG">
+      <DisplayName>1_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u8 slot1_BaseB">
+      <DisplayName>1_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 slot1_BaseA">
+      <DisplayName>1_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 slot1_SubR">
+      <DisplayName>1_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 slot1_SubG">
+      <DisplayName>1_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u8 slot1_SubB">
+      <DisplayName>1_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="u8 slot1_SubA">
+      <DisplayName>1_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u8 slot1_SupportR">
+      <DisplayName>1_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u8 slot1_SupportG">
+      <DisplayName>1_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="u8 slot1_SupportB">
+      <DisplayName>1_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="u8 slot1_SupportA">
+      <DisplayName>1_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="u8 slot1_OptionalR">
+      <DisplayName>1_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="u8 slot1_OptionalG">
+      <DisplayName>1_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 slot1_OptionalB">
+      <DisplayName>1_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u8 slot1_OptionalA">
+      <DisplayName>1_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u8 slot1_DeviceR">
+      <DisplayName>1_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u8 slot1_DeviceG">
+      <DisplayName>1_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u8 slot1_DeviceB">
+      <DisplayName>1_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="u8 slot1_DeviceA">
+      <DisplayName>1_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u8 slot2_PatternID">
+      <DisplayName>2_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="u8 slot2_MaterialProperty_0">
+      <DisplayName>2_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="u8 slot2_MaterialProperty_1">
+      <DisplayName>2_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="dummy8 slot2_reserved_[5]">
+      <DisplayName>2_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>339</SortID>
+    </Field>
+    <Field Def="u8 slot2_BaseR">
+      <DisplayName>2_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 slot2_BaseG">
+      <DisplayName>2_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="u8 slot2_BaseB">
+      <DisplayName>2_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="u8 slot2_BaseA">
+      <DisplayName>2_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="u8 slot2_SubR">
+      <DisplayName>2_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="u8 slot2_SubG">
+      <DisplayName>2_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="u8 slot2_SubB">
+      <DisplayName>2_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="u8 slot2_SubA">
+      <DisplayName>2_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="u8 slot2_SupportR">
+      <DisplayName>2_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="u8 slot2_SupportG">
+      <DisplayName>2_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="u8 slot2_SupportB">
+      <DisplayName>2_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="u8 slot2_SupportA">
+      <DisplayName>2_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="u8 slot2_OptionalR">
+      <DisplayName>2_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="u8 slot2_OptionalG">
+      <DisplayName>2_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="u8 slot2_OptionalB">
+      <DisplayName>2_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="u8 slot2_OptionalA">
+      <DisplayName>2_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="u8 slot2_DeviceR">
+      <DisplayName>2_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="u8 slot2_DeviceG">
+      <DisplayName>2_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="u8 slot2_DeviceB">
+      <DisplayName>2_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="u8 slot2_DeviceA">
+      <DisplayName>2_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="u8 slot3_PatternID">
+      <DisplayName>3_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="u8 slot3_MaterialProperty_0">
+      <DisplayName>3_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="u8 slot3_MaterialProperty_1">
+      <DisplayName>3_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="dummy8 slot3_reserved_[5]">
+      <DisplayName>3_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>340</SortID>
+    </Field>
+    <Field Def="u8 slot3_BaseR">
+      <DisplayName>3_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="u8 slot3_BaseG">
+      <DisplayName>3_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="u8 slot3_BaseB">
+      <DisplayName>3_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="u8 slot3_BaseA">
+      <DisplayName>3_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="u8 slot3_SubR">
+      <DisplayName>3_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="u8 slot3_SubG">
+      <DisplayName>3_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>78</SortID>
+    </Field>
+    <Field Def="u8 slot3_SubB">
+      <DisplayName>3_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>79</SortID>
+    </Field>
+    <Field Def="u8 slot3_SubA">
+      <DisplayName>3_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="u8 slot3_SupportR">
+      <DisplayName>3_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="u8 slot3_SupportG">
+      <DisplayName>3_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="u8 slot3_SupportB">
+      <DisplayName>3_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="u8 slot3_SupportA">
+      <DisplayName>3_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>84</SortID>
+    </Field>
+    <Field Def="u8 slot3_OptionalR">
+      <DisplayName>3_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="u8 slot3_OptionalG">
+      <DisplayName>3_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>86</SortID>
+    </Field>
+    <Field Def="u8 slot3_OptionalB">
+      <DisplayName>3_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>87</SortID>
+    </Field>
+    <Field Def="u8 slot3_OptionalA">
+      <DisplayName>3_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>88</SortID>
+    </Field>
+    <Field Def="u8 slot3_DeviceR">
+      <DisplayName>3_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>89</SortID>
+    </Field>
+    <Field Def="u8 slot3_DeviceG">
+      <DisplayName>3_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="u8 slot3_DeviceB">
+      <DisplayName>3_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>91</SortID>
+    </Field>
+    <Field Def="u8 slot3_DeviceA">
+      <DisplayName>3_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>92</SortID>
+    </Field>
+    <Field Def="u8 slot4_PatternID">
+      <DisplayName>4_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>93</SortID>
+    </Field>
+    <Field Def="u8 slot4_MaterialProperty_0">
+      <DisplayName>4_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>94</SortID>
+    </Field>
+    <Field Def="u8 slot4_MaterialProperty_1">
+      <DisplayName>4_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>95</SortID>
+    </Field>
+    <Field Def="dummy8 slot4_reserved_[5]">
+      <DisplayName>4_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>341</SortID>
+    </Field>
+    <Field Def="u8 slot4_BaseR">
+      <DisplayName>4_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>96</SortID>
+    </Field>
+    <Field Def="u8 slot4_BaseG">
+      <DisplayName>4_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>97</SortID>
+    </Field>
+    <Field Def="u8 slot4_BaseB">
+      <DisplayName>4_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>98</SortID>
+    </Field>
+    <Field Def="u8 slot4_BaseA">
+      <DisplayName>4_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>99</SortID>
+    </Field>
+    <Field Def="u8 slot4_SubR">
+      <DisplayName>4_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 slot4_SubG">
+      <DisplayName>4_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u8 slot4_SubB">
+      <DisplayName>4_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u8 slot4_SubA">
+      <DisplayName>4_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="u8 slot4_SupportR">
+      <DisplayName>4_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="u8 slot4_SupportG">
+      <DisplayName>4_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="u8 slot4_SupportB">
+      <DisplayName>4_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="u8 slot4_SupportA">
+      <DisplayName>4_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="u8 slot4_OptionalR">
+      <DisplayName>4_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="u8 slot4_OptionalG">
+      <DisplayName>4_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="u8 slot4_OptionalB">
+      <DisplayName>4_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 slot4_OptionalA">
+      <DisplayName>4_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="u8 slot4_DeviceR">
+      <DisplayName>4_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="u8 slot4_DeviceG">
+      <DisplayName>4_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="u8 slot4_DeviceB">
+      <DisplayName>4_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="u8 slot4_DeviceA">
+      <DisplayName>4_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>115</SortID>
+    </Field>
+    <Field Def="u8 slot5_PatternID">
+      <DisplayName>5_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>116</SortID>
+    </Field>
+    <Field Def="u8 slot5_MaterialProperty_0">
+      <DisplayName>5_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>117</SortID>
+    </Field>
+    <Field Def="u8 slot5_MaterialProperty_1">
+      <DisplayName>5_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>118</SortID>
+    </Field>
+    <Field Def="dummy8 slot5_reserved_[5]">
+      <DisplayName>5_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>342</SortID>
+    </Field>
+    <Field Def="u8 slot5_BaseR">
+      <DisplayName>5_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>119</SortID>
+    </Field>
+    <Field Def="u8 slot5_BaseG">
+      <DisplayName>5_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 slot5_BaseB">
+      <DisplayName>5_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>121</SortID>
+    </Field>
+    <Field Def="u8 slot5_BaseA">
+      <DisplayName>5_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>122</SortID>
+    </Field>
+    <Field Def="u8 slot5_SubR">
+      <DisplayName>5_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>123</SortID>
+    </Field>
+    <Field Def="u8 slot5_SubG">
+      <DisplayName>5_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>124</SortID>
+    </Field>
+    <Field Def="u8 slot5_SubB">
+      <DisplayName>5_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>125</SortID>
+    </Field>
+    <Field Def="u8 slot5_SubA">
+      <DisplayName>5_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>126</SortID>
+    </Field>
+    <Field Def="u8 slot5_SupportR">
+      <DisplayName>5_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>127</SortID>
+    </Field>
+    <Field Def="u8 slot5_SupportG">
+      <DisplayName>5_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>128</SortID>
+    </Field>
+    <Field Def="u8 slot5_SupportB">
+      <DisplayName>5_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>129</SortID>
+    </Field>
+    <Field Def="u8 slot5_SupportA">
+      <DisplayName>5_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="u8 slot5_OptionalR">
+      <DisplayName>5_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>131</SortID>
+    </Field>
+    <Field Def="u8 slot5_OptionalG">
+      <DisplayName>5_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>132</SortID>
+    </Field>
+    <Field Def="u8 slot5_OptionalB">
+      <DisplayName>5_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>133</SortID>
+    </Field>
+    <Field Def="u8 slot5_OptionalA">
+      <DisplayName>5_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>134</SortID>
+    </Field>
+    <Field Def="u8 slot5_DeviceR">
+      <DisplayName>5_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>135</SortID>
+    </Field>
+    <Field Def="u8 slot5_DeviceG">
+      <DisplayName>5_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>136</SortID>
+    </Field>
+    <Field Def="u8 slot5_DeviceB">
+      <DisplayName>5_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>137</SortID>
+    </Field>
+    <Field Def="u8 slot5_DeviceA">
+      <DisplayName>5_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>138</SortID>
+    </Field>
+    <Field Def="u8 slot6_PatternID">
+      <DisplayName>6_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>139</SortID>
+    </Field>
+    <Field Def="u8 slot6_MaterialProperty_0">
+      <DisplayName>6_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="u8 slot6_MaterialProperty_1">
+      <DisplayName>6_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>141</SortID>
+    </Field>
+    <Field Def="dummy8 slot6_reserved_[5]">
+      <DisplayName>6_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>343</SortID>
+    </Field>
+    <Field Def="u8 slot6_BaseR">
+      <DisplayName>6_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>142</SortID>
+    </Field>
+    <Field Def="u8 slot6_BaseG">
+      <DisplayName>6_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>143</SortID>
+    </Field>
+    <Field Def="u8 slot6_BaseB">
+      <DisplayName>6_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>144</SortID>
+    </Field>
+    <Field Def="u8 slot6_BaseA">
+      <DisplayName>6_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>145</SortID>
+    </Field>
+    <Field Def="u8 slot6_SubR">
+      <DisplayName>6_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>146</SortID>
+    </Field>
+    <Field Def="u8 slot6_SubG">
+      <DisplayName>6_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>147</SortID>
+    </Field>
+    <Field Def="u8 slot6_SubB">
+      <DisplayName>6_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>148</SortID>
+    </Field>
+    <Field Def="u8 slot6_SubA">
+      <DisplayName>6_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>149</SortID>
+    </Field>
+    <Field Def="u8 slot6_SupportR">
+      <DisplayName>6_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 slot6_SupportG">
+      <DisplayName>6_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>151</SortID>
+    </Field>
+    <Field Def="u8 slot6_SupportB">
+      <DisplayName>6_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>152</SortID>
+    </Field>
+    <Field Def="u8 slot6_SupportA">
+      <DisplayName>6_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>153</SortID>
+    </Field>
+    <Field Def="u8 slot6_OptionalR">
+      <DisplayName>6_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>154</SortID>
+    </Field>
+    <Field Def="u8 slot6_OptionalG">
+      <DisplayName>6_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>155</SortID>
+    </Field>
+    <Field Def="u8 slot6_OptionalB">
+      <DisplayName>6_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>156</SortID>
+    </Field>
+    <Field Def="u8 slot6_OptionalA">
+      <DisplayName>6_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>157</SortID>
+    </Field>
+    <Field Def="u8 slot6_DeviceR">
+      <DisplayName>6_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>158</SortID>
+    </Field>
+    <Field Def="u8 slot6_DeviceG">
+      <DisplayName>6_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>159</SortID>
+    </Field>
+    <Field Def="u8 slot6_DeviceB">
+      <DisplayName>6_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="u8 slot6_DeviceA">
+      <DisplayName>6_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>161</SortID>
+    </Field>
+    <Field Def="u8 slot7_PatternID">
+      <DisplayName>7_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>162</SortID>
+    </Field>
+    <Field Def="u8 slot7_MaterialProperty_0">
+      <DisplayName>7_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>163</SortID>
+    </Field>
+    <Field Def="u8 slot7_MaterialProperty_1">
+      <DisplayName>7_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>164</SortID>
+    </Field>
+    <Field Def="dummy8 slot7_reserved_[5]">
+      <DisplayName>7_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>344</SortID>
+    </Field>
+    <Field Def="u8 slot7_BaseR">
+      <DisplayName>7_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>165</SortID>
+    </Field>
+    <Field Def="u8 slot7_BaseG">
+      <DisplayName>7_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>166</SortID>
+    </Field>
+    <Field Def="u8 slot7_BaseB">
+      <DisplayName>7_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>167</SortID>
+    </Field>
+    <Field Def="u8 slot7_BaseA">
+      <DisplayName>7_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>168</SortID>
+    </Field>
+    <Field Def="u8 slot7_SubR">
+      <DisplayName>7_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>169</SortID>
+    </Field>
+    <Field Def="u8 slot7_SubG">
+      <DisplayName>7_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="u8 slot7_SubB">
+      <DisplayName>7_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>171</SortID>
+    </Field>
+    <Field Def="u8 slot7_SubA">
+      <DisplayName>7_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>172</SortID>
+    </Field>
+    <Field Def="u8 slot7_SupportR">
+      <DisplayName>7_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>173</SortID>
+    </Field>
+    <Field Def="u8 slot7_SupportG">
+      <DisplayName>7_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>174</SortID>
+    </Field>
+    <Field Def="u8 slot7_SupportB">
+      <DisplayName>7_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>175</SortID>
+    </Field>
+    <Field Def="u8 slot7_SupportA">
+      <DisplayName>7_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>176</SortID>
+    </Field>
+    <Field Def="u8 slot7_OptionalR">
+      <DisplayName>7_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>177</SortID>
+    </Field>
+    <Field Def="u8 slot7_OptionalG">
+      <DisplayName>7_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>178</SortID>
+    </Field>
+    <Field Def="u8 slot7_OptionalB">
+      <DisplayName>7_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>179</SortID>
+    </Field>
+    <Field Def="u8 slot7_OptionalA">
+      <DisplayName>7_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="u8 slot7_DeviceR">
+      <DisplayName>7_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>181</SortID>
+    </Field>
+    <Field Def="u8 slot7_DeviceG">
+      <DisplayName>7_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>182</SortID>
+    </Field>
+    <Field Def="u8 slot7_DeviceB">
+      <DisplayName>7_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>183</SortID>
+    </Field>
+    <Field Def="u8 slot7_DeviceA">
+      <DisplayName>7_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>184</SortID>
+    </Field>
+    <Field Def="u8 slot8_PatternID">
+      <DisplayName>8_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>185</SortID>
+    </Field>
+    <Field Def="u8 slot8_MaterialProperty_0">
+      <DisplayName>8_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>186</SortID>
+    </Field>
+    <Field Def="u8 slot8_MaterialProperty_1">
+      <DisplayName>8_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>187</SortID>
+    </Field>
+    <Field Def="dummy8 slot8_reserved_[5]">
+      <DisplayName>8_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>345</SortID>
+    </Field>
+    <Field Def="u8 slot8_BaseR">
+      <DisplayName>8_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>188</SortID>
+    </Field>
+    <Field Def="u8 slot8_BaseG">
+      <DisplayName>8_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>189</SortID>
+    </Field>
+    <Field Def="u8 slot8_BaseB">
+      <DisplayName>8_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="u8 slot8_BaseA">
+      <DisplayName>8_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>191</SortID>
+    </Field>
+    <Field Def="u8 slot8_SubR">
+      <DisplayName>8_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>192</SortID>
+    </Field>
+    <Field Def="u8 slot8_SubG">
+      <DisplayName>8_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>193</SortID>
+    </Field>
+    <Field Def="u8 slot8_SubB">
+      <DisplayName>8_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>194</SortID>
+    </Field>
+    <Field Def="u8 slot8_SubA">
+      <DisplayName>8_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>195</SortID>
+    </Field>
+    <Field Def="u8 slot8_SupportR">
+      <DisplayName>8_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>196</SortID>
+    </Field>
+    <Field Def="u8 slot8_SupportG">
+      <DisplayName>8_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>197</SortID>
+    </Field>
+    <Field Def="u8 slot8_SupportB">
+      <DisplayName>8_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>198</SortID>
+    </Field>
+    <Field Def="u8 slot8_SupportA">
+      <DisplayName>8_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>199</SortID>
+    </Field>
+    <Field Def="u8 slot8_OptionalR">
+      <DisplayName>8_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 slot8_OptionalG">
+      <DisplayName>8_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="u8 slot8_OptionalB">
+      <DisplayName>8_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="u8 slot8_OptionalA">
+      <DisplayName>8_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="u8 slot8_DeviceR">
+      <DisplayName>8_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>204</SortID>
+    </Field>
+    <Field Def="u8 slot8_DeviceG">
+      <DisplayName>8_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>205</SortID>
+    </Field>
+    <Field Def="u8 slot8_DeviceB">
+      <DisplayName>8_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>206</SortID>
+    </Field>
+    <Field Def="u8 slot8_DeviceA">
+      <DisplayName>8_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>207</SortID>
+    </Field>
+    <Field Def="u8 slot9_PatternID">
+      <DisplayName>9_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>208</SortID>
+    </Field>
+    <Field Def="u8 slot9_MaterialProperty_0">
+      <DisplayName>9_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>209</SortID>
+    </Field>
+    <Field Def="u8 slot9_MaterialProperty_1">
+      <DisplayName>9_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="dummy8 slot9_reserved_[5]">
+      <DisplayName>9_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>346</SortID>
+    </Field>
+    <Field Def="u8 slot9_BaseR">
+      <DisplayName>9_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>211</SortID>
+    </Field>
+    <Field Def="u8 slot9_BaseG">
+      <DisplayName>9_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>212</SortID>
+    </Field>
+    <Field Def="u8 slot9_BaseB">
+      <DisplayName>9_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>213</SortID>
+    </Field>
+    <Field Def="u8 slot9_BaseA">
+      <DisplayName>9_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>214</SortID>
+    </Field>
+    <Field Def="u8 slot9_SubR">
+      <DisplayName>9_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>215</SortID>
+    </Field>
+    <Field Def="u8 slot9_SubG">
+      <DisplayName>9_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>216</SortID>
+    </Field>
+    <Field Def="u8 slot9_SubB">
+      <DisplayName>9_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>217</SortID>
+    </Field>
+    <Field Def="u8 slot9_SubA">
+      <DisplayName>9_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>218</SortID>
+    </Field>
+    <Field Def="u8 slot9_SupportR">
+      <DisplayName>9_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>219</SortID>
+    </Field>
+    <Field Def="u8 slot9_SupportG">
+      <DisplayName>9_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="u8 slot9_SupportB">
+      <DisplayName>9_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>221</SortID>
+    </Field>
+    <Field Def="u8 slot9_SupportA">
+      <DisplayName>9_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>222</SortID>
+    </Field>
+    <Field Def="u8 slot9_OptionalR">
+      <DisplayName>9_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>223</SortID>
+    </Field>
+    <Field Def="u8 slot9_OptionalG">
+      <DisplayName>9_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>224</SortID>
+    </Field>
+    <Field Def="u8 slot9_OptionalB">
+      <DisplayName>9_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>225</SortID>
+    </Field>
+    <Field Def="u8 slot9_OptionalA">
+      <DisplayName>9_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>226</SortID>
+    </Field>
+    <Field Def="u8 slot9_DeviceR">
+      <DisplayName>9_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>227</SortID>
+    </Field>
+    <Field Def="u8 slot9_DeviceG">
+      <DisplayName>9_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>228</SortID>
+    </Field>
+    <Field Def="u8 slot9_DeviceB">
+      <DisplayName>9_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>229</SortID>
+    </Field>
+    <Field Def="u8 slot9_DeviceA">
+      <DisplayName>9_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="u8 slot10_PatternID">
+      <DisplayName>10_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>231</SortID>
+    </Field>
+    <Field Def="u8 slot10_MaterialProperty_0">
+      <DisplayName>10_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>232</SortID>
+    </Field>
+    <Field Def="u8 slot10_MaterialProperty_1">
+      <DisplayName>10_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>233</SortID>
+    </Field>
+    <Field Def="dummy8 slot10_reserved_[5]">
+      <DisplayName>10_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>347</SortID>
+    </Field>
+    <Field Def="u8 slot10_BaseR">
+      <DisplayName>10_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>234</SortID>
+    </Field>
+    <Field Def="u8 slot10_BaseG">
+      <DisplayName>10_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>235</SortID>
+    </Field>
+    <Field Def="u8 slot10_BaseB">
+      <DisplayName>10_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>236</SortID>
+    </Field>
+    <Field Def="u8 slot10_BaseA">
+      <DisplayName>10_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>237</SortID>
+    </Field>
+    <Field Def="u8 slot10_SubR">
+      <DisplayName>10_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>238</SortID>
+    </Field>
+    <Field Def="u8 slot10_SubG">
+      <DisplayName>10_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>239</SortID>
+    </Field>
+    <Field Def="u8 slot10_SubB">
+      <DisplayName>10_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="u8 slot10_SubA">
+      <DisplayName>10_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>241</SortID>
+    </Field>
+    <Field Def="u8 slot10_SupportR">
+      <DisplayName>10_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>242</SortID>
+    </Field>
+    <Field Def="u8 slot10_SupportG">
+      <DisplayName>10_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>243</SortID>
+    </Field>
+    <Field Def="u8 slot10_SupportB">
+      <DisplayName>10_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>244</SortID>
+    </Field>
+    <Field Def="u8 slot10_SupportA">
+      <DisplayName>10_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>245</SortID>
+    </Field>
+    <Field Def="u8 slot10_OptionalR">
+      <DisplayName>10_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>246</SortID>
+    </Field>
+    <Field Def="u8 slot10_OptionalG">
+      <DisplayName>10_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>247</SortID>
+    </Field>
+    <Field Def="u8 slot10_OptionalB">
+      <DisplayName>10_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>248</SortID>
+    </Field>
+    <Field Def="u8 slot10_OptionalA">
+      <DisplayName>10_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>249</SortID>
+    </Field>
+    <Field Def="u8 slot10_DeviceR">
+      <DisplayName>10_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u8 slot10_DeviceG">
+      <DisplayName>10_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>251</SortID>
+    </Field>
+    <Field Def="u8 slot10_DeviceB">
+      <DisplayName>10_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>252</SortID>
+    </Field>
+    <Field Def="u8 slot10_DeviceA">
+      <DisplayName>10_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>253</SortID>
+    </Field>
+    <Field Def="u8 slot11_PatternID">
+      <DisplayName>11_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>254</SortID>
+    </Field>
+    <Field Def="u8 slot11_MaterialProperty_0">
+      <DisplayName>11_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>255</SortID>
+    </Field>
+    <Field Def="u8 slot11_MaterialProperty_1">
+      <DisplayName>11_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>256</SortID>
+    </Field>
+    <Field Def="dummy8 slot11_reserved_[5]">
+      <DisplayName>11_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>348</SortID>
+    </Field>
+    <Field Def="u8 slot11_BaseR">
+      <DisplayName>11_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>257</SortID>
+    </Field>
+    <Field Def="u8 slot11_BaseG">
+      <DisplayName>11_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>258</SortID>
+    </Field>
+    <Field Def="u8 slot11_BaseB">
+      <DisplayName>11_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>259</SortID>
+    </Field>
+    <Field Def="u8 slot11_BaseA">
+      <DisplayName>11_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="u8 slot11_SubR">
+      <DisplayName>11_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>261</SortID>
+    </Field>
+    <Field Def="u8 slot11_SubG">
+      <DisplayName>11_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>262</SortID>
+    </Field>
+    <Field Def="u8 slot11_SubB">
+      <DisplayName>11_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>263</SortID>
+    </Field>
+    <Field Def="u8 slot11_SubA">
+      <DisplayName>11_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>264</SortID>
+    </Field>
+    <Field Def="u8 slot11_SupportR">
+      <DisplayName>11_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>265</SortID>
+    </Field>
+    <Field Def="u8 slot11_SupportG">
+      <DisplayName>11_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>266</SortID>
+    </Field>
+    <Field Def="u8 slot11_SupportB">
+      <DisplayName>11_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>267</SortID>
+    </Field>
+    <Field Def="u8 slot11_SupportA">
+      <DisplayName>11_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>268</SortID>
+    </Field>
+    <Field Def="u8 slot11_OptionalR">
+      <DisplayName>11_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>269</SortID>
+    </Field>
+    <Field Def="u8 slot11_OptionalG">
+      <DisplayName>11_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="u8 slot11_OptionalB">
+      <DisplayName>11_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>271</SortID>
+    </Field>
+    <Field Def="u8 slot11_OptionalA">
+      <DisplayName>11_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>272</SortID>
+    </Field>
+    <Field Def="u8 slot11_DeviceR">
+      <DisplayName>11_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>273</SortID>
+    </Field>
+    <Field Def="u8 slot11_DeviceG">
+      <DisplayName>11_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>274</SortID>
+    </Field>
+    <Field Def="u8 slot11_DeviceB">
+      <DisplayName>11_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>275</SortID>
+    </Field>
+    <Field Def="u8 slot11_DeviceA">
+      <DisplayName>11_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>276</SortID>
+    </Field>
+    <Field Def="u8 slot12_PatternID">
+      <DisplayName>12_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>277</SortID>
+    </Field>
+    <Field Def="u8 slot12_MaterialProperty_0">
+      <DisplayName>12_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>278</SortID>
+    </Field>
+    <Field Def="u8 slot12_MaterialProperty_1">
+      <DisplayName>12_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>279</SortID>
+    </Field>
+    <Field Def="dummy8 slot12_reserved_[5]">
+      <DisplayName>12_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>349</SortID>
+    </Field>
+    <Field Def="u8 slot12_BaseR">
+      <DisplayName>12_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="u8 slot12_BaseG">
+      <DisplayName>12_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>281</SortID>
+    </Field>
+    <Field Def="u8 slot12_BaseB">
+      <DisplayName>12_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>282</SortID>
+    </Field>
+    <Field Def="u8 slot12_BaseA">
+      <DisplayName>12_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>283</SortID>
+    </Field>
+    <Field Def="u8 slot12_SubR">
+      <DisplayName>12_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>284</SortID>
+    </Field>
+    <Field Def="u8 slot12_SubG">
+      <DisplayName>12_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>285</SortID>
+    </Field>
+    <Field Def="u8 slot12_SubB">
+      <DisplayName>12_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>286</SortID>
+    </Field>
+    <Field Def="u8 slot12_SubA">
+      <DisplayName>12_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>287</SortID>
+    </Field>
+    <Field Def="u8 slot12_SupportR">
+      <DisplayName>12_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>288</SortID>
+    </Field>
+    <Field Def="u8 slot12_SupportG">
+      <DisplayName>12_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>289</SortID>
+    </Field>
+    <Field Def="u8 slot12_SupportB">
+      <DisplayName>12_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>290</SortID>
+    </Field>
+    <Field Def="u8 slot12_SupportA">
+      <DisplayName>12_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>291</SortID>
+    </Field>
+    <Field Def="u8 slot12_OptionalR">
+      <DisplayName>12_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>292</SortID>
+    </Field>
+    <Field Def="u8 slot12_OptionalG">
+      <DisplayName>12_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>293</SortID>
+    </Field>
+    <Field Def="u8 slot12_OptionalB">
+      <DisplayName>12_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>294</SortID>
+    </Field>
+    <Field Def="u8 slot12_OptionalA">
+      <DisplayName>12_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>295</SortID>
+    </Field>
+    <Field Def="u8 slot12_DeviceR">
+      <DisplayName>12_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>296</SortID>
+    </Field>
+    <Field Def="u8 slot12_DeviceG">
+      <DisplayName>12_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>297</SortID>
+    </Field>
+    <Field Def="u8 slot12_DeviceB">
+      <DisplayName>12_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>298</SortID>
+    </Field>
+    <Field Def="u8 slot12_DeviceA">
+      <DisplayName>12_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>299</SortID>
+    </Field>
+    <Field Def="u8 slot13_PatternID">
+      <DisplayName>13_PatternID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 slot13_MaterialProperty_0">
+      <DisplayName>13_MaterialProperty_0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="u8 slot13_MaterialProperty_1">
+      <DisplayName>13_MaterialProperty_1</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="dummy8 slot13_reserved_[5]">
+      <DisplayName>13_reserved_[5]</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="u8 slot13_BaseR">
+      <DisplayName>13_BaseR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>303</SortID>
+    </Field>
+    <Field Def="u8 slot13_BaseG">
+      <DisplayName>13_BaseG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>304</SortID>
+    </Field>
+    <Field Def="u8 slot13_BaseB">
+      <DisplayName>13_BaseB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>305</SortID>
+    </Field>
+    <Field Def="u8 slot13_BaseA">
+      <DisplayName>13_BaseA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>306</SortID>
+    </Field>
+    <Field Def="u8 slot13_SubR">
+      <DisplayName>13_SubR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>307</SortID>
+    </Field>
+    <Field Def="u8 slot13_SubG">
+      <DisplayName>13_SubG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>308</SortID>
+    </Field>
+    <Field Def="u8 slot13_SubB">
+      <DisplayName>13_SubB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>309</SortID>
+    </Field>
+    <Field Def="u8 slot13_SubA">
+      <DisplayName>13_SubA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="u8 slot13_SupportR">
+      <DisplayName>13_SupportR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>311</SortID>
+    </Field>
+    <Field Def="u8 slot13_SupportG">
+      <DisplayName>13_SupportG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>312</SortID>
+    </Field>
+    <Field Def="u8 slot13_SupportB">
+      <DisplayName>13_SupportB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>313</SortID>
+    </Field>
+    <Field Def="u8 slot13_SupportA">
+      <DisplayName>13_SupportA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>314</SortID>
+    </Field>
+    <Field Def="u8 slot13_OptionalR">
+      <DisplayName>13_OptionalR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>315</SortID>
+    </Field>
+    <Field Def="u8 slot13_OptionalG">
+      <DisplayName>13_OptionalG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>316</SortID>
+    </Field>
+    <Field Def="u8 slot13_OptionalB">
+      <DisplayName>13_OptionalB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>317</SortID>
+    </Field>
+    <Field Def="u8 slot13_OptionalA">
+      <DisplayName>13_OptionalA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>318</SortID>
+    </Field>
+    <Field Def="u8 slot13_DeviceR">
+      <DisplayName>13_DeviceR</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>319</SortID>
+    </Field>
+    <Field Def="u8 slot13_DeviceG">
+      <DisplayName>13_DeviceG</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u8 slot13_DeviceB">
+      <DisplayName>13_DeviceB</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>321</SortID>
+    </Field>
+    <Field Def="u8 slot13_DeviceA">
+      <DisplayName>13_DeviceA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>322</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>BEHAVIOR_PARAM_ST</ParamType>
+  <Unk06>2</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s32 variationId">
+      <DisplayName>行動バリエーションID</DisplayName>
+      <Description>攻撃パラメータ用のIDを算出する際に使用します。実機上では直接使用しません。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+    </Field>
+    <Field Def="s32 behaviorJudgeId">
+      <DisplayName>行動判定ID</DisplayName>
+      <Description>攻撃パラメータ用のIDを算出する際に使用します。このIDはTimeActEditorで入力される行動判定IDと一致させます。実機上では直接使用しません。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u8 ezStateBehaviorType_old">
+      <DisplayName>未使用</DisplayName>
+      <Description>未使用</Description>
+    </Field>
+    <Field Def="u8 refType">
+      <DisplayName>参照IDタイプ</DisplayName>
+      <Enum>BEHAVIOR_REF_TYPE</Enum>
+      <Description>下記、3つのIDを間違わないように指定.</Description>
+    </Field>
+    <Field Def="dummy8 pad0[2]">
+      <DisplayName>パディング0</DisplayName>
+      <Description>パディング0.</Description>
+    </Field>
+    <Field Def="s32 atkParamId">
+      <DisplayName>攻撃パラメータID</DisplayName>
+      <Description>攻撃力などを指定.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 bulletParamId">
+      <DisplayName>飛び道具パラメータID</DisplayName>
+      <Description>飛び道具の飛び方と、攻撃力を指定.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 spEffectId">
+      <DisplayName>特殊効果ID</DisplayName>
+      <Description>特殊効果を指定.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 sfxVariationId">
+      <DisplayName>SFX バリエーションID</DisplayName>
+      <Description>ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u8 category">
+      <DisplayName>カテゴリ</DisplayName>
+      <Enum>BEHAVIOR_CATEGORY</Enum>
+      <Description>スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する
+</Description>
+    </Field>
+    <Field Def="dummy8 pad1[15]">
+      <DisplayName>パディング1</DisplayName>
+      <Description>パディング1.</Description>
+    </Field>
+    <Field Def="s32 stamina">
+      <DisplayName>消費スタミナ</DisplayName>
+      <Description>行動時の消費スタミナ量を設定.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s32 mp">
+      <DisplayName>消費MP</DisplayName>
+      <Description>行動時の消費MP量を設定.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad3[1]">
+      <DisplayName>パディング3</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="u8 atkType">
+      <DisplayName>攻撃タイプ</DisplayName>
+      <Enum>BEHAVIOR_ATK_TYPE</Enum>
+      <Description>攻撃属性が何かを指定する.</Description>
+    </Field>
+    <Field Def="u8 atkMaterial">
+      <DisplayName>攻撃材質</DisplayName>
+      <Enum>WEP_MATERIAL_ATK</Enum>
+      <Description>攻撃時のSEに使用.</Description>
+    </Field>
+    <Field Def="u8 defMaterial">
+      <DisplayName>防御材質【SE】</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>ガード時のSEに使用.</Description>
+    </Field>
+    <Field Def="u8 atkSize">
+      <DisplayName>サイズ</DisplayName>
+      <Enum>BEHAVIOR_ATK_SIZE</Enum>
+      <Description>攻撃時のSEに使用（予備／デフォルト0）.</Description>
+    </Field>
+    <Field Def="u8 defSfxMaterial">
+      <DisplayName>防御材質【SFX】</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>ガード時のSFXに使用.</Description>
+    </Field>
+    <Field Def="dummy8 pad2[38]">
+      <DisplayName>パディング2</DisplayName>
+      <Description>パディング2.</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,23 @@
+{
+  "Param": "SWORDARTS_TABLE_PARAM_ST",
+  "Type": "SWORDARTS_TABLE_PARAM_ST",
+  "Name": "SWORDARTS_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsId",
+      "Name": "Sword Arts ID",
+      "Description": "The Sword Arts to target"
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "Roll Weight",
+      "Description": "The weighting to apply during the roll."
+    }
+  ]
+}

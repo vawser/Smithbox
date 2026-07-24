@@ -1,0 +1,161 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1"
+      ]
+    },
+    {
+      "ID": 2100800,
+      "Entries": [
+        "m21_00 Location _ Base Elderly (Awakened)"
+      ]
+    },
+    {
+      "ID": 2100810,
+      "Entries": [
+        "m21_00 Location _ Inheritor of Nightmares"
+      ]
+    },
+    {
+      "ID": 2200800,
+      "Entries": [
+        "m22_00 Cemetery Street _ Eye Collector"
+      ]
+    },
+    {
+      "ID": 2300800,
+      "Entries": [
+        "m23_00 ruins _ Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 2300810,
+      "Entries": [
+        "m23_00 ruins _ Storm Beast (Bone)"
+      ]
+    },
+    {
+      "ID": 2400800,
+      "Entries": [
+        "m24_00 Cathedral Quarter A_ Saint Beast"
+      ]
+    },
+    {
+      "ID": 2410810,
+      "Entries": [
+        "m24_01 Cathedral Quarter B_ Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 2410811,
+      "Entries": [
+        "m24_01 Cathedral Quarter B_ Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 2410800,
+      "Entries": [
+        "m24_01 Cathedral Quarter B_ Parishioner"
+      ]
+    },
+    {
+      "ID": 2420800,
+      "Entries": [
+        "m24_02 Cathedral Quarter C_ Child of the Moon"
+      ]
+    },
+    {
+      "ID": 2420811,
+      "Entries": [
+        "m24_02 Cathedral Quarter C_ Messengers from the Moon"
+      ]
+    },
+    {
+      "ID": 2500800,
+      "Entries": [
+        "m25_00 Old castle _ King's Reaper"
+      ]
+    },
+    {
+      "ID": 2600803,
+      "Entries": [
+        "m26_00 Trap Lord _ Lesser Demon (Death and Darkness)"
+      ]
+    },
+    {
+      "ID": 2600850,
+      "Entries": [
+        "m26_00 Trap Lord _ Lord of Nightmares"
+      ]
+    },
+    {
+      "ID": 2700800,
+      "Entries": [
+        "m27_00 forest _ Dark Brigade"
+      ]
+    },
+    {
+      "ID": 2800803,
+      "Entries": [
+        "m28_00 City of Sacrifice _ The failed evil god"
+      ]
+    },
+    {
+      "ID": 2900100,
+      "Entries": [
+        "m29_00 Dungeons _ boss ( General )"
+      ]
+    },
+    {
+      "ID": 3200800,
+      "Entries": [
+        "m32_00 University _ Idiot Spider"
+      ]
+    },
+    {
+      "ID": 3300800,
+      "Entries": [
+        "m33_00 hometown _ Evil God"
+      ]
+    },
+    {
+      "ID": 3400801,
+      "Entries": [
+        "m34_00 Cathedral Quarter D_ Ludwig"
+      ]
+    },
+    {
+      "ID": 3400850,
+      "Entries": [
+        "m34_00 Cathedral Quarter D_ Parishioner Ω"
+      ]
+    },
+    {
+      "ID": 3500800,
+      "Entries": [
+        "m35_00 Clock Tower _ Clock Tower Boss"
+      ]
+    },
+    {
+      "ID": 3500850,
+      "Entries": [
+        "m35_00 Clock Tower _ patient B"
+      ]
+    },
+    {
+      "ID": 3600801,
+      "Entries": [
+        "m36_00 fishing village _ Final Boss"
+      ]
+    }
+  ]
+}

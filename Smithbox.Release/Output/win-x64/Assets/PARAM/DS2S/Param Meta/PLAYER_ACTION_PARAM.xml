@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <fMaxAdrenaline />
+        <fDecreaseAderanalinePerSec />
+        <fAdrenalineCoolTime />
+        <fMaxDistressAmount />
+        <fMinEffectiveDistress />
+        <fMaxEffectiveDistress />
+        <fMinBreathlessAnimWait />
+        <fMaxBreathlessAnimWait />
+        <fDecreaseDistressPerSec />
+        <fMinPivotAngleForGainDistress />
+        <fDecreaseDistressOnGuard />
+    </Field>
+</PARAMMETA>

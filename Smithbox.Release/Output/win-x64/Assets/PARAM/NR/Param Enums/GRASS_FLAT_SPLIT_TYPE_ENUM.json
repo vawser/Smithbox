@@ -1,0 +1,29 @@
+{
+  "Key": "GRASS_FLAT_SPLIT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRASS_FLAT_SPLIT_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Half"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full"
+        }
+      ]
+    }
+  ]
+}

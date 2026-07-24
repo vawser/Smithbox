@@ -1,0 +1,2819 @@
+{
+  "Name": "LookAtParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Own blade guidance test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "back gatling"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Back Gatling Z"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "back missile 1"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "back missile 2"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "back cannon"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "back cannon Y"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Back cannon missile X_02"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Back cannon missile Y_02"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Left shoulder cannon_X"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Left shoulder cannon_Z"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Right shoulder cannon_X"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Right shoulder cannon_Z"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "back rocket x"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "back rocket Y"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Spotlight Z"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Spotlight X"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "test missile"
+      ]
+    },
+    {
+      "ID": 590000,
+      "Entries": [
+        "Stiglo gun barrel angle"
+      ]
+    },
+    {
+      "ID": 590010,
+      "Entries": [
+        "Stiglo quadruple gun angle X_01"
+      ]
+    },
+    {
+      "ID": 590011,
+      "Entries": [
+        "Stiglo quadruple gun angle X_02"
+      ]
+    },
+    {
+      "ID": 590012,
+      "Entries": [
+        "Stiglo quadruple gun angle X_03"
+      ]
+    },
+    {
+      "ID": 590013,
+      "Entries": [
+        "Stiglo quadruple gun angle X_04"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Bomber anti-aircraft gun left X"
+      ]
+    },
+    {
+      "ID": 850001,
+      "Entries": [
+        "Bomber anti-aircraft gun left Y"
+      ]
+    },
+    {
+      "ID": 850010,
+      "Entries": [
+        "Bomber anti-aircraft gun right X"
+      ]
+    },
+    {
+      "ID": 850011,
+      "Entries": [
+        "Bomber anti-aircraft gun right Y"
+      ]
+    },
+    {
+      "ID": 850020,
+      "Entries": [
+        "Bomber ground gun left X"
+      ]
+    },
+    {
+      "ID": 850021,
+      "Entries": [
+        "Bomber ground gun left Y"
+      ]
+    },
+    {
+      "ID": 850030,
+      "Entries": [
+        "Bomber ground gun right X"
+      ]
+    },
+    {
+      "ID": 850031,
+      "Entries": [
+        "Bomber ground gun right Y"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "Strong small fish bazooka top and bottom"
+      ]
+    },
+    {
+      "ID": 851010,
+      "Entries": [
+        "Strong small fish shield top and bottom"
+      ]
+    },
+    {
+      "ID": 851040,
+      "Entries": [
+        "Strong Small Fish Turning Boost Up and Down"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Eyeball laser 01"
+      ]
+    },
+    {
+      "ID": 853010,
+      "Entries": [
+        "Eyeball laser 02"
+      ]
+    },
+    {
+      "ID": 853020,
+      "Entries": [
+        "Eyeball laser 03"
+      ]
+    },
+    {
+      "ID": 854010,
+      "Entries": [
+        "Strong enemy (fat) Rocket left X"
+      ]
+    },
+    {
+      "ID": 854011,
+      "Entries": [
+        "Strong enemy (fat) Rocket left Y"
+      ]
+    },
+    {
+      "ID": 854012,
+      "Entries": [
+        "Strong enemy (fat) Rocket right X"
+      ]
+    },
+    {
+      "ID": 854013,
+      "Entries": [
+        "Strong enemy (fat) Rocket right Y"
+      ]
+    },
+    {
+      "ID": 854040,
+      "Entries": [
+        "Strong Enemy (Fat) Plasma Rifle X"
+      ]
+    },
+    {
+      "ID": 854041,
+      "Entries": [
+        "Strong Enemy (Fat) Plasma Rifle Y"
+      ]
+    },
+    {
+      "ID": 854050,
+      "Entries": [
+        "Strong Enemy (Fat) Pulse Gun X"
+      ]
+    },
+    {
+      "ID": 854051,
+      "Entries": [
+        "Strong Enemy (Fat) Pulse Gun Y"
+      ]
+    },
+    {
+      "ID": 854060,
+      "Entries": [
+        "Strong enemy (fat) Shield: Guard X"
+      ]
+    },
+    {
+      "ID": 854061,
+      "Entries": [
+        "Strong enemy (fat) Shield: Guard Y"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "Reverse indirect enemy machine gun up and down"
+      ]
+    },
+    {
+      "ID": 920180,
+      "Entries": [
+        "Reverse indirect enemy machine gun upper and lower anti-aircraft specifications"
+      ]
+    },
+    {
+      "ID": 920110,
+      "Entries": [
+        "Reverse indirect enemy missile up and down"
+      ]
+    },
+    {
+      "ID": 920190,
+      "Entries": [
+        "Reverse indirect enemy machine gun up and down test"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "Battery_Cannon top and bottom"
+      ]
+    },
+    {
+      "ID": 940020,
+      "Entries": [
+        "Battery_Cannon B layer test use"
+      ]
+    },
+    {
+      "ID": 940090,
+      "Entries": [
+        "Battery_Cannon top and bottom boss side"
+      ]
+    },
+    {
+      "ID": 941000,
+      "Entries": [
+        "Gun turret_laser top and bottom"
+      ]
+    },
+    {
+      "ID": 941090,
+      "Entries": [
+        "Gun turret_laser top and bottom boss side"
+      ]
+    },
+    {
+      "ID": 941091,
+      "Entries": [
+        "Gun turret_laser mission use"
+      ]
+    },
+    {
+      "ID": 941095,
+      "Entries": [
+        "Gun turret_laser top and bottom boss side"
+      ]
+    },
+    {
+      "ID": 941100,
+      "Entries": [
+        "Battery_Laser train gun upper and lower"
+      ]
+    },
+    {
+      "ID": 942000,
+      "Entries": [
+        "Artillery battery_missile top and bottom"
+      ]
+    },
+    {
+      "ID": 943000,
+      "Entries": [
+        "Gun turret boss attach machine gun top and bottom"
+      ]
+    },
+    {
+      "ID": 943010,
+      "Entries": [
+        "Gun turret boss attach machine gun top and bottom"
+      ]
+    },
+    {
+      "ID": 943020,
+      "Entries": [
+        "Gun turret boss attach machine gun top and bottom"
+      ]
+    },
+    {
+      "ID": 943800,
+      "Entries": [
+        "B layer gun turret machine gun turret"
+      ]
+    },
+    {
+      "ID": 943900,
+      "Entries": [
+        "Artillery Boss Attach Machine Gun Up and Down Strong"
+      ]
+    },
+    {
+      "ID": 943910,
+      "Entries": [
+        "Gun turret boss attach machine gun upper and lower normal"
+      ]
+    },
+    {
+      "ID": 943920,
+      "Entries": [
+        "Battery Boss Attach Machine Gun Up and Down Weak"
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        "4010 Grenade Cannon_R"
+      ]
+    },
+    {
+      "ID": 4010010,
+      "Entries": [
+        "4010 Grenade Cannon_L"
+      ]
+    },
+    {
+      "ID": 4110000,
+      "Entries": [
+        "4110 Spread Bazooka_R"
+      ]
+    },
+    {
+      "ID": 4110010,
+      "Entries": [
+        "4110 Spread Bazooka_L"
+      ]
+    },
+    {
+      "ID": 4210000,
+      "Entries": [
+        "4210 Plasma Missile_R"
+      ]
+    },
+    {
+      "ID": 4210010,
+      "Entries": [
+        "4210 Plasma Missile_L"
+      ]
+    },
+    {
+      "ID": 4211000,
+      "Entries": [
+        "4211 Plasma Missile_R"
+      ]
+    },
+    {
+      "ID": 4211010,
+      "Entries": [
+        "4211 Plasma Missile_L"
+      ]
+    },
+    {
+      "ID": 4220000,
+      "Entries": [
+        "4220 Plasma Missile_R"
+      ]
+    },
+    {
+      "ID": 4220010,
+      "Entries": [
+        "4220 Plasma Missile_L"
+      ]
+    },
+    {
+      "ID": 4230000,
+      "Entries": [
+        "4230 AI missile_R_01"
+      ]
+    },
+    {
+      "ID": 4230001,
+      "Entries": [
+        "└4230 AI missile_R_02"
+      ]
+    },
+    {
+      "ID": 4230010,
+      "Entries": [
+        "4230 AI missile_L_01"
+      ]
+    },
+    {
+      "ID": 4230011,
+      "Entries": [
+        "└4230 AI missile_L_02"
+      ]
+    },
+    {
+      "ID": 4231000,
+      "Entries": [
+        "4231 AI missile_R_01"
+      ]
+    },
+    {
+      "ID": 4231001,
+      "Entries": [
+        "└4231 AI missile_R_02"
+      ]
+    },
+    {
+      "ID": 4231010,
+      "Entries": [
+        "4231 AI missile_L_01"
+      ]
+    },
+    {
+      "ID": 4231011,
+      "Entries": [
+        "└4231 AI missile_L_02"
+      ]
+    },
+    {
+      "ID": 4240000,
+      "Entries": [
+        "4240 Special plasma missile K・AI_R_01"
+      ]
+    },
+    {
+      "ID": 4240010,
+      "Entries": [
+        "4240 Special plasma missile K・AI_L_01"
+      ]
+    },
+    {
+      "ID": 4250000,
+      "Entries": [
+        "4250 Vertical Missile_R"
+      ]
+    },
+    {
+      "ID": 4250010,
+      "Entries": [
+        "4250 Vertical Missile_L"
+      ]
+    },
+    {
+      "ID": 4251000,
+      "Entries": [
+        "4251 Vertical Missile_R"
+      ]
+    },
+    {
+      "ID": 4251010,
+      "Entries": [
+        "4251 Vertical missile_L"
+      ]
+    },
+    {
+      "ID": 4252000,
+      "Entries": [
+        "4252 Vertical Missile_R"
+      ]
+    },
+    {
+      "ID": 4252010,
+      "Entries": [
+        "4252 Vertical Missile_L"
+      ]
+    },
+    {
+      "ID": 4260000,
+      "Entries": [
+        "4260 Explosive rope missile_R"
+      ]
+    },
+    {
+      "ID": 4260010,
+      "Entries": [
+        "4260 Explosive rope missile_L"
+      ]
+    },
+    {
+      "ID": 4280000,
+      "Entries": [
+        "4250 Special missile M・AI_R"
+      ]
+    },
+    {
+      "ID": 4280010,
+      "Entries": [
+        "4250 Special missile M・AI_L"
+      ]
+    },
+    {
+      "ID": 4290000,
+      "Entries": [
+        "4290 Twin missile_R"
+      ]
+    },
+    {
+      "ID": 4290010,
+      "Entries": [
+        "4290 Twin missile_L"
+      ]
+    },
+    {
+      "ID": 4291000,
+      "Entries": [
+        "4291 Twin missile_R"
+      ]
+    },
+    {
+      "ID": 4291010,
+      "Entries": [
+        "4291 Twin missile_L"
+      ]
+    },
+    {
+      "ID": 4292000,
+      "Entries": [
+        "4292 Twin missile_R"
+      ]
+    },
+    {
+      "ID": 4292010,
+      "Entries": [
+        "4292 Twin missile_L"
+      ]
+    },
+    {
+      "ID": 4300000,
+      "Entries": [
+        "4300 2Way Missile_R"
+      ]
+    },
+    {
+      "ID": 4300010,
+      "Entries": [
+        "4300 2Way Missile_L"
+      ]
+    },
+    {
+      "ID": 4301000,
+      "Entries": [
+        "4301 2Way Missile_R"
+      ]
+    },
+    {
+      "ID": 4301010,
+      "Entries": [
+        "4301 2Way Missile_L"
+      ]
+    },
+    {
+      "ID": 4302000,
+      "Entries": [
+        "4302 Fission missile_R"
+      ]
+    },
+    {
+      "ID": 4302010,
+      "Entries": [
+        "4302 Fission missile_L"
+      ]
+    },
+    {
+      "ID": 4303000,
+      "Entries": [
+        "4303 2Way Missile_R"
+      ]
+    },
+    {
+      "ID": 4303010,
+      "Entries": [
+        "4303 2Way Missile_L"
+      ]
+    },
+    {
+      "ID": 4310000,
+      "Entries": [
+        "4310 Fission missile_R"
+      ]
+    },
+    {
+      "ID": 4310010,
+      "Entries": [
+        "4310 Fission missile_L"
+      ]
+    },
+    {
+      "ID": 4311000,
+      "Entries": [
+        "4311 Fission missile_R"
+      ]
+    },
+    {
+      "ID": 4311010,
+      "Entries": [
+        "4311 Fission missile_L"
+      ]
+    },
+    {
+      "ID": 4320000,
+      "Entries": [
+        "4320 Container Missile_R"
+      ]
+    },
+    {
+      "ID": 4320010,
+      "Entries": [
+        "4320 Container Missile_L"
+      ]
+    },
+    {
+      "ID": 4330000,
+      "Entries": [
+        "4330 Needle Missile_R"
+      ]
+    },
+    {
+      "ID": 4330010,
+      "Entries": [
+        "4330 Needle Missile_L"
+      ]
+    },
+    {
+      "ID": 4340000,
+      "Entries": [
+        "4340 Cluster Missile_R"
+      ]
+    },
+    {
+      "ID": 4340010,
+      "Entries": [
+        "4340 Cluster Missile_L"
+      ]
+    },
+    {
+      "ID": 4350000,
+      "Entries": [
+        "4350 Auxiliary booster_M・AI_R"
+      ]
+    },
+    {
+      "ID": 4350010,
+      "Entries": [
+        "4350 Auxiliary booster_M・AI_L"
+      ]
+    },
+    {
+      "ID": 4410000,
+      "Entries": [
+        "4410 Light Grenade Cannon_R"
+      ]
+    },
+    {
+      "ID": 4410010,
+      "Entries": [
+        "4410 Light Grenade Cannon_L"
+      ]
+    },
+    {
+      "ID": 4510000,
+      "Entries": [
+        "4510 Plasma Cannon_R"
+      ]
+    },
+    {
+      "ID": 4510010,
+      "Entries": [
+        "4510 Plasma Cannon_L"
+      ]
+    },
+    {
+      "ID": 4610000,
+      "Entries": [
+        "4610 Laser Cannon_R"
+      ]
+    },
+    {
+      "ID": 4610010,
+      "Entries": [
+        "4610 Laser Cannon_L"
+      ]
+    },
+    {
+      "ID": 4620000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4620010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4710000,
+      "Entries": [
+        "4710 Triple Laser Cannon_R_01"
+      ]
+    },
+    {
+      "ID": 4710001,
+      "Entries": [
+        "└4710 Triple Laser Cannon_R_02"
+      ]
+    },
+    {
+      "ID": 4710010,
+      "Entries": [
+        "4710 Triple Laser Cannon_L_01"
+      ]
+    },
+    {
+      "ID": 4710011,
+      "Entries": [
+        "└4710 Triple Laser Cannon_L_02"
+      ]
+    },
+    {
+      "ID": 4810000,
+      "Entries": [
+        "4810 Pulse Cannon_R"
+      ]
+    },
+    {
+      "ID": 4810010,
+      "Entries": [
+        "4810 Pulse Cannon_L"
+      ]
+    },
+    {
+      "ID": 4820000,
+      "Entries": [
+        "4820 Shooting PA_R_01"
+      ]
+    },
+    {
+      "ID": 4820001,
+      "Entries": [
+        "└4820 Shooting PA_R_02"
+      ]
+    },
+    {
+      "ID": 4820010,
+      "Entries": [
+        "4820 Shooting PA_L_01"
+      ]
+    },
+    {
+      "ID": 4820011,
+      "Entries": [
+        "└4820 Shooting PA_L_02"
+      ]
+    },
+    {
+      "ID": 4830000,
+      "Entries": [
+        "4830 Stun Needle Launcher_R_01"
+      ]
+    },
+    {
+      "ID": 4830001,
+      "Entries": [
+        "└4830 Stun Needle Launcher_R_02"
+      ]
+    },
+    {
+      "ID": 4830010,
+      "Entries": [
+        "4830 Stun Needle Launcher_L_01"
+      ]
+    },
+    {
+      "ID": 4830011,
+      "Entries": [
+        "└4830 Stun Needle Launcher_L_02"
+      ]
+    },
+    {
+      "ID": 4910000,
+      "Entries": [
+        "4910 PA Buckler"
+      ]
+    },
+    {
+      "ID": 4920000,
+      "Entries": [
+        "4920 PA Buckler"
+      ]
+    },
+    {
+      "ID": 4940000,
+      "Entries": [
+        "4940 PA Shield"
+      ]
+    },
+    {
+      "ID": 4950000,
+      "Entries": [
+        "4950 PA Shield"
+      ]
+    },
+    {
+      "ID": 4960000,
+      "Entries": [
+        "4960 PA Shield"
+      ]
+    },
+    {
+      "ID": 4970000,
+      "Entries": [
+        "4970 PA Shield"
+      ]
+    },
+    {
+      "ID": 4980000,
+      "Entries": [
+        "4980 PA Scutum"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "5010 Laser shotgun_R"
+      ]
+    },
+    {
+      "ID": 5010010,
+      "Entries": [
+        "5010 Laser shotgun_L"
+      ]
+    },
+    {
+      "ID": 5110000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5110010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5710000,
+      "Entries": [
+        "5710 Live Bullet Exceed Orbit_R_X"
+      ]
+    },
+    {
+      "ID": 5710001,
+      "Entries": [
+        "5710 Live Bullet Exceed Orbit_R_J"
+      ]
+    },
+    {
+      "ID": 5710010,
+      "Entries": [
+        "5710 Live Bullet Exceed Orbit_L_X"
+      ]
+    },
+    {
+      "ID": 5710011,
+      "Entries": [
+        "5710 Live Bullet Exceed Orbit_L_J"
+      ]
+    },
+    {
+      "ID": 5720000,
+      "Entries": [
+        "5720 EN Exceed Orbit_R_X"
+      ]
+    },
+    {
+      "ID": 5720001,
+      "Entries": [
+        "5720 EN Exceed Orbit_R_J"
+      ]
+    },
+    {
+      "ID": 5720010,
+      "Entries": [
+        "5720 EN Exceed Orbit_L_X"
+      ]
+    },
+    {
+      "ID": 5720011,
+      "Entries": [
+        "5720 EN Exceed Orbit_L_J"
+      ]
+    },
+    {
+      "ID": 5810000,
+      "Entries": [
+        "5810 Funnel_R"
+      ]
+    },
+    {
+      "ID": 5810010,
+      "Entries": [
+        "5810 Funnel_L"
+      ]
+    },
+    {
+      "ID": 5820000,
+      "Entries": [
+        "5820 Placement laser_R"
+      ]
+    },
+    {
+      "ID": 5820010,
+      "Entries": [
+        "5820 Placement laser_L"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "c1000 template machine gun"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "c1000 template shotgun"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "c1000 template bazooka"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "c1000 template sniper rifle"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "c1000 template missile"
+      ]
+    },
+    {
+      "ID": 10000060,
+      "Entries": [
+        "c1000 template pulse gun"
+      ]
+    },
+    {
+      "ID": 10000510,
+      "Entries": [
+        "c1000 template proximity"
+      ]
+    },
+    {
+      "ID": 10000520,
+      "Entries": [
+        "c1000 template extended proximity"
+      ]
+    },
+    {
+      "ID": 10000610,
+      "Entries": [
+        "c1000 template shield"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 Former communist general-purpose MT (armed 1) machine gun"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (armed 1) machine gun reload"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "c3020 former communist country general purpose MT (base) rifle"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) rifle cover shooting"
+      ]
+    },
+    {
+      "ID": 30200400,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) rifle reload"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) shotgun"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "c3020 Former communist area general purpose MT (armed 1) shield"
+      ]
+    },
+    {
+      "ID": 30200700,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) shotgun reload"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) double machine gun"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "c3020 Former communist general-purpose MT (base) throwing gun"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) hand rocket"
+      ]
+    },
+    {
+      "ID": 30201100,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (base) grenade cannon"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "c3020 former communist bloc general-purpose MT (base) missile"
+      ]
+    },
+    {
+      "ID": 30201300,
+      "Entries": [
+        "c3020 Former communist general-purpose MT (base) double machine gun reload"
+      ]
+    },
+    {
+      "ID": 30201400,
+      "Entries": [
+        "c3020 Former communist country general-purpose MT (base) double machine gun (assault concentration fire)"
+      ]
+    },
+    {
+      "ID": 30201900,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (rifle mass) burst rifle"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (rifle mass) burst missile"
+      ]
+    },
+    {
+      "ID": 30203100,
+      "Entries": [
+        "c3020 Former communist area general purpose MT (armed 1) melee"
+      ]
+    },
+    {
+      "ID": 31000100,
+      "Entries": [
+        "c3100 flight MT machine gun"
+      ]
+    },
+    {
+      "ID": 31000200,
+      "Entries": [
+        "c3100 flight MT shooting type plasma cannon"
+      ]
+    },
+    {
+      "ID": 31000300,
+      "Entries": [
+        "c3100 flight MT shooting type twin missile right"
+      ]
+    },
+    {
+      "ID": 31000400,
+      "Entries": [
+        "c3100 flight MT shooting type twin missile left"
+      ]
+    },
+    {
+      "ID": 31000500,
+      "Entries": [
+        "c3100 flight MT firing type check firing right"
+      ]
+    },
+    {
+      "ID": 31000600,
+      "Entries": [
+        "c3100 flight MT firing type check firing left"
+      ]
+    },
+    {
+      "ID": 31000700,
+      "Entries": [
+        "c3100 flight MT shooting type basic cooperation"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "c3100 flight MT shooting type basic cooperation left"
+      ]
+    },
+    {
+      "ID": 31000900,
+      "Entries": [
+        "c3100 flight MT shooting type ascending shooting"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "c3100 flight MT shooting type large detour encirclement missile"
+      ]
+    },
+    {
+      "ID": 31001100,
+      "Entries": [
+        "c3100 flight MT shooting type melee"
+      ]
+    },
+    {
+      "ID": 31001200,
+      "Entries": [
+        "c3100 flight MT shooting type melee"
+      ]
+    },
+    {
+      "ID": 31001500,
+      "Entries": [
+        "c3100 Flight MT Proximity Type EN Shotgun"
+      ]
+    },
+    {
+      "ID": 31001600,
+      "Entries": [
+        "c3100 flight MT close-in type check fire"
+      ]
+    },
+    {
+      "ID": 31001700,
+      "Entries": [
+        "c3100 Flight MT Proximity Type Basic Cooperation"
+      ]
+    },
+    {
+      "ID": 31001800,
+      "Entries": [
+        "c3100 Flight MT Melee Type Edge Blade 2 consecutive attacks 1st stage"
+      ]
+    },
+    {
+      "ID": 31001900,
+      "Entries": [
+        "c3100 Flight MT Melee type Edge Blade 2 consecutive attacks 2nd stage"
+      ]
+    },
+    {
+      "ID": 31002000,
+      "Entries": [
+        "c3100 Flight MT Close Type Immelman Turn Ascent Missile"
+      ]
+    },
+    {
+      "ID": 31002100,
+      "Entries": [
+        "c3100 Flight MT Close Type Immelman Turn Ascent Derivative Assault"
+      ]
+    },
+    {
+      "ID": 31002200,
+      "Entries": [
+        "c3100 flight MT close-in type missile"
+      ]
+    },
+    {
+      "ID": 31002300,
+      "Entries": [
+        "c3100 flight MT close-in type missile"
+      ]
+    },
+    {
+      "ID": 31002900,
+      "Entries": [
+        "c3100 Flight MT Shooting Type Temporary Skill Frame 2"
+      ]
+    },
+    {
+      "ID": 31003000,
+      "Entries": [
+        "c3100 Flight MT Shooting Type Temporary Skill Frame 1"
+      ]
+    },
+    {
+      "ID": 31003100,
+      "Entries": [
+        "c3100 Flight MT Always LookAt"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 Juggernaut (Base) Bazooka"
+      ]
+    },
+    {
+      "ID": 31500100,
+      "Entries": [
+        "c3150 juggernaut (base) main gun (defense all at once)"
+      ]
+    },
+    {
+      "ID": 31500200,
+      "Entries": [
+        "c3150 Juggernaut (base) main gun (defense continuous left and right)"
+      ]
+    },
+    {
+      "ID": 31500300,
+      "Entries": [
+        "c3150 Juggernaut (base) main gun (defense continuous right and left)"
+      ]
+    },
+    {
+      "ID": 31500500,
+      "Entries": [
+        "c3150 Juggernaut (base) secondary gun (right)"
+      ]
+    },
+    {
+      "ID": 31500600,
+      "Entries": [
+        "c3150 Juggernaut (base) secondary gun (left)"
+      ]
+    },
+    {
+      "ID": 31500700,
+      "Entries": [
+        "c3150 juggernaut (base) vertical missile"
+      ]
+    },
+    {
+      "ID": 31500800,
+      "Entries": [
+        "c3150 Juggernaut (Base) Orbit Cannon"
+      ]
+    },
+    {
+      "ID": 31500900,
+      "Entries": [
+        "c3150 Juggernaut (base) frontal micro missile"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "c3150 juggernaut (base) mine laying"
+      ]
+    },
+    {
+      "ID": 31501100,
+      "Entries": [
+        "c3150 Juggernaut (Base) Flare"
+      ]
+    },
+    {
+      "ID": 31501300,
+      "Entries": [
+        "c3150 juggernaut (base) high speed retreat"
+      ]
+    },
+    {
+      "ID": 31501400,
+      "Entries": [
+        "c3150 Juggernaut (base) high speed backward turning (right)"
+      ]
+    },
+    {
+      "ID": 31501500,
+      "Entries": [
+        "c3150 Juggernaut (base) high speed backward turning (left)"
+      ]
+    },
+    {
+      "ID": 31501600,
+      "Entries": [
+        "c3150 Juggernaut (Base) Assault"
+      ]
+    },
+    {
+      "ID": 31501700,
+      "Entries": [
+        "c3150 juggernaut (base) assault brake"
+      ]
+    },
+    {
+      "ID": 31501800,
+      "Entries": [
+        "c3150 juggernaut (base) assault drift brake right turn"
+      ]
+    },
+    {
+      "ID": 31501900,
+      "Entries": [
+        "c3150 Juggernaut (base) assault drift brake left turn"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "c3150 juggernaut (base) assault brake main gun"
+      ]
+    },
+    {
+      "ID": 31502100,
+      "Entries": [
+        "c3150 Juggernaut (base) Assault drift brake right-swivel main gun"
+      ]
+    },
+    {
+      "ID": 31502200,
+      "Entries": [
+        "c3150 Juggernaut (base) Assault drift brake left-swivel main gun"
+      ]
+    },
+    {
+      "ID": 31502500,
+      "Entries": [
+        "c3150 Juggernaut (base) Destruction site extinguishing (right cat)"
+      ]
+    },
+    {
+      "ID": 31502600,
+      "Entries": [
+        "c3150 Juggernaut (base) Destruction site extinguishing (left cat)"
+      ]
+    },
+    {
+      "ID": 31503100,
+      "Entries": [
+        "c3150 Juggernaut (Base) Always LookAt"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 Quadruped MT (base) Right arm Gatling gun"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "c3400 quadruped MT (base) cannon"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "c3400 Quadruped MT (Base) Shield for four legs in communist countries"
+      ]
+    },
+    {
+      "ID": 34003100,
+      "Entries": [
+        "c3400 Quadruped MT (Base) Quadruped MT Always Lookat"
+      ]
+    },
+    {
+      "ID": 51500100,
+      "Entries": [
+        "c5150 combat helicopter machine gun"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "c5150 combat helicopter missile"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "c5200 tank firing while marching"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "c5200 tank stop fire"
+      ]
+    },
+    {
+      "ID": 52003000,
+      "Entries": [
+        "c5200 tank test 1"
+      ]
+    },
+    {
+      "ID": 52003100,
+      "Entries": [
+        "c5200 tank test 2"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "c5500 Biological Weapon Right Bite"
+      ]
+    },
+    {
+      "ID": 55000100,
+      "Entries": [
+        "c5500 Biological Weapon Left Bite"
+      ]
+    },
+    {
+      "ID": 55000200,
+      "Entries": [
+        "c5500 Biological Weapon Jump and Bite"
+      ]
+    },
+    {
+      "ID": 55000300,
+      "Entries": [
+        "c5500 Biological Weapon Dash Bite"
+      ]
+    },
+    {
+      "ID": 55000400,
+      "Entries": [
+        "c5500 Biological Weapon Spit acid (straight line)"
+      ]
+    },
+    {
+      "ID": 55000500,
+      "Entries": [
+        "c5500 Biological Weapon Spit acid (range)"
+      ]
+    },
+    {
+      "ID": 55000600,
+      "Entries": [
+        "c5500 Biological weapon threat (upper body arched)"
+      ]
+    },
+    {
+      "ID": 55000700,
+      "Entries": [
+        "c5500 Biological weapon threat (sideways shaking)"
+      ]
+    },
+    {
+      "ID": 55000800,
+      "Entries": [
+        "c5500 Biological Weapon Threat (3)"
+      ]
+    },
+    {
+      "ID": 55000900,
+      "Entries": [
+        "c5500 biological weapon self-destruction"
+      ]
+    },
+    {
+      "ID": 55003100,
+      "Entries": [
+        "c5500 Biological weapon Always LookAt"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "c6050 Pharaon Mega Gatling Gun"
+      ]
+    },
+    {
+      "ID": 60500100,
+      "Entries": [
+        "c6050 Pharaon quadruple machine gun (right)"
+      ]
+    },
+    {
+      "ID": 60500200,
+      "Entries": [
+        "c6050 Pharaon quadruple machine gun (left)"
+      ]
+    },
+    {
+      "ID": 60500300,
+      "Entries": [
+        "c6050 Pharaon missile (right)"
+      ]
+    },
+    {
+      "ID": 60500400,
+      "Entries": [
+        "c6050 Pharaon missile (left)"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "c6050 Pharaon offset repartition nose right"
+      ]
+    },
+    {
+      "ID": 60501200,
+      "Entries": [
+        "c6050 Pharaon offset repartition nose left"
+      ]
+    },
+    {
+      "ID": 60501500,
+      "Entries": [
+        "c6050 Pharaon Side QB turn right move nose left"
+      ]
+    },
+    {
+      "ID": 60501600,
+      "Entries": [
+        "c6050 Pharaon Side QB turn left move nose right"
+      ]
+    },
+    {
+      "ID": 60501700,
+      "Entries": [
+        "c6050 Pharaon side step right movement"
+      ]
+    },
+    {
+      "ID": 60501800,
+      "Entries": [
+        "c6050 Pharaon side step left movement"
+      ]
+    },
+    {
+      "ID": 60502000,
+      "Entries": [
+        "c6050 Pharaon Repartition nose right (short)"
+      ]
+    },
+    {
+      "ID": 60502100,
+      "Entries": [
+        "c6050 Pharaon Repartition nose left (short)"
+      ]
+    },
+    {
+      "ID": 60502500,
+      "Entries": [
+        "c6050 Pharaon backward turning nose right direction"
+      ]
+    },
+    {
+      "ID": 60502600,
+      "Entries": [
+        "c6050 Pharaon backward turning nose left direction"
+      ]
+    },
+    {
+      "ID": 60503100,
+      "Entries": [
+        "c6050 Pharaon always lookat"
+      ]
+    },
+    {
+      "ID": 80100100,
+      "Entries": [
+        "c8010 Aerial Snap Railgun"
+      ]
+    },
+    {
+      "ID": 80100110,
+      "Entries": [
+        "c8010 High Altitude Snap Gatling"
+      ]
+    },
+    {
+      "ID": 80200100,
+      "Entries": [
+        "c8020 guntank mortar"
+      ]
+    },
+    {
+      "ID": 80200109,
+      "Entries": [
+        "c8020 guntank mortar"
+      ]
+    },
+    {
+      "ID": 80200110,
+      "Entries": [
+        "c8020 Guntank Hand Rocket"
+      ]
+    },
+    {
+      "ID": 80300110,
+      "Entries": [
+        "c8030 pile MT (shotgun shotgun"
+      ]
+    },
+    {
+      "ID": 80300120,
+      "Entries": [
+        "c8030 pile MT (shotgun sliding shotgun)"
+      ]
+    },
+    {
+      "ID": 80600120,
+      "Entries": [
+        "c8060 Gunship (Strong Zako Gatling)"
+      ]
+    },
+    {
+      "ID": 80700100,
+      "Entries": [
+        "c8070 irradiation laser"
+      ]
+    },
+    {
+      "ID": 80801000,
+      "Entries": [
+        "c8080 Fire-breathing MT Flame radiation straight line"
+      ]
+    },
+    {
+      "ID": 80801100,
+      "Entries": [
+        "c8080 Fire-breathing MT Flame radiation mowing down"
+      ]
+    },
+    {
+      "ID": 80900100,
+      "Entries": [
+        "c8090 fighter jet"
+      ]
+    },
+    {
+      "ID": 81000600,
+      "Entries": [
+        "c8100 Shield holding MT (heat rod heat rod 2nd stage"
+      ]
+    },
+    {
+      "ID": 81001000,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod Handgun)"
+      ]
+    },
+    {
+      "ID": 81001200,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod Shield"
+      ]
+    },
+    {
+      "ID": 81100100,
+      "Entries": [
+        "c8110 colorless MT rifle"
+      ]
+    },
+    {
+      "ID": 81100120,
+      "Entries": [
+        "c8110 Colorless MT Cover Medium Rifle"
+      ]
+    },
+    {
+      "ID": 81100600,
+      "Entries": [
+        "c8110 Colorless MT Reload Test"
+      ]
+    },
+    {
+      "ID": 81101400,
+      "Entries": [
+        "c8110 Colorless MT look around"
+      ]
+    },
+    {
+      "ID": 81110100,
+      "Entries": [
+        "c8111 Colorless MT machine gun for control confirmation"
+      ]
+    },
+    {
+      "ID": 81110200,
+      "Entries": [
+        "c8111 Colorless MT normal machine gun for control confirmation"
+      ]
+    },
+    {
+      "ID": 81170100,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 81170200,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity"
+      ]
+    },
+    {
+      "ID": 81170300,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Missile"
+      ]
+    },
+    {
+      "ID": 81170400,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity"
+      ]
+    },
+    {
+      "ID": 81190100,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Machine Gun"
+      ]
+    },
+    {
+      "ID": 81190200,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity"
+      ]
+    },
+    {
+      "ID": 81190300,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Missile"
+      ]
+    },
+    {
+      "ID": 81190400,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity"
+      ]
+    },
+    {
+      "ID": 81300100,
+      "Entries": [
+        "c8130 Humanoid strong enemy pile shooting (plasma rifle)"
+      ]
+    },
+    {
+      "ID": 81300110,
+      "Entries": [
+        "c8130 Humanoid Strong Enemy Guard"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "c8131 Control prototype character shield"
+      ]
+    },
+    {
+      "ID": 81310100,
+      "Entries": [
+        "c8131 Control prototype character machine gun"
+      ]
+    },
+    {
+      "ID": 81310200,
+      "Entries": [
+        "c8131 Control prototype character reload"
+      ]
+    },
+    {
+      "ID": 81310300,
+      "Entries": [
+        "c8131 control prototype character missile"
+      ]
+    },
+    {
+      "ID": 81310400,
+      "Entries": [
+        "c8131 Control prototype character Charge (Stance)"
+      ]
+    },
+    {
+      "ID": 81310500,
+      "Entries": [
+        "c8131 Control prototype character charge shot"
+      ]
+    },
+    {
+      "ID": 81310600,
+      "Entries": [
+        "c8131 Control prototype character charge pile"
+      ]
+    },
+    {
+      "ID": 81310700,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 1 kesa"
+      ]
+    },
+    {
+      "ID": 81310800,
+      "Entries": [
+        "c8131 Control prototype character Melee basic combo 2 Sakanagi"
+      ]
+    },
+    {
+      "ID": 81310900,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 3 storage thrust"
+      ]
+    },
+    {
+      "ID": 81351000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Guard"
+      ]
+    },
+    {
+      "ID": 81351100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Shooting"
+      ]
+    },
+    {
+      "ID": 81351200,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Guard Shooting"
+      ]
+    },
+    {
+      "ID": 81351300,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Missile"
+      ]
+    },
+    {
+      "ID": 81352000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Cooling"
+      ]
+    },
+    {
+      "ID": 81352100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Reload"
+      ]
+    },
+    {
+      "ID": 81352200,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Radome"
+      ]
+    },
+    {
+      "ID": 81353000,
+      "Entries": [
+        "c8135 Official Miyatake strong enemy diving pile"
+      ]
+    },
+    {
+      "ID": 81354000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Combo 1 1 1st stage"
+      ]
+    },
+    {
+      "ID": 81354100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Combo 1 2 2nd stage"
+      ]
+    },
+    {
+      "ID": 81354200,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Combo 1 3-1 Thrust"
+      ]
+    },
+    {
+      "ID": 81354300,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Combo 1 3-2 Charged Thrust"
+      ]
+    },
+    {
+      "ID": 81355000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Thrust Combo 1"
+      ]
+    },
+    {
+      "ID": 81355100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Thrust Combo 2"
+      ]
+    },
+    {
+      "ID": 81356000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Side Right"
+      ]
+    },
+    {
+      "ID": 81356100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Side Left"
+      ]
+    },
+    {
+      "ID": 81357000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy New Castle Knight Combo 1"
+      ]
+    },
+    {
+      "ID": 81357100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 81357200,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 81358000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Watcher Rush Cut"
+      ]
+    },
+    {
+      "ID": 81359000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Thrust Combo Morinaga-san Test 1"
+      ]
+    },
+    {
+      "ID": 81359100,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Thrust Combo Morinaga-san Test 2"
+      ]
+    },
+    {
+      "ID": 81359800,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Mono-Eye Behavior"
+      ]
+    },
+    {
+      "ID": 81359900,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Always LookAt"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Toriashi Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 81450100,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 1"
+      ]
+    },
+    {
+      "ID": 81450200,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 2"
+      ]
+    },
+    {
+      "ID": 81450300,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 3"
+      ]
+    },
+    {
+      "ID": 81450400,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 4"
+      ]
+    },
+    {
+      "ID": 81450500,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 5"
+      ]
+    },
+    {
+      "ID": 81450600,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Missile 6"
+      ]
+    },
+    {
+      "ID": 81450700,
+      "Entries": [
+        "c8145 Official Miyatake Formidable Enemy Birdfoot For Stance Control"
+      ]
+    },
+    {
+      "ID": 81450800,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Jump Stomp"
+      ]
+    },
+    {
+      "ID": 81450900,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Birdfoot Fly away"
+      ]
+    },
+    {
+      "ID": 81451000,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Close-up Test 2"
+      ]
+    },
+    {
+      "ID": 81451100,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Close-up Test 3"
+      ]
+    },
+    {
+      "ID": 81451200,
+      "Entries": [
+        "c8145 Official Miyatake Formidable Enemy Torashii Shooting Test Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 81451300,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot For Missile Behavior"
+      ]
+    },
+    {
+      "ID": 81452000,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Parts LookAt Test"
+      ]
+    },
+    {
+      "ID": 81452010,
+      "Entries": [
+        "c8145 Official Miyatake Strong Enemy Bird Foot Parts LookAt Test"
+      ]
+    },
+    {
+      "ID": 81452900,
+      "Entries": [
+        "c8145 Official Miyatake strong enemy Toriashi Always LookAt"
+      ]
+    },
+    {
+      "ID": 81453000,
+      "Entries": [
+        "c8145 Official Miyatake strong enemy bird's foot radome opening/closing"
+      ]
+    },
+    {
+      "ID": 81453100,
+      "Entries": [
+        "c8145 Official Miyatake strong enemy bird's foot radome rotation"
+      ]
+    },
+    {
+      "ID": 82500000,
+      "Entries": [
+        "c8250 D layer giant elevator missile"
+      ]
+    },
+    {
+      "ID": 82500100,
+      "Entries": [
+        "c8250 D layer huge elevator for transportation"
+      ]
+    },
+    {
+      "ID": 84001000,
+      "Entries": [
+        "c8400 Maritime giant battery cannon"
+      ]
+    },
+    {
+      "ID": 84009000,
+      "Entries": [
+        "c8400 Maritime giant artillery mining ship attach cannon"
+      ]
+    },
+    {
+      "ID": 85104000,
+      "Entries": [
+        "c8510 Strong Zako (bazooka exit shield for adjustment)"
+      ]
+    },
+    {
+      "ID": 85104100,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka"
+      ]
+    },
+    {
+      "ID": 85104200,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile)"
+      ]
+    },
+    {
+      "ID": 85104300,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka"
+      ]
+    },
+    {
+      "ID": 85104700,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile)"
+      ]
+    },
+    {
+      "ID": 85110000,
+      "Entries": [
+        "c8511 Bazooka for strong-strike practice"
+      ]
+    },
+    {
+      "ID": 85110100,
+      "Entries": [
+        "c8511 Strong Zako practice missile"
+      ]
+    },
+    {
+      "ID": 85110200,
+      "Entries": [
+        "c8511 Shield for strong zako practice"
+      ]
+    },
+    {
+      "ID": 85330000,
+      "Entries": [
+        "c8533 Mining ship attach giant gun battery (for map)"
+      ]
+    },
+    {
+      "ID": 85330100,
+      "Entries": [
+        "c8533 Mining ship attached giant gun battery"
+      ]
+    },
+    {
+      "ID": 92012000,
+      "Entries": [
+        "c9201 reverse joint machine gun"
+      ]
+    },
+    {
+      "ID": 92020100,
+      "Entries": [
+        "c9202 reverse joint armament test missile"
+      ]
+    },
+    {
+      "ID": 92030100,
+      "Entries": [
+        "c9203 Reverse joint damage Lv1 interval 2 seconds machine gun"
+      ]
+    },
+    {
+      "ID": 92040100,
+      "Entries": [
+        "c9204 Reverse joint damage Lv1 interval 0.1 seconds machine gun"
+      ]
+    },
+    {
+      "ID": 93070100,
+      "Entries": [
+        "c9307 Colorless poured communist MT machine gun"
+      ]
+    },
+    {
+      "ID": 93080100,
+      "Entries": [
+        "c9308 Tank control verification missile"
+      ]
+    },
+    {
+      "ID": 93081000,
+      "Entries": [
+        "c9308 Proximity for tank control verification"
+      ]
+    },
+    {
+      "ID": 93081100,
+      "Entries": [
+        "c9308 Proximity for tank control verification"
+      ]
+    },
+    {
+      "ID": 93083100,
+      "Entries": [
+        "c9308 Constant LookAt for tank control verification"
+      ]
+    },
+    {
+      "ID": 93093100,
+      "Entries": [
+        "c9309 Machine gun for quadruped control test"
+      ]
+    },
+    {
+      "ID": 93200000,
+      "Entries": [
+        "c9320 planning training aircraft shield"
+      ]
+    },
+    {
+      "ID": 93200100,
+      "Entries": [
+        "c9320 Planning training machine Bazooka"
+      ]
+    },
+    {
+      "ID": 93200200,
+      "Entries": [
+        "c9320 planning training aircraft missile right"
+      ]
+    },
+    {
+      "ID": 93200300,
+      "Entries": [
+        "c9320 planning training aircraft missile left"
+      ]
+    },
+    {
+      "ID": 93200400,
+      "Entries": [
+        "c9320 planning training machine machine gun"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        "c9321 link test rifle"
+      ]
+    },
+    {
+      "ID": 93210100,
+      "Entries": [
+        "c9321 link test machine gun reload"
+      ]
+    },
+    {
+      "ID": 93210200,
+      "Entries": [
+        "c9321 link test blade"
+      ]
+    },
+    {
+      "ID": 93210300,
+      "Entries": [
+        "c9321 link test missile"
+      ]
+    },
+    {
+      "ID": 93210400,
+      "Entries": [
+        "c9321 Link Test Assault Armor"
+      ]
+    },
+    {
+      "ID": 93213100,
+      "Entries": [
+        "c9321 Link test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93221000,
+      "Entries": [
+        "c9322 Enomoto test guard"
+      ]
+    },
+    {
+      "ID": 93221100,
+      "Entries": [
+        "c9322 Enomoto test shooting"
+      ]
+    },
+    {
+      "ID": 93221300,
+      "Entries": [
+        "c9322 Enomoto test missile"
+      ]
+    },
+    {
+      "ID": 93221400,
+      "Entries": [
+        "c9322 Enomoto test missile"
+      ]
+    },
+    {
+      "ID": 93222000,
+      "Entries": [
+        "c9322 Enomoto test cooling"
+      ]
+    },
+    {
+      "ID": 93222100,
+      "Entries": [
+        "c9322 Enomoto test reload"
+      ]
+    },
+    {
+      "ID": 93222200,
+      "Entries": [
+        "c9322 Enomoto test radome"
+      ]
+    },
+    {
+      "ID": 93223000,
+      "Entries": [
+        "c9322 Enomoto test diving pile"
+      ]
+    },
+    {
+      "ID": 93224000,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 1 1st stage"
+      ]
+    },
+    {
+      "ID": 93224100,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 2 2nd stage"
+      ]
+    },
+    {
+      "ID": 93224200,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-1 Thrust"
+      ]
+    },
+    {
+      "ID": 93224300,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-2 Charge Thrust"
+      ]
+    },
+    {
+      "ID": 93225000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 1"
+      ]
+    },
+    {
+      "ID": 93225100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 2"
+      ]
+    },
+    {
+      "ID": 93226000,
+      "Entries": [
+        "c9322 Enomoto test side right"
+      ]
+    },
+    {
+      "ID": 93226100,
+      "Entries": [
+        "c9322 Enomoto test side left"
+      ]
+    },
+    {
+      "ID": 93227000,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 1"
+      ]
+    },
+    {
+      "ID": 93227100,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93227200,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 3"
+      ]
+    },
+    {
+      "ID": 93228000,
+      "Entries": [
+        "c9322 Enomoto test Supervisor rush cut"
+      ]
+    },
+    {
+      "ID": 93229000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga Test 1"
+      ]
+    },
+    {
+      "ID": 93229100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga-san Test 2"
+      ]
+    },
+    {
+      "ID": 93229800,
+      "Entries": [
+        "c9322 Enomoto test mono-eye behavior"
+      ]
+    },
+    {
+      "ID": 93229900,
+      "Entries": [
+        "c9322 Enomoto test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93231000,
+      "Entries": [
+        "c9323 Hagiya Test Guard"
+      ]
+    },
+    {
+      "ID": 93231100,
+      "Entries": [
+        "c9323 Hagiya Test Shooting"
+      ]
+    },
+    {
+      "ID": 93231300,
+      "Entries": [
+        "c9323 Hagiya Test Missile"
+      ]
+    },
+    {
+      "ID": 93232000,
+      "Entries": [
+        "c9323 Hagiya Test Cooling"
+      ]
+    },
+    {
+      "ID": 93232100,
+      "Entries": [
+        "c9323 Hagiya Test Reload"
+      ]
+    },
+    {
+      "ID": 93232200,
+      "Entries": [
+        "c9323 Hagiya Test Radome"
+      ]
+    },
+    {
+      "ID": 93233000,
+      "Entries": [
+        "c9323 Hagiya Test Diving Pile"
+      ]
+    },
+    {
+      "ID": 93234000,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 1 1st stage"
+      ]
+    },
+    {
+      "ID": 93234100,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 2 2nd stage"
+      ]
+    },
+    {
+      "ID": 93234200,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-1 Thrust"
+      ]
+    },
+    {
+      "ID": 93234300,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-2 Charge Thrust"
+      ]
+    },
+    {
+      "ID": 93235000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 1"
+      ]
+    },
+    {
+      "ID": 93235100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 2"
+      ]
+    },
+    {
+      "ID": 93236000,
+      "Entries": [
+        "c9323 Hagiya Test Side Right"
+      ]
+    },
+    {
+      "ID": 93236100,
+      "Entries": [
+        "c9323 Hagiya Test Side Left"
+      ]
+    },
+    {
+      "ID": 93236200,
+      "Entries": [
+        "c9323 Hagiya Test Side Left 2"
+      ]
+    },
+    {
+      "ID": 93237000,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 1"
+      ]
+    },
+    {
+      "ID": 93237100,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93237200,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93238000,
+      "Entries": [
+        "c9323 Hagiya Test Watcher Rush Cut"
+      ]
+    },
+    {
+      "ID": 93239000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga Test 1"
+      ]
+    },
+    {
+      "ID": 93239100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga-san Test 2"
+      ]
+    },
+    {
+      "ID": 93239800,
+      "Entries": [
+        "c9323 Hagiya Test Mono-Eye Behavior"
+      ]
+    },
+    {
+      "ID": 93239900,
+      "Entries": [
+        "c9323 Hagiya Test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93300000,
+      "Entries": [
+        "c9330 Large ragdoll confirmation confirmation dummy"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "c9401 Bazooka battery (large) mining ship deck"
+      ]
+    },
+    {
+      "ID": 94010900,
+      "Entries": [
+        "c9401 Bazooka battery (large) mining ship deck"
+      ]
+    },
+    {
+      "ID": 94100100,
+      "Entries": [
+        "c9410 Elevator upper main battery sniper rifle"
+      ]
+    },
+    {
+      "ID": 94101000,
+      "Entries": [
+        "c9410 sniper turret @legacy adjustment sniper rifle"
+      ]
+    },
+    {
+      "ID": 94105000,
+      "Entries": [
+        "c9410 sniper turret @legacy adjustment sniper rifle"
+      ]
+    },
+    {
+      "ID": 94110200,
+      "Entries": [
+        "c9411 Elevator upper main battery sniper rifle spread"
+      ]
+    },
+    {
+      "ID": 94110300,
+      "Entries": [
+        "c9411 Elevator upper main battery sniper rifle performance difference 01"
+      ]
+    },
+    {
+      "ID": 94110400,
+      "Entries": [
+        "c9411 Elevator upper main battery sniper rifle performance difference 02"
+      ]
+    },
+    {
+      "ID": 94110500,
+      "Entries": [
+        "c9411 Elevator upper main battery sniper rifle performance difference 03"
+      ]
+    },
+    {
+      "ID": 94200100,
+      "Entries": [
+        "c9420 missile battery adjustment missile 1"
+      ]
+    },
+    {
+      "ID": 94200200,
+      "Entries": [
+        "c9420 missile battery adjustment missile 2"
+      ]
+    },
+    {
+      "ID": 94200300,
+      "Entries": [
+        "c9420 missile battery adjustment missile 3"
+      ]
+    },
+    {
+      "ID": 94200400,
+      "Entries": [
+        "c9420 missile battery adjustment missile 4"
+      ]
+    },
+    {
+      "ID": 94200500,
+      "Entries": [
+        "c9420 missile battery adjustment missile 5"
+      ]
+    },
+    {
+      "ID": 94201000,
+      "Entries": [
+        "c9420 missile battery adjustment missile 10"
+      ]
+    },
+    {
+      "ID": 94310100,
+      "Entries": [
+        "c9431 Elevator upper sub battery machine gun"
+      ]
+    },
+    {
+      "ID": 94315000,
+      "Entries": [
+        "c9431 Machine gun battery mining ship deck"
+      ]
+    },
+    {
+      "ID": 94320000,
+      "Entries": [
+        "c9432 machine gun battery predictive firing test_bullet machine gun"
+      ]
+    },
+    {
+      "ID": 94330000,
+      "Entries": [
+        "c9433 Machine gun battery predictive firing test_LookAt machine gun"
+      ]
+    },
+    {
+      "ID": 99980000,
+      "Entries": [
+        "General-purpose control Common attack ID 800 Head LookAt control"
+      ]
+    }
+  ]
+}

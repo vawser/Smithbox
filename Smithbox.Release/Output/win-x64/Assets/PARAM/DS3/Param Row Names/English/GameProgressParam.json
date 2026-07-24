@@ -1,0 +1,83 @@
+{
+  "Name": "GameProgressParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Abyss Watcher"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Yhorm"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Aldrich"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Lothric"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Vordt"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Pontiff Sulyvahn"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dancer"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Game Clear"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "Depthline",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value -- 無効値"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "map expansion -- マップ拡張"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Radar A -- レーダーA"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Radar B -- レーダーB"
+      ]
+    }
+  ]
+}

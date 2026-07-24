@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LIGHT_BANK</ParamType>
+  <Unk06>4</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s16 degRotX_0">
+      <DisplayName>X角度</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 degRotY_0">
+      <DisplayName>Ｙ角度</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 colR_0 = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 colG_0 = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 colB_0 = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 colA_0 = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>平行光源：０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 degRotX_1">
+      <DisplayName>X角度</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 degRotY_1">
+      <DisplayName>Ｙ角度</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 colR_1 = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 colG_1 = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 colB_1 = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 colA_1 = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>平行光源：１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 degRotX_2">
+      <DisplayName>X角度</DisplayName>
+      <Description>平行光源：２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 degRotY_2">
+      <DisplayName>Ｙ角度</DisplayName>
+      <Description>平行光源：２</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 colR_2 = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>平行光源：２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 colG_2 = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>平行光源：２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 colB_2 = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>平行光源：２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 colA_2 = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>平行光源：２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s16 colR_u = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>アンビエント上半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s16 colG_u = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>アンビエント上半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 colB_u = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>アンビエント上半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s16 colA_u = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>アンビエント上半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s16 colR_d = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>アンビエント下半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s16 colG_d = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>アンビエント下半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s16 colB_d = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>アンビエント下半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s16 colA_d = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>アンビエント下半球</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s16 degRotX_s">
+      <DisplayName>X角度</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s16 degRotY_s">
+      <DisplayName>Ｙ角度</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s16 colR_s = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s16 colG_s = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 colB_s = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s16 colA_s">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>平行光源：スペキュラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s16 envDif_colR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>環境光源：ディフューズ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s16 envDif_colG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>環境光源：ディフューズ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s16 envDif_colB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>環境光源：ディフューズ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 envDif_colA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>環境光源：ディフューズ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s16 envSpc_colR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>環境光源：スペキュラ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s16 envSpc_colG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>環境光源：スペキュラ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s16 envSpc_colB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>環境光源：スペキュラ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s16 envSpc_colA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>環境光源：スペキュラ乗算色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s16 envDif">
+      <DisplayName>環境ディフューズ</DisplayName>
+      <Description>環境光源：ディフューズテクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s16 envSpc_0">
+      <DisplayName>環境スペキュラ０</DisplayName>
+      <Description>環境光源：スペキュラ０テクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s16 envSpc_1">
+      <DisplayName>環境スペキュラ１</DisplayName>
+      <Description>環境光源：スペキュラ１テクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="s16 envSpc_2">
+      <DisplayName>環境スペキュラ２</DisplayName>
+      <Description>環境光源：スペキュラ２テクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="s16 envSpc_3">
+      <DisplayName>環境スペキュラ３</DisplayName>
+      <Description>環境光源：スペキュラ３テクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="dummy8 pad[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>47</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

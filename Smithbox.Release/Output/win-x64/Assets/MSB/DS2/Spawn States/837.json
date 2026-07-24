@@ -1,0 +1,78 @@
+{
+  "id": "837",
+  "name": "Imported Hollow (Sword/Bow)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Emote -> Idle (Bow)"
+    },
+    {
+      "value": "3",
+      "name": "Emote -> Idle"
+    },
+    {
+      "value": "4",
+      "name": "Emote -> Idle (Praise the Sun)"
+    },
+    {
+      "value": "5",
+      "name": "Flash -> Idle"
+    },
+    {
+      "value": "6",
+      "name": "Mantle -> Idle"
+    },
+    {
+      "value": "10",
+      "name": "Lying Down"
+    },
+    {
+      "value": "11",
+      "name": "Ghost Hover (Immune to Damage)"
+    },
+    {
+      "value": "12",
+      "name": "Sitting"
+    },
+    {
+      "value": "13",
+      "name": "On Stool with Head in Hands"
+    },
+    {
+      "value": "14",
+      "name": "Cross-legged Sitting"
+    },
+    {
+      "value": "15",
+      "name": "Holding Back Object"
+    },
+    {
+      "value": "16",
+      "name": "Passive (non-hostile until hit)"
+    },
+    {
+      "value": "17",
+      "name": "Passive Sitting (non-hostile until hit)"
+    },
+    {
+      "value": "18",
+      "name": "Passive Guard Pose (non-hostile until hit)"
+    },
+    {
+      "value": "19",
+      "name": "Passive Stool Sitting (non-hostile until hit)"
+    },
+    {
+      "value": "20",
+      "name": "Passive Lean Back Sitting (non-hostile until hit)"
+    }
+  ]
+}

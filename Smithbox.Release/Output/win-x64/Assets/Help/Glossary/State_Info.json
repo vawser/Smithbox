@@ -1,0 +1,16 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "State Info",
+    "Tags": [
+        "Term",
+        "StateInfo"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A system for per-character state management tied in with Havok behavior files in Bloodborne, Darksouls III, Sekiro and Elden Ring, and EzState files in Demon's Souls and Dark Souls I.",
+        "",
+        "Referenced in params/TAE to trigger a status on player or enemies; in that case, the id acts like a special command for low-level behavior handlers to conditionally perform some action."
+    ]
+}

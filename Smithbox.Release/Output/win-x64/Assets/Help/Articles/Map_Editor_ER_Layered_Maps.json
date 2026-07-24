@@ -1,0 +1,20 @@
+{
+    "ProjectType": 8,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Layered Maps",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Elden Ring maps come in two flavors: overworld and dungeon. Overworld maps begin with m60, are arranged in a nested grid, and cover the entire game world. Dungeon maps include legacy dungeons, mini-dungeons like catacombs, and other miscellaneous non-overworld maps. All dungeon maps overlap in space with overworld tiles, but the overworld map in that spot will generally have no contents.",
+        "Dungeon maps are included in this list if it seems possible to physically go there, not just for skyboxes or cutscenes. Overworld maps are included in this list if they have any enemies or assets (objects).",
+        "All dungeon maps overlap in space with overworld tiles, but the overworld map in that spot will generally have no contents.",
+        "[Header]Overworld Tiles",
+        "There are three resolution levels in overworld maps (m60): big tiles, medium tiles, and small tiles. Big tile map ids end in 02 and are subdivided into four medium tiles which end in 01. Medium tiles may in turn contain four small tiles which end in 00. Most enemies and interactable objects are in small tiles. Enemies may be placed in big tiles if they span multiple tiles. Site of Grace objects are also placed in big tiles.",
+        "Overworld maps are named according to a grid-based convention. The grid starts in the southwest and uses (column, row) coordinates. For a tile at (x, z), its east neighbor is (x+1, z) and its north neighbor is (x, z+1). For a non-small tile at (x, z), its four subtiles will have coordinates (2x, 2z) southwest, (2x+1, 2z) southeast, (2x, 2z+1) northwest, and (2x+1, 2z+1) northeast.",
+        "Maps each use their own local coordinate system for game objects contained therein. Small tile maps cover around 256 by 256 in-game units. Medium and large tiles are double and quadruple that size respectively. The center of each tile map corresponds to the local coordinate (0,0,0). Tiles are contiguous such that the centers of orthogonally adjacent small tiles are exactly 256 units away from each other. Dungeon map coordinate offsets are less regular but most of them can be inferred using WorldMapLegacyConvParam.",
+        ""
+    ]
+}

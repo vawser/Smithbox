@@ -1,0 +1,78 @@
+{
+  "Param": "MAP_OBJECT_PARAM",
+  "Type": "MAP_OBJECT_PARAM",
+  "Name": "MAP_OBJECT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "animSpeedBaseRate",
+      "Name": "《アニメ速度ベース》",
+      "Description": ""
+    },
+    {
+      "Field": "animSpeedOverwrteRate",
+      "Name": "《アニメ速度可変》",
+      "Description": ""
+    },
+    {
+      "Field": "animSpeedSharplyRate",
+      "Name": "《急開放アクション アニメ再生速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "material",
+      "Name": "《材質》",
+      "Description": ""
+    },
+    {
+      "Field": "moveDumyPolyId",
+      "Name": "《位置修正 ダミポリID》",
+      "Description": ""
+    },
+    {
+      "Field": "moveType",
+      "Name": "《移動設定》",
+      "Description": ""
+    },
+    {
+      "Field": "weaponStorage",
+      "Name": "《武器収納設定》",
+      "Description": ""
+    },
+    {
+      "Field": "rotationType",
+      "Name": "《旋回設定》",
+      "Description": ""
+    },
+    {
+      "Field": "timeActId",
+      "Name": "《タイムアクトID》",
+      "Description": ""
+    },
+    {
+      "Field": "breakLogicSoundVolume",
+      "Name": "《破壊時音量》",
+      "Description": ""
+    },
+    {
+      "Field": "naviCtrlType",
+      "Name": "《ナビ制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "sharplyAnimEnable",
+      "Name": "《急開放アクション許可》",
+      "Description": ""
+    },
+    {
+      "Field": "enableDecal",
+      "Name": "《デカール貼り付けを許可》",
+      "Description": ""
+    },
+    {
+      "Field": "unk1C",
+      "Name": "unk1C",
+      "Description": ""
+    }
+  ]
+}

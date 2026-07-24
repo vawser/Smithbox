@@ -1,0 +1,128 @@
+{
+  "Param": "SHIELD_PARAM_ST",
+  "Type": "SHIELD_PARAM_ST",
+  "Name": "SHIELD_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "shieldGuardBaseDmyId",
+      "Name": "シールド_ガード基準ダミポリID",
+      "Description": "方向の基準となるダミポリ（-1でマスター）"
+    },
+    {
+      "Field": "shieldGuardIsPosMaster",
+      "Name": "シールド_ガード判定位置をマスターで上書き",
+      "Description": "判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "shieldGuardDirAngDegH",
+      "Name": "シールド_ガード方向_水平[deg]",
+      "Description": "シールドを展開する方向"
+    },
+    {
+      "Field": "shieldGuardDirAngDegV",
+      "Name": "シールド_ガード方向_垂直[deg]",
+      "Description": "シールドを展開する方向"
+    },
+    {
+      "Field": "shieldGuardRangeAngDegH",
+      "Name": "シールド_ガード範囲_水平[deg]",
+      "Description": "シールドの範囲"
+    },
+    {
+      "Field": "shieldGuardRangeAngDegV",
+      "Name": "シールド_ガード範囲_垂直[deg]",
+      "Description": "シールドの範囲"
+    },
+    {
+      "Field": "pa1GuardBaseDmyId",
+      "Name": "PA_1_ガード基準ダミポリID",
+      "Description": "方向の基準となるダミポリ（-1でマスター）"
+    },
+    {
+      "Field": "pa1GuardIsPosMaster",
+      "Name": "PA_1_ガード判定位置をマスターで上書き",
+      "Description": "判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "pa1GuardDirAngDegH",
+      "Name": "PA_1_ガード方向_水平[deg]",
+      "Description": "PAを展開する方向"
+    },
+    {
+      "Field": "pa1GuardDirAngDegV",
+      "Name": "PA_1_ガード方向_垂直[deg]",
+      "Description": "PAを展開する方向"
+    },
+    {
+      "Field": "pa1GuardRangeAngDegH",
+      "Name": "PA_1_ガード範囲_水平[deg]",
+      "Description": "PAの範囲"
+    },
+    {
+      "Field": "pa1GuardRangeAngDegV",
+      "Name": "PA_1_ガード範囲_垂直[deg]",
+      "Description": "PAの範囲"
+    },
+    {
+      "Field": "pa2GuardBaseDmyId",
+      "Name": "PA_2_ガード基準ダミポリID",
+      "Description": "方向の基準となるダミポリ（-1でマスター）"
+    },
+    {
+      "Field": "pa2GuardIsPosMaster",
+      "Name": "PA_2_ガード判定位置をマスターで上書き",
+      "Description": "判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか"
+    },
+    {
+      "Field": "reserved3",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "pa2GuardDirAngDegH",
+      "Name": "PA_2_ガード方向_水平[deg]",
+      "Description": "PAを展開する方向"
+    },
+    {
+      "Field": "pa2GuardDirAngDegV",
+      "Name": "PA_2_ガード方向_垂直[deg]",
+      "Description": "PAを展開する方向"
+    },
+    {
+      "Field": "pa2GuardRangeAngDegH",
+      "Name": "PA_2_ガード範囲_水平[deg]",
+      "Description": "PAの範囲"
+    },
+    {
+      "Field": "pa2GuardRangeAngDegV",
+      "Name": "PA_2_ガード範囲_垂直[deg]",
+      "Description": "PAの範囲"
+    },
+    {
+      "Field": "reserved4",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "paReuseEnableThreshold",
+      "Name": "PA復帰ガード値",
+      "Description": "ガードブレイク後、PAを再度展開できるようになるタイミングを指定するパラメータ"
+    },
+    {
+      "Field": "reserved_end",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

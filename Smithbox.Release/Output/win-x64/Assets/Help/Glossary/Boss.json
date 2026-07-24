@@ -1,0 +1,17 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Boss",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A boss can differ from game to game, but is typically a non-respawning enemy character with a named health bar and a custom arena.",
+        "",
+        "Fog gates, health bars, post-defeat actions, and item awards are typically implemented within EMEVD, and cutscenes before or after are initialized from EMEVD.",
+        "",
+        "A boss's arena will utilise collision to setup a 'unstable' play region, meaning that player position is not saved there."
+    ]
+}

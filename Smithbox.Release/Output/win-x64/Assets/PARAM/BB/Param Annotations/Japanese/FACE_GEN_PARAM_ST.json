@@ -1,0 +1,688 @@
+{
+  "Param": "FACE_GEN_PARAM_ST",
+  "Type": "FACE_GEN_PARAM_ST",
+  "Name": "FACE_GEN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "faceGeoData00",
+      "Name": "顔作成ジオメトリデータ00",
+      "Description": "顔作成ジオメトリデータ00"
+    },
+    {
+      "Field": "faceGeoData01",
+      "Name": "顔作成ジオメトリデータ01",
+      "Description": "顔作成ジオメトリデータ01"
+    },
+    {
+      "Field": "faceGeoData02",
+      "Name": "顔作成ジオメトリデータ02",
+      "Description": "顔作成ジオメトリデータ02"
+    },
+    {
+      "Field": "faceGeoData03",
+      "Name": "顔作成ジオメトリデータ03",
+      "Description": "顔作成ジオメトリデータ03"
+    },
+    {
+      "Field": "faceGeoData04",
+      "Name": "顔作成ジオメトリデータ04",
+      "Description": "顔作成ジオメトリデータ04"
+    },
+    {
+      "Field": "faceGeoData05",
+      "Name": "顔作成ジオメトリデータ05",
+      "Description": "顔作成ジオメトリデータ05"
+    },
+    {
+      "Field": "faceGeoData06",
+      "Name": "顔作成ジオメトリデータ06",
+      "Description": "顔作成ジオメトリデータ06"
+    },
+    {
+      "Field": "faceGeoData07",
+      "Name": "顔作成ジオメトリデータ07",
+      "Description": "顔作成ジオメトリデータ07"
+    },
+    {
+      "Field": "faceGeoData08",
+      "Name": "顔作成ジオメトリデータ08",
+      "Description": "顔作成ジオメトリデータ08"
+    },
+    {
+      "Field": "faceGeoData09",
+      "Name": "顔作成ジオメトリデータ09",
+      "Description": "顔作成ジオメトリデータ09"
+    },
+    {
+      "Field": "faceGeoData10",
+      "Name": "顔作成ジオメトリデータ10",
+      "Description": "顔作成ジオメトリデータ10"
+    },
+    {
+      "Field": "faceGeoData11",
+      "Name": "顔作成ジオメトリデータ11",
+      "Description": "顔作成ジオメトリデータ11"
+    },
+    {
+      "Field": "faceGeoData12",
+      "Name": "顔作成ジオメトリデータ12",
+      "Description": "顔作成ジオメトリデータ12"
+    },
+    {
+      "Field": "faceGeoData13",
+      "Name": "顔作成ジオメトリデータ13",
+      "Description": "顔作成ジオメトリデータ13"
+    },
+    {
+      "Field": "faceGeoData14",
+      "Name": "顔作成ジオメトリデータ14",
+      "Description": "顔作成ジオメトリデータ14"
+    },
+    {
+      "Field": "faceGeoData15",
+      "Name": "顔作成ジオメトリデータ15",
+      "Description": "顔作成ジオメトリデータ15"
+    },
+    {
+      "Field": "faceGeoData16",
+      "Name": "顔作成ジオメトリデータ16",
+      "Description": "顔作成ジオメトリデータ16"
+    },
+    {
+      "Field": "faceGeoData17",
+      "Name": "顔作成ジオメトリデータ17",
+      "Description": "顔作成ジオメトリデータ17"
+    },
+    {
+      "Field": "faceGeoData18",
+      "Name": "顔作成ジオメトリデータ18",
+      "Description": "顔作成ジオメトリデータ18"
+    },
+    {
+      "Field": "faceGeoData19",
+      "Name": "顔作成ジオメトリデータ19",
+      "Description": "顔作成ジオメトリデータ19"
+    },
+    {
+      "Field": "faceGeoData20",
+      "Name": "顔作成ジオメトリデータ20",
+      "Description": "顔作成ジオメトリデータ20"
+    },
+    {
+      "Field": "faceGeoData21",
+      "Name": "顔作成ジオメトリデータ21",
+      "Description": "顔作成ジオメトリデータ21"
+    },
+    {
+      "Field": "faceGeoData22",
+      "Name": "顔作成ジオメトリデータ22",
+      "Description": "顔作成ジオメトリデータ22"
+    },
+    {
+      "Field": "faceGeoData23",
+      "Name": "顔作成ジオメトリデータ23",
+      "Description": "顔作成ジオメトリデータ23"
+    },
+    {
+      "Field": "faceGeoData24",
+      "Name": "顔作成ジオメトリデータ24",
+      "Description": "顔作成ジオメトリデータ24"
+    },
+    {
+      "Field": "faceGeoData25",
+      "Name": "顔作成ジオメトリデータ25",
+      "Description": "顔作成ジオメトリデータ25"
+    },
+    {
+      "Field": "faceGeoData26",
+      "Name": "顔作成ジオメトリデータ26",
+      "Description": "顔作成ジオメトリデータ26"
+    },
+    {
+      "Field": "faceGeoData27",
+      "Name": "顔作成ジオメトリデータ27",
+      "Description": "顔作成ジオメトリデータ27"
+    },
+    {
+      "Field": "faceGeoData28",
+      "Name": "顔作成ジオメトリデータ28",
+      "Description": "顔作成ジオメトリデータ28"
+    },
+    {
+      "Field": "faceGeoData29",
+      "Name": "顔作成ジオメトリデータ29",
+      "Description": "顔作成ジオメトリデータ29"
+    },
+    {
+      "Field": "faceGeoData30",
+      "Name": "顔作成ジオメトリデータ30",
+      "Description": "顔作成ジオメトリデータ30"
+    },
+    {
+      "Field": "faceGeoData31",
+      "Name": "顔作成ジオメトリデータ31",
+      "Description": "顔作成ジオメトリデータ31"
+    },
+    {
+      "Field": "faceGeoData32",
+      "Name": "顔作成ジオメトリデータ32",
+      "Description": "顔作成ジオメトリデータ32"
+    },
+    {
+      "Field": "faceGeoData33",
+      "Name": "顔作成ジオメトリデータ33",
+      "Description": "顔作成ジオメトリデータ33"
+    },
+    {
+      "Field": "faceGeoData34",
+      "Name": "顔作成ジオメトリデータ34",
+      "Description": "顔作成ジオメトリデータ34"
+    },
+    {
+      "Field": "faceGeoData35",
+      "Name": "顔作成ジオメトリデータ35",
+      "Description": "顔作成ジオメトリデータ35"
+    },
+    {
+      "Field": "faceGeoData36",
+      "Name": "顔作成ジオメトリデータ36",
+      "Description": "顔作成ジオメトリデータ36"
+    },
+    {
+      "Field": "faceGeoData37",
+      "Name": "顔作成ジオメトリデータ37",
+      "Description": "顔作成ジオメトリデータ37"
+    },
+    {
+      "Field": "faceGeoData38",
+      "Name": "顔作成ジオメトリデータ38",
+      "Description": "顔作成ジオメトリデータ38"
+    },
+    {
+      "Field": "faceGeoData39",
+      "Name": "顔作成ジオメトリデータ39",
+      "Description": "顔作成ジオメトリデータ39"
+    },
+    {
+      "Field": "faceGeoData40",
+      "Name": "顔作成ジオメトリデータ40",
+      "Description": "顔作成ジオメトリデータ40"
+    },
+    {
+      "Field": "faceGeoData41",
+      "Name": "顔作成ジオメトリデータ41",
+      "Description": "顔作成ジオメトリデータ41"
+    },
+    {
+      "Field": "faceGeoData42",
+      "Name": "顔作成ジオメトリデータ42",
+      "Description": "顔作成ジオメトリデータ42"
+    },
+    {
+      "Field": "faceGeoData43",
+      "Name": "顔作成ジオメトリデータ43",
+      "Description": "顔作成ジオメトリデータ43"
+    },
+    {
+      "Field": "faceGeoData44",
+      "Name": "顔作成ジオメトリデータ44",
+      "Description": "顔作成ジオメトリデータ44"
+    },
+    {
+      "Field": "faceGeoData45",
+      "Name": "顔作成ジオメトリデータ45",
+      "Description": "顔作成ジオメトリデータ45"
+    },
+    {
+      "Field": "faceGeoData46",
+      "Name": "顔作成ジオメトリデータ46",
+      "Description": "顔作成ジオメトリデータ46"
+    },
+    {
+      "Field": "faceGeoData47",
+      "Name": "顔作成ジオメトリデータ47",
+      "Description": "顔作成ジオメトリデータ47"
+    },
+    {
+      "Field": "faceGeoData48",
+      "Name": "顔作成ジオメトリデータ48",
+      "Description": "顔作成ジオメトリデータ48"
+    },
+    {
+      "Field": "faceGeoData49",
+      "Name": "顔作成ジオメトリデータ49",
+      "Description": "顔作成ジオメトリデータ49"
+    },
+    {
+      "Field": "faceTexData00",
+      "Name": "顔作成テクスチャデータ00",
+      "Description": "顔作成テクスチャデータ00"
+    },
+    {
+      "Field": "faceTexData01",
+      "Name": "顔作成テクスチャデータ01",
+      "Description": "顔作成テクスチャデータ01"
+    },
+    {
+      "Field": "faceTexData02",
+      "Name": "顔作成テクスチャデータ02",
+      "Description": "顔作成テクスチャデータ02"
+    },
+    {
+      "Field": "faceTexData03",
+      "Name": "顔作成テクスチャデータ03",
+      "Description": "顔作成テクスチャデータ03"
+    },
+    {
+      "Field": "faceTexData04",
+      "Name": "顔作成テクスチャデータ04",
+      "Description": "顔作成テクスチャデータ04"
+    },
+    {
+      "Field": "faceTexData05",
+      "Name": "顔作成テクスチャデータ05",
+      "Description": "顔作成テクスチャデータ05"
+    },
+    {
+      "Field": "faceTexData06",
+      "Name": "顔作成テクスチャデータ06",
+      "Description": "顔作成テクスチャデータ06"
+    },
+    {
+      "Field": "faceTexData07",
+      "Name": "顔作成テクスチャデータ07",
+      "Description": "顔作成テクスチャデータ07"
+    },
+    {
+      "Field": "faceTexData08",
+      "Name": "顔作成テクスチャデータ08",
+      "Description": "顔作成テクスチャデータ08"
+    },
+    {
+      "Field": "faceTexData09",
+      "Name": "顔作成テクスチャデータ09",
+      "Description": "顔作成テクスチャデータ09"
+    },
+    {
+      "Field": "faceTexData10",
+      "Name": "顔作成テクスチャデータ10",
+      "Description": "顔作成テクスチャデータ10"
+    },
+    {
+      "Field": "faceTexData11",
+      "Name": "顔作成テクスチャデータ11",
+      "Description": "顔作成テクスチャデータ11"
+    },
+    {
+      "Field": "faceTexData12",
+      "Name": "顔作成テクスチャデータ12",
+      "Description": "顔作成テクスチャデータ12"
+    },
+    {
+      "Field": "faceTexData13",
+      "Name": "顔作成テクスチャデータ13",
+      "Description": "顔作成テクスチャデータ13"
+    },
+    {
+      "Field": "faceTexData14",
+      "Name": "顔作成テクスチャデータ14",
+      "Description": "顔作成テクスチャデータ14"
+    },
+    {
+      "Field": "faceTexData15",
+      "Name": "顔作成テクスチャデータ15",
+      "Description": "顔作成テクスチャデータ15"
+    },
+    {
+      "Field": "faceTexData16",
+      "Name": "顔作成テクスチャデータ16",
+      "Description": "顔作成テクスチャデータ16"
+    },
+    {
+      "Field": "faceTexData17",
+      "Name": "顔作成テクスチャデータ17",
+      "Description": "顔作成テクスチャデータ17"
+    },
+    {
+      "Field": "faceTexData18",
+      "Name": "顔作成テクスチャデータ18",
+      "Description": "顔作成テクスチャデータ18"
+    },
+    {
+      "Field": "faceTexData19",
+      "Name": "顔作成テクスチャデータ19",
+      "Description": "顔作成テクスチャデータ19"
+    },
+    {
+      "Field": "faceTexData20",
+      "Name": "顔作成テクスチャデータ20",
+      "Description": "顔作成テクスチャデータ20"
+    },
+    {
+      "Field": "faceTexData21",
+      "Name": "顔作成テクスチャデータ21",
+      "Description": "顔作成テクスチャデータ21"
+    },
+    {
+      "Field": "faceTexData22",
+      "Name": "顔作成テクスチャデータ22",
+      "Description": "顔作成テクスチャデータ22"
+    },
+    {
+      "Field": "faceTexData23",
+      "Name": "顔作成テクスチャデータ23",
+      "Description": "顔作成テクスチャデータ23"
+    },
+    {
+      "Field": "faceTexData24",
+      "Name": "顔作成テクスチャデータ24",
+      "Description": "顔作成テクスチャデータ24"
+    },
+    {
+      "Field": "faceTexData25",
+      "Name": "顔作成テクスチャデータ25",
+      "Description": "顔作成テクスチャデータ25"
+    },
+    {
+      "Field": "faceTexData26",
+      "Name": "顔作成テクスチャデータ26",
+      "Description": "顔作成テクスチャデータ26"
+    },
+    {
+      "Field": "faceTexData27",
+      "Name": "顔作成テクスチャデータ27",
+      "Description": "顔作成テクスチャデータ27"
+    },
+    {
+      "Field": "faceTexData28",
+      "Name": "顔作成テクスチャデータ28",
+      "Description": "顔作成テクスチャデータ28"
+    },
+    {
+      "Field": "faceTexData29",
+      "Name": "顔作成テクスチャデータ29",
+      "Description": "顔作成テクスチャデータ29"
+    },
+    {
+      "Field": "faceTexData30",
+      "Name": "顔作成テクスチャデータ30",
+      "Description": "顔作成テクスチャデータ30"
+    },
+    {
+      "Field": "faceTexData31",
+      "Name": "顔作成テクスチャデータ31",
+      "Description": "顔作成テクスチャデータ31"
+    },
+    {
+      "Field": "faceTexData32",
+      "Name": "顔作成テクスチャデータ32",
+      "Description": "顔作成テクスチャデータ32"
+    },
+    {
+      "Field": "faceTexData33",
+      "Name": "顔作成テクスチャデータ33",
+      "Description": "顔作成テクスチャデータ33"
+    },
+    {
+      "Field": "faceTexData34",
+      "Name": "顔作成テクスチャデータ34",
+      "Description": "顔作成テクスチャデータ34"
+    },
+    {
+      "Field": "faceTexData35",
+      "Name": "顔作成テクスチャデータ35",
+      "Description": "顔作成テクスチャデータ35"
+    },
+    {
+      "Field": "faceTexData36",
+      "Name": "顔作成テクスチャデータ36",
+      "Description": "顔作成テクスチャデータ36"
+    },
+    {
+      "Field": "faceTexData37",
+      "Name": "顔作成テクスチャデータ37",
+      "Description": "顔作成テクスチャデータ37"
+    },
+    {
+      "Field": "faceTexData38",
+      "Name": "顔作成テクスチャデータ38",
+      "Description": "顔作成テクスチャデータ38"
+    },
+    {
+      "Field": "faceTexData39",
+      "Name": "顔作成テクスチャデータ39",
+      "Description": "顔作成テクスチャデータ39"
+    },
+    {
+      "Field": "faceTexData40",
+      "Name": "顔作成テクスチャデータ40",
+      "Description": "顔作成テクスチャデータ40"
+    },
+    {
+      "Field": "faceTexData41",
+      "Name": "顔作成テクスチャデータ41",
+      "Description": "顔作成テクスチャデータ41"
+    },
+    {
+      "Field": "faceTexData42",
+      "Name": "顔作成テクスチャデータ42",
+      "Description": "顔作成テクスチャデータ42"
+    },
+    {
+      "Field": "faceTexData43",
+      "Name": "顔作成テクスチャデータ43",
+      "Description": "顔作成テクスチャデータ43"
+    },
+    {
+      "Field": "faceTexData44",
+      "Name": "顔作成テクスチャデータ44",
+      "Description": "顔作成テクスチャデータ44"
+    },
+    {
+      "Field": "faceTexData45",
+      "Name": "顔作成テクスチャデータ45",
+      "Description": "顔作成テクスチャデータ45"
+    },
+    {
+      "Field": "faceTexData46",
+      "Name": "顔作成テクスチャデータ46",
+      "Description": "顔作成テクスチャデータ46"
+    },
+    {
+      "Field": "faceTexData47",
+      "Name": "顔作成テクスチャデータ47",
+      "Description": "顔作成テクスチャデータ47"
+    },
+    {
+      "Field": "faceTexData48",
+      "Name": "顔作成テクスチャデータ48",
+      "Description": "顔作成テクスチャデータ48"
+    },
+    {
+      "Field": "faceTexData49",
+      "Name": "顔作成テクスチャデータ49",
+      "Description": "顔作成テクスチャデータ49"
+    },
+    {
+      "Field": "facePartsId",
+      "Name": "顔パーツID",
+      "Description": "顔パーツID"
+    },
+    {
+      "Field": "skinColor_R",
+      "Name": "肌の色(Ｒ)",
+      "Description": "肌の色(Ｒ)"
+    },
+    {
+      "Field": "skinColor_G",
+      "Name": "肌の色(Ｇ)",
+      "Description": "肌の色(Ｇ)"
+    },
+    {
+      "Field": "skinColor_B",
+      "Name": "肌の色(Ｂ)",
+      "Description": "肌の色(Ｂ)"
+    },
+    {
+      "Field": "hairPartsId",
+      "Name": "髪パーツID",
+      "Description": "髪パーツID"
+    },
+    {
+      "Field": "hairColor_R",
+      "Name": "髪の色(Ｒ)",
+      "Description": "髪の色(Ｒ)"
+    },
+    {
+      "Field": "hairColor_G",
+      "Name": "髪の色(Ｇ)",
+      "Description": "髪の色(Ｇ)"
+    },
+    {
+      "Field": "hairColor_B",
+      "Name": "髪の色(Ｂ)",
+      "Description": "髪の色(Ｂ)"
+    },
+    {
+      "Field": "eyeLPartsId",
+      "Name": "左目パーツID",
+      "Description": "左目パーツID"
+    },
+    {
+      "Field": "eyeLColor_R",
+      "Name": "左目の色(Ｒ)",
+      "Description": "左目の色(Ｒ)"
+    },
+    {
+      "Field": "eyeLColor_G",
+      "Name": "左目の色(Ｇ)",
+      "Description": "左目の色(Ｇ)"
+    },
+    {
+      "Field": "eyeLColor_B",
+      "Name": "左目の色(Ｂ)",
+      "Description": "左目の色(Ｂ)"
+    },
+    {
+      "Field": "eyeRPartsId",
+      "Name": "右目パーツID",
+      "Description": "右目パーツID"
+    },
+    {
+      "Field": "eyeRColor_R",
+      "Name": "右目の色(Ｒ)",
+      "Description": "右目の色(Ｒ)"
+    },
+    {
+      "Field": "eyeRColor_G",
+      "Name": "右目の色(Ｇ)",
+      "Description": "右目の色(Ｇ)"
+    },
+    {
+      "Field": "eyeRColor_B",
+      "Name": "右目の色(Ｂ)",
+      "Description": "右目の色(Ｂ)"
+    },
+    {
+      "Field": "eyebrowPartsId",
+      "Name": "眉パーツID",
+      "Description": "眉パーツID"
+    },
+    {
+      "Field": "eyebrowColor_R",
+      "Name": "眉の色(Ｒ)",
+      "Description": "眉の色(Ｒ)"
+    },
+    {
+      "Field": "eyebrowColor_G",
+      "Name": "眉の色(Ｇ)",
+      "Description": "眉の色(Ｇ)"
+    },
+    {
+      "Field": "eyebrowColor_B",
+      "Name": "眉の色(Ｂ)",
+      "Description": "眉の色(Ｂ)"
+    },
+    {
+      "Field": "beardPartsId",
+      "Name": "髭パーツID",
+      "Description": "髭パーツID"
+    },
+    {
+      "Field": "beardColor_R",
+      "Name": "髭の色(Ｒ)",
+      "Description": "髭の色(Ｒ)"
+    },
+    {
+      "Field": "beardColor_G",
+      "Name": "髭の色(Ｇ)",
+      "Description": "髭の色(Ｇ)"
+    },
+    {
+      "Field": "beardColor_B",
+      "Name": "髭の色(Ｂ)",
+      "Description": "髭の色(Ｂ)"
+    },
+    {
+      "Field": "accessoriesPartsId",
+      "Name": "装飾パーツID",
+      "Description": "装飾パーツID"
+    },
+    {
+      "Field": "accessoriesColor_R",
+      "Name": "装飾の色(Ｒ)",
+      "Description": "装飾の色(Ｒ)"
+    },
+    {
+      "Field": "accessoriesColor_G",
+      "Name": "装飾の色(Ｇ)",
+      "Description": "装飾の色(Ｇ)"
+    },
+    {
+      "Field": "accessoriesColor_B",
+      "Name": "装飾の色(Ｂ)",
+      "Description": "装飾の色(Ｂ)"
+    },
+    {
+      "Field": "decalPartsId",
+      "Name": "デカールパーツID",
+      "Description": "デカールパーツID"
+    },
+    {
+      "Field": "decalColor_R",
+      "Name": "デカールの色(Ｒ)",
+      "Description": "デカールの色(Ｒ)"
+    },
+    {
+      "Field": "decalColor_G",
+      "Name": "デカールの色(Ｇ)",
+      "Description": "デカールの色(Ｇ)"
+    },
+    {
+      "Field": "decalColor_B",
+      "Name": "デカールの色(Ｂ)",
+      "Description": "デカールの色(Ｂ)"
+    },
+    {
+      "Field": "decalPosX",
+      "Name": "デカール位置(x)",
+      "Description": "デカール位置(x)"
+    },
+    {
+      "Field": "decalPosY",
+      "Name": "デカール位置(y)",
+      "Description": "デカール位置(y)"
+    },
+    {
+      "Field": "decalAngle",
+      "Name": "デカール角度",
+      "Description": "デカール角度"
+    },
+    {
+      "Field": "decalScale",
+      "Name": "デカールスケール",
+      "Description": "デカールスケール"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Param": "FE_CONTROLLER_SETTING_PARAM",
+  "Type": "FE_CONTROLLER_SETTING_PARAM",
+  "Name": "FE_CONTROLLER_SETTING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "StartReactionLine",
+      "Name": "入力最低感度",
+      "Description": ""
+    },
+    {
+      "Field": "StartMoveSpeedRatio",
+      "Name": "最低移動倍率",
+      "Description": ""
+    },
+    {
+      "Field": "MaxSpeed",
+      "Name": "設定カーソル移動速度",
+      "Description": ""
+    }
+  ]
+}

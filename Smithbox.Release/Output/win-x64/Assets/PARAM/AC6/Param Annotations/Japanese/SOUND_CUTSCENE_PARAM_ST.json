@@ -1,0 +1,73 @@
+{
+  "Param": "SOUND_CUTSCENE_PARAM_ST",
+  "Type": "SOUND_CUTSCENE_PARAM_ST",
+  "Name": "SOUND_CUTSCENE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "OneShotBgmBehaviorOnStart",
+      "Name": "カットシーン開始時ワンショットBGM挙動",
+      "Description": "カットシーン開始時ワンショットBGM挙動を指定します"
+    },
+    {
+      "Field": "BossBattleStateOnEnd",
+      "Name": "カットシーン終了時BGMステート「BGMState_BossEnemy」",
+      "Description": "カットシーン終了時BGMステート「BossBattleState」の状態を指定します"
+    },
+    {
+      "Field": "BgmEnemyTypeOnStart",
+      "Name": "カットシーン開始時BGMステート「Bgm_ID」",
+      "Description": "カットシーン開始時時BGMステート「Bgm_ID」の状態を指定します"
+    },
+    {
+      "Field": "BgmEnemyTypeOnEnd",
+      "Name": "カットシーン終了時BGMステート「Bgm_ID」",
+      "Description": "カットシーン終了時BGMステート「Bgm_ID」の状態を指定します"
+    },
+    {
+      "Field": "PostPlaySeId",
+      "Name": "カットシーン終了時にポストするSEID（カテゴリ：p)指定(-1:ポストしない)",
+      "Description": ""
+    },
+    {
+      "Field": "PostPlaySeIdForSkip",
+      "Name": "カットシーン終了時にポストするSEID_スキップ時（カテゴリ：p)指定(-1:ポストしない)",
+      "Description": ""
+    },
+    {
+      "Field": "EnterMapMuteStopTimeOnDrawCutscene",
+      "Name": "入場直後ミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)",
+      "Description": ""
+    },
+    {
+      "Field": "ReverbType",
+      "Name": "カットシーン中のリバーブタイプ",
+      "Description": "カットシーン中に適応するリバーブタイプを指定します"
+    },
+    {
+      "Field": "reserved",
+      "Name": "reserved",
+      "Description": ""
+    }
+  ]
+}

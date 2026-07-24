@@ -1,0 +1,133 @@
+{
+  "Param": "LOAD_BALANCER_PARAM_ST",
+  "Type": "LOAD_BALANCER_PARAM_ST",
+  "Name": "LOAD_BALANCER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lowerFpsThreshold",
+      "Name": "lowerFpsThreshold",
+      "Description": "このFPSを下回ったら、ロードバランスレベルを1上げる"
+    },
+    {
+      "Field": "upperFpsThreshold",
+      "Name": "upperFpsThreshold",
+      "Description": "このFPSを上回ったら、ロードバランスレベルを1下げる"
+    },
+    {
+      "Field": "lowerFpsContinousCount",
+      "Name": "lowerFpsContinousCount",
+      "Description": "このフレーム連続してしきい値を下回ったら、レベルアップ"
+    },
+    {
+      "Field": "upperFpsContinousCount",
+      "Name": "upperFpsContinousCount",
+      "Description": "このフレーム連続してしきい値を上回ったら、レベルダウン"
+    },
+    {
+      "Field": "downAfterChangeSleep",
+      "Name": "downAfterChangeSleep",
+      "Description": "レベルダウン後のスリープフレームカウント"
+    },
+    {
+      "Field": "upAfterChangeSleep",
+      "Name": "upAfterChangeSleep",
+      "Description": "レベルアップ後のスリープフレームカウント"
+    },
+    {
+      "Field": "postProcessLightShaft",
+      "Name": "ライトシャフト",
+      "Description": "フィルタのライトシャフト"
+    },
+    {
+      "Field": "postProcessBloom",
+      "Name": "Bloom",
+      "Description": "ブルーム"
+    },
+    {
+      "Field": "postProcessGlow",
+      "Name": "Glow",
+      "Description": "グロー"
+    },
+    {
+      "Field": "postProcessAA",
+      "Name": "AA",
+      "Description": "アンチエイリアス"
+    },
+    {
+      "Field": "postProcessSSAO",
+      "Name": "SSAO",
+      "Description": "SSAO"
+    },
+    {
+      "Field": "postProcessDOF",
+      "Name": "DOF",
+      "Description": "DOF"
+    },
+    {
+      "Field": "postProcessMotionBlur",
+      "Name": "MotionBlur",
+      "Description": "MotionBlur"
+    },
+    {
+      "Field": "postProcessMotionBlurIteration",
+      "Name": "MotionBlurIteration",
+      "Description": "MotionBlurのイテレーション回数を下げる"
+    },
+    {
+      "Field": "shadowResolutionHalf",
+      "Name": "Shadow ResolutionHalf",
+      "Description": "影の解像度を半分に下げる"
+    },
+    {
+      "Field": "shadowBlur",
+      "Name": "Shadow Blur",
+      "Description": "影のブラーを切る"
+    },
+    {
+      "Field": "sfxParticleHalf",
+      "Name": "SFXのエミット回り",
+      "Description": "エミット間隔、エミット数、LOD距離をグラフィックスコンフィグの半分に"
+    },
+    {
+      "Field": "sfxReflection",
+      "Name": "SFXの反射",
+      "Description": "反射シーンSFXをオミット"
+    },
+    {
+      "Field": "sfxWaterInteraction",
+      "Name": "水面インタラクション",
+      "Description": "水面インタラクトSFXをオミット"
+    },
+    {
+      "Field": "sfxGlow",
+      "Name": "SFXのグロー",
+      "Description": "SFXでかけてるGlowをオミット"
+    },
+    {
+      "Field": "sfxDistortion",
+      "Name": "SFXの歪み",
+      "Description": "SFXでかけてる歪みのオミット"
+    },
+    {
+      "Field": "sftSoftSprite",
+      "Name": "ソフトスプライト",
+      "Description": "SFXでかけてるソフトスプライトのオミット"
+    },
+    {
+      "Field": "sfxLightShaft",
+      "Name": "ライトシャフト",
+      "Description": "SFXのライトシャフトのオミット"
+    },
+    {
+      "Field": "sfxScaleRenderDistanceScale",
+      "Name": "動的に縮小バッファに登録されるエフェクトの距離判定にスケール",
+      "Description": "SFXの距離で動的に縮小バッファに登録されるエフェクトの距離判定にスケール"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予備",
+      "Description": "予備"
+    }
+  ]
+}

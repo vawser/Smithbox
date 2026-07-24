@@ -1,0 +1,83 @@
+{
+  "Param": "DEAD_TYPE_PARAM",
+  "Type": "DEAD_TYPE_PARAM",
+  "Name": "DEAD_TYPE_PARAM",
+  "Description": "Controls timing, effects, sound, and gameplay state transitions that occur when a character dies, including item drops, soul release, and visual/audio fade-out behavior.",
+  "Fields": [
+    {
+      "Field": "deadChrDeleteTime",
+      "Name": "Character Model Deletion Time [sec]",
+      "Description": "Time in seconds before the dead character model is removed from the scene."
+    },
+    {
+      "Field": "deadLockOffTime",
+      "Name": "Lock-On Release Time [sec]",
+      "Description": "Time after death when lock-on targeting is disabled."
+    },
+    {
+      "Field": "deadItemDropTime",
+      "Name": "Item Drop Time [sec]",
+      "Description": "Time after death when item drops are triggered."
+    },
+    {
+      "Field": "deadHitDisableTime",
+      "Name": "Hit Collision Disable Time [sec]",
+      "Description": "Time after death when hit detection is disabled."
+    },
+    {
+      "Field": "deadSoulDropTime",
+      "Name": "Soul Drop Start Time [sec]",
+      "Description": "Time after death when soul drop is triggered."
+    },
+    {
+      "Field": "deadSfxTime",
+      "Name": "Death SFX Start Time [sec]",
+      "Description": "Time after death when death-related special effects begin."
+    },
+    {
+      "Field": "deadSfxType",
+      "Name": "Death SFX Type",
+      "Description": "Defines the type of visual effect played on death."
+    },
+    {
+      "Field": "deadFadeDelay",
+      "Name": "Fade Start Delay [sec]",
+      "Description": "Delay before death fade-out begins."
+    },
+    {
+      "Field": "deadFadeTime",
+      "Name": "Fade Duration [sec]",
+      "Description": "Duration of the fade-out effect after death."
+    },
+    {
+      "Field": "deadSeId",
+      "Name": "Death Sound ID",
+      "Description": "Identifier for the sound effect played on death."
+    },
+    {
+      "Field": "deadCullingFilterId",
+      "Name": "Death Culling Filter ID",
+      "Description": "Controls visibility culling behavior after death."
+    },
+    {
+      "Field": "deadDisableParts",
+      "Name": "Disabled Body Parts on Death",
+      "Description": "Specifies which character parts are disabled or hidden after death."
+    },
+    {
+      "Field": "deadIsNoConstraint",
+      "Name": "Ragdoll Disassembly Flag",
+      "Description": "Determines whether the character breaks apart physically on death."
+    },
+    {
+      "Field": "deadIsChrSe",
+      "Name": "Enable Character Death SE",
+      "Description": "Enables character-specific death sound effects."
+    },
+    {
+      "Field": "deadSoulBulletId",
+      "Name": "Death Soul Bullet ID",
+      "Description": "Identifier for the projectile or effect used when releasing souls on death."
+    }
+  ]
+}

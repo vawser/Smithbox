@@ -1,0 +1,1947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_PARAM_WEAPON_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 behaviorVariationId">
+      <DisplayName>行動バリエーションID</DisplayName>
+      <Description>攻撃時に参照する行動パラメータIDを決定するときに使う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID(-1:集めない)(プログラム内で強化レベルを加味するため s32 では７桁が限界)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u32 wanderingEquipId">
+      <DisplayName>徘徊装備ID</DisplayName>
+      <Description>徘徊ゴースト用の差し替え装備ID.</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg].</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 weaponWeightRate">
+      <DisplayName>装備重量比率</DisplayName>
+      <Description>装備重量比率</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="s32 fixPrice">
+      <DisplayName>修理価格</DisplayName>
+      <Description>修理基本価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="s32 reinforcePrice">
+      <DisplayName>強化価格</DisplayName>
+      <Description>強化価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="s32 sellValue">
+      <DisplayName>売却価格</DisplayName>
+      <Description>販売価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3510</SortID>
+    </Field>
+    <Field Def="f32 correctStrength">
+      <DisplayName>筋力補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 correctAgility">
+      <DisplayName>俊敏補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 correctMagic">
+      <DisplayName>魔力補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6300</SortID>
+    </Field>
+    <Field Def="f32 correctFaith">
+      <DisplayName>信仰補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6400</SortID>
+    </Field>
+    <Field Def="f32 physGuardCutRate">
+      <DisplayName>ガード時物理攻撃カット率</DisplayName>
+      <Description>ガード時に物理攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6500</SortID>
+    </Field>
+    <Field Def="f32 magGuardCutRate">
+      <DisplayName>ガード時魔法攻撃カット率</DisplayName>
+      <Description>ガード時に魔法攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6600</SortID>
+    </Field>
+    <Field Def="f32 fireGuardCutRate">
+      <DisplayName>ガード時炎攻撃力カット率</DisplayName>
+      <Description>ガード時に炎攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6700</SortID>
+    </Field>
+    <Field Def="f32 thunGuardCutRate">
+      <DisplayName>ガード時電撃攻撃力カット率</DisplayName>
+      <Description>ガード時に電撃攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6800</SortID>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId0 = -1">
+      <DisplayName>特殊効果行動ID0</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>7700</SortID>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId1 = -1">
+      <DisplayName>特殊効果行動ID1</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>7800</SortID>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId2 = -1">
+      <DisplayName>特殊効果行動ID2</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>7900</SortID>
+    </Field>
+    <Field Def="s32 residentSpEffectId = -1">
+      <DisplayName>常駐特殊効果ID</DisplayName>
+      <Description>常駐特殊効果ID0</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="s32 residentSpEffectId1 = -1">
+      <DisplayName>常駐特殊効果ID1</DisplayName>
+      <Description>常駐特殊効果ID1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="s32 residentSpEffectId2 = -1">
+      <DisplayName>常駐特殊効果ID2</DisplayName>
+      <Description>常駐特殊効果ID2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="s32 materialSetId = -1">
+      <DisplayName>素材ID</DisplayName>
+      <Description>武器強化に必要な素材パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8500</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep = -1">
+      <DisplayName>派生元</DisplayName>
+      <Description>この武器の強化元武器ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep1 = -1">
+      <DisplayName>派生元 強化+1</DisplayName>
+      <Description>この武器の強化元武器ID1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep2 = -1">
+      <DisplayName>派生元 強化+2</DisplayName>
+      <Description>この武器の強化元武器ID2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep3 = -1">
+      <DisplayName>派生元 強化+3</DisplayName>
+      <Description>この武器の強化元武器ID3</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep4 = -1">
+      <DisplayName>派生元 強化+4</DisplayName>
+      <Description>この武器の強化元武器ID4</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep5 = -1">
+      <DisplayName>派生元 強化+5</DisplayName>
+      <Description>この武器の強化元武器ID5</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep6 = -1">
+      <DisplayName>派生元 強化+6</DisplayName>
+      <Description>この武器の強化元武器ID6</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep7 = -1">
+      <DisplayName>派生元 強化+7</DisplayName>
+      <Description>この武器の強化元武器ID7</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep8 = -1">
+      <DisplayName>派生元 強化+8</DisplayName>
+      <Description>この武器の強化元武器ID8</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep9 = -1">
+      <DisplayName>派生元 強化+9</DisplayName>
+      <Description>この武器の強化元武器ID9</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep10 = -1">
+      <DisplayName>派生元 強化+10</DisplayName>
+      <Description>この武器の強化元武器ID10</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep11 = -1">
+      <DisplayName>派生元 強化+11</DisplayName>
+      <Description>この武器の強化元武器ID11</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep12 = -1">
+      <DisplayName>派生元 強化+12</DisplayName>
+      <Description>この武器の強化元武器ID12</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep13 = -1">
+      <DisplayName>派生元 強化+13</DisplayName>
+      <Description>この武器の強化元武器ID13</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep14 = -1">
+      <DisplayName>派生元 強化+14</DisplayName>
+      <Description>この武器の強化元武器ID14</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="s32 originEquipWep15 = -1">
+      <DisplayName>派生元 強化+15</DisplayName>
+      <Description>この武器の強化元武器ID15</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8600</SortID>
+    </Field>
+    <Field Def="f32 weakA_DamageRate = 1">
+      <DisplayName>特攻Aダメージ倍率</DisplayName>
+      <Description>特攻A用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8900</SortID>
+    </Field>
+    <Field Def="f32 weakB_DamageRate = 1">
+      <DisplayName>特攻Bダメージ倍率</DisplayName>
+      <Description>特攻B用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8910</SortID>
+    </Field>
+    <Field Def="f32 weakC_DamageRate = 1">
+      <DisplayName>特攻Cダメージ倍率</DisplayName>
+      <Description>特攻C用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8920</SortID>
+    </Field>
+    <Field Def="f32 weakD_DamageRate = 1">
+      <DisplayName>特攻Dダメージ倍率</DisplayName>
+      <Description>特攻D用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8930</SortID>
+    </Field>
+    <Field Def="s32 vagrantItemLotId">
+      <DisplayName>ベイグラント時アイテム抽選ID</DisplayName>
+      <Description>-1：ベイグラントなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2510</SortID>
+    </Field>
+    <Field Def="s32 vagrantBonusEneDropItemLotId">
+      <DisplayName>ベイグラントボーナス敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2511</SortID>
+    </Field>
+    <Field Def="s32 vagrantItemEneDropItemLotId">
+      <DisplayName>ベイグラントアイテム敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2512</SortID>
+    </Field>
+    <Field Def="u16 equipModelId">
+      <DisplayName>装備モデル番号</DisplayName>
+      <Description>装備モデルの番号.</Description>
+      <Maximum>9999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニューアイコンID.</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u16 durability = 100">
+      <DisplayName>耐久度</DisplayName>
+      <Description>初期耐久度.</Description>
+      <Maximum>999</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="u16 durabilityMax = 100">
+      <DisplayName>耐久度最大値</DisplayName>
+      <Description>新品耐久度.</Description>
+      <Maximum>999</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="u16 attackThrowEscape">
+      <DisplayName>投げ抜け攻撃力基本値</DisplayName>
+      <Description>投げ抜け攻撃力の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="s16 parryDamageLife = -1">
+      <DisplayName>パリィ発生時間[frame]</DisplayName>
+      <Description>パリィダメージの寿命を制限する。TimeActで設定されている以上には持続しない。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4300</SortID>
+    </Field>
+    <Field Def="u16 attackBasePhysics = 100">
+      <DisplayName>物理攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える物理属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5400</SortID>
+    </Field>
+    <Field Def="u16 attackBaseMagic = 100">
+      <DisplayName>魔法攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える魔法属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5500</SortID>
+    </Field>
+    <Field Def="u16 attackBaseFire = 100">
+      <DisplayName>炎攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える炎属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5600</SortID>
+    </Field>
+    <Field Def="u16 attackBaseThunder = 100">
+      <DisplayName>電撃攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える電撃属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5700</SortID>
+    </Field>
+    <Field Def="u16 attackBaseStamina = 100">
+      <DisplayName>スタミナ攻撃力</DisplayName>
+      <Description>敵へのスタミナ攻撃力</Description>
+      <Maximum>999</Maximum>
+      <SortID>5800</SortID>
+    </Field>
+    <Field Def="u16 saWeaponDamage">
+      <DisplayName>SA武器攻撃力</DisplayName>
+      <Description>スーパーアーマー基本攻撃力</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="s16 saDurability">
+      <DisplayName>SA耐久値</DisplayName>
+      <Description>攻撃モーション中に使われる追加SA耐久値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="s16 guardAngle">
+      <DisplayName>ガード範囲[deg]</DisplayName>
+      <Description>武器のガード時の防御発生範囲角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>5200</SortID>
+    </Field>
+    <Field Def="s16 staminaGuardDef">
+      <DisplayName>ガード時スタミナ防御力</DisplayName>
+      <Description>ガード成功時に、敵のスタミナ攻撃に対する防御力</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7600</SortID>
+    </Field>
+    <Field Def="s16 reinforceTypeId">
+      <DisplayName>強化タイプID</DisplayName>
+      <Description>強化タイプID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8300</SortID>
+    </Field>
+    <Field Def="s16 trophySGradeId = -1">
+      <DisplayName>トロフィーＳグレードID</DisplayName>
+      <Description>トロフィーシステムに関係あるか？</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8700</SortID>
+    </Field>
+    <Field Def="s16 trophySeqId = -1">
+      <DisplayName>トロフィーSEQ番号</DisplayName>
+      <Description>トロフィーのSEQ番号（１３～２９）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8800</SortID>
+    </Field>
+    <Field Def="s16 throwAtkRate">
+      <DisplayName>投げ攻撃力倍率</DisplayName>
+      <Description>投げの攻撃力倍率</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="s16 bowDistRate">
+      <DisplayName>弓飛距離補正[％]</DisplayName>
+      <Description>飛距離を伸ばすアップ％</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="u8 equipModelCategory = 7">
+      <DisplayName>装備モデル種別</DisplayName>
+      <Enum>EQUIP_MODEL_CATEGORY</Enum>
+      <Description>装備モデルの種別.</Description>
+      <Maximum>99</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 equipModelGender">
+      <DisplayName>装備モデル性別</DisplayName>
+      <Enum>EQUIP_MODEL_GENDER</Enum>
+      <Description>装備モデルの性別.</Description>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 weaponCategory">
+      <DisplayName>武器カテゴリ</DisplayName>
+      <Enum>WEAPON_CATEGORY</Enum>
+      <Description>武器のカテゴリ.</Description>
+      <Maximum>99</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 wepmotionCategory">
+      <DisplayName>武器モーションカテゴリ</DisplayName>
+      <Enum>WEPMOTION_CATEGORY</Enum>
+      <Description>武器モーションのカテゴリ.</Description>
+      <Maximum>99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 guardmotionCategory">
+      <DisplayName>ガードモーションカテゴリ</DisplayName>
+      <Enum>GUARDMOTION_CATEGORY</Enum>
+      <Description>ガードモーションのカテゴリ</Description>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 atkMaterial">
+      <DisplayName>攻撃材質</DisplayName>
+      <Enum>WEP_MATERIAL_ATK</Enum>
+      <Description>攻撃パラから使用される攻撃材質</Description>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u16 defSeMaterial1">
+      <DisplayName>防御SE材質1</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>攻撃パラから使用される防御SE材質1</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 correctType_Physics">
+      <DisplayName>補正タイプ（物理攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる物理攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8400</SortID>
+    </Field>
+    <Field Def="u8 spAttribute">
+      <DisplayName>特殊属性</DisplayName>
+      <Enum>ATKPARAM_SPATTR_TYPE</Enum>
+      <Description>武器の特殊属性値</Description>
+      <SortID>1940</SortID>
+    </Field>
+    <Field Def="u16 spAtkcategory">
+      <DisplayName>特殊攻撃カテゴリ</DisplayName>
+      <Description>特殊攻撃カテゴリ（50～999まで可能)</Description>
+      <Maximum>999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 wepmotionOneHandId">
+      <DisplayName>武器モーション片手ID</DisplayName>
+      <Description>片手装備時の基本モーションID.</Description>
+      <Maximum>99</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 wepmotionBothHandId">
+      <DisplayName>武器モーション両手ID</DisplayName>
+      <Description>両手装備時の基本モーションID.</Description>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 properStrength">
+      <DisplayName>装備適正筋力</DisplayName>
+      <Description>装備適正値.</Description>
+      <Maximum>99</Maximum>
+      <SortID>3700</SortID>
+    </Field>
+    <Field Def="u8 properAgility">
+      <DisplayName>装備適正俊敏</DisplayName>
+      <Description>装備適正値.</Description>
+      <Maximum>99</Maximum>
+      <SortID>3800</SortID>
+    </Field>
+    <Field Def="u8 properMagic">
+      <DisplayName>装備適正魔力</DisplayName>
+      <Description>装備適正値.</Description>
+      <Maximum>99</Maximum>
+      <SortID>3900</SortID>
+    </Field>
+    <Field Def="u8 properFaith">
+      <DisplayName>装備適正信仰</DisplayName>
+      <Description>装備適正値.</Description>
+      <Maximum>99</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="u8 overStrength">
+      <DisplayName>筋力オーバー開始値</DisplayName>
+      <Description>筋力オーバー開始値</Description>
+      <Maximum>99</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u8 attackBaseParry">
+      <DisplayName>パリィ攻撃基本値</DisplayName>
+      <Description>敵のパリィをやぶるための基本値</Description>
+      <Maximum>99</Maximum>
+      <SortID>4400</SortID>
+    </Field>
+    <Field Def="u8 defenseBaseParry">
+      <DisplayName>パリィ防御値</DisplayName>
+      <Description>パリィ判定時に、パリィになるかガードになるかの判定に利用</Description>
+      <Maximum>99</Maximum>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="u8 guardBaseRepel">
+      <DisplayName>はじき防御力基本値</DisplayName>
+      <Description>ガード敵を攻撃した時に、はじかれるかどうかの判定に利用</Description>
+      <Maximum>99</Maximum>
+      <SortID>4600</SortID>
+    </Field>
+    <Field Def="u8 attackBaseRepel">
+      <DisplayName>はじき攻撃力基本値</DisplayName>
+      <Description>敵の攻撃をガードしたときに、はじけるかどうかの判定に利用</Description>
+      <Maximum>99</Maximum>
+      <SortID>4700</SortID>
+    </Field>
+    <Field Def="s8 guardCutCancelRate">
+      <DisplayName>ガードカット無効化倍率</DisplayName>
+      <Description>相手のガードカットを無効化させる倍率。-100で完全無効。100で相手の防御効果倍増。</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="s8 guardLevel">
+      <DisplayName>ガードレベル</DisplayName>
+      <Description>ガードしたとき、敵の攻撃をどのガードモーションで受けるか？を決める</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5300</SortID>
+    </Field>
+    <Field Def="s8 slashGuardCutRate">
+      <DisplayName>斬撃攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、斬撃属性のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4910</SortID>
+    </Field>
+    <Field Def="s8 lightHitGuardCutRate">
+      <DisplayName>軽打攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、軽打属性のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4911</SortID>
+    </Field>
+    <Field Def="s8 thrustGuardCutRate">
+      <DisplayName>刺突攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、刺突属性のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4912</SortID>
+    </Field>
+    <Field Def="s8 poisonGuardResist">
+      <DisplayName>ガード時毒耐性ダメージカット率</DisplayName>
+      <Description>ガード時に毒耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7200</SortID>
+    </Field>
+    <Field Def="s8 diseaseGuardResist">
+      <DisplayName>ガード時疫病耐性ダメージカット率</DisplayName>
+      <Description>ガード時に疫病耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7300</SortID>
+    </Field>
+    <Field Def="s8 bloodGuardResist">
+      <DisplayName>ガード時出血耐性ダメージカット率</DisplayName>
+      <Description>ガード時に出血耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7400</SortID>
+    </Field>
+    <Field Def="s8 curseGuardResist">
+      <DisplayName>ガード時呪耐性ダメージカット率</DisplayName>
+      <Description>ガード時に呪耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="u8 isDurabilityDivergence">
+      <DisplayName>耐久度で分岐するか</DisplayName>
+      <Enum>DURABILITY_DIVERGENCE_CATEGORY</Enum>
+      <Description>魔法使用武器対応：耐久度によるモーション分岐</Description>
+      <Maximum>10</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="u8 rightHandEquipable:1 = 1">
+      <DisplayName>右手装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>右手装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 leftHandEquipable:1 = 1">
+      <DisplayName>左手装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 bothHandEquipable:1 = 1">
+      <DisplayName>両手装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>両手装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u8 arrowSlotEquipable:1">
+      <DisplayName>弓矢弾装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>弓用矢弾装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 boltSlotEquipable:1">
+      <DisplayName>弩矢弾装備</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>弩用矢弾装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 enableGuard:1">
+      <DisplayName>ガード可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手装備時L1でガード</Description>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 enableParry:1">
+      <DisplayName>パリィ可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手装備時L2でパリィ</Description>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="u8 enableMagic:1">
+      <DisplayName>魔法可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に魔法発動</Description>
+      <Maximum>1</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="u8 enableSorcery:1">
+      <DisplayName>呪術可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に呪術発動</Description>
+      <Maximum>1</Maximum>
+      <SortID>1810</SortID>
+    </Field>
+    <Field Def="u8 enableMiracle:1">
+      <DisplayName>奇蹟可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に奇蹟発動</Description>
+      <Maximum>1</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="u8 enableVowMagic:1">
+      <DisplayName>誓約魔法可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に誓約魔法発動</Description>
+      <Maximum>1</Maximum>
+      <SortID>1910</SortID>
+    </Field>
+    <Field Def="u8 isNormalAttackType:1">
+      <DisplayName>通常</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。通常か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 isBlowAttackType:1">
+      <DisplayName>打撃</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。打撃か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="u8 isSlashAttackType:1">
+      <DisplayName>斬撃</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。斬撃か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="u8 isThrustAttackType:1">
+      <DisplayName>刺突</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。刺突か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="u8 isEnhance:1 = 1">
+      <DisplayName>エンチャント可能か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>松脂などで、強化可能か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>3600</SortID>
+    </Field>
+    <Field Def="u8 isHeroPointCorrect:1">
+      <DisplayName>人間性補正あるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>人間性による攻撃力補正があるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 isCustom:1 = 1">
+      <DisplayName>強化できるか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>強化ショップで強化対象リストに並ぶ(仕様変更で削除するかも？)</Description>
+      <Maximum>1</Maximum>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="u8 disableBaseChangeReset:1">
+      <DisplayName>転職リセット禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>転職リセット禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>9220</SortID>
+    </Field>
+    <Field Def="u8 disableRepair:1">
+      <DisplayName>修理禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>修理禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>9240</SortID>
+    </Field>
+    <Field Def="u8 isDarkHand:1">
+      <DisplayName>ダークハンドか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ダークハンドか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1950</SortID>
+    </Field>
+    <Field Def="u8 simpleModelForDlc:1">
+      <DisplayName>DLC用シンプルモデルありか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ＤＬＣ用シンプルモデルが存在しているか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1970</SortID>
+    </Field>
+    <Field Def="u8 lanternWep:1">
+      <DisplayName>ランタン武器</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ランタン武器か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1920</SortID>
+    </Field>
+    <Field Def="u8 isVersusGhostWep:1">
+      <DisplayName>対霊武器</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>対霊武器か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1930</SortID>
+    </Field>
+    <Field Def="u8 baseChangeCategory:6">
+      <DisplayName>武器転職カテゴリ</DisplayName>
+      <Enum>WEP_BASE_CHANGE_CATEGORY</Enum>
+      <Description>武器転職カテゴリ。属性アイコン表示に使用します。</Description>
+      <Maximum>55</Maximum>
+      <SortID>8550</SortID>
+    </Field>
+    <Field Def="u8 isDragonSlayer:1">
+      <DisplayName>竜狩りか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>竜狩り武器か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1940</SortID>
+    </Field>
+    <Field Def="u8 isDeposit:1 = 1">
+      <DisplayName>預けれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>倉庫に預けれるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1960</SortID>
+    </Field>
+    <Field Def="u8 disableMultiDropShare:1">
+      <DisplayName>マルチドロップ共有禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチドロップ共有禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1965</SortID>
+    </Field>
+    <Field Def="u8 isDiscard:1 = 1">
+      <DisplayName>捨てれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
+      <Maximum>1</Maximum>
+      <SortID>1955</SortID>
+    </Field>
+    <Field Def="u8 isDrop:1 = 1">
+      <DisplayName>その場に置けるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムをその場に置けるか？TRUE=置ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>1956</SortID>
+    </Field>
+    <Field Def="u8 isNoticeLog:1 = 1">
+      <DisplayName>入手時ログ表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムの入手時にアイテム取得ログへ表示するか(○=アイテム取得ログへ表示する）</Description>
+      <Maximum>1</Maximum>
+      <SortID>2450</SortID>
+    </Field>
+    <Field Def="u8 isNoticeDialog:1 = 1">
+      <DisplayName>入手時ダイアログ表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>取得時に時止めダイアログを表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2453</SortID>
+    </Field>
+    <Field Def="dummy8 pad1:3">
+      <DisplayName>パディング1</DisplayName>
+      <SortID>25003</SortID>
+    </Field>
+    <Field Def="u16 defSfxMaterial1">
+      <DisplayName>防御SFX材質1</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>攻撃パラから使用される防御SFX材質1</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="u8 wepCollidableType0 = 1">
+      <DisplayName>武器コライダブル設定</DisplayName>
+      <Enum>WEP_COLLIDABLE_TYPE</Enum>
+      <Description>武器のコライダブル設定</Description>
+      <Maximum>2</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="u8 wepCollidableType1 = 1">
+      <DisplayName>武器1コライダブル設定</DisplayName>
+      <Enum>WEP_COLLIDABLE_TYPE</Enum>
+      <Description>武器1のコライダブル設定</Description>
+      <Maximum>2</Maximum>
+      <SortID>10001</SortID>
+    </Field>
+    <Field Def="s16 staminaJustGuardDef">
+      <DisplayName>ジャスガ時スタミナ防御力</DisplayName>
+      <Description>ジャスガ成功時に、敵のスタミナ攻撃に対する防御力</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7610</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId0 = -1">
+      <DisplayName>剣閃SfxID_０</DisplayName>
+      <Description>剣閃SfxID_０(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead0 = -1">
+      <DisplayName>根元剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃根元ダミポリID_０(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11001</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail0 = -1">
+      <DisplayName>剣先剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃剣先ダミポリID_０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11002</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId1 = -1">
+      <DisplayName>剣閃SfxID_１</DisplayName>
+      <Description>剣閃SfxID_１(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11003</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead1 = -1">
+      <DisplayName>根元剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃根元ダミポリID_１(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11004</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail1 = -1">
+      <DisplayName>剣先剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃剣先ダミポリID_１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11005</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId2 = -1">
+      <DisplayName>剣閃SfxID_２</DisplayName>
+      <Description>剣閃SfxID_２(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11006</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead2 = -1">
+      <DisplayName>根元剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃根元ダミポリID_２(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11007</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail2 = -1">
+      <DisplayName>剣先剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃剣先ダミポリID_２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11008</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId3 = -1">
+      <DisplayName>剣閃SfxID_３</DisplayName>
+      <Description>剣閃SfxID_３(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11009</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead3 = -1">
+      <DisplayName>根元剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃根元ダミポリID_３(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11010</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail3 = -1">
+      <DisplayName>剣先剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃剣先ダミポリID_３</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11011</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId4 = -1">
+      <DisplayName>剣閃SfxID_４</DisplayName>
+      <Description>剣閃SfxID_４(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11012</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead4 = -1">
+      <DisplayName>根元剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃根元ダミポリID_４(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11013</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail4 = -1">
+      <DisplayName>剣先剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃剣先ダミポリID_４</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11014</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId5 = -1">
+      <DisplayName>剣閃SfxID_５</DisplayName>
+      <Description>剣閃SfxID_５(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11015</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead5 = -1">
+      <DisplayName>根元剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃根元ダミポリID_５(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11016</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail5 = -1">
+      <DisplayName>剣先剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃剣先ダミポリID_５</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11017</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId6 = -1">
+      <DisplayName>剣閃SfxID_６</DisplayName>
+      <Description>剣閃SfxID_６(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11018</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead6 = -1">
+      <DisplayName>根元剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃根元ダミポリID_６(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11019</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail6 = -1">
+      <DisplayName>剣先剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃剣先ダミポリID_６</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11020</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId7 = -1">
+      <DisplayName>剣閃SfxID_７</DisplayName>
+      <Description>剣閃SfxID_７(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11021</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead7 = -1">
+      <DisplayName>根元剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃根元ダミポリID_７(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11022</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail7 = -1">
+      <DisplayName>剣先剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃剣先ダミポリID_７</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11023</SortID>
+    </Field>
+    <Field Def="u16 defSfxMaterial2">
+      <DisplayName>防御SFX材質2</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>攻撃パラから使用される防御SFX材質2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2201</SortID>
+    </Field>
+    <Field Def="u16 defSeMaterial2">
+      <DisplayName>防御SE材質2</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>攻撃パラから使用される防御SE材質2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2101</SortID>
+    </Field>
+    <Field Def="s32 absorpParamId = -1">
+      <DisplayName>吸着位置Id</DisplayName>
+      <Description>武器吸着位置パラメータのId。この値により武器が吸着する位置を決定する(-1：旧ソースコード直書きの値を参照する)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="f32 toughnessCorrectRate">
+      <DisplayName>強靭度 補正倍率</DisplayName>
+      <Description>強靭度の基本値を補正する倍率です</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>5950</SortID>
+    </Field>
+    <Field Def="u8 isValidTough_ProtSADmg:1">
+      <DisplayName>防具SAダメージ倍率が初期値でも有効か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>防具SAが初期値でも強靭度計算が行われるかどうか。詳細は強靭度仕様書.xlsxを確認してください</Description>
+      <Maximum>1</Maximum>
+      <SortID>5960</SortID>
+    </Field>
+    <Field Def="u8 isDualBlade:1">
+      <DisplayName>双剣か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>この武器は双剣か。</Description>
+      <Maximum>1</Maximum>
+      <SortID>12110</SortID>
+    </Field>
+    <Field Def="u8 isAutoEquip:1">
+      <DisplayName>自動装填可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>新しくこの武器を拾っ時に対象装備スロットに自動で装備するかどうか。矢・ボルトの場合は、空のスロットに。それ以外の場合は、強制的に右手武器１に。</Description>
+      <Maximum>1</Maximum>
+      <SortID>12120</SortID>
+    </Field>
+    <Field Def="u8 isEnableEmergencyStep:1">
+      <DisplayName>緊急回避可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>緊急回避可能な武器かどうか。ビヘイビアスクリプトに渡す。</Description>
+      <Maximum>1</Maximum>
+      <SortID>12130</SortID>
+    </Field>
+    <Field Def="u8 invisibleOnRemo:1">
+      <DisplayName>カットシーン中非表示か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>カットシーン中非表示か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2530</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:3 = 1">
+      <DisplayName>パディング2</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>25004</SortID>
+    </Field>
+    <Field Def="u8 correctType_Magic">
+      <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる魔法攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8410</SortID>
+    </Field>
+    <Field Def="u8 correctType_Fire">
+      <DisplayName>補正タイプ（炎攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる炎攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8420</SortID>
+    </Field>
+    <Field Def="u8 correctType_Thunder">
+      <DisplayName>補正タイプ（雷攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる雷攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8430</SortID>
+    </Field>
+    <Field Def="f32 weakE_DamageRate = 1">
+      <DisplayName>特攻Eダメージ倍率</DisplayName>
+      <Description>特攻E用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8940</SortID>
+    </Field>
+    <Field Def="f32 weakF_DamageRate = 1">
+      <DisplayName>特攻Fダメージ倍率</DisplayName>
+      <Description>特攻F用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8950</SortID>
+    </Field>
+    <Field Def="f32 darkGuardCutRate">
+      <DisplayName>ガード時闇攻撃力カット率</DisplayName>
+      <Description>ガード時に闇攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6810</SortID>
+    </Field>
+    <Field Def="u16 attackBaseDark">
+      <DisplayName>闇攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える闇属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5750</SortID>
+    </Field>
+    <Field Def="u8 correctType_Dark">
+      <DisplayName>補正タイプ（闇攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる闇攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8440</SortID>
+    </Field>
+    <Field Def="u8 correctType_Poison">
+      <DisplayName>補正タイプ（毒攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる毒攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8450</SortID>
+    </Field>
+    <Field Def="s32 swordArtsId">
+      <DisplayName>剣戟ID</DisplayName>
+      <Description>【削除予定】→アーツパラメータへ移動。剣戟判別用ID。ビヘイビアスクリプトに渡す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="u8 correctType_Blood">
+      <DisplayName>補正タイプ（出血攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる出血攻撃力の補正グラフのタイプを決める</Description>
+      <SortID>8450</SortID>
+    </Field>
+    <Field Def="u8 properLuck">
+      <DisplayName>装備適正運</DisplayName>
+      <Description>装備適正値.</Description>
+      <Maximum>99</Maximum>
+      <SortID>4020</SortID>
+    </Field>
+    <Field Def="s8 freezeGuardResist">
+      <DisplayName>ガード時冷気耐性ダメージカット率 </DisplayName>
+      <Description>ガード時に冷気耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7550</SortID>
+    </Field>
+    <Field Def="u8 autoReplenishType">
+      <DisplayName>自動補充タイプ</DisplayName>
+      <Enum>AUTO_REPLENISH_TYPE</Enum>
+      <Description>自動補充する/しないの可否およびデフォルト設定をコントロールします</Description>
+      <SortID>1961</SortID>
+    </Field>
+    <Field Def="s32 swordArtsParamId">
+      <DisplayName>アーツパラメータID</DisplayName>
+      <Description>アーツパラメータのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12100</SortID>
+    </Field>
+    <Field Def="f32 correctLuck">
+      <DisplayName>運補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6450</SortID>
+    </Field>
+    <Field Def="u32 arrowBoltEquipId">
+      <DisplayName>矢筒(弾倉)表示モデル用装備ID</DisplayName>
+      <Description>矢筒(弾倉)表示モデルの装備品番号。弓の場合は矢筒、弩の場合は弾倉として表示する。</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s32 residentSfxId_1 = -1">
+      <DisplayName>常駐SfxId１</DisplayName>
+      <Description>常駐SfxId1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11100</SortID>
+    </Field>
+    <Field Def="s32 residentSfxId_2 = -1">
+      <DisplayName>常駐SfxId２</DisplayName>
+      <Description>常駐SfxId2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11120</SortID>
+    </Field>
+    <Field Def="s32 residentSfxId_3 = -1">
+      <DisplayName>常駐SfxId３</DisplayName>
+      <Description>常駐SfxId3</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11140</SortID>
+    </Field>
+    <Field Def="s32 residentSfxId_4 = -1">
+      <DisplayName>常駐SfxId４</DisplayName>
+      <Description>常駐SfxId4</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11160</SortID>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_1 = -1">
+      <DisplayName>常駐SfxダミポリId１</DisplayName>
+      <Description>常駐SfxダミポリId１</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11110</SortID>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_2 = -1">
+      <DisplayName>常駐SfxダミポリId２</DisplayName>
+      <Description>常駐SfxダミポリId２</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11130</SortID>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_3 = -1">
+      <DisplayName>常駐SfxダミポリId３</DisplayName>
+      <Description>常駐SfxダミポリId３</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11150</SortID>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_4 = -1">
+      <DisplayName>常駐SfxダミポリId４</DisplayName>
+      <Description>常駐SfxダミポリId４</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11170</SortID>
+    </Field>
+    <Field Def="u8 residentSfx_1_IsVisibleForHang:1">
+      <DisplayName>常駐SFX1納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX1納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID1」に設定されているSFXを非表示にする</Description>
+      <Maximum>1</Maximum>
+      <SortID>11111</SortID>
+    </Field>
+    <Field Def="u8 residentSfx_2_IsVisibleForHang:1">
+      <DisplayName>常駐SFX2納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX2納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID2」に設定されているSFXを非表示にする</Description>
+      <Maximum>1</Maximum>
+      <SortID>11131</SortID>
+    </Field>
+    <Field Def="u8 residentSfx_3_IsVisibleForHang:1">
+      <DisplayName>常駐SFX3納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX3納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID3」に設定されているSFXを非表示にする</Description>
+      <Maximum>1</Maximum>
+      <SortID>11151</SortID>
+    </Field>
+    <Field Def="u8 residentSfx_4_IsVisibleForHang:1">
+      <DisplayName>常駐SFX4納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX4納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID4」に設定されているSFXを非表示にする</Description>
+      <Maximum>1</Maximum>
+      <SortID>11171</SortID>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model0:1 = 1">
+      <DisplayName>モデル_0 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>23000</SortID>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model1:1 = 1">
+      <DisplayName>モデル_1 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>23010</SortID>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model2:1 = 1">
+      <DisplayName>モデル_2 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>23020</SortID>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model3:1 = 1">
+      <DisplayName>モデル_3 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>23030</SortID>
+    </Field>
+    <Field Def="u8 DerivationLevelType">
+      <DisplayName>還元時レベル設定</DisplayName>
+      <Enum>WEAPON_DERIVATION_LEVEL_TYPE</Enum>
+      <Description>武器を還元・派生させるときに強化レベルをどう設定するかの種別</Description>
+      <SortID>8590</SortID>
+    </Field>
+    <Field Def="u8 enchantSfxSize">
+      <DisplayName>エンチャントSfxサイズ</DisplayName>
+      <Enum>WEP_ENCHANT_SFX_SIZE</Enum>
+      <Description>エンチャントSfxIdにオフセットする値</Description>
+      <SortID>11050</SortID>
+    </Field>
+    <Field Def="s8 compTrophySedId = -1">
+      <DisplayName>コンプトロフィーSEQ番号</DisplayName>
+      <Description>コンプリート系トロフィのSEQ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8850</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[2]">
+      <DisplayName>パディング３</DisplayName>
+      <SortID>25005</SortID>
+    </Field>
+    <Field Def="u16 wepTypeForText">
+      <DisplayName>武器種別(テキスト用)</DisplayName>
+      <Enum>WEP_TYPE_FOR_TEXT</Enum>
+      <Description>テキスト表示用の武器種別</Description>
+      <Maximum>9999</Maximum>
+      <SortID>550</SortID>
+    </Field>
+    <Field Def="f32 physGuardCutRate_MaxCorrect">
+      <DisplayName>ガード時物理攻撃カット率_最大補正値</DisplayName>
+      <Description>ガード時のダメージ物理カット率の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7651</SortID>
+    </Field>
+    <Field Def="f32 magGuardCutRate_MaxCorrect">
+      <DisplayName>ガード時魔法攻撃カット率_最大補正値</DisplayName>
+      <Description>ガード時のダメージ魔法カット率の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7652</SortID>
+    </Field>
+    <Field Def="f32 fireGuardCutRate_MaxCorrect">
+      <DisplayName>ガード時炎攻撃力カット率_最大補正値</DisplayName>
+      <Description>ガード時のダメージ炎カット率の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7653</SortID>
+    </Field>
+    <Field Def="f32 thunGuardCutRate_MaxCorrect">
+      <DisplayName>ガード時電撃攻撃力カット率_最大補正値</DisplayName>
+      <Description>ガード時のダメージ電撃カット率の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7654</SortID>
+    </Field>
+    <Field Def="f32 darkGuardCutRate_MaxCorrect">
+      <DisplayName>ガード時闇攻撃力カット率_最大補正値</DisplayName>
+      <Description>ガード時のダメージ闇カット率の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7655</SortID>
+    </Field>
+    <Field Def="f32 poisonGuardResist_MaxCorrect">
+      <DisplayName>毒耐性カット率_最大補正値</DisplayName>
+      <Description>毒に対する攻撃力（特殊効果パラメータに設定）のカット率補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7656</SortID>
+    </Field>
+    <Field Def="f32 diseaseGuardResist_MaxCorrect">
+      <DisplayName>疫病耐性カット率_最大補正値</DisplayName>
+      <Description>疫病に対する攻撃力（特殊効果パラメータに設定）のカット率補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7657</SortID>
+    </Field>
+    <Field Def="f32 bloodGuardResist_MaxCorrect">
+      <DisplayName>出血耐性カット率_最大補正値</DisplayName>
+      <Description>出血に対する攻撃力（特殊効果パラメータに設定）のカット率補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7658</SortID>
+    </Field>
+    <Field Def="f32 curseGuardResist_MaxCorrect">
+      <DisplayName>呪耐性カット率_最大補正値</DisplayName>
+      <Description>呪いに対する攻撃力（特殊効果パラメータに設定）のカット率補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7659</SortID>
+    </Field>
+    <Field Def="f32 freezeGuardResist_MaxCorrect">
+      <DisplayName>冷気耐性カット率_最大補正値</DisplayName>
+      <Description>冷気に対する攻撃力（特殊効果パラメータに設定）のカット率補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7660</SortID>
+    </Field>
+    <Field Def="f32 staminaGuardDef_MaxCorrect">
+      <DisplayName>ガード時スタミナ防御力_最大補正値</DisplayName>
+      <Description>ガード成功時に、敵のスタミナ攻撃に対する防御力の補正値の最大値</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7661</SortID>
+    </Field>
+    <Field Def="f32 staminaConsumptionRate = 1">
+      <DisplayName>スタミナ消費量倍率</DisplayName>
+      <Description>スタミナ消費量倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Physics = 1">
+      <DisplayName>対プレイヤー 物理ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7670</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Magic = 1">
+      <DisplayName>対プレイヤー 魔法ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7671</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Fire = 1">
+      <DisplayName>対プレイヤー 炎ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7672</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Thunder = 1">
+      <DisplayName>対プレイヤー 雷ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7673</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Dark = 1">
+      <DisplayName>対プレイヤー 闇ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7674</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Poison = 1">
+      <DisplayName>対プレイヤー 毒ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7675</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Blood = 1">
+      <DisplayName>対プレイヤー 出血ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7676</SortID>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Freeze = 1">
+      <DisplayName>対プレイヤー 冷気ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7677</SortID>
+    </Field>
+    <Field Def="s32 attainmentWepStatusStr = -1">
+      <DisplayName>武器能力解放ステータス値：筋力</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14000</SortID>
+    </Field>
+    <Field Def="s32 attainmentWepStatusDex = -1">
+      <DisplayName>武器能力解放ステータス値：技量</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14100</SortID>
+    </Field>
+    <Field Def="s32 attainmentWepStatusMag = -1">
+      <DisplayName>武器能力解放ステータス値：理力</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14200</SortID>
+    </Field>
+    <Field Def="s32 attainmentWepStatusFai = -1">
+      <DisplayName>武器能力解放ステータス値：信仰</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14300</SortID>
+    </Field>
+    <Field Def="s32 attainmentWepStatusLuc = -1">
+      <DisplayName>武器能力解放ステータス値：運</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>14400</SortID>
+    </Field>
+    <Field Def="s32 attackElementCorrectId">
+      <DisplayName>攻撃属性補正ID</DisplayName>
+      <Description>攻撃属性を補正するパラメータのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>15000</SortID>
+    </Field>
+    <Field Def="s32 saleValue = -1">
+      <DisplayName>販売価格</DisplayName>
+      <Description>販売価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3520</SortID>
+    </Field>
+    <Field Def="u8 reinforceShopCategory">
+      <DisplayName>強化ショップカテゴリ</DisplayName>
+      <Enum>REINFORCE_SHOP_CATEGORY</Enum>
+      <Description>強化ショップカテゴリ</Description>
+      <SortID>9210</SortID>
+    </Field>
+    <Field Def="u8 maxArrowQuantity = 1">
+      <DisplayName>矢の最大所持数</DisplayName>
+      <Description>矢の最大所持数</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>20000</SortID>
+    </Field>
+    <Field Def="s8 wepSeIdOffset">
+      <DisplayName>武器SEIDオフセット値</DisplayName>
+      <Description>SEIDのオフセット値 </Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>22000</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[1]">
+      <DisplayName>パディング４</DisplayName>
+      <SortID>25006</SortID>
+    </Field>
+    <Field Def="s32 baseChangePrice">
+      <DisplayName>進化価格</DisplayName>
+      <Description>進化価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3501</SortID>
+    </Field>
+    <Field Def="s16 levelSyncCorrectId = -1">
+      <DisplayName>レベルシンク補正ID</DisplayName>
+      <Description>レベルシンク補正ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>24000</SortID>
+    </Field>
+    <Field Def="u8 knockBackCutRate_vsPlayer_Guard">
+      <DisplayName>ノックバックカット率_対プレイヤー_ガード時[％]</DisplayName>
+      <Description>プレイヤーの攻撃をガードした時のノックバックカット率 </Description>
+      <Maximum>100</Maximum>
+      <SortID>5301</SortID>
+    </Field>
+    <Field Def="u8 knockBackCutRate_vsPlayer_JustGuard">
+      <DisplayName>ノックバックカット率_対プレイヤー_ジャスガ時[％]</DisplayName>
+      <Description>プレイヤーの攻撃をジャスガした時のノックバックカット率 </Description>
+      <Maximum>100</Maximum>
+      <SortID>5302</SortID>
+    </Field>
+    <Field Def="u8 knockBackCutRate_vsEnemy_Guard">
+      <DisplayName>ノックバックカット率_対エネミー_ガード時[％]</DisplayName>
+      <Description>エネミーの攻撃をガードした時のノックバックカット率 </Description>
+      <Maximum>100</Maximum>
+      <SortID>5303</SortID>
+    </Field>
+    <Field Def="u8 knockBackCutRate_vsEnemy_JustGuard">
+      <DisplayName>ノックバックカット率_対エネミー_ジャスガ時[％] </DisplayName>
+      <Description>エネミーの攻撃をジャスガした時のノックバックカット率 </Description>
+      <Maximum>100</Maximum>
+      <SortID>5304</SortID>
+    </Field>
+    <Field Def="s8 neutralAttackCutRate">
+      <DisplayName>無属性攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、無属性のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4913</SortID>
+    </Field>
+    <Field Def="s8 ninsatsuAttackCutRate">
+      <DisplayName>忍殺攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、忍殺のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4914</SortID>
+    </Field>
+    <Field Def="s8 heavyHitAttackCutRate">
+      <DisplayName>重打攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、重打のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4915</SortID>
+    </Field>
+    <Field Def="s8 antiGroundAttackCutRate">
+      <DisplayName>対地攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、対地のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4916</SortID>
+    </Field>
+    <Field Def="s8 antiAirAttackCutRate">
+      <DisplayName>対空攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、対空のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4917</SortID>
+    </Field>
+    <Field Def="s8 lightShootAttackCutRate">
+      <DisplayName>軽射攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、軽射のダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4918</SortID>
+    </Field>
+    <Field Def="u8 resourceItemA">
+      <DisplayName>消費コスト_リソースアイテムA </DisplayName>
+      <Description>この武器を使用したときに消費するリソースアイテムAの個数。行動パラメータの《武器消費コスト》と連動。</Description>
+      <Maximum>99</Maximum>
+      <SortID>25000</SortID>
+    </Field>
+    <Field Def="u8 resourceItemB">
+      <DisplayName>消費コスト_リソースアイテムB </DisplayName>
+      <Description>この武器を使用したときに消費するリソースアイテムBの個数。行動パラメータの《武器消費コスト》と連動。</Description>
+      <Maximum>99</Maximum>
+      <SortID>25001</SortID>
+    </Field>
+    <Field Def="u8 resourceItemC">
+      <DisplayName>消費コスト_リソースアイテムC</DisplayName>
+      <Description>この武器を使用したときに消費するリソースアイテムCの個数。行動パラメータの《武器消費コスト》と連動。</Description>
+      <Maximum>99</Maximum>
+      <SortID>25002</SortID>
+    </Field>
+    <Field Def="u8 itemUIDisplayType">
+      <DisplayName>アイテム取得UIの表示タイプ</DisplayName>
+      <Enum>ITEM_UI_DISPLAY_TYPE</Enum>
+      <Description>アイテム取得ダイアログとアイテム取得ログの表示タイプ</Description>
+      <SortID>2455</SortID>
+    </Field>
+    <Field Def="s32 actionUnlockParamId">
+      <DisplayName>アクション解禁パラメータID</DisplayName>
+      <Description>アクション解禁パラメータと紐づけてどのアクションを解禁するか指定する。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2460</SortID>
+    </Field>
+    <Field Def="s32 firstGetEventFlagId = -1">
+      <DisplayName>初回入手イベントフラグID</DisplayName>
+      <Description>武器を入手したときに立てるイベントフラグを設定します（-1なら何もしない）。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2425</SortID>
+    </Field>
+    <Field Def="s8 poisonJustGuardResist">
+      <DisplayName>ジャスガ時毒耐性ダメージカット率</DisplayName>
+      <Description>ジャスガ時に毒耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7560</SortID>
+    </Field>
+    <Field Def="s8 diseaseJustGuardResist">
+      <DisplayName>ジャスガ時疫病耐性ダメージカット率</DisplayName>
+      <Description>ジャスガ時に疫病耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7561</SortID>
+    </Field>
+    <Field Def="s8 bloodJustGuardResist">
+      <DisplayName>ジャスガ時出血耐性ダメージカット率</DisplayName>
+      <Description>ジャスガ時に出血耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7562</SortID>
+    </Field>
+    <Field Def="s8 curseJustGuardResist">
+      <DisplayName>ジャスガ時呪耐性ダメージカット率</DisplayName>
+      <Description>ジャスガ時に呪耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7563</SortID>
+    </Field>
+    <Field Def="s8 freezeJustGuardResist">
+      <DisplayName>ジャスガ時冷気耐性ダメージカット率 </DisplayName>
+      <Description>ジャスガ時に冷気耐性攻撃力[point]（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7564</SortID>
+    </Field>
+    <Field Def="s8 attriAAttackCutRate">
+      <DisplayName>属性A攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、属性Aのダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4919</SortID>
+    </Field>
+    <Field Def="s8 attriBAttackCutRate">
+      <DisplayName>属性B攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、属性Bのダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4920</SortID>
+    </Field>
+    <Field Def="s8 attriCAttackCutRate">
+      <DisplayName>属性C攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、属性Cのダメージを何％カットするか？を指定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4921</SortID>
+    </Field>
+    <Field Def="f32 physJustGuardCutRate">
+      <DisplayName>ジャスガ時物理攻撃カット率</DisplayName>
+      <Description>ジャスガ時に物理攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6811</SortID>
+    </Field>
+    <Field Def="f32 magJustGuardCutRate">
+      <DisplayName>ジャスガ時魔法攻撃カット率</DisplayName>
+      <Description>ジャスガ時に魔法攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6812</SortID>
+    </Field>
+    <Field Def="f32 fireJustGuardCutRate">
+      <DisplayName>ジャスガ時炎攻撃力カット率</DisplayName>
+      <Description>ジャスガ時に炎攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6813</SortID>
+    </Field>
+    <Field Def="f32 thunJustGuardCutRate">
+      <DisplayName>ジャスガ時電撃攻撃力カット率</DisplayName>
+      <Description>ジャスガ時に電撃攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6814</SortID>
+    </Field>
+    <Field Def="f32 darkJustGuardCutRate">
+      <DisplayName>ジャスガ時闇攻撃力カット率</DisplayName>
+      <Description>ジャスガ時に闇攻撃力をどれだけカットするか設定する。</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6815</SortID>
+    </Field>
+    <Field Def="f32 staminaAttackPowerRate = 1">
+      <DisplayName>スタミナ攻撃力倍率</DisplayName>
+      <Description>攻撃パラの「スタミナ攻撃力_○○」に乗算する</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5810</SortID>
+    </Field>
+    <Field Def="f32 passiveStaminaAtkRate = 1">
+      <DisplayName>受動スタミナ攻撃力倍率</DisplayName>
+      <Description>ジャスガが成立したとき、ジャスガした側のこのパラメータの倍率をジャスガされた側の攻撃パラメータの《被スタミナダメージ_攻撃側_弾き負け》に乗算する</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5820</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

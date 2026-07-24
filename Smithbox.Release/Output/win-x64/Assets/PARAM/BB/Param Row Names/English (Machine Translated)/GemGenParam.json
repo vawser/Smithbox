@@ -1,0 +1,8027 @@
+{
+  "Name": "GemGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[Test] Increase attack power"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Test] Attack Category"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Test] Attack Category Group"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Test] Attack & Defense Direction"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[Test] Poison Magic Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[Test] Increase attack power"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[ gamescom 】Maximum for pistol characters MP up"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Test] Error Magic Stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Test] Error Magic Stone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Test] Error BJ"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Test] Error BJ"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Test] Zako Magic Stone"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Test] Strong Enemy Magic Stone"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Debugging] Charge Effect Magic Stone"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[Test] For exclusive group testing"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "[Test] For inter-category compatibility testing"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "[Test] Holy Grail Type Influence Test"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "[Test] Category group for testing"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "[Test] Non-removable for testing (removable)"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "[Test] Non-removable For testing (non-removable)"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[Test] Magic stone exchange ticket sales test"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[Test] Body Gem Voucher Sales Test"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Test] Magic stone sales price test _ Magic Stone 00"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[Test] Magic stone sales price test _ Magic Stone 01"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[Test] Magic stone sales price test _ Magic Stone 02"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "[Test] Magic stone sales price test _ body 00"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "[Test] Magic stone sales price test _ body 01"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[Test] Magic stone sales price test _ body 02"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ Magic Stone 00"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ Magic Stone 01"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ Magic Stone 02"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ Magic Stone 03"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ body 00"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ body 01"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ body 02"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[Test] Magic Stone Sorting Test _ body 03"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[Test] Magic stone appearance rank range test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [slash] (fixed value)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Strike] (fixed value)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Piercing] (fixed value)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Gun] (fixed value)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Magic] (fixed value)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Fire] (fixed value)"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Lightning] (fixed value)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] (fixed value)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Magic Stone Effect Test_ Positive Effects _ Attack power [all] (fixed value)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [slash] (multiplier)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power correction [Strength] (multiplier)"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power correction [skill] (multiplier)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power correction [Shooting] (multiplier)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power correction [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Special Attack Damage [Beast] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Special Attack Damage [Moon] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Abnormal Status Attack Power [Poison] (Fixed Value)"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Abnormal Status Attack Power [Bleeding] (fixed value)"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Counter Damage (Multiplier)"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Stamina consumption when attacking (multiplier)"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Charged attack power (multiplier)"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _HP Regenerate"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Regain recovery amount (fixed value)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Weapon durability (fixed value)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] HP Maximum (fixed value)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] HP When near death: (fixed value)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] [Other] PC Boss Defeat Broadcast】(fixed value)"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _Attack power [all] HP Maximum (fixed value)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [all] HP When near death: (fixed value)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack power [all] [other PC Boss Defeat Broadcast】(fixed value)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _HP Regen [Physical] HP At maximum"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _HP Regen [Physical] HP When near death:"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _HP Regeneration [Physical] [Other] PC Boss Defeat Broadcast】"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Attack sound removal"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ maximum HP (magnification)"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _maximum MP (magnification)"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Maximum stamina (multiplier)"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Magic Attribute Conversion"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Fire attribute conversion"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Lightning Attribute Conversion"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Special Attack Damage [Beast] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Special Attack Damage [Moon] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Stamina consumption when attacking (multiplier)"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _HP Regenerate"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _Weapon durability (fixed value)"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Attack HP damage"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ maximum HP (magnification)"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Maximum stamina (multiplier)"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ maximum MP (magnification)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [slash] (fixed value)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Strike] (fixed value)"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Piercing] (fixed value)"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Gun] (fixed value)"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Magic Stone Effect Test _Positive effects with drawbacks _ Attack power [Magic] (fixed value)"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Fire] (fixed value)"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Lightning] (fixed value)"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Physical] (fixed value)"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [all] (fixed value)"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [slash] (multiplier)"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Magic Stone Effect Test _Positive effects with drawbacks _ Attack power [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power correction [Strength] (multiplier)"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power correction [skill] (multiplier)"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Magic Stone Effect Test _Positive effects with drawbacks _ Attack power correction [Shooting] (multiplier)"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power correction [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Special Attack Damage [Beast] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Special Attack Damage [Moon] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Abnormal Status Attack Power [Poison] (Fixed Value)"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Abnormal Status Attack Power [Bleeding] (fixed value)"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Counter Damage (Multiplier)"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Stamina consumption when attacking (multiplier)"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Charged attack power (multiplier)"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _HP Regenerate"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Regain recovery amount (fixed value)"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Weapon durability (fixed value)"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Physical] HP Maximum (fixed value)"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Physical] HP When near death: (fixed value)"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [Physical] [Other] PC Boss Defeat Broadcast】(fixed value)"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Magic Stone Effect Test _Positive effects with drawbacks _ Attack power [all] HP Maximum (fixed value)"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [all] HP When near death: (fixed value)"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack power [all] [other PC Boss Defeat Broadcast】(fixed value)"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _HP Regen [Physical] HP At maximum"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _HP Regen [Physical] HP When near death:"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _HP Regeneration [Physical] [Other] PC Boss Defeat Broadcast】"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Attack sound removal"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ maximum HP (magnification)"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ maximum MP (magnification)"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Maximum stamina (multiplier)"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Magic Attribute Conversion"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Fire attribute conversion"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive effects with drawbacks _ Lightning Attribute Conversion"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Souls acquired"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Item Drop Rate"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ maximum HP (magnification)"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Maximum stamina (multiplier)"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Throw [Damage] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Magic Stone Effect Test _Positive Effects _ Throw [ HP Recovery】(fixed value)"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Throw [Soul Acquisition] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Throw [Status Abnormality Recovery] (Time)"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [slash] (multiplier)"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage Cut [Magic] (Multiplier)"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Damage cut [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Resistance Value [Poison]"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Resistance value [bleeding]"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Resistance Value [Madness]"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Resistance Value [All]"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Beast Value"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Est effect amount"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Estus possession limit"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "Magic Stone Effect Test _Positive Effects _ Stamina recovery speed"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Landing reduction"
+      ]
+    },
+    {
+      "ID": 426,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _maximum MP (magnification)"
+      ]
+    },
+    {
+      "ID": 427,
+      "Entries": [
+        "Magic Stone Effect Test _ Positive Effects _ Throw [ MP Recovery】(fixed value)"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Souls acquired"
+      ]
+    },
+    {
+      "ID": 451,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ maximum HP (magnification)"
+      ]
+    },
+    {
+      "ID": 452,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Maximum stamina (multiplier)"
+      ]
+    },
+    {
+      "ID": 453,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Damage cut [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 454,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Damage cut [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 455,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Resistance Value [All]"
+      ]
+    },
+    {
+      "ID": 456,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Est effect amount"
+      ]
+    },
+    {
+      "ID": 457,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Estus possession limit"
+      ]
+    },
+    {
+      "ID": 458,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ Stamina recovery speed"
+      ]
+    },
+    {
+      "ID": 459,
+      "Entries": [
+        "Magic Stone Effect Test _ Negative effects _ maximum MP (magnification)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier) + Charge (multiplier)"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier) + Charge (multiplier)"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Strike] (multiplier)"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [pierce] (multiplier)"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [gun] (multiplier)"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (multiplier)"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (multiplier)"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (multiplier)"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier)"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Physical] (multiplier) + Charge (multiplier)"
+      ]
+    },
+    {
+      "ID": 528,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [all] (multiplier)"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Strength]"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [skill]"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Shooting]"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Magic]"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Physical] (fixed value)"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Gun] (fixed value)"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (fixed value)"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (fixed value)"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (fixed value)"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Strength]"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [skill]"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Shooting]"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Magic]"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Physical] (fixed value)"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Gun] (fixed value)"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (fixed value)"
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (fixed value)"
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (fixed value)"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Strength]"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [skill]"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Shooting]"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power correction [Magic]"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Balance Check Magic Stone _Attack power [Physical] (fixed value)"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Gun] (fixed value)"
+      ]
+    },
+    {
+      "ID": 626,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Magic] (fixed value)"
+      ]
+    },
+    {
+      "ID": 627,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Fire] (fixed value)"
+      ]
+    },
+    {
+      "ID": 628,
+      "Entries": [
+        "Balance Check Magic Stone _ Attack power [Lightning] (fixed value)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Total Cost 1"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Total Cost 4"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Gun] Total cost 1"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Gun] Total cost 2"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "[Gun] Total cost 3"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Gun] Total cost 2"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "[Gun] Total cost 3"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "[Gun] Total cost 4"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "[Gun] Total cost 4"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Gun] Total cost 3"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[Gun] Total cost 4"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Gun] Total cost 4"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "NPC : The Destroyer [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "NPC : Cain's Blood Knight [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "NPC : Bloodline Hunt [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "NPC 【boss】"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "Hound (Moon)"
+      ]
+    },
+    {
+      "ID": 50105,
+      "Entries": [
+        "Hound [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 50106,
+      "Entries": [
+        "Hound (Moon) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Priest"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Brain Eater"
+      ]
+    },
+    {
+      "ID": 50310,
+      "Entries": [
+        "Brain Eater [Boss]"
+      ]
+    },
+    {
+      "ID": 50320,
+      "Entries": [
+        "Brain Eater Dboss】"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "Strange Beast"
+      ]
+    },
+    {
+      "ID": 50405,
+      "Entries": [
+        "Strange Beast [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "Wandering Madness (Small)"
+      ]
+    },
+    {
+      "ID": 50600,
+      "Entries": [
+        "Gravekeeper Scorpion"
+      ]
+    },
+    {
+      "ID": 50601,
+      "Entries": [
+        "Gravekeeper Scorpion (with cubs)"
+      ]
+    },
+    {
+      "ID": 50605,
+      "Entries": [
+        "Gravekeeper Scorpion [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 50606,
+      "Entries": [
+        "Gravekeeper Scorpion (with children) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 50700,
+      "Entries": [
+        "Young fruit bat"
+      ]
+    },
+    {
+      "ID": 50800,
+      "Entries": [
+        "Digging"
+      ]
+    },
+    {
+      "ID": 50900,
+      "Entries": [
+        "Snake ball (child)"
+      ]
+    },
+    {
+      "ID": 50905,
+      "Entries": [
+        "Snake Ball (Baby) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Snake ball (baby) small"
+      ]
+    },
+    {
+      "ID": 51005,
+      "Entries": [
+        "Snake Ball (Baby) Small [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 51100,
+      "Entries": [
+        "Vampire pig"
+      ]
+    },
+    {
+      "ID": 51105,
+      "Entries": [
+        "Vampire Pig [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 51110,
+      "Entries": [
+        "Vampire Pig [Boss]"
+      ]
+    },
+    {
+      "ID": 51200,
+      "Entries": [
+        "Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 51205,
+      "Entries": [
+        "Strange Beast (female) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 51300,
+      "Entries": [
+        "Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 51400,
+      "Entries": [
+        "Crazy Demon"
+      ]
+    },
+    {
+      "ID": 51405,
+      "Entries": [
+        "Crazy Evil Spirit [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 51510,
+      "Entries": [
+        "Blood-thirsty Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 51520,
+      "Entries": [
+        "Blood-thirsty beast D boss】"
+      ]
+    },
+    {
+      "ID": 51600,
+      "Entries": [
+        "Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 51700,
+      "Entries": [
+        "Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 51710,
+      "Entries": [
+        "Kin of the Flame of Destruction [Boss]"
+      ]
+    },
+    {
+      "ID": 51720,
+      "Entries": [
+        "Kin of the Flame of Destruction D boss】"
+      ]
+    },
+    {
+      "ID": 51800,
+      "Entries": [
+        "Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 51810,
+      "Entries": [
+        "Silver Beast's Kin [Boss]"
+      ]
+    },
+    {
+      "ID": 51900,
+      "Entries": [
+        "Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 51901,
+      "Entries": [
+        "Messenger from the Moon (Tentacle)"
+      ]
+    },
+    {
+      "ID": 51906,
+      "Entries": [
+        "Messenger from the Moon (Tentacle) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52020,
+      "Entries": [
+        "Child of the Moon D boss】"
+      ]
+    },
+    {
+      "ID": 52110,
+      "Entries": [
+        "Messenger from the Moon (Large) [Boss]"
+      ]
+    },
+    {
+      "ID": 52120,
+      "Entries": [
+        "Messenger from the Moon (Large) D boss】"
+      ]
+    },
+    {
+      "ID": 52200,
+      "Entries": [
+        "Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 52205,
+      "Entries": [
+        "Dungeon Man (Priest) [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 52206,
+      "Entries": [
+        "Dungeon Man (Priest) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52300,
+      "Entries": [
+        "Dungeon Person (Slave) - Enhanced Type"
+      ]
+    },
+    {
+      "ID": 52305,
+      "Entries": [
+        "Dungeon Man (Slave) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 52400,
+      "Entries": [
+        "Dungeon Guardian"
+      ]
+    },
+    {
+      "ID": 52405,
+      "Entries": [
+        "Dungeon Man (Guardian) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 52406,
+      "Entries": [
+        "Dungeon Man (Guardian) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52500,
+      "Entries": [
+        "Dungeon Man (Madman)"
+      ]
+    },
+    {
+      "ID": 52505,
+      "Entries": [
+        "Dungeon Man (Madman) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 52506,
+      "Entries": [
+        "Dungeon Man (Madman) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52600,
+      "Entries": [
+        "Dungeon Man (Fat)"
+      ]
+    },
+    {
+      "ID": 52601,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun"
+      ]
+    },
+    {
+      "ID": 52605,
+      "Entries": [
+        "Dungeon Man (Fat) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 52606,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 52607,
+      "Entries": [
+        "Dungeon Man (Fat) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52608,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 52620,
+      "Entries": [
+        "Dungeon Man (Fat) [Boss]"
+      ]
+    },
+    {
+      "ID": 52710,
+      "Entries": [
+        "Dungeon Lord - Dual Swords [Boss]"
+      ]
+    },
+    {
+      "ID": 52711,
+      "Entries": [
+        "Dungeon Lord - Staff [Boss]"
+      ]
+    },
+    {
+      "ID": 52720,
+      "Entries": [
+        "Dungeon Lord - Dual Swords D boss】"
+      ]
+    },
+    {
+      "ID": 52721,
+      "Entries": [
+        "Dungeon Lord - Staff D boss】"
+      ]
+    },
+    {
+      "ID": 52800,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 52801,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 52900,
+      "Entries": [
+        "Evil spirit (female)"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 53001,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 53005,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 53006,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 53011,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 53020,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 53021,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 53110,
+      "Entries": [
+        "Flame Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 53120,
+      "Entries": [
+        "Flame Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "Storm Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 53220,
+      "Entries": [
+        "Storm Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 53320,
+      "Entries": [
+        "Storm Beast (Bone) D boss】"
+      ]
+    },
+    {
+      "ID": 53410,
+      "Entries": [
+        "Founder Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 53411,
+      "Entries": [
+        "Founder Beast Headless [Boss]"
+      ]
+    },
+    {
+      "ID": 53420,
+      "Entries": [
+        "Founder Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 53421,
+      "Entries": [
+        "Founder Beast Headless D boss】"
+      ]
+    },
+    {
+      "ID": 53510,
+      "Entries": [
+        "Idiot Spider [Boss]"
+      ]
+    },
+    {
+      "ID": 53520,
+      "Entries": [
+        "Idiot Spider D boss】"
+      ]
+    },
+    {
+      "ID": 53620,
+      "Entries": [
+        "Evil God [ D boss】"
+      ]
+    },
+    {
+      "ID": 53700,
+      "Entries": [
+        "Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 53705,
+      "Entries": [
+        "Enemy Avatar [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 53710,
+      "Entries": [
+        "Enemy Avatar [Boss]"
+      ]
+    },
+    {
+      "ID": 53720,
+      "Entries": [
+        "Enemy Avatar [ D boss】"
+      ]
+    },
+    {
+      "ID": 53800,
+      "Entries": [
+        "Licking blood"
+      ]
+    },
+    {
+      "ID": 53905,
+      "Entries": [
+        "Eye Collector [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 54005,
+      "Entries": [
+        "Dungeon Man (Grave Digger) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "[Random enemy] Poison"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "[Random Enemy] Drain"
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        "[Random enemy] Guided missile"
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        "[Random enemy] Healer"
+      ]
+    },
+    {
+      "ID": 60400,
+      "Entries": [
+        "[Random enemy] Fire Enchantment"
+      ]
+    },
+    {
+      "ID": 80110,
+      "Entries": [
+        "Random Treasure Chest Tumel 1F"
+      ]
+    },
+    {
+      "ID": 80120,
+      "Entries": [
+        "Random Treasure Chest Tumel 2F-3F"
+      ]
+    },
+    {
+      "ID": 80140,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 80141,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 80210,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 1F"
+      ]
+    },
+    {
+      "ID": 80220,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 80240,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 80241,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 80242,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 80310,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 80311,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 80320,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 80321,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 80340,
+      "Entries": [
+        "Random Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 80410,
+      "Entries": [
+        "Random Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 80420,
+      "Entries": [
+        "Random Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 80440,
+      "Entries": [
+        "Random Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 81110,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 1F"
+      ]
+    },
+    {
+      "ID": 81120,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 2F-3F"
+      ]
+    },
+    {
+      "ID": 81140,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 81141,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 81210,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 1F"
+      ]
+    },
+    {
+      "ID": 81220,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 81240,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 81241,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 81242,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 81310,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 81311,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 81320,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 81321,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 81340,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 81410,
+      "Entries": [
+        "Terminal Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 81420,
+      "Entries": [
+        "Terminal Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 81440,
+      "Entries": [
+        "Terminal Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Crazy Evil Spirit [Thumel]"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Crazy Evil Spirit [Remote Grave Type]"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Crazy Evil Spirit [Roland type]"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "Crazy Evil Spirit [Izu]"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "Ground Cherry"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "Strange Beast [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "Strange Beast - Red Eyes [Thumel]"
+      ]
+    },
+    {
+      "ID": 90040,
+      "Entries": [
+        "Strange Beast - Female [Thumel]"
+      ]
+    },
+    {
+      "ID": 90050,
+      "Entries": [
+        "Crowd Woman [Remote Grave Series]"
+      ]
+    },
+    {
+      "ID": 90060,
+      "Entries": [
+        "Snake Ball (Baby) Small [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 90070,
+      "Entries": [
+        "Snake Ball (Baby) [Thumel Line]"
+      ]
+    },
+    {
+      "ID": 90080,
+      "Entries": [
+        "Messenger from the Snake Swamp [Thumel]"
+      ]
+    },
+    {
+      "ID": 90090,
+      "Entries": [
+        "Messenger from the Moon [Izu Series]"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "Silver Beast Family [Roland]"
+      ]
+    },
+    {
+      "ID": 90110,
+      "Entries": [
+        "Licking blood [Thumel type]"
+      ]
+    },
+    {
+      "ID": 90120,
+      "Entries": [
+        "Mimic [Thumel] Effective against beasts"
+      ]
+    },
+    {
+      "ID": 90121,
+      "Entries": [
+        "Mimic [Thumel] Moon special effect"
+      ]
+    },
+    {
+      "ID": 90130,
+      "Entries": [
+        "Jailer A [Thumel series]"
+      ]
+    },
+    {
+      "ID": 90140,
+      "Entries": [
+        "Jailer B [Thumel series]"
+      ]
+    },
+    {
+      "ID": 90150,
+      "Entries": [
+        "Executioner [Thumel series]"
+      ]
+    },
+    {
+      "ID": 90200,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 90210,
+      "Entries": [
+        "Strange Beast"
+      ]
+    },
+    {
+      "ID": 90215,
+      "Entries": [
+        "Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 90220,
+      "Entries": [
+        "Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 90225,
+      "Entries": [
+        "Wandering Madness ( Medium )"
+      ]
+    },
+    {
+      "ID": 90230,
+      "Entries": [
+        "Bloodthirsty Beast Random Guns"
+      ]
+    },
+    {
+      "ID": 90240,
+      "Entries": [
+        "Eye Collector"
+      ]
+    },
+    {
+      "ID": 90250,
+      "Entries": [
+        "Ground Cherry"
+      ]
+    },
+    {
+      "ID": 90260,
+      "Entries": [
+        "Fallen Hunter"
+      ]
+    },
+    {
+      "ID": 90261,
+      "Entries": [
+        "Dark Hunter Sniper Gun Random"
+      ]
+    },
+    {
+      "ID": 90270,
+      "Entries": [
+        "Executioner (Nightmare) - Axe Mystery Up"
+      ]
+    },
+    {
+      "ID": 90280,
+      "Entries": [
+        "Executioner (Nightmare) Grenade Flame Up"
+      ]
+    },
+    {
+      "ID": 90290,
+      "Entries": [
+        "Clock Tower Patient A・Poison Hand: Adds slow-acting poison"
+      ]
+    },
+    {
+      "ID": 90291,
+      "Entries": [
+        "Clock Tower Patient A・Blood transfusion station Gun random"
+      ]
+    },
+    {
+      "ID": 90292,
+      "Entries": [
+        "Clock Tower Patient A Four-legged"
+      ]
+    },
+    {
+      "ID": 90293,
+      "Entries": [
+        "Clock Tower Patient A・Wizard Mystic Addition"
+      ]
+    },
+    {
+      "ID": 90300,
+      "Entries": [
+        "Fishman B・Lightning Lightning Up"
+      ]
+    },
+    {
+      "ID": 90305,
+      "Entries": [
+        "Fishman B・Vengeful Spirit Mystery Up"
+      ]
+    },
+    {
+      "ID": 90310,
+      "Entries": [
+        "Fishman Large"
+      ]
+    },
+    {
+      "ID": 90320,
+      "Entries": [
+        "Blood Licking Gun Random"
+      ]
+    },
+    {
+      "ID": 90330,
+      "Entries": [
+        "Fishman A・Kitchen knife"
+      ]
+    },
+    {
+      "ID": 90340,
+      "Entries": [
+        "Hermit crab with shell HP Maximum physical boost"
+      ]
+    },
+    {
+      "ID": 90341,
+      "Entries": [
+        "Hermit crab without shell HP Physical Up When Near Death"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Souls acquired + Lv1"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Souls acquired + Lv2"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Souls acquired + Lv3"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Souls acquired -"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "Item Drop Rate Lv1"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "Item Drop Rate Lv2"
+      ]
+    },
+    {
+      "ID": 100203,
+      "Entries": [
+        "Item Drop Rate Lv3"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "maximum HP Lv1"
+      ]
+    },
+    {
+      "ID": 100302,
+      "Entries": [
+        "maximum HP Lv2"
+      ]
+    },
+    {
+      "ID": 100303,
+      "Entries": [
+        "maximum HP Lv3"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "Max Stamina Lv1"
+      ]
+    },
+    {
+      "ID": 100402,
+      "Entries": [
+        "Max Stamina Lv2"
+      ]
+    },
+    {
+      "ID": 100403,
+      "Entries": [
+        "Max Stamina Lv3"
+      ]
+    },
+    {
+      "ID": 100501,
+      "Entries": [
+        "Throw [Damage] Lv1"
+      ]
+    },
+    {
+      "ID": 100502,
+      "Entries": [
+        "Throw [Damage] Lv2"
+      ]
+    },
+    {
+      "ID": 100503,
+      "Entries": [
+        "Throw [Damage] Lv3"
+      ]
+    },
+    {
+      "ID": 100601,
+      "Entries": [
+        "Throw [ HP recovery】 Lv1"
+      ]
+    },
+    {
+      "ID": 100602,
+      "Entries": [
+        "Throw [ HP recovery】 Lv2"
+      ]
+    },
+    {
+      "ID": 100603,
+      "Entries": [
+        "Throw [ HP recovery】 Lv3"
+      ]
+    },
+    {
+      "ID": 100701,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv1"
+      ]
+    },
+    {
+      "ID": 100702,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv2"
+      ]
+    },
+    {
+      "ID": 100703,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv3"
+      ]
+    },
+    {
+      "ID": 100801,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv1"
+      ]
+    },
+    {
+      "ID": 100802,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv2"
+      ]
+    },
+    {
+      "ID": 100803,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv3"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "Damage Cut [Slash]"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Damage Cut [Strike]"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Damage Cut [Pierce]"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        "Damage Cut [Gun]"
+      ]
+    },
+    {
+      "ID": 101301,
+      "Entries": [
+        "Damage Cut [Magic] Lv1"
+      ]
+    },
+    {
+      "ID": 101302,
+      "Entries": [
+        "Damage Cut [Magic] Lv2"
+      ]
+    },
+    {
+      "ID": 101303,
+      "Entries": [
+        "Damage Cut [Magic] Lv3"
+      ]
+    },
+    {
+      "ID": 101401,
+      "Entries": [
+        "Damage Cut [Fire] + Lv1"
+      ]
+    },
+    {
+      "ID": 101402,
+      "Entries": [
+        "Damage Cut [Fire] + Lv2"
+      ]
+    },
+    {
+      "ID": 101403,
+      "Entries": [
+        "Damage Cut [Fire] + Lv3"
+      ]
+    },
+    {
+      "ID": 101500,
+      "Entries": [
+        "Damage Cut [Fire] -"
+      ]
+    },
+    {
+      "ID": 101601,
+      "Entries": [
+        "Damage Cut [Lightning] Lv1"
+      ]
+    },
+    {
+      "ID": 101602,
+      "Entries": [
+        "Damage Cut [Lightning] Lv2"
+      ]
+    },
+    {
+      "ID": 101603,
+      "Entries": [
+        "Damage Cut [Lightning] Lv3"
+      ]
+    },
+    {
+      "ID": 101701,
+      "Entries": [
+        "Damage Cut [Physical] Lv1"
+      ]
+    },
+    {
+      "ID": 101702,
+      "Entries": [
+        "Damage Cut [Physical] Lv2"
+      ]
+    },
+    {
+      "ID": 101703,
+      "Entries": [
+        "Damage Cut [Physical] Lv3"
+      ]
+    },
+    {
+      "ID": 101801,
+      "Entries": [
+        "Damage Cut [All] + Lv1"
+      ]
+    },
+    {
+      "ID": 101802,
+      "Entries": [
+        "Damage Cut [All] + Lv2"
+      ]
+    },
+    {
+      "ID": 101803,
+      "Entries": [
+        "Damage Cut [All] + Lv3"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "Damage Cut [All] -"
+      ]
+    },
+    {
+      "ID": 102001,
+      "Entries": [
+        "Resistance Value [Poison] Lv1"
+      ]
+    },
+    {
+      "ID": 102002,
+      "Entries": [
+        "Resistance Value [Poison] Lv2"
+      ]
+    },
+    {
+      "ID": 102003,
+      "Entries": [
+        "Resistance Value [Poison] Lv3"
+      ]
+    },
+    {
+      "ID": 102101,
+      "Entries": [
+        "Resistance value [bleeding] Lv1"
+      ]
+    },
+    {
+      "ID": 102102,
+      "Entries": [
+        "Resistance value [bleeding] Lv2"
+      ]
+    },
+    {
+      "ID": 102103,
+      "Entries": [
+        "Resistance value [bleeding] Lv3"
+      ]
+    },
+    {
+      "ID": 102201,
+      "Entries": [
+        "Resistance Value [Madness] Lv1"
+      ]
+    },
+    {
+      "ID": 102202,
+      "Entries": [
+        "Resistance Value [Madness] Lv2"
+      ]
+    },
+    {
+      "ID": 102203,
+      "Entries": [
+        "Resistance Value [Madness] Lv3"
+      ]
+    },
+    {
+      "ID": 102301,
+      "Entries": [
+        "Resistance Value [All] Lv1"
+      ]
+    },
+    {
+      "ID": 102302,
+      "Entries": [
+        "Resistance Value [All] Lv2"
+      ]
+    },
+    {
+      "ID": 102303,
+      "Entries": [
+        "Resistance Value [All] Lv3"
+      ]
+    },
+    {
+      "ID": 102401,
+      "Entries": [
+        "Beast Transformation Extension Lv1"
+      ]
+    },
+    {
+      "ID": 102402,
+      "Entries": [
+        "Beast Transformation Extension Lv2"
+      ]
+    },
+    {
+      "ID": 102403,
+      "Entries": [
+        "Beast Transformation Extension Lv3"
+      ]
+    },
+    {
+      "ID": 102500,
+      "Entries": [
+        "Poison Reduction"
+      ]
+    },
+    {
+      "ID": 102600,
+      "Entries": [
+        "Relief of bleeding"
+      ]
+    },
+    {
+      "ID": 102700,
+      "Entries": [
+        "Transfusion recovery amount +"
+      ]
+    },
+    {
+      "ID": 102800,
+      "Entries": [
+        "Transfusion recovery amount -"
+      ]
+    },
+    {
+      "ID": 102901,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 102902,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 102903,
+      "Entries": [
+        "Blood transfusion possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 102904,
+      "Entries": [
+        "Blood transfusion possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 102905,
+      "Entries": [
+        "Blood transfusion possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Blood transfusion possession limit -"
+      ]
+    },
+    {
+      "ID": 103101,
+      "Entries": [
+        "Ammunition possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 103102,
+      "Entries": [
+        "Ammunition possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 103103,
+      "Entries": [
+        "Ammunition possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 103104,
+      "Entries": [
+        "Ammunition possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 103105,
+      "Entries": [
+        "Ammunition possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 103200,
+      "Entries": [
+        "Ammunition possession limit -"
+      ]
+    },
+    {
+      "ID": 103300,
+      "Entries": [
+        "Stamina recovery speed +"
+      ]
+    },
+    {
+      "ID": 103400,
+      "Entries": [
+        "Stamina recovery speed -"
+      ]
+    },
+    {
+      "ID": 103500,
+      "Entries": [
+        "Landing damage reduction"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "Regain Recovery Amount Lv1"
+      ]
+    },
+    {
+      "ID": 104001,
+      "Entries": [
+        "Regain Recovery Amount Lv2"
+      ]
+    },
+    {
+      "ID": 104002,
+      "Entries": [
+        "Regain Recovery Amount Lv3"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 110011,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 110012,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 110013,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 110014,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 110015,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 110016,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 110017,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        "Defective Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 110022,
+      "Entries": [
+        "Defective Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 110023,
+      "Entries": [
+        "Defective Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 110024,
+      "Entries": [
+        "Defective Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 110025,
+      "Entries": [
+        "Defective Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 110026,
+      "Entries": [
+        "Defective Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 110027,
+      "Entries": [
+        "Defective Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 110031,
+      "Entries": [
+        "Round Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 110032,
+      "Entries": [
+        "Round Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 110033,
+      "Entries": [
+        "Round Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 110034,
+      "Entries": [
+        "Round Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 110035,
+      "Entries": [
+        "Round Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 110036,
+      "Entries": [
+        "Round Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 110037,
+      "Entries": [
+        "Round Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 110041,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 110042,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 110043,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 110044,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 110045,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 110046,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 110047,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 122001,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 123001,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 124001,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 124002,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 124003,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 124004,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 125000,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 125001,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 126000,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 126001,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 126002,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 126003,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 126004,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 127001,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 127002,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 127003,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 127004,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 128000,
+      "Entries": [
+        "Fixed placement Sacrifice"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Fixed placement University (Nightmare Classroom)"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Fixed placement _ Cathedral Quarter D_ Rank 14"
+      ]
+    },
+    {
+      "ID": 134001,
+      "Entries": [
+        "Fixed placement _ Cathedral Quarter D_ Rank 14"
+      ]
+    },
+    {
+      "ID": 134002,
+      "Entries": [
+        "Fixed placement _ Cathedral Quarter D_ Rank 14"
+      ]
+    },
+    {
+      "ID": 134003,
+      "Entries": [
+        "Fixed placement _ Cathedral Quarter D_ Rank 14"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 135001,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 135002,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 135003,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 135004,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 135005,
+      "Entries": [
+        "Fixed placement _ Clock Tower Rank 15"
+      ]
+    },
+    {
+      "ID": 136000,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 136001,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 136002,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 136003,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 16-18"
+      ]
+    },
+    {
+      "ID": 136004,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 136005,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 136006,
+      "Entries": [
+        "Fixed placement _ Fishing Village Rank 17"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Bright red brooch"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "Doll's Tears"
+      ]
+    },
+    {
+      "ID": 150002,
+      "Entries": [
+        "Gold pendants"
+      ]
+    },
+    {
+      "ID": 190010,
+      "Entries": [
+        "Unique Magic Stone Lv1 Thumel"
+      ]
+    },
+    {
+      "ID": 190020,
+      "Entries": [
+        "Unique Magic Stone Lv2 Thumel"
+      ]
+    },
+    {
+      "ID": 190030,
+      "Entries": [
+        "Unique Magic Stone Lv3 Thumel"
+      ]
+    },
+    {
+      "ID": 190040,
+      "Entries": [
+        "Unique Magic Stone Lv4 Thumel"
+      ]
+    },
+    {
+      "ID": 190050,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 190051,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 190120,
+      "Entries": [
+        "Unique Magic Stone Lv2 Remote tomb"
+      ]
+    },
+    {
+      "ID": 190130,
+      "Entries": [
+        "Unique Magic Stone Lv3 Remote tomb"
+      ]
+    },
+    {
+      "ID": 190240,
+      "Entries": [
+        "Unique Magic Stone Lv4 Laurent"
+      ]
+    },
+    {
+      "ID": 190250,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 190251,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 190350,
+      "Entries": [
+        "Unique Magic Stone Lv5 Is"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Pledge: Kin Hunt"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Oath: Bloodline"
+      ]
+    },
+    {
+      "ID": 200020,
+      "Entries": [
+        "Pledge: Hunter Hunt"
+      ]
+    },
+    {
+      "ID": 200030,
+      "Entries": [
+        "Pledge: Alliance"
+      ]
+    },
+    {
+      "ID": 200040,
+      "Entries": [
+        "Pledge: Beast"
+      ]
+    },
+    {
+      "ID": 200050,
+      "Entries": [
+        "Pledge: Slug"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "BJ The rough diamond of \"clockwise perversion\""
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "BJ The rough diamond of \"counterclockwise perversion\""
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "BJ The raw stone of \"Communion\""
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "BJ The raw stone of \"Odon's Fellowship\""
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "BJ The \"Lake\" Gemstone"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "BJ Deep Sea Gemstones"
+      ]
+    },
+    {
+      "ID": 210006,
+      "Entries": [
+        "BJThe raw material of the \"Destroyer\""
+      ]
+    },
+    {
+      "ID": 210007,
+      "Entries": [
+        "BJ The raw material of the \"Reveler\""
+      ]
+    },
+    {
+      "ID": 210008,
+      "Entries": [
+        "BJ The raw material of \"the one who interacts\""
+      ]
+    },
+    {
+      "ID": 210009,
+      "Entries": [
+        "BJ The raw material of the \"successor\""
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "BJ The Beast's Gemstone"
+      ]
+    },
+    {
+      "ID": 210011,
+      "Entries": [
+        "BJ The Moon's Gemstone"
+      ]
+    },
+    {
+      "ID": 210012,
+      "Entries": [
+        "BJ The raw stone of \"eyes\""
+      ]
+    },
+    {
+      "ID": 980001,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank1"
+      ]
+    },
+    {
+      "ID": 980002,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank2"
+      ]
+    },
+    {
+      "ID": 980003,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank3"
+      ]
+    },
+    {
+      "ID": 980004,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank4"
+      ]
+    },
+    {
+      "ID": 980005,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank5"
+      ]
+    },
+    {
+      "ID": 980006,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank6"
+      ]
+    },
+    {
+      "ID": 980007,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank7"
+      ]
+    },
+    {
+      "ID": 980008,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank8"
+      ]
+    },
+    {
+      "ID": 980009,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank9"
+      ]
+    },
+    {
+      "ID": 980010,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank10"
+      ]
+    },
+    {
+      "ID": 980011,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank11"
+      ]
+    },
+    {
+      "ID": 980012,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank12"
+      ]
+    },
+    {
+      "ID": 980013,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank13"
+      ]
+    },
+    {
+      "ID": 980014,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank14"
+      ]
+    },
+    {
+      "ID": 980015,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank15"
+      ]
+    },
+    {
+      "ID": 980016,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank16"
+      ]
+    },
+    {
+      "ID": 980017,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank17"
+      ]
+    },
+    {
+      "ID": 980018,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank18"
+      ]
+    },
+    {
+      "ID": 980019,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank19"
+      ]
+    },
+    {
+      "ID": 980020,
+      "Entries": [
+        "For play debugging: Attack power [Physical] fixed value + cost4 rank20"
+      ]
+    },
+    {
+      "ID": 980101,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank1"
+      ]
+    },
+    {
+      "ID": 980102,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank2"
+      ]
+    },
+    {
+      "ID": 980103,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank3"
+      ]
+    },
+    {
+      "ID": 980104,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank4"
+      ]
+    },
+    {
+      "ID": 980105,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank5"
+      ]
+    },
+    {
+      "ID": 980106,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank6"
+      ]
+    },
+    {
+      "ID": 980107,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank7"
+      ]
+    },
+    {
+      "ID": 980108,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank8"
+      ]
+    },
+    {
+      "ID": 980109,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank9"
+      ]
+    },
+    {
+      "ID": 980110,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank10"
+      ]
+    },
+    {
+      "ID": 980111,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank11"
+      ]
+    },
+    {
+      "ID": 980112,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank12"
+      ]
+    },
+    {
+      "ID": 980113,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank13"
+      ]
+    },
+    {
+      "ID": 980114,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank14"
+      ]
+    },
+    {
+      "ID": 980115,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank15"
+      ]
+    },
+    {
+      "ID": 980116,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank16"
+      ]
+    },
+    {
+      "ID": 980117,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank17"
+      ]
+    },
+    {
+      "ID": 980118,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank18"
+      ]
+    },
+    {
+      "ID": 980119,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank19"
+      ]
+    },
+    {
+      "ID": 980120,
+      "Entries": [
+        "For play debugging: Attack power [physical] multiplier + cost4 rank20"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Balance Debugging Magic Stone Physical +27.2%"
+      ]
+    },
+    {
+      "ID": 981001,
+      "Entries": [
+        "Balance Debugging Magic Stone Blood Quality +31.5%"
+      ]
+    },
+    {
+      "ID": 981002,
+      "Entries": [
+        "Balance Debugging Magic Stones All +21.5%"
+      ]
+    },
+    {
+      "ID": 990001,
+      "Entries": [
+        "For play debugging: Max HP +5%"
+      ]
+    },
+    {
+      "ID": 990002,
+      "Entries": [
+        "For play debugging: Max HP +10%"
+      ]
+    },
+    {
+      "ID": 990003,
+      "Entries": [
+        "For play debugging: Max HP +15%"
+      ]
+    },
+    {
+      "ID": 1001100,
+      "Entries": [
+        "Curse Total Cost 1"
+      ]
+    },
+    {
+      "ID": 1001110,
+      "Entries": [
+        "Curse Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1001111,
+      "Entries": [
+        "Curse Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1001200,
+      "Entries": [
+        "Curse Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1001210,
+      "Entries": [
+        "Curse Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1001211,
+      "Entries": [
+        "Curse Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1001220,
+      "Entries": [
+        "Curse Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1001300,
+      "Entries": [
+        "Curse Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1001310,
+      "Entries": [
+        "Curse Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1001400,
+      "Entries": [
+        "Curse Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1002100,
+      "Entries": [
+        "Curse [Gun] Total Cost 1"
+      ]
+    },
+    {
+      "ID": 1002110,
+      "Entries": [
+        "Curse [Gun] Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1002111,
+      "Entries": [
+        "Curse [Gun] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1002200,
+      "Entries": [
+        "Curse [Gun] Total Cost 2"
+      ]
+    },
+    {
+      "ID": 1002210,
+      "Entries": [
+        "Curse [Gun] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1002211,
+      "Entries": [
+        "Curse [Gun] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1002220,
+      "Entries": [
+        "Curse [Gun] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1002300,
+      "Entries": [
+        "Curse [Gun] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 1002310,
+      "Entries": [
+        "Curse [Gun] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1002400,
+      "Entries": [
+        "Curse [Gun] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 1050000,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 1050005,
+      "Entries": [
+        "NPC : The Destroyer [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1050006,
+      "Entries": [
+        "NPC : Cain's Blood Knight [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1050007,
+      "Entries": [
+        "NPC : Bloodline Hunt [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1050010,
+      "Entries": [
+        "NPC 【boss】"
+      ]
+    },
+    {
+      "ID": 1050100,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 1050101,
+      "Entries": [
+        "Hound (Moon)"
+      ]
+    },
+    {
+      "ID": 1050105,
+      "Entries": [
+        "Hound [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1050106,
+      "Entries": [
+        "Hound (Moon) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1050200,
+      "Entries": [
+        "Priest"
+      ]
+    },
+    {
+      "ID": 1050300,
+      "Entries": [
+        "Brain Eater"
+      ]
+    },
+    {
+      "ID": 1050310,
+      "Entries": [
+        "Brain Eater [Boss]"
+      ]
+    },
+    {
+      "ID": 1050320,
+      "Entries": [
+        "Brain Eater Dboss】"
+      ]
+    },
+    {
+      "ID": 1050400,
+      "Entries": [
+        "Strange Beast"
+      ]
+    },
+    {
+      "ID": 1050405,
+      "Entries": [
+        "Strange Beast [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1050500,
+      "Entries": [
+        "Wandering Madness (Small)"
+      ]
+    },
+    {
+      "ID": 1050600,
+      "Entries": [
+        "Gravekeeper Scorpion"
+      ]
+    },
+    {
+      "ID": 1050601,
+      "Entries": [
+        "Gravekeeper Scorpion (with cubs)"
+      ]
+    },
+    {
+      "ID": 1050605,
+      "Entries": [
+        "Gravekeeper Scorpion [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1050606,
+      "Entries": [
+        "Gravekeeper Scorpion (with children) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 1050700,
+      "Entries": [
+        "Young fruit bat"
+      ]
+    },
+    {
+      "ID": 1050800,
+      "Entries": [
+        "Digging"
+      ]
+    },
+    {
+      "ID": 1050900,
+      "Entries": [
+        "Snake ball (child)"
+      ]
+    },
+    {
+      "ID": 1050905,
+      "Entries": [
+        "Snake Ball (Baby) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1051000,
+      "Entries": [
+        "Snake ball (baby) small"
+      ]
+    },
+    {
+      "ID": 1051005,
+      "Entries": [
+        "Snake Ball (Baby) Small [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1051100,
+      "Entries": [
+        "Vampire pig"
+      ]
+    },
+    {
+      "ID": 1051105,
+      "Entries": [
+        "Vampire Pig [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1051110,
+      "Entries": [
+        "Vampire Pig [Boss]"
+      ]
+    },
+    {
+      "ID": 1051200,
+      "Entries": [
+        "Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 1051205,
+      "Entries": [
+        "Strange Beast (female) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 1051300,
+      "Entries": [
+        "Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 1051400,
+      "Entries": [
+        "Crazy Demon"
+      ]
+    },
+    {
+      "ID": 1051405,
+      "Entries": [
+        "Crazy Evil Spirit [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1051510,
+      "Entries": [
+        "Blood-thirsty Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 1051520,
+      "Entries": [
+        "Blood-thirsty beast D boss】"
+      ]
+    },
+    {
+      "ID": 1051600,
+      "Entries": [
+        "Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 1051700,
+      "Entries": [
+        "Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 1051710,
+      "Entries": [
+        "Kin of the Flame of Destruction [Boss]"
+      ]
+    },
+    {
+      "ID": 1051720,
+      "Entries": [
+        "Kin of the Flame of Destruction D boss】"
+      ]
+    },
+    {
+      "ID": 1051800,
+      "Entries": [
+        "Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 1051810,
+      "Entries": [
+        "Silver Beast's Kin [Boss]"
+      ]
+    },
+    {
+      "ID": 1051900,
+      "Entries": [
+        "Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 1051901,
+      "Entries": [
+        "Messenger from the Moon (Tentacle)"
+      ]
+    },
+    {
+      "ID": 1051906,
+      "Entries": [
+        "Messenger from the Moon (Tentacle) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052020,
+      "Entries": [
+        "Child of the Moon D boss】"
+      ]
+    },
+    {
+      "ID": 1052110,
+      "Entries": [
+        "Messenger from the Moon (Large) [Boss]"
+      ]
+    },
+    {
+      "ID": 1052120,
+      "Entries": [
+        "Messenger from the Moon (Large) D boss】"
+      ]
+    },
+    {
+      "ID": 1052200,
+      "Entries": [
+        "Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 1052205,
+      "Entries": [
+        "Dungeon Man (Priest) [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1052206,
+      "Entries": [
+        "Dungeon Man (Priest) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052300,
+      "Entries": [
+        "Dungeon Person (Slave) - Enhanced Type"
+      ]
+    },
+    {
+      "ID": 1052305,
+      "Entries": [
+        "Dungeon Man (Slave) - Enhanced Type [Enhanced Enemy]"
+      ]
+    },
+    {
+      "ID": 1052400,
+      "Entries": [
+        "Dungeon Guardian"
+      ]
+    },
+    {
+      "ID": 1052405,
+      "Entries": [
+        "Dungeon Man (Guardian) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 1052406,
+      "Entries": [
+        "Dungeon Man (Guardian) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052500,
+      "Entries": [
+        "Dungeon Man (Madman)"
+      ]
+    },
+    {
+      "ID": 1052505,
+      "Entries": [
+        "Dungeon Man (Madman) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 1052506,
+      "Entries": [
+        "Dungeon Man (Madman) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052600,
+      "Entries": [
+        "Dungeon Man (Fat)"
+      ]
+    },
+    {
+      "ID": 1052601,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun"
+      ]
+    },
+    {
+      "ID": 1052605,
+      "Entries": [
+        "Dungeon Man (Fat) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 1052606,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 1052607,
+      "Entries": [
+        "Dungeon Man (Fat) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052608,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1052620,
+      "Entries": [
+        "Dungeon Man (Fat) [Boss]"
+      ]
+    },
+    {
+      "ID": 1052710,
+      "Entries": [
+        "Dungeon Lord - Dual Swords [Boss]"
+      ]
+    },
+    {
+      "ID": 1052711,
+      "Entries": [
+        "Dungeon Lord - Staff [Boss]"
+      ]
+    },
+    {
+      "ID": 1052720,
+      "Entries": [
+        "Dungeon Lord - Dual Swords D boss】"
+      ]
+    },
+    {
+      "ID": 1052721,
+      "Entries": [
+        "Dungeon Lord - Staff D boss】"
+      ]
+    },
+    {
+      "ID": 1052800,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 1052801,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 1052900,
+      "Entries": [
+        "Evil spirit (female)"
+      ]
+    },
+    {
+      "ID": 1053000,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 1053001,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 1053005,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1053006,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 1053010,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 1053011,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 1053020,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053021,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053110,
+      "Entries": [
+        "Flame Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 1053120,
+      "Entries": [
+        "Flame Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053210,
+      "Entries": [
+        "Storm Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 1053220,
+      "Entries": [
+        "Storm Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053320,
+      "Entries": [
+        "Storm Beast (Bone) D boss】"
+      ]
+    },
+    {
+      "ID": 1053410,
+      "Entries": [
+        "Founder Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 1053411,
+      "Entries": [
+        "Founder Beast Headless [Boss]"
+      ]
+    },
+    {
+      "ID": 1053420,
+      "Entries": [
+        "Founder Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053421,
+      "Entries": [
+        "Founder Beast Headless D boss】"
+      ]
+    },
+    {
+      "ID": 1053510,
+      "Entries": [
+        "Idiot Spider [Boss]"
+      ]
+    },
+    {
+      "ID": 1053520,
+      "Entries": [
+        "Idiot Spider D boss】"
+      ]
+    },
+    {
+      "ID": 1053620,
+      "Entries": [
+        "Evil God [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053700,
+      "Entries": [
+        "Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 1053705,
+      "Entries": [
+        "Enemy Avatar [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1053710,
+      "Entries": [
+        "Enemy Avatar [Boss]"
+      ]
+    },
+    {
+      "ID": 1053720,
+      "Entries": [
+        "Enemy Avatar [ D boss】"
+      ]
+    },
+    {
+      "ID": 1053800,
+      "Entries": [
+        "Licking blood"
+      ]
+    },
+    {
+      "ID": 1053905,
+      "Entries": [
+        "Eye Collector [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 1054005,
+      "Entries": [
+        "Dungeon Man (Grave Digger) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "[Random enemy] Poison"
+      ]
+    },
+    {
+      "ID": 1060100,
+      "Entries": [
+        "[Random Enemy] Drain"
+      ]
+    },
+    {
+      "ID": 1060200,
+      "Entries": [
+        "[Random enemy] Guided missile"
+      ]
+    },
+    {
+      "ID": 1060300,
+      "Entries": [
+        "[Random enemy] Healer"
+      ]
+    },
+    {
+      "ID": 1060400,
+      "Entries": [
+        "[Random enemy] Fire Enchantment"
+      ]
+    },
+    {
+      "ID": 1080110,
+      "Entries": [
+        "Random Treasure Chest Tumel 1F"
+      ]
+    },
+    {
+      "ID": 1080120,
+      "Entries": [
+        "Random Treasure Chest Tumel 2F-3F"
+      ]
+    },
+    {
+      "ID": 1080140,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 1080141,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 1080210,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 1F"
+      ]
+    },
+    {
+      "ID": 1080220,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 1080240,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 1080241,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 1080242,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 1080310,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 1080311,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 1080320,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 1080321,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 1080340,
+      "Entries": [
+        "Random Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 1080410,
+      "Entries": [
+        "Random Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 1080420,
+      "Entries": [
+        "Random Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 1080440,
+      "Entries": [
+        "Random Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 1081110,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 1F"
+      ]
+    },
+    {
+      "ID": 1081120,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 2F-3F"
+      ]
+    },
+    {
+      "ID": 1081140,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 1081141,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 1081210,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 1F"
+      ]
+    },
+    {
+      "ID": 1081220,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 1081240,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 1081241,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 1081242,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 1081310,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 1081311,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 1081320,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 1081321,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 1081340,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 1081410,
+      "Entries": [
+        "Terminal Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 1081420,
+      "Entries": [
+        "Terminal Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 1081440,
+      "Entries": [
+        "Terminal Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 1090000,
+      "Entries": [
+        "Crazy Evil Spirit [Thumel]"
+      ]
+    },
+    {
+      "ID": 1090001,
+      "Entries": [
+        "Crazy Evil Spirit [Remote Grave Type]"
+      ]
+    },
+    {
+      "ID": 1090002,
+      "Entries": [
+        "Crazy Evil Spirit [Roland type]"
+      ]
+    },
+    {
+      "ID": 1090003,
+      "Entries": [
+        "Crazy Evil Spirit [Izu]"
+      ]
+    },
+    {
+      "ID": 1090010,
+      "Entries": [
+        "Ground Cherry"
+      ]
+    },
+    {
+      "ID": 1090020,
+      "Entries": [
+        "Strange Beast [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 1090030,
+      "Entries": [
+        "Strange Beast - Red Eyes [Thumel]"
+      ]
+    },
+    {
+      "ID": 1090040,
+      "Entries": [
+        "Strange Beast - Female [Thumel]"
+      ]
+    },
+    {
+      "ID": 1090050,
+      "Entries": [
+        "Crowd Woman [Remote Grave Series]"
+      ]
+    },
+    {
+      "ID": 1090060,
+      "Entries": [
+        "Snake Ball (Baby) Small [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 1090070,
+      "Entries": [
+        "Snake Ball (Baby) [Thumel Line]"
+      ]
+    },
+    {
+      "ID": 1090080,
+      "Entries": [
+        "Messenger from the Snake Swamp [Thumel]"
+      ]
+    },
+    {
+      "ID": 1090090,
+      "Entries": [
+        "Messenger from the Moon [Izu Series]"
+      ]
+    },
+    {
+      "ID": 1090100,
+      "Entries": [
+        "Silver Beast Family [Roland]"
+      ]
+    },
+    {
+      "ID": 1090110,
+      "Entries": [
+        "Licking blood [Thumel type]"
+      ]
+    },
+    {
+      "ID": 1090120,
+      "Entries": [
+        "Mimic [Thumel] Effective against beasts"
+      ]
+    },
+    {
+      "ID": 1090121,
+      "Entries": [
+        "Mimic [Thumel] Moon special effect"
+      ]
+    },
+    {
+      "ID": 1090130,
+      "Entries": [
+        "Jailer A [Thumel series]"
+      ]
+    },
+    {
+      "ID": 1090140,
+      "Entries": [
+        "Jailer B [Thumel series]"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "Souls acquired + Lv1"
+      ]
+    },
+    {
+      "ID": 1100002,
+      "Entries": [
+        "Souls acquired + Lv2"
+      ]
+    },
+    {
+      "ID": 1100003,
+      "Entries": [
+        "Souls acquired + Lv3"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Souls acquired -"
+      ]
+    },
+    {
+      "ID": 1100201,
+      "Entries": [
+        "Item Drop Rate Lv1"
+      ]
+    },
+    {
+      "ID": 1100202,
+      "Entries": [
+        "Item Drop Rate Lv2"
+      ]
+    },
+    {
+      "ID": 1100203,
+      "Entries": [
+        "Item Drop Rate Lv3"
+      ]
+    },
+    {
+      "ID": 1100301,
+      "Entries": [
+        "maximum HP Lv1"
+      ]
+    },
+    {
+      "ID": 1100302,
+      "Entries": [
+        "maximum HP Lv2"
+      ]
+    },
+    {
+      "ID": 1100303,
+      "Entries": [
+        "maximum HP Lv3"
+      ]
+    },
+    {
+      "ID": 1100401,
+      "Entries": [
+        "Max Stamina Lv1"
+      ]
+    },
+    {
+      "ID": 1100402,
+      "Entries": [
+        "Max Stamina Lv2"
+      ]
+    },
+    {
+      "ID": 1100403,
+      "Entries": [
+        "Max Stamina Lv3"
+      ]
+    },
+    {
+      "ID": 1100501,
+      "Entries": [
+        "Throw [Damage] Lv1"
+      ]
+    },
+    {
+      "ID": 1100502,
+      "Entries": [
+        "Throw [Damage] Lv2"
+      ]
+    },
+    {
+      "ID": 1100503,
+      "Entries": [
+        "Throw [Damage] Lv3"
+      ]
+    },
+    {
+      "ID": 1100601,
+      "Entries": [
+        "Throw [ HP recovery】 Lv1"
+      ]
+    },
+    {
+      "ID": 1100602,
+      "Entries": [
+        "Throw [ HP recovery】 Lv2"
+      ]
+    },
+    {
+      "ID": 1100603,
+      "Entries": [
+        "Throw [ HP recovery】 Lv3"
+      ]
+    },
+    {
+      "ID": 1100701,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv1"
+      ]
+    },
+    {
+      "ID": 1100702,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv2"
+      ]
+    },
+    {
+      "ID": 1100703,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv3"
+      ]
+    },
+    {
+      "ID": 1100801,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv1"
+      ]
+    },
+    {
+      "ID": 1100802,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv2"
+      ]
+    },
+    {
+      "ID": 1100803,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv3"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Damage Cut [Slash]"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Damage Cut [Strike]"
+      ]
+    },
+    {
+      "ID": 1101100,
+      "Entries": [
+        "Damage Cut [Pierce]"
+      ]
+    },
+    {
+      "ID": 1101200,
+      "Entries": [
+        "Damage Cut [Gun]"
+      ]
+    },
+    {
+      "ID": 1101301,
+      "Entries": [
+        "Damage Cut [Magic] Lv1"
+      ]
+    },
+    {
+      "ID": 1101302,
+      "Entries": [
+        "Damage Cut [Magic] Lv2"
+      ]
+    },
+    {
+      "ID": 1101303,
+      "Entries": [
+        "Damage Cut [Magic] Lv3"
+      ]
+    },
+    {
+      "ID": 1101401,
+      "Entries": [
+        "Damage Cut [Fire] + Lv1"
+      ]
+    },
+    {
+      "ID": 1101402,
+      "Entries": [
+        "Damage Cut [Fire] + Lv2"
+      ]
+    },
+    {
+      "ID": 1101403,
+      "Entries": [
+        "Damage Cut [Fire] + Lv3"
+      ]
+    },
+    {
+      "ID": 1101500,
+      "Entries": [
+        "Damage Cut [Fire] -"
+      ]
+    },
+    {
+      "ID": 1101601,
+      "Entries": [
+        "Damage Cut [Lightning] Lv1"
+      ]
+    },
+    {
+      "ID": 1101602,
+      "Entries": [
+        "Damage Cut [Lightning] Lv2"
+      ]
+    },
+    {
+      "ID": 1101603,
+      "Entries": [
+        "Damage Cut [Lightning] Lv3"
+      ]
+    },
+    {
+      "ID": 1101701,
+      "Entries": [
+        "Damage Cut [Physical] Lv1"
+      ]
+    },
+    {
+      "ID": 1101702,
+      "Entries": [
+        "Damage Cut [Physical] Lv2"
+      ]
+    },
+    {
+      "ID": 1101703,
+      "Entries": [
+        "Damage Cut [Physical] Lv3"
+      ]
+    },
+    {
+      "ID": 1101801,
+      "Entries": [
+        "Damage Cut [All] + Lv1"
+      ]
+    },
+    {
+      "ID": 1101802,
+      "Entries": [
+        "Damage Cut [All] + Lv2"
+      ]
+    },
+    {
+      "ID": 1101803,
+      "Entries": [
+        "Damage Cut [All] + Lv3"
+      ]
+    },
+    {
+      "ID": 1101900,
+      "Entries": [
+        "Damage Cut [All] -"
+      ]
+    },
+    {
+      "ID": 1102001,
+      "Entries": [
+        "Resistance Value [Poison] Lv1"
+      ]
+    },
+    {
+      "ID": 1102002,
+      "Entries": [
+        "Resistance Value [Poison] Lv2"
+      ]
+    },
+    {
+      "ID": 1102003,
+      "Entries": [
+        "Resistance Value [Poison] Lv3"
+      ]
+    },
+    {
+      "ID": 1102101,
+      "Entries": [
+        "Resistance value [bleeding] Lv1"
+      ]
+    },
+    {
+      "ID": 1102102,
+      "Entries": [
+        "Resistance value [bleeding] Lv2"
+      ]
+    },
+    {
+      "ID": 1102103,
+      "Entries": [
+        "Resistance value [bleeding] Lv3"
+      ]
+    },
+    {
+      "ID": 1102201,
+      "Entries": [
+        "Resistance Value [Madness] Lv1"
+      ]
+    },
+    {
+      "ID": 1102202,
+      "Entries": [
+        "Resistance Value [Madness] Lv2"
+      ]
+    },
+    {
+      "ID": 1102203,
+      "Entries": [
+        "Resistance Value [Madness] Lv3"
+      ]
+    },
+    {
+      "ID": 1102301,
+      "Entries": [
+        "Resistance Value [All] Lv1"
+      ]
+    },
+    {
+      "ID": 1102302,
+      "Entries": [
+        "Resistance Value [All] Lv2"
+      ]
+    },
+    {
+      "ID": 1102303,
+      "Entries": [
+        "Resistance Value [All] Lv3"
+      ]
+    },
+    {
+      "ID": 1102401,
+      "Entries": [
+        "Beast Transformation Extension Lv1"
+      ]
+    },
+    {
+      "ID": 1102402,
+      "Entries": [
+        "Beast Transformation Extension Lv2"
+      ]
+    },
+    {
+      "ID": 1102403,
+      "Entries": [
+        "Beast Transformation Extension Lv3"
+      ]
+    },
+    {
+      "ID": 1102500,
+      "Entries": [
+        "Poison Reduction"
+      ]
+    },
+    {
+      "ID": 1102600,
+      "Entries": [
+        "Relief of bleeding"
+      ]
+    },
+    {
+      "ID": 1102700,
+      "Entries": [
+        "Transfusion recovery amount +"
+      ]
+    },
+    {
+      "ID": 1102800,
+      "Entries": [
+        "Transfusion recovery amount -"
+      ]
+    },
+    {
+      "ID": 1102901,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 1102902,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 1102903,
+      "Entries": [
+        "Blood transfusion possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 1102904,
+      "Entries": [
+        "Blood transfusion possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 1102905,
+      "Entries": [
+        "Blood transfusion possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 1103000,
+      "Entries": [
+        "Blood transfusion possession limit -"
+      ]
+    },
+    {
+      "ID": 1103101,
+      "Entries": [
+        "Ammunition possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 1103102,
+      "Entries": [
+        "Ammunition possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 1103103,
+      "Entries": [
+        "Ammunition possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 1103104,
+      "Entries": [
+        "Ammunition possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 1103105,
+      "Entries": [
+        "Ammunition possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 1103200,
+      "Entries": [
+        "Ammunition possession limit -"
+      ]
+    },
+    {
+      "ID": 1103300,
+      "Entries": [
+        "Stamina recovery speed +"
+      ]
+    },
+    {
+      "ID": 1103400,
+      "Entries": [
+        "Stamina recovery speed -"
+      ]
+    },
+    {
+      "ID": 1103500,
+      "Entries": [
+        "Landing damage reduction"
+      ]
+    },
+    {
+      "ID": 1110001,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 1110002,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 1110003,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 1110004,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 1110005,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 1110006,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 1110007,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 1110011,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 1110012,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 1110013,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 1110014,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 1110015,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 1110016,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 1110017,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 1110021,
+      "Entries": [
+        "Defective Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 1110022,
+      "Entries": [
+        "Defective Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 1110023,
+      "Entries": [
+        "Defective Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 1110024,
+      "Entries": [
+        "Defective Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 1110025,
+      "Entries": [
+        "Defective Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 1110026,
+      "Entries": [
+        "Defective Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 1110027,
+      "Entries": [
+        "Defective Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 1110031,
+      "Entries": [
+        "Round Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 1110032,
+      "Entries": [
+        "Round Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 1110033,
+      "Entries": [
+        "Round Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 1110034,
+      "Entries": [
+        "Round Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 1110035,
+      "Entries": [
+        "Round Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 1110036,
+      "Entries": [
+        "Round Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 1110037,
+      "Entries": [
+        "Round Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 1110041,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 1110042,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 1110043,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 1110044,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 1110045,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 1110046,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 1110047,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 1122000,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 1122001,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 1123000,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 1123001,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 1124000,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 1124001,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 1124002,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 1124003,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 1124004,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 1125000,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 1125001,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 1126000,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 1126001,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 1126002,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 1126003,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 1126004,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 1127000,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 1127001,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 1127002,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 1127003,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 1127004,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 1128000,
+      "Entries": [
+        "Fixed placement Sacrifice"
+      ]
+    },
+    {
+      "ID": 1132000,
+      "Entries": [
+        "Fixed placement University (Nightmare Classroom)"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "Bright red brooch"
+      ]
+    },
+    {
+      "ID": 1150001,
+      "Entries": [
+        "Doll's Tears"
+      ]
+    },
+    {
+      "ID": 1150002,
+      "Entries": [
+        "Gold pendants"
+      ]
+    },
+    {
+      "ID": 1190010,
+      "Entries": [
+        "Unique Magic Stone Lv1 Thumel"
+      ]
+    },
+    {
+      "ID": 1190020,
+      "Entries": [
+        "Unique Magic Stone Lv2 Thumel"
+      ]
+    },
+    {
+      "ID": 1190030,
+      "Entries": [
+        "Unique Magic Stone Lv3 Thumel"
+      ]
+    },
+    {
+      "ID": 1190040,
+      "Entries": [
+        "Unique Magic Stone Lv4 Thumel"
+      ]
+    },
+    {
+      "ID": 1190050,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 1190051,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 1190120,
+      "Entries": [
+        "Unique Magic Stone Lv2 Remote tomb"
+      ]
+    },
+    {
+      "ID": 1190130,
+      "Entries": [
+        "Unique Magic Stone Lv3 Remote tomb"
+      ]
+    },
+    {
+      "ID": 1190240,
+      "Entries": [
+        "Unique Magic Stone Lv4 Laurent"
+      ]
+    },
+    {
+      "ID": 1190250,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 1190251,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 1190350,
+      "Entries": [
+        "Unique Magic Stone Lv5 Is"
+      ]
+    },
+    {
+      "ID": 2001100,
+      "Entries": [
+        "Total cost 1"
+      ]
+    },
+    {
+      "ID": 2001110,
+      "Entries": [
+        "Total cost 2"
+      ]
+    },
+    {
+      "ID": 2001111,
+      "Entries": [
+        "Total cost 3"
+      ]
+    },
+    {
+      "ID": 2001200,
+      "Entries": [
+        "Total cost 2"
+      ]
+    },
+    {
+      "ID": 2001210,
+      "Entries": [
+        "Total cost 3"
+      ]
+    },
+    {
+      "ID": 2001211,
+      "Entries": [
+        "Total cost 4"
+      ]
+    },
+    {
+      "ID": 2001220,
+      "Entries": [
+        "Total cost 4"
+      ]
+    },
+    {
+      "ID": 2001300,
+      "Entries": [
+        "Total cost 3"
+      ]
+    },
+    {
+      "ID": 2001310,
+      "Entries": [
+        "Total cost 4"
+      ]
+    },
+    {
+      "ID": 2001400,
+      "Entries": [
+        "Total cost 4"
+      ]
+    },
+    {
+      "ID": 2002100,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 1"
+      ]
+    },
+    {
+      "ID": 2002110,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 2"
+      ]
+    },
+    {
+      "ID": 2002111,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 2002200,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 2"
+      ]
+    },
+    {
+      "ID": 2002210,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 2002211,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 2002220,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 2002300,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 3"
+      ]
+    },
+    {
+      "ID": 2002310,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 2002400,
+      "Entries": [
+        "Strong Spell [Gun-type] Total Cost 4"
+      ]
+    },
+    {
+      "ID": 2050000,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 2050005,
+      "Entries": [
+        "NPC : The Destroyer [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2050006,
+      "Entries": [
+        "NPC : Cain's Blood Knight [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2050007,
+      "Entries": [
+        "NPC : Bloodline Hunt [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2050010,
+      "Entries": [
+        "NPC 【boss】"
+      ]
+    },
+    {
+      "ID": 2050100,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 2050101,
+      "Entries": [
+        "Hound (Moon)"
+      ]
+    },
+    {
+      "ID": 2050105,
+      "Entries": [
+        "Hound [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2050106,
+      "Entries": [
+        "Hound (Moon) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2050200,
+      "Entries": [
+        "Priest"
+      ]
+    },
+    {
+      "ID": 2050300,
+      "Entries": [
+        "Brain Eater"
+      ]
+    },
+    {
+      "ID": 2050310,
+      "Entries": [
+        "Brain Eater [Boss]"
+      ]
+    },
+    {
+      "ID": 2050320,
+      "Entries": [
+        "Brain Eater Dboss】"
+      ]
+    },
+    {
+      "ID": 2050400,
+      "Entries": [
+        "Strange Beast"
+      ]
+    },
+    {
+      "ID": 2050405,
+      "Entries": [
+        "Strange Beast [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2050500,
+      "Entries": [
+        "Wandering Madness (Small)"
+      ]
+    },
+    {
+      "ID": 2050600,
+      "Entries": [
+        "Gravekeeper Scorpion"
+      ]
+    },
+    {
+      "ID": 2050601,
+      "Entries": [
+        "Gravekeeper Scorpion (with cubs)"
+      ]
+    },
+    {
+      "ID": 2050605,
+      "Entries": [
+        "Gravekeeper Scorpion [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2050606,
+      "Entries": [
+        "Gravekeeper Scorpion (with children) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 2050700,
+      "Entries": [
+        "Young fruit bat"
+      ]
+    },
+    {
+      "ID": 2050800,
+      "Entries": [
+        "Digging"
+      ]
+    },
+    {
+      "ID": 2050900,
+      "Entries": [
+        "Snake ball (child)"
+      ]
+    },
+    {
+      "ID": 2050905,
+      "Entries": [
+        "Snake Ball (Baby) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2051000,
+      "Entries": [
+        "Snake ball (baby) small"
+      ]
+    },
+    {
+      "ID": 2051005,
+      "Entries": [
+        "Snake Ball (Baby) Small [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2051100,
+      "Entries": [
+        "Vampire pig"
+      ]
+    },
+    {
+      "ID": 2051105,
+      "Entries": [
+        "Vampire Pig [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2051110,
+      "Entries": [
+        "Vampire Pig [Boss]"
+      ]
+    },
+    {
+      "ID": 2051200,
+      "Entries": [
+        "Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 2051205,
+      "Entries": [
+        "Strange Beast (female) [Random enemy]"
+      ]
+    },
+    {
+      "ID": 2051300,
+      "Entries": [
+        "Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 2051400,
+      "Entries": [
+        "Crazy Demon"
+      ]
+    },
+    {
+      "ID": 2051405,
+      "Entries": [
+        "Crazy Evil Spirit [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2051510,
+      "Entries": [
+        "Blood-thirsty Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 2051520,
+      "Entries": [
+        "Blood-thirsty beast D boss】"
+      ]
+    },
+    {
+      "ID": 2051600,
+      "Entries": [
+        "Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 2051700,
+      "Entries": [
+        "Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 2051710,
+      "Entries": [
+        "Kin of the Flame of Destruction [Boss]"
+      ]
+    },
+    {
+      "ID": 2051720,
+      "Entries": [
+        "Kin of the Flame of Destruction D boss】"
+      ]
+    },
+    {
+      "ID": 2051800,
+      "Entries": [
+        "Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 2051810,
+      "Entries": [
+        "Silver Beast's Kin [Boss]"
+      ]
+    },
+    {
+      "ID": 2051900,
+      "Entries": [
+        "Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 2051901,
+      "Entries": [
+        "Messenger from the Moon (Tentacle)"
+      ]
+    },
+    {
+      "ID": 2051906,
+      "Entries": [
+        "Messenger from the Moon (Tentacle) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052020,
+      "Entries": [
+        "Child of the Moon D boss】"
+      ]
+    },
+    {
+      "ID": 2052110,
+      "Entries": [
+        "Messenger from the Moon (Large) [Boss]"
+      ]
+    },
+    {
+      "ID": 2052120,
+      "Entries": [
+        "Messenger from the Moon (Large) D boss】"
+      ]
+    },
+    {
+      "ID": 2052200,
+      "Entries": [
+        "Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 2052205,
+      "Entries": [
+        "Dungeon Man (Priest) [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2052206,
+      "Entries": [
+        "Dungeon Man (Priest) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052300,
+      "Entries": [
+        "Dungeon Person (Slave) - Enhanced Type"
+      ]
+    },
+    {
+      "ID": 2052305,
+      "Entries": [
+        "Dungeon Man (Slave) - Enhanced Type [Enhanced Enemy]"
+      ]
+    },
+    {
+      "ID": 2052400,
+      "Entries": [
+        "Dungeon Guardian"
+      ]
+    },
+    {
+      "ID": 2052405,
+      "Entries": [
+        "Dungeon Man (Guardian) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 2052406,
+      "Entries": [
+        "Dungeon Man (Guardian) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052500,
+      "Entries": [
+        "Dungeon Man (Madman)"
+      ]
+    },
+    {
+      "ID": 2052505,
+      "Entries": [
+        "Dungeon Man (Madman) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 2052506,
+      "Entries": [
+        "Dungeon Man (Madman) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052600,
+      "Entries": [
+        "Dungeon Man (Fat)"
+      ]
+    },
+    {
+      "ID": 2052601,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun"
+      ]
+    },
+    {
+      "ID": 2052605,
+      "Entries": [
+        "Dungeon Man (Fat) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 2052606,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 2052607,
+      "Entries": [
+        "Dungeon Man (Fat) [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052608,
+      "Entries": [
+        "Dungeon Man (Fat) - Gun [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2052620,
+      "Entries": [
+        "Dungeon Man (Fat) [Boss]"
+      ]
+    },
+    {
+      "ID": 2052710,
+      "Entries": [
+        "Dungeon Lord - Dual Swords [Boss]"
+      ]
+    },
+    {
+      "ID": 2052711,
+      "Entries": [
+        "Dungeon Lord - Staff [Boss]"
+      ]
+    },
+    {
+      "ID": 2052720,
+      "Entries": [
+        "Dungeon Lord - Dual Swords D boss】"
+      ]
+    },
+    {
+      "ID": 2052721,
+      "Entries": [
+        "Dungeon Lord - Staff D boss】"
+      ]
+    },
+    {
+      "ID": 2052800,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 2052801,
+      "Entries": [
+        "mimic"
+      ]
+    },
+    {
+      "ID": 2052900,
+      "Entries": [
+        "Evil spirit (female)"
+      ]
+    },
+    {
+      "ID": 2053000,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 2053001,
+      "Entries": [
+        "Fresh Golem"
+      ]
+    },
+    {
+      "ID": 2053005,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2053006,
+      "Entries": [
+        "Fresh Golem [Random Enemy]"
+      ]
+    },
+    {
+      "ID": 2053010,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 2053011,
+      "Entries": [
+        "Fresh Golem [Boss]"
+      ]
+    },
+    {
+      "ID": 2053020,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053021,
+      "Entries": [
+        "Fresh Golem [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053110,
+      "Entries": [
+        "Flame Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 2053120,
+      "Entries": [
+        "Flame Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053210,
+      "Entries": [
+        "Storm Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 2053220,
+      "Entries": [
+        "Storm Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053320,
+      "Entries": [
+        "Storm Beast (Bone) D boss】"
+      ]
+    },
+    {
+      "ID": 2053410,
+      "Entries": [
+        "Founder Beast [Boss]"
+      ]
+    },
+    {
+      "ID": 2053411,
+      "Entries": [
+        "Founder Beast Headless [Boss]"
+      ]
+    },
+    {
+      "ID": 2053420,
+      "Entries": [
+        "Founder Beast [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053421,
+      "Entries": [
+        "Founder Beast Headless D boss】"
+      ]
+    },
+    {
+      "ID": 2053510,
+      "Entries": [
+        "Idiot Spider [Boss]"
+      ]
+    },
+    {
+      "ID": 2053520,
+      "Entries": [
+        "Idiot Spider D boss】"
+      ]
+    },
+    {
+      "ID": 2053620,
+      "Entries": [
+        "Evil God [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053700,
+      "Entries": [
+        "Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 2053705,
+      "Entries": [
+        "Enemy Avatar [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2053710,
+      "Entries": [
+        "Enemy Avatar [Boss]"
+      ]
+    },
+    {
+      "ID": 2053720,
+      "Entries": [
+        "Enemy Avatar [ D boss】"
+      ]
+    },
+    {
+      "ID": 2053800,
+      "Entries": [
+        "Licking blood"
+      ]
+    },
+    {
+      "ID": 2053905,
+      "Entries": [
+        "Eye Collector [Special Enemy]"
+      ]
+    },
+    {
+      "ID": 2054005,
+      "Entries": [
+        "Dungeon Man (Grave Digger) [Strengthened Enemy]"
+      ]
+    },
+    {
+      "ID": 2060000,
+      "Entries": [
+        "[Random enemy] Poison"
+      ]
+    },
+    {
+      "ID": 2060100,
+      "Entries": [
+        "[Random Enemy] Drain"
+      ]
+    },
+    {
+      "ID": 2060200,
+      "Entries": [
+        "[Random enemy] Guided missile"
+      ]
+    },
+    {
+      "ID": 2060300,
+      "Entries": [
+        "[Random enemy] Healer"
+      ]
+    },
+    {
+      "ID": 2060400,
+      "Entries": [
+        "[Random enemy] Fire Enchantment"
+      ]
+    },
+    {
+      "ID": 2080110,
+      "Entries": [
+        "Random Treasure Chest Tumel 1F"
+      ]
+    },
+    {
+      "ID": 2080120,
+      "Entries": [
+        "Random Treasure Chest Tumel 2F-3F"
+      ]
+    },
+    {
+      "ID": 2080140,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 2080141,
+      "Entries": [
+        "Random Treasure Chest Tumel 4F"
+      ]
+    },
+    {
+      "ID": 2080210,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 1F"
+      ]
+    },
+    {
+      "ID": 2080220,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 2080240,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 2080241,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 2080242,
+      "Entries": [
+        "Random Treasure Chest: Deserted Grave 4F"
+      ]
+    },
+    {
+      "ID": 2080310,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 2080311,
+      "Entries": [
+        "Random Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 2080320,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 2080321,
+      "Entries": [
+        "Random Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 2080340,
+      "Entries": [
+        "Random Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 2080410,
+      "Entries": [
+        "Random Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 2080420,
+      "Entries": [
+        "Random Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 2080440,
+      "Entries": [
+        "Random Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 2081110,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 1F"
+      ]
+    },
+    {
+      "ID": 2081120,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 2F-3F"
+      ]
+    },
+    {
+      "ID": 2081140,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 2081141,
+      "Entries": [
+        "Terminal Treasure Chest Tomel 4F"
+      ]
+    },
+    {
+      "ID": 2081210,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 1F"
+      ]
+    },
+    {
+      "ID": 2081220,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 2F-3F"
+      ]
+    },
+    {
+      "ID": 2081240,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 2081241,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 2081242,
+      "Entries": [
+        "Terminal Treasure Chest Remote Grave 4F"
+      ]
+    },
+    {
+      "ID": 2081310,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 2081311,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 1F"
+      ]
+    },
+    {
+      "ID": 2081320,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 2081321,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 2F-3F"
+      ]
+    },
+    {
+      "ID": 2081340,
+      "Entries": [
+        "Terminal Treasure Chest Laurent 4F"
+      ]
+    },
+    {
+      "ID": 2081410,
+      "Entries": [
+        "Terminal Treasure Chest Izu 1F"
+      ]
+    },
+    {
+      "ID": 2081420,
+      "Entries": [
+        "Terminal Treasure Chest Izu 2F-3F"
+      ]
+    },
+    {
+      "ID": 2081440,
+      "Entries": [
+        "Terminal Treasure Chest Izu 4F"
+      ]
+    },
+    {
+      "ID": 2090000,
+      "Entries": [
+        "Crazy Evil Spirit [Thumel]"
+      ]
+    },
+    {
+      "ID": 2090001,
+      "Entries": [
+        "Crazy Evil Spirit [Remote Grave Type]"
+      ]
+    },
+    {
+      "ID": 2090002,
+      "Entries": [
+        "Crazy Evil Spirit [Roland type]"
+      ]
+    },
+    {
+      "ID": 2090003,
+      "Entries": [
+        "Crazy Evil Spirit [Izu]"
+      ]
+    },
+    {
+      "ID": 2090010,
+      "Entries": [
+        "Ground Cherry"
+      ]
+    },
+    {
+      "ID": 2090020,
+      "Entries": [
+        "Strange Beast [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 2090030,
+      "Entries": [
+        "Strange Beast - Red Eyes [Thumel]"
+      ]
+    },
+    {
+      "ID": 2090040,
+      "Entries": [
+        "Strange Beast - Female [Thumel]"
+      ]
+    },
+    {
+      "ID": 2090050,
+      "Entries": [
+        "Crowd Woman [Remote Grave Series]"
+      ]
+    },
+    {
+      "ID": 2090060,
+      "Entries": [
+        "Snake Ball (Baby) Small [Thumel Series]"
+      ]
+    },
+    {
+      "ID": 2090070,
+      "Entries": [
+        "Snake Ball (Baby) [Thumel Line]"
+      ]
+    },
+    {
+      "ID": 2090080,
+      "Entries": [
+        "Messenger from the Snake Swamp [Thumel]"
+      ]
+    },
+    {
+      "ID": 2090090,
+      "Entries": [
+        "Messenger from the Moon [Izu Series]"
+      ]
+    },
+    {
+      "ID": 2090100,
+      "Entries": [
+        "Silver Beast Family [Roland]"
+      ]
+    },
+    {
+      "ID": 2090110,
+      "Entries": [
+        "Licking blood [Thumel type]"
+      ]
+    },
+    {
+      "ID": 2090120,
+      "Entries": [
+        "Mimic [Thumel] Effective against beasts"
+      ]
+    },
+    {
+      "ID": 2090121,
+      "Entries": [
+        "Mimic [Thumel] Moon special effect"
+      ]
+    },
+    {
+      "ID": 2090130,
+      "Entries": [
+        "Jailer A [Thumel series]"
+      ]
+    },
+    {
+      "ID": 2090140,
+      "Entries": [
+        "Jailer B [Thumel series]"
+      ]
+    },
+    {
+      "ID": 2100001,
+      "Entries": [
+        "Souls acquired + Lv1"
+      ]
+    },
+    {
+      "ID": 2100002,
+      "Entries": [
+        "Souls acquired + Lv2"
+      ]
+    },
+    {
+      "ID": 2100003,
+      "Entries": [
+        "Souls acquired + Lv3"
+      ]
+    },
+    {
+      "ID": 2100100,
+      "Entries": [
+        "Souls acquired -"
+      ]
+    },
+    {
+      "ID": 2100201,
+      "Entries": [
+        "Item Drop Rate Lv1"
+      ]
+    },
+    {
+      "ID": 2100202,
+      "Entries": [
+        "Item Drop Rate Lv2"
+      ]
+    },
+    {
+      "ID": 2100203,
+      "Entries": [
+        "Item Drop Rate Lv3"
+      ]
+    },
+    {
+      "ID": 2100301,
+      "Entries": [
+        "maximum HP Lv1"
+      ]
+    },
+    {
+      "ID": 2100302,
+      "Entries": [
+        "maximum HP Lv2"
+      ]
+    },
+    {
+      "ID": 2100303,
+      "Entries": [
+        "maximum HP Lv3"
+      ]
+    },
+    {
+      "ID": 2100401,
+      "Entries": [
+        "Max Stamina Lv1"
+      ]
+    },
+    {
+      "ID": 2100402,
+      "Entries": [
+        "Max Stamina Lv2"
+      ]
+    },
+    {
+      "ID": 2100403,
+      "Entries": [
+        "Max Stamina Lv3"
+      ]
+    },
+    {
+      "ID": 2100501,
+      "Entries": [
+        "Throw [Damage] Lv1"
+      ]
+    },
+    {
+      "ID": 2100502,
+      "Entries": [
+        "Throw [Damage] Lv2"
+      ]
+    },
+    {
+      "ID": 2100503,
+      "Entries": [
+        "Throw [Damage] Lv3"
+      ]
+    },
+    {
+      "ID": 2100601,
+      "Entries": [
+        "Throw [ HP recovery】 Lv1"
+      ]
+    },
+    {
+      "ID": 2100602,
+      "Entries": [
+        "Throw [ HP recovery】 Lv2"
+      ]
+    },
+    {
+      "ID": 2100603,
+      "Entries": [
+        "Throw [ HP recovery】 Lv3"
+      ]
+    },
+    {
+      "ID": 2100701,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv1"
+      ]
+    },
+    {
+      "ID": 2100702,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv2"
+      ]
+    },
+    {
+      "ID": 2100703,
+      "Entries": [
+        "Throw [Bullet Recovery] Lv3"
+      ]
+    },
+    {
+      "ID": 2100801,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv1"
+      ]
+    },
+    {
+      "ID": 2100802,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv2"
+      ]
+    },
+    {
+      "ID": 2100803,
+      "Entries": [
+        "Throw [Soul Acquisition] Lv3"
+      ]
+    },
+    {
+      "ID": 2100900,
+      "Entries": [
+        "Damage Cut [Slash]"
+      ]
+    },
+    {
+      "ID": 2101000,
+      "Entries": [
+        "Damage Cut [Strike]"
+      ]
+    },
+    {
+      "ID": 2101100,
+      "Entries": [
+        "Damage Cut [Pierce]"
+      ]
+    },
+    {
+      "ID": 2101200,
+      "Entries": [
+        "Damage Cut [Gun]"
+      ]
+    },
+    {
+      "ID": 2101301,
+      "Entries": [
+        "Damage Cut [Magic] Lv1"
+      ]
+    },
+    {
+      "ID": 2101302,
+      "Entries": [
+        "Damage Cut [Magic] Lv2"
+      ]
+    },
+    {
+      "ID": 2101303,
+      "Entries": [
+        "Damage Cut [Magic] Lv3"
+      ]
+    },
+    {
+      "ID": 2101401,
+      "Entries": [
+        "Damage Cut [Fire] + Lv1"
+      ]
+    },
+    {
+      "ID": 2101402,
+      "Entries": [
+        "Damage Cut [Fire] + Lv2"
+      ]
+    },
+    {
+      "ID": 2101403,
+      "Entries": [
+        "Damage Cut [Fire] + Lv3"
+      ]
+    },
+    {
+      "ID": 2101500,
+      "Entries": [
+        "Damage Cut [Fire] -"
+      ]
+    },
+    {
+      "ID": 2101601,
+      "Entries": [
+        "Damage Cut [Lightning] Lv1"
+      ]
+    },
+    {
+      "ID": 2101602,
+      "Entries": [
+        "Damage Cut [Lightning] Lv2"
+      ]
+    },
+    {
+      "ID": 2101603,
+      "Entries": [
+        "Damage Cut [Lightning] Lv3"
+      ]
+    },
+    {
+      "ID": 2101701,
+      "Entries": [
+        "Damage Cut [Physical] Lv1"
+      ]
+    },
+    {
+      "ID": 2101702,
+      "Entries": [
+        "Damage Cut [Physical] Lv2"
+      ]
+    },
+    {
+      "ID": 2101703,
+      "Entries": [
+        "Damage Cut [Physical] Lv3"
+      ]
+    },
+    {
+      "ID": 2101801,
+      "Entries": [
+        "Damage Cut [All] + Lv1"
+      ]
+    },
+    {
+      "ID": 2101802,
+      "Entries": [
+        "Damage Cut [All] + Lv2"
+      ]
+    },
+    {
+      "ID": 2101803,
+      "Entries": [
+        "Damage Cut [All] + Lv3"
+      ]
+    },
+    {
+      "ID": 2101900,
+      "Entries": [
+        "Damage Cut [All] -"
+      ]
+    },
+    {
+      "ID": 2102001,
+      "Entries": [
+        "Resistance Value [Poison] Lv1"
+      ]
+    },
+    {
+      "ID": 2102002,
+      "Entries": [
+        "Resistance Value [Poison] Lv2"
+      ]
+    },
+    {
+      "ID": 2102003,
+      "Entries": [
+        "Resistance Value [Poison] Lv3"
+      ]
+    },
+    {
+      "ID": 2102101,
+      "Entries": [
+        "Resistance value [bleeding] Lv1"
+      ]
+    },
+    {
+      "ID": 2102102,
+      "Entries": [
+        "Resistance value [bleeding] Lv2"
+      ]
+    },
+    {
+      "ID": 2102103,
+      "Entries": [
+        "Resistance value [bleeding] Lv3"
+      ]
+    },
+    {
+      "ID": 2102201,
+      "Entries": [
+        "Resistance Value [Madness] Lv1"
+      ]
+    },
+    {
+      "ID": 2102202,
+      "Entries": [
+        "Resistance Value [Madness] Lv2"
+      ]
+    },
+    {
+      "ID": 2102203,
+      "Entries": [
+        "Resistance Value [Madness] Lv3"
+      ]
+    },
+    {
+      "ID": 2102301,
+      "Entries": [
+        "Resistance Value [All] Lv1"
+      ]
+    },
+    {
+      "ID": 2102302,
+      "Entries": [
+        "Resistance Value [All] Lv2"
+      ]
+    },
+    {
+      "ID": 2102303,
+      "Entries": [
+        "Resistance Value [All] Lv3"
+      ]
+    },
+    {
+      "ID": 2102401,
+      "Entries": [
+        "Beast Transformation Extension Lv1"
+      ]
+    },
+    {
+      "ID": 2102402,
+      "Entries": [
+        "Beast Transformation Extension Lv2"
+      ]
+    },
+    {
+      "ID": 2102403,
+      "Entries": [
+        "Beast Transformation Extension Lv3"
+      ]
+    },
+    {
+      "ID": 2102500,
+      "Entries": [
+        "Poison Reduction"
+      ]
+    },
+    {
+      "ID": 2102600,
+      "Entries": [
+        "Relief of bleeding"
+      ]
+    },
+    {
+      "ID": 2102700,
+      "Entries": [
+        "Transfusion recovery amount +"
+      ]
+    },
+    {
+      "ID": 2102800,
+      "Entries": [
+        "Transfusion recovery amount -"
+      ]
+    },
+    {
+      "ID": 2102901,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 2102902,
+      "Entries": [
+        "Blood transfusion possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 2102903,
+      "Entries": [
+        "Blood transfusion possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 2102904,
+      "Entries": [
+        "Blood transfusion possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 2102905,
+      "Entries": [
+        "Blood transfusion possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 2103000,
+      "Entries": [
+        "Blood transfusion possession limit -"
+      ]
+    },
+    {
+      "ID": 2103101,
+      "Entries": [
+        "Ammunition possession limit + Lv0.3"
+      ]
+    },
+    {
+      "ID": 2103102,
+      "Entries": [
+        "Ammunition possession limit + Lv0.5"
+      ]
+    },
+    {
+      "ID": 2103103,
+      "Entries": [
+        "Ammunition possession limit + Lv1"
+      ]
+    },
+    {
+      "ID": 2103104,
+      "Entries": [
+        "Ammunition possession limit + Lv2"
+      ]
+    },
+    {
+      "ID": 2103105,
+      "Entries": [
+        "Ammunition possession limit + Lv3"
+      ]
+    },
+    {
+      "ID": 2103200,
+      "Entries": [
+        "Ammunition possession limit -"
+      ]
+    },
+    {
+      "ID": 2103300,
+      "Entries": [
+        "Stamina recovery speed +"
+      ]
+    },
+    {
+      "ID": 2103400,
+      "Entries": [
+        "Stamina recovery speed -"
+      ]
+    },
+    {
+      "ID": 2103500,
+      "Entries": [
+        "Landing damage reduction"
+      ]
+    },
+    {
+      "ID": 2110001,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 2110002,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 2110003,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 2110004,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 2110005,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 2110006,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 2110007,
+      "Entries": [
+        "Radiation Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 2110011,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 2110012,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 2110013,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 2110014,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 2110015,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 2110016,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 2110017,
+      "Entries": [
+        "Triangular Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 2110021,
+      "Entries": [
+        "Defective Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 2110022,
+      "Entries": [
+        "Defective Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 2110023,
+      "Entries": [
+        "Defective Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 2110024,
+      "Entries": [
+        "Defective Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 2110025,
+      "Entries": [
+        "Defective Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 2110026,
+      "Entries": [
+        "Defective Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 2110027,
+      "Entries": [
+        "Defective Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 2110031,
+      "Entries": [
+        "Round Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 2110032,
+      "Entries": [
+        "Round Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 2110033,
+      "Entries": [
+        "Round Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 2110034,
+      "Entries": [
+        "Round Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 2110035,
+      "Entries": [
+        "Round Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 2110036,
+      "Entries": [
+        "Round Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 2110037,
+      "Entries": [
+        "Round Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 2110041,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 1"
+      ]
+    },
+    {
+      "ID": 2110042,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 2"
+      ]
+    },
+    {
+      "ID": 2110043,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 3"
+      ]
+    },
+    {
+      "ID": 2110044,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 4"
+      ]
+    },
+    {
+      "ID": 2110045,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 5"
+      ]
+    },
+    {
+      "ID": 2110046,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 6"
+      ]
+    },
+    {
+      "ID": 2110047,
+      "Entries": [
+        "Droplet-shaped Magic Stone Ore Level 7"
+      ]
+    },
+    {
+      "ID": 2122000,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 2122001,
+      "Entries": [
+        "Fixed placement: Cemetery Town"
+      ]
+    },
+    {
+      "ID": 2123000,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 2123001,
+      "Entries": [
+        "Fixed placement Ruins"
+      ]
+    },
+    {
+      "ID": 2124000,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 2124001,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 2124002,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 2124003,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 2124004,
+      "Entries": [
+        "Fixed location Cathedral Ward A"
+      ]
+    },
+    {
+      "ID": 2125000,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 2125001,
+      "Entries": [
+        "Fixed placement Old castle"
+      ]
+    },
+    {
+      "ID": 2126000,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 2126001,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 2126002,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 2126003,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 2126004,
+      "Entries": [
+        "Fixed placement Trap Lord"
+      ]
+    },
+    {
+      "ID": 2127000,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 2127001,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 2127002,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 2127003,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 2127004,
+      "Entries": [
+        "Fixed placement forest"
+      ]
+    },
+    {
+      "ID": 2128000,
+      "Entries": [
+        "Fixed placement Sacrifice"
+      ]
+    },
+    {
+      "ID": 2132000,
+      "Entries": [
+        "Fixed placement University (Nightmare Classroom)"
+      ]
+    },
+    {
+      "ID": 2150000,
+      "Entries": [
+        "Bright red brooch"
+      ]
+    },
+    {
+      "ID": 2150001,
+      "Entries": [
+        "Doll's Tears"
+      ]
+    },
+    {
+      "ID": 2150002,
+      "Entries": [
+        "Gold pendants"
+      ]
+    },
+    {
+      "ID": 2190010,
+      "Entries": [
+        "Unique Magic Stone Lv1 Thumel"
+      ]
+    },
+    {
+      "ID": 2190020,
+      "Entries": [
+        "Unique Magic Stone Lv2 Thumel"
+      ]
+    },
+    {
+      "ID": 2190030,
+      "Entries": [
+        "Unique Magic Stone Lv3 Thumel"
+      ]
+    },
+    {
+      "ID": 2190040,
+      "Entries": [
+        "Unique Magic Stone Lv4 Thumel"
+      ]
+    },
+    {
+      "ID": 2190050,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 2190051,
+      "Entries": [
+        "Unique Magic Stone Lv5 Thumel"
+      ]
+    },
+    {
+      "ID": 2190120,
+      "Entries": [
+        "Unique Magic Stone Lv2 Remote tomb"
+      ]
+    },
+    {
+      "ID": 2190130,
+      "Entries": [
+        "Unique Magic Stone Lv3 Remote tomb"
+      ]
+    },
+    {
+      "ID": 2190240,
+      "Entries": [
+        "Unique Magic Stone Lv4 Laurent"
+      ]
+    },
+    {
+      "ID": 2190250,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 2190251,
+      "Entries": [
+        "Unique Magic Stone Lv5 Laurent"
+      ]
+    },
+    {
+      "ID": 2190350,
+      "Entries": [
+        "Unique Magic Stone Lv5 Is"
+      ]
+    }
+  ]
+}

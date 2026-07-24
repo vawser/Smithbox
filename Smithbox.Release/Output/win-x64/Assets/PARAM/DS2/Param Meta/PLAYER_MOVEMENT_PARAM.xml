@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <fParallelWalkDeceleration />
+        <fParallelWalkAccelerationMin />
+        <fParallelWalkAccelerationMax />
+        <fParallelWalkSpeedMin />
+        <fParallelWalkSpeedMax />
+        <fParallelWalkBackAngleMax />
+        <fParallelWalkBackSpeedRateMin />
+        <fParallelWalkBackSpeedRateMax />
+        <fWalkDeceleration />
+        <fWalkAccelerationMin />
+        <fWalkAccelerationMax />
+        <fWalkSpeedMin />
+        <fWalkSpeedMax />
+        <fWalkRotationAcceleration />
+        <fWalkRotationSpeedMin />
+        <fWalkRotationSpeedOnLowSpeed />
+        <fWalkRotationSpeedOnHighSpeed />
+        <fWalkRotationSlowDownStartAngle />
+        <fDashDeceleration />
+        <fDashAcceleration />
+        <fDashSpeedMax />
+        <fDashRotationAcceleration />
+        <fDashRotationSpeedMin />
+        <fDashRotationSpeedMax />
+        <fDashRotationSlowDownStartAngle />
+        <fLockOnWalkDeceleration />
+        <fLockOnWalkAccelerationMin />
+        <fLockOnWalkAccelerationMax />
+        <fLockOnWalkSpeedMin />
+        <fLockOnWalkSpeedMax />
+        <fLockOnWalkRotationAcceleration />
+        <fLockOnWalkRotationSpeedMax />
+        <fLockOnWalkAngleMax />
+        <fLockOnWalkBackMoveSpeedRateMin />
+        <fLockOnWalkBackMoveSpeedRateMax />
+        <fLockOnDashUpperBodyCtrlMaxDist />
+        <fParallelWalkToIdleSpeed />
+        <fParallelWalkToIdleNeutralTime />
+        <fWalkToIdleSpeed />
+        <fWalkToIdleNeutralTime />
+        <fDashToIdleSpeed />
+        <fDashToIdleNeutralTime />
+        <fLockOnWalkToIdleSpeed />
+        <fLockOnWalkToIdleNeutralTime />
+        <fLockOnDashToIdleSpeed />
+        <fLockOnDashToIdleNeutralTime />
+        <fRotationValueMin />
+        <fRotationValueMax />
+    </Field>
+</PARAMMETA>

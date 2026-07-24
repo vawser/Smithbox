@@ -1,0 +1,581 @@
+{
+  "Name": "generatorparam_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 205,
+      "Entries": [
+        "[GEN:205] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "[GEN:230] Vendrick"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "[GEN:240] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "[GEN:241] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "[GEN:680] Nameless Usurper"
+      ]
+    },
+    {
+      "ID": 686,
+      "Entries": [
+        "[GEN:686] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "[GEN:690] Devotee Scarlett"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[GEN:800] Velstadt"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "[GEN:915] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 971,
+      "Entries": [
+        "[GEN:971] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[GEN:1011] Leydia Witch"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "[GEN:1013] Leydia Witch"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[GEN:1020] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "[GEN:1022] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "[GEN:1024] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "[GEN:1025] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "[GEN:1026] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "[GEN:1031] Imperious Knight"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[GEN:1050] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[GEN:1051] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[GEN:1101] Grave Warden"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[GEN:1102] Grave Warden"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[GEN:1103] Grave Warden"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[GEN:1200] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[GEN:1210] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[GEN:1211] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1231,
+      "Entries": [
+        "[GEN:1231] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "[GEN:1250] Imperious Knight"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1440,
+      "Entries": [
+        "[GEN:1440] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "[GEN:1450] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 1460,
+      "Entries": [
+        "[GEN:1460] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 1470,
+      "Entries": [
+        "[GEN:1470] Skeleton"
+      ]
+    },
+    {
+      "ID": 1471,
+      "Entries": [
+        "[GEN:1471] Skeleton"
+      ]
+    },
+    {
+      "ID": 1480,
+      "Entries": [
+        "[GEN:1480] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[GEN:1500] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[GEN:1510] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "[GEN:1520] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "[GEN:1550] Skeleton"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "[GEN:1560] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Leydia Witch"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[GEN:1701] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[GEN:1801] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[GEN:2010] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[GEN:2020] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[GEN:2050] Imperious Knight"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "[GEN:2051] Imperious Knight"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "[GEN:2210] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "[GEN:2220] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "[GEN:2230] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[GEN:2310] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "[GEN:2320] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "[GEN:2330] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "[GEN:2450] Syan Knight"
+      ]
+    },
+    {
+      "ID": 2451,
+      "Entries": [
+        "[GEN:2451] Syan Knight"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[GEN:3510] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[GEN:3520] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "[GEN:3530] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[GEN:3700] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "[GEN:3701] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "[GEN:3702] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Dragonrider"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[GEN:7004] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[GEN:7005] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[GEN:7006] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "[GEN:7007] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "[GEN:7008] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "[GEN:7009] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[GEN:7010] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "[GEN:7100] Insolent Knight"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[GEN:9002] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "[GEN:9004] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "[GEN:9005] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "[GEN:9006] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "[GEN:9007] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "[GEN:9008] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "[GEN:9009] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "[GEN:9011] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "[GEN:9012] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "[GEN:9013] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "[GEN:9014] Invisible Hollow"
+      ]
+    }
+  ]
+}

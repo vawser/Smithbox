@@ -1,0 +1,89 @@
+{
+  "Name": "LoadBalancerNewDrawDistScaleParam_ps4",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[Drawing distance scale] Default (do not scale) -- [描画距離スケール] デフォルト(スケールしない)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Draw distance scale] Local player -- [描画距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Draw distance scale] Remote player -- [描画距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Drawing distance scale] Illusion -- [描画距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[Drawing distance scale] 0.75 -- [描画距離スケール] 0.75"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[Drawing distance scale] 0.6 -- [描画距離スケール] 0.6"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[Drawing distance scale] 0.5 -- [描画距離スケール] 0.5"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[Drawing distance scale] 0.4 -- [描画距離スケール] 0.4"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[Drawing distance scale] 0.3 -- [描画距離スケール] 0.3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Drawing distance scale] Chr small -- [描画距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Drawing distance scale] Chr medium -- [描画距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Drawing distance scale] Chr large -- [描画距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Drawing distance scale] Chr extra large -- [描画距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj default -- [描画距離スケール] Map/Obj デフォルト"
+      ]
+    }
+  ]
+}

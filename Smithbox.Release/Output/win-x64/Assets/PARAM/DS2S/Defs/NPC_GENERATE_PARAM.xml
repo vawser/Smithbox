@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>NPC_GENERATE_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 chrId">
+            <DisplayName>キャラクターID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 gender">
+            <DisplayName>性別</DisplayName>
+            <Enum>NPC_GENDER_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 bodyScaleType">
+            <DisplayName>体型タイプ</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 deceased">
+            <DisplayName>生者亡者</DisplayName>
+            <Enum>NPC_DECEASED_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 equipType">
+            <DisplayName>装備タイプ</DisplayName>
+            <Enum>NPC_EQUIP_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 faceType">
+            <DisplayName>顔タイプ</DisplayName>
+            <Enum>NPC_FACE_TYPE</Enum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 skinNo = 1">
+            <DisplayName>肌番号</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="s8 facePresetNo = -1">
+            <DisplayName>FG顔プリセット番号</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>120</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[1]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 skinR">
+            <DisplayName>肌Ｒ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 skinG">
+            <DisplayName>肌Ｇ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 skinB">
+            <DisplayName>肌Ｂ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="s32 faceId = -1">
+            <DisplayName>顔ＩＤ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdL1 = -1">
+            <DisplayName>左手武器１</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdL2 = -1">
+            <DisplayName>左手武器２</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdL3 = -1">
+            <DisplayName>左手武器３</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdR1 = -1">
+            <DisplayName>右手武器１</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdR2 = -1">
+            <DisplayName>右手武器２</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponIdR3 = -1">
+            <DisplayName>右手武器３</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="s32 equipHeadId = -1">
+            <DisplayName>兜</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="s32 equipBodyId = -1">
+            <DisplayName>鎧</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s32 equipArmId = -1">
+            <DisplayName>篭手</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="s32 equipLegId = -1">
+            <DisplayName>脚絆</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="s32 equipQuiverId = -1">
+            <DisplayName>矢筒</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="s32 equipArrowId = -1">
+            <DisplayName>矢</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

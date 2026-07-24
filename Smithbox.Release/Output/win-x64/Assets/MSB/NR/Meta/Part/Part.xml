@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a part within the map." />
+  
+  <Field>
+    <InstanceID
+    AltName="Instance ID"
+    Wiki="Determines the instance of this map object. Should be unique between map objects of the same model name." />
+    
+    <TypeIndex
+    IndexProperty="" />
+    
+    <ModelIndex
+    IndexProperty="" />
+    
+    <ModelName
+    AltName="Model Name"
+    Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
+    ModelNameLink="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+    <Scale
+    AltName="Scale"
+    Wiki="Scale of the map object, only meaningful for map pieces and objects."
+    ScaleProperty="" />
+    
+    <Unk44
+    AltName="Unknown: 0x44"
+    Wiki=""
+    IsUnknown="" />
+    
+    <MapStudioLayer
+    AltName="Map Studio Layer"
+    Wiki="The map layer this map object is placed on." />
+    
+    <Unk4C
+    AltName="Unknown: 0x4C"
+    Wiki=""
+    IsUnknown="" />
+    
+    <SibPath
+    AltName="Model Placeholder Path"
+    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
+    
+    <DisplayGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <CollisionMask
+    AltName="Collision Mask"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Condition1
+    AltName="Condition 1"
+    Wiki="" 
+    IsBool="" />
+    
+    <Condition2
+    AltName="Condition 2"
+    Wiki="" 
+    IsBool="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
+    
+    <EntityGroupIDs
+    AltName="Entity Group ID"
+    Wiki="A entity group ID this map object belongs to" 
+    ArrayProperty=""/>
+    
+    <LightID
+    AltName="Light ID"
+    Wiki="The ID of the value set from LightSet ParamEditor to use." />
+    
+    <FogID
+    AltName="Fog ID"
+    Wiki="The ID of the value set from FogParamEditor to use." />
+    
+    <TransitionTime
+    AltName="Transition Time"
+    Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = Some default time." />
+    
+    <GrassParamIds
+    AltName="Grass Type ID"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ArrayProperty=""
+    ParamRef="GrassTypeParam" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki="The map ID to target."
+    ArrayProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

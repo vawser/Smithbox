@@ -1,0 +1,223 @@
+{
+  "Param": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Type": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Name": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "levelStatusValue",
+      "Name": "レベルステータス値",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlot",
+      "Name": "スペルスロット",
+      "Description": ""
+    },
+    {
+      "Field": "spellUsesLevel",
+      "Name": "スペル使用回数レベル",
+      "Description": ""
+    },
+    {
+      "Field": "hpMax",
+      "Name": "最大HP",
+      "Description": ""
+    },
+    {
+      "Field": "staminaMax",
+      "Name": "スタミナ",
+      "Description": ""
+    },
+    {
+      "Field": "equipLoadMax",
+      "Name": "装備重量 [kg]",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByStrength",
+      "Name": "筋力 物理攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByDexterity",
+      "Name": "技量 物理攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "magicAttack",
+      "Name": "魔力 攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "flameAttack",
+      "Name": "炎 攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "lightningAttack",
+      "Name": "雷 攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttack",
+      "Name": "闇 攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakAdditionalEffect",
+      "Name": "武器破壊 追加効果攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingAdditionalEffect",
+      "Name": "出血 追加効果攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "poisonAdditionalEffect",
+      "Name": "毒 追加効果攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "curseAdditionalEffect",
+      "Name": "呪 追加効果攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "chantingTimeCorrectScale",
+      "Name": "詠唱時間 補正倍率",
+      "Description": ""
+    },
+    {
+      "Field": "criticalAttackCorrectScale",
+      "Name": "クリティカル 補正倍率",
+      "Description": ""
+    },
+    {
+      "Field": "fluctuationCorrectScaleMin",
+      "Name": "揺らぎ補正倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "fluctuationCorrectScaleMax",
+      "Name": "揺らぎ補正倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakResistance",
+      "Name": "武器破壊 耐性値[%]",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingResistance",
+      "Name": "出血 耐性値 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "poisonResistance",
+      "Name": "毒 耐性値 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "petrifactionResistance",
+      "Name": "石化 耐性値 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "curseResistance",
+      "Name": "呪 耐性値 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "magicResistance",
+      "Name": "魔力 抵抗力 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "flameResistance",
+      "Name": "炎 抵抗力 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "lightningResistance",
+      "Name": "雷 抵抗力 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkResistance",
+      "Name": "闇 抵抗力 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "stepInvincibleTimeRate",
+      "Name": "ステップ 無敵時間割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingInvincibleTimeRate",
+      "Name": "ローリング 無敵時間割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpInvincibleTimeRate",
+      "Name": "ジャンプ 無敵時間割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "changeEquipSpeedScale",
+      "Name": "装備切替 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "useItemSpeedScale",
+      "Name": "アイテム使用 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "blockSpeedScale",
+      "Name": "ガード構え 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropTicketCount",
+      "Name": "アイテムドロップ チケット枚数分母 [枚]",
+      "Description": ""
+    },
+    {
+      "Field": "misfireChestTrapTicketCount",
+      "Name": "宝箱トラップ不発 チケット枚数分母 [枚]",
+      "Description": ""
+    },
+    {
+      "Field": "criticalTicketCount",
+      "Name": "クリティカル チケット枚数分母 [枚]",
+      "Description": ""
+    },
+    {
+      "Field": "additionalHp",
+      "Name": "追加最大HP",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByAbyss",
+      "Name": "深淵攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "poise",
+      "Name": "強靭度",
+      "Description": ""
+    }
+  ]
+}

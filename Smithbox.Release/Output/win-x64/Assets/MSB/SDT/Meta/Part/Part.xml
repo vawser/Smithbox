@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a part within the map." />
+  
+  <Field>
+    <ModelName
+    AltName="Model Name"
+    Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
+    ModelNameLink="" />
+    
+    <ModelIndex
+    IndexProperty="" />
+    
+    <SibPath
+    AltName="Model Placeholder Path"
+    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+    <Scale
+    AltName="Scale"
+    Wiki="Scale of the map object, only meaningful for map pieces and objects."
+    ScaleProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
+    
+    <UnkE04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkE05
+    AltName="Unknown: 0x5"
+    Wiki="" />
+    
+    <UnkE06
+    AltName="Unknown: 0x6"
+    Wiki="" />
+    
+    <LanternID
+    AltName="Lantern ID"
+    Wiki="The light parameters to use for the lantern when this map object is touched by the player." />
+    
+    <LodParamID
+    AltName="LOD Param ID"
+    Wiki="The level of detail parameters to use when this map object is visible to the player."  />
+    
+    <UnkE09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+    
+    <IsPointLightShadowSrc
+    AltName="Is Point Light Shadow Source"
+    Wiki="Is this map object to be considered a point light shadow source." 
+    IsBool="" />
+    
+    <UnkE0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
+    <IsShadowSrc
+    AltName="Is Shadow Source"
+    Wiki="Is this map object to be considered a shadow source." 
+    IsBool="" />
+    
+    <IsStaticShadowSrc
+    AltName="Is Static Shadow Source"
+    Wiki="Is this map object to be considered a static shadow source." 
+    IsBool="" />
+    
+    <IsCascade3ShadowSrc
+    AltName="Is 3-Cascade Shadow Source"
+    Wiki="Is this map object to be considered a 3-cascade shadow source." 
+    IsBool="" />
+    
+    <UnkE0F
+    AltName="Unknown: 0x0F"
+    Wiki="" />
+    
+    <UnkE10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="Is this map object to be considered a shadow destination." 
+    IsBool="" />
+    
+    <IsShadowOnly
+    AltName="Is Shadow only"
+    Wiki="Is this map object only rendered when calculating the shadow pass." 
+    IsBool="" />
+    
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="Is this map object drawn by the reflection camera." 
+    IsBool="" />
+    
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="Is this map object only drawn within the reflection camera." 
+    IsBool="" />
+    
+    <EnableOnAboveShadow
+    AltName="Enable on Above Shadow"
+    Wiki=""
+    IsBool="" />
+    
+    <DisablePointLightEffect
+    AltName="Disable Point Light Effect"
+    Wiki="" 
+    IsBool="" />
+    
+    <UnkE17
+    AltName="Unknown: 0x17"
+    Wiki="" />
+    
+    <UnkE18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="The entity ID group this map object belongs to." 
+    ArrayProperty="" />
+    
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <UnkE40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    
+    <DisplayDataStruct
+    AltName="Display Data"
+    Wiki="" />
+    
+    <DisplayGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <CollisionMask
+    AltName="Collision Mask"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Condition1
+    AltName="Condition 1"
+    Wiki="" />
+    
+    <Condition2
+    AltName="Condition 2"
+    Wiki="" />
+    
+    <DisplayGroupStruct
+    AltName="Display Groups"
+    Wiki="" />
+    
+    <Condition
+    AltName="Condition"
+    Wiki="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <Unk26
+    AltName="Unknown: 0x26"
+    Wiki="" />
+    
+    
+    <GparamConfig
+    AltName="GPARAM Configuration"
+    Wiki="" />
+    
+    <LightSetID
+    AltName="Light Set ID"
+    Wiki="The ID of the value set from LightSet ParamEditor to use." />
+    
+    <FogParamID
+    AltName="Fog ID"
+    Wiki="The ID of the value set from FogParamEditor to use." />
+    
+    <LightScatteringID
+    AltName="Light Scattering ID"
+    Wiki="The ID of the value set from LightScattering : ParamEditor to use." />
+    
+    <EnvMapID
+    AltName="Environmental Map ID"
+    Wiki="The ID of the value set from Env Map:Editor to use." />
+    
+    
+    <SceneGparamConfig
+    AltName="Scene GPARAM Configuration"
+    Wiki="" />
+    
+    <EventIDs
+    AltName="Event ID"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <TransitionTime
+    AltName="Transition Time"
+    Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = Some default time." />
+    
+    <GrassConfigStruct
+    AltName="Grass Configuration"
+    Wiki="" />
+    
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <GrassTypeParamID
+    AltName="Grass Type ID"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <Unk10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <Unk14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+  </Field>
+  <Enums>
+  </Enums>
+</MSBMETA>

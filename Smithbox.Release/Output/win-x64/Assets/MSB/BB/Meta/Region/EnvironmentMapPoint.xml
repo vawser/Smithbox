@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an environmental map point in the map." />
+  
+  <Field>
+    <SaveTypeData
+    AltName="Save Type Data"
+    Wiki="If ON, the UnkFlags will be written to the file." />
+    
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

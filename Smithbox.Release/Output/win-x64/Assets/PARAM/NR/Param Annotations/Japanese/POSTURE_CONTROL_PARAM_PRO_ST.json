@@ -1,0 +1,168 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Type": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Name": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "a000_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a000_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a000_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a000_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a002_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a002_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a002_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a002_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a003_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a003_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a003_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a003_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a010_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a010_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a010_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a010_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a012_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a012_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a012_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a012_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a013_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a013_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a013_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a013_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a014_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a014_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a014_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a014_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a015_rightArmIO",
+      "Name": "右腕_内外",
+      "Description": "右腕_内外"
+    },
+    {
+      "Field": "a015_rightArmFB",
+      "Name": "右腕_前後",
+      "Description": "右腕_前後"
+    },
+    {
+      "Field": "a015_leftArmIO",
+      "Name": "左腕_内外",
+      "Description": "左腕_内外"
+    },
+    {
+      "Field": "a015_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    }
+  ]
+}

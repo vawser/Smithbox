@@ -1,0 +1,119 @@
+{
+  "Name": "BonfireWarpTabParam",
+  "Entries": [
+    {
+      "ID": 6800,
+      "Entries": [
+        "Gravesite Plain"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Scadu Altus"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Leyndell, Royal Capital"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 12001,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 12002,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Crumbling Farum Azula"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Academy of Raya Lucaria"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Miquella's Haligtree"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Volcano Manor"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Land of the Tower"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Shadow Keep"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Limgrave"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Liurnia of the Lakes"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 64000,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        "Mountaintops of the Giants"
+      ]
+    }
+  ]
+}

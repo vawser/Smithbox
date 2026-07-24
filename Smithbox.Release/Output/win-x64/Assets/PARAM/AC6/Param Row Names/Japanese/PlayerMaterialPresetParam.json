@@ -1,0 +1,281 @@
+{
+  "Name": "PlayerMaterialPresetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 0 -- 光沢感：0\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 0 -- 光沢感：0.2\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 0 -- 光沢感：0.4\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 0 -- 光沢感：0.6\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 0 -- 光沢感：0.8\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 0 -- 光沢感：1\u3000金属感：0"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 0.2 -- 光沢感：0\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 0.2 -- 光沢感：0.2\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 0.2 -- 光沢感：0.4\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 0.2 -- 光沢感：0.6\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 0.2 -- 光沢感：0.8\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 0.2 -- 光沢感：1\u3000金属感：0.2"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 0.4 -- 光沢感：0\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 0.4 -- 光沢感：0.2\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 0.4 -- 光沢感：0.4\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 0.4 -- 光沢感：0.6\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 0.4 -- 光沢感：0.8\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 0.4 -- 光沢感：1\u3000金属感：0.4"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 0.6 -- 光沢感：0\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 0.6 -- 光沢感：0.2\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 0.6 -- 光沢感：0.4\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 0.6 -- 光沢感：0.6\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 0.6 -- 光沢感：0.8\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 0.6 -- 光沢感：1\u3000金属感：0.6"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 0.8 -- 光沢感：0\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 0.8 -- 光沢感：0.2\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 0.8 -- 光沢感：0.4\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 0.8 -- 光沢感：0.6\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 0.8 -- 光沢感：0.8\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 0.8 -- 光沢感：1\u3000金属感：0.8"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Glossiness: 0 Metallic feel: 1 -- 光沢感：0\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Glossiness: 0.2 Metallic feel: 1 -- 光沢感：0.2\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Glossiness: 0.4 Metallic feel: 1 -- 光沢感：0.4\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Glossiness: 0.6 Metallic feel: 1 -- 光沢感：0.6\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Glossiness: 0.8 Metallic feel: 1 -- 光沢感：0.8\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Glossiness: 1 Metallic feel: 1 -- 光沢感：1\u3000金属感：1"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Light intensity: 0.1 -- 光量：0.1"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Light intensity: 0.5 -- 光量：0.5"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Light amount: 1 -- 光量：1"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Light intensity: 1.5 -- 光量：1.5"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Light amount: 2 -- 光量：2"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Light intensity: 2.5 -- 光量：2.5"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Light amount: 3 -- 光量：3"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Light intensity: 3.5 -- 光量：3.5"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Light amount: 4 -- 光量：4"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Light intensity: 4.5 -- 光量：4.5"
+      ]
+    }
+  ]
+}

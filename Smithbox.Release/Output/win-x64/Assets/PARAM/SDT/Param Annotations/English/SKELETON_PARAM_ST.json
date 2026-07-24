@@ -1,0 +1,138 @@
+{
+  "Param": "SKELETON_PARAM_ST",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SKELETON_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "neckTurnGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footUnlockGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "kneeAxisType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnPriority",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

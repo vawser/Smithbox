@@ -1,0 +1,163 @@
+{
+  "Param": "KNOCKBACK_PARAM_ST",
+  "Type": "KNOCKBACK_PARAM_ST",
+  "Name": "KNOCKBACK_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "damage_Min_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_S_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_M_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_L_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_BlowS_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_BlowM_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Strike_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Uppercut_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Push_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Breath_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_HeadShot_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_S_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_L_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_LL_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardBrake_ContTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Min_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_S_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_M_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_L_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_BlowS_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_BlowM_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Strike_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Uppercut_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Push_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_Breath_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_HeadShot_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_S_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_L_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_LL_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardBrake_DecTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

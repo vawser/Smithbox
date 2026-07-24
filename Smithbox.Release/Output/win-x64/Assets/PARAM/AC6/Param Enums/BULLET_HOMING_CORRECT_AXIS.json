@@ -1,0 +1,65 @@
+{
+  "Key": "BULLET_HOMING_CORRECT_AXIS",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_HOMING_CORRECT_AXIS"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X-axis homing correction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y-axis homing correction"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X-axis limit only"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y-axis limit only"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X-axis completion only"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y-axis completion only"
+        }
+      ]
+    }
+  ]
+}

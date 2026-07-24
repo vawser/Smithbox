@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a patrol point in the map." />
+  
+  <Field>
+    <Patrol_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <Patrol_UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

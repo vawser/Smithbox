@@ -1,0 +1,389 @@
+{
+  "Name": "m10_LightScatteringBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0地下"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0天球"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1基本"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1屋内"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1日陰"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0教会下"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0教会屋根"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1天球"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1遠景"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B110100"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2拠点"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2屋内"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B2中景"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B2天球"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B2暗め"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "o0110_0000"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PolyG-scn100000"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "o1351"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn100100"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn100100"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn100100"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn100225_2"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn100225_1st"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn100113召喚-ALL"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "polyG-scn100201焚き火-ALL"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "polyG-scn100200_TGSカラス背景"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "polyG-scn100220_PV2"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "polyG-scn100220_PV2"
+      ]
+    }
+  ]
+}

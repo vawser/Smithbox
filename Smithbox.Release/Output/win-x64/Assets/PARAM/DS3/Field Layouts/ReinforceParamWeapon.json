@@ -1,0 +1,100 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Groups": [
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "staminaAtkRate",
+        "saWeaponAtkRate",
+        "saDurabilityRate"
+      ]
+    },
+    {
+      "Key": "Reinforcement",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reinforcement"
+        }
+      ],
+      "Fields": [
+        "materialSetId",
+        "maxReinforceLevel",
+        "reinforcePriceRate",
+        "baseChangePriceRate"
+      ]
+    },
+    {
+      "Key": "Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage"
+        }
+      ],
+      "Fields": [
+        "physicsAtkRate",
+        "magicAtkRate",
+        "fireAtkRate",
+        "thunderAtkRate",
+        "darkAtkRate"
+      ]
+    },
+    {
+      "Key": "Correction",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Correction"
+        }
+      ],
+      "Fields": [
+        "correctStrengthRate",
+        "correctAgilityRate",
+        "correctMagicRate",
+        "correctFaithRate",
+        "correctLuckRate"
+      ]
+    },
+    {
+      "Key": "Guard Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard Absorption"
+        }
+      ],
+      "Fields": [
+        "physicsGuardCutRate",
+        "magicGuardCutRate",
+        "fireGuardCutRate",
+        "thunderGuardCutRate",
+        "darkGuardCutRate",
+        "freezeGuardDefRate",
+        "staminaGuardResistRate"
+      ]
+    },
+    {
+      "Key": "Guard Resistance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard Resistance"
+        }
+      ],
+      "Fields": [
+        "poisonGuardResistRate",
+        "toxicGuardResistRate",
+        "bleedGuardResistRate",
+        "curseGuardResistRate",
+        "StabilityCutRate"
+      ]
+    }
+  ]
+}

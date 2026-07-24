@@ -1,0 +1,238 @@
+{
+  "Param": "BUDDY_PARAM_ST",
+  "Type": "BUDDY_PARAM_ST",
+  "Name": "BUDDY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "triggerSpEffectId",
+      "Name": "召喚特殊効果ID",
+      "Description": "召喚条件になる特殊効果IDを設定します "
+    },
+    {
+      "Field": "npcParamId",
+      "Name": "NPCパラメータID",
+      "Description": "召喚されるバディのNPCパラメータIDを設定します"
+    },
+    {
+      "Field": "npcThinkParamId",
+      "Name": "思考パラメータID",
+      "Description": "召喚されるバディのNPC思考パラメータIDを設定します"
+    },
+    {
+      "Field": "npcParamId_ridden",
+      "Name": "騎乗（乗られる側）：NPCパラメータID",
+      "Description": "騎乗状態で召喚したいバディの場合、「乗られる側」のNPCパラメータIDを設定します "
+    },
+    {
+      "Field": "npcThinkParamId_ridden",
+      "Name": "騎乗（乗られる側）：思考パラメータID",
+      "Description": "騎乗状態で召喚したいバディの場合、「乗られる側」のNPC思考パラメータIDを設定します"
+    },
+    {
+      "Field": "x_offset",
+      "Name": "X：配置座標オフセット[m]",
+      "Description": "バディを召喚ポイントから、X座標にオフセットする距離をメートル単位で設定します"
+    },
+    {
+      "Field": "z_offset",
+      "Name": "Z：配置座標オフセット[m]",
+      "Description": "バディを召喚ポイントから、Z座標にオフセットする距離をメートル単位で設定します"
+    },
+    {
+      "Field": "y_angle",
+      "Name": "Y：自分の配置角度[deg]",
+      "Description": "Y軸を中心に、自分を回転させる角度を設定します"
+    },
+    {
+      "Field": "appearOnAroundSekihi",
+      "Name": "石碑周辺から出現するか？",
+      "Description": "石碑周辺から出現するか？"
+    },
+    {
+      "Field": "disablePCTargetShare",
+      "Name": "PCとのターゲット共有をスキップするか？",
+      "Description": "PCとのターゲット共有をスキップするか？"
+    },
+    {
+      "Field": "pcFollowType",
+      "Name": "PC追従＆ワープタイプ ",
+      "Description": "PC追従＆ワープタイプ "
+    },
+    {
+      "Field": "Reserve",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "dopingSpEffect_lv0",
+      "Name": "+0時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv1",
+      "Name": "+1時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv2",
+      "Name": "+2時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv3",
+      "Name": "+3時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv4",
+      "Name": "+4時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv5",
+      "Name": "+5時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv6",
+      "Name": "+6時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv7",
+      "Name": "+7時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv8",
+      "Name": "+8時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv9",
+      "Name": "+9時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv10",
+      "Name": "+10時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "npcPlayerInitParamId",
+      "Name": "アーキタイプ別初期パラメータID",
+      "Description": "アーキタイプ別初期パラメータID"
+    },
+    {
+      "Field": "generateAnimId",
+      "Name": "ジェネレートアニメID",
+      "Description": "ジェネレートアニメID"
+    },
+    {
+      "Field": "Reserve2",
+      "Name": "リザーブ2",
+      "Description": "リザーブ２"
+    },
+    {
+      "Field": "arenaDopingSpEffect_1",
+      "Name": "arenaDopingSpEffect_1",
+      "Description": ""
+    },
+    {
+      "Field": "arenaDopingSpEffect_2",
+      "Name": "arenaDopingSpEffect_2",
+      "Description": ""
+    },
+    {
+      "Field": "arenaDopingSpEffect_3",
+      "Name": "arenaDopingSpEffect_3",
+      "Description": ""
+    },
+    {
+      "Field": "arenaDopingSpEffect_4",
+      "Name": "arenaDopingSpEffect_4",
+      "Description": ""
+    },
+    {
+      "Field": "arenaDopingSpEffect_5",
+      "Name": "arenaDopingSpEffect_5",
+      "Description": ""
+    },
+    {
+      "Field": "arenaFriendlySpEffect_1",
+      "Name": "arenaFriendlySpEffect_1",
+      "Description": ""
+    },
+    {
+      "Field": "arenaFriendlySpEffect_2",
+      "Name": "arenaFriendlySpEffect_2",
+      "Description": ""
+    },
+    {
+      "Field": "arenaFriendlySpEffect_3",
+      "Name": "arenaFriendlySpEffect_3",
+      "Description": ""
+    },
+    {
+      "Field": "arenaFriendlySpEffect_4",
+      "Name": "arenaFriendlySpEffect_4",
+      "Description": ""
+    },
+    {
+      "Field": "arenaFriendlySpEffect_5",
+      "Name": "arenaFriendlySpEffect_5",
+      "Description": ""
+    },
+    {
+      "Field": "arenaHostileSpEffect_1",
+      "Name": "arenaHostileSpEffect_1",
+      "Description": ""
+    },
+    {
+      "Field": "arenaHostileSpEffect_2",
+      "Name": "arenaHostileSpEffect_2",
+      "Description": ""
+    },
+    {
+      "Field": "arenaHostileSpEffect_3",
+      "Name": "arenaHostileSpEffect_3",
+      "Description": ""
+    },
+    {
+      "Field": "arenaHostileSpEffect_4",
+      "Name": "arenaHostileSpEffect_4",
+      "Description": ""
+    },
+    {
+      "Field": "arenaHostileSpEffect_5",
+      "Name": "arenaHostileSpEffect_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x98",
+      "Name": "unknown_0x98",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x9c",
+      "Name": "unknown_0x9c",
+      "Description": ""
+    }
+  ]
+}

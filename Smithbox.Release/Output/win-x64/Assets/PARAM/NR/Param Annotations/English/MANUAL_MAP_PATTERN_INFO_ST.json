@@ -1,0 +1,173 @@
+{
+  "Param": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Type": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Name": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "Night 1 Boss Area",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "Night 2 Boss Area",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "Map Attach Point",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "Map Tile",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag1",
+      "Name": "Event Flag",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag2",
+      "Name": "Event Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag3",
+      "Name": "Event Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag4",
+      "Name": "Event Flag 4",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag5",
+      "Name": "Event Flag 5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modifierId",
+      "Name": "Modifier ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "Modifier ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23a",
+      "Name": "Night 1 Boss",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "Night 2 Boss",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26a",
+      "Name": "Extra Night 1 Boss",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26b",
+      "Name": "Extra Night 2 Boss",
+      "Description": ""
+    }
+  ]
+}

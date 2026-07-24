@@ -1,0 +1,73 @@
+{
+  "Param": "BEHAVIOR_PARAM_ST",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BEHAVIOR_PARAM_ST",
+  "Description": "Registers hitboxes and bullets while also handling some special properties",
+  "Fields": [
+    {
+      "Field": "variationId",
+      "Name": "",
+      "Description": "For Npc's - References the behavioVariationId of the Npc in NpcParam, will only work for Npc's with the same behaviorVariationId. For Player - References behaviorVariationId on weapons, will only work with weapons that have the same behaviorVariationId."
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "",
+      "Description": "Id used in animations to reference this behavior"
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refType",
+      "Name": "",
+      "Description": "Defines what param this behavior references"
+    },
+    {
+      "Field": "wepCost",
+      "Name": "",
+      "Description": "Determines whether or not this behavior will consume spirit emblems"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId",
+      "Name": "",
+      "Description": "References AtkParam, Bullet, or SpEffectParam depending upon the refType"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "",
+      "Description": "Amount of Posture consumed when this behavior is invoked"
+    },
+    {
+      "Field": "mp",
+      "Name": "",
+      "Description": "Amount of Fp/Mp consumed when this behavior is invoked"
+    },
+    {
+      "Field": "category",
+      "Name": "",
+      "Description": "Unique properties attached to this behavior"
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "",
+      "Description": "Amount of humanity consumed when this behavior is invoked"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

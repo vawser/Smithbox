@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <SfxID
+    AltName="SFX ID"
+    Wiki="The ID of the SFX particle to play."
+    ParticleAlias="" />
+    
+    <EventSfxID
+    AltName="Event SFX ID"
+    Wiki="The ID of the SFX particle to play."
+    ParticleAlias="" />
+  </Field>
+    
+  <Enums>
+  </Enums>
+</MSBMETA>

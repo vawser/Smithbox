@@ -1,0 +1,95 @@
+{
+  "Name": "BaseChrSelectMenuParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "[CNT] Knight"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[CNT] Enchanted Knight"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[CNT] Prophet"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[CNT] Champion"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[CNT] Bloody Wolf"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Vagabond"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Warrior"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Hero"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Astrologer"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Prophet"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Samurai"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Prisoner"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Confessor"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Wretch"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Param": "DEFEAT_BOSS_SOUL_PARAM_ST",
+  "Type": "DEFEAT_BOSS_SOUL_PARAM_ST",
+  "Name": "DEFEAT_BOSS_SOUL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

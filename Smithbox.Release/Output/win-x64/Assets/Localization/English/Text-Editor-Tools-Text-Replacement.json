@@ -1,0 +1,140 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextReplacement_Header_Search_Filter",
+      "Text": "Search Filter"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Search_Filter_TT",
+      "Text": "The search term to filter by.\nCan use regular expressions."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Replacement_Filter",
+      "Text": "Replacement Term"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Replacement_Filter_TT",
+      "Text": "The term that is applied to a filtered result, to replace text. \nCan use regular expressions."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Filter_Type",
+      "Text": "Filter Type"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Filter_Type_TT",
+      "Text": "Which text category the search will include."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Filter_Type_TT",
+      "Text": "The filter type used for the search."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Match_Type",
+      "Text": "Match Type"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Match_Type_TT",
+      "Text": "Which element of a text entry is matched against."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Match_Type_TT",
+      "Text": "The element of a text entry that is matched against."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Case",
+      "Text": "Ignore Case"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Case_TT",
+      "Text": "Specifies case-insensitive matching for regex."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Multiline_Regex",
+      "Text": "Use Multi-line Regex"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Multiline_Regex_TT",
+      "Text": "Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Singleline_Regex",
+      "Text": "Use Single-line Regex"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Singleline_Regex_TT",
+      "Text": "Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n)."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace",
+      "Text": "Ignore Pattern Whitespace"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace_TT",
+      "Text": "Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Preview_Edit",
+      "Text": "Preview Edit"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Preview_Edit_TT",
+      "Text": "Generate the preview list of potential edits."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Clear_Preview",
+      "Text": "Clear Preview"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Clear_Preview_TT",
+      "Text": "Clear the preview list."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Apply_Replacement",
+      "Text": "Apply Replacement"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Apply_Replacement_TT",
+      "Text": "All the entries in the preview list will have the Replacement Term regex applied to them."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Preview_List",
+      "Text": "Preview List"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Preview_List_TT",
+      "Text": "The list of potential edits based on search filter criteria."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_List_Hint",
+      "Text": "Entries that will be affected:"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Already_Searched",
+      "Text": "No text entries found matching the filter."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Invalid_Regex_Search",
+      "Text": "Invalid regex in search filter."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Invalid_Regex_Replace",
+      "Text": "Invalid regex in replacement filter."
+    }
+  ]
+}

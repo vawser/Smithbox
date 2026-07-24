@@ -1,0 +1,28 @@
+{
+  "Param": "WHITE_COOL_TIME_PARAM_ST",
+  "Type": "WHITE_COOL_TIME_PARAM_ST",
+  "Name": "WHITE_COOL_TIME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "timeLimit0",
+      "Name": "timeLimit0",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit1",
+      "Name": "timeLimit1",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit2",
+      "Name": "timeLimit2",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit3",
+      "Name": "timeLimit3",
+      "Description": ""
+    }
+  ]
+}

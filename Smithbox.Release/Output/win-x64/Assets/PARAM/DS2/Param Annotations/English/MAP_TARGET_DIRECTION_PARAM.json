@@ -1,0 +1,48 @@
+{
+  "Param": "MAP_TARGET_DIRECTION_PARAM",
+  "Type": "MAP_TARGET_DIRECTION_PARAM",
+  "Name": "MAP_TARGET_DIRECTION_PARAM",
+  "Description": "Defines directional map targeting behavior.",
+  "Fields": [
+    {
+      "Field": "directionX",
+      "Name": "Direction: X",
+      "Description": "X-axis component of the direction vector."
+    },
+    {
+      "Field": "directionY",
+      "Name": "Direction: Y",
+      "Description": "Y-axis component of the direction vector."
+    },
+    {
+      "Field": "directionZ",
+      "Name": "Direction: Z",
+      "Description": "Z-axis component of the direction vector."
+    },
+    {
+      "Field": "speedMin",
+      "Name": "Minimum Speed",
+      "Description": "Lower bound of speed for the directional behavior."
+    },
+    {
+      "Field": "speedMax",
+      "Name": "Maximum Speed",
+      "Description": "Upper bound of speed for the directional behavior."
+    },
+    {
+      "Field": "frequencyMin",
+      "Name": "Minimum Frequency",
+      "Description": "Lower bound of frequency for direction updates or oscillation."
+    },
+    {
+      "Field": "frequencyMax",
+      "Name": "Maximum Frequency",
+      "Description": "Upper bound of frequency for direction updates or oscillation."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Determines the priority level of this directional behavior compared to others."
+    }
+  ]
+}

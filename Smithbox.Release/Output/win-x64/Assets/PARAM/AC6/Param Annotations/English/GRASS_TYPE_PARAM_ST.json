@@ -1,0 +1,188 @@
+{
+  "Param": "GRASS_TYPE_PARAM_ST",
+  "Type": "GRASS_TYPE_PARAM_ST",
+  "Name": "GRASS_TYPE_PARAM_ST",
+  "Description": "Dynamic instanced assets, combined with a flat or billboard texture. Used to generate scattered grass or other such arrangements without the need for manual placement.",
+  "Fields": [
+    {
+      "Field": "lod0ClusterType",
+      "Name": "LOD 0: Cluster Type",
+      "Description": "The LOD0 cluster type this grass asset belongs to."
+    },
+    {
+      "Field": "lod1ClusterType",
+      "Name": "LOD 1: Cluster Type",
+      "Description": "The LOD1 cluster type this grass asset belongs to."
+    },
+    {
+      "Field": "lod2ClusterType",
+      "Name": "LOD 2: Cluster Type",
+      "Description": "The LOD2 cluster type this grass asset belongs to."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDensity",
+      "Name": "Base Density",
+      "Description": "The base density value for the grass clumping."
+    },
+    {
+      "Field": "modelName",
+      "Name": "Model Name",
+      "Description": "The grass model to define the parameters for."
+    },
+    {
+      "Field": "flatTextureName",
+      "Name": "Flat Texture Name",
+      "Description": "The flat texture ID to use for this grass asset."
+    },
+    {
+      "Field": "billboardTextureName",
+      "Name": "Billboard Texture Name",
+      "Description": "The billboard texture ID to use for this grass asset."
+    },
+    {
+      "Field": "normalInfluence",
+      "Name": "Effect of Tilt %",
+      "Description": "The percentage of tilt that is applied to the grass asset based on its normal map."
+    },
+    {
+      "Field": "inclinationMax",
+      "Name": "Maximum Tilt Angle",
+      "Description": "The maximum percentage of tilt that can be applied to the grass. In degrees."
+    },
+    {
+      "Field": "inclinationJitter",
+      "Name": "Tilt Angle Jitter",
+      "Description": "The amount of jitter to apply to the tilt angle for this grass asset. In degrees."
+    },
+    {
+      "Field": "scaleBaseMin",
+      "Name": "Width Scale: Minimum",
+      "Description": "The minimum width scale to apply to the grass asset."
+    },
+    {
+      "Field": "scaleBaseMax",
+      "Name": "Width Scale: Maximum",
+      "Description": "The maximum width scale to apply to the grass asset."
+    },
+    {
+      "Field": "scaleHeightMin",
+      "Name": "Height Scale: Minimum",
+      "Description": "The minimum height scale to apply to the grass asset."
+    },
+    {
+      "Field": "scaleHeightMax",
+      "Name": "Height Scale: Maximum",
+      "Description": "The maximum height scale to apply to the grass asset."
+    },
+    {
+      "Field": "colorShade1_r",
+      "Name": "1: Multiplication Color: R",
+      "Description": "The red element of this color for multiplication color 1."
+    },
+    {
+      "Field": "colorShade1_g",
+      "Name": "1: Multiplication Color: G",
+      "Description": "The green element of this color for multiplication color 1."
+    },
+    {
+      "Field": "colorShade1_b",
+      "Name": "1: Multiplication Color: B",
+      "Description": "The blue element of this color for multiplication color 1."
+    },
+    {
+      "Field": "colorShade2_r",
+      "Name": "2: Multiplication Color: R",
+      "Description": "The red element of this color for multiplication color 2."
+    },
+    {
+      "Field": "colorShade2_g",
+      "Name": "2: Multiplication Color: G",
+      "Description": "The green element of this color for multiplication color 2."
+    },
+    {
+      "Field": "colorShade2_b",
+      "Name": "2: Multiplication Color: B",
+      "Description": "The blue element of this color for multiplication color 2."
+    },
+    {
+      "Field": "flatSplitType",
+      "Name": "Flat Texture: Plane Separation",
+      "Description": "The plane separation type to use for this grass asset's flat texture."
+    },
+    {
+      "Field": "flatBladeCount",
+      "Name": "Flat Texture: Number of Planes",
+      "Description": "The number of planes to use for this grass asset's flat texture."
+    },
+    {
+      "Field": "flatSlant",
+      "Name": "Flat Texture: Plane Angle",
+      "Description": "The angle of this grass asset's flat texture from the asset's position."
+    },
+    {
+      "Field": "flatRadius",
+      "Name": "Flat Texture: Plane Distance",
+      "Description": "The distance of this gtass asset's flat texture from the asset's position."
+    },
+    {
+      "Field": "castShadow",
+      "Name": "Cast Shadow",
+      "Description": "Whether this grass asset will cast a shadow."
+    },
+    {
+      "Field": "windAmplitude",
+      "Name": "Wind Amplitude",
+      "Description": "The amplitude to apply to any wind force that affects this grass asset."
+    },
+    {
+      "Field": "useDmyPolyDir",
+      "Name": "Use Dummy Polygon Direction",
+      "Description": "Adjust the angle of the plane to the dummy polygon's direction."
+    },
+    {
+      "Field": "windCycle",
+      "Name": "Wind Speed",
+      "Description": "The speed to apply to any wind force that affects this grass asset."
+    },
+    {
+      "Field": "orientationAngle",
+      "Name": "Orientation Direction",
+      "Description": "Determines the orientation direction for this grass asset. -1 for random orientation."
+    },
+    {
+      "Field": "orientationRange",
+      "Name": "Orientation Range of Direction",
+      "Description": "Determines the range for the orientation direction parameter."
+    },
+    {
+      "Field": "simpleModelName",
+      "Name": "Simple Model Name",
+      "Description": "The model ID to use the simple representation of this grass asset."
+    },
+    {
+      "Field": "lodRangeId",
+      "Name": "Grass LOD Range ID",
+      "Description": "The grass LOD range parameter to use for this grass asset."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId",
+      "Name": "Particle ID",
+      "Description": "The SFX ID to apply to this grass asset when generated."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

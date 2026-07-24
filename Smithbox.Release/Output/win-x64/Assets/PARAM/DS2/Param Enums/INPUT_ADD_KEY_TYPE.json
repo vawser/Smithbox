@@ -1,0 +1,47 @@
+{
+  "Key": "INPUT_ADD_KEY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "INPUT_ADD_KEY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": " "
+        }
+      ]
+    },
+    {
+      "Key": "82",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+ Ctrl"
+        }
+      ]
+    },
+    {
+      "Key": "95",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+ Shift"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+ Alt"
+        }
+      ]
+    }
+  ]
+}

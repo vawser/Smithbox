@@ -1,0 +1,14 @@
+{
+  "id": "888",
+  "name": "Pyromancer",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

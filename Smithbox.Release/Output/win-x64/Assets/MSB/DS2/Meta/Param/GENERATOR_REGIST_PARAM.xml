@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <EnemyParamID 
+    AltName="Enemy Parameter ID"
+    Wiki="The enemy parameters to use for this enemy."
+    ParamRef="EnemyParam" />
+    
+    <LogicParamID 
+    AltName="Logic ID"
+    Wiki="The logic parameters to use for this enemy."
+    ParamRef="LogicComParam" />
+    
+    <DefaultLogicParamID 
+    AltName="Default Logic ID"
+    Wiki="The default logic parametes to use for this enemy."
+    ParamRef="EnemyDefaultLogicParam" />
+    
+    <SpawnState 
+    AltName="Spawn State"
+    Wiki="What position/state the entity takes when spawning." 
+    SpawnStates="" />
+    
+    <DrawGroup 
+    AltName="Draw Group"
+    Wiki="Determines when the game renders an entity." />
+    
+    <Unk0F
+    AltName="Unknown: 0x0F"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

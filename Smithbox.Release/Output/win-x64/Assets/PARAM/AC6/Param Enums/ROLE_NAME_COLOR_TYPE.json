@@ -1,0 +1,29 @@
+{
+  "Key": "ROLE_NAME_COLOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ROLE_NAME_COLOR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Friendly"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hostile"
+        }
+      ]
+    }
+  ]
+}

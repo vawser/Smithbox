@@ -1,0 +1,58 @@
+{
+  "Param": "RETARGET_ANIM_SET_PARAM_ST",
+  "Type": "RETARGET_ANIM_SET_PARAM_ST",
+  "Name": "RETARGET_ANIM_SET_PARAM_ST",
+  "Description": "Defines fields related to animation retargeting.",
+  "Fields": [
+    {
+      "Field": "BaseAnimId",
+      "Name": "Base Animation ID",
+      "Description": "ID of the animation to be retargeted"
+    },
+    {
+      "Field": "ReTargetAnimId_begin",
+      "Name": "Retarget Animation ID Beginning",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_01",
+      "Name": "Retarget Animation ID [1]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_02",
+      "Name": "Retarget Animation ID [2]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_03",
+      "Name": "Retarget Animation ID [3]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_04",
+      "Name": "Retarget Animation ID [4]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_05",
+      "Name": "Retarget Animation ID [5]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_06",
+      "Name": "Retarget Animation ID [6]",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "ReTargetAnimId_end",
+      "Name": "Retarget Animation ID Ending",
+      "Description": "ID of the animation to retarget to the base animation"
+    },
+    {
+      "Field": "tailPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

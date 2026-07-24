@@ -1,0 +1,73 @@
+{
+  "Param": "MENU_FILTER_ST",
+  "Type": "MENU_FILTER_ST",
+  "Name": "MENU_FILTER_ST",
+  "Description": "Determines the configuration of screen effect filters.",
+  "Fields": [
+    {
+      "Field": "ToneLateralDispersion0",
+      "Name": "Chromatic Aberration Deviation: 0",
+      "Description": "The chormatic aberration deviation to use for this filter."
+    },
+    {
+      "Field": "ToneLateralDispersion1",
+      "Name": "Chromatic Aberration Deviation: 1",
+      "Description": "The chormatic aberration deviation to use for this filter."
+    },
+    {
+      "Field": "NoiseTexIdx",
+      "Name": "Noise Texture: Index",
+      "Description": "The index of the noise texture to use."
+    },
+    {
+      "Field": "NoizeMaskTexIdx",
+      "Name": "Noise Texture: Mask Index",
+      "Description": "The index of the noise texture mask to use."
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NoiseTexScaleX",
+      "Name": "Noise Texture: Horizontal Scale",
+      "Description": "The horizontal scaling for the noise texture."
+    },
+    {
+      "Field": "NoiseTexScaleY",
+      "Name": "Noise Texture: Vertical Scale",
+      "Description": "The vertical scaling for the noise texture."
+    },
+    {
+      "Field": "NoiseTexBlendRate",
+      "Name": "Noise Texture: Blend Rate",
+      "Description": "The blending rate for the noise texture."
+    },
+    {
+      "Field": "NoiseTexNoMenuDrawBlendRate",
+      "Name": "Noise Texture: External Blend Rate",
+      "Description": "The blend rate for the noise texture for areas outside of the menu. 0 only applies to the menu drawing area, 1 to the entire screen."
+    },
+    {
+      "Field": "NoiseTexUpdateTime",
+      "Name": "Noise Texture: Update Interval",
+      "Description": "The random update interval for the noise texture."
+    },
+    {
+      "Field": "Contrast",
+      "Name": "Contrast",
+      "Description": "The contrast value for this filter."
+    },
+    {
+      "Field": "CenterThin",
+      "Name": "Noise Centre Dilution",
+      "Description": "The amount of noise dilution to apply to the centre of the screen. -1 means no noise near centre, 1 means full noise near centre."
+    },
+    {
+      "Field": "reserve1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

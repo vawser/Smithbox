@@ -1,0 +1,803 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "Blade of the Darkmoon"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Watchdogs of Farron"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Aldrich Faithful"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Warrior of Sunlight"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Mound-makers"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "Way of Blue"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Blue Sentinels"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Rosaria's Fingers"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Spears of the Church"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Life Ring"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Life Ring+1"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Life Ring+2"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Life Ring+3"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Chloranthy Ring"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "Chloranthy Ring+1"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "Chloranthy Ring+2"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Chloranthy Ring+3"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Havel's Ring"
+      ]
+    },
+    {
+      "ID": 20021,
+      "Entries": [
+        "Havel's Ring+1"
+      ]
+    },
+    {
+      "ID": 20022,
+      "Entries": [
+        "Havel's Ring+2"
+      ]
+    },
+    {
+      "ID": 20023,
+      "Entries": [
+        "Havel's Ring+3"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "Ring of Favor"
+      ]
+    },
+    {
+      "ID": 20031,
+      "Entries": [
+        "Ring of Favor+1"
+      ]
+    },
+    {
+      "ID": 20032,
+      "Entries": [
+        "Ring of Favor+2"
+      ]
+    },
+    {
+      "ID": 20033,
+      "Entries": [
+        "Ring of Favor+3"
+      ]
+    },
+    {
+      "ID": 20040,
+      "Entries": [
+        "Ring of Steel Protection"
+      ]
+    },
+    {
+      "ID": 20041,
+      "Entries": [
+        "Ring of Steel Protection+1"
+      ]
+    },
+    {
+      "ID": 20042,
+      "Entries": [
+        "Ring of Steel Protection+2"
+      ]
+    },
+    {
+      "ID": 20043,
+      "Entries": [
+        "Ring of Steel Protection+3"
+      ]
+    },
+    {
+      "ID": 20050,
+      "Entries": [
+        "Flame Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 20051,
+      "Entries": [
+        "Flame Stoneplate Ring+1"
+      ]
+    },
+    {
+      "ID": 20052,
+      "Entries": [
+        "Flame Stoneplate Ring+2"
+      ]
+    },
+    {
+      "ID": 20060,
+      "Entries": [
+        "Thunder Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 20061,
+      "Entries": [
+        "Thunder Stoneplate Ring+1"
+      ]
+    },
+    {
+      "ID": 20062,
+      "Entries": [
+        "Thunder Stoneplate Ring+2"
+      ]
+    },
+    {
+      "ID": 20070,
+      "Entries": [
+        "Magic Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 20071,
+      "Entries": [
+        "Magic Stoneplate Ring+1"
+      ]
+    },
+    {
+      "ID": 20072,
+      "Entries": [
+        "Magic Stoneplate Ring+2"
+      ]
+    },
+    {
+      "ID": 20080,
+      "Entries": [
+        "Dark Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 20081,
+      "Entries": [
+        "Dark Stoneplate Ring+1"
+      ]
+    },
+    {
+      "ID": 20082,
+      "Entries": [
+        "Dark Stoneplate Ring+2"
+      ]
+    },
+    {
+      "ID": 20090,
+      "Entries": [
+        "Speckled Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 20091,
+      "Entries": [
+        "Speckled Stoneplate Ring+1"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Bloodbite Ring"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "Bloodbite Ring+1"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "Poisonbite Ring"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "Poisonbite Ring+1"
+      ]
+    },
+    {
+      "ID": 20120,
+      "Entries": [
+        "Cursebite Ring"
+      ]
+    },
+    {
+      "ID": 20130,
+      "Entries": [
+        "Fleshbite Ring"
+      ]
+    },
+    {
+      "ID": 20131,
+      "Entries": [
+        "Fleshbite Ring+1"
+      ]
+    },
+    {
+      "ID": 20140,
+      "Entries": [
+        "Wood Grain Ring"
+      ]
+    },
+    {
+      "ID": 20141,
+      "Entries": [
+        "Wood Grain Ring+1"
+      ]
+    },
+    {
+      "ID": 20142,
+      "Entries": [
+        "Wood Grain Ring+2"
+      ]
+    },
+    {
+      "ID": 20150,
+      "Entries": [
+        "Scholar Ring"
+      ]
+    },
+    {
+      "ID": 20160,
+      "Entries": [
+        "Priestess Ring"
+      ]
+    },
+    {
+      "ID": 20170,
+      "Entries": [
+        "Red Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 20180,
+      "Entries": [
+        "Blue Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 20190,
+      "Entries": [
+        "Wolf Ring"
+      ]
+    },
+    {
+      "ID": 20191,
+      "Entries": [
+        "Wolf Ring+1"
+      ]
+    },
+    {
+      "ID": 20192,
+      "Entries": [
+        "Wolf Ring+2"
+      ]
+    },
+    {
+      "ID": 20193,
+      "Entries": [
+        "Wolf Ring+3"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Leo Ring"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 20230,
+      "Entries": [
+        "Young Dragon Ring"
+      ]
+    },
+    {
+      "ID": 20231,
+      "Entries": [
+        "Bellowing Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 20240,
+      "Entries": [
+        "Great Swamp Ring"
+      ]
+    },
+    {
+      "ID": 20241,
+      "Entries": [
+        "Witch's Ring"
+      ]
+    },
+    {
+      "ID": 20250,
+      "Entries": [
+        "Morne's Ring"
+      ]
+    },
+    {
+      "ID": 20251,
+      "Entries": [
+        "Ring of the Sun's First Born"
+      ]
+    },
+    {
+      "ID": 20270,
+      "Entries": [
+        "Lingering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 20271,
+      "Entries": [
+        "Lingering Dragoncrest Ring+1"
+      ]
+    },
+    {
+      "ID": 20272,
+      "Entries": [
+        "Lingering Dragoncrest Ring+2"
+      ]
+    },
+    {
+      "ID": 20280,
+      "Entries": [
+        "Sage Ring"
+      ]
+    },
+    {
+      "ID": 20281,
+      "Entries": [
+        "Sage Ring+1"
+      ]
+    },
+    {
+      "ID": 20282,
+      "Entries": [
+        "Sage Ring+2"
+      ]
+    },
+    {
+      "ID": 20290,
+      "Entries": [
+        "Slumbering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "Dusk Crown Ring"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "Saint's Ring"
+      ]
+    },
+    {
+      "ID": 20320,
+      "Entries": [
+        "Deep Ring"
+      ]
+    },
+    {
+      "ID": 20330,
+      "Entries": [
+        "Darkmoon Ring"
+      ]
+    },
+    {
+      "ID": 20370,
+      "Entries": [
+        "Hawk Ring"
+      ]
+    },
+    {
+      "ID": 20380,
+      "Entries": [
+        "Hornet Ring"
+      ]
+    },
+    {
+      "ID": 20390,
+      "Entries": [
+        "Covetous Gold Serpent Ring"
+      ]
+    },
+    {
+      "ID": 20391,
+      "Entries": [
+        "Covetous Gold Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 20392,
+      "Entries": [
+        "Covetous Gold Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 20393,
+      "Entries": [
+        "Covetous Gold Serpent Ring+3"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "Covetous Silver Serpent Ring"
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        "Covetous Silver Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 20402,
+      "Entries": [
+        "Covetous Silver Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 20403,
+      "Entries": [
+        "Covetous Silver Serpent Ring+3"
+      ]
+    },
+    {
+      "ID": 20410,
+      "Entries": [
+        "Sun Princess Ring"
+      ]
+    },
+    {
+      "ID": 20420,
+      "Entries": [
+        "Silvercat Ring"
+      ]
+    },
+    {
+      "ID": 20430,
+      "Entries": [
+        "Skull Ring"
+      ]
+    },
+    {
+      "ID": 20440,
+      "Entries": [
+        "Untrue White Ring"
+      ]
+    },
+    {
+      "ID": 20450,
+      "Entries": [
+        "Carthus Milkring"
+      ]
+    },
+    {
+      "ID": 20460,
+      "Entries": [
+        "Knight's Ring"
+      ]
+    },
+    {
+      "ID": 20470,
+      "Entries": [
+        "Hunter's Ring"
+      ]
+    },
+    {
+      "ID": 20480,
+      "Entries": [
+        "Knight Slayer's Ring"
+      ]
+    },
+    {
+      "ID": 20490,
+      "Entries": [
+        "Magic Clutch Ring"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Lightning Clutch Ring"
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        "Fire Clutch Ring"
+      ]
+    },
+    {
+      "ID": 20520,
+      "Entries": [
+        "Dark Clutch Ring"
+      ]
+    },
+    {
+      "ID": 20540,
+      "Entries": [
+        "Flynn's Ring"
+      ]
+    },
+    {
+      "ID": 20550,
+      "Entries": [
+        "Prisoner's Chain"
+      ]
+    },
+    {
+      "ID": 20560,
+      "Entries": [
+        "Untrue Dark Ring"
+      ]
+    },
+    {
+      "ID": 20580,
+      "Entries": [
+        "Obscuring Ring"
+      ]
+    },
+    {
+      "ID": 20590,
+      "Entries": [
+        "Ring of the Evil Eye"
+      ]
+    },
+    {
+      "ID": 20591,
+      "Entries": [
+        "Ring of the Evil Eye+1"
+      ]
+    },
+    {
+      "ID": 20592,
+      "Entries": [
+        "Ring of the Evil Eye+2"
+      ]
+    },
+    {
+      "ID": 20593,
+      "Entries": [
+        "Ring of the Evil Eye+3"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "Calamity Ring"
+      ]
+    },
+    {
+      "ID": 20610,
+      "Entries": [
+        "Farron Ring"
+      ]
+    },
+    {
+      "ID": 20620,
+      "Entries": [
+        "Aldrich's Ruby"
+      ]
+    },
+    {
+      "ID": 20630,
+      "Entries": [
+        "Aldrich's Sapphire"
+      ]
+    },
+    {
+      "ID": 20660,
+      "Entries": [
+        "Lloyd's Sword Ring"
+      ]
+    },
+    {
+      "ID": 20670,
+      "Entries": [
+        "Lloyd's Shield Ring"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "Estus Ring"
+      ]
+    },
+    {
+      "ID": 20710,
+      "Entries": [
+        "Ashen Estus Ring"
+      ]
+    },
+    {
+      "ID": 20720,
+      "Entries": [
+        "Horsehoof Ring"
+      ]
+    },
+    {
+      "ID": 20730,
+      "Entries": [
+        "Carthus Bloodring"
+      ]
+    },
+    {
+      "ID": 20740,
+      "Entries": [
+        "Reversal Ring"
+      ]
+    },
+    {
+      "ID": 20750,
+      "Entries": [
+        "Pontiff's Right Eye"
+      ]
+    },
+    {
+      "ID": 20790,
+      "Entries": [
+        "Pontiff's Left Eye"
+      ]
+    },
+    {
+      "ID": 20830,
+      "Entries": [
+        "Dragonscale Ring"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Chillbite Ring"
+      ]
+    },
+    {
+      "ID": 900200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

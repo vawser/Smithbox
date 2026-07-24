@@ -1,0 +1,193 @@
+{
+  "Param": "NPC_EVENT_PARAM",
+  "Type": "NPC_EVENT_PARAM",
+  "Name": "NPC_EVENT_PARAM",
+  "Description": "Defines NPC interaction menus, services, shop data, covenant functions, and related event behavior.",
+  "Fields": [
+    {
+      "Field": "bShop",
+      "Name": "Shop Menu",
+      "Description": "Enables the NPC shop interface."
+    },
+    {
+      "Field": "bPointReplace",
+      "Name": "Stat Reallocation",
+      "Description": "Allows the player to respec or redistribute stat points."
+    },
+    {
+      "Field": "bRepair",
+      "Name": "Equipment Repair Menu",
+      "Description": "Enables equipment repair services."
+    },
+    {
+      "Field": "bFortify",
+      "Name": "Equipment Upgrade Menu",
+      "Description": "Enables weapon or armor reinforcement."
+    },
+    {
+      "Field": "bPledge",
+      "Name": "Covenant Menu",
+      "Description": "Allows the player to join or interact with a covenant."
+    },
+    {
+      "Field": "bVotive",
+      "Name": "Offering Menu",
+      "Description": "Allows item offerings or covenant donations."
+    },
+    {
+      "Field": "bUptrade",
+      "Name": "Trade-In Menu",
+      "Description": "Enables exchanging items for rewards."
+    },
+    {
+      "Field": "bBarter",
+      "Name": "Barter Menu",
+      "Description": "Allows item trading or item-for-item exchanges."
+    },
+    {
+      "Field": "bDecriminalize",
+      "Name": "Absolution Menu",
+      "Description": "Allows the player to remove sin or hostility penalties."
+    },
+    {
+      "Field": "bContractKickout",
+      "Name": "Leave Covenant Menu",
+      "Description": "Allows the player to abandon a covenant."
+    },
+    {
+      "Field": "bGesture",
+      "Name": "Gesture",
+      "Description": "Allows the NPC to teach or grant a gesture."
+    },
+    {
+      "Field": "bLadder",
+      "Name": "Ladder Placement Menu",
+      "Description": "Allows interaction for placing or unlocking ladders."
+    },
+    {
+      "Field": "bRootChange",
+      "Name": "Route Change Menu",
+      "Description": "Enables route or progression branch selection."
+    },
+    {
+      "Field": "bPresent",
+      "Name": "Give Item Menu",
+      "Description": "Allows the player to present a required item."
+    },
+    {
+      "Field": "bPledgeView",
+      "Name": "Covenant List Menu",
+      "Description": "Displays covenant information or rankings."
+    },
+    {
+      "Field": "pledgeType",
+      "Name": "Contract Type",
+      "Description": "Specifies the covenant or contract category."
+    },
+    {
+      "Field": "bTalk",
+      "Name": "Talk Menu",
+      "Description": "Enables standard dialogue interaction."
+    },
+    {
+      "Field": "bEstusFlaskFortify",
+      "Name": "Estus Flask Reinforcement",
+      "Description": "Allows Estus Flask upgrades."
+    },
+    {
+      "Field": "bLevelUp",
+      "Name": "Level Up",
+      "Description": "Allows character level increases."
+    },
+    {
+      "Field": "bAttributeFortify",
+      "Name": "Infusion Reinforcement",
+      "Description": "Allows elemental or attribute infusion upgrades."
+    },
+    {
+      "Field": "bPresentArmor",
+      "Name": "Give Equipment",
+      "Description": "Allows equipment items to be handed over."
+    },
+    {
+      "Field": "bPyromancyFortify",
+      "Name": "Upgrade Pyromancy Flame",
+      "Description": "Allows pyromancy flame reinforcement."
+    },
+    {
+      "Field": "bSpellDecrementState",
+      "Name": "Required Stat Reduction Menu",
+      "Description": "Enables reduction of spell or equipment stat requirements."
+    },
+    {
+      "Field": "reserved",
+      "Name": "Reserved",
+      "Description": ""
+    },
+    {
+      "Field": "shopIdBegin",
+      "Name": "Shop Lineup Start ID",
+      "Description": "First entry ID for the NPC shop inventory."
+    },
+    {
+      "Field": "shopIdEnd",
+      "Name": "Shop Lineup End ID",
+      "Description": "Last entry ID for the NPC shop inventory."
+    },
+    {
+      "Field": "fortifyTyoe",
+      "Name": "Upgrade Type",
+      "Description": "Specifies the type of reinforcement service provided."
+    },
+    {
+      "Field": "votiveItemId",
+      "Name": "Offering Item ID",
+      "Description": "Item required for offerings or covenant donations."
+    },
+    {
+      "Field": "barterParamBeginId",
+      "Name": "Barter Lineup Start ID",
+      "Description": "First barter entry ID."
+    },
+    {
+      "Field": "gestureId",
+      "Name": "Gesture ID",
+      "Description": "Gesture granted or referenced by this interaction."
+    },
+    {
+      "Field": "npcId",
+      "Name": "NPC Character ID",
+      "Description": "References the associated NPC character."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Reserved",
+      "Description": ""
+    },
+    {
+      "Field": "eventValueChangeType",
+      "Name": "Event Value Change Type",
+      "Description": "Specifies how an event value is modified."
+    },
+    {
+      "Field": "eventValueId",
+      "Name": "Event Value ID",
+      "Description": "References the event variable affected by this interaction."
+    },
+    {
+      "Field": "pluralSelectIdBegin",
+      "Name": "Multi-Choice Start ID",
+      "Description": "First ID for multi-selection dialogue choices."
+    },
+    {
+      "Field": "pluralSelectIdEnd",
+      "Name": "Multi-Choice End ID",
+      "Description": "Last ID for multi-selection dialogue choices."
+    },
+    {
+      "Field": "barterParamEndId",
+      "Name": "Barter Lineup End ID",
+      "Description": "Last barter entry ID."
+    }
+  ]
+}

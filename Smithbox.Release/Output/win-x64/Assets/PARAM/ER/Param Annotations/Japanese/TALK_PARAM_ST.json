@@ -1,0 +1,118 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "msgId",
+      "Name": "PC性別が男：メッセージID",
+      "Description": "PC性別が男：メッセージを指定->メニュー"
+    },
+    {
+      "Field": "voiceId",
+      "Name": "PC性別が男：ボイスID",
+      "Description": "PC性別が男：ボイスを指定->サウンド"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果ID0",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId0",
+      "Name": "モーションID0",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId1",
+      "Name": "モーションID1",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "returnPos",
+      "Name": "復帰位置",
+      "Description": "復帰する会話の相対位置->会話"
+    },
+    {
+      "Field": "reactionId",
+      "Name": "リアクションID",
+      "Description": "復帰時の会話指定->会話"
+    },
+    {
+      "Field": "eventId",
+      "Name": "イベントID",
+      "Description": "イベントID->イベント"
+    },
+    {
+      "Field": "msgId_female",
+      "Name": "PC性別が女：メッセージ",
+      "Description": "PC性別が女：メッセージを指定->メニュー"
+    },
+    {
+      "Field": "voiceId_female",
+      "Name": "PC性別が女：ボイスID",
+      "Description": "PC性別が女：ボイスを指定->サウンド"
+    },
+    {
+      "Field": "lipSyncStart",
+      "Name": "話者：口パク開始時間",
+      "Description": "話者：口パク開始時間。-1で口パク無し"
+    },
+    {
+      "Field": "lipSyncTime",
+      "Name": "話者：口パク継続時間",
+      "Description": "話者：口パク継続時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "timeout",
+      "Name": "ボイス再生タイムアウト時間",
+      "Description": "ボイス再生タイムアウト時間。-1の場合は「共通_ゲームシステムパラメータ」の「NPC会話ボイス再生タイムアウト時間」でタイムアウト処理を行う。"
+    },
+    {
+      "Field": "talkAnimationId",
+      "Name": "話者：字幕芝居アニメID",
+      "Description": "話者：会話中のアニメーションID"
+    },
+    {
+      "Field": "isForceDisp",
+      "Name": "強制的に字幕を表示するか",
+      "Description": "強制的に字幕を表示するか。オプションで字幕オフでも字幕を表示する"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

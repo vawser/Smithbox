@@ -1,0 +1,572 @@
+[
+  {
+    "ID": "bd_m_1427",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5000",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5010",
+    "Name": "Guardian",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5020",
+    "Name": "Ironeye (Default)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5025",
+    "Name": "Ironeye (Traitor)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5030",
+    "Name": "Duchess",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5031",
+    "Name": "Duchess (Priestess)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5040",
+    "Name": "Raider",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5050",
+    "Name": "Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5060",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5070",
+    "Name": "Executor",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5080",
+    "Name": "Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5090",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5100",
+    "Name": "Wylder (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5110",
+    "Name": "Guardian (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5120",
+    "Name": "Ironeye (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5130",
+    "Name": "Duchess (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5140",
+    "Name": "Raider (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5150",
+    "Name": "Revenant (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5160",
+    "Name": "Recluse (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5170",
+    "Name": "Executor (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5180",
+    "Name": "Scholar (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5190",
+    "Name": "Undertaker (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5200",
+    "Name": "Wylder (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5210",
+    "Name": "Guardian (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5220",
+    "Name": "Ironeye (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5230",
+    "Name": "Duchess (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5240",
+    "Name": "Raider (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5250",
+    "Name": "Revenant (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5260",
+    "Name": "Recluse (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5270",
+    "Name": "Executor (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5280",
+    "Name": "Scholar (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5290",
+    "Name": "Undertaker (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5300",
+    "Name": "Wylder (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5310",
+    "Name": "Guardian (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5320",
+    "Name": "Ironeye (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5330",
+    "Name": "Duchess (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5340",
+    "Name": "Raider (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5345",
+    "Name": "Raider (Remembrance) - Alt",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5350",
+    "Name": "Revenant (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5360",
+    "Name": "Recluse (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5370",
+    "Name": "Executor (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5380",
+    "Name": "Scholar (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5390",
+    "Name": "Undertaker (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5500",
+    "Name": "Wylder (Abysswalker)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5510",
+    "Name": "Guardian (Sunlight Knight)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5520",
+    "Name": "Ironeye (Ringfinger)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5530",
+    "Name": "Duchess (Black Leather)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5540",
+    "Name": "Raider (Rock-like)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5550",
+    "Name": "Revenant (The Sister in the Painting)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5560",
+    "Name": "Recluse (Heretic Sorcerer)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5570",
+    "Name": "Executor (Thorns)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5580",
+    "Name": "Scholar (Pardoner)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5590",
+    "Name": "Undertaker (Brass)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5600",
+    "Name": "Wylder (Lion Knight)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5610",
+    "Name": "Guardian (Wayfarer)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5620",
+    "Name": "Ironeye (Sellsword)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5630",
+    "Name": "Duchess (Wraith)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5640",
+    "Name": "Raider (Catarina)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5650",
+    "Name": "Revenant (Dragon School)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5660",
+    "Name": "Recluse (Emerald Fate)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5670",
+    "Name": "Executor (Sable Church)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5680",
+    "Name": "Scholar (Xanthous)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5690",
+    "Name": "Undertaker (Lord's Blade)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_6050",
+    "Name": "Revenant Head (Chloe) (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_6051",
+    "Name": "Revenant Head (Doll) (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "fc_f_0003",
+    "Name": "Duchess' Head (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "hd_m_0300",
+    "Name": "Parasitic Egg Head ",
+    "Tags": []
+  },
+  {
+    "ID": "hd_m_0310",
+    "Name": "Parasitic Egg Head (Hatched)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5000",
+    "Name": "Wylder's Greatsword",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5001",
+    "Name": "Wylder's Small Shield",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5002",
+    "Name": "Claw Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5003",
+    "Name": "Onslaught Stake",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5010",
+    "Name": "Guardian's Halberd",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5011",
+    "Name": "Guardian's Greatshield",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5020",
+    "Name": "Ironeye's Bow",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5021",
+    "Name": "Unused Crossbow",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5022",
+    "Name": "Single Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5023",
+    "Name": "Stowed Single Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5024",
+    "Name": "Marking",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5030",
+    "Name": "Duchess' Dagger",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5031",
+    "Name": "Restage",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5032",
+    "Name": "Finale",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5040",
+    "Name": "Raider's Greataxe",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5041",
+    "Name": "Totem Stela",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5050",
+    "Name": "Immortal March / Cursed Claw Helper (Right)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5051",
+    "Name": "Summon Spirit",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5052",
+    "Name": "Revenant's Cursed Claws",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5053",
+    "Name": "Cursed Claw Helper (Left)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5060",
+    "Name": "Recluse's Staff",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5061",
+    "Name": "Magic Cocktail",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5062",
+    "Name": "Soulblood Song",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5070",
+    "Name": "Executor's Blade",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5071",
+    "Name": "Cursed Sword / Suncatcher",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5080",
+    "Name": "Scholar's Thrusting Sword",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5081",
+    "Name": "Analyze",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5082",
+    "Name": "Communion",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5090",
+    "Name": "Undertaker's Hammer ",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5091",
+    "Name": "Trance",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5092",
+    "Name": "Loathsome Hex",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5180",
+    "Name": "Scholar's Thrusting Sword (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5191",
+    "Name": "Trance (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5271",
+    "Name": "Cursed Sword (Dark)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5280",
+    "Name": "Scholar's Thrusting Sword (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5291",
+    "Name": "Trance (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5324",
+    "Name": "Marking (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5580",
+    "Name": "Scholar's Thrusting Sword (Pardoner)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5591",
+    "Name": "Trance (Brass)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5691",
+    "Name": "Trance (Lord's Blade)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_6000",
+    "Name": "Spectral Hawk",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_6012",
+    "Name": "Wings of Salvation",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8900",
+    "Name": "Suncatcher",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8901",
+    "Name": "The Nighlord's Body",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8902",
+    "Name": "The Nighlord's Head",
+    "Tags": []
+  }
+]

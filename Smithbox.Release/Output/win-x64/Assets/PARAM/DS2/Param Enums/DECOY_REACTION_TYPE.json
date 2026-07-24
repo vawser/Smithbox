@@ -1,0 +1,38 @@
+{
+  "Key": "DECOY_REACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECOY_REACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only during attack"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
+    }
+  ]
+}

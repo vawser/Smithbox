@@ -1,0 +1,1583 @@
+{
+  "Name": "generatorlocation_m50_37_00_00",
+  "Entries": [
+    {
+      "ID": 340,
+      "Entries": [
+        "[GEN:340] Alsanna, Silent Oracle"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "[GEN:342] Voice Marker (Alsanna)"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "[GEN:343] Voice Marker (Alsanna)"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "[GEN:344] Voice Marker (Alsanna)"
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        "[GEN:760] Castaway Witch Donna"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "[GEN:761] Hexer Nicholai"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "[GEN:762] Holy Knight Aurheim"
+      ]
+    },
+    {
+      "ID": 770,
+      "Entries": [
+        "[GEN:770] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "[GEN:771] Twiggy Shei"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "[GEN:772] Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 773,
+      "Entries": [
+        "[GEN:773] Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 774,
+      "Entries": [
+        "[GEN:774] Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 775,
+      "Entries": [
+        "[GEN:775] Abbess Feeva"
+      ]
+    },
+    {
+      "ID": 776,
+      "Entries": [
+        "[GEN:776] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 777,
+      "Entries": [
+        "[GEN:777] Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 785,
+      "Entries": [
+        "[GEN:785] NO MATCH"
+      ]
+    },
+    {
+      "ID": 786,
+      "Entries": [
+        "[GEN:786] NO MATCH"
+      ]
+    },
+    {
+      "ID": 787,
+      "Entries": [
+        "[GEN:787] NO MATCH"
+      ]
+    },
+    {
+      "ID": 788,
+      "Entries": [
+        "[GEN:788] NO MATCH"
+      ]
+    },
+    {
+      "ID": 790,
+      "Entries": [
+        "[GEN:790] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 791,
+      "Entries": [
+        "[GEN:791] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 792,
+      "Entries": [
+        "[GEN:792] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 794,
+      "Entries": [
+        "[GEN:794] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 795,
+      "Entries": [
+        "[GEN:795] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 796,
+      "Entries": [
+        "[GEN:796] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 797,
+      "Entries": [
+        "[GEN:797] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "[GEN:907] Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "[GEN:908] Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "[GEN:909] Lud, the King's Pet"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[GEN:910] Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "[GEN:980] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Spellsword"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[GEN:1001] Spellsword"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[GEN:1002] Spellsword"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[GEN:1003] Spellsword"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Spellsword"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Retainer"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[GEN:1200] Spellsword"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "[GEN:1201] Spellsword"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[GEN:1210] Stray Dog"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[GEN:1211] Stray Dog"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "[GEN:1212] Stray Dog"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] Retainer"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Retainer"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "[GEN:1402] Retainer"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] Spellsword"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "[GEN:1411] Spellsword"
+      ]
+    },
+    {
+      "ID": 1412,
+      "Entries": [
+        "[GEN:1412] Spellsword"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[GEN:1420] Spellsword"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[GEN:1501] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "[GEN:1502] Retainer"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[GEN:1510] Spellsword"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "[GEN:1511] Spellsword"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "[GEN:1520] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1521,
+      "Entries": [
+        "[GEN:1521] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Spellsword"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[GEN:1601] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "[GEN:1610] Spellsword"
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        "[GEN:1611] Spellsword"
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        "[GEN:1613] Spellsword"
+      ]
+    },
+    {
+      "ID": 1614,
+      "Entries": [
+        "[GEN:1614] Spellsword"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "[GEN:1615] Spellsword"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "[GEN:1620] Retainer"
+      ]
+    },
+    {
+      "ID": 1621,
+      "Entries": [
+        "[GEN:1621] Retainer"
+      ]
+    },
+    {
+      "ID": 1630,
+      "Entries": [
+        "[GEN:1630] Ice Golem"
+      ]
+    },
+    {
+      "ID": 1640,
+      "Entries": [
+        "[GEN:1640] Stray Dog"
+      ]
+    },
+    {
+      "ID": 1641,
+      "Entries": [
+        "[GEN:1641] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "[GEN:1710] Retainer"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[GEN:1800] Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[GEN:1801] Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[GEN:1810] Retainer"
+      ]
+    },
+    {
+      "ID": 1811,
+      "Entries": [
+        "[GEN:1811] Retainer"
+      ]
+    },
+    {
+      "ID": 1812,
+      "Entries": [
+        "[GEN:1812] Retainer"
+      ]
+    },
+    {
+      "ID": 1813,
+      "Entries": [
+        "[GEN:1813] Retainer"
+      ]
+    },
+    {
+      "ID": 1814,
+      "Entries": [
+        "[GEN:1814] Retainer"
+      ]
+    },
+    {
+      "ID": 1815,
+      "Entries": [
+        "[GEN:1815] Retainer"
+      ]
+    },
+    {
+      "ID": 1816,
+      "Entries": [
+        "[GEN:1816] Retainer"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[GEN:1900] Spellsword"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "[GEN:1901] Spellsword"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "[GEN:1910] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "[GEN:1911] Retainer"
+      ]
+    },
+    {
+      "ID": 1912,
+      "Entries": [
+        "[GEN:1912] Retainer"
+      ]
+    },
+    {
+      "ID": 1913,
+      "Entries": [
+        "[GEN:1913] Retainer"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "[GEN:1920] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1921,
+      "Entries": [
+        "[GEN:1921] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1922,
+      "Entries": [
+        "[GEN:1922] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1923,
+      "Entries": [
+        "[GEN:1923] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 1930,
+      "Entries": [
+        "[GEN:1930] Ice Golem"
+      ]
+    },
+    {
+      "ID": 1931,
+      "Entries": [
+        "[GEN:1931] Ice Golem"
+      ]
+    },
+    {
+      "ID": 1932,
+      "Entries": [
+        "[GEN:1932] Ice Golem"
+      ]
+    },
+    {
+      "ID": 1940,
+      "Entries": [
+        "[GEN:1940] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Ice Golem"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[GEN:2001] Ice Golem"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[GEN:2010] Spellsword"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "[GEN:2011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[GEN:2020] Retainer"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "[GEN:2021] Retainer"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "[GEN:2022] Retainer"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "[GEN:2023] Retainer"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[GEN:2030] Ice Golem"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[GEN:2031] Ice Golem"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "[GEN:2210] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "[GEN:2211] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2212,
+      "Entries": [
+        "[GEN:2212] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2213,
+      "Entries": [
+        "[GEN:2213] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2214,
+      "Entries": [
+        "[GEN:2214] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Mimic"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[GEN:2310] Spellsword"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[GEN:2410] Retainer"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[GEN:2601] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "[GEN:2602] Spellsword"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[GEN:2610] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "[GEN:2620] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 2621,
+      "Entries": [
+        "[GEN:2621] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "[GEN:2630] Retainer"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[GEN:2700] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[GEN:2800] Spellsword"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "[GEN:2801] Spellsword"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[GEN:2810] Stray Dog"
+      ]
+    },
+    {
+      "ID": 2811,
+      "Entries": [
+        "[GEN:2811] Stray Dog"
+      ]
+    },
+    {
+      "ID": 2812,
+      "Entries": [
+        "[GEN:2812] Stray Dog"
+      ]
+    },
+    {
+      "ID": 2813,
+      "Entries": [
+        "[GEN:2813] Stray Dog"
+      ]
+    },
+    {
+      "ID": 2814,
+      "Entries": [
+        "[GEN:2814] Stray Dog"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[GEN:2900] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[GEN:2910] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Retainer"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "[GEN:3011] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Mimic"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Spellsword"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[GEN:3101] Spellsword"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "[GEN:3102] Spellsword"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Retainer"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[GEN:3111] Retainer"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Retainer"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[GEN:3300] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[GEN:3400] Spellsword"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[GEN:3600] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[GEN:3700] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "[GEN:3701] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "[GEN:3702] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[GEN:3710] Spellsword"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[GEN:3810] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 3811,
+      "Entries": [
+        "[GEN:3811] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 3812,
+      "Entries": [
+        "[GEN:3812] Spellsword"
+      ]
+    },
+    {
+      "ID": 3813,
+      "Entries": [
+        "[GEN:3813] Spellsword"
+      ]
+    },
+    {
+      "ID": 3850,
+      "Entries": [
+        "[GEN:3850] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "[GEN:3900] Retainer"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "[GEN:3901] Spellsword"
+      ]
+    },
+    {
+      "ID": 3902,
+      "Entries": [
+        "[GEN:3902] Spellsword"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "[GEN:3910] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3911,
+      "Entries": [
+        "[GEN:3911] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 3912,
+      "Entries": [
+        "[GEN:3912] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "[GEN:4101] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "[GEN:4102] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[GEN:4110] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "[GEN:4111] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4112,
+      "Entries": [
+        "[GEN:4112] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4113,
+      "Entries": [
+        "[GEN:4113] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4114,
+      "Entries": [
+        "[GEN:4114] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4115,
+      "Entries": [
+        "[GEN:4115] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4116,
+      "Entries": [
+        "[GEN:4116] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4117,
+      "Entries": [
+        "[GEN:4117] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4118,
+      "Entries": [
+        "[GEN:4118] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4119,
+      "Entries": [
+        "[GEN:4119] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[GEN:4120] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        "[GEN:4121] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[GEN:5100] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "[GEN:5101] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "[GEN:5102] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[GEN:5200] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[GEN:5201] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[GEN:5202] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "[GEN:5203] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "[GEN:5210] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "[GEN:5211] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "[GEN:5212] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "[GEN:5301] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        "[GEN:5302] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "[GEN:5320] Teeth-chattering Dan"
+      ]
+    },
+    {
+      "ID": 5330,
+      "Entries": [
+        "[GEN:5330] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "[GEN:5500] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "[GEN:5501] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 5502,
+      "Entries": [
+        "[GEN:5502] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5503,
+      "Entries": [
+        "[GEN:5503] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 5504,
+      "Entries": [
+        "[GEN:5504] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "[GEN:5510] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5511,
+      "Entries": [
+        "[GEN:5511] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5512,
+      "Entries": [
+        "[GEN:5512] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5513,
+      "Entries": [
+        "[GEN:5513] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5514,
+      "Entries": [
+        "[GEN:5514] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "[GEN:5700] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5701,
+      "Entries": [
+        "[GEN:5701] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5702,
+      "Entries": [
+        "[GEN:5702] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5703,
+      "Entries": [
+        "[GEN:5703] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5710,
+      "Entries": [
+        "[GEN:5710] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 5711,
+      "Entries": [
+        "[GEN:5711] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5720,
+      "Entries": [
+        "[GEN:5720] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5721,
+      "Entries": [
+        "[GEN:5721] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5730,
+      "Entries": [
+        "[GEN:5730] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5731,
+      "Entries": [
+        "[GEN:5731] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5732,
+      "Entries": [
+        "[GEN:5732] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5750,
+      "Entries": [
+        "[GEN:5750] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "[GEN:5800] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "[GEN:5801] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5802,
+      "Entries": [
+        "[GEN:5802] Ice Golem"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "[GEN:5900] Covetous Demon (snow)"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "[GEN:5910] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5911,
+      "Entries": [
+        "[GEN:5911] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5912,
+      "Entries": [
+        "[GEN:5912] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 5913,
+      "Entries": [
+        "[GEN:5913] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Spellsword"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[GEN:6001] Spellsword"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[GEN:6002] Spellsword"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[GEN:6003] Spellsword"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[GEN:6004] Spellsword"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Spellsword"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[GEN:6100] Spellsword"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[GEN:6110] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "[GEN:6111] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[GEN:6200] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "[GEN:6201] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "[GEN:6202] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "[GEN:6203] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "[GEN:6204] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "[GEN:6205] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "[GEN:6206] Stray Dog"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[GEN:6300] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "[GEN:6301] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "[GEN:6400] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[GEN:7004] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[GEN:7005] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "[GEN:7008] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "[GEN:7009] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[GEN:7010] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "[GEN:7012] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[GEN:7020] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "[GEN:7101] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "[GEN:7102] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7103,
+      "Entries": [
+        "[GEN:7103] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7104,
+      "Entries": [
+        "[GEN:7104] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7105,
+      "Entries": [
+        "[GEN:7105] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7107,
+      "Entries": [
+        "[GEN:7107] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7108,
+      "Entries": [
+        "[GEN:7108] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "[GEN:7200] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "[GEN:7201] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "[GEN:7202] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 7505,
+      "Entries": [
+        "[GEN:7505] Exile Brave"
+      ]
+    },
+    {
+      "ID": 7506,
+      "Entries": [
+        "[GEN:7506] Exile Brave"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "[GEN:7600] Exile Brave"
+      ]
+    },
+    {
+      "ID": 7602,
+      "Entries": [
+        "[GEN:7602] Exile Brave"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "[GEN:7603] Exile Brave"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "SLIDE_FLOOR_PARAM",
+  "Type": "SLIDE_FLOOR_PARAM",
+  "Name": "SLIDE_FLOOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "maxSpeed",
+      "Name": "最大速度[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "startSpeed",
+      "Name": "初速度[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "accel",
+      "Name": "加速度[m/s^2]",
+      "Description": ""
+    },
+    {
+      "Field": "decel",
+      "Name": "減速度[m/s^2]",
+      "Description": ""
+    },
+    {
+      "Field": "slideSpeed",
+      "Name": "すべる判定速度[m/s]",
+      "Description": ""
+    }
+  ]
+}

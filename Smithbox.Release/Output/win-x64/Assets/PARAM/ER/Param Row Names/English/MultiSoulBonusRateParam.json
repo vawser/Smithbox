@@ -1,0 +1,101 @@
+{
+  "Name": "MultiSoulBonusRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "White Sign Summon"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Sun Spirit White Sign Summon"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Berserker White Sign Summon"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Red Sign Summon"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Sun Spirit Red Sign Summon"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Berserker Red Sign Summon"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Invasion"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Sun Spirit Invasion"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Berserker Invasion"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Hunter"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Hunter 2"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Forest Map Guardian"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Anor Map Guardian"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Arena"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Sinner Hunter"
+      ]
+    }
+  ]
+}

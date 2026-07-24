@@ -1,0 +1,163 @@
+{
+  "Param": "GEM_DROP_MODIFY_PARAM_ST",
+  "Type": "GEM_DROP_MODIFY_PARAM_ST",
+  "Name": "GEM_DROP_MODIFY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "slotTypeRateA",
+      "Name": "スロットタイプＡ出現率",
+      "Description": "スロットタイプＡ出現率"
+    },
+    {
+      "Field": "slotTypeRateB",
+      "Name": "スロットタイプＢ出現率",
+      "Description": "スロットタイプＢ出現率"
+    },
+    {
+      "Field": "slotTypeRateC",
+      "Name": "スロットタイプＣ出現率",
+      "Description": "スロットタイプＣ出現率"
+    },
+    {
+      "Field": "slotTypeRateD",
+      "Name": "スロットタイプＤ出現率",
+      "Description": "スロットタイプＤ出現率"
+    },
+    {
+      "Field": "slotTypeRateE",
+      "Name": "スロットタイプＥ出現率",
+      "Description": "スロットタイプＥ出現率"
+    },
+    {
+      "Field": "slotTypeRateF",
+      "Name": "スロットタイプＦ出現率",
+      "Description": "スロットタイプＦ出現率"
+    },
+    {
+      "Field": "directionalIdRate_0",
+      "Name": "０：方向性出現率",
+      "Description": "０：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_1",
+      "Name": "１：方向性出現率",
+      "Description": "１：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_2",
+      "Name": "２：方向性出現率",
+      "Description": "２：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_3",
+      "Name": "３：方向性出現率",
+      "Description": "３：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_4",
+      "Name": "４：方向性出現率",
+      "Description": "４：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_5",
+      "Name": "５：方向性出現率",
+      "Description": "５：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_6",
+      "Name": "６：方向性出現率",
+      "Description": "６：方向性出現率"
+    },
+    {
+      "Field": "directionalIdRate_7",
+      "Name": "７：方向性出現率",
+      "Description": "７：方向性出現率"
+    },
+    {
+      "Field": "affinityCateId_0",
+      "Name": "０：相性カテゴリID",
+      "Description": "０：相性カテゴリID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_0",
+      "Name": "０：相性補正倍率",
+      "Description": "０：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_1",
+      "Name": "１：相性カテゴリID",
+      "Description": "１：相性カテゴリID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_1",
+      "Name": "１：相性補正倍率",
+      "Description": "１：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_2",
+      "Name": "２：相性カテゴリID",
+      "Description": "２：相性カテゴリID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_2",
+      "Name": "２：相性補正倍率",
+      "Description": "２：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_3",
+      "Name": "３：相性カテゴリID",
+      "Description": "３：相性カテゴリID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_3",
+      "Name": "３：相性補正倍率",
+      "Description": "３：相性補正倍率"
+    },
+    {
+      "Field": "manifestRate_0",
+      "Name": "０：出現率",
+      "Description": "０：出現率"
+    },
+    {
+      "Field": "manifestRate_1",
+      "Name": "１：出現率",
+      "Description": "１：出現率"
+    },
+    {
+      "Field": "manifestRate_2",
+      "Name": "２：出現率",
+      "Description": "２：出現率"
+    },
+    {
+      "Field": "manifestRate_3",
+      "Name": "３：出現率",
+      "Description": "３：出現率"
+    },
+    {
+      "Field": "manifestRate_4",
+      "Name": "４：出現率",
+      "Description": "４：出現率"
+    },
+    {
+      "Field": "manifestRate_5",
+      "Name": "５：出現率",
+      "Description": "５：出現率"
+    },
+    {
+      "Field": "negativizeRate_0",
+      "Name": "０：マイナス効果化率",
+      "Description": "０：マイナス効果化率"
+    },
+    {
+      "Field": "normalDistributionAve",
+      "Name": "正規分布平均値",
+      "Description": "正規分布平均値"
+    },
+    {
+      "Field": "normalDistributionSigma",
+      "Name": "正規分布標準偏差",
+      "Description": "正規分布標準偏差"
+    }
+  ]
+}

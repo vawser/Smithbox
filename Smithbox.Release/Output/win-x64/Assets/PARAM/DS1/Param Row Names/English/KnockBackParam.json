@@ -1,0 +1,23 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Generic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Player"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Generic (old)"
+      ]
+    }
+  ]
+}

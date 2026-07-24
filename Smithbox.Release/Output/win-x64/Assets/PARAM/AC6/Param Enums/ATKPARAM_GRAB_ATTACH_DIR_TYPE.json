@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_GRAB_ATTACH_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_GRAB_ATTACH_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always match the dummy poly"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Correct before and after"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Correct forward/backward/left/right"
+        }
+      ]
+    }
+  ]
+}

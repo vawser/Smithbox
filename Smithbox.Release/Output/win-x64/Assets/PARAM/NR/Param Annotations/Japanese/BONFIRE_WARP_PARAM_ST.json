@@ -1,0 +1,398 @@
+{
+  "Param": "BONFIRE_WARP_PARAM_ST",
+  "Type": "BONFIRE_WARP_PARAM_ST",
+  "Name": "BONFIRE_WARP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "eventflagId",
+      "Name": "イベントフラグID",
+      "Description": "解除条件イベントフラグID"
+    },
+    {
+      "Field": "bonfireEntityId",
+      "Name": "篝火エンティティID",
+      "Description": "篝火エンティティID"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パッド",
+      "Description": "パディング。削除した旧作由来データが定義されてた場所"
+    },
+    {
+      "Field": "bonfireSubCategorySortId",
+      "Name": "ソートID",
+      "Description": "篝火ワープサブカテゴリソートID。同じサブカテゴリ内の並び順（昇順）を指定する"
+    },
+    {
+      "Field": "forbiddenIconId",
+      "Name": "ワープ禁止アイコンID",
+      "Description": "ワープ禁止時のアイコンID"
+    },
+    {
+      "Field": "dispMinZoomStep",
+      "Name": "表示ズームステップ",
+      "Description": "篝火を表示するズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《表示ズームステップ》≦ 現在のズームステップ 」のときに表示される。デフォルトは 0（常に表示）"
+    },
+    {
+      "Field": "selectMinZoomStep",
+      "Name": "選択可能ズームステップ",
+      "Description": "篝火を選択及びスナップ可能なズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《選択可能ズームステップ》≦ 現在の拡大段階 」のときに選択及びスナップ可能。デフォルトは 0（常に選択・スナップ可能）"
+    },
+    {
+      "Field": "bonfireSubCategoryId",
+      "Name": "サブカテゴリID",
+      "Description": "篝火ワープサブカテゴリパラメータID(-1:無効)。どのサブカテゴリに属するかを設定する。無効なら篝火一覧に表示されない"
+    },
+    {
+      "Field": "clearedEventFlagId",
+      "Name": "クリア済イベントフラグID",
+      "Description": "クリア済みイベントフラグID(0:常にクリア済み扱い)"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンID"
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "表示設定M00",
+      "Description": "M00で表示するか"
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "表示設定M01",
+      "Description": "M01で表示するか"
+    },
+    {
+      "Field": "pad1_old",
+      "Name": "pad1_old",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": "pad2"
+    },
+    {
+      "Field": "areaNo",
+      "Name": "エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": "pad3"
+    },
+    {
+      "Field": "posX",
+      "Name": "X座標",
+      "Description": "X座標"
+    },
+    {
+      "Field": "posY",
+      "Name": "Y座標",
+      "Description": "Y座標（使っていない）"
+    },
+    {
+      "Field": "posZ",
+      "Name": "Z座標",
+      "Description": "Z座標"
+    },
+    {
+      "Field": "textId1",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-1)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId1",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(0)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId1",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(0)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId2",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-2)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId2",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(1)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId2",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(1)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId3",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-3)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId3",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(2)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId3",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(2)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId4",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-4)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId4",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(3)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId4",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(3)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId5",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-5)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId5",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(4)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId5",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(4)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId6",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-6)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId6",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(5)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId6",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(5)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId7",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-7)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId7",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(6)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId7",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(6)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId8",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-8)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId8",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(7)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId8",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(7)なら、Off扱いされる"
+    },
+    {
+      "Field": "textType1",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType2",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType3",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType4",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType5",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType6",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType7",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType8",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "noIgnitionSfxDmypolyId_0",
+      "Name": "点火前SFXダミポリID0",
+      "Description": "篝火点火前にSFXを出すダミポリID"
+    },
+    {
+      "Field": "noIgnitionSfxId_0",
+      "Name": "点火前SFXID0",
+      "Description": "篝火点火前に出すSFXID。点火したら消える。-1の場合はSFXを出さない。"
+    },
+    {
+      "Field": "noIgnitionSfxDmypolyId_1",
+      "Name": "点火前SFXダミポリID1",
+      "Description": "篝火点火前にSFXを出すダミポリID"
+    },
+    {
+      "Field": "noIgnitionSfxId_1",
+      "Name": "点火前SFXID1",
+      "Description": "篝火点火前に出すSFXID。点火したら消える。-1の場合はSFXを出さない。"
+    },
+    {
+      "Field": "textEnableFlag2Id1",
+      "Name": "textEnableFlag2Id1",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id2",
+      "Name": "textEnableFlag2Id2",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id3",
+      "Name": "textEnableFlag2Id3",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id4",
+      "Name": "textEnableFlag2Id4",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id5",
+      "Name": "textEnableFlag2Id5",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id6",
+      "Name": "textEnableFlag2Id6",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id7",
+      "Name": "textEnableFlag2Id7",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id8",
+      "Name": "textEnableFlag2Id8",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id1",
+      "Name": "textDisableFlag2Id1",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id2",
+      "Name": "textDisableFlag2Id2",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id3",
+      "Name": "textDisableFlag2Id3",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id4",
+      "Name": "textDisableFlag2Id4",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id5",
+      "Name": "textDisableFlag2Id5",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id6",
+      "Name": "textDisableFlag2Id6",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id7",
+      "Name": "textDisableFlag2Id7",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id8",
+      "Name": "textDisableFlag2Id8",
+      "Description": ""
+    },
+    {
+      "Field": "altIconId",
+      "Name": "altIconId",
+      "Description": ""
+    },
+    {
+      "Field": "altForbiddenIconId",
+      "Name": "altForbiddenIconId",
+      "Description": ""
+    }
+  ]
+}

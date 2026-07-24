@@ -1,0 +1,83 @@
+{
+  "Param": "AI_SOUND_PARAM_ST",
+  "Type": "AI_SOUND_PARAM_ST",
+  "Name": "AI_SOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "音半径[m]",
+      "Description": "AI音の半径"
+    },
+    {
+      "Field": "lifeFrame",
+      "Name": "消滅時間[秒]",
+      "Description": "AI音が残る時間"
+    },
+    {
+      "Field": "bSpEffectEnable",
+      "Name": "特殊効果からの影響を受けるか",
+      "Description": "特殊効果の”音半径倍率”の影響を受けるかどうか"
+    },
+    {
+      "Field": "type",
+      "Name": "種別",
+      "Description": "AI音の種別"
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "対象：●敵対",
+      "Description": "対象：●敵対"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "対象：○味方",
+      "Description": "対象：○味方"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "対象：自分",
+      "Description": "対象：自分"
+    },
+    {
+      "Field": "disableOnTargetPCompany",
+      "Name": "PC自軍をターゲット中は聞けない",
+      "Description": "PC自軍をターゲット中は聞けない"
+    },
+    {
+      "Field": "rank",
+      "Name": "キャラの振る舞い",
+      "Description": "キャラの振る舞い(旧：音タイプ"
+    },
+    {
+      "Field": "forgetTime",
+      "Name": "音ターゲット忘れる時間（上書き）[sec]",
+      "Description": "音ターゲット忘れる時間（上書き）[sec]"
+    },
+    {
+      "Field": "priority",
+      "Name": "AI音優先度",
+      "Description": "AI音優先度"
+    },
+    {
+      "Field": "soundBehaviorId",
+      "Name": "振る舞いID",
+      "Description": "振る舞いID"
+    },
+    {
+      "Field": "aiSoundLevel",
+      "Name": "AI音レベル",
+      "Description": "どれくらい聞き取りづらい音なのか"
+    },
+    {
+      "Field": "replaningState",
+      "Name": "リプランニングするAI状態",
+      "Description": "AI音を聞いた際にリプランニングを走らせるAI状態の設定"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

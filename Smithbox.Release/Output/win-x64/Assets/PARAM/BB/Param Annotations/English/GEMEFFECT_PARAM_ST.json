@@ -1,0 +1,63 @@
+{
+  "Param": "GEMEFFECT_PARAM_ST",
+  "Type": "GEMEFFECT_PARAM_ST",
+  "Name": "GEMEFFECT_PARAM_ST",
+  "Description": "Blood Gem - Effect",
+  "Fields": [
+    {
+      "Field": "speffectId",
+      "Name": "SpEffect ID",
+      "Description": ""
+    },
+    {
+      "Field": "categoryId",
+      "Name": "Category ID",
+      "Description": ""
+    },
+    {
+      "Field": "effectRank",
+      "Name": "Effect Rank",
+      "Description": ""
+    },
+    {
+      "Field": "rankMin",
+      "Name": "Appearance Rank: Lower Limit",
+      "Description": ""
+    },
+    {
+      "Field": "rankMax",
+      "Name": "Appearance Rank: Upper Limit",
+      "Description": ""
+    },
+    {
+      "Field": "disposalPrice",
+      "Name": "Sell Price",
+      "Description": ""
+    },
+    {
+      "Field": "gemIconIdOffset",
+      "Name": "Gem Icon ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": ""
+    },
+    {
+      "Field": "sortCategory",
+      "Name": "Sort Category",
+      "Description": ""
+    },
+    {
+      "Field": "gemNameIdOffset",
+      "Name": "Gem Name ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "speffectId_forAtk",
+      "Name": "SpEffect ID for Attack",
+      "Description": ""
+    }
+  ]
+}

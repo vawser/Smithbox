@@ -1,0 +1,47 @@
+{
+  "Key": "BULLET_RICOCHET_HIT_SFX_SIZE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_RICOCHET_HIT_SFX_SIZE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "DECAL_ROTATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_ROTATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Rotation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random Rotation + Maintain Upward Direction"
+        }
+      ]
+    }
+  ]
+}

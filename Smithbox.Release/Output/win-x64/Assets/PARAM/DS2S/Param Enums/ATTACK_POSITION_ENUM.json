@@ -1,0 +1,38 @@
+{
+  "Key": "ATTACK_POSITION_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATTACK_POSITION_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top Row"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle Row"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom Row"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "Name": "AttachObj",
+  "Params": [
+    "AttachObj_Npc",
+    "AttachObj_Pc"
+  ]
+}

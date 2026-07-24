@@ -1,0 +1,1373 @@
+{
+  "Name": "DeadTypeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Test -- テストデータ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Function Test 1 -- 関数テスト１"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Function Test 2 -- 関数テスト２"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Npc -- ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Fall escape -- 落下逃走"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Enemy: Tiny -- エネミー：極小"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Enemy: Small -- エネミー：小"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Enemy: Medium -- エネミー：中"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Enemy: Big -- エネミー：大"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Enemy: Oversized -- エネミー：特大"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Enemy: Extra Large -- エネミー：特特大"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Enemy: Special Oversized -- エネミー：特特特大"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Enemy: Boss -- エネミー：ボス"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Enemy: Infinite Generation -- エネミー：無限生成"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Enemy: Annihilation Type -- エネミー：消滅タイプ"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Enemy: Small size annihilation type -- エネミー：小サイズ消滅タイプ"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Enemy: Medium Boss Treatment Annihilation Type -- エネミー：中ボス扱い消滅タイプ"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Enemy: Soul Black -- エネミー：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Enemy: Soul Black: Non-Human -- エネミー：ソウルブラック：人型以外"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Enemy: Suicide -- エネミー：自爆"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Player: Usually killed -- プレイヤー：通常死亡"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "White Phantom: Usually Dead -- 白ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Blue Phantom: Normal death -- 青ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Gold Phantom: Normal Death -- 金ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Red Phantom: Normal Death -- 赤ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100035,
+      "Entries": [
+        "Black Phantom: Usually Dead -- 黒ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        "Dragon Spirit Phantom: Normal death -- 竜霊ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100045,
+      "Entries": [
+        "Abyss Phantom: Normal Death -- 深淵ファントム：通常死亡"
+      ]
+    },
+    {
+      "ID": 100110,
+      "Entries": [
+        "Player: Overkill -- プレイヤー：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100115,
+      "Entries": [
+        "White Phantom: Overkill -- 白ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100120,
+      "Entries": [
+        "Blue Phantom: Overkill -- 青ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100125,
+      "Entries": [
+        "Gold Phantom: Overkill -- 金ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100130,
+      "Entries": [
+        "Red Phantom: Overkill -- 赤ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100135,
+      "Entries": [
+        "Black Phantom: Overkill -- 黒ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100140,
+      "Entries": [
+        "Dragon Spirit Phantom: Overkill -- 竜霊ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100145,
+      "Entries": [
+        "Abyss Phantom: Overkill -- 深淵ファントム：オーバーキル"
+      ]
+    },
+    {
+      "ID": 100210,
+      "Entries": [
+        "Player: Breath Dead -- プレイヤー：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100215,
+      "Entries": [
+        "White Phantom: Breath Dead -- 白ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100220,
+      "Entries": [
+        "Blue Phantom: Breath Dead -- 青ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100225,
+      "Entries": [
+        "Gold Phantom: Breath Dead -- 金ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100230,
+      "Entries": [
+        "Red Phantom: Breath Dead -- 赤ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100235,
+      "Entries": [
+        "Black Phantom: Breath Dead -- 黒ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100240,
+      "Entries": [
+        "Dragon Spirit Phantom: Breath Death -- 竜霊ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100245,
+      "Entries": [
+        "Abyss Phantom: Breath Death -- 深淵ファントム：ブレス死亡"
+      ]
+    },
+    {
+      "ID": 100310,
+      "Entries": [
+        "Player: Turn Undead Death -- プレイヤー：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100315,
+      "Entries": [
+        "White Phantom: Turn Undead Death -- 白ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100320,
+      "Entries": [
+        "Blue Phantom: Turn Undead Death -- 青ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100325,
+      "Entries": [
+        "Gold Phantom: Turn Undead Death -- 金ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100330,
+      "Entries": [
+        "Red Phantom: Turn Undead Death -- 赤ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100335,
+      "Entries": [
+        "Black Phantom: Turn Undead Death -- 黒ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100340,
+      "Entries": [
+        "Dragon Spirit Phantom: Turn Undead Death -- 竜霊ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100345,
+      "Entries": [
+        "Abyss Phantom: Turn Undead Death -- 深淵ファントム：ターンアンデッド死亡"
+      ]
+    },
+    {
+      "ID": 100410,
+      "Entries": [
+        "Player: Poison death -- プレイヤー：毒死亡"
+      ]
+    },
+    {
+      "ID": 100415,
+      "Entries": [
+        "White Phantom: Poison Death -- 白ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100420,
+      "Entries": [
+        "Blue Phantom: Poison Death -- 青ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100425,
+      "Entries": [
+        "Gold Phantom: Poison Death -- 金ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100430,
+      "Entries": [
+        "Red Phantom: Poison Death -- 赤ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100435,
+      "Entries": [
+        "Black Phantom: Poison Death -- 黒ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100440,
+      "Entries": [
+        "Dragon Spirit Phantom: Poison Death -- 竜霊ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100445,
+      "Entries": [
+        "Abyss Phantom: Poison Death -- 深淵ファントム：毒死亡"
+      ]
+    },
+    {
+      "ID": 100510,
+      "Entries": [
+        "Player: Landing death -- プレイヤー：着地死亡"
+      ]
+    },
+    {
+      "ID": 100515,
+      "Entries": [
+        "White Phantom: Landing Death -- 白ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100520,
+      "Entries": [
+        "Blue Phantom: Landing Death -- 青ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100525,
+      "Entries": [
+        "Gold Phantom: Landing Death -- 金ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100530,
+      "Entries": [
+        "Red Phantom: Landing Death -- 赤ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100535,
+      "Entries": [
+        "Black Phantom: Landing Death -- 黒ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100540,
+      "Entries": [
+        "Dragon Spirit Phantom: Landing Death -- 竜霊ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100545,
+      "Entries": [
+        "Abyss Phantom: Landing Death -- 深淵ファントム：着地死亡"
+      ]
+    },
+    {
+      "ID": 100610,
+      "Entries": [
+        "Player: Headshot killed -- プレイヤー：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100615,
+      "Entries": [
+        "White Phantom: Headshot Dead -- 白ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100620,
+      "Entries": [
+        "Blue Phantom: Headshot Dead -- 青ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100625,
+      "Entries": [
+        "Gold Phantom: Headshot Dead -- 金ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100630,
+      "Entries": [
+        "Red Phantom: Headshot Dead -- 赤ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100635,
+      "Entries": [
+        "Black Phantom: Headshot Dead -- 黒ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100640,
+      "Entries": [
+        "Dragon Spirit Phantom: Headshot Killed -- 竜霊ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100645,
+      "Entries": [
+        "Abyss Phantom: Headshot Dead -- 深淵ファントム：ヘッドショット死亡"
+      ]
+    },
+    {
+      "ID": 100710,
+      "Entries": [
+        "Player: Ladder Death -- プレイヤー：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100715,
+      "Entries": [
+        "White Phantom: Ladder Death -- 白ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100720,
+      "Entries": [
+        "Blue Phantom: Ladder Death -- 青ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100725,
+      "Entries": [
+        "Gold Phantom: Ladder Death -- 金ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100730,
+      "Entries": [
+        "Red Phantom: Ladder Death -- 赤ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100735,
+      "Entries": [
+        "Black Phantom: Ladder Death -- 黒ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100740,
+      "Entries": [
+        "Dragon Spirit Phantom: Ladder Death -- 竜霊ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100745,
+      "Entries": [
+        "Abyss Phantom: Ladder Death -- 深淵ファントム：はしご死亡"
+      ]
+    },
+    {
+      "ID": 100810,
+      "Entries": [
+        "Player: Died in fall -- プレイヤー：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100815,
+      "Entries": [
+        "White Phantom: Died during the Fall -- 白ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100820,
+      "Entries": [
+        "Blue Phantom: Died during the Fall -- 青ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100825,
+      "Entries": [
+        "Gold Phantom: Died in Fall -- 金ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100830,
+      "Entries": [
+        "Red Phantom: Died during the Fall -- 赤ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100835,
+      "Entries": [
+        "Black Phantom: Died during the Fall -- 黒ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100840,
+      "Entries": [
+        "Dragon Spirit Phantom: Died in Fall -- 竜霊ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100845,
+      "Entries": [
+        "Abyss Phantom: Died in Fall -- 深淵ファントム：落下中死亡"
+      ]
+    },
+    {
+      "ID": 100910,
+      "Entries": [
+        "Player: Died while down -- プレイヤー：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100915,
+      "Entries": [
+        "White Phantom: Death in The Down -- 白ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100920,
+      "Entries": [
+        "Blue Phantom: Death in The Down -- 青ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100925,
+      "Entries": [
+        "Gold Phantom: Dead In The Down -- 金ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100930,
+      "Entries": [
+        "Red Phantom: Death in The Down -- 赤ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100935,
+      "Entries": [
+        "Black Phantom: Dead In The Down -- 黒ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100940,
+      "Entries": [
+        "Dragon Spirit Phantom: Death In The Down -- 竜霊ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 100945,
+      "Entries": [
+        "Abyss Phantom: Death in The Down -- 深淵ファントム：ダウン中死亡"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Player: Curse death -- プレイヤー：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101015,
+      "Entries": [
+        "White Phantom: Curse Death -- 白ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "Blue Phantom: Curse Death -- 青ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101025,
+      "Entries": [
+        "Gold Phantom: Curse Death -- 金ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101030,
+      "Entries": [
+        "Red Phantom: Curse Death -- 赤ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101035,
+      "Entries": [
+        "Black Phantom: Curse Death -- 黒ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101040,
+      "Entries": [
+        "Dragon Spirit Phantom: Curse Death -- 竜霊ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101045,
+      "Entries": [
+        "Abyss Phantom: Curse Death -- 深淵ファントム：呪い死亡"
+      ]
+    },
+    {
+      "ID": 101110,
+      "Entries": [
+        "Player: Ragdoll Death -- プレイヤー：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101115,
+      "Entries": [
+        "White Phantom: Ragdoll Death -- 白ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "Blue Phantom: Ragdoll Death -- 青ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101125,
+      "Entries": [
+        "Gold Phantom: Ragdoll Death -- 金ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101130,
+      "Entries": [
+        "Red Phantom: Ragdoll Death -- 赤ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101135,
+      "Entries": [
+        "Black Phantom: Ragdoll Death -- 黒ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101140,
+      "Entries": [
+        "Dragon Spirit Phantom: Ragdoll Death -- 竜霊ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101145,
+      "Entries": [
+        "Abyss Phantom: Ragdoll Death -- 深淵ファントム：ラグドール死亡"
+      ]
+    },
+    {
+      "ID": 101210,
+      "Entries": [
+        "Player: Throwing death -- プレイヤー：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101215,
+      "Entries": [
+        "White Phantom: Throwing Death -- 白ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101220,
+      "Entries": [
+        "Blue Phantom: Throwing Death -- 青ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101225,
+      "Entries": [
+        "Gold Phantom: Throwing Death -- 金ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101230,
+      "Entries": [
+        "Red Phantom: Throwing Death -- 赤ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101235,
+      "Entries": [
+        "Black Phantom: Throwing Death -- 黒ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101240,
+      "Entries": [
+        "Dragon Spirit Phantom: Throwing Death -- 竜霊ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101245,
+      "Entries": [
+        "Abyss Phantom: Throwing Death -- 深淵ファントム：投げ死亡"
+      ]
+    },
+    {
+      "ID": 101310,
+      "Entries": [
+        "Player: Death area death area death -- プレイヤー：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101315,
+      "Entries": [
+        "White Phantom: Death Area Death -- 白ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101320,
+      "Entries": [
+        "Blue Phantom: Death Area Death -- 青ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101325,
+      "Entries": [
+        "Gold Phantom: Death Area Death -- 金ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101330,
+      "Entries": [
+        "Red Phantom: Death Area Death -- 赤ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101335,
+      "Entries": [
+        "Black Phantom: Death Area Death -- 黒ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101340,
+      "Entries": [
+        "Dragon Spirit Phantom: Death Area Death -- 竜霊ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101345,
+      "Entries": [
+        "Abyss Phantom: Death Area Death -- 深淵ファントム：死亡領域死亡"
+      ]
+    },
+    {
+      "ID": 101410,
+      "Entries": [
+        "Player: Dying Dying -- プレイヤー：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101415,
+      "Entries": [
+        "White Phantom: Dying -- 白ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101420,
+      "Entries": [
+        "Blue Phantom: Dying -- 青ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101425,
+      "Entries": [
+        "Gold Phantom: Dying -- 金ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101430,
+      "Entries": [
+        "Red Phantom: Dying -- 赤ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101435,
+      "Entries": [
+        "Black Phantom: Dying -- 黒ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101440,
+      "Entries": [
+        "Dragon Spirit Phantom: Dying -- 竜霊ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101445,
+      "Entries": [
+        "Abyss Phantom: Dying -- 深淵ファントム：瀕死死亡"
+      ]
+    },
+    {
+      "ID": 101510,
+      "Entries": [
+        "Player: Low-sky fall landing death -- プレイヤー：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101515,
+      "Entries": [
+        "White Phantom: Low-sky fall landing death -- 白ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101520,
+      "Entries": [
+        "Blue Phantom: Low-sky fall landing death -- 青ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101525,
+      "Entries": [
+        "Gold Phantom: Low-sky fall landing death -- 金ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101530,
+      "Entries": [
+        "Red Phantom: Low-sky fall landing death -- 赤ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101535,
+      "Entries": [
+        "Black Phantom: Low-sky fall landing death -- 黒ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101540,
+      "Entries": [
+        "Dragon Spirit Phantom: Low Sky Fall Landing Death -- 竜霊ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101545,
+      "Entries": [
+        "Abyss Phantom: Low-Sky Fall Landing Death -- 深淵ファントム：低空落下着地死亡"
+      ]
+    },
+    {
+      "ID": 101610,
+      "Entries": [
+        "Player: Headshot Killed (Whack) -- プレイヤー：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101615,
+      "Entries": [
+        "White Phantom: Headshot Killed (Whack) -- 白ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101620,
+      "Entries": [
+        "Blue Phantom: Headshot Killed (Whack) -- 青ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101625,
+      "Entries": [
+        "Gold Phantom: Headshot Killed (Whack) -- 金ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101630,
+      "Entries": [
+        "Red Phantom: Headshot Killed (Whack) -- 赤ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101635,
+      "Entries": [
+        "Black Phantom: Headshot Killed (Bang) -- 黒ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101640,
+      "Entries": [
+        "Dragon Spirit Phantom: Headshot Killed (Bang) -- 竜霊ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101645,
+      "Entries": [
+        "Abyss Phantom: Headshot Killed (Whack) -- 深淵ファントム：ヘッドショット死亡(強打)"
+      ]
+    },
+    {
+      "ID": 101710,
+      "Entries": [
+        "Player: Beating death -- プレイヤー：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101715,
+      "Entries": [
+        "White Phantom: Beating Death -- 白ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101720,
+      "Entries": [
+        "Blue Phantom: Beating Death -- 青ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101725,
+      "Entries": [
+        "Gold Phantom: Beating Death -- 金ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101730,
+      "Entries": [
+        "Red Phantom: Beating Death -- 赤ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101735,
+      "Entries": [
+        "Black Phantom: Beating Death -- 黒ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101740,
+      "Entries": [
+        "Dragon Spirit Phantom: Beating death -- 竜霊ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 101745,
+      "Entries": [
+        "Abyss Phantom: Beating Death -- 深淵ファントム：叩きつけ死亡"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Sailor -- 水兵"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "A traveler's dead person -- 旅人亡者"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Skeleton -- スケルトン"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "Deceased: Steelworker -- 亡者：製鉄所員"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Statuenight Neck Cleavage -- スタチューナイト首切断"
+      ]
+    },
+    {
+      "ID": 150010,
+      "Entries": [
+        "Statuenite annihilation death -- スタチューナイト消滅死亡"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Boss: Skeleton aristocracy -- ボス：スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Great Moss -- グレートモス"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Boss: Wyvern -- ボス：ワイバーン"
+      ]
+    },
+    {
+      "ID": 212010,
+      "Entries": [
+        "Boss: For Wyburn Field -- ボス：ワイバーン\u3000フィールド用"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Enemy: Door possessed -- エネミー：扉憑き"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "Boss: Giant rat -- ボス：巨大ネズミ"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Ogre -- オーガ"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Boss: Double-sided warrior snake head -- ボス：両面戦士ヘビ頭"
+      ]
+    },
+    {
+      "ID": 303310,
+      "Entries": [
+        "Boss: Double-sided warrior snake head for field -- ボス：両面戦士ヘビ頭\u3000フィールド用"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Boss: Damon Knight -- ボス：デーモンナイト"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "Boss: New Giant Senior Soldier (Dead) -- ボス：新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Boss: New Giant Senior Soldier (Live) -- ボス：新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Boss: Bay Grant -- ボス：ベイグラント"
+      ]
+    },
+    {
+      "ID": 318010,
+      "Entries": [
+        "Boss: For Bay Grant Field -- ボス：ベイグラント\u3000フィールド用"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Boss: Gargoil -- ボス：ガーゴイル"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Boss: Warrior in the Mirror -- ボス：鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 325010,
+      "Entries": [
+        "Boss: Warrior in the Mirror for the Field -- ボス：鏡の中の戦士 フィールド用"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Boss: Butcher -- ボス：ブッチャー"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Boss: Queen Knight A -- ボス：王妃の騎士Ａ"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Boss: Queen Knight B -- ボス：王妃の騎士Ｂ"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Boss: Queen Knight C -- ボス：王妃の騎士Ｃ"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Boss: Jabazahat -- ボス：ジャバザハット"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Boss: Naga -- ボス：ナーガ"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Boss: Manscorpion ♀ -- ボス：マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Boss: Miller Knight -- ボス：ミラーナイト"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Boss: Agaduran Stand -- ボス：アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Boss: The Old King -- ボス：年老いた王"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Boss: Old Dragon -- ボス：古の龍"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Boss: Beautiful Voice Frog -- ボス：美声カエル"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Boss: Spider Queen -- ボス：蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Boss: Molten Iron Daemon -- ボス：熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Boss: Heavy cavalry (soldiers only) -- ボス：重騎馬兵（兵士のみ）"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Boss: Silver Chariot Horse -- ボス：シルバーチャリオット馬"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Boss: Ornstein -- ボス：オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Boss: Forgotten Sinner -- ボス：忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Boss: Queen's armor form -- ボス：王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 656000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 658000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 680010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 681010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 683000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Enemy: Mirror Night Under Me -- エネミー：ミラーナイト下僕"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

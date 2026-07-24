@@ -1,0 +1,353 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Rough temple -- 荒れ寺"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Meditation room -- 瞑想部屋"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Hidden main hall -- 隠し本堂"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Pass -- 峠"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Mansion street -- 屋敷通り"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Bamboo forest slope -- 竹林坂"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Head family -- 本家"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Audience room -- 謁見の間"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Great Buddha Hall -- 大仏殿"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Rough temple -- 荒れ寺"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Castle entrance -- 城下入り口"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "In front of the yaguramon -- 櫓門前"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Before the ruins -- 廃墟前"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Koguchi -- 虎口"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "In front of the small castle tower -- 小天守前"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Battlefield ruins -- 戦場跡"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Demon Buddhist Master -- 鬼仏師"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "In front of the castle tower -- 天守前"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Inside the castle tower -- 天守内部"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "attic -- 屋根裏部屋"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Castle tower observation floor -- 天守展望階"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Meditation room -- 瞑想部屋"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "In front of the inner garden -- 内庭前"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "White Snake Shrine -- 白蛇神社"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Inside the stone wall -- 石垣内部"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Before the connection turret -- 接続櫓前"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "Before loophole -- 抜け穴前"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Prison cave -- 牢獄洞窟"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Limestone cave -- 鍾乳洞窟"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Valley crack -- 谷の亀裂"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Former Bodhisattva -- 旧菩薩谷"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Fountain cave -- 泉の洞窟"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Phantom forest -- 幻影の森"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Village border -- 村境"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Team leader&#39;s house -- 班長の家"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "In front of the stone door -- 石扉前"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Valley entrance -- 谷の入り口"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Wide valley -- 広い谷"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Deep fort -- 砦深部"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Natural cave -- 自然洞窟"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "Bodhisattva Lake -- 菩薩湖"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "Statue of Mother -- 太母像"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Kuri -- 庫裏"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Shugendo -- 修験道"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Precincts -- 境内"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Main hall -- 本堂"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Hidden main hall -- 隠し本堂"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Jaya Cave -- 蛇谷洞窟"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Bell tower -- 鐘楼堂"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "In front of the city -- 都前"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "City entrance -- 都入口"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "In front of the mansion -- 屋敷前"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "In front of the inside -- 内裏前"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Big stage -- 大舞台"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "In front of the back -- 後宮前"
+      ]
+    },
+    {
+      "ID": 2506,
+      "Entries": [
+        "Carp feeding ground -- 鯉の餌やり場"
+      ]
+    },
+    {
+      "ID": 2507,
+      "Entries": [
+        "Off the big stage -- 大舞台の外れ"
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        "Sanctuary -- 神域"
+      ]
+    }
+  ]
+}

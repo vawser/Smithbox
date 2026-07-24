@@ -1,0 +1,81 @@
+{
+  "Name": "SkillParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "virtualWeaponId",
+        "acquireWeaponId",
+        "reinforceWeaponId",
+        "unenforementWepId",
+        "unreleaseWepId",
+        "addResourceItemA"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffect1",
+        "spEffect2",
+        "spEffect3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "parent1",
+        "parent2",
+        "parent3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "unlockEventFlag"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "dispRow",
+        "dispCol",
+        "menuPageNo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "Name": "m18_FogBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "屋外"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "螺旋階段"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "ボス部屋"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0天球"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0封印の間"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0白い通路"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0拠点とのつなぎ１"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0拠点とのつなぎ２"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0拠点とのつなぎ３"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "m8300B0_王の封印_拠点"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "m8000B0_王の封印_廃都"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "m8100B0_王の封印_結晶"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "m8200B0_王の封印_ニト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B1室外"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1下水"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1教会"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1天井の抜けた通路"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "カラス降り場"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "遠景"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "天球"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "天球(天井の抜けた通路)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "天球(中庭)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "clouds"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "カラス降り場_character"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-titl"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn180041"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn180001_PClst"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn180001_MAP"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn180001_c5330"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn180001_c5330_Topview"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn180050"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn180040"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn180101_c0000"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn180101_1st"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-KarasPV"
+      ]
+    }
+  ]
+}

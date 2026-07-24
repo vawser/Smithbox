@@ -1,0 +1,389 @@
+{
+  "Name": "m18_DofBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "螺旋階段"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "m8300B0_王の封印_拠点"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "m8000B0_王の封印_廃都"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "m8100B0_王の封印_結晶"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "m8200B0_王の封印_ニト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B1室外"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1下水"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1教会"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1つなぎ"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "カラス降り場"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "遠景"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "天球"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scm180000-off"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-titl"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scm180001"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn180101_3-b"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn180101_3-a"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn180101_2-b"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn180101_2-a"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn180101_1st-b"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn180101_1st-a"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-KarasPV_non"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-KarasPV"
+      ]
+    }
+  ]
+}

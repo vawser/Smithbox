@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>WHITE_COOL_TIME_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="f32 timeLimit0">
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>180</Increment>
+    </Field>
+    <Field Def="f32 timeLimit1">
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>180</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 timeLimit2">
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>180</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 timeLimit3">
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>180</Increment>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

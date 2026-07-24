@@ -1,0 +1,38 @@
+{
+  "Key": "PARTS_TOKEN_USAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PARTS_TOKEN_USAGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtainable in any playthrough"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtainable in NG0 playthrough"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtainable in NG+ playthrough"
+        }
+      ]
+    }
+  ]
+}

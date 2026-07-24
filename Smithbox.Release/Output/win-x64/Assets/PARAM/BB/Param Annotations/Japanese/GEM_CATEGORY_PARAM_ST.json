@@ -1,0 +1,113 @@
+{
+  "Param": "GEM_CATEGORY_PARAM_ST",
+  "Type": "GEM_CATEGORY_PARAM_ST",
+  "Name": "GEM_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sortNo",
+      "Name": "ソート番号",
+      "Description": "表示ソート番号"
+    },
+    {
+      "Field": "manifestRate",
+      "Name": "カテゴリ別出現率",
+      "Description": "カテゴリ別出現率"
+    },
+    {
+      "Field": "directionalId",
+      "Name": "方向性ID",
+      "Description": "方向性ID"
+    },
+    {
+      "Field": "cateGroupId",
+      "Name": "カテゴリグループID",
+      "Description": "カテゴリグループID"
+    },
+    {
+      "Field": "excludeGroupId",
+      "Name": "排他グループID",
+      "Description": "排他グループID"
+    },
+    {
+      "Field": "isNegative",
+      "Name": "マイナス効果か",
+      "Description": "マイナス効果か"
+    },
+    {
+      "Field": "enableSlotTypeA",
+      "Name": "スロットタイプＡ出現可能.",
+      "Description": "スロットタイプＡ出現可能."
+    },
+    {
+      "Field": "enableSlotTypeB",
+      "Name": "スロットタイプＢ出現可能.",
+      "Description": "スロットタイプＢ出現可能."
+    },
+    {
+      "Field": "enableSlotTypeC",
+      "Name": "スロットタイプＣ出現可能.",
+      "Description": "スロットタイプＣ出現可能."
+    },
+    {
+      "Field": "enableSlotTypeD",
+      "Name": "スロットタイプＤ出現可能.",
+      "Description": "スロットタイプＤ出現可能."
+    },
+    {
+      "Field": "enableSlotTypeE",
+      "Name": "スロットタイプＥ出現可能.",
+      "Description": "スロットタイプＥ出現可能."
+    },
+    {
+      "Field": "enableSlotTypeF",
+      "Name": "スロットタイプＦ出現可能.",
+      "Description": "スロットタイプＦ出現可能."
+    },
+    {
+      "Field": "holygrailTypeGroup",
+      "Name": "聖杯タイプグループID",
+      "Description": "聖杯タイプグループID"
+    },
+    {
+      "Field": "affinityCateId_0",
+      "Name": "０：相性カテゴリグループID",
+      "Description": "０：相性カテゴリグループID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_0",
+      "Name": "０：相性補正倍率",
+      "Description": "０：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_1",
+      "Name": "１：相性カテゴリグループID",
+      "Description": "１：相性カテゴリグループID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_1",
+      "Name": "１：相性補正倍率",
+      "Description": "１：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_2",
+      "Name": "２：相性カテゴリグループID",
+      "Description": "２：相性カテゴリグループID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_2",
+      "Name": "２：相性補正倍率",
+      "Description": "２：相性補正倍率"
+    },
+    {
+      "Field": "affinityCateId_3",
+      "Name": "３：相性カテゴリグループID",
+      "Description": "３：相性カテゴリグループID(-1:無視)"
+    },
+    {
+      "Field": "affinityModifyRate_3",
+      "Name": "３：相性補正倍率",
+      "Description": "３：相性補正倍率"
+    }
+  ]
+}

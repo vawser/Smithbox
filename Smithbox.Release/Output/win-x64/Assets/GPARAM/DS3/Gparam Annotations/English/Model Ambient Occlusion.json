@@ -1,0 +1,39 @@
+{
+  "ID": "AOFields Model - Editor",
+  "Name": "Model Ambient Occlusion",
+  "Description": "Controls per-model ambient occlusion using volume textures and analytic occluders to simulate local shadowing independent of screen-space techniques.",
+  "Fields": [
+    {
+      "ID": "AOFields - 3DTexture - AO Strength",
+      "Name": "3D Texture: Ambient Occlusion Strength",
+      "Description": "Controls the intensity of ambient occlusion sampled from the model’s 3D volume texture.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Light Cone Angle",
+      "Name": "Sphere Occluder: Light Cone Angle",
+      "Description": "Defines the angular spread of the occlusion cone used when evaluating spherical occluders.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Light Cone Coefficient",
+      "Name": "Sphere Occluder: Light Cone Coefficient",
+      "Description": "Scales the contribution of spherical occluders within the cone, affecting occlusion falloff.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Length Limit",
+      "Name": "Sphere Occluder: Length Limit",
+      "Description": "Limits the maximum distance over which spherical occluders contribute to ambient occlusion.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

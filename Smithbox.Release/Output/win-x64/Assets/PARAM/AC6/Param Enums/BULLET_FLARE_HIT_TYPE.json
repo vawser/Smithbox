@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_FLARE_HIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_FLARE_HIT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target Overwrite"
+        }
+      ]
+    }
+  ]
+}

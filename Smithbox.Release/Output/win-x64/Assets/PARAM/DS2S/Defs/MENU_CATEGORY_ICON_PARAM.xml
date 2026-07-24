@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>MENU_CATEGORY_ICON_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 bagSubscript = 255">
+            <DisplayName>道具袋配列用添字</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9000</SortID>
+        </Field>
+        <Field Def="u8 cofferSubscript = 255">
+            <DisplayName>貴重品箱配列用添字</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9100</SortID>
+        </Field>
+        <Field Def="u8 repositorySubscript = 255">
+            <DisplayName>倉庫配列用添字</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9200</SortID>
+        </Field>
+        <Field Def="u8 shopSubscript = 255">
+            <DisplayName>ショップ配列用添字</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9300</SortID>
+        </Field>
+        <Field Def="u8 inventory:1">
+            <DisplayName>インベントリ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 equipWeapon:1">
+            <DisplayName>武器装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1100</SortID>
+        </Field>
+        <Field Def="u8 equipHelmet:1">
+            <DisplayName>兜装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1200</SortID>
+        </Field>
+        <Field Def="u8 equipArmor:1">
+            <DisplayName>鎧装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1210</SortID>
+        </Field>
+        <Field Def="u8 equipGauntlet:1">
+            <DisplayName>小手装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1220</SortID>
+        </Field>
+        <Field Def="u8 equipLeggings:1">
+            <DisplayName>具足装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1230</SortID>
+        </Field>
+        <Field Def="u8 equipRing:1">
+            <DisplayName>指輪装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1300</SortID>
+        </Field>
+        <Field Def="u8 equipArrow:1">
+            <DisplayName>矢装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1400</SortID>
+        </Field>
+        <Field Def="u8 equipItem:1">
+            <DisplayName>アイテム装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1500</SortID>
+        </Field>
+        <Field Def="u8 equipSpell:1">
+            <DisplayName>スペル装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="u8 equipGesture:1">
+            <DisplayName>ジェスチャー装備</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1700</SortID>
+        </Field>
+        <Field Def="u8 repository:1">
+            <DisplayName>倉庫</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1800</SortID>
+        </Field>
+        <Field Def="u8 shop:1">
+            <DisplayName>ショップ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1900</SortID>
+        </Field>
+        <Field Def="u8 equipWeaponArmor:1">
+            <DisplayName>武器防具</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1450</SortID>
+        </Field>
+        <Field Def="dummy8 padding[2]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>9301</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

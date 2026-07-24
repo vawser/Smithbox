@@ -1,0 +1,65 @@
+{
+  "Name": "HeroMenuParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Wylder"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Guardian"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Ironeye"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Duchess"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Raider"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Revenant"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Recluse"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Executor"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Scholar"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Undertaker"
+      ]
+    }
+  ]
+}

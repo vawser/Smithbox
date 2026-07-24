@@ -1,0 +1,883 @@
+{
+  "Param": "FACE_PARAM_ST",
+  "Type": "FACE_PARAM_ST",
+  "Name": "FACE_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "facePartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hairPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyebrowPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyebrowColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyebrowColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyebrowColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyelashPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyelashColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyelashColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eyelashColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beardPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_R",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_G",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalPosX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalPosY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleHead",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleBreast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleAbdomen",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleRArm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleRLeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleLArm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBodyScaleLLeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "age",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gender",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "caricatureGeometry",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "caricatureTexture",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoData60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,768 @@
+{
+  "Param": "CHARACTER_INIT_PARAM",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CHARACTER_INIT_PARAM",
+  "Description": "Defines instances of c0000 (player) characters in the game, including starting classes.\nNote that many fields are not used and remain from earlier games, particularly with respect to starting classes.\nStarting classes begin at 3000 with consecutive IDs, and starting gifts begin at 2400 likewise.",
+  "Fields": [
+    {
+      "Field": "soul",
+      "Name": "Runes",
+      "Description": "The amount of soul you have at the beginning"
+    },
+    {
+      "Field": "equip_Wep_Right_1",
+      "Name": "Right-hand Weapon: Primary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Wep_Right_2",
+      "Name": "Right-hand Weapon: Secondary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Wep_Left_1",
+      "Name": "Left-hand Weapon: Primary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Wep_Left_2",
+      "Name": "Left-hand Weapon: Secondary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Wep_Right_3",
+      "Name": "Right-hand Weapon: Tertiary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Wep_Left_3",
+      "Name": "Left-hand Weapon: Tertiary",
+      "Description": "The weapon to equip for this slot."
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "Equipped Armor: Head",
+      "Description": "Equipment parameter armor ID (head armor)"
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "Equipped Armor: Chest",
+      "Description": "Equipment parameter armor ID (torso armor)"
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "Equipped Armor: Arms",
+      "Description": "Equipment parameter armor ID (arm armor)"
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "Equipped Armor: Legs",
+      "Description": "Equipment parameter armor ID (leg armor)"
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "Equipped Ammunition: Arrow Primary",
+      "Description": "Weapon ID (arrow) of equipment parameter"
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "Equipped Ammunition: Bolt Primary",
+      "Description": "Weapon ID (bolt) of equipment parameter"
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "Equipped Ammunition: Arrow Secondary",
+      "Description": "Weapon ID of equipment parameter (arrow reserve)"
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "Equipped Ammunition: Bolt Secondary",
+      "Description": "Weapon ID of equipment parameter (spare bolt)"
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "Equipped Accessory: Slot 1",
+      "Description": "Equipment parameter decoration ID01"
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "Equipped Accessory: Slot 2",
+      "Description": "Equipment parameter decoration ID02"
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "Equipped Accessory: Slot 3",
+      "Description": "Equipment parameter decoration ID03"
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "Equipped Accessory: Slot 4",
+      "Description": "Equipment parameter decoration ID04"
+    },
+    {
+      "Field": "characterSkillWeapon",
+      "Name": "Character Skill Weapon Data",
+      "Description": "The weapon data used during the character skill."
+    },
+    {
+      "Field": "ultimateArtWeapon",
+      "Name": "Ultimate Art Weapon Data",
+      "Description": "The weapon data used during the ultimate art."
+    },
+    {
+      "Field": "extraHelperWeapon",
+      "Name": "Extra Helper Weapon Data",
+      "Description": "The weapon data present for extra needs, such as models or hitboxes."
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "Equipped Spell: Slot 1",
+      "Description": "Initial placement magic / miracle ID01"
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "Equipped Spell: Slot 2",
+      "Description": "Initial placement magic / miracle ID02"
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "Equipped Spell: Slot 3",
+      "Description": "Initial placement magic / miracle ID03"
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "Equipped Spell: Slot 4",
+      "Description": "Initial placement magic / miracle ID04"
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "Equipped Spell: Slot 5",
+      "Description": "Initial placement magic / miracle ID05"
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "Equipped Spell: Slot 6",
+      "Description": "Initial placement magic / miracle ID06"
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "Equipped Spell: Slot 7",
+      "Description": "Initial placement magic / miracle ID07"
+    },
+    {
+      "Field": "item_01",
+      "Name": "Equipped Item: Slot 1",
+      "Description": "Initial possession item ID 01"
+    },
+    {
+      "Field": "item_02",
+      "Name": "Equipped Item: Slot 2",
+      "Description": "Initial possession item ID 02"
+    },
+    {
+      "Field": "item_03",
+      "Name": "Equipped Item: Slot 3",
+      "Description": "Initial possession item ID 03"
+    },
+    {
+      "Field": "item_04",
+      "Name": "Equipped Item: Slot 4",
+      "Description": "Initial possession item ID 04"
+    },
+    {
+      "Field": "item_05",
+      "Name": "Equipped Item: Slot 5",
+      "Description": "Initial possession item ID 05"
+    },
+    {
+      "Field": "item_06",
+      "Name": "Equipped Item: Slot 6",
+      "Description": "Initial possession item ID 06"
+    },
+    {
+      "Field": "item_07",
+      "Name": "Equipped Item: Slot 7",
+      "Description": "Initial possession item ID 07"
+    },
+    {
+      "Field": "item_08",
+      "Name": "Equipped Item: Slot 8",
+      "Description": "Initial possession item ID 08"
+    },
+    {
+      "Field": "item_09",
+      "Name": "Equipped Item: Slot 9",
+      "Description": "Initial possession item ID 09"
+    },
+    {
+      "Field": "item_10",
+      "Name": "Equipped Item: Slot 10",
+      "Description": "Initial possession item ID 10"
+    },
+    {
+      "Field": "tUnknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_2a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_2b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_2c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_2d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_3b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_3c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_3d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soulLv",
+      "Name": "Level",
+      "Description": "Initial Lv"
+    },
+    {
+      "Field": "baseVit",
+      "Name": "Vigor",
+      "Description": "Basic value of physical fitness"
+    },
+    {
+      "Field": "baseWil",
+      "Name": "Attunement",
+      "Description": "Basic value of spirit"
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "Endurance",
+      "Description": "Robust base value"
+    },
+    {
+      "Field": "baseStr",
+      "Name": "Strength",
+      "Description": "Basic value of muscle strength"
+    },
+    {
+      "Field": "baseDex",
+      "Name": "Dexterity",
+      "Description": "Basic value of agility"
+    },
+    {
+      "Field": "baseMag",
+      "Name": "Intelligence",
+      "Description": "Basic value of magic power"
+    },
+    {
+      "Field": "baseFai",
+      "Name": "Faith",
+      "Description": "Basic value of faith"
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "Arcane",
+      "Description": "Basic value of luck"
+    },
+    {
+      "Field": "tUnknown_6c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "Equipped Item: Slot 1 Amount",
+      "Description": "Initial possession number of items 01"
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "Equipped Item: Slot 2 Amount",
+      "Description": "Initial possession number of items 02"
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "Equipped Item: Slot 3 Amount",
+      "Description": "Initial possession number of items 03"
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "Equipped Item: Slot 4 Amount",
+      "Description": "Initial possession number of items 04"
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "Equipped Item: Slot 5 Amount",
+      "Description": "Initial possession number of items 05"
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "Equipped Item: Slot 6 Amount",
+      "Description": "Initial possession number of items 06"
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "Equipped Item: Slot 7 Amount",
+      "Description": "Initial possession number of items 07"
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "Equipped Item: Slot 8 Amount",
+      "Description": "Initial possession number of items 08"
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "Equipped Item: Slot 9 Amount",
+      "Description": "Initial possession number of items 09"
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "Equipped Item: Slot 10 Amount",
+      "Description": "Initial possession number of items 10"
+    },
+    {
+      "Field": "tUnknown_11b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_11c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_11d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_12a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_12b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_12c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_12d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_13a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_13b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_13c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_13d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_14a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_14b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_14c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_14d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_15a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_15b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_15c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_15d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_16a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_16b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heroId",
+      "Name": "Hero ID",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_16d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tUnknown_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CharacterScale",
+      "Name": "Character Scale",
+      "Description": "The scale of the character model."
+    },
+    {
+      "Field": "unknown_20a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spectralHawkWeaponId",
+      "Name": "Spectral Hawk Weapon ID",
+      "Description": "Weapon reference for Spectral Hawk's model"
+    },
+    {
+      "Field": "heroSelectionBackgroundId",
+      "Name": "Hero Selection Background ID",
+      "Description": "Determines the background to use in the Hero Selection screen."
+    },
+    {
+      "Field": "unknown_24a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

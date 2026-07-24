@@ -1,0 +1,14 @@
+{
+  "id": "213",
+  "name": "Crystal Lizard",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

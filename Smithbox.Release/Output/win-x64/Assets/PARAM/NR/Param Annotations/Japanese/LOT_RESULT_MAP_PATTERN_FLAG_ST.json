@@ -1,0 +1,48 @@
+{
+  "Param": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
+  "Type": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
+  "Name": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "patternId",
+      "Description": ""
+    },
+    {
+      "Field": "modifierSet",
+      "Name": "modifierSet",
+      "Description": ""
+    },
+    {
+      "Field": "modifier",
+      "Name": "modifier",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "eventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "patternSetId",
+      "Name": "patternSetId",
+      "Description": ""
+    },
+    {
+      "Field": "targetBoss",
+      "Name": "targetBoss",
+      "Description": ""
+    },
+    {
+      "Field": "rareMap",
+      "Name": "rareMap",
+      "Description": ""
+    }
+  ]
+}

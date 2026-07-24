@@ -1,0 +1,347 @@
+{
+  "Name": "ArchiveParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Test archive_garage acquisition_log -- テスト用アーカイブ_ガレージ入手_ログ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Test archive_garage acquisition_terms -- テスト用アーカイブ_ガレージ入手_用語"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Test archive_Garage acquisition_tips -- テスト用アーカイブ_ガレージ入手_tips"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Test archive_mission_log -- テスト用アーカイブ_ミッション_ログ"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Test Archive_Mission_Term -- テスト用アーカイブ_ミッション_用語"
+      ]
+    },
+    {
+      "ID": 13021500,
+      "Entries": [
+        "thomas kirk -- トーマス・カーク"
+      ]
+    },
+    {
+      "ID": 13021510,
+      "Entries": [
+        "monkey gord -- モンキー・ゴード"
+      ]
+    },
+    {
+      "ID": 13021520,
+      "Entries": [
+        "G7 Harkler -- G7 ハークラー"
+      ]
+    },
+    {
+      "ID": 13021525,
+      "Entries": [
+        "Raven -- レイヴン"
+      ]
+    },
+    {
+      "ID": 13021530,
+      "Entries": [
+        "one-sided battle -- 一方的な戦闘"
+      ]
+    },
+    {
+      "ID": 13021540,
+      "Entries": [
+        "deserted soldier -- 脱走した兵士"
+      ]
+    },
+    {
+      "ID": 13021550,
+      "Entries": [
+        "steel haze -- スティールヘイズ"
+      ]
+    },
+    {
+      "ID": 13021560,
+      "Entries": [
+        "BAWS 2nd Arsenal -- BAWS第2工廠"
+      ]
+    },
+    {
+      "ID": 13021570,
+      "Entries": [
+        "encrypted communication -- 暗号化された通信"
+      ]
+    },
+    {
+      "ID": 13021580,
+      "Entries": [
+        "soldier's dictation -- 兵士の口述筆記"
+      ]
+    },
+    {
+      "ID": 13021590,
+      "Entries": [
+        "Communication to enemy aircraft -- 敵機への通信"
+      ]
+    },
+    {
+      "ID": 13021600,
+      "Entries": [
+        "Communication with colleagues -- 同僚との通信"
+      ]
+    },
+    {
+      "ID": 13021610,
+      "Entries": [
+        "Event archive_Encounter with the organization_00 -- イベント用アーカイブ_組織との出会い_00"
+      ]
+    },
+    {
+      "ID": 13021620,
+      "Entries": [
+        "Event archive_Encounter with the organization_01 -- イベント用アーカイブ_組織との出会い_01"
+      ]
+    },
+    {
+      "ID": 13021630,
+      "Entries": [
+        "Event archive_Encounter with the organization_02 -- イベント用アーカイブ_組織との出会い_02"
+      ]
+    },
+    {
+      "ID": 13021640,
+      "Entries": [
+        "Event archive_Encounter with the organization_03 -- イベント用アーカイブ_組織との出会い_03"
+      ]
+    },
+    {
+      "ID": 13021650,
+      "Entries": [
+        "Placement Archive_Mission 165 -- 配置用アーカイブ_ミッション165"
+      ]
+    },
+    {
+      "ID": 13021660,
+      "Entries": [
+        "Placement Archive_Mission 166 -- 配置用アーカイブ_ミッション166"
+      ]
+    },
+    {
+      "ID": 13021670,
+      "Entries": [
+        "Event Archive_Dolmayan's Essays_00 -- イベント用アーカイブ_ドルマヤンの随想録_00"
+      ]
+    },
+    {
+      "ID": 13021680,
+      "Entries": [
+        "Event Archive_Dolmayan's Essays_01 -- イベント用アーカイブ_ドルマヤンの随想録_01"
+      ]
+    },
+    {
+      "ID": 13021690,
+      "Entries": [
+        "Event Archive_Dolmayan's Essays_02 -- イベント用アーカイブ_ドルマヤンの随想録_02"
+      ]
+    },
+    {
+      "ID": 13021700,
+      "Entries": [
+        "Event Archive_Dolmayan's Essays_03 -- イベント用アーカイブ_ドルマヤンの随想録_03"
+      ]
+    },
+    {
+      "ID": 13021710,
+      "Entries": [
+        "Event Archive_Dolmayan's Essays_04 -- イベント用アーカイブ_ドルマヤンの随想録_04"
+      ]
+    },
+    {
+      "ID": 13021720,
+      "Entries": [
+        "Event archive_Professor Nagai's dictation_00 -- イベント用アーカイブ_ナガイ教授の口述筆記_00"
+      ]
+    },
+    {
+      "ID": 13021730,
+      "Entries": [
+        "Event archive_Professor Nagai's dictation_01 -- イベント用アーカイブ_ナガイ教授の口述筆記_01"
+      ]
+    },
+    {
+      "ID": 13021740,
+      "Entries": [
+        "Event archive_Professor Nagai's dictation_02 -- イベント用アーカイブ_ナガイ教授の口述筆記_02"
+      ]
+    },
+    {
+      "ID": 13021750,
+      "Entries": [
+        "Event archive_Professor Nagai's dictation_03 -- イベント用アーカイブ_ナガイ教授の口述筆記_03"
+      ]
+    },
+    {
+      "ID": 13021760,
+      "Entries": [
+        "Event archive_Professor Nagai's dictation_04 -- イベント用アーカイブ_ナガイ教授の口述筆記_04"
+      ]
+    },
+    {
+      "ID": 13021770,
+      "Entries": [
+        "Event archive_FNF's drawing_00 -- イベント用アーカイブ_FNFの画稿_00"
+      ]
+    },
+    {
+      "ID": 13021780,
+      "Entries": [
+        "Event archive_FNF sketch_01 -- イベント用アーカイブ_FNFの画稿_01"
+      ]
+    },
+    {
+      "ID": 13021790,
+      "Entries": [
+        "Event archive_FNF sketch_02 -- イベント用アーカイブ_FNFの画稿_02"
+      ]
+    },
+    {
+      "ID": 13021800,
+      "Entries": [
+        "Event archive_FNF sketch_03 -- イベント用アーカイブ_FNFの画稿_03"
+      ]
+    },
+    {
+      "ID": 13021810,
+      "Entries": [
+        "Event archive_FNF sketch_04 -- イベント用アーカイブ_FNFの画稿_04"
+      ]
+    },
+    {
+      "ID": 13021820,
+      "Entries": [
+        "Event archive_FNF sketch_05 -- イベント用アーカイブ_FNFの画稿_05"
+      ]
+    },
+    {
+      "ID": 13021830,
+      "Entries": [
+        "Event archive_FNF sketch_06 -- イベント用アーカイブ_FNFの画稿_06"
+      ]
+    },
+    {
+      "ID": 13021840,
+      "Entries": [
+        "Observation data: Offshore city Xylem -- 観測データ：洋上都市ザイレム"
+      ]
+    },
+    {
+      "ID": 13021850,
+      "Entries": [
+        "Audio recording: The end of G4 -- 音声記録：G4の最期"
+      ]
+    },
+    {
+      "ID": 13021860,
+      "Entries": [
+        "Document data: Re-education center -- 文書データ：再教育センター"
+      ]
+    },
+    {
+      "ID": 13021870,
+      "Entries": [
+        "Audio recording: researcher's dictation -- 音声記録：研究員の口述筆記"
+      ]
+    },
+    {
+      "ID": 13021880,
+      "Entries": [
+        "Video recording: Parts performance test -- 映像記録：部品性能試験"
+      ]
+    },
+    {
+      "ID": 13021890,
+      "Entries": [
+        "Placement Archive_Mission 189 -- 配置用アーカイブ_ミッション189"
+      ]
+    },
+    {
+      "ID": 13021900,
+      "Entries": [
+        "Placement Archive_Mission 190 -- 配置用アーカイブ_ミッション190"
+      ]
+    },
+    {
+      "ID": 13021910,
+      "Entries": [
+        "Placement Archive_Mission 191 -- 配置用アーカイブ_ミッション191"
+      ]
+    },
+    {
+      "ID": 13021920,
+      "Entries": [
+        "Placement Archive_Mission 192 -- 配置用アーカイブ_ミッション192"
+      ]
+    },
+    {
+      "ID": 13021930,
+      "Entries": [
+        "Placement Archive_Mission 193 -- 配置用アーカイブ_ミッション193"
+      ]
+    },
+    {
+      "ID": 13021940,
+      "Entries": [
+        "Placement Archive_Mission 194 -- 配置用アーカイブ_ミッション194"
+      ]
+    },
+    {
+      "ID": 13021950,
+      "Entries": [
+        "Placement Archive_Mission 195 -- 配置用アーカイブ_ミッション195"
+      ]
+    },
+    {
+      "ID": 13021960,
+      "Entries": [
+        "Placement Archive_Mission 196 -- 配置用アーカイブ_ミッション196"
+      ]
+    },
+    {
+      "ID": 13021970,
+      "Entries": [
+        "Placement Archive_Mission 197 -- 配置用アーカイブ_ミッション197"
+      ]
+    },
+    {
+      "ID": 13021980,
+      "Entries": [
+        "Placement Archive_Mission 198 -- 配置用アーカイブ_ミッション198"
+      ]
+    },
+    {
+      "ID": 13021990,
+      "Entries": [
+        "Placement Archive_Mission 199 -- 配置用アーカイブ_ミッション199"
+      ]
+    },
+    {
+      "ID": 13022000,
+      "Entries": [
+        "Placement Archive_Mission 200 -- 配置用アーカイブ_ミッション200"
+      ]
+    }
+  ]
+}

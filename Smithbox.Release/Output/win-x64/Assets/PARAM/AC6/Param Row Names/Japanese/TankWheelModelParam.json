@@ -1,0 +1,110 @@
+{
+  "Name": "TankWheelModelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05",
+        "R_Track0_05"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08",
+        "R_Track0_08"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05",
+        "R_Track1_05"
+      ]
+    }
+  ]
+}

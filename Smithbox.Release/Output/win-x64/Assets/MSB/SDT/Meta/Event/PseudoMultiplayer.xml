@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a non-player character invasion within the map." />
+  
+  <Field>
+    <HostEntityID
+    AltName="Host Entity ID"
+    Wiki="The entity ID of the non-player character whose world the player enters." />
+    
+    <EventFlagID
+    AltName="Event Flag ID"
+    Wiki="The event flag set when the player is within the region." 
+    FlagAlias="" />
+    
+    <ActivateGoodsID
+    AltName="Activation Goods ID"
+    Wiki="The item that is used to trigger the non-player character invasion."
+    ParamRef="EquipParamGoods" />
+    
+    <CeremonyParamID
+    AltName="Ceremony ID"
+    Wiki="The ceremony ID this invasion occurs in."
+    ParamRef="Ceremony" />
+    
+    <SpawnRegionEntityID
+    AltName="Spawnpoint Entity ID"
+    Wiki="The ID of the spawnpoint that the player uses when entering this 'fake' invasion." />
+    
+    <PlayerChrType
+    AltName="Player Character Type"
+    Wiki="The character type the player uses when in the 'fake' invasion world." />
+    
+    <MessageSetType
+    AltName="Message Set Type"
+    Wiki="Determines which set of FMG entries to use in fake' invasion world." />
+    
+    <JoinMessageTextID
+    AltName="Join Message ID"
+    Wiki="The ID of FMG entry to display when trying to join 'fake' invasion world." 
+    FmgRef="Event_Text" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="PLAYER_CHR_TYPE">
+        <Option Value="0" Name="White Phantom" />
+        <Option Value="1" Name="Red Phantom" />
+    </Enum>
+    <Enum Name="MESSAGE_SET_TYPE">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Sirris - Creighton" />
+        <Option Value="2" Name="Sirris - Hodrick" />
+        <Option Value="3" Name="Leonhard" />
+        <Option Value="4" Name="Anri" />
+    </Enum>
+  </Enums>
+</MSBMETA>

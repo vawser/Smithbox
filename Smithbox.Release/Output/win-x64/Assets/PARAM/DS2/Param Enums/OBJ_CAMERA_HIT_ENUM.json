@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_CAMERA_HIT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_CAMERA_HIT_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Close to PC"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Translucency"
+        }
+      ]
+    }
+  ]
+}

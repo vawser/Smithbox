@@ -1,0 +1,138 @@
+{
+  "Param": "SKELETON_PARAM_ST",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SKELETON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "neckTurnGain",
+      "Name": "首振りゲイン",
+      "Description": "首振りゲイン。高いほど早く回る"
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "原点から地面への高さ[cm]",
+      "Description": "原点から地面への高さ[cm]"
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "足首を上げられる最低の高さ[cm]",
+      "Description": "足首を上げられる最低の高さ[cm]"
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "足首を上げられる最大の高さ[cm]",
+      "Description": "足首を上げられる最大の高さ[cm]"
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "ひざを曲げられる最大の角度(コサインの値)",
+      "Description": "ひざを曲げられる最大の角度(コサインの値)"
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "ひざを曲げられる最小の角度",
+      "Description": "ひざを曲げられる最小の角度"
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "足首がくっついていると仮定する最低位置[cm]",
+      "Description": "足首がこの位置よりも低い場合には足がくっついていると仮定する[cm]"
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "足首が離れていると仮定する最高位置[cm]",
+      "Description": "足首がこの位置よりも高い場合には足が離れていると仮定する[cm]"
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "足首よりどれぐらい上からレイキャストするか[cm]",
+      "Description": "足首よりどれぐらい上からレイキャストするか[cm]"
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "足首からどれぐらい下までレイキャストするか[cm]",
+      "Description": "足首からどれぐらい下までレイキャストするか[cm]"
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "つま先位置X[cm]",
+      "Description": "つま先位置X[cm]"
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "つま先位置Y[cm]",
+      "Description": "つま先位置Y[cm]"
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "つま先位置Z[cm]",
+      "Description": "つま先位置Z[cm]"
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "足の接地をオンオフするときのゲイン[1/100]",
+      "Description": "足の接地をオンオフするときのゲイン[1/100]"
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "地面の高さが高くなったときのゲイン[1/100]",
+      "Description": "地面の高さが高くなったときのゲイン[1/100]"
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "地面の高さが低くなったときのゲイン[1/100]",
+      "Description": "地面の高さが低くなったときのゲイン[1/100]"
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "足が上がったときのゲイン[1/100]",
+      "Description": "足が上がったときのゲイン[1/100]"
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "足が接地したときのゲイン[1/100]",
+      "Description": "足が接地したときのゲイン[1/100]"
+    },
+    {
+      "Field": "footUnlockGain",
+      "Name": "足がロック/アンロックしたときのゲイン[1/100]",
+      "Description": "足がロック/アンロックしたときのゲイン[1/100]"
+    },
+    {
+      "Field": "kneeAxisType",
+      "Name": "ひざの軸方向",
+      "Description": "ひざの軸方向"
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "足/足首をロック（固定？）するか",
+      "Description": "足/足首をロック（固定？）するか"
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "足の接地が有効か",
+      "Description": "足の接地が有効か"
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "ひねり用ひざ関節の軸方向",
+      "Description": "ひねり用ひざ関節の回転を無視する軸方向"
+    },
+    {
+      "Field": "neckTurnPriority",
+      "Name": "首振り優先度",
+      "Description": "低いほど先に回る。-1で首振りしない"
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "首振り最大角度",
+      "Description": "この関節の最大旋回角度。この角度以上はまがらない"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>DAMAGE_CTRL_PARAM</ParamType>
+    <DataVersion>15</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s8 attackType">
+            <DisplayName>攻撃属性</DisplayName>
+            <Enum>DAMAGE_ATTACK_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 objBreak">
+            <DisplayName>OBJ破壊</DisplayName>
+            <Enum>DAMAGE_OBJ_BREAK_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 armorBreak">
+            <DisplayName>アーマー無効</DisplayName>
+            <Enum>DAMAGE_ARMOR_BREAK_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 guardBreak">
+            <DisplayName>防御アクション無効</DisplayName>
+            <Enum>DAMAGE_GUARD_BREAK_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 negatePoiseRate">
+            <DisplayName>強靭度無効化割合</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 negateCutDamageRate">
+            <DisplayName>盾カット率無効化割合</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s32 damageWeightType">
+            <DisplayName>攻撃時ウェイト</DisplayName>
+            <Enum>CHR_WEIGHT_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 damageMotion">
+            <DisplayName>ダメージモーション</DisplayName>
+            <Enum>DAMAGE_MOTION_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 deadMotion">
+            <DisplayName>死亡モーション</DisplayName>
+            <Enum>DAMAGE_DEAD_MOTION_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 deadDamageMotion">
+            <DisplayName>死亡時ダメージモーション</DisplayName>
+            <Enum>DAMAGE_MOTION_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 isInstantDeath">
+            <DisplayName>即死フラグ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u16 stun">
+            <DisplayName>気絶値</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 isDamageStaminaAlways">
+            <DisplayName>スタミナダメージ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 isHollowOnlyDamage">
+            <DisplayName>亡者ダメージ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 downStiff">
+            <DisplayName>ダウン硬直時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 downStiffShortCut">
+            <DisplayName>ダウン硬直時間　短縮時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="angle32 damageRotateSpeed">
+            <DisplayName>ダメージ旋回速度[deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 blowUpAccel">
+            <DisplayName>吹き飛び　上昇速度[m/sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 blowBrake">
+            <DisplayName>吹き飛び　停止加速度[m/sec^2]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgStartTimeRate = 1">
+            <DisplayName>下半身ダメージ しゃがみ行き時間 補正倍率[倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgEndTimeRate = 1">
+            <DisplayName>下半身ダメージ しゃがみ戻り時間 補正倍率[倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 guardStiffRate">
+            <DisplayName>ガード硬直 倍率[倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 guardReactionSpeed">
+            <DisplayName>ガード反動 速度[m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 guardReactionAddRate = 1">
+            <DisplayName>ガード反動 加算自補正倍率[倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 guardReactionDecelerationSpeed">
+            <DisplayName>ガード反動 減速速度[m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 guardReactionDecelerationTime">
+            <DisplayName>ガード反動 減速開始時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="angle32 guardRotationSpeed">
+            <DisplayName>ガード旋回速度[deg/sec]</DisplayName>
+            <Maximum>999999.88</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 guardAttackLevelType">
+            <DisplayName>ガード ガード弾きレベル</DisplayName>
+            <Enum>GUARD_ATTACK_LEVEL_TYPE</Enum>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 isForceLower">
+            <DisplayName>強制下半身ダメージ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="u16 objDamage">
+            <DisplayName>OBJダメージ値</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="u32 objAttackAttr">
+            <DisplayName>OBJ攻撃属性</DisplayName>
+            <Enum>DAMAGE_OBJ_ATTACK_ATTR_ENUM</Enum>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s32 cameraRumble">
+            <DisplayName>カメラノイズパラメータＩＤ</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s32 padRumble">
+            <DisplayName>パッド振動パラメータＩＤ</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 rumbleTime">
+            <DisplayName>振動時間[sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 rumbleDecStartRange">
+            <DisplayName>振動減衰開始距離[m]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 rumbleDecEndRange">
+            <DisplayName>振動減衰終了距離[m]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 windPriority">
+            <DisplayName>風：優先度</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windRadius">
+            <DisplayName>風：半径[m]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windMinSpeed">
+            <DisplayName>風：最小風力[m/s]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windMaxSpeed">
+            <DisplayName>風：最大風力[m/s]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windFrequency">
+            <DisplayName>風：周波数</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windGinStartDistance">
+            <DisplayName>風：減衰開始処理</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 windLife">
+            <DisplayName>風：延長寿命</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u32 windCateId">
+            <DisplayName>風：影響カテゴリ</DisplayName>
+            <Enum>DAMAGE_WIND_CATE_ID</Enum>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 staggerTime">
+            <DisplayName>よろけ時間</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 staggerMoveRate">
+            <DisplayName>よろけ移動倍率</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 staggerRotRate">
+            <DisplayName>よろけ旋回倍率</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u8 damageMotionWeightDisable">
+            <DisplayName>ウェイト計算無効</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 headShotDisable">
+            <DisplayName>ヘッドショット無効設定</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="u8 isWet">
+            <DisplayName>濡れる</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="u8 damageImpactPowerType">
+            <DisplayName>ダメージ衝撃力タイプ</DisplayName>
+            <Enum>DAMAGE_IMPACT_POWER_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u32 wetId">
+            <DisplayName>濡れカテゴリ</DisplayName>
+            <Enum>CHR_WET_PARAM_ID</Enum>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="f32 pushBackRate = 1">
+            <DisplayName>押し返し反映割合[倍]</DisplayName>
+            <Maximum>99.900002</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 poiseDamage">
+            <DisplayName>強靭度削り値</DisplayName>
+            <Maximum>9999.9004</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 damageDistDecrementStart">
+            <DisplayName>ダメージ減衰距離 開始</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDistDecrementEnd">
+            <DisplayName>ダメージ減衰距離 終了</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDecrementHpMaxRate">
+            <DisplayName>ダメージ値 最大減衰倍率</DisplayName>
+            <Minimum>-100</Minimum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDecrementStaminaMaxRate">
+            <DisplayName>スタミナ奪取量 最大減衰倍率</DisplayName>
+            <Minimum>-100</Minimum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDecrementStunMaxRate">
+            <DisplayName>気絶値 最大減衰倍率</DisplayName>
+            <Minimum>-100</Minimum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDecrementPoiseMaxRate">
+            <DisplayName>強靭削り値 最大減衰倍率</DisplayName>
+            <Minimum>-100</Minimum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 damageDecrementKnockBackMaxRate">
+            <DisplayName>ノックバック距離 最大減衰倍率</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

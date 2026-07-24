@@ -1,0 +1,65 @@
+{
+  "Name": "ChrWetAspectParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "水"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "毒濡れ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "油濡れ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "鋼鉄"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "鏡"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "石化"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

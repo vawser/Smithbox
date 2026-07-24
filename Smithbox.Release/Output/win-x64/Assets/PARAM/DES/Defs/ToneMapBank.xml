@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>TONE_MAP_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s8 bloomBegin = 50">
+      <DisplayName>ブルーム閾値[％]</DisplayName>
+      <Description>輝度が閾値を越えるとにじみ始めます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="s8 bloomMul = 50">
+      <DisplayName>ブルーム倍率[％]</DisplayName>
+      <Description>閾値以上の値に掛ける値です(0でにじまなくなります)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_0[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>ダミー</Description>
+      <DisplayFormat>%d</DisplayFormat>
+    </Field>
+    <Field Def="f32 grayKeyValue = 0.18">
+      <DisplayName>トーンマップの基準値</DisplayName>
+      <Description>この値が大きいと画面が明るくなり小さいと画面が暗くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 minAdaptedLum = 0.1">
+      <DisplayName>最小適応輝度</DisplayName>
+      <Description>値を小さくすると暗い場所に適応して見えるようになります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 maxAdapredLum = 0.2">
+      <DisplayName>最大適応輝度</DisplayName>
+      <Description>値を大きくすると明るい場所に適応して見えるようになります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 adaptSpeed = 1">
+      <DisplayName>適応速度</DisplayName>
+      <Description>値を大きくする明順応、暗順応の速度が速くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_1[12]">
+      <DisplayName>パディング</DisplayName>
+      <Description>ダミー</Description>
+      <DisplayFormat>%d</DisplayFormat>
+    </Field>
+  </Fields>
+</PARAMDEF>

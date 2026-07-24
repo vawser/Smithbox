@@ -1,0 +1,461 @@
+{
+  "Key": "CHR_FULLBODY_SFX_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_FULLBODY_SFX_PARAM_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "When enemy dies"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rain map - small size"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rain map - large size"
+        }
+      ]
+    },
+    {
+      "Key": "101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy appears"
+        }
+      ]
+    },
+    {
+      "Key": "101370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer super armor"
+        }
+      ]
+    },
+    {
+      "Key": "102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul Black appears"
+        }
+      ]
+    },
+    {
+      "Key": "103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) Remove Petrification"
+        }
+      ]
+    },
+    {
+      "Key": "104000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 0 aura"
+        }
+      ]
+    },
+    {
+      "Key": "104010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 1 aura"
+        }
+      ]
+    },
+    {
+      "Key": "104020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 2 aura"
+        }
+      ]
+    },
+    {
+      "Key": "104030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 3 aura"
+        }
+      ]
+    },
+    {
+      "Key": "105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 0 aura"
+        }
+      ]
+    },
+    {
+      "Key": "105010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 1 aura"
+        }
+      ]
+    },
+    {
+      "Key": "105020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 2 aura"
+        }
+      ]
+    },
+    {
+      "Key": "105030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 3 aura"
+        }
+      ]
+    },
+    {
+      "Key": "106010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aura for ghosts"
+        }
+      ]
+    },
+    {
+      "Key": "111000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy death (large)"
+        }
+      ]
+    },
+    {
+      "Key": "112000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul black death"
+        }
+      ]
+    },
+    {
+      "Key": "112010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul Black Death: Non-humanoid"
+        }
+      ]
+    },
+    {
+      "Key": "113000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC death"
+        }
+      ]
+    },
+    {
+      "Key": "114000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Door possession death"
+        }
+      ]
+    },
+    {
+      "Key": "115000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy death (small)"
+        }
+      ]
+    },
+    {
+      "Key": "116000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy death (treated as a mid-boss)"
+        }
+      ]
+    },
+    {
+      "Key": "180000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size enemy petrification aura"
+        }
+      ]
+    },
+    {
+      "Key": "201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant - Appearance"
+        }
+      ]
+    },
+    {
+      "Key": "203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generated from skeleton nobles"
+        }
+      ]
+    },
+    {
+      "Key": "210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general death humanoid"
+        }
+      ]
+    },
+    {
+      "Key": "210010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general death non-humanoid"
+        }
+      ]
+    },
+    {
+      "Key": "210020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon death non-humanoid"
+        }
+      ]
+    },
+    {
+      "Key": "211000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant - Death"
+        }
+      ]
+    },
+    {
+      "Key": "212000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror knight death"
+        }
+      ]
+    },
+    {
+      "Key": "213000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Noble Death Explosion"
+        }
+      ]
+    },
+    {
+      "Key": "213010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton aristocrat floating"
+        }
+      ]
+    },
+    {
+      "Key": "214000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver chariot death"
+        }
+      ]
+    },
+    {
+      "Key": "310010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death-Normal"
+        }
+      ]
+    },
+    {
+      "Key": "310020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - White Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - Blue Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - Gold Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - Red Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - Black Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death-Dragon Spirit Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "310080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death - Abyssal Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "400010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abnormal status death - petrification"
+        }
+      ]
+    },
+    {
+      "Key": "500010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragonstone: Occurrence"
+        }
+      ]
+    },
+    {
+      "Key": "500020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon head stone: unlocked"
+        }
+      ]
+    },
+    {
+      "Key": "500110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Body Stone: Occurrence"
+        }
+      ]
+    },
+    {
+      "Key": "500120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon body stone: unlocked"
+        }
+      ]
+    },
+    {
+      "Key": "501010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell: Magic defense"
+        }
+      ]
+    },
+    {
+      "Key": "501020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell: Great magic defense"
+        }
+      ]
+    }
+  ]
+}

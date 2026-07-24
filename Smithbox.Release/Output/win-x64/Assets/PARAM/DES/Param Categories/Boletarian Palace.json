@@ -1,0 +1,23 @@
+{
+  "Key": "Boletarian Palace",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Boletarian Palace"
+      }
+  ],
+  "Params": [
+    "m02_DofBank",
+    "m02_EnvLightTexBank",
+    "m02_FogBank",
+    "m02_LensFlareBank",
+    "m02_LensFlareExBank",
+    "m02_LightBank",
+    "m02_LightScatteringBank",
+    "m02_PointLightBank",
+    "m02_ShadowBank",
+    "m02_ToneCorrectBank",
+    "m02_ToneMapBank",
+    "s02_LightBank"
+  ]
+}

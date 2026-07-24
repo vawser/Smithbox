@@ -1,0 +1,88 @@
+{
+  "Param": "SORTIE_STARTING_POINT_ST",
+  "Type": "SORTIE_STARTING_POINT_ST",
+  "Name": "SORTIE_STARTING_POINT_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "areaNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "gridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "gridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "mapIdPad",
+      "Name": "mapIdPad",
+      "Description": ""
+    },
+    {
+      "Field": "birdRouteEntityId",
+      "Name": "birdRouteEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier",
+      "Name": "requireModifier",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier1",
+      "Name": "excludeModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier2",
+      "Name": "excludeModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "spawnGridAreaNo",
+      "Name": "spawnGridAreaNo",
+      "Description": ""
+    },
+    {
+      "Field": "spawnGridXNo",
+      "Name": "spawnGridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "spawnGridZNo",
+      "Name": "spawnGridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "spawnMapIdPad",
+      "Name": "spawnMapIdPad",
+      "Description": ""
+    },
+    {
+      "Field": "spawnPointEntityId",
+      "Name": "spawnPointEntityId",
+      "Description": ""
+    }
+  ]
+}

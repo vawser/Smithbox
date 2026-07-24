@@ -1,0 +1,283 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Slash_S",
+      "Name": "斬撃：小",
+      "Description": "斬撃：小"
+    },
+    {
+      "Field": "Slash_M",
+      "Name": "斬撃：中",
+      "Description": "斬撃：中"
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "斬撃：大",
+      "Description": "斬撃：大"
+    },
+    {
+      "Field": "Slash_LL",
+      "Name": "斬撃：特大",
+      "Description": "斬撃：特大"
+    },
+    {
+      "Field": "Slash_LLL",
+      "Name": "斬撃：特特大",
+      "Description": "斬撃：特特大"
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "刺突：小",
+      "Description": "刺突：小"
+    },
+    {
+      "Field": "Thrust_M",
+      "Name": "刺突：中",
+      "Description": "刺突：中"
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "刺突：大",
+      "Description": "刺突：大"
+    },
+    {
+      "Field": "Thrust_LL",
+      "Name": "刺突：特大",
+      "Description": "刺突：特大"
+    },
+    {
+      "Field": "Thrust_LLL",
+      "Name": "刺突：特特大",
+      "Description": "刺突：特特大"
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "打撃：小",
+      "Description": "打撃：小"
+    },
+    {
+      "Field": "Blow_M",
+      "Name": "打撃：中",
+      "Description": "打撃：中"
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "打撃：大",
+      "Description": "打撃：大"
+    },
+    {
+      "Field": "Blow_LL",
+      "Name": "打撃：特大",
+      "Description": "打撃：特大"
+    },
+    {
+      "Field": "Blow_LLL",
+      "Name": "打撃：特特大",
+      "Description": "打撃：特特大"
+    },
+    {
+      "Field": "Blast_S",
+      "Name": "爆風：小",
+      "Description": "爆風：小"
+    },
+    {
+      "Field": "Blast_M",
+      "Name": "爆風：中",
+      "Description": "爆風：中"
+    },
+    {
+      "Field": "Blast_L",
+      "Name": "爆風：大",
+      "Description": "爆風：大"
+    },
+    {
+      "Field": "Blast_LL",
+      "Name": "爆風：特大",
+      "Description": "爆風：特大"
+    },
+    {
+      "Field": "Blast_LLL",
+      "Name": "爆風：特特大",
+      "Description": "爆風：特特大"
+    },
+    {
+      "Field": "Bullet_S",
+      "Name": "弾丸：小",
+      "Description": "弾丸：小"
+    },
+    {
+      "Field": "Bullet_M",
+      "Name": "弾丸：中",
+      "Description": "弾丸：中"
+    },
+    {
+      "Field": "Bullet_L",
+      "Name": "弾丸：大",
+      "Description": "弾丸：大"
+    },
+    {
+      "Field": "Bullet_LL",
+      "Name": "弾丸：特大",
+      "Description": "弾丸：特大"
+    },
+    {
+      "Field": "Bullet_LLL",
+      "Name": "弾丸：特特大",
+      "Description": "弾丸：特特大"
+    },
+    {
+      "Field": "bFollow_Slash_S",
+      "Name": "着弾位置に追従する（斬撃：小）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Slash_M",
+      "Name": "着弾位置に追従する（斬撃：中）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Slash_L",
+      "Name": "着弾位置に追従する（斬撃：大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Slash_LL",
+      "Name": "着弾位置に追従する（斬撃：特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Slash_LLL",
+      "Name": "着弾位置に追従する（斬撃：特特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Thrust_S",
+      "Name": "着弾位置に追従する（刺突：小）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Thrust_M",
+      "Name": "着弾位置に追従する（刺突：中）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Thrust_L",
+      "Name": "着弾位置に追従する（刺突：大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Thrust_LL",
+      "Name": "着弾位置に追従する（刺突：特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Thrust_LLL",
+      "Name": "着弾位置に追従する（刺突：特特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blow_S",
+      "Name": "着弾位置に追従する（打撃：小）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blow_M",
+      "Name": "着弾位置に追従する（打撃：中）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blow_L",
+      "Name": "着弾位置に追従する（打撃：大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blow_LL",
+      "Name": "着弾位置に追従する（打撃：特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blow_LLL",
+      "Name": "着弾位置に追従する（打撃：特特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blast_S",
+      "Name": "着弾位置に追従する（爆風：小）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blast_M",
+      "Name": "着弾位置に追従する（爆風：中）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blast_L",
+      "Name": "着弾位置に追従する（爆風：大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blast_LL",
+      "Name": "着弾位置に追従する（爆風：特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Blast_LLL",
+      "Name": "着弾位置に追従する（爆風：特特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Bullet_S",
+      "Name": "着弾位置に追従する（弾丸：小）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Bullet_M",
+      "Name": "着弾位置に追従する（弾丸：中）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Bullet_L",
+      "Name": "着弾位置に追従する（弾丸：大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Bullet_LL",
+      "Name": "着弾位置に追従する（弾丸：特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "bFollow_Bullet_LLL",
+      "Name": "着弾位置に追従する（弾丸：特特大）",
+      "Description": "2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）"
+    },
+    {
+      "Field": "reserved01",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "Critical_Small",
+      "Name": "クリティカル：小",
+      "Description": "クリティカル：小"
+    },
+    {
+      "Field": "Critical_Middle",
+      "Name": "クリティカル：中",
+      "Description": "クリティカル：中"
+    },
+    {
+      "Field": "Critical_Large",
+      "Name": "クリティカル：大",
+      "Description": "クリティカル：大"
+    },
+    {
+      "Field": "reserved02",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

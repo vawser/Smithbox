@@ -1,0 +1,179 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cobblestone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Soil"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grassland"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Gaps"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Trees"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Swamp"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Nest"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Roof Tiles"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (Puddle)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (ankle level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (Blighttown) (shallow)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (deep)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison Swamp (knee)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison Swamp (about puddle)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Carpet"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "木材"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "ドボンSFX用"
+      ]
+    }
+  ]
+}

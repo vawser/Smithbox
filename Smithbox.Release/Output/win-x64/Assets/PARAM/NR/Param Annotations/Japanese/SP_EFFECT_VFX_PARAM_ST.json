@@ -1,0 +1,343 @@
+{
+  "Param": "SP_EFFECT_VFX_PARAM_ST",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SP_EFFECT_VFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "効果中SfxID",
+      "Description": "効果中SfxID(-1：無効)"
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "効果中SeID",
+      "Description": "効果中SeID(-1：無効)"
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "発動時SfxID",
+      "Description": "発動時SfxID(-1：無効)"
+    },
+    {
+      "Field": "initSeId",
+      "Name": "発動時SeID",
+      "Description": "発動時SeID(-1：無効)"
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "解除時SfxID",
+      "Description": "解除時SfxID(-1：無効)"
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "解除時SeID",
+      "Description": "解除時SeID(-1：無効)"
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "姿隠し開始距離[m]",
+      "Description": "カムフラージュ開始距離です"
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "姿隠し終了距離[m]",
+      "Description": "カムフラージュ終了距離です"
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "変身防具ID",
+      "Description": "変身防具ID(-1：なし)"
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "効果中ダミポリID",
+      "Description": "効果中ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "発動時ダミポリID",
+      "Description": "発動時ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "解除時ダミポリID",
+      "Description": "解除時ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "effectType",
+      "Name": "エフェクトタイプ",
+      "Description": "エフェクトタイプ"
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "武器エンチャント用ソウルパラムID",
+      "Description": "武器エンチャント用ソウルパラムID(-1：なし).適用されるファントムパラムを変更します。"
+    },
+    {
+      "Field": "playCategory",
+      "Name": "VFX再生カテゴリ",
+      "Description": "重複効果によるエフェクト再生を制御します"
+    },
+    {
+      "Field": "playPriority",
+      "Name": "カテゴリ内優先度",
+      "Description": "カテゴリ一致した場合の再生優先度を設定(低い方が優先)"
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "大型用エフェクトがあるか",
+      "Description": "大型用エフェクトがあるか"
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "ソウル体用エフェクトがあるか",
+      "Description": "ソウル体用エフェクトがあるか"
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "姿隠し時にエフェクトを非表示にするか",
+      "Description": "姿隠し時にエフェクトを非表示にするか"
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "姿隠しするか",
+      "Description": "姿隠しするか"
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "姿隠し時に味方でも非表示か",
+      "Description": "姿隠し時に味方でも非表示か"
+    },
+    {
+      "Field": "isHideFootEffect_forCamouflage",
+      "Name": "姿隠し時にフットエフェクトを消すか",
+      "Description": "姿隠し時にフットエフェクトを消すか"
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "半透明の姿隠しか",
+      "Description": "半透明の姿隠しか"
+    },
+    {
+      "Field": "isFullBodyTransformProtectorId",
+      "Name": "変身防具IDが全身用か",
+      "Description": "変身防具IDが全身用か"
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "武器エンチャント用インビジブルウェポンか",
+      "Description": "武器エンチャント用インビジブルウェポンか(0:武器表示, 1:武器非表示)"
+    },
+    {
+      "Field": "isSilence",
+      "Name": "サイレンスか",
+      "Description": "サイレンスか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isMidstFullbody",
+      "Name": "全身か（効果中）",
+      "Description": "効果中SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する"
+    },
+    {
+      "Field": "isInitFullbody",
+      "Name": "全身か（発動時）",
+      "Description": "発動中SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する"
+    },
+    {
+      "Field": "isFinishFullbody",
+      "Name": "全身か（解除時）",
+      "Description": "解除時SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する"
+    },
+    {
+      "Field": "isVisibleDeadChr",
+      "Name": "死体時でも表示を行うか",
+      "Description": "○の場合、死体時でもVFXが表示されるようになります。"
+    },
+    {
+      "Field": "isUseOffsetEnchantSfxSize",
+      "Name": "エンチャントSFXサイズオフセット適応か",
+      "Description": "武器パラの「エンチャントSfxサイズ」に従ってSfxIdをオフセットするか"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "pad_1",
+      "Description": ""
+    },
+    {
+      "Field": "decalId1",
+      "Name": "デカールID1",
+      "Description": "デカールID1(-1：無効)"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "デカールID2",
+      "Description": "デカールID2(-1：無効)"
+    },
+    {
+      "Field": "footEffectPriority",
+      "Name": "フットエフェクト優先度",
+      "Description": "フットエフェクトオフセットの優先度(低いほうが優先)"
+    },
+    {
+      "Field": "footEffectOffset",
+      "Name": "フットエフェクトオフセット",
+      "Description": "この特殊効果がかかっている場合にフットエフェクトIDにオフセットする量"
+    },
+    {
+      "Field": "traceSfxIdOffsetType",
+      "Name": "剣閃SFXIDオフセットタイプ",
+      "Description": "剣閃SFXIDにかけるオフセット値です。エンチャントと剣の軌跡エフェクトに使われる"
+    },
+    {
+      "Field": "forceDeceasedType",
+      "Name": "プレイヤー見た目強制上書き",
+      "Description": "キャラクターの見た目を強制的に生者/亡者にできる機能"
+    },
+    {
+      "Field": "enchantStartDmyId_0",
+      "Name": "エンチャント時根元ダミポリID＿０",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_0",
+      "Name": "エンチャント時剣先ダミポリID＿０",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_1",
+      "Name": "エンチャント時根元ダミポリID＿１",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_1",
+      "Name": "エンチャント時剣先ダミポリID＿１",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_2",
+      "Name": "エンチャント時根元ダミポリID＿２",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_2",
+      "Name": "エンチャント時剣先ダミポリID＿２",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_3",
+      "Name": "エンチャント時根元ダミポリID＿３",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_3",
+      "Name": "エンチャント時剣先ダミポリID＿３",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_4",
+      "Name": "エンチャント時根元ダミポリID＿４",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_4",
+      "Name": "エンチャント時剣先ダミポリID＿４",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_5",
+      "Name": "エンチャント時根元ダミポリID＿５",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_5",
+      "Name": "エンチャント時剣先ダミポリID＿５",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_6",
+      "Name": "エンチャント時根元ダミポリID＿６",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_6",
+      "Name": "エンチャント時剣先ダミポリID＿６",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "enchantStartDmyId_7",
+      "Name": "エンチャント時根元ダミポリID＿７",
+      "Description": "エンチャント時の根元に発生させるダミポリID"
+    },
+    {
+      "Field": "enchantEndDmyId_7",
+      "Name": "エンチャント時剣先ダミポリID＿７",
+      "Description": "エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。"
+    },
+    {
+      "Field": "SfxIdOffsetType",
+      "Name": "SfxIDオフセットタイプ",
+      "Description": "SfxIDオフセットタイプ"
+    },
+    {
+      "Field": "phantomParamOverwriteType",
+      "Name": "ファントムパラメータ強制指定",
+      "Description": "ファントムパラメータの強制上書きタイプ"
+    },
+    {
+      "Field": "camouflageMinAlpha",
+      "Name": "姿隠し時最小α値[%]",
+      "Description": "姿隠し時最小α値[%]"
+    },
+    {
+      "Field": "wetAspectType",
+      "Name": "水濡れ効果",
+      "Description": "ウェットパラメータを参照して水濡れ表現を発生させる"
+    },
+    {
+      "Field": "phantomParamOverwriteId",
+      "Name": "ファントムパラメータ上書きID",
+      "Description": "ファントムパラメータの強制Id"
+    },
+    {
+      "Field": "materialParamId",
+      "Name": "マテリアル拡張パラメータID",
+      "Description": "ID0～99はGSの予約IDです。ID100以降を指定した場合、マテリアル拡張パラメータを参照します（-1：無効値）"
+    },
+    {
+      "Field": "materialParamInitValue",
+      "Name": "マテリアルパラメータの初期値",
+      "Description": "マテリアルパラメータのフェード開始時の値。対象はマテリアルパラメータIDで指定する。マテリアルパラメータIDが -1 なら何もしない"
+    },
+    {
+      "Field": "materialParamTargetValue",
+      "Name": "マテリアルパラメータの目標値",
+      "Description": "マテリアルパラメータのフェード終了時の値。対象はマテリアルパラメータIDで指定する。マテリアルパラメータIDが -1 なら何もしない"
+    },
+    {
+      "Field": "materialParamFadeTime",
+      "Name": "マテリアルパラメータ値のフェード時間",
+      "Description": "マテリアルパラメータ値のフェード時間。この時間かけて徐々に目標値へ行く。マテリアルパラメータIDが -1 なら何もしない"
+    },
+    {
+      "Field": "footDecalMaterialOffsetOverwriteId",
+      "Name": "フットデカール材質オフセット強制上書きID ",
+      "Description": "フットデカールの床材質IDオフセットを強制的に書き換える（-1未使用）"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "overlayMaterialParamId",
+      "Name": "overlayMaterialParamId",
+      "Description": ""
+    },
+    {
+      "Field": "pad_old",
+      "Name": "pad_old",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Type": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Name": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "State0_ActionSlot",
+      "Name": "スロット",
+      "Description": ""
+    },
+    {
+      "Field": "State0_ActionType",
+      "Name": "行動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "State0_reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "State1_ActionSlot",
+      "Name": "スロット",
+      "Description": ""
+    },
+    {
+      "Field": "State1_ActionType",
+      "Name": "行動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "State1_reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "ExtActionType",
+      "Name": "拡張行動判定",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Tools_Header_Text_Entry_Creator",
+      "Text": "文本条目创建器"
+    },
+    {
+      "Key": "TEXT_Tools_Header_Data_Transfer",
+      "Text": "数据传输"
+    },
+    {
+      "Key": "TEXT_Tools_Language_Sync",
+      "Text": "语言同步"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Search",
+      "Text": "文本搜索"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Replacement",
+      "Text": "文本替换"
+    },
+    {
+      "Key": "TEXT_Tools_Text_Merge",
+      "Text": "文本合并"
+    },
+    {
+      "Key": "TEXT_Tools_Menu_Header_View",
+      "Text": "视图"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Entry_Creator",
+      "Text": "文本条目创建器"
+    },
+    {
+      "Key": "TEXT_Tools_View_Data_Transfer",
+      "Text": "数据传输"
+    },
+    {
+      "Key": "TEXT_Tools_View_Language_Sync",
+      "Text": "语言同步"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Search",
+      "Text": "文本搜索"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Replacement",
+      "Text": "文本替换"
+    },
+    {
+      "Key": "TEXT_Tools_View_Text_Merge",
+      "Text": "文本合并"
+    }
+  ]
+}

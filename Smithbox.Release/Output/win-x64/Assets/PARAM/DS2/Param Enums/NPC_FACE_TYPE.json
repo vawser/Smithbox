@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_FACE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_FACE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed face"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player face"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan face"
+        }
+      ]
+    }
+  ]
+}

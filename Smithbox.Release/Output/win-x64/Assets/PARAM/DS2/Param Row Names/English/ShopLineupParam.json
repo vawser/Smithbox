@@ -1,0 +1,4157 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "[Head of Vengarl] Claymore"
+      ]
+    },
+    {
+      "ID": 30700001,
+      "Entries": [
+        "[Head of Vengarl] Greatsword"
+      ]
+    },
+    {
+      "ID": 30700002,
+      "Entries": [
+        "[Head of Vengarl] Red Rust Sword"
+      ]
+    },
+    {
+      "ID": 30700003,
+      "Entries": [
+        "[Head of Vengarl] Red Rust Scimitar"
+      ]
+    },
+    {
+      "ID": 30700100,
+      "Entries": [
+        "[Head of Vengarl] Red Rust Shield"
+      ]
+    },
+    {
+      "ID": 30700300,
+      "Entries": [
+        "[Head of Vengarl] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 30700600,
+      "Entries": [
+        "[Head of Vengarl] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 30700601,
+      "Entries": [
+        "[Head of Vengarl] Lightning Urn"
+      ]
+    },
+    {
+      "ID": 30700602,
+      "Entries": [
+        "[Head of Vengarl] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 50600300,
+      "Entries": [
+        "[Grave Warden Agdayne] Soul Spear"
+      ]
+    },
+    {
+      "ID": 50600301,
+      "Entries": [
+        "[Grave Warden Agdayne] Soul Vortex"
+      ]
+    },
+    {
+      "ID": 50600302,
+      "Entries": [
+        "[Grave Warden Agdayne] Soul Appease"
+      ]
+    },
+    {
+      "ID": 50600303,
+      "Entries": [
+        "[Grave Warden Agdayne] Warmth"
+      ]
+    },
+    {
+      "ID": 50600401,
+      "Entries": [
+        "[Grave Warden Agdayne] Ring of Thorns+1"
+      ]
+    },
+    {
+      "ID": 50600600,
+      "Entries": [
+        "[Grave Warden Agdayne] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50600601,
+      "Entries": [
+        "[Grave Warden Agdayne] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 50600602,
+      "Entries": [
+        "[Grave Warden Agdayne] Dark Arrow"
+      ]
+    },
+    {
+      "ID": 50600603,
+      "Entries": [
+        "[Grave Warden Agdayne] Dark Bolt"
+      ]
+    },
+    {
+      "ID": 70400000,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Reinforced Club"
+      ]
+    },
+    {
+      "ID": 70400001,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Claws"
+      ]
+    },
+    {
+      "ID": 70400002,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Whip"
+      ]
+    },
+    {
+      "ID": 70400003,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Wooden Shield"
+      ]
+    },
+    {
+      "ID": 70400004,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Reinforced Club"
+      ]
+    },
+    {
+      "ID": 70400005,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Claws"
+      ]
+    },
+    {
+      "ID": 70400006,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Whip"
+      ]
+    },
+    {
+      "ID": 70400007,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Wooden Shield"
+      ]
+    },
+    {
+      "ID": 70400200,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Thief Mask"
+      ]
+    },
+    {
+      "ID": 70400201,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 70400202,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Black Leather Gloves"
+      ]
+    },
+    {
+      "ID": 70400203,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Black Leather Boots"
+      ]
+    },
+    {
+      "ID": 70400204,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Thief Mask"
+      ]
+    },
+    {
+      "ID": 70400205,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 70400206,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Black Leather Gloves"
+      ]
+    },
+    {
+      "ID": 70400207,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Black Leather Boots"
+      ]
+    },
+    {
+      "ID": 70400500,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Ladder Miniature"
+      ]
+    },
+    {
+      "ID": 70400501,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Ladder Miniature"
+      ]
+    },
+    {
+      "ID": 70400600,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 70400601,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 70400602,
+      "Entries": [
+        "[Laddersmith Gilligan - Earthen Peak] Bleeding Serum"
+      ]
+    },
+    {
+      "ID": 70400603,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 70400604,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 70400605,
+      "Entries": [
+        "[Laddersmith Gilligan - Majula] Bleeding Serum"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "[Chancellor Wellager] Flamberge"
+      ]
+    },
+    {
+      "ID": 72110001,
+      "Entries": [
+        "[Chancellor Wellager] Lucerne"
+      ]
+    },
+    {
+      "ID": 72110002,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Black Flamestone Dagger"
+      ]
+    },
+    {
+      "ID": 72110003,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Yellow Quartz Longsword"
+      ]
+    },
+    {
+      "ID": 72110004,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Bound Hand Axe"
+      ]
+    },
+    {
+      "ID": 72110005,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Homunculus Mace"
+      ]
+    },
+    {
+      "ID": 72110006,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Transgressor's Staff"
+      ]
+    },
+    {
+      "ID": 72110007,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Curved Twinblade"
+      ]
+    },
+    {
+      "ID": 72110008,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Crescent Sickle"
+      ]
+    },
+    {
+      "ID": 72110100,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Black Flamestone Parma"
+      ]
+    },
+    {
+      "ID": 72110101,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Yellow Quartz Shield"
+      ]
+    },
+    {
+      "ID": 72110102,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Bound Wooden Shield"
+      ]
+    },
+    {
+      "ID": 72110103,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Homunculus Wooden Shield"
+      ]
+    },
+    {
+      "ID": 72110104,
+      "Entries": [
+        "[Chancellor Wellager - Looking Glass Knight] Transgressor's Leather Shield"
+      ]
+    },
+    {
+      "ID": 72110105,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 72110300,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 72110301,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 72110302,
+      "Entries": [
+        "[Chancellor Wellager - NG+2] Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 72110303,
+      "Entries": [
+        "[Chancellor Wellager] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 72110400,
+      "Entries": [
+        "[Chancellor Wellager] Bracing Knuckle Ring+1"
+      ]
+    },
+    {
+      "ID": 72110600,
+      "Entries": [
+        "[Chancellor Wellager] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 72110601,
+      "Entries": [
+        "[Chancellor Wellager] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 72110602,
+      "Entries": [
+        "[Chancellor Wellager] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 72110603,
+      "Entries": [
+        "[Chancellor Wellager] Repair Powder"
+      ]
+    },
+    {
+      "ID": 72110604,
+      "Entries": [
+        "[Chancellor Wellager] Magic Arrow"
+      ]
+    },
+    {
+      "ID": 72110605,
+      "Entries": [
+        "[Chancellor Wellager] Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 72110606,
+      "Entries": [
+        "[Chancellor Wellager] Magic Bolt"
+      ]
+    },
+    {
+      "ID": 72110607,
+      "Entries": [
+        "[Chancellor Wellager] Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 72500300,
+      "Entries": [
+        "[Darkdiver Grandahl] Cast Light"
+      ]
+    },
+    {
+      "ID": 72500301,
+      "Entries": [
+        "[Darkdiver Grandahl] Dark Orb"
+      ]
+    },
+    {
+      "ID": 72500302,
+      "Entries": [
+        "[Darkdiver Grandahl] Dark Hail"
+      ]
+    },
+    {
+      "ID": 72500303,
+      "Entries": [
+        "[Darkdiver Grandahl] Darkstorm"
+      ]
+    },
+    {
+      "ID": 72500304,
+      "Entries": [
+        "[Darkdiver Grandahl] Profound Still"
+      ]
+    },
+    {
+      "ID": 72500600,
+      "Entries": [
+        "[Darkdiver Grandahl] Human Effigy"
+      ]
+    },
+    {
+      "ID": 72500601,
+      "Entries": [
+        "[Darkdiver Grandahl] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 72600400,
+      "Entries": [
+        "[Lonesome Gavlan - No-man's Wharf] Ring of Giants"
+      ]
+    },
+    {
+      "ID": 72600401,
+      "Entries": [
+        "[Lonesome Gavlan - Harvest Valley] Ring of Giants"
+      ]
+    },
+    {
+      "ID": 72600402,
+      "Entries": [
+        "[Lonesome Gavlan - Doors of Pharros] Ring of Giants"
+      ]
+    },
+    {
+      "ID": 72600600,
+      "Entries": [
+        "[Lonesome Gavlan] Poison Moss"
+      ]
+    },
+    {
+      "ID": 72600601,
+      "Entries": [
+        "[Lonesome Gavlan] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 72600602,
+      "Entries": [
+        "[Lonesome Gavlan] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 72600603,
+      "Entries": [
+        "[Lonesome Gavlan] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 72600604,
+      "Entries": [
+        "[Lonesome Gavlan - Doors of Pharros] Poison Moss"
+      ]
+    },
+    {
+      "ID": 72600605,
+      "Entries": [
+        "[Lonesome Gavlan - Doors of Pharros] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 72600606,
+      "Entries": [
+        "[Lonesome Gavlan - Doors of Pharros] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 72600607,
+      "Entries": [
+        "[Lonesome Gavlan - Doors of Pharros] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 75400000,
+      "Entries": [
+        "[Merchant Hag Melentia] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 75400001,
+      "Entries": [
+        "[Merchant Hag Melentia] Hand Axe"
+      ]
+    },
+    {
+      "ID": 75400002,
+      "Entries": [
+        "[Merchant Hag Melentia] Club"
+      ]
+    },
+    {
+      "ID": 75400003,
+      "Entries": [
+        "[Merchant Hag Melentia] Caestus"
+      ]
+    },
+    {
+      "ID": 75400004,
+      "Entries": [
+        "[Merchant Hag Melentia - Grave Warden Agdayne] Darkdrift"
+      ]
+    },
+    {
+      "ID": 75400005,
+      "Entries": [
+        "[Merchant Hag Melentia - Lucatiel of Mirrah] Mirrah Greatsword"
+      ]
+    },
+    {
+      "ID": 75400006,
+      "Entries": [
+        "[Merchant Hag Melentia - Titchy Gren] Scythe of Nahr Alma"
+      ]
+    },
+    {
+      "ID": 75400007,
+      "Entries": [
+        "[Merchant Hag Melentia - Manscorpion Tark] Black Scorpion Stinger"
+      ]
+    },
+    {
+      "ID": 75400100,
+      "Entries": [
+        "[Merchant Hag Melentia - Benhart of Jugo] Benhart's Parma"
+      ]
+    },
+    {
+      "ID": 75400101,
+      "Entries": [
+        "[Merchant Hag Melentia - Mild Mannered Pate] Pate's Shield"
+      ]
+    },
+    {
+      "ID": 75400200,
+      "Entries": [
+        "[Merchant Hag Melentia] Traveling Merchant Hat"
+      ]
+    },
+    {
+      "ID": 75400201,
+      "Entries": [
+        "[Merchant Hag Melentia] Traveling Merchant Coat"
+      ]
+    },
+    {
+      "ID": 75400202,
+      "Entries": [
+        "[Merchant Hag Melentia] Traveling Merchant Gloves"
+      ]
+    },
+    {
+      "ID": 75400203,
+      "Entries": [
+        "[Merchant Hag Melentia] Traveling Merchant Boots"
+      ]
+    },
+    {
+      "ID": 75400204,
+      "Entries": [
+        "[Merchant Hag Melentia - Grave Warden Agdayne] Agdayne's Black Robe"
+      ]
+    },
+    {
+      "ID": 75400205,
+      "Entries": [
+        "[Merchant Hag Melentia - Grave Warden Agdayne] Agdayne's Cuffs"
+      ]
+    },
+    {
+      "ID": 75400206,
+      "Entries": [
+        "[Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chainmail"
+      ]
+    },
+    {
+      "ID": 75400207,
+      "Entries": [
+        "[Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chain Gloves"
+      ]
+    },
+    {
+      "ID": 75400208,
+      "Entries": [
+        "[Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chain Leggings"
+      ]
+    },
+    {
+      "ID": 75400209,
+      "Entries": [
+        "[Merchant Hag Melentia - Benhart of Jugo] Benhart's Knight Helm"
+      ]
+    },
+    {
+      "ID": 75400210,
+      "Entries": [
+        "[Merchant Hag Melentia - Benhart of Jugo] Benhart's Armor"
+      ]
+    },
+    {
+      "ID": 75400211,
+      "Entries": [
+        "[Merchant Hag Melentia - Benhart of Jugo] Benhart's Gauntlets"
+      ]
+    },
+    {
+      "ID": 75400212,
+      "Entries": [
+        "[Merchant Hag Melentia - Benhart of Jugo] Benhart's Boots"
+      ]
+    },
+    {
+      "ID": 75400213,
+      "Entries": [
+        "[Merchant Hag Melentia - Mild Mannered Pate] Pate's Helm"
+      ]
+    },
+    {
+      "ID": 75400214,
+      "Entries": [
+        "[Merchant Hag Melentia - Mild Mannered Pate] Pate's Armor"
+      ]
+    },
+    {
+      "ID": 75400215,
+      "Entries": [
+        "[Merchant Hag Melentia - Mild Mannered Pate] Pate's Gloves"
+      ]
+    },
+    {
+      "ID": 75400216,
+      "Entries": [
+        "[Merchant Hag Melentia - Mild Mannered Pate] Pate's Trousers"
+      ]
+    },
+    {
+      "ID": 75400217,
+      "Entries": [
+        "[Merchant Hag Melentia - Cale the Cartographer] Cale's Leather Armor"
+      ]
+    },
+    {
+      "ID": 75400218,
+      "Entries": [
+        "[Merchant Hag Melentia - Cale the Cartographer] Cale's Shoes"
+      ]
+    },
+    {
+      "ID": 75400219,
+      "Entries": [
+        "[Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Vest"
+      ]
+    },
+    {
+      "ID": 75400220,
+      "Entries": [
+        "[Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Gloves"
+      ]
+    },
+    {
+      "ID": 75400221,
+      "Entries": [
+        "[Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Trousers"
+      ]
+    },
+    {
+      "ID": 75400222,
+      "Entries": [
+        "[Merchant Hag Melentia - Straid of Olaphis] Black Robes"
+      ]
+    },
+    {
+      "ID": 75400223,
+      "Entries": [
+        "[Merchant Hag Melentia - Straid of Olaphis] Black Gloves"
+      ]
+    },
+    {
+      "ID": 75400224,
+      "Entries": [
+        "[Merchant Hag Melentia - Straid of Olaphis] Black Boots"
+      ]
+    },
+    {
+      "ID": 75400225,
+      "Entries": [
+        "[Merchant Hag Melentia - Licia of Lindeldt] Saint's Hood"
+      ]
+    },
+    {
+      "ID": 75400226,
+      "Entries": [
+        "[Merchant Hag Melentia - Licia of Lindeldt] Saint's Dress"
+      ]
+    },
+    {
+      "ID": 75400227,
+      "Entries": [
+        "[Merchant Hag Melentia - Licia of Lindeldt] Saint's Long Gloves"
+      ]
+    },
+    {
+      "ID": 75400228,
+      "Entries": [
+        "[Merchant Hag Melentia - Licia of Lindeldt] Saint's Trousers"
+      ]
+    },
+    {
+      "ID": 75400229,
+      "Entries": [
+        "[Merchant Hag Melentia - Felkin the Outcast] Hexer's Hood"
+      ]
+    },
+    {
+      "ID": 75400230,
+      "Entries": [
+        "[Merchant Hag Melentia - Felkin the Outcast] Hexer's Robes"
+      ]
+    },
+    {
+      "ID": 75400231,
+      "Entries": [
+        "[Merchant Hag Melentia - Felkin the Outcast] Hexer's Gloves"
+      ]
+    },
+    {
+      "ID": 75400232,
+      "Entries": [
+        "[Merchant Hag Melentia - Felkin the Outcast] Hexer's Boots"
+      ]
+    },
+    {
+      "ID": 75400233,
+      "Entries": [
+        "[Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Robe"
+      ]
+    },
+    {
+      "ID": 75400234,
+      "Entries": [
+        "[Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Gloves"
+      ]
+    },
+    {
+      "ID": 75400235,
+      "Entries": [
+        "[Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Boots"
+      ]
+    },
+    {
+      "ID": 75400236,
+      "Entries": [
+        "[Merchant Hag Melentia - Titchy Gren] Nahr Alma Robes"
+      ]
+    },
+    {
+      "ID": 75400237,
+      "Entries": [
+        "[Merchant Hag Melentia - Blue Sentinel Targray] Targray's Helm"
+      ]
+    },
+    {
+      "ID": 75400238,
+      "Entries": [
+        "[Merchant Hag Melentia - Blue Sentinel Targray] Targray's Armor"
+      ]
+    },
+    {
+      "ID": 75400239,
+      "Entries": [
+        "[Merchant Hag Melentia - Blue Sentinel Targray] Targray's Manifers"
+      ]
+    },
+    {
+      "ID": 75400240,
+      "Entries": [
+        "[Merchant Hag Melentia - Blue Sentinel Targray] Targray's Leggings"
+      ]
+    },
+    {
+      "ID": 75400300,
+      "Entries": [
+        "[Merchant Hag Melentia] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 75400301,
+      "Entries": [
+        "[Merchant Hag Melentia] Heal"
+      ]
+    },
+    {
+      "ID": 75400500,
+      "Entries": [
+        "[Merchant Hag Melentia] Lenigrast's Key"
+      ]
+    },
+    {
+      "ID": 75400600,
+      "Entries": [
+        "[Merchant Hag Melentia - Forest of Fallen Giants] Lifegem"
+      ]
+    },
+    {
+      "ID": 75400601,
+      "Entries": [
+        "[Merchant Hag Melentia - Majula] Lifegem"
+      ]
+    },
+    {
+      "ID": 75400602,
+      "Entries": [
+        "[Merchant Hag Melentia - Lost Sinner] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 75400603,
+      "Entries": [
+        "[Merchant Hag Melentia] Amber Herb"
+      ]
+    },
+    {
+      "ID": 75400604,
+      "Entries": [
+        "[Merchant Hag Melentia] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 75400605,
+      "Entries": [
+        "[Merchant Hag Melentia] Witching Urn"
+      ]
+    },
+    {
+      "ID": 75400606,
+      "Entries": [
+        "[Merchant Hag Melentia] Firebomb"
+      ]
+    },
+    {
+      "ID": 75400607,
+      "Entries": [
+        "[Merchant Hag Melentia] Human Effigy"
+      ]
+    },
+    {
+      "ID": 75400608,
+      "Entries": [
+        "[Merchant Hag Melentia] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 75400609,
+      "Entries": [
+        "[Merchant Hag Melentia] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400610,
+      "Entries": [
+        "[Merchant Hag Melentia - 1 Major Boss] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400611,
+      "Entries": [
+        "[Merchant Hag Melentia - 2 Major Bosses] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400612,
+      "Entries": [
+        "[Merchant Hag Melentia - 3 Major Bosses] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400613,
+      "Entries": [
+        "[Merchant Hag Melentia - 4 Major Bosses] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400614,
+      "Entries": [
+        "[Merchant Hag Melentia - 5 Major Bosses] Brightbug"
+      ]
+    },
+    {
+      "ID": 75400615,
+      "Entries": [
+        "[Merchant Hag Melentia] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 75600600,
+      "Entries": [
+        "[The Rat King] Common Fruit"
+      ]
+    },
+    {
+      "ID": 75600601,
+      "Entries": [
+        "[The Rat King] Red Leech Troches"
+      ]
+    },
+    {
+      "ID": 75600602,
+      "Entries": [
+        "[The Rat King] Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 75600603,
+      "Entries": [
+        "[The Rat King] Dung Pie"
+      ]
+    },
+    {
+      "ID": 75600604,
+      "Entries": [
+        "[The Rat King] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 76100000,
+      "Entries": [
+        "[Maughlin the Armourer] Iron Parma"
+      ]
+    },
+    {
+      "ID": 76100001,
+      "Entries": [
+        "[Maughlin the Armourer] Silver Eagle Kite Shield"
+      ]
+    },
+    {
+      "ID": 76100002,
+      "Entries": [
+        "[Maughlin the Armourer] Twin Dragon Greatshield"
+      ]
+    },
+    {
+      "ID": 76100200,
+      "Entries": [
+        "[Maughlin the Armourer] Standard Helm"
+      ]
+    },
+    {
+      "ID": 76100201,
+      "Entries": [
+        "[Maughlin the Armourer] Hard Leather Armor"
+      ]
+    },
+    {
+      "ID": 76100202,
+      "Entries": [
+        "[Maughlin the Armourer] Hard Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100203,
+      "Entries": [
+        "[Maughlin the Armourer] Hard Leather Boots"
+      ]
+    },
+    {
+      "ID": 76100204,
+      "Entries": [
+        "[Maughlin the Armourer] Falconer Helm"
+      ]
+    },
+    {
+      "ID": 76100205,
+      "Entries": [
+        "[Maughlin the Armourer] Falconer Armor"
+      ]
+    },
+    {
+      "ID": 76100206,
+      "Entries": [
+        "[Maughlin the Armourer] Falconer Gloves"
+      ]
+    },
+    {
+      "ID": 76100207,
+      "Entries": [
+        "[Maughlin the Armourer] Falconer Boots"
+      ]
+    },
+    {
+      "ID": 76100208,
+      "Entries": [
+        "[Maughlin the Armourer] Infantry Armor"
+      ]
+    },
+    {
+      "ID": 76100209,
+      "Entries": [
+        "[Maughlin the Armourer] Infantry Gloves"
+      ]
+    },
+    {
+      "ID": 76100210,
+      "Entries": [
+        "[Maughlin the Armourer] Infantry Boots"
+      ]
+    },
+    {
+      "ID": 76100211,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Helm"
+      ]
+    },
+    {
+      "ID": 76100212,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Armor"
+      ]
+    },
+    {
+      "ID": 76100213,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Gauntlet"
+      ]
+    },
+    {
+      "ID": 76100214,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Leggings"
+      ]
+    },
+    {
+      "ID": 76100215,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Helm"
+      ]
+    },
+    {
+      "ID": 76100216,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Armor"
+      ]
+    },
+    {
+      "ID": 76100217,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Gloves"
+      ]
+    },
+    {
+      "ID": 76100218,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Leggings"
+      ]
+    },
+    {
+      "ID": 76100219,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Helm"
+      ]
+    },
+    {
+      "ID": 76100220,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Armor"
+      ]
+    },
+    {
+      "ID": 76100221,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100222,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Royal Soldier Leggings"
+      ]
+    },
+    {
+      "ID": 76100223,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Helm"
+      ]
+    },
+    {
+      "ID": 76100224,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Armor"
+      ]
+    },
+    {
+      "ID": 76100225,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Gloves"
+      ]
+    },
+    {
+      "ID": 76100226,
+      "Entries": [
+        "[Maughlin the Armourer - 1000 Souls] Elite Knight Leggings"
+      ]
+    },
+    {
+      "ID": 76100227,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls] Alva Helm"
+      ]
+    },
+    {
+      "ID": 76100228,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls] Alva Armor"
+      ]
+    },
+    {
+      "ID": 76100229,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls] Alva Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100230,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls] Alva Leggings"
+      ]
+    },
+    {
+      "ID": 76100235,
+      "Entries": [
+        "[Maughlin the Armourer - Smelter Demon] Smelter Demon Helm"
+      ]
+    },
+    {
+      "ID": 76100236,
+      "Entries": [
+        "[Maughlin the Armourer - Smelter Demon] Smelter Demon Armor"
+      ]
+    },
+    {
+      "ID": 76100237,
+      "Entries": [
+        "[Maughlin the Armourer - Smelter Demon] Smelter Demon Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100238,
+      "Entries": [
+        "[Maughlin the Armourer - Smelter Demon] Smelter Demon Leggings"
+      ]
+    },
+    {
+      "ID": 76100239,
+      "Entries": [
+        "[Maughlin the Armourer - Looking Glass Knight] Looking Glass Mask"
+      ]
+    },
+    {
+      "ID": 76100240,
+      "Entries": [
+        "[Maughlin the Armourer - Looking Glass Knight] Looking Glass Armor"
+      ]
+    },
+    {
+      "ID": 76100241,
+      "Entries": [
+        "[Maughlin the Armourer - Looking Glass Knight] Looking Glass Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100242,
+      "Entries": [
+        "[Maughlin the Armourer - Looking Glass Knight] Looking Glass Leggings"
+      ]
+    },
+    {
+      "ID": 76100243,
+      "Entries": [
+        "[Maughlin the Armourer - Lost Sinner] Penal Mask"
+      ]
+    },
+    {
+      "ID": 76100244,
+      "Entries": [
+        "[Maughlin the Armourer - Lost Sinner] Penal Straightjacket"
+      ]
+    },
+    {
+      "ID": 76100245,
+      "Entries": [
+        "[Maughlin the Armourer - Lost Sinner] Penal Handcuffs"
+      ]
+    },
+    {
+      "ID": 76100246,
+      "Entries": [
+        "[Maughlin the Armourer - Lost Sinner] Penal Skirt"
+      ]
+    },
+    {
+      "ID": 76100247,
+      "Entries": [
+        "[Maughlin the Armourer - Velstadt] Velstadt's Helm"
+      ]
+    },
+    {
+      "ID": 76100248,
+      "Entries": [
+        "[Maughlin the Armourer - Velstadt] Velstadt's Armor"
+      ]
+    },
+    {
+      "ID": 76100249,
+      "Entries": [
+        "[Maughlin the Armourer - Velstadt] Velstadt's Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100250,
+      "Entries": [
+        "[Maughlin the Armourer - Velstadt] Velstadt's Leggings"
+      ]
+    },
+    {
+      "ID": 76100251,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Defender Helm"
+      ]
+    },
+    {
+      "ID": 76100252,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Defender Armor"
+      ]
+    },
+    {
+      "ID": 76100253,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Defender Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100254,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Defender Leggings"
+      ]
+    },
+    {
+      "ID": 76100255,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Watcher Helm"
+      ]
+    },
+    {
+      "ID": 76100256,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Watcher Armor"
+      ]
+    },
+    {
+      "ID": 76100257,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Watcher Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100258,
+      "Entries": [
+        "[Maughlin the Armourer - Thorne Defenders] Throne Watcher Leggings"
+      ]
+    },
+    {
+      "ID": 76100259,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls, NG+3] Moon Butterfly Hat"
+      ]
+    },
+    {
+      "ID": 76100260,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Wings"
+      ]
+    },
+    {
+      "ID": 76100261,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Cuffs"
+      ]
+    },
+    {
+      "ID": 76100262,
+      "Entries": [
+        "[Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Skirt"
+      ]
+    },
+    {
+      "ID": 76100263,
+      "Entries": [
+        "[Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Helm"
+      ]
+    },
+    {
+      "ID": 76100264,
+      "Entries": [
+        "[Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Armor"
+      ]
+    },
+    {
+      "ID": 76100265,
+      "Entries": [
+        "[Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Gauntlets"
+      ]
+    },
+    {
+      "ID": 76100266,
+      "Entries": [
+        "[Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Leggings"
+      ]
+    },
+    {
+      "ID": 76200300,
+      "Entries": [
+        "[Stone Trader Chloanne] Soul Appease"
+      ]
+    },
+    {
+      "ID": 76200301,
+      "Entries": [
+        "[Stone Trader Chloanne] Dead Again"
+      ]
+    },
+    {
+      "ID": 76200600,
+      "Entries": [
+        "[Stone Trader Chloanne] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76200601,
+      "Entries": [
+        "[Stone Trader Chloanne - Old Iron King] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76200602,
+      "Entries": [
+        "[Stone Trader Chloanne - Old Iron King] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76200603,
+      "Entries": [
+        "[Stone Trader Chloanne - Looking Glass Knight] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76200604,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 76200605,
+      "Entries": [
+        "[Stone Trader Chloanne - Nashandra] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 76200606,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 76200607,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 76200608,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 76200609,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Faintstone"
+      ]
+    },
+    {
+      "ID": 76200610,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Boltstone"
+      ]
+    },
+    {
+      "ID": 76200611,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 76200612,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Darknight Stone"
+      ]
+    },
+    {
+      "ID": 76200613,
+      "Entries": [
+        "[Stone Trader Chloanne - Looking Glass Knight] Poison Stone"
+      ]
+    },
+    {
+      "ID": 76200614,
+      "Entries": [
+        "[Stone Trader Chloanne - Looking Glass Knight] Bleed Stone"
+      ]
+    },
+    {
+      "ID": 76200615,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Raw Stone"
+      ]
+    },
+    {
+      "ID": 76200616,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Magic Stone"
+      ]
+    },
+    {
+      "ID": 76200617,
+      "Entries": [
+        "[Stone Trader Chloanne - Velstadt] Old Mundane Stone"
+      ]
+    },
+    {
+      "ID": 76200618,
+      "Entries": [
+        "[Stone Trader Chloanne] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 76300300,
+      "Entries": [
+        "[Rosabeth of Melfia] Fireball"
+      ]
+    },
+    {
+      "ID": 76300301,
+      "Entries": [
+        "[Rosabeth of Melfia] Fire Orb"
+      ]
+    },
+    {
+      "ID": 76300302,
+      "Entries": [
+        "[Rosabeth of Melfia] Combustion"
+      ]
+    },
+    {
+      "ID": 76300303,
+      "Entries": [
+        "[Rosabeth of Melfia] Poison Mist"
+      ]
+    },
+    {
+      "ID": 76300304,
+      "Entries": [
+        "[Rosabeth of Melfia] Flash Sweat"
+      ]
+    },
+    {
+      "ID": 76300305,
+      "Entries": [
+        "[Rosabeth of Melfia] Iron Flesh"
+      ]
+    },
+    {
+      "ID": 76300400,
+      "Entries": [
+        "[Rosabeth of Melfia] Flame Quartz Ring"
+      ]
+    },
+    {
+      "ID": 76300401,
+      "Entries": [
+        "[Rosabeth of Melfia] Thunder Quartz Ring"
+      ]
+    },
+    {
+      "ID": 76300402,
+      "Entries": [
+        "[Rosabeth of Melfia] Dark Quartz Ring"
+      ]
+    },
+    {
+      "ID": 76300600,
+      "Entries": [
+        "[Rosabeth of Melfia] Small Blue Burr"
+      ]
+    },
+    {
+      "ID": 76300601,
+      "Entries": [
+        "[Rosabeth of Melfia] Small Yellow Burr"
+      ]
+    },
+    {
+      "ID": 76300602,
+      "Entries": [
+        "[Rosabeth of Melfia] Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 76300603,
+      "Entries": [
+        "[Rosabeth of Melfia] Fire Seed"
+      ]
+    },
+    {
+      "ID": 76400000,
+      "Entries": [
+        "[Blacksmith Lenigrast] Longsword"
+      ]
+    },
+    {
+      "ID": 76400001,
+      "Entries": [
+        "[Blacksmith Lenigrast] Broadsword"
+      ]
+    },
+    {
+      "ID": 76400002,
+      "Entries": [
+        "[Blacksmith Lenigrast] Estoc"
+      ]
+    },
+    {
+      "ID": 76400003,
+      "Entries": [
+        "[Blacksmith Lenigrast] Rapier"
+      ]
+    },
+    {
+      "ID": 76400004,
+      "Entries": [
+        "[Blacksmith Lenigrast] Falchion"
+      ]
+    },
+    {
+      "ID": 76400005,
+      "Entries": [
+        "[Blacksmith Lenigrast] Battle Axe"
+      ]
+    },
+    {
+      "ID": 76400006,
+      "Entries": [
+        "[Blacksmith Lenigrast] Mace"
+      ]
+    },
+    {
+      "ID": 76400007,
+      "Entries": [
+        "[Blacksmith Lenigrast] Spear"
+      ]
+    },
+    {
+      "ID": 76400600,
+      "Entries": [
+        "[Blacksmith Lenigrast] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 76400601,
+      "Entries": [
+        "[Blacksmith Lenigrast] Iron Arrow"
+      ]
+    },
+    {
+      "ID": 76400602,
+      "Entries": [
+        "[Blacksmith Lenigrast] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 76400603,
+      "Entries": [
+        "[Blacksmith Lenigrast] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 76400604,
+      "Entries": [
+        "[Blacksmith Lenigrast] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76400605,
+      "Entries": [
+        "[Blacksmith Lenigrast] Repair Powder"
+      ]
+    },
+    {
+      "ID": 76430000,
+      "Entries": [
+        "[Steady Hand McDuff] Uchigatana"
+      ]
+    },
+    {
+      "ID": 76430001,
+      "Entries": [
+        "[Steady Hand McDuff] Bastard Sword"
+      ]
+    },
+    {
+      "ID": 76430002,
+      "Entries": [
+        "[Steady Hand McDuff] Greataxe"
+      ]
+    },
+    {
+      "ID": 76430003,
+      "Entries": [
+        "[Steady Hand McDuff] Winged Spear"
+      ]
+    },
+    {
+      "ID": 76430004,
+      "Entries": [
+        "[Steady Hand McDuff] Scythe"
+      ]
+    },
+    {
+      "ID": 76430005,
+      "Entries": [
+        "[Steady Hand McDuff] Long Bow"
+      ]
+    },
+    {
+      "ID": 76430006,
+      "Entries": [
+        "[Steady Hand McDuff] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 76430007,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Uchigatana"
+      ]
+    },
+    {
+      "ID": 76430008,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Bastard Sword"
+      ]
+    },
+    {
+      "ID": 76430009,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Greataxe"
+      ]
+    },
+    {
+      "ID": 76430010,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Winged Spear"
+      ]
+    },
+    {
+      "ID": 76430011,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Scythe"
+      ]
+    },
+    {
+      "ID": 76430012,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Long Bow"
+      ]
+    },
+    {
+      "ID": 76430013,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 76430100,
+      "Entries": [
+        "[Steady Hand McDuff] Royal Kite Shield"
+      ]
+    },
+    {
+      "ID": 76430102,
+      "Entries": [
+        "[Steady Hand McDuff - Unknown Event] Royal Kite Shield"
+      ]
+    },
+    {
+      "ID": 76430600,
+      "Entries": [
+        "[Steady Hand McDuff] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 76430601,
+      "Entries": [
+        "[Steady Hand McDuff] Iron Arrow"
+      ]
+    },
+    {
+      "ID": 76430602,
+      "Entries": [
+        "[Steady Hand McDuff] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 76430603,
+      "Entries": [
+        "[Steady Hand McDuff] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 76430604,
+      "Entries": [
+        "[Steady Hand McDuff] Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 76430605,
+      "Entries": [
+        "[Steady Hand McDuff] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 76430606,
+      "Entries": [
+        "[Steady Hand McDuff] Repair Powder"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "[Carhillion of the Fold] Sorcerer's Staff"
+      ]
+    },
+    {
+      "ID": 76600300,
+      "Entries": [
+        "[Carhillion of the Fold] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600301,
+      "Entries": [
+        "[Carhillion of the Fold] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600302,
+      "Entries": [
+        "[Carhillion of the Fold] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600303,
+      "Entries": [
+        "[Carhillion of the Fold] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600304,
+      "Entries": [
+        "[Carhillion of the Fold] Shockwave"
+      ]
+    },
+    {
+      "ID": 76600305,
+      "Entries": [
+        "[Carhillion of the Fold] Soul Spear Barrage"
+      ]
+    },
+    {
+      "ID": 76600306,
+      "Entries": [
+        "[Carhillion of the Fold] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 76600307,
+      "Entries": [
+        "[Carhillion of the Fold] Yearn"
+      ]
+    },
+    {
+      "ID": 76600308,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600309,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600310,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600311,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76600312,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Shockwave"
+      ]
+    },
+    {
+      "ID": 76600313,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Soul Spear Barrage"
+      ]
+    },
+    {
+      "ID": 76600314,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 76600315,
+      "Entries": [
+        "[Carhillion of the Fold - Shrine of Winter] Yearn"
+      ]
+    },
+    {
+      "ID": 76600400,
+      "Entries": [
+        "[Carhillion of the Fold] Spell Quartz Ring"
+      ]
+    },
+    {
+      "ID": 76600401,
+      "Entries": [
+        "[Carhillion of the Fold] Clear Bluestone Ring"
+      ]
+    },
+    {
+      "ID": 76600600,
+      "Entries": [
+        "[Carhillion of the Fold] Amber Herb"
+      ]
+    },
+    {
+      "ID": 76600601,
+      "Entries": [
+        "[Carhillion of the Fold] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 76600602,
+      "Entries": [
+        "[Carhillion of the Fold] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 76800000,
+      "Entries": [
+        "[Straid of Olaphis - 5 Forlorn] Greatsword of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800001,
+      "Entries": [
+        "[Straid of Olaphis - 5 Forlorn] Scythe of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800200,
+      "Entries": [
+        "[Straid of Olaphis - 1 Forlorn] Hood of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800201,
+      "Entries": [
+        "[Straid of Olaphis - 4 Forlorn] Armor of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800202,
+      "Entries": [
+        "[Straid of Olaphis - 2 Forlorn] Gauntlets of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800203,
+      "Entries": [
+        "[Straid of Olaphis - 3 Forlorn] Leggings of the Forlorn"
+      ]
+    },
+    {
+      "ID": 76800300,
+      "Entries": [
+        "[Straid of Olaphis] Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76800301,
+      "Entries": [
+        "[Straid of Olaphis] Resplendent Life"
+      ]
+    },
+    {
+      "ID": 76800302,
+      "Entries": [
+        "[Straid of Olaphis - Velstadt] Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 76800303,
+      "Entries": [
+        "[Straid of Olaphis] Unveil"
+      ]
+    },
+    {
+      "ID": 76800304,
+      "Entries": [
+        "[Straid of Olaphis - Velstadt] Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 76800305,
+      "Entries": [
+        "[Straid of Olaphis] Lingering Flame"
+      ]
+    },
+    {
+      "ID": 76800306,
+      "Entries": [
+        "[Straid of Olaphis] Flame Swathe"
+      ]
+    },
+    {
+      "ID": 76800307,
+      "Entries": [
+        "[Straid of Olaphis] Dark Orb"
+      ]
+    },
+    {
+      "ID": 76800308,
+      "Entries": [
+        "[Straid of Olaphis] Dark Hail"
+      ]
+    },
+    {
+      "ID": 76800309,
+      "Entries": [
+        "[Straid of Olaphis] Dark Fog"
+      ]
+    },
+    {
+      "ID": 76800310,
+      "Entries": [
+        "[Straid of Olaphis] Affinity"
+      ]
+    },
+    {
+      "ID": 76800311,
+      "Entries": [
+        "[Straid of Olaphis] Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 76800312,
+      "Entries": [
+        "[Straid of Olaphis] Cast Light"
+      ]
+    },
+    {
+      "ID": 76800400,
+      "Entries": [
+        "[Straid of Olaphis] Ring of Knowledge"
+      ]
+    },
+    {
+      "ID": 76800401,
+      "Entries": [
+        "[Straid of Olaphis] Lingering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 76800402,
+      "Entries": [
+        "[Straid of Olaphis] Agape Ring"
+      ]
+    },
+    {
+      "ID": 76800600,
+      "Entries": [
+        "[Straid of Olaphis] Rouge Water"
+      ]
+    },
+    {
+      "ID": 76801000,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Pursuer] Pursuer's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 76801001,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Pursuer] Pursuer's Greatshield"
+      ]
+    },
+    {
+      "ID": 76801002,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Last Giant] Giant Stone Axe"
+      ]
+    },
+    {
+      "ID": 76801003,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider's Halberd"
+      ]
+    },
+    {
+      "ID": 76801004,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Bow"
+      ]
+    },
+    {
+      "ID": 76801005,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Twinblade"
+      ]
+    },
+    {
+      "ID": 76801006,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Greatshield"
+      ]
+    },
+    {
+      "ID": 76801007,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Warped Sword"
+      ]
+    },
+    {
+      "ID": 76801008,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Barbed Club"
+      ]
+    },
+    {
+      "ID": 76801009,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Arced Sword"
+      ]
+    },
+    {
+      "ID": 76801010,
+      "Entries": [
+        "[Straid of Olaphis - Executioner's Chariot Soul] Chariot Lance"
+      ]
+    },
+    {
+      "ID": 76801011,
+      "Entries": [
+        "[Straid of Olaphis - Executioner's Chariot Soul] Shield Crossbow"
+      ]
+    },
+    {
+      "ID": 76801012,
+      "Entries": [
+        "[Straid of Olaphis - Skeleton Lord's Soul] Roaring Halberd"
+      ]
+    },
+    {
+      "ID": 76801013,
+      "Entries": [
+        "[Straid of Olaphis - Skeleton Lord's Soul] Bone Scythe"
+      ]
+    },
+    {
+      "ID": 76801014,
+      "Entries": [
+        "[Straid of Olaphis - Mytha, the Baneful Queen Soul] Mytha's Bent Blade"
+      ]
+    },
+    {
+      "ID": 76801015,
+      "Entries": [
+        "[Straid of Olaphis - Smelter Demon Soul] Smelter Sword"
+      ]
+    },
+    {
+      "ID": 76801016,
+      "Entries": [
+        "[Straid of Olaphis - Demon of Song Soul] Spotted Whip"
+      ]
+    },
+    {
+      "ID": 76801017,
+      "Entries": [
+        "[Straid of Olaphis - Belfry Gargoyle Soul] Gargoyle Bident"
+      ]
+    },
+    {
+      "ID": 76801100,
+      "Entries": [
+        "[Straid of Olaphis - Ruin Sentinel Soul] Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76801101,
+      "Entries": [
+        "[Straid of Olaphis - Royal Rat Vanguard Soul] Toxic Mist"
+      ]
+    },
+    {
+      "ID": 76801102,
+      "Entries": [
+        "[Straid of Olaphis - Scorpioness Najka Soul] Soul Shower"
+      ]
+    },
+    {
+      "ID": 76801103,
+      "Entries": [
+        "[Straid of Olaphis - Royal Rat Authority Soul] Acid Surge"
+      ]
+    },
+    {
+      "ID": 76801104,
+      "Entries": [
+        "[Straid of Olaphis - Soul of Velstadt] Sacred Oath"
+      ]
+    },
+    {
+      "ID": 76801105,
+      "Entries": [
+        "[Straid of Olaphis - Giant Lord Soul] Repel"
+      ]
+    },
+    {
+      "ID": 76801106,
+      "Entries": [
+        "[Straid of Olaphis - Darklurker Soul] Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 76801107,
+      "Entries": [
+        "[Straid of Olaphis - Old Witch Soul] Flame Weapon"
+      ]
+    },
+    {
+      "ID": 76801108,
+      "Entries": [
+        "[Straid of Olaphis - Old King Soul] Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 76801109,
+      "Entries": [
+        "[Straid of Olaphis - Old Dead One Soul] Numbness"
+      ]
+    },
+    {
+      "ID": 76801110,
+      "Entries": [
+        "[Straid of Olaphis - Old Paledrake Soul] Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 76801111,
+      "Entries": [
+        "[Straid of Olaphis - Soul of Nadalia- Bride of Ash] Outcry"
+      ]
+    },
+    {
+      "ID": 76801200,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Pursuer] Pursuer's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 76801201,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Pursuer] Pursuer's Greatshield"
+      ]
+    },
+    {
+      "ID": 76801202,
+      "Entries": [
+        "[Straid of Olaphis - Soul of the Last Giant] Giant Stone Axe"
+      ]
+    },
+    {
+      "ID": 76801203,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider's Halberd"
+      ]
+    },
+    {
+      "ID": 76801204,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Bow"
+      ]
+    },
+    {
+      "ID": 76801205,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Twinblade"
+      ]
+    },
+    {
+      "ID": 76801206,
+      "Entries": [
+        "[Straid of Olaphis - Dragonrider Soul] Dragonrider Greatshield"
+      ]
+    },
+    {
+      "ID": 76801207,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Warped Sword"
+      ]
+    },
+    {
+      "ID": 76801208,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Barbed Club"
+      ]
+    },
+    {
+      "ID": 76801209,
+      "Entries": [
+        "[Straid of Olaphis - Flexile Sentry Soul] Arced Sword"
+      ]
+    },
+    {
+      "ID": 76801210,
+      "Entries": [
+        "[Straid of Olaphis - Executioner's Chariot Soul] Chariot Lance"
+      ]
+    },
+    {
+      "ID": 76801211,
+      "Entries": [
+        "[Straid of Olaphis - Executioner's Chariot Soul] Shield Crossbow"
+      ]
+    },
+    {
+      "ID": 76801212,
+      "Entries": [
+        "[Straid of Olaphis - Skeleton Lord's Soul] Roaring Halberd"
+      ]
+    },
+    {
+      "ID": 76801213,
+      "Entries": [
+        "[Straid of Olaphis - Skeleton Lord's Soul] Bone Scythe"
+      ]
+    },
+    {
+      "ID": 76801214,
+      "Entries": [
+        "[Straid of Olaphis - Mytha- the Baneful Queen Soul] Mytha's Bent Blade"
+      ]
+    },
+    {
+      "ID": 76801215,
+      "Entries": [
+        "[Straid of Olaphis - Smelter Demon Soul] Smelter Sword"
+      ]
+    },
+    {
+      "ID": 76801216,
+      "Entries": [
+        "[Straid of Olaphis - Demon of Song Soul] Spotted Whip"
+      ]
+    },
+    {
+      "ID": 76801217,
+      "Entries": [
+        "[Straid of Olaphis - Belfry Gargoyle Soul] Gargoyle Bident"
+      ]
+    },
+    {
+      "ID": 76801300,
+      "Entries": [
+        "[Straid of Olaphis - Ruin Sentinel Soul] Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 76801301,
+      "Entries": [
+        "[Straid of Olaphis - Royal Rat Vanguard Soul] Toxic Mist"
+      ]
+    },
+    {
+      "ID": 76801302,
+      "Entries": [
+        "[Straid of Olaphis - Scorpioness Najka Soul] Soul Shower"
+      ]
+    },
+    {
+      "ID": 76801303,
+      "Entries": [
+        "[Straid of Olaphis - Royal Rat Authority Soul] Acid Surge"
+      ]
+    },
+    {
+      "ID": 76801304,
+      "Entries": [
+        "[Straid of Olaphis - Soul of Velstadt] Sacred Oath"
+      ]
+    },
+    {
+      "ID": 76801305,
+      "Entries": [
+        "[Straid of Olaphis - Giant Lord Soul] Repel"
+      ]
+    },
+    {
+      "ID": 76801306,
+      "Entries": [
+        "[Straid of Olaphis - Darklurker Soul] Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "[Licia of Lindeldt] Cleric's Sacred Chime"
+      ]
+    },
+    {
+      "ID": 76900300,
+      "Entries": [
+        "[Licia of Lindeldt] Heal"
+      ]
+    },
+    {
+      "ID": 76900301,
+      "Entries": [
+        "[Licia of Lindeldt] Med Heal"
+      ]
+    },
+    {
+      "ID": 76900302,
+      "Entries": [
+        "[Licia of Lindeldt] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 76900303,
+      "Entries": [
+        "[Licia of Lindeldt] Replenishment"
+      ]
+    },
+    {
+      "ID": 76900304,
+      "Entries": [
+        "[Licia of Lindeldt] Resplendent Life"
+      ]
+    },
+    {
+      "ID": 76900305,
+      "Entries": [
+        "[Licia of Lindeldt] Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 76900306,
+      "Entries": [
+        "[Licia of Lindeldt] Force"
+      ]
+    },
+    {
+      "ID": 76900307,
+      "Entries": [
+        "[Licia of Lindeldt] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 76900308,
+      "Entries": [
+        "[Licia of Lindeldt] Homeward"
+      ]
+    },
+    {
+      "ID": 76900309,
+      "Entries": [
+        "[Licia of Lindeldt] Guidance"
+      ]
+    },
+    {
+      "ID": 76900310,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Heal"
+      ]
+    },
+    {
+      "ID": 76900311,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Med Heal"
+      ]
+    },
+    {
+      "ID": 76900312,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 76900313,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Replenishment"
+      ]
+    },
+    {
+      "ID": 76900314,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Resplendent Life"
+      ]
+    },
+    {
+      "ID": 76900315,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 76900316,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Force"
+      ]
+    },
+    {
+      "ID": 76900317,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 76900318,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Homeward"
+      ]
+    },
+    {
+      "ID": 76900319,
+      "Entries": [
+        "[Licia of Lindeldt - Shrine of Winter] Guidance"
+      ]
+    },
+    {
+      "ID": 76900400,
+      "Entries": [
+        "[Licia of Lindeldt] Ring of Prayer"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "[Felkin the Outcast] Archdrake Staff"
+      ]
+    },
+    {
+      "ID": 77000001,
+      "Entries": [
+        "[Felkin the Outcast] Archdrake Chime"
+      ]
+    },
+    {
+      "ID": 77000002,
+      "Entries": [
+        "[Felkin the Outcast] Chaos Rapier"
+      ]
+    },
+    {
+      "ID": 77000100,
+      "Entries": [
+        "[Felkin the Outcast] Chaos Shield"
+      ]
+    },
+    {
+      "ID": 77000300,
+      "Entries": [
+        "[Felkin the Outcast] Dark Orb"
+      ]
+    },
+    {
+      "ID": 77000301,
+      "Entries": [
+        "[Felkin the Outcast] Dark Weapon"
+      ]
+    },
+    {
+      "ID": 77000302,
+      "Entries": [
+        "[Felkin the Outcast] Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 77000303,
+      "Entries": [
+        "[Felkin the Outcast] Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 77000304,
+      "Entries": [
+        "[Felkin the Outcast] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 77000305,
+      "Entries": [
+        "[Felkin the Outcast] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 77000306,
+      "Entries": [
+        "[Felkin the Outcast] Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 77000400,
+      "Entries": [
+        "[Felkin the Outcast] Ring of Life Protection"
+      ]
+    },
+    {
+      "ID": 77000600,
+      "Entries": [
+        "[Felkin the Outcast] Dark Pine Resin"
+      ]
+    },
+    {
+      "ID": 77100200,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Moon Hat"
+      ]
+    },
+    {
+      "ID": 77100201,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Astrologist's Robe"
+      ]
+    },
+    {
+      "ID": 77100202,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Astrologist's Gauntlets"
+      ]
+    },
+    {
+      "ID": 77100203,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Astrologist's Bottoms"
+      ]
+    },
+    {
+      "ID": 77100204,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Black Witch Hat"
+      ]
+    },
+    {
+      "ID": 77100205,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Black Witch Robe"
+      ]
+    },
+    {
+      "ID": 77100206,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Black Witch Gloves"
+      ]
+    },
+    {
+      "ID": 77100207,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Black Witch Trousers"
+      ]
+    },
+    {
+      "ID": 77100300,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 77100301,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 77100400,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Thunder Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 77100500,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 77100600,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 77100601,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Crimson Water"
+      ]
+    },
+    {
+      "ID": 77100602,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Lightning Greatarrow"
+      ]
+    },
+    {
+      "ID": 77100603,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 77100604,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 77200200,
+      "Entries": [
+        "[Magerold of Lanafir] Spiked Bandit Helm"
+      ]
+    },
+    {
+      "ID": 77200201,
+      "Entries": [
+        "[Magerold of Lanafir] Bandit Armor"
+      ]
+    },
+    {
+      "ID": 77200202,
+      "Entries": [
+        "[Magerold of Lanafir] Bandit Gauntlets"
+      ]
+    },
+    {
+      "ID": 77200203,
+      "Entries": [
+        "[Magerold of Lanafir] Bandit Boots"
+      ]
+    },
+    {
+      "ID": 77200204,
+      "Entries": [
+        "[Magerold of Lanafir] Jester's Cap"
+      ]
+    },
+    {
+      "ID": 77200205,
+      "Entries": [
+        "[Magerold of Lanafir] Jester's Robes"
+      ]
+    },
+    {
+      "ID": 77200206,
+      "Entries": [
+        "[Magerold of Lanafir] Jester's Gloves"
+      ]
+    },
+    {
+      "ID": 77200207,
+      "Entries": [
+        "[Magerold of Lanafir] Jester's Tights"
+      ]
+    },
+    {
+      "ID": 77200208,
+      "Entries": [
+        "[Magerold of Lanafir - NG+2] Dragonrider Helm"
+      ]
+    },
+    {
+      "ID": 77200209,
+      "Entries": [
+        "[Magerold of Lanafir - NG+2] Dragonrider Armor"
+      ]
+    },
+    {
+      "ID": 77200210,
+      "Entries": [
+        "[Magerold of Lanafir - NG+2] Dragonrider Gauntlets"
+      ]
+    },
+    {
+      "ID": 77200211,
+      "Entries": [
+        "[Magerold of Lanafir - NG+2] Dragonrider Leggings"
+      ]
+    },
+    {
+      "ID": 77200212,
+      "Entries": [
+        "[Magerold of Lanafir - Fume Knight] Raime's Helm"
+      ]
+    },
+    {
+      "ID": 77200213,
+      "Entries": [
+        "[Magerold of Lanafir - Fume Knight] Raime's Armor"
+      ]
+    },
+    {
+      "ID": 77200214,
+      "Entries": [
+        "[Magerold of Lanafir - Fume Knight] Raime's Gauntlets"
+      ]
+    },
+    {
+      "ID": 77200215,
+      "Entries": [
+        "[Magerold of Lanafir - Fume Knight] Raime's Leggings"
+      ]
+    },
+    {
+      "ID": 77200216,
+      "Entries": [
+        "[Magerold of Lanafir - Sir Alonne] Alonne's Helm"
+      ]
+    },
+    {
+      "ID": 77200217,
+      "Entries": [
+        "[Magerold of Lanafir - Sir Alonne] Alonne's Armor"
+      ]
+    },
+    {
+      "ID": 77200218,
+      "Entries": [
+        "[Magerold of Lanafir - Sir Alonne] Alonne's Gauntlets"
+      ]
+    },
+    {
+      "ID": 77200219,
+      "Entries": [
+        "[Magerold of Lanafir - Sir Alonne] Alonne's Leggings"
+      ]
+    },
+    {
+      "ID": 77200300,
+      "Entries": [
+        "[Magerold of Lanafir] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 77200301,
+      "Entries": [
+        "[Magerold of Lanafir] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 77200302,
+      "Entries": [
+        "[Magerold of Lanafir] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 77200303,
+      "Entries": [
+        "[Magerold of Lanafir] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 77200304,
+      "Entries": [
+        "[Magerold of Lanafir] Dark Hail"
+      ]
+    },
+    {
+      "ID": 77200305,
+      "Entries": [
+        "[Magerold of Lanafir] Darkstorm"
+      ]
+    },
+    {
+      "ID": 77200306,
+      "Entries": [
+        "[Magerold of Lanafir] Fall Control"
+      ]
+    },
+    {
+      "ID": 77200400,
+      "Entries": [
+        "[Magerold of Lanafir] Cursebite Ring"
+      ]
+    },
+    {
+      "ID": 77200500,
+      "Entries": [
+        "[Magerold of Lanafir] Hello Carving"
+      ]
+    },
+    {
+      "ID": 77200501,
+      "Entries": [
+        "[Magerold of Lanafir] Thank You Carving"
+      ]
+    },
+    {
+      "ID": 77200502,
+      "Entries": [
+        "[Magerold of Lanafir] I'm Sorry Carving"
+      ]
+    },
+    {
+      "ID": 77200503,
+      "Entries": [
+        "[Magerold of Lanafir] Very Good! Carving"
+      ]
+    },
+    {
+      "ID": 77200600,
+      "Entries": [
+        "[Magerold of Lanafir] Green Blossom"
+      ]
+    },
+    {
+      "ID": 77200601,
+      "Entries": [
+        "[Magerold of Lanafir] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 77200602,
+      "Entries": [
+        "[Magerold of Lanafir] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 77200603,
+      "Entries": [
+        "[Magerold of Lanafir] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 77200604,
+      "Entries": [
+        "[Magerold of Lanafir] Repair Powder"
+      ]
+    },
+    {
+      "ID": 77200605,
+      "Entries": [
+        "[Magerold of Lanafir] Human Effigy"
+      ]
+    },
+    {
+      "ID": 77200606,
+      "Entries": [
+        "[Magerold of Lanafir] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 77600000,
+      "Entries": [
+        "[Weaponsmith Ornifex] Monastery Scimitar"
+      ]
+    },
+    {
+      "ID": 77600001,
+      "Entries": [
+        "[Weaponsmith Ornifex] Manikin Claws"
+      ]
+    },
+    {
+      "ID": 77600002,
+      "Entries": [
+        "[Weaponsmith Ornifex] Manikin Knife"
+      ]
+    },
+    {
+      "ID": 77600003,
+      "Entries": [
+        "[Weaponsmith Ornifex] Lion Greataxe"
+      ]
+    },
+    {
+      "ID": 77600004,
+      "Entries": [
+        "[Weaponsmith Ornifex] Silverblack Sickle"
+      ]
+    },
+    {
+      "ID": 77600300,
+      "Entries": [
+        "[Weaponsmith Ornifex] Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 77600301,
+      "Entries": [
+        "[Weaponsmith Ornifex] Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 77600302,
+      "Entries": [
+        "[Weaponsmith Ornifex] Fall Control"
+      ]
+    },
+    {
+      "ID": 77600600,
+      "Entries": [
+        "[Weaponsmith Ornifex] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 77600601,
+      "Entries": [
+        "[Weaponsmith Ornifex] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 77600602,
+      "Entries": [
+        "[Weaponsmith Ornifex] Fire Bolt"
+      ]
+    },
+    {
+      "ID": 77600603,
+      "Entries": [
+        "[Weaponsmith Ornifex] Green Blossom"
+      ]
+    },
+    {
+      "ID": 77600604,
+      "Entries": [
+        "[Weaponsmith Ornifex] Amber Herb"
+      ]
+    },
+    {
+      "ID": 77600605,
+      "Entries": [
+        "[Weaponsmith Ornifex - Nashandra] Green Blossom"
+      ]
+    },
+    {
+      "ID": 77600606,
+      "Entries": [
+        "[Weaponsmith Ornifex - Nashandra] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 77601000,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 77601001,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 77601002,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 77601003,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 77601004,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk"
+      ]
+    },
+    {
+      "ID": 77601005,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang"
+      ]
+    },
+    {
+      "ID": 77601006,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 77601007,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror"
+      ]
+    },
+    {
+      "ID": 77601008,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 77601009,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 77601010,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601011,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Shield"
+      ]
+    },
+    {
+      "ID": 77601012,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 77601013,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601014,
+      "Entries": [
+        "[Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 77601015,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want"
+      ]
+    },
+    {
+      "ID": 77601016,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Chime of Want"
+      ]
+    },
+    {
+      "ID": 77601017,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Bow of Want"
+      ]
+    },
+    {
+      "ID": 77601018,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 77601019,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield"
+      ]
+    },
+    {
+      "ID": 77601020,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 77601021,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 77601022,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Paledrake Soul] Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 77601023,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dead One Soul] Crypt Blacksword"
+      ]
+    },
+    {
+      "ID": 77601024,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Witch Soul] Chaos Blade"
+      ]
+    },
+    {
+      "ID": 77601025,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old King Soul] Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 77601026,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 77601027,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Elana- Squalid Queen] Wrathful Axe"
+      ]
+    },
+    {
+      "ID": 77601028,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nadalia- Bride of Ash] Chime of Screams"
+      ]
+    },
+    {
+      "ID": 77601029,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Fume Knight] Fume Sword"
+      ]
+    },
+    {
+      "ID": 77601030,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Fume Knight] Fume Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601031,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Sir Alonne] Bewitched Alonne Sword"
+      ]
+    },
+    {
+      "ID": 77601032,
+      "Entries": [
+        "[Weaponsmith Ornifex - Smelter Demon Soul] Aged Smelter Sword"
+      ]
+    },
+    {
+      "ID": 77601033,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Aava- the King's Pet] Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 77601034,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Zallen- the King's Pet] Loyce Shield"
+      ]
+    },
+    {
+      "ID": 77601035,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Lud- the King's Pet] Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 77601036,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Ivory King] Ivory King Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601037,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Alsanna- Silent Oracle] Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 77601100,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 77601101,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 77601102,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 77601103,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 77601104,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk"
+      ]
+    },
+    {
+      "ID": 77601105,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang"
+      ]
+    },
+    {
+      "ID": 77601106,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 77601107,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror"
+      ]
+    },
+    {
+      "ID": 77601108,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 77601109,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 77601110,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601111,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Shield"
+      ]
+    },
+    {
+      "ID": 77601112,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 77601113,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77601114,
+      "Entries": [
+        "[Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 77601115,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want"
+      ]
+    },
+    {
+      "ID": 77601116,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Chime of Want"
+      ]
+    },
+    {
+      "ID": 77601117,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Bow of Want"
+      ]
+    },
+    {
+      "ID": 77601118,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 77601119,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield"
+      ]
+    },
+    {
+      "ID": 77601120,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 77601121,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 77602000,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 77602001,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 77602002,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 77602003,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 77602004,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk"
+      ]
+    },
+    {
+      "ID": 77602005,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang"
+      ]
+    },
+    {
+      "ID": 77602006,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 77602007,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror"
+      ]
+    },
+    {
+      "ID": 77602008,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 77602009,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 77602010,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602011,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Shield"
+      ]
+    },
+    {
+      "ID": 77602012,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 77602013,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602014,
+      "Entries": [
+        "[Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 77602015,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want"
+      ]
+    },
+    {
+      "ID": 77602016,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Chime of Want"
+      ]
+    },
+    {
+      "ID": 77602017,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Bow of Want"
+      ]
+    },
+    {
+      "ID": 77602018,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 77602019,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield"
+      ]
+    },
+    {
+      "ID": 77602020,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 77602021,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 77602022,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Paledrake Soul] Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 77602023,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dead One Soul] Crypt Blacksword"
+      ]
+    },
+    {
+      "ID": 77602024,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Witch Soul] Chaos Blade"
+      ]
+    },
+    {
+      "ID": 77602025,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old King Soul] Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 77602026,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 77602027,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 77602028,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nadalia- Bride of Ash] Chime of Screams"
+      ]
+    },
+    {
+      "ID": 77602029,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Fume Knight] Fume Sword"
+      ]
+    },
+    {
+      "ID": 77602030,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Fume Knight] Fume Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602031,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Sir Alonne] Bewitched Alonne Sword"
+      ]
+    },
+    {
+      "ID": 77602032,
+      "Entries": [
+        "[Weaponsmith Ornifex - Smelter Demon Soul] Aged Smelter Sword"
+      ]
+    },
+    {
+      "ID": 77602033,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Aava- the King's Pet] Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 77602034,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Zallen- the King's Pet] Loyce Shield"
+      ]
+    },
+    {
+      "ID": 77602035,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Lud- the King's Pet] Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 77602036,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Ivory King] Ivory King Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602037,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Alsanna- Silent Oracle] Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 77602100,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 77602101,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 77602102,
+      "Entries": [
+        "[Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 77602103,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 77602104,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk"
+      ]
+    },
+    {
+      "ID": 77602105,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang"
+      ]
+    },
+    {
+      "ID": 77602106,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 77602107,
+      "Entries": [
+        "[Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror"
+      ]
+    },
+    {
+      "ID": 77602108,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 77602109,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 77602110,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602111,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of the King] King's Shield"
+      ]
+    },
+    {
+      "ID": 77602112,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 77602113,
+      "Entries": [
+        "[Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 77602114,
+      "Entries": [
+        "[Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 77602115,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want"
+      ]
+    },
+    {
+      "ID": 77602116,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Chime of Want"
+      ]
+    },
+    {
+      "ID": 77602117,
+      "Entries": [
+        "[Weaponsmith Ornifex - Soul of Nashandra] Bow of Want"
+      ]
+    },
+    {
+      "ID": 77602118,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 77602119,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield"
+      ]
+    },
+    {
+      "ID": 77602120,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 77602121,
+      "Entries": [
+        "[Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 77700200,
+      "Entries": [
+        "[Sweet Shalquoir - Royal Rat Authority, Royal Rat Vanguard] Flying Feline Boots"
+      ]
+    },
+    {
+      "ID": 77700400,
+      "Entries": [
+        "[Sweet Shalquoir] Silvercat Ring"
+      ]
+    },
+    {
+      "ID": 77700401,
+      "Entries": [
+        "[Sweet Shalquoir] Redeye ring"
+      ]
+    },
+    {
+      "ID": 77700402,
+      "Entries": [
+        "[Sweet Shalquoir] Name-engraved Ring"
+      ]
+    },
+    {
+      "ID": 77700403,
+      "Entries": [
+        "[Sweet Shalquoir] Ring of Whispers"
+      ]
+    },
+    {
+      "ID": 77700404,
+      "Entries": [
+        "[Sweet Shalquoir] Ring of the Evil Eye"
+      ]
+    },
+    {
+      "ID": 77700600,
+      "Entries": [
+        "[Sweet Shalquoir] Prism Stone"
+      ]
+    },
+    {
+      "ID": 77700601,
+      "Entries": [
+        "[Sweet Shalquoir] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 77700602,
+      "Entries": [
+        "[Sweet Shalquoir] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 77700603,
+      "Entries": [
+        "[Sweet Shalquoir] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 77700604,
+      "Entries": [
+        "[Sweet Shalquoir - Shrine of Winter] Prism Stone"
+      ]
+    },
+    {
+      "ID": 77700605,
+      "Entries": [
+        "[Sweet Shalquoir - Shrine of Winter] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 77700606,
+      "Entries": [
+        "[Sweet Shalquoir - Shrine of Winter] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 77700607,
+      "Entries": [
+        "[Sweet Shalquoir - Shrine of Winter] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "[Titchy Gren] Great Scythe"
+      ]
+    },
+    {
+      "ID": 78300001,
+      "Entries": [
+        "[Titchy Gren] Priest's Chime"
+      ]
+    },
+    {
+      "ID": 78300200,
+      "Entries": [
+        "[Titchy Gren - Skeleton Lords] Bone Crown"
+      ]
+    },
+    {
+      "ID": 78300201,
+      "Entries": [
+        "[Titchy Gren - Skeleton Lords] Bone King Robe"
+      ]
+    },
+    {
+      "ID": 78300202,
+      "Entries": [
+        "[Titchy Gren - Skeleton Lords] Bone King Cuffs"
+      ]
+    },
+    {
+      "ID": 78300203,
+      "Entries": [
+        "[Titchy Gren - Skeleton Lords] Bone King Skirt"
+      ]
+    },
+    {
+      "ID": 78300204,
+      "Entries": [
+        "[Titchy Gren - Shrine of Winter] Executioner Helm"
+      ]
+    },
+    {
+      "ID": 78300205,
+      "Entries": [
+        "[Titchy Gren - Shrine of Winter] Executioner Armor"
+      ]
+    },
+    {
+      "ID": 78300206,
+      "Entries": [
+        "[Titchy Gren - Shrine of Winter] Executioner Gauntlets"
+      ]
+    },
+    {
+      "ID": 78300207,
+      "Entries": [
+        "[Titchy Gren - Shrine of Winter] Executioner Leggings"
+      ]
+    },
+    {
+      "ID": 78300300,
+      "Entries": [
+        "[Titchy Gren] Firestorm"
+      ]
+    },
+    {
+      "ID": 78300301,
+      "Entries": [
+        "[Titchy Gren] Great Combustion"
+      ]
+    },
+    {
+      "ID": 78300302,
+      "Entries": [
+        "[Titchy Gren] Fire Whip"
+      ]
+    },
+    {
+      "ID": 78300400,
+      "Entries": [
+        "[Titchy Gren] Delicate String"
+      ]
+    },
+    {
+      "ID": 78300600,
+      "Entries": [
+        "[Titchy Gren] Red Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 78300601,
+      "Entries": [
+        "[Titchy Gren] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 78300602,
+      "Entries": [
+        "[Titchy Gren] Hexing Urn"
+      ]
+    },
+    {
+      "ID": 78300603,
+      "Entries": [
+        "[Titchy Gren - NG+] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 78300604,
+      "Entries": [
+        "[Titchy Gren] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 78400200,
+      "Entries": [
+        "[Cromwell the Pardoner] White Priest Headpiece"
+      ]
+    },
+    {
+      "ID": 78400201,
+      "Entries": [
+        "[Cromwell the Pardoner] White Priest Robe"
+      ]
+    },
+    {
+      "ID": 78400202,
+      "Entries": [
+        "[Cromwell the Pardoner] White Priest Gloves"
+      ]
+    },
+    {
+      "ID": 78400203,
+      "Entries": [
+        "[Cromwell the Pardoner] White Priest Skirt"
+      ]
+    },
+    {
+      "ID": 78400300,
+      "Entries": [
+        "[Cromwell the Pardoner] Great Heal"
+      ]
+    },
+    {
+      "ID": 78400301,
+      "Entries": [
+        "[Cromwell the Pardoner] Replenishment"
+      ]
+    },
+    {
+      "ID": 78400302,
+      "Entries": [
+        "[Cromwell the Pardoner] Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 78400303,
+      "Entries": [
+        "[Cromwell the Pardoner] Force"
+      ]
+    },
+    {
+      "ID": 78400304,
+      "Entries": [
+        "[Cromwell the Pardoner] Emit Force"
+      ]
+    },
+    {
+      "ID": 78400305,
+      "Entries": [
+        "[Cromwell the Pardoner] Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 78400306,
+      "Entries": [
+        "[Cromwell the Pardoner] Perseverance"
+      ]
+    },
+    {
+      "ID": 78400307,
+      "Entries": [
+        "[Cromwell the Pardoner] Scraps of Life"
+      ]
+    },
+    {
+      "ID": 78400308,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Great Heal"
+      ]
+    },
+    {
+      "ID": 78400309,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Replenishment"
+      ]
+    },
+    {
+      "ID": 78400310,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 78400311,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Force"
+      ]
+    },
+    {
+      "ID": 78400312,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Emit Force"
+      ]
+    },
+    {
+      "ID": 78400313,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 78400314,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Perseverance"
+      ]
+    },
+    {
+      "ID": 78400315,
+      "Entries": [
+        "[Cromwell the Pardoner - Unknown Event] Scraps of Life"
+      ]
+    },
+    {
+      "ID": 78400400,
+      "Entries": [
+        "[Cromwell the Pardoner] Poisonbite Ring"
+      ]
+    },
+    {
+      "ID": 78400401,
+      "Entries": [
+        "[Cromwell the Pardoner] Bloodbite Ring"
+      ]
+    },
+    {
+      "ID": 78400402,
+      "Entries": [
+        "[Cromwell the Pardoner] Cursebite Ring"
+      ]
+    },
+    {
+      "ID": 78400600,
+      "Entries": [
+        "[Cromwell the Pardoner] Dark Troches"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "[Blue Sentinel Targray] Morning Star"
+      ]
+    },
+    {
+      "ID": 78500001,
+      "Entries": [
+        "[Blue Sentinel Targray] Halberd"
+      ]
+    },
+    {
+      "ID": 78500300,
+      "Entries": [
+        "[Blue Sentinel Targray] Emit Force"
+      ]
+    },
+    {
+      "ID": 78500301,
+      "Entries": [
+        "[Blue Sentinel Targray] Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 78500600,
+      "Entries": [
+        "[Blue Sentinel Targray] Monastery Charm"
+      ]
+    },
+    {
+      "ID": 78500601,
+      "Entries": [
+        "[Blue Sentinel Targray] Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 78500602,
+      "Entries": [
+        "[Blue Sentinel Targray] Boltstone"
+      ]
+    },
+    {
+      "ID": 78500603,
+      "Entries": [
+        "[Blue Sentinel Targray - NG+] Cracked Blue Eye Orb"
+      ]
+    }
+  ]
+}

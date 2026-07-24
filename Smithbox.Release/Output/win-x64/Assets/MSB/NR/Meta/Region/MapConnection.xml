@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <ConnectionMapID
+    AltName="Map ID"
+    Wiki=""
+    ArrayProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

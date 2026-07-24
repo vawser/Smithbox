@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <LocUnk18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <UnkInheritInstanceParamId 
+    AltName="Inherit Instance Param ID" 
+    Wiki="References InstanceParamIds and seemingly inherits data such as drawgroups." />
+    
+    <SpawnLimit 
+    AltName="Spawn Limit" 
+    Wiki="" />
+    
+    <SpawnLimitGameClear 
+    AltName="Spawn Limit: Game Clear" 
+    Wiki="" />
+    
+    <Unk02
+    AltName="Unknown: 0x02"
+    Wiki="" />
+    
+    <AggroGroup 
+    AltName="Aggression Group" 
+    Wiki="Used to group entities together so they become aggressive at the same trigger and sometimes used with aggro boundaries." />
+    
+    <DeathEventID 
+    AltName="Death Event ID" 
+    Wiki="" />
+    
+    <GeneratorRegistParam 
+    AltName="Generator Registration ID" 
+    Wiki="" 
+    ParamRef="generatorregistparam" 
+    SpecialHandling="MapParam" />
+    
+    <Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <Unk0D
+    AltName="Unknown: 0x0D"
+    Wiki="" />
+    
+    <Unk0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <Unk0F
+    AltName="Unknown: 0x0F"
+    Wiki="" />
+    
+    <AppearanceEventID 
+    AltName="Appearance Event ID" 
+    Wiki="Used in ESD. 1 through to 7 are used to determine NG+ appearance." 
+    FlagAlias="" />
+    
+    <PreviousHostileEventID1 
+    AltName="Hostile Memory Event ID: 1" 
+    Wiki="" 
+    FlagAlias="" />
+    
+    <PreviousHostileEventID2 
+    AltName="Hostile Memory Event ID: 2" 
+    Wiki="" 
+    FlagAlias="" />
+    
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <Unk20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <Unk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <LocationEventID1 
+    AltName="Location Event ID: 1" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." 
+    FlagAlias="" />
+    
+    <LocationEventID2 
+    AltName="Location Event ID: 2" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." 
+    FlagAlias="" />
+    
+    <LocationEventID3 
+    AltName="Location Event ID: 3" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." 
+    FlagAlias="" />
+    
+    <LocationEventID4 
+    AltName="Location Event ID: 4" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." 
+    FlagAlias="" />
+    
+    <LocationEventID5 
+    AltName="Location Event ID: 5" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." 
+    FlagAlias="" />
+    
+    <Unk40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <Unk44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <Unk48_0
+    AltName="Unknown: 0x48:0"
+    Wiki="" />
+    
+    <Unk48_1
+    AltName="Unknown: 0x48:1"
+    Wiki="" />
+    
+    <Unk48_2
+    AltName="Unknown: 0x48:2"
+    Wiki="" />
+    
+    <Unk48_3
+    AltName="Unknown: 0x48:3"
+    Wiki="" />
+    
+    <Unk48_4
+    AltName="Unknown: 0x48:4"
+    Wiki="" />
+    
+    <Unk48_5
+    AltName="Unknown: 0x48:5"
+    Wiki="" />
+    
+    <Unk48_6
+    AltName="Unknown: 0x48:6"
+    Wiki="" />
+    
+    <Unk48_7
+    AltName="Unknown: 0x48:7"
+    Wiki="" />
+    
+    <Unk49
+    AltName="Unknown: 0x49"
+    Wiki="" />
+    
+    <MapObjectBonfireID 
+    AltName="Map Object Bonfire ID" 
+    Wiki="The ID of the bonfire this entity is linked to. Used with ascetics, effigies, and multi-player." />
+    
+    <LeashDistance 
+    AltName="Leash Distance" 
+    Wiki="" />
+    
+    <LocationEventID6 
+    AltName="Location Event ID: 6" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    
+    <LocationEventID7 
+    AltName="Location Event ID: 7" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    
+    <AIThinkID 
+    AltName="AI Think ID" 
+    Wiki="The AI for this entity. A boss AI will need to be damaged, changed, or ESD wizardry if you move it elsewhere." />
+    
+    <ActivationEventID1 
+    AltName="Activation Event ID: 1" 
+    Wiki="" />
+    
+    <ActivationEventID2 
+    AltName="Activation Event ID: 2" 
+    Wiki="" />
+    
+    <HostileEventID1 
+    AltName="Hostile Event ID: 1" 
+    Wiki="Flag to be set when the entity becomes hostile towards the player character." />
+    
+    <HostileEventID2 
+    AltName="Hostile Event ID: 2" 
+    Wiki="Flag to be set when the entity becomes hostile towards the player character." />
+    
+    <Unk6C
+    AltName="Unknown: 0x6C"
+    Wiki="" />
+    
+    <Unk71
+    AltName="Unknown: 0x71"
+    Wiki="" />
+    
+    <LocationEventID8 
+    AltName="Location Event ID: 8" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    
+    <LocationEventID9 
+    AltName="Location Event ID: 9" 
+    Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    
+    <Unk78
+    AltName="Unknown: 0x78"
+    Wiki="" />
+    
+    <Unk7C
+    AltName="Unknown: 0x7C"
+    Wiki="" />
+    
+    <Unk80
+    AltName="Unknown: 0x80"
+    Wiki="" />
+    
+    <Unk84
+    AltName="Unknown: 0x84"
+    Wiki="" />
+    
+    <ModelMask 
+    AltName="Model Mask" 
+    Wiki="Determines which model masks to use. Also decides which model mask set to use in color params." />
+    
+    <Unk86
+    AltName="Unknown: 0x86"
+    Wiki="" />
+    
+    <Unk87
+    AltName="Unknown: 0x87"
+    Wiki="" />
+    
+    <ItemLotID1 
+    AltName="Itemlot ID: 1" 
+    Wiki="Typically the itemlot entry that acts as a drop table for this entity." 
+    ParamRef="ItemLotParam2_Chr" />
+    
+    <ItemLotID2
+    AltName="Itemlot ID: 2" 
+    Wiki="Typically the itemlot entry that acts as a drop table for this entity." 
+    ParamRef="ItemLotParam2_Chr" />
+    
+    <GraveEventID 
+    AltName="Grave Event ID"
+    Wiki="Flag to be set when the entity is dead and requires a gravestone for the player character to interact with." />
+    
+    <Unk94
+    AltName="Unknown: 0x94"
+    Wiki="" />
+    
+    <Unk98
+    AltName="Unknown: 0x98"
+    Wiki="" />
+    
+    <Unk9C
+    AltName="Unknown: 0x9C"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

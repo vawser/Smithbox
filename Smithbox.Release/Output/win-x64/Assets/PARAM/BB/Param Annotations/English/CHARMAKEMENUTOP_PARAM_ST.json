@@ -1,0 +1,43 @@
+{
+  "Param": "CHARMAKEMENUTOP_PARAM_ST",
+  "Type": "CHARMAKEMENUTOP_PARAM_ST",
+  "Name": "CHARMAKEMENUTOP_PARAM_ST",
+  "Description": "Layout Data for the Character Make Menu",
+  "Fields": [
+    {
+      "Field": "CommandID",
+      "Name": "Command ID",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionID",
+      "Name": "Caption ID",
+      "Description": ""
+    },
+    {
+      "Field": "FaceParamID",
+      "Name": "Face Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "TableID",
+      "Name": "Table ID",
+      "Description": "When the type is grid, the ID of the first list item; when the type is color, the ID of the first color palette"
+    },
+    {
+      "Field": "ViewCondition",
+      "Name": "View Condition",
+      "Description": ""
+    },
+    {
+      "Field": "PreviewMode",
+      "Name": "Preview Mode",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

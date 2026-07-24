@@ -1,0 +1,383 @@
+{
+  "Param": "KEY_CONFIG_PARAM",
+  "Type": "KEY_CONFIG_PARAM",
+  "Name": "KEY_CONFIG_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "moveAdvance",
+      "Name": "歩行（前進）",
+      "Description": ""
+    },
+    {
+      "Field": "moveAdvanceAdd",
+      "Name": "歩行（前進）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "moveRecession",
+      "Name": "歩行（後退）",
+      "Description": ""
+    },
+    {
+      "Field": "moveRecessionAdd",
+      "Name": "歩行（後退）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "moveRight",
+      "Name": "歩行（右移動）",
+      "Description": ""
+    },
+    {
+      "Field": "moveRightAdd",
+      "Name": "歩行（右移動）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "moveLeft",
+      "Name": "歩行（左移動）",
+      "Description": ""
+    },
+    {
+      "Field": "moveLeftAdd",
+      "Name": "歩行（左移動）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "parallelMoveAdvance",
+      "Name": "平行移動",
+      "Description": ""
+    },
+    {
+      "Field": "dashMoveAdvance",
+      "Name": "ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraUp",
+      "Name": "カメラ上移動",
+      "Description": ""
+    },
+    {
+      "Field": "cameraUpAdd",
+      "Name": "カメラ上移動[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "cameraDown",
+      "Name": "カメラ下移動",
+      "Description": ""
+    },
+    {
+      "Field": "cameraDownAdd",
+      "Name": "カメラ下移動[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "cameraRight",
+      "Name": "カメラ右移動",
+      "Description": ""
+    },
+    {
+      "Field": "cameraRightAdd",
+      "Name": "カメラ右移動[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "cameraLeft",
+      "Name": "カメラ左移動",
+      "Description": ""
+    },
+    {
+      "Field": "cameraLeftAdd",
+      "Name": "カメラ左移動[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "lockonAndReset",
+      "Name": "ロックオン／カメラリセット",
+      "Description": ""
+    },
+    {
+      "Field": "lockonAndResetAdd",
+      "Name": "ロックオン／カメラリセット[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectMagic",
+      "Name": "魔法切り替え",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectMagicAdd",
+      "Name": "魔法切り替え[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectItem",
+      "Name": "道具切り替え",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectItemAdd",
+      "Name": "道具切り替え[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectRWeapon",
+      "Name": "右武器切り替え",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectRWeaponAdd",
+      "Name": "右武器切り替え[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectLWeapon",
+      "Name": "左武器切り替え",
+      "Description": ""
+    },
+    {
+      "Field": "changeSelectLWeaponAdd",
+      "Name": "左武器切り替え[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "weakAttackRight",
+      "Name": "右手アクション（弱攻撃）",
+      "Description": ""
+    },
+    {
+      "Field": "weakAttackRightAdd",
+      "Name": "右手アクション（弱攻撃）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "strongAttackRight",
+      "Name": "右手アクション（強攻撃）",
+      "Description": ""
+    },
+    {
+      "Field": "strongAttackRightAdd",
+      "Name": "右手アクション（強攻撃）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "weakAttackLeft",
+      "Name": "左手アクション（弱攻撃）",
+      "Description": ""
+    },
+    {
+      "Field": "weakAttackLeftAdd",
+      "Name": "左手アクション（弱攻撃）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "strongAttackLeft",
+      "Name": "左手アクション（強攻撃）",
+      "Description": ""
+    },
+    {
+      "Field": "strongAttackLeftAdd",
+      "Name": "左手アクション（強攻撃）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "useItem",
+      "Name": "アイテム使用",
+      "Description": ""
+    },
+    {
+      "Field": "useItemAdd",
+      "Name": "アイテム使用[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "operation",
+      "Name": "操作アクション",
+      "Description": ""
+    },
+    {
+      "Field": "operationAdd",
+      "Name": "操作アクション[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "switchingTwoHandsRight",
+      "Name": "両手持ち切り替え",
+      "Description": ""
+    },
+    {
+      "Field": "switchingTwoHandsRightAdd",
+      "Name": "両手持ち切り替え[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "showMenu",
+      "Name": "メニュー表示",
+      "Description": ""
+    },
+    {
+      "Field": "showMenuAdd",
+      "Name": "メニュー表示[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "selectUp",
+      "Name": "選択（上）",
+      "Description": ""
+    },
+    {
+      "Field": "selectUpAdd",
+      "Name": "選択（上）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "selectDown",
+      "Name": "選択（下）",
+      "Description": ""
+    },
+    {
+      "Field": "selectDownAdd",
+      "Name": "選択（下）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "selectRight",
+      "Name": "選択（右）",
+      "Description": ""
+    },
+    {
+      "Field": "selectRightAdd",
+      "Name": "選択（右）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "selectLeft",
+      "Name": "選択（左）",
+      "Description": ""
+    },
+    {
+      "Field": "selectLeftAdd",
+      "Name": "選択（左）[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "select",
+      "Name": "決定",
+      "Description": ""
+    },
+    {
+      "Field": "selectAdd",
+      "Name": "決定[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "cancel",
+      "Name": "キャンセル",
+      "Description": ""
+    },
+    {
+      "Field": "cancelAdd",
+      "Name": "キャンセル[追加入力]",
+      "Description": ""
+    },
+    {
+      "Field": "unk58",
+      "Name": "unk58",
+      "Description": ""
+    },
+    {
+      "Field": "unk59",
+      "Name": "unk59",
+      "Description": ""
+    },
+    {
+      "Field": "unk60",
+      "Name": "unk60",
+      "Description": ""
+    },
+    {
+      "Field": "unk61",
+      "Name": "unk61",
+      "Description": ""
+    },
+    {
+      "Field": "unk62",
+      "Name": "unk62",
+      "Description": ""
+    },
+    {
+      "Field": "unk63",
+      "Name": "unk63",
+      "Description": ""
+    },
+    {
+      "Field": "unk64",
+      "Name": "unk64",
+      "Description": ""
+    },
+    {
+      "Field": "unk65",
+      "Name": "unk65",
+      "Description": ""
+    },
+    {
+      "Field": "unk66",
+      "Name": "unk66",
+      "Description": ""
+    },
+    {
+      "Field": "unk67",
+      "Name": "unk67",
+      "Description": ""
+    },
+    {
+      "Field": "unk68",
+      "Name": "unk68",
+      "Description": ""
+    },
+    {
+      "Field": "unk69",
+      "Name": "unk69",
+      "Description": ""
+    },
+    {
+      "Field": "unk70",
+      "Name": "unk70",
+      "Description": ""
+    },
+    {
+      "Field": "unk71",
+      "Name": "unk71",
+      "Description": ""
+    },
+    {
+      "Field": "unk72",
+      "Name": "unk72",
+      "Description": ""
+    },
+    {
+      "Field": "unk73",
+      "Name": "unk73",
+      "Description": ""
+    },
+    {
+      "Field": "unk74",
+      "Name": "unk74",
+      "Description": ""
+    },
+    {
+      "Field": "unk75",
+      "Name": "unk75",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

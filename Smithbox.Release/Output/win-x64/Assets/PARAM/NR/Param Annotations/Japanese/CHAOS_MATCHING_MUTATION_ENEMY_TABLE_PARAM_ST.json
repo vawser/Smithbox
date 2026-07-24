@@ -1,0 +1,93 @@
+{
+  "Param": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Type": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Name": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "categoryId",
+      "Name": "categoryId",
+      "Description": ""
+    },
+    {
+      "Field": "mutationCount",
+      "Name": "mutationCount",
+      "Description": ""
+    },
+    {
+      "Field": "isTeamMutation",
+      "Name": "isTeamMutation",
+      "Description": ""
+    },
+    {
+      "Field": "mutationId",
+      "Name": "mutationId",
+      "Description": ""
+    },
+    {
+      "Field": "smallBaseId",
+      "Name": "smallBaseId",
+      "Description": ""
+    },
+    {
+      "Field": "variation",
+      "Name": "variation",
+      "Description": ""
+    },
+    {
+      "Field": "mapUnk_1",
+      "Name": "mapUnk_1",
+      "Description": ""
+    },
+    {
+      "Field": "mapUnk_2",
+      "Name": "mapUnk_2",
+      "Description": ""
+    },
+    {
+      "Field": "mapUnk_3",
+      "Name": "mapUnk_3",
+      "Description": ""
+    },
+    {
+      "Field": "randomAppearId",
+      "Name": "randomAppearId",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId1",
+      "Name": "modifierMapId1",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06",
+      "Name": "unk_06",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId2",
+      "Name": "modifierMapId2",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId3",
+      "Name": "modifierMapId3",
+      "Description": ""
+    },
+    {
+      "Field": "unk_09",
+      "Name": "unk_09",
+      "Description": ""
+    },
+    {
+      "Field": "unk_10",
+      "Name": "unk_10",
+      "Description": ""
+    },
+    {
+      "Field": "unk_11",
+      "Name": "unk_11",
+      "Description": ""
+    }
+  ]
+}

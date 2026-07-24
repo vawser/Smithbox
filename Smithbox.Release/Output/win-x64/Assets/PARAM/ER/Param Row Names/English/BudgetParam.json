@@ -1,0 +1,35 @@
+{
+  "Name": "BudgetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (delete not allowed) -- デフォルト(削除禁止)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

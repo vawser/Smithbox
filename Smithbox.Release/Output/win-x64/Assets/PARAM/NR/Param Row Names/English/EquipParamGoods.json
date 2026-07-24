@@ -1,0 +1,3143 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Shrouded City (L)] Favor of Noklateo, the Shrouded City"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Mountaintop (U)] Improved Frost Resistance"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Mountaintop (U)] Attack Boost [Dragons]"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Common] Fire Pot"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Common] Lightning Pot"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "[Uncommon] Fetid Pot"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "[Uncommon] Swarm Pot"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Common] Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Uncommon] Freezing Pot"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[Uncommon] Poison Pot"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "[Common] Alluring Pot"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "[Common] Beastlure Pot"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Uncommon] Volcano Pot"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "[Uncommon] Sleep Pot"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "[Uncommon] Rancor Pot"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "[Common] Magic Pot"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "[Uncommon] Rot Pot"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Legendary] Wending Grace"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "[Uncommon] Boiled Crab"
+      ]
+    },
+    {
+      "ID": 830,
+      "Entries": [
+        "[Common] Boiled Prawn"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Common] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[Common] Stanching Boluses"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "[Common] Thawfrost Boluses"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "[Common] Stimulating Boluses"
+      ]
+    },
+    {
+      "ID": 940,
+      "Entries": [
+        "[Common] Preserving Boluses"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "[Common] Rejuvenating Boluses"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "[Common] Clarifying Boluses"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +1"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +1"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +2"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +2"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +3"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +3"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +4"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +4"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +5"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +5"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +6"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +6"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +7"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +7"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +8"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +8"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +9"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +9"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +10"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +10"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +11"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +11"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "[Empty] Flask of Crimson Tears +12"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "[Filled] Flask of Crimson Tears +12"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Uncommon] Pickled Turtle Neck"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "[Common] Silver-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Common] Gold-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[Uncommon] Exalted Flesh"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "[Uncommon] Starlight Shards"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Common] Fire Grease"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Common] Lightning Grease"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[Common] Magic Grease"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "[Common] Holy Grease"
+      ]
+    },
+    {
+      "ID": 1440,
+      "Entries": [
+        "[Common] Blood Grease"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "[Common] Soporific Grease"
+      ]
+    },
+    {
+      "ID": 1460,
+      "Entries": [
+        "[Common] Poison Grease"
+      ]
+    },
+    {
+      "ID": 1470,
+      "Entries": [
+        "[Common] Freezing Grease"
+      ]
+    },
+    {
+      "ID": 1480,
+      "Entries": [
+        "[Common] Dragonwound Grease"
+      ]
+    },
+    {
+      "ID": 1490,
+      "Entries": [
+        "[Common] Rot Grease"
+      ]
+    },
+    {
+      "ID": 1690,
+      "Entries": [
+        "[Common] Shield Grease"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Common] Throwing Dagger"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "[Common] Poisonbone Dart"
+      ]
+    },
+    {
+      "ID": 1730,
+      "Entries": [
+        "[Common] Kukri"
+      ]
+    },
+    {
+      "ID": 1740,
+      "Entries": [
+        "[Common] Crystal Dart"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "[Common] Fan Daggers"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Rare] Ancestral Infant's Head"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Uncommon] Omen Bairn"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "[Rare] Regal Omen Bairn"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Uncommon] Cuckoo Glintstone"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Common] Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "[Uncommon] Large Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Uncommon] Gravity Stone Fan"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Uncommon] Gravity Stone Chunk"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Uncommon] Wraith Calling Bell"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "[Uncommon] Warming Stone"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "[Uncommon] Bewitching Branch"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[Rare] Uplifting Aromatic"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[Uncommon] Spark Aromatic"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[Uncommon] Ironjar Aromatic"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "[Rare] Bloodboil Aromatic"
+      ]
+    },
+    {
+      "ID": 3580,
+      "Entries": [
+        "[Uncommon] Poison Spraymist"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "[Rare] Acid Spraymist"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Rare] Stonesword Key"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[Legendary] Cord End"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[Unique] Dismembered Finger"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Gesture] Bow"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[Gesture] Polite Bow"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[Gesture] My Thanks"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "[Gesture] Curtsy"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "[Gesture] Reverential Bow"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "[Gesture] My Lord"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "[Gesture] Warm Welcome"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "[Gesture] Wave"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "[Gesture] Casual Greeting"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "[Gesture] Strength!"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[Gesture] As You Wish"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "[Gesture] Point Forwards"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "[Gesture] Point Upwards"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "[Gesture] Point Downwards"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "[Gesture] Beckon"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "[Gesture] Wait!"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "[Gesture] Calm Down!"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "[Gesture] Nod In Thought"
+      ]
+    },
+    {
+      "ID": 9018,
+      "Entries": [
+        "[Gesture] Extreme Repentance"
+      ]
+    },
+    {
+      "ID": 9019,
+      "Entries": [
+        "[Gesture] Grovel For Mercy"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "[Gesture] Rallying Cry"
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        "[Gesture] Heartening Cry"
+      ]
+    },
+    {
+      "ID": 9022,
+      "Entries": [
+        "[Gesture] By My Sword"
+      ]
+    },
+    {
+      "ID": 9023,
+      "Entries": [
+        "[Gesture] Hoslow's Oath"
+      ]
+    },
+    {
+      "ID": 9024,
+      "Entries": [
+        "[Gesture] Fire Spur Me"
+      ]
+    },
+    {
+      "ID": 9025,
+      "Entries": [
+        "[Gesture] The Carian Oath"
+      ]
+    },
+    {
+      "ID": 9026,
+      "Entries": [
+        "[Gesture] Bravo!"
+      ]
+    },
+    {
+      "ID": 9027,
+      "Entries": [
+        "[Gesture] Jump for Joy"
+      ]
+    },
+    {
+      "ID": 9028,
+      "Entries": [
+        "[Gesture] Triumphant Delight"
+      ]
+    },
+    {
+      "ID": 9029,
+      "Entries": [
+        "[Gesture] Fancy Spin"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "[Gesture] Finger Snap"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "[Gesture] Dejection"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "[Gesture] Patches' Crouch"
+      ]
+    },
+    {
+      "ID": 9033,
+      "Entries": [
+        "[Gesture] Crossed Legs"
+      ]
+    },
+    {
+      "ID": 9034,
+      "Entries": [
+        "[Gesture] Rest"
+      ]
+    },
+    {
+      "ID": 9035,
+      "Entries": [
+        "[Gesture] Sitting Sideways"
+      ]
+    },
+    {
+      "ID": 9036,
+      "Entries": [
+        "[Gesture] Dozing Cross-Legged"
+      ]
+    },
+    {
+      "ID": 9037,
+      "Entries": [
+        "[Gesture] Spread Out"
+      ]
+    },
+    {
+      "ID": 9038,
+      "Entries": [
+        "[Gesture] Fetal Position"
+      ]
+    },
+    {
+      "ID": 9039,
+      "Entries": [
+        "[Gesture] Balled Up"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "[Gesture] What Do You Want?"
+      ]
+    },
+    {
+      "ID": 9041,
+      "Entries": [
+        "[Gesture] Prayer"
+      ]
+    },
+    {
+      "ID": 9042,
+      "Entries": [
+        "[Gesture] Desperate Prayer"
+      ]
+    },
+    {
+      "ID": 9043,
+      "Entries": [
+        "[Gesture] Rapture"
+      ]
+    },
+    {
+      "ID": 9045,
+      "Entries": [
+        "[Gesture] Erudition"
+      ]
+    },
+    {
+      "ID": 9046,
+      "Entries": [
+        "[Gesture] Outer Order"
+      ]
+    },
+    {
+      "ID": 9047,
+      "Entries": [
+        "[Gesture] Inner Order"
+      ]
+    },
+    {
+      "ID": 9048,
+      "Entries": [
+        "[Gesture] Golden Order Totality"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "[Gesture] The Ring"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Hello\""
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Thank you\""
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Apologies\""
+      ]
+    },
+    {
+      "ID": 9063,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Wonderful\""
+      ]
+    },
+    {
+      "ID": 9064,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Please help\""
+      ]
+    },
+    {
+      "ID": 9065,
+      "Entries": [
+        "[Gesture] Prattling Pate \"My beloved\""
+      ]
+    },
+    {
+      "ID": 9066,
+      "Entries": [
+        "[Gesture] Prattling Pate \"Let's get to it\""
+      ]
+    },
+    {
+      "ID": 9067,
+      "Entries": [
+        "[Gesture] Prattling Pate \"You're beautiful\""
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "[Gesture] It's Raining!"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "[Vessel] Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        "[Vessel] Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        "[Vessel] Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 9603,
+      "Entries": [
+        "[Vessel] Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9604,
+      "Entries": [
+        "[Vessel] Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9605,
+      "Entries": [
+        "[Vessel] Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 9606,
+      "Entries": [
+        "[Vessel] Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9607,
+      "Entries": [
+        "[Vessel] Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9608,
+      "Entries": [
+        "[Vessel] Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 9609,
+      "Entries": [
+        "[Vessel] Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "[Vessel] Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9611,
+      "Entries": [
+        "[Vessel] Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 9612,
+      "Entries": [
+        "[Vessel] Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9613,
+      "Entries": [
+        "[Vessel] Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9614,
+      "Entries": [
+        "[Vessel] Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 9615,
+      "Entries": [
+        "[Vessel] Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9616,
+      "Entries": [
+        "[Vessel] Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9617,
+      "Entries": [
+        "[Vessel] Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 9618,
+      "Entries": [
+        "[Vessel] Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9619,
+      "Entries": [
+        "[Vessel] Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "[Vessel] Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 9621,
+      "Entries": [
+        "[Vessel] Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9622,
+      "Entries": [
+        "[Vessel] Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9623,
+      "Entries": [
+        "[Vessel] Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 9650,
+      "Entries": [
+        "[Vessel] Sacred Erdtree Grail"
+      ]
+    },
+    {
+      "ID": 9651,
+      "Entries": [
+        "[Vessel] Spirit Shelter Grail"
+      ]
+    },
+    {
+      "ID": 9652,
+      "Entries": [
+        "[Vessel] Giant's Cradle Grail"
+      ]
+    },
+    {
+      "ID": 9660,
+      "Entries": [
+        "[Vessel] Scadutree Grail"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "[Vessel] Soot-Covered Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "[Vessel] Soot-Covered Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        "[Vessel] Soot-Covered Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 9703,
+      "Entries": [
+        "[Vessel] Soot-Covered Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9704,
+      "Entries": [
+        "[Vessel] Soot-Covered Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9705,
+      "Entries": [
+        "[Vessel] Soot-Covered Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 9706,
+      "Entries": [
+        "[Vessel] Soot-Covered Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9707,
+      "Entries": [
+        "[Vessel] Soot-Covered Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9708,
+      "Entries": [
+        "[Vessel] Soot-Covered Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 9709,
+      "Entries": [
+        "[Vessel] Soot-Covered Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "[Vessel] Soot-Covered Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        "[Vessel] Soot-Covered Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 9712,
+      "Entries": [
+        "[Vessel] Soot-Covered Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9713,
+      "Entries": [
+        "[Vessel] Soot-Covered Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9714,
+      "Entries": [
+        "[Vessel] Soot-Covered Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 9715,
+      "Entries": [
+        "[Vessel] Soot-Covered Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9716,
+      "Entries": [
+        "[Vessel] Soot-Covered Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9717,
+      "Entries": [
+        "[Vessel] Soot-Covered Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 9718,
+      "Entries": [
+        "[Vessel] Soot-Covered Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9719,
+      "Entries": [
+        "[Vessel] Soot-Covered Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "[Vessel] Soot-Covered Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        "[Vessel] Soot-Covered Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9722,
+      "Entries": [
+        "[Vessel] Soot-Covered Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9723,
+      "Entries": [
+        "[Vessel] Soot-Covered Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "[Vessel] Sealed Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "[Vessel] Sealed Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "[Vessel] Sealed Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "[Vessel] Sealed Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9804,
+      "Entries": [
+        "[Vessel] Sealed Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9805,
+      "Entries": [
+        "[Vessel] Sealed Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 9806,
+      "Entries": [
+        "[Vessel] Sealed Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9807,
+      "Entries": [
+        "[Vessel] Sealed Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9808,
+      "Entries": [
+        "[Vessel] Sealed Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 9809,
+      "Entries": [
+        "[Vessel] Sealed Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "[Vessel] Sealed Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9811,
+      "Entries": [
+        "[Vessel] Sealed Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 9812,
+      "Entries": [
+        "[Vessel] Sealed Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9813,
+      "Entries": [
+        "[Vessel] Sealed Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9814,
+      "Entries": [
+        "[Vessel] Sealed Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 9815,
+      "Entries": [
+        "[Vessel] Sealed Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9816,
+      "Entries": [
+        "[Vessel] Sealed Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9817,
+      "Entries": [
+        "[Vessel] Sealed Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 9818,
+      "Entries": [
+        "[Vessel] Sealed Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9819,
+      "Entries": [
+        "[Vessel] Sealed Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "[Vessel] Sealed Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 9821,
+      "Entries": [
+        "[Vessel] Sealed Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9822,
+      "Entries": [
+        "[Vessel] Sealed Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9823,
+      "Entries": [
+        "[Vessel] Sealed Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "[Vessel] Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "[Vessel] Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "[Vessel] Scholar's Chalice"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "[Vessel] Soot-Covered Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "[Vessel] Sealed Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "[Vessel] Decrepit Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 9906,
+      "Entries": [
+        "[Vessel] Forgotten Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "[Vessel] Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "[Vessel] Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 9912,
+      "Entries": [
+        "[Vessel] Undertaker's Chalice"
+      ]
+    },
+    {
+      "ID": 9913,
+      "Entries": [
+        "[Vessel] Soot-Covered Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 9914,
+      "Entries": [
+        "[Vessel] Sealed Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "[Vessel] Decrepit Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 9916,
+      "Entries": [
+        "[Vessel] Forgotten Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "[Vessel] Decrepit Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9921,
+      "Entries": [
+        "[Vessel] Forgotten Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9925,
+      "Entries": [
+        "[Vessel] Decrepit Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9926,
+      "Entries": [
+        "[Vessel] Forgotten Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "[Vessel] Decrepit Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "[Vessel] Forgotten Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9935,
+      "Entries": [
+        "[Vessel] Decrepit Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9936,
+      "Entries": [
+        "[Vessel] Forgotten Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "[Vessel] Decrepit Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9941,
+      "Entries": [
+        "[Vessel] Forgotten Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9945,
+      "Entries": [
+        "[Vessel] Decrepit Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9946,
+      "Entries": [
+        "[Vessel] Forgotten Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "[Vessel] Decrepit Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9951,
+      "Entries": [
+        "[Vessel] Forgotten Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9955,
+      "Entries": [
+        "[Vessel] Decrepit Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9956,
+      "Entries": [
+        "[Vessel] Forgotten Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "[Uncommon] Small Pouch"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "[Relic] Small Pouch"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[Uncommon] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "[Rare] Smithing Stone [2]"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "[Legendary] Smithing Stone [3]"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Rare] Crimsonspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "[Rare] Greenspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "[Rare] Crimson Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11003,
+      "Entries": [
+        "[Rare] Crimson Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "[Rare] Cerulean Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        "[Rare] Cerulean Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "[Rare] Speckled Hardtear"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "[Rare] Crimson Bubbletear"
+      ]
+    },
+    {
+      "ID": 11008,
+      "Entries": [
+        "[Rare] Opaline Bubbletear"
+      ]
+    },
+    {
+      "ID": 11009,
+      "Entries": [
+        "[Rare] Crimsonburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Rare] Greenburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "[Rare] Opaline Hardtear"
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "[Rare] Winged Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "[Rare] Thorny Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "[Rare] Spiked Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        "[Rare] Windy Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        "[Rare] Ruptured Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        "[Rare] Ruptured Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        "[Rare] Leaden Hardtear"
+      ]
+    },
+    {
+      "ID": 11019,
+      "Entries": [
+        "[Rare] Twiggy Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "[Rare] Crimsonwhorl Bubbletear"
+      ]
+    },
+    {
+      "ID": 11021,
+      "Entries": [
+        "[Rare] Strength-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11022,
+      "Entries": [
+        "[Rare] Dexterity-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11023,
+      "Entries": [
+        "[Rare] Intelligence-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11024,
+      "Entries": [
+        "[Rare] Faith-knot Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11025,
+      "Entries": [
+        "[Rare] Cerulean Hidden Tear"
+      ]
+    },
+    {
+      "ID": 11026,
+      "Entries": [
+        "[Rare] Stonebarb Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11027,
+      "Entries": [
+        "[Rare] Purifying Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11028,
+      "Entries": [
+        "[Rare] Flame-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11029,
+      "Entries": [
+        "[Rare] Magic-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "[Rare] Lightning-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11031,
+      "Entries": [
+        "[Rare] Holy-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[Garb - Wylder] Wylder"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "[Garb - Wylder] Dawn"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "[Garb - Wylder] Darkness"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "[Garb - Wylder] Remembrance"
+      ]
+    },
+    {
+      "ID": 40050,
+      "Entries": [
+        "[Garb - Wylder] Abysswalker"
+      ]
+    },
+    {
+      "ID": 40060,
+      "Entries": [
+        "[Garb - Wylder] Lion Knight"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[Garb - Guardian] Guardian"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "[Garb - Guardian] Dawn"
+      ]
+    },
+    {
+      "ID": 40120,
+      "Entries": [
+        "[Garb - Guardian] Darkness"
+      ]
+    },
+    {
+      "ID": 40130,
+      "Entries": [
+        "[Garb - Guardian] Remembrance"
+      ]
+    },
+    {
+      "ID": 40150,
+      "Entries": [
+        "[Garb - Guardian] Sunlight Knight"
+      ]
+    },
+    {
+      "ID": 40160,
+      "Entries": [
+        "[Garb - Guardian] Wayfarer"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "[Garb - Ironeye] Ironeye"
+      ]
+    },
+    {
+      "ID": 40210,
+      "Entries": [
+        "[Garb - Ironeye] Dawn"
+      ]
+    },
+    {
+      "ID": 40220,
+      "Entries": [
+        "[Garb - Ironeye] Darkness"
+      ]
+    },
+    {
+      "ID": 40230,
+      "Entries": [
+        "[Garb - Ironeye] Remembrance"
+      ]
+    },
+    {
+      "ID": 40250,
+      "Entries": [
+        "[Garb - Ironeye] Ringfinger"
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "[Garb - Ironeye] Sellsword"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "[Garb - Duchess] Duchess"
+      ]
+    },
+    {
+      "ID": 40310,
+      "Entries": [
+        "[Garb - Duchess] Dawn"
+      ]
+    },
+    {
+      "ID": 40320,
+      "Entries": [
+        "[Garb - Duchess] Darkness"
+      ]
+    },
+    {
+      "ID": 40330,
+      "Entries": [
+        "[Garb - Duchess] Remembrance"
+      ]
+    },
+    {
+      "ID": 40350,
+      "Entries": [
+        "[Garb - Duchess] Black Leather"
+      ]
+    },
+    {
+      "ID": 40360,
+      "Entries": [
+        "[Garb - Duchess] Wraith"
+      ]
+    },
+    {
+      "ID": 40400,
+      "Entries": [
+        "[Garb - Raider] Raider"
+      ]
+    },
+    {
+      "ID": 40410,
+      "Entries": [
+        "[Garb - Raider] Dawn"
+      ]
+    },
+    {
+      "ID": 40420,
+      "Entries": [
+        "[Garb - Raider] Darkness"
+      ]
+    },
+    {
+      "ID": 40430,
+      "Entries": [
+        "[Garb - Raider] Remembrance"
+      ]
+    },
+    {
+      "ID": 40450,
+      "Entries": [
+        "[Garb - Raider] Rock-like"
+      ]
+    },
+    {
+      "ID": 40460,
+      "Entries": [
+        "[Garb - Raider] Catarina"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "[Garb - Revenant] Revenant"
+      ]
+    },
+    {
+      "ID": 40510,
+      "Entries": [
+        "[Garb - Revenant] Dawn"
+      ]
+    },
+    {
+      "ID": 40520,
+      "Entries": [
+        "[Garb - Revenant] Darkness"
+      ]
+    },
+    {
+      "ID": 40530,
+      "Entries": [
+        "[Garb - Revenant] Remembrance"
+      ]
+    },
+    {
+      "ID": 40550,
+      "Entries": [
+        "[Garb - Revenant] The Sister in the Painting"
+      ]
+    },
+    {
+      "ID": 40560,
+      "Entries": [
+        "[Garb - Revenant] Dragon School"
+      ]
+    },
+    {
+      "ID": 40600,
+      "Entries": [
+        "[Garb - Recluse] Recluse"
+      ]
+    },
+    {
+      "ID": 40610,
+      "Entries": [
+        "[Garb - Recluse] Dawn"
+      ]
+    },
+    {
+      "ID": 40620,
+      "Entries": [
+        "[Garb - Recluse] Darkness"
+      ]
+    },
+    {
+      "ID": 40630,
+      "Entries": [
+        "[Garb - Recluse] Remembrance"
+      ]
+    },
+    {
+      "ID": 40650,
+      "Entries": [
+        "[Garb - Recluse] Heretic Sorcerer"
+      ]
+    },
+    {
+      "ID": 40660,
+      "Entries": [
+        "[Garb - Recluse] Emerald Fate"
+      ]
+    },
+    {
+      "ID": 40700,
+      "Entries": [
+        "[Garb - Executor] Executor"
+      ]
+    },
+    {
+      "ID": 40710,
+      "Entries": [
+        "[Garb - Executor] Dawn"
+      ]
+    },
+    {
+      "ID": 40720,
+      "Entries": [
+        "[Garb - Executor] Darkness"
+      ]
+    },
+    {
+      "ID": 40730,
+      "Entries": [
+        "[Garb - Executor] Remembrance"
+      ]
+    },
+    {
+      "ID": 40750,
+      "Entries": [
+        "[Garb - Executor] Thorns"
+      ]
+    },
+    {
+      "ID": 40760,
+      "Entries": [
+        "[Garb - Executor] Sable Church"
+      ]
+    },
+    {
+      "ID": 40800,
+      "Entries": [
+        "[Garb - Scholar] Scholar"
+      ]
+    },
+    {
+      "ID": 40810,
+      "Entries": [
+        "[Garb - Scholar] Dawn"
+      ]
+    },
+    {
+      "ID": 40820,
+      "Entries": [
+        "[Garb - Scholar] Darkness"
+      ]
+    },
+    {
+      "ID": 40830,
+      "Entries": [
+        "[Garb - Scholar] Remembrance"
+      ]
+    },
+    {
+      "ID": 40850,
+      "Entries": [
+        "[Garb - Scholar] Pardoner"
+      ]
+    },
+    {
+      "ID": 40860,
+      "Entries": [
+        "[Garb - Scholar] Xanthous"
+      ]
+    },
+    {
+      "ID": 40900,
+      "Entries": [
+        "[Garb - Undertaker] Undertaker"
+      ]
+    },
+    {
+      "ID": 40910,
+      "Entries": [
+        "[Garb - Undertaker] Dawn"
+      ]
+    },
+    {
+      "ID": 40920,
+      "Entries": [
+        "[Garb - Undertaker] Darkness"
+      ]
+    },
+    {
+      "ID": 40930,
+      "Entries": [
+        "[Garb - Undertaker] Remembrance"
+      ]
+    },
+    {
+      "ID": 40950,
+      "Entries": [
+        "[Garb - Undertaker] Brass"
+      ]
+    },
+    {
+      "ID": 40960,
+      "Entries": [
+        "[Garb - Undertaker] Lord's Blade"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Key Item] Slate Whetstone"
+      ]
+    },
+    {
+      "ID": 45001,
+      "Entries": [
+        "[Key Item] Silver Tear"
+      ]
+    },
+    {
+      "ID": 45002,
+      "Entries": [
+        "[Key Item] Golden Dew"
+      ]
+    },
+    {
+      "ID": 45003,
+      "Entries": [
+        "[Key Item] Weathervane's Words"
+      ]
+    },
+    {
+      "ID": 45004,
+      "Entries": [
+        "[Key Item] Blessed Flowers"
+      ]
+    },
+    {
+      "ID": 45006,
+      "Entries": [
+        "[Key Item] Golden Sprout"
+      ]
+    },
+    {
+      "ID": 45007,
+      "Entries": [
+        "[Key Item] Night Shard"
+      ]
+    },
+    {
+      "ID": 45008,
+      "Entries": [
+        "[Key Item] Vestige of Night"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Key Item] Traitor's Letter"
+      ]
+    },
+    {
+      "ID": 45011,
+      "Entries": [
+        "[Key Item] Edge of Order"
+      ]
+    },
+    {
+      "ID": 45013,
+      "Entries": [
+        "[Key Item] Stone Stake"
+      ]
+    },
+    {
+      "ID": 45014,
+      "Entries": [
+        "[Key Item] Third Volume"
+      ]
+    },
+    {
+      "ID": 45015,
+      "Entries": [
+        "[Key Item] Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 45016,
+      "Entries": [
+        "[Key Item] Blade of Night Fragment"
+      ]
+    },
+    {
+      "ID": 45018,
+      "Entries": [
+        "[Key Item] Mended Earring"
+      ]
+    },
+    {
+      "ID": 45019,
+      "Entries": [
+        "[Key Item] Faded Iron Coins"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Key Item] Eerie Charm"
+      ]
+    },
+    {
+      "ID": 45021,
+      "Entries": [
+        "[Key Item] Merchant's Ledger"
+      ]
+    },
+    {
+      "ID": 45022,
+      "Entries": [
+        "[Key Item] Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 45023,
+      "Entries": [
+        "[Key Item] Trace of Night"
+      ]
+    },
+    {
+      "ID": 45024,
+      "Entries": [
+        "[Key Item] Torn Braided Cord"
+      ]
+    },
+    {
+      "ID": 45026,
+      "Entries": [
+        "[Key Item] Black Claw Necklace"
+      ]
+    },
+    {
+      "ID": 45027,
+      "Entries": [
+        "[Key Item] Double Sided Coin"
+      ]
+    },
+    {
+      "ID": 45028,
+      "Entries": [
+        "[Key Item] Crown Medal"
+      ]
+    },
+    {
+      "ID": 45029,
+      "Entries": [
+        "[Key Item] Pita Bread"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        "[Key Item] Second Volume"
+      ]
+    },
+    {
+      "ID": 45031,
+      "Entries": [
+        "[Key Item] Iron Menial's Scrawl"
+      ]
+    },
+    {
+      "ID": 45032,
+      "Entries": [
+        "[Key Item] Blessed Iron Coin"
+      ]
+    },
+    {
+      "ID": 45033,
+      "Entries": [
+        "[Key Item] Cracked Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 45034,
+      "Entries": [
+        "[Key Item] Virtuous Thief's Key"
+      ]
+    },
+    {
+      "ID": 45035,
+      "Entries": [
+        "[Key Item] Torn-Out Paper Scrap"
+      ]
+    },
+    {
+      "ID": 45036,
+      "Entries": [
+        "[Key Item] The Wylder's Earring"
+      ]
+    },
+    {
+      "ID": 45037,
+      "Entries": [
+        "[Key Item] Bone-Like Stone"
+      ]
+    },
+    {
+      "ID": 45100,
+      "Entries": [
+        "[Key Item] Leather Monocle Case"
+      ]
+    },
+    {
+      "ID": 45101,
+      "Entries": [
+        "[Key Item] Scholar's Primal Core"
+      ]
+    },
+    {
+      "ID": 45102,
+      "Entries": [
+        "[Key Item] Night-Hued Glass"
+      ]
+    },
+    {
+      "ID": 45103,
+      "Entries": [
+        "[Key Item] Vassal's Journal"
+      ]
+    },
+    {
+      "ID": 45104,
+      "Entries": [
+        "[Key Item] Cleansing Tear"
+      ]
+    },
+    {
+      "ID": 45105,
+      "Entries": [
+        "[Key Item] Returned Leather Case"
+      ]
+    },
+    {
+      "ID": 45106,
+      "Entries": [
+        "[Key Item] Headband of the Golden Ones"
+      ]
+    },
+    {
+      "ID": 45107,
+      "Entries": [
+        "[Key Item] Bundled Paper"
+      ]
+    },
+    {
+      "ID": 45108,
+      "Entries": [
+        "[Key Item] Dismembered Finger"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "[NPC] Flask of Crimson Tears (30% - Empty)"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "[NPC] Flask of Crimson Tears (30%)"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "[NPC] Flask of Crimson Tears (50% - Empty)"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "[NPC] Flask of Crimson Tears (50%)"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Slate Whetstone"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Silver Tear"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Golden Dew"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Weathervane's Words"
+      ]
+    },
+    {
+      "ID": 1000004,
+      "Entries": [
+        "Blessed Flowers"
+      ]
+    },
+    {
+      "ID": 1000005,
+      "Entries": [
+        "Golden Seed"
+      ]
+    },
+    {
+      "ID": 1000006,
+      "Entries": [
+        "Golden Sprout"
+      ]
+    },
+    {
+      "ID": 1000007,
+      "Entries": [
+        "Night Shard"
+      ]
+    },
+    {
+      "ID": 1000008,
+      "Entries": [
+        "Vestige of Night"
+      ]
+    },
+    {
+      "ID": 1000009,
+      "Entries": [
+        "Fine Arrowhead"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Traitor's Letter"
+      ]
+    },
+    {
+      "ID": 1000011,
+      "Entries": [
+        "Edge of Order"
+      ]
+    },
+    {
+      "ID": 1000012,
+      "Entries": [
+        "Ragged Doll"
+      ]
+    },
+    {
+      "ID": 1000013,
+      "Entries": [
+        "Stone Stake"
+      ]
+    },
+    {
+      "ID": 1000014,
+      "Entries": [
+        "Third Volume"
+      ]
+    },
+    {
+      "ID": 1000015,
+      "Entries": [
+        "Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 1000016,
+      "Entries": [
+        "Blade of Night Fragment"
+      ]
+    },
+    {
+      "ID": 1000017,
+      "Entries": [
+        "Dried Droplet"
+      ]
+    },
+    {
+      "ID": 1000018,
+      "Entries": [
+        "Mended Earring"
+      ]
+    },
+    {
+      "ID": 1000019,
+      "Entries": [
+        "Faded Iron Coins"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Eerie Charm"
+      ]
+    },
+    {
+      "ID": 1000021,
+      "Entries": [
+        "Merchant's Ledger"
+      ]
+    },
+    {
+      "ID": 1000022,
+      "Entries": [
+        "Torn Braided Cord"
+      ]
+    },
+    {
+      "ID": 1000024,
+      "Entries": [
+        "Black Claw Necklace"
+      ]
+    },
+    {
+      "ID": 1000025,
+      "Entries": [
+        "Double Sided Coin"
+      ]
+    },
+    {
+      "ID": 1000026,
+      "Entries": [
+        "Crown Medal"
+      ]
+    },
+    {
+      "ID": 1000027,
+      "Entries": [
+        "Pita Bread"
+      ]
+    },
+    {
+      "ID": 1000028,
+      "Entries": [
+        "Second Volume"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "Iron Menial's Scrawl"
+      ]
+    },
+    {
+      "ID": 1000031,
+      "Entries": [
+        "Blessed Iron Coin"
+      ]
+    },
+    {
+      "ID": 1000032,
+      "Entries": [
+        "Cracked Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 1000033,
+      "Entries": [
+        "Virtuous Thief's Key"
+      ]
+    },
+    {
+      "ID": 1000034,
+      "Entries": [
+        "Torn-Out Paper Scrap"
+      ]
+    },
+    {
+      "ID": 1000035,
+      "Entries": [
+        "The Wylder's Earring"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 1000101,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
+      "ID": 1000102,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
+      "ID": 1000103,
+      "Entries": [
+        "Trace of Night"
+      ]
+    },
+    {
+      "ID": 6000500,
+      "Entries": [
+        "[Great Hollow (L)] False vision of a Great Rune"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "[Permanent Buff (U)] Increased Maximum HP (+10%)"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "[Permanent Buff (R)] Increased Maximum HP (+15%)"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "[Permanent Buff (U)] Increased Maximum FP (+10%)"
+      ]
+    },
+    {
+      "ID": 8010001,
+      "Entries": [
+        "[Permanent Buff (R)] Increased Maximum FP (+15%)"
+      ]
+    },
+    {
+      "ID": 8010100,
+      "Entries": [
+        "[Permanent Buff (U)] Reduced FP Consumption (+10%)"
+      ]
+    },
+    {
+      "ID": 8010101,
+      "Entries": [
+        "[Permanent Buff (R)] Reduced FP Consumption (+15%)"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "[Permanent Buff (U)] Increased Max Stamina (+10%)"
+      ]
+    },
+    {
+      "ID": 8020001,
+      "Entries": [
+        "[Permanent Buff (R)] Increased Max Stamina (+15%)"
+      ]
+    },
+    {
+      "ID": 8020200,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Stamina Recovery (+4)"
+      ]
+    },
+    {
+      "ID": 8020201,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Stamina Recovery (+6)"
+      ]
+    },
+    {
+      "ID": 8100000,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Physical Attack Power (+6%)"
+      ]
+    },
+    {
+      "ID": 8100001,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Physical Attack Power (+9%)"
+      ]
+    },
+    {
+      "ID": 8100500,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Affinity Attack Power (+5%)"
+      ]
+    },
+    {
+      "ID": 8100501,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Affinity Attack Power (+8%)"
+      ]
+    },
+    {
+      "ID": 8120000,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Stance-Breaking (+10%)"
+      ]
+    },
+    {
+      "ID": 8120001,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Stance-Breaking (+15%)"
+      ]
+    },
+    {
+      "ID": 8200000,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Physical Damage Negation (+12%)"
+      ]
+    },
+    {
+      "ID": 8200001,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Physical Damage Negation (+18%)"
+      ]
+    },
+    {
+      "ID": 8200500,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Affinity Damage Negation (+12%)"
+      ]
+    },
+    {
+      "ID": 8200501,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Affinity Damage Negation (+18%)"
+      ]
+    },
+    {
+      "ID": 8210700,
+      "Entries": [
+        "[Permanent Buff (U)] All Resistances Up (+57)"
+      ]
+    },
+    {
+      "ID": 8210701,
+      "Entries": [
+        "[Permanent Buff (R)] All Resistances Up (+75)"
+      ]
+    },
+    {
+      "ID": 8230000,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Poise (+25%)"
+      ]
+    },
+    {
+      "ID": 8230001,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Poise (+38%)"
+      ]
+    },
+    {
+      "ID": 8330103,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Sorceries and Incantations (+7%)"
+      ]
+    },
+    {
+      "ID": 8330104,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Sorceries and Incantations (+11%)"
+      ]
+    },
+    {
+      "ID": 8330500,
+      "Entries": [
+        "[Permanent Buff (R)] Extended Sorcery and Incantation Duration (+30%)"
+      ]
+    },
+    {
+      "ID": 8330700,
+      "Entries": [
+        "[Permanent Buff (R)] Dragonwound upon Dragon Communion"
+      ]
+    },
+    {
+      "ID": 8350400,
+      "Entries": [
+        "[Permanent Buff (R)] Successful Parries Activate Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 8360000,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Ultimate Art Gauge Charge Speed (+6%)"
+      ]
+    },
+    {
+      "ID": 8370000,
+      "Entries": [
+        "[Permanent Buff (R)] Character Skill Cooldown Reduction (+10%)"
+      ]
+    },
+    {
+      "ID": 8410000,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Dodging"
+      ]
+    },
+    {
+      "ID": 8410100,
+      "Entries": [
+        "[Permanent Buff (R)] Lightning upon Dodging"
+      ]
+    },
+    {
+      "ID": 8420100,
+      "Entries": [
+        "[Permanent Buff (R)] Guard Counters Activate Holy Attacks"
+      ]
+    },
+    {
+      "ID": 8420200,
+      "Entries": [
+        "[Permanent Buff (R)] Guard Counters Activate Summoning Attack"
+      ]
+    },
+    {
+      "ID": 8430000,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Thrusting Counterattack (+20%)"
+      ]
+    },
+    {
+      "ID": 8440000,
+      "Entries": [
+        "[Permanent Buff (U)] Improved Flask HP Restoration (+20%)"
+      ]
+    },
+    {
+      "ID": 8440001,
+      "Entries": [
+        "[Permanent Buff (R)] Improved Flask HP Restoration (+30%)"
+      ]
+    },
+    {
+      "ID": 8440200,
+      "Entries": [
+        "[Permanent Buff (R)] Gradual Restoration by Flask"
+      ]
+    },
+    {
+      "ID": 8450100,
+      "Entries": [
+        "[Permanent Buff (R)] Ice Storm Surge Sprint"
+      ]
+    },
+    {
+      "ID": 8460200,
+      "Entries": [
+        "[Permanent Buff (R)] Flame of Frenzy While Walking"
+      ]
+    },
+    {
+      "ID": 8460400,
+      "Entries": [
+        "[Permanent Buff (R)] Violent Deluge of Star Rain While Walking"
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "[Permanent Buff (U)] More Runes From Defeated Enemies (+10%)"
+      ]
+    },
+    {
+      "ID": 8500100,
+      "Entries": [
+        "[Permanent Buff (U)] Rune of the Strong (10000 Runes)"
+      ]
+    },
+    {
+      "ID": 8500101,
+      "Entries": [
+        "[Permanent Buff (R)] Rune of the Strong (20000 Runes)"
+      ]
+    },
+    {
+      "ID": 8500102,
+      "Entries": [
+        "[Permanent Buff (L)] Rune of the Strong (30000 Runes)"
+      ]
+    },
+    {
+      "ID": 8530200,
+      "Entries": [
+        "[Permanent Buff (R)] Periodical Giant Glintblades"
+      ]
+    },
+    {
+      "ID": 8600300,
+      "Entries": [
+        "[Permanent Buff (R)] Sudden Enemy Death upon Attacks"
+      ]
+    },
+    {
+      "ID": 8610000,
+      "Entries": [
+        "[Permanent Buff (R)] HP Restoration upon Successive Attacks (+3%)"
+      ]
+    },
+    {
+      "ID": 8610100,
+      "Entries": [
+        "[Permanent Buff (R)] FP Restoration upon Successive Attacks (+10%)"
+      ]
+    },
+    {
+      "ID": 8640000,
+      "Entries": [
+        "[Permanent Buff (R)] Critical Hit HP Restoration (+10%)"
+      ]
+    },
+    {
+      "ID": 8640100,
+      "Entries": [
+        "[Permanent Buff (R)] Critical Hit FP Restoration (+10%)"
+      ]
+    },
+    {
+      "ID": 8642000,
+      "Entries": [
+        "[Permanent Buff (R)] Increased Enemy Damage after Critical Hit (+15%)"
+      ]
+    },
+    {
+      "ID": 8650000,
+      "Entries": [
+        "[Permanent Buff (R)] HP Recovery From Successful Guarding (+10)"
+      ]
+    },
+    {
+      "ID": 8650100,
+      "Entries": [
+        "[Permanent Buff (R)] FP Recovery From Successful Guarding (+2)"
+      ]
+    },
+    {
+      "ID": 8660200,
+      "Entries": [
+        "[Permanent Buff (R)] Critical Hits Inflict Blood Loss"
+      ]
+    },
+    {
+      "ID": 8660300,
+      "Entries": [
+        "[Permanent Buff (R)] Creates Holy Ground at Low HP"
+      ]
+    },
+    {
+      "ID": 8700002,
+      "Entries": [
+        "[Permanent Buff (R)] Poison & Rot Trigger Continuous HP Recovery (+7)"
+      ]
+    },
+    {
+      "ID": 8710002,
+      "Entries": [
+        "[Permanent Buff (R)] Blood Loss in Vicinity Increases Attack Power (+20%)"
+      ]
+    },
+    {
+      "ID": 9999099,
+      "Entries": [
+        "Localization test_99"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Leather Monocle Case"
+      ]
+    },
+    {
+      "ID": 10001001,
+      "Entries": [
+        "Scholar's Primal Core"
+      ]
+    },
+    {
+      "ID": 10001002,
+      "Entries": [
+        "Night-Hued Glass"
+      ]
+    },
+    {
+      "ID": 10001003,
+      "Entries": [
+        "Vassal's Journal"
+      ]
+    },
+    {
+      "ID": 10001004,
+      "Entries": [
+        "Cleansing Tear"
+      ]
+    },
+    {
+      "ID": 10001005,
+      "Entries": [
+        "Returned Leather Case"
+      ]
+    },
+    {
+      "ID": 10001006,
+      "Entries": [
+        "Headband of the Golden Ones"
+      ]
+    },
+    {
+      "ID": 10001007,
+      "Entries": [
+        "Bundled Paper"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

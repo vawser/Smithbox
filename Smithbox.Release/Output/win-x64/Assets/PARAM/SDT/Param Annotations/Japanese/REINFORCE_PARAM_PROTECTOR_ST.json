@@ -1,0 +1,98 @@
+{
+  "Param": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Type": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Name": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "physicsDefRate",
+      "Name": "物理防御力",
+      "Description": "物理防御力の補正値"
+    },
+    {
+      "Field": "magicDefRate",
+      "Name": "魔法防御力",
+      "Description": "魔法防御力の補正値"
+    },
+    {
+      "Field": "fireDefRate",
+      "Name": "炎防御力",
+      "Description": "炎防御力の補正値"
+    },
+    {
+      "Field": "thunderDefRate",
+      "Name": "電撃防御力",
+      "Description": "電撃防御力の補正値"
+    },
+    {
+      "Field": "slashDefRate",
+      "Name": "斬撃防御力",
+      "Description": "斬撃防御力の補正値"
+    },
+    {
+      "Field": "blowDefRate",
+      "Name": "打撃防御力",
+      "Description": "打撃防御力の補正値"
+    },
+    {
+      "Field": "thrustDefRate",
+      "Name": "刺突防御力",
+      "Description": "刺突防御力の補正値"
+    },
+    {
+      "Field": "resistPoisonRate",
+      "Name": "毒耐性",
+      "Description": "毒耐性の補正値"
+    },
+    {
+      "Field": "resistDiseaseRate",
+      "Name": "疫病耐性",
+      "Description": "疫病耐性の補正値"
+    },
+    {
+      "Field": "resistBloodRate",
+      "Name": "出血耐性",
+      "Description": "出血耐性の補正値"
+    },
+    {
+      "Field": "resistCurseRate",
+      "Name": "呪耐性",
+      "Description": "呪耐性の補正値"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "常駐特殊効果ID1",
+      "Description": "常駐特殊効果ID1の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "常駐特殊効果ID2",
+      "Description": "常駐特殊効果ID2の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "常駐特殊効果ID3",
+      "Description": "常駐特殊効果ID3の加算補正値"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "素材ID加算値",
+      "Description": "素材パラメータIDの加算補正値"
+    },
+    {
+      "Field": "darkDefRate",
+      "Name": "闇防御力",
+      "Description": "闇防御力の補正値"
+    },
+    {
+      "Field": "resistFreezeRate",
+      "Name": "冷気耐性",
+      "Description": "冷気耐性の補正値"
+    },
+    {
+      "Field": "pad",
+      "Name": "pading",
+      "Description": ""
+    }
+  ]
+}

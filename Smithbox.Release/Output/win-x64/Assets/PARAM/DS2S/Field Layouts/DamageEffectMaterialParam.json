@@ -1,0 +1,725 @@
+{
+  "Name": "DamageEffectMaterialParam",
+  "Groups": [
+    {
+      "Key": "Body",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Body"
+        }
+      ],
+      "Fields": [
+        "bodyEffect01",
+        "bodyEffect02",
+        "bodySize01",
+        "bodySize02"
+      ]
+    },
+    {
+      "Key": "Petrified Boss Body",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Petrified Boss Body"
+        }
+      ],
+      "Fields": [
+        "petrifiedBossBodyEffect01",
+        "petrifiedBossBodyEffect02",
+        "petrifiedBossBodySize01",
+        "petrifiedBossBodySize02"
+      ]
+    },
+    {
+      "Key": "None",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "None"
+        }
+      ],
+      "Fields": [
+        "noneEffect01",
+        "noneEffect02",
+        "noneSize01",
+        "noneSize02"
+      ]
+    },
+    {
+      "Key": "Metal",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Metal"
+        }
+      ],
+      "Fields": [
+        "metalEffect01",
+        "metalEffect02",
+        "metalSize01",
+        "metalSize02"
+      ]
+    },
+    {
+      "Key": "Heavy Metal",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Heavy Metal"
+        }
+      ],
+      "Fields": [
+        "heavymetalEffect01",
+        "heavymetalEffect02",
+        "heavymetalSize01",
+        "heavymetalSize02"
+      ]
+    },
+    {
+      "Key": "Wood",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Wood"
+        }
+      ],
+      "Fields": [
+        "woodEffect01",
+        "woodEffect02",
+        "woodSize01",
+        "woodSize02"
+      ]
+    },
+    {
+      "Key": "Water",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Water"
+        }
+      ],
+      "Fields": [
+        "waterEffect01",
+        "waterEffect02",
+        "waterSize01",
+        "waterSize02"
+      ]
+    },
+    {
+      "Key": "Swamp",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Swamp"
+        }
+      ],
+      "Fields": [
+        "swampEffect01",
+        "swampEffect02",
+        "swampSize01",
+        "swampSize02"
+      ]
+    },
+    {
+      "Key": "Lumber",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lumber"
+        }
+      ],
+      "Fields": [
+        "lumberEffect01",
+        "lumberEffect02",
+        "lumberSize01",
+        "lumberSize02"
+      ]
+    },
+    {
+      "Key": "Living Flesh",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Living Flesh"
+        }
+      ],
+      "Fields": [
+        "meatEffect01",
+        "meatEffect02",
+        "meatSize01",
+        "meatSize02"
+      ]
+    },
+    {
+      "Key": "Dead Flesh",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Dead Flesh"
+        }
+      ],
+      "Fields": [
+        "deadmeatEffect01",
+        "deadmeatEffect02",
+        "deadmeatSize01",
+        "deadmeatSize02"
+      ]
+    },
+    {
+      "Key": "Insect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Insect"
+        }
+      ],
+      "Fields": [
+        "insectEffect01",
+        "insectEffect02",
+        "insectSize01",
+        "insectSize02"
+      ]
+    },
+    {
+      "Key": "Giant Skin",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Giant Skin"
+        }
+      ],
+      "Fields": [
+        "giantEffect01",
+        "giantEffect02",
+        "giantSize01",
+        "giantSize02"
+      ]
+    },
+    {
+      "Key": "Bone",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Bone"
+        }
+      ],
+      "Fields": [
+        "boneEffect01",
+        "boneEffect02",
+        "boneSize01",
+        "boneSize02"
+      ]
+    },
+    {
+      "Key": "Copper",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Copper"
+        }
+      ],
+      "Fields": [
+        "copperEffect01",
+        "copperEffect02",
+        "copperSize01",
+        "copperSize02"
+      ]
+    },
+    {
+      "Key": "Energy",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Energy"
+        }
+      ],
+      "Fields": [
+        "energyEffect01",
+        "energyEffect02",
+        "energySize01",
+        "energySize02"
+      ]
+    },
+    {
+      "Key": "Fire",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Fire"
+        }
+      ],
+      "Fields": [
+        "fireEffect01",
+        "fireEffect02",
+        "fireSize01",
+        "fireSize02"
+      ]
+    },
+    {
+      "Key": "Lightning",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lightning"
+        }
+      ],
+      "Fields": [
+        "thunderEffect01",
+        "thunderEffect02",
+        "thunderSize01",
+        "thunderSize02"
+      ]
+    },
+    {
+      "Key": "Dark",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Dark"
+        }
+      ],
+      "Fields": [
+        "darkEffect01",
+        "darkEffect02",
+        "darkSize01",
+        "darkSize02"
+      ]
+    },
+    {
+      "Key": "Magic",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Magic"
+        }
+      ],
+      "Fields": [
+        "magicEffect01",
+        "magicEffect02",
+        "magicSize01",
+        "magicSize02"
+      ]
+    },
+    {
+      "Key": "Stone",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stone"
+        }
+      ],
+      "Fields": [
+        "stoneEffect01",
+        "stoneEffect02",
+        "stoneSize01",
+        "stoneSize02"
+      ]
+    },
+    {
+      "Key": "Dirt",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Dirt"
+        }
+      ],
+      "Fields": [
+        "dirtEffect01",
+        "dirtEffect02",
+        "dirtSize01",
+        "dirtSize02"
+      ]
+    },
+    {
+      "Key": "Carpet",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Carpet"
+        }
+      ],
+      "Fields": [
+        "carpetEffect01",
+        "carpetEffect02",
+        "carpetSize01",
+        "carpetSize02"
+      ]
+    },
+    {
+      "Key": "Grass",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Grass"
+        }
+      ],
+      "Fields": [
+        "grassEffect01",
+        "grassEffect02",
+        "grassSize01",
+        "grassSize02"
+      ]
+    },
+    {
+      "Key": "Gravel",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Gravel"
+        }
+      ],
+      "Fields": [
+        "gravelEffect01",
+        "gravelEffect02",
+        "gravelSize01",
+        "gravelSize02"
+      ]
+    },
+    {
+      "Key": "Cloth",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cloth"
+        }
+      ],
+      "Fields": [
+        "clothEffect01",
+        "clothEffect02",
+        "clothSize01",
+        "clothSize02"
+      ]
+    },
+    {
+      "Key": "Sand",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sand"
+        }
+      ],
+      "Fields": [
+        "sandEffect01",
+        "sandEffect02",
+        "sandSize01",
+        "sandSize02"
+      ]
+    },
+    {
+      "Key": "Ash",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Ash"
+        }
+      ],
+      "Fields": [
+        "ashEffect01",
+        "ashEffect02",
+        "ashSize01",
+        "ashSize02"
+      ]
+    },
+    {
+      "Key": "Poison Swamp",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Poison Swamp"
+        }
+      ],
+      "Fields": [
+        "poisonswampEffect01",
+        "poisonswampEffect02",
+        "poisonswampSize01",
+        "poisonswampSize02"
+      ]
+    },
+    {
+      "Key": "Oil",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Oil"
+        }
+      ],
+      "Fields": [
+        "oilEffect01",
+        "oilEffect02",
+        "oilSize01",
+        "oilSize02"
+      ]
+    },
+    {
+      "Key": "Coal Tar",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Coal Tar"
+        }
+      ],
+      "Fields": [
+        "coaltarEffect01",
+        "coaltarEffect02",
+        "coaltarSize01",
+        "coaltarSize02"
+      ]
+    },
+    {
+      "Key": "Lava",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lava"
+        }
+      ],
+      "Fields": [
+        "lavaEffect01",
+        "lavaEffect02",
+        "lavaSize01",
+        "lavaSize02"
+      ]
+    },
+    {
+      "Key": "Spider Web",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Spider Web"
+        }
+      ],
+      "Fields": [
+        "stringEffect01",
+        "stringEffect02",
+        "stringSize01",
+        "stringSize02"
+      ]
+    },
+    {
+      "Key": "Sulfur Crystal",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sulfur Crystal"
+        }
+      ],
+      "Fields": [
+        "sulfurcrystalEffect01",
+        "sulfurcrystalEffect02",
+        "sulfurcrystalSize01",
+        "sulfurcrystalSize02"
+      ]
+    },
+    {
+      "Key": "Soul",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Soul"
+        }
+      ],
+      "Fields": [
+        "soulEffect01",
+        "soulEffect02",
+        "soulSize01",
+        "soulSize02"
+      ]
+    },
+    {
+      "Key": "Frog",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Frog"
+        }
+      ],
+      "Fields": [
+        "frogEffect01",
+        "frogEffect02",
+        "frogSize01",
+        "frogSize02"
+      ]
+    },
+    {
+      "Key": "Stone Water",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stone Water"
+        }
+      ],
+      "Fields": [
+        "stoneWaterEffect01",
+        "stoneWaterEffect02",
+        "stoneWaterSize01",
+        "stoneWaterSize02"
+      ]
+    },
+    {
+      "Key": "Stone Energy",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stone Energy"
+        }
+      ],
+      "Fields": [
+        "stoneEnergyEffect01",
+        "stoneEnergyEffect02",
+        "stoneEnergySize01",
+        "stoneEnergySize02"
+      ]
+    },
+    {
+      "Key": "Substitute",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Substitute"
+        }
+      ],
+      "Fields": [
+        "coverEffect01",
+        "coverEffect02",
+        "coverSize01",
+        "coverSize02"
+      ]
+    },
+    {
+      "Key": "Unknown 0",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 0"
+        }
+      ],
+      "Fields": [
+        "unkMat0Effect01",
+        "unkMat0Effect02",
+        "unkMat0Size01",
+        "unkMat0Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 1"
+        }
+      ],
+      "Fields": [
+        "unkMat1Effect01",
+        "unkMat1Effect02",
+        "unkMat1Size01",
+        "unkMat1Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 2"
+        }
+      ],
+      "Fields": [
+        "unkMat2Effect01",
+        "unkMat2Effect02",
+        "unkMat2Size01",
+        "unkMat2Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 3"
+        }
+      ],
+      "Fields": [
+        "unkMat3Effect01",
+        "unkMat3Effect02",
+        "unkMat3Size01",
+        "unkMat3Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 4"
+        }
+      ],
+      "Fields": [
+        "unkMat4Effect01",
+        "unkMat4Effect02",
+        "unkMat4Size01",
+        "unkMat4Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 5"
+        }
+      ],
+      "Fields": [
+        "unkMat5Effect01",
+        "unkMat5Effect02",
+        "unkMat5Size01",
+        "unkMat5Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 6"
+        }
+      ],
+      "Fields": [
+        "unkMat6Effect01",
+        "unkMat6Effect02",
+        "unkMat6Size01",
+        "unkMat6Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 7"
+        }
+      ],
+      "Fields": [
+        "unkMat7Effect01",
+        "unkMat7Effect02",
+        "unkMat7Size01",
+        "unkMat7Size02"
+      ]
+    },
+    {
+      "Key": "Unknown 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Unknown 8"
+        }
+      ],
+      "Fields": [
+        "unkMat8Effect01",
+        "unkMat8Effect02",
+        "unkMat8Size01",
+        "unkMat8Size02"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "RESULT_EVENT_PARAM",
+  "Type": "RESULT_EVENT_PARAM",
+  "Name": "RESULT_EVENT_PARAM",
+  "Description": "Defines result screen event behavior, including presentation type, messages, rewards, and covenant contribution changes.",
+  "Fields": [
+    {
+      "Field": "feType",
+      "Name": "Presentation Type",
+      "Description": "Determines the type of result screen presentation or visual effect."
+    },
+    {
+      "Field": "msgType",
+      "Name": "Message Type",
+      "Description": "Defines the category of message shown on the result screen."
+    },
+    {
+      "Field": "vowContribute",
+      "Name": "Covenant Contribution Change",
+      "Description": "Amount added or removed from covenant contribution upon completion."
+    },
+    {
+      "Field": "endType",
+      "Name": "End Type",
+      "Description": "Defines how the result event concludes (e.g., normal end, forced end, special end)."
+    },
+    {
+      "Field": "msgId",
+      "Name": "Message ID",
+      "Description": "Reference ID for the displayed result message."
+    },
+    {
+      "Field": "rewardItemId01",
+      "Name": "Victory Reward Item Lottery ID",
+      "Description": "Item lottery ID used to determine victory rewards."
+    },
+    {
+      "Field": "exRewardItemId01",
+      "Name": "Event Bonus Reward Item Lottery ID",
+      "Description": "Additional reward item lottery ID used for special or live event bonuses."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

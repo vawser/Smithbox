@@ -1,0 +1,136 @@
+{
+  "Entries": [
+    {
+      "Key": "EDITOR_Short_Project_Type_Undefined",
+      "Text": "未定义"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DES",
+      "Text": "DES"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DS1",
+      "Text": "DS1"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DS1R",
+      "Text": "DS1R"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DS2",
+      "Text": "DS2"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DS2S",
+      "Text": "DS2S"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_DS3",
+      "Text": "DS3"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_BB",
+      "Text": "BB"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_SDT",
+      "Text": "SDT"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_ER",
+      "Text": "ER"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_AC6",
+      "Text": "AC6"
+    },
+    {
+      "Key": "EDITOR_Short_Project_Type_NR",
+      "Text": "NR"
+    },
+    {
+      "Key": "EDITOR_List_Filter_Exact_Match_TT",
+      "Text": "启用后，筛选器将忽略部分匹配。"
+    },
+    {
+      "Key": "EDITOR_List_Filter_Input_TT",
+      "Text": "输入搜索词以筛选此列表。\n\n作为 AND 运算的术语使用 {0} 字符分隔。\n\n作为 OR 运算的术语使用 {1} 字符分隔。"
+    },
+    {
+      "Key": "EDITOR_Add_New_View",
+      "Text": "添加新视图"
+    },
+    {
+      "Key": "EDITOR_Close_Current_View",
+      "Text": "关闭当前视图"
+    },
+    {
+      "Key": "EDITOR_Active_View",
+      "Text": "活动视图"
+    },
+    {
+      "Key": "EDITOR_Inactive_View",
+      "Text": "非活动视图"
+    },
+    {
+      "Key": "EDITOR_Add_View",
+      "Text": "添加视图"
+    },
+    {
+      "Key": "EDITOR_Close_View",
+      "Text": "关闭视图"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_File",
+      "Text": "文件"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Edit",
+      "Text": "编辑"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_View",
+      "Text": "视图"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Save",
+      "Text": "保存"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Undo",
+      "Text": "撤销"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Undo_All",
+      "Text": "全部撤销"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Redo",
+      "Text": "重做"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Duplicate",
+      "Text": "复制"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Copy",
+      "Text": "复制"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Paste",
+      "Text": "粘贴"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ROLE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 teamType">
+      <DisplayName>チームタイプ</DisplayName>
+      <Enum>TEAM_TYPE</Enum>
+      <Description>チームタイプ</Description>
+      <Minimum>-1</Minimum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="dummy8 pad10[3]">
+      <SortID>6001</SortID>
+    </Field>
+    <Field Def="s32 phantomParamId = -1">
+      <DisplayName>ファントムパラメータID(誓約ランク0)</DisplayName>
+      <Description>誓約ランクが0のときのファントムパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="s32 spEffectID0 = -1">
+      <DisplayName>常駐特殊効果0</DisplayName>
+      <Description>常駐特殊効果0</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 spEffectID1 = -1">
+      <DisplayName>常駐特殊効果1</DisplayName>
+      <Description>常駐特殊効果1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="s32 spEffectID2 = -1">
+      <DisplayName>常駐特殊効果2</DisplayName>
+      <Description>常駐特殊効果2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4020</SortID>
+    </Field>
+    <Field Def="s32 spEffectID3 = -1">
+      <DisplayName>常駐特殊効果3</DisplayName>
+      <Description>常駐特殊効果3</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4030</SortID>
+    </Field>
+    <Field Def="s32 spEffectID4 = -1">
+      <DisplayName>常駐特殊効果4</DisplayName>
+      <Description>常駐特殊効果4</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4040</SortID>
+    </Field>
+    <Field Def="s32 spEffectID5 = -1">
+      <DisplayName>常駐特殊効果5</DisplayName>
+      <Description>常駐特殊効果5</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4050</SortID>
+    </Field>
+    <Field Def="s32 spEffectID6 = -1">
+      <DisplayName>常駐特殊効果6</DisplayName>
+      <Description>常駐特殊効果6</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4060</SortID>
+    </Field>
+    <Field Def="s32 spEffectID7 = -1">
+      <DisplayName>常駐特殊効果7</DisplayName>
+      <Description>常駐特殊効果7</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4070</SortID>
+    </Field>
+    <Field Def="s32 spEffectID8 = -1">
+      <DisplayName>常駐特殊効果8</DisplayName>
+      <Description>常駐特殊効果8</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4080</SortID>
+    </Field>
+    <Field Def="s32 spEffectID9 = -1">
+      <DisplayName>常駐特殊効果9</DisplayName>
+      <Description>常駐特殊効果9</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4090</SortID>
+    </Field>
+    <Field Def="s32 sosSignSfxId">
+      <DisplayName>SOSサインSFX ID</DisplayName>
+      <Description>他の人が出したSOSサインSFX ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="s32 mySosSignSfxId">
+      <DisplayName>自分が出したSOSサインSFX ID</DisplayName>
+      <Description>自分が出したSOSサインSFX ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4510</SortID>
+    </Field>
+    <Field Def="s32 summonStartAnimId">
+      <DisplayName>召喚された時のアニメID</DisplayName>
+      <Description>召喚されてゲーム開始するときに再生するアニメID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4550</SortID>
+    </Field>
+    <Field Def="s32 itemlotParamId = -1">
+      <DisplayName>報酬アイテム抽選ID</DisplayName>
+      <Description>獲得報酬のアイテム抽選パラメータID(-1でなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4600</SortID>
+    </Field>
+    <Field Def="u8 voiceChatGroup">
+      <DisplayName>ボイスチャットグループ</DisplayName>
+      <Enum>VOICE_CHAT_GROUP_Type</Enum>
+      <Description>ボイスチャットグループ</Description>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 roleNameColor">
+      <DisplayName>ロール名テキストカラー</DisplayName>
+      <Enum>ROLE_NAME_COLOR_TYPE</Enum>
+      <Description>ネットワークPCのFEに表示するロール名テキストの色</Description>
+      <SortID>5400</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[2]">
+      <SortID>6002</SortID>
+    </Field>
+    <Field Def="s32 roleNameId">
+      <DisplayName>ロール名テキストID</DisplayName>
+      <Description>ネットワークPCのFEに表示するロール名のテキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>5500</SortID>
+    </Field>
+    <Field Def="u8 teamTypeByGiantNut">
+      <DisplayName>チームタイプ(巨人の木の実の種適応後)</DisplayName>
+      <Enum>TEAM_TYPE</Enum>
+      <Description>巨人の木の実の種の効果適応後に刺し変わるチームタイプ</Description>
+      <SortID>2001</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[3]">
+      <SortID>6003</SortID>
+    </Field>
+    <Field Def="s32 phantomParamId_vowRank1 = -1">
+      <DisplayName>ファントムパラメータID(誓約ランク1)</DisplayName>
+      <Description>誓約ランクが1のときのファントムパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="s32 phantomParamId_vowRank2 = -1">
+      <DisplayName>ファントムパラメータID(誓約ランク2)</DisplayName>
+      <Description>誓約ランクが2のときのファントムパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3020</SortID>
+    </Field>
+    <Field Def="s32 phantomParamId_vowRank3 = -1">
+      <DisplayName>ファントムパラメータID(誓約ランク3)</DisplayName>
+      <Description>誓約ランクが3のときのファントムパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3030</SortID>
+    </Field>
+    <Field Def="s32 spEffectID_vowRank0 = -1">
+      <DisplayName>SFX用特殊効果ID(誓約ランク0)</DisplayName>
+      <Description>誓約ランク0のときのSFX用特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4400</SortID>
+    </Field>
+    <Field Def="s32 spEffectID_vowRank1 = -1">
+      <DisplayName>SFX用特殊効果ID(誓約ランク1)</DisplayName>
+      <Description>誓約ランク1のときのSFX用特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4410</SortID>
+    </Field>
+    <Field Def="s32 spEffectID_vowRank2 = -1">
+      <DisplayName>SFX用特殊効果ID(誓約ランク2)</DisplayName>
+      <Description>誓約ランク2のときのSFX用特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4420</SortID>
+    </Field>
+    <Field Def="s32 spEffectID_vowRank3 = -1">
+      <DisplayName>SFX用特殊効果ID(誓約ランク3)</DisplayName>
+      <Description>誓約ランク3のときのSFX用特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4430</SortID>
+    </Field>
+    <Field Def="s32 signPhantomId = -1">
+      <DisplayName>サイン幻影用のファントムID</DisplayName>
+      <Description>マルチプレイ誓約霊体用　サイン幻影用のファントムID指定</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[20]">
+      <SortID>6004</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a sound emitter within the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <SoundType
+    AltName="Sound Type"
+    Wiki="The category of sound." />
+    
+    <SoundID
+    AltName="Sound ID"
+    Wiki="The ID of the sound file in the FSBs."
+    SoundAlias="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

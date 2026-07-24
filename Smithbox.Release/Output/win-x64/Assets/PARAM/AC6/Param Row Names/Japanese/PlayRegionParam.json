@@ -1,0 +1,41 @@
+{
+  "Name": "PlayRegionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid data (deletion prohibited) -- 無効データ（削除禁止）"
+      ]
+    },
+    {
+      "ID": 981001,
+      "Entries": [
+        "Test map_01 -- テストマップ_01"
+      ]
+    },
+    {
+      "ID": 981002,
+      "Entries": [
+        "Test map_02 -- テストマップ_02"
+      ]
+    },
+    {
+      "ID": 981003,
+      "Entries": [
+        "Test map_03 -- テストマップ_03"
+      ]
+    },
+    {
+      "ID": 981004,
+      "Entries": [
+        "Test map_04 -- テストマップ_04"
+      ]
+    },
+    {
+      "ID": 981005,
+      "Entries": [
+        "Test map_05 -- テストマップ_05"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Type": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Name": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "physRate",
+      "Name": "Physical Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "magRate",
+      "Name": "Magic Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "fireRate",
+      "Name": "Fire Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "thunRate",
+      "Name": "Lightning Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "darkRate",
+      "Name": "Dark Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "staminaRate",
+      "Name": "Stamina Rate",
+      "Description": "Unk"
+    },
+    {
+      "Field": "saRate",
+      "Name": "Super Armor Rate",
+      "Description": "Unk"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "POINT_LIGHT_BANK",
+  "Type": "POINT_LIGHT_BANK",
+  "Name": "POINT_LIGHT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "dwindleBegin",
+      "Name": "減衰開始距離[m]",
+      "Description": "点光源"
+    },
+    {
+      "Field": "dwindleEnd",
+      "Name": "減衰終了距離[m]",
+      "Description": "点光源"
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": "点光源"
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": "点光源"
+    },
+    {
+      "Field": "colR",
+      "Name": "Ｒ",
+      "Description": "点光源"
+    },
+    {
+      "Field": "colG",
+      "Name": "Ｇ",
+      "Description": "点光源"
+    },
+    {
+      "Field": "colB",
+      "Name": "Ｂ",
+      "Description": "点光源"
+    },
+    {
+      "Field": "colA",
+      "Name": "RGB倍率[％]",
+      "Description": "点光源"
+    }
+  ]
+}

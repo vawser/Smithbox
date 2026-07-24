@@ -1,0 +1,328 @@
+{
+  "Param": "MENU_PARAM_ST",
+  "Type": "MENU_PARAM_ST",
+  "Name": "MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SoloPlayDeath_ToFadeOutTime",
+      "Name": "ソロプレイ死亡時フェードアウト開始時間[秒]",
+      "Description": "ソロプレイ死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか"
+    },
+    {
+      "Field": "PartyGhostDeath_ToFadeOutTime",
+      "Name": "ホワイト、ブラックゴースト死亡時フェードアウト開始時間[秒]",
+      "Description": "ホワイト、ブラックゴースト死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか"
+    },
+    {
+      "Field": "PlayerMaxHpLimit",
+      "Name": "プレイヤー最大HPの上限",
+      "Description": "HPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "PlayerMaxMpLimit",
+      "Name": "プレイヤー最大MPの上限",
+      "Description": "MPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "PlayerMaxSpLimit",
+      "Name": "プレイヤー最大SPの上限",
+      "Description": "SPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_Vel",
+      "Name": "アクションパネル切り替え判定_プレイヤー速度[m/sec]",
+      "Description": "アクションパネル切り替え可能なプレイヤーの速度。この速度以下なら切り替え可能"
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_PassTime",
+      "Name": "アクションパネル切り替え判定_プレイヤー速度判定時間[sec]",
+      "Description": "アクションパネル切り替え可能なプレイヤーの速度を出すための考慮時間。この時間の平均速度を使う(システム的に最大４秒)"
+    },
+    {
+      "Field": "PlayerMaxAddHp",
+      "Name": "ゲージ長計算時にプレイヤー最大HPに加算する値",
+      "Description": "リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大HPに加算する値"
+    },
+    {
+      "Field": "PlayerMaxAddMp",
+      "Name": "ゲージ長計算時にプレイヤー最大MPに加算する値",
+      "Description": "リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大MPに加算する値"
+    },
+    {
+      "Field": "PlayerMaxAddSp",
+      "Name": "ゲージ長計算時にプレイヤー最大SPに加算する値",
+      "Description": "リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大SPに加算する値"
+    },
+    {
+      "Field": "DecalPosOffsetX",
+      "Name": "デカールオフセット（左右）",
+      "Description": "デカールの表示位置オフセット左右方向"
+    },
+    {
+      "Field": "DecalPosOffsetY",
+      "Name": "デカールオフセット（上下）",
+      "Description": "デカールの表示位置オフセット上下方向"
+    },
+    {
+      "Field": "WirePointMinSize",
+      "Name": "ワイヤーポイント：最小サイズ",
+      "Description": "ワイヤーポイントを距離によって拡大縮小する際のパラメータ。Flashで指定した大きさに対する倍率です。"
+    },
+    {
+      "Field": "WirePointMaxSize",
+      "Name": "ワイヤーポイント：最大サイズ",
+      "Description": "ワイヤーポイントを距離によって拡大縮小する際のパラメータ。Flashで指定した大きさに対する倍率です。"
+    },
+    {
+      "Field": "HealthHpNoDamage",
+      "Name": "健康状態表示「無傷」：HPと比較する値",
+      "Description": "この値以上であれば「無傷」アイコンが表示される "
+    },
+    {
+      "Field": "HealthHpLightDamage",
+      "Name": "健康状態表示「軽傷」：HPと比較する値",
+      "Description": "上記の「無傷」の値未満で、この値以上であれば「軽傷」が表示される "
+    },
+    {
+      "Field": "HealthHpHeavyDamage",
+      "Name": "健康状態表示「重傷」：HPと比較する値",
+      "Description": "上記の「軽傷」の値未満で、この値以上であれば「重傷」が表示される "
+    },
+    {
+      "Field": "HealthHpDying",
+      "Name": "健康状態表示「瀕死」：HPと比較する値",
+      "Description": "上記の「重傷」の値未満で、この値以上であれば「瀕死」が表示される"
+    },
+    {
+      "Field": "HealthHpDead",
+      "Name": "健康状態表示「死亡」：HPと比較する値",
+      "Description": "上記の「瀕死」の値未満で、この値以上であれば「死亡」が表示される "
+    },
+    {
+      "Field": "PlayerCountSoul",
+      "Name": "残機表示「残機ありアイコン」：ソウルと比較する値",
+      "Description": "この値以上であれば「残機ありアイコン」が表示される"
+    },
+    {
+      "Field": "LockStaminaNoDamage",
+      "Name": "敵の体幹表示「白」：体幹の残量と比較する値 ",
+      "Description": "比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます"
+    },
+    {
+      "Field": "LockStaminaLightDamage",
+      "Name": "敵の体幹表示「薄い黄色」：体幹の残量と比較する値 ",
+      "Description": "比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます"
+    },
+    {
+      "Field": "LockStaminaMiddleDamage",
+      "Name": "敵の体幹表示「黄色」：体幹の残量と比較する値 ",
+      "Description": "比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます"
+    },
+    {
+      "Field": "LockStaminaHeavyDamage",
+      "Name": "敵の体幹表示「オレンジ」：体幹の残量と比較する値 ",
+      "Description": "比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます"
+    },
+    {
+      "Field": "LockStaminaCriticalDamage",
+      "Name": "敵の体幹表示「赤」：体幹の残量と比較する値 ",
+      "Description": "比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます"
+    },
+    {
+      "Field": "WireOffScreenRangeX",
+      "Name": "画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]",
+      "Description": "画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]"
+    },
+    {
+      "Field": "WireOffScreenRangeY",
+      "Name": "画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]",
+      "Description": "画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]"
+    },
+    {
+      "Field": "WireOffScreenDisplayX",
+      "Name": "画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] ",
+      "Description": "画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] "
+    },
+    {
+      "Field": "WireOffScreenDisplayY",
+      "Name": "画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] ",
+      "Description": "画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] "
+    },
+    {
+      "Field": "WireOffScreenScaleEnable",
+      "Name": "画面外ワイヤーポイント：画面外ワイヤーポイントの射出可能表示を距離に応じて拡縮させるかどうか[有効/無効] ",
+      "Description": "画面外ワイヤーポイント：画面外ワイヤーポイントの射出可能表示を距離に応じて拡縮させるかどうか[有効/無効] "
+    },
+    {
+      "Field": "WireOffScreenScale",
+      "Name": "画面外ワイヤーポイント：表示サイズ(固定)",
+      "Description": "画面外ワイヤーポイント：表示サイズ(固定)（拡縮無効時にのみ有効）"
+    },
+    {
+      "Field": "LockStaminaFatalDamage",
+      "Name": "敵の体幹表示「黒い赤」：体幹の残量と比較する値",
+      "Description": "敵の体幹表示「どす黒い赤」：体幹の残量と比較する値"
+    },
+    {
+      "Field": "PreOpeningMovie_WaitSec",
+      "Name": "OPムービー前のウェイト[sec]",
+      "Description": "OPムービー再生前のウェイト時間。＞SEQ 15261"
+    },
+    {
+      "Field": "PlayerDangerSp",
+      "Name": "ゲージの色を変化させるSPしきい値",
+      "Description": "この値以下であればSPゲージの色が変化します"
+    },
+    {
+      "Field": "WatchTargetPointRate",
+      "Name": "発見されそうマーカー：表示するポイントの割合[％]",
+      "Description": "使用していません"
+    },
+    {
+      "Field": "WireOffScreenRangeX_Test",
+      "Name": "【検証用】画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]",
+      "Description": "GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです"
+    },
+    {
+      "Field": "WireOffScreenRangeY_Test",
+      "Name": "【検証用】画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]",
+      "Description": "GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです"
+    },
+    {
+      "Field": "WireOffScreenDisplayX_Test",
+      "Name": "【検証用】画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] ",
+      "Description": "GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです"
+    },
+    {
+      "Field": "WireOffScreenDisplayY_Test",
+      "Name": "【検証用】画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] ",
+      "Description": "GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです"
+    },
+    {
+      "Field": "PlayerQuarterHp",
+      "Name": "ハート1/4個分のHP値",
+      "Description": "HPを示すハート1/4個の数値"
+    },
+    {
+      "Field": "WatchTargetOffScrRangeX",
+      "Name": "発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]",
+      "Description": "発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]"
+    },
+    {
+      "Field": "WatchTargetOffScrRangeY",
+      "Name": "発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]",
+      "Description": "発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]"
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayX",
+      "Name": "発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] ",
+      "Description": "発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] "
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayY",
+      "Name": "発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] ",
+      "Description": "発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] "
+    },
+    {
+      "Field": "GetItemViewTime",
+      "Name": "アイテム取得ログ：1行の表示時間[sec]",
+      "Description": "アイテム取得ログ：1行の表示時間[sec]"
+    },
+    {
+      "Field": "SpMinimumDispTime",
+      "Name": "体幹ゲージ最低表示時間[sec]",
+      "Description": "体幹ゲージ最低表示時間[sec]"
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

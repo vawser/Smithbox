@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a patrol route for a character" />
+  
+  <Field>
+    <PatrolType
+    AltName="Patrol Type"
+    Wiki="The type of patrol this represents."
+    Enum="PATROL_TYPE" />
+    
+    <WalkPointNames
+    AltName="Walk Point"
+    Wiki="A point that a patrol route will reach." />
+    
+    <WalkPointIndices
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="PATROL_TYPE">
+        <Option Value="0" Name="Return to First Point after Initial Route" />
+        <Option Value="1" Name="Reverse Route after Initial Route" />
+        <Option Value="2" Name="Random Point in Route" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="Invalid?" />
+        <Option Value="5" Name="Walk from start to end, idle at end" />
+        <Option Value="6" Name="Walk in the general area of random route points, idle for a moment, before moving to next random point" />
+    </Enum>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FACE_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="u8 faceGeoData00">
+      <DisplayName>顔作成ジオメトリデータ00</DisplayName>
+      <Description>顔作成ジオメトリデータ00</Description>
+    </Field>
+    <Field Def="u8 faceGeoData01">
+      <DisplayName>顔作成ジオメトリデータ01</DisplayName>
+      <Description>顔作成ジオメトリデータ01</Description>
+    </Field>
+    <Field Def="u8 faceGeoData02">
+      <DisplayName>顔作成ジオメトリデータ02</DisplayName>
+      <Description>顔作成ジオメトリデータ02</Description>
+    </Field>
+    <Field Def="u8 faceGeoData03">
+      <DisplayName>顔作成ジオメトリデータ03</DisplayName>
+      <Description>顔作成ジオメトリデータ03</Description>
+    </Field>
+    <Field Def="u8 faceGeoData04">
+      <DisplayName>顔作成ジオメトリデータ04</DisplayName>
+      <Description>顔作成ジオメトリデータ04</Description>
+    </Field>
+    <Field Def="u8 faceGeoData05">
+      <DisplayName>顔作成ジオメトリデータ05</DisplayName>
+      <Description>顔作成ジオメトリデータ05</Description>
+    </Field>
+    <Field Def="u8 faceGeoData06">
+      <DisplayName>顔作成ジオメトリデータ06</DisplayName>
+      <Description>顔作成ジオメトリデータ06</Description>
+    </Field>
+    <Field Def="u8 faceGeoData07">
+      <DisplayName>顔作成ジオメトリデータ07</DisplayName>
+      <Description>顔作成ジオメトリデータ07</Description>
+    </Field>
+    <Field Def="u8 faceGeoData08">
+      <DisplayName>顔作成ジオメトリデータ08</DisplayName>
+      <Description>顔作成ジオメトリデータ08</Description>
+    </Field>
+    <Field Def="u8 faceGeoData09">
+      <DisplayName>顔作成ジオメトリデータ09</DisplayName>
+      <Description>顔作成ジオメトリデータ09</Description>
+    </Field>
+    <Field Def="u8 faceGeoData10">
+      <DisplayName>顔作成ジオメトリデータ10</DisplayName>
+      <Description>顔作成ジオメトリデータ10</Description>
+    </Field>
+    <Field Def="u8 faceGeoData11">
+      <DisplayName>顔作成ジオメトリデータ11</DisplayName>
+      <Description>顔作成ジオメトリデータ11</Description>
+    </Field>
+    <Field Def="u8 faceGeoData12">
+      <DisplayName>顔作成ジオメトリデータ12</DisplayName>
+      <Description>顔作成ジオメトリデータ12</Description>
+    </Field>
+    <Field Def="u8 faceGeoData13">
+      <DisplayName>顔作成ジオメトリデータ13</DisplayName>
+      <Description>顔作成ジオメトリデータ13</Description>
+    </Field>
+    <Field Def="u8 faceGeoData14">
+      <DisplayName>顔作成ジオメトリデータ14</DisplayName>
+      <Description>顔作成ジオメトリデータ14</Description>
+    </Field>
+    <Field Def="u8 faceGeoData15">
+      <DisplayName>顔作成ジオメトリデータ15</DisplayName>
+      <Description>顔作成ジオメトリデータ15</Description>
+    </Field>
+    <Field Def="u8 faceGeoData16">
+      <DisplayName>顔作成ジオメトリデータ16</DisplayName>
+      <Description>顔作成ジオメトリデータ16</Description>
+    </Field>
+    <Field Def="u8 faceGeoData17">
+      <DisplayName>顔作成ジオメトリデータ17</DisplayName>
+      <Description>顔作成ジオメトリデータ17</Description>
+    </Field>
+    <Field Def="u8 faceGeoData18">
+      <DisplayName>顔作成ジオメトリデータ18</DisplayName>
+      <Description>顔作成ジオメトリデータ18</Description>
+    </Field>
+    <Field Def="u8 faceGeoData19">
+      <DisplayName>顔作成ジオメトリデータ19</DisplayName>
+      <Description>顔作成ジオメトリデータ19</Description>
+    </Field>
+    <Field Def="u8 faceGeoData20">
+      <DisplayName>顔作成ジオメトリデータ20</DisplayName>
+      <Description>顔作成ジオメトリデータ20</Description>
+    </Field>
+    <Field Def="u8 faceGeoData21">
+      <DisplayName>顔作成ジオメトリデータ21</DisplayName>
+      <Description>顔作成ジオメトリデータ21</Description>
+    </Field>
+    <Field Def="u8 faceGeoData22">
+      <DisplayName>顔作成ジオメトリデータ22</DisplayName>
+      <Description>顔作成ジオメトリデータ22</Description>
+    </Field>
+    <Field Def="u8 faceGeoData23">
+      <DisplayName>顔作成ジオメトリデータ23</DisplayName>
+      <Description>顔作成ジオメトリデータ23</Description>
+    </Field>
+    <Field Def="u8 faceGeoData24">
+      <DisplayName>顔作成ジオメトリデータ24</DisplayName>
+      <Description>顔作成ジオメトリデータ24</Description>
+    </Field>
+    <Field Def="u8 faceGeoData25">
+      <DisplayName>顔作成ジオメトリデータ25</DisplayName>
+      <Description>顔作成ジオメトリデータ25</Description>
+    </Field>
+    <Field Def="u8 faceGeoData26">
+      <DisplayName>顔作成ジオメトリデータ26</DisplayName>
+      <Description>顔作成ジオメトリデータ26</Description>
+    </Field>
+    <Field Def="u8 faceGeoData27">
+      <DisplayName>顔作成ジオメトリデータ27</DisplayName>
+      <Description>顔作成ジオメトリデータ27</Description>
+    </Field>
+    <Field Def="u8 faceGeoData28">
+      <DisplayName>顔作成ジオメトリデータ28</DisplayName>
+      <Description>顔作成ジオメトリデータ28</Description>
+    </Field>
+    <Field Def="u8 faceGeoData29">
+      <DisplayName>顔作成ジオメトリデータ29</DisplayName>
+      <Description>顔作成ジオメトリデータ29</Description>
+    </Field>
+    <Field Def="u8 faceGeoData30">
+      <DisplayName>顔作成ジオメトリデータ30</DisplayName>
+      <Description>顔作成ジオメトリデータ30</Description>
+    </Field>
+    <Field Def="u8 faceGeoData31">
+      <DisplayName>顔作成ジオメトリデータ31</DisplayName>
+      <Description>顔作成ジオメトリデータ31</Description>
+    </Field>
+    <Field Def="u8 faceGeoData32">
+      <DisplayName>顔作成ジオメトリデータ32</DisplayName>
+      <Description>顔作成ジオメトリデータ32</Description>
+    </Field>
+    <Field Def="u8 faceGeoData33">
+      <DisplayName>顔作成ジオメトリデータ33</DisplayName>
+      <Description>顔作成ジオメトリデータ33</Description>
+    </Field>
+    <Field Def="u8 faceGeoData34">
+      <DisplayName>顔作成ジオメトリデータ34</DisplayName>
+      <Description>顔作成ジオメトリデータ34</Description>
+    </Field>
+    <Field Def="u8 faceGeoData35">
+      <DisplayName>顔作成ジオメトリデータ35</DisplayName>
+      <Description>顔作成ジオメトリデータ35</Description>
+    </Field>
+    <Field Def="u8 faceGeoData36">
+      <DisplayName>顔作成ジオメトリデータ36</DisplayName>
+      <Description>顔作成ジオメトリデータ36</Description>
+    </Field>
+    <Field Def="u8 faceGeoData37">
+      <DisplayName>顔作成ジオメトリデータ37</DisplayName>
+      <Description>顔作成ジオメトリデータ37</Description>
+    </Field>
+    <Field Def="u8 faceGeoData38">
+      <DisplayName>顔作成ジオメトリデータ38</DisplayName>
+      <Description>顔作成ジオメトリデータ38</Description>
+    </Field>
+    <Field Def="u8 faceGeoData39">
+      <DisplayName>顔作成ジオメトリデータ39</DisplayName>
+      <Description>顔作成ジオメトリデータ39</Description>
+    </Field>
+    <Field Def="u8 faceGeoData40">
+      <DisplayName>顔作成ジオメトリデータ40</DisplayName>
+      <Description>顔作成ジオメトリデータ40</Description>
+    </Field>
+    <Field Def="u8 faceGeoData41">
+      <DisplayName>顔作成ジオメトリデータ41</DisplayName>
+      <Description>顔作成ジオメトリデータ41</Description>
+    </Field>
+    <Field Def="u8 faceGeoData42">
+      <DisplayName>顔作成ジオメトリデータ42</DisplayName>
+      <Description>顔作成ジオメトリデータ42</Description>
+    </Field>
+    <Field Def="u8 faceGeoData43">
+      <DisplayName>顔作成ジオメトリデータ43</DisplayName>
+      <Description>顔作成ジオメトリデータ43</Description>
+    </Field>
+    <Field Def="u8 faceGeoData44">
+      <DisplayName>顔作成ジオメトリデータ44</DisplayName>
+      <Description>顔作成ジオメトリデータ44</Description>
+    </Field>
+    <Field Def="u8 faceGeoData45">
+      <DisplayName>顔作成ジオメトリデータ45</DisplayName>
+      <Description>顔作成ジオメトリデータ45</Description>
+    </Field>
+    <Field Def="u8 faceGeoData46">
+      <DisplayName>顔作成ジオメトリデータ46</DisplayName>
+      <Description>顔作成ジオメトリデータ46</Description>
+    </Field>
+    <Field Def="u8 faceGeoData47">
+      <DisplayName>顔作成ジオメトリデータ47</DisplayName>
+      <Description>顔作成ジオメトリデータ47</Description>
+    </Field>
+    <Field Def="u8 faceGeoData48">
+      <DisplayName>顔作成ジオメトリデータ48</DisplayName>
+      <Description>顔作成ジオメトリデータ48</Description>
+    </Field>
+    <Field Def="u8 faceGeoData49">
+      <DisplayName>顔作成ジオメトリデータ49</DisplayName>
+      <Description>顔作成ジオメトリデータ49</Description>
+    </Field>
+    <Field Def="u8 faceTexData00">
+      <DisplayName>顔作成テクスチャデータ00</DisplayName>
+      <Description>顔作成テクスチャデータ00</Description>
+    </Field>
+    <Field Def="u8 faceTexData01">
+      <DisplayName>顔作成テクスチャデータ01</DisplayName>
+      <Description>顔作成テクスチャデータ01</Description>
+    </Field>
+    <Field Def="u8 faceTexData02">
+      <DisplayName>顔作成テクスチャデータ02</DisplayName>
+      <Description>顔作成テクスチャデータ02</Description>
+    </Field>
+    <Field Def="u8 faceTexData03">
+      <DisplayName>顔作成テクスチャデータ03</DisplayName>
+      <Description>顔作成テクスチャデータ03</Description>
+    </Field>
+    <Field Def="u8 faceTexData04">
+      <DisplayName>顔作成テクスチャデータ04</DisplayName>
+      <Description>顔作成テクスチャデータ04</Description>
+    </Field>
+    <Field Def="u8 faceTexData05">
+      <DisplayName>顔作成テクスチャデータ05</DisplayName>
+      <Description>顔作成テクスチャデータ05</Description>
+    </Field>
+    <Field Def="u8 faceTexData06">
+      <DisplayName>顔作成テクスチャデータ06</DisplayName>
+      <Description>顔作成テクスチャデータ06</Description>
+    </Field>
+    <Field Def="u8 faceTexData07">
+      <DisplayName>顔作成テクスチャデータ07</DisplayName>
+      <Description>顔作成テクスチャデータ07</Description>
+    </Field>
+    <Field Def="u8 faceTexData08">
+      <DisplayName>顔作成テクスチャデータ08</DisplayName>
+      <Description>顔作成テクスチャデータ08</Description>
+    </Field>
+    <Field Def="u8 faceTexData09">
+      <DisplayName>顔作成テクスチャデータ09</DisplayName>
+      <Description>顔作成テクスチャデータ09</Description>
+    </Field>
+    <Field Def="u8 faceTexData10">
+      <DisplayName>顔作成テクスチャデータ10</DisplayName>
+      <Description>顔作成テクスチャデータ10</Description>
+    </Field>
+    <Field Def="u8 faceTexData11">
+      <DisplayName>顔作成テクスチャデータ11</DisplayName>
+      <Description>顔作成テクスチャデータ11</Description>
+    </Field>
+    <Field Def="u8 faceTexData12">
+      <DisplayName>顔作成テクスチャデータ12</DisplayName>
+      <Description>顔作成テクスチャデータ12</Description>
+    </Field>
+    <Field Def="u8 faceTexData13">
+      <DisplayName>顔作成テクスチャデータ13</DisplayName>
+      <Description>顔作成テクスチャデータ13</Description>
+    </Field>
+    <Field Def="u8 faceTexData14">
+      <DisplayName>顔作成テクスチャデータ14</DisplayName>
+      <Description>顔作成テクスチャデータ14</Description>
+    </Field>
+    <Field Def="u8 faceTexData15">
+      <DisplayName>顔作成テクスチャデータ15</DisplayName>
+      <Description>顔作成テクスチャデータ15</Description>
+    </Field>
+    <Field Def="u8 faceTexData16">
+      <DisplayName>顔作成テクスチャデータ16</DisplayName>
+      <Description>顔作成テクスチャデータ16</Description>
+    </Field>
+    <Field Def="u8 faceTexData17">
+      <DisplayName>顔作成テクスチャデータ17</DisplayName>
+      <Description>顔作成テクスチャデータ17</Description>
+    </Field>
+    <Field Def="u8 faceTexData18">
+      <DisplayName>顔作成テクスチャデータ18</DisplayName>
+      <Description>顔作成テクスチャデータ18</Description>
+    </Field>
+    <Field Def="u8 faceTexData19">
+      <DisplayName>顔作成テクスチャデータ19</DisplayName>
+      <Description>顔作成テクスチャデータ19</Description>
+    </Field>
+    <Field Def="u8 faceTexData20">
+      <DisplayName>顔作成テクスチャデータ20</DisplayName>
+      <Description>顔作成テクスチャデータ20</Description>
+    </Field>
+    <Field Def="u8 faceTexData21">
+      <DisplayName>顔作成テクスチャデータ21</DisplayName>
+      <Description>顔作成テクスチャデータ21</Description>
+    </Field>
+    <Field Def="u8 faceTexData22">
+      <DisplayName>顔作成テクスチャデータ22</DisplayName>
+      <Description>顔作成テクスチャデータ22</Description>
+    </Field>
+    <Field Def="u8 faceTexData23">
+      <DisplayName>顔作成テクスチャデータ23</DisplayName>
+      <Description>顔作成テクスチャデータ23</Description>
+    </Field>
+    <Field Def="u8 faceTexData24">
+      <DisplayName>顔作成テクスチャデータ24</DisplayName>
+      <Description>顔作成テクスチャデータ24</Description>
+    </Field>
+    <Field Def="u8 faceTexData25">
+      <DisplayName>顔作成テクスチャデータ25</DisplayName>
+      <Description>顔作成テクスチャデータ25</Description>
+    </Field>
+    <Field Def="u8 faceTexData26">
+      <DisplayName>顔作成テクスチャデータ26</DisplayName>
+      <Description>顔作成テクスチャデータ26</Description>
+    </Field>
+    <Field Def="u8 faceTexData27">
+      <DisplayName>顔作成テクスチャデータ27</DisplayName>
+      <Description>顔作成テクスチャデータ27</Description>
+    </Field>
+    <Field Def="u8 faceTexData28">
+      <DisplayName>顔作成テクスチャデータ28</DisplayName>
+      <Description>顔作成テクスチャデータ28</Description>
+    </Field>
+    <Field Def="u8 faceTexData29">
+      <DisplayName>顔作成テクスチャデータ29</DisplayName>
+      <Description>顔作成テクスチャデータ29</Description>
+    </Field>
+    <Field Def="u8 faceTexData30">
+      <DisplayName>顔作成テクスチャデータ30</DisplayName>
+      <Description>顔作成テクスチャデータ30</Description>
+    </Field>
+    <Field Def="u8 faceTexData31">
+      <DisplayName>顔作成テクスチャデータ31</DisplayName>
+      <Description>顔作成テクスチャデータ31</Description>
+    </Field>
+    <Field Def="u8 faceTexData32">
+      <DisplayName>顔作成テクスチャデータ32</DisplayName>
+      <Description>顔作成テクスチャデータ32</Description>
+    </Field>
+    <Field Def="u8 faceTexData33">
+      <DisplayName>顔作成テクスチャデータ33</DisplayName>
+      <Description>顔作成テクスチャデータ33</Description>
+    </Field>
+    <Field Def="u8 faceTexData34">
+      <DisplayName>顔作成テクスチャデータ34</DisplayName>
+      <Description>顔作成テクスチャデータ34</Description>
+    </Field>
+    <Field Def="u8 faceTexData35">
+      <DisplayName>顔作成テクスチャデータ35</DisplayName>
+      <Description>顔作成テクスチャデータ35</Description>
+    </Field>
+    <Field Def="u8 faceTexData36">
+      <DisplayName>顔作成テクスチャデータ36</DisplayName>
+      <Description>顔作成テクスチャデータ36</Description>
+    </Field>
+    <Field Def="u8 faceTexData37">
+      <DisplayName>顔作成テクスチャデータ37</DisplayName>
+      <Description>顔作成テクスチャデータ37</Description>
+    </Field>
+    <Field Def="u8 faceTexData38">
+      <DisplayName>顔作成テクスチャデータ38</DisplayName>
+      <Description>顔作成テクスチャデータ38</Description>
+    </Field>
+    <Field Def="u8 faceTexData39">
+      <DisplayName>顔作成テクスチャデータ39</DisplayName>
+      <Description>顔作成テクスチャデータ39</Description>
+    </Field>
+    <Field Def="u8 faceTexData40">
+      <DisplayName>顔作成テクスチャデータ40</DisplayName>
+      <Description>顔作成テクスチャデータ40</Description>
+    </Field>
+    <Field Def="u8 faceTexData41">
+      <DisplayName>顔作成テクスチャデータ41</DisplayName>
+      <Description>顔作成テクスチャデータ41</Description>
+    </Field>
+    <Field Def="u8 faceTexData42">
+      <DisplayName>顔作成テクスチャデータ42</DisplayName>
+      <Description>顔作成テクスチャデータ42</Description>
+    </Field>
+    <Field Def="u8 faceTexData43">
+      <DisplayName>顔作成テクスチャデータ43</DisplayName>
+      <Description>顔作成テクスチャデータ43</Description>
+    </Field>
+    <Field Def="u8 faceTexData44">
+      <DisplayName>顔作成テクスチャデータ44</DisplayName>
+      <Description>顔作成テクスチャデータ44</Description>
+    </Field>
+    <Field Def="u8 faceTexData45">
+      <DisplayName>顔作成テクスチャデータ45</DisplayName>
+      <Description>顔作成テクスチャデータ45</Description>
+    </Field>
+    <Field Def="u8 faceTexData46">
+      <DisplayName>顔作成テクスチャデータ46</DisplayName>
+      <Description>顔作成テクスチャデータ46</Description>
+    </Field>
+    <Field Def="u8 faceTexData47">
+      <DisplayName>顔作成テクスチャデータ47</DisplayName>
+      <Description>顔作成テクスチャデータ47</Description>
+    </Field>
+    <Field Def="u8 faceTexData48">
+      <DisplayName>顔作成テクスチャデータ48</DisplayName>
+      <Description>顔作成テクスチャデータ48</Description>
+    </Field>
+    <Field Def="u8 faceTexData49">
+      <DisplayName>顔作成テクスチャデータ49</DisplayName>
+      <Description>顔作成テクスチャデータ49</Description>
+    </Field>
+    <Field Def="u8 hairStyle">
+      <DisplayName>髪型</DisplayName>
+      <Enum>FACE_PARAM_HAIRSTYLE_TYPE</Enum>
+      <Description>髪モデルを選択させる</Description>
+    </Field>
+    <Field Def="u8 hairColor_Base">
+      <DisplayName>髪の色</DisplayName>
+      <Enum>FACE_PARAM_HAIRCOLOR_TYPE</Enum>
+      <Description>デフォルトカラーを色名で選択</Description>
+    </Field>
+    <Field Def="u8 hairColor_R">
+      <DisplayName>髪の色(Ｒ)</DisplayName>
+      <Description>デフォルトカラー状態からR値を変更可能</Description>
+    </Field>
+    <Field Def="u8 hairColor_G">
+      <DisplayName>髪の色(Ｇ)</DisplayName>
+      <Description>デフォルトカラー状態からG値を変更可能</Description>
+    </Field>
+    <Field Def="u8 hairColor_B">
+      <DisplayName>髪の色(Ｂ)</DisplayName>
+      <Description>デフォルトカラー状態からB値を変更可能</Description>
+    </Field>
+    <Field Def="dummy8 pad[23]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+    </Field>
+  </Fields>
+</PARAMDEF>

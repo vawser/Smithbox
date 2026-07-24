@@ -1,0 +1,338 @@
+{
+  "Param": "MENU_PARAM_ST",
+  "Type": "MENU_PARAM_ST",
+  "Name": "MENU_PARAM_ST",
+  "Description": "Stay Param. Handles various elements relating to the player HUD.",
+  "Fields": [
+    {
+      "Field": "SoloPlayDeath_ToFadeOutTime",
+      "Name": "Solo Play Death Fade-Out Delay",
+      "Description": "Time, in seconds, after the \"YOU DIED\" message is displayed before the screen begins to fade out in single-player."
+    },
+    {
+      "Field": "PartyGhostDeath_ToFadeOutTime",
+      "Name": "White/Black Phantom Death Fade-Out Delay",
+      "Description": "Time, in seconds, after the \"YOU DIED\" message is displayed before the screen begins to fade out while playing as a White or Black Phantom."
+    },
+    {
+      "Field": "PlayerMaxHpLimit",
+      "Name": "Maximum Player HP Limit",
+      "Description": "Maximum HP value used when calculating what percentage of the prepared HP gauge graphic should be displayed."
+    },
+    {
+      "Field": "PlayerMaxMpLimit",
+      "Name": "Maximum Player FP Limit",
+      "Description": "Maximum FP value used when calculating what percentage of the prepared FP gauge graphic should be displayed."
+    },
+    {
+      "Field": "PlayerMaxSpLimit",
+      "Name": "Maximum Player Stamina Limit",
+      "Description": "Maximum stamina value used when calculating what percentage of the prepared stamina gauge graphic should be displayed."
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_Vel",
+      "Name": "Action Panel Switch Speed Threshold",
+      "Description": "Maximum player movement speed, in meters per second, at which the action panel can be switched."
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_PassTime",
+      "Name": "Action Panel Switch Speed Averaging Time",
+      "Description": "Time period, in seconds, used to calculate the player's average movement speed for determining whether the action panel can be switched. Maximum of 4 seconds."
+    },
+    {
+      "Field": "PlayerMaxAddHp",
+      "Name": "Additional HP for Gauge Length Calculation",
+      "Description": "Value added to the player's maximum HP when calculating the displayed HP gauge length."
+    },
+    {
+      "Field": "PlayerMaxAddMp",
+      "Name": "Additional FP for Gauge Length Calculation",
+      "Description": "Value added to the player's maximum FP when calculating the displayed FP gauge length."
+    },
+    {
+      "Field": "PlayerMaxAddSp",
+      "Name": "Additional Stamina for Gauge Length Calculation",
+      "Description": "Value added to the player's maximum stamina when calculating the displayed stamina gauge length."
+    },
+    {
+      "Field": "DecalPosOffsetX",
+      "Name": "Decal Horizontal Offset",
+      "Description": "Horizontal offset applied to decal display positions."
+    },
+    {
+      "Field": "DecalPosOffsetY",
+      "Name": "Decal Vertical Offset",
+      "Description": "Vertical offset applied to decal display positions."
+    },
+    {
+      "Field": "WirePointMinSize",
+      "Name": "Wire Point Minimum Size",
+      "Description": "Minimum size multiplier used when scaling wire points based on distance. Relative to the size specified in the Flash UI."
+    },
+    {
+      "Field": "WirePointMaxSize",
+      "Name": "Wire Point Maximum Size",
+      "Description": "Maximum size multiplier used when scaling wire points based on distance. Relative to the size specified in the Flash UI."
+    },
+    {
+      "Field": "HealthHpNoDamage",
+      "Name": "Health Status - Uninjured Threshold",
+      "Description": "Minimum HP ratio required for the 'Uninjured' health status icon to be displayed."
+    },
+    {
+      "Field": "HealthHpLightDamage",
+      "Name": "Health Status - Lightly Wounded Threshold",
+      "Description": "Displayed when HP is below the Uninjured threshold but at or above this threshold."
+    },
+    {
+      "Field": "HealthHpHeavyDamage",
+      "Name": "Health Status - Heavily Wounded Threshold",
+      "Description": "Displayed when HP is below the Lightly Wounded threshold but at or above this threshold."
+    },
+    {
+      "Field": "HealthHpDying",
+      "Name": "Health Status - Critical Threshold",
+      "Description": "Displayed when HP is below the Heavily Wounded threshold but at or above this threshold."
+    },
+    {
+      "Field": "HealthHpDead",
+      "Name": "Health Status - Dead Threshold",
+      "Description": "Displayed when HP is below the Critical threshold but at or above this threshold."
+    },
+    {
+      "Field": "PlayerCountSoul",
+      "Name": "Extra Life Icon Soul Threshold",
+      "Description": "If the player's Soul count is at or above this value, the 'extra life available' icon is displayed."
+    },
+    {
+      "Field": "LockStaminaNoDamage",
+      "Name": "Enemy Posture Indicator - White Threshold",
+      "Description": "Displays the white lock-on cursor when the enemy's remaining posture ratio is at or above this value."
+    },
+    {
+      "Field": "LockStaminaLightDamage",
+      "Name": "Enemy Posture Indicator - Light Yellow Threshold",
+      "Description": "Displays the light yellow lock-on cursor when the enemy's remaining posture ratio is at or above this value."
+    },
+    {
+      "Field": "LockStaminaMiddleDamage",
+      "Name": "Enemy Posture Indicator - Yellow Threshold",
+      "Description": "Displays the yellow lock-on cursor when the enemy's remaining posture ratio is at or above this value."
+    },
+    {
+      "Field": "LockStaminaHeavyDamage",
+      "Name": "Enemy Posture Indicator - Orange Threshold",
+      "Description": "Displays the orange lock-on cursor when the enemy's remaining posture ratio is at or above this value."
+    },
+    {
+      "Field": "LockStaminaCriticalDamage",
+      "Name": "Enemy Posture Indicator - Red Threshold",
+      "Description": "Displays the red lock-on cursor when the enemy's remaining posture ratio is at or above this value."
+    },
+    {
+      "Field": "WireOffScreenRangeX",
+      "Name": "Off-Screen Wire Point Visible Range X",
+      "Description": "Horizontal screen percentage beyond the screen boundary where a normal wire point is still displayed."
+    },
+    {
+      "Field": "WireOffScreenRangeY",
+      "Name": "Off-Screen Wire Point Visible Range Y",
+      "Description": "Vertical screen percentage beyond the screen boundary where a normal wire point is still displayed."
+    },
+    {
+      "Field": "WireOffScreenDisplayX",
+      "Name": "Off-Screen Wire Point Screen Edge Offset X",
+      "Description": "Horizontal percentage from the screen edge where off-screen wire point indicators are displayed."
+    },
+    {
+      "Field": "WireOffScreenDisplayY",
+      "Name": "Off-Screen Wire Point Screen Edge Offset Y",
+      "Description": "Vertical percentage from the screen edge where off-screen wire point indicators are displayed."
+    },
+    {
+      "Field": "WireOffScreenScaleEnable",
+      "Name": "Enable Off-Screen Wire Point Distance Scaling",
+      "Description": "Determines whether off-screen wire point indicators scale based on distance."
+    },
+    {
+      "Field": "WireOffScreenScale",
+      "Name": "Off-Screen Wire Point Fixed Size",
+      "Description": "Fixed display size used for off-screen wire point indicators when distance scaling is disabled."
+    },
+    {
+      "Field": "LockStaminaFatalDamage",
+      "Name": "Enemy Posture Indicator - Dark Red Threshold",
+      "Description": "Threshold for displaying the dark red lock-on cursor based on the enemy's remaining posture."
+    },
+    {
+      "Field": "PreOpeningMovie_WaitSec",
+      "Name": "Opening Movie Delay",
+      "Description": "Time, in seconds, to wait before playing the opening movie."
+    },
+    {
+      "Field": "PlayerDangerSp",
+      "Name": "Low Stamina Gauge Threshold",
+      "Description": "If the player's stamina falls below this value, the stamina gauge changes color."
+    },
+    {
+      "Field": "WatchTargetPointRate",
+      "Name": "Detection Marker Point Ratio",
+      "Description": "Percentage of points used for displaying the detection warning marker. Unused."
+    },
+    {
+      "Field": "WireOffScreenRangeX_Test",
+      "Name": "Test Off-Screen Wire Point Visible Range X",
+      "Description": "Test layout parameter used by GameProperties for the horizontal off-screen wire point visible range."
+    },
+    {
+      "Field": "WireOffScreenRangeY_Test",
+      "Name": "Test Off-Screen Wire Point Visible Range Y",
+      "Description": "Test layout parameter used by GameProperties for the vertical off-screen wire point visible range."
+    },
+    {
+      "Field": "WireOffScreenDisplayX_Test",
+      "Name": "Test Off-Screen Wire Point Screen Edge Offset X",
+      "Description": "Test layout parameter used by GameProperties for the horizontal off-screen wire point display offset."
+    },
+    {
+      "Field": "WireOffScreenDisplayY_Test",
+      "Name": "Test Off-Screen Wire Point Screen Edge Offset Y",
+      "Description": "Test layout parameter used by GameProperties for the vertical off-screen wire point display offset."
+    },
+    {
+      "Field": "PlayerQuarterHp",
+      "Name": "Quarter Heart HP Value",
+      "Description": "Amount of HP represented by one quarter of a heart icon."
+    },
+    {
+      "Field": "WatchTargetOffScrRangeX",
+      "Name": "Detection Marker Off-Screen Range X",
+      "Description": "Horizontal visible range for off-screen detection warning markers."
+    },
+    {
+      "Field": "WatchTargetOffScrRangeY",
+      "Name": "Detection Marker Off-Screen Range Y",
+      "Description": "Vertical visible range for off-screen detection warning markers."
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayX",
+      "Name": "Detection Marker Screen Edge Offset X",
+      "Description": "Horizontal distance from the screen edge at which off-screen detection warning markers are displayed."
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayY",
+      "Name": "Detection Marker Screen Edge Offset Y",
+      "Description": "Vertical distance from the screen edge at which off-screen detection warning markers are displayed."
+    },
+    {
+      "Field": "GetItemViewTime",
+      "Name": "Item Pickup Log Display Time",
+      "Description": "Time, in seconds, that each item pickup log entry remains visible."
+    },
+    {
+      "Field": "SpMinimumDispTime",
+      "Name": "Minimum Posture Gauge Display Time",
+      "Description": "Minimum amount of time, in seconds, that the posture gauge remains visible."
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "Reserved60",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "Reserved61",
+      "Description": "Reserved. Purpose unknown."
+    }
+  ]
+}

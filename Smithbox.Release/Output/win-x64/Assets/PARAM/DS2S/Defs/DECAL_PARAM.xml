@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>DECAL_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 width">
+            <DisplayName>X</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 height">
+            <DisplayName>Y</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 depth">
+            <DisplayName>Z</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u32 texId">
+            <DisplayName>テクスチャID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u32 bumpTexId">
+            <DisplayName>バンプテクスチャID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 colorR = 255">
+            <DisplayName>色R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 colorG = 255">
+            <DisplayName>色G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 colorB = 255">
+            <DisplayName>色B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 colorA = 255">
+            <DisplayName>色A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 invisibleDeleteTime">
+            <DisplayName>視野外での削除までの時間</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>30</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 parallaxScale">
+            <DisplayName>視差マップスケール</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="s32 lightId = -1">
+            <DisplayName>ライトID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u8 flipType">
+            <DisplayName>左右フリップ</DisplayName>
+            <Enum>DECAL_FLIP_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 rotateType">
+            <DisplayName>回転</DisplayName>
+            <Enum>DECAL_ROTATE_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[2]">
+            <DisplayName>予約領域</DisplayName>
+            <SortID>16</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

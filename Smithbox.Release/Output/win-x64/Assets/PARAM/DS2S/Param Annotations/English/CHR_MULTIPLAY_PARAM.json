@@ -1,0 +1,98 @@
+{
+  "Param": "CHR_MULTIPLAY_PARAM",
+  "Type": "CHR_MULTIPLAY_PARAM",
+  "Name": "CHR_MULTIPLAY_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "oneClientHpPercent",
+      "Name": "Enemy Adjustment: 1 Client - Maximum HP %",
+      "Description": "The maximum HP applied when 1 client is present."
+    },
+    {
+      "Field": "oneClientHpDamagePercent",
+      "Name": "Enemy Adjustment: 1 Client - HP Damage %",
+      "Description": "The HP damage correction applied when 1 client is present."
+    },
+    {
+      "Field": "oneClientAilmentDamagePercent",
+      "Name": "Enemy Adjustment: 1 Client - Status Damage %",
+      "Description": "The status damage correction applied when 1 client is present."
+    },
+    {
+      "Field": "oneClientStaminaDamagePercent",
+      "Name": "Enemy Adjustment: 1 Client - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 1 client is present."
+    },
+    {
+      "Field": "oneClientPoiseDamagePercent",
+      "Name": "Enemy Adjustment: 1 Client - Poise Damage %",
+      "Description": "The poise damage correction applied when 1 client is present."
+    },
+    {
+      "Field": "oneClientStunDamagePercent",
+      "Name": "Enemy Adjustment: 1 Client - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 1 client is present."
+    },
+    {
+      "Field": "twoClientsHpPercent",
+      "Name": "Enemy Adjustment: 2 Clients - Maximum HP %",
+      "Description": "The maximum HP applied when 2 clients are present."
+    },
+    {
+      "Field": "twoClientsHpDamagePercent",
+      "Name": "Enemy Adjustment: 2 Clients - HP Damage %",
+      "Description": "The HP damage correction applied when 2 clients are present."
+    },
+    {
+      "Field": "twoClientsAilmentDamagePercent",
+      "Name": "Enemy Adjustment: 2 Clients - Status Damage %",
+      "Description": "The status damage correction applied when 2 clients are present."
+    },
+    {
+      "Field": "twoClientsStaminaDamagePercent",
+      "Name": "Enemy Adjustment: 2 Clients - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 2 clients are present."
+    },
+    {
+      "Field": "twoClientsPoiseDamagePercent",
+      "Name": "Enemy Adjustment: 2 Clients - Poise Damage %",
+      "Description": "The poise damage correction applied when 2 clients are present."
+    },
+    {
+      "Field": "twoClientsStunDamagePercent",
+      "Name": "Enemy Adjustment: 2 Clients - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 2 clients are present."
+    },
+    {
+      "Field": "threeClientsHpPercent",
+      "Name": "Enemy Adjustment: 3 Clients - Maximum HP %",
+      "Description": "The maximum HP applied when 3 clients are present."
+    },
+    {
+      "Field": "threeClientsHpDamagePercent",
+      "Name": "Enemy Adjustment: 3 Clients - HP Damage %",
+      "Description": "The HP damage correction applied when 3 clients are present."
+    },
+    {
+      "Field": "threeClientsAilmentDamagePercent",
+      "Name": "Enemy Adjustment: 3 Clients - Status Damage %",
+      "Description": "The status damage correction applied when 3 clients are present."
+    },
+    {
+      "Field": "threeClientsStaminaDamagePercent",
+      "Name": "Enemy Adjustment: 3 Clients - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 3 clients are present."
+    },
+    {
+      "Field": "threeClientsPoiseDamagePercent",
+      "Name": "Enemy Adjustment: 3 Clients - Poise Damage %",
+      "Description": "The poise damage correction applied when 3 clients are present."
+    },
+    {
+      "Field": "threeClientsStunDamagePercent",
+      "Name": "Enemy Adjustment: 3 Clients - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 3 clients are present."
+    }
+  ]
+}

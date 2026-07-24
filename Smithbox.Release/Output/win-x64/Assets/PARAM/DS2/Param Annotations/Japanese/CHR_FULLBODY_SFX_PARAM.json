@@ -1,0 +1,83 @@
+{
+  "Param": "CHR_FULLBODY_SFX_PARAM",
+  "Type": "CHR_FULLBODY_SFX_PARAM",
+  "Name": "CHR_FULLBODY_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "dirType",
+      "Name": "生成方向",
+      "Description": ""
+    },
+    {
+      "Field": "traceType",
+      "Name": "SFX方向を維持",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "予備",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableHead",
+      "Name": "頭無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableBody",
+      "Name": "体無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableRArm",
+      "Name": "右腕無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableLArm",
+      "Name": "左腕無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableRHand",
+      "Name": "右手無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableLHand",
+      "Name": "左手無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableRLeg",
+      "Name": "右足無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableLLeg",
+      "Name": "左足無効",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "予備",
+      "Description": ""
+    },
+    {
+      "Field": "time",
+      "Name": "生成時間",
+      "Description": ""
+    },
+    {
+      "Field": "seId",
+      "Name": "SE ID",
+      "Description": ""
+    }
+  ]
+}

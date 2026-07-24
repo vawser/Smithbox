@@ -1,0 +1,23 @@
+{
+  "Key": "New Londo Ruins / Valley of Drakes",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "New Londo Ruins / Valley of Drakes"
+      }
+  ],
+  "Params": [
+    "m16_DofBank",
+    "m16_EnvLightTexBank",
+    "m16_FogBank",
+    "m16_LensFlareBank",
+    "m16_LensFlareExBank",
+    "m16_LightBank",
+    "m16_LightScatteringBank",
+    "m16_PointLightBank",
+    "m16_ShadowBank",
+    "m16_ToneCorrectBank",
+    "m16_ToneMapBank",
+    "s16_LightBank"
+  ]
+}

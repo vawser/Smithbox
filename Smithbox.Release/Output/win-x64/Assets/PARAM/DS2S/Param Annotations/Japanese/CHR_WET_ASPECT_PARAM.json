@@ -1,0 +1,48 @@
+{
+  "Param": "CHR_WET_ASPECT_PARAM",
+  "Type": "CHR_WET_ASPECT_PARAM",
+  "Name": "CHR_WET_ASPECT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "colorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "colorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "shiness",
+      "Name": "オーバーライド",
+      "Description": ""
+    },
+    {
+      "Field": "shinessRate",
+      "Name": "オーバーライド率",
+      "Description": ""
+    },
+    {
+      "Field": "fresnel",
+      "Name": "オーバーライド",
+      "Description": ""
+    },
+    {
+      "Field": "fresnelRate",
+      "Name": "オーバーライド率",
+      "Description": ""
+    }
+  ]
+}

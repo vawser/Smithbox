@@ -1,0 +1,149 @@
+{
+  "Name": "KeyAssignMenuItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "move -- 移動"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Before moving -- 移動\u3000前"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "After moving -- 移動\u3000後"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Move left -- 移動\u3000左"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Move right -- 移動\u3000右"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "boost -- ブースト"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "QB"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "jump -- ジャンプ"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "stealth -- ステルス"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "camera operation -- カメラ操作"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera operation/target change top -- カメラ操作/ターゲット対象変更\u3000上"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera operation/target change bottom -- カメラ操作/ターゲット対象変更\u3000下"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Camera operation/target change left -- カメラ操作/ターゲット対象変更\u3000左"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Camera operation/target change right -- カメラ操作/ターゲット対象変更\u3000右"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Camera reset/target fixation -- カメラリセット/ターゲット固定"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "attack action -- 攻撃アクション"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Left arm weapon use -- 左腕武器使用"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Right arm weapon use -- 右腕武器使用"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Use left back weapon -- 左背武器使用"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Use right back weapon -- 右背武器使用"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "shift operation -- シフト操作"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "item use -- アイテム使用"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "action -- アクション"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "TorchCtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Small (8m:5 min) -- 小（８ｍ：５分）"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Medium (12m:10 min)) -- 中（１２ｍ：１０分）"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Large (20m: 15 min) -- 大（２０ｍ：１５分）"
+      ]
+    }
+  ]
+}

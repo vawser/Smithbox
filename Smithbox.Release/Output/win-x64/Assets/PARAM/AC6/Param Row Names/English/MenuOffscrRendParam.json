@@ -1,0 +1,845 @@
+{
+  "Name": "MenuOffscrRendParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For character makeup preview <whole body>"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For character makeup preview <face>"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For status menu <whole body>"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For ranking menu <whole body>"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For character makeup grid <face>"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For kick menu <face>"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "<Face> for status menu"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For ranking menu <face>"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For summoning sign <face>"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For the game end confirmation menu <face>"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Profile selection <face>"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "For aircraft full screen display"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "For aircraft view mode"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For map display"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "R ARM UNIT 1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "R ARM UNIT 2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "R ARM UNIT 3"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "L ARM UNIT 1"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "L ARM UNIT 2"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "L ARM UNIT 3"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "BLADE"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "L BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "R BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "ARMS"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "LEGS"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "SHIELD"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "F.C.S. -- FCS"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "GENERATOR"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "BOOSTER"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "EXTENSION"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "LIMITER RELEASE"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "R ARM UNIT 1 (when using 4 legs)"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "L ARM UNIT 1 (when using 4 legs)"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "R ARM UNIT 1 (when tank)"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "L ARM UNIT 1 (when tank)"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Coloring menu top"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "ALL FRAME"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "ALL UNIT"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "R-ARM -- R ARM"
+      ]
+    },
+    {
+      "ID": 1515,
+      "Entries": [
+        "L ARM"
+      ]
+    },
+    {
+      "ID": 1516,
+      "Entries": [
+        "LEGS"
+      ]
+    },
+    {
+      "ID": 1517,
+      "Entries": [
+        "R ARM UNIT"
+      ]
+    },
+    {
+      "ID": 1518,
+      "Entries": [
+        "L ARM UNIT"
+      ]
+    },
+    {
+      "ID": 1519,
+      "Entries": [
+        "R BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "L BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1521,
+      "Entries": [
+        "EXTENSION"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Marking menu top"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "HEAD center"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "HEAD right side"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "HEAD left side"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "CORE main"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "CORE sub 1 (back)"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "CORE sub 2 (front: right)"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "CORE sub 3 (front: left)"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "ARMS Right arm front"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "ARMS right arm back"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "ARMS left arm front"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "ARMS left arm back"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "LEGS crotch front"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "LEGS crotch back"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "LEGS Right leg front"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "LEGS Right leg back"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "LEGS Left leg front"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "LEGS left leg back"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Aircraft data menu: Thumbnail"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Aircraft image for UGC confirmation Previous"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Aircraft image for UGC confirmation After"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Aircraft image for UGC confirmation left"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Aircraft image for UGC confirmation right"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Aircraft image for UGC confirmation Front (for 4 legs)"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Aircraft image for UGC confirmation rear (for 4 legs)"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for 4 legs)"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Aircraft image for UGC confirmation Right (for 4 legs)"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Aircraft image for UGC confirmation (front) (for tank)"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "UGC confirmation aircraft image rear (for tank)"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for tank)"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Aircraft image for UGC confirmation right (for tank)"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Aircraft image for UGC confirmation (front) (for float)"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Aircraft image for UGC confirmation (for float)"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for float)"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "Aircraft image for UGC confirmation (right) (for float)"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "prologue"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Dam destruction"
+      ]
+    },
+    {
+      "ID": 12025,
+      "Entries": [
+        "Dam destruction_ALT"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "over the wall"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "string"
+      ]
+    },
+    {
+      "ID": 12055,
+      "Entries": [
+        "string_ALT"
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        "Former VOB Arsenal Survey"
+      ]
+    },
+    {
+      "ID": 12080,
+      "Entries": [
+        "Mining ship destroyed"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "scavenging"
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        "big bridge"
+      ]
+    },
+    {
+      "ID": 12140,
+      "Entries": [
+        "Area departure support"
+      ]
+    },
+    {
+      "ID": 12170,
+      "Entries": [
+        "Exploration: In front of the wall"
+      ]
+    },
+    {
+      "ID": 12180,
+      "Entries": [
+        "continental shell"
+      ]
+    },
+    {
+      "ID": 12200,
+      "Entries": [
+        "Eliminate intruders"
+      ]
+    },
+    {
+      "ID": 12211,
+      "Entries": [
+        "Fuel base sweep_ver2"
+      ]
+    },
+    {
+      "ID": 12220,
+      "Entries": [
+        "Large missile launch support"
+      ]
+    },
+    {
+      "ID": 12230,
+      "Entries": [
+        "A layer indoor search"
+      ]
+    },
+    {
+      "ID": 12240,
+      "Entries": [
+        "Multiple dam defense"
+      ]
+    },
+    {
+      "ID": 12250,
+      "Entries": [
+        "Old world MT eliminated"
+      ]
+    },
+    {
+      "ID": 13011,
+      "Entries": [
+        "Encounter with the organization_ver2"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "fuel base explosion"
+      ]
+    },
+    {
+      "ID": 13043,
+      "Entries": [
+        "Attack on the old spaceport"
+      ]
+    },
+    {
+      "ID": 13230,
+      "Entries": [
+        "Defeat Ice Worm"
+      ]
+    },
+    {
+      "ID": 13320,
+      "Entries": [
+        "collapsed continental shell"
+      ]
+    },
+    {
+      "ID": 13420,
+      "Entries": [
+        "Mine sabotage_Ver2"
+      ]
+    },
+    {
+      "ID": 13430,
+      "Entries": [
+        "Eliminate unknown aircraft"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "ice field hole"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "rail road"
+      ]
+    },
+    {
+      "ID": 14015,
+      "Entries": [
+        "Railroad_ALT"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Cavity and Furnace"
+      ]
+    },
+    {
+      "ID": 14021,
+      "Entries": [
+        "biological weapon"
+      ]
+    },
+    {
+      "ID": 14026,
+      "Entries": [
+        "Biological weapon_ALT"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "ruins"
+      ]
+    },
+    {
+      "ID": 14035,
+      "Entries": [
+        "Ruins_ALT"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Railroad reverse run"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "AC battle at the power plant"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "prison break"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "The emerging new B layer"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "straight city invasion"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "new B class people"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Breaking through the atmosphere"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Straight city reverse driving"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "city ​​on the ocean"
+      ]
+    },
+    {
+      "ID": 15105,
+      "Entries": [
+        "City on the ocean_ALT"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "Recapture of underground facility"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Decisive battle A"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "Decisive battle B"
+      ]
+    },
+    {
+      "ID": 16020,
+      "Entries": [
+        "Decisive battle C"
+      ]
+    },
+    {
+      "ID": 17900,
+      "Entries": [
+        "Sub-mission: Defeat the transport helicopter"
+      ]
+    },
+    {
+      "ID": 17910,
+      "Entries": [
+        "Sub mission (open pit mining)"
+      ]
+    },
+    {
+      "ID": 17920,
+      "Entries": [
+        "Sub-mission (Tutorial A layer)"
+      ]
+    },
+    {
+      "ID": 17930,
+      "Entries": [
+        "Sub mission (hole in the ice field)"
+      ]
+    },
+    {
+      "ID": 17940,
+      "Entries": [
+        "Sub-mission (cave and furnace)"
+      ]
+    },
+    {
+      "ID": 17950,
+      "Entries": [
+        "Sub mission (Imperial base)"
+      ]
+    },
+    {
+      "ID": 17960,
+      "Entries": [
+        "Sub mission (big bridge)"
+      ]
+    }
+  ]
+}

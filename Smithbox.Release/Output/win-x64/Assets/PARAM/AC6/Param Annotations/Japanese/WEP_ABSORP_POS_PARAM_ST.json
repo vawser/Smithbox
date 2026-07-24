@@ -1,0 +1,348 @@
+{
+  "Param": "WEP_ABSORP_POS_PARAM_ST",
+  "Type": "WEP_ABSORP_POS_PARAM_ST",
+  "Name": "WEP_ABSORP_POS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "hangPosType",
+      "Name": "格納場所タイプ",
+      "Description": "この値によって納刀時アニメが変わります"
+    },
+    {
+      "Field": "right_0",
+      "Name": "モデル0_右手時吸着ダミポリ",
+      "Description": "武器を右手に片手で持っているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "left_0",
+      "Name": "モデル0_左手時吸着ダミポリ",
+      "Description": "武器を左手に片手で持っているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "both_0",
+      "Name": "モデル0_右手両手時吸着ダミポリ",
+      "Description": "右手武器を両手で持っているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftHang_0",
+      "Name": "モデル0_左手納刀時吸着ダミポリ",
+      "Description": "武器を左手に持っていて、その武器を納刀しているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightHang_0",
+      "Name": "モデル0_右手納刀時吸着ダミポリ",
+      "Description": "武器を右手に持っていて、その武器を納刀しているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "right_1",
+      "Name": "モデル1_右手時吸着ダミポリ",
+      "Description": "武器を右手に片手で持っているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "left_1",
+      "Name": "モデル1_左手時吸着ダミポリ",
+      "Description": "武器を左手に片手で持っているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "both_1",
+      "Name": "モデル1_右手両手時吸着ダミポリ",
+      "Description": "右手武器を両手で持っているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftHang_1",
+      "Name": "モデル1_左手納刀時吸着ダミポリ",
+      "Description": "武器を左手に持っていて、その武器を納刀しているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightHang_1",
+      "Name": "モデル1_右手納刀時吸着ダミポリ",
+      "Description": "武器を右手に持っていて、その武器を納刀しているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "right_2",
+      "Name": "モデル2_右手時吸着ダミポリ",
+      "Description": "武器を右手に片手で持っているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "left_2",
+      "Name": "モデル2_左手時吸着ダミポリ",
+      "Description": "武器を左手に片手で持っているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "both_2",
+      "Name": "モデル2_右手両手時吸着ダミポリ",
+      "Description": "右手武器を両手で持っているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftHang_2",
+      "Name": "モデル2_左手納刀時吸着ダミポリ",
+      "Description": "武器を左手に持っていて、その武器を納刀しているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightHang_2",
+      "Name": "モデル2_右手納刀時吸着ダミポリ",
+      "Description": "武器を右手に持っていて、その武器を納刀しているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "right_3",
+      "Name": "モデル3_右手時吸着ダミポリ",
+      "Description": "武器を右手に片手で持っているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "left_3",
+      "Name": "モデル3_左手時吸着ダミポリ",
+      "Description": "武器を左手に片手で持っているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "both_3",
+      "Name": "モデル3_右手両手時吸着ダミポリ",
+      "Description": "右手武器を両手で持っているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftHang_3",
+      "Name": "モデル3_左手納刀時吸着ダミポリ",
+      "Description": "武器を左手に持っていて、その武器を納刀しているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightHang_3",
+      "Name": "モデル3_右手納刀時吸着ダミポリ",
+      "Description": "武器を右手に持っていて、その武器を納刀しているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "wepInvisibleType_0",
+      "Name": "モデル0_武器非表示タイプ",
+      "Description": "モデル0の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す"
+    },
+    {
+      "Field": "wepInvisibleType_1",
+      "Name": "モデル1_武器非表示タイプ",
+      "Description": "モデル1の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す"
+    },
+    {
+      "Field": "wepInvisibleType_2",
+      "Name": "モデル2_武器非表示タイプ",
+      "Description": "モデル2の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す"
+    },
+    {
+      "Field": "wepInvisibleType_3",
+      "Name": "モデル3_武器非表示タイプ",
+      "Description": "モデル3の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す"
+    },
+    {
+      "Field": "leftBoth_0",
+      "Name": "モデル0_左手両手時吸着ダミポリ",
+      "Description": "左手武器を両手で持っているときのモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftBoth_1",
+      "Name": "モデル1_左手両手時吸着ダミポリ",
+      "Description": "左手武器を両手で持っているときのモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftBoth_2",
+      "Name": "モデル2_左手両手時吸着ダミポリ",
+      "Description": "左手武器を両手で持っているときのモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftBoth_3",
+      "Name": "モデル3_左手両手時吸着ダミポリ",
+      "Description": "左手武器を両手で持っているときのモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "dispPosType_right_0",
+      "Name": "モデル0_右手時表示位置",
+      "Description": "モデル0_右手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_left_0",
+      "Name": "モデル0_左手時表示位置",
+      "Description": "モデル0_左手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_0",
+      "Name": "モデル0_右手両手時表示位置",
+      "Description": "モデル0_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_0",
+      "Name": "モデル0_左手両手時表示位置",
+      "Description": "モデル0_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightHang_0",
+      "Name": "モデル0_右手納刀時表示位置",
+      "Description": "モデル0_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftHang_0",
+      "Name": "モデル0_左手納刀時表示位置",
+      "Description": "モデル0_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_right_1",
+      "Name": "モデル1_右手時表示位置",
+      "Description": "モデル1_右手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_left_1",
+      "Name": "モデル1_左手時表示位置",
+      "Description": "モデル1_左手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_1",
+      "Name": "モデル1_右手両手時表示位置",
+      "Description": "モデル1_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_1",
+      "Name": "モデル1_左手両手時表示位置",
+      "Description": "モデル1_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightHang_1",
+      "Name": "モデル1_右手納刀時表示位置",
+      "Description": "モデル1_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftHang_1",
+      "Name": "モデル1_左手納刀時表示位置",
+      "Description": "モデル1_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_right_2",
+      "Name": "モデル2_右手時表示位置",
+      "Description": "モデル2_右手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_left_2",
+      "Name": "モデル2_左手時表示位置",
+      "Description": "モデル2_左手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_2",
+      "Name": "モデル2_右手両手時表示位置",
+      "Description": "モデル2_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_2",
+      "Name": "モデル2_左手両手時表示位置",
+      "Description": "モデル2_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightHang_2",
+      "Name": "モデル2_右手納刀時表示位置",
+      "Description": "モデル2_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftHang_2",
+      "Name": "モデル2_左手納刀時表示位置",
+      "Description": "モデル2_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_right_3",
+      "Name": "モデル3_右手時表示位置",
+      "Description": "モデル3_右手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_left_3",
+      "Name": "モデル3_左手時表示位置",
+      "Description": "モデル3_左手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_3",
+      "Name": "モデル3_右手両手時表示位置",
+      "Description": "モデル3_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_3",
+      "Name": "モデル3_左手両手時表示位置",
+      "Description": "モデル3_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_rightHang_3",
+      "Name": "モデル3_右手納刀時表示位置",
+      "Description": "モデル3_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "dispPosType_leftHang_3",
+      "Name": "モデル3_左手納刀時表示位置",
+      "Description": "モデル3_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)"
+    },
+    {
+      "Field": "rightTransform_0",
+      "Name": "モデル0_右手変形時吸着ダミポリ",
+      "Description": "右手武器で変形している時のモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftTransform_0",
+      "Name": "モデル0_左手変形時吸着ダミポリ",
+      "Description": "左手武器で変形している時のモデル0の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightTransform_1",
+      "Name": "モデル1_右手変形時吸着ダミポリ",
+      "Description": "右手武器で変形している時のモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftTransform_1",
+      "Name": "モデル1_左手変形時吸着ダミポリ",
+      "Description": "左手武器で変形している時のモデル1の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightTransform_2",
+      "Name": "モデル2_右手変形時吸着ダミポリ",
+      "Description": "右手武器で変形している時のモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftTransform_2",
+      "Name": "モデル2_左手変形時吸着ダミポリ",
+      "Description": "左手武器で変形している時のモデル2の吸着ダミポリ。"
+    },
+    {
+      "Field": "rightTransform_3",
+      "Name": "モデル3_右手変形時吸着ダミポリ",
+      "Description": "右手武器で変形している時のモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "leftTransform_3",
+      "Name": "モデル3_左手変形時吸着ダミポリ",
+      "Description": "左手武器で変形している時のモデル3の吸着ダミポリ。"
+    },
+    {
+      "Field": "right_0_1",
+      "Name": "モデル0_右手時吸着ダミポリ_拡張1",
+      "Description": "武器を右手に片手で持っているときのモデル0の吸着ダミポリ(拡張1)。"
+    },
+    {
+      "Field": "left_0_1",
+      "Name": "モデル0_左手時吸着ダミポリ_拡張1",
+      "Description": "武器を左手に片手で持っているときのモデル0の吸着ダミポリ(拡張1)。"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

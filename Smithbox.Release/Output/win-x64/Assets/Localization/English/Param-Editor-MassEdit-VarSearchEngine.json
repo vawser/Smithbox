@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_VSE_Vars_Hint",
+      "Text": "variable names (regex)"
+    },
+    {
+      "Key": "PARAM_VSE_Vars_TT",
+      "Text": "Selects variables whose name matches the given regex."
+    }
+  ]
+}

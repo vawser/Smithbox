@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_BULLET_PENETRATE_DEF_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_BULLET_PENETRATE_DEF_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    }
+  ]
+}

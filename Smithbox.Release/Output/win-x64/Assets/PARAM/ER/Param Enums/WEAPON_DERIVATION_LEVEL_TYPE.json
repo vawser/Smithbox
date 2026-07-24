@@ -1,0 +1,20 @@
+{
+  "Key": "WEAPON_DERIVATION_LEVEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_DERIVATION_LEVEL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    }
+  ]
+}

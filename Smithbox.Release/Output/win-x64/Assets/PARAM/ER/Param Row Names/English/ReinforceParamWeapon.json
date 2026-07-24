@@ -1,0 +1,5483 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard +0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Standard +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Standard +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Standard +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Standard +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Standard +5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Standard +6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Standard +7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Standard +8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Standard +9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Standard +10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Standard +11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Standard +12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Standard +13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Standard +14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Standard +15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Standard +16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Standard +17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Standard +18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Standard +19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Standard +20"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Standard +21"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Standard +22"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Standard +23"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Standard +24"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Standard +25"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Heavy +0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Heavy +1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Heavy +2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Heavy +3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Heavy +4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Heavy +5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Heavy +6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Heavy +7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Heavy +8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Heavy +9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Heavy +10"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Heavy +11"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Heavy +12"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Heavy +13"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Heavy +14"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Heavy +15"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Heavy +16"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Heavy +17"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Heavy +18"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Heavy +19"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Heavy +20"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Heavy +21"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Heavy +22"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Heavy +23"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Heavy +24"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Heavy +25"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Keen +0"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Keen +1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Keen +2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Keen +3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Keen +4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Keen +5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Keen +6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Keen +7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Keen +8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Keen +9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Keen +10"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Keen +11"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Keen +12"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Keen +13"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Keen +14"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Keen +15"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Keen +16"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Keen +17"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Keen +18"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Keen +19"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Keen +20"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Keen +21"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Keen +22"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Keen +23"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Keen +24"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Keen +25"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Quality +0"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Quality +1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Quality +2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Quality +3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Quality +4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Quality +5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Quality +6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Quality +7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Quality +8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Quality +9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Quality +10"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Quality +11"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Quality +12"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Quality +13"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Quality +14"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Quality +15"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Quality +16"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Quality +17"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Quality +18"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Quality +19"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Quality +20"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Quality +21"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Quality +22"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Quality +23"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Quality +24"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Quality +25"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Fire +0"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Fire +1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Fire +2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Fire +3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Fire +4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Fire +5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Fire +6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Fire +7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Fire +8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Fire +9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Fire +10"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Fire +11"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Fire +12"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Fire +13"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Fire +14"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Fire +15"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Fire +16"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "Fire +17"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "Fire +18"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "Fire +19"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Fire +20"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Fire +21"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Fire +22"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "Fire +23"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "Fire +24"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "Fire +25"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Flame Art +0"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Flame Art +1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Flame Art +2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Flame Art +3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Flame Art +4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Flame Art +5"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Flame Art +6"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Flame Art +7"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Flame Art +8"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Flame Art +9"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Flame Art +10"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Flame Art +11"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Flame Art +12"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Flame Art +13"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Flame Art +14"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Flame Art +15"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Flame Art +16"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "Flame Art +17"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "Flame Art +18"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        "Flame Art +19"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Flame Art +20"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Flame Art +21"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Flame Art +22"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Flame Art +23"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Flame Art +24"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "Flame Art +25"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Lightning +0"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Lightning +1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Lightning +2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Lightning +3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Lightning +4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Lightning +5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Lightning +6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Lightning +7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Lightning +8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Lightning +9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Lightning +10"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Lightning +11"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "Lightning +12"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "Lightning +13"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "Lightning +14"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "Lightning +15"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "Lightning +16"
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        "Lightning +17"
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        "Lightning +18"
+      ]
+    },
+    {
+      "ID": 619,
+      "Entries": [
+        "Lightning +19"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Lightning +20"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Lightning +21"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Lightning +22"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Lightning +23"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Lightning +24"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "Lightning +25"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Sacred +0"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Sacred +1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Sacred +2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Sacred +3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Sacred +4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Sacred +5"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Sacred +6"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Sacred +7"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Sacred +8"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Sacred +9"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Sacred +10"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Sacred +11"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Sacred +12"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Sacred +13"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "Sacred +14"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Sacred +15"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Sacred +16"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Sacred +17"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Sacred +18"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "Sacred +19"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Sacred +20"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Sacred +21"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Sacred +22"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Sacred +23"
+      ]
+    },
+    {
+      "ID": 724,
+      "Entries": [
+        "Sacred +24"
+      ]
+    },
+    {
+      "ID": 725,
+      "Entries": [
+        "Sacred +25"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Magic +0"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Magic +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Magic +2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Magic +3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Magic +4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Magic +5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Magic +6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Magic +7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Magic +8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Magic +9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Magic +10"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Magic +11"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Magic +12"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Magic +13"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Magic +14"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Magic +15"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Magic +16"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Magic +17"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Magic +18"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Magic +19"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Magic +20"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Magic +21"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Magic +22"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Magic +23"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Magic +24"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Magic +25"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Cold +0"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Cold +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Cold +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Cold +3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Cold +4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Cold +5"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "Cold +6"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "Cold +7"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "Cold +8"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "Cold +9"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Cold +10"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "Cold +11"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "Cold +12"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "Cold +13"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "Cold +14"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "Cold +15"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "Cold +16"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "Cold +17"
+      ]
+    },
+    {
+      "ID": 918,
+      "Entries": [
+        "Cold +18"
+      ]
+    },
+    {
+      "ID": 919,
+      "Entries": [
+        "Cold +19"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "Cold +20"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "Cold +21"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "Cold +22"
+      ]
+    },
+    {
+      "ID": 923,
+      "Entries": [
+        "Cold +23"
+      ]
+    },
+    {
+      "ID": 924,
+      "Entries": [
+        "Cold +24"
+      ]
+    },
+    {
+      "ID": 925,
+      "Entries": [
+        "Cold +25"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Poison +0"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Poison +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Poison +2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Poison +3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Poison +4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Poison +5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Poison +6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Poison +7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Poison +8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Poison +9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Poison +10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Poison +11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Poison +12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Poison +13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Poison +14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Poison +15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Poison +16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Poison +17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Poison +18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Poison +19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Poison +20"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Poison +21"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Poison +22"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Poison +23"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Poison +24"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Poison +25"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Blood +0"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Blood +1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Blood +2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Blood +3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Blood +4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Blood +5"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Blood +6"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Blood +7"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Blood +8"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Blood +9"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Blood +10"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Blood +11"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Blood +12"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Blood +13"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Blood +14"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Blood +15"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "Blood +16"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Blood +17"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Blood +18"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "Blood +19"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Blood +20"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Blood +21"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Blood +22"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "Blood +23"
+      ]
+    },
+    {
+      "ID": 1124,
+      "Entries": [
+        "Blood +24"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Blood +25"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Occult +0"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Occult +1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Occult +2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Occult +3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Occult +4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Occult +5"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Occult +6"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "Occult +7"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "Occult +8"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "Occult +9"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Occult +10"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Occult +11"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Occult +12"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "Occult +13"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "Occult +14"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "Occult +15"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "Occult +16"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "Occult +17"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "Occult +18"
+      ]
+    },
+    {
+      "ID": 1219,
+      "Entries": [
+        "Occult +19"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Occult +20"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "Occult +21"
+      ]
+    },
+    {
+      "ID": 1222,
+      "Entries": [
+        "Occult +22"
+      ]
+    },
+    {
+      "ID": 1223,
+      "Entries": [
+        "Occult +23"
+      ]
+    },
+    {
+      "ID": 1224,
+      "Entries": [
+        "Occult +24"
+      ]
+    },
+    {
+      "ID": 1225,
+      "Entries": [
+        "Occult +25"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1609,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1614,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1617,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1618,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1619,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1624,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1707,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1708,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1709,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1713,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1716,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1717,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1718,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1719,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1722,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1723,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1724,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1725,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1813,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1816,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1817,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1818,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1819,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1821,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1822,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1823,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1824,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1825,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Standard Catalyst +0"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Standard Catalyst +1"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Standard Catalyst +2"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "Standard Catalyst +3"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "Standard Catalyst +4"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "Standard Catalyst +5"
+      ]
+    },
+    {
+      "ID": 1906,
+      "Entries": [
+        "Standard Catalyst +6"
+      ]
+    },
+    {
+      "ID": 1907,
+      "Entries": [
+        "Standard Catalyst +7"
+      ]
+    },
+    {
+      "ID": 1908,
+      "Entries": [
+        "Standard Catalyst +8"
+      ]
+    },
+    {
+      "ID": 1909,
+      "Entries": [
+        "Standard Catalyst +9"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Standard Catalyst +10"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "Standard Catalyst +11"
+      ]
+    },
+    {
+      "ID": 1912,
+      "Entries": [
+        "Standard Catalyst +12"
+      ]
+    },
+    {
+      "ID": 1913,
+      "Entries": [
+        "Standard Catalyst +13"
+      ]
+    },
+    {
+      "ID": 1914,
+      "Entries": [
+        "Standard Catalyst +14"
+      ]
+    },
+    {
+      "ID": 1915,
+      "Entries": [
+        "Standard Catalyst +15"
+      ]
+    },
+    {
+      "ID": 1916,
+      "Entries": [
+        "Standard Catalyst +16"
+      ]
+    },
+    {
+      "ID": 1917,
+      "Entries": [
+        "Standard Catalyst +17"
+      ]
+    },
+    {
+      "ID": 1918,
+      "Entries": [
+        "Standard Catalyst +18"
+      ]
+    },
+    {
+      "ID": 1919,
+      "Entries": [
+        "Standard Catalyst +19"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "Standard Catalyst +20"
+      ]
+    },
+    {
+      "ID": 1921,
+      "Entries": [
+        "Standard Catalyst +21"
+      ]
+    },
+    {
+      "ID": 1922,
+      "Entries": [
+        "Standard Catalyst +22"
+      ]
+    },
+    {
+      "ID": 1923,
+      "Entries": [
+        "Standard Catalyst +23"
+      ]
+    },
+    {
+      "ID": 1924,
+      "Entries": [
+        "Standard Catalyst +24"
+      ]
+    },
+    {
+      "ID": 1925,
+      "Entries": [
+        "Standard Catalyst +25"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2118,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2119,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2123,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2124,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Unique +0"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Unique +1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Unique +2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Unique +3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Unique +4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Unique +5"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "Unique +6"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "Unique +7"
+      ]
+    },
+    {
+      "ID": 2208,
+      "Entries": [
+        "Unique +8"
+      ]
+    },
+    {
+      "ID": 2209,
+      "Entries": [
+        "Unique +9"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Unique +10"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Unique Catalyst +0"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Unique Catalyst +1"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Unique Catalyst +2"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "Unique Catalyst +3"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "Unique Catalyst +4"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "Unique Catalyst +5"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "Unique Catalyst +6"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "Unique Catalyst +7"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "Unique Catalyst +8"
+      ]
+    },
+    {
+      "ID": 2409,
+      "Entries": [
+        "Unique Catalyst +9"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Unique Catalyst +10"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2507,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2609,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2703,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2704,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2705,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2707,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2708,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2709,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "No Reinforcement"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Standard - Crossbow/Ballista +0"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Standard - Crossbow/Ballista +1"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Standard - Crossbow/Ballista +2"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Standard - Crossbow/Ballista +3"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Standard - Crossbow/Ballista +4"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Standard - Crossbow/Ballista +5"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Standard - Crossbow/Ballista +6"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Standard - Crossbow/Ballista +7"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "Standard - Crossbow/Ballista +8"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "Standard - Crossbow/Ballista +9"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Standard - Crossbow/Ballista +10"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Standard - Crossbow/Ballista +11"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Standard - Crossbow/Ballista +12"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "Standard - Crossbow/Ballista +13"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "Standard - Crossbow/Ballista +14"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "Standard - Crossbow/Ballista +15"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "Standard - Crossbow/Ballista +16"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "Standard - Crossbow/Ballista +17"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "Standard - Crossbow/Ballista +18"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "Standard - Crossbow/Ballista +19"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Standard - Crossbow/Ballista +20"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Standard - Crossbow/Ballista +21"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Standard - Crossbow/Ballista +22"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Standard - Crossbow/Ballista +23"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "Standard - Crossbow/Ballista +24"
+      ]
+    },
+    {
+      "ID": 3125,
+      "Entries": [
+        "Standard - Crossbow/Ballista +25"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Unique - Crossbow/Ballista +0"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Unique - Crossbow/Ballista +1"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Unique - Crossbow/Ballista +2"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Unique - Crossbow/Ballista +3"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Unique - Crossbow/Ballista +4"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "Unique - Crossbow/Ballista +5"
+      ]
+    },
+    {
+      "ID": 3206,
+      "Entries": [
+        "Unique - Crossbow/Ballista +6"
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "Unique - Crossbow/Ballista +7"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "Unique - Crossbow/Ballista +8"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        "Unique - Crossbow/Ballista +9"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Unique - Crossbow/Ballista +10"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Pulley Crossbow +0"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Pulley Crossbow +1"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "Pulley Crossbow +2"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "Pulley Crossbow +3"
+      ]
+    },
+    {
+      "ID": 3304,
+      "Entries": [
+        "Pulley Crossbow +4"
+      ]
+    },
+    {
+      "ID": 3305,
+      "Entries": [
+        "Pulley Crossbow +5"
+      ]
+    },
+    {
+      "ID": 3306,
+      "Entries": [
+        "Pulley Crossbow +6"
+      ]
+    },
+    {
+      "ID": 3307,
+      "Entries": [
+        "Pulley Crossbow +7"
+      ]
+    },
+    {
+      "ID": 3308,
+      "Entries": [
+        "Pulley Crossbow +8"
+      ]
+    },
+    {
+      "ID": 3309,
+      "Entries": [
+        "Pulley Crossbow +9"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Pulley Crossbow +10"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3407,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3408,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3409,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3507,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3508,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3513,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3514,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3517,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3518,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3519,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3524,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3525,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Special - Keen +0"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Special - Keen +1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Special - Keen +2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Special - Keen +3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Special - Keen +4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Special - Keen +5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Special - Keen +6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "Special - Keen +7"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "Special - Keen +8"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "Special - Keen +9"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Special - Keen +10"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Special - Keen +11"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Special - Keen +12"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "Special - Keen +13"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Special - Keen +14"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Special - Keen +15"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "Special - Keen +16"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "Special - Keen +17"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "Special - Keen +18"
+      ]
+    },
+    {
+      "ID": 5019,
+      "Entries": [
+        "Special - Keen +19"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Special - Keen +20"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Special - Keen +21"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Special - Keen +22"
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "Special - Keen +23"
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "Special - Keen +24"
+      ]
+    },
+    {
+      "ID": 5025,
+      "Entries": [
+        "Special - Keen +25"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Special - Heavy +0"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Special - Heavy +1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Special - Heavy +2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Special - Heavy +3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Special - Heavy +4"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Special - Heavy +5"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Special - Heavy +6"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Special - Heavy +7"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Special - Heavy +8"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Special - Heavy +9"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Special - Heavy +10"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Special - Heavy +11"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Special - Heavy +12"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Special - Heavy +13"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Special - Heavy +14"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Special - Heavy +15"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "Special - Heavy +16"
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        "Special - Heavy +17"
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        "Special - Heavy +18"
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "Special - Heavy +19"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Special - Heavy +20"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Special - Heavy +21"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Special - Heavy +22"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Special - Heavy +23"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "Special - Heavy +24"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        "Special - Heavy +25"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Small Shield +0"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Small Shield +1"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Small Shield +2"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Small Shield +3"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Small Shield +4"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Small Shield +5"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "Small Shield +6"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "Small Shield +7"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "Small Shield +8"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "Small Shield +9"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Small Shield +10"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "Small Shield +11"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "Small Shield +12"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "Small Shield +13"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "Small Shield +14"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "Small Shield +15"
+      ]
+    },
+    {
+      "ID": 8016,
+      "Entries": [
+        "Small Shield +16"
+      ]
+    },
+    {
+      "ID": 8017,
+      "Entries": [
+        "Small Shield +17"
+      ]
+    },
+    {
+      "ID": 8018,
+      "Entries": [
+        "Small Shield +18"
+      ]
+    },
+    {
+      "ID": 8019,
+      "Entries": [
+        "Small Shield +19"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Small Shield +20"
+      ]
+    },
+    {
+      "ID": 8021,
+      "Entries": [
+        "Small Shield +21"
+      ]
+    },
+    {
+      "ID": 8022,
+      "Entries": [
+        "Small Shield +22"
+      ]
+    },
+    {
+      "ID": 8023,
+      "Entries": [
+        "Small Shield +23"
+      ]
+    },
+    {
+      "ID": 8024,
+      "Entries": [
+        "Small Shield +24"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "Small Shield +25"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Medium Shield +0"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Medium Shield +1"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Medium Shield +2"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Medium Shield +3"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "Medium Shield +4"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "Medium Shield +5"
+      ]
+    },
+    {
+      "ID": 8106,
+      "Entries": [
+        "Medium Shield +6"
+      ]
+    },
+    {
+      "ID": 8107,
+      "Entries": [
+        "Medium Shield +7"
+      ]
+    },
+    {
+      "ID": 8108,
+      "Entries": [
+        "Medium Shield +8"
+      ]
+    },
+    {
+      "ID": 8109,
+      "Entries": [
+        "Medium Shield +9"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Medium Shield +10"
+      ]
+    },
+    {
+      "ID": 8111,
+      "Entries": [
+        "Medium Shield +11"
+      ]
+    },
+    {
+      "ID": 8112,
+      "Entries": [
+        "Medium Shield +12"
+      ]
+    },
+    {
+      "ID": 8113,
+      "Entries": [
+        "Medium Shield +13"
+      ]
+    },
+    {
+      "ID": 8114,
+      "Entries": [
+        "Medium Shield +14"
+      ]
+    },
+    {
+      "ID": 8115,
+      "Entries": [
+        "Medium Shield +15"
+      ]
+    },
+    {
+      "ID": 8116,
+      "Entries": [
+        "Medium Shield +16"
+      ]
+    },
+    {
+      "ID": 8117,
+      "Entries": [
+        "Medium Shield +17"
+      ]
+    },
+    {
+      "ID": 8118,
+      "Entries": [
+        "Medium Shield +18"
+      ]
+    },
+    {
+      "ID": 8119,
+      "Entries": [
+        "Medium Shield +19"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Medium Shield +20"
+      ]
+    },
+    {
+      "ID": 8121,
+      "Entries": [
+        "Medium Shield +21"
+      ]
+    },
+    {
+      "ID": 8122,
+      "Entries": [
+        "Medium Shield +22"
+      ]
+    },
+    {
+      "ID": 8123,
+      "Entries": [
+        "Medium Shield +23"
+      ]
+    },
+    {
+      "ID": 8124,
+      "Entries": [
+        "Medium Shield +24"
+      ]
+    },
+    {
+      "ID": 8125,
+      "Entries": [
+        "Medium Shield +25"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Greatshield +0"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Greatshield +1"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Greatshield +2"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Greatshield +3"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "Greatshield +4"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "Greatshield +5"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "Greatshield +6"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "Greatshield +7"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "Greatshield +8"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "Greatshield +9"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Greatshield +10"
+      ]
+    },
+    {
+      "ID": 8211,
+      "Entries": [
+        "Greatshield +11"
+      ]
+    },
+    {
+      "ID": 8212,
+      "Entries": [
+        "Greatshield +12"
+      ]
+    },
+    {
+      "ID": 8213,
+      "Entries": [
+        "Greatshield +13"
+      ]
+    },
+    {
+      "ID": 8214,
+      "Entries": [
+        "Greatshield +14"
+      ]
+    },
+    {
+      "ID": 8215,
+      "Entries": [
+        "Greatshield +15"
+      ]
+    },
+    {
+      "ID": 8216,
+      "Entries": [
+        "Greatshield +16"
+      ]
+    },
+    {
+      "ID": 8217,
+      "Entries": [
+        "Greatshield +17"
+      ]
+    },
+    {
+      "ID": 8218,
+      "Entries": [
+        "Greatshield +18"
+      ]
+    },
+    {
+      "ID": 8219,
+      "Entries": [
+        "Greatshield +19"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Greatshield +20"
+      ]
+    },
+    {
+      "ID": 8221,
+      "Entries": [
+        "Greatshield +21"
+      ]
+    },
+    {
+      "ID": 8222,
+      "Entries": [
+        "Greatshield +22"
+      ]
+    },
+    {
+      "ID": 8223,
+      "Entries": [
+        "Greatshield +23"
+      ]
+    },
+    {
+      "ID": 8224,
+      "Entries": [
+        "Greatshield +24"
+      ]
+    },
+    {
+      "ID": 8225,
+      "Entries": [
+        "Greatshield +25"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Unique - Greatshield +0"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "Unique - Greatshield +1"
+      ]
+    },
+    {
+      "ID": 8302,
+      "Entries": [
+        "Unique - Greatshield +2"
+      ]
+    },
+    {
+      "ID": 8303,
+      "Entries": [
+        "Unique - Greatshield +3"
+      ]
+    },
+    {
+      "ID": 8304,
+      "Entries": [
+        "Unique - Greatshield +4"
+      ]
+    },
+    {
+      "ID": 8305,
+      "Entries": [
+        "Unique - Greatshield +5"
+      ]
+    },
+    {
+      "ID": 8306,
+      "Entries": [
+        "Unique - Greatshield +6"
+      ]
+    },
+    {
+      "ID": 8307,
+      "Entries": [
+        "Unique - Greatshield +7"
+      ]
+    },
+    {
+      "ID": 8308,
+      "Entries": [
+        "Unique - Greatshield +8"
+      ]
+    },
+    {
+      "ID": 8309,
+      "Entries": [
+        "Unique - Greatshield +9"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Unique - Greatshield +10"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Coil Shield +0"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Coil Shield +1"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Coil Shield +2"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "Coil Shield +3"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "Coil Shield +4"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "Coil Shield +5"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "Coil Shield +6"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "Coil Shield +7"
+      ]
+    },
+    {
+      "ID": 8508,
+      "Entries": [
+        "Coil Shield +8"
+      ]
+    },
+    {
+      "ID": 8509,
+      "Entries": [
+        "Coil Shield +9"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "Coil Shield +10"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Param": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Type": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Name": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Description": "Defines behavior for white fog-style doors, including category rules, timing, multiplayer sound effects, interaction prompts, and progression flags.",
+  "Fields": [
+    {
+      "Field": "whiteDoorCategory",
+      "Name": "White Door Category",
+      "Description": "Defines the category/type of white door behavior or grouping rules."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "waitTime",
+      "Name": "Wait Time",
+      "Description": "Time in seconds the player must wait before the door interaction completes or becomes active."
+    },
+    {
+      "Field": "defaultSfxId",
+      "Name": "Default SFX ID (White / Gray)",
+      "Description": "Sound effect used for standard interactions in single-player or non-hostile states."
+    },
+    {
+      "Field": "multiPlaySfxId",
+      "Name": "Multiplayer SFX ID (Black)",
+      "Description": "Sound effect used when interacting with the door in multiplayer or hostile contexts."
+    },
+    {
+      "Field": "frontKeyGuideParamId",
+      "Name": "Front Entry Key Guide Parameter ID",
+      "Description": "UI prompt ID shown when entering the door from the front."
+    },
+    {
+      "Field": "backKeyGuideParamId",
+      "Name": "Back Entry Key Guide Parameter ID",
+      "Description": "UI prompt ID shown when entering the door from the rear."
+    },
+    {
+      "Field": "passFlagId",
+      "Name": "Pass Through Event Flag",
+      "Description": "Event flag set when the door has been successfully passed or opened."
+    },
+    {
+      "Field": "enableKeyGuideFlagId",
+      "Name": "Enable Key Guide Flag",
+      "Description": "Flag that controls whether interaction prompts are enabled for this door."
+    }
+  ]
+}

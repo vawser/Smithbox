@@ -1,0 +1,107 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_WeaponMaterial",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Fire"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stun"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "EMP"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Ice"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Green Energy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Coral"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Assault Armor"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Pulse"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Laser"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Plasma"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "item -- アイテム"
+      ]
+    }
+  ]
+}

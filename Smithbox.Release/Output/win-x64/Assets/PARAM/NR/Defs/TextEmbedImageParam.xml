@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>TEXT_EMBED_IMAGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="f32 unknown_0"/>
+    <Field Def="s16 unknown_1a"/>
+    <Field Def="s16 unknown_1b"/>
+    
+    <Field Def="dummy8 endPadding[8]"/>
+  </Fields>
+</PARAMDEF>

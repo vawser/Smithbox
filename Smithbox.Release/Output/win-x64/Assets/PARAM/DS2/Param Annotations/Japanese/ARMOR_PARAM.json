@@ -1,0 +1,153 @@
+{
+  "Param": "ARMOR_PARAM",
+  "Type": "ARMOR_PARAM",
+  "Name": "ARMOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "armorId",
+      "Name": "防具ID",
+      "Description": ""
+    },
+    {
+      "Field": "armorType",
+      "Name": "防具種別",
+      "Description": ""
+    },
+    {
+      "Field": "armorCategory",
+      "Name": "防具系統",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "modelId",
+      "Name": "防具モデルID",
+      "Description": ""
+    },
+    {
+      "Field": "modelGender",
+      "Name": "防具モデル性別",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "clothCollidableId",
+      "Name": "クロスコリジョンID",
+      "Description": ""
+    },
+    {
+      "Field": "interfereId",
+      "Name": "干渉データID",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "armorReinforceId",
+      "Name": "防具成長設定",
+      "Description": ""
+    },
+    {
+      "Field": "defenseStatAffectScale",
+      "Name": "ステータス影響倍率 防御力",
+      "Description": ""
+    },
+    {
+      "Field": "defenseSlashScale",
+      "Name": "物理防御力倍率 斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "defenseThrustScale",
+      "Name": "物理防御力倍率 刺突",
+      "Description": ""
+    },
+    {
+      "Field": "defenseStrikeScale",
+      "Name": "物理防御力倍率 打撃",
+      "Description": ""
+    },
+    {
+      "Field": "prerequisiteStrength",
+      "Name": "必要ステータス 筋力",
+      "Description": ""
+    },
+    {
+      "Field": "prerequisiteDexterity",
+      "Name": "必要ステータス 技量",
+      "Description": ""
+    },
+    {
+      "Field": "prerequisiteIntelligence",
+      "Name": "必要ステータス 理力",
+      "Description": ""
+    },
+    {
+      "Field": "prerequisiteFaith",
+      "Name": "必要ステータス 信仰",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "パラメータ 重量",
+      "Description": ""
+    },
+    {
+      "Field": "durability",
+      "Name": "パラメータ 耐久値",
+      "Description": ""
+    },
+    {
+      "Field": "repairCost",
+      "Name": "パラメータ 修理コスト [soul]",
+      "Description": ""
+    },
+    {
+      "Field": "strong",
+      "Name": "パラメータ 強靱度",
+      "Description": ""
+    },
+    {
+      "Field": "handsUpWeight",
+      "Name": "脇開き量[%]",
+      "Description": ""
+    },
+    {
+      "Field": "handsUpFLevel",
+      "Name": "脇上げ",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropWeight",
+      "Name": "アイテムドロップ率補正[%] x0.01",
+      "Description": ""
+    },
+    {
+      "Field": "material",
+      "Name": "パラメータ 材質",
+      "Description": ""
+    },
+    {
+      "Field": "brokenSfxId",
+      "Name": "破損 SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brokenSoundType",
+      "Name": "破損 サウンドタイプ",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Param": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Type": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Name": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ParamKeyStr",
+      "Name": "パラメータのKey文字列",
+      "Description": "パラメータのKey文字列です"
+    },
+    {
+      "Field": "ParamValueStr",
+      "Name": "パラメータのValue文字列",
+      "Description": "パラメータのValue文字列です"
+    }
+  ]
+}

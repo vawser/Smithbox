@@ -1,0 +1,1273 @@
+{
+  "Param": "CHR_COMMON_PARAM",
+  "Type": "CHR_COMMON_PARAM",
+  "Name": "CHR_COMMON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "heightType",
+      "Name": "身長",
+      "Description": ""
+    },
+    {
+      "Field": "weightType",
+      "Name": "体重",
+      "Description": ""
+    },
+    {
+      "Field": "loadWeightRateMin",
+      "Name": "ウェイト中 防具重量割合 最小",
+      "Description": ""
+    },
+    {
+      "Field": "loadWeightRateMax",
+      "Name": "ウェイト中 防具重量割合 最大",
+      "Description": ""
+    },
+    {
+      "Field": "tireKeepTime",
+      "Name": "疲労状態継続時間",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostDash",
+      "Name": "スタミナ消費倍率 ダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostLockOnDash",
+      "Name": "スタミナ消費倍率 ロックオンダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostLadder",
+      "Name": "スタミナ消費倍率 はしごダッシュ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostRope",
+      "Name": "スタミナ消費倍率 ロープすべり降り",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostEvasionBase",
+      "Name": "スタミナ 消費量 回避ベース値",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostStep",
+      "Name": "スタミナ 消費倍率 ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostRolling",
+      "Name": "スタミナ 消費倍率 ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostDashJump",
+      "Name": "スタミナ 消費倍率 ダッシュジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostStandJump",
+      "Name": "スタミナ 消費倍率 スタンドジャンプ",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostRateEvasion",
+      "Name": "スタミナ 消費倍率 補正倍率 回避動作中",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostRateAttack",
+      "Name": "スタミナ 消費倍率 補正倍率 攻撃動作中",
+      "Description": ""
+    },
+    {
+      "Field": "moveDemeritPercentMin",
+      "Name": "スタミナ低下 移動系デメリット最小地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "moveDemeritPercentMax",
+      "Name": "スタミナ低下 移動系デメリット最大地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "equipDemeritPercentMin",
+      "Name": "スタミナ低下 装備系デメリット最小地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "equipDemeritPercentMax",
+      "Name": "スタミナ低下 装備系デメリット最大地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "attackDemeritPercentMin",
+      "Name": "スタミナ低下 攻撃系デメリット最小地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "attackDemeritPercentMax",
+      "Name": "スタミナ低下 攻撃系デメリット最大地点 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "attackExtraLackOfStatsRate",
+      "Name": "スタミナ不足攻撃 ステータス不足割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingExtraLackOfStatsRate",
+      "Name": "スタミナ不足ローリング ステータス不足割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "attackKeepEmptyStaminaTime",
+      "Name": "スタミナ切れ攻撃 継続時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "emptyStaminaAttackExtraLackOfStatsRate",
+      "Name": "スタミナ切れ攻撃 ステータス不足割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "shotReserveSpeed",
+      "Name": "スタミナ切れ攻撃 攻撃予備動作 再生倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attackWaitSpeed",
+      "Name": "スタミナ切れ攻撃 攻撃待機 再生倍率",
+      "Description": ""
+    },
+    {
+      "Field": "armorType",
+      "Name": "基本アーマー種類",
+      "Description": ""
+    },
+    {
+      "Field": "damageWeaponType",
+      "Name": "ダメージ武器タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "deadRagdollFitGround",
+      "Name": "死亡時ラグドールを地面に沿わせる",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "deadTimerA",
+      "Name": "死亡タイマー 経過時間Ａ",
+      "Description": ""
+    },
+    {
+      "Field": "dyingHpMax",
+      "Name": "瀕死 最大ＨＰ[%]",
+      "Description": ""
+    },
+    {
+      "Field": "dyingHpMin",
+      "Name": "瀕死 最小ＨＰ[%]",
+      "Description": ""
+    },
+    {
+      "Field": "dyingMoveBlendMaxRate",
+      "Name": "瀕死 移動時 ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "ctrlType",
+      "Name": "基本制御タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "collisionType",
+      "Name": "移動コリジョンタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "fHitHeight",
+      "Name": "移動コリジョン高さ [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fHitRadius",
+      "Name": "移動コリジョン半径 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fChrHeight",
+      "Name": "身長 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fGuardAngleY",
+      "Name": "防御角度上下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fGuardAngleX",
+      "Name": "防御角度左右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxLinearVelocity",
+      "Name": "最高速度[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "loadGravityRateBaseMin",
+      "Name": "重量 算出基準 最小 [kg]",
+      "Description": ""
+    },
+    {
+      "Field": "loadGravityRateBaseMax",
+      "Name": "重量 算出基準 最大 [kg]",
+      "Description": ""
+    },
+    {
+      "Field": "gravityFactorMin",
+      "Name": "重力加速度倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "gravityFactorMax",
+      "Name": "重力加速度倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "gravitySpeedMax",
+      "Name": "重力最大速度 [m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "flyCtrlValue",
+      "Name": "飛行制動率",
+      "Description": ""
+    },
+    {
+      "Field": "lockPointType",
+      "Name": "ロックポイントタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "lockDummy",
+      "Name": "ロック制御ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "lockCameraCategory",
+      "Name": "ロックカメラ補正カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "lockDisableRadius",
+      "Name": "ロック不可半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockDisableHeight",
+      "Name": "ロック不可高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateSuperSmall",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 極小",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateSmall",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 小",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateMedium",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 中",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateLarge",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 大",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateSuperLarge",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 特大",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateUltraLarge",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 特特大",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockBackRateFlip",
+      "Name": "ガードノックバック減少割合 ウェイト補正割合 弾き",
+      "Description": ""
+    },
+    {
+      "Field": "guardRotationRate",
+      "Name": "ガード旋回 反映割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "headShotEnable",
+      "Name": "ヘッドショット",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakEnable",
+      "Name": "ガードブレイク",
+      "Description": ""
+    },
+    {
+      "Field": "backStabEnable",
+      "Name": "バックスタブ",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakStabEnable",
+      "Name": "パリィブレイクスタブ",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakDefenselessTime",
+      "Name": "パリィブレイク 無防備時間",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakShorteningTime",
+      "Name": "パリィブレイク ＰＡＤ入力 短縮時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabEnable",
+      "Name": "ガードブレイクスタブ",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "downAttackLength",
+      "Name": "ダウン追い打ち 許容距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabSideAngle",
+      "Name": "バックスタブ 左右角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabUpSideAngle",
+      "Name": "バックスタブ 上下角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabHeight",
+      "Name": "バックスタブ 高低差 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabLength",
+      "Name": "バックスタブ 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakStabSideAngle",
+      "Name": "パリィブレイクスタブ 左右角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakStabUpSideAngle",
+      "Name": "パリィブレイクスタブ 上下角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakStabHeight",
+      "Name": "パリィブレイクスタブ 高低差 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "parryStabLength",
+      "Name": "パリィブレイクスタブ 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabSideAngle",
+      "Name": "ガードブレイクスタブ 左右角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabUpSideAngle",
+      "Name": "ガードブレイクスタブ 上下角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabHeight",
+      "Name": "ガードブレイクスタブ 高低差 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabLength",
+      "Name": "ガードブレイクスタブ 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerEnable",
+      "Name": "下半身ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgBendingValue",
+      "Name": "下半身ダメージ しゃがみ量[%]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgBendingStartTime",
+      "Name": "下半身ダメージ しゃがみ行き時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgBendingEndTime",
+      "Name": "下半身ダメージ しゃがみ戻り時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgMoveDecelerationRate",
+      "Name": "下半身ダメージ 移動速度 減少割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgRotateDecelerationRate",
+      "Name": "下半身ダメージ 旋回速度 減少割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollMassFactor",
+      "Name": "ラグドール質量倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollFrictionFactor",
+      "Name": "ラグドール摩擦係数倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollRestitutionFactor",
+      "Name": "ラグドール反発係数倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollMaxLinearVelocityFactor",
+      "Name": "ラグドール最大速度倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollMaxAngularVelocityFactor",
+      "Name": "ラグドール最大角速度倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollGravityFactorMin",
+      "Name": "ラグドール重力加速度倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "ragdollGravityFactorMax",
+      "Name": "ラグドール重力加速度倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideAngle",
+      "Name": "ジャンプ衝突 発生左右角度[°]",
+      "Description": ""
+    },
+    {
+      "Field": "damageRotationSpeed",
+      "Name": "ダメージ方向 旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "damageMoveDistRate",
+      "Name": "ダメージ ノックバック減少割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageKnockBackDist",
+      "Name": "ダメージ 特大ダメージ後退 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageStiff",
+      "Name": "ダメージ 特大ダメージ硬直 [Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageDefenselessTime",
+      "Name": "ダメージ 特大ダメージ無防備時間 [Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingDamageStiff",
+      "Name": "ダメージ 出血硬直[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageShorteningTime",
+      "Name": "ダメージ 特大ダメージ無防備時間 ＰＡＤ入力 短縮時間 [Se",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakDamageDefenselessTime",
+      "Name": "ダメージ ガードブレイクダメージ無防備時間 [Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakDamageShorteningTime",
+      "Name": "ダメージ ガードブレイクダメージ無防備時間 ＰＡＤ入力 短縮時",
+      "Description": ""
+    },
+    {
+      "Field": "blowDecelerationTimeFirst",
+      "Name": "ダメージ 吹飛びダメージ減速１開始時間 [Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "blowDecelerationTimeSecond",
+      "Name": "ダメージ 吹飛びダメージ減速２開始時間 [Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "blowDecelerationFirst",
+      "Name": "ダメージ 吹飛びダメージ減速度１ [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "blowDecelerationSecond",
+      "Name": "ダメージ 吹飛びダメージ減速度２ [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "attackPushBackRate",
+      "Name": "押し返し反映割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "parryRotationSpeed",
+      "Name": "パリィ旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "BreathDamageEnable",
+      "Name": "ブレスダメージ有効無効設定",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "hitLowerBodyHeight",
+      "Name": "ＨＩＴ判定 下半身高さ",
+      "Description": ""
+    },
+    {
+      "Field": "hitFrontAngle",
+      "Name": "ＨＩＴ時正面認識 左右角度",
+      "Description": ""
+    },
+    {
+      "Field": "attackMoveSpeed",
+      "Name": "歩行攻撃移動速度 [m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "attackRotationSpeed",
+      "Name": "歩行攻撃旋回速度 [deg/s]",
+      "Description": ""
+    },
+    {
+      "Field": "attackRange",
+      "Name": "攻撃範囲 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationLeftMax",
+      "Name": "LookAt 旋回限界角度 左 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationRightMax",
+      "Name": "LookAt 旋回限界角度 右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationUpperMax",
+      "Name": "LookAt 旋回限界角度 上 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationLownerMax",
+      "Name": "LookAt 旋回限界角度 下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtVisibilitySideMax",
+      "Name": "LookAt 認識限界角度 左右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtVisibilityUpperMax",
+      "Name": "LookAt 認識限界角度 上下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationSideSpeedMax",
+      "Name": "LookAt 左右旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationUpperSpeedMax",
+      "Name": "LookAt 上下旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "isLookAtDummyPolyBasePos",
+      "Name": "LookAt ダミポリ位置を基準にする",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationLeftMax",
+      "Name": "射撃 LookAt 旋回限界角度 左 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationRightMax",
+      "Name": "射撃 LookAt 旋回限界角度 右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationUpperMax",
+      "Name": "射撃 LookAt 旋回限界角度 上 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationLownerMax",
+      "Name": "射撃 LookAt 旋回限界角度 下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtVisibilitySideMax",
+      "Name": "射撃 LookAt 認識限界角度 左右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtVisibilityUpperMax",
+      "Name": "射撃 LookAt 認識限界角度 上下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationSideSpeedMax",
+      "Name": "射撃 LookAt 左右旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationUpperSpeedMax",
+      "Name": "射撃 LookAt 上下旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "shootingIsLookAtDummyPolyBasePos",
+      "Name": "射撃 LookAt ダミポリ位置を基準にする",
+      "Description": ""
+    },
+    {
+      "Field": "shootingLookAtDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly001",
+      "Name": "足裏ダミポリ番号1",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly002",
+      "Name": "足裏ダミポリ番号2",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly003",
+      "Name": "足裏ダミポリ番号3",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly004",
+      "Name": "足裏ダミポリ番号4",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly005",
+      "Name": "足裏ダミポリ番号5",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly006",
+      "Name": "足裏ダミポリ番号6",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly007",
+      "Name": "足裏ダミポリ番号7",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly008",
+      "Name": "足裏ダミポリ番号8",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectOffset",
+      "Name": "足エフェクト前後オフセット",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectOffsetMoveRate",
+      "Name": "足エフェクト移動量オフセット倍率",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMargin",
+      "Name": "足エフェクト余白",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMinLength",
+      "Name": "足エフェクト判定レイキャスト最短",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMaxLength",
+      "Name": "足エフェクト判定レイキャスト最長（上り坂）",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMaxDownHillLength",
+      "Name": "足エフェクト判定レイキャスト最長（下り坂）",
+      "Description": ""
+    },
+    {
+      "Field": "footRayUpDownMargin",
+      "Name": "足エフェクト判定上下変化許容量",
+      "Description": ""
+    },
+    {
+      "Field": "footRunSpeedRate",
+      "Name": "走り足音判定速度割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSuperSmall",
+      "Name": "音大きさ\u3000極小",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSmall",
+      "Name": "音大きさ\u3000小",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelNormal",
+      "Name": "音大きさ\u3000中",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelLarge",
+      "Name": "音大きさ\u3000大",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSuperLarge",
+      "Name": "音大きさ\u3000特大",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "single1HandNormal",
+      "Name": "詠唱時間 片手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HandStrong",
+      "Name": "詠唱時間 片手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandedNormal",
+      "Name": "詠唱時間 両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandedStrong",
+      "Name": "詠唱時間 両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HandNormal",
+      "Name": "詠唱時間 二刀流 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HandStrong",
+      "Name": "詠唱時間 二刀流 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandedNormal",
+      "Name": "詠唱時間 二刀流両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandedStrong",
+      "Name": "詠唱時間 二刀流両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "bladePartsDamage",
+      "Name": "ブレード部位ダメージ有効設定",
+      "Description": ""
+    },
+    {
+      "Field": "partsDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSuperSmall",
+      "Name": "部位ダメージ倍率\u3000極小",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSmall",
+      "Name": "部位ダメージ倍率\u3000小",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateNormal",
+      "Name": "部位ダメージ倍率\u3000中",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateLarge",
+      "Name": "部位ダメージ倍率\u3000大",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSuperLarge",
+      "Name": "部位ダメージ倍率\u3000特大",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackDamageRate",
+      "Name": "投げ中ダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "receiveSlashDamageRate",
+      "Name": "通常物理 被ダメージ倍率 斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "receiveThrustDamageRate",
+      "Name": "通常物理 被ダメージ倍率 刺突",
+      "Description": ""
+    },
+    {
+      "Field": "receiveStrikeDamageRate",
+      "Name": "通常物理 被ダメージ倍率 打撃",
+      "Description": ""
+    },
+    {
+      "Field": "fallStrikeFallDist",
+      "Name": "落下攻撃 発生落下高度",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallStrikeHeight",
+      "Name": "ジャンプ落下攻撃 発生落下高度",
+      "Description": ""
+    },
+    {
+      "Field": "isSlopeAdjust",
+      "Name": "常に傾斜に沿う",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustPitchMax",
+      "Name": "傾斜最大ピッチ角度",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustRollMax",
+      "Name": "傾斜最大ロール角度",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustPitchSpeed",
+      "Name": "傾斜ピッチ補正速度",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustRollSpeed",
+      "Name": "傾斜ロール補正速度",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabSlashAnim",
+      "Name": "落下投げアニメID 斬り",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabStabAnim",
+      "Name": "落下投げアニメID 突き",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabGrabParamId",
+      "Name": "落下投げ 投げパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummyPolyId",
+      "Name": "落下投げ 基準ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummyPolyReverse",
+      "Name": "落下投げ 向き反転",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDistance",
+      "Name": "落下投げ 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabAngle",
+      "Name": "落下投げ 角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "poisonRecoverTimeMin",
+      "Name": "状態異常 毒 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "poisonRecoverTimeMax",
+      "Name": "状態異常 毒 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "burningRecoverTimeMin",
+      "Name": "状態異常 燃焼 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "burningRecoverTimeMax",
+      "Name": "状態異常 燃焼 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingRecoverTimeMin",
+      "Name": "状態異常 出血 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingRecoverTimeMax",
+      "Name": "状態異常 出血 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "curseRecoverTimeMin",
+      "Name": "状態異常 呪死 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "curseRecoverTimeMax",
+      "Name": "状態異常 呪死 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakRecoverTimeMin",
+      "Name": "状態異常 武器破損 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakRecoverTimeMax",
+      "Name": "状態異常 武器破損 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedRecoverTimeMin",
+      "Name": "状態異常 石化 ゲージ回復時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedRecoverTimeMax",
+      "Name": "状態異常 石化 ゲージ回復時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "poisonWetEffectTimeMin",
+      "Name": "毒濡れ 効果時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "poisonWetEffectTimeMax",
+      "Name": "毒濡れ 効果時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "oilWetEffectTimeMin",
+      "Name": "油濡れ 効果時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "oilWetEffectTimeMax",
+      "Name": "油濡れ 効果時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "WatierWetEffectTimeMin",
+      "Name": "水濡れ 効果時間 最小値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "WatierWetEffectTimeMax",
+      "Name": "水濡れ 効果時間 最大値[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "itemAnimSpeedRateMin",
+      "Name": "アイテムアニメ速度 補正倍率 最小[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "itemAnimSpeedRateMax",
+      "Name": "アイテムアニメ速度 補正倍率 最大[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "downStiffRate",
+      "Name": "ダウン硬直時間\u3000倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "downShorteningTime",
+      "Name": "ダウン硬直時間\u3000ＰＡＤ入力 短縮時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleY",
+      "Name": "ダメージ上半身捻り範囲 Y",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleX",
+      "Name": "ダメージ上半身捻り範囲 X",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleZ",
+      "Name": "ダメージ上半身捻り範囲 Z",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleCenter",
+      "Name": "ダメージ上半身捻り範囲\u3000中央",
+      "Description": ""
+    },
+    {
+      "Field": "environmentSfxRain",
+      "Name": "環境SFX：雨",
+      "Description": ""
+    },
+    {
+      "Field": "environmentSfxWaterFall",
+      "Name": "環境SFX：滝",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamSmall",
+      "Name": "移動風：小",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamMedium",
+      "Name": "移動風：中",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamLarge",
+      "Name": "移動風：大",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingDistance",
+      "Name": "接近オートホーミング 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingSdAngle",
+      "Name": "接近オートホーミング 左右角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingUdAngle",
+      "Name": "接近オートホーミング 上下角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingDistance",
+      "Name": "射撃オートホーミング 距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingSdAngle",
+      "Name": "射撃オートホーミング 左右角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingUdAngle",
+      "Name": "射撃オートホーミング 上下角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectSize",
+      "Name": "足エフェクトサイズ",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateSlash",
+      "Name": "投げ 被ダメージ倍率 斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateBlow",
+      "Name": "投げ 被ダメージ倍率 打撃",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateStab",
+      "Name": "投げ 被ダメージ倍率刺突",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateBullet",
+      "Name": "投げ 被ダメージ倍率 弾",
+      "Description": ""
+    },
+    {
+      "Field": "disallowDamageDecrementDist",
+      "Name": "距離減衰無効距離",
+      "Description": ""
+    },
+    {
+      "Field": "lockInvisibleReleaseTime",
+      "Name": "不可視ロック解除時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fHitOffsetX",
+      "Name": "移動コリジョンオフセット左右 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fHitOffsetZ",
+      "Name": "移動コリジョンオフセット前後[m]",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterHeightLow",
+      "Name": "着水判定高さ足首",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterHeightMiddle",
+      "Name": "着水判定高さ股下",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterType",
+      "Name": "着水タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRatePhysical",
+      "Name": "Bullet damage rate [Physical]",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateMagic",
+      "Name": "Bullet damage rate [Magic]",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateMiracle",
+      "Name": "Bullet damage rate [Miracle]",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRatePyromancy",
+      "Name": "Bullet damage rate [Pytomancy]",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateDark",
+      "Name": "Bullet damage rate [Hex]",
+      "Description": ""
+    }
+  ]
+}

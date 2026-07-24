@@ -1,0 +1,278 @@
+{
+  "Param": "WEAPON_PARAM",
+  "Type": "WEAPON_PARAM",
+  "Name": "WEAPON_PARAM",
+  "Description": "Defines core weapon properties including requirements, scaling modifiers, damage multipliers, animation categories, stamina costs, and interaction behavior such as parry, grab, and hit detection.",
+  "Fields": [
+    {
+      "Field": "weaponId",
+      "Name": "Weapon ID",
+      "Description": "Unique identifier for the weapon."
+    },
+    {
+      "Field": "weaponModelId",
+      "Name": "Weapon Model ID",
+      "Description": "References the 3D model used for the weapon."
+    },
+    {
+      "Field": "weaponReinforceId",
+      "Name": "Upgrade Data ID",
+      "Description": "Links to reinforcement/upgrade scaling configuration."
+    },
+    {
+      "Field": "weaponActionCategoryId",
+      "Name": "Weapon Action Category ID",
+      "Description": "Defines the set of attack animations used by this weapon."
+    },
+    {
+      "Field": "weaponTypeId",
+      "Name": "Weapon Type",
+      "Description": "Defines the weapon class/type (e.g., sword, spear, etc.)."
+    },
+    {
+      "Field": "isAtkAutoHoming",
+      "Name": "Is Auto Homing Attack",
+      "Description": "Enables automatic target tracking during attacks."
+    },
+    {
+      "Field": "weaponCategory",
+      "Name": "Weapon Category",
+      "Description": "Broad classification of weapon family."
+    },
+    {
+      "Field": "clothCollidableId",
+      "Name": "Cloth Collision ID",
+      "Description": "References cloth simulation collision data."
+    },
+    {
+      "Field": "requiredStrength",
+      "Name": "Required Strength",
+      "Description": "Minimum strength required to use the weapon."
+    },
+    {
+      "Field": "requiredDexterity",
+      "Name": "Required Dexterity",
+      "Description": "Minimum dexterity required to use the weapon."
+    },
+    {
+      "Field": "requiredIntelligence",
+      "Name": "Required Intelligence",
+      "Description": "Minimum intelligence required to use the weapon."
+    },
+    {
+      "Field": "requiredFaith",
+      "Name": "Required Faith",
+      "Description": "Minimum faith required to use the weapon."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight (kg)",
+      "Description": "Physical weight of the weapon affecting equip load."
+    },
+    {
+      "Field": "adjustBalanceWeight",
+      "Name": "Adjusted Weight",
+      "Description": "Weight adjustment used for balancing calculations."
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "Weapon durability before breaking."
+    },
+    {
+      "Field": "repairCost",
+      "Name": "Repair Cost (Souls)",
+      "Description": "Cost required to repair the weapon."
+    },
+    {
+      "Field": "materialId",
+      "Name": "Material ID",
+      "Description": "Defines the weapon's material type."
+    },
+    {
+      "Field": "meleeAttackBaseCost",
+      "Name": "Melee Stamina Cost (Base)",
+      "Description": "Base stamina consumption for melee attacks."
+    },
+    {
+      "Field": "rangedAttackBaseCost",
+      "Name": "Ranged Stamina Cost (Base)",
+      "Description": "Base stamina consumption for ranged attacks."
+    },
+    {
+      "Field": "costCategoryId",
+      "Name": "Stamina Cost Category ID",
+      "Description": "Defines scaling category for stamina usage."
+    },
+    {
+      "Field": "lockonAvailableDistanceScale",
+      "Name": "Lock-On Distance Scale",
+      "Description": "Adjusts effective attack range when locked onto a target."
+    },
+    {
+      "Field": "grabMotionRate",
+      "Name": "Grab Motion Rate",
+      "Description": "Animation speed multiplier for grab attacks."
+    },
+    {
+      "Field": "grabRotationSpeed",
+      "Name": "Grab Rotation Speed [deg/s]",
+      "Description": "Angular acceleration during grab attacks."
+    },
+    {
+      "Field": "grabRotationMaxSpeed",
+      "Name": "Max Grab Rotation Speed [deg/s]",
+      "Description": "Maximum rotational speed during grab attacks."
+    },
+    {
+      "Field": "backStabAttackDamageSmallId",
+      "Name": "Backstab Damage ID (Small)",
+      "Description": "Damage configuration for small-scale backstab grabs."
+    },
+    {
+      "Field": "backStabAttackDamageMiddleId",
+      "Name": "Backstab Damage ID (Medium)",
+      "Description": "Damage configuration for medium-scale backstab grabs."
+    },
+    {
+      "Field": "backStabAttackDamageLargeId",
+      "Name": "Backstab Damage ID (Large)",
+      "Description": "Damage configuration for large-scale backstab grabs."
+    },
+    {
+      "Field": "gdBreakStabAttackDamageSmallId",
+      "Name": "Guard Break Stab Damage ID (Small)",
+      "Description": "Damage for small guard-break grab attacks."
+    },
+    {
+      "Field": "gdBreakStabAttackDamageMiddleId",
+      "Name": "Guard Break Stab Damage ID (Medium)",
+      "Description": "Damage for medium guard-break grab attacks."
+    },
+    {
+      "Field": "gdBreakStabAttackDamageLargeId",
+      "Name": "Guard Break Stab Damage ID (Large)",
+      "Description": "Damage for large guard-break grab attacks."
+    },
+    {
+      "Field": "parryStabAttackDamageSmallId",
+      "Name": "Parry Stab Damage ID (Small)",
+      "Description": "Damage for small parry counter grabs."
+    },
+    {
+      "Field": "parryStabAttackDamageMiddleId",
+      "Name": "Parry Stab Damage ID (Medium)",
+      "Description": "Damage for medium parry counter grabs."
+    },
+    {
+      "Field": "parryStabAttackDamageLargeId",
+      "Name": "Parry Stab Damage ID (Large)",
+      "Description": "Damage for large parry counter grabs."
+    },
+    {
+      "Field": "parryEnableRate",
+      "Name": "Parry Window Rate",
+      "Description": "Active duration ratio during which parry is effective."
+    },
+    {
+      "Field": "brokenSfxId",
+      "Name": "Broken Weapon SFX ID",
+      "Description": "Sound effect played when weapon breaks."
+    },
+    {
+      "Field": "brokenSoundType",
+      "Name": "Broken Weapon Sound Type",
+      "Description": "Category of sound played when weapon breaks."
+    },
+    {
+      "Field": "damageScale",
+      "Name": "Damage Scale",
+      "Description": "Multiplier applied to all weapon damage."
+    },
+    {
+      "Field": "staminaDamageScale",
+      "Name": "Stamina Damage Scale",
+      "Description": "Multiplier for stamina depletion inflicted."
+    },
+    {
+      "Field": "durabilityDamageScale",
+      "Name": "Durability Damage Scale",
+      "Description": "Multiplier for durability loss per hit."
+    },
+    {
+      "Field": "ignorePoiseRateScale",
+      "Name": "Poise Ignore Scale",
+      "Description": "Multiplier affecting ability to bypass enemy poise."
+    },
+    {
+      "Field": "ignoreDamageCutRateScale",
+      "Name": "Damage Cut Ignore Scale",
+      "Description": "Multiplier affecting shield/defense bypass."
+    },
+    {
+      "Field": "stunDamageScale",
+      "Name": "Stun Damage Scale",
+      "Description": "Multiplier for stun buildup."
+    },
+    {
+      "Field": "damageHitRadiusScale",
+      "Name": "Hit Radius Scale",
+      "Description": "Adjusts hit detection radius."
+    },
+    {
+      "Field": "damageHitLengthScale",
+      "Name": "Hit Length Scale",
+      "Description": "Adjusts hit detection length."
+    },
+    {
+      "Field": "recoilHitRaduisScale",
+      "Name": "Recoil Hit Radius Scale",
+      "Description": "Hit radius for recoil interactions."
+    },
+    {
+      "Field": "recoilHitLengthScale",
+      "Name": "Recoil Hit Length Scale",
+      "Description": "Hit length for recoil interactions."
+    },
+    {
+      "Field": "menuAttackCategory1",
+      "Name": "Menu Attack Category 1",
+      "Description": "Primary attack attribute shown in UI."
+    },
+    {
+      "Field": "menuAttackCategory2",
+      "Name": "Menu Attack Category 2",
+      "Description": "Secondary attack attribute shown in UI."
+    },
+    {
+      "Field": "menuPoiseDamage",
+      "Name": "Menu Poise Damage",
+      "Description": "Displayed poise damage value in UI."
+    },
+    {
+      "Field": "menuCounterScale",
+      "Name": "Menu Counter Scaling",
+      "Description": "Displayed counter-attack scaling value."
+    },
+    {
+      "Field": "menuSpellChantSpeed",
+      "Name": "Menu Spell Cast Speed",
+      "Description": "Displayed spell casting speed modifier."
+    },
+    {
+      "Field": "poiseDamageScalePlayer",
+      "Name": "Poise Damage Scale (Player)",
+      "Description": "Adjusts poise damage against players."
+    },
+    {
+      "Field": "poiseDamageScaleEnemy",
+      "Name": "Poise Damage Scale (Enemy)",
+      "Description": "Adjusts poise damage against enemies."
+    },
+    {
+      "Field": "uninterruptibleRate",
+      "Name": "Uninterruptible Rate",
+      "Description": "Determines how often attacks cannot be interrupted by poise damage."
+    }
+  ]
+}

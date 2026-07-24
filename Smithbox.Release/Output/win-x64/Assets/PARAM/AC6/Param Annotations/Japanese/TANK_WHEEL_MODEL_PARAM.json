@@ -1,0 +1,43 @@
+{
+  "Param": "TANK_WHEEL_MODEL_PARAM",
+  "Type": "TANK_WHEEL_MODEL_PARAM",
+  "Name": "TANK_WHEEL_MODEL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseBoneName",
+      "Name": "参照関節名",
+      "Description": "ホイールモデルの関節名"
+    },
+    {
+      "Field": "refSusAIndex_0",
+      "Name": "レイキャスト参照用ホイールインデックス前",
+      "Description": "ホイール内部制御のインデックス"
+    },
+    {
+      "Field": "refSusAIndex_1",
+      "Name": "レイキャスト参照用ホイールインデックス後",
+      "Description": "ホイール内部制御のインデックス"
+    },
+    {
+      "Field": "BoneAxis",
+      "Name": "上下移動するためのボーンの軸(0:X 1:Y 2:Z)",
+      "Description": "ホイールモデルの関節の上下に移動させるための軸"
+    },
+    {
+      "Field": "pad1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "applyRate",
+      "Name": "ホイール前後の参照割合率",
+      "Description": "ホイールインデックス前、後の適用割合(０なら前１００％、１なら後ろ１００％）"
+    },
+    {
+      "Field": "pad7",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

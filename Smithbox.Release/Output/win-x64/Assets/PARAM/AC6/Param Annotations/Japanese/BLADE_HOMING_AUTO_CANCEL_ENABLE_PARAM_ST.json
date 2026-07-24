@@ -1,0 +1,48 @@
+{
+  "Param": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
+  "Type": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
+  "Name": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cancelAngDegR",
+      "Name": "追従中断条件：右角度[deg]",
+      "Description": "この角度以上で中断。"
+    },
+    {
+      "Field": "cancelAngDegL",
+      "Name": "追従中断条件：左角度[deg]",
+      "Description": "この角度以上で中断。"
+    },
+    {
+      "Field": "cancelAngDegU",
+      "Name": "追従中断条件：上角度[deg]",
+      "Description": "水平基準"
+    },
+    {
+      "Field": "cancelAngDegD",
+      "Name": "追従中断条件：下角度[deg]",
+      "Description": "水平基準"
+    },
+    {
+      "Field": "cancelDist",
+      "Name": "追従中断条件：距離[m]",
+      "Description": "この距離以内で中断。-1で無限大＝距離では中断しない"
+    },
+    {
+      "Field": "nolockMinTimeSec",
+      "Name": "ノーロック時最低再生時間[s]",
+      "Description": "ノーロック時の最低ブレホ時間"
+    },
+    {
+      "Field": "outTargetDist",
+      "Name": "ブレードホーミング有効距離[m]",
+      "Description": "ターゲットがこの距離外時にはノーロック時の挙動。-1で常にロック時挙動"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予備",
+      "Description": ""
+    }
+  ]
+}

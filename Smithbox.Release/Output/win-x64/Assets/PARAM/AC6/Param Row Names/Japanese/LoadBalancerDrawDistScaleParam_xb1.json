@@ -1,0 +1,281 @@
+{
+  "Name": "LoadBalancerDrawDistScaleParam_xb1",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[LOD distance scale] Map/Obj small -- [LOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Medium -- [LOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[LOD distance scale] Map/Obj large -- [LOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[LOD distance scale] Map/Obj extra large -- [LOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[LOD distance scale] Chr small -- [LOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[LOD distance scale] Chr Medium -- [LOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[LOD distance scale] Chr large -- [LOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[LOD distance scale] Chr extra large -- [LOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[LOD distance scale] Local player -- [LOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[LOD distance scale] Remote player -- [LOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[LOD distance scale] Illusion -- [LOD距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Texture LOD distance scale] Map/Obj small -- [テクスチャLOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Medium -- [テクスチャLOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Texture LOD distance scale] Map/Obj large -- [テクスチャLOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Extra Large -- [テクスチャLOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Texture LOD distance scale] Chr small -- [テクスチャLOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Medium -- [テクスチャLOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Texture LOD distance scale] Chr large -- [テクスチャLOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Extra Large -- [テクスチャLOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Texture LOD distance scale] Local player -- [テクスチャLOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[Texture LOD distance scale] Remote player -- [テクスチャLOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Texture LOD Distance Scale] Illusion -- [テクスチャLOD距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj small -- [描画距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj medium -- [描画距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj large -- [描画距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj extra large -- [描画距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "[Drawing distance scale] Chr large -- [描画距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[Drawing distance scale] Chr extra large -- [描画距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "[Shadow drawing distance scale] Map/Obj large -- [影描画距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "[Shadow drawing distance scale] Map/Obj extra large -- [影描画距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr large -- [影描画距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "[Shadow drawing distance scale] Chr extra large -- [影描画距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Motion blur effective distance scale] Map/Obj small -- [モーションブラー有効距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Motion blur effective distance scale] Map/Obj Medium -- [モーションブラー有効距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Motion blur effective distance scale] Map/Obj large -- [モーションブラー有効距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "[Motion blur effective distance scale] Map/Obj extra large -- [モーションブラー有効距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr small -- [モーションブラー有効距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr Medium -- [モーションブラー有効距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr large -- [モーションブラー有効距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "[Motion blur effective distance scale] Chr extra large -- [モーションブラー有効距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "[Motion blur effective distance scale] Local player -- [モーションブラー有効距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "[Motion blur effective distance scale] Remote player -- [モーションブラー有効距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Motion blur effective distance scale] Illusion -- [モーションブラー有効距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "grass drawing distance scale -- 草描画距離スケール"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj small (m50_00_00_00) -- [描画距離スケール] Map/Obj 小 (m50_00_00_00 )"
+      ]
+    },
+    {
+      "ID": 50000201,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj medium (m50_00_00_00) -- [描画距離スケール] Map/Obj 中 (m50_00_00_00 )"
+      ]
+    }
+  ]
+}

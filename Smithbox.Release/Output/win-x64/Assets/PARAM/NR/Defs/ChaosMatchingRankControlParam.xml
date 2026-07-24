@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CHAOS_MATCHING_RANK_CONTROL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <!-- FirstVersion="10200000" -->
+  <Fields>
+    <Field Def="u8 cursedUncommonRate"/>
+    <Field Def="u8 cursedRareRate"/>
+    <Field Def="u8 mapChallengeWeight_Map"/>
+    <Field Def="u8 mapChallengeWeight_Nightlord"/>
+    <Field Def="u8 mapChallengeWeight_None"/>
+    <Field Def="u8 cataclysmWeight_0"/>
+    <Field Def="u8 cataclysmWeight_1"/>
+    <Field Def="u8 cataclysmWeight_2"/>
+    
+    <Field Def="dummy8 endPadding[4]"/>
+  </Fields>
+</PARAMDEF>

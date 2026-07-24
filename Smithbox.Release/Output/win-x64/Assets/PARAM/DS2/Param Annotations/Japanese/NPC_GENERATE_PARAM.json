@@ -1,0 +1,133 @@
+{
+  "Param": "NPC_GENERATE_PARAM",
+  "Type": "NPC_GENERATE_PARAM",
+  "Name": "NPC_GENERATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "chrId",
+      "Name": "キャラクターID",
+      "Description": ""
+    },
+    {
+      "Field": "gender",
+      "Name": "性別",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleType",
+      "Name": "体型タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "deceased",
+      "Name": "生者亡者",
+      "Description": ""
+    },
+    {
+      "Field": "equipType",
+      "Name": "装備タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "faceType",
+      "Name": "顔タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "skinNo",
+      "Name": "肌番号",
+      "Description": ""
+    },
+    {
+      "Field": "facePresetNo",
+      "Name": "FG顔プリセット番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "skinR",
+      "Name": "肌Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "skinG",
+      "Name": "肌Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "skinB",
+      "Name": "肌Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "faceId",
+      "Name": "顔ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdL1",
+      "Name": "左手武器１",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdL2",
+      "Name": "左手武器２",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdL3",
+      "Name": "左手武器３",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdR1",
+      "Name": "右手武器１",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdR2",
+      "Name": "右手武器２",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponIdR3",
+      "Name": "右手武器３",
+      "Description": ""
+    },
+    {
+      "Field": "equipHeadId",
+      "Name": "兜",
+      "Description": ""
+    },
+    {
+      "Field": "equipBodyId",
+      "Name": "鎧",
+      "Description": ""
+    },
+    {
+      "Field": "equipArmId",
+      "Name": "篭手",
+      "Description": ""
+    },
+    {
+      "Field": "equipLegId",
+      "Name": "脚絆",
+      "Description": ""
+    },
+    {
+      "Field": "equipQuiverId",
+      "Name": "矢筒",
+      "Description": ""
+    },
+    {
+      "Field": "equipArrowId",
+      "Name": "矢",
+      "Description": ""
+    }
+  ]
+}

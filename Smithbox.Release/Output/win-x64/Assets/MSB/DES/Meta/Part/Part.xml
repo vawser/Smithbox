@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a part within the map." />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of the part." />
+    
+    <ModelName
+    AltName="Model Name"
+    Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
+    ModelNameLink="" />
+    
+    <ModelIndex
+    IndexProperty="" />
+    
+    <SibPath
+    AltName="Model Placeholder Path"
+    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+    <Scale
+    AltName="Scale"
+    Wiki="Scale of the map object, only meaningful for map pieces and objects."
+    ScaleProperty="" />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
+    
+    <LightID
+    AltName="Light ID"
+    Wiki="The light parameters to use when this map object is touched by the player." 
+    ParamRef="LightBank" 
+    SpecialHandling="BankParam" />
+    
+    <FogID
+    AltName="Fog ID"
+    Wiki="The fog parameters to use when this map object is touched by the player." 
+    ParamRef="FogBank" 
+    SpecialHandling="BankParam" />
+    
+    <ScatterID
+    AltName="Light Scattering ID"
+    Wiki="The light scattering parameters to use when this map object is touched by the player." 
+    ParamRef="LightScatteringBank" 
+    SpecialHandling="BankParam" />
+    
+    <LensFlareID
+    AltName="Lens Flare ID"
+    Wiki="The lensflare parameters to use when this map object is touched by the player." 
+    ParamRef="LensFlareBank" 
+    SpecialHandling="BankParam" />
+    
+    <ShadowID
+    AltName="Shadow ID"
+    Wiki="The shadow parameters to use when this map object is touched by the player." 
+    ParamRef="ShadowBank" 
+    SpecialHandling="BankParam" />
+    
+    <DofID
+    AltName="Depth of Field ID"
+    Wiki="The depth of field parameters to use when this map object is touched by the player." 
+    ParamRef="DofBank" 
+    SpecialHandling="BankParam" />
+    
+    <ToneMapID
+    AltName="Tone Map ID"
+    Wiki="The tone map parameters to use when this map object is touched by the player." 
+    ParamRef="ToneMapBank" 
+    SpecialHandling="BankParam" />
+    
+    <ToneCorrectID
+    AltName="Tone Map Correction ID"
+    Wiki="The tone map correction parameters to use when this map object is touched by the player." 
+    ParamRef="ToneCorrectBank" 
+    SpecialHandling="BankParam" />
+    
+    <LanternID
+    AltName="Lantern ID"
+    Wiki="The light parameters to use for the lantern when this map object is touched by the player." 
+    ParamRef="LightBank" 
+    SpecialHandling="BankParam" />
+    
+    <LodParamID
+    AltName="LOD Param ID"
+    Wiki=""  />
+    
+    <IsShadowSrc
+    AltName="Is Shadow Source"
+    Wiki="Is this map object to be considered a shadow source." 
+    IsBool="" />
+    
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="Is this map object to be considered a shadow destination." 
+    IsBool="" />
+    
+    <IsShadowOnly
+    AltName="Is Shadow only"
+    Wiki="Is this map object only rendered when calculating the shadow pass." 
+    IsBool="" />
+    
+    <UnkE10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkE11
+    AltName="Unknown: 0x11"
+    Wiki="" />
+    
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="Is this map object drawn by the reflection camera." 
+    IsBool="" />
+    
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="Is this map object only drawn within the reflection camera." 
+    IsBool="" />
+    
+    <UseDepthBiasFloat
+    AltName="Use Depth Bias Float"
+    Wiki="" 
+    IsBool="" />
+    
+    <DisablePointLightEffect
+    AltName="Disable Point Light Effect"
+    Wiki="" 
+    IsBool="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

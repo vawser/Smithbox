@@ -1,0 +1,13 @@
+{
+  "Param": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
+  "Type": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
+  "Name": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk_00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

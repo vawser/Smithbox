@@ -1,0 +1,63 @@
+{
+  "Param": "CUSTOM_ATTR_SPEC_PARAM",
+  "Type": "CUSTOM_ATTR_SPEC_PARAM",
+  "Name": "CUSTOM_ATTR_SPEC_PARAM",
+  "Description": "Defines the available custom weapon attribute types and infusion categories.",
+  "Fields": [
+    {
+      "Field": "physical",
+      "Name": "Physical",
+      "Description": "Standard physical attribute or infusion type."
+    },
+    {
+      "Field": "fire",
+      "Name": "Fire",
+      "Description": "Fire elemental attribute or infusion type."
+    },
+    {
+      "Field": "magic",
+      "Name": "Magic",
+      "Description": "Magic elemental attribute or infusion type."
+    },
+    {
+      "Field": "thunder",
+      "Name": "Lightning",
+      "Description": "Lightning/thunder elemental attribute or infusion type."
+    },
+    {
+      "Field": "dark",
+      "Name": "Dark",
+      "Description": "Dark elemental attribute or infusion type."
+    },
+    {
+      "Field": "poison",
+      "Name": "Poison",
+      "Description": "Poison status attribute or infusion type."
+    },
+    {
+      "Field": "bleed",
+      "Name": "Bleed",
+      "Description": "Bleed status attribute or infusion type."
+    },
+    {
+      "Field": "physicalByCrude",
+      "Name": "Raw",
+      "Description": "Raw variant of the physical infusion type."
+    },
+    {
+      "Field": "physicalByEnchanted",
+      "Name": "Enchanted",
+      "Description": "Enchanted variant of the physical infusion type."
+    },
+    {
+      "Field": "physicalByAbyss",
+      "Name": "Mundane",
+      "Description": "Mundane variant of the physical infusion type."
+    },
+    {
+      "Field": "padding",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

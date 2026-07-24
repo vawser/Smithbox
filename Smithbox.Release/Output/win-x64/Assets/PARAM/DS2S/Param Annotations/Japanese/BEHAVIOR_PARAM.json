@@ -1,0 +1,1258 @@
+{
+  "Param": "BEHAVIOR_PARAM",
+  "Type": "BEHAVIOR_PARAM",
+  "Name": "BEHAVIOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "action0DamageId00",
+      "Name": "《行動0 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action0DamageId01",
+      "Name": "《行動0 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action0DamageId02",
+      "Name": "《行動0 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action0GrabDamageId00",
+      "Name": "《行動0 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action0GrabDamageId01",
+      "Name": "《行動0 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action0GrabDamageId02",
+      "Name": "《行動0 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action0AttackWalkMoveAttack",
+      "Name": "《行動0 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action0AttackInvincible",
+      "Name": "《行動0 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action0HandType",
+      "Name": "《行動0 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action0IsSpell",
+      "Name": "《行動0 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action0BladeCtrlType",
+      "Name": "《行動0 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action0BulletId00",
+      "Name": "《行動0 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action0BulletId01",
+      "Name": "《行動0 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action0BulletId02",
+      "Name": "《行動0 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action0ShotStanceTime",
+      "Name": "《行動0 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action0AttackRange",
+      "Name": "《行動0 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackBackSwingSpeed",
+      "Name": "《行動0 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackFollowSwingSpeed",
+      "Name": "《行動0 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackEstimateFutureTime",
+      "Name": "《行動0 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackAngle",
+      "Name": "《行動0 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackRotateHigh",
+      "Name": "《行動0 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction0AttackRotateLow",
+      "Name": "《行動0 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action0ChantSfx",
+      "Name": "《行動0 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action0ReloadTimeMin",
+      "Name": "《行動0 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action0ReloadTimeMax",
+      "Name": "《行動0 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action1DamageId00",
+      "Name": "《行動1 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action1DamageId01",
+      "Name": "《行動1 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action1DamageId02",
+      "Name": "《行動1 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action1GrabDamageId00",
+      "Name": "《行動1 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action1GrabDamageId01",
+      "Name": "《行動1 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action1GrabDamageId02",
+      "Name": "《行動1 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action1AttackWalkMoveAttack",
+      "Name": "《行動1 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action1AttackInvincible",
+      "Name": "《行動1 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action1HandType",
+      "Name": "《行動1 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action1IsSpell",
+      "Name": "《行動1 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action1BladeCtrlType",
+      "Name": "《行動1 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action1BulletId00",
+      "Name": "《行動1 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action1BulletId01",
+      "Name": "《行動1 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action1BulletId02",
+      "Name": "《行動1 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action1ShotStanceTime",
+      "Name": "《行動1 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action1AttackRange",
+      "Name": "《行動1 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackBackSwingSpeed",
+      "Name": "《行動1 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackFollowSwingSpeed",
+      "Name": "《行動1 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackEstimateFutureTime",
+      "Name": "《行動1 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackAngle",
+      "Name": "《行動1 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackRotateHigh",
+      "Name": "《行動1 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction1AttackRotateLow",
+      "Name": "《行動1 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action1ChantSfx",
+      "Name": "《行動1 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action1ReloadTimeMin",
+      "Name": "《行動1 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action1ReloadTimeMax",
+      "Name": "《行動1 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action2DamageId00",
+      "Name": "《行動2 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action2DamageId01",
+      "Name": "《行動2 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action2DamageId02",
+      "Name": "《行動2 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action2GrabDamageId00",
+      "Name": "《行動2 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action2GrabDamageId01",
+      "Name": "《行動2 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action2GrabDamageId02",
+      "Name": "《行動2 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action2AttackWalkMoveAttack",
+      "Name": "《行動2 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action2AttackInvincible",
+      "Name": "《行動2 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action2HandType",
+      "Name": "《行動2 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action2IsSpell",
+      "Name": "《行動2 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action2BladeCtrlType",
+      "Name": "《行動2 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action2BulletId00",
+      "Name": "《行動2 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action2BulletId01",
+      "Name": "《行動2 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action2BulletId02",
+      "Name": "《行動2 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action2ShotStanceTime",
+      "Name": "《行動2 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action2AttackRange",
+      "Name": "《行動2 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackBackSwingSpeed",
+      "Name": "《行動2 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackFollowSwingSpeed",
+      "Name": "《行動2 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackEstimateFutureTime",
+      "Name": "《行動2 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackAngle",
+      "Name": "《行動2 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackRotateHigh",
+      "Name": "《行動2 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction2AttackRotateLow",
+      "Name": "《行動2 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action2ChantSfx",
+      "Name": "《行動2 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action2ReloadTimeMin",
+      "Name": "《行動2 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action2ReloadTimeMax",
+      "Name": "《行動2 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action3DamageId00",
+      "Name": "《行動3 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action3DamageId01",
+      "Name": "《行動3 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action3DamageId02",
+      "Name": "《行動3 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action3GrabDamageId00",
+      "Name": "《行動3 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action3GrabDamageId01",
+      "Name": "《行動3 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action3GrabDamageId02",
+      "Name": "《行動3 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action3AttackWalkMoveAttack",
+      "Name": "《行動3 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action3AttackInvincible",
+      "Name": "《行動3 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action3HandType",
+      "Name": "《行動3 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action3IsSpell",
+      "Name": "《行動3 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action3BladeCtrlType",
+      "Name": "《行動3 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action3BulletId00",
+      "Name": "《行動3 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action3BulletId01",
+      "Name": "《行動3 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action3BulletId02",
+      "Name": "《行動3 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action3ShotStanceTime",
+      "Name": "《行動3 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action3AttackRange",
+      "Name": "《行動3 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackBackSwingSpeed",
+      "Name": "《行動3 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackFollowSwingSpeed",
+      "Name": "《行動3 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackEstimateFutureTime",
+      "Name": "《行動3 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackAngle",
+      "Name": "《行動3 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackRotateHigh",
+      "Name": "《行動3 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction3AttackRotateLow",
+      "Name": "《行動3 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action3ChantSfx",
+      "Name": "《行動3 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action3ReloadTimeMin",
+      "Name": "《行動3 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action3ReloadTimeMax",
+      "Name": "《行動3 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action4DamageId00",
+      "Name": "《行動4 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action4DamageId01",
+      "Name": "《行動4 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action4DamageId02",
+      "Name": "《行動4 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action4GrabDamageId00",
+      "Name": "《行動4 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action4GrabDamageId01",
+      "Name": "《行動4 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action4GrabDamageId02",
+      "Name": "《行動4 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action4AttackWalkMoveAttack",
+      "Name": "《行動4 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action4AttackInvincible",
+      "Name": "《行動4 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action4HandType",
+      "Name": "《行動4 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action4IsSpell",
+      "Name": "《行動4 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action4BladeCtrlType",
+      "Name": "《行動4 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action4BulletId00",
+      "Name": "《行動4 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action4BulletId01",
+      "Name": "《行動4 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action4BulletId02",
+      "Name": "《行動4 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action4ShotStanceTime",
+      "Name": "《行動4 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action4AttackRange",
+      "Name": "《行動4 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackBackSwingSpeed",
+      "Name": "《行動4 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackFollowSwingSpeed",
+      "Name": "《行動4 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackEstimateFutureTime",
+      "Name": "《行動4 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackAngle",
+      "Name": "《行動4 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackRotateHigh",
+      "Name": "《行動4 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction4AttackRotateLow",
+      "Name": "《行動4 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action4ChantSfx",
+      "Name": "《行動4 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action4ReloadTimeMin",
+      "Name": "《行動4 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action4ReloadTimeMax",
+      "Name": "《行動4 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action5DamageId00",
+      "Name": "《行動5 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action5DamageId01",
+      "Name": "《行動5 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action5DamageId02",
+      "Name": "《行動5 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action5GrabDamageId00",
+      "Name": "《行動5 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action5GrabDamageId01",
+      "Name": "《行動5 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action5GrabDamageId02",
+      "Name": "《行動5 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action5AttackWalkMoveAttack",
+      "Name": "《行動5 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action5AttackInvincible",
+      "Name": "《行動5 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action5HandType",
+      "Name": "《行動5 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action5IsSpell",
+      "Name": "《行動5 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action5BladeCtrlType",
+      "Name": "《行動5 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action5BulletId00",
+      "Name": "《行動5 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action5BulletId01",
+      "Name": "《行動5 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action5BulletId02",
+      "Name": "《行動5 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action5ShotStanceTime",
+      "Name": "《行動5 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action5AttackRange",
+      "Name": "《行動5 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackBackSwingSpeed",
+      "Name": "《行動5 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackFollowSwingSpeed",
+      "Name": "《行動5 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackEstimateFutureTime",
+      "Name": "《行動5 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackAngle",
+      "Name": "《行動5 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackRotateHigh",
+      "Name": "《行動5 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction5AttackRotateLow",
+      "Name": "《行動5 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action5ChantSfx",
+      "Name": "《行動5 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action5ReloadTimeMin",
+      "Name": "《行動5 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action5ReloadTimeMax",
+      "Name": "《行動5 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action6DamageId00",
+      "Name": "《行動6 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action6DamageId01",
+      "Name": "《行動6 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action6DamageId02",
+      "Name": "《行動6 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action6GrabDamageId00",
+      "Name": "《行動6 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action6GrabDamageId01",
+      "Name": "《行動6 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action6GrabDamageId02",
+      "Name": "《行動6 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action6AttackWalkMoveAttack",
+      "Name": "《行動6 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action6AttackInvincible",
+      "Name": "《行動6 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action6HandType",
+      "Name": "《行動6 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action6IsSpell",
+      "Name": "《行動6 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action6BladeCtrlType",
+      "Name": "《行動6 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action6BulletId00",
+      "Name": "《行動6 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action6BulletId01",
+      "Name": "《行動6 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action6BulletId02",
+      "Name": "《行動6 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action6ShotStanceTime",
+      "Name": "《行動6 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action6AttackRange",
+      "Name": "《行動6 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackBackSwingSpeed",
+      "Name": "《行動6 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackFollowSwingSpeed",
+      "Name": "《行動6 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackEstimateFutureTime",
+      "Name": "《行動6 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackAngle",
+      "Name": "《行動6 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackRotateHigh",
+      "Name": "《行動6 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction6AttackRotateLow",
+      "Name": "《行動6 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action6ChantSfx",
+      "Name": "《行動6 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action6ReloadTimeMin",
+      "Name": "《行動6 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action6ReloadTimeMax",
+      "Name": "《行動6 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action7DamageId00",
+      "Name": "《行動7 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action7DamageId01",
+      "Name": "《行動7 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action7DamageId02",
+      "Name": "《行動7 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action7GrabDamageId00",
+      "Name": "《行動7 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action7GrabDamageId01",
+      "Name": "《行動7 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action7GrabDamageId02",
+      "Name": "《行動7 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action7AttackWalkMoveAttack",
+      "Name": "《行動7 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action7AttackInvincible",
+      "Name": "《行動7 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action7HandType",
+      "Name": "《行動7 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action7IsSpell",
+      "Name": "《行動7 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action7BladeCtrlType",
+      "Name": "《行動7 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action7BulletId00",
+      "Name": "《行動7 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action7BulletId01",
+      "Name": "《行動7 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action7BulletId02",
+      "Name": "《行動7 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action7ShotStanceTime",
+      "Name": "《行動7 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action7AttackRange",
+      "Name": "《行動7 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackBackSwingSpeed",
+      "Name": "《行動7 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackFollowSwingSpeed",
+      "Name": "《行動7 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackEstimateFutureTime",
+      "Name": "《行動7 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackAngle",
+      "Name": "《行動7 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackRotateHigh",
+      "Name": "《行動7 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction7AttackRotateLow",
+      "Name": "《行動7 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action7ChantSfx",
+      "Name": "《行動7 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action7ReloadTimeMin",
+      "Name": "《行動7 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action7ReloadTimeMax",
+      "Name": "《行動7 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action8DamageId00",
+      "Name": "《行動8 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action8DamageId01",
+      "Name": "《行動8 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action8DamageId02",
+      "Name": "《行動8 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action8GrabDamageId00",
+      "Name": "《行動8 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action8GrabDamageId01",
+      "Name": "《行動8 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action8GrabDamageId02",
+      "Name": "《行動8 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action8AttackWalkMoveAttack",
+      "Name": "《行動8 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action8AttackInvincible",
+      "Name": "《行動8 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action8HandType",
+      "Name": "《行動8 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action8IsSpell",
+      "Name": "《行動8 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action8BladeCtrlType",
+      "Name": "《行動8 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action8BulletId00",
+      "Name": "《行動8 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action8BulletId01",
+      "Name": "《行動8 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action8BulletId02",
+      "Name": "《行動8 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action8ShotStanceTime",
+      "Name": "《行動8 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action8AttackRange",
+      "Name": "《行動8 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackBackSwingSpeed",
+      "Name": "《行動8 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackFollowSwingSpeed",
+      "Name": "《行動8 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackEstimateFutureTime",
+      "Name": "《行動8 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackAngle",
+      "Name": "《行動8 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackRotateHigh",
+      "Name": "《行動8 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction8AttackRotateLow",
+      "Name": "《行動8 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action8ChantSfx",
+      "Name": "《行動8 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action8ReloadTimeMin",
+      "Name": "《行動8 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action8ReloadTimeMax",
+      "Name": "《行動8 最大リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action9DamageId00",
+      "Name": "《行動9 ダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action9DamageId01",
+      "Name": "《行動9 ダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action9DamageId02",
+      "Name": "《行動9 ダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action9GrabDamageId00",
+      "Name": "《行動9 投げダメージID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action9GrabDamageId01",
+      "Name": "《行動9 投げダメージID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action9GrabDamageId02",
+      "Name": "《行動9 投げダメージID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action9AttackWalkMoveAttack",
+      "Name": "《行動9 歩行攻撃ID》",
+      "Description": ""
+    },
+    {
+      "Field": "action9AttackInvincible",
+      "Name": "《行動9 割り込み不可タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action9HandType",
+      "Name": "《行動9 攻撃手》",
+      "Description": ""
+    },
+    {
+      "Field": "action9IsSpell",
+      "Name": "《行動9 スペルフラグ》",
+      "Description": ""
+    },
+    {
+      "Field": "action9BladeCtrlType",
+      "Name": "《行動9 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "action9BulletId00",
+      "Name": "《行動9 BulletID_1》",
+      "Description": ""
+    },
+    {
+      "Field": "action9BulletId01",
+      "Name": "《行動9 BulletID_2》",
+      "Description": ""
+    },
+    {
+      "Field": "action9BulletId02",
+      "Name": "《行動9 BulletID_3》",
+      "Description": ""
+    },
+    {
+      "Field": "action9ShotStanceTime",
+      "Name": "《行動9 射撃構え時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action9AttackRange",
+      "Name": "《行動9 歩行攻撃攻撃範囲》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackBackSwingSpeed",
+      "Name": "《行動9 攻撃開始部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackFollowSwingSpeed",
+      "Name": "《行動9 攻撃終了部速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackEstimateFutureTime",
+      "Name": "《行動9 位置予測時間》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackAngle",
+      "Name": "《行動9 角度補正[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackRotateHigh",
+      "Name": "《行動9 旋回補間開始距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fAction9AttackRotateLow",
+      "Name": "《行動9 旋回補間終了距離[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "action9ChantSfx",
+      "Name": "《行動9 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "action9ReloadTimeMin",
+      "Name": "《行動9 最小リロード時間》",
+      "Description": ""
+    },
+    {
+      "Field": "action9ReloadTimeMax",
+      "Name": "《行動9 最大リロード時間》",
+      "Description": ""
+    }
+  ]
+}

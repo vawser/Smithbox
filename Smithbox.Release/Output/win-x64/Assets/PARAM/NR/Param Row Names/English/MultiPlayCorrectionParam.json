@@ -1,0 +1,491 @@
+{
+  "Name": "MultiPlayCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7701,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7702,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7703,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7704,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7705,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7706,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7707,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7708,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7709,
+      "Entries": [
+        "Minimal Threat"
+      ]
+    },
+    {
+      "ID": 7710,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7711,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7712,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7713,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7714,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7715,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7716,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7717,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7718,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7719,
+      "Entries": [
+        "Small Threat"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7721,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7722,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7723,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7724,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7725,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7726,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7727,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7728,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7729,
+      "Entries": [
+        "Medium Threat"
+      ]
+    },
+    {
+      "ID": 7730,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7731,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7732,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7733,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7734,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7735,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7736,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7737,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7738,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7739,
+      "Entries": [
+        "Large Threat"
+      ]
+    },
+    {
+      "ID": 7740,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7741,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7742,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7743,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7744,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7745,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7746,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7747,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7748,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7749,
+      "Entries": [
+        "Field Boss Threat"
+      ]
+    },
+    {
+      "ID": 7750,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7751,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7752,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7753,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7754,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7755,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7756,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7757,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7758,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7759,
+      "Entries": [
+        "Night Boss Threat"
+      ]
+    },
+    {
+      "ID": 7760,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7761,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7762,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7763,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7764,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7765,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7766,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7767,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7768,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7769,
+      "Entries": [
+        "Final Boss Threat"
+      ]
+    },
+    {
+      "ID": 7770,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7771,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7772,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7773,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7774,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7775,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7776,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7777,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7778,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    },
+    {
+      "ID": 7779,
+      "Entries": [
+        "Spirit Creatures"
+      ]
+    }
+  ]
+}

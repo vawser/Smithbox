@@ -1,0 +1,43 @@
+{
+  "Param": "MENU_TUTORIAL_PARAM_ST",
+  "Type": "MENU_TUTORIAL_PARAM_ST",
+  "Name": "MENU_TUTORIAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "viewType",
+      "Name": "表示タイミング",
+      "Description": "タブを開いたタイミングで表示する"
+    },
+    {
+      "Field": "beginEventFlagId",
+      "Name": "起動イベントフラグ",
+      "Description": "起動するイベントフラグ"
+    },
+    {
+      "Field": "endEventFlagId",
+      "Name": "終了イベントフラグ",
+      "Description": "終了するイベントフラグ"
+    },
+    {
+      "Field": "titleMessageId",
+      "Name": "タイトルメッセージＩＤ",
+      "Description": "タイトルメッセージのテキストID"
+    },
+    {
+      "Field": "descMessageId",
+      "Name": "説明メッセージＩＤ",
+      "Description": "説明メッセージのテキストＩＤ"
+    },
+    {
+      "Field": "textureId",
+      "Name": "テクスチャーＩＤ",
+      "Description": "テクスチャのＩＤ"
+    },
+    {
+      "Field": "pad",
+      "Name": "padding",
+      "Description": "padding"
+    }
+  ]
+}

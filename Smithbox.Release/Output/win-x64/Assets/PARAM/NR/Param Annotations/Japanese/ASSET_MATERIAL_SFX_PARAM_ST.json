@@ -1,0 +1,168 @@
+{
+  "Param": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Type": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Name": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "SFX識別子：00",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "SFX識別子：01",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "SFX識別子：02",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "SFX識別子：03",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "SFX識別子：04",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "SFX識別子：05",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "SFX識別子：06",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "SFX識別子：07",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "SFX識別子：08",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "SFX識別子：09",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "SFX識別子：10",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "SFX識別子：11",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "SFX識別子：12",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "SFX識別子：13",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "SFX識別子：14",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "SFX識別子：15",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "SFX識別子：16",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "SFX識別子：17",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "SFX識別子：18",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "SFX識別子：19",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "SFX識別子：20",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "SFX識別子：21",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "SFX識別子：22",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "SFX識別子：23",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "SFX識別子：24",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "SFX識別子：25",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "SFX識別子：26",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "SFX識別子：27",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "SFX識別子：28",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "SFX識別子：29",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "SFX識別子：30",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    },
+    {
+      "Field": "sfxId_31",
+      "Name": "SFX識別子：31",
+      "Description": "アセットパラメータの「破壊後着地SFX識別子」に対応する、SFX識別子"
+    }
+  ]
+}

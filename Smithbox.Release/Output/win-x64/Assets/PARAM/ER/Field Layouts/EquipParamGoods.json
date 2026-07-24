@@ -1,0 +1,217 @@
+{
+  "Name": "EquipParamGoods",
+  "Groups": [
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "sortGroupId",
+        "iconId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "maxNum",
+        "maxRepositoryNum",
+        "potGroupId",
+        "weight",
+        "consumeMP",
+        "consumeHP",
+        "consumeHeroPoint",
+        "goodsUseAnim",
+        "goodsType",
+        "quickMatchUseRestriction",
+        "opmeMenuType",
+        "useLimitCategory",
+        "replaceCategory",
+        "suppleType",
+        "autoReplenishType",
+        "useEnableSpEffectType",
+        "useLimitSpEffectType",
+        "behaviorId",
+        "syncNumVaryId",
+        "yesNoDialogMessageId",
+        "replaceItemId",
+        "appearanceReplaceItemId"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "rarity",
+        "sellValue",
+        "basicPrice",
+        "saleValue"
+      ]
+    },
+    {
+      "Key": "Visual Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visual Effects"
+        }
+      ],
+      "Fields": [
+        "castSfxId",
+        "fireSfxId",
+        "effectSfxId",
+        "sfxVariationId"
+      ]
+    },
+    {
+      "Key": "Reference List",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reference List"
+        }
+      ],
+      "Fields": [
+        "refCategory",
+        "refId_default",
+        "refId_1",
+        "refVirtualWepId",
+        "aiUseJudgeId"
+      ]
+    },
+    {
+      "Key": "Reinforcement",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reinforcement"
+        }
+      ],
+      "Fields": [
+        "reinforceGoodsId",
+        "reinforceMaterialId",
+        "reinforcePrice",
+        "useLimitSummonBuddy"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "isConsume",
+        "isAutoEquip",
+        "isEstablishment",
+        "isOnlyOne",
+        "isSuppleItem",
+        "isFullSuppleItem",
+        "isAshenEstusFlask",
+        "isEnhance",
+        "isEnableFastUseItem",
+        "isBonfireWarpItem",
+        "isShieldEnchant",
+        "isWarpProhibited",
+        "enable_ActiveEmber",
+        "enable_Ladder",
+        "isUseMultiPlayPreparation",
+        "canMultiUse",
+        "isUseMultiPenaltyOnly",
+        "enable_ActiveBigRune",
+        "isSleepCol",
+        "isUseNoAttackRegion",
+        "quickMatchReplenish-",
+        "isSummonHorse",
+        "enableRiding",
+        "disableRiding",
+        "isEquip",
+        "isDrop",
+        "isDiscard",
+        "isDeposit",
+        "isFixItem",
+        "isDisableHand",
+        "isRemoveItem_forGameClear",
+        "isApplySpecialEffect"
+      ]
+    },
+    {
+      "Key": "Usage Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Usage Options"
+        }
+      ],
+      "Fields": [
+        "enable_live",
+        "enable_gray",
+        "enable_friendly",
+        "enable_hostile",
+        "enable_multi",
+        "disable_offline",
+        "disableUseAtColiseum",
+        "disableUseAtOutOfColiseum",
+        "disableMultiDropShare"
+      ]
+    },
+    {
+      "Key": "Log",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Log"
+        }
+      ],
+      "Fields": [
+        "showLogCondType",
+        "showDialogCondType"
+      ]
+    },
+    {
+      "Key": "Use Level",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Use Level"
+        }
+      ],
+      "Fields": [
+        "useLevel",
+        "useLevel_vowType0",
+        "useLevel_vowType1",
+        "useLevel_vowType2",
+        "useLevel_vowType3",
+        "useLevel_vowType4",
+        "useLevel_vowType5",
+        "useLevel_vowType6",
+        "useLevel_vowType7",
+        "useLevel_vowType8",
+        "useLevel_vowType9",
+        "useLevel_vowType10",
+        "useLevel_vowType11",
+        "useLevel_vowType12",
+        "useLevel_vowType13",
+        "useLevel_vowType14",
+        "useLevel_vowType15"
+      ]
+    }
+  ]
+}

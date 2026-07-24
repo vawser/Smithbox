@@ -1,0 +1,53 @@
+{
+  "Param": "TANK_WHEEL_PARAM",
+  "Type": "TANK_WHEEL_PARAM",
+  "Name": "TANK_WHEEL_PARAM",
+  "Description": "Defines parameters relaed to tank wheels.",
+  "Fields": [
+    {
+      "Field": "AttachPos_X",
+      "Name": "Attachment Position (X)",
+      "Description": "X-axis wheel attachment position, in meters"
+    },
+    {
+      "Field": "AttachPos_Y",
+      "Name": "Attachment Position (Y)",
+      "Description": "Y-axis wheel attachment position, in meters"
+    },
+    {
+      "Field": "AttachPos_Z",
+      "Name": "Attachment Position (Z)",
+      "Description": "Z-axis wheel attachment position, in meters"
+    },
+    {
+      "Field": "radius",
+      "Name": "Wheel Radius",
+      "Description": "Radius of the wheel, in meters"
+    },
+    {
+      "Field": "suspensionLength",
+      "Name": "Suspension Length",
+      "Description": "Length of the suspension, in meters"
+    },
+    {
+      "Field": "splingFactor",
+      "Name": "Spring Strength",
+      "Description": "Strength of the spring(s)"
+    },
+    {
+      "Field": "compressPow",
+      "Name": "Rebound Strength",
+      "Description": "Strength at which the spring attempts to return to its original length when compressed"
+    },
+    {
+      "Field": "relaxPow",
+      "Name": "Retraction Strength",
+      "Description": "Strength at which the spring attempts to return to its original length when stretched"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

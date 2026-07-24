@@ -1,0 +1,119 @@
+{
+  "Name": "MovementAcTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Default boost move_after"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Default boost movement_guarding"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Default (rise boost)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Default machine_water movement test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Propeller plane (proto) test"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Heaviest boost speed test"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Lightest boost speed test"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "TANK - LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "TANK - VE-42B"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "TANK - EL-TL-11 FORTALEZA"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "TETRAPOD - LG-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "TETRAPOD - VP-424"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "TETRAPOD - LAMMERGEIER/42F"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "REVERSE JOINT - KASUAR/42Z / 06-042 MIND BETA / RC-2000 SPRING CHICKEN"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Reverse joint aircraft_QB derived jump"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "for c900"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Horizontal movement speed during jump for c900"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Test AC: Brake ALL0"
+      ]
+    }
+  ]
+}

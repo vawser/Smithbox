@@ -1,0 +1,463 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST",
+  "Type": "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST",
+  "Name": "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "a000_rightArmFB",
+      "Name": "a000_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a000_rightArmIO",
+      "Name": "a000_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a000_rightWristFB",
+      "Name": "a000_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a000_rightWristIO",
+      "Name": "a000_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a000_rightWeaponRotation",
+      "Name": "a000_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftArmFB",
+      "Name": "a000_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftArmIO",
+      "Name": "a000_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftWristFB",
+      "Name": "a000_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftWristIO",
+      "Name": "a000_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftWeaponRotation",
+      "Name": "a000_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a002_rightArmFB",
+      "Name": "a002_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a002_rightArmIO",
+      "Name": "a002_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a002_rightWristFB",
+      "Name": "a002_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a002_rightWristIO",
+      "Name": "a002_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a002_rightWeaponRotation",
+      "Name": "a002_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftArmFB",
+      "Name": "a002_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftArmIO",
+      "Name": "a002_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftWristFB",
+      "Name": "a002_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftWristIO",
+      "Name": "a002_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftWeaponRotation",
+      "Name": "a002_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a003_rightArmFB",
+      "Name": "a003_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a003_rightArmIO",
+      "Name": "a003_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_rightWristFB",
+      "Name": "a003_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a003_rightWristIO",
+      "Name": "a003_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_rightWeaponRotation",
+      "Name": "a003_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftArmFB",
+      "Name": "a003_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftArmIO",
+      "Name": "a003_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWristFB",
+      "Name": "a003_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWristIO",
+      "Name": "a003_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWeaponRotation",
+      "Name": "a003_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a010_rightArmFB",
+      "Name": "a010_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a010_rightArmIO",
+      "Name": "a010_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a010_rightWristFB",
+      "Name": "a010_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a010_rightWristIO",
+      "Name": "a010_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a010_rightWeaponRotation",
+      "Name": "a010_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a010_leftArmFB",
+      "Name": "a010_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a010_leftArmIO",
+      "Name": "a010_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a010_leftWristFB",
+      "Name": "a010_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a010_leftWristIO",
+      "Name": "a010_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a010_leftWeaponRotation",
+      "Name": "a010_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a012_rightArmFB",
+      "Name": "a012_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a012_rightArmIO",
+      "Name": "a012_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a012_rightWristFB",
+      "Name": "a012_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a012_rightWristIO",
+      "Name": "a012_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a012_rightWeaponRotation",
+      "Name": "a012_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a012_leftArmFB",
+      "Name": "a012_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a012_leftArmIO",
+      "Name": "a012_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a012_leftWristFB",
+      "Name": "a012_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a012_leftWristIO",
+      "Name": "a012_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a012_leftWeaponRotation",
+      "Name": "a012_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a013_rightArmFB",
+      "Name": "a013_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a013_rightArmIO",
+      "Name": "a013_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a013_rightWristFB",
+      "Name": "a013_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a013_rightWristIO",
+      "Name": "a013_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a013_rightWeaponRotation",
+      "Name": "a013_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a013_leftArmFB",
+      "Name": "a013_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a013_leftArmIO",
+      "Name": "a013_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a013_leftWristFB",
+      "Name": "a013_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a013_leftWristIO",
+      "Name": "a013_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a013_leftWeaponRotation",
+      "Name": "a013_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a014_rightArmFB",
+      "Name": "a014_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a014_rightArmIO",
+      "Name": "a014_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a014_rightWristFB",
+      "Name": "a014_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a014_rightWristIO",
+      "Name": "a014_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a014_rightWeaponRotation",
+      "Name": "a014_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a014_leftArmFB",
+      "Name": "a014_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a014_leftArmIO",
+      "Name": "a014_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a014_leftWristFB",
+      "Name": "a014_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a014_leftWristIO",
+      "Name": "a014_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a014_leftWeaponRotation",
+      "Name": "a014_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a015_rightArmFB",
+      "Name": "a015_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a015_rightArmIO",
+      "Name": "a015_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a015_rightWristFB",
+      "Name": "a015_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a015_rightWristIO",
+      "Name": "a015_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a015_rightWeaponRotation",
+      "Name": "a015_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a015_leftArmFB",
+      "Name": "a015_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a015_leftArmIO",
+      "Name": "a015_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a015_leftWristFB",
+      "Name": "a015_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a015_leftWristIO",
+      "Name": "a015_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a015_leftWeaponRotation",
+      "Name": "a015_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a016_rightArmFB",
+      "Name": "a016_rightArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a016_rightArmIO",
+      "Name": "a016_rightArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a016_rightWristFB",
+      "Name": "a016_rightWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a016_rightWristIO",
+      "Name": "a016_rightWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a016_rightWeaponRotation",
+      "Name": "a016_rightWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "a016_leftArmFB",
+      "Name": "a016_leftArmFB",
+      "Description": ""
+    },
+    {
+      "Field": "a016_leftArmIO",
+      "Name": "a016_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a016_leftWristFB",
+      "Name": "a016_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a016_leftWristIO",
+      "Name": "a016_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a016_leftWeaponRotation",
+      "Name": "a016_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

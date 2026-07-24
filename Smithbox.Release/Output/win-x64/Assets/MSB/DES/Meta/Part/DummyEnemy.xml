@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+  
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <NPCParamID
+    AltName="NPC Param ID"
+    Wiki="The property parameters this character should use." 
+    ParamRef="NpcParam" />
+    
+    <TalkID
+    AltName="Talk Script ID"
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
+    
+    <PointMoveType
+    AltName="Point Move Type"
+    Wiki="" 
+    Enum="POINT_MOVE_TYPE" />
+    
+    <PlatoonID
+    AltName="Platoon Script ID"
+    Wiki="" />
+    
+    <CharaInitID
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    ParamRef="CharaInitParam" />
+    
+    <CollisionName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <CollisionIndex
+    IndexProperty="" />
+    
+    <MovePointNames
+    AltName="Move Point"
+    Wiki=""
+    MapRef="Region-Region" 
+    ArrayProperty="" />
+    
+    <MovePointIndices
+    IndexProperty="" />
+    
+    <InitAnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this enemy to idle with." />
+    
+    <DamageAnimID
+    AltName="Damage Animation ID"
+    Wiki="The animation ID this enemy uses upon being damaged." />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="POINT_MOVE_TYPE">
+        <Option Value="0" Name="Patrol" />
+        <Option Value="1" Name="Round Trip" />
+        <Option Value="2" Name="Random" />
+        <Option Value="3" Name="Flight: Air Patrol" />
+        <Option Value="4" Name="Flight: Landing" />
+        <Option Value="5" Name="Humanity" />
+    </Enum>
+  </Enums>
+</MSBMETA>

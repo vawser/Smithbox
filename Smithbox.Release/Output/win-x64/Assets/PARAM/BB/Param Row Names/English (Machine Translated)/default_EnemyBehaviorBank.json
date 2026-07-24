@@ -1,0 +1,137 @@
+{
+  "Name": "default_EnemyBehaviorBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do nothing"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Snake Soldier"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Snake soldier licking meat"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Snakebow Soldier (Outside the Fort 0000 )"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Snake Bow Soldier (Fort Yagura 0001 0002 )"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Snake Bow Soldier (Fort Bay Window) 0003 )"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Snake Bow Soldier (Lava Square)"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Proto Dragon Demon"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Crocodile"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Knight"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Covert"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Rotten Human"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Intern's Weak Enemy"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Normal enemies for interns"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Intern Boss Enemy"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Knight [temporary]"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Covert [temporary]"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Corrupted Person [provisional]"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Slug [temporary]"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Plague rats"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "Test map waiting enemies"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Prototype Fat Mid-Boss"
+      ]
+    }
+  ]
+}

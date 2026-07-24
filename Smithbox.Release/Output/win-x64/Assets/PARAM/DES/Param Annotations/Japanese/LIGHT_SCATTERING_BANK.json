@@ -1,0 +1,88 @@
+{
+  "Param": "LIGHT_SCATTERING_BANK",
+  "Type": "LIGHT_SCATTERING_BANK",
+  "Name": "LIGHT_SCATTERING_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sunRotX",
+      "Name": "X角度",
+      "Description": "光源"
+    },
+    {
+      "Field": "sunRotY",
+      "Name": "Ｙ角度",
+      "Description": "光源"
+    },
+    {
+      "Field": "distanceMul",
+      "Name": "距離倍率[％]",
+      "Description": "距離倍率[%](0～1000)"
+    },
+    {
+      "Field": "inscatteringMul",
+      "Name": "インスキャッタリング倍率[％]",
+      "Description": "インスキャッタリング倍率[%](0～1000)"
+    },
+    {
+      "Field": "sunR",
+      "Name": "Ｒ",
+      "Description": "光源"
+    },
+    {
+      "Field": "sunG",
+      "Name": "Ｇ",
+      "Description": "光源"
+    },
+    {
+      "Field": "sunB",
+      "Name": "Ｂ",
+      "Description": "光源"
+    },
+    {
+      "Field": "sunA",
+      "Name": "RGB倍率[％]",
+      "Description": "光源"
+    },
+    {
+      "Field": "lsHGg",
+      "Name": "散乱方向係数",
+      "Description": "散乱方向係数（-1:後方 1:前方）"
+    },
+    {
+      "Field": "lsBetaRay",
+      "Name": "レイリー散乱係数",
+      "Description": "レイリー散乱係数（空気の分子）"
+    },
+    {
+      "Field": "lsBetaMie",
+      "Name": "ミー散乱係数",
+      "Description": "ミー散乱係数（微粒子）"
+    },
+    {
+      "Field": "blendCoef",
+      "Name": "ブレンド係数[％]",
+      "Description": "スキャッタリングの係具合(100で最大)"
+    },
+    {
+      "Field": "reflectanceR",
+      "Name": "Ｒ",
+      "Description": "地上の乱反射光色"
+    },
+    {
+      "Field": "reflectanceG",
+      "Name": "Ｇ",
+      "Description": "地上の乱反射光色"
+    },
+    {
+      "Field": "reflectanceB",
+      "Name": "Ｂ",
+      "Description": "地上の乱反射光色"
+    },
+    {
+      "Field": "reflectanceA",
+      "Name": "RGB倍率[％]",
+      "Description": "地上の乱反射光色"
+    }
+  ]
+}

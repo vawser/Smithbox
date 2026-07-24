@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a multi-summon." />
+  
+  <Field>
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="" />
+    
+    <SpawnRegionName_00
+    AltName="Spawn Region Name [0]"
+    Wiki="The name of the region where the invader will spawn." />
+    
+    <SpawnRegionId_00
+    IndexProperty="" />
+    
+    <SpawnRegionName_01
+    AltName="Spawn Region Name [1]"
+    Wiki="The name of the region where the invader will spawn." />
+    
+    <SpawnRegionId_01
+    IndexProperty="" />
+    
+    <SpawnRegionName_02
+    AltName="Spawn Region Name [2]"
+    Wiki="The name of the region where the invader will spawn." />
+    
+    <SpawnRegionId_02
+    IndexProperty="" />
+    
+    <SpawnRegionName_03
+    AltName="Spawn Region Name [3]"
+    Wiki="The name of the region where the invader will spawn." />
+    
+    <SpawnRegionId_03
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

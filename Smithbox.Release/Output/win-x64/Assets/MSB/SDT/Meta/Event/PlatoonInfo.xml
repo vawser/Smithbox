@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a platoon setup for an ensemble." />
+  
+  <Field>
+    <PlatoonIDScriptActivate
+    AltName="Platoon Script ID"
+    Wiki="The platoon script to use for this ensemble" />
+    
+    <State
+    AltName="Platoon State"
+    Wiki="The default state for this ensemble." />
+    
+    <GroupPartsNames
+    AltName="Character Name"
+    Wiki="A character that belongs to this platoon." />
+    
+    <GroupPartsIndices
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

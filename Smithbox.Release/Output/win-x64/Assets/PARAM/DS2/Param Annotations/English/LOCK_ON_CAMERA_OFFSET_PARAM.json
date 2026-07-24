@@ -1,0 +1,93 @@
+{
+  "Param": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Type": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Name": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Description": "Defines camera positioning, tracking behavior, rotation limits, and interpolation settings while the player is locked onto a target.",
+  "Fields": [
+    {
+      "Field": "time",
+      "Name": "Lock-On Camera Adjustment Duration",
+      "Description": "Time required for the lock-on camera transition or correction to complete."
+    },
+    {
+      "Field": "fovY",
+      "Name": "Field of View (Degrees)",
+      "Description": "Vertical camera field of view used during lock-on."
+    },
+    {
+      "Field": "targetOffsetX",
+      "Name": "Target Offset: X",
+      "Description": "Horizontal offset applied to the camera target point along the X-axis. In metres."
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "Target Offset: Y",
+      "Description": "Vertical offset applied to the camera target point along the Y-axis. In metres."
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "Target Offset: Z",
+      "Description": "Depth offset applied to the camera target point along the Z-axis. In metres."
+    },
+    {
+      "Field": "distance",
+      "Name": "Target Camera Distance",
+      "Description": "Desired distance between the camera and the lock-on target. In metres."
+    },
+    {
+      "Field": "targetChaseRateAtLockXZ",
+      "Name": "Lock-On Target Chase Rate (XZ)",
+      "Description": "Horizontal tracking responsiveness while locked onto a target. Higher values follow the target more aggressively."
+    },
+    {
+      "Field": "targetChaseRateAtLockY",
+      "Name": "Lock-On Target Chase Rate (Y)",
+      "Description": "Vertical tracking responsiveness while locked onto a target."
+    },
+    {
+      "Field": "targetChaseRateMinAngAtLock",
+      "Name": "Minimum Chase Rate Angle During Lock-On",
+      "Description": "Minimum angle threshold used when calculating target chase responsiveness. In degrees."
+    },
+    {
+      "Field": "targetChaseRateMaxAngAtLock",
+      "Name": "Maximum Chase Rate Angle During Lock-On",
+      "Description": "Maximum angle threshold used when calculating target chase responsiveness. In degrees."
+    },
+    {
+      "Field": "rotRangeMinXAtLock",
+      "Name": "Minimum X Rotation During Lock-On",
+      "Description": "Lowest vertical camera rotation angle allowed while locked on. In degrees."
+    },
+    {
+      "Field": "rotRangeMaxXAtLock",
+      "Name": "Maximum X Rotation During Lock-On",
+      "Description": "Highest vertical camera rotation angle allowed while locked on. In degrees."
+    },
+    {
+      "Field": "rotRangeLerpBeginHeight",
+      "Name": "Rotation Interpolation Start Height",
+      "Description": "Target height at which X-axis rotation interpolation begins. In metres."
+    },
+    {
+      "Field": "rotRangeLerpEndHeight",
+      "Name": "Rotation Interpolation End Height",
+      "Description": "Target height at which X-axis rotation interpolation finishes. In metres."
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "Lock Rotation Chase Rate",
+      "Description": "Determines how quickly the camera rotation follows the lock-on target."
+    },
+    {
+      "Field": "lockRotChasePlayAng",
+      "Name": "Lock Rotation Dead Zone Angle",
+      "Description": "Angular threshold before rotational tracking adjustments begin. In degrees."
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "Lock X Rotation Shift Ratio",
+      "Description": "Blend ratio applied to X-axis rotation adjustments during lock-on tracking."
+    }
+  ]
+}

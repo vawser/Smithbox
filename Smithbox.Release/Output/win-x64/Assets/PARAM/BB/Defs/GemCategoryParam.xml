@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GEM_CATEGORY_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 sortNo">
+      <DisplayName>ソート番号</DisplayName>
+      <Description>表示ソート番号</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+    </Field>
+    <Field Def="f32 manifestRate">
+      <DisplayName>カテゴリ別出現率</DisplayName>
+      <Description>カテゴリ別出現率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 directionalId">
+      <DisplayName>方向性ID</DisplayName>
+      <Description>方向性ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 cateGroupId">
+      <DisplayName>カテゴリグループID</DisplayName>
+      <Description>カテゴリグループID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 excludeGroupId">
+      <DisplayName>排他グループID</DisplayName>
+      <Description>排他グループID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u32 isNegative:1">
+      <DisplayName>マイナス効果か</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>マイナス効果か</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeA:1">
+      <DisplayName>スロットタイプＡ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＡ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeB:1">
+      <DisplayName>スロットタイプＢ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＢ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeC:1">
+      <DisplayName>スロットタイプＣ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＣ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeD:1">
+      <DisplayName>スロットタイプＤ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＤ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeE:1">
+      <DisplayName>スロットタイプＥ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＥ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u32 enableSlotTypeF:1">
+      <DisplayName>スロットタイプＦ出現可能.</DisplayName>
+      <Enum>EQUIP_GEN_PARAM_BOOL32</Enum>
+      <Description>スロットタイプＦ出現可能.</Description>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u32 holygrailTypeGroup:7">
+      <DisplayName>聖杯タイプグループID</DisplayName>
+      <Description>聖杯タイプグループID</Description>
+      <Maximum>100</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="s32 affinityCateId_0 = -1">
+      <DisplayName>０：相性カテゴリグループID</DisplayName>
+      <Description>０：相性カテゴリグループID(-1:無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="f32 affinityModifyRate_0 = 1">
+      <DisplayName>０：相性補正倍率</DisplayName>
+      <Description>０：相性補正倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10100</SortID>
+    </Field>
+    <Field Def="s32 affinityCateId_1 = -1">
+      <DisplayName>１：相性カテゴリグループID</DisplayName>
+      <Description>１：相性カテゴリグループID(-1:無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="f32 affinityModifyRate_1 = 1">
+      <DisplayName>１：相性補正倍率</DisplayName>
+      <Description>１：相性補正倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>11100</SortID>
+    </Field>
+    <Field Def="s32 affinityCateId_2 = -1">
+      <DisplayName>２：相性カテゴリグループID</DisplayName>
+      <Description>２：相性カテゴリグループID(-1:無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="f32 affinityModifyRate_2 = 1">
+      <DisplayName>２：相性補正倍率</DisplayName>
+      <Description>２：相性補正倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>12100</SortID>
+    </Field>
+    <Field Def="s32 affinityCateId_3 = -1">
+      <DisplayName>３：相性カテゴリグループID</DisplayName>
+      <Description>３：相性カテゴリグループID(-1:無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="f32 affinityModifyRate_3 = 1">
+      <DisplayName>３：相性補正倍率</DisplayName>
+      <Description>３：相性補正倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>13100</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

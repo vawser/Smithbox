@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHR_MODEL_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>9011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>9012</SortID>
+    </Field>
+    <Field Def="u8 modelMemoryType">
+      <DisplayName>モデルの使用メモリタイプ</DisplayName>
+      <Enum>CHR_MEMORY_TYPE</Enum>
+      <Description>モデルの使用メモリタイプ</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 texMemoryType">
+      <DisplayName>テクスチャの使用メモリタイプ</DisplayName>
+      <Enum>CHR_MEMORY_TYPE</Enum>
+      <Description>テクスチャの使用メモリタイプ</Description>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 cameraDitherFadeId = -1">
+      <DisplayName>カメラフェードパラメータID</DisplayName>
+      <Description>カメラフェードパラメータID（-1：マテリアルを参照、0：消えない、1～：パラメータID）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 isNoRayTracing">
+      <DisplayName>レイトレーシングシーンに登録しないか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>レイトレーシングシーンに登録しないか。(1:登録しない 0:登録する)</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s8 rayTracingCullingMode">
+      <DisplayName>レイトレーシングカリングモード</DisplayName>
+      <Enum>ASSET_RAY_TRACING_CULLING_TYPE_ENUM</Enum>
+      <Description>レイトレーシング描画時に適用されるカリングモード。「自動」の場合は、プログラム上で設定されたデフォルト値になります。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[2]">
+      <DisplayName>リザーブ</DisplayName>
+      <SortID>9013</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

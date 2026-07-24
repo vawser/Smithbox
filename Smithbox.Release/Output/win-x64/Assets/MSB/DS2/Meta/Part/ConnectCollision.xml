@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <CollisionName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the next map."
+    MapRef="Part-Collision" />
+    
+    <CollisionIndex
+    IndexProperty="" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

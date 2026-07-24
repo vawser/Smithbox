@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Project_Mode",
+      "Text": "Project"
+    },
+    {
+      "Key": "META_Param_Editor_Mode",
+      "Text": "Param Editor"
+    }
+  ]
+}

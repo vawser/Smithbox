@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a region within the map." />
+  
+  <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the part."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the part, in degrees."
+    RotationProperty="" />
+    
+    <RegionID
+    AltName="Region ID"
+    Wiki="Identifies the region in event scripts." />
+    
+    <MapStudioLayer
+    AltName="Map Studio Layer"
+    Wiki="Controls whether the region is active in different ceremonies." />
+    
+    <Common_PartName
+    AltName="Activation Part Name"
+    Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
+    
+    <Common_PartIndex
+    IndexProperty="" />
+    
+    <Common_EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
+    
+    <Stuct98_MapID
+    AltName="Map ID"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="COMPOSITION_TYPE" >
+        <Option Value="0" Name="Addition" />
+        <Option Value="2" Name="Subtraction" />
+    </Enum>
+  </Enums>
+</MSBMETA>

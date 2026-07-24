@@ -1,0 +1,33 @@
+{
+  "Param": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Type": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Name": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ParamStr",
+      "Name": "Param String",
+      "Description": "Wwise parameter string"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

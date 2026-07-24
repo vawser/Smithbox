@@ -1,0 +1,1151 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Item common name"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Item Common - Description"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Item common - Unchiku"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "No. Held"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Max No. Held"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Stored"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Max Stored"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Required souls"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Soul value"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Item Type"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "STR Scaling"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "DEX Scaling"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "INT Scaling"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "FTH Scaling"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "FP cost"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Weapon category"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Attack type"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Skill Type"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Dark Damage"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Additional Physical Damage"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Additional Magic Damage"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Additional Fire Damage"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Additional Lightning Damage"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Additional Dark Damage"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Range"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Spell Buff"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Critical"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Bleed"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Sacred"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Curse"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Frost"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Physical Absorption"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Magic Absorption"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Fire Absorption"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Lightning Absorption"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Dark Absorption"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Physical Defense"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Magic Defense"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "Fire Defense"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "Lightning Defense"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "Dark Defense"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Stability"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Stability Value"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "STR Requirement"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "DEX Requirement"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "INT Requirement"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "FTH Requirement"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "STR Requirement Value - Curse"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "DEX Requirement Value"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "INT Requirement Value"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "FTH Requirement Value"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "STR Scaling"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "DEX Scaling"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "INT Scaling"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "FTH Scaling"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Durability"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Max Durability"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "FP cost L1"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "FP cost L2"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "FP cost R1"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "FP cost R2"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Armor - Physical Defence"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Armor - Physical Strike Defence"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Armor - Physical Slash Defence"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Armor - Physical Thrust Defence"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Armor - Magic Defence"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Armor - Fire Defence"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Armor - Lightning Defence"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Armor - Poise"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Armor - Poison"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Armor - Bleed"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Armor - Curse"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Armor - Frost"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Armor - Poise"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Armor - Durability"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Armor - Max Durability"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Armor - Physical Absorption"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Armor - Physical Strike Absorption"
+      ]
+    },
+    {
+      "ID": 432,
+      "Entries": [
+        "Armor - Physical Slash Absorption"
+      ]
+    },
+    {
+      "ID": 433,
+      "Entries": [
+        "Armor - Physical Thrust Absorption"
+      ]
+    },
+    {
+      "ID": 434,
+      "Entries": [
+        "Armor - Magic Absorption"
+      ]
+    },
+    {
+      "ID": 435,
+      "Entries": [
+        "Armor - Fire Absorption"
+      ]
+    },
+    {
+      "ID": 436,
+      "Entries": [
+        "Armor - Lightning Absorption"
+      ]
+    },
+    {
+      "ID": 437,
+      "Entries": [
+        "Armor - Dark Absorption"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Spell - Type"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Spell - Attack Attribute"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Spell - Slots Used"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Spell - Number of Uses"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Spell - INT Requirement"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Spell - FTH Requirement"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Spell - FP Consumption"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Arrow - Weapon type"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Arrow - Attack attribute"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Arrow - Physical Damage"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Arrow - Magic Damage"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "Arrow - Fire Damage"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "Arrow - Lightning Damage"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "Arrow - Critical"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "Arrow - Dark Damage"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Arrow - Poison"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Arrow - Bleed"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Arrow - <Sacred>"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Arrow - <Voodoo>"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Arrow - Frost"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "PC Basic Name"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "PC Basic - Sex"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Basic PC - Feature"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "PC Basic - Gift"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Basic PC - Body type"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "PC Basic - Face"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "PC Basic - Hairstyle"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Basic PC - hair and pupil color"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Basic PC Level"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "PC Basic - Possession Soul"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "PC Basic - required Seoul"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Basic PC Pledge"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Basic PC - age group"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "PC basic - dead degree"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "PC1 Next - life force"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "PC1 Next - Endurance"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "PC1 Next - Memory"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "PC1 Next - muscular strength"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "PC1 Next - Workmanship"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "PC1 Next - Physical fitness"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "PC1 Next - power of science"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "PC1 Next - Faith"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "PC1 Next - human nature"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "PC1 Next - Luck"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "PC2 Next - HP Current Value"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "PC2 Next - HP Max Value"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "PC2 Next - MP Current Value"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "PC2 Next - MP Max Value"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "PC2 Next - Stamina"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "PC2 Next - equipment weight current value"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "PC2 Next - equipment weight maximum"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "PC2 Next - Right weapon 1 attack force"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "PC2 Next - Right Weapon 2 attack force"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "PC2 Next - Right Weapon 3 attack force"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "PC2 Next - left Weapon 1 attack force"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "PC2 Next - left Weapon 2 attack force"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "PC2 Next - left Weapon 3 attack force"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "PC2 Next - Defense Force: Physical"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "PC2 - defensive force: physical versus blow"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "PC2 - Defense Force: Physics vs. slashing"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "PC2 - Defense Force: Physical vs. piercing"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "PC2 Next - Defense Force: Magic"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "PC2 - Defense Force: Flame"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "PC2 - Defense Force: Thunder"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "PC2 - Resistant: Poison"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "PC2 - Resistant: bleeding"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "PC2 - Resistance: Curse"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "PC2 Next - strong degree"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "PC2 - Number of memory slots"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "PC2 Next - Item discovery Power"
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10227,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        "PC2 Next - armor damage cut: physical"
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        "PC2 Next - Armor damage Cut: Magic"
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        "PC2 Next - armor damage cut: Flame"
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        "PC2 Next - Armor damage Cut: Thunder"
+      ]
+    },
+    {
+      "ID": 10258,
+      "Entries": [
+        "PC2 Next - Dark Defense Force"
+      ]
+    },
+    {
+      "ID": 10259,
+      "Entries": [
+        "PC2 Next - armor damage cut: physical versus blow"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "PC2 Next - Armor damage cut: Physics vs slashing"
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        "PC2 Next - armor damage cut: physical vs. piercing"
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        "PC2 Next - Armor damage Cut: Darkness"
+      ]
+    },
+    {
+      "ID": 10263,
+      "Entries": [
+        "PC2 Next - Resistance: cold air"
+      ]
+    },
+    {
+      "ID": 10264,
+      "Entries": [
+        "PC2 - Armor resistance: bleeding"
+      ]
+    },
+    {
+      "ID": 10265,
+      "Entries": [
+        "PC2 - Armor Resistant: Poison"
+      ]
+    },
+    {
+      "ID": 10266,
+      "Entries": [
+        "PC2 Next - armor resistant: cold air"
+      ]
+    },
+    {
+      "ID": 10267,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Muscular strength Current value"
+      ]
+    },
+    {
+      "ID": 10271,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Skill present Value"
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Magic present Value"
+      ]
+    },
+    {
+      "ID": 10273,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Miracle present Value"
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Maximum muscle value"
+      ]
+    },
+    {
+      "ID": 10281,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Maximum skill level"
+      ]
+    },
+    {
+      "ID": 10282,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Magic Max"
+      ]
+    },
+    {
+      "ID": 10283,
+      "Entries": [
+        "【 PC2 Next 】 Arts point: Miracle Maximum"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

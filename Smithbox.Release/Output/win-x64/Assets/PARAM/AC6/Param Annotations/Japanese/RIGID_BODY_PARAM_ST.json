@@ -1,0 +1,98 @@
+{
+  "Param": "RIGID_BODY_PARAM_ST",
+  "Type": "RIGID_BODY_PARAM_ST",
+  "Name": "RIGID_BODY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mass",
+      "Name": "質量",
+      "Description": "剛体の質量"
+    },
+    {
+      "Field": "friction",
+      "Name": "摩擦係数",
+      "Description": "剛体表面の摩擦係数"
+    },
+    {
+      "Field": "restitution",
+      "Name": "反発係数",
+      "Description": "剛体の弾性係数"
+    },
+    {
+      "Field": "maxLinearSpeed",
+      "Name": "最高速度[m/s]",
+      "Description": "剛体に可能な最大リニア速度(m/s)"
+    },
+    {
+      "Field": "maxAngularSpeed",
+      "Name": "最高角速度",
+      "Description": "剛体に可能な最大角速度(角度/シミュレーションフレーム)"
+    },
+    {
+      "Field": "linearDamping",
+      "Name": "速度減衰",
+      "Description": "剛体に適用されるリニア減衰(単位は秒数の逆数)"
+    },
+    {
+      "Field": "angularDamping",
+      "Name": "角速度減衰",
+      "Description": "剛体に適用される回転角の減衰(単位は秒数の逆数)"
+    },
+    {
+      "Field": "gravityFactor",
+      "Name": "重力倍率",
+      "Description": "重力倍率"
+    },
+    {
+      "Field": "softContactForceFactor",
+      "Name": "ソフトコンタクト係数",
+      "Description": "ソフトコンタクト係数"
+    },
+    {
+      "Field": "softContactDampFactor",
+      "Name": "ソフトコンタクト弾力",
+      "Description": "ソフトコンタクト弾力"
+    },
+    {
+      "Field": "softContactSeperationVelocity",
+      "Name": "ソフトコンタクト押し出し速さ",
+      "Description": "ソフトコンタクト押し出し速さ"
+    },
+    {
+      "Field": "softContactForceFactorSoft",
+      "Name": "ソフトコンタクト係数（柔らかい）",
+      "Description": "ソフトコンタクト係数（柔らかい）"
+    },
+    {
+      "Field": "softContactDampFactorSoft",
+      "Name": "ソフトコンタクト弾力（柔らかい）",
+      "Description": "ソフトコンタクト弾力（柔らかい）"
+    },
+    {
+      "Field": "softContactSeperationVelocitySoft",
+      "Name": "ソフトコンタクト押し出し速さ（柔らかい）",
+      "Description": "ソフトコンタクト押し出し速さ（柔らかい）"
+    },
+    {
+      "Field": "softContactForceFactorHard",
+      "Name": "ソフトコンタクト係数（硬い）",
+      "Description": "ソフトコンタクト係数（硬い）"
+    },
+    {
+      "Field": "softContactDampFactorHard",
+      "Name": "ソフトコンタクト弾力（硬い）",
+      "Description": "ソフトコンタクト弾力（硬い）"
+    },
+    {
+      "Field": "softContactSeperationVelocityHard",
+      "Name": "ソフトコンタクト押し出し速さ（硬い）",
+      "Description": "ソフトコンタクト押し出し速さ（硬い）"
+    },
+    {
+      "Field": "reserve00",
+      "Name": "予約00",
+      "Description": ""
+    }
+  ]
+}

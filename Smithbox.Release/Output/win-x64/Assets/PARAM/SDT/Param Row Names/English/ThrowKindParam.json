@@ -1,0 +1,605 @@
+{
+  "Name": "ThrowKindParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[PC] Start behind -- 【PC】背後始動"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[PC] Behind -- 【PC】背後"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[PC] Behind-the-scenes ninjutsu (blood smoke) -- 【PC】背後忍術（血煙）"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[PC] Behind-the-scenes ninjutsu (puppet) -- 【PC】背後忍術（傀儡）"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[PC] Behind Ninjutsu (Encha) -- 【PC】背後忍術（エンチャ）"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[PC] Start behind crouching -- 【PC】しゃがみ背後始動"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[PC] Behind crouching -- 【PC】しゃがみ背後"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "[PC] Play 0 -- 【PC】弾き0"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "[PC] Play 1_ Attack -- 【PC】弾き1_攻撃"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "[PC] Playing 1_ Behind the scenes -- 【PC】弾き1_裏回り"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "[PC] Playing Todome -- 【PC】弾きトドメ"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[PC] Parting out 0 -- 【PC】見切り崩し0"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "[PC] Parting out 1_ attack -- 【PC】見切り崩し1_攻撃"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "[PC] Parting out 1_ Behind the scenes -- 【PC】見切り崩し1_裏回り"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[PC] Breaking start -- 【PC】崩し始動"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[PC] Breaking down -- 【PC】崩し"
+      ]
+    },
+    {
+      "ID": 40900,
+      "Entries": [
+        "[PC] Breaking down -- 【PC】崩しトドメ"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "[PC] Breaking behind and starting -- 【PC】崩し背後始動"
+      ]
+    },
+    {
+      "ID": 41100,
+      "Entries": [
+        "[PC] Behind the collapse -- 【PC】崩し背後"
+      ]
+    },
+    {
+      "ID": 41201,
+      "Entries": [
+        "[PC] Ninjutsu behind the collapse (blood smoke) -- 【PC】崩し背後忍術（血煙）"
+      ]
+    },
+    {
+      "ID": 41202,
+      "Entries": [
+        "[PC] Ninjutsu behind the collapse (puppet) -- 【PC】崩し背後忍術（傀儡）"
+      ]
+    },
+    {
+      "ID": 41203,
+      "Entries": [
+        "[PC] Ninjutsu behind the collapse (Encha) -- 【PC】崩し背後忍術（エンチャ）"
+      ]
+    },
+    {
+      "ID": 41900,
+      "Entries": [
+        "[PC] Todome behind the collapse -- 【PC】崩し背後トドメ"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "[PC] Enemy special state 0 -- 【PC】敵特殊状態0"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "[PC] Enemy special state 1 -- 【PC】敵特殊状態1"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "[PC] Unlimited fall 0 -- 【PC】制限なし落下0"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "[PC] Unrestricted fall 1 -- 【PC】制限なし落下1"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "[PC] Fall 0 -- 【PC】落下0"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "[PC] Fall 1 -- 【PC】落下1"
+      ]
+    },
+    {
+      "ID": 70900,
+      "Entries": [
+        "[PC] Falling Todome -- 【PC】落下トドメ"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "[PC] Anti-aircraft 0 -- 【PC】対空0"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "[PC] Anti-aircraft 1 -- 【PC】対空1"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "[PC] Start with left wall sticking -- 【PC】左壁張り付き始動"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "[PC] With left wall -- 【PC】左壁張り付き"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[PC] Start with right wall -- 【PC】右壁張り付き始動"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "[PC] With right wall -- 【PC】右壁張り付き"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "[PC] Hanging start -- 【PC】ぶら下がり始動"
+      ]
+    },
+    {
+      "ID": 110010,
+      "Entries": [
+        "[PC] Hanging -- 【PC】ぶら下がり"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "[PC] Event_Large Litter -- 【PC】イベント_大蛇輿"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "[PC] Breaking down 0 -- 【PC】崩し落下0"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "[PC] Breaking down 1 -- 【PC】崩し落下1"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "[PC] Breaking down 2 -- 【PC】崩し落下2"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "[PC] Kicking down 0 -- 【PC】蹴り崩し0"
+      ]
+    },
+    {
+      "ID": 160100,
+      "Entries": [
+        "[PC] Kicking down 1 -- 【PC】蹴り崩し1"
+      ]
+    },
+    {
+      "ID": 170000,
+      "Entries": [
+        "[PC] Closeout -- 【PC】見切り"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "[PC] Breaking wire 0 -- 【PC】崩しワイヤー0"
+      ]
+    },
+    {
+      "ID": 180100,
+      "Entries": [
+        "[PC] Breaking wire 1 -- 【PC】崩しワイヤー1"
+      ]
+    },
+    {
+      "ID": 180900,
+      "Entries": [
+        "[PC] Breaking wire -- 【PC】崩しワイヤートドメ"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "[PC] Todome start -- 【PC】トドメ始動"
+      ]
+    },
+    {
+      "ID": 190100,
+      "Entries": [
+        "[PC] Todome -- 【PC】トドメ"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "[PC] Breaking back and starting -- 【PC】崩し裏回り始動"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "[PC] Breaking back -- 【PC】崩し裏回り"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "[PC] Start behind aging -- 【PC】老化背後始動"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "[PC] Behind aging -- 【PC】老化背後"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "[PC] Aging collapse start -- 【PC】老化崩し始動"
+      ]
+    },
+    {
+      "ID": 220010,
+      "Entries": [
+        "[PC] Aging collapse -- 【PC】老化崩し"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "[PC] Aging breaks down and starts behind -- 【PC】老化崩し背後始動"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "[PC] Behind the aging collapse -- 【PC】老化崩し背後"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "[PC] Useless push-down and start around -- 【PC】ダメ押し崩し裏回り始動"
+      ]
+    },
+    {
+      "ID": 240010,
+      "Entries": [
+        "[PC] Useless push-down backside -- 【PC】ダメ押し崩し裏回り"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "[PC] [Immortal slash] Enemy special state 0 -- 【PC】【要不死斬り】敵特殊状態0"
+      ]
+    },
+    {
+      "ID": 250100,
+      "Entries": [
+        "[PC] [Immortal slash] Enemy special state 1 -- 【PC】【要不死斬り】敵特殊状態1"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "[PC] Underwater collapse start -- 【PC】水中崩し始動"
+      ]
+    },
+    {
+      "ID": 260010,
+      "Entries": [
+        "[PC] Underwater collapse -- 【PC】水中崩し"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "[PC] Breaking short distance start -- 【PC】崩し近距離始動"
+      ]
+    },
+    {
+      "ID": 270100,
+      "Entries": [
+        "[PC] Breaking short distance -- 【PC】崩し近距離"
+      ]
+    },
+    {
+      "ID": 270900,
+      "Entries": [
+        "[PC] Breaking short distance -- 【PC】崩し近距離トドメ"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "[PC] [On the roof] Start behind -- 【PC】【屋根上】背後始動"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "[PC] [on the roof] behind -- 【PC】【屋根上】背後"
+      ]
+    },
+    {
+      "ID": 500201,
+      "Entries": [
+        "[PC] [Roof] Behind Ninjutsu (Blood Smoke) -- 【PC】【屋根上】背後忍術（血煙）"
+      ]
+    },
+    {
+      "ID": 500202,
+      "Entries": [
+        "[PC] [On the roof] Behind-the-scenes ninjutsu (puppet) -- 【PC】【屋根上】背後忍術（傀儡）"
+      ]
+    },
+    {
+      "ID": 500203,
+      "Entries": [
+        "[PC] [Roof] Behind Ninjutsu (Encha) -- 【PC】【屋根上】背後忍術（エンチャ）"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "[PC] [On the roof] Start breaking -- 【PC】【屋根上】崩し始動"
+      ]
+    },
+    {
+      "ID": 540100,
+      "Entries": [
+        "[PC] [on the roof] collapse -- 【PC】【屋根上】崩し"
+      ]
+    },
+    {
+      "ID": 540900,
+      "Entries": [
+        "[PC] [On the roof] -- 【PC】【屋根上】崩しトドメ"
+      ]
+    },
+    {
+      "ID": 541000,
+      "Entries": [
+        "[PC] [On the roof] Break down and start behind -- 【PC】【屋根上】崩し背後始動"
+      ]
+    },
+    {
+      "ID": 541100,
+      "Entries": [
+        "[PC] [On the roof] Behind the collapse -- 【PC】【屋根上】崩し背後"
+      ]
+    },
+    {
+      "ID": 541201,
+      "Entries": [
+        "[PC] [On the roof] Ninjutsu behind the collapse (blood smoke) -- 【PC】【屋根上】崩し背後忍術（血煙）"
+      ]
+    },
+    {
+      "ID": 541202,
+      "Entries": [
+        "[PC] [On the roof] Ninjutsu behind the collapse (puppet) -- 【PC】【屋根上】崩し背後忍術（傀儡）"
+      ]
+    },
+    {
+      "ID": 541203,
+      "Entries": [
+        "[PC] [On the roof] Ninjutsu behind the collapse (Encha) -- 【PC】【屋根上】崩し背後忍術（エンチャ）"
+      ]
+    },
+    {
+      "ID": 541900,
+      "Entries": [
+        "[PC] [On the roof] Crushing behind -- 【PC】【屋根上】崩し背後トドメ"
+      ]
+    },
+    {
+      "ID": 570000,
+      "Entries": [
+        "[PC] [on the roof] Fall 0 -- 【PC】【屋根上】落下0"
+      ]
+    },
+    {
+      "ID": 570100,
+      "Entries": [
+        "[PC] [on the roof] Fall 1 -- 【PC】【屋根上】落下1"
+      ]
+    },
+    {
+      "ID": 570900,
+      "Entries": [
+        "[PC] [On the roof] Falling Todome -- 【PC】【屋根上】落下トドメ"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "[PC] [On the roof] Breaking down 0 -- 【PC】【屋根上】崩し落下0"
+      ]
+    },
+    {
+      "ID": 630100,
+      "Entries": [
+        "[PC] [On the roof] Crush and fall 1 -- 【PC】【屋根上】崩し落下1"
+      ]
+    },
+    {
+      "ID": 630200,
+      "Entries": [
+        "[PC] [On the roof] Crush and fall 2 -- 【PC】【屋根上】崩し落下2"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "[PC] [On the roof] Kicking down 0 -- 【PC】【屋根上】蹴り崩し0"
+      ]
+    },
+    {
+      "ID": 660100,
+      "Entries": [
+        "[PC] [On the roof] Kicking down 1 -- 【PC】【屋根上】蹴り崩し1"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "[Enemy] Throw 0 -- 【敵】投げ0"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "[Enemy] Throw 1 -- 【敵】投げ1"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "[Enemy] Throw 2 -- 【敵】投げ2"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "[Enemy] Throw 3 -- 【敵】投げ3"
+      ]
+    },
+    {
+      "ID": 1000040,
+      "Entries": [
+        "[Enemy] Throw 4 -- 【敵】投げ4"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "[Enemy] Throw 0_Underwater -- 【敵】投げ0_水中"
+      ]
+    },
+    {
+      "ID": 1000110,
+      "Entries": [
+        "[Enemy] Throw 1_Underwater -- 【敵】投げ1_水中"
+      ]
+    },
+    {
+      "ID": 1000120,
+      "Entries": [
+        "[Enemy] Throw 2_Underwater -- 【敵】投げ2_水中"
+      ]
+    },
+    {
+      "ID": 1000130,
+      "Entries": [
+        "[Enemy] Throw 3_Underwater -- 【敵】投げ3_水中"
+      ]
+    },
+    {
+      "ID": 1000140,
+      "Entries": [
+        "[Enemy] Throw 4_Underwater -- 【敵】投げ4_水中"
+      ]
+    },
+    {
+      "ID": 100000000,
+      "Entries": [
+        "--- -- -"
+      ]
+    }
+  ]
+}

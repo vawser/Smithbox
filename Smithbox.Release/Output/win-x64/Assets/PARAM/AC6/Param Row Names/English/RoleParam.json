@@ -1,0 +1,203 @@
+{
+  "Name": "RoleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "survival player"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "white ghost"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "black ghost"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Wandering"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wandering NPC"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "normal enemy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "animal enemy"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "boss enemy"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "gray ghost"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "replay"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "display"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "intruder"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "for arena"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "maximum number"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "White Ghost (Red Hunter White Pledge)"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Black Ghost (Red Hunter White Pledge)"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "White Ghost (Sun Pledge)"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Black Ghost (Sun Pledge)"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "White Ghost (Berserker Pledge)"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Black Ghost (Berserker Pledge)"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "White Ghost (Sinner Hero Pledge)"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Black Ghost (Sinner Hero Pledge)"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "White Ghost (Rosalia Pledge)"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Black Ghost (Rosalia Pledge)"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "White Ghost (Map Guardian Pledge (Bridge))"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Black Ghost (Map Guardian Pledge (Bridge))"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "White Ghost (Map Guardian Pledge (Anole))"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Black Ghost (Map Guardian Pledge (Anole))"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Seikyo 1"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Seikyo 2"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "White Ghost (Red Hunt 2 Pledge)"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Black Ghost (Red Hunt 2 Pledge)"
+      ]
+    }
+  ]
+}

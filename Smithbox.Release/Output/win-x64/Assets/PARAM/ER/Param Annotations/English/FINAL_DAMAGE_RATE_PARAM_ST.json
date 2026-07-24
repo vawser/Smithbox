@@ -1,0 +1,43 @@
+{
+  "Param": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Type": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Name": "FINAL_DAMAGE_RATE_PARAM_ST",
+  "Description": "PvP corrections",
+  "Fields": [
+    {
+      "Field": "physRate",
+      "Name": "Damage %: Physical",
+      "Description": ""
+    },
+    {
+      "Field": "magRate",
+      "Name": "Damage %: Magic",
+      "Description": ""
+    },
+    {
+      "Field": "fireRate",
+      "Name": "Damage %: Fire",
+      "Description": ""
+    },
+    {
+      "Field": "thunRate",
+      "Name": "Damage %: Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "darkRate",
+      "Name": "Damage %: Holy",
+      "Description": ""
+    },
+    {
+      "Field": "staminaRate",
+      "Name": "Damage %: Stamina",
+      "Description": ""
+    },
+    {
+      "Field": "saRate",
+      "Name": "Damage %: Poise",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "Name": "SkillParam",
+  "Entries": [
+    {
+      "ID": 2,
+      "Entries": [
+        "Ninja: Aerial Guard / Jasuga -- 忍び流：空中ガード/ジャスガ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Ninja: Step closeout -- 忍び流：ステップ見切り"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Ninja: Sliding (dash crouching) -- 忍び流：スライディング（ダッシュしゃがみ）"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Ninja style: aerial style -- 忍び流：空中流派技"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Ninja: Breaking the back -- 忍び流：崩し裏回り"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Shinobi-ryu: Deadly Sword_Rotating Slash Lifted -- 忍び流：必殺剣_回転斬り解禁"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Shinobi-ryu: Deadly Sword_Ninja Fang Crash Lifted -- 忍び流：必殺剣_忍者牙突解禁"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Covert A (make the sign smaller) -- 隠密A（気配を小さくする）"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Covert B (makes the sound quieter) -- 隠密B（音を小さくする）"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Parting trunk scraping UP -- 見切りの体幹削りUP"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Upper limit of possession of form + 1A -- 形代所持上限+1A"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Upper limit of possession of form + 1B -- 形代所持上限+1B"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "HP recovery at the time of shinobi (A) -- 忍殺時HP回復（A）"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Prosthetic hand ninja style: slashing -- 義手忍び流：追い斬り"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Prosthetic hand ninja style: slashing in a row -- 義手忍び流：連ね斬り"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Prosthetic Hand Ninja: Unleashed Slash -- 義手忍び流：放ち斬り"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Prosthetic Hand Ninja: Matoi Slash -- 義手忍び流：まとい斬り"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Prosthetic Hand Ninja: Wire Attack -- 義手忍び流：ワイヤー攻撃"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Prosthetic Hand Ninja: Aerial Prosthetic Hand Ninja -- 義手忍び流：空中義手忍具"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Prosthetic Hand Ninja: Deadly Sword_Dive-in Slash Lifted -- 義手忍び流：必殺剣_飛び込み斬り解禁"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Prosthetic Hand Ninja: Special Sword_Dive-in Slash Strengthening +1 -- 義手忍び流：必殺剣_飛び込み斬り強化+1"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Knowledge of medicine + 1A -- 薬の知識+1A"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Knowledge of medicine + 1B -- 薬の知識+1B"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Upper limit of possession of form + 1C -- 形代所持上限+1C"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Upper limit of possession of form + 1D -- 形代所持上限+1D"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Ashina style: Deadly sword _ face-to-face lifted -- 葦名流：必殺剣_面打ち解禁"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Ashina style: Special sword_face-up strengthening +1 -- 葦名流：必殺剣_面打ち強化+1"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Ashina style: Deadly sword _ Iai lifted -- 葦名流：必殺剣_居合い解禁"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Body recovery during shinobi (A) -- 忍殺時体幹回復（A）"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Jasuga&#39;s trunk shaving UP -- ジャスガの体幹削りUP"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Jasuga rear sword trunk sharpening UP -- ジャスガ後刀体幹削りUP"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Guard / Jasuga&#39;s trunk is shaved and cut -- ガード/ジャスガの体幹削られカット"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Temple style: Special sword_Jiu-Jitsu ban lifted -- 寺流：必殺剣_体術連撃解禁"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Temple style: Special sword _ Strengthening physique continuous attack +1 -- 寺流：必殺剣_体術連撃強化+1"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Temple style: Special sword_Kick rush lifted -- 寺流：必殺剣_蹴りラッシュ解禁"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Temple style: Special sword _ Kick rush strengthening +1 -- 寺流：必殺剣_蹴りラッシュ強化+1"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Good luck + 1A -- 幸運+1A"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Good luck + 1B -- 幸運+1B"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Buff effect time UP -- バフ効果時間UP"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Temple style: Special sword _ Kick rush strengthening +1 -- 寺流：必殺剣_蹴りラッシュ強化+1"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Shinobi-ryu: Deadly Sword_Ninja Fang Crash Lifted -- 忍び流：必殺剣_忍者牙突解禁"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Ashina style: Deadly sword _ Iai lifted -- 葦名流：必殺剣_居合い解禁"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Prosthetic Hand Ninja: Matoi Slash -- 義手忍び流：まとい斬り"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Combined: Deadly Sword_Ninja Fang Strengthening +1 -- 複合：必殺剣_忍者牙突強化+1"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Combined: Special Sword _ Eight Flying Rush Strengthening +1 -- 複合：必殺剣_八艘飛びラッシュ強化+1"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Combined: Deadly Sword_Immortal Slash Slash Strengthening +1 -- 複合：必殺剣_不死斬り斬撃強化+1"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Knowledge of medicine + 1C -- 薬の知識+1C"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Knowledge of medicine + 1D -- 薬の知識+1D"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Knowledge of medicine + 1E -- 薬の知識+1E"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Upper limit of possession of form + 1E -- 形代所持上限+1E"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "HP recovery at the time of shinobi (B) -- 忍殺時HP回復（B）"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Body recovery during shinobi (B) -- 忍殺時体幹回復（B）"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Infinite breathing lifted -- 無限呼吸解禁"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Anti-aircraft shinobi ban lifted -- 対空忍殺解禁"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Deadly Sword_Immortal Sword Lifted -- 必殺剣_不死斬り解禁"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Deadly Sword_Sword Holy Iai Ban Lifted -- 必殺剣_剣聖居合解禁"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Special Sword_Hachizara Flying Rush Lifted -- 必殺剣_八艘飛びラッシュ解禁"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Deadly Sword_Invisible Iai Continuous Attack Lifted -- 必殺剣_見えない居合連撃解禁"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Special Sword_Vertical Rise Rotation Slash Lifted -- 必殺剣_垂直上昇回転斬り解禁"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Shuriken LV2 (can be stored) -- 手裏剣LV2（溜め可能）"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Shuriken LV3-A (can be stored + penetrated) -- 手裏剣LV3-A（溜め可能 + 貫通）"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Shuriken LV3-B (can be stored + butterfly phantom bullet) -- 手裏剣LV3-B（溜め可能 + お蝶幻影弾丸）"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Shuriken LV3-C (can be stored + throwing money) -- 手裏剣LV3-C（溜め可能 + 銭投げ）"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Shuriken LV4 (can be stored + penetration + power up) -- 手裏剣LV4（溜め可能 + 貫通 + 威力UP）"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Firecracker LV2 (can be stored) -- 爆竹LV2（溜め可能）"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Firecracker LV3-A (can be stored + explosive time extension) -- 爆竹LV3-A（溜め可能 + 炸裂時間延長）"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Firecracker LV3-B (can be stored + harmful substances) -- 爆竹LV3-B（溜め可能 + 有害物質）"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Ignition LV2 (can be stored) -- 発火LV2（溜め可能）"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Ignition LV3 (can be stored + flame can be emitted) -- 発火LV3（溜め可能 + 火炎放射可能）"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Ignition LV4 (can be stored + flame can be emitted + anti-spirit) -- 発火LV4（溜め可能 + 火炎放射可能 + 対霊）"
+      ]
+    },
+    {
+      "ID": 731,
+      "Entries": [
+        "Ax LV2 (can be stored) -- 斧LV2（溜め可能）"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "Ax LV3 (can be stored + explodes) -- 斧LV3（溜め可能 + 爆裂）"
+      ]
+    },
+    {
+      "ID": 733,
+      "Entries": [
+        "Ax LV4 (can be stored + explodes + illusion eraser) -- 斧LV4（溜め可能 + 爆裂 + 幻影消し）"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "Transformation LV2 (can be activated after damage) -- 変わり身LV2（ダメージ後発動可能）"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "Transformation LV3 (Can be activated after damage + Shock wave when activated) -- 変わり身LV3（ダメージ後発動可能 + 発動時衝撃波）"
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        "Kodachi LV2 (derivative attack possible) -- 小太刀LV2（派生攻撃可能）"
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        "Kodachi LV3-A (derivative attack possible + guard penetration) -- 小太刀LV3-A（派生攻撃可能 + ガード貫通）"
+      ]
+    },
+    {
+      "ID": 753,
+      "Entries": [
+        "Kodachi LV3-B (derivative attack possible + poison mist spraying) -- 小太刀LV3-B（派生攻撃可能 + 毒霧散布）"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "Iron fan LV2 (can be turned) -- 鉄扇LV2（回し受け可能）"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "Iron fan LV3-A (can be turned + anti-flame) -- 鉄扇LV3-A（回し受け可能 + 対炎）"
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        "Iron fan LV3-B (can be turned + anti-spirit) -- 鉄扇LV3-B（回し受け可能 + 対霊）"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "Enemy turning LV2 (can be activated continuously) -- 敵回しLV2（連続発動可能）"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "Enemy turning LV3 (continuous activation possible + stealing) -- 敵回しLV3（連続発動可能 + 盗み）"
+      ]
+    },
+    {
+      "ID": 781,
+      "Entries": [
+        "Spear LV2-A (Available for charge) -- 槍LV2-A（溜め突撃可能）"
+      ]
+    },
+    {
+      "ID": 782,
+      "Entries": [
+        "Spear LV2-B -- 槍LV2-B（溜めなぎ払い可能）"
+      ]
+    },
+    {
+      "ID": 783,
+      "Entries": [
+        "Spear LV3-A (reservoir assault possible + corkscrew) -- 槍LV3-A（溜め突撃可能 + コークスクリュー）"
+      ]
+    },
+    {
+      "ID": 784,
+      "Entries": [
+        "Spear LV3-B (reservoirable + flame) -- 槍LV3-B（溜めなぎ払い可能 + 炎）"
+      ]
+    },
+    {
+      "ID": 791,
+      "Entries": [
+        "Finger whistle LV2 (can be stored) -- 指笛LV2（溜め可能）"
+      ]
+    },
+    {
+      "ID": 792,
+      "Entries": [
+        "Finger whistle LV3 (can be stored + minor) -- 指笛LV3（溜め可能 + 短調）"
+      ]
+    }
+  ]
+}

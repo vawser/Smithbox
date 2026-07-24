@@ -1,0 +1,13 @@
+{
+  "Param": "LOADING_DISPLAY_ITEM_PARAM",
+  "Type": "LOADING_DISPLAY_ITEM_PARAM",
+  "Name": "LOADING_DISPLAY_ITEM_PARAM",
+  "Description": "Controls the conditions for displaying loading screen items, tips, tutorials, or informational entries during loading screens.",
+  "Fields": [
+    {
+      "Field": "globalFlagId",
+      "Name": "Display Start Global Flag",
+      "Description": "Global event flag that must be enabled before this loading screen item becomes available for display."
+    }
+  ]
+}

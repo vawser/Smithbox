@@ -1,0 +1,548 @@
+{
+  "Param": "CHR_PARAM",
+  "Type": "CHR_PARAM",
+  "Name": "CHR_PARAM",
+  "Description": "Core character definition parameters covering stats, equipment, defense, scaling, status effects, and gameplay rules for NPCs and characters.",
+  "Fields": [
+    {
+      "Field": "modelId",
+      "Name": "Model ID",
+      "Description": "Identifier for the character model asset."
+    },
+    {
+      "Field": "animId",
+      "Name": "Animation ID",
+      "Description": "Identifier for the character animation set."
+    },
+    {
+      "Field": "commonId",
+      "Name": "Common ID",
+      "Description": "Shared identifier used across multiple character systems."
+    },
+    {
+      "Field": "moveId",
+      "Name": "Movement ID",
+      "Description": "Identifier for the movement parameter set used by this character."
+    },
+    {
+      "Field": "npcStatusId",
+      "Name": "NPC Status ID",
+      "Description": "Reference to the NPC status configuration entry."
+    },
+    {
+      "Field": "groupType",
+      "Name": "Group Type",
+      "Description": "Defines the group affiliation of the character."
+    },
+    {
+      "Field": "categoryType",
+      "Name": "Character Category",
+      "Description": "Defines the general classification of the character (e.g., enemy, NPC, player-type)."
+    },
+    {
+      "Field": "materialType",
+      "Name": "Body Material Type",
+      "Description": "Defines the physical material properties of the character model."
+    },
+    {
+      "Field": "visualType",
+      "Name": "Visual Type",
+      "Description": "Defines appearance variation or visual preset."
+    },
+    {
+      "Field": "multiplayParamId",
+      "Name": "Multiplayer Scaling Parameter ID",
+      "Description": "Reference to multiplayer balance adjustments for this character."
+    },
+    {
+      "Field": "respawnNum",
+      "Name": "Respawn Count",
+      "Description": "Number of times the character can respawn."
+    },
+    {
+      "Field": "isUndead",
+      "Name": "Immortal Flag",
+      "Description": "If enabled, the character cannot die normally."
+    },
+    {
+      "Field": "isRunaway",
+      "Name": "Flee on Fall Death",
+      "Description": "If enabled, the character will flee when death occurs from falling."
+    },
+    {
+      "Field": "hitPoint",
+      "Name": "HP (New Game Cycle 1)",
+      "Description": "Base health value for the first playthrough cycle."
+    },
+    {
+      "Field": "staminaPoint",
+      "Name": "Stamina",
+      "Description": "Total stamina capacity."
+    },
+    {
+      "Field": "staminaRecoveryValue",
+      "Name": "Stamina Recovery Rate",
+      "Description": "Stamina recovered per second."
+    },
+    {
+      "Field": "staminaLoanMin",
+      "Name": "Stamina Debt (Min)",
+      "Description": "Minimum stamina overdraw limit."
+    },
+    {
+      "Field": "staminaLoanMax",
+      "Name": "Stamina Debt (Max)",
+      "Description": "Maximum stamina overdraw limit."
+    },
+    {
+      "Field": "staminaCostMoveBase",
+      "Name": "Base Movement Stamina Cost",
+      "Description": "Base stamina cost for movement actions."
+    },
+    {
+      "Field": "deadType",
+      "Name": "Death Type 1",
+      "Description": "Primary death behavior classification."
+    },
+    {
+      "Field": "deadType02",
+      "Name": "Death Type 2",
+      "Description": "Secondary death behavior classification."
+    },
+    {
+      "Field": "defaultEquipWeapon",
+      "Name": "Default Weapon",
+      "Description": "Weapon equipped by default on spawn."
+    },
+    {
+      "Field": "equipWeaponAId00",
+      "Name": "Weapon Slot 1 ID",
+      "Description": "First equipped weapon slot."
+    },
+    {
+      "Field": "equipWeaponAId01",
+      "Name": "Weapon Slot 2 ID",
+      "Description": "Second equipped weapon slot."
+    },
+    {
+      "Field": "equipWeaponAId02",
+      "Name": "Weapon Slot 3 ID",
+      "Description": "Third equipped weapon slot."
+    },
+    {
+      "Field": "equipWeaponAId03",
+      "Name": "Weapon Slot 4 ID",
+      "Description": "Fourth equipped weapon slot."
+    },
+    {
+      "Field": "equipWeaponAId04",
+      "Name": "Weapon Slot 5 ID",
+      "Description": "Fifth equipped weapon slot."
+    },
+    {
+      "Field": "equipWeaponAId05",
+      "Name": "Weapon Slot 6 ID",
+      "Description": "Sixth equipped weapon slot."
+    },
+    {
+      "Field": "equipAccessory01",
+      "Name": "Accessory Slot 1 ID",
+      "Description": "First accessory slot."
+    },
+    {
+      "Field": "equipAccessory02",
+      "Name": "Accessory Slot 2 ID",
+      "Description": "Second accessory slot."
+    },
+    {
+      "Field": "equipAccessory03",
+      "Name": "Accessory Slot 3 ID",
+      "Description": "Third accessory slot."
+    },
+    {
+      "Field": "equipAccessory04",
+      "Name": "Accessory Slot 4 ID",
+      "Description": "Fourth accessory slot."
+    },
+    {
+      "Field": "equipAccessory05",
+      "Name": "Accessory Slot 5 ID",
+      "Description": "Fifth accessory slot."
+    },
+    {
+      "Field": "roundDamageCategory",
+      "Name": "NG+ Damage Scaling Category",
+      "Description": "Category used for scaling damage in New Game cycles."
+    },
+    {
+      "Field": "guardPassiveLevelType",
+      "Name": "Shield Guard Level",
+      "Description": "Defines passive guard strength level for shields."
+    },
+    {
+      "Field": "parryType",
+      "Name": "Parry Type",
+      "Description": "Defines the type of parry behavior used by the shield."
+    },
+    {
+      "Field": "spellParrySfxId",
+      "Name": "Spell Parry SFX ID",
+      "Description": "Sound effect played when parrying spells."
+    },
+    {
+      "Field": "shieldMaterialType",
+      "Name": "Shield Material Type",
+      "Description": "Defines shield material properties."
+    },
+    {
+      "Field": "shieldReceiveValue",
+      "Name": "Shield Guard Strength",
+      "Description": "How much physical impact the shield can absorb."
+    },
+    {
+      "Field": "shieldDefenseValue",
+      "Name": "Shield Physical Defense",
+      "Description": "Physical damage reduction from shield."
+    },
+    {
+      "Field": "shieldMagicDefenseValue",
+      "Name": "Shield Magic Resistance",
+      "Description": "Magic damage reduction from shield."
+    },
+    {
+      "Field": "shieldMiracleDefenseValue",
+      "Name": "Shield Miracle Resistance",
+      "Description": "Faith/miracle damage resistance."
+    },
+    {
+      "Field": "shieldPyromancyDefenseValue",
+      "Name": "Shield Pyromancy Resistance",
+      "Description": "Fire-based magic resistance."
+    },
+    {
+      "Field": "shieldDarkMagicDefenseValue",
+      "Name": "Shield Dark Resistance",
+      "Description": "Dark magic resistance."
+    },
+    {
+      "Field": "shieldPoisonDefenseValue",
+      "Name": "Shield Poison Resistance",
+      "Description": "Resistance to poison buildup."
+    },
+    {
+      "Field": "shieldBleedingDefenseValue",
+      "Name": "Shield Bleed Resistance",
+      "Description": "Resistance to bleeding buildup."
+    },
+    {
+      "Field": "shieldDestructionDefenseValue",
+      "Name": "Shield Durability Damage Resistance",
+      "Description": "Resistance to equipment durability damage."
+    },
+    {
+      "Field": "shieldCurseDefenseValue",
+      "Name": "Shield Curse Resistance",
+      "Description": "Resistance to curse effects."
+    },
+    {
+      "Field": "armorDefenseValue",
+      "Name": "Armor Physical Defense",
+      "Description": "Physical damage reduction from armor."
+    },
+    {
+      "Field": "armorMagicDefenseValue",
+      "Name": "Armor Magic Resistance",
+      "Description": "Magic damage reduction from armor."
+    },
+    {
+      "Field": "armorMiracleDefenseValue",
+      "Name": "Armor Miracle Resistance",
+      "Description": "Faith/miracle resistance from armor."
+    },
+    {
+      "Field": "armorPyromancyDefenseValue",
+      "Name": "Armor Pyromancy Resistance",
+      "Description": "Fire resistance from armor."
+    },
+    {
+      "Field": "armorDarkMagicDefenseValue",
+      "Name": "Armor Dark Resistance",
+      "Description": "Dark magic resistance from armor."
+    },
+    {
+      "Field": "armorPoisonDefenseValue",
+      "Name": "Armor Poison Resistance",
+      "Description": "Resistance to poison buildup."
+    },
+    {
+      "Field": "armorBleedingDefenseValue",
+      "Name": "Armor Bleed Resistance",
+      "Description": "Resistance to bleed buildup."
+    },
+    {
+      "Field": "armorDestructionDefenseValue",
+      "Name": "Armor Durability Damage Resistance",
+      "Description": "Resistance to durability loss."
+    },
+    {
+      "Field": "armorCurseDefenseValue",
+      "Name": "Armor Curse Resistance",
+      "Description": "Resistance to curse effects."
+    },
+    {
+      "Field": "armorMaterialType",
+      "Name": "Armor Material Type",
+      "Description": "Defines material properties of armor."
+    },
+    {
+      "Field": "armorToughValue",
+      "Name": "Armor Poise",
+      "Description": "Resistance to stagger effects."
+    },
+    {
+      "Field": "armorStunBaseValue",
+      "Name": "Armor Stun Gauge (Base)",
+      "Description": "Base stun buildup threshold."
+    },
+    {
+      "Field": "armorStunRecoveryRate",
+      "Name": "Armor Stun Recovery Rate",
+      "Description": "Rate at which stun buildup recovers per second."
+    },
+    {
+      "Field": "dropSoulValue",
+      "Name": "Soul Reward",
+      "Description": "Amount of souls dropped on defeat."
+    },
+    {
+      "Field": "dropType",
+      "Name": "Drop Type",
+      "Description": "Defines loot drop behavior type."
+    },
+    {
+      "Field": "damageAdjustRate",
+      "Name": "Damage Multiplier",
+      "Description": "Global damage scaling multiplier."
+    },
+    {
+      "Field": "damageAdjustRatePlayer",
+      "Name": "Damage Multiplier (Player)",
+      "Description": "Damage scaling against players."
+    },
+    {
+      "Field": "damageAdjustRateEnemy",
+      "Name": "Damage Multiplier (Enemy)",
+      "Description": "Damage scaling against enemies."
+    },
+    {
+      "Field": "damageAdjustRateNeutral",
+      "Name": "Damage Multiplier (Neutral)",
+      "Description": "Damage scaling against neutral targets."
+    },
+    {
+      "Field": "damageAdjustRateHitObj",
+      "Name": "Damage Multiplier (Objects)",
+      "Description": "Damage scaling against environmental objects."
+    },
+    {
+      "Field": "residentDamageId1",
+      "Name": "Passive Damage ID 1",
+      "Description": "Constant damage effect ID slot 1."
+    },
+    {
+      "Field": "residentDamageId2",
+      "Name": "Passive Damage ID 2",
+      "Description": "Constant damage effect ID slot 2."
+    },
+    {
+      "Field": "residentDamageId3",
+      "Name": "Passive Damage ID 3",
+      "Description": "Constant damage effect ID slot 3."
+    },
+    {
+      "Field": "stunDisableFlag",
+      "Name": "Stun Immunity Flag",
+      "Description": "If enabled, the character cannot be stunned."
+    },
+    {
+      "Field": "isPartsGuardDamage",
+      "Name": "Part Guard: Damage",
+      "Description": "Enables guarding interactions for damage hits."
+    },
+    {
+      "Field": "isPartsGuardBullet",
+      "Name": "Part Guard: Projectiles",
+      "Description": "Enables guarding interactions for bullets/projectiles."
+    },
+    {
+      "Field": "isPartsGuardSpellParry",
+      "Name": "Part Guard: Spell Parry",
+      "Description": "Enables spell parry interactions on body parts."
+    },
+    {
+      "Field": "stunMaxValue",
+      "Name": "Stun Threshold",
+      "Description": "Maximum stun buildup before stagger occurs."
+    },
+    {
+      "Field": "stunRecoverValue",
+      "Name": "Stun Recovery Speed",
+      "Description": "Time-based recovery rate for stun buildup. In seconds per second."
+    },
+    {
+      "Field": "changeStunMaxValue",
+      "Name": "Modified Stun Threshold",
+      "Description": "Alternative stun threshold under special conditions."
+    },
+    {
+      "Field": "changeStunRecoverValue",
+      "Name": "Modified Stun Recovery Speed",
+      "Description": "Alternative stun recovery rate under special conditions. In seconds per second."
+    },
+    {
+      "Field": "fadeInTime",
+      "Name": "Fade-In Time",
+      "Description": "Time taken for character to visually fade in. In seconds."
+    },
+    {
+      "Field": "generateSfx",
+      "Name": "Spawn SFX",
+      "Description": "Sound effect triggered on character spawn."
+    },
+    {
+      "Field": "partsGuardSpellParryAngle",
+      "Name": "Spell Parry Angle Threshold",
+      "Description": "Valid angle window for spell parry detection."
+    },
+    {
+      "Field": "poiseValue",
+      "Name": "Poise Gauge",
+      "Description": "Stagger resistance meter value."
+    },
+    {
+      "Field": "poiseRecoveryValue",
+      "Name": "Poise Recovery Rate",
+      "Description": "Rate at which poise regenerates per second."
+    },
+    {
+      "Field": "changePoiseValue",
+      "Name": "Modified Poise Gauge",
+      "Description": "Alternative poise value under special conditions."
+    },
+    {
+      "Field": "changePoiseRecoveryValue",
+      "Name": "Modified Poise Recovery Rate",
+      "Description": "Alternative poise recovery rate under special conditions."
+    },
+    {
+      "Field": "overKillRate",
+      "Name": "Overkill Bonus Threshold",
+      "Description": "HP percentage threshold used for overkill detection."
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "Multiplayer Time Reduction",
+      "Description": "Amount of time reduced from multiplayer limit."
+    },
+    {
+      "Field": "isDisallowMultiTarget",
+      "Name": "Disable Multi-Lock-On",
+      "Description": "Prevents locking onto multiple targets."
+    },
+    {
+      "Field": "isHollow",
+      "Name": "Hollow State",
+      "Description": "Marks the character as hollow/undead state."
+    },
+    {
+      "Field": "isClothHitMap",
+      "Name": "Enable Cloth Map Collision",
+      "Description": "Enables cloth simulation collision with environment."
+    },
+    {
+      "Field": "roundDropSoulCategory",
+      "Name": "NG+ Soul Scaling Category",
+      "Description": "Category used for scaling soul rewards in NG+ cycles."
+    },
+    {
+      "Field": "itemLotId",
+      "Name": "Item Drop Table ID (Host)",
+      "Description": "Loot table used for host player in first playthrough cycle."
+    },
+    {
+      "Field": "itemLotIdForGuest",
+      "Name": "Item Drop Table ID (Guest)",
+      "Description": "Loot table used for guest players in multiplayer."
+    },
+    {
+      "Field": "guardDelay",
+      "Name": "Guard Activation Delay",
+      "Description": "Delay before guard becomes active after input."
+    },
+    {
+      "Field": "hitPoint02",
+      "Name": "HP (NG+ Cycle 2)",
+      "Description": "Health value for second playthrough cycle."
+    },
+    {
+      "Field": "hitPoint03",
+      "Name": "HP (NG+ Cycle 3)",
+      "Description": "Health value for third playthrough cycle."
+    },
+    {
+      "Field": "hitPoint04",
+      "Name": "HP (NG+ Cycle 4)",
+      "Description": "Health value for fourth playthrough cycle."
+    },
+    {
+      "Field": "hitPoint05",
+      "Name": "HP (NG+ Cycle 5)",
+      "Description": "Health value for fifth playthrough cycle."
+    },
+    {
+      "Field": "hitPoint06",
+      "Name": "HP (NG+ Cycle 6)",
+      "Description": "Health value for sixth playthrough cycle."
+    },
+    {
+      "Field": "hitPoint07",
+      "Name": "HP (NG+ Cycle 7)",
+      "Description": "Health value for seventh playthrough cycle."
+    },
+    {
+      "Field": "hitPoint08",
+      "Name": "HP (NG+ Cycle 8)",
+      "Description": "Health value for eighth playthrough cycle."
+    },
+    {
+      "Field": "nameTextId",
+      "Name": "Character Name Text ID",
+      "Description": "Reference to localized display name text."
+    },
+    {
+      "Field": "bStrongDrop",
+      "Name": "High-Value Drop Flag",
+      "Description": "Enables rare or high-value item drops."
+    },
+    {
+      "Field": "bThrowableByEnemy",
+      "Name": "Can Be Thrown by Enemy",
+      "Description": "Determines if the character can be grabbed/thrown."
+    },
+    {
+      "Field": "bBulletAllDelete",
+      "Name": "Projectile Nullification",
+      "Description": "Removes all incoming projectiles."
+    },
+    {
+      "Field": "padding",
+      "Name": "Reserved",
+      "Description": "Unused parameter slot."
+    },
+    {
+      "Field": "effectID",
+      "Name": "Special Effect ID",
+      "Description": "Reference to applied special effect configuration."
+    }
+  ]
+}

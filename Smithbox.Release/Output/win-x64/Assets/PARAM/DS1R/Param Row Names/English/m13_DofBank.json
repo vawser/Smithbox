@@ -1,0 +1,389 @@
+{
+  "Name": "m13_DofBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0室内"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0ボス部屋"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B2樹内"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B１遠景石窟"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0屋外"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1屋外"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1暗部"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B2屋外"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B2座禅"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1鍾乳洞"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1ボス"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "沼切り替え1"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "沼切り替え2"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-scn130000"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-scn130000a"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-scn130000b"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-scn130000"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-scn130000"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-scn130000"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-scn130100-遠"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-scn130100-近"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-scn130100-last"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "old-scn130000-A"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "old-scn130000-cut020-1"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "old-scn130000-cut020-2"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "old-scn130000-近接なし"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "old-scn130000-振り向きカット"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "old-scn130000-ワープカット-消え前"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "old-scn130000-ワープカット-消え中"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "old-scn130000-向かってくるカット2"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    }
+  ]
+}

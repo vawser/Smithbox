@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THRUSTERS_SFX_ID_PARAM_PC_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 sfxId0 = -1">
+      <DisplayName>カラータイプ00</DisplayName>
+      <Description>カラータイプ00のときのSFXID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 sfxId1 = -1">
+      <DisplayName>カラータイプ01</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 sfxId2 = -1">
+      <DisplayName>カラータイプ02</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 sfxId3 = -1">
+      <DisplayName>カラータイプ03</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="s32 sfxId4 = -1">
+      <DisplayName>カラータイプ04</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="s32 sfxId5 = -1">
+      <DisplayName>カラータイプ05</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s32 sfxId6 = -1">
+      <DisplayName>カラータイプ06</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="s32 sfxId7 = -1">
+      <DisplayName>カラータイプ07</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>170</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

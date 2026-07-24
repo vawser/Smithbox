@@ -1,0 +1,9 @@
+{
+  "Name": "Status",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_Status",
+    "SB_Status_02"
+  ],
+  "SubTexturePrefix": "MENU_StatusIcon_"
+}

@@ -1,0 +1,341 @@
+{
+  "Name": "generatorregistparam_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 12300000,
+      "Entries": [
+        "[REG:12300000] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "[REG:12400000] Manikin"
+      ]
+    },
+    {
+      "ID": 12400001,
+      "Entries": [
+        "[REG:12400001] Manikin"
+      ]
+    },
+    {
+      "ID": 12400030,
+      "Entries": [
+        "[REG:12400030] Manikin"
+      ]
+    },
+    {
+      "ID": 12401000,
+      "Entries": [
+        "[REG:12401000] Manikin"
+      ]
+    },
+    {
+      "ID": 12401001,
+      "Entries": [
+        "[REG:12401001] Manikin"
+      ]
+    },
+    {
+      "ID": 12401020,
+      "Entries": [
+        "[REG:12401020] Manikin"
+      ]
+    },
+    {
+      "ID": 12402000,
+      "Entries": [
+        "[REG:12402000] Manikin"
+      ]
+    },
+    {
+      "ID": 12402030,
+      "Entries": [
+        "[REG:12402030] Manikin"
+      ]
+    },
+    {
+      "ID": 12403000,
+      "Entries": [
+        "[REG:12403000] Manikin"
+      ]
+    },
+    {
+      "ID": 12404000,
+      "Entries": [
+        "[REG:12404000] Manikin"
+      ]
+    },
+    {
+      "ID": 12405000,
+      "Entries": [
+        "[REG:12405000] Manikin"
+      ]
+    },
+    {
+      "ID": 12405010,
+      "Entries": [
+        "[REG:12405010] Manikin"
+      ]
+    },
+    {
+      "ID": 12406000,
+      "Entries": [
+        "[REG:12406000] Manikin"
+      ]
+    },
+    {
+      "ID": 12407000,
+      "Entries": [
+        "[REG:12407000] Manikin"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "[REG:12700000] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700010,
+      "Entries": [
+        "[REG:12700010] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700020,
+      "Entries": [
+        "[REG:12700020] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700030,
+      "Entries": [
+        "[REG:12700030] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700040,
+      "Entries": [
+        "[REG:12700040] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700050,
+      "Entries": [
+        "[REG:12700050] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700090,
+      "Entries": [
+        "[REG:12700090] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "[REG:13200000] Skeleton"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "[REG:13200100] Skeleton"
+      ]
+    },
+    {
+      "ID": 13200200,
+      "Entries": [
+        "[REG:13200200] Skeleton"
+      ]
+    },
+    {
+      "ID": 13900001,
+      "Entries": [
+        "[REG:13900001] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 13900011,
+      "Entries": [
+        "[REG:13900011] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "[REG:14700000] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 14900000,
+      "Entries": [
+        "[REG:14900000] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 14900100,
+      "Entries": [
+        "[REG:14900100] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "[REG:20500000] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "[REG:31100000] Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "[REG:31200000] Grave Warden"
+      ]
+    },
+    {
+      "ID": 31200001,
+      "Entries": [
+        "[REG:31200001] Grave Warden"
+      ]
+    },
+    {
+      "ID": 31600000,
+      "Entries": [
+        "[REG:31600000] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "[REG:50000000] Covetous Demon [Boss]"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "[REG:50100000] Mytha- the Baneful Queen [Boss]"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 70400000,
+      "Entries": [
+        "[REG:70400000] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70400001,
+      "Entries": [
+        "[REG:70400001] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70401000,
+      "Entries": [
+        "[REG:70401000] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "[REG:72600000] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 72600001,
+      "Entries": [
+        "[REG:72600001] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 74400000,
+      "Entries": [
+        "[REG:74400000] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 74400001,
+      "Entries": [
+        "[REG:74400001] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "[REG:75200000] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200001,
+      "Entries": [
+        "[REG:75200001] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "[REG:76200000] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 76200001,
+      "Entries": [
+        "[REG:76200001] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 82950000,
+      "Entries": [
+        "[REG:82950000] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 84100000,
+      "Entries": [
+        "[REG:84100000] Voice Marker (Altar of Sunlight)"
+      ]
+    },
+    {
+      "ID": 84910000,
+      "Entries": [
+        "[REG:84910000] Jester Thomas"
+      ]
+    },
+    {
+      "ID": 89150000,
+      "Entries": [
+        "[REG:89150000] Devotee Scarlett"
+      ]
+    }
+  ]
+}

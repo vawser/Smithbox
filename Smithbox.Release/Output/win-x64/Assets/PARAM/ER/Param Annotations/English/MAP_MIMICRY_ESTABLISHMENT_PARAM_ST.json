@@ -1,0 +1,73 @@
+{
+  "Param": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Type": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Name": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "mimicryEstablishment0",
+      "Name": "Mimicry Weight [0]",
+      "Description": "Mimicry weight 0"
+    },
+    {
+      "Field": "mimicryEstablishment1",
+      "Name": "Mimicry Weight [1]",
+      "Description": "Mimicry weight 1"
+    },
+    {
+      "Field": "mimicryEstablishment2",
+      "Name": "Mimicry Weight [2]",
+      "Description": "Mimicry weight 2"
+    },
+    {
+      "Field": "mimicryBeginSfxId0",
+      "Name": "Mimicry - Init SFX ID [0]",
+      "Description": "Mimicry 0 SFXID Forward swing"
+    },
+    {
+      "Field": "mimicrySfxId0",
+      "Name": "Mimicry - Midst SFX ID [0]",
+      "Description": "Mimicry 0 SFXID body"
+    },
+    {
+      "Field": "mimicryEndSfxId0",
+      "Name": "Mimicry - End SFX ID [0]",
+      "Description": "Mimicry 0 SFXID release"
+    },
+    {
+      "Field": "mimicryBeginSfxId1",
+      "Name": "Mimicry - Init SFX ID [1]",
+      "Description": "Mimicry 1 SFXID Forward swing"
+    },
+    {
+      "Field": "mimicrySfxId1",
+      "Name": "Mimicry - Midst SFX ID [1]",
+      "Description": "Mimicry 1 SFXID body"
+    },
+    {
+      "Field": "mimicryEndSfxId1",
+      "Name": "Mimicry - End SFX ID [1]",
+      "Description": "Mimicry 1 SFXID release"
+    },
+    {
+      "Field": "mimicryBeginSfxId2",
+      "Name": "Mimicry - Init SFX ID [2]",
+      "Description": "Mimicry 2 SFXID Forward swing"
+    },
+    {
+      "Field": "mimicrySfxId2",
+      "Name": "Mimicry - Midst SFX ID [2]",
+      "Description": "Mimicry 2 SFXID body"
+    },
+    {
+      "Field": "mimicryEndSfxId2",
+      "Name": "Mimicry - End SFX ID [2]",
+      "Description": "Mimicry 2 SFXID cancellation"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

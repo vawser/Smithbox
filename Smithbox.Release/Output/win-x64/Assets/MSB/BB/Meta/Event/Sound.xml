@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a sound event within the map." />
+  
+  <Field>
+    <SoundType
+    AltName="Sound Type"
+    Wiki="The type of sound this emitter produces." 
+    Enum="SOUND_TYPE" />
+    
+    <SoundID
+    AltName="Sound ID"
+    Wiki="The ID of the sound to emit" 
+    SoundAlias="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="SOUND_TYPE">
+        <Option Value="0" Name="Environment" />
+        <Option Value="6" Name="Boss Fight" />
+        <Option Value="7" Name="Voice" />
+    </Enum>
+  </Enums>
+</MSBMETA>

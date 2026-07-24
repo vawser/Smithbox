@@ -1,0 +1,143 @@
+{
+  "Param": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Type": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Name": "DUAL_WIELDING_PERMISSION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "なし",
+      "Description": ""
+    },
+    {
+      "Field": "unarmed",
+      "Name": "二刀流 素手",
+      "Description": ""
+    },
+    {
+      "Field": "fist",
+      "Name": "二刀流 拳",
+      "Description": ""
+    },
+    {
+      "Field": "dagger",
+      "Name": "二刀流 短剣",
+      "Description": ""
+    },
+    {
+      "Field": "thrustingSword",
+      "Name": "二刀流 刺剣",
+      "Description": ""
+    },
+    {
+      "Field": "sword",
+      "Name": "二刀流 片手剣",
+      "Description": ""
+    },
+    {
+      "Field": "doublelBlade",
+      "Name": "二刀流 双刃剣",
+      "Description": ""
+    },
+    {
+      "Field": "hammer",
+      "Name": "二刀流 片手槌",
+      "Description": ""
+    },
+    {
+      "Field": "greatSword",
+      "Name": "二刀流 両手剣",
+      "Description": ""
+    },
+    {
+      "Field": "axe",
+      "Name": "二刀流 片手斧",
+      "Description": ""
+    },
+    {
+      "Field": "greatHammer",
+      "Name": "二刀流 両手槌",
+      "Description": ""
+    },
+    {
+      "Field": "ultraGreatSword",
+      "Name": "二刀流 両手特大剣",
+      "Description": ""
+    },
+    {
+      "Field": "greatAxe",
+      "Name": "二刀流 両手斧",
+      "Description": ""
+    },
+    {
+      "Field": "scythe",
+      "Name": "二刀流 両手鎌",
+      "Description": ""
+    },
+    {
+      "Field": "halberd",
+      "Name": "二刀流 両手長斧",
+      "Description": ""
+    },
+    {
+      "Field": "spear",
+      "Name": "二刀流 槍",
+      "Description": ""
+    },
+    {
+      "Field": "lance",
+      "Name": "二刀流 突撃槍",
+      "Description": ""
+    },
+    {
+      "Field": "whip",
+      "Name": "二刀流 鞭",
+      "Description": ""
+    },
+    {
+      "Field": "bow",
+      "Name": "二刀流 片手ボウ",
+      "Description": ""
+    },
+    {
+      "Field": "burstBow",
+      "Name": "二刀流 連射片手ボウ",
+      "Description": ""
+    },
+    {
+      "Field": "wand",
+      "Name": "二刀流 片手杖",
+      "Description": ""
+    },
+    {
+      "Field": "bell",
+      "Name": "二刀流 片手ベル",
+      "Description": ""
+    },
+    {
+      "Field": "rightShield",
+      "Name": "二刀流 右盾",
+      "Description": ""
+    },
+    {
+      "Field": "leftShield",
+      "Name": "二刀流 左盾",
+      "Description": ""
+    },
+    {
+      "Field": "claw",
+      "Name": "二刀流 かぎ爪",
+      "Description": ""
+    },
+    {
+      "Field": "unk0",
+      "Name": "Dual-wielding Unknown0",
+      "Description": ""
+    },
+    {
+      "Field": "unk1",
+      "Name": "Dual-wielding Unknown1",
+      "Description": ""
+    }
+  ]
+}

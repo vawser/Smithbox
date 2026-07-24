@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a sound override region in the map." />
+  
+  <Field>
+    <SoundOverride_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <SoundOverride_UnkT03
+    AltName="Unknown: 0x3"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

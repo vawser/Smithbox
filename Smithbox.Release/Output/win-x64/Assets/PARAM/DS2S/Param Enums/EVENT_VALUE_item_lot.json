@@ -1,0 +1,1235 @@
+{
+  "Key": "EVENT_VALUE_item_lot",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_item_lot"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item lottery test"
+        }
+      ]
+    },
+    {
+      "Key": "1307000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1307100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (headless) -?"
+        }
+      ]
+    },
+    {
+      "Key": "1502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion (Male) - Defeat - Petrification release item"
+        }
+      ]
+    },
+    {
+      "Key": "1502010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion (male) - Equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1506000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grave Keeper - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1514000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The old king-?"
+        }
+      ]
+    },
+    {
+      "Key": "1700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine Maiden - First Conversation - Est Bottle"
+        }
+      ]
+    },
+    {
+      "Key": "1701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine Maiden (Child) - Conversation - Feather of Estintia"
+        }
+      ]
+    },
+    {
+      "Key": "1702000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen-?"
+        }
+      ]
+    },
+    {
+      "Key": "1704000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1705000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire guard 1-Equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1705100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire protection woman 2-?"
+        }
+      ]
+    },
+    {
+      "Key": "1705300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire guard 3-?"
+        }
+      ]
+    },
+    {
+      "Key": "1721000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit of the Prime Minister - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1723000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firekeeper's Housekeeper-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1724000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1725000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1726000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1729000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Loyal dog-?"
+        }
+      ]
+    },
+    {
+      "Key": "1741000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1741010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior-NPC Migration MAX-Soul Vessel"
+        }
+      ]
+    },
+    {
+      "Key": "1742000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior of Vengeance - Thank You for Helping - Patch's House Key"
+        }
+      ]
+    },
+    {
+      "Key": "1742010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Avenge Warrior - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1743000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1744000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch - Thank you for your help - Patch's house key"
+        }
+      ]
+    },
+    {
+      "Key": "1744010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1744020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch - Giant's Forest Conversation - White Sign Wax Stone"
+        }
+      ]
+    },
+    {
+      "Key": "1751000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Drawing - Giant's Forest Conversation - A House Key"
+        }
+      ]
+    },
+    {
+      "Key": "1751010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map drawing: equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1752000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1752010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - 2nd Encounter - Human Statue"
+        }
+      ]
+    },
+    {
+      "Key": "1752020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - 3rd Encounter - Iron Ring of Protection +1"
+        }
+      ]
+    },
+    {
+      "Key": "1753000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1753010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bellkeeper-?"
+        }
+      ]
+    },
+    {
+      "Key": "1753020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "1754000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Hag - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1756000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "1757000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters A-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1758000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters B-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1759000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters C-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1760000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1760010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1-Conversation-Tsursube Elementary School"
+        }
+      ]
+    },
+    {
+      "Key": "1760020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1 - Rescue of the Prisoner Girl - Goddess' Blessing"
+        }
+      ]
+    },
+    {
+      "Key": "1760100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1760110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2 - Conversation - Hanging Stone"
+        }
+      ]
+    },
+    {
+      "Key": "1760120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard's Girl 2 - Rescue of a Prisoner Girl - Sparks of Magic"
+        }
+      ]
+    },
+    {
+      "Key": "1760200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner Girl-Conversation-Tsursube Elementary School"
+        }
+      ]
+    },
+    {
+      "Key": "1761000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1762000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1763000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer - Thank You for Rescue - Reduction of Reason"
+        }
+      ]
+    },
+    {
+      "Key": "1764000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1764300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EX blacksmith - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1766000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1768000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spellmania-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1769000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Worker - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1770000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1771000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1771010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - 1st Person (Ladder Shop) - All Exorcism Rings"
+        }
+      ]
+    },
+    {
+      "Key": "1771020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person - 2nd person (map writer) - Withdrawal logic"
+        }
+      ]
+    },
+    {
+      "Key": "1771030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - Third Person (Spellmania) - Sun of Chaos"
+        }
+      ]
+    },
+    {
+      "Key": "1771040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - 4th Person (Priestess) - Magic Release"
+        }
+      ]
+    },
+    {
+      "Key": "1772000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curious item shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1776000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top weapon shop-?"
+        }
+      ]
+    },
+    {
+      "Key": "1777000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cat-?"
+        }
+      ]
+    },
+    {
+      "Key": "1783040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1784000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Indulgence - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1785040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1786000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sparkling girl-?"
+        }
+      ]
+    },
+    {
+      "Key": "1787000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon-Conversation-Dragon Chaos"
+        }
+      ]
+    },
+    {
+      "Key": "2001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Seikyo - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2001011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 1 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2001012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2001013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 3 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Guardian - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2002011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2002012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2002013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Dark Spirit of Blood - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2003011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2004011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 1 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2004012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2004013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 3 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Mouse - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2005011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2005012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2005013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Abyss - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2006011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Sun - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2007011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Sun-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Sun-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Sun-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Ancient Dragon - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2008011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Ancient Dragon-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2008012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Ancient Dragon - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2008013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Ancient Dragon-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Strong Persons-First Pledge-List of Strong Persons"
+        }
+      ]
+    },
+    {
+      "Key": "2009011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Strong Person-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Strong Person-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Strongman - Level 3 Reward - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "3001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Pointing\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Come on\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A book of ``a polite bow''"
+        }
+      ]
+    },
+    {
+      "Key": "3004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "``One Bow'' Book"
+        }
+      ]
+    },
+    {
+      "Key": "3005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Welcome\" letter"
+        }
+      ]
+    },
+    {
+      "Key": "3006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Opening Ceremony\""
+        }
+      ]
+    },
+    {
+      "Key": "3007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Wave your hand\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Guts Pose”"
+        }
+      ]
+    },
+    {
+      "Key": "3009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Joy”"
+        }
+      ]
+    },
+    {
+      "Key": "3010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Battle Cry”"
+        }
+      ]
+    },
+    {
+      "Key": "3011000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Getting used to your shoulders”"
+        }
+      ]
+    },
+    {
+      "Key": "3012000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Ei Ei O\""
+        }
+      ]
+    },
+    {
+      "Key": "3013000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Letter of “understanding”"
+        }
+      ]
+    },
+    {
+      "Key": "3014000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Negation”"
+        }
+      ]
+    },
+    {
+      "Key": "3015000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Leave it to me\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3016000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Begging for Life”"
+        }
+      ]
+    },
+    {
+      "Key": "3017000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Dogeza”"
+        }
+      ]
+    },
+    {
+      "Key": "3018000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Beheading”"
+        }
+      ]
+    },
+    {
+      "Key": "3019000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Provocation\""
+        }
+      ]
+    },
+    {
+      "Key": "3020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Make fun of\""
+        }
+      ]
+    },
+    {
+      "Key": "3021000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Sun Praise”"
+        }
+      ]
+    },
+    {
+      "Key": "60001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kudzu Bottom] Dropped by the last giant soldier"
+        }
+      ]
+    },
+    {
+      "Key": "60002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Rotten Giant Forest] Giant Fruit"
+        }
+      ]
+    },
+    {
+      "Key": "60003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Guardian Dragon's Nest] Dragon Egg Fossil"
+        }
+      ]
+    },
+    {
+      "Key": "60004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Titan] Access the corpse of the giant"
+        }
+      ]
+    },
+    {
+      "Key": "60005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Ancient Dragon] Access the corpse of the Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "60006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[NPC Event] Reward for defeating the Miracle Man"
+        }
+      ]
+    },
+    {
+      "Key": "60008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For defeating Vagrant on the way"
+        }
+      ]
+    },
+    {
+      "Key": "60009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For defeating petrified lion warriors"
+        }
+      ]
+    }
+  ]
+}

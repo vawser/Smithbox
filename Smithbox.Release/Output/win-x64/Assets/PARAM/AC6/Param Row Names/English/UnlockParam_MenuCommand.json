@@ -1,0 +1,137 @@
+{
+  "Name": "UnlockParam_MenuCommand",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "Assemble"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Assemble"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Paint"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Paint"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Paint"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Paint"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Paint"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Design"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "AC Test"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Market"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "Market"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "Market"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "Market"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "Online Arena"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "Online Arena Unban"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Mission"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "Mission"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "Replay Mission"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "OS Update"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Mercenary rank unlocked"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Assemble"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "for testing"
+      ]
+    }
+  ]
+}

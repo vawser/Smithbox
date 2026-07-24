@@ -1,0 +1,1049 @@
+{
+  "Name": "PadRumble",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[test] Walking HD vibration"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[test] Driving HD vibration"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "[test] BD ignition HD vibration"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "walking"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Running"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "ground hover walking"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Ground hover running"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "tank low speed"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "tank fast"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "float tank walking"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "float tank running"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "ground boost dash ignition"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "During ground boost dash"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "ground boost dash brake"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Ground QB (with kickout for 2, reverse, and 4)"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Ground QB (tank)"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "QB140_around"
+      ]
+    },
+    {
+      "ID": 9141,
+      "Entries": [
+        "QB140_left only"
+      ]
+    },
+    {
+      "ID": 9142,
+      "Entries": [
+        "QB140_right only"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "hovering QB"
+      ]
+    },
+    {
+      "ID": 9160,
+      "Entries": [
+        "drift"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "jump"
+      ]
+    },
+    {
+      "ID": 9180,
+      "Entries": [
+        "Boost increase"
+      ]
+    },
+    {
+      "ID": 9190,
+      "Entries": [
+        "Start hovering"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Hovering"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Unhover"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Falling"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Air boost falling"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "Air boost increasing"
+      ]
+    },
+    {
+      "ID": 9250,
+      "Entries": [
+        "Before starting Assault Boost"
+      ]
+    },
+    {
+      "ID": 9251,
+      "Entries": [
+        "Assault boost activation moment"
+      ]
+    },
+    {
+      "ID": 9252,
+      "Entries": [
+        "Assault boost in progress"
+      ]
+    },
+    {
+      "ID": 9260,
+      "Entries": [
+        "small landing"
+      ]
+    },
+    {
+      "ID": 9270,
+      "Entries": [
+        "big landing"
+      ]
+    },
+    {
+      "ID": 9280,
+      "Entries": [
+        "Stage addition hit"
+      ]
+    },
+    {
+      "ID": 9290,
+      "Entries": [
+        "100% additional hit"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Small stagger"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        "Great stagger (stagger)"
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "Start blowing away"
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        "blown away"
+      ]
+    },
+    {
+      "ID": 9340,
+      "Entries": [
+        "blown away landing"
+      ]
+    },
+    {
+      "ID": 9350,
+      "Entries": [
+        "blown back into the air"
+      ]
+    },
+    {
+      "ID": 9360,
+      "Entries": [
+        "Small arms fire attack (right hand side)"
+      ]
+    },
+    {
+      "ID": 9370,
+      "Entries": [
+        "Large weapon shooting attack (right hand side)"
+      ]
+    },
+    {
+      "ID": 9380,
+      "Entries": [
+        "Small arms fire attack (left hand side)"
+      ]
+    },
+    {
+      "ID": 9390,
+      "Entries": [
+        "Large weapon shooting attack (left hand side)"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Small arms fire attack (right dorsal side)"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Large weapon shooting attack (right dorsal side)"
+      ]
+    },
+    {
+      "ID": 9420,
+      "Entries": [
+        "Small arms fire attack (left dorsal side)"
+      ]
+    },
+    {
+      "ID": 9430,
+      "Entries": [
+        "Large weapon shooting attack (left dorsal side)"
+      ]
+    },
+    {
+      "ID": 9440,
+      "Entries": [
+        "Melee attack stepping boost"
+      ]
+    },
+    {
+      "ID": 9450,
+      "Entries": [
+        "Melee attack (swing)"
+      ]
+    },
+    {
+      "ID": 9460,
+      "Entries": [
+        "Use assault drive"
+      ]
+    },
+    {
+      "ID": 9465,
+      "Entries": [
+        "Weapon change left"
+      ]
+    },
+    {
+      "ID": 9466,
+      "Entries": [
+        "Weapon change right"
+      ]
+    },
+    {
+      "ID": 9471,
+      "Entries": [
+        "Start reloading"
+      ]
+    },
+    {
+      "ID": 9472,
+      "Entries": [
+        "Reload completed"
+      ]
+    },
+    {
+      "ID": 9473,
+      "Entries": [
+        "Reload start right"
+      ]
+    },
+    {
+      "ID": 9474,
+      "Entries": [
+        "Reload completed right"
+      ]
+    },
+    {
+      "ID": 9475,
+      "Entries": [
+        "weapon purge left"
+      ]
+    },
+    {
+      "ID": 9476,
+      "Entries": [
+        "weapon purge right"
+      ]
+    },
+    {
+      "ID": 9480,
+      "Entries": [
+        "On ground death hit"
+      ]
+    },
+    {
+      "ID": 9485,
+      "Entries": [
+        "Large death explosion"
+      ]
+    },
+    {
+      "ID": 9490,
+      "Entries": [
+        "Blown away death starts"
+      ]
+    },
+    {
+      "ID": 9495,
+      "Entries": [
+        "Small explosion upon death"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Melee attack (hit) small"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "During a melee attack (hit)"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "Melee attack (hit) large"
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        "Melee attack (hit)"
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        "Light gunfire landing"
+      ]
+    },
+    {
+      "ID": 9530,
+      "Entries": [
+        "Strong shot landing"
+      ]
+    },
+    {
+      "ID": 9540,
+      "Entries": [
+        "explosives landing"
+      ]
+    },
+    {
+      "ID": 9541,
+      "Entries": [
+        "for phalanx"
+      ]
+    },
+    {
+      "ID": 9550,
+      "Entries": [
+        "Hacking in progress"
+      ]
+    },
+    {
+      "ID": 9560,
+      "Entries": [
+        "Activate wall hack"
+      ]
+    },
+    {
+      "ID": 9570,
+      "Entries": [
+        "recovery use"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "PG test (OK to delete)"
+      ]
+    },
+    {
+      "ID": 2020010,
+      "Entries": [
+        "Dam destruction_final facility destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 2020011,
+      "Entries": [
+        "Dam destruction_final facility destruction_weak 20f"
+      ]
+    },
+    {
+      "ID": 2020100,
+      "Entries": [
+        "Dam destruction_target facility destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 2030070,
+      "Entries": [
+        "Over the wall_elevator_low 20f"
+      ]
+    },
+    {
+      "ID": 2050000,
+      "Entries": [
+        "Final facility destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 2050010,
+      "Entries": [
+        "Final facility destruction_weak 30f"
+      ]
+    },
+    {
+      "ID": 2050020,
+      "Entries": [
+        "Final facility destruction_strong 90f"
+      ]
+    },
+    {
+      "ID": 2050030,
+      "Entries": [
+        "Final facility destruction_weak 90f"
+      ]
+    },
+    {
+      "ID": 2050040,
+      "Entries": [
+        "Final facility destruction_strong 40f"
+      ]
+    },
+    {
+      "ID": 2050050,
+      "Entries": [
+        "Final facility destruction_weak 40f"
+      ]
+    },
+    {
+      "ID": 2050060,
+      "Entries": [
+        "Final facility destruction_strong 20f"
+      ]
+    },
+    {
+      "ID": 2050070,
+      "Entries": [
+        "Final facility destruction_low 20f"
+      ]
+    },
+    {
+      "ID": 2050080,
+      "Entries": [
+        "Final facility destruction_Strong 10f"
+      ]
+    },
+    {
+      "ID": 2050090,
+      "Entries": [
+        "Final facility destruction_low 10f"
+      ]
+    },
+    {
+      "ID": 2080000,
+      "Entries": [
+        "Mining ship destruction_sub generator destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 2080040,
+      "Entries": [
+        "Mining ship destruction_sub generator destruction_strong 40f"
+      ]
+    },
+    {
+      "ID": 2080060,
+      "Entries": [
+        "Mining ship destruction_sub generator destruction_strong 20f"
+      ]
+    },
+    {
+      "ID": 2180000,
+      "Entries": [
+        "Continental shell_huge EV_strong 30f"
+      ]
+    },
+    {
+      "ID": 2180010,
+      "Entries": [
+        "Continental shell_huge EV_weak 30f"
+      ]
+    },
+    {
+      "ID": 2180060,
+      "Entries": [
+        "Continental shell_huge EV_strong 20f"
+      ]
+    },
+    {
+      "ID": 2180070,
+      "Entries": [
+        "Continental shell_huge EV_weak 20f"
+      ]
+    },
+    {
+      "ID": 2220000,
+      "Entries": [
+        "Large missile launch support_missile launch_strong 30f"
+      ]
+    },
+    {
+      "ID": 2220020,
+      "Entries": [
+        "Large missile launch support_missile landing_strong 90f"
+      ]
+    },
+    {
+      "ID": 2220040,
+      "Entries": [
+        "Large missile launch support_missile launch_strong 40f"
+      ]
+    },
+    {
+      "ID": 2220070,
+      "Entries": [
+        "Large missile launch support_missile launch_weak 20f"
+      ]
+    },
+    {
+      "ID": 3030000,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 3030010,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_weak 30f"
+      ]
+    },
+    {
+      "ID": 3030060,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_strong 20f"
+      ]
+    },
+    {
+      "ID": 3030070,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_weak 20f"
+      ]
+    },
+    {
+      "ID": 3030080,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_strong 10f"
+      ]
+    },
+    {
+      "ID": 3030090,
+      "Entries": [
+        "Fuel base explosion_target OBJ destruction_weak 10f"
+      ]
+    },
+    {
+      "ID": 3230000,
+      "Entries": [
+        "Impact when landing worm for HU Dora cannon performance_strong 20f"
+      ]
+    },
+    {
+      "ID": 3230010,
+      "Entries": [
+        "Impact when landing worm for HU Dora cannon performance_weak 30f"
+      ]
+    },
+    {
+      "ID": 3420010,
+      "Entries": [
+        "Target facility destruction Strong 10f"
+      ]
+    },
+    {
+      "ID": 3420020,
+      "Entries": [
+        "Target facility destruction Strong 40f"
+      ]
+    },
+    {
+      "ID": 3420030,
+      "Entries": [
+        "Target facility destruction weak 30f"
+      ]
+    },
+    {
+      "ID": 3420040,
+      "Entries": [
+        "Target facility destruction weak 20f"
+      ]
+    },
+    {
+      "ID": 3420520,
+      "Entries": [
+        "Mine shaft sabotage_Melange geyser final explosion_Strong 90f"
+      ]
+    },
+    {
+      "ID": 3420660,
+      "Entries": [
+        "Mine shaft sabotage_Melange geyser occurrence_Small_Strong 20f"
+      ]
+    },
+    {
+      "ID": 3420730,
+      "Entries": [
+        "Mine shaft sabotage_ Melange geyser first sign 1_ Weak 90f"
+      ]
+    },
+    {
+      "ID": 3420750,
+      "Entries": [
+        "Mine sabotage_ Melange geyser first sign 2_ Weak 90f_ Weak 40f"
+      ]
+    },
+    {
+      "ID": 3420820,
+      "Entries": [
+        "Mine shaft sabotage_When a melange geyser occurs_Strength 90f"
+      ]
+    },
+    {
+      "ID": 3420900,
+      "Entries": [
+        "Mine shaft sabotage_Melange geyser continuation no longer possible_Strong 30f"
+      ]
+    },
+    {
+      "ID": 3420901,
+      "Entries": [
+        "Mine shaft sabotage_Melange geyser cannot continue_Vibration stopped"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "The damn big hatch closes_Strong 30f"
+      ]
+    },
+    {
+      "ID": 4000050,
+      "Entries": [
+        "The damn big hatch closes_weak 40f"
+      ]
+    },
+    {
+      "ID": 4000080,
+      "Entries": [
+        "Damn big hatch closes_strong 10f"
+      ]
+    },
+    {
+      "ID": 4020020,
+      "Entries": [
+        "Control device destruction_90f"
+      ]
+    },
+    {
+      "ID": 4020040,
+      "Entries": [
+        "Control device destruction_strong 40f"
+      ]
+    },
+    {
+      "ID": 4020060,
+      "Entries": [
+        "Control device destruction_strong 20f"
+      ]
+    },
+    {
+      "ID": 4020070,
+      "Entries": [
+        "Control device destruction_weak 20f"
+      ]
+    },
+    {
+      "ID": 4020080,
+      "Entries": [
+        "Control device destruction_Strong 10f"
+      ]
+    },
+    {
+      "ID": 4020090,
+      "Entries": [
+        "Control device destruction_weak 10f"
+      ]
+    },
+    {
+      "ID": 4020100,
+      "Entries": [
+        "Big furnace explosion_strong 30f"
+      ]
+    },
+    {
+      "ID": 4020110,
+      "Entries": [
+        "Big furnace explosion_weak 30f"
+      ]
+    },
+    {
+      "ID": 4020120,
+      "Entries": [
+        "Big furnace explosion_strong 90f"
+      ]
+    },
+    {
+      "ID": 4020130,
+      "Entries": [
+        "Big furnace explosion_weak 90f"
+      ]
+    },
+    {
+      "ID": 4020140,
+      "Entries": [
+        "Big furnace explosion_strong 40f"
+      ]
+    },
+    {
+      "ID": 4020150,
+      "Entries": [
+        "Big furnace explosion_weak 40f"
+      ]
+    },
+    {
+      "ID": 4020160,
+      "Entries": [
+        "Big furnace explosion_strong 20f"
+      ]
+    },
+    {
+      "ID": 4020170,
+      "Entries": [
+        "Big furnace explosion_low 20f"
+      ]
+    },
+    {
+      "ID": 4020180,
+      "Entries": [
+        "Big furnace explosion_strong 10f"
+      ]
+    },
+    {
+      "ID": 4020190,
+      "Entries": [
+        "Big furnace explosion_low 10f"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "Tower destruction_strong 30f"
+      ]
+    },
+    {
+      "ID": 5010070,
+      "Entries": [
+        "Tower destruction_low 20f"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "When destroying the generator_Strong 30f"
+      ]
+    },
+    {
+      "ID": 5030060,
+      "Entries": [
+        "When generator is destroyed_strong 20f"
+      ]
+    },
+    {
+      "ID": 6010010,
+      "Entries": [
+        "Engine destruction_strong 20f"
+      ]
+    },
+    {
+      "ID": 6010020,
+      "Entries": [
+        "Engine destruction_low 20f"
+      ]
+    },
+    {
+      "ID": 6010030,
+      "Entries": [
+        "Engine destruction_weak 40f"
+      ]
+    },
+    {
+      "ID": 6010040,
+      "Entries": [
+        "Engine destruction_strong 90f"
+      ]
+    },
+    {
+      "ID": 9900000,
+      "Entries": [
+        "Pad vibration data_strong 30f"
+      ]
+    },
+    {
+      "ID": 9900010,
+      "Entries": [
+        "Pad vibration data_weak 30f"
+      ]
+    },
+    {
+      "ID": 9900020,
+      "Entries": [
+        "Pad vibration data_strong 90f"
+      ]
+    },
+    {
+      "ID": 9900030,
+      "Entries": [
+        "Pad vibration data_weak 90f"
+      ]
+    },
+    {
+      "ID": 9900040,
+      "Entries": [
+        "Pad vibration data_strong 40f"
+      ]
+    },
+    {
+      "ID": 9900050,
+      "Entries": [
+        "Pad vibration data_weak 40f"
+      ]
+    },
+    {
+      "ID": 9900060,
+      "Entries": [
+        "Pad vibration data_strong 20f"
+      ]
+    },
+    {
+      "ID": 9900070,
+      "Entries": [
+        "Pad vibration data_weak 20f"
+      ]
+    },
+    {
+      "ID": 9900080,
+      "Entries": [
+        "Pad vibration data_strong 10f"
+      ]
+    },
+    {
+      "ID": 9900090,
+      "Entries": [
+        "Pad vibration data_weak 10f"
+      ]
+    },
+    {
+      "ID": 50200100,
+      "Entries": [
+        "Heavy guard mechanism Gorigori"
+      ]
+    },
+    {
+      "ID": 50200110,
+      "Entries": [
+        "Heavy guard mecha ground slam"
+      ]
+    },
+    {
+      "ID": 50200120,
+      "Entries": [
+        "Heavy guard mechanism two-handed scissors"
+      ]
+    },
+    {
+      "ID": 61000010,
+      "Entries": [
+        "Sea spider walking"
+      ]
+    },
+    {
+      "ID": 61000011,
+      "Entries": [
+        "Sea spider running"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "Sea spider slam"
+      ]
+    },
+    {
+      "ID": 64000010,
+      "Entries": [
+        "Mining ship walking vibration"
+      ]
+    },
+    {
+      "ID": 64000100,
+      "Entries": [
+        "Mining ship falls"
+      ]
+    },
+    {
+      "ID": 64009000,
+      "Entries": [
+        "Mining ship explosion large"
+      ]
+    },
+    {
+      "ID": 64009010,
+      "Entries": [
+        "Mining ship exploding"
+      ]
+    },
+    {
+      "ID": 64009020,
+      "Entries": [
+        "Mining ship explosion small"
+      ]
+    },
+    {
+      "ID": 99999000,
+      "Entries": [
+        "General-purpose death large explosion"
+      ]
+    },
+    {
+      "ID": 99999010,
+      "Entries": [
+        "General purpose death explosion during"
+      ]
+    },
+    {
+      "ID": 99999020,
+      "Entries": [
+        "General purpose death explosion small"
+      ]
+    }
+  ]
+}

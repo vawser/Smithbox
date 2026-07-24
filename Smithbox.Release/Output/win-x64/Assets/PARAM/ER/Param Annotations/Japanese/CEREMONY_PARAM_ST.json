@@ -1,0 +1,38 @@
+{
+  "Param": "CEREMONY_PARAM_ST",
+  "Type": "CEREMONY_PARAM_ST",
+  "Name": "CEREMONY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "eventLayerId",
+      "Name": "イベントレイヤーID",
+      "Description": "イベントメーカーのレイヤーID"
+    },
+    {
+      "Field": "mapStudioLayerId",
+      "Name": "MapStudioレイヤーID",
+      "Description": "MapStudioのレイヤーID"
+    },
+    {
+      "Field": "multiPlayAreaOffset",
+      "Name": "マルチプレイエリアオフセット",
+      "Description": "マルチプレイエリアIDのオフセット。例えば「100」と入れるとマルチプレイエリアIDが「100」オフセットされる。"
+    },
+    {
+      "Field": "overrideMapPlaceNameId",
+      "Name": "マップ名ID上書き_地名表示",
+      "Description": "マップ名ID_地名表示を指定IDに上書きする。-1:上書き無し、-2以下,0以上:そのIDに上書き。"
+    },
+    {
+      "Field": "overrideSaveMapNameId",
+      "Name": "マップ名ID上書き_セーブデータ表示",
+      "Description": "マップ名ID_セーブデータ表示を指定IDに上書きする。-1:上書き無し、-2以下,0以上:そのIDに上書き。"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "SP_EFE_PC_WEAPON_STATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFE_PC_WEAPON_STATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Untransformed"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformed"
+        }
+      ]
+    }
+  ]
+}

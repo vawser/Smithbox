@@ -1,0 +1,23 @@
+{
+  "Param": "FE_CONTROLLER_SETTING_PARAM",
+  "Type": "FE_CONTROLLER_SETTING_PARAM",
+  "Name": "FE_CONTROLLER_SETTING_PARAM",
+  "Description": "Defines controller input sensitivity and UI cursor movement behavior for the front-end interface.",
+  "Fields": [
+    {
+      "Field": "StartReactionLine",
+      "Name": "Minimum Input Sensitivity Threshold",
+      "Description": "Defines the lowest input sensitivity level required before input begins to register."
+    },
+    {
+      "Field": "StartMoveSpeedRatio",
+      "Name": "Minimum Movement Speed Multiplier",
+      "Description": "Sets the base multiplier applied to movement speed at minimum input levels."
+    },
+    {
+      "Field": "MaxSpeed",
+      "Name": "Cursor Maximum Speed",
+      "Description": "Defines the maximum speed at which the UI cursor can move."
+    }
+  ]
+}

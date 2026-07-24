@@ -1,0 +1,68 @@
+{
+  "Param": "CS_REFLECTION_QUALITY_DETAIL",
+  "Type": "CS_REFLECTION_QUALITY_DETAIL",
+  "Name": "CS_REFLECTION_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "反射有効",
+      "Description": "反射有効"
+    },
+    {
+      "Field": "localLightEnabled",
+      "Name": "ローカルライト有効",
+      "Description": "ローカルライト有効"
+    },
+    {
+      "Field": "localLightForceEnabled",
+      "Name": "ローカルライト強制有効",
+      "Description": "ローカルライト強制有効"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": ""
+    },
+    {
+      "Field": "resolutionDivider",
+      "Name": "解像度スケール",
+      "Description": "解像度スケール"
+    },
+    {
+      "Field": "ssrEnabled",
+      "Name": "SSR有効",
+      "Description": "SSR有効"
+    },
+    {
+      "Field": "ssrGaussianBlurEnabled",
+      "Name": "ガウスぼかしの許可",
+      "Description": "ガウスぼかしの許可"
+    },
+    {
+      "Field": "dmy2",
+      "Name": "dmy",
+      "Description": ""
+    },
+    {
+      "Field": "ssrDepthRejectThresholdScale",
+      "Name": "計算距離スケール",
+      "Description": "計算距離スケール"
+    },
+    {
+      "Field": "ssrRayTraceStepScale",
+      "Name": "レイトレースステップ係数（SSRパラメータに乗算）",
+      "Description": "レイトレースステップ係数（SSRパラメータに乗算）"
+    },
+    {
+      "Field": "ssrFadeToViewerBias",
+      "Name": "フェード角度バイアス。小さくすると高品質",
+      "Description": "フェード角度バイアス。小さくすると高品質"
+    },
+    {
+      "Field": "ssrFresnelRejectBias",
+      "Name": "フレネルリジェクトバイアス。小さくすると高品質",
+      "Description": "フレネルリジェクトバイアス。小さくすると高品質"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "Key": "ASSET_NAVIMESH_GENERATE_ATTRIBUTE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_NAVIMESH_GENERATE_ATTRIBUTE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute 4"
+        }
+      ]
+    }
+  ]
+}

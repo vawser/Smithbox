@@ -1,0 +1,1361 @@
+{
+  "Name": "SoundObjectBreakParam",
+  "Entries": [
+    {
+      "ID": 200,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2241,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2242,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2243,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2244,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2245,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2260,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2270,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2280,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2313,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2315,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2430,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2440,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2445,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2460,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2470,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2480,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2490,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2530,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2540,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2550,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2560,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2590,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2611,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2612,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2613,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2640,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2660,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2670,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2680,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2730,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2740,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2750,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2993,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2995,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2996,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 2997,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 21050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 42020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 42030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102060,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102070,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102080,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102120,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102130,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102160,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102171,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102180,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102270,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102280,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102340,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 102360,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 109130,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 109140,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 140300,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 140302,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 140400,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 141160,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142080,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142090,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142120,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 142121,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 150300,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152002,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152003,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 152050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 159001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 159008,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 159009,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 159110,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161210,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161230,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161300,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161303,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161304,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161305,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 161400,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 162001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 162004,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 162010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 169020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172002,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172011,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172021,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 172050,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 179130,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 179140,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 179150,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 181303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 182010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182060,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182061,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182070,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 182090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 191090,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 211040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 219035,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 219080,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 232000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 249000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 249001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 249002,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 250200,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 251000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 251010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252001,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252011,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252012,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252013,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252015,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252021,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252022,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252023,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252061,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252062,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252063,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252064,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252120,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 252121,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 253003,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 253004,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 311030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 311040,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 321010,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 321020,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 329030,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 329031,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Destruction object -- 破壊オブジェクト"
+      ]
+    },
+    {
+      "ID": 352010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 352012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 352020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 352050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 352051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 353005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 353006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 354000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 354001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 354003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362244,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 372000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 372010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 372050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 372051,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

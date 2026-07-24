@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_HITSTOP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_HITSTOP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard"
+        }
+      ]
+    }
+  ]
+}

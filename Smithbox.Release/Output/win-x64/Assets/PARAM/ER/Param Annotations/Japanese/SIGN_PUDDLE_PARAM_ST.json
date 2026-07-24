@@ -1,0 +1,98 @@
+{
+  "Param": "SIGN_PUDDLE_PARAM_ST",
+  "Type": "SIGN_PUDDLE_PARAM_ST",
+  "Name": "SIGN_PUDDLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "matchAreaId",
+      "Name": "簡易マッチエリアID",
+      "Description": "属している簡易マッチエリアのID"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x20",
+      "Name": "unknown_0x20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x24",
+      "Name": "unknown_0x24",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "areaNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "gridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "gridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad3",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "posX",
+      "Description": ""
+    },
+    {
+      "Field": "posY",
+      "Name": "posY",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "posZ",
+      "Description": ""
+    },
+    {
+      "Field": "signSubCategoryId",
+      "Name": "signSubCategoryId",
+      "Description": ""
+    },
+    {
+      "Field": "locationTextId",
+      "Name": "locationTextId",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortId",
+      "Description": ""
+    },
+    {
+      "Field": "endPad",
+      "Name": "endPad",
+      "Description": ""
+    }
+  ]
+}

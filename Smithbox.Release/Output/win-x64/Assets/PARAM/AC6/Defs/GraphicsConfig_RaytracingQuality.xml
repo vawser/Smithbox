@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 enabled = 1">
+      <DisplayName>全体機能の有効無効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>レイトレ有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 dirLightShadowEnabled">
+      <DisplayName>並行ライトシャドウ有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>並行ライトのシャドウ有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 aoEnabled">
+      <DisplayName>AO有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AO有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 dirLightShadowRaySampleScale = 1">
+      <DisplayName>並行ライトシャドウのレイサンプル数スケール</DisplayName>
+      <Description>並行ライトシャドウのレイサンプル数スケール</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 dirLightShadowRaySampleOffset">
+      <DisplayName>並行ライトシャドウのレイサンプル数オフセット</DisplayName>
+      <Description>並行ライトシャドウのレイサンプル数オフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 aoRaySampleScale = 1">
+      <DisplayName>AOシャドウのレイサンプル数スケール</DisplayName>
+      <Description>AOシャドウのレイサンプル数スケール</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 aoRaySampleOffset">
+      <DisplayName>AOシャドウのレイサンプル数オフセット</DisplayName>
+      <Description>AOシャドウのレイサンプル数オフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 dirLightShadowConeScale = 1">
+      <DisplayName>コーンサイズのスケール</DisplayName>
+      <Description>通常0～1.0の範囲で調整。0にすると自動的にサンプル数は1になる。</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

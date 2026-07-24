@@ -1,0 +1,329 @@
+{
+  "Name": "generatorlocation_m10_02_00_00",
+  "Entries": [
+    {
+      "ID": 15,
+      "Entries": [
+        "[GEN:15] Milibeth"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[GEN:16] Milibeth"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "[GEN:17] Milibeth"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[GEN:210] Strowen"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[GEN:211] Strowen"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "[GEN:212] Strowen"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "[GEN:215] Griant"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "[GEN:216] Griant"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "[GEN:217] Griant"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[GEN:220] Morrel"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "[GEN:221] Morrel"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "[GEN:222] Morrel"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[GEN:320] Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Kobold"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[GEN:1001] Kobold"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[GEN:1002] Kobold"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[GEN:1003] Kobold"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Kobold"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[GEN:1012] Kobold"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Ogre"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[GEN:3040] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "[GEN:3041] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[GEN:3050] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "[GEN:3051] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[GEN:3101] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[GEN:3111] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "[GEN:3211] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "[GEN:3220] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "[GEN:3230] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "[GEN:3240] Basilisk"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        "[GEN:3241] Basilisk"
+      ]
+    },
+    {
+      "ID": 3242,
+      "Entries": [
+        "[GEN:3242] Basilisk"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "[GEN:3250] Basilisk"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "[GEN:3251] Basilisk"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "[GEN:3252] Basilisk"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[GEN:3300] Ogre"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[GEN:3301] Ogre"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "[GEN:3350] The Pursuer"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[GEN:4001] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[GEN:4002] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[GEN:4003] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[GEN:7010] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 8170,
+      "Entries": [
+        "[GEN:8170] Foreign Wanderer Phantom"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Player Character - Start Sequence"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[GEN:9500] Bastard Sword Foreigner Phantom"
+      ]
+    }
+  ]
+}

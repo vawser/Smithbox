@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <LightID
+    AltName="Light ID"
+    Wiki="" />
+    
+    <FadeStart
+    AltName="Fade Start"
+    Wiki="" />
+    
+    <FadeDistance
+    AltName="Fade Distance"
+    Wiki="" />
+    
+    <DepthOffset
+    AltName="Depth Offset"
+    Wiki="" />
+    
+    <ParsedDepthOffset
+    AltName="Parsed Depth Offset"
+    Wiki="" />
+    
+    <CalibrateFarRate
+    AltName="Calibrate Far Rate"
+    Wiki="" />
+    
+    <GradientFactor
+    AltName="Gradient Factor"
+    Wiki="" />
+    
+    <VolumeDepth
+    AltName="Volume Depth"
+    Wiki="" />
+    
+    <Color
+    AltName="Color"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

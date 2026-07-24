@@ -1,0 +1,43 @@
+{
+  "Param": "LENS_FLARE_EX_BANK",
+  "Type": "LENS_FLARE_EX_BANK",
+  "Name": "LENS_FLARE_EX_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "光源X角度[deg]",
+      "Description": "光源のX角度"
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "光源Y角度[deg]",
+      "Description": "光源のY角度"
+    },
+    {
+      "Field": "colR",
+      "Name": "色R",
+      "Description": "レンズフレア乗算色"
+    },
+    {
+      "Field": "colG",
+      "Name": "色G",
+      "Description": "レンズフレア乗算色"
+    },
+    {
+      "Field": "colB",
+      "Name": "色B",
+      "Description": "レンズフレア乗算色"
+    },
+    {
+      "Field": "colA",
+      "Name": "色RGB倍率[％]",
+      "Description": "レンズフレア乗算色"
+    },
+    {
+      "Field": "lightDist",
+      "Name": "光源距離[m]",
+      "Description": "光源距離"
+    }
+  ]
+}

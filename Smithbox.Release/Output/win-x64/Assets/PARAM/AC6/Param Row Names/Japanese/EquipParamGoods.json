@@ -1,0 +1,1313 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 25,
+      "Entries": [
+        "Est bottle imitation test -- エスト瓶もどきテスト"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Repair for Kisekae Lv:0 -- きせかえ用リペア\u3000Lv:0"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Repair for Kisekae Lv:1 -- きせかえ用リペア\u3000Lv:1"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Repair for Kisekae Lv:2 -- きせかえ用リペア\u3000Lv:2"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Repair for Kisekae Lv:3 -- きせかえ用リペア\u3000Lv:3"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Repair for Kisekae Lv:4 -- きせかえ用リペア\u3000Lv:4"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Test archive_garage acquisition_log -- テスト用アーカイブ_ガレージ入手_ログ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Test archive_garage acquisition_terms -- テスト用アーカイブ_ガレージ入手_用語"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Test archive_garage tips -- テスト用アーカイブ_ガレージ入手tips"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Test archive_mission_log -- テスト用アーカイブ_ミッション_ログ"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Test Archive_Mission_Term -- テスト用アーカイブ_ミッション_用語"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "Exchange item small -- 換金アイテム小"
+      ]
+    },
+    {
+      "ID": 10091000,
+      "Entries": [
+        "Items being exchanged for cash -- 換金アイテム中"
+      ]
+    },
+    {
+      "ID": 10092000,
+      "Entries": [
+        "Large exchange item -- 換金アイテム大"
+      ]
+    },
+    {
+      "ID": 10099000,
+      "Entries": [
+        "garbage scraps -- ゴミくず"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Est bottle imitation test -- エスト瓶もどきテスト"
+      ]
+    },
+    {
+      "ID": 13020000,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020010,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020020,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020030,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020040,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020050,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020060,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020070,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020080,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020090,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020100,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020110,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020120,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020130,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020140,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020150,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020160,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020170,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020180,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020190,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020200,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020210,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020220,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020230,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020240,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020250,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020260,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020270,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020280,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020290,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020300,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020310,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020320,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020330,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020340,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020350,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020360,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020370,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020380,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020390,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020400,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020410,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020420,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020430,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020440,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020450,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020460,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020470,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020480,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020490,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020500,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020510,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020520,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020530,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020540,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020550,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020560,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020570,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020580,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020590,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020600,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020610,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020620,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020630,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020640,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020650,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020660,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020670,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020680,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020690,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020700,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020710,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020720,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020730,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020740,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020750,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020760,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020770,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020780,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020790,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020800,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020810,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020820,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020830,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020840,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020850,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020860,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020870,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020880,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020890,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020900,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020910,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020920,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020930,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020940,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020950,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020960,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020970,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020980,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13020990,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021000,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021010,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021020,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021030,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021040,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021050,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021060,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021070,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021080,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021090,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021100,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021110,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021120,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021130,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021140,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021150,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021160,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021170,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021180,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021190,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021200,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021210,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021220,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021230,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021240,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021250,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021260,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021270,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021280,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021290,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021300,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021310,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021320,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021330,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021340,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021350,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021360,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021370,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021380,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021390,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021400,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021410,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021420,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021430,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021440,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021450,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021460,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021470,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021480,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021490,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 13021500,
+      "Entries": [
+        "thomas kirk -- トーマス・カーク"
+      ]
+    },
+    {
+      "ID": 13021510,
+      "Entries": [
+        "monkey gord -- モンキー・ゴード"
+      ]
+    },
+    {
+      "ID": 13021520,
+      "Entries": [
+        "G7 Harkler -- G7 ハークラー"
+      ]
+    },
+    {
+      "ID": 13021525,
+      "Entries": [
+        "Raven -- レイヴン"
+      ]
+    },
+    {
+      "ID": 13021530,
+      "Entries": [
+        "System log: one-sided battle -- システムログ：一方的な戦闘"
+      ]
+    },
+    {
+      "ID": 13021540,
+      "Entries": [
+        "System log: Escaped soldier -- システムログ：脱出した兵士"
+      ]
+    },
+    {
+      "ID": 13021550,
+      "Entries": [
+        "Video record: Steel Haze -- 映像記録：スティールヘイズ"
+      ]
+    },
+    {
+      "ID": 13021560,
+      "Entries": [
+        "Video recording: BAWS 2nd Arsenal -- 映像記録：BAWS第2工廠"
+      ]
+    },
+    {
+      "ID": 13021570,
+      "Entries": [
+        "Communication record: Rusty's encrypted communication -- 通信記録：ラスティの暗号通信"
+      ]
+    },
+    {
+      "ID": 13021580,
+      "Entries": [
+        "Document data: Drying well -- 文書データ：枯れゆく井戸"
+      ]
+    },
+    {
+      "ID": 13021590,
+      "Entries": [
+        "Video recording: Attempt to communicate with enemy aircraft -- 映像記録：敵機との通信試行"
+      ]
+    },
+    {
+      "ID": 13021600,
+      "Entries": [
+        "Correspondence records: Conversations with comrades -- 通信記録：同志との会話"
+      ]
+    },
+    {
+      "ID": 13021610,
+      "Entries": [
+        "Observation data: Survey of coral concentration in ice fields -- 観測データ：氷原のコーラル濃度調査"
+      ]
+    },
+    {
+      "ID": 13021620,
+      "Entries": [
+        "Observation data: Geological survey of ice fields -- 観測データ：氷原の地質調査"
+      ]
+    },
+    {
+      "ID": 13021630,
+      "Entries": [
+        "Observation data: Ice field base survey -- 観測データ：氷原の拠点調査"
+      ]
+    },
+    {
+      "ID": 13021640,
+      "Entries": [
+        "Observation data: Survey of sea areas near ice fields -- 観測データ：氷原の近傍海域調査"
+      ]
+    },
+    {
+      "ID": 13021650,
+      "Entries": [
+        "Video Record: Condemnation of the Rubiconian -- 映像記録：ルビコニアンの糾弾"
+      ]
+    },
+    {
+      "ID": 13021660,
+      "Entries": [
+        "Communication record: Dozer's delusions -- 通信記録：ドーザーの妄言"
+      ]
+    },
+    {
+      "ID": 13021670,
+      "Entries": [
+        "Document data: Dolmayan's essays (1) -- 文書データ：ドルマヤンの随想録（1）"
+      ]
+    },
+    {
+      "ID": 13021680,
+      "Entries": [
+        "Document data: Dolmayan's essays (2) -- 文書データ：ドルマヤンの随想録（2）"
+      ]
+    },
+    {
+      "ID": 13021690,
+      "Entries": [
+        "Document data: Dolmayan's essays (3) -- 文書データ：ドルマヤンの随想録（3）"
+      ]
+    },
+    {
+      "ID": 13021700,
+      "Entries": [
+        "Document data: Dolmayan's essays (4) -- 文書データ：ドルマヤンの随想録（4）"
+      ]
+    },
+    {
+      "ID": 13021710,
+      "Entries": [
+        "Document data: Dolmayan's essays (5) -- 文書データ：ドルマヤンの随想録（5）"
+      ]
+    },
+    {
+      "ID": 13021720,
+      "Entries": [
+        "Document data: Professor Nagai's dictation (1) -- 文書データ：ナガイ教授の口述筆記（1）"
+      ]
+    },
+    {
+      "ID": 13021730,
+      "Entries": [
+        "Document data: Professor Nagai's dictation (2) -- 文書データ：ナガイ教授の口述筆記（2）"
+      ]
+    },
+    {
+      "ID": 13021740,
+      "Entries": [
+        "Document data: Professor Nagai's dictation (3) -- 文書データ：ナガイ教授の口述筆記（3）"
+      ]
+    },
+    {
+      "ID": 13021750,
+      "Entries": [
+        "Document data: Professor Nagai's dictation (4) -- 文書データ：ナガイ教授の口述筆記（4）"
+      ]
+    },
+    {
+      "ID": 13021760,
+      "Entries": [
+        "Video Record: Ibis Fire -- 映像記録：アイビスの火"
+      ]
+    },
+    {
+      "ID": 13021770,
+      "Entries": [
+        "Image data: STV draft (3) -- 画像データ：STVの画稿（3）"
+      ]
+    },
+    {
+      "ID": 13021780,
+      "Entries": [
+        "Image data: STV draft (4) -- 画像データ：STVの画稿（4）"
+      ]
+    },
+    {
+      "ID": 13021790,
+      "Entries": [
+        "Image data: STV draft (1) -- 画像データ：STVの画稿（1）"
+      ]
+    },
+    {
+      "ID": 13021800,
+      "Entries": [
+        "Image data: STV draft (2) -- 画像データ：STVの画稿（2）"
+      ]
+    },
+    {
+      "ID": 13021810,
+      "Entries": [
+        "Image data: STV draft (6) -- 画像データ：STVの画稿（6）"
+      ]
+    },
+    {
+      "ID": 13021820,
+      "Entries": [
+        "Image data: STV draft (5) -- 画像データ：STVの画稿（5）"
+      ]
+    },
+    {
+      "ID": 13021830,
+      "Entries": [
+        "Image data: STK's posthumous manuscript -- 画像データ：STKの遺稿"
+      ]
+    },
+    {
+      "ID": 13021840,
+      "Entries": [
+        "Observation data: Offshore city Xylem -- 観測データ：洋上都市ザイレム"
+      ]
+    },
+    {
+      "ID": 13021850,
+      "Entries": [
+        "Audio recording: The end of G4 -- 音声記録：G4の最期"
+      ]
+    },
+    {
+      "ID": 13021860,
+      "Entries": [
+        "Document data: Re-education center -- 文書データ：再教育センター"
+      ]
+    },
+    {
+      "ID": 13021880,
+      "Entries": [
+        "Video recording: Parts performance test -- 映像記録：部品性能試験"
+      ]
+    },
+    {
+      "ID": 13021890,
+      "Entries": [
+        "Video record: BAWS sentry's final moments -- 映像記録：BAWS哨兵の最期"
+      ]
+    },
+    {
+      "ID": 13021900,
+      "Entries": [
+        "Video recording: The final moments of a debt collector -- 映像記録：債権回収業者の最期"
+      ]
+    },
+    {
+      "ID": 13021910,
+      "Entries": [
+        "Correspondence record: Report to Marshal -- 通信記録：帥叔への報告"
+      ]
+    },
+    {
+      "ID": 13021920,
+      "Entries": [
+        "Communication log: Dozer's chat -- 通信記録：ドーザーの雑談"
+      ]
+    },
+    {
+      "ID": 13021930,
+      "Entries": [
+        "Communication log: Coyotes chat -- 通信記録：コヨーテスの雑談"
+      ]
+    },
+    {
+      "ID": 13021940,
+      "Entries": [
+        "Communication records: Independent mercenary information sharing -- 通信記録：独立傭兵の情報共有"
+      ]
+    },
+    {
+      "ID": 13021950,
+      "Entries": [
+        "Communication records: information transmission of enforcement forces -- 通信記録：執行部隊の情報伝達"
+      ]
+    },
+    {
+      "ID": 13021960,
+      "Entries": [
+        "Observation data: mutant waveform response -- 観測データ：変異波形反応"
+      ]
+    },
+    {
+      "ID": 13021970,
+      "Entries": [
+        "Observation data: invisible area -- 観測データ：見えない領域"
+      ]
+    },
+    {
+      "ID": 13021980,
+      "Entries": [
+        "Observation data: Enforcement system -- 観測データ：強制執行システム"
+      ]
+    },
+    {
+      "ID": 13021990,
+      "Entries": [
+        "Document data: Professor Nagai's dictation (5) -- 文書データ：ナガイ教授の口述筆記（5）"
+      ]
+    },
+    {
+      "ID": 13022000,
+      "Entries": [
+        "Placement Archive_Mission -- 配置アーカイブ_ミッション"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "dummy image -- ダミーイメージ"
+      ]
+    }
+  ]
+}

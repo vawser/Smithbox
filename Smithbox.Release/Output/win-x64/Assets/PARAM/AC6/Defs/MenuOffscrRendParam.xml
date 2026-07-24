@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_OFFSCR_REND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 camAtPosX">
+      <DisplayName>カメラ注視点X</DisplayName>
+      <Description>カメラ注視点X</Description>
+      <Minimum>-5000</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 camAtPosY">
+      <DisplayName>カメラ注視点Y</DisplayName>
+      <Description>カメラ注視点Y</Description>
+      <Minimum>-5000</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 camAtPosZ">
+      <DisplayName>カメラ注視点Z</DisplayName>
+      <Description>カメラ注視点Z</Description>
+      <Minimum>-5000</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 camDist = 10">
+      <DisplayName>カメラ距離</DisplayName>
+      <Description>カメラ距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 camRotX">
+      <DisplayName>カメラ向きX</DisplayName>
+      <Description>カメラ向きX</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 camRotY">
+      <DisplayName>カメラ向きY</DisplayName>
+      <Description>カメラ向きY</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 camFov = 49">
+      <DisplayName>カメラ画角</DisplayName>
+      <Description>カメラ画角</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 camDistMin">
+      <DisplayName>カメラ操作時最短距離</DisplayName>
+      <Description>カメラ操作時最短距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 camDistMax = 100">
+      <DisplayName>カメラ操作時最長距離</DisplayName>
+      <Description>カメラ操作時最長距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 camRotXMin = -89">
+      <DisplayName>カメラ操作時最小向き</DisplayName>
+      <Description>カメラ操作時最小向き</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 camRotXMax = 89">
+      <DisplayName>カメラ操作時最大向き</DisplayName>
+      <Description>カメラ操作時最大向き</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u32 GparamID = 10">
+      <Description>GparamID</Description>
+      <Maximum>99999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 camOffsetX">
+      <DisplayName>カメラオフセット率X</DisplayName>
+      <Description>カメラオフセット率X(0.5で画面半分ずれる)</Description>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 camOffsetY">
+      <DisplayName>カメラオフセット率Y</DisplayName>
+      <Description>カメラオフセット率Y(0.5で画面半分ずれる)</Description>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 camOffsetZ">
+      <DisplayName>カメラオフセットZ[m]</DisplayName>
+      <Description>カメラオフセットZカメラの位置のオフセット座標</Description>
+      <Minimum>-5000</Minimum>
+      <Maximum>5000</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 camRefDmyPolyId = -1">
+      <DisplayName>カメラ向き、角度を参照するダミポリID</DisplayName>
+      <Description>注視点、向きについてダミポリから計算するようになります</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 boosterModelLookAt:1">
+      <DisplayName>ブースターを注視するか</DisplayName>
+      <Description>ブーストモデルを注視するようにカメラの注視点を自動計算します(コア固定ではないので自動計算されます)</Description>
+      <Maximum>1</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 HandHightRef:1">
+      <DisplayName>手の高さを参照するか</DisplayName>
+      <Description>注視点についてコア高さではなく手の高さを参照するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="dummy8 padbit:6">
+      <DisplayName>pad</DisplayName>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="dummy8 pad[3]">
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s32 mapIconRefDmyPolyId = -1">
+      <DisplayName>ミッション場所を示すアイコンを表示するダミポリID</DisplayName>
+      <Description>ミッションの場所を示すアイコンの表示ダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 legType4LegRefParamId = -1">
+      <DisplayName>４脚時参照ID</DisplayName>
+      <Description>４脚時に参照するオフスクリーン描画パラメータ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 legTypeTankRefParamId = -1">
+      <DisplayName>タンク時参照ID</DisplayName>
+      <Description>タンク時に参照するオフスクリーン描画パラメータ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,98 @@
+{
+  "Param": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Type": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Name": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "Host",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "white",
+      "Name": "White Spirit (White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "smallWhite",
+      "Name": "White Spirit (Small White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "gold",
+      "Name": "Gold Phantom (White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "smallGold",
+      "Name": "Gold Phantom (Small White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "coopBlue",
+      "Name": "Blue Phantom (Coop)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "versusBlue",
+      "Name": "Blue Phantom (PVP)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "signBlack",
+      "Name": "Dark Spirit (Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "intrudeBlack",
+      "Name": "Dark Spirit (Invasion)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "signRed",
+      "Name": "Red Phantom (Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "intrudeRed",
+      "Name": "Red Phantom (Invasion)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "bellGuard",
+      "Name": "Bell Keeper",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "ratKing",
+      "Name": "Rat Trespasser",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "dragon",
+      "Name": "Dragon Remnant",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "mirrorKnight",
+      "Name": "Mirror Phantom",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "abyss",
+      "Name": "Pilgrim of Dark",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "duelBlue",
+      "Name": "Blue Phantom (Duel)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    },
+    {
+      "Field": "duelRed",
+      "Name": "Red Phantom (Duel)",
+      "Description": "The soul absorption multiplier for a client of this type."
+    }
+  ]
+}

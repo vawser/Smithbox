@@ -1,0 +1,389 @@
+{
+  "Name": "m18_PointLightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "ボス部屋"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "封印の間"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "白い通路"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "白い通路と砂漠のつなぎ"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0 封印の間 松明"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "boss_torch"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "torch"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "PolyG-(39番)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "PolyG-scn180000(40番)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "PolyG-scn180015(41番)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "PolyG-scn180001(42番)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "PolyG-scn180001(43番)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "PolyG-scn180001(44番)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1松明\u3000小"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1松明\u3000大"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "フリューテッド天井"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "gate_light"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B1室外"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1下水"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1教会"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1つなぎ"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1カラス降り場"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "altar_light"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "基本"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "ボス部屋"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-PCPoint"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-scn180000"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-scn180015_器の光 強"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-scn180001"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-scn180001"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-scn180000-L"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "B1松明\u3000小"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "B1松明\u3000大"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "フリューテッド天井"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "B1室外"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "B1下水"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "B1教会"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "B1つなぎ"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "B1カラス降り場"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn180040,50-c0000"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn180015_器の光"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn180101_1stRoom"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn180101Room-Low"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn180101FaceUp"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn180101Room2"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn180101Room1"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn180101_fire"
+      ]
+    }
+  ]
+}

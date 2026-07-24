@@ -1,0 +1,68 @@
+{
+  "Param": "BEHAVIOR_PARAM_ST",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BEHAVIOR_PARAM_ST",
+  "Description": "Behavior data for character attacks",
+  "Fields": [
+    {
+      "Field": "variationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used when calculating the ID for attack parameters. It is not used directly on the actual machine."
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "Behavior Judge ID",
+      "Description": "Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "State Behavior Type",
+      "Description": "For ID calculation rules"
+    },
+    {
+      "Field": "refType",
+      "Name": "Reference Type",
+      "Description": "Specify the reference ID so that it is correct."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId",
+      "Name": "Reference ID",
+      "Description": "It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX Variation ID",
+      "Description": "SFX used for multiplayer session actions"
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina Cost",
+      "Description": "Set the amount of stamina consumed during action."
+    },
+    {
+      "Field": "mp",
+      "Name": "Durability Cost",
+      "Description": "Set the durability of weapons consumed during action."
+    },
+    {
+      "Field": "category",
+      "Name": "Category",
+      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "Humanity Cost",
+      "Description": "Set the amount of humanity consumed during action"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

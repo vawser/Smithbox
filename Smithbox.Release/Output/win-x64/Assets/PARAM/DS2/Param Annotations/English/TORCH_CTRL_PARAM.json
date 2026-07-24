@@ -1,0 +1,23 @@
+{
+  "Param": "TORCH_CTRL_PARAM",
+  "Type": "TORCH_CTRL_PARAM",
+  "Name": "TORCH_CTRL_PARAM",
+  "Description": "Defines torch behavior parameters, including visual effects, light source control, and duration.",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFX ID",
+      "Description": "ID of the visual special effect used by the torch flame."
+    },
+    {
+      "Field": "lightId",
+      "Name": "Light Source ID",
+      "Description": "ID of the light source associated with the torch."
+    },
+    {
+      "Field": "life",
+      "Name": "Lifetime (Seconds)",
+      "Description": "Duration in seconds before the torch effect expires."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "Key": "ENEMY_WEAPON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_WEAPON_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 3"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 4"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 5"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "Key": "INPUT_4DIR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "INPUT_4DIR_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<123>Back"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<741>Left"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<963> Right"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "＜789＞before"
+        }
+      ]
+    }
+  ]
+}

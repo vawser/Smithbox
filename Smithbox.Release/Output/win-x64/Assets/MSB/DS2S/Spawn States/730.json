@@ -1,0 +1,14 @@
+{
+  "id": "730",
+  "name": "Mirror Squire (Ultra Greatsword) ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

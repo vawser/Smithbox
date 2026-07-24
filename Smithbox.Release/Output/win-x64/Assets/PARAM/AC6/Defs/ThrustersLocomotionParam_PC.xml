@@ -1,0 +1,2061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THRUSTERS_LOCOMOTION_PARAM_PC_ST</ParamType>
+  <DataVersion>15</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr RotationBoneName[32]">
+      <DisplayName>回転関節名</DisplayName>
+      <Description>パーツ内回転が行う関節名の名前</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 AttachDummyID = -1">
+      <DisplayName>接続ダミポリID</DisplayName>
+      <Description>スラスター/パーツの接続ダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 LocomotionRefDummyID = -1">
+      <DisplayName>ロコモーション参照ダミポリID</DisplayName>
+      <Description>ロコモーションが参照するダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 main_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>3000</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 main_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>3500</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="s8 main_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2000</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="dummy8 main_pad:6">
+      <SortID>383501</SortID>
+      <UnkB8>main</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>13000</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>13500</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="s8 subFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>12000</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 subFront_pad:6">
+      <SortID>383503</SortID>
+      <UnkB8>subFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ前</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>23000</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>23500</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="s8 subBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>22000</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 subBack_pad:6">
+      <SortID>383505</SortID>
+      <UnkB8>subBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ後</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>33000</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>33500</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="s8 subLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>32000</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 subLeft_pad:6">
+      <SortID>383507</SortID>
+      <UnkB8>subLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ左</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>43000</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 subRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>43500</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="s8 subRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>42000</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 subRight_pad:6">
+      <SortID>383509</SortID>
+      <UnkB8>subRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>サブ右</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>53000</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>53500</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="s8 qbFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>52000</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbFront_pad:6">
+      <SortID>383511</SortID>
+      <UnkB8>qbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB前</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>63000</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>63500</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="s8 qbBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>62000</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbBack_pad:6">
+      <SortID>383513</SortID>
+      <UnkB8>qbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB後</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>73000</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>73500</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="s8 qbLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>72000</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbLeft_pad:6">
+      <SortID>383515</SortID>
+      <UnkB8>qbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB左</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>83000</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 qbRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>83500</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="s8 qbRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>82000</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="dummy8 qbRight_pad:6">
+      <SortID>383517</SortID>
+      <UnkB8>qbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>QB右</UnkC8>
+    </Field>
+    <Field Def="u8 lift_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>93000</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 lift_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>93500</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="s8 lift_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>92000</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="dummy8 lift_pad:6">
+      <SortID>383519</SortID>
+      <UnkB8>lift</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>上昇用</UnkC8>
+    </Field>
+    <Field Def="u8 tankFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>103000</SortID>
+      <UnkB8>tankFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト前</UnkC8>
+    </Field>
+    <Field Def="u8 tankFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>103500</SortID>
+      <UnkB8>tankFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト前</UnkC8>
+    </Field>
+    <Field Def="s8 tankFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>102000</SortID>
+      <UnkB8>tankFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト前</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankFront_pad:6">
+      <SortID>383521</SortID>
+      <UnkB8>tankFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト前</UnkC8>
+    </Field>
+    <Field Def="u8 tankBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>113000</SortID>
+      <UnkB8>tankBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト後</UnkC8>
+    </Field>
+    <Field Def="u8 tankBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>113500</SortID>
+      <UnkB8>tankBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト後</UnkC8>
+    </Field>
+    <Field Def="s8 tankBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>112000</SortID>
+      <UnkB8>tankBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト後</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankBack_pad:6">
+      <SortID>383523</SortID>
+      <UnkB8>tankBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクブースト後</UnkC8>
+    </Field>
+    <Field Def="u8 tankDriftLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>123000</SortID>
+      <UnkB8>tankDriftLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト左回転</UnkC8>
+    </Field>
+    <Field Def="u8 tankDriftLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>123500</SortID>
+      <UnkB8>tankDriftLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト左回転</UnkC8>
+    </Field>
+    <Field Def="s8 tankDriftLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>122000</SortID>
+      <UnkB8>tankDriftLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト左回転</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankDriftLeft_pad:6">
+      <SortID>383525</SortID>
+      <UnkB8>tankDriftLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト左回転</UnkC8>
+    </Field>
+    <Field Def="u8 tankDriftRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>133000</SortID>
+      <UnkB8>tankDriftRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト右回転</UnkC8>
+    </Field>
+    <Field Def="u8 tankDriftRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>133500</SortID>
+      <UnkB8>tankDriftRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト右回転</UnkC8>
+    </Field>
+    <Field Def="s8 tankDriftRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>132000</SortID>
+      <UnkB8>tankDriftRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト右回転</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankDriftRight_pad:6">
+      <SortID>383527</SortID>
+      <UnkB8>tankDriftRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクドリフト右回転</UnkC8>
+    </Field>
+    <Field Def="u8 quickTurnLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>143000</SortID>
+      <UnkB8>quickTurnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン左回転</UnkC8>
+    </Field>
+    <Field Def="u8 quickTurnLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>143500</SortID>
+      <UnkB8>quickTurnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン左回転</UnkC8>
+    </Field>
+    <Field Def="s8 quickTurnLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>142000</SortID>
+      <UnkB8>quickTurnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン左回転</UnkC8>
+    </Field>
+    <Field Def="dummy8 quickTurnLeft_pad:6">
+      <SortID>383529</SortID>
+      <UnkB8>quickTurnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン左回転</UnkC8>
+    </Field>
+    <Field Def="u8 quickTurnRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>153000</SortID>
+      <UnkB8>quickTurnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン右回転</UnkC8>
+    </Field>
+    <Field Def="u8 quickTurnRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>153500</SortID>
+      <UnkB8>quickTurnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン右回転</UnkC8>
+    </Field>
+    <Field Def="s8 quickTurnRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>152000</SortID>
+      <UnkB8>quickTurnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン右回転</UnkC8>
+    </Field>
+    <Field Def="dummy8 quickTurnRight_pad:6">
+      <SortID>383531</SortID>
+      <UnkB8>quickTurnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>クイックターン右回転</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoost_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>163000</SortID>
+      <UnkB8>assaultBoost</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoost_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>163500</SortID>
+      <UnkB8>assaultBoost</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト</UnkC8>
+    </Field>
+    <Field Def="s8 assaultBoost_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>162000</SortID>
+      <UnkB8>assaultBoost</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト</UnkC8>
+    </Field>
+    <Field Def="dummy8 assaultBoost_pad:6">
+      <SortID>383533</SortID>
+      <UnkB8>assaultBoost</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringStart_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>173000</SortID>
+      <UnkB8>hoveringStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング開始</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringStart_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>173500</SortID>
+      <UnkB8>hoveringStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング開始</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringStart_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>172000</SortID>
+      <UnkB8>hoveringStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング開始</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringStart_pad:6">
+      <SortID>383535</SortID>
+      <UnkB8>hoveringStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング開始</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringStay_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>183000</SortID>
+      <UnkB8>hoveringStay</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング待機</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringStay_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>183500</SortID>
+      <UnkB8>hoveringStay</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング待機</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringStay_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>182000</SortID>
+      <UnkB8>hoveringStay</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング待機</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringStay_pad:6">
+      <SortID>383537</SortID>
+      <UnkB8>hoveringStay</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング待機</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>193000</SortID>
+      <UnkB8>hoveringFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング前</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>193500</SortID>
+      <UnkB8>hoveringFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング前</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>192000</SortID>
+      <UnkB8>hoveringFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング前</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringFront_pad:6">
+      <SortID>383539</SortID>
+      <UnkB8>hoveringFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング前</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>203000</SortID>
+      <UnkB8>hoveringBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング後</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>203500</SortID>
+      <UnkB8>hoveringBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング後</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>202000</SortID>
+      <UnkB8>hoveringBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング後</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringBack_pad:6">
+      <SortID>383541</SortID>
+      <UnkB8>hoveringBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング後</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>213000</SortID>
+      <UnkB8>hoveringLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング左</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>213500</SortID>
+      <UnkB8>hoveringLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング左</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>212000</SortID>
+      <UnkB8>hoveringLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング左</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringLeft_pad:6">
+      <SortID>383543</SortID>
+      <UnkB8>hoveringLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング左</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>223000</SortID>
+      <UnkB8>hoveringRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング右</UnkC8>
+    </Field>
+    <Field Def="u8 hoveringRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>223500</SortID>
+      <UnkB8>hoveringRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング右</UnkC8>
+    </Field>
+    <Field Def="s8 hoveringRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>222000</SortID>
+      <UnkB8>hoveringRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング右</UnkC8>
+    </Field>
+    <Field Def="dummy8 hoveringRight_pad:6">
+      <SortID>383545</SortID>
+      <UnkB8>hoveringRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバリング右</UnkC8>
+    </Field>
+    <Field Def="u8 turnLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>140300</SortID>
+      <UnkB8>turnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン左</UnkC8>
+    </Field>
+    <Field Def="u8 turnLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>140350</SortID>
+      <UnkB8>turnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン左</UnkC8>
+    </Field>
+    <Field Def="s8 turnLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>140200</SortID>
+      <UnkB8>turnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン左</UnkC8>
+    </Field>
+    <Field Def="dummy8 turnLeft_pad:6">
+      <SortID>383547</SortID>
+      <UnkB8>turnLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン左</UnkC8>
+    </Field>
+    <Field Def="u8 turnRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>141300</SortID>
+      <UnkB8>turnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン右</UnkC8>
+    </Field>
+    <Field Def="u8 turnRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>141350</SortID>
+      <UnkB8>turnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン右</UnkC8>
+    </Field>
+    <Field Def="s8 turnRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>141200</SortID>
+      <UnkB8>turnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン右</UnkC8>
+    </Field>
+    <Field Def="dummy8 turnRight_pad:6">
+      <SortID>383549</SortID>
+      <UnkB8>turnRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ターン右</UnkC8>
+    </Field>
+    <Field Def="u8 mainStart_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>1830</SortID>
+      <UnkB8>mainStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン開始</UnkC8>
+    </Field>
+    <Field Def="u8 mainStart_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>1835</SortID>
+      <UnkB8>mainStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン開始</UnkC8>
+    </Field>
+    <Field Def="s8 mainStart_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1820</SortID>
+      <UnkB8>mainStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン開始</UnkC8>
+    </Field>
+    <Field Def="dummy8 mainStart_pad:6">
+      <SortID>383551</SortID>
+      <UnkB8>mainStart</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>メイン開始</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoostFinish_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>164300</SortID>
+      <UnkB8>assaultBoostFinish</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト終了</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoostFinish_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>164350</SortID>
+      <UnkB8>assaultBoostFinish</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト終了</UnkC8>
+    </Field>
+    <Field Def="s8 assaultBoostFinish_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>164200</SortID>
+      <UnkB8>assaultBoostFinish</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト終了</UnkC8>
+    </Field>
+    <Field Def="dummy8 assaultBoostFinish_pad:6">
+      <SortID>383553</SortID>
+      <UnkB8>assaultBoostFinish</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブースト終了</UnkC8>
+    </Field>
+    <Field Def="u8 falling_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>93530</SortID>
+      <UnkB8>falling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>落下中</UnkC8>
+    </Field>
+    <Field Def="u8 falling_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>93535</SortID>
+      <UnkB8>falling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>落下中</UnkC8>
+    </Field>
+    <Field Def="s8 falling_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>93520</SortID>
+      <UnkB8>falling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>落下中</UnkC8>
+    </Field>
+    <Field Def="dummy8 falling_pad:6">
+      <SortID>383555</SortID>
+      <UnkB8>falling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>落下中</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>243000</SortID>
+      <UnkB8>boostExhaustFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気前</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>243500</SortID>
+      <UnkB8>boostExhaustFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気前</UnkC8>
+    </Field>
+    <Field Def="s8 boostExhaustFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>242000</SortID>
+      <UnkB8>boostExhaustFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気前</UnkC8>
+    </Field>
+    <Field Def="dummy8 boostExhaustFront_pad:6">
+      <SortID>383557</SortID>
+      <UnkB8>boostExhaustFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気前</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>253000</SortID>
+      <UnkB8>boostExhaustBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気後</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>253500</SortID>
+      <UnkB8>boostExhaustBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気後</UnkC8>
+    </Field>
+    <Field Def="s8 boostExhaustBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>252000</SortID>
+      <UnkB8>boostExhaustBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気後</UnkC8>
+    </Field>
+    <Field Def="dummy8 boostExhaustBack_pad:6">
+      <SortID>383559</SortID>
+      <UnkB8>boostExhaustBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気後</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>263000</SortID>
+      <UnkB8>boostExhaustLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気左</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>263500</SortID>
+      <UnkB8>boostExhaustLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気左</UnkC8>
+    </Field>
+    <Field Def="s8 boostExhaustLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>262000</SortID>
+      <UnkB8>boostExhaustLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気左</UnkC8>
+    </Field>
+    <Field Def="dummy8 boostExhaustLeft_pad:6">
+      <SortID>383561</SortID>
+      <UnkB8>boostExhaustLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気左</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>273000</SortID>
+      <UnkB8>boostExhaustRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気右</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>273500</SortID>
+      <UnkB8>boostExhaustRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気右</UnkC8>
+    </Field>
+    <Field Def="s8 boostExhaustRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>272000</SortID>
+      <UnkB8>boostExhaustRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気右</UnkC8>
+    </Field>
+    <Field Def="dummy8 boostExhaustRight_pad:6">
+      <SortID>383563</SortID>
+      <UnkB8>boostExhaustRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気右</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustFalling_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>283000</SortID>
+      <UnkB8>boostExhaustFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気下降</UnkC8>
+    </Field>
+    <Field Def="u8 boostExhaustFalling_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>283500</SortID>
+      <UnkB8>boostExhaustFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気下降</UnkC8>
+    </Field>
+    <Field Def="s8 boostExhaustFalling_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>282000</SortID>
+      <UnkB8>boostExhaustFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気下降</UnkC8>
+    </Field>
+    <Field Def="dummy8 boostExhaustFalling_pad:6">
+      <SortID>383565</SortID>
+      <UnkB8>boostExhaustFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブースト排気下降</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>293000</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>293500</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="s8 brakeFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>292000</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeFront_pad:6">
+      <SortID>383567</SortID>
+      <UnkB8>brakeFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ前</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>303000</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>303500</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="s8 brakeBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>302000</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeBack_pad:6">
+      <SortID>383569</SortID>
+      <UnkB8>brakeBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ後</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>313000</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>313500</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="s8 brakeLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>312000</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeLeft_pad:6">
+      <SortID>383571</SortID>
+      <UnkB8>brakeLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ左</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>323000</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>323500</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="s8 brakeRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>322000</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeRight_pad:6">
+      <SortID>383573</SortID>
+      <UnkB8>brakeRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ右</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFalling_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>333000</SortID>
+      <UnkB8>brakeFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ下降</UnkC8>
+    </Field>
+    <Field Def="u8 brakeFalling_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>333500</SortID>
+      <UnkB8>brakeFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ下降</UnkC8>
+    </Field>
+    <Field Def="s8 brakeFalling_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>332000</SortID>
+      <UnkB8>brakeFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ下降</UnkC8>
+    </Field>
+    <Field Def="dummy8 brakeFalling_pad:6">
+      <SortID>383575</SortID>
+      <UnkB8>brakeFalling</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ブレーキ下降</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoostLoop_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>164130</SortID>
+      <UnkB8>assaultBoostLoop</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブーストループ</UnkC8>
+    </Field>
+    <Field Def="u8 assaultBoostLoop_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>164135</SortID>
+      <UnkB8>assaultBoostLoop</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブーストループ</UnkC8>
+    </Field>
+    <Field Def="s8 assaultBoostLoop_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>164120</SortID>
+      <UnkB8>assaultBoostLoop</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブーストループ</UnkC8>
+    </Field>
+    <Field Def="dummy8 assaultBoostLoop_pad:6">
+      <SortID>383577</SortID>
+      <UnkB8>assaultBoostLoop</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>アサルトブーストループ</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行前</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行前</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行前</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkFront_pad:6">
+      <SortID>383579</SortID>
+      <UnkB8>hover2LegsWalkFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行前</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行後</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行後</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行後</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkBack_pad:6">
+      <SortID>383581</SortID>
+      <UnkB8>hover2LegsWalkBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行後</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkLeft_pad:6">
+      <SortID>383583</SortID>
+      <UnkB8>hover2LegsWalkLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkRight_pad:6">
+      <SortID>383585</SortID>
+      <UnkB8>hover2LegsWalkRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkLeftTurn_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkLeftTurn_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左旋回</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkLeftTurn_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左旋回</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkLeftTurn_pad:6">
+      <SortID>383587</SortID>
+      <UnkB8>hover2LegsWalkLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行左旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkRightTurn_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343000</SortID>
+      <UnkB8>hover2LegsWalkRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsWalkRightTurn_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>343500</SortID>
+      <UnkB8>hover2LegsWalkRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右旋回</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsWalkRightTurn_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>342000</SortID>
+      <UnkB8>hover2LegsWalkRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右旋回</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsWalkRightTurn_pad:6">
+      <SortID>383589</SortID>
+      <UnkB8>hover2LegsWalkRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　歩行右旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行前</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行前</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行前</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunFront_pad:6">
+      <SortID>383591</SortID>
+      <UnkB8>hover2LegsRunFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行前</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行後</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行後</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行後</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunBack_pad:6">
+      <SortID>383593</SortID>
+      <UnkB8>hover2LegsRunBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行後</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunLeft_pad:6">
+      <SortID>383595</SortID>
+      <UnkB8>hover2LegsRunLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunRight_pad:6">
+      <SortID>383597</SortID>
+      <UnkB8>hover2LegsRunRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunLeftTurn_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunLeftTurn_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左旋回</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunLeftTurn_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左旋回</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunLeftTurn_pad:6">
+      <SortID>383599</SortID>
+      <UnkB8>hover2LegsRunLeftTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行左旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunRightTurn_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353000</SortID>
+      <UnkB8>hover2LegsRunRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右旋回</UnkC8>
+    </Field>
+    <Field Def="u8 hover2LegsRunRightTurn_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>353500</SortID>
+      <UnkB8>hover2LegsRunRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右旋回</UnkC8>
+    </Field>
+    <Field Def="s8 hover2LegsRunRightTurn_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>352000</SortID>
+      <UnkB8>hover2LegsRunRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右旋回</UnkC8>
+    </Field>
+    <Field Def="dummy8 hover2LegsRunRightTurn_pad:6">
+      <SortID>383601</SortID>
+      <UnkB8>hover2LegsRunRightTurn</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバー２脚／タンク　走行右旋回</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbFront_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>84300</SortID>
+      <UnkB8>tankQbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB前</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbFront_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>84350</SortID>
+      <UnkB8>tankQbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB前</UnkC8>
+    </Field>
+    <Field Def="s8 tankQbFront_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>84200</SortID>
+      <UnkB8>tankQbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB前</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankQbFront_pad:6">
+      <SortID>383603</SortID>
+      <UnkB8>tankQbFront</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB前</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbBack_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>85300</SortID>
+      <UnkB8>tankQbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB後</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbBack_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>85350</SortID>
+      <UnkB8>tankQbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB後</UnkC8>
+    </Field>
+    <Field Def="s8 tankQbBack_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>85200</SortID>
+      <UnkB8>tankQbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB後</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankQbBack_pad:6">
+      <SortID>383605</SortID>
+      <UnkB8>tankQbBack</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB後</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbLeft_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>86300</SortID>
+      <UnkB8>tankQbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB左</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbLeft_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>86350</SortID>
+      <UnkB8>tankQbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB左</UnkC8>
+    </Field>
+    <Field Def="s8 tankQbLeft_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>86200</SortID>
+      <UnkB8>tankQbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB左</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankQbLeft_pad:6">
+      <SortID>383607</SortID>
+      <UnkB8>tankQbLeft</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB左</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbRight_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>87300</SortID>
+      <UnkB8>tankQbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB右</UnkC8>
+    </Field>
+    <Field Def="u8 tankQbRight_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>87350</SortID>
+      <UnkB8>tankQbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB右</UnkC8>
+    </Field>
+    <Field Def="s8 tankQbRight_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>87200</SortID>
+      <UnkB8>tankQbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB右</UnkC8>
+    </Field>
+    <Field Def="dummy8 tankQbRight_pad:6">
+      <SortID>383609</SortID>
+      <UnkB8>tankQbRight</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>タンクQB右</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGround_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>363000</SortID>
+      <UnkB8>hovertTankGround</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGround_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>363500</SortID>
+      <UnkB8>hovertTankGround</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐</UnkC8>
+    </Field>
+    <Field Def="s8 hovertTankGround_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>362000</SortID>
+      <UnkB8>hovertTankGround</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐</UnkC8>
+    </Field>
+    <Field Def="dummy8 hovertTankGround_pad:6">
+      <SortID>383611</SortID>
+      <UnkB8>hovertTankGround</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGroundWater_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>373000</SortID>
+      <UnkB8>hovertTankGroundWater</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGroundWater_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>373500</SortID>
+      <UnkB8>hovertTankGroundWater</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面</UnkC8>
+    </Field>
+    <Field Def="s8 hovertTankGroundWater_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>372000</SortID>
+      <UnkB8>hovertTankGroundWater</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面</UnkC8>
+    </Field>
+    <Field Def="dummy8 hovertTankGroundWater_pad:6">
+      <SortID>383613</SortID>
+      <UnkB8>hovertTankGroundWater</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGroundWaterShallow_TurnMoveDirLimitX">
+      <DisplayName>補正限界角度（X)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(X)</Description>
+      <Maximum>180</Maximum>
+      <SortID>383000</SortID>
+      <UnkB8>hovertTankGroundWaterShallow</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面（浅い）</UnkC8>
+    </Field>
+    <Field Def="u8 hovertTankGroundWaterShallow_TurnMoveDirLimitY">
+      <DisplayName>補正限界角度（Y)</DisplayName>
+      <Description>移動方向に補正する際の最大角度(Y)</Description>
+      <Maximum>180</Maximum>
+      <SortID>383500</SortID>
+      <UnkB8>hovertTankGroundWaterShallow</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面（浅い）</UnkC8>
+    </Field>
+    <Field Def="s8 hovertTankGroundWaterShallow_TurnMoveDirType:2 = -1">
+      <DisplayName>移動にあわせて向きを補正するか</DisplayName>
+      <Enum>THRUSTERS_TURN_MOVE_DIRECTION_TYPE</Enum>
+      <Description>キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>382000</SortID>
+      <UnkB8>hovertTankGroundWaterShallow</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面（浅い）</UnkC8>
+    </Field>
+    <Field Def="dummy8 hovertTankGroundWaterShallow_pad:6">
+      <SortID>383615</SortID>
+      <UnkB8>hovertTankGroundWaterShallow</UnkB8>
+      <UnkC0>THRUSTER_LOCOMOTION_PARAM_PC_ST</UnkC0>
+      <UnkC8>ホバータンク　地上常駐　水面（浅い）</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

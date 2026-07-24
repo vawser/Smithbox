@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>HIT_MTRL_PARAM_ST</ParamType>
+  <Unk06>2</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 aiVolumeRate = 1">
+      <DisplayName>音半径倍率</DisplayName>
+      <Description>1倍のときは普通。0にすると音半径が0になる（SEとSFXは無関係のゲーム的なパラメータ）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 spEffectIdOnHit0 = -1">
+      <DisplayName>ヒットマテリアルを踏んだ時にかかる特殊効果0</DisplayName>
+      <Description>キャラがヒットマテリアルを踏んだ時に、設定した特殊効果0が発揮される</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="s32 spEffectIdOnHit1 = -1">
+      <DisplayName>ヒットマテリアルを踏んだ時にかかる特殊効果1</DisplayName>
+      <Description>キャラがヒットマテリアルを踏んだ時に、設定した特殊効果1が発揮される</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u8 footEffectHeightType:2">
+      <DisplayName>フットエフェクトの高さタイプ</DisplayName>
+      <Enum>HMP_FOOT_EFFECT_HEIGHT_TYPE</Enum>
+      <Description>フットエフェクトを発生させる高さ</Description>
+      <Maximum>2</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u8 footEffectDirType:2">
+      <DisplayName>フットエフェクトの向きタイプ</DisplayName>
+      <Enum>HMP_FOOT_EFFECT_DIR_TYPE</Enum>
+      <Description>フットエフェクトの発生向き</Description>
+      <Maximum>2</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u8 floorHeightType:2">
+      <DisplayName>地面の高さタイプ</DisplayName>
+      <Enum>HMP_FLOOR_HEIGHT_TYPE</Enum>
+      <Description>水面などアイテムを浮かせるとき用</Description>
+      <Maximum>1</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[3]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

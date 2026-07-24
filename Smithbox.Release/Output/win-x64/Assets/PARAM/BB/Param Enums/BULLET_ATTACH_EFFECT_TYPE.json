@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_ATTACH_EFFECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ATTACH_EFFECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type A"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type B"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type C"
+        }
+      ]
+    }
+  ]
+}

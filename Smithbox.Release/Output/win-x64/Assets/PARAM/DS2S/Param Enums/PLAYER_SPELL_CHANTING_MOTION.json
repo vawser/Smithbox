@@ -1,0 +1,155 @@
+{
+  "Key": "PLAYER_SPELL_CHANTING_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_SPELL_CHANTING_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "38110010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff: Standing - In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "38110610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff: Standing - Hold Up"
+        }
+      ]
+    },
+    {
+      "Key": "38111010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: Foward: Standing"
+        }
+      ]
+    },
+    {
+      "Key": "38111110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pyromancy Flame: Standing - Light Flame in Palm"
+        }
+      ]
+    },
+    {
+      "Key": "38111510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pyromancy Flame: Standing - Rain Arms and Light Flame"
+        }
+      ]
+    },
+    {
+      "Key": "38111610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pyromancy Flame: Standing - In Front"
+        }
+      ]
+    },
+    {
+      "Key": "38111810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pyromancy Flame: Standing - Raise Right Arm"
+        }
+      ]
+    },
+    {
+      "Key": "38130010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Staff: Standing: In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "38150010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DW Staff: Standing: In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chime: Standing: In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chime: Bending: In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chime: Standing: Raise Right Arm"
+        }
+      ]
+    },
+    {
+      "Key": "39110810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chime: Standing: Cross in Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chime: Standing: Circle in Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39130010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Chime: Standing: In Front of Chest"
+        }
+      ]
+    },
+    {
+      "Key": "39150010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DW Chime: Standing: In Front of Chest"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a light emitter within the map." />
+  
+  <Field>
+    <PointLightID
+    AltName="Point Light ID"
+    Wiki="The point light parameters to use." 
+    ParamRef="PointLightBank" 
+    SpecialHandling="BankParam" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

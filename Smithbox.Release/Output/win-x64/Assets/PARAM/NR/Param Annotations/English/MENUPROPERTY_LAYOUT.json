@@ -1,0 +1,33 @@
+{
+  "Param": "MENUPROPERTY_LAYOUT",
+  "Type": "MENUPROPERTY_LAYOUT",
+  "Name": "MENUPROPERTY_LAYOUT",
+  "Description": "Determines layout parameters relating to menu elements.",
+  "Fields": [
+    {
+      "Field": "LayoutPath",
+      "Name": "Layout Path",
+      "Description": "The layout path for this element."
+    },
+    {
+      "Field": "PropertyID",
+      "Name": "Menu Property ID",
+      "Description": "The menu property to link to this element."
+    },
+    {
+      "Field": "CaptionTextID",
+      "Name": "Caption Text ID",
+      "Description": "If a valid text ID is set, this will be displayed in preference to the property name."
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "Help Text ID",
+      "Description": "Only if this is a valid text ID will it be selectable in the field help."
+    },
+    {
+      "Field": "iconID",
+      "Name": "Icon ID",
+      "Description": "The icon to use."
+    }
+  ]
+}

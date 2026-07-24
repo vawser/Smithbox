@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="DS1">
+	<event id="3" name="Event 3">
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="96" name="Spawn One Shot FFX">
+		<s32 name="FFX ID" aliasEnum="Particle"/>
+		<s32 name="Dummy Poly ID"/>
+		<s32 name="Slot ID"/>
+		<b name="Ignore Dummy Poly Angle"/>
+		<b name="Follow Dummy Poly"/>
+		<b name="Restrict to Dummy Poly"/>
+		<u8 name="Additional Spawn Condition"/>
+	</event>
+	<event id="128" name="Play Sound - General">
+		<s32 name="Sound Type">
+			<entry value="0" name="(a) Environment"/>
+			<entry value="1" name="(c) Character"/>
+			<entry value="2" name="(f) Menu SE"/>
+			<entry value="3" name="(o) Object"/>
+			<entry value="4" name="(p) Cutscene SE"/>
+			<entry value="5" name="(s) SFX"/>
+			<entry value="6" name="(m) BGM"/>
+			<entry value="7" name="(v) Voice"/>
+			<entry value="8" name="(x) Floor Material Determined"/>
+			<entry value="9" name="(b) Armor Material Determined"/>
+			<entry value="10" name="(g) Ghost"/>
+		</s32>
+		<s32 name="Sound ID" aliasEnum="Sound"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="129" name="Play Sound - Extra">
+		<s32 name="Sound Type">
+			<entry value="0" name="(a) Environment"/>
+			<entry value="1" name="(c) Character"/>
+			<entry value="2" name="(f) Menu SE"/>
+			<entry value="3" name="(o) Object"/>
+			<entry value="4" name="(p) Cutscene SE"/>
+			<entry value="5" name="(s) SFX"/>
+			<entry value="6" name="(m) BGM"/>
+			<entry value="7" name="(v) Voice"/>
+			<entry value="8" name="(x) Floor Material Determined"/>
+			<entry value="9" name="(b) Armor Material Determined"/>
+			<entry value="10" name="(g) Ghost"/>
+		</s32>
+		<s32 name="Sound ID"/>
+		<s32 name="Dummy Poly ID"/>
+		<s32 name="Slot ID"/>
+	</event>
+	<event id="193" name="Set Opacity Keyframe">
+		<f32 name="Opacity at Event Start"/>
+		<f32 name="Opacity at Event End"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+	<event id="400" name="Event 400">
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+		<s32 assert="0"/>
+	</event>
+</event_template>

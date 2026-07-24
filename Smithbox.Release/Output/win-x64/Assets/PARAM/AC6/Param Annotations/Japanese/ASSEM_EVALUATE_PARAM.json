@@ -1,0 +1,23 @@
+{
+  "Param": "ASSEM_EVALUATE_PARAM",
+  "Type": "ASSEM_EVALUATE_PARAM",
+  "Name": "ASSEM_EVALUATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "propertyID",
+      "Name": "パラメータ",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "重み",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "Entries": [
+    {
+      "Key": "INPUT_CATEGORY_Common",
+      "Text": "通用"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Contextual",
+      "Text": "上下文"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Viewport",
+      "Text": "视口"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Map_Editor",
+      "Text": "地图编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Model_Editor",
+      "Text": "模型编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Param_Editor",
+      "Text": "参数编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Text_Editor",
+      "Text": "文本编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Graphics_Param_Editor",
+      "Text": "图形参数编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Material_Editor",
+      "Text": "材质编辑器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Texture_Viewer",
+      "Text": "纹理查看器"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Developer",
+      "Text": "开发者"
+    },
+    {
+      "Key": "KEY_Modifier_Ctrl_Plus",
+      "Text": "Ctrl+"
+    },
+    {
+      "Key": "KEY_Modifier_Shift_Plus",
+      "Text": "Shift+"
+    },
+    {
+      "Key": "KEY_Modifier_Alt_Plus",
+      "Text": "Alt+"
+    },
+    {
+      "Key": "INPUT_Menu_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "INPUT_Menu_Save_Action",
+      "Text": "保存"
+    },
+    {
+      "Key": "INPUT_Saved_Keybinds",
+      "Text": "快捷键已保存。"
+    },
+    {
+      "Key": "INPUT_Menu_Revert_All_Action",
+      "Text": "全部恢复为默认"
+    },
+    {
+      "Key": "INPUT_Menu_Revert_All_Confirm",
+      "Text": "确定吗？"
+    },
+    {
+      "Key": "INPUT_Tab_Keybinds",
+      "Text": "按键绑定"
+    },
+    {
+      "Key": "INPUT_Tab_Mousebinds",
+      "Text": "鼠标绑定"
+    },
+    {
+      "Key": "INPUT_Keybinds_Filter_Hint",
+      "Text": "搜索按键绑定..."
+    },
+    {
+      "Key": "INPUT_Keybinds_Filter_Clear",
+      "Text": "X"
+    },
+    {
+      "Key": "INPUT_Mousebinds_Filter_Hint",
+      "Text": "搜索鼠标绑定..."
+    },
+    {
+      "Key": "INPUT_Mousebinds_Filter_Clear",
+      "Text": "X"
+    },
+    {
+      "Key": "INPUT_Action_Revert_Binding",
+      "Text": "将绑定重置为默认值。"
+    },
+    {
+      "Key": "INPUT_Action_Clear_Binding",
+      "Text": "清除绑定。"
+    },
+    {
+      "Key": "INPUT_Action_Press_Combo",
+      "Text": "按下组合键..."
+    },
+    {
+      "Key": "INPUT_Keybinds_Failed_Load",
+      "Text": "加载按键绑定 JSON 失败。"
+    },
+    {
+      "Key": "INPUT_Mousebinds_Failed_Load",
+      "Text": "加载鼠标绑定 JSON 失败。"
+    }
+  ]
+}

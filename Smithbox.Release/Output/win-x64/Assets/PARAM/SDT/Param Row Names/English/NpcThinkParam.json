@@ -1,0 +1,4631 @@
+{
+  "Name": "NpcThinkParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10002080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10003001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10003002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10090001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10090002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10090003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10090004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100001,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100002,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100003,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100004,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100005,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100006,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100007,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100008,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100009,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100011,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100012,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100021,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100080,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100101,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100102,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100103,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100104,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100105,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100106,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100107,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100108,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100121,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100200,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100201,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100202,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100203,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100204,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100205,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100206,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100207,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100220,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100300,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100301,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100302,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100303,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100304,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100305,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100306,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100307,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100308,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100309,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100310,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100312,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100320,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100330,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10100390,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10101300,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10101310,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10102000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10102100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10102200,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103001,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103101,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103200,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103300,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103500,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103510,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10103520,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109010,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109011,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109200,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10109300,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110001,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110002,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110003,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110101,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110102,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110103,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110500,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110501,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110600,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110601,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110602,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10110603,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10119000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10119100,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10120080,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10120200,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10120300,
+      "Entries": [
+        "Ashina Soldier"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10200001,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "General Tenzen Yamauchi"
+      ]
+    },
+    {
+      "ID": 10200011,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10200020,
+      "Entries": [
+        "General Naoromi Kawarada"
+      ]
+    },
+    {
+      "ID": 10201000,
+      "Entries": [
+        "Leader Shigenori Yamauchi - Initial Placement"
+      ]
+    },
+    {
+      "ID": 10201010,
+      "Entries": [
+        "Leader Shigenori Yamauchi - Before Battle"
+      ]
+    },
+    {
+      "ID": 10201011,
+      "Entries": [
+        "Leader Shigenori Yamauchi - During Battle"
+      ]
+    },
+    {
+      "ID": 10201080,
+      "Entries": [
+        "Jinzaemon (Conversation - Ashina Reservoir)"
+      ]
+    },
+    {
+      "ID": 10202080,
+      "Entries": [
+        "Jinzaemon (Conversation - Ashina Depths)"
+      ]
+    },
+    {
+      "ID": 10202081,
+      "Entries": [
+        "Jinzaemon (Conversation - Mibu Village)"
+      ]
+    },
+    {
+      "ID": 10202082,
+      "Entries": [
+        "Jinzaemon (Conversation - Bottomless Hole)"
+      ]
+    },
+    {
+      "ID": 10203000,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10203100,
+      "Entries": [
+        "Generai Kuranosuke Matsumoto"
+      ]
+    },
+    {
+      "ID": 10203200,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10203300,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10204000,
+      "Entries": [
+        "Seven Ashina Spears - Shikibu Toshikatsu Yamauchi"
+      ]
+    },
+    {
+      "ID": 10204001,
+      "Entries": [
+        "Seven Ashina Spears - Shume Masaji Oniwa"
+      ]
+    },
+    {
+      "ID": 10209010,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10209020,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10209990,
+      "Entries": [
+        "Samurai General"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Small Centipede"
+      ]
+    },
+    {
+      "ID": 10300001,
+      "Entries": [
+        "Small Centipede"
+      ]
+    },
+    {
+      "ID": 10300002,
+      "Entries": [
+        "Small Centipede"
+      ]
+    },
+    {
+      "ID": 10300003,
+      "Entries": [
+        "Small Centipede"
+      ]
+    },
+    {
+      "ID": 10301000,
+      "Entries": [
+        "Centipede"
+      ]
+    },
+    {
+      "ID": 10301001,
+      "Entries": [
+        "Centipede"
+      ]
+    },
+    {
+      "ID": 10309000,
+      "Entries": [
+        "Centipede"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "Long-Arm Centipede (Both)"
+      ]
+    },
+    {
+      "ID": 10409000,
+      "Entries": [
+        "Centipede"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Shinobi Hunter"
+      ]
+    },
+    {
+      "ID": 10500010,
+      "Entries": [
+        "Shinobi Hunter Enshin of Misen"
+      ]
+    },
+    {
+      "ID": 10502000,
+      "Entries": [
+        "Shinobi Hunter"
+      ]
+    },
+    {
+      "ID": 10509000,
+      "Entries": [
+        "Shinobi Hunter"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 10600001,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 10601000,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 10601001,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 10609000,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "Shura Samurai"
+      ]
+    },
+    {
+      "ID": 10700010,
+      "Entries": [
+        "Juzou the Drunkard - Hirata Estate Revisit"
+      ]
+    },
+    {
+      "ID": 10701000,
+      "Entries": [
+        "Shura Samurai"
+      ]
+    },
+    {
+      "ID": 10702000,
+      "Entries": [
+        "Tokurijo the Glutton - Ashina Depths"
+      ]
+    },
+    {
+      "ID": 10709000,
+      "Entries": [
+        "Shura Samurai"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "Shichimen Warrior"
+      ]
+    },
+    {
+      "ID": 10800001,
+      "Entries": [
+        "Shichimen Warrior - Ashina Depths"
+      ]
+    },
+    {
+      "ID": 10809000,
+      "Entries": [
+        "Shichimen Warrior"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11000001,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11000002,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11000003,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11000090,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11002000,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11009000,
+      "Entries": [
+        "Gecko"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11100001,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11100010,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11100020,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11100080,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11100084,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11101080,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11105180,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11109000,
+      "Entries": [
+        "Old Maid"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11200001,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11200002,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11200010,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11200020,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11200021,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11209000,
+      "Entries": [
+        "Sentry"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Armored Warrior - Senpou Temple"
+      ]
+    },
+    {
+      "ID": 11309000,
+      "Entries": [
+        "Armored Warrior"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "Rock Diver"
+      ]
+    },
+    {
+      "ID": 11409000,
+      "Entries": [
+        "Rock Diver"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11500001,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11500002,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501000,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501010,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501020,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501030,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501040,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11501050,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11502000,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11502100,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11503000,
+      "Entries": [
+        "Palace Hound"
+      ]
+    },
+    {
+      "ID": 11503100,
+      "Entries": [
+        "Palace Hound"
+      ]
+    },
+    {
+      "ID": 11504000,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11509000,
+      "Entries": [
+        "Hound"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "Crow"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800001,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800002,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800010,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800100,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800110,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800200,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800210,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11800400,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11801280,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11802280,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11802281,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11803000,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11803100,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11809000,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11809100,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11809200,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11809400,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900001,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900002,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900003,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900004,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900005,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900006,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900007,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900008,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900009,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900010,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900011,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900100,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900101,
+      "Entries": [
+        "Snake Eyes Shirahagi - Ashina Depths"
+      ]
+    },
+    {
+      "ID": 11900102,
+      "Entries": [
+        "Snake Eyes Shurafuji - Sunken Valley"
+      ]
+    },
+    {
+      "ID": 11900200,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900201,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900210,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900300,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900301,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11900310,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11901300,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11905000,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11905001,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11905100,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11905101,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11909000,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11909100,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11909200,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 11909300,
+      "Entries": [
+        "Sunken Valley Clan"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12009000,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100001,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100005,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100010,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12102080,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12109000,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12109010,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12110000,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12110001,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12111000,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12111001,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12118000,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12119000,
+      "Entries": [
+        "Cricket"
+      ]
+    },
+    {
+      "ID": 12120000,
+      "Entries": [
+        "Dummy for Ghost"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200001,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200002,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200003,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200080,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200100,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200200,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200201,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200202,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12200203,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12201280,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12202080,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12202081,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12209000,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12209100,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12209200,
+      "Entries": [
+        "Seeker"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12400001,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12409000,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500001,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500002,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500010,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500030,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500099,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500100,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500120,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500130,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500150,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500151,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500200,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500201,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500300,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500301,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12500302,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12501000,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12502120,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509000,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509080,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509081,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509100,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509200,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12509300,
+      "Entries": [
+        "Gamefowl"
+      ]
+    },
+    {
+      "ID": 12600000,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600001,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600010,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600011,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600020,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600030,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600050,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600051,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600052,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600090,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600091,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600092,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 12600094,
+      "Entries": [
+        "Screen Monkey"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000001,
+      "Entries": [
+        "Mist Noble - Ashina Depths"
+      ]
+    },
+    {
+      "ID": 13000010,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000011,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000012,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000013,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000014,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000015,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000016,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13001080,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13009000,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13009010,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100001,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100002,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100010,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100011,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100100,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100101,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100200,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100201,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100210,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100211,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100300,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100301,
+      "Entries": [
+        "Okami Leader Shizu"
+      ]
+    },
+    {
+      "ID": 13100302,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100305,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100306,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13100307,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13109000,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13109100,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13109200,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13109300,
+      "Entries": [
+        "Okami Warrior"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "Treasure carp underwater -- 宝鯉\u3000水中"
+      ]
+    },
+    {
+      "ID": 13200010,
+      "Entries": [
+        "Piranha treasure carp -- ピラニア宝鯉"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "Treasure carp water -- 宝鯉\u3000水上"
+      ]
+    },
+    {
+      "ID": 13200110,
+      "Entries": [
+        "Piranha treasure carp water -- ピラニア宝鯉\u3000水上"
+      ]
+    },
+    {
+      "ID": 13201000,
+      "Entries": [
+        "Treasure carp underwater dummy leader -- 宝鯉\u3000水中\u3000ダミーリーダー"
+      ]
+    },
+    {
+      "ID": 13201100,
+      "Entries": [
+        "Treasure carp water dummy leader -- 宝鯉\u3000水上\u3000ダミーリーダー"
+      ]
+    },
+    {
+      "ID": 13209090,
+      "Entries": [
+        "Treasure carp sample -- 宝鯉\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13209190,
+      "Entries": [
+        "Treasure carp water sample -- 宝鯉\u3000水上\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13400000,
+      "Entries": [
+        "Headless - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 13401000,
+      "Entries": [
+        "Headless - Fountainhead Palace"
+      ]
+    },
+    {
+      "ID": 13401001,
+      "Entries": [
+        "Headless Illusion - Fountainhead Palace"
+      ]
+    },
+    {
+      "ID": 13409000,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "Headless - Sunken Valley"
+      ]
+    },
+    {
+      "ID": 13500010,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13500020,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13500090,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13600000,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600001,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600002,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600003,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600004,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600010,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600020,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600021,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600100,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600101,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13603080,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 13603180,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 13603280,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 13609000,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "Blazing Bull"
+      ]
+    },
+    {
+      "ID": 13709000,
+      "Entries": [
+        "Bull"
+      ]
+    },
+    {
+      "ID": 13800000,
+      "Entries": [
+        "Sakura Bull of the Palace"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000010,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000020,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000080,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000090,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000100,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000110,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000120,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14000200,
+      "Entries": [
+        "Ashina Elite - Ujinari Mizuo - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 14000210,
+      "Entries": [
+        "Ashina Elite - Jinsuke Saze"
+      ]
+    },
+    {
+      "ID": 14001080,
+      "Entries": [
+        "Inosuke Nogami (Conversation)"
+      ]
+    },
+    {
+      "ID": 14001180,
+      "Entries": [
+        "Mibu Village Priest (Conversation)"
+      ]
+    },
+    {
+      "ID": 14009000,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14009100,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14009200,
+      "Entries": [
+        "Ashina Fencer"
+      ]
+    },
+    {
+      "ID": 14500000,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500010,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500011,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500020,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500030,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500100,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14500110,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14503000,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14503100,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14505100,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14505101,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14505102,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14505500,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509000,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509005,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509006,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509008,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509009,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509100,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509101,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14509102,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14609000,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14700001,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14700002,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14700003,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14700004,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14701000,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14701001,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14701002,
+      "Entries": [
+        "Lone Shadow Masanaga the Spear-Bearer - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 14701003,
+      "Entries": [
+        "Lone Shadow Vilehand's Friend"
+      ]
+    },
+    {
+      "ID": 14701004,
+      "Entries": [
+        "Lone Shadow Vilehand"
+      ]
+    },
+    {
+      "ID": 14701005,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14701006,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14702000,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14702001,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14703000,
+      "Entries": [
+        "Lone Shadow Longswordsman"
+      ]
+    },
+    {
+      "ID": 14709000,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14709005,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 14709100,
+      "Entries": [
+        "Lone Shadow"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000001,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000010,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000011,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000012,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000020,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000100,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000101,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000110,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000111,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000200,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000300,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000301,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000310,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000311,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000400,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000401,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000410,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000411,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000500,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000501,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000600,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15000700,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001000,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001100,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001200,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001300,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001400,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15001500,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15002380,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15002480,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15002580,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15003080,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004000,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004100,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004200,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004300,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004400,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004500,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15004700,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009000,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009100,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009200,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009300,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009400,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009500,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15009600,
+      "Entries": [
+        "Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100100,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100200,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100300,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100400,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15100500,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109000,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109100,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109200,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109300,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109400,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15109500,
+      "Entries": [
+        "Phantom Mibu Villager"
+      ]
+    },
+    {
+      "ID": 15500000,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500001,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500002,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500010,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500080,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500081,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500100,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500110,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500200,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500201,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500202,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500203,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500205,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500300,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500301,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500305,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500400,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500401,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500402,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500403,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500404,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500405,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500406,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500407,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500408,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500412,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500500,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15500600,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15501080,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502000,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502100,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502200,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502300,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502400,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15502510,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509000,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509100,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509200,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509300,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509400,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509500,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 15509510,
+      "Entries": [
+        "Bandit"
+      ]
+    },
+    {
+      "ID": 17000000,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000001,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000002,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000010,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000100,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000110,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000200,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000201,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000202,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000210,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000300,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000301,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000302,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000303,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000304,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000305,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000310,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000350,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17000351,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17009000,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17009100,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17009200,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 17009300,
+      "Entries": [
+        "Interior Ministry Samurai"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50050000,
+      "Entries": [
+        "Corrupted Monk Clone"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101000,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101050,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101051,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101052,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101053,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50101054,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50102000,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50102010,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103000,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103010,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103050,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103051,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103052,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103053,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "Chained Orge - Ashina Outskirts"
+      ]
+    },
+    {
+      "ID": 50200080,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50200180,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50201000,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50204080,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50209000,
+      "Entries": [
+        "Chained Orge"
+      ]
+    },
+    {
+      "ID": 50210080,
+      "Entries": [
+        "Great Carp Attendant (Conversation)"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "Straw Doll"
+      ]
+    },
+    {
+      "ID": 50310000,
+      "Entries": [
+        "Straw Doll"
+      ]
+    },
+    {
+      "ID": 50310001,
+      "Entries": [
+        "Straw Doll"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Straw Doll"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 50500080,
+      "Entries": [
+        "Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 50509000,
+      "Entries": [
+        "Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Owl (Father)"
+      ]
+    },
+    {
+      "ID": 50600080,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50601000,
+      "Entries": [
+        "Great Shinobi Owl - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 50601080,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50609000,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50630000,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50709000,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50709300,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 50800000,
+      "Entries": [
+        "Gyoubu"
+      ]
+    },
+    {
+      "ID": 50809000,
+      "Entries": [
+        "Gyoubu"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "Lady Butterfly"
+      ]
+    },
+    {
+      "ID": 50909000,
+      "Entries": [
+        "Lady Butterfly"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Guardian Ape - Sunken Valley"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "Guardian Ape Bride"
+      ]
+    },
+    {
+      "ID": 51000011,
+      "Entries": [
+        "Guardian Ape Bride"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "Headless Ape - Ashina Depths"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    },
+    {
+      "ID": 51009100,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52009000,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 53000010,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53009000,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53100000,
+      "Entries": [
+        "Old Dragon Treebranch"
+      ]
+    },
+    {
+      "ID": 53100010,
+      "Entries": [
+        "Old Dragon Treebranch"
+      ]
+    },
+    {
+      "ID": 53109000,
+      "Entries": [
+        "Old Dragon Treebranch"
+      ]
+    },
+    {
+      "ID": 53200000,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 54000000,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000080,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000100,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54030000,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54030100,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54300000,
+      "Entries": [
+        "Isshin Ashina - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 54300080,
+      "Entries": [
+        "Isshin Ashina (Conversation - Isshin's Tower)"
+      ]
+    },
+    {
+      "ID": 54301080,
+      "Entries": [
+        "Tengu (Conversation - Ashina Outskirts)"
+      ]
+    },
+    {
+      "ID": 54302080,
+      "Entries": [
+        "Tengu (Conversation - Great Serpent Shrine)"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "O'Rin of the Water"
+      ]
+    },
+    {
+      "ID": 70000900,
+      "Entries": [
+        "O'Rin of the Water"
+      ]
+    },
+    {
+      "ID": 70009000,
+      "Entries": [
+        "O'Rin of the Water"
+      ]
+    },
+    {
+      "ID": 70100000,
+      "Entries": [
+        "Sculptor"
+      ]
+    },
+    {
+      "ID": 70100080,
+      "Entries": [
+        "Sculptor"
+      ]
+    },
+    {
+      "ID": 70200000,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200100,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70209000,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70209100,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70210000,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70219000,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 71000000,
+      "Entries": [
+        "Genichiro Ashina - Ashina Reservoir"
+      ]
+    },
+    {
+      "ID": 71030000,
+      "Entries": [
+        "Genichiro Ashina - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 71100000,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Ashina Reservoir"
+      ]
+    },
+    {
+      "ID": 71130000,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Ashina Castle"
+      ]
+    },
+    {
+      "ID": 72000000,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 72000080,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 72000081,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 72000082,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 72001080,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 72001081,
+      "Entries": [
+        "Lord Kuro"
+      ]
+    },
+    {
+      "ID": 73000080,
+      "Entries": [
+        "Senpou Priest"
+      ]
+    },
+    {
+      "ID": 73001080,
+      "Entries": [
+        "Monk - Hall of Illusion"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "Emma, the Gentle Blade"
+      ]
+    },
+    {
+      "ID": 74000080,
+      "Entries": [
+        "Emma (Conversation - Kuro's Room)"
+      ]
+    },
+    {
+      "ID": 74000081,
+      "Entries": [
+        "Emma, the Gentle Blade"
+      ]
+    },
+    {
+      "ID": 74000082,
+      "Entries": [
+        "Emma (Conversation - Central Forces Invasion)"
+      ]
+    },
+    {
+      "ID": 74000083,
+      "Entries": [
+        "Emma (Conversation - Isshin's Tower)"
+      ]
+    },
+    {
+      "ID": 74001080,
+      "Entries": [
+        "Emma, the Gentle Blade"
+      ]
+    },
+    {
+      "ID": 74100080,
+      "Entries": [
+        "Jinzaemon Kumano"
+      ]
+    },
+    {
+      "ID": 74101080,
+      "Entries": [
+        "Jinzaemon Kumano"
+      ]
+    },
+    {
+      "ID": 74101081,
+      "Entries": [
+        "Jinzaemon Kumano"
+      ]
+    },
+    {
+      "ID": 74102080,
+      "Entries": [
+        "Jinzaemon Kumano"
+      ]
+    },
+    {
+      "ID": 74102081,
+      "Entries": [
+        "Jinzaemon Kumano"
+      ]
+    },
+    {
+      "ID": 74200080,
+      "Entries": [
+        "Anayama the Peddler"
+      ]
+    },
+    {
+      "ID": 74200081,
+      "Entries": [
+        "Anayama the Peddler"
+      ]
+    },
+    {
+      "ID": 74201080,
+      "Entries": [
+        "Anayama the Peddler"
+      ]
+    },
+    {
+      "ID": 74300080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74300081,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74300082,
+      "Entries": [
+        "Anayama the Peddler"
+      ]
+    },
+    {
+      "ID": 74301080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74302080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74303080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74304080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74305080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74305081,
+      "Entries": [
+        "Anayama the Peddler"
+      ]
+    },
+    {
+      "ID": 74306080,
+      "Entries": [
+        "Memorial Mob"
+      ]
+    },
+    {
+      "ID": 74400080,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74401080,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74401081,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74402080,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74402081,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74403080,
+      "Entries": [
+        "Praying Woman"
+      ]
+    },
+    {
+      "ID": 74500080,
+      "Entries": [
+        "Inosuke Nogami's Mother"
+      ]
+    },
+    {
+      "ID": 74501080,
+      "Entries": [
+        "Inosuke Nogami's Mother"
+      ]
+    },
+    {
+      "ID": 74600080,
+      "Entries": [
+        "Inosuke Nogami\n"
+      ]
+    },
+    {
+      "ID": 74601080,
+      "Entries": [
+        "Inosuke Nogami\n"
+      ]
+    },
+    {
+      "ID": 74700080,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74700081,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74701080,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74701081,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74702080,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74702081,
+      "Entries": [
+        "Kotaro"
+      ]
+    },
+    {
+      "ID": 74800080,
+      "Entries": [
+        "Mibu Village Priest"
+      ]
+    },
+    {
+      "ID": 74800081,
+      "Entries": [
+        "Mibu Village Priest"
+      ]
+    },
+    {
+      "ID": 74900080,
+      "Entries": [
+        "Doujun"
+      ]
+    },
+    {
+      "ID": 74900081,
+      "Entries": [
+        "Doujun"
+      ]
+    },
+    {
+      "ID": 75000080,
+      "Entries": [
+        "Mibu Villager Basket"
+      ]
+    },
+    {
+      "ID": 75100080,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75101080,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75101081,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75102080,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75102081,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75103080,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 75103081,
+      "Entries": [
+        "Blackhat Badger"
+      ]
+    },
+    {
+      "ID": 90001003,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 90002000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 90002001,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 90009000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 91000000,
+      "Entries": [
+        "Hound - Test\n"
+      ]
+    },
+    {
+      "ID": 91000003,
+      "Entries": [
+        "Hound - Test\n"
+      ]
+    },
+    {
+      "ID": 95001000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001001,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001002,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001003,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001004,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001010,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001011,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001012,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95001090,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95002000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95002004,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95002010,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95002011,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95003000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95003001,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95003010,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004000,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004001,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004006,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004007,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004008,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004009,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95004010,
+      "Entries": [
+        "Ashina Soldier - Test\n"
+      ]
+    },
+    {
+      "ID": 95201001,
+      "Entries": [
+        "Samurai General - Test\n"
+      ]
+    },
+    {
+      "ID": 95201050,
+      "Entries": [
+        "Samurai General - Test\n"
+      ]
+    },
+    {
+      "ID": 95211000,
+      "Entries": [
+        "Samurai General - Test\n"
+      ]
+    },
+    {
+      "ID": 95221000,
+      "Entries": [
+        "Samurai General - Test\n"
+      ]
+    },
+    {
+      "ID": 95231000,
+      "Entries": [
+        "Samurai General - Test\n"
+      ]
+    },
+    {
+      "ID": 95301000,
+      "Entries": [
+        "Centipede - Test\n"
+      ]
+    },
+    {
+      "ID": 95301010,
+      "Entries": [
+        "Centipede - Test\n"
+      ]
+    },
+    {
+      "ID": 95301011,
+      "Entries": [
+        "Centipede - Test\n"
+      ]
+    },
+    {
+      "ID": 95301020,
+      "Entries": [
+        "Centipede - Test\n"
+      ]
+    },
+    {
+      "ID": 95400000,
+      "Entries": [
+        "Crow - Test\n"
+      ]
+    },
+    {
+      "ID": 95601000,
+      "Entries": [
+        "Centipede - Test\n"
+      ]
+    },
+    {
+      "ID": 96001000,
+      "Entries": [
+        "Sculptor - Test\n"
+      ]
+    },
+    {
+      "ID": 96001001,
+      "Entries": [
+        "Sculptor - Test\n"
+      ]
+    },
+    {
+      "ID": 96001002,
+      "Entries": [
+        "Corrupted Monk - Test\n"
+      ]
+    },
+    {
+      "ID": 96001005,
+      "Entries": [
+        "Corrupted Monk - Test\n"
+      ]
+    },
+    {
+      "ID": 96001010,
+      "Entries": [
+        "Corrupted Monk - Test\n"
+      ]
+    },
+    {
+      "ID": 96001011,
+      "Entries": [
+        "Corrupted Monk - Test\n"
+      ]
+    },
+    {
+      "ID": 96100000,
+      "Entries": [
+        "Great Serpent - Test\n"
+      ]
+    },
+    {
+      "ID": 96500000,
+      "Entries": [
+        "Old Main - Test\n"
+      ]
+    },
+    {
+      "ID": 96600000,
+      "Entries": [
+        "Sentry - Test\n"
+      ]
+    },
+    {
+      "ID": 96600001,
+      "Entries": [
+        "Sentry - Test\n"
+      ]
+    },
+    {
+      "ID": 98000000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 98100000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 98200000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 98300000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 98400000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 98500000,
+      "Entries": [
+        "\n"
+      ]
+    }
+  ]
+}

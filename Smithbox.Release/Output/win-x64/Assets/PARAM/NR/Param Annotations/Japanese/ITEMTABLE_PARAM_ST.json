@@ -1,0 +1,73 @@
+{
+  "Param": "ITEMTABLE_PARAM_ST",
+  "Type": "ITEMTABLE_PARAM_ST",
+  "Name": "ITEMTABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "itemCategory",
+      "Name": "itemCategory",
+      "Description": ""
+    },
+    {
+      "Field": "itemId",
+      "Name": "itemId",
+      "Description": ""
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "chanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "quantity",
+      "Name": "quantity",
+      "Description": ""
+    },
+    {
+      "Field": "onlyForClass",
+      "Name": "onlyForClass",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId",
+      "Name": "eventFlagId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "midstPadding",
+      "Name": "midstPadding",
+      "Description": ""
+    },
+    {
+      "Field": "weaponTypeDiscovery",
+      "Name": "weaponTypeDiscovery",
+      "Description": ""
+    }
+  ]
+}

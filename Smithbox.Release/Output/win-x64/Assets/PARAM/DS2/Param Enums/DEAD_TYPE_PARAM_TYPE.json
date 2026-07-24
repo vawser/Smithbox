@@ -1,0 +1,20 @@
+{
+  "Key": "DEAD_TYPE_PARAM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DEAD_TYPE_PARAM_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test data"
+        }
+      ]
+    }
+  ]
+}

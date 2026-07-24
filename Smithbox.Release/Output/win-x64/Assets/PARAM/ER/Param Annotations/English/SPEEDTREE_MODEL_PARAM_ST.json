@@ -1,0 +1,58 @@
+{
+  "Param": "SPEEDTREE_MODEL_PARAM_ST",
+  "Type": "SPEEDTREE_MODEL_PARAM_ST",
+  "Name": "SPEEDTREE_MODEL_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "MinFadeLeaf",
+      "Name": "Leaf - Min Fade",
+      "Description": ""
+    },
+    {
+      "Field": "MinFadeFrond",
+      "Name": "Frond - Min Fade",
+      "Description": ""
+    },
+    {
+      "Field": "MinFadeBranch",
+      "Name": "Branch - Min Fade",
+      "Description": ""
+    },
+    {
+      "Field": "MinTranslucencyLeaf",
+      "Name": "Leaf - Min Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "MaxTranslucencyLeaf",
+      "Name": "Leaf - Max Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "MinTranslucencyFrond",
+      "Name": "Frond - Min Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "MaxTranslucencyFrond",
+      "Name": "Frond - Max Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "MinTranslucencyBranch",
+      "Name": "Branch - Min Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "MaxTranslucencyBranch",
+      "Name": "Branch - Max Translucency",
+      "Description": ""
+    },
+    {
+      "Field": "BillboardBackSpecularWeakenParam",
+      "Name": "Billboard Specular Suppression Value",
+      "Description": ""
+    }
+  ]
+}

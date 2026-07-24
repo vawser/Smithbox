@@ -1,0 +1,158 @@
+{
+  "Param": "ACTION_UNLOCK_PARAM_ST",
+  "Type": "ACTION_UNLOCK_PARAM_ST",
+  "Name": "ACTION_UNLOCK_PARAM_ST",
+  "Description": "Used to unlock various abilities as you progress",
+  "Fields": [
+    {
+      "Field": "action00",
+      "Name": "Unlocks Diving",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action01",
+      "Name": "Unlocks Night Eyes",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action02",
+      "Name": "Unlocks Resurrection",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action03",
+      "Name": "Unlocks Mortal Blade",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action04",
+      "Name": "Unlocks Prosthetic Arm",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action05",
+      "Name": "Unlocks Kusabimaru",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action06",
+      "Name": "Unlocks Spirit Emblems",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action07",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action08",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action09",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action10",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action11",
+      "Name": "Unlocks Mikiri Counter",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action12",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action13",
+      "Name": "Unlocks Vault Over",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action14",
+      "Name": "Unlocks Grappling Hook Attack",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action15",
+      "Name": "Unlocks Mid-Air Deflect",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action16",
+      "Name": "Unlocks Mid-Air Prosthetic Tool",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action17",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action18",
+      "Name": "Anti-Air Deathblow",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action19",
+      "Name": "Reservoir Thrust unused unlock",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action20",
+      "Name": "Unlocks Chasing Slice",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action21",
+      "Name": "Unlocks Projected Force",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action22",
+      "Name": "Unlocks Fang and Blade",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action23",
+      "Name": "Unlocks Living Force",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action24",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action25",
+      "Name": "Unlocks Mid-Air Combat Arts",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action26",
+      "Name": "Unlocks Run and Slide",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action27",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action28",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    },
+    {
+      "Field": "action29",
+      "Name": "Unused",
+      "Description": "The ban will be lifted if you possess at least one tool marked with ○"
+    }
+  ]
+}

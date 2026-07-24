@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>POINT_LIGHT_BANK</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 dwindleBegin = 0.5">
+      <DisplayName>減衰開始距離[m]</DisplayName>
+      <Description>点光源</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 dwindleEnd = 2">
+      <DisplayName>減衰終了距離[m]</DisplayName>
+      <Description>点光源</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 colR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 colG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 colB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 colA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 shadowIntensity">
+      <DisplayName>影の濃さ</DisplayName>
+      <Description>影の濃さ(0.0:影なし～1.0:最大濃)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

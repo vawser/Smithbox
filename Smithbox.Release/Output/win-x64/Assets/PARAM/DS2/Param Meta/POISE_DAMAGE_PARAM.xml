@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <damageMinimum />
+        <damageSmall />
+        <damageMiddle />
+        <damageHeavy />
+        <damageSuperHeavy />
+        <addValueMinimum />
+        <addValueSmall />
+        <addValueMiddle />
+        <addValueHeavy />
+        <addValueSuperHeavy />
+    </Field>
+</PARAMMETA>

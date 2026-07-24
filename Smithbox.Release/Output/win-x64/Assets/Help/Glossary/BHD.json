@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "BHD",
+    "Tags": [
+        "Format",
+        "Archive"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "An archive of game data, compressed and sometimes encrypted.",
+        "Tools such as UXM and UDSFM can be used to dump their contents."
+    ]
+}

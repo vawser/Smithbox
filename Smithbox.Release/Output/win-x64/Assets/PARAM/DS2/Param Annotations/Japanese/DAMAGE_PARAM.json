@@ -1,0 +1,353 @@
+{
+  "Param": "DAMAGE_PARAM",
+  "Type": "DAMAGE_PARAM",
+  "Name": "DAMAGE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "damageCategory",
+      "Name": "ダメージカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "childDamage",
+      "Name": "子ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "damageGroup",
+      "Name": "ダメージグループID",
+      "Description": ""
+    },
+    {
+      "Field": "damage01",
+      "Name": "ダメージ値1",
+      "Description": ""
+    },
+    {
+      "Field": "damage02",
+      "Name": "ダメージ値2",
+      "Description": ""
+    },
+    {
+      "Field": "damage03",
+      "Name": "ダメージ値3",
+      "Description": ""
+    },
+    {
+      "Field": "damageLower",
+      "Name": "ダメージ最低保障値",
+      "Description": ""
+    },
+    {
+      "Field": "damageType01",
+      "Name": "ダメージ属性1",
+      "Description": ""
+    },
+    {
+      "Field": "damageType02",
+      "Name": "ダメージ属性2",
+      "Description": ""
+    },
+    {
+      "Field": "damageType03",
+      "Name": "ダメージ属性3",
+      "Description": ""
+    },
+    {
+      "Field": "damageRate",
+      "Name": "ダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "counterDamageRate",
+      "Name": "カウンターダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "staminaDamage",
+      "Name": "スタミナ奪取量",
+      "Description": ""
+    },
+    {
+      "Field": "durabilityDamage",
+      "Name": "耐久削り値",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackPower",
+      "Name": "ノックバック[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stiff",
+      "Name": "硬直[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "hitDummyPolyType",
+      "Name": "発生源タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "hitDummyPolyId",
+      "Name": "発生源ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "hitAttackMotionType",
+      "Name": "攻撃属性 モーション",
+      "Description": ""
+    },
+    {
+      "Field": "hitModelType",
+      "Name": "形状タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "radius",
+      "Name": "半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "length",
+      "Name": "長さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "hitDistance",
+      "Name": "連続HIT設定",
+      "Description": ""
+    },
+    {
+      "Field": "downAttackFlag",
+      "Name": "ダウン攻撃フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "onceFlag",
+      "Name": "単体限定フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagOwner",
+      "Name": "オーナーヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagFriend",
+      "Name": "友軍ヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagEnemy",
+      "Name": "敵軍ヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagNeutral",
+      "Name": "中立ヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagMap",
+      "Name": "マップヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "hitFlagObj",
+      "Name": "OBJヒット許可",
+      "Description": ""
+    },
+    {
+      "Field": "directionType",
+      "Name": "ノックバック方向",
+      "Description": ""
+    },
+    {
+      "Field": "guardDirectionType",
+      "Name": "ガード判定方向",
+      "Description": ""
+    },
+    {
+      "Field": "hitPosType",
+      "Name": "ＨＩＴ上下位置",
+      "Description": ""
+    },
+    {
+      "Field": "hitAngleXZ",
+      "Name": "強制HIT角度\u3000XZ",
+      "Description": ""
+    },
+    {
+      "Field": "hitAngleY",
+      "Name": "強制HIT角度\u3000Y",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageGroupChr",
+      "Name": "キャラのグループ判定",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageGroupMap",
+      "Name": "マップのグループ判定",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageGroupObj",
+      "Name": "OBJのグループ判定",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectIdWhenHit",
+      "Name": "ヒット時に発動する特殊効果のID",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTarget",
+      "Name": "ヒット時に発動する特殊効果の発動対象",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTargetRegion",
+      "Name": "特殊効果管理カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectDuplication",
+      "Name": "特殊効果の重複判定",
+      "Description": ""
+    },
+    {
+      "Field": "materialSize",
+      "Name": "サイズ",
+      "Description": ""
+    },
+    {
+      "Field": "material",
+      "Name": "材質",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfx",
+      "Name": "軌跡SFX",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxColor",
+      "Name": "軌跡SFX追従ダミポリ色",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxPos",
+      "Name": "軌跡SFX位置",
+      "Description": ""
+    },
+    {
+      "Field": "overKilledBlowPower",
+      "Name": "オーバーキル 吹き飛び初速[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "movementPowerType",
+      "Name": "運動量",
+      "Description": ""
+    },
+    {
+      "Field": "attackTypeRateType",
+      "Name": "攻撃タイプ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "styleRateType",
+      "Name": "持ち方倍率",
+      "Description": ""
+    },
+    {
+      "Field": "eventDamage",
+      "Name": "イベントダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitDummyPolyType",
+      "Name": "弾きＨＩＴ 発生源タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitDummyPolyId",
+      "Name": "弾きＨＩＴ 発生源ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitModelType",
+      "Name": "弾きＨＩＴ 形状タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "damagOverwrite",
+      "Name": "ダメージ強制上書き",
+      "Description": ""
+    },
+    {
+      "Field": "disallowInvincible",
+      "Name": "無敵無効化フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "flipFlagMapFloor",
+      "Name": "マップ弾かれ\u3000床\u3000無効",
+      "Description": ""
+    },
+    {
+      "Field": "flipFlagMapWall",
+      "Name": "マップ弾かれ\u3000壁\u3000無効",
+      "Description": ""
+    },
+    {
+      "Field": "flipFlagObj",
+      "Name": "OBJ弾かれ無効",
+      "Description": ""
+    },
+    {
+      "Field": "isDoorCheck",
+      "Name": "扉判定を行う",
+      "Description": ""
+    },
+    {
+      "Field": "expandSfxDisable",
+      "Name": "SFX拡大 無効",
+      "Description": ""
+    },
+    {
+      "Field": "dummy5",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitRadius",
+      "Name": "弾きＨＩＴ 半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitLength",
+      "Name": "弾きＨＩＴ 長さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "grabParamId",
+      "Name": "投げパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "expandSize",
+      "Name": "拡大サイズ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "expandTime",
+      "Name": "拡大時間[sec]",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,473 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison Resistance"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Terror Resistance"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Burn Resistance"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Enfeeble Resistance"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Shock Resistance"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Fall Damage"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "HP"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Posture"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Kick Posture Damage"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Deflect Posture Multiplier"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Posture Recovery Speed"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "XP needed for Skill Point"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Remaining machine protection price"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Dragonrot Incidence"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Sen / XP Loss Rate"
+      ]
+    }
+  ]
+}

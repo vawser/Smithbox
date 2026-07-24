@@ -1,0 +1,707 @@
+{
+  "Name": "NpcPlayerStatusParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "Forlorn"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "Forlorn"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Sinner Pyromancer (Male)"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "Sinner Pyromancer (Female)"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 7610,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 7630,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 7840,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Pilgrim Bellclaire"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "Felicia the Brave"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "Melinda the Butcher"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Vorgel the Sinner"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Merciless Roenna"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Peculiar Kindalur"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "Dragonfang Villard"
+      ]
+    },
+    {
+      "ID": 8240,
+      "Entries": [
+        "Aslatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Dingy Cleric Phantom"
+      ]
+    },
+    {
+      "ID": 8311,
+      "Entries": [
+        "Faraam Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "Underworld Deadeye"
+      ]
+    },
+    {
+      "ID": 8321,
+      "Entries": [
+        "Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 8322,
+      "Entries": [
+        "Pretender to the Xanthous Throne (Male)"
+      ]
+    },
+    {
+      "ID": 8323,
+      "Entries": [
+        "Pretender to the Xanthous Throne (Female)"
+      ]
+    },
+    {
+      "ID": 8324,
+      "Entries": [
+        "Tenebrous Rogue"
+      ]
+    },
+    {
+      "ID": 8325,
+      "Entries": [
+        "The Ghost of Princes Past"
+      ]
+    },
+    {
+      "ID": 8326,
+      "Entries": [
+        "A Chip Off the Ol Rock"
+      ]
+    },
+    {
+      "ID": 8327,
+      "Entries": [
+        "Shadowveil Assasin"
+      ]
+    },
+    {
+      "ID": 8330,
+      "Entries": [
+        "Butcher Phantom"
+      ]
+    },
+    {
+      "ID": 8350,
+      "Entries": [
+        "Black Dragon Knight (Greatsword) "
+      ]
+    },
+    {
+      "ID": 8351,
+      "Entries": [
+        "Painting Guardian - Female [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8352,
+      "Entries": [
+        "Black Dragon Knight (Sword) "
+      ]
+    },
+    {
+      "ID": 8353,
+      "Entries": [
+        "Black Dragon Knight (Warpick)"
+      ]
+    },
+    {
+      "ID": 8354,
+      "Entries": [
+        "Black Dragon Knight (Sword & Greatbow)"
+      ]
+    },
+    {
+      "ID": 8360,
+      "Entries": [
+        "Mad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 8361,
+      "Entries": [
+        "Greatsword Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8362,
+      "Entries": [
+        "Dual Avelyn Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8363,
+      "Entries": [
+        "Bell Keeper Mage Phantom"
+      ]
+    },
+    {
+      "ID": 8364,
+      "Entries": [
+        "Ironclad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 8370,
+      "Entries": [
+        "Foreign Wanderer Phantom (Heavy Crossbow)"
+      ]
+    },
+    {
+      "ID": 8371,
+      "Entries": [
+        "Foreign Wanderer (Broken Straight Sword)"
+      ]
+    },
+    {
+      "ID": 8372,
+      "Entries": [
+        "Foreign Wanderer (Bow)"
+      ]
+    },
+    {
+      "ID": 8374,
+      "Entries": [
+        "Foreign Wanderer Phantom (Bastard Sword)"
+      ]
+    },
+    {
+      "ID": 8382,
+      "Entries": [
+        "Forest Guardian (Thief)"
+      ]
+    },
+    {
+      "ID": 8383,
+      "Entries": [
+        "Forest Guardian (Infantry)"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "Syan Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8430,
+      "Entries": [
+        "Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8440,
+      "Entries": [
+        "Catarina Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8450,
+      "Entries": [
+        "Falconer Phantom [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8460,
+      "Entries": [
+        "Porcine Peasant Phantom"
+      ]
+    },
+    {
+      "ID": 8470,
+      "Entries": [
+        "Executioner Phantom"
+      ]
+    },
+    {
+      "ID": 8471,
+      "Entries": [
+        "Blue Sentinel Phantom"
+      ]
+    },
+    {
+      "ID": 8480,
+      "Entries": [
+        "Dual Wielding Swordsman Phantom"
+      ]
+    },
+    {
+      "ID": 8481,
+      "Entries": [
+        "Black Witch Phantom [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8490,
+      "Entries": [
+        "Nameless Usurper"
+      ]
+    },
+    {
+      "ID": 8491,
+      "Entries": [
+        "Jester Thomas"
+      ]
+    },
+    {
+      "ID": 8492,
+      "Entries": [
+        "Rhoy the Explorer"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Painting Guardian Phantom"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "Brigand Phantom [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8520,
+      "Entries": [
+        "Greatsword Phantom"
+      ]
+    },
+    {
+      "ID": 8530,
+      "Entries": [
+        "Bowman Guthry"
+      ]
+    },
+    {
+      "ID": 8531,
+      "Entries": [
+        "Ashen Knight Boyd"
+      ]
+    },
+    {
+      "ID": 8532,
+      "Entries": [
+        "Drakekeeper Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8533,
+      "Entries": [
+        "Elite Knight Phantom [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8534,
+      "Entries": [
+        "Greatbow Phantom [UNUSED]"
+      ]
+    },
+    {
+      "ID": 8535,
+      "Entries": [
+        "Washing Pole Phantom"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "Aurous Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "Rockshield Baldyr"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "Jester Thomas"
+      ]
+    },
+    {
+      "ID": 8620,
+      "Entries": [
+        "Cerah the Old Explorer"
+      ]
+    },
+    {
+      "ID": 8630,
+      "Entries": [
+        "Ancient Soldier Varg"
+      ]
+    },
+    {
+      "ID": 8640,
+      "Entries": [
+        "Afflicted Graverobber"
+      ]
+    },
+    {
+      "ID": 8650,
+      "Entries": [
+        "Abbess Feeva"
+      ]
+    },
+    {
+      "ID": 8660,
+      "Entries": [
+        "Ruined Aflis"
+      ]
+    },
+    {
+      "ID": 8670,
+      "Entries": [
+        "Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 8671,
+      "Entries": [
+        "Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 8680,
+      "Entries": [
+        "Transcendent Edde (Sword and Shield)"
+      ]
+    },
+    {
+      "ID": 8681,
+      "Entries": [
+        "Transcendent Edde (Greatswords)"
+      ]
+    },
+    {
+      "ID": 8690,
+      "Entries": [
+        "Rapacious Andrei"
+      ]
+    },
+    {
+      "ID": 8700,
+      "Entries": [
+        "Quicksword Rachel"
+      ]
+    },
+    {
+      "ID": 8710,
+      "Entries": [
+        "Maldron the Assassin"
+      ]
+    },
+    {
+      "ID": 8711,
+      "Entries": [
+        "Teeth-chattering Dan"
+      ]
+    },
+    {
+      "ID": 8720,
+      "Entries": [
+        "Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 8730,
+      "Entries": [
+        "Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 8740,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 8750,
+      "Entries": [
+        "Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 8760,
+      "Entries": [
+        "Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 8770,
+      "Entries": [
+        "Castaway Witch Donna"
+      ]
+    },
+    {
+      "ID": 8780,
+      "Entries": [
+        "Hexer Nicholai"
+      ]
+    },
+    {
+      "ID": 8790,
+      "Entries": [
+        "Holy Knight Aurheim"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 8810,
+      "Entries": [
+        "Prowlers (Sword)"
+      ]
+    },
+    {
+      "ID": 8820,
+      "Entries": [
+        "Prowlers (Sword & Bow)"
+      ]
+    },
+    {
+      "ID": 8830,
+      "Entries": [
+        "Wall Watchman"
+      ]
+    },
+    {
+      "ID": 8831,
+      "Entries": [
+        "Wall Watchman"
+      ]
+    },
+    {
+      "ID": 8832,
+      "Entries": [
+        "Wall Watchman"
+      ]
+    },
+    {
+      "ID": 8840,
+      "Entries": [
+        "Twiggy Shei"
+      ]
+    },
+    {
+      "ID": 8850,
+      "Entries": [
+        "Exiled Brave (Faraam)"
+      ]
+    },
+    {
+      "ID": 8851,
+      "Entries": [
+        "Exiled Brave (Archdrake)"
+      ]
+    },
+    {
+      "ID": 8860,
+      "Entries": [
+        "Insolent Knight"
+      ]
+    },
+    {
+      "ID": 8870,
+      "Entries": [
+        "Gutter Denizen"
+      ]
+    },
+    {
+      "ID": 8880,
+      "Entries": [
+        "Pyromancer"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "TEST NPC"
+      ]
+    },
+    {
+      "ID": 8910,
+      "Entries": [
+        "Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 8915,
+      "Entries": [
+        "Devotee Scarlett"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 8925,
+      "Entries": [
+        "Bashful Ray"
+      ]
+    },
+    {
+      "ID": 8930,
+      "Entries": [
+        "Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 8960,
+      "Entries": [
+        "Woodland Child Victor"
+      ]
+    },
+    {
+      "ID": 8965,
+      "Entries": [
+        "Woodland Child Gully"
+      ]
+    },
+    {
+      "ID": 8970,
+      "Entries": [
+        "Fencer Sharron"
+      ]
+    },
+    {
+      "ID": 8975,
+      "Entries": [
+        "Armorer Dennis"
+      ]
+    },
+    {
+      "ID": 8980,
+      "Entries": [
+        "Oliver the Collector"
+      ]
+    }
+  ]
+}

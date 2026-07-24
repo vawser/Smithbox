@@ -1,0 +1,38 @@
+{
+  "Key": "CHR_WET_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water wet"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison wet"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oily"
+        }
+      ]
+    }
+  ]
+}

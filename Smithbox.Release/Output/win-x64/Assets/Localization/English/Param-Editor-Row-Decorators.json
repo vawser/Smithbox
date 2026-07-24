@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowDecorator_Action_Go_To_Text",
+      "Text": "Go to Text"
+    },
+    {
+      "Key": "PARAM_RowDecorator_Action_Go_To_Text_TT",
+      "Text": "Go the the text entry this row is associated within in the Text Editor."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "BulletCreateLimitParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For recontest -- リコンテスト用"
+      ]
+    }
+  ]
+}

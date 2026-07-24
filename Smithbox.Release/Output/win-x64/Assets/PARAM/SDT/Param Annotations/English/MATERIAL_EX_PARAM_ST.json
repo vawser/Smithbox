@@ -1,0 +1,23 @@
+{
+  "Param": "MATERIAL_EX_PARAM_ST",
+  "Type": "MATERIAL_EX_PARAM_ST",
+  "Name": "MATERIAL_EX_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mtlModifyingId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

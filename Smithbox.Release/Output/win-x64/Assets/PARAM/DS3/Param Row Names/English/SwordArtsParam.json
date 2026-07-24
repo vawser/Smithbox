@@ -1,0 +1,1115 @@
+{
+  "Name": "SwordArtsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Spell Parry"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Spell Parry"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Blind Spot"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Unleash Dragon"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Guiding Light"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Blind Spot"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield Splitter"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Stance"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Crystal Blade"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Stance"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Guiding Light"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Oath of Sunlight"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Sacred Lothric Light"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Stance"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Lion Stance"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Ember"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Stance"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Ember"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Moonlight Vortex"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Stance of Judgment"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Sacred Light and Flame"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Wolf Sword"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Storm King"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Elfriede's Blackflame"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Blade of Peril"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Profaned Flame"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Flame of Lorian"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Stomp"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Ember"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Stance"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Shield Splitter"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Ricard's Lunge and Press"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Quill Dart"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Crescent Blade"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Tornado"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Frost Blade"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Chained Dance"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Prying Wedge"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Wolf Leap"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Sever"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Hold"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Bloodlust"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Hold"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Darkdrift"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Hold"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Sharpen"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Feast Bell"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Demonic Flare"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Falling Bolt"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Sharpen"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Earthen Wrath"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Steady Chant"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Galvanize"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Breathe Fire"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Molten Perseverance"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Kindled Flurry"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Morne's Rage"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Spin Bash"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Galvanize"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "Quake"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "Call to Stone"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Falling Bolt"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Pacify"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Shield Splitter"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Steady Chant"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Unleash Dragon"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "Lightning Charge"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "Kindled Charge"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "Spin Sweep"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "Hurl Spear"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "Ember"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "Lothric War Banner"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Spin Sweep"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Chain Spin"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Champion's Charge"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Punitive Flame"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Warcry"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 1408,
+      "Entries": [
+        "Wind Wheel"
+      ]
+    },
+    {
+      "ID": 1409,
+      "Entries": [
+        "Mad King's Folly"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Neck Swipe"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Frost"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Elfriede's Stance"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Impact"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Flame Whip"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Flame Whirlwind"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Lifedrain"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Leaping Slash"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "Raptor Flurry"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Rapid Fire"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Puncture"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Pharis Triple-shot"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "Darkmoon Arrow"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "Unseen Arrow"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Puncturing Arrow"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Puncturing Arrow"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Pierce Earth"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Tackle"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Repeat Fire"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Steady Chant"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Steady Chant"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Poison Spores"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Steady Chant"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Chant from the Depths"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Feasting Branch"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Unfaltering Prayer"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Gentle Prayer"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Unfaltering Prayer"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Unfaltering Prayer"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "Awakening"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "Pray for Favor"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Parting Flame"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "Spin Slash"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "Dancer's Grace"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Onislayer"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Chain Spin"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Spin Bash"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Shield Strike"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Moan"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Stone Flesh"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Wheel of Fate"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 3330,
+      "Entries": [
+        "Lockout"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "Dragon Breath"
+      ]
+    }
+  ]
+}

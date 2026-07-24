@@ -1,0 +1,17 @@
+{
+  "Name": "EstusFlaskMaxReinforceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Number of times used -- 使用回数レベル"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Effect level -- 効果量レベル"
+      ]
+    }
+  ]
+}

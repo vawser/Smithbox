@@ -1,0 +1,53 @@
+{
+  "Param": "PLAYER_CAMOUFLAGE_PATTERN_PARAM_ST",
+  "Type": "PLAYER_CAMOUFLAGE_PATTERN_PARAM_ST",
+  "Name": "PLAYER_CAMOUFLAGE_PATTERN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Small",
+      "Name": "小",
+      "Description": "タイリング(小)のスケール"
+    },
+    {
+      "Field": "Medium",
+      "Name": "中",
+      "Description": "タイリング(中)のスケール"
+    },
+    {
+      "Field": "Large",
+      "Name": "大",
+      "Description": "タイリング(大)のスケール"
+    },
+    {
+      "Field": "Slot0_enabled",
+      "Name": "0",
+      "Description": "スロット0がカラーリングが可能か"
+    },
+    {
+      "Field": "Slot1_enabled",
+      "Name": "1",
+      "Description": "スロット1がカラーリングが可能か"
+    },
+    {
+      "Field": "Slot2_enabled",
+      "Name": "2",
+      "Description": "スロット2がカラーリングが可能か"
+    },
+    {
+      "Field": "Slot3_enabled",
+      "Name": "3",
+      "Description": "スロット3がカラーリングが可能か"
+    },
+    {
+      "Field": "pad0",
+      "Name": "----",
+      "Description": "タイリング(中)のスケール"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad0",
+      "Description": ""
+    }
+  ]
+}

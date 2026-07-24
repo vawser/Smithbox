@@ -1,0 +1,191 @@
+{
+  "Name": "FeFreeDialogParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Sample: Upper left (small) -- サンプル：左上(小)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Sample: Upper left (large) -- サンプル：左上(大)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Sample: Center (small) -- サンプル：中央(小)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Sample: Center (large) -- サンプル：中央(大)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mission dialogue 1 -- ミッションダイアログ1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "mission dialogue 2 -- ミッションダイアログ2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "mission dialogue 3 -- ミッションダイアログ3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Mission dialogue 2-1 -- ミッションダイアログ2-1"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Mission dialogue 2-2 -- ミッションダイアログ2-2"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Mission dialogue 2-3 -- ミッションダイアログ2-3"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Mission dialogue 3-1 -- ミッションダイアログ3-1"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Mission dialogue 3-2 -- ミッションダイアログ3-2"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Mission dialogue 3-3 -- ミッションダイアログ3-3"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "subtitle test -- 字幕テスト"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Image production test 01 -- 画像演出テスト01"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Image production test 02 -- 画像演出テスト02"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Image production test 03 -- 画像演出テスト03"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Image production test 04 -- 画像演出テスト04"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Image production test 05 -- 画像演出テスト05"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Image production test 06 -- 画像演出テスト06"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "blackout mock -- 暗転モック"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Mission log: top left, middle -- ミッションログ：左上、中"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Mission log: Upper left, 1st grade -- ミッションログ：左上、小1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Mission log: Upper left, 2nd grade -- ミッションログ：左上、小2"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Submission log: top left, middle -- サブミッションログ：左上、中"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Submission log: Upper left, 1st grade -- サブミッションログ：左上、小1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Submission log: Upper left, 2nd grade -- サブミッションログ：左上、小2"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Out of area warning display -- エリア外警告表示"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "on center display -- 中央表示上"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "center display bottom -- 中央表示下"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "test display -- テスト表示"
+      ]
+    }
+  ]
+}

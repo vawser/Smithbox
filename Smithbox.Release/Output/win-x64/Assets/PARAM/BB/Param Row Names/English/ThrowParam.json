@@ -1,0 +1,1331 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[SP] Backstrike - Player → Mergo's Attendant"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[SP] Visceral - Player → Mergo's Attendant"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[SP] Backstrike - Player → Mergo's Attendant (Enhancted)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[SP] Backstrike - Player → Mergo's Attendant (Left)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Backstrike: Player → Player"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Visceral: Player → Player"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Backstrike - Player → Wolf Beast"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Backstrike - Player → Skeleton-meat Wolf Beast"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Backstrike - Player → Loran Cleric"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Backstrike - Player → Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Backstrike - Player → Chime Maiden"
+      ]
+    },
+    {
+      "ID": 11051,
+      "Entries": [
+        "Backstrike - Player → Chime Maiden (Lightweight)"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Backstrike - Player → Brainsucker"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "Backstrike - Player → Cloaked Beast Patient"
+      ]
+    },
+    {
+      "ID": 11091,
+      "Entries": [
+        "Backstrike - Player → Beast Patient"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "Backstrike - Player → Cainhurst Gargoyle"
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        "Backstrike - Player → Maneater Boar"
+      ]
+    },
+    {
+      "ID": 11271,
+      "Entries": [
+        "Backstrike - Player → Maneater Boar (Afflicted)"
+      ]
+    },
+    {
+      "ID": 11290,
+      "Entries": [
+        "Backstrike - Player → Cloaked Beast Patient (Female)"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Backstrike - Player → Executioner"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Backstrike - Player → Watcher's Gravedigger"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Backstrike - Player → Snatcher"
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        "Backstrike - Player → Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Backstrike - Player → Crazy Demon"
+      ]
+    },
+    {
+      "ID": 12090,
+      "Entries": [
+        "Backstrike - Player → Blood Starved Beast"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "Backstrike - Player → Witch of Hemwick"
+      ]
+    },
+    {
+      "ID": 12110,
+      "Entries": [
+        "Backstrike - Player → Garden of Eyes"
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        "Backstrike - Player → Shadow of Yharnam"
+      ]
+    },
+    {
+      "ID": 12150,
+      "Entries": [
+        "Backstrike - Player → Silver Lady"
+      ]
+    },
+    {
+      "ID": 12160,
+      "Entries": [
+        "Backstrike - Player → Bone Ash Hunter"
+      ]
+    },
+    {
+      "ID": 12170,
+      "Entries": [
+        "Backstrike - Player → Vermin Host"
+      ]
+    },
+    {
+      "ID": 12180,
+      "Entries": [
+        "Backstrike - Player → Abhorrent Beast"
+      ]
+    },
+    {
+      "ID": 12250,
+      "Entries": [
+        "Backstrike - Player → Mergo's Attendant"
+      ]
+    },
+    {
+      "ID": 12260,
+      "Entries": [
+        "Backstrike - Player → Mergo's Chief Attendant"
+      ]
+    },
+    {
+      "ID": 12320,
+      "Entries": [
+        "Backstrike - Player → Matyr Logarius"
+      ]
+    },
+    {
+      "ID": 12330,
+      "Entries": [
+        "Backstrike - Player → Cainhurst Servant"
+      ]
+    },
+    {
+      "ID": 12400,
+      "Entries": [
+        "Backstrike - Player → Giant Lost Child"
+      ]
+    },
+    {
+      "ID": 12500,
+      "Entries": [
+        "Backstrike - Player → Small Celestial Emissary"
+      ]
+    },
+    {
+      "ID": 12560,
+      "Entries": [
+        "Backstrike - Player → Winter Lantern"
+      ]
+    },
+    {
+      "ID": 12600,
+      "Entries": [
+        "Backstrike - Player → Large Huntsman"
+      ]
+    },
+    {
+      "ID": 12610,
+      "Entries": [
+        "Backstrike - Player → Hemwick Grave Woman"
+      ]
+    },
+    {
+      "ID": 12630,
+      "Entries": [
+        "Backstrike - Player → Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 12631,
+      "Entries": [
+        "Backstrike - Player → Large Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 12632,
+      "Entries": [
+        "Backstrike - Player → Forest Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 12640,
+      "Entries": [
+        "Backstrike - Player → Brick Troll"
+      ]
+    },
+    {
+      "ID": 12700,
+      "Entries": [
+        "Backstrike - Player → Church Servant"
+      ]
+    },
+    {
+      "ID": 12710,
+      "Entries": [
+        "Backstrike - Player → Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 12720,
+      "Entries": [
+        "Backstrike - Player → Father Gascoigne (Beast)"
+      ]
+    },
+    {
+      "ID": 12740,
+      "Entries": [
+        "Backstrike - Player → Slime Scholar"
+      ]
+    },
+    {
+      "ID": 12800,
+      "Entries": [
+        "Backstrike - Player → Skeletal Puppet (Poison)"
+      ]
+    },
+    {
+      "ID": 12810,
+      "Entries": [
+        "Backstrike - Player → Large Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Backstrike - Player → Labyrinth Ritekeeper"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Backstrike - Player → Pthumerian Undead"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Backstrike - Player → Tomb Guardian"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Backstrike - Player → Mad One"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "Backstrike - Player → Merciless Watcher"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Backstrike - Player → Pthumerian Descendant"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "Backstrike - Player → Yharnam, Pthumerian Queen"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Backstrike - Player → Evil Spirit (Male)"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Backstrike - Player → Evil Spirit (Female)"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Backstrike - Player → Nightmare Huntsman"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Backstrike - Player → Nightmare Executioner"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Backstrike - Player → Enlarged Head Patient"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "Backstrike - Player → Living Failure"
+      ]
+    },
+    {
+      "ID": 14040,
+      "Entries": [
+        "Backstrike - Player → Fishwitch"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "Backstrike - Player → Lightning Summoner"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "Backstrike - Player → Shark-Giant"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "Backstrike - Player → Large Nightmare Huntsman"
+      ]
+    },
+    {
+      "ID": 14120,
+      "Entries": [
+        "Backstrike - Player → Enlarged Head Patient (Blood transfusion table)"
+      ]
+    },
+    {
+      "ID": 14140,
+      "Entries": [
+        "Backstrike - Player → Cloaked Beast Patient"
+      ]
+    },
+    {
+      "ID": 14150,
+      "Entries": [
+        "Backstrike - Player → Enlarged Head Patient (Talk)"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Backstrike - Player → Lady Maria of the Astral Clocktower"
+      ]
+    },
+    {
+      "ID": 14540,
+      "Entries": [
+        "Backstrike - Player → Standing Orphan of Kos"
+      ]
+    },
+    {
+      "ID": 14541,
+      "Entries": [
+        "Backstrike - Player → Standing Orphan of Kos (Flaps)"
+      ]
+    },
+    {
+      "ID": 17010,
+      "Entries": [
+        "Backstrike - Player → Cuddly Fat Nose"
+      ]
+    },
+    {
+      "ID": 17500,
+      "Entries": [
+        "Backstrike - Player → Beast Possessed Soul"
+      ]
+    },
+    {
+      "ID": 18050,
+      "Entries": [
+        "Backstrike - Player → Gehrman"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Visceral - Player → Wolf Beast"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "Visceral - Player → Skeleton-meat Wolf Beast"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Visceral - Player → Loran Cleric"
+      ]
+    },
+    {
+      "ID": 21020,
+      "Entries": [
+        "Visceral - Player → Huntsman"
+      ]
+    },
+    {
+      "ID": 21030,
+      "Entries": [
+        "Visceral - Player → Brick Troll"
+      ]
+    },
+    {
+      "ID": 21040,
+      "Entries": [
+        "Visceral - Player → Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 21050,
+      "Entries": [
+        "Visceral - Player → Chime Maiden"
+      ]
+    },
+    {
+      "ID": 21051,
+      "Entries": [
+        "Visceral - Player → Chime Maiden (Light)"
+      ]
+    },
+    {
+      "ID": 21060,
+      "Entries": [
+        "Visceral - Player → Brainsucker"
+      ]
+    },
+    {
+      "ID": 21090,
+      "Entries": [
+        "Visceral - Player → Cloaked Beast Patient"
+      ]
+    },
+    {
+      "ID": 21091,
+      "Entries": [
+        "Visceral - Player → Beast Patient"
+      ]
+    },
+    {
+      "ID": 21220,
+      "Entries": [
+        "Visceral - Player → Cainhurst Gargoyle"
+      ]
+    },
+    {
+      "ID": 21270,
+      "Entries": [
+        "Visceral - Player → Maneater Boar"
+      ]
+    },
+    {
+      "ID": 21271,
+      "Entries": [
+        "Visceral - Player → Maneater Boar (Afflicted)"
+      ]
+    },
+    {
+      "ID": 21290,
+      "Entries": [
+        "Visceral - Player → Cloaked Beast Patient (Female)"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Visceral - Player → Executioner"
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "Visceral - Player → Watcher's Gravedigger"
+      ]
+    },
+    {
+      "ID": 22020,
+      "Entries": [
+        "Visceral - Player → Snatcher"
+      ]
+    },
+    {
+      "ID": 22040,
+      "Entries": [
+        "Visceral - Player → Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 22050,
+      "Entries": [
+        "Visceral - Player → Mad One"
+      ]
+    },
+    {
+      "ID": 22090,
+      "Entries": [
+        "Visceral - Player → Blood Starved Beast"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "Visceral - Player → Witch of Hemwick"
+      ]
+    },
+    {
+      "ID": 22110,
+      "Entries": [
+        "Visceral - Player → Garden of Eyes"
+      ]
+    },
+    {
+      "ID": 22120,
+      "Entries": [
+        "Visceral - Player → Shadow of Yharnam"
+      ]
+    },
+    {
+      "ID": 22150,
+      "Entries": [
+        "Visceral - Player → Silver Lady"
+      ]
+    },
+    {
+      "ID": 22160,
+      "Entries": [
+        "Visceral - Player → Bone Ash Hunter"
+      ]
+    },
+    {
+      "ID": 22170,
+      "Entries": [
+        "Visceral - Player → Vermin Host"
+      ]
+    },
+    {
+      "ID": 22180,
+      "Entries": [
+        "Visceral - Player → Abhorrent Beast"
+      ]
+    },
+    {
+      "ID": 22250,
+      "Entries": [
+        "Visceral - Player → Mergo's Attendant"
+      ]
+    },
+    {
+      "ID": 22260,
+      "Entries": [
+        "Visceral - Player → Mergo's Chief Attendant"
+      ]
+    },
+    {
+      "ID": 22320,
+      "Entries": [
+        "Visceral - Player → Matyr Logarius"
+      ]
+    },
+    {
+      "ID": 22330,
+      "Entries": [
+        "Visceral - Player → Cainhurst Servant"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "Visceral - Player → Giant Lost Child"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "Visceral - Player → Small Celestial Emissary"
+      ]
+    },
+    {
+      "ID": 22560,
+      "Entries": [
+        "Visceral - Player → Winter Lantern"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "Visceral - Player → Large Huntsman"
+      ]
+    },
+    {
+      "ID": 22610,
+      "Entries": [
+        "Visceral - Player → Hemwick Grave Woman"
+      ]
+    },
+    {
+      "ID": 22630,
+      "Entries": [
+        "Visceral - Player → Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 22631,
+      "Entries": [
+        "Visceral - Player → Large Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 22632,
+      "Entries": [
+        "Visceral - Player → Forest Huntsman (Transformed)"
+      ]
+    },
+    {
+      "ID": 22640,
+      "Entries": [
+        "Visceral - Player → Large Brick Troll"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "Visceral - Player → Church Servant"
+      ]
+    },
+    {
+      "ID": 22710,
+      "Entries": [
+        "Visceral - Player → Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 22720,
+      "Entries": [
+        "Visceral - Player → Father Gascoigne (Beast)"
+      ]
+    },
+    {
+      "ID": 22740,
+      "Entries": [
+        "Visceral - Player → Slime Scholar"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "Visceral - Player → Skeletal Puppet (Poison)"
+      ]
+    },
+    {
+      "ID": 22810,
+      "Entries": [
+        "Visceral - Player → Large Skeletal Puppet"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Visceral - Player → Labyrinth Ritekeeper"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "Visceral - Player → Pthumerian Undead"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "Visceral - Player → Tomb Guardian"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "Visceral - Player → Mad One"
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        "Visceral - Player → Merciless Watcher"
+      ]
+    },
+    {
+      "ID": 23050,
+      "Entries": [
+        "Visceral - Player → Pthumerian Descendant"
+      ]
+    },
+    {
+      "ID": 23060,
+      "Entries": [
+        "Visceral - Player → Yharnam, Pthumerian Queen"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "Visceral - Player → Evil Spirit (Male)"
+      ]
+    },
+    {
+      "ID": 23120,
+      "Entries": [
+        "Visceral - Player → Evil Spirit (Female)"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Visceral - Player → Nightmare Huntsman"
+      ]
+    },
+    {
+      "ID": 24010,
+      "Entries": [
+        "Visceral - Player → Nightmare Executioner"
+      ]
+    },
+    {
+      "ID": 24020,
+      "Entries": [
+        "Visceral - Player → Enlarged Head Patient"
+      ]
+    },
+    {
+      "ID": 24030,
+      "Entries": [
+        "Visceral - Player → Living Failure"
+      ]
+    },
+    {
+      "ID": 24040,
+      "Entries": [
+        "Visceral - Player → Fishwitch"
+      ]
+    },
+    {
+      "ID": 24050,
+      "Entries": [
+        "Visceral - Player → Lightning Summoner"
+      ]
+    },
+    {
+      "ID": 24060,
+      "Entries": [
+        "Visceral - Player → Shark-Giant"
+      ]
+    },
+    {
+      "ID": 24110,
+      "Entries": [
+        "Visceral - Player → Large Nightmare Huntsman"
+      ]
+    },
+    {
+      "ID": 24120,
+      "Entries": [
+        "Visceral - Player → Enlarged Head Patient"
+      ]
+    },
+    {
+      "ID": 24140,
+      "Entries": [
+        "Visceral - Player → Cloaked Beast Patient"
+      ]
+    },
+    {
+      "ID": 24150,
+      "Entries": [
+        "Visceral - Player → Enlarged Head Patient (Talk)"
+      ]
+    },
+    {
+      "ID": 24520,
+      "Entries": [
+        "Visceral - Player → Lady Maria of the Astral Clocktower"
+      ]
+    },
+    {
+      "ID": 24540,
+      "Entries": [
+        "Visceral - Player → Standing Orphan of Kos"
+      ]
+    },
+    {
+      "ID": 24541,
+      "Entries": [
+        "Visceral - Player → Standing Orphan of Kos (Flaps)"
+      ]
+    },
+    {
+      "ID": 27010,
+      "Entries": [
+        "Visceral - Player → Cuddly Fat Nose"
+      ]
+    },
+    {
+      "ID": 27500,
+      "Entries": [
+        "Visceral - Player → Beast Possessed Soul"
+      ]
+    },
+    {
+      "ID": 28050,
+      "Entries": [
+        "Visceral - Player → Gehrman (Boss)"
+      ]
+    },
+    {
+      "ID": 32510,
+      "Entries": [
+        "Special Throw - Player → Ebrietas, Daughter of the Cosmos"
+      ]
+    },
+    {
+      "ID": 32730,
+      "Entries": [
+        "Special Throw - Player → Chapel Giant"
+      ]
+    },
+    {
+      "ID": 33130,
+      "Entries": [
+        "Special Throw - Player → Undead Giant"
+      ]
+    },
+    {
+      "ID": 34500,
+      "Entries": [
+        "Special Throw - Player → Laurence, the First Vicar"
+      ]
+    },
+    {
+      "ID": 34510,
+      "Entries": [
+        "Special Throw - Player → Ludwig (Beast)"
+      ]
+    },
+    {
+      "ID": 34511,
+      "Entries": [
+        "Special Throw - Player → Ludwig (Human)"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "Special Throw - Player → Cleric Beast"
+      ]
+    },
+    {
+      "ID": 35020,
+      "Entries": [
+        "Special Throw - Player → Vicar Amelia"
+      ]
+    },
+    {
+      "ID": 35040,
+      "Entries": [
+        "Special Throw - Player → Abhorrent Beast"
+      ]
+    },
+    {
+      "ID": 35080,
+      "Entries": [
+        "Special Throw - Player → Darkbeast Paarl"
+      ]
+    },
+    {
+      "ID": 35090,
+      "Entries": [
+        "Special Throw - Player → Bloodletting Beast (Worm)"
+      ]
+    },
+    {
+      "ID": 35110,
+      "Entries": [
+        "Special Throw - Player → Great One Beast"
+      ]
+    },
+    {
+      "ID": 35120,
+      "Entries": [
+        "Special Throw - Player → Amygdala"
+      ]
+    },
+    {
+      "ID": 35400,
+      "Entries": [
+        "Special Throw - Player → Moon Presence"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Throw: Wolf Beast → Player"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Throw: Skeleton-meat Wolf Beast → Player"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "Throw: Brainsucker → Player"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "Throw: Blood Gel → Player (Drop)"
+      ]
+    },
+    {
+      "ID": 1150010,
+      "Entries": [
+        "Throw: Blood Gel → Player (Fall)"
+      ]
+    },
+    {
+      "ID": 1220000,
+      "Entries": [
+        "Throw: Cainhurst Gargoyle → Player (Jump Fall)"
+      ]
+    },
+    {
+      "ID": 1220010,
+      "Entries": [
+        "Throw: Cainhurst Gargoyle → Player (Jump)"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "Throw: Labyrinth Mole → Player"
+      ]
+    },
+    {
+      "ID": 1230010,
+      "Entries": [
+        "Throw: Labyrinth Mole → Player (Reversed)"
+      ]
+    },
+    {
+      "ID": 1290000,
+      "Entries": [
+        "Throw: Cloaked Beast Patient (Female) → Player"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Throw: Executioner → Player"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Throw: Watcher's Gravedigger → Player"
+      ]
+    },
+    {
+      "ID": 2020000,
+      "Entries": [
+        "Throw: Snatcher → Player"
+      ]
+    },
+    {
+      "ID": 2090000,
+      "Entries": [
+        "Throw: Blood Starved Beast -> Player (Bite)"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Throw: Witch of Hemwick → Player"
+      ]
+    },
+    {
+      "ID": 2100010,
+      "Entries": [
+        "Throw: Witch of Hemwick → Player (Backstab)"
+      ]
+    },
+    {
+      "ID": 2100050,
+      "Entries": [
+        "Throw: Witch of Hemwick → Player"
+      ]
+    },
+    {
+      "ID": 2100060,
+      "Entries": [
+        "Throw: Witch of Hemwick → Player (Backstab)"
+      ]
+    },
+    {
+      "ID": 2110000,
+      "Entries": [
+        "Throw: Winter Lantern → Player"
+      ]
+    },
+    {
+      "ID": 2150000,
+      "Entries": [
+        "Throw: Silver Lady → Player"
+      ]
+    },
+    {
+      "ID": 2150010,
+      "Entries": [
+        "Throw: Silver Lady → Player (Backstab)"
+      ]
+    },
+    {
+      "ID": 2170000,
+      "Entries": [
+        "Throw: Vermin Host → Player"
+      ]
+    },
+    {
+      "ID": 2180000,
+      "Entries": [
+        "Throw: Abhorrent Beast → Player"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Throw: Giant Lost Child → Player"
+      ]
+    },
+    {
+      "ID": 2510000,
+      "Entries": [
+        "Throw: Ebrietas, Daughter of the Cosmos → Player"
+      ]
+    },
+    {
+      "ID": 2530000,
+      "Entries": [
+        "Throw: Fluorescent Flower → Player"
+      ]
+    },
+    {
+      "ID": 2560000,
+      "Entries": [
+        "Throw: Winter Lantern → Player"
+      ]
+    },
+    {
+      "ID": 2610000,
+      "Entries": [
+        "Throw: Hemwick Grave Woman → Player"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Throw: Church Servant → Player"
+      ]
+    },
+    {
+      "ID": 2740000,
+      "Entries": [
+        "Throw: Slime Scholar -> Player (Drop)"
+      ]
+    },
+    {
+      "ID": 3060000,
+      "Entries": [
+        "Throw: Yharnam, Pthumerian Queen → Player"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Throw: Cramped Casket → Player"
+      ]
+    },
+    {
+      "ID": 3130000,
+      "Entries": [
+        "Throw: Undead Giant → Player"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "Throw: Nightmare Huntsman → Player"
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        "Throw: Nightmare Executioner → Player"
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        "Throw: Enlarged Head Patient → Player"
+      ]
+    },
+    {
+      "ID": 4021000,
+      "Entries": [
+        "Throw: Enlarged Head Patient (Voiced) → Player"
+      ]
+    },
+    {
+      "ID": 4022000,
+      "Entries": [
+        "Throw: Enlarged Head → Player (Drop)"
+      ]
+    },
+    {
+      "ID": 4023000,
+      "Entries": [
+        "Throw: Enlarged Head Patient → Player (Front)"
+      ]
+    },
+    {
+      "ID": 4040000,
+      "Entries": [
+        "Throw: Fishwitch → Player"
+      ]
+    },
+    {
+      "ID": 4060000,
+      "Entries": [
+        "Throw: Shark-Giant → Player"
+      ]
+    },
+    {
+      "ID": 4070000,
+      "Entries": [
+        "Throw: Orphan of Kos (Shell) → Player"
+      ]
+    },
+    {
+      "ID": 4500000,
+      "Entries": [
+        "Throw: Laurence, the First Vicar → Player (Normal)"
+      ]
+    },
+    {
+      "ID": 4500010,
+      "Entries": [
+        "Throw: Laurence, the First Vicar → Player (Enraged)"
+      ]
+    },
+    {
+      "ID": 4520000,
+      "Entries": [
+        "Throw: Lady Maria of the Astral Clocktower → Player"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Throw: Cleric Beast → Player (Normal)"
+      ]
+    },
+    {
+      "ID": 5000010,
+      "Entries": [
+        "Throw: Cleric Beast → Player (Enraged)"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Throw: Vicar Amelia → Player (Normal)"
+      ]
+    },
+    {
+      "ID": 5020010,
+      "Entries": [
+        "Throw: Vicar Amelia → Player (Enraged)"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "Throw: Giant Snake → Player"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "Throw: Bloodletting Beast → Player"
+      ]
+    },
+    {
+      "ID": 5140000,
+      "Entries": [
+        "Throw: Amygdala → Player"
+      ]
+    },
+    {
+      "ID": 5140005,
+      "Entries": [
+        "Throw: Amygdala → Player (Cathedral Ward)"
+      ]
+    },
+    {
+      "ID": 5140010,
+      "Entries": [
+        "Throw: Amygdala → Player"
+      ]
+    },
+    {
+      "ID": 7500000,
+      "Entries": [
+        "Throw: Beast Possessed Soul → Player"
+      ]
+    },
+    {
+      "ID": 8050000,
+      "Entries": [
+        "Throw: Gehrman → PC"
+      ]
+    }
+  ]
+}

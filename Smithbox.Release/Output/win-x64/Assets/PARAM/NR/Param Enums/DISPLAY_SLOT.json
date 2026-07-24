@@ -1,0 +1,38 @@
+{
+  "Key": "DISPLAY_SLOT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DISPLAY_SLOT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Passive Ability"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character Skill"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ultimate Art"
+        }
+      ]
+    }
+  ]
+}

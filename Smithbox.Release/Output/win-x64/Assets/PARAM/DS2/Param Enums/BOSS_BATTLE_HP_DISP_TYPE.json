@@ -1,0 +1,38 @@
+{
+  "Key": "BOSS_BATTLE_HP_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_BATTLE_HP_DISP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Total HP"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remaining HP"
+        }
+      ]
+    }
+  ]
+}

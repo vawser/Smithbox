@@ -1,0 +1,22 @@
+{
+  "id": "662",
+  "name": "Ice Rat",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Looking About"
+    },
+    {
+      "value": "3",
+      "name": "Leaning Forward"
+    }
+  ]
+}

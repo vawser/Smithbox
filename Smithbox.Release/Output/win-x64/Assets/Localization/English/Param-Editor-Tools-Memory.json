@@ -1,0 +1,188 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Tools_Memory_Missing_AOB",
+      "Text": "Unable to find AOB in memory for {0}."
+    },
+    {
+      "Key": "PARAM_Tools_Memory_ERItemGiveFuncOffset_Missing",
+      "Text": "ERItemGiveFuncOffset is not set in GameOffsetBaseEntry."
+    },
+    {
+      "Key": "PARAM_Tools_Memory_ERMapItemManOffset_Missing",
+      "Text": "ERMapItemManOffset is not set in GameOffsetBaseEntry."
+    },
+    {
+      "Key": "PARAM_Tools_Memory_No_Game_Process",
+      "Text": "No game process found for {0}. Please start the game first."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Param_ID",
+      "Text": "{0} ID"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Header",
+      "Text": "Item Gib"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Hint",
+      "Text": "Use this tool to spawn an item in-game."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Active_Row",
+      "Text": "No active row selected. Please select a row in the Param Editor."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Number_of_Spawned_Items",
+      "Text": "Number of Spawned Items"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Reinforcement_Level",
+      "Text": "Reinforcement Level"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Durability",
+      "Text": "Durability"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Action_Give_Item",
+      "Text": "Give Item"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Offsets",
+      "Text": "No ItemGib offsets found."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Param",
+      "Text": "No param selected yet for Item Gib."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Rows",
+      "Text": "No rows selected for Item Gib."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Base_Weapon",
+      "Text": "No base weapon ID found for EquipParamCustomWeapon."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_EquipParamWeapon",
+      "Text": "EquipParamWeapon with ID {0} not found."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Game_Offset",
+      "Text": "No GameOffset exist for Item Gib."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header",
+      "Text": "Param Reloader"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Hint",
+      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_Individual",
+      "Text": "Reload Selected Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_Individual_TT",
+      "Text": "Reloads the currently selected param in-game.\nShortcut: {0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_All",
+      "Text": "Reload All Params"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_All_TT",
+      "Text": "Reloads all params in-game.\nShortcut: {0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Current_Param",
+      "Text": "Current Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Current_Param_TT",
+      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\nShortcuts: {0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_All_Params_TT",
+      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\nShortcuts: {0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_No_Actions",
+      "Text": "No actions avaliable for this project type."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Task_Success",
+      "Text": "Param reloader has updated the in-game params."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Task_Fail",
+      "Text": "Param reloader has failed."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Game",
+      "Text": "Unable to find running game."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Invalid_Param",
+      "Text": "Cannot reload {0} in Param Reloader."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_AOB",
+      "Text": "Param Reloader cannot reload {0} because the given AOB was not found."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Base_Address",
+      "Text": "Failed to find base address."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Param_Offset",
+      "Text": "Cannot find param offset for {0} in Param Reloader."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Invalid_Offset",
+      "Text": "ParamType {0} has invalid offset or no rows for Param Reloader."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_In_Editor",
+      "Text": "ParamType {0}: row {1} index {2} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Bitfield_Type",
+      "Text": "Unexpected BitField Type"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Field_Type",
+      "Text": "Unexpected Field Type"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Unknown_Bitfield_Length",
+      "Text": "Unknown bitfield length"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Failed_Game_Offset_Creation",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_No_Param_Selected",
+      "Text": "No param has been selected yet for the Param Reloder."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Cannot_Reload",
+      "Text": "Param Reloader cannot reload for this project."
+    }
+  ]
+}

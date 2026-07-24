@@ -1,0 +1,118 @@
+{
+  "Param": "NETWORK_MESSAGE_PARAM",
+  "Type": "NETWORK_MESSAGE_PARAM",
+  "Name": "NETWORK_MESSAGE_PARAM",
+  "Description": "Defines network message and online interaction display categories for different multiplayer roles and phantom types.",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "Host",
+      "Description": "Messages or behavior related to the host player."
+    },
+    {
+      "Field": "white",
+      "Name": "White Phantom",
+      "Description": "Messages associated with standard cooperative white phantoms."
+    },
+    {
+      "Field": "smallWhite",
+      "Name": "Small White Phantom",
+      "Description": "Messages for smaller-scale or limited white phantom entities."
+    },
+    {
+      "Field": "gold",
+      "Name": "Gold Phantom",
+      "Description": "Messages for golden cooperative phantoms (special co-op roles)."
+    },
+    {
+      "Field": "smallGold",
+      "Name": "Small Gold Phantom",
+      "Description": "Messages for smaller-scale gold phantom variants."
+    },
+    {
+      "Field": "coopBlue",
+      "Name": "Cooperative Blue Phantom",
+      "Description": "Messages for friendly blue phantoms assisting the host."
+    },
+    {
+      "Field": "versusBlue",
+      "Name": "Bell Keeper Blue Phantom",
+      "Description": "Messages for blue phantoms in competitive or retaliatory roles."
+    },
+    {
+      "Field": "blackSign",
+      "Name": "Black Phantom (Summon Sign)",
+      "Description": "Messages related to black phantom summon signs."
+    },
+    {
+      "Field": "blackIntrude",
+      "Name": "Black Phantom (Invasion)",
+      "Description": "Messages related to invading black phantoms."
+    },
+    {
+      "Field": "redSign",
+      "Name": "Red Phantom (Summon Sign)",
+      "Description": "Messages related to red phantom summon signs."
+    },
+    {
+      "Field": "redIntrude",
+      "Name": "Red Phantom (Invasion)",
+      "Description": "Messages related to invading red phantoms."
+    },
+    {
+      "Field": "bellGuard",
+      "Name": "Bell Keeper Phantom",
+      "Description": "Messages for Bell Keeper covenant phantom activity."
+    },
+    {
+      "Field": "ratKing",
+      "Name": "Rat King Phantom",
+      "Description": "Messages for Rat King covenant phantom activity."
+    },
+    {
+      "Field": "dragon",
+      "Name": "Dragon Phantom",
+      "Description": "Messages for dragon covenant phantoms."
+    },
+    {
+      "Field": "mirrorKnightSign",
+      "Name": "Mirror Knight Phantom (Summon Sign)",
+      "Description": "Messages for Mirror Knight-related summon signs."
+    },
+    {
+      "Field": "abyssSign",
+      "Name": "Abyss Phantom (Summon Sign)",
+      "Description": "Messages for Abyss covenant summon signs."
+    },
+    {
+      "Field": "duelBlue",
+      "Name": "Duel Blue Phantom",
+      "Description": "Messages for blue duel-oriented phantom encounters."
+    },
+    {
+      "Field": "duelRed",
+      "Name": "Duel Red Phantom",
+      "Description": "Messages for red duel-oriented phantom encounters."
+    },
+    {
+      "Field": "dummy01",
+      "Name": "Wandering Phantom",
+      "Description": "Placeholder or system-used category for wandering ghost-like replays."
+    },
+    {
+      "Field": "dummy02",
+      "Name": "Bonfire Phantom",
+      "Description": "Placeholder or system-used category for bonfire-related ghost replays."
+    },
+    {
+      "Field": "mirrorKnightIntrude",
+      "Name": "Mirror Knight Phantom (Invasion)",
+      "Description": "Messages for Mirror Knight invasion-type encounters."
+    },
+    {
+      "Field": "abyssIntrude",
+      "Name": "Abyss Phantom (Invasion)",
+      "Description": "Messages for Abyss covenant invasion-type encounters."
+    }
+  ]
+}

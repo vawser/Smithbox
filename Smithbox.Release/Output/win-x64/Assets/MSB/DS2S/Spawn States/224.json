@@ -1,0 +1,14 @@
+{
+  "id": "224",
+  "name": "Darksucker",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,695 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_Material",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stone Pavement"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone Pavement"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Stone Pavement"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Ice"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Glass"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Puddle"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Puddle"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Heavy Oil"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Heavy Oil"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Coral"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Coral"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Iron Shield"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Iron Shield"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Heavy Iron"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Meat"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Energy Shield"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Coral Shield"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Coral Shield"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "None"
+      ]
+    }
+  ]
+}

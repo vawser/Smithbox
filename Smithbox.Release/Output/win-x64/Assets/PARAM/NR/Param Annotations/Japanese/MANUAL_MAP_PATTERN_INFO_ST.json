@@ -1,0 +1,173 @@
+{
+  "Param": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Type": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Name": "MANUAL_MAP_PATTERN_INFO_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "unknown_2a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "unknown_2b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2c",
+      "Name": "unknown_2c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7a",
+      "Name": "unknown_7a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7b",
+      "Name": "unknown_7b",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag1",
+      "Name": "eventFlag1",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag2",
+      "Name": "eventFlag2",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag3",
+      "Name": "eventFlag3",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag4",
+      "Name": "eventFlag4",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag5",
+      "Name": "eventFlag5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "modifierId",
+      "Name": "modifierId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "unknown_16",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "unknown_17",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23a",
+      "Name": "unknown_23a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "unknown_23b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26a",
+      "Name": "unknown_26a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26b",
+      "Name": "unknown_26b",
+      "Description": ""
+    }
+  ]
+}

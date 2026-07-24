@@ -1,0 +1,372 @@
+{
+  "Entries": [
+    {
+      "Key": "DEV_Tool_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "DEV_Tool_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "DEV_Tool_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Map",
+      "Text": "地图"
+    },
+    {
+      "Key": "DEV_Tool_Header_Map_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Data",
+      "Text": "数据"
+    },
+    {
+      "Key": "DEV_Tool_Header_Data_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Entries",
+      "Text": "条目"
+    },
+    {
+      "Key": "DEV_Tool_Header_Entries_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Dialog_Flver_Layout_Dump",
+      "Text": "保存 FLVER 布局转储"
+    },
+    {
+      "Key": "DEV_Tool_Gparam_Extract_Failed_Format_Read",
+      "Text": "无法将 {0} 作为 {1} 的 GPARAM 读取。"
+    },
+    {
+      "Key": "DEV_Tool_Gparam_Extract_Failed_VFS_Read",
+      "Text": "无法从 VFS 读取 {0}（用于 {1}）。"
+    },
+    {
+      "Key": "DEV_Tool_Icon_Layout_Invalid_Folder",
+      "Text": "文件夹不存在：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Validate_For_BP",
+      "Text": "验证字节完美性"
+    },
+    {
+      "Key": "DEV_Tool_Validate_For_BP_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Display_Size_Diffs_Only",
+      "Text": "仅显示大小差异"
+    },
+    {
+      "Key": "DEV_Tool_Source_Bytes",
+      "Text": "来源字节数：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Write_Bytes",
+      "Text": "写入字节数：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Byte_Difference",
+      "Text": "字节差异：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Enable_Param_Editor_Hint",
+      "Text": "必须启用 Param 编辑器才能使用此工具。"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Paramdef",
+      "Text": "验证 PARAMDEF"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Paramdef_TT",
+      "Text": "验证当前 PARAMDEF 是否与旧式 SF PARAM 类兼容。"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_All",
+      "Text": "验证填充（针对所有参数）"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_All_TT",
+      "Text": "验证填充字段中不存在非零值。"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_Selected",
+      "Text": "验证填充（针对所选参数）"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_Selected_TT",
+      "Text": "验证填充字段中不存在非零值。"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Param_Task_PASS",
+      "Text": "参数验证已运行。"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Param_Task_FAIL",
+      "Text": "参数验证运行失败。"
+    },
+    {
+      "Key": "DEV_Tool_Param_Validation_Non_Zero_Values",
+      "Text": "{0}：{1}：{2} 包含非零值。"
+    },
+    {
+      "Key": "DEV_Tool_Param_Load_Failed",
+      "Text": "参数加载失败：{0}：{1}"
+    },
+    {
+      "Key": "DEV_Tool_Regulation_Version_Failed",
+      "Text": "无法获取 regulation 版本。参数可能已损坏。"
+    },
+    {
+      "Key": "DEV_Tool_Param_Def_Missing_For_Type",
+      "Text": "找不到参数 {0}（ParamType 为'{1}'）的 ParamDef。"
+    },
+    {
+      "Key": "DEV_Tool_Param_Type_Null",
+      "Text": "参数类型意外为 null。"
+    },
+    {
+      "Key": "DEV_Tool_Failed_To_Apply_Param_Def",
+      "Text": "无法为 {0} 应用 ParamDef。"
+    },
+    {
+      "Key": "DEV_Tool_Param_Validated",
+      "Text": "{0} 已验证。"
+    },
+    {
+      "Key": "DEV_Tool_Action_Export_Table_Information",
+      "Text": "导出表信息"
+    },
+    {
+      "Key": "DEV_Tool_Action_Export_Table_Information_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Specific_Param_Info",
+      "Text": "特定参数信息"
+    },
+    {
+      "Key": "DEV_Tool_Header_Specific_Param_Info_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_File_Path",
+      "Text": "文件路径"
+    },
+    {
+      "Key": "DEV_Tool_Header_File_Path_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Directory",
+      "Text": "选择目录"
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_File_Dictionary",
+      "Text": "生成文件字典"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_File_Dictionary_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Dialog_Select_File",
+      "Text": "选择文件"
+    },
+    {
+      "Key": "DEV_Tool_File_Path_No_Exist",
+      "Text": "{0} 不存在。"
+    },
+    {
+      "Key": "DEV_Tool_Action_Clear_Tracked_Consumption",
+      "Text": "清除已跟踪的资源消耗"
+    },
+    {
+      "Key": "DEV_Tool_Action_Clear_Tracked_Consumption_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Load_Consumption",
+      "Text": "加载资源消耗"
+    },
+    {
+      "Key": "DEV_Tool_Header_Load_Consumption_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_B",
+      "Text": "网格消耗 (B)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_MB",
+      "Text": "网格消耗 (MB)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_GB",
+      "Text": "网格消耗 (GB)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_B",
+      "Text": "纹理消耗 (B)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_MB",
+      "Text": "纹理消耗 (MB)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_GB",
+      "Text": "纹理消耗 (GB)：{0}"
+    },
+    {
+      "Key": "DEV_Tool_Header_Mesh_Load_Instances",
+      "Text": "网格加载实例"
+    },
+    {
+      "Key": "DEV_Tool_Header_Mesh_Load_Instances_TT",
+      "Text": "{0} 个条目。"
+    },
+    {
+      "Key": "DEV_Tool_Header_Texture_Load_Instances",
+      "Text": "纹理加载实例"
+    },
+    {
+      "Key": "DEV_Tool_Header_Texture_Load_Instances_TT",
+      "Text": "{0} 个条目。"
+    },
+    {
+      "Key": "DEV_Tool_Header_Task_Viewer",
+      "Text": "正在运行的任务"
+    },
+    {
+      "Key": "DEV_Tool_Header_Task_Viewer_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Task_Information",
+      "Text": "ID：{0}\n位置：{1}\n成功消息：{2}\n失败消息：{3}"
+    },
+    {
+      "Key": "DEV_Tool_Header_Soapstone_Server",
+      "Text": "Soapstone 服务器"
+    },
+    {
+      "Key": "DEV_Tool_Header_Soapstone_Server_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Running_On_Port",
+      "Text": "在端口 {0} 上运行"
+    },
+    {
+      "Key": "DEV_Tool_Not_Running",
+      "Text": "未运行"
+    },
+    {
+      "Key": "DEV_Tool_Server_Running",
+      "Text": "服务器{0}。\n它无法通过网络访问，仅限本机上的其他程序访问。\n请重新启动程序以使更改生效。"
+    },
+    {
+      "Key": "DEV_Tool_Header_Export_Directory",
+      "Text": "导出目录"
+    },
+    {
+      "Key": "DEV_Tool_Header_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Export_Directory",
+      "Text": "选择导出目录"
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Checkbox_Generate_DLC_Map",
+      "Text": "生成 DLC 地图"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_Map",
+      "Text": "生成地图"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_Map_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Dialog_Select_Export_Folder",
+      "Text": "选择导出文件夹"
+    },
+    {
+      "Key": "DEV_PNL_Toggle_ImGui_Demo",
+      "Text": "切换 ImGui 演示"
+    },
+    {
+      "Key": "DEV_PNL_Toggle_Developer_Panel",
+      "Text": "切换开发者面板"
+    },
+    {
+      "Key": "DEV_PNL_Action_Execute_Script",
+      "Text": "执行脚本"
+    },
+    {
+      "Key": "DEV_PNL_Action_Execute_Script_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_PNL_Tab_Script",
+      "Text": "脚本"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Task_Viewer",
+      "Text": "任务查看器"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Resource_Viewer",
+      "Text": "资源查看器"
+    },
+    {
+      "Key": "DEV_PNL_Tab_File_Dictionary_Generator",
+      "Text": "文件字典生成器"
+    },
+    {
+      "Key": "DEV_PNL_Tab_World_Map_Generator",
+      "Text": "世界地图生成器"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Doku_Wiki_Generator",
+      "Text": "Doku Wiki 生成器"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Validators",
+      "Text": "验证器"
+    },
+    {
+      "Key": "DEV_PNL_Header_Validator_Type",
+      "Text": "验证器类型"
+    },
+    {
+      "Key": "DEV_PNL_Header_Validator_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_PNL_No_Validator_Type_Selected",
+      "Text": "未选择验证器类型。"
+    }
+  ]
+}

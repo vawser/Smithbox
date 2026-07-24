@@ -1,0 +1,28 @@
+{
+  "Param": "FE_COLOR_SET_PARAM",
+  "Type": "FE_COLOR_SET_PARAM",
+  "Name": "FE_COLOR_SET_PARAM",
+  "Description": "Defines an RGBA color set.",
+  "Fields": [
+    {
+      "Field": "red",
+      "Name": "Red",
+      "Description": "Red color channel intensity value for the preset."
+    },
+    {
+      "Field": "green",
+      "Name": "Green",
+      "Description": "Green color channel intensity value for the preset."
+    },
+    {
+      "Field": "blue",
+      "Name": "Blue",
+      "Description": "Blue color channel intensity value for the preset."
+    },
+    {
+      "Field": "alpha",
+      "Name": "Alpha Value",
+      "Description": "Alpha or transparency value associated with the color preset."
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Param": "GROUND_MATERIAL_PARAM",
+  "Type": "GROUND_MATERIAL_PARAM",
+  "Name": "GROUND_MATERIAL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "material",
+      "Name": "材質",
+      "Description": ""
+    },
+    {
+      "Field": "subMaterial",
+      "Name": "第二材質",
+      "Description": ""
+    },
+    {
+      "Field": "moveSpeedRate",
+      "Name": "移動速度影響倍率",
+      "Description": ""
+    },
+    {
+      "Field": "moveRotateRate",
+      "Name": "旋回速度影響倍率",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevel",
+      "Name": "音大きさ\u3000加算値",
+      "Description": ""
+    },
+    {
+      "Field": "isTorchOff",
+      "Name": "松明消える",
+      "Description": ""
+    },
+    {
+      "Field": "torchOffParam",
+      "Name": "松明消火パラメータＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "isWaterSurface",
+      "Name": "水面",
+      "Description": ""
+    },
+    {
+      "Field": "environment",
+      "Name": "環境タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeLimitCategory",
+      "Name": "回避制限カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableIdleDamage",
+      "Name": "待機中はダメージ無効",
+      "Description": ""
+    },
+    {
+      "Field": "damageId",
+      "Name": "ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "fallWaterSfxId",
+      "Name": "水中落下SFX",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeLimitDistanceRateRollLight",
+      "Name": "回避減少距離割合ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeLimitDistanceRateStepLight",
+      "Name": "回避減少距離割合ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeLimitDistanceRateRollHeavy",
+      "Name": "回避減少距離割合重量ローリング",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeLimitDistanceRateStepHeavy",
+      "Name": "回避減少距離割合重量ステップ",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterParamId",
+      "Name": "着水SFXパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxID0",
+      "Name": "sfxID0",
+      "Description": ""
+    },
+    {
+      "Field": "sfxID1",
+      "Name": "sfxID1",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDuration",
+      "Name": "sfxDuration",
+      "Description": ""
+    }
+  ]
+}

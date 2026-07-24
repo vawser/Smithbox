@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
+  
+  <Field>
+    <Asset_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+  
+    <Asset_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="" />
+    
+    <Asset_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <Asset_Unk03
+    AltName="Unknown: 0x3"
+    Wiki="" />
+    
+    <Asset_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <Asset_Unk10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <Asset_Unk11
+    AltName="Unknown: 0x11"
+    Wiki="" />
+    
+    <Asset_Unk12
+    AltName="Unknown: 0x12"
+    Wiki="" />
+    
+    <Asset_Unk13
+    AltName="Unknown: 0x13"
+    Wiki="" />
+    
+    <AssetSfxParamRelativeID
+    AltName="Model Particle Offset ID"
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
+    
+    <Asset_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <Asset_Unk1E
+    AltName="Unknown: 0x1E"
+    Wiki="" />
+    
+    <Asset_Unk20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <Asset_Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <Asset_Unk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <Asset_Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <PartNames
+    AltName="Part Name"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartIndices
+    IndexProperty="" />
+    
+    <Asset_Unk44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <Asset_TalkID
+    AltName="Talk ID"
+    Wiki="" 
+    TalkAlias="" />
+    
+    <Asset_Unk4C
+    AltName="Unknown: 0x4C"
+    Wiki="" />
+    
+    <Asset_Unk4D
+    AltName="Unknown: 0x4D"
+    Wiki="" />
+    
+    <Asset_Unk4E
+    AltName="Unknown: 0x4E"
+    Wiki="" />
+    
+    <Asset_Unk50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <Asset_Unk54
+    AltName="Unknown: 0x54"
+    Wiki="" />
+    
+    <Asset_Unk5C
+    AltName="Unknown: 0x5C"
+    Wiki="" />
+    
+    
+    <UnkAssetStruct60
+    AltName="Unknown Struct 0x60"
+    Wiki="" />
+    
+    <AssetStruct60_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetStruct60_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    
+    <UnkAssetStruct68
+    AltName="Unknown Struct 0x68"
+    Wiki="" />
+    
+    <AssetStruct68_Unk14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <AssetStruct68_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    
+    <UnkAssetStruct70
+    AltName="Unknown Struct 0x70"
+    Wiki="" />
+    
+    <AssetStruct70_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetStruct70_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    
+    <UnkAssetStruct78
+    AltName="Unknown Struct 0x70"
+    Wiki="" />
+    
+    <AssetStruct78_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetStruct78_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="" />
+    
+    <AssetStruct78_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

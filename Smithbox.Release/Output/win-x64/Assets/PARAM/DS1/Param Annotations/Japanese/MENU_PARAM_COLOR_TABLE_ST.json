@@ -1,0 +1,28 @@
+{
+  "Param": "MENU_PARAM_COLOR_TABLE_ST",
+  "Type": "MENU_PARAM_COLOR_TABLE_ST",
+  "Name": "MENU_PARAM_COLOR_TABLE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "r",
+      "Name": "赤色",
+      "Description": "カラーテーブルの赤色"
+    },
+    {
+      "Field": "g",
+      "Name": "緑色",
+      "Description": "カラーテーブルの緑"
+    },
+    {
+      "Field": "b",
+      "Name": "青色",
+      "Description": "カラーテーブルの青"
+    },
+    {
+      "Field": "a",
+      "Name": "アルファ",
+      "Description": "カラーテーブルのアルファ"
+    }
+  ]
+}

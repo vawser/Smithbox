@@ -1,0 +1,1556 @@
+{
+  "Name": "EFID_m10_00_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 10000700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 10000920,
+      "Entries": [
+        "[Debug] Enable state management EzState"
+      ]
+    },
+    {
+      "ID": 10001200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 10001500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 10001800,
+      "Entries": [
+        "Third day secret mode unlock conversation completed",
+        "Third day secret mode unlock conversation completed"
+      ]
+    },
+    {
+      "ID": 10001810,
+      "Entries": [
+        "Lady unlocked conversation possible flag"
+      ]
+    },
+    {
+      "ID": 10001811,
+      "Entries": [
+        "Avenger unlocked flag"
+      ]
+    },
+    {
+      "ID": 10001812,
+      "Entries": [
+        "Pocket watch available flag"
+      ]
+    },
+    {
+      "ID": 10001813,
+      "Entries": [
+        "Pocket watch available flag"
+      ]
+    },
+    {
+      "ID": 10001814,
+      "Entries": [
+        "Reminiscence forced to end flag after defeating 2 enemies"
+      ]
+    },
+    {
+      "ID": 10001815,
+      "Entries": [
+        "Reminiscence forced to end flag after defeating 4 enemies CS"
+      ]
+    },
+    {
+      "ID": 10001816,
+      "Entries": [
+        "Reminiscence forced to end flag after ending"
+      ]
+    },
+    {
+      "ID": 10001820,
+      "Entries": [
+        "Mission buff hold_102"
+      ]
+    },
+    {
+      "ID": 10001821,
+      "Entries": [
+        "Mission buff hold_107"
+      ]
+    },
+    {
+      "ID": 10001822,
+      "Entries": [
+        "Mission buff hold_108"
+      ]
+    },
+    {
+      "ID": 10001823,
+      "Entries": [
+        "Mission buff hold_110"
+      ]
+    },
+    {
+      "ID": 10001824,
+      "Entries": [
+        "Mission buff hold_113"
+      ]
+    },
+    {
+      "ID": 10001825,
+      "Entries": [
+        "For holding mission buffs_114"
+      ]
+    },
+    {
+      "ID": 10001826,
+      "Entries": [
+        "For holding mission buffs_117"
+      ]
+    },
+    {
+      "ID": 10001827,
+      "Entries": [
+        "For holding mission buffs_103"
+      ]
+    },
+    {
+      "ID": 10001828,
+      "Entries": [
+        "For holding mission buffs_105"
+      ]
+    },
+    {
+      "ID": 10001830,
+      "Entries": [
+        "For holding mission buffs_115"
+      ]
+    },
+    {
+      "ID": 10001831,
+      "Entries": [
+        "For holding mission buffs_118"
+      ]
+    },
+    {
+      "ID": 10001832,
+      "Entries": [
+        "For holding mission buffs_119"
+      ]
+    },
+    {
+      "ID": 10001833,
+      "Entries": [
+        "For holding mission buffs_120"
+      ]
+    },
+    {
+      "ID": 10001834,
+      "Entries": [
+        "For holding mission buffs_121"
+      ]
+    },
+    {
+      "ID": 10001835,
+      "Entries": [
+        "For holding mission buffs_140"
+      ]
+    },
+    {
+      "ID": 10001836,
+      "Entries": [
+        "For holding mission buffs_141"
+      ]
+    },
+    {
+      "ID": 10001837,
+      "Entries": [
+        "For holding mission buffs_144_Judgment of the wise"
+      ]
+    },
+    {
+      "ID": 10001838,
+      "Entries": [
+        "For holding mission buffs_139"
+      ]
+    },
+    {
+      "ID": 10001839,
+      "Entries": [
+        "For holding mission buffs_137"
+      ]
+    },
+    {
+      "ID": 10001840,
+      "Entries": [
+        "For holding mission buffs_138"
+      ]
+    },
+    {
+      "ID": 10001841,
+      "Entries": [
+        "For holding mission buffs_143"
+      ]
+    },
+    {
+      "ID": 10001842,
+      "Entries": [
+        "For holding mission buffs_142"
+      ]
+    },
+    {
+      "ID": 10001843,
+      "Entries": [
+        "For holding mission buffs_147"
+      ]
+    },
+    {
+      "ID": 10001844,
+      "Entries": [
+        "For holding mission buffs_145"
+      ]
+    },
+    {
+      "ID": 10001845,
+      "Entries": [
+        "For holding mission buffs_146"
+      ]
+    },
+    {
+      "ID": 10001846,
+      "Entries": [
+        "For holding mission buffs_148"
+      ]
+    },
+    {
+      "ID": 10001850,
+      "Entries": [
+        "Unlock basement map"
+      ]
+    },
+    {
+      "ID": 10001851,
+      "Entries": [
+        "Unlock basement door"
+      ]
+    },
+    {
+      "ID": 10001860,
+      "Entries": [
+        "Campaign Shop_Warp possible flag"
+      ]
+    },
+    {
+      "ID": 10001861,
+      "Entries": [
+        "Campaign Shop unlocked flag"
+      ]
+    },
+    {
+      "ID": 10001870,
+      "Entries": [
+        "Lady Scenario_Both missions completed"
+      ]
+    },
+    {
+      "ID": 10001880,
+      "Entries": [
+        "TUT_Avenger switch"
+      ]
+    },
+    {
+      "ID": 10001881,
+      "Entries": [
+        "Guardian Scenario_Helmet display possible"
+      ]
+    },
+    {
+      "ID": 10001890,
+      "Entries": [
+        "Enforcer Scenario_Blessing weakened"
+      ]
+    },
+    {
+      "ID": 10001900,
+      "Entries": [
+        "Rare Terrain Fever first activated Volcano"
+      ]
+    },
+    {
+      "ID": 10001901,
+      "Entries": [
+        "Rare Terrain Fever first activated Snowy Mountain"
+      ]
+    },
+    {
+      "ID": 10001902,
+      "Entries": [
+        "Rare Terrain Fever first activated Corruption"
+      ]
+    },
+    {
+      "ID": 10001903,
+      "Entries": [
+        "Rare Terrain Fever first activated Noclone"
+      ]
+    },
+    {
+      "ID": 10001910,
+      "Entries": [
+        "Notification trigger flag: Reminiscence in progress"
+      ]
+    },
+    {
+      "ID": 10001911,
+      "Entries": [
+        "Notification trigger flag: Reminiscence finished"
+      ]
+    },
+    {
+      "ID": 10001912,
+      "Entries": [
+        "Notification trigger flag: New Scenario menu"
+      ]
+    },
+    {
+      "ID": 10001913,
+      "Entries": [
+        "Notification trigger flag: Mission acceptance"
+      ]
+    },
+    {
+      "ID": 10001914,
+      "Entries": [
+        "Notification trigger flag: Mission acceptance"
+      ]
+    },
+    {
+      "ID": 10001915,
+      "Entries": [
+        "Tutorial display permission: Lobby currency shop"
+      ]
+    },
+    {
+      "ID": 10001920,
+      "Entries": [
+        "Lobby antiques display flag 1"
+      ]
+    },
+    {
+      "ID": 10001921,
+      "Entries": [
+        "Lobby antiques display flag 2"
+      ]
+    },
+    {
+      "ID": 10001922,
+      "Entries": [
+        "Lobby antiques display flag 3"
+      ]
+    },
+    {
+      "ID": 10001923,
+      "Entries": [
+        "Lobby antiques display flag 4"
+      ]
+    },
+    {
+      "ID": 10001924,
+      "Entries": [
+        "Flag 5 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001925,
+      "Entries": [
+        "Flag 6 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001926,
+      "Entries": [
+        "Flag 7 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001927,
+      "Entries": [
+        "Flag 8 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001928,
+      "Entries": [
+        "Flag 9 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001929,
+      "Entries": [
+        "Flag 10 showing antiques in the lobby"
+      ]
+    },
+    {
+      "ID": 10001930,
+      "Entries": [
+        "Flag 1 showing antiques already acquired in the lobby"
+      ]
+    },
+    {
+      "ID": 10001931,
+      "Entries": [
+        "Flag 2 showing antiques already acquired in the lobby"
+      ]
+    },
+    {
+      "ID": 10001932,
+      "Entries": [
+        "Flag 3 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001933,
+      "Entries": [
+        "Flag 4 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001934,
+      "Entries": [
+        "Flag 5 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001935,
+      "Entries": [
+        "Flag 6 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001936,
+      "Entries": [
+        "Flag 7 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001937,
+      "Entries": [
+        "Flag 8 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001938,
+      "Entries": [
+        "Flag 9 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001939,
+      "Entries": [
+        "Flag 10 of lobby antiques obtained"
+      ]
+    },
+    {
+      "ID": 10001950,
+      "Entries": [
+        "Permission to change blessing to final performance"
+      ]
+    },
+    {
+      "ID": 10001951,
+      "Entries": [
+        "Changed blessing status from sign menu at least once"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "Request to play CS explaining worldview",
+        "Request to play CS explaining worldview"
+      ]
+    },
+    {
+      "ID": 10002001,
+      "Entries": [
+        "Forced lobby CS"
+      ]
+    },
+    {
+      "ID": 10002002,
+      "Entries": [
+        "Main layout state after defeating 4 bosses"
+      ]
+    },
+    {
+      "ID": 10002010,
+      "Entries": [
+        "Immediately after first entry CS"
+      ]
+    },
+    {
+      "ID": 10002011,
+      "Entries": [
+        "Immediately after defeating one boss"
+      ]
+    },
+    {
+      "ID": 10002012,
+      "Entries": [
+        "Immediately after defeating four bosses"
+      ]
+    },
+    {
+      "ID": 10002013,
+      "Entries": [
+        "Immediately after unlocking the Lady CS"
+      ]
+    },
+    {
+      "ID": 10002014,
+      "Entries": [
+        "Request to display tutorial for defeating Nameless after CS"
+      ]
+    },
+    {
+      "ID": 10002015,
+      "Entries": [
+        "OK flag for new dialogue when rewarding memories"
+      ]
+    },
+    {
+      "ID": 10002016,
+      "Entries": [
+        "Personal scenario menu not loaded since disabling [Volatility] button"
+      ]
+    },
+    {
+      "ID": 10002017,
+      "Entries": [
+        "Permission to display antique tutorial after CS"
+      ]
+    },
+    {
+      "ID": 10002018,
+      "Entries": [
+        "Permission to process memories after CS"
+      ]
+    },
+    {
+      "ID": 10002019,
+      "Entries": [
+        "Permission to display campaign shop after CS"
+      ]
+    },
+    {
+      "ID": 10002020,
+      "Entries": [
+        "Rogue_Fireworks launch judgment"
+      ]
+    },
+    {
+      "ID": 10002021,
+      "Entries": [
+        "Rogue_Stone monument glow judgment"
+      ]
+    },
+    {
+      "ID": 10002030,
+      "Entries": [
+        "Guardian_Conversation with Rogue completed"
+      ]
+    },
+    {
+      "ID": 10002040,
+      "Entries": [
+        "Notification trigger flag: Mission accepted"
+      ]
+    },
+    {
+      "ID": 10002041,
+      "Entries": [
+        "Notification trigger flag: Matched when accepting mission"
+      ]
+    },
+    {
+      "ID": 10002050,
+      "Entries": [
+        "Gparam change control flag_Do not change Gparam if this is set"
+      ]
+    },
+    {
+      "ID": 10002051,
+      "Entries": [
+        "Gparam entry control flag"
+      ]
+    },
+    {
+      "ID": 10002060,
+      "Entries": [
+        "BGM control flag"
+      ]
+    },
+    {
+      "ID": 10002100,
+      "Entries": [
+        "Flag for retiring from training ground battle",
+        "Flag for retiring from training ground battle"
+      ]
+    },
+    {
+      "ID": 10002160,
+      "Entries": [
+        "Rare terrain fever forced termination event"
+      ]
+    },
+    {
+      "ID": 10002161,
+      "Entries": [
+        "Request for notification of end of fever after CS (volcano)"
+      ]
+    },
+    {
+      "ID": 10002162,
+      "Entries": [
+        "Request for notification of end of fever after CS (snowy mountain)"
+      ]
+    },
+    {
+      "ID": 10002163,
+      "Entries": [
+        "Request for notification of end of fever after CS (corruption)"
+      ]
+    },
+    {
+      "ID": 10002164,
+      "Entries": [
+        "Request for notification of end of fever after CS (no clone)"
+      ]
+    },
+    {
+      "ID": 10002165,
+      "Entries": [
+        "Display volcano stop tutorial after skin tutorial"
+      ]
+    },
+    {
+      "ID": 10002166,
+      "Entries": [
+        "Rematching request notification (fever)"
+      ]
+    },
+    {
+      "ID": 10002167,
+      "Entries": [
+        "Request for first fever notification in ED tutorial"
+      ]
+    },
+    {
+      "ID": 10002168,
+      "Entries": [
+        "Permission to display fever tutorial after CS"
+      ]
+    },
+    {
+      "ID": 10002170,
+      "Entries": [
+        "Start fever at the sign shop"
+      ]
+    },
+    {
+      "ID": 10002171,
+      "Entries": [
+        "Fever is running at the sign shop"
+      ]
+    },
+    {
+      "ID": 10002172,
+      "Entries": [
+        "Force end fever started at the sign shop"
+      ]
+    },
+    {
+      "ID": 10002173,
+      "Entries": [
+        "Change blessing status from the sign shop"
+      ]
+    },
+    {
+      "ID": 10002200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 10002201,
+      "Entries": [
+        "Pursuer new mark control"
+      ]
+    },
+    {
+      "ID": 10002202,
+      "Entries": [
+        "Guardian new mark"
+      ]
+    },
+    {
+      "ID": 10002203,
+      "Entries": [
+        "Iron Eye New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002204,
+      "Entries": [
+        "Lady New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002205,
+      "Entries": [
+        "Scoundrel New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002206,
+      "Entries": [
+        "Avenger New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002207,
+      "Entries": [
+        "Hermit New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002208,
+      "Entries": [
+        "Enforcer New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002209,
+      "Entries": [
+        "Buffer New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002210,
+      "Entries": [
+        "Servant Doll New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002211,
+      "Entries": [
+        "Shadow Witch New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002212,
+      "Entries": [
+        "Ghost New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002213,
+      "Entries": [
+        "Traitor New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002214,
+      "Entries": [
+        "Phantom New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002215,
+      "Entries": [
+        "Dummy Character 1 New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002216,
+      "Entries": [
+        "Dummy Character 2 New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002217,
+      "Entries": [
+        "Dummy Character 3 New Mark Control"
+      ]
+    },
+    {
+      "ID": 10002218,
+      "Entries": [
+        "Dummy character 4 New mark control"
+      ]
+    },
+    {
+      "ID": 10002219,
+      "Entries": [
+        "Dummy character 5 New mark control"
+      ]
+    },
+    {
+      "ID": 10002220,
+      "Entries": [
+        "Dummy character 6 New mark control"
+      ]
+    },
+    {
+      "ID": 10002221,
+      "Entries": [
+        "Dummy character 7 New mark control"
+      ]
+    },
+    {
+      "ID": 10002222,
+      "Entries": [
+        "Dummy character 8 New mark control"
+      ]
+    },
+    {
+      "ID": 10002223,
+      "Entries": [
+        "Dummy character 9 New mark control"
+      ]
+    },
+    {
+      "ID": 10002224,
+      "Entries": [
+        "Dummy character 10 New mark control"
+      ]
+    },
+    {
+      "ID": 10002225,
+      "Entries": [
+        "Dummy character 11 New mark control"
+      ]
+    },
+    {
+      "ID": 10002226,
+      "Entries": [
+        "Dummy character 12 New mark control"
+      ]
+    },
+    {
+      "ID": 10002227,
+      "Entries": [
+        "Dummy character 13 New mark control"
+      ]
+    },
+    {
+      "ID": 10002228,
+      "Entries": [
+        "Dummy character 14 New mark control"
+      ]
+    },
+    {
+      "ID": 10002229,
+      "Entries": [
+        "Dummy character 15 New mark control"
+      ]
+    },
+    {
+      "ID": 10002230,
+      "Entries": [
+        "Dummy character 16 New mark control"
+      ]
+    },
+    {
+      "ID": 10002231,
+      "Entries": [
+        "Dummy character 17 New mark control"
+      ]
+    },
+    {
+      "ID": 10002232,
+      "Entries": [
+        "Dummy character 18 New mark control"
+      ]
+    },
+    {
+      "ID": 10002233,
+      "Entries": [
+        "Dummy character 19 New mark control"
+      ]
+    },
+    {
+      "ID": 10002234,
+      "Entries": [
+        "Return point New mark control",
+        "Return point New mark control"
+      ]
+    },
+    {
+      "ID": 10002235,
+      "Entries": [
+        "Fake servant doll New mark control",
+        "Fake servant doll New mark control"
+      ]
+    },
+    {
+      "ID": 10002251,
+      "Entries": [
+        "Pursuer Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002252,
+      "Entries": [
+        "Guardian Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002253,
+      "Entries": [
+        "Iron Eye Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002254,
+      "Entries": [
+        "Lady Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002255,
+      "Entries": [
+        "Scoundrel Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002256,
+      "Entries": [
+        "Avenger Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002257,
+      "Entries": [
+        "Hermit Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002258,
+      "Entries": [
+        "Enforcer Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002259,
+      "Entries": [
+        "Buffer Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002260,
+      "Entries": [
+        "Servant Doll Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002261,
+      "Entries": [
+        "Shadow Witch Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002262,
+      "Entries": [
+        "Ghost Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002263,
+      "Entries": [
+        "Traitor Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002264,
+      "Entries": [
+        "Phantom Map Icon Overwrite Control"
+      ]
+    },
+    {
+      "ID": 10002265,
+      "Entries": [
+        "Dummy character 1 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002266,
+      "Entries": [
+        "Dummy character 2 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002267,
+      "Entries": [
+        "Dummy character 3 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002268,
+      "Entries": [
+        "Dummy character 4 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002269,
+      "Entries": [
+        "Dummy character 5 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002270,
+      "Entries": [
+        "Dummy character 6 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002271,
+      "Entries": [
+        "Dummy character 7 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002272,
+      "Entries": [
+        "Dummy character 8 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002273,
+      "Entries": [
+        "Dummy character 9 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002274,
+      "Entries": [
+        "Dummy character 10 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002275,
+      "Entries": [
+        "Dummy character 11 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002276,
+      "Entries": [
+        "Dummy character 12 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002277,
+      "Entries": [
+        "Dummy character 13 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002278,
+      "Entries": [
+        "Dummy character 14 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002279,
+      "Entries": [
+        "Dummy character 15 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002280,
+      "Entries": [
+        "Dummy character 16 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002281,
+      "Entries": [
+        "Dummy character 17 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002282,
+      "Entries": [
+        "Dummy character 18 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002283,
+      "Entries": [
+        "Dummy character 19 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002284,
+      "Entries": [
+        "Dummy character 20 Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002285,
+      "Entries": [
+        "Return point Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002286,
+      "Entries": [
+        "Fake servant doll Map icon overwrite control"
+      ]
+    },
+    {
+      "ID": 10002301,
+      "Entries": [
+        "Tracker - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002302,
+      "Entries": [
+        "Guardian - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002303,
+      "Entries": [
+        "Iron Eye - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002304,
+      "Entries": [
+        "Lady - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002305,
+      "Entries": [
+        "Scoundrel - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002306,
+      "Entries": [
+        "Avenger - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002307,
+      "Entries": [
+        "Hermit - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002308,
+      "Entries": [
+        "Enforcer - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002309,
+      "Entries": [
+        "Buffer - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002310,
+      "Entries": [
+        "Servant doll - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002311,
+      "Entries": [
+        "Shadow witch - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002312,
+      "Entries": [
+        "Ghost - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002313,
+      "Entries": [
+        "Traitor - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002314,
+      "Entries": [
+        "Phantom - Hide map icon"
+      ]
+    },
+    {
+      "ID": 10002315,
+      "Entries": [
+        "Dummy character 1 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002316,
+      "Entries": [
+        "Dummy character 2 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002317,
+      "Entries": [
+        "Dummy character 3 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002318,
+      "Entries": [
+        "Dummy character 4 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002319,
+      "Entries": [
+        "Dummy character 5 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002320,
+      "Entries": [
+        "Dummy character 6 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002321,
+      "Entries": [
+        "Dummy character 7 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002322,
+      "Entries": [
+        "Dummy character 8 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002323,
+      "Entries": [
+        "Dummy character 9 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002324,
+      "Entries": [
+        "Dummy character 10 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002325,
+      "Entries": [
+        "Dummy character 11 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002326,
+      "Entries": [
+        "Dummy character 12 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002327,
+      "Entries": [
+        "Dummy character 13 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002328,
+      "Entries": [
+        "Dummy character 14 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002329,
+      "Entries": [
+        "Dummy character 15 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002330,
+      "Entries": [
+        "Dummy character 16 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002331,
+      "Entries": [
+        "Dummy character 17 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002332,
+      "Entries": [
+        "Dummy character 18 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002333,
+      "Entries": [
+        "Dummy character 19 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002334,
+      "Entries": [
+        "Dummy character 20 Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002335,
+      "Entries": [
+        "Return point Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002336,
+      "Entries": [
+        "Fake servant doll Map icon hidden control"
+      ]
+    },
+    {
+      "ID": 10002400,
+      "Entries": [
+        "召使人形\u3000にぎやかし配置１"
+      ]
+    },
+    {
+      "ID": 10002401,
+      "Entries": [
+        "召使人形\u3000にぎやかし配置２"
+      ]
+    },
+    {
+      "ID": 10002402,
+      "Entries": [
+        "召使人形\u3000にぎやかし配置３"
+      ]
+    },
+    {
+      "ID": 10002405,
+      "Entries": [
+        "召使人形\u3000スキン解禁会話位置へワープ要求"
+      ]
+    },
+    {
+      "ID": 10002406,
+      "Entries": [
+        "召使人形\u3000スキン解禁会話中"
+      ]
+    },
+    {
+      "ID": 10002410,
+      "Entries": [
+        "Training center guide hidden flag"
+      ]
+    },
+    {
+      "ID": 10002500,
+      "Entries": [
+        "Avenger unlock spirit body performance start",
+        "Avenger unlock spirit body performance start"
+      ]
+    },
+    {
+      "ID": 10002501,
+      "Entries": [
+        "Avenger unlock spirit body performance end"
+      ]
+    },
+    {
+      "ID": 10002700,
+      "Entries": [
+        "For the lobby menu: Matching menu",
+        "For the lobby menu: Matching menu"
+      ]
+    },
+    {
+      "ID": 10002701,
+      "Entries": [
+        "For the lobby menu: Hero selection"
+      ]
+    },
+    {
+      "ID": 10002702,
+      "Entries": [
+        "For the lobby menu: Avatar customization"
+      ]
+    },
+    {
+      "ID": 10002703,
+      "Entries": [
+        "For the lobby menu: Antiques"
+      ]
+    },
+    {
+      "ID": 10002704,
+      "Entries": [
+        "For the lobby menu: Picture book"
+      ]
+    },
+    {
+      "ID": 10002705,
+      "Entries": [
+        "For the lobby menu: Personal scenario"
+      ]
+    },
+    {
+      "ID": 10002706,
+      "Entries": [
+        "For the lobby menu: Lobby currency shop"
+      ]
+    },
+    {
+      "ID": 10002707,
+      "Entries": [
+        "For the lobby menu: Campaign currency shop"
+      ]
+    },
+    {
+      "ID": 10002800,
+      "Entries": [
+        "[Volatile] Enforcer lively fixed flag part 1",
+        "[Volatile] Enforcer lively fixed flag part 1"
+      ]
+    },
+    {
+      "ID": 10002801,
+      "Entries": [
+        "【揮発】執行者にぎやかし固定フラグ\u3000その２"
+      ]
+    },
+    {
+      "ID": 10002802,
+      "Entries": [
+        "【揮発】執行者にぎやかし固定フラグ\u3000その３"
+      ]
+    },
+    {
+      "ID": 10002900,
+      "Entries": [
+        "[Debug] Blackout warp to scenario menu",
+        "[Debug] Blackout warp to scenario menu"
+      ]
+    },
+    {
+      "ID": 10003000,
+      "Entries": [
+        "Conversation flag (reset)"
+      ]
+    },
+    {
+      "ID": 10008500,
+      "Entries": [
+        "Object act flag"
+      ]
+    },
+    {
+      "ID": 10009000,
+      "Entries": [
+        "After recollection start flag"
+      ]
+    },
+    {
+      "ID": 10009001,
+      "Entries": [
+        "After recollection end flag"
+      ]
+    },
+    {
+      "ID": 10009002,
+      "Entries": [
+        "After recollection end flag without direction"
+      ]
+    },
+    {
+      "ID": 10009080,
+      "Entries": [
+        "NPC103_Destroyer_Initialization event"
+      ]
+    },
+    {
+      "ID": 10009240,
+      "Entries": [
+        "NPC107_Guardian_Common scenario_Initialization event"
+      ]
+    },
+    {
+      "ID": 10009241,
+      "Entries": [
+        "NPC107_Guardian_Tracker sub-scenario_Phase 1_Initialization event"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_PARAM_GENERATOR_ST</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10010000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10020000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニューアイコンID.</Description>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 modelId">
+      <DisplayName>モデルID</DisplayName>
+      <Description>アセンブリの詳細表示で表示するモデルID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10040000</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID(プログラム内で強化レベルを加味しているので s32 では７桁が限界)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>10050000</SortID>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg].</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10060000</SortID>
+    </Field>
+    <Field Def="s32 energyMax">
+      <DisplayName>EN上限値</DisplayName>
+      <Description>EN上限値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10070000</SortID>
+    </Field>
+    <Field Def="s32 energyRecoveryPerSec">
+      <DisplayName>EN回復量_通常時[EN値/sec] </DisplayName>
+      <Description>EN回復量_通常時[EN値/sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10080000</SortID>
+      <UnkC8>EN消費・回復</UnkC8>
+    </Field>
+    <Field Def="s32 consumeEN">
+      <DisplayName>EN消費量_通常時[EN値/sec] </DisplayName>
+      <Description>EN消費量_通常時[EN値/sec] </Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10080010</SortID>
+      <UnkC8>EN消費・回復</UnkC8>
+    </Field>
+    <Field Def="f32 energyRecoveryDelayTimeSec">
+      <DisplayName>EN回復待機時間[sec] </DisplayName>
+      <Description>EN回復待機時間[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10080020</SortID>
+      <UnkC8>EN消費・回復</UnkC8>
+    </Field>
+    <Field Def="f32 energyRecoveryDelayTimeForEmptySec">
+      <DisplayName>EN回復待機時間_借金時[sec] </DisplayName>
+      <Description>ENが空っぽのときのEN回復待機時間[sec] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10080030</SortID>
+      <UnkC8>EN消費・回復</UnkC8>
+    </Field>
+    <Field Def="f32 energyRecoverValForEmpty">
+      <DisplayName>緊急時EN回復量[point]</DisplayName>
+      <Description>緊急時EN回復量[point]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10080040</SortID>
+      <UnkC8>EN消費・回復</UnkC8>
+    </Field>
+    <Field Def="u32 AppropriateType_Energy">
+      <DisplayName>EN武器適性</DisplayName>
+      <Description>EN武器適性</Description>
+      <Maximum>999999</Maximum>
+      <SortID>10080050</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[14]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 Maker">
+      <DisplayName>企業</DisplayName>
+      <Enum>EQUIP_MAKER_TYPE</Enum>
+      <Description>製造元</Description>
+      <SortID>10030000</SortID>
+    </Field>
+    <Field Def="s32 sellValue">
+      <DisplayName>売却価格</DisplayName>
+      <Description>売却価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 saleValue = -1">
+      <DisplayName>販売価格</DisplayName>
+      <Description>販売価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f00">
+      <DisplayName>【表示用】Float_00</DisplayName>
+      <Description>メニュー表示用算出値00</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100000</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f01">
+      <DisplayName>【表示用】Float_01</DisplayName>
+      <Description>メニュー表示用算出値01</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100010</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f02">
+      <DisplayName>【表示用】Float_02</DisplayName>
+      <Description>メニュー表示用算出値02</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100020</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f03">
+      <DisplayName>【表示用】Float_03</DisplayName>
+      <Description>メニュー表示用算出値03</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100030</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f04">
+      <DisplayName>【表示用】Float_04</DisplayName>
+      <Description>メニュー表示用算出値04</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100040</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f05">
+      <DisplayName>【表示用】Float_05</DisplayName>
+      <Description>メニュー表示用算出値05</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100050</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f06">
+      <DisplayName>【表示用】Float_06</DisplayName>
+      <Description>メニュー表示用算出値06</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100060</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f07">
+      <DisplayName>【表示用】Float_07</DisplayName>
+      <Description>メニュー表示用算出値07</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100070</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f08">
+      <DisplayName>【表示用】Float_08</DisplayName>
+      <Description>メニュー表示用算出値08</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100080</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f09">
+      <DisplayName>【表示用】Float_09</DisplayName>
+      <Description>メニュー表示用算出値09</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100090</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f10">
+      <DisplayName>【表示用】Float_10</DisplayName>
+      <Description>メニュー表示用算出値10</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100100</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f11">
+      <DisplayName>【表示用】Float_11</DisplayName>
+      <Description>メニュー表示用算出値11</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100110</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f12">
+      <DisplayName>【表示用】Float_12</DisplayName>
+      <Description>メニュー表示用算出値12</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100120</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f13">
+      <DisplayName>【表示用】Float_13</DisplayName>
+      <Description>メニュー表示用算出値13</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100130</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f14">
+      <DisplayName>【表示用】Float_14</DisplayName>
+      <Description>メニュー表示用算出値14</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100140</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f_last">
+      <DisplayName>【表示用】Float_15</DisplayName>
+      <Description>メニュー表示用算出値15</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>10100150</SortID>
+      <UnkC8>【表示用】Float</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_end2[28]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 criticalDefSfxMaterial">
+      <DisplayName>クリティカル時追加SFX防御材質</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>クリティカルを受けたときの防御材質（SFX用）</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10090000</SortID>
+    </Field>
+    <Field Def="s8 thrustersColorType = -1">
+      <DisplayName>スラスターカラータイプ</DisplayName>
+      <Description>スラスターのSFX差し替えタイプ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10200000</SortID>
+      <UnkC8>GD</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad07[1]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 refId = -1">
+      <DisplayName>別ジェネレーターパラ参照ID</DisplayName>
+      <Description>設定されていると別ジェネレーターパラを参照します</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>10025000</SortID>
+    </Field>
+    <Field Def="dummy8 pad08[140]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end3[32]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

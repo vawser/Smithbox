@@ -1,0 +1,148 @@
+{
+  "Param": "SP_EFFECT_VFX_PARAM_ST",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SP_EFFECT_VFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "効果中SfxID",
+      "Description": "効果中SfxID(-1：無効)"
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "効果中SeID",
+      "Description": "効果中SeID(-1：無効)"
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "発動時SfxID",
+      "Description": "発動時SfxID(-1：無効)"
+    },
+    {
+      "Field": "initSeId",
+      "Name": "発動時SeID",
+      "Description": "発動時SeID(-1：無効)"
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "解除時SfxID",
+      "Description": "解除時SfxID(-1：無効)"
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "解除時SeID",
+      "Description": "解除時SeID(-1：無効)"
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "姿隠し開始距離[m]",
+      "Description": "カムフラージュ開始距離です"
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "姿隠し終了距離[m]",
+      "Description": "カムフラージュ終了距離です"
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "変身防具ID",
+      "Description": "変身防具ID(-1：なし)"
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "効果中ダミポリID",
+      "Description": "効果中ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "発動時ダミポリID",
+      "Description": "発動時ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "解除時ダミポリID",
+      "Description": "解除時ダミポリID(-1：ルート)"
+    },
+    {
+      "Field": "effectType",
+      "Name": "エフェクトタイプ",
+      "Description": "エフェクトタイプ"
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "武器エンチャント用ソウルパラムID",
+      "Description": "武器エンチャント用ソウルパラムID(-1：なし)"
+    },
+    {
+      "Field": "playCategory",
+      "Name": "VFX再生カテゴリ",
+      "Description": "重複効果によるエフェクト再生を制御します"
+    },
+    {
+      "Field": "playPriority",
+      "Name": "カテゴリ内優先度",
+      "Description": "カテゴリ一致した場合の再生優先度を設定(低い方が優先)"
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "大型用エフェクトがあるか",
+      "Description": "大型用エフェクトがあるか"
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "ソウル体用エフェクトがあるか",
+      "Description": "ソウル体用エフェクトがあるか"
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "姿隠し時にエフェクトを非表示にするか",
+      "Description": "姿隠し時にエフェクトを非表示にするか"
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "姿隠しするか",
+      "Description": "姿隠しするか"
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "姿隠し時に味方でも非表示か",
+      "Description": "姿隠し時に味方でも非表示か"
+    },
+    {
+      "Field": "addMapAreaBlockOffset",
+      "Name": "SfxIDにマップ番号を足すか",
+      "Description": "SfxIDにマップ番号(AAB0)を加算します"
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "半透明の姿隠しか",
+      "Description": "半透明の姿隠しか"
+    },
+    {
+      "Field": "isFullBodyTransformProtectorId",
+      "Name": "変身防具IDが全身用か",
+      "Description": "変身防具IDが全身用か"
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "武器エンチャント用インビジブルウェポンか",
+      "Description": "武器エンチャント用インビジブルウェポンか(0:武器表示, 1:武器非表示)"
+    },
+    {
+      "Field": "isSilence",
+      "Name": "サイレンスか",
+      "Description": "サイレンスか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

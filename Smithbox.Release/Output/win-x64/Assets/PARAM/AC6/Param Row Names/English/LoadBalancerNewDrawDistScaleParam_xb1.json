@@ -1,0 +1,59 @@
+{
+  "Name": "LoadBalancerNewDrawDistScaleParam_xb1",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[Drawing distance scale] Default (do not scale)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Draw distance scale] Local player"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Draw distance scale] Remote player"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Drawing distance scale] Illusion"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Drawing distance scale] Chr small"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Drawing distance scale] Chr medium"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Drawing distance scale] Chr large"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Drawing distance scale] Chr extra large"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Drawing distance scale] Map/Obj default"
+      ]
+    }
+  ]
+}

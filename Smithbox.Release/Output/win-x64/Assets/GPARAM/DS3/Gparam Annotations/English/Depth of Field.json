@@ -1,0 +1,279 @@
+{
+  "ID": "Dof[Yebis]",
+  "Name": "Depth of Field",
+  "Description": "Controls camera focus simulation and lens blur parameters, including aperture, focus distance, custom blur zones, autofocus behavior, and bokeh shaping.",
+  "Fields": [
+    {
+      "ID": "Yebis-DepthOfField:Enable",
+      "Name": "Enable Depth of Field",
+      "Description": "Enables or disables depth of field blur simulation.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-ApertuerF",
+      "Name": "F-Number",
+      "Description": "Controls aperture size; lower values produce stronger blur and shallower depth of field.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFocusDistance",
+      "Name": "Focus Distance",
+      "Description": "Sets the world-space distance from the camera where the image appears sharpest.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CCD-Size",
+      "Name": "CCD Size",
+      "Description": "Defines the virtual sensor size, affecting blur scaling and depth perception.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofAdaptiveApertureFactor",
+      "Name": "Adaptive Aperture Factor",
+      "Description": "Scales aperture dynamically based on field of view to maintain consistent blur behavior.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofAdaptiveApertureBaseFov",
+      "Name": "Adaptive Aperture Base FOV",
+      "Description": "Reference field of view used when calculating adaptive aperture scaling.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofRotateScale",
+      "Name": "Rotate Scale",
+      "Description": "Controls rotational distortion applied to bokeh highlights.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofRotateOffsetInRadians",
+      "Name": "Rotate Offset in Radians",
+      "Description": "Applies an angular offset to bokeh rotation.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ApertureForntNumLevels",
+      "Name": "Aperture Front Number of Levels",
+      "Description": "Controls the number of aperture blade subdivisions affecting foreground bokeh shape.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ApertureBackNumLevels",
+      "Name": "Aperture Back Number of Levels",
+      "Description": "Controls aperture blade subdivisions affecting background bokeh shape.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiaphragmRotate",
+      "Name": "Diaphragm Rotate",
+      "Description": "Rotates the simulated aperture diaphragm, changing bokeh orientation.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofEdgeQuarity",
+      "Name": "Edge Quality",
+      "Description": "Controls blur precision and artifact reduction around object edges.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofBackgroundMaskThreshold",
+      "Name": "Background Mask Threshold",
+      "Description": "Threshold used to separate foreground and background during blur masking.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-Enable",
+      "Name": "Enable Custom Depth of Field",
+      "Description": "Enables manual near/far blur zone configuration.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-NearEnable",
+      "Name": "Custom: Enable Near",
+      "Description": "Enables custom near-field blur settings.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-DofNearDepthStart",
+      "Name": "Near Depth Start",
+      "Description": "Distance where near blur begins.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNearDepthEnd",
+      "Name": "Near Depth End",
+      "Description": "Distance where near blur reaches full intensity.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNear CocSize",
+      "Name": "Near Circle of Confusion: Size",
+      "Description": "Maximum blur radius for near-field out-of-focus areas.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNear CocScale",
+      "Name": "Near Circle of Confusion: Scale",
+      "Description": "Scales the intensity of near blur.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-FarEnable",
+      "Name": "Custom: Enable Far",
+      "Description": "Enables custom far-field blur settings.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-DofFarDepthStart",
+      "Name": "Far Depth Start",
+      "Description": "Distance where far blur begins.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFarDepthEnd",
+      "Name": "Far Depth End",
+      "Description": "Distance where far blur reaches full intensity.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar CocSize",
+      "Name": "Far Circle of Confusion: Size",
+      "Description": "Distance where far blur reaches full intensity.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar CocScale",
+      "Name": "Far Circle of Confusion: Scale",
+      "Description": "Scales the intensity of far blur.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar DistanceThrethold",
+      "Name": "Far Distance Threshold",
+      "Description": "Distance threshold for transitioning into far blur.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField AutoFocus-Enable",
+      "Name": "Enable Auto-Focus",
+      "Description": "Automatically adjusts focus distance based on scene depth.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-DonotPassOverFocus",
+      "Name": "Do Not Pass Over Focus",
+      "Description": "Prevents autofocus from overshooting the target focus distance.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Yebis-FocusSensitivity",
+      "Name": "Focus Sensitivity",
+      "Description": "Controls how responsive autofocus is to depth changes.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusSpeedLimit",
+      "Name": "Focus Speed Limit",
+      "Description": "Limits the maximum speed of focus transitions.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDelay",
+      "Name": "Focus Delay",
+      "Description": "Adds delay before autofocus reacts to depth changes.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDistanceRangeMin",
+      "Name": "Focus Distance Range Minimum",
+      "Description": "Minimum distance autofocus is allowed to target.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDistanceRangeMax",
+      "Name": "Focus Distance Range Maximum",
+      "Description": "Maximum distance autofocus is allowed to target.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusScreenPositionX",
+      "Name": "Focus Screen Position: X",
+      "Description": "Horizontal screen coordinate used for autofocus sampling.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusScreenPositionY",
+      "Name": "Focus Screen Position: Y",
+      "Description": "Vertical screen coordinate used for autofocus sampling.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

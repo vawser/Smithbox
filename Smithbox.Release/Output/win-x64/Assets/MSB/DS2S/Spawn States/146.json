@@ -1,0 +1,22 @@
+{
+  "id": "146",
+  "name": "Tseldora Citizen",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Crossed Arms"
+    },
+    {
+      "value": "3",
+      "name": "Drop from Ledge"
+    }
+  ]
+}

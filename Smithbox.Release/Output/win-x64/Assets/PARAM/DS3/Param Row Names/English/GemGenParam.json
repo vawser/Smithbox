@@ -1,0 +1,29 @@
+{
+  "Name": "GemGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Sweet Ishikoro -- あまいいしころ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Increased attack power and defensive power -- 攻撃力アップ\u3000＆\u3000防御力アップ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "HP Regen -- HPリジェネ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Max HP up -- マックスHPアップ"
+      ]
+    }
+  ]
+}

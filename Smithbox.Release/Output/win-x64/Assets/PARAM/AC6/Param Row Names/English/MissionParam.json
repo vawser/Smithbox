@@ -1,0 +1,671 @@
+{
+  "Name": "MissionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Illegal Entry"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack the Dam Complex"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Attack the Dam Complex (ALT)"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Operation Wallclimber"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Attack the Watchpoint"
+      ]
+    },
+    {
+      "ID": 2055,
+      "Entries": [
+        "Attack the Watchpoint (ALT)"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Investigate BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Destroy the Weaponized Mining Ship"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Retrieve Combat Logs"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Infiltrate Grid 086"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Prisoner Rescue"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Eliminate V.VII"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Ocean Crossing"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Obstruct the Mandatory Inspection"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Coral Export Denial"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Heavy Missile Launch Support"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Stop the Secret Data Breach"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "Defend the Dam Complex"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "Escort the Weaponized Mining Ship"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Steal the Survey Data"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Attack the Refueling Base"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Attack the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Eliminate \"Honest\" Brute"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Tunnel Sabotage"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Destroy the Special Forces Craft"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Historic Data Recovery"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Underground Exploration - Depth 1"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Underground Exploration - Depth 2"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Underground Exploration - Depth 2 (ALT)"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Underground Exploration - Depth 3"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Unknown Territory Survey"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "Unknown Territory Survey (ALT)"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Reach the Coral Convergence"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "Reach the Coral Convergence (ALT)"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "MIA"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Ambush the Vespers"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Escape"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Take the Uninhabited Floating City"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Destroy the Drive Block"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Breach the Karman Line"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Eliminate \"Cinder\" Carla"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Survey the Uninhabited Floating City"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "Survey the Uninhabited Floating City (ALT)"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Regain Control of the Xylem"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Shut Down the Closure Satellites"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Bring Down the Xylem"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Coral Release"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Destroy the Transport Helicopters"
+      ]
+    },
+    {
+      "ID": 7910,
+      "Entries": [
+        "Prevent Corporate Salvage of New Tech"
+      ]
+    },
+    {
+      "ID": 7920,
+      "Entries": [
+        "Grid 135 Cleanup"
+      ]
+    },
+    {
+      "ID": 7930,
+      "Entries": [
+        "Intercept the Redguns"
+      ]
+    },
+    {
+      "ID": 7940,
+      "Entries": [
+        "Eliminate V.III"
+      ]
+    },
+    {
+      "ID": 7950,
+      "Entries": [
+        "Defend the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 7960,
+      "Entries": [
+        "Eliminate the Doser Faction"
+      ]
+    },
+    {
+      "ID": 7970,
+      "Entries": [
+        "Destroy Artillery Installations"
+      ]
+    },
+    {
+      "ID": 7980,
+      "Entries": [
+        "Destroy the Tester AC"
+      ]
+    },
+    {
+      "ID": 7990,
+      "Entries": [
+        "Eliminate the Enforcement Squads"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Garage"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "AC Test"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Beginner Training 1: Basic Controls"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "Beginner Training 2: Combat Fundamentals"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "Intermediate Support 1: Assembling an AC"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "Intermediate Support 2: Reverse-Jointed ACs"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "Intermediate Support 3: Tetrapod ACs"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "Intermediate Support 4: Tank ACs"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "Advanced Mercenary Certification"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Arena: Watchpoint Delta"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "Arena: Grid 086"
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        "Arena: Bona Dea Dunes"
+      ]
+    },
+    {
+      "ID": 9403,
+      "Entries": [
+        "Arena: Contaminated City"
+      ]
+    },
+    {
+      "ID": 9404,
+      "Entries": [
+        "Arena: The Wall"
+      ]
+    },
+    {
+      "ID": 9405,
+      "Entries": [
+        "Arena: Jorgen Refueling Base"
+      ]
+    },
+    {
+      "ID": 9406,
+      "Entries": [
+        "Arena: Upper Grid 086"
+      ]
+    },
+    {
+      "ID": 9407,
+      "Entries": [
+        "Arena: Ice Worm Arena"
+      ]
+    },
+    {
+      "ID": 9408,
+      "Entries": [
+        "Arena: AC Test"
+      ]
+    },
+    {
+      "ID": 9409,
+      "Entries": [
+        "Arena: Simulation - Orange/Blue"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Arena: Simulation - Green/Orange"
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        "Arena: Simulation - Red/Dark"
+      ]
+    },
+    {
+      "ID": 9412,
+      "Entries": [
+        "Arena: BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 9413,
+      "Entries": [
+        "Arena: Grid 012"
+      ]
+    },
+    {
+      "ID": 9414,
+      "Entries": [
+        "Arena: Old Bertram Spaceport"
+      ]
+    },
+    {
+      "ID": 9415,
+      "Entries": [
+        "Arena: Gallia Dam Complex"
+      ]
+    },
+    {
+      "ID": 9416,
+      "Entries": [
+        "Arena: Xylem- the Floating City"
+      ]
+    },
+    {
+      "ID": 99990022,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Param": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Type": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Name": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Description": "Determines parameters relating to the rendering of parts within menus.",
+  "Fields": [
+    {
+      "Field": "initModelDegX",
+      "Name": "Initial Angle of the Model: X",
+      "Description": "The initial angle (on the x-axis) of the model."
+    },
+    {
+      "Field": "initModelDegY",
+      "Name": "Initial Angle of the Model: Y",
+      "Description": "The initial angle (on the y-axis) of the model."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "BLADE_HOMING_MOVE_UP_DOWN_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BLADE_HOMING_MOVE_UP_DOWN_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Correct to match target height"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Correct for model orientation"
+        }
+      ]
+    }
+  ]
+}

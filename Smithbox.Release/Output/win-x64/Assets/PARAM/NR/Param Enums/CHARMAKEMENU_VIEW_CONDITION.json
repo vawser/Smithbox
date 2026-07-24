@@ -1,0 +1,56 @@
+{
+  "Key": "CHARMAKEMENU_VIEW_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHARMAKEMENU_VIEW_CONDITION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 0"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 4"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 5"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 6"
+        }
+      ]
+    }
+  ]
+}

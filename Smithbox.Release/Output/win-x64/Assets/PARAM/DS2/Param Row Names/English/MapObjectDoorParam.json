@@ -1,0 +1,65 @@
+{
+  "Name": "MapObjectDoorParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99971000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99971001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99971002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99972000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99972001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99972002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

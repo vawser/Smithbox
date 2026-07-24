@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <DataID
+    AltName="Data ID"
+    Wiki="" />
+    
+    <TypeID
+    AltName="Type ID"
+    Wiki="" />
+    
+    <Dummy00
+    AltName="Dummy 00"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <Angle_0
+    AltName="Angle: 0"
+    Wiki="" />
+    
+    <DiffuseColor_0
+    AltName="Diffuse Color: 0"
+    Wiki="" />
+    
+    <SpecularColor_0
+    AltName="Specular Color: 0"
+    Wiki="" />
+    
+    <Dummy0
+    AltName="Dummy 0"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <Angle_1
+    AltName="Angle: 1"
+    Wiki="" />
+    
+    <DiffuseColor_1
+    AltName="Diffuse Color: 1"
+    Wiki="" />
+    
+    <SpecularColor_1
+    AltName="Specular Color: 1"
+    Wiki="" />
+    
+    <Dummy1
+    AltName="Dummy 1"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <SphereColor_0
+    AltName="Sphere Color: 0"
+    Wiki="" />
+    
+    <SphereColor_1
+    AltName="Sphere Color: 1"
+    Wiki="" />
+    
+    <AmbientReflectionColor
+    AltName="Ambient Reflection Color"
+    Wiki="" />
+    
+    <AmbientReflectionStrength
+    AltName="Ambient Reflection Strength"
+    Wiki="" />
+    
+    <TrackCameraDirection
+    AltName="Track Camera Direction"
+    Wiki="" />
+    
+    <Dummy03
+    AltName="Dummy 03"
+    Wiki="" 
+    ArrayProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

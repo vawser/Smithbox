@@ -1,0 +1,33 @@
+{
+  "Param": "SKELETON_PARAM_ST",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SKELETON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "neckTurnPriority",
+      "Name": "首振り優先度",
+      "Description": "低いほど先に回る。-1で首振りしない"
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "首振り最大角度",
+      "Description": "この関節の最大旋回角度。この角度以上はまがらない"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnGain",
+      "Name": "ゲイン",
+      "Description": "首振りゲイン。高いほど早く回る"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング2",
+      "Description": "パディング"
+    }
+  ]
+}

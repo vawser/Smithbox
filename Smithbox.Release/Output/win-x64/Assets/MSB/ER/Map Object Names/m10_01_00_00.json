@@ -1,0 +1,253 @@
+{
+  "Name": "m10_01_00_00",
+  "Entries": [
+    {
+      "ID": "教会入口",
+      "Name": "church entrance"
+    },
+    {
+      "ID": "教会内Ambient_001",
+      "Name": "Church Ambient_001"
+    },
+    {
+      "ID": "ボスエリア出口",
+      "Name": "boss area exit"
+    },
+    {
+      "ID": "教会内Ambient_spec",
+      "Name": "Ambient_spec in church"
+    },
+    {
+      "ID": "ボスエリア出口_spec",
+      "Name": "Boss Area Exit_spec"
+    },
+    {
+      "ID": "教会穴",
+      "Name": "church hole"
+    },
+    {
+      "ID": "教会内Ambient",
+      "Name": "Church Ambient"
+    },
+    {
+      "ID": "ObjAct ",
+      "Name": "ObjAct "
+    },
+    {
+      "ID": "ObjAct 片開き扉 教会脇",
+      "Name": "ObjEct Single-leaf door, beside the church"
+    },
+    {
+      "ID": "ObjAct 宝箱000",
+      "Name": "ObjEct Treasure Chest 000"
+    },
+    {
+      "ID": "宝死体000",
+      "Name": "Treasure Corpse 000"
+    },
+    {
+      "ID": "宝死体001",
+      "Name": "Treasure Corpse 001"
+    },
+    {
+      "ID": "宝箱 000",
+      "Name": "Treasure chest 000"
+    },
+    {
+      "ID": "吊り橋_ダミーポイント",
+      "Name": "Suspension bridge_dummy point"
+    },
+    {
+      "ID": "ヒント血文字 力尽き倒れている巫女_血文字（NPC）",
+      "Name": "Hint: Blood writing - A shrine maiden lying exhausted and collapsed_Blood writing (NPC)"
+    },
+    {
+      "ID": "遮蔽外部_01",
+      "Name": "Shielding exterior_01"
+    },
+    {
+      "ID": "遮蔽外部_02",
+      "Name": "Shielded exterior_02"
+    },
+    {
+      "ID": "遮蔽通常",
+      "Name": "shielding normal"
+    },
+    {
+      "ID": "遮蔽ポータル_01",
+      "Name": "Shielding Portal_01"
+    },
+    {
+      "ID": "遮蔽ポータル_02",
+      "Name": "Shielding Portal_02"
+    },
+    {
+      "ID": "遮蔽ポータル_03",
+      "Name": "Shielded Portal_03"
+    },
+    {
+      "ID": "遮蔽ポータル_04",
+      "Name": "Shielding Portal_04"
+    },
+    {
+      "ID": "遮蔽ポータル_05",
+      "Name": "Shielded Portal_05"
+    },
+    {
+      "ID": "領域 チュートリアル カメラ",
+      "Name": "Region Tutorial Camera"
+    },
+    {
+      "ID": "領域 チュートリアル 移動 ※保健用に作ってあるだけ",
+      "Name": "Area Tutorial Navigation *Only created for health purposes"
+    },
+    {
+      "ID": "領域 プレイヤー不死設定非解除",
+      "Name": "Area Player immortality setting deactivated"
+    },
+    {
+      "ID": "領域 ボス初戦開始",
+      "Name": "Domain Boss First Battle Begins"
+    },
+    {
+      "ID": "領域 ボス部屋入場",
+      "Name": "Entering the Boss Room"
+    },
+    {
+      "ID": "領域 ボス部屋入場 bk",
+      "Name": "Area Boss Room Entry bk"
+    },
+    {
+      "ID": "領域 世界樹の歓迎",
+      "Name": "Domain: Welcome of the World Tree"
+    },
+    {
+      "ID": "領域 接ぎ木の蜘蛛 2回目スタート",
+      "Name": "Domain: Grafted Spiders - Second Session Start"
+    },
+    {
+      "ID": "領域 地名非表示 ",
+      "Name": "Area Place name hidden"
+    },
+    {
+      "ID": "領域 片開き扉（奥側：OPEN）",
+      "Name": "Area: Single-leaf door (back side: OPEN)"
+    },
+    {
+      "ID": "領域 片開き扉（手前側：CLOSE）",
+      "Name": "Area: Single-leaf door (front side: CLOSE)"
+    },
+    {
+      "ID": "領域 落ちる床",
+      "Name": "Area Falling Floor"
+    },
+    {
+      "ID": "プレイ領域 1001002",
+      "Name": "Play area 1001002"
+    },
+    {
+      "ID": "プレイ領域 1001003",
+      "Name": "Play area 1001003"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1007",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1007"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1008",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1008"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1010",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1010"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1011",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1011"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1012",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1012"
+    },
+    {
+      "ID": "【GD_エジンバラ城落葉 】_810210_1013",
+      "Name": "【GD_Edinburgh Castle Fallen Leaves】_810210_1013"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1002",
+      "Name": "【GD_Outdoor Fog, Grass, Ash】_810301_1002"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1003",
+      "Name": "GD_Outdoor Fog, Grass, Ash】_810301_1003"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1006",
+      "Name": "GD_Outdoor Fog, Grass, Ash】_810301_1006"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1007",
+      "Name": "【GD_Outdoor Fog, Grass, Ash】_810301_1007"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1008",
+      "Name": "【GD_Outdoor Fog, Grass, Ash】_810301_1008"
+    },
+    {
+      "ID": "【GD_屋外フォグ・草・灰】_810301_1009",
+      "Name": "【GD_Outdoor Fog, Grass, Ash】_810301_1009"
+    },
+    {
+      "ID": "吊り橋_1",
+      "Name": "Suspension bridge_1"
+    },
+    {
+      "ID": "吊り橋_2",
+      "Name": "Suspension bridge_2"
+    },
+    {
+      "ID": "木の葉風_01",
+      "Name": "Leaf Wind_01"
+    },
+    {
+      "ID": "木の葉風_02",
+      "Name": "Leaf Wind_02"
+    },
+    {
+      "ID": "サウンドBGM上書き",
+      "Name": "Overwrite background music sound"
+    },
+    {
+      "ID": "領域 プレイヤー初期位置",
+      "Name": "Area Player starting position"
+    },
+    {
+      "ID": "領域 ワープ位置 エジンバラから",
+      "Name": "Region Warp Location From Edinburgh"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1007",
+      "Name": "【GD_Environmental Wind_Gusts 12-5m】_808003_1007"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1009",
+      "Name": "【GD_Environmental Wind_Gusts 12-5m】_808003_1009"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1010",
+      "Name": "【GD_Environmental Wind_Gusts 12-5m】_808003_1010"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1011",
+      "Name": "【GD_Environmental Wind_Gust 12-5m】_808003_1011"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1012",
+      "Name": "【GD_Environmental Wind_Gusts 12-5m】_808003_1012"
+    },
+    {
+      "ID": "【GD_環境風_突風12-5m】_808003_1013",
+      "Name": "【GD_Environmental Wind_Gusts 12-5m】_808003_1013"
+    }
+  ]
+}

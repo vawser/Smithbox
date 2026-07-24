@@ -1,0 +1,488 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "Params for MSB objects",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "",
+      "Description": "Durability until destruction (-1: indestructible)"
+    },
+    {
+      "Field": "defense",
+      "Name": "",
+      "Description": "Object attack power below this value causes no damage"
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialId",
+      "Name": "",
+      "Description": "Material ID. Treated the same as floor material. When it is -1, the behavior is the same as before."
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSaveBreakState",
+      "Name": "",
+      "Description": "Whether to save the destruction state in save data"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "",
+      "Description": "Will the object break by coming into contact with the player?"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "",
+      "Description": "Will the penetrating bullet hit?"
+    },
+    {
+      "Field": "pad8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "",
+      "Description": "Whether to deflect the attack"
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "",
+      "Description": "Broken at the initial appearance of the player?"
+    },
+    {
+      "Field": "isLadder",
+      "Name": "",
+      "Description": "Is it a ladder?"
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "",
+      "Description": "Whether to stop the animation during the movie"
+    },
+    {
+      "Field": "pad9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "",
+      "Description": "Is it a moving object? "
+    },
+    {
+      "Field": "isRopeBridge",
+      "Name": "",
+      "Description": "Is it a suspension bridge object?"
+    },
+    {
+      "Field": "isAddRigidImpulse_ByDamage",
+      "Name": "",
+      "Description": "Whether the rigid body is blown away by damage"
+    },
+    {
+      "Field": "isBreak_ByChrRide",
+      "Name": "",
+      "Description": "Will it break if a character rides it?"
+    },
+    {
+      "Field": "isBurn",
+      "Name": "",
+      "Description": "Will the object burn?"
+    },
+    {
+      "Field": "isBreakByEnemyCollide",
+      "Name": "",
+      "Description": "Will the object break by coming into contact with Npc's"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "",
+      "Description": "Default LOD parameter ID (-1: None)"
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "",
+      "Description": "SFXID when destroying object (-1: default (810030))"
+    },
+    {
+      "Field": "breakSfxCpId",
+      "Name": "",
+      "Description": "SFX generation position dummy poly ID when object is destroyed (-1: model center, -2: placement position)"
+    },
+    {
+      "Field": "breakBulletBehaviorId",
+      "Name": "",
+      "Description": "Bullet shot when the object breaks"
+    },
+    {
+      "Field": "breakBulletCpId",
+      "Name": "",
+      "Description": "Dummypoly the bullet spawns from (-1: Placement position)"
+    },
+    {
+      "Field": "breakFallHeight",
+      "Name": "",
+      "Description": "Height at which the object breaks when falling (0: it does not break when falling)"
+    },
+    {
+      "Field": "windEffectType_0",
+      "Name": "",
+      "Description": "Wind effect type (before destruction)"
+    },
+    {
+      "Field": "windEffectType_1",
+      "Name": "",
+      "Description": "Wind effect type (before destruction)"
+    },
+    {
+      "Field": "camAvoidType",
+      "Name": "",
+      "Description": "What to do when an object blocks the camera and player"
+    },
+    {
+      "Field": "windEffectRate_0",
+      "Name": "",
+      "Description": "Wind coefficient (before destruction)"
+    },
+    {
+      "Field": "windEffectRate_1",
+      "Name": "",
+      "Description": "Wind coefficient (before destruction)"
+    },
+    {
+      "Field": "breakStopTime",
+      "Name": "",
+      "Description": "Time from when the rigid body is forcibly stopped after being destroyed (0 means no forced stop)"
+    },
+    {
+      "Field": "burnTime",
+      "Name": "",
+      "Description": "Burning time (seconds) (continues burning at 0)"
+    },
+    {
+      "Field": "burnBraekRate",
+      "Name": "",
+      "Description": "Burnup threshold for switching to destructive state"
+    },
+    {
+      "Field": "burnSfxId",
+      "Name": "",
+      "Description": "SFXID during combustion: 0 (-1: No SFX)"
+    },
+    {
+      "Field": "burnSfxId_1",
+      "Name": "",
+      "Description": "SFXID during combustion: 1 (-1: No SFX)"
+    },
+    {
+      "Field": "burnSfxId_2",
+      "Name": "",
+      "Description": "SFXID during combustion: 2 (-1: No SFX)"
+    },
+    {
+      "Field": "burnSfxId_3",
+      "Name": "",
+      "Description": "SFXID during combustion: 3 (-1: No SFX)"
+    },
+    {
+      "Field": "burnBulletBehaviorId",
+      "Name": "",
+      "Description": "Bullet shot while the object is burning"
+    },
+    {
+      "Field": "burnBulletBehaviorId_1",
+      "Name": "",
+      "Description": "Bullet shot while the object is burning"
+    },
+    {
+      "Field": "burnBulletBehaviorId_2",
+      "Name": "",
+      "Description": "Bullet shot while the object is burning"
+    },
+    {
+      "Field": "burnBulletBehaviorId_3",
+      "Name": "",
+      "Description": "Bullet shot while the object is burning"
+    },
+    {
+      "Field": "burnBulletInterval",
+      "Name": "",
+      "Description": "Interval at which fire spread bullets are generated (frames)"
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "",
+      "Description": "Navmesh flag set from object"
+    },
+    {
+      "Field": "collisionType",
+      "Name": "",
+      "Description": "Collision detection type"
+    },
+    {
+      "Field": "burnBulletDelayTime",
+      "Name": "",
+      "Description": "Time to delay fire spread bullet generation (seconds)"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin",
+      "Name": "",
+      "Description": "Minimum SFX generation delay time during combustion for burnSfxId. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_1",
+      "Name": "",
+      "Description": "Minimum SFX generation delay time during combustion for burnSfxId_1. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_2",
+      "Name": "",
+      "Description": "Minimum SFX generation delay time during combustion for burnSfxId_2. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_3",
+      "Name": "",
+      "Description": "Minimum SFX generation delay time during combustion for burnSfxId_3. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax",
+      "Name": "",
+      "Description": "Maximum SFX generation delay time during combustion for burnSfxId. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_1",
+      "Name": "",
+      "Description": "Maximum SFX generation delay time during combustion for burnSfxId_1. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_2",
+      "Name": "",
+      "Description": "Maximum SFX generation delay time during combustion for burnSfxId_2. Randomly determined between start and end time"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_3",
+      "Name": "",
+      "Description": "Maximum SFX generation delay time during combustion for burnSfxId_3. Randomly determined between start and end time"
+    },
+    {
+      "Field": "BreakAiSoundID",
+      "Name": "",
+      "Description": "AI sound ID generated when destroyed"
+    },
+    {
+      "Field": "FragmentInvisibleWaitTime",
+      "Name": "",
+      "Description": "Fragment material ID (-1: Do not hide)"
+    },
+    {
+      "Field": "FragmentInvisibleTime",
+      "Name": "",
+      "Description": "Time to hide fragments (seconds)"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Soft",
+      "Name": "",
+      "Description": "Rigid body soft contact settings Collision point distance coefficient [Soft]"
+    },
+    {
+      "Field": "RigidPenetrationScale_Normal",
+      "Name": "",
+      "Description": "Rigid body soft contact settings Collision point distance coefficient [Normal]"
+    },
+    {
+      "Field": "RigidPenetrationScale_Hard",
+      "Name": "",
+      "Description": "Rigid body soft contact settings Collision point distance factor [Hard]"
+    },
+    {
+      "Field": "LandTouchSfxId",
+      "Name": "",
+      "Description": "SFXID when touching terrain (-1: offset by terrain material)"
+    },
+    {
+      "Field": "isDamageCover",
+      "Name": "",
+      "Description": "Whether or not to pass the damage to the opposite side when receiving damage (0: Pass, 1: Do not pass)"
+    },
+    {
+      "Field": "isUserPhysicForChrCollide",
+      "Name": "",
+      "Description": "After collision destruction, is it possible to perform Havok processing and re-destruction with the same shape?"
+    },
+    {
+      "Field": "paintDecalTargetTextureSize",
+      "Name": "",
+      "Description": "Paint decal target size (0 to 4096, only powers of 2 allowed)"
+    },
+    {
+      "Field": "lifeTime_forDC",
+      "Name": "",
+      "Description": "Time until the dynamically generated Obj disappears after being created (0: does not disappear)"
+    },
+    {
+      "Field": "clothUpdateDist",
+      "Name": "",
+      "Description": "Distance from the camera to update havokCloth (0: Always update)"
+    },
+    {
+      "Field": "contactSeId",
+      "Name": "",
+      "Description": "ID of the SE that plays when touched by the local player you control (-1: does not play)"
+    },
+    {
+      "Field": "breakLandingSfxId",
+      "Name": "",
+      "Description": "Identifier of object material-dependent SFX that plays when it first lands after being destroyed (-1: does not occur)"
+    },
+    {
+      "Field": "extHitSfx_S",
+      "Name": "",
+      "Description": "ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)"
+    },
+    {
+      "Field": "extHitSfx_M",
+      "Name": "",
+      "Description": "ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)"
+    },
+    {
+      "Field": "extHitSfx_L",
+      "Name": "",
+      "Description": "ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)"
+    },
+    {
+      "Field": "extHitSfx_LL",
+      "Name": "",
+      "Description": "ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)"
+    },
+    {
+      "Field": "extHitSfx_LLL",
+      "Name": "",
+      "Description": "ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)"
+    },
+    {
+      "Field": "breakSfxOffsetX",
+      "Name": "",
+      "Description": "Coordinates to offset for 'SFX dummy poly ID at destruction'"
+    },
+    {
+      "Field": "breakSfxOffsetY",
+      "Name": "",
+      "Description": "Coordinates to offset for 'SFX dummy poly ID at destruction'"
+    },
+    {
+      "Field": "breakSfxOffsetZ",
+      "Name": "",
+      "Description": "Coordinates to offset for 'SFX dummy poly ID at destruction'"
+    },
+    {
+      "Field": "isEnableWallJump",
+      "Name": "",
+      "Description": "Can the player wall jump off this object?"
+    },
+    {
+      "Field": "doesStopPlayerDockedMove",
+      "Name": "",
+      "Description": "Whether to stop when it comes into contact with a PC that is docked and moving"
+    },
+    {
+      "Field": "isDisableEnvMapCapture",
+      "Name": "",
+      "Description": "Do not shoot when shooting an environment map"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "autoDrawGroupPassPixel",
+      "Name": "",
+      "Description": "When generating an automatic drawing group, if more than this number of pixels are visible, a drawing group flag will be set. (-1: Default value. Defined in game.properties Draw.AutoDrawGroup.PassPixelNum)"
+    },
+    {
+      "Field": "autoDrawGroupDisableDepthWrite",
+      "Name": "",
+      "Description": "Set it on the door etc."
+    },
+    {
+      "Field": "useExpandVolume",
+      "Name": "",
+      "Description": "Use when you want to widen the visibility judgment in automatic drawing groups. Even though the 'visible judgment' is expanded, the occlusion by this model remains the same"
+    },
+    {
+      "Field": "pad_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpecialEffectId_InsideHit",
+      "Name": "",
+      "Description": "Special effect ID to be applied to the character within the hit. Valid only if the collision detection type is 'No camera, lock, or damage, Only damage, or Only damage, but no bullets.'"
+    },
+    {
+      "Field": "expandVolumeX_plus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +X direction and the expansion distance in the -X direction separately."
+    },
+    {
+      "Field": "expandVolumeX_minus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +X direction and the expansion distance in the -X direction separately."
+    },
+    {
+      "Field": "expandVolumeY_plus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the upward expansion distance and downward expansion distance separately"
+    },
+    {
+      "Field": "expandVolumeY_minus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the upward expansion distance and downward expansion distance separately"
+    },
+    {
+      "Field": "expandVolumeZ_plus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +Z direction and the expansion distance in the -Z direction separately."
+    },
+    {
+      "Field": "expandVolumeZ_minus",
+      "Name": "",
+      "Description": "In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +Z direction and the expansion distance in the -Z direction separately."
+    },
+    {
+      "Field": "camDitherFadeMinDist",
+      "Name": "",
+      "Description": "Camera dither fade minimum distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade."
+    },
+    {
+      "Field": "camDitherFadeMaxDist",
+      "Name": "",
+      "Description": "Maximum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade."
+    },
+    {
+      "Field": "pad_7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

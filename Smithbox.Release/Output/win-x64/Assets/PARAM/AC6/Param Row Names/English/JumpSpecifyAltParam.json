@@ -1,0 +1,215 @@
+{
+  "Name": "JumpSpecifyAltParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Test (can be deleted)"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Open pit mining_00_400"
+      ]
+    },
+    {
+      "ID": 3200011,
+      "Entries": [
+        "Open pit mining_01_400"
+      ]
+    },
+    {
+      "ID": 3200012,
+      "Entries": [
+        "Open pit mining_02_400"
+      ]
+    },
+    {
+      "ID": 3300010,
+      "Entries": [
+        "Fuel base_00_400"
+      ]
+    },
+    {
+      "ID": 3300011,
+      "Entries": [
+        "Fuel base_01_400"
+      ]
+    },
+    {
+      "ID": 3300012,
+      "Entries": [
+        "Fuel base_02_400"
+      ]
+    },
+    {
+      "ID": 3300013,
+      "Entries": [
+        "Fuel base_03_400"
+      ]
+    },
+    {
+      "ID": 3300014,
+      "Entries": [
+        "Fuel base_04_400"
+      ]
+    },
+    {
+      "ID": 3300015,
+      "Entries": [
+        "Fuel base_05_400"
+      ]
+    },
+    {
+      "ID": 3300016,
+      "Entries": [
+        "Fuel base_06_400"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "Imperial base_00_400"
+      ]
+    },
+    {
+      "ID": 3400011,
+      "Entries": [
+        "Imperial base_01_400"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "Mine shaft_00_400"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "big_00_400"
+      ]
+    },
+    {
+      "ID": 10100011,
+      "Entries": [
+        "Big_01_400"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "Rail_00_400"
+      ]
+    },
+    {
+      "ID": 41000011,
+      "Entries": [
+        "Rail_01_400"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "Geofront_00_Jailbreak_400"
+      ]
+    },
+    {
+      "ID": 41100011,
+      "Entries": [
+        "Geofront_01_Jailbreak_400"
+      ]
+    },
+    {
+      "ID": 41100012,
+      "Entries": [
+        "Geofront_02_Jailbreak_400"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Mountain town_00_400"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "Multiple dam_00_400"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "In front of the wall_00_400"
+      ]
+    },
+    {
+      "ID": 50300011,
+      "Entries": [
+        "In front of the wall_01_400"
+      ]
+    },
+    {
+      "ID": 50300012,
+      "Entries": [
+        "In front of the wall_02_400"
+      ]
+    },
+    {
+      "ID": 50300013,
+      "Entries": [
+        "In front of the wall_03_400"
+      ]
+    },
+    {
+      "ID": 50300014,
+      "Entries": [
+        "In front of the wall_04_400"
+      ]
+    },
+    {
+      "ID": 50300015,
+      "Entries": [
+        "In front of the wall_05_400"
+      ]
+    },
+    {
+      "ID": 50500010,
+      "Entries": [
+        "VOB_00_400"
+      ]
+    },
+    {
+      "ID": 50500011,
+      "Entries": [
+        "VOB_01_400"
+      ]
+    },
+    {
+      "ID": 99991001,
+      "Entries": [
+        "Behavior test_altitude 400"
+      ]
+    },
+    {
+      "ID": 99991002,
+      "Entries": [
+        "Behavior test_altitude 300"
+      ]
+    },
+    {
+      "ID": 99991003,
+      "Entries": [
+        "Behavior test_altitude 200"
+      ]
+    }
+  ]
+}

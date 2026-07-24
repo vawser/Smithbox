@@ -1,0 +1,43 @@
+{
+  "Param": "GRASS_LOD_RANGE_PARAM_ST",
+  "Type": "GRASS_LOD_RANGE_PARAM_ST",
+  "Name": "GRASS_LOD_RANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "LOD0_range",
+      "Name": "LOD0 - 距離",
+      "Description": ""
+    },
+    {
+      "Field": "LOD0_play",
+      "Name": "LOD0 - 遊び",
+      "Description": ""
+    },
+    {
+      "Field": "LOD1_range",
+      "Name": "LOD１ - 距離",
+      "Description": ""
+    },
+    {
+      "Field": "LOD1_play",
+      "Name": "LOD１ - 遊び",
+      "Description": ""
+    },
+    {
+      "Field": "LOD2_range",
+      "Name": "LOD２ - 距離",
+      "Description": ""
+    },
+    {
+      "Field": "LOD2_play",
+      "Name": "LOD２ - 遊び",
+      "Description": ""
+    },
+    {
+      "Field": "shadow_range",
+      "Name": "影描画距離",
+      "Description": ""
+    }
+  ]
+}

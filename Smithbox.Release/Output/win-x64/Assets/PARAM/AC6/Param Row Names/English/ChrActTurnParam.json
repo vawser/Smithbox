@@ -1,0 +1,1553 @@
+{
+  "Name": "ChrActTurnParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "AC - Normal"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "AC - normal turn before firing"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "AC - When dashing"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "AC - Fast dash"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "AC - when boosted"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "AC - Boost during stealth"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "AC - Turn before firing when boosting"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "AC - when braking"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "AC - when moving in the air"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "AC - Turn before firing when moving in the air"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "AC - Boost turning"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "AC - Air boost turning"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "AC - 180 degree turn when turning boost"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "AC - 180 degree turn during air boost turning"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "AC - When moving to Breho"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "AC - When moving in mid-air Breho"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "AC - when cover is reversed"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "AC - large quick boost"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "AC - QB time"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "AC - When kicking against a wall"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "AC_Quadrupod - Normal time"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "AC_quadruped - when dashing"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "AC_Quadruped - During high speed dash"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "AC_quadruped - when boosted"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "AC_quadruped - when braking"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "AC_Quadruped - When moving in the air"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "AC_quadruped - when turning boost"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "AC_Quadruped - When turning with air boost"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "AC_Quadruped - Boost turning_180 degree turn"
+      ]
+    },
+    {
+      "ID": 1065,
+      "Entries": [
+        "AC_Quadruped - Air boost turning_180 degree turn"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "AC_Quadruped - When moving Breho"
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        "AC_Quadruped - When moving in mid-air Breho"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "AC_quadruped - when cover is reversed"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "AC_quadruped - at large quick boost"
+      ]
+    },
+    {
+      "ID": 1095,
+      "Entries": [
+        "AC Quadruped - QB"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "AC_Tank - Normal time"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "AC_Tank - Turn before firing normally"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "AC_Tank - When dashing"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "AC_Tank - During high speed dash"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "AC_Tank - When boosted"
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        "AC_Tank - Turn before firing when boosting"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "AC_tank - during braking"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "AC_Tank - When moving in the air"
+      ]
+    },
+    {
+      "ID": 3049,
+      "Entries": [
+        "AC_Tank - Turn before firing when moving in the air"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "AC_Tank - When turning boost"
+      ]
+    },
+    {
+      "ID": 3055,
+      "Entries": [
+        "AC_Tank - Air boost turning"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "AC_Tank - Boost turning_180 degree turn"
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        "AC_Tank - Air boost turning_180 degree turn"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "AC_Tank - When moving Breho"
+      ]
+    },
+    {
+      "ID": 3075,
+      "Entries": [
+        "AC_Tank - When moving in mid-air Breho"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "AC_Tank - When cover is reversed"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "AC_Tank - Large quick boost"
+      ]
+    },
+    {
+      "ID": 3095,
+      "Entries": [
+        "AC Tank - At QB"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "AC_Tank - Drift"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "AC - Turn at QB start"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "AC - Quadruped_QB movement"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "AC - Reverse joint charging attack_charging stage"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "AC - Reverse joint charge attack_stepping"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Bi-pedal Leg Part"
+      ]
+    },
+    {
+      "ID": 10000001,
+      "Entries": [
+        "Bipod_Basic - Normal time_Cannot rotate"
+      ]
+    },
+    {
+      "ID": 10000009,
+      "Entries": [
+        "Bipod_Basic - Normal time_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Bipod_Basics - Walking/running"
+      ]
+    },
+    {
+      "ID": 10000015,
+      "Entries": [
+        "Bipod_Basic - Asabu time"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Bipod_Basics - Boost running/braking"
+      ]
+    },
+    {
+      "ID": 10000021,
+      "Entries": [
+        "Bipod_Basic - Boost running/Brake_Turning not possible"
+      ]
+    },
+    {
+      "ID": 10000029,
+      "Entries": [
+        "Bipod_Basics - Boost running/Brake_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "Bipod_Basics - Slope sliding"
+      ]
+    },
+    {
+      "ID": 10000031,
+      "Entries": [
+        "Bipod_Basic - Slope sliding_Cannot turn"
+      ]
+    },
+    {
+      "ID": 10000039,
+      "Entries": [
+        "Bipod_Basics - Slope sliding_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "Bipod_Basics - General aerial movement"
+      ]
+    },
+    {
+      "ID": 10000041,
+      "Entries": [
+        "Bipod_Basics - General aerial movement_Turning not possible"
+      ]
+    },
+    {
+      "ID": 10000049,
+      "Entries": [
+        "Bipod_Basics - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "Bipod_Basics - Quick turn rotation_Basics"
+      ]
+    },
+    {
+      "ID": 10000051,
+      "Entries": [
+        "Bipod_Basics - Quick turn turning_Asab start"
+      ]
+    },
+    {
+      "ID": 10000052,
+      "Entries": [
+        "Bipod_Basics - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 10000080,
+      "Entries": [
+        "Bipod_Basic - Whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 10000090,
+      "Entries": [
+        "Bipod_Basic - Cannot rotate"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Bipod_Lightweight - Normal time"
+      ]
+    },
+    {
+      "ID": 10100001,
+      "Entries": [
+        "Bipod_Lightweight - Normal time_Cannot rotate"
+      ]
+    },
+    {
+      "ID": 10100009,
+      "Entries": [
+        "Bipod_Lightweight - Normal time_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Bipod_lightweight - when walking/running"
+      ]
+    },
+    {
+      "ID": 10100015,
+      "Entries": [
+        "Bipod_Basic - Asabu time"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Bipod_lightweight - boost running/braking"
+      ]
+    },
+    {
+      "ID": 10100021,
+      "Entries": [
+        "Bipod_Lightweight - Boost running/Brake_Cannot turn"
+      ]
+    },
+    {
+      "ID": 10100029,
+      "Entries": [
+        "Bipod_lightweight - boost running/brake_rapid turning"
+      ]
+    },
+    {
+      "ID": 10100030,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding"
+      ]
+    },
+    {
+      "ID": 10100031,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding_Cannot turn"
+      ]
+    },
+    {
+      "ID": 10100039,
+      "Entries": [
+        "Bipod_Lightweight - Slope sliding_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10100040,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement"
+      ]
+    },
+    {
+      "ID": 10100041,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement_Cannot turn"
+      ]
+    },
+    {
+      "ID": 10100049,
+      "Entries": [
+        "Bipod_Lightweight - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10100050,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn rotation_Basics"
+      ]
+    },
+    {
+      "ID": 10100051,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn turning_Asab start"
+      ]
+    },
+    {
+      "ID": 10100052,
+      "Entries": [
+        "Bipod_Lightweight - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 10100080,
+      "Entries": [
+        "Bipod_Lightweight - Whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 10100090,
+      "Entries": [
+        "Bipod_lightweight - cannot rotate"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Bipod_Weight - Normal"
+      ]
+    },
+    {
+      "ID": 10200001,
+      "Entries": [
+        "Bipod_Weight - Normal time_Cannot rotate"
+      ]
+    },
+    {
+      "ID": 10200009,
+      "Entries": [
+        "Bipod_Weight - Normal time_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "Bipod_Weight - Walking/running"
+      ]
+    },
+    {
+      "ID": 10200015,
+      "Entries": [
+        "Bipod_Basic - Asabu time"
+      ]
+    },
+    {
+      "ID": 10200020,
+      "Entries": [
+        "Bipod_Weight - Boost travel/brake"
+      ]
+    },
+    {
+      "ID": 10200021,
+      "Entries": [
+        "Bipod_weight - boost running/brake_unable to turn"
+      ]
+    },
+    {
+      "ID": 10200029,
+      "Entries": [
+        "Bipod_weight - boost running/brake_rapid turning"
+      ]
+    },
+    {
+      "ID": 10200030,
+      "Entries": [
+        "Bipod_weight - Slope sliding"
+      ]
+    },
+    {
+      "ID": 10200031,
+      "Entries": [
+        "Bipod_weight - Slope slipping_unable to turn"
+      ]
+    },
+    {
+      "ID": 10200039,
+      "Entries": [
+        "Bipod_weight - Slope sliding_rapid turning"
+      ]
+    },
+    {
+      "ID": 10200040,
+      "Entries": [
+        "Bipod_weight - General aerial movement"
+      ]
+    },
+    {
+      "ID": 10200041,
+      "Entries": [
+        "Bipod_weight - General aerial movement_no turning"
+      ]
+    },
+    {
+      "ID": 10200049,
+      "Entries": [
+        "Bipod_Weight - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 10200050,
+      "Entries": [
+        "Bipod_Weight - Quick turn rotation_Basics"
+      ]
+    },
+    {
+      "ID": 10200051,
+      "Entries": [
+        "Bipod_weight - Quick turn turning_assab start"
+      ]
+    },
+    {
+      "ID": 10200052,
+      "Entries": [
+        "Bipod_weight - quick turn rotation_camera QT"
+      ]
+    },
+    {
+      "ID": 10200080,
+      "Entries": [
+        "Bipod_weight - Whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 10200090,
+      "Entries": [
+        "Bipod_weight - cannot rotate"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Reverse Joint Leg Part"
+      ]
+    },
+    {
+      "ID": 11000001,
+      "Entries": [
+        "Reverse joint_basic - Normal time_unable to rotate"
+      ]
+    },
+    {
+      "ID": 11000009,
+      "Entries": [
+        "Reverse joint_Basics - Normal time_Rapid turning"
+      ]
+    },
+    {
+      "ID": 11000010,
+      "Entries": [
+        "Reverse joint_basics - Walking/running"
+      ]
+    },
+    {
+      "ID": 11000015,
+      "Entries": [
+        "Reverse joint_basics - Asabu time"
+      ]
+    },
+    {
+      "ID": 11000020,
+      "Entries": [
+        "Reverse joint_basics - boost driving/braking"
+      ]
+    },
+    {
+      "ID": 11000021,
+      "Entries": [
+        "Reverse joint_basics - boost running/brake_turning not possible"
+      ]
+    },
+    {
+      "ID": 11000029,
+      "Entries": [
+        "Reverse joint_basics - boost driving/brake_rapid turning"
+      ]
+    },
+    {
+      "ID": 11000030,
+      "Entries": [
+        "Reverse joint_basics - slope sliding"
+      ]
+    },
+    {
+      "ID": 11000031,
+      "Entries": [
+        "Reverse joint_basics - Slope sliding_unable to turn"
+      ]
+    },
+    {
+      "ID": 11000039,
+      "Entries": [
+        "Reverse joint_basics - Slope sliding_rapid turning"
+      ]
+    },
+    {
+      "ID": 11000040,
+      "Entries": [
+        "Reverse joint_basics - General aerial movement"
+      ]
+    },
+    {
+      "ID": 11000041,
+      "Entries": [
+        "Reverse joints_Basics - General aerial movement_No turning possible"
+      ]
+    },
+    {
+      "ID": 11000049,
+      "Entries": [
+        "Reverse joint_Basics - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 11000050,
+      "Entries": [
+        "Reverse joint_basics - Quick turn rotation_basics"
+      ]
+    },
+    {
+      "ID": 11000051,
+      "Entries": [
+        "Reverse joint_basics - quick turn rotation_assab start"
+      ]
+    },
+    {
+      "ID": 11000052,
+      "Entries": [
+        "Reverse joint_Basics - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 11000080,
+      "Entries": [
+        "Reverse joint_basics - whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 11000090,
+      "Entries": [
+        "Reverse joint_basics - cannot rotate"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Tetrapod Leg Part"
+      ]
+    },
+    {
+      "ID": 12000001,
+      "Entries": [
+        "Quadruped_Basic - Normal time_Cannot turn"
+      ]
+    },
+    {
+      "ID": 12000009,
+      "Entries": [
+        "Quadruped_Basics - Normal_Rapid turning"
+      ]
+    },
+    {
+      "ID": 12000010,
+      "Entries": [
+        "Quadruped_Basics - Walking/running"
+      ]
+    },
+    {
+      "ID": 12000015,
+      "Entries": [
+        "Quadruped_Basic - Asabu time"
+      ]
+    },
+    {
+      "ID": 12000020,
+      "Entries": [
+        "Quadruped_Basics - Boost running/braking"
+      ]
+    },
+    {
+      "ID": 12000021,
+      "Entries": [
+        "Quadruped_Basic - Boost running/Brake_Turning not possible"
+      ]
+    },
+    {
+      "ID": 12000029,
+      "Entries": [
+        "Quadruped_Basics - Boost running/Brake_Rapid turning"
+      ]
+    },
+    {
+      "ID": 12000030,
+      "Entries": [
+        "Quadruped_Basics - Slope sliding"
+      ]
+    },
+    {
+      "ID": 12000031,
+      "Entries": [
+        "Quadruped_Basic - Slope sliding_Cannot turn"
+      ]
+    },
+    {
+      "ID": 12000039,
+      "Entries": [
+        "Quadruped_Basics - Slope sliding_Rapid turning"
+      ]
+    },
+    {
+      "ID": 12000040,
+      "Entries": [
+        "Quadruped_Basics - General aerial movement"
+      ]
+    },
+    {
+      "ID": 12000041,
+      "Entries": [
+        "Quadrupeds_Basics - General aerial movement_No turning possible"
+      ]
+    },
+    {
+      "ID": 12000049,
+      "Entries": [
+        "Quadruped_Basics - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 12000050,
+      "Entries": [
+        "Quadruped_Basics - Quick Turn Rotation_Basics"
+      ]
+    },
+    {
+      "ID": 12000051,
+      "Entries": [
+        "Quadruped_Basic - Quick turn rotation_Assab start"
+      ]
+    },
+    {
+      "ID": 12000052,
+      "Entries": [
+        "Quadruped_Basics - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 12000053,
+      "Entries": [
+        "Quadruped_Basics - Quick turn turning_Spot turning"
+      ]
+    },
+    {
+      "ID": 12000080,
+      "Entries": [
+        "Quadruped_Basic - Whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 12000090,
+      "Entries": [
+        "Quadruped_Basic - Cannot rotate"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Tank Leg Part: LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 13000001,
+      "Entries": [
+        "Tank_Basic - Normal time_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13000009,
+      "Entries": [
+        "Tank_Basics-Normal_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13000010,
+      "Entries": [
+        "Tank_Basics - Walking/running"
+      ]
+    },
+    {
+      "ID": 13000011,
+      "Entries": [
+        "Tank_Basics - Boost driving_Turning not possible"
+      ]
+    },
+    {
+      "ID": 13000015,
+      "Entries": [
+        "Tank_Basic - Asabu time"
+      ]
+    },
+    {
+      "ID": 13000019,
+      "Entries": [
+        "Tank_Basics - Boost driving_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13000020,
+      "Entries": [
+        "Tank_Basics - Boost driving"
+      ]
+    },
+    {
+      "ID": 13000021,
+      "Entries": [
+        "Tank_Basics - Boost driving_Turning not possible"
+      ]
+    },
+    {
+      "ID": 13000029,
+      "Entries": [
+        "Tank_Basics - Boost driving_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13000040,
+      "Entries": [
+        "Tank_Basics - General aerial movement"
+      ]
+    },
+    {
+      "ID": 13000041,
+      "Entries": [
+        "Tank_Basics - General aerial movement_No turning possible"
+      ]
+    },
+    {
+      "ID": 13000049,
+      "Entries": [
+        "Tank_Basics - General air movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13000050,
+      "Entries": [
+        "Tank_Basics - Quick turn rotation_Basics"
+      ]
+    },
+    {
+      "ID": 13000051,
+      "Entries": [
+        "Tank_Basics - Quick turn turning_Asab start"
+      ]
+    },
+    {
+      "ID": 13000052,
+      "Entries": [
+        "Tank_Basics - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 13000053,
+      "Entries": [
+        "Tank_Basics - Quick turn turning_Turning on the spot"
+      ]
+    },
+    {
+      "ID": 13000080,
+      "Entries": [
+        "Tank_Basics - Whole body attack turning brake"
+      ]
+    },
+    {
+      "ID": 13000090,
+      "Entries": [
+        "Tank_Basic - Cannot turn"
+      ]
+    },
+    {
+      "ID": 13000100,
+      "Entries": [
+        "Tank_Basics - Drift"
+      ]
+    },
+    {
+      "ID": 13000101,
+      "Entries": [
+        "Tank_Basic - Drift_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13000109,
+      "Entries": [
+        "Tank_Basics - Drift_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "Tank Leg Part: VE-42B"
+      ]
+    },
+    {
+      "ID": 13100001,
+      "Entries": [
+        "Tank_Hover - Normal time_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13100009,
+      "Entries": [
+        "Tank_Hover - Normal_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13100010,
+      "Entries": [
+        "Tank_Hover - When walking/running"
+      ]
+    },
+    {
+      "ID": 13100011,
+      "Entries": [
+        "Tank_Hover - Boost running_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13100015,
+      "Entries": [
+        "Tank_Hover - Asabu time"
+      ]
+    },
+    {
+      "ID": 13100019,
+      "Entries": [
+        "Tank_Hover - Boost driving_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13100020,
+      "Entries": [
+        "Tank_Hover - Boost driving"
+      ]
+    },
+    {
+      "ID": 13100021,
+      "Entries": [
+        "Tank_Hover - Boost running_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13100029,
+      "Entries": [
+        "Tank_Hover - Boost driving_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13100040,
+      "Entries": [
+        "Tank_Hover - General aerial movement"
+      ]
+    },
+    {
+      "ID": 13100041,
+      "Entries": [
+        "Tank_Hover - General aerial movement_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13100049,
+      "Entries": [
+        "Tank_Hover - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13100050,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Basics"
+      ]
+    },
+    {
+      "ID": 13100051,
+      "Entries": [
+        "Tank_Hover - Quick turn rotation_Asab start"
+      ]
+    },
+    {
+      "ID": 13100052,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Camera QT"
+      ]
+    },
+    {
+      "ID": 13100053,
+      "Entries": [
+        "Tank_Hover - Quick Turn Turn_Turn on the spot"
+      ]
+    },
+    {
+      "ID": 13100080,
+      "Entries": [
+        "Tank_Hover - Full body attack turning brake"
+      ]
+    },
+    {
+      "ID": 13100090,
+      "Entries": [
+        "Tank_Hover - Cannot rotate"
+      ]
+    },
+    {
+      "ID": 13100100,
+      "Entries": [
+        "Tank_Hover - Drift"
+      ]
+    },
+    {
+      "ID": 13100101,
+      "Entries": [
+        "Tank_Hover - Drift_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13100109,
+      "Entries": [
+        "Tank_Hover - Drift_Rapid Turn"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "Tank Leg Part: EL-TL-11 FORTALEZA"
+      ]
+    },
+    {
+      "ID": 13200001,
+      "Entries": [
+        "Tank_Wheelchair - Normal time_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13200009,
+      "Entries": [
+        "Tank_Wheelchair - Normal time_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13200010,
+      "Entries": [
+        "Tank_Wheelchair - Walking/running"
+      ]
+    },
+    {
+      "ID": 13200011,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13200015,
+      "Entries": [
+        "Tank_Wheelchair - At Asab"
+      ]
+    },
+    {
+      "ID": 13200019,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13200020,
+      "Entries": [
+        "Tank_Wheelchair - Boost running"
+      ]
+    },
+    {
+      "ID": 13200021,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13200029,
+      "Entries": [
+        "Tank_Wheelchair - Boost running_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13200040,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement"
+      ]
+    },
+    {
+      "ID": 13200041,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13200049,
+      "Entries": [
+        "Tank_Wheelchair - General aerial movement_Rapid turning"
+      ]
+    },
+    {
+      "ID": 13200050,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Basics"
+      ]
+    },
+    {
+      "ID": 13200051,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Asab start"
+      ]
+    },
+    {
+      "ID": 13200052,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 13200053,
+      "Entries": [
+        "Tank_Wheelchair - Quick turn turning_Turning on the spot"
+      ]
+    },
+    {
+      "ID": 13200080,
+      "Entries": [
+        "Tank_Wheelchair - Full body attack turning brake"
+      ]
+    },
+    {
+      "ID": 13200090,
+      "Entries": [
+        "Tank_Wheelchair - cannot turn"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "Tank_Wheelchair - Drift"
+      ]
+    },
+    {
+      "ID": 13200101,
+      "Entries": [
+        "Tank_Wheelchair - Drift_Cannot turn"
+      ]
+    },
+    {
+      "ID": 13200109,
+      "Entries": [
+        "Tank_Wheelchair - Drift_Rapid turning"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Common legs - Rapid turning_Normal"
+      ]
+    },
+    {
+      "ID": 19000010,
+      "Entries": [
+        "Common legs - rapid turning_boost driving"
+      ]
+    },
+    {
+      "ID": 19000020,
+      "Entries": [
+        "Common legs - Rapid turning_boost running/braking"
+      ]
+    },
+    {
+      "ID": 19000030,
+      "Entries": [
+        "Common legs - rapid turning_slope sliding"
+      ]
+    },
+    {
+      "ID": 19000040,
+      "Entries": [
+        "Common legs - Rapid turning_Aerial movement in general"
+      ]
+    },
+    {
+      "ID": 19000050,
+      "Entries": [
+        "Common legs - Rapid turning_Quick turn turning"
+      ]
+    },
+    {
+      "ID": 19000052,
+      "Entries": [
+        "Common legs - Rapid turning_Quick turn turning (Camera QT)"
+      ]
+    },
+    {
+      "ID": 19000100,
+      "Entries": [
+        "Common legs - rapid turning_drift"
+      ]
+    },
+    {
+      "ID": 20000080,
+      "Entries": [
+        "Common to tanks - Brejo turning ①"
+      ]
+    },
+    {
+      "ID": 20000081,
+      "Entries": [
+        "Common to tanks - Brejo turning ②"
+      ]
+    },
+    {
+      "ID": 20000082,
+      "Entries": [
+        "Common to tanks - Brejo turning ③"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Hand weapon_Buzz type - Stance_Normal (walking/running)"
+      ]
+    },
+    {
+      "ID": 20400015,
+      "Entries": [
+        "Hand weapon_buzz type - stance_assab"
+      ]
+    },
+    {
+      "ID": 20400020,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Boost Travel/Brake"
+      ]
+    },
+    {
+      "ID": 20400030,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Slope Slip"
+      ]
+    },
+    {
+      "ID": 20400040,
+      "Entries": [
+        "Hand weapons_Buzz type - Stance_Aerial movement in general"
+      ]
+    },
+    {
+      "ID": 20400050,
+      "Entries": [
+        "Hand Weapon_Buzz Type - Stance_Quick Turn Rotation_Basic"
+      ]
+    },
+    {
+      "ID": 20400052,
+      "Entries": [
+        "Hand weapon_Buzz type - Stance_Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 20400080,
+      "Entries": [
+        "Hand weapon_Buzz type - stance_Full body attack"
+      ]
+    },
+    {
+      "ID": 20400090,
+      "Entries": [
+        "Hand weapon_buzz type - Stance_unable to turn"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "Hand Weapon_Gray-Stance_Normal (Walking/Running)"
+      ]
+    },
+    {
+      "ID": 20600015,
+      "Entries": [
+        "Hand weapon_Gre type - Stance_Assab"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "Hand Weapon_Gray Series - Stance_Boost Travel/Brake"
+      ]
+    },
+    {
+      "ID": 20600030,
+      "Entries": [
+        "Hand Weapon_Gray-Stance_Slope Slip"
+      ]
+    },
+    {
+      "ID": 20600040,
+      "Entries": [
+        "Hand Weapon_Gre type - Stance_Aerial movement in general"
+      ]
+    },
+    {
+      "ID": 20600050,
+      "Entries": [
+        "Hand Weapon_Gre type - Stance_Quick Turn Rotation_Basic"
+      ]
+    },
+    {
+      "ID": 20600052,
+      "Entries": [
+        "Hand Weapon_Gray Series - Stance_Quick Turn Rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 20600080,
+      "Entries": [
+        "Hand weapon_Gre type - Stance_Full body attack"
+      ]
+    },
+    {
+      "ID": 20600090,
+      "Entries": [
+        "Hand weapon_Gray type - Stance_Cannot turn"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Normal (walking/running)"
+      ]
+    },
+    {
+      "ID": 30100015,
+      "Entries": [
+        "Shoulder weapon_live ammunition (buzz, gray) type - stance_assab"
+      ]
+    },
+    {
+      "ID": 30100020,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Boost running/brake"
+      ]
+    },
+    {
+      "ID": 30100030,
+      "Entries": [
+        "Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Slope Slip"
+      ]
+    },
+    {
+      "ID": 30100040,
+      "Entries": [
+        "Shoulder weapons_Live bullets (buzz, gray) - Stance_Aerial movement in general"
+      ]
+    },
+    {
+      "ID": 30100050,
+      "Entries": [
+        "Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Quick Turn Rotation_Basics"
+      ]
+    },
+    {
+      "ID": 30100052,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Quick turn rotation_Camera QT"
+      ]
+    },
+    {
+      "ID": 30100080,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Full body attack"
+      ]
+    },
+    {
+      "ID": 30100090,
+      "Entries": [
+        "Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Cannot turn"
+      ]
+    }
+  ]
+}

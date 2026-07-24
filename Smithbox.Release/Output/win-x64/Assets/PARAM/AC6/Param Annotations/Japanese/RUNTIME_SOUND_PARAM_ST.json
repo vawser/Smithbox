@@ -1,0 +1,103 @@
+{
+  "Param": "RUNTIME_SOUND_PARAM_ST",
+  "Type": "RUNTIME_SOUND_PARAM_ST",
+  "Name": "RUNTIME_SOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "ConditionID",
+      "Name": "条件ID",
+      "Description": "条件の識別用ID"
+    },
+    {
+      "Field": "SoundPlayer",
+      "Name": "再生タイプ",
+      "Description": "再生タイプ"
+    },
+    {
+      "Field": "SlotNo",
+      "Name": "再生スロット番号",
+      "Description": "再生スロット番号"
+    },
+    {
+      "Field": "SeID",
+      "Name": "SeID",
+      "Description": "再生するSeID"
+    },
+    {
+      "Field": "AttachDmypolyID",
+      "Name": "アタッチダミポリID",
+      "Description": "Se再生時にアタッチするダミポリID"
+    },
+    {
+      "Field": "RTPC01_ID",
+      "Name": "RTPC【1】のID",
+      "Description": "RTPC【1】のID"
+    },
+    {
+      "Field": "RTPC01_Value",
+      "Name": "RTPC【1】設定する値",
+      "Description": "RTPC【1】設定する値"
+    },
+    {
+      "Field": "IsApplyEnemyFriendPlayer",
+      "Name": "敵・味方ACにも反映させる",
+      "Description": "敵・味方ACにも反映するか。ＰＣ用のパラメータ専用のものです。NPC用は無視されます。"
+    },
+    {
+      "Field": "dmy1Bit",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "dmy1",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "soundType",
+      "Name": "サウンドタイプ",
+      "Description": "通常イベントかダイナミックダイアログかなどを指定します。"
+    },
+    {
+      "Field": "RTPC01_ValueChangeDuration",
+      "Name": "RTPC【1】指定した値になるまでの時間[ms]",
+      "Description": "RTPC【1】指定した値になるまでの時間[ms]"
+    },
+    {
+      "Field": "PlayInterval",
+      "Name": "再生インターバル[ms]",
+      "Description": "再生インターバル[ms]"
+    },
+    {
+      "Field": "SeID_OtherPlayer",
+      "Name": "SeID（自機以外）",
+      "Description": "時期以外に適用されるSeID"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

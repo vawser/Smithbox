@@ -1,0 +1,197 @@
+{
+  "Name": "SmallBaseAndSpotDefine",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Encounter Setup: Ruins"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Encounter Setup: Ruins"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Encounter Setup: Ruins"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Encounter Setup: Basement"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Encounter Setup: Field Boss"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Encounter Setup: Field Boss"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Encounter Setup: Field Boss"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Encounter Setup: Night Horde"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Encounter Setup: Night Boss - Day 1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Encounter Setup: Night Boss - Day 2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Encounter Setup: Great Church"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Encounter Setup: Fort"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Encounter Setup: Great Church"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Encounter Setup: Castle"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Encounter Setup: Field Boss"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Encounter Setup: Sorcerer's Rise"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Encounter Setup: Church"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Encounter Setup: Maris"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Encounter Setup: Small Camp"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Encounter Setup: Township"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Encounter Setup: Small Camp Caravans"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Encounter Setup: Ruined Sorcerer's Rise"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Encounter Setup: Fell Omen"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Encounter Setup: Small Camp"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Encounter Setup: Evergaol"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Encounter Setup: Rotted Church"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Encounter Setup: Rotted Samll Camp"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Encounter Setup: Gnoster"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Encounter Setup: Libra"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Encounter Setup: Libra (Deal)"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Encounter Setup: Evergaol"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Encounter Setup: Church"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "Param": "WEAPON_STAMINA_COST_PARAM",
+  "Type": "WEAPON_STAMINA_COST_PARAM",
+  "Name": "WEAPON_STAMINA_COST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Nnormal1st1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal2nd1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong1st1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 強1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong2nd1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 強2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dash1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 ダッシュ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rolling1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 ローリング [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "step1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 ステップ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "down1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 ダウン [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fall1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 落下 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jump1H",
+      "Name": "攻撃消費スタミナ 倍率 片手 ジャンプ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal1st2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal2nd2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong1st2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 強1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong2nd2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 強2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dash2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 ダッシュ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rolling2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 ローリング [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "step2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 ステップ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "down2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 ダウン [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fall2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 落下 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jump2H",
+      "Name": "攻撃消費スタミナ 倍率 両手 ジャンプ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal1stDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal2ndDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong1stDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 強1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong2ndDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 強2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dashDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 ダッシュ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 ローリング [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "stepDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 ステップ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "downDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 ダウン [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fallDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 落下 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpDual1H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流 ジャンプ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal1stDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal2ndDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong1stDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 強1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong2ndDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 強2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dashDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ダッシュ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ローリング [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "stepDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ステップ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "downDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ダウン [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fallDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 落下 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpDual2H",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ジャンプ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal1stLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "normal2ndLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong1stLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 強1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "strong2ndLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 強2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dashLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 ダッシュ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 ローリング [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "stepLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 ステップ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "downLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 ダウン [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fallLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 落下 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpLeft",
+      "Name": "攻撃消費スタミナ 倍率 左手 ジャンプ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandOppositeNormal",
+      "Name": "攻撃消費スタミナ 倍率 両手逆腕 弱 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandOppositeStrong",
+      "Name": "攻撃消費スタミナ 倍率 両手逆腕 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandOppositeNormal1st",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 弱1 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandOppositeNormal2nd",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 弱2 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandOppositeStrong",
+      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreak1Hand",
+      "Name": "攻撃消費スタミナ 倍率 片手 ガード崩し [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreak2Hand",
+      "Name": "攻撃消費スタミナ 倍率 両手 ガード崩し [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardNormal1st",
+      "Name": "攻撃消費スタミナ 倍率 ガード構え 弱1段目 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardNormal2nd",
+      "Name": "攻撃消費スタミナ 倍率 ガード構え 弱2段目 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardStrong1st",
+      "Name": "攻撃消費スタミナ 倍率 ガード構え 強1段目 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardStrong2nd",
+      "Name": "攻撃消費スタミナ 倍率 ガード構え 強2段目 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "parryBreakStab",
+      "Name": "攻撃消費スタミナ 倍率 パリィブレイクスタブ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStab",
+      "Name": "攻撃消費スタミナ 倍率 ガードブレイクスタブ [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "backStab",
+      "Name": "攻撃消費スタミナ 倍率 バックスタブ [倍]",
+      "Description": ""
+    }
+  ]
+}

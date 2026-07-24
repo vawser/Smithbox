@@ -1,0 +1,48 @@
+{
+  "Param": "LOD_PLATFORM_ST",
+  "Type": "LOD_PLATFORM_ST",
+  "Name": "LOD_PLATFORM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist_Scale",
+      "Name": "LODレベル0-1境界距離_倍率",
+      "Description": "LODパラメータの「LODレベル0-1境界距離」に対して倍率を掛けた結果を反映します。"
+    },
+    {
+      "Field": "lv12_BorderDist_Scale",
+      "Name": "LODレベル1-2境界距離_倍率",
+      "Description": "LODパラメータの「LODレベル1-2境界距離」に対して倍率を掛けた結果を反映します。"
+    },
+    {
+      "Field": "textureLod_Overwrite",
+      "Name": "テクスチャLOD_上書き",
+      "Description": "LODパラメータの「テクスチャLOD」の内容を上書きした結果を反映します。"
+    },
+    {
+      "Field": "dummy1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "draw_BorderDist_Scale",
+      "Name": "描画境界距離_倍率",
+      "Description": "LODパラメータの「描画境界距離」に対して倍率を掛けた結果を反映します。"
+    },
+    {
+      "Field": "shadowDraw_BorderDist_Scale",
+      "Name": "影描画境界距離_倍率",
+      "Description": "LODパラメータの「影描画境界距離」に対して倍率を掛けた結果を反映します。"
+    },
+    {
+      "Field": "motionBlur_BorderDist_Scale",
+      "Name": "モーションブラー描画境界距離_倍率",
+      "Description": "LODパラメータの「モーションブラー描画境界距離」に対して倍率を掛けた結果を反映します。"
+    },
+    {
+      "Field": "dummy2",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Name": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseWepId",
+      "Name": "武器ベースID",
+      "Description": "武器ベースID"
+    },
+    {
+      "Field": "gemId",
+      "Name": "魔石ID",
+      "Description": "魔石ID"
+    },
+    {
+      "Field": "reinforceLv",
+      "Name": "強化値",
+      "Description": "強化値"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": "pad"
+    }
+  ]
+}

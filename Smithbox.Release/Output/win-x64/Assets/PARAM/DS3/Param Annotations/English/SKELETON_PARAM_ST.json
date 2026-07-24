@@ -1,0 +1,138 @@
+{
+  "Param": "SKELETON_PARAM_ST",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SKELETON_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "neckTurnGain",
+      "Name": "Neck Turn Gain",
+      "Description": ""
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "Original Ground Height MS",
+      "Description": ""
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "Min Ankle Height MS",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "Max Ankle Height MS",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "Max Knee Angle (Cosine)",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "Min Knee Angle (Cosine)",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "Foot Planted Ankle Height MS",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "Foot Raised Ankle Height",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "Raycast Distance: Up",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "Raycast Distance: Down",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "Foot End LS: X",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "Foot End LS: Y",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "Foot End LS: Z",
+      "Description": ""
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "On/Off Gain",
+      "Description": ""
+    },
+    {
+      "Field": "groundAcsendingGain",
+      "Name": "Ground Ascending Gain",
+      "Description": ""
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "Ground Descending Gain",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "Foot Raised Gain",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "Foot Planted Gain",
+      "Description": ""
+    },
+    {
+      "Field": "footUnlockGain",
+      "Name": "Foot Unlock Gain",
+      "Description": ""
+    },
+    {
+      "Field": "kneeAxisType",
+      "Name": "Knee Axis Type",
+      "Description": ""
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "Use Foot Locking",
+      "Description": ""
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "Use Foot Placement",
+      "Description": ""
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "Twist Knee Axis Type",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnPriority",
+      "Name": "Neck Turn Priority",
+      "Description": ""
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "Neck Turn Max Angle",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

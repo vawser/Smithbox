@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a non-player character invasion within the map." />
+  
+  <Field>
+    <HostEntityID
+    AltName="Host Entity ID"
+    Wiki="The entity ID of the non-player character whose world the player enters." />
+    
+    <EventFlagID
+    AltName="Event Flag ID"
+    Wiki="The event flag set when the player is within the region." 
+    FlagAlias="" />
+    
+    <ActivateGoodsID
+    AltName="Activation Goods ID"
+    Wiki="The item that is used to trigger the non-player character invasion."
+    ParamRef="EquipParamGoods" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

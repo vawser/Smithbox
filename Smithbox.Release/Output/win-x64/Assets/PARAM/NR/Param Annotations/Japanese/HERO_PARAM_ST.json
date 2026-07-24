@@ -1,0 +1,188 @@
+{
+  "Param": "HERO_PARAM_ST",
+  "Type": "HERO_PARAM_ST",
+  "Name": "HERO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "properPortraitId",
+      "Name": "properPortraitId",
+      "Description": ""
+    },
+    {
+      "Field": "simplePortraitId",
+      "Name": "simplePortraitId",
+      "Description": ""
+    },
+    {
+      "Field": "characterUnlockFlag",
+      "Name": "characterUnlockFlag",
+      "Description": ""
+    },
+    {
+      "Field": "characterNameId",
+      "Name": "characterNameId",
+      "Description": ""
+    },
+    {
+      "Field": "characterSkillTitleId",
+      "Name": "characterSkillTitleId",
+      "Description": ""
+    },
+    {
+      "Field": "characterSkillSummaryId",
+      "Name": "characterSkillSummaryId",
+      "Description": ""
+    },
+    {
+      "Field": "characterSkillIconId",
+      "Name": "characterSkillIconId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtTitleId",
+      "Name": "ultimateArtTitleId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtSummaryId",
+      "Name": "ultimateArtSummaryId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtIconId",
+      "Name": "ultimateArtIconId",
+      "Description": ""
+    },
+    {
+      "Field": "backgroundDescriptionId",
+      "Name": "backgroundDescriptionId",
+      "Description": ""
+    },
+    {
+      "Field": "midPadding",
+      "Name": "midPadding",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "heroStatusParamId",
+      "Name": "heroStatusParamId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtCharge",
+      "Name": "ultimateArtCharge",
+      "Description": ""
+    },
+    {
+      "Field": "characterAbilityCooldown",
+      "Name": "characterAbilityCooldown",
+      "Description": ""
+    },
+    {
+      "Field": "characterAbilityUsageCount",
+      "Name": "characterAbilityUsageCount",
+      "Description": ""
+    },
+    {
+      "Field": "passiveAbilityTitleId",
+      "Name": "passiveAbilityTitleId",
+      "Description": ""
+    },
+    {
+      "Field": "passiveAbilitySummaryId",
+      "Name": "passiveAbilitySummaryId",
+      "Description": ""
+    },
+    {
+      "Field": "passiveAbilityIconId",
+      "Name": "passiveAbilityIconId",
+      "Description": ""
+    },
+    {
+      "Field": "smallHudIconId",
+      "Name": "smallHudIconId",
+      "Description": ""
+    },
+    {
+      "Field": "characterSkillDescriptionId",
+      "Name": "characterSkillDescriptionId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtDescriptionId",
+      "Name": "ultimateArtDescriptionId",
+      "Description": ""
+    },
+    {
+      "Field": "passiveAbilityDescriptionId",
+      "Name": "passiveAbilityDescriptionId",
+      "Description": ""
+    },
+    {
+      "Field": "defaultWeaponTypeDiscovery",
+      "Name": "defaultWeaponTypeDiscovery",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_39",
+      "Name": "unknown_39",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_00",
+      "Name": "fh_unknown_00",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_01",
+      "Name": "fh_unknown_01",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

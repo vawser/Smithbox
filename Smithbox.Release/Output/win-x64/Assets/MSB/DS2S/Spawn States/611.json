@@ -1,0 +1,18 @@
+{
+  "id": "611",
+  "name": "Dragonrider ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Riding Pose"
+    }
+  ]
+}

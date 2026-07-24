@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Language_English",
+      "Text": "英文"
+    },
+    {
+      "Key": "TEXT_Language_French",
+      "Text": "法文"
+    },
+    {
+      "Key": "TEXT_Language_German",
+      "Text": "德文"
+    },
+    {
+      "Key": "TEXT_Language_Italian",
+      "Text": "意大利文"
+    },
+    {
+      "Key": "TEXT_Language_Japanese",
+      "Text": "日文"
+    },
+    {
+      "Key": "TEXT_Language_Korean",
+      "Text": "韩文"
+    },
+    {
+      "Key": "TEXT_Language_Polish",
+      "Text": "波兰文"
+    },
+    {
+      "Key": "TEXT_Language_Russian",
+      "Text": "俄文"
+    },
+    {
+      "Key": "TEXT_Language_Spanish",
+      "Text": "西班牙文"
+    },
+    {
+      "Key": "TEXT_Language_SpanishLatin",
+      "Text": "西班牙文（拉丁）"
+    },
+    {
+      "Key": "TEXT_Language_TraditionalChinese",
+      "Text": "繁体中文"
+    },
+    {
+      "Key": "TEXT_Language_SimplifiedChinese",
+      "Text": "简体中文"
+    },
+    {
+      "Key": "TEXT_Language_Thai",
+      "Text": "泰文"
+    },
+    {
+      "Key": "TEXT_Language_Arabic",
+      "Text": "阿拉伯文"
+    },
+    {
+      "Key": "TEXT_Language_Portuguese",
+      "Text": "葡萄牙文"
+    },
+    {
+      "Key": "TEXT_Language_PortugueseLatin",
+      "Text": "葡萄牙文（拉丁）"
+    },
+    {
+      "Key": "TEXT_Language_SpanishNeutral",
+      "Text": "西班牙文（中性）"
+    },
+    {
+      "Key": "TEXT_Language_EnglishUK",
+      "Text": "英文（英国）"
+    },
+    {
+      "Key": "TEXT_Language_EnglishUS",
+      "Text": "英文（美国）"
+    },
+    {
+      "Key": "TEXT_Language_Danish",
+      "Text": "丹麦文"
+    },
+    {
+      "Key": "TEXT_Language_Finnish",
+      "Text": "芬兰文"
+    },
+    {
+      "Key": "TEXT_Language_Dutch",
+      "Text": "荷兰文"
+    },
+    {
+      "Key": "TEXT_Language_Norwegian",
+      "Text": "挪威文"
+    },
+    {
+      "Key": "TEXT_Language_Swedish",
+      "Text": "瑞典文"
+    },
+    {
+      "Key": "TEXT_Language_Turkish",
+      "Text": "土耳其文"
+    },
+    {
+      "Key": "TEXT_Language_None",
+      "Text": "无"
+    },
+    {
+      "Key": "TEXT_Language_Common",
+      "Text": "通用"
+    },
+    {
+      "Key": "TEXT_Language_Sell_Region",
+      "Text": "销售区域"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "Param": "SKILL_PARAM_ST",
+  "Type": "SKILL_PARAM_ST",
+  "Name": "SKILL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "virtualWeaponId",
+      "Name": "仮想武器ID",
+      "Description": "スキルを解禁するとこの武器が付与される。解禁に必要な道具やメニュー上でのテキストにも紐づく。"
+    },
+    {
+      "Field": "unlockEventFlag",
+      "Name": "表示許可イベントフラグ",
+      "Description": "このフラグが立っていない場合、メニュー上でスキルを表示しない(-1なら必ず表示)。"
+    },
+    {
+      "Field": "parent1",
+      "Name": "親スキルID_1",
+      "Description": "親スキルが解禁されていないと解禁不可(-1なら親なし)"
+    },
+    {
+      "Field": "parent2",
+      "Name": "親スキルID_2",
+      "Description": "親スキルが解禁されていないと解禁不可(-1なら親なし)"
+    },
+    {
+      "Field": "parent3",
+      "Name": "親スキルID_3",
+      "Description": "親スキルが解禁されていないと解禁不可(-1なら親なし)"
+    },
+    {
+      "Field": "acquireWeaponId",
+      "Name": "付与する武器ID",
+      "Description": "スキル解禁時にインベントリに加える武器IDを指定(-1なら付与しない)"
+    },
+    {
+      "Field": "reinforceWeaponId",
+      "Name": "強化する武器ID",
+      "Description": "スキル解禁時に垂直強化する武器IDを指定(-1なら強化しない)"
+    },
+    {
+      "Field": "spEffect1",
+      "Name": "解禁後常駐特殊効果ID1",
+      "Description": "スキル解禁後にかかる常駐特殊効果を指定(-1なら何もしない)"
+    },
+    {
+      "Field": "spEffect2",
+      "Name": "解禁後常駐特殊効果ID2",
+      "Description": "スキル解禁後にかかる常駐特殊効果を指定(-1なら何もしない)"
+    },
+    {
+      "Field": "spEffect3",
+      "Name": "解禁後常駐特殊効果ID3",
+      "Description": "スキル解禁後にかかる常駐特殊効果を指定(-1なら何もしない)"
+    },
+    {
+      "Field": "dispRow",
+      "Name": "表示位置＿行",
+      "Description": "メニュー上の表示位置を指定します。"
+    },
+    {
+      "Field": "dispCol",
+      "Name": "表示位置＿列",
+      "Description": "メニュー上の表示位置を指定します。"
+    },
+    {
+      "Field": "unenforementWepId",
+      "Name": "仮想武器ID_未解禁",
+      "Description": "未解禁状態の時にここで設定されたアイテムを表示(-1なら何もしない)"
+    },
+    {
+      "Field": "unreleaseWepId",
+      "Name": "仮想武器ID_非公開",
+      "Description": "非公開状態の時にここで設定されたアイテムを表示(-1なら何もしない)"
+    },
+    {
+      "Field": "menuPageNo",
+      "Name": "メニューページ番号",
+      "Description": "ページ番号（タブ番号）(-1なら表示されない)"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング２",
+      "Description": ""
+    },
+    {
+      "Field": "addResourceItemA",
+      "Name": "リソースアイテムA最大所持数増加量",
+      "Description": "プレイヤーゲームデータで保持しているリソースアイテムA最大所持数にこの数値を加算する。 "
+    },
+    {
+      "Field": "unlovkViewSkill0",
+      "Name": "解禁許可スキルID_0",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill1",
+      "Name": "解禁許可スキルID_1",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill2",
+      "Name": "解禁許可スキルID_2",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill3",
+      "Name": "解禁許可スキルID_3",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill4",
+      "Name": "解禁許可スキルID_4",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill5",
+      "Name": "解禁許可スキルID_5",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill6",
+      "Name": "解禁許可スキルID_6",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "unlovkViewSkill7",
+      "Name": "解禁許可スキルID_7",
+      "Description": "設定したスキルを一つも取得していない場合は、仮想武器_未解禁を参照する"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

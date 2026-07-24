@@ -1,0 +1,218 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "Rings/Runes/Talismans, not used in Sekiro",
+  "Fields": [
+    {
+      "Field": "refId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "",
+      "Description": "How much the accessory weighs"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sellValue",
+      "Name": "",
+      "Description": "How much it sells for"
+    },
+    {
+      "Field": "sortId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shopLv",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "",
+      "Description": "Can it be put in the storage box"
+    },
+    {
+      "Field": "isEquipOutBrake",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDiscard",
+      "Name": "",
+      "Description": "Can it be discarded"
+    },
+    {
+      "Field": "isDrop",
+      "Name": "",
+      "Description": "Can it be dropped"
+    },
+    {
+      "Field": "isNoticeLog",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isNoticeDialog",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saleValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoryGroup",
+      "Name": "",
+      "Description": "If two accessories have the same Group Id they cannot be equipped at the same time"
+    },
+    {
+      "Field": "vowType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "firstGetEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemUIDisplayType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

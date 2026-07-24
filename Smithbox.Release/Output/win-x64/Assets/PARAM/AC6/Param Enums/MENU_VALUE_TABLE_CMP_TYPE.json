@@ -1,0 +1,47 @@
+{
+  "Key": "MENU_VALUE_TABLE_CMP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_VALUE_TABLE_CMP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equal to table value"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greater than or equal to table value"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always match"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of definitions"
+        }
+      ]
+    }
+  ]
+}

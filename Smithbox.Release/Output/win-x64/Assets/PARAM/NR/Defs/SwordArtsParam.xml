@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SWORD_ARTS_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 unknown_1" />
+    <Field Def="u8 sortGroupId" />
+    <Field Def="s8 artsSpeedType" />
+	<Field Def="s8 unknown_3a" />
+    <Field Def="u8 isRefRightArts:1" />
+	<Field Def="u8 isGrayOutLeftHand:1" />
+	<Field Def="u8 isGrayOutRightHand:1" />
+	<Field Def="u8 isGrayOutBothHand:1" />
+	<Field Def="u8 enableSparringGrounds:4" />
+    
+    <Field Def="s16 swordArtsType" />
+    <Field Def="s16 sortId" />
+    <!--I don't know why other sortId are s32 and this one is s16 - but it seems correct.-->
+    
+    <Field Def="s32 textId">
+      <DisplayName>テキストID</DisplayName>
+      <Description>アーツ説明用のテキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_L1">
+      <DisplayName>消費MP L1</DisplayName>
+      <Description>L1によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>810</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_L2">
+      <DisplayName>消費MP L2</DisplayName>
+      <Description>L2によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>820</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_R1">
+      <DisplayName>消費MP R1</DisplayName>
+      <Description>R1によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>830</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_R2">
+      <DisplayName>消費MP R2</DisplayName>
+      <Description>R2によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>840</SortID>
+    </Field>
+    
+    <Field Def="u8 isStartSkill_Duchess:1" />
+	<Field Def="u8 isStartSkill_Wylder:1" />
+	<Field Def="u8 isStartSkill_Executor:1" />
+	<Field Def="u8 isStartSkill_Guardian:1" />
+	<Field Def="u8 isStartSkill_Raider:1" />
+	<Field Def="u8 isStartSkill_Revenant:1" />
+	<Field Def="u8 isStartSkill_Ironeye:1" />
+	<Field Def="u8 isStartSkill_Recluse:1" />
+    
+    <Field Def="u8 defaultWepAttr"/>
+    <Field Def="u16 iconId" />
+    <Field Def="s32 aiUsageId" />
+    <Field Def="s32 usabilityTextId" />
+    <Field Def="s32 atkParamId" />
+    <Field Def="s32 sparringGroundsWeaponId" />
+    
+    <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10200000"/>
+	
+	<Field Def="u8 unknown_4a:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4b:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4c:1" FirstVersion="10200000"/>
+	<Field Def="u8 isStartSkill_Scholar:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4e:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4f:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4g:1" FirstVersion="10200000"/>
+	<Field Def="u8 isStartSkill_Undertaker:1" FirstVersion="10200000"/>
+	<Field Def="dummy8 endPadding[11]" FirstVersion="10200000"/>
+   
+  </Fields>
+</PARAMDEF>

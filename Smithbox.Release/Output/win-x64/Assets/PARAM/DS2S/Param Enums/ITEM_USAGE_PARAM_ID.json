@@ -1,0 +1,452 @@
+{
+  "Key": "ITEM_USAGE_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_USAGE_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy (prohibited to use)"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon - Keyman's Key"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - No movement"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rings - general purpose"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring-Event"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Ladder Permit"
+        }
+      ]
+    },
+    {
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Ladder permission (prohibited when entering)"
+        }
+      ]
+    },
+    {
+      "Key": "1620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Garbage"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - No ladders allowed"
+        }
+      ]
+    },
+    {
+      "Key": "1750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - ammunition"
+        }
+      ]
+    },
+    {
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Return system"
+        }
+      ]
+    },
+    {
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables-Seoul"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Boss Soul"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Pledge Level Items"
+        }
+      ]
+    },
+    {
+      "Key": "2110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Online (select)"
+        }
+      ]
+    },
+    {
+      "Key": "2120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Intrusion Items"
+        }
+      ]
+    },
+    {
+      "Key": "2130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - proof of goodwill"
+        }
+      ]
+    },
+    {
+      "Key": "2135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Proof of Hatred"
+        }
+      ]
+    },
+    {
+      "Key": "2140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Human Statue"
+        }
+      ]
+    },
+    {
+      "Key": "2150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Flintstone"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dark Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Estentia Feather"
+        }
+      ]
+    },
+    {
+      "Key": "2220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Not available"
+        }
+      ]
+    },
+    {
+      "Key": "2230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - For events only"
+        }
+      ]
+    },
+    {
+      "Key": "2240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - For event only (cannot be discarded)"
+        }
+      ]
+    },
+    {
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dried fingers"
+        }
+      ]
+    },
+    {
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - human face stone"
+        }
+      ]
+    },
+    {
+      "Key": "2410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Sign stone"
+        }
+      ]
+    },
+    {
+      "Key": "2420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dragon Stone"
+        }
+      ]
+    },
+    {
+      "Key": "2500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Gestures"
+        }
+      ]
+    },
+    {
+      "Key": "2550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Line theory"
+        }
+      ]
+    },
+    {
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools-Sign"
+        }
+      ]
+    },
+    {
+      "Key": "2601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online Host"
+        }
+      ]
+    },
+    {
+      "Key": "2602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online Guest"
+        }
+      ]
+    },
+    {
+      "Key": "2610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online (Multiple choice)"
+        }
+      ]
+    },
+    {
+      "Key": "2620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Giant's Nut Seed"
+        }
+      ]
+    },
+    {
+      "Key": "2630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - bones of science"
+        }
+      ]
+    },
+    {
+      "Key": "2635",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools-list"
+        }
+      ]
+    },
+    {
+      "Key": "2640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Fossil egg"
+        }
+      ]
+    },
+    {
+      "Key": "2645",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Hanging stone"
+        }
+      ]
+    },
+    {
+      "Key": "2650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Prize exchange"
+        }
+      ]
+    },
+    {
+      "Key": "2700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables"
+        }
+      ]
+    },
+    {
+      "Key": "2701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (to be consumed)"
+        }
+      ]
+    },
+    {
+      "Key": "2702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (miracle person)"
+        }
+      ]
+    },
+    {
+      "Key": "2703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (spell-required status reduction items)"
+        }
+      ]
+    }
+  ]
+}

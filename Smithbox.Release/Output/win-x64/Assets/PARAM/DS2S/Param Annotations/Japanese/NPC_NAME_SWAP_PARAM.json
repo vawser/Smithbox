@@ -1,0 +1,18 @@
+{
+  "Param": "NPC_NAME_SWAP_PARAM",
+  "Type": "NPC_NAME_SWAP_PARAM",
+  "Name": "NPC_NAME_SWAP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "changeNameFlagId",
+      "Name": "差し替えフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "beforeNameTextId",
+      "Name": "差し替え前名前テキストID",
+      "Description": ""
+    }
+  ]
+}

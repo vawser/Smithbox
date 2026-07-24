@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>FACE_EDIT_PARAM_MONTAGE_CAMERA</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="f32 fov = 43">
+            <DisplayName>画角</DisplayName>
+            <Description>画角</Description>
+            <Minimum>5</Minimum>
+            <Maximum>160</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 positionX">
+            <DisplayName>カメラ位置X</DisplayName>
+            <Description>カメラ位置X</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 positionY">
+            <DisplayName>カメラ位置Y</DisplayName>
+            <Description>カメラ位置Y</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 positionZ">
+            <DisplayName>カメラ位置Z</DisplayName>
+            <Description>カメラ位置Z</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 lookAtX">
+            <DisplayName>カメラ焦点X</DisplayName>
+            <Description>カメラ焦点X</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 lookAtY">
+            <DisplayName>カメラ焦点Y</DisplayName>
+            <Description>カメラ焦点Y</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 lookAtZ">
+            <DisplayName>カメラ焦点Z</DisplayName>
+            <Description>カメラ焦点Z</Description>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>7</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

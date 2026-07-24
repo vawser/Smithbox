@@ -1,0 +1,53 @@
+{
+  "Name": "LodPlatform",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PS4 Pro"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Xbox One"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "XboxOneX"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Windows Low"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Windows Middle"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Windows High"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Stadia"
+      ]
+    }
+  ]
+}

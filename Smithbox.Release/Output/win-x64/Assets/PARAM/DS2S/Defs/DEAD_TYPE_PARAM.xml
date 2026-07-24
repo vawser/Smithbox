@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>DEAD_TYPE_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 deadChrDeleteTime = -1">
+            <DisplayName>死亡時モデル削除時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 deadLockOffTime">
+            <DisplayName>死亡時ロックオン解除 開始時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 deadItemDropTime">
+            <DisplayName>死亡時アイテムドロップ時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 deadHitDisableTime">
+            <DisplayName>死亡時ヒット削除時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 deadSoulDropTime">
+            <DisplayName>死亡時ソウルドロップ 開始時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 deadSfxTime = -1">
+            <DisplayName>死亡時SFX 開始時間 [sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="u32 deadSfxType">
+            <DisplayName>死亡時SFXタイプ</DisplayName>
+            <Enum>CHR_FULLBODY_SFX_PARAM_ENUM</Enum>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 deadFadeDelay = -1">
+            <DisplayName>死亡時フェード開始時間[sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="f32 deadFadeTime">
+            <DisplayName>死亡時フェード時間[sec]</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="u32 deadSeId">
+            <DisplayName>死亡時サウンドID</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s8 deadCullingFilterId = -1">
+            <DisplayName>死亡時非表示カリングID</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="u8 deadDisableParts">
+            <DisplayName>死亡時無効部位</DisplayName>
+            <Enum>CHR_PARTS_CATEGORY_TYPE</Enum>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="u8 deadIsNoConstraint">
+            <DisplayName>バラバラ死亡</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="u8 deadIsChrSe">
+            <DisplayName>死亡時キャラSE</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u32 deadSoulBulletId">
+            <DisplayName>死亡時ソウル弾ID</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

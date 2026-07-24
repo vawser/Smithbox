@@ -1,0 +1,83 @@
+{
+  "Param": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Type": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Name": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "m_textureFilterQuality",
+      "Name": "テクスチャフィルタ品質",
+      "Description": "テクスチャフィルタ品質(デフォルトMidele)"
+    },
+    {
+      "Field": "m_aaQuality",
+      "Name": "AA品質",
+      "Description": "AA品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_ssaoQuality",
+      "Name": "SSAO品質",
+      "Description": "SSAO品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_dofQuality",
+      "Name": "被写界深度品質",
+      "Description": "被写界深度品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_motionBlurQuality",
+      "Name": "モーションブラー品質",
+      "Description": "モーションブラー品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_shadowQuality",
+      "Name": "シャドウ品質",
+      "Description": "シャドウ品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_lightingQuality",
+      "Name": "ライティング品質",
+      "Description": "ライティング品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_effectQuality",
+      "Name": "エフェクト品質",
+      "Description": "エフェクト品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_decalQuality",
+      "Name": "デカール品質",
+      "Description": "デカール品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_reflectionQuality",
+      "Name": "反射品質",
+      "Description": "反射品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_waterQuality",
+      "Name": "ウォーター品質",
+      "Description": "ウォーター品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_shaderQuality",
+      "Name": "シェーダー品質",
+      "Description": "シェーダー品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_volumetricEffectQuality",
+      "Name": "ボリューメトリック効果品質",
+      "Description": "ボリューメトリック効果品質(デフォルトHigh)"
+    },
+    {
+      "Field": "m_RayTracingQuality",
+      "Name": "m_RayTracingQuality",
+      "Description": ""
+    },
+    {
+      "Field": "m_dummy",
+      "Name": "dmy",
+      "Description": ""
+    }
+  ]
+}

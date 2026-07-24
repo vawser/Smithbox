@@ -1,0 +1,845 @@
+{
+  "Name": "MenuOffscrRendParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For character makeup preview <whole body> -- キャラメイクプレビュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For character makeup preview <face> -- キャラメイクプレビュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For status menu <whole body> -- ステータスメニュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For ranking menu <whole body> -- ランキングメニュー用＜全身＞"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For character makeup grid <face> -- キャラメイクグリッド用＜顔＞"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For kick menu <face> -- キックメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "<Face> for status menu -- ステータスメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For ranking menu <face> -- ランキングメニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For summoning sign <face> -- 召喚サイン用＜顔＞"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For the game end confirmation menu <face> -- ゲーム終了確認メニュー用＜顔＞"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Profile selection <face> -- プロファイル選択用＜顔＞"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "For aircraft full screen display -- 機体フルスクリーン表示用"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "For aircraft view mode -- 機体ビューモード用"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For map display -- マップ表示用"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "R ARM UNIT 1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "R ARM UNIT 2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "R ARM UNIT 3"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "L ARM UNIT 1"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "L ARM UNIT 2"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "L ARM UNIT 3"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "BLADE"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "L BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "R BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "ARMS"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "LEGS"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "SHIELD"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "F.C.S. -- FCS"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "GENERATOR"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "BOOSTER"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "EXTENSION"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "LIMITER RELEASE"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "R ARM UNIT 1 (when using 4 legs) -- R ARM UNIT 1(4脚時）"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "L ARM UNIT 1 (when using 4 legs) -- L ARM UNIT 1(4脚時）"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "R ARM UNIT 1 (when tank) -- R ARM UNIT 1(タンク時）"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "L ARM UNIT 1 (when tank) -- L ARM UNIT 1(タンク時）"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Coloring menu top -- カラーリングメニュートップ"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "ALL FRAME"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "ALL UNIT"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "R-ARM -- R ARM"
+      ]
+    },
+    {
+      "ID": 1515,
+      "Entries": [
+        "L ARM"
+      ]
+    },
+    {
+      "ID": 1516,
+      "Entries": [
+        "LEGS"
+      ]
+    },
+    {
+      "ID": 1517,
+      "Entries": [
+        "R ARM UNIT"
+      ]
+    },
+    {
+      "ID": 1518,
+      "Entries": [
+        "L ARM UNIT"
+      ]
+    },
+    {
+      "ID": 1519,
+      "Entries": [
+        "R BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "L BACK UNIT"
+      ]
+    },
+    {
+      "ID": 1521,
+      "Entries": [
+        "EXTENSION"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Marking menu top -- マーキングメニュートップ"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "HEAD center -- HEAD  中央"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "HEAD right side -- HEAD 右側面"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "HEAD left side -- HEAD 左側面"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "CORE main -- CORE メイン"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "CORE sub 1 (back) -- CORE サブ１(背面)"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "CORE sub 2 (front: right) -- CORE サブ２(前面：右)"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "CORE sub 3 (front: left) -- CORE サブ３(前面：左)"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "ARMS Right arm front -- ARMS 右腕 前面"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "ARMS right arm back -- ARMS 右腕 背面"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "ARMS left arm front -- ARMS 左腕 前面"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "ARMS left arm back -- ARMS 左腕 背面"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "LEGS crotch front -- LEGS 股間 前面"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "LEGS crotch back -- LEGS 股間 背面"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "LEGS Right leg front -- LEGS 右脚 前面"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "LEGS Right leg back -- LEGS 右脚 背面"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "LEGS Left leg front -- LEGS 左脚 前面"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "LEGS left leg back -- LEGS 左脚 背面"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Aircraft data menu: Thumbnail -- 機体データメニュー：サムネイル"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Aircraft image for UGC confirmation Previous -- UGC確認用機体画像 前"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Aircraft image for UGC confirmation After -- UGC確認用機体画像 後"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Aircraft image for UGC confirmation left -- UGC確認用機体画像 左"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Aircraft image for UGC confirmation right -- UGC確認用機体画像 右"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Aircraft image for UGC confirmation Front (for 4 legs) -- UGC確認用機体画像 前(4脚用)"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Aircraft image for UGC confirmation rear (for 4 legs) -- UGC確認用機体画像 後(4脚用)"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for 4 legs) -- UGC確認用機体画像 左(4脚用)"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Aircraft image for UGC confirmation Right (for 4 legs) -- UGC確認用機体画像 右(4脚用)"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Aircraft image for UGC confirmation (front) (for tank) -- UGC確認用機体画像 前(タンク用)"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "UGC confirmation aircraft image rear (for tank) -- UGC確認用機体画像 後(タンク用)"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for tank) -- UGC確認用機体画像 左(タンク用)"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Aircraft image for UGC confirmation right (for tank) -- UGC確認用機体画像 右(タンク用)"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Aircraft image for UGC confirmation (front) (for float) -- UGC確認用機体画像 前(フロート用)"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Aircraft image for UGC confirmation (for float) -- UGC確認用機体画像 後(フロート用)"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Aircraft image for UGC confirmation left (for float) -- UGC確認用機体画像 左(フロート用)"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "Aircraft image for UGC confirmation (right) (for float) -- UGC確認用機体画像 右(フロート用)"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "prologue -- プロローグ"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Dam destruction -- ダム破壊"
+      ]
+    },
+    {
+      "ID": 12025,
+      "Entries": [
+        "Dam destruction_ALT -- ダム破壊_ALT"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "over the wall -- 壁越え"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "string -- 文字列"
+      ]
+    },
+    {
+      "ID": 12055,
+      "Entries": [
+        "string_ALT -- 文字列_ALT"
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        "Former VOB Arsenal Survey -- 旧VOB工廠調査"
+      ]
+    },
+    {
+      "ID": 12080,
+      "Entries": [
+        "Mining ship destroyed -- 採掘艦破壊"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "scavenging -- スカベンジング"
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        "big bridge -- ビッグ・ブリッジ"
+      ]
+    },
+    {
+      "ID": 12140,
+      "Entries": [
+        "Area departure support -- 領域離脱援護"
+      ]
+    },
+    {
+      "ID": 12170,
+      "Entries": [
+        "Exploration: In front of the wall -- 探索：壁前"
+      ]
+    },
+    {
+      "ID": 12180,
+      "Entries": [
+        "continental shell -- 大陸殻"
+      ]
+    },
+    {
+      "ID": 12200,
+      "Entries": [
+        "Eliminate intruders -- 侵入者排除"
+      ]
+    },
+    {
+      "ID": 12211,
+      "Entries": [
+        "Fuel base sweep_ver2 -- 燃料基地掃討_ver2"
+      ]
+    },
+    {
+      "ID": 12220,
+      "Entries": [
+        "Large missile launch support -- 大型ミサイル発射支援"
+      ]
+    },
+    {
+      "ID": 12230,
+      "Entries": [
+        "A layer indoor search -- A層屋内捜索"
+      ]
+    },
+    {
+      "ID": 12240,
+      "Entries": [
+        "Multiple dam defense -- 多重ダム防衛"
+      ]
+    },
+    {
+      "ID": 12250,
+      "Entries": [
+        "Old world MT eliminated -- 旧世界MT排除"
+      ]
+    },
+    {
+      "ID": 13011,
+      "Entries": [
+        "Encounter with the organization_ver2 -- 組織との出会い_ver2"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "fuel base explosion -- 燃料基地爆破"
+      ]
+    },
+    {
+      "ID": 13043,
+      "Entries": [
+        "Attack on the old spaceport -- 旧宇宙港襲撃"
+      ]
+    },
+    {
+      "ID": 13230,
+      "Entries": [
+        "Defeat Ice Worm -- アイスワーム撃破"
+      ]
+    },
+    {
+      "ID": 13320,
+      "Entries": [
+        "collapsed continental shell -- 崩落した大陸殻"
+      ]
+    },
+    {
+      "ID": 13420,
+      "Entries": [
+        "Mine sabotage_Ver2 -- 坑道破壊工作_Ver2"
+      ]
+    },
+    {
+      "ID": 13430,
+      "Entries": [
+        "Eliminate unknown aircraft -- 不明機体排除"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "ice field hole -- 氷原の穴"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "rail road -- レイル・ロード"
+      ]
+    },
+    {
+      "ID": 14015,
+      "Entries": [
+        "Railroad_ALT -- レイル・ロード_ALT"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Cavity and Furnace -- 大空洞と炉"
+      ]
+    },
+    {
+      "ID": 14021,
+      "Entries": [
+        "biological weapon -- 生体兵器"
+      ]
+    },
+    {
+      "ID": 14026,
+      "Entries": [
+        "Biological weapon_ALT -- 生体兵器_ALT"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "ruins -- 廃墟"
+      ]
+    },
+    {
+      "ID": 14035,
+      "Entries": [
+        "Ruins_ALT -- 廃墟_ALT"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Railroad reverse run -- レイルロード逆走"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "AC battle at the power plant -- 発電所でのAC戦"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "prison break -- 脱獄"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "The emerging new B layer -- 浮上する新B層"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "straight city invasion -- ストレート市街侵攻"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "new B class people -- 新B層の人々"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Breaking through the atmosphere -- 大気圏突破"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Straight city reverse driving -- ストレート市街逆走"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "city ​​on the ocean -- 洋上の都市"
+      ]
+    },
+    {
+      "ID": 15105,
+      "Entries": [
+        "City on the ocean_ALT -- 洋上の都市_ALT"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "Recapture of underground facility -- 地下施設奪還"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Decisive battle A -- 決戦A"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "Decisive battle B -- 決戦B"
+      ]
+    },
+    {
+      "ID": 16020,
+      "Entries": [
+        "Decisive battle C -- 決戦C"
+      ]
+    },
+    {
+      "ID": 17900,
+      "Entries": [
+        "Sub-mission: Defeat the transport helicopter -- サブ・ミッション：輸送ヘリ撃破"
+      ]
+    },
+    {
+      "ID": 17910,
+      "Entries": [
+        "Sub mission (open pit mining) -- サブ・ミッション（露天採掘場）"
+      ]
+    },
+    {
+      "ID": 17920,
+      "Entries": [
+        "Sub-mission (Tutorial A layer) -- サブ・ミッション（チュートリアルA層）"
+      ]
+    },
+    {
+      "ID": 17930,
+      "Entries": [
+        "Sub mission (hole in the ice field) -- サブ・ミッション（氷原の穴）"
+      ]
+    },
+    {
+      "ID": 17940,
+      "Entries": [
+        "Sub-mission (cave and furnace) -- サブ・ミッション（大空洞と炉）"
+      ]
+    },
+    {
+      "ID": 17950,
+      "Entries": [
+        "Sub mission (Imperial base) -- サブ・ミッション（帝国基地）"
+      ]
+    },
+    {
+      "ID": 17960,
+      "Entries": [
+        "Sub mission (big bridge) -- サブ・ミッション（ビッグブリッジ）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "FE_TEXT_EFFECT_PARAM_ST",
+  "Type": "FE_TEXT_EFFECT_PARAM_ST",
+  "Name": "FE_TEXT_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "resId",
+      "Name": "リソースID",
+      "Description": "メニューリソースのインスタンス名。TextEffect_X のID"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "表示するテキストID(-1: テキストなし)。MenuText"
+    },
+    {
+      "Field": "seId",
+      "Name": "SEのID",
+      "Description": "再生するVoiceのID(-1: SEなし)"
+    },
+    {
+      "Field": "canMixMapName",
+      "Name": "マップ名と同時に表示するか",
+      "Description": "マップ名と同時に表示するか"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

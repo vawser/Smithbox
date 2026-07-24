@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHR_ACT_TURN_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90012</SortID>
+    </Field>
+    <Field Def="f32 baseTurnSpeedDPS">
+      <DisplayName>基準旋回速度[deg/s]</DisplayName>
+      <Description>通常時旋回の基準旋回速度、この値に速度や時間の旋回率がかかってくる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u16 speedTurnRate_MinSpeedKMPH">
+      <DisplayName>速度旋回率 - 最小速度[km/h]</DisplayName>
+      <Description>この速度以下で最小速度旋回率になる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u16 speedTurnRate_MaxSpeedKMPH">
+      <DisplayName>速度旋回率 - 最大速度[km/h]</DisplayName>
+      <Description>この速度以上で最大速度旋回率になる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="f32 speedTurnRate_MinSpeedTurnRate">
+      <DisplayName>速度旋回率 - 最小速度旋回率</DisplayName>
+      <Description>最小速度の時の速度旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="f32 speedTurnRate_MaxSpeedTurnRate">
+      <DisplayName>速度旋回率 - 最大速度旋回率</DisplayName>
+      <Description>最大速度の時の速度旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2030</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MinTimeSec">
+      <DisplayName>時間旋回率 - 最小時間[sec]</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以下で最小時間旋回率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MaxTimeSec">
+      <DisplayName>時間旋回率 - 最大時間[sec]</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以上で最大時間旋回率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MinTimeTurnRate">
+      <DisplayName>時間旋回率 - 最小時間旋回率</DisplayName>
+      <Description>最小時間の時の時間旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3020</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MaxTimeTurnRate">
+      <DisplayName>時間旋回率 - 最大時間旋回率</DisplayName>
+      <Description>最大時間の時の時間旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3030</SortID>
+    </Field>
+    <Field Def="f32 lookTargetModeTurnSpeedDPS">
+      <DisplayName>ターゲットの方向に向くモードの時の旋回速度[deg/s]</DisplayName>
+      <Description>ターゲットの方向に向くモード時の旋回速度、基準旋回速度は使わない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 lookTargetModeTurnSpeedDPSAtLowDeltaAngle">
+      <DisplayName>角度差が少ない際のターゲットの方向に向くモードの時の旋回速度[deg/s]</DisplayName>
+      <Description>角度差が少ないときのターゲットの方向に向くモード時の旋回速度、基準旋回速度は使わない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="u16 judgeTurnSpeedThresholdAngleDeg = 90">
+      <DisplayName>角度差が少ないと判断する角度（絶対値）[deg]</DisplayName>
+      <Description>この角度より小さければ角度差が少ないときの旋回速度が有効になる</Description>
+      <Maximum>180</Maximum>
+      <SortID>3990</SortID>
+    </Field>
+    <Field Def="dummy8 pad[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90013</SortID>
+    </Field>
+    <Field Def="u16 lookTargetMode_SpeedTurnRate_MinSpeedKMPH">
+      <DisplayName>速度旋回率 - 最小速度[km/h](ターゲットの方向に向くモード)</DisplayName>
+      <Description>この速度以下で最小速度旋回率になる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u16 lookTargetMode_SpeedTurnRate_MaxSpeedKMPH">
+      <DisplayName>速度旋回率 - 最大速度[km/h](ターゲットの方向に向くモード)</DisplayName>
+      <Description>この速度以上で最大速度旋回率になる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>4110</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_SpeedTurnRate_MinSpeedTurnRate">
+      <DisplayName>速度旋回率 - 最小速度旋回率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最小速度の時の速度旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4120</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_SpeedTurnRate_MaxSpeedTurnRate">
+      <DisplayName>速度旋回率 - 最大速度旋回率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最大速度の時の速度旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4130</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MinTimeSec">
+      <DisplayName>時間旋回率 - 最小時間[sec](ターゲットの方向に向くモード)</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以下で最小時間旋回率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MaxTimeSec">
+      <DisplayName>時間旋回率 - 最大時間[sec](ターゲットの方向に向くモード)</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以上で最大時間旋回率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4210</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MinTimeTurnRate">
+      <DisplayName>時間旋回率 - 最小時間旋回率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最小時間の時の時間旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4220</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MaxTimeTurnRate">
+      <DisplayName>時間旋回率 - 最大時間旋回率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最大時間の時の時間旋回率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4230</SortID>
+    </Field>
+    <Field Def="f32 turnAccelDPSS = 9999999">
+      <DisplayName>角加速度[deg/s^2]</DisplayName>
+      <Description>旋回速度に到達する為の加速度。初めから旋回速度にしたい場合は大きい値にする</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_LookAheadSecond">
+      <DisplayName>ターゲットの方向に向く際に何秒後のターゲット位置を見るか[sec]</DisplayName>
+      <Description>ターゲットの方向に向く際に、ターゲットの何秒後の位置を見ようとするか(AI用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4050</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MinTimeSec_Accel">
+      <DisplayName>時間角加速度率 - 最小時間[sec]</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以下で最小時間角加速度率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MaxTimeSec_Accel">
+      <DisplayName>時間角加速度率 - 最大時間[sec]</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以上で最大時間角加速度率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3110</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MinTimeTurnAccelRate = 1">
+      <DisplayName>時間角加速度率 - 最小時間角加速度率</DisplayName>
+      <Description>最小時間の時の時間角加速度率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3120</SortID>
+    </Field>
+    <Field Def="f32 timeTurnRate_MaxTimeTurnAccelRate = 1">
+      <DisplayName>時間角加速度率 - 最大時間角加速度率</DisplayName>
+      <Description>最大時間の時の時間角加速度率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3130</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MinTimeSec_Accel">
+      <DisplayName>時間角加速度率 - 最小時間[sec](ターゲットの方向に向くモード)</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以下で最小時間角加速度率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4300</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MaxTimeSec_Accel">
+      <DisplayName>時間角加速度率 - 最大時間[sec](ターゲットの方向に向くモード)</DisplayName>
+      <Description>パラメータが切り替わってからこの時間以上で最大時間角加速度率になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4310</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MinTimeTurnAccelRate = 1">
+      <DisplayName>時間角加速度率 - 最小時間角加速度率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最小時間の時の時間角加速度率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4320</SortID>
+    </Field>
+    <Field Def="f32 lookTargetMode_TimeTurnRate_MaxTimeTurnAccelRate = 1">
+      <DisplayName>時間角加速度率 - 最大時間角加速度率(ターゲットの方向に向くモード)</DisplayName>
+      <Description>最大時間の時の時間角加速度率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4330</SortID>
+    </Field>
+    <Field Def="dummy8 pad_2[8]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90014</SortID>
+    </Field>
+    <Field Def="f32 paramEndIntpTimeSec">
+      <DisplayName>パラメータ終了時の角加速度補間時間[sec]</DisplayName>
+      <Description>パラメータが切り替わって終了するときに加速度を補間する時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1305</SortID>
+    </Field>
+    <Field Def="f32 reverseTurnBrakeDPSS = -1">
+      <DisplayName>旋回ブレーキ性能[deg/s^2]</DisplayName>
+      <Description>逆方向に旋回するときのブレーキ（-1で無効）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>1310</SortID>
+    </Field>
+    <Field Def="f32 animBlendMaxSpeedDPS_LR">
+      <DisplayName>左右アニメのブレンド率が1になる角速度[deg/s]</DisplayName>
+      <Description>角速度がこの速度以上で左右アニメのブレンド率が1になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90015</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

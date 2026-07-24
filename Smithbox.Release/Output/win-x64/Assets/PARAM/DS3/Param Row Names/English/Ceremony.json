@@ -1,0 +1,329 @@
+{
+  "Name": "Ceremony",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "For automatic patrol: normal"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "For automatic circuit: ritual A"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Automatic Circuit: Ritual b"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "For automatic circuit: ritual c"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "For automatic circuit: ritual D"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Automatic Circuit: Ritual E"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "High Wall of Lothric - Daytime"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "High Wall of Lothric - Eclipse"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "High Wall of Lothric - Product version"
+      ]
+    },
+    {
+      "ID": 30001010,
+      "Entries": [
+        "High Wall of Lothric - NT"
+      ]
+    },
+    {
+      "ID": 30001011,
+      "Entries": [
+        "High Wall of Lothric - TGS"
+      ]
+    },
+    {
+      "ID": 30001012,
+      "Entries": [
+        "High Wall of Lothric - E3 light Test"
+      ]
+    },
+    {
+      "ID": 30001015,
+      "Entries": [
+        "High Wall of Lothric -:Lothric Castle distant Test"
+      ]
+    },
+    {
+      "ID": 30001020,
+      "Entries": [
+        "High Wall of Lothric - Unknown"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Lothric Castle - Daytime"
+      ]
+    },
+    {
+      "ID": 30010010,
+      "Entries": [
+        "Lothric Castle - Eclipse"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Undead Settlement - Noon"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "Undead Settlement - Eclipse"
+      ]
+    },
+    {
+      "ID": 31000020,
+      "Entries": [
+        "Undead Settlement - Dusk"
+      ]
+    },
+    {
+      "ID": 31000030,
+      "Entries": [
+        "Undead Settlement - Night"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Archdragon Peak - Noon"
+      ]
+    },
+    {
+      "ID": 32000010,
+      "Entries": [
+        "Archdragon Peak - Storm"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Road of Sacrifices/Farron Keep - Noon"
+      ]
+    },
+    {
+      "ID": 33000010,
+      "Entries": [
+        "Road of Sacrifices/Farron Keep - Eclipse"
+      ]
+    },
+    {
+      "ID": 34010000,
+      "Entries": [
+        "Grand Archives - Noon"
+      ]
+    },
+    {
+      "ID": 34010010,
+      "Entries": [
+        "Grand Archives - Eclipse"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Cathedral of the Deep - Noon"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Cathedral of the Deep - Eclipse"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Daytime"
+      ]
+    },
+    {
+      "ID": 37000010,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Eclipse"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37001100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37001200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37001201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38000000,
+      "Entries": [
+        "Catacombs of Carthus/Smouldering Lake - Daytime"
+      ]
+    },
+    {
+      "ID": 39000000,
+      "Entries": [
+        "Irithyll Dungeon/Profaned Capital - Noon"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Cemetery of Ash - Daytime"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "Cemetery of Ash - Night"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "Cemetery of Ash -"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99090010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99991000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

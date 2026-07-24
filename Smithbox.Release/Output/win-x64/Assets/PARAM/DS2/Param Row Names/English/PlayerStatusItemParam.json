@@ -1,0 +1,2579 @@
+{
+  "Name": "PlayerStatusItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Class] Warrior"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "[Class] Warrior"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "[Class] Warrior"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Class] Knight"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "[Class] Knight"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "[Class] Knight"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Class] Bandit"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[Class] Bandit"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "[Class] Bandit"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Class] Cleric"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "[Class] Cleric"
+      ]
+    },
+    {
+      "ID": 1072,
+      "Entries": [
+        "[Class] Cleric"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[Class] Sorcerer"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "[Class] Sorcerer"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        "[Class] Sorcerer"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Class] Explorer"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "[Class] Explorer"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "[Class] Explorer"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Class] Swordsman"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[Class] Swordsman"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Class] Swordsman"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Class] Deprived"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Class] Deprived"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[Class] Deprived"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20320,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20410,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20420,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100111,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100121,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100122,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100211,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100221,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100222,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100223,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100311,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100320,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100321,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100322,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100323,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100410,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100411,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100420,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100421,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100422,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100423,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100501,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100510,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100511,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100520,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100521,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100522,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100523,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100601,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100610,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100611,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100620,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100621,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100622,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100623,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100701,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100710,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100711,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100720,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100721,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100722,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100723,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100801,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100810,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100811,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100812,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100820,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100821,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100822,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100823,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100901,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100902,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100910,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100911,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100912,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100920,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100921,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100922,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100923,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100924,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101021,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101022,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101023,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101024,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101111,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101112,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101121,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101122,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101123,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101124,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101201,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101202,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101211,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101212,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101221,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101222,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101223,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101224,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101301,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101302,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101311,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101312,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101320,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101321,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101322,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101323,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101324,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101401,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101402,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101410,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101411,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101412,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101420,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101421,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101422,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101423,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101424,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101501,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101502,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101510,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101511,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101512,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101520,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101521,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101522,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101523,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101524,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101601,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101602,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101610,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101611,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101612,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101620,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101621,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101622,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101623,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101624,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101701,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101702,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101710,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101711,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101712,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101720,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101721,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101722,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101723,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101724,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101801,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101802,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101803,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101810,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101811,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101812,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101813,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101820,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101821,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101822,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101823,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101824,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101901,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101902,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101903,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101910,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101911,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101912,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101913,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101920,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101921,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101922,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101923,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101924,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102021,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102022,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102023,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102024,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102025,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102111,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102112,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102113,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102121,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102122,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102123,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102124,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102125,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102201,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102202,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102203,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102211,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102212,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102213,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102221,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102222,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102223,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102224,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102225,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102301,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102302,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102303,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102304,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102311,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102312,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102313,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102314,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102320,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102321,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102322,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102323,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102324,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102325,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102401,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102402,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102403,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102404,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102410,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102411,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102412,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102413,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102414,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102420,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102421,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102422,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102423,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102424,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102425,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000015,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000017,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000021,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000022,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000023,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000024,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000025,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000026,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000027,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2000028,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010021,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010022,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010023,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010024,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010025,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300101000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300102000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300103000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300104000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300105000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300106000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300107000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300108000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300109000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300110000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300111000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300112000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300113000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300114000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300115000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300116000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300117000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300118000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300119000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300120000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300121000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300122000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300123000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300124000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300125000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300126000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300127000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300128000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

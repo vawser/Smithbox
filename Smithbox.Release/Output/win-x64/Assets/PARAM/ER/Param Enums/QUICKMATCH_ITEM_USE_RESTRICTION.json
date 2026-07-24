@@ -1,0 +1,83 @@
+{
+  "Key": "QUICKMATCH_ITEM_USE_RESTRICTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "QUICKMATCH_ITEM_USE_RESTRICTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always Allowed"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Duel"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Team Match"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Brawl and Team Match"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Duel, Brawl, and Team Match"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Duel and Team Match"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited In Brawl and Team Match"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always Prohibited"
+        }
+      ]
+    }
+  ]
+}

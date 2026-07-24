@@ -1,0 +1,449 @@
+{
+  "Name": "CutsceneMapIdParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default data. Deletion prohibited. Used if no para -- デフォルトデータ。削除禁止。パラがない場合使用されます"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "s00_10_0000_General purpose first half of sortie -- s00_10_0000_出撃前半汎用"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "s00_20_0000_General sortie (from standby) -- s00_20_0000_汎用出撃（待機から）"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "s00_20_0010_General purpose sortie (stand up) -- s00_20_0010_汎用出撃（立ちあがり）"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "s00_20_0011_General sortie (descent) -- s00_20_0011_汎用出撃（降下）"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "s00_20_0012_General sortie (boost movement) -- s00_20_0012_汎用出撃（ブースト移動）"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "s00_21_0000 Online arena appearance_1V1_A position -- s00_21_0000  オンラインアリーナ登場_1V1_Aポジション"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "s00_21_0001 Online arena appearance_1V1_B position -- s00_21_0001  オンラインアリーナ登場_1V1_Bポジション"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "s00_22_0000 Online arena appearance_3V3_A position -- s00_22_0000  オンラインアリーナ登場_3V3_Aポジション"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "s00_22_0001 Online arena appearance_3V3_B position -- s00_22_0001  オンラインアリーナ登場_3V3_Bポジション"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "s00_23_0000 Offline arena appearance_NPAC -- s00_23_0000  オフラインアリーナ登場_NPAC"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "s00_23_0100_Offline arena appearance_NPAC (simulator) -- s00_23_0100_オフラインアリーナ登場_NPAC(シミュレーター)"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "s00_24_0000_Offline arena appearance_NPAC_AR generation production -- s00_24_0000_オフラインアリーナ登場_NPAC_AR生成演出"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "s00_24_0100_Offline arena appearance_AR_Analysis_Last boss_B -- s00_24_0100_オフラインアリーナ登場_AR_アナリシス_ラスボス_B"
+      ]
+    },
+    {
+      "ID": 240200,
+      "Entries": [
+        "s00_24_0200 Offline Arena Appearance_AR_Record_Last Boss_A -- s00_24_0200 オフラインアリーナ登場_AR_レコード_ラスボス_A"
+      ]
+    },
+    {
+      "ID": 240300,
+      "Entries": [
+        "s00_24_0300 Offline Arena Appearance_AR_Analysis_Boss_B -- s00_24_0300 オフラインアリーナ登場_AR_アナリシス_ボス_B"
+      ]
+    },
+    {
+      "ID": 240400,
+      "Entries": [
+        "s00_24_0400 Offline Arena Appearance_AR_Record_Boss_A -- s00_24_0400 オフラインアリーナ登場_AR_レコード_ボス_A"
+      ]
+    },
+    {
+      "ID": 240500,
+      "Entries": [
+        "s00_24_0500 Offline Arena Appearance_AR_Analysis_Abyss_B -- s00_24_0500 オフラインアリーナ登場_AR_アナリシス_深淵_B"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "s00_25_0000_Offline Arena_Turnoff boss defeat_Arena end point -- s00_25_0000_オフラインアリーナ_節目ボス撃破_アリーナ終点"
+      ]
+    },
+    {
+      "ID": 250010,
+      "Entries": [
+        "s00_25_0010_Offline Arena_Killing milestone boss defeat_Simulator end point -- s00_25_0010_オフラインアリーナ_節目ボス撃破_シミュレータ一旦の終点"
+      ]
+    },
+    {
+      "ID": 250020,
+      "Entries": [
+        "s00_25_0020_Offline Arena_Turnaround Boss Defeat_Simulator Extra End Point -- s00_25_0020_オフラインアリーナ_節目ボス撃破_シミュレータ・エクストラ終点"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "s00_50_0000_General purpose supply effect -- s00_50_0000_汎用補給演出"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "s00_50_0010_General purpose supply effect fade-in adjustment -- s00_50_0010_汎用補給演出フェードイン調整"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "s03_20_0010_Fleet appears -- s03_20_0010_艦隊登場"
+      ]
+    },
+    {
+      "ID": 3300020,
+      "Entries": [
+        "s03_30_0020_ Avalanche appears -- s03_30_0020_アバランチ登場"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "s03_40_0010_Ice worm movement -- s03_40_0010_アイスワーム移動"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "s03_40_0020_NPAC appears_Old spaceport attack -- s03_40_0020_NPAC登場_旧宇宙港襲撃"
+      ]
+    },
+    {
+      "ID": 3400030,
+      "Entries": [
+        "s03_40_0030_NPAC appears_SBM Imperial Base -- s03_40_0030_NPAC登場_SBM帝国基地"
+      ]
+    },
+    {
+      "ID": 3600040,
+      "Entries": [
+        "s03_60_0040_Defeat Ice Worm -- s03_60_0040_アイスワーム撃破"
+      ]
+    },
+    {
+      "ID": 3600050,
+      "Entries": [
+        "s03_60_0050_Special sortie_Descent (defeat Iceworm) -- s03_60_0050_専用出撃_降下（アイスワーム撃破）"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "s10_00_0010_Catapult to the mountain town (first half) -- s10_00_0010_山岳の街へのカタパルト（前半）"
+      ]
+    },
+    {
+      "ID": 10000015,
+      "Entries": [
+        "s10_00_0015_Catapult to the mountain town (second half) -- s10_00_0015_山岳の街へのカタパルト（後半）"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "s10_00_0020_Stowaway -- s10_00_0020_密航"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "s10_10_0000_Fly to the ice field -- s10_10_0000_氷原に飛ぶ"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Climb to s10_10_0010_A layer -- s10_10_0010_A層にのぼる"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "s10_10_0020 NPAC appearance_A layer indoor search -- s10_10_0020 NPAC登場_A層屋内捜索"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "s20_00_0000_New B layer emerging -- s20_00_0000_新B層浮上"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "s20_20_0000_Ash reappears (breaks through the atmosphere) -- s20_20_0000_アッシュ再登場(大気圏突破)"
+      ]
+    },
+    {
+      "ID": 20200010,
+      "Entries": [
+        "s20_20_0010_Alive Lester appears -- s20_20_0010_生きていたレスター登場"
+      ]
+    },
+    {
+      "ID": 20200020,
+      "Entries": [
+        "s20_20_0020_Ash reappears (breaks through the atmosphere) -- s20_20_0020_アッシュ再登場(大気圏突破)"
+      ]
+    },
+    {
+      "ID": 20200030,
+      "Entries": [
+        "s20_20_0030_B end -- s20_20_0030_Bエンド"
+      ]
+    },
+    {
+      "ID": 20200040,
+      "Entries": [
+        "s20_20_0040 NPAC appearance_Straight city reverse driving -- s20_20_0040 NPAC登場_ストレート市街逆走"
+      ]
+    },
+    {
+      "ID": 20200050,
+      "Entries": [
+        "s20_20_0050 Sanitary cannon again -- s20_20_0050 衛生砲再び"
+      ]
+    },
+    {
+      "ID": 20200060,
+      "Entries": [
+        "s20_20_0060 NPAC appearance_Straight urban invasion -- s20_20_0060 NPAC登場_ストレート市街侵攻"
+      ]
+    },
+    {
+      "ID": 20200070,
+      "Entries": [
+        "s20_20_0070_CS_B end after end roll and before lap -- s20_20_0070_エンドロール後周回前CS_Bエンド"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "s20_30_0000_Ash reappears (new B-tier people) -- s20_30_0000_アッシュ再登場（新B層の人々）"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "s30_00_0000_Next generation proto AC released -- s30_00_0000_次世代プロトAC登場"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "s30_00_0010_A end -- s30_00_0010_Aエンド"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "s30_00_0020_Last boss AC unit appears -- s30_00_0020_ラスボスAC部隊登場"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "s30_00_0030_C end -- s30_00_0030_Cエンド"
+      ]
+    },
+    {
+      "ID": 30000040,
+      "Entries": [
+        "s30_00_0040_C root final boss appears -- s30_00_0040_Cルートラスボス登場"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "s30_00_0050_After end roll and before lap CS_A end -- s30_00_0050_エンドロール後周回前CS_Aエンド"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "s41_00_0000_Electromagnetic net release -- s41_00_0000_電磁ネット解除"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "s41_00_0010_Ash reappears (biological weapon area) -- s41_00_0010_アッシュ再登場(生体兵器エリア)"
+      ]
+    },
+    {
+      "ID": 41000020,
+      "Entries": [
+        "s41_00_0020_Ash retreat (living weapon area) -- s41_00_0020_アッシュ撤退(生体兵器エリア)"
+      ]
+    },
+    {
+      "ID": 41000030,
+      "Entries": [
+        "Enter s41_00_0030_D layer -- s41_00_0030_D層に入る"
+      ]
+    },
+    {
+      "ID": 41000040,
+      "Entries": [
+        "s41_00_0040_M Strong enemy appears -- s41_00_0040_M強敵登場"
+      ]
+    },
+    {
+      "ID": 41000050,
+      "Entries": [
+        "s41_00_0050_Ruins reached -- s41_00_0050_廃墟到達"
+      ]
+    },
+    {
+      "ID": 41000060,
+      "Entries": [
+        "s41_00_0060_Ruins reached_ALT -- s41_00_0060_廃墟到達_ALT"
+      ]
+    },
+    {
+      "ID": 41000065,
+      "Entries": [
+        "s41_00_0065_Dark CS for biological weapon ALT -- s41_00_0065_生体兵器ALT用暗転CS"
+      ]
+    },
+    {
+      "ID": 41000070,
+      "Entries": [
+        "s41_00_0070_Ash withdrawal_ALT (biological weapon area) -- s41_00_0070_アッシュ撤退_ALT（生体兵器エリア）"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "s41_10_0000_Orbit Seed appears -- s41_10_0000_オービットシード登場"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "s41_10_0010_Defeat Orbit Seed -- s41_10_0010_オービットシード撃破"
+      ]
+    },
+    {
+      "ID": 41100020,
+      "Entries": [
+        "s41_10_0020 NPAC appearance_Jailbreak -- s41_10_0020 NPAC登場_脱獄"
+      ]
+    },
+    {
+      "ID": 41100030,
+      "Entries": [
+        "s41_10_0030_Special sortie_Descent (Ruins) -- s41_10_0030_専用出撃_降下（廃墟）"
+      ]
+    },
+    {
+      "ID": 41100040,
+      "Entries": [
+        "s41_10_0040 (Briefing) Walter's will -- s41_10_0040 （ブリーフィング）ウォルタ―の遺言"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "s50_10_0000 NPAC appears_Multiple dam defense -- s50_10_0000 NPAC登場_多重ダム防衛"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "s50_30_0010_Ash appears -- s50_30_0010_アッシュ登場"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "s50_30_0020 NPAC appearance_Exploration: In front of the wall -- s50_30_0020 NPAC登場_探索：壁前"
+      ]
+    },
+    {
+      "ID": 50400010,
+      "Entries": [
+        "s50_40_0010_Data center explosion -- s50_40_0010_データセンター爆破"
+      ]
+    },
+    {
+      "ID": 50400020,
+      "Entries": [
+        "s50_40_0020_Melange small explosion -- s50_40_0020_メランジ小爆発"
+      ]
+    },
+    {
+      "ID": 50400030,
+      "Entries": [
+        "s50_40_0030 NPAC appearance_coordinates indicated by string -- s50_40_0030 NPAC登場_文字列が示す座標"
+      ]
+    },
+    {
+      "ID": 50400040,
+      "Entries": [
+        "s50_40_0040_Dedicated sortie_descent (string) -- s50_40_0040_専用出撃_降下（文字列）"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "s50_50_0000 NPAC appears_Intruder elimination -- s50_50_0000 NPAC登場_侵入者排除"
+      ]
+    }
+  ]
+}

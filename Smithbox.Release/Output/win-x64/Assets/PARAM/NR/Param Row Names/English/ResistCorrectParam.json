@@ -1,0 +1,311 @@
+{
+  "Name": "ResistCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[NPC] All Statuses"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Poison] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Poison] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Poison] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Poison] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Poison] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Poison] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Poison] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Scarlet Rot] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Scarlet Rot] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Scarlet Rot] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Scarlet Rot] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Scarlet Rot] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Scarlet Rot] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Scarlet Rot] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Blood Loss] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Blood Loss] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Blood Loss] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Blood Loss] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[Blood Loss] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "[Blood Loss] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Blood Loss] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Death Blight] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Death Blight] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[Death Blight] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Death Blight] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "[Death Blight] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "[Death Blight] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Death Blight] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Frostbite] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Frostbite] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[Frostbite] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "[Frostbite] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[Frostbite] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Frostbite] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Frostbite] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Sleep] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Sleep] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Sleep] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Sleep] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[Sleep] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[Sleep] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Sleep] Tier 0 (20 Base)"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Madness] Tier 1 (63 base)"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Madness] Tier 2 (84 base)"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[Madness] Tier 3 (112 base)"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[Madness] Tier 4 (154 base)"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[Madness] Tier 5 (252 base)"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[Madness] Tier 6 (542 base)"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Madness] Tier 0 (20 Base)"
+      ]
+    }
+  ]
+}

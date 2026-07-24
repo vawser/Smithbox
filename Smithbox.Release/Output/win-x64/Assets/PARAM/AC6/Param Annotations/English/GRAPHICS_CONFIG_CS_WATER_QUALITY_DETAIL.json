@@ -1,0 +1,18 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_WATER_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_WATER_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_WATER_QUALITY_DETAIL",
+  "Description": "Determines the parameters of each water quality level.",
+  "Fields": [
+    {
+      "Field": "interactionEnabled",
+      "Name": "Enable Water Interaction",
+      "Description": "If ON, water will response to interaction."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

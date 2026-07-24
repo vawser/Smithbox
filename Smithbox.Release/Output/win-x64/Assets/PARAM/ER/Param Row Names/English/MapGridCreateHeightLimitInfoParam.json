@@ -1,0 +1,47 @@
+{
+  "Name": "MapGridCreateHeightLimitInfoParam",
+  "Entries": [
+    {
+      "ID": 60081202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60081302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60091302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60101202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60101302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99999901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99999902,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

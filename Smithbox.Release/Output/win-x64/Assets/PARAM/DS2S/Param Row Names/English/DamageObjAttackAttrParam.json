@@ -1,0 +1,77 @@
+{
+  "Name": "DamageObjAttackAttrParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy (not allowed) -- ダミー（使用禁止）"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "No destruction. -- 破壊なし"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Gust -- 突風"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Tossing -- 投げつかみ"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "No stabbing- font destruction -- 刺突-壷破壊不可"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Stabbing -- 刺突"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Slashing -- 斬撃"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Blow -- 打撃"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Explosion -- 爆発"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Oversized explosion -- 特大爆発"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Can't be destroyed -- 破壊不可"
+      ]
+    }
+  ]
+}

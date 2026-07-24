@@ -1,0 +1,33 @@
+{
+  "Param": "MINI_AREA_PARAM_ST",
+  "Type": "MINI_AREA_PARAM_ST",
+  "Name": "MINI_AREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "areaName",
+      "Name": "エリア名称",
+      "Description": "ミニエリアに対して割り当てられる名称のテキストID。メニューやFE、インゲーム内演出から参照される"
+    },
+    {
+      "Field": "openEventFlag",
+      "Name": "開放イベントフラグ",
+      "Description": "ミニエリア毎の解放状態と紐付くイベントフラグID"
+    },
+    {
+      "Field": "warningLineStartDisplayDistance",
+      "Name": "警告ライン表示開始距離(m)",
+      "Description": "エリア境界の警告ライン表示を開始するエリア境界からの距離（-1の場合警告ラインを表示しない）"
+    },
+    {
+      "Field": "warningLineDisplayDistance",
+      "Name": "警告ライン表示距離(m)",
+      "Description": "エリア境界の警告ラインが表示されるエリア境界からの距離（-1の場合警告ラインを表示しない）"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad_end[4]",
+      "Description": ""
+    }
+  ]
+}

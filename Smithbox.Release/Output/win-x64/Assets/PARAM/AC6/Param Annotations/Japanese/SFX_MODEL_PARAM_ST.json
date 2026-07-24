@@ -1,0 +1,48 @@
+{
+  "Param": "SFX_MODEL_PARAM_ST",
+  "Type": "SFX_MODEL_PARAM_ST",
+  "Name": "SFX_MODEL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk00",
+      "Name": "unk00",
+      "Description": ""
+    },
+    {
+      "Field": "unk04",
+      "Name": "unk04",
+      "Description": ""
+    },
+    {
+      "Field": "unk08",
+      "Name": "unk08",
+      "Description": ""
+    },
+    {
+      "Field": "unk0c",
+      "Name": "unk0c",
+      "Description": ""
+    },
+    {
+      "Field": "unk10",
+      "Name": "unk10",
+      "Description": ""
+    },
+    {
+      "Field": "unk14",
+      "Name": "unk14",
+      "Description": ""
+    },
+    {
+      "Field": "unk18",
+      "Name": "unk18",
+      "Description": ""
+    },
+    {
+      "Field": "unk1c",
+      "Name": "unk1c",
+      "Description": ""
+    }
+  ]
+}

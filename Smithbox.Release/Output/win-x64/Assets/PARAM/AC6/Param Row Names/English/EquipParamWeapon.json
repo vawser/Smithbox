@@ -1,0 +1,1709 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "nothing"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 299000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 299100,
+      "Entries": [
+        "Back Rail - Weapon Loader"
+      ]
+    },
+    {
+      "ID": 299200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 299300,
+      "Entries": [
+        "Back Rail - Weapon Loader"
+      ]
+    },
+    {
+      "ID": 299400,
+      "Entries": [
+        "Back Rail - Back Weapon"
+      ]
+    },
+    {
+      "ID": 299500,
+      "Entries": [
+        "Back Rail - Back Weapon"
+      ]
+    },
+    {
+      "ID": 3800500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "BURST RIFLE - MA-J-200 RANSETSU-RF (Right)"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "BURST RIFLE - MA-J-200 RANSETSU-RF (Left)"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "LINEAR RIFLE - LR-036 CURTIS (Right)"
+      ]
+    },
+    {
+      "ID": 15000100,
+      "Entries": [
+        "LINEAR RIFLE - LR-036 CURTIS (Left)"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "LINEAR RIFLE - LR-037 HARRIS (Right)"
+      ]
+    },
+    {
+      "ID": 15000200,
+      "Entries": [
+        "LINEAR RIFLE - LR-037 HARRIS (Left)"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "BURST ASSAULT RIFLE - MA-J-201 RANSETSU-AR (Right)"
+      ]
+    },
+    {
+      "ID": 15010000,
+      "Entries": [
+        "BURST ASSAULT RIFLE - MA-J-201 RANSETSU-AR (Left)"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "ASSAULT RIFLE - RF-024 TURNER (Right)"
+      ]
+    },
+    {
+      "ID": 15010100,
+      "Entries": [
+        "ASSAULT RIFLE - RF-024 TURNER (Left)"
+      ]
+    },
+    {
+      "ID": 10010200,
+      "Entries": [
+        "ASSAULT RIFLE - RF-025 SCUDDER (Right)"
+      ]
+    },
+    {
+      "ID": 15010200,
+      "Entries": [
+        "ASSAULT RIFLE - RF-025 SCUDDER (Left)"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "BURST MACHINE GUN - MA-E-210 ETSUJIN (Right)"
+      ]
+    },
+    {
+      "ID": 15020000,
+      "Entries": [
+        "BURST MACHINE GUN - MA-E-210 ETSUJIN (Left)"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "MACHINE GUN - MG-014 LUDLOW (Right)"
+      ]
+    },
+    {
+      "ID": 15020100,
+      "Entries": [
+        "MACHINE GUN - MG-014 LUDLOW (Left)"
+      ]
+    },
+    {
+      "ID": 10020200,
+      "Entries": [
+        "MACHINE GUN - DF-MG-02 CHANG-CHEN (Right)"
+      ]
+    },
+    {
+      "ID": 15020200,
+      "Entries": [
+        "MACHINE GUN - DF-MG-02 CHANG-CHEN (Left)"
+      ]
+    },
+    {
+      "ID": 10020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE (Right)"
+      ]
+    },
+    {
+      "ID": 15020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE (Left)"
+      ]
+    },
+    {
+      "ID": 10030000,
+      "Entries": [
+        "GATLING GUN - DF-GA-08 HU-BEN (Right)"
+      ]
+    },
+    {
+      "ID": 15030000,
+      "Entries": [
+        "GATLING GUN - DF-GA-08 HU-BEN (Left)"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "BAZOOKA - LITTLE GEM (Right)"
+      ]
+    },
+    {
+      "ID": 15040000,
+      "Entries": [
+        "BAZOOKA - LITTLE GEM (Left)"
+      ]
+    },
+    {
+      "ID": 10040100,
+      "Entries": [
+        "BAZOOKA - MAJESTIC (Right)"
+      ]
+    },
+    {
+      "ID": 15040100,
+      "Entries": [
+        "BAZOOKA - MAJESTIC (Left)"
+      ]
+    },
+    {
+      "ID": 10040200,
+      "Entries": [
+        "BAZOOKA - DF-BA-06 XUAN-GE (Right)"
+      ]
+    },
+    {
+      "ID": 15040200,
+      "Entries": [
+        "BAZOOKA - DF-BA-06 XUAN-GE (Left)"
+      ]
+    },
+    {
+      "ID": 10050000,
+      "Entries": [
+        "SHOTGUN - WR-0777 SWEET SIXTEEN (Right)"
+      ]
+    },
+    {
+      "ID": 15050000,
+      "Entries": [
+        "SHOTGUN - WR-0777 SWEET SIXTEEN (Left)"
+      ]
+    },
+    {
+      "ID": 10050100,
+      "Entries": [
+        "SHOTGUN - SG-026 HALDEMAN (Right)"
+      ]
+    },
+    {
+      "ID": 15050100,
+      "Entries": [
+        "SHOTGUN - SG-026 HALDEMAN (Left)"
+      ]
+    },
+    {
+      "ID": 10050200,
+      "Entries": [
+        "SHOTGUN - SG-027 ZIMMERMAN (Right)"
+      ]
+    },
+    {
+      "ID": 15050200,
+      "Entries": [
+        "SHOTGUN - SG-027 ZIMMERMAN (Left)"
+      ]
+    },
+    {
+      "ID": 10060000,
+      "Entries": [
+        "GRENADE LAUNCHER - DF-GR-07 GOU-CHEN (Right)"
+      ]
+    },
+    {
+      "ID": 15060000,
+      "Entries": [
+        "GRENADE LAUNCHER - DF-GR-07 GOU-CHEN (Left)"
+      ]
+    },
+    {
+      "ID": 10060100,
+      "Entries": [
+        "GRENADE LAUNCHER - DIZZY (Right)"
+      ]
+    },
+    {
+      "ID": 15060100,
+      "Entries": [
+        "GRENADE LAUNCHER - DIZZY (Left)"
+      ]
+    },
+    {
+      "ID": 10070000,
+      "Entries": [
+        "NEEDLE GUN - EL-PW-00 VIENTO (Right)"
+      ]
+    },
+    {
+      "ID": 15070000,
+      "Entries": [
+        "NEEDLE GUN - EL-PW-00 VIENTO (Left)"
+      ]
+    },
+    {
+      "ID": 10070100,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU (Right)"
+      ]
+    },
+    {
+      "ID": 15070100,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU (Left)"
+      ]
+    },
+    {
+      "ID": 10070200,
+      "Entries": [
+        "HANDGUN - HG-003 COQUILLETT (Right)"
+      ]
+    },
+    {
+      "ID": 15070200,
+      "Entries": [
+        "HANDGUN - HG-003 COQUILLETT (Left)"
+      ]
+    },
+    {
+      "ID": 10070300,
+      "Entries": [
+        "HANDGUN - HG-004 DUCKETT (Right)"
+      ]
+    },
+    {
+      "ID": 15070300,
+      "Entries": [
+        "HANDGUN - HG-004 DUCKETT (Left)"
+      ]
+    },
+    {
+      "ID": 10080000,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU (Right)"
+      ]
+    },
+    {
+      "ID": 15080000,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU (Left)"
+      ]
+    },
+    {
+      "ID": 10080100,
+      "Entries": [
+        "NAPLAM BOMB LAUNCHER - MA-T-222 KYORAI (Right)"
+      ]
+    },
+    {
+      "ID": 15080100,
+      "Entries": [
+        "NAPLAM BOMB LAUNCHER - MA-T-222 KYORAI (Left)"
+      ]
+    },
+    {
+      "ID": 10080200,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Right)"
+      ]
+    },
+    {
+      "ID": 15080200,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Left)"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "MISSILE LAUNCHER - HML-G2/P19MLT-04 (Right)"
+      ]
+    },
+    {
+      "ID": 15090000,
+      "Entries": [
+        "MISSILE LAUNCHER - HML-G2/P19MLT-04 (Left)"
+      ]
+    },
+    {
+      "ID": 10090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - HML-G3/P08SPL-06 (Right)"
+      ]
+    },
+    {
+      "ID": 15090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - HML-G3/P08SPL-06 (Left)"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "GRENADE LAUNCHER - IRIDIUM (Right)"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "GRENADE LAUNCHER - IRIDIUM (Left)"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "LASER HANDGUN - VP-66LH (Right)"
+      ]
+    },
+    {
+      "ID": 15110000,
+      "Entries": [
+        "LASER HANDGUN - VP-66LH (Left)"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "LASER RIFLE - VP-66LR (Right)"
+      ]
+    },
+    {
+      "ID": 15110100,
+      "Entries": [
+        "LASER RIFLE - VP-66LR (Left)"
+      ]
+    },
+    {
+      "ID": 10110200,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Right)"
+      ]
+    },
+    {
+      "ID": 15110200,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Left)"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "LASER RIFLE - VE-66LRA (Right)"
+      ]
+    },
+    {
+      "ID": 15110300,
+      "Entries": [
+        "LASER RIFLE - VE-66LRA (Left)"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Right)"
+      ]
+    },
+    {
+      "ID": 15120000,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Left)"
+      ]
+    },
+    {
+      "ID": 10120100,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Right)"
+      ]
+    },
+    {
+      "ID": 15120100,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Left)"
+      ]
+    },
+    {
+      "ID": 10130000,
+      "Entries": [
+        "PULSE GUN - HI-16: GU-Q1 (Right)"
+      ]
+    },
+    {
+      "ID": 15130000,
+      "Entries": [
+        "PULSE GUN - HI-16: GU-Q1 (Left)"
+      ]
+    },
+    {
+      "ID": 10130100,
+      "Entries": [
+        "PULSE GUN - HI-18: GU-A2 (Right)"
+      ]
+    },
+    {
+      "ID": 15130100,
+      "Entries": [
+        "PULSE GUN - HI-18: GU-A2 (Left)"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "LASER RIFLE - VE-66LRB (Right)"
+      ]
+    },
+    {
+      "ID": 15140000,
+      "Entries": [
+        "LASER RIFLE - VE-66LRB (Left)"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E (Right)"
+      ]
+    },
+    {
+      "ID": 15150000,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E (Left)"
+      ]
+    },
+    {
+      "ID": 10150100,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS (Right)"
+      ]
+    },
+    {
+      "ID": 15150100,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS (Left)"
+      ]
+    },
+    {
+      "ID": 10150200,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Right)"
+      ]
+    },
+    {
+      "ID": 15150200,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Left)"
+      ]
+    },
+    {
+      "ID": 10150300,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT (Right)"
+      ]
+    },
+    {
+      "ID": 15150300,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT (Left)"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "FLAMETHROWER - WB-0000 BAD COOK (Right)"
+      ]
+    },
+    {
+      "ID": 15160000,
+      "Entries": [
+        "FLAMETHROWER - WB-0000 BAD COOK (Left)"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Right)"
+      ]
+    },
+    {
+      "ID": 15170000,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Left)"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "STUN GUN - VP-66EG (Right)"
+      ]
+    },
+    {
+      "ID": 15180000,
+      "Entries": [
+        "STUN GUN - VP-66EG (Left)"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF (Right)"
+      ]
+    },
+    {
+      "ID": 15190000,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF (Left)"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D (Right)"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D (Left)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "MACHINE GUN [Inherited] - MG-014 LUDLOW (Escape Mission) (Right)"
+      ]
+    },
+    {
+      "ID": 15220000,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER [Inherited] - MA-T-223 KYORIKU (Escape Mission) (Left)"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C01W7: ML-REDSHIFT"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS"
+      ]
+    },
+    {
+      "ID": 20040000,
+      "Entries": [
+        "LASER DAGGER - VP-67LD"
+      ]
+    },
+    {
+      "ID": 20050000,
+      "Entries": [
+        "LASER LANCE - VE-67LLA"
+      ]
+    },
+    {
+      "ID": 20060000,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE"
+      ]
+    },
+    {
+      "ID": 20070000,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR"
+      ]
+    },
+    {
+      "ID": 20080000,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "STUN BATON - VP-67EB"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "PULSE SHIELD - SI-24: SU-Q5"
+      ]
+    },
+    {
+      "ID": 25010000,
+      "Entries": [
+        "PULSE SHIELD - VP-61PS"
+      ]
+    },
+    {
+      "ID": 25010100,
+      "Entries": [
+        "PULSE SHIELD - SI-27: SU-R8"
+      ]
+    },
+    {
+      "ID": 25010200,
+      "Entries": [
+        "PULSE BUCKLER - SI-29: SU-TT/C"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "PULSE BUCKLER - VP-61PB"
+      ]
+    },
+    {
+      "ID": 25010300,
+      "Entries": [
+        "CORAL SHIELD - IB-C03W4: NGI 028"
+      ]
+    },
+    {
+      "ID": 25020000,
+      "Entries": [
+        "PULSE SCUTUM - VE-61PSA"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Right)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Left)"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM (Right)"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM (Left)"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Right)"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Left)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02 (Right)"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02 (Left)"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01 (Right)"
+      ]
+    },
+    {
+      "ID": 35010100,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01 (Left)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Right)"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Left)"
+      ]
+    },
+    {
+      "ID": 30020100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Right)"
+      ]
+    },
+    {
+      "ID": 35020100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Left)"
+      ]
+    },
+    {
+      "ID": 30020200,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Right)"
+      ]
+    },
+    {
+      "ID": 35020200,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Left)"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Right)"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Left)"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Right)"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Left)"
+      ]
+    },
+    {
+      "ID": 30040100,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Right)"
+      ]
+    },
+    {
+      "ID": 35040100,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Left)"
+      ]
+    },
+    {
+      "ID": 30040200,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Right)"
+      ]
+    },
+    {
+      "ID": 35040200,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Left)"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Right)"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Left)"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Right)"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Left)"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Right)"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Left)"
+      ]
+    },
+    {
+      "ID": 30080100,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Right)"
+      ]
+    },
+    {
+      "ID": 35080100,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Left)"
+      ]
+    },
+    {
+      "ID": 30080200,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Right)"
+      ]
+    },
+    {
+      "ID": 35080200,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Left)"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12 (Right)"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12 (Left)"
+      ]
+    },
+    {
+      "ID": 30090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08 (Right)"
+      ]
+    },
+    {
+      "ID": 35090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08 (Left)"
+      ]
+    },
+    {
+      "ID": 30090200,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16 (Right)"
+      ]
+    },
+    {
+      "ID": 35090200,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16 (Left)"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS (Right)"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS (Left)"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO (Right)"
+      ]
+    },
+    {
+      "ID": 35110000,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO (Left)"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Right)"
+      ]
+    },
+    {
+      "ID": 35120000,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Left)"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Right)"
+      ]
+    },
+    {
+      "ID": 35130000,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Left)"
+      ]
+    },
+    {
+      "ID": 30140100,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Right)"
+      ]
+    },
+    {
+      "ID": 35140100,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Left)"
+      ]
+    },
+    {
+      "ID": 30150100,
+      "Entries": [
+        "LASER TURRET - VP-60LT (Right)"
+      ]
+    },
+    {
+      "ID": 35150100,
+      "Entries": [
+        "LASER TURRET - VP-60LT (Left)"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY (Right)"
+      ]
+    },
+    {
+      "ID": 35200000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY (Left)"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT (Right)"
+      ]
+    },
+    {
+      "ID": 35210000,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT (Left)"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Right)"
+      ]
+    },
+    {
+      "ID": 35220000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Left)"
+      ]
+    },
+    {
+      "ID": 30230000,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Right)"
+      ]
+    },
+    {
+      "ID": 35230000,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Left)"
+      ]
+    },
+    {
+      "ID": 30240000,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z (Right)"
+      ]
+    },
+    {
+      "ID": 35240000,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z (Left)"
+      ]
+    },
+    {
+      "ID": 30250000,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Right)"
+      ]
+    },
+    {
+      "ID": 35250000,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Left)"
+      ]
+    },
+    {
+      "ID": 30250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Right)"
+      ]
+    },
+    {
+      "ID": 35250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Left)"
+      ]
+    },
+    {
+      "ID": 30260000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Right)"
+      ]
+    },
+    {
+      "ID": 35260000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Left)"
+      ]
+    },
+    {
+      "ID": 30270000,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Right)"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Left)"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Right)"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Left)"
+      ]
+    },
+    {
+      "ID": 30300100,
+      "Entries": [
+        "LASER ORBIT - 45-091 ORBT (Right)"
+      ]
+    },
+    {
+      "ID": 35300100,
+      "Entries": [
+        "LASER ORBIT - 45-091 ORBT (Left)"
+      ]
+    },
+    {
+      "ID": 30310000,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Right)"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Left)"
+      ]
+    },
+    {
+      "ID": 30350100,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA (Right)"
+      ]
+    },
+    {
+      "ID": 35350100,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA (Left)"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Right)"
+      ]
+    },
+    {
+      "ID": 35400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Left)"
+      ]
+    },
+    {
+      "ID": 75000000,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "EXPANSION - PULSE ARMOR"
+      ]
+    },
+    {
+      "ID": 75020000,
+      "Entries": [
+        "EXPANSION - PULSE PROTECTION"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "EXPANSION - TERMINAL ARMOR"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "CORE - BD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 75100100,
+      "Entries": [
+        "CORE - CS-5000 MAIN DISH"
+      ]
+    },
+    {
+      "ID": 75100200,
+      "Entries": [
+        "CORE - DF-BD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 75100300,
+      "Entries": [
+        "CORE - NACHTREIHER/40E"
+      ]
+    },
+    {
+      "ID": 75100400,
+      "Entries": [
+        "CORE - VP-40S"
+      ]
+    },
+    {
+      "ID": 75100500,
+      "Entries": [
+        "CORE - VE-40A"
+      ]
+    },
+    {
+      "ID": 75100600,
+      "Entries": [
+        "CORE - 07-061 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 75100700,
+      "Entries": [
+        "CORE - EL-TC-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 75100800,
+      "Entries": [
+        "CORE - AC-J-120 BASHO"
+      ]
+    },
+    {
+      "ID": 75100900,
+      "Entries": [
+        "CORE - CC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 75101000,
+      "Entries": [
+        "CORE - CC-2000 ORBITER"
+      ]
+    },
+    {
+      "ID": 75101100,
+      "Entries": [
+        "CORE - IB-C03C: HAL 826"
+      ]
+    },
+    {
+      "ID": 75101200,
+      "Entries": [
+        "CORE - IA-C01C: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 75101300,
+      "Entries": [
+        "CORE - EL-PC-00 ALBA"
+      ]
+    },
+    {
+      "ID": 75101400,
+      "Entries": [
+        "CORE - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 75109000,
+      "Entries": [
+        "CORE - AC-J-120/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "HEAD (Scan) - HD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "HEAD (Scan) - HS-5000 APPETIZER"
+      ]
+    },
+    {
+      "ID": 80000200,
+      "Entries": [
+        "HEAD (Scan) - HD-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 80000300,
+      "Entries": [
+        "HEAD (Scan) - HD-012 MELANDER C3"
+      ]
+    },
+    {
+      "ID": 80010000,
+      "Entries": [
+        "HEAD (Scan) - DF-HD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 80020000,
+      "Entries": [
+        "HEAD (Scan) - NACHTREIHER/44E"
+      ]
+    },
+    {
+      "ID": 80020100,
+      "Entries": [
+        "HEAD (Scan) - KASUAR/44Z"
+      ]
+    },
+    {
+      "ID": 80030000,
+      "Entries": [
+        "HEAD (Scan) - VP-44S"
+      ]
+    },
+    {
+      "ID": 80030100,
+      "Entries": [
+        "HEAD (Scan) - VP-44D"
+      ]
+    },
+    {
+      "ID": 80040000,
+      "Entries": [
+        "HEAD (Scan) - VE-44A"
+      ]
+    },
+    {
+      "ID": 80040100,
+      "Entries": [
+        "HEAD (Scan) - VE-44B"
+      ]
+    },
+    {
+      "ID": 80050000,
+      "Entries": [
+        "HEAD (Scan) - 20-081 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 80050100,
+      "Entries": [
+        "HEAD (Scan) - 20-082 MIND BETA"
+      ]
+    },
+    {
+      "ID": 80060000,
+      "Entries": [
+        "HEAD (Scan) - EL-TH-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 80070200,
+      "Entries": [
+        "HEAD (Scan) - AH-J-124 BASHO"
+      ]
+    },
+    {
+      "ID": 80070300,
+      "Entries": [
+        "HEAD (Scan) - HC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 80070400,
+      "Entries": [
+        "HEAD (Scan) - HC-2000 FINDER EYE"
+      ]
+    },
+    {
+      "ID": 80070600,
+      "Entries": [
+        "HEAD (Scan) - HC-2000/BC SHADE EYE"
+      ]
+    },
+    {
+      "ID": 80080000,
+      "Entries": [
+        "HEAD (Scan) - IB-C03H: HAL 826"
+      ]
+    },
+    {
+      "ID": 80080100,
+      "Entries": [
+        "HEAD (Scan) - IA-C01H: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 80080200,
+      "Entries": [
+        "HEAD (Scan) - EL-PH-00 ALBA"
+      ]
+    },
+    {
+      "ID": 80080300,
+      "Entries": [
+        "HEAD (Scan) - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 95001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95001100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95001200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95001300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95002100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95002200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95002300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95003100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95003200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95003300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95004100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95004200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95004300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95005100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95005200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95005300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95006100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95006200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95006300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95011100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95011200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95011300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95012000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95012100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95012200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95012300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95012400,
+      "Entries": [
+        "HEAD (Scan) - AH-J-124/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 95020000,
+      "Entries": [
+        "CORAL RIFLE [NPC] - IB-C03W1: WLT 011 (Right)"
+      ]
+    },
+    {
+      "ID": 95020100,
+      "Entries": [
+        "CORAL OSCILLATOR [NPC] - IB-C03W2: WLT 101"
+      ]
+    },
+    {
+      "ID": 95020200,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER [NPC] - IB-C03W3: NGI 006 (Right)"
+      ]
+    },
+    {
+      "ID": 95020300,
+      "Entries": [
+        "CORAL SHIELD [NPC] - IB-C03W4: NGI 028"
+      ]
+    }
+  ]
+}

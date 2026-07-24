@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a treasure within the map." />
+  
+  <Field>
+    <TreasurePartName
+    AltName="Part Name"
+    Wiki="The part referenced by the treasure event."
+    MapRef="Part-Part" />
+    
+    <TreasurePartIndex
+    IndexProperty="" />
+    
+    <ItemLot1
+    AltName="Item Lot: 1"
+    Wiki="The item lot to award when this treasure is acquired."
+    ParamRef="ItemLotParam" />
+    
+    <ItemLot2
+    AltName="Item Lot: 2"
+    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    ParamRef="ItemLotParam" />
+    
+    <ItemLot3
+    AltName="Item Lot: 3"
+    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    ParamRef="ItemLotParam" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <UnkT20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <UnkT30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <ActionButtonParamID
+    AltName="Action Button ID"
+    Wiki="Adds the designated Action Button param to the Treasure pickup"
+	ParamRef="ActionButtonParam" />
+    
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <InChest
+    AltName="Is Chest"
+    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    IsBool="" />
+    
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, this treasure is hidden by default."
+    IsBool="" />
+    
+    <UnkT42
+    AltName="Unknown: 0x42"
+    Wiki="" />
+    
+    <EnableSecondaryItemlot
+    AltName="Enable ItemLot #2 Flag"
+    Wiki="Toggles to Item Lot #2 when this flag is ON." 
+    IsBool="" />
+    
+    <UnkT48
+    AltName="Unknown: 0x48"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

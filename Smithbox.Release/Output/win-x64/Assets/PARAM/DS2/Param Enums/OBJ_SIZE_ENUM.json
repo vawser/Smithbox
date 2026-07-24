@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_SIZE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_SIZE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Compact (dynamic)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large (dynamic)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large (static)"
+        }
+      ]
+    }
+  ]
+}

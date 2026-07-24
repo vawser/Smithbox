@@ -1,0 +1,101 @@
+{
+  "Name": "ActionGuideParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Dummy1 -- Dummy1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Dummy2 -- Dummy2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Dummy3 -- Dummy3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Stick -- 張りつく"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Leave -- 離れる"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Hanging -- ぶら下がる"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Climb -- よじ登る"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "get off -- 降りる"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "dive -- 潜る"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "acceleration -- 加速"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Rise -- 上昇"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Descent -- 下降"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Ascend -- 浮上"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Resurrection -- 復活する"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "die -- 死ぬ"
+      ]
+    }
+  ]
+}

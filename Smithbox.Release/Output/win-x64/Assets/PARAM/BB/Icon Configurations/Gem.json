@@ -1,0 +1,18 @@
+{
+  "Name": "Gem",
+  "File": "common",
+  "InternalFiles": [
+    "MENU_Icon_03001",
+    "MENU_Icon_03002",
+    "MENU_Icon_03003",
+    "MENU_Icon_03004",
+    "MENU_Icon_03005",
+    "MENU_Icon_03006",
+    "MENU_Icon_03007",
+    "MENU_Icon_03008",
+    "MENU_Icon_03009",
+    "MENU_Icon_04001",
+    "MENU_Icon_04002"
+  ],
+  "SubTexturePrefix": "ICON_"
+}

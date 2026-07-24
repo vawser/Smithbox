@@ -1,0 +1,29 @@
+{
+  "Key": "THRUSTERS_RPC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THRUSTERS_RPC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not Used"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character horizontal movement speed (km/h)"
+        }
+      ]
+    }
+  ]
+}

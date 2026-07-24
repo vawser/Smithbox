@@ -1,0 +1,148 @@
+{
+  "Param": "SP_EFFECT_VFX_PARAM_ST",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SP_EFFECT_VFX_PARAM_ST",
+  "Description": "Determines the parameters for particles triggered via SpEffect.",
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "Continuous: Particle ID",
+      "Description": "The SFX ID to use for the particle that is displayed continuously."
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "Continuous: Sound ID",
+      "Description": "The sound ID to use for the particle that is displayed continuously."
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "Start: Particle ID",
+      "Description": "The SFX ID to use for the particle that appears when the effect starts."
+    },
+    {
+      "Field": "initSeId",
+      "Name": "Start: Sound ID",
+      "Description": "The sound ID to use for the particle that appears when the effect starts."
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "End: Particle ID",
+      "Description": "The SFX ID to use for the particle that appears when the effect ends."
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "End: Sound ID",
+      "Description": "The sound ID to use for the particle that appears when the effect ends."
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "Invisibility: Start Distance",
+      "Description": "When hiding the owner via this effect, this is the start distance for the invisibility."
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "Invisibility: End Distance",
+      "Description": "When hiding the owner via this effect, this is the end distance for the invisibility."
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "Transformation: Armor ID",
+      "Description": "The armor ID to draw from when overriding the owner's current equipment (visually)."
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "Continuous: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the particle that is displayed continuously."
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "Start: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the particle that appears when the effect starts."
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "End: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the particle that appears when the effect end."
+    },
+    {
+      "Field": "effectType",
+      "Name": "Particle Type",
+      "Description": "The particle type for this effect."
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "Shader for Weapon Enchantment",
+      "Description": "The shader type to display on the weapon of the effect owner."
+    },
+    {
+      "Field": "playCategory",
+      "Name": "Playback Category",
+      "Description": "The playback category for the effect, controls playback if multiple effects overlap."
+    },
+    {
+      "Field": "playPriority",
+      "Name": "Playback Priority",
+      "Description": "The priority to give this effect if it overlaps with another."
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "Apply NPC Particle Offset",
+      "Description": "Offsets particle ID according to target's NpcParam sfxSize."
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "Apply Shader Offset",
+      "Description": "Offsets shader ID according to target's weapon."
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "Hide Playback when Hidden",
+      "Description": "If ON, playback of the effect is stopped whilst the owner is hidden."
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "Apply Invisibility",
+      "Description": "If ON, the invisibility fields are enabled, allowing invisibility."
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "Apply Invisibility against Friends",
+      "Description": "If ON, invisibility will hide the owner for friendly characters too."
+    },
+    {
+      "Field": "addMapAreaBlockOffset",
+      "Name": "Map Particle Offset",
+      "Description": "If defined, the particle ID will be prefixed with the map ID it is present in, and the FFX will be looked for within the map's FFX container."
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "Is Partial Invisibility",
+      "Description": "If ON, invisibility is only semi-transparent, not total."
+    },
+    {
+      "Field": "isFullBodyTransformProtectorId",
+      "Name": "Apply Transformation to Full Body",
+      "Description": "If ON, the transformation ID will apply to all armor slots."
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "Hide Right-Hand Weapon",
+      "Description": "If ON, the effect will make the right-hand weapon of the owner invisible."
+    },
+    {
+      "Field": "isSilence",
+      "Name": "Suppress Sound",
+      "Description": "If ON, the effect owner produces no sound."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

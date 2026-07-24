@@ -1,0 +1,1709 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "nothing -- 何もなし"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Bare hands (fighting) -- 素手（格闘）"
+      ]
+    },
+    {
+      "ID": 299000,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_double hanger) -- FNR\u3000武器マウントパーツ（右肩_ダブルハンガー）"
+      ]
+    },
+    {
+      "ID": 299100,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_single hanger) -- FNR\u3000武器マウントパーツ（右肩_シングルハンガー）"
+      ]
+    },
+    {
+      "ID": 299200,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_double hanger) -- FNR\u3000武器マウントパーツ（左肩_ダブルハンガー）"
+      ]
+    },
+    {
+      "ID": 299300,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_single hanger) -- FNR\u3000武器マウントパーツ（左肩_シングルハンガー）"
+      ]
+    },
+    {
+      "ID": 299400,
+      "Entries": [
+        "FNR Weapon mount parts (right shoulder_spacer) -- FNR\u3000武器マウントパーツ（右肩_スペーサー）"
+      ]
+    },
+    {
+      "ID": 299500,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_spacer) -- FNR\u3000武器マウントパーツ（左肩_スペーサー）"
+      ]
+    },
+    {
+      "ID": 3800500,
+      "Entries": [
+        "FNR left hand_blade (left and right weapon switching test) -- FNR\u3000左手_ブレード（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "1610_Burst Rifle_Right -- 1610_バーストライフル_右"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "1610_Burst Rifle_Left -- 1610_バーストライフル_左"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "1620_linear rifle_right -- 1620_リニアライフル_右"
+      ]
+    },
+    {
+      "ID": 15000100,
+      "Entries": [
+        "1620_linear rifle_left -- 1620_リニアライフル_左"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "1630_Heavy linear rifle_Right -- 1630_重リニアライフル_右"
+      ]
+    },
+    {
+      "ID": 15000200,
+      "Entries": [
+        "1630_Heavy linear rifle_Left -- 1630_重リニアライフル_左"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "1710_Burst Assault Rifle_Right -- 1710_バーストアサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 15010000,
+      "Entries": [
+        "1710_Burst Assault Rifle_Left -- 1710_バーストアサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "1720_assault rifle_right -- 1720_アサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 15010100,
+      "Entries": [
+        "1720_assault rifle_left -- 1720_アサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 10010200,
+      "Entries": [
+        "1730_Heavy assault rifle_Right -- 1730_重アサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 15010200,
+      "Entries": [
+        "1730_Heavy assault rifle_Left -- 1730_重アサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "1810_Burst machine gun_Right -- 1810_バーストマシンガン_右"
+      ]
+    },
+    {
+      "ID": 15020000,
+      "Entries": [
+        "1810_Burst machine gun_Left -- 1810_バーストマシンガン_左"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "1820_machine gun_right -- 1820_マシンガン_右"
+      ]
+    },
+    {
+      "ID": 15020100,
+      "Entries": [
+        "1820_machine gun_left -- 1820_マシンガン_左"
+      ]
+    },
+    {
+      "ID": 10020200,
+      "Entries": [
+        "1830_heavy machine gun_right -- 1830_重マシンガン_右"
+      ]
+    },
+    {
+      "ID": 15020200,
+      "Entries": [
+        "1830_heavy machine gun_left -- 1830_重マシンガン_左"
+      ]
+    },
+    {
+      "ID": 10020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE (Right)"
+      ]
+    },
+    {
+      "ID": 15020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE (Left)"
+      ]
+    },
+    {
+      "ID": 10030000,
+      "Entries": [
+        "1910_Gatling gun_right -- 1910_ガトリングガン_右"
+      ]
+    },
+    {
+      "ID": 15030000,
+      "Entries": [
+        "1910_Gatling gun_left -- 1910_ガトリングガン_左"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "1410_light bazooka_right -- 1410_軽バズーカ_右"
+      ]
+    },
+    {
+      "ID": 15040000,
+      "Entries": [
+        "1410_light bazooka_left -- 1410_軽バズーカ_左"
+      ]
+    },
+    {
+      "ID": 10040100,
+      "Entries": [
+        "1420_Bazooka_Right -- 1420_バズーカ_右"
+      ]
+    },
+    {
+      "ID": 15040100,
+      "Entries": [
+        "1420_Bazooka_Left -- 1420_バズーカ_左"
+      ]
+    },
+    {
+      "ID": 10040200,
+      "Entries": [
+        "1430_heavy bazooka_right -- 1430_重バズーカ_右"
+      ]
+    },
+    {
+      "ID": 15040200,
+      "Entries": [
+        "1430_Heavy Bazooka_Left -- 1430_重バズーカ_左"
+      ]
+    },
+    {
+      "ID": 10050000,
+      "Entries": [
+        "1510_light shotgun_right -- 1510_軽ショットガン_右"
+      ]
+    },
+    {
+      "ID": 15050000,
+      "Entries": [
+        "1510_light shotgun_left -- 1510_軽ショットガン_左"
+      ]
+    },
+    {
+      "ID": 10050100,
+      "Entries": [
+        "1520_shotgun_right -- 1520_ショットガン_右"
+      ]
+    },
+    {
+      "ID": 15050100,
+      "Entries": [
+        "1520_shotgun_left -- 1520_ショットガン_左"
+      ]
+    },
+    {
+      "ID": 10050200,
+      "Entries": [
+        "1530_heavy shotgun_right -- 1530_重ショットガン_右"
+      ]
+    },
+    {
+      "ID": 15050200,
+      "Entries": [
+        "1530_Heavy shotgun_Left -- 1530_重ショットガン_左"
+      ]
+    },
+    {
+      "ID": 10060000,
+      "Entries": [
+        "1310_Grenade gun_Right -- 1310_グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 15060000,
+      "Entries": [
+        "1310_Grenade gun_Left -- 1310_グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 10060100,
+      "Entries": [
+        "1320_Heavy Grenade Gun_Right -- 1320_重グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 15060100,
+      "Entries": [
+        "1320_Heavy Grenade Gun_Left -- 1320_重グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 10070000,
+      "Entries": [
+        "2010_Needle gun_Right -- 2010_ニードルガン_右"
+      ]
+    },
+    {
+      "ID": 15070000,
+      "Entries": [
+        "2010_Needle gun_Left -- 2010_ニードルガン_左"
+      ]
+    },
+    {
+      "ID": 10070100,
+      "Entries": [
+        "2020_Burst Handgun_Right -- 2020_バーストハンドガン_右"
+      ]
+    },
+    {
+      "ID": 15070100,
+      "Entries": [
+        "2020_Burst Handgun_Left -- 2020_バーストハンドガン_左"
+      ]
+    },
+    {
+      "ID": 10070200,
+      "Entries": [
+        "2030_Handgun_Right -- 2030_ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 15070200,
+      "Entries": [
+        "2030_Handgun_Left -- 2030_ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 10070300,
+      "Entries": [
+        "2040_Heavy handgun_Right -- 2040_重ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 15070300,
+      "Entries": [
+        "2040_Heavy handgun_Left -- 2040_重ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 10080000,
+      "Entries": [
+        "2110_Jamming throwing gun_right -- 2110_ジャミング投擲銃_右"
+      ]
+    },
+    {
+      "ID": 15080000,
+      "Entries": [
+        "2110_Jamming throwing gun_left -- 2110_ジャミング投擲銃_左"
+      ]
+    },
+    {
+      "ID": 10080100,
+      "Entries": [
+        "2120_Napalm throwing gun_right -- 2120_ナパーム投擲銃_右"
+      ]
+    },
+    {
+      "ID": 15080100,
+      "Entries": [
+        "2120_Napalm throwing gun_left -- 2120_ナパーム投擲銃_左"
+      ]
+    },
+    {
+      "ID": 10080200,
+      "Entries": [
+        "2130_Stun throwing gun_right -- 2130_スタン投擲銃_右"
+      ]
+    },
+    {
+      "ID": 15080200,
+      "Entries": [
+        "2130_Stun throwing gun_left -- 2130_スタン投擲銃_左"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "2210_hand missile_right -- 2210_ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 15090000,
+      "Entries": [
+        "2210_hand missile_left -- 2210_ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 10090100,
+      "Entries": [
+        "2220_Split hand missile_Right -- 2220_分裂ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 15090100,
+      "Entries": [
+        "2220_Split hand missile_Left -- 2220_分裂ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "2310_Light grenade gun_Right -- 2310_軽グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "2310_Light grenade gun_Left -- 2310_軽グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "2710_laser handgun_right -- 2710_レーザーハンドガン_右"
+      ]
+    },
+    {
+      "ID": 15110000,
+      "Entries": [
+        "2710_Laser handgun_Left -- 2710_レーザーハンドガン_左"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "2720_laser rifle_right -- 2720_レーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 15110100,
+      "Entries": [
+        "2720_laser rifle_left -- 2720_レーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 10110200,
+      "Entries": [
+        "2730_Coral Rifle_Right -- 2730_コーラルライフル_右"
+      ]
+    },
+    {
+      "ID": 15110200,
+      "Entries": [
+        "2730_Coral Rifle_Left -- 2730_コーラルライフル_左"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "2740_Heavy laser rifle_Right -- 2740_重レーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 15110300,
+      "Entries": [
+        "2740_Heavy laser rifle_Left -- 2740_重レーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "2410_Plasma Rifle_Right -- 2410_プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 15120000,
+      "Entries": [
+        "2410_Plasma Rifle_Left -- 2410_プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 10120100,
+      "Entries": [
+        "2420_Karasawa_Laser/Plasma Rifle_Right -- 2420_カラサワ_レーザー/プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 15120100,
+      "Entries": [
+        "2420_Karasawa_Laser/Plasma Rifle_Left -- 2420_カラサワ_レーザー/プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 10130000,
+      "Entries": [
+        "2810_rapid-fire pulse gun_right -- 2810_速射パルスガン_右"
+      ]
+    },
+    {
+      "ID": 15130000,
+      "Entries": [
+        "2810_Rapid-fire pulse gun_Left -- 2810_速射パルスガン_左"
+      ]
+    },
+    {
+      "ID": 10130100,
+      "Entries": [
+        "2820_pulse gun_right -- 2820_パルスガン_右"
+      ]
+    },
+    {
+      "ID": 15130100,
+      "Entries": [
+        "2820_Pulse gun_Left -- 2820_パルスガン_左"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "2510_double laser rifle_right -- 2510_ダブルレーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 15140000,
+      "Entries": [
+        "2510_double laser rifle_left -- 2510_ダブルレーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "2610_laser shotgun/EN pile_right -- 2610_レーザーショットガン/ENパイル_右"
+      ]
+    },
+    {
+      "ID": 15150000,
+      "Entries": [
+        "2610_laser shotgun/EN pile_left -- 2610_レーザーショットガン/ENパイル_左"
+      ]
+    },
+    {
+      "ID": 10150100,
+      "Entries": [
+        "2620_Laser Shotgun/EN Grenade_Right -- 2620_レーザーショットガン/ENグレネード_右"
+      ]
+    },
+    {
+      "ID": 15150100,
+      "Entries": [
+        "2620_Laser shotgun/EN grenade_Left -- 2620_レーザーショットガン/ENグレネード_左"
+      ]
+    },
+    {
+      "ID": 10150200,
+      "Entries": [
+        "2630_Heavy Plasma Rifle_Right -- 2630_重プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 15150200,
+      "Entries": [
+        "2630_Heavy plasma rifle_Left -- 2630_重プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 10150300,
+      "Entries": [
+        "2631_Heavy plasma rifle (red coral ver)_Right -- 2631_重プラズマライフル（赤コーラルver）_右"
+      ]
+    },
+    {
+      "ID": 15150300,
+      "Entries": [
+        "2631_Heavy plasma rifle (red coral ver)_Left -- 2631_重プラズマライフル（赤コーラルver）_左"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "2910_Flamethrower_Right -- 2910_火炎放射器_右"
+      ]
+    },
+    {
+      "ID": 15160000,
+      "Entries": [
+        "2910_Flamethrower_Left -- 2910_火炎放射器_左"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "3010_Immersion Bazooka_Right -- 3010_浸徹バズーカ_右"
+      ]
+    },
+    {
+      "ID": 15170000,
+      "Entries": [
+        "3010_Immersion Bazooka_Left -- 3010_浸徹バズーカ_左"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "3020_stun gun_right -- 3020_スタンガン_右"
+      ]
+    },
+    {
+      "ID": 15180000,
+      "Entries": [
+        "3020_stun gun_left -- 3020_スタンガン_左"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "3030_Assault hand missile_Right -- 3030_強襲ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 15190000,
+      "Entries": [
+        "3030_Assault hand missile_Left -- 3030_強襲ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D (Right)"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D (Left)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Machine gun for escape mission_Standard type -- 脱出ミッション用マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 15220000,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke) -- 脱獄ミッション用投擲銃_2連射（スモーク）"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "230_Coral Blade_Left -- 230_コーラルブレード_左"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "250_Light Wave Blade_Left -- 250_光波ブレード_左"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "251_Light Wave Blade (Red Coral)_Left -- 251_光波ブレード（赤コーラル）_左"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "211_PA breaker_left -- 211_PAブレイカー_左"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "221_Laser Blade_Left -- 221_レーザーブレード_左"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "411_Naginata_Left -- 411_ナギナタ_左"
+      ]
+    },
+    {
+      "ID": 20040000,
+      "Entries": [
+        "241_Laser dagger_Left -- 241_レーザーダガー_左"
+      ]
+    },
+    {
+      "ID": 20050000,
+      "Entries": [
+        "610_Laser Lance_Left -- 610_レーザーランス_左"
+      ]
+    },
+    {
+      "ID": 20060000,
+      "Entries": [
+        "1012_Chainsaw_Left -- 1012_チェーンソー_左"
+      ]
+    },
+    {
+      "ID": 20070000,
+      "Entries": [
+        "1210_Electromagnetic hammer_Left -- 1210_電磁ハンマー_左"
+      ]
+    },
+    {
+      "ID": 20080000,
+      "Entries": [
+        "10_Pile Bunker_Left -- 10_パイルバンカー_左"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "910_Electromagnetic baton_left -- 910_電磁警棒_左"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "510_Proximity diffusion bullet_Left -- 510_近接拡散弾_左"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "4920_PA Shield_Low load_Long initial_Left -- 4920_PAシールド_低負荷_イニシャル長め_左"
+      ]
+    },
+    {
+      "ID": 25010000,
+      "Entries": [
+        "4940_PA Shield_Standard_Left -- 4940_PAシールド_標準_左"
+      ]
+    },
+    {
+      "ID": 25010100,
+      "Entries": [
+        "4950_PA Shield_Initial short_Normal guard emphasis_Left -- 4950_PAシールド_イニシャル短_通常ガード重視_左"
+      ]
+    },
+    {
+      "ID": 25010200,
+      "Entries": [
+        "4960_PA buckler_initial long, usually weak_left -- 4960_PAバックラー_イニシャル長い、通常弱い_左"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "4910_PA Buckler_Initial short, initial strong_Left -- 4910_PAバックラー_イニシャル短、イニシャル強_左"
+      ]
+    },
+    {
+      "ID": 25010300,
+      "Entries": [
+        "4970_Coral Shield_360°_Left -- 4970_コーラルシールド_360°_左"
+      ]
+    },
+    {
+      "ID": 25020000,
+      "Entries": [
+        "4980_PA Scutum_Weak initial_Left -- 4980_PAスクトゥム_イニシャルが弱_左"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "4210_Plasma missile triple_right -- 4210_プラズマミサイル\u30003連_右"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "4210_Plasma missile triple_left -- 4210_プラズマミサイル\u30003連_左"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "4220_Plasma missile launch_right -- 4220_プラズマミサイル\u3000打ち上げ_右"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "4220_Plasma missile launch_left -- 4220_プラズマミサイル\u3000打ち上げ_左"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "4211_Plasma missile 6 series_Right -- 4211_プラズマミサイル\u30006連_右"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "4211_Plasma missile 6 series_Left -- 4211_プラズマミサイル\u30006連_左"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "4230_AI missile 2 series_right -- 4230_AIミサイル\u30002連_右"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "4230_AI missile 2 series_left -- 4230_AIミサイル\u30002連_左"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "4231_AI missile single shot_right -- 4231_AIミサイル\u3000単発_右"
+      ]
+    },
+    {
+      "ID": 35010100,
+      "Entries": [
+        "4231_AI missile single shot_left -- 4231_AIミサイル\u3000単発_左"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "4290_Twin missile 6 series_Right -- 4290_連装ミサイル\u30006連_右"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "4290_Twin missile 6 series_Left -- 4290_連装ミサイル\u30006連_左"
+      ]
+    },
+    {
+      "ID": 30020100,
+      "Entries": [
+        "4291_Twin missile 4 series_Right -- 4291_連装ミサイル\u30004連_右"
+      ]
+    },
+    {
+      "ID": 35020100,
+      "Entries": [
+        "4291_Twin missile 4 series_Left -- 4291_連装ミサイル\u30004連_左"
+      ]
+    },
+    {
+      "ID": 30020200,
+      "Entries": [
+        "4292_Twin missile 10 series_Right -- 4292_連装ミサイル\u300010連_右"
+      ]
+    },
+    {
+      "ID": 35020200,
+      "Entries": [
+        "4292_Twin missile 10 units_Left -- 4292_連装ミサイル\u300010連_左"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "4240_Coral Missile_Right -- 4240_コーラルミサイル_右"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "4240_Coral Missile_Left -- 4240_コーラルミサイル_左"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "4250_Vertical missile 12 series_Right -- 4250_垂直ミサイル\u300012連_右"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "4250_Vertical missile 12 series_Left -- 4250_垂直ミサイル\u300012連_左"
+      ]
+    },
+    {
+      "ID": 30040100,
+      "Entries": [
+        "4252_Vertical missile 8 series_Right -- 4252_垂直ミサイル\u30008連_右"
+      ]
+    },
+    {
+      "ID": 35040100,
+      "Entries": [
+        "4252_Vertical missile 8 series_Left -- 4252_垂直ミサイル\u30008連_左"
+      ]
+    },
+    {
+      "ID": 30040200,
+      "Entries": [
+        "4251_Vertical missile 4 series_Right -- 4251_垂直ミサイル\u30004連_右"
+      ]
+    },
+    {
+      "ID": 35040200,
+      "Entries": [
+        "4251_Vertical missile 4 series_Left -- 4251_垂直ミサイル\u30004連_左"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "4260_Explosive missile_right -- 4260_爆導炸ミサイル_右"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "4260_Explosive Missile_Left -- 4260_爆導炸ミサイル_左"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "4280_Siege Missile_Right -- 4280_包囲ミサイル_右"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "4280_Siege Missile_Left -- 4280_包囲ミサイル_左"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "4300_2way missile 3 series_right -- 4300_2wayミサイル\u30003連_右"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "4300_2way missile 3 series_left -- 4300_2wayミサイル\u30003連_左"
+      ]
+    },
+    {
+      "ID": 30080100,
+      "Entries": [
+        "4301_2way missile 3 consecutive type_right -- 4301_2wayミサイル\u30003連中型_右"
+      ]
+    },
+    {
+      "ID": 35080100,
+      "Entries": [
+        "4301_2way missile 3 consecutive type_left -- 4301_2wayミサイル\u30003連中型_左"
+      ]
+    },
+    {
+      "ID": 30080200,
+      "Entries": [
+        "4303_2way missile 2 series_right -- 4303_2wayミサイル\u30002連_右"
+      ]
+    },
+    {
+      "ID": 35080200,
+      "Entries": [
+        "4303_2way missile 2 series_left -- 4303_2wayミサイル\u30002連_左"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "4310_fission missile 2 series 6 fission_right -- 4310_分裂ミサイル\u30002連6分裂_右"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "4310_Fission missile 2 consecutive 6-fission_Left -- 4310_分裂ミサイル\u30002連6分裂_左"
+      ]
+    },
+    {
+      "ID": 30090100,
+      "Entries": [
+        "4311_fission missile single shot_right -- 4311_分裂ミサイル\u3000単発_右"
+      ]
+    },
+    {
+      "ID": 35090100,
+      "Entries": [
+        "4311_fission missile single shot_left -- 4311_分裂ミサイル\u3000単発_左"
+      ]
+    },
+    {
+      "ID": 30090200,
+      "Entries": [
+        "4302_Split missile 2 series 12 split_Right -- 4302_分裂ミサイル\u30002連12分裂_右"
+      ]
+    },
+    {
+      "ID": 35090200,
+      "Entries": [
+        "4302_Split missile 2 series 12 split_Left -- 4302_分裂ミサイル\u30002連12分裂_左"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "4410_Shoulder grenade_Light 2 series_Right -- 4410_肩グレネード_軽2連_右"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "4410_Shoulder grenade_Light double_Left -- 4410_肩グレネード_軽2連_左"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "4330_needle missile_right -- 4330_ニードルミサイル_右"
+      ]
+    },
+    {
+      "ID": 35110000,
+      "Entries": [
+        "4330_needle missile_left -- 4330_ニードルミサイル_左"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "4320_Container Missile_Right -- 4320_コンテナミサイル_右"
+      ]
+    },
+    {
+      "ID": 35120000,
+      "Entries": [
+        "4320_Container Missile_Left -- 4320_コンテナミサイル_左"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "4340_Cluster Missile_Right -- 4340_クラスターミサイル_右"
+      ]
+    },
+    {
+      "ID": 35130000,
+      "Entries": [
+        "4340_Cluster Missile_Left -- 4340_クラスターミサイル_左"
+      ]
+    },
+    {
+      "ID": 30140100,
+      "Entries": [
+        "5810_Assault Orbit_Right -- 5810_アサルトオービット_右"
+      ]
+    },
+    {
+      "ID": 35140100,
+      "Entries": [
+        "5810_Assault Orbit_Left -- 5810_アサルトオービット_左"
+      ]
+    },
+    {
+      "ID": 30150100,
+      "Entries": [
+        "5820_Sentry Orbit_Right -- 5820_セントリーオービット_右"
+      ]
+    },
+    {
+      "ID": 35150100,
+      "Entries": [
+        "5820_Sentry Orbit_Left -- 5820_セントリーオービット_左"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "4110_Shoulder bazooka_Spread_Right -- 4110_肩バズーカ_スプレッド_右"
+      ]
+    },
+    {
+      "ID": 35200000,
+      "Entries": [
+        "4110_Shoulder bazooka_Spread_Left -- 4110_肩バズーカ_スプレッド_左"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "4010_Shoulder grenade_Explosion range-Extra large_Right -- 4010_肩グレネード_爆発範囲-特大_右"
+      ]
+    },
+    {
+      "ID": 35210000,
+      "Entries": [
+        "4010_Shoulder grenade_Explosion range-Extra large_Left -- 4010_肩グレネード_爆発範囲-特大_左"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "4710_Shoulder Laser Cannon_W Laser_Right -- 4710_肩レーザーキャノン_Wレーザー_右"
+      ]
+    },
+    {
+      "ID": 35220000,
+      "Entries": [
+        "4710_Shoulder Laser Cannon_W Laser_Left -- 4710_肩レーザーキャノン_Wレーザー_左"
+      ]
+    },
+    {
+      "ID": 30230000,
+      "Entries": [
+        "4510_Shoulder plasma cannon_Right -- 4510_肩プラズマキャノン_右"
+      ]
+    },
+    {
+      "ID": 35230000,
+      "Entries": [
+        "4510_Shoulder Plasma Cannon_Left -- 4510_肩プラズマキャノン_左"
+      ]
+    },
+    {
+      "ID": 30240000,
+      "Entries": [
+        "4810_Shoulder pulse gun_Right -- 4810_肩パルスガン_右"
+      ]
+    },
+    {
+      "ID": 35240000,
+      "Entries": [
+        "4810_Shoulder pulse gun_Left -- 4810_肩パルスガン_左"
+      ]
+    },
+    {
+      "ID": 30250000,
+      "Entries": [
+        "4610_Shoulder laser cannon_Right -- 4610_肩レーザーキャノン_右"
+      ]
+    },
+    {
+      "ID": 35250000,
+      "Entries": [
+        "4610_Shoulder laser cannon_Left -- 4610_肩レーザーキャノン_左"
+      ]
+    },
+    {
+      "ID": 30250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Right)"
+      ]
+    },
+    {
+      "ID": 35250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Left)"
+      ]
+    },
+    {
+      "ID": 30260000,
+      "Entries": [
+        "5010_Shoulder laser shotgun_Right -- 5010_肩レーザーショットガン_右"
+      ]
+    },
+    {
+      "ID": 35260000,
+      "Entries": [
+        "5010_Shoulder laser shotgun_Left -- 5010_肩レーザーショットガン_左"
+      ]
+    },
+    {
+      "ID": 30270000,
+      "Entries": [
+        "4830_Stun needle launcher_right -- 4830_スタンニードルランチャー_右"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "4830_Stun needle launcher_Left -- 4830_スタンニードルランチャー_左"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "5710_Exceed Orbit (live bullet) right_right -- 5710_イクシードオービット（実弾）右_右"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "5710_Exceed Orbit (live bullet) left_left -- 5710_イクシードオービット（実弾）左_左"
+      ]
+    },
+    {
+      "ID": 30300100,
+      "Entries": [
+        "5720_Exceed Orbit (Laser) Right_Right -- 5720_イクシードオービット（レーザー）右_右"
+      ]
+    },
+    {
+      "ID": 35300100,
+      "Entries": [
+        "5720_Exceed Orbit (Laser) Left_Left -- 5720_イクシードオービット（レーザー）左_左"
+      ]
+    },
+    {
+      "ID": 30310000,
+      "Entries": [
+        "4820_Shooting PA_Right -- 4820_射撃PA_右"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "4820_Shooting PA_Left -- 4820_射撃PA_左"
+      ]
+    },
+    {
+      "ID": 30350100,
+      "Entries": [
+        "4350_Homing Coral Beam_Right -- 4350_ホーミングコーラルビーム_右"
+      ]
+    },
+    {
+      "ID": 35350100,
+      "Entries": [
+        "4350_Homing Coral Beam_Left -- 4350_ホーミングコーラルビーム_左"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Right)"
+      ]
+    },
+    {
+      "ID": 35400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Left)"
+      ]
+    },
+    {
+      "ID": 75000000,
+      "Entries": [
+        "assault armor -- アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "primal armor -- プライマルアーマー"
+      ]
+    },
+    {
+      "ID": 75020000,
+      "Entries": [
+        "Installed PA -- 設置PA"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "Emergency PA -- 緊急時PA"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "Assault Boost_Baylum -- アサルトブースト_ベイラム"
+      ]
+    },
+    {
+      "ID": 75100100,
+      "Entries": [
+        "Assault Boost_Kantokail -- アサルトブースト_へカントケイル"
+      ]
+    },
+    {
+      "ID": 75100200,
+      "Entries": [
+        "Assault Boost_Heavy Crest -- アサルトブースト_重クレスト"
+      ]
+    },
+    {
+      "ID": 75100300,
+      "Entries": [
+        "Assault Boost_Ray Leonard -- アサルトブースト_レイレナード"
+      ]
+    },
+    {
+      "ID": 75100400,
+      "Entries": [
+        "Assault Boost_Mirage -- アサルトブースト_ミラージュ"
+      ]
+    },
+    {
+      "ID": 75100500,
+      "Entries": [
+        "Assault Boost_Label -- アサルトブースト_ラベール"
+      ]
+    },
+    {
+      "ID": 75100600,
+      "Entries": [
+        "Assault Boost_Iqbal -- アサルトブースト_イクバール"
+      ]
+    },
+    {
+      "ID": 75100700,
+      "Entries": [
+        "Assault Boost_Cuba -- アサルトブースト_キューバ"
+      ]
+    },
+    {
+      "ID": 75100800,
+      "Entries": [
+        "Assault boost_JUDO -- アサルトブースト_JUDO"
+      ]
+    },
+    {
+      "ID": 75100900,
+      "Entries": [
+        "Assault Boost_Troll -- アサルトブースト_トロル"
+      ]
+    },
+    {
+      "ID": 75101000,
+      "Entries": [
+        "Assault Boost_Scavenger -- アサルトブースト_スカベンジャー"
+      ]
+    },
+    {
+      "ID": 75101100,
+      "Entries": [
+        "Assault Boost_Kawamori -- アサルトブースト_カワモリ"
+      ]
+    },
+    {
+      "ID": 75101200,
+      "Entries": [
+        "Assault Boost_Miyatake -- アサルトブースト_ミヤタケ"
+      ]
+    },
+    {
+      "ID": 75101300,
+      "Entries": [
+        "Assault Boost_Yanase -- アサルトブースト_ヤナセ"
+      ]
+    },
+    {
+      "ID": 75101400,
+      "Entries": [
+        "CORE - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 75109000,
+      "Entries": [
+        "Assault Boost_JUDO (for jailbreak mission) -- アサルトブースト_JUDO（脱獄ミッション用）"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "HEAD Radar_1010_Baylum_A -- HEADレーダー_1010_ベイラム_A"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "HEAD Radar_1080_Cantocale_A -- HEADレーダー_1080_へカントケイル_A"
+      ]
+    },
+    {
+      "ID": 80000200,
+      "Entries": [
+        "HEAD Radar_1110_Baylum_C -- HEADレーダー_1110_ベイラム_C"
+      ]
+    },
+    {
+      "ID": 80000300,
+      "Entries": [
+        "HEAD Radar_1011_Baylum_B -- HEADレーダー_1011_ベイラム_B"
+      ]
+    },
+    {
+      "ID": 80010000,
+      "Entries": [
+        "HEAD Radar_2010_Heavy Crest_A -- HEADレーダー_2010_重クレスト_A"
+      ]
+    },
+    {
+      "ID": 80020000,
+      "Entries": [
+        "HEAD Radar_3010_Ray Leonard_A -- HEADレーダー_3010_レイレナード_A"
+      ]
+    },
+    {
+      "ID": 80020100,
+      "Entries": [
+        "HEAD Radar_3110_Ray Leonard_B -- HEADレーダー_3110_レイレナード_B"
+      ]
+    },
+    {
+      "ID": 80030000,
+      "Entries": [
+        "HEAD Radar_4010_Mirage_A -- HEADレーダー_4010_ミラージュ_A"
+      ]
+    },
+    {
+      "ID": 80030100,
+      "Entries": [
+        "HEAD Radar_4110_Mirage_B -- HEADレーダー_4110_ミラージュ_B"
+      ]
+    },
+    {
+      "ID": 80040000,
+      "Entries": [
+        "HEAD Radar_5010_Label_A -- HEADレーダー_5010_ラベール_A"
+      ]
+    },
+    {
+      "ID": 80040100,
+      "Entries": [
+        "HEAD Radar_5110_Label_B -- HEADレーダー_5110_ラベール_B"
+      ]
+    },
+    {
+      "ID": 80050000,
+      "Entries": [
+        "HEAD Radar_6010_Iqbal_A -- HEADレーダー_6010_イクバール_A"
+      ]
+    },
+    {
+      "ID": 80050100,
+      "Entries": [
+        "HEAD Radar_6110_Iqbal_B -- HEADレーダー_6110_イクバール_B"
+      ]
+    },
+    {
+      "ID": 80060000,
+      "Entries": [
+        "HEAD Radar_7010_Cuba_A -- HEADレーダー_7010_キューバ_A"
+      ]
+    },
+    {
+      "ID": 80070200,
+      "Entries": [
+        "HEAD Radar_8030_JUDO_A -- HEADレーダー_8030_JUDO_A"
+      ]
+    },
+    {
+      "ID": 80070300,
+      "Entries": [
+        "HEAD Radar_8040_Troll_A -- HEADレーダー_8040_トロル_A"
+      ]
+    },
+    {
+      "ID": 80070400,
+      "Entries": [
+        "HEAD Radar_1400_Scavenger_A -- HEADレーダー_1400_スカベンジャー_A"
+      ]
+    },
+    {
+      "ID": 80070600,
+      "Entries": [
+        "HEAD Radar_8150_Scavenger_B -- HEADレーダー_8150_スカベンジャー_B"
+      ]
+    },
+    {
+      "ID": 80080000,
+      "Entries": [
+        "HEAD Radar_8010_Kawamori_A -- HEADレーダー_8010_カワモリ_A"
+      ]
+    },
+    {
+      "ID": 80080100,
+      "Entries": [
+        "HEAD Radar_8020_Miyatake_A -- HEADレーダー_8020_ミヤタケ_A"
+      ]
+    },
+    {
+      "ID": 80080200,
+      "Entries": [
+        "HEAD Radar_8060_Yanase_A -- HEADレーダー_8060_ヤナセ_A"
+      ]
+    },
+    {
+      "ID": 80080300,
+      "Entries": [
+        "HEAD (Scan) - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 95001000,
+      "Entries": [
+        "Tremo 01 Equipment 01 Right hand -- トレモ01\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95001100,
+      "Entries": [
+        "Tremo 01 Equipment 02 Left hand -- トレモ01\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95001200,
+      "Entries": [
+        "Tremo 01 Equipment 03 Right shoulder -- トレモ01\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95001300,
+      "Entries": [
+        "Tremo 01 Equipment 04 Left shoulder -- トレモ01\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95002000,
+      "Entries": [
+        "Tremo 02 Equipment 01 Right hand -- トレモ02\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95002100,
+      "Entries": [
+        "Tremo 02 Equipment 02 Left hand -- トレモ02\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95002200,
+      "Entries": [
+        "Tremo 02 Equipment 03 Right shoulder -- トレモ02\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95002300,
+      "Entries": [
+        "Tremo 02 Equipment 04 Left shoulder -- トレモ02\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95003000,
+      "Entries": [
+        "Tremo 03 Equipment 01 Right hand -- トレモ03\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95003100,
+      "Entries": [
+        "Tremo 03 Equipment 02 Left hand -- トレモ03\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95003200,
+      "Entries": [
+        "Tremo 03 Equipment 03 Right shoulder -- トレモ03\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95003300,
+      "Entries": [
+        "Tremo 03 Equipment 04 Left shoulder -- トレモ03\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95004000,
+      "Entries": [
+        "Tremo 04 Equipment 01 Right hand -- トレモ04\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95004100,
+      "Entries": [
+        "Tremo 04 Equipment 02 Left hand -- トレモ04\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95004200,
+      "Entries": [
+        "Tremo 04 Equipment 03 Right shoulder -- トレモ04\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95004300,
+      "Entries": [
+        "Tremo 04 Equipment 04 Left shoulder -- トレモ04\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95005000,
+      "Entries": [
+        "Tremo 05 Equipment 01 Right hand -- トレモ05\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95005100,
+      "Entries": [
+        "Tremo 05 Equipment 02 Left hand -- トレモ05\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95005200,
+      "Entries": [
+        "Tremo 05 Equipment 03 Right shoulder -- トレモ05\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95005300,
+      "Entries": [
+        "Tremo 05 Equipment 04 Left shoulder -- トレモ05\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95006000,
+      "Entries": [
+        "Tremo 06 Equipment 01 Right hand -- トレモ06\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95006100,
+      "Entries": [
+        "Tremo 06 Equipment 02 Left hand -- トレモ06\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95006200,
+      "Entries": [
+        "Tremo 06 Equipment 03 Right shoulder -- トレモ06\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95006300,
+      "Entries": [
+        "Tremo 06 Equipment 04 Left shoulder -- トレモ06\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95011000,
+      "Entries": [
+        "Prolo equipment 01 right hand -- プロロ\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95011100,
+      "Entries": [
+        "Prolo equipment 02 left hand -- プロロ\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95011200,
+      "Entries": [
+        "Prolo equipment 03 right shoulder -- プロロ\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95011300,
+      "Entries": [
+        "Prolo equipment 04 left shoulder -- プロロ\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95012000,
+      "Entries": [
+        "Jailbreak Equipment 01 Right Hand -- 脱獄\u3000装備01\u3000右手"
+      ]
+    },
+    {
+      "ID": 95012100,
+      "Entries": [
+        "Jailbreak Equipment 02 Left hand -- 脱獄\u3000装備02\u3000左手"
+      ]
+    },
+    {
+      "ID": 95012200,
+      "Entries": [
+        "Jailbreak Equipment 03 Right shoulder -- 脱獄\u3000装備03\u3000右肩"
+      ]
+    },
+    {
+      "ID": 95012300,
+      "Entries": [
+        "Jailbreak Equipment 04 Left shoulder -- 脱獄\u3000装備04\u3000左肩"
+      ]
+    },
+    {
+      "ID": 95012400,
+      "Entries": [
+        "Jailbreak Equipment 05 HEAD Radar -- 脱獄\u3000装備05\u3000HEADレーダー"
+      ]
+    },
+    {
+      "ID": 95020000,
+      "Entries": [
+        "Decisive Battle B Coral Rifle for Lester -- 決戦B レスター用 コーラルライフル"
+      ]
+    },
+    {
+      "ID": 95020100,
+      "Entries": [
+        "Decisive Battle B Lester Coral Blade -- 決戦B レスター用 コーラルブレード"
+      ]
+    },
+    {
+      "ID": 95020200,
+      "Entries": [
+        "Decisive Battle B Coral Missile for Lester -- 決戦B レスター用 コーラルミサイル"
+      ]
+    },
+    {
+      "ID": 95020300,
+      "Entries": [
+        "Decisive Battle B Lester Coral Shield -- 決戦B レスター用 コーラルシールド"
+      ]
+    }
+  ]
+}

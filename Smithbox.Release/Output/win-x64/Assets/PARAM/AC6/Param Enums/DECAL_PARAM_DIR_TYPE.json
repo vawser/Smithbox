@@ -1,0 +1,56 @@
+{
+  "Key": "DECAL_PARAM_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_PARAM_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Local"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Global"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker Model Global"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damaged Model Global"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Local Axis of Bullet"
+        }
+      ]
+    }
+  ]
+}

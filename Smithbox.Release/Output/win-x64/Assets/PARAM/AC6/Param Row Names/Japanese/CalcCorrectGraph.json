@@ -1,0 +1,1019 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: None -- 0:なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: hard stone -- 1:硬石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Sharp stone -- 2:鋭石"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Minagishi -- 3:みなぎ石"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Nibiishi -- 4:にび石"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Blade stone -- 5:刃石"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Spider thread steel wire -- 6:蜘蛛糸鋼線"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Mercury stone -- 7:水銀石"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon stone -- 8:竜石"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Suction stone -- 9:吸いつき石"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Pierre stone -- 10:髄石"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11:Moonlight stone -- 11:月光石"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Moonstone -- 12:月影石"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Faint stone -- 13:微光石"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic shield stone -- 14:魔法盾石"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS -- 15:鉱石の精霊DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16:DS -- 16:ＤＳ"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For animation movement amount correction -- アニメ移動量補正用"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "The lower the equipment weight, the higher the attack power. -- 装備重量が低いほど攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "The heavier the equipment, the higher the attack power. -- 装備重量が重いほど攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Max HP -- 最大HP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Max MP -- 最大MP"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense power (soul level) -- 防御力（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison resistance (soul level) -- 毒耐性（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Plague resistance (soul level) -- 疫病耐性（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Bleeding resistance (soul level) -- 出血耐性（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse resistance (soul level) -- 呪い耐性（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Cold resistance (soul level) -- 冷気耐性（ソウルレベル）"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Poison resistance (stamina) -- 毒耐性（体力）"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Plague resistance (stamina) -- 疫病耐性（体力）"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Bleeding resistance (endurance) -- 出血耐性（持久力）"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Curse resistance (luck) -- 呪い耐性（運）"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Cold resistance (vitality) -- 冷気耐性（生命力）"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Physical defense power (strength) -- 物理防御力（筋力）"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Physical defense power (stamina) -- 物理防御力（体力）"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Magic defense (faith) -- 魔法防御力（信仰）"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Fire defense (strength) -- 炎防御力（筋力）"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Lightning defense (endurance) -- 雷防御力（持久力）"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Dark defense power (faith) -- 闇防御力（信仰）"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Drop rate (luck) -- ドロップ率（運）"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Maximum number of recovery spots to replenish -- 回復スポットの最大補充数"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Shield status correction physical cut rate -- 盾ステータス補正 物理カット率"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Shield status correction attribute cut rate -- 盾ステータス補正 属性カット率"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Shield status correction resistance cut rate -- 盾ステータス補正 耐性カット率"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Shield status correction stamina cut rate -- 盾ステータス補正 スタミナカット率"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Arts point maximum value (strength) -- アーツポイント最大値（筋力）"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Arts point maximum value (skill) -- アーツポイント最大値（技量）"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Arts point maximum (magic) -- アーツポイント最大値（魔法）"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Arts point maximum (miracle) -- アーツポイント最大値（奇跡）"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "growth consumption soul -- 成長消費ソウル"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "OS enhancement level required experience points -- OS強化レベル必要経験値"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Fall damage base value -- 落下ダメージ基本値"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Fall damage weight percentage correction -- 落下ダメージ重量割合補正"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Fall damage vitality correction -- 落下ダメージ生命力補正"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Falling damage skill correction -- 落下ダメージ技量補正"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "WEIGHT - Unknown"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Initial Speed"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Max Speed"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Speed"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Grounded Boost Max Speed"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Inertia Change Ability"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Drift Speed"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Drift Traction"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Total weight correction factor: Ground boost dash terminal speed [km/h] -- 総重量補正係数：地上ブーストダッシュ終端速度[km/h]"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Total weight correction factor: Air boost dash terminal speed [km/h] -- 総重量補正係数：空中ブーストダッシュ終端速度[km/h]"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Total weight correction factor: [Aerial B] Maximum climbing speed [km/h] -- 総重量補正係数：【空中B】上昇最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Total weight correction factor: QB terminal speed [km/h] -- 総重量補正係数：QB終端速度[km/h]"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Total weight correction factor: QB initial speed [km/h] -- 総重量補正係数：QB初速[km/h]"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Total weight correction factor: [Vertical ascent B] Maximum ascent speed [km/h] -- 総重量補正係数：【垂直上昇B】上昇最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Total weight correction factor: AB initial speed [km/h] -- 総重量補正係数：AB初速[km/h]"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Total weight correction factor: AB terminal speed [km/h] -- 総重量補正係数：AB終端速度[km/h]"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "Total weight correction factor: Breho initial speed [km/h] -- 総重量補正係数：ブレホ初速[km/h]"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Total weight correction factor: Brejo terminal speed [km/h] -- 総重量補正係数：ブレホ終端速度[km/h]"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_walking_maximum speed [km/h] -- 総重量補正係数：タンク地上移動_歩行時_最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_walking_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_歩行時_加速度[m/s^2]"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_driving_maximum speed [km/h] -- 総重量補正係数：タンク地上移動_走行時_最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_driving_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_走行時_加速度[m/s^2]"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_Dashing_Maximum speed [km/h] -- 総重量補正係数：タンク地上移動_ダッシュ時_最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_dashing_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_ダッシュ時_加速度[m/s^2]"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_Drifting_Maximum speed [km/h] -- 総重量補正係数：タンク地上移動_ドリフト時_最高速度[km/h]"
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        "Total weight correction factor: Tank ground movement_drifting_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_ドリフト時_加速度[m/s^2]"
+      ]
+    },
+    {
+      "ID": 278,
+      "Entries": [
+        "Total weight correction coefficient: Residual impact value volatilization speed correction magnification -- 総重量補正係数：残留衝撃値揮発速度補正倍率"
+      ]
+    },
+    {
+      "ID": 279,
+      "Entries": [
+        "Total weight correction factor: Landing stiffness occurrence speed [km/h] -- 総重量補正係数：着地硬直発生速度[km/h]"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Total weight correction factor: Attack power multiplier -- 総重量補正係数：攻撃力倍率"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Total weight correction factor: quadruped hovering consumption EN correction -- 総重量補正係数：四脚ホバリング消費EN補正"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "Total weight correction factor: Maximum horizontal speed when hovering on four legs -- 総重量補正係数：四脚ホバリング時_水平最高速度"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "Total weight correction factor: Four-legged hovering_horizontal acceleration -- 総重量補正係数：四脚ホバリング時_水平加速度"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Excess weight correction factor: booster speed system -- 重量過多補正係数：ブースター速度系"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "Excess weight correction factor: jump height [m] -- 重量過多補正係数：ジャンプ到達高度[m]"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "Excess weight correction factor: Ground QB additional initial speed [km/h] -- 重量過多補正係数：地上QB追加初速[km/h]"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "Excess weight correction factor: Hovering QB additional initial speed [km/h] -- 重量過多補正係数：ホバリングQB追加初速[km/h]"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "Excess weight correction factor: Jump quick boost height reached [m] -- 重量過多補正係数：ジャンプクイックブースト到達高度[m]"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "Excess weight correction factor: Quadruped hovering consumption EN correction factor -- 重量過多補正係数：四脚ホバリング消費EN補正係数"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Excess weight correction factor: Quadruped hovering horizontal maximum speed correction factor -- 重量過多補正係数：四脚ホバリング水平最高速度補正係数"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "Excess weight correction factor: Quadruped hovering horizontal acceleration correction factor -- 重量過多補正係数：四脚ホバリング水平加速度補正係数"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Stability performance correction value -- 安定性能補正値"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Boost dash speed correction angle -- ブーストダッシュ速度補正角度"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Weight correction value: QB reload time -- 重量補正値：QBリロード時間"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Weight correction value: QB consumption EN amount -- 重量補正値：QB消費EN量"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Weight correction value: QB injection time -- 重量補正値：QB噴射時間"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Weight correction value: EN recovery speed -- 重量補正値：EN回復速度"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Weight correction value: EN recovery start time_normal time -- 重量補正値：EN回復開始時間_通常時"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Weight correction value: EN recovery start time_when in debt -- 重量補正値：EN回復開始時間_借金時"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Residual impact value_Volatilization rate when EN decreases [point/s] -- 残留衝撃値_EN減少時揮発速度[point/s]"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Residual impact value_EN maximum volatilization rate [point/s] -- 残留衝撃値_EN最大時揮発速度[point/s]"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Residual impact value_Volatilization rate [point/s] -- 残留衝撃値_揮発速度[point/s]"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Player EN recovery speed [EN value/sec] -- プレイヤーEN回復速度[EN値/sec]"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "bullet distance attenuation -- 弾丸距離減衰"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "ricochet distance -- 跳弾距離"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Enemy search level accumulated value -- エネミーの索敵度蓄積値"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Enemy search level: Upper limit for each distance -- 索敵度：距離ごとの上限値"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Search level: Attenuation value per distance (pt/sec) -- 索敵度：距離ごとの減衰値(pt/sec)"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Enemy search level: Basic value when completely discovered -- 索敵度：完全発見時の基礎値"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Enemy search level: Attenuation value when completely discovered (pt/sec) -- 索敵度：完全発見時の減衰値(pt/sec)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Enemy search blur: Blur distance for each enemy search level (m) -- 索敵ブレ：索敵度ごとのブレ距離（m）"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Enemy engagement level accumulated value (visual) -- エネミーの交戦度蓄積値（視覚）"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "Enemy engagement level accumulated value (radar) -- エネミーの交戦度蓄積値（レーダー）"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Quick booster output transfer efficiency (QB instantaneous consumption EN) -- クイックブースター出力伝達効率（QB瞬間消費EN）"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Generating output transmission efficiency (EN recovery amount_normal) -- ジェネ出力伝達効率（EN回復量_通常時）"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Gene cooling performance (EN recovery standby time) -- ジェネ冷却性能（EN回復待機時間）"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Gene cooling performance (EN recovery standby time_when in debt) -- ジェネ冷却性能（EN回復待機時間_借金時）"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Recoil control correction coefficient based on arm loading weight -- 腕部積載重量による反動制御補正係数"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Shooting motion performance correction coefficient based on arm loading weight -- 腕部積載重量による射撃運動性能補正係数"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Fighting aptitude correction coefficient based on arm loading weight -- 腕部積載重量による格闘適性補正係数"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "EN weapon suitability correction coefficient based on arm loading weight -- 腕部積載重量によるEN武器適性補正係数"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "lock grace time -- ロック猶予時間"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Lock maintenance time through walls -- 壁越しロック維持時間"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Attack recoil blur accumulation correction coefficient -- 攻撃反動ブレ蓄積量補正係数"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "Attack recoil blur recovery speed [point/sec] -- 攻撃反動ブレ回復速度[point/sec]"
+      ]
+    },
+    {
+      "ID": 852,
+      "Entries": [
+        "Attack recoil blur recovery cooldown time [sec] -- 攻撃反動ブレ回復クールタイム[sec]"
+      ]
+    },
+    {
+      "ID": 853,
+      "Entries": [
+        "Maximum prediction rate decrease due to attack recoil blur -- 攻撃反動ブレによる予測率低下最大値"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "Amount of prediction rate decrease due to attack recoil blur -- 攻撃反動ブレによる予測率低下量"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "Launch angle random number increase rate due to attack recoil blur -- 攻撃反動ブレによる発射角度乱数増加割合"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "Launch angle random number initial value correction coefficient by arm recoil control -- 腕部反動制御による発射角度乱数初期値補正 係数"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Acquisition degree reduction amount -- 捕捉度 減少量"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Proximity appropriate angular velocity correction amount -- 近接適正 角速度補正量"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "Prediction rate addition amount (horizontal) -- 予測率加算量（水平）"
+      ]
+    },
+    {
+      "ID": 951,
+      "Entries": [
+        "Prediction rate subtraction amount (horizontal) -- 予測率減算量（水平）"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "Prediction rate addition amount (vertical) -- 予測率加算量（垂直）"
+      ]
+    },
+    {
+      "ID": 961,
+      "Entries": [
+        "Prediction rate subtraction amount (vertical) -- 予測率減算量（垂直）"
+      ]
+    },
+    {
+      "ID": 970,
+      "Entries": [
+        "Correction coefficient for prediction rate addition amount based on shooting motion performance -- 射撃運動性能による予測率加算量の補正係数"
+      ]
+    },
+    {
+      "ID": 971,
+      "Entries": [
+        "Correction coefficient for prediction rate subtraction based on shooting motion performance -- 射撃運動性能による予測率減算量の補正係数"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "Reload time correction factor based on fighting aptitude -- 格闘適性によるリロード時間補正係数"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "Charge time correction factor based on fighting aptitude -- 格闘適性によるチャージ時間補正係数"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "Basic attack power correction coefficient based on fighting aptitude -- 格闘適性による格闘適性による攻撃力基本値補正係数"
+      ]
+    },
+    {
+      "ID": 990,
+      "Entries": [
+        "Reload time correction factor based on EN weapon aptitude -- EN武器適性によるリロード時間補正係数"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        "Charge time correction factor based on EN weapon aptitude -- EN武器適性によるチャージ時間補正係数"
+      ]
+    },
+    {
+      "ID": 992,
+      "Entries": [
+        "Basic attack power correction coefficient based on EN weapon suitability -- EN武器適性による攻撃力基本値補正係数"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Blast distance attenuation (00 for own aircraft) -- 爆風距離減衰（自機用00）"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Blast distance attenuation (01 for own aircraft) -- 爆風距離減衰（自機用01）"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Blast distance attenuation (for own aircraft 02) -- 爆風距離減衰（自機用02）"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Blast distance attenuation (03 for own aircraft) -- 爆風距離減衰（自機用03）"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Blast distance attenuation (04 for own aircraft) -- 爆風距離減衰（自機用04）"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Blast distance attenuation (05 for own aircraft) -- 爆風距離減衰（自機用05）"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Blast distance attenuation (06 for own aircraft) -- 爆風距離減衰（自機用06）"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Blast distance attenuation (07 for own aircraft) -- 爆風距離減衰（自機用07）"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Blast distance attenuation (08 for own aircraft) -- 爆風距離減衰（自機用08）"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Blast distance attenuation (09 for own aircraft) -- 爆風距離減衰（自機用09）"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Blast distance attenuation (10 for own aircraft) -- 爆風距離減衰（自機用10）"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Blast distance attenuation (00 for enemy) -- 爆風距離減衰（敵用00）"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Blast distance attenuation (01 for enemy) -- 爆風距離減衰（敵用01）"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Blast distance attenuation (for enemy 02) -- 爆風距離減衰（敵用02）"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Blast distance attenuation (for enemy 03) -- 爆風距離減衰（敵用03）"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Blast distance attenuation (04 for enemy) -- 爆風距離減衰（敵用04）"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Blast distance attenuation (05 for enemy) -- 爆風距離減衰（敵用05）"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Blast distance attenuation (06 for enemy) -- 爆風距離減衰（敵用06）"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Blast distance attenuation (07 for enemy) -- 爆風距離減衰（敵用07）"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Blast distance attenuation (08 for enemy) -- 爆風距離減衰（敵用08）"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Blast distance attenuation (09 for enemy) -- 爆風距離減衰（敵用09）"
+      ]
+    }
+  ]
+}

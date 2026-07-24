@@ -1,0 +1,389 @@
+{
+  "Name": "m04_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0 basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0 Grass"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0 Church"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0 character (basic)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0 character (on the bridge)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0 character (church)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1 basic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1 grass"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1 chimeric sphere"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1 chimera sphere (after falling)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1 character (basic)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2 basic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2Okina no Chair"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B2 character (basic)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "For poly drama (scn040001_c00_PC"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "For poly drama (scn040001_c01_PC"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "For poly drama (scn040001_c05_PC"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Poly drama (scn040100_Chimera centipede"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Poly drama (p040201_Flying cloth"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "For poly drama (Kamisama Appearance 1"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "For poly drama (Kamisama Appearance 2"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "For poly drama (Kamisama Appearance 3"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "For Poly Drama (Kamisama Appearance-Background"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "For poly drama (p040201 Okina)"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "For poly drama (p040201_c08_OkinaA)"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "For poly drama (p040201_c08_Okina B)"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Rubble A"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Rubble B"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "boss room"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "terrace"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Character"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "Name": "WetAspectParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Water wet"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poison Wet"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Oil wet"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Mud Stains"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Sand Dust"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Freezing"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Covered with wax"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Frostbite"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Preliminary 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Preliminary 2"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Preliminary 3"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "MAGIC_TABLE_PARAM_ST",
+  "Type": "MAGIC_TABLE_PARAM_ST",
+  "Name": "MAGIC_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "magicId",
+      "Name": "magicId",
+      "Description": ""
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "chanceWeight",
+      "Description": ""
+    }
+  ]
+}

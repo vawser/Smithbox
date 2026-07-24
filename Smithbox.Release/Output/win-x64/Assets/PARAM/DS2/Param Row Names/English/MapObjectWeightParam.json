@@ -1,0 +1,59 @@
+{
+  "Name": "MapObjectWeightParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Object weight_no -- オブジェ重量_無"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Object weight_very small -- オブジェ重量_極小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Object weight_small -- オブジェ重量_小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Object weight_medium -- オブジェ重量_中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Object weight_large -- オブジェ重量_大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Object weight_oversized -- オブジェ重量_特大"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Object weight_super-oversized -- オブジェ重量_超特大"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Object weight_≥ -- オブジェ重量_∞"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Object weight_for stone statues -- オブジェ重量_石像用"
+      ]
+    }
+  ]
+}

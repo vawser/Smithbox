@@ -1,0 +1,488 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "破壊までの耐久力(-1:破壊不可)"
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": "この値以下の攻撃力はダメージなし"
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "外部参照テクスチャID",
+      "Description": "mAA/mAA_????.tpf(-1:なし)(AA:エリア番号)"
+    },
+    {
+      "Field": "materialId",
+      "Name": "材質ID",
+      "Description": "マテリアルID。床材質と同じ扱い。-1のときは今までと同じ挙動"
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "アニメ破壊ID最大値",
+      "Description": "アニメ破壊IDが0番から何番までか"
+    },
+    {
+      "Field": "isSaveBreakState",
+      "Name": "破壊状態をセーブデータに保存するか",
+      "Description": "破壊状態をセーブデータに保存するか(0:保存しない, 1:保存する)"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "プレイヤ衝突で壊れるか",
+      "Description": "プレイヤが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "アニメ破壊か",
+      "Description": "アニメ破壊か(0:物理破壊, 1:アニメ破壊)"
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "貫通弾丸が当たるか",
+      "Description": "貫通弾丸が当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "pad8",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "攻撃を弾くか",
+      "Description": "攻撃を弾くか(0:弾かない, 1:弾く)"
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "初期出現用破壊禁止",
+      "Description": "プレイヤの初期出現で壊れ(0:る, 1:ない)"
+    },
+    {
+      "Field": "isLadder",
+      "Name": "ハシゴか",
+      "Description": "ハシゴか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "ポリ劇中アニメを停止するか",
+      "Description": "ポリ劇中アニメを停止するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "pad9",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "移動オブジェか",
+      "Description": "移動オブジェか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isRopeBridge",
+      "Name": "吊り橋オブジェクトか",
+      "Description": "吊り橋オブジェクトか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isAddRigidImpulse_ByDamage",
+      "Name": "ダメージによって剛体が吹き飛ぶか",
+      "Description": "ダメージによって剛体が吹き飛ぶか(0:吹き飛ばない, 1:吹き飛ぶ)"
+    },
+    {
+      "Field": "isBreak_ByChrRide",
+      "Name": "キャラが乗ったら壊れるか",
+      "Description": "キャラが乗ったら壊れるか(0:壊れるない 1:壊れる)"
+    },
+    {
+      "Field": "isBurn",
+      "Name": "燃焼するか",
+      "Description": "燃焼するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "isBreakByEnemyCollide",
+      "Name": "敵キャラ衝突で壊れるか",
+      "Description": "敵キャラが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "デフォルトLODパラムID",
+      "Description": "デフォルトLODパラムID(-1：なし)"
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "破壊時SFXID",
+      "Description": "オブジェ破壊時のSFXID(-1:デフォルト(810030))"
+    },
+    {
+      "Field": "breakSfxCpId",
+      "Name": "破壊時SFXダミポリID",
+      "Description": "オブジェ破壊時SFXの発生位置ダミポリID(-1：モデル中心, -2：配置位置）"
+    },
+    {
+      "Field": "breakBulletBehaviorId",
+      "Name": "破壊時 弾発生 行動パラメータID",
+      "Description": "破壊時[弾]の行動パラメータ(-1:発生しない)"
+    },
+    {
+      "Field": "breakBulletCpId",
+      "Name": "破壊時 弾発生 ダミポリID",
+      "Description": "破壊時[弾]の発生位置ダミポリID(-1:配置位置)"
+    },
+    {
+      "Field": "breakFallHeight",
+      "Name": "落下破壊高さ(m)",
+      "Description": "落下時にオブジェクトが壊れる高さ（0：落下では壊れない)"
+    },
+    {
+      "Field": "windEffectType_0",
+      "Name": "風影響タイプ(破壊前)",
+      "Description": "風影響タイプ(破壊前)"
+    },
+    {
+      "Field": "windEffectType_1",
+      "Name": "風影響タイプ(破壊後)",
+      "Description": "風影響タイプ(破壊後)"
+    },
+    {
+      "Field": "camAvoidType",
+      "Name": "カメラ回避設定",
+      "Description": "オブジェクトがカメラ・プレイヤー間を遮蔽した場合の対処方法"
+    },
+    {
+      "Field": "windEffectRate_0",
+      "Name": "風係数(破壊前)",
+      "Description": "風係数(破壊前)"
+    },
+    {
+      "Field": "windEffectRate_1",
+      "Name": "風係数(破壊後)",
+      "Description": "風係数(破壊後)"
+    },
+    {
+      "Field": "breakStopTime",
+      "Name": "破壊後強制停止時間",
+      "Description": "破壊されてから剛体を強制的に停止するまでの時間（0で強制停止しない）"
+    },
+    {
+      "Field": "burnTime",
+      "Name": "燃焼時間(秒)",
+      "Description": "燃焼時間(秒)(0で燃え続ける)"
+    },
+    {
+      "Field": "burnBraekRate",
+      "Name": "燃焼 破壊判定進行度",
+      "Description": "破壊状態に切り替わる燃焼度の閾値"
+    },
+    {
+      "Field": "burnSfxId",
+      "Name": "燃焼 SFXID：0",
+      "Description": "燃焼時のSFXID：0 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_1",
+      "Name": "燃焼 SFXID：1",
+      "Description": "燃焼時のSFXID：1 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_2",
+      "Name": "燃焼 SFXID：2",
+      "Description": "燃焼時のSFXID：2 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_3",
+      "Name": "燃焼 SFXID：3",
+      "Description": "燃焼時のSFXID：3 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnBulletBehaviorId",
+      "Name": "燃焼 弾発生 行動パラメータ：0",
+      "Description": "燃焼時の弾発生行動パラメータ：0(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_1",
+      "Name": "燃焼 弾発生 行動パラメータ：1",
+      "Description": "燃焼時の弾発生行動パラメータ：1(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_2",
+      "Name": "燃焼 弾発生 行動パラメータ：2",
+      "Description": "燃焼時の弾発生行動パラメータ：2(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_3",
+      "Name": "燃焼 弾発生 行動パラメータ：3",
+      "Description": "燃焼時の弾発生行動パラメータ：3(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletInterval",
+      "Name": "燃焼 弾発生間隔(フレーム)",
+      "Description": "延焼用の弾を発生する間隔(フレーム)"
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "ナビメッシュフラグ",
+      "Description": "オブジェから設定されるナビメッシュフラグ"
+    },
+    {
+      "Field": "collisionType",
+      "Name": "衝突判定タイプ",
+      "Description": "衝突判定タイプ"
+    },
+    {
+      "Field": "burnBulletDelayTime",
+      "Name": "燃焼 弾発生遅延時間(秒)",
+      "Description": "延焼用の弾発生を遅らせる時間(秒)"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：0",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_1",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：1",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_2",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：2",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_3",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：3",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：0",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_1",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：1",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_2",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：2",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_3",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：3",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "BreakAiSoundID",
+      "Name": "破壊時発生AI音ID",
+      "Description": "破壊時に発生させるAI音ID"
+    },
+    {
+      "Field": "FragmentInvisibleWaitTime",
+      "Name": "破片非表示 待機時間(秒)",
+      "Description": "破片のマテリアルID(-1：非表示処理を行なわない)"
+    },
+    {
+      "Field": "FragmentInvisibleTime",
+      "Name": "破片非表示 時間(秒)",
+      "Description": "破片を非表示にさせる時間(秒)"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": "破片のマテリアルID(-1：非表示処理を行なわない)"
+    },
+    {
+      "Field": "RigidPenetrationScale_Soft",
+      "Name": "剛体 衝突点距離係数 [柔らかい]",
+      "Description": "剛体ソフトコンタクト設定 衝突点距離係数 [柔らかい]"
+    },
+    {
+      "Field": "RigidPenetrationScale_Normal",
+      "Name": "剛体 衝突点距離係数 [通常]",
+      "Description": "剛体ソフトコンタクト設定 衝突点距離係数 [通常]"
+    },
+    {
+      "Field": "RigidPenetrationScale_Hard",
+      "Name": "剛体 衝突点距離係数 [固い]",
+      "Description": "剛体ソフトコンタクト設定 衝突点距離係数 [固い]"
+    },
+    {
+      "Field": "LandTouchSfxId",
+      "Name": "地形接触時のSFXID",
+      "Description": "地形接触時のSFXID(-1:地形のマテリアルによりオフセット)"
+    },
+    {
+      "Field": "isDamageCover",
+      "Name": "ダメージを遮蔽するか",
+      "Description": "ダメージを受けたときに、そのダメージを反対側に通さないかどうか\u3000(0:通す, 1:通さない)"
+    },
+    {
+      "Field": "isUserPhysicForChrCollide",
+      "Name": "衝突破壊後、そのままの形状でHavok処理を行い、再破壊可能か",
+      "Description": ""
+    },
+    {
+      "Field": "paintDecalTargetTextureSize",
+      "Name": "ペイントデカールターゲットサイズ",
+      "Description": "ペイントデカールターゲットサイズ(0～4096 ２のべき乗のみ許可)"
+    },
+    {
+      "Field": "lifeTime_forDC",
+      "Name": "動的生成Objの寿命(秒)",
+      "Description": "動的生成Objが生成後に消滅するまでの時間 (0:消滅しない)"
+    },
+    {
+      "Field": "clothUpdateDist",
+      "Name": "クロス更新距離(m)",
+      "Description": "havokClothの更新を行なうカメラからの距離(0:必ず更新する)"
+    },
+    {
+      "Field": "contactSeId",
+      "Name": "プレイヤー接触時SE ID",
+      "Description": "自分が操作するローカルプレイヤーが触れた際に再生するSEのID(-1:再生しない)"
+    },
+    {
+      "Field": "breakLandingSfxId",
+      "Name": "破壊後着地時SFX識別子",
+      "Description": "破壊された後、最初に着地した際に再生するオブジェ材質依存SFXの識別子(-1:発生しない)"
+    },
+    {
+      "Field": "extHitSfx_S",
+      "Name": "追加着弾SFXID：攻撃強度小",
+      "Description": "着弾SFXと同時出すSFXのID。攻撃強度[SFX]以外の情報（材質など）は考慮しない。 (-1：SFXなし)"
+    },
+    {
+      "Field": "extHitSfx_M",
+      "Name": "追加着弾SFXID：攻撃強度中",
+      "Description": "着弾SFXと同時出すSFXのID。攻撃強度[SFX]以外の情報（材質など）は考慮しない。 (-1：SFXなし)"
+    },
+    {
+      "Field": "extHitSfx_L",
+      "Name": "追加着弾SFXID：攻撃強度大",
+      "Description": "着弾SFXと同時出すSFXのID。攻撃強度[SFX]以外の情報（材質など）は考慮しない。 (-1：SFXなし)"
+    },
+    {
+      "Field": "extHitSfx_LL",
+      "Name": "追加着弾SFXID：攻撃強度特大",
+      "Description": "着弾SFXと同時出すSFXのID。攻撃強度[SFX]以外の情報（材質など）は考慮しない。 (-1：SFXなし)"
+    },
+    {
+      "Field": "extHitSfx_LLL",
+      "Name": "追加着弾SFXID：攻撃強度特特大",
+      "Description": "着弾SFXと同時出すSFXのID。攻撃強度[SFX]以外の情報（材質など）は考慮しない。 (-1：SFXなし)"
+    },
+    {
+      "Field": "breakSfxOffsetX",
+      "Name": "破壊時SFXオフセット座標X",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "breakSfxOffsetY",
+      "Name": "破壊時SFXオフセット座標Y",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "breakSfxOffsetZ",
+      "Name": "破壊時SFXオフセット座標Z",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "isEnableWallJump",
+      "Name": "壁ジャンプ可能か",
+      "Description": "Bhavior等での判定に使用（○：壁ジャンプ可能、×：壁ジャンプ不可能。）"
+    },
+    {
+      "Field": "doesStopPlayerDockedMove",
+      "Name": "プレイヤー接触でドッキング移動停止するか",
+      "Description": "ドッキング移動中のPCと接触したときに停止させるか（○：停止させる、×：停止させない）"
+    },
+    {
+      "Field": "isDisableEnvMapCapture",
+      "Name": "環境マップ撮影時に撮影しない",
+      "Description": "環境マップ撮影時に撮影しない"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "autoDrawGroupPassPixel",
+      "Name": "自動描画グループ合格ピクセル",
+      "Description": "自動描画グループ生成時に、このピクセル数 超 見えていたら、描画グループのフラグを立てます。（-1：デフォルト値。game.properties\u3000Draw.AutoDrawGroup.PassPixelNumで定義）"
+    },
+    {
+      "Field": "autoDrawGroupDisableDepthWrite",
+      "Name": "自動描画グループ作成で遮蔽しない",
+      "Description": "扉などに設定します"
+    },
+    {
+      "Field": "useExpandVolume",
+      "Name": "自動描画グループ 拡張バウンディングBOX使用",
+      "Description": "自動描画グループで、可視判定を広げたい時に使います。「見えている判定」を広げつつも、このモデルによる遮蔽はそのままになります"
+    },
+    {
+      "Field": "pad_6",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "SpecialEffectId_InsideHit",
+      "Name": "ヒット内にいるキャラにかける特殊効果ID",
+      "Description": "ヒット内にいるキャラにかける特殊効果ID。衝突判定タイプが「カメラ、ロック、ダメージが当たらない」「ダメージのみ当たる」「ダメージのみ当たるが弾丸は当たらない」の何れかの場合のみ有効です。"
+    },
+    {
+      "Field": "expandVolumeX_plus",
+      "Name": "自動描画グループ 判定拡張BOX +X",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。+X方向の拡張距離と、-X方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "expandVolumeX_minus",
+      "Name": "自動描画グループ 判定拡張BOX -X",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。+X方向の拡張距離と、-X方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "expandVolumeY_plus",
+      "Name": "自動描画グループ 判定拡張BOX +Y",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。上方向の拡張距離と、下方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "expandVolumeY_minus",
+      "Name": "自動描画グループ 判定拡張BOX -Y",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。上方向の拡張距離と、下方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "expandVolumeZ_plus",
+      "Name": "自動描画グループ 判定拡張BOX +Z",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。+Z方向の拡張距離と、-Z方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "expandVolumeZ_minus",
+      "Name": "自動描画グループ 判定拡張BOX -Z",
+      "Description": "自動描画グループで、可視判定の領域をモデルバウンディングBOXから拡張します。+Z方向の拡張距離と、-Z方向の拡張距離を別々に指定します"
+    },
+    {
+      "Field": "camDitherFadeMinDist",
+      "Name": "カメラディザフェード最小距離(m)",
+      "Description": "カメラディザフェード最小距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。"
+    },
+    {
+      "Field": "camDitherFadeMaxDist",
+      "Name": "カメラディザフェード最大距離(m)",
+      "Description": "カメラディザフェード最大距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。"
+    },
+    {
+      "Field": "pad_7",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

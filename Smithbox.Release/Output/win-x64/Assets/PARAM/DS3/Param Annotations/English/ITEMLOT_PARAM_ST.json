@@ -1,0 +1,358 @@
+{
+  "Param": "ITEMLOT_PARAM_ST",
+  "Type": "ITEMLOT_PARAM_ST",
+  "Name": "ITEMLOT_PARAM_ST",
+  "Description": "Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set.",
+  "Fields": [
+    {
+      "Field": "ItemLotId1",
+      "Name": "1: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId2",
+      "Name": "2: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId3",
+      "Name": "3: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId4",
+      "Name": "4: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId5",
+      "Name": "5: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId6",
+      "Name": "6: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId7",
+      "Name": "7: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "ItemLotId8",
+      "Name": "8: Item ID",
+      "Description": "The ID of the item awarded by this slot."
+    },
+    {
+      "Field": "LotItemCategory01",
+      "Name": "1: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory02",
+      "Name": "2: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory03",
+      "Name": "3: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory04",
+      "Name": "4: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory05",
+      "Name": "5: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory06",
+      "Name": "6: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory07",
+      "Name": "7: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemCategory08",
+      "Name": "8: Item Category",
+      "Description": "The item category the awarded item belongs to."
+    },
+    {
+      "Field": "LotItemBasePoint01",
+      "Name": "1: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint02",
+      "Name": "2: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint03",
+      "Name": "3: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint04",
+      "Name": "4: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint05",
+      "Name": "5: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint06",
+      "Name": "6: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint07",
+      "Name": "7: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "LotItemBasePoint08",
+      "Name": "8: Weight",
+      "Description": "The weighting for the awarded item in this slot."
+    },
+    {
+      "Field": "cumulateLotPoint01",
+      "Name": "1: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint02",
+      "Name": "2: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint03",
+      "Name": "3: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint04",
+      "Name": "4: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint05",
+      "Name": "5: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint06",
+      "Name": "6: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint07",
+      "Name": "7: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "cumulateLotPoint08",
+      "Name": "8: Accumulation Weight",
+      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+    },
+    {
+      "Field": "GetItemFlagId01",
+      "Name": "1: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId02",
+      "Name": "2: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId03",
+      "Name": "3: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId04",
+      "Name": "4: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId05",
+      "Name": "5: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId06",
+      "Name": "6: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId07",
+      "Name": "7: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "GetItemFlagId08",
+      "Name": "8: Item Flag",
+      "Description": "The event flag set to ON after acquiring the item in this slot."
+    },
+    {
+      "Field": "getItemFlagId",
+      "Name": "Award Item Flag",
+      "Description": "The event flag set to ON after acquiring anything within this itemlot."
+    },
+    {
+      "Field": "cumulateNumFlagId",
+      "Name": "Cumulative Award Item Flag",
+      "Description": "Holds the number of drawings for cumulative lots. The base event flag specified here + cumulateNumMax are used to save the number of drawings."
+    },
+    {
+      "Field": "cumulateNumMax",
+      "Name": "Cumulative Max Draw Count",
+      "Description": "The maximum number of lottery draws for cumulative lots."
+    },
+    {
+      "Field": "LotItemRarity",
+      "Name": "Rarity",
+      "Description": "Determines the SFX used to display the rarity of the treasure lot."
+    },
+    {
+      "Field": "LotItemNum1",
+      "Name": "1: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum2",
+      "Name": "2: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum3",
+      "Name": "3: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum4",
+      "Name": "4: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum5",
+      "Name": "5: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum6",
+      "Name": "6: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum7",
+      "Name": "7: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "LotItemNum8",
+      "Name": "8: Item Amount",
+      "Description": "The amount of the specified item given if the item in this slot is rolled."
+    },
+    {
+      "Field": "EnableLuck01",
+      "Name": "1: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck02",
+      "Name": "2: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck03",
+      "Name": "3: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck04",
+      "Name": "4: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck05",
+      "Name": "5: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck06",
+      "Name": "6: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck07",
+      "Name": "7: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "EnableLuck08",
+      "Name": "8: Apply Luck Modifier",
+      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+    },
+    {
+      "Field": "cumulateReset01",
+      "Name": "1: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset02",
+      "Name": "2: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset03",
+      "Name": "3: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset04",
+      "Name": "4: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset05",
+      "Name": "5: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset06",
+      "Name": "6: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset07",
+      "Name": "7: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "cumulateReset08",
+      "Name": "8: Reset Cumulative Count",
+      "Description": "If this slot is rolled, reset the cumulative count."
+    },
+    {
+      "Field": "ClearCount",
+      "Name": "Game Clear Offset",
+      "Description": "The offset applied to this lot for each game clear count. Used to point to a different item lot in New Game Plus."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

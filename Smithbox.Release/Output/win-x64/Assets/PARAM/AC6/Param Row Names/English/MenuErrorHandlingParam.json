@@ -1,0 +1,163 @@
+{
+  "Name": "MenuErrorHandlingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Prohibited from use"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Login"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Logout"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Obtain announcement messages from management"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Matching ticket creation"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Matching ticket_polling"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Create a combat session"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Receive combat session"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Delete matching ticket"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Create room"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "room update"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "room delete"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Get room list"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Pilot data registration and update"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Pilot data acquisition",
+        "Pilot data acquisition"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Ranking acquisition (rank designation) results"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Battle result notification"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Battle start notification"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Obtain rating"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Get results at the end of battle"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "UGC registration (upload) upper limit",
+        "UGC registration (upload)"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Get UGC shared ID list"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Obtain UGC content"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "Delete UGC"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "Obtain UGC status"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Report"
+      ]
+    }
+  ]
+}

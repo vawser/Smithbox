@@ -1,0 +1,203 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "Rings and Covenants",
+  "Fields": [
+    {
+      "Field": "refId",
+      "Name": "Reference ID",
+      "Description": "ID called from decorations"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX Variation ID",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Action ID (= Skill)"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Basic Price",
+      "Description": "Basic price"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWC ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Equip Model ID",
+      "Description": "Equipment model number"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement Grade ID",
+      "Description": ""
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Achievement Sequential ID",
+      "Description": "Trophy SEQ number"
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Equip Model Category",
+      "Description": "Equipment model type"
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Equip Model Gender",
+      "Description": "Gender of equipment model"
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "Accessory Type",
+      "Description": "Armor category"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Reference Type",
+      "Description": " ID category [Attack, Projectile, Special]"
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant Item Lot ID",
+      "Description": "-1: No vagrant 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Vagrant Bonus Item Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Vagrant Enemy Item Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "IsDeposit",
+      "Name": "Can Deposit",
+      "Description": ""
+    },
+    {
+      "Field": "IsEquipOutBrake",
+      "Name": "Break on Unequip",
+      "Description": ""
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Disable Multiplayer Sharing",
+      "Description": "Prevents item from appearing to other players when dropped."
+    },
+    {
+      "Field": "IsDiscard",
+      "Name": "Can Discard",
+      "Description": ""
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can Drop",
+      "Description": ""
+    },
+    {
+      "Field": "showLogCondType",
+      "Name": "Item Acquisition Log Condition Type",
+      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+    },
+    {
+      "Field": "showDialogCondType",
+      "Name": "Item Acquisition Dialog Condition Type",
+      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Sale Price",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "accessoryGroup",
+      "Name": "Accessory Group",
+      "Description": "Items of the same group cannot be equipped at the same time"
+    },
+    {
+      "Field": "vowId",
+      "Name": "Vow ID",
+      "Description": ""
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "Number of Completed Achievement ID",
+      "Description": "SEQ number of complete trophy"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "SpEffect ID 1",
+      "Description": "Resident special effect ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "SpEffect ID 2",
+      "Description": "Resident special effect ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "SpEffect ID 3",
+      "Description": "Resident special effect ID3"
+    },
+    {
+      "Field": "residentSpEffectId4",
+      "Name": "SpEffect ID 4",
+      "Description": "Resident special effect ID4"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

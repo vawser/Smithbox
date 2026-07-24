@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>NPC_TALK_PARAM_ST</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 msgId">
+            <DisplayName>メッセージID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s32 voiceId">
+            <DisplayName>ボイスＩD</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s32 actionId = -1">
+            <DisplayName>行動ID</DisplayName>
+            <Enum>EVENT_VALUE_npc_action</Enum>
+            <DisplayFormat>%s</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="u8 windowType">
+            <DisplayName>ウィンドウタイプ</DisplayName>
+            <Enum>NPC_TALK_WINDOW_TYPE_ENUM</Enum>
+            <DisplayFormat>%s</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u8 bNextPlay">
+            <DisplayName>連続会話</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="u16 changeNameNpcId">
+            <DisplayName>名前差し替えフラグ変更NPCID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="f32 endWaitTime">
+            <DisplayName>待機時間</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>600</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

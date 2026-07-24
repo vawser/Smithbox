@@ -1,0 +1,365 @@
+{
+  "Name": "BehaviorParam",
+  "Groups": [
+    {
+      "Key": "Action 0",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 0"
+          }
+      ],
+      "Fields": [
+        "action0DamageId00",
+        "action0DamageId01",
+        "action0DamageId02",
+        "action0GrabDamageId00",
+        "action0GrabDamageId01",
+        "action0GrabDamageId02",
+        "action0AttackWalkMoveAttack",
+        "action0AttackInvincible",
+        "action0HandType",
+        "action0IsSpell",
+        "action0BladeCtrlType",
+        "action0BulletId00",
+        "action0BulletId01",
+        "action0BulletId02",
+        "action0ShotStanceTime",
+        "action0AttackRange",
+        "fAction0AttackBackSwingSpeed",
+        "fAction0AttackFollowSwingSpeed",
+        "fAction0AttackEstimateFutureTime",
+        "fAction0AttackAngle",
+        "fAction0AttackRotateHigh",
+        "fAction0AttackRotateLow",
+        "action0ChantSfx",
+        "action0ReloadTimeMin",
+        "action0ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 1",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 1"
+          }
+      ],
+      "Fields": [
+        "action1DamageId00",
+        "action1DamageId01",
+        "action1DamageId02",
+        "action1GrabDamageId00",
+        "action1GrabDamageId01",
+        "action1GrabDamageId02",
+        "action1AttackWalkMoveAttack",
+        "action1AttackInvincible",
+        "action1HandType",
+        "action1IsSpell",
+        "action1BladeCtrlType",
+        "action1BulletId00",
+        "action1BulletId01",
+        "action1BulletId02",
+        "action1ShotStanceTime",
+        "action1AttackRange",
+        "fAction1AttackBackSwingSpeed",
+        "fAction1AttackFollowSwingSpeed",
+        "fAction1AttackEstimateFutureTime",
+        "fAction1AttackAngle",
+        "fAction1AttackRotateHigh",
+        "fAction1AttackRotateLow",
+        "action1ChantSfx",
+        "action1ReloadTimeMin",
+        "action1ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 2",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 2"
+          }
+      ],
+      "Fields": [
+        "action2DamageId00",
+        "action2DamageId01",
+        "action2DamageId02",
+        "action2GrabDamageId00",
+        "action2GrabDamageId01",
+        "action2GrabDamageId02",
+        "action2AttackWalkMoveAttack",
+        "action2AttackInvincible",
+        "action2HandType",
+        "action2IsSpell",
+        "action2BladeCtrlType",
+        "action2BulletId00",
+        "action2BulletId01",
+        "action2BulletId02",
+        "action2ShotStanceTime",
+        "action2AttackRange",
+        "fAction2AttackBackSwingSpeed",
+        "fAction2AttackFollowSwingSpeed",
+        "fAction2AttackEstimateFutureTime",
+        "fAction2AttackAngle",
+        "fAction2AttackRotateHigh",
+        "fAction2AttackRotateLow",
+        "action2ChantSfx",
+        "action2ReloadTimeMin",
+        "action2ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 3",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 3"
+          }
+      ],
+      "Fields": [
+        "action3DamageId00",
+        "action3DamageId01",
+        "action3DamageId02",
+        "action3GrabDamageId00",
+        "action3GrabDamageId01",
+        "action3GrabDamageId02",
+        "action3AttackWalkMoveAttack",
+        "action3AttackInvincible",
+        "action3HandType",
+        "action3IsSpell",
+        "action3BladeCtrlType",
+        "action3BulletId00",
+        "action3BulletId01",
+        "action3BulletId02",
+        "action3ShotStanceTime",
+        "action3AttackRange",
+        "fAction3AttackBackSwingSpeed",
+        "fAction3AttackFollowSwingSpeed",
+        "fAction3AttackEstimateFutureTime",
+        "fAction3AttackAngle",
+        "fAction3AttackRotateHigh",
+        "fAction3AttackRotateLow",
+        "action3ChantSfx",
+        "action3ReloadTimeMin",
+        "action3ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 4",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 4"
+          }
+      ],
+      "Fields": [
+        "action4DamageId00",
+        "action4DamageId01",
+        "action4DamageId02",
+        "action4GrabDamageId00",
+        "action4GrabDamageId01",
+        "action4GrabDamageId02",
+        "action4AttackWalkMoveAttack",
+        "action4AttackInvincible",
+        "action4HandType",
+        "action4IsSpell",
+        "action4BladeCtrlType",
+        "action4BulletId00",
+        "action4BulletId01",
+        "action4BulletId02",
+        "action4ShotStanceTime",
+        "action4AttackRange",
+        "fAction4AttackBackSwingSpeed",
+        "fAction4AttackFollowSwingSpeed",
+        "fAction4AttackEstimateFutureTime",
+        "fAction4AttackAngle",
+        "fAction4AttackRotateHigh",
+        "fAction4AttackRotateLow",
+        "action4ChantSfx",
+        "action4ReloadTimeMin",
+        "action4ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 5",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 5"
+          }
+      ],
+      "Fields": [
+        "action5DamageId00",
+        "action5DamageId01",
+        "action5DamageId02",
+        "action5GrabDamageId00",
+        "action5GrabDamageId01",
+        "action5GrabDamageId02",
+        "action5AttackWalkMoveAttack",
+        "action5AttackInvincible",
+        "action5HandType",
+        "action5IsSpell",
+        "action5BladeCtrlType",
+        "action5BulletId00",
+        "action5BulletId01",
+        "action5BulletId02",
+        "action5ShotStanceTime",
+        "action5AttackRange",
+        "fAction5AttackBackSwingSpeed",
+        "fAction5AttackFollowSwingSpeed",
+        "fAction5AttackEstimateFutureTime",
+        "fAction5AttackAngle",
+        "fAction5AttackRotateHigh",
+        "fAction5AttackRotateLow",
+        "action5ChantSfx",
+        "action5ReloadTimeMin",
+        "action5ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 6",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 6"
+          }
+      ],
+      "Fields": [
+        "action6DamageId00",
+        "action6DamageId01",
+        "action6DamageId02",
+        "action6GrabDamageId00",
+        "action6GrabDamageId01",
+        "action6GrabDamageId02",
+        "action6AttackWalkMoveAttack",
+        "action6AttackInvincible",
+        "action6HandType",
+        "action6IsSpell",
+        "action6BladeCtrlType",
+        "action6BulletId00",
+        "action6BulletId01",
+        "action6BulletId02",
+        "action6ShotStanceTime",
+        "action6AttackRange",
+        "fAction6AttackBackSwingSpeed",
+        "fAction6AttackFollowSwingSpeed",
+        "fAction6AttackEstimateFutureTime",
+        "fAction6AttackAngle",
+        "fAction6AttackRotateHigh",
+        "fAction6AttackRotateLow",
+        "action6ChantSfx",
+        "action6ReloadTimeMin",
+        "action6ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 7",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 7"
+          }
+      ],
+      "Fields": [
+        "action7DamageId00",
+        "action7DamageId01",
+        "action7DamageId02",
+        "action7GrabDamageId00",
+        "action7GrabDamageId01",
+        "action7GrabDamageId02",
+        "action7AttackWalkMoveAttack",
+        "action7AttackInvincible",
+        "action7HandType",
+        "action7IsSpell",
+        "action7BladeCtrlType",
+        "action7BulletId00",
+        "action7BulletId01",
+        "action7BulletId02",
+        "action7ShotStanceTime",
+        "action7AttackRange",
+        "fAction7AttackBackSwingSpeed",
+        "fAction7AttackFollowSwingSpeed",
+        "fAction7AttackEstimateFutureTime",
+        "fAction7AttackAngle",
+        "fAction7AttackRotateHigh",
+        "fAction7AttackRotateLow",
+        "action7ChantSfx",
+        "action7ReloadTimeMin",
+        "action7ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 8",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 8"
+          }
+      ],
+      "Fields": [
+        "action8DamageId00",
+        "action8DamageId01",
+        "action8DamageId02",
+        "action8GrabDamageId00",
+        "action8GrabDamageId01",
+        "action8GrabDamageId02",
+        "action8AttackWalkMoveAttack",
+        "action8AttackInvincible",
+        "action8HandType",
+        "action8IsSpell",
+        "action8BladeCtrlType",
+        "action8BulletId00",
+        "action8BulletId01",
+        "action8BulletId02",
+        "action8ShotStanceTime",
+        "action8AttackRange",
+        "fAction8AttackBackSwingSpeed",
+        "fAction8AttackFollowSwingSpeed",
+        "fAction8AttackEstimateFutureTime",
+        "fAction8AttackAngle",
+        "fAction8AttackRotateHigh",
+        "fAction8AttackRotateLow",
+        "action8ChantSfx",
+        "action8ReloadTimeMin",
+        "action8ReloadTimeMax"
+      ]
+    },
+    {
+      "Key": "Action 9",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 9"
+          }
+      ],
+      "Fields": [
+        "action9DamageId00",
+        "action9DamageId01",
+        "action9DamageId02",
+        "action9GrabDamageId00",
+        "action9GrabDamageId01",
+        "action9GrabDamageId02",
+        "action9AttackWalkMoveAttack",
+        "action9AttackInvincible",
+        "action9HandType",
+        "action9IsSpell",
+        "action9BladeCtrlType",
+        "action9BulletId00",
+        "action9BulletId01",
+        "action9BulletId02",
+        "action9ShotStanceTime",
+        "action9AttackRange",
+        "fAction9AttackBackSwingSpeed",
+        "fAction9AttackFollowSwingSpeed",
+        "fAction9AttackEstimateFutureTime",
+        "fAction9AttackAngle",
+        "fAction9AttackRotateHigh",
+        "fAction9AttackRotateLow",
+        "action9ChantSfx",
+        "action9ReloadTimeMin",
+        "action9ReloadTimeMax"
+      ]
+    }
+  ]
+}

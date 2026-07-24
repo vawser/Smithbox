@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_CHR_BEHAVIOR_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_CHR_BEHAVIOR_CTRL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Floating"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vehicle"
+        }
+      ]
+    }
+  ]
+}

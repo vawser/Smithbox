@@ -1,0 +1,308 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "dialogueTextId_Male",
+      "Name": "dialogueTextId_Male",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "dialogueTextId_Female",
+      "Name": "dialogueTextId_Female",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15",
+      "Name": "unknown_15",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "unknown_16",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "unknown_17",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19a",
+      "Name": "unknown_19a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19b",
+      "Name": "unknown_19b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19c",
+      "Name": "unknown_19c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19d",
+      "Name": "unknown_19d",
+      "Description": ""
+    },
+    {
+      "Field": "dialogueAnimationId",
+      "Name": "dialogueAnimationId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "unknown_23",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27",
+      "Name": "unknown_27",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28a",
+      "Name": "unknown_28a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28b",
+      "Name": "unknown_28b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28c",
+      "Name": "unknown_28c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28d",
+      "Name": "unknown_28d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_29",
+      "Name": "unknown_29",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "unknown_30",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_31",
+      "Name": "unknown_31",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_32",
+      "Name": "unknown_32",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_33",
+      "Name": "unknown_33",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_34",
+      "Name": "unknown_34",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_35",
+      "Name": "unknown_35",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_36",
+      "Name": "unknown_36",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_37",
+      "Name": "unknown_37",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_38",
+      "Name": "unknown_38",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_39",
+      "Name": "unknown_39",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_40",
+      "Name": "unknown_40",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_41",
+      "Name": "unknown_41",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_42",
+      "Name": "unknown_42",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_43",
+      "Name": "unknown_43",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_44",
+      "Name": "unknown_44",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_45",
+      "Name": "unknown_45",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_46",
+      "Name": "unknown_46",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_47",
+      "Name": "unknown_47",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_48",
+      "Name": "unknown_48",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_49",
+      "Name": "unknown_49",
+      "Description": ""
+    }
+  ]
+}

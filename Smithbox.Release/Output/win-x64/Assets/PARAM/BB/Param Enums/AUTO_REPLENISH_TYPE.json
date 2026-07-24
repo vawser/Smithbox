@@ -1,0 +1,38 @@
+{
+  "Key": "AUTO_REPLENISH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AUTO_REPLENISH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1 - Material"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2 - Consumable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "PLAY_AREA_PARAM",
+  "Type": "PLAY_AREA_PARAM",
+  "Name": "PLAY_AREA_PARAM",
+  "Description": "Defines multiplayer area rules, invasion/search behavior, and restrictions for different online interaction types within a zone.",
+  "Fields": [
+    {
+      "Field": "multiPlayZoneId",
+      "Name": "Multiplayer Zone ID",
+      "Description": "Identifier for the multiplayer-enabled zone or region."
+    },
+    {
+      "Field": "coopBlueDisableDistance",
+      "Name": "Cooperative Blue Phantom Disable Distance",
+      "Description": "Distance within which cooperative blue phantoms are prevented from entering or spawning."
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "Other Phantom Disable Distance",
+      "Description": "Distance restriction for other phantom types entering the area."
+    },
+    {
+      "Field": "multiPlayType",
+      "Name": "Area Type",
+      "Description": "Defines the type of multiplayer area behavior applied to this zone."
+    },
+    {
+      "Field": "enableSearchBellGuard",
+      "Name": "Enable Bell Keeper Search",
+      "Description": "Determines whether Bell Keeper-type enemies can search or invade in this area."
+    },
+    {
+      "Field": "enableSearchCoopBlue",
+      "Name": "Enable Cooperative Blue Phantom Search",
+      "Description": "Allows matching and spawning of cooperative blue phantoms in this area."
+    },
+    {
+      "Field": "enableSearchVsBlue",
+      "Name": "Enable Adversarial Blue Phantom Search",
+      "Description": "Allows hostile/reciprocal blue phantom matchmaking in this area."
+    },
+    {
+      "Field": "enableSearchAbyss",
+      "Name": "Enable Abyss Phantom Search",
+      "Description": "Enables spawning or matchmaking for abyss-related invaders."
+    },
+    {
+      "Field": "enableBossCheck",
+      "Name": "Enable Boss Presence Check",
+      "Description": "Determines whether boss presence is checked to control multiplayer availability."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

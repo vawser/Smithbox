@@ -1,0 +1,149 @@
+{
+  "Name": "UnlockParam_Equipment",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "04-101 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "44-141 JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "06-041 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "45-091 JVLN BETA"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "07-061 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "44-143 HMMR"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "06-042 MIND BETA"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "IB-C03G: NGI 000"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "45-091 ORBT"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "20-081 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "IB-C03F: WLT 001"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "44-142 KRSV"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "IB-C03B: NGI 001"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "20-082 MIND BETA"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "IB-C03W2: WLT 101"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[Clear]Rail Road"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[Clear] Jailbreak"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[Clear] Breaking through the atmosphere"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[Clear] Battle B"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Vvc-700LD"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "HC-2000/BC Shade Eye"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "EL-PW-01 Trueno"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "IB-C03W1: WLT 011"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "IA-C01W6: NB-REDSHIFT / IA-C01W7: ML-REDSHIFT"
+      ]
+    }
+  ]
+}

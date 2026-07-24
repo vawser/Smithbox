@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a Talk ESD setup within the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <EnemyNames
+    AltName="Enemy Name"
+    Wiki="The name of the enemy associated with this setup slot." 
+    MapRef="Part-Enemy"
+    ArrayProperty="" />
+    
+    <EnemyIndices
+    IndexProperty="" />
+    
+    <TalkIDs
+    AltName="Talk ID"
+    Wiki="The talk ID to associated with the enemy that corresponds to this slot." 
+    TalkAlias="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <UnkT46
+    AltName="Unknown: 0x46"
+    Wiki="" />
+    
+    <UnkT48
+    AltName="Unknown: 0x48"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,53 @@
+{
+  "Name": "TankBaseParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "personal tank"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Own tank (LG_M_7510)"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "juggernaut"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "ADF"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "combat vehicle"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "sunflower"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "enemy general purpose"
+      ]
+    }
+  ]
+}

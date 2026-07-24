@@ -1,0 +1,29 @@
+{
+  "Key": "ACTION_BUTTON_EXEC_CIRCLE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ACTION_BUTTON_EXEC_CIRCLE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
+    }
+  ]
+}

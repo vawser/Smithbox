@@ -1,0 +1,328 @@
+{
+  "Param": "EQUIP_CULLING_TARGET_PARAM",
+  "Type": "EQUIP_CULLING_TARGET_PARAM",
+  "Name": "EQUIP_CULLING_TARGET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "CullingFlagTarget00",
+      "Name": "ID00",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget01",
+      "Name": "ID01",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget02",
+      "Name": "ID02",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget03",
+      "Name": "ID03",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget04",
+      "Name": "ID04",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget05",
+      "Name": "ID05",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget06",
+      "Name": "ID06",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget07",
+      "Name": "ID07",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget08",
+      "Name": "ID08",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget09",
+      "Name": "ID09",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget10",
+      "Name": "ID10",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget11",
+      "Name": "ID11",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget12",
+      "Name": "ID12",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget13",
+      "Name": "ID13",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget14",
+      "Name": "ID14",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget15",
+      "Name": "ID15",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget16",
+      "Name": "ID16",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget17",
+      "Name": "ID17",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget18",
+      "Name": "ID18",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget19",
+      "Name": "ID19",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget20",
+      "Name": "ID20",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget21",
+      "Name": "ID21",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget22",
+      "Name": "ID22",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget23",
+      "Name": "ID23",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget24",
+      "Name": "ID24",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget25",
+      "Name": "ID25",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget26",
+      "Name": "ID26",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget27",
+      "Name": "ID27",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget28",
+      "Name": "ID28",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget29",
+      "Name": "ID29",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget30",
+      "Name": "ID30",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget31",
+      "Name": "ID31",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget32",
+      "Name": "ID32",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget33",
+      "Name": "ID33",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget34",
+      "Name": "ID34",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget35",
+      "Name": "ID35",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget36",
+      "Name": "ID36",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget37",
+      "Name": "ID37",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget38",
+      "Name": "ID38",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget39",
+      "Name": "ID39",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget40",
+      "Name": "ID40",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget41",
+      "Name": "ID41",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget42",
+      "Name": "ID42",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget43",
+      "Name": "ID43",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget44",
+      "Name": "ID44",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget45",
+      "Name": "ID45",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget46",
+      "Name": "ID46",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget47",
+      "Name": "ID47",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget48",
+      "Name": "ID48",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget49",
+      "Name": "ID49",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget50",
+      "Name": "ID50",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget51",
+      "Name": "ID51",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget52",
+      "Name": "ID52",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget53",
+      "Name": "ID53",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget54",
+      "Name": "ID54",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget55",
+      "Name": "ID55",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget56",
+      "Name": "ID56",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget57",
+      "Name": "ID57",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget58",
+      "Name": "ID58",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget59",
+      "Name": "ID59",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget60",
+      "Name": "ID60",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget61",
+      "Name": "ID61",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget62",
+      "Name": "ID62",
+      "Description": ""
+    },
+    {
+      "Field": "CullingFlagTarget63",
+      "Name": "ID63",
+      "Description": ""
+    }
+  ]
+}

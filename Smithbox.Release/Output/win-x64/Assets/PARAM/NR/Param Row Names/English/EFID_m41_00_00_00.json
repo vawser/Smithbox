@@ -1,0 +1,119 @@
+{
+  "Name": "EFID_m41_00_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 41000050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 41000500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 41000700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 41000800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 41000900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 41001200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 41001500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 41002100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 41002200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 41002500,
+      "Entries": [
+        "Object flag (reset)"
+      ]
+    },
+    {
+      "ID": 41002700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 41002800,
+      "Entries": [
+        "Boss flag (reset)"
+      ]
+    },
+    {
+      "ID": 41002900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 41002920,
+      "Entries": [
+        "02 Guardian Mission 1_Already started on this map"
+      ]
+    },
+    {
+      "ID": 41008500,
+      "Entries": [
+        "Object act flag"
+      ]
+    }
+  ]
+}

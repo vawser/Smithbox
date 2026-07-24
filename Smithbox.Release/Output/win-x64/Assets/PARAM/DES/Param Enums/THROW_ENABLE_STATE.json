@@ -1,0 +1,38 @@
+{
+  "Key": "THROW_ENABLE_STATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_ENABLE_STATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Never"
+        }
+      ]
+    }
+  ]
+}

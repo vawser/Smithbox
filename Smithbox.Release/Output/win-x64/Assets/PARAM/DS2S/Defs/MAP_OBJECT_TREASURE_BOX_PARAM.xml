@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>MAP_OBJECT_TREASURE_BOX_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 forceTrapEnable">
+            <DisplayName>《トラップ強制発動》</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[3]">
+            <DisplayName>予約</DisplayName>
+            <SortID>141</SortID>
+        </Field>
+        <Field Def="u32 trapGasDamageId">
+            <DisplayName>《トラップ ガス：ダメージ》</DisplayName>
+            <Maximum>1e+10</Maximum>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u32 trapHealDamageId">
+            <DisplayName>《トラップ ガス：回復》</DisplayName>
+            <Maximum>1e+10</Maximum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u32 trapBurstDamageId">
+            <DisplayName>《トラップ 爆発》</DisplayName>
+            <Maximum>1e+10</Maximum>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="u32 trapArrowDamageId">
+            <DisplayName>《トラップ 連続矢》</DisplayName>
+            <Maximum>1e+10</Maximum>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="u32 trapEnemy">
+            <DisplayName>《トラップ ジェネレート：エネミー》</DisplayName>
+            <Maximum>1e+10</Maximum>
+            <Increment>1</Increment>
+            <SortID>140</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

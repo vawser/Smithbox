@@ -1,0 +1,228 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_MapEditor_SkipHavokLoad",
+      "Text": "跳过 Havok 碰撞体/导航网格加载"
+    },
+    {
+      "Key": "PREF_MapEditor_SkipHavokLoad_TT",
+      "Text": "启用后，不会加载 Havok 碰撞体和导航网格。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click",
+      "Text": "启用双击加载"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click_TT",
+      "Text": "启用后，双击地图列表中的地图将加载该地图。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Display_Map_Aliases",
+      "Text": "显示地图别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Display_Map_Aliases_TT",
+      "Text": "启用后，将显示地图的别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Character_Aliases",
+      "Text": "显示角色别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Character_Aliases_TT",
+      "Text": "启用后，尽可能显示角色别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Asset_Aliases",
+      "Text": "显示资源别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Asset_Aliases_TT",
+      "Text": "启用后，尽可能显示资源（对象）别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases",
+      "Text": "显示地图块别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases_TT",
+      "Text": "启用后，尽可能显示地图块别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases",
+      "Text": "显示宝藏别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases_TT",
+      "Text": "启用后，宝藏事件的 itemlot 引用将显示为别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Commmunity_Names",
+      "Text": "启用社区名称"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Commmunity_Names_TT",
+      "Text": "启用后，每个地图对象属性名称使用社区名称。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Unknown_Properties",
+      "Text": "显示未知属性"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Unknown_Properties_TT",
+      "Text": "启用后，将显示未知属性（即任何以 Unk 开头的属性）。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Referenced_Rename",
+      "Text": "将名称更改传播到引用"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Referenced_Rename_TT",
+      "Text": "启用后，重命名视口对象会将名称更改传播到其所在的所有引用中。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Property_Attributes",
+      "Text": "显示属性属性"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Property_Attributes_TT",
+      "Text": "启用后，每个属性的工具提示中会显示数据类型属性。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Additional_Information_at_Top",
+      "Text": "显示在顶部"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Additional_Information_at_Top_TT",
+      "Text": "启用后，附加属性信息将显示在属性窗口顶部。默认显示在底部。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Behavior_Information",
+      "Text": "显示地图对象行为信息"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Behavior_Information_TT",
+      "Text": "启用后，显示地图对象的功能信息。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Information",
+      "Text": "显示地图对象引用"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Information_TT",
+      "Text": "启用后，显示地图对象的引用信息。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Name",
+      "Text": "显示引用名称"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Name_TT",
+      "Text": "启用后，地图对象引用将显示地图对象的名称。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Entity_ID",
+      "Text": "显示引用实体 ID"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Entity_ID_TT",
+      "Text": "启用后，地图对象引用将显示地图对象的实体 ID。"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Alias",
+      "Text": "显示引用别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Alias_TT",
+      "Text": "启用后，地图对象引用将显示地图对象的别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Enable_Character_Substitution",
+      "Text": "启用替换"
+    },
+    {
+      "Key": "PREF_MapEditor_Enable_Character_Substitution_TT",
+      "Text": "启用后，'c0000' 地图对象的角色标记将替换为此处指定的角色模型。"
+    },
+    {
+      "Key": "PREF_MapEditor_Character_Substitution_ID",
+      "Text": "角色模型 ID"
+    },
+    {
+      "Key": "PREF_MapEditor_Character_Substitution_ID_TT",
+      "Text": "要用于替换的角色模型 ID。"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Aliases",
+      "Text": "显示别名"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Aliases_TT",
+      "Text": "启用后，尽可能显示每个模型条目的别名。"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Tags",
+      "Text": "显示标签"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Tags_TT",
+      "Text": "启用后，显示与模型关联的标签。"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries",
+      "Text": "包含低细节条目"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries_TT",
+      "Text": "启用后，显示低细节部分条目。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Shortcuts",
+      "Text": "启用组快捷键"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Shortcuts_TT",
+      "Text": "启用后，选择组的快捷键将被启用。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use",
+      "Text": "使用时框选"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use_TT",
+      "Text": "启用后，当触发选择组时，其内容将在视口中居中框选。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Quick_Creation",
+      "Text": "启用快速创建"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Quick_Creation_TT",
+      "Text": "启用后，'创建选择组'快捷键将自动创建组，跳过创建提示。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Confirm_Delete",
+      "Text": "删除前确认"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Confirm_Delete_TT",
+      "Text": "启用后，删除组之前会弹出确认对话框。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Keybind",
+      "Text": "显示快捷键"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Keybind_TT",
+      "Text": "启用后，选择组的快捷键将显示在其名称旁边。"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Tags",
+      "Text": "显示标签"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Tags_TT",
+      "Text": "启用后，与组关联的标签将显示在其名称旁边。"
+    }
+  ]
+}

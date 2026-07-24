@@ -1,0 +1,164 @@
+{
+  "Key": "EVENT_FLAG_GIMMICK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GIMMICK"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "99020100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Opened determination of both doors that appear after being destroyed by a lower-class Titan soldier"
+        }
+      ]
+    },
+    {
+      "Key": "99020200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_01 open determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_02 open determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_03 open determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_04 open determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extended ladder_1 used determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment of activation of switch for opening/closing lever double door_1"
+        }
+      ]
+    },
+    {
+      "Key": "99020461",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block 3 shortcut entrance switch activation determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020462",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block 3 shortcut exit switch activation determination"
+        }
+      ]
+    },
+    {
+      "Key": "99020500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Open determination of one-way door to cave bonfire room"
+        }
+      ]
+    },
+    {
+      "Key": "99020630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow-off royal soldier OBJ first execution judgment"
+        }
+      ]
+    },
+    {
+      "Key": "99020631",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blows away royal soldier OBJ second execution judgment"
+        }
+      ]
+    },
+    {
+      "Key": "99020632",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The third blown away royal soldier OBJ has been determined to have been executed."
+        }
+      ]
+    },
+    {
+      "Key": "99020633",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4th blown away royal soldier OBJ execution judgment"
+        }
+      ]
+    },
+    {
+      "Key": "99020634",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Execution judgment of royal soldier OBJ being grabbed"
+        }
+      ]
+    },
+    {
+      "Key": "99020635",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For determining whether block 3 rumble gimmick has occurred"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "Name": "GrassLodRangeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "general purpose grass"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "grass LOD test"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "FNR_General-purpose accessories"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "For proto_LOD0 maximum"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Geofront_for street lights"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "communist zone vegetation"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "New B layer for streetlights"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "New B layer for solar panels"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "fuel base_stone"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "black sand dune_stone"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "mountains_pebbles"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Mountains_Oishi"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Mine shaft/Imperial base_pebbles"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Mine shaft/Imperial base_Oishi"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
+  
+  <Field>
+    <Enemy_ActionButtonParamID
+    AltName="Action Button Param ID"
+    Wiki="The action button parameters to use for 'hacking' an enemy." 
+    ParamRef="ActionButtonParam" />
+  
+    <NPCParamID
+    AltName="NPC Param ID"
+    Wiki="The property parameters this character should use." 
+    ParamRef="NpcParam" />
+    
+    <ThinkParamID
+    AltName="NPC Think Param ID"
+    Wiki="The AI parameters this character should use." 
+    ParamRef="NpcThinkParam" />
+    
+    <TalkID
+    AltName="Talk Script ID"
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
+    
+    <Enemy_Unk16
+    AltName="Unknown: 0x16"
+    Wiki="" />
+    
+    <CharaInitID
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    ParamRef="CharaInitParam" />
+    
+    <CollisionPartName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <CollisionPartIndex
+    IndexProperty="" />
+    
+    <WalkRouteName
+    AltName="Walk Route"
+    Wiki="The walk route this enemy follows."
+    MapRef="Event-PatrolRoute" />
+    
+    <WalkRouteIndex
+    IndexProperty="" />
+    
+    <Enemy_Unk22
+    AltName="Unknown: 0x22"
+    Wiki="" />
+    
+    <BackupEventAnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this enemy to idle with." />
+    
+    <Enemy_Unk3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <Enemy_LinkedEntityID
+    AltName="Secondary Entity ID"
+    Wiki="Appears to be a secondary entity ID for this enemy." />
+    
+    <Enemy_Unk44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <Enemy_Unk48
+    AltName="Unknown: 0x48"
+    Wiki="Only 60 in m01_04_80_00 (Xylem)" />
+    
+    <Enemy_Unk50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <Enemy_Unk54
+    AltName="Arena Dummy Entity"
+    Wiki="Only used in Arenas for the Dummy entity." />
+    
+    <Enemy_Unk55
+    AltName="Unknown: 0x55"
+    Wiki="Only used in m01_03_70_00 for AC enemy Nosaac." />
+    
+    <KillPayoutClassification
+    AltName="Kill Payout Classification"
+    Wiki="Determines the kill payout classification when this enemy is killed during destruction-pay missions. Differs per mission." />
+    
+    <PartsTokenParamID
+    AltName="Parts Token Param ID"
+    Wiki="The parts token this enemy will drop." 
+    ParamRef="PartsTokenParam" />
+    
+    
+    <EnemyUnkStruct70
+    AltName="Unknown Struct 0x70"
+    Wiki="" />
+    
+    <EnemyStruct70_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <EnemyStruct70_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <EnemyStruct70_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <EnemyStruct70_Unk06
+    AltName="Unknown: 0x6"
+    Wiki="" />
+    
+    <EnemyStruct70_Unk08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <EnemyUnkStruct78
+    AltName="Unknown Struct 0x78"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

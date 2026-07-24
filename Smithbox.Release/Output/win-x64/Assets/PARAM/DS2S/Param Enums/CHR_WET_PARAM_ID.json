@@ -1,0 +1,38 @@
+{
+  "Key": "CHR_WET_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water Damage"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Damage"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oil Damage"
+        }
+      ]
+    }
+  ]
+}

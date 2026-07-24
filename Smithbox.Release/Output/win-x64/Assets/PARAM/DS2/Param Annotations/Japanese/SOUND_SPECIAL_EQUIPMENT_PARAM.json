@@ -1,0 +1,18 @@
+{
+  "Param": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Type": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Name": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "type",
+      "Name": "種類",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

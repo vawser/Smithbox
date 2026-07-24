@@ -1,0 +1,442 @@
+{
+  "Name": "FaceParam",
+  "Groups": [
+    {
+      "Key": "Skin",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Skin"
+        }
+      ],
+      "Fields": [
+        "skin_color_R",
+        "skin_color_G",
+        "skin_color_B"
+      ]
+    },
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "face_partsId",
+        "caricatureGeometry",
+        "age",
+        "gender"
+      ]
+    },
+    {
+      "Key": "Facial Balance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Facial Balance"
+        }
+      ],
+      "Fields": [
+        "faceGeoData19",
+        "faceGeoData20",
+        "faceGeoData22",
+        "faceGeoData23",
+        "faceGeoData24",
+        "faceGeoData25"
+      ]
+    },
+    {
+      "Key": "Forehead/Glabella",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Forehead/Glabella"
+        }
+      ],
+      "Fields": [
+        "faceGeoData27",
+        "faceGeoData28",
+        "faceGeoData54",
+        "faceGeoData55",
+        "faceGeoData56",
+        "faceGeoData57"
+      ]
+    },
+    {
+      "Key": "Brow Ridge",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Brow Ridge"
+        }
+      ],
+      "Fields": [
+        "faceGeoData00",
+        "faceGeoData01",
+        "faceGeoData02"
+      ]
+    },
+    {
+      "Key": "Eyes",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Eyes"
+        }
+      ],
+      "Fields": [
+        "faceGeoData15",
+        "faceGeoData16",
+        "faceGeoData17",
+        "faceGeoData18"
+      ]
+    },
+    {
+      "Key": "Nose Ridge",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Nose Ridge"
+        }
+      ],
+      "Fields": [
+        "faceGeoData46",
+        "faceGeoData47",
+        "faceGeoData48",
+        "faceGeoData49",
+        "faceGeoData60",
+        "faceGeoData58",
+        "faceGeoData59"
+      ]
+    },
+    {
+      "Key": "Nostrils",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Nostrils"
+        }
+      ],
+      "Fields": [
+        "faceGeoData50",
+        "faceGeoData51",
+        "faceGeoData52"
+      ]
+    },
+    {
+      "Key": "Cheeks",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cheeks"
+        }
+      ],
+      "Fields": [
+        "faceGeoData03",
+        "faceGeoData04",
+        "faceGeoData05",
+        "faceGeoData06",
+        "faceGeoData07"
+      ]
+    },
+    {
+      "Key": "Lips",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "English"
+        }
+      ],
+      "Fields": [
+        "faceGeoData34",
+        "faceGeoData37",
+        "faceGeoData36",
+        "faceGeoData35",
+        "faceGeoData38",
+        "faceGeoData39"
+      ]
+    },
+    {
+      "Key": "Mouth",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Mouth"
+        }
+      ],
+      "Fields": [
+        "faceGeoData40",
+        "faceGeoData41",
+        "faceGeoData42",
+        "faceGeoData43",
+        "faceGeoData44",
+        "faceGeoData45"
+      ]
+    },
+    {
+      "Key": "Chin",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Chin"
+        }
+      ],
+      "Fields": [
+        "faceGeoData08",
+        "faceGeoData09",
+        "faceGeoData10",
+        "faceGeoData11",
+        "faceGeoData12",
+        "faceGeoData13",
+        "faceGeoData14"
+      ]
+    },
+    {
+      "Key": "Jaw",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Jaw"
+        }
+      ],
+      "Fields": [
+        "faceGeoData30",
+        "faceGeoData31",
+        "faceGeoData32",
+        "faceGeoData33"
+      ]
+    },
+    {
+      "Key": "Hair",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hair"
+        }
+      ],
+      "Fields": [
+        "hair_partsId",
+        "hair_color_R",
+        "hair_color_G",
+        "hair_color_B",
+        "hair_shininess",
+        "hair_rootBlack",
+        "hair_whiteDensity"
+      ]
+    },
+    {
+      "Key": "Eyebrows",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Eyebrows"
+        }
+      ],
+      "Fields": [
+        "eyebrow_partsId",
+        "eyebrow_color_R",
+        "eyebrow_color_G",
+        "eyebrow_color_B",
+        "eyebrow_shininess",
+        "eyebrow_rootBlack",
+        "eyebrow_whiteDensity"
+      ]
+    },
+    {
+      "Key": "Facial Hair",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Facial Hair"
+        }
+      ],
+      "Fields": [
+        "beard_partsId",
+        "beard_color_R",
+        "beard_color_G",
+        "beard_color_B",
+        "beard_shininess",
+        "beard_rootBlack",
+        "beard_whiteDensity",
+        "face_beard"
+      ]
+    },
+    {
+      "Key": "Eyelashes",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Eyelashes"
+        }
+      ],
+      "Fields": [
+        "eyelash_partsId",
+        "eyelash_color_R",
+        "eyelash_color_G",
+        "eyelash_color_B"
+      ]
+    },
+    {
+      "Key": "Eye Coloring",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Eye Coloring"
+        }
+      ],
+      "Fields": [
+        "eye_partsId",
+        "eyeR_irisScale",
+        "eyeR_irisColor_R",
+        "eyeR_irisColor_G",
+        "eyeR_irisColor_B",
+        "eyeR_cataract",
+        "eyeR_cataractColor_R",
+        "eyeR_cataractColor_G",
+        "eyeR_cataractColor_B",
+        "eyeR_scleraColor_R",
+        "eyeR_scleraColor_G",
+        "eyeR_scleraColor_B",
+        "eyeR_irisDistance",
+        "override_eye_partsId",
+        "eyeL_irisScale",
+        "override_eye_irisColor",
+        "eyeL_irisColor_R",
+        "eyeL_irisColor_G",
+        "eyeL_irisColor_B",
+        "override_eye_cataract",
+        "eyeL_cataract",
+        "override_eye_cataractColor",
+        "eyeL_cataractColor_R",
+        "eyeL_cataractColor_G",
+        "eyeL_cataractColor_B",
+        "override_eye_scleraColor",
+        "eyeL_scleraColor_R",
+        "eyeL_scleraColor_G",
+        "eyeL_scleraColor_B",
+        "eyeL_irisDistance"
+      ]
+    },
+    {
+      "Key": "Skin Features",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Skin Features"
+        }
+      ],
+      "Fields": [
+        "skin_pores",
+        "skin_gloss",
+        "face_aroundEye",
+        "face_aroundEyeColor_R",
+        "face_aroundEyeColor_G",
+        "face_aroundEyeColor_B"
+      ]
+    },
+    {
+      "Key": "Cosmetics",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cosmetics"
+        }
+      ],
+      "Fields": [
+        "face_eyeLine",
+        "face_eyeLineColor_R",
+        "face_eyeLineColor_G",
+        "face_eyeLineColor_B",
+        "face_eyeShadowUp",
+        "face_eyeShadowUpColor_R",
+        "face_eyeShadowUpColor_G",
+        "face_eyeShadowUpColor_B",
+        "face_eyeShadowDown",
+        "face_eyeShadowDownColor_R",
+        "face_eyeShadowDownColor_G",
+        "face_eyeShadowDownColor_B",
+        "face_cheek",
+        "face_cheekColor_R",
+        "face_cheekColor_G",
+        "face_cheekColor_B",
+        "face_lip",
+        "face_lipColor_R",
+        "face_lipColor_G",
+        "face_lipColor_B"
+      ]
+    },
+    {
+      "Key": "Tattoo/Mark",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Tattoo/Mark"
+        }
+      ],
+      "Fields": [
+        "decal_partsId",
+        "decal_color_R",
+        "decal_color_G",
+        "decal_color_B"
+      ]
+    },
+    {
+      "Key": "Tweak Tattoo/Mark",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Tweak Tattoo/Mark"
+        }
+      ],
+      "Fields": [
+        "decal_posY",
+        "decal_posX",
+        "decal_angle",
+        "decal_scale",
+        "decal_mirror",
+        "decal_gloss"
+      ]
+    },
+    {
+      "Key": "Eyepatch",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Eyepatch"
+        }
+      ],
+      "Fields": [
+        "accessories_partsId",
+        "accessories_color_R",
+        "accessories_color_G",
+        "accessories_color_B"
+      ]
+    },
+    {
+      "Key": "Alter Body",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Alter Body"
+        }
+      ],
+      "Fields": [
+        "chrBodyScaleHead",
+        "chrBodyScaleBreast",
+        "chrBodyScaleAbdomen",
+        "chrBodyScaleRArm",
+        "chrBodyScaleLArm",
+        "chrBodyScaleRLeg",
+        "chrBodyScaleLLeg",
+        "body_hair",
+        "body_hairColor_R",
+        "body_hairColor_G",
+        "body_hairColor_B",
+        "burn_scar",
+        "override_burn_scar"
+      ]
+    }
+  ]
+}

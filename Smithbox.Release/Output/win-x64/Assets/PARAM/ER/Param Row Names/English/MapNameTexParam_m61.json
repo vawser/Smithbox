@@ -1,0 +1,251 @@
+{
+  "Name": "MapNameTexParam_m61",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Gravesite Plain"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Gravesite Plain (Gravesite Plain -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Gravesite Plain (Gravesite Plain -> Rauh Base)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Gravesite Plain"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Scadu Altus"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Scadu Altus (Scadu Altus -> Scaduview)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "(Scadu Altus -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Scadu Altus"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "(Scadu Altus -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Rauh Base"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Scadu Altus (Rauh Base -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Scadu Altus (Rauh Base -> Ancient Ruins of Rauh)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Rauh Base"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Scadu Altus (Rauh Base -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Cerulean Coast"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Cerulean Coast (Cerulean Coast -> Foot of the Jagged Peak)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Cerulean Coast (Cerulean Coast -> Charo's Hidden Grave)"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Jagged Peak"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Foot of the Jagged Peak"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Cerulean Coast"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Cerulean Coast (Cerulean Coast -> Gravesite Plain)"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Charo's Hidden Grave"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Charo's Hidden Grave (Charo's Hidden Grave -> Gravesite Plain)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Ancient Ruins of Rauh"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Scaduview"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Abyssal Woods"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Gravesite Plain)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Scadu Altus)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Jagged Peak)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Foot of the Jagged Peak)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Foot of the Jagged Peak)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Abyssal Woods (Abyssal Woods -> Charo's Hidden Grave)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Castle Ensis"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Castle Ensis"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

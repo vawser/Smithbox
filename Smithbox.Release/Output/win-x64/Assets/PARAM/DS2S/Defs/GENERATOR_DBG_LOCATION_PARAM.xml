@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>GENERATOR_DBG_LOCATION_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 radius = 1">
+            <DisplayName>半径</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 height = 2">
+            <DisplayName>高さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 colorR = 255">
+            <DisplayName>色R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 colorG = 255">
+            <DisplayName>色Ｇ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 colorB = 255">
+            <DisplayName>色Ｂ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[5]">
+            <DisplayName>予約</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <SortID>7</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

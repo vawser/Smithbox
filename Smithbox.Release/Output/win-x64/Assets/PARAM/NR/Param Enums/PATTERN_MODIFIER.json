@@ -1,0 +1,866 @@
+{
+  "Key": "PATTERN_MODIFIER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PATTERN_MODIFIER"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - Limveld"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - Mountaintop"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - The Crater"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - Rotted Woods"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - Great Hollow"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map - Shrouded City"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Extra Night Boss"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Frenzy Tower"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Night Horde"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Meteorite"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Walking Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Ruined Sorcerer's Rise"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Fell Omen (Morgott)"
+        }
+      ]
+    },
+    {
+      "Key": "401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Red Wolf"
+        }
+      ]
+    },
+    {
+      "Key": "402",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Tree Sentinel (and Royal Cavalrymen)"
+        }
+      ]
+    },
+    {
+      "Key": "403",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Draconic Tree Sentinel (and Royal Cavalrymen)"
+        }
+      ]
+    },
+    {
+      "Key": "404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Royal Carian Knight (Loretta)"
+        }
+      ]
+    },
+    {
+      "Key": "405",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Leonine Misbegotten"
+        }
+      ]
+    },
+    {
+      "Key": "406",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Royal Revenant"
+        }
+      ]
+    },
+    {
+      "Key": "407",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Elder Lion"
+        }
+      ]
+    },
+    {
+      "Key": "408",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Flying Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "412",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Wormface"
+        }
+      ]
+    },
+    {
+      "Key": "413",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Ulcerated Tree Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "414",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Ancestor Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "415",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Grafted Scion"
+        }
+      ]
+    },
+    {
+      "Key": "416",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Valiant Gargoyle/Black Blade Kindred"
+        }
+      ]
+    },
+    {
+      "Key": "417",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Erdtree Avatar"
+        }
+      ]
+    },
+    {
+      "Key": "418",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Magma Wyrm/Great Wyrm"
+        }
+      ]
+    },
+    {
+      "Key": "419",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Ancient Hero of Zamor"
+        }
+      ]
+    },
+    {
+      "Key": "424",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Scale-bearing Merchant (Libra)"
+        }
+      ]
+    },
+    {
+      "Key": "427",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Gaping Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "428",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Centipede Demon"
+        }
+      ]
+    },
+    {
+      "Key": "429",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - The Duke's Dear Freja"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Smelter Demon"
+        }
+      ]
+    },
+    {
+      "Key": "431",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Nameless King"
+        }
+      ]
+    },
+    {
+      "Key": "432",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Dancer of the Boreal Valley"
+        }
+      ]
+    },
+    {
+      "Key": "433",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Godskin Apostle"
+        }
+      ]
+    },
+    {
+      "Key": "434",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Godskin Duo"
+        }
+      ]
+    },
+    {
+      "Key": "435",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Full-Grown Fallingstar Beast"
+        }
+      ]
+    },
+    {
+      "Key": "436",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Grafted Monarch (Godrick)"
+        }
+      ]
+    },
+    {
+      "Key": "437",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Tibia Mariner and Those Who Live in Death"
+        }
+      ]
+    },
+    {
+      "Key": "438",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Black Knife Assassin"
+        }
+      ]
+    },
+    {
+      "Key": "439",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Bell Bearing Hunter"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Night's Cavalry (Duo)"
+        }
+      ]
+    },
+    {
+      "Key": "441",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Miranda Blossom"
+        }
+      ]
+    },
+    {
+      "Key": "442",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Golden Hippopotamus"
+        }
+      ]
+    },
+    {
+      "Key": "443",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Death Rite Bird"
+        }
+      ]
+    },
+    {
+      "Key": "444",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Demi-Human Queen (and Demi-Human Swordmaster)"
+        }
+      ]
+    },
+    {
+      "Key": "445",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "446",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Nox Dragonkin Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "447",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Crucible Knight and Golden Hippopotamus"
+        }
+      ]
+    },
+    {
+      "Key": "448",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Battlefield Commander (O'Neil)"
+        }
+      ]
+    },
+    {
+      "Key": "449",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Outland Commander (Niall)"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gladius"
+        }
+      ]
+    },
+    {
+      "Key": "601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gnoster"
+        }
+      ]
+    },
+    {
+      "Key": "602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Libra"
+        }
+      ]
+    },
+    {
+      "Key": "603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Maris"
+        }
+      ]
+    },
+    {
+      "Key": "604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Morgott"
+        }
+      ]
+    },
+    {
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 1"
+        }
+      ]
+    },
+    {
+      "Key": "701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 2"
+        }
+      ]
+    },
+    {
+      "Key": "702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 3"
+        }
+      ]
+    },
+    {
+      "Key": "703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 4"
+        }
+      ]
+    },
+    {
+      "Key": "704",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 5"
+        }
+      ]
+    },
+    {
+      "Key": "705",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 6"
+        }
+      ]
+    },
+    {
+      "Key": "706",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 7"
+        }
+      ]
+    },
+    {
+      "Key": "707",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 8"
+        }
+      ]
+    },
+    {
+      "Key": "708",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start - Area 9"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Occurs Day 1"
+        }
+      ]
+    },
+    {
+      "Key": "801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Occurs Day 2"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Caligo"
+        }
+      ]
+    },
+    {
+      "Key": "10001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Harmonia"
+        }
+      ]
+    },
+    {
+      "Key": "11000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Curseblade and Divine Beast Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "11001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Great Red Bear"
+        }
+      ]
+    },
+    {
+      "Key": "11002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Death Knights"
+        }
+      ]
+    },
+    {
+      "Key": "11003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Demon in Pain and Demon from Below"
+        }
+      ]
+    },
+    {
+      "Key": "11004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Lord of Blood (Mohg)"
+        }
+      ]
+    },
+    {
+      "Key": "11005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Divine Beast Dancing Lion"
+        }
+      ]
+    },
+    {
+      "Key": "11006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Knight Artorias"
+        }
+      ]
+    },
+    {
+      "Key": "11007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss - Demon Prince"
+        }
+      ]
+    },
+    {
+      "Key": "13000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hollow Start - West Kaiden Ruins"
+        }
+      ]
+    },
+    {
+      "Key": "13001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hollow Start - South Cuckoo Camp"
+        }
+      ]
+    },
+    {
+      "Key": "13002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hollow Start - North Waterfall"
+        }
+      ]
+    },
+    {
+      "Key": "14000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Marsh A - Scholar Remembrance"
+        }
+      ]
+    },
+    {
+      "Key": "15001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Main - Rot"
+        }
+      ]
+    },
+    {
+      "Key": "15002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Main - Holy"
+        }
+      ]
+    },
+    {
+      "Key": "15003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Interior - Banished Knights"
+        }
+      ]
+    },
+    {
+      "Key": "15004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Interior - Curseblades"
+        }
+      ]
+    },
+    {
+      "Key": "15005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Interior - Omen"
+        }
+      ]
+    },
+    {
+      "Key": "15100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Main - Fire"
+        }
+      ]
+    },
+    {
+      "Key": "15101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Main - Magic"
+        }
+      ]
+    },
+    {
+      "Key": "15102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Under - Omenkillers"
+        }
+      ]
+    },
+    {
+      "Key": "15103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Under - Bloodhound Knights"
+        }
+      ]
+    },
+    {
+      "Key": "15104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Library - Sorcerers"
+        }
+      ]
+    },
+    {
+      "Key": "15105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Library - Carians"
+        }
+      ]
+    }
+  ]
+}

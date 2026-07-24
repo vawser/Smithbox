@@ -1,0 +1,2369 @@
+{
+  "Name": "NpcParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "should not be erased"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "water prison prisoner"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Enemy NPC in Old Fort 1"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Tunnel 1 for wandering ghosts"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Old Fort 2 Uru-sama confinement NPC"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Ojo 4 Three Musketeers A"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Ojo 4 Three Musketeers B"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Ojo 4 Three Musketeers C"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Urbain"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Patch (Old Fort)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Prince Lendl"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Björngurm"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "half hand"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "patch (pit)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Gargold Run"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Sage Logan"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Yurt, Lord of Silence"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Lord Villaidel in Black"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "princess knight selenium"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "witch"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "old king doran"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Believers of God Part 1"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Follower of God Part 2"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Believers of God Part 3"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Believers of God Part 4"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Savvy"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Master Satsuki"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Miralda the Condemned"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Lord Villaidel in Black, White"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Lord Villaidel in Black, Black"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Princess Knight Selene White"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Princess Knight Selene Black"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Condemned Miralda White"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Condemned Miralda Black"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "half hand black"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "master satsuki black"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "gold run black"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Prince Lendl, Black"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Prison Castle 1 NPC in front of the church"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "warrior woman black"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Barbarian Male Warrior Black"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Barbarian Female Warrior, Black"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Prince Lendl (for Royal Castle 1 and 2)"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "warrior woman black"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Prison Castle 1 NPC in front of the church"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Okina Summon Black NPC"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "For damage test (Hirai)"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "bird test"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Knight for fire damage test"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "dog test"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "gargoyle test"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Sakurai Test Zako"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "NPC player treasure test"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "for bullet owners"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Wandering ghost man for tutorial"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Tutorial Wandering Ghost Female"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Serpent Soldier (Archer)"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Chu Deb Daemon"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "Old Fort 1 Fat Demon"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Chu slave soldier_sword"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Chu slave soldier_sword (loves guards)"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "Chu slave soldier _ sword (weak)"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "NPC Slave Trader"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200013,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 200014,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200015,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 200016,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200017,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 200018,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200019,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword (Exclusive Defensive/Otono Reaction)"
+      ]
+    },
+    {
+      "ID": 200020,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword (Prince Siege)"
+      ]
+    },
+    {
+      "ID": 200021,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword (prince siege)"
+      ]
+    },
+    {
+      "ID": 200030,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 200031,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200032,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 200033,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200034,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 200035,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 200036,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 200037,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Chu general soldier_sword"
+      ]
+    },
+    {
+      "ID": 201001,
+      "Entries": [
+        "Chew General Soldier _ Bow"
+      ]
+    },
+    {
+      "ID": 201002,
+      "Entries": [
+        "Chew general soldier_sword (flame)"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 201011,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword (Flame)"
+      ]
+    },
+    {
+      "ID": 201012,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 201013,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201014,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword (flame, no sound response)"
+      ]
+    },
+    {
+      "ID": 201015,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 201016,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Ax"
+      ]
+    },
+    {
+      "ID": 201017,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 201018,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201019,
+      "Entries": [
+        "Royal Castle 1 General Soldier Ax (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201020,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Halberd (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201030,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 201031,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 201032,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 201033,
+      "Entries": [
+        "Royal Castle 2 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 201034,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 201035,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201036,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201037,
+      "Entries": [
+        "Royal Castle 2 General Soldier Ax (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201038,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Halberd (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201039,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Bow (Fixed/Standing)"
+      ]
+    },
+    {
+      "ID": 201050,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 201051,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 201052,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 201053,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Ax"
+      ]
+    },
+    {
+      "ID": 201054,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 201055,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Sword (Flame)"
+      ]
+    },
+    {
+      "ID": 201056,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201057,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201058,
+      "Entries": [
+        "Royal Castle 3 General Soldier Ax (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201059,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Halberd (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201070,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 201071,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword (Flame)"
+      ]
+    },
+    {
+      "ID": 201072,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 201073,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 201074,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword/Black (Flame)"
+      ]
+    },
+    {
+      "ID": 201075,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow Black"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Chew Knight_Sword"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "Chew Knight_Sword (for Parry)"
+      ]
+    },
+    {
+      "ID": 202002,
+      "Entries": [
+        "Chew Knight_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202010,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 202011,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 202012,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202013,
+      "Entries": [
+        "Royal Castle 1 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 202014,
+      "Entries": [
+        "Royal Castle 1 Knight_Bare Hands (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202030,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 202031,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 202032,
+      "Entries": [
+        "Royal Castle 2 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 202033,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202034,
+      "Entries": [
+        "Royal Castle 2 Knight_Claymore (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202050,
+      "Entries": [
+        "Royal Castle 3 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 202051,
+      "Entries": [
+        "Ojo 3 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 202052,
+      "Entries": [
+        "Ojo 3 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 202053,
+      "Entries": [
+        "Royal Castle 3 Knight_Spear"
+      ]
+    },
+    {
+      "ID": 202054,
+      "Entries": [
+        "Ojo 3 Knight_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202055,
+      "Entries": [
+        "Ojo 3 Knight_Claymore (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202056,
+      "Entries": [
+        "Royal Castle 3 Knight_Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202070,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 202071,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 202072,
+      "Entries": [
+        "Royal Castle 4 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 202090,
+      "Entries": [
+        "Prison Castle 3 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Ojo 3 Assassin"
+      ]
+    },
+    {
+      "ID": 203070,
+      "Entries": [
+        "Ojo 4 Assassin"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Barbarian Beast Warrior/Wolf"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Barbarian Beast Warrior/Bear"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Barbarian Beast Warrior, Hyena"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "Prison 1 prisoner"
+      ]
+    },
+    {
+      "ID": 207001,
+      "Entries": [
+        "Prison 1 Prisoner (Kamisama believer)"
+      ]
+    },
+    {
+      "ID": 207002,
+      "Entries": [
+        "Prison 1 Prisoner (Drop the ring)"
+      ]
+    },
+    {
+      "ID": 207003,
+      "Entries": [
+        "Prison 2 prisoner"
+      ]
+    },
+    {
+      "ID": 207004,
+      "Entries": [
+        "Prison 1 Prisoner (stab sword)"
+      ]
+    },
+    {
+      "ID": 207005,
+      "Entries": [
+        "Prison 1 prisoner (spear)"
+      ]
+    },
+    {
+      "ID": 207006,
+      "Entries": [
+        "Prison 1 prisoner (stab sword, trap)"
+      ]
+    },
+    {
+      "ID": 207500,
+      "Entries": [
+        "Prison Castle 1 Prisoner's ball"
+      ]
+    },
+    {
+      "ID": 207501,
+      "Entries": [
+        "Prison Castle 2 Prisoner's Ball"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "Royal Castle 3 Jailer (Key to Former Royal Castle II)"
+      ]
+    },
+    {
+      "ID": 208001,
+      "Entries": [
+        "Royal Castle 2* Prisoner (Key to Royal Castle III)"
+      ]
+    },
+    {
+      "ID": 208002,
+      "Entries": [
+        "Tunnel 1 Jailer (whip)"
+      ]
+    },
+    {
+      "ID": 208004,
+      "Entries": [
+        "Tunnel 1 Jailer (Whip) Black"
+      ]
+    },
+    {
+      "ID": 208005,
+      "Entries": [
+        "Royal Castle 3 Jailer (Hat)"
+      ]
+    },
+    {
+      "ID": 208006,
+      "Entries": [
+        "Royal Castle 3 Jailer Black"
+      ]
+    },
+    {
+      "ID": 208007,
+      "Entries": [
+        "Royal Castle 3 Prisoner (Prisoner Tower)"
+      ]
+    },
+    {
+      "ID": 208070,
+      "Entries": [
+        "Royal Castle 4 Jailer"
+      ]
+    },
+    {
+      "ID": 208023,
+      "Entries": [
+        "Tunnel 1 Jailer (Whip) Area 2165"
+      ]
+    },
+    {
+      "ID": 208024,
+      "Entries": [
+        "Tunnel 1 Jailer (Whip) Area 2166"
+      ]
+    },
+    {
+      "ID": 208025,
+      "Entries": [
+        "Tunnel 1 Jailer (Whip) Area 2167"
+      ]
+    },
+    {
+      "ID": 208026,
+      "Entries": [
+        "Tunnel 2 Jailer (whip)"
+      ]
+    },
+    {
+      "ID": 208099,
+      "Entries": [
+        "\u3000\u3000\u3000\u3000\u3000Prisoner (whip) for dummy"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Prison 1 Former aristocratic lady"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Unclean 1 Corrupted Human (hammer)"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Chu Corrupt human"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Spear)"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "Unclean 2 Corrupted Human (hammer)"
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Spear)"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "Unclean 1 Corrupted Human (hammer)_Black"
+      ]
+    },
+    {
+      "ID": 210006,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Spear)_Black"
+      ]
+    },
+    {
+      "ID": 210007,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Hammer)_Black"
+      ]
+    },
+    {
+      "ID": 210008,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Spear)_Black"
+      ]
+    },
+    {
+      "ID": 210009,
+      "Entries": [
+        "Unclean 3 Corrupted Human (hammer)"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Unclean 3 Corrupted Human (Spear)"
+      ]
+    },
+    {
+      "ID": 210011,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Sorcerer/Fixed)"
+      ]
+    },
+    {
+      "ID": 210012,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 210013,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Magician)"
+      ]
+    },
+    {
+      "ID": 210014,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Hammer_Poison)"
+      ]
+    },
+    {
+      "ID": 210015,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Hammer_Poison)"
+      ]
+    },
+    {
+      "ID": 210016,
+      "Entries": [
+        "Unclean 2 Corrupted Human (hammer) Do not push"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "Unclean 1 Great Corruption Human"
+      ]
+    },
+    {
+      "ID": 210101,
+      "Entries": [
+        "Unclean 2 Great Corruption Human"
+      ]
+    },
+    {
+      "ID": 210102,
+      "Entries": [
+        "Unclean 2 Great Corruption Human Black"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Tunnel 1 Scale miner (ice ax)"
+      ]
+    },
+    {
+      "ID": 211001,
+      "Entries": [
+        "Tunnel 1 scale miner (bag)"
+      ]
+    },
+    {
+      "ID": 211002,
+      "Entries": [
+        "Tunnel 1 Scale miner (Sword)"
+      ]
+    },
+    {
+      "ID": 211003,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Great Sword)"
+      ]
+    },
+    {
+      "ID": 211004,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Prisoner's Underling/Fukuro)"
+      ]
+    },
+    {
+      "ID": 211005,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Jailer's Underling, Pickaxe)"
+      ]
+    },
+    {
+      "ID": 211006,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Hammer)"
+      ]
+    },
+    {
+      "ID": 211007,
+      "Entries": [
+        "Tunnel 1 Scale miner (bare hands)"
+      ]
+    },
+    {
+      "ID": 211008,
+      "Entries": [
+        "Tunnel 1 Scale miner (attack-type ice ax)"
+      ]
+    },
+    {
+      "ID": 211009,
+      "Entries": [
+        "Tunnel 1 scale miner (rock throwing bare hand start point 1)"
+      ]
+    },
+    {
+      "ID": 211010,
+      "Entries": [
+        "Tunnel 2 Scale miner (ice ax)"
+      ]
+    },
+    {
+      "ID": 211011,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag)"
+      ]
+    },
+    {
+      "ID": 211012,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Hammer)"
+      ]
+    },
+    {
+      "ID": 211013,
+      "Entries": [
+        "Tunnel 2 Scale miner (bare hands)"
+      ]
+    },
+    {
+      "ID": 211014,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Rock Throwing Bare Hands Part 2 On the Road)"
+      ]
+    },
+    {
+      "ID": 211015,
+      "Entries": [
+        "Tunnel 1 scale miner (rock throwing bare hands 3 start point 2)"
+      ]
+    },
+    {
+      "ID": 211016,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Rock Throwing Bare Hands Part 4 On the Road)"
+      ]
+    },
+    {
+      "ID": 211018,
+      "Entries": [
+        "Tunnel 2 Scale miner (attack-type ice ax)"
+      ]
+    },
+    {
+      "ID": 211019,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Attack-type Pickaxe) Black"
+      ]
+    },
+    {
+      "ID": 211020,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (ice ax, jacket)"
+      ]
+    },
+    {
+      "ID": 211021,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (bag/jacket)"
+      ]
+    },
+    {
+      "ID": 211022,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (stiletto, jacket)"
+      ]
+    },
+    {
+      "ID": 211023,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (large sword, jacket)"
+      ]
+    },
+    {
+      "ID": 211026,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (Hammer/jacket)"
+      ]
+    },
+    {
+      "ID": 211027,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (bare hands, jacket)"
+      ]
+    },
+    {
+      "ID": 211028,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (Attack-type ice ax/jacket)"
+      ]
+    },
+    {
+      "ID": 211030,
+      "Entries": [
+        "Tunnel 2 Scale miner 2 (ice ax, jacket)"
+      ]
+    },
+    {
+      "ID": 211031,
+      "Entries": [
+        "Tunnel 2 Scale miner 2 (bag/jacket)"
+      ]
+    },
+    {
+      "ID": 211032,
+      "Entries": [
+        "Tunnel 2 Scale miner 2 (hammer, jacket)"
+      ]
+    },
+    {
+      "ID": 211033,
+      "Entries": [
+        "Tunnel 2 Scale miner 2 (bare hands/jacket)"
+      ]
+    },
+    {
+      "ID": 211038,
+      "Entries": [
+        "Tunnel 2 Scale miner 2 (Attack-type ice ax/jacket)"
+      ]
+    },
+    {
+      "ID": 211039,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (attack type ice ax/jacket)/black"
+      ]
+    },
+    {
+      "ID": 211098,
+      "Entries": [
+        "Tunnel 1 scale miner (bare hands) dummy normal"
+      ]
+    },
+    {
+      "ID": 211099,
+      "Entries": [
+        "Tunnel 1 scale miner (bare hands) dummy strong enemy"
+      ]
+    },
+    {
+      "ID": 211100,
+      "Entries": [
+        "Scale miner (hot iron)"
+      ]
+    },
+    {
+      "ID": 211200,
+      "Entries": [
+        "Scale Miner (Hammer)"
+      ]
+    },
+    {
+      "ID": 211300,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1"
+      ]
+    },
+    {
+      "ID": 211301,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2"
+      ]
+    },
+    {
+      "ID": 211302,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3"
+      ]
+    },
+    {
+      "ID": 211303,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 4"
+      ]
+    },
+    {
+      "ID": 211310,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (bag/jacket) 1"
+      ]
+    },
+    {
+      "ID": 211311,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (bag/jacket) 2"
+      ]
+    },
+    {
+      "ID": 211312,
+      "Entries": [
+        "Tunnel 1 Scale miner 2 (bag/jacket) 3"
+      ]
+    },
+    {
+      "ID": 211320,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 1"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Old Fort 2 Kagehito"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "Old Fort 2 Kagehito_Strong Light"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "Old Fort 2 Kagehito (exclusive guard)"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Old Fort 2 Kagejo (Area A 2460)"
+      ]
+    },
+    {
+      "ID": 213001,
+      "Entries": [
+        "Old Fort 2 Kagejo Black"
+      ]
+    },
+    {
+      "ID": 213002,
+      "Entries": [
+        "Old Fort 2 Kagejo (Area B 2461)"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Barbarian Beast Warrior Owl"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Ojo 2 military dog"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Ojo 3 military dog"
+      ]
+    },
+    {
+      "ID": 301002,
+      "Entries": [
+        "Mine 1 military dog"
+      ]
+    },
+    {
+      "ID": 301012,
+      "Entries": [
+        "Tunnel 2 military dog"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "gray wolf"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Old Fort 1 Hawk"
+      ]
+    },
+    {
+      "ID": 303010,
+      "Entries": [
+        "Old Fort 2 Hawk"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Prison Castle 2 Chimera"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Prison Castle 2 Chimera Tail"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (sword)"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Bowgun)"
+      ]
+    },
+    {
+      "ID": 305002,
+      "Entries": [
+        "Gargoyle (Sword)_Black"
+      ]
+    },
+    {
+      "ID": 305094,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2265"
+      ]
+    },
+    {
+      "ID": 305095,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2264"
+      ]
+    },
+    {
+      "ID": 305096,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2263"
+      ]
+    },
+    {
+      "ID": 305097,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2262"
+      ]
+    },
+    {
+      "ID": 305098,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2261"
+      ]
+    },
+    {
+      "ID": 305099,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Sword) Area 2260"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Unclean 1 Plague Rat"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Unclean 2 Large slug"
+      ]
+    },
+    {
+      "ID": 307001,
+      "Entries": [
+        "Unclean 2 Large slug (fixed)"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Old Fort 2 Large Slug (Light)"
+      ]
+    },
+    {
+      "ID": 307101,
+      "Entries": [
+        "Old Fort 2 Large Slug (Light) Dummy Strong Enemy"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Unclean 2 cloudy jellyfish"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Unclean 2 Large Mosquito"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Tunnel 2 Rock earthworm"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Tunnel 2 Rock worm (non-throwing Ver.)"
+      ]
+    },
+    {
+      "ID": 310002,
+      "Entries": [
+        "Tunnel 2 Rock worms (likes showers)"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Tunnel 2 Crystal Lizard A"
+      ]
+    },
+    {
+      "ID": 311001,
+      "Entries": [
+        "Tunnel 2 Crystal lizard A (for events)"
+      ]
+    },
+    {
+      "ID": 311002,
+      "Entries": [
+        "Royal Castle 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311003,
+      "Entries": [
+        "Royal Castle 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311004,
+      "Entries": [
+        "Royal Castle 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311005,
+      "Entries": [
+        "Royal Castle 4 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311006,
+      "Entries": [
+        "Prison Castle 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311007,
+      "Entries": [
+        "Prison Castle 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311008,
+      "Entries": [
+        "Prison Castle 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311009,
+      "Entries": [
+        "Unclean 1 crystal lizard"
+      ]
+    },
+    {
+      "ID": 311010,
+      "Entries": [
+        "Impure 2 crystal lizard"
+      ]
+    },
+    {
+      "ID": 311011,
+      "Entries": [
+        "Impure 3 crystal lizard"
+      ]
+    },
+    {
+      "ID": 311012,
+      "Entries": [
+        "Tunnel 2 Crystal lizard B"
+      ]
+    },
+    {
+      "ID": 311013,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard A"
+      ]
+    },
+    {
+      "ID": 311014,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard B"
+      ]
+    },
+    {
+      "ID": 311015,
+      "Entries": [
+        "Tunnel 3 Crystal Lizard A"
+      ]
+    },
+    {
+      "ID": 311016,
+      "Entries": [
+        "Tunnel 3 Crystal Lizard B"
+      ]
+    },
+    {
+      "ID": 311017,
+      "Entries": [
+        "Old Fort 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311018,
+      "Entries": [
+        "Old Fort 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311019,
+      "Entries": [
+        "Old Fort 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Tunnel 1 Magma gecko"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Tunnel 2 Ookumushi"
+      ]
+    },
+    {
+      "ID": 313001,
+      "Entries": [
+        "Tunnel 2 Okumamushi (for events)"
+      ]
+    },
+    {
+      "ID": 313002,
+      "Entries": [
+        "Tunnel 2 Okutamushi (for maze)"
+      ]
+    },
+    {
+      "ID": 313003,
+      "Entries": [
+        "Tunnel 2 medium tardigrade"
+      ]
+    },
+    {
+      "ID": 313004,
+      "Entries": [
+        "Tunnel 2 Winged tardigrade"
+      ]
+    },
+    {
+      "ID": 313005,
+      "Entries": [
+        "Tunnel 2 Small tardigrade"
+      ]
+    },
+    {
+      "ID": 313006,
+      "Entries": [
+        "Tunnel 2 Winged tardigrade (for specific positions)"
+      ]
+    },
+    {
+      "ID": 313007,
+      "Entries": [
+        "Tunnel 2 Small tardigrade black"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "marching planaria"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Marching planaria (Violent version)"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Unclean 1 Large Blood Mite"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Failure (Last Boss)"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Old Fort 2 Wizard"
+      ]
+    },
+    {
+      "ID": 401001,
+      "Entries": [
+        "Old Fort 2 Wizard (Exclusive)"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton"
+      ]
+    },
+    {
+      "ID": 402001,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 402004,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton (exclusive guard)"
+      ]
+    },
+    {
+      "ID": 402005,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton Black (Exclusive)"
+      ]
+    },
+    {
+      "ID": 402030,
+      "Entries": [
+        "Old Fort 2 Gold Skull"
+      ]
+    },
+    {
+      "ID": 402031,
+      "Entries": [
+        "Old Fort 2 Gold Skeleton Black (exclusive)"
+      ]
+    },
+    {
+      "ID": 402032,
+      "Entries": [
+        "Old Fort 2 Gold Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Old Fort 1 Black Skeleton _ Dual Sword"
+      ]
+    },
+    {
+      "ID": 402201,
+      "Entries": [
+        "Old Fort 1 Black Skeleton_Two Swords (Exclusive Defense)"
+      ]
+    },
+    {
+      "ID": 402230,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 402231,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword Black"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 402101,
+      "Entries": [
+        "Old fort 1 white skeleton _ bow"
+      ]
+    },
+    {
+      "ID": 402102,
+      "Entries": [
+        "Old fort 1 white skeleton _ sword (narrow)"
+      ]
+    },
+    {
+      "ID": 402103,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 402104,
+      "Entries": [
+        "Old fort 1 white skeleton _ bow (fixed)"
+      ]
+    },
+    {
+      "ID": 402105,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword/Black"
+      ]
+    },
+    {
+      "ID": 402106,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Bow/Black"
+      ]
+    },
+    {
+      "ID": 402107,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword (Exclusive)/Black"
+      ]
+    },
+    {
+      "ID": 402130,
+      "Entries": [
+        "Old Fort 2 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 402131,
+      "Entries": [
+        "Old Fort 2 White Skeleton _ Bow"
+      ]
+    },
+    {
+      "ID": 402132,
+      "Entries": [
+        "Old fort 2 White skeleton _ sword (narrow)"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Prison Castle 1 Octopus Man"
+      ]
+    },
+    {
+      "ID": 403001,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Prison Castle 1st floor key"
+      ]
+    },
+    {
+      "ID": 403002,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Key to the 2nd floor of the Prison Castle"
+      ]
+    },
+    {
+      "ID": 403003,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Prison Castle 3rd floor key"
+      ]
+    },
+    {
+      "ID": 403004,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Prison Castle 4th floor key"
+      ]
+    },
+    {
+      "ID": 403005,
+      "Entries": [
+        "Prison Castle 1 Octopus Man_Black"
+      ]
+    },
+    {
+      "ID": 403006,
+      "Entries": [
+        "Prison 1 Octopus man (fixed)"
+      ]
+    },
+    {
+      "ID": 403007,
+      "Entries": [
+        "Prison Castle 2 Octopus Man_Black"
+      ]
+    },
+    {
+      "ID": 403008,
+      "Entries": [
+        "Prison Castle 3 Octopus Man_Black"
+      ]
+    },
+    {
+      "ID": 404000,
+      "Entries": [
+        "vermin celebrity"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "Tunnel 2 Flame Phantom"
+      ]
+    },
+    {
+      "ID": 406000,
+      "Entries": [
+        "Yeti"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Royal Castle 1 Phalanx child"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Royal Castle 4 Phalanx Child (Hagure)"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "Royal Castle 2 Phalanx Child (Hagure)"
+      ]
+    },
+    {
+      "ID": 500003,
+      "Entries": [
+        "Royal Castle 1 Phalanx child (stray)"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "Royal Castle 1 Phalanx parent"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Royal Castle 2 King's Shield"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Royal Castle 3 The King's Sword"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Old Fort 3 Storm Beast"
+      ]
+    },
+    {
+      "ID": 503100,
+      "Entries": [
+        "Old Fort 3 Son Ei"
+      ]
+    },
+    {
+      "ID": 503101,
+      "Entries": [
+        "Old Fort 1 Child Ray"
+      ]
+    },
+    {
+      "ID": 503102,
+      "Entries": [
+        "Old Fort 2 Son Ei (high-rise)"
+      ]
+    },
+    {
+      "ID": 503103,
+      "Entries": [
+        "Old Fort 2 child stingray (middle layer)"
+      ]
+    },
+    {
+      "ID": 503104,
+      "Entries": [
+        "Old Fort 2 child stingray (lower floor)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Old Fort 1 Referee"
+      ]
+    },
+    {
+      "ID": 506000,
+      "Entries": [
+        "Prison Castle 1 Kami-sama"
+      ]
+    },
+    {
+      "ID": 506001,
+      "Entries": [
+        "Prison 1 Fake Goddess"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "Prison Castle 2 Chimera Ball"
+      ]
+    },
+    {
+      "ID": 507001,
+      "Entries": [
+        "Prison Castle 2 Chimera Ball Small"
+      ]
+    },
+    {
+      "ID": 507002,
+      "Entries": [
+        "Prison Castle 2 Chimera Ball Black"
+      ]
+    },
+    {
+      "ID": 507003,
+      "Entries": [
+        "Prison Castle 3 Chimera Ball Small"
+      ]
+    },
+    {
+      "ID": 507010,
+      "Entries": [
+        "Prison Castle 2 Chimera Ball Tail"
+      ]
+    },
+    {
+      "ID": 507012,
+      "Entries": [
+        "Prison Castle 2 Chimera Ball Tail Black"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "Unclean 2 Flies"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Unclean 1 Leech Demon"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Tunnel 1 Large spider"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Royal Castle 3 Ore Spirit"
+      ]
+    },
+    {
+      "ID": 511001,
+      "Entries": [
+        "Old Fort 2 Ore Spirit"
+      ]
+    },
+    {
+      "ID": 511002,
+      "Entries": [
+        "Prison Castle 2 Ore Spirit"
+      ]
+    },
+    {
+      "ID": 511003,
+      "Entries": [
+        "Unclean 2 Ore Spirit"
+      ]
+    },
+    {
+      "ID": 511004,
+      "Entries": [
+        "Tunnel 1 Spirit of Ore"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Royal Castle 4 Flying Dragon"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "Royal Castle 1 Hiryu's family"
+      ]
+    },
+    {
+      "ID": 513001,
+      "Entries": [
+        "Royal castle 2 Hiryu's family"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Old Fort 2 Storm Warrior"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Old man in yellow (sitting)"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "old man in yellow"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Impure 3 Saint Libra"
+      ]
+    },
+    {
+      "ID": 604100,
+      "Entries": [
+        "Impure 3 Impure person"
+      ]
+    },
+    {
+      "ID": 605000,
+      "Entries": [
+        "Chu Dragon Demon"
+      ]
+    },
+    {
+      "ID": 605001,
+      "Entries": [
+        "Tunnel 3 Dragon Demon (Tunnel)"
+      ]
+    },
+    {
+      "ID": 708000,
+      "Entries": [
+        "important person"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "beggar (male)"
+      ]
+    },
+    {
+      "ID": 711000,
+      "Entries": [
+        "beggar (female)"
+      ]
+    },
+    {
+      "ID": 713000,
+      "Entries": [
+        "NPC blacksmith (pit)"
+      ]
+    },
+    {
+      "ID": 713100,
+      "Entries": [
+        "NPC blacksmith (stone pillar)"
+      ]
+    },
+    {
+      "ID": 715000,
+      "Entries": [
+        "heroine"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Royal Castle 4 King Lendor"
+      ]
+    }
+  ]
+}

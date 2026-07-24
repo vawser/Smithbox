@@ -1,0 +1,263 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Equipment weight increased -- 装備重量アップ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Increases pinch attack power -- ピンチ攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Ring of the Dark Moon God -- 暗月神の指輪"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "thieves ring -- 盗賊団の指輪"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Increases stamina recovery -- スタミナ回復アップ"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Increases fire resistance -- 炎耐性アップ"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Increased lightning resistance -- 雷耐性アップ"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Magic resistance up -- 魔法耐性アップ"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "All resistance up 1 -- 全耐性アップ1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Increases bleeding resistance -- 出血耐性アップ"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison resistance up -- 毒耐性アップ"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "HP slight increase -- HP微増"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse resistance up -- 呪耐性アップ"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "magic slot up -- 魔法スロットアップ"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Magic power up -- 魔法威力アップ"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "MP bias -- MP偏重"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Increases deadly attack power -- 致命攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "master of the bow -- 弓の達人"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Physical defense power up -- 物理防御力アップ"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "item drop up -- アイテムドロップアップ"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Get Soul Up -- 取得ソウルアップ"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "sound erasure -- 音消去"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "stone hat -- 石コロ帽子"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "rigid legs -- 剛脚"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "revival -- 復活"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "resurrection from curse -- 呪いからの復活"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "acrobatics -- 軽業"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "resonance -- 共鳴"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "words of chaos -- 混沌の言葉"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "walking in darkness -- 闇歩き"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Lava walking -- 溶岩歩き"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Auxiliary magic extension -- 補助魔法延長"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "HP drain -- HPドレイン"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "curse of the strong -- 強者の呪い"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Counter reinforcement -- カウンター強化"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Cherish your weapons -- 武器を大切に"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "SA up -- SAアップ"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Increases pinch defense power -- ピンチ防御力アップ"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Miracle power increased -- 奇跡威力アップ"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Magic slot up B -- 魔法スロットアップB"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[DLC] Black Dragon Ring -- 【DLC】黒竜の指輪"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[GR] Sky ring -- 【GR】空の指輪"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "[GR] Evil spirit ring -- 【GR】邪霊の指輪"
+      ]
+    }
+  ]
+}

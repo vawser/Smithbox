@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NETWORK_MSG_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u16 priority">
+      <DisplayName>優先度</DisplayName>
+      <Description>優先度</Description>
+      <DisplayFormat />
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 forcePlay">
+      <DisplayName>強制割り込み</DisplayName>
+      <Enum>GENERIC_PARAM_TYPE_YES_NO</Enum>
+      <Description>強制割り込み</Description>
+      <DisplayFormat />
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[1]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>291</SortID>
+    </Field>
+    <Field Def="s32 normalWhite = -1">
+      <DisplayName>白霊（白サイン）</DisplayName>
+      <Description>白霊（白サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 umbasaWhite = -1">
+      <DisplayName>太陽霊（白サイン）</DisplayName>
+      <Description>太陽霊（白サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 berserkerWhite = -1">
+      <DisplayName>バーサーカー霊（白サイン）</DisplayName>
+      <Description>バーサーカー霊（白サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="s32 sinnerHeroWhite = -1">
+      <DisplayName>罪人英雄霊（白サイン ）</DisplayName>
+      <Description>罪人英雄霊（白サイン ）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="s32 normalBlack = -1">
+      <DisplayName>闇霊（赤サイン）</DisplayName>
+      <Description>闇霊（赤サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s32 umbasaBlack = -1">
+      <DisplayName>太陽霊（赤サイン）</DisplayName>
+      <Description>太陽霊（赤サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="s32 berserkerBlack = -1">
+      <DisplayName>バーサーカー霊（赤サイン）</DisplayName>
+      <Description>バーサーカー霊（赤サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="s32 forceJoinBlack = -1">
+      <DisplayName>闇霊（乱入）</DisplayName>
+      <Description>闇霊（乱入）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="s32 forceJoinUmbasaBlack = -1">
+      <DisplayName>太陽霊（乱入）</DisplayName>
+      <Description>太陽霊（乱入）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="s32 forceJoinBerserkerBlack = -1">
+      <DisplayName>バーサーカー霊（乱入）</DisplayName>
+      <Description>バーサーカー霊（乱入）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 sinnerHunterVisitor = -1">
+      <DisplayName>罪人狩り霊（訪問）</DisplayName>
+      <Description>罪人狩り霊（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="s32 redHunterVisitor = -1">
+      <DisplayName>赤狩り霊（訪問）</DisplayName>
+      <Description>赤狩り霊（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="s32 guardianOfBossVisitor = -1">
+      <DisplayName>ボス守護霊（訪問）</DisplayName>
+      <Description>ボス守護霊（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="s32 guardianOfForestMapVisitor = -1">
+      <DisplayName>マップ守護霊_森（訪問）</DisplayName>
+      <Description>マップ守護霊_森（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="s32 guardianOfAnolisVisitor = -1">
+      <DisplayName>マップ守護霊_アノール（訪問）</DisplayName>
+      <Description>マップ守護霊_アノール（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="s32 rosaliaBlack = -1">
+      <DisplayName>ロザリア霊（赤サイン）</DisplayName>
+      <Description>ロザリア霊（赤サイン）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>172</SortID>
+    </Field>
+    <Field Def="s32 forceJoinRosaliaBlack = -1">
+      <DisplayName>ロザリア霊（乱入）</DisplayName>
+      <Description>ロザリア霊（乱入）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="s32 redHunterVisitor2 = -1">
+      <DisplayName>赤狩り霊2（訪問）</DisplayName>
+      <Description>赤狩り霊2（訪問）</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>222</SortID>
+    </Field>
+    <Field Def="s32 npc1 = -1">
+      <DisplayName>NPC擬似マルチ1</DisplayName>
+      <Description>NPC擬似マルチ1</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="s32 npc2 = -1">
+      <DisplayName>NPC擬似マルチ2</DisplayName>
+      <Description>NPC擬似マルチ2</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="s32 npc3 = -1">
+      <DisplayName>NPC擬似マルチ3</DisplayName>
+      <Description>NPC擬似マルチ3</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="s32 npc4 = -1">
+      <DisplayName>NPC擬似マルチ4</DisplayName>
+      <Description>NPC擬似マルチ4</Description>
+      <DisplayFormat />
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>290</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[52]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>292</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

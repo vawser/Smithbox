@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an player message in the map." />
+  
+  <Field>
+   <MessageID
+    AltName="Message ID"
+    Wiki="The text ID to display for this message."
+    FmgRef="Blood_Messages" />
+    
+    <UnkT02
+    AltName="Unknown: 0x02"
+    Wiki="" />
+    
+    <Hidden
+    AltName="Is Hidden"
+    Wiki="If ON, Seek Guidance is required to see this message."
+    IsBool="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

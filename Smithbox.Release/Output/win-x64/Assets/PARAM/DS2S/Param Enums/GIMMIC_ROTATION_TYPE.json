@@ -1,0 +1,38 @@
+{
+  "Key": "GIMMIC_ROTATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GIMMIC_ROTATION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon: Same Direction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon: Reverse Direction"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon: Relative Position Direction"
+        }
+      ]
+    }
+  ]
+}

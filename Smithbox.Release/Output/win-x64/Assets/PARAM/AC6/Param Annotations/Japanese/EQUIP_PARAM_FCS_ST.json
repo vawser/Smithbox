@@ -1,0 +1,273 @@
+{
+  "Param": "EQUIP_PARAM_FCS_ST",
+  "Type": "EQUIP_PARAM_FCS_ST",
+  "Name": "EQUIP_PARAM_FCS_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニューアイコンID."
+    },
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": "アセンブリの詳細表示で表示するモデルID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID(プログラム内で強化レベルを加味しているので s32 では７桁が限界)"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]."
+    },
+    {
+      "Field": "energyMax",
+      "Name": "EN上限値",
+      "Description": "EN上限値"
+    },
+    {
+      "Field": "energyRecoveryPerSec",
+      "Name": "EN回復量_通常時[EN値/sec] ",
+      "Description": "EN回復量_通常時[EN値/sec]"
+    },
+    {
+      "Field": "consumeEN",
+      "Name": "EN消費量_通常時[EN値/sec] ",
+      "Description": "EN消費量_通常時[EN値/sec] "
+    },
+    {
+      "Field": "energyRecoveryDelayTimeSec",
+      "Name": "EN回復待機時間[sec] ",
+      "Description": "EN回復待機時間[sec] "
+    },
+    {
+      "Field": "predictionShoot_BulletSpeedMPS",
+      "Name": " \t疑似弾速[m/s]",
+      "Description": "武器とは別枠で予測位置を求めるためのパラメータ"
+    },
+    {
+      "Field": "predictionShoot_MaxShootOffset",
+      "Name": "予測差分上限[m]",
+      "Description": "予測差分が大きくなりすぎたときの頭打ちとなる値"
+    },
+    {
+      "Field": "predictionShoot_StartPredDist",
+      "Name": "予測開始距離[m]",
+      "Description": "予測率の計算を開始する距離"
+    },
+    {
+      "Field": "energyRecoveryDelayTimeForEmptySec",
+      "Name": "EN回復待機時間_借金時[sec] ",
+      "Description": "ENが空っぽのときのEN回復待機時間[sec] "
+    },
+    {
+      "Field": "missileLockPerf",
+      "Name": "ミサイルロック性能",
+      "Description": "ミサイルロック時間に対しての補正値"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Maker",
+      "Name": "企業",
+      "Description": "製造元"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "売却価格",
+      "Description": "売却価格"
+    },
+    {
+      "Field": "saleValue",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "computed_f00",
+      "Name": "【表示用】Float_00",
+      "Description": "メニュー表示用算出値00"
+    },
+    {
+      "Field": "computed_f01",
+      "Name": "【表示用】Float_01",
+      "Description": "メニュー表示用算出値01"
+    },
+    {
+      "Field": "computed_f02",
+      "Name": "【表示用】Float_02",
+      "Description": "メニュー表示用算出値02"
+    },
+    {
+      "Field": "computed_f03",
+      "Name": "【表示用】Float_03",
+      "Description": "メニュー表示用算出値03"
+    },
+    {
+      "Field": "computed_f04",
+      "Name": "【表示用】Float_04",
+      "Description": "メニュー表示用算出値04"
+    },
+    {
+      "Field": "computed_f05",
+      "Name": "【表示用】Float_05",
+      "Description": "メニュー表示用算出値05"
+    },
+    {
+      "Field": "computed_f06",
+      "Name": "【表示用】Float_06",
+      "Description": "メニュー表示用算出値06"
+    },
+    {
+      "Field": "computed_f07",
+      "Name": "【表示用】Float_07",
+      "Description": "メニュー表示用算出値07"
+    },
+    {
+      "Field": "computed_f08",
+      "Name": "【表示用】Float_08",
+      "Description": "メニュー表示用算出値08"
+    },
+    {
+      "Field": "computed_f09",
+      "Name": "【表示用】Float_09",
+      "Description": "メニュー表示用算出値09"
+    },
+    {
+      "Field": "computed_f10",
+      "Name": "【表示用】Float_10",
+      "Description": "メニュー表示用算出値10"
+    },
+    {
+      "Field": "computed_f11",
+      "Name": "【表示用】Float_11",
+      "Description": "メニュー表示用算出値11"
+    },
+    {
+      "Field": "computed_f12",
+      "Name": "【表示用】Float_12",
+      "Description": "メニュー表示用算出値12"
+    },
+    {
+      "Field": "computed_f13",
+      "Name": "【表示用】Float_13",
+      "Description": "メニュー表示用算出値13"
+    },
+    {
+      "Field": "computed_f14",
+      "Name": "【表示用】Float_14",
+      "Description": "メニュー表示用算出値14"
+    },
+    {
+      "Field": "computed_f_last",
+      "Name": "【表示用】Float_15",
+      "Description": "メニュー表示用算出値15"
+    },
+    {
+      "Field": "missileLockTimeRate",
+      "Name": "ミサイルロック時間係数",
+      "Description": "ミサイルロック時間にかける係数"
+    },
+    {
+      "Field": "missileMultiLockTimeRate",
+      "Name": "マルチロック時間係数",
+      "Description": "ミサイルマルチロック時間にかける係数"
+    },
+    {
+      "Field": "refId",
+      "Name": "別FCSパラ参照ID",
+      "Description": "設定されていると別FCSパラを参照します"
+    },
+    {
+      "Field": "perfRateAddScale",
+      "Name": "予測率加算量補正倍率",
+      "Description": "予測率加算量の補正倍率"
+    },
+    {
+      "Field": "perfRateSubScale",
+      "Name": "予測率減算量補正倍率",
+      "Description": "予測率減算量の補正倍率"
+    },
+    {
+      "Field": "stageMaxVal0",
+      "Name": "閾値ポイント0",
+      "Description": "距離[m]、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxVal1",
+      "Name": "閾値ポイント1",
+      "Description": "距離[m]、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxVal2",
+      "Name": "閾値ポイント2",
+      "Description": "距離[m]、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxVal3",
+      "Name": "閾値ポイント3",
+      "Description": "距離[m]、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxVal4",
+      "Name": "閾値ポイント4",
+      "Description": "距離[m]、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxGrowVal0",
+      "Name": "閾値係数0",
+      "Description": "加算される予測率、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxGrowVal1",
+      "Name": "閾値係数1",
+      "Description": "加算される予測率、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxGrowVal2",
+      "Name": "閾値係数2",
+      "Description": "加算される予測率、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxGrowVal3",
+      "Name": "閾値係数3",
+      "Description": "加算される予測率、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "stageMaxGrowVal4",
+      "Name": "閾値係数4",
+      "Description": "加算される予測率、補正計算グラフパラメータと同じ使い方"
+    },
+    {
+      "Field": "pad_end2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

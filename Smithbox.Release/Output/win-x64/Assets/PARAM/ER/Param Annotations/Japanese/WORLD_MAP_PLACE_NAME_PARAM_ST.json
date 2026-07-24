@@ -1,0 +1,73 @@
+{
+  "Param": "WORLD_MAP_PLACE_NAME_PARAM_ST",
+  "Type": "WORLD_MAP_PLACE_NAME_PARAM_ST",
+  "Name": "WORLD_MAP_PLACE_NAME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "worldMapPieceId",
+      "Name": "地図断片パラメータID",
+      "Description": "地図断片パラメータID。この地図断片を持っていればテキストを表示する"
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。PlaceName.xlsm"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "posX",
+      "Name": "X座標",
+      "Description": "X座標"
+    },
+    {
+      "Field": "posY",
+      "Name": "Y座標",
+      "Description": "Y座標（使っていない）"
+    },
+    {
+      "Field": "posZ",
+      "Name": "Z座標",
+      "Description": "Z座標"
+    }
+  ]
+}

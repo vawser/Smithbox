@@ -1,0 +1,569 @@
+{
+  "Name": "AtkOperationPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Completely independent"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Whole body"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Lower body"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Upper body"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Shield Tickable Attack"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Guard"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Shoulder"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Quick Boost"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[Main body] Death- cancel only"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[Main unit] Event animation- cancel only"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Body] Damage- cancel only"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Body] Guard damage- cancel only"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Main unit] Move- cancel only"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Main Unit] Quick Boost- cancel only"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Main body] Jump- cancel only"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "[Main body] Landing- cancel only"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[Main body] Thud landing- cancel only"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "[Main body] Reposition guard- cancel only"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "[Main unit] Start sliding on slope- cancel only"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "[Right hand] Recoil small fire"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Left hand] Recoil small fire"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[Right hand] Shooting during recoil"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[Left hand] Shooting during recoil"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[Right hand] Large recoil shot"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[Left hand] Large recoil shot"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[Right hand] Charging"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[Left hand] Charging"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[Right hand] Reload"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[Left hand] Reload"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[Right hand] Switch weapon"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Left hand] Switch weapon"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Right hand] Purge"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Left hand] Purge"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[Right shoulder] Small recoil shot"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[Left shoulder] Small recoil shot"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "[Right shoulder] Shooting during recoil"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "[Left shoulder] Shooting during recoil"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "[Right shoulder] Large recoil shot"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "[Left shoulder] Large recoil shot"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "[Attack] Guard"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[Fighting] Fighting attack"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[Fighting] Fighting Charge"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[Fighting] Charging"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[Special] Assault Boost"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[Right shoulder] Charging"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "[Left shoulder] Charging"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[Right hand] Upper body recoil large shot"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[Left hand] Upper body recoil large shot"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "[Both shoulders] Start shooting during recoil - cancel only"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "[Both shoulders] Start large recoil fire - cancel only"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[Right shoulder] Simultaneous shooting with shoulder weapons - one half"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "[Left shoulder] Simultaneous shooting with shoulder weapons - half"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "[Right hand] Multi-lock in progress"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "[Left hand] Multi-lock in progress"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "[Right shoulder] Multi-lock in progress"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "[Left shoulder] Multi-lock in progress"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[Right shoulder] Minimal recoil shooting"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[Left shoulder] Minimal recoil shooting"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "[Right hand] Minimal recoil shooting"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "[Left hand] Minimal recoil shooting"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Attack] Omnidirectional Guard"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[Right hand] Quick turn before attack"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[Left hand] Quick turn before attack"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "[Right shoulder] Quick turn before attack"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "[Left shoulder] Quick turn before attack"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[Right shoulder] Exceed Orbit"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[Left shoulder] Exceed Orbit"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "[Right hand] Shoulder weapon interference avoidance - Condition reference only"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "[Left hand] Shoulder weapon interference avoidance - Condition reference only"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "[Attack] Guard Release"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Right shoulder] Shooting during recoil - after cancellation"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[Left shoulder] Shooting during recoil - after cancellation"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[Main unit] Assault boost- cancel only"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[Right hand] Waiting for Asabu cancellation"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[Left hand] Waiting for Asabu cancellation"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[Right shoulder] Asabu waiting for cancellation"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[Left shoulder] Asabu waiting for cancellation"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "[Right hand] Upper body recoil large fire (blade type)"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "[Left hand] Upper body recoil large fire (blade type)"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "[Both hands] Start large recoil fire - cancel only"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy base - Completely independent"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Enemy base - Whole body"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Enemy base - Lower body"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Enemy base - Upper body"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Enemy base - shield tick attack"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy base - Guard"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Enemy Base - Shoulder"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Enemy Base - Quick Boost"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Enemy base - Guard damage"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Enemy base - Special attack Area 01"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Enemy Base - Special Attack Area 02"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Enemy Base - Special Attack Area 03"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Enemy Base - Quick Boost [Left Arm Continuous]"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Enemy Base - Quick Boost [Right Arm Continuous]"
+      ]
+    }
+  ]
+}

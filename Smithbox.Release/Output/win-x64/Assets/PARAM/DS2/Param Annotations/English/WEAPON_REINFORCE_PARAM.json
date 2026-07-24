@@ -1,0 +1,318 @@
+{
+  "Param": "WEAPON_REINFORCE_PARAM",
+  "Type": "WEAPON_REINFORCE_PARAM",
+  "Name": "WEAPON_REINFORCE_PARAM",
+  "Description": "Defines weapon upgrade progression, including attack power ranges, damage reduction values, scaling modifiers, elemental reinforcement behavior, and upgrade costs.",
+  "Fields": [
+    {
+      "Field": "minimumPhysical",
+      "Name": "Minimum Physical Attack",
+      "Description": "Minimum physical attack power for this reinforcement level."
+    },
+    {
+      "Field": "minimumMagic",
+      "Name": "Minimum Magic Attack",
+      "Description": "Minimum magic attack power for this reinforcement level."
+    },
+    {
+      "Field": "minimumThunder",
+      "Name": "Minimum Lightning Attack",
+      "Description": "Minimum lightning attack power for this reinforcement level."
+    },
+    {
+      "Field": "minimumFire",
+      "Name": "Minimum Fire Attack",
+      "Description": "Minimum fire attack power for this reinforcement level."
+    },
+    {
+      "Field": "minimumDark",
+      "Name": "Minimum Dark Attack",
+      "Description": "Minimum dark attack power for this reinforcement level."
+    },
+    {
+      "Field": "minimumPoison",
+      "Name": "Minimum Poison Attack",
+      "Description": "Minimum poison buildup value for this reinforcement level."
+    },
+    {
+      "Field": "minimumBleeding",
+      "Name": "Minimum Bleed Attack",
+      "Description": "Minimum bleed buildup value for this reinforcement level."
+    },
+    {
+      "Field": "minimumPetrifaction",
+      "Name": "Minimum Petrification Attack",
+      "Description": "Minimum petrification buildup value for this reinforcement level."
+    },
+    {
+      "Field": "minimumCurse",
+      "Name": "Minimum Curse Attack",
+      "Description": "Minimum curse buildup value for this reinforcement level."
+    },
+    {
+      "Field": "maximumPhysical",
+      "Name": "Maximum Physical Attack",
+      "Description": "Maximum physical attack power for this reinforcement level."
+    },
+    {
+      "Field": "maximumMagic",
+      "Name": "Maximum Magic Attack",
+      "Description": "Maximum magic attack power for this reinforcement level."
+    },
+    {
+      "Field": "maximumThunder",
+      "Name": "Maximum Lightning Attack",
+      "Description": "Maximum lightning attack power for this reinforcement level."
+    },
+    {
+      "Field": "maximumFire",
+      "Name": "Maximum Fire Attack",
+      "Description": "Maximum fire attack power for this reinforcement level."
+    },
+    {
+      "Field": "maximumDark",
+      "Name": "Maximum Dark Attack",
+      "Description": "Maximum dark attack power for this reinforcement level."
+    },
+    {
+      "Field": "maximumPoison",
+      "Name": "Maximum Poison Attack",
+      "Description": "Maximum poison buildup value for this reinforcement level."
+    },
+    {
+      "Field": "maximumBleeding",
+      "Name": "Maximum Bleed Attack",
+      "Description": "Maximum bleed buildup value for this reinforcement level."
+    },
+    {
+      "Field": "maximumPetrifaction",
+      "Name": "Maximum Petrification Attack",
+      "Description": "Maximum petrification buildup value for this reinforcement level."
+    },
+    {
+      "Field": "maximumCurse",
+      "Name": "Maximum Curse Attack",
+      "Description": "Maximum curse buildup value for this reinforcement level."
+    },
+    {
+      "Field": "maxLevel",
+      "Name": "Maximum Reinforcement Level",
+      "Description": "Highest upgrade level supported by this reinforcement path."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "statsAffectId",
+      "Name": "Stat Scaling Configuration ID",
+      "Description": "References the scaling multiplier configuration applied to weapon attributes."
+    },
+    {
+      "Field": "physical",
+      "Name": "Guard: Physical Damage Reduction (%)",
+      "Description": "Percentage of physical damage blocked while guarding."
+    },
+    {
+      "Field": "magic",
+      "Name": "Guard: Magic Damage Reduction (%)",
+      "Description": "Percentage of magic damage blocked while guarding."
+    },
+    {
+      "Field": "thunder",
+      "Name": "Guard: Lightning Damage Reduction (%)",
+      "Description": "Percentage of lightning damage blocked while guarding."
+    },
+    {
+      "Field": "fire",
+      "Name": "Guard: Fire Damage Reduction (%)",
+      "Description": "Percentage of fire damage blocked while guarding."
+    },
+    {
+      "Field": "dark",
+      "Name": "Guard: Dark Damage Reduction (%)",
+      "Description": "Percentage of dark damage blocked while guarding."
+    },
+    {
+      "Field": "poison",
+      "Name": "Guard: Poison Resistance (%)",
+      "Description": "Percentage reduction to poison buildup while guarding."
+    },
+    {
+      "Field": "bleeding",
+      "Name": "Guard: Bleed Resistance (%)",
+      "Description": "Percentage reduction to bleed buildup while guarding."
+    },
+    {
+      "Field": "petrifaction",
+      "Name": "Guard: Petrification Resistance (%)",
+      "Description": "Percentage reduction to petrification buildup while guarding."
+    },
+    {
+      "Field": "curse",
+      "Name": "Guard: Curse Resistance (%)",
+      "Description": "Percentage reduction to curse buildup while guarding."
+    },
+    {
+      "Field": "stabilityRate0",
+      "Name": "Guard Stability Rate: 0",
+      "Description": "Guard stability value for reinforcement level 0."
+    },
+    {
+      "Field": "stabilityRate1",
+      "Name": "Guard Stability Rate: 1",
+      "Description": "Guard stability value for reinforcement level 1."
+    },
+    {
+      "Field": "stabilityRate2",
+      "Name": "Guard Stability Rate: 2",
+      "Description": "Guard stability value for reinforcement level 2."
+    },
+    {
+      "Field": "stabilityRate3",
+      "Name": "Guard Stability Rate: 3",
+      "Description": "Guard stability value for reinforcement level 3."
+    },
+    {
+      "Field": "stabilityRate4",
+      "Name": "Guard Stability Rate: 4",
+      "Description": "Guard stability value for reinforcement level 4."
+    },
+    {
+      "Field": "stabilityRate5",
+      "Name": "Guard Stability Rate: 5",
+      "Description": "Guard stability value for reinforcement level 5."
+    },
+    {
+      "Field": "stabilityRate6",
+      "Name": "Guard Stability Rate: 6",
+      "Description": "Guard stability value for reinforcement level 6."
+    },
+    {
+      "Field": "stabilityRate7",
+      "Name": "Guard Stability Rate: 7",
+      "Description": "Guard stability value for reinforcement level 7."
+    },
+    {
+      "Field": "stabilityRate8",
+      "Name": "Guard Stability Rate: 8",
+      "Description": "Guard stability value for reinforcement level 8."
+    },
+    {
+      "Field": "stabilityRate9",
+      "Name": "Guard Stability Rate: 9",
+      "Description": "Guard stability value for reinforcement level 9."
+    },
+    {
+      "Field": "stabilityRate10",
+      "Name": "Guard Stability Rate: 10",
+      "Description": "Guard stability value for reinforcement level 10."
+    },
+    {
+      "Field": "physicalRate",
+      "Name": "Base Physical Attribute Rate",
+      "Description": "Base physical attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "magicRate",
+      "Name": "Base Magic Attribute Rate",
+      "Description": "Base magic attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "thunderRate",
+      "Name": "Base Lightning Attribute Rate",
+      "Description": "Base lightning attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "fireRate",
+      "Name": "Base Fire Attribute Rate",
+      "Description": "Base fire attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "darkRate",
+      "Name": "Base Dark Attribute Rate",
+      "Description": "Base dark attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "poisonRate",
+      "Name": "Base Poison Attribute Rate",
+      "Description": "Base poison attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "bleedingRate",
+      "Name": "Base Bleed Attribute Rate",
+      "Description": "Base bleed attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "petrifactionRate",
+      "Name": "Base Petrification Attribute Rate",
+      "Description": "Base petrification attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "curseRate",
+      "Name": "Base Curse Attribute Rate",
+      "Description": "Base curse attribute multiplier applied before elemental modification."
+    },
+    {
+      "Field": "addMagicRate",
+      "Name": "Magic Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by magic infusion."
+    },
+    {
+      "Field": "addThunderRate",
+      "Name": "Lightning Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by lightning infusion."
+    },
+    {
+      "Field": "addFireRate",
+      "Name": "Fire Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by fire infusion."
+    },
+    {
+      "Field": "addDarkRate",
+      "Name": "Dark Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by dark infusion."
+    },
+    {
+      "Field": "addPoisonRate",
+      "Name": "Poison Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by poison infusion."
+    },
+    {
+      "Field": "addBleedRate",
+      "Name": "Bleed Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by bleed infusion."
+    },
+    {
+      "Field": "addPhysicalRateByCrude",
+      "Name": "Raw Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Raw infusion."
+    },
+    {
+      "Field": "addPhysicalRateByEnchanted",
+      "Name": "Enchanted Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Enchanted infusion."
+    },
+    {
+      "Field": "addPhysicalRateByAbyss",
+      "Name": "Mundane Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Mundane infusion."
+    },
+    {
+      "Field": "attrSpec",
+      "Name": "Infusion Configuration",
+      "Description": "Determines which infusions are permitted."
+    },
+    {
+      "Field": "attrCost",
+      "Name": "Infusion Cost",
+      "Description": "Cost required to apply an infusion."
+    },
+    {
+      "Field": "reinforceCost",
+      "Name": "Reinforcement Cost",
+      "Description": "Cost required to upgrade the weapon to this reinforcement level."
+    }
+  ]
+}

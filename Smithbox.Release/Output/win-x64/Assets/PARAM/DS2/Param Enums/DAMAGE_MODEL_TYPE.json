@@ -1,0 +1,29 @@
+{
+  "Key": "DAMAGE_MODEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_MODEL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "Depthline",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "map expansion"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Radar A"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Radar B"
+      ]
+    }
+  ]
+}

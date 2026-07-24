@@ -1,0 +1,152 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_TexExport_Type_DDS",
+      "Text": "DDS"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_PNG",
+      "Text": "PNG"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_BMP",
+      "Text": "BMP"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_TGA",
+      "Text": "TGA"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_TIFF",
+      "Text": "TIFF"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_JPEG",
+      "Text": "JPEG"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_WEBP",
+      "Text": "WEBP"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Data_Export",
+      "Text": "数据导出"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Data_Export_Hint",
+      "Text": "导出当前查看的纹理。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_Directory",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_File_Type",
+      "Text": "导出文件类型"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_File_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Export_Type_Select_TT",
+      "Text": "导出纹理保存的文件类型。也会影响上下文菜单的导出功能。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder",
+      "Text": "包含容器文件夹"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT",
+      "Text": "将导出的纹理放入以纹理容器标题命名的文件夹中。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm",
+      "Text": "显示导出确认"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT",
+      "Text": "每次导出后显示确认消息框。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder",
+      "Text": "选择输出目录"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder_TT",
+      "Text": "选择放置导出纹理的文件夹。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder",
+      "Text": "打开输出目录"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder_TT",
+      "Text": "在文件资源管理器中打开当前输出目录。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Export_Texture",
+      "Text": "导出纹理"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Export_Texture_TT",
+      "Text": "导出当前查看的纹理。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Dialog_Select_Export_Dest",
+      "Text": "选择导出目标"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Dialog_Overwrite_File",
+      "Text": "覆盖 {0} 处的现有文件？"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Invalid_Directory",
+      "Text": "目录无效。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Exported_Texture",
+      "Text": "{0} 已导出。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Export_Dir_Not_Set",
+      "Text": "未设置导出目标。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_No_Texture_Viewed",
+      "Text": "当前没有查看纹理。"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Texture_Export_Failed",
+      "Text": "纹理导出失败"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Phase_Processing_Texture",
+      "Text": "正在处理纹理"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Phase_Processing_TPF",
+      "Text": "正在处理 TPF"
+    }
+  ]
+}

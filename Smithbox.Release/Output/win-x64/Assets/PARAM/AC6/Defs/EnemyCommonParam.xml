@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_COMMON_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 TargetNoForget_TargetEne0_LadderHeight = 5">
+      <DisplayName>TARGET_ENE_0がはしご中でこの高さ[m]以内なら忘れない</DisplayName>
+      <Description>TARGET_ENE_0がはしご中の時に敵自身との高さの差がこの数値以内ならターゲットを忘れない</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 IsIntegrateWithRaycast_CheckRoofLength = 10">
+      <DisplayName>床インテグレート時天井高さ判定を許可するPCからの距離</DisplayName>
+      <Description>ローカルプレイヤーからの距離がこの距離以下のときだけ、床インテグレートの持ち上げ高さを天井の高さを考慮して求めるように強化する。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 WallHitInteruptFlag_Angle = 60">
+      <DisplayName>壁衝突インタラプトフラグ判定_角度[deg]</DisplayName>
+      <Description>壁の法線と移動方向（の逆方向）となす角度の閾値[deg]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 WallHitInteruptFlag_KeptTime = 2">
+      <DisplayName>壁衝突インタラプトフラグ判定_継続時間[s]</DisplayName>
+      <Description>壁衝突が続く時間の閾値[s]（大きくなるとフラグの発行が遅れる、小さくなると誤爆しやすくなる）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 WallHitInteruptFlag_StoppedTime = 0.3">
+      <DisplayName>壁衝突インタラプトフラグ判定_許容中断時間[s]</DisplayName>
+      <Description>システムや地形の都合で壁衝突が途切れ途切れになることがあるため、許容できる最大中断時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 ForceIntegrateWithRaycastForSlopeTime = 0.5">
+      <DisplayName>斜面にハマる時強制持ち上げ／吸着更新にする判定時間[sec]</DisplayName>
+      <Description>斜面にこの時間以上にハマり続ければNPCパラメータの設定によって強制持ち上げ／吸着更新をする</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8500</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[36]">
+      <DisplayName>pad</DisplayName>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s32 ActivateChrByTime_PhantomId = 40">
+      <DisplayName>特定時間帯配置のエネミーの出現・消滅に演出に使うファントムシェーダID</DisplayName>
+      <Description>出現・消滅の演出でファントムシェーダをフェイドする、</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="f32 ExcessSubAwarePointIntervalTime">
+      <DisplayName>索敵度　上限値までの減衰開始時間（s）</DisplayName>
+      <Description>索敵度　上限値までの減衰開始時間（s）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>1</Increment>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="f32 SearchToDiscoveryStatePoint = -1">
+      <DisplayName>索敵度 完全発見状態に移行する索敵度 </DisplayName>
+      <Description>索敵度 完全発見状態に移行する索敵度 </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>1</Increment>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="f32 SearchToNomalStatePoint">
+      <DisplayName>索敵度 通常状態に戻る索敵度 </DisplayName>
+      <Description>索敵度 通常状態に戻る索敵度 </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>1</Increment>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="f32 AwarePointDecreaseTime_Normal">
+      <DisplayName>索敵度減少までの猶予時間_通常時[s]</DisplayName>
+      <Description>索敵度減少までの猶予時間_通常時[s]</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 AwarePointDecreaseTime_Damage">
+      <DisplayName>索敵度減少までの猶予時間_ダメージ時[s]</DisplayName>
+      <Description>索敵度減少までの猶予時間_ダメージ時[s]</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 AwarePointMax = 100">
+      <DisplayName>索敵度最大値</DisplayName>
+      <Description>索敵度最大値</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 CombatPointDecreaseTime">
+      <DisplayName>交戦度減少までの猶予時間[s]</DisplayName>
+      <Description>交戦度減少までの猶予時間(新仕様では知覚用)[s]</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="f32 CombatPointDecreasePoint = 20">
+      <DisplayName>交戦度減少量</DisplayName>
+      <Description>秒ごとに減少する交戦度の量</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="f32 ShareTargetTime">
+      <DisplayName>ターゲット共有_猶予時間[s]</DisplayName>
+      <Description>ターゲットを共有するまでの猶予時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 CombatPointDecreasePerSec_Sense">
+      <DisplayName>交戦度減少量（視聴覚・被弾）[point/sec]</DisplayName>
+      <Description>視聴覚・被弾によって蓄積した交戦度の減少量</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 CombatPointDecreasePerSec_Radar">
+      <DisplayName>交戦度減少量（レーダー）[point/sec]</DisplayName>
+      <Description>レーダーによって蓄積した交戦度の減少量</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>5001</SortID>
+    </Field>
+    <Field Def="f32 CombatPointDecreaseTime_Radar">
+      <DisplayName>交戦度減少までの猶予時間(レーダー)[s]</DisplayName>
+      <Description>交戦度減少までの猶予時間(レーダー)[s]</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="f32 AwarePointDescreasePerSec">
+      <DisplayName>索敵度減少量[point/sec]</DisplayName>
+      <Description>秒ごとに索敵度の減少量</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="s16 bodyTrunk_BodyGaugePoint">
+      <DisplayName>本体体幹ゲージ</DisplayName>
+      <Description>本体体幹ゲージ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="s16 bodyTrunk_ActionGaugePoint">
+      <DisplayName>アクション体幹ゲージ</DisplayName>
+      <Description>アクション体幹ゲージ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="f32 bodyTrunk_PointHealWaitTimeSec = 1">
+      <DisplayName>体幹回復待機時間(sec)</DisplayName>
+      <Description>体幹回復を待機する時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="u32 bodyTrunk_PointHealPerSec = 1000">
+      <DisplayName>体幹回復値(point/sec)</DisplayName>
+      <Description>体幹回復を回復する１秒あたりのポイント</Description>
+      <Maximum>999999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="s32 endPermanentStunStateValue">
+      <DisplayName>ハメ抜け発生値[point]</DisplayName>
+      <Description>ハメ抜け発生値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>7510</SortID>
+    </Field>
+    <Field Def="f32 assignRoleEvaluateInterval = 1">
+      <DisplayName>取り巻き役割評価間隔[s]</DisplayName>
+      <Description>小隊内取り巻き役割を評価する時間間隔</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 assignAttackRoleBattleRange">
+      <DisplayName>攻撃役戦闘限界距離[m]</DisplayName>
+      <Description>設定距離内はロックオンされたキャラを優先的に攻撃役を分配する</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="f32 SmoothPatrol_routeAdjustRadius">
+      <DisplayName>なめらか巡回_ルート補正上限半径</DisplayName>
+      <Description>巡回ルートなめらか処理の補正用半径値</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 ShareTargetRecognitionLagError">
+      <DisplayName>共有ターゲット認識遅延誤差[sec]</DisplayName>
+      <Description>遅延時間 ＝ 共有ターゲット認識遅延 ＋ random( 0, 共有ターゲット認識遅延誤差 )</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>305</SortID>
+    </Field>
+    <Field Def="f32 addImpactDisableTimeSec = 2.5">
+      <DisplayName>衝撃無敵時間[秒]</DisplayName>
+      <Description>「ステートを抜けたとき、衝撃無敵発動」のステートを抜けたときの衝撃値無効時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="dummy8 pad_01[104]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

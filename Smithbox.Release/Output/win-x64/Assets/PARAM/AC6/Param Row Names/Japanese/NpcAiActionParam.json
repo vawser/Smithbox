@@ -1,0 +1,761 @@
+{
+  "Name": "NpcAiActionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "R1 attack, R1 attack combo -- R1攻撃、R1攻撃コンボ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Bow + magic reservoir -- 弓＋魔法溜め"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "R2 attack, R2 attack combo -- R2攻撃、R2攻撃コンボ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Bow + magic reservoir -- 弓＋魔法溜め"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "L1 attack, L1 attack combo -- L1攻撃、L1攻撃コンボ"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bow + magic reservoir -- 弓＋魔法溜め"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Parry, Arts: Ax -- パリィ、アーツ：斧"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Arts: stance -- アーツ：構え"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "kick -- キック"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "jump attack -- ジャンプアタック"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "One-handed/two-handed switching -- 片手/両手切り替え"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "item use -- アイテム使用"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "back step -- バックステップ"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "left weapon switch -- 左武器切り替え"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Switch right weapon -- 右武器切り替え"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Move ↑ -- 移動\u3000↑"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Move ↑← -- 移動\u3000↑←"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Move ↑→ -- 移動\u3000↑→"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Move ← -- 移動\u3000←"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Move → -- 移動\u3000→"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Move ↓ -- 移動\u3000↓"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Move ↓← -- 移動\u3000↓←"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Move ↓→ -- 移動\u3000↓→"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Guard movement ↑ -- ガード移動\u3000↑"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Guard movement ↑← -- ガード移動\u3000↑←"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Guard movement ↑→ -- ガード移動\u3000↑→"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Guard movement ← -- ガード移動\u3000←"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Guard movement → -- ガード移動\u3000→"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Guard movement ↓ -- ガード移動\u3000↓"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Guard movement ↓← -- ガード移動\u3000↓←"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Guard movement ↓→ -- ガード移動\u3000↓→"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "dash move -- ダッシュ移動"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Guard dash move -- ガードダッシュ移動"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Rolling ↑ -- ローリング\u3000↑"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Rolling ↑← -- ローリング\u3000↑←"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Rolling ↑→ -- ローリング\u3000↑→"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Rolling ← -- ローリング\u3000←"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Rolling → -- ローリング\u3000→"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Rolling ↓ -- ローリング\u3000↓"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Rolling ↓← -- ローリング\u3000↓←"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Rolling ↓→ -- ローリング\u3000↓→"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Arts R1 attack -- アーツR1攻撃"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Arts R2 attack -- アーツR2攻撃"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Lockstep ↑ -- ロックステップ\u3000↑"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Lock step ↑← -- ロックステップ\u3000↑←"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Lockstep ↑→ -- ロックステップ\u3000↑→"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Lockstep ← -- ロックステップ\u3000←"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Lockstep → -- ロックステップ\u3000→"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Lock step ↓ -- ロックステップ\u3000↓"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Lock step ↓← -- ロックステップ\u3000↓←"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Lock step ↓→ -- ロックステップ\u3000↓→"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Arts stance movement ↑ -- アーツ構え移動\u3000↑"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Arts stance movement ↑← -- アーツ構え移動\u3000↑←"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Arts stance movement ↑→ -- アーツ構え移動\u3000↑→"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Arts stance movement ← -- アーツ構え移動\u3000←"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Arts stance movement → -- アーツ構え移動\u3000→"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Arts stance movement ↓ -- アーツ構え移動\u3000↓"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Arts stance movement ↓← -- アーツ構え移動\u3000↓←"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Arts stance movement ↓→ -- アーツ構え移動\u3000↓→"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Arts stance R1 attack ↑ -- アーツ構えR1攻撃\u3000↑"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Arts stance R1 attack ↑← -- アーツ構えR1攻撃\u3000↑←"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Arts stance R1 attack ↑→ -- アーツ構えR1攻撃\u3000↑→"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Arts stance R1 attack ← -- アーツ構えR1攻撃\u3000←"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Arts stance R1 attack → -- アーツ構えR1攻撃\u3000→"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Arts stance R1 attack ↓ -- アーツ構えR1攻撃\u3000↓"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Arts stance R1 attack ↓← -- アーツ構えR1攻撃\u3000↓←"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Arts stance R1 attack ↓→ -- アーツ構えR1攻撃\u3000↓→"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Arts stance R2 attack ↑ -- アーツ構えR2攻撃\u3000↑"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Arts stance R2 attack ↑← -- アーツ構えR2攻撃\u3000↑←"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Arts stance R2 attack ↑→ -- アーツ構えR2攻撃\u3000↑→"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Arts stance R2 attack ← -- アーツ構えR2攻撃\u3000←"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Arts stance R2 attack → -- アーツ構えR2攻撃\u3000→"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Arts stance R2 attack ↓ -- アーツ構えR2攻撃\u3000↓"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Arts stance R2 attack ↓← -- アーツ構えR2攻撃\u3000↓←"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Arts stance R2 attack ↓→ -- アーツ構えR2攻撃\u3000↓→"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Shield Chiku R1 attack -- 盾チクR1攻撃"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Shield Chiku R2 attack (reserve) -- 盾チクR2攻撃(予備)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "ladder, up -- はしご、上り"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "ladder, down -- はしご、下り"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "left handed weapon two handed -- 左手武器両手持ち"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "get on -- 乗る"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "get off -- 降りる"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Gesture ID00 -- ジェスチャID00"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Gesture ID01 -- ジェスチャID01"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Gesture ID02 -- ジェスチャID02"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Gesture ID03 -- ジェスチャID03"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Gesture ID04 -- ジェスチャID04"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Gesture ID05 -- ジェスチャID05"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Gesture ID06 -- ジェスチャID06"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Gesture ID07 -- ジェスチャID07"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Gesture ID08 -- ジェスチャID08"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Gesture ID09 -- ジェスチャID09"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Gesture ID10 -- ジェスチャID10"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Gesture ID11 -- ジェスチャID11"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Gesture ID12 -- ジェスチャID12"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Gesture ID13 -- ジェスチャID13"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Gesture ID14 -- ジェスチャID14"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Gesture ID15 -- ジェスチャID15"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gesture ID16 -- ジェスチャID16"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gesture ID17 -- ジェスチャID17"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Gesture ID18 -- ジェスチャID18"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Gesture ID19 -- ジェスチャID19"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Gesture ID20 -- ジェスチャID20"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Gesture ID21 -- ジェスチャID21"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Gesture ID22 -- ジェスチャID22"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Gesture ID23 -- ジェスチャID23"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Gesture ID24 -- ジェスチャID24"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Gesture ID25 -- ジェスチャID25"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Gesture ID26 -- ジェスチャID26"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Gesture ID27 -- ジェスチャID27"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Gesture ID28 -- ジェスチャID28"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Gesture ID29 -- ジェスチャID29"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Gesture ID30 -- ジェスチャID30"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Gesture ID31 -- ジェスチャID31"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Gesture ID32 -- ジェスチャID32"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Gesture ID33 -- ジェスチャID33"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Gesture ID34 -- ジェスチャID34"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Gesture ID35 -- ジェスチャID35"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Gesture ID36 -- ジェスチャID36"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Gesture ID37 -- ジェスチャID37"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Gesture ID38 -- ジェスチャID38"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Gesture ID39 -- ジェスチャID39"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Gesture ID40 -- ジェスチャID40"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Non-input -- 非入力"
+      ]
+    }
+  ]
+}

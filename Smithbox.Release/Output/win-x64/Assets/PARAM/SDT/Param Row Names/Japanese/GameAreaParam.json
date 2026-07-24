@@ -1,0 +1,125 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test 1 -- テスト1"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Butterflies -- お蝶"
+      ]
+    },
+    {
+      "ID": 1000900,
+      "Entries": [
+        "Chief of the Ninja Army_The heyday -- 忍軍の長_全盛期"
+      ]
+    },
+    {
+      "ID": 1100800,
+      "Entries": [
+        "Horse-riding warrior -- 騎馬武者"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Buddhist demon -- 仏師鬼"
+      ]
+    },
+    {
+      "ID": 1110801,
+      "Entries": [
+        "Second rival -- ライバル2回目"
+      ]
+    },
+    {
+      "ID": 1110850,
+      "Entries": [
+        "Ninja Army Chief_Coward -- 忍軍の長_卑怯"
+      ]
+    },
+    {
+      "ID": 1110900,
+      "Entries": [
+        "Medical Holy Daughter -- 医聖の娘"
+      ]
+    },
+    {
+      "ID": 1110920,
+      "Entries": [
+        "Sword of the sickbed -- 病床の剣聖"
+      ]
+    },
+    {
+      "ID": 1120800,
+      "Entries": [
+        "Rival first time -- ライバル初回"
+      ]
+    },
+    {
+      "ID": 1120830,
+      "Entries": [
+        "3rd rival -- ライバル3回目"
+      ]
+    },
+    {
+      "ID": 1120860,
+      "Entries": [
+        "Revived Kensei -- 甦った剣聖"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Haunting Monk_Phantom -- 破戒僧_幻影"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Yasha Ape -- 夜叉猿"
+      ]
+    },
+    {
+      "ID": 1700850,
+      "Entries": [
+        "Yasha Ape_Neckless -- 夜叉猿_首無し"
+      ]
+    },
+    {
+      "ID": 2000800,
+      "Entries": [
+        "Chigo monkey -- 稚児猿"
+      ]
+    },
+    {
+      "ID": 2500800,
+      "Entries": [
+        "Mermaid dragon -- 人魚竜"
+      ]
+    },
+    {
+      "ID": 2500840,
+      "Entries": [
+        "Okiryu_Large -- 翁竜_大"
+      ]
+    },
+    {
+      "ID": 2500850,
+      "Entries": [
+        "Haunting monk -- 破戒僧"
+      ]
+    }
+  ]
+}

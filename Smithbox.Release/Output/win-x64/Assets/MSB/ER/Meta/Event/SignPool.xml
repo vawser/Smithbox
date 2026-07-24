@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a summoning pool." />
+  
+  <Field>
+    <SignPartName
+    AltName="Summoning Pool Name"
+    Wiki="The name of the Summoning Pool part."
+    MapRef="Part-Part" />
+    
+    <SignPartIndex
+    IndexProperty="" />
+    
+    <SignPuddleParamID
+    AltName="Summoning Pool Param ID"
+    Wiki="The summoning pool parameters to use."
+    ParamRef="SignPuddleParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

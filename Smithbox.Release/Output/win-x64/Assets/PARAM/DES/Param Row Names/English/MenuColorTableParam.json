@@ -1,0 +1,449 @@
+{
+  "Name": "MenuColorTableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "do not use"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "normal text"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Blood letters/SOS text"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Parameter text (normal)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "parameter text (good)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "parameter text (bad)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Information title"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Background plate (density adjustment)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Background plate (color adjustment)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "one line help"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "key guide"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "menu plate"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "translucent plate"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "translucent gradient plate"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "scroll bar"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "blood letter plate"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "SOS plate"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Item help blackout"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Blackout"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "gray out"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "line"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Menu tab (in-game)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Menu Tab (Camp)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Menu tab (blood letter input)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Menu tab (SOS input)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Menu Tab (Player Rating)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Menu tab (title menu)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Menu Tab (Shop)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "HP bar"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "MP bar"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "SP bar"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Variation bar"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "bar plate"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Attack/Defense bar"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Attack Power/Defense Power Bar (additional effect)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Attack Power/Defense Power Bar Plate"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "option bar"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "target site"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Translucent character plate (bright)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Translucent character plate (dark)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "button plate"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "option line"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Choice Plate (Light)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Choice plate (dark)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Selection item plate (Enter button)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Translucent gradation plate (button)"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "large plate (dark)"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "frame (dark)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "skill slot"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "spell slot"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "test color"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Text color blue"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Text color red"
+      ]
+    },
+    {
+      "ID": 36901,
+      "Entries": [
+        "Title-Hair color for face creation 01"
+      ]
+    },
+    {
+      "ID": 36902,
+      "Entries": [
+        "Title-Hair color for face creation 02"
+      ]
+    },
+    {
+      "ID": 36903,
+      "Entries": [
+        "Title-Hair color for face creation 03"
+      ]
+    },
+    {
+      "ID": 36904,
+      "Entries": [
+        "Title-Hair color for face creation 04"
+      ]
+    },
+    {
+      "ID": 36905,
+      "Entries": [
+        "Title-Hair color for face creation 05"
+      ]
+    },
+    {
+      "ID": 36906,
+      "Entries": [
+        "Title-Hair color for face creation 06"
+      ]
+    },
+    {
+      "ID": 36907,
+      "Entries": [
+        "Title-Hair color for face creation 07"
+      ]
+    }
+  ]
+}

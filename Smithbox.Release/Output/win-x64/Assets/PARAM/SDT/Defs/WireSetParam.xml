@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WIRE_SET_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u32 wirePointSearchParamId0">
+      <DisplayName>識別子1</DisplayName>
+      <Description>識別子1：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId1">
+      <DisplayName>識別子2</DisplayName>
+      <Description>識別子2：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId2">
+      <DisplayName>識別子3</DisplayName>
+      <Description>識別子3：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId3">
+      <DisplayName>識別子4</DisplayName>
+      <Description>識別子4：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId4">
+      <DisplayName>識別子5</DisplayName>
+      <Description>識別子5：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId5">
+      <DisplayName>識別子6</DisplayName>
+      <Description>識別子6：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId6">
+      <DisplayName>識別子7</DisplayName>
+      <Description>識別子7：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId7">
+      <DisplayName>識別子8</DisplayName>
+      <Description>識別子8：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId8">
+      <DisplayName>識別子9</DisplayName>
+      <Description>識別子9：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId9">
+      <DisplayName>識別子10</DisplayName>
+      <Description>識別子10：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId10">
+      <DisplayName>識別子11</DisplayName>
+      <Description>識別子11：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId11">
+      <DisplayName>識別子12</DisplayName>
+      <Description>識別子12：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId12">
+      <DisplayName>識別子13</DisplayName>
+      <Description>識別子13：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId13">
+      <DisplayName>識別子14</DisplayName>
+      <Description>識別子14：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId14">
+      <DisplayName>識別子15</DisplayName>
+      <Description>識別子15：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId15">
+      <DisplayName>識別子16</DisplayName>
+      <Description>識別子16：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId16">
+      <DisplayName>識別子17</DisplayName>
+      <Description>識別子17：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId17">
+      <DisplayName>識別子18</DisplayName>
+      <Description>識別子18：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId18">
+      <DisplayName>識別子19</DisplayName>
+      <Description>識別子19：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u32 wirePointSearchParamId19">
+      <DisplayName>識別子20</DisplayName>
+      <Description>識別子20：ワイヤーポイント検索パラメータID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>20</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

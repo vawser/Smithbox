@@ -1,0 +1,8597 @@
+{
+  "Name": "ItemLotParam2_Other",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Host - Company of Champions Reward] Awestone"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[Host - Rat King Reward] Pharros' Lockstone, Rat Tail"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "[Host - Dragon Spirit Defeated] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "[Host - Abyss Spirit Defeated] Bonfire Ascetic, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "[Host - Gold Phantom - Task completed] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "[White Phantom - Task completed] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "[Gold Phantom - Task completed] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "[White Shade - Task completed] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "[Gold Shade - Task completed] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "[Blue Spirit - World Master challenges the area boss] None"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[Blue Spirit - World Master leaves the area] None"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "[Blue Spirit - Dark Spirit Defeated] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "[Blue Spirit - Red Spirit Defeated] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "[Blue Spirit - Host Defeated] None"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "[Dark Spirit - Host Defeated] Token of Spite"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "[Red Spirit - Host Defeated] Token of Spite"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "[Dark Spirit - Blue Spirit Defeated] Token of Spite"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "[Red Spirit - Blue Spirit Defeated] Token of Spite"
+      ]
+    },
+    {
+      "ID": 10180,
+      "Entries": [
+        "[Gray Spirit - Bell Keeper Reward] Titanite Chunk, Titanite Slab, Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "[Gray Spirit - Rat King Reward - Fog Gate Reached] Pharros' Lockstone, Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "[Gray Spirit - Rat King Reward - Host Defeated] Pharros' Lockstone, Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "[Dragon Spirit - Host Defeated] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "[Abyss Spirit - Host Defeated] Bonfire Ascetic, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10230,
+      "Entries": [
+        "[Duel - Blue Sentinels] Cracked Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 10240,
+      "Entries": [
+        "[Duel - Brotherhood of Blood] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10250,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        "Titanite Chunk, Titanite Slab, Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11180,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11190,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11230,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11240,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "[Boss - Prowling Magus & Congregation] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "[Boss - Skeleton Lords] Skeleton Lord's Soul"
+      ]
+    },
+    {
+      "ID": 154001,
+      "Entries": [
+        "[Boss - Skeleton Lords_NG+] Skeleton Lord's Soul, Clear Bluestone Ring+2"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "[Boss - Guardian Dragon] Guardian Dragon Soul"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "[Boss - Royal Rat Authority] Royal Rat Authority Soul, Rat Tail"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "[Boss - Royal Rat Vanguard] Royal Rat Vanguard Soul, Rat Tail"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "[Boss - Flexile Sentry] Flexile Sentry Soul"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "[Boss - Smelter Demon - Iron Keep] Smelter Demon Soul"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "[Boss - Smelter Demon - Brume Tower] Smelter Demon Soul"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "[Boss - The Last Giant] Soul of the Last Giant, Soldier Key"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "[Boss - Dragonrider & Dragonrider] Dragonrider Soul"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "[Boss - Giant Lord] Giant Lord Soul, Giant's Kinship"
+      ]
+    },
+    {
+      "ID": 309701,
+      "Entries": [
+        "[Boss - Giant Lord_NG+] Giant Lord Soul, Giant's Kinship, Ring of Giants +2"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "[Boss - The Pursuer] Soul of the Pursuer, Ring of Blades"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "[Boss - Belfry Gargoyles] Belfry Gargoyle Soul"
+      ]
+    },
+    {
+      "ID": 324001,
+      "Entries": [
+        "[Boss - Belfry Gargoyles_NG+] Belfry Gargoyle Soul, Covetous Gold Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "[Boss - Ruin Sentinels] Ruin Sentinel Soul"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "[Boss - The Rotten] Soul of the Rotten"
+      ]
+    },
+    {
+      "ID": 326001,
+      "Entries": [
+        "[Boss - The Rotten_NG+] Soul of the Rotten, Old Dead One Soul"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "[Boss - Throne Defender & Throne Watcher] Throne Defender Soul, Throne Watcher Soul"
+      ]
+    },
+    {
+      "ID": 332001,
+      "Entries": [
+        "[Boss - Throne Defender & Throne Watcher_NG+] Throne Defender Soul, Throne Watcher Soul, Ring of the Evil Eye +2"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "[Boss - Velstadt, the Royal Aegis] Soul of Velstadt"
+      ]
+    },
+    {
+      "ID": 333001,
+      "Entries": [
+        "[Boss - Velstadt, the Royal Aegis_NG+] Soul of Velstadt, Royal Soldier's Ring+2"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "[Boss - Covetous Demon] Covetous Demon Soul"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "[Boss - Mytha, the Baneful Queen] Mytha, the Baneful Queen Soul"
+      ]
+    },
+    {
+      "ID": 501001,
+      "Entries": [
+        "[Boss - Mytha, the Baneful Queen_NG+] Mytha, the Baneful Queen Soul, Covetous Silver Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "[Boss - Scorpioness Najka] Scorpioness Najka Soul"
+      ]
+    },
+    {
+      "ID": 503001,
+      "Entries": [
+        "[Boss - Scorpioness Najka_NG+] Scorpioness Najka Soul, Southern Ritual Band +2"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "[Boss - Looking Glass Knight] Looking Glass Knight Soul"
+      ]
+    },
+    {
+      "ID": 504001,
+      "Entries": [
+        "[Boss - Looking Glass Knight_NG+] Looking Glass Knight Soul, Ring of Steel Protection +2"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "[Boss - Darklurker] Darklurker Soul"
+      ]
+    },
+    {
+      "ID": 514500,
+      "Entries": [
+        "[Boss - Vendrick] Unused"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "[Boss - Ancient Dragon] Ashen Mist Heart, Soul of a Giant"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "[Boss - Demon of Song] Demon of Song Soul, Key to the Embedded"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "[Boss - The Duke's Dear Freja] Soul of the Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 603001,
+      "Entries": [
+        "[Boss - The Duke's Dear Freja_NG+] Soul of the Duke's Dear Freja, Old Paledrake Soul"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "[Boss - Old Iron King] Old Iron King Soul"
+      ]
+    },
+    {
+      "ID": 607001,
+      "Entries": [
+        "[Boss - Old Iron King_NG+] Old Iron King Soul, Old King Soul"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "[Boss - Dragonrider] Dragonrider Soul"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "[Boss - Executioner's Chariot] Executioner's Chariot Soul"
+      ]
+    },
+    {
+      "ID": 619101,
+      "Entries": [
+        "[Boss - Executioner's Chariot_NG+] Executioner's Chariot Soul, Chloranthy Ring+2"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "[Boss - Old Dragonslayer] Old Dragonslayer Soul, Old Leo Ring"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "[Boss - The Lost Sinner] Soul of the Lost Sinner"
+      ]
+    },
+    {
+      "ID": 626001,
+      "Entries": [
+        "[Boss - The Lost Sinner_NG+] Soul of the Lost Sinner, Old Witch Soul"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "[Boss - Nashandra] Soul of Nashandra"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "[Boss - Fume Knight] Soul of the Fume Knight, Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 675010,
+      "Entries": [
+        "[Boss - Fume Knight] Soul of the Fume Knight"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "[Boss - Aava, the King's Pet] Soul of Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 679010,
+      "Entries": [
+        "[Boss - Lud & Zallen, the King's Pets] Soul of Lud, the King's Pet, Soul of Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "[Boss - Sir Alonne] Soul of Sir Alonne"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "[Boss - Sinh, the Slumbering Dragon] Soul of Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "[Boss - Elana, the Squalid Queen] Soul of Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "[Boss - Burnt Ivory King] Soul of the Ivory King"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        "[Boss - Afflicted Graverobber, Ancient Soldier Varg & Cerah the Old Explorer] Twinkling Titanite, Petrified Dragon Bone, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 862001,
+      "Entries": [
+        "[Boss - Afflicted Graverobber, Ancient Soldier Varg & Cerah the Old Explorer] Twinkling Titanite, Petrified Dragon Bone, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1307000,
+      "Entries": [
+        "[NPC - Head of Vengarl] Vengarl's Helm"
+      ]
+    },
+    {
+      "ID": 1307100,
+      "Entries": [
+        "[NPC - Head of Vengarl] Vengarl's Helm"
+      ]
+    },
+    {
+      "ID": 1502000,
+      "Entries": [
+        "[NPC - Manscorpion Tark - Najka Defeated] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 1502010,
+      "Entries": [
+        "[NPC - Manscorpion Tark - Gift] Black Scorpion Stinger, Second Dragon Ring"
+      ]
+    },
+    {
+      "ID": 1506000,
+      "Entries": [
+        "[NPC - Grave Warden Agdayne] Darkdrift, Agdayne's Set"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "[NPC - Emerald Herald] Estus Flask"
+      ]
+    },
+    {
+      "ID": 1701000,
+      "Entries": [
+        "[NPC - Emerald Herald] Aged Feather"
+      ]
+    },
+    {
+      "ID": 1704000,
+      "Entries": [
+        "[NPC - Laddersmith Gilligan] Melu Scimitar"
+      ]
+    },
+    {
+      "ID": 1705000,
+      "Entries": [
+        "[NPC - Strowen] Human Effigy (King's Ring)"
+      ]
+    },
+    {
+      "ID": 1705100,
+      "Entries": [
+        "[Griant] Unused"
+      ]
+    },
+    {
+      "ID": 1705300,
+      "Entries": [
+        "[Morrel] Unused"
+      ]
+    },
+    {
+      "ID": 1721000,
+      "Entries": [
+        "[NPC - Chancellor Wellager] Royal Dirk, Espada Ropera, Llewellyn Set"
+      ]
+    },
+    {
+      "ID": 1723000,
+      "Entries": [
+        "[NPC - Milibeth] Handmaid's Ladle"
+      ]
+    },
+    {
+      "ID": 1724000,
+      "Entries": [
+        "[NPC - Captain Drummond] Drangleic Helm"
+      ]
+    },
+    {
+      "ID": 1725000,
+      "Entries": [
+        "[NPC - Darkdiver Grandahl] Dragon Chime"
+      ]
+    },
+    {
+      "ID": 1726000,
+      "Entries": [
+        "[NPC - Lonesome Gavlan] Gyrm Greataxe"
+      ]
+    },
+    {
+      "ID": 1741000,
+      "Entries": [
+        "[NPC - Crestfallen Saulden - Gift] Ring of Steel Protection"
+      ]
+    },
+    {
+      "ID": 1741010,
+      "Entries": [
+        "[NPC - Crestfallen Saulden - Gathering of Exiles] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 1742000,
+      "Entries": [
+        "[NPC - Creighton the Wanderer] Tseldora Den Key"
+      ]
+    },
+    {
+      "ID": 1742010,
+      "Entries": [
+        "[NPC - Creighton the Wanderer] Creighton's Set"
+      ]
+    },
+    {
+      "ID": 1743000,
+      "Entries": [
+        "[NPC - Benhart of Jugo] Bluemoon Greatsword, Benhart's Parma, Benhart's Set"
+      ]
+    },
+    {
+      "ID": 1744000,
+      "Entries": [
+        "[NPC - Mild-mannered Pate - Creighton Defeated] Tseldora Den Key"
+      ]
+    },
+    {
+      "ID": 1744010,
+      "Entries": [
+        "[NPC - Mild-mannered Pate - Survives battle againts Last Giant] Pate's Spear, Pate's Shield, Pate's Set, Ring of Thorns"
+      ]
+    },
+    {
+      "ID": 1744020,
+      "Entries": [
+        "[NPC - Mild-mannered Pate - Conversation] White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 1751000,
+      "Entries": [
+        "[NPC - Cale the Cartographer - Conversation] House Key"
+      ]
+    },
+    {
+      "ID": 1751010,
+      "Entries": [
+        "[NPC - Cale the Cartographer - All flames] Cale's Set"
+      ]
+    },
+    {
+      "ID": 1752000,
+      "Entries": [
+        "[NPC - Lucatiel of Mirrah - Gift] Mirrah Greatsword, Lucatiel's Set"
+      ]
+    },
+    {
+      "ID": 1752010,
+      "Entries": [
+        "[NPC - Lucatiel of Mirrah - 2nd Encounter] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1752020,
+      "Entries": [
+        "[NPC - Lucatiel of Mirrah - 3rd Encounter] Ring of Steel Protection +1"
+      ]
+    },
+    {
+      "ID": 1753000,
+      "Entries": [
+        "[NPC - Bell Keeper] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 1753010,
+      "Entries": [
+        "[NPC - Bell Keeper] Unused"
+      ]
+    },
+    {
+      "ID": 1753020,
+      "Entries": [
+        "[NPC - Bell Keeper] Bell Keeper's Seal"
+      ]
+    },
+    {
+      "ID": 1754000,
+      "Entries": [
+        "[NPC - Merchant Hag Melentia] Covetous Silver Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 1756000,
+      "Entries": [
+        "[NPC - The Rat King] Crest of the Rat"
+      ]
+    },
+    {
+      "ID": 1757000,
+      "Entries": [
+        "Three Sisters A-Event 1 -- 三姉妹Ａ-イベント１"
+      ]
+    },
+    {
+      "ID": 1758000,
+      "Entries": [
+        "Three Sisters B-Event 1 -- 三姉妹Ｂ-イベント１"
+      ]
+    },
+    {
+      "ID": 1759000,
+      "Entries": [
+        "Three Sisters C-Event 1 -- 三姉妹Ｃ-イベント１"
+      ]
+    },
+    {
+      "ID": 1760000,
+      "Entries": [
+        "[NPC - Milfanito #1 - Gift] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1760010,
+      "Entries": [
+        "[NPC - Milfanito #1 - Conversation] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 1760020,
+      "Entries": [
+        "[NPC - Milfanito #1 - Rescue Imprisoned Milfanito] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1760100,
+      "Entries": [
+        "[NPC - Milfanito #2 - Demon of Song Defeated] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1760110,
+      "Entries": [
+        "[NPC - Milfanito #2 - Conversation] Petrified Something"
+      ]
+    },
+    {
+      "ID": 1760120,
+      "Entries": [
+        "[NPC - Milfanito #2 - Rescue Imprisoned Milfanito] Fire Seed"
+      ]
+    },
+    {
+      "ID": 1760200,
+      "Entries": [
+        "[NPC - Imprisoned Milfanito] Ring of the Dead"
+      ]
+    },
+    {
+      "ID": 1761000,
+      "Entries": [
+        "[NPC - Maughlin the Armourer] Aurous Set"
+      ]
+    },
+    {
+      "ID": 1762000,
+      "Entries": [
+        "[NPC - Stone Trader Chloanne] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1763000,
+      "Entries": [
+        "[NPC - Rosabeth of Melfia] Prism Stone"
+      ]
+    },
+    {
+      "ID": 1764000,
+      "Entries": [
+        "[NPC - Blacksmith Lenigrast] Blacksmith's Hammer"
+      ]
+    },
+    {
+      "ID": 1764300,
+      "Entries": [
+        "[NPC - Steady Hand McDuff] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1766000,
+      "Entries": [
+        "[NPC - Carhillion of the Fold] Northern Ritual Band +1"
+      ]
+    },
+    {
+      "ID": 1768000,
+      "Entries": [
+        "[NPC - Straid of Olaphis] Black Set"
+      ]
+    },
+    {
+      "ID": 1769000,
+      "Entries": [
+        "[NPC - Licia of Lindeldt] Idol's Chime, Saint's Set"
+      ]
+    },
+    {
+      "ID": 1770000,
+      "Entries": [
+        "[NPC - Felkin the Outcast] Sunset Staff, Hexer's Set"
+      ]
+    },
+    {
+      "ID": 1771000,
+      "Entries": [
+        "[NPC - Royal Sorcerer Navlaan - Gift] Chaos Set"
+      ]
+    },
+    {
+      "ID": 1771010,
+      "Entries": [
+        "[NPC - Royal Sorcerer Navlaan - Gilligan] Dispelling Ring"
+      ]
+    },
+    {
+      "ID": 1771020,
+      "Entries": [
+        "[NPC - Royal Sorcerer Navlaan - Cale] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 1771030,
+      "Entries": [
+        "[NPC - Royal Sorcerer Navlaan - Felkin] Forbidden Sun"
+      ]
+    },
+    {
+      "ID": 1771040,
+      "Entries": [
+        "[NPC - Royal Sorcerer Navlaan - Emerald Herald] Unleash Magic"
+      ]
+    },
+    {
+      "ID": 1772000,
+      "Entries": [
+        "[NPC - Magerold of Lanafir] Covetous Gold Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 1776000,
+      "Entries": [
+        "[NPC - Weaponsmith Ornifex - Unused] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1777000,
+      "Entries": [
+        "[Sweet Shalquoir] Unused"
+      ]
+    },
+    {
+      "ID": 1783040,
+      "Entries": [
+        "[NPC - Titchy Gren] Scythe of Nahr Alma, Nahr Alma Set"
+      ]
+    },
+    {
+      "ID": 1784000,
+      "Entries": [
+        "[NPC - Cromwell the Pardoner] Ring of Resistance"
+      ]
+    },
+    {
+      "ID": 1785040,
+      "Entries": [
+        "[NPC - Blue Sentinel Targray] Targray's Set"
+      ]
+    },
+    {
+      "ID": 1786000,
+      "Entries": [
+        "[Dyna & Tillo] Unused"
+      ]
+    },
+    {
+      "ID": 1787000,
+      "Entries": [
+        "[NPC - Ancient Dragon] Ashen Mist Heart"
+      ]
+    },
+    {
+      "ID": 1788000,
+      "Entries": [
+        "[NPC - Alsanna, Silent Oracle] Loyce Gauntlets, Leggings"
+      ]
+    },
+    {
+      "ID": 1788010,
+      "Entries": [
+        "[NPC - Alsanna, Silent Oracle] Loyce Armor"
+      ]
+    },
+    {
+      "ID": 1788020,
+      "Entries": [
+        "[NPC - Alsanna, Silent Oracle] Loyce Helm"
+      ]
+    },
+    {
+      "ID": 1788030,
+      "Entries": [
+        "[NPC - Alsanna, Silent Oracle] Soul of Alsanna, Silent Oracle"
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        "[Covenant - Way of Blue 0] Blue Seal"
+      ]
+    },
+    {
+      "ID": 2001011,
+      "Entries": [
+        "[Covenant - Way of Blue 1] Bloodbite Ring"
+      ]
+    },
+    {
+      "ID": 2001012,
+      "Entries": [
+        "[Covenant - Way of Blue 2] Hush"
+      ]
+    },
+    {
+      "ID": 2001013,
+      "Entries": [
+        "[Covenant - Way of Blue 3] Blue Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 2002000,
+      "Entries": [
+        "[Covenant - Blue Sentinels 0] Guardian's Seal"
+      ]
+    },
+    {
+      "ID": 2002011,
+      "Entries": [
+        "[Covenant - Blue Sentinels 1] Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 2002012,
+      "Entries": [
+        "[Covenant - Blue Sentinels 2] Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 2002013,
+      "Entries": [
+        "[Covenant - Blue Sentinels 3] Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 2003000,
+      "Entries": [
+        "[Covenant - Brotherhood of Blood 0] Crest of Blood"
+      ]
+    },
+    {
+      "ID": 2003011,
+      "Entries": [
+        "[Covenant - Brotherhood of Blood 1] Curved Twinblade"
+      ]
+    },
+    {
+      "ID": 2003012,
+      "Entries": [
+        "[Covenant - Brotherhood of Blood 2] Crescent Sickle"
+      ]
+    },
+    {
+      "ID": 2003013,
+      "Entries": [
+        "[Covenant - Brotherhood of Blood 3] Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 2004000,
+      "Entries": [
+        "[Covenant - Bell Keepers 0] Bell Keeper's Seal"
+      ]
+    },
+    {
+      "ID": 2004011,
+      "Entries": [
+        "[Covenant - Bell Keepers 1] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 2004012,
+      "Entries": [
+        "[Covenant - Bell Keepers 2] Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 2004013,
+      "Entries": [
+        "[Covenant - Bell Keepers 3] Bell Keeper's Set"
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        "[Covenant - Rat King 0] Crest of the Rat"
+      ]
+    },
+    {
+      "ID": 2005011,
+      "Entries": [
+        "[Covenant - Rat King 1] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 2005012,
+      "Entries": [
+        "[Covenant - Rat King 2] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 2005013,
+      "Entries": [
+        "[Covenant - Rat King 3] Slumbering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 2006000,
+      "Entries": [
+        "[Covenant - Pilgrims of Dark 0] Abyss Seal"
+      ]
+    },
+    {
+      "ID": 2006011,
+      "Entries": [
+        "[Covenant - Pilgrims of Dark 1] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 2006012,
+      "Entries": [
+        "[Covenant - Pilgrims of Dark 2] Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 2006013,
+      "Entries": [
+        "[Covenant - Pilgrims of Dark 3] Climax, Xanthous Set"
+      ]
+    },
+    {
+      "ID": 2007000,
+      "Entries": [
+        "[Covenant - Heirs of the Sun 0] Sun Seal"
+      ]
+    },
+    {
+      "ID": 2007011,
+      "Entries": [
+        "[Covenant - Heirs of the Sun 1] Sunlight Parma"
+      ]
+    },
+    {
+      "ID": 2007012,
+      "Entries": [
+        "[Covenant - Heirs of the Sun 2] Sun Sword"
+      ]
+    },
+    {
+      "ID": 2007013,
+      "Entries": [
+        "[Covenant - Heirs of the Sun 3] Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 2008000,
+      "Entries": [
+        "[Covenant - Dragon Remnants 0] Ancient Dragon Seal, Dragon Eye"
+      ]
+    },
+    {
+      "ID": 2008011,
+      "Entries": [
+        "[Covenant - Dragon Remnants 1] Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 2008012,
+      "Entries": [
+        "[Covenant - Dragon Remnants 2] Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 2008013,
+      "Entries": [
+        "[Covenant - Dragon Remnants 3] Black Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 2009000,
+      "Entries": [
+        "[Covenant - Company of Champions 0] Champion's Tablet"
+      ]
+    },
+    {
+      "ID": 2009011,
+      "Entries": [
+        "[Covenant - Company of Champions 1] Ring of Soul Protection"
+      ]
+    },
+    {
+      "ID": 2009012,
+      "Entries": [
+        "[Covenant - Company of Champions 2] First Dragon Ring"
+      ]
+    },
+    {
+      "ID": 2009013,
+      "Entries": [
+        "[Covenant - Company of Champions 3] Vanquisher's Seal"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "[Gesture - Starting] \"Point\""
+      ]
+    },
+    {
+      "ID": 3002000,
+      "Entries": [
+        "[Gesture - Starting] \"I won't bite\""
+      ]
+    },
+    {
+      "ID": 3004000,
+      "Entries": [
+        "[Gesture - Starting] \"Bow\""
+      ]
+    },
+    {
+      "ID": 3005000,
+      "Entries": [
+        "[Gesture - Crestfallen Saulden] \"Welcome!\""
+      ]
+    },
+    {
+      "ID": 3006000,
+      "Entries": [
+        "[Gesture - Blue Sentinel Targray] \"Duel bow\""
+      ]
+    },
+    {
+      "ID": 3007000,
+      "Entries": [
+        "[Gesture - Starting] \"Wave\""
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "[Gesture - Starting] \"Pumped up\""
+      ]
+    },
+    {
+      "ID": 3009000,
+      "Entries": [
+        "[Gesture - Benhart of Jugo] \"Joy\""
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "[Gesture - Starting] \"Warcry\""
+      ]
+    },
+    {
+      "ID": 3011000,
+      "Entries": [
+        "[Gesture - Manscorpion Tark] \"Warmup\""
+      ]
+    },
+    {
+      "ID": 3012000,
+      "Entries": [
+        "[Gesture - Captain Drummond] \"Hurrah\""
+      ]
+    },
+    {
+      "ID": 3013000,
+      "Entries": [
+        "[Gesture - Starting] \"Righty-ho!\""
+      ]
+    },
+    {
+      "ID": 3014000,
+      "Entries": [
+        "[Gesture - Starting] \"No way\""
+      ]
+    },
+    {
+      "ID": 3015000,
+      "Entries": [
+        "[Gesture - Chancellor Wellager] \"This one's me\""
+      ]
+    },
+    {
+      "ID": 3016000,
+      "Entries": [
+        "[Gesture - Grave Warden Agdayne] \"Have mercy!\""
+      ]
+    },
+    {
+      "ID": 3017000,
+      "Entries": [
+        "[Gesture - Laddersmith Gilligan] \"Prostration\""
+      ]
+    },
+    {
+      "ID": 3018000,
+      "Entries": [
+        "[Gesture - Head of Vengarl] \"Decapitate\""
+      ]
+    },
+    {
+      "ID": 3019000,
+      "Entries": [
+        "[Gesture - Creighton the Wanderer] \"Fist pump\""
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "[Gesture - Straid of Olaphis] \"Mock\""
+      ]
+    },
+    {
+      "ID": 3021000,
+      "Entries": [
+        "[Gesture - Heirs of the Sun altar] \"Praise the Sun\""
+      ]
+    },
+    {
+      "ID": 10025010,
+      "Entries": [
+        "[Things Betwixt - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10026000,
+      "Entries": [
+        "[Things Betwixt] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 10026001,
+      "Entries": [
+        "[Things Betwixt] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 10026020,
+      "Entries": [
+        "[Things Betwixt] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 10026030,
+      "Entries": [
+        "[Things Betwixt] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10026031,
+      "Entries": [
+        "[Things Betwixt] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10026040,
+      "Entries": [
+        "[Things Betwixt] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10026050,
+      "Entries": [
+        "[Things Betwixt] Soul of a Nameless Soldier, Torch"
+      ]
+    },
+    {
+      "ID": 10026060,
+      "Entries": [
+        "[Things Betwixt] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10026070,
+      "Entries": [
+        "[Things Betwixt] Dagger"
+      ]
+    },
+    {
+      "ID": 10026080,
+      "Entries": [
+        "[Things Betwixt] Lifegem"
+      ]
+    },
+    {
+      "ID": 10026090,
+      "Entries": [
+        "[Things Betwixt] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10026100,
+      "Entries": [
+        "[Things Betwixt] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10027000,
+      "Entries": [
+        "[Things Betwixt] Bone of Order"
+      ]
+    },
+    {
+      "ID": 10045000,
+      "Entries": [
+        "[Majula - Chest - Maughlin] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10045001,
+      "Entries": [
+        "[Majula - Chest - Maughlin_NG+] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10045002,
+      "Entries": [
+        "[Majula - Chest - Maughlin_NG+] Moon Butterfly Shield"
+      ]
+    },
+    {
+      "ID": 10045010,
+      "Entries": [
+        "[Majula - Chest - Mansion] Titanite Shard, Torch"
+      ]
+    },
+    {
+      "ID": 10045020,
+      "Entries": [
+        "[Majula - Chest - Forgotten Key] Soul Vortex"
+      ]
+    },
+    {
+      "ID": 10045030,
+      "Entries": [
+        "[Majula - Chest - Forgotten Key] Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 10045040,
+      "Entries": [
+        "[Majula - Chest - Lenigrast] Short Bow"
+      ]
+    },
+    {
+      "ID": 10045050,
+      "Entries": [
+        "[Majula - Chest - Forgotten Key] Witchtree Branch, Witchtree Bellvine"
+      ]
+    },
+    {
+      "ID": 10045060,
+      "Entries": [
+        "[Majula - Chest - Route to Forest] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 10045070,
+      "Entries": [
+        "[Majula - Chest - Route to Heide] Crimson Parma"
+      ]
+    },
+    {
+      "ID": 10045500,
+      "Entries": [
+        "[Majula - Chest - Mansion Basement] Rubbish"
+      ]
+    },
+    {
+      "ID": 10045600,
+      "Entries": [
+        "[Majula - Chest - Mansion Basement] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 10046000,
+      "Entries": [
+        "[Majula - Well] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10046010,
+      "Entries": [
+        "[Majula] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10046020,
+      "Entries": [
+        "[Majula] Morning Star, Cleric's Sacred Chime"
+      ]
+    },
+    {
+      "ID": 10046030,
+      "Entries": [
+        "[Majula] Binoculars"
+      ]
+    },
+    {
+      "ID": 10046040,
+      "Entries": [
+        "[Majula] Soul of a Nameless Soldier, Lifegem"
+      ]
+    },
+    {
+      "ID": 10046050,
+      "Entries": [
+        "[Majula] Poison Moss"
+      ]
+    },
+    {
+      "ID": 10046060,
+      "Entries": [
+        "[Majula] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10046070,
+      "Entries": [
+        "[Majula - Mansion Basement] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10046080,
+      "Entries": [
+        "[Majula] Rouge Water"
+      ]
+    },
+    {
+      "ID": 10046090,
+      "Entries": [
+        "[Majula] Ring of the Evil Eye+1"
+      ]
+    },
+    {
+      "ID": 10046100,
+      "Entries": [
+        "[Majula] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10046110,
+      "Entries": [
+        "[Majula] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10046120,
+      "Entries": [
+        "[Majula] Lifegem"
+      ]
+    },
+    {
+      "ID": 10046130,
+      "Entries": [
+        "[Majula] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10046140,
+      "Entries": [
+        "[Majula] Dragon Talon"
+      ]
+    },
+    {
+      "ID": 10046150,
+      "Entries": [
+        "[Majula] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10105010,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Cardinal Tower] Small Leather Shield, Repair Powder"
+      ]
+    },
+    {
+      "ID": 10105020,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Route to Forest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10105021,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Route to Forest_NG+] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10105030,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Ballista Soldier Room] Life Ring, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10105040,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Ballista Trap Room] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10105041,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Ballista Trap Room_NG+] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10105050,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Cardinal Tower] Ring of Restoration"
+      ]
+    },
+    {
+      "ID": 10105070,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Cardinal Tower] Small White Sign Soapstone, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10105080,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Pharros Lockstone Room] Chloranthy Ring"
+      ]
+    },
+    {
+      "ID": 10105090,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Pharros Lockstone Room] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 10105100,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Overlook Firebomb Room] Mail Breaker, Infantry Helm"
+      ]
+    },
+    {
+      "ID": 10105110,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Fire Pit] Flame Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 10105120,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Soldier's Rest] Large Soul of a Proud Knight, Hunter's Set"
+      ]
+    },
+    {
+      "ID": 10105130,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Flame Lizard Trap Room] Longsword"
+      ]
+    },
+    {
+      "ID": 10105140,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - Pate's Trap Passage] Sorcerer's Staff, Amber Herb"
+      ]
+    },
+    {
+      "ID": 10105150,
+      "Entries": [
+        "[Forest of Fallen Giants - Chest - King's Gate] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10106000,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10106010,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Nameless Soldier, Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10106020,
+      "Entries": [
+        "[Forest of Fallen Giants] Lifegem"
+      ]
+    },
+    {
+      "ID": 10106030,
+      "Entries": [
+        "[Forest of Fallen Giants] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10106050,
+      "Entries": [
+        "[Forest of Fallen Giants] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10106060,
+      "Entries": [
+        "[Forest of Fallen Giants] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 10106061,
+      "Entries": [
+        "[Forest of Fallen Giants_NG+] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 10106070,
+      "Entries": [
+        "[Forest of Fallen Giants] Black Firebomb, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10106080,
+      "Entries": [
+        "[Forest of Fallen Giants] Torch"
+      ]
+    },
+    {
+      "ID": 10106090,
+      "Entries": [
+        "[Forest of Fallen Giants] Lifegem, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10106100,
+      "Entries": [
+        "[Forest of Fallen Giants] Halberd, Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10106110,
+      "Entries": [
+        "[Forest of Fallen Giants] Homeward Bone, Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10106120,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10106130,
+      "Entries": [
+        "[Forest of Fallen Giants] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10106140,
+      "Entries": [
+        "[Forest of Fallen Giants] Buckler"
+      ]
+    },
+    {
+      "ID": 10106150,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10106160,
+      "Entries": [
+        "[Forest of Fallen Giants] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 10106170,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Nameless Soldier, Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10106180,
+      "Entries": [
+        "[Forest of Fallen Giants] Green Blossom"
+      ]
+    },
+    {
+      "ID": 10106190,
+      "Entries": [
+        "[Forest of Fallen Giants] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10106200,
+      "Entries": [
+        "[Forest of Fallen Giants] Shortsword, Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10106210,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Lost Undead, Torch"
+      ]
+    },
+    {
+      "ID": 10106220,
+      "Entries": [
+        "[Forest of Fallen Giants] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 10106230,
+      "Entries": [
+        "[Forest of Fallen Giants] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 10106240,
+      "Entries": [
+        "[Forest of Fallen Giants] Torch"
+      ]
+    },
+    {
+      "ID": 10106250,
+      "Entries": [
+        "[Forest of Fallen Giants] Large Leather Shield, Lifegem"
+      ]
+    },
+    {
+      "ID": 10106260,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10106270,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10106280,
+      "Entries": [
+        "[Forest of Fallen Giants] Lifegem"
+      ]
+    },
+    {
+      "ID": 10106290,
+      "Entries": [
+        "[Forest of Fallen Giants] Drangleic Sword, Drangleic Shield, Drangleic Mail, Drangleic Gauntlets, Drangleic Leggings"
+      ]
+    },
+    {
+      "ID": 10106300,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10106310,
+      "Entries": [
+        "[Forest of Fallen Giants] Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10106320,
+      "Entries": [
+        "[Forest of Fallen Giants] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10106321,
+      "Entries": [
+        "[Forest of Fallen Giants_NG+] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 10106340,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10106350,
+      "Entries": [
+        "[Forest of Fallen Giants] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10106360,
+      "Entries": [
+        "[Forest of Fallen Giants] Rebel's Greatshield, Heavy Iron Key"
+      ]
+    },
+    {
+      "ID": 10106370,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Nameless Soldier, Lifegem"
+      ]
+    },
+    {
+      "ID": 10106371,
+      "Entries": [
+        "[Forest of Fallen Giants_NG+] Large Soul of a Proud Knight, Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10106380,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10106390,
+      "Entries": [
+        "[Forest of Fallen Giants] Witching Urn"
+      ]
+    },
+    {
+      "ID": 10106400,
+      "Entries": [
+        "[Forest of Fallen Giants] Lifegem"
+      ]
+    },
+    {
+      "ID": 10106410,
+      "Entries": [
+        "[Forest of Fallen Giants] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10106420,
+      "Entries": [
+        "[Forest of Fallen Giants] Twinkling Titanite, Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10106430,
+      "Entries": [
+        "[Forest of Fallen Giants] Amber Herb, Green Blossom"
+      ]
+    },
+    {
+      "ID": 10106440,
+      "Entries": [
+        "[Forest of Fallen Giants] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10106450,
+      "Entries": [
+        "[Forest of Fallen Giants] Large Soul of a Lost Undead, Blue Wooden Shield"
+      ]
+    },
+    {
+      "ID": 10106460,
+      "Entries": [
+        "[Forest of Fallen Giants] Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 10106470,
+      "Entries": [
+        "[Forest of Fallen Giants] Hawk Ring"
+      ]
+    },
+    {
+      "ID": 10106480,
+      "Entries": [
+        "[Forest of Fallen Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10106490,
+      "Entries": [
+        "[Forest of Fallen Giants] Hand Axe, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10106500,
+      "Entries": [
+        "[Forest of Fallen Giants] Soul of a Nameless Soldier, Torch"
+      ]
+    },
+    {
+      "ID": 10106510,
+      "Entries": [
+        "[Forest of Fallen Giants] Grand Lance"
+      ]
+    },
+    {
+      "ID": 10106520,
+      "Entries": [
+        "[Forest of Fallen Giants] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10106530,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy, Lifegem"
+      ]
+    },
+    {
+      "ID": 10106540,
+      "Entries": [
+        "[Forest of Fallen Giants] Torch"
+      ]
+    },
+    {
+      "ID": 10106550,
+      "Entries": [
+        "[Forest of Fallen Giants] Repair Powder"
+      ]
+    },
+    {
+      "ID": 10106560,
+      "Entries": [
+        "[Forest of Fallen Giants] Lifegem"
+      ]
+    },
+    {
+      "ID": 10106570,
+      "Entries": [
+        "[Forest of Fallen Giants] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 10106580,
+      "Entries": [
+        "[Forest of Fallen Giants] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 10106590,
+      "Entries": [
+        "[Forest of Fallen Giants] Green Blossom"
+      ]
+    },
+    {
+      "ID": 10106600,
+      "Entries": [
+        "[Forest of Fallen Giants] Prism Stone"
+      ]
+    },
+    {
+      "ID": 10106610,
+      "Entries": [
+        "[Forest of Fallen Giants] Bastard Sword"
+      ]
+    },
+    {
+      "ID": 10106620,
+      "Entries": [
+        "[Forest of Fallen Giants] Whip"
+      ]
+    },
+    {
+      "ID": 10106630,
+      "Entries": [
+        "[Forest of Fallen Giants] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10145050,
+      "Entries": [
+        "[Brightstone Cove] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10145060,
+      "Entries": [
+        "[Brightstone Cove - Chest - Spider Room] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 10145061,
+      "Entries": [
+        "[Brightstone Cove - Chest - Spider Room_NG+] Magic Bolt"
+      ]
+    },
+    {
+      "ID": 10145070,
+      "Entries": [
+        "[Brightstone Cove - Chest - Pate's Fight Room] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 10145080,
+      "Entries": [
+        "[Brightstone Cove - Chest - Pate's Fight Room] Engraved Gauntlets"
+      ]
+    },
+    {
+      "ID": 10145110,
+      "Entries": [
+        "[Brightstone Cove - Chest - Lower Cove Spider Room] Crescent Axe, Soul Vortex"
+      ]
+    },
+    {
+      "ID": 10145120,
+      "Entries": [
+        "[Brightstone Cove - Chest - Lower Cove Ledge Room] Southern Ritual Band+1"
+      ]
+    },
+    {
+      "ID": 10145130,
+      "Entries": [
+        "[Brightstone Cove - Chest - Spider Hall Side Room] Black Knight Ultra Greatsword, Great Fireball, Fire Seed"
+      ]
+    },
+    {
+      "ID": 10146000,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Hero, Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 10146010,
+      "Entries": [
+        "[Brightstone Cove] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10146020,
+      "Entries": [
+        "[Brightstone Cove] Fading Soul, Cleric's Small Shield"
+      ]
+    },
+    {
+      "ID": 10146030,
+      "Entries": [
+        "[Brightstone Cove] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146040,
+      "Entries": [
+        "[Brightstone Cove] Priestess Set"
+      ]
+    },
+    {
+      "ID": 10146050,
+      "Entries": [
+        "[Brightstone Cove] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146051,
+      "Entries": [
+        "[Brightstone Cove_NG+] Titanite Shard, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146060,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10146070,
+      "Entries": [
+        "[Brightstone Cove] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146080,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10146090,
+      "Entries": [
+        "[Brightstone Cove] Titanite Chunk, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10146100,
+      "Entries": [
+        "[Brightstone Cove] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146110,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10146120,
+      "Entries": [
+        "[Brightstone Cove] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10146130,
+      "Entries": [
+        "[Brightstone Cove] Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 10146140,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10146150,
+      "Entries": [
+        "[Brightstone Cove] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10146160,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10146170,
+      "Entries": [
+        "[Brightstone Cove] Lightning Urn"
+      ]
+    },
+    {
+      "ID": 10146180,
+      "Entries": [
+        "[Brightstone Cove] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10146181,
+      "Entries": [
+        "[Brightstone Cove_NG+] Titanite Chunk, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 10146190,
+      "Entries": [
+        "[Brightstone Cove] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10146200,
+      "Entries": [
+        "[Brightstone Cove] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10146210,
+      "Entries": [
+        "[Brightstone Cove] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10146220,
+      "Entries": [
+        "[Brightstone Cove] Torch"
+      ]
+    },
+    {
+      "ID": 10146230,
+      "Entries": [
+        "[Brightstone Cove] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10146240,
+      "Entries": [
+        "[Brightstone Cove] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10146250,
+      "Entries": [
+        "[Brightstone Cove] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10146260,
+      "Entries": [
+        "[Brightstone Cove] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 10146270,
+      "Entries": [
+        "[Brightstone Cove] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10146280,
+      "Entries": [
+        "[Brightstone Cove] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10146290,
+      "Entries": [
+        "[Brightstone Cove] Lacerating Arrow"
+      ]
+    },
+    {
+      "ID": 10146300,
+      "Entries": [
+        "[Brightstone Cove] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10146310,
+      "Entries": [
+        "[Brightstone Cove] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 10146320,
+      "Entries": [
+        "[Brightstone Cove] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 10146330,
+      "Entries": [
+        "[Brightstone Cove] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10146340,
+      "Entries": [
+        "[Brightstone Cove] Torch"
+      ]
+    },
+    {
+      "ID": 10146350,
+      "Entries": [
+        "[Brightstone Cove] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10146360,
+      "Entries": [
+        "[Brightstone Cove] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 10146370,
+      "Entries": [
+        "[Brightstone Cove] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10146380,
+      "Entries": [
+        "[Brightstone Cove] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10146381,
+      "Entries": [
+        "[Brightstone Cove_NG+] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 10146390,
+      "Entries": [
+        "[Brightstone Cove] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10146400,
+      "Entries": [
+        "[Brightstone Cove] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10146410,
+      "Entries": [
+        "[Brightstone Cove] Torch"
+      ]
+    },
+    {
+      "ID": 10146420,
+      "Entries": [
+        "[Brightstone Cove] Titanite Shard, Titanite Chunk, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 10146430,
+      "Entries": [
+        "[Brightstone Cove] None"
+      ]
+    },
+    {
+      "ID": 10146440,
+      "Entries": [
+        "[Brightstone Cove] None"
+      ]
+    },
+    {
+      "ID": 10146450,
+      "Entries": [
+        "[Brightstone Cove] None"
+      ]
+    },
+    {
+      "ID": 10146460,
+      "Entries": [
+        "[Brightstone Cove] None"
+      ]
+    },
+    {
+      "ID": 10146470,
+      "Entries": [
+        "[Brightstone Cove] None"
+      ]
+    },
+    {
+      "ID": 10146480,
+      "Entries": [
+        "[Brightstone Cove] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10146490,
+      "Entries": [
+        "[Brightstone Cove] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10146500,
+      "Entries": [
+        "[Brightstone Cove] Pickaxe"
+      ]
+    },
+    {
+      "ID": 10146510,
+      "Entries": [
+        "[Brightstone Cove] Torch"
+      ]
+    },
+    {
+      "ID": 10146520,
+      "Entries": [
+        "[Brightstone Cove] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 10155000,
+      "Entries": [
+        "[Aldia's Keep - Middle Dragon Hall] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 10155010,
+      "Entries": [
+        "[Aldia's Keep - Chest - Upper Dragon Hall] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 10155020,
+      "Entries": [
+        "[Aldia's Keep - Chest - Breakable Wall Passage] Malformed Shell"
+      ]
+    },
+    {
+      "ID": 10155030,
+      "Entries": [
+        "[Aldia's Keep - Chest - Mirrors in Dragon Hall] Brightbug"
+      ]
+    },
+    {
+      "ID": 10156000,
+      "Entries": [
+        "[Aldia's Keep] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10156010,
+      "Entries": [
+        "[Aldia's Keep] Northern Ritual Band+2, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10156020,
+      "Entries": [
+        "[Aldia's Keep] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 10156030,
+      "Entries": [
+        "[Aldia's Keep] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10156031,
+      "Entries": [
+        "[Aldia's Keep_NG+] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 10156040,
+      "Entries": [
+        "[Aldia's Keep] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10156050,
+      "Entries": [
+        "[Aldia's Keep] Simpleton's Spice, Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10156060,
+      "Entries": [
+        "[Aldia's Keep] Crimson Water"
+      ]
+    },
+    {
+      "ID": 10156070,
+      "Entries": [
+        "[Aldia's Keep] Soul Geyser, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10156080,
+      "Entries": [
+        "[Aldia's Keep] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10156090,
+      "Entries": [
+        "[Aldia's Keep] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10156100,
+      "Entries": [
+        "[Aldia's Keep] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10156130,
+      "Entries": [
+        "[Aldia's Keep] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10156140,
+      "Entries": [
+        "[Aldia's Keep] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10156150,
+      "Entries": [
+        "[Aldia's Keep] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 10156160,
+      "Entries": [
+        "[Aldia's Keep] Large Soul of a Nameless Soldier, Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 10156161,
+      "Entries": [
+        "[Aldia's Keep_NG+] Soul of a Hero, Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 10156170,
+      "Entries": [
+        "[Aldia's Keep] Soul of a Nameless Soldier, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10156180,
+      "Entries": [
+        "[Aldia's Keep] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10156190,
+      "Entries": [
+        "[Aldia's Keep] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10156200,
+      "Entries": [
+        "[Aldia's Keep] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10165000,
+      "Entries": [
+        "[Lost Bastille - Chest] Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 10165010,
+      "Entries": [
+        "[Lost Bastille - Chest] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 10165020,
+      "Entries": [
+        "[Lost Bastille - Chest] Bone Staff"
+      ]
+    },
+    {
+      "ID": 10165040,
+      "Entries": [
+        "[Lost Bastille - Chest] Rouge Water"
+      ]
+    },
+    {
+      "ID": 10165041,
+      "Entries": [
+        "[Lost Bastille - Chest_NG+] Crimson Water"
+      ]
+    },
+    {
+      "ID": 10165050,
+      "Entries": [
+        "[Lost Bastille - Chest] Estus Flask Shard, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10165070,
+      "Entries": [
+        "[Lost Bastille - Chest] Twinblade"
+      ]
+    },
+    {
+      "ID": 10165080,
+      "Entries": [
+        "[Lost Bastille - Chest] Target Shield"
+      ]
+    },
+    {
+      "ID": 10165110,
+      "Entries": [
+        "[Lost Bastille - Chest] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 10165120,
+      "Entries": [
+        "[Lost Bastille - Chest] Fragrant Branch of Yore, Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 10165130,
+      "Entries": [
+        "[Lost Bastille - Chest] Priest's Chime"
+      ]
+    },
+    {
+      "ID": 10165140,
+      "Entries": [
+        "[Lost Bastille - Chest] Covetous Silver Serpent Ring, Human Effigy, Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10165150,
+      "Entries": [
+        "[Lost Bastille - Chest] Craftsman's Hammer, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10165160,
+      "Entries": [
+        "[Lost Bastille - Chest] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10165170,
+      "Entries": [
+        "[Lost Bastille - Chest] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10165180,
+      "Entries": [
+        "[Lost Bastille - Chest] Iron Arrow"
+      ]
+    },
+    {
+      "ID": 10165190,
+      "Entries": [
+        "[Lost Bastille - Chest] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 10165200,
+      "Entries": [
+        "[Lost Bastille - Chest] Radiant Lifegem, Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10165210,
+      "Entries": [
+        "[Lost Bastille - Chest] Hush"
+      ]
+    },
+    {
+      "ID": 10165220,
+      "Entries": [
+        "[Lost Bastille - Chest] Blue Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 10165230,
+      "Entries": [
+        "[Lost Bastille - Chest] Southern Ritual Band"
+      ]
+    },
+    {
+      "ID": 10165240,
+      "Entries": [
+        "[Lost Bastille - Chest] Antiquated Key"
+      ]
+    },
+    {
+      "ID": 10165250,
+      "Entries": [
+        "[Lost Bastille - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10165260,
+      "Entries": [
+        "[Lost Bastille - Chest] Dull Ember"
+      ]
+    },
+    {
+      "ID": 10166000,
+      "Entries": [
+        "[Lost Bastille] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10166010,
+      "Entries": [
+        "[Lost Bastille] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 10166020,
+      "Entries": [
+        "[Lost Bastille] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10166030,
+      "Entries": [
+        "[Lost Bastille] Soul of a Brave Warrior, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10166040,
+      "Entries": [
+        "[Lost Bastille] Soul of a Brave Warrior, Golden Wing Shield"
+      ]
+    },
+    {
+      "ID": 10166050,
+      "Entries": [
+        "[Lost Bastille] Large Soul of a Nameless Soldier, Green Blossom"
+      ]
+    },
+    {
+      "ID": 10166060,
+      "Entries": [
+        "[Lost Bastille] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10166070,
+      "Entries": [
+        "[Lost Bastille] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 10166080,
+      "Entries": [
+        "[Lost Bastille] Radiant Lifegem, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10166090,
+      "Entries": [
+        "[Lost Bastille] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10166100,
+      "Entries": [
+        "[Lost Bastille] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 10166110,
+      "Entries": [
+        "[Lost Bastille] Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 10166120,
+      "Entries": [
+        "[Lost Bastille] Blossom Kite Shield"
+      ]
+    },
+    {
+      "ID": 10166130,
+      "Entries": [
+        "[Lost Bastille] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10166140,
+      "Entries": [
+        "[Lost Bastille] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10166150,
+      "Entries": [
+        "[Lost Bastille] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10166160,
+      "Entries": [
+        "[Lost Bastille] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10166170,
+      "Entries": [
+        "[Lost Bastille] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10166180,
+      "Entries": [
+        "[Lost Bastille] Bastille Key"
+      ]
+    },
+    {
+      "ID": 10166190,
+      "Entries": [
+        "[Lost Bastille] Lifegem"
+      ]
+    },
+    {
+      "ID": 10166191,
+      "Entries": [
+        "[Lost Bastille_NG+] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10166200,
+      "Entries": [
+        "[Lost Bastille] Bracing Knuckle Ring"
+      ]
+    },
+    {
+      "ID": 10166230,
+      "Entries": [
+        "[Lost Bastille] Northern Ritual Band, Bleed Stone"
+      ]
+    },
+    {
+      "ID": 10166250,
+      "Entries": [
+        "[Lost Bastille] Dragon Tooth, Petrified Something, Brightbug"
+      ]
+    },
+    {
+      "ID": 10166260,
+      "Entries": [
+        "[Lost Bastille] Flame Butterfly, Torch"
+      ]
+    },
+    {
+      "ID": 10166270,
+      "Entries": [
+        "[Lost Bastille] Soul of a Proud Knight, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10166280,
+      "Entries": [
+        "[Lost Bastille] Soul of a Proud Knight, Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10166290,
+      "Entries": [
+        "[Lost Bastille] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10166300,
+      "Entries": [
+        "[Lost Bastille] Common Fruit"
+      ]
+    },
+    {
+      "ID": 10166310,
+      "Entries": [
+        "[Lost Bastille] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10166320,
+      "Entries": [
+        "[Lost Bastille] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10166330,
+      "Entries": [
+        "[Lost Bastille] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10166350,
+      "Entries": [
+        "[Lost Bastille] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10166360,
+      "Entries": [
+        "[Lost Bastille] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10166370,
+      "Entries": [
+        "[Lost Bastille] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10166380,
+      "Entries": [
+        "[Lost Bastille] Large Club"
+      ]
+    },
+    {
+      "ID": 10166390,
+      "Entries": [
+        "[Lost Bastille] Falchion"
+      ]
+    },
+    {
+      "ID": 10166400,
+      "Entries": [
+        "[Lost Bastille] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10166410,
+      "Entries": [
+        "[Lost Bastille] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 10166420,
+      "Entries": [
+        "[Lost Bastille] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10166421,
+      "Entries": [
+        "[Lost Bastille_NG+] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10166430,
+      "Entries": [
+        "[Lost Bastille] Archdrake Robes, Archdrake Shield"
+      ]
+    },
+    {
+      "ID": 10166440,
+      "Entries": [
+        "[Lost Bastille] Petrified Dragon Bone, Firebomb"
+      ]
+    },
+    {
+      "ID": 10166441,
+      "Entries": [
+        "[Lost Bastille_NG+] Resplendent Life, Firebomb"
+      ]
+    },
+    {
+      "ID": 10166450,
+      "Entries": [
+        "[Lost Bastille] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10166460,
+      "Entries": [
+        "[Lost Bastille] Soul of a Proud Knight, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10166470,
+      "Entries": [
+        "[Lost Bastille] Scimitar, Repair Powder"
+      ]
+    },
+    {
+      "ID": 10166480,
+      "Entries": [
+        "[Lost Bastille] Green Blossom"
+      ]
+    },
+    {
+      "ID": 10166490,
+      "Entries": [
+        "[Lost Bastille] Wanderer Set"
+      ]
+    },
+    {
+      "ID": 10175020,
+      "Entries": [
+        "[Earthen Peak - Chest] Raw Stone"
+      ]
+    },
+    {
+      "ID": 10175021,
+      "Entries": [
+        "[Earthen Peak - Chest_NG+] Raw Stone, Palestone"
+      ]
+    },
+    {
+      "ID": 10175030,
+      "Entries": [
+        "[Earthen Peak - Chest] Poison Stone, Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 10175040,
+      "Entries": [
+        "[Earthen Peak - Chest] Pike"
+      ]
+    },
+    {
+      "ID": 10175050,
+      "Entries": [
+        "[Earthen Peak - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 10175060,
+      "Entries": [
+        "[Earthen Peak - Chest] Heavy Crossbow, Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 10175070,
+      "Entries": [
+        "[Earthen Peak - Chest] Torch"
+      ]
+    },
+    {
+      "ID": 10175090,
+      "Entries": [
+        "[Earthen Peak - Chest] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10175110,
+      "Entries": [
+        "[Earthen Peak - Chest] Fire Seed, Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10175120,
+      "Entries": [
+        "[Earthen Peak - Chest] Soul of a Brave Warrior, Crimson Water"
+      ]
+    },
+    {
+      "ID": 10175130,
+      "Entries": [
+        "[Earthen Peak - Chest] Poisonbite Ring, Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10175140,
+      "Entries": [
+        "[Earthen Peak - Chest] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10175150,
+      "Entries": [
+        "[Earthen Peak - Chest] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 10175160,
+      "Entries": [
+        "[Earthen Peak - Chest] Mirrah Shield"
+      ]
+    },
+    {
+      "ID": 10176000,
+      "Entries": [
+        "[Earthen Peak] Lifegem"
+      ]
+    },
+    {
+      "ID": 10176010,
+      "Entries": [
+        "[Earthen Peak] Broadsword, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10176020,
+      "Entries": [
+        "[Earthen Peak] Lifegem"
+      ]
+    },
+    {
+      "ID": 10176030,
+      "Entries": [
+        "[Earthen Peak] Torch"
+      ]
+    },
+    {
+      "ID": 10176040,
+      "Entries": [
+        "[Earthen Peak] Spell Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 10176050,
+      "Entries": [
+        "[Earthen Peak] Large Soul of a Proud Knight, Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10176060,
+      "Entries": [
+        "[Earthen Peak] Hexing Urn"
+      ]
+    },
+    {
+      "ID": 10176070,
+      "Entries": [
+        "[Earthen Peak] Radiant Lifegem, Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10176080,
+      "Entries": [
+        "[Earthen Peak] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10176090,
+      "Entries": [
+        "[Earthen Peak] Torch"
+      ]
+    },
+    {
+      "ID": 10176100,
+      "Entries": [
+        "[Earthen Peak] Repair Powder"
+      ]
+    },
+    {
+      "ID": 10176110,
+      "Entries": [
+        "[Earthen Peak] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10176120,
+      "Entries": [
+        "[Earthen Peak] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10176130,
+      "Entries": [
+        "[Earthen Peak] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 10176140,
+      "Entries": [
+        "[Earthen Peak] Pharros' Lockstone, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10176150,
+      "Entries": [
+        "[Earthen Peak] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10176160,
+      "Entries": [
+        "[Earthen Peak] Old Knight Pike, Old Knight Greatshield"
+      ]
+    },
+    {
+      "ID": 10176170,
+      "Entries": [
+        "[Earthen Peak] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10176171,
+      "Entries": [
+        "[Earthen Peak_NG+] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10176180,
+      "Entries": [
+        "[Earthen Peak] Fragrant Branch of Yore, Torch"
+      ]
+    },
+    {
+      "ID": 10176190,
+      "Entries": [
+        "[Earthen Peak] Soul of a Nameless Soldier, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176200,
+      "Entries": [
+        "[Earthen Peak] Small Smooth & Silky Stone, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176210,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176220,
+      "Entries": [
+        "[Earthen Peak] Human Effigy, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176221,
+      "Entries": [
+        "[Earthen Peak_NG+] Human Effigy, Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176230,
+      "Entries": [
+        "[Earthen Peak] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10176231,
+      "Entries": [
+        "[Earthen Peak_NG+] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10176250,
+      "Entries": [
+        "[Earthen Peak] Fading Soul, Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10176260,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176270,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176280,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176290,
+      "Entries": [
+        "[Earthen Peak] Fading Soul, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176300,
+      "Entries": [
+        "[Earthen Peak] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10176340,
+      "Entries": [
+        "[Earthen Peak] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10176350,
+      "Entries": [
+        "[Earthen Peak] Chameleon, Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10176370,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176390,
+      "Entries": [
+        "[Earthen Peak] Petrified Something"
+      ]
+    },
+    {
+      "ID": 10176400,
+      "Entries": [
+        "[Earthen Peak] Large Soul of a Brave Warrior, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10176410,
+      "Entries": [
+        "[Earthen Peak] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10176420,
+      "Entries": [
+        "[Earthen Peak] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 10176430,
+      "Entries": [
+        "[Earthen Peak] Manikin Mask"
+      ]
+    },
+    {
+      "ID": 10176440,
+      "Entries": [
+        "[Earthen Peak] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10176450,
+      "Entries": [
+        "[Earthen Peak] Poison Stone"
+      ]
+    },
+    {
+      "ID": 10176460,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176461,
+      "Entries": [
+        "[Earthen Peak_NG+] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10176470,
+      "Entries": [
+        "[Earthen Peak] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176480,
+      "Entries": [
+        "[Earthen Peak] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10176490,
+      "Entries": [
+        "[Earthen Peak] Green Blossom"
+      ]
+    },
+    {
+      "ID": 10176500,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176510,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176520,
+      "Entries": [
+        "[Earthen Peak] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10176530,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176540,
+      "Entries": [
+        "[Earthen Peak] Torch"
+      ]
+    },
+    {
+      "ID": 10176550,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176560,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176570,
+      "Entries": [
+        "[Earthen Peak] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10176580,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176590,
+      "Entries": [
+        "[Earthen Peak] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 10176600,
+      "Entries": [
+        "[Earthen Peak] Washing Pole"
+      ]
+    },
+    {
+      "ID": 10176610,
+      "Entries": [
+        "[Earthen Peak] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 10176620,
+      "Entries": [
+        "[Earthen Peak] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10176630,
+      "Entries": [
+        "[Earthen Peak] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10185000,
+      "Entries": [
+        "[No-man's Wharf - Chest] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10185001,
+      "Entries": [
+        "[No-man's Wharf - Chest_NG+] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10185030,
+      "Entries": [
+        "[No-man's Wharf - Chest] Repair Powder, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10185040,
+      "Entries": [
+        "[No-man's Wharf - Chest] Bandit Axe, Brigand Set"
+      ]
+    },
+    {
+      "ID": 10185050,
+      "Entries": [
+        "[No-man's Wharf - Chest] Greatsword"
+      ]
+    },
+    {
+      "ID": 10185060,
+      "Entries": [
+        "[No-man's Wharf - Chest] Royal Soldier's Ring"
+      ]
+    },
+    {
+      "ID": 10185070,
+      "Entries": [
+        "[No-man's Wharf - Chest] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10185071,
+      "Entries": [
+        "[No-man's Wharf - Chest_NG+] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10185080,
+      "Entries": [
+        "[No-man's Wharf - Chest] Firebomb"
+      ]
+    },
+    {
+      "ID": 10185081,
+      "Entries": [
+        "[No-man's Wharf - Chest_NG+] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 10185100,
+      "Entries": [
+        "[No-man's Wharf - Chest] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 10185110,
+      "Entries": [
+        "[No-man's Wharf - Chest] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10185120,
+      "Entries": [
+        "[No-man's Wharf - Chest] Pyromancy Flame, Fireball"
+      ]
+    },
+    {
+      "ID": 10186000,
+      "Entries": [
+        "[No-man's Wharf] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10186010,
+      "Entries": [
+        "[No-man's Wharf] Human Effigy, Lifegem"
+      ]
+    },
+    {
+      "ID": 10186020,
+      "Entries": [
+        "[No-man's Wharf] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10186021,
+      "Entries": [
+        "[No-man's Wharf_NG+] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10186030,
+      "Entries": [
+        "[No-man's Wharf] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10186050,
+      "Entries": [
+        "[No-man's Wharf] Large Soul of a Lost Undead, Lifegem"
+      ]
+    },
+    {
+      "ID": 10186070,
+      "Entries": [
+        "[No-man's Wharf] Iron Arrow"
+      ]
+    },
+    {
+      "ID": 10186071,
+      "Entries": [
+        "[No-man's Wharf_NG+] Iron Arrow"
+      ]
+    },
+    {
+      "ID": 10186100,
+      "Entries": [
+        "[No-man's Wharf] Large Soul of a Proud Knight, Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10186110,
+      "Entries": [
+        "[No-man's Wharf] Large Soul of a Lost Undead, Emit Force"
+      ]
+    },
+    {
+      "ID": 10186120,
+      "Entries": [
+        "[No-man's Wharf] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10186130,
+      "Entries": [
+        "[No-man's Wharf] Lifegem, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10186140,
+      "Entries": [
+        "[No-man's Wharf] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10186150,
+      "Entries": [
+        "[No-man's Wharf] Dark Pine Resin"
+      ]
+    },
+    {
+      "ID": 10186160,
+      "Entries": [
+        "[No-man's Wharf] Large Soul of a Nameless Soldier, Lifegem"
+      ]
+    },
+    {
+      "ID": 10186170,
+      "Entries": [
+        "[No-man's Wharf] Throwing Knife, Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10195000,
+      "Entries": [
+        "[Iron Keep - Chest] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 10195001,
+      "Entries": [
+        "[Iron Keep - Chest_NG+] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 10195030,
+      "Entries": [
+        "[Iron Keep - Chest] Zweihander"
+      ]
+    },
+    {
+      "ID": 10195040,
+      "Entries": [
+        "[Iron Keep - Chest] Life Ring+1, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10195050,
+      "Entries": [
+        "[Iron Keep - Chest] Black Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 10195060,
+      "Entries": [
+        "[Iron Keep - Chest] Protective Chime, Grand Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 10195090,
+      "Entries": [
+        "[Iron Keep - Chest] Black Knight Greataxe"
+      ]
+    },
+    {
+      "ID": 10195100,
+      "Entries": [
+        "[Iron Keep - Chest] Phoenix Parma"
+      ]
+    },
+    {
+      "ID": 10195110,
+      "Entries": [
+        "[Iron Keep - Chest] Chaos Storm"
+      ]
+    },
+    {
+      "ID": 10195120,
+      "Entries": [
+        "[Iron Keep - Chest] Immolation"
+      ]
+    },
+    {
+      "ID": 10195130,
+      "Entries": [
+        "[Iron Keep - Chest] Thunder Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 10195140,
+      "Entries": [
+        "[Iron Keep - Chest] Porcine Shield, Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10195150,
+      "Entries": [
+        "[Iron Keep - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 10196000,
+      "Entries": [
+        "[Iron Keep] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10196010,
+      "Entries": [
+        "[Iron Keep] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10196020,
+      "Entries": [
+        "[Iron Keep] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10196030,
+      "Entries": [
+        "[Iron Keep] Soul of a Proud Knight, Repair Powder"
+      ]
+    },
+    {
+      "ID": 10196040,
+      "Entries": [
+        "[Iron Keep] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10196050,
+      "Entries": [
+        "[Iron Keep] Short Bow"
+      ]
+    },
+    {
+      "ID": 10196060,
+      "Entries": [
+        "[Iron Keep] Large Soul of a Nameless Soldier, Red Leech Troches"
+      ]
+    },
+    {
+      "ID": 10196070,
+      "Entries": [
+        "[Iron Keep] Old Radiant Lifegem, Green Blossom"
+      ]
+    },
+    {
+      "ID": 10196080,
+      "Entries": [
+        "[Iron Keep] Iron Key"
+      ]
+    },
+    {
+      "ID": 10196090,
+      "Entries": [
+        "[Iron Keep] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10196100,
+      "Entries": [
+        "[Iron Keep] Cracked Red Eye Orb, Torch"
+      ]
+    },
+    {
+      "ID": 10196110,
+      "Entries": [
+        "[Iron Keep] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10196111,
+      "Entries": [
+        "[Iron Keep_NG+] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10196120,
+      "Entries": [
+        "[Iron Keep] Large Soul of a Proud Knight, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10196130,
+      "Entries": [
+        "[Iron Keep] Large Soul of a Nameless Soldier, Monastery Charm"
+      ]
+    },
+    {
+      "ID": 10196140,
+      "Entries": [
+        "[Iron Keep] Bonfire Ascetic, Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 10196150,
+      "Entries": [
+        "[Iron Keep] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10196160,
+      "Entries": [
+        "[Iron Keep] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10196170,
+      "Entries": [
+        "[Iron Keep] Covetous Gold Serpent Ring"
+      ]
+    },
+    {
+      "ID": 10196180,
+      "Entries": [
+        "[Iron Keep] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10196190,
+      "Entries": [
+        "[Iron Keep] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10196200,
+      "Entries": [
+        "[Iron Keep] Human Effigy, Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 10196210,
+      "Entries": [
+        "[Iron Keep] Large Titanite Shard, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10196211,
+      "Entries": [
+        "[Iron Keep_NG+] Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10196220,
+      "Entries": [
+        "[Iron Keep] Titanite Shard, Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10235010,
+      "Entries": [
+        "[Huntsman's Copse - Chest] Ricard's Rapier"
+      ]
+    },
+    {
+      "ID": 10235020,
+      "Entries": [
+        "[Huntsman's Copse - Chest] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 10236000,
+      "Entries": [
+        "[Huntsman's Copse] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10236010,
+      "Entries": [
+        "[Huntsman's Copse] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 10236020,
+      "Entries": [
+        "[Huntsman's Copse] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 10236021,
+      "Entries": [
+        "[Huntsman's Copse_NG+] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 10236030,
+      "Entries": [
+        "[Huntsman's Copse] Large Soul of a Lost Undead, Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 10236040,
+      "Entries": [
+        "[Huntsman's Copse] Notched Whip"
+      ]
+    },
+    {
+      "ID": 10236050,
+      "Entries": [
+        "[Huntsman's Copse] Mace, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10236060,
+      "Entries": [
+        "[Huntsman's Copse] Combustion, Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10236070,
+      "Entries": [
+        "[Huntsman's Copse] Soul of a Nameless Soldier, Lifegem"
+      ]
+    },
+    {
+      "ID": 10236071,
+      "Entries": [
+        "[Huntsman's Copse_NG+] Large Soul of a Proud Knight, Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10236080,
+      "Entries": [
+        "[Huntsman's Copse] Poison Moss, Lifegem"
+      ]
+    },
+    {
+      "ID": 10236090,
+      "Entries": [
+        "[Huntsman's Copse] Morning Star, Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10236100,
+      "Entries": [
+        "[Huntsman's Copse] Poison Moss, Green Blossom"
+      ]
+    },
+    {
+      "ID": 10236110,
+      "Entries": [
+        "[Huntsman's Copse] Soul Spear"
+      ]
+    },
+    {
+      "ID": 10236120,
+      "Entries": [
+        "[Huntsman's Copse] Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 10236130,
+      "Entries": [
+        "[Huntsman's Copse] Lifegem"
+      ]
+    },
+    {
+      "ID": 10236131,
+      "Entries": [
+        "[Huntsman's Copse_NG+] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 10236140,
+      "Entries": [
+        "[Huntsman's Copse] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10236150,
+      "Entries": [
+        "[Huntsman's Copse] Pharros' Lockstone, Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 10236160,
+      "Entries": [
+        "[Huntsman's Copse] Undead Lockaway Key"
+      ]
+    },
+    {
+      "ID": 10236170,
+      "Entries": [
+        "[Huntsman's Copse] Flamberge"
+      ]
+    },
+    {
+      "ID": 10236180,
+      "Entries": [
+        "[Huntsman's Copse] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10236190,
+      "Entries": [
+        "[Huntsman's Copse] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10236200,
+      "Entries": [
+        "[Huntsman's Copse] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10236210,
+      "Entries": [
+        "[Huntsman's Copse] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10236220,
+      "Entries": [
+        "[Huntsman's Copse] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10236230,
+      "Entries": [
+        "[Huntsman's Copse] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10236240,
+      "Entries": [
+        "[Huntsman's Copse] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10236250,
+      "Entries": [
+        "[Huntsman's Copse] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10236260,
+      "Entries": [
+        "[Huntsman's Copse] Monastery Charm, Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10236270,
+      "Entries": [
+        "[Huntsman's Copse] Human Effigy, Lacerating Arrow, Prism Stone"
+      ]
+    },
+    {
+      "ID": 10255010,
+      "Entries": [
+        "[The Gutter - Chest] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 10255020,
+      "Entries": [
+        "[The Gutter] Twinkling Titanite, Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10255030,
+      "Entries": [
+        "[The Gutter - Chest] Great Club"
+      ]
+    },
+    {
+      "ID": 10255040,
+      "Entries": [
+        "[The Gutter - Chest] Ring of Soul Protection"
+      ]
+    },
+    {
+      "ID": 10255050,
+      "Entries": [
+        "[The Gutter - Chest] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10255090,
+      "Entries": [
+        "[The Gutter - Chest] Ring of Giants+1, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10255100,
+      "Entries": [
+        "[The Gutter - Chest] Wicked Eye Greatshield"
+      ]
+    },
+    {
+      "ID": 10255110,
+      "Entries": [
+        "[The Gutter - Chest] Aurous Set"
+      ]
+    },
+    {
+      "ID": 10255120,
+      "Entries": [
+        "[The Gutter - Chest] Petrified Something, Simpleton's Spice, Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10255130,
+      "Entries": [
+        "[The Gutter - Chest] Shotel, Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 10256000,
+      "Entries": [
+        "[The Gutter] Havel's Greatshield, Havel's Set"
+      ]
+    },
+    {
+      "ID": 10256030,
+      "Entries": [
+        "[The Gutter] Bandit Greataxe"
+      ]
+    },
+    {
+      "ID": 10256060,
+      "Entries": [
+        "[The Gutter] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10256090,
+      "Entries": [
+        "[The Gutter] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 10256130,
+      "Entries": [
+        "[The Gutter] Dark Fog, Torch"
+      ]
+    },
+    {
+      "ID": 10256160,
+      "Entries": [
+        "[The Gutter] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10256170,
+      "Entries": [
+        "[The Gutter] Poison Moss"
+      ]
+    },
+    {
+      "ID": 10256210,
+      "Entries": [
+        "[The Gutter] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10256220,
+      "Entries": [
+        "[The Gutter] Dung Pie"
+      ]
+    },
+    {
+      "ID": 10256230,
+      "Entries": [
+        "[The Gutter] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10256240,
+      "Entries": [
+        "[The Gutter] Lifegem"
+      ]
+    },
+    {
+      "ID": 10256250,
+      "Entries": [
+        "[The Gutter] Dark Pyromancy Flame, Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 10256260,
+      "Entries": [
+        "[The Gutter] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 10256270,
+      "Entries": [
+        "[The Gutter] Tattered Cloth Set"
+      ]
+    },
+    {
+      "ID": 10256280,
+      "Entries": [
+        "[The Gutter] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10256290,
+      "Entries": [
+        "[The Gutter] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10256300,
+      "Entries": [
+        "[The Gutter] Poison Moss"
+      ]
+    },
+    {
+      "ID": 10256310,
+      "Entries": [
+        "[The Gutter] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 10256320,
+      "Entries": [
+        "[The Gutter] Dung Pie"
+      ]
+    },
+    {
+      "ID": 10256330,
+      "Entries": [
+        "[The Gutter] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 10256340,
+      "Entries": [
+        "[The Gutter] Lifegem"
+      ]
+    },
+    {
+      "ID": 10256350,
+      "Entries": [
+        "[The Gutter] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 10256360,
+      "Entries": [
+        "[The Gutter] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10256370,
+      "Entries": [
+        "[The Gutter] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10256380,
+      "Entries": [
+        "[The Gutter] Scraps of Life, Torch"
+      ]
+    },
+    {
+      "ID": 10256390,
+      "Entries": [
+        "[The Gutter] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10256400,
+      "Entries": [
+        "[The Gutter] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10256410,
+      "Entries": [
+        "[The Gutter] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10256420,
+      "Entries": [
+        "[The Gutter] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10256430,
+      "Entries": [
+        "[The Gutter] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10256440,
+      "Entries": [
+        "[The Gutter] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10256450,
+      "Entries": [
+        "[The Gutter] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10256500,
+      "Entries": [
+        "[The Gutter] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10275000,
+      "Entries": [
+        "[Dragon Aerie - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 10275010,
+      "Entries": [
+        "[Dragon Aerie - Chest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 10275020,
+      "Entries": [
+        "[Dragon Aerie - Chest] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10275021,
+      "Entries": [
+        "[Dragon Aerie - Chest_NG+] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10275030,
+      "Entries": [
+        "[Dragon Aerie - Chest] Drakekeeper's Greataxe, Drakekeeper's Greatshield"
+      ]
+    },
+    {
+      "ID": 10275040,
+      "Entries": [
+        "[Dragon Aerie - Chest] Third Dragon Ring"
+      ]
+    },
+    {
+      "ID": 10275050,
+      "Entries": [
+        "[Dragon Aerie - Chest] Crystal Magic Weapon, Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10275060,
+      "Entries": [
+        "[Dragon Aerie - Chest] Judgment Set"
+      ]
+    },
+    {
+      "ID": 10275070,
+      "Entries": [
+        "[Dragon Aerie - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 10276000,
+      "Entries": [
+        "[Dragon Aerie] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10276010,
+      "Entries": [
+        "[Dragon Aerie] Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 10276020,
+      "Entries": [
+        "[Dragon Aerie] Boltstone"
+      ]
+    },
+    {
+      "ID": 10276030,
+      "Entries": [
+        "[Dragon Aerie] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10276040,
+      "Entries": [
+        "[Dragon Aerie] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10276041,
+      "Entries": [
+        "[Dragon Aeriet_NG+] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 10276050,
+      "Entries": [
+        "[Dragon Aerie] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10276060,
+      "Entries": [
+        "[Dragon Aerie] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10276061,
+      "Entries": [
+        "[Dragon Aerie_NG+] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10276070,
+      "Entries": [
+        "[Dragon Aerie] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10276080,
+      "Entries": [
+        "[Dragon Aerie] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10276090,
+      "Entries": [
+        "[Dragon Aerie] Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 10276100,
+      "Entries": [
+        "[Dragon Aerie] Ring of the Evil Eye+1"
+      ]
+    },
+    {
+      "ID": 10276110,
+      "Entries": [
+        "[Dragon Aerie] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 10276120,
+      "Entries": [
+        "[Dragon Aerie] Darknight Stone"
+      ]
+    },
+    {
+      "ID": 10276130,
+      "Entries": [
+        "[Dragon Aerie] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10276140,
+      "Entries": [
+        "[Dragon Aerie] Faintstone"
+      ]
+    },
+    {
+      "ID": 10276150,
+      "Entries": [
+        "[Dragon Aerie] Skeptic's Spice, Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10276160,
+      "Entries": [
+        "[Dragon Aerie] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 10276170,
+      "Entries": [
+        "[Dragon Aerie] Bleed Stone"
+      ]
+    },
+    {
+      "ID": 10276180,
+      "Entries": [
+        "[Dragon Aerie] Magic Stone"
+      ]
+    },
+    {
+      "ID": 10276190,
+      "Entries": [
+        "[Dragon Aerie] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 10295000,
+      "Entries": [
+        "[Path to Shaded Woods - Chest] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10296000,
+      "Entries": [
+        "[Path to Shaded Woods] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 10296010,
+      "Entries": [
+        "[Path to Shaded Woods] Lifegem, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10296020,
+      "Entries": [
+        "[Path to Shaded Woods] Soul of a Proud Knight, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10305010,
+      "Entries": [
+        "[Unseen Path to Heide - Chest] Knight Set"
+      ]
+    },
+    {
+      "ID": 10305020,
+      "Entries": [
+        "[Unseen Path to Heide] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 10306000,
+      "Entries": [
+        "[Unseen Path to Heide] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10306010,
+      "Entries": [
+        "[Unseen Path to Heide] Human Effigy, Dark Troches"
+      ]
+    },
+    {
+      "ID": 10306020,
+      "Entries": [
+        "[Unseen Path to Heide] Old Knight Halberd"
+      ]
+    },
+    {
+      "ID": 10306030,
+      "Entries": [
+        "[Unseen Path to Heide] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 10315000,
+      "Entries": [
+        "[Heide's Tower of Flame - Chest] Ring of Binding"
+      ]
+    },
+    {
+      "ID": 10315001,
+      "Entries": [
+        "[Heide's Tower of Flame - Chest_NG+] Human Effigy, Ring of Binding"
+      ]
+    },
+    {
+      "ID": 10315010,
+      "Entries": [
+        "[Heide's Tower of Flame - Chest] Cleric's Parma, Tower Shield"
+      ]
+    },
+    {
+      "ID": 10315020,
+      "Entries": [
+        "[Heide's Tower of Flame - Chest] Cracked Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 10315030,
+      "Entries": [
+        "[Heide's Tower of Flame - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10316010,
+      "Entries": [
+        "[Heide's Tower of Flame] Soul of a Nameless Soldier, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10316040,
+      "Entries": [
+        "[Heide's Tower of Flame] Monastery Charm"
+      ]
+    },
+    {
+      "ID": 10316041,
+      "Entries": [
+        "[Heide's Tower of Flame_NG+] Monastery Charm"
+      ]
+    },
+    {
+      "ID": 10316050,
+      "Entries": [
+        "[Heide's Tower of Flame] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10316090,
+      "Entries": [
+        "[Heide's Tower of Flame] Soul of a Lost Undead, Broken Thief Sword"
+      ]
+    },
+    {
+      "ID": 10316100,
+      "Entries": [
+        "[Heide's Tower of Flame] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 10316101,
+      "Entries": [
+        "[Heide's Tower of Flame_NG+] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10316110,
+      "Entries": [
+        "[Heide's Tower of Flame] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10325000,
+      "Entries": [
+        "[Shaded Woods - Chest] Magic Bolt"
+      ]
+    },
+    {
+      "ID": 10325001,
+      "Entries": [
+        "[Shaded Woods - Chest_NG+] Magic Bolt"
+      ]
+    },
+    {
+      "ID": 10325010,
+      "Entries": [
+        "[Shaded Woods - Chest] Titanite Chunk, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10325020,
+      "Entries": [
+        "[Shaded Woods - Chest] Chloranthy Ring+1"
+      ]
+    },
+    {
+      "ID": 10325030,
+      "Entries": [
+        "[Shaded Woods - Chest] Scythe"
+      ]
+    },
+    {
+      "ID": 10325040,
+      "Entries": [
+        "[Shaded Woods - Chest] Fragrant Branch of Yore, Lion Mage Set"
+      ]
+    },
+    {
+      "ID": 10325050,
+      "Entries": [
+        "[Shaded Woods - Chest] Old Sun Ring"
+      ]
+    },
+    {
+      "ID": 10325060,
+      "Entries": [
+        "[Shaded Woods - Chest] Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 10325080,
+      "Entries": [
+        "[Shaded Woods - Chest] Clear Bluestone Ring+1"
+      ]
+    },
+    {
+      "ID": 10325100,
+      "Entries": [
+        "[Shaded Woods - Chest] Repair, Human Effigy, Bleeding Serum"
+      ]
+    },
+    {
+      "ID": 10325110,
+      "Entries": [
+        "[Shaded Woods - Chest] Black Knight Halberd"
+      ]
+    },
+    {
+      "ID": 10325120,
+      "Entries": [
+        "[Shaded Woods - Chest] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 10326000,
+      "Entries": [
+        "[Shaded Woods] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10326010,
+      "Entries": [
+        "[Shaded Woods] Flame Butterfly, Torch"
+      ]
+    },
+    {
+      "ID": 10326020,
+      "Entries": [
+        "[Shaded Woods] Large Soul of a Proud Knight, Human Effigy, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10326030,
+      "Entries": [
+        "[Shaded Woods] Dragonslayer's Crescent Axe, Golden Falcon Shield"
+      ]
+    },
+    {
+      "ID": 10326040,
+      "Entries": [
+        "[Shaded Woods] Pharros' Lockstone, Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10326060,
+      "Entries": [
+        "[Shaded Woods] Soul of a Proud Knight, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10326070,
+      "Entries": [
+        "[Shaded Woods] Soul of a Nameless Soldier, Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10326080,
+      "Entries": [
+        "[Shaded Woods] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10326081,
+      "Entries": [
+        "[Shaded Woods_NG+] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10326090,
+      "Entries": [
+        "[Shaded Woods] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10326100,
+      "Entries": [
+        "[Shaded Woods] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 10326101,
+      "Entries": [
+        "[Shaded Woods_NG+] Gower's Ring of Protection, Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 10326110,
+      "Entries": [
+        "[Shaded Woods] Fading Soul"
+      ]
+    },
+    {
+      "ID": 10326120,
+      "Entries": [
+        "[Shaded Woods] Soul of a Brave Warrior, Firebomb"
+      ]
+    },
+    {
+      "ID": 10326130,
+      "Entries": [
+        "[Shaded Woods] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10326140,
+      "Entries": [
+        "[Shaded Woods] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10326141,
+      "Entries": [
+        "[Shaded Woods_NG+] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10326150,
+      "Entries": [
+        "[Shaded Woods] Soul of a Brave Warrior, Twilight Herb"
+      ]
+    },
+    {
+      "ID": 10326160,
+      "Entries": [
+        "[Shaded Woods] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 10326170,
+      "Entries": [
+        "[Shaded Woods] Red Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 10326180,
+      "Entries": [
+        "[Shaded Woods] Soul of a Brave Warrior, Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 10326190,
+      "Entries": [
+        "[Shaded Woods] Lifegem"
+      ]
+    },
+    {
+      "ID": 10326191,
+      "Entries": [
+        "[Shaded Woods_NG+] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10326200,
+      "Entries": [
+        "[Shaded Woods] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10326210,
+      "Entries": [
+        "[Shaded Woods] Soul of a Brave Warrior, Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10326220,
+      "Entries": [
+        "[Shaded Woods] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 10326230,
+      "Entries": [
+        "[Shaded Woods] Torch"
+      ]
+    },
+    {
+      "ID": 10326240,
+      "Entries": [
+        "[Shaded Woods] Fire Seed"
+      ]
+    },
+    {
+      "ID": 10326250,
+      "Entries": [
+        "[Shaded Woods] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 10326260,
+      "Entries": [
+        "[Shaded Woods] Large Soul of a Nameless Soldier, Human Effigy"
+      ]
+    },
+    {
+      "ID": 10326270,
+      "Entries": [
+        "[Shaded Woods] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10326280,
+      "Entries": [
+        "[Shaded Woods] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10335000,
+      "Entries": [
+        "[Doors of Pharros - Chest] Faintstone, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10335010,
+      "Entries": [
+        "[Doors of Pharros - Chest] Titanite Chunk, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10335020,
+      "Entries": [
+        "[Doors of Pharros - Chest] Magic Arrow"
+      ]
+    },
+    {
+      "ID": 10335021,
+      "Entries": [
+        "[Doors of Pharros - Chest_NG+] Magic Arrow"
+      ]
+    },
+    {
+      "ID": 10335030,
+      "Entries": [
+        "[Doors of Pharros - Chest] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 10335031,
+      "Entries": [
+        "[Doors of Pharros - Chest_NG+] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 10335040,
+      "Entries": [
+        "[Doors of Pharros - Chest] Santier's Spear"
+      ]
+    },
+    {
+      "ID": 10336000,
+      "Entries": [
+        "[Doors of Pharros] Prism Stone"
+      ]
+    },
+    {
+      "ID": 10336010,
+      "Entries": [
+        "[Doors of Pharros] Lifegem"
+      ]
+    },
+    {
+      "ID": 10336011,
+      "Entries": [
+        "[Doors of Pharros_NG+] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10336020,
+      "Entries": [
+        "[Doors of Pharros] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10336040,
+      "Entries": [
+        "[Doors of Pharros] Amber Herb"
+      ]
+    },
+    {
+      "ID": 10336041,
+      "Entries": [
+        "[Doors of Pharros_NG+] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 10336050,
+      "Entries": [
+        "[Doors of Pharros] Gyrm Axe, Torch"
+      ]
+    },
+    {
+      "ID": 10336060,
+      "Entries": [
+        "[Doors of Pharros] Twisted Barricade, Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 10336070,
+      "Entries": [
+        "[Doors of Pharros] Pharros' Lockstone, Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10336080,
+      "Entries": [
+        "[Doors of Pharros] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10345000,
+      "Entries": [
+        "[Grave of Saints - Chest] Ash Knuckle Ring"
+      ]
+    },
+    {
+      "ID": 10345010,
+      "Entries": [
+        "[Grave of Saints - Chest] Token of Spite"
+      ]
+    },
+    {
+      "ID": 10345020,
+      "Entries": [
+        "[Grave of Saints - Chest] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 10346000,
+      "Entries": [
+        "[Grave of Saints] Human Effigy"
+      ]
+    },
+    {
+      "ID": 10346010,
+      "Entries": [
+        "[Grave of Saints] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10346020,
+      "Entries": [
+        "[Grave of Saints] Whisper of Despair, Torch"
+      ]
+    },
+    {
+      "ID": 10346030,
+      "Entries": [
+        "[Grave of Saints] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 10346031,
+      "Entries": [
+        "[Grave of Saints_NG+] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 10346040,
+      "Entries": [
+        "[Grave of Saints] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 10346050,
+      "Entries": [
+        "[Grave of Saints] Poison Moss"
+      ]
+    },
+    {
+      "ID": 10346060,
+      "Entries": [
+        "[Grave of Saints] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 10346070,
+      "Entries": [
+        "[Grave of Saints] Great Heal"
+      ]
+    },
+    {
+      "ID": 10346080,
+      "Entries": [
+        "[Grave of Saints] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 10346090,
+      "Entries": [
+        "[Grave of Saints] Bleed Stone"
+      ]
+    },
+    {
+      "ID": 10346091,
+      "Entries": [
+        "[Grave of Saints_NG+] Twinkling Titanite, Bleed Stone"
+      ]
+    },
+    {
+      "ID": 10346100,
+      "Entries": [
+        "[Grave of Saints] Disc Chime"
+      ]
+    },
+    {
+      "ID": 10346110,
+      "Entries": [
+        "[Grave of Saints] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 20105000,
+      "Entries": [
+        "[Giant's Memory - Chest] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20105001,
+      "Entries": [
+        "[Giant's Memory - Chest_NG+] Smooth & Silky Stone, Petrified Something"
+      ]
+    },
+    {
+      "ID": 20105010,
+      "Entries": [
+        "[Giant's Memory - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 20105020,
+      "Entries": [
+        "[Giant's Memory - Chest] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20105030,
+      "Entries": [
+        "[Giant's Memory - Chest] Fire Seed"
+      ]
+    },
+    {
+      "ID": 20105040,
+      "Entries": [
+        "[Giant's Memory - Chest] Steel Set"
+      ]
+    },
+    {
+      "ID": 20105050,
+      "Entries": [
+        "[Giant's Memory - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20105060,
+      "Entries": [
+        "[Giant's Memory - Chest] Simpleton's Spice, Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 20106000,
+      "Entries": [
+        "[Giant's Memory] Fire Seed"
+      ]
+    },
+    {
+      "ID": 20106010,
+      "Entries": [
+        "[Giant's Memory] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 20106011,
+      "Entries": [
+        "[Giant's Memory_NG+] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20106020,
+      "Entries": [
+        "[Giant's Memory] Soul of a Great Hero, Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20106030,
+      "Entries": [
+        "[Giant's Memory] Giant Warrior Club"
+      ]
+    },
+    {
+      "ID": 20106040,
+      "Entries": [
+        "[Giant's Memory] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 20106050,
+      "Entries": [
+        "[Giant's Memory] Fading Soul"
+      ]
+    },
+    {
+      "ID": 20106060,
+      "Entries": [
+        "[Giant's Memory] Rouge Water"
+      ]
+    },
+    {
+      "ID": 20106061,
+      "Entries": [
+        "[Giant's Memory_NG+] Crimson Water"
+      ]
+    },
+    {
+      "ID": 20106070,
+      "Entries": [
+        "[Giant's Memory] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20106080,
+      "Entries": [
+        "[Giant's Memory] Soul of a Great Hero, Soul Vessel"
+      ]
+    },
+    {
+      "ID": 20106090,
+      "Entries": [
+        "[Giant's Memory] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 20106100,
+      "Entries": [
+        "[Giant's Memory] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20106110,
+      "Entries": [
+        "[Giant's Memory] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 20106111,
+      "Entries": [
+        "[Giant's Memory_NG+] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 20106120,
+      "Entries": [
+        "[Giant's Memory] Fire Seed"
+      ]
+    },
+    {
+      "ID": 20106130,
+      "Entries": [
+        "[Giant's Memory] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 20106140,
+      "Entries": [
+        "[Giant's Memory] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 20106141,
+      "Entries": [
+        "[Giant's Memory_NG+] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20106150,
+      "Entries": [
+        "[Giant's Memory] Soul of a Great Hero, Torch"
+      ]
+    },
+    {
+      "ID": 20115000,
+      "Entries": [
+        "[Shrine of Amana - Chest] Wilted Dusk Herb, Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 20115010,
+      "Entries": [
+        "[Shrine of Amana - Chest] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 20115020,
+      "Entries": [
+        "[Shrine of Amana - Chest] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 20115030,
+      "Entries": [
+        "[Shrine of Amana - Chest] Crimson Water"
+      ]
+    },
+    {
+      "ID": 20115040,
+      "Entries": [
+        "[Shrine of Amana - Chest] Twinkling Titanite, Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20115050,
+      "Entries": [
+        "[Shrine of Amana - Chest] Magic Arrow"
+      ]
+    },
+    {
+      "ID": 20115051,
+      "Entries": [
+        "[Shrine of Amana - Chest_NG+] Magic Arrow, Dark Arrow"
+      ]
+    },
+    {
+      "ID": 20115060,
+      "Entries": [
+        "[Shrine of Amana - Chest] Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 20115070,
+      "Entries": [
+        "[Shrine of Amana - Chest] King's Set"
+      ]
+    },
+    {
+      "ID": 20115080,
+      "Entries": [
+        "[Shrine of Amana - Chest] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 20115090,
+      "Entries": [
+        "[Shrine of Amana - Chest] Helix Halberd"
+      ]
+    },
+    {
+      "ID": 20115100,
+      "Entries": [
+        "[Shrine of Amana - Chest] Manslayer"
+      ]
+    },
+    {
+      "ID": 20115110,
+      "Entries": [
+        "[Shrine of Amana - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20115500,
+      "Entries": [
+        "[Shrine of Amana - Chest] Soul of the King"
+      ]
+    },
+    {
+      "ID": 20116000,
+      "Entries": [
+        "[Shrine of Amana] Large Soul of a Proud Knight, Green Blossom"
+      ]
+    },
+    {
+      "ID": 20116010,
+      "Entries": [
+        "[Shrine of Amana] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 20116011,
+      "Entries": [
+        "[Shrine of Amana_NG+] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20116020,
+      "Entries": [
+        "[Shrine of Amana] Soul of a Lost Undead, Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 20116030,
+      "Entries": [
+        "[Shrine of Amana] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 20116040,
+      "Entries": [
+        "[Shrine of Amana] Fire Seed"
+      ]
+    },
+    {
+      "ID": 20116060,
+      "Entries": [
+        "[Shrine of Amana] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 20116070,
+      "Entries": [
+        "[Shrine of Amana] Soul of a Brave Warrior, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 20116080,
+      "Entries": [
+        "[Shrine of Amana] Red Iron Twinblade, Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 20116090,
+      "Entries": [
+        "[Shrine of Amana] Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 20116100,
+      "Entries": [
+        "[Shrine of Amana] Large Soul of a Proud Knight, Green Blossom"
+      ]
+    },
+    {
+      "ID": 20116110,
+      "Entries": [
+        "[Shrine of Amana] Fire Seed"
+      ]
+    },
+    {
+      "ID": 20116120,
+      "Entries": [
+        "[Shrine of Amana] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 20116130,
+      "Entries": [
+        "[Shrine of Amana] Flame Butterfly, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 20116140,
+      "Entries": [
+        "[Shrine of Amana] Soul of a Hero, Divine Blessing"
+      ]
+    },
+    {
+      "ID": 20116150,
+      "Entries": [
+        "[Shrine of Amana] Green Blossom"
+      ]
+    },
+    {
+      "ID": 20116160,
+      "Entries": [
+        "[Shrine of Amana] Soul of a Lost Undead, Torch"
+      ]
+    },
+    {
+      "ID": 20116170,
+      "Entries": [
+        "[Shrine of Amana] Large Soul of a Proud Knight, Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 20116171,
+      "Entries": [
+        "[Shrine of Amana_NG+] Large Soul of a Brave Warrior, Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 20116190,
+      "Entries": [
+        "[Shrine of Amana] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 20116200,
+      "Entries": [
+        "[Shrine of Amana] Singer's Dress, Life Ring+2"
+      ]
+    },
+    {
+      "ID": 20116210,
+      "Entries": [
+        "[Shrine of Amana] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20116220,
+      "Entries": [
+        "[Shrine of Amana] Human Effigy"
+      ]
+    },
+    {
+      "ID": 20215000,
+      "Entries": [
+        "[Drangleic Castle - Chest] Hunter's Blackbow, Iron Arrow"
+      ]
+    },
+    {
+      "ID": 20215010,
+      "Entries": [
+        "[Drangleic Castle - Chest] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 20215011,
+      "Entries": [
+        "[Drangleic Castle - Chest_NG+] Titanite Slab, Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 20215020,
+      "Entries": [
+        "[Drangleic Castle - Chest] Dark Arrow"
+      ]
+    },
+    {
+      "ID": 20215021,
+      "Entries": [
+        "[Drangleic Castle - Chest_NG+] Dark Arrow"
+      ]
+    },
+    {
+      "ID": 20215040,
+      "Entries": [
+        "[Drangleic Castle - Chest] Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 20215041,
+      "Entries": [
+        "[Drangleic Castle - Chest_NG+] Fire Greatarrow, Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 20215050,
+      "Entries": [
+        "[Drangleic Castle - Chest] Royal Soldier's Ring+1"
+      ]
+    },
+    {
+      "ID": 20215060,
+      "Entries": [
+        "[Drangleic Castle - Chest] Soul Vessel, Fire Seed"
+      ]
+    },
+    {
+      "ID": 20215070,
+      "Entries": [
+        "[Drangleic Castle - Chest] Estus Flask Shard"
+      ]
+    },
+    {
+      "ID": 20215080,
+      "Entries": [
+        "[Drangleic Castle - Chest] Great Combustion, Fire Seed"
+      ]
+    },
+    {
+      "ID": 20215090,
+      "Entries": [
+        "[Drangleic Castle - Chest] Firestorm"
+      ]
+    },
+    {
+      "ID": 20215100,
+      "Entries": [
+        "[Drangleic Castle - Chest] Key to King's Passage"
+      ]
+    },
+    {
+      "ID": 20215110,
+      "Entries": [
+        "[Drangleic Castle - Chest] Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 20215120,
+      "Entries": [
+        "[Drangleic Castle - Chest] Old Knight Hammer"
+      ]
+    },
+    {
+      "ID": 20215130,
+      "Entries": [
+        "[Drangleic Castle - Chest] Mastodon Greatsword"
+      ]
+    },
+    {
+      "ID": 20215140,
+      "Entries": [
+        "[Drangleic Castle - Chest] Caitha's Chime, Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 20215150,
+      "Entries": [
+        "[Drangleic Castle - Chest] Soul Bolt, Spell Quartz Ring+2, Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20215160,
+      "Entries": [
+        "[Drangleic Castle - Chest] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 20215170,
+      "Entries": [
+        "[Drangleic Castle - Chest] Large Soul of a Brave Warrior, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 20216000,
+      "Entries": [
+        "[Drangleic Castle] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 20216010,
+      "Entries": [
+        "[Drangleic Castle] Faraam Set"
+      ]
+    },
+    {
+      "ID": 20216020,
+      "Entries": [
+        "[Drangleic Castle] Soul of a Hero, Old Radiant Lifegem, Monastery Charm"
+      ]
+    },
+    {
+      "ID": 20216021,
+      "Entries": [
+        "[Drangleic Castle_NG+] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 20216030,
+      "Entries": [
+        "[Drangleic Castle] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 20216040,
+      "Entries": [
+        "[Drangleic Castle] Fire Greatarrow, Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 20216050,
+      "Entries": [
+        "[Drangleic Castle] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20216060,
+      "Entries": [
+        "[Drangleic Castle] Lifegem"
+      ]
+    },
+    {
+      "ID": 20216061,
+      "Entries": [
+        "[Drangleic Castle_NG+] Old Radiant Lifegem, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 20216070,
+      "Entries": [
+        "[Drangleic Castle] Soul of a Proud Knight, Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 20216080,
+      "Entries": [
+        "[Drangleic Castle] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 20216090,
+      "Entries": [
+        "[Drangleic Castle] Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 20216100,
+      "Entries": [
+        "[Drangleic Castle] Repair Powder, Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 20216110,
+      "Entries": [
+        "[Drangleic Castle] Frozen Flower"
+      ]
+    },
+    {
+      "ID": 20216120,
+      "Entries": [
+        "[Drangleic Castle] Petrified Something"
+      ]
+    },
+    {
+      "ID": 20216130,
+      "Entries": [
+        "[Drangleic Castle] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 20216140,
+      "Entries": [
+        "[Drangleic Castle] Torch"
+      ]
+    },
+    {
+      "ID": 20245000,
+      "Entries": [
+        "[Undead Crypt - Chest] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 20245010,
+      "Entries": [
+        "[Undead Crypt - Chest] Magic Stone, Darknight Stone"
+      ]
+    },
+    {
+      "ID": 20245020,
+      "Entries": [
+        "[Undead Crypt - Chest] Dried Fingers, Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 20245030,
+      "Entries": [
+        "[Undead Crypt - Chest] Crushed Eye Orb, Fire Seed"
+      ]
+    },
+    {
+      "ID": 20245040,
+      "Entries": [
+        "[Undead Crypt - Chest] Olenford's Staff, Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 20245050,
+      "Entries": [
+        "[Undead Crypt - Chest] Avelyn, Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 20245070,
+      "Entries": [
+        "[Undead Crypt - Chest] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 20245080,
+      "Entries": [
+        "[Undead Crypt - Chest] Torch"
+      ]
+    },
+    {
+      "ID": 20245090,
+      "Entries": [
+        "[Undead Crypt - Chest] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 20245100,
+      "Entries": [
+        "[Undead Crypt - Chest] Darknight Stone"
+      ]
+    },
+    {
+      "ID": 20246000,
+      "Entries": [
+        "[Undead Crypt] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 20246010,
+      "Entries": [
+        "[Undead Crypt] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 20246011,
+      "Entries": [
+        "[Undead Crypt_NG+] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20246030,
+      "Entries": [
+        "[Undead Crypt] Simpleton's Spice, Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 20246040,
+      "Entries": [
+        "[Undead Crypt] Simpleton's Spice, Black Firebomb"
+      ]
+    },
+    {
+      "ID": 20246050,
+      "Entries": [
+        "[Undead Crypt] Bracing Knuckle Ring+2"
+      ]
+    },
+    {
+      "ID": 20246070,
+      "Entries": [
+        "[Undead Crypt] Large Soul of a Proud Knight, Dragon Charm"
+      ]
+    },
+    {
+      "ID": 20246100,
+      "Entries": [
+        "[Undead Crypt] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20246110,
+      "Entries": [
+        "[Undead Crypt] Titanite Chunk, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 20246111,
+      "Entries": [
+        "[Undead Crypt_NG+] Titanite Chunk, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 20246120,
+      "Entries": [
+        "[Undead Crypt] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 20246121,
+      "Entries": [
+        "[Undead Crypt_NG+] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 20246130,
+      "Entries": [
+        "[Undead Crypt] Divine Blessing, Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20246140,
+      "Entries": [
+        "[Undead Crypt] Mace of the Insolent, Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20246150,
+      "Entries": [
+        "[Undead Crypt] Radiant Lifegem, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 20246151,
+      "Entries": [
+        "[Undead Crypt_NG+] Elizabeth Mushroom, Homeward Bone"
+      ]
+    },
+    {
+      "ID": 20246180,
+      "Entries": [
+        "[Undead Crypt] Human Effigy"
+      ]
+    },
+    {
+      "ID": 20246190,
+      "Entries": [
+        "[Undead Crypt] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20246200,
+      "Entries": [
+        "[Undead Crypt] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20246210,
+      "Entries": [
+        "[Undead Crypt] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 20246220,
+      "Entries": [
+        "[Undead Crypt] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 20246500,
+      "Entries": [
+        "[Undead Crypt] King's Ring"
+      ]
+    },
+    {
+      "ID": 20265000,
+      "Entries": [
+        "[Dragon Memories - Chest] Lifegem"
+      ]
+    },
+    {
+      "ID": 20266000,
+      "Entries": [
+        "[Dragon Memories] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 40035000,
+      "Entries": [
+        "[Chasm of the Abyss - Chest] Lifegem"
+      ]
+    },
+    {
+      "ID": 40036000,
+      "Entries": [
+        "[Chasm of the Abyss] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "[Dyna & Tillo - Small SSS] Common"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "[Dyna & Tillo - Small SSS] Uncommon"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "[Dyna & Tillo - Small SSS] Rare"
+      ]
+    },
+    {
+      "ID": 50000003,
+      "Entries": [
+        "[Dyna & Tillo - Small SSS]"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "[Dyna & Tillo - SSS] Common"
+      ]
+    },
+    {
+      "ID": 50000101,
+      "Entries": [
+        "[Dyna & Tillo - SSS] Uncommon"
+      ]
+    },
+    {
+      "ID": 50000102,
+      "Entries": [
+        "[Dyna & Tillo - SSS] Rare"
+      ]
+    },
+    {
+      "ID": 50000103,
+      "Entries": [
+        "[Dyna & Tillo - SSS]"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "[Dyna & Tillo - PS] Common"
+      ]
+    },
+    {
+      "ID": 50000201,
+      "Entries": [
+        "[Dyna & Tillo - PS] Uncommon"
+      ]
+    },
+    {
+      "ID": 50000202,
+      "Entries": [
+        "[Dyna & Tillo - PS] Rare"
+      ]
+    },
+    {
+      "ID": 50000203,
+      "Entries": [
+        "[Dyna & Tillo - PS]"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "[Dyna & Tillo - Prism]"
+      ]
+    },
+    {
+      "ID": 50000301,
+      "Entries": [
+        "[Dyna & Tillo - Prism]"
+      ]
+    },
+    {
+      "ID": 50000302,
+      "Entries": [
+        "[Dyna & Tillo - Prism]"
+      ]
+    },
+    {
+      "ID": 50000303,
+      "Entries": [
+        "[Dyna & Tillo - Prism] Common"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "[Wooden Chest - Destroyed Chest Reward] Rubbish"
+      ]
+    },
+    {
+      "ID": 50355010,
+      "Entries": [
+        "[Shulva - Chest] Dried Root"
+      ]
+    },
+    {
+      "ID": 50355020,
+      "Entries": [
+        "[Shulva - Chest] Boltstone, Bleed Stone"
+      ]
+    },
+    {
+      "ID": 50355030,
+      "Entries": [
+        "[Shulva - Chest] Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50355050,
+      "Entries": [
+        "[Shulva - Chest] Catarina Helm"
+      ]
+    },
+    {
+      "ID": 50355060,
+      "Entries": [
+        "[Shulva - Chest] Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 50355070,
+      "Entries": [
+        "[Shulva - Chest] Bloodbite Ring+1"
+      ]
+    },
+    {
+      "ID": 50355080,
+      "Entries": [
+        "[Shulva - Chest] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 50355090,
+      "Entries": [
+        "[Shulva - Chest] Flynn's Ring"
+      ]
+    },
+    {
+      "ID": 50355100,
+      "Entries": [
+        "[Shulva - Chest] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 50355110,
+      "Entries": [
+        "[Shulva - Chest] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 50355120,
+      "Entries": [
+        "[Shulva - Chest] Dragon Stone"
+      ]
+    },
+    {
+      "ID": 50355130,
+      "Entries": [
+        "[Shulva - Chest] Denial"
+      ]
+    },
+    {
+      "ID": 50355140,
+      "Entries": [
+        "[Shulva - Chest] Dark Greatsword"
+      ]
+    },
+    {
+      "ID": 50355150,
+      "Entries": [
+        "[Shulva - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 50355180,
+      "Entries": [
+        "[Shulva - Chest] Flower Skirt"
+      ]
+    },
+    {
+      "ID": 50355190,
+      "Entries": [
+        "[Shulva - Chest] Dried Root"
+      ]
+    },
+    {
+      "ID": 50355200,
+      "Entries": [
+        "[Shulva - Chest] Dried Root"
+      ]
+    },
+    {
+      "ID": 50355210,
+      "Entries": [
+        "[Shulva - Chest] Dried Root"
+      ]
+    },
+    {
+      "ID": 50355220,
+      "Entries": [
+        "[Shulva - Chest] Lightning Clutch Ring"
+      ]
+    },
+    {
+      "ID": 50355230,
+      "Entries": [
+        "[Shulva - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 50355240,
+      "Entries": [
+        "[Shulva - Chest] Sanctum Shield"
+      ]
+    },
+    {
+      "ID": 50355250,
+      "Entries": [
+        "[Shulva - Chest] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 50355260,
+      "Entries": [
+        "[Shulva - Chest] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 50355270,
+      "Entries": [
+        "[Shulva - Chest] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50355280,
+      "Entries": [
+        "[Shulva - Chest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 50355330,
+      "Entries": [
+        "[Shulva - Chest] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50355340,
+      "Entries": [
+        "[Shulva - Chest] Bleed Stone"
+      ]
+    },
+    {
+      "ID": 50355350,
+      "Entries": [
+        "[Shulva - Chest] Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50356000,
+      "Entries": [
+        "[Shulva] Poisonbite Ring+1"
+      ]
+    },
+    {
+      "ID": 50356010,
+      "Entries": [
+        "[Shulva] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50356020,
+      "Entries": [
+        "[Shulva] Lightning Urn"
+      ]
+    },
+    {
+      "ID": 50356030,
+      "Entries": [
+        "[Shulva] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50356040,
+      "Entries": [
+        "[Shulva] Sanctum Mace"
+      ]
+    },
+    {
+      "ID": 50356050,
+      "Entries": [
+        "[Shulva] Sanctum Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 50356060,
+      "Entries": [
+        "[Shulva] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 50356070,
+      "Entries": [
+        "[Shulva] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 50356080,
+      "Entries": [
+        "[Shulva] Vine Balm"
+      ]
+    },
+    {
+      "ID": 50356090,
+      "Entries": [
+        "[Shulva] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 50356100,
+      "Entries": [
+        "[Shulva] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50356110,
+      "Entries": [
+        "[Shulva] Crown of the Sunken King"
+      ]
+    },
+    {
+      "ID": 50356130,
+      "Entries": [
+        "[Shulva] Dragon Charm"
+      ]
+    },
+    {
+      "ID": 50356140,
+      "Entries": [
+        "[Shulva] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50356150,
+      "Entries": [
+        "[Shulva] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50356160,
+      "Entries": [
+        "[Shulva] Lifegem"
+      ]
+    },
+    {
+      "ID": 50356170,
+      "Entries": [
+        "[Shulva] Poison Stone"
+      ]
+    },
+    {
+      "ID": 50356180,
+      "Entries": [
+        "[Shulva] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50356190,
+      "Entries": [
+        "[Shulva] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 50356200,
+      "Entries": [
+        "[Shulva] Magic Bolt"
+      ]
+    },
+    {
+      "ID": 50356210,
+      "Entries": [
+        "[Shulva] Blackweed Balm"
+      ]
+    },
+    {
+      "ID": 50356220,
+      "Entries": [
+        "[Shulva] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50356230,
+      "Entries": [
+        "[Shulva] Repair Powder"
+      ]
+    },
+    {
+      "ID": 50356240,
+      "Entries": [
+        "[Shulva] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 50356250,
+      "Entries": [
+        "[Shulva] Focus Souls"
+      ]
+    },
+    {
+      "ID": 50356260,
+      "Entries": [
+        "[Shulva] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50356270,
+      "Entries": [
+        "[Shulva] Repair Powder"
+      ]
+    },
+    {
+      "ID": 50356280,
+      "Entries": [
+        "[Shulva] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50356290,
+      "Entries": [
+        "[Shulva] Lifegem"
+      ]
+    },
+    {
+      "ID": 50356300,
+      "Entries": [
+        "[Shulva] Dung Pie"
+      ]
+    },
+    {
+      "ID": 50356310,
+      "Entries": [
+        "[Shulva] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 50356320,
+      "Entries": [
+        "[Shulva] Torch"
+      ]
+    },
+    {
+      "ID": 50356330,
+      "Entries": [
+        "[Shulva] Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 50356340,
+      "Entries": [
+        "[Shulva] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50356350,
+      "Entries": [
+        "[Shulva] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50356360,
+      "Entries": [
+        "[Shulva] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50356370,
+      "Entries": [
+        "[Shulva] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 50356380,
+      "Entries": [
+        "[Shulva] Notched Whip"
+      ]
+    },
+    {
+      "ID": 50356390,
+      "Entries": [
+        "[Shulva] Torch"
+      ]
+    },
+    {
+      "ID": 50356400,
+      "Entries": [
+        "[Shulva] Long Bow"
+      ]
+    },
+    {
+      "ID": 50356410,
+      "Entries": [
+        "[Shulva] Torch"
+      ]
+    },
+    {
+      "ID": 50356420,
+      "Entries": [
+        "[Shulva] Sanctum Crossbow"
+      ]
+    },
+    {
+      "ID": 50356430,
+      "Entries": [
+        "[Shulva] Soul of a Great Hero, Dragon Charm"
+      ]
+    },
+    {
+      "ID": 50356440,
+      "Entries": [
+        "[Shulva] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50356450,
+      "Entries": [
+        "[Shulva] Hexing Urn"
+      ]
+    },
+    {
+      "ID": 50356460,
+      "Entries": [
+        "[Shulva] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 50356470,
+      "Entries": [
+        "[Shulva] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50356480,
+      "Entries": [
+        "[Shulva] Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 50356490,
+      "Entries": [
+        "[Shulva] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50356500,
+      "Entries": [
+        "[Shulva] Vine Balm"
+      ]
+    },
+    {
+      "ID": 50356510,
+      "Entries": [
+        "[Shulva] Drakeblood Greatsword"
+      ]
+    },
+    {
+      "ID": 50356520,
+      "Entries": [
+        "[Shulva] Drakeblood Set"
+      ]
+    },
+    {
+      "ID": 50356530,
+      "Entries": [
+        "[Shulva] Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 50356540,
+      "Entries": [
+        "[Shulva] Yorgh's Ring"
+      ]
+    },
+    {
+      "ID": 50356560,
+      "Entries": [
+        "[Shulva] Dark Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 50356570,
+      "Entries": [
+        "[Shulva] Darknight Stone"
+      ]
+    },
+    {
+      "ID": 50356580,
+      "Entries": [
+        "[Shulva] Thunder Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 50356590,
+      "Entries": [
+        "[Shulva] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 50356600,
+      "Entries": [
+        "[Shulva] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 50356610,
+      "Entries": [
+        "[Shulva] Brightbug"
+      ]
+    },
+    {
+      "ID": 50356620,
+      "Entries": [
+        "[Shulva] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 50356630,
+      "Entries": [
+        "[Shulva] Eternal Sanctum Key"
+      ]
+    },
+    {
+      "ID": 50356640,
+      "Entries": [
+        "[Shulva] Sanctum Knight Set"
+      ]
+    },
+    {
+      "ID": 50356650,
+      "Entries": [
+        "[Shulva] Dried Root"
+      ]
+    },
+    {
+      "ID": 50356660,
+      "Entries": [
+        "[Shulva] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50356670,
+      "Entries": [
+        "[Shulva] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 50365000,
+      "Entries": [
+        "[Brume Tower - Chest] Bonfire Ascetic, Human Effigy"
+      ]
+    },
+    {
+      "ID": 50365010,
+      "Entries": [
+        "[Brume Tower - Chest]  Caestus"
+      ]
+    },
+    {
+      "ID": 50365020,
+      "Entries": [
+        "[Brume Tower - Chest] Life Ring+3"
+      ]
+    },
+    {
+      "ID": 50365030,
+      "Entries": [
+        "[Brume Tower - Chest] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50365040,
+      "Entries": [
+        "[Brume Tower - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50365050,
+      "Entries": [
+        "[Brume Tower - Chest] Blacksteel Katana"
+      ]
+    },
+    {
+      "ID": 50365060,
+      "Entries": [
+        "[Brume Tower - Chest] Repair Powder"
+      ]
+    },
+    {
+      "ID": 50365070,
+      "Entries": [
+        "[Brume Tower - Chest] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 50365080,
+      "Entries": [
+        "[Brume Tower - Chest] Sorcery Clutch Ring"
+      ]
+    },
+    {
+      "ID": 50365090,
+      "Entries": [
+        "[Brume Tower - Chest] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50365500,
+      "Entries": [
+        "[Brume Tower - Chest] Old Radiant Lifegem, Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50365510,
+      "Entries": [
+        "[Brume Tower - Chest] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 50365530,
+      "Entries": [
+        "[Brume Tower - Chest] Catarina Gauntlets, Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 50365540,
+      "Entries": [
+        "[Brume Tower - Chest] Catarina Gauntlets, Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 50365550,
+      "Entries": [
+        "[Brume Tower - Chest] Pilgrim's Spontoon"
+      ]
+    },
+    {
+      "ID": 50365560,
+      "Entries": [
+        "[Brume Tower - Chest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 50365570,
+      "Entries": [
+        "[Brume Tower - Chest] Fire Snake"
+      ]
+    },
+    {
+      "ID": 50365580,
+      "Entries": [
+        "[Brume Tower - Chest] Brightbug"
+      ]
+    },
+    {
+      "ID": 50365590,
+      "Entries": [
+        "[Brume Tower - Chest] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50365600,
+      "Entries": [
+        "[Brume Tower - Chest] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50365610,
+      "Entries": [
+        "[Brume Tower - Chest] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50365620,
+      "Entries": [
+        "[Brume Tower - Chest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 50365630,
+      "Entries": [
+        "[Brume Tower - Chest] Recollection"
+      ]
+    },
+    {
+      "ID": 50365640,
+      "Entries": [
+        "[Brume Tower - Chest] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 50365650,
+      "Entries": [
+        "[Brume Tower - Chest] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 50365660,
+      "Entries": [
+        "[Brume Tower - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 50365670,
+      "Entries": [
+        "[Brume Tower - Chest] Petrified Something"
+      ]
+    },
+    {
+      "ID": 50365680,
+      "Entries": [
+        "[Brume Tower - Chest] Strength Ring"
+      ]
+    },
+    {
+      "ID": 50365690,
+      "Entries": [
+        "[Brume Tower - Chest] Hollow Skin"
+      ]
+    },
+    {
+      "ID": 50365700,
+      "Entries": [
+        "[Brume Tower - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 50366000,
+      "Entries": [
+        "[Brume Tower] Dance of Fire"
+      ]
+    },
+    {
+      "ID": 50366020,
+      "Entries": [
+        "[Brume Tower] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50366030,
+      "Entries": [
+        "[Brume Tower] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 50366040,
+      "Entries": [
+        "[Brume Tower] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50366070,
+      "Entries": [
+        "[Brume Tower] Simpleton's Ring"
+      ]
+    },
+    {
+      "ID": 50366120,
+      "Entries": [
+        "[Brume Tower] Torch"
+      ]
+    },
+    {
+      "ID": 50366130,
+      "Entries": [
+        "[Brume Tower] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 50366140,
+      "Entries": [
+        "[Brume Tower] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 50366150,
+      "Entries": [
+        "[Brume Tower] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50366160,
+      "Entries": [
+        "[Brume Tower] Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 50366170,
+      "Entries": [
+        "[Brume Tower] Spell Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 50366200,
+      "Entries": [
+        "[Brume Tower] Simpleton's Ring"
+      ]
+    },
+    {
+      "ID": 50366210,
+      "Entries": [
+        "[Brume Tower] Tower Key"
+      ]
+    },
+    {
+      "ID": 50366220,
+      "Entries": [
+        "[Brume Tower] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50366230,
+      "Entries": [
+        "[Brume Tower] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50366240,
+      "Entries": [
+        "[Brume Tower] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 50366250,
+      "Entries": [
+        "[Brume Tower] Titanite Slab, Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50366260,
+      "Entries": [
+        "[Brume Tower] Flame Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 50366270,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50366280,
+      "Entries": [
+        "[Brume Tower] Dried Root"
+      ]
+    },
+    {
+      "ID": 50366290,
+      "Entries": [
+        "[Brume Tower] Morning Star"
+      ]
+    },
+    {
+      "ID": 50366300,
+      "Entries": [
+        "[Brume Tower] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 50366310,
+      "Entries": [
+        "[Brume Tower] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50366320,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50366330,
+      "Entries": [
+        "[Brume Tower] Vine Balm"
+      ]
+    },
+    {
+      "ID": 50366340,
+      "Entries": [
+        "[Brume Tower] Dexterity Ring"
+      ]
+    },
+    {
+      "ID": 50366350,
+      "Entries": [
+        "[Brume Tower] Rouge Water"
+      ]
+    },
+    {
+      "ID": 50366360,
+      "Entries": [
+        "[Brume Tower] Scythe"
+      ]
+    },
+    {
+      "ID": 50366370,
+      "Entries": [
+        "[Brume Tower] Prism Stone"
+      ]
+    },
+    {
+      "ID": 50366380,
+      "Entries": [
+        "[Brume Tower] Blackweed Balm"
+      ]
+    },
+    {
+      "ID": 50366390,
+      "Entries": [
+        "[Brume Tower] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 50366400,
+      "Entries": [
+        "[Brume Tower] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50366410,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50366420,
+      "Entries": [
+        "[Brume Tower] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50366430,
+      "Entries": [
+        "[Brume Tower] Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 50366440,
+      "Entries": [
+        "[Brume Tower] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50366450,
+      "Entries": [
+        "[Brume Tower] Bleeding Serum"
+      ]
+    },
+    {
+      "ID": 50366460,
+      "Entries": [
+        "[Brume Tower] Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 50366470,
+      "Entries": [
+        "[Brume Tower] Flame Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 50366480,
+      "Entries": [
+        "[Brume Tower] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50366490,
+      "Entries": [
+        "[Brume Tower] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50366500,
+      "Entries": [
+        "[Brume Tower] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50366510,
+      "Entries": [
+        "[Brume Tower] Raw Stone"
+      ]
+    },
+    {
+      "ID": 50366520,
+      "Entries": [
+        "[Brume Tower] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 50366530,
+      "Entries": [
+        "[Brume Tower] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50366540,
+      "Entries": [
+        "[Brume Tower] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 50366550,
+      "Entries": [
+        "[Brume Tower] Broadsword"
+      ]
+    },
+    {
+      "ID": 50366560,
+      "Entries": [
+        "[Brume Tower] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 50366570,
+      "Entries": [
+        "[Brume Tower] Dried Root"
+      ]
+    },
+    {
+      "ID": 50366580,
+      "Entries": [
+        "[Brume Tower] Magic Stone"
+      ]
+    },
+    {
+      "ID": 50366590,
+      "Entries": [
+        "[Brume Tower] Amber Herb"
+      ]
+    },
+    {
+      "ID": 50366600,
+      "Entries": [
+        "[Brume Tower] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 50366610,
+      "Entries": [
+        "[Brume Tower] Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 50366620,
+      "Entries": [
+        "[Brume Tower] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 50366630,
+      "Entries": [
+        "[Brume Tower] Morning Star"
+      ]
+    },
+    {
+      "ID": 50366640,
+      "Entries": [
+        "[Brume Tower] Dexterity Ring"
+      ]
+    },
+    {
+      "ID": 50366650,
+      "Entries": [
+        "[Brume Tower] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50366660,
+      "Entries": [
+        "[Brume Tower] Palestone"
+      ]
+    },
+    {
+      "ID": 50366670,
+      "Entries": [
+        "[Brume Tower] Green Blossom"
+      ]
+    },
+    {
+      "ID": 50366680,
+      "Entries": [
+        "[Brume Tower] Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 50366690,
+      "Entries": [
+        "[Brume Tower] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50366700,
+      "Entries": [
+        "[Brume Tower] Dispelling Ring+1"
+      ]
+    },
+    {
+      "ID": 50366710,
+      "Entries": [
+        "[Brume Tower] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50366720,
+      "Entries": [
+        "[Brume Tower] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 50366730,
+      "Entries": [
+        "[Brume Tower] Mad Warrior Set"
+      ]
+    },
+    {
+      "ID": 50366740,
+      "Entries": [
+        "[Brume Tower] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 50366750,
+      "Entries": [
+        "[Brume Tower] Rouge Water"
+      ]
+    },
+    {
+      "ID": 50366760,
+      "Entries": [
+        "[Brume Tower] Partizan"
+      ]
+    },
+    {
+      "ID": 50366770,
+      "Entries": [
+        "[Brume Tower] Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 50366780,
+      "Entries": [
+        "[Brume Tower] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 50366790,
+      "Entries": [
+        "[Brume Tower] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 50366800,
+      "Entries": [
+        "[Brume Tower] Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 50366810,
+      "Entries": [
+        "[Brume Tower] Alonne Greatbow"
+      ]
+    },
+    {
+      "ID": 50366820,
+      "Entries": [
+        "[Brume Tower] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 50366830,
+      "Entries": [
+        "[Brume Tower] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50366840,
+      "Entries": [
+        "[Brume Tower] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 50366850,
+      "Entries": [
+        "[Brume Tower] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50366860,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50366870,
+      "Entries": [
+        "[Brume Tower] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 50366880,
+      "Entries": [
+        "[Brume Tower] Broadsword"
+      ]
+    },
+    {
+      "ID": 50366890,
+      "Entries": [
+        "[Brume Tower] Petrified Something"
+      ]
+    },
+    {
+      "ID": 50366900,
+      "Entries": [
+        "[Brume Tower] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50366910,
+      "Entries": [
+        "[Brume Tower] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 50366920,
+      "Entries": [
+        "[Brume Tower] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 50366930,
+      "Entries": [
+        "[Brume Tower] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50366940,
+      "Entries": [
+        "[Brume Tower] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 50366950,
+      "Entries": [
+        "[Brume Tower] Repair Powder"
+      ]
+    },
+    {
+      "ID": 50366960,
+      "Entries": [
+        "[Brume Tower] Twinblade"
+      ]
+    },
+    {
+      "ID": 50366970,
+      "Entries": [
+        "[Brume Tower] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50366980,
+      "Entries": [
+        "[Brume Tower] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50366990,
+      "Entries": [
+        "[Brume Tower] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 50367000,
+      "Entries": [
+        "[Brume Tower] Dried Root"
+      ]
+    },
+    {
+      "ID": 50367010,
+      "Entries": [
+        "[Brume Tower] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 50367020,
+      "Entries": [
+        "[Brume Tower] Torch"
+      ]
+    },
+    {
+      "ID": 50367030,
+      "Entries": [
+        "[Brume Tower] Simpleton's Spice"
+      ]
+    },
+    {
+      "ID": 50367040,
+      "Entries": [
+        "[Brume Tower] Crimson Water"
+      ]
+    },
+    {
+      "ID": 50367050,
+      "Entries": [
+        "[Brume Tower] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50367060,
+      "Entries": [
+        "[Brume Tower] Pharros Mask"
+      ]
+    },
+    {
+      "ID": 50367070,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50367080,
+      "Entries": [
+        "[Brume Tower] Dexterity Ring"
+      ]
+    },
+    {
+      "ID": 50367090,
+      "Entries": [
+        "[Brume Tower] Dried Root"
+      ]
+    },
+    {
+      "ID": 50367100,
+      "Entries": [
+        "[Brume Tower] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50367110,
+      "Entries": [
+        "[Brume Tower] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50367120,
+      "Entries": [
+        "[Brume Tower] Recollection"
+      ]
+    },
+    {
+      "ID": 50367130,
+      "Entries": [
+        "[Brume Tower] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 50367140,
+      "Entries": [
+        "[Brume Tower] Baneful Bird Ring"
+      ]
+    },
+    {
+      "ID": 50368000,
+      "Entries": [
+        "[Brume Tower] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 50368010,
+      "Entries": [
+        "[Brume Tower] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 50368020,
+      "Entries": [
+        "[Brume Tower] Old Mundane Stone"
+      ]
+    },
+    {
+      "ID": 50368030,
+      "Entries": [
+        "[Brume Tower] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 50368040,
+      "Entries": [
+        "[Brume Tower] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 50368050,
+      "Entries": [
+        "[Brume Tower] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 50368060,
+      "Entries": [
+        "[Brume Tower] Palestone"
+      ]
+    },
+    {
+      "ID": 50368070,
+      "Entries": [
+        "[Brume Tower] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 50368080,
+      "Entries": [
+        "[Brume Tower] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50368090,
+      "Entries": [
+        "[Brume Tower] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 50375500,
+      "Entries": [
+        "[Eleum Loyce - Chest] Eye of the Priestess"
+      ]
+    },
+    {
+      "ID": 50375510,
+      "Entries": [
+        "[Eleum Loyce - Chest] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 50375520,
+      "Entries": [
+        "[Eleum Loyce - Chest] Sorcerer's Twinblade"
+      ]
+    },
+    {
+      "ID": 50375530,
+      "Entries": [
+        "[Eleum Loyce - Chest] Soul Flash"
+      ]
+    },
+    {
+      "ID": 50375540,
+      "Entries": [
+        "[Eleum Loyce - Chest] Soul Vessel"
+      ]
+    },
+    {
+      "ID": 50375550,
+      "Entries": [
+        "[Eleum Loyce - Chest] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 50375560,
+      "Entries": [
+        "[Eleum Loyce - Chest] Boltstone"
+      ]
+    },
+    {
+      "ID": 50375570,
+      "Entries": [
+        "[Eleum Loyce - Chest] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50375580,
+      "Entries": [
+        "[Eleum Loyce - Chest] Brightbug"
+      ]
+    },
+    {
+      "ID": 50375590,
+      "Entries": [
+        "[Eleum Loyce - Chest] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 50375600,
+      "Entries": [
+        "[Eleum Loyce - Chest] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50375610,
+      "Entries": [
+        "[Eleum Loyce - Chest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 50375620,
+      "Entries": [
+        "[Eleum Loyce - Chest] Old Radiant Lifegem, Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50375630,
+      "Entries": [
+        "[Eleum Loyce - Chest] Dried Root"
+      ]
+    },
+    {
+      "ID": 50375640,
+      "Entries": [
+        "[Eleum Loyce - Chest] Splintering Lightning Spear"
+      ]
+    },
+    {
+      "ID": 50375650,
+      "Entries": [
+        "[Eleum Loyce - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50375660,
+      "Entries": [
+        "[Eleum Loyce - Chest] Fire Clutch Ring"
+      ]
+    },
+    {
+      "ID": 50375670,
+      "Entries": [
+        "[Eleum Loyce - Chest] Twin-headed Greatbow"
+      ]
+    },
+    {
+      "ID": 50375680,
+      "Entries": [
+        "[Eleum Loyce - Chest] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50375690,
+      "Entries": [
+        "[Eleum Loyce - Chest] Twinkling Titanite, Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 50375700,
+      "Entries": [
+        "[Eleum Loyce - Chest] Curved Nil Greatsword"
+      ]
+    },
+    {
+      "ID": 50375710,
+      "Entries": [
+        "[Eleum Loyce - Chest] Vessel Shield"
+      ]
+    },
+    {
+      "ID": 50375720,
+      "Entries": [
+        "[Eleum Loyce - Chest] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50375730,
+      "Entries": [
+        "[Eleum Loyce - Chest] Silver Talisman"
+      ]
+    },
+    {
+      "ID": 50375740,
+      "Entries": [
+        "[Eleum Loyce - Chest] Durgo's Hat"
+      ]
+    },
+    {
+      "ID": 50376000,
+      "Entries": [
+        "[Eleum Loyce] Monastery Charm"
+      ]
+    },
+    {
+      "ID": 50376010,
+      "Entries": [
+        "[Eleum Loyce] Retainer Staff"
+      ]
+    },
+    {
+      "ID": 50376020,
+      "Entries": [
+        "[Eleum Loyce] Hexing Urn"
+      ]
+    },
+    {
+      "ID": 50376030,
+      "Entries": [
+        "[Eleum Loyce] Vine Balm"
+      ]
+    },
+    {
+      "ID": 50376040,
+      "Entries": [
+        "[Eleum Loyce] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50376050,
+      "Entries": [
+        "[Eleum Loyce] Torch"
+      ]
+    },
+    {
+      "ID": 50376060,
+      "Entries": [
+        "[Eleum Loyce] Repair Powder"
+      ]
+    },
+    {
+      "ID": 50376070,
+      "Entries": [
+        "[Eleum Loyce] Small Blue Burr"
+      ]
+    },
+    {
+      "ID": 50376080,
+      "Entries": [
+        "[Eleum Loyce] Dark Clutch Ring"
+      ]
+    },
+    {
+      "ID": 50376090,
+      "Entries": [
+        "[Eleum Loyce] Old Bell Helm"
+      ]
+    },
+    {
+      "ID": 50376100,
+      "Entries": [
+        "[Eleum Loyce] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 50376110,
+      "Entries": [
+        "[Eleum Loyce] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50376120,
+      "Entries": [
+        "[Eleum Loyce] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50376130,
+      "Entries": [
+        "[Eleum Loyce] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 50376140,
+      "Entries": [
+        "[Eleum Loyce] Prism Stone"
+      ]
+    },
+    {
+      "ID": 50376150,
+      "Entries": [
+        "[Eleum Loyce] Green Blossom"
+      ]
+    },
+    {
+      "ID": 50376160,
+      "Entries": [
+        "[Eleum Loyce] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 50376170,
+      "Entries": [
+        "[Eleum Loyce] Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 50376180,
+      "Entries": [
+        "[Eleum Loyce] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 50376190,
+      "Entries": [
+        "[Eleum Loyce] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50376200,
+      "Entries": [
+        "[Eleum Loyce] Magic Stone"
+      ]
+    },
+    {
+      "ID": 50376210,
+      "Entries": [
+        "[Eleum Loyce] Scimitar"
+      ]
+    },
+    {
+      "ID": 50376220,
+      "Entries": [
+        "[Eleum Loyce] Dried Root"
+      ]
+    },
+    {
+      "ID": 50376230,
+      "Entries": [
+        "[Eleum Loyce] Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 50376240,
+      "Entries": [
+        "[Eleum Loyce] Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 50376250,
+      "Entries": [
+        "[Eleum Loyce] Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 50376260,
+      "Entries": [
+        "[Eleum Loyce] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 50376270,
+      "Entries": [
+        "[Eleum Loyce] Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 50376280,
+      "Entries": [
+        "[Eleum Loyce] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 50376290,
+      "Entries": [
+        "[Eleum Loyce] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 50376300,
+      "Entries": [
+        "[Eleum Loyce] Garrison Ward Key"
+      ]
+    },
+    {
+      "ID": 50376310,
+      "Entries": [
+        "[Eleum Loyce] Monastery Charm"
+      ]
+    },
+    {
+      "ID": 50376320,
+      "Entries": [
+        "[Eleum Loyce] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50376330,
+      "Entries": [
+        "[Eleum Loyce] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50376340,
+      "Entries": [
+        "[Eleum Loyce] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50376350,
+      "Entries": [
+        "[Eleum Loyce] Winged Spear"
+      ]
+    },
+    {
+      "ID": 50376360,
+      "Entries": [
+        "[Eleum Loyce] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 50376370,
+      "Entries": [
+        "[Eleum Loyce] Crimson Water"
+      ]
+    },
+    {
+      "ID": 50376380,
+      "Entries": [
+        "[Eleum Loyce] Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 50376390,
+      "Entries": [
+        "[Eleum Loyce] Blackweed Balm"
+      ]
+    },
+    {
+      "ID": 50376400,
+      "Entries": [
+        "[Eleum Loyce] Ring of Resistance+1"
+      ]
+    },
+    {
+      "ID": 50376410,
+      "Entries": [
+        "[Eleum Loyce] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50376420,
+      "Entries": [
+        "[Eleum Loyce] Azal's Staff"
+      ]
+    },
+    {
+      "ID": 50376430,
+      "Entries": [
+        "[Eleum Loyce] Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 50376440,
+      "Entries": [
+        "[Eleum Loyce] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 50376450,
+      "Entries": [
+        "[Eleum Loyce] Mirrah Hat"
+      ]
+    },
+    {
+      "ID": 50376460,
+      "Entries": [
+        "[Eleum Loyce] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50376470,
+      "Entries": [
+        "[Eleum Loyce] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50376490,
+      "Entries": [
+        "[Eleum Loyce] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 50376510,
+      "Entries": [
+        "[Eleum Loyce] Priest's Chime"
+      ]
+    },
+    {
+      "ID": 50376520,
+      "Entries": [
+        "[Eleum Loyce] Vine Balm"
+      ]
+    },
+    {
+      "ID": 50376530,
+      "Entries": [
+        "[Eleum Loyce] Dark Dance"
+      ]
+    },
+    {
+      "ID": 50376540,
+      "Entries": [
+        "[Eleum Loyce] Ring of the Embedded"
+      ]
+    },
+    {
+      "ID": 50376550,
+      "Entries": [
+        "[Eleum Loyce] Twilight Herb"
+      ]
+    },
+    {
+      "ID": 50376560,
+      "Entries": [
+        "[Eleum Loyce] Northwarder Set"
+      ]
+    },
+    {
+      "ID": 50376570,
+      "Entries": [
+        "[Eleum Loyce] Bone Fist"
+      ]
+    },
+    {
+      "ID": 50376580,
+      "Entries": [
+        "[Eleum Loyce] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50376590,
+      "Entries": [
+        "[Eleum Loyce] Human Effigy"
+      ]
+    },
+    {
+      "ID": 50376600,
+      "Entries": [
+        "[Eleum Loyce] Dried Root"
+      ]
+    },
+    {
+      "ID": 50376610,
+      "Entries": [
+        "[Eleum Loyce] Crimson Water"
+      ]
+    },
+    {
+      "ID": 50376620,
+      "Entries": [
+        "[Eleum Loyce] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 50376630,
+      "Entries": [
+        "[Eleum Loyce] Dried Root"
+      ]
+    },
+    {
+      "ID": 50376640,
+      "Entries": [
+        "[Eleum Loyce] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 50376650,
+      "Entries": [
+        "[Eleum Loyce] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 50376660,
+      "Entries": [
+        "[Eleum Loyce] Amber Herb"
+      ]
+    },
+    {
+      "ID": 50376670,
+      "Entries": [
+        "[Eleum Loyce] Large Club"
+      ]
+    },
+    {
+      "ID": 50376680,
+      "Entries": [
+        "[Eleum Loyce] Dried Root"
+      ]
+    },
+    {
+      "ID": 50376690,
+      "Entries": [
+        "[Eleum Loyce] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 50376710,
+      "Entries": [
+        "[Eleum Loyce] Ring of the Living"
+      ]
+    },
+    {
+      "ID": 50376730,
+      "Entries": [
+        "[Eleum Loyce] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 50376740,
+      "Entries": [
+        "[Eleum Loyce] Blackweed Balm"
+      ]
+    },
+    {
+      "ID": 50376750,
+      "Entries": [
+        "[Eleum Loyce] Dried Root"
+      ]
+    },
+    {
+      "ID": 50376760,
+      "Entries": [
+        "[Eleum Loyce] Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 50376770,
+      "Entries": [
+        "[Eleum Loyce] Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "[Event - Black Gulch Giants] Forgotten Key, Soul of a Giant"
+      ]
+    },
+    {
+      "ID": 60002000,
+      "Entries": [
+        "[Event - Forest of Fallen Giants] Seed of a Tree of Giants"
+      ]
+    },
+    {
+      "ID": 60003000,
+      "Entries": [
+        "[Event - Dragon Shrine] Petrified Egg"
+      ]
+    },
+    {
+      "ID": 60004000,
+      "Entries": [
+        "[Event - Giant Memories] Soul of a Giant"
+      ]
+    },
+    {
+      "ID": 60005000,
+      "Entries": [
+        "[Event - Dragon Memories] Ancient Dragon Soul"
+      ]
+    },
+    {
+      "ID": 60006000,
+      "Entries": [
+        "[Event - Licia] Rotunda Lockstone, Soothing Sunlight, Idol's Chime, Saint Set"
+      ]
+    },
+    {
+      "ID": 60007000,
+      "Entries": [
+        "[Event - 1000 Dark Spirits Killed] Lingering Dragoncrest Ring+2"
+      ]
+    },
+    {
+      "ID": 60007100,
+      "Entries": [
+        "[Event - 1000 Successful Invasions] Ring of Thorns+2"
+      ]
+    },
+    {
+      "ID": 60007200,
+      "Entries": [
+        "[Event - Complete No Death Run] Illusory Ring of a Conqueror"
+      ]
+    },
+    {
+      "ID": 60007300,
+      "Entries": [
+        "[Event - Complete No Bonfire Run] Illusory Ring of the Exalted"
+      ]
+    },
+    {
+      "ID": 60008000,
+      "Entries": [
+        "[Event - Pursuer Early Encounter] Soul of the Pursuer, Ring of Blades"
+      ]
+    },
+    {
+      "ID": 60008100,
+      "Entries": [
+        "[Event] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 60008110,
+      "Entries": [
+        "[Event] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 60009000,
+      "Entries": [
+        "[Event - Petrified Lion Warrior] Fang Key"
+      ]
+    },
+    {
+      "ID": 60010000,
+      "Entries": [
+        "[Event] Soldier Key"
+      ]
+    },
+    {
+      "ID": 60011000,
+      "Entries": [
+        "[Event - Speak to Ancient Dragon] Ashen Mist Heart"
+      ]
+    },
+    {
+      "ID": 60012000,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012010,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012020,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012030,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012040,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012050,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012060,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012070,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012080,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012090,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60012100,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60013000,
+      "Entries": [
+        "[Event] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 60014000,
+      "Entries": [
+        "[Event] Scorching Iron Scepter"
+      ]
+    },
+    {
+      "ID": 60015000,
+      "Entries": [
+        "[Event] Soul of Nadalia, Bride of Ash"
+      ]
+    },
+    {
+      "ID": 60016000,
+      "Entries": [
+        "[Event] Crown of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 60019000,
+      "Entries": [
+        "[Event] Smelter Wedge"
+      ]
+    },
+    {
+      "ID": 60020000,
+      "Entries": [
+        "[Event] Crown of the Sunken King"
+      ]
+    },
+    {
+      "ID": 60030000,
+      "Entries": [
+        "[Event] Soul of Aava, the King's Pet, Garrison Ward Key"
+      ]
+    },
+    {
+      "ID": 60031000,
+      "Entries": [
+        "[Event] Crown of the Ivory King"
+      ]
+    },
+    {
+      "ID": 60040000,
+      "Entries": [
+        "[Event] Soul of the Last Giant"
+      ]
+    },
+    {
+      "ID": 60041000,
+      "Entries": [
+        "[Event] Ancient Dragon Soul"
+      ]
+    },
+    {
+      "ID": 60042000,
+      "Entries": [
+        "[Event] Forgotten Key"
+      ]
+    },
+    {
+      "ID": 60043000,
+      "Entries": [
+        "[Event] Giant's Kinship"
+      ]
+    },
+    {
+      "ID": 60044000,
+      "Entries": [
+        "[Event] Giant Lord Soul"
+      ]
+    },
+    {
+      "ID": 60044001,
+      "Entries": [
+        "[Event] Giant Lord Soul, Ring of Giants+2"
+      ]
+    },
+    {
+      "ID": 60045000,
+      "Entries": [
+        "[Event] Rotunda Lockstone"
+      ]
+    },
+    {
+      "ID": 60046000,
+      "Entries": [
+        "[Event] Key to the Embedded"
+      ]
+    },
+    {
+      "ID": 60046001,
+      "Entries": [
+        "[Event] Demon of Song Soul"
+      ]
+    },
+    {
+      "ID": 60050000,
+      "Entries": [
+        "[Event] Aldia Key"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "[Unknown] Black Flamestone Dagger, Black Flamestone Parma"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 90000001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99995008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99996008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

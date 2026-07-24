@@ -1,0 +1,23 @@
+{
+  "Key": "Development",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Development"
+      }
+  ],
+  "Params": [
+    "m99_DofBank",
+    "m99_EnvLightTexBank",
+    "m99_FogBank",
+    "m99_LensFlareBank",
+    "m99_LensFlareExBank",
+    "m99_LightBank",
+    "m99_LightScatteringBank",
+    "m99_PointLightBank",
+    "m99_ShadowBank",
+    "m99_ToneCorrectBank",
+    "m99_ToneMapBank",
+    "s99_LightBank"
+  ]
+}

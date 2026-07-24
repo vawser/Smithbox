@@ -1,0 +1,53 @@
+{
+  "Name": "SpellSoulConsumeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35060000,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "Dark Dance"
+      ]
+    }
+  ]
+}

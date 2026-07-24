@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <HpGainPar />
+        <StGainPar />
+        <HpGainAnimLimit />
+        <StGainAnimLimit />
+        <HpGainDelay />
+        <StGainDelay />
+        <EnemyHpGainPar />
+        <EnemyHpGainAnimLimit />
+        <EnemyHpGainDelay />
+        <HpMinSize />
+        <StMinSize />
+        <HpMaxSize />
+        <StMaxSize />
+    </Field>
+</PARAMMETA>

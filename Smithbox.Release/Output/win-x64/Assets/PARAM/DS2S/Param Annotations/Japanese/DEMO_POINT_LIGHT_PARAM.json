@@ -1,0 +1,103 @@
+{
+  "Param": "DEMO_POINT_LIGHT_PARAM",
+  "Type": "DEMO_POINT_LIGHT_PARAM",
+  "Name": "DEMO_POINT_LIGHT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "offsetX",
+      "Name": "位置X",
+      "Description": "x座標の位置のオフセットを設定します。"
+    },
+    {
+      "Field": "offsetY",
+      "Name": "位置Y",
+      "Description": "y座標の位置のオフセットを設定します。"
+    },
+    {
+      "Field": "offsetZ",
+      "Name": "位置Z",
+      "Description": "y座標の位置のオフセットを設定します。"
+    },
+    {
+      "Field": "diffuseR",
+      "Name": "デフューズR",
+      "Description": "デフューズの赤色を設定します。"
+    },
+    {
+      "Field": "diffuseG",
+      "Name": "デフューズG",
+      "Description": "デフューズの緑色を設定します。"
+    },
+    {
+      "Field": "diffuseB",
+      "Name": "デフューズB",
+      "Description": "デフューズの青色を設定します。"
+    },
+    {
+      "Field": "diffuseA",
+      "Name": "デフューズA",
+      "Description": "デフューズのαを設定します。"
+    },
+    {
+      "Field": "specularR",
+      "Name": "スペキュラR",
+      "Description": "スペキュラの赤色を設定します。"
+    },
+    {
+      "Field": "specularG",
+      "Name": "スペキュラG",
+      "Description": "スペキュラの緑色を設定します。"
+    },
+    {
+      "Field": "specularB",
+      "Name": "スペキュラB",
+      "Description": "スペキュラの青色を設定します。"
+    },
+    {
+      "Field": "specularA",
+      "Name": "スペキュラA",
+      "Description": "スペキュラのαを設定します。"
+    },
+    {
+      "Field": "radius",
+      "Name": "ライトの半径",
+      "Description": "ライトの半径を設定します。"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "表示しようとする光源の優先度(0.0～1.0)です。表示できる光源の最大数を超えた場合には優先度が高いものほど表示されやすくなります。ただし、状況に応じて順序が前後する可能性もあります。"
+    },
+    {
+      "Field": "depthShadow",
+      "Name": "影の濃さ",
+      "Description": "影の濃さ(0.0～1.0)です。高いほど濃く表示され、0.0で影無効と同等の処理となります。"
+    },
+    {
+      "Field": "blinkTimeMax",
+      "Name": "明滅の時間(最大)",
+      "Description": "明滅の最小時間を設定します。最小～最大の範囲からランダムで抽出された値が1回の明滅時間となり、明滅毎に繰り返します。"
+    },
+    {
+      "Field": "blinkTimeMin",
+      "Name": "明滅の時間(最小)",
+      "Description": "明滅の最大時間を設定します。最小～最大の範囲からランダムで抽出された値が1回の明滅時間となり、明滅毎に繰り返します。"
+    },
+    {
+      "Field": "blinkPower",
+      "Name": "明滅の強さ",
+      "Description": "明滅の最小強さを設定します。最小～1.0の範囲での強さで明滅が行われます。"
+    },
+    {
+      "Field": "enableShadow",
+      "Name": "影を落とす",
+      "Description": "影を落とすかを設定します。"
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

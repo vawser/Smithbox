@@ -1,0 +1,1208 @@
+{
+  "Param": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Type": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Name": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Description": "Defines visual effects (SFX), effect sizes, and dummy references used when attacks or impacts interact with different material types and surfaces.",
+  "Fields": [
+    {
+      "Field": "bodyEffect01",
+      "Name": "Body: SFX 1",
+      "Description": "Primary visual effect ID used for normal body material interactions."
+    },
+    {
+      "Field": "bodyEffect02",
+      "Name": "Body: SFX 2",
+      "Description": "Secondary visual effect ID used for normal body material interactions."
+    },
+    {
+      "Field": "bodySize01",
+      "Name": "Body: Size 1",
+      "Description": "Primary size or scale parameter for body material effects."
+    },
+    {
+      "Field": "bodySize02",
+      "Name": "Body: Size 2",
+      "Description": "Secondary size or scale parameter for body material effects."
+    },
+    {
+      "Field": "bodyDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodyEffect01",
+      "Name": "Petrified Boss Body: SFX 1",
+      "Description": "Primary visual effect ID used for body material interactions."
+    },
+    {
+      "Field": "petrifiedBossBodyEffect02",
+      "Name": "Petrified Boss Body: SFX 2",
+      "Description": "Secondary visual effect ID used for body material interactions."
+    },
+    {
+      "Field": "petrifiedBossBodySize01",
+      "Name": "Petrified Boss Body: Size 1",
+      "Description": "Primary size or scale parameter for body material effects."
+    },
+    {
+      "Field": "petrifiedBossBodySize02",
+      "Name": "Petrified Boss Body: Size 2",
+      "Description": "Secondary size or scale parameter for body material effects."
+    },
+    {
+      "Field": "petrifiedBossBodyDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "noneEffect01",
+      "Name": "None: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "noneEffect02",
+      "Name": "None: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "noneSize01",
+      "Name": "None: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "noneSize02",
+      "Name": "None: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "noneDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "metalEffect01",
+      "Name": "Metal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "metalEffect02",
+      "Name": "Metal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "metalSize01",
+      "Name": "Metal: Body: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "metalSize02",
+      "Name": "Metal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "metalDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalEffect01",
+      "Name": "Heavy Metal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "heavymetalEffect02",
+      "Name": "Heavy Metal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "heavymetalSize01",
+      "Name": "Heavy Metal: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "heavymetalSize02",
+      "Name": "Heavy Metal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "heavymetalDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "woodEffect01",
+      "Name": "Wood: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "woodEffect02",
+      "Name": "Wood: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "woodSize01",
+      "Name": "Wood: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "woodSize02",
+      "Name": "Wood: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "woodDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "waterEffect01",
+      "Name": "Water: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "waterEffect02",
+      "Name": "Water: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "waterSize01",
+      "Name": "Water: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "waterSize02",
+      "Name": "Water: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "waterDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "swampEffect01",
+      "Name": "Swamp: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "swampEffect02",
+      "Name": "Swamp: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "swampSize01",
+      "Name": "Swamp: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "swampSize02",
+      "Name": "Swamp: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "swampDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "lumberEffect01",
+      "Name": "Lumber: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "lumberEffect02",
+      "Name": "Lumber: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "lumberSize01",
+      "Name": "Lumber: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "lumberSize02",
+      "Name": "Lumber: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "lumberDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "meatEffect01",
+      "Name": "Living Flesh: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "meatEffect02",
+      "Name": "Living Flesh: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "meatSize01",
+      "Name": "Living Flesh: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "meatSize02",
+      "Name": "Living Flesh: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "meatDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatEffect01",
+      "Name": "Dead Flesh: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "deadmeatEffect02",
+      "Name": "Dead Flesh: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "deadmeatSize01",
+      "Name": "Dead Flesh: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "deadmeatSize02",
+      "Name": "Dead Flesh: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "deadmeatDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "insectEffect01",
+      "Name": "Insect: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "insectEffect02",
+      "Name": "Insect: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "insectSize01",
+      "Name": "Insect: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "insectSize02",
+      "Name": "Insect: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "insectDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "giantEffect01",
+      "Name": "Giant Skin: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "giantEffect02",
+      "Name": "Giant Skin: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "giantSize01",
+      "Name": "Giant Skin: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "giantSize02",
+      "Name": "Giant Skin: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "giantDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "boneEffect01",
+      "Name": "Bone: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "boneEffect02",
+      "Name": "Bone: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "boneSize01",
+      "Name": "Bone: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "boneSize02",
+      "Name": "Bone: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "boneDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "copperEffect01",
+      "Name": "Copper: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "copperEffect02",
+      "Name": "Copper: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "copperSize01",
+      "Name": "Copper: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "copperSize02",
+      "Name": "Copper: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "copperDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "energyEffect01",
+      "Name": "Energy: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "energyEffect02",
+      "Name": "Energy: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "energySize01",
+      "Name": "Energy: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "energySize02",
+      "Name": "Energy: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "energyDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "fireEffect01",
+      "Name": "Fire: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "fireEffect02",
+      "Name": "Fire: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "fireSize01",
+      "Name": "Fire: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "fireSize02",
+      "Name": "Fire: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "fireDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "thunderEffect01",
+      "Name": "Lightning: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "thunderEffect02",
+      "Name": "Lightning: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "thunderSize01",
+      "Name": "Lightning: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "thunderSize02",
+      "Name": "Lightning: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "thunderDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "darkEffect01",
+      "Name": "Dark: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "darkEffect02",
+      "Name": "Dark: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "darkSize01",
+      "Name": "Dark: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "darkSize02",
+      "Name": "Dark: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "darkDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "magicEffect01",
+      "Name": "Magic: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "magicEffect02",
+      "Name": "Magic: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "magicSize01",
+      "Name": "Magic: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "magicSize02",
+      "Name": "Magic: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "magicDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEffect01",
+      "Name": "Stone: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneEffect02",
+      "Name": "Stone: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneSize01",
+      "Name": "Stone: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneSize02",
+      "Name": "Stone: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "dirtEffect01",
+      "Name": "Dirt: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "dirtEffect02",
+      "Name": "Dirt: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "dirtSize01",
+      "Name": "Dirt: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "dirtSize02",
+      "Name": "Dirt: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "dirtDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "carpetEffect01",
+      "Name": "Carpet: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "carpetEffect02",
+      "Name": "Carpet: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "carpetSize01",
+      "Name": "Carpet: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "carpetSize02",
+      "Name": "Carpet: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "carpetDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "grassEffect01",
+      "Name": "Grass: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "grassEffect02",
+      "Name": "Grass: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "grassSize01",
+      "Name": "Grass: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "grassSize02",
+      "Name": "Grass: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "grassDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "gravelEffect01",
+      "Name": "Gravel: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "gravelEffect02",
+      "Name": "Gravel: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "gravelSize01",
+      "Name": "Gravel: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "gravelSize02",
+      "Name": "Gravel: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "gravelDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "clothEffect01",
+      "Name": "Cloth: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "clothEffect02",
+      "Name": "Cloth: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "clothSize01",
+      "Name": "Cloth: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "clothSize02",
+      "Name": "Cloth: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "clothDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "sandEffect01",
+      "Name": "Sand: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "sandEffect02",
+      "Name": "Sand: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "sandSize01",
+      "Name": "Sand: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "sandSize02",
+      "Name": "Sand: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "sandDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "ashEffect01",
+      "Name": "Ash: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "ashEffect02",
+      "Name": "Ash: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "ashSize01",
+      "Name": "Ash: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "ashSize02",
+      "Name": "Ash: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "ashDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampEffect01",
+      "Name": "Poison Swamp: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "poisonswampEffect02",
+      "Name": "Poison Swamp: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "poisonswampSize01",
+      "Name": "Poison Swamp: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "poisonswampSize02",
+      "Name": "Poison Swamp: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "poisonswampDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "oilEffect01",
+      "Name": "Oil: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "oilEffect02",
+      "Name": "Oil: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "oilSize01",
+      "Name": "Oil: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "oilSize02",
+      "Name": "Oil: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "oilDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarEffect01",
+      "Name": "Coal Tar: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "coaltarEffect02",
+      "Name": "Coal Tar: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "coaltarSize01",
+      "Name": "Coal Tar: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "coaltarSize02",
+      "Name": "Coal Tar: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "coaltarDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "lavaEffect01",
+      "Name": "Lava: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "lavaEffect02",
+      "Name": "Lava: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "lavaSize01",
+      "Name": "Lava: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "lavaSize02",
+      "Name": "Lava: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "lavaDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "stringEffect01",
+      "Name": "Spider Web: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stringEffect02",
+      "Name": "Spider Web: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stringSize01",
+      "Name": "Spider Web: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stringSize02",
+      "Name": "Spider Web: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stringDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalEffect01",
+      "Name": "Sulfur Crystal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "sulfurcrystalEffect02",
+      "Name": "Sulfur Crystal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "sulfurcrystalSize01",
+      "Name": "Sulfur Crystal: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "sulfurcrystalSize02",
+      "Name": "Sulfur Crystal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "sulfurcrystalDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "soulEffect01",
+      "Name": "Soul: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "soulEffect02",
+      "Name": "Soul: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "soulSize01",
+      "Name": "Soul: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "soulSize02",
+      "Name": "Soul: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "soulDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "frogEffect01",
+      "Name": "Frog: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "frogEffect02",
+      "Name": "Frog: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "frogSize01",
+      "Name": "Frog: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "frogSize02",
+      "Name": "Frog: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "frogDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterEffect01",
+      "Name": "Stone Water: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneWaterEffect02",
+      "Name": "Stone Water: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneWaterSize01",
+      "Name": "Stone Water: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneWaterSize02",
+      "Name": "Stone Water: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneWaterDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergyEffect01",
+      "Name": "Stone Energy: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneEnergyEffect02",
+      "Name": "Stone Energy: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "stoneEnergySize01",
+      "Name": "Stone Energy: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneEnergySize02",
+      "Name": "Stone Energy: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "stoneEnergyDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "coverEffect01",
+      "Name": "Substitute: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "coverEffect02",
+      "Name": "Substitute: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "coverSize01",
+      "Name": "Substitute: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "coverSize02",
+      "Name": "Substitute: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "coverDummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Effect01",
+      "Name": "Unknown 0: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat0Effect02",
+      "Name": "Unknown 0: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat0Size01",
+      "Name": "Unknown 0: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat0Size02",
+      "Name": "Unknown 0: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat0Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Effect01",
+      "Name": "Unknown 1: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat1Effect02",
+      "Name": "Unknown 1: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat1Size01",
+      "Name": "Unknown 1: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat1Size02",
+      "Name": "Unknown 1: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat1Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Effect01",
+      "Name": "Unknown 2: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat2Effect02",
+      "Name": "Unknown 2: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat2Size01",
+      "Name": "Unknown 2: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat2Size02",
+      "Name": "Unknown 2: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat2Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Effect01",
+      "Name": "Unknown 3: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat3Effect02",
+      "Name": "Unknown 3: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat3Size01",
+      "Name": "Unknown 3: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat3Size02",
+      "Name": "Unknown 3: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat3Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Effect01",
+      "Name": "Unknown 4: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat4Effect02",
+      "Name": "Unknown 4: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat4Size01",
+      "Name": "Unknown 4: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat4Size02",
+      "Name": "Unknown 4: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat4Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Effect01",
+      "Name": "Unknown 5: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat5Effect02",
+      "Name": "Unknown 5: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat5Size01",
+      "Name": "Unknown 5: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat5Size02",
+      "Name": "Unknown 5: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat5Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Effect01",
+      "Name": "Unknown 6: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat6Effect02",
+      "Name": "Unknown 6: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat6Size01",
+      "Name": "Unknown 6: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat6Size02",
+      "Name": "Unknown 6: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat6Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Effect01",
+      "Name": "Unknown 7: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat7Effect02",
+      "Name": "Unknown 7: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat7Size01",
+      "Name": "Unknown 7: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat7Size02",
+      "Name": "Unknown 7: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat7Dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Effect01",
+      "Name": "Unknown 8: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat8Effect02",
+      "Name": "Unknown 8: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
+    },
+    {
+      "Field": "unkMat8Size01",
+      "Name": "Unknown 8: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat8Size02",
+      "Name": "Unknown 8: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
+    },
+    {
+      "Field": "unkMat8Dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

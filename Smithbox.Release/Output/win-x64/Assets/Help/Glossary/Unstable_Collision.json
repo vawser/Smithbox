@@ -1,0 +1,17 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Unstable Collision",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A term for a collision which doesn't save position.",
+        "",
+        "If you quit out on them, the game will restore you to wherever you were before stepping on the unstable collision.",
+        "If there is no such location, you will be sent to that map's (or the previous map's) default spawn point.",
+        "This is implemented conditionally for some collisions through event flags."
+    ]
+}

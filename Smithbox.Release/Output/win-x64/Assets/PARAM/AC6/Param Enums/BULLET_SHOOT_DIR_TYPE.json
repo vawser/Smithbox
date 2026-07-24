@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_SHOOT_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SHOOT_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon (Ignore Target)"
+        }
+      ]
+    }
+  ]
+}

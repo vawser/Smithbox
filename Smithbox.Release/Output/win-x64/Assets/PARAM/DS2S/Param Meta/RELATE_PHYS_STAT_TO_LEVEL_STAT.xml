@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <spellSlot  Enum="LevelStatTypes"/>
+        <spellUsesLevel  Enum="LevelStatTypes"/>
+        <hpMax  Enum="LevelStatTypes"/>
+        <staminaMax  Enum="LevelStatTypes"/>
+        <equipLoadMax  Enum="LevelStatTypes"/>
+        <physicalAttackByStrength  Enum="LevelStatTypes"/>
+        <physicalAttackByDexterity  Enum="LevelStatTypes"/>
+        <magicAttack  Enum="LevelStatTypes"/>
+        <flameAttack  Enum="LevelStatTypes"/>
+        <lightningAttack  Enum="LevelStatTypes"/>
+        <darkAttack  Enum="LevelStatTypes"/>
+        <weaponBreakAdditionalEffect  Enum="LevelStatTypes"/>
+        <bleedingAdditionalEffect  Enum="LevelStatTypes"/>
+        <poisonAdditionalEffect  Enum="LevelStatTypes"/>
+        <curseAdditionalEffect  Enum="LevelStatTypes"/>
+        <chantingTimeCorrectScale  Enum="LevelStatTypes"/>
+        <criticalAttackCorrectScale  Enum="LevelStatTypes"/>
+        <fluctuationCorrectScaleMin  Enum="LevelStatTypes"/>
+        <fluctuationCorrectScaleMax  Enum="LevelStatTypes"/>
+        <weaponBreakResistance  Enum="LevelStatTypes"/>
+        <bleedingResistance  Enum="LevelStatTypes"/>
+        <poisonResistance  Enum="LevelStatTypes"/>
+        <petrifactionResistance  Enum="LevelStatTypes"/>
+        <curseResistance  Enum="LevelStatTypes"/>
+        <magicResistance  Enum="LevelStatTypes"/>
+        <flameResistance  Enum="LevelStatTypes"/>
+        <lightningResistance  Enum="LevelStatTypes"/>
+        <darkResistance  Enum="LevelStatTypes"/>
+        <stepInvincibleTimeRate  Enum="LevelStatTypes"/>
+        <rollingInvincibleTimeRate  Enum="LevelStatTypes"/>
+        <jumpInvincibleTimeRate  Enum="LevelStatTypes"/>
+        <changeEquipSpeedScale  Enum="LevelStatTypes"/>
+        <useItemSpeedScale  Enum="LevelStatTypes"/>
+        <blockSpeedScale  Enum="LevelStatTypes"/>
+        <defense  Enum="LevelStatTypes"/>
+        <itemDropTicketCount  Enum="LevelStatTypes"/>
+        <misfireChestTrapTicketCount  Enum="LevelStatTypes"/>
+        <criticalTicketCount  Enum="LevelStatTypes"/>
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <checkType1  Enum="ITEM_USED_DIALOG_CHECK_TYPE"/>
+        <checkType2  Enum="ITEM_USED_DIALOG_CHECK_TYPE"/>
+        <checkType3  Enum="ITEM_USED_DIALOG_CHECK_TYPE"/>
+        <checkType4  Enum="ITEM_USED_DIALOG_CHECK_TYPE"/>
+        <displayTextId1 FmgRef="common" />
+        <displayTextId2 FmgRef="common" />
+        <displayTextId3 FmgRef="common" />
+        <displayTextId4 FmgRef="common" />
+    </Field>
+</PARAMMETA>

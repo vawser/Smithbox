@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "INTERFACE_Theme_Missing_Entry",
+      "Text": "Theme is missing entry, defaulted this vector to 1, 1, 1, 1"
+    },
+    {
+      "Key": "INTERFACE_UI_Failed_Deseralize",
+      "Text": "Failed to derseralize UI JSON."
+    },
+    {
+      "Key": "INTERFACE_UI_Failed_Read",
+      "Text": "Failed to load UI configuration: {0}.\nDefault configuration has been restored."
+    },
+    {
+      "Key": "INTERFACE_Theme_Failed_Deseralize",
+      "Text": "Failed to derseralize Theme JSON."
+    },
+    {
+      "Key": "INTERFACE_Theme_Failed_Read",
+      "Text": "Failed to load Theme configuration: {0}."
+    },
+    {
+      "Key": "INTERFACE_Theme_Already_Exists",
+      "Text": "Theme with this name already exists. Overwrite?"
+    },
+    {
+      "Key": "INTERFACE_Theme_Invalid_Filename",
+      "Text": "Invalid filename for theme."
+    },
+    {
+      "Key": "INTERFACE_Message_Box_OK",
+      "Text": "OK"
+    },
+    {
+      "Key": "INTERFACE_Message_Box_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "INTERFACE_Message_Box_Yes",
+      "Text": "Yes"
+    },
+    {
+      "Key": "INTERFACE_Message_Box_No",
+      "Text": "No"
+    },
+    {
+      "Key": "INTERFACE_ImGui_Binding_Error",
+      "Text": "No registered ImGui binding with id {0}"
+    }
+  ]
+}

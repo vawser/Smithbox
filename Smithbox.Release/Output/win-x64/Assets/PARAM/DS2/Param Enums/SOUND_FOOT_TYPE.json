@@ -1,0 +1,29 @@
+{
+  "Key": "SOUND_FOOT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_FOOT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Specified ID"
+        }
+      ]
+    }
+  ]
+}

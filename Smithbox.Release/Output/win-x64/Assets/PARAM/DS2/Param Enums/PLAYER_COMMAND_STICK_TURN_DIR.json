@@ -1,0 +1,29 @@
+{
+  "Key": "PLAYER_COMMAND_STICK_TURN_DIR",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_TURN_DIR"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rotate right"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left rotation"
+        }
+      ]
+    }
+  ]
+}

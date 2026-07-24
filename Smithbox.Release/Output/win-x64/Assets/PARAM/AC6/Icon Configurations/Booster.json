@@ -1,0 +1,8 @@
+{
+  "Name": "Booster",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_PartsThumbnails"
+  ],
+  "SubTexturePrefix": "BS_A_"
+}

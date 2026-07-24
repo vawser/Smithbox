@@ -1,0 +1,358 @@
+{
+  "Param": "EQUIP_PARAM_GOODS_ST",
+  "Type": "EQUIP_PARAM_GOODS_ST",
+  "Name": "EQUIP_PARAM_GOODS_ST",
+  "Description": "Determines the parameters of goods.",
+  "Fields": [
+    {
+      "Field": "refId",
+      "Name": "Call ID",
+      "Description": "ID used for the item."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight. In kilograms."
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Price",
+      "Description": "Soul cost of reinforcement. See ShopLineupParam for shop prices."
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "The price when this item is sold. Determines the souls received when feeding this weapon to Frampt"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Behavior action ID applied when item is used."
+    },
+    {
+      "Field": "replaceItemId",
+      "Name": "Replacement Item ID",
+      "Description": "Item ID to add when item is consumed."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Determines ordering in menu."
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The ID this item uses for world tendency."
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Message Text ID",
+      "Description": "Message ID used when displaying the YesNo dialog."
+    },
+    {
+      "Field": "magicId",
+      "Name": "Magic ID",
+      "Description": "Magic ID to use when item is consumed."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon ID used for this item."
+    },
+    {
+      "Field": "modelId",
+      "Name": "Model ID",
+      "Description": "Model ID used for this item."
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Sequential Achievement ID",
+      "Description": "The sequential achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "maxNum",
+      "Name": "Max Held Count",
+      "Description": "The maximum number of this item held."
+    },
+    {
+      "Field": "consumeHeroPoint",
+      "Name": "Humanity Consumption",
+      "Description": "The amount of humanity consumption on use."
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "Dexterity over Start Value",
+      "Description": "Skill over start value"
+    },
+    {
+      "Field": "goodsType",
+      "Name": "Goods Type",
+      "Description": "The type of item."
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Call ID Type",
+      "Description": "The ID category to use for the refId field."
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "The SpEffect category this spell belongs to"
+    },
+    {
+      "Field": "goodsCategory",
+      "Name": "Item Category",
+      "Description": "Category for this item."
+    },
+    {
+      "Field": "goodsUseAnim",
+      "Name": "Item Use Animation",
+      "Description": "Set the animation to play when using the item."
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "Interaction Menu Type",
+      "Description": "Menu type that opens when using an item."
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "Use Limit Category",
+      "Description": "Limit usage based on applied SpEffect."
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "Replace Category",
+      "Description": "Condition category to add to call ID"
+    },
+    {
+      "Field": "vowType0",
+      "Name": "Pledge Type: 0",
+      "Description": ""
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Pledge Type: 1",
+      "Description": ""
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Pledge Type: 2",
+      "Description": ""
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Pledge Type: 3",
+      "Description": ""
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Pledge Type: 4",
+      "Description": ""
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Pledge Type: 5",
+      "Description": ""
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Pledge Type: 6",
+      "Description": ""
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Pledge Type: 7",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "Pledge Type: 8",
+      "Description": ""
+    },
+    {
+      "Field": "vowType9",
+      "Name": "Pledge Type: 9",
+      "Description": ""
+    },
+    {
+      "Field": "vowType10",
+      "Name": "Pledge Type: 10",
+      "Description": ""
+    },
+    {
+      "Field": "vowType11",
+      "Name": "Pledge Type: 11",
+      "Description": ""
+    },
+    {
+      "Field": "vowType12",
+      "Name": "Pledge Type: 12",
+      "Description": ""
+    },
+    {
+      "Field": "vowType13",
+      "Name": "Pledge Type: 13",
+      "Description": ""
+    },
+    {
+      "Field": "vowType14",
+      "Name": "Pledge Type: 14",
+      "Description": ""
+    },
+    {
+      "Field": "vowType15",
+      "Name": "Pledge Type: 15",
+      "Description": ""
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Enable as Host Player",
+      "Description": "If ON, this item is usable if the user is a host player."
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Enable as Gray Phantom",
+      "Description": "If ON, this item is usable if the user is a gray phantom player."
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Enable as White Phantom",
+      "Description": "If ON, this item is usable if the user is a white phantom player."
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Enable as Black Phantom",
+      "Description": "If ON, this item is usable if the user is a black phantom player."
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "Enable in Multiplayer",
+      "Description": "If ON, this item is usable in a multiplayer session."
+    },
+    {
+      "Field": "enable_pvp",
+      "Name": "Enable only in Multiplayer",
+      "Description": "If ON, this item is only usable if in a multiplayer session."
+    },
+    {
+      "Field": "disable_offline",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEquip",
+      "Name": "Is Equippable",
+      "Description": "If ON, this item can be equipped."
+    },
+    {
+      "Field": "isConsume",
+      "Name": "Is Consumed",
+      "Description": "If ON, this item can be consumed. This will remove one instance of the item upon consumption."
+    },
+    {
+      "Field": "isAutoEquip",
+      "Name": "Is Automatically Equipped",
+      "Description": "If ON, this item is automaticlly equipped when picked up."
+    },
+    {
+      "Field": "isEstablishment",
+      "Name": "Is Guidance Item",
+      "Description": "If ON, this item is a stationary item."
+    },
+    {
+      "Field": "isOnlyOne",
+      "Name": "Is Unique Item",
+      "Description": "If ON, this item is an unique item."
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can Drop",
+      "Description": "If ON, this item can be dropped."
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Can Deposit",
+      "Description": "If ON, this item can be deposited into the repository."
+    },
+    {
+      "Field": "isDisableHand",
+      "Name": "Disable if Right Hand is Empty",
+      "Description": "If ON, this item cannot be used when the right-handed weapon is empty."
+    },
+    {
+      "Field": "IsTravelItem",
+      "Name": "Is Travel Item",
+      "Description": "If ON, this item is considered a 'travel' item."
+    },
+    {
+      "Field": "isSuppleItem",
+      "Name": "Is Replenishable Item",
+      "Description": "If ON, this item is automatically replenished."
+    },
+    {
+      "Field": "isFullSuppleItem",
+      "Name": "Is Restocked Item",
+      "Description": "If ON, this item is automatically restocked."
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "Is Enhancement Source",
+      "Description": "If ON, this item is used to apply an 'enhancement' to equipment or self."
+    },
+    {
+      "Field": "isFixItem",
+      "Name": "Is Repairable Item",
+      "Description": "IF ON, this item can be repaired."
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Is Drop Disabled in Multiplayer",
+      "Description": "If ON, this item cannot be dropped in a multiplayer session."
+    },
+    {
+      "Field": "disableUseAtColiseum",
+      "Name": "Is Disabled in PvP Arena",
+      "Description": "If ON, this item cannot be used when in the PvP arena."
+    },
+    {
+      "Field": "disableUseAtOutOfColiseum",
+      "Name": "Is Enabled only in PvP Arena",
+      "Description": "If ON, this item can only be used in the PvP arena."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Good Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Evil Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    }
+  ]
+}

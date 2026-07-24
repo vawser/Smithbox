@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a form of collision used to connect different maps together. When the player steps on a ConnectCollision, the specified map(s) will be loaded." />
+  
+  <Field>
+    <CollisionName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <CollisionIndex
+    IndexProperty="" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <UnkT0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

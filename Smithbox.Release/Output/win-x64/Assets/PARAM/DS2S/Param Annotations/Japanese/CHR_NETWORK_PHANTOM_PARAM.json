@@ -1,0 +1,218 @@
+{
+  "Param": "CHR_NETWORK_PHANTOM_PARAM",
+  "Type": "CHR_NETWORK_PHANTOM_PARAM",
+  "Name": "CHR_NETWORK_PHANTOM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "level0ShaderType",
+      "Name": "制約レベル０シェーダー設定",
+      "Description": ""
+    },
+    {
+      "Field": "level0FullBodySfx",
+      "Name": "制約レベル０ 適用全身SFX",
+      "Description": ""
+    },
+    {
+      "Field": "level1FullBodySfx",
+      "Name": "制約レベル１ 適用全身SFX",
+      "Description": ""
+    },
+    {
+      "Field": "level2FullBodySfx",
+      "Name": "制約レベル２ 適用全身SFX",
+      "Description": ""
+    },
+    {
+      "Field": "level3FullBodySfx",
+      "Name": "制約レベル３ 適用全身SFX",
+      "Description": ""
+    },
+    {
+      "Field": "entryMotionType",
+      "Name": "出現モーション",
+      "Description": ""
+    },
+    {
+      "Field": "speedDownHpMinRate",
+      "Name": "速度低下発生HP 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "speedDownHpMaxRate",
+      "Name": "速度低下発生HP 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "speedDownRate",
+      "Name": "速度低下割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "entrySfxId",
+      "Name": "生成SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "entryFullBodySfx",
+      "Name": "生成全身SFXパラメータ",
+      "Description": ""
+    },
+    {
+      "Field": "deadType",
+      "Name": "死亡タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "limitTime",
+      "Name": "マルチプレイ制限時間[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "returnWaitTime",
+      "Name": "マルチプレイ終了帰還待ち時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "respawnPosTypeSuccess",
+      "Name": "マルチ終了帰還位置 成功",
+      "Description": ""
+    },
+    {
+      "Field": "respawnPosTypeFaild",
+      "Name": "マルチ終了帰還位置 失敗",
+      "Description": ""
+    },
+    {
+      "Field": "respawnPosTypeDead",
+      "Name": "マルチ終了帰還位置 死亡",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "respawnConditionTypeSuccess",
+      "Name": "マルチ終了復帰状態 成功",
+      "Description": ""
+    },
+    {
+      "Field": "respawnConditionTypeFaild",
+      "Name": "マルチ終了復帰状態 失敗",
+      "Description": ""
+    },
+    {
+      "Field": "respawnConditionTypeDead",
+      "Name": "マルチ終了復帰状態 死亡",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "voiceChatType",
+      "Name": "ボイスチャット設定",
+      "Description": ""
+    },
+    {
+      "Field": "hostReturnWarpEnable",
+      "Name": "ホストからの送還許可",
+      "Description": ""
+    },
+    {
+      "Field": "ownerReturnWarpEnable",
+      "Name": "自力帰還許可",
+      "Description": ""
+    },
+    {
+      "Field": "handicapEnable",
+      "Name": "ハンディ設定",
+      "Description": ""
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "最大HP補正[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "summonEnable",
+      "Name": "召喚者設定",
+      "Description": ""
+    },
+    {
+      "Field": "summonSupportEnable",
+      "Name": "召喚者補助許可設定",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableBossSoul",
+      "Name": "獲得ソウル許可 ボス",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableEnemySoul",
+      "Name": "獲得ソウル許可 ザコ",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableNpcSoul",
+      "Name": "獲得ソウル許可 NPC",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableHostSoul",
+      "Name": "獲得ソウル許可 ホスト",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableNetPhantomSoul",
+      "Name": "獲得ソウル許可 霊体",
+      "Description": ""
+    },
+    {
+      "Field": "healItemUsageType",
+      "Name": "回復アイテム使用タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "getSoulRate",
+      "Name": "獲得ソウル補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTimeStep1",
+      "Name": "マルチプレイ見た目一段階落とす時間[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTimeStep2",
+      "Name": "マルチプレイ見た目二段階落とす時間[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "level1ShaderType",
+      "Name": "制約レベル１シェーダー設定",
+      "Description": ""
+    },
+    {
+      "Field": "level2ShaderType",
+      "Name": "制約レベル２シェーダー設定",
+      "Description": ""
+    },
+    {
+      "Field": "level3ShaderType",
+      "Name": "制約レベル３シェーダー設定",
+      "Description": ""
+    },
+    {
+      "Field": "getBossSoulRate",
+      "Name": "獲得ボスソウル補正倍率[倍]",
+      "Description": ""
+    }
+  ]
+}

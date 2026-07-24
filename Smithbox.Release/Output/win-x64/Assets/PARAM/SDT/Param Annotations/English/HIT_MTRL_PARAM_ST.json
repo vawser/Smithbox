@@ -1,0 +1,153 @@
+{
+  "Param": "HIT_MTRL_PARAM_ST",
+  "Type": "HIT_MTRL_PARAM_ST",
+  "Name": "HIT_MTRL_PARAM_ST",
+  "Description": "Collision type properties",
+  "Fields": [
+    {
+      "Field": "aiVolumeRate",
+      "Name": "",
+      "Description": "Multiplies AI sound produced when in contact with this material"
+    },
+    {
+      "Field": "spEffectIdOnHit0",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game"
+    },
+    {
+      "Field": "spEffectIdOnHit1",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game"
+    },
+    {
+      "Field": "footEffectHeightType",
+      "Name": "",
+      "Description": "Height to generate foot effect"
+    },
+    {
+      "Field": "footEffectDirType",
+      "Name": "",
+      "Description": "Direction of foot effect"
+    },
+    {
+      "Field": "floorHeightType",
+      "Name": "",
+      "Description": "For floating items such as on the water surface"
+    },
+    {
+      "Field": "disableFallDamage",
+      "Name": "",
+      "Description": "When enabled player and Npc's will not take fall damage when falling onto this material"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hardnessType",
+      "Name": "",
+      "Description": "Hardness of the material. Used for soft contact processing of rigid bodies"
+    },
+    {
+      "Field": "wetTiming",
+      "Name": "",
+      "Description": "Controls whether the whole body gets wet when stepping on the floor material, or whether it gets wet if specified by TAE"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_forWet",
+      "Name": "",
+      "Description": "SpEffect applied when this makes you wet"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_2",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_3",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 2"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_4",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 3"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_5",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 4"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_6",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 5"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_7",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 6"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_8",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 7"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_2",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 1"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_3",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 2"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_4",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 3"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_5",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 4"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_6",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 5"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_7",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 6"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_8",
+      "Name": "",
+      "Description": "Applies speffect to player when they touch this material in New Game Plus 7"
+    },
+    {
+      "Field": "fallDeathDist",
+      "Name": "",
+      "Description": " When you land on this hit material, if you are falling from a height higher than the set value, you will die instantly upon landing. Valid only for PC"
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "",
+      "Description": "When you land on this hit material, this multiplier is applied to the fall damage. Valid only for PC"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

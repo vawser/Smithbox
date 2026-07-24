@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_ADD_DAMAGE_ANIM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_ADD_DAMAGE_ANIM_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Step Addition"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "100% Addition"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Addition"
+        }
+      ]
+    }
+  ]
+}

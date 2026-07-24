@@ -1,0 +1,38 @@
+{
+  "Key": "DAMAGE_STYLE_RATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_STYLE_RATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One hand"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both hands"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an wind particle emitter in the map." />
+  
+  <Field>
+    <EffectID
+    AltName="Particle ID"
+    Wiki="The SFX ID this emitter produces." 
+    ParticleAlias="" />
+    
+    <WindRegionName
+    AltName="Wind Region Name"
+    Wiki="The reference to a region." 
+    MapRef="Region-Region" />
+    
+    <WindRegionIndex
+    IndexProperty="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

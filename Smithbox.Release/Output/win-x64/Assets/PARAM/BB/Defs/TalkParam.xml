@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>TALK_PARAM_ST</ParamType>
+  <Unk06>3</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 msgId = -1">
+      <DisplayName>メッセージID</DisplayName>
+      <Description>メッセージを指定-&gt;メニュー</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 voiceId = -1">
+      <DisplayName>ボイスID</DisplayName>
+      <Description>ボイスを指定-&gt;サウンド</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 spEffectId0 = -1">
+      <DisplayName>特殊効果ID0</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 motionId0 = -1">
+      <DisplayName>モーションID0</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 spEffectId1 = -1">
+      <DisplayName>特殊効果ID1</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 motionId1 = -1">
+      <DisplayName>モーションID1</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 spEffectId2 = -1">
+      <DisplayName>特殊効果ID2</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 motionId2 = -1">
+      <DisplayName>モーションID2</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 spEffectId3 = -1">
+      <DisplayName>特殊効果ID3</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 motionId3 = -1">
+      <DisplayName>モーションID3</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 spEffectId4 = -1">
+      <DisplayName>特殊効果ID4</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 motionId4 = -1">
+      <DisplayName>モーションID4</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 spEffectId5 = -1">
+      <DisplayName>特殊効果ID5</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 motionId5 = -1">
+      <DisplayName>モーションID5</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 returnPos = -1">
+      <DisplayName>復帰位置</DisplayName>
+      <Description>復帰する会話の相対位置-&gt;会話</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 reactionId = -1">
+      <DisplayName>リアクションID</DisplayName>
+      <Description>復帰時の会話指定-&gt;会話</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 eventId = -1">
+      <DisplayName>イベントID</DisplayName>
+      <Description>イベントID-&gt;イベント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2E+09</Maximum>
+      <SortID>17</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

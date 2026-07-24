@@ -1,0 +1,93 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "msgId",
+      "Name": "メッセージID",
+      "Description": "メッセージを指定->メニュー"
+    },
+    {
+      "Field": "voiceId",
+      "Name": "ボイスID",
+      "Description": "ボイスを指定->サウンド"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果ID0",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId0",
+      "Name": "モーションID0",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId1",
+      "Name": "モーションID1",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果ID2",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId2",
+      "Name": "モーションID2",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果ID3",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId3",
+      "Name": "モーションID3",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "特殊効果ID4",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId4",
+      "Name": "モーションID4",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId5",
+      "Name": "特殊効果ID5",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId5",
+      "Name": "モーションID5",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "returnPos",
+      "Name": "復帰位置",
+      "Description": "復帰する会話の相対位置->会話"
+    },
+    {
+      "Field": "reactionId",
+      "Name": "リアクションID",
+      "Description": "復帰時の会話指定->会話"
+    },
+    {
+      "Field": "eventId",
+      "Name": "イベントID",
+      "Description": "イベントID->イベント"
+    }
+  ]
+}

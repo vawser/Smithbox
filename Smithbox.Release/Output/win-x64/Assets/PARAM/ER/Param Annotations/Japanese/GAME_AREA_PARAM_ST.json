@@ -1,0 +1,168 @@
+{
+  "Param": "GAME_AREA_PARAM_ST",
+  "Type": "GAME_AREA_PARAM_ST",
+  "Name": "GAME_AREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "bonusSoul_single",
+      "Name": "シングル時クリアボーナスソウル量",
+      "Description": "エリアボスを倒したときに取得できるソウル量(シングルプレイ時)"
+    },
+    {
+      "Field": "bonusSoul_multi",
+      "Name": "マルチプレイ時クリアボーナスソウル量",
+      "Description": "エリアボスを倒したときに取得できるソウル量(マルチプレイ時)"
+    },
+    {
+      "Field": "humanityPointCountFlagIdTop",
+      "Name": "人間性ドロップポイントカウント先頭フラグID",
+      "Description": "人間性ドロップポイントを管理する為の先頭フラグID(20Bit使用)"
+    },
+    {
+      "Field": "humanityDropPoint1",
+      "Name": "人間性ドロップ必要ポイント1",
+      "Description": "人間性を取得する為の閾値1"
+    },
+    {
+      "Field": "humanityDropPoint2",
+      "Name": "人間性ドロップ必要ポイント2",
+      "Description": "人間性を取得する為の閾値2"
+    },
+    {
+      "Field": "humanityDropPoint3",
+      "Name": "人間性ドロップ必要ポイント3",
+      "Description": "人間性を取得する為の閾値3"
+    },
+    {
+      "Field": "humanityDropPoint4",
+      "Name": "人間性ドロップ必要ポイント4",
+      "Description": "人間性を取得する為の閾値4"
+    },
+    {
+      "Field": "humanityDropPoint5",
+      "Name": "人間性ドロップ必要ポイント5",
+      "Description": "人間性を取得する為の閾値5"
+    },
+    {
+      "Field": "humanityDropPoint6",
+      "Name": "人間性ドロップ必要ポイント6",
+      "Description": "人間性を取得する為の閾値6"
+    },
+    {
+      "Field": "humanityDropPoint7",
+      "Name": "人間性ドロップ必要ポイント7",
+      "Description": "人間性を取得する為の閾値7"
+    },
+    {
+      "Field": "humanityDropPoint8",
+      "Name": "人間性ドロップ必要ポイント8",
+      "Description": "人間性を取得する為の閾値8"
+    },
+    {
+      "Field": "humanityDropPoint9",
+      "Name": "人間性ドロップ必要ポイント9",
+      "Description": "人間性を取得する為の閾値9"
+    },
+    {
+      "Field": "humanityDropPoint10",
+      "Name": "人間性ドロップ必要ポイント10",
+      "Description": "人間性を取得する為の閾値10"
+    },
+    {
+      "Field": "soloBreakInPoint_Min",
+      "Name": "ソロ侵入ポイント加算値下限",
+      "Description": "エリアボスを倒したときに加算するソロ侵入ポイントの最小値。"
+    },
+    {
+      "Field": "soloBreakInPoint_Max",
+      "Name": "ソロ侵入ポイント加算値上限",
+      "Description": "エリアボスを倒したときに加算するソロ侵入ポイントの最大値。"
+    },
+    {
+      "Field": "defeatBossFlagId_forSignAimList",
+      "Name": "ボス撃破済みフラグID(ホスト化時の目的表示用)",
+      "Description": "このフラグがONの場合はホスト化時の目的設定のリストに表示しない。0の場合は常時表示。"
+    },
+    {
+      "Field": "displayAimFlagId",
+      "Name": "目的表示フラグID",
+      "Description": ""
+    },
+    {
+      "Field": "foundBossFlagId",
+      "Name": "ボス発見フラグID",
+      "Description": ""
+    },
+    {
+      "Field": "foundBossTextId",
+      "Name": "発見時テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "notFindBossTextId",
+      "Name": "未発見時テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "bossChallengeFlagId",
+      "Name": "ボス挑戦可能フラグID",
+      "Description": "ボス挑戦可能フラグID。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索で目的のボスを選ぶ時にこのフラグがONのボスが対象になる。0の場合は常に対象になる。"
+    },
+    {
+      "Field": "defeatBossFlagId",
+      "Name": "ボス撃破フラグID",
+      "Description": "ボス撃破フラグID。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索で目的のボスを選ぶ時にこのフラグがOFFのボスが対象になる。"
+    },
+    {
+      "Field": "bossPosX",
+      "Name": "ボス位置_X座標",
+      "Description": "ボス位置_X座標（指定したマップからの相対座標）。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "bossPosY",
+      "Name": "ボス位置_Y座標",
+      "Description": "ボス位置_Y座標（指定したマップからの相対座標）。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "bossPosZ",
+      "Name": "ボス位置_Z座標",
+      "Description": "ボス位置_Z座標（指定したマップからの相対座標）。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "bossMapAreaNo",
+      "Name": "ボス位置_エリア番号(mXX_00_00_00)",
+      "Description": "ボス位置_エリア番号(mXX_00_00_00)。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "bossMapBlockNo",
+      "Name": "ボス位置_グリッドX番号(m00_XX_00_00)",
+      "Description": "ボス位置_グリッドX番号(m00_XX_00_00)。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "bossMapMapNo",
+      "Name": "ボス位置_グリッドZ番号(m00_00_XX_00)",
+      "Description": "ボス位置_グリッドZ番号(m00_00_XX_00)。マルチプレイエリアパラの「侵入ポイント自動生成か」が○のときの侵入位置検索でホストとボス間の距離確認に使われる。"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": "予約領域"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CHR_WET_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 dryRate">
+            <DisplayName>割合減少率(通常部)</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 metalDryRate">
+            <DisplayName>割合減少率(金属部)</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 wetParamId">
+            <DisplayName>濡れ種類</DisplayName>
+            <Enum>CHR_WET_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 dryType">
+            <DisplayName>乾燥種類</DisplayName>
+            <Enum>CHR_WET_DRY_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[2]">
+            <DisplayName>予約領域</DisplayName>
+            <SortID>4</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

@@ -1,0 +1,179 @@
+{
+  "Name": "AttachObj_Npc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy data"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "BAWS Bipedal MT - Dual Machine Guns"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "PCA Subject Guard MT - Laser Gun + Back Missiles"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "PCA Subject Guard MT - Laser Gun + Back Bazooka"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Xylem Flying MT - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 31002000,
+      "Entries": [
+        "Xylem Flying MT - Laser Blades"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "PCA SP EKDROMOI - Dual Tommy Gun"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "PCA SP EKDROMOI - Dual SMG"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC) - Shotgun"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC) - Bazooka"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC) - Heavily Armed"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC) - All Weapons"
+      ]
+    },
+    {
+      "ID": 32600110,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC) - Laser Gun"
+      ]
+    },
+    {
+      "ID": 32600120,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC) - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 32600130,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC) - Laser Blade"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC) - Dual Heavy Guns"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "BAWS Tetrapod MT - Dual Chainguns"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "BAWS Tetrapod MT - Laser Blade"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "RaD Spider MT - Shield"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010001,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010002,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT Test Booster"
+      ]
+    },
+    {
+      "ID": 81119000,
+      "Entries": [
+        "c8111 Colorless MT Test Booster"
+      ]
+    }
+  ]
+}

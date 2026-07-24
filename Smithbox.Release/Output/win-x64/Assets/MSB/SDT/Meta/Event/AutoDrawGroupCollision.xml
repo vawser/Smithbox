@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a collision to which an autodrawgroup filming point belongs, within the map." />
+  
+  <Field>
+    <AutoDrawGroupPointName
+    AltName="Automatic Draw Group Point"
+    Wiki="The name of the filming point for the autodrawgroup capture." />
+    
+    <AutoDrawGroupPointIndex
+    IndexProperty="" />
+    
+    <OwningCollisionName
+    AltName="Owning Collision Name"
+    Wiki="The collision that the filming point belongs to." 
+    MapRef="Part-Collision" />
+    
+    <OwningCollisionIndex
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

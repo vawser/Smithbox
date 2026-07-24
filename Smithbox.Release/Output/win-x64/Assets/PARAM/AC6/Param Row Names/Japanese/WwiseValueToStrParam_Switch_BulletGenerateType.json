@@ -1,0 +1,23 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_BulletGenerateType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- 無し"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Landing -- 着弾"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "child bullet -- 子弾丸"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "Name": "generatorparam_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 95,
+      "Entries": [
+        "[GEN:95] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "[GEN:96] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "[GEN:175] Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "[GEN:176] Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "[GEN:570] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 571,
+      "Entries": [
+        "[GEN:571] Oliver the Collector"
+      ]
+    },
+    {
+      "ID": 572,
+      "Entries": [
+        "[GEN:572] Fencer Sharron"
+      ]
+    },
+    {
+      "ID": 573,
+      "Entries": [
+        "[GEN:573] Armorer Dennis"
+      ]
+    },
+    {
+      "ID": 576,
+      "Entries": [
+        "[GEN:576] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 577,
+      "Entries": [
+        "[GEN:577] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 578,
+      "Entries": [
+        "[GEN:578] Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "[GEN:806] Smelter Demon"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "[GEN:807] Old Iron King"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "[GEN:913] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 941,
+      "Entries": [
+        "[GEN:941] Forlorn"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "[GEN:1021] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "[GEN:2016] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[GEN:2020] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[GEN:2030] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[GEN:2040] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "[GEN:3021] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3025,
+      "Entries": [
+        "[GEN:3025] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[GEN:3040] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[GEN:3060] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        "[GEN:3065] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[GEN:3070] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "[GEN:3071] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[GEN:3080] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[GEN:3090] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3095,
+      "Entries": [
+        "[GEN:3095] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3096,
+      "Entries": [
+        "[GEN:3096] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[GEN:3120] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[GEN:3121] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[GEN:4010] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "[GEN:4015] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "[GEN:4016] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[GEN:4020] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "[GEN:4025] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "[GEN:4026] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4029,
+      "Entries": [
+        "[GEN:4029] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[GEN:4030] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "[GEN:4031] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "[GEN:4032] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "[GEN:4033] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "[GEN:4035] Mimic"
+      ]
+    },
+    {
+      "ID": 4036,
+      "Entries": [
+        "[GEN:4036] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4037,
+      "Entries": [
+        "[GEN:4037] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4039,
+      "Entries": [
+        "[GEN:4039] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[GEN:4040] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "[GEN:4041] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[GEN:4050] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "[GEN:4051] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "[GEN:4052] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] The Pursuer"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[GEN:7005] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[GEN:7006] Ironclad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "[GEN:7007] Mad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "[GEN:7008] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "[GEN:7009] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[GEN:7011] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Greatsword Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[GEN:8005] Dual Avelyn Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "[GEN:8015] Bell Keeper Mage Phantom"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[GEN:8020] Greatsword Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "[GEN:8025] Dual Avelyn Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[GEN:8100] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "[GEN:8110] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "[GEN:8120] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "[GEN:8130] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "[GEN:8140] Bell Keeper"
+      ]
+    }
+  ]
+}

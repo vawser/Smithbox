@@ -1,0 +1,170 @@
+[
+  {
+    "ID": "m00_10",
+    "Name": "Garage",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m00_12",
+    "Name": "",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m00_90",
+    "Name": "AC Test",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m01_00",
+    "Name": "Mission 9100 - AC Test",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_20",
+    "Name": "Central Ice Field - Hjalmar Mine",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_30",
+    "Name": "Central Ice Field - Jorgen Refueling Base",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_40",
+    "Name": "Central Ice Field - Old Bertram Spaceport and Engebret Tunnel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_60",
+    "Name": "Central Ice Field - Old Bertram Spaceport Environs and Unobservable Area",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_00",
+    "Name": "Southern Belius - Grid 135",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_01",
+    "Name": "",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_10",
+    "Name": "Western Belius - Grid 086",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_20",
+    "Name": "Contaminated Zone - Grid 012",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_00",
+    "Name": "Alean Ocean - Xylem, the Floating City",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_20",
+    "Name": "Atmosphere - Xylem Upper Districts",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_30",
+    "Name": "Amtosphere - Xylem Drive Block and Xylem Control Block",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m30_00",
+    "Name": "Atmosphere - LOC Station 31",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m41_00",
+    "Name": "Watchpoint Alpha",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m41_10",
+    "Name": "Institute City",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_00",
+    "Name": "Southern Belius - Contaminated City",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_10",
+    "Name": "Southern Belius - Gallia Dam Complex",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_30",
+    "Name": "Central Belius - The Wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_40",
+    "Name": "Northern Belius - Watchpoint Delta",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_50",
+    "Name": "Northern Belius - BAWS Arsenal No. 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_60",
+    "Name": "Western Belius - Bona Dea Dunes",
+    "Tags": [
+      ""
+    ]
+  }
+]

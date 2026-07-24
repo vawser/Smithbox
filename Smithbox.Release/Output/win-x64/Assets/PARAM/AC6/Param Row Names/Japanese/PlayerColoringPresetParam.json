@@ -1,0 +1,41 @@
+{
+  "Name": "PlayerColoringPresetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "red -- 赤"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "blue -- 青"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "yellow -- 黄"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "peach -- 桃"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "green -- 緑"
+      ]
+    }
+  ]
+}

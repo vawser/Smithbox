@@ -1,0 +1,233 @@
+{
+  "Name": "CutsceneReplaceSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Short_Small No LOD"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Short_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 410010,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Long_Small No LOD"
+      ]
+    },
+    {
+      "ID": 410011,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Long_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 410021,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Idling_Medium"
+      ]
+    },
+    {
+      "ID": 410030,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Exhaust_Small"
+      ]
+    },
+    {
+      "ID": 410031,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Exhaust_Medium"
+      ]
+    },
+    {
+      "ID": 410032,
+      "Entries": [
+        "[CS] [General purpose booster]_Normal (orange)_Exhaust_Large"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "[CS] [General purpose booster]_EN (blue)_Short_Small No LOD"
+      ]
+    },
+    {
+      "ID": 411001,
+      "Entries": [
+        "[CS] [General purpose booster]_EN (blue)_Short_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 411010,
+      "Entries": [
+        "[CS] [General purpose booster]_EN (blue)_Long_Small No LOD"
+      ]
+    },
+    {
+      "ID": 411011,
+      "Entries": [
+        "[CS] [General purpose booster]_EN (blue)_Long_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 411021,
+      "Entries": [
+        "[CS] [General-purpose booster]_EN (blue)_Idling_Medium"
+      ]
+    },
+    {
+      "ID": 411030,
+      "Entries": [
+        "[General purpose booster]_EN (blue)_Exhaust_Small"
+      ]
+    },
+    {
+      "ID": 411031,
+      "Entries": [
+        "[General-purpose booster]_EN (blue)_Exhaust_Medium"
+      ]
+    },
+    {
+      "ID": 411032,
+      "Entries": [
+        "[General purpose booster]_EN (blue)_Exhaust_Large"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "[CS] [General purpose booster]_Melange (red)_Short_Small No LOD"
+      ]
+    },
+    {
+      "ID": 412001,
+      "Entries": [
+        "[CS] [General-purpose booster]_Melange (red)_Short_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 412010,
+      "Entries": [
+        "[CS] [General-purpose booster]_Melange (red)_Long_Small No LOD"
+      ]
+    },
+    {
+      "ID": 412011,
+      "Entries": [
+        "[CS] [General purpose booster]_Melange (red)_Long_Medium No LOD"
+      ]
+    },
+    {
+      "ID": 412021,
+      "Entries": [
+        "[CS] [General-purpose booster]_Melange (red)_Idling_Medium"
+      ]
+    },
+    {
+      "ID": 412030,
+      "Entries": [
+        "[General-purpose booster]_Melange (red)_Exhaust_Small"
+      ]
+    },
+    {
+      "ID": 412031,
+      "Entries": [
+        "[General-purpose booster]_Melange (red)_Exhaust_Medium"
+      ]
+    },
+    {
+      "ID": 412032,
+      "Entries": [
+        "[General-purpose booster]_Melange (red)_Exhaust_Large"
+      ]
+    },
+    {
+      "ID": 430001,
+      "Entries": [
+        "[CS] [General purpose thruster (counter boost)]_Normal (orange)_Medium"
+      ]
+    },
+    {
+      "ID": 431001,
+      "Entries": [
+        "[CS] [General Purpose Thruster (Counter Boost)]_EN (Blue)_Medium"
+      ]
+    },
+    {
+      "ID": 432001,
+      "Entries": [
+        "[CS] [General purpose thruster (counter boost)]_Melange (red)_Medium"
+      ]
+    },
+    {
+      "ID": 440001,
+      "Entries": [
+        "[CS] [General Assault Boost]_Normal (Orange) Medium Start No LOD"
+      ]
+    },
+    {
+      "ID": 440011,
+      "Entries": [
+        "[CS] [General Assault Boost]_Normal (Orange) Medium Loop No LOD"
+      ]
+    },
+    {
+      "ID": 441001,
+      "Entries": [
+        "[CS] [General Assault Boost]_EN (Blue) Medium Start No LOD"
+      ]
+    },
+    {
+      "ID": 441011,
+      "Entries": [
+        "[CS] [General Assault Boost]_EN (Blue) Medium Loop No LOD"
+      ]
+    },
+    {
+      "ID": 442001,
+      "Entries": [
+        "[CS] [General Assault Boost]_Melange (red) Medium Start No LOD"
+      ]
+    },
+    {
+      "ID": 442011,
+      "Entries": [
+        "[CS] [General Assault Boost]_Melange (red) Medium Loop No LOD"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "[CS] [General purpose QB]_Normal (orange)_Small"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "[CS] [General purpose QB]_EN (blue)_Small"
+      ]
+    },
+    {
+      "ID": 452000,
+      "Entries": [
+        "[CS] [General-purpose QB]_Melange (red)_Small"
+      ]
+    },
+    {
+      "ID": 2050100,
+      "Entries": [
+        "[CS] [Buff] White melange (EN infinite) Medium"
+      ]
+    }
+  ]
+}

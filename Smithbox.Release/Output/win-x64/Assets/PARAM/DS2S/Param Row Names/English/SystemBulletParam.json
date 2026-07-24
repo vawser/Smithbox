@@ -1,0 +1,1481 @@
+{
+  "Name": "SystemBulletParam",
+  "Entries": [
+    {
+      "ID": 200001010,
+      "Entries": [
+        "General Purpose - Treasure chest traps - Gas - Weak -- 汎用-宝箱トラップ-ガス-弱"
+      ]
+    },
+    {
+      "ID": 200001011,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Weak - Child Bullet A -- 汎用-宝箱トラップ-ガス-弱-子バレットA"
+      ]
+    },
+    {
+      "ID": 200001012,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Weak - Child Bullet B -- 汎用-宝箱トラップ-ガス-弱-子バレットB"
+      ]
+    },
+    {
+      "ID": 200001020,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Medium -- 汎用-宝箱トラップ-ガス-中"
+      ]
+    },
+    {
+      "ID": 200001021,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Medium - Child Bullet -- 汎用-宝箱トラップ-ガス-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001022,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Medium - Child Bullet -- 汎用-宝箱トラップ-ガス-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001030,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Strong -- 汎用-宝箱トラップ-ガス-強"
+      ]
+    },
+    {
+      "ID": 200001031,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Strong - Child Bullet -- 汎用-宝箱トラップ-ガス-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200001032,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Gas - Strong - Child Bullet -- 汎用-宝箱トラップ-ガス-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200001110,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Weak -- 汎用-宝箱トラップ-回復ガス-弱"
+      ]
+    },
+    {
+      "ID": 200001111,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Weak - Child Bullet -- 汎用-宝箱トラップ-回復ガス-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200001112,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Weak - Child Bullet -- 汎用-宝箱トラップ-回復ガス-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200001120,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Medium -- 汎用-宝箱トラップ-回復ガス-中"
+      ]
+    },
+    {
+      "ID": 200001121,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Medium - Child Bullet -- 汎用-宝箱トラップ-回復ガス-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001122,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Medium - Child Bullet -- 汎用-宝箱トラップ-回復ガス-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001130,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Strong -- 汎用-宝箱トラップ-回復ガス-強"
+      ]
+    },
+    {
+      "ID": 200001131,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Strong - Child Bullet -- 汎用-宝箱トラップ-回復ガス-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200001132,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Recovery Gas - Strong - Child Bullet -- 汎用-宝箱トラップ-回復ガス-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200001210,
+      "Entries": [
+        "General Purpose - Treasure chest trap - continuous arrow - weak -- 汎用-宝箱トラップ-連続矢-弱"
+      ]
+    },
+    {
+      "ID": 200001211,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Continuous Arrow - Weak - Child Bullet -- 汎用-宝箱トラップ-連続矢-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200001220,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Continuous Arrow - Medium -- 汎用-宝箱トラップ-連続矢-中"
+      ]
+    },
+    {
+      "ID": 200001221,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Continuous Arrow - Medium - Child Bullet -- 汎用-宝箱トラップ-連続矢-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001230,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Continuous Arrow - Strong -- 汎用-宝箱トラップ-連続矢-強"
+      ]
+    },
+    {
+      "ID": 200001231,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Continuous Arrow - Strong - Child Bullet -- 汎用-宝箱トラップ-連続矢-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200001310,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Weak -- 汎用-宝箱トラップ-爆発-弱"
+      ]
+    },
+    {
+      "ID": 200001311,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Weak - Child Bullet -- 汎用-宝箱トラップ-爆発-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200001320,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Weak - Medium -- 汎用-宝箱トラップ-爆発-中"
+      ]
+    },
+    {
+      "ID": 200001321,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Medium - Child Bullet -- 汎用-宝箱トラップ-爆発-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200001330,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Weak - Strong -- 汎用-宝箱トラップ-爆発-強"
+      ]
+    },
+    {
+      "ID": 200001331,
+      "Entries": [
+        "General Purpose - Treasure Chest Trap - Explosion - Strong - Child Bullet -- 汎用-宝箱トラップ-爆発-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200003010,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Weak -- 汎用-マップトラップ-矢-弱"
+      ]
+    },
+    {
+      "ID": 200003011,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Weak - Child Bullet -- 汎用-マップトラップ-矢-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200003020,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Medium -- 汎用-マップトラップ-矢-中"
+      ]
+    },
+    {
+      "ID": 200003021,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Medium - Child Bullet -- 汎用-マップトラップ-矢-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200003030,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Strong -- 汎用-マップトラップ-矢-強"
+      ]
+    },
+    {
+      "ID": 200003031,
+      "Entries": [
+        "General Purpose - Map Trap - Arrow - Strong - Child Bullet -- 汎用-マップトラップ-矢-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200003110,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Weak -- 汎用-マップトラップ-毒矢-弱"
+      ]
+    },
+    {
+      "ID": 200003111,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Weak - Child Bullet -- 汎用-マップトラップ-毒矢-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200003120,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Medium -- 汎用-マップトラップ-毒矢-中"
+      ]
+    },
+    {
+      "ID": 200003121,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Medium - Child Bullet -- 汎用-マップトラップ-毒矢-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200003130,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Strong -- 汎用-マップトラップ-毒矢-強"
+      ]
+    },
+    {
+      "ID": 200003131,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Arrow - Strong - Child Bullet -- 汎用-マップトラップ-毒矢-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200004010,
+      "Entries": [
+        "General Purpose - Stumble - Corpse - No-Motion -- 汎用-躓き-死体-ノーモーション"
+      ]
+    },
+    {
+      "ID": 200004011,
+      "Entries": [
+        "General Purpose - Stumble - Corpse - Lower body damage -- 汎用-躓き-死体-下半身ダメージ"
+      ]
+    },
+    {
+      "ID": 200005010,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Weak -- 汎用-マップトラップ-毒壷-弱"
+      ]
+    },
+    {
+      "ID": 200005011,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Weak - Child Bullet -- 汎用-マップトラップ-毒壷-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200005012,
+      "Entries": [
+        "General Purpose - Map Trap -Poison Pot- Weak - Child Bullet (directing) -- 汎用-マップトラップ-毒壷-弱-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005020,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Medium -- 汎用-マップトラップ-毒壷-中"
+      ]
+    },
+    {
+      "ID": 200005021,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Medium - Child Bullet -- 汎用-マップトラップ-毒壷-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200005022,
+      "Entries": [
+        "General Purpose - Map Trap -Poison Pot-middle- Child Bullet (production) -- 汎用-マップトラップ-毒壷-中-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005030,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Strong -- 汎用-マップトラップ-毒壷-強"
+      ]
+    },
+    {
+      "ID": 200005031,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Pot - Strong - Child Bullet -- 汎用-マップトラップ-毒壷-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200005032,
+      "Entries": [
+        "General Purpose - Map Trap -Poison Pot- Strong - Child Bullet (directing) -- 汎用-マップトラップ-毒壷-強-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005110,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pots - Weak -- 汎用-マップトラップ-水壷-弱"
+      ]
+    },
+    {
+      "ID": 200005111,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Weak - Child Bullet -- 汎用-マップトラップ-水壷-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200005112,
+      "Entries": [
+        "General Purpose - Map Trap -water jar- Weak - Child Bullet (directing) -- 汎用-マップトラップ-水壷-弱-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005120,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Medium -- 汎用-マップトラップ-水壷-中"
+      ]
+    },
+    {
+      "ID": 200005121,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Medium - Child Bullet -- 汎用-マップトラップ-水壷-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200005122,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Medium - Child Bullet (Production) -- 汎用-マップトラップ-水壷-中-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005130,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Strong -- 汎用-マップトラップ-水壷-強"
+      ]
+    },
+    {
+      "ID": 200005131,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Strong - Child Bullet -- 汎用-マップトラップ-水壷-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200005132,
+      "Entries": [
+        "General Purpose - Map Trap - Water Pot - Strong - Child Bullet (Production) -- 汎用-マップトラップ-水壷-強-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005210,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Weak -- 汎用-マップトラップ-酸壷-弱"
+      ]
+    },
+    {
+      "ID": 200005211,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Weak - Child Bullet -- 汎用-マップトラップ-酸壷-弱-子バレット"
+      ]
+    },
+    {
+      "ID": 200005212,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Weak - Child Bullet (directing) -- 汎用-マップトラップ-酸壷-弱-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005220,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Medium -- 汎用-マップトラップ-酸壷-中"
+      ]
+    },
+    {
+      "ID": 200005221,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Medium - Child Bullet -- 汎用-マップトラップ-酸壷-中-子バレット"
+      ]
+    },
+    {
+      "ID": 200005222,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot -middle- Child Bullet (production) -- 汎用-マップトラップ-酸壷-中-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200005230,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Strong -- 汎用-マップトラップ-酸壷-強"
+      ]
+    },
+    {
+      "ID": 200005231,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Strong - Child Bullet -- 汎用-マップトラップ-酸壷-強-子バレット"
+      ]
+    },
+    {
+      "ID": 200005232,
+      "Entries": [
+        "General Purpose - Map Trap - Acid Pot - Strong - Child Bullet (directing) -- 汎用-マップトラップ-酸壷-強-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 200006010,
+      "Entries": [
+        "General Purpose - Map Trap - Tar Flame -- 汎用-マップトラップ-タール炎上"
+      ]
+    },
+    {
+      "ID": 200008010,
+      "Entries": [
+        "General Purpose - Map Trap - Stone Dwarf Throwing Axe -- 汎用-マップトラップ-ドワーフ石造投てき斧"
+      ]
+    },
+    {
+      "ID": 200008110,
+      "Entries": [
+        "General Purpose - Map Trap - Stone Dwarf Throwing Hammer -- 汎用-マップトラップ-ドワーフ石造投てきハンマー"
+      ]
+    },
+    {
+      "ID": 200009010,
+      "Entries": [
+        "General Purpose - Map Trap - Explosion Barrel - Weak -- 汎用-マップトラップ-爆発樽-弱"
+      ]
+    },
+    {
+      "ID": 200009020,
+      "Entries": [
+        "General Purpose - Map Trap - Explosion Barrel - Medium -- 汎用-マップトラップ-爆発樽-中"
+      ]
+    },
+    {
+      "ID": 200009030,
+      "Entries": [
+        "General Purpose - Map Trap -explosion barrel- Strong -- 汎用-マップトラップ-爆発樽-強"
+      ]
+    },
+    {
+      "ID": 200010000,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Fog - For Damage -- 汎用-マップトラップ-毒霧-ダメージ用"
+      ]
+    },
+    {
+      "ID": 200010010,
+      "Entries": [
+        "General Purpose - Map Trap - Poison - Weak -for-directing -- 汎用-マップトラップ-毒霧-弱-演出用"
+      ]
+    },
+    {
+      "ID": 200010020,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Fog - Medium -for-production -- 汎用-マップトラップ-毒霧-中-演出用"
+      ]
+    },
+    {
+      "ID": 200010030,
+      "Entries": [
+        "General Purpose - Map Trap - Poison - Strong -for-production -- 汎用-マップトラップ-毒霧-強-演出用"
+      ]
+    },
+    {
+      "ID": 200011010,
+      "Entries": [
+        "General Purpose - Map Trap - Scorching Heat - Weak -- 汎用-マップトラップ-灼熱-弱"
+      ]
+    },
+    {
+      "ID": 200011020,
+      "Entries": [
+        "General Purpose - Map Trap - Scorching Heat - Medium -- 汎用-マップトラップ-灼熱-中"
+      ]
+    },
+    {
+      "ID": 200011030,
+      "Entries": [
+        "General Purpose - Map Trap - Scorching Heat - Strong -- 汎用-マップトラップ-灼熱-強"
+      ]
+    },
+    {
+      "ID": 200012010,
+      "Entries": [
+        "General Purpose - Map Trap -insects- Weak -- 汎用-マップトラップ-虫-弱"
+      ]
+    },
+    {
+      "ID": 200013010,
+      "Entries": [
+        "General Purpose - Map Trap - Fire-Breathing Statue - Small -- 汎用-マップトラップ-火噴き石像-小"
+      ]
+    },
+    {
+      "ID": 200013020,
+      "Entries": [
+        "General Purpose - Map Trap - Fire-Breathing Statue - Medium -- 汎用-マップトラップ-火噴き石像-中"
+      ]
+    },
+    {
+      "ID": 200013030,
+      "Entries": [
+        "General Purpose - Map Trap - Fire-Breathing Statue - Large -- 汎用-マップトラップ-火噴き石像-大"
+      ]
+    },
+    {
+      "ID": 200014020,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Fountain -- 汎用-マップトラップ-毒の泉"
+      ]
+    },
+    {
+      "ID": 200015010,
+      "Entries": [
+        "General Purpose - Map Trap - Poison Rat Statue -- 汎用-マップトラップ-毒吐きネズミの像"
+      ]
+    },
+    {
+      "ID": 200017010,
+      "Entries": [
+        "General Purpose - Map Trap - Ballista - Physics -- 汎用-マップトラップ-バリスタ-物理"
+      ]
+    },
+    {
+      "ID": 200017011,
+      "Entries": [
+        "General Purpose - Map Trap - Ballista - Physics - Landing -- 汎用-マップトラップ-バリスタ-物理-着弾"
+      ]
+    },
+    {
+      "ID": 200017110,
+      "Entries": [
+        "General Purpose - Map Trap - Ballista - Flame -- 汎用-マップトラップ-バリスタ-炎"
+      ]
+    },
+    {
+      "ID": 200017111,
+      "Entries": [
+        "General Purpose - Map Trap - Ballista - Flame - Landing -- 汎用-マップトラップ-バリスタ-炎-着弾"
+      ]
+    },
+    {
+      "ID": 200017210,
+      "Entries": [
+        "General Purpose - Map Trap -Ballista-firing type -- 汎用-マップトラップ-バリスタ-連射型"
+      ]
+    },
+    {
+      "ID": 200017211,
+      "Entries": [
+        "General Purpose - Map Trap -Ballista-fire-type-landing -- 汎用-マップトラップ-バリスタ-連射型-着弾"
+      ]
+    },
+    {
+      "ID": 200018010,
+      "Entries": [
+        "General Purpose - Map Trap - Curse Pot - Weak -- 汎用-マップトラップ-呪い壷-弱"
+      ]
+    },
+    {
+      "ID": 200018020,
+      "Entries": [
+        "General Purpose - Map Trap - Curse Pot - Medium -- 汎用-マップトラップ-呪い壷-中"
+      ]
+    },
+    {
+      "ID": 200018030,
+      "Entries": [
+        "General Purpose - Map Trap - Curse Pot - Strong -- 汎用-マップトラップ-呪い壷-強"
+      ]
+    },
+    {
+      "ID": 210030010,
+      "Entries": [
+        "Dragon's Dwelling (Present): Startled by swarm of flies on corpse. -- 龍の住処（現代）\u3000死体に群がるハエに驚く"
+      ]
+    },
+    {
+      "ID": 210100010,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire - Continuous Damage -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-連続ダメージ"
+      ]
+    },
+    {
+      "ID": 210100011,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire - Instant Death -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-即死"
+      ]
+    },
+    {
+      "ID": 210100012,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire- Child Bullet A -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-子バレットA"
+      ]
+    },
+    {
+      "ID": 210100013,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-子バレットB"
+      ]
+    },
+    {
+      "ID": 210100014,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire - Grandson Bullet A -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-孫バレットA"
+      ]
+    },
+    {
+      "ID": 210100015,
+      "Entries": [
+        "Forest of Fallen Giants - Cave Salamander Fire - Grandson Bullet B (no landing) -- 朽ちた巨人の森\u3000洞窟のサラマンダーが吹く炎-孫バレットB（着弾なし）"
+      ]
+    },
+    {
+      "ID": 210100020,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Parents -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-親"
+      ]
+    },
+    {
+      "ID": 210100021,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Child Bullet A -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-子バレットA"
+      ]
+    },
+    {
+      "ID": 210100022,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Child Bullet B -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-子バレットB"
+      ]
+    },
+    {
+      "ID": 210100023,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Child Bullet C -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-子バレットC"
+      ]
+    },
+    {
+      "ID": 210100024,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Grandson Bullet A -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-孫バレットA"
+      ]
+    },
+    {
+      "ID": 210100025,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Grandson Bullet B (no landing) -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-孫バレットB（着弾なし）"
+      ]
+    },
+    {
+      "ID": 210100026,
+      "Entries": [
+        "Forest of Fallen Giants - Underground Passage Salamander Fire - Grandson Bullet C (no landing) -- 朽ちた巨人の森\u3000地下通路のサラマンダーが吹く炎-孫バレットC（着弾なし）"
+      ]
+    },
+    {
+      "ID": 210100100,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground (Parent) -- 朽ちた巨人の森\u3000地面から噴出す炎（親）"
+      ]
+    },
+    {
+      "ID": 210100101,
+      "Entries": [
+        "Forest of Fallen Giants - Erupting from the Ground (For Bullet generation 1) -- 朽ちた巨人の森\u3000地面から噴出す（弾生成用１）"
+      ]
+    },
+    {
+      "ID": 210100102,
+      "Entries": [
+        "Forest of Fallen Giants - Erupting from the Ground (For Bullet generation 2) -- 朽ちた巨人の森\u3000地面から噴出す（弾生成用２）"
+      ]
+    },
+    {
+      "ID": 210100110,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground 1 -- 朽ちた巨人の森\u3000地面から噴出す炎１"
+      ]
+    },
+    {
+      "ID": 210100120,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground 2 -- 朽ちた巨人の森\u3000地面から噴出す炎２"
+      ]
+    },
+    {
+      "ID": 210100130,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground 3 -- 朽ちた巨人の森\u3000地面から噴出す炎３"
+      ]
+    },
+    {
+      "ID": 210100140,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground 4 -- 朽ちた巨人の森\u3000地面から噴出す炎４"
+      ]
+    },
+    {
+      "ID": 210100150,
+      "Entries": [
+        "Forest of Fallen Giants - Flames Erupting from the Ground 5 -- 朽ちた巨人の森\u3000地面から噴出す炎５"
+      ]
+    },
+    {
+      "ID": 210140010,
+      "Entries": [
+        "Brightstone Cove Tseldora - Sand Gun - For Generation -- 蜘蛛の街\u3000鉄砲砂-生成用"
+      ]
+    },
+    {
+      "ID": 210140011,
+      "Entries": [
+        "Brightstone Cove Tseldora - Sand Gun - Entrance Stagnation -- 蜘蛛の街\u3000鉄砲砂-入口停滞"
+      ]
+    },
+    {
+      "ID": 210140012,
+      "Entries": [
+        "Brightstone Cove Tseldora - Sand Gun - Children -- 蜘蛛の街\u3000鉄砲砂-子供"
+      ]
+    },
+    {
+      "ID": 210150110,
+      "Entries": [
+        "Aldia's Keep - Spiky Wall (Parent) -- アン・ディールの館-トゲトゲ壁（親）"
+      ]
+    },
+    {
+      "ID": 210150111,
+      "Entries": [
+        "Aldia's Keep - Spiky Wall A -- アン・ディールの館-トゲトゲ壁A"
+      ]
+    },
+    {
+      "ID": 210150112,
+      "Entries": [
+        "Aldia's Keep - Spiky Wall B -- アン・ディールの館-トゲトゲ壁B"
+      ]
+    },
+    {
+      "ID": 210170110,
+      "Entries": [
+        "Harvest Valley - Hanging Poison Pot -- 溜まりの谷-吊り毒壷"
+      ]
+    },
+    {
+      "ID": 210170111,
+      "Entries": [
+        "Harvest Valley - Hanging Poison Pot - Child Bullet -- 溜まりの谷-吊り毒壷-子バレット"
+      ]
+    },
+    {
+      "ID": 210170112,
+      "Entries": [
+        "Harvest Valley - Hanging Poison Pot - Child Bullet (Director) -- 溜まりの谷-吊り毒壷-子バレット（演出）"
+      ]
+    },
+    {
+      "ID": 210170210,
+      "Entries": [
+        "Harvest Valley - Suspended Ceiling -- 溜まりの谷-吊り天井"
+      ]
+    },
+    {
+      "ID": 210170310,
+      "Entries": [
+        "Harvest Valley - Floor Switch Arrow -- 溜まりの谷-床スイッチ矢"
+      ]
+    },
+    {
+      "ID": 210170311,
+      "Entries": [
+        "Harvest Valley - Floor Switch Arrow (Bullet) -- 溜まりの谷-床スイッチ矢（弾）"
+      ]
+    },
+    {
+      "ID": 210170410,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Parent -- 溜まりの谷-回転する床の刃-親"
+      ]
+    },
+    {
+      "ID": 210170411,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Child Bullet A -- 溜まりの谷-回転する床の刃-子バレットA"
+      ]
+    },
+    {
+      "ID": 210170412,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Child Bullet B -- 溜まりの谷-回転する床の刃-子バレットB"
+      ]
+    },
+    {
+      "ID": 210170420,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Grandson Bullet A1 -- 溜まりの谷-回転する床の刃-孫バレットA1"
+      ]
+    },
+    {
+      "ID": 210170430,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Grandson Bullet A2 -- 溜まりの谷-回転する床の刃-孫バレットA2"
+      ]
+    },
+    {
+      "ID": 210170440,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Grandson Bullet B1 -- 溜まりの谷-回転する床の刃-孫バレットB1"
+      ]
+    },
+    {
+      "ID": 210170450,
+      "Entries": [
+        "Harvest Valley - Rotating Floor Blade - Grandson Bullet B2 -- 溜まりの谷-回転する床の刃-孫バレットB2"
+      ]
+    },
+    {
+      "ID": 210190010,
+      "Entries": [
+        "Iron Keep - Explosion Furnace - Explosion -- 熔鉄城-爆発炎上する炉-爆発"
+      ]
+    },
+    {
+      "ID": 210190011,
+      "Entries": [
+        "Iron Keep - Explosion Furnace - On Fire -- 熔鉄城-爆発炎上する炉-炎上"
+      ]
+    },
+    {
+      "ID": 210190110,
+      "Entries": [
+        "Iron Keep - Flame Statue - 3 seconds -- 熔鉄城-火炎を吐く像-３秒"
+      ]
+    },
+    {
+      "ID": 210190210,
+      "Entries": [
+        "Iron Keep - Scorching Furnace - Door -- 熔鉄城-灼熱の炉-扉"
+      ]
+    },
+    {
+      "ID": 210190310,
+      "Entries": [
+        "Iron Keep - Scorching Furnace - Ladder -- 熔鉄城-灼熱の炉-はしご"
+      ]
+    },
+    {
+      "ID": 210190410,
+      "Entries": [
+        "Iron Keep - Spiky Wall (Parent) -- 熔鉄城-トゲトゲ壁（親）"
+      ]
+    },
+    {
+      "ID": 210190411,
+      "Entries": [
+        "Iron Keep - Spiky Wall A -- 熔鉄城-トゲトゲ壁A"
+      ]
+    },
+    {
+      "ID": 210190412,
+      "Entries": [
+        "Iron Keep - Spiky Wall B -- 熔鉄城-トゲトゲ壁B"
+      ]
+    },
+    {
+      "ID": 210210010,
+      "Entries": [
+        "Drangleic Castle - Acid-Spitting Statue - Parents -- 王城ドラングレイグ-酸を吐く像-親"
+      ]
+    },
+    {
+      "ID": 210210011,
+      "Entries": [
+        "Drangleic Castle - Acid-Spitting Statue - Child -- 王城ドラングレイグ-酸を吐く像-子"
+      ]
+    },
+    {
+      "ID": 210210110,
+      "Entries": [
+        "Drangleic Castle - Cursed Painting -- 王城ドラングレイグ-呪いの絵画"
+      ]
+    },
+    {
+      "ID": 210210111,
+      "Entries": [
+        "Drangleic Castle - Cursed Painting - Character Attachment -- 王城ドラングレイグ-呪いの絵画-キャラアタッチ"
+      ]
+    },
+    {
+      "ID": 210210210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210210211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210250010,
+      "Entries": [
+        "The Gutter - Glowing Kokeshi - Poison Arrow -- クズ底-光るコケシ-毒矢"
+      ]
+    },
+    {
+      "ID": 210250110,
+      "Entries": [
+        "The Gutter - Glowing Kokeshi - Poison Mass -- クズ底-光るコケシ-毒塊"
+      ]
+    },
+    {
+      "ID": 210250210,
+      "Entries": [
+        "The Gutter - Burning Treasure Chest - Flame Damage -- クズ底-燃える宝箱-炎上ダメージ"
+      ]
+    },
+    {
+      "ID": 210330100,
+      "Entries": [
+        "Doors of Pharros - Iron Disk - Multiple Blades -- ファロスの扉道\u3000鉄の円盤-多数刃"
+      ]
+    },
+    {
+      "ID": 210330101,
+      "Entries": [
+        "Doors of Pharros - Iron Disk - Multiple Blades (Landing) -- ファロスの扉道\u3000鉄の円盤-多数刃（着弾）"
+      ]
+    },
+    {
+      "ID": 210330200,
+      "Entries": [
+        "Doors of Pharros - Iron Disk - Wide Blade -- ファロスの扉道\u3000鉄の円盤-幅広刃"
+      ]
+    },
+    {
+      "ID": 210330201,
+      "Entries": [
+        "Doors of Pharros - Iron Disk - Wide Blade (Landing) -- ファロスの扉道\u3000鉄の円盤-幅広刃（着弾）"
+      ]
+    },
+    {
+      "ID": 210330310,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 1 (Parent) -- ファロスの扉道-トゲトゲ壁1（親）"
+      ]
+    },
+    {
+      "ID": 210330311,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 1A -- ファロスの扉道-トゲトゲ壁1A"
+      ]
+    },
+    {
+      "ID": 210330312,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 1B -- ファロスの扉道-トゲトゲ壁1B"
+      ]
+    },
+    {
+      "ID": 210330320,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 2 (Parent) -- ファロスの扉道-トゲトゲ壁2（親）"
+      ]
+    },
+    {
+      "ID": 210330321,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 2A -- ファロスの扉道-トゲトゲ壁2A"
+      ]
+    },
+    {
+      "ID": 210330322,
+      "Entries": [
+        "Doors of Pharros - Spiky Wall 2B -- ファロスの扉道-トゲトゲ壁2B"
+      ]
+    },
+    {
+      "ID": 220100060,
+      "Entries": [
+        "Memory of Giants - Fireball landings_mid-view -- 巨人の記憶\u3000火球着弾_中景"
+      ]
+    },
+    {
+      "ID": 220100070,
+      "Entries": [
+        "Memory of Giants - Fireball landings- mid-view- explosion. -- 巨人の記憶\u3000火球着弾_中景_爆発"
+      ]
+    },
+    {
+      "ID": 220100400,
+      "Entries": [
+        "Memory of Giants - Catapult Fireball -- 巨人の記憶\u3000投石機の火の玉"
+      ]
+    },
+    {
+      "ID": 220100410,
+      "Entries": [
+        "Memory of Giants - Catapult Fireball_Explosion -- 巨人の記憶\u3000投石機の火の玉_爆発"
+      ]
+    },
+    {
+      "ID": 220100600,
+      "Entries": [
+        "Memory of Giants - Fire Damage -- 巨人の記憶\u3000炎上ダメージ"
+      ]
+    },
+    {
+      "ID": 220100700,
+      "Entries": [
+        "Memory of Giants - Fireballs Raining Down on the Front Line -- 巨人の記憶\u3000前線に降り注ぐ火球"
+      ]
+    },
+    {
+      "ID": 290000010,
+      "Entries": [
+        "Blood splash -- 血しぶき"
+      ]
+    },
+    {
+      "ID": 290000011,
+      "Entries": [
+        "Blood Splash - Child (Direct Down) -- 血しぶき-子（真下）"
+      ]
+    },
+    {
+      "ID": 290000012,
+      "Entries": [
+        "Blood Splash - Child (Scattered) -- 血しぶき-子（飛び散り）"
+      ]
+    },
+    {
+      "ID": 290000110,
+      "Entries": [
+        "Soul Acquisition Sphere - Small -- 獲得ソウル球-小"
+      ]
+    },
+    {
+      "ID": 290000111,
+      "Entries": [
+        "Soul Acquisition Sphere - Small - Landing -- 獲得ソウル球-小-着弾"
+      ]
+    },
+    {
+      "ID": 290000120,
+      "Entries": [
+        "Soul Acquisition Sphere - Medium -- 獲得ソウル球-中"
+      ]
+    },
+    {
+      "ID": 290000121,
+      "Entries": [
+        "Soul Acquisition Sphere - Medium - Landing -- 獲得ソウル球-中-着弾"
+      ]
+    },
+    {
+      "ID": 290000130,
+      "Entries": [
+        "Soul Acquisition Sphere - Large -- 獲得ソウル球-大"
+      ]
+    },
+    {
+      "ID": 290000131,
+      "Entries": [
+        "Soul Acquisition Sphere - Large - Landing -- 獲得ソウル球-大-着弾"
+      ]
+    },
+    {
+      "ID": 290000135,
+      "Entries": [
+        "Soul Acquisition Sphere - Medium Boss -- 獲得ソウル球-中ボス"
+      ]
+    },
+    {
+      "ID": 290000136,
+      "Entries": [
+        "Soul Acquisition Sphere - Medium Boss (Small) -- 獲得ソウル球-中ボス（小）"
+      ]
+    },
+    {
+      "ID": 290000137,
+      "Entries": [
+        "Soul Acquisition Sphere - Medium Boss (Middle) -- 獲得ソウル球-中ボス（中）"
+      ]
+    },
+    {
+      "ID": 290000140,
+      "Entries": [
+        "Soul Acquisition Sphere - Boss -- 獲得ソウル球-ボス"
+      ]
+    },
+    {
+      "ID": 290000141,
+      "Entries": [
+        "Soul Acquisition Sphere - Boss (Small) -- 獲得ソウル球-ボス（小）"
+      ]
+    },
+    {
+      "ID": 290000142,
+      "Entries": [
+        "Soul Acquisition Sphere - Boss (Medium) -- 獲得ソウル球-ボス（中）"
+      ]
+    },
+    {
+      "ID": 290000143,
+      "Entries": [
+        "Soul Acquisition Sphere - Boss (Large) -- 獲得ソウル球-ボス（大）"
+      ]
+    },
+    {
+      "ID": 290001010,
+      "Entries": [
+        "For Dark Spirits - Blue Spirit Position Supplement -- 闇霊（赤霊）用-青霊位置補足"
+      ]
+    },
+    {
+      "ID": 290001011,
+      "Entries": [
+        "For Dark Spirits - Blue Spirit Position Supplement (Landing) -- 闇霊（赤霊）用-青霊位置補足（着弾）"
+      ]
+    },
+    {
+      "ID": 290001020,
+      "Entries": [
+        "For Blue Spirits - Dark Spirit (Red Spirit) Position Supplement -- 青霊用-闇霊（赤例）位置補足"
+      ]
+    },
+    {
+      "ID": 290001021,
+      "Entries": [
+        "For Blue Spirits - Dark Spirit (Red Spirit) Position Supplement (Landing) -- 青霊用-闇霊（赤例）位置補足（着弾）"
+      ]
+    },
+    {
+      "ID": 310000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310040000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310040001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310050000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310060001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310070000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310070010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310070020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310070030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310080007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320040000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320040010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320040020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320050000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320050100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320050200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320060001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320070000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320080040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330010001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330040000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340000200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340000300,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

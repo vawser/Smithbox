@@ -1,0 +1,49 @@
+{
+  "Name": "WirePointSearchParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "actionDistanceNear",
+        "actionDistanceFar"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "findDistanceFar"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "filteringDistanceHeightUpper",
+        "filteringDistanceHeightLower",
+        "filteringDistanceWidth"
+      ]
+    }
+  ]
+}

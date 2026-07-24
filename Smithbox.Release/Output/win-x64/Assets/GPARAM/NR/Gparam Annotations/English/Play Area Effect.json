@@ -1,0 +1,263 @@
+{
+  "ID": "PlayAreaEffect ParamEditor",
+  "Name": "Play Area Effect",
+  "Description": "Covers parameters relating to play area effects.",
+  "Fields": [
+    {
+      "ID": "PlayAreaEffect Far Tex:Tiling",
+      "Name": "Far Texture: Tiling",
+      "Description": "Controls UV tiling for the far-distance texture layer, affecting how frequently the texture repeats.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Far",
+      "Name": "Far Texture: Emissive Scale",
+      "Description": "Scales emissive intensity of the far texture layer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Enable",
+      "Name": "Enable Play Area Effect",
+      "Description": "Enables or disables the play area visual effect system.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "PlayAreaEffect Override BaseColor",
+      "Name": "Base Color Override",
+      "Description": "Overrides the base color of the play area material.",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Override Smoothness",
+      "Name": "Smoothness Override",
+      "Description": "Overrides the surface smoothness/roughness of the play area material.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect BaseColor Rate",
+      "Name": "Base Color Rate",
+      "Description": "Blending factor for the base color override.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Smoothness Rate",
+      "Name": "Smoothness Rate",
+      "Description": "Blending factor for the smoothness override.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Rate",
+      "Name": "Emissive Rate",
+      "Description": "Controls overall contribution of emissive lighting in the play area effect.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Floor:Tiling",
+      "Name": "Near Floor Texture: Tiling",
+      "Description": "Controls UV tiling for the near floor texture layer.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Floor:Speed",
+      "Name": "Near Floor Texture: Speed",
+      "Description": "Controls scrolling speed of the near floor texture.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Wall:Tiling",
+      "Name": "Near Wall Texture: Tiling",
+      "Description": "Controls UV tiling for the near wall texture layer.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Wall:Speed",
+      "Name": "Near Wall Texture: Speed",
+      "Description": "Controls scrolling speed of the near wall texture.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Far Tex:Speed",
+      "Name": "Far Texture: Speed",
+      "Description": "Controls scrolling speed of the far-distance texture layer.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect MaskTex:Tiling|Speed",
+      "Name": "Mask Texture: Tiling | Speed",
+      "Description": "Controls UV tiling and scrolling speed for the primary mask texture used to blend effects.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect DetailMaskTex:Tiling",
+      "Name": "Detail Mask Texture: Tiling",
+      "Description": "Controls tiling of the detail mask texture for fine-grained blending.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Detail Mask Offset for Wall",
+      "Name": "Detail Mask Texture: Offset for Wall",
+      "Description": "Offsets the detail mask mapping on wall surfaces.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect DistTex:Tiling|Speed",
+      "Name": "Distance Texture: Tiling | Speed",
+      "Description": "Controls tiling and scrolling speed of the distance-based texture layer.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect EmissiveScale",
+      "Name": "Emissive Scale",
+      "Description": "Global multiplier for emissive intensity across the play area effect.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Floor",
+      "Name": "Near Floor Texture: Emissive Scale",
+      "Description": "Emissive intensity for the near floor texture layer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Wall",
+      "Name": "Near Wall Texture: Emissive Scale",
+      "Description": "Emissive intensity for the near wall texture layer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Marble",
+      "Name": "Near Marble Texture: Emissive Scale",
+      "Description": "Emissive intensity for the near marble texture layer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Far Marble",
+      "Name": "Far Marble Texture: Emissive Scale",
+      "Description": "Emissive intensity for the far marble texture layer.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Border Size",
+      "Name": "Border Size",
+      "Description": "Controls the thickness of the visual border around the play area.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect BorderColorScale",
+      "Name": "Border Color Scale",
+      "Description": "Scales the intensity or brightness of the border color.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Wave Scale",
+      "Name": "Wave Scale",
+      "Description": "Controls the amplitude of wave-like distortion effects.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Wave Frequency",
+      "Name": "Wave Frequency",
+      "Description": "Controls the frequency of wave distortion patterns.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect RainDrop Tiling",
+      "Name": "Rain Drop Tiling",
+      "Description": "Controls how frequently raindrop effects repeat across the surface.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect RainDrop Speed",
+      "Name": "Rain Drop Speed",
+      "Description": "Controls animation speed of raindrop effects.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Final Mask Offset",
+      "Name": "Final Mask Offset",
+      "Description": "Applies a final offset to mask sampling for fine-tuning effect alignment.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distance Fade Start",
+      "Name": "Distance Fade Start",
+      "Description": "Distance at which the play area effect begins to fade out.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distance Fade Range",
+      "Name": "Distance Fade Range",
+      "Description": "Distance over which the play area effect fully fades out.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distortion Scale",
+      "Name": "Distortion Scale",
+      "Description": "Controls the strength of distortion effects applied to the play area visuals.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not working"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok Default value of"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Centipede Head"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Centipede Tail"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Blood mite body"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Blood Tick Bag"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Test Flying Dragon's Body"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Test Wyvern's Tail"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Test Flying Dragon's right wing"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Knight's Head"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Centipede Boss's Body"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Centipede Boss's Tail"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Centipede Boss's Right Arm"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Gravelord's Body"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Grave King's Blind①"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Grave King's Blinds②"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Grave King's Reeds③"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Gravelord's Mantle"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Devouring Dragon's Tail"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Lake Beast Head①"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Lake Beast Head②"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Lake Beast Head③"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Lake Beast's Head ④"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Lake Beast Head ⑤"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Lake Beast Head⑥"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "Lake Beast Head ⑦"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Sheathed Crystal Armor"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Heroine's Tail"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Hellkite Tail"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Zen Dragon's Tail"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Gargoyle Tail"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Gargoyle 2 Damaged area of body"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Gargoyle (different color) tail"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "White Dragon Sheath's Tail"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Golden Chimera's Tail"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Black Dragon's Tail"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "Drowned Beast _ Both arms"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "Licking blood _ Blood Bag S"
+      ]
+    },
+    {
+      "ID": 21301,
+      "Entries": [
+        "Licking blood _ Blood Bag M"
+      ]
+    },
+    {
+      "ID": 21302,
+      "Entries": [
+        "Licking blood _ Blood Bag L"
+      ]
+    },
+    {
+      "ID": 21303,
+      "Entries": [
+        "Licking blood _ Blood Bag LL"
+      ]
+    },
+    {
+      "ID": 31300,
+      "Entries": [
+        "Fresh Golem _ blood blister _ Right knee side"
+      ]
+    },
+    {
+      "ID": 31301,
+      "Entries": [
+        "Fresh Golem _ blood blister _ Left knee side"
+      ]
+    },
+    {
+      "ID": 31302,
+      "Entries": [
+        "Fresh Golem _ blood blister _ Butt"
+      ]
+    },
+    {
+      "ID": 31303,
+      "Entries": [
+        "Fresh Golem _ blood blister _ High point in front"
+      ]
+    },
+    {
+      "ID": 273000,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Right leg normal"
+      ]
+    },
+    {
+      "ID": 273001,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Left leg normal"
+      ]
+    },
+    {
+      "ID": 273002,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Right arm normal"
+      ]
+    },
+    {
+      "ID": 273003,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Left arm normal"
+      ]
+    },
+    {
+      "ID": 273010,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Right leg weakness"
+      ]
+    },
+    {
+      "ID": 273011,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Left leg weakness"
+      ]
+    },
+    {
+      "ID": 273012,
+      "Entries": [
+        "Frankenstein of the Medical Church _Right arm weakness"
+      ]
+    },
+    {
+      "ID": 273013,
+      "Entries": [
+        "Frankenstein of the Medical Church _ Left arm weakness"
+      ]
+    },
+    {
+      "ID": 407000,
+      "Entries": [
+        "Hermit crab _ shell _ left"
+      ]
+    },
+    {
+      "ID": 407001,
+      "Entries": [
+        "Hermit crab _ shell _ right"
+      ]
+    },
+    {
+      "ID": 407002,
+      "Entries": [
+        "Hermit crab _ tail"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Parishioner Ω Lower Body"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Founder Beast _ Parasites"
+      ]
+    },
+    {
+      "ID": 512008,
+      "Entries": [
+        "Evil God _ Right hand 4"
+      ]
+    },
+    {
+      "ID": 512009,
+      "Entries": [
+        "Evil God _ left hand 3"
+      ]
+    },
+    {
+      "ID": 512013,
+      "Entries": [
+        "Evil God _ Right hand drawn"
+      ]
+    },
+    {
+      "ID": 512014,
+      "Entries": [
+        "Evil God _ Left hand drawn"
+      ]
+    },
+    {
+      "ID": 542005,
+      "Entries": [
+        "Inheritor of Nightmares (Final Form) Tentacles 1"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

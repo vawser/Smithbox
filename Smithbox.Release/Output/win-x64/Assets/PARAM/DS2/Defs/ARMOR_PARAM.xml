@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>ARMOR_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 armorId">
+            <DisplayName>防具ID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="s8 armorType">
+            <DisplayName>防具種別</DisplayName>
+            <Enum>ARMOR_TYPE</Enum>
+            <Maximum>127</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="s8 armorCategory">
+            <DisplayName>防具系統</DisplayName>
+            <Enum>EQUIP_CATEGORY</Enum>
+            <Minimum>-1</Minimum>
+            <Maximum>7</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u32 modelId">
+            <DisplayName>防具モデルID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 modelGender">
+            <DisplayName>防具モデル性別</DisplayName>
+            <Enum>EQUIP_MODEL_GENDER</Enum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1[1]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="s16 clothCollidableId">
+            <DisplayName>クロスコリジョンID</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u32 interfereId">
+            <DisplayName>干渉データID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u32 iconId">
+            <DisplayName>アイコンID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u32 armorReinforceId">
+            <DisplayName>防具成長設定</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 defenseStatAffectScale = 1">
+            <DisplayName>ステータス影響倍率 防御力</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 defenseSlashScale = 1">
+            <DisplayName>物理防御力倍率 斬撃</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 defenseThrustScale = 1">
+            <DisplayName>物理防御力倍率 刺突</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 defenseStrikeScale = 1">
+            <DisplayName>物理防御力倍率 打撃</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u16 prerequisiteStrength">
+            <DisplayName>必要ステータス 筋力</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u16 prerequisiteDexterity">
+            <DisplayName>必要ステータス 技量</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u16 prerequisiteIntelligence">
+            <DisplayName>必要ステータス 理力</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u16 prerequisiteFaith">
+            <DisplayName>必要ステータス 信仰</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 weight">
+            <DisplayName>パラメータ 重量</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 durability">
+            <DisplayName>パラメータ 耐久値</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u32 repairCost">
+            <DisplayName>パラメータ 修理コスト [soul]</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 strong">
+            <DisplayName>パラメータ 強靱度</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 handsUpWeight">
+            <DisplayName>脇開き量[%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 handsUpFLevel">
+            <DisplayName>脇上げ</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u16 itemDropWeight">
+            <DisplayName>アイテムドロップ率補正[%] x0.01</DisplayName>
+            <Maximum>10000</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="s32 material">
+            <DisplayName>パラメータ 材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u32 brokenSfxId">
+            <DisplayName>破損 SFX ID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="s32 brokenSoundType">
+            <DisplayName>破損 サウンドタイプ</DisplayName>
+            <Enum>EQUIP_BREAK_SOUND_MATERIAL_TYPE</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

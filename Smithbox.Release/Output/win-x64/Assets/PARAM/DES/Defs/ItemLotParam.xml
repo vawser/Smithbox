@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ITEMLOT_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="u16 lotItem_Rarity">
+      <DisplayName>レアリティ設定</DisplayName>
+      <Description>宝箱などに、どれくらい貴重なアイテムが入っているかを指定する</Description>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad0[2]">
+      <DisplayName>パディング0</DisplayName>
+      <Description>パディング</Description>
+    </Field>
+    <Field Def="s32 lotItemCategory01">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId01">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum01">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint01">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体100％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint01">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint01">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck01">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad1[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory02">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId02">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum02">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint02">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体101％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint02">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint02">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck02">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad2[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory03">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId03">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum03">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint03">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体102％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint03">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint03">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck03">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad3[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory04">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId04">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum04">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint04">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体103％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint04">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint04">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck04">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad4[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory05">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId05">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum05">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint05">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体104％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint05">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint05">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck05">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad5[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory06">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId06">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum06">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint06">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体105％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint06">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint06">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck06">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad6[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory07">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId07">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum07">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint07">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体106％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint07">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint07">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck07">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad7[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 lotItemCategory08">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 lotItemId08">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 lotItemNum08">
+      <DisplayName>個数</DisplayName>
+      <Description>取得できるアイテムの個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="u16 lotItemBasePoint08">
+      <DisplayName>基本出現ポイント</DisplayName>
+      <Description>アイテムの基本的な出現ポイント（大体107％で数値を入力していく</Description>
+      <Maximum>2000</Maximum>
+    </Field>
+    <Field Def="s16 QWCBasePoint08">
+      <DisplayName>ＱＷＣ基本出現ポイント</DisplayName>
+      <Description>そのアイテムのＱＷＣによる基本的な出現しやすさ</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s16 QWCAppliesPoint08">
+      <DisplayName>ＱＷＣ黒白適用開始値</DisplayName>
+      <Description>【ＱＷＣ基本出現ポイント】をＱＷＣがどの数値の段階から計算に組み入れるか？を設定</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u16 enableLuck08">
+      <DisplayName>運パラメータ有効</DisplayName>
+      <Enum>ITEMLOT_ENABLE_LUCK</Enum>
+      <Description>抽選の確率をプレイヤーの運を反映させるか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad8[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 hostOnlyItemCate">
+      <DisplayName>ホストオンリーアイテムのカテゴリ</DisplayName>
+      <Enum>ITEMLOT_ITEMCATEGORY</Enum>
+      <Description>シングルプレイ時・マルチプレイのホストのみ取得可能のアイテムカテゴリ</Description>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 hostOnlyItemId">
+      <DisplayName>ホストオンリーアイテムのID</DisplayName>
+      <Description>シングルプレイ時・マルチプレイのホストのみ取得可能のアイテムID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u16 hostOnlyItemNum">
+      <DisplayName>ホストオンリーアイテムの個数</DisplayName>
+      <Description>シングルプレイ時・マルチプレイのホストのみ取得可能のアイテム個数</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad9[2]">
+      <DisplayName>パディング1</DisplayName>
+    </Field>
+    <Field Def="s32 eventId">
+      <DisplayName>アクションID</DisplayName>
+      <Description>この抽選パラメータを有効/無効かを監視するイベントID(-1、0：イベントID無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="dummy8 Pad10[12]">
+      <DisplayName>パディング2</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_THINK_REPLY_BEHAVIOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_REPLY_BEHAVIOR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move by walking"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move by running"
+        }
+      ]
+    }
+  ]
+}

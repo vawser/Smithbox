@@ -1,0 +1,92 @@
+{
+  "Key": "ENEMY_SHOT_SFX_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_SHOT_SFX_PARAM_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor bow"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow for lower-class soldiers (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire arrow for lower rank soldiers (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID200"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: for Rogue Skeleton (from Damipoly ID201)"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID203"
+        }
+      ]
+    }
+  ]
+}

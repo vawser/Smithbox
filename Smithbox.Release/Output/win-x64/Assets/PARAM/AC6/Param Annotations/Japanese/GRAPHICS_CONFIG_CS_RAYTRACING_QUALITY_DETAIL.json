@@ -1,0 +1,53 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "全体機能の有効無効",
+      "Description": "レイトレ有効"
+    },
+    {
+      "Field": "dirLightShadowEnabled",
+      "Name": "並行ライトシャドウ有効",
+      "Description": "並行ライトのシャドウ有効"
+    },
+    {
+      "Field": "aoEnabled",
+      "Name": "AO有効",
+      "Description": "AO有効"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "dirLightShadowRaySampleScale",
+      "Name": "並行ライトシャドウのレイサンプル数スケール",
+      "Description": "並行ライトシャドウのレイサンプル数スケール"
+    },
+    {
+      "Field": "dirLightShadowRaySampleOffset",
+      "Name": "並行ライトシャドウのレイサンプル数オフセット",
+      "Description": "並行ライトシャドウのレイサンプル数オフセット"
+    },
+    {
+      "Field": "aoRaySampleScale",
+      "Name": "AOシャドウのレイサンプル数スケール",
+      "Description": "AOシャドウのレイサンプル数スケール"
+    },
+    {
+      "Field": "aoRaySampleOffset",
+      "Name": "AOシャドウのレイサンプル数オフセット",
+      "Description": "AOシャドウのレイサンプル数オフセット"
+    },
+    {
+      "Field": "dirLightShadowConeScale",
+      "Name": "コーンサイズのスケール",
+      "Description": "通常0～1.0の範囲で調整。0にすると自動的にサンプル数は1になる。"
+    }
+  ]
+}

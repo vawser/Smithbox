@@ -1,0 +1,260 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Hint",
+      "Text": "Use this section to import JSON data, applying the data to your current project."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type",
+      "Text": "Import Type"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File",
+      "Text": "Import from File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File_TT",
+      "Text": "Import text from a JSON file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Select_Text_JSON",
+      "Text": "Select text JSON"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Invalid_Text_JSON",
+      "Text": "Selected file is invalid."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Container",
+      "Text": "Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Container_TT",
+      "Text": "Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Text_File",
+      "Text": "Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Text_File_TT",
+      "Text": "Import the selected text file on the FMG level, replacing all associated entries (if applicable)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Text_Entry",
+      "Text": "Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Text_Entry_TT",
+      "Text": "Import the selected text file on the FMG Entry level, replacing all matching entries."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Hint",
+      "Text": "Use this section to export JSON data from your current project."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Directory",
+      "Text": "Export Directory"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Directory_TT",
+      "Text": "The directory to export the JSON data to."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory",
+      "Text": "Set Export Directory"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory_TT",
+      "Text": "Set the current export directory for the export JSON file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory",
+      "Text": "Open Export Directory"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory_TT",
+      "Text": "Open the current export directory in a file explorer."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Filename",
+      "Text": "Export Filename"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Filename_TT",
+      "Text": "The file to use for the exported file (blank will use an auto-generated name)"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type",
+      "Text": "Export Type"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type_TT",
+      "Text": "Determines which data is exported."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Output",
+      "Text": "Export Output"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Output_TT",
+      "Text": "The export string contents."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard_TT",
+      "Text": "Copy the output string to clipboard."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container",
+      "Text": "Export Selected Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container_TT",
+      "Text": "Generate the export string for the currently selected container."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File",
+      "Text": "Export Selected Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File_TT",
+      "Text": "Generate the export string for the currently selected file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry",
+      "Text": "Export Selected Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry_TT",
+      "Text": "Generate the export string for the currently selected entry."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Dialog_Select_Export_Dest",
+      "Text": "Select Export Destination"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Container_Selected",
+      "Text": "No container has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Export_Directory_Defined",
+      "Text": "No export directory has been defined."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Filename_Empty",
+      "Text": "Filename is empty."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_File_Selected",
+      "Text": "No text file has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_Entry_Selected",
+      "Text": "No text entry has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Container",
+      "Text": "Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Container_TT",
+      "Text": "Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File",
+      "Text": "Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File_TT",
+      "Text": "Export your currently selected Text File (including all of its entries) to a export text file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry",
+      "Text": "Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry_TT",
+      "Text": "Export your currently selected FMG Entries to a export text file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Container",
+      "Text": "Export Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_File",
+      "Text": "Export Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_Entry",
+      "Text": "Export Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Modified_Text",
+      "Text": "Export Modified Text"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Modified_Text_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Entry_Modified_Text_TT",
+      "Text": "Only include FMG entries that are considered 'modified'."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Unique_Text",
+      "Text": "Export Unique Text"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Unique_Text_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Entry_Unique_Text_TT",
+      "Text": "Only include FMG entries that are considered 'unique'."
+    }
+  ]
+}

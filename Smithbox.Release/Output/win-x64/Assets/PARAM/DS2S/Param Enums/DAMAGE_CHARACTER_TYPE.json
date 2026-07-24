@@ -1,0 +1,56 @@
+{
+  "Key": "DAMAGE_CHARACTER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_CHARACTER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living Skin / Cloth"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hard Skin"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very Hard Skin"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Skin / Demon Skin"
+        }
+      ]
+    }
+  ]
+}

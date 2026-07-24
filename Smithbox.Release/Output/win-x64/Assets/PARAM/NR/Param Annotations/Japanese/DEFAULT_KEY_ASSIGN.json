@@ -1,0 +1,613 @@
+{
+  "Param": "DEFAULT_KEY_ASSIGN",
+  "Type": "DEFAULT_KEY_ASSIGN",
+  "Name": "DEFAULT_KEY_ASSIGN",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "priority0",
+      "Name": "パッド0",
+      "Description": "下位抑制パッド0"
+    },
+    {
+      "Field": "priority1",
+      "Name": "GUIフレームワーク用",
+      "Description": "下位抑制GUIフレームワーク用パッド"
+    },
+    {
+      "Field": "priority2",
+      "Name": "パッド2",
+      "Description": "下位抑制パッド2"
+    },
+    {
+      "Field": "priority3",
+      "Name": "デバッグメニューモード切替",
+      "Description": "下位抑制デバッグメニューモード切替パッド"
+    },
+    {
+      "Field": "priority4",
+      "Name": "パッド4",
+      "Description": "下位抑制パッド4"
+    },
+    {
+      "Field": "priority5",
+      "Name": "パッドデバッグメニュー",
+      "Description": "下位抑制パッドデバッグメニューパッド"
+    },
+    {
+      "Field": "priority6",
+      "Name": "パッド6",
+      "Description": "下位抑制パッド6"
+    },
+    {
+      "Field": "priority7",
+      "Name": "パッド7",
+      "Description": "下位抑制パッド7"
+    },
+    {
+      "Field": "priority8",
+      "Name": "パッド8",
+      "Description": "下位抑制パッド8"
+    },
+    {
+      "Field": "priority9",
+      "Name": "パッド9",
+      "Description": "下位抑制パッド9"
+    },
+    {
+      "Field": "priority10",
+      "Name": "パッド10",
+      "Description": "下位抑制パッド10"
+    },
+    {
+      "Field": "priority11",
+      "Name": "パッド11",
+      "Description": "下位抑制パッド11"
+    },
+    {
+      "Field": "priority12",
+      "Name": "パッド12",
+      "Description": "下位抑制パッド12"
+    },
+    {
+      "Field": "priority13",
+      "Name": "パッド13",
+      "Description": "下位抑制パッド13"
+    },
+    {
+      "Field": "priority14",
+      "Name": "パッド14",
+      "Description": "下位抑制パッド14"
+    },
+    {
+      "Field": "priority15",
+      "Name": "パッド15",
+      "Description": "下位抑制パッド15"
+    },
+    {
+      "Field": "priority16",
+      "Name": "パッド16",
+      "Description": "下位抑制パッド16"
+    },
+    {
+      "Field": "priority17",
+      "Name": "パッド17",
+      "Description": "下位抑制パッド17"
+    },
+    {
+      "Field": "priority18",
+      "Name": "パッド18",
+      "Description": "下位抑制パッド18"
+    },
+    {
+      "Field": "priority19",
+      "Name": "パッド19",
+      "Description": "下位抑制パッド19"
+    },
+    {
+      "Field": "priority20",
+      "Name": "パッド20",
+      "Description": "下位抑制パッド20"
+    },
+    {
+      "Field": "priority21",
+      "Name": "パッド21",
+      "Description": "下位抑制パッド21"
+    },
+    {
+      "Field": "priority22",
+      "Name": "パッド22",
+      "Description": "下位抑制パッド22"
+    },
+    {
+      "Field": "priority23",
+      "Name": "パッド23",
+      "Description": "下位抑制パッド23"
+    },
+    {
+      "Field": "priority24",
+      "Name": "パッド24",
+      "Description": "下位抑制パッド24"
+    },
+    {
+      "Field": "priority25",
+      "Name": "パッド25",
+      "Description": "下位抑制パッド25"
+    },
+    {
+      "Field": "priority26",
+      "Name": "パッド26",
+      "Description": "下位抑制パッド26"
+    },
+    {
+      "Field": "priority27",
+      "Name": "パッド27",
+      "Description": "下位抑制パッド27"
+    },
+    {
+      "Field": "priority28",
+      "Name": "パッド28",
+      "Description": "下位抑制パッド28"
+    },
+    {
+      "Field": "priority29",
+      "Name": "パッド29",
+      "Description": "下位抑制パッド29"
+    },
+    {
+      "Field": "priority30",
+      "Name": "パッド30",
+      "Description": "下位抑制パッド30"
+    },
+    {
+      "Field": "priority31",
+      "Name": "パッド31",
+      "Description": "下位抑制パッド31"
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "phyisicalKey_0",
+      "Name": "パッド物理キー",
+      "Description": "パッド物理キー"
+    },
+    {
+      "Field": "traitsType_0",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_0",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_0",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_0",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_0",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_0",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_0",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_0",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_0",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_0",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_1",
+      "Name": "パッド物理キー",
+      "Description": "パッド物理キー"
+    },
+    {
+      "Field": "traitsType_1",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_1",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_1",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_1",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_1",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_1",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_1",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_1",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_1",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_1",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_2",
+      "Name": "パッド物理キー",
+      "Description": "パッド物理キー"
+    },
+    {
+      "Field": "traitsType_2",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_2",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_2",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_2",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_2",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_2",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_2",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_2",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_2",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_2",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_3",
+      "Name": "パッド物理キー",
+      "Description": "パッド物理キー"
+    },
+    {
+      "Field": "traitsType_3",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_3",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_3",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_3",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_3",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_3",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_3",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_3",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_3",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_3",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_4",
+      "Name": "PC物理キー",
+      "Description": "PC物理キー"
+    },
+    {
+      "Field": "traitsType_4",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_4",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_4",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_4",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_4",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_4",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_4",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_4",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_4",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_4",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_5",
+      "Name": "PC物理キー",
+      "Description": "PC物理キー"
+    },
+    {
+      "Field": "traitsType_5",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_5",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_5",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_5",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_5",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_5",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_5",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_5",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_5",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_5",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_6",
+      "Name": "PC物理キー",
+      "Description": "PC物理キー"
+    },
+    {
+      "Field": "traitsType_6",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_6",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_6",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_6",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_6",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_6",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_6",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_6",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_6",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_6",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    },
+    {
+      "Field": "phyisicalKey_7",
+      "Name": "PC物理キー",
+      "Description": "PC物理キー"
+    },
+    {
+      "Field": "traitsType_7",
+      "Name": "押され方",
+      "Description": "押され方"
+    },
+    {
+      "Field": "a2dOperator_7",
+      "Name": "アナログ→デジタル変換方法",
+      "Description": "アナログ→デジタル変換方法"
+    },
+    {
+      "Field": "applyTarget_7",
+      "Name": "適用ターゲット",
+      "Description": "反映ターゲット"
+    },
+    {
+      "Field": "isAnalog_7",
+      "Name": "デジタル・アナログ",
+      "Description": "デジタルorアナログ"
+    },
+    {
+      "Field": "enableWin64_7",
+      "Name": "Win64",
+      "Description": "Win64で使用されるか"
+    },
+    {
+      "Field": "enablePS4_7",
+      "Name": "PS4",
+      "Description": "PS4で使用されるか"
+    },
+    {
+      "Field": "enableXboxOne_7",
+      "Name": "XboxOne",
+      "Description": "XboxOneで使用されるか"
+    },
+    {
+      "Field": "time1_7",
+      "Name": "時間",
+      "Description": "時間"
+    },
+    {
+      "Field": "time2_7",
+      "Name": "リピート用インターバル時間",
+      "Description": "リピート用インターバル時間"
+    },
+    {
+      "Field": "a2dThreshold_7",
+      "Name": "アナログ→デジタル変換閾値",
+      "Description": "アナログ→デジタル変換閾値"
+    }
+  ]
+}

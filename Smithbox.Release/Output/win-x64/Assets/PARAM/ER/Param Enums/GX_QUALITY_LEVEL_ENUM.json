@@ -1,0 +1,47 @@
+{
+  "Key": "GX_QUALITY_LEVEL_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GX_QUALITY_LEVEL_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 4"
+        }
+      ]
+    }
+  ]
+}

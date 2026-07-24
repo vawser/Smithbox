@@ -1,0 +1,1727 @@
+{
+  "Name": "ScratchedPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[c0000] Player"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "[c2010] Blaidd the Half-Wolf"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "[c2040] Juvenile Scholar"
+      ]
+    },
+    {
+      "ID": 204100,
+      "Entries": [
+        "[c2041] Larva of Rot"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "[c2100] Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "[c2130] Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "[c2140] Omen"
+      ]
+    },
+    {
+      "ID": 215000,
+      "Entries": [
+        "[c2150] Lightning Ball"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "[c2270] Giant Crab"
+      ]
+    },
+    {
+      "ID": 227100,
+      "Entries": [
+        "[c2271] Crab"
+      ]
+    },
+    {
+      "ID": 227200,
+      "Entries": [
+        "[c2272] UNUSED Giant Crab"
+      ]
+    },
+    {
+      "ID": 227300,
+      "Entries": [
+        "[c2273] UNUSED Crab"
+      ]
+    },
+    {
+      "ID": 227400,
+      "Entries": [
+        "[c2274] UNUSED Giant Crab"
+      ]
+    },
+    {
+      "ID": 227500,
+      "Entries": [
+        "[c2275] UNUSED Crab"
+      ]
+    },
+    {
+      "ID": 227600,
+      "Entries": [
+        "[c2276] Giant Death Crab"
+      ]
+    },
+    {
+      "ID": 227700,
+      "Entries": [
+        "[c2277] UNUSED Crab"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "[c2500] Crucible Knight"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "[c3000] Exile Soldier"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "[c3010] Banished Knight"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "[c3020] Large Exile Soldier"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "[c3050] Commander (Niall/O'Neill)"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "[c3060] Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 306100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "[c3080] Imp"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "[c3100] Bell Bearing Hunter (Elemer)"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "[c3150] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "[c3160] Funeral Steed"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "[c3170] Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "[c3180] Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 318100,
+      "Entries": [
+        "[c3181] Red Wolf"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "[c3250] Draconic Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 325100,
+      "Entries": [
+        "[c3251] Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 325200,
+      "Entries": [
+        "[c3252] Royal Carian Knight"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "[c3300] Nox Warrior"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "[c3320] Silver Tear"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 335000,
+      "Entries": [
+        "[c3350] Crystalian"
+      ]
+    },
+    {
+      "ID": 336000,
+      "Entries": [
+        "[c3360] Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 336100,
+      "Entries": [
+        "[c3361] Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 337000,
+      "Entries": [
+        "[c3370] Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 337100,
+      "Entries": [
+        "[c3371] Putrid Ancestral Shaman"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "[c3400] Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 345000,
+      "Entries": [
+        "[c3450] Misbegotten"
+      ]
+    },
+    {
+      "ID": 345100,
+      "Entries": [
+        "[c3451] Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 346000,
+      "Entries": [
+        "[c3460] Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 347000,
+      "Entries": [
+        "[c3470] Albinauric"
+      ]
+    },
+    {
+      "ID": 347100,
+      "Entries": [
+        "[c3471] Large Albinauric"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "[c3500] Grave Skeleton"
+      ]
+    },
+    {
+      "ID": 355000,
+      "Entries": [
+        "[c3550] Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 356000,
+      "Entries": [
+        "[c3560] Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 357000,
+      "Entries": [
+        "[c3570] Godskin Noble"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "[c3600] Stoneskin Lord"
+      ]
+    },
+    {
+      "ID": 361000,
+      "Entries": [
+        "[c3610] Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 362000,
+      "Entries": [
+        "[c3620] Large Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 365000,
+      "Entries": [
+        "[c3650] Erdtree Guardian"
+      ]
+    },
+    {
+      "ID": 366000,
+      "Entries": [
+        "[c3660] Commoner"
+      ]
+    },
+    {
+      "ID": 366100,
+      "Entries": [
+        "[c3661] Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 366200,
+      "Entries": [
+        "[c3662] Large Shambling Corpse"
+      ]
+    },
+    {
+      "ID": 366400,
+      "Entries": [
+        "[c3664] Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 367000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "[c3700] Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 370100,
+      "Entries": [
+        "[c3701] Perfumer"
+      ]
+    },
+    {
+      "ID": 370200,
+      "Entries": [
+        "[c3702] Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 370300,
+      "Entries": [
+        "[c3703] Page"
+      ]
+    },
+    {
+      "ID": 370400,
+      "Entries": [
+        "[c3704] Battlemage"
+      ]
+    },
+    {
+      "ID": 373000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 375000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 381000,
+      "Entries": [
+        "[c3810] Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 385000,
+      "Entries": [
+        "[c3850] Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "[c3900] Fire Monk"
+      ]
+    },
+    {
+      "ID": 390100,
+      "Entries": [
+        "[c3901] Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 391000,
+      "Entries": [
+        "[c3910] Fire Prelate"
+      ]
+    },
+    {
+      "ID": 395000,
+      "Entries": [
+        "[c3950] Man-serpent"
+      ]
+    },
+    {
+      "ID": 397000,
+      "Entries": [
+        "[c3970] Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "[c4000] Revenant Follower"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "[c4020] Royal Revenant"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "[c4021] Large Royal Revenant"
+      ]
+    },
+    {
+      "ID": 404000,
+      "Entries": [
+        "[c4040] Slug"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "[c4050] Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 406000,
+      "Entries": [
+        "[c4060] Kaiden Sellsword's Horse"
+      ]
+    },
+    {
+      "ID": 407000,
+      "Entries": [
+        "[c4070] Wolf"
+      ]
+    },
+    {
+      "ID": 407100,
+      "Entries": [
+        "[c4071] White Wolf"
+      ]
+    },
+    {
+      "ID": 408000,
+      "Entries": [
+        "[c4080] Rat"
+      ]
+    },
+    {
+      "ID": 409000,
+      "Entries": [
+        "[c4090] Giant Rat"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "[c4100] Demi-Human"
+      ]
+    },
+    {
+      "ID": 410100,
+      "Entries": [
+        "[c4101] Large Demi-Human"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "[c4110] Small Demi-Human"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "[c4120] Demi-Human Chief"
+      ]
+    },
+    {
+      "ID": 413000,
+      "Entries": [
+        "[c4130] Demi-Human Queen"
+      ]
+    },
+    {
+      "ID": 414000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 415000,
+      "Entries": [
+        "[c4150] Basilisk"
+      ]
+    },
+    {
+      "ID": 416000,
+      "Entries": [
+        "[c4160] Stray Hound"
+      ]
+    },
+    {
+      "ID": 416100,
+      "Entries": [
+        "[c4160] Small Stray Hound"
+      ]
+    },
+    {
+      "ID": 416200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 416300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 416400,
+      "Entries": [
+        "[c4164] Bloody Stray"
+      ]
+    },
+    {
+      "ID": 416500,
+      "Entries": [
+        "[c4165] Small Bloody Stray"
+      ]
+    },
+    {
+      "ID": 416600,
+      "Entries": [
+        "[c4166] Rotten Stray"
+      ]
+    },
+    {
+      "ID": 416700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 417000,
+      "Entries": [
+        "[c4170] Flesh Mound"
+      ]
+    },
+    {
+      "ID": 417100,
+      "Entries": [
+        "[c4171] Large Flesh Mound"
+      ]
+    },
+    {
+      "ID": 418000,
+      "Entries": [
+        "[c4180] Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 419000,
+      "Entries": [
+        "[c4190] Large Scarab"
+      ]
+    },
+    {
+      "ID": 419100,
+      "Entries": [
+        "[c4191] Scarab"
+      ]
+    },
+    {
+      "ID": 419200,
+      "Entries": [
+        "[c4192] Huge Scarab"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "[c4200] Man-Bat"
+      ]
+    },
+    {
+      "ID": 420100,
+      "Entries": [
+        "[c4201] Operatic Bat"
+      ]
+    },
+    {
+      "ID": 421000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 422000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 423000,
+      "Entries": [
+        "[c4230] Small Land Octopus"
+      ]
+    },
+    {
+      "ID": 424000,
+      "Entries": [
+        "[c4240] Fingercreeper"
+      ]
+    },
+    {
+      "ID": 424100,
+      "Entries": [
+        "[c4241] Huge Fingercreeper"
+      ]
+    },
+    {
+      "ID": 425000,
+      "Entries": [
+        "[c4250] Small Fingercreeper"
+      ]
+    },
+    {
+      "ID": 426000,
+      "Entries": [
+        "[c4260] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 427000,
+      "Entries": [
+        "[c4270] Elder Lion"
+      ]
+    },
+    {
+      "ID": 428000,
+      "Entries": [
+        "[c4280] Giant Ant"
+      ]
+    },
+    {
+      "ID": 428100,
+      "Entries": [
+        "[c4281] Flathead Giant Ant"
+      ]
+    },
+    {
+      "ID": 429000,
+      "Entries": [
+        "[c4290] Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "[c4300] Wandering Noble"
+      ]
+    },
+    {
+      "ID": 431000,
+      "Entries": [
+        "[c4310] Generic Soldier"
+      ]
+    },
+    {
+      "ID": 431100,
+      "Entries": [
+        "[c4311] Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 431200,
+      "Entries": [
+        "[c4312] Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 431300,
+      "Entries": [
+        "[c4313] Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 431400,
+      "Entries": [
+        "[c4314] Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 431500,
+      "Entries": [
+        "[c4315] Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 431600,
+      "Entries": [
+        "[c4316] Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 432100,
+      "Entries": [
+        "[c4321] Vulgur Militia"
+      ]
+    },
+    {
+      "ID": 434000,
+      "Entries": [
+        "[c4340] Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 435000,
+      "Entries": [
+        "[c4350] Generic Knight"
+      ]
+    },
+    {
+      "ID": 435100,
+      "Entries": [
+        "[c4351] Godrick Knight"
+      ]
+    },
+    {
+      "ID": 435200,
+      "Entries": [
+        "[c4352] Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 435300,
+      "Entries": [
+        "[c4353] Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 435400,
+      "Entries": [
+        "[c4354] Redmane Knight"
+      ]
+    },
+    {
+      "ID": 435500,
+      "Entries": [
+        "[c4355] Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 435600,
+      "Entries": [
+        "[c4356] Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 435800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 436000,
+      "Entries": [
+        "[c4360] Generic Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436100,
+      "Entries": [
+        "[c4361] Godrick Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436200,
+      "Entries": [
+        "[c4362] Cuckoo Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436300,
+      "Entries": [
+        "[c4363] Leyndell Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436400,
+      "Entries": [
+        "[c4364] Redmane Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436500,
+      "Entries": [
+        "[c4365] Mausoleum Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436600,
+      "Entries": [
+        "[c4366] Haligtree Knight's Horse"
+      ]
+    },
+    {
+      "ID": 436800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 437000,
+      "Entries": [
+        "[c4371] Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437200,
+      "Entries": [
+        "[c4372] Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437300,
+      "Entries": [
+        "[c4373] Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437400,
+      "Entries": [
+        "[c4374] Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437500,
+      "Entries": [
+        "[c4375] Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437600,
+      "Entries": [
+        "[c4376] Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 437700,
+      "Entries": [
+        "[c4377] Highwayman"
+      ]
+    },
+    {
+      "ID": 438000,
+      "Entries": [
+        "[c4380] Starcaller"
+      ]
+    },
+    {
+      "ID": 438100,
+      "Entries": [
+        "[c4381] Guilty"
+      ]
+    },
+    {
+      "ID": 438200,
+      "Entries": [
+        "[c4382] Miner"
+      ]
+    },
+    {
+      "ID": 438300,
+      "Entries": [
+        "[c4383] Stonedigger"
+      ]
+    },
+    {
+      "ID": 438400,
+      "Entries": [
+        "[c4384] Large Stonedigger"
+      ]
+    },
+    {
+      "ID": 438500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 438600,
+      "Entries": [
+        "[c4386] Blackflame Guilty"
+      ]
+    },
+    {
+      "ID": 442000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 442100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 443000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 444000,
+      "Entries": [
+        "[c4440] Land Squirt"
+      ]
+    },
+    {
+      "ID": 444100,
+      "Entries": [
+        "[c4441] Large Land Squirt"
+      ]
+    },
+    {
+      "ID": 444200,
+      "Entries": [
+        "[c4442] Large Putrid Land Squirt"
+      ]
+    },
+    {
+      "ID": 445000,
+      "Entries": [
+        "[c4450] Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 446000,
+      "Entries": [
+        "[c4460] Flame Chariot"
+      ]
+    },
+    {
+      "ID": 447000,
+      "Entries": [
+        "[c4470] Abductor Virgin"
+      ]
+    },
+    {
+      "ID": 448000,
+      "Entries": [
+        "[c4480] Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 448100,
+      "Entries": [
+        "[c4481] Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 448200,
+      "Entries": [
+        "[c4482] Putrid Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 448300,
+      "Entries": [
+        "[c4483] Putrid Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 449000,
+      "Entries": [
+        "[c4490] Living Jar"
+      ]
+    },
+    {
+      "ID": 449100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "[c4500] Flying Dragon"
+      ]
+    },
+    {
+      "ID": 450100,
+      "Entries": [
+        "[c4501] Decaying Rancor Dragon"
+      ]
+    },
+    {
+      "ID": 450200,
+      "Entries": [
+        "[c4502] Lake Glintstone Dragon"
+      ]
+    },
+    {
+      "ID": 450300,
+      "Entries": [
+        "[c4503] Mountaintop Ice Dragon"
+      ]
+    },
+    {
+      "ID": 450400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 450500,
+      "Entries": [
+        "[c4505] Small Flying Dragon"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "[c4510] Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 455000,
+      "Entries": [
+        "[c4550] Giant Dog"
+      ]
+    },
+    {
+      "ID": 456000,
+      "Entries": [
+        "[c4560] Giant Crow"
+      ]
+    },
+    {
+      "ID": 456100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 457000,
+      "Entries": [
+        "[c4570] Wormface"
+      ]
+    },
+    {
+      "ID": 458000,
+      "Entries": [
+        "[c4580] Large Wormface"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "[c4600] Troll"
+      ]
+    },
+    {
+      "ID": 460100,
+      "Entries": [
+        "[c4601] Troll Knight"
+      ]
+    },
+    {
+      "ID": 460200,
+      "Entries": [
+        "[c4602] Snowfield Troll"
+      ]
+    },
+    {
+      "ID": 460300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 462000,
+      "Entries": [
+        "[c4620] Naturalborn of the Void (Astel)"
+      ]
+    },
+    {
+      "ID": 463000,
+      "Entries": [
+        "[c4630] Runebear"
+      ]
+    },
+    {
+      "ID": 464000,
+      "Entries": [
+        "[c4640] Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 465000,
+      "Entries": [
+        "[c4650] Dragonkin Soldier"
+      ]
+    },
+    {
+      "ID": 466000,
+      "Entries": [
+        "[c4660] Guardian Golem"
+      ]
+    },
+    {
+      "ID": 467000,
+      "Entries": [
+        "[c4670] Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 468000,
+      "Entries": [
+        "[c4680] Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 469000,
+      "Entries": [
+        "[c4690] Grafted Scion"
+      ]
+    },
+    {
+      "ID": 473000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 475000,
+      "Entries": [
+        "[c4750] Grafted Monarch (Godrick)"
+      ]
+    },
+    {
+      "ID": 477000,
+      "Entries": [
+        "[c4770] Valiant Gargoyle"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 480100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 481000,
+      "Entries": [
+        "[c4810] Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 481100,
+      "Entries": [
+        "[c4811] Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 482000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 490000,
+      "Entries": [
+        "[c4900] Caligo, Miasma of Night"
+      ]
+    },
+    {
+      "ID": 490100,
+      "Entries": [
+        "[c4901] Caligo, Miasma of Night (Everdark)"
+      ]
+    },
+    {
+      "ID": 491000,
+      "Entries": [
+        "[c4910] Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 491100,
+      "Entries": [
+        "[c4911] Great Wyrm"
+      ]
+    },
+    {
+      "ID": 495000,
+      "Entries": [
+        "[c4950] Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 496000,
+      "Entries": [
+        "[c4960] Giant Skeleton Torso"
+      ]
+    },
+    {
+      "ID": 496100,
+      "Entries": [
+        "[c4961] Sebastian (Small Giant Skeleton Torso)"
+      ]
+    },
+    {
+      "ID": 498000,
+      "Entries": [
+        "[c4980] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "[c5010] Golden Hippopotamus (Large)"
+      ]
+    },
+    {
+      "ID": 501100,
+      "Entries": [
+        "[c5011] Golden Hippopotamus (Small)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "[c5040] Curseblade"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "[c5070] Death Knight"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "[c5080] Bloodfiend"
+      ]
+    },
+    {
+      "ID": 508100,
+      "Entries": [
+        "[c5081] Chief Bloodfiend"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "[c5090] Gravebird"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "[c5110] Maris' Tendril"
+      ]
+    },
+    {
+      "ID": 516000,
+      "Entries": [
+        "[c5160] Fire Knight"
+      ]
+    },
+    {
+      "ID": 519000,
+      "Entries": [
+        "[c5190] Spider Scorpion"
+      ]
+    },
+    {
+      "ID": 519200,
+      "Entries": [
+        "[c5192] Spider Scorpion (Large)"
+      ]
+    },
+    {
+      "ID": 519300,
+      "Entries": [
+        "[c5193] Spider Scorpion (Small)"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "[c5120] Divine Beast Dancing Lion"
+      ]
+    },
+    {
+      "ID": 524000,
+      "Entries": [
+        "[c5240] Shadow Hornsent"
+      ]
+    },
+    {
+      "ID": 524100,
+      "Entries": [
+        "[c5241] Shadow Hornsent (Large)"
+      ]
+    },
+    {
+      "ID": 525000,
+      "Entries": [
+        "[c5250] Horned Warrior/Divine Warrior"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "[c5310] Inquisitor (Base)"
+      ]
+    },
+    {
+      "ID": 531100,
+      "Entries": [
+        "[c5311] Inquisitor"
+      ]
+    },
+    {
+      "ID": 531200,
+      "Entries": [
+        "[c5312] Elder Inquisitor"
+      ]
+    },
+    {
+      "ID": 532000,
+      "Entries": [
+        "[c5320] Fat Inquisitor"
+      ]
+    },
+    {
+      "ID": 552300,
+      "Entries": [
+        "[c5523] Shadow Hound"
+      ]
+    },
+    {
+      "ID": 575000,
+      "Entries": [
+        "[c5750] Living Jar (Icy)"
+      ]
+    },
+    {
+      "ID": 575100,
+      "Entries": [
+        "[c5750] Living Jar (Small Icy)"
+      ]
+    },
+    {
+      "ID": 581000,
+      "Entries": [
+        "[c5810] Demi-Human Swordmaster"
+      ]
+    },
+    {
+      "ID": 582000,
+      "Entries": [
+        "[c5820] Great Red Bear"
+      ]
+    },
+    {
+      "ID": 583000,
+      "Entries": [
+        "[c5830] Messmer Soldier"
+      ]
+    },
+    {
+      "ID": 586000,
+      "Entries": [
+        "[c5860] Ghostflame Dragon"
+      ]
+    },
+    {
+      "ID": 587000,
+      "Entries": [
+        "[c5870] Lion-Headed Imp"
+      ]
+    },
+    {
+      "ID": 590000,
+      "Entries": [
+        "[c5900] Man-Fly"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "[c6001] Eagle"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "[c6060] Ram"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "[c7000] Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "[c7100] Ancient Hero"
+      ]
+    },
+    {
+      "ID": 750000,
+      "Entries": [
+        "[c7500] Gladius, Beast of Night"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "[c7510] Adel, Baron of Night"
+      ]
+    },
+    {
+      "ID": 751100,
+      "Entries": [
+        "[c7511] Adel, Baron of Night (Everdark)"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "[c7520] Gnoster, Wisdom of Night (Gnoster Moth)"
+      ]
+    },
+    {
+      "ID": 752100,
+      "Entries": [
+        "[c7521] Animus, Ascendant Light (Gnoster Red Moth)"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "[c7530] Faurtis Stoneshield (Gnoster Shears)"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "[c7540] Maris, Fathom of Night"
+      ]
+    },
+    {
+      "ID": 754100,
+      "Entries": [
+        "[c7541] Maris, Fathom of Night (Everdark)"
+      ]
+    },
+    {
+      "ID": 756000,
+      "Entries": [
+        "[c7560] Libra, Creature of Night"
+      ]
+    },
+    {
+      "ID": 756100,
+      "Entries": [
+        "[c7561] Libra, Creature of Night (Everdark)"
+      ]
+    },
+    {
+      "ID": 757000,
+      "Entries": [
+        "[c7570] Scale-Bearing Merchant (Libra)"
+      ]
+    },
+    {
+      "ID": 758000,
+      "Entries": [
+        "[c7580] Heolstor the Nightlord"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "[c7600] Fulghor, Champion of Nightglow"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "[c7610] Dreglord Straghess"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "[c7620] Weapon-Bequeathed Harmonia"
+      ]
+    },
+    {
+      "ID": 765000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 765100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "[c7700] Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 770100,
+      "Entries": [
+        "[c7701] Gaping Dragon (Tail?)"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "[c7710] Centipede Demon"
+      ]
+    },
+    {
+      "ID": 771100,
+      "Entries": [
+        "[c7711] Centipede Demon Tail"
+      ]
+    },
+    {
+      "ID": 771200,
+      "Entries": [
+        "[c7712] Centipede Demon Arm"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "[c7720] Knight Artorias"
+      ]
+    },
+    {
+      "ID": 780000,
+      "Entries": [
+        "[c7800] Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 781000,
+      "Entries": [
+        "[c7810] Freja's Spiderling"
+      ]
+    },
+    {
+      "ID": 782000,
+      "Entries": [
+        "[c7820] Smelter Demon"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "[c7900] Nameless King"
+      ]
+    },
+    {
+      "ID": 791000,
+      "Entries": [
+        "[c7910] King of the Storm"
+      ]
+    },
+    {
+      "ID": 792000,
+      "Entries": [
+        "[c7920] Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 793000,
+      "Entries": [
+        "[c7930] Demon Prince"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "[c8130] Training Post (Small)"
+      ]
+    },
+    {
+      "ID": 813100,
+      "Entries": [
+        "[c8131] Training Post (Medium)"
+      ]
+    },
+    {
+      "ID": 813200,
+      "Entries": [
+        "[c8132] Training Post (Large)"
+      ]
+    }
+  ]
+}

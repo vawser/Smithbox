@@ -1,0 +1,58 @@
+{
+  "Param": "NOISE_PARAM",
+  "Type": "NOISE_PARAM",
+  "Name": "NOISE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "strengthX",
+      "Name": "X方向の強さ",
+      "Description": "Ｘ方向の強さ"
+    },
+    {
+      "Field": "strengthY",
+      "Name": "Y方向の強さ",
+      "Description": "Ｙ方向の強さ"
+    },
+    {
+      "Field": "strengthZ",
+      "Name": "Z方向の強さ",
+      "Description": "Ｚ方向の強さ"
+    },
+    {
+      "Field": "frequency",
+      "Name": "周期",
+      "Description": "周期"
+    },
+    {
+      "Field": "startScale",
+      "Name": "初期ノイズを最大スケール",
+      "Description": "初期ノイズを最大スケール"
+    },
+    {
+      "Field": "middleScale",
+      "Name": "中間点スケール",
+      "Description": "B-Spline中間点スケール"
+    },
+    {
+      "Field": "lastScale",
+      "Name": "終点ノイズを最大スケール",
+      "Description": "終点ノイズを最大スケール"
+    },
+    {
+      "Field": "octavesNum",
+      "Name": "フラクタルの階層数",
+      "Description": "フラクタルの階層数。この数が増えるほど処理は重くなります。デフォルト3"
+    },
+    {
+      "Field": "lacunarity",
+      "Name": "オクターブごとにかかる周波数の係数(空隙性)",
+      "Description": "オクターブごとにかかる周波数の係数(空隙性)。デフォルト2.0"
+    },
+    {
+      "Field": "gain",
+      "Name": "オクターブごとにかかる振幅の係数",
+      "Description": "オクターブごとにかかる振幅の係数。デフォルト0.5"
+    }
+  ]
+}

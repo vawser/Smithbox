@@ -1,0 +1,118 @@
+{
+  "Param": "CAMERA_RUMBLE_PARAM_ST",
+  "Type": "CAMERA_RUMBLE_PARAM_ST",
+  "Name": "CAMERA_RUMBLE_PARAM_ST",
+  "Description": "Defines certain gamepad vibration settings.",
+  "Fields": [
+    {
+      "Field": "rumbleId",
+      "Name": "Rumble ID",
+      "Description": "ID of the rumble type to use."
+    },
+    {
+      "Field": "hdPadRumbleId",
+      "Name": "HD Pad Rumble ID",
+      "Description": "ID of the rumble type to use for HD Pads."
+    },
+    {
+      "Field": "beginDist",
+      "Name": "Attenuation Start Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "endDist",
+      "Name": "Attenuation End Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "fovApplyType",
+      "Name": "FoV Type",
+      "Description": "Field of View application method."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Higher values correlate to higher priority."
+    },
+    {
+      "Field": "targetType",
+      "Name": "Vibration Target (PC)",
+      "Description": "Only valid when called from a PC TAE. Setting this to ''PC Only'' disabled distance attenuation-related parameters."
+    },
+    {
+      "Field": "isUpdateDist",
+      "Name": "Attenuation Update Distance",
+      "Description": "Distance at which attenuation is reflected in real time."
+    },
+    {
+      "Field": "isUpdateLand",
+      "Name": "Ground Magnification",
+      "Description": "Magnification to apply to the rumble when on land."
+    },
+    {
+      "Field": "hdPadSlotIdx",
+      "Name": "HD Rumble Playback Slot Index",
+      "Description": "0-3"
+    },
+    {
+      "Field": "pad03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lifeTimeSec",
+      "Name": "Lifespan",
+      "Description": "Rumble lifespan, in seconds."
+    },
+    {
+      "Field": "stopRate",
+      "Name": "Dampening Rate [%]",
+      "Description": "Rumble dampening rate, in %."
+    },
+    {
+      "Field": "stopBeginDist",
+      "Name": "Dampening Start Distance",
+      "Description": "Distance at which dampening begins."
+    },
+    {
+      "Field": "stopEndDist",
+      "Name": "Dampening End Distance",
+      "Description": "Distance at which dampening ends."
+    },
+    {
+      "Field": "timeChangeRate",
+      "Name": "Time Change Rate [%]",
+      "Description": "Vibration end magnification."
+    },
+    {
+      "Field": "changeTime",
+      "Name": "Change Time",
+      "Description": "In seconds."
+    },
+    {
+      "Field": "airRateSelf",
+      "Name": "Air Rate (Self)",
+      "Description": "Rumble magnification while in the air."
+    },
+    {
+      "Field": "landRateSelf",
+      "Name": "Ground Rate (Self)",
+      "Description": "Rumble magnification while on the ground."
+    },
+    {
+      "Field": "airRateAnother",
+      "Name": "Air Rate (NPC)",
+      "Description": "Rumble magnification for airborne NPCs."
+    },
+    {
+      "Field": "landRateAnother",
+      "Name": "Ground Rate (NPC)",
+      "Description": "Rumble magnification for NPCs on the ground."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

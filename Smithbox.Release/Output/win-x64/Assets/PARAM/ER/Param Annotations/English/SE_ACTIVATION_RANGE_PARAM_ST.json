@@ -1,0 +1,13 @@
+{
+  "Param": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Type": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Name": "SE_ACTIVATION_RANGE_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "activateRange",
+      "Name": "Activation Range",
+      "Description": "Distance to enable placement SE (m) (0 or less: always enabled)"
+    }
+  ]
+}

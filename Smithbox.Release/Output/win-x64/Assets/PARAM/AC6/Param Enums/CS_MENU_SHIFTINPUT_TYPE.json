@@ -1,0 +1,38 @@
+{
+  "Key": "CS_MENU_SHIFTINPUT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CS_MENU_SHIFTINPUT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "81",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left"
+        }
+      ]
+    },
+    {
+      "Key": "82",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right"
+        }
+      ]
+    }
+  ]
+}

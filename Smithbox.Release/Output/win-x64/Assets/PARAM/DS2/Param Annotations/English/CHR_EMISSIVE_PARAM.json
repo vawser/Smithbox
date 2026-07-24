@@ -1,0 +1,23 @@
+{
+  "Param": "CHR_EMISSIVE_PARAM",
+  "Type": "CHR_EMISSIVE_PARAM",
+  "Name": "CHR_EMISSIVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "frequency",
+      "Name": "Frequency",
+      "Description": "The frequency of the emissiveness."
+    },
+    {
+      "Field": "min",
+      "Name": "Minimum Value",
+      "Description": "The minimum value for the emissiveness."
+    },
+    {
+      "Field": "max",
+      "Name": "Maximum Value",
+      "Description": "The maximum value for the emissiveness."
+    }
+  ]
+}

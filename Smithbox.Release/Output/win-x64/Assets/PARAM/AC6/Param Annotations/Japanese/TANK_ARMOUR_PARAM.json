@@ -1,0 +1,58 @@
+{
+  "Param": "TANK_ARMOUR_PARAM",
+  "Type": "TANK_ARMOUR_PARAM",
+  "Name": "TANK_ARMOUR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseBoneName",
+      "Name": "ベースボーン名",
+      "Description": "ベースの関節名"
+    },
+    {
+      "Field": "beltBoneName",
+      "Name": "ベルトボーン名",
+      "Description": "ベルトの関節名"
+    },
+    {
+      "Field": "refSusAIndex_0",
+      "Name": "傾き算出用ホイール組み合わせAのインデックス前",
+      "Description": "傾き算出するためのホイールのインデックス"
+    },
+    {
+      "Field": "refSusAIndex_1",
+      "Name": "傾き算出用ホイール組み合わせAのインデックス後",
+      "Description": "傾き算出するためのホイールのインデックス"
+    },
+    {
+      "Field": "refSusBIndex_0",
+      "Name": "傾き算出用ホイール組み合わせBのインデックス前",
+      "Description": "傾き算出するためのホイールのインデックス"
+    },
+    {
+      "Field": "refSusBIndex_1",
+      "Name": "傾き算出用ホイール組み合わせBのインデックス後",
+      "Description": "傾き算出するためのホイールのインデックス"
+    },
+    {
+      "Field": "frontBackLength",
+      "Name": "サスペンション間の長さ[m]",
+      "Description": "サスペンション間の長さ"
+    },
+    {
+      "Field": "applyRate",
+      "Name": "適用率",
+      "Description": ""
+    },
+    {
+      "Field": "BoneAxis",
+      "Name": "ボーンの軸(0:X 1:Y 2:Z)",
+      "Description": ""
+    },
+    {
+      "Field": "pad7",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

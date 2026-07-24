@@ -1,0 +1,73 @@
+{
+  "Param": "NPC_TRANSFORM_PARAM_ST",
+  "Type": "NPC_TRANSFORM_PARAM_ST",
+  "Name": "NPC_TRANSFORM_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockDmyPoly0",
+      "Name": "Lock-on Dummy Poly 220",
+      "Description": "Is the lock-on dummy poly 220 available?"
+    },
+    {
+      "Field": "lockDmyPoly1",
+      "Name": "Lock-on Dummy Poly 221",
+      "Description": "Is the lock-on dummy poly 221 available?"
+    },
+    {
+      "Field": "lockDmyPoly2",
+      "Name": "Lock-on Dummy Poly 222",
+      "Description": "Is the lock-on dummy poly 222 available?"
+    },
+    {
+      "Field": "lockDmyPoly3",
+      "Name": "Lock-on Dummy Poly 223",
+      "Description": "Is the lock-on dummy poly 223 available?"
+    },
+    {
+      "Field": "lockDmyPoly4",
+      "Name": "Lock-on Dummy Poly 224",
+      "Description": "Is the lock-on dummy poly 224 available?"
+    },
+    {
+      "Field": "lockDmyPoly5",
+      "Name": "Lock-on Dummy Poly 225",
+      "Description": "Is the lock-on dummy poly 225 available?"
+    },
+    {
+      "Field": "lockDmyPoly6",
+      "Name": "Lock-on Dummy Poly 226",
+      "Description": "Is the lock-on dummy poly 226 available?"
+    },
+    {
+      "Field": "lockDmyPoly7",
+      "Name": "Lock-on Dummy Poly 227",
+      "Description": "Is the lock-on dummy poly 227 available?"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

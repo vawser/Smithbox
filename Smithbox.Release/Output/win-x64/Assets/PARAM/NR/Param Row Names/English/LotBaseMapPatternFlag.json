@@ -1,0 +1,593 @@
+{
+  "Name": "LotBaseMapPatternFlag",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Cataclysm"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "The Mountaintops"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "The Crater"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Rotted Woods"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Noklateo"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Night Boss Interference: Margit"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Night Boss Interference: "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Night Boss Interference: "
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Night Boss Interference: "
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Buried Treasure Group: 00"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Buried Treasure Group: 01"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Buried Treasure Group: 02"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Buried Treasure Group: 03"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Buried Treasure Group: 04"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Buried Treasure Group: 05"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Buried Treasure Group: 06"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Buried Treasure Group: 07"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Buried Treasure Group: 08"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Buried Treasure Group: 09"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Buried Treasure Group: 10"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Buried Treasure Group: 11"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Day 1 Event: Night Boss Appears Continuously"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Day 2 Event: Night Boss Appears Continuously"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Day 1 Event: Meteor Strike"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Day 2 Event: Meteor Strike"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Day 1 Event: Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "Day 2 Event: Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Day 1 Event: Mass Enemy Spawn"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "Day 2 Event: Mass Enemy Spawn"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Day 1 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Day 2 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Day 1 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "Day 2 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Day 1 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Day 2 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Day 1 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "Day 2 Event: Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Day 1 Event: Madness Zone"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "Day 2 Event: Madness Zone"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Day 1 Event: Madness Zone"
+      ]
+    },
+    {
+      "ID": 3091,
+      "Entries": [
+        "Day 2 Event: Difficult Sorcerer's Rise"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

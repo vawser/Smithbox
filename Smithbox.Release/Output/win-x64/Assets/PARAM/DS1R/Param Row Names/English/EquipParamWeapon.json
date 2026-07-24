@@ -1,0 +1,7475 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Dagger [Crystal]"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Dagger [Lightning]"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Dagger [Raw]"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Dagger [Magic]"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Dagger [Enchanted]"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Dagger [Divine]"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "Dagger [Occult]"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "Dagger [Fire]"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "Dagger [Chaos]"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Parrying Dagger [Crystal]"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        "Parrying Dagger [Lightning]"
+      ]
+    },
+    {
+      "ID": 101300,
+      "Entries": [
+        "Parrying Dagger [Raw]"
+      ]
+    },
+    {
+      "ID": 101400,
+      "Entries": [
+        "Parrying Dagger [Magic]"
+      ]
+    },
+    {
+      "ID": 101500,
+      "Entries": [
+        "Parrying Dagger [Enchanted]"
+      ]
+    },
+    {
+      "ID": 101600,
+      "Entries": [
+        "Parrying Dagger [Divine]"
+      ]
+    },
+    {
+      "ID": 101700,
+      "Entries": [
+        "Parrying Dagger [Occult]"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "Parrying Dagger [Fire]"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "Parrying Dagger [Chaos]"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Ghost Blade"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 103100,
+      "Entries": [
+        "Bandit's Knife [Crystal]"
+      ]
+    },
+    {
+      "ID": 103200,
+      "Entries": [
+        "Bandit's Knife [Lightning]"
+      ]
+    },
+    {
+      "ID": 103300,
+      "Entries": [
+        "Bandit's Knife [Raw]"
+      ]
+    },
+    {
+      "ID": 103400,
+      "Entries": [
+        "Bandit's Knife [Magic]"
+      ]
+    },
+    {
+      "ID": 103500,
+      "Entries": [
+        "Bandit's Knife [Enchanted]"
+      ]
+    },
+    {
+      "ID": 103600,
+      "Entries": [
+        "Bandit's Knife [Divine]"
+      ]
+    },
+    {
+      "ID": 103700,
+      "Entries": [
+        "Bandit's Knife [Occult]"
+      ]
+    },
+    {
+      "ID": 103800,
+      "Entries": [
+        "Bandit's Knife [Fire]"
+      ]
+    },
+    {
+      "ID": 103900,
+      "Entries": [
+        "Bandit's Knife [Chaos]"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "Priscilla's Dagger"
+      ]
+    },
+    {
+      "ID": 199000,
+      "Entries": [
+        "[Ghost] Dagger"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Shortsword"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Shortsword [Crystal]"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Shortsword [Lightning]"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Shortsword [Raw]"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Shortsword [Magic]"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Shortsword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Shortsword [Divine]"
+      ]
+    },
+    {
+      "ID": 200700,
+      "Entries": [
+        "Shortsword [Occult]"
+      ]
+    },
+    {
+      "ID": 200800,
+      "Entries": [
+        "Shortsword [Fire]"
+      ]
+    },
+    {
+      "ID": 200900,
+      "Entries": [
+        "Shortsword [Chaos]"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Longsword"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Longsword [Crystal]"
+      ]
+    },
+    {
+      "ID": 201200,
+      "Entries": [
+        "Longsword [Lightning]"
+      ]
+    },
+    {
+      "ID": 201300,
+      "Entries": [
+        "Longsword [Raw]"
+      ]
+    },
+    {
+      "ID": 201400,
+      "Entries": [
+        "Longsword [Magic]"
+      ]
+    },
+    {
+      "ID": 201500,
+      "Entries": [
+        "Longsword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 201600,
+      "Entries": [
+        "Longsword [Divine]"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "Longsword [Occult]"
+      ]
+    },
+    {
+      "ID": 201800,
+      "Entries": [
+        "Longsword [Fire]"
+      ]
+    },
+    {
+      "ID": 201900,
+      "Entries": [
+        "Longsword [Chaos]"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Broadsword"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Broadsword [Crystal]"
+      ]
+    },
+    {
+      "ID": 202200,
+      "Entries": [
+        "Broadsword [Lightning]"
+      ]
+    },
+    {
+      "ID": 202300,
+      "Entries": [
+        "Broadsword [Raw]"
+      ]
+    },
+    {
+      "ID": 202400,
+      "Entries": [
+        "Broadsword [Magic]"
+      ]
+    },
+    {
+      "ID": 202500,
+      "Entries": [
+        "Broadsword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 202600,
+      "Entries": [
+        "Broadsword [Divine]"
+      ]
+    },
+    {
+      "ID": 202700,
+      "Entries": [
+        "Broadsword [Occult]"
+      ]
+    },
+    {
+      "ID": 202800,
+      "Entries": [
+        "Broadsword [Fire]"
+      ]
+    },
+    {
+      "ID": 202900,
+      "Entries": [
+        "Broadsword [Chaos]"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 203100,
+      "Entries": [
+        "Broken Straight Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 203200,
+      "Entries": [
+        "Broken Straight Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 203300,
+      "Entries": [
+        "Broken Straight Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 203400,
+      "Entries": [
+        "Broken Straight Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 203500,
+      "Entries": [
+        "Broken Straight Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 203600,
+      "Entries": [
+        "Broken Straight Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 203700,
+      "Entries": [
+        "Broken Straight Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 203800,
+      "Entries": [
+        "Broken Straight Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 203900,
+      "Entries": [
+        "Broken Straight Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Balder Side Sword"
+      ]
+    },
+    {
+      "ID": 204100,
+      "Entries": [
+        "Balder Side Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 204200,
+      "Entries": [
+        "Balder Side Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 204300,
+      "Entries": [
+        "Balder Side Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 204400,
+      "Entries": [
+        "Balder Side Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 204500,
+      "Entries": [
+        "Balder Side Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 204600,
+      "Entries": [
+        "Balder Side Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 204700,
+      "Entries": [
+        "Balder Side Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 204800,
+      "Entries": [
+        "Balder Side Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 204900,
+      "Entries": [
+        "Balder Side Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Crystal Straight Sword"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Sunlight Straight Sword"
+      ]
+    },
+    {
+      "ID": 206100,
+      "Entries": [
+        "Sunlight Straight Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 206200,
+      "Entries": [
+        "Sunlight Straight Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 206300,
+      "Entries": [
+        "Sunlight Straight Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 206400,
+      "Entries": [
+        "Sunlight Straight Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 206500,
+      "Entries": [
+        "Sunlight Straight Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 206600,
+      "Entries": [
+        "Sunlight Straight Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 206700,
+      "Entries": [
+        "Sunlight Straight Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 206800,
+      "Entries": [
+        "Sunlight Straight Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 206900,
+      "Entries": [
+        "Sunlight Straight Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "Barbed Straight Sword"
+      ]
+    },
+    {
+      "ID": 207100,
+      "Entries": [
+        "Barbed Straight Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 207200,
+      "Entries": [
+        "Barbed Straight Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 207300,
+      "Entries": [
+        "Barbed Straight Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 207400,
+      "Entries": [
+        "Barbed Straight Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 207500,
+      "Entries": [
+        "Barbed Straight Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 207600,
+      "Entries": [
+        "Barbed Straight Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 207700,
+      "Entries": [
+        "Barbed Straight Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 207800,
+      "Entries": [
+        "Barbed Straight Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 207900,
+      "Entries": [
+        "Barbed Straight Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "Silv. Knight Str. Sword"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Astora's Straight Sword"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Darksword"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "Darksword [Crystal]"
+      ]
+    },
+    {
+      "ID": 210200,
+      "Entries": [
+        "Darksword [Lightning]"
+      ]
+    },
+    {
+      "ID": 210300,
+      "Entries": [
+        "Darksword [Raw]"
+      ]
+    },
+    {
+      "ID": 210400,
+      "Entries": [
+        "Darksword [Magic]"
+      ]
+    },
+    {
+      "ID": 210500,
+      "Entries": [
+        "Darksword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 210600,
+      "Entries": [
+        "Darksword [Divine]"
+      ]
+    },
+    {
+      "ID": 210700,
+      "Entries": [
+        "Darksword [Occult]"
+      ]
+    },
+    {
+      "ID": 210800,
+      "Entries": [
+        "Darksword [Fire]"
+      ]
+    },
+    {
+      "ID": 210900,
+      "Entries": [
+        "Darksword [Chaos]"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Drake Sword"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Straight Sword Hilt"
+      ]
+    },
+    {
+      "ID": 212100,
+      "Entries": [
+        "Straight Sword Hilt [Crystal]"
+      ]
+    },
+    {
+      "ID": 212200,
+      "Entries": [
+        "Straight Sword Hilt [Lightning]"
+      ]
+    },
+    {
+      "ID": 212300,
+      "Entries": [
+        "Straight Sword Hilt [Raw]"
+      ]
+    },
+    {
+      "ID": 212400,
+      "Entries": [
+        "Straight Sword Hilt [Magic]"
+      ]
+    },
+    {
+      "ID": 212500,
+      "Entries": [
+        "Straight Sword Hilt [Enchanted]"
+      ]
+    },
+    {
+      "ID": 212600,
+      "Entries": [
+        "Straight Sword Hilt [Divine]"
+      ]
+    },
+    {
+      "ID": 212700,
+      "Entries": [
+        "Straight Sword Hilt [Occult]"
+      ]
+    },
+    {
+      "ID": 212800,
+      "Entries": [
+        "Straight Sword Hilt [Fire]"
+      ]
+    },
+    {
+      "ID": 212900,
+      "Entries": [
+        "Straight Sword Hilt [Chaos]"
+      ]
+    },
+    {
+      "ID": 299000,
+      "Entries": [
+        "[Ghost] Straight Sword"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Bastard Sword"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Bastard Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Bastard Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Bastard Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Bastard Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Bastard Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Bastard Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "Bastard Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Bastard Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "Bastard Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Claymore"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Claymore [Crystal]"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Claymore [Lightning]"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Claymore [Raw]"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "Claymore [Magic]"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "Claymore [Enchanted]"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "Claymore [Divine]"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "Claymore [Occult]"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Claymore [Fire]"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "Claymore [Chaos]"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Man-serpent Greatsword"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "Man-serpent Greatsword [Crystal]"
+      ]
+    },
+    {
+      "ID": 302200,
+      "Entries": [
+        "Man-serpent Greatsword [Lightning]"
+      ]
+    },
+    {
+      "ID": 302300,
+      "Entries": [
+        "Man-serpent Greatsword [Raw]"
+      ]
+    },
+    {
+      "ID": 302400,
+      "Entries": [
+        "Man-serpent Greatsword [Magic]"
+      ]
+    },
+    {
+      "ID": 302500,
+      "Entries": [
+        "Man-serpent Greatsword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 302600,
+      "Entries": [
+        "Man-serpent Greatsword [Divine]"
+      ]
+    },
+    {
+      "ID": 302700,
+      "Entries": [
+        "Man-serpent Greatsword [Occult]"
+      ]
+    },
+    {
+      "ID": 302800,
+      "Entries": [
+        "Man-serpent Greatsword [Fire]"
+      ]
+    },
+    {
+      "ID": 302900,
+      "Entries": [
+        "Man-serpent Greatsword [Chaos]"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Flamberge"
+      ]
+    },
+    {
+      "ID": 303100,
+      "Entries": [
+        "Flamberge [Crystal]"
+      ]
+    },
+    {
+      "ID": 303200,
+      "Entries": [
+        "Flamberge [Lightning]"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flamberge [Raw]"
+      ]
+    },
+    {
+      "ID": 303400,
+      "Entries": [
+        "Flamberge [Magic]"
+      ]
+    },
+    {
+      "ID": 303500,
+      "Entries": [
+        "Flamberge [Enchanted]"
+      ]
+    },
+    {
+      "ID": 303600,
+      "Entries": [
+        "Flamberge [Divine]"
+      ]
+    },
+    {
+      "ID": 303700,
+      "Entries": [
+        "Flamberge [Occult]"
+      ]
+    },
+    {
+      "ID": 303800,
+      "Entries": [
+        "Flamberge [Fire]"
+      ]
+    },
+    {
+      "ID": 303900,
+      "Entries": [
+        "Flamberge [Chaos]"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Crystal Greatsword"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Stone Greatsword"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Greatsword of Artorias [Broken Straight Sword]"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Greatsword of Artorias [Straight Sword Hilt]"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Black Knight Sword"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Greatsword of Artorias [Dagger]"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "Greatsword of Artorias [Parrying Dagger]"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "Greatsword of Artorias [Bandit's Knife]"
+      ]
+    },
+    {
+      "ID": 311300,
+      "Entries": [
+        "Greatsword of Artorias [Shortsword]"
+      ]
+    },
+    {
+      "ID": 311400,
+      "Entries": [
+        "Greatsword of Artorias [Longsword]"
+      ]
+    },
+    {
+      "ID": 311500,
+      "Entries": [
+        "Greatsword of Artorias [Broadsword]"
+      ]
+    },
+    {
+      "ID": 311600,
+      "Entries": [
+        "Greatsword of Artorias [Balder Side Sword]"
+      ]
+    },
+    {
+      "ID": 311700,
+      "Entries": [
+        "Greatsword of Artorias [Sunlight Straight Sword]"
+      ]
+    },
+    {
+      "ID": 311800,
+      "Entries": [
+        "Greatsword of Artorias [Barbed Straight Sword]"
+      ]
+    },
+    {
+      "ID": 311900,
+      "Entries": [
+        "Greatsword of Artorias [Astora's Straight Sword]"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Greatsword of Artorias [Darksword]"
+      ]
+    },
+    {
+      "ID": 312100,
+      "Entries": [
+        "Greatsword of Artorias [Bastard Sword]"
+      ]
+    },
+    {
+      "ID": 312200,
+      "Entries": [
+        "Greatsword of Artorias [Claymore]"
+      ]
+    },
+    {
+      "ID": 312300,
+      "Entries": [
+        "Greatsword of Artorias [Man-serpent Greatsword]"
+      ]
+    },
+    {
+      "ID": 312400,
+      "Entries": [
+        "Greatsword of Artorias [Flamberge]"
+      ]
+    },
+    {
+      "ID": 312500,
+      "Entries": [
+        "Greatsword of Artorias [Zweihander]"
+      ]
+    },
+    {
+      "ID": 312600,
+      "Entries": [
+        "Greatsword of Artorias [Greatsword]"
+      ]
+    },
+    {
+      "ID": 312700,
+      "Entries": [
+        "Greatsword of Artorias [Demon Great Machete]"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Great Lord Greatsword [Dagger]"
+      ]
+    },
+    {
+      "ID": 314100,
+      "Entries": [
+        "Great Lord Greatsword [Parrying Dagger]"
+      ]
+    },
+    {
+      "ID": 314200,
+      "Entries": [
+        "Great Lord Greatsword [Bandit's Knife]"
+      ]
+    },
+    {
+      "ID": 314300,
+      "Entries": [
+        "Great Lord Greatsword [Shortsword]"
+      ]
+    },
+    {
+      "ID": 314400,
+      "Entries": [
+        "Great Lord Greatsword [Longsword]"
+      ]
+    },
+    {
+      "ID": 314500,
+      "Entries": [
+        "Great Lord Greatsword [Broadsword]"
+      ]
+    },
+    {
+      "ID": 314600,
+      "Entries": [
+        "Great Lord Greatsword [Balder Side Sword]"
+      ]
+    },
+    {
+      "ID": 314700,
+      "Entries": [
+        "Great Lord Greatsword [Sunlight Straight Sword]"
+      ]
+    },
+    {
+      "ID": 314800,
+      "Entries": [
+        "Great Lord Greatsword [Barbed Straight Sword]"
+      ]
+    },
+    {
+      "ID": 314900,
+      "Entries": [
+        "Great Lord Greatsword [Astora's Straight Sword]"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Great Lord Greatsword [Darksword]"
+      ]
+    },
+    {
+      "ID": 315100,
+      "Entries": [
+        "Great Lord Greatsword [Bastard Sword]"
+      ]
+    },
+    {
+      "ID": 315200,
+      "Entries": [
+        "Great Lord Greatsword [Claymore]"
+      ]
+    },
+    {
+      "ID": 315300,
+      "Entries": [
+        "Great Lord Greatsword [Man-serpent Greatsword]"
+      ]
+    },
+    {
+      "ID": 315400,
+      "Entries": [
+        "Great Lord Greatsword [Flamberge]"
+      ]
+    },
+    {
+      "ID": 315500,
+      "Entries": [
+        "Great Lord Greatsword [Zweihander]"
+      ]
+    },
+    {
+      "ID": 315600,
+      "Entries": [
+        "Great Lord Greatsword [Greatsword]"
+      ]
+    },
+    {
+      "ID": 315700,
+      "Entries": [
+        "Great Lord Greatsword [Demon Great Machete]"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Zweihander"
+      ]
+    },
+    {
+      "ID": 350100,
+      "Entries": [
+        "Zweihander [Crystal]"
+      ]
+    },
+    {
+      "ID": 350200,
+      "Entries": [
+        "Zweihander [Lightning]"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "Zweihander [Raw]"
+      ]
+    },
+    {
+      "ID": 350400,
+      "Entries": [
+        "Zweihander [Magic]"
+      ]
+    },
+    {
+      "ID": 350500,
+      "Entries": [
+        "Zweihander [Enchanted]"
+      ]
+    },
+    {
+      "ID": 350600,
+      "Entries": [
+        "Zweihander [Divine]"
+      ]
+    },
+    {
+      "ID": 350700,
+      "Entries": [
+        "Zweihander [Occult]"
+      ]
+    },
+    {
+      "ID": 350800,
+      "Entries": [
+        "Zweihander [Fire]"
+      ]
+    },
+    {
+      "ID": 350900,
+      "Entries": [
+        "Zweihander [Chaos]"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 351100,
+      "Entries": [
+        "Greatsword [Crystal]"
+      ]
+    },
+    {
+      "ID": 351200,
+      "Entries": [
+        "Greatsword [Lightning]"
+      ]
+    },
+    {
+      "ID": 351300,
+      "Entries": [
+        "Greatsword [Raw]"
+      ]
+    },
+    {
+      "ID": 351400,
+      "Entries": [
+        "Greatsword [Magic]"
+      ]
+    },
+    {
+      "ID": 351500,
+      "Entries": [
+        "Greatsword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 351600,
+      "Entries": [
+        "Greatsword [Divine]"
+      ]
+    },
+    {
+      "ID": 351700,
+      "Entries": [
+        "Greatsword [Occult]"
+      ]
+    },
+    {
+      "ID": 351800,
+      "Entries": [
+        "Greatsword [Fire]"
+      ]
+    },
+    {
+      "ID": 351900,
+      "Entries": [
+        "Greatsword [Chaos]"
+      ]
+    },
+    {
+      "ID": 352000,
+      "Entries": [
+        "Demon Great Machete"
+      ]
+    },
+    {
+      "ID": 352100,
+      "Entries": [
+        "Demon Great Machete [Crystal]"
+      ]
+    },
+    {
+      "ID": 352200,
+      "Entries": [
+        "Demon Great Machete [Lightning]"
+      ]
+    },
+    {
+      "ID": 352300,
+      "Entries": [
+        "Demon Great Machete [Raw]"
+      ]
+    },
+    {
+      "ID": 352400,
+      "Entries": [
+        "Demon Great Machete [Magic]"
+      ]
+    },
+    {
+      "ID": 352500,
+      "Entries": [
+        "Demon Great Machete [Enchanted]"
+      ]
+    },
+    {
+      "ID": 352600,
+      "Entries": [
+        "Demon Great Machete [Divine]"
+      ]
+    },
+    {
+      "ID": 352700,
+      "Entries": [
+        "Demon Great Machete [Occult]"
+      ]
+    },
+    {
+      "ID": 352800,
+      "Entries": [
+        "Demon Great Machete [Fire]"
+      ]
+    },
+    {
+      "ID": 352900,
+      "Entries": [
+        "Demon Great Machete [Chaos]"
+      ]
+    },
+    {
+      "ID": 354000,
+      "Entries": [
+        "Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 355000,
+      "Entries": [
+        "Black Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 398000,
+      "Entries": [
+        "[Ghost] Greatsword"
+      ]
+    },
+    {
+      "ID": 399000,
+      "Entries": [
+        "[Ghost] Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Scimitar"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Scimitar [Crystal]"
+      ]
+    },
+    {
+      "ID": 400200,
+      "Entries": [
+        "Scimitar [Lightning]"
+      ]
+    },
+    {
+      "ID": 400300,
+      "Entries": [
+        "Scimitar [Raw]"
+      ]
+    },
+    {
+      "ID": 400400,
+      "Entries": [
+        "Scimitar [Magic]"
+      ]
+    },
+    {
+      "ID": 400500,
+      "Entries": [
+        "Scimitar [Enchanted]"
+      ]
+    },
+    {
+      "ID": 400600,
+      "Entries": [
+        "Scimitar [Divine]"
+      ]
+    },
+    {
+      "ID": 400700,
+      "Entries": [
+        "Scimitar [Occult]"
+      ]
+    },
+    {
+      "ID": 400800,
+      "Entries": [
+        "Scimitar [Fire]"
+      ]
+    },
+    {
+      "ID": 400900,
+      "Entries": [
+        "Scimitar [Chaos]"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Falchion"
+      ]
+    },
+    {
+      "ID": 401100,
+      "Entries": [
+        "Falchion [Crystal]"
+      ]
+    },
+    {
+      "ID": 401200,
+      "Entries": [
+        "Falchion [Lightning]"
+      ]
+    },
+    {
+      "ID": 401300,
+      "Entries": [
+        "Falchion [Raw]"
+      ]
+    },
+    {
+      "ID": 401400,
+      "Entries": [
+        "Falchion [Magic]"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "Falchion [Enchanted]"
+      ]
+    },
+    {
+      "ID": 401600,
+      "Entries": [
+        "Falchion [Divine]"
+      ]
+    },
+    {
+      "ID": 401700,
+      "Entries": [
+        "Falchion [Occult]"
+      ]
+    },
+    {
+      "ID": 401800,
+      "Entries": [
+        "Falchion [Fire]"
+      ]
+    },
+    {
+      "ID": 401900,
+      "Entries": [
+        "Falchion [Chaos]"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Shotel"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Shotel [Crystal]"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Shotel [Lightning]"
+      ]
+    },
+    {
+      "ID": 402300,
+      "Entries": [
+        "Shotel [Raw]"
+      ]
+    },
+    {
+      "ID": 402400,
+      "Entries": [
+        "Shotel [Magic]"
+      ]
+    },
+    {
+      "ID": 402500,
+      "Entries": [
+        "Shotel [Enchanted]"
+      ]
+    },
+    {
+      "ID": 402600,
+      "Entries": [
+        "Shotel [Divine]"
+      ]
+    },
+    {
+      "ID": 402700,
+      "Entries": [
+        "Shotel [Occult]"
+      ]
+    },
+    {
+      "ID": 402800,
+      "Entries": [
+        "Shotel [Fire]"
+      ]
+    },
+    {
+      "ID": 402900,
+      "Entries": [
+        "Shotel [Chaos]"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Jagged Ghost Blade"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "Painting Guardian Sword"
+      ]
+    },
+    {
+      "ID": 405100,
+      "Entries": [
+        "Painting Guardian Sword [Crystal]"
+      ]
+    },
+    {
+      "ID": 405200,
+      "Entries": [
+        "Painting Guardian Sword [Lightning]"
+      ]
+    },
+    {
+      "ID": 405300,
+      "Entries": [
+        "Painting Guardian Sword [Raw]"
+      ]
+    },
+    {
+      "ID": 405400,
+      "Entries": [
+        "Painting Guardian Sword [Magic]"
+      ]
+    },
+    {
+      "ID": 405500,
+      "Entries": [
+        "Painting Guardian Sword [Enchanted]"
+      ]
+    },
+    {
+      "ID": 405600,
+      "Entries": [
+        "Painting Guardian Sword [Divine]"
+      ]
+    },
+    {
+      "ID": 405700,
+      "Entries": [
+        "Painting Guardian Sword [Occult]"
+      ]
+    },
+    {
+      "ID": 405800,
+      "Entries": [
+        "Painting Guardian Sword [Fire]"
+      ]
+    },
+    {
+      "ID": 405900,
+      "Entries": [
+        "Painting Guardian Sword [Chaos]"
+      ]
+    },
+    {
+      "ID": 406000,
+      "Entries": [
+        "Quelaag's Furysword [Scimitar]"
+      ]
+    },
+    {
+      "ID": 406100,
+      "Entries": [
+        "Quelaag's Furysword [Falchion"
+      ]
+    },
+    {
+      "ID": 406200,
+      "Entries": [
+        "Quelaag's Furysword [Shotel]"
+      ]
+    },
+    {
+      "ID": 406300,
+      "Entries": [
+        "Quelaag's Furysword [Painting Guardian Sword]"
+      ]
+    },
+    {
+      "ID": 406400,
+      "Entries": [
+        "Quelaag's Furysword [Server]"
+      ]
+    },
+    {
+      "ID": 406500,
+      "Entries": [
+        "Quelaag's Furysword [Murakumo]"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Server"
+      ]
+    },
+    {
+      "ID": 450100,
+      "Entries": [
+        "Server [Crystal]"
+      ]
+    },
+    {
+      "ID": 450200,
+      "Entries": [
+        "Server [Lightning]"
+      ]
+    },
+    {
+      "ID": 450300,
+      "Entries": [
+        "Server [Raw]"
+      ]
+    },
+    {
+      "ID": 450400,
+      "Entries": [
+        "Server [Magic]"
+      ]
+    },
+    {
+      "ID": 450500,
+      "Entries": [
+        "Server [Enchanted]"
+      ]
+    },
+    {
+      "ID": 450600,
+      "Entries": [
+        "Server [Divine]"
+      ]
+    },
+    {
+      "ID": 450700,
+      "Entries": [
+        "Server [Occult]"
+      ]
+    },
+    {
+      "ID": 450800,
+      "Entries": [
+        "Server [Fire]"
+      ]
+    },
+    {
+      "ID": 450900,
+      "Entries": [
+        "Server [Chaos]"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Murakumo"
+      ]
+    },
+    {
+      "ID": 451100,
+      "Entries": [
+        "Murakumo [Crystal]"
+      ]
+    },
+    {
+      "ID": 451200,
+      "Entries": [
+        "Murakumo [Lightning]"
+      ]
+    },
+    {
+      "ID": 451300,
+      "Entries": [
+        "Murakumo [Raw]"
+      ]
+    },
+    {
+      "ID": 451400,
+      "Entries": [
+        "Murakumo [Magic]"
+      ]
+    },
+    {
+      "ID": 451500,
+      "Entries": [
+        "Murakumo [Enchanted]"
+      ]
+    },
+    {
+      "ID": 451600,
+      "Entries": [
+        "Murakumo [Divine]"
+      ]
+    },
+    {
+      "ID": 451700,
+      "Entries": [
+        "Murakumo [Occult]"
+      ]
+    },
+    {
+      "ID": 451800,
+      "Entries": [
+        "Murakumo [Fire]"
+      ]
+    },
+    {
+      "ID": 451900,
+      "Entries": [
+        "Murakumo [Chaos]"
+      ]
+    },
+    {
+      "ID": 453000,
+      "Entries": [
+        "Gravelord Sword"
+      ]
+    },
+    {
+      "ID": 498000,
+      "Entries": [
+        "[Ghost] Curved Sword"
+      ]
+    },
+    {
+      "ID": 499000,
+      "Entries": [
+        "[Ghost] Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Uchigatana"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "Uchigatana [Crystal]"
+      ]
+    },
+    {
+      "ID": 500200,
+      "Entries": [
+        "Uchigatana [Lightning]"
+      ]
+    },
+    {
+      "ID": 500300,
+      "Entries": [
+        "Uchigatana [Raw]"
+      ]
+    },
+    {
+      "ID": 500400,
+      "Entries": [
+        "Uchigatana [Magic]"
+      ]
+    },
+    {
+      "ID": 500500,
+      "Entries": [
+        "Uchigatana [Enchanted]"
+      ]
+    },
+    {
+      "ID": 500600,
+      "Entries": [
+        "Uchigatana [Divine]"
+      ]
+    },
+    {
+      "ID": 500700,
+      "Entries": [
+        "Uchigatana [Occult]"
+      ]
+    },
+    {
+      "ID": 500800,
+      "Entries": [
+        "Uchigatana [Fire]"
+      ]
+    },
+    {
+      "ID": 500900,
+      "Entries": [
+        "Uchigatana [Chaos]"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Washing Pole"
+      ]
+    },
+    {
+      "ID": 501100,
+      "Entries": [
+        "Washing Pole [Crystal]"
+      ]
+    },
+    {
+      "ID": 501200,
+      "Entries": [
+        "Washing Pole [Lightning]"
+      ]
+    },
+    {
+      "ID": 501300,
+      "Entries": [
+        "Washing Pole [Raw]"
+      ]
+    },
+    {
+      "ID": 501400,
+      "Entries": [
+        "Washing Pole [Magic]"
+      ]
+    },
+    {
+      "ID": 501500,
+      "Entries": [
+        "Washing Pole [Enchanted]"
+      ]
+    },
+    {
+      "ID": 501600,
+      "Entries": [
+        "Washing Pole [Divine]"
+      ]
+    },
+    {
+      "ID": 501700,
+      "Entries": [
+        "Washing Pole [Occult]"
+      ]
+    },
+    {
+      "ID": 501800,
+      "Entries": [
+        "Washing Pole [Fire]"
+      ]
+    },
+    {
+      "ID": 501900,
+      "Entries": [
+        "Washing Pole [Chaos]"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Iaito"
+      ]
+    },
+    {
+      "ID": 502100,
+      "Entries": [
+        "Iaito [Crystal]"
+      ]
+    },
+    {
+      "ID": 502200,
+      "Entries": [
+        "Iaito [Lightning]"
+      ]
+    },
+    {
+      "ID": 502300,
+      "Entries": [
+        "Iaito [Raw]"
+      ]
+    },
+    {
+      "ID": 502400,
+      "Entries": [
+        "Iaito [Magic]"
+      ]
+    },
+    {
+      "ID": 502500,
+      "Entries": [
+        "Iaito [Enchanted]"
+      ]
+    },
+    {
+      "ID": 502600,
+      "Entries": [
+        "Iaito [Divine]"
+      ]
+    },
+    {
+      "ID": 502700,
+      "Entries": [
+        "Iaito [Occult]"
+      ]
+    },
+    {
+      "ID": 502800,
+      "Entries": [
+        "Iaito [Fire]"
+      ]
+    },
+    {
+      "ID": 502900,
+      "Entries": [
+        "Iaito [Chaos]"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Chaos Blade [Uchigatana]"
+      ]
+    },
+    {
+      "ID": 503100,
+      "Entries": [
+        "Chaos Blade [Washing Pole]"
+      ]
+    },
+    {
+      "ID": 503200,
+      "Entries": [
+        "Chaos Blade [Iaito]"
+      ]
+    },
+    {
+      "ID": 599000,
+      "Entries": [
+        "[Ghost] Katana"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Mail Breaker"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "Mail Breaker [Crystal]"
+      ]
+    },
+    {
+      "ID": 600200,
+      "Entries": [
+        "Mail Breaker [Lightning]"
+      ]
+    },
+    {
+      "ID": 600300,
+      "Entries": [
+        "Mail Breaker [Raw]"
+      ]
+    },
+    {
+      "ID": 600400,
+      "Entries": [
+        "Mail Breaker [Magic]"
+      ]
+    },
+    {
+      "ID": 600500,
+      "Entries": [
+        "Mail Breaker [Enchanted]"
+      ]
+    },
+    {
+      "ID": 600600,
+      "Entries": [
+        "Mail Breaker [Divine]"
+      ]
+    },
+    {
+      "ID": 600700,
+      "Entries": [
+        "Mail Breaker [Occult]"
+      ]
+    },
+    {
+      "ID": 600800,
+      "Entries": [
+        "Mail Breaker [Fire]"
+      ]
+    },
+    {
+      "ID": 600900,
+      "Entries": [
+        "Mail Breaker [Chaos]"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Rapier"
+      ]
+    },
+    {
+      "ID": 601100,
+      "Entries": [
+        "Rapier [Crystal]"
+      ]
+    },
+    {
+      "ID": 601200,
+      "Entries": [
+        "Rapier [Lightning]"
+      ]
+    },
+    {
+      "ID": 601300,
+      "Entries": [
+        "Rapier [Raw]"
+      ]
+    },
+    {
+      "ID": 601400,
+      "Entries": [
+        "Rapier [Magic]"
+      ]
+    },
+    {
+      "ID": 601500,
+      "Entries": [
+        "Rapier [Enchanted]"
+      ]
+    },
+    {
+      "ID": 601600,
+      "Entries": [
+        "Rapier [Divine]"
+      ]
+    },
+    {
+      "ID": 601700,
+      "Entries": [
+        "Rapier [Occult]"
+      ]
+    },
+    {
+      "ID": 601800,
+      "Entries": [
+        "Rapier [Fire]"
+      ]
+    },
+    {
+      "ID": 601900,
+      "Entries": [
+        "Rapier [Chaos]"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Estoc"
+      ]
+    },
+    {
+      "ID": 602100,
+      "Entries": [
+        "Estoc [Crystal]"
+      ]
+    },
+    {
+      "ID": 602200,
+      "Entries": [
+        "Estoc [Lightning]"
+      ]
+    },
+    {
+      "ID": 602300,
+      "Entries": [
+        "Estoc [Raw]"
+      ]
+    },
+    {
+      "ID": 602400,
+      "Entries": [
+        "Estoc [Magic]"
+      ]
+    },
+    {
+      "ID": 602500,
+      "Entries": [
+        "Estoc [Enchanted]"
+      ]
+    },
+    {
+      "ID": 602600,
+      "Entries": [
+        "Estoc [Divine]"
+      ]
+    },
+    {
+      "ID": 602700,
+      "Entries": [
+        "Estoc [Occult]"
+      ]
+    },
+    {
+      "ID": 602800,
+      "Entries": [
+        "Estoc [Fire]"
+      ]
+    },
+    {
+      "ID": 602900,
+      "Entries": [
+        "Estoc [Chaos]"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Velka's Rapier"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Ricard's Rapier"
+      ]
+    },
+    {
+      "ID": 604100,
+      "Entries": [
+        "Ricard's Rapier [Crystal]"
+      ]
+    },
+    {
+      "ID": 604200,
+      "Entries": [
+        "Ricard's Rapier [Lightning]"
+      ]
+    },
+    {
+      "ID": 604300,
+      "Entries": [
+        "Ricard's Rapier [Raw]"
+      ]
+    },
+    {
+      "ID": 604400,
+      "Entries": [
+        "Ricard's Rapier [Magic]"
+      ]
+    },
+    {
+      "ID": 604500,
+      "Entries": [
+        "Ricard's Rapier [Enchanted]"
+      ]
+    },
+    {
+      "ID": 604600,
+      "Entries": [
+        "Ricard's Rapier [Divine]"
+      ]
+    },
+    {
+      "ID": 604700,
+      "Entries": [
+        "Ricard's Rapier [Occult]"
+      ]
+    },
+    {
+      "ID": 604800,
+      "Entries": [
+        "Ricard's Rapier [Fire]"
+      ]
+    },
+    {
+      "ID": 604900,
+      "Entries": [
+        "Ricard's Rapier [Chaos]"
+      ]
+    },
+    {
+      "ID": 699000,
+      "Entries": [
+        "[Ghost] Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Hand Axe"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Hand Axe [Crystal]"
+      ]
+    },
+    {
+      "ID": 700200,
+      "Entries": [
+        "Hand Axe [Lightning]"
+      ]
+    },
+    {
+      "ID": 700300,
+      "Entries": [
+        "Hand Axe [Raw]"
+      ]
+    },
+    {
+      "ID": 700400,
+      "Entries": [
+        "Hand Axe [Magic]"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Hand Axe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 700600,
+      "Entries": [
+        "Hand Axe [Divine]"
+      ]
+    },
+    {
+      "ID": 700700,
+      "Entries": [
+        "Hand Axe [Occult]"
+      ]
+    },
+    {
+      "ID": 700800,
+      "Entries": [
+        "Hand Axe [Fire]"
+      ]
+    },
+    {
+      "ID": 700900,
+      "Entries": [
+        "Hand Axe [Chaos]"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Battle Axe"
+      ]
+    },
+    {
+      "ID": 701100,
+      "Entries": [
+        "Battle Axe [Crystal]"
+      ]
+    },
+    {
+      "ID": 701200,
+      "Entries": [
+        "Battle Axe [Lightning]"
+      ]
+    },
+    {
+      "ID": 701300,
+      "Entries": [
+        "Battle Axe [Raw]"
+      ]
+    },
+    {
+      "ID": 701400,
+      "Entries": [
+        "Battle Axe [Magic]"
+      ]
+    },
+    {
+      "ID": 701500,
+      "Entries": [
+        "Battle Axe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 701600,
+      "Entries": [
+        "Battle Axe [Divine]"
+      ]
+    },
+    {
+      "ID": 701700,
+      "Entries": [
+        "Battle Axe [Occult]"
+      ]
+    },
+    {
+      "ID": 701800,
+      "Entries": [
+        "Battle Axe [Fire]"
+      ]
+    },
+    {
+      "ID": 701900,
+      "Entries": [
+        "Battle Axe [Chaos]"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Crescent Axe"
+      ]
+    },
+    {
+      "ID": 703000,
+      "Entries": [
+        "Butcher Knife"
+      ]
+    },
+    {
+      "ID": 703100,
+      "Entries": [
+        "Butcher Knife [Crystal]"
+      ]
+    },
+    {
+      "ID": 703200,
+      "Entries": [
+        "Butcher Knife [Lightning]"
+      ]
+    },
+    {
+      "ID": 703300,
+      "Entries": [
+        "Butcher Knife [Raw]"
+      ]
+    },
+    {
+      "ID": 703400,
+      "Entries": [
+        "Butcher Knife [Magic]"
+      ]
+    },
+    {
+      "ID": 703500,
+      "Entries": [
+        "Butcher Knife [Enchanted]"
+      ]
+    },
+    {
+      "ID": 703600,
+      "Entries": [
+        "Butcher Knife [Divine]"
+      ]
+    },
+    {
+      "ID": 703700,
+      "Entries": [
+        "Butcher Knife [Occult]"
+      ]
+    },
+    {
+      "ID": 703800,
+      "Entries": [
+        "Butcher Knife [Fire]"
+      ]
+    },
+    {
+      "ID": 703900,
+      "Entries": [
+        "Butcher Knife [Chaos]"
+      ]
+    },
+    {
+      "ID": 704000,
+      "Entries": [
+        "Golem Axe [Hand Axe]"
+      ]
+    },
+    {
+      "ID": 704100,
+      "Entries": [
+        "Golem Axe [Battle Axe]"
+      ]
+    },
+    {
+      "ID": 704200,
+      "Entries": [
+        "Golem Axe [Crescent Axe]"
+      ]
+    },
+    {
+      "ID": 704300,
+      "Entries": [
+        "Golem Axe [Butcher Knife]"
+      ]
+    },
+    {
+      "ID": 704400,
+      "Entries": [
+        "Golem Axe [Gargoyle Tail Axe]"
+      ]
+    },
+    {
+      "ID": 704500,
+      "Entries": [
+        "Golem Axe [Greataxe"
+      ]
+    },
+    {
+      "ID": 704600,
+      "Entries": [
+        "Golem Axe [Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 705000,
+      "Entries": [
+        "Gargoyle Tail Axe"
+      ]
+    },
+    {
+      "ID": 705100,
+      "Entries": [
+        "Gargoyle Tail Axe [Crystal]"
+      ]
+    },
+    {
+      "ID": 705200,
+      "Entries": [
+        "Gargoyle Tail Axe [Lightning]"
+      ]
+    },
+    {
+      "ID": 705300,
+      "Entries": [
+        "Gargoyle Tail Axe [Raw]"
+      ]
+    },
+    {
+      "ID": 705400,
+      "Entries": [
+        "Gargoyle Tail Axe [Magic]"
+      ]
+    },
+    {
+      "ID": 705500,
+      "Entries": [
+        "Gargoyle Tail Axe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 705600,
+      "Entries": [
+        "Gargoyle Tail Axe [Divine]"
+      ]
+    },
+    {
+      "ID": 705700,
+      "Entries": [
+        "Gargoyle Tail Axe [Occult]"
+      ]
+    },
+    {
+      "ID": 705800,
+      "Entries": [
+        "Gargoyle Tail Axe [Fire]"
+      ]
+    },
+    {
+      "ID": 705900,
+      "Entries": [
+        "Gargoyle Tail Axe [Chaos]"
+      ]
+    },
+    {
+      "ID": 750000,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 750100,
+      "Entries": [
+        "Greataxe [Crystal]"
+      ]
+    },
+    {
+      "ID": 750200,
+      "Entries": [
+        "Greataxe [Lightning]"
+      ]
+    },
+    {
+      "ID": 750300,
+      "Entries": [
+        "Greataxe [Raw]"
+      ]
+    },
+    {
+      "ID": 750400,
+      "Entries": [
+        "Greataxe [Magic]"
+      ]
+    },
+    {
+      "ID": 750500,
+      "Entries": [
+        "Greataxe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 750600,
+      "Entries": [
+        "Greataxe [Divine]"
+      ]
+    },
+    {
+      "ID": 750700,
+      "Entries": [
+        "Greataxe [Occult]"
+      ]
+    },
+    {
+      "ID": 750800,
+      "Entries": [
+        "Greataxe [Fire]"
+      ]
+    },
+    {
+      "ID": 750900,
+      "Entries": [
+        "Greataxe [Chaos]"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 751100,
+      "Entries": [
+        "Demon's Greataxe [Crystal]"
+      ]
+    },
+    {
+      "ID": 751200,
+      "Entries": [
+        "Demon's Greataxe [Lightning]"
+      ]
+    },
+    {
+      "ID": 751300,
+      "Entries": [
+        "Demon's Greataxe [Raw]"
+      ]
+    },
+    {
+      "ID": 751400,
+      "Entries": [
+        "Demon's Greataxe [Magic]"
+      ]
+    },
+    {
+      "ID": 751500,
+      "Entries": [
+        "Demon's Greataxe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 751600,
+      "Entries": [
+        "Demon's Greataxe [Divine]"
+      ]
+    },
+    {
+      "ID": 751700,
+      "Entries": [
+        "Demon's Greataxe [Occult]"
+      ]
+    },
+    {
+      "ID": 751800,
+      "Entries": [
+        "Demon's Greataxe [Fire]"
+      ]
+    },
+    {
+      "ID": 751900,
+      "Entries": [
+        "Demon's Greataxe [Chaos]"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "Dragon King Greataxe"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Black Knight Greataxe"
+      ]
+    },
+    {
+      "ID": 798000,
+      "Entries": [
+        "[Ghost] Axe"
+      ]
+    },
+    {
+      "ID": 799000,
+      "Entries": [
+        "[Ghost] Greataxe"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Club"
+      ]
+    },
+    {
+      "ID": 800100,
+      "Entries": [
+        "Club [Crystal]"
+      ]
+    },
+    {
+      "ID": 800200,
+      "Entries": [
+        "Club [Lightning]"
+      ]
+    },
+    {
+      "ID": 800300,
+      "Entries": [
+        "Club [Raw]"
+      ]
+    },
+    {
+      "ID": 800400,
+      "Entries": [
+        "Club [Magic]"
+      ]
+    },
+    {
+      "ID": 800500,
+      "Entries": [
+        "Club [Enchanted]"
+      ]
+    },
+    {
+      "ID": 800600,
+      "Entries": [
+        "Club [Divine]"
+      ]
+    },
+    {
+      "ID": 800700,
+      "Entries": [
+        "Club [Occult]"
+      ]
+    },
+    {
+      "ID": 800800,
+      "Entries": [
+        "Club [Fire]"
+      ]
+    },
+    {
+      "ID": 800900,
+      "Entries": [
+        "Club [Chaos]"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "Mace"
+      ]
+    },
+    {
+      "ID": 801100,
+      "Entries": [
+        "Mace [Crystal]"
+      ]
+    },
+    {
+      "ID": 801200,
+      "Entries": [
+        "Mace [Lightning]"
+      ]
+    },
+    {
+      "ID": 801300,
+      "Entries": [
+        "Mace [Raw]"
+      ]
+    },
+    {
+      "ID": 801400,
+      "Entries": [
+        "Mace [Magic]"
+      ]
+    },
+    {
+      "ID": 801500,
+      "Entries": [
+        "Mace [Enchanted]"
+      ]
+    },
+    {
+      "ID": 801600,
+      "Entries": [
+        "Mace [Divine]"
+      ]
+    },
+    {
+      "ID": 801700,
+      "Entries": [
+        "Mace [Occult]"
+      ]
+    },
+    {
+      "ID": 801800,
+      "Entries": [
+        "Mace [Fire]"
+      ]
+    },
+    {
+      "ID": 801900,
+      "Entries": [
+        "Mace [Chaos]"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "Morning Star"
+      ]
+    },
+    {
+      "ID": 802100,
+      "Entries": [
+        "Morning Star [Crystal]"
+      ]
+    },
+    {
+      "ID": 802200,
+      "Entries": [
+        "Morning Star [Lightning]"
+      ]
+    },
+    {
+      "ID": 802300,
+      "Entries": [
+        "Morning Star [Raw]"
+      ]
+    },
+    {
+      "ID": 802400,
+      "Entries": [
+        "Morning Star [Magic]"
+      ]
+    },
+    {
+      "ID": 802500,
+      "Entries": [
+        "Morning Star [Enchanted]"
+      ]
+    },
+    {
+      "ID": 802600,
+      "Entries": [
+        "Morning Star [Divine]"
+      ]
+    },
+    {
+      "ID": 802700,
+      "Entries": [
+        "Morning Star [Occult]"
+      ]
+    },
+    {
+      "ID": 802800,
+      "Entries": [
+        "Morning Star [Fire]"
+      ]
+    },
+    {
+      "ID": 802900,
+      "Entries": [
+        "Morning Star [Chaos]"
+      ]
+    },
+    {
+      "ID": 803000,
+      "Entries": [
+        "Warpick"
+      ]
+    },
+    {
+      "ID": 803100,
+      "Entries": [
+        "Warpick [Crystal]"
+      ]
+    },
+    {
+      "ID": 803200,
+      "Entries": [
+        "Warpick [Lightning]"
+      ]
+    },
+    {
+      "ID": 803300,
+      "Entries": [
+        "Warpick [Raw]"
+      ]
+    },
+    {
+      "ID": 803400,
+      "Entries": [
+        "Warpick [Magic]"
+      ]
+    },
+    {
+      "ID": 803500,
+      "Entries": [
+        "Warpick [Enchanted]"
+      ]
+    },
+    {
+      "ID": 803600,
+      "Entries": [
+        "Warpick [Divine]"
+      ]
+    },
+    {
+      "ID": 803700,
+      "Entries": [
+        "Warpick [Occult]"
+      ]
+    },
+    {
+      "ID": 803800,
+      "Entries": [
+        "Warpick [Fire]"
+      ]
+    },
+    {
+      "ID": 803900,
+      "Entries": [
+        "Warpick [Chaos]"
+      ]
+    },
+    {
+      "ID": 804000,
+      "Entries": [
+        "Pickaxe"
+      ]
+    },
+    {
+      "ID": 804100,
+      "Entries": [
+        "Pickaxe [Crystal]"
+      ]
+    },
+    {
+      "ID": 804200,
+      "Entries": [
+        "Pickaxe [Lightning]"
+      ]
+    },
+    {
+      "ID": 804300,
+      "Entries": [
+        "Pickaxe [Raw]"
+      ]
+    },
+    {
+      "ID": 804400,
+      "Entries": [
+        "Pickaxe [Magic]"
+      ]
+    },
+    {
+      "ID": 804500,
+      "Entries": [
+        "Pickaxe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 804600,
+      "Entries": [
+        "Pickaxe [Divine]"
+      ]
+    },
+    {
+      "ID": 804700,
+      "Entries": [
+        "Pickaxe [Occult]"
+      ]
+    },
+    {
+      "ID": 804800,
+      "Entries": [
+        "Pickaxe [Fire]"
+      ]
+    },
+    {
+      "ID": 804900,
+      "Entries": [
+        "Pickaxe [Chaos]"
+      ]
+    },
+    {
+      "ID": 809000,
+      "Entries": [
+        "Reinforced Club"
+      ]
+    },
+    {
+      "ID": 809100,
+      "Entries": [
+        "Reinforced Club [Crystal]"
+      ]
+    },
+    {
+      "ID": 809200,
+      "Entries": [
+        "Reinforced Club [Lightning]"
+      ]
+    },
+    {
+      "ID": 809300,
+      "Entries": [
+        "Reinforced Club [Raw]"
+      ]
+    },
+    {
+      "ID": 809400,
+      "Entries": [
+        "Reinforced Club [Magic]"
+      ]
+    },
+    {
+      "ID": 809500,
+      "Entries": [
+        "Reinforced Club [Enchanted]"
+      ]
+    },
+    {
+      "ID": 809600,
+      "Entries": [
+        "Reinforced Club [Divine]"
+      ]
+    },
+    {
+      "ID": 809700,
+      "Entries": [
+        "Reinforced Club [Occult]"
+      ]
+    },
+    {
+      "ID": 809800,
+      "Entries": [
+        "Reinforced Club [Fire]"
+      ]
+    },
+    {
+      "ID": 809900,
+      "Entries": [
+        "Reinforced Club [Chaos]"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Blacksmith Hammer"
+      ]
+    },
+    {
+      "ID": 810100,
+      "Entries": [
+        "Blacksmith Hammer [Crystal]"
+      ]
+    },
+    {
+      "ID": 810200,
+      "Entries": [
+        "Blacksmith Hammer [Lightning]"
+      ]
+    },
+    {
+      "ID": 810300,
+      "Entries": [
+        "Blacksmith Hammer [Raw]"
+      ]
+    },
+    {
+      "ID": 810400,
+      "Entries": [
+        "Blacksmith Hammer [Magic]"
+      ]
+    },
+    {
+      "ID": 810500,
+      "Entries": [
+        "Blacksmith Hammer [Enchanted]"
+      ]
+    },
+    {
+      "ID": 810600,
+      "Entries": [
+        "Blacksmith Hammer [Divine]"
+      ]
+    },
+    {
+      "ID": 810700,
+      "Entries": [
+        "Blacksmith Hammer [Occult]"
+      ]
+    },
+    {
+      "ID": 810800,
+      "Entries": [
+        "Blacksmith Hammer [Fire]"
+      ]
+    },
+    {
+      "ID": 810900,
+      "Entries": [
+        "Blacksmith Hammer [Chaos]"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Blacksmith Giant Hammer"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "Hammer of Vamos"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Great Club"
+      ]
+    },
+    {
+      "ID": 850100,
+      "Entries": [
+        "Great Club [Crystal]"
+      ]
+    },
+    {
+      "ID": 850200,
+      "Entries": [
+        "Great Club [Lightning]"
+      ]
+    },
+    {
+      "ID": 850300,
+      "Entries": [
+        "Great Club [Raw]"
+      ]
+    },
+    {
+      "ID": 850400,
+      "Entries": [
+        "Great Club [Magic]"
+      ]
+    },
+    {
+      "ID": 850500,
+      "Entries": [
+        "Great Club [Enchanted]"
+      ]
+    },
+    {
+      "ID": 850600,
+      "Entries": [
+        "Great Club [Divine]"
+      ]
+    },
+    {
+      "ID": 850700,
+      "Entries": [
+        "Great Club [Occult]"
+      ]
+    },
+    {
+      "ID": 850800,
+      "Entries": [
+        "Great Club [Fire]"
+      ]
+    },
+    {
+      "ID": 850900,
+      "Entries": [
+        "Great Club [Chaos]"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "Grant"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "Demon's Great Hammer"
+      ]
+    },
+    {
+      "ID": 852100,
+      "Entries": [
+        "Demon's Great Hammer [Crystal]"
+      ]
+    },
+    {
+      "ID": 852200,
+      "Entries": [
+        "Demon's Great Hammer [Lightning]"
+      ]
+    },
+    {
+      "ID": 852300,
+      "Entries": [
+        "Demon's Great Hammer [Raw]"
+      ]
+    },
+    {
+      "ID": 852400,
+      "Entries": [
+        "Demon's Great Hammer [Magic]"
+      ]
+    },
+    {
+      "ID": 852500,
+      "Entries": [
+        "Demon's Great Hammer [Enchanted]"
+      ]
+    },
+    {
+      "ID": 852600,
+      "Entries": [
+        "Demon's Great Hammer [Divine]"
+      ]
+    },
+    {
+      "ID": 852700,
+      "Entries": [
+        "Demon's Great Hammer [Occult]"
+      ]
+    },
+    {
+      "ID": 852800,
+      "Entries": [
+        "Demon's Great Hammer [Fire]"
+      ]
+    },
+    {
+      "ID": 852900,
+      "Entries": [
+        "Demon's Great Hammer [Chaos]"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 855000,
+      "Entries": [
+        "Large Club"
+      ]
+    },
+    {
+      "ID": 855100,
+      "Entries": [
+        "Large Club [Crystal]"
+      ]
+    },
+    {
+      "ID": 855200,
+      "Entries": [
+        "Large Club [Lightning]"
+      ]
+    },
+    {
+      "ID": 855300,
+      "Entries": [
+        "Large Club [Raw]"
+      ]
+    },
+    {
+      "ID": 855400,
+      "Entries": [
+        "Large Club [Magic]"
+      ]
+    },
+    {
+      "ID": 855500,
+      "Entries": [
+        "Large Club [Enchanted]"
+      ]
+    },
+    {
+      "ID": 855600,
+      "Entries": [
+        "Large Club [Divine]"
+      ]
+    },
+    {
+      "ID": 855700,
+      "Entries": [
+        "Large Club [Occult]"
+      ]
+    },
+    {
+      "ID": 855800,
+      "Entries": [
+        "Large Club [Fire]"
+      ]
+    },
+    {
+      "ID": 855900,
+      "Entries": [
+        "Large Club [Chaos]"
+      ]
+    },
+    {
+      "ID": 856000,
+      "Entries": [
+        "Smough's Hammer [Club]"
+      ]
+    },
+    {
+      "ID": 856100,
+      "Entries": [
+        "Smough's Hammer [Mace]"
+      ]
+    },
+    {
+      "ID": 856200,
+      "Entries": [
+        "Smough's Hammer [Morning Star]"
+      ]
+    },
+    {
+      "ID": 856300,
+      "Entries": [
+        "Smough's Hammer [Warpick]"
+      ]
+    },
+    {
+      "ID": 856400,
+      "Entries": [
+        "Smough's Hammer [Pickaxe]"
+      ]
+    },
+    {
+      "ID": 856500,
+      "Entries": [
+        "Smough's Hammer [Reinforced Club]"
+      ]
+    },
+    {
+      "ID": 856600,
+      "Entries": [
+        "Smough's Hammer [Blacksmith Hammer]"
+      ]
+    },
+    {
+      "ID": 856700,
+      "Entries": [
+        "Smough's Hammer [Blacksmith Giant Hammer"
+      ]
+    },
+    {
+      "ID": 856800,
+      "Entries": [
+        "Smough's Hammer [Hammer of Vamos]"
+      ]
+    },
+    {
+      "ID": 856900,
+      "Entries": [
+        "Smough's Hammer [Great Club]"
+      ]
+    },
+    {
+      "ID": 857000,
+      "Entries": [
+        "Smough's Hammer [Demon's Great Hammer]"
+      ]
+    },
+    {
+      "ID": 857100,
+      "Entries": [
+        "Smough's Hammer [Large Club]"
+      ]
+    },
+    {
+      "ID": 898000,
+      "Entries": [
+        "[Ghost] Hammer"
+      ]
+    },
+    {
+      "ID": 899000,
+      "Entries": [
+        "[Ghost] Mallet"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 901100,
+      "Entries": [
+        "Caestus [Crystal]"
+      ]
+    },
+    {
+      "ID": 901200,
+      "Entries": [
+        "Caestus [Lightning]"
+      ]
+    },
+    {
+      "ID": 901300,
+      "Entries": [
+        "Caestus [Raw]"
+      ]
+    },
+    {
+      "ID": 901400,
+      "Entries": [
+        "Caestus [Magic]"
+      ]
+    },
+    {
+      "ID": 901500,
+      "Entries": [
+        "Caestus [Enchanted]"
+      ]
+    },
+    {
+      "ID": 901600,
+      "Entries": [
+        "Caestus [Divine]"
+      ]
+    },
+    {
+      "ID": 901700,
+      "Entries": [
+        "Caestus [Occult]"
+      ]
+    },
+    {
+      "ID": 901800,
+      "Entries": [
+        "Caestus [Fire]"
+      ]
+    },
+    {
+      "ID": 901900,
+      "Entries": [
+        "Caestus [Chaos]"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "Claw"
+      ]
+    },
+    {
+      "ID": 902100,
+      "Entries": [
+        "Claw [Crystal]"
+      ]
+    },
+    {
+      "ID": 902200,
+      "Entries": [
+        "Claw [Lightning]"
+      ]
+    },
+    {
+      "ID": 902300,
+      "Entries": [
+        "Claw [Raw]"
+      ]
+    },
+    {
+      "ID": 902400,
+      "Entries": [
+        "Claw [Magic]"
+      ]
+    },
+    {
+      "ID": 902500,
+      "Entries": [
+        "Claw [Enchanted]"
+      ]
+    },
+    {
+      "ID": 902600,
+      "Entries": [
+        "Claw [Divine]"
+      ]
+    },
+    {
+      "ID": 902700,
+      "Entries": [
+        "Claw [Occult]"
+      ]
+    },
+    {
+      "ID": 902800,
+      "Entries": [
+        "Claw [Fire]"
+      ]
+    },
+    {
+      "ID": 902900,
+      "Entries": [
+        "Claw [Chaos]"
+      ]
+    },
+    {
+      "ID": 903000,
+      "Entries": [
+        "Dragon Bone Fist [Caestus]"
+      ]
+    },
+    {
+      "ID": 903100,
+      "Entries": [
+        "Dragon Bone Fist [Claw]"
+      ]
+    },
+    {
+      "ID": 904000,
+      "Entries": [
+        "Dark Hand"
+      ]
+    },
+    {
+      "ID": 999000,
+      "Entries": [
+        "[Ghost] Fist"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Spear [Crystal]"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Spear [Lightning]"
+      ]
+    },
+    {
+      "ID": 1000300,
+      "Entries": [
+        "Spear [Raw]"
+      ]
+    },
+    {
+      "ID": 1000400,
+      "Entries": [
+        "Spear [Magic]"
+      ]
+    },
+    {
+      "ID": 1000500,
+      "Entries": [
+        "Spear [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1000600,
+      "Entries": [
+        "Spear [Divine]"
+      ]
+    },
+    {
+      "ID": 1000700,
+      "Entries": [
+        "Spear [Occult]"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Spear [Fire]"
+      ]
+    },
+    {
+      "ID": 1000900,
+      "Entries": [
+        "Spear [Chaos]"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Winged Spear"
+      ]
+    },
+    {
+      "ID": 1001100,
+      "Entries": [
+        "Winged Spear [Crystal]"
+      ]
+    },
+    {
+      "ID": 1001200,
+      "Entries": [
+        "Winged Spear [Lightning]"
+      ]
+    },
+    {
+      "ID": 1001300,
+      "Entries": [
+        "Winged Spear [Raw]"
+      ]
+    },
+    {
+      "ID": 1001400,
+      "Entries": [
+        "Winged Spear [Magic]"
+      ]
+    },
+    {
+      "ID": 1001500,
+      "Entries": [
+        "Winged Spear [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1001600,
+      "Entries": [
+        "Winged Spear [Divine]"
+      ]
+    },
+    {
+      "ID": 1001700,
+      "Entries": [
+        "Winged Spear [Occult]"
+      ]
+    },
+    {
+      "ID": 1001800,
+      "Entries": [
+        "Winged Spear [Fire]"
+      ]
+    },
+    {
+      "ID": 1001900,
+      "Entries": [
+        "Winged Spear [Chaos]"
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Partizan"
+      ]
+    },
+    {
+      "ID": 1002100,
+      "Entries": [
+        "Partizan [Crystal]"
+      ]
+    },
+    {
+      "ID": 1002200,
+      "Entries": [
+        "Partizan [Lightning]"
+      ]
+    },
+    {
+      "ID": 1002300,
+      "Entries": [
+        "Partizan [Raw]"
+      ]
+    },
+    {
+      "ID": 1002400,
+      "Entries": [
+        "Partizan [Magic]"
+      ]
+    },
+    {
+      "ID": 1002500,
+      "Entries": [
+        "Partizan [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1002600,
+      "Entries": [
+        "Partizan [Divine]"
+      ]
+    },
+    {
+      "ID": 1002700,
+      "Entries": [
+        "Partizan [Occult]"
+      ]
+    },
+    {
+      "ID": 1002800,
+      "Entries": [
+        "Partizan [Fire]"
+      ]
+    },
+    {
+      "ID": 1002900,
+      "Entries": [
+        "Partizan [Chaos]"
+      ]
+    },
+    {
+      "ID": 1003000,
+      "Entries": [
+        "Demon's Spear"
+      ]
+    },
+    {
+      "ID": 1004000,
+      "Entries": [
+        "Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 1006000,
+      "Entries": [
+        "Silver Knight Spear"
+      ]
+    },
+    {
+      "ID": 1050000,
+      "Entries": [
+        "Pike"
+      ]
+    },
+    {
+      "ID": 1050100,
+      "Entries": [
+        "Pike [Crystal]"
+      ]
+    },
+    {
+      "ID": 1050200,
+      "Entries": [
+        "Pike [Lightning]"
+      ]
+    },
+    {
+      "ID": 1050300,
+      "Entries": [
+        "Pike [Raw]"
+      ]
+    },
+    {
+      "ID": 1050400,
+      "Entries": [
+        "Pike [Magic]"
+      ]
+    },
+    {
+      "ID": 1050500,
+      "Entries": [
+        "Pike [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1050600,
+      "Entries": [
+        "Pike [Divine]"
+      ]
+    },
+    {
+      "ID": 1050700,
+      "Entries": [
+        "Pike [Occult]"
+      ]
+    },
+    {
+      "ID": 1050800,
+      "Entries": [
+        "Pike [Fire]"
+      ]
+    },
+    {
+      "ID": 1050900,
+      "Entries": [
+        "Pike [Chaos]"
+      ]
+    },
+    {
+      "ID": 1051000,
+      "Entries": [
+        "Dragonslayer Spear [Mail Breaker]"
+      ]
+    },
+    {
+      "ID": 1051100,
+      "Entries": [
+        "Dragonslayer Spear [Rapier]"
+      ]
+    },
+    {
+      "ID": 1051200,
+      "Entries": [
+        "Dragonslayer Spear [Estoc]"
+      ]
+    },
+    {
+      "ID": 1051300,
+      "Entries": [
+        "Dragonslayer Spear [Spear]"
+      ]
+    },
+    {
+      "ID": 1051400,
+      "Entries": [
+        "Dragonslayer Spear [Winged Spear]"
+      ]
+    },
+    {
+      "ID": 1051500,
+      "Entries": [
+        "Dragonslayer Spear [Partizan]"
+      ]
+    },
+    {
+      "ID": 1051600,
+      "Entries": [
+        "Dragonslayer Spear [Demon's Spear"
+      ]
+    },
+    {
+      "ID": 1051700,
+      "Entries": [
+        "Dragonslayer Spear [Channeler's Trident]"
+      ]
+    },
+    {
+      "ID": 1051800,
+      "Entries": [
+        "Dragonslayer Spear [Pike]"
+      ]
+    },
+    {
+      "ID": 1051900,
+      "Entries": [
+        "Dragonslayer Spear [Ricard's Rapier]"
+      ]
+    },
+    {
+      "ID": 1052000,
+      "Entries": [
+        "Moonlight Butterfly Horn [Mail Breaker]"
+      ]
+    },
+    {
+      "ID": 1052100,
+      "Entries": [
+        "Moonlight Butterfly Horn [Rapier]"
+      ]
+    },
+    {
+      "ID": 1052200,
+      "Entries": [
+        "Moonlight Butterfly Horn [Estoc]"
+      ]
+    },
+    {
+      "ID": 1052300,
+      "Entries": [
+        "Moonlight Butterfly Horn [Spear]"
+      ]
+    },
+    {
+      "ID": 1052400,
+      "Entries": [
+        "Moonlight Butterfly Horn [Winged Spear]"
+      ]
+    },
+    {
+      "ID": 1052500,
+      "Entries": [
+        "Moonlight Butterfly Horn [Partizan]"
+      ]
+    },
+    {
+      "ID": 1052600,
+      "Entries": [
+        "Moonlight Butterfly Horn [Demon's Spear]"
+      ]
+    },
+    {
+      "ID": 1052700,
+      "Entries": [
+        "Moonlight Butterfly Horn [Channeler's Trident]"
+      ]
+    },
+    {
+      "ID": 1052800,
+      "Entries": [
+        "Moonlight Butterfly Horn [Pike]"
+      ]
+    },
+    {
+      "ID": 1052900,
+      "Entries": [
+        "Moonlight Butterfly Horn [Ricard's Rapier]"
+      ]
+    },
+    {
+      "ID": 1053000,
+      "Entries": [
+        "Moonlight Butterfly Horn [Four-pronged Plow]"
+      ]
+    },
+    {
+      "ID": 1054000,
+      "Entries": [
+        "Dragonslayer Spear [Four-pronged Plow]"
+      ]
+    },
+    {
+      "ID": 1099000,
+      "Entries": [
+        "[Ghost] Spear"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Halberd [Crystal]"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "Halberd [Lightning]"
+      ]
+    },
+    {
+      "ID": 1100300,
+      "Entries": [
+        "Halberd [Raw]"
+      ]
+    },
+    {
+      "ID": 1100400,
+      "Entries": [
+        "Halberd [Magic]"
+      ]
+    },
+    {
+      "ID": 1100500,
+      "Entries": [
+        "Halberd [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1100600,
+      "Entries": [
+        "Halberd [Divine]"
+      ]
+    },
+    {
+      "ID": 1100700,
+      "Entries": [
+        "Halberd [Occult]"
+      ]
+    },
+    {
+      "ID": 1100800,
+      "Entries": [
+        "Halberd [Fire]"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Halberd [Chaos]"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Giant's Halberd"
+      ]
+    },
+    {
+      "ID": 1102000,
+      "Entries": [
+        "Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 1103000,
+      "Entries": [
+        "Gargoyle's Halberd"
+      ]
+    },
+    {
+      "ID": 1103100,
+      "Entries": [
+        "Gargoyle's Halberd [Crystal]"
+      ]
+    },
+    {
+      "ID": 1103200,
+      "Entries": [
+        "Gargoyle's Halberd [Lightning]"
+      ]
+    },
+    {
+      "ID": 1103300,
+      "Entries": [
+        "Gargoyle's Halberd [Raw]"
+      ]
+    },
+    {
+      "ID": 1103400,
+      "Entries": [
+        "Gargoyle's Halberd [Magic]"
+      ]
+    },
+    {
+      "ID": 1103500,
+      "Entries": [
+        "Gargoyle's Halberd [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1103600,
+      "Entries": [
+        "Gargoyle's Halberd [Divine]"
+      ]
+    },
+    {
+      "ID": 1103700,
+      "Entries": [
+        "Gargoyle's Halberd [Occult]"
+      ]
+    },
+    {
+      "ID": 1103800,
+      "Entries": [
+        "Gargoyle's Halberd [Fire]"
+      ]
+    },
+    {
+      "ID": 1103900,
+      "Entries": [
+        "Gargoyle's Halberd [Chaos]"
+      ]
+    },
+    {
+      "ID": 1105000,
+      "Entries": [
+        "Black Knight Halberd"
+      ]
+    },
+    {
+      "ID": 1106000,
+      "Entries": [
+        "Lucerne"
+      ]
+    },
+    {
+      "ID": 1106100,
+      "Entries": [
+        "Lucerne [Crystal]"
+      ]
+    },
+    {
+      "ID": 1106200,
+      "Entries": [
+        "Lucerne [Lightning]"
+      ]
+    },
+    {
+      "ID": 1106300,
+      "Entries": [
+        "Lucerne [Raw]"
+      ]
+    },
+    {
+      "ID": 1106400,
+      "Entries": [
+        "Lucerne [Magic]"
+      ]
+    },
+    {
+      "ID": 1106500,
+      "Entries": [
+        "Lucerne [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1106600,
+      "Entries": [
+        "Lucerne [Divine]"
+      ]
+    },
+    {
+      "ID": 1106700,
+      "Entries": [
+        "Lucerne [Occult]"
+      ]
+    },
+    {
+      "ID": 1106800,
+      "Entries": [
+        "Lucerne [Fire]"
+      ]
+    },
+    {
+      "ID": 1106900,
+      "Entries": [
+        "Lucerne [Chaos]"
+      ]
+    },
+    {
+      "ID": 1107000,
+      "Entries": [
+        "Scythe"
+      ]
+    },
+    {
+      "ID": 1107100,
+      "Entries": [
+        "Scythe [Crystal]"
+      ]
+    },
+    {
+      "ID": 1107200,
+      "Entries": [
+        "Scythe [Lightning]"
+      ]
+    },
+    {
+      "ID": 1107300,
+      "Entries": [
+        "Scythe [Raw]"
+      ]
+    },
+    {
+      "ID": 1107400,
+      "Entries": [
+        "Scythe [Magic]"
+      ]
+    },
+    {
+      "ID": 1107500,
+      "Entries": [
+        "Scythe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1107600,
+      "Entries": [
+        "Scythe [Divine]"
+      ]
+    },
+    {
+      "ID": 1107700,
+      "Entries": [
+        "Scythe [Occult]"
+      ]
+    },
+    {
+      "ID": 1107800,
+      "Entries": [
+        "Scythe [Fire]"
+      ]
+    },
+    {
+      "ID": 1107900,
+      "Entries": [
+        "Scythe [Chaos]"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "Great Scythe"
+      ]
+    },
+    {
+      "ID": 1150100,
+      "Entries": [
+        "Great Scythe [Crystal]"
+      ]
+    },
+    {
+      "ID": 1150200,
+      "Entries": [
+        "Great Scythe [Lightning]"
+      ]
+    },
+    {
+      "ID": 1150300,
+      "Entries": [
+        "Great Scythe [Raw]"
+      ]
+    },
+    {
+      "ID": 1150400,
+      "Entries": [
+        "Great Scythe [Magic]"
+      ]
+    },
+    {
+      "ID": 1150500,
+      "Entries": [
+        "Great Scythe [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1150600,
+      "Entries": [
+        "Great Scythe [Divine]"
+      ]
+    },
+    {
+      "ID": 1150700,
+      "Entries": [
+        "Great Scythe [Occult]"
+      ]
+    },
+    {
+      "ID": 1150800,
+      "Entries": [
+        "Great Scythe [Fire]"
+      ]
+    },
+    {
+      "ID": 1150900,
+      "Entries": [
+        "Great Scythe [Chaos]"
+      ]
+    },
+    {
+      "ID": 1151000,
+      "Entries": [
+        "Lifehunt Scythe [Halberd]"
+      ]
+    },
+    {
+      "ID": 1151100,
+      "Entries": [
+        "Lifehunt Scythe [Lucerne]"
+      ]
+    },
+    {
+      "ID": 1151200,
+      "Entries": [
+        "Lifehunt Scythe [Scythe]"
+      ]
+    },
+    {
+      "ID": 1151300,
+      "Entries": [
+        "Lifehunt Scythe [Giant's Halberd]"
+      ]
+    },
+    {
+      "ID": 1151400,
+      "Entries": [
+        "Lifehunt Scythe [Gargoyle's Halberd]"
+      ]
+    },
+    {
+      "ID": 1151500,
+      "Entries": [
+        "Lifehunt Scythe [Great Scythe]"
+      ]
+    },
+    {
+      "ID": 1151600,
+      "Entries": [
+        "Lifehunt Scythe [Whip]"
+      ]
+    },
+    {
+      "ID": 1151700,
+      "Entries": [
+        "Lifehunt Scythe [Notched Whip]"
+      ]
+    },
+    {
+      "ID": 1151800,
+      "Entries": [
+        "Lifehunt Scythe [Guardian Tail]"
+      ]
+    },
+    {
+      "ID": 1199000,
+      "Entries": [
+        "[Ghost] Scythe"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Short Bow"
+      ]
+    },
+    {
+      "ID": 1200100,
+      "Entries": [
+        "Short Bow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1200200,
+      "Entries": [
+        "Short Bow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1200300,
+      "Entries": [
+        "Short Bow [Raw]"
+      ]
+    },
+    {
+      "ID": 1200400,
+      "Entries": [
+        "Short Bow [Magic]"
+      ]
+    },
+    {
+      "ID": 1200500,
+      "Entries": [
+        "Short Bow [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1200600,
+      "Entries": [
+        "Short Bow [Divine]"
+      ]
+    },
+    {
+      "ID": 1200700,
+      "Entries": [
+        "Short Bow [Occult]"
+      ]
+    },
+    {
+      "ID": 1200800,
+      "Entries": [
+        "Short Bow [Fire]"
+      ]
+    },
+    {
+      "ID": 1200900,
+      "Entries": [
+        "Short Bow [Chaos]"
+      ]
+    },
+    {
+      "ID": 1201000,
+      "Entries": [
+        "Longbow"
+      ]
+    },
+    {
+      "ID": 1201100,
+      "Entries": [
+        "Longbow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1201200,
+      "Entries": [
+        "Longbow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1201300,
+      "Entries": [
+        "Longbow [Raw]"
+      ]
+    },
+    {
+      "ID": 1201400,
+      "Entries": [
+        "Longbow [Magic]"
+      ]
+    },
+    {
+      "ID": 1201500,
+      "Entries": [
+        "Longbow [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1201600,
+      "Entries": [
+        "Longbow [Divine]"
+      ]
+    },
+    {
+      "ID": 1201700,
+      "Entries": [
+        "Longbow [Occult]"
+      ]
+    },
+    {
+      "ID": 1201800,
+      "Entries": [
+        "Longbow [Fire]"
+      ]
+    },
+    {
+      "ID": 1201900,
+      "Entries": [
+        "Longbow [Chaos]"
+      ]
+    },
+    {
+      "ID": 1202000,
+      "Entries": [
+        "Black Bow of Pharis"
+      ]
+    },
+    {
+      "ID": 1202100,
+      "Entries": [
+        "Black Bow of Pharis [Crystal]"
+      ]
+    },
+    {
+      "ID": 1202200,
+      "Entries": [
+        "Black Bow of Pharis [Lightning]"
+      ]
+    },
+    {
+      "ID": 1202300,
+      "Entries": [
+        "Black Bow of Pharis [Raw]"
+      ]
+    },
+    {
+      "ID": 1202400,
+      "Entries": [
+        "Black Bow of Pharis [Magic]"
+      ]
+    },
+    {
+      "ID": 1202500,
+      "Entries": [
+        "Black Bow of Pharis [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1202600,
+      "Entries": [
+        "Black Bow of Pharis [Divine]"
+      ]
+    },
+    {
+      "ID": 1202700,
+      "Entries": [
+        "Black Bow of Pharis [Occult]"
+      ]
+    },
+    {
+      "ID": 1202800,
+      "Entries": [
+        "Black Bow of Pharis [Fire]"
+      ]
+    },
+    {
+      "ID": 1202900,
+      "Entries": [
+        "Black Bow of Pharis [Chaos]"
+      ]
+    },
+    {
+      "ID": 1203000,
+      "Entries": [
+        "Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 1204000,
+      "Entries": [
+        "Composite Bow"
+      ]
+    },
+    {
+      "ID": 1204100,
+      "Entries": [
+        "Composite Bow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1204200,
+      "Entries": [
+        "Composite Bow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1204300,
+      "Entries": [
+        "Composite Bow [Raw]"
+      ]
+    },
+    {
+      "ID": 1204400,
+      "Entries": [
+        "Composite Bow [Magic]"
+      ]
+    },
+    {
+      "ID": 1204500,
+      "Entries": [
+        "Composite Bow [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1204600,
+      "Entries": [
+        "Composite Bow [Divine]"
+      ]
+    },
+    {
+      "ID": 1204700,
+      "Entries": [
+        "Composite Bow [Occult]"
+      ]
+    },
+    {
+      "ID": 1204800,
+      "Entries": [
+        "Composite Bow [Fire]"
+      ]
+    },
+    {
+      "ID": 1204900,
+      "Entries": [
+        "Composite Bow [Chaos]"
+      ]
+    },
+    {
+      "ID": 1205000,
+      "Entries": [
+        "Darkmoon Bow [Short Bow]"
+      ]
+    },
+    {
+      "ID": 1205100,
+      "Entries": [
+        "Darkmoon Bow [Composite Bow]"
+      ]
+    },
+    {
+      "ID": 1205200,
+      "Entries": [
+        "Darkmoon Bow [Longbow]"
+      ]
+    },
+    {
+      "ID": 1205300,
+      "Entries": [
+        "Darkmoon Bow [Black Bow of Pharis]"
+      ]
+    },
+    {
+      "ID": 1250000,
+      "Entries": [
+        "Light Crossbow"
+      ]
+    },
+    {
+      "ID": 1250100,
+      "Entries": [
+        "Light Crossbow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1250200,
+      "Entries": [
+        "Light Crossbow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1250400,
+      "Entries": [
+        "Light Crossbow [Magic]"
+      ]
+    },
+    {
+      "ID": 1250600,
+      "Entries": [
+        "Light Crossbow [Divine]"
+      ]
+    },
+    {
+      "ID": 1250800,
+      "Entries": [
+        "Light Crossbow [Fire]"
+      ]
+    },
+    {
+      "ID": 1251000,
+      "Entries": [
+        "Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 1251100,
+      "Entries": [
+        "Heavy Crossbow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1251200,
+      "Entries": [
+        "Heavy Crossbow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1251400,
+      "Entries": [
+        "Heavy Crossbow [Magic]"
+      ]
+    },
+    {
+      "ID": 1251600,
+      "Entries": [
+        "Heavy Crossbow [Divine]"
+      ]
+    },
+    {
+      "ID": 1251800,
+      "Entries": [
+        "Heavy Crossbow [Fire]"
+      ]
+    },
+    {
+      "ID": 1252000,
+      "Entries": [
+        "Avelyn"
+      ]
+    },
+    {
+      "ID": 1252100,
+      "Entries": [
+        "Avelyn [Crystal]"
+      ]
+    },
+    {
+      "ID": 1252200,
+      "Entries": [
+        "Avelyn [Lightning]"
+      ]
+    },
+    {
+      "ID": 1252400,
+      "Entries": [
+        "Avelyn [Magic]"
+      ]
+    },
+    {
+      "ID": 1252600,
+      "Entries": [
+        "Avelyn [Divine]"
+      ]
+    },
+    {
+      "ID": 1252800,
+      "Entries": [
+        "Avelyn [Fire]"
+      ]
+    },
+    {
+      "ID": 1253000,
+      "Entries": [
+        "Sniper Crossbow"
+      ]
+    },
+    {
+      "ID": 1253100,
+      "Entries": [
+        "Sniper Crossbow [Crystal]"
+      ]
+    },
+    {
+      "ID": 1253200,
+      "Entries": [
+        "Sniper Crossbow [Lightning]"
+      ]
+    },
+    {
+      "ID": 1253400,
+      "Entries": [
+        "Sniper Crossbow [Magic]"
+      ]
+    },
+    {
+      "ID": 1253600,
+      "Entries": [
+        "Sniper Crossbow [Divine]"
+      ]
+    },
+    {
+      "ID": 1253800,
+      "Entries": [
+        "Sniper Crossbow [Fire]"
+      ]
+    },
+    {
+      "ID": 1298000,
+      "Entries": [
+        "[Ghost] Bow"
+      ]
+    },
+    {
+      "ID": 1299000,
+      "Entries": [
+        "[Ghost] Crossbow"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Sorcerer's Catalyst"
+      ]
+    },
+    {
+      "ID": 1301000,
+      "Entries": [
+        "Beatrice's Catalyst"
+      ]
+    },
+    {
+      "ID": 1302000,
+      "Entries": [
+        "Tin Banishment Catalyst"
+      ]
+    },
+    {
+      "ID": 1303000,
+      "Entries": [
+        "Logan's Catalyst"
+      ]
+    },
+    {
+      "ID": 1304000,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Sorcerer's Catalyst]"
+      ]
+    },
+    {
+      "ID": 1304100,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Beatrice's Catalyst]"
+      ]
+    },
+    {
+      "ID": 1304200,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Tin Banishment Catalyst]"
+      ]
+    },
+    {
+      "ID": 1304300,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Logan's Catalyst]"
+      ]
+    },
+    {
+      "ID": 1304400,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Oolacile Ivory Catalyst]"
+      ]
+    },
+    {
+      "ID": 1304500,
+      "Entries": [
+        "Tin Darkmoon Catalyst [Oolacile Catalyst]"
+      ]
+    },
+    {
+      "ID": 1305000,
+      "Entries": [
+        "Oolacile Ivory Catalyst"
+      ]
+    },
+    {
+      "ID": 1306000,
+      "Entries": [
+        "Tin Crystallization Ctlyst."
+      ]
+    },
+    {
+      "ID": 1307000,
+      "Entries": [
+        "Demon's Catalyst"
+      ]
+    },
+    {
+      "ID": 1308000,
+      "Entries": [
+        "Izalith Catalyst"
+      ]
+    },
+    {
+      "ID": 1330000,
+      "Entries": [
+        "Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1330100,
+      "Entries": [
+        "Pyromancy Flame +1"
+      ]
+    },
+    {
+      "ID": 1330200,
+      "Entries": [
+        "Pyromancy Flame +2"
+      ]
+    },
+    {
+      "ID": 1330300,
+      "Entries": [
+        "Pyromancy Flame +3"
+      ]
+    },
+    {
+      "ID": 1330400,
+      "Entries": [
+        "Pyromancy Flame +4"
+      ]
+    },
+    {
+      "ID": 1330500,
+      "Entries": [
+        "Pyromancy Flame +5"
+      ]
+    },
+    {
+      "ID": 1330600,
+      "Entries": [
+        "Pyromancy Flame +6"
+      ]
+    },
+    {
+      "ID": 1330700,
+      "Entries": [
+        "Pyromancy Flame +7"
+      ]
+    },
+    {
+      "ID": 1330800,
+      "Entries": [
+        "Pyromancy Flame +8"
+      ]
+    },
+    {
+      "ID": 1330900,
+      "Entries": [
+        "Pyromancy Flame +9"
+      ]
+    },
+    {
+      "ID": 1331000,
+      "Entries": [
+        "Pyromancy Flame +10"
+      ]
+    },
+    {
+      "ID": 1331100,
+      "Entries": [
+        "Pyromancy Flame +11"
+      ]
+    },
+    {
+      "ID": 1331200,
+      "Entries": [
+        "Pyromancy Flame +12"
+      ]
+    },
+    {
+      "ID": 1331300,
+      "Entries": [
+        "Pyromancy Flame +13"
+      ]
+    },
+    {
+      "ID": 1331400,
+      "Entries": [
+        "Pyromancy Flame +14"
+      ]
+    },
+    {
+      "ID": 1331500,
+      "Entries": [
+        "Pyromancy Flame +15"
+      ]
+    },
+    {
+      "ID": 1332000,
+      "Entries": [
+        "Ascended Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1332100,
+      "Entries": [
+        "Ascended Pyromancy Flame +1"
+      ]
+    },
+    {
+      "ID": 1332200,
+      "Entries": [
+        "Ascended Pyromancy Flame +2"
+      ]
+    },
+    {
+      "ID": 1332300,
+      "Entries": [
+        "Ascended Pyromancy Flame +3"
+      ]
+    },
+    {
+      "ID": 1332400,
+      "Entries": [
+        "Ascended Pyromancy Flame +4"
+      ]
+    },
+    {
+      "ID": 1332500,
+      "Entries": [
+        "Ascended Pyromancy Flame +5"
+      ]
+    },
+    {
+      "ID": 1360000,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1361000,
+      "Entries": [
+        "Canvas Talisman"
+      ]
+    },
+    {
+      "ID": 1362000,
+      "Entries": [
+        "Thorolund Talisman"
+      ]
+    },
+    {
+      "ID": 1363000,
+      "Entries": [
+        "Ivory Talisman"
+      ]
+    },
+    {
+      "ID": 1365000,
+      "Entries": [
+        "Sunlight Talisman"
+      ]
+    },
+    {
+      "ID": 1366000,
+      "Entries": [
+        "Darkmoon Talisman"
+      ]
+    },
+    {
+      "ID": 1367000,
+      "Entries": [
+        "Velka's Talisman"
+      ]
+    },
+    {
+      "ID": 1396000,
+      "Entries": [
+        "Skull Lantern"
+      ]
+    },
+    {
+      "ID": 1397000,
+      "Entries": [
+        "[Ghost] Staff"
+      ]
+    },
+    {
+      "ID": 1398000,
+      "Entries": [
+        "[Ghost] Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1399000,
+      "Entries": [
+        "[Ghost] Talisman"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "East-West Shield"
+      ]
+    },
+    {
+      "ID": 1400100,
+      "Entries": [
+        "East-West Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1400200,
+      "Entries": [
+        "East-West Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1400400,
+      "Entries": [
+        "East-West Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1400600,
+      "Entries": [
+        "East-West Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1400800,
+      "Entries": [
+        "East-West Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1401000,
+      "Entries": [
+        "Wooden Shield"
+      ]
+    },
+    {
+      "ID": 1401100,
+      "Entries": [
+        "Wooden Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1401200,
+      "Entries": [
+        "Wooden Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1401400,
+      "Entries": [
+        "Wooden Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1401600,
+      "Entries": [
+        "Wooden Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1401800,
+      "Entries": [
+        "Wooden Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1402000,
+      "Entries": [
+        "Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 1402100,
+      "Entries": [
+        "Large Leather Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1402200,
+      "Entries": [
+        "Large Leather Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1402400,
+      "Entries": [
+        "Large Leather Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1402600,
+      "Entries": [
+        "Large Leather Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1402800,
+      "Entries": [
+        "Large Leather Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1403000,
+      "Entries": [
+        "Small Leather Shield"
+      ]
+    },
+    {
+      "ID": 1403100,
+      "Entries": [
+        "Small Leather Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1403200,
+      "Entries": [
+        "Small Leather Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1403400,
+      "Entries": [
+        "Small Leather Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1403600,
+      "Entries": [
+        "Small Leather Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1403800,
+      "Entries": [
+        "Small Leather Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1404000,
+      "Entries": [
+        "Target Shield"
+      ]
+    },
+    {
+      "ID": 1404100,
+      "Entries": [
+        "Target Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1404200,
+      "Entries": [
+        "Target Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1404400,
+      "Entries": [
+        "Target Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1404600,
+      "Entries": [
+        "Target Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1404800,
+      "Entries": [
+        "Target Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1405000,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 1405100,
+      "Entries": [
+        "Buckler [Crystal]"
+      ]
+    },
+    {
+      "ID": 1405200,
+      "Entries": [
+        "Buckler [Lightning]"
+      ]
+    },
+    {
+      "ID": 1405400,
+      "Entries": [
+        "Buckler [Magic]"
+      ]
+    },
+    {
+      "ID": 1405600,
+      "Entries": [
+        "Buckler [Divine]"
+      ]
+    },
+    {
+      "ID": 1405800,
+      "Entries": [
+        "Buckler [Fire]"
+      ]
+    },
+    {
+      "ID": 1406000,
+      "Entries": [
+        "Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 1406100,
+      "Entries": [
+        "Cracked Round Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1406200,
+      "Entries": [
+        "Cracked Round Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1406400,
+      "Entries": [
+        "Cracked Round Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1406600,
+      "Entries": [
+        "Cracked Round Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1406800,
+      "Entries": [
+        "Cracked Round Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1408000,
+      "Entries": [
+        "Leather Shield"
+      ]
+    },
+    {
+      "ID": 1408100,
+      "Entries": [
+        "Leather Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1408200,
+      "Entries": [
+        "Leather Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1408400,
+      "Entries": [
+        "Leather Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1408600,
+      "Entries": [
+        "Leather Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1408800,
+      "Entries": [
+        "Leather Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1409000,
+      "Entries": [
+        "Plank Shield"
+      ]
+    },
+    {
+      "ID": 1409100,
+      "Entries": [
+        "Plank Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1409200,
+      "Entries": [
+        "Plank Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1409400,
+      "Entries": [
+        "Plank Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1409600,
+      "Entries": [
+        "Plank Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1409800,
+      "Entries": [
+        "Plank Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1410000,
+      "Entries": [
+        "Caduceus Round Shield"
+      ]
+    },
+    {
+      "ID": 1410100,
+      "Entries": [
+        "Caduceus Round Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1410200,
+      "Entries": [
+        "Caduceus Round Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1410400,
+      "Entries": [
+        "Caduceus Round Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1410600,
+      "Entries": [
+        "Caduceus Round Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1410800,
+      "Entries": [
+        "Caduceus Round Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1411000,
+      "Entries": [
+        "Crystal Ring Shield [East-West Shield]"
+      ]
+    },
+    {
+      "ID": 1411100,
+      "Entries": [
+        "Crystal Ring Shield [Wooden Shield]"
+      ]
+    },
+    {
+      "ID": 1411200,
+      "Entries": [
+        "Crystal Ring Shield [Plank Shield]"
+      ]
+    },
+    {
+      "ID": 1411300,
+      "Entries": [
+        "Crystal Ring Shield [Large Leather Shield]"
+      ]
+    },
+    {
+      "ID": 1411400,
+      "Entries": [
+        "Crystal Ring Shield [Small Leather Shield]"
+      ]
+    },
+    {
+      "ID": 1411500,
+      "Entries": [
+        "Crystal Ring Shield [Leather Shield"
+      ]
+    },
+    {
+      "ID": 1411600,
+      "Entries": [
+        "Crystal Ring Shield [Target Shield]"
+      ]
+    },
+    {
+      "ID": 1411700,
+      "Entries": [
+        "Crystal Ring Shield [Buckler]"
+      ]
+    },
+    {
+      "ID": 1411800,
+      "Entries": [
+        "Crystal Ring Shield [Cracked Round Shield]"
+      ]
+    },
+    {
+      "ID": 1411900,
+      "Entries": [
+        "Crystal Ring Shield [Caduceus Round Shield]"
+      ]
+    },
+    {
+      "ID": 1412000,
+      "Entries": [
+        "Crystal Ring Shield [Heater Shield]"
+      ]
+    },
+    {
+      "ID": 1412100,
+      "Entries": [
+        "Crystal Ring Shield [Knight Shield]"
+      ]
+    },
+    {
+      "ID": 1412200,
+      "Entries": [
+        "Crystal Ring Shield [Tower Kite Shield]"
+      ]
+    },
+    {
+      "ID": 1412300,
+      "Entries": [
+        "Crystal Ring Shield [Grass Crest Shield]"
+      ]
+    },
+    {
+      "ID": 1412400,
+      "Entries": [
+        "Crystal Ring Shield [Hollow Soldier Shield]"
+      ]
+    },
+    {
+      "ID": 1412500,
+      "Entries": [
+        "Crystal Ring Shield [Balder Shield]"
+      ]
+    },
+    {
+      "ID": 1412600,
+      "Entries": [
+        "Crystal Ring Shield [Warrior's Round Shield]"
+      ]
+    },
+    {
+      "ID": 1412700,
+      "Entries": [
+        "Crystal Ring Shield [Iron Round Shield]"
+      ]
+    },
+    {
+      "ID": 1412800,
+      "Entries": [
+        "Crystal Ring Shield [Spider Shield]"
+      ]
+    },
+    {
+      "ID": 1412900,
+      "Entries": [
+        "Crystal Ring Shield [Spiked Shield]"
+      ]
+    },
+    {
+      "ID": 1413000,
+      "Entries": [
+        "Crystal Ring Shield [Pierce Shield]"
+      ]
+    },
+    {
+      "ID": 1413100,
+      "Entries": [
+        "Crystal Ring Shield [Sunlight Shield]"
+      ]
+    },
+    {
+      "ID": 1413200,
+      "Entries": [
+        "Crystal Ring Shield [Red and White Round Shield]"
+      ]
+    },
+    {
+      "ID": 1413300,
+      "Entries": [
+        "Crystal Ring Shield [Caduceus Kite Shield]"
+      ]
+    },
+    {
+      "ID": 1413400,
+      "Entries": [
+        "Crystal Ring Shield [Gargoyle's Shield]"
+      ]
+    },
+    {
+      "ID": 1413500,
+      "Entries": [
+        "Crystal Ring Shield [Eagle Shield]"
+      ]
+    },
+    {
+      "ID": 1413600,
+      "Entries": [
+        "Crystal Ring Shield [Tower Shield]"
+      ]
+    },
+    {
+      "ID": 1413700,
+      "Entries": [
+        "Crystal Ring Shield [Giant Shield]"
+      ]
+    },
+    {
+      "ID": 1413800,
+      "Entries": [
+        "Crystal Ring Shield [Bonewheel Shield]"
+      ]
+    },
+    {
+      "ID": 1413900,
+      "Entries": [
+        "Crystal Ring Shield [Effigy Shield]"
+      ]
+    },
+    {
+      "ID": 1414000,
+      "Entries": [
+        "Crystal Ring Shield [Sanctus]"
+      ]
+    },
+    {
+      "ID": 1414100,
+      "Entries": [
+        "Crystal Ring Shield [Bloodshield]"
+      ]
+    },
+    {
+      "ID": 1414200,
+      "Entries": [
+        "Crystal Ring Shield [Black Iron Greatshield]"
+      ]
+    },
+    {
+      "ID": 1414300,
+      "Entries": [
+        "Crystal Ring Shield"
+      ]
+    },
+    {
+      "ID": 1414400,
+      "Entries": [
+        "Crystal Ring Shield"
+      ]
+    },
+    {
+      "ID": 1414500,
+      "Entries": [
+        "Crystal Ring Shield"
+      ]
+    },
+    {
+      "ID": 1414600,
+      "Entries": [
+        "Crystal Ring Shield"
+      ]
+    },
+    {
+      "ID": 1450000,
+      "Entries": [
+        "Heater Shield"
+      ]
+    },
+    {
+      "ID": 1450100,
+      "Entries": [
+        "Heater Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1450200,
+      "Entries": [
+        "Heater Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1450400,
+      "Entries": [
+        "Heater Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1450600,
+      "Entries": [
+        "Heater Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1450800,
+      "Entries": [
+        "Heater Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1451000,
+      "Entries": [
+        "Knight Shield"
+      ]
+    },
+    {
+      "ID": 1451100,
+      "Entries": [
+        "Knight Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1451200,
+      "Entries": [
+        "Knight Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1451400,
+      "Entries": [
+        "Knight Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1451600,
+      "Entries": [
+        "Knight Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1451800,
+      "Entries": [
+        "Knight Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1452000,
+      "Entries": [
+        "Tower Kite Shield"
+      ]
+    },
+    {
+      "ID": 1452100,
+      "Entries": [
+        "Tower Kite Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1452200,
+      "Entries": [
+        "Tower Kite Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1452400,
+      "Entries": [
+        "Tower Kite Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1452600,
+      "Entries": [
+        "Tower Kite Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1452800,
+      "Entries": [
+        "Tower Kite Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1453000,
+      "Entries": [
+        "Grass Crest Shield"
+      ]
+    },
+    {
+      "ID": 1453100,
+      "Entries": [
+        "Grass Crest Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1453200,
+      "Entries": [
+        "Grass Crest Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1453400,
+      "Entries": [
+        "Grass Crest Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1453600,
+      "Entries": [
+        "Grass Crest Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1453800,
+      "Entries": [
+        "Grass Crest Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1454000,
+      "Entries": [
+        "Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 1454100,
+      "Entries": [
+        "Hollow Soldier Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1454200,
+      "Entries": [
+        "Hollow Soldier Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1454400,
+      "Entries": [
+        "Hollow Soldier Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1454600,
+      "Entries": [
+        "Hollow Soldier Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1454800,
+      "Entries": [
+        "Hollow Soldier Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1455000,
+      "Entries": [
+        "Balder Shield"
+      ]
+    },
+    {
+      "ID": 1455100,
+      "Entries": [
+        "Balder Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1455200,
+      "Entries": [
+        "Balder Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1455400,
+      "Entries": [
+        "Balder Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1455600,
+      "Entries": [
+        "Balder Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1455800,
+      "Entries": [
+        "Balder Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1456000,
+      "Entries": [
+        "Crest Shield"
+      ]
+    },
+    {
+      "ID": 1457000,
+      "Entries": [
+        "Dragon Crest Shield"
+      ]
+    },
+    {
+      "ID": 1460000,
+      "Entries": [
+        "Warrior's Round Shield"
+      ]
+    },
+    {
+      "ID": 1460100,
+      "Entries": [
+        "Warrior's Round Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1460200,
+      "Entries": [
+        "Warrior's Round Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1460400,
+      "Entries": [
+        "Warrior's Round Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1460600,
+      "Entries": [
+        "Warrior's Round Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1460800,
+      "Entries": [
+        "Warrior's Round Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1461000,
+      "Entries": [
+        "Iron Round Shield"
+      ]
+    },
+    {
+      "ID": 1461100,
+      "Entries": [
+        "Iron Round Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1461200,
+      "Entries": [
+        "Iron Round Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1461400,
+      "Entries": [
+        "Iron Round Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1461600,
+      "Entries": [
+        "Iron Round Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1461800,
+      "Entries": [
+        "Iron Round Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1462000,
+      "Entries": [
+        "Spider Shield"
+      ]
+    },
+    {
+      "ID": 1462100,
+      "Entries": [
+        "Spider Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1462200,
+      "Entries": [
+        "Spider Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1462400,
+      "Entries": [
+        "Spider Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1462600,
+      "Entries": [
+        "Spider Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1462800,
+      "Entries": [
+        "Spider Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1470000,
+      "Entries": [
+        "Spiked Shield"
+      ]
+    },
+    {
+      "ID": 1470100,
+      "Entries": [
+        "Spiked Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1470200,
+      "Entries": [
+        "Spiked Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1470400,
+      "Entries": [
+        "Spiked Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1470600,
+      "Entries": [
+        "Spiked Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1470800,
+      "Entries": [
+        "Spiked Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1471000,
+      "Entries": [
+        "Crystal Shield"
+      ]
+    },
+    {
+      "ID": 1472000,
+      "Entries": [
+        "Sunlight Shield"
+      ]
+    },
+    {
+      "ID": 1472100,
+      "Entries": [
+        "Sunlight Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1472200,
+      "Entries": [
+        "Sunlight Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1472400,
+      "Entries": [
+        "Sunlight Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1472600,
+      "Entries": [
+        "Sunlight Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1472800,
+      "Entries": [
+        "Sunlight Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1473000,
+      "Entries": [
+        "Silver Knight Shield"
+      ]
+    },
+    {
+      "ID": 1474000,
+      "Entries": [
+        "Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 1475000,
+      "Entries": [
+        "Pierce Shield"
+      ]
+    },
+    {
+      "ID": 1475100,
+      "Entries": [
+        "Pierce Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1475200,
+      "Entries": [
+        "Pierce Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1475400,
+      "Entries": [
+        "Pierce Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1475600,
+      "Entries": [
+        "Pierce Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1475800,
+      "Entries": [
+        "Pierce Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1476000,
+      "Entries": [
+        "Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 1476100,
+      "Entries": [
+        "Red and White Round Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1476200,
+      "Entries": [
+        "Red and White Round Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1476400,
+      "Entries": [
+        "Red and White Round Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1476600,
+      "Entries": [
+        "Red and White Round Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1476800,
+      "Entries": [
+        "Red and White Round Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1477000,
+      "Entries": [
+        "Caduceus Kite Shield"
+      ]
+    },
+    {
+      "ID": 1477100,
+      "Entries": [
+        "Caduceus Kite Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1477200,
+      "Entries": [
+        "Caduceus Kite Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1477400,
+      "Entries": [
+        "Caduceus Kite Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1477600,
+      "Entries": [
+        "Caduceus Kite Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1477800,
+      "Entries": [
+        "Caduceus Kite Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1478000,
+      "Entries": [
+        "Gargoyle's Shield"
+      ]
+    },
+    {
+      "ID": 1478100,
+      "Entries": [
+        "Gargoyle's Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1478200,
+      "Entries": [
+        "Gargoyle's Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1478400,
+      "Entries": [
+        "Gargoyle's Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1478600,
+      "Entries": [
+        "Gargoyle's Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1478800,
+      "Entries": [
+        "Gargoyle's Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1498000,
+      "Entries": [
+        "[Ghost] Small Shield"
+      ]
+    },
+    {
+      "ID": 1499000,
+      "Entries": [
+        "[Ghost] Medium Shield"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Eagle Shield"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "Eagle Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1500200,
+      "Entries": [
+        "Eagle Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1500400,
+      "Entries": [
+        "Eagle Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1500600,
+      "Entries": [
+        "Eagle Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Eagle Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1501000,
+      "Entries": [
+        "Tower Shield"
+      ]
+    },
+    {
+      "ID": 1501100,
+      "Entries": [
+        "Tower Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1501200,
+      "Entries": [
+        "Tower Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1501400,
+      "Entries": [
+        "Tower Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1501600,
+      "Entries": [
+        "Tower Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1501800,
+      "Entries": [
+        "Tower Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1502000,
+      "Entries": [
+        "Giant Shield"
+      ]
+    },
+    {
+      "ID": 1502100,
+      "Entries": [
+        "Giant Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1502200,
+      "Entries": [
+        "Giant Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1502400,
+      "Entries": [
+        "Giant Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1502600,
+      "Entries": [
+        "Giant Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1502800,
+      "Entries": [
+        "Giant Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1503000,
+      "Entries": [
+        "Stone Greatshield"
+      ]
+    },
+    {
+      "ID": 1505000,
+      "Entries": [
+        "Havel's Greatshield"
+      ]
+    },
+    {
+      "ID": 1506000,
+      "Entries": [
+        "Bonewheel Shield"
+      ]
+    },
+    {
+      "ID": 1506100,
+      "Entries": [
+        "Bonewheel Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 1506200,
+      "Entries": [
+        "Bonewheel Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 1506400,
+      "Entries": [
+        "Bonewheel Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 1506600,
+      "Entries": [
+        "Bonewheel Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 1506800,
+      "Entries": [
+        "Bonewheel Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 1507000,
+      "Entries": [
+        "Greatshield of Artorias [East-West Shield]"
+      ]
+    },
+    {
+      "ID": 1507100,
+      "Entries": [
+        "Greatshield of Artorias [Wooden Shield]"
+      ]
+    },
+    {
+      "ID": 1507200,
+      "Entries": [
+        "Greatshield of Artorias [Plank Shield]"
+      ]
+    },
+    {
+      "ID": 1507300,
+      "Entries": [
+        "Greatshield of Artorias [Large Leather Shield]"
+      ]
+    },
+    {
+      "ID": 1507400,
+      "Entries": [
+        "Greatshield of Artorias [Small Leather Shield]"
+      ]
+    },
+    {
+      "ID": 1507500,
+      "Entries": [
+        "Greatshield of Artorias [Leather Shield]"
+      ]
+    },
+    {
+      "ID": 1507600,
+      "Entries": [
+        "Greatshield of Artorias [Target Shield]"
+      ]
+    },
+    {
+      "ID": 1507700,
+      "Entries": [
+        "Greatshield of Artorias [Buckler]"
+      ]
+    },
+    {
+      "ID": 1507800,
+      "Entries": [
+        "Greatshield of Artorias [Cracked Round Shield]"
+      ]
+    },
+    {
+      "ID": 1507900,
+      "Entries": [
+        "Greatshield of Artorias [Caduceus Round Shield]"
+      ]
+    },
+    {
+      "ID": 1508000,
+      "Entries": [
+        "Greatshield of Artorias [Heater Shield]"
+      ]
+    },
+    {
+      "ID": 1508100,
+      "Entries": [
+        "Greatshield of Artorias [Knight Shield]"
+      ]
+    },
+    {
+      "ID": 1508200,
+      "Entries": [
+        "Greatshield of Artorias [Tower Kite Shield]"
+      ]
+    },
+    {
+      "ID": 1508300,
+      "Entries": [
+        "Greatshield of Artorias [Grass Crest Shield]"
+      ]
+    },
+    {
+      "ID": 1508400,
+      "Entries": [
+        "Greatshield of Artorias [Hollow Soldier Shield]"
+      ]
+    },
+    {
+      "ID": 1508500,
+      "Entries": [
+        "Greatshield of Artorias [Balder Shield]"
+      ]
+    },
+    {
+      "ID": 1508600,
+      "Entries": [
+        "Greatshield of Artorias [Warrior's Round Shield]"
+      ]
+    },
+    {
+      "ID": 1508700,
+      "Entries": [
+        "Greatshield of Artorias [Iron Round Shield]"
+      ]
+    },
+    {
+      "ID": 1508800,
+      "Entries": [
+        "Greatshield of Artorias [Spider Shield]"
+      ]
+    },
+    {
+      "ID": 1508900,
+      "Entries": [
+        "Greatshield of Artorias [Spiked Shield]"
+      ]
+    },
+    {
+      "ID": 1509000,
+      "Entries": [
+        "Greatshield of Artorias [Pierce Shield]"
+      ]
+    },
+    {
+      "ID": 1509100,
+      "Entries": [
+        "Greatshield of Artorias [Sunlight Shield]"
+      ]
+    },
+    {
+      "ID": 1509200,
+      "Entries": [
+        "Greatshield of Artorias [Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 1509300,
+      "Entries": [
+        "Greatshield of Artorias [Caduceus Kite Shield"
+      ]
+    },
+    {
+      "ID": 1509400,
+      "Entries": [
+        "Greatshield of Artorias [Gargoyle's Shield]"
+      ]
+    },
+    {
+      "ID": 1509500,
+      "Entries": [
+        "Greatshield of Artorias [Eagle Shield]"
+      ]
+    },
+    {
+      "ID": 1509600,
+      "Entries": [
+        "Greatshield of Artorias [Tower Shield]"
+      ]
+    },
+    {
+      "ID": 1509700,
+      "Entries": [
+        "Greatshield of Artorias [Giant Shield]"
+      ]
+    },
+    {
+      "ID": 1509800,
+      "Entries": [
+        "Greatshield of Artorias [Bonewheel Shield]"
+      ]
+    },
+    {
+      "ID": 1509900,
+      "Entries": [
+        "Greatshield of Artorias [Effigy Shield]"
+      ]
+    },
+    {
+      "ID": 1510000,
+      "Entries": [
+        "Greatshield of Artorias [Sanctus]"
+      ]
+    },
+    {
+      "ID": 1510100,
+      "Entries": [
+        "Greatshield of Artorias [Bloodshield]"
+      ]
+    },
+    {
+      "ID": 1510200,
+      "Entries": [
+        "Greatshield of Artorias [Black Iron Greatshield]"
+      ]
+    },
+    {
+      "ID": 1510300,
+      "Entries": [
+        "Greatshield of Artorias"
+      ]
+    },
+    {
+      "ID": 1510400,
+      "Entries": [
+        "Greatshield of Artorias"
+      ]
+    },
+    {
+      "ID": 1510500,
+      "Entries": [
+        "Greatshield of Artorias"
+      ]
+    },
+    {
+      "ID": 1510600,
+      "Entries": [
+        "Greatshield of Artorias"
+      ]
+    },
+    {
+      "ID": 1599000,
+      "Entries": [
+        "[Ghost] Greatshield"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 1600100,
+      "Entries": [
+        "Whip [Crystal]"
+      ]
+    },
+    {
+      "ID": 1600200,
+      "Entries": [
+        "Whip [Lightning]"
+      ]
+    },
+    {
+      "ID": 1600300,
+      "Entries": [
+        "Whip [Raw]"
+      ]
+    },
+    {
+      "ID": 1600400,
+      "Entries": [
+        "Whip [Magic]"
+      ]
+    },
+    {
+      "ID": 1600500,
+      "Entries": [
+        "Whip [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1600600,
+      "Entries": [
+        "Whip [Divine]"
+      ]
+    },
+    {
+      "ID": 1600700,
+      "Entries": [
+        "Whip [Occult]"
+      ]
+    },
+    {
+      "ID": 1600800,
+      "Entries": [
+        "Whip [Fire]"
+      ]
+    },
+    {
+      "ID": 1600900,
+      "Entries": [
+        "Whip [Chaos]"
+      ]
+    },
+    {
+      "ID": 1601000,
+      "Entries": [
+        "Notched Whip"
+      ]
+    },
+    {
+      "ID": 1601100,
+      "Entries": [
+        "Notched Whip [Crystal]"
+      ]
+    },
+    {
+      "ID": 1601200,
+      "Entries": [
+        "Notched Whip [Lightning]"
+      ]
+    },
+    {
+      "ID": 1601300,
+      "Entries": [
+        "Notched Whip [Raw]"
+      ]
+    },
+    {
+      "ID": 1601400,
+      "Entries": [
+        "Notched Whip [Magic]"
+      ]
+    },
+    {
+      "ID": 1601500,
+      "Entries": [
+        "Notched Whip [Enchanted]"
+      ]
+    },
+    {
+      "ID": 1601600,
+      "Entries": [
+        "Notched Whip [Divine]"
+      ]
+    },
+    {
+      "ID": 1601700,
+      "Entries": [
+        "Notched Whip [Occult]"
+      ]
+    },
+    {
+      "ID": 1601800,
+      "Entries": [
+        "Notched Whip [Fire]"
+      ]
+    },
+    {
+      "ID": 1601900,
+      "Entries": [
+        "Notched Whip [Chaos]"
+      ]
+    },
+    {
+      "ID": 1699000,
+      "Entries": [
+        "[Ghost] Whip"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Standard Arrow"
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        "Large Arrow"
+      ]
+    },
+    {
+      "ID": 2002000,
+      "Entries": [
+        "Feather Arrow"
+      ]
+    },
+    {
+      "ID": 2003000,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 2004000,
+      "Entries": [
+        "Poison Arrow"
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        "Moonlight Arrow"
+      ]
+    },
+    {
+      "ID": 2006000,
+      "Entries": [
+        "Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 2007000,
+      "Entries": [
+        "Dragonslayer Arrow"
+      ]
+    },
+    {
+      "ID": 2008000,
+      "Entries": [
+        "Gough's Great Arrow"
+      ]
+    },
+    {
+      "ID": 2099000,
+      "Entries": [
+        "[Ghost] Arrow"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Standard Bolt"
+      ]
+    },
+    {
+      "ID": 2101000,
+      "Entries": [
+        "Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 2102000,
+      "Entries": [
+        "Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 2103000,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 2104000,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 2199000,
+      "Entries": [
+        "[Ghost] Bolt"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Effigy Shield"
+      ]
+    },
+    {
+      "ID": 9000100,
+      "Entries": [
+        "Effigy Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 9000200,
+      "Entries": [
+        "Effigy Shield [Lightning]"
+      ]
+    },
+    {
+      "ID": 9000400,
+      "Entries": [
+        "Effigy Shield [Magic]"
+      ]
+    },
+    {
+      "ID": 9000600,
+      "Entries": [
+        "Effigy Shield [Divine]"
+      ]
+    },
+    {
+      "ID": 9000800,
+      "Entries": [
+        "Effigy Shield [Fire]"
+      ]
+    },
+    {
+      "ID": 9001000,
+      "Entries": [
+        "Sanctus"
+      ]
+    },
+    {
+      "ID": 9001100,
+      "Entries": [
+        "Sanctus [Crystal]"
+      ]
+    },
+    {
+      "ID": 9001200,
+      "Entries": [
+        "Sanctus [Lightning]"
+      ]
+    },
+    {
+      "ID": 9001400,
+      "Entries": [
+        "Sanctus [Magic]"
+      ]
+    },
+    {
+      "ID": 9001600,
+      "Entries": [
+        "Sanctus [Divine]"
+      ]
+    },
+    {
+      "ID": 9001800,
+      "Entries": [
+        "Sanctus [Fire]"
+      ]
+    },
+    {
+      "ID": 9002000,
+      "Entries": [
+        "Bloodshield"
+      ]
+    },
+    {
+      "ID": 9002100,
+      "Entries": [
+        "Bloodshield [Crystal]"
+      ]
+    },
+    {
+      "ID": 9002200,
+      "Entries": [
+        "Bloodshield [Lightning]"
+      ]
+    },
+    {
+      "ID": 9002400,
+      "Entries": [
+        "Bloodshield [Magic]"
+      ]
+    },
+    {
+      "ID": 9002600,
+      "Entries": [
+        "Bloodshield [Divine]"
+      ]
+    },
+    {
+      "ID": 9002800,
+      "Entries": [
+        "Bloodshield [Fire]"
+      ]
+    },
+    {
+      "ID": 9003000,
+      "Entries": [
+        "Black Iron Greatshield"
+      ]
+    },
+    {
+      "ID": 9003100,
+      "Entries": [
+        "Black Iron Greatshield [Crystal]"
+      ]
+    },
+    {
+      "ID": 9003200,
+      "Entries": [
+        "Black Iron Greatshield [Lightning]"
+      ]
+    },
+    {
+      "ID": 9003400,
+      "Entries": [
+        "Black Iron Greatshield [Magic]"
+      ]
+    },
+    {
+      "ID": 9003600,
+      "Entries": [
+        "Black Iron Greatshield [Divine]"
+      ]
+    },
+    {
+      "ID": 9003800,
+      "Entries": [
+        "Black Iron Greatshield [Fire]"
+      ]
+    },
+    {
+      "ID": 9004000,
+      "Entries": [
+        "Unused - Design Content Shield E"
+      ]
+    },
+    {
+      "ID": 9004100,
+      "Entries": [
+        "Unused - Design Content Shield E [Crystal]"
+      ]
+    },
+    {
+      "ID": 9004200,
+      "Entries": [
+        "Unused - Design Content Shield E [Lightning]"
+      ]
+    },
+    {
+      "ID": 9004400,
+      "Entries": [
+        "Unused - Design Content Shield E [Magic]"
+      ]
+    },
+    {
+      "ID": 9004600,
+      "Entries": [
+        "Unused - Design Content Shield E [Divine]"
+      ]
+    },
+    {
+      "ID": 9004800,
+      "Entries": [
+        "Unused - Design Content Shield E [Fire]"
+      ]
+    },
+    {
+      "ID": 9005000,
+      "Entries": [
+        "Unused - Design Content Shield F"
+      ]
+    },
+    {
+      "ID": 9005100,
+      "Entries": [
+        "Unused - Design Content Shield F [Crystal]"
+      ]
+    },
+    {
+      "ID": 9005200,
+      "Entries": [
+        "Unused - Design Content Shield F [Lightning]"
+      ]
+    },
+    {
+      "ID": 9005400,
+      "Entries": [
+        "Unused - Design Content Shield F [Magic]"
+      ]
+    },
+    {
+      "ID": 9005600,
+      "Entries": [
+        "Unused - Design Content Shield F [Divine]"
+      ]
+    },
+    {
+      "ID": 9005800,
+      "Entries": [
+        "Unused - Design Content Shield F [Fire]"
+      ]
+    },
+    {
+      "ID": 9006000,
+      "Entries": [
+        "Unused - Design Content Shield G"
+      ]
+    },
+    {
+      "ID": 9006100,
+      "Entries": [
+        "Unused - Design Content Shield G [Crystal]"
+      ]
+    },
+    {
+      "ID": 9006200,
+      "Entries": [
+        "Unused - Design Content Shield G [Lightning]"
+      ]
+    },
+    {
+      "ID": 9006400,
+      "Entries": [
+        "Unused - Design Content Shield G [Magic]"
+      ]
+    },
+    {
+      "ID": 9006600,
+      "Entries": [
+        "Unused - Design Content Shield G [Divine]"
+      ]
+    },
+    {
+      "ID": 9006800,
+      "Entries": [
+        "Unused - Design Content Shield G [Fire]"
+      ]
+    },
+    {
+      "ID": 9007000,
+      "Entries": [
+        "Unused - Design Content Shield H"
+      ]
+    },
+    {
+      "ID": 9007100,
+      "Entries": [
+        "Unused - Design Content Shield H [Crystal]"
+      ]
+    },
+    {
+      "ID": 9007200,
+      "Entries": [
+        "Unused - Design Content Shield H [Lightning]"
+      ]
+    },
+    {
+      "ID": 9007400,
+      "Entries": [
+        "Unused - Design Content Shield H [Magic]"
+      ]
+    },
+    {
+      "ID": 9007600,
+      "Entries": [
+        "Unused - Design Content Shield H [Divine]"
+      ]
+    },
+    {
+      "ID": 9007800,
+      "Entries": [
+        "Unused - Design Content Shield H [Fire]"
+      ]
+    },
+    {
+      "ID": 9010000,
+      "Entries": [
+        "Gold Tracer"
+      ]
+    },
+    {
+      "ID": 9011000,
+      "Entries": [
+        "Dark Silver Tracer"
+      ]
+    },
+    {
+      "ID": 9012000,
+      "Entries": [
+        "Abyss Greatsword [Dagger]"
+      ]
+    },
+    {
+      "ID": 9012100,
+      "Entries": [
+        "Abyss Greatsword [Parrying Dagger]"
+      ]
+    },
+    {
+      "ID": 9012200,
+      "Entries": [
+        "Abyss Greatsword [Bandit's Knife]"
+      ]
+    },
+    {
+      "ID": 9012300,
+      "Entries": [
+        "Abyss Greatsword [Shortsword]"
+      ]
+    },
+    {
+      "ID": 9012400,
+      "Entries": [
+        "Abyss Greatsword [Longsword]"
+      ]
+    },
+    {
+      "ID": 9012500,
+      "Entries": [
+        "Abyss Greatsword [Broadsword]"
+      ]
+    },
+    {
+      "ID": 9012600,
+      "Entries": [
+        "Abyss Greatsword [Balder Side Sword]"
+      ]
+    },
+    {
+      "ID": 9012700,
+      "Entries": [
+        "Abyss Greatsword [Sunlight Straight Sword]"
+      ]
+    },
+    {
+      "ID": 9012800,
+      "Entries": [
+        "Abyss Greatsword [Barbed Straight Sword]"
+      ]
+    },
+    {
+      "ID": 9013000,
+      "Entries": [
+        "Abyss Greatsword [Darksword]"
+      ]
+    },
+    {
+      "ID": 9013100,
+      "Entries": [
+        "Abyss Greatsword [Bastard Sword]"
+      ]
+    },
+    {
+      "ID": 9013200,
+      "Entries": [
+        "Abyss Greatsword [Claymore]"
+      ]
+    },
+    {
+      "ID": 9013300,
+      "Entries": [
+        "Abyss Greatsword [Man-serpent Greatsword]"
+      ]
+    },
+    {
+      "ID": 9013400,
+      "Entries": [
+        "Abyss Greatsword [Flamberge]"
+      ]
+    },
+    {
+      "ID": 9013500,
+      "Entries": [
+        "Abyss Greatsword [Zweihander]"
+      ]
+    },
+    {
+      "ID": 9013600,
+      "Entries": [
+        "Abyss Greatsword [Greatsword]"
+      ]
+    },
+    {
+      "ID": 9013700,
+      "Entries": [
+        "Abyss Greatsword [Demon Great Machete]"
+      ]
+    },
+    {
+      "ID": 9014000,
+      "Entries": [
+        "Cleansing Greatshield"
+      ]
+    },
+    {
+      "ID": 9015000,
+      "Entries": [
+        "Stone Greataxe"
+      ]
+    },
+    {
+      "ID": 9016000,
+      "Entries": [
+        "Four-pronged Plow"
+      ]
+    },
+    {
+      "ID": 9016100,
+      "Entries": [
+        "Four-pronged Plow [Crystal]"
+      ]
+    },
+    {
+      "ID": 9016200,
+      "Entries": [
+        "Four-pronged Plow [Lightning]"
+      ]
+    },
+    {
+      "ID": 9016300,
+      "Entries": [
+        "Four-pronged Plow [Raw]"
+      ]
+    },
+    {
+      "ID": 9016400,
+      "Entries": [
+        "Four-pronged Plow [Magic]"
+      ]
+    },
+    {
+      "ID": 9016500,
+      "Entries": [
+        "Four-pronged Plow [Enchanted]"
+      ]
+    },
+    {
+      "ID": 9016600,
+      "Entries": [
+        "Four-pronged Plow [Divine]"
+      ]
+    },
+    {
+      "ID": 9016700,
+      "Entries": [
+        "Four-pronged Plow [Occult]"
+      ]
+    },
+    {
+      "ID": 9016800,
+      "Entries": [
+        "Four-pronged Plow [Fire]"
+      ]
+    },
+    {
+      "ID": 9016900,
+      "Entries": [
+        "Four-pronged Plow [Chaos]"
+      ]
+    },
+    {
+      "ID": 9017000,
+      "Entries": [
+        "Manus Catalyst [Sorcerer's Catalyst]"
+      ]
+    },
+    {
+      "ID": 9017100,
+      "Entries": [
+        "Manus Catalyst [Beatrice's Catalyst]"
+      ]
+    },
+    {
+      "ID": 9017200,
+      "Entries": [
+        "Manus Catalyst [Tin Banishment Catalyst]"
+      ]
+    },
+    {
+      "ID": 9017300,
+      "Entries": [
+        "Manus Catalyst [Logan's Catalyst]"
+      ]
+    },
+    {
+      "ID": 9017400,
+      "Entries": [
+        "Manus Catalyst [Oolacile Ivory Catalyst]"
+      ]
+    },
+    {
+      "ID": 9017500,
+      "Entries": [
+        "Manus Catalyst [Izalith Catalyst]"
+      ]
+    },
+    {
+      "ID": 9018000,
+      "Entries": [
+        "Oolacile Catalyst"
+      ]
+    },
+    {
+      "ID": 9019000,
+      "Entries": [
+        "Guardian Tail"
+      ]
+    },
+    {
+      "ID": 9019100,
+      "Entries": [
+        "Guardian Tail [Crystal]"
+      ]
+    },
+    {
+      "ID": 9019200,
+      "Entries": [
+        "Guardian Tail [Lightning]"
+      ]
+    },
+    {
+      "ID": 9019300,
+      "Entries": [
+        "Guardian Tail [Raw]"
+      ]
+    },
+    {
+      "ID": 9019400,
+      "Entries": [
+        "Guardian Tail [Magic]"
+      ]
+    },
+    {
+      "ID": 9019500,
+      "Entries": [
+        "Guardian Tail [Enchanted]"
+      ]
+    },
+    {
+      "ID": 9019600,
+      "Entries": [
+        "Guardian Tail [Divine]"
+      ]
+    },
+    {
+      "ID": 9019700,
+      "Entries": [
+        "Guardian Tail [Occult]"
+      ]
+    },
+    {
+      "ID": 9019800,
+      "Entries": [
+        "Guardian Tail [Fire]"
+      ]
+    },
+    {
+      "ID": 9019900,
+      "Entries": [
+        "Guardian Tail [Chaos]"
+      ]
+    },
+    {
+      "ID": 9020000,
+      "Entries": [
+        "Obsidian Greatsword"
+      ]
+    },
+    {
+      "ID": 9021000,
+      "Entries": [
+        "Gough's Greatbow"
+      ]
+    }
+  ]
+}

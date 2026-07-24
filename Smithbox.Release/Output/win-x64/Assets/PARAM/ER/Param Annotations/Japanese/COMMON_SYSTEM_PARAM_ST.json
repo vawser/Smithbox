@@ -1,0 +1,18 @@
+{
+  "Param": "COMMON_SYSTEM_PARAM_ST",
+  "Type": "COMMON_SYSTEM_PARAM_ST",
+  "Name": "COMMON_SYSTEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mapSaveMapNameIdOnGameStart",
+      "Name": "ゲーム開始時マップ名ID_セーブデータ用",
+      "Description": "ゲーム開始時マップ名ID_セーブデータ用(SEQ15052)"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

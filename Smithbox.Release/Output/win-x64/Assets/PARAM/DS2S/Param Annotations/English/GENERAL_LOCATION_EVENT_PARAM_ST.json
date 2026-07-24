@@ -1,0 +1,93 @@
+{
+  "Param": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Type": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Name": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Description": "Defines a general spatial event or trigger volume with position, rotation, shape, and categorization metadata.",
+  "Fields": [
+    {
+      "Field": "PositionX",
+      "Name": "Position: X",
+      "Description": "World-space X coordinate of the event location."
+    },
+    {
+      "Field": "PositionY",
+      "Name": "Position: Y",
+      "Description": "World-space Y coordinate of the event location."
+    },
+    {
+      "Field": "PositionZ",
+      "Name": "Position: Z",
+      "Description": "World-space Z coordinate of the event location."
+    },
+    {
+      "Field": "RotationX",
+      "Name": "Rotation: X",
+      "Description": "Rotation around the X-axis (pitch) in degrees or engine units."
+    },
+    {
+      "Field": "RotationY",
+      "Name": "Rotation: Y",
+      "Description": "Rotation around the Y-axis (yaw) in degrees or engine units."
+    },
+    {
+      "Field": "RotationZ",
+      "Name": "Rotation: Z",
+      "Description": "Rotation around the Z-axis (roll) in degrees or engine units."
+    },
+    {
+      "Field": "formType",
+      "Name": "Shape Type",
+      "Description": "Defines the geometric shape of the event area (e.g., sphere, box, capsule)."
+    },
+    {
+      "Field": "colorR",
+      "Name": "Color: R",
+      "Description": "Red component of the debug or visualization color (0–255 or normalized)."
+    },
+    {
+      "Field": "colorG",
+      "Name": "Color: G",
+      "Description": "Green component of the debug or visualization color."
+    },
+    {
+      "Field": "colorB",
+      "Name": "Color: B",
+      "Description": "Blue component of the debug or visualization color."
+    },
+    {
+      "Field": "ScaleX",
+      "Name": "Scale: X",
+      "Description": "Primary horizontal scale or radius of the event volume."
+    },
+    {
+      "Field": "ScaleY",
+      "Name": "Scale: Y",
+      "Description": "Vertical extent of the event volume."
+    },
+    {
+      "Field": "ScaleZ",
+      "Name": "Scale: Z",
+      "Description": "Secondary horizontal scale or depth of the event volume."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlockId",
+      "Name": "Memory Block ID",
+      "Description": "Identifier linking this event to a memory or streaming block system."
+    },
+    {
+      "Field": "categoryType",
+      "Name": "Category Type",
+      "Description": "High-level classification of the event group or system."
+    },
+    {
+      "Field": "categoryId",
+      "Name": "Category ID",
+      "Description": "Specific identifier within the category type."
+    }
+  ]
+}

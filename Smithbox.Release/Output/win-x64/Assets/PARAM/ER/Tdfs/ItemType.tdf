@@ -1,0 +1,7 @@
+"ItemType"
+"u8"
+"Weapon","0"
+"Protector","1"
+"Accessory","2"
+"Good","3"
+"Gem","4"

@@ -1,0 +1,88 @@
+{
+  "Param": "WORLD_MAP_PIECE_PARAM_ST",
+  "Type": "WORLD_MAP_PIECE_PARAM_ST",
+  "Name": "WORLD_MAP_PIECE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "openEventFlagId",
+      "Name": "開放イベントフラグID",
+      "Description": "開放条件のイベントフラグID"
+    },
+    {
+      "Field": "openTravelAreaLeft",
+      "Name": "開放される踏破エリア：Xmin",
+      "Description": "開放時に拡張する踏破エリアの座標（Xmin）"
+    },
+    {
+      "Field": "openTravelAreaRight",
+      "Name": "開放される踏破エリア：Xmax",
+      "Description": "開放時に拡張する踏破エリアの座標（Xmax）"
+    },
+    {
+      "Field": "openTravelAreaTop",
+      "Name": "開放される踏破エリア：Ymin",
+      "Description": "開放時に拡張する踏破エリアの座標（Ymin）"
+    },
+    {
+      "Field": "openTravelAreaBottom",
+      "Name": "開放される踏破エリア：Ymax",
+      "Description": "開放時に拡張する踏破エリアの座標（Ymax）"
+    },
+    {
+      "Field": "acquisitionEventFlagId",
+      "Name": "入手演出イベントフラグID",
+      "Description": "入手演出開始条件のイベントフラグID。いずれかの地図断片ひとつのみがOnになっている想定"
+    },
+    {
+      "Field": "acquisitionEventScale",
+      "Name": "入手演出：表示倍率",
+      "Description": "入手演出時の表示倍率"
+    },
+    {
+      "Field": "acquisitionEventCenterX",
+      "Name": "入手演出：中心座標X",
+      "Description": "入手演出時の中心座標（X）"
+    },
+    {
+      "Field": "acquisitionEventCenterY",
+      "Name": "入手演出：中心座標Y",
+      "Description": "入手演出時の中心座用（Y）"
+    },
+    {
+      "Field": "acquisitionEventResScale",
+      "Name": "入手演出：リソース倍率",
+      "Description": "入手演出用目隠しリソースの表示倍率"
+    },
+    {
+      "Field": "acquisitionEventResOffsetX",
+      "Name": "入手演出：リソースオフセットX",
+      "Description": "入手演出用目隠しリソースの表示位置オフセット（X）"
+    },
+    {
+      "Field": "acquisitionEventResOffsetY",
+      "Name": "入手演出：リソースオフセットY",
+      "Description": "入手演出用目隠しリソースの表示位置オフセット（Y）"
+    },
+    {
+      "Field": "pad",
+      "Name": "パッド",
+      "Description": ""
+    }
+  ]
+}

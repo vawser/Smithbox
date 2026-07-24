@@ -1,0 +1,697 @@
+{
+  "Name": "PhantomParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Small white phantom -- 小白ファントム"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "White phantom -- 白ファントム"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Blue phantom 0 -- 青ファントム0"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Blue phantom 1 -- 青ファントム1"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Blue phantom 2 -- 青ファントム2"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon Enchantment_Cold -- 武器エンチャント_冷気",
+        "Weapon Enchantment_Cold -- 武器エンチャント_冷気"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Small money phantom -- 小金ファントム"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Gold phantom -- 金ファントム"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Red phantom 0 -- 赤ファントム0"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Red phantom 1 -- 赤ファントム1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Red phantom 2 -- 赤ファントム2"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Weapon Enchantment_Sacred -- 武器エンチャント_神聖",
+        "Weapon Enchantment_Sacred -- 武器エンチャント_神聖"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Black phantom -- 黒ファントム"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Dragon Spirit Phantom -- 竜霊ファントム"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Abyss Phantom -- 深淵ファントム"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Servant Phantom -- 下僕ファントム"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal phantom phantom -- 通常幻影ファントム"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Kagaribi Phantom Phantom -- 篝火幻影ファントム"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Tomb Spirit Phantom -- 墓霊ファントム"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Weapon Enchantment_Physical Enhancement -- 武器エンチャント_物理強化"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Weapon Enchantment_Magic Enhancement -- 武器エンチャント_魔力強化"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Weapon Enchantment_Lightning Enhancement -- 武器エンチャント_雷強化"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Weapon Enchantment_Fire Enhancement -- 武器エンチャント_炎強化"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Weapon Enchantment_Darkness Enhancement -- 武器エンチャント_闇強化"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Weapon Enchantment_Poison Enhancement -- 武器エンチャント_毒強化"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Weapon Enchantment_Bleeding Enhancement -- 武器エンチャント_出血強化"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Weapon Enchantment_Weapon Destruction Enhancement -- 武器エンチャント_武器破壊強化"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Weapon Enchantment_Curly Enhancement -- 武器エンチャント_呪強化"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Phantom Ghost Phantom (tentative name) -- 幻影霊ファントム（仮称）"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Weapon Enchantment_Magic Strengthening (Strong) -- 武器エンチャント_魔力強化（強）"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Ghost Knight_Ghost State -- 亡霊騎士_亡霊状態"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Painting guard illusion -- 絵画守\u3000幻影"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Old King of Erosion Illusion -- 蝕の老王\u3000幻影"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Firewood King Test -- 薪の王テスト"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Firewood King Test (with edge) -- 薪の王テスト（エッジあり）"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Tiger translucent -- トラ\u3000半透明"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Tiger completely transparent -- トラ\u3000完全に透明"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Tiger normal -- トラ\u3000通常"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Black tiger normal -- 黒トラ\u3000通常"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shield Enchantment_Strengthen Magic -- 盾エンチャント_魔力強化"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shield Enchantment_Strengthen Magic -- 盾エンチャント_魔力強化"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Shield Enchantment_Lightning Enhancement -- 盾エンチャント_雷強化"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Shield Enchantment_Fire Enhancement -- 盾エンチャント_炎強化"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shield Enchantment_Darkness Enhancement -- 盾エンチャント_闇強化"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Shield Enchantment_Poison Enhancement -- 盾エンチャント_毒強化"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Shield Enchantment_Bleeding Enhancement -- 盾エンチャント_出血強化"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Shield Enchantment_Enhanced Shield Destruction -- 盾エンチャント_盾破壊強化"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Shield Enchantment_Curly Enhancement -- 盾エンチャント_呪強化"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Shield Enchantment_Cold -- 盾エンチャント_冷気"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Dark spirit -- 闇霊"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Shirorei -- 白霊"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Wandering illusion -- 徘徊幻影"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Blood stain illusion -- 血痕幻影"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Sun White Spirit -- 太陽白霊"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Sun red spirit -- 太陽赤霊"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Berserker White Spirit -- バーサーカー白霊"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Berserker Red Spirit -- バーサーカー赤霊"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Sinner hero spirit -- 罪人英雄霊"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Sinner hunting spirit -- 罪人狩り霊"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Red Scare Spirit (Red Scare 1, Dark Moon) -- 赤狩り霊（赤狩り1、暗月）"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Rosalia Guardian Spirit -- ロザリア守護霊"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Map Guardian Spirit (Forest) -- マップ守護霊（森）"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Map Guardian Spirit (Anor) -- マップ守護霊（アノール）"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Sign illusion (white spirit preview) -- サイン幻影(白霊プレビュー)"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Kagaribi illusion -- 篝火幻影"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "NPC illusion -- NPC幻影"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Shirorei -- 白霊"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Dark spirit -- 闇霊"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Red Scare Spirit (early) -- 赤狩り霊（初期）"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Red Scare Spirit (Orthodox) -- 赤狩り霊（正統）"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Red Scare Spirit (Orthodox) Lv2 -- 赤狩り霊（正統）\u3000Lv2"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Sun White Spirit -- 太陽白霊"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Sun dark spirit -- 太陽闇霊"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Berserker White Spirit -- バーサーカー白霊"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Berserka White Spirit / Dark Spirit -- バーサーカ\u3000白霊・闇霊"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Boss Guardian Dark Spirit -- ボス守護者闇霊"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Map Guardian Dark Spirit (Forest) -- マップ守護者闇霊（森）"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Map Guardian Dark Spirit (Anor) -- マップ守護者闇霊（アノール）"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Small White Phantom-Remaining Time-Medium -- 小白ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "White Phantom-Remaining Time-Medium -- 白ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Small Money Phantom-Remaining Time-Medium -- 小金ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Gold Phantom-Remaining Time-Medium -- 金ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Red Phantom 0-Remaining Time-Medium -- 赤ファントム0-残り時間-中"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Red Phantom 1-Remaining Time-Medium -- 赤ファントム1-残り時間-中"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Red Phantom 2-Remaining Time-Medium -- 赤ファントム2-残り時間-中"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Red Phantom 3-Remaining Time-Medium -- 赤ファントム3-残り時間-中"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Black Phantom-Remaining Time-Medium -- 黒ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Red Scare Spirit Lv2 -- 赤狩り霊 Lv2"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Dark Spirit (Preview) -- 闇霊（プレビュー）"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Sun White Spirit (Preview) -- 太陽白霊（プレビュー）"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Sun Dark Spirit (Preview) -- 太陽闇霊（プレビュー）"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Berserker (preview) -- バーサーカー（プレビュー）"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Small White Phantom-Remaining Time-Small -- 小白ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "White Phantom-Time Remaining-Small -- 白ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Small Gold Phantom-Remaining Time-Small -- 小金ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Gold Phantom-Time Remaining-Small -- 金ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Red Phantom 0-Time Remaining-Small -- 赤ファントム0-残り時間-小"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Red Phantom 1-Time Remaining-Small -- 赤ファントム1-残り時間-小"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Red Phantom 2-Remaining Time-Small -- 赤ファントム2-残り時間-小"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Red Phantom 3-Remaining Time-Small -- 赤ファントム3-残り時間-小"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Black Phantom-Time Remaining-Small -- 黒ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Chigo Monkey_Seeing Monkey -- 稚児猿_見る猿"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Chigo monkey _ listening monkey -- 稚児猿_聞き猿"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Chigo monkey_say monkey -- 稚児猿_言う猿"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Chigo monkey _ visible monkey -- 稚児猿_見え猿"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Chigo monkey _ temple miscellaneous fish -- 稚児猿_寺雑魚"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Chigo monkey_PG for survey request -- 稚児猿_ＰＧ調査依頼用"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Phantom bandit_temporary response -- 幻影野盗_仮対応"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Phantom Haunting Monk -- 幻影破戒僧"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Revenge spirit -- 復讐霊"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Phantom [Past Conversation] -- 幻影【過去会話】"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Phantom Outdoor [Past Conversation] -- 幻影屋外【過去会話】"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Sick Village] Phantom Haunting Monk_A -- 【病み村】幻影破戒僧_A"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Sick Village] Phantom Haunting Monk_B -- 【病み村】幻影破戒僧_B"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[C1370] No underwater neck -- 【c1370】水中首無し"
+      ]
+    }
+  ]
+}

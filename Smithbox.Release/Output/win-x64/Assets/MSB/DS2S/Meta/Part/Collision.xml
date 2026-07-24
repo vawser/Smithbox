@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <NvmGroup0
+    AltName="Navmesh Group 0"
+    Wiki="" />
+    
+    <NvmGroup1
+    AltName="Navmesh Group 1"
+    Wiki="" />
+    
+    <NvmGroup2
+    AltName="Navmesh Group 2"
+    Wiki="" />
+    
+    <NvmGroup3
+    AltName="Navmesh Group 3"
+    Wiki="" />
+    
+    <SoundSpaceReverbType
+    AltName="Sound Space Reverb Type"
+    Wiki="The reverb type to use when on this collision." />
+    
+    <SoundSpaceDelayType
+    AltName="Sound Space Delay Type"
+    Wiki="The delay type to use when on this collision." />
+    
+    <MemoryBlockID
+    AltName="Memory Block ID"
+    Wiki="" />
+    
+    <FilterID
+    AltName="Filter ID"
+    Wiki="The fltparam ID to apply whne ont his collision." />
+    
+    <HitFilterID
+    AltName="Hit Filter ID"
+    Wiki="The hit filter to apply for this collision." />
+    
+    <AmbientSfxAttachType
+    AltName="Ambient SFX Attach Type"
+    Wiki="The ambient SFX attachment type within this collision." />
+    
+    <DisableInvasion
+    AltName="Disable Invasion"
+    Wiki="Whether to disable invasions when on this collision." />
+    
+    <AmbientSfxID
+    AltName="Ambient SFX ID"
+    Wiki="The ambient SFX ID for this collision."
+    ParticleAlias="" />
+    
+    <PlayerLightSfxID
+    AltName="Player Light ID"
+    Wiki="The player light SFX ID for this collision." 
+    ParamRef="PlayerLight" />
+    
+    <PlayAreaID
+    AltName="Play Area ID"
+    Wiki="The play area ID for this collision." 
+    ParamRef="PlayAreaParam" />
+    
+    <GameBrightness0
+    AltName="Game Brightness: 0"
+    Wiki="" />
+    
+    <GameBrightness1
+    AltName="Game Brightness: 1"
+    Wiki="" />
+    
+    <EnemyWallMemoryBlockID_A
+    AltName="Enemy Wall: Memory Block ID - A"
+    Wiki="" />
+    
+    <EnemyWallMemoryBlockID_B
+    AltName="Enemy Wall: Memory Block ID - B"
+    Wiki="" />
+    
+    <MapNameID
+    AltName="Map Name ID"
+    Wiki="The ID of tpf in menu\tex\icon\mapname to use for area name banner.\n\nID is also interpreted for mapname FMG for load game menu text (ID example: 102510 = FMG 10250001)." />
+    
+    <DelayMapNameDisplay
+    AltName="Delay Map Name Display"
+    Wiki="Whether to delay the display of the map name when this collision is entered." />
+    
+    <CubeEnvID
+    AltName="Environmental Cube Map ID"
+    Wiki="The ID of tpf in model\map\envbnd to use for cubemaps." />
+    
+    <CameraExFollowParamID
+    AltName="Camera External Follow ID"
+    Wiki="The CameraExFollowParam parameters to use when this collision is stepped on." 
+    ParamRef="CameraExFollowParam" />
+    
+    <UnkT35
+    AltName="Unknown: 0x35"
+    Wiki="" />
+    
+    <UnkT36
+    AltName="Unknown: 0x36"
+    Wiki="" />
+    
+    <HitGroupID
+    AltName="Hit Group ID"
+    Wiki="Shared identifier. Checked by ESD HitGroup commands."
+    ParamRef="HitGroupParam" />
+    
+    <UnkT40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="SOUND_SPACE_TYPE">
+        <Option Value="0" Name="No Reverb" />
+        <Option Value="1" Name="Small Reverb" />
+        <Option Value="2" Name="Medium Reverb" />
+        <Option Value="3" Name="Large Reverb" />
+        <Option Value="4" Name="Massive Reverb" />
+    </Enum>
+    <Enum Name="HIT_FILTER_TYPE">
+        <Option Value="0" Name="Unknown" />
+    </Enum>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,47 @@
+{
+  "Key": "SOUND_REFLECT_LEVEL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_REFLECT_LEVEL"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 2"
+        }
+      ]
+    },
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    }
+  ]
+}

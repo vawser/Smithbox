@@ -1,0 +1,37 @@
+{
+  "Key": "Sound",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Sound"
+      }
+  ],
+  "Params": [
+    "WwiseValueToStrParam_ReflectAuxBusType",
+    "WwiseValueToStrParam_ReflectTextureType",
+    "WwiseValueToStrParam_ReverbAuxBusType",
+    "WwiseValueToStrParam_RuntimeReflectTextureType",
+    "WwiseValueToStrParam_Switch_AttackPowerType",
+    "WwiseValueToStrParam_Switch_BGMStatus",
+    "WwiseValueToStrParam_Switch_BulletGenerateType",
+    "WwiseValueToStrParam_Switch_DestroyedSeType",
+    "WwiseValueToStrParam_Switch_GeneratorType",
+    "WwiseValueToStrParam_Switch_Material",
+    "WwiseValueToStrParam_Switch_ShootSeCategory",
+    "WwiseValueToStrParam_Switch_Weapon_Type",
+    "WwiseValueToStrParam_Switch_WeaponAtkAttribute",
+    "WwiseValueToStrParam_Switch_WeaponMaterial",
+    "AiSoundParam",
+    "RuntimeSoundExpressionParam_Npc",
+    "RuntimeSoundExpressionParam_Pc",
+    "RuntimeSoundGlobalParam",
+    "RuntimeSoundParam_Npc",
+    "RuntimeSoundParam_Pc",
+    "SoundAutoReverbEvaluationDistParam",
+    "SoundAutoReverbSelectParam",
+    "SoundCutsceneParam",
+    "SoundIDSpatialSetting",
+    "SoundParam",
+    "SoundVoiceBankLoad"
+  ]
+}

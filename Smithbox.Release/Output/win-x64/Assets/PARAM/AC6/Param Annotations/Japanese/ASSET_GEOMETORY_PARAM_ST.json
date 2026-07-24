@@ -1,0 +1,698 @@
+{
+  "Param": "ASSET_GEOMETORY_PARAM_ST",
+  "Type": "ASSET_GEOMETORY_PARAM_ST",
+  "Name": "ASSET_GEOMETORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soundBankId",
+      "Name": "サウンドのバンクID",
+      "Description": "サウンドのバンクID(-1:バンクなし, それ以外:指定したIDのバンク)"
+    },
+    {
+      "Field": "soundBreakSEId",
+      "Name": "破壊音SEID",
+      "Description": "破壊音SEID(9桁) -1：assetIdから生成"
+    },
+    {
+      "Field": "refDrawParamId",
+      "Name": "描画パラメータ参照ID",
+      "Description": "描画パラメータ参照ID。パーツ描画パラメータ.xlsmの参照IDです。"
+    },
+    {
+      "Field": "hitCreateType",
+      "Name": "静的アセットヒット構築設定",
+      "Description": "静的アセットのヒット構築タイプを設定します。動的アセットでは無視されます。"
+    },
+    {
+      "Field": "behaviorType",
+      "Name": "アセット挙動タイプ",
+      "Description": "動的(すべてのアセット機能が使用可能)、静的(旧マップ扱いの機能制限された軽いアセット)、部分静的(部分破壊アセット)"
+    },
+    {
+      "Field": "collisionType",
+      "Name": "衝突判定タイプ",
+      "Description": "衝突判定タイプ。アセットが何と当たるかが設定できます。"
+    },
+    {
+      "Field": "rainBlockingType",
+      "Name": "雨遮断設定",
+      "Description": "雨遮断のタイプです。近距離:Sfx遮断に使われる近距離マップを更新します.遠距離:濡れ表現の遮断に使われる遠距離マップを更新します（高負荷）"
+    },
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "破壊までの耐久力(-1:破壊不可)"
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": "この値以下の攻撃力はダメージなし"
+    },
+    {
+      "Field": "breakStopTime",
+      "Name": "破壊後強制停止時間",
+      "Description": "破壊されてから剛体を強制的に停止するまでの時間（0で強制停止しない）"
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "破壊時SFXID",
+      "Description": "破壊時のSFXID(-1:デフォルト(810030))"
+    },
+    {
+      "Field": "breakSfxCpId",
+      "Name": "破壊時SFXダミポリID",
+      "Description": "破壊時SFXの発生位置ダミポリID(-1：センターから発生、-2：配置位置）"
+    },
+    {
+      "Field": "breakLandingSfxId",
+      "Name": "破壊後着地時SFX識別子",
+      "Description": "破壊された後、最初に着地した際に再生するオブジェ材質依存SFXの識別子(-1:発生しない)"
+    },
+    {
+      "Field": "breakBulletBehaviorId",
+      "Name": "破壊時 弾発生 行動パラメータID",
+      "Description": "破壊時[弾]の行動パラメータ(-1:発生しない)"
+    },
+    {
+      "Field": "breakBulletCpId",
+      "Name": "破壊時 弾発生 ダミポリID",
+      "Description": "破壊時[弾]の発生位置ダミポリID(-1:配置位置)"
+    },
+    {
+      "Field": "FragmentInvisibleWaitTime",
+      "Name": "破片非表示 待機時間(秒)",
+      "Description": "破片非表示 待機時間(秒)"
+    },
+    {
+      "Field": "FragmentInvisibleTime",
+      "Name": "破片非表示 時間(秒)",
+      "Description": "破片を非表示にさせる時間(秒)"
+    },
+    {
+      "Field": "BreakAiSoundID",
+      "Name": "破壊時発生AI音ID",
+      "Description": "破壊時に発生させるAI音ID"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "リザーブ1",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "アニメ破壊ID最大値",
+      "Description": "アニメ破壊IDが0番から何番までか"
+    },
+    {
+      "Field": "updateGroupMaskLimitFrameNum",
+      "Name": "グループマスク切り替え時間引きフレーム数",
+      "Description": "グループマスク切り替え時間引きフレーム数"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "プレイヤ衝突で壊れるか",
+      "Description": "プレイヤが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "isBreakByEnemyCollide",
+      "Name": "敵キャラ衝突で壊れるか",
+      "Description": "敵キャラが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "isBreak_ByChrRide",
+      "Name": "キャラが乗ったら壊れるか",
+      "Description": "キャラが乗ったら壊れるか(0:壊れるない 1:壊れる)"
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "初期出現用破壊禁止",
+      "Description": "プレイヤの初期出現で壊れ(0:る, 1:ない)"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "アニメ破壊か",
+      "Description": "アニメ破壊か(0:物理破壊, 1:アニメ破壊)"
+    },
+    {
+      "Field": "isForceHiActiveWhileAnim",
+      "Name": "アニメ再生中はHiActiveにする",
+      "Description": "アニメ再生中は「アセットのみ」更新頻度をHiActiveにする"
+    },
+    {
+      "Field": "isForceHiActive",
+      "Name": "常にHiActiveにする",
+      "Description": "更新頻度をHiActiveにする"
+    },
+    {
+      "Field": "isBreakSync",
+      "Name": "破壊同期するか",
+      "Description": "破壊同期するか"
+    },
+    {
+      "Field": "isDamageCover",
+      "Name": "ダメージを遮蔽するか",
+      "Description": "ダメージを受けたときに、そのダメージを反対側に通さないかどうか\u3000(0:通す, 1:通さない)"
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "攻撃を弾くか",
+      "Description": "攻撃を弾くか(0:弾かない, 1:弾く)"
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "貫通弾丸が当たるか",
+      "Description": "貫通弾丸が当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "isLadder",
+      "Name": "ハシゴか",
+      "Description": "ハシゴか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "移動オブジェか",
+      "Description": "移動オブジェか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isInsideGroupHit",
+      "Name": "アセット内でヒット干渉するか",
+      "Description": "アセット内でヒット干渉するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "ポリ劇中アニメを停止するか",
+      "Description": "ポリ劇中アニメを停止するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "isBurn",
+      "Name": "燃焼するか",
+      "Description": "燃焼するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "破壊前ナビメッシュフラグ",
+      "Description": "破壊前のアセットから設定されるナビメッシュフラグ"
+    },
+    {
+      "Field": "burnBulletInterval",
+      "Name": "燃焼 弾発生間隔(フレーム)",
+      "Description": "延焼用の弾を発生する間隔(フレーム)"
+    },
+    {
+      "Field": "clothUpdateDist",
+      "Name": "クロス更新距離(m)",
+      "Description": "havokClothの更新を行なうカメラからの距離(0:必ず更新する)"
+    },
+    {
+      "Field": "lifeTime_forRuntimeCreate",
+      "Name": "ランタイム生成アセットの寿命(秒)",
+      "Description": "ランタイム生成アセットが生成後に消滅するまでの時間 (0:消滅しない)"
+    },
+    {
+      "Field": "contactSeId",
+      "Name": "プレイヤー接触時SE ID",
+      "Description": "自分が操作するローカルプレイヤーが触れた際に再生するSEのID(-1:再生しない)"
+    },
+    {
+      "Field": "fadeOutTime_forRuntimeCreate",
+      "Name": "ランタイム生成アセットのフェードアウト(秒)",
+      "Description": "ランタイム生成アセットが生成後に消滅時のフェードアウト時間"
+    },
+    {
+      "Field": "windEffectRate_0",
+      "Name": "風係数(破壊前)",
+      "Description": "風係数(破壊前)"
+    },
+    {
+      "Field": "windEffectRate_1",
+      "Name": "風係数(破壊後)",
+      "Description": "風係数(破壊後)"
+    },
+    {
+      "Field": "windEffectType_0",
+      "Name": "風影響タイプ(破壊前)",
+      "Description": "風影響タイプ(破壊前)"
+    },
+    {
+      "Field": "windEffectType_1",
+      "Name": "風影響タイプ(破壊後)",
+      "Description": "風影響タイプ(破壊後)"
+    },
+    {
+      "Field": "overrideMaterialId",
+      "Name": "上書き材質ID",
+      "Description": "アセットの材質ID上書き設定(-1：モデルの材質IDを上書きしない 0以上：材質ID上書き)\u3000はしご上ではこの設定でのみ材質IDが反映されます"
+    },
+    {
+      "Field": "autoCreateOffsetHeight",
+      "Name": "自動生成時の高さオフセット(m)",
+      "Description": "マップに自動生成時にレイキャストが当たったところからどれぐらい浮かせるかの高さオフセット[m]"
+    },
+    {
+      "Field": "burnTime",
+      "Name": "燃焼時間(秒)",
+      "Description": "燃焼時間(秒)(0で燃え続ける)"
+    },
+    {
+      "Field": "burnBraekRate",
+      "Name": "燃焼 破壊判定進行度",
+      "Description": "破壊状態に切り替わる燃焼度の閾値"
+    },
+    {
+      "Field": "burnSfxId",
+      "Name": "燃焼 SFXID：0",
+      "Description": "燃焼時のSFXID：0 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_1",
+      "Name": "燃焼 SFXID：1",
+      "Description": "燃焼時のSFXID：1 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_2",
+      "Name": "燃焼 SFXID：2",
+      "Description": "燃焼時のSFXID：2 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxId_3",
+      "Name": "燃焼 SFXID：3",
+      "Description": "燃焼時のSFXID：3 (-1：SFXなし)"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：0",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_1",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：1",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_2",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：2",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_3",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：3",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：0",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_1",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：1",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_2",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：2",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_3",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：3",
+      "Description": "燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる"
+    },
+    {
+      "Field": "burnBulletBehaviorId",
+      "Name": "燃焼 弾発生 行動パラメータ：0",
+      "Description": "燃焼時の弾発生行動パラメータ：0(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_1",
+      "Name": "燃焼 弾発生 行動パラメータ：1",
+      "Description": "燃焼時の弾発生行動パラメータ：1(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_2",
+      "Name": "燃焼 弾発生 行動パラメータ：2",
+      "Description": "燃焼時の弾発生行動パラメータ：2(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletBehaviorId_3",
+      "Name": "燃焼 弾発生 行動パラメータ：3",
+      "Description": "燃焼時の弾発生行動パラメータ：3(-1:発生しない)"
+    },
+    {
+      "Field": "burnBulletDelayTime",
+      "Name": "燃焼 弾発生遅延時間(秒)",
+      "Description": "延焼用の弾発生を遅らせる時間(秒)"
+    },
+    {
+      "Field": "paintDecalTargetTextureSize",
+      "Name": "ペイントデカールターゲットサイズ",
+      "Description": "ペイントデカールターゲットサイズ 0：デカール無効 (0～4096 ２のべき乗 0, 2, 4, 8, … 2048 のみ有効)"
+    },
+    {
+      "Field": "navimeshFlag_after",
+      "Name": "破壊後ナビメッシュフラグ",
+      "Description": "破壊後のアセットから設定されるナビメッシュフラグ"
+    },
+    {
+      "Field": "isCoverAutoGenerate",
+      "Name": "カバー領域を自動生成するか",
+      "Description": "アセットの周囲のナビメッシュデータによってカバー領域を自動的に生成するかどうか"
+    },
+    {
+      "Field": "isMakeShadow",
+      "Name": "影を作るか",
+      "Description": "影を作るか(0:影を作らない 1:影を作る)"
+    },
+    {
+      "Field": "camNearBehaviorType",
+      "Name": "カメラ接近時描画",
+      "Description": "カメラ接近時の描画設定"
+    },
+    {
+      "Field": "penetrateDef",
+      "Name": "耐貫通力",
+      "Description": "弾丸パラの「OBJ貫通力」がこの値より大きければ弾丸が貫通する"
+    },
+    {
+      "Field": "rigidParamId",
+      "Name": "剛体パラメータId",
+      "Description": "剛体パラメータId"
+    },
+    {
+      "Field": "breakPower",
+      "Name": "壊れ強さ",
+      "Description": "物理破壊時の剛体を飛ばす強さ"
+    },
+    {
+      "Field": "breakPowerPosition",
+      "Name": "壊れ位置",
+      "Description": "物理破壊時に剛体を飛ばす基点"
+    },
+    {
+      "Field": "isRotateBreak",
+      "Name": "回転破壊をするか",
+      "Description": "壊れ時にプログラム側で回転制御を行うか"
+    },
+    {
+      "Field": "isBreak_ByMapCollide",
+      "Name": "マップ接触で壊れるか",
+      "Description": "マップ接触で壊れるか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "miniMapDispType",
+      "Name": "3Dミニマップ表示",
+      "Description": "3Dミニマップでの表示設定"
+    },
+    {
+      "Field": "breakAngularPower",
+      "Name": "壊れ回転強さ",
+      "Description": "物理破壊時の剛体を回転させる強さ"
+    },
+    {
+      "Field": "isMaterialSoftContact",
+      "Name": "物理挙動に材質が影響するか",
+      "Description": "物理挙動に材質が影響するか"
+    },
+    {
+      "Field": "autoDrawGroupBackFaceCheck",
+      "Name": "自動描画グループ_裏面チェック",
+      "Description": "自動描画グループ_裏面チェック"
+    },
+    {
+      "Field": "autoDrawGroupDepthWrite",
+      "Name": "自動描画グループ_遮蔽",
+      "Description": "自動描画グループ_遮蔽"
+    },
+    {
+      "Field": "isBreakChrCollideOnly",
+      "Name": "接触破壊のみかしか壊れないか",
+      "Description": "接触破壊でのみ壊れるか？"
+    },
+    {
+      "Field": "isBreakBeforeChrOverlapHit",
+      "Name": "破壊前にヒットの中に入れるか",
+      "Description": "木などめり込んでもいいけど破壊できるモデル用の設定"
+    },
+    {
+      "Field": "isDisableDeferedDecal",
+      "Name": "ディファードデカール無効",
+      "Description": "ディファードデカールを無効にする場合に設定"
+    },
+    {
+      "Field": "isDisableRaytracing",
+      "Name": "レイトレから除外する",
+      "Description": "レイトレ時巨大な影が落ちるなど都合が悪いときなどレイトレから除外する場合に設定してください"
+    },
+    {
+      "Field": "isDisableDepthPrepass",
+      "Name": "デプスプリパス無効",
+      "Description": "木や電柱など小さくて細くて大量に配置されるアセットについてデプスプリパスが有効に機能しないアセットについて設定してください"
+    },
+    {
+      "Field": "isForceEnableMotionBlur",
+      "Name": "強制でモーションブラーを有効にする",
+      "Description": "アニメや剛体の重量が設定されていない場合はモーションブラーが無効になってしまうのがそれを無視して強制で有効化する\r\n移動するアセットにアタッチされるアセット向けの設定、例：エレベータに付随するアセット"
+    },
+    {
+      "Field": "pad7",
+      "Name": "pad7",
+      "Description": ""
+    },
+    {
+      "Field": "breakCollideSpeed",
+      "Name": "接触破壊速度[Km/h]",
+      "Description": "接触破壊可能なキャラの速度[Km/h]"
+    },
+    {
+      "Field": "breakItemLotParamId",
+      "Name": "破壊時_アイテム抽選ID",
+      "Description": "破壊時に抽選させるアイテム抽選ID\u3000-1：抽選しない"
+    },
+    {
+      "Field": "pickUpActionButtonParamId",
+      "Name": "収集時_アクションボタンID",
+      "Description": "収集で出すアクションボタンID\u3000-1：収集機能は無効"
+    },
+    {
+      "Field": "pickUpItemLotParamId",
+      "Name": "収集時_アイテム抽選ID",
+      "Description": "収集時に抽選させるアイテム抽選ID\u3000-1：収集機能は無効"
+    },
+    {
+      "Field": "pickUpPickupedAssetAnimId",
+      "Name": "収集時_収集済みアセットアニメID",
+      "Description": "収集時_収集済みアセットアニメID"
+    },
+    {
+      "Field": "autoDrawGroupPassPixelNum",
+      "Name": "自動描画グループ_合格ピクセル",
+      "Description": "自動描画グループ_合格ピクセル（0.0～1.0に設定することで撮影時に拡大される）"
+    },
+    {
+      "Field": "isEnableBuoyancyAction",
+      "Name": "波の影響を受けるか（破壊前）",
+      "Description": "Havokの波シミュレーションの影響を受けるか（破壊前）"
+    },
+    {
+      "Field": "isEnableBuoyancyActionBroken",
+      "Name": "波の影響を受けるか（破壊後）",
+      "Description": "Havokの波シミュレーションの影響を受けるか（破壊後）"
+    },
+    {
+      "Field": "debug_isHeightCheckEnable",
+      "Name": "デバッグ_許容地面高さチェック",
+      "Description": "デバッグ_許容地面高さチェック 詳細はFNR-4573参照"
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "レイトレーシングカリングモード",
+      "Description": "レイトレーシング描画時に適用されるカリングモード。「自動」の場合は、プログラム上で設定されたデフォルト値になります。"
+    },
+    {
+      "Field": "startLostBuoyancyTimeSec",
+      "Name": "何秒後に浮力を失い始めるか（破壊前）",
+      "Description": "何秒後に浮力を失い始めるか -1で浮力を失わない（破壊前）"
+    },
+    {
+      "Field": "startLostBuoyancyTimeSecBroken",
+      "Name": "何秒後に浮力を失い始めるか（破壊後）",
+      "Description": "何秒後に浮力を失い始めるか -1で浮力を失わない（破壊後）"
+    },
+    {
+      "Field": "lostBuoyancyTimeSec",
+      "Name": "何秒かけて浮力を失うか（破壊前）",
+      "Description": "何秒かけて浮力を失うか（破壊前）"
+    },
+    {
+      "Field": "lostBuoyancyTimeSecBroken",
+      "Name": "何秒かけて浮力を失うか（破壊後）",
+      "Description": "何秒かけて浮力を失うか（破壊後）"
+    },
+    {
+      "Field": "SpecialEffectId_InsideHit",
+      "Name": "ヒット内にいるキャラにかける特殊効果ID",
+      "Description": "ヒット内にいるキャラにかける特殊効果ID"
+    },
+    {
+      "Field": "residentSeId",
+      "Name": "常駐SEID",
+      "Description": "アセットに常駐させるサウンドID(9桁) (-1:常駐なし)"
+    },
+    {
+      "Field": "residentSeDmypolyId",
+      "Name": "常駐SEダミポリID",
+      "Description": "常駐サウンドをアタッチするダミポリID (-1:配置位置)"
+    },
+    {
+      "Field": "residentSeActivateRange",
+      "Name": "常駐SE有効距離",
+      "Description": "常駐サウンドを有効化する距離(m) (0以下：常に有効化)"
+    },
+    {
+      "Field": "debug_HeightCheckCapacityMin",
+      "Name": "デバッグ_許容地面高さ_最小[m]",
+      "Description": "デバッグ_許容地面高さ_最小[m] 詳細はFNR-4573参照\u3000最大より小さい必要あり"
+    },
+    {
+      "Field": "debug_HeightCheckCapacityMax",
+      "Name": "デバッグ_許容地面高さ_最大[m]",
+      "Description": "デバッグ_許容地面高さ_最大[m] 詳細はFNR-4573参照\u3000最小より大きい必要あり"
+    },
+    {
+      "Field": "soundBreakSECpId",
+      "Name": "破壊音ダミポリID",
+      "Description": "破壊音を再生する場所のダミポリID (-1:配置位置)"
+    },
+    {
+      "Field": "breakSfxOffsetX",
+      "Name": "破壊時SFXオフセット座標X",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "breakSfxOffsetY",
+      "Name": "破壊時SFXオフセット座標Y",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "breakSfxOffsetZ",
+      "Name": "破壊時SFXオフセット座標Z",
+      "Description": "「破壊時SFXダミポリID」に対してオフセットする座標"
+    },
+    {
+      "Field": "particle_shape",
+      "Name": "パーティクル_形状",
+      "Description": "0:球、1:箱"
+    },
+    {
+      "Field": "particle_Reserve_0",
+      "Name": "パーティクル_予約",
+      "Description": "リザーブ0"
+    },
+    {
+      "Field": "particle_size",
+      "Name": "パーティクル_サイズ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "particle_friction",
+      "Name": "パーティクル_摩擦係数",
+      "Description": ""
+    },
+    {
+      "Field": "particle_restitution",
+      "Name": "パーティクル_反発係数",
+      "Description": ""
+    },
+    {
+      "Field": "particle_speedMin",
+      "Name": "パーティクル_発生時最小速度[Km/h]",
+      "Description": ""
+    },
+    {
+      "Field": "particle_speedMax",
+      "Name": "パーティクル_発生時最大速度[Km/h]",
+      "Description": ""
+    },
+    {
+      "Field": "particle_rotSpeedMin",
+      "Name": "パーティクル_回転最小速度",
+      "Description": ""
+    },
+    {
+      "Field": "particle_rotSpeedMax",
+      "Name": "パーティクル_回転最大速度",
+      "Description": ""
+    },
+    {
+      "Field": "particle_yawL",
+      "Name": "パーティクル_左移動方向角度",
+      "Description": ""
+    },
+    {
+      "Field": "particle_yawR",
+      "Name": "パーティクル_右移動方向角度",
+      "Description": ""
+    },
+    {
+      "Field": "particle_pitchU",
+      "Name": "パーティクル_上移動方向角度",
+      "Description": ""
+    },
+    {
+      "Field": "particle_pitchD",
+      "Name": "パーティクル_下移動方向角度",
+      "Description": ""
+    },
+    {
+      "Field": "breakDecalId",
+      "Name": "破壊時デカールID",
+      "Description": "破壊時のデカールID(-1:なし)"
+    },
+    {
+      "Field": "breakDecalCpId",
+      "Name": "破壊時デカールダミポリID",
+      "Description": "破壊時デカールの発生位置ダミポリID(-1：センターから発生、-2：配置位置）"
+    },
+    {
+      "Field": "isSetMaterial_navMesh_breakAsset",
+      "Name": "ナビメッシュに破壊アセット用マテリアルを設定する",
+      "Description": "ナビメッシュに破壊アセット用のマテリアルを設定する"
+    },
+    {
+      "Field": "isImportantGridForWorldSlide",
+      "Name": "背景シフトにて重要グリッドに登録するか",
+      "Description": "背景シフトにて重要グリッドに登録するか"
+    },
+    {
+      "Field": "isHugeGridForWorldSlide",
+      "Name": "背景シフトにて巨大グリッドに登録するか",
+      "Description": "背景シフトにて巨大グリッドに登録するか"
+    },
+    {
+      "Field": "isDisableForHugeMiningMission",
+      "Name": "採掘艦ミッションで無効化するか",
+      "Description": "採掘艦ミッションで無効化するか"
+    },
+    {
+      "Field": "isNoSaveCheckpoint",
+      "Name": "チェックポイントに含めない",
+      "Description": "チェックポイントに保存しません"
+    },
+    {
+      "Field": "isDamageCoverDef",
+      "Name": "被弾時に遮蔽判定するか(ダメージ横流しアセットのみ)",
+      "Description": "被弾時に遮蔽判定するか(ダメージ横流しアセットのみ)"
+    },
+    {
+      "Field": "pad8",
+      "Name": "pad7",
+      "Description": ""
+    },
+    {
+      "Field": "Reserve_1",
+      "Name": "リザーブ0",
+      "Description": "リザーブ0"
+    }
+  ]
+}

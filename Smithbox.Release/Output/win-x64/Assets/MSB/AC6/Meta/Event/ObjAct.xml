@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an interaction within the map." />
+  
+  <Field>
+    <ObjActEntityID
+    AltName="ObjAct Entity ID"
+    Wiki="The entity ID of this ObjAct." />
+    
+    <ObjActPartName
+    AltName="Part Name"
+    Wiki="The part that this ObjAct targets."
+    MapRef="Part-Part" />
+    
+    <ObjActPartIndex
+    IndexProperty="" />
+    
+    <ObjActParamID
+    AltName="ObjAct Param ID"
+    Wiki="The ObjAct parameters this interaction uses."
+    ParamRef="ObjActParam" />
+    
+    <ObjActState
+    AltName="ObjAct State"
+    Wiki="The interaction state this interaction uses." 
+    Enum="OBJACT_STATE" />
+    
+    <EventFlagID
+    AltName="Event Flag ID"
+    Wiki="The event flag this ObjAct sets upon interaction." 
+    FlagAlias="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="OBJACT_STATE">
+        <Option Value="0" Name="One State" />
+        <Option Value="1" Name="Door State: 1" />
+        <Option Value="2" Name="One Loop State: 1" />
+        <Option Value="3" Name="One Loop State: 2" />
+        <Option Value="4" Name="Door State: 2" />
+    </Enum>
+  </Enums>
+</MSBMETA>

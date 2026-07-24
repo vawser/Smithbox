@@ -1,0 +1,593 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Bipedal legs"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Bipedal legs (Locked on)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Default value (locked)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Default value"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "anime confirmation camera"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Animation confirmation camera (for tanks)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Anime confirmation camera (for tanks_sticky)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Tsuruoka test"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Default value backup"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Jaga defeat camera test 1-1"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Jaga defeat camera test 1-2"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Jaga defeat camera test 1-3"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Jaga defeat camera test 2-1"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Jaga defeat camera test 2-2"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Jaga defeat camera test 2-3"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Jaga defeat camera test 3-1"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Jaga defeat camera test 3-2"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Jaga defeat camera test 3-3"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Catapult event mock test"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Default value"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Default value (locked)"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Default value (locked) 2"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "For necklace keeper test"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "[FNR] For Pharaon camera check"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Grenade cannon check"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "[FNR] For next generation camera check"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[FNR] Assault Boost 2 legs"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[FNR] Assault boost left and right avoidance 2 legs"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "[FNR] 2 kick legs"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "[FNR] 2 jumping tables"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "[FNR] 2 legs for using Cannon"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "[FNR] Mining ship camera"
+      ]
+    },
+    {
+      "ID": 70010,
+      "Entries": [
+        "[FNR] Dora bombardment camera"
+      ]
+    },
+    {
+      "ID": 93200,
+      "Entries": [
+        "[FNR] Avalanche charging camera"
+      ]
+    },
+    {
+      "ID": 94250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera"
+      ]
+    },
+    {
+      "ID": 96050,
+      "Entries": [
+        "[FNR] For Pharaon camera check"
+      ]
+    },
+    {
+      "ID": 96051,
+      "Entries": [
+        "[FNR] For Pharaon camera check_VS version"
+      ]
+    },
+    {
+      "ID": 96100,
+      "Entries": [
+        "[FNR] Sea spider camera"
+      ]
+    },
+    {
+      "ID": 96400,
+      "Entries": [
+        "[FNR] Mining ship camera check_VS version"
+      ]
+    },
+    {
+      "ID": 96420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera"
+      ]
+    },
+    {
+      "ID": 98135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera"
+      ]
+    },
+    {
+      "ID": 99900,
+      "Entries": [
+        "Direction death camera close"
+      ]
+    },
+    {
+      "ID": 99901,
+      "Entries": [
+        "Directed death camera away"
+      ]
+    },
+    {
+      "ID": 99902,
+      "Entries": [
+        "Direction death camera away from behind"
+      ]
+    },
+    {
+      "ID": 99910,
+      "Entries": [
+        "Production death camera close-up *For next generation"
+      ]
+    },
+    {
+      "ID": 99920,
+      "Entries": [
+        "Production death camera away *for sandworms"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Reverse joint legs"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Reverse joint legs (Locked on)"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "[FNR] Assault boost reverse leg"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance reverse leg"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "[FNR] Kick reverse leg"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "[FNR] Jump table reverse joint"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "[FNR] Reverse joint for using cannon"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack"
+      ]
+    },
+    {
+      "ID": 142000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera"
+      ]
+    },
+    {
+      "ID": 170000,
+      "Entries": [
+        "[FNR] Mining ship camera"
+      ]
+    },
+    {
+      "ID": 170010,
+      "Entries": [
+        "[FNR] Dora bombardment camera"
+      ]
+    },
+    {
+      "ID": 194250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera"
+      ]
+    },
+    {
+      "ID": 196420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera"
+      ]
+    },
+    {
+      "ID": 198135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Tank legs"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Tank legs (Locked on)"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "[FNR] Assault Boost Tank"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance tank"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "[FNR] Kick Tank"
+      ]
+    },
+    {
+      "ID": 230200,
+      "Entries": [
+        "[FNR] Jump platform tank"
+      ]
+    },
+    {
+      "ID": 235000,
+      "Entries": [
+        "[FNR] Tank for use with cannon"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 241000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack"
+      ]
+    },
+    {
+      "ID": 242000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "[FNR] Mining ship camera"
+      ]
+    },
+    {
+      "ID": 270010,
+      "Entries": [
+        "[FNR] Dora bombardment camera"
+      ]
+    },
+    {
+      "ID": 294250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera"
+      ]
+    },
+    {
+      "ID": 296420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera"
+      ]
+    },
+    {
+      "ID": 298135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Tetrapod legs"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Tetrapod legs (Locked on)"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "[FNR] 4 legs of Assault Boost"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance 4 legs"
+      ]
+    },
+    {
+      "ID": 330100,
+      "Entries": [
+        "[FNR] 4 kick legs"
+      ]
+    },
+    {
+      "ID": 330200,
+      "Entries": [
+        "[FNR] Jumping platform 4 customers"
+      ]
+    },
+    {
+      "ID": 335000,
+      "Entries": [
+        "[FNR] 4 legs for use with Cannon"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 340100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "[FNR] Mining ship camera"
+      ]
+    },
+    {
+      "ID": 370010,
+      "Entries": [
+        "[FNR] Dora bombardment camera"
+      ]
+    },
+    {
+      "ID": 394250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera"
+      ]
+    },
+    {
+      "ID": 396420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera"
+      ]
+    },
+    {
+      "ID": 398135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera"
+      ]
+    }
+  ]
+}

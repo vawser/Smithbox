@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MOVE_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s32 stayId = -1">
+      <DisplayName>待機</DisplayName>
+      <Description>待機</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 walkF = -1">
+      <DisplayName>歩行 前</DisplayName>
+      <Description>歩行 前</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 walkB = -1">
+      <DisplayName>歩行 後</DisplayName>
+      <Description>歩行 後</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 walkL = -1">
+      <DisplayName>歩行 左</DisplayName>
+      <Description>歩行 左</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 walkR = -1">
+      <DisplayName>歩行 右</DisplayName>
+      <Description>歩行 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 dashF = -1">
+      <DisplayName>走行 前</DisplayName>
+      <Description>走行 前</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 dashB = -1">
+      <DisplayName>走行 後</DisplayName>
+      <Description>走行 後</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 dashL = -1">
+      <DisplayName>走行 左</DisplayName>
+      <Description>走行 左</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 dashR = -1">
+      <DisplayName>走行 右</DisplayName>
+      <Description>走行 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 superDash = -1">
+      <DisplayName>ダッシュ移動</DisplayName>
+      <Description>ダッシュ移動</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 escapeF = -1">
+      <DisplayName>緊急回避 前</DisplayName>
+      <Description>緊急回避 前</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 escapeB = -1">
+      <DisplayName>緊急回避 後</DisplayName>
+      <Description>緊急回避 後</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 escapeL = -1">
+      <DisplayName>緊急回避 左</DisplayName>
+      <Description>緊急回避 左</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 escapeR = -1">
+      <DisplayName>緊急回避 右</DisplayName>
+      <Description>緊急回避 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 turnL = -1">
+      <DisplayName>90度旋回 左</DisplayName>
+      <Description>90度旋回 左</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 trunR = -1">
+      <DisplayName>90度旋回 右</DisplayName>
+      <Description>90度旋回 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 largeTurnL = -1">
+      <DisplayName>180度旋回 左</DisplayName>
+      <Description>180度旋回 左</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 largeTurnR = -1">
+      <DisplayName>180度旋回 右</DisplayName>
+      <Description>180度旋回 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 stepMove = -1">
+      <DisplayName>ステップ移動</DisplayName>
+      <Description>180度旋回 右</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad1[12]">
+      <DisplayName>パディング1</DisplayName>
+      <Description>パディング1</Description>
+    </Field>
+    <Field Def="s32 flyStay = -1">
+      <DisplayName>飛行待機</DisplayName>
+      <Description>飛行待機</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyWalkF = -1">
+      <DisplayName>飛行前進</DisplayName>
+      <Description>飛行前進</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyWalkFL = -1">
+      <DisplayName>飛行左前進</DisplayName>
+      <Description>飛行左前進。低回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyWalkFR = -1">
+      <DisplayName>飛行右前進</DisplayName>
+      <Description>飛行右前進。低回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyWalkFL2 = -1">
+      <DisplayName>飛行左前進2</DisplayName>
+      <Description>飛行左前進2。高回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyWalkFR2 = -1">
+      <DisplayName>飛行右前進2</DisplayName>
+      <Description>飛行右前進2。高回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyDashF = -1">
+      <DisplayName>高速飛行前進</DisplayName>
+      <Description>高速飛行前進</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyDashFL = -1">
+      <DisplayName>高速飛行左前進</DisplayName>
+      <Description>高速飛行左前進。低回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyDashFR = -1">
+      <DisplayName>高速飛行右前進</DisplayName>
+      <Description>高速飛行右前進。低回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyDashFL2 = -1">
+      <DisplayName>高速飛行左前進2</DisplayName>
+      <Description>高速飛行左前進2。高回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 flyDashFR2 = -1">
+      <DisplayName>高速飛行右前進2</DisplayName>
+      <Description>高速飛行右前進2。高回転</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad2[28]">
+      <DisplayName>パディング2</DisplayName>
+      <Description>パディング2</Description>
+    </Field>
+  </Fields>
+</PARAMDEF>

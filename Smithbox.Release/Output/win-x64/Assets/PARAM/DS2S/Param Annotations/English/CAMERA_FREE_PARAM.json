@@ -1,0 +1,23 @@
+{
+  "Param": "CAMERA_FREE_PARAM",
+  "Type": "CAMERA_FREE_PARAM",
+  "Name": "CAMERA_FREE_PARAM",
+  "Description": "Defines parameters relating to the camera.",
+  "Fields": [
+    {
+      "Field": "fovY",
+      "Name": "Horizontal Field of View",
+      "Description": "The field of view (in degrees)."
+    },
+    {
+      "Field": "nearClip",
+      "Name": "Near Clip Distance",
+      "Description": "The near clip distance for this camera (in metres)."
+    },
+    {
+      "Field": "farClip",
+      "Name": "Far Clip Distance",
+      "Description": "The far clip distance for this camera (in metres)."
+    }
+  ]
+}

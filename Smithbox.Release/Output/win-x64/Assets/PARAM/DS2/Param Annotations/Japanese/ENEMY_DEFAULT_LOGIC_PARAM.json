@@ -1,0 +1,28 @@
+{
+  "Param": "ENEMY_DEFAULT_LOGIC_PARAM",
+  "Type": "ENEMY_DEFAULT_LOGIC_PARAM",
+  "Name": "ENEMY_DEFAULT_LOGIC_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "stateId",
+      "Name": "キャラ起動ステートID",
+      "Description": ""
+    },
+    {
+      "Field": "upperLogickId",
+      "Name": "上位ロジックID",
+      "Description": ""
+    },
+    {
+      "Field": "lowerLogickId",
+      "Name": "下位ロジックID",
+      "Description": ""
+    },
+    {
+      "Field": "lowerStartStateId",
+      "Name": "下位ロジックステートID",
+      "Description": ""
+    }
+  ]
+}

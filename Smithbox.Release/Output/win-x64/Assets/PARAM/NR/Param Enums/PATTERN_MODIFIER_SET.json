@@ -1,0 +1,236 @@
+{
+  "Key": "PATTERN_MODIFIER_SET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PATTERN_MODIFIER_SET"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Location (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Location"
+        }
+      ]
+    },
+    {
+      "Key": "505",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Extra Night Boss (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Caligo (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gladius (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Frenzy Tower (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Maris (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gnoster (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Libra (Great Hollow)"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Buried Treasure Map"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Extra Night Boss"
+        }
+      ]
+    },
+    {
+      "Key": "3010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Meteorite"
+        }
+      ]
+    },
+    {
+      "Key": "3020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Walking Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "3030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Night Horde"
+        }
+      ]
+    },
+    {
+      "Key": "3040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Morgott"
+        }
+      ]
+    },
+    {
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Maris"
+        }
+      ]
+    },
+    {
+      "Key": "3060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gnoster"
+        }
+      ]
+    },
+    {
+      "Key": "3070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Libra"
+        }
+      ]
+    },
+    {
+      "Key": "3080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Frenzy Tower"
+        }
+      ]
+    },
+    {
+      "Key": "3090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Ruined Sorcerer's Rise"
+        }
+      ]
+    },
+    {
+      "Key": "3110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Caligo"
+        }
+      ]
+    },
+    {
+      "Key": "3120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gladius"
+        }
+      ]
+    },
+    {
+      "Key": "3130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Harmonia"
+        }
+      ]
+    },
+    {
+      "Key": "3600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Buried Treasure Map (Great Hollow)/Unk Base Game"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "THRUSTERS_TURN_MOVE_DIRECTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THRUSTERS_TURN_MOVE_DIRECTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Correction"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Current Movement"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Movement Backwards"
+        }
+      ]
+    }
+  ]
+}

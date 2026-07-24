@@ -1,0 +1,47 @@
+{
+  "Key": "PREDICTION_ENABLE_SPEED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PREDICTION_ENABLE_SPEED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "99999999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unlimited"
+        }
+      ]
+    },
+    {
+      "Key": "84",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Machine: Walking"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Machine: Boost"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Machine: Large Quick Boost"
+        }
+      ]
+    }
+  ]
+}

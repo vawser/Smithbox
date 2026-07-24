@@ -1,0 +1,14 @@
+{
+  "id": "658",
+  "name": "Alsanna, Silent Oracle",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

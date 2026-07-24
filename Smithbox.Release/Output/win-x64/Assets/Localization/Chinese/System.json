@@ -1,0 +1,136 @@
+{
+  "Entries": [
+    {
+      "Key": "PROGRAM_TITLE",
+      "Text": "Smithbox"
+    },
+    {
+      "Key": "GIT_REPO_NAME",
+      "Text": "Smithbox"
+    },
+    {
+      "Key": "GIT_REPO_OWNER",
+      "Text": "vawser"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Preferences",
+      "Text": "偏好设置"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Shortcuts",
+      "Text": "快捷键"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Help",
+      "Text": "帮助"
+    },
+    {
+      "Key": "SYS_VULKAN_CONTEXT_FAILED",
+      "Text": "创建 Vulkan 上下文失败，回退到 OpenGL"
+    },
+    {
+      "Key": "SYS_SOAPSTONE_SERVER_RUNNING",
+      "Text": "Soapstone 服务已启动。"
+    },
+    {
+      "Key": "SYS_SOAPSTONE_SERVER_STOPPED",
+      "Text": "Soapstone 服务已停止。"
+    },
+    {
+      "Key": "SYS_Warning_Header",
+      "Text": "警告"
+    },
+    {
+      "Key": "SYS_Error_Header",
+      "Text": "错误"
+    },
+    {
+      "Key": "SYS_Header",
+      "Text": "[System]"
+    },
+    {
+      "Key": "SYS_Blank",
+      "Text": ""
+    },
+    {
+      "Key": "SYS_CFG_Failed_To_Deserialize",
+      "Text": "反序列化 CFG 文件：{0} 失败。"
+    },
+    {
+      "Key": "SYS_CFG_Failed_To_Read",
+      "Text": "读取 CFG 文件失败：{0}\n已恢复默认配置。"
+    },
+    {
+      "Key": "SYS_FAILED_TO_SAVE_CONFIG",
+      "Text": "崩溃恢复期间无法保存配置。\n如果启动时持续崩溃，请删除 {0} 中的配置\n\n{1} {2}"
+    },
+    {
+      "Key": "SYS_EXCEPTION_DETAILS",
+      "Text": "异常详情："
+    },
+    {
+      "Key": "HELP_Developed_By",
+      "Text": "由 Vawser 开发。"
+    },
+    {
+      "Key": "HELP_Current_Version",
+      "Text": "Smithbox 版本：{0}"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Wiki",
+      "Text": "前往 Wiki"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Wiki_TT",
+      "Text": "前往 SoulsModding Wiki。"
+    },
+    {
+      "Key": "HELP_Wiki_Link",
+      "Text": "https://soulsmodding.com/doku.php?id=smithbox"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Github",
+      "Text": "前往 Github 仓库"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Github_TT",
+      "Text": "前往 Github 仓库页面。"
+    },
+    {
+      "Key": "HELP_Github_Link",
+      "Text": "https://github.com/vawser/Smithbox"
+    },
+    {
+      "Key": "SYS_Menu_Header_Update",
+      "Text": "更新"
+    },
+    {
+      "Key": "SYS_Menu_Go_To_Release",
+      "Text": "前往发布页"
+    },
+    {
+      "Key": "SYS_Failed_Smithbox_Release",
+      "Text": "未找到 Smithbox 发布版本。"
+    },
+    {
+      "Key": "DIALOG_Select",
+      "Text": "选择"
+    },
+    {
+      "Key": "DIALOG_Select_Data_Directory",
+      "Text": "选择数据目录"
+    },
+    {
+      "Key": "DIALOG_Select_Project_Directory",
+      "Text": "选择项目目录"
+    },
+    {
+      "Key": "DIALOG_Select_Directory",
+      "Text": "选择目录"
+    },
+    {
+      "Key": "SYS_Editor_Loading",
+      "Text": "编辑器加载中..."
+    }
+  ]
+}

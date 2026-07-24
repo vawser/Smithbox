@@ -1,0 +1,299 @@
+{
+  "Name": "JigglerBehaviorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3020001,
+      "Entries": [
+        "Attenuation low 1 -- 減衰低め1"
+      ]
+    },
+    {
+      "ID": 3020002,
+      "Entries": [
+        "low damping 2 -- 減衰低め2"
+      ]
+    },
+    {
+      "ID": 3020003,
+      "Entries": [
+        "High damping 1 -- 減衰高め1"
+      ]
+    },
+    {
+      "ID": 3020004,
+      "Entries": [
+        "High damping 2 -- 減衰高め2"
+      ]
+    },
+    {
+      "ID": 3050000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3150000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3150001,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 3700001,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 5020001,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 5020002,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "For transportation_light_01 -- 運搬用_軽_01"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "For transportation_light_02 -- 運搬用_軽_02"
+      ]
+    },
+    {
+      "ID": 5100002,
+      "Entries": [
+        "For transportation_light_03 -- 運搬用_軽_03"
+      ]
+    },
+    {
+      "ID": 5100003,
+      "Entries": [
+        "For transportation_light_04 -- 運搬用_軽_04"
+      ]
+    },
+    {
+      "ID": 5100004,
+      "Entries": [
+        "For transportation_heavy_01 -- 運搬用_重_01"
+      ]
+    },
+    {
+      "ID": 5100005,
+      "Entries": [
+        "For transportation_heavy_02 -- 運搬用_重_02"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "front left tentacle -- 左前触手"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "right front tentacle -- 右前触手"
+      ]
+    },
+    {
+      "ID": 5300002,
+      "Entries": [
+        "left rear tentacle -- 左後ろ触手"
+      ]
+    },
+    {
+      "ID": 5300003,
+      "Entries": [
+        "right rear tentacle -- 右後ろ触手"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "Permanently resident -- 常駐"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "shin cover parts -- スネカバーパーツ"
+      ]
+    },
+    {
+      "ID": 6100001,
+      "Entries": [
+        "Ankle cover parts 2 -- 足首カバーパーツ2"
+      ]
+    },
+    {
+      "ID": 7390000,
+      "Entries": [
+        "Cable A -- ケーブルA"
+      ]
+    },
+    {
+      "ID": 8135000,
+      "Entries": [
+        "Enforcer"
+      ]
+    },
+    {
+      "ID": 8145000,
+      "Entries": [
+        "Enforcer (Flight Mode)"
+      ]
+    },
+    {
+      "ID": 8145001,
+      "Entries": [
+        "Enforcer (Flight Mode)"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Shoulder weapon attachment for dummy poly -- 肩武器アタッチダミポリ用"
+      ]
+    },
+    {
+      "ID": 44000000,
+      "Entries": [
+        "tank leg test -- タンク脚テスト"
+      ]
+    },
+    {
+      "ID": 9308000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21080000,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080001,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080002,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080003,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 29100000,
+      "Entries": [
+        "Biped torso test -- 2脚胴体テスト"
+      ]
+    },
+    {
+      "ID": 41510000,
+      "Entries": [
+        "bay rum tank -- ベイラムタンク"
+      ]
+    },
+    {
+      "ID": 47510000,
+      "Entries": [
+        "cuban tank -- キューバタンク"
+      ]
+    },
+    {
+      "ID": 47510001,
+      "Entries": [
+        "cuban tank -- キューバタンク"
+      ]
+    }
+  ]
+}

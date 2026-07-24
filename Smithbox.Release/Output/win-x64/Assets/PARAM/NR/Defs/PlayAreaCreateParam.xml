@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>PLAY_AREA_CREATE_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="u8 areaNo"/>
+    <Field Def="u8 gridXNo"/>
+    <Field Def="u8 gridZNo"/>
+    <Field Def="dummy8 pad[1]"/>
+    
+    <Field Def="f32 posX"/>
+    <Field Def="f32 posZ"/>
+    <Field Def="s32 day1Flag"/>
+    <Field Def="s32 day2Flag"/>
+    <Field Def="s32 requireModifier1"/>
+    <Field Def="s32 excludeModifier1"/>
+    <Field Def="s32 excludeModifier2"/>
+    <Field Def="s32 bossAttachPoint"/>
+    <Field Def="u32 connectColEntityId"/>
+    <Field Def="s32 requireModifier2"/>
+    <Field Def="s32 unknown_12"/>
+    <Field Def="s32 unknown_13"/>
+    <Field Def="s32 unknown_14"/>
+    <Field Def="s32 extraBossAttachPoint"/>
+  </Fields>
+</PARAMDEF>

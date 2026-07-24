@@ -1,0 +1,48 @@
+{
+  "Param": "HIT_BACK_MATRIX_PARAM",
+  "Type": "HIT_BACK_MATRIX_PARAM",
+  "Name": "HIT_BACK_MATRIX_PARAM",
+  "Description": "Defines hit reaction or knockback strength categories based on attack size or impact level.",
+  "Fields": [
+    {
+      "Field": "noneSize",
+      "Name": "None",
+      "Description": "No hit reaction or knockback is applied."
+    },
+    {
+      "Field": "superSmallSize",
+      "Name": "Very Small",
+      "Description": "Minimal hit reaction strength for extremely weak impacts."
+    },
+    {
+      "Field": "smallSize",
+      "Name": "Small",
+      "Description": "Light hit reaction strength for weak attacks."
+    },
+    {
+      "Field": "normalSize",
+      "Name": "Medium",
+      "Description": "Standard hit reaction strength for normal attacks."
+    },
+    {
+      "Field": "largeSize",
+      "Name": "Large",
+      "Description": "Strong hit reaction strength for powerful attacks."
+    },
+    {
+      "Field": "superLargeSize",
+      "Name": "Very Large",
+      "Description": "Very strong hit reaction strength for heavy attacks."
+    },
+    {
+      "Field": "hyperLargeSize",
+      "Name": "Hyper Large",
+      "Description": "Extreme hit reaction strength for exceptionally powerful attacks."
+    },
+    {
+      "Field": "ultraLargeSize",
+      "Name": "Ultra Large",
+      "Description": "Maximum hit reaction strength used for overwhelming impacts or special attacks."
+    }
+  ]
+}

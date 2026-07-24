@@ -1,0 +1,22 @@
+{
+  "id": "318",
+  "name": "Pursuer",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Appear from Ground"
+    },
+    {
+      "value": "3",
+      "name": "Land from Crow"
+    }
+  ]
+}

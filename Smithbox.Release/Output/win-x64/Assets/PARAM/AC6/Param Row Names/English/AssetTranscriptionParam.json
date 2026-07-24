@@ -1,0 +1,1733 @@
+{
+  "Name": "AssetTranscriptionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Asset default parameters"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Antenna facility"
+      ]
+    },
+    {
+      "ID": 13150,
+      "Entries": [
+        "On the wall_Facility A"
+      ]
+    },
+    {
+      "ID": 13151,
+      "Entries": [
+        "On the wall_Facility B"
+      ]
+    },
+    {
+      "ID": 13152,
+      "Entries": [
+        "On the wall_Facility C"
+      ]
+    },
+    {
+      "ID": 13412,
+      "Entries": [
+        "Detour route_Facility A"
+      ]
+    },
+    {
+      "ID": 13413,
+      "Entries": [
+        "Detour route_Facility B"
+      ]
+    },
+    {
+      "ID": 13414,
+      "Entries": [
+        "Detour route_Facility C"
+      ]
+    },
+    {
+      "ID": 13415,
+      "Entries": [
+        "Detour route_Facility D"
+      ]
+    },
+    {
+      "ID": 13416,
+      "Entries": [
+        "Detour route_Facility E"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "Moat_under construction"
+      ]
+    },
+    {
+      "ID": 13512,
+      "Entries": [
+        "Moat_under construction"
+      ]
+    },
+    {
+      "ID": 13594,
+      "Entries": [
+        "Wall_Elevator_Interior_Door"
+      ]
+    },
+    {
+      "ID": 13625,
+      "Entries": [
+        "Wall_inside_passage_length"
+      ]
+    },
+    {
+      "ID": 13900,
+      "Entries": [
+        "Snowy mountain_wall A"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Midoriki_Snowfall A"
+      ]
+    },
+    {
+      "ID": 21101,
+      "Entries": [
+        "Midoriki_Snowfall B"
+      ]
+    },
+    {
+      "ID": 21108,
+      "Entries": [
+        "Forest_Snowfall A"
+      ]
+    },
+    {
+      "ID": 21109,
+      "Entries": [
+        "Forest_Snowfall B"
+      ]
+    },
+    {
+      "ID": 21110,
+      "Entries": [
+        "Dead tree_snowfall A"
+      ]
+    },
+    {
+      "ID": 21111,
+      "Entries": [
+        "Dead tree_Snowfall B"
+      ]
+    },
+    {
+      "ID": 21112,
+      "Entries": [
+        "Dead tree_snow C"
+      ]
+    },
+    {
+      "ID": 21113,
+      "Entries": [
+        "Dead tree_snow D"
+      ]
+    },
+    {
+      "ID": 23102,
+      "Entries": [
+        "Buildings_Steel scaffolding"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "radio tower"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "Fuel tank_general purpose"
+      ]
+    },
+    {
+      "ID": 25100,
+      "Entries": [
+        "Air purification tower base"
+      ]
+    },
+    {
+      "ID": 25110,
+      "Entries": [
+        "air purification tower"
+      ]
+    },
+    {
+      "ID": 34491,
+      "Entries": [
+        "D layer entrance cross section part 1"
+      ]
+    },
+    {
+      "ID": 34492,
+      "Entries": [
+        "D layer entrance cross section part 2"
+      ]
+    },
+    {
+      "ID": 34493,
+      "Entries": [
+        "D layer entrance cross section part 3"
+      ]
+    },
+    {
+      "ID": 34494,
+      "Entries": [
+        "D layer entrance cross section part 4"
+      ]
+    },
+    {
+      "ID": 34495,
+      "Entries": [
+        "D layer entrance cross section part 5"
+      ]
+    },
+    {
+      "ID": 34496,
+      "Entries": [
+        "D layer entrance cross section part 6"
+      ]
+    },
+    {
+      "ID": 34497,
+      "Entries": [
+        "D layer entrance cross section part 7"
+      ]
+    },
+    {
+      "ID": 34498,
+      "Entries": [
+        "D layer entrance cross section SLOD"
+      ]
+    },
+    {
+      "ID": 53071,
+      "Entries": [
+        "Landmark foundation first half"
+      ]
+    },
+    {
+      "ID": 53072,
+      "Entries": [
+        "Landmark foundation second half"
+      ]
+    },
+    {
+      "ID": 53100,
+      "Entries": [
+        "watchtower"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "Extra A"
+      ]
+    },
+    {
+      "ID": 53211,
+      "Entries": [
+        "Extra B"
+      ]
+    },
+    {
+      "ID": 53212,
+      "Entries": [
+        "Additional C"
+      ]
+    },
+    {
+      "ID": 53213,
+      "Entries": [
+        "Additional D"
+      ]
+    },
+    {
+      "ID": 53214,
+      "Entries": [
+        "Extra E"
+      ]
+    },
+    {
+      "ID": 53215,
+      "Entries": [
+        "Additional F"
+      ]
+    },
+    {
+      "ID": 53216,
+      "Entries": [
+        "Additional G"
+      ]
+    },
+    {
+      "ID": 53217,
+      "Entries": [
+        "Extra H"
+      ]
+    },
+    {
+      "ID": 53230,
+      "Entries": [
+        "Add-on 1"
+      ]
+    },
+    {
+      "ID": 53231,
+      "Entries": [
+        "Top-up 2"
+      ]
+    },
+    {
+      "ID": 53232,
+      "Entries": [
+        "Top-up 3"
+      ]
+    },
+    {
+      "ID": 53700,
+      "Entries": [
+        "data center edge"
+      ]
+    },
+    {
+      "ID": 53701,
+      "Entries": [
+        "data center base wall"
+      ]
+    },
+    {
+      "ID": 53702,
+      "Entries": [
+        "data center rooftop"
+      ]
+    },
+    {
+      "ID": 53704,
+      "Entries": [
+        "Data center square"
+      ]
+    },
+    {
+      "ID": 53705,
+      "Entries": [
+        "Facility in front of data center"
+      ]
+    },
+    {
+      "ID": 53708,
+      "Entries": [
+        "Breakwater in front of the data center"
+      ]
+    },
+    {
+      "ID": 53710,
+      "Entries": [
+        "data center gate"
+      ]
+    },
+    {
+      "ID": 54000,
+      "Entries": [
+        "highway"
+      ]
+    },
+    {
+      "ID": 54800,
+      "Entries": [
+        "Data center summary"
+      ]
+    },
+    {
+      "ID": 101910,
+      "Entries": [
+        "Distant view_first half 15"
+      ]
+    },
+    {
+      "ID": 101911,
+      "Entries": [
+        "Distant view_first half 14"
+      ]
+    },
+    {
+      "ID": 101912,
+      "Entries": [
+        "Distant view_first half 12"
+      ]
+    },
+    {
+      "ID": 101916,
+      "Entries": [
+        "Distant view_first half 16"
+      ]
+    },
+    {
+      "ID": 101917,
+      "Entries": [
+        "Distant view_first half 17"
+      ]
+    },
+    {
+      "ID": 101923,
+      "Entries": [
+        "Distant view_first half 23"
+      ]
+    },
+    {
+      "ID": 101930,
+      "Entries": [
+        "Distant view_second half 30"
+      ]
+    },
+    {
+      "ID": 101931,
+      "Entries": [
+        "Distant view_second half 31"
+      ]
+    },
+    {
+      "ID": 101940,
+      "Entries": [
+        "Distant view_continental shell"
+      ]
+    },
+    {
+      "ID": 101945,
+      "Entries": [
+        "Distant view_first half of continental shell"
+      ]
+    },
+    {
+      "ID": 101950,
+      "Entries": [
+        "Distant view_second half of continental shell (passage)"
+      ]
+    },
+    {
+      "ID": 101955,
+      "Entries": [
+        "Distant view_second half of continental shell (boss area)"
+      ]
+    },
+    {
+      "ID": 101959,
+      "Entries": [
+        "Distant view_Continental shell_Transportation system"
+      ]
+    },
+    {
+      "ID": 101990,
+      "Entries": [
+        "Distant view_black sand dunes 1"
+      ]
+    },
+    {
+      "ID": 101991,
+      "Entries": [
+        "Distant view_Black sand dunes 2"
+      ]
+    },
+    {
+      "ID": 101992,
+      "Entries": [
+        "Distant view_black sand dunes 3"
+      ]
+    },
+    {
+      "ID": 101993,
+      "Entries": [
+        "Distant view_black sand dunes 4"
+      ]
+    },
+    {
+      "ID": 101994,
+      "Entries": [
+        "Distant view_Black sand dunes 5"
+      ]
+    },
+    {
+      "ID": 101995,
+      "Entries": [
+        "Distant view_black sand dunes 6"
+      ]
+    },
+    {
+      "ID": 101996,
+      "Entries": [
+        "Distant view_Black sand dunes 7"
+      ]
+    },
+    {
+      "ID": 101997,
+      "Entries": [
+        "Distant view_black sand dunes 8"
+      ]
+    },
+    {
+      "ID": 101998,
+      "Entries": [
+        "Distant view_black sand dunes 9"
+      ]
+    },
+    {
+      "ID": 101999,
+      "Entries": [
+        "Distant view_The deepest part of the black sand dunes"
+      ]
+    },
+    {
+      "ID": 102950,
+      "Entries": [
+        "Distant view_collapse 01"
+      ]
+    },
+    {
+      "ID": 102951,
+      "Entries": [
+        "Distant view_collapse 02"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "[A layer] Ceiling"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "[A layer] Ceiling"
+      ]
+    },
+    {
+      "ID": 120059,
+      "Entries": [
+        "[A layer] Ceiling"
+      ]
+    },
+    {
+      "ID": 120062,
+      "Entries": [
+        "[A layer] Ceiling"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "[New B tier] Landmark Main Tower"
+      ]
+    },
+    {
+      "ID": 203011,
+      "Entries": [
+        "[New B layer] Landmark right foot"
+      ]
+    },
+    {
+      "ID": 203012,
+      "Entries": [
+        "[New B layer] Landmark left foot"
+      ]
+    },
+    {
+      "ID": 203013,
+      "Entries": [
+        "[New B tier] Landmark subtower"
+      ]
+    },
+    {
+      "ID": 203014,
+      "Entries": [
+        "[New B layer] Inside the landmark subtower"
+      ]
+    },
+    {
+      "ID": 203015,
+      "Entries": [
+        "[New B layer] Landmark subtower buttress"
+      ]
+    },
+    {
+      "ID": 203016,
+      "Entries": [
+        "[New B layer] Inside Landmark Main Tower"
+      ]
+    },
+    {
+      "ID": 203017,
+      "Entries": [
+        "[New B layer] Landmark foundation"
+      ]
+    },
+    {
+      "ID": 203018,
+      "Entries": [
+        "[New B layer] Landmark main tower buttress"
+      ]
+    },
+    {
+      "ID": 203019,
+      "Entries": [
+        "[New B layer] Landmark foundation B"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "[New B tier] General purpose building_A high"
+      ]
+    },
+    {
+      "ID": 203021,
+      "Entries": [
+        "[New B tier] General purpose building_A low"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "[New B tier] General purpose building_B high"
+      ]
+    },
+    {
+      "ID": 203031,
+      "Entries": [
+        "[New B tier] General purpose building_B medium"
+      ]
+    },
+    {
+      "ID": 203032,
+      "Entries": [
+        "[New B tier] General purpose building_B small"
+      ]
+    },
+    {
+      "ID": 203033,
+      "Entries": [
+        "[New B tier] General purpose building_B medium wide ceiling"
+      ]
+    },
+    {
+      "ID": 203034,
+      "Entries": [
+        "[New B tier] General purpose building_B large, wide ceiling"
+      ]
+    },
+    {
+      "ID": 203040,
+      "Entries": [
+        "[New B tier] General purpose building_C_medium"
+      ]
+    },
+    {
+      "ID": 203041,
+      "Entries": [
+        "[New B tier] General purpose building_C_02_medium"
+      ]
+    },
+    {
+      "ID": 203042,
+      "Entries": [
+        "[New B tier] General purpose building_C_03_medium"
+      ]
+    },
+    {
+      "ID": 203043,
+      "Entries": [
+        "[New B tier] General purpose building_C_04_Small"
+      ]
+    },
+    {
+      "ID": 203050,
+      "Entries": [
+        "[New B tier] General purpose building_7 Trapezoid"
+      ]
+    },
+    {
+      "ID": 203060,
+      "Entries": [
+        "[New B tier] Diagonal building"
+      ]
+    },
+    {
+      "ID": 203061,
+      "Entries": [
+        "[New B tier] Diagonal building"
+      ]
+    },
+    {
+      "ID": 203062,
+      "Entries": [
+        "[New B tier] Diagonal building"
+      ]
+    },
+    {
+      "ID": 203070,
+      "Entries": [
+        "[New B tier] Kamaboko Building"
+      ]
+    },
+    {
+      "ID": 203071,
+      "Entries": [
+        "[New B tier] Kamaboko Building B"
+      ]
+    },
+    {
+      "ID": 203080,
+      "Entries": [
+        "[New B tier] Curved building"
+      ]
+    },
+    {
+      "ID": 203081,
+      "Entries": [
+        "[New B tier] Curved building attached"
+      ]
+    },
+    {
+      "ID": 203090,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A high"
+      ]
+    },
+    {
+      "ID": 203091,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A medium"
+      ]
+    },
+    {
+      "ID": 203092,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A low"
+      ]
+    },
+    {
+      "ID": 203093,
+      "Entries": [
+        "[New B tier] Small general-purpose building_B Thin rectangle"
+      ]
+    },
+    {
+      "ID": 203094,
+      "Entries": [
+        "[New B tier] Small general-purpose building_C Small"
+      ]
+    },
+    {
+      "ID": 203400,
+      "Entries": [
+        "[New B layer] Power supply facilities"
+      ]
+    },
+    {
+      "ID": 203401,
+      "Entries": [
+        "[New B layer] Power supply facility_Small"
+      ]
+    },
+    {
+      "ID": 203455,
+      "Entries": [
+        "Outdoor unit A"
+      ]
+    },
+    {
+      "ID": 203456,
+      "Entries": [
+        "Outdoor unit B"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "on the highway"
+      ]
+    },
+    {
+      "ID": 204007,
+      "Entries": [
+        "highway large"
+      ]
+    },
+    {
+      "ID": 204210,
+      "Entries": [
+        "[Foundation] [Wall] Base 200x45"
+      ]
+    },
+    {
+      "ID": 204220,
+      "Entries": [
+        "[Foundation] [Wall] External corner 40"
+      ]
+    },
+    {
+      "ID": 204225,
+      "Entries": [
+        "[Foundation] [Wall] Projection half"
+      ]
+    },
+    {
+      "ID": 204226,
+      "Entries": [
+        "[Foundation] [Wall] Projection"
+      ]
+    },
+    {
+      "ID": 204230,
+      "Entries": [
+        "[New B layer] Left wing"
+      ]
+    },
+    {
+      "ID": 204231,
+      "Entries": [
+        "[New B layer] Right wing"
+      ]
+    },
+    {
+      "ID": 204235,
+      "Entries": [
+        "[New B layer] AS"
+      ]
+    },
+    {
+      "ID": 204236,
+      "Entries": [
+        "[New B layer] Wind shield"
+      ]
+    },
+    {
+      "ID": 204406,
+      "Entries": [
+        "[Foundation] [Floor] C concave left and right 200x50"
+      ]
+    },
+    {
+      "ID": 204420,
+      "Entries": [
+        "[New B layer] Left wing center"
+      ]
+    },
+    {
+      "ID": 204421,
+      "Entries": [
+        "[New B layer] Right wing center"
+      ]
+    },
+    {
+      "ID": 204422,
+      "Entries": [
+        "[New B layer] Left wing far"
+      ]
+    },
+    {
+      "ID": 204423,
+      "Entries": [
+        "[New B layer] Right wing far"
+      ]
+    },
+    {
+      "ID": 204424,
+      "Entries": [
+        "[New B layer] Front left wing"
+      ]
+    },
+    {
+      "ID": 204425,
+      "Entries": [
+        "[New B layer] Front right wing"
+      ]
+    },
+    {
+      "ID": 204426,
+      "Entries": [
+        "[New B layer] Front and lower left wing [Straight city]"
+      ]
+    },
+    {
+      "ID": 204427,
+      "Entries": [
+        "[New B layer] Front and lower right wing [Straight city]"
+      ]
+    },
+    {
+      "ID": 204430,
+      "Entries": [
+        "[New B layer] Wing addition A"
+      ]
+    },
+    {
+      "ID": 204431,
+      "Entries": [
+        "[New B layer] Wing addition B"
+      ]
+    },
+    {
+      "ID": 204432,
+      "Entries": [
+        "[New B layer] Wing mounting slope"
+      ]
+    },
+    {
+      "ID": 204440,
+      "Entries": [
+        "[Foundation] [Floor] Tower back A"
+      ]
+    },
+    {
+      "ID": 204441,
+      "Entries": [
+        "[Foundation] [Floor] Tower back B"
+      ]
+    },
+    {
+      "ID": 204442,
+      "Entries": [
+        "[Foundation] [Floor] Tower back C"
+      ]
+    },
+    {
+      "ID": 204443,
+      "Entries": [
+        "[Foundation] [Floor] Tower back D"
+      ]
+    },
+    {
+      "ID": 204461,
+      "Entries": [
+        "[Foundation] [Floor] [Unique] In front of the tower"
+      ]
+    },
+    {
+      "ID": 204500,
+      "Entries": [
+        "[Additional] Surveillance passage"
+      ]
+    },
+    {
+      "ID": 204504,
+      "Entries": [
+        "[Additional] Solar panel"
+      ]
+    },
+    {
+      "ID": 204506,
+      "Entries": [
+        "[Additional] Shielding"
+      ]
+    },
+    {
+      "ID": 204509,
+      "Entries": [
+        "[Additional] Road signboard"
+      ]
+    },
+    {
+      "ID": 204510,
+      "Entries": [
+        "[Additional] Road bulletin board"
+      ]
+    },
+    {
+      "ID": 204511,
+      "Entries": [
+        "[Additional] Building storage A"
+      ]
+    },
+    {
+      "ID": 204513,
+      "Entries": [
+        "Additional energy storage A"
+      ]
+    },
+    {
+      "ID": 204514,
+      "Entries": [
+        "Additional energy storage B"
+      ]
+    },
+    {
+      "ID": 204520,
+      "Entries": [
+        "[Additional] Floor information_Building□"
+      ]
+    },
+    {
+      "ID": 204521,
+      "Entries": [
+        "[Additional] Floor information_Building〇"
+      ]
+    },
+    {
+      "ID": 204522,
+      "Entries": [
+        "[Additional] Floor information_Building storage"
+      ]
+    },
+    {
+      "ID": 204524,
+      "Entries": [
+        "[Additional] Floor information_Elongated (destruction)"
+      ]
+    },
+    {
+      "ID": 204525,
+      "Entries": [
+        "[Additional] Floor information_12.5 squares"
+      ]
+    },
+    {
+      "ID": 204526,
+      "Entries": [
+        "[Additional] Floor information_next to the battery"
+      ]
+    },
+    {
+      "ID": 204527,
+      "Entries": [
+        "[Additional] Floor information_12.5.25"
+      ]
+    },
+    {
+      "ID": 204550,
+      "Entries": [
+        "[New B tier] Straight city start connection"
+      ]
+    },
+    {
+      "ID": 204701,
+      "Entries": [
+        "[Additional] Monorail_50m"
+      ]
+    },
+    {
+      "ID": 204721,
+      "Entries": [
+        "[Additional] Monorail_Station"
+      ]
+    },
+    {
+      "ID": 204998,
+      "Entries": [
+        "[New B layer] External reference source Highway"
+      ]
+    },
+    {
+      "ID": 204999,
+      "Entries": [
+        "[New B layer] External reference source floor"
+      ]
+    },
+    {
+      "ID": 213200,
+      "Entries": [
+        "[New B layer] Generator (rectangle)"
+      ]
+    },
+    {
+      "ID": 213201,
+      "Entries": [
+        "[New B layer] Generator (trapezoid)"
+      ]
+    },
+    {
+      "ID": 213210,
+      "Entries": [
+        "[New B layer] Generator (Cylinder)"
+      ]
+    },
+    {
+      "ID": 223010,
+      "Entries": [
+        "[New B-tier] New B-tier building"
+      ]
+    },
+    {
+      "ID": 223020,
+      "Entries": [
+        "[New B tier] Straight city diagonal building"
+      ]
+    },
+    {
+      "ID": 223021,
+      "Entries": [
+        "[New B tier] Straight city diagonal building"
+      ]
+    },
+    {
+      "ID": 223025,
+      "Entries": [
+        "[New B tier] Straight city diagonal building large"
+      ]
+    },
+    {
+      "ID": 223026,
+      "Entries": [
+        "[New B tier] Straight city, diagonal building, large base"
+      ]
+    },
+    {
+      "ID": 223030,
+      "Entries": [
+        "[New B tier] Straight city diagonal trapezoidal building"
+      ]
+    },
+    {
+      "ID": 223430,
+      "Entries": [
+        "[New B tier] Dome exterior"
+      ]
+    },
+    {
+      "ID": 224100,
+      "Entries": [
+        "[New B Tier] Straight City Cleaning Equipment Unique Central"
+      ]
+    },
+    {
+      "ID": 224101,
+      "Entries": [
+        "[New B layer] Straight city cleaning device unique sideA"
+      ]
+    },
+    {
+      "ID": 224102,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment unique sideB"
+      ]
+    },
+    {
+      "ID": 224103,
+      "Entries": [
+        "[New B layer] Straight city cleaning device central part"
+      ]
+    },
+    {
+      "ID": 224104,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment X-shaped base"
+      ]
+    },
+    {
+      "ID": 224105,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment roof"
+      ]
+    },
+    {
+      "ID": 224106,
+      "Entries": [
+        "[New B layer] Straight city cleaning device 2 pipes"
+      ]
+    },
+    {
+      "ID": 224107,
+      "Entries": [
+        "[New B layer] Straight city, cleaning device, many exhaust ports"
+      ]
+    },
+    {
+      "ID": 224108,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment floor"
+      ]
+    },
+    {
+      "ID": 224109,
+      "Entries": [
+        "[New B layer] Straight city cleaning device side wall parts"
+      ]
+    },
+    {
+      "ID": 224110,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment floor parts"
+      ]
+    },
+    {
+      "ID": 224401,
+      "Entries": [
+        "[New B tier] Straight city, glass scaffolding, no glass"
+      ]
+    },
+    {
+      "ID": 224420,
+      "Entries": [
+        "[New B tier] Straight city glass scaffolding frame"
+      ]
+    },
+    {
+      "ID": 224421,
+      "Entries": [
+        "[New B layer] Straight city glass scaffolding frame base (thick)"
+      ]
+    },
+    {
+      "ID": 224422,
+      "Entries": [
+        "[New B tier] Straight city glass scaffolding frame base (thin)"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "[New B Tier] Trench City Housing Foundation"
+      ]
+    },
+    {
+      "ID": 233001,
+      "Entries": [
+        "[New B Tier] Trench City Residence Upper Tier A"
+      ]
+    },
+    {
+      "ID": 233100,
+      "Entries": [
+        "[New B Tier] Trench City Management System Tower"
+      ]
+    },
+    {
+      "ID": 233200,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device A"
+      ]
+    },
+    {
+      "ID": 233201,
+      "Entries": [
+        "[New B Tier] Trench City Ceiling Device A_Small"
+      ]
+    },
+    {
+      "ID": 233202,
+      "Entries": [
+        "[New B layer] Trench city ceiling device A_pipe 50m"
+      ]
+    },
+    {
+      "ID": 233210,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device B"
+      ]
+    },
+    {
+      "ID": 233220,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device C"
+      ]
+    },
+    {
+      "ID": 233230,
+      "Entries": [
+        "[New B Tier] Trench City General Equipment A"
+      ]
+    },
+    {
+      "ID": 233235,
+      "Entries": [
+        "[New B layer] Trench City General Equipment B"
+      ]
+    },
+    {
+      "ID": 233250,
+      "Entries": [
+        "[New B Tier] Trench City Gate in Trench City"
+      ]
+    },
+    {
+      "ID": 233300,
+      "Entries": [
+        "[New B Tier] Trench City Generator A Large"
+      ]
+    },
+    {
+      "ID": 233310,
+      "Entries": [
+        "[New B Tier] Trench City Generator B"
+      ]
+    },
+    {
+      "ID": 233320,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine"
+      ]
+    },
+    {
+      "ID": 233321,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine Thin Width"
+      ]
+    },
+    {
+      "ID": 233332,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine Attached Pipe"
+      ]
+    },
+    {
+      "ID": 233400,
+      "Entries": [
+        "[New B Tier] Trench City Rail Stopper"
+      ]
+    },
+    {
+      "ID": 233410,
+      "Entries": [
+        "[New B Tier] Trench City Crane Line"
+      ]
+    },
+    {
+      "ID": 233430,
+      "Entries": [
+        "[New B Tier] Trench City Supply Device A"
+      ]
+    },
+    {
+      "ID": 233433,
+      "Entries": [
+        "[New B layer] Trench City Supply Device B"
+      ]
+    },
+    {
+      "ID": 233434,
+      "Entries": [
+        "[New B Tier] Trench City Supply Device C"
+      ]
+    },
+    {
+      "ID": 233450,
+      "Entries": [
+        "[New B Tier] Trench City Attached Supply Device A"
+      ]
+    },
+    {
+      "ID": 233451,
+      "Entries": [
+        "[New B Tier] Trench City Attached Supply Device B"
+      ]
+    },
+    {
+      "ID": 233600,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 233605,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 233610,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 233611,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 233612,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 233620,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area"
+      ]
+    },
+    {
+      "ID": 234100,
+      "Entries": [
+        "[New B Tier] Trench City Connecting Bridge"
+      ]
+    },
+    {
+      "ID": 234210,
+      "Entries": [
+        "[New B Tier] Trench City Central Wall"
+      ]
+    },
+    {
+      "ID": 234220,
+      "Entries": [
+        "[New B Tier] Trench City Central Wall"
+      ]
+    },
+    {
+      "ID": 234260,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall A"
+      ]
+    },
+    {
+      "ID": 234261,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall B"
+      ]
+    },
+    {
+      "ID": 234262,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall B"
+      ]
+    },
+    {
+      "ID": 234280,
+      "Entries": [
+        "[New B Tier] Trench City Wall Both Sides"
+      ]
+    },
+    {
+      "ID": 234291,
+      "Entries": [
+        "[New B layer] Trench city boss area wall middle view"
+      ]
+    },
+    {
+      "ID": 234300,
+      "Entries": [
+        "[New B Tier] Trench City - Lower part of the giant pillar"
+      ]
+    },
+    {
+      "ID": 234310,
+      "Entries": [
+        "[New B Tier] Trench City Giant Pillar Upper Instance"
+      ]
+    },
+    {
+      "ID": 234340,
+      "Entries": [
+        "[New B tier] Trench City X-shaped giant pillar"
+      ]
+    },
+    {
+      "ID": 234341,
+      "Entries": [
+        "[New B layer] Trench City X-shaped giant pillar extension"
+      ]
+    },
+    {
+      "ID": 234346,
+      "Entries": [
+        "[New B tier] Trench City X-shaped pillar parts"
+      ]
+    },
+    {
+      "ID": 234373,
+      "Entries": [
+        "[New B Tier] Trench City General Purpose Pillar A 20*20*100"
+      ]
+    },
+    {
+      "ID": 234400,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding"
+      ]
+    },
+    {
+      "ID": 234401,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding Small"
+      ]
+    },
+    {
+      "ID": 234402,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding Extension"
+      ]
+    },
+    {
+      "ID": 234405,
+      "Entries": [
+        "[New B Tier] Trench City Middle Tier Side Street Area Scaffolding"
+      ]
+    },
+    {
+      "ID": 234410,
+      "Entries": [
+        "[New B Tier] Trench City Huge Foundation"
+      ]
+    },
+    {
+      "ID": 234420,
+      "Entries": [
+        "[New B Tier] Trench City Exterior Floor 150m"
+      ]
+    },
+    {
+      "ID": 234460,
+      "Entries": [
+        "[New B Tier] Trench City Middle Ceiling Long"
+      ]
+    },
+    {
+      "ID": 234470,
+      "Entries": [
+        "[New B layer] Trench City Scaffold A 50*100*20"
+      ]
+    },
+    {
+      "ID": 234471,
+      "Entries": [
+        "[New B Tier] Trench City Scaffold A 50*50*20"
+      ]
+    },
+    {
+      "ID": 234500,
+      "Entries": [
+        "[New B Tier] Trench City Boss Area Gate"
+      ]
+    },
+    {
+      "ID": 234510,
+      "Entries": [
+        "[New B Tier] Trench City Boss Area Foundation"
+      ]
+    },
+    {
+      "ID": 410570,
+      "Entries": [
+        "[D layer] Vertical hole_bottom_floor"
+      ]
+    },
+    {
+      "ID": 410572,
+      "Entries": [
+        "[D layer] Vertical hole_bottom_floor"
+      ]
+    },
+    {
+      "ID": 411300,
+      "Entries": [
+        "[Geofront] Building A"
+      ]
+    },
+    {
+      "ID": 411301,
+      "Entries": [
+        "[Geofront] Building B"
+      ]
+    },
+    {
+      "ID": 411302,
+      "Entries": [
+        "[Geofront] Building C"
+      ]
+    },
+    {
+      "ID": 411303,
+      "Entries": [
+        "[Geofront] Building D"
+      ]
+    },
+    {
+      "ID": 411304,
+      "Entries": [
+        "[Geofront] Building E"
+      ]
+    },
+    {
+      "ID": 411305,
+      "Entries": [
+        "[Geofront] Building F"
+      ]
+    },
+    {
+      "ID": 411306,
+      "Entries": [
+        "[Geofront] Building G"
+      ]
+    },
+    {
+      "ID": 411307,
+      "Entries": [
+        "[Geofront] Building H"
+      ]
+    },
+    {
+      "ID": 411308,
+      "Entries": [
+        "[Geofront] Building I"
+      ]
+    },
+    {
+      "ID": 411309,
+      "Entries": [
+        "[Geofront] Building J"
+      ]
+    },
+    {
+      "ID": 411310,
+      "Entries": [
+        "[Geofront] Building K"
+      ]
+    },
+    {
+      "ID": 411311,
+      "Entries": [
+        "[Geofront] Building L"
+      ]
+    },
+    {
+      "ID": 501801,
+      "Entries": [
+        "communist tree"
+      ]
+    },
+    {
+      "ID": 990016,
+      "Entries": [
+        "caterpillar"
+      ]
+    },
+    {
+      "ID": 990250,
+      "Entries": [
+        "dam slod"
+      ]
+    },
+    {
+      "ID": 990268,
+      "Entries": [
+        "[Distant view A layer] AEG990_428⇒AEG990_268"
+      ]
+    },
+    {
+      "ID": 990850,
+      "Entries": [
+        "[Dam] Managed facilities group"
+      ]
+    },
+    {
+      "ID": 990851,
+      "Entries": [
+        "[Mountains] Communist bloc building"
+      ]
+    },
+    {
+      "ID": 990852,
+      "Entries": [
+        "[Mountains] Building in front of Landmark"
+      ]
+    },
+    {
+      "ID": 990853,
+      "Entries": [
+        "[Mountains] Natural terrain behind landmarks"
+      ]
+    },
+    {
+      "ID": 990854,
+      "Entries": [
+        "[Mountains] Summary of the lightest buildings"
+      ]
+    },
+    {
+      "ID": 990855,
+      "Entries": [
+        "[VOB] 2 nomaru assets"
+      ]
+    },
+    {
+      "ID": 990856,
+      "Entries": [
+        "[In front of the wall] Distant view data"
+      ]
+    },
+    {
+      "ID": 990857,
+      "Entries": [
+        "[VOB] Distant view data"
+      ]
+    },
+    {
+      "ID": 990858,
+      "Entries": [
+        "[Lakeside] Distant view data"
+      ]
+    },
+    {
+      "ID": 990859,
+      "Entries": [
+        "[In front of the wall] Distant view data (100%)"
+      ]
+    },
+    {
+      "ID": 990861,
+      "Entries": [
+        "[In front of the wall] Slope surface"
+      ]
+    },
+    {
+      "ID": 995989,
+      "Entries": [
+        "Gas tank A separate version [SFX setting with TAE] (SLOD compatible)"
+      ]
+    },
+    {
+      "ID": 995990,
+      "Entries": [
+        "Coniferous forest [SFX setting in Asepara] (SLOD compatible)"
+      ]
+    },
+    {
+      "ID": 995995,
+      "Entries": [
+        "Destruction model test 01 [SFX settings with TAE]"
+      ]
+    },
+    {
+      "ID": 990153,
+      "Entries": [
+        "watat_test"
+      ]
+    },
+    {
+      "ID": 999602,
+      "Entries": [
+        "Imposter test 01"
+      ]
+    },
+    {
+      "ID": 999604,
+      "Entries": [
+        "Destructive object for planning test placement 1"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "Test model"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Param": "SKYDOME_ASSET_PARAM_ST",
+  "Type": "SKYDOME_ASSET_PARAM_ST",
+  "Name": "SKYDOME_ASSET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AssetId0",
+      "Name": "表示アセット1",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId1",
+      "Name": "表示アセット2",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId2",
+      "Name": "表示アセット3",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId3",
+      "Name": "表示アセット4",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId4",
+      "Name": "表示アセット5",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId5",
+      "Name": "表示アセット6",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId6",
+      "Name": "表示アセット7",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId7",
+      "Name": "表示アセット8",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "reserved0",
+      "Name": "reserved0",
+      "Description": ""
+    }
+  ]
+}

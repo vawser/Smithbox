@@ -1,0 +1,185 @@
+{
+  "Name": "GeneratorTypeSfxIdRplace_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "Directional explosion small -- 指向爆発\u3000小"
+      ]
+    },
+    {
+      "ID": 5001001,
+      "Entries": [
+        "Directional explosion medium -- 指向爆発\u3000中"
+      ]
+    },
+    {
+      "ID": 5001002,
+      "Entries": [
+        "Directional explosion large -- 指向爆発\u3000大"
+      ]
+    },
+    {
+      "ID": 5001003,
+      "Entries": [
+        "Directional explosion extra large -- 指向爆発\u3000特大"
+      ]
+    },
+    {
+      "ID": 5001004,
+      "Entries": [
+        "Directional explosion extra large -- 指向爆発\u3000特特大"
+      ]
+    },
+    {
+      "ID": 5001105,
+      "Entries": [
+        "Radiation explosion extremely small -- 放射爆発\u3000極小"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "Radiation explosion small -- 放射爆発\u3000小"
+      ]
+    },
+    {
+      "ID": 5001101,
+      "Entries": [
+        "During radiation explosion -- 放射爆発\u3000中"
+      ]
+    },
+    {
+      "ID": 5001102,
+      "Entries": [
+        "Radiation explosion large -- 放射爆発\u3000大"
+      ]
+    },
+    {
+      "ID": 5001103,
+      "Entries": [
+        "Radiation explosion extra large -- 放射爆発\u3000特大"
+      ]
+    },
+    {
+      "ID": 5001104,
+      "Entries": [
+        "Radiation explosion extra large -- 放射爆発\u3000特特大"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "Rising smoke/falling smoke small -- 立ち上る煙／落下煙\u3000小"
+      ]
+    },
+    {
+      "ID": 5001301,
+      "Entries": [
+        "Rising smoke/falling smoke medium -- 立ち上る煙／落下煙\u3000中"
+      ]
+    },
+    {
+      "ID": 5001302,
+      "Entries": [
+        "Rising smoke/falling smoke large -- 立ち上る煙／落下煙\u3000大"
+      ]
+    },
+    {
+      "ID": 5001303,
+      "Entries": [
+        "Rising smoke/falling smoke extra large -- 立ち上る煙／落下煙\u3000特大"
+      ]
+    },
+    {
+      "ID": 5001304,
+      "Entries": [
+        "Rising smoke/falling smoke extra large -- 立ち上る煙／落下煙\u3000特々大"
+      ]
+    },
+    {
+      "ID": 990020,
+      "Entries": [
+        "Assault Armor Omen -- アサルトアーマー\u3000予兆"
+      ]
+    },
+    {
+      "ID": 990021,
+      "Entries": [
+        "Assault armor main body -- アサルトアーマー\u3000本体"
+      ]
+    },
+    {
+      "ID": 990041,
+      "Entries": [
+        "emergency primal armor -- 緊急プライマルアーマー"
+      ]
+    },
+    {
+      "ID": 990050,
+      "Entries": [
+        "Primal Armor main body -- プライマルアーマー\u3000本体"
+      ]
+    },
+    {
+      "ID": 990051,
+      "Entries": [
+        "Primal Armor Omen -- プライマルアーマー\u3000予兆"
+      ]
+    },
+    {
+      "ID": 990055,
+      "Entries": [
+        "Primal armor deployment -- プライマルアーマー\u3000展開"
+      ]
+    },
+    {
+      "ID": 990080,
+      "Entries": [
+        "Installed PA activation -- 設置PA\u3000発動"
+      ]
+    },
+    {
+      "ID": 990081,
+      "Entries": [
+        "Installation PA loop -- 設置PA\u3000ループ"
+      ]
+    },
+    {
+      "ID": 990082,
+      "Entries": [
+        "Installed PA Destroyed -- 設置PA\u3000破壊時"
+      ]
+    },
+    {
+      "ID": 990083,
+      "Entries": [
+        "Installed PA Disappears over time -- 設置PA\u3000時間経過消滅"
+      ]
+    },
+    {
+      "ID": 990800,
+      "Entries": [
+        "Core back deployment gimmick spark -- コア背中の展開ギミックスパーク"
+      ]
+    },
+    {
+      "ID": 7000120,
+      "Entries": [
+        "Small particles blown out from the main booster Normally -- メインブースターから吹きだす、わずかな粒子 通常"
+      ]
+    },
+    {
+      "ID": 7300053,
+      "Entries": [
+        "The blink of a boost that became a PC light point -- PC 光点となったブーストの瞬き"
+      ]
+    }
+  ]
+}

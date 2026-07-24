@@ -1,0 +1,18 @@
+{
+  "Param": "DAMAGE_STYLE_RATE_PARAM",
+  "Type": "DAMAGE_STYLE_RATE_PARAM",
+  "Name": "DAMAGE_STYLE_RATE_PARAM",
+  "Description": "Defines damage multipliers based on attack style, including modified values when destruction or break conditions are triggered.",
+  "Fields": [
+    {
+      "Field": "rate",
+      "Name": "Damage %",
+      "Description": "Base multiplier applied depending on attack style."
+    },
+    {
+      "Field": "break_rate",
+      "Name": "Broken State Damage %",
+      "Description": "Additional multiplier applied when the weapon is broken."
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "Name": "FootSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "sand"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ice"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "cloth"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "concrete"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "glass"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water (waist and above)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "underwater"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Swamp (puddle level)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Swamp (about ankle length)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Swamp (below the knee)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Swamp (waist above)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Coal tar (about the size of a puddle)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Coal tar (about ankle size)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Coal tar (below the knee)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Coal tar (above waist height)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Melange water surface (about ankle level)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Melange water surface (below the knees)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Melange water surface (above waist)"
+      ]
+    }
+  ]
+}

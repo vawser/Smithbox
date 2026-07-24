@@ -1,0 +1,713 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "Light Wizard Set/Head"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Medium wizard set/head"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Light Hunter Set/Head"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Weight Hunter Set/Head"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Light Cleric Set/Head"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Weight Cleric Set/Head"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Light Warrior Set/Head"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "Medium warrior set/head"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "Weight Warrior Set/Head"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "white knight set/head"
+      ]
+    },
+    {
+      "ID": 100999,
+      "Entries": [
+        "White Knight Set/Head (for Gold Run)"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "black knight set/head"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "old warrior set/head"
+      ]
+    },
+    {
+      "ID": 101400,
+      "Entries": [
+        "Special Cleric Head"
+      ]
+    },
+    {
+      "ID": 101700,
+      "Entries": [
+        "no equipment"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "jailer hat"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "White knight set_woman/head"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Old knight set_woman/head"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Special Cleric Head_Female"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Okina summon black ghost only / head"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Wandering Wizard Set/Head"
+      ]
+    },
+    {
+      "ID": 190100,
+      "Entries": [
+        "Prowling Hunter Set/Head"
+      ]
+    },
+    {
+      "ID": 190200,
+      "Entries": [
+        "Wandering Cleric Set/Head"
+      ]
+    },
+    {
+      "ID": 190300,
+      "Entries": [
+        "Wandering Warrior Set/Head"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Light Wizard Set/Torso"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Medium Wizard Set/Torso"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Light Hunter Set/Torso"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Heavy Hunter Set/Torso"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Light Cleric Set/Torso"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Weight Cleric Set/Torso"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Light Warrior Set/Torso"
+      ]
+    },
+    {
+      "ID": 200700,
+      "Entries": [
+        "Medium Warrior Set/Torso"
+      ]
+    },
+    {
+      "ID": 200800,
+      "Entries": [
+        "Heavy Warrior Set/Torso"
+      ]
+    },
+    {
+      "ID": 200900,
+      "Entries": [
+        "White Knight Set/Torso"
+      ]
+    },
+    {
+      "ID": 200999,
+      "Entries": [
+        "White Knight Set/Torso (Gold Run)"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "black knight set/torso"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Ancient Warrior Set/Torso"
+      ]
+    },
+    {
+      "ID": 201200,
+      "Entries": [
+        "Special Cleric Body/Saint Equipment"
+      ]
+    },
+    {
+      "ID": 201400,
+      "Entries": [
+        "Special cleric body"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "no equipment"
+      ]
+    },
+    {
+      "ID": 201800,
+      "Entries": [
+        "Lightweight wizard set_woman/torso"
+      ]
+    },
+    {
+      "ID": 201900,
+      "Entries": [
+        "White knight set_woman/torso"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Old Knight Set_Woman/Torso"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Special cleric woman_torso"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "Wandering Wizard Set/Torso"
+      ]
+    },
+    {
+      "ID": 290100,
+      "Entries": [
+        "Prowling Hunter Set/Torso"
+      ]
+    },
+    {
+      "ID": 290200,
+      "Entries": [
+        "Wandering Cleric Set/Torso"
+      ]
+    },
+    {
+      "ID": 290300,
+      "Entries": [
+        "Wandering Warrior Set/Torso"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Lightweight wizard set/arms"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Medium wizard set/arms"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Light Hunter Set/Arms"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Weight Hunter Set/Arms"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Light Cleric Set/Arms"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Weight Cleric Set/Arms"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Light Warrior Set/Arms"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "Medium warrior set/arms"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Weight Warrior Set/Arms"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "white knight set/arms"
+      ]
+    },
+    {
+      "ID": 300999,
+      "Entries": [
+        "White Knight Set/Arms (Gold Run)"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "black knight set/arms"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "old warrior set/arms"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Special Cleric Arm/Saint Equipment"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "special cleric arm"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "no equipment"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "Lightweight hunter set_woman/arm"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Lightweight wizard set_woman/arm"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "White knight set_woman/arm"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Ancient warrior set_woman/arm"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "Special cleric set_woman/arm"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Wandering Wizard Set/Arms"
+      ]
+    },
+    {
+      "ID": 390100,
+      "Entries": [
+        "Prowling Hunter Set/Arms"
+      ]
+    },
+    {
+      "ID": 390200,
+      "Entries": [
+        "Wandering Cleric Set/Arms"
+      ]
+    },
+    {
+      "ID": 390300,
+      "Entries": [
+        "Wandering Warrior Set/Arms"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Light Wizard Set/Leg"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Medium Weight Wizard Set/Leg"
+      ]
+    },
+    {
+      "ID": 400200,
+      "Entries": [
+        "Light Hunter Set/Leg"
+      ]
+    },
+    {
+      "ID": 400300,
+      "Entries": [
+        "Weight hunter set/leg"
+      ]
+    },
+    {
+      "ID": 400400,
+      "Entries": [
+        "Light Cleric Set/Leg"
+      ]
+    },
+    {
+      "ID": 400500,
+      "Entries": [
+        "Weight Cleric Set/Leg"
+      ]
+    },
+    {
+      "ID": 400600,
+      "Entries": [
+        "Light Warrior Set/Leg"
+      ]
+    },
+    {
+      "ID": 400700,
+      "Entries": [
+        "Medium warrior set/legs"
+      ]
+    },
+    {
+      "ID": 400800,
+      "Entries": [
+        "Weight Warrior Set/Leg"
+      ]
+    },
+    {
+      "ID": 400900,
+      "Entries": [
+        "white knight set/leg"
+      ]
+    },
+    {
+      "ID": 400999,
+      "Entries": [
+        "White Knight Set/Leg (Gold Run)"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "black knight set/leg"
+      ]
+    },
+    {
+      "ID": 401100,
+      "Entries": [
+        "Ancient Warrior Set/Leg"
+      ]
+    },
+    {
+      "ID": 401200,
+      "Entries": [
+        "Special Cleric Leg/Saint Equipment"
+      ]
+    },
+    {
+      "ID": 401400,
+      "Entries": [
+        "Special cleric legs"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "no equipment"
+      ]
+    },
+    {
+      "ID": 401800,
+      "Entries": [
+        "Lightweight Wizard Set_Woman/Leg"
+      ]
+    },
+    {
+      "ID": 401900,
+      "Entries": [
+        "White knight set_woman/leg"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Ancient warrior set_woman/leg"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Special Cleric Set_Female/Leg"
+      ]
+    },
+    {
+      "ID": 490000,
+      "Entries": [
+        "Wandering Wizard Set/Leg"
+      ]
+    },
+    {
+      "ID": 490100,
+      "Entries": [
+        "Prowling Hunter Set/Leg"
+      ]
+    },
+    {
+      "ID": 490200,
+      "Entries": [
+        "Wandering Cleric Set/Leg"
+      ]
+    },
+    {
+      "ID": 490300,
+      "Entries": [
+        "Wandering Warrior Set/Leg"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "shaved"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "5 cents"
+      ]
+    },
+    {
+      "ID": 500200,
+      "Entries": [
+        "bald"
+      ]
+    },
+    {
+      "ID": 500300,
+      "Entries": [
+        "bobbed hair"
+      ]
+    },
+    {
+      "ID": 500400,
+      "Entries": [
+        "all back long hair"
+      ]
+    },
+    {
+      "ID": 500500,
+      "Entries": [
+        "side parted long hair"
+      ]
+    },
+    {
+      "ID": 500600,
+      "Entries": [
+        "careless"
+      ]
+    },
+    {
+      "ID": 500700,
+      "Entries": [
+        "Tenpa moist"
+      ]
+    },
+    {
+      "ID": 500800,
+      "Entries": [
+        "crumbly tempura"
+      ]
+    },
+    {
+      "ID": 500900,
+      "Entries": [
+        "cornrows"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "shaved"
+      ]
+    },
+    {
+      "ID": 501100,
+      "Entries": [
+        "five cents"
+      ]
+    },
+    {
+      "ID": 501200,
+      "Entries": [
+        "Tenpa Short"
+      ]
+    },
+    {
+      "ID": 501300,
+      "Entries": [
+        "heaven palong"
+      ]
+    },
+    {
+      "ID": 501400,
+      "Entries": [
+        "straight short"
+      ]
+    },
+    {
+      "ID": 501500,
+      "Entries": [
+        "straight long"
+      ]
+    },
+    {
+      "ID": 501600,
+      "Entries": [
+        "braid"
+      ]
+    },
+    {
+      "ID": 501700,
+      "Entries": [
+        "Braided"
+      ]
+    },
+    {
+      "ID": 501800,
+      "Entries": [
+        "ponytail"
+      ]
+    },
+    {
+      "ID": 501900,
+      "Entries": [
+        "Odango (1 piece)"
+      ]
+    },
+    {
+      "ID": 590000,
+      "Entries": [
+        "wandering hair"
+      ]
+    }
+  ]
+}

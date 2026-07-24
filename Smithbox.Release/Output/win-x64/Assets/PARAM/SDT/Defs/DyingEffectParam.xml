@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DYING_EFFECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 fadeTime_NormalToDyingBegin = 0.5">
+      <DisplayName>通常→瀕死開始フェード時間[秒]</DisplayName>
+      <Description>通常→瀕死開始フェード時間[秒]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 fadeTime_DyingBeginToDyingLoop = 1">
+      <DisplayName>瀕死開始→瀕死中フェード時間[秒]</DisplayName>
+      <Description>瀕死開始→瀕死中フェード時間[秒]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 fadeTime_DyingLoopToNormal = 5">
+      <DisplayName>瀕死中→通常フェード時間[秒]</DisplayName>
+      <Description>瀕死中→通常フェード時間[秒]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 fadeTime_DyingLoopToWaitBegin = 0.2">
+      <DisplayName>瀕死中→復活待機開始フェード時間[秒]</DisplayName>
+      <Description>瀕死中→復活待機開始フェード時間[秒]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 fadeTime_WaitToNormal = 1">
+      <DisplayName>復活待機→通常フェード時間[秒]</DisplayName>
+      <Description>復活待機→通常フェード時間[秒]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>3600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[12]">
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

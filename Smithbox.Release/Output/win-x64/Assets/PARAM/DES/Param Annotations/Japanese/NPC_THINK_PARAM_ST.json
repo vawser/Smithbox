@@ -1,0 +1,198 @@
+{
+  "Param": "NPC_THINK_PARAM_ST",
+  "Type": "NPC_THINK_PARAM_ST",
+  "Name": "NPC_THINK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "logicId",
+      "Name": "ロジックスクリプトID",
+      "Description": "スクリプトで作成したロジックのIDを設定します。"
+    },
+    {
+      "Field": "battleGoalID",
+      "Name": "戦闘ゴールID",
+      "Description": "戦闘ゴールID"
+    },
+    {
+      "Field": "disablePathMove",
+      "Name": "パス移動しない",
+      "Description": "パス移動命令が来てもパスを辿らずに直接移動するか"
+    },
+    {
+      "Field": "bMoveOnHearSound",
+      "Name": "【削除】音を聞いた時移動するか？【予定】",
+      "Description": "【削除予定】音を聞いた時移動するか？リプランニング時の動作定義は、別のところでやるようになったので。"
+    },
+    {
+      "Field": "TeamAttackEffectivity",
+      "Name": "チーム攻撃影響力[0-100]",
+      "Description": "チーム内の同時攻撃人数を決めるための値。値を大きくすると、同時に攻撃参加できる人数が少なくなる。"
+    },
+    {
+      "Field": "skipArrivalVisibleCheck",
+      "Name": "視線による到着判定をスキップするか？",
+      "Description": "視線による到着判定をスキップするか？Onにすると、視線が通っていなくても、到着判定を行う。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": "未使用"
+    },
+    {
+      "Field": "nearDist",
+      "Name": "近距離 距離[m]",
+      "Description": "近距離とみなす範囲です。近接格闘の判定に使用します。"
+    },
+    {
+      "Field": "midDist",
+      "Name": "中距離 距離[m]",
+      "Description": "中距離とみなす範囲です。中距離格闘の判定に使用します。"
+    },
+    {
+      "Field": "farDist",
+      "Name": "遠距離 距離[m]",
+      "Description": "遠距離とみなす範囲です。飛び道具の判定に使用します。"
+    },
+    {
+      "Field": "outDist",
+      "Name": "範囲外 距離[m]",
+      "Description": "戦闘範囲外とみなす距離です。範囲外の敵には戦闘行動を行おうとはしなくなります。"
+    },
+    {
+      "Field": "eye_dist",
+      "Name": "視覚_距離[m]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "視覚_角度（高さ）[deg]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "視覚_角度（幅）[deg]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "ear_dist",
+      "Name": "聴覚_距離[m]",
+      "Description": "聴覚による索敵範囲.。"
+    },
+    {
+      "Field": "ear_soundcut_dist",
+      "Name": "聴覚\u3000影響カット距離[m]",
+      "Description": "音源のサイズを小さくする距離。この距離未満の音が聞こえなくなります。"
+    },
+    {
+      "Field": "ear_angX",
+      "Name": "聴覚\u3000角度（高さ）[deg]",
+      "Description": "聴覚による索敵範囲。"
+    },
+    {
+      "Field": "ear_angY",
+      "Name": "聴覚\u3000角度（幅）[deg]",
+      "Description": "聴覚による索敵範囲。"
+    },
+    {
+      "Field": "pad3",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "nose_dist",
+      "Name": "嗅覚_距離[m]",
+      "Description": "嗅覚による索敵範囲."
+    },
+    {
+      "Field": "maxBackhomeDist",
+      "Name": "何があっても帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeDist",
+      "Name": "戦闘しつつ帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeBattleDist",
+      "Name": "巣に帰るのをあきらめて戦闘する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "nonBattleActLife",
+      "Name": "敵を意識しているときの非戦闘行動時間[sec]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "BattleStartDist",
+      "Name": "敵を発見してから戦闘を開始する距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "BackHome_LookTargetTime",
+      "Name": "帰宅時：ターゲットを見ている時間[sec]",
+      "Description": "帰宅時：ターゲットを見ている時間[sec]"
+    },
+    {
+      "Field": "BackHome_LookTargetDist",
+      "Name": "帰宅時：ターゲットを見ている距離[m]",
+      "Description": "帰宅時：ターゲットを見ている距離[m]"
+    },
+    {
+      "Field": "SightTargetForgetTime",
+      "Name": "視覚ターゲット忘れる時間[frame]",
+      "Description": "視覚ターゲット忘れる時間。フレームで入力です。"
+    },
+    {
+      "Field": "SoundTargetForgetTime",
+      "Name": "音ターゲット忘れる時間[frame]",
+      "Description": "音ターゲット忘れる時間。フレームで入力です。"
+    },
+    {
+      "Field": "idAttackCannotMove",
+      "Name": "動けなくなったときに行うEzState番号",
+      "Description": "破壊可能なオブジェクトによって動きが止まっている場合、自動的に実行する行動。"
+    },
+    {
+      "Field": "BackHomeLife_OnHitEneWal",
+      "Name": "敵壁接触時のBackHome時間[sec]",
+      "Description": "ブロックをさえぎる敵壁に接触したとき、BackToHomeゴールの寿命"
+    },
+    {
+      "Field": "pad6",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "goalAction_ToCaution",
+      "Name": "ゴールアクション：警戒状態",
+      "Description": "ゴールアクション：ターゲットが警戒状態になった"
+    },
+    {
+      "Field": "pad4",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "goalID_ToCaution",
+      "Name": "ゴール：警戒状態",
+      "Description": "ゴール：警戒状態"
+    },
+    {
+      "Field": "goalAction_ToFind",
+      "Name": "ゴールアクション：発見状態",
+      "Description": "ゴールアクション：ターゲットが発見状態になった"
+    },
+    {
+      "Field": "pad5",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "goalID_ToFind",
+      "Name": "ゴール：発見状態",
+      "Description": "ゴール：発見状態"
+    }
+  ]
+}

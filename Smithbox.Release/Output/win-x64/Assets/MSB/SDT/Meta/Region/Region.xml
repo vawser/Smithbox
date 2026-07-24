@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a region within the map." />
+  
+  <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the region."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the region, in degrees."
+    RotationProperty="" />
+    
+    <Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <MapStudioLayer
+    AltName="Ceremony Layer"
+    Wiki="A bitmask that determines which ceremonies the region appears in." />
+    
+    <UnkA
+    AltName="Unknown A"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <UnkB
+    AltName="Unknown B"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
+    
+    <ActivationPartIndex
+    IndexProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

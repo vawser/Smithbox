@@ -1,0 +1,29 @@
+{
+  "Key": "WIRE_VARIATION_PARAM_TARGET_MARKER_FE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WIRE_VARIATION_PARAM_TARGET_MARKER_FE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Icon: Filled in green circle"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Icon: Green outer edge with an arrow in the center"
+        }
+      ]
+    }
+  ]
+}

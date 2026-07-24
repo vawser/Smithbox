@@ -1,0 +1,10175 @@
+{
+  "Name": "BehaviorParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC_ Automated Testing Attacks"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "PC_ common _ Egg Attack"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "PC_ common _ Fall"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Common attack [Fall] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Common attack [landing] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Common attack [Thud landing] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Common attack [Falling and landing] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Common attack [Rolling] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Common attack [Summon] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Common attack [Fall backwards] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Common attack [Effect of destroying specific enemies] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Common attack [Push] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Common attack: [Blows back] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Common attack [Blow forward] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Common attack [After push] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Common attack [throw] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Common attack [Strong Throw] _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Common attack: Parry slam _ Attack Armor"
+      ]
+    },
+    {
+      "ID": 442,
+      "Entries": [
+        "Common attack [Ladder _ Sliding Down】Attack Armor"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Common attack [Fall]"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Common attack [landing]"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Common attack [Thud landing]"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Common attack [Falling and landing]"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Common attack [Rolling]"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Common attack [Summon]"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Common attack [Fall backwards]"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Common attack [Effect of destroying specific enemies]"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Common attack [Push]"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Common attack: [Blows back]"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Common attack [Blow forward]"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Common attack [After push]"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Common attack [throw]"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Common attack [Strong Throw]"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Common attack: Parry slam"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Common attack [Ladder _ Right Punch】"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "Common attack [Ladder _ Right Kick】"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Common attack [Ladder _ Left Punch】"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Common attack [Ladder _ Left kick】"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Common attack [Ladder _ Slide down】"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Fall Radius 1 m"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Blow Away (Weak) Radius 1 m"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Blow away (strong) radius 1 m"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "What goes around comes around _ explosion"
+      ]
+    },
+    {
+      "ID": 100080830,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +0"
+      ]
+    },
+    {
+      "ID": 100080831,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +1"
+      ]
+    },
+    {
+      "ID": 100080832,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +2"
+      ]
+    },
+    {
+      "ID": 100080833,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +3"
+      ]
+    },
+    {
+      "ID": 100080834,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +4"
+      ]
+    },
+    {
+      "ID": 100080835,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +5"
+      ]
+    },
+    {
+      "ID": 100080836,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +6"
+      ]
+    },
+    {
+      "ID": 100080837,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +7"
+      ]
+    },
+    {
+      "ID": 100080838,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +8"
+      ]
+    },
+    {
+      "ID": 100080839,
+      "Entries": [
+        "Throwing Virtual Weapons _common _ First step +9"
+      ]
+    },
+    {
+      "ID": 100080840,
+      "Entries": [
+        "Throwing Virtual Weapons _ common _ First step +10"
+      ]
+    },
+    {
+      "ID": 100080845,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +0"
+      ]
+    },
+    {
+      "ID": 100080846,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +1"
+      ]
+    },
+    {
+      "ID": 100080847,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +2"
+      ]
+    },
+    {
+      "ID": 100080848,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +3"
+      ]
+    },
+    {
+      "ID": 100080849,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +4"
+      ]
+    },
+    {
+      "ID": 100080850,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +5"
+      ]
+    },
+    {
+      "ID": 100080851,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +6"
+      ]
+    },
+    {
+      "ID": 100080852,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +7"
+      ]
+    },
+    {
+      "ID": 100080853,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +8"
+      ]
+    },
+    {
+      "ID": 100080854,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier +9"
+      ]
+    },
+    {
+      "ID": 100080855,
+      "Entries": [
+        "Throwing Virtual Weapons _ usually _ Second tier+10"
+      ]
+    },
+    {
+      "ID": 100080860,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +0"
+      ]
+    },
+    {
+      "ID": 100080861,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +1"
+      ]
+    },
+    {
+      "ID": 100080862,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +2"
+      ]
+    },
+    {
+      "ID": 100080863,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +3"
+      ]
+    },
+    {
+      "ID": 100080864,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +4"
+      ]
+    },
+    {
+      "ID": 100080865,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +5"
+      ]
+    },
+    {
+      "ID": 100080866,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +6"
+      ]
+    },
+    {
+      "ID": 100080867,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +7"
+      ]
+    },
+    {
+      "ID": 100080868,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +8"
+      ]
+    },
+    {
+      "ID": 100080869,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +9"
+      ]
+    },
+    {
+      "ID": 100080870,
+      "Entries": [
+        "Throwing Virtual Weapons _ boss _ Second tier +10"
+      ]
+    },
+    {
+      "ID": 100090000,
+      "Entries": [
+        "Nun's Dagger _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100100000,
+      "Entries": [
+        "bare hands _ mode A_small 1"
+      ]
+    },
+    {
+      "ID": 100100010,
+      "Entries": [
+        "bare hands _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100100020,
+      "Entries": [
+        "bare hands _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100100030,
+      "Entries": [
+        "bare hands _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100100040,
+      "Entries": [
+        "bare hands _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100100100,
+      "Entries": [
+        "bare hands _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100100110,
+      "Entries": [
+        "bare hands _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100100120,
+      "Entries": [
+        "bare hands _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100100150,
+      "Entries": [
+        "bare hands _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100100170,
+      "Entries": [
+        "bare hands _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100100200,
+      "Entries": [
+        "bare hands _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100100210,
+      "Entries": [
+        "bare hands _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100100220,
+      "Entries": [
+        "bare hands _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100100230,
+      "Entries": [
+        "bare hands _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100100240,
+      "Entries": [
+        "bare hands _ mode A_ Small Evasion _left"
+      ]
+    },
+    {
+      "ID": 100100250,
+      "Entries": [
+        "bare hands _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100100260,
+      "Entries": [
+        "bare hands _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100100270,
+      "Entries": [
+        "bare hands _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100100280,
+      "Entries": [
+        "bare hands _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100100290,
+      "Entries": [
+        "bare hands _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100100300,
+      "Entries": [
+        "bare hands _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100100310,
+      "Entries": [
+        "bare hands _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100100320,
+      "Entries": [
+        "bare hands _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100100330,
+      "Entries": [
+        "bare hands _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100100340,
+      "Entries": [
+        "bare hands _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100100341,
+      "Entries": [
+        "bare hands _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100100390,
+      "Entries": [
+        "bare hands _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100100395,
+      "Entries": [
+        "bare hands _ mode A_ Mode change attack_ left"
+      ]
+    },
+    {
+      "ID": 100100400,
+      "Entries": [
+        "bare hands _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100100410,
+      "Entries": [
+        "bare hands _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100100420,
+      "Entries": [
+        "bare hands _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100100430,
+      "Entries": [
+        "bare hands _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100100440,
+      "Entries": [
+        "bare hands _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100100500,
+      "Entries": [
+        "bare hands _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100100510,
+      "Entries": [
+        "bare hands _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100100520,
+      "Entries": [
+        "bare hands _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100100550,
+      "Entries": [
+        "bare hands _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100100570,
+      "Entries": [
+        "bare hands _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100100600,
+      "Entries": [
+        "bare hands _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100100610,
+      "Entries": [
+        "bare hands _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100100620,
+      "Entries": [
+        "bare hands _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100100630,
+      "Entries": [
+        "bare hands _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100100640,
+      "Entries": [
+        "bare hands _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100100650,
+      "Entries": [
+        "bare hands _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100100660,
+      "Entries": [
+        "bare hands _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100100670,
+      "Entries": [
+        "bare hands _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100100680,
+      "Entries": [
+        "bare hands _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100100690,
+      "Entries": [
+        "bare hands _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100100700,
+      "Entries": [
+        "bare hands _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100100710,
+      "Entries": [
+        "bare hands _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100100720,
+      "Entries": [
+        "bare hands _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100100730,
+      "Entries": [
+        "bare hands _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100100740,
+      "Entries": [
+        "bare hands _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100100741,
+      "Entries": [
+        "bare hands _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100100790,
+      "Entries": [
+        "bare hands _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100100795,
+      "Entries": [
+        "bare hands_ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100100800,
+      "Entries": [
+        "bare hands _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100100900,
+      "Entries": [
+        "bare hands _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 100100901,
+      "Entries": [
+        "bare hands _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100100910,
+      "Entries": [
+        "bare hands _ mode A_L small 1"
+      ]
+    },
+    {
+      "ID": 100100930,
+      "Entries": [
+        "bare hands _ mode A_L large 1"
+      ]
+    },
+    {
+      "ID": 100100990,
+      "Entries": [
+        "bare hands _ Ladder _ Right Punch"
+      ]
+    },
+    {
+      "ID": 100100991,
+      "Entries": [
+        "bare hands _ Ladder _ Right Kick"
+      ]
+    },
+    {
+      "ID": 100100992,
+      "Entries": [
+        "bare hands _ Ladder _ Left Punch"
+      ]
+    },
+    {
+      "ID": 100100993,
+      "Entries": [
+        "bare hands _ Ladder _ Left Kick"
+      ]
+    },
+    {
+      "ID": 100101000,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100101010,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100101020,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100101030,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100101040,
+      "Entries": [
+        "Bare hands (slugs) _mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100101150,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Charge Small 1"
+      ]
+    },
+    {
+      "ID": 100101170,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Large Charge 1"
+      ]
+    },
+    {
+      "ID": 100101200,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100101210,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100101220,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100101230,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100101240,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100101250,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100101310,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100101320,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100101330,
+      "Entries": [
+        "Bare hands (slugs) _ modeA_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100101340,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100101341,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100101390,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100101395,
+      "Entries": [
+        "Bare hands (slugs) _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100101400,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100101410,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100101420,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100101430,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100101440,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100101500,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_L21"
+      ]
+    },
+    {
+      "ID": 100101510,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_L22"
+      ]
+    },
+    {
+      "ID": 100101520,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_L23"
+      ]
+    },
+    {
+      "ID": 100101550,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100101570,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100101600,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100101610,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100101620,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100101630,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100101640,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100101650,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100101710,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100101720,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100101730,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100101740,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100101741,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100101790,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100101795,
+      "Entries": [
+        "Bare hands (slugs) _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100200000,
+      "Entries": [
+        "sword _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100200010,
+      "Entries": [
+        "sword _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100200020,
+      "Entries": [
+        "sword _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100200030,
+      "Entries": [
+        "sword _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100200040,
+      "Entries": [
+        "sword _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100200100,
+      "Entries": [
+        "sword _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100200110,
+      "Entries": [
+        "sword _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100200120,
+      "Entries": [
+        "sword _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100200150,
+      "Entries": [
+        "sword_ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100200170,
+      "Entries": [
+        "sword _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100200200,
+      "Entries": [
+        "sword _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100200210,
+      "Entries": [
+        "sword _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100200220,
+      "Entries": [
+        "sword _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100200230,
+      "Entries": [
+        "sword _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100200240,
+      "Entries": [
+        "sword _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100200250,
+      "Entries": [
+        "sword _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100200260,
+      "Entries": [
+        "sword _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100200270,
+      "Entries": [
+        "sword _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100200280,
+      "Entries": [
+        "sword _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100200290,
+      "Entries": [
+        "sword _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100200300,
+      "Entries": [
+        "sword _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100200310,
+      "Entries": [
+        "sword _ mode A_Jump"
+      ]
+    },
+    {
+      "ID": 100200320,
+      "Entries": [
+        "sword _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100200330,
+      "Entries": [
+        "sword _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100200340,
+      "Entries": [
+        "sword _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100200341,
+      "Entries": [
+        "sword _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100200390,
+      "Entries": [
+        "sword _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100200395,
+      "Entries": [
+        "sword _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100200400,
+      "Entries": [
+        "sword _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100200410,
+      "Entries": [
+        "sword _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100200420,
+      "Entries": [
+        "sword _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100200430,
+      "Entries": [
+        "sword _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100200440,
+      "Entries": [
+        "sword _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100200500,
+      "Entries": [
+        "sword _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100200510,
+      "Entries": [
+        "sword _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100200600,
+      "Entries": [
+        "sword _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100200610,
+      "Entries": [
+        "sword _mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100200620,
+      "Entries": [
+        "sword _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100200630,
+      "Entries": [
+        "sword _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100200640,
+      "Entries": [
+        "sword _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100200650,
+      "Entries": [
+        "sword _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100200660,
+      "Entries": [
+        "sword _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100200670,
+      "Entries": [
+        "sword _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100200680,
+      "Entries": [
+        "sword _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100200690,
+      "Entries": [
+        "sword _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100200700,
+      "Entries": [
+        "sword _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100200710,
+      "Entries": [
+        "sword _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100200720,
+      "Entries": [
+        "sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100200730,
+      "Entries": [
+        "sword _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100200740,
+      "Entries": [
+        "sword _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100200741,
+      "Entries": [
+        "sword _mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100200780,
+      "Entries": [
+        "sword _ mode B_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100200785,
+      "Entries": [
+        "sword _ mode B_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100200790,
+      "Entries": [
+        "sword _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100200795,
+      "Entries": [
+        "sword _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100200800,
+      "Entries": [
+        "sword _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100200900,
+      "Entries": [
+        "sword _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 100200901,
+      "Entries": [
+        "sword _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100200910,
+      "Entries": [
+        "sword _ mode B_L small 1"
+      ]
+    },
+    {
+      "ID": 100200930,
+      "Entries": [
+        "sword _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100200940,
+      "Entries": [
+        "sword _ mode B_L large 2"
+      ]
+    },
+    {
+      "ID": 100400000,
+      "Entries": [
+        "Dual Swords _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100400010,
+      "Entries": [
+        "Dual Swords _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100400020,
+      "Entries": [
+        "Dual Swords _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100400100,
+      "Entries": [
+        "Dual Swords _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100400110,
+      "Entries": [
+        "Dual Swords _mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100400120,
+      "Entries": [
+        "Dual Swords _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100400150,
+      "Entries": [
+        "Dual Swords _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100400170,
+      "Entries": [
+        "Dual Swords _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100400200,
+      "Entries": [
+        "Dual Swords _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100400210,
+      "Entries": [
+        "Dual Swords _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100400220,
+      "Entries": [
+        "Dual Swords _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100400230,
+      "Entries": [
+        "Dual Swords _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100400240,
+      "Entries": [
+        "Dual Swords _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100400250,
+      "Entries": [
+        "Dual Swords _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100400260,
+      "Entries": [
+        "Dual Swords _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100400270,
+      "Entries": [
+        "Dual Swords _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100400280,
+      "Entries": [
+        "Dual Swords _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100400290,
+      "Entries": [
+        "Dual Swords _mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100400300,
+      "Entries": [
+        "Dual Swords _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100400310,
+      "Entries": [
+        "Dual Swords _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100400320,
+      "Entries": [
+        "Dual Swords _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100400330,
+      "Entries": [
+        "Dual Swords _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100400340,
+      "Entries": [
+        "Dual Swords _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100400341,
+      "Entries": [
+        "Dual Swords _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100400390,
+      "Entries": [
+        "Dual Swords _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100400395,
+      "Entries": [
+        "Dual Swords _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100400400,
+      "Entries": [
+        "Dual Swords _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100400410,
+      "Entries": [
+        "Dual Swords _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100400420,
+      "Entries": [
+        "Dual Swords _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100400430,
+      "Entries": [
+        "Dual Swords _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100400440,
+      "Entries": [
+        "Dual Swords _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100400450,
+      "Entries": [
+        "Dual Swords_ mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 100400460,
+      "Entries": [
+        "Dual Swords _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 100400470,
+      "Entries": [
+        "Dual Swords _ mode B_ small 8"
+      ]
+    },
+    {
+      "ID": 100400500,
+      "Entries": [
+        "Dual Swords _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100400510,
+      "Entries": [
+        "Dual Swords _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100400600,
+      "Entries": [
+        "Dual Swords _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100400610,
+      "Entries": [
+        "Dual Swords _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100400620,
+      "Entries": [
+        "Dual Swords _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100400630,
+      "Entries": [
+        "Dual Swords _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100400640,
+      "Entries": [
+        "Dual Swords _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100400650,
+      "Entries": [
+        "Dual Swords _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100400660,
+      "Entries": [
+        "Dual Swords _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100400670,
+      "Entries": [
+        "Dual Swords _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100400680,
+      "Entries": [
+        "Dual Swords _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100400690,
+      "Entries": [
+        "Dual Swords _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100400700,
+      "Entries": [
+        "Dual Swords _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100400710,
+      "Entries": [
+        "Dual Swords _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100400720,
+      "Entries": [
+        "Dual Swords _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100400730,
+      "Entries": [
+        "Dual Swords _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100400740,
+      "Entries": [
+        "Dual Swords _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100400741,
+      "Entries": [
+        "Dual Swords _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100400790,
+      "Entries": [
+        "Dual Swords _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100400795,
+      "Entries": [
+        "Dual Swords _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100400800,
+      "Entries": [
+        "Dual Swords _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100400901,
+      "Entries": [
+        "Dual Swords _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100400930,
+      "Entries": [
+        "Dual Swords _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100500000,
+      "Entries": [
+        "Axe pole _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100500010,
+      "Entries": [
+        "Axe pole _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100500020,
+      "Entries": [
+        "Axe pole _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100500030,
+      "Entries": [
+        "Axe pole _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100500100,
+      "Entries": [
+        "Axe pole _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100500110,
+      "Entries": [
+        "Axe pole _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100500120,
+      "Entries": [
+        "Axe pole _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100500150,
+      "Entries": [
+        "Axe pole _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100500170,
+      "Entries": [
+        "Axe pole _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100500200,
+      "Entries": [
+        "Axe pole _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100500210,
+      "Entries": [
+        "Axe pole _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100500220,
+      "Entries": [
+        "Axe pole _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100500230,
+      "Entries": [
+        "Axe pole _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100500240,
+      "Entries": [
+        "Axe pole _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100500250,
+      "Entries": [
+        "Axe pole _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100500260,
+      "Entries": [
+        "Axe pole _ mode A_Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100500270,
+      "Entries": [
+        "Axe pole _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100500280,
+      "Entries": [
+        "Axe pole _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100500290,
+      "Entries": [
+        "Axe pole _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100500300,
+      "Entries": [
+        "Axe pole _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100500310,
+      "Entries": [
+        "Axe pole _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100500320,
+      "Entries": [
+        "Axe pole _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100500330,
+      "Entries": [
+        "Axe pole _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100500340,
+      "Entries": [
+        "Axe pole _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100500341,
+      "Entries": [
+        "Axe pole _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100500390,
+      "Entries": [
+        "Axe pole _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100500395,
+      "Entries": [
+        "Axe pole _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100500400,
+      "Entries": [
+        "Axe pole _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100500410,
+      "Entries": [
+        "Axe pole _ mode B_ small2"
+      ]
+    },
+    {
+      "ID": 100500420,
+      "Entries": [
+        "Axe pole _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100500430,
+      "Entries": [
+        "Axe pole _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100500440,
+      "Entries": [
+        "Axe pole _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100500500,
+      "Entries": [
+        "Axe pole _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100500510,
+      "Entries": [
+        "Axe pole _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100500520,
+      "Entries": [
+        "Axe pole _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100500600,
+      "Entries": [
+        "Axe pole _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100500610,
+      "Entries": [
+        "Axe pole _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100500620,
+      "Entries": [
+        "Axe pole _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100500630,
+      "Entries": [
+        "Axe pole _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100500640,
+      "Entries": [
+        "Axe pole _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100500650,
+      "Entries": [
+        "Axe pole _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100500660,
+      "Entries": [
+        "Axe pole _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100500670,
+      "Entries": [
+        "Axe pole _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100500680,
+      "Entries": [
+        "Axe pole _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100500690,
+      "Entries": [
+        "Axe pole _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100500700,
+      "Entries": [
+        "Axe pole _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100500710,
+      "Entries": [
+        "Axe pole _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100500720,
+      "Entries": [
+        "Axe pole _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100500730,
+      "Entries": [
+        "Axe pole _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100500740,
+      "Entries": [
+        "Axe pole _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100500741,
+      "Entries": [
+        "Axe pole _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100500790,
+      "Entries": [
+        "Axe pole _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100500795,
+      "Entries": [
+        "Axe pole _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100500800,
+      "Entries": [
+        "Axe pole _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100500810,
+      "Entries": [
+        "Axe pole _ left hand _ small 2"
+      ]
+    },
+    {
+      "ID": 100500820,
+      "Entries": [
+        "Axe pole _ left hand _ small 3"
+      ]
+    },
+    {
+      "ID": 100500900,
+      "Entries": [
+        "Axe pole _ guard _mode B"
+      ]
+    },
+    {
+      "ID": 100500901,
+      "Entries": [
+        "Axe pole _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100500910,
+      "Entries": [
+        "Axe pole _ mode B_L small 1"
+      ]
+    },
+    {
+      "ID": 100500930,
+      "Entries": [
+        "Axe pole _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100500931,
+      "Entries": [
+        "Axe pole _ mode B_L large 1_2 Attack"
+      ]
+    },
+    {
+      "ID": 100510000,
+      "Entries": [
+        "Sickle and sword _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100510010,
+      "Entries": [
+        "Sickle and sword _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100510020,
+      "Entries": [
+        "Sickle and sword _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100510030,
+      "Entries": [
+        "Sickle and sword _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100510040,
+      "Entries": [
+        "Sickle and sword _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100510100,
+      "Entries": [
+        "Sickle and sword _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100510110,
+      "Entries": [
+        "Sickle and sword _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100510120,
+      "Entries": [
+        "Sickle and sword _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100510150,
+      "Entries": [
+        "Sickle and sword _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100510170,
+      "Entries": [
+        "Sickle and sword _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100510200,
+      "Entries": [
+        "Sickle and sword _ mode A_Back step small"
+      ]
+    },
+    {
+      "ID": 100510210,
+      "Entries": [
+        "Sickle and sword _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100510220,
+      "Entries": [
+        "Sickle and sword _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100510230,
+      "Entries": [
+        "Sickle and sword _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100510240,
+      "Entries": [
+        "Sickle and sword _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100510250,
+      "Entries": [
+        "Sickle and sword _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100510260,
+      "Entries": [
+        "Sickle and sword _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100510270,
+      "Entries": [
+        "Sickle and sword _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100510280,
+      "Entries": [
+        "Sickle and sword _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100510290,
+      "Entries": [
+        "Sickle and sword _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100510300,
+      "Entries": [
+        "Sickle and sword _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100510310,
+      "Entries": [
+        "Sickle and sword _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100510320,
+      "Entries": [
+        "Sickle and sword _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100510330,
+      "Entries": [
+        "Sickle and sword _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100510340,
+      "Entries": [
+        "Sickle and sword_ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100510341,
+      "Entries": [
+        "Sickle and sword _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100510390,
+      "Entries": [
+        "Sickle and sword _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100510395,
+      "Entries": [
+        "Sickle and sword _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100510400,
+      "Entries": [
+        "Sickle and sword _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100510410,
+      "Entries": [
+        "Sickle and sword _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100510420,
+      "Entries": [
+        "Sickle and sword _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100510430,
+      "Entries": [
+        "Sickle and sword _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100510500,
+      "Entries": [
+        "Sickle and sword _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100510510,
+      "Entries": [
+        "Sickle and sword _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100510520,
+      "Entries": [
+        "Sickle and sword _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100510530,
+      "Entries": [
+        "Sickle and sword _ mode B_ large 4"
+      ]
+    },
+    {
+      "ID": 100510600,
+      "Entries": [
+        "Sickle and sword _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100510610,
+      "Entries": [
+        "Sickle and sword _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100510620,
+      "Entries": [
+        "Sickle and sword _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100510630,
+      "Entries": [
+        "Sickle and sword _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100510640,
+      "Entries": [
+        "Sickle and sword _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100510650,
+      "Entries": [
+        "Sickle and sword _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100510660,
+      "Entries": [
+        "Sickle and sword _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100510670,
+      "Entries": [
+        "Sickle and sword _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100510680,
+      "Entries": [
+        "Sickle and sword _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100510690,
+      "Entries": [
+        "Sickle and sword _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100510700,
+      "Entries": [
+        "Sickle and sword _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100510710,
+      "Entries": [
+        "Sickle and sword _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100510720,
+      "Entries": [
+        "Sickle and sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100510730,
+      "Entries": [
+        "Sickle and sword _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100510740,
+      "Entries": [
+        "Sickle and sword _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100510741,
+      "Entries": [
+        "Sickle and sword _ modeB_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100510790,
+      "Entries": [
+        "Sickle and sword _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100510795,
+      "Entries": [
+        "Sickle and sword _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100510800,
+      "Entries": [
+        "Sickle and sword _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100510810,
+      "Entries": [
+        "Sickle and sword _ left hand _ small 2"
+      ]
+    },
+    {
+      "ID": 100510820,
+      "Entries": [
+        "Sickle and sword _ left hand _ small 3"
+      ]
+    },
+    {
+      "ID": 100510900,
+      "Entries": [
+        "Sickle and sword _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 100510901,
+      "Entries": [
+        "Sickle and sword _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100510910,
+      "Entries": [
+        "Sickle and sword _ mode B_L small 1"
+      ]
+    },
+    {
+      "ID": 100510930,
+      "Entries": [
+        "Sickle and sword _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100510931,
+      "Entries": [
+        "Sickle and sword _ mode B_L large 1_2 Attack"
+      ]
+    },
+    {
+      "ID": 100600800,
+      "Entries": [
+        "Long gun _ Workshop _ shooting"
+      ]
+    },
+    {
+      "ID": 100600810,
+      "Entries": [
+        "Long gun _ Workshop _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 100600960,
+      "Entries": [
+        "Long gun _ Workshop _ Fire spreads"
+      ]
+    },
+    {
+      "ID": 100610800,
+      "Entries": [
+        "Long gun _ Church _ shooting"
+      ]
+    },
+    {
+      "ID": 100610810,
+      "Entries": [
+        "Long gun _Church _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 100610960,
+      "Entries": [
+        "Long gun _ Church _ Fire spreads"
+      ]
+    },
+    {
+      "ID": 100700000,
+      "Entries": [
+        "Nokonata _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100700010,
+      "Entries": [
+        "Nokonata _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100700020,
+      "Entries": [
+        "Nokonata _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100700030,
+      "Entries": [
+        "Nokonata _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100700040,
+      "Entries": [
+        "Nokonata _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100700100,
+      "Entries": [
+        "Nokonata _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100700110,
+      "Entries": [
+        "Nokonata _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100700120,
+      "Entries": [
+        "Nokonata _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100700130,
+      "Entries": [
+        "Nokonata _ mode A_ large 4"
+      ]
+    },
+    {
+      "ID": 100700150,
+      "Entries": [
+        "Nokonata _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100700170,
+      "Entries": [
+        "Nokonata _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100700200,
+      "Entries": [
+        "Nokonata _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100700210,
+      "Entries": [
+        "Nokonata _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100700220,
+      "Entries": [
+        "Nokonata _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100700230,
+      "Entries": [
+        "Nokonata _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100700240,
+      "Entries": [
+        "Nokonata _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100700250,
+      "Entries": [
+        "Nokonata _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100700260,
+      "Entries": [
+        "Nokonata _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100700270,
+      "Entries": [
+        "Nokonata _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100700280,
+      "Entries": [
+        "Nokonata _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100700290,
+      "Entries": [
+        "Nokonata _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100700300,
+      "Entries": [
+        "Nokonata _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100700310,
+      "Entries": [
+        "Nokonata _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100700320,
+      "Entries": [
+        "Nokonata _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100700330,
+      "Entries": [
+        "Nokonata _ modeA_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100700340,
+      "Entries": [
+        "Nokonata _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100700341,
+      "Entries": [
+        "Nokonata _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100700390,
+      "Entries": [
+        "Nokonata _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100700395,
+      "Entries": [
+        "Nokonata _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100700400,
+      "Entries": [
+        "Nokonata _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100700410,
+      "Entries": [
+        "Nokonata _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100700420,
+      "Entries": [
+        "Nokonata _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100700500,
+      "Entries": [
+        "Nokonata _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100700510,
+      "Entries": [
+        "Nokonata _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100700550,
+      "Entries": [
+        "Nokonata _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100700555,
+      "Entries": [
+        "Nokonata _ mode B_ Charge Small _ left 1"
+      ]
+    },
+    {
+      "ID": 100700570,
+      "Entries": [
+        "Nokonata _ mode B_Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100700575,
+      "Entries": [
+        "Nokonata _ mode B_ Large Charge _ left 1"
+      ]
+    },
+    {
+      "ID": 100700580,
+      "Entries": [
+        "Nokonata _ mode B_ Large Charge _ right 2"
+      ]
+    },
+    {
+      "ID": 100700585,
+      "Entries": [
+        "Nokonata _ mode B_ Large Charge _ left 2"
+      ]
+    },
+    {
+      "ID": 100700600,
+      "Entries": [
+        "Nokonata _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100700610,
+      "Entries": [
+        "Nokonata _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100700620,
+      "Entries": [
+        "Nokonata _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100700630,
+      "Entries": [
+        "Nokonata _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100700640,
+      "Entries": [
+        "Nokonata _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100700650,
+      "Entries": [
+        "Nokonata _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100700660,
+      "Entries": [
+        "Nokonata _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100700670,
+      "Entries": [
+        "Nokonata _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100700680,
+      "Entries": [
+        "Nokonata_ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100700690,
+      "Entries": [
+        "Nokonata _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100700700,
+      "Entries": [
+        "Nokonata _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100700710,
+      "Entries": [
+        "Nokonata _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100700720,
+      "Entries": [
+        "Nokonata _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100700730,
+      "Entries": [
+        "Nokonata _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100700740,
+      "Entries": [
+        "Nokonata _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100700741,
+      "Entries": [
+        "Nokonata _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100700790,
+      "Entries": [
+        "Nokonata _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100700795,
+      "Entries": [
+        "Nokonata _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100700800,
+      "Entries": [
+        "Nokonata _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100700900,
+      "Entries": [
+        "Nokonata _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 100700901,
+      "Entries": [
+        "Nokonata _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100700950,
+      "Entries": [
+        "Nokonata _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 100710000,
+      "Entries": [
+        "Saw Spear_ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100710010,
+      "Entries": [
+        "Saw Spear _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100710020,
+      "Entries": [
+        "Saw Spear _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100710030,
+      "Entries": [
+        "Saw Spear _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100710040,
+      "Entries": [
+        "Saw Spear _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100710100,
+      "Entries": [
+        "Saw Spear _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100710110,
+      "Entries": [
+        "Saw Spear _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100710150,
+      "Entries": [
+        "Saw Spear _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100710170,
+      "Entries": [
+        "Saw Spear _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100710200,
+      "Entries": [
+        "Saw Spear _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100710210,
+      "Entries": [
+        "Saw Spear _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100710220,
+      "Entries": [
+        "Saw Spear _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100710230,
+      "Entries": [
+        "Saw Spear _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100710240,
+      "Entries": [
+        "Saw Spear _ mode A_ Small Evasion_ left"
+      ]
+    },
+    {
+      "ID": 100710250,
+      "Entries": [
+        "Saw Spear _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100710260,
+      "Entries": [
+        "Saw Spear _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100710270,
+      "Entries": [
+        "Saw Spear _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100710280,
+      "Entries": [
+        "Saw Spear _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100710290,
+      "Entries": [
+        "Saw Spear _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100710300,
+      "Entries": [
+        "Saw Spear _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100710310,
+      "Entries": [
+        "Saw Spear _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100710320,
+      "Entries": [
+        "Saw Spear _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100710330,
+      "Entries": [
+        "Saw Spear _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100710340,
+      "Entries": [
+        "Saw Spear _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100710341,
+      "Entries": [
+        "Saw Spear _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100710390,
+      "Entries": [
+        "Saw Spear _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100710395,
+      "Entries": [
+        "Saw Spear _ modeA_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100710400,
+      "Entries": [
+        "Saw Spear _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100710410,
+      "Entries": [
+        "Saw Spear _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100710420,
+      "Entries": [
+        "Saw Spear _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100710430,
+      "Entries": [
+        "Saw Spear _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100710500,
+      "Entries": [
+        "Saw Spear _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100710510,
+      "Entries": [
+        "Saw Spear _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100710550,
+      "Entries": [
+        "Saw Spear _ mode B_ Charge Small 1"
+      ]
+    },
+    {
+      "ID": 100710560,
+      "Entries": [
+        "Saw Spear _ mode B_ Charge Small 2"
+      ]
+    },
+    {
+      "ID": 100710570,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Charge 1"
+      ]
+    },
+    {
+      "ID": 100710580,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Charge 2"
+      ]
+    },
+    {
+      "ID": 100710600,
+      "Entries": [
+        "Saw Spear _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100710610,
+      "Entries": [
+        "Saw Spear _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100710620,
+      "Entries": [
+        "Saw Spear _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100710630,
+      "Entries": [
+        "Saw Spear _mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100710640,
+      "Entries": [
+        "Saw Spear _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100710650,
+      "Entries": [
+        "Saw Spear _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100710660,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100710670,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100710680,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100710690,
+      "Entries": [
+        "Saw Spear _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100710700,
+      "Entries": [
+        "Saw Spear _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100710710,
+      "Entries": [
+        "Saw Spear _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100710720,
+      "Entries": [
+        "Saw Spear _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100710730,
+      "Entries": [
+        "Saw Spear _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100710740,
+      "Entries": [
+        "Saw Spear _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100710741,
+      "Entries": [
+        "Saw Spear _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100710790,
+      "Entries": [
+        "Saw Spear _ mode B_ Mode change attack_ right"
+      ]
+    },
+    {
+      "ID": 100710795,
+      "Entries": [
+        "Saw Spear _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100710800,
+      "Entries": [
+        "Saw Spear _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100710900,
+      "Entries": [
+        "Saw Spear _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 100710901,
+      "Entries": [
+        "Saw Spear _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100800000,
+      "Entries": [
+        "Key case _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100800010,
+      "Entries": [
+        "Key case _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100800020,
+      "Entries": [
+        "Key case _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100800030,
+      "Entries": [
+        "Key case _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100800040,
+      "Entries": [
+        "Key case _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100800100,
+      "Entries": [
+        "Key case _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100800110,
+      "Entries": [
+        "Key case _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100800120,
+      "Entries": [
+        "Key case _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100800150,
+      "Entries": [
+        "Key case _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100800170,
+      "Entries": [
+        "Key case _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100800200,
+      "Entries": [
+        "Key case _mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100800210,
+      "Entries": [
+        "Key case _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100800220,
+      "Entries": [
+        "Key case _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100800230,
+      "Entries": [
+        "Key case _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100800240,
+      "Entries": [
+        "Key case _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100800250,
+      "Entries": [
+        "Key case _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100800260,
+      "Entries": [
+        "Key case _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100800270,
+      "Entries": [
+        "Key case _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100800280,
+      "Entries": [
+        "Key case _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100800290,
+      "Entries": [
+        "Key case _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100800300,
+      "Entries": [
+        "Key case _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100800310,
+      "Entries": [
+        "Key case _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100800320,
+      "Entries": [
+        "Key case _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100800330,
+      "Entries": [
+        "Key case _ mode A_Dash Large"
+      ]
+    },
+    {
+      "ID": 100800340,
+      "Entries": [
+        "Key case _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100800341,
+      "Entries": [
+        "Key case _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100800380,
+      "Entries": [
+        "Key case _ mode A_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100800385,
+      "Entries": [
+        "Key case _ mode A_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100800390,
+      "Entries": [
+        "Key case _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100800395,
+      "Entries": [
+        "Key case _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100800400,
+      "Entries": [
+        "Key case _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100800410,
+      "Entries": [
+        "Key case _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100800420,
+      "Entries": [
+        "Key case _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100800430,
+      "Entries": [
+        "Key case _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100800500,
+      "Entries": [
+        "Key case _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100800510,
+      "Entries": [
+        "Key case _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100800520,
+      "Entries": [
+        "Key case _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100800530,
+      "Entries": [
+        "Key case _ mode B_large 4"
+      ]
+    },
+    {
+      "ID": 100800596,
+      "Entries": [
+        "Key case _ mode A_ shock wave _DL2"
+      ]
+    },
+    {
+      "ID": 100800597,
+      "Entries": [
+        "Key case _ mode B_ shock wave _DL3"
+      ]
+    },
+    {
+      "ID": 100800598,
+      "Entries": [
+        "Key case _ mode B_ shock wave _DL2"
+      ]
+    },
+    {
+      "ID": 100800599,
+      "Entries": [
+        "Key case _ mode B_ shock wave _DL1"
+      ]
+    },
+    {
+      "ID": 100800600,
+      "Entries": [
+        "Key case _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100800610,
+      "Entries": [
+        "Key case _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100800620,
+      "Entries": [
+        "Key case _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100800630,
+      "Entries": [
+        "Key case _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100800640,
+      "Entries": [
+        "Key case _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100800650,
+      "Entries": [
+        "Key case _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100800660,
+      "Entries": [
+        "Key case _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100800670,
+      "Entries": [
+        "Key case _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100800680,
+      "Entries": [
+        "Key case _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100800690,
+      "Entries": [
+        "Key case _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100800700,
+      "Entries": [
+        "Key case _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100800710,
+      "Entries": [
+        "Key case _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100800720,
+      "Entries": [
+        "Key case _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100800730,
+      "Entries": [
+        "Key case _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100800740,
+      "Entries": [
+        "Key case _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100800741,
+      "Entries": [
+        "Key case _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100800780,
+      "Entries": [
+        "Key case _ mode B_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100800785,
+      "Entries": [
+        "Key case _ mode B_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100800790,
+      "Entries": [
+        "Key case _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100800795,
+      "Entries": [
+        "Key case _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100800800,
+      "Entries": [
+        "Key case _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100800901,
+      "Entries": [
+        "Key case _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100800910,
+      "Entries": [
+        "Key case _ mode B_L small1"
+      ]
+    },
+    {
+      "ID": 100800930,
+      "Entries": [
+        "Key case _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100800940,
+      "Entries": [
+        "Key case _ mode B_L large 2"
+      ]
+    },
+    {
+      "ID": 100810000,
+      "Entries": [
+        "Hammer Sword _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100810010,
+      "Entries": [
+        "Hammer Sword _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100810020,
+      "Entries": [
+        "Hammer Sword _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100810030,
+      "Entries": [
+        "Hammer Sword _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100810040,
+      "Entries": [
+        "Hammer Sword _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100810100,
+      "Entries": [
+        "Hammer Sword _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100810110,
+      "Entries": [
+        "Hammer Sword _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100810120,
+      "Entries": [
+        "Hammer Sword _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 100810150,
+      "Entries": [
+        "Hammer Sword _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100810170,
+      "Entries": [
+        "Hammer Sword _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100810200,
+      "Entries": [
+        "Hammer Sword _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100810210,
+      "Entries": [
+        "Hammer Sword _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100810220,
+      "Entries": [
+        "Hammer Sword _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100810230,
+      "Entries": [
+        "Hammer Sword _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100810240,
+      "Entries": [
+        "Hammer Sword _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100810250,
+      "Entries": [
+        "Hammer Sword _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100810260,
+      "Entries": [
+        "Hammer Sword _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100810270,
+      "Entries": [
+        "Hammer Sword _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100810280,
+      "Entries": [
+        "Hammer Sword _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100810290,
+      "Entries": [
+        "Hammer Sword _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100810300,
+      "Entries": [
+        "Hammer Sword _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100810310,
+      "Entries": [
+        "Hammer Sword _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100810320,
+      "Entries": [
+        "Hammer Sword _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100810330,
+      "Entries": [
+        "Hammer Sword _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100810340,
+      "Entries": [
+        "Hammer Sword _ mode A_ Falling Attack _Falling"
+      ]
+    },
+    {
+      "ID": 100810341,
+      "Entries": [
+        "Hammer Sword _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100810380,
+      "Entries": [
+        "Hammer Sword _ mode A_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100810385,
+      "Entries": [
+        "Hammer Sword _ mode A_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100810390,
+      "Entries": [
+        "Hammer Sword _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100810395,
+      "Entries": [
+        "Hammer Sword _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100810400,
+      "Entries": [
+        "Hammer Sword _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100810410,
+      "Entries": [
+        "Hammer Sword _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100810420,
+      "Entries": [
+        "Hammer Sword _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100810430,
+      "Entries": [
+        "Hammer Sword _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100810500,
+      "Entries": [
+        "Hammer Sword _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100810510,
+      "Entries": [
+        "Hammer Sword _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100810520,
+      "Entries": [
+        "Hammer Sword _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100810530,
+      "Entries": [
+        "Hammer Sword _ mode B_ large 4"
+      ]
+    },
+    {
+      "ID": 100810600,
+      "Entries": [
+        "Hammer Sword _ modeB_ Back step small"
+      ]
+    },
+    {
+      "ID": 100810610,
+      "Entries": [
+        "Hammer Sword _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100810620,
+      "Entries": [
+        "Hammer Sword _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100810630,
+      "Entries": [
+        "Hammer Sword _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100810640,
+      "Entries": [
+        "Hammer Sword _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100810650,
+      "Entries": [
+        "Hammer Sword _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100810660,
+      "Entries": [
+        "Hammer Sword _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100810670,
+      "Entries": [
+        "Hammer Sword _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100810680,
+      "Entries": [
+        "Hammer Sword _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100810690,
+      "Entries": [
+        "Hammer Sword _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100810700,
+      "Entries": [
+        "Hammer Sword _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100810710,
+      "Entries": [
+        "Hammer Sword _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100810720,
+      "Entries": [
+        "Hammer Sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100810730,
+      "Entries": [
+        "Hammer Sword _ modeB_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100810740,
+      "Entries": [
+        "Hammer Sword _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100810741,
+      "Entries": [
+        "Hammer Sword _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100810780,
+      "Entries": [
+        "Hammer Sword _ mode B_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100810785,
+      "Entries": [
+        "Hammer Sword _ mode B_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100810790,
+      "Entries": [
+        "Hammer Sword _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100810795,
+      "Entries": [
+        "Hammer Sword _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100810800,
+      "Entries": [
+        "Hammer Sword _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100810901,
+      "Entries": [
+        "Hammer Sword _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100810910,
+      "Entries": [
+        "Hammer Sword _ mode B_L small 1"
+      ]
+    },
+    {
+      "ID": 100810930,
+      "Entries": [
+        "Hammer Sword _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100810940,
+      "Entries": [
+        "Hammer Sword _ mode B_L large 2"
+      ]
+    },
+    {
+      "ID": 100900000,
+      "Entries": [
+        "Fist Beast _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 100900010,
+      "Entries": [
+        "Fist Beast _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 100900020,
+      "Entries": [
+        "Fist Beast_ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 100900030,
+      "Entries": [
+        "Fist Beast _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 100900040,
+      "Entries": [
+        "Fist Beast _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 100900100,
+      "Entries": [
+        "Fist Beast _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 100900110,
+      "Entries": [
+        "Fist Beast _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 100900150,
+      "Entries": [
+        "Fist Beast _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 100900170,
+      "Entries": [
+        "Fist Beast _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 100900200,
+      "Entries": [
+        "Fist Beast _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 100900210,
+      "Entries": [
+        "Fist Beast _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100900220,
+      "Entries": [
+        "Fist Beast _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100900230,
+      "Entries": [
+        "Fist Beast _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100900240,
+      "Entries": [
+        "Fist Beast _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100900250,
+      "Entries": [
+        "Fist Beast _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100900260,
+      "Entries": [
+        "Fist Beast _ mode A_ Large Evasion _before"
+      ]
+    },
+    {
+      "ID": 100900270,
+      "Entries": [
+        "Fist Beast _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100900280,
+      "Entries": [
+        "Fist Beast _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100900290,
+      "Entries": [
+        "Fist Beast _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100900300,
+      "Entries": [
+        "Fist Beast _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 100900310,
+      "Entries": [
+        "Fist Beast _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 100900320,
+      "Entries": [
+        "Fist Beast _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100900330,
+      "Entries": [
+        "Fist Beast _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100900340,
+      "Entries": [
+        "Fist Beast _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100900341,
+      "Entries": [
+        "Fist Beast _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100900400,
+      "Entries": [
+        "Fist Beast _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 100900410,
+      "Entries": [
+        "Fist Beast _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 100900420,
+      "Entries": [
+        "Fist Beast _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 100900430,
+      "Entries": [
+        "Fist Beast _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 100900440,
+      "Entries": [
+        "Fist Beast _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 100900450,
+      "Entries": [
+        "Fist Beast _mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 100900460,
+      "Entries": [
+        "Fist Beast _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 100900470,
+      "Entries": [
+        "Fist Beast _ mode B_ small 8"
+      ]
+    },
+    {
+      "ID": 100900500,
+      "Entries": [
+        "Fist Beast _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 100900510,
+      "Entries": [
+        "Fist Beast _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 100900520,
+      "Entries": [
+        "Fist Beast _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 100900599,
+      "Entries": [
+        "Fist Beast _ mode B_ shock wave"
+      ]
+    },
+    {
+      "ID": 100900600,
+      "Entries": [
+        "Fist Beast _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 100900610,
+      "Entries": [
+        "Fist Beast _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 100900620,
+      "Entries": [
+        "Fist Beast _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100900630,
+      "Entries": [
+        "Fist Beast _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100900640,
+      "Entries": [
+        "Fist Beast _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 100900650,
+      "Entries": [
+        "Fist Beast _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 100900660,
+      "Entries": [
+        "Fist Beast _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 100900670,
+      "Entries": [
+        "Fist Beast _ mode B_Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 100900680,
+      "Entries": [
+        "Fist Beast _ mode B_ Large Evasion _ Left (right hand)"
+      ]
+    },
+    {
+      "ID": 100900681,
+      "Entries": [
+        "Fist Beast _ mode B_ Large Evasion _ Left (left hand)"
+      ]
+    },
+    {
+      "ID": 100900690,
+      "Entries": [
+        "Fist Beast _ mode B_ Large Evasion _ Right (left hand)"
+      ]
+    },
+    {
+      "ID": 100900691,
+      "Entries": [
+        "Fist Beast _ mode B_ Large Evasion _ Right (right hand)"
+      ]
+    },
+    {
+      "ID": 100900700,
+      "Entries": [
+        "Fist Beast _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 100900710,
+      "Entries": [
+        "Fist Beast _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 100900720,
+      "Entries": [
+        "Fist Beast _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 100900730,
+      "Entries": [
+        "Fist Beast _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 100900740,
+      "Entries": [
+        "Fist Beast _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 100900741,
+      "Entries": [
+        "Fist Beast _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 100900780,
+      "Entries": [
+        "Fist Beast _ mode B_ Unsheathing Small Attack"
+      ]
+    },
+    {
+      "ID": 100900785,
+      "Entries": [
+        "Fist Beast _ mode B_ Sword Attack"
+      ]
+    },
+    {
+      "ID": 100900790,
+      "Entries": [
+        "Fist Beast _ mode B_Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 100900795,
+      "Entries": [
+        "Fist Beast _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 100900800,
+      "Entries": [
+        "Fist Beast _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 100900901,
+      "Entries": [
+        "Fist Beast _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 100900910,
+      "Entries": [
+        "Fist Beast _ mode B_L small 1"
+      ]
+    },
+    {
+      "ID": 100900930,
+      "Entries": [
+        "Fist Beast _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 100900940,
+      "Entries": [
+        "Fist Beast _ mode B_L large 2"
+      ]
+    },
+    {
+      "ID": 101000000,
+      "Entries": [
+        "Gunlance _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 101000010,
+      "Entries": [
+        "Gunlance _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 101000020,
+      "Entries": [
+        "Gunlance _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 101000030,
+      "Entries": [
+        "Gunlance _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 101000040,
+      "Entries": [
+        "Gunlance _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 101000100,
+      "Entries": [
+        "Gunlance _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 101000110,
+      "Entries": [
+        "Gunlance _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 101000120,
+      "Entries": [
+        "Gunlance _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 101000150,
+      "Entries": [
+        "Gunlance _ mode A_Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 101000170,
+      "Entries": [
+        "Gunlance _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 101000200,
+      "Entries": [
+        "Gunlance _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 101000210,
+      "Entries": [
+        "Gunlance _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101000220,
+      "Entries": [
+        "Gunlance _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101000230,
+      "Entries": [
+        "Gunlance _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101000240,
+      "Entries": [
+        "Gunlance _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101000250,
+      "Entries": [
+        "Gunlance _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101000260,
+      "Entries": [
+        "Gunlance _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101000270,
+      "Entries": [
+        "Gunlance _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101000280,
+      "Entries": [
+        "Gunlance _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101000290,
+      "Entries": [
+        "Gunlance _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101000300,
+      "Entries": [
+        "Gunlance _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 101000310,
+      "Entries": [
+        "Gunlance _ modeA_ Jump"
+      ]
+    },
+    {
+      "ID": 101000320,
+      "Entries": [
+        "Gunlance _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101000330,
+      "Entries": [
+        "Gunlance _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101000340,
+      "Entries": [
+        "Gunlance _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101000341,
+      "Entries": [
+        "Gunlance _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101000390,
+      "Entries": [
+        "Gunlance _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101000395,
+      "Entries": [
+        "Gunlance _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101000400,
+      "Entries": [
+        "Gunlance _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 101000410,
+      "Entries": [
+        "Gunlance _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 101000420,
+      "Entries": [
+        "Gunlance _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 101000430,
+      "Entries": [
+        "Gunlance _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 101000440,
+      "Entries": [
+        "Gunlance _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 101000450,
+      "Entries": [
+        "Gunlance _ mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 101000460,
+      "Entries": [
+        "Gunlance _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 101000470,
+      "Entries": [
+        "Gunlance _ mode B_small 8"
+      ]
+    },
+    {
+      "ID": 101000500,
+      "Entries": [
+        "Gunlance _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 101000510,
+      "Entries": [
+        "Gunlance _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 101000520,
+      "Entries": [
+        "Gunlance _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 101000600,
+      "Entries": [
+        "Gunlance _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 101000610,
+      "Entries": [
+        "Gunlance _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101000620,
+      "Entries": [
+        "Gunlance _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101000630,
+      "Entries": [
+        "Gunlance _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101000640,
+      "Entries": [
+        "Gunlance _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101000650,
+      "Entries": [
+        "Gunlance _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101000660,
+      "Entries": [
+        "Gunlance _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101000670,
+      "Entries": [
+        "Gunlance _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101000680,
+      "Entries": [
+        "Gunlance _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101000690,
+      "Entries": [
+        "Gunlance _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101000700,
+      "Entries": [
+        "Gunlance _mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 101000710,
+      "Entries": [
+        "Gunlance _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 101000720,
+      "Entries": [
+        "Gunlance _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101000730,
+      "Entries": [
+        "Gunlance _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101000740,
+      "Entries": [
+        "Gunlance _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101000741,
+      "Entries": [
+        "Gunlance _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101000790,
+      "Entries": [
+        "Gunlance _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101000795,
+      "Entries": [
+        "Gunlance _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101000800,
+      "Entries": [
+        "Gunlance _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 101000901,
+      "Entries": [
+        "Gunlance _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 101000950,
+      "Entries": [
+        "Gunlance _ mode B_ Charge Small"
+      ]
+    },
+    {
+      "ID": 101000970,
+      "Entries": [
+        "Gunlance _ mode B_ Large Charge"
+      ]
+    },
+    {
+      "ID": 101010000,
+      "Entries": [
+        "bayonet _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 101010010,
+      "Entries": [
+        "bayonet _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 101010020,
+      "Entries": [
+        "bayonet _ mode A_small 3"
+      ]
+    },
+    {
+      "ID": 101010030,
+      "Entries": [
+        "bayonet _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 101010100,
+      "Entries": [
+        "bayonet _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 101010110,
+      "Entries": [
+        "bayonet _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 101010150,
+      "Entries": [
+        "bayonet _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 101010170,
+      "Entries": [
+        "bayonet _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 101010200,
+      "Entries": [
+        "bayonet _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 101010210,
+      "Entries": [
+        "bayonet _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101010220,
+      "Entries": [
+        "bayonet _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101010230,
+      "Entries": [
+        "bayonet _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101010240,
+      "Entries": [
+        "bayonet _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101010250,
+      "Entries": [
+        "bayonet _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101010260,
+      "Entries": [
+        "bayonet _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101010270,
+      "Entries": [
+        "bayonet _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101010280,
+      "Entries": [
+        "bayonet _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101010290,
+      "Entries": [
+        "bayonet _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101010300,
+      "Entries": [
+        "bayonet _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 101010310,
+      "Entries": [
+        "bayonet _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 101010320,
+      "Entries": [
+        "bayonet _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101010330,
+      "Entries": [
+        "bayonet _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101010340,
+      "Entries": [
+        "bayonet _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101010341,
+      "Entries": [
+        "bayonet _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101010390,
+      "Entries": [
+        "bayonet _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101010395,
+      "Entries": [
+        "bayonet _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101010400,
+      "Entries": [
+        "bayonet _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 101010410,
+      "Entries": [
+        "bayonet _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 101010420,
+      "Entries": [
+        "bayonet _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 101010430,
+      "Entries": [
+        "bayonet _ modeB_ small 4"
+      ]
+    },
+    {
+      "ID": 101010500,
+      "Entries": [
+        "bayonet _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 101010510,
+      "Entries": [
+        "bayonet _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 101010520,
+      "Entries": [
+        "bayonet _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 101010600,
+      "Entries": [
+        "bayonet _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 101010610,
+      "Entries": [
+        "bayonet _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101010620,
+      "Entries": [
+        "bayonet _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101010630,
+      "Entries": [
+        "bayonet _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101010640,
+      "Entries": [
+        "bayonet _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101010650,
+      "Entries": [
+        "bayonet _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101010660,
+      "Entries": [
+        "bayonet _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101010670,
+      "Entries": [
+        "bayonet _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101010680,
+      "Entries": [
+        "bayonet _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101010690,
+      "Entries": [
+        "bayonet _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101010700,
+      "Entries": [
+        "bayonet_ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 101010710,
+      "Entries": [
+        "bayonet _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 101010720,
+      "Entries": [
+        "bayonet _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101010730,
+      "Entries": [
+        "bayonet _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101010740,
+      "Entries": [
+        "bayonet _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101010741,
+      "Entries": [
+        "bayonet _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101010790,
+      "Entries": [
+        "bayonet _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101010795,
+      "Entries": [
+        "bayonet _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101010800,
+      "Entries": [
+        "bayonet _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 101010901,
+      "Entries": [
+        "bayonet _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 101010930,
+      "Entries": [
+        "bayonet _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 101100000,
+      "Entries": [
+        "Pile Bunker _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 101100010,
+      "Entries": [
+        "Pile Bunker _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 101100020,
+      "Entries": [
+        "Pile Bunker _ mode A_small 3"
+      ]
+    },
+    {
+      "ID": 101100030,
+      "Entries": [
+        "Pile Bunker _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 101100040,
+      "Entries": [
+        "Pile Bunker _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 101100100,
+      "Entries": [
+        "Pile Bunker _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 101100110,
+      "Entries": [
+        "Pile Bunker _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 101100120,
+      "Entries": [
+        "Pile Bunker _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 101100130,
+      "Entries": [
+        "Pile Bunker _ mode A_ large 4"
+      ]
+    },
+    {
+      "ID": 101100140,
+      "Entries": [
+        "Pile Bunker _ mode A_ large 5"
+      ]
+    },
+    {
+      "ID": 101100150,
+      "Entries": [
+        "Pile Bunker _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 101100170,
+      "Entries": [
+        "Pile Bunker _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 101100200,
+      "Entries": [
+        "Pile Bunker _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 101100210,
+      "Entries": [
+        "Pile Bunker _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101100220,
+      "Entries": [
+        "Pile Bunker _ mode A_Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101100230,
+      "Entries": [
+        "Pile Bunker _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101100240,
+      "Entries": [
+        "Pile Bunker _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101100250,
+      "Entries": [
+        "Pile Bunker _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101100260,
+      "Entries": [
+        "Pile Bunker _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101100270,
+      "Entries": [
+        "Pile Bunker _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101100280,
+      "Entries": [
+        "Pile Bunker _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101100290,
+      "Entries": [
+        "Pile Bunker _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101100300,
+      "Entries": [
+        "Pile Bunker _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 101100310,
+      "Entries": [
+        "Pile Bunker _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 101100320,
+      "Entries": [
+        "Pile Bunker _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101100330,
+      "Entries": [
+        "Pile Bunker _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101100340,
+      "Entries": [
+        "Pile Bunker _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101100341,
+      "Entries": [
+        "Pile Bunker _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101100390,
+      "Entries": [
+        "Pile Bunker _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101100395,
+      "Entries": [
+        "Pile Bunker _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101100400,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 101100410,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 101100420,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 101100430,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 101100440,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 101100450,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 101100460,
+      "Entries": [
+        "Pile Bunker _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 101100470,
+      "Entries": [
+        "Pile Bunker _mode B_ small 8"
+      ]
+    },
+    {
+      "ID": 101100500,
+      "Entries": [
+        "Pile Bunker _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 101100510,
+      "Entries": [
+        "Pile Bunker _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 101100600,
+      "Entries": [
+        "Pile Bunker _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 101100610,
+      "Entries": [
+        "Pile Bunker _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101100620,
+      "Entries": [
+        "Pile Bunker _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101100630,
+      "Entries": [
+        "Pile Bunker _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101100640,
+      "Entries": [
+        "Pile Bunker _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101100650,
+      "Entries": [
+        "Pile Bunker _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101100660,
+      "Entries": [
+        "Pile Bunker _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101100670,
+      "Entries": [
+        "Pile Bunker _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101100680,
+      "Entries": [
+        "Pile Bunker _ mode B_Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101100690,
+      "Entries": [
+        "Pile Bunker _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101100700,
+      "Entries": [
+        "Pile Bunker _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 101100710,
+      "Entries": [
+        "Pile Bunker _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 101100720,
+      "Entries": [
+        "Pile Bunker _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101100730,
+      "Entries": [
+        "Pile Bunker _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101100740,
+      "Entries": [
+        "Pile Bunker _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101100741,
+      "Entries": [
+        "Pile Bunker _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101100790,
+      "Entries": [
+        "Pile Bunker _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101100795,
+      "Entries": [
+        "Pile Bunker _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101100800,
+      "Entries": [
+        "Pile Bunker _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 101100901,
+      "Entries": [
+        "Pile Bunker _ guard _left hand"
+      ]
+    },
+    {
+      "ID": 101100910,
+      "Entries": [
+        "Pile Bunker _ Charge attack activated"
+      ]
+    },
+    {
+      "ID": 101100930,
+      "Entries": [
+        "Pile Bunker _ Charge attack activation (strong)"
+      ]
+    },
+    {
+      "ID": 101200000,
+      "Entries": [
+        "wheel _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 101200010,
+      "Entries": [
+        "wheel _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 101200020,
+      "Entries": [
+        "wheel _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 101200030,
+      "Entries": [
+        "wheel _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 101200040,
+      "Entries": [
+        "wheel _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 101200100,
+      "Entries": [
+        "wheel _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 101200110,
+      "Entries": [
+        "wheel _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 101200120,
+      "Entries": [
+        "wheel _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 101200150,
+      "Entries": [
+        "wheel _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 101200170,
+      "Entries": [
+        "wheel _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 101200200,
+      "Entries": [
+        "wheel _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 101200210,
+      "Entries": [
+        "wheel _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101200220,
+      "Entries": [
+        "wheel _ modeA_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101200230,
+      "Entries": [
+        "wheel _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101200240,
+      "Entries": [
+        "wheel _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101200250,
+      "Entries": [
+        "wheel _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101200260,
+      "Entries": [
+        "wheel _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101200270,
+      "Entries": [
+        "wheel _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101200280,
+      "Entries": [
+        "wheel _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101200290,
+      "Entries": [
+        "wheel _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101200300,
+      "Entries": [
+        "wheel _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 101200310,
+      "Entries": [
+        "wheel _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 101200320,
+      "Entries": [
+        "wheel _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101200330,
+      "Entries": [
+        "wheel _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101200340,
+      "Entries": [
+        "wheel _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101200341,
+      "Entries": [
+        "wheel _ mode A_ Falling Attack _Landing"
+      ]
+    },
+    {
+      "ID": 101200390,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ right _ first"
+      ]
+    },
+    {
+      "ID": 101200391,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ right _ During"
+      ]
+    },
+    {
+      "ID": 101200392,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ right _ last"
+      ]
+    },
+    {
+      "ID": 101200395,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ left _ first"
+      ]
+    },
+    {
+      "ID": 101200396,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ left _ During"
+      ]
+    },
+    {
+      "ID": 101200397,
+      "Entries": [
+        "wheel _ mode A_ Mode change attack _ left _ last"
+      ]
+    },
+    {
+      "ID": 101200400,
+      "Entries": [
+        "wheel _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 101200410,
+      "Entries": [
+        "wheel _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 101200420,
+      "Entries": [
+        "wheel _ mode B_ small 3_ first"
+      ]
+    },
+    {
+      "ID": 101200421,
+      "Entries": [
+        "wheel _ mode B_ small 3_ During"
+      ]
+    },
+    {
+      "ID": 101200422,
+      "Entries": [
+        "wheel_ mode B_ small 3_ last"
+      ]
+    },
+    {
+      "ID": 101200430,
+      "Entries": [
+        "wheel _ mode B_ small 4_ first"
+      ]
+    },
+    {
+      "ID": 101200431,
+      "Entries": [
+        "wheel _ mode B_ small 4_ During"
+      ]
+    },
+    {
+      "ID": 101200432,
+      "Entries": [
+        "wheel _ mode B_ small 4_ last"
+      ]
+    },
+    {
+      "ID": 101200440,
+      "Entries": [
+        "wheel _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 101200450,
+      "Entries": [
+        "wheel _ mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 101200460,
+      "Entries": [
+        "wheel _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 101200470,
+      "Entries": [
+        "wheel _ mode B_ small 8"
+      ]
+    },
+    {
+      "ID": 101200500,
+      "Entries": [
+        "wheel _ mode B_ large 1_ first"
+      ]
+    },
+    {
+      "ID": 101200501,
+      "Entries": [
+        "wheel _ mode B_ large 1_ During"
+      ]
+    },
+    {
+      "ID": 101200502,
+      "Entries": [
+        "wheel _ mode B_ large 1_ last"
+      ]
+    },
+    {
+      "ID": 101200510,
+      "Entries": [
+        "wheel _ mode B_ large 2_ first"
+      ]
+    },
+    {
+      "ID": 101200511,
+      "Entries": [
+        "wheel _ mode B_ large 2_ During"
+      ]
+    },
+    {
+      "ID": 101200512,
+      "Entries": [
+        "wheel _ mode B_ large 2_ last"
+      ]
+    },
+    {
+      "ID": 101200520,
+      "Entries": [
+        "wheel _ mode B_ large 3_ first"
+      ]
+    },
+    {
+      "ID": 101200521,
+      "Entries": [
+        "wheel _ mode B_ large 3_ During"
+      ]
+    },
+    {
+      "ID": 101200522,
+      "Entries": [
+        "wheel _ mode B_ large 3_ last"
+      ]
+    },
+    {
+      "ID": 101200600,
+      "Entries": [
+        "wheel _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 101200610,
+      "Entries": [
+        "wheel _ mode B_ Back Step Large _ first"
+      ]
+    },
+    {
+      "ID": 101200611,
+      "Entries": [
+        "wheel _ mode B_ Back Step Large _ During"
+      ]
+    },
+    {
+      "ID": 101200612,
+      "Entries": [
+        "wheel _ mode B_ Back Step Large _ last"
+      ]
+    },
+    {
+      "ID": 101200620,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ before _ first"
+      ]
+    },
+    {
+      "ID": 101200621,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ before _ During"
+      ]
+    },
+    {
+      "ID": 101200622,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ before _ last"
+      ]
+    },
+    {
+      "ID": 101200630,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ rear _ first"
+      ]
+    },
+    {
+      "ID": 101200631,
+      "Entries": [
+        "wheel _mode B_ Small Evasion _ rear _ During"
+      ]
+    },
+    {
+      "ID": 101200632,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ rear _ last"
+      ]
+    },
+    {
+      "ID": 101200640,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101200650,
+      "Entries": [
+        "wheel _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101200660,
+      "Entries": [
+        "wheel _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101200670,
+      "Entries": [
+        "wheel _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101200680,
+      "Entries": [
+        "wheel _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101200690,
+      "Entries": [
+        "wheel _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101200700,
+      "Entries": [
+        "wheel _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 101200710,
+      "Entries": [
+        "wheel _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 101200720,
+      "Entries": [
+        "wheel _ mode B_ Dash Small _ first"
+      ]
+    },
+    {
+      "ID": 101200721,
+      "Entries": [
+        "wheel _ mode B_ Dash Small _ During"
+      ]
+    },
+    {
+      "ID": 101200722,
+      "Entries": [
+        "wheel _ mode B_Dash Small _ last"
+      ]
+    },
+    {
+      "ID": 101200730,
+      "Entries": [
+        "wheel _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101200740,
+      "Entries": [
+        "wheel _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101200741,
+      "Entries": [
+        "wheel _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101200790,
+      "Entries": [
+        "wheel _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101200795,
+      "Entries": [
+        "wheel _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101200800,
+      "Entries": [
+        "wheel _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 101200901,
+      "Entries": [
+        "wheel _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 101200930,
+      "Entries": [
+        "wheel _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 101200940,
+      "Entries": [
+        "wheel _ mode B_L large 2"
+      ]
+    },
+    {
+      "ID": 101200950,
+      "Entries": [
+        "wheel _ mode B_L large 3"
+      ]
+    },
+    {
+      "ID": 101200960,
+      "Entries": [
+        "wheel _ mode B_L large 4"
+      ]
+    },
+    {
+      "ID": 101200970,
+      "Entries": [
+        "wheel _ mode B_L large 5"
+      ]
+    },
+    {
+      "ID": 101300000,
+      "Entries": [
+        "Explosive Hammer _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 101300010,
+      "Entries": [
+        "Explosive Hammer _mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 101300020,
+      "Entries": [
+        "Explosive Hammer _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 101300030,
+      "Entries": [
+        "Explosive Hammer _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 101300040,
+      "Entries": [
+        "Explosive Hammer _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 101300100,
+      "Entries": [
+        "Explosive Hammer _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 101300110,
+      "Entries": [
+        "Explosive Hammer _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 101300120,
+      "Entries": [
+        "Explosive Hammer _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 101300150,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 101300170,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 101300190,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Electrostatic charge"
+      ]
+    },
+    {
+      "ID": 101300200,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 101300210,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101300220,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101300230,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101300240,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101300250,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101300260,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101300270,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101300280,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101300290,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101300300,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 101300310,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 101300320,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101300330,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101300340,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101300341,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101300390,
+      "Entries": [
+        "Explosive Hammer _ mode A_Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 101300395,
+      "Entries": [
+        "Explosive Hammer _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 101300400,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 101300410,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 101300420,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 101300430,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 101300440,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 101300450,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 6"
+      ]
+    },
+    {
+      "ID": 101300460,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 7"
+      ]
+    },
+    {
+      "ID": 101300470,
+      "Entries": [
+        "Explosive Hammer _ mode B_ small 8"
+      ]
+    },
+    {
+      "ID": 101300500,
+      "Entries": [
+        "Explosive Hammer _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 101300510,
+      "Entries": [
+        "Explosive Hammer _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 101300600,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 101300610,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 101300620,
+      "Entries": [
+        "Explosive Hammer _ modeB_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101300630,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101300640,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101300650,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101300660,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 101300670,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 101300680,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 101300690,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 101300700,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 101300710,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 101300720,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 101300730,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 101300740,
+      "Entries": [
+        "Explosive Hammer _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 101300741,
+      "Entries": [
+        "Explosive Hammer _mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 101300800,
+      "Entries": [
+        "Explosive Hammer _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 101300901,
+      "Entries": [
+        "Explosive Hammer _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 101300930,
+      "Entries": [
+        "Explosive Hammer _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 101400800,
+      "Entries": [
+        "Pistol _ shooting"
+      ]
+    },
+    {
+      "ID": 101400810,
+      "Entries": [
+        "Pistol _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 101400960,
+      "Entries": [
+        "Pistol __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 101410800,
+      "Entries": [
+        "Church pistol _ shooting"
+      ]
+    },
+    {
+      "ID": 101410810,
+      "Entries": [
+        "Church pistol _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 101410960,
+      "Entries": [
+        "Church pistol __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 101500800,
+      "Entries": [
+        "Large canister _ shooting"
+      ]
+    },
+    {
+      "ID": 101500810,
+      "Entries": [
+        "Large canister _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 101500960,
+      "Entries": [
+        "Large canister __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 101800000,
+      "Entries": [
+        "Sprayer _ For use in stance"
+      ]
+    },
+    {
+      "ID": 101800800,
+      "Entries": [
+        "Sprayer"
+      ]
+    },
+    {
+      "ID": 101800810,
+      "Entries": [
+        "Sprayer (special)"
+      ]
+    },
+    {
+      "ID": 101800960,
+      "Entries": [
+        "Sprayer __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 101810000,
+      "Entries": [
+        "Sprayer _ Flamethrower _ For use in stance"
+      ]
+    },
+    {
+      "ID": 101810800,
+      "Entries": [
+        "Sprayer _ Flamethrower"
+      ]
+    },
+    {
+      "ID": 101810810,
+      "Entries": [
+        "Sprayer _ Flamethrower (special)"
+      ]
+    },
+    {
+      "ID": 101810960,
+      "Entries": [
+        "Sprayer _ Flamethrower __Fire spreads"
+      ]
+    },
+    {
+      "ID": 102000000,
+      "Entries": [
+        "torch _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102000010,
+      "Entries": [
+        "torch _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102000020,
+      "Entries": [
+        "torch _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102000100,
+      "Entries": [
+        "torch _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 102000110,
+      "Entries": [
+        "torch _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 102000220,
+      "Entries": [
+        "torch _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102000300,
+      "Entries": [
+        "torch _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 102000310,
+      "Entries": [
+        "torch _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102000320,
+      "Entries": [
+        "torch _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102000321,
+      "Entries": [
+        "torch _ mode A_ Dash Small _ addition 1"
+      ]
+    },
+    {
+      "ID": 102000340,
+      "Entries": [
+        "torch _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102000341,
+      "Entries": [
+        "torch _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102000400,
+      "Entries": [
+        "torch _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102000410,
+      "Entries": [
+        "torch _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102000420,
+      "Entries": [
+        "torch _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102000500,
+      "Entries": [
+        "torch _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 102000510,
+      "Entries": [
+        "torch _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 102000620,
+      "Entries": [
+        "torch _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102000700,
+      "Entries": [
+        "torch _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 102000710,
+      "Entries": [
+        "torch _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102000720,
+      "Entries": [
+        "torch _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102000721,
+      "Entries": [
+        "torch _ mode B_ Dash Small _ addition 1"
+      ]
+    },
+    {
+      "ID": 102000740,
+      "Entries": [
+        "torch _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102000741,
+      "Entries": [
+        "torch _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102000800,
+      "Entries": [
+        "torch _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 102000810,
+      "Entries": [
+        "torch _ left hand _ small 2"
+      ]
+    },
+    {
+      "ID": 102000820,
+      "Entries": [
+        "torch _ left hand _ small 3"
+      ]
+    },
+    {
+      "ID": 102000900,
+      "Entries": [
+        "torch _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 102000901,
+      "Entries": [
+        "torch _ guard_ left hand"
+      ]
+    },
+    {
+      "ID": 102200000,
+      "Entries": [
+        "Cane Whip _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102200010,
+      "Entries": [
+        "Cane Whip _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102200020,
+      "Entries": [
+        "Cane Whip _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102200030,
+      "Entries": [
+        "Cane Whip _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102200040,
+      "Entries": [
+        "Cane Whip _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 102200100,
+      "Entries": [
+        "Cane Whip _ mode A_ large 1"
+      ]
+    },
+    {
+      "ID": 102200110,
+      "Entries": [
+        "Cane Whip _ mode A_ large 2"
+      ]
+    },
+    {
+      "ID": 102200120,
+      "Entries": [
+        "Cane Whip _ mode A_ large 3"
+      ]
+    },
+    {
+      "ID": 102200130,
+      "Entries": [
+        "Cane Whip _ mode A_ large 4"
+      ]
+    },
+    {
+      "ID": 102200150,
+      "Entries": [
+        "Cane Whip _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102200170,
+      "Entries": [
+        "Cane Whip _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102200200,
+      "Entries": [
+        "Cane Whip _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102200210,
+      "Entries": [
+        "Cane Whip _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102200220,
+      "Entries": [
+        "Cane Whip _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102200230,
+      "Entries": [
+        "Cane Whip _mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102200240,
+      "Entries": [
+        "Cane Whip _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102200250,
+      "Entries": [
+        "Cane Whip _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102200260,
+      "Entries": [
+        "Cane Whip _ mode A_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102200270,
+      "Entries": [
+        "Cane Whip _ mode A_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102200280,
+      "Entries": [
+        "Cane Whip _ mode A_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102200290,
+      "Entries": [
+        "Cane Whip _ mode A_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102200300,
+      "Entries": [
+        "Cane Whip _ mode A_ Close range"
+      ]
+    },
+    {
+      "ID": 102200310,
+      "Entries": [
+        "Cane Whip _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102200320,
+      "Entries": [
+        "Cane Whip _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102200330,
+      "Entries": [
+        "Cane Whip _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102200340,
+      "Entries": [
+        "Cane Whip _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102200341,
+      "Entries": [
+        "Cane Whip _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102200390,
+      "Entries": [
+        "Cane Whip _ mode A_Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102200395,
+      "Entries": [
+        "Cane Whip _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102200400,
+      "Entries": [
+        "Cane Whip _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102200410,
+      "Entries": [
+        "Cane Whip _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102200420,
+      "Entries": [
+        "Cane Whip _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102200500,
+      "Entries": [
+        "Cane Whip _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 102200510,
+      "Entries": [
+        "Cane Whip _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 102200550,
+      "Entries": [
+        "Cane Whip _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102200555,
+      "Entries": [
+        "Cane Whip _ mode B_ Charge Small _ left 1"
+      ]
+    },
+    {
+      "ID": 102200570,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102200575,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Charge _ left 1"
+      ]
+    },
+    {
+      "ID": 102200580,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Charge _ right 2"
+      ]
+    },
+    {
+      "ID": 102200585,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Charge _ left 2"
+      ]
+    },
+    {
+      "ID": 102200600,
+      "Entries": [
+        "Cane Whip _mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102200610,
+      "Entries": [
+        "Cane Whip _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102200620,
+      "Entries": [
+        "Cane Whip _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102200630,
+      "Entries": [
+        "Cane Whip _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102200640,
+      "Entries": [
+        "Cane Whip _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102200650,
+      "Entries": [
+        "Cane Whip _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102200660,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102200670,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102200680,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102200690,
+      "Entries": [
+        "Cane Whip _ mode B_ Large Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102200700,
+      "Entries": [
+        "Cane Whip _ mode B_ Close range"
+      ]
+    },
+    {
+      "ID": 102200710,
+      "Entries": [
+        "Cane Whip _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102200720,
+      "Entries": [
+        "Cane Whip _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102200730,
+      "Entries": [
+        "Cane Whip _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102200740,
+      "Entries": [
+        "Cane Whip _ mode B_Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102200741,
+      "Entries": [
+        "Cane Whip _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102200790,
+      "Entries": [
+        "Cane Whip _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102200795,
+      "Entries": [
+        "Cane Whip _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102200800,
+      "Entries": [
+        "Cane Whip _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 102200900,
+      "Entries": [
+        "Cane Whip _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 102200901,
+      "Entries": [
+        "Cane Whip _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 102200950,
+      "Entries": [
+        "Cane Whip _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 102300000,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102300010,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102300020,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102300030,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102300150,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102300170,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Large Charge_ right 1"
+      ]
+    },
+    {
+      "ID": 102300200,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102300210,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102300220,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102300230,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102300240,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102300250,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102300310,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102300320,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102300330,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102300340,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102300341,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102300390,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102300395,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102300400,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102300410,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102300420,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102300430,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102300550,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102300570,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102300600,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102300610,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102300620,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102300630,
+      "Entries": [
+        "Sawtooth Curved Sword _mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102300640,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102300650,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102300710,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102300720,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102300730,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102300740,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102300741,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102300790,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102300795,
+      "Entries": [
+        "Sawtooth Curved Sword _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102300950,
+      "Entries": [
+        "Sawtooth Curved Sword _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 102400000,
+      "Entries": [
+        "Saw Whip _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102400010,
+      "Entries": [
+        "Saw Whip _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102400020,
+      "Entries": [
+        "Saw Whip _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102400030,
+      "Entries": [
+        "Saw Whip _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102400040,
+      "Entries": [
+        "Saw Whip _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 102400150,
+      "Entries": [
+        "Saw Whip _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102400170,
+      "Entries": [
+        "Saw Whip _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102400200,
+      "Entries": [
+        "Saw Whip _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102400210,
+      "Entries": [
+        "Saw Whip _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102400220,
+      "Entries": [
+        "Saw Whip _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102400230,
+      "Entries": [
+        "Saw Whip _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102400240,
+      "Entries": [
+        "Saw Whip _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102400250,
+      "Entries": [
+        "Saw Whip _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102400310,
+      "Entries": [
+        "Saw Whip _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102400320,
+      "Entries": [
+        "Saw Whip _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102400330,
+      "Entries": [
+        "Saw Whip _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102400340,
+      "Entries": [
+        "Saw Whip _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102400341,
+      "Entries": [
+        "Saw Whip _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102400390,
+      "Entries": [
+        "Saw Whip _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102400395,
+      "Entries": [
+        "Saw Whip _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102400400,
+      "Entries": [
+        "Saw Whip _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102400410,
+      "Entries": [
+        "Saw Whip _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102400420,
+      "Entries": [
+        "Saw Whip _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102400430,
+      "Entries": [
+        "Saw Whip _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102400500,
+      "Entries": [
+        "Saw Whip _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 102400510,
+      "Entries": [
+        "Saw Whip _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 102400600,
+      "Entries": [
+        "Saw Whip _mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102400610,
+      "Entries": [
+        "Saw Whip _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102400620,
+      "Entries": [
+        "Saw Whip _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102400630,
+      "Entries": [
+        "Saw Whip _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102400640,
+      "Entries": [
+        "Saw Whip _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102400650,
+      "Entries": [
+        "Saw Whip _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102400710,
+      "Entries": [
+        "Saw Whip _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102400720,
+      "Entries": [
+        "Saw Whip _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102400730,
+      "Entries": [
+        "Saw Whip _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102400740,
+      "Entries": [
+        "Saw Whip _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102400741,
+      "Entries": [
+        "Saw Whip _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102400790,
+      "Entries": [
+        "Saw Whip _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102400795,
+      "Entries": [
+        "Saw Whip _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102500000,
+      "Entries": [
+        "Articulated _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102500010,
+      "Entries": [
+        "Articulated _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102500020,
+      "Entries": [
+        "Articulated _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102500030,
+      "Entries": [
+        "Articulated _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102500150,
+      "Entries": [
+        "Articulated _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102500170,
+      "Entries": [
+        "Articulated _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102500180,
+      "Entries": [
+        "Articulated _ mode A_ Large Charge _2"
+      ]
+    },
+    {
+      "ID": 102500200,
+      "Entries": [
+        "Articulated _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102500210,
+      "Entries": [
+        "Articulated _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102500220,
+      "Entries": [
+        "Articulated _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102500230,
+      "Entries": [
+        "Articulated _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102500240,
+      "Entries": [
+        "Articulated _ mode A_ Small Evasion _left"
+      ]
+    },
+    {
+      "ID": 102500250,
+      "Entries": [
+        "Articulated _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102500310,
+      "Entries": [
+        "Articulated _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102500320,
+      "Entries": [
+        "Articulated _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102500330,
+      "Entries": [
+        "Articulated _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102500340,
+      "Entries": [
+        "Articulated _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102500341,
+      "Entries": [
+        "Articulated _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102500390,
+      "Entries": [
+        "Articulated _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102500395,
+      "Entries": [
+        "Articulated _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102500400,
+      "Entries": [
+        "Articulated _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102500410,
+      "Entries": [
+        "Articulated _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102500420,
+      "Entries": [
+        "Articulated _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102500430,
+      "Entries": [
+        "Articulated _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102500550,
+      "Entries": [
+        "Articulated _ mode B_ Charge Small _Main unit"
+      ]
+    },
+    {
+      "ID": 102500551,
+      "Entries": [
+        "Articulated _ mode B_ Charge Small _ Pursuit"
+      ]
+    },
+    {
+      "ID": 102500570,
+      "Entries": [
+        "Articulated _ mode B_ Large Charge _ Main unit"
+      ]
+    },
+    {
+      "ID": 102500571,
+      "Entries": [
+        "Articulated _ mode B_ Large Charge _ Pursuit 1"
+      ]
+    },
+    {
+      "ID": 102500572,
+      "Entries": [
+        "Articulated _ mode B_ Large Charge _ Pursuit 2"
+      ]
+    },
+    {
+      "ID": 102500600,
+      "Entries": [
+        "Articulated _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102500610,
+      "Entries": [
+        "Articulated _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102500620,
+      "Entries": [
+        "Articulated _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102500630,
+      "Entries": [
+        "Articulated _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102500640,
+      "Entries": [
+        "Articulated _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102500650,
+      "Entries": [
+        "Articulated _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102500710,
+      "Entries": [
+        "Articulated _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102500720,
+      "Entries": [
+        "Articulated _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102500730,
+      "Entries": [
+        "Articulated _mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102500740,
+      "Entries": [
+        "Articulated _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102500741,
+      "Entries": [
+        "Articulated _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102500790,
+      "Entries": [
+        "Articulated _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102500795,
+      "Entries": [
+        "Articulated _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102600000,
+      "Entries": [
+        "Moonlight Sword _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102600010,
+      "Entries": [
+        "Moonlight Sword _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102600020,
+      "Entries": [
+        "Moonlight Sword _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102600030,
+      "Entries": [
+        "Moonlight Sword _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102600150,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102600170,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102600180,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Large Charge _ right 2"
+      ]
+    },
+    {
+      "ID": 102600200,
+      "Entries": [
+        "Moonlight Sword _ mode A_Back step small"
+      ]
+    },
+    {
+      "ID": 102600210,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102600220,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102600230,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102600240,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102600250,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102600310,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102600320,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102600330,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102600340,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102600341,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102600390,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102600395,
+      "Entries": [
+        "Moonlight Sword _ mode A_ Mode change attack _left"
+      ]
+    },
+    {
+      "ID": 102600400,
+      "Entries": [
+        "Moonlight Sword _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102600410,
+      "Entries": [
+        "Moonlight Sword _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102600420,
+      "Entries": [
+        "Moonlight Sword _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102600430,
+      "Entries": [
+        "Moonlight Sword _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102600550,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Charge Small"
+      ]
+    },
+    {
+      "ID": 102600551,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Small charge (with bullets)"
+      ]
+    },
+    {
+      "ID": 102600570,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 1"
+      ]
+    },
+    {
+      "ID": 102600571,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 1 (When there is ammo)"
+      ]
+    },
+    {
+      "ID": 102600580,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 2 (When there is ammo)"
+      ]
+    },
+    {
+      "ID": 102600581,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 2 (When there is ammo)"
+      ]
+    },
+    {
+      "ID": 102600590,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Charge Small _ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600591,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 1_ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600592,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large Charge 2_ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600600,
+      "Entries": [
+        "Moonlight Sword _ mode B_Back step small"
+      ]
+    },
+    {
+      "ID": 102600610,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102600611,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large backstep (with bullet)"
+      ]
+    },
+    {
+      "ID": 102600612,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Back Step Large _ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600620,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102600630,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102600640,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102600650,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102600710,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102600711,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Jump (with ammo)"
+      ]
+    },
+    {
+      "ID": 102600712,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Jump _ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600720,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102600730,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102600731,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Large dash (with bullets)"
+      ]
+    },
+    {
+      "ID": 102600732,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Dash Large _ Light Waves"
+      ]
+    },
+    {
+      "ID": 102600740,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102600741,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102600790,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102600795,
+      "Entries": [
+        "Moonlight Sword _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102600900,
+      "Entries": [
+        "Moonlight Sword _ guard _ mode B"
+      ]
+    },
+    {
+      "ID": 102600901,
+      "Entries": [
+        "Moonlight Sword _ guard _ left hand"
+      ]
+    },
+    {
+      "ID": 102600930,
+      "Entries": [
+        "Moonlight Sword _ left hand _ large"
+      ]
+    },
+    {
+      "ID": 102600931,
+      "Entries": [
+        "Moonlight Sword _ mode B_ left hand _ large _ Ammo consumption dummy"
+      ]
+    },
+    {
+      "ID": 102600932,
+      "Entries": [
+        "Moonlight Sword _ left hand _ large ( No bullets )"
+      ]
+    },
+    {
+      "ID": 102700000,
+      "Entries": [
+        "Double Blade _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102700010,
+      "Entries": [
+        "Double Blade _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102700020,
+      "Entries": [
+        "Double Blade _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102700030,
+      "Entries": [
+        "Double Blade _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102700150,
+      "Entries": [
+        "Double Blade _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102700170,
+      "Entries": [
+        "Double Blade _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102700200,
+      "Entries": [
+        "Double Blade _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102700210,
+      "Entries": [
+        "Double Blade _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102700220,
+      "Entries": [
+        "Double Blade _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102700230,
+      "Entries": [
+        "Double Blade _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102700240,
+      "Entries": [
+        "Double Blade _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102700250,
+      "Entries": [
+        "Double Blade _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102700310,
+      "Entries": [
+        "Double Blade _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102700320,
+      "Entries": [
+        "Double Blade _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102700330,
+      "Entries": [
+        "Double Blade _ mode A_Dash Large"
+      ]
+    },
+    {
+      "ID": 102700340,
+      "Entries": [
+        "Double Blade _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102700341,
+      "Entries": [
+        "Double Blade _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102700390,
+      "Entries": [
+        "Double Blade _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102700395,
+      "Entries": [
+        "Double Blade _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102700400,
+      "Entries": [
+        "Double Blade _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102700410,
+      "Entries": [
+        "Double Blade _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102700420,
+      "Entries": [
+        "Double Blade _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102700430,
+      "Entries": [
+        "Double Blade _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102700500,
+      "Entries": [
+        "Double Blade _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 102700510,
+      "Entries": [
+        "Double Blade _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 102700520,
+      "Entries": [
+        "Double Blade _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 102700600,
+      "Entries": [
+        "Double Blade _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102700610,
+      "Entries": [
+        "Double Blade _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102700620,
+      "Entries": [
+        "Double Blade _mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102700630,
+      "Entries": [
+        "Double Blade _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102700640,
+      "Entries": [
+        "Double Blade _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102700650,
+      "Entries": [
+        "Double Blade _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102700710,
+      "Entries": [
+        "Double Blade _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102700720,
+      "Entries": [
+        "Double Blade _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102700730,
+      "Entries": [
+        "Double Blade _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102700740,
+      "Entries": [
+        "Double Blade _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102700741,
+      "Entries": [
+        "Double Blade _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102700790,
+      "Entries": [
+        "Double Blade _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102700795,
+      "Entries": [
+        "Double Blade _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102700930,
+      "Entries": [
+        "Double Blade _ mode B_L large 1"
+      ]
+    },
+    {
+      "ID": 102700931,
+      "Entries": [
+        "Double Blade _ mode B_L large 1_ addition 1"
+      ]
+    },
+    {
+      "ID": 102700932,
+      "Entries": [
+        "Double Blade _ mode B_L large 1_special( R1 from)"
+      ]
+    },
+    {
+      "ID": 102700933,
+      "Entries": [
+        "Double Blade _ mode B_L large 1_ special( R2 from)"
+      ]
+    },
+    {
+      "ID": 102700934,
+      "Entries": [
+        "Double Blade _ mode B_L large 1_ special( L2 from)"
+      ]
+    },
+    {
+      "ID": 102700935,
+      "Entries": [
+        "Double Blade _ mode B_L large 1_ special( L2 from) _ addition 1"
+      ]
+    },
+    {
+      "ID": 102700950,
+      "Entries": [
+        "Double Blade _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 102800000,
+      "Entries": [
+        "Gunhammer _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102800010,
+      "Entries": [
+        "Gunhammer _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102800020,
+      "Entries": [
+        "Gunhammer _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102800150,
+      "Entries": [
+        "Gunhammer _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102800170,
+      "Entries": [
+        "Gunhammer _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102800200,
+      "Entries": [
+        "Gunhammer _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102800210,
+      "Entries": [
+        "Gunhammer _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102800220,
+      "Entries": [
+        "Gunhammer _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102800230,
+      "Entries": [
+        "Gunhammer _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102800240,
+      "Entries": [
+        "Gunhammer _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102800250,
+      "Entries": [
+        "Gunhammer _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102800310,
+      "Entries": [
+        "Gunhammer _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102800320,
+      "Entries": [
+        "Gunhammer _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102800330,
+      "Entries": [
+        "Gunhammer _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102800340,
+      "Entries": [
+        "Gunhammer _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102800341,
+      "Entries": [
+        "Gunhammer _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102800390,
+      "Entries": [
+        "Gunhammer _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102800395,
+      "Entries": [
+        "Gunhammer _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102800400,
+      "Entries": [
+        "Gunhammer _mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102800550,
+      "Entries": [
+        "Gunhammer _ mode B_ Charge Small 1"
+      ]
+    },
+    {
+      "ID": 102800570,
+      "Entries": [
+        "Gunhammer _ mode B_ Large Charge 1_ Main unit"
+      ]
+    },
+    {
+      "ID": 102800571,
+      "Entries": [
+        "Gunhammer _ mode B_ Large Charge 1_ explosion"
+      ]
+    },
+    {
+      "ID": 102800600,
+      "Entries": [
+        "Gunhammer _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 102800610,
+      "Entries": [
+        "Gunhammer _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102800620,
+      "Entries": [
+        "Gunhammer _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102800630,
+      "Entries": [
+        "Gunhammer _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102800640,
+      "Entries": [
+        "Gunhammer _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102800650,
+      "Entries": [
+        "Gunhammer _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102800710,
+      "Entries": [
+        "Gunhammer _ mode B_ Jump _ Main unit"
+      ]
+    },
+    {
+      "ID": 102800711,
+      "Entries": [
+        "Gunhammer _ mode B_ Jump _ explosion"
+      ]
+    },
+    {
+      "ID": 102800720,
+      "Entries": [
+        "Gunhammer _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102800730,
+      "Entries": [
+        "Gunhammer _ mode B_ Dash Large _ Main unit"
+      ]
+    },
+    {
+      "ID": 102800731,
+      "Entries": [
+        "Gunhammer _ mode B_ Dash Large _ explosion"
+      ]
+    },
+    {
+      "ID": 102800740,
+      "Entries": [
+        "Gunhammer _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102800741,
+      "Entries": [
+        "Gunhammer _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102800790,
+      "Entries": [
+        "Gunhammer _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102800795,
+      "Entries": [
+        "Gunhammer _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102800950,
+      "Entries": [
+        "Gunhammer _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 102900000,
+      "Entries": [
+        "Cross Mace _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 102900010,
+      "Entries": [
+        "Cross Mace _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 102900020,
+      "Entries": [
+        "Cross Mace _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 102900030,
+      "Entries": [
+        "Cross Mace _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 102900150,
+      "Entries": [
+        "Cross Mace _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 102900170,
+      "Entries": [
+        "Cross Mace _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 102900200,
+      "Entries": [
+        "Cross Mace _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 102900210,
+      "Entries": [
+        "Cross Mace _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102900220,
+      "Entries": [
+        "Cross Mace _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102900230,
+      "Entries": [
+        "Cross Mace _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102900240,
+      "Entries": [
+        "Cross Mace _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102900250,
+      "Entries": [
+        "Cross Mace _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102900310,
+      "Entries": [
+        "Cross Mace _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 102900320,
+      "Entries": [
+        "Cross Mace _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102900330,
+      "Entries": [
+        "Cross Mace _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 102900340,
+      "Entries": [
+        "Cross Mace _ mode A_ Falling Attack_ Falling"
+      ]
+    },
+    {
+      "ID": 102900341,
+      "Entries": [
+        "Cross Mace _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102900390,
+      "Entries": [
+        "Cross Mace _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102900395,
+      "Entries": [
+        "Cross Mace _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 102900400,
+      "Entries": [
+        "Cross Mace _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 102900410,
+      "Entries": [
+        "Cross Mace _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 102900420,
+      "Entries": [
+        "Cross Mace _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 102900430,
+      "Entries": [
+        "Cross Mace _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 102900440,
+      "Entries": [
+        "Cross Mace _ mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 102900550,
+      "Entries": [
+        "Cross Mace _ mode B_ Charge Small 1"
+      ]
+    },
+    {
+      "ID": 102900570,
+      "Entries": [
+        "Cross Mace _ mode B_ Large Charge 1"
+      ]
+    },
+    {
+      "ID": 102900571,
+      "Entries": [
+        "Cross Mace _ mode B_ Large Charge 1_ Impact"
+      ]
+    },
+    {
+      "ID": 102900600,
+      "Entries": [
+        "Cross Mace _ mode B_Back step small"
+      ]
+    },
+    {
+      "ID": 102900610,
+      "Entries": [
+        "Cross Mace _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 102900620,
+      "Entries": [
+        "Cross Mace _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 102900630,
+      "Entries": [
+        "Cross Mace _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 102900640,
+      "Entries": [
+        "Cross Mace _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 102900650,
+      "Entries": [
+        "Cross Mace _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 102900710,
+      "Entries": [
+        "Cross Mace _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 102900720,
+      "Entries": [
+        "Cross Mace _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102900730,
+      "Entries": [
+        "Cross Mace _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 102900740,
+      "Entries": [
+        "Cross Mace _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 102900741,
+      "Entries": [
+        "Cross Mace _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 102900790,
+      "Entries": [
+        "Cross Mace _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 102900795,
+      "Entries": [
+        "Cross Mace _ mode B_ Mode change attack _left"
+      ]
+    },
+    {
+      "ID": 102900930,
+      "Entries": [
+        "Cross Mace _ left hand _ large _ For enemy hits"
+      ]
+    },
+    {
+      "ID": 102900931,
+      "Entries": [
+        "Cross Mace _ left hand _ large _ For self-hit"
+      ]
+    },
+    {
+      "ID": 103000000,
+      "Entries": [
+        "War Pick _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 103000010,
+      "Entries": [
+        "War Pick _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 103000020,
+      "Entries": [
+        "War Pick _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 103000030,
+      "Entries": [
+        "War Pick _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 103000150,
+      "Entries": [
+        "War Pick _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103000170,
+      "Entries": [
+        "War Pick _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 103000200,
+      "Entries": [
+        "War Pick _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 103000210,
+      "Entries": [
+        "War Pick _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103000220,
+      "Entries": [
+        "War Pick _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103000230,
+      "Entries": [
+        "War Pick _ mode A_Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103000240,
+      "Entries": [
+        "War Pick _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103000250,
+      "Entries": [
+        "War Pick _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103000310,
+      "Entries": [
+        "War Pick _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 103000320,
+      "Entries": [
+        "War Pick _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103000330,
+      "Entries": [
+        "War Pick _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 103000340,
+      "Entries": [
+        "War Pick _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103000341,
+      "Entries": [
+        "War Pick _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103000390,
+      "Entries": [
+        "War Pick _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103000395,
+      "Entries": [
+        "War Pick _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103000400,
+      "Entries": [
+        "War Pick _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 103000410,
+      "Entries": [
+        "War Pick _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 103000420,
+      "Entries": [
+        "War Pick _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 103000430,
+      "Entries": [
+        "War Pick _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 103000550,
+      "Entries": [
+        "War Pick _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103000570,
+      "Entries": [
+        "War Pick _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 103000580,
+      "Entries": [
+        "War Pick _ mode B_ Large Charge _ right 2"
+      ]
+    },
+    {
+      "ID": 103000600,
+      "Entries": [
+        "War Pick _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 103000610,
+      "Entries": [
+        "War Pick _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103000620,
+      "Entries": [
+        "War Pick _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103000630,
+      "Entries": [
+        "War Pick _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103000640,
+      "Entries": [
+        "War Pick _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103000650,
+      "Entries": [
+        "War Pick _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103000710,
+      "Entries": [
+        "War Pick_ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 103000720,
+      "Entries": [
+        "War Pick _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103000730,
+      "Entries": [
+        "War Pick _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103000740,
+      "Entries": [
+        "War Pick _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103000741,
+      "Entries": [
+        "War Pick _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103000790,
+      "Entries": [
+        "War Pick _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103000795,
+      "Entries": [
+        "War Pick _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103000930,
+      "Entries": [
+        "War Pick _ left hand"
+      ]
+    },
+    {
+      "ID": 103000950,
+      "Entries": [
+        "War Pick _ Throw Judgment"
+      ]
+    },
+    {
+      "ID": 103100000,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 103100010,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 103100020,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 103100030,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 103100150,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103100170,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 103100200,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 103100210,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103100220,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103100230,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103100240,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103100250,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103100310,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 103100320,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103100330,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 103100340,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103100341,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103100390,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103100395,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103100400,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 103100410,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 103100420,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 103100430,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 103100550,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103100570,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 103100600,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Back step small"
+      ]
+    },
+    {
+      "ID": 103100610,
+      "Entries": [
+        "Circular saw chainsaw _mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103100620,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103100630,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103100640,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103100650,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103100710,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 103100720,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103100730,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103100740,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103100741,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103100790,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103100795,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103100930,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_L large 1_ First Attack"
+      ]
+    },
+    {
+      "ID": 103100931,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_L large 1_ loop 1"
+      ]
+    },
+    {
+      "ID": 103100932,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_L large 1_ loop 2"
+      ]
+    },
+    {
+      "ID": 103100951,
+      "Entries": [
+        "Circular saw chainsaw _ mode A_ Skinny performance DL8"
+      ]
+    },
+    {
+      "ID": 103100952,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Skinny performance DL8"
+      ]
+    },
+    {
+      "ID": 103100953,
+      "Entries": [
+        "Circular saw chainsaw _ mode B_ Skinny performance DL0"
+      ]
+    },
+    {
+      "ID": 103200000,
+      "Entries": [
+        "Transformed Bow _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 103200010,
+      "Entries": [
+        "Transformed Bow _ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 103200020,
+      "Entries": [
+        "Transformed Bow _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 103200030,
+      "Entries": [
+        "Transformed Bow _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 103200150,
+      "Entries": [
+        "Transformed Bow _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103200170,
+      "Entries": [
+        "Transformed Bow _ mode A_ Large Charge _right 1_ rotate 1 Attack"
+      ]
+    },
+    {
+      "ID": 103200171,
+      "Entries": [
+        "Transformed Bow _ mode A_ Large Charge _ right 1_ rotate 2 Attack"
+      ]
+    },
+    {
+      "ID": 103200200,
+      "Entries": [
+        "Transformed Bow _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 103200210,
+      "Entries": [
+        "Transformed Bow _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103200220,
+      "Entries": [
+        "Transformed Bow _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103200230,
+      "Entries": [
+        "Transformed Bow _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103200240,
+      "Entries": [
+        "Transformed Bow _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103200250,
+      "Entries": [
+        "Transformed Bow _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103200310,
+      "Entries": [
+        "Transformed Bow _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 103200320,
+      "Entries": [
+        "Transformed Bow _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103200330,
+      "Entries": [
+        "Transformed Bow _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 103200340,
+      "Entries": [
+        "Transformed Bow _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103200341,
+      "Entries": [
+        "Transformed Bow _ mode A_Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103200390,
+      "Entries": [
+        "Transformed Bow _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103200395,
+      "Entries": [
+        "Transformed Bow _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103200400,
+      "Entries": [
+        "Transformed Bow _ mode B_ Normal shot"
+      ]
+    },
+    {
+      "ID": 103200550,
+      "Entries": [
+        "Transformed Bow _ mode B_ Charged Small Attack"
+      ]
+    },
+    {
+      "ID": 103200570,
+      "Entries": [
+        "Transformed Bow _ mode B_ Charged Shot"
+      ]
+    },
+    {
+      "ID": 103200600,
+      "Entries": [
+        "Transformed Bow _ mode B_ Back Steps / rolling / Dash Shoot"
+      ]
+    },
+    {
+      "ID": 103200710,
+      "Entries": [
+        "Transformed Bow _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 103200740,
+      "Entries": [
+        "Transformed Bow _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103200741,
+      "Entries": [
+        "Transformed Bow _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103200790,
+      "Entries": [
+        "Transformed Bow _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103200795,
+      "Entries": [
+        "Transformed Bow _ mode B_ Mode change attack_ left"
+      ]
+    },
+    {
+      "ID": 103200800,
+      "Entries": [
+        "Transformed Bow _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 103300000,
+      "Entries": [
+        "Gatling _ For use in stance"
+      ]
+    },
+    {
+      "ID": 103300800,
+      "Entries": [
+        "Gatling _ shooting"
+      ]
+    },
+    {
+      "ID": 103300810,
+      "Entries": [
+        "Gatling _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 103300960,
+      "Entries": [
+        "Gatling __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 103400800,
+      "Entries": [
+        "knuckle _ left hand _ small 1"
+      ]
+    },
+    {
+      "ID": 103400801,
+      "Entries": [
+        "knuckle _ left hand _ small 1_ dash"
+      ]
+    },
+    {
+      "ID": 103400802,
+      "Entries": [
+        "knuckle _ left hand _ small 1_ rolling"
+      ]
+    },
+    {
+      "ID": 103400803,
+      "Entries": [
+        "knuckle _ left hand _ small 1_ Back Steps"
+      ]
+    },
+    {
+      "ID": 103500800,
+      "Entries": [
+        "Grenade Launcher _ shooting"
+      ]
+    },
+    {
+      "ID": 103500810,
+      "Entries": [
+        "Grenade Launcher _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 103500960,
+      "Entries": [
+        "Grenade Launcher __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 103600800,
+      "Entries": [
+        "Piercing gun _ shooting"
+      ]
+    },
+    {
+      "ID": 103600810,
+      "Entries": [
+        "Piercing gun _ Shooting (special)"
+      ]
+    },
+    {
+      "ID": 103600960,
+      "Entries": [
+        "Piercing gun __ Fire spreads"
+      ]
+    },
+    {
+      "ID": 103700000,
+      "Entries": [
+        "Beastification _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 103700010,
+      "Entries": [
+        "Beastification_ mode A_ small 2"
+      ]
+    },
+    {
+      "ID": 103700020,
+      "Entries": [
+        "Beastification _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 103700030,
+      "Entries": [
+        "Beastification _ mode A_ small 4"
+      ]
+    },
+    {
+      "ID": 103700040,
+      "Entries": [
+        "Beastification _ mode A_ small 5"
+      ]
+    },
+    {
+      "ID": 103700150,
+      "Entries": [
+        "Beastification _ mode A_ Charge Small _ right 1"
+      ]
+    },
+    {
+      "ID": 103700170,
+      "Entries": [
+        "Beastification _ mode A_ Large Charge _ right 1"
+      ]
+    },
+    {
+      "ID": 103700200,
+      "Entries": [
+        "Beastification _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 103700210,
+      "Entries": [
+        "Beastification _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103700220,
+      "Entries": [
+        "Beastification _ mode A_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103700230,
+      "Entries": [
+        "Beastification _ mode A_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103700240,
+      "Entries": [
+        "Beastification _ mode A_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103700250,
+      "Entries": [
+        "Beastification _ mode A_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103700310,
+      "Entries": [
+        "Beastification _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 103700320,
+      "Entries": [
+        "Beastification _ mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103700330,
+      "Entries": [
+        "Beastification _ mode A_ Dash Large"
+      ]
+    },
+    {
+      "ID": 103700340,
+      "Entries": [
+        "Beastification _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103700341,
+      "Entries": [
+        "Beastification _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103700390,
+      "Entries": [
+        "Beastification _ mode A_ Mode change attack _ right _ First Attack"
+      ]
+    },
+    {
+      "ID": 103700391,
+      "Entries": [
+        "Beastification _ mode A_ Mode change attack _ right _ Second Attack (Main Event)"
+      ]
+    },
+    {
+      "ID": 103700395,
+      "Entries": [
+        "Beastification _ mode A_ Mode change attack _ left _ First Attack"
+      ]
+    },
+    {
+      "ID": 103700396,
+      "Entries": [
+        "Beastification _ mode A_ Mode change attack _ left _ Second Attack (Main Event)"
+      ]
+    },
+    {
+      "ID": 103700400,
+      "Entries": [
+        "Beastification _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 103700410,
+      "Entries": [
+        "Beastification _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 103700420,
+      "Entries": [
+        "Beastification _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 103700430,
+      "Entries": [
+        "Beastification _ mode B_ small 4"
+      ]
+    },
+    {
+      "ID": 103700440,
+      "Entries": [
+        "Beastification _mode B_ small 5"
+      ]
+    },
+    {
+      "ID": 103700500,
+      "Entries": [
+        "Beastification _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 103700510,
+      "Entries": [
+        "Beastification _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 103700520,
+      "Entries": [
+        "Beastification _ mode B_ large 3"
+      ]
+    },
+    {
+      "ID": 103700600,
+      "Entries": [
+        "Beastification _ mode B_ Back step small _ First Attack"
+      ]
+    },
+    {
+      "ID": 103700601,
+      "Entries": [
+        "Beastification _ mode B_ Back step small _ Second Attack (Main Event)"
+      ]
+    },
+    {
+      "ID": 103700610,
+      "Entries": [
+        "Beastification _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103700620,
+      "Entries": [
+        "Beastification _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103700630,
+      "Entries": [
+        "Beastification _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103700640,
+      "Entries": [
+        "Beastification _ mode B_ Small Evasion _ left"
+      ]
+    },
+    {
+      "ID": 103700650,
+      "Entries": [
+        "Beastification _ mode B_ Small Evasion _ right"
+      ]
+    },
+    {
+      "ID": 103700710,
+      "Entries": [
+        "Beastification _ mode B_ Jump _ First attack (low damage/stamina 0 )"
+      ]
+    },
+    {
+      "ID": 103700711,
+      "Entries": [
+        "Beastification _ mode B_Jump _ Second hit (real damage)"
+      ]
+    },
+    {
+      "ID": 103700720,
+      "Entries": [
+        "Beastification _ mode B_ Dash Small _ First Dan"
+      ]
+    },
+    {
+      "ID": 103700721,
+      "Entries": [
+        "Beastification _ mode B_ Dash Small _ Second Attack (Main Event)"
+      ]
+    },
+    {
+      "ID": 103700730,
+      "Entries": [
+        "Beastification _ mode B_ Dash Large _ First Dan"
+      ]
+    },
+    {
+      "ID": 103700731,
+      "Entries": [
+        "Beastification _ mode B_ Dash Large _ Second Attack (Main Event)"
+      ]
+    },
+    {
+      "ID": 103700740,
+      "Entries": [
+        "Beastification _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103700741,
+      "Entries": [
+        "Beastification _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103700790,
+      "Entries": [
+        "Beastification _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103700795,
+      "Entries": [
+        "Beastification _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103700930,
+      "Entries": [
+        "Beastification _ mode B_L large 1_ First Attack"
+      ]
+    },
+    {
+      "ID": 103800000,
+      "Entries": [
+        "Slug _ mode A_ small 1"
+      ]
+    },
+    {
+      "ID": 103800010,
+      "Entries": [
+        "Slug _ mode A_small 2"
+      ]
+    },
+    {
+      "ID": 103800020,
+      "Entries": [
+        "Slug _ mode A_ small 3"
+      ]
+    },
+    {
+      "ID": 103800150,
+      "Entries": [
+        "Slug _ mode A_ Charge Small"
+      ]
+    },
+    {
+      "ID": 103800170,
+      "Entries": [
+        "Slug _ mode A_ Large Charge _ First Shot"
+      ]
+    },
+    {
+      "ID": 103800171,
+      "Entries": [
+        "Slug _ mode A_ Large Charge _ The real thing"
+      ]
+    },
+    {
+      "ID": 103800200,
+      "Entries": [
+        "Slug _ mode A_ Back step small"
+      ]
+    },
+    {
+      "ID": 103800210,
+      "Entries": [
+        "Slug _ mode A_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103800220,
+      "Entries": [
+        "Slug _ mode A_ Small Evasion _ before _ First Shot"
+      ]
+    },
+    {
+      "ID": 103800221,
+      "Entries": [
+        "Slug _ mode A_ Small Evasion _ before _ The real thing"
+      ]
+    },
+    {
+      "ID": 103800230,
+      "Entries": [
+        "Slug _ mode A_ Small Evasion _ rear _ First Shot"
+      ]
+    },
+    {
+      "ID": 103800231,
+      "Entries": [
+        "Slug _ mode A_ Small Evasion _ rear _ The real thing"
+      ]
+    },
+    {
+      "ID": 103800310,
+      "Entries": [
+        "Slug _ mode A_ Jump"
+      ]
+    },
+    {
+      "ID": 103800320,
+      "Entries": [
+        "Slug _mode A_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103800330,
+      "Entries": [
+        "Slug _ mode A_ Dash Large _ First Shot"
+      ]
+    },
+    {
+      "ID": 103800331,
+      "Entries": [
+        "Slug _ mode A_ Dash Large _ The real thing"
+      ]
+    },
+    {
+      "ID": 103800340,
+      "Entries": [
+        "Slug _ mode A_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103800341,
+      "Entries": [
+        "Slug _ mode A_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103800390,
+      "Entries": [
+        "Slug _ mode A_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103800395,
+      "Entries": [
+        "Slug _ mode A_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103800400,
+      "Entries": [
+        "Slug _ mode B_ small 1"
+      ]
+    },
+    {
+      "ID": 103800410,
+      "Entries": [
+        "Slug _ mode B_ small 2"
+      ]
+    },
+    {
+      "ID": 103800420,
+      "Entries": [
+        "Slug _ mode B_ small 3"
+      ]
+    },
+    {
+      "ID": 103800500,
+      "Entries": [
+        "Slug _ mode B_ large 1"
+      ]
+    },
+    {
+      "ID": 103800510,
+      "Entries": [
+        "Slug _ mode B_ large 2"
+      ]
+    },
+    {
+      "ID": 103800600,
+      "Entries": [
+        "Slug _ modeB_ Back step small"
+      ]
+    },
+    {
+      "ID": 103800610,
+      "Entries": [
+        "Slug _ mode B_ Back Step Large"
+      ]
+    },
+    {
+      "ID": 103800620,
+      "Entries": [
+        "Slug _ mode B_ Small Evasion _ before"
+      ]
+    },
+    {
+      "ID": 103800630,
+      "Entries": [
+        "Slug _ mode B_ Small Evasion _ rear"
+      ]
+    },
+    {
+      "ID": 103800710,
+      "Entries": [
+        "Slug _ mode B_ Jump"
+      ]
+    },
+    {
+      "ID": 103800720,
+      "Entries": [
+        "Slug _ mode B_ Dash Small"
+      ]
+    },
+    {
+      "ID": 103800730,
+      "Entries": [
+        "Slug _ mode B_ Dash Large _ First Shot"
+      ]
+    },
+    {
+      "ID": 103800731,
+      "Entries": [
+        "Slug _ mode B_ Dash Large _ The real thing"
+      ]
+    },
+    {
+      "ID": 103800740,
+      "Entries": [
+        "Slug _ mode B_ Falling Attack _ Falling"
+      ]
+    },
+    {
+      "ID": 103800741,
+      "Entries": [
+        "Slug _ mode B_ Falling Attack _ Landing"
+      ]
+    },
+    {
+      "ID": 103800790,
+      "Entries": [
+        "Slug _ mode B_ Mode change attack _ right"
+      ]
+    },
+    {
+      "ID": 103800795,
+      "Entries": [
+        "Slug _ mode B_ Mode change attack _ left"
+      ]
+    },
+    {
+      "ID": 103800796,
+      "Entries": [
+        "Slug _ mode B_ Mode change"
+      ]
+    },
+    {
+      "ID": 103800930,
+      "Entries": [
+        "Slug _ mode B_L large 1_ First Blow"
+      ]
+    }
+  ]
+}

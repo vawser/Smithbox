@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_HIT_BACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_HIT_BACK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enabled"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water Surface"
+        }
+      ]
+    }
+  ]
+}

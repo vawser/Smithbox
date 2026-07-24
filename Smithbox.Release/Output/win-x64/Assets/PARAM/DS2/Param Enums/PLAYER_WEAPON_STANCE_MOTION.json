@@ -1,0 +1,308 @@
+{
+  "Key": "PLAYER_WEAPON_STANCE_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_WEAPON_STANCE_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "204110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_one hand_stance"
+        }
+      ]
+    },
+    {
+      "Key": "204111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One hand_Stance_Torch"
+        }
+      ]
+    },
+    {
+      "Key": "204113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One hand_Position_Binoculars"
+        }
+      ]
+    },
+    {
+      "Key": "204310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_both hands_position"
+        }
+      ]
+    },
+    {
+      "Key": "204610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Dual wielding both hands_Position"
+        }
+      ]
+    },
+    {
+      "Key": "214110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_one hand_position"
+        }
+      ]
+    },
+    {
+      "Key": "214310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_both hands_ready"
+        }
+      ]
+    },
+    {
+      "Key": "214610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed two-handed stance"
+        }
+      ]
+    },
+    {
+      "Key": "244110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed_position"
+        }
+      ]
+    },
+    {
+      "Key": "244310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "254110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_one hand_stance"
+        }
+      ]
+    },
+    {
+      "Key": "254310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "254610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Dual wielding both hands_Standing"
+        }
+      ]
+    },
+    {
+      "Key": "294310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "364110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two handed ax _one handed_ stance"
+        }
+      ]
+    },
+    {
+      "Key": "364111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one hand_stance_thick weapon"
+        }
+      ]
+    },
+    {
+      "Key": "364210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed one-handed_position"
+        }
+      ]
+    },
+    {
+      "Key": "364310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "364311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed_stance_thick weapon"
+        }
+      ]
+    },
+    {
+      "Key": "364610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed two-handed_stance"
+        }
+      ]
+    },
+    {
+      "Key": "364611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed two-handed_Stance_Thick weapon"
+        }
+      ]
+    },
+    {
+      "Key": "404110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow_one-handed_position"
+        }
+      ]
+    },
+    {
+      "Key": "404310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "414110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow _one hand_ stance"
+        }
+      ]
+    },
+    {
+      "Key": "414310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "424110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_one-handed_stance"
+        }
+      ]
+    },
+    {
+      "Key": "424310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "424610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_two-handed two-handed stance"
+        }
+      ]
+    },
+    {
+      "Key": "444310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "454110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_one hand_stance"
+        }
+      ]
+    },
+    {
+      "Key": "454310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "464310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_both hands_stance"
+        }
+      ]
+    },
+    {
+      "Key": "464610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_two-handed_stance"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

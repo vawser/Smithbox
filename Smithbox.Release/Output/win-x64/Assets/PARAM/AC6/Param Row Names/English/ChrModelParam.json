@@ -1,0 +1,377 @@
+{
+  "Name": "ChrModelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Security MT"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Security MT Enhancement A Firepower Enhancement"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Security MT Reinforcement B Leg Reinforcement"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Former communist country MT"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "regular army MT"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Flying type MT"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "juggernaut"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "avalanche"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "regular army AC"
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "Regular Army AC (Heavyweight)"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Quadruped MT"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "old world MT"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "construction machinery spider"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Deleter"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Mobile armored infantry \"Adolf\""
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "valkyria"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Special attack MT"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Next generation proto AC"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "next generation proto ac c route"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Next generation proto AC illusion (retarget)"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "orbit seed"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Orbit control character"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Guard mecha (air)"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "bug"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Heavy guard mechanism (ground)"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "large transport helicopter"
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        "military us drone"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "combat helicopter"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "combat vehicle"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "sunflower"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "suicide satellite"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Biological weapon (insect)"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Anti-AC large combat helicopter “Pharaon”"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "sea ​​spider"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "sea ​​spider secondary gun"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "sand worm"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "huge mining ship"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Giant Mining Ship Eyeball Redesign Ver."
+      ]
+    },
+    {
+      "ID": 7222,
+      "Entries": [
+        "Field missile large (main body only)"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Ground Force Artillery Grenade (Large)"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "Ground force artillery bazooka (medium)"
+      ]
+    },
+    {
+      "ID": 7250,
+      "Entries": [
+        "Ground force artillery gatling (large)"
+      ]
+    },
+    {
+      "ID": 7260,
+      "Entries": [
+        "Ground force artillery missile (medium) twin"
+      ]
+    },
+    {
+      "ID": 7261,
+      "Entries": [
+        "Ground Force Artillery Missile (Medium) Vertical"
+      ]
+    },
+    {
+      "ID": 7262,
+      "Entries": [
+        "Ground force artillery missile (medium) horizontal"
+      ]
+    },
+    {
+      "ID": 7270,
+      "Entries": [
+        "Ground Force Artillery Sniper (Large)"
+      ]
+    },
+    {
+      "ID": 7280,
+      "Entries": [
+        "Old style EN battery Rezarai (medium)"
+      ]
+    },
+    {
+      "ID": 7290,
+      "Entries": [
+        "Old style EN battery Reza Buzz (extra large)"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Speaker antenna turret pulse (medium)"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "State-of-the-art EN gun battery Plarai (extra large)"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "State-of-the-art EN battery Plamisa (medium)"
+      ]
+    },
+    {
+      "ID": 7390,
+      "Entries": [
+        "D layer giant gun battery Anemone"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "amphibious assault ship"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Amphibious assault ship main gun (medium)"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "Amphibious assault ship secondary gun (small)"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "Amphibious assault ship missile gun (small)"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Amphibious assault ship_Slave aircraft"
+      ]
+    },
+    {
+      "ID": 8135,
+      "Entries": [
+        "Strong enemy (humanoid)"
+      ]
+    },
+    {
+      "ID": 8145,
+      "Entries": [
+        "Strong enemy (bird type)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Enemy equipment parts start"
+      ]
+    }
+  ]
+}

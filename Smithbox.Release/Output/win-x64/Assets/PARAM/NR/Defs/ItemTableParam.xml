@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>ITEMTABLE_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s32 itemCategory"/>
+    <Field Def="s32 itemId"/>
+    <Field Def="u16 chanceWeight"/>
+    <Field Def="u8 quantity"/>
+    <Field Def="u8 onlyForClass"/>
+    <Field Def="s32 eventFlagId"/>
+    
+    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 unknown_7"/>
+    
+    <Field Def="dummy8 midstPadding[4]"/>
+    
+    <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
+  </Fields>
+</PARAMDEF>

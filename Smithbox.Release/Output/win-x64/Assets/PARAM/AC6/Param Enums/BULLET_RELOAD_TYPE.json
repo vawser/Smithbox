@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_RELOAD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_RELOAD_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cartridge"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Direct Loading"
+        }
+      ]
+    }
+  ]
+}

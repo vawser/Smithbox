@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>SHADOW_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s16 lightDegRotX">
+      <DisplayName>光源X角度[deg]</DisplayName>
+      <Description>マップに影を落とす光源のX角度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 lightDegRotY">
+      <DisplayName>光源Y角度[deg]</DisplayName>
+      <Description>マップに影を落とす光源のY角度</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 densityRatio = 100">
+      <DisplayName>濃さ[％]</DisplayName>
+      <Description>100％で最も濃くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 colR">
+      <DisplayName>色R</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 colG">
+      <DisplayName>色G</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 colB">
+      <DisplayName>色B</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 beginDist">
+      <DisplayName>開始距離[m]</DisplayName>
+      <Description>0にしておくとカメラのニアクリップを使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 endDist = 300">
+      <DisplayName>終了距離[m]</DisplayName>
+      <Description>終了距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 calibulateFar">
+      <DisplayName>ファークリップ自動調整距離(PSM用)</DisplayName>
+      <Description>光源方向を向いたときに終了距離を指定した距離分短くします</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 fadeBeginDist = 9999">
+      <DisplayName>フェード開始距離[m]</DisplayName>
+      <Description>フェード開始距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 fadeDist = -1">
+      <DisplayName>フェード距離[m]</DisplayName>
+      <Description>フェード距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 persedDepthOffset = -0.0001">
+      <DisplayName>Zオフセット(PSM用)</DisplayName>
+      <Description>Zオフセット [m] （－）にするほどセルフシャードウが出難くなります(PSM用)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 ｇradFactor">
+      <DisplayName>パース調整パラメータ(PSM用)</DisplayName>
+      <Description>－にするとシャドウマップのパースが弱まり,＋にするとパースが強まります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-3</Minimum>
+      <Maximum>5</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 shadowVolumeDepth = 10">
+      <DisplayName>シャドウボリュームの長さ[m]</DisplayName>
+      <Description>ビルなど高いオブジェクトの影を落としたいときは値を大きくします</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,38 @@
+{
+  "Key": "BONE_AXIS",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BONE_AXIS"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Z"
+        }
+      ]
+    }
+  ]
+}

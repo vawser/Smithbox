@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_BARRIER_HIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_BARRIER_HIT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Hit"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Landing"
+        }
+      ]
+    }
+  ]
+}

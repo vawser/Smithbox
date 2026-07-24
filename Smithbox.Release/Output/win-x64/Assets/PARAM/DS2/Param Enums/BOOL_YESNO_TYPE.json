@@ -1,0 +1,29 @@
+{
+  "Key": "BOOL_YESNO_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_YESNO_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
+    }
+  ]
+}

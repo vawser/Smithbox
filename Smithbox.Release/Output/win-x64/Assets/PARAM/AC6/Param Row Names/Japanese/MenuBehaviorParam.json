@@ -1,0 +1,191 @@
+{
+  "Name": "MenuBehaviorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Prohibited from use -- 使用禁止"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "ASSEMBLY"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "TRIAL FIT"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "BUY"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "SELL"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "OS TUNING"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "AC TEST"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "PAINT(Top) -- PAINT(トップ)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "MARKING"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "DECAL(Top) -- DECAL(トップ)"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "CUSTOM DESIGN(Top) -- CUSTOM DESIGN(トップ)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "PAINT(edit) -- PAINT(編集)"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "DECAL (layer editing) -- DECAL(レイヤー編集)"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "CUSTOM DESIGN (layer editing) -- CUSTOM DESIGN(レイヤー編集)"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "CUSTOM DESIGN (piece editing) -- CUSTOM DESIGN(ピース編集)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "AC DATA"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "MISSION"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "REPLAY MISSION"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "ARENA"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "TRANING"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "PLATE EDIT"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "PLATE SHOP"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "SOLO MATCH"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "TEAM MATCH"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "CUSTOM MATCH"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "YOUR DATA"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "AC DATA SHARING"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "CUSTOM DESIGN SHARING"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "ARCHIVES"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "ONLINE ARENA"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "TIPS"
+      ]
+    }
+  ]
+}

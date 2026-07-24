@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>MISSION_MANAGEMENT_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s16 missionId"/>
+    <Field Def="s16 unknown_1b"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 mapPatternMapLotConditionId"/>
+  </Fields>
+</PARAMDEF>

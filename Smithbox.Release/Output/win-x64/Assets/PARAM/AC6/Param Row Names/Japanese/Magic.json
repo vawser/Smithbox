@@ -1,0 +1,911 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 3000,
+      "Entries": [
+        "arrow of soul -- ソウルの矢"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Soul's Arrow Double Chant -- ソウルの矢二重詠唱"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "strong soul arrow -- 強いソウルの矢"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "soul arrow -- ソウルの太矢"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "soul arrow -- ソウルの太矢"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Strong soul arrow -- 強いソウルの太矢"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "A mass of chasing souls -- 追尾するソウルの塊"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Pursuing soul crystal mass -- 追尾するソウルの結晶塊"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "spear of soul -- ソウルの槍"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "soul crystal spear -- ソウルの結晶槍"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Weapon magic enhancement 1 -- 武器魔法強化1"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Weapon magic enhancement 2 -- 武器魔法強化2"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Weapon magic enhancement 3 -- 武器魔法強化3"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Shield reinforcement 1 -- 盾強化1"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Shield reinforcement 2 -- 盾強化2"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "invisible weapon -- インビジブルウェポン"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "invisible body -- インビジブルボディ"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "light -- ライト"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "silence -- サイレンス"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "sound -- サウンド"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "repair -- 修復"
+      ]
+    },
+    {
+      "ID": 3540,
+      "Entries": [
+        "Falling control -- フォーリングコントロール"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "mimicry -- 擬態"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "disenchantment -- 解呪"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "healing -- 治癒"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "crystal beam -- 結晶ビーム"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[DLC] Ball of Darkness -- 【DLC】闇の玉"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "[DLC] Splash of darkness -- 【DLC】闇の飛沫"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "[DLC] Mist of Darkness -- 【DLC】闇の霧"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "[DLC] The Chasers -- 【DLC】追う者たち"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "fireball -- ファイアボール"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "fireball double chant -- ファイアボール二重詠唱"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "fireball 2 -- ファイアボール２"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Fireball 2 double chant -- ファイアボール２二重詠唱"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "fireball 3 -- ファイアボール３"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "firestorm -- ファイアストーム"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "firestorm double chant -- ファイアストーム二重詠唱"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "firestorm 2 -- ファイアストーム２"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "whip of flame -- 炎のムチ"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Proximity flame 1 -- 近接炎1"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Proximity flame 1_double chant -- 近接炎1_二重詠唱"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Proximity flame 2 -- 近接炎2"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "poisonous fog -- 毒の霧"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "poisonous fog -- 猛毒の霧"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "acid fog -- 酸の霧"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "iron body -- 鉄の体"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "veil of water -- 水のヴェール"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "flame weapon enchantment -- 炎武器エンチャント"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "power of madness -- 狂気の力"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Chaos_Fireball -- カオス_ファイアボール"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Chaos_Firestorm -- カオス_ファイアストーム"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Whip of Chaos Flame -- カオス炎のムチ"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "[DLC] Black Flame -- 【DLC】黒炎"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "recovery 1 -- 回復1"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Recovery 1 double chant -- 回復1二重詠唱"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "recovery 2 -- 回復2"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "recovery 3 -- 回復3"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "recovery 4 -- 回復4"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "regeneration -- リジェネ"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "Regeneration double chant -- リジェネ二重詠唱"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "great regeneration -- グレートリジェネ"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Summon 1 -- 召喚1"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "summon 2 -- 召喚2"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "One-time resurrection -- 一度きり復活"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "return -- 帰還"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "force 1 -- フォース1"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "Force 1 double chant -- フォース1二重詠唱"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "force 2 -- フォース2"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "force 3 -- フォース3"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "tips -- ヒント"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "thunder 1 -- 雷1"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "Thunder 1 double chant -- 雷1二重詠唱"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "thunder 2 -- 雷2"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "thunder 3 -- 雷3"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "magic protection 1 -- 魔法防護1"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "magic protection 2 -- 魔法防護2"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "cause and effect -- 因果応報"
+      ]
+    },
+    {
+      "ID": 5710,
+      "Entries": [
+        "cause and effect -- 因果応報"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "gravity -- グラビティ"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "anti-magic realm -- 反魔法領域"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "sword of the sun -- 太陽の剣"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "moonlight sword -- 月光の剣"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "arrow of soul -- ソウルの矢"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "strong soul arrow -- 強いソウルの矢"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "soul arrow -- ソウルの太矢"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Strong soul arrow -- 強いソウルの太矢"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "A mass of chasing souls -- 追尾するソウルの塊"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Pursuing soul crystal mass -- 追尾するソウルの結晶塊"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "spear of soul -- ソウルの槍"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "soul crystal spear -- ソウルの結晶槍"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Weapon magic enhancement 1 -- 武器魔法強化1"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Weapon magic enhancement 2 -- 武器魔法強化2"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Weapon magic enhancement 3 -- 武器魔法強化3"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "Shield reinforcement 1 -- 盾強化1"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "Shield reinforcement 2 -- 盾強化2"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "invisible weapon -- インビジブルウェポン"
+      ]
+    },
+    {
+      "ID": 13410,
+      "Entries": [
+        "invisible body -- インビジブルボディ"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "light -- ライト"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "silence -- サイレンス"
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "sound -- サウンド"
+      ]
+    },
+    {
+      "ID": 13530,
+      "Entries": [
+        "repair -- 修復"
+      ]
+    },
+    {
+      "ID": 13540,
+      "Entries": [
+        "Falling control -- フォーリングコントロール"
+      ]
+    },
+    {
+      "ID": 13550,
+      "Entries": [
+        "mimicry -- 擬態"
+      ]
+    },
+    {
+      "ID": 13600,
+      "Entries": [
+        "disenchantment -- 解呪"
+      ]
+    },
+    {
+      "ID": 13610,
+      "Entries": [
+        "healing -- 治癒"
+      ]
+    },
+    {
+      "ID": 13700,
+      "Entries": [
+        "crystal beam -- 結晶ビーム"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "fireball -- ファイアボール"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "fireball 2 -- ファイアボール２"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "fireball 3 -- ファイアボール３"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "firestorm -- ファイアストーム"
+      ]
+    },
+    {
+      "ID": 14040,
+      "Entries": [
+        "firestorm 2 -- ファイアストーム２"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "whip of flame -- 炎のムチ"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Proximity flame 1 -- 近接炎1"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "Proximity flame 2 -- 近接炎2"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "poisonous fog -- 毒の霧"
+      ]
+    },
+    {
+      "ID": 14210,
+      "Entries": [
+        "poisonous fog -- 猛毒の霧"
+      ]
+    },
+    {
+      "ID": 14220,
+      "Entries": [
+        "acid fog -- 酸の霧"
+      ]
+    },
+    {
+      "ID": 14300,
+      "Entries": [
+        "iron body -- 鉄の体"
+      ]
+    },
+    {
+      "ID": 14310,
+      "Entries": [
+        "veil of water -- 水のヴェール"
+      ]
+    },
+    {
+      "ID": 14400,
+      "Entries": [
+        "power of madness -- 狂気の力"
+      ]
+    },
+    {
+      "ID": 14500,
+      "Entries": [
+        "Chaos_Fireball -- カオス_ファイアボール"
+      ]
+    },
+    {
+      "ID": 14510,
+      "Entries": [
+        "Chaos_Firestorm -- カオス_ファイアストーム"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Whip of Chaos Flame -- カオス炎のムチ"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "recovery 1 -- 回復1"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "recovery 2 -- 回復2"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "recovery 3 -- 回復3"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "recovery 4 -- 回復4"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "regeneration -- リジェネ"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "great regeneration -- グレートリジェネ"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Summon 1 -- 召喚1"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "summon 2 -- 召喚2"
+      ]
+    },
+    {
+      "ID": 15200,
+      "Entries": [
+        "One-time resurrection -- 一度きり復活"
+      ]
+    },
+    {
+      "ID": 15210,
+      "Entries": [
+        "return -- 帰還"
+      ]
+    },
+    {
+      "ID": 15300,
+      "Entries": [
+        "force 1 -- フォース1"
+      ]
+    },
+    {
+      "ID": 15301,
+      "Entries": [
+        "Force 1 double chant -- フォース1二重詠唱"
+      ]
+    },
+    {
+      "ID": 15310,
+      "Entries": [
+        "force 2 -- フォース2"
+      ]
+    },
+    {
+      "ID": 15320,
+      "Entries": [
+        "force 3 -- フォース3"
+      ]
+    },
+    {
+      "ID": 15400,
+      "Entries": [
+        "tips -- ヒント"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "thunder 1 -- 雷1"
+      ]
+    },
+    {
+      "ID": 15510,
+      "Entries": [
+        "thunder 2 -- 雷2"
+      ]
+    },
+    {
+      "ID": 15520,
+      "Entries": [
+        "thunder 3 -- 雷3"
+      ]
+    },
+    {
+      "ID": 15600,
+      "Entries": [
+        "magic protection 1 -- 魔法防護1"
+      ]
+    },
+    {
+      "ID": 15610,
+      "Entries": [
+        "magic protection 2 -- 魔法防護2"
+      ]
+    },
+    {
+      "ID": 15700,
+      "Entries": [
+        "cause and effect -- 因果応報"
+      ]
+    },
+    {
+      "ID": 15710,
+      "Entries": [
+        "cause and effect -- 因果応報"
+      ]
+    },
+    {
+      "ID": 15800,
+      "Entries": [
+        "gravity -- グラビティ"
+      ]
+    },
+    {
+      "ID": 15810,
+      "Entries": [
+        "anti-magic realm -- 反魔法領域"
+      ]
+    },
+    {
+      "ID": 15900,
+      "Entries": [
+        "sword of the sun -- 太陽の剣"
+      ]
+    },
+    {
+      "ID": 15910,
+      "Entries": [
+        "moonlight sword -- 月光の剣"
+      ]
+    }
+  ]
+}

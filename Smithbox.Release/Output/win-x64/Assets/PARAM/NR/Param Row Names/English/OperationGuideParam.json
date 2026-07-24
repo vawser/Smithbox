@@ -1,0 +1,149 @@
+{
+  "Name": "OperationGuideParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Hold <?keyicon@122?>: Descend\n<?keyicon@105?>: Disembark"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "<?keyicon@105?>: Disembark"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "<?keyicon@107?>: Spiritstream jump"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "<?keyicon@107?>: Spiritstream jump"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "<?keyicon@107?>: Spiritstream jump"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Find crest"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Find crests"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Smithing table is sealed"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Unable to examine now"
+      ]
+    }
+  ]
+}

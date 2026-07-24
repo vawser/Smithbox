@@ -1,0 +1,65 @@
+{
+  "Key": "BULLET_ATTACH_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ATTACH_PARAM_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "矢"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oya"
+        }
+      ]
+    },
+    {
+      "Key": "4000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing ax"
+        }
+      ]
+    },
+    {
+      "Key": "6000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disc shield"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "Name": "ActionUnlockParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No lifting of ban -- 解禁なし"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Resurrection technique -- 復活の術"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Right hand sword -- 右手刀"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Right Hand Sword_Ninjutsu Ninjutsu -- 右手刀_忍殺忍術"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Left hand prosthesis -- 左手義手"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Left hand prosthesis_prosthesis ninja -- 左手義手_義手忍具"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "A school technique that consumes form charges -- 形代を消費する流派技"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Items that consume the shape fee -- 形代を消費するアイテム"
+      ]
+    },
+    {
+      "ID": 2390,
+      "Entries": [
+        "Night eyes -- 夜目"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Immortal slash -- 不死斬り"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Infinite breathing -- 無限呼吸"
+      ]
+    },
+    {
+      "ID": 2440,
+      "Entries": [
+        "Breaking back -- 崩し裏回り"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "Anti-aircraft shinobi -- 対空忍殺"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Stealth: Wire Attack -- 忍び流：ワイヤー攻撃"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Ninja: Aerial Guard / Jasuga -- 忍び流：空中ガード/ジャスガ"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Stealth: Aerial Prosthesis Ninja -- 忍び流：空中義手忍具"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Ninja: Step closeout -- 忍び流：ステップ見切り"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Ninja: Sliding (dash crouching) -- 忍び流：スライディング（ダッシュしゃがみ）"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Ninja style: aerial style -- 忍び流：空中流派技"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Prosthetic hand ninja style: slashing -- 義手忍び流：追い斬り"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Prosthetic hand ninja style: slashing in a row -- 義手忍び流：連ね斬り"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Prosthetic Hand Ninja: Unleashed Slash -- 義手忍び流：放ち斬り"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Prosthetic Hand Ninja: Matori Sword -- 義手忍び流：まとり斬り"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Ashina style: Reservoir thrust -- 葦名流：溜め突き"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Debugging Skills Lifted: New Game -- デバッグ用スキル解禁：ニューゲーム"
+      ]
+    },
+    {
+      "ID": 910010,
+      "Entries": [
+        "Debugging skills lifted: Castle -- デバッグ用スキル解禁：城下"
+      ]
+    },
+    {
+      "ID": 910020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence -- デバッグ用スキル解禁：武家屋敷"
+      ]
+    },
+    {
+      "ID": 910030,
+      "Entries": [
+        "Debugging skills lifted: Honjo -- デバッグ用スキル解禁：本城"
+      ]
+    },
+    {
+      "ID": 910040,
+      "Entries": [
+        "Debugging skills lifted: Hidden prison -- デバッグ用スキル解禁：隠し牢"
+      ]
+    },
+    {
+      "ID": 910050,
+      "Entries": [
+        "Debugging skills lifted: Dungeon -- デバッグ用スキル解禁：地下牢"
+      ]
+    },
+    {
+      "ID": 910060,
+      "Entries": [
+        "Debugging skills lifted: Temple -- デバッグ用スキル解禁：寺"
+      ]
+    },
+    {
+      "ID": 910070,
+      "Entries": [
+        "Debugging skills lifted: Valley -- デバッグ用スキル解禁：渓谷"
+      ]
+    },
+    {
+      "ID": 910080,
+      "Entries": [
+        "Debugging skills lifted: Lower valley -- デバッグ用スキル解禁：渓谷下層"
+      ]
+    },
+    {
+      "ID": 910090,
+      "Entries": [
+        "Debugging Skills Lifted: Sick Village -- デバッグ用スキル解禁：病み村"
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "Debugging skill lifted: Honjo_Ninja army invasion -- デバッグ用スキル解禁：本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 910110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city -- デバッグ用スキル解禁：水没都"
+      ]
+    },
+    {
+      "ID": 910120,
+      "Entries": [
+        "Debugging skills lifted: Honjo_Tokugawa invasion -- デバッグ用スキル解禁：本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison _ When Tokugawa attacks -- デバッグ用スキル解禁：隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910140,
+      "Entries": [
+        "Debugging skills lifted: Castle_Tokugawa invasion -- デバッグ用スキル解禁：城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 910150,
+      "Entries": [
+        "Debugging skills lifted: Game clear -- デバッグ用スキル解禁：ゲームクリア"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Debugging skills lifted: New game for checking enemies -- デバッグ用スキル解禁：敵チェック用ニューゲーム"
+      ]
+    },
+    {
+      "ID": 920010,
+      "Entries": [
+        "Debugging skill lifted: Castle for checking enemies -- デバッグ用スキル解禁：敵チェック用城下"
+      ]
+    },
+    {
+      "ID": 920020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence for checking enemies -- デバッグ用スキル解禁：敵チェック用武家屋敷"
+      ]
+    },
+    {
+      "ID": 920030,
+      "Entries": [
+        "Debugging skill lifted: Honjo for checking enemies -- デバッグ用スキル解禁：敵チェック用本城"
+      ]
+    },
+    {
+      "ID": 920040,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies -- デバッグ用スキル解禁：敵チェック用隠し牢"
+      ]
+    },
+    {
+      "ID": 920050,
+      "Entries": [
+        "Debugging skills lifted: Enemy check dungeon -- デバッグ用スキル解禁：敵チェック用地下牢"
+      ]
+    },
+    {
+      "ID": 920060,
+      "Entries": [
+        "Debugging skill lifted: Enemy check temple -- デバッグ用スキル解禁：敵チェック用寺"
+      ]
+    },
+    {
+      "ID": 920070,
+      "Entries": [
+        "Debugging skills lifted: Enemy check valley -- デバッグ用スキル解禁：敵チェック用渓谷"
+      ]
+    },
+    {
+      "ID": 920080,
+      "Entries": [
+        "Debugging skill lifted: Lower layer of valley for checking enemies -- デバッグ用スキル解禁：敵チェック用渓谷下層"
+      ]
+    },
+    {
+      "ID": 920090,
+      "Entries": [
+        "Debugging skill lifted: Enemy check sick village -- デバッグ用スキル解禁：敵チェック用病み村"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo_Ninja army invasion -- デバッグ用スキル解禁：敵チェック用本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 920110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city for checking enemies -- デバッグ用スキル解禁：敵チェック用水没都"
+      ]
+    },
+    {
+      "ID": 920120,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920140,
+      "Entries": [
+        "Debugging skill lifted: Enemy check castle _ Tokugawa invasion -- デバッグ用スキル解禁：敵チェック用城下_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 920150,
+      "Entries": [
+        "Debugging skill lifted: Clear enemy check game -- デバッグ用スキル解禁：敵チェック用ゲームクリア"
+      ]
+    },
+    {
+      "ID": 999996,
+      "Entries": [
+        "Lifting of all actions for debugging_No derivative attacks -- デバッグ用全アクション解禁_派生攻撃なし"
+      ]
+    },
+    {
+      "ID": 999997,
+      "Entries": [
+        "Lifting of the ban on all actions for debugging_Except for immortal slashing / acquisition of form charges -- デバッグ用全アクション解禁_不死斬り/形代取得以外"
+      ]
+    },
+    {
+      "ID": 999998,
+      "Entries": [
+        "All actions for debugging have been lifted _ except for immortal slashing -- デバッグ用全アクション解禁_不死斬り以外"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "All actions for debugging have been lifted -- デバッグ用全アクション解禁"
+      ]
+    }
+  ]
+}

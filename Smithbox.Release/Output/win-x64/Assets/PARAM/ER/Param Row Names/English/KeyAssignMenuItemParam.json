@@ -1,0 +1,203 @@
+{
+  "Name": "KeyAssignMenuItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Move"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Movement Control"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Move Forwards"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Move Backwards"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Move Left"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Move Right"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Backstep, Dodge Roll, Dash"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Crouch / Stand Up"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Camera Controls"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Move Camera / Change Target (Up)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Move Camera / Change Target (Down)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Move Camera / Change Target (Left)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Move Camera / Change Target (Right)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Reset Camera, Lock-On/Remove Target"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Switch Armament"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Switch Sorcery/Incantation"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Switch Item"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Switch Right-Hand Armament"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Switch Left-Hand Armament"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Attack"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Attack (RH & Two-Handed Armament)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Strong Attack (RH & 2H Armament)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Guard (LH Armament)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Skill"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Use Item"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Event Action (Examine, Open, etc.)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Main Menu"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Map"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

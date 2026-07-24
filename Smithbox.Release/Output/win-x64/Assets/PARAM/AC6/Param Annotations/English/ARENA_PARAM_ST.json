@@ -1,0 +1,108 @@
+{
+  "Param": "ARENA_PARAM_ST",
+  "Type": "ARENA_PARAM_ST",
+  "Name": "ARENA_PARAM_ST",
+  "Description": "Determines the parameters used for Arena missions.",
+  "Fields": [
+    {
+      "Field": "missionParamID",
+      "Name": "Mission Param ID",
+      "Description": "MissionParam row ID; mainly determines which map to fight on."
+    },
+    {
+      "Field": "category",
+      "Name": "Display Category",
+      "Description": "Display tab"
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rewardTokenID",
+      "Name": "Reward Token ID",
+      "Description": "ID of reward parts token"
+    },
+    {
+      "Field": "rankTextID",
+      "Name": "Rank Text ID",
+      "Description": "Menu text ID for rank display"
+    },
+    {
+      "Field": "ranker_accountParamID",
+      "Name": "Account Param ID",
+      "Description": "AccountParam row ID; opponent's name and emblem."
+    },
+    {
+      "Field": "ranker_chrInitParamID",
+      "Name": "Character Param ID",
+      "Description": "CharaInitParam row ID; opponent's loadout and customization."
+    },
+    {
+      "Field": "ranker_npcParamID",
+      "Name": "NPC Param ID",
+      "Description": "NpcParam row ID; opponent's stats."
+    },
+    {
+      "Field": "ranker_thinkParamID",
+      "Name": "NPC Think Param ID",
+      "Description": "NpcThinkParam row ID; opponent's AI."
+    },
+    {
+      "Field": "firstReward_cash",
+      "Name": "Initial COAM Reward",
+      "Description": "Money granted on first completion."
+    },
+    {
+      "Field": "firstReward_osExp",
+      "Name": "Initial OST Reward",
+      "Description": "OS Tuning reward granted on first completion."
+    },
+    {
+      "Field": "firstReward_reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rematchReward_cash",
+      "Name": "Repeat COAM Reward",
+      "Description": "Money granted on repeat completions."
+    },
+    {
+      "Field": "rematchReward_osExp",
+      "Name": "Repeat OST Reward",
+      "Description": "OS Tuning reward granted on repeat completions."
+    },
+    {
+      "Field": "rematchReward_reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "startCutsceneId",
+      "Name": "Intro Cutscene ID",
+      "Description": "Cutscene ID to play at the start of the mission."
+    },
+    {
+      "Field": "bgmId",
+      "Name": "BGM Sound ID",
+      "Description": "Background music to play during the mission."
+    },
+    {
+      "Field": "rankIconID",
+      "Name": "Rank Texture ID",
+      "Description": "Texture ID defined in the SB_ArenaRank layout."
+    },
+    {
+      "Field": "endCutsceneId",
+      "Name": "Outro Cutscene ID",
+      "Description": "Cutscene ID to play at the end of the mission."
+    },
+    {
+      "Field": "endPad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

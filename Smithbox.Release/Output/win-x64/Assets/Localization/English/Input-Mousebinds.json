@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "MOUSE_Viewport_Enable_Viewport_Movement",
+      "Text": "Enable Viewport Movement"
+    },
+    {
+      "Key": "MOUSE_Viewport_Enable_Viewport_Movement_TT",
+      "Text": "The button that is pressed down to enable viewport movement input."
+    },
+    {
+      "Key": "MOUSE_Viewport_Picking_Action",
+      "Text": "Select Map Object"
+    },
+    {
+      "Key": "MOUSE_Viewport_Picking_Action_TT",
+      "Text": "The button that is pressed down to select a map object in the viewport."
+    },
+    {
+      "Key": "MOUSE_Viewport_Gizmo_Interaction_Action",
+      "Text": "Interact with Gizmo"
+    },
+    {
+      "Key": "MOUSE_Viewport_Gizmo_Interaction_Action_TT",
+      "Text": "The button that is pressed down to interact with a gizmo control."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_Start",
+      "Text": "Start Box Drag"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_Start_TT",
+      "Text": "The button that is pressed down to signal the start of the box selection drag."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_End",
+      "Text": "End Box Drag"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_End_TT",
+      "Text": "The button that is released to signal the end of the box selection drag."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Display_Viewport_Context_Menu",
+      "Text": "Display Viewport Context Menu"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Display_Viewport_Context_Menu_TT",
+      "Text": "The button that is pressed down to open the viewport context menu."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Select_Map_In_World_Map",
+      "Text": "Select Map in World Map"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Select_Map_In_World_Map_TT",
+      "Text": "The button that is pressed down to select the maps to filter by when in the World Map menu."
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_Start",
+      "Text": "Start World Map Drag"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_Start_TT",
+      "Text": "The button that is pressed down to signal the start of the world map drag."
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_End",
+      "Text": "End World Map Drag"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_End_TT",
+      "Text": "The button that is released to signal the end of the world map drag."
+    }
+  ]
+}

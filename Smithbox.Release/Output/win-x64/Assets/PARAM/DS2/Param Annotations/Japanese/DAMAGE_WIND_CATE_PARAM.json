@@ -1,0 +1,53 @@
+{
+  "Param": "DAMAGE_WIND_CATE_PARAM",
+  "Type": "DAMAGE_WIND_CATE_PARAM",
+  "Name": "DAMAGE_WIND_CATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cloth",
+      "Name": "クロス",
+      "Description": ""
+    },
+    {
+      "Field": "model",
+      "Name": "草",
+      "Description": ""
+    },
+    {
+      "Field": "obj",
+      "Name": "オブジェ",
+      "Description": ""
+    },
+    {
+      "Field": "sfx",
+      "Name": "SFX",
+      "Description": ""
+    },
+    {
+      "Field": "dmgSfx",
+      "Name": "着弾SFX",
+      "Description": ""
+    },
+    {
+      "Field": "eraseSfx",
+      "Name": "SFXヒット時に消去制御に遷移させる",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー0",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInTime",
+      "Name": "フェードイン時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTime",
+      "Name": "フェードアウト時間[sec]",
+      "Description": ""
+    }
+  ]
+}

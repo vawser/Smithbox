@@ -1,0 +1,158 @@
+{
+  "Param": "NPC_PARTS_PARAM_ST",
+  "Type": "NPC_PARTS_PARAM_ST",
+  "Name": "NPC_PARTS_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventPartsId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsGroupIdx",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hitFEType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsDmgCorrect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsBulletDmgCorrect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ownerDmgCorrect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defMtlSE",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defMtlSfx",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hitSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDmgIgnore",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakDisableLockonDmypoly",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isShieldGuardEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isPaGuardEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isPhysGuardEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBulletForceForceRicochetSfx",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoSightFEDispType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockonDmypoly",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hpGaugeDmypoly",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addImpactRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hitAddSpEffectCondPartsType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

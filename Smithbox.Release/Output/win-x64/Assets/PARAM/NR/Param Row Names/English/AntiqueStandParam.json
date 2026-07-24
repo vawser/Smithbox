@@ -1,0 +1,449 @@
+{
+  "Name": "AntiqueStandParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Wylder] Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Wylder] Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Wylder] Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Wylder] Soot-Covered Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Wylder] Sealed Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Wylder] Decrepit Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[Wylder] Forgotten Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Guardian] Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Guardian] Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Guardian] Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Guardian] Soot-Covered Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Guardian] Sealed Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Guardian] Decrepit Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[Guardian] Forgotten Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Ironeye] Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Ironeye] Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Ironeye] Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Ironeye] Soot-Covered Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[Ironeye] Sealed Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "[Ironeye] Decrepit Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "[Ironeye] Forgotten Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Duchess] Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Duchess] Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[Duchess] Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Duchess] Soot-Covered Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "[Duchess] Sealed Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "[Duchess] Decrepit Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "[Duchess] Forgotten Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Raider] Raider's Urn"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Raider] Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[Raider] Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "[Raider] Soot-Covered Raider's Urn"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[Raider] Sealed Raider's Urn"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Raider] Decrepit Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "[Raider] Forgotten Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Revenant] Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Revenant] Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Revenant] Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Revenant] Soot-Covered Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[Revenant] Sealed Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[Revenant] Decrepit Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "[Revenant] Forgotten Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Recluse] Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Recluse] Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[Recluse] Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[Recluse] Soot-Covered Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[Recluse] Sealed Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[Recluse] Decrepit Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[Recluse] Forgotten Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Executor] Executor's Urn"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[Executor] Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[Executor] Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "[Executor] Soot-Covered Executor's Urn"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "[Executor] Sealed Executor's Urn"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[Executor] Decrepit Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "[Executor] Forgotten Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Scholar] Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[Scholar] Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[Scholar] Scholar's Chalice"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "[Scholar] Soot-Covered Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "[Scholar] Sealed Scholar's Urn"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "[Scholar] Decrepit Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "[Scholar] Forgotten Scholar's Goblet"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Undertaker] Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[Undertaker] Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[Undertaker] Undertaker's Chalice"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[Undertaker] Soot-Covered Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[Undertaker] Sealed Undertaker's Urn"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[Undertaker] Decrepit Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "[Undertaker] Forgotten Undertaker's Goblet"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "[All] Sacred Erdtree Grail"
+      ]
+    },
+    {
+      "ID": 19001,
+      "Entries": [
+        "[All] Spirit Shelter Grail"
+      ]
+    },
+    {
+      "ID": 19002,
+      "Entries": [
+        "[All] Giant's Cradle Grail"
+      ]
+    },
+    {
+      "ID": 19010,
+      "Entries": [
+        "[All] Scadutree Grail"
+      ]
+    }
+  ]
+}

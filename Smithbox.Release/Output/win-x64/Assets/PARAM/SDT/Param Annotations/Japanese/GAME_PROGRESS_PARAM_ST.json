@@ -1,0 +1,23 @@
+{
+  "Param": "GAME_PROGRESS_PARAM_ST",
+  "Type": "GAME_PROGRESS_PARAM_ST",
+  "Name": "GAME_PROGRESS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "eventFlagId",
+      "Name": "イベントフラグID",
+      "Description": "イベントフラグID"
+    },
+    {
+      "Field": "progressValue",
+      "Name": "加算進捗率[％]",
+      "Description": "加算進捗率[％]"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

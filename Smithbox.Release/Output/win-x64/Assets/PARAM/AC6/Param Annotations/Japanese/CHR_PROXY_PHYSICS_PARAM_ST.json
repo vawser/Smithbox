@@ -1,0 +1,43 @@
+{
+  "Param": "CHR_PROXY_PHYSICS_PARAM_ST",
+  "Type": "CHR_PROXY_PHYSICS_PARAM_ST",
+  "Name": "CHR_PROXY_PHYSICS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "penetrationRecoverySpeed",
+      "Name": "めり込み解消速度",
+      "Description": "めり込み解消速度。hknpCharacterProxyCinfo：：m_penetrationRecoverySpeedへと渡される。大きすぎると振動したり吹っ飛んだりするので注意。小さすぎるとアタリ抜けしたりする。"
+    },
+    {
+      "Field": "keepContactTolerance",
+      "Name": "クリアランス距離",
+      "Description": "クリアランス距離。hknpCharacterProxyCinfo：：keepContactToleranceへと渡される。マニフォールドの検知範囲に影響するので大きくするとトネリング（アタリ抜け）を軽減できる。大きすぎるとパフォーマンスに影響する。"
+    },
+    {
+      "Field": "mapuid",
+      "Name": "MapUid",
+      "Description": "パラメータ上書き対象MapUid。-1でデフォルト値"
+    },
+    {
+      "Field": "hitPartsName",
+      "Name": "ヒットパーツ名",
+      "Description": "パラメータ上書き対象ヒット名。h123456_7890の123456の部分。-1で指定なし。直接上に乗ったヒット。"
+    },
+    {
+      "Field": "refHitPartsName",
+      "Name": "参照ヒットパーツ名",
+      "Description": "パラメータ上書き対象参照ヒット名。h123456_7890の123456の部分。-1で指定なし。アセットの参照ヒットでマッチする。"
+    },
+    {
+      "Field": "assetPartsName",
+      "Name": "アセットパーツ名",
+      "Description": "パラメータ上書き対象アセット名。AEG123_456_7890の123456の部分。-1で指定なし"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

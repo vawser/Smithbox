@@ -1,0 +1,38 @@
+{
+  "Key": "DAMAGE_HIT_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_HIT_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hit position"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "Param": "SP_EFFECT_VFX_PARAM_ST",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SP_EFFECT_VFX_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "Midst SFX ID",
+      "Description": "In effect SfxID (-1: invalid)"
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "Midst SE ID",
+      "Description": "In effect SeID (-1: invalid)"
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "Start SFX ID",
+      "Description": "SfxID at activation (-1: invalid)"
+    },
+    {
+      "Field": "initSeId",
+      "Name": "Start SE ID",
+      "Description": "When activated SeID (-1: invalid)"
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "End SFX ID",
+      "Description": "SfxID at the time of cancellation (-1: invalid)"
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "End SE ID",
+      "Description": "SeID at the time of release (-1: invalid)"
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "Camouflage - Start Distance",
+      "Description": "It is the camouflage start distance"
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "Camouflage - End Distance",
+      "Description": "It is the camouflage end distance"
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "Transform - Protector ID",
+      "Description": "Makeover Armor ID (-1: None)"
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "Midst Dummy Poly ID",
+      "Description": "In effect Damipoli ID (-1: Root)"
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "Start Dummy Poly ID",
+      "Description": "Damipoli ID at the time of activation (-1: root)"
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "End Dummy Poly ID",
+      "Description": "Damipoli ID at the time of cancellation (-1: root)"
+    },
+    {
+      "Field": "effectType",
+      "Name": "Effect Type",
+      "Description": "Effect type"
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "Weapon Enchant - Soul Param ID",
+      "Description": "Soul Param ID for Weapon Enchantment (-1: None). Change the applied Phantom Param."
+    },
+    {
+      "Field": "playCategory",
+      "Name": "Play Category",
+      "Description": "Controls effect playback due to duplicate effects"
+    },
+    {
+      "Field": "playPriority",
+      "Name": "Play Priority",
+      "Description": "Set the playback priority when the categories match (lower one has priority)"
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "Large Effect Exists",
+      "Description": "Is there a large effect?"
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "Soul Effect Exists",
+      "Description": "Is there an effect for the soul body?"
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "Camouflage - Invisible while Active",
+      "Description": "Whether to hide the effect when hiding"
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "Camouflage - Enable",
+      "Description": "Do you hide"
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "Camouflage - Invisible for Friend",
+      "Description": "Is it hidden even by allies when hiding?"
+    },
+    {
+      "Field": "isHideFootEffect_forCamouflage",
+      "Name": "Camouflage - Hide Foot Effect",
+      "Description": "Do you want to turn off the foot effect when hiding?"
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "Camouflage - Translucent Appearance",
+      "Description": "Only translucent appearance"
+    },
+    {
+      "Field": "isFullBodyTransformProtectorId",
+      "Name": "Is Full Body Protector ID",
+      "Description": "Is the transformation armor ID for the whole body?"
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "Is Invisible Weapon",
+      "Description": "Invisible Weapon for Weapon Enchantment (0: Weapon Show, 1: Weapon Hide)"
+    },
+    {
+      "Field": "isSilence",
+      "Name": "Is Silent",
+      "Description": "Is it silence? (0: No, 1: Yes)"
+    },
+    {
+      "Field": "isMidstFullbody",
+      "Name": "Is Midst SFX Full Body",
+      "Description": "Do you use whole body Damipoli for equipping SFX during effect? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+    },
+    {
+      "Field": "isInitFullbody",
+      "Name": "Is Start SFX Full Body",
+      "Description": "Do you use the whole body Damipoli for equipping SFX during activation? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+    },
+    {
+      "Field": "isFinishFullbody",
+      "Name": "Is End SFX Full Body",
+      "Description": "Do you use the whole body Damipoli for equipping SFX at the time of release? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+    },
+    {
+      "Field": "isVisibleDeadChr",
+      "Name": "Is Visible on Dead Chr",
+      "Description": "If , VFX will be displayed even when the corpse is dead."
+    },
+    {
+      "Field": "isUseOffsetEnchantSfxSize",
+      "Name": "Use Enchant SFX Size to Offset SFX ID",
+      "Description": "Whether to offset the SfxId according to the enchantment Sfx size of the weapon para"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2f_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalId1",
+      "Name": "Decal ID [0]",
+      "Description": "Decal ID 1 (-1: invalid)"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "Decal ID [1]",
+      "Description": "Decal ID 2 (-1: invalid)"
+    },
+    {
+      "Field": "footEffectPriority",
+      "Name": "Foot Effect Priority",
+      "Description": "Foot effect offset priority (lower is higher)"
+    },
+    {
+      "Field": "footEffectOffset",
+      "Name": "Foot Effect Offset",
+      "Description": "Amount offset to foot effect ID when this special effect is applied"
+    },
+    {
+      "Field": "traceSfxIdOffsetType",
+      "Name": "Trace SFX ID Offset Type",
+      "Description": "The offset value applied to the sword flash SFX ID. Used for enchantment and sword trajectory effects"
+    },
+    {
+      "Field": "forceDeceasedType",
+      "Name": "Force Deceased Type",
+      "Description": "A function that can force the appearance of a character to be alive / dead"
+    },
+    {
+      "Field": "enchantStartDmyId_0",
+      "Name": "Enchant SFX Start - Dummy Poly ID [0]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_0",
+      "Name": "Enchant SFX end - Dummy Poly ID [0]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_1",
+      "Name": "Enchant SFX Start - Dummy Poly ID [1]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_1",
+      "Name": "Enchant SFX End - Dummy Poly ID [1]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_2",
+      "Name": "Enchant SFX Start - Dummy Poly ID [2]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_2",
+      "Name": "Enchant SFX End - Dummy Poly ID [2]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_3",
+      "Name": "Enchant SFX Start - Dummy Poly ID [3]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_3",
+      "Name": "Enchant SFX End - Dummy Poly ID [3]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_4",
+      "Name": "Enchant SFX Start - Dummy Poly ID [4]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_4",
+      "Name": "Enchant SFX End - Dummy Poly ID [4]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_5",
+      "Name": "Enchant SFX Start - Dummy Poly ID [5]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_5",
+      "Name": "Enchant SFX End - Dummy Poly ID [5]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_6",
+      "Name": "Enchant SFX Start - Dummy Poly ID [6]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_6",
+      "Name": "Enchant SFX End - Dummy Poly ID [6]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "enchantStartDmyId_7",
+      "Name": "Enchant SFX Start - Dummy Poly ID [7]",
+      "Description": "Damipoli ID generated at the base of enchantment"
+    },
+    {
+      "Field": "enchantEndDmyId_7",
+      "Name": "Enchant SFX End - Dummy Poly ID [7]",
+      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+    },
+    {
+      "Field": "SfxIdOffsetType",
+      "Name": "SFX ID Offset Type",
+      "Description": "SfxID offset type"
+    },
+    {
+      "Field": "phantomParamOverwriteType",
+      "Name": "Phantom Param Overwrite Type",
+      "Description": "Forced overwrite type of phantom parameters"
+    },
+    {
+      "Field": "camouflageMinAlpha",
+      "Name": "Camouflage - Min Alpha",
+      "Description": "Minimum  value when hiding [%]"
+    },
+    {
+      "Field": "wetAspectType",
+      "Name": "Wet Aspect Type",
+      "Description": "Generate a wet expression by referring to the wet parameter"
+    },
+    {
+      "Field": "phantomParamOverwriteId",
+      "Name": "Phantom Param Overwrite ID",
+      "Description": "Forced Id of phantom parameter"
+    },
+    {
+      "Field": "materialParamId",
+      "Name": "Material Param ID",
+      "Description": "ID0-99 are GS reservation IDs. If ID100 or later is specified, the material extension parameter is referenced (-1: invalid value)."
+    },
+    {
+      "Field": "materialParamInitValue",
+      "Name": "Material Param - Start Fade",
+      "Description": "The value at the start of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing"
+    },
+    {
+      "Field": "materialParamTargetValue",
+      "Name": "Material Param - End Fade",
+      "Description": "The value at the end of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing"
+    },
+    {
+      "Field": "materialParamFadeTime",
+      "Name": "Material Param - Fade Time",
+      "Description": "Fade time for material parameter values. Gradually reach the target value over this time. If the material parameter ID is -1, do nothing"
+    },
+    {
+      "Field": "footDecalMaterialOffsetOverwriteId",
+      "Name": "Foot Decal Material Offset Overwrite ID",
+      "Description": "Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)"
+    },
+    {
+      "Field": "pad_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x96",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x97",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x98",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x99",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x9a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "StaminaControlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Player"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Animal Enemy"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Small Enemy"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Strong Enemy"
+      ]
+    },
+    {
+      "ID": 1012000,
+      "Entries": [
+        "Enemy Tutorial"
+      ]
+    },
+    {
+      "ID": 1040000,
+      "Entries": [
+        "Long-arm Centipede"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "Spear Adept"
+      ]
+    },
+    {
+      "ID": 1070000,
+      "Entries": [
+        "Taro Troop"
+      ]
+    },
+    {
+      "ID": 1130000,
+      "Entries": [
+        "Armored Warrior"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Boss"
+      ]
+    },
+    {
+      "ID": 5060000,
+      "Entries": [
+        "Great Shinobi Owl"
+      ]
+    },
+    {
+      "ID": 5080000,
+      "Entries": [
+        "Gyoubu Oniwa"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    }
+  ]
+}

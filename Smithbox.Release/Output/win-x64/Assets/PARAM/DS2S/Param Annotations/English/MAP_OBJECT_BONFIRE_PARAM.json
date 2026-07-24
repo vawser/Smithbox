@@ -1,0 +1,83 @@
+{
+  "Param": "MAP_OBJECT_BONFIRE_PARAM",
+  "Type": "MAP_OBJECT_BONFIRE_PARAM",
+  "Name": "MAP_OBJECT_BONFIRE_PARAM",
+  "Description": "Defines bonfire/map object behavior, menu functionality, multiplayer restrictions, and related event settings.",
+  "Fields": [
+    {
+      "Field": "mapId",
+      "Name": "Placement Map ID",
+      "Description": "The map ID where this bonfire or map object is placed."
+    },
+    {
+      "Field": "menuAreaID",
+      "Name": "Menu Area ID",
+      "Description": "Area ID used for displaying this bonfire in travel or interaction menus."
+    },
+    {
+      "Field": "enemyDisableDistance",
+      "Name": "Enemy Proximity Disable Distance",
+      "Description": "Maximum horizontal distance at which nearby enemies prevent bonfire usage."
+    },
+    {
+      "Field": "enemyDisableHeight",
+      "Name": "Enemy Proximity Disable Height",
+      "Description": "Maximum vertical height difference at which nearby enemies prevent bonfire usage."
+    },
+    {
+      "Field": "eventCameraIdBegin",
+      "Name": "Event Camera Start ID",
+      "Description": "Camera event ID used when beginning interaction with the bonfire."
+    },
+    {
+      "Field": "eventCameraIdEnd",
+      "Name": "Event Camera End ID",
+      "Description": "Camera event ID used when ending interaction with the bonfire."
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "Multiplayer Limit Time Reduction",
+      "Description": "Amount by which multiplayer session time is reduced or adjusted."
+    },
+    {
+      "Field": "multiPlayAreaid",
+      "Name": "Multiplayer Area ID",
+      "Description": "Identifier for the multiplayer region or session area associated with this bonfire."
+    },
+    {
+      "Field": "isUseReGenerateItem",
+      "Name": "Can Burn Bonfire Ascetic",
+      "Description": "Determines whether the player can use a Bonfire Ascetic at this bonfire."
+    },
+    {
+      "Field": "isUseDisableNetworkItem",
+      "Name": "Can Burn Human Effigy",
+      "Description": "Determines whether the player can use a Human Effigy at this bonfire to disable online multiplayer."
+    },
+    {
+      "Field": "isUseLevelUpEstusFlaskItem",
+      "Name": "Can Burn Estus Flask Upgrade Item",
+      "Description": "Determines whether Estus Flask reinforcement items can be used at this bonfire."
+    },
+    {
+      "Field": "menuSortID",
+      "Name": "Menu Sort ID",
+      "Description": "Controls the ordering of this bonfire within menus."
+    },
+    {
+      "Field": "rootFlagId",
+      "Name": "Bonfire Ascetic Availability Flag",
+      "Description": "Flag controlling whether Bonfire Ascetics can be used at this bonfire."
+    },
+    {
+      "Field": "bossKillCountValId",
+      "Name": "Boss Kill Count Variable ID",
+      "Description": "Variable ID used to track the number of boss defeats associated with this area or bonfire."
+    },
+    {
+      "Field": "bossKillCountValId2",
+      "Name": "Boss Kill Count Variable ID 2",
+      "Description": "Secondary variable ID used to track boss defeat counts."
+    }
+  ]
+}

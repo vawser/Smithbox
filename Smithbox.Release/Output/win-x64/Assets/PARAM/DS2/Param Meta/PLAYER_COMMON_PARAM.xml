@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <parallelWalkMaxInput />
+        <parallelWalkKeepInputTime />
+        <dodgeInputTime />
+        <keepDashFinishStateTime />
+        <dashIntervalTime />
+        <keepDashEndMoveMaxInput />
+        <keepDashEndMoveStateTime />
+        <jumpTriggerMinSpeed />
+        <standJumpTriggerMaxSpeed />
+        <turnTriggerMinAngleIdleAndWalk />
+        <turnTriggerMinAngleJog />
+        <turnTriggerMinAngleDash />
+        <turnWalkSpeedPercentage />
+        <atkEndTurnTriggerMinAngleWalk />
+        <atkEndTurnTriggerMinAngleJog />
+        <atkEndTurnTriggerMinAngleDash />
+        <atkEndTurnWalkSpeedPercentage />
+        <ladderGraspAngleMax />
+        <ladderGraspHeightMax />
+        <ladderGraspInputTime />
+        <ladderGraspTimeLimit />
+        <ladderMoveInputTime />
+        <ladderFallInputTime />
+        <nearDeathAnimMaxBlendHpRate />
+        <nearDeathAnimMinBlendHpRate />
+        <precedingCmdKeepTime />
+        <flickInputKeepTime />
+        <flickInputFrame />
+        <flickInputPower />
+        <flickNeutralKeepTime />
+        <flickAngleMax />
+        <reviveInputTime />
+        <twoHandedInputTime />
+        <dashAttackTriggerMinSpeed />
+        <dashAttackMinSpeedAnimScale />
+        <dashAttackMaxSpeedAnimScale />
+        <autoPivotRotateNeutoralTime />
+        <autoPivotInputTime />
+        <dashBlendWeightMax />
+        <dashBlendInSpeed />
+        <dashBlendOutSpeed />
+        <dashBlendInWalkSpeed />
+        <dashBlendInLockOnWalkSpeed />
+        <quickStopSpeed />
+        <quickStopDelay />
+        <equipDurabilityRateMin />
+        <equipDurabilityRateMax />
+        <torchFireLowSwichHeight />
+        <noTargetAttackMaxUpperAngle />
+        <noTargetAttackMaxLowerAngle />
+        <torchTimeFirst />
+        <torchTimeAddition />
+        <torchMaxTime />
+        <darkAttackWeaponIntPercent />
+        <darkAttackWeaponFaithPercent />
+        <darkAttackMagicIntPercent />
+        <darkAttackMagicFaithPercent />
+        <darkAttackMiracleIntPercent />
+        <darkAttackMiracleFaithPercent />
+        <darkResistIntPercent />
+        <darkResistFaithPercent />
+        <fLookAtRotationLeftMax />
+        <fLookAtRotationRightMax />
+        <fLookAtRotationUpperMax />
+        <fLookAtRotationLownerMax />
+        <fLookAtVisibilitySideMax />
+        <fLookAtVisibilityUpperMax />
+        <fLookAtRotationSideSpeedMax />
+        <fLookAtRotationUpperSpeedMax />
+        <itemDropRevisedLotValueRound1 />
+        <itemDropRevisedLotValueRound2 />
+        <itemDropRevisedLotValueRound3 />
+        <itemDropRevisedLotValueRound4 />
+        <itemDropRevisedLotValueRound5 />
+        <itemDropRevisedLotValueRound6 />
+        <itemDropRevisedLotValueRound7 />
+        <itemDropRevisedLotValueRound8 />
+        <equipDurabilityCoverRate />
+        <wallHeight />
+        <repairCostUpRate />
+        <shieldCutBonusS />
+        <shieldCutBonusA />
+        <shieldCutBonusB />
+        <shieldCutBonusC />
+        <shieldCutBonusD />
+        <shieldCutBonusE />
+        <hitDurabilitySubValue />
+        <guardDurabilitySubValue />
+        <shootDurabilitySubValue />
+        <meleeShootDurabilitySubValue />
+        <unk164/>
+        <unk168/>
+        <unk16C/>
+        <unk170/>
+        <unk174/>
+        <unk178/>
+        <unk17C/>
+        <pcBackstabDamageRate/>
+        <pcParryBreakStabDamageRate/>
+        <pcGuardBreakStabDamageRate/>
+        <Unk18C/>
+        <Unk190/>
+        <Unk194/>
+        <Unk198/>
+        <Unk19C/>
+        <Unk1A0/>
+        <Unk1A4/>
+        <Unk1A8/>
+        <Unk1AC/>
+        <Unk1B0/>
+        <Unk1B4/>
+    </Field>
+</PARAMMETA>

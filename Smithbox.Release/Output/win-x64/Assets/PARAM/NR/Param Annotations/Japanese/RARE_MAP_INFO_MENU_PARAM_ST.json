@@ -1,0 +1,33 @@
+{
+  "Param": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Type": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Name": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "nameId",
+      "Name": "nameId",
+      "Description": ""
+    },
+    {
+      "Field": "mapFlag",
+      "Name": "mapFlag",
+      "Description": ""
+    }
+  ]
+}

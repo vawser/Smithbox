@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a resource item in the map." />
+  
+  <Field>
+    <ResourceItemLotParamID
+    AltName="Resource Item Lot ID"
+    Wiki="The ID of a row in ResourceItemLotParam that determines the resource(s) to give."
+    ParamRef="ResourceItemLotParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

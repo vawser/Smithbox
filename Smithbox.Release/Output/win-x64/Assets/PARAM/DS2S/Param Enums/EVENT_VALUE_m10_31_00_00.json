@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_VALUE_m10_31_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_31_00_00"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of jailers defeated"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank comparison: Guardian Knight"
+        }
+      ]
+    }
+  ]
+}

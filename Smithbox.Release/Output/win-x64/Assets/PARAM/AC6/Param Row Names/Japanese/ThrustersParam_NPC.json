@@ -1,0 +1,697 @@
+{
+  "Name": "ThrustersParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "NPC default -- NPCデフォルト"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 29999999,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン",
+        "lift fan -- リフトファン"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター",
+        "Ace parts thruster -- エース用パーツ スラスター"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット",
+        "Offset on thruster after QB -- QB後スラスター上オフセット"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター",
+        "Additional left hovering thruster -- 追加左ホバリングスラスター"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏",
+        "Climb thruster_right_sole -- 上昇用スラスター_右_足裏"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター",
+        "ascent thruster -- 上昇スラスター"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右",
+        "sub right -- サブ右"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Main/sub/QB combined rear left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後左",
+        "Main/sub/QB combined rear left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後左",
+        "Main/sub/QB combined rear left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後左",
+        "Main/sub/QB combined rear left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後左"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター",
+        "main thruster -- メインスラスター"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4",
+        "Bottom rear 4 -- 底面後4"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後",
+        "OW directly behind -- OW 真後"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン",
+        "OW main -- OWメイン"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "Sub thruster right -- サブスラスター右用",
+        "Sub thruster right -- サブスラスター右用",
+        "Sub thruster right -- サブスラスター右用",
+        "Sub thruster right -- サブスラスター右用",
+        "Sub thruster right -- サブスラスター右用",
+        "Sub thruster right -- サブスラスター右用"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2",
+        "Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左",
+        "Shoulder additional weapon left -- 肩追加武装左"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)",
+        "For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用",
+        "For overdo boost -- オーバードブースト用"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "for ascent thrusters -- 上昇スラスター用"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "For QB/sub front -- QB・サブ前用",
+        "For QB/sub front -- QB・サブ前用",
+        "For QB/sub front -- QB・サブ前用",
+        "For QB/sub front -- QB・サブ前用"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用",
+        "For front sub thruster -- サブスラスター前用"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター",
+        "ascent thruster -- 上昇用スラスター"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B",
+        "Bottom thruster right rear B -- 底面スラスター\u3000右後B"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター",
+        "Leg A tip right thruster -- 脚A先右側スラスター"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク",
+        "Unique for airborne use -- 滞空用ユニーク"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用",
+        "For after sub thruster -- サブスラスター後用"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）",
+        "Right shoulder (diagonally below) -- 右肩（斜め下）"
+      ]
+    }
+  ]
+}

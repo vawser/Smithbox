@@ -1,0 +1,911 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 3000,
+      "Entries": [
+        "arrow of soul"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Soul's Arrow Double Chant"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "strong soul arrow"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "soul arrow"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "soul arrow"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Strong soul arrow"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "A mass of chasing souls"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Pursuing soul crystal mass"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "spear of soul"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "soul crystal spear"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Weapon magic enhancement 1"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Weapon magic enhancement 2"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Weapon magic enhancement 3"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Shield reinforcement 1"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Shield reinforcement 2"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "invisible weapon"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "invisible body"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "light"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "silence"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "sound"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "repair"
+      ]
+    },
+    {
+      "ID": 3540,
+      "Entries": [
+        "Falling control"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "mimicry"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "disenchantment"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "healing"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "crystal beam"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[DLC] Ball of Darkness"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "[DLC] Splash of darkness"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "[DLC] Mist of Darkness"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "[DLC] The Chasers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "fireball double chant"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "fireball 2"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Fireball 2 double chant"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "fireball 3"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "firestorm"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "firestorm double chant"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "firestorm 2"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "flamethrower"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "whip of flame"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Proximity flame 1"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Proximity flame 1_double chant"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Proximity flame 2"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "poisonous fog"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "poisonous fog"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "acid fog"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "iron body"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "veil of water"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "flame weapon enchantment"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "power of madness"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Chaos_Fireball"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Chaos_Firestorm"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Whip of Chaos Flame"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "[DLC] Black Flame"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "recovery 1"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Recovery 1 double chant"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "recovery 2"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "recovery 3"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "recovery 4"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "regeneration"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "Regeneration double chant"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "great regeneration"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Summon 1"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "summon 2"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "One-time resurrection"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "return"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "force 1"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "Force 1 double chant"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "force 2"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "force 3"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "tips"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "thunder 1"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "Thunder 1 double chant"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "thunder 2"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "thunder 3"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "magic protection 1"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "magic protection 2"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "cause and effect"
+      ]
+    },
+    {
+      "ID": 5710,
+      "Entries": [
+        "cause and effect"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "gravity"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "anti-magic realm"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "sword of the sun"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "moonlight sword"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "arrow of soul"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "strong soul arrow"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "soul arrow"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Strong soul arrow"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "A mass of chasing souls"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Pursuing soul crystal mass"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "spear of soul"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "soul crystal spear"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Weapon magic enhancement 1"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Weapon magic enhancement 2"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Weapon magic enhancement 3"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "Shield reinforcement 1"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "Shield reinforcement 2"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "invisible weapon"
+      ]
+    },
+    {
+      "ID": 13410,
+      "Entries": [
+        "invisible body"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "light"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "silence"
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "sound"
+      ]
+    },
+    {
+      "ID": 13530,
+      "Entries": [
+        "repair"
+      ]
+    },
+    {
+      "ID": 13540,
+      "Entries": [
+        "Falling control"
+      ]
+    },
+    {
+      "ID": 13550,
+      "Entries": [
+        "mimicry"
+      ]
+    },
+    {
+      "ID": 13600,
+      "Entries": [
+        "disenchantment"
+      ]
+    },
+    {
+      "ID": 13610,
+      "Entries": [
+        "healing"
+      ]
+    },
+    {
+      "ID": 13700,
+      "Entries": [
+        "crystal beam"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "fireball 2"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "fireball 3"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "firestorm"
+      ]
+    },
+    {
+      "ID": 14040,
+      "Entries": [
+        "firestorm 2"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "flamethrower"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "whip of flame"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Proximity flame 1"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "Proximity flame 2"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "poisonous fog"
+      ]
+    },
+    {
+      "ID": 14210,
+      "Entries": [
+        "poisonous fog"
+      ]
+    },
+    {
+      "ID": 14220,
+      "Entries": [
+        "acid fog"
+      ]
+    },
+    {
+      "ID": 14300,
+      "Entries": [
+        "iron body"
+      ]
+    },
+    {
+      "ID": 14310,
+      "Entries": [
+        "veil of water"
+      ]
+    },
+    {
+      "ID": 14400,
+      "Entries": [
+        "power of madness"
+      ]
+    },
+    {
+      "ID": 14500,
+      "Entries": [
+        "Chaos_Fireball"
+      ]
+    },
+    {
+      "ID": 14510,
+      "Entries": [
+        "Chaos_Firestorm"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Whip of Chaos Flame"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "recovery 1"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "recovery 2"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "recovery 3"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "recovery 4"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "regeneration"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "great regeneration"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Summon 1"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "summon 2"
+      ]
+    },
+    {
+      "ID": 15200,
+      "Entries": [
+        "One-time resurrection"
+      ]
+    },
+    {
+      "ID": 15210,
+      "Entries": [
+        "return"
+      ]
+    },
+    {
+      "ID": 15300,
+      "Entries": [
+        "force 1"
+      ]
+    },
+    {
+      "ID": 15301,
+      "Entries": [
+        "Force 1 double chant"
+      ]
+    },
+    {
+      "ID": 15310,
+      "Entries": [
+        "force 2"
+      ]
+    },
+    {
+      "ID": 15320,
+      "Entries": [
+        "force 3"
+      ]
+    },
+    {
+      "ID": 15400,
+      "Entries": [
+        "tips"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "thunder 1"
+      ]
+    },
+    {
+      "ID": 15510,
+      "Entries": [
+        "thunder 2"
+      ]
+    },
+    {
+      "ID": 15520,
+      "Entries": [
+        "thunder 3"
+      ]
+    },
+    {
+      "ID": 15600,
+      "Entries": [
+        "magic protection 1"
+      ]
+    },
+    {
+      "ID": 15610,
+      "Entries": [
+        "magic protection 2"
+      ]
+    },
+    {
+      "ID": 15700,
+      "Entries": [
+        "cause and effect"
+      ]
+    },
+    {
+      "ID": 15710,
+      "Entries": [
+        "cause and effect"
+      ]
+    },
+    {
+      "ID": 15800,
+      "Entries": [
+        "gravity"
+      ]
+    },
+    {
+      "ID": 15810,
+      "Entries": [
+        "anti-magic realm"
+      ]
+    },
+    {
+      "ID": 15900,
+      "Entries": [
+        "sword of the sun"
+      ]
+    },
+    {
+      "ID": 15910,
+      "Entries": [
+        "moonlight sword"
+      ]
+    }
+  ]
+}

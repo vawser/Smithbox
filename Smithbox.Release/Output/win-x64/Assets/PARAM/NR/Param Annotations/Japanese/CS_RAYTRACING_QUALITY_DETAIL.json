@@ -1,0 +1,58 @@
+{
+  "Param": "CS_RAYTRACING_QUALITY_DETAIL",
+  "Type": "CS_RAYTRACING_QUALITY_DETAIL",
+  "Name": "CS_RAYTRACING_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enableRaytraceAO",
+      "Name": "enableRaytraceAO",
+      "Description": ""
+    },
+    {
+      "Field": "enableRaytraceShadows",
+      "Name": "enableRaytraceShadows",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x02",
+      "Name": "Unk0x02",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x03",
+      "Name": "Unk0x03",
+      "Description": ""
+    },
+    {
+      "Field": "UnkFloat0x04",
+      "Name": "UnkFloat0x04",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x08",
+      "Name": "Unk0x08",
+      "Description": ""
+    },
+    {
+      "Field": "UnkFloat0x0C",
+      "Name": "UnkFloat0x0C",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x10",
+      "Name": "Unk0x10",
+      "Description": ""
+    },
+    {
+      "Field": "penumbraSize",
+      "Name": "penumbraSize",
+      "Description": ""
+    },
+    {
+      "Field": "renderDistance",
+      "Name": "renderDistance",
+      "Description": ""
+    }
+  ]
+}

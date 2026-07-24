@@ -1,0 +1,107 @@
+{
+  "Name": "RigidBodyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For medium-sized aircraft"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For large aircraft"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For super large aircraft"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For small assets"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For medium assets"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "For large assets"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Large asset_for tanks"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "For extra large assets"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "huge fuel tank"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "physical test"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "physics test 2"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "For leaving atari"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "For large assets_test"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "mass is 0"
+      ]
+    },
+    {
+      "ID": 853001,
+      "Entries": [
+        "c8530: for bit"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "9200 Reverse joint Body (Nakanishi test"
+      ]
+    }
+  ]
+}

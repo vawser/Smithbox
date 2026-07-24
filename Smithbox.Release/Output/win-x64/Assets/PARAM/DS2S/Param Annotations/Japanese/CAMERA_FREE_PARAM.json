@@ -1,0 +1,23 @@
+{
+  "Param": "CAMERA_FREE_PARAM",
+  "Type": "CAMERA_FREE_PARAM",
+  "Name": "CAMERA_FREE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "nearClip",
+      "Name": "ニアクリップ距離(m)",
+      "Description": ""
+    },
+    {
+      "Field": "farClip",
+      "Name": "ファークリップ距離(m)",
+      "Description": ""
+    }
+  ]
+}

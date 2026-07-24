@@ -1,0 +1,2218 @@
+{
+  "Param": "ATK_PARAM_ST",
+  "Type": "ATK_PARAM_ST",
+  "Name": "ATK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "hit0_Radius",
+      "Name": "あたり0 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit1_Radius",
+      "Name": "あたり1 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit2_Radius",
+      "Name": "あたり2 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit3_Radius",
+      "Name": "あたり3 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "knockbackMPS",
+      "Name": "ノックバック威力(速度)[m/s]",
+      "Description": "ノックバック威力(速度)[m/s]"
+    },
+    {
+      "Field": "hitStopTime",
+      "Name": "ハードヒット時間[s]",
+      "Description": "ハードヒット（FDPヒットストップ）の停止時間[s]"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果0",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果1",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果2",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果3",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "特殊効果4",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "hit0_DmyPoly1",
+      "Name": "あたり0 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit1_DmyPoly1",
+      "Name": "あたり1 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit2_DmyPoly1",
+      "Name": "あたり2 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit3_DmyPoly1",
+      "Name": "あたり3 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit0_DmyPoly2",
+      "Name": "あたり0 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit1_DmyPoly2",
+      "Name": "あたり1 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit2_DmyPoly2",
+      "Name": "あたり2 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit3_DmyPoly2",
+      "Name": "あたり3 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "blowingCorrection",
+      "Name": "吹き飛ばし補正値",
+      "Description": "吹き飛ばす時の補正値"
+    },
+    {
+      "Field": "atkPhysCorrection",
+      "Name": "実弾攻撃力補正値",
+      "Description": "PCのみ。実弾攻撃力基本値に掛ける倍率"
+    },
+    {
+      "Field": "atkMagCorrection",
+      "Name": "EN攻撃力補正値",
+      "Description": "PCのみ。EN攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "atkFireCorrection",
+      "Name": "爆発/燃焼攻撃力補正値",
+      "Description": "PCのみ。爆発/燃焼攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "atkThunCorrection",
+      "Name": "コーラル攻撃力補正値",
+      "Description": "PCのみ。コーラル攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "atkStamCorrection",
+      "Name": "スタミナ攻撃力補正値",
+      "Description": "PCのみ。スタミナ攻撃力に掛ける倍率"
+    },
+    {
+      "Field": "guardAtkRateCorrection",
+      "Name": "はじき攻撃力補正値",
+      "Description": "PCのみ。1のみ"
+    },
+    {
+      "Field": "guardBreakCorrection",
+      "Name": "はじき防御力補正値",
+      "Description": "PCのみ。攻撃のはじかれ基本値に掛ける倍率"
+    },
+    {
+      "Field": "atkThrowEscapeCorrection",
+      "Name": "投げ抜け攻撃力補正値",
+      "Description": "投げ抜け攻撃に対する武器補正値"
+    },
+    {
+      "Field": "atkSuperArmorCorrection",
+      "Name": "SA攻撃力補正値",
+      "Description": "PCのみ。武器に設定された【基本値】にかける補正値"
+    },
+    {
+      "Field": "atkPhys",
+      "Name": "実弾攻撃力",
+      "Description": "NPCのみ。実弾攻撃の基本ダメージ"
+    },
+    {
+      "Field": "atkMag",
+      "Name": "EN攻撃力",
+      "Description": "NPCのみ。EN攻撃の追加ダメージ"
+    },
+    {
+      "Field": "atkFire",
+      "Name": "爆発/燃焼攻撃力",
+      "Description": "NPCのみ。爆発/燃焼攻撃の追加ダメージ"
+    },
+    {
+      "Field": "atkThun",
+      "Name": "コーラル攻撃力",
+      "Description": "NPCのみ。コーラル攻撃の追加ダメージ"
+    },
+    {
+      "Field": "atkStam",
+      "Name": "スタミナ攻撃力",
+      "Description": "敵のスタミナに対するダメージ量"
+    },
+    {
+      "Field": "guardAtkRate",
+      "Name": "はじき攻撃力",
+      "Description": "NPCのみ。はじき値"
+    },
+    {
+      "Field": "guardBreakRate",
+      "Name": "はじき防御力",
+      "Description": "NPCのみ。攻撃がはじかれるかどうかの判定に利用する値"
+    },
+    {
+      "Field": "atkSuperArmor",
+      "Name": "SA攻撃力",
+      "Description": "NPCのみ。SAブレイク計算式に利用すする値"
+    },
+    {
+      "Field": "atkThrowEscape",
+      "Name": "投げ抜け攻撃力",
+      "Description": "投げ抜け攻撃力"
+    },
+    {
+      "Field": "atkObj",
+      "Name": "オブジェ攻撃力",
+      "Description": "ＯＢＪに対する攻撃力"
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "ガード時スタミナカット率補正",
+      "Description": "武器パラメータ、ＮＰＣパラメータに設定されている【ガード時スタミナカット率】を補正する"
+    },
+    {
+      "Field": "guardRate",
+      "Name": "ガード倍率",
+      "Description": "ＮＰＣ、武器パラメータで設定してあるガード性能を一律で補正を掛ける0で、1倍／100で、2倍／－100で、0\u3000にパラメータが増減するようにするガード倍率\u3000=\u3000（ガード倍率/100\u3000+\u30001）"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "投げタイプID",
+      "Description": "投げパラメータと紐付けされているID"
+    },
+    {
+      "Field": "hit0_hitType",
+      "Name": "あたり0 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit1_hitType",
+      "Name": "あたり1 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit2_hitType",
+      "Name": "あたり2 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit3_hitType",
+      "Name": "あたり3 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti0_Priority",
+      "Name": "あたり0 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti1_Priority",
+      "Name": "あたり1 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti2_Priority",
+      "Name": "あたり2 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti3_Priority",
+      "Name": "あたり3 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "dmgLevel",
+      "Name": "ダメージレベル_敵対",
+      "Description": "攻撃したとき、敵にどのダメージモーションを再生するか？を決める."
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "マップあたり参照",
+      "Description": "攻撃あたりが、どのマップあたりを見るか？を設定"
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "ガードカット率無効化倍率",
+      "Description": "ガードカット率無効化倍率（－100～100）\u3000→0のとき通常／－100で完全無効化／100で相手の防御効果倍増 \u3000→－50とすれば、100％カットの盾が、50％カットになります "
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "実弾属性",
+      "Description": "攻撃に設定する実弾属性"
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "特殊属性",
+      "Description": "攻撃に設定する特殊属性"
+    },
+    {
+      "Field": "atkType",
+      "Name": "攻撃属性[SFX/SE]",
+      "Description": "攻撃時のSFX/SEを指定(属性、材質、サイズで1セット)"
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "攻撃材質[SFX/SE]",
+      "Description": "攻撃時のSFX/SEを指定(属性、材質、サイズで1セット)"
+    },
+    {
+      "Field": "atkSize",
+      "Name": "攻撃サイズ[SFX/SE]",
+      "Description": "攻撃時のSFX/SEを指定（予備だが使用されているので、必ず空欄or小を設定すること）"
+    },
+    {
+      "Field": "defSeMaterial1",
+      "Name": "防御材質1[SE]",
+      "Description": "ガード時のSEに使用1"
+    },
+    {
+      "Field": "hitSourceType",
+      "Name": "あたり発生源",
+      "Description": "攻撃あたりのダミポリＩＤをどこから取ってくるか？を指定する"
+    },
+    {
+      "Field": "throwFlag",
+      "Name": "投げ",
+      "Description": "投げ情報に用いるフラグ"
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "ガード不可フラグ",
+      "Description": "1の場合、ガード側のガードを無視して、ダメージレベルを入れる"
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "スタミナ減らない",
+      "Description": "スタミナ攻撃力による「崩され判定」は行うが、実際にスタミナは減らさない"
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "ヒット時特殊効果無効",
+      "Description": "攻撃ヒットしたときの特殊効果を無効にします。SCEバグ対策"
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "AIに空振り通知しない",
+      "Description": "AIに空振り通知しない"
+    },
+    {
+      "Field": "repeatHitSfx",
+      "Name": "ＨＩＴ時にＳＦＸを何度も出すか",
+      "Description": "敵専用：壁Hit時のSFXが連続で発生するか"
+    },
+    {
+      "Field": "isArrowAtk",
+      "Name": "矢攻撃か",
+      "Description": "部位ダメージ判定に使用する。"
+    },
+    {
+      "Field": "isGhostAtk",
+      "Name": "霊体攻撃か",
+      "Description": "霊体ダメージ判定に使用。"
+    },
+    {
+      "Field": "isDisableNoDamage",
+      "Name": "無敵無効か",
+      "Description": "ステップ等の無敵効果を無視します、TAEの完全無敵は無視できません。"
+    },
+    {
+      "Field": "atkPow_forSfx",
+      "Name": "攻撃強度[SFX]",
+      "Description": "攻撃強度[SFX]"
+    },
+    {
+      "Field": "atkDir_forSfx",
+      "Name": "攻撃方向[SFX]",
+      "Description": "攻撃方向[SFX]"
+    },
+    {
+      "Field": "hideHitFe",
+      "Name": "FEにHit表示しない",
+      "Description": "ヒット時にFEにHitやガードなどの表示をしないようにする、特殊効果だけかけるよう"
+    },
+    {
+      "Field": "isDisableDmgLvReplaceAddLv",
+      "Name": "連続ダメージ時の加算差し替えを無効化するか",
+      "Description": "連続ダメージを受けたときに加算ダメージに差し替える機能を無効化するか"
+    },
+    {
+      "Field": "isDamageReactionCancelInertia",
+      "Name": "ダメージリアクションで慣性を消すか？",
+      "Description": "ダメージリアクションで慣性を消すか"
+    },
+    {
+      "Field": "isCheckDoorPenetration",
+      "Name": "遮蔽物チェックを行うか",
+      "Description": "遮蔽物チェックを行うかどうか。○の場合は遮蔽物越しの対象を攻撃できるかどうかの判定を行います。"
+    },
+    {
+      "Field": "atkBehaviorId",
+      "Name": "特殊よろけタイプ（Behavior用識別値）",
+      "Description": "Behavior用識別値：特定の敵が、特定の攻撃を喰らった時に特別なリアクションをさせる"
+    },
+    {
+      "Field": "atkPow_forSe",
+      "Name": "攻撃強度[SE]",
+      "Description": "攻撃強度[SE]"
+    },
+    {
+      "Field": "rigidImpulse",
+      "Name": "剛体への力積",
+      "Description": "攻撃が当たった剛体へ加える力積"
+    },
+    {
+      "Field": "decalId1",
+      "Name": "デカールID1",
+      "Description": "デカールID1"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "デカールID2",
+      "Description": "デカールID2"
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "発生時AI音ID",
+      "Description": "攻撃発生時に発生させるAI音のID"
+    },
+    {
+      "Field": "HitAiSoundId",
+      "Name": "ヒット時AI音ID",
+      "Description": "ヒット時に発生させるAI音のID"
+    },
+    {
+      "Field": "HitRumbleId",
+      "Name": "ヒット時振動効果(-1無効)",
+      "Description": "ヒット時の振動ID（-1無効）。次の3つのどれにも当てはまらない時の振動IDとなる"
+    },
+    {
+      "Field": "HitRumbleIdByNormal",
+      "Name": "先端ヒット時振動ID",
+      "Description": "先端にヒットした時のヒット時振動ID（-1無効）"
+    },
+    {
+      "Field": "HitRumbleIdByMiddle",
+      "Name": "真ん中ヒット時振動ID",
+      "Description": "真ん中にヒットした時のヒット時振動ID（-1無効）"
+    },
+    {
+      "Field": "HitRumbleIdByRoot",
+      "Name": "根本ヒット時振動ID",
+      "Description": "根本にヒットした時のヒット時振動ID（-1無効）"
+    },
+    {
+      "Field": "traceSfxId0",
+      "Name": "剣閃SfxID_０",
+      "Description": "剣閃SfxID_０(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead0",
+      "Name": "根元剣閃ダミポリID_０",
+      "Description": "剣閃根元ダミポリID_０(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail0",
+      "Name": "剣先剣閃ダミポリID_０",
+      "Description": "剣閃剣先ダミポリID_０"
+    },
+    {
+      "Field": "traceSfxId1",
+      "Name": "剣閃SfxID_１",
+      "Description": "剣閃SfxID_１(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead1",
+      "Name": "根元剣閃ダミポリID_１",
+      "Description": "剣閃根元ダミポリID_１(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail1",
+      "Name": "剣先剣閃ダミポリID_１",
+      "Description": "剣閃剣先ダミポリID_１"
+    },
+    {
+      "Field": "traceSfxId2",
+      "Name": "剣閃SfxID_２",
+      "Description": "剣閃SfxID_２(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead2",
+      "Name": "根元剣閃ダミポリID_２",
+      "Description": "剣閃根元ダミポリID_２(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail2",
+      "Name": "剣先剣閃ダミポリID_２",
+      "Description": "剣閃剣先ダミポリID_２"
+    },
+    {
+      "Field": "traceSfxId3",
+      "Name": "剣閃SfxID_３",
+      "Description": "剣閃SfxID_３(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead3",
+      "Name": "根元剣閃ダミポリID_３",
+      "Description": "剣閃根元ダミポリID_３(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail3",
+      "Name": "剣先剣閃ダミポリID_３",
+      "Description": "剣閃剣先ダミポリID_３"
+    },
+    {
+      "Field": "traceSfxId4",
+      "Name": "剣閃SfxID_４",
+      "Description": "剣閃SfxID_４(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead4",
+      "Name": "根元剣閃ダミポリID_４",
+      "Description": "剣閃根元ダミポリID_４(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail4",
+      "Name": "剣先剣閃ダミポリID_４",
+      "Description": "剣閃剣先ダミポリID_４"
+    },
+    {
+      "Field": "traceSfxId5",
+      "Name": "剣閃SfxID_５",
+      "Description": "剣閃SfxID_５(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead5",
+      "Name": "根元剣閃ダミポリID_５",
+      "Description": "剣閃根元ダミポリID_５(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail5",
+      "Name": "剣先剣閃ダミポリID_５",
+      "Description": "剣閃剣先ダミポリID_５"
+    },
+    {
+      "Field": "traceSfxId6",
+      "Name": "剣閃SfxID_６",
+      "Description": "剣閃SfxID_６(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead6",
+      "Name": "根元剣閃ダミポリID_６",
+      "Description": "剣閃根元ダミポリID_６(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail6",
+      "Name": "剣先剣閃ダミポリID_６",
+      "Description": "剣閃剣先ダミポリID_６"
+    },
+    {
+      "Field": "traceSfxId7",
+      "Name": "剣閃SfxID_７",
+      "Description": "剣閃SfxID_７(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdHead7",
+      "Name": "根元剣閃ダミポリID_７",
+      "Description": "剣閃根元ダミポリID_７(-1無効)"
+    },
+    {
+      "Field": "traceDmyIdTail7",
+      "Name": "剣先剣閃ダミポリID_７",
+      "Description": "剣閃剣先ダミポリID_７"
+    },
+    {
+      "Field": "hit4_Radius",
+      "Name": "あたり4 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit5_Radius",
+      "Name": "あたり5 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit6_Radius",
+      "Name": "あたり6 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit7_Radius",
+      "Name": "あたり7 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit8_Radius",
+      "Name": "あたり8 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit9_Radius",
+      "Name": "あたり9 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit10_Radius",
+      "Name": "あたり10 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit11_Radius",
+      "Name": "あたり11 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit12_Radius",
+      "Name": "あたり12 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit13_Radius",
+      "Name": "あたり13 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit14_Radius",
+      "Name": "あたり14 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit15_Radius",
+      "Name": "あたり15 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit4_DmyPoly1",
+      "Name": "あたり4 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit5_DmyPoly1",
+      "Name": "あたり5 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit6_DmyPoly1",
+      "Name": "あたり6 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit7_DmyPoly1",
+      "Name": "あたり7 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit8_DmyPoly1",
+      "Name": "あたり8ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit9_DmyPoly1",
+      "Name": "あたり9 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit10_DmyPoly1",
+      "Name": "あたり10 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit11_DmyPoly1",
+      "Name": "あたり11 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit12_DmyPoly1",
+      "Name": "あたり12 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit13_DmyPoly1",
+      "Name": "あたり13ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit14_DmyPoly1",
+      "Name": "あたり14 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit15_DmyPoly1",
+      "Name": "あたり15 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit4_DmyPoly2",
+      "Name": "あたり4 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit5_DmyPoly2",
+      "Name": "あたり5ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit6_DmyPoly2",
+      "Name": "あたり6ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit7_DmyPoly2",
+      "Name": "あたり7ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit8_DmyPoly2",
+      "Name": "あたり8 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit9_DmyPoly2",
+      "Name": "あたり9ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit10_DmyPoly2",
+      "Name": "あたり10 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit11_DmyPoly2",
+      "Name": "あたり11 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit12_DmyPoly2",
+      "Name": "あたり12 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit13_DmyPoly2",
+      "Name": "あたり13 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit14_DmyPoly2",
+      "Name": "あたり14 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit15_DmyPoly2",
+      "Name": "あたり15 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit4_hitType",
+      "Name": "あたり4 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit5_hitType",
+      "Name": "あたり5 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit6_hitType",
+      "Name": "あたり6 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit7_hitType",
+      "Name": "あたり7 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit8_hitType",
+      "Name": "あたり8 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit9_hitType",
+      "Name": "あたり9 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit10_hitType",
+      "Name": "あたり10 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit11_hitType",
+      "Name": "あたり11 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit12_hitType",
+      "Name": "あたり12 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit13_hitType",
+      "Name": "あたり13 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit14_hitType",
+      "Name": "あたり14 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hit15_hitType",
+      "Name": "あたり15 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti4_Priority",
+      "Name": "あたり4 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti5_Priority",
+      "Name": "あたり5 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti6_Priority",
+      "Name": "あたり6 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti7_Priority",
+      "Name": "あたり7 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti8_Priority",
+      "Name": "あたり8 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti9_Priority",
+      "Name": "あたり9 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti10_Priority",
+      "Name": "あたり10 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti11_Priority",
+      "Name": "あたり11 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti12_Priority",
+      "Name": "あたり12 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti13_Priority",
+      "Name": "あたり13 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti14_Priority",
+      "Name": "あたり14 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hti15_Priority",
+      "Name": "あたり15 優先順位",
+      "Description": "ソースコードレベルで使用不可。優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "defSfxMaterial1",
+      "Name": "防御材質1[SFX]",
+      "Description": "ガード時のSFXに使用.1"
+    },
+    {
+      "Field": "defSeMaterial2",
+      "Name": "防御材質2[SE]",
+      "Description": "ガード時のSEに使用2"
+    },
+    {
+      "Field": "defSfxMaterial2",
+      "Name": "防御材質2[SFX]",
+      "Description": "ガード時のSFXに使用.2"
+    },
+    {
+      "Field": "bEnableSaBreak",
+      "Name": "SAブレイク可か？",
+      "Description": "SAブレイクできるかどうか"
+    },
+    {
+      "Field": "assetBreakActionType",
+      "Name": "アセット破壊時TAEアクションタイプ",
+      "Description": "この攻撃でアセットが破壊された際に再生されるTAEのアクションタイプ"
+    },
+    {
+      "Field": "cameraRumbleID",
+      "Name": "ヒット時カメラ振動ID",
+      "Description": "プレイヤーにヒットした際のカメラ振動のID"
+    },
+    {
+      "Field": "cameraRumbleDefenseID",
+      "Name": "ガード時カメラ振動ID",
+      "Description": "ガード状態のプレイヤーにヒットした際のカメラ振動のID"
+    },
+    {
+      "Field": "dmgHitRecordLifeTime",
+      "Name": "多段ヒット間隔[s]",
+      "Description": "ダメージを食らう間隔。0.0f以下で1度しか当たらない。"
+    },
+    {
+      "Field": "knockbackAtkSpdScaleMinSpeedKmh",
+      "Name": "【ノックバック】攻撃した人の速度乗せ、最小速度[km/h]",
+      "Description": "ノックバックで攻撃する人の速度を乗せる倍率決定最小速度"
+    },
+    {
+      "Field": "knockbackAtkSpdScaleMaxSpeedKmh",
+      "Name": "【ノックバック】攻撃した人の速度乗せ、最高速度[km/h]",
+      "Description": "ノックバックで攻撃する人の速度を乗せる倍率決定最高速度"
+    },
+    {
+      "Field": "knockbackAtkSpdScaleMinScale",
+      "Name": "【ノックバック】攻撃した人の速度乗せ、最小速度時倍率",
+      "Description": "ノックバックで攻撃する人の速度を乗せる倍率（最小速度以下でこの倍率）"
+    },
+    {
+      "Field": "knockbackAtkSpdScaleMaxScale",
+      "Name": "【ノックバック】攻撃した人の速度乗せ、最高速度時倍率",
+      "Description": "ノックバックで攻撃する人の速度を乗せる倍率（最高速度以上でこの倍率）"
+    },
+    {
+      "Field": "shooterKnockbackMPS",
+      "Name": "反動ずり下がり威力(速度)[m/s]",
+      "Description": "射撃した際に受ける反動（ノックバック）速度[m/s]"
+    },
+    {
+      "Field": "behaviorOnHitOppose",
+      "Name": "対象：●敵対",
+      "Description": "対象：●敵対 にどう当たるか"
+    },
+    {
+      "Field": "behaviorOnHitFriendly",
+      "Name": "対象：○味方",
+      "Description": "対象：○味方 にどう当たるか"
+    },
+    {
+      "Field": "behaviorOnHitSelf",
+      "Name": "対象：自分",
+      "Description": "対象：自分 にどう当たるか"
+    },
+    {
+      "Field": "deadAnimType",
+      "Name": "死亡アニメタイプ",
+      "Description": "この攻撃で相手が死亡した時に相手のアニメを決定するタイプ"
+    },
+    {
+      "Field": "cameraRumbleMapID",
+      "Name": "マップヒット時カメラ振動ID ",
+      "Description": "マップにヒットした際のカメラ振動のID"
+    },
+    {
+      "Field": "cameraRumbleMapEnableDistance",
+      "Name": "マップヒット時カメラ振動が有効な距離[m] ",
+      "Description": "マップにヒットした際のカメラ振動が有効な距離[m]"
+    },
+    {
+      "Field": "shooterKnockbackDirType",
+      "Name": "反動ずり下がり方向タイプ",
+      "Description": "反動ノックバックを計算する基準となる方向"
+    },
+    {
+      "Field": "dmgLevel_Friendly",
+      "Name": "ダメージレベル_味方",
+      "Description": "自身含む味方に当たった際のダメージレベル"
+    },
+    {
+      "Field": "atkDarkCorrection",
+      "Name": "闇攻撃力補正値",
+      "Description": "PCのみ。闇攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "grabFlag",
+      "Name": "掴み",
+      "Description": "掴み情報に用いるフラグ"
+    },
+    {
+      "Field": "grabEnableDmgLevel",
+      "Name": "掴み開始可能ダメージレベル",
+      "Description": "このダメージレベル以上なら掴める"
+    },
+    {
+      "Field": "grabAttachDirType",
+      "Name": "掴み時のアタッチ向き補正",
+      "Description": "掴んだときのアタッチ補正方法"
+    },
+    {
+      "Field": "guardJudgeType",
+      "Name": "ガード方向判定タイプ",
+      "Description": "ガード・バリア判定時に利用する攻撃位置タイプ"
+    },
+    {
+      "Field": "hit0_Length",
+      "Name": "あたり0 長さ[m]",
+      "Description": "あたり0 の長さ[m]"
+    },
+    {
+      "Field": "hit0_MaxLength",
+      "Name": "あたり0 最大長さ[m]",
+      "Description": "あたり0 の最大長さ[m]"
+    },
+    {
+      "Field": "hit0_LengthExpandTime",
+      "Name": "あたり0 長さ伸長時間[sec] ",
+      "Description": "あたりの長さをこの時間かけてダミポリ2の方向に伸ばす[sec]"
+    },
+    {
+      "Field": "hit0_MaxRadius",
+      "Name": "あたり0 最大半径[m] ",
+      "Description": "あたり0 の最大半径[m]"
+    },
+    {
+      "Field": "hit0_ThicknessExpandTime",
+      "Name": "あたり0 太さ伸長時間[sec] ",
+      "Description": "あたりの太さをこの時間かけて半径から最大半径にリニアに太くなる"
+    },
+    {
+      "Field": "hit0_KeepInitTime",
+      "Name": "あたり0 初期状態を維持する時間[sec]",
+      "Description": "この時間経過後にあたりの形を変形させる"
+    },
+    {
+      "Field": "hit0_SfxId",
+      "Name": "あたり0 SFXID",
+      "Description": "あたり0 SFXID(-1無効)"
+    },
+    {
+      "Field": "hit0_SfxDeleteType",
+      "Name": "あたり0 SFX消滅タイプ",
+      "Description": "あたり0 SFX消滅タイプ"
+    },
+    {
+      "Field": "hit0_hitCreateType",
+      "Name": "あたり0 ヒット生成タイプ",
+      "Description": "あたり0 ヒット生成タイプ"
+    },
+    {
+      "Field": "isHitFpsBarrier",
+      "Name": "FPSバリアに当たるか",
+      "Description": "FPSバリアに当たるか"
+    },
+    {
+      "Field": "isHit0_ExpandPenetrateChr",
+      "Name": "あたり0 伸縮時にキャラを貫通するか",
+      "Description": "あたり0 伸縮時にキャラを貫通するか"
+    },
+    {
+      "Field": "isHit0_ExpandPenetrateMap",
+      "Name": "あたり0 伸縮時にマップヒットを貫通するか",
+      "Description": "あたり0 伸縮時にマップヒットを貫通するか"
+    },
+    {
+      "Field": "isHit0_ExpandSfxHitPos",
+      "Name": "あたり0 伸縮時のSFXをヒットした場所基準にするか",
+      "Description": "あたり0 伸縮時にヒットの根本ではなく先端を基準にSFXを発生させるか"
+    },
+    {
+      "Field": "isUseknockbackBladeAddDmg",
+      "Name": "ブレード用加算ダメージノックバック威力を使う",
+      "Description": "ブレード用加算ダメージノックバック威力を使うか"
+    },
+    {
+      "Field": "isHitSfxPosCorrection",
+      "Name": "格闘武器のヒットエフェクト位置補正するか",
+      "Description": "ヒットSFXの発生位置をロックダミポリ間の位置に補正するか"
+    },
+    {
+      "Field": "isUseHitSfxHitVel",
+      "Name": "弾丸方向にヒットエフェクトの方向を補正するか",
+      "Description": "弾丸飛翔方向に合わせてヒットSFXを出すようにするか"
+    },
+    {
+      "Field": "isAtkTotalWeightCorrectionRate_forPc",
+      "Name": "重量による攻撃力倍率が有効か",
+      "Description": "1の場合、補正計算グラフパラメータの《総重量補正係数：攻撃力倍率》を参照する"
+    },
+    {
+      "Field": "isChrAttachGeomSkip",
+      "Name": "【高速化】キャラにアタッチしているアセットはヒットしない",
+      "Description": "パフォーマンス対策の為にあたり0 伸縮時にキャラにアタッチされているアセットについてヒットしないようにするか"
+    },
+    {
+      "Field": "isInsFirstHitCheckOnly",
+      "Name": "【高速化】キャラ、アセット毎に１回ヒットしたらそれ以上チェックしない",
+      "Description": "パフォーマンス対策の為に同じキャラ、アセットに対して複数回ヒットチェックしないようにする、SFXの発生位置がずれるかもなので注意（多段ヒットはヒットしてから除外するがこれはヒットする前に除外する）"
+    },
+    {
+      "Field": "isFSDP",
+      "Name": "FSDPか",
+      "Description": "FSDPか(到達保証する代わりにパケロスすると詰まりが発生する)"
+    },
+    {
+      "Field": "isDisableSpEffectNoDead",
+      "Name": "不死無効か",
+      "Description": "緊急PAなどの不死特殊効果を無視します"
+    },
+    {
+      "Field": "isMultiHitDisableMap",
+      "Name": "多段ヒットでマップへのヒット回数は計算しない",
+      "Description": "多段ヒットでマップを除外するか"
+    },
+    {
+      "Field": "isAssaultBoostBonusAttack",
+      "Name": "アサブボーナス攻撃か",
+      "Description": "アサブボーナス攻撃か"
+    },
+    {
+      "Field": "isDefMaterialIgnore",
+      "Name": "着弾側のSFX用防御材質変更を無効化するか",
+      "Description": "着弾側のSFX用防御材質変更を無効化するか"
+    },
+    {
+      "Field": "isDisableBulletGeneration",
+      "Name": "世代間を無視して同攻撃パラで多段ヒット情報を共有",
+      "Description": "同一攻撃IDのときに世代間を無視して多段ヒット情報を共有するか"
+    },
+    {
+      "Field": "combatIncreasePoint",
+      "Name": "交戦度上昇量",
+      "Description": "被弾する度に上昇する交戦度の量"
+    },
+    {
+      "Field": "knockbackStartPointType",
+      "Name": "ノックバック方向判定タイプ",
+      "Description": "ノックバック方向判定タイプ"
+    },
+    {
+      "Field": "shootSeCategory",
+      "Name": "発射音カテゴリ",
+      "Description": "攻撃材質、攻撃強度との関連付けによって再生するSEを特定するための項目"
+    },
+    {
+      "Field": "id_forSe",
+      "Name": "SE識別ID",
+      "Description": "再生するSEを決めるための識別ID"
+    },
+    {
+      "Field": "se_reflectLv",
+      "Name": "反響音レベル",
+      "Description": "SE の反響音レベル"
+    },
+    {
+      "Field": "HitHDRumbleSlotIdx",
+      "Name": "HD振動スロット",
+      "Description": "HDパッド振動の再生スロット(0～3)"
+    },
+    {
+      "Field": "dmgCalcSide",
+      "Name": "ダメージ判定サイド",
+      "Description": "ダメージ判定サイド\u3000攻撃のヒット判定を決定する方はどっちか"
+    },
+    {
+      "Field": "pad4",
+      "Name": "pad4",
+      "Description": "pad4"
+    },
+    {
+      "Field": "shooterKnockbackMoveTimeSec",
+      "Name": "反動ずり下がりブレーキがかかるまでの時間[sec]",
+      "Description": "射撃した際に受ける反動（ノックバック）で減速し始めるまでの時間"
+    },
+    {
+      "Field": "shooterKnockbackBrakeTimeSec",
+      "Name": "反動ずり下がりブレーキがかかってから止まるまでの時間[sec]",
+      "Description": "射撃した際に受ける反動（ノックバック）で減速し始めてから止まるまでの時間"
+    },
+    {
+      "Field": "shooterKnockbackDecayRate",
+      "Name": "反動ずり下がりブレーキの速度減衰係数",
+      "Description": "射撃した際に受ける反動（ノックバック）での減速速度カーブ係数（値が大きいほど最後にブレーキが強くなる）"
+    },
+    {
+      "Field": "shooterFlyKnockbackMPS",
+      "Name": "空中反動ずり下がり威力(速度)[m/s]",
+      "Description": "射撃した際に受ける反動（ノックバック）速度[m/s]"
+    },
+    {
+      "Field": "shooterFlyKnockbackMoveTimeSec",
+      "Name": "空中反動ずり下がりブレーキがかかるまでの時間[sec]",
+      "Description": "射撃した際に受ける反動（ノックバック）で減速し始めるまでの時間"
+    },
+    {
+      "Field": "shooterFlyKnockbackBrakeTimeSec",
+      "Name": "空中反動ずり下がりブレーキがかかってから止まるまでの時間[sec]",
+      "Description": "射撃した際に受ける反動（ノックバック）で減速し始めてから止まるまでの時間"
+    },
+    {
+      "Field": "shooterFlyKnockbackDecayRate",
+      "Name": "空中反動ずり下がりブレーキの速度減衰係数",
+      "Description": "射撃した際に受ける反動（ノックバック）での減速速度カーブ係数（値が大きいほど最後にブレーキが強くなる）"
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate",
+      "Name": "状態異常攻撃力倍率補正",
+      "Description": "特殊効果の状態異常攻撃力に対して、倍率補正を行う。"
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
+      "Name": "特殊効果状態異常補正（攻撃力ポイント）",
+      "Description": "特殊効果の「状態異常攻撃力倍率補正を適応するか」に対して、倍率補正を行う。"
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byPoint",
+      "Name": "特殊効果攻撃力倍率補正（攻撃力ポイント）",
+      "Description": "特殊効果の～～攻撃力[point]に対して、倍率補正を行う。"
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byRate",
+      "Name": "特殊効果攻撃力倍率補正（攻撃力倍率）",
+      "Description": "特殊効果の～～攻撃力倍率に対して、倍率補正を行う。"
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byDmg",
+      "Name": "特殊効果攻撃力倍率補正（最終攻撃力倍率）",
+      "Description": "特殊効果の攻撃側：～～ダメージ倍率に対して、倍率補正を行う。"
+    },
+    {
+      "Field": "atkPa",
+      "Name": "PA減衰力",
+      "Description": "PAゲージに対する攻撃力。旧名：PA攻撃力"
+    },
+    {
+      "Field": "impactPower",
+      "Name": "衝撃力",
+      "Description": "衝撃力"
+    },
+    {
+      "Field": "damageLevelConvId",
+      "Name": "ダメージレベル変換ID",
+      "Description": "ダメージレベル変換パラメータのID"
+    },
+    {
+      "Field": "damageLevelConvId_Friend",
+      "Name": "ダメージレベル変換ID_味方",
+      "Description": "ダメージレベル変換パラメータのID"
+    },
+    {
+      "Field": "bodyTrunkAttakcPower",
+      "Name": "体幹ダメージ",
+      "Description": "体幹に与えるダメージ"
+    },
+    {
+      "Field": "bBodyTrunkBreakEnable",
+      "Name": "体幹ブレイク可か？",
+      "Description": "体幹ブレイクできるかどうか"
+    },
+    {
+      "Field": "addDamageAnimType",
+      "Name": "加算ダメージアニメタイプ",
+      "Description": "相手が再生する加算ダメージアニメタイプ"
+    },
+    {
+      "Field": "addEndPermanentStunValue",
+      "Name": "ハメ抜け蓄積値[point]",
+      "Description": "ハメ抜け蓄積値"
+    },
+    {
+      "Field": "paPenetrationPower",
+      "Name": "PA貫通力",
+      "Description": "武器パラ・NPCパラ：PA出力と合わせてPAカット率の算出に用いる。"
+    },
+    {
+      "Field": "hit0_Fan_Radius",
+      "Name": "あたり0 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit1_Fan_Radius",
+      "Name": "あたり1 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit2_Fan_Radius",
+      "Name": "あたり2 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit3_Fan_Radius",
+      "Name": "あたり3 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit4_Fan_Radius",
+      "Name": "あたり4 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit5_Fan_Radius",
+      "Name": "あたり5 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit6_Fan_Radius",
+      "Name": "あたり6 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit7_Fan_Radius",
+      "Name": "あたり7 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit8_Fan_Radius",
+      "Name": "あたり8 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit9_Fan_Radius",
+      "Name": "あたり9 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit10_Fan_Radius",
+      "Name": "あたり10 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit11_Fan_Radius",
+      "Name": "あたり11 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit12_Fan_Radius",
+      "Name": "あたり12 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit13_Fan_Radius",
+      "Name": "あたり13 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit14_Fan_Radius",
+      "Name": "あたり14 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit15_Fan_Radius",
+      "Name": "あたり15 扇形判定半径[m]",
+      "Description": "扇形\u3000半径"
+    },
+    {
+      "Field": "hit0_Fan_RotY",
+      "Name": "あたり0 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit1_Fan_RotY",
+      "Name": "あたり1 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit2_Fan_RotY",
+      "Name": "あたり2 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit3_Fan_RotY",
+      "Name": "あたり3 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit4_Fan_RotY",
+      "Name": "あたり4 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit5_Fan_RotY",
+      "Name": "あたり5 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit6_Fan_RotY",
+      "Name": "あたり6 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit7_Fan_RotY",
+      "Name": "あたり7 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit8_Fan_RotY",
+      "Name": "あたり8 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit9_Fan_RotY",
+      "Name": "あたり9 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit10_Fan_RotY",
+      "Name": "あたり10 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit11_Fan_RotY",
+      "Name": "あたり11 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit12_Fan_RotY",
+      "Name": "あたり12 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit13_Fan_RotY",
+      "Name": "あたり13 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit14_Fan_RotY",
+      "Name": "あたり14 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit15_Fan_RotY",
+      "Name": "あたり15 扇形判定Y軸回転[deg]",
+      "Description": "扇形\u3000Y軸回転角度"
+    },
+    {
+      "Field": "hit0_Fan_RotZ",
+      "Name": "あたり0 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit1_Fan_RotZ",
+      "Name": "あたり1 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit2_Fan_RotZ",
+      "Name": "あたり2 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit3_Fan_RotZ",
+      "Name": "あたり3 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit4_Fan_RotZ",
+      "Name": "あたり4 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit5_Fan_RotZ",
+      "Name": "あたり5 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit6_Fan_RotZ",
+      "Name": "あたり6 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit7_Fan_RotZ",
+      "Name": "あたり7 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit8_Fan_RotZ",
+      "Name": "あたり8 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit9_Fan_RotZ",
+      "Name": "あたり9 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit10_Fan_RotZ",
+      "Name": "あたり10 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit11_Fan_RotZ",
+      "Name": "あたり11 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit12_Fan_RotZ",
+      "Name": "あたり12 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit13_Fan_RotZ",
+      "Name": "あたり13 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit14_Fan_RotZ",
+      "Name": "あたり14 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit15_Fan_RotZ",
+      "Name": "あたり15 扇形判定Z軸回転[deg]",
+      "Description": "扇形\u3000Z軸回転角度"
+    },
+    {
+      "Field": "hit0_Fan_UpOffset",
+      "Name": "あたり0 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit1_Fan_UpOffset",
+      "Name": "あたり1 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit2_Fan_UpOffset",
+      "Name": "あたり2 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit3_Fan_UpOffset",
+      "Name": "あたり3 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit4_Fan_UpOffset",
+      "Name": "あたり4 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit5_Fan_UpOffset",
+      "Name": "あたり5 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit6_Fan_UpOffset",
+      "Name": "あたり6 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit7_Fan_UpOffset",
+      "Name": "あたり7 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit8_Fan_UpOffset",
+      "Name": "あたり8 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit9_Fan_UpOffset",
+      "Name": "あたり9 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit10_Fan_UpOffset",
+      "Name": "あたり10 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit11_Fan_UpOffset",
+      "Name": "あたり11 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit12_Fan_UpOffset",
+      "Name": "あたり12 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit13_Fan_UpOffset",
+      "Name": "あたり13 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit14_Fan_UpOffset",
+      "Name": "あたり14 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit15_Fan_UpOffset",
+      "Name": "あたり15 扇形判定上方向厚み[m]",
+      "Description": "扇形\u3000上方向厚み[m]"
+    },
+    {
+      "Field": "hit0_Fan_DownOffset",
+      "Name": "あたり0 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit1_Fan_DownOffset",
+      "Name": "あたり1 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit2_Fan_DownOffset",
+      "Name": "あたり2 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit3_Fan_DownOffset",
+      "Name": "あたり3 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit4_Fan_DownOffset",
+      "Name": "あたり4 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit5_Fan_DownOffset",
+      "Name": "あたり5 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit6_Fan_DownOffset",
+      "Name": "あたり6 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit7_Fan_DownOffset",
+      "Name": "あたり7 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit8_Fan_DownOffset",
+      "Name": "あたり8 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit9_Fan_DownOffset",
+      "Name": "あたり9 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit10_Fan_DownOffset",
+      "Name": "あたり10 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit11_Fan_DownOffset",
+      "Name": "あたり11 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit12_Fan_DownOffset",
+      "Name": "あたり12 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit13_Fan_DownOffset",
+      "Name": "あたり13 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit14_Fan_DownOffset",
+      "Name": "あたり14 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit15_Fan_DownOffset",
+      "Name": "あたり15 扇形判定下方向厚み[m]",
+      "Description": "扇形\u3000下方向厚み[m]"
+    },
+    {
+      "Field": "hit0_Fan_InternalAngle",
+      "Name": "あたり0 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit1_Fan_InternalAngle",
+      "Name": "あたり1 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit2_Fan_InternalAngle",
+      "Name": "あたり2 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit3_Fan_InternalAngle",
+      "Name": "あたり3 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit4_Fan_InternalAngle",
+      "Name": "あたり4 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit5_Fan_InternalAngle",
+      "Name": "あたり5 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit6_Fan_InternalAngle",
+      "Name": "あたり6 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit7_Fan_InternalAngle",
+      "Name": "あたり7 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit8_Fan_InternalAngle",
+      "Name": "あたり8 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit9_Fan_InternalAngle",
+      "Name": "あたり9 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit10_Fan_InternalAngle",
+      "Name": "あたり10 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit11_Fan_InternalAngle",
+      "Name": "あたり11 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit12_Fan_InternalAngle",
+      "Name": "あたり12 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit13_Fan_InternalAngle",
+      "Name": "あたり13 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit14_Fan_InternalAngle",
+      "Name": "あたり14 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "hit15_Fan_InternalAngle",
+      "Name": "あたり15 扇形判定攻撃範囲内角[deg] \t",
+      "Description": "扇形\u3000扇形をなす角度"
+    },
+    {
+      "Field": "brokenPartsBlowAwayAngleVertical",
+      "Name": "破損時吹っ飛び仰角[deg]",
+      "Description": "基準方向は「破損時吹っ飛び方向補正タイプ」の設定によって変わる、水平方向は 0 "
+    },
+    {
+      "Field": "brokenPartsBlowAwayAngleHorizontal",
+      "Name": "破損時吹っ飛び角度[deg]",
+      "Description": "基準方向は「破損時吹っ飛び方向補正タイプ」の設定によって変わる"
+    },
+    {
+      "Field": "brokenPartsBlowAwayForce",
+      "Name": "破損時吹っ飛び力[kg･m/s]",
+      "Description": "破損時吹っ飛び力[kg･m/s]"
+    },
+    {
+      "Field": "brokenPartsRotationAxisAngleVertical",
+      "Name": "破損時回転軸傾き[deg]",
+      "Description": "回転軸の傾きについては、被弾者の位置による補正などは一切なく、常に被弾者のマスター方向（ワールド空間のY方向）基準での計算としたい、Y方向は 0"
+    },
+    {
+      "Field": "brokenPartsRotationAxisAngleHorizontal",
+      "Name": "破損時回転軸角度[deg]",
+      "Description": "回転軸の傾きについては、被弾者の位置による補正などは一切なく、常に被弾者のマスター方向（ワールド空間のY方向）基準での計算としたい"
+    },
+    {
+      "Field": "brokenPartsRotationForce",
+      "Name": "破損時回転力[kg･deg/s]",
+      "Description": "破損時回転力[kg･deg/s]"
+    },
+    {
+      "Field": "partsBreakLotteryId",
+      "Name": "死亡時パーツ破損抽選ID",
+      "Description": "「パーツ破損抽選パラメータ」のID"
+    },
+    {
+      "Field": "brokenPartsBlowAwayDirectionCompensationType",
+      "Name": "破損時吹っ飛び方向補正タイプ",
+      "Description": "0:補正なし、1:攻撃者と被弾者の角度で補正、2:攻撃者と被弾者の水平方向角度で補正"
+    },
+    {
+      "Field": "damageAnimAtkDir",
+      "Name": "ダメージアニメ用攻撃方向",
+      "Description": "ダメージアニメ再生時に参照する値"
+    },
+    {
+      "Field": "atkObjDamage_Hp",
+      "Name": "オブジェHPダメージ[pt]",
+      "Description": "ＯＢＪに対するダメージ"
+    },
+    {
+      "Field": "knockbackDirType",
+      "Name": "ノックバック方向補正タイプ",
+      "Description": "ノックバック方向補正タイプ"
+    },
+    {
+      "Field": "knockbackDirAngAxisX",
+      "Name": "ノックバック仰角[deg]",
+      "Description": "ノックバック方向補正タイプで使う補正仰角"
+    },
+    {
+      "Field": "knockbackDirAngAxisY",
+      "Name": "ノックバック角度[deg]",
+      "Description": "ノックバック方向補正タイプで使う補正角度"
+    },
+    {
+      "Field": "brokenPartsKnockbackRate",
+      "Name": "破損パーツに対する攻撃のノックバック引き継ぎ倍率",
+      "Description": "破損パーツが吹っ飛ばされる際に、ノックバックによる速度の適用倍率"
+    },
+    {
+      "Field": "pad10",
+      "Name": "pad",
+      "Description": "pad4"
+    },
+    {
+      "Field": "multiHit_MaxCountBehavior",
+      "Name": "多段ヒット上限時の挙動",
+      "Description": "多段ヒット回数上限時の挙動"
+    },
+    {
+      "Field": "multiHit_MaxCount",
+      "Name": "多段ヒット回数上限",
+      "Description": "多段ヒット回数の上限値"
+    },
+    {
+      "Field": "multiHit_ShareId",
+      "Name": "多段ヒット回数共有ID",
+      "Description": "多段ヒット回数の共有ID"
+    },
+    {
+      "Field": "multiHit_ResetTimeSec",
+      "Name": "多段ヒット回数リセット時間[s] \t",
+      "Description": "多段ヒット回数をリセットする時間"
+    },
+    {
+      "Field": "hitSfx_RotAngDegZ",
+      "Name": "ヒットSFX_Z軸回転[deg]",
+      "Description": "ヒットSFXのZ軸回転角度"
+    },
+    {
+      "Field": "hitSfx_RandRotAngDegZ",
+      "Name": "ヒットSFX_Z軸回転乱数[deg]",
+      "Description": "ヒットSFXのZ軸回転角度（乱数最大値）"
+    },
+    {
+      "Field": "staggerCriticalRate_Phys",
+      "Name": "よろけクリティカル倍率_実弾[%]",
+      "Description": "よろけクリティカルの倍率"
+    },
+    {
+      "Field": "staggerCriticalRate_Mag",
+      "Name": "よろけクリティカル倍率_EN[%]",
+      "Description": "よろけクリティカルの倍率"
+    },
+    {
+      "Field": "staggerCriticalRate_Fire",
+      "Name": "よろけクリティカル倍率_爆発/燃焼[%]",
+      "Description": "よろけクリティカルの倍率"
+    },
+    {
+      "Field": "staggerCriticalRate_Thun",
+      "Name": "よろけクリティカル倍率_コーラル[%]",
+      "Description": "よろけクリティカルの倍率"
+    },
+    {
+      "Field": "staggerCriticalRate_Dark",
+      "Name": "よろけクリティカル倍率_闇[%]",
+      "Description": "よろけクリティカルの倍率"
+    },
+    {
+      "Field": "spEffectAddCondParts_0",
+      "Name": "特殊効果0付与条件_部位",
+      "Description": "指定した部位にヒットしたときに特殊効果を付与する"
+    },
+    {
+      "Field": "isAdfPartsGroupNoHit",
+      "Name": "対ADF用特定部位貫通か",
+      "Description": "〇の時、TAEフラグ「部位を指定してダメージ当たり無効(ADF用)」で指定した部位へのヒットを無視する"
+    },
+    {
+      "Field": "isMultiHitArmorHit_DisableHitStop",
+      "Name": "アーマーヒット時にヒットストップ無効化するか",
+      "Description": "アーマーヒット時にヒットストップしないようにするか"
+    },
+    {
+      "Field": "unk353_2",
+      "Name": "unk353_2",
+      "Description": ""
+    },
+    {
+      "Field": "pad_11",
+      "Name": "pad",
+      "Description": "pad4"
+    },
+    {
+      "Field": "decalBaseId1",
+      "Name": "デカール識別子1",
+      "Description": "デカール識別子1(5桁)"
+    },
+    {
+      "Field": "decalBaseId2",
+      "Name": "デカール識別子2",
+      "Description": "デカール識別子2(5桁)"
+    },
+    {
+      "Field": "sfxId_Critical",
+      "Name": "【廃止予定】クリティカル時追加SFX",
+      "Description": "クリティカルヒット時のSFXID。-1は発生しない。"
+    },
+    {
+      "Field": "sfxId_CriticalSfxLevel",
+      "Name": "クリティカル時追加SFX強度",
+      "Description": "クリティカルヒット時のSFX強度。なしで発生しない"
+    },
+    {
+      "Field": "HitRumblePriority",
+      "Name": "振動優先度",
+      "Description": "振動再生時の優先度値が大きいほど優先される"
+    },
+    {
+      "Field": "pad_12",
+      "Name": "pad",
+      "Description": "pad4"
+    },
+    {
+      "Field": "hit0_Fan_RotX",
+      "Name": "あたり0 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit1_Fan_RotX",
+      "Name": "あたり1 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit2_Fan_RotX",
+      "Name": "あたり2 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit3_Fan_RotX",
+      "Name": "あたり3 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit4_Fan_RotX",
+      "Name": "あたり4 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit5_Fan_RotX",
+      "Name": "あたり5 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit6_Fan_RotX",
+      "Name": "あたり6 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit7_Fan_RotX",
+      "Name": "あたり7 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit8_Fan_RotX",
+      "Name": "あたり8 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit9_Fan_RotX",
+      "Name": "あたり9 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit10_Fan_RotX",
+      "Name": "あたり10 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit11_Fan_RotX",
+      "Name": "あたり11 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit12_Fan_RotX",
+      "Name": "あたり12 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit13_Fan_RotX",
+      "Name": "あたり13 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit14_Fan_RotX",
+      "Name": "あたり14 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit15_Fan_RotX",
+      "Name": "あたり15 扇形判定X軸回転[deg]",
+      "Description": "扇形\u3000X軸回転角度"
+    },
+    {
+      "Field": "hit0_MeleeKnockbackDmyPoly",
+      "Name": "あたり0 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit1_MeleeKnockbackDmyPoly",
+      "Name": "あたり1 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit2_MeleeKnockbackDmyPoly",
+      "Name": "あたり2 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit3_MeleeKnockbackDmyPoly",
+      "Name": "あたり3 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit4_MeleeKnockbackDmyPoly",
+      "Name": "あたり4 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit5_MeleeKnockbackDmyPoly",
+      "Name": "あたり5 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit6_MeleeKnockbackDmyPoly",
+      "Name": "あたり6 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit7_MeleeKnockbackDmyPoly",
+      "Name": "あたり7 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit8_MeleeKnockbackDmyPoly",
+      "Name": "あたり8 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit9_MeleeKnockbackDmyPoly",
+      "Name": "あたり9 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit10_MeleeKnockbackDmyPoly",
+      "Name": "あたり10 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit11_MeleeKnockbackDmyPoly",
+      "Name": "あたり11 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit12_MeleeKnockbackDmyPoly",
+      "Name": "あたり12 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit13_MeleeKnockbackDmyPoly",
+      "Name": "あたり13 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit14_MeleeKnockbackDmyPoly",
+      "Name": "あたり14 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "hit15_MeleeKnockbackDmyPoly",
+      "Name": "あたり15 近接攻撃ノックバック基準ダミポリID",
+      "Description": "近接攻撃ノックバクの基準ダミポリID"
+    },
+    {
+      "Field": "HitHDRumbleId",
+      "Name": "ヒット時HD振動効果(-1無効)",
+      "Description": "ヒット時のHD振動ID（-1無効）。次の3つのどれにも当てはまらない時の振動IDとなる"
+    },
+    {
+      "Field": "HitHDRumbleIdByNormal",
+      "Name": "先端ヒット時HD振動ID",
+      "Description": "先端にヒットした時のヒット時HD振動ID（-1無効）"
+    },
+    {
+      "Field": "HitHDRumbleIdByMiddle",
+      "Name": "真ん中ヒット時HD振動ID",
+      "Description": "真ん中にヒットした時のヒット時HD振動ID（-1無効）"
+    },
+    {
+      "Field": "HitHDRumbleIdByRoot",
+      "Name": "根本ヒット時HD振動ID",
+      "Description": "根本にヒットした時のヒット時HD振動ID（-1無効）"
+    },
+    {
+      "Field": "padHDRumbleID",
+      "Name": "ヒット時パッドHD振動ID",
+      "Description": "プレイヤーにヒットした際のパッドHD振動のID"
+    },
+    {
+      "Field": "padHDRumbleDefenseID",
+      "Name": "ガード時パッドHD振動ID",
+      "Description": "ガード状態のプレイヤーにヒットした際のパッドHD振動のID"
+    },
+    {
+      "Field": "soundRestrictionSec",
+      "Name": "発射SE用連続再生制限時間[sec]",
+      "Description": "攻撃に伴う各種SEの再生間引きの時間[s]"
+    },
+    {
+      "Field": "soundLandingRestrictionSec",
+      "Name": "着弾SE用連続再生制限時間[sec]",
+      "Description": "着弾に伴う各種SEの再生間引きの時間[s]"
+    },
+    {
+      "Field": "soundFlyRestrictionSec",
+      "Name": "飛翔SE用連続再生制限時間[sec]",
+      "Description": "飛翔に伴う各種SEの再生間引きの時間[s]"
+    },
+    {
+      "Field": "damageReactionDisableGravityTimeSec",
+      "Name": "ダメージリアクションで滞空する時間[sec]",
+      "Description": "ダメージリアクションで重力を消す時間"
+    },
+    {
+      "Field": "PulseSpAtkBonusImpact_Guard",
+      "Name": "パルス特攻_ボーナス衝撃力_ガード時",
+      "Description": "パルス特攻のボーナス衝撃力"
+    },
+    {
+      "Field": "PulseSpAtkBonusImpact_JustGuard",
+      "Name": "パルス特攻_ボーナス衝撃力_ジャスガ",
+      "Description": "パルス特攻のボーナス衝撃力"
+    },
+    {
+      "Field": "PulseSpAtkImpactCutDown_Guard",
+      "Name": "パルス特攻_衝撃値カット率無効化率_ガード時[％]",
+      "Description": "パルス特攻の衝撃値カット率無効化量"
+    },
+    {
+      "Field": "PulseSpAtkImpactCutDown_JustGuard",
+      "Name": "パルス特攻_衝撃値カット率無効化率_ジャスガ[％]",
+      "Description": "パルス特攻の衝撃値カット率無効化量"
+    },
+    {
+      "Field": "residualImpactPower",
+      "Name": "非ガード時残留衝撃力",
+      "Description": "非ガード時の残留衝撃力"
+    },
+    {
+      "Field": "hit0_sfxmodelId",
+      "Name": "あたり0 曲がるSFXモデルID",
+      "Description": "曲がるレーザー用のSFXのモデルパラメータID"
+    },
+    {
+      "Field": "knockbackBladeAddDmgMPS",
+      "Name": "ブレード用加算ダメージノックバック威力(速度)[m/s]",
+      "Description": "ノックバック威力(速度)[m/s]"
+    },
+    {
+      "Field": "playerToEneHitCamRumbleId",
+      "Name": "プレイヤーから敵に攻撃ヒット時パッド振動ID",
+      "Description": "プレイヤーの攻撃が敵にヒット時のパッド振動ID（-1無効）動IDとなる"
+    },
+    {
+      "Field": "criticalHitSfxRestrictionSec",
+      "Name": "クリティカルヒットのSFXの連続発生抑制時間[s]",
+      "Description": "クリティカルヒットのSFXの連続発生抑制時間[s]"
+    },
+    {
+      "Field": "multiHitArmorHit_OneHitCount",
+      "Name": "アーマーヒット時に何ヒットで1ヒット扱いにするか",
+      "Description": "アーマーヒット時に何回ヒットしたら多段ヒットカウント+1にするか"
+    },
+    {
+      "Field": "pad_13",
+      "Name": "pad",
+      "Description": "pad4"
+    },
+    {
+      "Field": "multiHitArmorHit_DamageRate",
+      "Name": "アーマーヒット時のダメージ倍率",
+      "Description": "アーマーヒット時のダメージ倍率"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "MAP_OBJECT_BREAK_ACTION_PARAM",
+  "Type": "MAP_OBJECT_BREAK_ACTION_PARAM",
+  "Name": "MAP_OBJECT_BREAK_ACTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sideWalk",
+      "Name": "《水平移動で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "walk",
+      "Name": "《歩行で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "dash",
+      "Name": "《ダッシュで破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "rolling",
+      "Name": "《回避で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "jump",
+      "Name": "《ジャンプで破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "fall",
+      "Name": "《落下で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "damaged",
+      "Name": "《ダメージ中で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "attack",
+      "Name": "《攻撃中で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "fall_attack",
+      "Name": "《落下攻撃中で破壊》",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

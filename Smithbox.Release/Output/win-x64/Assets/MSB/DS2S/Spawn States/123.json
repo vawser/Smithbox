@@ -1,0 +1,22 @@
+{
+  "id": "123",
+  "name": "Suspicious Shadow",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Crouching"
+    },
+    {
+      "value": "3",
+      "name": "Ceiling Drop"
+    }
+  ]
+}

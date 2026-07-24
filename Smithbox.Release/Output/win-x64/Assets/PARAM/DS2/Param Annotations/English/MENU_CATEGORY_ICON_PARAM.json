@@ -1,0 +1,103 @@
+{
+  "Param": "MENU_CATEGORY_ICON_PARAM",
+  "Type": "MENU_CATEGORY_ICON_PARAM",
+  "Name": "MENU_CATEGORY_ICON_PARAM",
+  "Description": "Defines menu category icon mappings and inventory/equipment UI grouping indices used for organizing player menus.",
+  "Fields": [
+    {
+      "Field": "bagSubscript",
+      "Name": "Item Bag Array Index",
+      "Description": "Index used for the item bag category array."
+    },
+    {
+      "Field": "cofferSubscript",
+      "Name": "Key Item Box Array Index",
+      "Description": "Index used for the key item box category array."
+    },
+    {
+      "Field": "repositorySubscript",
+      "Name": "Storage Box Array Index",
+      "Description": "Index used for the storage/inventory repository category array."
+    },
+    {
+      "Field": "shopSubscript",
+      "Name": "Shop Array Index",
+      "Description": "Index used for the shop category array."
+    },
+    {
+      "Field": "inventory",
+      "Name": "Inventory",
+      "Description": "Is present in the general inventory menu."
+    },
+    {
+      "Field": "equipWeapon",
+      "Name": "Weapon Equipment",
+      "Description": "Is present for equipping weapons."
+    },
+    {
+      "Field": "equipHelmet",
+      "Name": "Head Armor Equipment",
+      "Description": "Is present for equipping helmets."
+    },
+    {
+      "Field": "equipArmor",
+      "Name": "Chest Armor Equipment",
+      "Description": "Is present for equipping body armor."
+    },
+    {
+      "Field": "equipGauntlet",
+      "Name": "Arm Armor Equipment",
+      "Description": "Is present for equipping gauntlets or arm protection."
+    },
+    {
+      "Field": "equipLeggings",
+      "Name": "Leg Armor Equipment",
+      "Description": "Is present for equipping leg armor."
+    },
+    {
+      "Field": "equipRing",
+      "Name": "Ring Equipment",
+      "Description": "Is present for equipping rings."
+    },
+    {
+      "Field": "equipArrow",
+      "Name": "Arrow Equipment",
+      "Description": "Is present for equipping ammunition such as arrows."
+    },
+    {
+      "Field": "equipItem",
+      "Name": "Item Equipment",
+      "Description": "Is present for equippable consumable items."
+    },
+    {
+      "Field": "equipSpell",
+      "Name": "Spell Equipment",
+      "Description": "Is present for equipping spells or magic abilities."
+    },
+    {
+      "Field": "equipGesture",
+      "Name": "Gesture Equipment",
+      "Description": "Is present for equipping or assigning gestures/emotes."
+    },
+    {
+      "Field": "repository",
+      "Name": "Storage",
+      "Description": "Is present in the storage repository."
+    },
+    {
+      "Field": "shop",
+      "Name": "Shop",
+      "Description": "Is present in shop menus."
+    },
+    {
+      "Field": "equipWeaponArmor",
+      "Name": "Weapon & Armor Equipment",
+      "Description": "Is present or equipping both weapons and armor."
+    },
+    {
+      "Field": "padding",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

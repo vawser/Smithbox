@@ -1,0 +1,88 @@
+{
+  "Param": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Name": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "targetWeaponId",
+      "Name": "targetWeaponId",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsTableId",
+      "Name": "swordArtsTableId",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_1",
+      "Name": "attachEffectTableId_1",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_2",
+      "Name": "attachEffectTableId_2",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_3",
+      "Name": "attachEffectTableId_3",
+      "Description": ""
+    },
+    {
+      "Field": "weaponLevel",
+      "Name": "weaponLevel",
+      "Description": ""
+    },
+    {
+      "Field": "isCursed",
+      "Name": "isCursed",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "magicTableId_1",
+      "Name": "magicTableId_1",
+      "Description": ""
+    },
+    {
+      "Field": "magicTableId_2",
+      "Name": "magicTableId_2",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_4",
+      "Name": "attachEffectTableId_4",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_5",
+      "Name": "attachEffectTableId_5",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_6",
+      "Name": "attachEffectTableId_6",
+      "Description": ""
+    }
+  ]
+}

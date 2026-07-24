@@ -1,0 +1,63 @@
+{
+  "Param": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
+  "Type": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
+  "Name": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "areaNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "gridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "gridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "posX",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "posZ",
+      "Description": ""
+    },
+    {
+      "Field": "endPad",
+      "Name": "endPad",
+      "Description": ""
+    }
+  ]
+}

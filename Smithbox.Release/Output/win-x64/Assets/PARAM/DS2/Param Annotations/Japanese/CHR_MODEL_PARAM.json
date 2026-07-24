@@ -1,0 +1,13 @@
+{
+  "Param": "CHR_MODEL_PARAM",
+  "Type": "CHR_MODEL_PARAM",
+  "Name": "CHR_MODEL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "aReserved",
+      "Name": "(予約領域)",
+      "Description": ""
+    }
+  ]
+}

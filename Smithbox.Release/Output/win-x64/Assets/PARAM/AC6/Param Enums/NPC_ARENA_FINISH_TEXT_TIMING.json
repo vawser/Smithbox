@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_ARENA_FINISH_TEXT_TIMING",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_ARENA_FINISH_TEXT_TIMING"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End"
+        }
+      ]
+    }
+  ]
+}

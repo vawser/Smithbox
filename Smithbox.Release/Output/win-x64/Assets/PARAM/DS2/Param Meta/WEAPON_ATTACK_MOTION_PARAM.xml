@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <attackAnim  Enum="PLAYER_NORMAL_ATTACK_MOTION"/>
+        <controlType  Enum="WEAPON_ACTION_CONTROL_TYPES"/>
+        <dummy0 Padding="" />
+        <startPlaySpeed />
+        <endPlaySpeed />
+        <rotationSpeedScale />
+        <limitAngleScale />
+        <predictPositionTime />
+        <wristTiltRate />
+        <staggerHandMaxBlendWeight />
+        <staggerPelvisMaxBlendWeight />
+        <attackPushBackRate />
+        <damageId01 RefGroup="damageparam" />
+        <damageId02 RefGroup="damageparam" />
+        <damageId03 RefGroup="damageparam" />
+        <bulletId01 RefGroup="bulletparam" />
+        <bulletDamageId01 RefGroup="damageparam"/>
+        <bulletId02 RefGroup="bulletparam" />
+        <bulletDamageId02 RefGroup="damageparam"/>
+        <bulletId03 RefGroup="bulletparam" />
+        <bulletDamageId03 RefGroup="damageparam"/>
+    </Field>
+</PARAMMETA>

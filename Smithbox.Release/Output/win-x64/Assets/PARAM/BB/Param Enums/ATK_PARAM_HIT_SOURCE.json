@@ -1,0 +1,29 @@
+{
+  "Key": "ATK_PARAM_HIT_SOURCE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PARAM_HIT_SOURCE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ]
+    }
+  ]
+}

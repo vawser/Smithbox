@@ -1,0 +1,78 @@
+{
+  "Param": "SHADOW_BANK",
+  "Type": "SHADOW_BANK",
+  "Name": "SHADOW_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "光源X角度[deg]",
+      "Description": "マップに影を落とす光源のX角度"
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "光源Y角度[deg]",
+      "Description": "マップに影を落とす光源のY角度"
+    },
+    {
+      "Field": "densityRatio",
+      "Name": "濃さ[％]",
+      "Description": "100％で最も濃くなります"
+    },
+    {
+      "Field": "colR",
+      "Name": "色R",
+      "Description": "0～255"
+    },
+    {
+      "Field": "colG",
+      "Name": "色G",
+      "Description": "0～255"
+    },
+    {
+      "Field": "colB",
+      "Name": "色B",
+      "Description": "0～255"
+    },
+    {
+      "Field": "beginDist",
+      "Name": "開始距離[m]",
+      "Description": "0にしておくとカメラのニアクリップを使用"
+    },
+    {
+      "Field": "endDist",
+      "Name": "終了距離[m]",
+      "Description": "終了距離[m]"
+    },
+    {
+      "Field": "calibulateFar",
+      "Name": "ファークリップ自動調整距離(PSM用)",
+      "Description": "光源方向を向いたときに終了距離を指定した距離分短くします"
+    },
+    {
+      "Field": "fadeBeginDist",
+      "Name": "フェード開始距離[m]",
+      "Description": "フェード開始距離[m]"
+    },
+    {
+      "Field": "fadeDist",
+      "Name": "フェード距離[m]",
+      "Description": "フェード距離[m]"
+    },
+    {
+      "Field": "persedDepthOffset",
+      "Name": "Zオフセット(PSM用)",
+      "Description": "Zオフセット [m] （－）にするほどセルフシャードウが出難くなります(PSM用)"
+    },
+    {
+      "Field": "gradFactor",
+      "Name": "パース調整パラメータ(PSM用)",
+      "Description": "－にするとシャドウマップのパースが弱まり,＋にするとパースが強まります"
+    },
+    {
+      "Field": "shadowVolumeDepth",
+      "Name": "シャドウボリュームの長さ[m]",
+      "Description": "ビルなど高いオブジェクトの影を落としたいときは値を大きくします"
+    }
+  ]
+}

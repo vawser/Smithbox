@@ -1,0 +1,491 @@
+{
+  "Name": "BulletShotgunParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "pulse shotgun -- パルスショットガン"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Shotgun default shotgun -- ショットガン\u3000デフォルト散弾"
+      ]
+    },
+    {
+      "ID": 10810000,
+      "Entries": [
+        "Shotgun (napalm) right -- 散弾銃（ナパーム） 右"
+      ]
+    },
+    {
+      "ID": 10810100,
+      "Entries": [
+        "Shotgun (napalm) charge right -- 散弾銃（ナパーム）チャージ 右"
+      ]
+    },
+    {
+      "ID": 10815000,
+      "Entries": [
+        "Shotgun (napalm) left -- 散弾銃（ナパーム） 左"
+      ]
+    },
+    {
+      "ID": 10815100,
+      "Entries": [
+        "Shotgun (napalm) charge left -- 散弾銃（ナパーム）チャージ 左"
+      ]
+    },
+    {
+      "ID": 10820000,
+      "Entries": [
+        "Throwing gun (stun electric) right -- 投擲銃（スタン機電） 右"
+      ]
+    },
+    {
+      "ID": 10820100,
+      "Entries": [
+        "Throwing gun (stun electric) charge right -- 投擲銃（スタン機電）チャージ 右"
+      ]
+    },
+    {
+      "ID": 10825000,
+      "Entries": [
+        "Throwing gun (stun electric) left -- 投擲銃（スタン機電） 左"
+      ]
+    },
+    {
+      "ID": 10825100,
+      "Entries": [
+        "Throwing gun (stun electric) charge left -- 投擲銃（スタン機電）チャージ 左"
+      ]
+    },
+    {
+      "ID": 10910002,
+      "Entries": [
+        "split hand missile -- 分裂ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 11200100,
+      "Entries": [
+        "Plasma rifle_standard type_charge shooting -- プラズマライフル_標準タイプ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Laser shotgun zero distance recommended -- レーザーショットガン 零距離推奨"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "Laser shotgun wide right -- レーザーショットガン 横に広い 右"
+      ]
+    },
+    {
+      "ID": 11510100,
+      "Entries": [
+        "Laser shotgun wide horizontal charge right -- レーザーショットガン 横に広い チャージ 右"
+      ]
+    },
+    {
+      "ID": 11515000,
+      "Entries": [
+        "Laser shotgun wide left -- レーザーショットガン 横に広い 左"
+      ]
+    },
+    {
+      "ID": 11515100,
+      "Entries": [
+        "Laser shotgun wide horizontal charge left -- レーザーショットガン 横に広い チャージ 左"
+      ]
+    },
+    {
+      "ID": 11520100,
+      "Entries": [
+        "Plasma rifle_M・AI unique_charge shooting -- プラズマライフル_M・AIユニーク_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "Assault hand missile right -- 強襲ハンドミサイル 右"
+      ]
+    },
+    {
+      "ID": 11900005,
+      "Entries": [
+        "Assault hand missile left -- 強襲ハンドミサイル 左"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Bomb scatter 1st shot -- ボムスキャッター 1発目"
+      ]
+    },
+    {
+      "ID": 21000001,
+      "Entries": [
+        "Bomb scatter 2nd shot -- ボムスキャッター 2発目"
+      ]
+    },
+    {
+      "ID": 21000002,
+      "Entries": [
+        "Bomb scatter 3rd shot -- ボムスキャッター 3発目"
+      ]
+    },
+    {
+      "ID": 21000003,
+      "Entries": [
+        "Bomb scatter 4th shot -- ボムスキャッター 4発目"
+      ]
+    },
+    {
+      "ID": 21000004,
+      "Entries": [
+        "Bomb scatter 5th shot -- ボムスキャッター 5発目"
+      ]
+    },
+    {
+      "ID": 21000005,
+      "Entries": [
+        "Bomb scatter 6th shot -- ボムスキャッター 6発目"
+      ]
+    },
+    {
+      "ID": 21000006,
+      "Entries": [
+        "Bomb scatter 7th shot -- ボムスキャッター 7発目"
+      ]
+    },
+    {
+      "ID": 21000100,
+      "Entries": [
+        "Bomb scatter 1st charge charge -- ボムスキャッター 1発目 チャージ"
+      ]
+    },
+    {
+      "ID": 21000101,
+      "Entries": [
+        "Bomb scatter 2nd charge charge -- ボムスキャッター 2発目 チャージ"
+      ]
+    },
+    {
+      "ID": 21000102,
+      "Entries": [
+        "Bomb scatter 3rd shot charge -- ボムスキャッター 3発目 チャージ"
+      ]
+    },
+    {
+      "ID": 21000103,
+      "Entries": [
+        "Bomb scatter 4th charge charge -- ボムスキャッター 4発目 チャージ"
+      ]
+    },
+    {
+      "ID": 21000104,
+      "Entries": [
+        "Bomb scatter 5th charge charge -- ボムスキャッター 5発目 チャージ"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Plasma missile triple right -- プラズマミサイル\u30003連 右"
+      ]
+    },
+    {
+      "ID": 30005000,
+      "Entries": [
+        "Plasma missile triple left -- プラズマミサイル\u30003連 左"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Plasma missile 6 series right -- プラズマミサイル 6連 右"
+      ]
+    },
+    {
+      "ID": 30025000,
+      "Entries": [
+        "Plasma missile 6 series left -- プラズマミサイル 6連 左"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Plasma missile spreads diagonally and guides it over the enemy's head -- プラズマミサイル 斜めに広がって 敵頭上へ誘導"
+      ]
+    },
+    {
+      "ID": 30010001,
+      "Entries": [
+        "Plasma missile spreads diagonally and guides towards the enemy -- プラズマミサイル 斜めに広がって 敵へ誘導"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "6 twin missiles right -- 連装ミサイル 6連 右"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "6 twin missiles left -- 連装ミサイル 6連 左"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "Twin missile 4 series right -- 連装ミサイル 4連 右"
+      ]
+    },
+    {
+      "ID": 30210100,
+      "Entries": [
+        "4 twin missiles left -- 連装ミサイル 4連 左"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "Twin missiles 10 right -- 連装ミサイル 10連 右"
+      ]
+    },
+    {
+      "ID": 30220100,
+      "Entries": [
+        "10 twin missiles left -- 連装ミサイル 10連 左"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "raid missile right -- レイドミサイル 右"
+      ]
+    },
+    {
+      "ID": 30700001,
+      "Entries": [
+        "Raid missile right guidance -- レイドミサイル 右 誘導"
+      ]
+    },
+    {
+      "ID": 30700100,
+      "Entries": [
+        "raid missile left -- レイドミサイル 左"
+      ]
+    },
+    {
+      "ID": 30700101,
+      "Entries": [
+        "Raid missile left guidance -- レイドミサイル 左 誘導"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "2way missile Might be used in the official version -- 2wayミサイル 正式版で使うかも"
+      ]
+    },
+    {
+      "ID": 30900001,
+      "Entries": [
+        "Fission missile 2 series 6 fission -- 分裂ミサイル 2連6分裂"
+      ]
+    },
+    {
+      "ID": 30910001,
+      "Entries": [
+        "fission missile single shot -- 分裂ミサイル 単発"
+      ]
+    },
+    {
+      "ID": 30920001,
+      "Entries": [
+        "Fission missile 2 series 12 fission -- 分裂ミサイル 2連12分裂"
+      ]
+    },
+    {
+      "ID": 31410000,
+      "Entries": [
+        "Laser drone 1 right guidance 1st time -- レーザードローン1 右 誘導1回目"
+      ]
+    },
+    {
+      "ID": 31410010,
+      "Entries": [
+        "Laser drone 1 right guidance 2nd time -- レーザードローン1 右 誘導2回目"
+      ]
+    },
+    {
+      "ID": 31410020,
+      "Entries": [
+        "Laser drone 1 right guidance 3rd time -- レーザードローン1 右 誘導3回目"
+      ]
+    },
+    {
+      "ID": 31410050,
+      "Entries": [
+        "Laser drone 1 right when ejecting -- レーザードローン1 右 射出時"
+      ]
+    },
+    {
+      "ID": 31410100,
+      "Entries": [
+        "Laser drone charge 1 right guidance 1st time -- レーザードローン チャージ1 右 誘導1回目"
+      ]
+    },
+    {
+      "ID": 31410110,
+      "Entries": [
+        "Laser drone charge 1 right guidance 2nd time -- レーザードローン チャージ1 右 誘導2回目"
+      ]
+    },
+    {
+      "ID": 31410120,
+      "Entries": [
+        "Laser drone charge 1 right guidance 3rd time -- レーザードローン チャージ1 右 誘導3回目"
+      ]
+    },
+    {
+      "ID": 31410150,
+      "Entries": [
+        "Laser drone charge 1 right when ejecting -- レーザードローン チャージ1 右 射出時"
+      ]
+    },
+    {
+      "ID": 31415000,
+      "Entries": [
+        "Laser drone 1 left guidance 1st time -- レーザードローン1 左 誘導1回目"
+      ]
+    },
+    {
+      "ID": 31415010,
+      "Entries": [
+        "Laser drone 1 left guidance 2nd time -- レーザードローン1 左 誘導2回目"
+      ]
+    },
+    {
+      "ID": 31415020,
+      "Entries": [
+        "Laser drone 1 left 3rd guidance -- レーザードローン1 左 誘導3回目"
+      ]
+    },
+    {
+      "ID": 31415050,
+      "Entries": [
+        "Laser drone 1 left when ejecting -- レーザードローン1 左 射出時"
+      ]
+    },
+    {
+      "ID": 31415100,
+      "Entries": [
+        "Laser drone charge 1 left guidance 1st time -- レーザードローン チャージ1 左 誘導1回目"
+      ]
+    },
+    {
+      "ID": 31415110,
+      "Entries": [
+        "Laser drone charge 1 left guidance 2nd time -- レーザードローン チャージ1 左 誘導2回目"
+      ]
+    },
+    {
+      "ID": 31415120,
+      "Entries": [
+        "Laser drone charge 1 left guidance 3rd time -- レーザードローン チャージ1 左 誘導3回目"
+      ]
+    },
+    {
+      "ID": 31415150,
+      "Entries": [
+        "Laser drone charge 1 left when ejecting -- レーザードローン チャージ1 左 射出時"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "shoulder spread bazooka -- 肩拡散バズーカ"
+      ]
+    },
+    {
+      "ID": 32300100,
+      "Entries": [
+        "Shoulder Plasma Cannon Charge for Raylena -- 肩プラズマキャノン\u3000レイレナ向け\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Shoulder laser cannon_W laser right -- 肩レーザーキャノン_Wレーザー 右"
+      ]
+    },
+    {
+      "ID": 32200100,
+      "Entries": [
+        "Shoulder laser cannon_W laser_charge shooting right -- 肩レーザーキャノン_Wレーザー_チャージ射撃 右"
+      ]
+    },
+    {
+      "ID": 32205000,
+      "Entries": [
+        "Shoulder laser cannon_W laser left -- 肩レーザーキャノン_Wレーザー 左"
+      ]
+    },
+    {
+      "ID": 32205100,
+      "Entries": [
+        "Shoulder laser cannon_W laser_charge shooting left -- 肩レーザーキャノン_Wレーザー_チャージ射撃 左"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "shoulder laser shotgun -- 肩レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 33500001,
+      "Entries": [
+        "Auxiliary Booster_M・AI Unique (shooting weapon ver) Child -- 補助ブースター_M・AI ユニーク（射撃武器ver） 子"
+      ]
+    }
+  ]
+}

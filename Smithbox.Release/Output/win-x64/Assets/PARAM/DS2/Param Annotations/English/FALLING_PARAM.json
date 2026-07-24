@@ -1,0 +1,48 @@
+{
+  "Param": "FALLING_PARAM",
+  "Type": "FALLING_PARAM",
+  "Name": "FALLING_PARAM",
+  "Description": "Defines fall damage thresholds and mitigation values for different landing conditions and protective effects.",
+  "Fields": [
+    {
+      "Field": "fallingDamageSafety",
+      "Name": "Falling Damage (Safe Landing)",
+      "Description": "Damage threshold for safe landings where no significant fall damage is applied."
+    },
+    {
+      "Field": "fallingDamageNormal",
+      "Name": "Falling Damage (Normal)",
+      "Description": "Standard fall damage applied under normal landing conditions."
+    },
+    {
+      "Field": "fallingDamageDanger",
+      "Name": "Falling Damage (Danger)",
+      "Description": "High fall damage threshold indicating severe impact risk."
+    },
+    {
+      "Field": "fallingDamageDead",
+      "Name": "Falling Damage (Lethal)",
+      "Description": "Fall damage threshold at which the character dies from impact."
+    },
+    {
+      "Field": "fallingDamageMitigationDodge",
+      "Name": "Fall Damage Reduction (Dodge)",
+      "Description": "Reduces fall damage when landing during or after a dodge action."
+    },
+    {
+      "Field": "fallingDamageMitigationMagic",
+      "Name": "Fall Damage Reduction (Magic)",
+      "Description": "Reduces fall damage through magical effects or buffs."
+    },
+    {
+      "Field": "fallingDamageMitigationRing",
+      "Name": "Fall Damage Reduction (Ring)",
+      "Description": "Reduces fall damage when equipping specific rings or accessories."
+    },
+    {
+      "Field": "fallingDamageMitigationTramp",
+      "Name": "Fall Damage Reduction (Stomp/Impact)",
+      "Description": "Reduces fall damage from impact-based actions or ground interaction mechanics."
+    }
+  ]
+}

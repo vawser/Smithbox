@@ -1,0 +1,864 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test 0 -- テスト0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1 -- テスト1"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "talk -- 話しかける"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Conversation skip -- 会話スキップ"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "[FNR] General purpose_Sherpa startup -- 【FNR】汎用_シェルパ起動"
+      ]
+    },
+    {
+      "ID": 10000080,
+      "Entries": [
+        "[FNR] General purpose_Use a jumping platform -- 【FNR】汎用_ジャンプ台を使用する"
+      ]
+    },
+    {
+      "ID": 20100010,
+      "Entries": [
+        "[FNR] Proro_Catapult -- 【FNR】プロロ_カタパルト"
+      ]
+    },
+    {
+      "ID": 20100020,
+      "Entries": [
+        "[FNR] Proro_Hacking 01 -- 【FNR】プロロ_ハッキング01"
+      ]
+    },
+    {
+      "ID": 20100030,
+      "Entries": [
+        "[FNR] Proro_Hacking 02 -- 【FNR】プロロ_ハッキング02"
+      ]
+    },
+    {
+      "ID": 20100040,
+      "Entries": [
+        "[FNR] Proro_Hacking 03 -- 【FNR】プロロ_ハッキング03"
+      ]
+    },
+    {
+      "ID": 20100050,
+      "Entries": [
+        "[FNR] Prolo_A layer additional door 01 -- 【FNR】プロロ_A層追加扉01"
+      ]
+    },
+    {
+      "ID": 20100060,
+      "Entries": [
+        "[FNR] Prolo_A layer additional door 02 -- 【FNR】プロロ_A層追加扉02"
+      ]
+    },
+    {
+      "ID": 20100070,
+      "Entries": [
+        "[FNR] Proro_Hacking 04 -- 【FNR】プロロ_ハッキング04"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "[FNR] Over the wall_button inside the elevator -- 【FNR】壁越え_エレベーター内ボタン"
+      ]
+    },
+    {
+      "ID": 20300010,
+      "Entries": [
+        "[FNR] Over the wall_Boss room door -- 【FNR】壁越え_ボス部屋扉"
+      ]
+    },
+    {
+      "ID": 20300011,
+      "Entries": [
+        "[FNR] Over the wall_outer door_bottom -- 【FNR】壁越え_外側の扉_下"
+      ]
+    },
+    {
+      "ID": 20300012,
+      "Entries": [
+        "[FNR] Over the wall_Outer door_Top -- 【FNR】壁越え_外側の扉_上"
+      ]
+    },
+    {
+      "ID": 20300013,
+      "Entries": [
+        "[FNR] Over the wall_Room 1 entrance_Bottom -- 【FNR】壁越え_部屋1入口_下"
+      ]
+    },
+    {
+      "ID": 20300014,
+      "Entries": [
+        "[FNR] Over the wall_Room 1 entrance_Top -- 【FNR】壁越え_部屋1入口_上"
+      ]
+    },
+    {
+      "ID": 20300015,
+      "Entries": [
+        "[FNR] Over the wall_Room 2 exit -- 【FNR】壁越え_部屋2出口"
+      ]
+    },
+    {
+      "ID": 20300020,
+      "Entries": [
+        "[FNR] Over the wall for archive debris Volta -- 【FNR】壁越え\u3000アーカイブ残骸用\u3000ヴォルタ"
+      ]
+    },
+    {
+      "ID": 20300021,
+      "Entries": [
+        "[FNR] Over the wall Rubiconian for archive debris -- 【FNR】壁越え\u3000アーカイブ残骸用\u3000ルビコニアン"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "[FNR] Character string_Data center door -- 【FNR】文字列_データセンター扉"
+      ]
+    },
+    {
+      "ID": 20500010,
+      "Entries": [
+        "[FNR] String_Archive_Nameless Mercenary A (General Purpose) -- 【FNR】文字列_アーカイブ_名も無き傭兵A(汎用）"
+      ]
+    },
+    {
+      "ID": 20500020,
+      "Entries": [
+        "[FNR] For string archive debris_Ghost debris -- 【FNR】文字列アーカイブ残骸用_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 33200010,
+      "Entries": [
+        "[FNR] Collapse A layer Examine Ghost Archive -- 【FNR】崩落A層\u3000調べる ゴーストアーカイブ",
+        "[FNR] Collapse A layer Examine Ghost Archive -- 【FNR】崩落A層\u3000調べる ゴーストアーカイブ"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Hacking_Door_Back -- 【FNR】旧VOB工廠調査_ハッキング_扉_奥"
+      ]
+    },
+    {
+      "ID": 20600030,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Hacking_Door_Front -- 【FNR】旧VOB工廠調査_ハッキング_扉_手前"
+      ]
+    },
+    {
+      "ID": 20600040,
+      "Entries": [
+        "[FNR] Former VOB arsenal survey_Rubiconian for archive debris_Wall leaning -- 【FNR】旧VOB工廠調査_アーカイブ残骸用\u3000ルビコニアン_壁もたれ"
+      ]
+    },
+    {
+      "ID": 20600050,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Rubiconian for Archive Debris_Prone -- 【FNR】旧VOB工廠調査_アーカイブ残骸用\u3000ルビコニアン_うつ伏せ"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[FNR] Scavenging_Communist MT remains -- 【FNR】スカベンジング_共産MT残骸"
+      ]
+    },
+    {
+      "ID": 21000010,
+      "Entries": [
+        "[FNR] Scavenging_Heli -- 【FNR】スカベンジング_ヘリ"
+      ]
+    },
+    {
+      "ID": 21000020,
+      "Entries": [
+        "[FNR] Scavenging_Juggernaut -- 【FNR】スカベンジング_ジャガーノート"
+      ]
+    },
+    {
+      "ID": 21000030,
+      "Entries": [
+        "[FNR] Scavenging_4-legged MT debris -- 【FNR】スカベンジング_4脚MT残骸"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[FNR] Big Bridge_For indoor entry hacking -- 【FNR】ビッグブリッジ_屋内入場ハッキング用"
+      ]
+    },
+    {
+      "ID": 21300010,
+      "Entries": [
+        "[FNR] Big Bridge_For indoor exit hacking -- 【FNR】ビッグブリッジ_屋内出口ハッキング用"
+      ]
+    },
+    {
+      "ID": 21300020,
+      "Entries": [
+        "[FNR] Big Bridge Inspect Treasure Container -- 【FNR】ビッグブリッジ\u3000調べる 宝コンテナ"
+      ]
+    },
+    {
+      "ID": 21300030,
+      "Entries": [
+        "[FNR] Big Bridge for archive debris -- 【FNR】ビッグブリッジ\u3000アーカイブ残骸用"
+      ]
+    },
+    {
+      "ID": 21300040,
+      "Entries": [
+        "[FNR] Big Bridge Archive Remnants_Mercenary Remains -- 【FNR】ビッグブリッジ\u3000アーカイブ残骸用_傭兵残骸"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "[FNR] Exploration: In front of the wall, for archive debris, nameless mercenary B (general purpose) -- 【FNR】探索:壁前\u3000アーカイブ残骸用\u3000名も無き傭兵B（汎用）"
+      ]
+    },
+    {
+      "ID": 21700010,
+      "Entries": [
+        "[FNR] Exploration: In front of the wall for archive debris_Ghost debris -- 【FNR】探索:壁前\u3000アーカイブ残骸用_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 21800000,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell elevator -- 【FNR】大陸殻_大陸殻エレベータ"
+      ]
+    },
+    {
+      "ID": 21800010,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell_Sea spider appears -- 【FNR】大陸殻_大陸殻_ウミグモ登場"
+      ]
+    },
+    {
+      "ID": 21800020,
+      "Entries": [
+        "[FNR] For continental shell archive debris_Ghost debris -- 【FNR】大陸殻アーカイブ残骸用_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 21800030,
+      "Entries": [
+        "[FNR] Continental shell_Archive debris_Dozer -- 【FNR】大陸殻_アーカイブ残骸用_ドーザー"
+      ]
+    },
+    {
+      "ID": 21800040,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell_For end event -- 【FNR】大陸殻_大陸殻_終了時イベント用"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "[FNR] A layer indoor search_for hacking door 1 -- 【FNR】A層屋内探索_ハッキング扉用1"
+      ]
+    },
+    {
+      "ID": 22300010,
+      "Entries": [
+        "[FNR] A layer indoor exploration_For hacking door_Entrance Lv3 -- 【FNR】A層屋内探索_ハッキング扉用_入口Lv3"
+      ]
+    },
+    {
+      "ID": 22300020,
+      "Entries": [
+        "[FNR] A layer indoor search archive debris_NPAC debris -- 【FNR】A層屋内捜索 アーカイブ残骸_NPAC残骸"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "[FNR] Organization_Hacking Drone -- 【FNR】組織_ハッキングドローン"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "[FNR] Fuel base explosion_Ghost for archive debris -- 【FNR】燃料基地爆破_アーカイブ残骸用ゴースト"
+      ]
+    },
+    {
+      "ID": 30300010,
+      "Entries": [
+        "[FNR] Fuel base explosion_Archive debris_Regular army MT -- 【FNR】燃料基地爆破_アーカイブ残骸_正規軍MT"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "[FNR] Collapse A layer Investigate treasure container range expansion -- 【FNR】崩落A層\u3000調べる 宝コンテナ 範囲拡大"
+      ]
+    },
+    {
+      "ID": 33200020,
+      "Entries": [
+        "[FNR] Collapse layer A - Investigate NPAC archive -- 【FNR】崩落A層\u3000調べる NPACアーカイブ"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 01 Hacking Lv3 -- 【FNR】坑道再訪\u3000アーカイブ01\u3000ハッキングLv3"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 02 Hacking Lv3 -- 【FNR】坑道再訪\u3000アーカイブ02\u3000ハッキングLv3"
+      ]
+    },
+    {
+      "ID": 35000020,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 03 Hacking Lv3 -- 【FNR】坑道再訪\u3000アーカイブ03\u3000ハッキングLv3"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "[FNR] Mine shaft revisited - Item acquisition_Very expensive_Under the cliff -- 【FNR】坑道再訪\u3000アイテム取得_超高額_崖下"
+      ]
+    },
+    {
+      "ID": 35000110,
+      "Entries": [
+        "[FNR] Mine shaft revisited Item acquisition_High price_EV -- 【FNR】坑道再訪\u3000アイテム取得_高額_EV"
+      ]
+    },
+    {
+      "ID": 35000120,
+      "Entries": [
+        "[FNR] Mine shaft revisited - item acquisition_small amount -- 【FNR】坑道再訪\u3000アイテム取得_少額"
+      ]
+    },
+    {
+      "ID": 35000130,
+      "Entries": [
+        "[FNR] Mine shaft revisited - Item acquisition_Medium amount_Point A -- 【FNR】坑道再訪\u3000アイテム取得_中額_A地点"
+      ]
+    },
+    {
+      "ID": 35000140,
+      "Entries": [
+        "[FNR] Mine shaft revisited, item acquisition_on the way -- 【FNR】坑道再訪\u3000アイテム取得_道中"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "[FNR] Hole in the Ice Field Large Elevator -- 【FNR】氷原の穴 大エレベーター"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "[FNR] Hole in the ice field_For unlocking the bulkhead -- 【FNR】氷原の穴_隔壁開錠用"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "[FNR] Hole in the Ice Field Investigate Treasure Container -- 【FNR】氷原の穴\u3000調べる 宝コンテナ"
+      ]
+    },
+    {
+      "ID": 40100000,
+      "Entries": [
+        "[FNR] Rail Road Elevator -- 【FNR】レイル・ロード エレベーター"
+      ]
+    },
+    {
+      "ID": 40100010,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_170 -- 【FNR】レイル・ロード 線路のロック扉_170用"
+      ]
+    },
+    {
+      "ID": 40100011,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_171 -- 【FNR】レイル・ロード 線路のロック扉_171用"
+      ]
+    },
+    {
+      "ID": 40100020,
+      "Entries": [
+        "[FNR] Rail Road Opening Door_Hacking -- 【FNR】レイル・ロード 開幕大扉_ハッキング"
+      ]
+    },
+    {
+      "ID": 40100021,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_Hacking Lv1 -- 【FNR】レイル・ロード 線路のロック扉_ハッキングLv1"
+      ]
+    },
+    {
+      "ID": 40100022,
+      "Entries": [
+        "[FNR] Railroad Railroad Lock Door_Hacking Lv2 -- 【FNR】レイル・ロード 線路のロック扉_ハッキングLv2"
+      ]
+    },
+    {
+      "ID": 40100030,
+      "Entries": [
+        "[FNR] Railroad Breaker Hacking -- 【FNR】レイルロード ブレイカーハッキング"
+      ]
+    },
+    {
+      "ID": 40100040,
+      "Entries": [
+        "[FNR] Railroad Inspect Treasure Container 01 -- 【FNR】レイルロード\u3000調べる 宝コンテナ\u300001"
+      ]
+    },
+    {
+      "ID": 40100050,
+      "Entries": [
+        "[FNR] Railroad Inspect Treasure Container 02 -- 【FNR】レイルロード\u3000調べる 宝コンテナ\u300002"
+      ]
+    },
+    {
+      "ID": 40100060,
+      "Entries": [
+        "[FNR] Railroad boss front door -- 【FNR】レイル・ロード ボス前扉"
+      ]
+    },
+    {
+      "ID": 40100100,
+      "Entries": [
+        "[FNR] For Railroad Archive Remnants_Ghost Remains -- 【FNR】レイルロード\u3000アーカイブ残骸用_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 40100110,
+      "Entries": [
+        "[FNR] Railroad ALT Archive Remnants_Ghost Remnants 02 -- 【FNR】レイルロードALT\u3000アーカイブ残骸用_ゴースト残骸02"
+      ]
+    },
+    {
+      "ID": 40100120,
+      "Entries": [
+        "[FNR] Rail_Archive_Ghost 03 -- 【FNR】レイル_アーカイブ_ゴースト03"
+      ]
+    },
+    {
+      "ID": 40100130,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace_Archive Remnants_M.AI Remains -- 【FNR】大空洞と炉_アーカイブ残骸_M.AI残骸"
+      ]
+    },
+    {
+      "ID": 40100140,
+      "Entries": [
+        "[FNR] Rail_Archive_Drone 01 -- 【FNR】レイル_アーカイブ_無人機01"
+      ]
+    },
+    {
+      "ID": 40100150,
+      "Entries": [
+        "[FNR] Rail_Archive_Judau 01 -- 【FNR】レイル_アーカイブ_ジュドー01"
+      ]
+    },
+    {
+      "ID": 40200000,
+      "Entries": [
+        "[FNR] Cavern and Furnace_Hacking_Dummy Character_AEG410_360 -- 【FNR】大空洞と炉_ハッキング_ダミーキャラ_AEG410_360"
+      ]
+    },
+    {
+      "ID": 40200010,
+      "Entries": [
+        "[FNR] Large Cavity and Furnace_Opening Large Door -- 【FNR】大空洞と炉_開幕大扉"
+      ]
+    },
+    {
+      "ID": 40200020,
+      "Entries": [
+        "[FNR] Cavern and Furnace Hacking Safe Door_Return -- 【FNR】大空洞と炉\u3000ハッキング\u3000金庫扉_復路"
+      ]
+    },
+    {
+      "ID": 40200030,
+      "Entries": [
+        "[FNR] Great Cavern and Furnace Investigate Treasure Container -- 【FNR】大空洞と炉\u3000調べる 宝コンテナ"
+      ]
+    },
+    {
+      "ID": 40200040,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace Investigate Treasure Container 02 -- 【FNR】大空洞と炉\u3000調べる 宝コンテナ\u300002"
+      ]
+    },
+    {
+      "ID": 40200050,
+      "Entries": [
+        "[FNR] Large cavity and furnace hacking furnace entrance door -- 【FNR】大空洞と炉\u3000ハッキング\u3000炉入り口扉"
+      ]
+    },
+    {
+      "ID": 40200060,
+      "Entries": [
+        "[FNR] Cavern and Furnace Hacking Safe Door_Outbound -- 【FNR】大空洞と炉\u3000ハッキング\u3000金庫扉_往路"
+      ]
+    },
+    {
+      "ID": 40200100,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace_Archive Remnants_M.AI Remains -- 【FNR】大空洞と炉_アーカイブ残骸_M.AI残骸"
+      ]
+    },
+    {
+      "ID": 40200110,
+      "Entries": [
+        "[FNR] Cavern and Furnace_Archive Remnants_Ghost Remnants -- 【FNR】大空洞と炉_アーカイブ残骸_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 40210000,
+      "Entries": [
+        "[FNR] Biological Weapon Inspect Treasure Container 01 -- 【FNR】生体兵器\u3000調べる 宝コンテナ\u300001"
+      ]
+    },
+    {
+      "ID": 40210010,
+      "Entries": [
+        "[FNR] Biological Weapon Archive Remnants_Nameless Rubiconian -- 【FNR】生体兵器 アーカイブ残骸_名も無きルビコニアン"
+      ]
+    },
+    {
+      "ID": 40300000,
+      "Entries": [
+        "[FNR] Ruins Investigate Treasure Container_Lake -- 【FNR】廃墟\u3000調べる 宝コンテナ_湖"
+      ]
+    },
+    {
+      "ID": 40300001,
+      "Entries": [
+        "[FNR] Ruins Investigate Treasure Container_Escape Point -- 【FNR】廃墟\u3000調べる 宝コンテナ_脱出地点"
+      ]
+    },
+    {
+      "ID": 40300010,
+      "Entries": [
+        "[FNR] Ruins Archive Remnants_Ghost MT -- 【FNR】廃墟 アーカイブ残骸_ゴーストMT"
+      ]
+    },
+    {
+      "ID": 40300011,
+      "Entries": [
+        "[FNR] Ruins Archive Remnants_MAI Remnants -- 【FNR】廃墟 アーカイブ残骸_MAI残骸"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "[FNR] Railroad Reverse Run Door Hacking -- 【FNR】レイルロード逆走\u3000扉ハッキング"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "[FNR] Jailbreak Hacking Beacon Launch -- 【FNR】脱獄\u3000ハッキング\u3000ビーコン打ち上げ"
+      ]
+    },
+    {
+      "ID": 42000010,
+      "Entries": [
+        "[FNR] Jailbreak Archive Remnants_Communist MT -- 【FNR】脱獄 アーカイブ残骸_共産MT"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "[FNR] Gun pedestal -- 【FNR】砲台台座"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "[FNR] Straight city_for dome entrance -- 【FNR】ストレート市街_ドーム入口用"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "[FNR] Straight city_for dome exit -- 【FNR】ストレート市街_ドーム出口用"
+      ]
+    },
+    {
+      "ID": 50200011,
+      "Entries": [
+        "[FNR] Straight city_passage exit -- 【FNR】ストレート市街_通路出口"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "[FNR] New B-tier people hacking_a little bit? -- 【FNR】新B層の人々\u3000ハッキング_ちょいでか"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "[FNR] New B-tier people Hacking Lv2 -- 【FNR】新B層の人々\u3000ハッキングLv2"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "[FNR] Strike street reverse run_trap room door hacking -- 【FNR】スト街逆走_トラップ部屋扉ハッキング"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "[FNR] City at Sea_US Drone Hacking -- 【FNR】洋上の都市_USドローンハッキング"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "[FNR] Ocean City Control Device Hacking -- 【FNR】洋上の都市\u3000制御装置ハッキング"
+      ]
+    },
+    {
+      "ID": 51000020,
+      "Entries": [
+        "[FNR] City on the Ocean - Final hack of the control device -- 【FNR】洋上の都市\u3000制御装置最後ハッキング"
+      ]
+    },
+    {
+      "ID": 51000030,
+      "Entries": [
+        "[FNR] Ocean City Search Treasure Container -- 【FNR】洋上の都市\u3000調べる 宝コンテナ"
+      ]
+    },
+    {
+      "ID": 51000040,
+      "Entries": [
+        "[FNR] City at Sea Archive Remnants_Rubiconian -- 【FNR】洋上の都市 アーカイブ残骸_ルビコニアン"
+      ]
+    },
+    {
+      "ID": 51000050,
+      "Entries": [
+        "[FNR] City on the Sea_Hacking_c3100_Flight MT -- 【FNR】洋上の都市_ハッキング_c3100_飛行MT"
+      ]
+    },
+    {
+      "ID": 51100000,
+      "Entries": [
+        "[FNR] Recover underground facility_hacking_c9980_dummy character -- 【FNR】地下施設奪還_ハッキング_c9980_ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 51100001,
+      "Entries": [
+        "[FNR] Recapture of underground facilities_for door assets -- 【FNR】地下施設奪還_扉アセット用"
+      ]
+    },
+    {
+      "ID": 51100010,
+      "Entries": [
+        "[FNR] Recapture of underground facilities_for control room battery -- 【FNR】地下施設奪還_管理室砲台用"
+      ]
+    },
+    {
+      "ID": 79200050,
+      "Entries": [
+        "[FNR] Submission Tute A layer_Door 01 -- 【FNR】サブミッションチュートA層_扉01"
+      ]
+    },
+    {
+      "ID": 79900010,
+      "Entries": [
+        "[FNR] Exterminate behind walls_for indoor entrance hacking -- 【FNR】壁裏殲滅_屋内入り口ハッキング用"
+      ]
+    },
+    {
+      "ID": 79900020,
+      "Entries": [
+        "[FNR] Exterminate the back of the wall_for indoor second room hacking -- 【FNR】壁裏殲滅_屋内二部屋目ハッキング用"
+      ]
+    },
+    {
+      "ID": 79900030,
+      "Entries": [
+        "[FNR] Annihilation behind the wall for archive debris -- 【FNR】壁裏殲滅\u3000アーカイブ残骸用"
+      ]
+    },
+    {
+      "ID": 79900040,
+      "Entries": [
+        "[FNR] Annihilation behind the wall for archive debris_Ghost debris -- 【FNR】壁裏殲滅\u3000アーカイブ残骸用_ゴースト残骸"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[FNR] Test Check Treasure Container -- 【FNR】テスト\u3000調べる 宝コンテナ"
+      ]
+    },
+    {
+      "ID": 90000100,
+      "Entries": [
+        "[FNR] Test Hacking -- 【FNR】テスト\u3000ハッキング"
+      ]
+    },
+    {
+      "ID": 90000200,
+      "Entries": [
+        "[FNR] Test Hacking Lv2 -- 【FNR】テスト\u3000ハッキングLv2"
+      ]
+    },
+    {
+      "ID": 90000300,
+      "Entries": [
+        "[FNR] Test Hacking Lv3 -- 【FNR】テスト\u3000ハッキングLv3"
+      ]
+    },
+    {
+      "ID": 90000400,
+      "Entries": [
+        "[FNR] Template_AEG008_030 -- 【FNR】テンプレ_AEG008_030"
+      ]
+    },
+    {
+      "ID": 99000001,
+      "Entries": [
+        "[FNR] Template_What to display from the wall -- 【FNR】テンプレ_壁から表示するもの"
+      ]
+    },
+    {
+      "ID": 99000100,
+      "Entries": [
+        "[FNR] Template_What to display in the air -- 【FNR】テンプレ_空中に表示するもの"
+      ]
+    },
+    {
+      "ID": 99000200,
+      "Entries": [
+        "[FNR] Template_AEG008_030 -- 【FNR】テンプレ_AEG008_030"
+      ]
+    },
+    {
+      "ID": 99000201,
+      "Entries": [
+        "[FNR] Template_AEG084_910 -- 【FNR】テンプレ_AEG084_910"
+      ]
+    },
+    {
+      "ID": 99000202,
+      "Entries": [
+        "[FNR] Template_AEG084_920 -- 【FNR】テンプレ_AEG084_920"
+      ]
+    },
+    {
+      "ID": 99000203,
+      "Entries": [
+        "[FNR] Template_AEG203_910 -- 【FNR】テンプレ_AEG203_910"
+      ]
+    },
+    {
+      "ID": 99000204,
+      "Entries": [
+        "[FNR] Template_Archive debris_Ghost_Locus -- 【FNR】テンプレ_アーカイブ残骸用_ゴースト_座"
+      ]
+    },
+    {
+      "ID": 99000205,
+      "Entries": [
+        "[FNR] Template_Archive debris_Ghost_Sleeping -- 【FNR】テンプレ_アーカイブ残骸用_ゴースト_寝"
+      ]
+    },
+    {
+      "ID": 99001001,
+      "Entries": [
+        "[FNR] Template_hacking_c3150_Juggernaut -- 【FNR】テンプレ_ハッキング_c3150_ジャガーノート"
+      ]
+    },
+    {
+      "ID": 99001002,
+      "Entries": [
+        "[FNR] Template_Hacking_c5000_Guard Mecha (Aerial) -- 【FNR】テンプレ_ハッキング_c5000_ガードメカ（空中）"
+      ]
+    },
+    {
+      "ID": 99001003,
+      "Entries": [
+        "[FNR] Template_Hacking_c7270_Ground Force Artillery Sniper (Large) -- 【FNR】テンプレ_ハッキング_c7270_地上勢力砲台\u3000スナイパー（大）"
+      ]
+    },
+    {
+      "ID": 99001004,
+      "Entries": [
+        "[FNR] Template_hacking_c9980_dummy character -- 【FNR】テンプレ_ハッキング_c9980_ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 99001005,
+      "Entries": [
+        "[FNR] Template_Hacking_AEG410_360_Dummy character -- 【FNR】テンプレ_ハッキング_AEG410_360_ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 99001100,
+      "Entries": [
+        "[FNR] Template_Hacking_Communist MT remains -- 【FNR】テンプレ_ハッキング_共産MT残骸"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "[FNR] Template_What to display from the wall -- 【FNR】テンプレ_壁から表示するもの"
+      ]
+    },
+    {
+      "ID": 99990010,
+      "Entries": [
+        "[FNR] Template_What to display in the air -- 【FNR】テンプレ_空中に表示するもの"
+      ]
+    },
+    {
+      "ID": 99990020,
+      "Entries": [
+        "[FNR] Template_Things to consider about OBJ itself -- 【FNR】テンプレ_OBJ自身のあたりを考慮するもの"
+      ]
+    },
+    {
+      "ID": 99990030,
+      "Entries": [
+        "[FNR] Template_Hacking -- 【FNR】テンプレ_ハッキング"
+      ]
+    }
+  ]
+}

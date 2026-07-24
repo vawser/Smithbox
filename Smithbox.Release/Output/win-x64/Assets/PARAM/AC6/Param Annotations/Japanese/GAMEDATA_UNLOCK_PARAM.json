@@ -1,0 +1,23 @@
+{
+  "Param": "GAMEDATA_UNLOCK_PARAM",
+  "Type": "GAMEDATA_UNLOCK_PARAM",
+  "Name": "GAMEDATA_UNLOCK_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unlockType",
+      "Name": "タイプ",
+      "Description": "解放条件の種別"
+    },
+    {
+      "Field": "refID",
+      "Name": "参照ID",
+      "Description": "解放判定用ID。タイプにより対象が異なる"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "reserved",
+      "Description": ""
+    }
+  ]
+}

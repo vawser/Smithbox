@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
+  
+  <Field>
+    <NpcThinkParamId
+    AltName="NPC Think Param ID"
+    Wiki="The AI parameters this character should use." 
+    ParamRef="NpcThinkParam" />
+    
+    <NpcParamId
+    AltName="NPC Param ID"
+    Wiki="The property parameters this character should use." 
+    ParamRef="NpcParam" />
+    
+    <TalkID
+    AltName="Talk Script ID"
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
+    
+    <PlatoonId
+    AltName="Platoon Script ID"
+    Wiki="" />
+    
+    <CharaInitParamId
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    ParamRef="CharaInitParam" />
+    
+    <HitPartName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <HitPartIndex
+    IndexProperty="" />
+    
+    <PatrolRouteName
+    AltName="Walk Route"
+    Wiki="The walk route this enemy follows."
+    MapRef="Event-PatrolRoute" />
+    
+    <PatrolRouteIndex
+    IndexProperty="" />
+    
+    <ChrActivateCondParamID
+    AltName="Character Appearance Condition"
+    Wiki="The ID in ChrActivateConditionParam that affects enemy appearance conditions."
+    ParamRef="ChrActivateConditionParam" />
+    
+    <UnkSpEffectSetParamID
+    AltName="Unkown SpEffect Set ID"
+    Wiki="looks like condemned SpeffectSetParamID.Used in m30."
+    ParamRef="SpEffectSetParam" />
+    
+    <CondemnedSpEffectSetParamID
+    AltName="Condemned SpEffect Set ID"
+    Wiki="A set of SpEffects applied when the region is condemned."
+    ParamRef="SpEffectSetParam" />
+    
+    <BackupEventAnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this enemy to idle with." />
+    
+    <SpEffectSetParamIds
+    AltName="SpEffect Set ID"
+    Wiki="A set of SpEffects that are applied to this enemy." 
+    ParamRef="SpEffectSetParam" 
+    ArrayProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

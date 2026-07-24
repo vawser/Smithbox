@@ -1,0 +1,1289 @@
+{
+  "Name": "SignPuddleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670100,
+      "Entries": [
+        "Weeping Penisula - Witchbane Ruins"
+      ]
+    },
+    {
+      "ID": 670101,
+      "Entries": [
+        "Limgrave - The First Step"
+      ]
+    },
+    {
+      "ID": 670102,
+      "Entries": [
+        "Limgrave - Agheel Lake"
+      ]
+    },
+    {
+      "ID": 670103,
+      "Entries": [
+        "Limgrave - Dragon-Burnt Ruins"
+      ]
+    },
+    {
+      "ID": 670104,
+      "Entries": [
+        "Weeping Peninsula - Peninsula Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 670105,
+      "Entries": [
+        "Weeping Peninsula - Castle Morne"
+      ]
+    },
+    {
+      "ID": 670106,
+      "Entries": [
+        "Limgrave - Waypoint Ruins"
+      ]
+    },
+    {
+      "ID": 670130,
+      "Entries": [
+        "Stormhill - Castleward Tunnel"
+      ]
+    },
+    {
+      "ID": 670131,
+      "Entries": [
+        "Stormveil Castle - Secluded Cell"
+      ]
+    },
+    {
+      "ID": 670132,
+      "Entries": [
+        "Stormveil Castle - Liftside Chamber"
+      ]
+    },
+    {
+      "ID": 670133,
+      "Entries": [
+        "Stormveil Castle - Rampart Tower"
+      ]
+    },
+    {
+      "ID": 670134,
+      "Entries": [
+        "Stormveil Castle - Stormveil Cliffside"
+      ]
+    },
+    {
+      "ID": 670135,
+      "Entries": [
+        "Stormveil Castle - Stormveil Main Gate"
+      ]
+    },
+    {
+      "ID": 670160,
+      "Entries": [
+        "Weeping Peninsula - Tombsward Catacombs"
+      ]
+    },
+    {
+      "ID": 670161,
+      "Entries": [
+        "Weeping Peninsula - Impaler's Catacombs"
+      ]
+    },
+    {
+      "ID": 670162,
+      "Entries": [
+        "Limgrave - Stormfoot Catacombs"
+      ]
+    },
+    {
+      "ID": 670163,
+      "Entries": [
+        "Stormhill - Deathtouched Catacombs"
+      ]
+    },
+    {
+      "ID": 670164,
+      "Entries": [
+        "Limgrave - Murkwater Catacombs"
+      ]
+    },
+    {
+      "ID": 670170,
+      "Entries": [
+        "Weeping Peninsula - Tombsward Cave"
+      ]
+    },
+    {
+      "ID": 670171,
+      "Entries": [
+        "Weeping Peninsula - Earthbore Cave"
+      ]
+    },
+    {
+      "ID": 670172,
+      "Entries": [
+        "Limgrave - Murkwater Cave"
+      ]
+    },
+    {
+      "ID": 670173,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670174,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670232,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670233,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670262,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670272,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670342,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670352,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670354,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670361,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670363,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670364,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670371,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670372,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670373,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670381,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670390,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670407,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670408,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670409,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670473,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670507,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670532,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670534,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670535,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670536,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670537,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670539,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670562,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670563,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670570,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670571,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670580,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670613,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670614,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670624,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670626,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670632,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670633,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670634,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670671,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670731,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670740,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670741,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670742,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670743,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670744,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670745,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670746,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670747,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670813,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670831,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670841,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670842,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670843,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670851,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670852,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670853,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670854,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670871,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670880,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670903,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670906,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670907,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670908,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670909,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670912,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670913,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670951,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670952,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670953,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670955,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670956,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670960,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670961,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670970,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 670980,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

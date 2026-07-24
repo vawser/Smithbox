@@ -1,0 +1,493 @@
+{
+  "Param": "EQUIP_PARAM_BOOSTER_ST",
+  "Type": "EQUIP_PARAM_BOOSTER_ST",
+  "Name": "EQUIP_PARAM_BOOSTER_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニューアイコンID."
+    },
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": "モデルID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID(プログラム内で強化レベルを加味しているので s32 では７桁が限界)"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]."
+    },
+    {
+      "Field": "energyMax",
+      "Name": "EN上限値",
+      "Description": "EN上限値"
+    },
+    {
+      "Field": "energyRecoveryPerSec",
+      "Name": "EN回復量_通常時[EN値/sec] ",
+      "Description": "EN回復量_通常時[EN値/sec]"
+    },
+    {
+      "Field": "consumeEN",
+      "Name": "EN消費量_通常時[EN値/sec] ",
+      "Description": "EN消費量_通常時[EN値/sec] "
+    },
+    {
+      "Field": "energyRecoveryDelayTimeSec",
+      "Name": "EN回復待機時間[sec] ",
+      "Description": "EN回復待機時間[sec] "
+    },
+    {
+      "Field": "f00_dashBoostMaxSpeedKMPH",
+      "Name": "【地上B】最高速度[km/h]（※終端速度に統合予定）",
+      "Description": "ダッシュブースト時の最高速度"
+    },
+    {
+      "Field": "f01_dashBoostStartAccelMPSS",
+      "Name": "【地上B】開始加速度[m/s^2]（※終端速度により廃止予定）",
+      "Description": "ダッシュブースト時の開始加速度"
+    },
+    {
+      "Field": "f02_dashBoostMaxAccelMPSS",
+      "Name": "【地上B】最高加速度[m/s^2]（※終端速度により廃止予定）",
+      "Description": "ダッシュブースト時の最高加速度"
+    },
+    {
+      "Field": "f03_dashBoostBeginAccelTimeSec",
+      "Name": "【地上B】開始加速度継続時間[s]",
+      "Description": "ダッシュブースト開始加速度の継続時間"
+    },
+    {
+      "Field": "f04_dashBoostBeginToMaxAccelTimeSec",
+      "Name": "【地上B】開始→最高加速度時間[s]",
+      "Description": "ダッシュブースト開始時加速度から最高加速度になるまでの時間"
+    },
+    {
+      "Field": "f05_consumeEN_boostMove",
+      "Name": "【地上B】消費EN[point/s]",
+      "Description": "地上ブースト継続EN消費[point/sec]"
+    },
+    {
+      "Field": "f06_flyBoostHorizontalMaxSpeedKMPH",
+      "Name": "【空中B】水平最高速度[km/h]（※終端速度に統合予定）",
+      "Description": "飛行ブースト水平移動最高速度"
+    },
+    {
+      "Field": "f07_flyBoostHorizontalStartAccelMPSS",
+      "Name": "【空中B】水平開始加速度[m/s^2]（※終端速度により廃止予定）",
+      "Description": "飛行ブースト水平移動開始加速度"
+    },
+    {
+      "Field": "f08_flyBoostHorizontalMaxAccelMPSS",
+      "Name": "【空中B】水平最高加速度[m/s^2]（※終端速度により廃止予定）",
+      "Description": "飛行ブースト水平移動時の最高加速度+"
+    },
+    {
+      "Field": "f09_flyBoostHorizontalBeginAccelTimeSec",
+      "Name": "【空中B】水平開始加速度継続時間[s]",
+      "Description": "飛行ブースト水平移動開始加速度の継続時間"
+    },
+    {
+      "Field": "f10_flyBoostHorizontalBeginToMaxAccelTimeSec",
+      "Name": "【空中B】水平開始→最高加速度時間[s]  ",
+      "Description": "飛行ブースト水平移動開始時加速度から最高加速度になるまでの時間"
+    },
+    {
+      "Field": "f11_consumeEN_boostMoveAir",
+      "Name": "【空中B】消費EN[point/s]",
+      "Description": "空中ブースト継続EN消費[point/sec]"
+    },
+    {
+      "Field": "consumeEN_BoostUp",
+      "Name": "【上昇B】消費EN[point/s]",
+      "Description": "ブースト上昇継続EN消費[point/sec]"
+    },
+    {
+      "Field": "consumeFixedEN_QB",
+      "Name": "【QB】瞬間消費EN[point]",
+      "Description": "QB固定EN消費[point]"
+    },
+    {
+      "Field": "QB_EndSpeedKMH",
+      "Name": "QB終端速度[km/h]",
+      "Description": "QBの終端速度"
+    },
+    {
+      "Field": "QB_AccelTimeF30",
+      "Name": "QB噴射時間[1/30 s]",
+      "Description": "QB噴射時間"
+    },
+    {
+      "Field": "dashBoost_EndSpeedKMH",
+      "Name": "地上ブーストダッシュ終端速度[km/h]",
+      "Description": "地上ブーストダッシュの終端速度"
+    },
+    {
+      "Field": "flyBoost_EndSpeedKMH",
+      "Name": "空中ブーストダッシュ終端速度[km/h]",
+      "Description": "空中ブーストダッシュの終端速度"
+    },
+    {
+      "Field": "QB_StartAddSpeedKMH",
+      "Name": "QB初速[km/h]  ",
+      "Description": "QB時の追加初速"
+    },
+    {
+      "Field": "flyBoostUpperAccelMPSS",
+      "Name": "【空中B】上昇加速度[m/s^2]",
+      "Description": "飛行ブースト上昇加速度"
+    },
+    {
+      "Field": "flyBoostUpperMaxSpeedKMH",
+      "Name": "【空中B】上昇最高速度[km/h]  ",
+      "Description": "飛行ブースト上昇最高速度"
+    },
+    {
+      "Field": "flyBoostUpperJumpAccelMPSS",
+      "Name": "【空中B】ジャンプ入力時開始加速度[m/s^2]",
+      "Description": "飛行ブーストジャンプ入力時上昇加速度"
+    },
+    {
+      "Field": "flyBoostUpperJumpEN",
+      "Name": "【空中B】ジャンプ入力時消費EN[point/s]",
+      "Description": "飛行ブーストジャンプ入力時消費EN"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "売却価格",
+      "Description": "売却価格"
+    },
+    {
+      "Field": "saleValue",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "QB_ReloadTimeSec",
+      "Name": "QB再使用時間[s]  ",
+      "Description": "QBを開始してからもう一度開始できるようになるまでの時間"
+    },
+    {
+      "Field": "flyBoostDownMaxSpeedKMH",
+      "Name": "【空中B】下降最高速度[km/h]",
+      "Description": "飛行ブースト下降最高速度"
+    },
+    {
+      "Field": "flyBoostUpperJumpDownMaxSpeedKMH",
+      "Name": "【空中B】ジャンプ入力時下降最高速度[km/h]",
+      "Description": "飛行ブーストジャンプ入力時下降最高速度"
+    },
+    {
+      "Field": "energyRecoveryDelayTimeForEmptySec",
+      "Name": "EN回復待機時間_借金時[sec] ",
+      "Description": "ENが空っぽのときのEN回復待機時間[sec] "
+    },
+    {
+      "Field": "thrustersParamIDForPC",
+      "Name": "スラスターパラムID（PC用）",
+      "Description": "PC用、スラスターパラメータのIDを指定（0でスラスターなし）"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "computed_f00",
+      "Name": "【表示用】Float_00",
+      "Description": "メニュー表示用算出値00"
+    },
+    {
+      "Field": "computed_f01",
+      "Name": "【表示用】Float_01",
+      "Description": "メニュー表示用算出値01"
+    },
+    {
+      "Field": "computed_f02",
+      "Name": "【表示用】Float_02",
+      "Description": "メニュー表示用算出値02"
+    },
+    {
+      "Field": "computed_f03",
+      "Name": "【表示用】Float_03",
+      "Description": "メニュー表示用算出値03"
+    },
+    {
+      "Field": "computed_f04",
+      "Name": "【表示用】Float_04",
+      "Description": "メニュー表示用算出値04"
+    },
+    {
+      "Field": "computed_f05",
+      "Name": "【表示用】Float_05",
+      "Description": "メニュー表示用算出値05"
+    },
+    {
+      "Field": "computed_f06",
+      "Name": "【表示用】Float_06",
+      "Description": "メニュー表示用算出値06"
+    },
+    {
+      "Field": "computed_f07",
+      "Name": "【表示用】Float_07",
+      "Description": "メニュー表示用算出値07"
+    },
+    {
+      "Field": "computed_f08",
+      "Name": "【表示用】Float_08",
+      "Description": "メニュー表示用算出値08"
+    },
+    {
+      "Field": "computed_f09",
+      "Name": "【表示用】Float_09",
+      "Description": "メニュー表示用算出値09"
+    },
+    {
+      "Field": "computed_f10",
+      "Name": "【表示用】Float_10",
+      "Description": "メニュー表示用算出値10"
+    },
+    {
+      "Field": "computed_f11",
+      "Name": "【表示用】Float_11",
+      "Description": "メニュー表示用算出値11"
+    },
+    {
+      "Field": "computed_f12",
+      "Name": "【表示用】Float_12",
+      "Description": "メニュー表示用算出値12"
+    },
+    {
+      "Field": "computed_f13",
+      "Name": "【表示用】Float_13",
+      "Description": "メニュー表示用算出値13"
+    },
+    {
+      "Field": "computed_f14",
+      "Name": "【表示用】Float_14",
+      "Description": "メニュー表示用算出値14"
+    },
+    {
+      "Field": "computed_f_last",
+      "Name": "【表示用】Float_15",
+      "Description": "メニュー表示用算出値15"
+    },
+    {
+      "Field": "upperBoostMaxSpeedKMPH",
+      "Name": "【垂直上昇B】上昇最高速度[km/h]",
+      "Description": "大ジャンプ上昇ブースト最高速度[km/h]"
+    },
+    {
+      "Field": "upperBoostStartAccelMPSS",
+      "Name": "【垂直上昇B】開始加速度[m/s^2]",
+      "Description": "大ジャンプ上昇ブースト開始加速度[m/s^2]"
+    },
+    {
+      "Field": "upperBoostMaxAccelMPSS",
+      "Name": "【垂直上昇B】最高加速度[m/s^2]",
+      "Description": "大ジャンプ上昇ブースト時の最高加速度"
+    },
+    {
+      "Field": "upperBoostBeginAccelTimeSec",
+      "Name": "【垂直上昇B】開始加速度継続時間[s]",
+      "Description": "大ジャンプ上昇ブースト開始加速度の継続時間"
+    },
+    {
+      "Field": "upperBoostBeginToMaxAccelTimeSec",
+      "Name": "【垂直上昇B】開始→最高加速度時間[s]",
+      "Description": "大ジャンプ上昇ブースト開始時加速度から最高加速度になるまでの時間"
+    },
+    {
+      "Field": "upperBoostHorizontalMaxSpeedKMPH",
+      "Name": "【垂直上昇B】水平移動最高速度[km/h]",
+      "Description": "大ジャンプ上昇ブースト水平最高速度[km/h]"
+    },
+    {
+      "Field": "upperBoostHorizontalAccelMPSS",
+      "Name": "【垂直上昇B】水平移動加速度[m/s^2]",
+      "Description": "大ジャンプ上昇ブースト水平加速度[m/s^2]"
+    },
+    {
+      "Field": "upperBoostDownMaxSpeedKMPH",
+      "Name": "【垂直上昇B】下降最高速度[km/h]  ",
+      "Description": "大ジャンプ上昇ブースト下降最高速度[km/h]"
+    },
+    {
+      "Field": "assaultBoost_InitSpeedKMH",
+      "Name": "AB初速[km/h]",
+      "Description": "アサルトブーストの初速"
+    },
+    {
+      "Field": "assaultBoost_EndSpeedKMH",
+      "Name": "AB終端速度[km/h]",
+      "Description": "アサルトブーストの終端速度"
+    },
+    {
+      "Field": "assaultBoost_MinAccelTimeF30",
+      "Name": "AB最低噴射時間[1/30 s]",
+      "Description": "アサルトブーストの最低噴射時間"
+    },
+    {
+      "Field": "assaultBoost_DrainEnStartTimeF32",
+      "Name": "AB継続EN消費開始時間[1/30 s]",
+      "Description": "アサルトブーストのEN消費開始時間"
+    },
+    {
+      "Field": "assaultBoost_ReloadTimeSec",
+      "Name": "AB再使用時間[s]",
+      "Description": "アサルトブーストを使ってから次に使えるようになるまでの時間"
+    },
+    {
+      "Field": "assaultBoost_OneShotDrainEnPoint",
+      "Name": "【AB】瞬間消費EN[point]",
+      "Description": "アサルトブーストの瞬間消費EN"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_DrainEnPointPerSec",
+      "Name": "【AB】消費EN[point/s]",
+      "Description": "アサルトブーストの消費EN"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Maker",
+      "Name": "企業",
+      "Description": "製造元"
+    },
+    {
+      "Field": "bladeHoming_InitSpeedKMH",
+      "Name": "ブレホ初速[km/h]",
+      "Description": "ブレホの初速"
+    },
+    {
+      "Field": "bladeHoming_EndSpeedKMH",
+      "Name": "ブレホ終端速度[km/h]",
+      "Description": "ブレホの終端速度"
+    },
+    {
+      "Field": "bladeHoming_MinAccelTimeF30",
+      "Name": "ブレホ最大噴射時間[1/30 s]",
+      "Description": "ブレホの最大噴射時間"
+    },
+    {
+      "Field": "bladeHoming_DrainEnStartTimeF32",
+      "Name": "ブレホ継続EN消費開始時間[1/30 s]",
+      "Description": "ブレホのEN消費開始時間"
+    },
+    {
+      "Field": "bladeHoming_OneShotDrainEnPoint",
+      "Name": "【ブレホ】瞬間消費EN[point]",
+      "Description": "ブレホの瞬間消費EN"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHoming_DrainEnPointPerSec",
+      "Name": "【ブレホ】消費EN[point/s]",
+      "Description": "ブレホの消費EN"
+    },
+    {
+      "Field": "flyBoostUpperJumpMaxAccelMPSS",
+      "Name": "【空中B】ジャンプ入力時最高加速度[m/s^2]",
+      "Description": "飛行ブーストジャンプ入力時上昇加速度"
+    },
+    {
+      "Field": "flyBoostUpperJumpBeginAccelTimeSec",
+      "Name": "【空中B】ジャンプ入力時開始加速度継続時間[s]",
+      "Description": "大ジャンプ上昇ブースト開始加速度の継続時間"
+    },
+    {
+      "Field": "flyBoostUpperJumpBeginToMaxAccelTimeSec",
+      "Name": "【空中B】ジャンプ入力時開始→最高加速度時間[s]",
+      "Description": "大ジャンプ上昇ブースト開始時加速度から最高加速度になるまでの時間"
+    },
+    {
+      "Field": "QB_RegWeight",
+      "Name": "QB耐重量性能",
+      "Description": "QBの重量に対する耐性"
+    },
+    {
+      "Field": "refId",
+      "Name": "別ブースターパラ参照ID",
+      "Description": "設定されていると別ブースターパラを参照します"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_InitSpeedKMH",
+      "Name": "AB横回避初速[km/h]",
+      "Description": "アサルトブースト横回避の初速"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_EndSpeedKMH",
+      "Name": "AB横回避終端速度[km/h]",
+      "Description": "アサルトブースト横回避の終端速度"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_MinAccelTimeF30",
+      "Name": "AB横回避最低噴射時間[1/30 s]",
+      "Description": "アサルトブースト横回避の最低噴射時間"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_DrainEnStartTimeF32",
+      "Name": "AB横回避継続EN消費開始時間[1/30 s]",
+      "Description": "アサルトブースト横回避のEN消費開始時間"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_OneShotDrainEnPoint",
+      "Name": "【AB横回避】瞬間消費EN[point]",
+      "Description": "アサルトブースト横回避の瞬間消費EN"
+    },
+    {
+      "Field": "pad_4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostSideAvoid_DrainEnPointPerSec",
+      "Name": "【AB横回避】消費EN[point/s]",
+      "Description": "アサルトブースト横回避の消費EN"
+    },
+    {
+      "Field": "pad_end2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

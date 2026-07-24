@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <item01 Refs="ItemParam" />
+        <item02 Refs="ItemParam" />
+        <item03 Refs="ItemParam" />
+        <item04 Refs="ItemParam" />
+        <item05 Refs="ItemParam" />
+        <item06 Refs="ItemParam" />
+        <item07 Refs="ItemParam" />
+        <item08 Refs="ItemParam" />
+        <item09 Refs="ItemParam" />
+        <item10 Refs="ItemParam" />
+        <item11 Refs="ItemParam" />
+        <item12 Refs="ItemParam" />
+        <item13 Refs="ItemParam" />
+        <item14 Refs="ItemParam" />
+        <item15 Refs="ItemParam" />
+        <item16 Refs="ItemParam" />
+        <item17 Refs="ItemParam" />
+        <item18 Refs="ItemParam" />
+        <item19 Refs="ItemParam" />
+        <item20 Refs="ItemParam" />
+        <item01Num />
+        <item02Num />
+        <item03Num />
+        <item04Num />
+        <item05Num />
+        <item06Num />
+        <item07Num />
+        <item08Num />
+        <item09Num />
+        <item10Num />
+        <item11Num />
+        <item12Num />
+        <item13Num />
+        <item14Num />
+        <item15Num />
+        <item16Num />
+        <item17Num />
+        <item18Num />
+        <item19Num />
+        <item20Num />
+    </Field>
+</PARAMMETA>

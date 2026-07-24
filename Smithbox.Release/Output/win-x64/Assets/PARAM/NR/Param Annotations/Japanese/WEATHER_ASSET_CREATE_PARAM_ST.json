@@ -1,0 +1,128 @@
+{
+  "Param": "WEATHER_ASSET_CREATE_PARAM_ST",
+  "Type": "WEATHER_ASSET_CREATE_PARAM_ST",
+  "Name": "WEATHER_ASSET_CREATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AssetId",
+      "Name": "アセットId",
+      "Description": "生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "SlotNo",
+      "Name": "スロット番号",
+      "Description": "生成制御用の番号です。同一スロットには１個のアセットのみ生成が可能です。重複して生成させたい、させたくない制御ができます。"
+    },
+    {
+      "Field": "CreateConditionType",
+      "Name": "発生条件",
+      "Description": "発生の条件のタイプです"
+    },
+    {
+      "Field": "padding0",
+      "Name": "padding0",
+      "Description": ""
+    },
+    {
+      "Field": "TransitionSrcWeather",
+      "Name": "遷移元天候",
+      "Description": "遷移元の天候を指定します。発生条件が「遷移」のときだけ参照されます"
+    },
+    {
+      "Field": "TransitionDstWeather",
+      "Name": "遷移先天候",
+      "Description": "遷移先の天候を指定します。発生条件が「遷移」のときだけ参照されます"
+    },
+    {
+      "Field": "ElapsedTimeCheckweather",
+      "Name": "経過時間チェック天候",
+      "Description": "経過時間をチェックする天候を指定します。"
+    },
+    {
+      "Field": "padding1",
+      "Name": "padding1",
+      "Description": ""
+    },
+    {
+      "Field": "ElapsedTime",
+      "Name": "経過時間[Second]",
+      "Description": "経過時間を指定します。発生条件が「時間経過」のときだけ参照されます。現実時間[秒]単位で指定します。"
+    },
+    {
+      "Field": "CreateDelayTime",
+      "Name": "生成遅延時間[Second]",
+      "Description": "生成が決定してから遅延する時間を指定します。遅延している間は作成したスロットは使用中になります。0以下で即時作成。"
+    },
+    {
+      "Field": "CreateProbability",
+      "Name": "発生確率[％]",
+      "Description": "天候遷移、または経過時間の条件を満たした際に発生する確率を指定します"
+    },
+    {
+      "Field": "LifeTime",
+      "Name": "寿命[Second]",
+      "Description": "生成したアセットの寿命を指定します。現実時間[秒]単位で指定します。"
+    },
+    {
+      "Field": "FadeTime",
+      "Name": "フェード時間[Second]",
+      "Description": "フェードイン、フェードアウトに使用される時間[秒]。0以下でフェードなし。"
+    },
+    {
+      "Field": "EnableCreateTimeMin",
+      "Name": "生成可能開始時刻[Hour]",
+      "Description": "生成可能な開始時刻を指定します[0.0 - 24.0]。開始、終了どちらかに-1を入れると無制限(全時間で生成可能)の扱いになります。"
+    },
+    {
+      "Field": "EnableCreateTimeMax",
+      "Name": "生成可能終了時刻[Hour]",
+      "Description": "生成可能な終了時刻を指定します[0.0 - 24.0]。開始、終了どちらかに-1を入れると無制限(全時間で生成可能)の扱いになります。"
+    },
+    {
+      "Field": "CreatePoint0",
+      "Name": "生成ポイント0",
+      "Description": "生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります"
+    },
+    {
+      "Field": "CreatePoint1",
+      "Name": "生成ポイント1",
+      "Description": "生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります"
+    },
+    {
+      "Field": "CreatePoint2",
+      "Name": "生成ポイント2",
+      "Description": "生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります"
+    },
+    {
+      "Field": "CreatePoint3",
+      "Name": "生成ポイント3",
+      "Description": "生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります"
+    },
+    {
+      "Field": "CreateAssetLimitId0",
+      "Name": "生成制限ID0",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId1",
+      "Name": "生成制限ID1",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId2",
+      "Name": "生成制限ID2",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId3",
+      "Name": "生成制限ID3",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "Reserved2",
+      "Name": "Reserved2",
+      "Description": ""
+    }
+  ]
+}

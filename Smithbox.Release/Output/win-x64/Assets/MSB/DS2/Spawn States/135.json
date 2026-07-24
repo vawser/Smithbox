@@ -1,0 +1,18 @@
+{
+  "id": "135",
+  "name": "Gyrm (Axe/Greathammer/Crossbow)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Drinking Ale"
+    }
+  ]
+}

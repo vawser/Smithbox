@@ -1,0 +1,215 @@
+{
+  "Name": "JumpSpecifyAltParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Test (can be deleted) -- テスト（削除可）"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Open pit mining_00_400 -- 露天採掘_00_400"
+      ]
+    },
+    {
+      "ID": 3200011,
+      "Entries": [
+        "Open pit mining_01_400 -- 露天採掘_01_400"
+      ]
+    },
+    {
+      "ID": 3200012,
+      "Entries": [
+        "Open pit mining_02_400 -- 露天採掘_02_400"
+      ]
+    },
+    {
+      "ID": 3300010,
+      "Entries": [
+        "Fuel base_00_400 -- 燃料基地_00_400"
+      ]
+    },
+    {
+      "ID": 3300011,
+      "Entries": [
+        "Fuel base_01_400 -- 燃料基地_01_400"
+      ]
+    },
+    {
+      "ID": 3300012,
+      "Entries": [
+        "Fuel base_02_400 -- 燃料基地_02_400"
+      ]
+    },
+    {
+      "ID": 3300013,
+      "Entries": [
+        "Fuel base_03_400 -- 燃料基地_03_400"
+      ]
+    },
+    {
+      "ID": 3300014,
+      "Entries": [
+        "Fuel base_04_400 -- 燃料基地_04_400"
+      ]
+    },
+    {
+      "ID": 3300015,
+      "Entries": [
+        "Fuel base_05_400 -- 燃料基地_05_400"
+      ]
+    },
+    {
+      "ID": 3300016,
+      "Entries": [
+        "Fuel base_06_400 -- 燃料基地_06_400"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "Imperial base_00_400 -- 帝国基地_00_400"
+      ]
+    },
+    {
+      "ID": 3400011,
+      "Entries": [
+        "Imperial base_01_400 -- 帝国基地_01_400"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "Mine shaft_00_400 -- 坑道_00_400"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "big_00_400 -- ビッグ_00_400"
+      ]
+    },
+    {
+      "ID": 10100011,
+      "Entries": [
+        "Big_01_400 -- ビッグ_01_400"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "Rail_00_400 -- レイル_00_400"
+      ]
+    },
+    {
+      "ID": 41000011,
+      "Entries": [
+        "Rail_01_400 -- レイル_01_400"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "Geofront_00_Jailbreak_400 -- ジオフロント_00_脱獄時_400"
+      ]
+    },
+    {
+      "ID": 41100011,
+      "Entries": [
+        "Geofront_01_Jailbreak_400 -- ジオフロント_01_脱獄時_400"
+      ]
+    },
+    {
+      "ID": 41100012,
+      "Entries": [
+        "Geofront_02_Jailbreak_400 -- ジオフロント_02_脱獄時_400"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Mountain town_00_400 -- 山岳の街_00_400"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "Multiple dam_00_400 -- 多重ダム_00_400"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "In front of the wall_00_400 -- 壁前_00_400"
+      ]
+    },
+    {
+      "ID": 50300011,
+      "Entries": [
+        "In front of the wall_01_400 -- 壁前_01_400"
+      ]
+    },
+    {
+      "ID": 50300012,
+      "Entries": [
+        "In front of the wall_02_400 -- 壁前_02_400"
+      ]
+    },
+    {
+      "ID": 50300013,
+      "Entries": [
+        "In front of the wall_03_400 -- 壁前_03_400"
+      ]
+    },
+    {
+      "ID": 50300014,
+      "Entries": [
+        "In front of the wall_04_400 -- 壁前_04_400"
+      ]
+    },
+    {
+      "ID": 50300015,
+      "Entries": [
+        "In front of the wall_05_400 -- 壁前_05_400"
+      ]
+    },
+    {
+      "ID": 50500010,
+      "Entries": [
+        "VOB_00_400"
+      ]
+    },
+    {
+      "ID": 50500011,
+      "Entries": [
+        "VOB_01_400"
+      ]
+    },
+    {
+      "ID": 99991001,
+      "Entries": [
+        "Behavior test_altitude 400 -- 挙動テスト_高度400"
+      ]
+    },
+    {
+      "ID": 99991002,
+      "Entries": [
+        "Behavior test_altitude 300 -- 挙動テスト_高度300"
+      ]
+    },
+    {
+      "ID": 99991003,
+      "Entries": [
+        "Behavior test_altitude 200 -- 挙動テスト_高度200"
+      ]
+    }
+  ]
+}

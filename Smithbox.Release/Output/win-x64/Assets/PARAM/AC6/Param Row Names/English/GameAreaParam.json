@@ -1,0 +1,414 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Stone Pillar_Unlikely"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Ojo 1_phalanx (main body)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Royal Castle 2_King's Shield"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Royal Castle 3_King's Sword"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Royal Castle 4_King Rendl"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Old Fort 1_Judge"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Old Fortress 2_Storm Warrior"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Old Fort 3_Storm Beast"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Prison 1_ Kamisama"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Prison 2_Chimera"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Prison 3_Summon NPC"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Unholy 1_Leech Demon"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Unholy 2_Flies"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Impure 3_Saint Libra"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Mine shaft 1_ large spider"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Mine shaft 2_flame monster"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Mine shaft 3_Dragon Demon (mine shaft)"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Tutorial_Fat Demon"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Castle area 2_devouring dragon"
+      ]
+    },
+    {
+      "ID": 1010700,
+      "Entries": [
+        "Castle area 1_Hammer Demon"
+      ]
+    },
+    {
+      "ID": 1010750,
+      "Entries": [
+        "Castle area 1_Natademon"
+      ]
+    },
+    {
+      "ID": 1010800,
+      "Entries": [
+        "Castle area 1_gargoyle"
+      ]
+    },
+    {
+      "ID": 1100160,
+      "Entries": [
+        "Painting world_half dragon Priscilla"
+      ]
+    },
+    {
+      "ID": 1200800,
+      "Entries": [
+        "Moriba_Holy Sword Wolf"
+      ]
+    },
+    {
+      "ID": 1200801,
+      "Entries": [
+        "Moriwa_Kagerou Dragon"
+      ]
+    },
+    {
+      "ID": 1210401,
+      "Entries": [
+        "Past Forest_Black Dragon"
+      ]
+    },
+    {
+      "ID": 1210800,
+      "Entries": [
+        "Past Forest_Gold Chimera"
+      ]
+    },
+    {
+      "ID": 1210820,
+      "Entries": [
+        "Past Forest_Artorius"
+      ]
+    },
+    {
+      "ID": 1210840,
+      "Entries": [
+        "Past Forest_Lord of the Abyss"
+      ]
+    },
+    {
+      "ID": 1300800,
+      "Entries": [
+        "Cemetery 1_Three people's haori"
+      ]
+    },
+    {
+      "ID": 1310800,
+      "Entries": [
+        "Cemetery 2_Grave King Nito"
+      ]
+    },
+    {
+      "ID": 1400800,
+      "Entries": [
+        "Kagemachi_Flame Witch Crag Spider"
+      ]
+    },
+    {
+      "ID": 1410400,
+      "Entries": [
+        "Abandoned capital_fat demon"
+      ]
+    },
+    {
+      "ID": 1410600,
+      "Entries": [
+        "Abandoned capital_things that continue to decay"
+      ]
+    },
+    {
+      "ID": 1410700,
+      "Entries": [
+        "Abandoned city_centipemon"
+      ]
+    },
+    {
+      "ID": 1410800,
+      "Entries": [
+        "Abandoned City_King Izalith"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Ojo 1_Iron Golem"
+      ]
+    },
+    {
+      "ID": 1510650,
+      "Entries": [
+        "Ojo 2_King mother younger brother"
+      ]
+    },
+    {
+      "ID": 1510801,
+      "Entries": [
+        "Ojo 2_ Huge Griffith"
+      ]
+    },
+    {
+      "ID": 1510811,
+      "Entries": [
+        "Ojo 2_Lightning Sumo"
+      ]
+    },
+    {
+      "ID": 1600800,
+      "Entries": [
+        "Abyss_Jair Demon"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Crystal Tower_Sheath"
+      ]
+    },
+    {
+      "ID": 1800800,
+      "Entries": [
+        "Great Tomb_King of Firewood"
+      ]
+    },
+    {
+      "ID": 1810800,
+      "Entries": [
+        "Tutorial_Mini fat demon"
+      ]
+    },
+    {
+      "ID": 1810810,
+      "Entries": [
+        "Tutorial_Fat Demon"
+      ]
+    },
+    {
+      "ID": 2010800,
+      "Entries": [
+        "Religious town_parish chief"
+      ]
+    },
+    {
+      "ID": 2910400,
+      "Entries": [
+        "Dungeon A_Flame Beast"
+      ]
+    },
+    {
+      "ID": 2920800,
+      "Entries": [
+        "Dungeon B_Flame Beast"
+      ]
+    },
+    {
+      "ID": 3000800,
+      "Entries": [
+        "Ojo 1_Demon"
+      ]
+    },
+    {
+      "ID": 3000810,
+      "Entries": [
+        "Ojo 1_Tracker"
+      ]
+    },
+    {
+      "ID": 3010800,
+      "Entries": [
+        "Royal Castle 2_Lone King"
+      ]
+    },
+    {
+      "ID": 3010801,
+      "Entries": [
+        "Royal Castle 2_Twin Princes of Darkness"
+      ]
+    },
+    {
+      "ID": 3100800,
+      "Entries": [
+        "City_Colossus"
+      ]
+    },
+    {
+      "ID": 3200800,
+      "Entries": [
+        "Bridge_Mother Dragon"
+      ]
+    },
+    {
+      "ID": 3200850,
+      "Entries": [
+        "Bridge_Storm King"
+      ]
+    },
+    {
+      "ID": 3300800,
+      "Entries": [
+        "forest_wolf"
+      ]
+    },
+    {
+      "ID": 3500800,
+      "Entries": [
+        "Cathedral_College of Cardinals"
+      ]
+    },
+    {
+      "ID": 3600800,
+      "Entries": [
+        "Divine Tomb_Dragon's Angel",
+        "Divine Tomb_Crimson Bat"
+      ]
+    },
+    {
+      "ID": 3700800,
+      "Entries": [
+        "Anole Sullivan"
+      ]
+    },
+    {
+      "ID": 3700850,
+      "Entries": [
+        "Anole_Moonlight Witch"
+      ]
+    },
+    {
+      "ID": 3800700,
+      "Entries": [
+        "Abandoned City_Sandworm"
+      ]
+    },
+    {
+      "ID": 3800800,
+      "Entries": [
+        "Abandoned City_King of Dead Spirits"
+      ]
+    },
+    {
+      "ID": 3900800,
+      "Entries": [
+        "Prison_Haleck"
+      ]
+    },
+    {
+      "ID": 4000800,
+      "Entries": [
+        "Base_Gunda"
+      ]
+    },
+    {
+      "ID": 4000801,
+      "Entries": [
+        "Base_evil spirit"
+      ]
+    },
+    {
+      "ID": 4000810,
+      "Entries": [
+        "Base_Old King"
+      ]
+    }
+  ]
+}

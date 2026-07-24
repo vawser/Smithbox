@@ -1,0 +1,8 @@
+"LotItemCategory"
+"s32"
+"None","0"
+"Good","1"
+"Weapon","2"
+"Protector","3"
+"Accessory","4"
+"Gem","5"

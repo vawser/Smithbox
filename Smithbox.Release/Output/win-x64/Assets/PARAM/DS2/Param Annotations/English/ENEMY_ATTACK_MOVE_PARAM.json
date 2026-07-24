@@ -1,0 +1,93 @@
+{
+  "Param": "ENEMY_ATTACK_MOVE_PARAM",
+  "Type": "ENEMY_ATTACK_MOVE_PARAM",
+  "Name": "ENEMY_ATTACK_MOVE_PARAM",
+  "Description": "Defines movement, rotation, timing, and behavior modifiers used by enemy attacks, including melee dash behavior, ranged movement penalties, and attack tracking adjustments.",
+  "Fields": [
+    {
+      "Field": "fAttackDashAcceleration",
+      "Name": "Melee Attack: Movement Acceleration",
+      "Description": "Acceleration (m/s²) applied when an enemy moves forward during a melee attack."
+    },
+    {
+      "Field": "fAttackDashSpeed",
+      "Name": "Melee Attack: Movement Speed",
+      "Description": "Movement speed (m/s) used during melee attack dash behavior."
+    },
+    {
+      "Field": "fAttackDashRotationLowSpeed",
+      "Name": "Attack Rotation Speed (Low Speed)",
+      "Description": "Turning speed (deg/s) when the enemy is moving slowly during an attack."
+    },
+    {
+      "Field": "fAttackDashRotationHighSpeed",
+      "Name": "Attack Rotation Speed (High Speed)",
+      "Description": "Turning speed (deg/s) when the enemy is moving quickly during an attack."
+    },
+    {
+      "Field": "fAttackDashRotSpeedMinBorder",
+      "Name": "Low-Speed Rotation Threshold",
+      "Description": "Movement speed threshold (m/s) below which low-speed rotation rules are applied."
+    },
+    {
+      "Field": "fAttackDashRotSpeedMaxBorder",
+      "Name": "High-Speed Rotation Threshold",
+      "Description": "Movement speed threshold (m/s) above which high-speed rotation rules are applied."
+    },
+    {
+      "Field": "fAttackDashRange",
+      "Name": "Melee Attack Range",
+      "Description": "Effective attack range (m) used during melee dash attacks."
+    },
+    {
+      "Field": "fAttackBackSwingSpeed",
+      "Name": "Attack Start Speed %",
+      "Description": "Speed multiplier applied during the initial wind-up phase of an attack."
+    },
+    {
+      "Field": "fAttackFollowSwingSpeed",
+      "Name": "Attack End Speed %",
+      "Description": "Speed multiplier applied during the follow-through phase of an attack."
+    },
+    {
+      "Field": "fAttackSecondRotationRate",
+      "Name": "Secondary Rotation %",
+      "Description": "Multiplier applied to secondary turning adjustments during attack tracking."
+    },
+    {
+      "Field": "fAttackTimeOut",
+      "Name": "Attack Timeout Duration",
+      "Description": "Maximum duration (sec) allowed for attack movement before timing out."
+    },
+    {
+      "Field": "fAttackEstimateFutureTime",
+      "Name": "Target Prediction Time",
+      "Description": "Time (sec) used to predict target future position for attack tracking."
+    },
+    {
+      "Field": "fShotMoveSpeedRate",
+      "Name": "Ranged Movement Slowdown %",
+      "Description": "Movement speed multiplier applied while performing ranged attacks."
+    },
+    {
+      "Field": "rotationOffsetDummyPoly",
+      "Name": "Rotation Pivot Dummy Polygon ID",
+      "Description": "Identifier for the dummy polygon used as the rotation pivot axis."
+    },
+    {
+      "Field": "attackDashFailedCancel",
+      "Name": "Cancel on Failed Attack Dash",
+      "Description": "Flag that cancels attack behavior if a dash attempt fails."
+    },
+    {
+      "Field": "disableCollisionCheck",
+      "Name": "Disable Obstacle Collision Check",
+      "Description": "If enabled, ignores obstacle collision detection during attack movement."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

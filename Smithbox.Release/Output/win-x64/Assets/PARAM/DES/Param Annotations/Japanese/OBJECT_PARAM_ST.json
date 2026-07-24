@@ -1,0 +1,58 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "破壊までの耐久力(-1:破壊不可)"
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": "この値以下の攻撃力はダメージなし"
+    },
+    {
+      "Field": "isCamHit",
+      "Name": "カメラが当たるか",
+      "Description": "カメラが当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "プレイヤ衝突で壊れるか",
+      "Description": "プレイヤが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "外部参照テクスチャID",
+      "Description": "mAA/mAA_????.tpf(-1:なし)(AA:エリア番号)"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "アニメ破壊か",
+      "Description": "アニメ破壊か(0:物理破壊, 1:アニメ破壊)"
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "アニメ破壊ID最大値",
+      "Description": "アニメ破壊IDが0番から何番までか"
+    },
+    {
+      "Field": "materialId",
+      "Name": "材質ID",
+      "Description": "マテリアルID。床材質と同じ扱い。-1のときは今までと同じ挙動"
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "貫通弾丸が当たるか",
+      "Description": "貫通弾丸が当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": "pad"
+    }
+  ]
+}

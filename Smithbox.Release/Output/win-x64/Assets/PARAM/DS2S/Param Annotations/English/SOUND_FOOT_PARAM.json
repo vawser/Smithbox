@@ -1,0 +1,23 @@
+{
+  "Param": "SOUND_FOOT_PARAM",
+  "Type": "SOUND_FOOT_PARAM",
+  "Name": "SOUND_FOOT_PARAM",
+  "Description": "Defines footstep sound mapping data based on character model and material type.",
+  "Fields": [
+    {
+      "Field": "modelId",
+      "Name": "Model ID",
+      "Description": "ID of the character or model used to determine footstep sound behavior."
+    },
+    {
+      "Field": "type",
+      "Name": "Type",
+      "Description": "Footstep sound type category, used to select appropriate audio effects (e.g., surface or material type)."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

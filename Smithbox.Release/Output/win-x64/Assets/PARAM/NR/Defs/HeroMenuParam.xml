@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>HERO_MENU_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s32 charaInitParamId"/>
+    <Field Def="s32 characterSelectPoseAnim"/>
+    <Field Def="s32 characterSelectCameraId"/>
+    <Field Def="s32 changeGarbCameraId"/>
+    <Field Def="s32 changeGarbPoseAnim"/>
+    <Field Def="s8 hpGrade"/>
+    <Field Def="s8 fpGrade"/>
+    <Field Def="s8 staminaGrade"/>
+    <Field Def="s8 strengthGrade"/>
+    <Field Def="s8 dexterityGrade"/>
+    <Field Def="s8 intelligenceGrade"/>
+    <Field Def="s8 faithGrade"/>
+    <Field Def="s8 arcaneGrade"/>
+  </Fields>
+</PARAMDEF>

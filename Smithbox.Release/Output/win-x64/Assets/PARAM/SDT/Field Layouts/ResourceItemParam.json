@@ -1,0 +1,37 @@
+{
+  "Name": "ResourceItemParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "ItemID",
+        "ActionUnlockType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "SfxIdOnMap",
+        "SfxIdFlying",
+        "SfxIdOnHit"
+      ]
+    }
+  ]
+}

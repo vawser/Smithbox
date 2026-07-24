@@ -1,0 +1,47 @@
+{
+  "Key": "EVENT_OWNER_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_OWNER_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "O.B.J."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character (no sync)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Points (no sync)"
+        }
+      ]
+    }
+  ]
+}

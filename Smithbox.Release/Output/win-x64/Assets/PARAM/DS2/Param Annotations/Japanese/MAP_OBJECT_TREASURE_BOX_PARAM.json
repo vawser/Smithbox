@@ -1,0 +1,43 @@
+{
+  "Param": "MAP_OBJECT_TREASURE_BOX_PARAM",
+  "Type": "MAP_OBJECT_TREASURE_BOX_PARAM",
+  "Name": "MAP_OBJECT_TREASURE_BOX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "forceTrapEnable",
+      "Name": "《トラップ強制発動》",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "trapGasDamageId",
+      "Name": "《トラップ ガス：ダメージ》",
+      "Description": ""
+    },
+    {
+      "Field": "trapHealDamageId",
+      "Name": "《トラップ ガス：回復》",
+      "Description": ""
+    },
+    {
+      "Field": "trapBurstDamageId",
+      "Name": "《トラップ 爆発》",
+      "Description": ""
+    },
+    {
+      "Field": "trapArrowDamageId",
+      "Name": "《トラップ 連続矢》",
+      "Description": ""
+    },
+    {
+      "Field": "trapEnemy",
+      "Name": "《トラップ ジェネレート：エネミー》",
+      "Description": ""
+    }
+  ]
+}

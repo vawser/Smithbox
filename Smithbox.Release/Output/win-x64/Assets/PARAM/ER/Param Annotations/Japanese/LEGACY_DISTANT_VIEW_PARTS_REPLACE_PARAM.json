@@ -1,0 +1,103 @@
+{
+  "Param": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
+  "Type": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
+  "Name": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "TargetMapId",
+      "Name": "マップID",
+      "Description": "対象のマップIDを指定します。レガシーのみ。(m12_34_56_78→12345678) 。当初レガシーのみでしたがオープンの天球マップも対応しました"
+    },
+    {
+      "Field": "TargetEventId",
+      "Name": "天変地異イベントID",
+      "Description": "「300、310、311、312」の中から、対象天変地異イベントIDを入力した場合は【天変地異差し替えデータ】となります。0or空白の場合は【地方IDの切り替えデータ】となります(SEQ16039)"
+    },
+    {
+      "Field": "SrcAssetId",
+      "Name": "差し替え元アセットID",
+      "Description": "差し替え元AssetId：AEG123_456_9999→123456"
+    },
+    {
+      "Field": "SrcAssetPartsNo",
+      "Name": "差し替え元アセットパーツID",
+      "Description": "差し替え元PartsNo：AEG123_456_9999→9999"
+    },
+    {
+      "Field": "DstAssetId",
+      "Name": "差し替え先アセットID",
+      "Description": "差し替え先AssetId：AEG123_456_9999→123456"
+    },
+    {
+      "Field": "DstAssetPartsNo",
+      "Name": "差し替え先アセットパーツID",
+      "Description": "差し替え先PartsNo：AEG123_456_9999→9999"
+    },
+    {
+      "Field": "SrcAssetIdRangeMin",
+      "Name": "差し替え元アセットID範囲指定Min",
+      "Description": "差し替え元アセットID範囲指定Min"
+    },
+    {
+      "Field": "SrcAssetIdRangeMax",
+      "Name": "差し替え元アセットID範囲指定Max",
+      "Description": "差し替え元アセットID範囲指定Max"
+    },
+    {
+      "Field": "DstAssetIdRangeMin",
+      "Name": "差し替え先アセットID範囲指定Min",
+      "Description": "差し替え先アセットID範囲指定Min"
+    },
+    {
+      "Field": "DstAssetIdRangeMax",
+      "Name": "差し替え先アセットID範囲指定Max",
+      "Description": "差し替え先アセットID範囲指定Max"
+    },
+    {
+      "Field": "LimitedMapRegionId0",
+      "Name": "地方ID制限0",
+      "Description": "MapGD地方IDの制限0：「天変地異イベントID」が0の時だけ有効。設定したMapGD地方IDでのみパーツが有効になります(SEQ16039)"
+    },
+    {
+      "Field": "LimitedMapRegionId1",
+      "Name": "地方ID制限1",
+      "Description": "MapGD地方IDの制限1：「天変地異イベントID」が0の時だけ有効。設定したMapGD地方IDでのみパーツが有効になります(SEQ16039)"
+    },
+    {
+      "Field": "LimitedMapRegionId2",
+      "Name": "地方ID制限2",
+      "Description": "MapGD地方IDの制限2：「天変地異イベントID」が0の時だけ有効。設定したMapGD地方IDでのみパーツが有効になります(SEQ16039)"
+    },
+    {
+      "Field": "LimitedMapRegionId3",
+      "Name": "地方ID制限3",
+      "Description": "MapGD地方IDの制限3：「天変地異イベントID」が0の時だけ有効。設定したMapGD地方IDでのみパーツが有効になります(SEQ16039)"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "LimitedMapRegionAssetId",
+      "Name": "地方制限アセットID",
+      "Description": "MapGD地方IDで有効なアセット指定：AssetId：AEG123_456_9999→123456"
+    },
+    {
+      "Field": "LimitedMapRegioAssetPartsNo",
+      "Name": "地方制限アセットパーツID",
+      "Description": "MapGD地方IDで有効なアセット指定：PartsNo：AEG123_456_9999→9999"
+    },
+    {
+      "Field": "LimitedMapRegioAssetIdRangeMin",
+      "Name": "地方制限アセットID範囲指定Min",
+      "Description": "MapGD地方IDで有効なアセット指定：アセットID範囲指定Min"
+    },
+    {
+      "Field": "LimitedMapRegioAssetIdRangeMax",
+      "Name": "地方制限アセットID範囲指定Max",
+      "Description": "MapGD地方IDで有効なアセット指定：アセットID範囲指定Max"
+    }
+  ]
+}

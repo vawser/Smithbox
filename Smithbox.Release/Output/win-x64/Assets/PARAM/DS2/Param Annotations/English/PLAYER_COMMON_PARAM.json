@@ -1,0 +1,563 @@
+{
+  "Param": "PLAYER_COMMON_PARAM",
+  "Type": "PLAYER_COMMON_PARAM",
+  "Name": "PLAYER_COMMON_PARAM",
+  "Description": "Defines core player movement, combat input timing, stamina/motion behavior, and various gameplay tuning values affecting player controls and interactions.",
+  "Fields": [
+    {
+      "Field": "parallelWalkMaxInput",
+      "Name": "Parallel Movement Input Sensitivity Max [%]",
+      "Description": "Maximum input sensitivity threshold for parallel (strafe) movement."
+    },
+    {
+      "Field": "parallelWalkKeepInputTime",
+      "Name": "Parallel Movement Input Hold Time [sec]",
+      "Description": "Time window required to trigger parallel movement behavior."
+    },
+    {
+      "Field": "dodgeInputTime",
+      "Name": "Dodge Input Window [sec]",
+      "Description": "Time window in which dodge input is recognized."
+    },
+    {
+      "Field": "keepDashFinishStateTime",
+      "Name": "Dash Duration [sec]",
+      "Description": "Duration the player remains in dash finish state."
+    },
+    {
+      "Field": "dashIntervalTime",
+      "Name": "Dash Cooldown Interval [sec]",
+      "Description": "Minimum time between consecutive dash actions."
+    },
+    {
+      "Field": "keepDashEndMoveMaxInput",
+      "Name": "Post-Dash Movement Input Sensitivity Max [%]",
+      "Description": "Maximum input sensitivity allowed after dash ends."
+    },
+    {
+      "Field": "keepDashEndMoveStateTime",
+      "Name": "Post-Dash Movement Duration [sec]",
+      "Description": "Time window for movement control after dash ends."
+    },
+    {
+      "Field": "jumpTriggerMinSpeed",
+      "Name": "Minimum Jump Speed [m/s]",
+      "Description": "Minimum movement speed required to trigger a jump."
+    },
+    {
+      "Field": "standJumpTriggerMaxSpeed",
+      "Name": "Maximum Standing Jump Speed [m/s]",
+      "Description": "Maximum speed at which a standing jump can be triggered."
+    },
+    {
+      "Field": "turnTriggerMinAngleIdleAndWalk",
+      "Name": "Idle/Walk Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while idle or walking."
+    },
+    {
+      "Field": "turnTriggerMinAngleJog",
+      "Name": "Jog Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while jogging."
+    },
+    {
+      "Field": "turnTriggerMinAngleDash",
+      "Name": "Dash Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while dashing."
+    },
+    {
+      "Field": "turnWalkSpeedPercentage",
+      "Name": "Turn Walk Speed Modifier [%]",
+      "Description": "Speed percentage applied during sharp turns while walking or idle."
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleWalk",
+      "Name": "Post-Attack Walk Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to walking."
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleJog",
+      "Name": "Post-Attack Jog Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to jogging."
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleDash",
+      "Name": "Post-Attack Dash Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to dashing."
+    },
+    {
+      "Field": "atkEndTurnWalkSpeedPercentage",
+      "Name": "Post-Attack Turn Speed Modifier [%]",
+      "Description": "Speed modifier applied during turning after attacking."
+    },
+    {
+      "Field": "ladderGraspAngleMax",
+      "Name": "Ladder Grasp Max Horizontal Angle [deg]",
+      "Description": "Maximum angle at which the player can grab a ladder horizontally."
+    },
+    {
+      "Field": "ladderGraspHeightMax",
+      "Name": "Ladder Grasp Max Vertical Height [m]",
+      "Description": "Maximum vertical distance for initiating a ladder grab."
+    },
+    {
+      "Field": "ladderGraspInputTime",
+      "Name": "Ladder Grasp Input Time [sec]",
+      "Description": "Time required to hold input to initiate ladder grab."
+    },
+    {
+      "Field": "ladderGraspTimeLimit",
+      "Name": "Ladder Grasp Time Limit [sec]",
+      "Description": "Maximum time allowed to complete ladder grab input."
+    },
+    {
+      "Field": "ladderMoveInputTime",
+      "Name": "Ladder Movement Input Time [sec]",
+      "Description": "Input duration required to start moving on a ladder."
+    },
+    {
+      "Field": "ladderFallInputTime",
+      "Name": "Ladder Fall Input Window [sec]",
+      "Description": "Input window for triggering ladder fall action."
+    },
+    {
+      "Field": "nearDeathAnimMaxBlendHpRate",
+      "Name": "Near-Death Animation Max Blend HP [%]",
+      "Description": "HP percentage at which near-death animation blending reaches maximum intensity."
+    },
+    {
+      "Field": "nearDeathAnimMinBlendHpRate",
+      "Name": "Near-Death Animation Min Blend HP [%]",
+      "Description": "HP percentage at which near-death animation blending begins."
+    },
+    {
+      "Field": "precedingCmdKeepTime",
+      "Name": "Input Buffer Time [sec]",
+      "Description": "Duration that input commands are stored for buffered execution."
+    },
+    {
+      "Field": "flickInputKeepTime",
+      "Name": "Flick Input Hold Time [sec]",
+      "Description": "Duration flick inputs remain valid."
+    },
+    {
+      "Field": "flickInputFrame",
+      "Name": "Flick Input Detection Frames",
+      "Description": "Number of frames used to detect flick input."
+    },
+    {
+      "Field": "flickInputPower",
+      "Name": "Flick Input Strength Threshold",
+      "Description": "Minimum input strength required to register a flick."
+    },
+    {
+      "Field": "flickNeutralKeepTime",
+      "Name": "Flick Neutral Time [sec]",
+      "Description": "Time input must remain neutral between flicks."
+    },
+    {
+      "Field": "flickAngleMax",
+      "Name": "Flick Input Max Angle [deg]",
+      "Description": "Maximum angle allowed for flick input detection."
+    },
+    {
+      "Field": "reviveInputTime",
+      "Name": "Revive Confirmation Input Time [sec]",
+      "Description": "Time required to confirm revival input."
+    },
+    {
+      "Field": "twoHandedInputTime",
+      "Name": "Two-Handed Weapon Input Time [sec]",
+      "Description": "Input window required to switch to two-handed mode."
+    },
+    {
+      "Field": "dashAttackTriggerMinSpeed",
+      "Name": "Dash Attack Minimum Speed [m/s]",
+      "Description": "Minimum speed required to trigger a dash attack."
+    },
+    {
+      "Field": "dashAttackMinSpeedAnimScale",
+      "Name": "Dash Attack Min Speed Animation Scale",
+      "Description": "Animation speed multiplier at minimum dash attack speed."
+    },
+    {
+      "Field": "dashAttackMaxSpeedAnimScale",
+      "Name": "Dash Attack Max Speed Animation Scale",
+      "Description": "Animation speed multiplier at maximum dash attack speed."
+    },
+    {
+      "Field": "autoPivotRotateNeutoralTime",
+      "Name": "Auto Pivot Neutral Time",
+      "Description": "Time required in neutral state before auto-rotation triggers."
+    },
+    {
+      "Field": "autoPivotInputTime",
+      "Name": "Auto Pivot Input Time",
+      "Description": "Input duration required to trigger automatic pivot rotation."
+    },
+    {
+      "Field": "dashBlendWeightMax",
+      "Name": "Dash Blend Weight Max",
+      "Description": "Maximum blending weight applied during dash transitions."
+    },
+    {
+      "Field": "dashBlendInSpeed",
+      "Name": "Dash Blend In Speed",
+      "Description": "Speed at which dash blending transitions in."
+    },
+    {
+      "Field": "dashBlendOutSpeed",
+      "Name": "Dash Blend Out Speed",
+      "Description": "Speed at which dash blending transitions out."
+    },
+    {
+      "Field": "dashBlendInWalkSpeed",
+      "Name": "Dash Blend In Walk Speed Threshold [m/s]",
+      "Description": "Movement speed threshold for enabling dash blending during walking."
+    },
+    {
+      "Field": "dashBlendInLockOnWalkSpeed",
+      "Name": "Dash Blend In Lock-On Walk Speed Threshold [m/s]",
+      "Description": "Movement speed threshold for dash blending while locked on."
+    },
+    {
+      "Field": "quickStopSpeed",
+      "Name": "Quick Stop Speed Threshold [m/s]",
+      "Description": "Speed at which quick stopping behavior is triggered."
+    },
+    {
+      "Field": "quickStopDelay",
+      "Name": "Quick Stop Delay [sec]",
+      "Description": "Delay before quick stop is applied."
+    },
+    {
+      "Field": "equipDurabilityRateMin",
+      "Name": "Equipment Durability Loss Rate Min [x]",
+      "Description": "Minimum multiplier for equipment durability loss."
+    },
+    {
+      "Field": "equipDurabilityRateMax",
+      "Name": "Equipment Durability Loss Rate Max [x]",
+      "Description": "Maximum multiplier for equipment durability loss."
+    },
+    {
+      "Field": "torchFireLowSwichHeight",
+      "Name": "Torch Fire Switch Height [m]",
+      "Description": "Height threshold for switching torch ignition animation."
+    },
+    {
+      "Field": "noTargetAttackMaxUpperAngle",
+      "Name": "No-Target Attack Upper Angle Limit",
+      "Description": "Maximum upward angle for attacks without a target."
+    },
+    {
+      "Field": "noTargetAttackMaxLowerAngle",
+      "Name": "No-Target Attack Lower Angle Limit",
+      "Description": "Maximum downward angle for attacks without a target."
+    },
+    {
+      "Field": "torchTimeFirst",
+      "Name": "Torch Initial Time [sec]",
+      "Description": "Initial duration added when torch is first ignited."
+    },
+    {
+      "Field": "torchTimeAddition",
+      "Name": "Torch Additional Time [sec]",
+      "Description": "Additional time added per torch refill or extension."
+    },
+    {
+      "Field": "torchMaxTime",
+      "Name": "Torch Maximum Time [sec]",
+      "Description": "Maximum duration the torch can remain lit."
+    },
+    {
+      "Field": "darkAttackWeaponIntPercent",
+      "Name": "Dark Attack Scaling (Weapon INT %) ",
+      "Description": "Contribution of Intelligence to dark attack power via weapons."
+    },
+    {
+      "Field": "darkAttackWeaponFaithPercent",
+      "Name": "Dark Attack Scaling (Weapon FTH %)",
+      "Description": "Contribution of Faith to dark attack power via weapons."
+    },
+    {
+      "Field": "darkAttackMagicIntPercent",
+      "Name": "Dark Magic Scaling (INT %)",
+      "Description": "Intelligence scaling for dark magic attacks."
+    },
+    {
+      "Field": "darkAttackMagicFaithPercent",
+      "Name": "Dark Magic Scaling (FTH %)",
+      "Description": "Faith scaling for dark magic attacks."
+    },
+    {
+      "Field": "darkAttackMiracleIntPercent",
+      "Name": "Dark Miracle Scaling (INT %)",
+      "Description": "Intelligence scaling for dark miracle effects."
+    },
+    {
+      "Field": "darkAttackMiracleFaithPercent",
+      "Name": "Dark Miracle Scaling (FTH %)",
+      "Description": "Faith scaling for dark miracle effects."
+    },
+    {
+      "Field": "darkResistIntPercent",
+      "Name": "Dark Resistance Scaling (INT %)",
+      "Description": "Intelligence contribution to dark resistance."
+    },
+    {
+      "Field": "darkResistFaithPercent",
+      "Name": "Dark Resistance Scaling (FTH %)",
+      "Description": "Faith contribution to dark resistance."
+    },
+    {
+      "Field": "fLookAtRotationLeftMax",
+      "Name": "LookAt Rotation Left Limit [deg]",
+      "Description": "Maximum left rotation angle for camera/look-at system."
+    },
+    {
+      "Field": "fLookAtRotationRightMax",
+      "Name": "LookAt Rotation Right Limit [deg]",
+      "Description": "Maximum right rotation angle for camera/look-at system."
+    },
+    {
+      "Field": "fLookAtRotationUpperMax",
+      "Name": "LookAt Rotation Upper Limit [deg]",
+      "Description": "Maximum upward rotation angle for camera/look-at system."
+    },
+    {
+      "Field": "fLookAtRotationLownerMax",
+      "Name": "LookAt Rotation Lower Limit [deg]",
+      "Description": "Maximum downward rotation angle for camera/look-at system."
+    },
+    {
+      "Field": "fLookAtVisibilitySideMax",
+      "Name": "LookAt Visibility Side Limit [deg]",
+      "Description": "Side angle limit for target visibility detection."
+    },
+    {
+      "Field": "fLookAtVisibilityUpperMax",
+      "Name": "LookAt Visibility Upper/Lower Limit [deg]",
+      "Description": "Vertical angle limit for target visibility detection."
+    },
+    {
+      "Field": "fLookAtRotationSideSpeedMax",
+      "Name": "LookAt Rotation Speed Horizontal [deg/sec]",
+      "Description": "Maximum horizontal rotation speed for look-at system."
+    },
+    {
+      "Field": "fLookAtRotationUpperSpeedMax",
+      "Name": "LookAt Rotation Speed Vertical [deg/sec]",
+      "Description": "Maximum vertical rotation speed for look-at system."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound1",
+      "Name": "Item Drop Adjustment Round 1",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 1."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound2",
+      "Name": "Item Drop Adjustment Round 2",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 2."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound3",
+      "Name": "Item Drop Adjustment Round 3",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 3."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound4",
+      "Name": "Item Drop Adjustment Round 4",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 4."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound5",
+      "Name": "Item Drop Adjustment Round 5",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 5."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound6",
+      "Name": "Item Drop Adjustment Round 6",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 6."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound7",
+      "Name": "Item Drop Adjustment Round 7",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 7."
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound8",
+      "Name": "Item Drop Adjustment Round 8",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 8."
+    },
+    {
+      "Field": "equipDurabilityCoverRate",
+      "Name": "Equipment Durability Cover Rate [x]",
+      "Description": "Multiplier applied when durability loss is partially covered."
+    },
+    {
+      "Field": "wallHeight",
+      "Name": "Wall Detection Height [m]",
+      "Description": "Maximum height used for wall collision detection."
+    },
+    {
+      "Field": "repairCostUpRate",
+      "Name": "Repair Cost Increase Rate",
+      "Description": "Multiplier for increasing equipment repair costs."
+    },
+    {
+      "Field": "shieldCutBonusS",
+      "Name": "Shield Cut Bonus: S",
+      "Description": "Damage reduction bonus multiplier for S-grade shields."
+    },
+    {
+      "Field": "shieldCutBonusA",
+      "Name": "Shield Cut Bonus: A",
+      "Description": "Damage reduction bonus multiplier for A-grade shields."
+    },
+    {
+      "Field": "shieldCutBonusB",
+      "Name": "Shield Cut Bonus: B",
+      "Description": "Damage reduction bonus multiplier for B-grade shields."
+    },
+    {
+      "Field": "shieldCutBonusC",
+      "Name": "Shield Cut Bonus: C",
+      "Description": "Damage reduction bonus multiplier for C-grade shields."
+    },
+    {
+      "Field": "shieldCutBonusD",
+      "Name": "Shield Cut Bonus: D",
+      "Description": "Damage reduction bonus multiplier for D-grade shields."
+    },
+    {
+      "Field": "shieldCutBonusE",
+      "Name": "Shield Cut Bonus: E",
+      "Description": "Damage reduction bonus multiplier for E-grade shields."
+    },
+    {
+      "Field": "hitDurabilitySubValue",
+      "Name": "Melee Hit Durability Loss",
+      "Description": "Durability reduction when performing melee attacks."
+    },
+    {
+      "Field": "guardDurabilitySubValue",
+      "Name": "Guard Durability Loss",
+      "Description": "Durability reduction when blocking attacks."
+    },
+    {
+      "Field": "shootDurabilitySubValue",
+      "Name": "Ranged Attack Durability Loss",
+      "Description": "Durability reduction when firing ranged weapons."
+    },
+    {
+      "Field": "meleeShootDurabilitySubValue",
+      "Name": "Melee Projectile Durability Loss",
+      "Description": "Durability reduction when melee attacks spawn projectiles."
+    },
+    {
+      "Field": "unk164",
+      "Name": "unk164",
+      "Description": ""
+    },
+    {
+      "Field": "unk168",
+      "Name": "unk168",
+      "Description": ""
+    },
+    {
+      "Field": "unk16C",
+      "Name": "unk16C",
+      "Description": ""
+    },
+    {
+      "Field": "unk170",
+      "Name": "unk170",
+      "Description": ""
+    },
+    {
+      "Field": "unk174",
+      "Name": "unk174",
+      "Description": ""
+    },
+    {
+      "Field": "unk178",
+      "Name": "unk178",
+      "Description": ""
+    },
+    {
+      "Field": "unk17C",
+      "Name": "unk17C",
+      "Description": ""
+    },
+    {
+      "Field": "pcBackstabDamageRate",
+      "Name": "Backstab Damage Rate",
+      "Description": "Damage multiplier for player backstabs."
+    },
+    {
+      "Field": "pcParryBreakStabDamageRate",
+      "Name": "Parry Break Stab Damage Rate",
+      "Description": "Damage multiplier for attacks following a successful parry break."
+    },
+    {
+      "Field": "pcGuardBreakStabDamageRate",
+      "Name": "Guard Break Stab Damage Rate",
+      "Description": "Damage multiplier for attacks following a guard break."
+    },
+    {
+      "Field": "Unk18C",
+      "Name": "Unk18C",
+      "Description": ""
+    },
+    {
+      "Field": "Unk190",
+      "Name": "Unk190",
+      "Description": ""
+    },
+    {
+      "Field": "Unk194",
+      "Name": "Unk194",
+      "Description": ""
+    },
+    {
+      "Field": "Unk198",
+      "Name": "Unk198",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19C",
+      "Name": "Unk19C",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A0",
+      "Name": "Unk1A0",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A4",
+      "Name": "Unk1A4",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A8",
+      "Name": "Unk1A8",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1AC",
+      "Name": "Unk1AC",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B0",
+      "Name": "Unk1B0",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B4",
+      "Name": "Unk1B4",
+      "Description": ""
+    }
+  ]
+}

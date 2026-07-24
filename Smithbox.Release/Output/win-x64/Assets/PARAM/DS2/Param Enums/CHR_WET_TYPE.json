@@ -1,0 +1,38 @@
+{
+  "Key": "CHR_WET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water wet"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison wet"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oily"
+        }
+      ]
+    }
+  ]
+}

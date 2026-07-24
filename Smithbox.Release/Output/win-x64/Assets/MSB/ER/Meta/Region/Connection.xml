@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a connection in the map." />
+  
+  <Field>
+    <TargetMapID
+    AltName="Target Map ID"
+    Wiki="Map ID this connection targets." 
+    ArrayProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

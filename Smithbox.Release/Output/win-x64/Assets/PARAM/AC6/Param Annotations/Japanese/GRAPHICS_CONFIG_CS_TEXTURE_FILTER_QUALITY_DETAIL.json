@@ -1,0 +1,23 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "filter",
+      "Name": "フィルター",
+      "Description": "フィルター"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnisoLevel",
+      "Name": "アニソレベル",
+      "Description": "アニソレベル"
+    }
+  ]
+}

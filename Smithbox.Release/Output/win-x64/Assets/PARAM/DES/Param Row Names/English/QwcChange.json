@@ -1,0 +1,77 @@
+{
+  "Name": "QwcChange",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "test2"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "to tru death"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Revive White Ghost in Multiplayer"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Defeat the host in multiplayer"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Defeat White Ghost in Multiplayer"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Defeat Black Ghost in Multiplayer"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Give DS to Sage Logan"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "Give DS to Witch Yuria"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "Give DS to Saint Urbain"
+      ]
+    }
+  ]
+}

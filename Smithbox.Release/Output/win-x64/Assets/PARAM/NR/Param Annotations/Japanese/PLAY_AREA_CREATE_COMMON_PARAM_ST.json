@@ -1,0 +1,188 @@
+{
+  "Param": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
+  "Type": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
+  "Name": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "secondCircleRadius",
+      "Name": "secondCircleRadius",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "firstCircleStartHour",
+      "Name": "firstCircleStartHour",
+      "Description": ""
+    },
+    {
+      "Field": "firstCircleStartMinute",
+      "Name": "firstCircleStartMinute",
+      "Description": ""
+    },
+    {
+      "Field": "firstCircleEndHour",
+      "Name": "firstCircleEndHour",
+      "Description": ""
+    },
+    {
+      "Field": "firstCircleEndMinute",
+      "Name": "firstCircleEndMinute",
+      "Description": ""
+    },
+    {
+      "Field": "secondCircleStartHour",
+      "Name": "secondCircleStartHour",
+      "Description": ""
+    },
+    {
+      "Field": "secondCircleStartMinute",
+      "Name": "secondCircleStartMinute",
+      "Description": ""
+    },
+    {
+      "Field": "secondCircleEndHour",
+      "Name": "secondCircleEndHour",
+      "Description": ""
+    },
+    {
+      "Field": "secondCircleEndMinute",
+      "Name": "secondCircleEndMinute",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "day1RainSpEffect",
+      "Name": "day1RainSpEffect",
+      "Description": ""
+    },
+    {
+      "Field": "day2RainSpEffect",
+      "Name": "day2RainSpEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "initialCircleRadius",
+      "Name": "initialCircleRadius",
+      "Description": ""
+    },
+    {
+      "Field": "initialCircleAreaNo",
+      "Name": "initialCircleAreaNo",
+      "Description": ""
+    },
+    {
+      "Field": "initialCircleGridXNo",
+      "Name": "initialCircleGridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "initialCircleGridZNo",
+      "Name": "initialCircleGridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "initialCirclePosX",
+      "Name": "initialCirclePosX",
+      "Description": ""
+    },
+    {
+      "Field": "initialCirclePosZ",
+      "Name": "initialCirclePosZ",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "unknown_23",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

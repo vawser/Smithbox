@@ -1,0 +1,209 @@
+{
+  "Name": "NpcNameSwapParam",
+  "Entries": [
+    {
+      "ID": 91,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7211,
+      "Entries": [
+        "Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "Captain Drummond"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 7420,
+      "Entries": [
+        "Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 7440,
+      "Entries": [
+        "Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 7460,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 7550,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 7601,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 7602,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 7604,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 7610,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 7620,
+      "Entries": [
+        "Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 7630,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 7640,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 7643,
+      "Entries": [
+        "Steady Hand McDuff"
+      ]
+    },
+    {
+      "ID": 7650,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 7670,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 7740,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7780,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7831,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7840,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 7860,
+      "Entries": [
+        "Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 7870,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

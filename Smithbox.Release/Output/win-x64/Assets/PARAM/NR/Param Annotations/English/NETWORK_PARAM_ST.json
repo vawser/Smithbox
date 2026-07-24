@@ -1,0 +1,868 @@
+{
+  "Param": "NETWORK_PARAM_ST",
+  "Type": "NETWORK_PARAM_ST",
+  "Name": "NETWORK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "signVerticalOffset",
+      "Name": "Common - Sign Height Offset",
+      "Description": ""
+    },
+    {
+      "Field": "maxSignPosCorrectionRange",
+      "Name": "Common - Max Sign Position Correction Range",
+      "Description": ""
+    },
+    {
+      "Field": "summonTimeoutTime",
+      "Name": "Common - Summon Timeout Time",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "signPuddleActiveMessageIntervalSec",
+      "Name": "Summon Sign - Sign Puddle Active Message Interval",
+      "Description": ""
+    },
+    {
+      "Field": "keyGuideHeight_0",
+      "Name": "Summon Sign - Key Guide Height",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignIntervalTime1",
+      "Name": "Summon Sign - Reload Sign Interval Time [1]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignIntervalTime2",
+      "Name": "Summon Sign - Reload Sign Interval Time [2]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignTotalCount_0",
+      "Name": "Summon Sign - Reload Sign Total Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadSignCellCount_0",
+      "Name": "Summon Sign - Reload Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "updateSignIntervalTime",
+      "Name": "Summon Sign - Update Sign Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "basicExclusiveRange_0",
+      "Name": "Summon Sign - Basic Horizontal Drawing Range",
+      "Description": ""
+    },
+    {
+      "Field": "basicExclusiveHeight_0",
+      "Name": "Summon Sign - Basic Vertical Drawing Height",
+      "Description": ""
+    },
+    {
+      "Field": "previewChrWaitingTime",
+      "Name": "Summon Sign - Preview Chr Waiting Time",
+      "Description": ""
+    },
+    {
+      "Field": "signVisibleRange_0",
+      "Name": "Summon Sign - Sign Visible Range",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupHorizontalRange_0",
+      "Name": "Summon Sign - Acquisition Cell Range (Horizontal)",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupTopRange_0",
+      "Name": "Summon Sign - Acquisition Cell Range (Top)",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupBottomRange_0",
+      "Name": "Summon Sign - Acquisition Cell Range (Bottom)",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "minWhitePhantomLimitTimeScale",
+      "Name": "Summon Sign - Min White Phantom Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "minSmallPhantomLimitTimeScale",
+      "Name": "Summon Sign - Min Small Phantom Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "whiteKeywordLimitTimeScale",
+      "Name": "Summon Sign - White Keyword Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "smallKeywordLimitTimeScale",
+      "Name": "Summon Sign - Small Keyword Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "blackKeywordLimitTimeScale",
+      "Name": "Summon Sign - Black Keyword Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "dragonKeywordLimitTimeScale",
+      "Name": "Summon Sign - Dragon Keyword Limit Time Scale",
+      "Description": ""
+    },
+    {
+      "Field": "singGetMax",
+      "Name": "Summon Sign - Sign Get Max",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "signDownloadSpan",
+      "Name": "Summon Sign - Sign Download Span",
+      "Description": ""
+    },
+    {
+      "Field": "signUpdateSpan",
+      "Name": "Summon Sign - Sign Update Span",
+      "Description": ""
+    },
+    {
+      "Field": "signPad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxBreakInTargetListCount",
+      "Name": "Intrusion - Max Intruder List Count",
+      "Description": ""
+    },
+    {
+      "Field": "breakInRequestIntervalTimeSec",
+      "Name": "Intrusion - Intruder Request Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "breakInRequestTimeOutSec",
+      "Name": "Intrusion - Intruder Request Timeout",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "keyGuideRange",
+      "Name": "Blood Message - Key Guide Horionztal Range",
+      "Description": ""
+    },
+    {
+      "Field": "keyGuideHeight_1",
+      "Name": "Blood Message - Key Guide Vertical Range",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignTotalCount_1",
+      "Name": "Blood Message - Reload Sign Total Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadNewSignCellCount",
+      "Name": "Blood Message - Reload New Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadRandomSignCellCount",
+      "Name": "Blood Message - Reload Random Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxSignTotalCount_0",
+      "Name": "Blood Message - Max Sign Total Count",
+      "Description": "Actually u16 is enough"
+    },
+    {
+      "Field": "maxSignCellCount_0",
+      "Name": "Blood Message - Max Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "basicExclusiveRange_1",
+      "Name": "Blood Message - Basic Exclusive Range",
+      "Description": ""
+    },
+    {
+      "Field": "basicExclusiveHeight_1",
+      "Name": "Blood Message - Basic Exclusive Height",
+      "Description": ""
+    },
+    {
+      "Field": "signVisibleRange_1",
+      "Name": "Blood Message - Sign Visible Range",
+      "Description": ""
+    },
+    {
+      "Field": "maxWriteSignCount",
+      "Name": "Blood Message - Max Write Sign Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxReadSignCount",
+      "Name": "Blood Message - Max Read Sign Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadSignIntervalTime_0",
+      "Name": "Blood Message - Reload Sign Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupHorizontalRange_1",
+      "Name": "Blood Message - Cell Group Horizontal Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupTopRange_1",
+      "Name": "Blood Message - Cell Group Top Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupBottomRange_1",
+      "Name": "Blood Message - Cell Group Bottom Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "lifeTime_0",
+      "Name": "Blood Message - Lifetime",
+      "Description": "Actually u16 is enough"
+    },
+    {
+      "Field": "downloadSpan_0",
+      "Name": "Blood Message - Download Span",
+      "Description": ""
+    },
+    {
+      "Field": "downloadEvaluationSpan",
+      "Name": "Blood Message - Download Evaluation Span",
+      "Description": ""
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deadingGhostStartPosThreshold",
+      "Name": "Bloodstain - Dead Ghost Start Position Threshold",
+      "Description": "If the distance between the bloodstain position and the illusion start position is farther than this value, the server will not be registered."
+    },
+    {
+      "Field": "keyGuideHeight_2",
+      "Name": "Bloodstain - Key Guide Height",
+      "Description": ""
+    },
+    {
+      "Field": "keyGuideRangePlayer",
+      "Name": "Bloodstain - Key Guide Range Player",
+      "Description": ""
+    },
+    {
+      "Field": "keyGuideHeightPlayer",
+      "Name": "Bloodstain - Key Guide Height Player",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignTotalCount_2",
+      "Name": "Bloodstain - Reload Sign Total Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadSignCellCount_1",
+      "Name": "Bloodstain - Reload Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxSignTotalCount_1",
+      "Name": "Bloodstain - Max Sign Total Count",
+      "Description": "Actually u16 is enough"
+    },
+    {
+      "Field": "maxSignCellCount_1",
+      "Name": "Bloodstain - Max Sign Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadSignIntervalTime_1",
+      "Name": "Bloodstain - Reload Sign Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "signVisibleRange_2",
+      "Name": "Bloodstain - Sign Visible Range",
+      "Description": ""
+    },
+    {
+      "Field": "basicExclusiveRange_2",
+      "Name": "Bloodstain - Basic Exclusive Range",
+      "Description": ""
+    },
+    {
+      "Field": "basicExclusiveHeight_2",
+      "Name": "Bloodstain - Basic Exclusive Height",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupHorizontalRange_2",
+      "Name": "Bloodstain - Cell Group Horizontal Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupTopRange_2",
+      "Name": "Bloodstain - Cell Group Top Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupBottomRange_2",
+      "Name": "Bloodstain - Cell Group Bottom Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "lifeTime_1",
+      "Name": "Bloodstain - Lifetime",
+      "Description": "Actually u16 is enough"
+    },
+    {
+      "Field": "recordDeadingGhostTotalTime",
+      "Name": "Bloodstain - Record Dead Ghost Total Time",
+      "Description": ""
+    },
+    {
+      "Field": "recordDeadingGhostMinTime",
+      "Name": "Bloodstain - Record Dead Ghost Min Time",
+      "Description": "Death illusions less than this recording time will not register the server"
+    },
+    {
+      "Field": "downloadSpan_1",
+      "Name": "Bloodstain - Download Span",
+      "Description": ""
+    },
+    {
+      "Field": "statueCreatableDistance",
+      "Name": "Bloodstain - Statue Creatable Distance",
+      "Description": "For open fields. When a stone statue is generated, it can be generated if the distance between the PC and the generation position is greater than or equal to this value."
+    },
+    {
+      "Field": "reloadGhostTotalCount",
+      "Name": "Ghost - Reload Ghost Total Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "reloadGhostCellCount",
+      "Name": "Ghost - Reload Ghost Cell Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxGhostTotalCount",
+      "Name": "Ghost - Max Ghost Total Count",
+      "Description": "Actually u16 is enough"
+    },
+    {
+      "Field": "distanceOfBeginRecordVersus",
+      "Name": "Ghost - Begin Record Distance (Versus)",
+      "Description": ""
+    },
+    {
+      "Field": "distanceOfEndRecordVersus",
+      "Name": "Ghost - End Record Distance (Versus)",
+      "Description": ""
+    },
+    {
+      "Field": "updateWanderGhostIntervalTime",
+      "Name": "Ghost - Update Wandering Ghost Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "updateVersusGhostIntervalTime",
+      "Name": "Ghost - Update Versus Ghost Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "recordWanderingGhostTime",
+      "Name": "Ghost - Record Wandering Ghost Time",
+      "Description": ""
+    },
+    {
+      "Field": "recordWanderingGhostMinTime",
+      "Name": "Ghost - Record Wandering Ghost Min Time",
+      "Description": "Wandering illusions less than this recording time do not register the server"
+    },
+    {
+      "Field": "updateBonfireGhostIntervalTime",
+      "Name": "Ghost - Update Bonfire Ghost Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "replayGhostRangeOnView",
+      "Name": "Ghost - Replay Ghost Range On View",
+      "Description": ""
+    },
+    {
+      "Field": "replayGhostRangeOutView",
+      "Name": "Ghost - Replay Ghost Range Out View",
+      "Description": ""
+    },
+    {
+      "Field": "replayBonfireGhostTime",
+      "Name": "Ghost - Replay Bonfire Ghost Time",
+      "Description": ""
+    },
+    {
+      "Field": "minBonfireGhostValidRange",
+      "Name": "Ghost - Bonfire Ghost Min Valid Range",
+      "Description": "Do not place bonfire illusions less than this distance from the bonfire"
+    },
+    {
+      "Field": "maxBonfireGhostValidRange",
+      "Name": "Ghost - Bonfire Ghost Max Valid Range",
+      "Description": "Do not place bonfire illusions beyond this distance from the bonfire"
+    },
+    {
+      "Field": "minReplayIntervalTime",
+      "Name": "Ghost - Replay Interval Min Time",
+      "Description": ""
+    },
+    {
+      "Field": "maxReplayIntervalTime",
+      "Name": "Ghost - Replay Interval Max Time",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostIntervalTime",
+      "Name": "Ghost - Reload Ghost Interval Time",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupHorizontalRange_3",
+      "Name": "Ghost - Cell Group Horizontal Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "cellGroupTopRange_3",
+      "Name": "Ghost - Cell Group Top Range",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "replayBonfirePhantomParamIdForCodename",
+      "Name": "Ghost - Replay Bonfire Phantom Param ID (CodeDisplayName)",
+      "Description": "Phantom bonfire mode phantom parameter ID used when codename matches"
+    },
+    {
+      "Field": "replayBonfireModeRange",
+      "Name": "Ghost - Replay Bonfire Mode Range",
+      "Description": ""
+    },
+    {
+      "Field": "replayBonfirePhantomParamId",
+      "Name": "Ghost - Replay Bonfire Phantom Param ID",
+      "Description": "Phantom bonfire mode phantom parameter ID"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reloadVisitListCoolTime",
+      "Name": "Visit - Reload Visit List Cool time",
+      "Description": ""
+    },
+    {
+      "Field": "maxCoopBlueSummonCount",
+      "Name": "Visit - Max Coop Blue Summon Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxBellGuardSummonCount",
+      "Name": "Visit - Max Bell Guard Summon Count",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "maxVisitListCount",
+      "Name": "Visit - Max Visit List Count",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_CoopBlue_Min",
+      "Name": "Visit - Reload Search - Coop Blue - Min",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_CoopBlue_Max",
+      "Name": "Visit - Reload Search - Coop Blue - Max",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_BellGuard_Min",
+      "Name": "Visit - Reload Search - Bell Guard - Min",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_BellGuard_Max",
+      "Name": "Visit - Reload Search - Bell Guard - Max",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_RatKing_Min",
+      "Name": "Visit - Reload Search - Rat King - Min",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_RatKing_Max",
+      "Name": "Visit - Reload Search - Rat King - Max",
+      "Description": ""
+    },
+    {
+      "Field": "visitpad00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "srttMaxLimit",
+      "Name": "Extra - SSRT Max Limit",
+      "Description": ""
+    },
+    {
+      "Field": "srttMeanLimit",
+      "Name": "Extra - SSRT Mean Limit",
+      "Description": ""
+    },
+    {
+      "Field": "srttMeanDeviationLimit",
+      "Name": "Extra - SSRT Mean Deviation Limit",
+      "Description": ""
+    },
+    {
+      "Field": "darkPhantomLimitBoostTime",
+      "Name": "Extra - Dark Phantom Limit Boost Time",
+      "Description": ""
+    },
+    {
+      "Field": "darkPhantomLimitBoostScale",
+      "Name": "Extra - Dark Phantom Limit Boost Scale",
+      "Description": ""
+    },
+    {
+      "Field": "multiplayDisableLifeTime",
+      "Name": "Extra - Multiplayer Disable Lifetime",
+      "Description": ""
+    },
+    {
+      "Field": "abyssMultiplayLimit",
+      "Name": "Extra - Abyss Multiplayer Limit",
+      "Description": "The number of times the abyss spirit enters the host in the abyss area"
+    },
+    {
+      "Field": "phantomWarpMinimumTime",
+      "Name": "Extra - Phantom Warp Minimum Time",
+      "Description": ""
+    },
+    {
+      "Field": "phantomReturnDelayTime",
+      "Name": "Extra - Phantom Return Delay Time",
+      "Description": ""
+    },
+    {
+      "Field": "terminateTimeoutTime",
+      "Name": "Extra - Terminate Timeout Time",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointLanDisconnect",
+      "Name": "Extra - Penalty Point LAN Disconnet",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointSignout",
+      "Name": "Extra - Penalty Point Signout",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointReboot",
+      "Name": "Extra - Penalty Point Reboot",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointBeginPenalize",
+      "Name": "Extra - Penalty Point Begin Penalize",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyForgiveItemLimitTime",
+      "Name": "Extra - Penalty Forgive Item Limit Time",
+      "Description": ""
+    },
+    {
+      "Field": "allAreaSearchRate_CoopBlue",
+      "Name": "Extra - All Area Search Rate - Coop Blue",
+      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+    },
+    {
+      "Field": "allAreaSearchRate_VsBlue",
+      "Name": "Extra - All Area Search Rate - Vs. Coop Blue",
+      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+    },
+    {
+      "Field": "allAreaSearchRate_BellGuard",
+      "Name": "Extra - All Area Search Rate - Bell Guard",
+      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+    },
+    {
+      "Field": "bloodMessageEvalHealRate",
+      "Name": "Extra - Blood Message Eval Heal Rate",
+      "Description": ""
+    },
+    {
+      "Field": "smallGoldSuccessHostRewardId",
+      "Name": "Extra - Small Gold Success Host Reward ID",
+      "Description": ""
+    },
+    {
+      "Field": "doorInvalidPlayAreaExtents",
+      "Name": "Extra - Door Invalid Play Area Extents",
+      "Description": "The area around the black door that separates the multiplayer area is set to the systematically invalid play area (-1). At that time, make the invalid area thicker with this parameter on the thinner side of the OBJ's bounding box with a black door."
+    },
+    {
+      "Field": "signDisplayMax",
+      "Name": "Extra - Sign Display Max",
+      "Description": ""
+    },
+    {
+      "Field": "bloodStainDisplayMax",
+      "Name": "Extra - Bloodstain Display Max",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageDisplayMax",
+      "Name": "Extra - Blood Message Display Max",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "summonMessageInterval",
+      "Name": "Quick Match - Summon Message Interval",
+      "Description": ""
+    },
+    {
+      "Field": "hostRegisterUpdateTime",
+      "Name": "Quick Match - Host Register Update Time",
+      "Description": ""
+    },
+    {
+      "Field": "hostTimeOutTime",
+      "Name": "Quick Match - Host Time Out Time",
+      "Description": ""
+    },
+    {
+      "Field": "guestUpdateTime",
+      "Name": "Quick Match - Guest Update Time",
+      "Description": ""
+    },
+    {
+      "Field": "guestPlayerNoTimeOutTime",
+      "Name": "Quick Match - Guest Player No Time Out Time",
+      "Description": ""
+    },
+    {
+      "Field": "hostPlayerNoTimeOutTime",
+      "Name": "Quick Match - Host Player No Time Out Time",
+      "Description": ""
+    },
+    {
+      "Field": "requestSearchQuickMatchLimit",
+      "Name": "Quick Match - Request Search Quick Match Limit",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "AvatarMatchSearchMax",
+      "Name": "Quick Match - Avatar Match Search Max",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "BattleRoyalMatchSearchMin",
+      "Name": "Quick Match - Battle Royale Match Search Min",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "BattleRoyalMatchSearchMax",
+      "Name": "Quick Match - Battle Royale Match Search Max",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "VisitorListMax",
+      "Name": "Visitor - Visitor List Max",
+      "Description": "Actually u8 is enough"
+    },
+    {
+      "Field": "VisitorTimeOutTime",
+      "Name": "Visitor - Visitor Time Out Time",
+      "Description": ""
+    },
+    {
+      "Field": "DownloadSpan_2",
+      "Name": "Visitor - Download Span",
+      "Description": ""
+    },
+    {
+      "Field": "VisitorGuestRequestMessageIntervalSec",
+      "Name": "Visitor - Visitor Guest Request Message Interval",
+      "Description": "Display interval [seconds] of messages sent by visiting guests while searching for a destination"
+    },
+    {
+      "Field": "wanderGhostIntervalLifeTime",
+      "Name": "Ghost Addition - Wandering Ghost Interval Lifetime",
+      "Description": "Wandering illusion life"
+    },
+    {
+      "Field": "unknown_15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "YellowMonkTimeOutTime",
+      "Name": "Yellow Monk - Yellow Monk Timeout Time",
+      "Description": ""
+    },
+    {
+      "Field": "YellowMonkDownloadSpan",
+      "Name": "Yellow Monk - Yellow Monk Download Span",
+      "Description": ""
+    },
+    {
+      "Field": "YellowMonkOverallFlowTimeOutTime",
+      "Name": "Yellow Monk - Yellow Monk Overall Flow Time Out Time",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

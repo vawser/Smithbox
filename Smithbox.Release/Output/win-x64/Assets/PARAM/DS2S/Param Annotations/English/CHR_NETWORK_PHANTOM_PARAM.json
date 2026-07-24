@@ -1,0 +1,218 @@
+{
+  "Param": "CHR_NETWORK_PHANTOM_PARAM",
+  "Type": "CHR_NETWORK_PHANTOM_PARAM",
+  "Name": "CHR_NETWORK_PHANTOM_PARAM",
+  "Description": "Network phantom (multiplayer ghost/entity) behavior parameters controlling appearance effects, multiplayer rules, scaling, rewards, and session constraints.",
+  "Fields": [
+    {
+      "Field": "level0ShaderType",
+      "Name": "Level 0: Shader Type",
+      "Description": "The shader type for constraint level 0."
+    },
+    {
+      "Field": "level0FullBodySfx",
+      "Name": "Level 0: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 0."
+    },
+    {
+      "Field": "level1FullBodySfx",
+      "Name": "Level 1: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 1."
+    },
+    {
+      "Field": "level2FullBodySfx",
+      "Name": "Level 2: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 2."
+    },
+    {
+      "Field": "level3FullBodySfx",
+      "Name": "Level 3: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 3."
+    },
+    {
+      "Field": "entryMotionType",
+      "Name": "Appearance Motion Type",
+      "Description": "The appearance motion type for this phantom."
+    },
+    {
+      "Field": "speedDownHpMinRate",
+      "Name": "HP Threshold for Speed Reduction (Min %)",
+      "Description": "Lower HP percentage threshold at which movement speed reduction begins to apply."
+    },
+    {
+      "Field": "speedDownHpMaxRate",
+      "Name": "HP Threshold for Speed Reduction (Max %)",
+      "Description": "Upper HP percentage threshold for full movement speed reduction effect."
+    },
+    {
+      "Field": "speedDownRate",
+      "Name": "Movement Speed Reduction %",
+      "Description": "Percentage reduction applied to movement speed under low HP conditions."
+    },
+    {
+      "Field": "entrySfxId",
+      "Name": "Spawn SFX ID",
+      "Description": "SFX effect ID played when the phantom is created."
+    },
+    {
+      "Field": "entryFullBodySfx",
+      "Name": "Spawn Full Body SFX",
+      "Description": "Full-body SFX effect configuration used on spawn."
+    },
+    {
+      "Field": "deadType",
+      "Name": "Death Type",
+      "Description": "Defines how the phantom behaves or is handled upon death."
+    },
+    {
+      "Field": "limitTime",
+      "Name": "Multiplayer Time Limit",
+      "Description": "Maximum duration allowed in a multiplayer session for this phantom. In seconds."
+    },
+    {
+      "Field": "returnWaitTime",
+      "Name": "Return Delay After Multiplayer Ends",
+      "Description": "Time delay before returning after multiplayer session ends. In seconds."
+    },
+    {
+      "Field": "respawnPosTypeSuccess",
+      "Name": "Return Position: Success",
+      "Description": "Respawn position used when multiplayer ends successfully."
+    },
+    {
+      "Field": "respawnPosTypeFaild",
+      "Name": "Return Position: Failure",
+      "Description": "Respawn position used when multiplayer ends in failure."
+    },
+    {
+      "Field": "respawnPosTypeDead",
+      "Name": "Return Position: Death",
+      "Description": "Respawn position used when the phantom dies during multiplayer."
+    },
+    {
+      "Field": "pad1",
+      "Name": "Reserved",
+      "Description": "Unused reserved parameter slot."
+    },
+    {
+      "Field": "respawnConditionTypeSuccess",
+      "Name": "Return State: Success",
+      "Description": "Player state applied when returning after successful multiplayer completion."
+    },
+    {
+      "Field": "respawnConditionTypeFaild",
+      "Name": "Return State: Failure",
+      "Description": "Player state applied when returning after failed multiplayer session."
+    },
+    {
+      "Field": "respawnConditionTypeDead",
+      "Name": "Return State: Death",
+      "Description": "Player state applied when returning after death in multiplayer."
+    },
+    {
+      "Field": "pad2",
+      "Name": "Reserved",
+      "Description": "Unused reserved parameter slot."
+    },
+    {
+      "Field": "voiceChatType",
+      "Name": "Voice Chat Settings",
+      "Description": "Defines voice chat behavior or availability for the phantom."
+    },
+    {
+      "Field": "hostReturnWarpEnable",
+      "Name": "Allow Host Forced Return",
+      "Description": "Determines whether the host can force the phantom to return."
+    },
+    {
+      "Field": "ownerReturnWarpEnable",
+      "Name": "Allow Manual Return",
+      "Description": "Determines whether the phantom can return voluntarily."
+    },
+    {
+      "Field": "handicapEnable",
+      "Name": "Enable Handicap System",
+      "Description": "Enables gameplay balancing adjustments for multiplayer phantoms."
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "Maximum HP Scaling Multiplier",
+      "Description": "Multiplier applied to maximum HP in multiplayer."
+    },
+    {
+      "Field": "summonEnable",
+      "Name": "Summon Enabled",
+      "Description": "Defines whether the phantom is treated as a summoned entity."
+    },
+    {
+      "Field": "summonSupportEnable",
+      "Name": "Allow Summon Support",
+      "Description": "Enables support actions for summoned players or entities."
+    },
+    {
+      "Field": "isEnableBossSoul",
+      "Name": "Allow Boss Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from bosses."
+    },
+    {
+      "Field": "isEnableEnemySoul",
+      "Name": "Allow Enemy Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from regular enemies."
+    },
+    {
+      "Field": "isEnableNpcSoul",
+      "Name": "Allow NPC Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from NPCs."
+    },
+    {
+      "Field": "isEnableHostSoul",
+      "Name": "Allow Host Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from the host player."
+    },
+    {
+      "Field": "isEnableNetPhantomSoul",
+      "Name": "Allow Phantom Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from network phantoms."
+    },
+    {
+      "Field": "healItemUsageType",
+      "Name": "Healing Item Usage Type",
+      "Description": "Defines restrictions or rules for using healing items."
+    },
+    {
+      "Field": "getSoulRate",
+      "Name": "Soul Gain Multiplier",
+      "Description": "Multiplier applied to soul rewards earned in multiplayer."
+    },
+    {
+      "Field": "fadeOutTimeStep1",
+      "Name": "Multiplayer Visual Fade Step 1",
+      "Description": "Time until the first stage of visual fading occurs in multiplayer. In seconds."
+    },
+    {
+      "Field": "fadeOutTimeStep2",
+      "Name": "Multiplayer Visual Fade Step 2",
+      "Description": "Time until the second stage of visual fading occurs in multiplayer. In seconds"
+    },
+    {
+      "Field": "level1ShaderType",
+      "Name": "Level 1 Constraint Shader Type",
+      "Description": "Shader used for Level 1 constraint state."
+    },
+    {
+      "Field": "level2ShaderType",
+      "Name": "Level 2 Constraint Shader Type",
+      "Description": "Shader used for Level 2 constraint state."
+    },
+    {
+      "Field": "level3ShaderType",
+      "Name": "Level 3 Constraint Shader Type",
+      "Description": "Shader used for Level 3 constraint state."
+    },
+    {
+      "Field": "getBossSoulRate",
+      "Name": "Boss Soul Gain Multiplier",
+      "Description": "Multiplier applied specifically to souls gained from bosses."
+    }
+  ]
+}

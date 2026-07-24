@@ -1,0 +1,43 @@
+{
+  "Param": "MENUPROPERTY_SPEC",
+  "Type": "MENUPROPERTY_SPEC",
+  "Name": "MENUPROPERTY_SPEC",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "CaptionTextID",
+      "Name": "Caption Text ID",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "Icon ID",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredPropertyID",
+      "Name": "Required Property ID",
+      "Description": ""
+    },
+    {
+      "Field": "CompareType",
+      "Name": "Compare Type",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FormatType",
+      "Name": "Format Type",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

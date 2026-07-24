@@ -1,0 +1,48 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "カメラ距離目標[m]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "X軸回転最小値[deg]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "ロックX回転シフト率(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "キャラ基点オフセット(キャラ空間)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "キャラ範囲最大半径[m]",
+      "Description": "ロック用"
+    },
+    {
+      "Field": "camFovY",
+      "Name": "縦画角[deg]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forD",
+      "Name": "暗闇用キャラ範囲最大半径[m]",
+      "Description": "ロック用"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forPD",
+      "Name": "真っ暗闇用キャラ範囲最大半径[m]",
+      "Description": "ロック用"
+    }
+  ]
+}

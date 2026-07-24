@@ -1,0 +1,1175 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Backstab - PC -> PC"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Parry - PC -> PC"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Fall - PC -> PC"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Lifedrain - PC -> PC"
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        "Backstab - PC -> Infested Ghoul"
+      ]
+    },
+    {
+      "ID": 12280,
+      "Entries": [
+        "Backstab - PC -> Mushroom Child"
+      ]
+    },
+    {
+      "ID": 12390,
+      "Entries": [
+        "Backstab - PC -> Darkwraith"
+      ]
+    },
+    {
+      "ID": 12400,
+      "Entries": [
+        "Backstab - PC -> Painting Guardian"
+      ]
+    },
+    {
+      "ID": 12410,
+      "Entries": [
+        "Backstab - PC -> Silver Knight"
+      ]
+    },
+    {
+      "ID": 12500,
+      "Entries": [
+        "Backstab - PC -> Hollow"
+      ]
+    },
+    {
+      "ID": 12510,
+      "Entries": [
+        "Backstab - PC -> Undead Merchant"
+      ]
+    },
+    {
+      "ID": 12520,
+      "Entries": [
+        "Backstab - PC -> Undead Assassin"
+      ]
+    },
+    {
+      "ID": 12530,
+      "Entries": [
+        "Backstab - PC -> Blowdart Hollow"
+      ]
+    },
+    {
+      "ID": 12540,
+      "Entries": [
+        "Backstab - PC -> Hollow Warrior"
+      ]
+    },
+    {
+      "ID": 12550,
+      "Entries": [
+        "Backstab - PC -> Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 12560,
+      "Entries": [
+        "Backstab - PC -> Balder Knight"
+      ]
+    },
+    {
+      "ID": 12640,
+      "Entries": [
+        "Backstab - PC -> Andre of Astora"
+      ]
+    },
+    {
+      "ID": 12650,
+      "Entries": [
+        "Backstab - PC -> Necromancer"
+      ]
+    },
+    {
+      "ID": 12660,
+      "Entries": [
+        "Backstab - PC -> Butcher"
+      ]
+    },
+    {
+      "ID": 12690,
+      "Entries": [
+        "Backstab - PC -> Serpent Soldier"
+      ]
+    },
+    {
+      "ID": 12700,
+      "Entries": [
+        "Backstab - PC -> Serpent Mage"
+      ]
+    },
+    {
+      "ID": 12790,
+      "Entries": [
+        "Backstab - PC -> Black Knight"
+      ]
+    },
+    {
+      "ID": 12792,
+      "Entries": [
+        "Backstab - PC ->"
+      ]
+    },
+    {
+      "ID": 12793,
+      "Entries": [
+        "Backstab - PC ->"
+      ]
+    },
+    {
+      "ID": 12794,
+      "Entries": [
+        "Backstab - PC ->"
+      ]
+    },
+    {
+      "ID": 12795,
+      "Entries": [
+        "Backstab - PC ->"
+      ]
+    },
+    {
+      "ID": 12800,
+      "Entries": [
+        "Backstab - PC -> Crystal Hollow"
+      ]
+    },
+    {
+      "ID": 12810,
+      "Entries": [
+        "Backstab - PC -> Infested Barbarian (Club)"
+      ]
+    },
+    {
+      "ID": 12811,
+      "Entries": [
+        "Backstab - PC -> Infested Barbarian (Boulder)"
+      ]
+    },
+    {
+      "ID": 12820,
+      "Entries": [
+        "Backstab - PC ->"
+      ]
+    },
+    {
+      "ID": 12840,
+      "Entries": [
+        "Backstab - PC -> Engorged Hollow"
+      ]
+    },
+    {
+      "ID": 12900,
+      "Entries": [
+        "Backstab - PC -> Skeleton"
+      ]
+    },
+    {
+      "ID": 12920,
+      "Entries": [
+        "Backstab - PC -> Vamos"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "Backstab - PC -> Pisaca"
+      ]
+    },
+    {
+      "ID": 13460,
+      "Entries": [
+        "Backstab - PC -> Armored Tusk"
+      ]
+    },
+    {
+      "ID": 14090,
+      "Entries": [
+        "Backstab - PC -> Marvellous Chester"
+      ]
+    },
+    {
+      "ID": 14130,
+      "Entries": [
+        "Backstab - PC -> Scarecrow"
+      ]
+    },
+    {
+      "ID": 14150,
+      "Entries": [
+        "Backstab - PC -> Bloathead"
+      ]
+    },
+    {
+      "ID": 14160,
+      "Entries": [
+        "Backstab - PC -> Bloathead Sorcerer"
+      ]
+    },
+    {
+      "ID": 22060,
+      "Entries": [
+        "Parry - PC -> Infested Ghoul"
+      ]
+    },
+    {
+      "ID": 22390,
+      "Entries": [
+        "Parry - PC -> Darkwraith"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "Parry - PC -> Painting Guardian"
+      ]
+    },
+    {
+      "ID": 22410,
+      "Entries": [
+        "Parry - PC -> Silver Knight"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "Parry - PC -> Hollow"
+      ]
+    },
+    {
+      "ID": 22510,
+      "Entries": [
+        "Parry - PC -> Undead Merchant"
+      ]
+    },
+    {
+      "ID": 22520,
+      "Entries": [
+        "Parry - PC -> Undead Assassin"
+      ]
+    },
+    {
+      "ID": 22530,
+      "Entries": [
+        "Parry - PC -> Blowdart Hollow"
+      ]
+    },
+    {
+      "ID": 22540,
+      "Entries": [
+        "Parry - PC -> Hollow Warrior"
+      ]
+    },
+    {
+      "ID": 22550,
+      "Entries": [
+        "Parry - PC -> Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 22560,
+      "Entries": [
+        "Parry - PC -> Balder Knight"
+      ]
+    },
+    {
+      "ID": 22640,
+      "Entries": [
+        "Parry - PC -> Andre of Astora"
+      ]
+    },
+    {
+      "ID": 22660,
+      "Entries": [
+        "Parry - PC -> Butcher"
+      ]
+    },
+    {
+      "ID": 22690,
+      "Entries": [
+        "Parry - PC -> Serpent Soldier"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "Parry - PC -> Serpent Mage"
+      ]
+    },
+    {
+      "ID": 22790,
+      "Entries": [
+        "Parry - PC -> Black Knight"
+      ]
+    },
+    {
+      "ID": 22792,
+      "Entries": [
+        "Parry - PC ->"
+      ]
+    },
+    {
+      "ID": 22793,
+      "Entries": [
+        "Parry - PC ->"
+      ]
+    },
+    {
+      "ID": 22794,
+      "Entries": [
+        "Parry - PC ->"
+      ]
+    },
+    {
+      "ID": 22795,
+      "Entries": [
+        "Parry - PC ->"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "Parry - PC -> Crystal Hollow"
+      ]
+    },
+    {
+      "ID": 22810,
+      "Entries": [
+        "Parry - PC -> Infested Barbarian (Club)"
+      ]
+    },
+    {
+      "ID": 22820,
+      "Entries": [
+        "Parry - PC -> Infested Barbarian (Boulder)"
+      ]
+    },
+    {
+      "ID": 22840,
+      "Entries": [
+        "Parry - PC -> Engorged Hollow"
+      ]
+    },
+    {
+      "ID": 22900,
+      "Entries": [
+        "Parry - PC -> Skeleton"
+      ]
+    },
+    {
+      "ID": 22920,
+      "Entries": [
+        "Parry - PC -> Vamos"
+      ]
+    },
+    {
+      "ID": 24130,
+      "Entries": [
+        "Parry - PC -> Scarecrow"
+      ]
+    },
+    {
+      "ID": 24150,
+      "Entries": [
+        "Parry - PC -> Bloathead"
+      ]
+    },
+    {
+      "ID": 24160,
+      "Entries": [
+        "Parry - PC -> Bloathead Sorcerer"
+      ]
+    },
+    {
+      "ID": 25370,
+      "Entries": [
+        "Parry - PC -> Gwyn, Lord of Cinder"
+      ]
+    },
+    {
+      "ID": 31202,
+      "Entries": [
+        "Fall - PC -> Giant Rat"
+      ]
+    },
+    {
+      "ID": 32231,
+      "Entries": [
+        "Fall - PC -> Firesage Demon"
+      ]
+    },
+    {
+      "ID": 32232,
+      "Entries": [
+        "Fall - PC -> Asylum Demon"
+      ]
+    },
+    {
+      "ID": 32250,
+      "Entries": [
+        "Fall - PC -> Taurus Demon"
+      ]
+    },
+    {
+      "ID": 33460,
+      "Entries": [
+        "Fall - PC -> Armored Tusk"
+      ]
+    },
+    {
+      "ID": 33461,
+      "Entries": [
+        "Fall - PC -> Armored Tusk - Reinforced"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "Backstab - PC -> PC [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "Parry - PC -> PC [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 100103,
+      "Entries": [
+        "Fall - PC -> PC [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 100104,
+      "Entries": [
+        "Lifedrain - PC -> PC [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112060,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112280,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112390,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112400,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112410,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112500,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112510,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112520,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112530,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112540,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112550,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112560,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112640,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112650,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112660,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112690,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112700,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112790,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112792,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112793,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112794,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112795,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112800,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112810,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112811,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112820,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112840,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112900,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 112920,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 113300,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 113460,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 114090,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 114130,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 114150,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 114160,
+      "Entries": [
+        "Backstab - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122060,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122390,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122400,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122410,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122500,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122510,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122520,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122530,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122540,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122550,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122560,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122640,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122660,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122690,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122700,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122790,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122792,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122793,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122794,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122795,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122800,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122810,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122820,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122840,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122900,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 122920,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 124130,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 124150,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 124160,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 125370,
+      "Entries": [
+        "Parry - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 131202,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 132231,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 132232,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 132250,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 133460,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 133461,
+      "Entries": [
+        "Fall - PC ->  [Hornet Ring]"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Throw - Infested Ghoul -> PC"
+      ]
+    },
+    {
+      "ID": 229000,
+      "Entries": [
+        "Throw - X -> PC"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Throw - Prowling Demon -> PC"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "Throw - Crow Demon -> PC"
+      ]
+    },
+    {
+      "ID": 232000,
+      "Entries": [
+        "Throw - Iron Golem -> PC [1]"
+      ]
+    },
+    {
+      "ID": 232001,
+      "Entries": [
+        "Throw - Iron Golem -> PC [2]"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "Throw - Demonic Foliage -> PC"
+      ]
+    },
+    {
+      "ID": 239000,
+      "Entries": [
+        "Throw - Darkwraith -> PC"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Backstab - Painting Guardian   -> PC"
+      ]
+    },
+    {
+      "ID": 240001,
+      "Entries": [
+        "Parry - Painting Guardian   -> PC"
+      ]
+    },
+    {
+      "ID": 241000,
+      "Entries": [
+        "Backstab - Silver Knight -> PC"
+      ]
+    },
+    {
+      "ID": 241001,
+      "Entries": [
+        "Backstab - Silver Knight -> PC"
+      ]
+    },
+    {
+      "ID": 252000,
+      "Entries": [
+        "Backstab - Undead Assassin -> PC"
+      ]
+    },
+    {
+      "ID": 252001,
+      "Entries": [
+        "Parry - Undead Assassin -> PC"
+      ]
+    },
+    {
+      "ID": 256000,
+      "Entries": [
+        "Backstab - Balder Knight -> PC"
+      ]
+    },
+    {
+      "ID": 256001,
+      "Entries": [
+        "Parry - Balder Knight -> PC"
+      ]
+    },
+    {
+      "ID": 266000,
+      "Entries": [
+        "Throw - Butcher -> PC"
+      ]
+    },
+    {
+      "ID": 267000,
+      "Entries": [
+        "Throw - Ghost (Male)   -> PC"
+      ]
+    },
+    {
+      "ID": 268000,
+      "Entries": [
+        "Throw - Ghost (Female) -> PC"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "Throw - Serpent Mage -> PC"
+      ]
+    },
+    {
+      "ID": 278000,
+      "Entries": [
+        "Throw - Mimic -> PC"
+      ]
+    },
+    {
+      "ID": 278001,
+      "Entries": [
+        "Throw - Mimic -> PC"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "Parry - Black Knight -> PC"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Throw - Slime -> PC [1]"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Throw - Egg Carrier-> PC"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Throw - Chaos Eater -> PC"
+      ]
+    },
+    {
+      "ID": 324001,
+      "Entries": [
+        "Throw - Chaos Eater -> PC"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Throw - Maneater Clam -> PC"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Throw - Pisaca -> PC"
+      ]
+    },
+    {
+      "ID": 333001,
+      "Entries": [
+        "Throw - Pisaca -> PC"
+      ]
+    },
+    {
+      "ID": 339000,
+      "Entries": [
+        "Throw - Burrower -> PC"
+      ]
+    },
+    {
+      "ID": 339001,
+      "Entries": [
+        "Throw - Burrower -> PC"
+      ]
+    },
+    {
+      "ID": 339002,
+      "Entries": [
+        "Throw - Burrower -> PC"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Throw - Kalameet -> PC"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Throw - Centipede Demon -> PC"
+      ]
+    },
+    {
+      "ID": 522000,
+      "Entries": [
+        "Throw - Gravelord Nito -> PC"
+      ]
+    },
+    {
+      "ID": 526000,
+      "Entries": [
+        "Throw - Gaping Dragon -> PC"
+      ]
+    },
+    {
+      "ID": 526002,
+      "Entries": [
+        "Throw - Gaping Dragon -> PC"
+      ]
+    },
+    {
+      "ID": 527000,
+      "Entries": [
+        "Throw - Dragonslayer Ornstein -> PC"
+      ]
+    },
+    {
+      "ID": 527100,
+      "Entries": [
+        "Throw - Dragonslayer Ornstein (Giant) -> PC"
+      ]
+    },
+    {
+      "ID": 536000,
+      "Entries": [
+        "Throw - Great Feline -> PC"
+      ]
+    },
+    {
+      "ID": 537000,
+      "Entries": [
+        "Throw - Gwyn, Lord of Cinder -> PC"
+      ]
+    },
+    {
+      "ID": 537100,
+      "Entries": [
+        "Throw - Gwyn, Lord of Cinder -> PC"
+      ]
+    },
+    {
+      "ID": 539000,
+      "Entries": [
+        "Throw - Four Kings -> PC"
+      ]
+    }
+  ]
+}

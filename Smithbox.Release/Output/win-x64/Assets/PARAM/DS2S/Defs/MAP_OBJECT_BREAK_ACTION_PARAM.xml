@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>MAP_OBJECT_BREAK_ACTION_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 sideWalk">
+            <DisplayName>《水平移動で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 walk">
+            <DisplayName>《歩行で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 dash">
+            <DisplayName>《ダッシュで破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 rolling">
+            <DisplayName>《回避で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 jump">
+            <DisplayName>《ジャンプで破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 fall">
+            <DisplayName>《落下で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 damaged">
+            <DisplayName>《ダメージ中で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 attack">
+            <DisplayName>《攻撃中で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 fall_attack">
+            <DisplayName>《落下攻撃中で破壊》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>11</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

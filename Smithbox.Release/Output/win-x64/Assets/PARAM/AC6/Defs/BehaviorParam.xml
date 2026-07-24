@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>9011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>9012</SortID>
+    </Field>
+    <Field Def="s32 variationId">
+      <DisplayName>行動バリエーションID</DisplayName>
+      <Description>攻撃パラメータ用のIDを算出する際に使用します。実機上では直接使用しません。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 behaviorJudgeId">
+      <DisplayName>行動判定ID</DisplayName>
+      <Description>攻撃パラメータ用のIDを算出する際に使用します。このIDはTimeActEditorで入力される行動判定IDと一致させます。実機上では直接使用しません。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 ezStateBehaviorType_old">
+      <DisplayName>IDルール用</DisplayName>
+      <Description>ID算出ルール用</Description>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 refType">
+      <DisplayName>参照IDタイプ</DisplayName>
+      <Enum>BEHAVIOR_REF_TYPE</Enum>
+      <Description>参照IDを間違わないように指定.</Description>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 consumeSA">
+      <DisplayName>消費SA</DisplayName>
+      <Description>行動時の消費SA量を設定.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s32 refId = -1">
+      <DisplayName>参照ID</DisplayName>
+      <Description>攻撃力、飛び道具、特殊効果パラメータのID、refTypeによって使い分けられる。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 sfxVariationId">
+      <DisplayName>SFX バリエーションID</DisplayName>
+      <Description>ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 stamina">
+      <DisplayName>消費スタミナ</DisplayName>
+      <Description>行動時の消費スタミナ量を設定.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 energy">
+      <DisplayName>消費EN</DisplayName>
+      <Description>行動時の消費EN量を設定</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 mp">
+      <DisplayName>消費MP</DisplayName>
+      <Description>行動時の消費MP量を設定.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 category">
+      <DisplayName>カテゴリ</DisplayName>
+      <Enum>BEHAVIOR_CATEGORY</Enum>
+      <Description>スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する
+</Description>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 heroPoint">
+      <DisplayName>消費人間性</DisplayName>
+      <Description>行動時の消費人間性量を設定</Description>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[2]">
+      <DisplayName>パディング1</DisplayName>
+      <Description>パディング1.</Description>
+      <SortID>9013</SortID>
+    </Field>
+    <Field Def="s32 shootDmyPolyId = -1">
+      <DisplayName>射撃ダミポリID</DisplayName>
+      <Description>射撃ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 shootEndDmyPolyId = -1">
+      <DisplayName>射撃終了ダミポリID</DisplayName>
+      <Description>射撃終了ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s16 shootAngle">
+      <DisplayName>発射角度[deg]</DisplayName>
+      <Description>飛び道具を前方何度に向かって発射するかを指定.</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s16 shootAngleInterval">
+      <DisplayName>発射角度間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Y軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s8 shootAngleXZ">
+      <DisplayName>発射仰角[deg]</DisplayName>
+      <Description>水平方向からの追加仰角。</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 bUseNumShootBullet:1">
+      <DisplayName>同時発射数分弾丸を消費するか </DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>同時発射数分弾丸を消費する</Description>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 isSequenceShootWhenSameTimeShoot:1">
+      <DisplayName>同時発射でも連番発射するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>複数ダミポリを使用する連番発射の際に、同時発射の弾丸も連番発射の対象とするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 isShootAngOffsetDisable:1">
+      <DisplayName>誘導目標にのみオフセットを適用</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>OFFで射撃時の角度にもオフセットを適用、ONでオフセット無効</Description>
+      <Maximum>1</Maximum>
+      <SortID>2099</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:5">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9014</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[2]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9015</SortID>
+    </Field>
+    <Field Def="s16 shootAngleXInterval">
+      <DisplayName>発射仰角間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(X軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="s16 shootAngleZ">
+      <DisplayName>発射Z軸回転[deg]</DisplayName>
+      <Description>飛び道具発射時にZ軸方向へ何度回転させるかを指定.</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 shootAngleZInterval">
+      <DisplayName>発射Z軸回転間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>1</Increment>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="s16 bulletRollAngleZ">
+      <DisplayName>発射ねじり角[deg]</DisplayName>
+      <Description>錐揉み方向の追加角度(Z軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="s16 bulletRollAngleZInterbal">
+      <DisplayName>発射ねじり角間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 bulletRollAngleZRandom">
+      <DisplayName>発射ねじり角乱数[deg]</DisplayName>
+      <Description>発射ねじり角乱数の上限（0～360）</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 shootTargetXOffset">
+      <DisplayName>目標左右オフセット[m]</DisplayName>
+      <Description>着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 targetYOffsetRange">
+      <DisplayName>目標上下オフセット[m]</DisplayName>
+      <Description>着弾位置の上下オフセット。発射時とホーミング中のターゲット位置を上下にずらす。（-n～n）</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="f32 shootTargetZOffset">
+      <DisplayName>目標手前奥オフセット[m]</DisplayName>
+      <Description>着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u8 numShoot = 1">
+      <DisplayName>同時発射数</DisplayName>
+      <Description>薬莢(エミッタ)1つあたりに生成される弾数。弾薬消費には影響しない</Description>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u8 numContinueShoot = 1">
+      <DisplayName>連続発射数</DisplayName>
+      <Description>継続して発射する回数。発射する弾の総数は、同時発射数×連続発射数　となる</Description>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="s16 cupsleRotationDeg">
+      <DisplayName>横向きカプセル初期ロール角度[deg]</DisplayName>
+      <Description>横向きカプセルの回転角度</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 shootInterval">
+      <DisplayName>連続発射間隔[s]</DisplayName>
+      <Description>連続発射時に、何秒間隔で撃つかの秒数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="f32 reloadTimeSecond = 1">
+      <DisplayName>1回撃ってから次に撃てるまでのインターバル</DisplayName>
+      <Description>１回撃ってから次に撃てるまでのインターバル</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="f32 targetZOffsetRange">
+      <DisplayName>曲射目標位置手前奥オフセット[m]</DisplayName>
+      <Description>曲射用着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="f32 targetXOffsetRange">
+      <DisplayName>曲射目標位置左右オフセット[m]</DisplayName>
+      <Description>曲射用着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="u8 bTargetAutoOffset">
+      <DisplayName>目標位置自動オフセット</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>目標位置自動オフセットを使うか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[1]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9016</SortID>
+    </Field>
+    <Field Def="s16 targetAutoOffsetBaseDmyPolyId = -1">
+      <DisplayName>目標位置自動オフセット 基準ダミポリ</DisplayName>
+      <Description>目標位置自動オフセットで使う基準ダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u16 pa_DrainVal">
+      <DisplayName>消費PA</DisplayName>
+      <Description>消費PAゲージ</Description>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="dummy8 pad5[2]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9017</SortID>
+    </Field>
+    <Field Def="f32 pa_OverwriteDelayTimeSec = -1">
+      <DisplayName>PA回復ディレイ時間上書き[sec]</DisplayName>
+      <Description>PAの回復時間を上書きする量(-1で上書きなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 consumeBulletNum = 1">
+      <DisplayName>消費弾数</DisplayName>
+      <Description>攻撃発生時に消費する弾丸数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="f32 recoilBlurAddVal">
+      <DisplayName>攻撃反動ブレ蓄積量</DisplayName>
+      <Description>攻撃反動ブレ蓄積量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="f32 lockTimeSec">
+      <DisplayName>ロック時間[sec]</DisplayName>
+      <Description>二次ロックまでの時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2750</SortID>
+    </Field>
+    <Field Def="u8 maxMissileLockNum">
+      <DisplayName>最大ロック数</DisplayName>
+      <Description>ミサイルロックの最大数</Description>
+      <Maximum>127</Maximum>
+      <SortID>2752</SortID>
+    </Field>
+    <Field Def="u8 shootEnableLockNum">
+      <DisplayName>発射可能ロック数</DisplayName>
+      <Description>ロックカウント数が指定値未満の場合は発射不可とする</Description>
+      <Maximum>99</Maximum>
+      <SortID>2752</SortID>
+    </Field>
+    <Field Def="dummy8 pad6[2]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9018</SortID>
+    </Field>
+    <Field Def="s16 HdPadRumble_Atk_Id = -1">
+      <DisplayName>攻撃発生時振動</DisplayName>
+      <Description>ハプティックフィードバック用の振動ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="s16 HdPadRumble_Hit_Id = -1">
+      <DisplayName>着弾時振動</DisplayName>
+      <Description>ハプティックフィードバック用の着弾時振動ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4110</SortID>
+    </Field>
+    <Field Def="u8 HdPadRumble_Priority">
+      <DisplayName>振動優先度</DisplayName>
+      <Description>ハプティックフィードバック用の再生優先度(0が優先度低、10が優先度高)</Description>
+      <Maximum>10</Maximum>
+      <SortID>4120</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9019</SortID>
+    </Field>
+    <Field Def="s32 shotgunParamId = -1">
+      <DisplayName>散弾制御パラメータID</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="f32 shotgunBaseDist">
+      <DisplayName>拡散基準距離(m)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="f32 heat_AddValue">
+      <DisplayName>ヒート値蓄積量[point] 	</DisplayName>
+      <Description>弾一発ごとに蓄積するヒート値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="s32 targetShotgunParamId = -1">
+      <DisplayName>目標位置オフセット_散弾制御パラメータID</DisplayName>
+      <Description>目標位置に対するオフセット計算</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3310</SortID>
+    </Field>
+    <Field Def="f32 chargeDelayTimeSec">
+      <DisplayName>チャージ開始ディレイ時間[s]</DisplayName>
+      <Description>行動パラ参照後チャージ開始までのディレイ時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2950</SortID>
+    </Field>
+    <Field Def="f32 continueShootConsumeBulletMaxTimeSec">
+      <DisplayName>継続消費弾数_最大時間[s]</DisplayName>
+      <Description>継続消費で消費する弾丸の最大時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="s32 continueShootConsumeBulletMaxNum">
+      <DisplayName>継続消費弾数_最大弾数</DisplayName>
+      <Description>継続消費で消費する最大弾丸数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="f32 continueShootAddHeatMaxTimeSec">
+      <DisplayName>継続ヒート値蓄積_最大時間[s]</DisplayName>
+      <Description>継続消費で蓄積する熱量の最大時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="s32 continueShootAddHeatMaxValue">
+      <DisplayName>継続ヒート値蓄積_最大ヒート値[point]</DisplayName>
+      <Description>継続消費で蓄積する最大熱量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2490</SortID>
+    </Field>
+    <Field Def="f32 lockCountUpTimeSec">
+      <DisplayName>カウントアップ時間[sec]</DisplayName>
+      <Description>ミサイルのロックカウントアップ時間（2ロック目からのロック時間）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <SortID>2750</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9020</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

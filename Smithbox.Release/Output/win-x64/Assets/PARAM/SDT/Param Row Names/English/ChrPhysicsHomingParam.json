@@ -1,0 +1,377 @@
+{
+  "Name": "ChrPhysicsHomingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Deletion prohibited -- 削除禁止"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Homing jump_normal size -- ホーミングジャンプ_通常サイズ"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Homing jump_huge size -- ホーミングジャンプ_巨大サイズ"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Homing Jump_Big Snake -- ホーミングジャンプ_大蛇"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Homing jump_normal size -- ホーミングジャンプ_通常サイズ"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Homing jump_huge size -- ホーミングジャンプ_巨大サイズ"
+      ]
+    },
+    {
+      "ID": 100014500,
+      "Entries": [
+        "Nightjars_Jump attack (test) -- 夜鷹衆_ジャンプ攻撃（テスト）"
+      ]
+    },
+    {
+      "ID": 200000300,
+      "Entries": [
+        "Fall 0_default -- 落下0_デフォルト"
+      ]
+    },
+    {
+      "ID": 200000301,
+      "Entries": [
+        "Fall 0_Large -- 落下0_大型"
+      ]
+    },
+    {
+      "ID": 200000302,
+      "Entries": [
+        "Fall 0_Burning Monk -- 落下0_破戒僧"
+      ]
+    },
+    {
+      "ID": 200000303,
+      "Entries": [
+        "Fall 0_Large Snake -- 落下0_大蛇"
+      ]
+    },
+    {
+      "ID": 200000304,
+      "Entries": [
+        "Fall 0_Red Demon -- 落下0_赤鬼"
+      ]
+    },
+    {
+      "ID": 200000305,
+      "Entries": [
+        "Fall 0_ Centipede size -- 落下0_ムカデ大"
+      ]
+    },
+    {
+      "ID": 200000306,
+      "Entries": [
+        "Fall 0_fire cow -- 落下0_火牛"
+      ]
+    },
+    {
+      "ID": 200000310,
+      "Entries": [
+        "Crushing fall 0_fire cow -- 崩し落下0_火牛"
+      ]
+    },
+    {
+      "ID": 200000320,
+      "Entries": [
+        "Unlimited fall 0_default -- 制限なし落下0_デフォルト"
+      ]
+    },
+    {
+      "ID": 200000321,
+      "Entries": [
+        "Unlimited Fall 0_Okina Dragon -- 制限なし落下0_翁竜"
+      ]
+    },
+    {
+      "ID": 200000330,
+      "Entries": [
+        "Kicking and falling 0_ rival system -- 蹴り崩し落下0_ライバル系"
+      ]
+    },
+    {
+      "ID": 200001300,
+      "Entries": [
+        "Anti-aircraft 0_default -- 対空0_デフォルト"
+      ]
+    },
+    {
+      "ID": 200001600,
+      "Entries": [
+        "Wire 0_default -- ワイヤー0_デフォルト"
+      ]
+    },
+    {
+      "ID": 200001601,
+      "Entries": [
+        "Wire 0_ Cavalry Warrior -- ワイヤー0_騎馬武者"
+      ]
+    },
+    {
+      "ID": 200001602,
+      "Entries": [
+        "Wire 0_Akaoni -- ワイヤー0_赤鬼"
+      ]
+    },
+    {
+      "ID": 300000000,
+      "Entries": [
+        "PC wire_default -- PCワイヤー_デフォルト"
+      ]
+    },
+    {
+      "ID": 300000020,
+      "Entries": [
+        "PC wire_cannot ride default -- PCワイヤー_乗れないデフォルト"
+      ]
+    },
+    {
+      "ID": 300000024,
+      "Entries": [
+        "PC wire_castle snake valley that can not ride -- PCワイヤー_乗れない城下蛇谷"
+      ]
+    },
+    {
+      "ID": 300000040,
+      "Entries": [
+        "PC wire _ kite _ temple ← → valley -- PCワイヤー_凧_寺←→渓谷"
+      ]
+    },
+    {
+      "ID": 300000041,
+      "Entries": [
+        "PC wire _ kite _ main castle _ main enclosure ← → main castle _ outer shell -- PCワイヤー_凧_本城_本丸←→本城_外郭"
+      ]
+    },
+    {
+      "ID": 300010700,
+      "Entries": [
+        "PC wire_c1070_Shura Samurai 0 -- PCワイヤー_c1070_修羅侍0"
+      ]
+    },
+    {
+      "ID": 300010701,
+      "Entries": [
+        "PC wire_c1070_Shura Samurai 1 -- PCワイヤー_c1070_修羅侍1"
+      ]
+    },
+    {
+      "ID": 300010702,
+      "Entries": [
+        "PC wire_c1070_Shura Samurai 2 -- PCワイヤー_c1070_修羅侍2"
+      ]
+    },
+    {
+      "ID": 300010800,
+      "Entries": [
+        "PC Wire_c1080_Seven-sided Warrior 0 -- PCワイヤー_c1080_七面武者0"
+      ]
+    },
+    {
+      "ID": 300010801,
+      "Entries": [
+        "PC Wire_c1080_Seven-sided Warrior 1 -- PCワイヤー_c1080_七面武者1"
+      ]
+    },
+    {
+      "ID": 300010802,
+      "Entries": [
+        "PC Wire_c1080_Seven-sided Warrior 2 -- PCワイヤー_c1080_七面武者2"
+      ]
+    },
+    {
+      "ID": 300011800,
+      "Entries": [
+        "PC wire_c1180_younger man -- PCワイヤー_c1180_下男"
+      ]
+    },
+    {
+      "ID": 300013700,
+      "Entries": [
+        "PC wire_c1370_fire cow_left drifting -- PCワイヤー_c1370_火牛_左ドリフト中"
+      ]
+    },
+    {
+      "ID": 300013701,
+      "Entries": [
+        "PC wire_c1370_fire cow_right drifting -- PCワイヤー_c1370_火牛_右ドリフト中"
+      ]
+    },
+    {
+      "ID": 300050200,
+      "Entries": [
+        "PC wire_c5020_Akaoni_grabbing -- PCワイヤー_c5020_赤鬼_つかみ中"
+      ]
+    },
+    {
+      "ID": 300050201,
+      "Entries": [
+        "PC wire_c5020_red demon_tackle -- PCワイヤー_c5020_赤鬼_タックル中"
+      ]
+    },
+    {
+      "ID": 300050202,
+      "Entries": [
+        "PC wire_c5020_red demon_collapse -- PCワイヤー_c5020_赤鬼_崩れ中"
+      ]
+    },
+    {
+      "ID": 300050600,
+      "Entries": [
+        "PC Wire_c5060_Ninja Army Chief 0 -- PCワイヤー_c5060_忍軍の長0"
+      ]
+    },
+    {
+      "ID": 300050601,
+      "Entries": [
+        "PC Wire_c5060_Ninja Army Chief 1 -- PCワイヤー_c5060_忍軍の長1"
+      ]
+    },
+    {
+      "ID": 300050602,
+      "Entries": [
+        "PC Wire_c5060_Ninja Army Chief 2 -- PCワイヤー_c5060_忍軍の長2"
+      ]
+    },
+    {
+      "ID": 300050800,
+      "Entries": [
+        "PC wire_c5080_horse warrior 0_ javelin throwing -- PCワイヤー_c5080_騎馬武者0_槍投げ中"
+      ]
+    },
+    {
+      "ID": 300050801,
+      "Entries": [
+        "PC wire_c5080_horse warrior 1_spear spinning -- PCワイヤー_c5080_騎馬武者1_槍ぶん回し中"
+      ]
+    },
+    {
+      "ID": 300050802,
+      "Entries": [
+        "PC wire_c5080_horse warrior 2_breaking -- PCワイヤー_c5080_騎馬武者2_崩し中"
+      ]
+    },
+    {
+      "ID": 300050803,
+      "Entries": [
+        "PC Wire_c5080_Cavalry Warrior 3_Drifting A -- PCワイヤー_c5080_騎馬武者3_ドリフト中A"
+      ]
+    },
+    {
+      "ID": 300050804,
+      "Entries": [
+        "PC Wire_c5080_Cavalry Warrior 4_Drifting B -- PCワイヤー_c5080_騎馬武者4_ドリフト中B"
+      ]
+    },
+    {
+      "ID": 300051000,
+      "Entries": [
+        "PC wire_c5100_ Yasha monkey -- PCワイヤー_c5100_夜叉猿"
+      ]
+    },
+    {
+      "ID": 300052000,
+      "Entries": [
+        "PC wire_c5200_mermaid dragon 0 -- PCワイヤー_c5200_人魚竜0"
+      ]
+    },
+    {
+      "ID": 300052001,
+      "Entries": [
+        "PC wire_c5200_mermaid dragon 1 -- PCワイヤー_c5200_人魚竜1"
+      ]
+    },
+    {
+      "ID": 300052005,
+      "Entries": [
+        "PC wire_c5200_mermaid dragon 5 -- PCワイヤー_c5200_人魚竜5"
+      ]
+    },
+    {
+      "ID": 300052006,
+      "Entries": [
+        "PC wire_c5200_mermaid dragon 6 -- PCワイヤー_c5200_人魚竜6"
+      ]
+    },
+    {
+      "ID": 300053100,
+      "Entries": [
+        "PC wire_c5310_ tentacles -- PCワイヤー_c5310_触手"
+      ]
+    },
+    {
+      "ID": 300053105,
+      "Entries": [
+        "PC wire_c5310_tentacle_riding OBJ -- PCワイヤー_c5310_触手_乗る用OBJ"
+      ]
+    },
+    {
+      "ID": 300053200,
+      "Entries": [
+        "PC wire_c5320_Okina Dragon (Large) 0 -- PCワイヤー_c5320_翁竜（大）0"
+      ]
+    },
+    {
+      "ID": 300053201,
+      "Entries": [
+        "PC wire_c5320_Okina Dragon (Large) 1 -- PCワイヤー_c5320_翁竜（大）1"
+      ]
+    },
+    {
+      "ID": 300070200,
+      "Entries": [
+        "PC wire_c7020_Busshi demon_right hand 0 -- PCワイヤー_c7020_仏師鬼_右手0"
+      ]
+    },
+    {
+      "ID": 300070201,
+      "Entries": [
+        "PC wire_c7020_Busshi demon_right hand 1 -- PCワイヤー_c7020_仏師鬼_右手1"
+      ]
+    },
+    {
+      "ID": 300070210,
+      "Entries": [
+        "PC wire_c7021_demon Buddha test -- PCワイヤー_c7021_鬼仏テスト"
+      ]
+    },
+    {
+      "ID": 400000000,
+      "Entries": [
+        "Base_jump move -- ベース_ジャンプ移動"
+      ]
+    },
+    {
+      "ID": 400014500,
+      "Entries": [
+        "Nightjars_Jump move -- 夜鷹衆_ジャンプ移動"
+      ]
+    },
+    {
+      "ID": 400013100,
+      "Entries": [
+        "Genpei Samurai_Jump move -- 源平武者_ジャンプ移動"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "Name": "WetAspectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Wet"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Green"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Brown"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Dull Silver"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dark Green"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Dark Red"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Metallic Silver (Blue Tint)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Red"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Wet Black"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Yellow"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Metallic Silver"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Orange"
+      ]
+    }
+  ]
+}

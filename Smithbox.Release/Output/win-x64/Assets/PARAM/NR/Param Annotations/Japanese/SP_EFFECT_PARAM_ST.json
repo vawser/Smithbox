@@ -1,0 +1,2133 @@
+{
+  "Param": "SP_EFFECT_PARAM_ST",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SP_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "conditionHp",
+      "Description": ""
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "effectEndurance",
+      "Description": ""
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "motionInterval",
+      "Description": ""
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "maxHpRate",
+      "Description": ""
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "maxMpRate",
+      "Description": ""
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "maxStaminaRate",
+      "Description": ""
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "slashDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "blowDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "thrustDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "neutralDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "magicDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "fireDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "thunderDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "physicsAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "magicAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "fireAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "thunderAttackRate",
+      "Name": "thunderAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "physicsAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "magicAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "fireAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "thunderAttackPowerRate",
+      "Name": "thunderAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "physicsAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "magicAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "fireAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "thunderAttackPower",
+      "Name": "thunderAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "physicsDiffenceRate",
+      "Description": ""
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "magicDiffenceRate",
+      "Description": ""
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "fireDiffenceRate",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDiffenceRate",
+      "Name": "thunderDiffenceRate",
+      "Description": ""
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "physicsDiffence",
+      "Description": ""
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "magicDiffence",
+      "Description": ""
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "fireDiffence",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDiffence",
+      "Name": "thunderDiffence",
+      "Description": ""
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "NoGuardDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "vitalSpotChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "poisonInflictRate",
+      "Name": "poisonInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtTargetPosOffset",
+      "Name": "lookAtTargetPosOffset",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "behaviorId",
+      "Description": ""
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "changeHpRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "changeHpPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "changeMpRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "changeMpPoint",
+      "Description": ""
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "mpRecoverChangeSpeed",
+      "Description": ""
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "changeStaminaRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "changeStaminaPoint",
+      "Description": ""
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "staminaRecoverChangeSpeed",
+      "Description": ""
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "magicEffectTimeChange",
+      "Description": ""
+    },
+    {
+      "Field": "diseaseInflictRate",
+      "Name": "diseaseInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "frostInflictRate",
+      "Name": "frostInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "staminaAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "poizonAttackPower",
+      "Name": "poizonAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "diseaseAttackPower",
+      "Name": "diseaseAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "bloodAttackPower",
+      "Name": "bloodAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "curseAttackPower",
+      "Name": "curseAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "fallDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "soulRate",
+      "Name": "soulRate",
+      "Description": ""
+    },
+    {
+      "Field": "sleepInflictRate",
+      "Name": "sleepInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "madnessInflictRate",
+      "Name": "madnessInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "soul",
+      "Name": "soul",
+      "Description": ""
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "animIdOffset",
+      "Description": ""
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "haveSoulRate",
+      "Description": ""
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "targetPriority",
+      "Description": ""
+    },
+    {
+      "Field": "sightSearchEnemyRate",
+      "Name": "sightSearchEnemyRate",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSearchEnemyRate",
+      "Name": "hearingSearchEnemyRate",
+      "Description": ""
+    },
+    {
+      "Field": "applyIdOnKillSp",
+      "Name": "applyIdOnKillSp",
+      "Description": ""
+    },
+    {
+      "Field": "registPoizonChangeRate",
+      "Name": "registPoizonChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "registDiseaseChangeRate",
+      "Name": "registDiseaseChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "registBloodChangeRate",
+      "Name": "registBloodChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "registCurseChangeRate",
+      "Name": "registCurseChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryIconId",
+      "Name": "secondaryIconId",
+      "Description": ""
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "lifeReductionRate",
+      "Description": ""
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "hpRecoverRate",
+      "Description": ""
+    },
+    {
+      "Field": "replaceSpEffectId",
+      "Name": "replaceSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "cycleOccurrenceSpEffectId",
+      "Name": "cycleOccurrenceSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "atkOccurrenceSpEffectId",
+      "Name": "atkOccurrenceSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "guardDefFlickPowerRate",
+      "Name": "guardDefFlickPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "guardStaminaCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "rayCastPassedTime",
+      "Name": "rayCastPassedTime",
+      "Description": ""
+    },
+    {
+      "Field": "magicSubCategoryChange1",
+      "Name": "magicSubCategoryChange1",
+      "Description": ""
+    },
+    {
+      "Field": "magicSubCategoryChange2",
+      "Name": "magicSubCategoryChange2",
+      "Description": ""
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "bowDistRate",
+      "Description": ""
+    },
+    {
+      "Field": "spCategory",
+      "Name": "spCategory",
+      "Description": ""
+    },
+    {
+      "Field": "categoryPriority",
+      "Name": "categoryPriority",
+      "Description": ""
+    },
+    {
+      "Field": "saveCategory",
+      "Name": "saveCategory",
+      "Description": ""
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "changeMagicSlot",
+      "Description": ""
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "changeMiracleSlot",
+      "Description": ""
+    },
+    {
+      "Field": "heroPointDamage",
+      "Name": "heroPointDamage",
+      "Description": ""
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "defFlickPower",
+      "Description": ""
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "flickDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "bloodDamageRate",
+      "Name": "bloodDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_None",
+      "Name": "dmgLv_None",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_S",
+      "Name": "dmgLv_S",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_M",
+      "Name": "dmgLv_M",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_L",
+      "Name": "dmgLv_L",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_BlowM",
+      "Name": "dmgLv_BlowM",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_Push",
+      "Name": "dmgLv_Push",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_Strike",
+      "Name": "dmgLv_Strike",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_BlowS",
+      "Name": "dmgLv_BlowS",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_Min",
+      "Name": "dmgLv_Min",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_Uppercut",
+      "Name": "dmgLv_Uppercut",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_BlowLL",
+      "Name": "dmgLv_BlowLL",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLv_Breath",
+      "Name": "dmgLv_Breath",
+      "Description": ""
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "atkAttribute",
+      "Description": ""
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "spAttribute",
+      "Description": ""
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "stateInfo",
+      "Description": ""
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "wepParamChange",
+      "Description": ""
+    },
+    {
+      "Field": "moveType",
+      "Name": "moveType",
+      "Description": ""
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "lifeReductionType",
+      "Description": ""
+    },
+    {
+      "Field": "throwCondition",
+      "Name": "throwCondition",
+      "Description": ""
+    },
+    {
+      "Field": "addBehaviorJudgeId_condition",
+      "Name": "addBehaviorJudgeId_condition",
+      "Description": ""
+    },
+    {
+      "Field": "freezeDamageRate",
+      "Name": "freezeDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "effectTargetSelf",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "effectTargetFriend",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "effectTargetEnemy",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "effectTargetPlayer",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "effectTargetAI",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "effectTargetLive",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "effectTargetGhost",
+      "Description": ""
+    },
+    {
+      "Field": "disableSleep",
+      "Name": "disableSleep",
+      "Description": ""
+    },
+    {
+      "Field": "disableMadness",
+      "Name": "disableMadness",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "effectTargetAttacker",
+      "Description": ""
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "dispIconNonactive",
+      "Description": ""
+    },
+    {
+      "Field": "regainGaugeDamage",
+      "Name": "regainGaugeDamage",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustMagicAblity",
+      "Name": "bAdjustMagicAblity",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustFaithAblity",
+      "Name": "bAdjustFaithAblity",
+      "Description": ""
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "bGameClearBonus",
+      "Description": ""
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "magParamChange",
+      "Description": ""
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "miracleParamChange",
+      "Description": ""
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "clearSoul",
+      "Description": ""
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "requestSOS",
+      "Description": ""
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "requestBlackSOS",
+      "Description": ""
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "requestForceJoinBlackSOS",
+      "Description": ""
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "requestKickSession",
+      "Description": ""
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "requestLeaveSession",
+      "Description": ""
+    },
+    {
+      "Field": "requestNpcInveda",
+      "Name": "requestNpcInveda",
+      "Description": ""
+    },
+    {
+      "Field": "noDead",
+      "Name": "noDead",
+      "Description": ""
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "bCurrHPIndependeMaxHP",
+      "Description": ""
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "corrosionIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "sightSearchCutIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "hearingSearchCutIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "antiMagicIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "fakeTargetIgnore",
+      "Name": "fakeTargetIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "fakeTargetIgnoreUndead",
+      "Name": "fakeTargetIgnoreUndead",
+      "Description": ""
+    },
+    {
+      "Field": "fakeTargetIgnoreAnimal",
+      "Name": "fakeTargetIgnoreAnimal",
+      "Description": ""
+    },
+    {
+      "Field": "grabityIgnore",
+      "Name": "grabityIgnore",
+      "Description": ""
+    },
+    {
+      "Field": "disablePoison",
+      "Name": "disablePoison",
+      "Description": ""
+    },
+    {
+      "Field": "disableDisease",
+      "Name": "disableDisease",
+      "Description": ""
+    },
+    {
+      "Field": "disableBlood",
+      "Name": "disableBlood",
+      "Description": ""
+    },
+    {
+      "Field": "disableCurse",
+      "Name": "disableCurse",
+      "Description": ""
+    },
+    {
+      "Field": "enableCharm",
+      "Name": "enableCharm",
+      "Description": ""
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "enableLifeTime",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustStrengthAblity",
+      "Name": "bAdjustStrengthAblity",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustAgilityAblity",
+      "Name": "bAdjustAgilityAblity",
+      "Description": ""
+    },
+    {
+      "Field": "eraseOnBonfireRecover",
+      "Name": "eraseOnBonfireRecover",
+      "Description": ""
+    },
+    {
+      "Field": "throwAttackParamChange",
+      "Name": "throwAttackParamChange",
+      "Description": ""
+    },
+    {
+      "Field": "requestLeaveColiseumSession",
+      "Name": "requestLeaveColiseumSession",
+      "Description": ""
+    },
+    {
+      "Field": "isExtendSpEffectLife",
+      "Name": "isExtendSpEffectLife",
+      "Description": ""
+    },
+    {
+      "Field": "hasTarget",
+      "Name": "hasTarget",
+      "Description": ""
+    },
+    {
+      "Field": "replanningOnFire",
+      "Name": "replanningOnFire",
+      "Description": ""
+    },
+    {
+      "Field": "vowType0",
+      "Name": "vowType0",
+      "Description": ""
+    },
+    {
+      "Field": "vowType1",
+      "Name": "vowType1",
+      "Description": ""
+    },
+    {
+      "Field": "vowType2",
+      "Name": "vowType2",
+      "Description": ""
+    },
+    {
+      "Field": "vowType3",
+      "Name": "vowType3",
+      "Description": ""
+    },
+    {
+      "Field": "vowType4",
+      "Name": "vowType4",
+      "Description": ""
+    },
+    {
+      "Field": "vowType5",
+      "Name": "vowType5",
+      "Description": ""
+    },
+    {
+      "Field": "vowType6",
+      "Name": "vowType6",
+      "Description": ""
+    },
+    {
+      "Field": "vowType7",
+      "Name": "vowType7",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "vowType8",
+      "Description": ""
+    },
+    {
+      "Field": "vowType9",
+      "Name": "vowType9",
+      "Description": ""
+    },
+    {
+      "Field": "vowType10",
+      "Name": "vowType10",
+      "Description": ""
+    },
+    {
+      "Field": "vowType11",
+      "Name": "vowType11",
+      "Description": ""
+    },
+    {
+      "Field": "vowType12",
+      "Name": "vowType12",
+      "Description": ""
+    },
+    {
+      "Field": "vowType13",
+      "Name": "vowType13",
+      "Description": ""
+    },
+    {
+      "Field": "vowType14",
+      "Name": "vowType14",
+      "Description": ""
+    },
+    {
+      "Field": "vowType15",
+      "Name": "vowType15",
+      "Description": ""
+    },
+    {
+      "Field": "repAtkDmgLv",
+      "Name": "repAtkDmgLv",
+      "Description": ""
+    },
+    {
+      "Field": "sightSearchRate",
+      "Name": "sightSearchRate",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetOpposeTarget",
+      "Name": "effectTargetOpposeTarget",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetFriendlyTarget",
+      "Name": "effectTargetFriendlyTarget",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetSelfTarget",
+      "Name": "effectTargetSelfTarget",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetPcHorse",
+      "Name": "effectTargetPcHorse",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetPcDeceased",
+      "Name": "effectTargetPcDeceased",
+      "Description": ""
+    },
+    {
+      "Field": "isContractSpEffectLife",
+      "Name": "isContractSpEffectLife",
+      "Description": ""
+    },
+    {
+      "Field": "isWaitModeDelete",
+      "Name": "isWaitModeDelete",
+      "Description": ""
+    },
+    {
+      "Field": "isIgnoreNoDamage",
+      "Name": "isIgnoreNoDamage",
+      "Description": ""
+    },
+    {
+      "Field": "changeTeamType",
+      "Name": "changeTeamType",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "dmypolyId",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId",
+      "Name": "vfxId",
+      "Description": ""
+    },
+    {
+      "Field": "accumuOverFireId",
+      "Name": "accumuOverFireId",
+      "Description": ""
+    },
+    {
+      "Field": "accumuOverVal",
+      "Name": "accumuOverVal",
+      "Description": ""
+    },
+    {
+      "Field": "accumuUnderFireId",
+      "Name": "accumuUnderFireId",
+      "Description": ""
+    },
+    {
+      "Field": "accumuUnderVal",
+      "Name": "accumuUnderVal",
+      "Description": ""
+    },
+    {
+      "Field": "accumuVal",
+      "Name": "accumuVal",
+      "Description": ""
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "eye_angX",
+      "Description": ""
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "eye_angY",
+      "Description": ""
+    },
+    {
+      "Field": "addDeceasedLv",
+      "Name": "addDeceasedLv",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId1",
+      "Name": "vfxId1",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId2",
+      "Name": "vfxId2",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId3",
+      "Name": "vfxId3",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId4",
+      "Name": "vfxId4",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId5",
+      "Name": "vfxId5",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId6",
+      "Name": "vfxId6",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId7",
+      "Name": "vfxId7",
+      "Description": ""
+    },
+    {
+      "Field": "freezeAttackPower",
+      "Name": "freezeAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "AppearAiSoundId",
+      "Description": ""
+    },
+    {
+      "Field": "addFootEffectSfxId",
+      "Name": "addFootEffectSfxId",
+      "Description": ""
+    },
+    {
+      "Field": "dexterityCancelSystemOnlyAddDexterity",
+      "Name": "dexterityCancelSystemOnlyAddDexterity",
+      "Description": ""
+    },
+    {
+      "Field": "teamOffenseEffectivity",
+      "Name": "teamOffenseEffectivity",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "toughnessDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateA",
+      "Name": "weakDmgRateA",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateB",
+      "Name": "weakDmgRateB",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateC",
+      "Name": "weakDmgRateC",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateD",
+      "Name": "weakDmgRateD",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateE",
+      "Name": "weakDmgRateE",
+      "Description": ""
+    },
+    {
+      "Field": "weakDmgRateF",
+      "Name": "weakDmgRateF",
+      "Description": ""
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "darkDamageCutRate",
+      "Description": ""
+    },
+    {
+      "Field": "darkDiffenceRate",
+      "Name": "darkDiffenceRate",
+      "Description": ""
+    },
+    {
+      "Field": "quaternaryIconId",
+      "Name": "quaternaryIconId",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackRate",
+      "Name": "darkAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackPowerRate",
+      "Name": "darkAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackPower",
+      "Name": "darkAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "bloodInflictRate",
+      "Name": "bloodInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "curseInflictRate",
+      "Name": "curseInflictRate",
+      "Description": ""
+    },
+    {
+      "Field": "conditionHpRate",
+      "Name": "conditionHpRate",
+      "Description": ""
+    },
+    {
+      "Field": "consumeStaminaRate",
+      "Name": "consumeStaminaRate",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRate",
+      "Name": "itemDropRate",
+      "Description": ""
+    },
+    {
+      "Field": "changePoisonResistPoint",
+      "Name": "changePoisonResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeDiseaseResistPoint",
+      "Name": "changeDiseaseResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeBloodResistPoint",
+      "Name": "changeBloodResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeCurseResistPoint",
+      "Name": "changeCurseResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeFreezeResistPoint",
+      "Name": "changeFreezeResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "slashAttackRate",
+      "Name": "slashAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "blowAttackRate",
+      "Name": "blowAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "thrustAttackRate",
+      "Name": "thrustAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "neutralAttackRate",
+      "Name": "neutralAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "slashAttackPowerRate",
+      "Name": "slashAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "blowAttackPowerRate",
+      "Name": "blowAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "thrustAttackPowerRate",
+      "Name": "thrustAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "neutralAttackPowerRate",
+      "Name": "neutralAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "slashAttackPower",
+      "Name": "slashAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "blowAttackPower",
+      "Name": "blowAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "thrustAttackPower",
+      "Name": "thrustAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "neutralAttackPower",
+      "Name": "neutralAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "subSa",
+      "Name": "subSa",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusMax",
+      "Name": "subSaBonusMax",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Magic",
+      "Name": "subSaBonusRate_Magic",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Fire",
+      "Name": "subSaBonusRate_Fire",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Lightning",
+      "Name": "subSaBonusRate_Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Holy",
+      "Name": "subSaBonusRate_Holy",
+      "Description": ""
+    },
+    {
+      "Field": "tertiaryIconId",
+      "Name": "tertiaryIconId",
+      "Description": ""
+    },
+    {
+      "Field": "madnessDamageRate",
+      "Name": "madnessDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "isUseStatusAilmentAtkPowerCorrect",
+      "Name": "isUseStatusAilmentAtkPowerCorrect",
+      "Description": ""
+    },
+    {
+      "Field": "isUseAtkParamAtkPowerCorrect",
+      "Name": "isUseAtkParamAtkPowerCorrect",
+      "Description": ""
+    },
+    {
+      "Field": "dontDeleteOnDead",
+      "Name": "dontDeleteOnDead",
+      "Description": ""
+    },
+    {
+      "Field": "disableFreeze",
+      "Name": "disableFreeze",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableNetSync",
+      "Name": "isDisableNetSync",
+      "Description": ""
+    },
+    {
+      "Field": "shamanParamChange",
+      "Name": "shamanParamChange",
+      "Description": ""
+    },
+    {
+      "Field": "isStopSearchedNotify",
+      "Name": "isStopSearchedNotify",
+      "Description": ""
+    },
+    {
+      "Field": "isCheckAboveShadowTest",
+      "Name": "isCheckAboveShadowTest",
+      "Description": ""
+    },
+    {
+      "Field": "addBehaviorJudgeId_add",
+      "Name": "addBehaviorJudgeId_add",
+      "Description": ""
+    },
+    {
+      "Field": "saReceiveDamageRate",
+      "Name": "saReceiveDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeGuardAngle",
+      "Name": "changeGuardAngle",
+      "Description": ""
+    },
+    {
+      "Field": "wepTypeTrigger",
+      "Name": "wepTypeTrigger",
+      "Description": ""
+    },
+    {
+      "Field": "wepTypeTriggerCount",
+      "Name": "wepTypeTriggerCount",
+      "Description": ""
+    },
+    {
+      "Field": "startingItemAmount",
+      "Name": "startingItemAmount",
+      "Description": ""
+    },
+    {
+      "Field": "enemyStateInfoTrigger",
+      "Name": "enemyStateInfoTrigger",
+      "Description": ""
+    },
+    {
+      "Field": "startGoodsId",
+      "Name": "startGoodsId",
+      "Description": ""
+    },
+    {
+      "Field": "heroStatusId",
+      "Name": "heroStatusId",
+      "Description": ""
+    },
+    {
+      "Field": "startSwordArtsId",
+      "Name": "startSwordArtsId",
+      "Description": ""
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Physics",
+      "Name": "defEnemyDmgCorrectRate_Physics",
+      "Description": ""
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Magic",
+      "Name": "defEnemyDmgCorrectRate_Magic",
+      "Description": ""
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Fire",
+      "Name": "defEnemyDmgCorrectRate_Fire",
+      "Description": ""
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Thunder",
+      "Name": "defEnemyDmgCorrectRate_Thunder",
+      "Description": ""
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Dark",
+      "Name": "defEnemyDmgCorrectRate_Dark",
+      "Description": ""
+    },
+    {
+      "Field": "defObjDmgCorrectRate",
+      "Name": "defObjDmgCorrectRate",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Poison",
+      "Name": "subSaBonusRate_Poison",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_ScarletRot",
+      "Name": "subSaBonusRate_ScarletRot",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Bleed",
+      "Name": "subSaBonusRate_Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Blight",
+      "Name": "subSaBonusRate_Blight",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Frostbite",
+      "Name": "subSaBonusRate_Frostbite",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Sleep",
+      "Name": "subSaBonusRate_Sleep",
+      "Description": ""
+    },
+    {
+      "Field": "subSaBonusRate_Madness",
+      "Name": "subSaBonusRate_Madness",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTextId_2",
+      "Name": "spEffectTextId_2",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTextId_3",
+      "Name": "spEffectTextId_3",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTextId_4",
+      "Name": "spEffectTextId_4",
+      "Description": ""
+    },
+    {
+      "Field": "registFreezeChangeRate",
+      "Name": "registFreezeChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "invocationConditionsStateChange1",
+      "Name": "invocationConditionsStateChange1",
+      "Description": ""
+    },
+    {
+      "Field": "invocationConditionsStateChange2",
+      "Name": "invocationConditionsStateChange2",
+      "Description": ""
+    },
+    {
+      "Field": "invocationConditionsStateChange3",
+      "Name": "invocationConditionsStateChange3",
+      "Description": ""
+    },
+    {
+      "Field": "hearingAiSoundLevel",
+      "Name": "hearingAiSoundLevel",
+      "Description": ""
+    },
+    {
+      "Field": "chrProxyHeightRate",
+      "Name": "chrProxyHeightRate",
+      "Description": ""
+    },
+    {
+      "Field": "addAwarePointCorrectValue_forMe",
+      "Name": "addAwarePointCorrectValue_forMe",
+      "Description": ""
+    },
+    {
+      "Field": "addAwarePointCorrectValue_forTarget",
+      "Name": "addAwarePointCorrectValue_forTarget",
+      "Description": ""
+    },
+    {
+      "Field": "sightSearchEnemyAdd",
+      "Name": "sightSearchEnemyAdd",
+      "Description": ""
+    },
+    {
+      "Field": "sightSearchAdd",
+      "Name": "sightSearchAdd",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSearchAdd",
+      "Name": "hearingSearchAdd",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSearchRate",
+      "Name": "hearingSearchRate",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSearchEnemyAdd",
+      "Name": "hearingSearchEnemyAdd",
+      "Description": ""
+    },
+    {
+      "Field": "value_Magnification",
+      "Name": "value_Magnification",
+      "Description": ""
+    },
+    {
+      "Field": "artsConsumptionRate",
+      "Name": "artsConsumptionRate",
+      "Description": ""
+    },
+    {
+      "Field": "magicConsumptionRate",
+      "Name": "magicConsumptionRate",
+      "Description": ""
+    },
+    {
+      "Field": "shamanConsumptionRate",
+      "Name": "shamanConsumptionRate",
+      "Description": ""
+    },
+    {
+      "Field": "miracleConsumptionRate",
+      "Name": "miracleConsumptionRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeHpEstusFlaskRate",
+      "Name": "changeHpEstusFlaskRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeHpEstusFlaskPoint",
+      "Name": "changeHpEstusFlaskPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeMpEstusFlaskRate",
+      "Name": "changeMpEstusFlaskRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeMpEstusFlaskPoint",
+      "Name": "changeMpEstusFlaskPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeHpEstusFlaskCorrectRate",
+      "Name": "changeHpEstusFlaskCorrectRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeMpEstusFlaskCorrectRate",
+      "Name": "changeMpEstusFlaskCorrectRate",
+      "Description": ""
+    },
+    {
+      "Field": "applyIdOnGetSoul",
+      "Name": "applyIdOnGetSoul",
+      "Description": ""
+    },
+    {
+      "Field": "extendLifeRate",
+      "Name": "extendLifeRate",
+      "Description": ""
+    },
+    {
+      "Field": "contractLifeRate",
+      "Name": "contractLifeRate",
+      "Description": ""
+    },
+    {
+      "Field": "defObjectAttackPowerRate",
+      "Name": "defObjectAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "effectEndDeleteDecalGroupId",
+      "Name": "effectEndDeleteDecalGroupId",
+      "Description": ""
+    },
+    {
+      "Field": "addLifeForceStatus",
+      "Name": "addLifeForceStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addWillpowerStatus",
+      "Name": "addWillpowerStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addEndureStatus",
+      "Name": "addEndureStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addVitalityStatus",
+      "Name": "addVitalityStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addStrengthStatus",
+      "Name": "addStrengthStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addDexterityStatus",
+      "Name": "addDexterityStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addMagicStatus",
+      "Name": "addMagicStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addFaithStatus",
+      "Name": "addFaithStatus",
+      "Description": ""
+    },
+    {
+      "Field": "addLuckStatus",
+      "Name": "addLuckStatus",
+      "Description": ""
+    },
+    {
+      "Field": "deleteCriteriaDamage",
+      "Name": "deleteCriteriaDamage",
+      "Description": ""
+    },
+    {
+      "Field": "magicSubCategoryChange3",
+      "Name": "magicSubCategoryChange3",
+      "Description": ""
+    },
+    {
+      "Field": "spAttributeVariationValue",
+      "Name": "spAttributeVariationValue",
+      "Description": ""
+    },
+    {
+      "Field": "atkFlickPower",
+      "Name": "atkFlickPower",
+      "Description": ""
+    },
+    {
+      "Field": "wetConditionDepth",
+      "Name": "wetConditionDepth",
+      "Description": ""
+    },
+    {
+      "Field": "changeSaRecoveryVelocity",
+      "Name": "changeSaRecoveryVelocity",
+      "Description": ""
+    },
+    {
+      "Field": "regainRate",
+      "Name": "regainRate",
+      "Description": ""
+    },
+    {
+      "Field": "saAttackPowerRate",
+      "Name": "saAttackPowerRate",
+      "Description": ""
+    },
+    {
+      "Field": "sleepAttackPower",
+      "Name": "sleepAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "madnessAttackPower",
+      "Name": "madnessAttackPower",
+      "Description": ""
+    },
+    {
+      "Field": "registSleepChangeRate",
+      "Name": "registSleepChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "registMadnessChangeRate",
+      "Name": "registMadnessChangeRate",
+      "Description": ""
+    },
+    {
+      "Field": "changeSleepResistPoint",
+      "Name": "changeSleepResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeMadnessResistPoint",
+      "Name": "changeMadnessResistPoint",
+      "Description": ""
+    },
+    {
+      "Field": "sleepDamageRate",
+      "Name": "sleepDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "applyPartsGroup",
+      "Name": "applyPartsGroup",
+      "Description": ""
+    },
+    {
+      "Field": "clearTarget",
+      "Name": "clearTarget",
+      "Description": ""
+    },
+    {
+      "Field": "fakeTargetIgnoreAjin",
+      "Name": "fakeTargetIgnoreAjin",
+      "Description": ""
+    },
+    {
+      "Field": "fakeTargetIgnoreMirageArts",
+      "Name": "fakeTargetIgnoreMirageArts",
+      "Description": ""
+    },
+    {
+      "Field": "requestForceJoinBlackSOS_B",
+      "Name": "requestForceJoinBlackSOS_B",
+      "Description": ""
+    },
+    {
+      "Field": "isDestinedDeathHpMult",
+      "Name": "isDestinedDeathHpMult",
+      "Description": ""
+    },
+    {
+      "Field": "isHpBurnEffect",
+      "Name": "isHpBurnEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x352_6",
+      "Name": "unknown_0x352_6",
+      "Description": ""
+    },
+    {
+      "Field": "isPeriodicEffect",
+      "Name": "isPeriodicEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239a",
+      "Name": "unknown_239a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239b",
+      "Name": "unknown_239b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239c",
+      "Name": "unknown_239c",
+      "Description": ""
+    },
+    {
+      "Field": "displayIconForPermamentEffect",
+      "Name": "displayIconForPermamentEffect",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239e",
+      "Name": "unknown_239e",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239f",
+      "Name": "unknown_239f",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239g",
+      "Name": "unknown_239g",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_239h",
+      "Name": "unknown_239h",
+      "Description": ""
+    },
+    {
+      "Field": "changeSuperArmorPoint",
+      "Name": "changeSuperArmorPoint",
+      "Description": ""
+    },
+    {
+      "Field": "changeSaPoint",
+      "Name": "changeSaPoint",
+      "Description": ""
+    },
+    {
+      "Field": "hugeEnemyPickupHeightOverwrite",
+      "Name": "hugeEnemyPickupHeightOverwrite",
+      "Description": ""
+    },
+    {
+      "Field": "poisonDefDamageRate",
+      "Name": "poisonDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "diseaseDefDamageRate",
+      "Name": "diseaseDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "bloodDefDamageRate",
+      "Name": "bloodDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "curseDefDamageRate",
+      "Name": "curseDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "freezeDefDamageRate",
+      "Name": "freezeDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "sleepDefDamageRate",
+      "Name": "sleepDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "madnessDefDamageRate",
+      "Name": "madnessDefDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "overwrite_maxBackhomeDist",
+      "Name": "overwrite_maxBackhomeDist",
+      "Description": ""
+    },
+    {
+      "Field": "overwrite_backhomeDist",
+      "Name": "overwrite_backhomeDist",
+      "Description": ""
+    },
+    {
+      "Field": "overwrite_backhomeBattleDist",
+      "Name": "overwrite_backhomeBattleDist",
+      "Description": ""
+    },
+    {
+      "Field": "overwrite_BackHome_LookTargetDist",
+      "Name": "overwrite_BackHome_LookTargetDist",
+      "Description": ""
+    },
+    {
+      "Field": "goodsConsumptionRate",
+      "Name": "goodsConsumptionRate",
+      "Description": ""
+    },
+    {
+      "Field": "guardStaminaMult",
+      "Name": "guardStaminaMult",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtGaugeRate",
+      "Name": "ultimateArtGaugeRate",
+      "Description": ""
+    },
+    {
+      "Field": "characterSkillCooldownReduction",
+      "Name": "characterSkillCooldownReduction",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtGauge",
+      "Name": "ultimateArtGauge",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtGaugeRecovery",
+      "Name": "ultimateArtGaugeRecovery",
+      "Description": ""
+    },
+    {
+      "Field": "arrowBehaviorOffset",
+      "Name": "arrowBehaviorOffset",
+      "Description": ""
+    },
+    {
+      "Field": "playerHandValue",
+      "Name": "playerHandValue",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTextId_1",
+      "Name": "spEffectTextId_1",
+      "Description": ""
+    },
+    {
+      "Field": "currentHealthAttackRate",
+      "Name": "currentHealthAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "triggerOnWepType",
+      "Name": "triggerOnWepType",
+      "Description": ""
+    },
+    {
+      "Field": "triggerAttachedWeapon",
+      "Name": "triggerAttachedWeapon",
+      "Description": ""
+    },
+    {
+      "Field": "additionalCharacterSkillUse",
+      "Name": "additionalCharacterSkillUse",
+      "Description": ""
+    },
+    {
+      "Field": "triggerEffectOnKnockback_unk",
+      "Name": "triggerEffectOnKnockback_unk",
+      "Description": ""
+    },
+    {
+      "Field": "weakPointValue",
+      "Name": "weakPointValue",
+      "Description": ""
+    },
+    {
+      "Field": "runeDiscountValue",
+      "Name": "runeDiscountValue",
+      "Description": ""
+    },
+    {
+      "Field": "modifyPlayerLevel",
+      "Name": "modifyPlayerLevel",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtDuration",
+      "Name": "ultimateArtDuration",
+      "Description": ""
+    },
+    {
+      "Field": "restageAttackRate",
+      "Name": "restageAttackRate",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_240",
+      "Name": "unknown_240",
+      "Description": ""
+    },
+    {
+      "Field": "revenantFamily_spEffectId_1",
+      "Name": "revenantFamily_spEffectId_1",
+      "Description": ""
+    },
+    {
+      "Field": "revenantFamily_spEffectId_2",
+      "Name": "revenantFamily_spEffectId_2",
+      "Description": ""
+    },
+    {
+      "Field": "revenantFamily_spEffectId_3",
+      "Name": "revenantFamily_spEffectId_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241a",
+      "Name": "unknown_241a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241b_1",
+      "Name": "unknown_241b_1",
+      "Description": ""
+    },
+    {
+      "Field": "isSubSaUseMultiplayCorrect",
+      "Name": "isSubSaUseMultiplayCorrect",
+      "Description": ""
+    },
+    {
+      "Field": "dedupeAccumuTrigger",
+      "Name": "dedupeAccumuTrigger",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241b_4",
+      "Name": "unknown_241b_4",
+      "Description": ""
+    },
+    {
+      "Field": "syncTotalHp",
+      "Name": "syncTotalHp",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241b_6",
+      "Name": "unknown_241b_6",
+      "Description": ""
+    },
+    {
+      "Field": "dispDartDebuffStacks",
+      "Name": "dispDartDebuffStacks",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241b_8",
+      "Name": "unknown_241b_8",
+      "Description": ""
+    },
+    {
+      "Field": "randomChanceValue",
+      "Name": "randomChanceValue",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_241d",
+      "Name": "unknown_241d",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    },
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "necromancyActivationSpEffectId",
+      "Name": "necromancyActivationSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtGaugeChargeRate",
+      "Name": "ultimateArtGaugeChargeRate",
+      "Description": ""
+    },
+    {
+      "Field": "conditionStamina",
+      "Name": "conditionStamina",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04",
+      "Name": "unk_04",
+      "Description": ""
+    },
+    {
+      "Field": "poisonDamageRate",
+      "Name": "poisonDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "diseaseDamageRate",
+      "Name": "diseaseDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05",
+      "Name": "unk_05",
+      "Description": ""
+    },
+    {
+      "Field": "rainDamageCorrection",
+      "Name": "rainDamageCorrection",
+      "Description": ""
+    },
+    {
+      "Field": "weaponTypeDiscovery",
+      "Name": "weaponTypeDiscovery",
+      "Description": ""
+    },
+    {
+      "Field": "heroStatusModifier",
+      "Name": "heroStatusModifier",
+      "Description": ""
+    },
+    {
+      "Field": "analyzeAcquire_effectId",
+      "Name": "analyzeAcquire_effectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyzeSelfLevel1_effectId",
+      "Name": "analyzeSelfLevel1_effectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyzeSelfLevel2_effectId",
+      "Name": "analyzeSelfLevel2_effectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyzeSelfLevel3_effectId",
+      "Name": "analyzeSelfLevel3_effectId",
+      "Description": ""
+    },
+    {
+      "Field": "startMagicId",
+      "Name": "startMagicId",
+      "Description": ""
+    },
+    {
+      "Field": "frostInflictRate_old",
+      "Name": "frostInflictRate_old",
+      "Description": ""
+    },
+    {
+      "Field": "sleepInflictRate_old",
+      "Name": "sleepInflictRate_old",
+      "Description": ""
+    },
+    {
+      "Field": "madnessInflictRate_old",
+      "Name": "madnessInflictRate_old",
+      "Description": ""
+    },
+    {
+      "Field": "applyIdOnKillSp_old",
+      "Name": "applyIdOnKillSp_old",
+      "Description": ""
+    }
+  ]
+}

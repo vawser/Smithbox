@@ -1,0 +1,47 @@
+{
+  "Key": "DAMAGE_SP_EFFECT_TARGET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_SP_EFFECT_TARGET"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The one who was eaten"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The one who gave"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both"
+        }
+      ]
+    }
+  ]
+}

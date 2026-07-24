@@ -1,0 +1,38 @@
+{
+  "Key": "MENU_PROPERTY_CMP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_PROPERTY_CMP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greater than is positive"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Less than is positive"
+        }
+      ]
+    }
+  ]
+}

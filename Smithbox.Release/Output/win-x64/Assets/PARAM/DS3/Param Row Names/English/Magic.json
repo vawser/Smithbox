@@ -1,0 +1,1523 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Farron Dart"
+      ]
+    },
+    {
+      "ID": 1210000,
+      "Entries": [
+        "Great Farron Dart"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 1301000,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 1302000,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 1303000,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 1304000,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 1305000,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 1306000,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 1307000,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 1308000,
+      "Entries": [
+        "Deep Soul"
+      ]
+    },
+    {
+      "ID": 1309000,
+      "Entries": [
+        "Great Deep Soul"
+      ]
+    },
+    {
+      "ID": 1310000,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 1311000,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 1312000,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 1313000,
+      "Entries": [
+        "Frozen Weapon"
+      ]
+    },
+    {
+      "ID": 1330000,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 1331000,
+      "Entries": [
+        "Great Magic Shield"
+      ]
+    },
+    {
+      "ID": 1340000,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 1341000,
+      "Entries": [
+        "Hidden Body"
+      ]
+    },
+    {
+      "ID": 1350000,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 1353000,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 1354000,
+      "Entries": [
+        "Spook"
+      ]
+    },
+    {
+      "ID": 1355000,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 1356000,
+      "Entries": [
+        "Aural Decoy"
+      ]
+    },
+    {
+      "ID": 1370000,
+      "Entries": [
+        "White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 1372000,
+      "Entries": [
+        "Farron Hail"
+      ]
+    },
+    {
+      "ID": 1373000,
+      "Entries": [
+        "Crystal Hail"
+      ]
+    },
+    {
+      "ID": 1374000,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 1375000,
+      "Entries": [
+        "Farron Flashsword"
+      ]
+    },
+    {
+      "ID": 1376000,
+      "Entries": [
+        "Old Moonlight"
+      ]
+    },
+    {
+      "ID": 1603000,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 1604000,
+      "Entries": [
+        "Great Soul Dregs"
+      ]
+    },
+    {
+      "ID": 1613000,
+      "Entries": [
+        "Dark Edge"
+      ]
+    },
+    {
+      "ID": 1620000,
+      "Entries": [
+        "Soul Stream"
+      ]
+    },
+    {
+      "ID": 1651000,
+      "Entries": [
+        "Twisted Wall of Light"
+      ]
+    },
+    {
+      "ID": 1740000,
+      "Entries": [
+        "Pestilent Mist"
+      ]
+    },
+    {
+      "ID": 1741000,
+      "Entries": [
+        "Snap Freeze"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 2402000,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 2403000,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 2405000,
+      "Entries": [
+        "Fire Surge"
+      ]
+    },
+    {
+      "ID": 2407000,
+      "Entries": [
+        "Black Serpent"
+      ]
+    },
+    {
+      "ID": 2410000,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 2411000,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 2420000,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 2421000,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 2422000,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 2430000,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 2431000,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 2435000,
+      "Entries": [
+        "Carthus Flame Arc"
+      ]
+    },
+    {
+      "ID": 2436000,
+      "Entries": [
+        "Rapport"
+      ]
+    },
+    {
+      "ID": 2440000,
+      "Entries": [
+        "Power Within"
+      ]
+    },
+    {
+      "ID": 2450000,
+      "Entries": [
+        "Great Chaos Fire Orb"
+      ]
+    },
+    {
+      "ID": 2451000,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 2452000,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 2453000,
+      "Entries": [
+        "Black Flame"
+      ]
+    },
+    {
+      "ID": 2455000,
+      "Entries": [
+        "Profaned Flame"
+      ]
+    },
+    {
+      "ID": 2456000,
+      "Entries": [
+        "Chaos Bed Vestiges"
+      ]
+    },
+    {
+      "ID": 2457000,
+      "Entries": [
+        "Floating Chaos"
+      ]
+    },
+    {
+      "ID": 2458000,
+      "Entries": [
+        "Flame Fan"
+      ]
+    },
+    {
+      "ID": 2470000,
+      "Entries": [
+        "Warmth"
+      ]
+    },
+    {
+      "ID": 2562000,
+      "Entries": [
+        "Profuse Sweat"
+      ]
+    },
+    {
+      "ID": 2600000,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 2610000,
+      "Entries": [
+        "Black Fire Orb"
+      ]
+    },
+    {
+      "ID": 2620000,
+      "Entries": [
+        "Bursting Fireball"
+      ]
+    },
+    {
+      "ID": 2630000,
+      "Entries": [
+        "Boulder Heave"
+      ]
+    },
+    {
+      "ID": 2640000,
+      "Entries": [
+        "Sacred Flame"
+      ]
+    },
+    {
+      "ID": 2650000,
+      "Entries": [
+        "Carthus Beacon"
+      ]
+    },
+    {
+      "ID": 2660000,
+      "Entries": [
+        "Seething Chaos"
+      ]
+    },
+    {
+      "ID": 3490000,
+      "Entries": [
+        "Heal Aid"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 3500006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3501000,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 3501006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3502000,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 3502006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3503000,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 3503006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3504000,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 3505000,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 3505006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3507000,
+      "Entries": [
+        "Bountiful Light"
+      ]
+    },
+    {
+      "ID": 3508000,
+      "Entries": [
+        "Caressing Tears"
+      ]
+    },
+    {
+      "ID": 3508006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3509000,
+      "Entries": [
+        "Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 3513000,
+      "Entries": [
+        "Morbid Temptation"
+      ]
+    },
+    {
+      "ID": 3520000,
+      "Entries": [
+        "Tears of Denial"
+      ]
+    },
+    {
+      "ID": 3521000,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 3530000,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 3531000,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 3532000,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 3540000,
+      "Entries": [
+        "Seek Guidance"
+      ]
+    },
+    {
+      "ID": 3550000,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 3551000,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 3552000,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 3553000,
+      "Entries": [
+        "Lightning Storm"
+      ]
+    },
+    {
+      "ID": 3554000,
+      "Entries": [
+        "Gnaw"
+      ]
+    },
+    {
+      "ID": 3555000,
+      "Entries": [
+        "Dorhys' Gnawing"
+      ]
+    },
+    {
+      "ID": 3556000,
+      "Entries": [
+        "Way of White Corona"
+      ]
+    },
+    {
+      "ID": 3557000,
+      "Entries": [
+        "Projected Heal"
+      ]
+    },
+    {
+      "ID": 3557006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3560000,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 3561000,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 3563000,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 3563006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3581000,
+      "Entries": [
+        "Vow of Silence"
+      ]
+    },
+    {
+      "ID": 3581006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3590000,
+      "Entries": [
+        "Lightning Blade"
+      ]
+    },
+    {
+      "ID": 3591000,
+      "Entries": [
+        "Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 3640000,
+      "Entries": [
+        "Dark Blade"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Dead Again"
+      ]
+    },
+    {
+      "ID": 3710000,
+      "Entries": [
+        "Lightning Stake"
+      ]
+    },
+    {
+      "ID": 3720000,
+      "Entries": [
+        "Divine Pillars of Light"
+      ]
+    },
+    {
+      "ID": 3730000,
+      "Entries": [
+        "Lifehunt Scythe"
+      ]
+    },
+    {
+      "ID": 3730100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3730200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3730300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3730400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3750000,
+      "Entries": [
+        "Dorris Swarm"
+      ]
+    },
+    {
+      "ID": 3750100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3750200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3750300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3750400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3760000,
+      "Entries": [
+        "Blessed Weapon"
+      ]
+    },
+    {
+      "ID": 3770000,
+      "Entries": [
+        "Deep Protection"
+      ]
+    },
+    {
+      "ID": 3780000,
+      "Entries": [
+        "Atonement"
+      ]
+    },
+    {
+      "ID": 5200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5210000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5301000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5302000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5303000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5304000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5305000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5306000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5307000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5308000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5309000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5310000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5311000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5312000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5313000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5330000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5331000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5340000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5341000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5350000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5353000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5354000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5355000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5356000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5370000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5372000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5373000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5374000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5375000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5376000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5603000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5604000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5613000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5620000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5651000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5740000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5741000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6402000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6403000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6405000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6407000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6410000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6411000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6420000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6421000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6422000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6430000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6431000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6435000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6436000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6440000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6450000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6451000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6452000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6453000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6455000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6456000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6457000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6458000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6470000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6562000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6600000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6610000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6620000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6630000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6640000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6650000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6660000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7490000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7501000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7501006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7502000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7502006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7503000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7503006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7504000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7505000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7505006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7507000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7508000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7508006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7509000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7513000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7520000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7521000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7530000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7531000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7532000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7540000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7550000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7551000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7552000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7553000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7554000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7555000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7556000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7557000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7557006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7560000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7561000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7563000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7563006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7581000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7590000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7591000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7640000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7700000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7710000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7720000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7730000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7730100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7730200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7730300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7730400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7750000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7750100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7750200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7750300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7750400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7760000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7770000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7780000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

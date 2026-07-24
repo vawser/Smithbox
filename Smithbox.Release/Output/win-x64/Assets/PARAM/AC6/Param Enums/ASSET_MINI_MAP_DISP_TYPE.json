@@ -1,0 +1,56 @@
+{
+  "Key": "ASSET_MINI_MAP_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_MINI_MAP_DISP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not show"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large asset"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Asset in progress"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small asset"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Model usage of assets"
+        }
+      ]
+    }
+  ]
+}

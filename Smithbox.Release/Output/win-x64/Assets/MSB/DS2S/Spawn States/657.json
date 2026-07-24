@@ -1,0 +1,22 @@
+{
+  "id": "657",
+  "name": "Cask Runner",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Barrel in Front"
+    },
+    {
+      "value": "3",
+      "name": "Resting on Barrel"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SHADOW_BANK</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 lightDegRotX">
+      <DisplayName>光源X角度[deg]</DisplayName>
+      <Description>マップに影を落とす光源のX角度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+    </Field>
+    <Field Def="s16 lightDegRotY">
+      <DisplayName>光源Y角度[deg]</DisplayName>
+      <Description>マップに影を落とす光源のY角度</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 densityRatio = 100">
+      <DisplayName>Ratio</DisplayName>
+      <Description>0～100</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 colR">
+      <DisplayName>Color R</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 colG">
+      <DisplayName>Color G</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 colB">
+      <DisplayName>Color B</DisplayName>
+      <Description>0～255</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 fNear = 0.1">
+      <DisplayName>Near</DisplayName>
+      <Description>これより近いのは描画しない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 fFarFadeStart = 1000">
+      <DisplayName>Far Fade Start</DisplayName>
+      <Description>フェードアウト開始距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>1</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 fFarFadeDist = 10">
+      <DisplayName>Far Fade Dist</DisplayName>
+      <Description>フェードアウト距離(フェードアウト終了距離はfFadeStart+fFadeDist)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 fCascadeSwitchDist_0_1 = 10">
+      <DisplayName>Cascade Dist 0-&gt;1</DisplayName>
+      <Description>カスケード切り替え距離 0-&gt;1</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 fCascadeSwitchDist_1_2 = 30">
+      <DisplayName>Cascade Dist 1-&gt;2</DisplayName>
+      <Description>カスケード切り替え距離 1-&gt;2</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 fCascadeSwitchDist_2_3 = 70">
+      <DisplayName>Cascade Dist 2-&gt;3</DisplayName>
+      <Description>カスケード切り替え距離 2-&gt;3</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s8 Mode = 1">
+      <DisplayName>Shadow Map Mode</DisplayName>
+      <Description>シャドウマップモード(0：ﾕﾆﾌｫｰﾑ 1：ﾊﾟｰｽﾍﾟｸﾃｨﾌﾞ)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s8 bShadowModelCullFlip">
+      <DisplayName>Shadow Model Cull Flip</DisplayName>
+      <Description>影マップ生成時フリップ(0：off 1：ON)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved_0[2]">
+      <Description>予約</Description>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="f32 fDepthOffset = -0.001">
+      <DisplayName>Depth Offset</DisplayName>
+      <Description>Zオフセット</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 fPersedDepthOffset">
+      <DisplayName>Depth Offset(forPSM)</DisplayName>
+      <Description>Zオフセット(PSM用)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 fCalibulateFarRate = 0.7">
+      <DisplayName>CaliburateFarRate(forPSM)</DisplayName>
+      <Description>ﾌｧｰｸﾘｯﾌﾟ自動調整距離ﾚｰﾄ(PSM用)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 fGradFactor = 1">
+      <DisplayName>Grad Factor(forPSM)</DisplayName>
+      <Description>ﾊﾟｰｽ調整ﾊﾟﾗﾒｰﾀ(PSM用)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-3</Minimum>
+      <Maximum>5</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 fVolumeDepth = 100">
+      <DisplayName>Volume Depth</DisplayName>
+      <Description>ｼｬﾄﾞｳﾋﾞｭｰﾎﾞﾘｭｰﾑの引き伸ばしｻｲｽﾞ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>1</Increment>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 fDepthSmoothCompare = 0.005">
+      <DisplayName>Depth Smooth Compare</DisplayName>
+      <Description>深度比較スムージング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 fSlopeScaledDepthBias = 3">
+      <DisplayName>Slope Scaled Depth Bias</DisplayName>
+      <Description>影マップ生成時の深度バイアス</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-6</Minimum>
+      <Maximum>6</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved_1[60]">
+      <Description>予約</Description>
+      <SortID>63</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

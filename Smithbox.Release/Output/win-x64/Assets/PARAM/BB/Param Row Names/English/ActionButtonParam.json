@@ -1,0 +1,1409 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Regaining lost life"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Take Life"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Reading the gravestone"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Read the letter (written in blood)"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Check your letter (written in blood)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up the item"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Collect relics (enemy drop items corpse glow)"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Collect relics (enemy drop items/enemy destruction)"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Get the relic (treasure item)"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Take the relic (treasure item) _ Companions of the Nightmare Lord)"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "OK"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Climbing the ladder"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Climb the ladder"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "talk( c0000 )"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Skip conversation"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Talk (wide area)"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "talk ( Doll Heroine )"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "investigate ( Doll's heroine doll state )"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Kneeling (Queen of the Impure Bloodline)"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Talk to (Gatekeeper _ (Before opening the door)"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Talk to (Spider Man Patch _Door stuck on)"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "talk ( President )"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Talk to (fake female doctor)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "warehouse"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Smithing Table"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Body Gem"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Purchasing tools"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Right hand weapon selection"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Left hand weapon selection"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "Character creation editing"
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        "Messenger theme"
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        "SAN Value Trading"
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "investigate ( Doll heroine death state )"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Talk to (Spider Man Patch _ (At the desk)"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Talk to them (for cranky old people)"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Talk to (female doctor / Fake female doctor's conversation through the door)"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Talk to (Spider Man Patch _ For dungeons (in the air)"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "talk ( Girl )"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        "Receiving a gift from a messenger"
+      ]
+    },
+    {
+      "ID": 6026,
+      "Entries": [
+        "Examine (for communicating corpses to obtain gestures)"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Knocking (door conversation)"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Search (Queen of the Foul Bloodline Altar)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Start the chair"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Sit on a chair"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Sit on a chair _360 Degree"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Touching a corpse (Yharnam)"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "Touching a corpse (frontier)"
+      ]
+    },
+    {
+      "ID": 6112,
+      "Entries": [
+        "Touching a Corpse (Hidden Lands)"
+      ]
+    },
+    {
+      "ID": 6113,
+      "Entries": [
+        "Touching a Dead Body (An Endless Nightmare)"
+      ]
+    },
+    {
+      "ID": 6115,
+      "Entries": [
+        "Touching a Corpse (Quick Dungeon)"
+      ]
+    },
+    {
+      "ID": 6116,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 1 )"
+      ]
+    },
+    {
+      "ID": 6117,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 2 )"
+      ]
+    },
+    {
+      "ID": 6118,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 3 )"
+      ]
+    },
+    {
+      "ID": 6119,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 4 )"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 5 )"
+      ]
+    },
+    {
+      "ID": 6121,
+      "Entries": [
+        "Touching a Corpse (Channel Dungeon 6 )"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Touch the corpse (Yharnam) No warp destination"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Touching a corpse (frontier) No warp destination"
+      ]
+    },
+    {
+      "ID": 6132,
+      "Entries": [
+        "Touch the corpse (hidden area) No warp destination"
+      ]
+    },
+    {
+      "ID": 6133,
+      "Entries": [
+        "Touching a corpse (a never-ending nightmare) No warp destination"
+      ]
+    },
+    {
+      "ID": 6140,
+      "Entries": [
+        "Touching a corpse ( DLC Base Warp OBJ)"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Opening the Door _ General purpose"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Close the door _ General purpose"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Opening the Gate _ General purpose"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Opening the Door _ Lifting _ Damipoli 120 direction"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "Opening the Door _ Lifting _ Damipoli 122 direction"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Opening the Door _ Pull _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "Opening the Door _ push _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Activate the device"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Opening a treasure chest (small)"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Get the treasure (small)"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Opening a treasure chest (medium)"
+      ]
+    },
+    {
+      "ID": 7211,
+      "Entries": [
+        "Get the treasure (middle)"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "Open a treasure chest (large)"
+      ]
+    },
+    {
+      "ID": 7221,
+      "Entries": [
+        "Get the treasure (large)"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Open the coffin (dungeon block treasure chest)"
+      ]
+    },
+    {
+      "ID": 7231,
+      "Entries": [
+        "Taking the coffin (large)"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Take the remains _ Front 180 Degree only"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "Take the remains _1.50m Lower"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "Take the remains _2.00m Lower"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Progression Tips __01 Right after the start"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Progression Tips _03 Cathedral Quarter B Inside the building"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "Progression Tips _04 Crazy tips from the Church of Odon _①"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "Progression Tips _05 Crazy tips from the Church of Odon _②"
+      ]
+    },
+    {
+      "ID": 7404,
+      "Entries": [
+        "Progression Tips _06 Crazy tips from the Church of Odon _③"
+      ]
+    },
+    {
+      "ID": 7405,
+      "Entries": [
+        "Progression Tips _11 Cathedral epigram"
+      ]
+    },
+    {
+      "ID": 7406,
+      "Entries": [
+        "Progression Tips _12 Medical Church Workshop slogan"
+      ]
+    },
+    {
+      "ID": 7407,
+      "Entries": [
+        "Progression Tips _13 Graffiti in the classroom①"
+      ]
+    },
+    {
+      "ID": 7408,
+      "Entries": [
+        "Progression Tips _14 Graffiti in the classroom②"
+      ]
+    },
+    {
+      "ID": 7409,
+      "Entries": [
+        "Progression Tips _15 Graffiti in the classroom③"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Progression Tips _16 Graffiti in the classroom ④"
+      ]
+    },
+    {
+      "ID": 7411,
+      "Entries": [
+        "Progression Tips _17 Byrgenwerth's Note 1"
+      ]
+    },
+    {
+      "ID": 7412,
+      "Entries": [
+        "Progression Tips _18 Byrgenwerth's Note②"
+      ]
+    },
+    {
+      "ID": 7413,
+      "Entries": [
+        "Progression Tips _19City of Sacrifice"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Get light source item"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "NPC Ring the bell"
+      ]
+    },
+    {
+      "ID": 10561,
+      "Entries": [
+        "Call \"Federation: Henrik\""
+      ]
+    },
+    {
+      "ID": 10562,
+      "Entries": [
+        "Calling on the \"Head of the Federation\""
+      ]
+    },
+    {
+      "ID": 10563,
+      "Entries": [
+        "Call the \"Head of the Federation (after succession)\""
+      ]
+    },
+    {
+      "ID": 10564,
+      "Entries": [
+        "Call \"Federation: Kimono\""
+      ]
+    },
+    {
+      "ID": 10565,
+      "Entries": [
+        "Call \"Federation: Executioner\""
+      ]
+    },
+    {
+      "ID": 10566,
+      "Entries": [
+        "Calling the \"School of Mensis\""
+      ]
+    },
+    {
+      "ID": 10567,
+      "Entries": [
+        "Calling on the \"Top Hat Hunter\""
+      ]
+    },
+    {
+      "ID": 10568,
+      "Entries": [
+        "Calling for \"Pilgrims (Allies)\""
+      ]
+    },
+    {
+      "ID": 10569,
+      "Entries": [
+        "\"Dungeon NPC : Calls out \"Sword Hammer\""
+      ]
+    },
+    {
+      "ID": 10570,
+      "Entries": [
+        "\"Dungeon NPC : Summon \"Sword Great Sword\""
+      ]
+    },
+    {
+      "ID": 10571,
+      "Entries": [
+        "\"Dungeon NPC : Calls out \"Beast Claw\""
+      ]
+    },
+    {
+      "ID": 10572,
+      "Entries": [
+        "\"Dungeon NPC Call \"Wheels\""
+      ]
+    },
+    {
+      "ID": 10573,
+      "Entries": [
+        "\"Dungeon NPC : Calls \"Saw Whip\""
+      ]
+    },
+    {
+      "ID": 10574,
+      "Entries": [
+        "Call it \"Abnormal: Multi-jointed\""
+      ]
+    },
+    {
+      "ID": 10575,
+      "Entries": [
+        "Call \"Father Gascoigne\""
+      ]
+    },
+    {
+      "ID": 10576,
+      "Entries": [
+        "Call \"Alfred the Blood Hunter\""
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Cylinder Sample"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Square column sample"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Fog Wall Sample"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2010010,
+      "Entries": [
+        "Take the remains_ Coffin Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 2010020,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2100800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2110000,
+      "Entries": [
+        "Examine the doll"
+      ]
+    },
+    {
+      "ID": 2110010,
+      "Entries": [
+        "Examine the shelves"
+      ]
+    },
+    {
+      "ID": 2110011,
+      "Entries": [
+        "Examine the altar"
+      ]
+    },
+    {
+      "ID": 2110012,
+      "Entries": [
+        "Examine the grave"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "Opening the Gate _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2200001,
+      "Entries": [
+        "Opening the Gate _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2200010,
+      "Entries": [
+        "For carriage warp"
+      ]
+    },
+    {
+      "ID": 2200020,
+      "Entries": [
+        "Stops"
+      ]
+    },
+    {
+      "ID": 2200030,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2200040,
+      "Entries": [
+        "Take the remains _ Stable Snag"
+      ]
+    },
+    {
+      "ID": 2200800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "Examine the altar"
+      ]
+    },
+    {
+      "ID": 2300010,
+      "Entries": [
+        "Opening the Door _ For shortcuts _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2300011,
+      "Entries": [
+        "Opening the Door _ For shortcuts _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2300020,
+      "Entries": [
+        "Warning Door"
+      ]
+    },
+    {
+      "ID": 2300030,
+      "Entries": [
+        "Opening the Gate _ For shortcuts _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2300031,
+      "Entries": [
+        "Opening the Gate _ For shortcuts _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2300800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Ring the bell"
+      ]
+    },
+    {
+      "ID": 2400010,
+      "Entries": [
+        "Examine the skull"
+      ]
+    },
+    {
+      "ID": 2400020,
+      "Entries": [
+        "A letter from a lonely old woman"
+      ]
+    },
+    {
+      "ID": 2400030,
+      "Entries": [
+        "Gate to the Circular Plaza"
+      ]
+    },
+    {
+      "ID": 2400031,
+      "Entries": [
+        "Gate to the Circular Plaza _ back"
+      ]
+    },
+    {
+      "ID": 2400040,
+      "Entries": [
+        "Cathedral B Open the door to"
+      ]
+    },
+    {
+      "ID": 2400050,
+      "Entries": [
+        "Opening the Gate _ Trick door _ origin"
+      ]
+    },
+    {
+      "ID": 2400051,
+      "Entries": [
+        "Opening the Gate _ Trick door _ Damipoli 200"
+      ]
+    },
+    {
+      "ID": 2400800,
+      "Entries": [
+        "Wall of Fog _ Saint Beast Front"
+      ]
+    },
+    {
+      "ID": 2410000,
+      "Entries": [
+        "Opening the Door _ Behind the boss"
+      ]
+    },
+    {
+      "ID": 2410001,
+      "Entries": [
+        "Activate the device _ Behind the boss"
+      ]
+    },
+    {
+      "ID": 2410010,
+      "Entries": [
+        "Door of a private house _ Inside"
+      ]
+    },
+    {
+      "ID": 2410011,
+      "Entries": [
+        "Door of a private house _ outside"
+      ]
+    },
+    {
+      "ID": 2410020,
+      "Entries": [
+        "Lever-opening door _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2410021,
+      "Entries": [
+        "Lever-opening door _ No msg For both sides"
+      ]
+    },
+    {
+      "ID": 2410031,
+      "Entries": [
+        "Gate in front of the clinic _ outside"
+      ]
+    },
+    {
+      "ID": 2410040,
+      "Entries": [
+        "Wall of Fog _ In front of the parish priest"
+      ]
+    },
+    {
+      "ID": 2410041,
+      "Entries": [
+        "Wall of Fog _ Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 2410042,
+      "Entries": [
+        "Wall of Fog _ Parishioner ( Cathedral Street A side )"
+      ]
+    },
+    {
+      "ID": 2410050,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2410060,
+      "Entries": [
+        "Examine the examination table in the clinic"
+      ]
+    },
+    {
+      "ID": 2420000,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2420001,
+      "Entries": [
+        "Opening the Door _ For shortcuts _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2420020,
+      "Entries": [
+        "Boss room altar"
+      ]
+    },
+    {
+      "ID": 2420021,
+      "Entries": [
+        "Treasure that appears on the altar in the boss room"
+      ]
+    },
+    {
+      "ID": 2420030,
+      "Entries": [
+        "Opening the Door _SCBack of the gate ( 7000 (Copied from"
+      ]
+    },
+    {
+      "ID": 2420700,
+      "Entries": [
+        "Wall of Fog _ In front of the boss (terrace)"
+      ]
+    },
+    {
+      "ID": 2420800,
+      "Entries": [
+        "Wall of Fog _ Before the boss (Child of the Moon)"
+      ]
+    },
+    {
+      "ID": 2420950,
+      "Entries": [
+        "Examine the chair _ Obtaining the Holy Grail"
+      ]
+    },
+    {
+      "ID": 2500010,
+      "Entries": [
+        "SC Elevator lever"
+      ]
+    },
+    {
+      "ID": 2500020,
+      "Entries": [
+        "Queen of the Filthy Bloodline"
+      ]
+    },
+    {
+      "ID": 2500030,
+      "Entries": [
+        "Check for boss fixed treasure"
+      ]
+    },
+    {
+      "ID": 2500040,
+      "Entries": [
+        "Examine the writing desk"
+      ]
+    },
+    {
+      "ID": 2500800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2600010,
+      "Entries": [
+        "Opening the Door _ Boss room entrance"
+      ]
+    },
+    {
+      "ID": 2600020,
+      "Entries": [
+        "Warping Mirror"
+      ]
+    },
+    {
+      "ID": 2600030,
+      "Entries": [
+        "General Treasure"
+      ]
+    },
+    {
+      "ID": 2600800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2600850,
+      "Entries": [
+        "Wall of Fog _ Before the mid-boss"
+      ]
+    },
+    {
+      "ID": 2600990,
+      "Entries": [
+        "Evil Eye"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Opening the Door _ For shortcuts _ Damipoli 121 direction"
+      ]
+    },
+    {
+      "ID": 2700001,
+      "Entries": [
+        "Opening the Door _ For shortcuts _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2700002,
+      "Entries": [
+        "Opening the Gate _ For shortcuts _ Damipoli 121 direction"
+      ]
+    },
+    {
+      "ID": 2700003,
+      "Entries": [
+        "Opening the Gate _ For shortcuts _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2700004,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2700005,
+      "Entries": [
+        "[ DLC 】Get the relic (League Long Helmet)"
+      ]
+    },
+    {
+      "ID": 2800000,
+      "Entries": [
+        "Open the big door _ Lower Large Door"
+      ]
+    },
+    {
+      "ID": 2800001,
+      "Entries": [
+        "Open the big door _ Sacrifice Entrance Large Door"
+      ]
+    },
+    {
+      "ID": 2800020,
+      "Entries": [
+        "Nightmare Classroom 2F Warp to OBJ Check out"
+      ]
+    },
+    {
+      "ID": 2800030,
+      "Entries": [
+        "SC warpOBJ Check out"
+      ]
+    },
+    {
+      "ID": 2800040,
+      "Entries": [
+        "Open the double doors _ Damipoli 100 direction"
+      ]
+    },
+    {
+      "ID": 2800041,
+      "Entries": [
+        "Open the double doors _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 2800050,
+      "Entries": [
+        "Take the remains _ For carriages"
+      ]
+    },
+    {
+      "ID": 2800800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 2900000,
+      "Entries": [
+        "Examine the stone monument"
+      ]
+    },
+    {
+      "ID": 2900001,
+      "Entries": [
+        "Ring the bell"
+      ]
+    },
+    {
+      "ID": 2900002,
+      "Entries": [
+        "Turn on the lights"
+      ]
+    },
+    {
+      "ID": 2900003,
+      "Entries": [
+        "Broken Warp Chair"
+      ]
+    },
+    {
+      "ID": 2900004,
+      "Entries": [
+        "Start the chair"
+      ]
+    },
+    {
+      "ID": 2900010,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Main Door _ Nightmare Classroom _ Hometown"
+      ]
+    },
+    {
+      "ID": 3200001,
+      "Entries": [
+        "Main Door _ Nightmare Classroom _TR Go"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Get the terrace key"
+      ]
+    },
+    {
+      "ID": 3200800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 3200810,
+      "Entries": [
+        "Appears after defeating the boss SFX Check out"
+      ]
+    },
+    {
+      "ID": 3300800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 3400100,
+      "Entries": [
+        "Pick up the item"
+      ]
+    },
+    {
+      "ID": 3400800,
+      "Entries": [
+        "Wall of Fog _ boss 1 before"
+      ]
+    },
+    {
+      "ID": 3400850,
+      "Entries": [
+        "Wall of Fog _ boss 2 before"
+      ]
+    },
+    {
+      "ID": 3400900,
+      "Entries": [
+        "talk ( Ludwig )"
+      ]
+    },
+    {
+      "ID": 3400950,
+      "Entries": [
+        "Opening the Door _ General purpose"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction"
+      ]
+    },
+    {
+      "ID": 3500001,
+      "Entries": [
+        "Opening the Door _ Damipoli 101 direction _ For Hitmen Only"
+      ]
+    },
+    {
+      "ID": 3500100,
+      "Entries": [
+        "Examine the upper altar"
+      ]
+    },
+    {
+      "ID": 3500101,
+      "Entries": [
+        "Place the pendant on the upper altar"
+      ]
+    },
+    {
+      "ID": 3500102,
+      "Entries": [
+        "Take the item from the lower altar"
+      ]
+    },
+    {
+      "ID": 3500200,
+      "Entries": [
+        "plate"
+      ]
+    },
+    {
+      "ID": 3500800,
+      "Entries": [
+        "Wall of Fog _ boss 1 before"
+      ]
+    },
+    {
+      "ID": 3500850,
+      "Entries": [
+        "Wall of Fog _ boss 2 before"
+      ]
+    },
+    {
+      "ID": 3500900,
+      "Entries": [
+        "Talk to me (assassin) _ High Priority"
+      ]
+    },
+    {
+      "ID": 3500901,
+      "Entries": [
+        "Talk to me (assassin) _ Low priority"
+      ]
+    },
+    {
+      "ID": 3500902,
+      "Entries": [
+        "talk ( Hitman )_ Close range"
+      ]
+    },
+    {
+      "ID": 3500903,
+      "Entries": [
+        "talk ( Hitman )_ Long Distance _ High"
+      ]
+    },
+    {
+      "ID": 3500904,
+      "Entries": [
+        "talk ( Hitman )_ Long Distance _ Low"
+      ]
+    },
+    {
+      "ID": 3500910,
+      "Entries": [
+        "Get the relic (obtain the Clock Tower Hunter Trick Item)"
+      ]
+    },
+    {
+      "ID": 3500911,
+      "Entries": [
+        "Examine (Get the clock face key)"
+      ]
+    },
+    {
+      "ID": 3500912,
+      "Entries": [
+        "Use the clock face key"
+      ]
+    },
+    {
+      "ID": 3500920,
+      "Entries": [
+        "Talk to (head only mob patient)"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "SC Ladder start"
+      ]
+    },
+    {
+      "ID": 3600800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 9900800,
+      "Entries": [
+        "Wall of Fog _ Before the boss"
+      ]
+    },
+    {
+      "ID": 9956010,
+      "Entries": [
+        "Dungeon Entrance Warp"
+      ]
+    },
+    {
+      "ID": 9956011,
+      "Entries": [
+        "Dungeon Chalice Altar"
+      ]
+    },
+    {
+      "ID": 9956012,
+      "Entries": [
+        "Dungeon Chalice Altar _ Round"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

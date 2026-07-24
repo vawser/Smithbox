@@ -1,0 +1,389 @@
+{
+  "Name": "s13_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_Indoor"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0_Indoor and outdoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0_Roof top strong diffuse"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0_Boss room"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B1_Indoor"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B1_In tree"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Kilometers"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B2_In a big tree"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B2_Distant view"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B2_Landscape Lava"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0_Outdoors"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0_Outdoor High Specular"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0_Outdoor ground"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B2_Outdoor upper layer"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1_Dark part"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B0_Waterfall"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B0_Water surface"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B2_Water surface"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B2_Outer lower layer"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B2_Zen meditation"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2_Spherical ball"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2_Distant view fog"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1_Fog"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B2_Ceiling fog"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B2_Amber"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1_Limestone cave"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1_Underground lake"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B1_Underground lake"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B3_Basic"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B3_Indoor"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B3_Character (basic)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "B3_Character (indoor)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "B3_Character (shade)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "B2_Switch 1"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "B2_Switch 2"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "characters_in_tree"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-scn130100-<MAP_Obj>Ming"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-scn130100-<MAP_Obj>"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-scn130100-<Chr>"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-scn130100-<Chr>Ming"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>-cutAll-For shadow depiction"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>-cutAll-Normal(pv)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-scn130000-<c3320>-From below and above"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-scn130000-<c3320>-Coffin Full Shot Shot"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn130000-Threesome coat"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn130000-Three-person haori. Last cut"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>-cutAll-Normal(pv)"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn130010_MAP"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    }
+  ]
+}

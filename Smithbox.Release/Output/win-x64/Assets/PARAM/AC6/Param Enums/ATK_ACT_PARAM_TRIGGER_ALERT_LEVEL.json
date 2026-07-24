@@ -1,0 +1,38 @@
+{
+  "Key": "ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Levels"
+        }
+      ]
+    }
+  ]
+}

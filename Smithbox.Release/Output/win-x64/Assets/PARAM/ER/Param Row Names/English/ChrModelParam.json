@@ -1,0 +1,2573 @@
+{
+  "Name": "ChrModelParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Blaidd"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Rennala"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Rennala"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Juvenile Scholar"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Larva of Rot"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Ranni the Witch"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Ranni the Witch"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "The Two Fingers"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "The Three Fingers"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Beast Clergyman"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Malenia"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Morgott"
+      ]
+    },
+    {
+      "ID": 2131,
+      "Entries": [
+        "Morgott (Dead)"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Omen"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Lightning Ball"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Melina"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Radagon"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "Radagon (Crucified)"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Elden Beast"
+      ]
+    },
+    {
+      "ID": 2270,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 2271,
+      "Entries": [
+        "Crab"
+      ]
+    },
+    {
+      "ID": 2272,
+      "Entries": [
+        "Giant Black Crab"
+      ]
+    },
+    {
+      "ID": 2273,
+      "Entries": [
+        "Black Crab"
+      ]
+    },
+    {
+      "ID": 2274,
+      "Entries": [
+        "Giant Albinauric Crab"
+      ]
+    },
+    {
+      "ID": 2275,
+      "Entries": [
+        "Albinauric Crab"
+      ]
+    },
+    {
+      "ID": 2276,
+      "Entries": [
+        "Giant Death Crab"
+      ]
+    },
+    {
+      "ID": 2277,
+      "Entries": [
+        "Death Crab"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Crucible Knight"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Exile Soldier"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Banished Knight"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Exile Soldier (Large)"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Commander Niall/O'Neill"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Giant Beast Skeleton"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Dominula Celebrant"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Imp"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Elemer of the Briar"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Funeral Steed"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "Albinauric Archer"
+      ]
+    },
+    {
+      "ID": 3171,
+      "Entries": [
+        "Phillia, Towering Little Sister"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Albinauric Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "Red Wolf of Radagon"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Frenzied Nomad"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Nomadic Merchant's Donkey"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Draconic Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "Loretta"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Nox Swordstress/Monk/Nightmaiden"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Silver Tear"
+      ]
+    },
+    {
+      "ID": 3330,
+      "Entries": [
+        "Giant Silver Tear"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Crystalian"
+      ]
+    },
+    {
+      "ID": 3360,
+      "Entries": [
+        "Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 3361,
+      "Entries": [
+        "Putrid Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 3370,
+      "Entries": [
+        "Ancestral Follower Shaman"
+      ]
+    },
+    {
+      "ID": 3371,
+      "Entries": [
+        "Putrid Ancestral Follower Shaman"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "Misbegotten"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "Albinauric"
+      ]
+    },
+    {
+      "ID": 3471,
+      "Entries": [
+        "Large Albinauric"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Skeletal Militiaman/Bandit/Knight/Grave Warden"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Catacomb Skeleton"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 3560,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 3570,
+      "Entries": [
+        "Godskin Noble"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Alabaster Lord"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "Oracle Envoy (Large)"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "Oracle Envoy (Giant)"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3650,
+      "Entries": [
+        "Guardian"
+      ]
+    },
+    {
+      "ID": 3660,
+      "Entries": [
+        "Commoner"
+      ]
+    },
+    {
+      "ID": 3661,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 3662,
+      "Entries": [
+        "Putrid Corpse (Large)"
+      ]
+    },
+    {
+      "ID": 3664,
+      "Entries": [
+        "Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 3665,
+      "Entries": [
+        "Gostoc"
+      ]
+    },
+    {
+      "ID": 3666,
+      "Entries": [
+        "The Noble Goldmask"
+      ]
+    },
+    {
+      "ID": 3670,
+      "Entries": [
+        "Elder Albinauric"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "Perfumer"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "Page"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "Battlemage"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Azur"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Lusat"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Graven School"
+      ]
+    },
+    {
+      "ID": 3750,
+      "Entries": [
+        "Clayman"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 3850,
+      "Entries": [
+        "Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 3860,
+      "Entries": [
+        "Avionette Soldier"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Fire Monk"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "Fire Prelate"
+      ]
+    },
+    {
+      "ID": 3950,
+      "Entries": [
+        "Man-Serpent"
+      ]
+    },
+    {
+      "ID": 3970,
+      "Entries": [
+        "Azula Beastman"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Revenant Follower"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Royal Revenant"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Slug"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Kaiden Sellsword's Horse"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "White Wolf"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Rat"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Giant Rat"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Demi-Human (Large)"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Demi-Human Shaman"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Demi-Human Chief"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Demi-Human Queen"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Snail"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Stray (Large)"
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        "Stray"
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        "Farum Azula Stray (Large)"
+      ]
+    },
+    {
+      "ID": 4163,
+      "Entries": [
+        "Farum Azula Stray"
+      ]
+    },
+    {
+      "ID": 4164,
+      "Entries": [
+        "Bloodbane Stray (Large)"
+      ]
+    },
+    {
+      "ID": 4165,
+      "Entries": [
+        "Bloodbane Stray"
+      ]
+    },
+    {
+      "ID": 4166,
+      "Entries": [
+        "Rotten Stray (Large)"
+      ]
+    },
+    {
+      "ID": 4167,
+      "Entries": [
+        "Rotten Stray"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Putrid Flesh"
+      ]
+    },
+    {
+      "ID": 4171,
+      "Entries": [
+        "Putrid Flesh (Large)"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Large Scarab"
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        "Scarab"
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        "Giant Scarab"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Man-Bat"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Operatic Bat"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Warhawk"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Land Octopus (Large)"
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        "Land Octopus (Small)"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Fingercreeper"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Fingercreeper (Large)"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Fingercreeper (Small)"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 4270,
+      "Entries": [
+        "Elder Lion"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "Giant Ant"
+      ]
+    },
+    {
+      "ID": 4281,
+      "Entries": [
+        "Giant Ant (Skull Plate)"
+      ]
+    },
+    {
+      "ID": 4290,
+      "Entries": [
+        "Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Lordsworn Soldier"
+      ]
+    },
+    {
+      "ID": 4311,
+      "Entries": [
+        "Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 4312,
+      "Entries": [
+        "Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 4313,
+      "Entries": [
+        "Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 4314,
+      "Entries": [
+        "Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 4315,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 4316,
+      "Entries": [
+        "Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 4321,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 4340,
+      "Entries": [
+        "Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 4341,
+      "Entries": [
+        "Mad Pumpkin Head (Thin)"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "Lordsworn Knight"
+      ]
+    },
+    {
+      "ID": 4351,
+      "Entries": [
+        "Godrick Knight"
+      ]
+    },
+    {
+      "ID": 4352,
+      "Entries": [
+        "Cuckoo Knight"
+      ]
+    },
+    {
+      "ID": 4353,
+      "Entries": [
+        "Leyndell Knight"
+      ]
+    },
+    {
+      "ID": 4354,
+      "Entries": [
+        "Redmane Kngiht"
+      ]
+    },
+    {
+      "ID": 4355,
+      "Entries": [
+        "Mausoleum Knight"
+      ]
+    },
+    {
+      "ID": 4356,
+      "Entries": [
+        "Haligtree Knight"
+      ]
+    },
+    {
+      "ID": 4358,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Lordsworn Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4361,
+      "Entries": [
+        "Godrick Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4362,
+      "Entries": [
+        "Cuckoo Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4363,
+      "Entries": [
+        "Leyndell Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4364,
+      "Entries": [
+        "Redmane Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4365,
+      "Entries": [
+        "Mausoleum Knight's Horse"
+      ]
+    },
+    {
+      "ID": 4368,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4370,
+      "Entries": [
+        "Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4371,
+      "Entries": [
+        "Godrick Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4372,
+      "Entries": [
+        "Raya Lucaria Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4373,
+      "Entries": [
+        "Leyndell Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4374,
+      "Entries": [
+        "Radahn Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4375,
+      "Entries": [
+        "Mausoleum Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4376,
+      "Entries": [
+        "Haligtree Foot Soldier"
+      ]
+    },
+    {
+      "ID": 4377,
+      "Entries": [
+        "Highwayman"
+      ]
+    },
+    {
+      "ID": 4380,
+      "Entries": [
+        "Starcaller"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "Guilty"
+      ]
+    },
+    {
+      "ID": 4382,
+      "Entries": [
+        "Stonedigger"
+      ]
+    },
+    {
+      "ID": 4383,
+      "Entries": [
+        "Glintstone Digger"
+      ]
+    },
+    {
+      "ID": 4384,
+      "Entries": [
+        "Glintstone Digger - Small Sack"
+      ]
+    },
+    {
+      "ID": 4385,
+      "Entries": [
+        "Disciple of Rot"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "Giant Crayfish"
+      ]
+    },
+    {
+      "ID": 4421,
+      "Entries": [
+        "Giant Crayfish"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Watcher Stones"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "Land Squirt"
+      ]
+    },
+    {
+      "ID": 4441,
+      "Entries": [
+        "Giant Land Squirt"
+      ]
+    },
+    {
+      "ID": 4442,
+      "Entries": [
+        "Giant Rotten Land Squirt"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "Flame Chariot"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "Abductor Virgin"
+      ]
+    },
+    {
+      "ID": 4480,
+      "Entries": [
+        "Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 4481,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 4482,
+      "Entries": [
+        "Rotten Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 4483,
+      "Entries": [
+        "Rotten Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "Living Jar Warrior"
+      ]
+    },
+    {
+      "ID": 4491,
+      "Entries": [
+        "Living Jar"
+      ]
+    },
+    {
+      "ID": 4492,
+      "Entries": [
+        "Greatjar"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Flying Dragon"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Decaying Ekzykes"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "Glintstone Dragon"
+      ]
+    },
+    {
+      "ID": 4503,
+      "Entries": [
+        "Borealis the Freezing Fog"
+      ]
+    },
+    {
+      "ID": 4504,
+      "Entries": [
+        "Elder Dragon Greyoll"
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        "Flying Dragon (Small)"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 4511,
+      "Entries": [
+        "Lichdragon Fortissax"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Dragonlord Placidusax"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "Giant Dog"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "Giant Crow"
+      ]
+    },
+    {
+      "ID": 4561,
+      "Entries": [
+        "Giant Crow"
+      ]
+    },
+    {
+      "ID": 4570,
+      "Entries": [
+        "Wormface"
+      ]
+    },
+    {
+      "ID": 4580,
+      "Entries": [
+        "Large Wormface"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Troll"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "Troll Knight"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "Snowfield Troll"
+      ]
+    },
+    {
+      "ID": 4603,
+      "Entries": [
+        "Stonedigger Troll"
+      ]
+    },
+    {
+      "ID": 4604,
+      "Entries": [
+        "War Counselor Iji"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "Astel, Naturalborn of the Void"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "Runebear"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Dragonkin Soldier"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "Guardian Golem"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 4680,
+      "Entries": [
+        "Falling-star Beast"
+      ]
+    },
+    {
+      "ID": 4690,
+      "Entries": [
+        "Grafted Scion"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "God-Devouring Serpent / Rykard, Lord of Blasphemy"
+      ]
+    },
+    {
+      "ID": 4711,
+      "Entries": [
+        "Rykard's Corpse"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "Godfrey, First Elden Lord"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "Hoarah Loux, Warrior"
+      ]
+    },
+    {
+      "ID": 4730,
+      "Entries": [
+        "Starscourge Radahn"
+      ]
+    },
+    {
+      "ID": 4750,
+      "Entries": [
+        "Godrick the Grafted"
+      ]
+    },
+    {
+      "ID": 4751,
+      "Entries": [
+        "Godrick's Corpse"
+      ]
+    },
+    {
+      "ID": 4760,
+      "Entries": [
+        "Fire Giant"
+      ]
+    },
+    {
+      "ID": 4770,
+      "Entries": [
+        "Valiant Gargoyle"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Mohg, Lord of Blood"
+      ]
+    },
+    {
+      "ID": 4801,
+      "Entries": [
+        "Mohg, Lord of Blood (Unknown)"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 4811,
+      "Entries": [
+        "Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "Omenkiller"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 4911,
+      "Entries": [
+        "Great Wyrm Theodorix"
+      ]
+    },
+    {
+      "ID": 4950,
+      "Entries": [
+        "Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 4960,
+      "Entries": [
+        "Giant Skeleton Torso"
+      ]
+    },
+    {
+      "ID": 4980,
+      "Entries": [
+        "Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5081,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5192,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5193,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5194,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5381,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5390,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5391,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5392,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5513,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5524,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5525,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5526,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5527,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5541,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5570,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5580,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5581,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5591,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5641,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5680,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5690,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5740,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5761,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5770,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5780,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5790,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5871,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5872,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5880,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5890,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5960,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5970,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5980,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5990,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Eagle"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Deer"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Bear"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Owl"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Boar"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Goat"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Murre"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "Carrier Pigeon"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Dragonfly"
+      ]
+    },
+    {
+      "ID": 6081,
+      "Entries": [
+        "Yellow Dragonfly"
+      ]
+    },
+    {
+      "ID": 6082,
+      "Entries": [
+        "Great Dragonfly"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Turtle"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Miriel, Pastor of Vows"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Springhare"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6232,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6233,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6291,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Fallen Hawks Soldier"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Ancient Hero"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Torrent"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Trebuchet"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Merciless Chariot"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

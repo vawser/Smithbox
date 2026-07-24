@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_HOMING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master position"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Predicted position"
+        }
+      ]
+    }
+  ]
+}

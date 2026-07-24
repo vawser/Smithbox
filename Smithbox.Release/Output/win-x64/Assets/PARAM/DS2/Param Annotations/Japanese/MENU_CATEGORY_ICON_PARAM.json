@@ -1,0 +1,103 @@
+{
+  "Param": "MENU_CATEGORY_ICON_PARAM",
+  "Type": "MENU_CATEGORY_ICON_PARAM",
+  "Name": "MENU_CATEGORY_ICON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bagSubscript",
+      "Name": "道具袋配列用添字",
+      "Description": ""
+    },
+    {
+      "Field": "cofferSubscript",
+      "Name": "貴重品箱配列用添字",
+      "Description": ""
+    },
+    {
+      "Field": "repositorySubscript",
+      "Name": "倉庫配列用添字",
+      "Description": ""
+    },
+    {
+      "Field": "shopSubscript",
+      "Name": "ショップ配列用添字",
+      "Description": ""
+    },
+    {
+      "Field": "inventory",
+      "Name": "インベントリ",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeapon",
+      "Name": "武器装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipHelmet",
+      "Name": "兜装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipArmor",
+      "Name": "鎧装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipGauntlet",
+      "Name": "小手装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipLeggings",
+      "Name": "具足装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipRing",
+      "Name": "指輪装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipArrow",
+      "Name": "矢装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipItem",
+      "Name": "アイテム装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipSpell",
+      "Name": "スペル装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipGesture",
+      "Name": "ジェスチャー装備",
+      "Description": ""
+    },
+    {
+      "Field": "repository",
+      "Name": "倉庫",
+      "Description": ""
+    },
+    {
+      "Field": "shop",
+      "Name": "ショップ",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponArmor",
+      "Name": "武器防具",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

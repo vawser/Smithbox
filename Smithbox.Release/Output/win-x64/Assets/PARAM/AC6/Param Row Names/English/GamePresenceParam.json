@@ -1,0 +1,77 @@
+{
+  "Name": "GamePresenceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Prohibited from use"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "garage"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "In-game (single play)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "In-game (multiplayer)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Garage: Sortie flow"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Garage: Briefing"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Mission: Endflow"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "NPC Arena: End Flow"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Move map: End flow"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "photo mode"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "time stop message box"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Save confirmation context menu"
+      ]
+    }
+  ]
+}

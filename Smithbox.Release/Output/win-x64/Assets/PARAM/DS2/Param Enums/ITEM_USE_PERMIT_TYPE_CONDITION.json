@@ -1,0 +1,38 @@
+{
+  "Key": "ITEM_USE_PERMIT_TYPE_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_USE_PERMIT_TYPE_CONDITION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living person"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deceased"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living & dead"
+        }
+      ]
+    }
+  ]
+}

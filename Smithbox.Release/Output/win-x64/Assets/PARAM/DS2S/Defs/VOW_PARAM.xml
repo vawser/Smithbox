@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>VOW_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u16 requiredContributionLv1 = 1">
+            <DisplayName>誓約レベル1 必要貢献度</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u16 requiredContributionLv2 = 1">
+            <DisplayName>誓約レベル2 必要貢献度</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u16 requiredContributionLv3 = 1">
+            <DisplayName>誓約レベル3 必要貢献度</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="dummy8 padding0[2]">
+            <DisplayName>パディング用のダミー</DisplayName>
+            <SortID>5</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

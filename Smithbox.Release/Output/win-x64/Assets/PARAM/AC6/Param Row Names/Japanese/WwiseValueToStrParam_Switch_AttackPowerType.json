@@ -1,0 +1,23 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_AttackPowerType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "POW: Large"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "POW: Large Large"
+      ]
+    }
+  ]
+}

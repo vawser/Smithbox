@@ -1,0 +1,23 @@
+{
+  "Param": "SOUND_FOOT_PARAM",
+  "Type": "SOUND_FOOT_PARAM",
+  "Name": "SOUND_FOOT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": ""
+    },
+    {
+      "Field": "type",
+      "Name": "種類",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

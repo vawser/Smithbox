@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>NPC_INFO_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 graveGenerateTime">
+            <DisplayName>お墓生成時間</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u32 deadTimeValueId">
+            <DisplayName>死亡時間格納先ID</DisplayName>
+            <Enum>EVENT_VALUE_global</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u32 deadFlagId">
+            <DisplayName>死亡フラグID</DisplayName>
+            <Enum>EVENT_FLAG_GLOBAL_EVENT</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="u32 graveSoulValue">
+            <DisplayName>お墓ソウルコスト</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u32 chrNameTextId">
+            <DisplayName>キャラテキストID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[4]">
+            <DisplayName>予約</DisplayName>
+            <SortID>1051</SortID>
+        </Field>
+        <Field Def="s32 value0">
+            <DisplayName>汎用値0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="s32 value1">
+            <DisplayName>汎用値1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+        <Field Def="s32 value2">
+            <DisplayName>汎用値2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="s32 value3">
+            <DisplayName>汎用値3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1030</SortID>
+        </Field>
+        <Field Def="s32 value4">
+            <DisplayName>汎用値4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1040</SortID>
+        </Field>
+        <Field Def="s32 value5">
+            <DisplayName>汎用値5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

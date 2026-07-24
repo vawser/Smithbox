@@ -1,0 +1,335 @@
+{
+  "Name": "BonfireWarpSubCategoryParam",
+  "Entries": [
+    {
+      "ID": 6800,
+      "Entries": [
+        "Gravesite Plain"
+      ]
+    },
+    {
+      "ID": 6820,
+      "Entries": [
+        "Castle Ensis"
+      ]
+    },
+    {
+      "ID": 6830,
+      "Entries": [
+        "Cerulean Coast"
+      ]
+    },
+    {
+      "ID": 6840,
+      "Entries": [
+        "Charo's Hidden Grave"
+      ]
+    },
+    {
+      "ID": 6850,
+      "Entries": [
+        "Jagged Peak"
+      ]
+    },
+    {
+      "ID": 6851,
+      "Entries": [
+        "Foot of the Jagged Peak"
+      ]
+    },
+    {
+      "ID": 6860,
+      "Entries": [
+        "Abyssal Woods"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Scadu Altus"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "Scaduview"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "Ancient Ruins of Rauh"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "Rauh Base"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Chapel of Anticipation"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Leyndell, Royal Capital"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Leyndell, Ashen Capital"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Ainsel River Main"
+      ]
+    },
+    {
+      "ID": 12011,
+      "Entries": [
+        "Lake of Rot"
+      ]
+    },
+    {
+      "ID": 12012,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Nokron Eternal City"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Mohgwyn Palace"
+      ]
+    },
+    {
+      "ID": 12070,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Crumbling Farum Azula"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Academy of Raya Lucaria"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Elphael, Brace of the Haligtree"
+      ]
+    },
+    {
+      "ID": 15001,
+      "Entries": [
+        "Muquella's Haligtree"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Volcano Manor"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Stranded Graveyard"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Stone Platform"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Land of the Tower"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Enir-Ilim"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Shadow Keep"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "Shadow Keep, Church District"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Specimen Storehouse"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Stone Coffin Fissure"
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "Midra's Manse"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "Subterranean Shunning-Grounds"
+      ]
+    },
+    {
+      "ID": 39200,
+      "Entries": [
+        "Ruin-Strewn Precipice"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Limgrave"
+      ]
+    },
+    {
+      "ID": 61001,
+      "Entries": [
+        "Stormhill"
+      ]
+    },
+    {
+      "ID": 61002,
+      "Entries": [
+        "Weeping Peninsula"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Liurnia of the Lakes"
+      ]
+    },
+    {
+      "ID": 62001,
+      "Entries": [
+        "Bellum Highway"
+      ]
+    },
+    {
+      "ID": 62002,
+      "Entries": [
+        "Moonlight Altar"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 63001,
+      "Entries": [
+        "Mt. Gelmir"
+      ]
+    },
+    {
+      "ID": 63002,
+      "Entries": [
+        "Capital Outskirts"
+      ]
+    },
+    {
+      "ID": 63003,
+      "Entries": [
+        "Forbidden Lands"
+      ]
+    },
+    {
+      "ID": 64000,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 64001,
+      "Entries": [
+        "Greyoll's Dragonbarrow"
+      ]
+    },
+    {
+      "ID": 64002,
+      "Entries": [
+        "Swamp of Aeonia"
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        "Mountaintops of the Giants"
+      ]
+    },
+    {
+      "ID": 65001,
+      "Entries": [
+        "Flame Peak"
+      ]
+    },
+    {
+      "ID": 65002,
+      "Entries": [
+        "Concecrated Snowfield"
+      ]
+    }
+  ]
+}

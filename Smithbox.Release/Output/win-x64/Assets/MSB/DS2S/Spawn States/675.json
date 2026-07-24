@@ -1,0 +1,14 @@
+{
+  "id": "675",
+  "name": "Fume Knight",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

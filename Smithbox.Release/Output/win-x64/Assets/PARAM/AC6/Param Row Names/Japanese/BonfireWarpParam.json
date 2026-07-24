@@ -1,0 +1,95 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 600000,
+      "Entries": [
+        "Open test bonfire 01 -- オープンテスト篝火\u300001"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Open test bonfire 02 -- オープンテスト篝火\u300002"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Open test bonfire 03 -- オープンテスト篝火\u300003"
+      ]
+    },
+    {
+      "ID": 600003,
+      "Entries": [
+        "Scanning Tower Bonfire 01 -- スキャニングタワー篝火\u300001"
+      ]
+    },
+    {
+      "ID": 600004,
+      "Entries": [
+        "m60 initial position bonfire -- m60初期位置篝火"
+      ]
+    },
+    {
+      "ID": 600005,
+      "Entries": [
+        "Fast Travel Mission 2A -- ファストトラベル\u3000ミッション2A"
+      ]
+    },
+    {
+      "ID": 600006,
+      "Entries": [
+        "Fast Travel Mission 2B -- ファストトラベル\u3000ミッション2B"
+      ]
+    },
+    {
+      "ID": 600007,
+      "Entries": [
+        "Fast travel mission 3 -- ファストトラベル\u3000ミッション3"
+      ]
+    },
+    {
+      "ID": 600008,
+      "Entries": [
+        "Fast Travel Bonus 1 -- ファストトラベル\u3000おまけ1"
+      ]
+    },
+    {
+      "ID": 600009,
+      "Entries": [
+        "Fast Travel Bonus 2 -- ファストトラベル\u3000おまけ2"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Fast Travel Vanguard Base -- ファストトラベル\u3000前衛基地"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "Fast Travel Before M1 -- ファストトラベル\u3000M1手前"
+      ]
+    },
+    {
+      "ID": 600012,
+      "Entries": [
+        "Fast travel after M2 -- ファストトラベル\u3000M2後"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "Snow mountain bonfire 01 -- 雪山篝火\u300001"
+      ]
+    },
+    {
+      "ID": 600101,
+      "Entries": [
+        "Snow mountain bonfire 02 -- 雪山篝火\u300002"
+      ]
+    }
+  ]
+}

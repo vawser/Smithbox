@@ -1,0 +1,323 @@
+{
+  "Name": "ChrFullBodySfxParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "At the time of Enemy's death -- エネミー死亡時"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Rain Map - Small Size -- 雨マップ-サイズ小"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Rain Map - Large Size -- 雨マップ-サイズ大"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Enemy appeared -- エネミー登場"
+      ]
+    },
+    {
+      "ID": 101370,
+      "Entries": [
+        "Necromancer Super Armor -- ネクロマンサースーパーアーマー"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Appeared In Seoul Black -- ソウルブラック登場"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Spell Four Tenno (Magic) Petrified -- スペル四天王（魔法）石化解除"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "Red Spirit Level 0 Aura -- 赤霊レベル０オーラ"
+      ]
+    },
+    {
+      "ID": 104010,
+      "Entries": [
+        "Red Spirit Level 1 Aura -- 赤霊レベル１オーラ"
+      ]
+    },
+    {
+      "ID": 104020,
+      "Entries": [
+        "Red Spirit Level 2 Aura -- 赤霊レベル２オーラ"
+      ]
+    },
+    {
+      "ID": 104030,
+      "Entries": [
+        "Red Spirit Level 3 Aura -- 赤霊レベル３オーラ"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "Blue Spirit Level 0 Aura -- 青霊レベル０オーラ"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "Blue Spirit Level 1 Aura -- 青霊レベル１オーラ"
+      ]
+    },
+    {
+      "ID": 105020,
+      "Entries": [
+        "Blue Spirit Level 2 Aura -- 青霊レベル２オーラ"
+      ]
+    },
+    {
+      "ID": 105030,
+      "Entries": [
+        "Blue Spirit Level 3 Aura -- 青霊レベル３オーラ"
+      ]
+    },
+    {
+      "ID": 106010,
+      "Entries": [
+        "Aura for ghosts -- 亡霊用オーラ"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Enemy Death (Large) -- エネミー死亡（大）"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Soul Black Death -- ソウルブラック死亡"
+      ]
+    },
+    {
+      "ID": 112010,
+      "Entries": [
+        "Soul Black Death: Non-HumanOid -- ソウルブラック死亡：人型以外"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "NPC Death -- NPC死亡"
+      ]
+    },
+    {
+      "ID": 114000,
+      "Entries": [
+        "Door possessed death -- 扉憑き死亡"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Enemy Death (Small) -- エネミー死亡（小）"
+      ]
+    },
+    {
+      "ID": 116000,
+      "Entries": [
+        "Enemy death (medium boss treatment) -- エネミー死亡（中ボス扱い）"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Small Size Enemy Petrified Aura -- 小サイズエネミー石化オーラ"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 190010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 190020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "I Under The Mirror Night - Appeared -- ミラーナイトの下僕-登場"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Produced from skeleton aristocracy -- スケルトン貴族から生成"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "boss general-purpose death human oid -- ボス汎用死亡\u3000人型"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "boss general-purpose death non-humanoid -- ボス汎用死亡\u3000非人型"
+      ]
+    },
+    {
+      "ID": 210020,
+      "Entries": [
+        "Old Dragon Death Non-Human Type -- 古龍死亡\u3000非人型"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "I Under The Mirror Knight - Death -- ミラーナイトの下僕-死亡"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Miller Knight Died -- ミラーナイト死亡"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Skeleton noble death explosion -- スケルトン貴族死亡爆散"
+      ]
+    },
+    {
+      "ID": 213010,
+      "Entries": [
+        "Skeleton noble floating -- スケルトン貴族浮遊"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Silver Chariot death -- シルバーチャリオット死亡"
+      ]
+    },
+    {
+      "ID": 310010,
+      "Entries": [
+        "Death - Normal -- 死亡-ノーマル"
+      ]
+    },
+    {
+      "ID": 310020,
+      "Entries": [
+        "Death - White Phantom -- 死亡-白ファントム"
+      ]
+    },
+    {
+      "ID": 310030,
+      "Entries": [
+        "Death - Blue Phantom -- 死亡-青ファントム"
+      ]
+    },
+    {
+      "ID": 310040,
+      "Entries": [
+        "Death - Gold Phantom -- 死亡-金ファントム"
+      ]
+    },
+    {
+      "ID": 310050,
+      "Entries": [
+        "Death - Red Phantom -- 死亡-赤ファントム"
+      ]
+    },
+    {
+      "ID": 310060,
+      "Entries": [
+        "Death - Black Phantom -- 死亡-黒ファントム"
+      ]
+    },
+    {
+      "ID": 310070,
+      "Entries": [
+        "Death - Dragon Spirit Phantom -- 死亡-竜霊ファントム"
+      ]
+    },
+    {
+      "ID": 310080,
+      "Entries": [
+        "Death - Abyss Phantom -- 死亡-深淵ファントム"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Abnormal death - petrified -- 状態異常死亡-石化"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Dragon head stone: raised -- 竜頭石：発生"
+      ]
+    },
+    {
+      "ID": 500020,
+      "Entries": [
+        "Dragon Head Stone: Release -- 竜頭石：解除"
+      ]
+    },
+    {
+      "ID": 500110,
+      "Entries": [
+        "Dragon stone: occurrence -- 竜体石：発生"
+      ]
+    },
+    {
+      "ID": 500120,
+      "Entries": [
+        "Dragon Body Stone: Release -- 竜体石：解除"
+      ]
+    },
+    {
+      "ID": 501010,
+      "Entries": [
+        "Spelling: Magic Defense -- スペル：魔法防御"
+      ]
+    },
+    {
+      "ID": 501020,
+      "Entries": [
+        "Spelling: The Great Magic Defense -- スペル：大魔法防御"
+      ]
+    }
+  ]
+}

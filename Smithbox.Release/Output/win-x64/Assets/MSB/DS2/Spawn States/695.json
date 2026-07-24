@@ -1,0 +1,14 @@
+{
+  "id": "695",
+  "name": "Forlorn",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

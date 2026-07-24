@@ -1,0 +1,558 @@
+{
+  "Param": "PLAYER_STATUS_PARAM",
+  "Type": "PLAYER_STATUS_PARAM",
+  "Name": "PLAYER_STATUS_PARAM",
+  "Description": "Defines core player identity, attributes, equipment loadout, inventory setup, and progression-related values such as stats, weapons, armor, and covenant data.",
+  "Fields": [
+    {
+      "Field": "genderType",
+      "Name": "Gender",
+      "Description": "Defines the player's gender type."
+    },
+    {
+      "Field": "livingType",
+      "Name": "Life State",
+      "Description": "Indicates whether the player is alive, undead, or another state."
+    },
+    {
+      "Field": "bodyType",
+      "Name": "Body Type",
+      "Description": "Defines the player's physical body build or model type."
+    },
+    {
+      "Field": "pad01",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "soulLevel",
+      "Name": "Soul Level",
+      "Description": "Player’s overall level."
+    },
+    {
+      "Field": "lifeForceLevel",
+      "Name": "Vigor",
+      "Description": "Stat governing HP and survivability."
+    },
+    {
+      "Field": "soulPoint",
+      "Name": "Total Souls",
+      "Description": "Total accumulated soul currency or experience."
+    },
+    {
+      "Field": "stayingPowerLevel",
+      "Name": "Endurance",
+      "Description": "Stat governing stamina and physical exertion."
+    },
+    {
+      "Field": "attunementLevel",
+      "Name": "Attunement",
+      "Description": "Stat governing spell slots and magic capacity."
+    },
+    {
+      "Field": "vitalityLevel",
+      "Name": "Vitality",
+      "Description": "Stat governing equipment load and physical resilience."
+    },
+    {
+      "Field": "strengthLevel",
+      "Name": "Strength",
+      "Description": "Physical power stat affecting heavy weapons."
+    },
+    {
+      "Field": "dexterityLevel",
+      "Name": "Dexterity",
+      "Description": "Agility stat affecting finesse weapons and casting speed."
+    },
+    {
+      "Field": "intelligenceLevel",
+      "Name": "Intelligence",
+      "Description": "Magic stat governing sorcery power."
+    },
+    {
+      "Field": "faithLevel",
+      "Name": "Faith",
+      "Description": "Magic stat governing miracles or divine abilities."
+    },
+    {
+      "Field": "enduranceLevel",
+      "Name": "Adaptability",
+      "Description": "Character agility or quickness-related stat."
+    },
+    {
+      "Field": "quicknessLevel",
+      "Name": "Durability",
+      "Description": "Character durability or equipment degradation resistance stat."
+    },
+    {
+      "Field": "luckLevel",
+      "Name": "Luck",
+      "Description": "Character luck stat affecting item discovery or related mechanics."
+    },
+    {
+      "Field": "facePresetNo",
+      "Name": "Face Preset Number",
+      "Description": "Character creator face preset identifier."
+    },
+    {
+      "Field": "pad00",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "beltItem01",
+      "Name": "Belt Slot 01 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem02",
+      "Name": "Belt Slot 02 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem03",
+      "Name": "Belt Slot 03 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem04",
+      "Name": "Belt Slot 04 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem05",
+      "Name": "Belt Slot 05 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem06",
+      "Name": "Belt Slot 06 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem07",
+      "Name": "Belt Slot 07 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem08",
+      "Name": "Belt Slot 08 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem09",
+      "Name": "Belt Slot 09 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem10",
+      "Name": "Belt Slot 10 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem01Num",
+      "Name": "Belt Slot 01: Quantity",
+      "Description": "Quantity of item in belt slot 01."
+    },
+    {
+      "Field": "beltItem02Num",
+      "Name": "Belt Slot 02: Quantity",
+      "Description": "Quantity of item in belt slot 02."
+    },
+    {
+      "Field": "beltItem03Num",
+      "Name": "Belt Slot 03: Quantity",
+      "Description": "Quantity of item in belt slot 03."
+    },
+    {
+      "Field": "beltItem04Num",
+      "Name": "Belt Slot 04: Quantity",
+      "Description": "Quantity of item in belt slot 04."
+    },
+    {
+      "Field": "beltItem05Num",
+      "Name": "Belt Slot 05: Quantity",
+      "Description": "Quantity of item in belt slot 05."
+    },
+    {
+      "Field": "beltItem06Num",
+      "Name": "Belt Slot 06: Quantity",
+      "Description": "Quantity of item in belt slot 06."
+    },
+    {
+      "Field": "beltItem07Num",
+      "Name": "Belt Slot 07: Quantity",
+      "Description": "Quantity of item in belt slot 07."
+    },
+    {
+      "Field": "beltItem08Num",
+      "Name": "Belt Slot 08: Quantity",
+      "Description": "Quantity of item in belt slot 08."
+    },
+    {
+      "Field": "beltItem09Num",
+      "Name": "Belt Slot 09: Quantity",
+      "Description": "Quantity of item in belt slot 09."
+    },
+    {
+      "Field": "beltItem10Num",
+      "Name": "Belt Slot 10: Quantity",
+      "Description": "Quantity of item in belt slot 10."
+    },
+    {
+      "Field": "spellSlotItem01",
+      "Name": "Spell Slot 01",
+      "Description": "Spell assigned to spell slot 1."
+    },
+    {
+      "Field": "spellSlotItem02",
+      "Name": "Spell Slot 02",
+      "Description": "Spell assigned to spell slot 2."
+    },
+    {
+      "Field": "spellSlotItem03",
+      "Name": "Spell Slot 03",
+      "Description": "Spell assigned to spell slot 3."
+    },
+    {
+      "Field": "spellSlotItem04",
+      "Name": "Spell Slot 04",
+      "Description": "Spell assigned to spell slot 4."
+    },
+    {
+      "Field": "spellSlotItem05",
+      "Name": "Spell Slot 05",
+      "Description": "Spell assigned to spell slot 5."
+    },
+    {
+      "Field": "spellSlotItem06",
+      "Name": "Spell Slot 06",
+      "Description": "Spell assigned to spell slot 6."
+    },
+    {
+      "Field": "spellSlotItem07",
+      "Name": "Spell Slot 07",
+      "Description": "Spell assigned to spell slot 7."
+    },
+    {
+      "Field": "spellSlotItem08",
+      "Name": "Spell Slot 08",
+      "Description": "Spell assigned to spell slot 8."
+    },
+    {
+      "Field": "spellSlotItem09",
+      "Name": "Spell Slot 09",
+      "Description": "Spell assigned to spell slot 9."
+    },
+    {
+      "Field": "spellSlotItem10",
+      "Name": "Spell Slot 10",
+      "Description": "Spell assigned to spell slot 10."
+    },
+    {
+      "Field": "rightWeapon01",
+      "Name": "Right Weapon 01",
+      "Description": "Primary right-hand weapon slot."
+    },
+    {
+      "Field": "rightWeapon02",
+      "Name": "Right Weapon 02",
+      "Description": "Secondary right-hand weapon slot."
+    },
+    {
+      "Field": "rightWeapon03",
+      "Name": "Right Weapon 03",
+      "Description": "Tertiary right-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon01",
+      "Name": "Left Weapon 01",
+      "Description": "Primary left-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon02",
+      "Name": "Left Weapon 02",
+      "Description": "Secondary left-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon03",
+      "Name": "Left Weapon 03",
+      "Description": "Tertiary left-hand weapon slot."
+    },
+    {
+      "Field": "headArmor",
+      "Name": "Head Armor",
+      "Description": "Equipped helmet or head armor."
+    },
+    {
+      "Field": "bodyArmor",
+      "Name": "Body Armor",
+      "Description": "Equipped chest armor."
+    },
+    {
+      "Field": "armArmor",
+      "Name": "Arm Armor",
+      "Description": "Equipped gauntlets or arm armor."
+    },
+    {
+      "Field": "legArmor",
+      "Name": "Leg Armor",
+      "Description": "Equipped leggings or leg armor."
+    },
+    {
+      "Field": "ringSlot01",
+      "Name": "Ring 01",
+      "Description": "Ring equipped in slot 1."
+    },
+    {
+      "Field": "ringSlot02",
+      "Name": "Ring 02",
+      "Description": "Ring equipped in slot 2."
+    },
+    {
+      "Field": "ringSlot03",
+      "Name": "Ring 03",
+      "Description": "Ring equipped in slot 3."
+    },
+    {
+      "Field": "ringSlot04",
+      "Name": "Ring 04",
+      "Description": "Ring equipped in slot 4."
+    },
+    {
+      "Field": "rightWeapon01Enhanced",
+      "Name": "Right Weapon 01: Upgrade Level",
+      "Description": "Upgrade level of right weapon 01."
+    },
+    {
+      "Field": "rightWeapon01Attribute",
+      "Name": "Right Weapon 01: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyR1",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon02Enhanced",
+      "Name": "Right Weapon 02: Upgrade Level",
+      "Description": "Upgrade level of right weapon 02."
+    },
+    {
+      "Field": "rightWeapon02Attribute",
+      "Name": "Right Weapon 02: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyR2",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "rightWeapon03Enhanced",
+      "Name": "Right Weapon 03: Upgrade Level",
+      "Description": "Upgrade level of right weapon 03."
+    },
+    {
+      "Field": "rightWeapon03Attribute",
+      "Name": "Right Weapon 03: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyR3",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon01Enhanced",
+      "Name": "Left Weapon 01: Upgrade Level",
+      "Description": "Upgrade level of left weapon 01."
+    },
+    {
+      "Field": "leftWeapon01Attribute",
+      "Name": "Left Weapon 01: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyL1",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon02Enhanced",
+      "Name": "Left Weapon 02: Upgrade Level",
+      "Description": "Upgrade level of left weapon 02."
+    },
+    {
+      "Field": "leftWeapon02Attribute",
+      "Name": "Left Weapon 02: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyL2",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "leftWeapon03Enhanced",
+      "Name": "Left Weapon 03: Upgrade Level",
+      "Description": "Upgrade level of left weapon 03."
+    },
+    {
+      "Field": "leftWeapon03Attribute",
+      "Name": "Left Weapon 03: Infusion",
+      "Description": "Elemental or attribute modification applied to weapon."
+    },
+    {
+      "Field": "dummyL3",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "headArmorEnhanced",
+      "Name": "Head Armor: Upgrade Level",
+      "Description": "Upgrade level of head armor."
+    },
+    {
+      "Field": "bodyArmorEnhanced",
+      "Name": "Body Armor: Upgrade Level",
+      "Description": "Upgrade level of body armor."
+    },
+    {
+      "Field": "armArmorEnhanced",
+      "Name": "Arm Armor: Upgrade Level",
+      "Description": "Upgrade level of arm armor."
+    },
+    {
+      "Field": "legArmorEnhanced",
+      "Name": "Leg Armor: Upgrade Level",
+      "Description": "Upgrade level of leg armor."
+    },
+    {
+      "Field": "bagItemParam01",
+      "Name": "Item Set 01",
+      "Description": "Predefined item loadout set 01."
+    },
+    {
+      "Field": "bagItemParam02",
+      "Name": "Item Set 02",
+      "Description": "Predefined item loadout set 02."
+    },
+    {
+      "Field": "bagItemParam03",
+      "Name": "Item Set 03",
+      "Description": "Predefined item loadout set 03."
+    },
+    {
+      "Field": "estusFlaskLvUsableCount",
+      "Name": "Estus Flask Uses per Level",
+      "Description": "Number of uses granted per upgrade level."
+    },
+    {
+      "Field": "estusFlaskLvHealPoint",
+      "Name": "Estus Flask Heal Amount per Level",
+      "Description": "Healing amount per upgrade level."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "arrowSlot01",
+      "Name": "Arrow 01",
+      "Description": "Arrow ammunition slot 1."
+    },
+    {
+      "Field": "arrowSlot02",
+      "Name": "Arrow 02",
+      "Description": "Arrow ammunition slot 2."
+    },
+    {
+      "Field": "boltSlot01",
+      "Name": "Bolt 01",
+      "Description": "Bolt ammunition slot 1."
+    },
+    {
+      "Field": "boltSlot02",
+      "Name": "Bolt 02",
+      "Description": "Bolt ammunition slot 2."
+    },
+    {
+      "Field": "arrowSlot01Num",
+      "Name": "Arrow Slot 01: Quantity",
+      "Description": "Number of arrows in slot 01."
+    },
+    {
+      "Field": "arrowSlot02Num",
+      "Name": "Arrow Slot 02: Quantity",
+      "Description": "Number of arrows in slot 02."
+    },
+    {
+      "Field": "boltSlot01Num",
+      "Name": "Bolt Slot 01: Quantity",
+      "Description": "Number of bolts in slot 01."
+    },
+    {
+      "Field": "boltSlot02Num",
+      "Name": "Bolt Slot 02: Quantity",
+      "Description": "Number of bolts in slot 02."
+    },
+    {
+      "Field": "gestureSlot01",
+      "Name": "Gesture Slot 01",
+      "Description": "Assigned gesture/emote 01."
+    },
+    {
+      "Field": "gestureSlot02",
+      "Name": "Gesture Slot 02",
+      "Description": "Assigned gesture/emote 02."
+    },
+    {
+      "Field": "gestureSlot03",
+      "Name": "Gesture Slot 03",
+      "Description": "Assigned gesture/emote 03."
+    },
+    {
+      "Field": "gestureSlot04",
+      "Name": "Gesture Slot 04",
+      "Description": "Assigned gesture/emote 04."
+    },
+    {
+      "Field": "gestureSlot05",
+      "Name": "Gesture Slot 05",
+      "Description": "Assigned gesture/emote 05."
+    },
+    {
+      "Field": "gestureSlot06",
+      "Name": "Gesture Slot 06",
+      "Description": "Assigned gesture/emote 06."
+    },
+    {
+      "Field": "gestureSlot07",
+      "Name": "Gesture Slot 07",
+      "Description": "Assigned gesture/emote 07."
+    },
+    {
+      "Field": "gestureSlot08",
+      "Name": "Gesture Slot 08",
+      "Description": "Assigned gesture/emote 08."
+    },
+    {
+      "Field": "vowType",
+      "Name": "Covenant",
+      "Description": "Specifies the covenant affiliation."
+    },
+    {
+      "Field": "vowLevel",
+      "Name": "Covenant Level",
+      "Description": "Defines the character's covenant rank or progression level."
+    },
+    {
+      "Field": "vowContribution",
+      "Name": "Covenant Contribution",
+      "Description": "Contribution points toward covenant progression."
+    }
+  ]
+}

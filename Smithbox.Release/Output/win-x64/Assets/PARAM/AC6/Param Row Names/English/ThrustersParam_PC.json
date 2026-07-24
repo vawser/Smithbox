@@ -1,0 +1,178 @@
+{
+  "Name": "ThrustersParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC default"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Defo booster main injection port",
+        "Defo booster left sub-injection port",
+        "Defo booster right sub-injection port"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD ",
+        "LEGS - TETRAPOD "
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA",
+        "LEGS - LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 37100,
+      "Entries": [
+        "CORE - Standard",
+        "CORE - Standard",
+        "CORE - Standard"
+      ]
+    },
+    {
+      "ID": 37200,
+      "Entries": [
+        "ARMS - Standard",
+        "ARMS - Standard",
+        "ARMS - Standard",
+        "ARMS - Standard"
+      ]
+    },
+    {
+      "ID": 37300,
+      "Entries": [
+        "LEGS - BIPEDAL",
+        "LEGS - BIPEDAL",
+        "LEGS - BIPEDAL",
+        "LEGS - BIPEDAL",
+        "LEGS - BIPEDAL",
+        "LEGS - BIPEDAL"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "LEGS - VE-42A",
+        "LEGS - VE-42A",
+        "LEGS - VE-42A",
+        "LEGS - VE-42A",
+        "LEGS - VE-42A",
+        "LEGS - VE-42A",
+        "LEGS - VE-42A"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B",
+        "LEGS - VE-42B"
+      ]
+    },
+    {
+      "ID": 75100,
+      "Entries": [
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA",
+        "LEGS - EL-TL-11 FORTALEZA"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "CORE - IB-C03C: HAL 826",
+        "CORE - IB-C03C: HAL 826",
+        "CORE - IB-C03C: HAL 826"
+      ]
+    },
+    {
+      "ID": 80700,
+      "Entries": [
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F",
+        "LEGS - LAMMERGEIER/42F"
+      ]
+    },
+    {
+      "ID": 83500,
+      "Entries": [
+        "LEGS - REVERSE JOINT",
+        "LEGS - REVERSE JOINT",
+        "LEGS - REVERSE JOINT",
+        "LEGS - REVERSE JOINT",
+        "LEGS - REVERSE JOINT",
+        "LEGS - REVERSE JOINT"
+      ]
+    }
+  ]
+}

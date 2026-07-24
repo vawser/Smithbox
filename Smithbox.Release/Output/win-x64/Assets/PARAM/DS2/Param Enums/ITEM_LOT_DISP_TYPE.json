@@ -1,0 +1,29 @@
+{
+  "Key": "ITEM_LOT_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_DISP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "小"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "大"
+        }
+      ]
+    }
+  ]
+}

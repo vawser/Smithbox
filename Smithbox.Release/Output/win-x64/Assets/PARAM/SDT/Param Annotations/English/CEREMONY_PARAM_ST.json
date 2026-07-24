@@ -1,0 +1,63 @@
+{
+  "Param": "CEREMONY_PARAM_ST",
+  "Type": "CEREMONY_PARAM_ST",
+  "Name": "CEREMONY_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "eventLayerId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapStudioLayerId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gparamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overrideGparamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pointCloudId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "giTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bakeToolLightId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isReload",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playRegionOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

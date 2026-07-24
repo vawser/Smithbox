@@ -1,0 +1,58 @@
+{
+  "Param": "RESIST_CORRECT_PARAM_ST",
+  "Type": "RESIST_CORRECT_PARAM_ST",
+  "Name": "RESIST_CORRECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "addPoint1",
+      "Name": "Additional Resistance - First Activation",
+      "Description": "A value that is added to the resistance value after the abnormal condition is activated once."
+    },
+    {
+      "Field": "addPoint2",
+      "Name": "Additional Resistance - Second Activation",
+      "Description": "A value that is added to the resistance value after the abnormal condition is activated twice."
+    },
+    {
+      "Field": "addPoint3",
+      "Name": "Additional Resistance - Third Activation",
+      "Description": "A value that is added to the resistance value after the abnormal condition is activated 3 times."
+    },
+    {
+      "Field": "addPoint4",
+      "Name": "Additional Resistance - Fourth Activation",
+      "Description": "A value that is added to the resistance value after the abnormal condition is activated 4 times."
+    },
+    {
+      "Field": "addPoint5",
+      "Name": "Additional Resistance - Fifth Activation",
+      "Description": "A value that is added to the resistance value after the abnormal condition is activated 5 times."
+    },
+    {
+      "Field": "addRate1",
+      "Name": "Resistance Multiplier - First Activation",
+      "Description": "Magnification applied to the resistance value after the abnormal condition is activated once"
+    },
+    {
+      "Field": "addRate2",
+      "Name": "Resistance Multiplier - Second Activation",
+      "Description": "Magnification applied to the resistance value after the abnormal condition is activated twice"
+    },
+    {
+      "Field": "addRate3",
+      "Name": "Resistance Multiplier - Third Activation",
+      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 3 times"
+    },
+    {
+      "Field": "addRate4",
+      "Name": "Resistance Multiplier - Fourth Activation",
+      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 4 times"
+    },
+    {
+      "Field": "addRate5",
+      "Name": "Resistance Multiplier - Fifth Activation",
+      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 5 times"
+    }
+  ]
+}

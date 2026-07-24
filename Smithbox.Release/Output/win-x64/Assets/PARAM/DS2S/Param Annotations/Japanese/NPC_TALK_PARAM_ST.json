@@ -1,0 +1,43 @@
+{
+  "Param": "NPC_TALK_PARAM_ST",
+  "Type": "NPC_TALK_PARAM_ST",
+  "Name": "NPC_TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "msgId",
+      "Name": "メッセージID",
+      "Description": ""
+    },
+    {
+      "Field": "voiceId",
+      "Name": "ボイスＩD",
+      "Description": ""
+    },
+    {
+      "Field": "actionId",
+      "Name": "行動ID",
+      "Description": ""
+    },
+    {
+      "Field": "windowType",
+      "Name": "ウィンドウタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bNextPlay",
+      "Name": "連続会話",
+      "Description": ""
+    },
+    {
+      "Field": "changeNameNpcId",
+      "Name": "名前差し替えフラグ変更NPCID",
+      "Description": ""
+    },
+    {
+      "Field": "endWaitTime",
+      "Name": "待機時間",
+      "Description": ""
+    }
+  ]
+}

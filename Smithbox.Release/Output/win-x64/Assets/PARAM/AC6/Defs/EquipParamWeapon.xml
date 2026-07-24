@@ -1,0 +1,5236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_PARAM_WEAPON_ST</ParamType>
+  <DataVersion>9</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10010000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10020000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 behaviorVariationId">
+      <DisplayName>行動バリエーションID</DisplayName>
+      <Description>攻撃時に参照する行動パラメータIDを決定するときに使う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10300000</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>カテゴリ内ソートID</DisplayName>
+      <Description>メニュー管理カテゴリ内の表示順ソート用ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>10050000</SortID>
+    </Field>
+    <Field Def="u32 wanderingEquipId">
+      <DisplayName>徘徊装備ID</DisplayName>
+      <Description>徘徊ゴースト用の差し替え装備ID.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg].</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10230000</SortID>
+    </Field>
+    <Field Def="f32 weaponWeightRate">
+      <DisplayName>装備重量比率</DisplayName>
+      <Description>装備重量比率</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 fixPrice">
+      <DisplayName>修理価格</DisplayName>
+      <Description>修理基本価格</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 reinforcePrice">
+      <DisplayName>強化価格</DisplayName>
+      <Description>強化価格</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sellValue">
+      <DisplayName>売却価格</DisplayName>
+      <Description>販売価格</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 correctStrength">
+      <DisplayName>筋力補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 correctAgility">
+      <DisplayName>俊敏補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 correctMagic">
+      <DisplayName>魔力補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 correctFaith">
+      <DisplayName>信仰補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 physGuardCutRate">
+      <DisplayName>ガード時実弾攻撃カット率</DisplayName>
+      <Description>ガード時のダメージカット率を各攻撃ごとに設定</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10470000</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="f32 magGuardCutRate">
+      <DisplayName>ガード時EN攻撃カット率</DisplayName>
+      <Description>ガード攻撃でない場合は、0を入れる</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10470010</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="f32 fireGuardCutRate">
+      <DisplayName>ガード時爆発/燃焼攻撃力カット率</DisplayName>
+      <Description>爆発/燃焼攻撃をどれだけカットするか？</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10470020</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="f32 thunGuardCutRate">
+      <DisplayName>ガード時コーラル攻撃力カット率</DisplayName>
+      <Description>コーラル攻撃をどれだけカットするか？</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10470030</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId0 = -1">
+      <DisplayName>特殊効果行動ID0</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId1 = -1">
+      <DisplayName>特殊効果行動ID1</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectBehaviorId2 = -1">
+      <DisplayName>特殊効果行動ID2</DisplayName>
+      <Description>武器に特殊効果を追加するときに登録する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 residentSpEffectId = -1">
+      <DisplayName>常駐特殊効果ID</DisplayName>
+      <Description>常駐特殊効果ID0</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10560000</SortID>
+      <UnkC8>常駐特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 residentSpEffectId1 = -1">
+      <DisplayName>常駐特殊効果ID1</DisplayName>
+      <Description>常駐特殊効果ID1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10560010</SortID>
+      <UnkC8>常駐特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 residentSpEffectId2 = -1">
+      <DisplayName>常駐特殊効果ID2</DisplayName>
+      <Description>常駐特殊効果ID2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10560020</SortID>
+      <UnkC8>常駐特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 materialSetId = -1">
+      <DisplayName>素材ID</DisplayName>
+      <Description>武器強化に必要な素材パラメータID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep = -1">
+      <DisplayName>派生元</DisplayName>
+      <Description>この武器の強化元武器ID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep1 = -1">
+      <DisplayName>派生元 強化+1</DisplayName>
+      <Description>この武器の強化元武器ID1</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep2 = -1">
+      <DisplayName>派生元 強化+2</DisplayName>
+      <Description>この武器の強化元武器ID2</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep3 = -1">
+      <DisplayName>派生元 強化+3</DisplayName>
+      <Description>この武器の強化元武器ID3</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep4 = -1">
+      <DisplayName>派生元 強化+4</DisplayName>
+      <Description>この武器の強化元武器ID4</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep5 = -1">
+      <DisplayName>派生元 強化+5</DisplayName>
+      <Description>この武器の強化元武器ID5</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep6 = -1">
+      <DisplayName>派生元 強化+6</DisplayName>
+      <Description>この武器の強化元武器ID6</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep7 = -1">
+      <DisplayName>派生元 強化+7</DisplayName>
+      <Description>この武器の強化元武器ID7</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep8 = -1">
+      <DisplayName>派生元 強化+8</DisplayName>
+      <Description>この武器の強化元武器ID8</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep9 = -1">
+      <DisplayName>派生元 強化+9</DisplayName>
+      <Description>この武器の強化元武器ID9</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep10 = -1">
+      <DisplayName>派生元 強化+10</DisplayName>
+      <Description>この武器の強化元武器ID10</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep11 = -1">
+      <DisplayName>派生元 強化+11</DisplayName>
+      <Description>この武器の強化元武器ID11</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep12 = -1">
+      <DisplayName>派生元 強化+12</DisplayName>
+      <Description>この武器の強化元武器ID12</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep13 = -1">
+      <DisplayName>派生元 強化+13</DisplayName>
+      <Description>この武器の強化元武器ID13</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep14 = -1">
+      <DisplayName>派生元 強化+14</DisplayName>
+      <Description>この武器の強化元武器ID14</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 originEquipWep15 = -1">
+      <DisplayName>派生元 強化+15</DisplayName>
+      <Description>この武器の強化元武器ID15</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 weakA_DamageRate = 1">
+      <DisplayName>特攻Aダメージ倍率</DisplayName>
+      <Description>特攻A用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360000</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakB_DamageRate = 1">
+      <DisplayName>特攻Bダメージ倍率</DisplayName>
+      <Description>特攻B用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360010</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakC_DamageRate = 1">
+      <DisplayName>特攻Cダメージ倍率</DisplayName>
+      <Description>特攻C用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360020</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakD_DamageRate = 1">
+      <DisplayName>特攻Dダメージ倍率</DisplayName>
+      <Description>特攻D用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360030</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="s32 vagrantItemLotId">
+      <DisplayName>ベイグラント時アイテム抽選ID</DisplayName>
+      <Description>-1：ベイグラントなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 vagrantBonusEneDropItemLotId">
+      <DisplayName>ベイグラントボーナス敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 vagrantItemEneDropItemLotId">
+      <DisplayName>ベイグラントアイテム敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 equipModelId">
+      <DisplayName>装備モデル番号</DisplayName>
+      <Description>装備モデルの番号.</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10110000</SortID>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニューアイコンID.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 durability = 100">
+      <DisplayName>耐久度</DisplayName>
+      <Description>初期耐久度.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 durabilityMax = 100">
+      <DisplayName>耐久度最大値</DisplayName>
+      <Description>新品耐久度.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 attackThrowEscape">
+      <DisplayName>投げ抜け攻撃力基本値</DisplayName>
+      <Description>投げ抜け攻撃力の基本値</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 parryDamageLife = -1">
+      <DisplayName>パリィ発生時間[frame]</DisplayName>
+      <Description>パリィダメージの寿命を制限する。TimeActで設定されている以上には持続しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 attackBasePhysics = 100">
+      <DisplayName>実弾攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える実弾属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10350000</SortID>
+      <UnkC8>攻撃力基本値</UnkC8>
+    </Field>
+    <Field Def="u16 attackBaseMagic = 100">
+      <DisplayName>EN攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与えるEN属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10350010</SortID>
+      <UnkC8>攻撃力基本値</UnkC8>
+    </Field>
+    <Field Def="u16 attackBaseFire = 100">
+      <DisplayName>爆発/燃焼攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える爆発/燃焼属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10350020</SortID>
+      <UnkC8>攻撃力基本値</UnkC8>
+    </Field>
+    <Field Def="u16 attackBaseThunder = 100">
+      <DisplayName>コーラル攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与えるコーラル属性攻撃の基本値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10350030</SortID>
+      <UnkC8>攻撃力基本値</UnkC8>
+    </Field>
+    <Field Def="u16 attackBaseStamina = 100">
+      <DisplayName>スタミナ攻撃力</DisplayName>
+      <Description>敵へのスタミナ攻撃力</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 saWeaponDamage">
+      <DisplayName>SA武器攻撃力</DisplayName>
+      <Description>スーパーアーマー基本攻撃力</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 saDurability">
+      <DisplayName>SA耐久値</DisplayName>
+      <Description>攻撃モーション中に使われる追加SA耐久値</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 horizontalGuardAngle">
+      <DisplayName>水平方向のガード範囲[deg]</DisplayName>
+      <Description>武器のガード時の防御発生範囲角度（水平方向）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s16 staminaGuardDef">
+      <DisplayName>ガード時スタミナ防御力</DisplayName>
+      <Description>ガード成功時に、敵のスタミナ攻撃に対する防御力</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 reinforceTypeId">
+      <DisplayName>強化タイプID</DisplayName>
+      <Description>強化タイプID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 trophySGradeId = -1">
+      <DisplayName>トロフィーＳグレードID</DisplayName>
+      <Description>トロフィーシステムに関係あるか？</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10600000</SortID>
+    </Field>
+    <Field Def="s16 trophySeqId = -1">
+      <DisplayName>トロフィーSEQ番号</DisplayName>
+      <Description>トロフィーのSEQ番号（１３～２９）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10610000</SortID>
+    </Field>
+    <Field Def="s16 throwAtkRate">
+      <DisplayName>投げ攻撃力倍率</DisplayName>
+      <Description>投げの攻撃力倍率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 bowDistRate">
+      <DisplayName>弓飛距離補正[％]</DisplayName>
+      <Description>飛距離を伸ばすアップ％</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 equipModelCategory = 7">
+      <DisplayName>装備モデル種別</DisplayName>
+      <Enum>EQUIP_MODEL_CATEGORY</Enum>
+      <Description>装備モデルの種別.</Description>
+      <Maximum>99</Maximum>
+      <SortID>10090000</SortID>
+    </Field>
+    <Field Def="u8 equipModelGender">
+      <DisplayName>装備モデル性別</DisplayName>
+      <Enum>EQUIP_MODEL_GENDER</Enum>
+      <Description>装備モデルの性別.</Description>
+      <Maximum>99</Maximum>
+      <SortID>10100000</SortID>
+    </Field>
+    <Field Def="u8 weaponCategory">
+      <DisplayName>武器カテゴリ</DisplayName>
+      <Enum>WEAPON_CATEGORY</Enum>
+      <Description>武器のカテゴリ.</Description>
+      <Maximum>99</Maximum>
+      <SortID>10060000</SortID>
+    </Field>
+    <Field Def="u8 wepmotionCategory">
+      <DisplayName>【旧・未使用】武器モーションカテゴリ</DisplayName>
+      <Enum>WEPMOTION_CATEGORY</Enum>
+      <Description>武器モーションのカテゴリ.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 guardmotionCategory">
+      <DisplayName>ガードモーションカテゴリ</DisplayName>
+      <Enum>GUARDMOTION_CATEGORY</Enum>
+      <Description>ガードモーションのカテゴリ</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 atkMaterial">
+      <DisplayName>攻撃材質</DisplayName>
+      <Enum>WEP_MATERIAL_ATK</Enum>
+      <Description>攻撃パラから使用される攻撃材質</Description>
+      <SortID>10570000</SortID>
+    </Field>
+    <Field Def="u16 defSeMaterial1">
+      <DisplayName>防御SE材質1</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>攻撃パラから使用される防御SE材質1</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540020</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Physics">
+      <DisplayName>補正タイプ（実弾攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる実弾攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 spAttribute">
+      <DisplayName>特殊属性</DisplayName>
+      <Enum>ATKPARAM_SPATTR_TYPE</Enum>
+      <Description>武器の特殊属性値</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 spAtkcategory">
+      <DisplayName>特殊攻撃カテゴリ</DisplayName>
+      <Description>特殊攻撃カテゴリ（50～999まで可能)</Description>
+      <Maximum>999</Maximum>
+      <SortID>10280000</SortID>
+    </Field>
+    <Field Def="u8 wepmotionOneHandId">
+      <DisplayName>武器モーション片手ID</DisplayName>
+      <Description>片手装備時の基本モーションID.</Description>
+      <SortID>10260000</SortID>
+    </Field>
+    <Field Def="u8 wepmotionBothHandId">
+      <DisplayName>武器モーション両手ID</DisplayName>
+      <Description>両手装備時の基本モーションID.</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 properStrength">
+      <DisplayName>装備適正筋力</DisplayName>
+      <Description>装備適正値.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 properAgility">
+      <DisplayName>装備適正俊敏</DisplayName>
+      <Description>装備適正値.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 properMagic">
+      <DisplayName>装備適正魔力</DisplayName>
+      <Description>装備適正値.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 properFaith">
+      <DisplayName>装備適正信仰</DisplayName>
+      <Description>装備適正値.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 overStrength">
+      <DisplayName>筋力オーバー開始値</DisplayName>
+      <Description>筋力オーバー開始値</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 attackBaseParry">
+      <DisplayName>パリィ攻撃基本値</DisplayName>
+      <Description>敵のパリィをやぶるための基本値</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 defenseBaseParry">
+      <DisplayName>パリィ防御値</DisplayName>
+      <Description>パリィ判定時に、パリィになるかガードになるかの判定に利用</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 guardBaseRepel">
+      <DisplayName>はじき防御力基本値</DisplayName>
+      <Description>ガード敵を攻撃した時に、はじかれるかどうかの判定に利用</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 attackBaseRepel">
+      <DisplayName>はじき攻撃力基本値</DisplayName>
+      <Description>敵の攻撃をガードしたときに、はじけるかどうかの判定に利用</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 guardCutCancelRate">
+      <DisplayName>ガードカット無効化倍率</DisplayName>
+      <Description>相手のガードカットを無効化させる倍率。-100で完全無効。100で相手の防御効果倍増。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 guardLevel">
+      <DisplayName>ガードレベル</DisplayName>
+      <Description>ガードしたとき、敵の攻撃をどのガードモーションで受けるか？を決める</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10450000</SortID>
+    </Field>
+    <Field Def="s8 slashGuardCutRate">
+      <DisplayName>斬撃攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、斬撃属性のダメージを何％カットするか？を指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 blowGuardCutRate">
+      <DisplayName>打撃攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、打撃属性のダメージを何％カットするか？を指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 thrustGuardCutRate">
+      <DisplayName>刺突攻撃カット率</DisplayName>
+      <Description>攻撃タイプを見て、刺突属性のダメージを何％カットするか？を指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 burnGuardResist">
+      <DisplayName>炎上耐性カット率</DisplayName>
+      <Description>炎上にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10470040</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="s8 stunGuardResist">
+      <DisplayName>スタン攻撃カット率</DisplayName>
+      <Description>スタンにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10470050</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="s8 highPlasmaGuardResist">
+      <DisplayName>強プラズマ攻撃カット率</DisplayName>
+      <Description>強プラズマにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10470060</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="s8 curseGuardResist">
+      <DisplayName>呪攻撃カット率</DisplayName>
+      <Description>呪いにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDurabilityDivergence">
+      <DisplayName>耐久度で分岐するか</DisplayName>
+      <Enum>DURABILITY_DIVERGENCE_CATEGORY</Enum>
+      <Description>魔法使用武器対応：耐久度によるモーション分岐</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 rightHandEquipable:1 = 1">
+      <DisplayName>右手に装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>右手に装備可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10120000</SortID>
+    </Field>
+    <Field Def="u8 leftHandEquipable:1 = 1">
+      <DisplayName>左手に装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手に装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>10130000</SortID>
+    </Field>
+    <Field Def="u8 bothHandEquipable:1 = 1">
+      <DisplayName>両手持ちで装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>両手持ちで装備可能か.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 rightBackEquipable:1">
+      <DisplayName>右肩に装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>右肩に装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140000</SortID>
+    </Field>
+    <Field Def="u8 leftBackEquipable:1">
+      <DisplayName>左肩に装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左肩に装備可能か.</Description>
+      <Maximum>1</Maximum>
+      <SortID>10150000</SortID>
+    </Field>
+    <Field Def="u8 enableGuard:1">
+      <DisplayName>ガード可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手装備時L1でガード</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enableParry:1">
+      <DisplayName>パリィ可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>左手装備時L2でパリィ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enableMagic:1">
+      <DisplayName>魔法可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に魔法発動</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enableSorcery:1">
+      <DisplayName>呪術可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に呪術発動</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enableMiracle:1">
+      <DisplayName>奇蹟可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に奇蹟発動</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enableVowMagic:1">
+      <DisplayName>誓約魔法可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>攻撃時に誓約魔法発動</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isNormalAttackType:1">
+      <DisplayName>通常</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。通常か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isBlowAttackType:1">
+      <DisplayName>打撃</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。打撃か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isSlashAttackType:1">
+      <DisplayName>斬撃</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。斬撃か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isThrustAttackType:1">
+      <DisplayName>刺突</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>メニュー表示用攻撃タイプ。刺突か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isEnhance:1 = 1">
+      <DisplayName>エンチャント可能か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>松脂などで、強化可能か？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isHeroPointCorrect:1">
+      <DisplayName>人間性補正あるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>人間性による攻撃力補正があるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isCustom:1 = 1">
+      <DisplayName>強化できるか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>強化ショップで強化対象リストに並ぶ(仕様変更で削除するかも？)</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 disableBaseChangeReset:1">
+      <DisplayName>転職リセット禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>転職リセット禁止か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 disableRepair:1">
+      <DisplayName>修理禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>修理禁止か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDarkHand:1">
+      <DisplayName>ダークハンドか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ダークハンドか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 simpleModelForDlc:1">
+      <DisplayName>DLC用シンプルモデルありか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ＤＬＣ用シンプルモデルが存在しているか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 lanternWep:1">
+      <DisplayName>ランタン武器</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ランタン武器か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isVersusGhostWep:1">
+      <DisplayName>対霊武器</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>対霊武器か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 baseChangeCategory:6">
+      <DisplayName>武器転職カテゴリ</DisplayName>
+      <Enum>WEP_BASE_CHANGE_CATEGORY</Enum>
+      <Description>武器転職カテゴリ。属性アイコン表示に使用します。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>55</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDragonSlayer:1">
+      <DisplayName>竜狩りか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>竜狩り武器か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDeposit:1 = 1">
+      <DisplayName>預けれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>倉庫に預けれるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 disableMultiDropShare:1">
+      <DisplayName>マルチドロップ共有禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチドロップ共有禁止か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDiscard:1 = 1">
+      <DisplayName>捨てれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDrop:1 = 1">
+      <DisplayName>その場に置けるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムをその場に置けるか？TRUE=置ける</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isMissileLockNoRayCast:1">
+      <DisplayName>【ミサイルのみ】遮蔽物越しにロックオンできるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ミサイルで壁越しにロックができるようになる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10340000</SortID>
+    </Field>
+    <Field Def="u8 isPurgeEnable:1 = 1">
+      <DisplayName>パージできるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>パージできるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10200000</SortID>
+    </Field>
+    <Field Def="u8 extensionEquipable:1">
+      <DisplayName>エクステンションに装備可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>エクステンションに装備可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10160000</SortID>
+    </Field>
+    <Field Def="dummy8 pad1:2">
+      <DisplayName>パディング1</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 defSfxMaterial1">
+      <DisplayName>防御SFX材質1</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>攻撃パラから使用される防御SFX材質1</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540000</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="u8 wepCollidableType0 = 1">
+      <DisplayName>武器コライダブル設定</DisplayName>
+      <Enum>WEP_COLLIDABLE_TYPE</Enum>
+      <Description>武器のコライダブル設定</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 wepCollidableType1 = 1">
+      <DisplayName>武器1コライダブル設定</DisplayName>
+      <Enum>WEP_COLLIDABLE_TYPE</Enum>
+      <Description>武器1のコライダブル設定</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="dummy8 wepCollidableType2[1]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 wepCollidableType3[1]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId0 = -1">
+      <DisplayName>剣閃SfxID_０</DisplayName>
+      <Description>剣閃SfxID_０(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead0 = -1">
+      <DisplayName>根元剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃根元ダミポリID_０(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail0 = -1">
+      <DisplayName>剣先剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃剣先ダミポリID_０</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId1 = -1">
+      <DisplayName>剣閃SfxID_１</DisplayName>
+      <Description>剣閃SfxID_１(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead1 = -1">
+      <DisplayName>根元剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃根元ダミポリID_１(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail1 = -1">
+      <DisplayName>剣先剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃剣先ダミポリID_１</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId2 = -1">
+      <DisplayName>剣閃SfxID_２</DisplayName>
+      <Description>剣閃SfxID_２(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead2 = -1">
+      <DisplayName>根元剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃根元ダミポリID_２(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail2 = -1">
+      <DisplayName>剣先剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃剣先ダミポリID_２</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId3 = -1">
+      <DisplayName>剣閃SfxID_３</DisplayName>
+      <Description>剣閃SfxID_３(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead3 = -1">
+      <DisplayName>根元剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃根元ダミポリID_３(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail3 = -1">
+      <DisplayName>剣先剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃剣先ダミポリID_３</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId4 = -1">
+      <DisplayName>剣閃SfxID_４</DisplayName>
+      <Description>剣閃SfxID_４(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead4 = -1">
+      <DisplayName>根元剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃根元ダミポリID_４(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail4 = -1">
+      <DisplayName>剣先剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃剣先ダミポリID_４</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId5 = -1">
+      <DisplayName>剣閃SfxID_５</DisplayName>
+      <Description>剣閃SfxID_５(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead5 = -1">
+      <DisplayName>根元剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃根元ダミポリID_５(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail5 = -1">
+      <DisplayName>剣先剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃剣先ダミポリID_５</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId6 = -1">
+      <DisplayName>剣閃SfxID_６</DisplayName>
+      <Description>剣閃SfxID_６(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead6 = -1">
+      <DisplayName>根元剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃根元ダミポリID_６(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail6 = -1">
+      <DisplayName>剣先剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃剣先ダミポリID_６</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceSfxId7 = -1">
+      <DisplayName>剣閃SfxID_７</DisplayName>
+      <Description>剣閃SfxID_７(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdHead7 = -1">
+      <DisplayName>根元剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃根元ダミポリID_７(-1無効)</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 traceDmyIdTail7 = -1">
+      <DisplayName>剣先剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃剣先ダミポリID_７</Description>
+      <EditFlags>16</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 defSfxMaterial2">
+      <DisplayName>防御SFX材質2</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>攻撃パラから使用される防御SFX材質2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540010</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="u16 defSeMaterial2">
+      <DisplayName>防御SE材質2</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>攻撃パラから使用される防御SE材質2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540030</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="s32 absorpParamId = -1">
+      <DisplayName>吸着位置Id</DisplayName>
+      <Description>武器吸着位置パラメータのId。この値により武器が吸着する位置を決定する(-1：旧ソースコード直書きの値を参照する)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10170000</SortID>
+    </Field>
+    <Field Def="f32 toughnessCorrectRate">
+      <DisplayName>強靭度 補正倍率</DisplayName>
+      <Description>強靭度の基本値を補正する倍率です</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isValidTough_ProtSADmg:1">
+      <DisplayName>防具SAダメージ倍率が初期値でも有効か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>防具SAが初期値でも強靭度計算が行われるかどうか。詳細は強靭度仕様書.xlsxを確認してください</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isDualBlade:1">
+      <DisplayName>双剣か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>この武器は双剣か。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isAutoEquip:1">
+      <DisplayName>自動装填可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>矢・ボルトのみ有効。新しくこの武器を拾っ時に対象装備スロットが空の場合に自動で装備するかどうか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isEnableEmergencyStep:1">
+      <DisplayName>緊急回避可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>緊急回避可能な武器かどうか。ビヘイビアスクリプトに渡す。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 invisibleOnRemo:1">
+      <DisplayName>カットシーン中非表示か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>カットシーン中非表示か</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 guardBreakAtk_IgnoreProtect:1">
+      <DisplayName>ガードブレイク自傷時に防御を貫通する</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ガードブレイク自傷攻撃で防御を貫通する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4:2">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Magic">
+      <DisplayName>補正タイプ（EN攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによるEN攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Fire">
+      <DisplayName>補正タイプ（爆発/燃焼攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる爆発/燃焼攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Thunder">
+      <DisplayName>補正タイプ（雷攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる雷攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 weakE_DamageRate = 1">
+      <DisplayName>特攻Eダメージ倍率</DisplayName>
+      <Description>特攻E用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360040</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakF_DamageRate = 1">
+      <DisplayName>特攻Fダメージ倍率</DisplayName>
+      <Description>特攻F用のダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10360050</SortID>
+      <UnkC8>特攻ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 darkGuardCutRate">
+      <DisplayName>ガード時闇攻撃力カット率</DisplayName>
+      <Description>闇攻撃をどれだけカットするか？</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 attackBaseDark">
+      <DisplayName>闇攻撃力基本値</DisplayName>
+      <Description>敵のＨＰにダメージを与える闇属性攻撃の基本値</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Dark">
+      <DisplayName>補正タイプ（闇攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる闇攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_Burn">
+      <DisplayName>補正タイプ（炎上攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる炎上攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 swordArtsId">
+      <DisplayName>剣戟ID</DisplayName>
+      <Description>【削除予定】→アーツパラメータへ移動。剣戟判別用ID。ビヘイビアスクリプトに渡す。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 correctType_HighPlasma">
+      <DisplayName>補正タイプ（強プラズマ攻撃力）</DisplayName>
+      <Enum>WEP_CORRECT_TYPE</Enum>
+      <Description>一次パラメータによる強プラズマ攻撃力の補正グラフのタイプを決める</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 properLuck">
+      <DisplayName>装備適正運</DisplayName>
+      <Description>装備適正値.</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad5[1]">
+      <DisplayName>パディング5</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u8 autoReplenishType">
+      <DisplayName>自動補充タイプ</DisplayName>
+      <Enum>AUTO_REPLENISH_TYPE</Enum>
+      <Description>自動補充する/しないの可否およびデフォルト設定をコントロールします</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 swordArtsParamId">
+      <DisplayName>アーツパラメータID</DisplayName>
+      <Description>アーツパラメータのID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 correctLuck">
+      <DisplayName>運補正</DisplayName>
+      <Description>キャラパラ補正値.</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u32 arrowBoltEquipId">
+      <DisplayName>矢筒(弾倉)表示モデル用装備ID</DisplayName>
+      <Description>矢筒(弾倉)表示モデルの装備品番号。弓の場合は矢筒、弩の場合は弾倉として表示する。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 DerivationLevelType">
+      <DisplayName>還元時レベル設定</DisplayName>
+      <Enum>WEAPON_DERIVATION_LEVEL_TYPE</Enum>
+      <Description>武器を還元・派生させるときに強化レベルをどう設定するかの種別</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 enchantSfxSize">
+      <DisplayName>エンチャントSfxサイズ</DisplayName>
+      <Enum>WEP_ENCHANT_SFX_SIZE</Enum>
+      <Description>エンチャントSfxIdにオフセットする値</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 wepTypeForText">
+      <DisplayName>武器種別(テキスト用)</DisplayName>
+      <Enum>WEP_TYPE_FOR_TEXT</Enum>
+      <Description>テキスト表示用の武器種別</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 physGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時実弾攻撃カット率_スタミナ不足</DisplayName>
+      <Description>ガード時実弾攻撃カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 magGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時EN攻撃カット率_スタミナ不足</DisplayName>
+      <Description>ガード時EN攻撃カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 fireGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時爆発/燃焼攻撃力カット率_スタミナ不足</DisplayName>
+      <Description>ガード時爆発/燃焼攻撃力カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 thunGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時コーラル攻撃力カット率_スタミナ不足</DisplayName>
+      <Description>ガード時コーラル攻撃力カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 darkGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時闇攻撃力カット率_スタミナ不足</DisplayName>
+      <Description>ガード時闇攻撃力カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 burnGuardResist_StaminaShort = -1">
+      <DisplayName>炎上耐性カット率_スタミナ不足</DisplayName>
+      <Description>炎上耐性カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 stunGuardResist_StaminaShort = -1">
+      <DisplayName>スタン耐性カット率_スタミナ不足</DisplayName>
+      <Description>スタン耐性カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 highPlasmaGuardResist_StaminaShort = -1">
+      <DisplayName>強プラズマ耐性カット率_スタミナ不足</DisplayName>
+      <Description>強プラズマ耐性カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 curseGuardResist_StaminaShort = -1">
+      <DisplayName>呪耐性カット率_スタミナ不足</DisplayName>
+      <Description>呪耐性カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 saGuardCutRate">
+      <DisplayName>ガード時SA攻撃カット率</DisplayName>
+      <Description>自機用：ガード時のSAダメージカット率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 saGuardCutRate_StaminaShort = -1">
+      <DisplayName>ガード時SA攻撃カット率_スタミナ不足</DisplayName>
+      <Description>自機用：ガード時のSAダメージカット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 staminaGuardCutRate">
+      <DisplayName>ガード時スタミナ攻撃力カット率</DisplayName>
+      <Description>自機用：ガード時のスタミナダメージカット率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 staminaGuardCutRate_StaminaShort">
+      <DisplayName>ガード時スタミナ攻撃力カット率_スタミナ不足</DisplayName>
+      <Description>自機用：ガード時のスタミナダメージカット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 depletedUraniumToxicGuardResist_StaminaShort = -1">
+      <DisplayName>劣化ウラン毒耐性カット率_スタミナ不足</DisplayName>
+      <Description>劣化ウラン毒耐性カット率_スタミナ不足</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 depletedUraniumToxicGuardResist">
+      <DisplayName>劣化ウラン毒攻撃カット率</DisplayName>
+      <Description>劣化ウラン毒にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 shoulderEquipType">
+      <DisplayName>肩スロット装備タイプ</DisplayName>
+      <Enum>SHOULDER_EQUIP_TYPE</Enum>
+      <Maximum>1</Maximum>
+      <SortID>10190000</SortID>
+    </Field>
+    <Field Def="u16 staminaMax">
+      <DisplayName>スタミナ最大値</DisplayName>
+      <Description>ガード用スタミナ最大値</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 staminaRecoverPerSec">
+      <DisplayName>スタミナ回復基本速度[point/s]</DisplayName>
+      <Description>ガード用スタミナの毎秒あたりの回復速度</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 recoverStaminaDelayTimeSec">
+      <DisplayName>スタミナ回復待機時間[sec]</DisplayName>
+      <Description>ガード用スタミナの回復が開始するまでの時間</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 guardBreakSelfAtk_AtkId = -1">
+      <DisplayName>ガードブレイク時の自傷攻撃ID</DisplayName>
+      <Description>ガードブレイク時の自傷攻撃ID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 breakThrowTypeId = -1">
+      <DisplayName>投げタイプID（ブレイク投げ）</DisplayName>
+      <Description>発動する投げタイプID（ブレイク投げ）（-1で無効、敵はこの値を無視）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 stealthThrowTypeId = -1">
+      <DisplayName>投げタイプID（ステルス投げ）</DisplayName>
+      <Description>発動する投げタイプID（ステルス投げ）（-1で無効、敵はこの値を無視）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u32 thrustersParamIDForPC">
+      <DisplayName>スラスターパラムID（PC用）</DisplayName>
+      <Description>PC用、スラスターパラメータのIDを指定（0でスラスターなし）</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>10580000</SortID>
+    </Field>
+    <Field Def="dummy8 pad4_2[4]">
+      <DisplayName>パディング4_2</DisplayName>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfxId_1 = -1">
+      <DisplayName>常駐SfxId１</DisplayName>
+      <Description>常駐SfxId1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590000</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfxId_2 = -1">
+      <DisplayName>常駐SfxId２</DisplayName>
+      <Description>常駐SfxId2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590020</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfxId_3 = -1">
+      <DisplayName>常駐SfxId３</DisplayName>
+      <Description>常駐SfxId3</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590040</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfxId_4 = -1">
+      <DisplayName>常駐SfxId４</DisplayName>
+      <Description>常駐SfxId4</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590060</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_1 = -1">
+      <DisplayName>常駐SfxダミポリId１</DisplayName>
+      <Description>常駐SfxダミポリId１</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590010</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_2 = -1">
+      <DisplayName>常駐SfxダミポリId２</DisplayName>
+      <Description>常駐SfxダミポリId２</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590030</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_3 = -1">
+      <DisplayName>常駐SfxダミポリId３</DisplayName>
+      <Description>常駐SfxダミポリId３</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590050</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="s32 residentSfx_DmyId_4 = -1">
+      <DisplayName>常駐SfxダミポリId４</DisplayName>
+      <Description>常駐SfxダミポリId４</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10590070</SortID>
+      <UnkC8>常駐SFX</UnkC8>
+    </Field>
+    <Field Def="f32 staminaConsumptionRate = 1">
+      <DisplayName>スタミナ消費量倍率</DisplayName>
+      <Description>スタミナ消費量倍率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Physics = 1">
+      <DisplayName>対プレイヤー 実弾ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370000</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Magic = 1">
+      <DisplayName>対プレイヤー ENダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370010</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Fire = 1">
+      <DisplayName>対プレイヤー 爆発/燃焼ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370020</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Thunder = 1">
+      <DisplayName>対プレイヤー 雷ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370030</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Dark = 1">
+      <DisplayName>対プレイヤー 闇ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Burn = 1">
+      <DisplayName>対プレイヤー 炎上ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370040</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_HighPlasma = 1">
+      <DisplayName>対プレイヤー 強プラズマダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370050</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_DepletedUraniumToxic = 1">
+      <DisplayName>対プレイヤー 劣化ウラン毒ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370060</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="s32 attainmentWepStatusStr = -1">
+      <DisplayName>武器能力解放ステータス値：筋力</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 attainmentWepStatusDex = -1">
+      <DisplayName>武器能力解放ステータス値：技量</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 attainmentWepStatusMag = -1">
+      <DisplayName>武器能力解放ステータス値：理力</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 attainmentWepStatusFai = -1">
+      <DisplayName>武器能力解放ステータス値：信仰</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 attainmentWepStatusLuc = -1">
+      <DisplayName>武器能力解放ステータス値：運</DisplayName>
+      <Description>特定の武器を使った際、ステータスがX以上だとR2攻撃が特殊なアクションに変わるようするためのもの</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 attackElementCorrectId">
+      <DisplayName>攻撃属性補正ID</DisplayName>
+      <Description>攻撃属性を補正するパラメータのID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 saleValue = -1">
+      <DisplayName>販売価格</DisplayName>
+      <Description>販売価格</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 reinforceShopCategory">
+      <DisplayName>強化ショップカテゴリ</DisplayName>
+      <Enum>REINFORCE_SHOP_CATEGORY</Enum>
+      <Description>強化ショップカテゴリ</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 maxArrowQuantity = 1">
+      <DisplayName>矢の最大所持数</DisplayName>
+      <Description>矢の最大所持数</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 residentSfx_1_IsVisibleForHang:1">
+      <DisplayName>常駐SFX1納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX1納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID1」に設定されているSFXを非表示にする</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 residentSfx_2_IsVisibleForHang:1">
+      <DisplayName>常駐SFX2納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX2納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID2」に設定されているSFXを非表示にする</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 residentSfx_3_IsVisibleForHang:1">
+      <DisplayName>常駐SFX3納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX3納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID3」に設定されているSFXを非表示にする</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 residentSfx_4_IsVisibleForHang:1">
+      <DisplayName>常駐SFX4納刀時表示するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「常駐SFX4納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID4」に設定されているSFXを非表示にする</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model0:1 = 1">
+      <DisplayName>モデル_0 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model1:1 = 1">
+      <DisplayName>モデル_1 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model2:1 = 1">
+      <DisplayName>モデル_2 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isSoulParamIdChange_model3:1 = 1">
+      <DisplayName>モデル_3 ソウルパラムID差し替え可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s8 wepSeIdOffset">
+      <DisplayName>武器SEIDオフセット値</DisplayName>
+      <Description>SEIDのオフセット値 </Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 baseChangePrice">
+      <DisplayName>進化価格</DisplayName>
+      <Description>進化価格</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 levelSyncCorrectId = -1">
+      <DisplayName>レベルシンク補正ID</DisplayName>
+      <Description>レベルシンク補正ID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 atkStateId">
+      <DisplayName>攻撃ステートID</DisplayName>
+      <Description>攻撃ステートのID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4_5[4]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 bulletNum = -1">
+      <DisplayName>マガジンの弾数</DisplayName>
+      <Description>マガジンの弾数（-1で無限）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10400000</SortID>
+    </Field>
+    <Field Def="f32 magazineReload_InactiveSpeedScale = 1">
+      <DisplayName>格納中マガジンリロード速度倍率</DisplayName>
+      <Description>格納中のマガジンリロード速度の倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10410050</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="f32 vsPlayerImpactCorrectRate = 1">
+      <DisplayName>対プレイヤー 衝撃値補正倍率</DisplayName>
+      <Description>プレイヤーに対する攻撃のみ、与える衝撃値を補正する。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370070</SortID>
+      <UnkC8>対プレイヤーダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4_4[4]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s8 connectPartsSlotIndex = -1">
+      <DisplayName>連動パーツ番号</DisplayName>
+      <Description>敵のときにこの装備と連動するパーツ番号</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>31</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 isTaeShootTimingOnly">
+      <DisplayName>TAEからの射撃リクエストでのみ実際に射撃する</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>TAEからの射撃リクエストが来た時のみ実際に弾丸を出す</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s16 verticalGuardAngle">
+      <DisplayName>垂直方向のガード範囲[deg]</DisplayName>
+      <Description>武器のガード時の防御発生範囲角度(垂直方向）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4_6[8]">
+      <DisplayName>pad_4_6</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 postureBothHandAnimeId = -1">
+      <DisplayName>両手構え姿勢加算_アニメID</DisplayName>
+      <Description>指定した ID で構えの加算アニメが再生される</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 postureRightHandAnimeId = -1">
+      <DisplayName>右手構え姿勢加算_アニメID</DisplayName>
+      <Description>指定した ID で構えの加算アニメが再生される</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10310000</SortID>
+    </Field>
+    <Field Def="s32 postureLeftHandAnimeId = -1">
+      <DisplayName>左手構え姿勢加算_アニメID</DisplayName>
+      <Description>指定した ID で構えの加算アニメが再生される</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10320000</SortID>
+    </Field>
+    <Field Def="s32 changeWepParamId = -1">
+      <DisplayName>武器変更時の変更先パラメータID</DisplayName>
+      <Description>武器変更したときにここで指定した武器パラメータIDを使う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10220000</SortID>
+    </Field>
+    <Field Def="s32 lookAtParamId = -1">
+      <DisplayName>LookAtパラメータID</DisplayName>
+      <Description>使用するLookAtのパラメータID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4_7[4]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_0 = -1">
+      <DisplayName>破壊時SfxID_0</DisplayName>
+      <Description>破壊時に発生するSfxのID。【破壊時Sfx発生ダミポリID_0】から発生</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_1 = -1">
+      <DisplayName>破壊時SfxID_1</DisplayName>
+      <Description>破壊時に発生するSfxのID。【破壊時Sfx発生ダミポリID_1】から発生</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_2 = -1">
+      <DisplayName>破壊時SfxID_2</DisplayName>
+      <Description>破壊時に発生するSfxのID。【破壊時Sfx発生ダミポリID_2】から発生</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="dummy8 padding3[8]">
+      <DisplayName>破壊時SｆｘID用パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>16</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_DmypolyId_0 = -1">
+      <DisplayName>破壊時Sfx発生ダミポリID_0</DisplayName>
+      <Description>【破壊時SfxID_0】を発生させるダミポリID。この値が-1の場合は【破壊時SfxID_0】が設定されていても発生しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_DmypolyId_1 = -1">
+      <DisplayName>破壊時Sfx発生ダミポリID_1</DisplayName>
+      <Description>【破壊時SfxID_1】を発生させるダミポリID。この値が-1の場合は【破壊時SfxID_1】が設定されていても発生しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxIdAtBreak_DmypolyId_2 = -1">
+      <DisplayName>破壊時Sfx発生ダミポリID_2</DisplayName>
+      <Description>【破壊時SfxID_2】を発生させるダミポリID。この値が-1の場合は【破壊時SfxID_2】が設定されていても発生しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="dummy8 padding4[8]">
+      <DisplayName>破壊時Sｆｘ発生ダミポリ用パディング</DisplayName>
+      <EditFlags>16</EditFlags>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 lookAtDirType">
+      <DisplayName>LookAt方向タイプ</DisplayName>
+      <Enum>LOOK_AT_DIR_TYPE</Enum>
+      <Description>LookAtで向ける方向</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 bulletShootDirType">
+      <DisplayName>弾丸発射方向タイプ</DisplayName>
+      <Enum>BULLET_SHOOT_DIR_TYPE</Enum>
+      <Description>弾丸を発射する方向</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u16 behaviorJudgeId">
+      <DisplayName>行動判定IDデフォルト値</DisplayName>
+      <Description>ChrBehaviorの制御プログラム：射撃で「行動判定IDを使用する」にチェックが入っていない場合、設定された行動判定IDを使用して射撃を行う</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad9[4]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 totalBulletNum = -1">
+      <DisplayName>総弾数</DisplayName>
+      <Description>全弾数（マガジン内の弾数も含む）（-1で無限）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10390000</SortID>
+    </Field>
+    <Field Def="s32 shieldParamId = -1">
+      <DisplayName>シールドパラメータID</DisplayName>
+      <Description>ガード時に参照するシールドパラメータID（-1で武器パラの値を使用）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="f32 lockRange">
+      <DisplayName>ロック距離[m]</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10330000</SortID>
+    </Field>
+    <Field Def="f32 meleeAbility = 100">
+      <DisplayName>近接適正</DisplayName>
+      <Description>近接適正：角速度の補正量を決定するためのパラメータ</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 lockSightHeightScale = 1">
+      <DisplayName>ロックサイト縦幅倍率</DisplayName>
+      <Description>ロックサイトの縦方向のスケール</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 lockSightWidthScale = 1">
+      <DisplayName>ロックサイト横幅倍率 </DisplayName>
+      <Description>ロックサイトの横方向のスケール</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 lockTimeSec">
+      <DisplayName>【行動パラに移動】ロック時間[sec]</DisplayName>
+      <Description>二次ロックまでの時間</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s32 bladeHomingParamId = -1">
+      <DisplayName>ブレホパラメータID </DisplayName>
+      <Description>ブレホパラメータID </Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 assembleMenuCategory">
+      <DisplayName>アセンブルカテゴリ</DisplayName>
+      <Enum>ASSEMBLE_MENU_CATEGORY_WEAPON</Enum>
+      <Description>アセンブルメニューへ表示するカテゴリ</Description>
+      <Maximum>4</Maximum>
+      <SortID>10030000</SortID>
+    </Field>
+    <Field Def="u8 weaponPoseTypeR">
+      <DisplayName>武器の持ち方タイプ（右）</DisplayName>
+      <Enum>WEAPON_RIGHT_POSE_TYPE</Enum>
+      <Description>武器の持ち方タイプ（右）</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 weaponPoseTypeL">
+      <DisplayName>武器の持ち方タイプ（左）</DisplayName>
+      <Enum>WEAPON_LEFT_POSE_TYPE</Enum>
+      <Description>武器の持ち方タイプ（左）</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 equipPanelIconID">
+      <DisplayName>FE(武器パネル)用アイコンID</DisplayName>
+      <Enum>FE_EQUIPPANEL_ICON_ID</Enum>
+      <Description>FE(武器パネル)表示用アイコンID</Description>
+      <SortID>10080000</SortID>
+    </Field>
+    <Field Def="s32 consumeEN">
+      <DisplayName>EN負荷</DisplayName>
+      <Description>毎秒あたりの消費EN</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10240000</SortID>
+    </Field>
+    <Field Def="s32 categoryNameTextID">
+      <DisplayName>カテゴリ名テキストID</DisplayName>
+      <Description>カテゴリ名テキストID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 pairEquipWep = -1">
+      <DisplayName>ペア装備武器ID</DisplayName>
+      <Description>この武器とペアで装備する武器ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10210000</SortID>
+    </Field>
+    <Field Def="u16 operationPartsId">
+      <DisplayName>稼動許可タイプID</DisplayName>
+      <Description>稼動許可タイプID</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 bulletCost">
+      <DisplayName>弾薬費</DisplayName>
+      <Description>1発あたりの弾薬費</Description>
+      <SortID>10380000</SortID>
+    </Field>
+    <Field Def="f32 depletedUraniumToxicPaGuardResistRate">
+      <DisplayName>PA_劣化ウラン毒攻撃カット率[％]</DisplayName>
+      <Description>PAガードによるカット率：劣化ウラン毒攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520010</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="s32 weaponAttachObjId = -1">
+      <DisplayName>アタッチ関節パラメータID</DisplayName>
+      <Description>関節をアタッチする際に参照するアタッチ関節パラメータのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180000</SortID>
+    </Field>
+    <Field Def="dummy8 pad10[4]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_00">
+      <DisplayName>トリガー0アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_01">
+      <DisplayName>トリガー1アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_02">
+      <DisplayName>トリガー2アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_03">
+      <DisplayName>トリガー3アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_04">
+      <DisplayName>トリガー4アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_05">
+      <DisplayName>トリガー5アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_06">
+      <DisplayName>トリガー6アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_07">
+      <DisplayName>トリガー7アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_08">
+      <DisplayName>トリガー8アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_09">
+      <DisplayName>トリガー9アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_10">
+      <DisplayName>トリガー10アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_11">
+      <DisplayName>トリガー11アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_12">
+      <DisplayName>トリガー12アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_13">
+      <DisplayName>トリガー13アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_14">
+      <DisplayName>トリガー14アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_15">
+      <DisplayName>トリガー15アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_16">
+      <DisplayName>トリガー16アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_17">
+      <DisplayName>トリガー17アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_18">
+      <DisplayName>トリガー18アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_19">
+      <DisplayName>トリガー19アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_20">
+      <DisplayName>トリガー20アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_21">
+      <DisplayName>トリガー21アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_22">
+      <DisplayName>トリガー22アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_23">
+      <DisplayName>トリガー23アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_24">
+      <DisplayName>トリガー24アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_25">
+      <DisplayName>トリガー25アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_26">
+      <DisplayName>トリガー26アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_27">
+      <DisplayName>トリガー27アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_28">
+      <DisplayName>トリガー28アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_29">
+      <DisplayName>トリガー29アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_30">
+      <DisplayName>トリガー30アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 triggerActionType_31">
+      <DisplayName>トリガー31アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s16 wepMotionCategoryIdSpecify">
+      <DisplayName>武器モーションカテゴリ</DisplayName>
+      <Description>武器モーションのカテゴリ.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10270000</SortID>
+    </Field>
+    <Field Def="dummy8 pad01[12]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad6_3_bit:8">
+      <DisplayName>pad6_3_bit:8</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad6_4[1]">
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 physicsPaGuardCutRate">
+      <DisplayName>PA_実弾攻撃カット率[％]</DisplayName>
+      <Description>PAによるカット率：実弾攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520020</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 magicPaGuardCutRate">
+      <DisplayName>PA_EN攻撃カット率[％]</DisplayName>
+      <Description>PAによるカット率：EN攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520030</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 firePaGuardCutRate">
+      <DisplayName>PA_爆発/燃焼攻撃力カット率[％]</DisplayName>
+      <Description>PAによるカット率：爆発/燃焼攻撃力</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520040</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 thunderPaGuardCutRate">
+      <DisplayName>PA_コーラル攻撃力カット率[％]</DisplayName>
+      <Description>PAによるカット率：コーラル攻撃力</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520050</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 darkPaGuardCutRate">
+      <DisplayName>PA_ガード時闇攻撃力カット率[％]</DisplayName>
+      <Description>PAガードによるカット率：闇攻撃力</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 burnPaGuardResistRate">
+      <DisplayName>PA_炎上耐性カット率[％]</DisplayName>
+      <Description>PAによるカット率：炎上耐性</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520060</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 stunPaGuardResistRate">
+      <DisplayName>PA_スタン攻撃カット率[％]</DisplayName>
+      <Description>PAによるカット率：スタン攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520070</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 highPlasmaPaGuardResistRate">
+      <DisplayName>PA_強プラズマ攻撃カット率[％]</DisplayName>
+      <Description>PAによるカット率：強プラズマ攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520080</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 cursePaGuardResistRate">
+      <DisplayName>PA_呪攻撃カット率[％]</DisplayName>
+      <Description>PAガードによるカット率：呪攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 saPaGuardCutRate">
+      <DisplayName>PA_SA攻撃カット率[％]</DisplayName>
+      <Description>PAによるカット率：SA攻撃</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 staminaPaGuardCutRate">
+      <DisplayName>PA_スタミナ攻撃力カット率[％]</DisplayName>
+      <Description>PAによるカット率：スタミナ攻撃力</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 paPaGuardCutRate">
+      <DisplayName>PA_PA減衰カット率[％]</DisplayName>
+      <Description>PAによるカット率：PA攻撃　旧名：PA_ガード時PA攻撃カット率[％]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520110</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="s32 paGuardBaseDmypolyId = -1">
+      <DisplayName>PA_基準ダミポリID</DisplayName>
+      <Description>PAガードのガード方向基準となるダミポリID。-1でマスター位置</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10500000</SortID>
+      <UnkC8>PA範囲</UnkC8>
+    </Field>
+    <Field Def="s16 paGuardDirectionHorizontalDeg">
+      <DisplayName>PA_方向_水平[deg]</DisplayName>
+      <Description>PAガードの水平方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10500020</SortID>
+      <UnkC8>PA範囲</UnkC8>
+    </Field>
+    <Field Def="s16 paGuardDirectionVerticalDeg">
+      <DisplayName>PA_方向_垂直[deg]</DisplayName>
+      <Description>PAガードの垂直方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10500030</SortID>
+      <UnkC8>PA範囲</UnkC8>
+    </Field>
+    <Field Def="s16 paGuardRangeHorizontalDeg">
+      <DisplayName>PA_範囲_水平[deg]</DisplayName>
+      <Description>PAガードの水平範囲。ガード方向を中心とした範囲。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10500040</SortID>
+      <UnkC8>PA範囲</UnkC8>
+    </Field>
+    <Field Def="s16 paGuardRangeVerticalDeg">
+      <DisplayName>PA_範囲_垂直[deg]</DisplayName>
+      <Description>PAガードの垂直範囲。ガード方向を中心とした範囲。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10500050</SortID>
+      <UnkC8>PA範囲</UnkC8>
+    </Field>
+    <Field Def="s32 paTurnOnSfxId = -1">
+      <DisplayName>PA_展開時SfxId</DisplayName>
+      <Description>PA展開時に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530040</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paTurnOnSfxDmypoly = -1">
+      <DisplayName>PA_展開時Sfxダミポリ</DisplayName>
+      <Description>PA展開時に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530050</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOnSfxId = -1">
+      <DisplayName>PA_展開中SfxId</DisplayName>
+      <Description>PA展開中に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530060</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOnSfxDmypoly = -1">
+      <DisplayName>PA_展開中Sfxダミポリ</DisplayName>
+      <Description>PA展開中に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530070</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paTurnOffSfxId = -1">
+      <DisplayName>PA_解除時SfxId</DisplayName>
+      <Description>PA解除時に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530080</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paTurnOffSfxDmypoly = -1">
+      <DisplayName>PA_解除時Sfxダミポリ</DisplayName>
+      <Description>PA解除時に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530090</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paBreakdownSfxId = -1">
+      <DisplayName>PA_崩壊時SfxId</DisplayName>
+      <Description>PA崩壊時に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530120</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paBreakdownSfxDmypoly = -1">
+      <DisplayName>PA_崩壊時Sfxダミポリ</DisplayName>
+      <Description>PA崩壊時に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530130</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paBrokenSfxId = -1">
+      <DisplayName>PA_崩壊中SfxId</DisplayName>
+      <Description>PA崩壊中に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530140</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paBrokenSfxDmypoly = -1">
+      <DisplayName>PA_崩壊中Sfxダミポリ</DisplayName>
+      <Description>PA崩壊中に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530150</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paRecoverSfxId = -1">
+      <DisplayName>PA_復帰時SfxId</DisplayName>
+      <Description>PA復帰時に発行するSFXのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530160</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paRecoverSfxDmypoly = -1">
+      <DisplayName>PA_復帰時Sfxダミポリ</DisplayName>
+      <Description>PA復帰時に発行するSFXのダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530170</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="u16 paDefSeMaterial">
+      <DisplayName>PA_防御SE材質</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>PAの防御材質（SE用）</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540040</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="u16 paDefSfxMaterial">
+      <DisplayName>PA_防御SFX材質</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>PAの防御材質（SFX用）</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10540050</SortID>
+      <UnkC8>防御材質</UnkC8>
+    </Field>
+    <Field Def="s32 guardBaseDmypolyId = -1">
+      <DisplayName>ガード基準ダミポリID</DisplayName>
+      <Description>ガードのガード方向基準となるダミポリID。-1でマスター位置</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10460000</SortID>
+      <UnkC8>ガード範囲</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad6_1:1">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000001</SortID>
+    </Field>
+    <Field Def="u8 isHandEquipForcePurgeEnable:1">
+      <DisplayName>TAEからの手武器強制パージでパージするか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>手に持っている場合TAEからの手武器強制パージでパージするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10200010</SortID>
+    </Field>
+    <Field Def="dummy8 pad6_5_bit:6">
+      <DisplayName>pad6_5_bit:7</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad6_6[1]">
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s16 guardDirectionHorizontalDeg">
+      <DisplayName>ガード方向_水平[deg]</DisplayName>
+      <Description>ガードの水平方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10460020</SortID>
+      <UnkC8>ガード範囲</UnkC8>
+    </Field>
+    <Field Def="s16 guardDirectionVerticalDeg">
+      <DisplayName>ガード方向_垂直[deg]</DisplayName>
+      <Description>ガードの垂直方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10460030</SortID>
+      <UnkC8>ガード範囲</UnkC8>
+    </Field>
+    <Field Def="s16 guardRangeHorizontalDeg">
+      <DisplayName>ガード範囲_水平[deg]</DisplayName>
+      <Description>ガードの水平範囲。ガード方向を中心とした範囲。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10460040</SortID>
+      <UnkC8>ガード範囲</UnkC8>
+    </Field>
+    <Field Def="s16 guardRangeVerticalDeg">
+      <DisplayName>ガード範囲_垂直[deg]</DisplayName>
+      <Description>ガードの垂直範囲。ガード方向を中心とした範囲。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10460050</SortID>
+      <UnkC8>ガード範囲</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad05[2]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 attackActionParamId = -1">
+      <DisplayName>攻撃アクションパラメータID</DisplayName>
+      <Description>攻撃アクションパラメータのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10290000</SortID>
+    </Field>
+    <Field Def="f32 magazineReloadTimeSec">
+      <DisplayName>カートリッジ_マガジンリロード時間[s]</DisplayName>
+      <Description>マガジンリロードの待機時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10410010</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="f32 chargeEndTimeSec">
+      <DisplayName>チャージ完了時間[s]</DisplayName>
+      <Description>その武器のチャージゲージが0からMAXになるのにかかる時間。0の場合、チャージゲージの増加が始まった瞬間にチャージゲージがMAXになる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420000</SortID>
+      <UnkC8>チャージ</UnkC8>
+    </Field>
+    <Field Def="f32 chargeReleaseStartTimeSec = -1">
+      <DisplayName>チャージ減少開始時間[s]</DisplayName>
+      <Description>チャージしていない状態になってからチャージが減少し始めるまでの時間。-1の場合、どれだけ経っても減少を始めない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420020</SortID>
+      <UnkC8>チャージ</UnkC8>
+    </Field>
+    <Field Def="f32 chargeReleaseEndTimeSec">
+      <DisplayName>チャージ減少完了時間[s]</DisplayName>
+      <Description>その武器のチャージゲージがMAXから0になるまでにかかる時間。0の場合、チャージゲージの減少が始まった瞬間にチャージゲージが0になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420030</SortID>
+      <UnkC8>チャージ</UnkC8>
+    </Field>
+    <Field Def="u32 physicalShield_HP">
+      <DisplayName>実盾_HP</DisplayName>
+      <Description>実盾_HP</Description>
+      <Maximum>9999999</Maximum>
+      <SortID>10550000</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s32 physicalShield_GuardBaseDmypoly = -1">
+      <DisplayName>実盾_ガード基準ダミポリ</DisplayName>
+      <Description>実盾_ガード基準ダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10550010</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_NeutralDamageCutRate = 1">
+      <DisplayName>実盾_無属性ダメージ倍率</DisplayName>
+      <Description>実盾_無属性ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10550230</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_SlashDamageCutRate = 1">
+      <DisplayName>実盾_斬撃ダメージ倍率</DisplayName>
+      <Description>実盾_斬撃ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_BlowDamageCutRate = 1">
+      <DisplayName>実盾_打撃ダメージ倍率</DisplayName>
+      <Description>実盾_打撃ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_ThrustDamageCutRate = 1">
+      <DisplayName>実盾_刺突ダメージ倍率</DisplayName>
+      <Description>実盾_刺突ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_MagicDamageCutRate = 1">
+      <DisplayName>実盾_ENダメージ倍率</DisplayName>
+      <Description>実盾_ENダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10550270</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_FireDamageCutRate = 1">
+      <DisplayName>実盾_爆発/燃焼ダメージ倍率</DisplayName>
+      <Description>実盾_爆発/燃焼ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10550280</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_ThunderDamageCutRate = 1">
+      <DisplayName>実盾_コーラルダメージ倍率</DisplayName>
+      <Description>実盾_コーラルダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10550290</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_DarkDamageCutRate = 1">
+      <DisplayName>実盾_闇ダメージ倍率</DisplayName>
+      <Description>実盾_闇ダメージ倍率</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_BurnGuardResist">
+      <DisplayName>実盾_炎上耐性カット率[％]</DisplayName>
+      <Description>実盾_炎上耐性カット率[％]</Description>
+      <Maximum>100</Maximum>
+      <SortID>10550180</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_StunGuardResist">
+      <DisplayName>実盾_スタン攻撃カット率[％]</DisplayName>
+      <Description>実盾_スタン攻撃カット率[％]</Description>
+      <Maximum>100</Maximum>
+      <SortID>10550190</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_HighPlasmaGuardResist">
+      <DisplayName>実盾_強プラズマ攻撃カット率[％]</DisplayName>
+      <Description>実盾_強プラズマ攻撃カット率[％]</Description>
+      <Maximum>100</Maximum>
+      <SortID>10550200</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_CurseGuardResist">
+      <DisplayName>実盾_呪攻撃カット率[％]</DisplayName>
+      <Description>実盾_呪攻撃カット率[％]</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_DepletedUraniumToxicGuardResist">
+      <DisplayName>実盾_劣化ウラン毒攻撃カット率[％]</DisplayName>
+      <Description>実盾_劣化ウラン毒攻撃カット率[％]</Description>
+      <Maximum>100</Maximum>
+      <SortID>10550220</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad15_1:1">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000002</SortID>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakA:1">
+      <DisplayName>実盾_特攻Aか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Aか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550300</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakB:1">
+      <DisplayName>実盾_特攻Bか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Bか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550310</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakC:1">
+      <DisplayName>実盾_特攻Cか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Cか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550320</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakD:1">
+      <DisplayName>実盾_特攻Dか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Dか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550330</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakE:1">
+      <DisplayName>実盾_特攻Eか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Eか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550340</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u8 physicalShield_IsWeakF:1">
+      <DisplayName>実盾_特攻Fか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>実盾_特攻Fか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10550350</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad15:1">
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 physicalShield_DefPhys">
+      <DisplayName>実盾_実弾防御力</DisplayName>
+      <Description>実盾_実弾防御力</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10550110</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_DefSlash">
+      <DisplayName>実盾_斬撃防御力[％]</DisplayName>
+      <Description>実盾_斬撃防御力[％]</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_DefBlow">
+      <DisplayName>実盾_打撃防御力[％]</DisplayName>
+      <Description>実盾_打撃防御力[％]</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_DefThrust">
+      <DisplayName>実盾_刺突防御力[％]</DisplayName>
+      <Description>実盾_刺突防御力[％]</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u16 physicalShield_DefMagic">
+      <DisplayName>実盾_EN防御力</DisplayName>
+      <Description>実盾_EN防御力</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10550150</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u16 physicalShield_DefFire">
+      <DisplayName>実盾_爆発/燃焼防御力</DisplayName>
+      <Description>実盾_爆発/燃焼防御力</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10550160</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u16 physicalShield_DefThunder">
+      <DisplayName>実盾_コーラル防御力</DisplayName>
+      <Description>実盾_コーラル防御力</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10550170</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="u16 physicalShield_DefDark">
+      <DisplayName>実盾_闇防御力</DisplayName>
+      <Description>実盾_闇防御力</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_DirectionHorizontalDeg">
+      <DisplayName>実盾_ガード方向_水平[deg]</DisplayName>
+      <Description>実盾_ガード方向_水平[deg]</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10550030</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_DirectionVerticalDeg">
+      <DisplayName>実盾_ガード方向_垂直[deg]</DisplayName>
+      <Description>実盾_ガード方向_垂直[deg]</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10550040</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_RangeHorizontalDeg">
+      <DisplayName>実盾_ガード範囲_水平[deg]</DisplayName>
+      <Description>実盾_ガード範囲_水平[deg]</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10550050</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s16 physicalShield_RangeVerticalDeg">
+      <DisplayName>実盾_ガード範囲_垂直[deg]</DisplayName>
+      <Description>実盾_ガード範囲_垂直[deg]</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10550060</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_end[2]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 bulletReload_Direct_ReloadSpeedUPS">
+      <DisplayName>直接装填_リロード速度[発/s]</DisplayName>
+      <Description>リロードタイプが直接装填時のリロード速度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10410020</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="f32 bulletReload_Direct_ShootAfterDelay">
+      <DisplayName>直接装填_射撃後ディレイ[s]</DisplayName>
+      <Description>リロードタイプが直接装填時の射撃後ディレイ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10410030</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="f32 bulletReload_Direct_EmptyDelay">
+      <DisplayName>直接装填_撃ちきりディレイ[s]</DisplayName>
+      <Description>リロードタイプが直接装填時の撃ちきりディレイ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10410040</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_05_1[3]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u8 appropriateType_Melee:1">
+      <DisplayName>格闘適性対象か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>防具パラの格闘適性対象か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10430000</SortID>
+    </Field>
+    <Field Def="u8 appropriateType_Energy:1">
+      <DisplayName>EN武器適性対象か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>防具パラのEN武器適性対象か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10440000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_05_2:6">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 chargeLv2EndTimeSec = -1">
+      <DisplayName>チャージLv2完了時間[s]</DisplayName>
+      <Description>その武器のチャージゲージが0からMAXになるのにかかる時間。0の場合、チャージゲージの増加が始まった瞬間にチャージゲージがMAXになる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420010</SortID>
+      <UnkC8>チャージ</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_05_3[4]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 Maker">
+      <DisplayName>企業</DisplayName>
+      <Enum>EQUIP_MAKER_TYPE</Enum>
+      <Description>製造元</Description>
+      <SortID>10070000</SortID>
+    </Field>
+    <Field Def="u16 menuManageCategory">
+      <DisplayName>メニュー管理カテゴリ</DisplayName>
+      <Enum>MENU_EQUIP_CATEGORY_TYPE</Enum>
+      <Description>メニュー管理用のカテゴリ</Description>
+      <SortID>10040000</SortID>
+    </Field>
+    <Field Def="f32 justGuardKeepTimeSec">
+      <DisplayName>ジャスガ判定閾値[sec]</DisplayName>
+      <Description>ジャスガの判定持続時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10480000</SortID>
+      <UnkC8>ガード</UnkC8>
+    </Field>
+    <Field Def="f32 justGuardReloadTimeSec">
+      <DisplayName>ジャスガ判定再発動時間[sec]</DisplayName>
+      <Description>ジャスが完了からもう一度使えるようになる時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10480010</SortID>
+      <UnkC8>ガード</UnkC8>
+    </Field>
+    <Field Def="f32 justGuardImpactCutRatePercent">
+      <DisplayName>衝撃値カット率_ジャスガ[％]</DisplayName>
+      <Description>ガード時の衝撃値カット率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10471080</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenStartSfxId = -1">
+      <DisplayName>ガード時SfxId</DisplayName>
+      <Description>ガード展開時SFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490000</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenStartSfxDmyId = -1">
+      <DisplayName>ガード時Sfxダミポリ</DisplayName>
+      <Description>ガード展開時SFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490010</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenStaySfxId = -1">
+      <DisplayName>ガード中SfxId</DisplayName>
+      <Description>ガード展開中SFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490020</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenStaySfxDmyId = -1">
+      <DisplayName>ガード中Sfxダミポリ</DisplayName>
+      <Description>ガード展開中SFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490030</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenEndSfxId = -1">
+      <DisplayName>ガード解除時SfxId</DisplayName>
+      <Description>ガード解除SFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490040</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardOpenEndSfxDmyId = -1">
+      <DisplayName>ガード解除時Sfxダミポリ</DisplayName>
+      <Description>ガード解除SFXダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490050</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardInitOpenStartSfxId = -1">
+      <DisplayName>ジャスガ時SfxId</DisplayName>
+      <Description>ジャストガード展開時SFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490060</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardInitOpenStartDmyId = -1">
+      <DisplayName>ジャスガ時Sfxダミポリ</DisplayName>
+      <Description>ジャストガード展開時SFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490070</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardInitOpenStaySfxId = -1">
+      <DisplayName>ジャスガ中SfxId</DisplayName>
+      <Description>ジャストガード展開中SFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490080</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 guardInitOpenStayDmyId = -1">
+      <DisplayName>ジャスガ中Sfxダミポリ</DisplayName>
+      <Description>ジャストガード展開中SFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10490090</SortID>
+      <UnkC8>ガード_SFX</UnkC8>
+    </Field>
+    <Field Def="f32 impactPaGuardCutRate">
+      <DisplayName>PA_衝撃値カット率[％]</DisplayName>
+      <Description>PAガードによるカット率：衝撃値</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520120</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="u8 justGuardCondTiming">
+      <DisplayName>ジャスガタイミング</DisplayName>
+      <Enum>EQUIP_JUST_GUARD_TIMING_TYPE</Enum>
+      <Description>どのタイミングでジャスガ扱いになるか</Description>
+      <SortID>10480020</SortID>
+      <UnkC8>ガード</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad04_5[1]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 paGaugeMax">
+      <DisplayName>PA_ゲージ量[point]</DisplayName>
+      <Description>PAゲージの上限値[point]　旧名：PA_ゲージ上限値[point]。各展開タイプで共通のパラメータ。</Description>
+      <SortID>10510050</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="u16 paRecoverGaugePoint">
+      <DisplayName>PA_復帰ゲージ値[point]</DisplayName>
+      <Description>PA崩壊後、PAを展開できるようになるPAゲージ値[point]。各展開タイプで共通のパラメータ。</Description>
+      <SortID>10510060</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="u16 paGaugeRecoverPerSec">
+      <DisplayName>PA_展開型_ゲージ回復速度[point/sec]</DisplayName>
+      <Description>展開型PAのPA展開可能・PA展開不可時の、PAゲージの1秒あたりの回復量[point/秒]</Description>
+      <SortID>10510070</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="f32 paEmerGaugeRecoverPointPerSec">
+      <DisplayName>PA_展開型_緊急時ゲージ回復速度[point/sec]</DisplayName>
+      <Description>緊急時の1秒あたりのゲージ回復量</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510080</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="f32 paGaugeRecoverDelayTimeSec">
+      <DisplayName>PA_展開型_ゲージ回復待機時間[sec]</DisplayName>
+      <Description>展開型PAの最後にPAゲージ減少してからゲージ回復し始めるまでの時間[sec]。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510090</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="f32 paGaugeRecoverEmerDelayTimeSec">
+      <DisplayName>PA_展開型_緊急時ゲージ回復待機時間[sec]</DisplayName>
+      <Description>展開型PAのPA展開直後・PA展開中時の、PAゲージの1秒あたりの現象量[point/秒]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510100</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="s32 consumeEN_Charging = -1">
+      <DisplayName>チャージ時EN負荷</DisplayName>
+      <Description>チャージ中の毎秒あたりの消費EN</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10250000</SortID>
+    </Field>
+    <Field Def="dummy8 pad04_2[2]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 scanAngle = 360">
+      <DisplayName>【廃止予定】【スキャン】スキャン角度[deg]</DisplayName>
+      <Description>スキャン時の角度範囲</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>360</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="f32 scanDist">
+      <DisplayName>【廃止予定】【スキャン】スキャン距離[m]</DisplayName>
+      <Description>スキャン時の距離範囲</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="f32 scanTime">
+      <DisplayName>【廃止予定】【スキャン】スキャン効果時間[s]</DisplayName>
+      <Description>一回のスキャンの実行時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 scanType">
+      <DisplayName>【廃止予定】【スキャン】対象更新タイプ</DisplayName>
+      <Enum>SCAN_TARGET_UPDATE_TYPE</Enum>
+      <Description>スキャンする際の更新挙動タイプ</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad04_3[3]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 waitTimeForShoot">
+      <DisplayName>射撃待機時間[1/30s]</DisplayName>
+      <Description>ビヘイビア用、設定値に1/30を掛けた値を秒数として使用する</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10630000</SortID>
+      <UnkC8>射撃待機時間</UnkC8>
+    </Field>
+    <Field Def="f32 waitTimeForChargeShoot">
+      <DisplayName>チャージ時射撃待機時間[1/30s]</DisplayName>
+      <Description>ビヘイビア用、設定値に1/30を掛けた値を秒数として使用する</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10630100</SortID>
+      <UnkC8>射撃待機時間</UnkC8>
+    </Field>
+    <Field Def="f32 paOpen_PaDecayCutRate">
+      <DisplayName>PA_展開時_PA減衰カット率[％]</DisplayName>
+      <Description>PA展開直後中に参照するパラメータ。PA減衰カット率に対応する。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520000</SortID>
+      <UnkC8>PAカット率</UnkC8>
+    </Field>
+    <Field Def="f32 paOpen_PerfStayTimeSec">
+      <DisplayName>PA_展開時性能維持時間[sec]</DisplayName>
+      <Description>PA展開直後状態を継続する時間[sec]。各展開タイプで共通のパラメータ。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510030</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="f32 paOpen_PerfRecastTimeSec">
+      <DisplayName>PA_展開時性能リキャスト時間[sec]</DisplayName>
+      <Description>PA展開直後状態に再度遷移できるようになるまでのリキャスト時間[sec]。各展開タイプで共通のパラメータ。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510040</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_PerfTimeSfxId = -1">
+      <DisplayName>PA_展開時性能中SfxId</DisplayName>
+      <Description>PA展開直後状態中のSFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530000</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_PerfTimeSfxDmyId = -1">
+      <DisplayName>PA_展開時性能中Sfxダミポリ</DisplayName>
+      <Description>PA展開直後状態中のSFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530010</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_PerfEndSfxId = -1">
+      <DisplayName>PA_展開時性能終了SfxId</DisplayName>
+      <Description>PA展開直後状態から展開中状態に遷移した際のSFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530020</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_PerfEndSfxDmyId = -1">
+      <DisplayName>PA_展開時性能終了Sfxダミポリ</DisplayName>
+      <Description>PA展開直後状態から展開中状態に遷移した際のSFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530030</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_RecastSfxId = -1">
+      <DisplayName>PA_リキャスト中展開時SfxId</DisplayName>
+      <Description>PAリキャスト中に展開した際のSFXID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530100</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 paOpen_RecastSfxDmyId = -1">
+      <DisplayName>PA_リキャスト中展開時Sfxダミポリ</DisplayName>
+      <Description>PAリキャスト中に展開した際のSFX用ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10530110</SortID>
+      <UnkC8>PA_SFX</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad04_4[4]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u16 paGaugeOpenSubPointPerSec">
+      <DisplayName>PA_展開中ゲージ消費速度[point/sec]</DisplayName>
+      <Description>展開型PAのPA展開直後・PA展開中時にPAゲージが0を割って（PAブレイク発生）からゲージ回復し始めるまでの時間[sec]。</Description>
+      <SortID>10510000</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad06[1]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="u8 bulletReloadType">
+      <DisplayName>リロードタイプ</DisplayName>
+      <Enum>BULLET_RELOAD_TYPE</Enum>
+      <Description>リロードタイプ</Description>
+      <Maximum>1</Maximum>
+      <SortID>10410000</SortID>
+      <UnkC8>リロード</UnkC8>
+    </Field>
+    <Field Def="f32 guardImpactCutRatePercent">
+      <DisplayName>衝撃値カット率</DisplayName>
+      <Description>ガード時の衝撃値カット率</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10470070</SortID>
+      <UnkC8>カット率</UnkC8>
+    </Field>
+    <Field Def="u8 bPaOpenGaugeRecoverDelay">
+      <DisplayName>PA_展開中ゲージ回復ディレイかけるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>展開中にゲージの回復ディレイを掛けるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10510010</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad07[3]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 paOpenGaugeRecoverScale">
+      <DisplayName>PA_展開中ゲージ回復速度倍率[%]</DisplayName>
+      <Description>展開中のゲージ回復速度の倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510020</SortID>
+      <UnkC8>PAゲージ</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f00">
+      <DisplayName>【表示用】Float_00</DisplayName>
+      <Description>メニュー表示用算出値00</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f01">
+      <DisplayName>【表示用】Float_01</DisplayName>
+      <Description>メニュー表示用算出値01</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f02">
+      <DisplayName>【表示用】Float_02</DisplayName>
+      <Description>メニュー表示用算出値02</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f03">
+      <DisplayName>【表示用】Float_03</DisplayName>
+      <Description>メニュー表示用算出値03</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f04">
+      <DisplayName>【表示用】Float_04</DisplayName>
+      <Description>メニュー表示用算出値04</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f05">
+      <DisplayName>【表示用】Float_05</DisplayName>
+      <Description>メニュー表示用算出値05</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f06">
+      <DisplayName>【表示用】Float_06</DisplayName>
+      <Description>メニュー表示用算出値06</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f07">
+      <DisplayName>【表示用】Float_07</DisplayName>
+      <Description>メニュー表示用算出値07</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f08">
+      <DisplayName>【表示用】Float_08</DisplayName>
+      <Description>メニュー表示用算出値08</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f09">
+      <DisplayName>【表示用】Float_09</DisplayName>
+      <Description>メニュー表示用算出値09</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f10">
+      <DisplayName>【表示用】Float_10</DisplayName>
+      <Description>メニュー表示用算出値10</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f11">
+      <DisplayName>【表示用】Float_11</DisplayName>
+      <Description>メニュー表示用算出値11</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f12">
+      <DisplayName>【表示用】Float_12</DisplayName>
+      <Description>メニュー表示用算出値12</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f13">
+      <DisplayName>【表示用】Float_13</DisplayName>
+      <Description>メニュー表示用算出値13</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f14">
+      <DisplayName>【表示用】Float_14</DisplayName>
+      <Description>メニュー表示用算出値14</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f15">
+      <DisplayName>【表示用】Float_15</DisplayName>
+      <Description>メニュー表示用算出値15</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f16">
+      <DisplayName>【表示用】Float_16</DisplayName>
+      <Description>メニュー表示用算出値16</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f17">
+      <DisplayName>【表示用】Float_17</DisplayName>
+      <Description>メニュー表示用算出値17</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f18">
+      <DisplayName>【表示用】Float_18</DisplayName>
+      <Description>メニュー表示用算出値18</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f19">
+      <DisplayName>【表示用】Float_19</DisplayName>
+      <Description>メニュー表示用算出値19</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f20">
+      <DisplayName>【表示用】Float_20</DisplayName>
+      <Description>メニュー表示用算出値20</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f21">
+      <DisplayName>【表示用】Float_21</DisplayName>
+      <Description>メニュー表示用算出値21</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f22">
+      <DisplayName>【表示用】Float_22</DisplayName>
+      <Description>メニュー表示用算出値22</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f23">
+      <DisplayName>【表示用】Float_23</DisplayName>
+      <Description>メニュー表示用算出値23</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f24">
+      <DisplayName>【表示用】Float_24</DisplayName>
+      <Description>メニュー表示用算出値24</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f25">
+      <DisplayName>【表示用】Float_25</DisplayName>
+      <Description>メニュー表示用算出値25</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f26">
+      <DisplayName>【表示用】Float_26</DisplayName>
+      <Description>メニュー表示用算出値26</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f27">
+      <DisplayName>【表示用】Float_27</DisplayName>
+      <Description>メニュー表示用算出値27</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f28">
+      <DisplayName>【表示用】Float_28</DisplayName>
+      <Description>メニュー表示用算出値28</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f29">
+      <DisplayName>【表示用】Float_29</DisplayName>
+      <Description>メニュー表示用算出値29</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f30">
+      <DisplayName>【表示用】Float_30</DisplayName>
+      <Description>メニュー表示用算出値30</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 computed_f_last">
+      <DisplayName>【表示用】Float_31</DisplayName>
+      <Description>メニュー表示用算出値31</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100000000</Minimum>
+      <Maximum>100000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 HdPadRumble_Id">
+      <DisplayName>持ち替え時振動</DisplayName>
+      <Enum>EQUIP_HD_RUMBLE_TYPE</Enum>
+      <Description>持ち替え時の振動ID(左のときの値、右は＋１された値が再生される)</Description>
+      <Maximum>1</Maximum>
+      <SortID>10620000</SortID>
+    </Field>
+    <Field Def="dummy8 pad08[3]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_guardImpactCutRatePercent">
+      <DisplayName>実盾_衝撃値カット率_ガード中[％]</DisplayName>
+      <Description>実盾_ガード時の衝撃値カット率</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10550070</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_justGuardImpactCutRatePercent">
+      <DisplayName>実盾_衝撃値カット率_ジャスガ[％] 	</DisplayName>
+      <Description>実盾_ガード時の衝撃値カット率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10550080</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_justGuardKeepTimeSec">
+      <DisplayName>実盾_ジャスガ判定持続時間[sec]</DisplayName>
+      <Description>実盾_ジャスガの判定持続時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10550090</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="f32 physicalShield_justGuardReloadTimeSec">
+      <DisplayName>実盾_ジャスガ判定再発動時間[sec]</DisplayName>
+      <Description>実盾_ジャスが完了からもう一度使えるようになる時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10550100</SortID>
+      <UnkC8>実盾</UnkC8>
+    </Field>
+    <Field Def="s32 shootRboundParamOffset">
+      <DisplayName>射撃反動パラオフセット値</DisplayName>
+      <Description>射撃反動パラの参照時に使うIDオフセット値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10325000</SortID>
+    </Field>
+    <Field Def="dummy8 pad09[4]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000003</SortID>
+    </Field>
+    <Field Def="u8 isNpacNoConsumeStorageBullet:1 = 1">
+      <DisplayName>きせかえNPACで装弾数を消費しない</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>NPACでマガジンリロード時に装弾数を消費しないようにするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10390000</SortID>
+    </Field>
+    <Field Def="u8 isPulseSpAtkGuard:1">
+      <DisplayName>パルス特攻対象のガードか？ 	</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>パルス特攻対象のガードか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10480100</SortID>
+      <UnkC8>ガード</UnkC8>
+    </Field>
+    <Field Def="u8 isHeavyWeightAddAnim:1">
+      <DisplayName>【手武器専用】重量級加算アニメ判定対象か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>干渉対象のときの加算アニメ対象か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10199000</SortID>
+    </Field>
+    <Field Def="u8 unk54c_3:1" />
+    <Field Def="dummy8 pad25:4">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_26[3]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 stayPa_Radius">
+      <DisplayName>設置PA_半径[m]</DisplayName>
+      <Description>設置PAの半径</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10511000</SortID>
+      <UnkC8>設置PA</UnkC8>
+    </Field>
+    <Field Def="u32 stayPa_MaxHp">
+      <DisplayName>設置PA_最大耐久値[point]</DisplayName>
+      <Description>設置PAの最大耐久値</Description>
+      <Maximum>9999999</Maximum>
+      <SortID>10511000</SortID>
+      <UnkC8>設置PA</UnkC8>
+    </Field>
+    <Field Def="f32 stayPa_AddHpPerSec">
+      <DisplayName>設置PA_耐久値増減速度[point/sec]</DisplayName>
+      <Description>設置PAの1秒間に増える耐久値</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10511000</SortID>
+      <UnkC8>設置PA</UnkC8>
+    </Field>
+    <Field Def="u16 stayPa_DefMaterialSfx">
+      <DisplayName>設置PA_防御SFX材質</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>設置PAのSFX材質</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10511000</SortID>
+      <UnkC8>設置PA</UnkC8>
+    </Field>
+    <Field Def="u16 stayPa_DefMaterialSe">
+      <DisplayName>設置PA_防御SE材質</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>設置PAのSE材質</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10511000</SortID>
+      <UnkC8>設置PA</UnkC8>
+    </Field>
+    <Field Def="s32 stayPa_LaunchSfxId = -1">
+      <DisplayName>設置PA_展開時SfxId</DisplayName>
+      <Description>設置PA展開時のSFXID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10540000</SortID>
+      <UnkC8>設置PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 stayPa_LaunchKeepSfxId = -1">
+      <DisplayName>設置PA_展開中SfxId</DisplayName>
+      <Description>設置PA展開中のSFXID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10540000</SortID>
+      <UnkC8>設置PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 stayPa_BreakSfxId = -1">
+      <DisplayName>設置PA_崩壊時SfxId</DisplayName>
+      <Description>設置PA崩壊時のSFXID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10540000</SortID>
+      <UnkC8>設置PA_SFX</UnkC8>
+    </Field>
+    <Field Def="s32 stayPa_ReleaseSfxId = -1">
+      <DisplayName>設置PA_解除時SfxId</DisplayName>
+      <Description>設置PA解除時のSFXID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10540000</SortID>
+      <UnkC8>設置PA_SFX</UnkC8>
+    </Field>
+    <Field Def="f32 residualImpactSubRate_Guard = 1">
+      <DisplayName>残留衝撃値揮発速度_ガード中倍率</DisplayName>
+      <Description>ガード中の残留衝撃値揮発速度の倍率</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10480015</SortID>
+      <UnkC8>ガード</UnkC8>
+    </Field>
+    <Field Def="f32 backunitAjustHeight">
+      <DisplayName>肩武器装備時のスライド量[m]</DisplayName>
+      <Description>肩装備の高さ調節量</Description>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10190010</SortID>
+    </Field>
+    <Field Def="f32 physJustGuardCutRate">
+      <DisplayName>ガード時実弾攻撃カット率_ジャスガ</DisplayName>
+      <Description>ガード時のダメージカット率を各攻撃ごとに設定</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10471000</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="f32 magJustGuardCutRate">
+      <DisplayName>ガード時EN攻撃カット率_ジャスガ</DisplayName>
+      <Description>ガード攻撃でない場合は、0を入れる</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10471010</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="f32 fireJustGuardCutRate">
+      <DisplayName>ガード時爆発/燃焼攻撃力カット率_ジャスガ</DisplayName>
+      <Description>爆発/燃焼攻撃をどれだけカットするか？</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10471020</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="f32 thunJustGuardCutRate">
+      <DisplayName>ガード時コーラル攻撃力カット率_ジャスガ</DisplayName>
+      <Description>コーラル攻撃をどれだけカットするか？</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10471030</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="s8 burnJustGuardResist">
+      <DisplayName>炎上耐性カット率_ジャスガ</DisplayName>
+      <Description>炎上にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10471040</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="s8 stunJustGuardResist">
+      <DisplayName>スタン攻撃カット率_ジャスガ</DisplayName>
+      <Description>スタンにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10471050</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="s8 highPlasmaJustGuardResist">
+      <DisplayName>強プラズマ攻撃カット率_ジャスガ</DisplayName>
+      <Description>強プラズマにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10471060</SortID>
+      <UnkC8>カット率_ジャスガ時</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_27[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 heat_SubValuePerSec">
+      <DisplayName>ヒート値減少量[point/sec]</DisplayName>
+      <Description>1秒あたりのヒート値減少量</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420100</SortID>
+      <UnkC8>オーバーヒート</UnkC8>
+    </Field>
+    <Field Def="f32 heat_OverHeatSubValueScalePercent = 100">
+      <DisplayName>オバヒ後ヒート値減少量倍率[％]</DisplayName>
+      <Description>オーバーヒート後のヒート値減少量倍率</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420100</SortID>
+      <UnkC8>オーバーヒート</UnkC8>
+    </Field>
+    <Field Def="f32 heat_ShootDelay">
+      <DisplayName>ヒート値減少量_射撃後ディレイ[s]</DisplayName>
+      <Description>射撃後ヒート値減少までのディレイ時間</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420100</SortID>
+      <UnkC8>オーバーヒート</UnkC8>
+    </Field>
+    <Field Def="f32 heat_OverHeatShootDelay">
+      <DisplayName>ヒート値減少量_オバヒ後ディレイ[s] 	</DisplayName>
+      <Description>射撃後オーバーヒート時ヒート値減少までのディレイ時間</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420100</SortID>
+      <UnkC8>オーバーヒート</UnkC8>
+    </Field>
+    <Field Def="f32 heat_OverHeatEndPoint">
+      <DisplayName>オーバーヒート解除ヒート値[point]</DisplayName>
+      <Description>オーバーヒートが解除されるヒート値</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10420100</SortID>
+      <UnkC8>オーバーヒート</UnkC8>
+    </Field>
+    <Field Def="s32 refId = -1">
+      <DisplayName>別武器パラ参照ID</DisplayName>
+      <Description>設定されていると別パラメータを参照します</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>10025000</SortID>
+    </Field>
+    <Field Def="s16 menu_SrcBehaviorId">
+      <DisplayName>【メニュー】参照する行動判定ID</DisplayName>
+      <Description>参照する行動判定ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591000</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkPower">
+      <DisplayName>【メニュー】攻撃力参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃力参照元</Description>
+      <SortID>10591005</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkCountCondType">
+      <DisplayName>【メニュー】攻撃回数判定タイプ</DisplayName>
+      <Enum>EQUIP_ATK_COUNT_COND_TYPE</Enum>
+      <Description>攻撃回数判定タイプ</Description>
+      <SortID>10591010</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkCount">
+      <DisplayName>【メニュー】攻撃回数参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃回数参照元</Description>
+      <SortID>10591010</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationIntervalChild">
+      <DisplayName>【メニュー】間隔指定弾発生元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>間隔指定弾発生元</Description>
+      <SortID>10591010</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_SfxFakeShootCount = 1">
+      <DisplayName>【メニュー】SFXでのフェイク発射数</DisplayName>
+      <Description>SFXでのフェイク発射数</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591020</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationDirectHit">
+      <DisplayName>【メニュー】直撃補正参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>直撃補正参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationImpact">
+      <DisplayName>【メニュー】衝撃力参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>衝撃力参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationResidualImpact">
+      <DisplayName>【メニュー】蓄積衝撃力参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>蓄積衝撃力参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationPaInterference">
+      <DisplayName>【メニュー】PA干渉参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>PA干渉参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationHoming">
+      <DisplayName>【メニュー】誘導性能参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>誘導性能参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationExplosion">
+      <DisplayName>【メニュー】爆発範囲参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>爆発範囲参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationRicocheted">
+      <DisplayName>【メニュー】跳弾基準距離参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>跳弾基準距離参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationRange">
+      <DisplayName>【メニュー】射程限界参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>射程限界参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowConsumeBullet = 1">
+      <DisplayName>【メニュー】消費弾数表示</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>消費弾数表示</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowAddHeat = 1">
+      <DisplayName>【メニュー】発熱表示</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>発熱表示</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkContTimeType">
+      <DisplayName>【メニュー】攻撃継続時間タイプ</DisplayName>
+      <Enum>EQUIP_ATK_CONT_TIME_TYPE</Enum>
+      <Description>攻撃継続時間タイプ</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkContTime">
+      <DisplayName>【メニュー】攻撃継続時間参照元</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃継続時間参照元</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s8 menu_MeleeComboCount = -1">
+      <DisplayName>【メニュー】格闘コンボ数</DisplayName>
+      <Description>格闘コンボ数</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkPowerCondType">
+      <DisplayName>【メニュー】攻撃力判定タイプ</DisplayName>
+      <Enum>EQUIP_ATK_POWER_COND_TYPE</Enum>
+      <Description>攻撃力判定タイプ</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_SrcBehaviorId_Charge = -1">
+      <DisplayName>【メニュー】参照する行動判定ID_チャージ</DisplayName>
+      <Description>参照する行動判定ID_チャージ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkPower_Charge">
+      <DisplayName>【メニュー】攻撃力参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃力参照元_チャージ</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkCountCondType_Charge">
+      <DisplayName>【メニュー】攻撃回数判定タイプ_チャージ</DisplayName>
+      <Enum>EQUIP_ATK_COUNT_COND_TYPE</Enum>
+      <Description>攻撃回数判定タイプ_チャージ</Description>
+      <SortID>10591040</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkCount_Charge">
+      <DisplayName>【メニュー】攻撃回数参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃回数参照元_チャージ</Description>
+      <SortID>10591040</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkPowerCondType_Charge">
+      <DisplayName>【メニュー】攻撃力判定タイプ_チャージ</DisplayName>
+      <Enum>EQUIP_ATK_POWER_COND_TYPE</Enum>
+      <Description>攻撃力判定タイプ_チャージ</Description>
+      <SortID>10591030</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_SfxFakeShootCount_Charge = 1">
+      <DisplayName>【メニュー】SFXでのフェイク発射数_チャージ</DisplayName>
+      <Description>SFXでのフェイク発射数_チャージ</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591040</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationDirectHit_Charge">
+      <DisplayName>【メニュー】直撃補正参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>直撃補正参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationImpact_Charge">
+      <DisplayName>【メニュー】衝撃力参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>衝撃力参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationResidualImpact_Charge">
+      <DisplayName>【メニュー】蓄積衝撃力参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>蓄積衝撃力参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationPaInterference_Charge">
+      <DisplayName>【メニュー】PA干渉参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>PA干渉参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationHoming_Charge">
+      <DisplayName>【メニュー】誘導性能参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>誘導性能参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationExplosion_Charge">
+      <DisplayName>【メニュー】爆発範囲参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>爆発範囲参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationRicocheted_Charge">
+      <DisplayName>【メニュー】跳弾基準距離参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>跳弾基準距離参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationRange_Charge">
+      <DisplayName>【メニュー】射程限界参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>射程限界参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowConsumeBullet_Charge = 1">
+      <DisplayName>【メニュー】消費弾数表示_チャージ</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>消費弾数表示_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowAddHeat_Charge = 1">
+      <DisplayName>【メニュー】発熱表示_チャージ</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>発熱表示_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkContTimeType_Charge">
+      <DisplayName>【メニュー】攻撃継続時間タイプ_チャージ</DisplayName>
+      <Enum>EQUIP_ATK_CONT_TIME_TYPE</Enum>
+      <Description>攻撃継続時間タイプ_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkContTime_Charge">
+      <DisplayName>【メニュー】攻撃継続時間参照元_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃継続時間参照元_チャージ</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcChargeTime">
+      <DisplayName>【メニュー】チャージ時間参照元</DisplayName>
+      <Enum>EQUIP_CHARGE_TIME_SRC_TYPE</Enum>
+      <Description>チャージ時間参照元</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_31[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s16 menu_SrcBehaviorId_Melee = -1">
+      <DisplayName>【メニュー】参照する行動判定ID_格闘強攻撃</DisplayName>
+      <Description>参照する行動判定ID_格闘強攻撃</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowConsumeBullet_Melee = 1">
+      <DisplayName>【メニュー】消費弾数表示_格闘強攻撃</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>消費弾数表示_格闘強攻撃</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_ShowAddHeat_Melee = 1">
+      <DisplayName>【メニュー】発熱表示_格闘強攻撃</DisplayName>
+      <Enum>EQUIP_MENU_SHOW_TYPE</Enum>
+      <Description>発熱表示_格闘強攻撃</Description>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s32 menu_HelpMovieID">
+      <DisplayName>【メニュー】ヘルプ動画ID</DisplayName>
+      <Description>ヘルプ動画ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10591050</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 isMakeCollisionPa:1">
+      <DisplayName>追従PA_球体コリジョンを生成するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>PAガードの球体コリジョンを生成するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10520120</SortID>
+      <UnkC8>追従PA</UnkC8>
+    </Field>
+    <Field Def="u8 menu_IntervalMulAtkPower:1">
+      <DisplayName>【メニュー】間隔指定発生弾の数を攻撃力の方にかける</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>間隔指定発生弾の数を攻撃力の方にかけるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10591010</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_KrswShoot:1">
+      <DisplayName>【メニュー】カラサワ向け2段系射撃か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>カラサワ向け2段系射撃か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_KrswShoot_Charge:1">
+      <DisplayName>【メニュー】カラサワ向け2段系射撃か_チャージ</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>カラサワ向け2段系射撃か_チャージ</Description>
+      <Maximum>1</Maximum>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad32:4">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_33[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s16 menu_AtkPowSfxFakeShootCount = 1">
+      <DisplayName>【メニュー】攻撃力用フェイク発射数</DisplayName>
+      <Description>攻撃力にかけるSFXでのフェイク発射数</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591020</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s32 makeCollisionPaBaesDmypolyId = -1">
+      <DisplayName>追従PA_基準ダミポリID</DisplayName>
+      <Description>PAガードの球体コリジョンを生成する中心位置となるダミポリID。-1でマスター位置</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10520120</SortID>
+      <UnkC8>追従PA</UnkC8>
+    </Field>
+    <Field Def="f32 makeCollisionPaOpenInitRadius">
+      <DisplayName>追従PA_展開時性能中範囲_半径[m]</DisplayName>
+      <Description>追従PAの球体コリジョンの半径</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520120</SortID>
+      <UnkC8>追従PA</UnkC8>
+    </Field>
+    <Field Def="f32 MakeCollisionPaOpenRadius">
+      <DisplayName>追従PA_展開中範囲_半径[m]</DisplayName>
+      <Description>追従PAの球体コリジョンの半径</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520120</SortID>
+      <UnkC8>追従PA</UnkC8>
+    </Field>
+    <Field Def="s16 menu_AtkPowSfxFakeShootCount_Charge = 1">
+      <DisplayName>【メニュー】攻撃力用フェイク発射数_チャージ</DisplayName>
+      <Description>攻撃力にかけるSFXでのフェイク発射数_チャージ</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591040</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkPower2">
+      <DisplayName>【メニュー】攻撃力参照元2</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃力参照元（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkPowerCondType2">
+      <DisplayName>【メニュー】攻撃力判定タイプ2</DisplayName>
+      <Enum>EQUIP_ATK_POWER_COND_TYPE</Enum>
+      <Description>攻撃力判定タイプ（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationImpact2">
+      <DisplayName>【メニュー】衝撃力参照元2</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>衝撃力参照元（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationResidualImpact2">
+      <DisplayName>【メニュー】蓄積衝撃力参照元2</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>蓄積衝撃力参照元（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_AtkPowSfxFakeShootCount2 = 1">
+      <DisplayName>【メニュー】攻撃力用フェイク発射数2</DisplayName>
+      <Description>攻撃力にかけるSFXでのフェイク発射数（カラサワ向け2段系射撃か用）</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591100</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationAtkPower_Charge2">
+      <DisplayName>【メニュー】攻撃力参照元2_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>攻撃力参照元_チャージ（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_AtkPowerCondType_Charge2">
+      <DisplayName>【メニュー】攻撃力判定タイプ2_チャージ</DisplayName>
+      <Enum>EQUIP_ATK_POWER_COND_TYPE</Enum>
+      <Description>攻撃力判定タイプ_チャージ（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationImpact_Charge2">
+      <DisplayName>【メニュー】衝撃力参照元2_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>衝撃力参照元_チャージ（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="u8 menu_SrcGenerationResidualImpact_Charge2">
+      <DisplayName>【メニュー】蓄積衝撃力参照元2_チャージ</DisplayName>
+      <Enum>EQUIP_GENERATION_TYPE</Enum>
+      <Description>蓄積衝撃力参照元_チャージ（カラサワ向け2段系射撃か用）</Description>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_AtkPowSfxFakeShootCount_Charge2 = 1">
+      <DisplayName>【メニュー】攻撃力用フェイク発射数2_チャージ</DisplayName>
+      <Description>攻撃力にかけるSFXでのフェイク発射数_チャージ（カラサワ向け2段系射撃か用）</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591110</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s16 menu_SrcBehaviorId2_StrongMelee = -1">
+      <DisplayName>【メニュー】参照する行動判定ID2_格闘強攻撃</DisplayName>
+      <Description>参照する行動判定ID（格闘強攻撃用）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10591000</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_end02[28]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

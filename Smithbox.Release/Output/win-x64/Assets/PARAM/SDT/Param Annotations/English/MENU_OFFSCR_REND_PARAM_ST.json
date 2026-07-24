@@ -1,0 +1,73 @@
+{
+  "Param": "MENU_OFFSCR_REND_PARAM_ST",
+  "Type": "MENU_OFFSCR_REND_PARAM_ST",
+  "Name": "MENU_OFFSCR_REND_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "camAtPosX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camAtPosY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camAtPosZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camRotX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camRotY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camFov",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camDistMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camDistMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camRotXMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camRotXMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GparamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

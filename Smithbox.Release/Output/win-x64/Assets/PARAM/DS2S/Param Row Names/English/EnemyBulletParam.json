@@ -1,0 +1,5165 @@
+{
+  "Name": "EnemyBulletParam",
+  "Entries": [
+    {
+      "ID": 100000010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000410,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000510,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100001000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100001010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100001020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100002000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100002010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100002020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100003000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100003010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100003020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100010000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100020000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 110002010,
+      "Entries": [
+        "[Forest Grotesque]"
+      ]
+    },
+    {
+      "ID": 110201710,
+      "Entries": [
+        "[Hollow Soldier]"
+      ]
+    },
+    {
+      "ID": 110201711,
+      "Entries": [
+        "[Hollow Soldier]"
+      ]
+    },
+    {
+      "ID": 110204010,
+      "Entries": [
+        "[Hollow Soldier]"
+      ]
+    },
+    {
+      "ID": 110204110,
+      "Entries": [
+        "[Hollow Soldier]"
+      ]
+    },
+    {
+      "ID": 110211610,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 110211710,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 110211810,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 110211811,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 110304010,
+      "Entries": [
+        "[Hollow Infantry]"
+      ]
+    },
+    {
+      "ID": 110305010,
+      "Entries": [
+        "[Hollow Infantry]"
+      ]
+    },
+    {
+      "ID": 110313010,
+      "Entries": [
+        "[Drangleic Infantry]"
+      ]
+    },
+    {
+      "ID": 110500110,
+      "Entries": [
+        "[Amana Shrine Maiden]"
+      ]
+    },
+    {
+      "ID": 110501210,
+      "Entries": [
+        "[Amana Shrine Maiden]"
+      ]
+    },
+    {
+      "ID": 110501310,
+      "Entries": [
+        "[Amana Shrine Maiden]"
+      ]
+    },
+    {
+      "ID": 110501320,
+      "Entries": [
+        "[Amana Shrine Maiden]"
+      ]
+    },
+    {
+      "ID": 110501330,
+      "Entries": [
+        "[Amana Shrine Maiden]"
+      ]
+    },
+    {
+      "ID": 110600210,
+      "Entries": [
+        "[Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 110600410,
+      "Entries": [
+        "[Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 110600510,
+      "Entries": [
+        "[Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 110600520,
+      "Entries": [
+        "[Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 110600610,
+      "Entries": [
+        "[Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 110700510,
+      "Entries": [
+        "[Parasitized Undead]"
+      ]
+    },
+    {
+      "ID": 110802010,
+      "Entries": [
+        "[Hollow Rogue]"
+      ]
+    },
+    {
+      "ID": 111300710,
+      "Entries": [
+        "[Varangian Sailor]"
+      ]
+    },
+    {
+      "ID": 111300711,
+      "Entries": [
+        "[Varangian Sailor]"
+      ]
+    },
+    {
+      "ID": 111302010,
+      "Entries": [
+        "[Varangian Sailor]"
+      ]
+    },
+    {
+      "ID": 111302110,
+      "Entries": [
+        "[Varangian Sailor]"
+      ]
+    },
+    {
+      "ID": 111500210,
+      "Entries": [
+        "[Undead Traveler]"
+      ]
+    },
+    {
+      "ID": 111501110,
+      "Entries": [
+        "[Undead Traveler]"
+      ]
+    },
+    {
+      "ID": 111800210,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800211,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800410,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800510,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800610,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800611,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800612,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800613,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800614,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800615,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800710,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800810,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111800910,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111801010,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111801020,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111801030,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111801110,
+      "Entries": [
+        "[Hollow Mage]"
+      ]
+    },
+    {
+      "ID": 111900020,
+      "Entries": [
+        "[Lion Clan Mage]"
+      ]
+    },
+    {
+      "ID": 111900210,
+      "Entries": [
+        "[Lion Clan Mage]"
+      ]
+    },
+    {
+      "ID": 111900310,
+      "Entries": [
+        "[Lion Clan Mage]"
+      ]
+    },
+    {
+      "ID": 111900410,
+      "Entries": [
+        "[Lion Clan Mage]"
+      ]
+    },
+    {
+      "ID": 111900510,
+      "Entries": [
+        "[Lion Clan Mage]"
+      ]
+    },
+    {
+      "ID": 112102220,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112102221,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112103220,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112103221,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112103320,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112103321,
+      "Entries": [
+        "[Giant]"
+      ]
+    },
+    {
+      "ID": 112300210,
+      "Entries": [
+        "[Suspicious Shadow]"
+      ]
+    },
+    {
+      "ID": 112300220,
+      "Entries": [
+        "[Suspicious Shadow]"
+      ]
+    },
+    {
+      "ID": 112300910,
+      "Entries": [
+        "[Suspicious Shadow]"
+      ]
+    },
+    {
+      "ID": 112300950,
+      "Entries": [
+        "[Suspicious Shadow]"
+      ]
+    },
+    {
+      "ID": 112300960,
+      "Entries": [
+        "[Suspicious Shadow]"
+      ]
+    },
+    {
+      "ID": 112400510,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112401410,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112401710,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112401810,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112402510,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112402810,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112402910,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112403010,
+      "Entries": [
+        "[Manikin]"
+      ]
+    },
+    {
+      "ID": 112500210,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112500211,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112501110,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112502110,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112503110,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112504110,
+      "Entries": [
+        "[Rupturing Hollow]"
+      ]
+    },
+    {
+      "ID": 112700310,
+      "Entries": [
+        "[Captive Undead]"
+      ]
+    },
+    {
+      "ID": 112701300,
+      "Entries": [
+        "[Captive Undead]"
+      ]
+    },
+    {
+      "ID": 112900010,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112900110,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112900210,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112900310,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901010,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901110,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901210,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901220,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901310,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 112901410,
+      "Entries": [
+        "[Forest Spirit]"
+      ]
+    },
+    {
+      "ID": 113101010,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113101110,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113101210,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113101310,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113101320,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113102010,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113102110,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113102210,
+      "Entries": [
+        "[Lindelt Cleric]"
+      ]
+    },
+    {
+      "ID": 113203010,
+      "Entries": [
+        "[Skeleton]"
+      ]
+    },
+    {
+      "ID": 113500710,
+      "Entries": [
+        "[Gyrm Warrior]"
+      ]
+    },
+    {
+      "ID": 113502010,
+      "Entries": [
+        "[Gyrm Warrior]"
+      ]
+    },
+    {
+      "ID": 113701110,
+      "Entries": [
+        "[Dragon Acolyte]"
+      ]
+    },
+    {
+      "ID": 113701310,
+      "Entries": [
+        "[Dragon Acolyte]"
+      ]
+    },
+    {
+      "ID": 113701510,
+      "Entries": [
+        "[Dragon Acolyte]"
+      ]
+    },
+    {
+      "ID": 114100610,
+      "Entries": [
+        "[Undead Aberration]"
+      ]
+    },
+    {
+      "ID": 114100611,
+      "Entries": [
+        "[Undead Aberration]"
+      ]
+    },
+    {
+      "ID": 114100710,
+      "Entries": [
+        "[Undead Aberration]"
+      ]
+    },
+    {
+      "ID": 114600310,
+      "Entries": [
+        "[Lord Tseldora]"
+      ]
+    },
+    {
+      "ID": 114900120,
+      "Entries": [
+        "[Undead Steelworker]"
+      ]
+    },
+    {
+      "ID": 114900121,
+      "Entries": [
+        "[Undead Steelworker]"
+      ]
+    },
+    {
+      "ID": 114900340,
+      "Entries": [
+        "[Undead Steelworker]"
+      ]
+    },
+    {
+      "ID": 114900341,
+      "Entries": [
+        "[Undead Steelworker]"
+      ]
+    },
+    {
+      "ID": 115201010,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115201110,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115201210,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115202010,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115202110,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115202210,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115203010,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115203110,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115203210,
+      "Entries": [
+        "[Royal Soldier]"
+      ]
+    },
+    {
+      "ID": 115400610,
+      "Entries": [
+        "[Skeleton Lord]"
+      ]
+    },
+    {
+      "ID": 115400710,
+      "Entries": [
+        "[Skeleton Lord]"
+      ]
+    },
+    {
+      "ID": 115400810,
+      "Entries": [
+        "[Skeleton Lord]"
+      ]
+    },
+    {
+      "ID": 115400910,
+      "Entries": [
+        "[Skeleton Lord]"
+      ]
+    },
+    {
+      "ID": 115400920,
+      "Entries": [
+        "[Skeleton Lord]"
+      ]
+    },
+    {
+      "ID": 120300610,
+      "Entries": [
+        "[Parasite Spider]"
+      ]
+    },
+    {
+      "ID": 120400010,
+      "Entries": [
+        "[Poison Moth]"
+      ]
+    },
+    {
+      "ID": 120400011,
+      "Entries": [
+        "[Poison Moth]"
+      ]
+    },
+    {
+      "ID": 120400210,
+      "Entries": [
+        "[Poison Moth]"
+      ]
+    },
+    {
+      "ID": 120400211,
+      "Entries": [
+        "[Poison Moth]"
+      ]
+    },
+    {
+      "ID": 120500310,
+      "Entries": [
+        "[Poison Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120500320,
+      "Entries": [
+        "[Poison Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120500321,
+      "Entries": [
+        "[Poison Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120510310,
+      "Entries": [
+        "[Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120510320,
+      "Entries": [
+        "[Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120510321,
+      "Entries": [
+        "[Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 120900710,
+      "Entries": [
+        "[Hunting Dog]"
+      ]
+    },
+    {
+      "ID": 120900810,
+      "Entries": [
+        "[Hunting Dog]"
+      ]
+    },
+    {
+      "ID": 121000310,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000320,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000330,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000410,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000420,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000430,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000510,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000530,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000540,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000610,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000630,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121000640,
+      "Entries": [
+        "[Basilisk]"
+      ]
+    },
+    {
+      "ID": 121200210,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121200220,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121200221,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121200222,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121200230,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201110,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201120,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201121,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201122,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201130,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201210,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201211,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201212,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201310,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201311,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201312,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201410,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201411,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201412,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201510,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201520,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201521,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201522,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201530,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201610,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201611,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121201710,
+      "Entries": [
+        "[Guardian Dragon]"
+      ]
+    },
+    {
+      "ID": 121400000,
+      "Entries": [
+        "[Giant Undead Boar]"
+      ]
+    },
+    {
+      "ID": 122000310,
+      "Entries": [
+        "[Giant Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 122000510,
+      "Entries": [
+        "[Giant Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 122000520,
+      "Entries": [
+        "[Giant Acid Horn Beetle]"
+      ]
+    },
+    {
+      "ID": 122200410,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200420,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200430,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200510,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200520,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200530,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200610,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200620,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122200630,
+      "Entries": [
+        "[Giant Basilisk]"
+      ]
+    },
+    {
+      "ID": 122350000,
+      "Entries": [
+        "c6280 Giant rat blast dummy [Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 122351710,
+      "Entries": [
+        "c6280 Giant Rat Action 20 Blood Spitting Body [Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 122351711,
+      "Entries": [
+        "c6280 Giant rat action 20 for eye-catching rate to exhale blood [Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 122351712,
+      "Entries": [
+        "c6280 Giant rat action 20 blood-spitting mouth for eye-catching rate [Hollow Priest]"
+      ]
+    },
+    {
+      "ID": 130200310,
+      "Entries": [
+        "[Undead Jailer]"
+      ]
+    },
+    {
+      "ID": 130200320,
+      "Entries": [
+        "[Undead Jailer]"
+      ]
+    },
+    {
+      "ID": 130500000,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130500001,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130500040,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130500320,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501040,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501051,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501053,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501054,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501111,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501113,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501114,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130501320,
+      "Entries": [
+        "[Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130510000,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130510001,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130510040,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130510320,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511040,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511051,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511053,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511054,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511111,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511113,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511114,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130511320,
+      "Entries": [
+        "[Blue Smelter Demon]"
+      ]
+    },
+    {
+      "ID": 130600710,
+      "Entries": [
+        "[Alonne Captain]"
+      ]
+    },
+    {
+      "ID": 130970121,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970122,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970231,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970232,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970411,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970511,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970620,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970621,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 130970622,
+      "Entries": [
+        "[Giant Lord]"
+      ]
+    },
+    {
+      "ID": 131100120,
+      "Entries": [
+        "[Mounted Overseer]"
+      ]
+    },
+    {
+      "ID": 131302010,
+      "Entries": [
+        "[Hollow Falconer]"
+      ]
+    },
+    {
+      "ID": 131302110,
+      "Entries": [
+        "[Hollow Falconer]"
+      ]
+    },
+    {
+      "ID": 131600320,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131600321,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131601020,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131601030,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131601110,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131601120,
+      "Entries": [
+        "[Desert Sorceress]"
+      ]
+    },
+    {
+      "ID": 131700310,
+      "Entries": [
+        "[Dragon Acolyte]"
+      ]
+    },
+    {
+      "ID": 131700320,
+      "Entries": [
+        "[Dragon Acolyte]"
+      ]
+    },
+    {
+      "ID": 131800720,
+      "Entries": [
+        "[The Pursuer]"
+      ]
+    },
+    {
+      "ID": 131801100,
+      "Entries": [
+        "[The Pursuer]"
+      ]
+    },
+    {
+      "ID": 131801101,
+      "Entries": [
+        "[The Pursuer]"
+      ]
+    },
+    {
+      "ID": 131900710,
+      "Entries": [
+        "[Alonne Knight]"
+      ]
+    },
+    {
+      "ID": 131900810,
+      "Entries": [
+        "[Alonne Knight]"
+      ]
+    },
+    {
+      "ID": 132100410,
+      "Entries": [
+        "[Mimic]"
+      ]
+    },
+    {
+      "ID": 132100420,
+      "Entries": [
+        "[Mimic]"
+      ]
+    },
+    {
+      "ID": 132400710,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132400810,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132400910,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132400920,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132400921,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132401010,
+      "Entries": [
+        "[Belfry Gargoyle]"
+      ]
+    },
+    {
+      "ID": 132500910,
+      "Entries": [
+        "[Ruin Sentinel]"
+      ]
+    },
+    {
+      "ID": 132500911,
+      "Entries": [
+        "[Ruin Sentinel]"
+      ]
+    },
+    {
+      "ID": 132600000,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600001,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600002,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600320,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600321,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600322,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132600910,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 132601010,
+      "Entries": [
+        "[The Rotten]"
+      ]
+    },
+    {
+      "ID": 133100410,
+      "Entries": [
+        "[Drakekeeper]"
+      ]
+    },
+    {
+      "ID": 133300910,
+      "Entries": [
+        "[Velstadt]"
+      ]
+    },
+    {
+      "ID": 133400910,
+      "Entries": [
+        "[Throne Watcher]"
+      ]
+    },
+    {
+      "ID": 133401020,
+      "Entries": [
+        "[Throne Watcher]"
+      ]
+    },
+    {
+      "ID": 150000211,
+      "Entries": [
+        "[Covetous Demon]"
+      ]
+    },
+    {
+      "ID": 150000212,
+      "Entries": [
+        "[Covetous Demon]"
+      ]
+    },
+    {
+      "ID": 150001210,
+      "Entries": [
+        "[Covetous Demon]"
+      ]
+    },
+    {
+      "ID": 150100710,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100810,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100811,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100812,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100813,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100814,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100815,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100816,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100817,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100818,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100819,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100910,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100911,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100912,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150100913,
+      "Entries": [
+        "[Mytha- the Baneful Queen]"
+      ]
+    },
+    {
+      "ID": 150300010,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150300110,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301110,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301210,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301211,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301212,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301213,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301214,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150301220,
+      "Entries": [
+        "[Scorpioness Najka]"
+      ]
+    },
+    {
+      "ID": 150400820,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400840,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400841,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400842,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400843,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400844,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400845,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400860,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400870,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400871,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400872,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400873,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150400930,
+      "Entries": [
+        "[Looking Glass Knight]"
+      ]
+    },
+    {
+      "ID": 150610001,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610002,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610003,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610005,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610210,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610310,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610410,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610411,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610412,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150610510,
+      "Entries": [
+        "[Darklurker]"
+      ]
+    },
+    {
+      "ID": 150620000,
+      "Entries": [
+        "[Darklurker (Clone)]"
+      ]
+    },
+    {
+      "ID": 150620010,
+      "Entries": [
+        "[Darklurker (Clone)]"
+      ]
+    },
+    {
+      "ID": 150620110,
+      "Entries": [
+        "[Darklurker (Clone)]"
+      ]
+    },
+    {
+      "ID": 150620200,
+      "Entries": [
+        "[Darklurker (Clone)]"
+      ]
+    },
+    {
+      "ID": 150650710,
+      "Entries": [
+        "[Grave Warden Agdayne]"
+      ]
+    },
+    {
+      "ID": 150650720,
+      "Entries": [
+        "[Grave Warden Agdayne]"
+      ]
+    },
+    {
+      "ID": 150650730,
+      "Entries": [
+        "[Grave Warden Agdayne]"
+      ]
+    },
+    {
+      "ID": 150650810,
+      "Entries": [
+        "[Grave Warden Agdayne]"
+      ]
+    },
+    {
+      "ID": 150900210,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900220,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900310,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900410,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900510,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900511,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900512,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900513,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900520,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900530,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900540,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900610,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900710,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 150900720,
+      "Entries": [
+        "[Leydia Witch]"
+      ]
+    },
+    {
+      "ID": 151200310,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200311,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200312,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200320,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200321,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200322,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200323,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200410,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200420,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200430,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200440,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200510,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200520,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200530,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200540,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151200610,
+      "Entries": [
+        "[Leydia Pyromancer]"
+      ]
+    },
+    {
+      "ID": 151460610,
+      "Entries": [
+        "[Vendrick (hollow)]"
+      ]
+    },
+    {
+      "ID": 160000000,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000610,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000611,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000612,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000613,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000620,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000621,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000622,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000623,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000630,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000631,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000632,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000633,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000710,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000711,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000712,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000720,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000721,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000722,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000730,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000731,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000732,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000740,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000741,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000742,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000750,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000751,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000752,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000810,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000811,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000812,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160000813,
+      "Entries": [
+        "[Ancient Dragon]"
+      ]
+    },
+    {
+      "ID": 160100410,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100411,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100412,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100510,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100511,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100610,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100611,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100910,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160100911,
+      "Entries": [
+        "[Flame Lizard]"
+      ]
+    },
+    {
+      "ID": 160200000,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160200002,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160200003,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160200011,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160201040,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160201110,
+      "Entries": [
+        "[Demon of Song]"
+      ]
+    },
+    {
+      "ID": 160301050,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301051,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301052,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301053,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301150,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301151,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301152,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301153,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301250,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301251,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301252,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301253,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301350,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301351,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301352,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301353,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301410,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301510,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301610,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301710,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301810,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301811,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301910,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160301911,
+      "Entries": [
+        "[The Duke's Dear Freja]"
+      ]
+    },
+    {
+      "ID": 160310510,
+      "Entries": [
+        "[The Duke's Dear Freja (map)]"
+      ]
+    },
+    {
+      "ID": 160310610,
+      "Entries": [
+        "[The Duke's Dear Freja (map)]"
+      ]
+    },
+    {
+      "ID": 160310611,
+      "Entries": [
+        "[The Duke's Dear Freja (map)]"
+      ]
+    },
+    {
+      "ID": 160310710,
+      "Entries": [
+        "[The Duke's Dear Freja (map)]"
+      ]
+    },
+    {
+      "ID": 160310810,
+      "Entries": [
+        "[The Duke's Dear Freja (map)]"
+      ]
+    },
+    {
+      "ID": 160700001,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700002,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700510,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700610,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700710,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700813,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700814,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700912,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160700913,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160701014,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160701015,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160701016,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160701110,
+      "Entries": [
+        "[Old Iron King]"
+      ]
+    },
+    {
+      "ID": 160800010,
+      "Entries": [
+        "[Corrosive Ant Queen]"
+      ]
+    },
+    {
+      "ID": 161100810,
+      "Entries": [
+        "[Dragonrider]"
+      ]
+    },
+    {
+      "ID": 161910610,
+      "Entries": [
+        "[Executioner's Chariot]"
+      ]
+    },
+    {
+      "ID": 161910620,
+      "Entries": [
+        "[Executioner's Chariot]"
+      ]
+    },
+    {
+      "ID": 161910810,
+      "Entries": [
+        "[Executioner's Chariot]"
+      ]
+    },
+    {
+      "ID": 161910910,
+      "Entries": [
+        "[Executioner's Chariot]"
+      ]
+    },
+    {
+      "ID": 161919000,
+      "Entries": [
+        "[Executioner's Chariot]"
+      ]
+    },
+    {
+      "ID": 162500920,
+      "Entries": [
+        "[Old Dragonslayer]"
+      ]
+    },
+    {
+      "ID": 162501020,
+      "Entries": [
+        "[Old Dragonslayer]"
+      ]
+    },
+    {
+      "ID": 162501120,
+      "Entries": [
+        "[Old Dragonslayer]"
+      ]
+    },
+    {
+      "ID": 162501121,
+      "Entries": [
+        "[Old Dragonslayer]"
+      ]
+    },
+    {
+      "ID": 162600211,
+      "Entries": [
+        "[Lost Sinner]"
+      ]
+    },
+    {
+      "ID": 162700510,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162700610,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162700710,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162700810,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162700910,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162701010,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162701110,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162701111,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 162701112,
+      "Entries": [
+        "[Nashandra]"
+      ]
+    },
+    {
+      "ID": 165000000,
+      "Entries": [
+        "[Iron Warrior]"
+      ]
+    },
+    {
+      "ID": 165000001,
+      "Entries": [
+        "[Iron Warrior]"
+      ]
+    },
+    {
+      "ID": 165000004,
+      "Entries": [
+        "[Iron Warrior]"
+      ]
+    },
+    {
+      "ID": 165000005,
+      "Entries": [
+        "[Iron Warrior]"
+      ]
+    },
+    {
+      "ID": 165000990,
+      "Entries": [
+        "[Iron Warrior]"
+      ]
+    },
+    {
+      "ID": 165100410,
+      "Entries": [
+        "[Fume Sorcerer]"
+      ]
+    },
+    {
+      "ID": 165100510,
+      "Entries": [
+        "[Fume Sorcerer]"
+      ]
+    },
+    {
+      "ID": 165100610,
+      "Entries": [
+        "[Fume Sorcerer]"
+      ]
+    },
+    {
+      "ID": 165100620,
+      "Entries": [
+        "[Fume Sorcerer]"
+      ]
+    },
+    {
+      "ID": 165300510,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165300511,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165300520,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165303010,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165303020,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165303030,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165303110,
+      "Entries": [
+        "[Ashen Warrior]"
+      ]
+    },
+    {
+      "ID": 165400000,
+      "Entries": [
+        "[Ashen Crawler]"
+      ]
+    },
+    {
+      "ID": 165400001,
+      "Entries": [
+        "[Ashen Crawler]"
+      ]
+    },
+    {
+      "ID": 165400002,
+      "Entries": [
+        "[Ashen Crawler]"
+      ]
+    },
+    {
+      "ID": 165401000,
+      "Entries": [
+        "[Ashen Crawler]"
+      ]
+    },
+    {
+      "ID": 165600810,
+      "Entries": [
+        "[Possessed Armor]"
+      ]
+    },
+    {
+      "ID": 165600910,
+      "Entries": [
+        "[Possessed Armor]"
+      ]
+    },
+    {
+      "ID": 165700000,
+      "Entries": [
+        "[Barrel Carrier]"
+      ]
+    },
+    {
+      "ID": 165700001,
+      "Entries": [
+        "[Barrel Carrier]"
+      ]
+    },
+    {
+      "ID": 165700002,
+      "Entries": [
+        "[Barrel Carrier]"
+      ]
+    },
+    {
+      "ID": 165900610,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900720,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900721,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900730,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900740,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900741,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900750,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900751,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900760,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900761,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900770,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 165900771,
+      "Entries": [
+        "[Rampart Golem]"
+      ]
+    },
+    {
+      "ID": 166100410,
+      "Entries": [
+        "[Frozen Reindeer]"
+      ]
+    },
+    {
+      "ID": 166100411,
+      "Entries": [
+        "[Frozen Reindeer]"
+      ]
+    },
+    {
+      "ID": 166100610,
+      "Entries": [
+        "[Frozen Reindeer]"
+      ]
+    },
+    {
+      "ID": 166100710,
+      "Entries": [
+        "[Frozen Reindeer]"
+      ]
+    },
+    {
+      "ID": 166100810,
+      "Entries": [
+        "[Frozen Reindeer]"
+      ]
+    },
+    {
+      "ID": 166201000,
+      "Entries": [
+        "[Rampart Hedgehog]"
+      ]
+    },
+    {
+      "ID": 166300510,
+      "Entries": [
+        "[Spellsword]"
+      ]
+    },
+    {
+      "ID": 166300610,
+      "Entries": [
+        "[Spellsword]"
+      ]
+    },
+    {
+      "ID": 166500000,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501010,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501110,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501210,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501310,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501320,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501410,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166501510,
+      "Entries": [
+        "[Sanctum Knight]"
+      ]
+    },
+    {
+      "ID": 166602010,
+      "Entries": [
+        "[Sanctum Soldier]"
+      ]
+    },
+    {
+      "ID": 166602020,
+      "Entries": [
+        "[Sanctum Soldier]"
+      ]
+    },
+    {
+      "ID": 166604000,
+      "Entries": [
+        "[Sanctum Soldier]"
+      ]
+    },
+    {
+      "ID": 167000010,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000020,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000030,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000040,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000110,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000130,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000131,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000132,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000133,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000134,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000135,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000136,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000137,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000138,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000139,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000210,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000400,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167000410,
+      "Entries": [
+        "[Sanctum Priestess]"
+      ]
+    },
+    {
+      "ID": 167100000,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167100001,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167100002,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167100003,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167110000,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167110001,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167110002,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167110003,
+      "Entries": [
+        "[Poison Statue Cluster]"
+      ]
+    },
+    {
+      "ID": 167200000,
+      "Entries": [
+        "[Corrosive Egg Insect]"
+      ]
+    },
+    {
+      "ID": 167200001,
+      "Entries": [
+        "[Corrosive Egg Insect]"
+      ]
+    },
+    {
+      "ID": 167400010,
+      "Entries": [
+        "[Pagan Tree]"
+      ]
+    },
+    {
+      "ID": 167400020,
+      "Entries": [
+        "[Pagan Tree]"
+      ]
+    },
+    {
+      "ID": 167501520,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501530,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501540,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501541,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501620,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501621,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167501630,
+      "Entries": [
+        "[Fume Knight]"
+      ]
+    },
+    {
+      "ID": 167701210,
+      "Entries": [
+        "[Retainer]"
+      ]
+    },
+    {
+      "ID": 167701310,
+      "Entries": [
+        "[Retainer]"
+      ]
+    },
+    {
+      "ID": 167800920,
+      "Entries": [
+        "[Frozen Golem]"
+      ]
+    },
+    {
+      "ID": 167800930,
+      "Entries": [
+        "[Frozen Golem]"
+      ]
+    },
+    {
+      "ID": 167801000,
+      "Entries": [
+        "[Frozen Golem]"
+      ]
+    },
+    {
+      "ID": 167801010,
+      "Entries": [
+        "[Frozen Golem]"
+      ]
+    },
+    {
+      "ID": 167900000,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900610,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900710,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900711,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900810,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900811,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900812,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900813,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900814,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167900815,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901320,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901330,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901340,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901350,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901360,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901370,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901380,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 167901390,
+      "Entries": [
+        "[Aava- the King's Pet]"
+      ]
+    },
+    {
+      "ID": 168000413,
+      "Entries": [
+        "[Sir Alonne]"
+      ]
+    },
+    {
+      "ID": 168001311,
+      "Entries": [
+        "[Sir Alonne]"
+      ]
+    },
+    {
+      "ID": 168100000,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100001,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100010,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100011,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100020,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100310,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100320,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100321,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100610,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100620,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100621,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100810,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100820,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100821,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100920,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100921,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168100922,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101110,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101120,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101121,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101122,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101210,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101211,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101220,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101221,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101230,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101240,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101510,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101520,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101521,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101522,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101700,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168101720,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon]"
+      ]
+    },
+    {
+      "ID": 168201010,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201110,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201111,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201120,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201121,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201210,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201211,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201212,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201213,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201310,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201311,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201312,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201313,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201314,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201315,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201500,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201600,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201610,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201611,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201612,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201710,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201810,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201811,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201812,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201820,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168201821,
+      "Entries": [
+        "[Elana- Squalid Queen]"
+      ]
+    },
+    {
+      "ID": 168300930,
+      "Entries": [
+        "[Imperfect]"
+      ]
+    },
+    {
+      "ID": 168302010,
+      "Entries": [
+        "[Imperfect]"
+      ]
+    },
+    {
+      "ID": 168302020,
+      "Entries": [
+        "[Imperfect]"
+      ]
+    },
+    {
+      "ID": 168803311,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168803410,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168803510,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168803530,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168803610,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168803620,
+      "Entries": [
+        "[Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168900000,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903010,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903011,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903110,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903111,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903120,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903130,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903131,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903140,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903141,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903150,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903151,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903160,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903161,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903170,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903171,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903180,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903181,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903190,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903191,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903195,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903210,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903310,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903311,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 168903320,
+      "Entries": [
+        "[Charred Loyce Knight]"
+      ]
+    },
+    {
+      "ID": 169000000,
+      "Entries": [
+        "[Burnt Ivory King]"
+      ]
+    },
+    {
+      "ID": 169001110,
+      "Entries": [
+        "[Burnt Ivory King]"
+      ]
+    },
+    {
+      "ID": 169200000,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200010,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200011,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200020,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200021,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200030,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200031,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200080,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200090,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200100,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200101,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200102,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200103,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200104,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200105,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200106,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200107,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200110,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200120,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200121,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200130,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200131,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200140,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200141,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200150,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200151,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200160,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200161,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200170,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200171,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200180,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200181,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200190,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200210,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200220,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200221,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200230,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200231,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200240,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200241,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200250,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200251,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200260,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200261,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200270,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200271,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200280,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200281,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200290,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200300,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200301,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200302,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200303,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200310,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200311,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200312,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200313,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200400,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200410,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200420,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200500,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200501,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200510,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200511,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200600,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200610,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 169200620,
+      "Entries": [
+        "[Aldia- Scholar of the First Sin]"
+      ]
+    },
+    {
+      "ID": 170450810,
+      "Entries": [
+        "[Laddersmith Gilligan]"
+      ]
+    },
+    {
+      "ID": 172500010,
+      "Entries": [
+        "[Darkdiver Grandahl]"
+      ]
+    },
+    {
+      "ID": 172500110,
+      "Entries": [
+        "[Darkdiver Grandahl]"
+      ]
+    },
+    {
+      "ID": 172500210,
+      "Entries": [
+        "[Darkdiver Grandahl]"
+      ]
+    },
+    {
+      "ID": 172500220,
+      "Entries": [
+        "[Darkdiver Grandahl]"
+      ]
+    },
+    {
+      "ID": 174401610,
+      "Entries": [
+        "[Mild Mannered Pate]"
+      ]
+    },
+    {
+      "ID": 174401620,
+      "Entries": [
+        "[Mild Mannered Pate]"
+      ]
+    },
+    {
+      "ID": 175300410,
+      "Entries": [
+        "[Bell Keeper]"
+      ]
+    },
+    {
+      "ID": 175300411,
+      "Entries": [
+        "[Bell Keeper]"
+      ]
+    },
+    {
+      "ID": 175301110,
+      "Entries": [
+        "[Bell Keeper]"
+      ]
+    },
+    {
+      "ID": 175301210,
+      "Entries": [
+        "[Bell Keeper]"
+      ]
+    },
+    {
+      "ID": 176200310,
+      "Entries": [
+        "[Stone Trader Chloanne]"
+      ]
+    },
+    {
+      "ID": 176800110,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800210,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800310,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800311,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800312,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800320,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800321,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800322,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800323,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800410,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800510,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800610,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176800620,
+      "Entries": [
+        "[Straid of Olaphis]"
+      ]
+    },
+    {
+      "ID": 176901010,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 176901110,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 176901210,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 176901310,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 176901320,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 176901330,
+      "Entries": [
+        "[Licia of Lindeldt]"
+      ]
+    },
+    {
+      "ID": 177001010,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001020,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001110,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001210,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001220,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001230,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001310,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001320,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001330,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001331,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001332,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001340,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001350,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001360,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001370,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001380,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001410,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001420,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177001430,
+      "Entries": [
+        "[Felkin the Outcast]"
+      ]
+    },
+    {
+      "ID": 177100210,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100310,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100410,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100510,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100511,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100512,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100513,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100610,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100620,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100630,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100640,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 177100650,
+      "Entries": [
+        "[Royal Sorcerer Navlaan]"
+      ]
+    },
+    {
+      "ID": 178300310,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178300410,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178300510,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178300520,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178300600,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178300610,
+      "Entries": [
+        "[Titchy Gren]"
+      ]
+    },
+    {
+      "ID": 178501010,
+      "Entries": [
+        "[Blue Sentinel Targray]"
+      ]
+    },
+    {
+      "ID": 178501110,
+      "Entries": [
+        "[Blue Sentinel Targray]"
+      ]
+    },
+    {
+      "ID": 185501500,
+      "Entries": [
+        "[Voice Marker]"
+      ]
+    },
+    {
+      "ID": 185501600,
+      "Entries": [
+        "[Voice Marker]"
+      ]
+    },
+    {
+      "ID": 185501700,
+      "Entries": [
+        "[Voice Marker]"
+      ]
+    },
+    {
+      "ID": 185501800,
+      "Entries": [
+        "[Voice Marker]"
+      ]
+    },
+    {
+      "ID": 190100010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100030,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100040,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100050,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100060,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100070,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100080,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100090,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100130,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100140,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100150,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100160,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100170,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100180,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100190,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

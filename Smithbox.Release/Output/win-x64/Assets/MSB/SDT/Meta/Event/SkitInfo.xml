@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a skit setup in the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT05
+    AltName="Unknown: 0x5"
+    Wiki="" />
+    
+    <UnkT06
+    AltName="Unknown: 0x6"
+    Wiki="" />
+    
+    <UnkT07
+    AltName="Unknown: 0x7"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

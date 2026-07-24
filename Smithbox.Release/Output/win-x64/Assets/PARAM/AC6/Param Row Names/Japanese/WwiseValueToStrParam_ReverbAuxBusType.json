@@ -1,0 +1,107 @@
+{
+  "Name": "WwiseValueToStrParam_ReverbAuxBusType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Room0_Dry"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Room1_Little"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Room2_Little"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Room3_Middle"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Room4_Middle"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Room5_Large"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Room6_Large"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Room7_HugeLarge"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Room8_HugeLarge"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Room9_Outdoor_SurfaceIR"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Room10_Outdoor_SnowMountainIR"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Room11_indoor_garage"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Room12_reserve"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Room13_reserve"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Room14_reserve"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Room15_reserve"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "If you would like to increase the number, please contact PG. -- 個数を増やすときはPGへ連絡してください"
+      ]
+    }
+  ]
+}

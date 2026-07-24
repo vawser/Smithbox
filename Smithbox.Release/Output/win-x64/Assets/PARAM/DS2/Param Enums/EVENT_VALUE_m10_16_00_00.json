@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_VALUE_m10_16_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_16_00_00"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of jailers defeated"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Bell Keeper: Current pledge rank"
+        }
+      ]
+    }
+  ]
+}

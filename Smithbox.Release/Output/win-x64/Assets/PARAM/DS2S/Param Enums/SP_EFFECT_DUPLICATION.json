@@ -1,0 +1,56 @@
+{
+  "Key": "SP_EFFECT_DUPLICATION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_DUPLICATION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Allow Duplicates"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overwrite on Duplicate"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reject on Duplicate"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overwrite on Excessive Time"
+        }
+      ]
+    }
+  ]
+}

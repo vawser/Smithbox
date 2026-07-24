@@ -1,0 +1,47 @@
+{
+  "Key": "NPC_WHEEL_ROT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_WHEEL_ROT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0 - Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1 - Flamethrower Tank"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2 - Abductor Virgin"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 3 - Silver Tear Orb"
+        }
+      ]
+    }
+  ]
+}

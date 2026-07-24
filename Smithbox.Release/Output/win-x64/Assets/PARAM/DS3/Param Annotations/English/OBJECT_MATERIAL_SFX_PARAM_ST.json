@@ -1,0 +1,168 @@
+{
+  "Param": "OBJECT_MATERIAL_SFX_PARAM_ST",
+  "Type": "OBJECT_MATERIAL_SFX_PARAM_ST",
+  "Name": "OBJECT_MATERIAL_SFX_PARAM_ST",
+  "Description": "Object Destruction Visual/Sound Effects",
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "Hit VFX [00]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "Hit VFX [01]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "Hit VFX [02]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "Hit VFX [03]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "Hit VFX [04]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "Hit VFX [05]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "Hit VFX [06]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "Hit VFX [07]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "Hit VFX [08]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "Hit VFX [09]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "Hit VFX [10]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "Hit VFX [11]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "Hit VFX [12]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "Hit VFX [13]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "Hit VFX [14]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "Hit VFX [15]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "Hit VFX [16]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "Hit VFX [17]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "Hit VFX [18]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "Hit VFX [19]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "Hit VFX [20]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "Hit VFX [21]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "Hit VFX [22]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "Hit VFX [23]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "Hit VFX [24]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "Hit VFX [25]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "Hit VFX [26]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "Hit VFX [27]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "Hit VFX [28]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "Hit VFX [29]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "Hit VFX [30]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_31",
+      "Name": "Hit VFX [31]",
+      "Description": "SFX identifier corresponding to the object parameter SFX identifier after destruction"
+    }
+  ]
+}

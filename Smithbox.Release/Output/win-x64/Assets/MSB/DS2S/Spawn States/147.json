@@ -1,0 +1,22 @@
+{
+  "id": "147",
+  "name": "Crawling Undead",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Lying Down"
+    },
+    {
+      "value": "3",
+      "name": "Idle"
+    }
+  ]
+}

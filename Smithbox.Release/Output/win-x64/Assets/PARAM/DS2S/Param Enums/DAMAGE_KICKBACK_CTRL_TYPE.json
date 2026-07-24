@@ -1,0 +1,38 @@
+{
+  "Key": "DAMAGE_KICKBACK_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_KICKBACK_CTRL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal Direction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trajectory Direction"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Manual Configuration"
+        }
+      ]
+    }
+  ]
+}

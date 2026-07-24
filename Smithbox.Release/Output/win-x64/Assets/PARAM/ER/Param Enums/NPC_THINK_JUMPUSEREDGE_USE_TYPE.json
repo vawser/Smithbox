@@ -1,0 +1,47 @@
+{
+  "Key": "NPC_THINK_JUMPUSEREDGE_USE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_JUMPUSEREDGE_USE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 3"
+        }
+      ]
+    }
+  ]
+}

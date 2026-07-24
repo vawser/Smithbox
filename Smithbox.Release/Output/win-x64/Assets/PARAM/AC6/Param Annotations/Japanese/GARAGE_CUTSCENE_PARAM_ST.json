@@ -1,0 +1,123 @@
+{
+  "Param": "GARAGE_CUTSCENE_PARAM_ST",
+  "Type": "GARAGE_CUTSCENE_PARAM_ST",
+  "Name": "GARAGE_CUTSCENE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "defualtSortieCutSceneID",
+      "Name": "汎用出撃前半カットシーンID",
+      "Description": "ミッション出撃時の汎用のカットシーン"
+    },
+    {
+      "Field": "defaultReturnCutSceneID",
+      "Name": "汎用搬入カットシーンID",
+      "Description": "ミッション終了後の汎用のカットシーン"
+    },
+    {
+      "Field": "defualtReturnOmitCutSceneID",
+      "Name": "汎用搬入省略カットシーンID",
+      "Description": "ミッション失敗時などの場合"
+    },
+    {
+      "Field": "sortieCutSceneID1",
+      "Name": "出撃前半カットシーンID_1",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID2",
+      "Name": "出撃前半カットシーンID_2",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID3",
+      "Name": "出撃前半カットシーンID_3",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID4",
+      "Name": "出撃前半カットシーンID_4",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID5",
+      "Name": "出撃前半カットシーンID_5",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID6",
+      "Name": "出撃前半カットシーンID_6",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID7",
+      "Name": "出撃前半カットシーンID_7",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "sortieCutSceneID8",
+      "Name": "出撃前半カットシーンID_8",
+      "Description": "ミッション出撃時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID1",
+      "Name": "搬入カットシーンID_1",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID2",
+      "Name": "搬入カットシーンID_2",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID3",
+      "Name": "搬入カットシーンID_3",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID4",
+      "Name": "搬入カットシーンID_4",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID5",
+      "Name": "搬入カットシーンID_5",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID6",
+      "Name": "搬入カットシーンID_6",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID7",
+      "Name": "搬入カットシーンID_7",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    },
+    {
+      "Field": "returnCutSceneID8",
+      "Name": "搬入カットシーンID_8",
+      "Description": "ミッション帰還時のカットシーンのバリエーション"
+    }
+  ]
+}

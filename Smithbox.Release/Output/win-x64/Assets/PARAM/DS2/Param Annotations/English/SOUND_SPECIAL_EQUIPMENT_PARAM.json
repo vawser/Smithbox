@@ -1,0 +1,18 @@
+{
+  "Param": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Type": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Name": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Description": "Defines special equipment sound configuration used to assign unique audio behavior to specific equipment types.",
+  "Fields": [
+    {
+      "Field": "type",
+      "Name": "Type",
+      "Description": "Category of special equipment used to determine associated sound effects."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

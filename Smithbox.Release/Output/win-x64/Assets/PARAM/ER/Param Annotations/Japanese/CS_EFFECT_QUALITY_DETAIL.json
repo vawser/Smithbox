@@ -1,0 +1,68 @@
+{
+  "Param": "CS_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "softParticleEnabled",
+      "Name": "ソフトパーティクル有効",
+      "Description": "ソフトパーティクル有効"
+    },
+    {
+      "Field": "glowEnabled",
+      "Name": "グロー有効",
+      "Description": "グロー有効"
+    },
+    {
+      "Field": "distortionEnable",
+      "Name": "歪み有効",
+      "Description": "歪み有効"
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "バイラテラルアップスケールを有効",
+      "Description": "バイラテラルアップスケール有効"
+    },
+    {
+      "Field": "fNumOnceEmitsScale",
+      "Name": "一回のエミット数",
+      "Description": "一回のエミット数"
+    },
+    {
+      "Field": "fEmitSpanScale",
+      "Name": "エミット間隔",
+      "Description": "エミット間隔"
+    },
+    {
+      "Field": "fLodDistance1Scale",
+      "Name": "1段階目のLOD距離スケール",
+      "Description": "1段階目のLOD距離スケール"
+    },
+    {
+      "Field": "fLodDistance2Scale",
+      "Name": "2段階目のLOD距離スケール",
+      "Description": "2段階目のLOD距離スケール"
+    },
+    {
+      "Field": "fLodDistance3Scale",
+      "Name": "3段階目のLOD距離スケール",
+      "Description": "3段階目のLOD距離スケール"
+    },
+    {
+      "Field": "fLodDistance4Scale",
+      "Name": "4段階目のLOD距離スケール",
+      "Description": "4段階目のLOD距離スケール"
+    },
+    {
+      "Field": "fScaleRenderDistanceScale",
+      "Name": "縮小バッファへ登録される距離への倍率",
+      "Description": "縮小バッファへ登録される距離への倍率"
+    },
+    {
+      "Field": "dmy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

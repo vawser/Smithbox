@@ -1,0 +1,108 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Properties",
+      "Text": "属性"
+    },
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "TEXVIEW_Category_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "TEXVIEW_Category_Objects",
+      "Text": "对象"
+    },
+    {
+      "Key": "TEXVIEW_Category_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "TEXVIEW_Category_Parts",
+      "Text": "部件"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map",
+      "Text": "地图"
+    },
+    {
+      "Key": "TEXVIEW_Category_Other",
+      "Text": "其他"
+    },
+    {
+      "Key": "TEXVIEW_Category_Menu",
+      "Text": "菜单"
+    },
+    {
+      "Key": "TEXVIEW_Category_Particles",
+      "Text": "粒子"
+    },
+    {
+      "Key": "TEXVIEW_Category_Fonts",
+      "Text": "字体"
+    },
+    {
+      "Key": "TEXVIEW_Category_Facegen",
+      "Text": "Facegen"
+    },
+    {
+      "Key": "TEXVIEW_Category_Items",
+      "Text": "物品"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map_Textures",
+      "Text": "地图纹理"
+    },
+    {
+      "Key": "TEXVIEW_Category_Adhoc",
+      "Text": "临时"
+    },
+    {
+      "Key": "TEXVIEW_Category_HD_Icons",
+      "Text": "高清图标"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map_Tiles",
+      "Text": "地图瓦片"
+    },
+    {
+      "Key": "TEXVIEW_Category_TOS",
+      "Text": "服务条款"
+    },
+    {
+      "Key": "TEXVIEW_Category_None",
+      "Text": "无"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_FAIL",
+      "Text": "设置主要纹理库失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_PASS",
+      "Text": "已设置主要纹理库。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_FAIL",
+      "Text": "设置预览纹理库失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_PASS",
+      "Text": "已设置预览纹理库。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_TPF_Read",
+      "Text": "在 {1} 中读取 {0} 为 TPF 失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_BND4_Read",
+      "Text": "在 {1} 中读取 {0} 为 BND4 失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Read",
+      "Text": "在 {1} 中从 VFS 读取 {0} 失败。"
+    }
+  ]
+}

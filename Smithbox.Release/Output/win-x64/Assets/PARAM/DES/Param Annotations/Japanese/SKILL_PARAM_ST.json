@@ -1,0 +1,58 @@
+{
+  "Param": "SKILL_PARAM_ST",
+  "Type": "SKILL_PARAM_ST",
+  "Name": "SKILL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンを指定\u3000＞メニュー用"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "行動IDを設定する"
+    },
+    {
+      "Field": "NecessityStr",
+      "Name": "必要筋力値",
+      "Description": "スキル習得に必要な筋力(Strength)"
+    },
+    {
+      "Field": "NecessityDex",
+      "Name": "必要俊敏値",
+      "Description": "スキル習得に必要な筋力(Dex)"
+    },
+    {
+      "Field": "NecessityMag",
+      "Name": "必要魔力値",
+      "Description": "スキル習得に必要な筋力(Magic)"
+    },
+    {
+      "Field": "NecessityFai",
+      "Name": "必要信仰値",
+      "Description": "スキル習得に必要な筋力(Faith)"
+    },
+    {
+      "Field": "consumeSoul",
+      "Name": "消費ソウル",
+      "Description": "スキル習得時に消費するSOUL"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "スキルリストの並び用ID(-1：非表示)"
+    },
+    {
+      "Field": "slotLength",
+      "Name": "必要スロット数",
+      "Description": "装備に必要なスロット数 ＞メニュー用"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

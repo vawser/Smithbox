@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "DEV_ENUM_Validator_Type_None",
+      "Text": "None"
+    },
+    {
+      "Key": "DEV_ENUM_Validator_Type_Param",
+      "Text": "Param"
+    },
+    {
+      "Key": "DEV_ENUM_Validator_Type_NVA",
+      "Text": "NVA"
+    },
+    {
+      "Key": "DEV_ENUM_Validator_Type_MSB",
+      "Text": "MSB"
+    },
+    {
+      "Key": "DEV_ENUM_Validator_Type_BTL",
+      "Text": "BTL"
+    },
+    {
+      "Key": "DEV_ENUM_Validator_Type_GPARAM",
+      "Text": "GPARAM"
+    }
+  ]
+}

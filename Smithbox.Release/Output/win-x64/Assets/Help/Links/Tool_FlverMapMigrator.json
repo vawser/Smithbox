@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: Flver Map Migrator",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/github.com/Shadowth117/FlverMapMigrator@Flver Map Migrator]",
+        "[Header]Description",
+        "Tool made on Abyss1ne's behalf. Takes bnd archives with flvers in them from one map and outputs them ready for another map by changing the map ids within the flvers and bnds."
+    ]
+}

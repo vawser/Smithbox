@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_DuplicateModal_Offset_Input",
+      "Text": "Offset"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Offset_Input_TT",
+      "Text": "The offset to apply to the entry ID per duplicate instance."
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Amount_Input",
+      "Text": "Amount"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Amount_Input_TT",
+      "Text": "The amount of duplicate instances to generate per entry."
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Checkbox_Auto_Adjust",
+      "Text": "Adjust Offset Automatically"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Checkbox_Auto_Adjust_TT",
+      "Text": "When more than 1 duplicate instance is defined, if this is enabled, the offset will be automatically adjusted (e.g. offset set to 100, first instance will be ID + 100, second will be ID + 200, etc.)"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Action_Submit",
+      "Text": "Submit"
+    }
+  ]
+}

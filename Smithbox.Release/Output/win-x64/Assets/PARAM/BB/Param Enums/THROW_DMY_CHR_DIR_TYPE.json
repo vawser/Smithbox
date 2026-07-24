@@ -1,0 +1,38 @@
+{
+  "Key": "THROW_DMY_CHR_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_DMY_CHR_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn to"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn back"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Nothing"
+        }
+      ]
+    }
+  ]
+}

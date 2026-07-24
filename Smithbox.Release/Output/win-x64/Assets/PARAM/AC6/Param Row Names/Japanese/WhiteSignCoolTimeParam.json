@@ -1,0 +1,65 @@
+{
+  "Name": "WhiteSignCoolTimeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "white sign level 1 -- 白サインレベル1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "white sign level 2 -- 白サインレベル2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "white sign level 3 -- 白サインレベル3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "white sign level 4 -- 白サインレベル4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "white sign level 5 -- 白サインレベル5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "white sign level 6 -- 白サインレベル6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "white sign level 7 -- 白サインレベル7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "white sign level 8 -- 白サインレベル8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "white sign level 9 -- 白サインレベル9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "white sign level 10 -- 白サインレベル10"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "Param": "PLAYER_STATUS_ITEM_PARAM",
+  "Type": "PLAYER_STATUS_ITEM_PARAM",
+  "Name": "PLAYER_STATUS_ITEM_PARAM",
+  "Description": "Defines fixed player inventory/status item slots and their quantities used for initial loadout, default items, or status-based item assignment.",
+  "Fields": [
+    {
+      "Field": "item01",
+      "Name": "Item 01",
+      "Description": "Item ID assigned to slot 01."
+    },
+    {
+      "Field": "item02",
+      "Name": "Item 02",
+      "Description": "Item ID assigned to slot 02."
+    },
+    {
+      "Field": "item03",
+      "Name": "Item 03",
+      "Description": "Item ID assigned to slot 03."
+    },
+    {
+      "Field": "item04",
+      "Name": "Item 04",
+      "Description": "Item ID assigned to slot 04."
+    },
+    {
+      "Field": "item05",
+      "Name": "Item 05",
+      "Description": "Item ID assigned to slot 05."
+    },
+    {
+      "Field": "item06",
+      "Name": "Item 06",
+      "Description": "Item ID assigned to slot 06."
+    },
+    {
+      "Field": "item07",
+      "Name": "Item 07",
+      "Description": "Item ID assigned to slot 07."
+    },
+    {
+      "Field": "item08",
+      "Name": "Item 08",
+      "Description": "Item ID assigned to slot 08."
+    },
+    {
+      "Field": "item09",
+      "Name": "Item 09",
+      "Description": "Item ID assigned to slot 09."
+    },
+    {
+      "Field": "item10",
+      "Name": "Item 10",
+      "Description": "Item ID assigned to slot 10."
+    },
+    {
+      "Field": "item11",
+      "Name": "Item 11",
+      "Description": "Item ID assigned to slot 11."
+    },
+    {
+      "Field": "item12",
+      "Name": "Item 12",
+      "Description": "Item ID assigned to slot 12."
+    },
+    {
+      "Field": "item13",
+      "Name": "Item 13",
+      "Description": "Item ID assigned to slot 13."
+    },
+    {
+      "Field": "item14",
+      "Name": "Item 14",
+      "Description": "Item ID assigned to slot 14."
+    },
+    {
+      "Field": "item15",
+      "Name": "Item 15",
+      "Description": "Item ID assigned to slot 15."
+    },
+    {
+      "Field": "item16",
+      "Name": "Item 16",
+      "Description": "Item ID assigned to slot 16."
+    },
+    {
+      "Field": "item17",
+      "Name": "Item 17",
+      "Description": "Item ID assigned to slot 17."
+    },
+    {
+      "Field": "item18",
+      "Name": "Item 18",
+      "Description": "Item ID assigned to slot 18."
+    },
+    {
+      "Field": "item19",
+      "Name": "Item 19",
+      "Description": "Item ID assigned to slot 19."
+    },
+    {
+      "Field": "item20",
+      "Name": "Item 20",
+      "Description": "Item ID assigned to slot 20."
+    },
+    {
+      "Field": "item01Num",
+      "Name": "Item 01 Quantity",
+      "Description": "Quantity of item in slot 01."
+    },
+    {
+      "Field": "item02Num",
+      "Name": "Item 02 Quantity",
+      "Description": "Quantity of item in slot 02."
+    },
+    {
+      "Field": "item03Num",
+      "Name": "Item 03 Quantity",
+      "Description": "Quantity of item in slot 03."
+    },
+    {
+      "Field": "item04Num",
+      "Name": "Item 04 Quantity",
+      "Description": "Quantity of item in slot 04."
+    },
+    {
+      "Field": "item05Num",
+      "Name": "Item 05 Quantity",
+      "Description": "Quantity of item in slot 05."
+    },
+    {
+      "Field": "item06Num",
+      "Name": "Item 06 Quantity",
+      "Description": "Quantity of item in slot 06."
+    },
+    {
+      "Field": "item07Num",
+      "Name": "Item 07 Quantity",
+      "Description": "Quantity of item in slot 07."
+    },
+    {
+      "Field": "item08Num",
+      "Name": "Item 08 Quantity",
+      "Description": "Quantity of item in slot 08."
+    },
+    {
+      "Field": "item09Num",
+      "Name": "Item 09 Quantity",
+      "Description": "Quantity of item in slot 09."
+    },
+    {
+      "Field": "item10Num",
+      "Name": "Item 10 Quantity",
+      "Description": "Quantity of item in slot 10."
+    },
+    {
+      "Field": "item11Num",
+      "Name": "Item 11 Quantity",
+      "Description": "Quantity of item in slot 11."
+    },
+    {
+      "Field": "item12Num",
+      "Name": "Item 12 Quantity",
+      "Description": "Quantity of item in slot 12."
+    },
+    {
+      "Field": "item13Num",
+      "Name": "Item 13 Quantity",
+      "Description": "Quantity of item in slot 13."
+    },
+    {
+      "Field": "item14Num",
+      "Name": "Item 14 Quantity",
+      "Description": "Quantity of item in slot 14."
+    },
+    {
+      "Field": "item15Num",
+      "Name": "Item 15 Quantity",
+      "Description": "Quantity of item in slot 15."
+    },
+    {
+      "Field": "item16Num",
+      "Name": "Item 16 Quantity",
+      "Description": "Quantity of item in slot 16."
+    },
+    {
+      "Field": "item17Num",
+      "Name": "Item 17 Quantity",
+      "Description": "Quantity of item in slot 17."
+    },
+    {
+      "Field": "item18Num",
+      "Name": "Item 18 Quantity",
+      "Description": "Quantity of item in slot 18."
+    },
+    {
+      "Field": "item19Num",
+      "Name": "Item 19 Quantity",
+      "Description": "Quantity of item in slot 19."
+    },
+    {
+      "Field": "item20Num",
+      "Name": "Item 20 Quantity",
+      "Description": "Quantity of item in slot 20."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "ThrustersSfxIdParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 450001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1003010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

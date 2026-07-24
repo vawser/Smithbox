@@ -1,0 +1,3221 @@
+{
+  "Name": "AtkParam_Npc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[System] Dummy bullets"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "NPC_test1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "NPC_test2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "NPC_test3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "NPC_test4_guard"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "NPC_test5_Big Attack"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "NPC_test6_shield attack"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "NPC_test7_ charge attack"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Drop radius 1m"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Blow away (weak) Radius 1m"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Blow away (strong) Radius 1m"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Common Soldier Bowgun"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "assassin knife thrower"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "King's Shield Javelin"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Phalanx chibi spear injection"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Molotov cocktail ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Regular Soldier Bowgun ★Oujou 1 Only★"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "prison guard bondage"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Kami-Sama Fireball"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "snake soldier bow"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Kami-sama magic square activation attack"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Skeleton swordsman (different colors, bow) _ bow shooting"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Scale miner's rock direct hit"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "giant spider fireball"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Large spider thread"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Octopus Man _ Miracle"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "c5080_fly catching _fly catching flies"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "c5080_fly catching _ flying flies"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "c5080 _ fly _ wrap yourself in flies"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Storm Beast Shooting Scale"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "c3040_chimera_roar1"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "c5060_kamisama_fake_laser"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "c3050_gargoyle_bowgun shooting"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "c5080 _ fly catching _ fly catching fly (fast)"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "chimera scream"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Flies fly from the shoulder"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Flycatcher _ Bonfire"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Fly catching _ fly explosion"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Leech Demon_Hirudama"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "c4030_octopus head_strong magic"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Child ray wind shooting"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Baby stingray wind shooting landing"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "c3100_rock earthworm_lava injection"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "c3100_rock earthworm_lava shower"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "c2081_Prisoner_Fire magic"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "c2081_Prisoner_Fire magic"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "c2081_ jailer _ ignition"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Scale Miner's Rock"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Light slug Light slime"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Storm Beast Son Missile"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Large spider_short range flame direct hit"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "Large spider_short-range flame landing"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "c5070_centipede_vomit"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "c5071_small centipede_vomit"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "c3070_ slug slime"
+      ]
+    },
+    {
+      "ID": 377,
+      "Entries": [
+        "c3090_Large mosquito Venom blood Normal time"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "c3090_ large mosquito poisonous blood when full"
+      ]
+    },
+    {
+      "ID": 379,
+      "Entries": [
+        "c3040_Chimera Soul Arrow"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "c4010_wizard_magic attack"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "c7230_King Lendl_Shock wave"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "c2100 _ Corruption (Magician) _ Poison Cloud [Dummy]"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Prison castle 3 boss funnel"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "c7230_King Lendl_Wide range attack"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "c6040_Libra_Self-centered explosion"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "c2075_ Prisoner ball magic arrow"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "c3130_Large tardigrade death explosion"
+      ]
+    },
+    {
+      "ID": 397,
+      "Entries": [
+        "c3131_medium tardigrade death explosion"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "King's sword → PC frontal stab"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Kagejo → PC back stab"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Hawk → PC Throw"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Octopus → PC brain combo"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "King Lendl → PC grab throw"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Royal castle 1 Rumbling iron ball"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Royal Castle 3 Rumbling Straw"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Royal Castle 2 Barista Arrow"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Old Fort 1 Falling Floor OBJ"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Impure 1 Falling rock"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Ojo 3: The door that breaks OBJ"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Prison Castle 1 Puppet Gimmick Arrow"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Tunnel 1 Falling rock"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Tunnel 1 Explosive Barrel"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "Tunnel 2 Trolley contact"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "Old Fort 1 Trap spear"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Tunnel 2 Will-O-Wisp"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "Old Fort 2 Will O'Wisp"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Small)"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Royal Castle 1 Explosive Barrel (Large)"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Oujou 1 Rumbling Iron Ball/Enemy Version"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Royal castle bonfire small"
+      ]
+    },
+    {
+      "ID": 10310,
+      "Entries": [
+        "Royal Castle Bonfire Waradama"
+      ]
+    },
+    {
+      "ID": 10320,
+      "Entries": [
+        "Tunnel 1 Continuous Damage Floor [Lava]"
+      ]
+    },
+    {
+      "ID": 10330,
+      "Entries": [
+        "Tunnel 2 Continuous Damage Floor [Lava]"
+      ]
+    },
+    {
+      "ID": 10340,
+      "Entries": [
+        "Tunnel 2 Continuous Damage Floor [Boss Room Lava]"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "c1300_Fat Demon_Normal Attack"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "Attack for c1300_Fat Daemon_"
+      ]
+    },
+    {
+      "ID": 103002,
+      "Entries": [
+        "c1300_ Moving roll (right leg)"
+      ]
+    },
+    {
+      "ID": 103003,
+      "Entries": [
+        "c1300_ Movement winding (left foot)"
+      ]
+    },
+    {
+      "ID": 103004,
+      "Entries": [
+        "c1300_Fat Demon_Right Mow"
+      ]
+    },
+    {
+      "ID": 103005,
+      "Entries": [
+        "c1300_Fat Demon_Swing down from the right"
+      ]
+    },
+    {
+      "ID": 103006,
+      "Entries": [
+        "c1300_Fat Demon_Swing down from the left"
+      ]
+    },
+    {
+      "ID": 103007,
+      "Entries": [
+        "c1300_Fat Demon_Jump in place"
+      ]
+    },
+    {
+      "ID": 103008,
+      "Entries": [
+        "c1300_Fat Demon_Spot Jump Shockwave"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "c2000_slave soldier_slash 1"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "c2000_slave soldier_cutting 2-1"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "c2000_slave soldier_cutting (large)"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "c2000_slave soldier_pounce (far)"
+      ]
+    },
+    {
+      "ID": 200004,
+      "Entries": [
+        "c2000_slave soldier_pounce (near)"
+      ]
+    },
+    {
+      "ID": 200005,
+      "Entries": [
+        "c2000 _ slave soldier _ shake off"
+      ]
+    },
+    {
+      "ID": 200006,
+      "Entries": [
+        "c2000_slave soldier_slashing 3"
+      ]
+    },
+    {
+      "ID": 200007,
+      "Entries": [
+        "c2000_slave soldier_pounce (further)"
+      ]
+    },
+    {
+      "ID": 200008,
+      "Entries": [
+        "c2000_slave soldier_slashing 2-2"
+      ]
+    },
+    {
+      "ID": 200009,
+      "Entries": [
+        "c2000_slave soldier_cut blindly"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "c2000_slave soldier_guard"
+      ]
+    },
+    {
+      "ID": 200050,
+      "Entries": [
+        "c2000_Slave Soldier_Slash 1 ★ Royal Castle 1 Exclusive ★"
+      ]
+    },
+    {
+      "ID": 200051,
+      "Entries": [
+        "c2000_Slave Soldier_Slash 2-1 ★Castle 1 only★"
+      ]
+    },
+    {
+      "ID": 200052,
+      "Entries": [
+        "c2000_Slave Soldier_Slash (Large) ★Castle 1 only★"
+      ]
+    },
+    {
+      "ID": 200053,
+      "Entries": [
+        "c2000_Slave Soldier_Pounce (far) ★Castle 1 only★"
+      ]
+    },
+    {
+      "ID": 200054,
+      "Entries": [
+        "c2000_Slave Soldier_Pounce (Near) ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 200055,
+      "Entries": [
+        "c2000_Slave Soldier_Shake Off ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 200056,
+      "Entries": [
+        "c2000_Slave Soldier_Slash 3 ★ Royal Castle 1 Only ★"
+      ]
+    },
+    {
+      "ID": 200057,
+      "Entries": [
+        "c2000_Slave Soldier_Pounce (further) ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 200058,
+      "Entries": [
+        "c2000_Slave Soldier_Slash 2-2 ★ Royal Castle 1 Only ★"
+      ]
+    },
+    {
+      "ID": 200059,
+      "Entries": [
+        "c2000_slave soldier_cut blindly"
+      ]
+    },
+    {
+      "ID": 200060,
+      "Entries": [
+        "c2000_Slave Soldier_Guard ★Castle 1 only★"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "c2010_general soldier_swing down"
+      ]
+    },
+    {
+      "ID": 201001,
+      "Entries": [
+        "c2010_general soldier_slashing"
+      ]
+    },
+    {
+      "ID": 201002,
+      "Entries": [
+        "c2010_general soldier_swing down"
+      ]
+    },
+    {
+      "ID": 201003,
+      "Entries": [
+        "c2010_general soldier_kick"
+      ]
+    },
+    {
+      "ID": 201004,
+      "Entries": [
+        "c2010 _ general soldier _ slash with a run up"
+      ]
+    },
+    {
+      "ID": 201005,
+      "Entries": [
+        "c2010_general soldier_spear normal attack 1"
+      ]
+    },
+    {
+      "ID": 201006,
+      "Entries": [
+        "c2010_general soldier_spear normal attack 2"
+      ]
+    },
+    {
+      "ID": 201007,
+      "Entries": [
+        "c2010 _ general soldier _ mow down with a run up"
+      ]
+    },
+    {
+      "ID": 201008,
+      "Entries": [
+        "c2010_general soldier_spear heavy attack"
+      ]
+    },
+    {
+      "ID": 201009,
+      "Entries": [
+        "c2010_General soldier_Ax normal attack 1"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "c2010_General soldier_Ax normal attack 2"
+      ]
+    },
+    {
+      "ID": 201011,
+      "Entries": [
+        "c2010 _ general soldier _ hit with a run up"
+      ]
+    },
+    {
+      "ID": 201012,
+      "Entries": [
+        "c2010_general soldier_Aksu strong attack"
+      ]
+    },
+    {
+      "ID": 201013,
+      "Entries": [
+        "c2010_general soldier_halberd normal attack 1"
+      ]
+    },
+    {
+      "ID": 201014,
+      "Entries": [
+        "c2010_general soldier_halberd normal attack 2"
+      ]
+    },
+    {
+      "ID": 201015,
+      "Entries": [
+        "c2010_general soldier_swinging with a run up"
+      ]
+    },
+    {
+      "ID": 201016,
+      "Entries": [
+        "c2010_general soldier_halberd strong attack"
+      ]
+    },
+    {
+      "ID": 201050,
+      "Entries": [
+        "c2010_general soldier_guard"
+      ]
+    },
+    {
+      "ID": 201030,
+      "Entries": [
+        "c2010_General Soldier_Swing Down ★Oujou 1 Only★"
+      ]
+    },
+    {
+      "ID": 201031,
+      "Entries": [
+        "c2010_general soldier_slashing ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 201032,
+      "Entries": [
+        "c2010_General Soldier_Pump Down ★Oujou 1 Only★"
+      ]
+    },
+    {
+      "ID": 201033,
+      "Entries": [
+        "c2010_General Soldier_Kick ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 201034,
+      "Entries": [
+        "c2010_general soldier_slashing with run-up ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 201035,
+      "Entries": [
+        "c2010_General Soldier_Spear Normal Attack 1 ★For Royal Castle 1★"
+      ]
+    },
+    {
+      "ID": 201036,
+      "Entries": [
+        "c2010_general soldier_spear normal attack 2 ★For royal castle 1★"
+      ]
+    },
+    {
+      "ID": 201037,
+      "Entries": [
+        "c2010_general soldier_mow down with run-up★for royal castle 1★"
+      ]
+    },
+    {
+      "ID": 201038,
+      "Entries": [
+        "c2010_General Soldier_Spear Strong Attack ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 201039,
+      "Entries": [
+        "c2010_General Soldier_Aksu Normal Attack 1 ★For Royal Castle 1★"
+      ]
+    },
+    {
+      "ID": 201040,
+      "Entries": [
+        "c2010_General Soldier_Aksu Normal Attack 2 ★For Royal Castle 1★"
+      ]
+    },
+    {
+      "ID": 201041,
+      "Entries": [
+        "c2010_general soldier_slamming with a run-up ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 201042,
+      "Entries": [
+        "c2010_General Soldier_Aksu Strong Attack ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 201043,
+      "Entries": [
+        "c2010_general soldier_halberd normal attack 1 ★for royal castle 1★"
+      ]
+    },
+    {
+      "ID": 201044,
+      "Entries": [
+        "c2010_general soldier_halberd normal attack 2 ★for royal castle 1★"
+      ]
+    },
+    {
+      "ID": 201045,
+      "Entries": [
+        "c2010_General Soldier_Swinging with a run-up★Ojou 1 only★"
+      ]
+    },
+    {
+      "ID": 201046,
+      "Entries": [
+        "c2010_general soldier_halberd strong attack ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 201070,
+      "Entries": [
+        "c2010_general soldier_guard ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "c2020 _ knight _ left robe cut"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "c2020 _ knight _ right mowing"
+      ]
+    },
+    {
+      "ID": 202002,
+      "Entries": [
+        "c2020_knight_thrust"
+      ]
+    },
+    {
+      "ID": 202003,
+      "Entries": [
+        "c2020_Knight_Rush Thrust"
+      ]
+    },
+    {
+      "ID": 202004,
+      "Entries": [
+        "c2020 _ knight _ charging slash"
+      ]
+    },
+    {
+      "ID": 202005,
+      "Entries": [
+        "c2020 _ knight _ hit with a shield"
+      ]
+    },
+    {
+      "ID": 202006,
+      "Entries": [
+        "c2020_knight_claymore normal attack 1"
+      ]
+    },
+    {
+      "ID": 202007,
+      "Entries": [
+        "c2020_knight_claymore normal attack 2"
+      ]
+    },
+    {
+      "ID": 202008,
+      "Entries": [
+        "c2020_knight_claymore normal attack 3"
+      ]
+    },
+    {
+      "ID": 202009,
+      "Entries": [
+        "c2020_knight_swing down"
+      ]
+    },
+    {
+      "ID": 202010,
+      "Entries": [
+        "c2020_knight_claymore heavy attack"
+      ]
+    },
+    {
+      "ID": 202011,
+      "Entries": [
+        "c2020 _ Knight _ Claymore slashing with running up"
+      ]
+    },
+    {
+      "ID": 202012,
+      "Entries": [
+        "c2020_knight_spear normal attack 1"
+      ]
+    },
+    {
+      "ID": 202013,
+      "Entries": [
+        "c2020_knight_spear normal attack 2"
+      ]
+    },
+    {
+      "ID": 202014,
+      "Entries": [
+        "c2020_knight_spear normal attack 3"
+      ]
+    },
+    {
+      "ID": 202015,
+      "Entries": [
+        "c2020_knight_spear heavy attack"
+      ]
+    },
+    {
+      "ID": 202016,
+      "Entries": [
+        "c2020 _ knight _ charge with spear"
+      ]
+    },
+    {
+      "ID": 202017,
+      "Entries": [
+        "c2020_knight_finish with a spear"
+      ]
+    },
+    {
+      "ID": 202018,
+      "Entries": [
+        "c2020 _ knight _ swing down _ final stage"
+      ]
+    },
+    {
+      "ID": 202050,
+      "Entries": [
+        "c2020_knight_guard"
+      ]
+    },
+    {
+      "ID": 202020,
+      "Entries": [
+        "c2020_knight_left robe cut ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202021,
+      "Entries": [
+        "c2020_Knight_Right Nagigi ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202022,
+      "Entries": [
+        "c2020_knight_butt ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202023,
+      "Entries": [
+        "c2020_Knight_Rush Thrust ★Castle 1 only★"
+      ]
+    },
+    {
+      "ID": 202024,
+      "Entries": [
+        "c2020_knight_charged slash ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202025,
+      "Entries": [
+        "c2020_knight_hit with a shield ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202026,
+      "Entries": [
+        "c2020_knight_claymore normal attack 1 ★for royal castle 1★"
+      ]
+    },
+    {
+      "ID": 202027,
+      "Entries": [
+        "c2020_Knight_Claymore Normal Attack 2 ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 202028,
+      "Entries": [
+        "c2020_Knight_Claymore Normal Attack 3 ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 202029,
+      "Entries": [
+        "c2020_Knight_Swings down ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202030,
+      "Entries": [
+        "c2020_Knight_Claymore Heavy Attack ★For Castle 1★"
+      ]
+    },
+    {
+      "ID": 202031,
+      "Entries": [
+        "c2020_Knight_Claymore slashing with run-up★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202032,
+      "Entries": [
+        "c2020_knight_swings down hard_final stage ★Oujou 1 only★"
+      ]
+    },
+    {
+      "ID": 202070,
+      "Entries": [
+        "c2020_Knight_Guard ★Oujou 1 Only★"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "c2030_Assassin_Knife 1st stage"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "c2030_Assassin_Knife 2nd stage"
+      ]
+    },
+    {
+      "ID": 203002,
+      "Entries": [
+        "c2030_Assassin_Knife 3rd stage"
+      ]
+    },
+    {
+      "ID": 203003,
+      "Entries": [
+        "c2030_Assassin_Sobat"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "c2070_prisoner_extrusion"
+      ]
+    },
+    {
+      "ID": 207001,
+      "Entries": [
+        "c2070_prisoner_worship"
+      ]
+    },
+    {
+      "ID": 207002,
+      "Entries": [
+        "c2070 _ Prisoner _ Hip strike"
+      ]
+    },
+    {
+      "ID": 207003,
+      "Entries": [
+        "c2070_prisoner_poke a spear"
+      ]
+    },
+    {
+      "ID": 207004,
+      "Entries": [
+        "c2070_prisoner_hidden stepping stab (poison)"
+      ]
+    },
+    {
+      "ID": 207500,
+      "Entries": [
+        "c2075_captive ball_attack 1"
+      ]
+    },
+    {
+      "ID": 207501,
+      "Entries": [
+        "c2075_captive ball_attack 2"
+      ]
+    },
+    {
+      "ID": 207502,
+      "Entries": [
+        "c2075_prisoner ball_attack 3"
+      ]
+    },
+    {
+      "ID": 207503,
+      "Entries": [
+        "c2075_captive ball_attack 4"
+      ]
+    },
+    {
+      "ID": 207504,
+      "Entries": [
+        "c2075_captive ball_attack 5"
+      ]
+    },
+    {
+      "ID": 207505,
+      "Entries": [
+        "c2075_captive ball_attack 6"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "c2080_Prisoner_Attack (near)"
+      ]
+    },
+    {
+      "ID": 208001,
+      "Entries": [
+        "c2080_Prisoner_Decapitation"
+      ]
+    },
+    {
+      "ID": 208002,
+      "Entries": [
+        "c2080_Prisoner_Attack (medium range)"
+      ]
+    },
+    {
+      "ID": 208003,
+      "Entries": [
+        "c2081_ jailer _ whipping"
+      ]
+    },
+    {
+      "ID": 208004,
+      "Entries": [
+        "c2082_ jailer _ whipping"
+      ]
+    },
+    {
+      "ID": 208005,
+      "Entries": [
+        "c2080 _ Prisoner _ Mow down"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "c2090_ Former aristocratic lady Thrust 1"
+      ]
+    },
+    {
+      "ID": 209001,
+      "Entries": [
+        "c2090_ Former aristocratic lady Thrust 2"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "c2100_corruption bite_hammer attack (small)"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "c2100_Corruption bit_hammer attack (medium)"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "c2100_corruption bite_hammer rampage"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "c2100_corruption bite_hammer attacks with both hands"
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "c2100 _ rot bit _ push down"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "c2100 _ Corruption bit _ Rush per hit"
+      ]
+    },
+    {
+      "ID": 210006,
+      "Entries": [
+        "c2100_corruption bite_2 per charging object"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "c2100_corruption human_tutorial_attack (small)"
+      ]
+    },
+    {
+      "ID": 210011,
+      "Entries": [
+        "c2100_corruption human_tutorial_attack (medium)"
+      ]
+    },
+    {
+      "ID": 210012,
+      "Entries": [
+        "c2100_corruption human_tutorial_rampage"
+      ]
+    },
+    {
+      "ID": 210013,
+      "Entries": [
+        "c2100_corruption human_tutorial_attack with both hands"
+      ]
+    },
+    {
+      "ID": 210020,
+      "Entries": [
+        "c2100_corruption human_pushing down"
+      ]
+    },
+    {
+      "ID": 210021,
+      "Entries": [
+        "c2100 _ rotten human _ spear thrust"
+      ]
+    },
+    {
+      "ID": 210022,
+      "Entries": [
+        "c2100_corrupted human_spear strike"
+      ]
+    },
+    {
+      "ID": 210023,
+      "Entries": [
+        "c2100_Corrupted Human_Spear 2 thrusts"
+      ]
+    },
+    {
+      "ID": 210030,
+      "Entries": [
+        "c2100_corruption bite_venomous attack (small)"
+      ]
+    },
+    {
+      "ID": 210031,
+      "Entries": [
+        "c2100_Corruption Bit_Poison Attack (Medium)"
+      ]
+    },
+    {
+      "ID": 210032,
+      "Entries": [
+        "c2100_corruption bite_venomous poison rampage"
+      ]
+    },
+    {
+      "ID": 210033,
+      "Entries": [
+        "c2100_corruption bite_venomous attack with both hands"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "c2101_corruption bite_large sweep"
+      ]
+    },
+    {
+      "ID": 210101,
+      "Entries": [
+        "c2101_rotten bite_large swing down"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "c2110 _ scale miner (pickle) _ swing down"
+      ]
+    },
+    {
+      "ID": 211001,
+      "Entries": [
+        "c2110_scale miner (pickle) _ swing"
+      ]
+    },
+    {
+      "ID": 211002,
+      "Entries": [
+        "c2110_scale miner (pickle) _ swing around"
+      ]
+    },
+    {
+      "ID": 211003,
+      "Entries": [
+        "c2110_ scale miner (bag) _ beat"
+      ]
+    },
+    {
+      "ID": 211004,
+      "Entries": [
+        "c2110_scale miner (stiletto)_protrusion"
+      ]
+    },
+    {
+      "ID": 211005,
+      "Entries": [
+        "c2110_scale miner (stiletto)_rush"
+      ]
+    },
+    {
+      "ID": 211006,
+      "Entries": [
+        "c2110_scale miner (great sword)_protrusion"
+      ]
+    },
+    {
+      "ID": 211007,
+      "Entries": [
+        "c2110_scale miner (great sword)"
+      ]
+    },
+    {
+      "ID": 211008,
+      "Entries": [
+        "c2110_scale miner (pickle)_diving"
+      ]
+    },
+    {
+      "ID": 211009,
+      "Entries": [
+        "c2110 _ scale miner (hammer) _ swing down"
+      ]
+    },
+    {
+      "ID": 211010,
+      "Entries": [
+        "c2110 _ scale miner (hammer) _ swing"
+      ]
+    },
+    {
+      "ID": 211011,
+      "Entries": [
+        "c2110 _ scale miner (hammer) _ dive"
+      ]
+    },
+    {
+      "ID": 211012,
+      "Entries": [
+        "c2110_scale miner (bare hands) _strike"
+      ]
+    },
+    {
+      "ID": 211013,
+      "Entries": [
+        "c2110 _ scale miner (bare hands) _ two-handed punch"
+      ]
+    },
+    {
+      "ID": 211014,
+      "Entries": [
+        "c2110_scale miner (pickle)_back attack"
+      ]
+    },
+    {
+      "ID": 211015,
+      "Entries": [
+        "c2110_scale miner (stiletto)_back attack"
+      ]
+    },
+    {
+      "ID": 211016,
+      "Entries": [
+        "c2110_scale miner (great sword)_back attack"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "c2120_shadow person_right hand attack"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "c2120_shadow person_left hand attack"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "c2120_Kagejin_Two-handed attack"
+      ]
+    },
+    {
+      "ID": 212004,
+      "Entries": [
+        "c2120_shadow person_mow away"
+      ]
+    },
+    {
+      "ID": 212005,
+      "Entries": [
+        "c2120_shadow person_beam from eyes"
+      ]
+    },
+    {
+      "ID": 212006,
+      "Entries": [
+        "c2120 _ Kagehito _ Beam from eyes (top)"
+      ]
+    },
+    {
+      "ID": 212007,
+      "Entries": [
+        "c2120_shadow person_beam from eyes (bottom)"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "c2130_Kagejo_Right hand cut A"
+      ]
+    },
+    {
+      "ID": 213001,
+      "Entries": [
+        "c2130_Kagejo_Rip left hand A"
+      ]
+    },
+    {
+      "ID": 213002,
+      "Entries": [
+        "c2130_Kagejo_Right hand rip B"
+      ]
+    },
+    {
+      "ID": 213004,
+      "Entries": [
+        "c2130_shadow woman_claw thrust"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "c3010 _ military dog _ biting (small)"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "c3010_military dog_continuous biting"
+      ]
+    },
+    {
+      "ID": 301002,
+      "Entries": [
+        "c3010 _ military dog _ pounce"
+      ]
+    },
+    {
+      "ID": 301003,
+      "Entries": [
+        "c3010_military dog_continuous biting 2nd row"
+      ]
+    },
+    {
+      "ID": 301004,
+      "Entries": [
+        "c3010 _ military dog _ pounce 2"
+      ]
+    },
+    {
+      "ID": 301005,
+      "Entries": [
+        "c3010_Military dog_Pounce 3"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "c3030_hawk_scratch"
+      ]
+    },
+    {
+      "ID": 303001,
+      "Entries": [
+        "c3030_hawk_poke"
+      ]
+    },
+    {
+      "ID": 303002,
+      "Entries": [
+        "c3030_hawk_continuous pecking"
+      ]
+    },
+    {
+      "ID": 303003,
+      "Entries": [
+        "c3030_falcon_throw"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "c3040_chimera_right hand swing down"
+      ]
+    },
+    {
+      "ID": 304001,
+      "Entries": [
+        "c3040_chimera_both hands down"
+      ]
+    },
+    {
+      "ID": 304002,
+      "Entries": [
+        "c3040_Chimera_Right hand punch (no stance)"
+      ]
+    },
+    {
+      "ID": 304004,
+      "Entries": [
+        "c3040_chimera_tackle on the ground"
+      ]
+    },
+    {
+      "ID": 304006,
+      "Entries": [
+        "c3040_chimera_aerial tackle"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "c3050_gargoyle_piercing sword 1"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "c3050_gargoyle_piercing sword 2"
+      ]
+    },
+    {
+      "ID": 305002,
+      "Entries": [
+        "c3050_gargoyle_piercing sword 3"
+      ]
+    },
+    {
+      "ID": 305003,
+      "Entries": [
+        "c3050_gargoyle_strike"
+      ]
+    },
+    {
+      "ID": 305004,
+      "Entries": [
+        "c3050_gargoyle_swinging sword"
+      ]
+    },
+    {
+      "ID": 305005,
+      "Entries": [
+        "c3050_gargoyle_piercing sword 4"
+      ]
+    },
+    {
+      "ID": 305006,
+      "Entries": [
+        "c3050_gargoyle_dive attack"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "c3050_ Bowgun shooting (air)"
+      ]
+    },
+    {
+      "ID": 305011,
+      "Entries": [
+        "c3050_ Bowgun shooting (ground)"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "c3060_plague rat_bite"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "c3070_large slug_body hit"
+      ]
+    },
+    {
+      "ID": 307001,
+      "Entries": [
+        "c3070_large slug_mucus"
+      ]
+    },
+    {
+      "ID": 307002,
+      "Entries": [
+        "c3070_large slug_pounce"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "c3071_Large slug (light)_body hit"
+      ]
+    },
+    {
+      "ID": 307101,
+      "Entries": [
+        "c3071_large slug (light)_pounce"
+      ]
+    },
+    {
+      "ID": 307102,
+      "Entries": [
+        "c3071 Large slug (light) _light slime"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "c3080_cloudy jellyfish_tentacles"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "c3090_large mosquito_first blood sucking"
+      ]
+    },
+    {
+      "ID": 309001,
+      "Entries": [
+        "c3090 _ large mosquito _ per body"
+      ]
+    },
+    {
+      "ID": 309002,
+      "Entries": [
+        "c3090_large mosquito_sucking blood"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "c3100_rock earthworm_biting"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "c3100_rock earthworm_bite_body"
+      ]
+    },
+    {
+      "ID": 310002,
+      "Entries": [
+        "c3100_rock earthworm_swallow"
+      ]
+    },
+    {
+      "ID": 310003,
+      "Entries": [
+        "c3100_rock earthworm_mow"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "c3120_magma gecko_stretching attack"
+      ]
+    },
+    {
+      "ID": 312001,
+      "Entries": [
+        "c3120_magma gecko_body flame"
+      ]
+    },
+    {
+      "ID": 312002,
+      "Entries": [
+        "c3120_magma gecko_pounce"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "c3130_Large tardigrade_Stab"
+      ]
+    },
+    {
+      "ID": 313001,
+      "Entries": [
+        "c3130_Large tardigrade_Rush"
+      ]
+    },
+    {
+      "ID": 313002,
+      "Entries": [
+        "c3130_large water bear_pounce"
+      ]
+    },
+    {
+      "ID": 313100,
+      "Entries": [
+        "c3131_medium tardigrade_stab"
+      ]
+    },
+    {
+      "ID": 313101,
+      "Entries": [
+        "c3131_medium tardigrade_rush"
+      ]
+    },
+    {
+      "ID": 313102,
+      "Entries": [
+        "c3131_medium tardigrade_pounce"
+      ]
+    },
+    {
+      "ID": 313200,
+      "Entries": [
+        "c3132_wing tardigrade_stab"
+      ]
+    },
+    {
+      "ID": 313300,
+      "Entries": [
+        "c3133_small bear _stab"
+      ]
+    },
+    {
+      "ID": 313301,
+      "Entries": [
+        "c3133_small tardigrade_rush"
+      ]
+    },
+    {
+      "ID": 313302,
+      "Entries": [
+        "c3133_small water bear_pounce"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "c3180 _ large blood tick _ prick with mouth needle"
+      ]
+    },
+    {
+      "ID": 318001,
+      "Entries": [
+        "c3180_large blood tick_venomous blood"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "c4000_ failure _ ramming"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "c4000_ failure_attack 2"
+      ]
+    },
+    {
+      "ID": 400002,
+      "Entries": [
+        "c4000_bastard_retrospective attack"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "c4010_wizard_scythe attack (strong)"
+      ]
+    },
+    {
+      "ID": 401001,
+      "Entries": [
+        "c4010_Wizard_ScytheNormal (weak)"
+      ]
+    },
+    {
+      "ID": 401002,
+      "Entries": [
+        "c4010_Wizard_Swing down the sickle"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "c4020_Gold Skeleton_Slash A"
+      ]
+    },
+    {
+      "ID": 402001,
+      "Entries": [
+        "c4020_Gold Skeleton_Slashing B"
+      ]
+    },
+    {
+      "ID": 402002,
+      "Entries": [
+        "c4020_gold skeleton_stepping slash"
+      ]
+    },
+    {
+      "ID": 402003,
+      "Entries": [
+        "c4020_golden skeleton_pumping down"
+      ]
+    },
+    {
+      "ID": 402004,
+      "Entries": [
+        "c4020_gold skeleton_rolling slash"
+      ]
+    },
+    {
+      "ID": 402005,
+      "Entries": [
+        "c4020_gold skeleton_ (forward roll)"
+      ]
+    },
+    {
+      "ID": 402006,
+      "Entries": [
+        "c4020_golden skeleton_upper right"
+      ]
+    },
+    {
+      "ID": 402007,
+      "Entries": [
+        "c4020_gold skeleton_upper left"
+      ]
+    },
+    {
+      "ID": 402008,
+      "Entries": [
+        "c4020_ gold skeleton _ mow down"
+      ]
+    },
+    {
+      "ID": 402009,
+      "Entries": [
+        "c4020_gold skeleton_guard"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "c4021_white skeleton_slash A"
+      ]
+    },
+    {
+      "ID": 402101,
+      "Entries": [
+        "c4021_white skeleton_slash B"
+      ]
+    },
+    {
+      "ID": 402102,
+      "Entries": [
+        "c4021_white skeleton_stepping slash"
+      ]
+    },
+    {
+      "ID": 402103,
+      "Entries": [
+        "c4021_white skeleton_tame slash"
+      ]
+    },
+    {
+      "ID": 402105,
+      "Entries": [
+        "c4021_white skeleton_roll slash"
+      ]
+    },
+    {
+      "ID": 402106,
+      "Entries": [
+        "c4021_white skeleton_forward roll"
+      ]
+    },
+    {
+      "ID": 402210,
+      "Entries": [
+        "c4022_black skeleton_right hand slash"
+      ]
+    },
+    {
+      "ID": 402211,
+      "Entries": [
+        "c4022_Black Skeleton_Right Hand Slashback"
+      ]
+    },
+    {
+      "ID": 402212,
+      "Entries": [
+        "c4022_black skeleton_left hand slash"
+      ]
+    },
+    {
+      "ID": 402213,
+      "Entries": [
+        "c4022_Black Skeleton_Left Hand Slash Back"
+      ]
+    },
+    {
+      "ID": 402214,
+      "Entries": [
+        "c4022_black skeleton_without iai"
+      ]
+    },
+    {
+      "ID": 402215,
+      "Entries": [
+        "c4022_black skeleton_charging thrust"
+      ]
+    },
+    {
+      "ID": 402216,
+      "Entries": [
+        "c4022_black skeleton_right hand strong slash"
+      ]
+    },
+    {
+      "ID": 402217,
+      "Entries": [
+        "c4022_black skeleton_pounce"
+      ]
+    },
+    {
+      "ID": 402218,
+      "Entries": [
+        "c4022_black skeleton_double sword"
+      ]
+    },
+    {
+      "ID": 403010,
+      "Entries": [
+        "c4030_octopus man_handbell"
+      ]
+    },
+    {
+      "ID": 403011,
+      "Entries": [
+        "c4030_octopus man_throwing tentacles"
+      ]
+    },
+    {
+      "ID": 403012,
+      "Entries": [
+        "c4030_octopus man_throwing tentacles_second half"
+      ]
+    },
+    {
+      "ID": 403013,
+      "Entries": [
+        "c4030_black octopus man_handbell"
+      ]
+    },
+    {
+      "ID": 403014,
+      "Entries": [
+        "c4030_Black Octopus Man_Tentacle Throw_Soul Steel"
+      ]
+    },
+    {
+      "ID": 403015,
+      "Entries": [
+        "c4030_black octopus man_throwing tentacles_second half_soul steal"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "c4050_fire monster_punch 1"
+      ]
+    },
+    {
+      "ID": 405001,
+      "Entries": [
+        "c4050_fire monster_punch 2"
+      ]
+    },
+    {
+      "ID": 405002,
+      "Entries": [
+        "c4050_fire monster_punch 3"
+      ]
+    },
+    {
+      "ID": 405004,
+      "Entries": [
+        "c4050_fire monster_roar"
+      ]
+    },
+    {
+      "ID": 405005,
+      "Entries": [
+        "c4050_Flame Monster_Stepping Fight"
+      ]
+    },
+    {
+      "ID": 405006,
+      "Entries": [
+        "c4050_flame monster_punch 1 flame"
+      ]
+    },
+    {
+      "ID": 405007,
+      "Entries": [
+        "c4050_flame monster_punch 2 flame"
+      ]
+    },
+    {
+      "ID": 405008,
+      "Entries": [
+        "c4050_flame monster_punch 3 flames"
+      ]
+    },
+    {
+      "ID": 405009,
+      "Entries": [
+        "c4050 _ flame monster _ stepping fighting flame"
+      ]
+    },
+    {
+      "ID": 405010,
+      "Entries": [
+        "c4050_flame monster_punch 3 (explosion)"
+      ]
+    },
+    {
+      "ID": 405011,
+      "Entries": [
+        "c4050_flame monster_left hammer"
+      ]
+    },
+    {
+      "ID": 405012,
+      "Entries": [
+        "c4050 _ flame monster _ horizontal strike (large)"
+      ]
+    },
+    {
+      "ID": 405013,
+      "Entries": [
+        "c4050_fire monster_two-handed punch_1"
+      ]
+    },
+    {
+      "ID": 405014,
+      "Entries": [
+        "c4050_flame monster_jump dive strike_1"
+      ]
+    },
+    {
+      "ID": 405015,
+      "Entries": [
+        "c4050_flame monster_left hammer (explosion)"
+      ]
+    },
+    {
+      "ID": 405016,
+      "Entries": [
+        "c4050_Flame Monster_Side Strike (Large) (Explosion)"
+      ]
+    },
+    {
+      "ID": 405017,
+      "Entries": [
+        "c4050_fire monster_two-handed punch (explosion)_1"
+      ]
+    },
+    {
+      "ID": 405018,
+      "Entries": [
+        "c4050_flame monster_jump dive strike_1 (explosion)"
+      ]
+    },
+    {
+      "ID": 405019,
+      "Entries": [
+        "c4050_fire monster_two-handed punch_2"
+      ]
+    },
+    {
+      "ID": 405020,
+      "Entries": [
+        "c4050_fire monster_two-handed punch (explosion)_2"
+      ]
+    },
+    {
+      "ID": 405021,
+      "Entries": [
+        "c4050_flame monster_jump dive strike_2"
+      ]
+    },
+    {
+      "ID": 405022,
+      "Entries": [
+        "c4050_flame monster_jump dive strike_2 (explosion)"
+      ]
+    },
+    {
+      "ID": 405023,
+      "Entries": [
+        "c4050_flaming monster_turning back"
+      ]
+    },
+    {
+      "ID": 405024,
+      "Entries": [
+        "c4050_Flame Monster_Leg Atari"
+      ]
+    },
+    {
+      "ID": 405025,
+      "Entries": [
+        "c4050 _ flame monster _ arm attack"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "c5000_Phalanx (Chibi)_Rush"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "c5000_ Phalanx (Chibi) _ Pierce with a spear"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "c5000 _ phalanx (chibi) _ spear ejection"
+      ]
+    },
+    {
+      "ID": 500003,
+      "Entries": [
+        "c5000_Phalanx (Chibi)_All Spear Shot"
+      ]
+    },
+    {
+      "ID": 500004,
+      "Entries": [
+        "c5000_Phalanx (Chibi)_Wall-attached spear ejection"
+      ]
+    },
+    {
+      "ID": 500005,
+      "Entries": [
+        "c5000_Phalanx (Chibi)_Guard"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "c5001_Phalanx (Body)_Rush"
+      ]
+    },
+    {
+      "ID": 500101,
+      "Entries": [
+        "c5001_ Phalanx (body) _ Pierce with a spear"
+      ]
+    },
+    {
+      "ID": 500103,
+      "Entries": [
+        "c5001_Phalanx (Body)_All Spear Shot"
+      ]
+    },
+    {
+      "ID": 500104,
+      "Entries": [
+        "c5001_Phalanx (Body)_Spear shot with wall attachment"
+      ]
+    },
+    {
+      "ID": 500105,
+      "Entries": [
+        "c5001_Phalanx (Body)_Rush"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "c5010_King's Shield_Crush with a shield"
+      ]
+    },
+    {
+      "ID": 501001,
+      "Entries": [
+        "c5010_King's shield_stomping (right)"
+      ]
+    },
+    {
+      "ID": 501002,
+      "Entries": [
+        "c5010_King's Shield_Spear Lower"
+      ]
+    },
+    {
+      "ID": 501003,
+      "Entries": [
+        "c5010_King's shield_Javelin throw"
+      ]
+    },
+    {
+      "ID": 501004,
+      "Entries": [
+        "c5010_King's shield_stomping (left)"
+      ]
+    },
+    {
+      "ID": 501005,
+      "Entries": [
+        "c5010_King's Shield_Backstep Engagement"
+      ]
+    },
+    {
+      "ID": 501006,
+      "Entries": [
+        "c5010_King's Shield_Walking Involvement (Right)"
+      ]
+    },
+    {
+      "ID": 501007,
+      "Entries": [
+        "c5010_King's Shield_Walking Involvement (Left)"
+      ]
+    },
+    {
+      "ID": 501008,
+      "Entries": [
+        "c5010_King's Shield_Spear throwing involvement (right leg)"
+      ]
+    },
+    {
+      "ID": 501009,
+      "Entries": [
+        "c5010_King's Shield_Make it off with a spear"
+      ]
+    },
+    {
+      "ID": 501010,
+      "Entries": [
+        "c5010_King's Shield_Crush with a shield Shock wave"
+      ]
+    },
+    {
+      "ID": 501011,
+      "Entries": [
+        "c5010_King's Shield_Stomping Left Shock Wave"
+      ]
+    },
+    {
+      "ID": 501012,
+      "Entries": [
+        "c5010_King's Shield_Falling Involvement 1"
+      ]
+    },
+    {
+      "ID": 501013,
+      "Entries": [
+        "c5010_King's Shield_Falling Involvement 2"
+      ]
+    },
+    {
+      "ID": 501014,
+      "Entries": [
+        "Ｃ5010_King's Shield_Rising Engagement Spear"
+      ]
+    },
+    {
+      "ID": 501015,
+      "Entries": [
+        "Ｃ5010_King's Shield_Rise up Shield 1st stage"
+      ]
+    },
+    {
+      "ID": 501016,
+      "Entries": [
+        "Ｃ5010_King's Shield_Original Engagement Shield 2nd Stage"
+      ]
+    },
+    {
+      "ID": 501017,
+      "Entries": [
+        "Ｃ5010_King's Shield_Rising Engagement Shield 1st Stage Shock Wave"
+      ]
+    },
+    {
+      "ID": 501018,
+      "Entries": [
+        "Ｃ5010_King's Shield_Rising Engagement Shield 2nd Stage Shockwave"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "c5020_King's sword_Upper swing"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "c5020_King's Sword_Tsubame Gaeshi"
+      ]
+    },
+    {
+      "ID": 502002,
+      "Entries": [
+        "c5020_king's sword_thrust"
+      ]
+    },
+    {
+      "ID": 502003,
+      "Entries": [
+        "c5020_King's Sword_Right sweep"
+      ]
+    },
+    {
+      "ID": 502004,
+      "Entries": [
+        "c5020_King's sword_left sweep"
+      ]
+    },
+    {
+      "ID": 502005,
+      "Entries": [
+        "c5020_King's Sword_Right Slash Feint Thrust"
+      ]
+    },
+    {
+      "ID": 502006,
+      "Entries": [
+        "c5020_King's sword_Left sweep feint thrust"
+      ]
+    },
+    {
+      "ID": 502007,
+      "Entries": [
+        "c5020_king's sword_stabbing throw"
+      ]
+    },
+    {
+      "ID": 502008,
+      "Entries": [
+        "c5020_king's sword_guard"
+      ]
+    },
+    {
+      "ID": 502009,
+      "Entries": [
+        "c5020_King's Sword_Stepping Slash"
+      ]
+    },
+    {
+      "ID": 503100,
+      "Entries": [
+        "c5031 child stingray rush"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "c5040 _ referee _ slash down"
+      ]
+    },
+    {
+      "ID": 504001,
+      "Entries": [
+        "c5040_referee_slash upward"
+      ]
+    },
+    {
+      "ID": 504002,
+      "Entries": [
+        "c5040_referee_attack with tongue"
+      ]
+    },
+    {
+      "ID": 504004,
+      "Entries": [
+        "c5040 _ referee _ attack with tongue (to 2F)"
+      ]
+    },
+    {
+      "ID": 504005,
+      "Entries": [
+        "c5040 _ referee _ attack with tongue (to 1F)"
+      ]
+    },
+    {
+      "ID": 504006,
+      "Entries": [
+        "c5040 _ referee _ attack with tongue (to 3F)"
+      ]
+    },
+    {
+      "ID": 504007,
+      "Entries": [
+        "c5040_Referee_Slam with tongue (2F-3F)"
+      ]
+    },
+    {
+      "ID": 506000,
+      "Entries": [
+        "c5060_Kamisama_Magic square installation"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "c5070_centipede_rush"
+      ]
+    },
+    {
+      "ID": 507001,
+      "Entries": [
+        "c5070_centipede_tail"
+      ]
+    },
+    {
+      "ID": 507002,
+      "Entries": [
+        "c5070_centipede_rush body"
+      ]
+    },
+    {
+      "ID": 507100,
+      "Entries": [
+        "c5071_centipede_rush"
+      ]
+    },
+    {
+      "ID": 507101,
+      "Entries": [
+        "c5071_centipede_tail"
+      ]
+    },
+    {
+      "ID": 507102,
+      "Entries": [
+        "c5071_centipede_rush body"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "c5080 _ fly _ hit with right arm"
+      ]
+    },
+    {
+      "ID": 508001,
+      "Entries": [
+        "c5080 _ fly _ swing down right arm"
+      ]
+    },
+    {
+      "ID": 508002,
+      "Entries": [
+        "c5080_fly fly _ rampage"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "c5090_leech daemon_slap"
+      ]
+    },
+    {
+      "ID": 509001,
+      "Entries": [
+        "c5090_leech demon_swinging arms"
+      ]
+    },
+    {
+      "ID": 509002,
+      "Entries": [
+        "c5090_leech demon_ violently rampaging"
+      ]
+    },
+    {
+      "ID": 509003,
+      "Entries": [
+        "c5090_leech demon_leech covered attack"
+      ]
+    },
+    {
+      "ID": 510001,
+      "Entries": [
+        "c5100 large spider right leg"
+      ]
+    },
+    {
+      "ID": 510002,
+      "Entries": [
+        "c5100 large spider left leg"
+      ]
+    },
+    {
+      "ID": 510003,
+      "Entries": [
+        "c5100 Large spider body hit"
+      ]
+    },
+    {
+      "ID": 510004,
+      "Entries": [
+        "c5100 Large spider Great flame 1st stage"
+      ]
+    },
+    {
+      "ID": 510005,
+      "Entries": [
+        "c5100 Large spider Great flame 2nd stage"
+      ]
+    },
+    {
+      "ID": 510006,
+      "Entries": [
+        "c5100 Large spider Great flame 3rd stage"
+      ]
+    },
+    {
+      "ID": 510007,
+      "Entries": [
+        "c5100 large spider front leg attack"
+      ]
+    },
+    {
+      "ID": 510008,
+      "Entries": [
+        "c5100 Large spider Swings down the right leg"
+      ]
+    },
+    {
+      "ID": 510009,
+      "Entries": [
+        "c5100 Large spider Left leg swing down"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "c5100 Large spider Swing both legs down"
+      ]
+    },
+    {
+      "ID": 510011,
+      "Entries": [
+        "c5100_Large spider Main body when swinging down"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "c5110_ore spirit biting"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "c5120_Long wyvern_tail attack"
+      ]
+    },
+    {
+      "ID": 512001,
+      "Entries": [
+        "c5120_Long Wyvern_Breath A Passage first half"
+      ]
+    },
+    {
+      "ID": 512002,
+      "Entries": [
+        "c5120_Long Wyvern_Breath B Passage middle"
+      ]
+    },
+    {
+      "ID": 512003,
+      "Entries": [
+        "c5120_Long Wyvern_Breath C Second half of passage"
+      ]
+    },
+    {
+      "ID": 512004,
+      "Entries": [
+        "c5120_Long Wyvern_Breath D First half of the square"
+      ]
+    },
+    {
+      "ID": 512005,
+      "Entries": [
+        "c5120_Breath attack A between kings"
+      ]
+    },
+    {
+      "ID": 512006,
+      "Entries": [
+        "c5120_ Breath attack B during the king"
+      ]
+    },
+    {
+      "ID": 512007,
+      "Entries": [
+        "c5120_Long Wyvern_Breath E Plaza Middle"
+      ]
+    },
+    {
+      "ID": 512008,
+      "Entries": [
+        "c5120_Long Wyvern_Breath F Second half of the square"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "c5130_kin breath_royal castle 1_wall"
+      ]
+    },
+    {
+      "ID": 513001,
+      "Entries": [
+        "c5130_kin breath_royal castle 1_nest"
+      ]
+    },
+    {
+      "ID": 513002,
+      "Entries": [
+        "c5130_kin breath_royal castle 2_wall"
+      ]
+    },
+    {
+      "ID": 513003,
+      "Entries": [
+        "c5130_kin breath_royal castle 1_nest long"
+      ]
+    },
+    {
+      "ID": 513004,
+      "Entries": [
+        "c5130_kin breath_foot"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "c6020 _ storm warrior _ vertical swing"
+      ]
+    },
+    {
+      "ID": 602001,
+      "Entries": [
+        "c6020_Warrior of the Storm_Stab directly below"
+      ]
+    },
+    {
+      "ID": 602002,
+      "Entries": [
+        "c6020 _ storm warrior _ mow down"
+      ]
+    },
+    {
+      "ID": 602003,
+      "Entries": [
+        "c6020 _ storm warrior _ rounded up"
+      ]
+    },
+    {
+      "ID": 602004,
+      "Entries": [
+        "c6020_Warrior of the storm_Stab directly below/Shock wave"
+      ]
+    },
+    {
+      "ID": 602005,
+      "Entries": [
+        "c6020_Warrior of the Storm_Vertical swing down to the right"
+      ]
+    },
+    {
+      "ID": 602006,
+      "Entries": [
+        "c6020_Warrior of the Storm_Vertical swing left direction"
+      ]
+    },
+    {
+      "ID": 602007,
+      "Entries": [
+        "c6020 _ storm warrior _ step involvement"
+      ]
+    },
+    {
+      "ID": 602008,
+      "Entries": [
+        "c6020 _ storm warrior _ pounce"
+      ]
+    },
+    {
+      "ID": 602009,
+      "Entries": [
+        "c6020 _ storm warrior _ mow down from the right"
+      ]
+    },
+    {
+      "ID": 602010,
+      "Entries": [
+        "c6020_storm warrior_mow down from the left"
+      ]
+    },
+    {
+      "ID": 602011,
+      "Entries": [
+        "c6020 _ storm warrior _ strike"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "c6031_Old man in yellow _Move sideways"
+      ]
+    },
+    {
+      "ID": 603101,
+      "Entries": [
+        "c6031_Old man in yellow _Continuous mowing"
+      ]
+    },
+    {
+      "ID": 603106,
+      "Entries": [
+        "c6031_old man in yellow_guard"
+      ]
+    },
+    {
+      "ID": 604100,
+      "Entries": [
+        "c6041_unclean_(adsorption) punch"
+      ]
+    },
+    {
+      "ID": 605000,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 1"
+      ]
+    },
+    {
+      "ID": 605001,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 2"
+      ]
+    },
+    {
+      "ID": 605002,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 3"
+      ]
+    },
+    {
+      "ID": 605003,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 4"
+      ]
+    },
+    {
+      "ID": 605004,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Bite"
+      ]
+    },
+    {
+      "ID": 605005,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Breath 1"
+      ]
+    },
+    {
+      "ID": 605006,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Breath 2"
+      ]
+    },
+    {
+      "ID": 605007,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Breath 3"
+      ]
+    },
+    {
+      "ID": 605008,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Breath 4"
+      ]
+    },
+    {
+      "ID": 605009,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 1 left"
+      ]
+    },
+    {
+      "ID": 605010,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Punch 2 Left"
+      ]
+    },
+    {
+      "ID": 605011,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 3 left"
+      ]
+    },
+    {
+      "ID": 605012,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Punch 4 Left"
+      ]
+    },
+    {
+      "ID": 605013,
+      "Entries": [
+        "c6050_Dragon Demon (pit)_Continuous bite"
+      ]
+    },
+    {
+      "ID": 605014,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Short distance breath"
+      ]
+    },
+    {
+      "ID": 605015,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Weakening Breath Breath"
+      ]
+    },
+    {
+      "ID": 605016,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Weakening Bite 1"
+      ]
+    },
+    {
+      "ID": 605017,
+      "Entries": [
+        "c6050_Dragon Demon (Mine)_Weakening Bite 2"
+      ]
+    },
+    {
+      "ID": 605018,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 1 shock wave"
+      ]
+    },
+    {
+      "ID": 605019,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 2 shock wave"
+      ]
+    },
+    {
+      "ID": 605020,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 3 shock wave"
+      ]
+    },
+    {
+      "ID": 605021,
+      "Entries": [
+        "c6050_Dragon Demon (pit) _Punch 4 shock wave"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "c7100_ beggar (man) _ beating"
+      ]
+    },
+    {
+      "ID": 711000,
+      "Entries": [
+        "c7110_ beggar (female) _ beating right"
+      ]
+    },
+    {
+      "ID": 711001,
+      "Entries": [
+        "c7110_ beggar (female) _ beating left"
+      ]
+    },
+    {
+      "ID": 713000,
+      "Entries": [
+        "c7130 _ blacksmith (pit) _ hook"
+      ]
+    },
+    {
+      "ID": 713001,
+      "Entries": [
+        "c7130_blacksmith (pit)_upper"
+      ]
+    },
+    {
+      "ID": 713002,
+      "Entries": [
+        "c7130 _ blacksmith (pit) _ swing down"
+      ]
+    },
+    {
+      "ID": 713003,
+      "Entries": [
+        "c7130 _ blacksmith (pit) _ back fist"
+      ]
+    },
+    {
+      "ID": 713004,
+      "Entries": [
+        "c7130 _ blacksmith (pit) _ press the bottom of the fist"
+      ]
+    },
+    {
+      "ID": 713005,
+      "Entries": [
+        "c7130 _ blacksmith (pit) _ jab"
+      ]
+    },
+    {
+      "ID": 713100,
+      "Entries": [
+        "c7131_ blacksmith (stone pillar) _ hook"
+      ]
+    },
+    {
+      "ID": 713101,
+      "Entries": [
+        "c7131_blacksmith (stone pillar)_upper"
+      ]
+    },
+    {
+      "ID": 713102,
+      "Entries": [
+        "c7131 _ blacksmith (stone pillar) _ swing down"
+      ]
+    },
+    {
+      "ID": 713103,
+      "Entries": [
+        "c7131 _ blacksmith (stone pillar) _ back fist"
+      ]
+    },
+    {
+      "ID": 713104,
+      "Entries": [
+        "c7131 _ blacksmith (stone pillar) _ hit the bottom of the fist and press"
+      ]
+    },
+    {
+      "ID": 713105,
+      "Entries": [
+        "c7131_ blacksmith (stone pillar) _ jab"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "c7230_Lendl King_Normal Slash A"
+      ]
+    },
+    {
+      "ID": 723001,
+      "Entries": [
+        "c7230_Lendl King_Normal Slash B"
+      ]
+    },
+    {
+      "ID": 723002,
+      "Entries": [
+        "c7230_Lendl King_Move"
+      ]
+    },
+    {
+      "ID": 723003,
+      "Entries": [
+        "c7230_Lendl King_Forward Step Slash"
+      ]
+    },
+    {
+      "ID": 723004,
+      "Entries": [
+        "c7230_King Lendl_Backward Step Slash"
+      ]
+    },
+    {
+      "ID": 723005,
+      "Entries": [
+        "c7230_Lendl King_Strong Slash"
+      ]
+    },
+    {
+      "ID": 723006,
+      "Entries": [
+        "c7230_forced ghost slash B"
+      ]
+    },
+    {
+      "ID": 723007,
+      "Entries": [
+        "c7230_King Lendl_Slash from the dash"
+      ]
+    },
+    {
+      "ID": 723008,
+      "Entries": [
+        "c7230_King Lendl_Grasp with left hand"
+      ]
+    },
+    {
+      "ID": 723009,
+      "Entries": [
+        "c7230_King Lendl_Small jump attack"
+      ]
+    },
+    {
+      "ID": 723010,
+      "Entries": [
+        "c7230_King Lendl_Rush"
+      ]
+    },
+    {
+      "ID": 723011,
+      "Entries": [
+        "c7230_King Lendl_Parry"
+      ]
+    }
+  ]
+}

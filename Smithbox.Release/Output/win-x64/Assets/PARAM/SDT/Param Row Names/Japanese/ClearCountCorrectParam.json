@@ -1,0 +1,101 @@
+{
+  "Name": "ClearCountCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "1 lap -- 1周回"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "2nd lap -- 2周目"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "3rd lap -- 3周目"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "4th lap -- 4周目"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "5th lap -- 5周目"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "6th lap -- 6周目"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "7th lap -- 7周目"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "8th lap -- 8周目"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "1 lap (hard mode) -- 1周回（ハードモード）"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "2nd lap (hard mode) -- 2周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "3rd lap (hard mode) -- 3周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "4th lap (hard mode) -- 4周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "5th lap (hard mode) -- 5周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "6th lap (hard mode) -- 6周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "7th lap (hard mode) -- 7周目（ハードモード）"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "8th lap (hard mode) -- 8周目（ハードモード）"
+      ]
+    }
+  ]
+}

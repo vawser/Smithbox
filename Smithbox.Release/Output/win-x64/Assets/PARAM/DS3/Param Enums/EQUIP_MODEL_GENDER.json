@@ -1,0 +1,47 @@
+{
+  "Key": "EQUIP_MODEL_GENDER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_MODEL_GENDER"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Split by Gender"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shared"
+        }
+      ]
+    }
+  ]
+}

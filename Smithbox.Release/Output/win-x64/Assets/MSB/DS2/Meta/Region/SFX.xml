@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <EffectID
+    AltName="Particle ID"
+    Wiki="The ID of the SFX particle to play."
+    ParticleAlias="" />
+    
+    <UnkT04
+    AltName="Unknown 0x4"
+    Wiki="" />
+  </Field>
+    
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,14 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Debug Menu",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "An in-game menu which can be used to interact with game structures at a lower level.",
+        "Usually only present in alpha builds of games, although some functionality may exist as unused code in the shipped game."
+    ]
+}

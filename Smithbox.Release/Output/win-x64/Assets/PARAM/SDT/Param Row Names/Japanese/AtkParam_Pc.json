@@ -1,0 +1,2663 @@
+{
+  "Name": "AtkParam_Pc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy bullet -- ダミー弾丸"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Dummy bullets_see per map_normal -- ダミー弾丸_マップあたり参照_通常"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "For destroying automatic patrol objects -- 自動巡回オブジェ破壊用"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dummy attack to keep bullets out -- 弾丸出し続ける用ダミー攻撃"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "For automatic patrol object destruction_for debug function verification -- 自動巡回オブジェ破壊用_デバッグ機能検証用"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dummy bullet _ hits nothing -- ダミー弾丸_何にも当たらない"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[System] Attack magnification for menu display -- 【システム】メニュー表示用攻撃倍率"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Contact impact_in-game start -- 接触衝撃_インゲーム開始"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Contact impact_weak_upper and lower wrap -- 接触衝撃_弱_上下包み"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Contact impact_weak_origin wrap -- 接触衝撃_弱_原点包み"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Contact impact_middle_upper and lower wrap -- 接触衝撃_中_上下包み"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Contact impact_medium_origin wrap -- 接触衝撃_中_原点包み"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Contact impact_middle_below origin -- 接触衝撃_中_原点下方"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Foot for SFX / right foot -- フットSFX用/右足"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Foot for SFX / left foot -- フットSFX用/左足"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "Hand for SFX / right hand -- ハンドSFX用/右手"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "Hand for SFX / left hand -- ハンドSFX用/左手"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Anti-spirit force -- 対霊フォース"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "Depression Force_Parent -- 恐慌フォース_親"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Depression Force_Child -- 恐慌フォース_子"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke_Common_Enemy Reaction Regeneration -- 忍殺忍術_血煙_共通_敵リアクション再生"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke_Common_Blind Special Effects -- 忍殺忍術_血煙_共通_盲目特殊効果"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Enemy Reaction Regeneration -- 忍殺忍術_血煙_放射_敵リアクション再生"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Blind Special Effects -- 忍殺忍術_血煙_放射_盲目特殊効果"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Puppet_Normal -- 忍殺忍術_傀儡_通常"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Puppet_Normal_Infinite duration -- 忍殺忍術_傀儡_通常_効果時間無限"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Shinobi killing start_break -- 忍殺始動_崩し"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Shinobi killing start_behind -- 忍殺始動_背後"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Shinobi killing start_ crouching behind -- 忍殺始動_背後しゃがみ"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Shinobi killing start_fall -- 忍殺始動_落下"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Shinobi killing start_breaking wire -- 忍殺始動_崩しワイヤー"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "Shinobi killing start_anti-aircraft -- 忍殺始動_対空"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Shinobi killing start_wall left -- 忍殺始動_壁張り付き左"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Shinobi killing start_walled right -- 忍殺始動_壁張り付き右"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Shinobi killing start_ hanging -- 忍殺始動_ぶら下がり"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "Shinobi killing start_breaking kick jump -- 忍殺始動_崩し蹴りジャンプ"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Shinobi slaughter start _ stop _ priest -- 忍殺始動_とどめ_破戒僧"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Shinobi killing start _ stop _ chief of the ninja army -- 忍殺始動_とどめ_忍軍の長"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Shinobi killing start _ stop _ Yasha monkey -- 忍殺始動_とどめ_夜叉猿"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Shinobi killing start _ stop _ rival -- 忍殺始動_とどめ_ライバル"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Shinobi killing start _ stop _ butterfly -- 忍殺始動_とどめ_お蝶"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Shinobi killing start _ stop _ sword sacred -- 忍殺始動_とどめ_剣聖"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Shinobi killing start _ stop _ Buddhist demon -- 忍殺始動_とどめ_仏師鬼"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "Shinobi shock _ short distance _ on the spot -- 忍殺衝撃_近距離_その場"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "Shinobi shock _ short distance _ jump away -- 忍殺衝撃_近距離_飛び退き"
+      ]
+    },
+    {
+      "ID": 842,
+      "Entries": [
+        "Shinobi shock _ long distance _ on the spot -- 忍殺衝撃_遠距離_その場"
+      ]
+    },
+    {
+      "ID": 843,
+      "Entries": [
+        "Shinobi shock _ long distance _ jump away -- 忍殺衝撃_遠距離_飛び退き"
+      ]
+    },
+    {
+      "ID": 844,
+      "Entries": [
+        "Resurrection Technique_Boss Sensing Dummy Attack -- 復活の術_ボス感知ダミー攻撃"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Kick -- 蹴り"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Kick_in the air -- 蹴り_空中"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Kick_dash -- 蹴り_ダッシュ"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Piece of porcelain -- 陶片"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "Grip ash -- 握り灰"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Aburatsubo -- 油壷"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Release illusion_Phantom drowning bullet -- 幻術解除_幻影かき消し弾丸"
+      ]
+    },
+    {
+      "ID": 3531,
+      "Entries": [
+        "Release illusion_Short-range surprised bullets -- 幻術解除_近距離びっくり弾丸"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "DL confirmation 00_ None -- DL確認00_なし"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "DL confirmation 01_small -- DL確認01_小"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "DL confirmation 02_ Medium -- DL確認02_中"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "DL confirmation 03_large -- DL確認03_大"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "DL confirmation 04_ Blow-off size -- DL確認04_吹っ飛び大"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "DL confirmation 05_ press -- DL確認05_押し"
+      ]
+    },
+    {
+      "ID": 9906,
+      "Entries": [
+        "DL confirmation 06_ slamming -- DL確認06_叩きつけ"
+      ]
+    },
+    {
+      "ID": 9907,
+      "Entries": [
+        "DL confirmation 07_Blow-off small (PC kick only) -- DL確認07_吹っ飛び小（PC蹴り専用）"
+      ]
+    },
+    {
+      "ID": 9908,
+      "Entries": [
+        "DL confirmation 08_minimal addition -- DL確認08_極小加算"
+      ]
+    },
+    {
+      "ID": 9909,
+      "Entries": [
+        "DL confirmation 09_ lift up -- DL確認09_かち上げ"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "DL confirmation 10_ Blow-off oversized -- DL確認10_吹っ飛び特大"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "DL confirmation 11_ breath (unused) -- DL確認11_ブレス（未使用）"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "DL confirmation 15_break -- DL確認15_崩し"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "DL confirmation 20_flame -- DL確認20_炎"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "AI sound confirmation_normal sound -- AI音確認_通常音"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "AI sound confirmation_important sound -- AI音確認_重要音"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullets when moving / mud dirt decals / walking_right foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／歩行_右足"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullets when moving / mud dirt decals / walking_left foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／歩行_左足"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullets when moving / mud dirt decals / running_right foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／走行_右足"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullets when moving / mud dirt decals / running_left foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／走行_左足"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullets when moving / Mud dirt decals / Rolling _ chest -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／ローリング_胸"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullet when moving / mud dirt decal / dash_right foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／ダッシュ_右足"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Prototype provisional support: Special SFX control bullet when moving / mud dirt decal / dash_left foot -- プロト仮対応：移動時の特殊SFX制御弾丸／泥汚れデカール／ダッシュ_左足"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Bleeding when moving violently when dying -- 瀕死時に激しく動くと出血する"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Right-handed sword_reservoir 1 -- 右手刀_溜め突き1"
+      ]
+    },
+    {
+      "ID": 5000001,
+      "Entries": [
+        "Right-handed sword_reservoir 2 -- 右手刀_溜め突き2"
+      ]
+    },
+    {
+      "ID": 5000006,
+      "Entries": [
+        "Right hand sword_reservoir 2_reverse foot -- 右手刀_溜め突き2_逆足"
+      ]
+    },
+    {
+      "ID": 5000010,
+      "Entries": [
+        "Right hand sword_attack 1 -- 右手刀_攻撃1"
+      ]
+    },
+    {
+      "ID": 5000011,
+      "Entries": [
+        "Right hand sword_attack 2 -- 右手刀_攻撃2"
+      ]
+    },
+    {
+      "ID": 5000012,
+      "Entries": [
+        "Right hand sword_attack 3 -- 右手刀_攻撃3"
+      ]
+    },
+    {
+      "ID": 5000013,
+      "Entries": [
+        "Right hand sword_attack 4 -- 右手刀_攻撃4"
+      ]
+    },
+    {
+      "ID": 5000014,
+      "Entries": [
+        "Right hand sword_attack 5 -- 右手刀_攻撃5"
+      ]
+    },
+    {
+      "ID": 5000016,
+      "Entries": [
+        "Right hand sword_attack 2_reverse foot -- 右手刀_攻撃2_逆足"
+      ]
+    },
+    {
+      "ID": 5000020,
+      "Entries": [
+        "Right hand sword _ Small jasuga received and then accumulated stab _ Left -- 右手刀_小ジャスガ受け後溜め突き_左"
+      ]
+    },
+    {
+      "ID": 5000021,
+      "Entries": [
+        "Right hand sword_Small jasuga received and then accumulated thrust_Right -- 右手刀_小ジャスガ受け後溜め突き_右"
+      ]
+    },
+    {
+      "ID": 5000025,
+      "Entries": [
+        "Right hand sword _ Middle jasuga receiver / After step stab _ Left -- 右手刀_中ジャスガ受け/ステップ後溜め突き_左"
+      ]
+    },
+    {
+      "ID": 5000026,
+      "Entries": [
+        "Right hand sword _ Middle jasuga receiving / After step stab _ Right -- 右手刀_中ジャスガ受け/ステップ後溜め突き_右"
+      ]
+    },
+    {
+      "ID": 5000030,
+      "Entries": [
+        "Right hand sword _ Attack after receiving small jasuga _ Left -- 右手刀_小ジャスガ受け後攻撃_左"
+      ]
+    },
+    {
+      "ID": 5000031,
+      "Entries": [
+        "Right hand sword _ Attack after receiving small jasuga _ Right -- 右手刀_小ジャスガ受け後攻撃_右"
+      ]
+    },
+    {
+      "ID": 5000035,
+      "Entries": [
+        "Right hand sword_Middle Jasuga receiving / Attack after step_Left -- 右手刀_中ジャスガ受け/ステップ後攻撃_左"
+      ]
+    },
+    {
+      "ID": 5000036,
+      "Entries": [
+        "Right hand sword_Medium Jasuga receiving / Attack after step_Right -- 右手刀_中ジャスガ受け/ステップ後攻撃_右"
+      ]
+    },
+    {
+      "ID": 5000040,
+      "Entries": [
+        "Right-handed sword_guard / Jasuga is flipped and then accumulated -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_右"
+      ]
+    },
+    {
+      "ID": 5000041,
+      "Entries": [
+        "Right hand sword _ guard / jasuga is flipped and then accumulated _ left -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_左"
+      ]
+    },
+    {
+      "ID": 5000050,
+      "Entries": [
+        "Right hand sword_guard / Jasuga attack after being hit_right -- 右手刀_ガード/ジャスガ弾かれ後攻撃_右"
+      ]
+    },
+    {
+      "ID": 5000051,
+      "Entries": [
+        "Right hand sword_guard / Jasuga attack after being hit_left -- 右手刀_ガード/ジャスガ弾かれ後攻撃_左"
+      ]
+    },
+    {
+      "ID": 5000060,
+      "Entries": [
+        "Right hand sword_Aerial attack 1 -- 右手刀_空中攻撃1"
+      ]
+    },
+    {
+      "ID": 5000061,
+      "Entries": [
+        "Right hand sword_Aerial attack 2 -- 右手刀_空中攻撃2"
+      ]
+    },
+    {
+      "ID": 5000062,
+      "Entries": [
+        "Right hand sword_Aerial attack 3 -- 右手刀_空中攻撃3"
+      ]
+    },
+    {
+      "ID": 5000065,
+      "Entries": [
+        "Right hand sword_wire attack 1 -- 右手刀_ワイヤー攻撃1"
+      ]
+    },
+    {
+      "ID": 5000066,
+      "Entries": [
+        "Right hand sword_wire attack 2 -- 右手刀_ワイヤー攻撃2"
+      ]
+    },
+    {
+      "ID": 5000070,
+      "Entries": [
+        "Right hand sword_dash attack -- 右手刀_ダッシュ攻撃"
+      ]
+    },
+    {
+      "ID": 5000075,
+      "Entries": [
+        "Right hand sword_ crouching attack -- 右手刀_しゃがみ攻撃"
+      ]
+    },
+    {
+      "ID": 5000076,
+      "Entries": [
+        "Right hand sword_Crouching attack_Underfloor -- 右手刀_しゃがみ攻撃_床下"
+      ]
+    },
+    {
+      "ID": 5000080,
+      "Entries": [
+        "Right hand sword _ hanging attack -- 右手刀_ぶら下がり攻撃"
+      ]
+    },
+    {
+      "ID": 5000085,
+      "Entries": [
+        "Right hand sword_aging attack -- 右手刀_老化攻撃"
+      ]
+    },
+    {
+      "ID": 5000086,
+      "Entries": [
+        "Right hand sword_water / underwater thrust 1 -- 右手刀_水上/水中突き1"
+      ]
+    },
+    {
+      "ID": 5000087,
+      "Entries": [
+        "Right hand sword_water / underwater thrust 2 -- 右手刀_水上/水中突き2"
+      ]
+    },
+    {
+      "ID": 5000088,
+      "Entries": [
+        "Right hand sword_water / underwater attack 1 -- 右手刀_水上/水中攻撃1"
+      ]
+    },
+    {
+      "ID": 5000089,
+      "Entries": [
+        "Right hand sword_water / underwater attack 2 -- 右手刀_水上/水中攻撃2"
+      ]
+    },
+    {
+      "ID": 5000090,
+      "Entries": [
+        "Right hand sword_guard -- 右手刀_ガード"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "Shuriken_Chasing Slash -- 手裏剣_追いかけ斬り"
+      ]
+    },
+    {
+      "ID": 5000105,
+      "Entries": [
+        "Firecracker _ slip-through slash -- 爆竹_すり抜け斬り"
+      ]
+    },
+    {
+      "ID": 5000110,
+      "Entries": [
+        "Ignition_Flame Slash -- 発火_炎まとい斬り"
+      ]
+    },
+    {
+      "ID": 5000115,
+      "Entries": [
+        "Ax _ front slash _ sword -- 斧_前宙斬り_刀"
+      ]
+    },
+    {
+      "ID": 5000120,
+      "Entries": [
+        "Transformation_ground appearance attack -- 変わり身_地上出現攻撃"
+      ]
+    },
+    {
+      "ID": 5000121,
+      "Entries": [
+        "Transformation_Aerial Appearance Attack -- 変わり身_空中出現攻撃"
+      ]
+    },
+    {
+      "ID": 5000130,
+      "Entries": [
+        "Kodachi_Table 2nd stage_Right hand sword -- 小太刀_表2段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000131,
+      "Entries": [
+        "Kodachi _ Table 4th _ Right hand sword -- 小太刀_表4段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000132,
+      "Entries": [
+        "Kodachi _ Table 6th _ Right hand sword -- 小太刀_表6段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000133,
+      "Entries": [
+        "Kodachi_back 1st stage_right hand sword -- 小太刀_裏1段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000134,
+      "Entries": [
+        "Kodachi _ back 2nd stage _ right hand sword -- 小太刀_裏2段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000135,
+      "Entries": [
+        "Kodachi _ back 3rd stage _ right hand sword -- 小太刀_裏3段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000136,
+      "Entries": [
+        "Kodachi_back 4th stage_right hand sword -- 小太刀_裏4段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000137,
+      "Entries": [
+        "Kodachi_back 5th stage_right hand sword -- 小太刀_裏5段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000138,
+      "Entries": [
+        "Kodachi_back 6th stage_right hand sword -- 小太刀_裏6段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000140,
+      "Entries": [
+        "Kodachi (Ruri) _Table 2nd stage_Right hand sword -- 小太刀（瑠璃）_表2段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000141,
+      "Entries": [
+        "Kodachi (Ruri) _ Table 4th _ Right hand sword -- 小太刀（瑠璃）_表4段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000142,
+      "Entries": [
+        "Kodachi (Ruri) _Table 6th row_Right hand sword -- 小太刀（瑠璃）_表6段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000143,
+      "Entries": [
+        "Kodachi (Ruri) _back 1st stage_right hand sword -- 小太刀（瑠璃）_裏1段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000144,
+      "Entries": [
+        "Kodachi (Ruri) _2nd back sword_Right hand sword -- 小太刀（瑠璃）_裏2段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000145,
+      "Entries": [
+        "Kodachi (Ruri) _ 3rd back sword _ Right hand sword -- 小太刀（瑠璃）_裏3段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000146,
+      "Entries": [
+        "Kodachi (Ruri) _ back 4th stage _ right hand sword -- 小太刀（瑠璃）_裏4段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000147,
+      "Entries": [
+        "Kodachi (Ruri) _ 5th stage on the back _ Right hand sword -- 小太刀（瑠璃）_裏5段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000148,
+      "Entries": [
+        "Kodachi (Ruri) _ 6th back sword _ Right hand sword -- 小太刀（瑠璃）_裏6段目_右手刀"
+      ]
+    },
+    {
+      "ID": 5000150,
+      "Entries": [
+        "Kodachi _ front and back switching slash _ front and back left -- 小太刀_表裏切替斬り_前後左"
+      ]
+    },
+    {
+      "ID": 5000151,
+      "Entries": [
+        "Kodachi _ front and back switching slash _ right -- 小太刀_表裏切替斬り_右"
+      ]
+    },
+    {
+      "ID": 5000152,
+      "Entries": [
+        "Iron fan_throwing slash -- 鉄扇_放ち斬り"
+      ]
+    },
+    {
+      "ID": 5000153,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Red blood enchantment additional attack -- 鉄扇_放ち斬り_赤血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000154,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Poison blood enchantment additional attack -- 鉄扇_放ち斬り_毒血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000155,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ White blood enchantment additional attack -- 鉄扇_放ち斬り_白血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000156,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Orange style enchantment additional attack -- 鉄扇_放ち斬り_橙風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000157,
+      "Entries": [
+        "Iron fan _ Unleash slash _ Gold wind enchantment additional attack -- 鉄扇_放ち斬り_金風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000160,
+      "Entries": [
+        "Enemy turning LV1 / 2_ Wind sword -- 敵回しLV1/2_風まとい斬り"
+      ]
+    },
+    {
+      "ID": 5000161,
+      "Entries": [
+        "Enemy turning LV3_ Wind slashing -- 敵回しLV3_風まとい斬り"
+      ]
+    },
+    {
+      "ID": 5000165,
+      "Entries": [
+        "Spear_Chasing Slash -- 槍_追いかけ斬り"
+      ]
+    },
+    {
+      "ID": 5000166,
+      "Entries": [
+        "Spear_Pulling Slash -- 槍_引き寄せ斬り"
+      ]
+    },
+    {
+      "ID": 5000170,
+      "Entries": [
+        "Finger whistle_sound feed slash -- 指笛_音送り斬り"
+      ]
+    },
+    {
+      "ID": 5000180,
+      "Entries": [
+        "Right Hand Sword_Red Blood Enchantment Additional Attack -- 右手刀_赤血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000181,
+      "Entries": [
+        "Right-handed sword_poison blood enchantment additional attack -- 右手刀_毒血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000182,
+      "Entries": [
+        "Right-handed sword_white blood enchantment additional attack -- 右手刀_白血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000183,
+      "Entries": [
+        "Right-handed sword_Weak thunder enchantment additional attack -- 右手刀_弱雷エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000184,
+      "Entries": [
+        "Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸"
+      ]
+    },
+    {
+      "ID": 5000185,
+      "Entries": [
+        "Right-handed sword_Orange-style enchantment additional attack -- 右手刀_橙風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000186,
+      "Entries": [
+        "Right-handed sword_Kinfu enchantment additional attack -- 右手刀_金風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5000190,
+      "Entries": [
+        "Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）"
+      ]
+    },
+    {
+      "ID": 5000191,
+      "Entries": [
+        "Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）"
+      ]
+    },
+    {
+      "ID": 5000192,
+      "Entries": [
+        "Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）"
+      ]
+    },
+    {
+      "ID": 5000193,
+      "Entries": [
+        "Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）"
+      ]
+    },
+    {
+      "ID": 5000280,
+      "Entries": [
+        "Right hand sword _ thunder return _ weak thunder _ sword blade -- 右手刀_雷返し_弱雷_刀身"
+      ]
+    },
+    {
+      "ID": 5000281,
+      "Entries": [
+        "Right hand sword _ thunder return _ weak thunder _ thunder -- 右手刀_雷返し_弱雷_雷"
+      ]
+    },
+    {
+      "ID": 5000600,
+      "Entries": [
+        "Right-handed sword_Ninjato body_Crush -- 右手刀_忍殺本体_崩し"
+      ]
+    },
+    {
+      "ID": 5000610,
+      "Entries": [
+        "Right hand sword_Ninjato body_Play -- 右手刀_忍殺本体_弾き"
+      ]
+    },
+    {
+      "ID": 5000620,
+      "Entries": [
+        "Right hand sword _ Ninjato body _ Closeout -- 右手刀_忍殺本体_見切り"
+      ]
+    },
+    {
+      "ID": 5000640,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Behind -- 右手刀_忍殺本体_背後"
+      ]
+    },
+    {
+      "ID": 5000650,
+      "Entries": [
+        "Right hand sword_Ninjato body_Crouching behind -- 右手刀_忍殺本体_しゃがみ背後"
+      ]
+    },
+    {
+      "ID": 5000660,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Fall -- 右手刀_忍殺本体_落下"
+      ]
+    },
+    {
+      "ID": 5000661,
+      "Entries": [
+        "Right hand sword _ Ninjato body _ Fall _ Fire cow only -- 右手刀_忍殺本体_落下_火牛専用"
+      ]
+    },
+    {
+      "ID": 5000680,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Wire -- 右手刀_忍殺本体_ワイヤー"
+      ]
+    },
+    {
+      "ID": 5000690,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Anti-aircraft -- 右手刀_忍殺本体_対空"
+      ]
+    },
+    {
+      "ID": 5000700,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Left and right with wall -- 右手刀_忍殺本体_壁張り付き左右"
+      ]
+    },
+    {
+      "ID": 5000720,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Before and after hanging -- 右手刀_忍殺本体_ぶら下がり前後"
+      ]
+    },
+    {
+      "ID": 5000800,
+      "Entries": [
+        "Right hand sword _ Ninja body _ Stop -- 右手刀_忍殺本体_とどめ"
+      ]
+    },
+    {
+      "ID": 5000790,
+      "Entries": [
+        "Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Blood smoke -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_血煙"
+      ]
+    },
+    {
+      "ID": 5000791,
+      "Entries": [
+        "Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Puppet -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_傀儡"
+      ]
+    },
+    {
+      "ID": 5000792,
+      "Entries": [
+        "Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Grant -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_付与"
+      ]
+    },
+    {
+      "ID": 5001200,
+      "Entries": [
+        "School Technique_Rotating Slash 1-1 -- 流派技_回転斬り1-1"
+      ]
+    },
+    {
+      "ID": 5001201,
+      "Entries": [
+        "School Technique_Rotating Slash 1-2 -- 流派技_回転斬り1-2"
+      ]
+    },
+    {
+      "ID": 5002200,
+      "Entries": [
+        "School Technique_Dive Slash 1 -- 流派技_飛び込み斬り1"
+      ]
+    },
+    {
+      "ID": 5002201,
+      "Entries": [
+        "School Technique_Dive Slash 2 -- 流派技_飛び込み斬り2"
+      ]
+    },
+    {
+      "ID": 5003200,
+      "Entries": [
+        "School technique_face-up 1_reservoir -- 流派技_面打ち1_溜め"
+      ]
+    },
+    {
+      "ID": 5003201,
+      "Entries": [
+        "School technique_face-up 1 -- 流派技_面打ち1"
+      ]
+    },
+    {
+      "ID": 5003210,
+      "Entries": [
+        "School Technique_Face 2 -- 流派技_面打ち2"
+      ]
+    },
+    {
+      "ID": 5004200,
+      "Entries": [
+        "School technique _ Kensei Iai _ Reservoir -- 流派技_剣聖居合_溜め"
+      ]
+    },
+    {
+      "ID": 5004201,
+      "Entries": [
+        "School technique _ Kensei Iai _ Reservoir _ No form fee -- 流派技_剣聖居合_溜め_形代なし"
+      ]
+    },
+    {
+      "ID": 5004210,
+      "Entries": [
+        "School Technique_Sword Holy Iai_Reserved Bullet 1 -- 流派技_剣聖居合_溜め弾丸1"
+      ]
+    },
+    {
+      "ID": 5004215,
+      "Entries": [
+        "School Technique_Sword Holy Iai_Reserved Bullet 2 -- 流派技_剣聖居合_溜め弾丸2"
+      ]
+    },
+    {
+      "ID": 5004219,
+      "Entries": [
+        "School Technique_Sword Holy Iai_Reserved Bullet 2_Parent Dummy Bullet -- 流派技_剣聖居合_溜め弾丸2_親用ダミー弾丸"
+      ]
+    },
+    {
+      "ID": 5004220,
+      "Entries": [
+        "School technique_Kensei Iai -- 流派技_剣聖居合"
+      ]
+    },
+    {
+      "ID": 5004221,
+      "Entries": [
+        "School technique_Sword sacred Iai_No form -- 流派技_剣聖居合_形代なし"
+      ]
+    },
+    {
+      "ID": 5004230,
+      "Entries": [
+        "School technique_Sword sacred Iai_Bullet -- 流派技_剣聖居合_弾丸"
+      ]
+    },
+    {
+      "ID": 5005200,
+      "Entries": [
+        "School technique_Iai 1 -- 流派技_居合1"
+      ]
+    },
+    {
+      "ID": 5005201,
+      "Entries": [
+        "School technique_Iai 2 -- 流派技_居合2"
+      ]
+    },
+    {
+      "ID": 5005202,
+      "Entries": [
+        "School technique_Iai 1_No form fee -- 流派技_居合1_形代なし"
+      ]
+    },
+    {
+      "ID": 5005203,
+      "Entries": [
+        "School technique_Iai 2_No form fee -- 流派技_居合2_形代なし"
+      ]
+    },
+    {
+      "ID": 5005210,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 1 -- 流派技_見えない居合連撃1"
+      ]
+    },
+    {
+      "ID": 5005211,
+      "Entries": [
+        "School Technique_Invisible Iai Strike 1_Red Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_赤血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005212,
+      "Entries": [
+        "School Technique_Invisible Iai Strike 1_Poison Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_毒血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005213,
+      "Entries": [
+        "School Technique_Invisible Iai Strike 1_ White Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_白血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005214,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 1_Orange wind enchantment additional attack -- 流派技_見えない居合連撃1_橙風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005215,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 1_Kinfu enchantment additional attack -- 流派技_見えない居合連撃1_金風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005216,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 1_No form -- 流派技_見えない居合連撃1_形代なし"
+      ]
+    },
+    {
+      "ID": 5005220,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack_Delayed continuous attack 1 -- 流派技_見えない居合連撃_遅延連撃1"
+      ]
+    },
+    {
+      "ID": 5005221,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack_Delayed continuous attack 2 -- 流派技_見えない居合連撃_遅延連撃2"
+      ]
+    },
+    {
+      "ID": 5005222,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack_Delayed continuous attack 3 -- 流派技_見えない居合連撃_遅延連撃3"
+      ]
+    },
+    {
+      "ID": 5005223,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack_Delayed continuous attack 4 -- 流派技_見えない居合連撃_遅延連撃4"
+      ]
+    },
+    {
+      "ID": 5005240,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 2 -- 流派技_見えない居合連撃2"
+      ]
+    },
+    {
+      "ID": 5005241,
+      "Entries": [
+        "School Technique_Invisible Iai Strike 2_Red Blood Enchantment Additional Attack -- 流派技_見えない居合連撃2_赤血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005242,
+      "Entries": [
+        "School Technique_Invisible Iai Strike 2_Poison Blood Enchantment Additional Attack -- 流派技_見えない居合連撃2_毒血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005243,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 2_White blood enchantment additional attack -- 流派技_見えない居合連撃2_白血エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005244,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 2_Orange wind enchantment additional attack -- 流派技_見えない居合連撃2_橙風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005245,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 2_Kinfu enchantment additional attack -- 流派技_見えない居合連撃2_金風エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5005246,
+      "Entries": [
+        "School technique_Invisible Iai continuous attack 2_No form -- 流派技_見えない居合連撃2_形代なし"
+      ]
+    },
+    {
+      "ID": 5007200,
+      "Entries": [
+        "School Technique_Immortal Slash 1_Reservoir -- 流派技_不死斬り1_溜め"
+      ]
+    },
+    {
+      "ID": 5007201,
+      "Entries": [
+        "School Technique_Immortal Slash 1 -- 流派技_不死斬り1"
+      ]
+    },
+    {
+      "ID": 5007210,
+      "Entries": [
+        "School Technique_Immortal Slash 2_Reservoir -- 流派技_不死斬り2_溜め"
+      ]
+    },
+    {
+      "ID": 5007211,
+      "Entries": [
+        "School Technique_Immortal Slash 2 -- 流派技_不死斬り2"
+      ]
+    },
+    {
+      "ID": 5007220,
+      "Entries": [
+        "School technique_Immortal slash 1_Reservoir_There is a form fee -- 流派技_不死斬り1_溜め_形代あり"
+      ]
+    },
+    {
+      "ID": 5007221,
+      "Entries": [
+        "School technique_Immortal slash 1_There is a form fee -- 流派技_不死斬り1_形代あり"
+      ]
+    },
+    {
+      "ID": 5007230,
+      "Entries": [
+        "School technique_Immortal slash 2_Reservoir_There is a form fee -- 流派技_不死斬り2_溜め_形代あり"
+      ]
+    },
+    {
+      "ID": 5007231,
+      "Entries": [
+        "School technique_Immortal slash 2_There is a form fee -- 流派技_不死斬り2_形代あり"
+      ]
+    },
+    {
+      "ID": 5008200,
+      "Entries": [
+        "School Technique_Kick Rush 1-1 -- 流派技_蹴りラッシュ1-1"
+      ]
+    },
+    {
+      "ID": 5008201,
+      "Entries": [
+        "School Technique_Kick Rush 1-2 -- 流派技_蹴りラッシュ1-2"
+      ]
+    },
+    {
+      "ID": 5008210,
+      "Entries": [
+        "School Technique_Kick Rush 2-1 -- 流派技_蹴りラッシュ2-1"
+      ]
+    },
+    {
+      "ID": 5008211,
+      "Entries": [
+        "School Technique_Kick Rush 2-2 -- 流派技_蹴りラッシュ2-2"
+      ]
+    },
+    {
+      "ID": 5008220,
+      "Entries": [
+        "School Technique_Kick Rush 3-1 -- 流派技_蹴りラッシュ3-1"
+      ]
+    },
+    {
+      "ID": 5008221,
+      "Entries": [
+        "School Technique_Kick Rush 3-2 -- 流派技_蹴りラッシュ3-2"
+      ]
+    },
+    {
+      "ID": 5008230,
+      "Entries": [
+        "School Technique_Kick Rush 4 -- 流派技_蹴りラッシュ4"
+      ]
+    },
+    {
+      "ID": 5009200,
+      "Entries": [
+        "School Technique_Fist Attack 1_Accumulation -- 流派技_拳撃1_溜め"
+      ]
+    },
+    {
+      "ID": 5009201,
+      "Entries": [
+        "School Technique_Fist Attack 1 -- 流派技_拳撃1"
+      ]
+    },
+    {
+      "ID": 5009210,
+      "Entries": [
+        "School Technique_Fist Attack 2 -- 流派技_拳撃2"
+      ]
+    },
+    {
+      "ID": 5009220,
+      "Entries": [
+        "School Technique_Fist Attack 3 -- 流派技_拳撃3"
+      ]
+    },
+    {
+      "ID": 5009251,
+      "Entries": [
+        "School Technique_Fist Attack 1_Aerial -- 流派技_拳撃1_空中"
+      ]
+    },
+    {
+      "ID": 5010200,
+      "Entries": [
+        "School technique _ sneak stab _ reservoir -- 流派技_忍び刺し_溜め"
+      ]
+    },
+    {
+      "ID": 5010210,
+      "Entries": [
+        "School technique_Sneak stab -- 流派技_忍び刺し"
+      ]
+    },
+    {
+      "ID": 5010215,
+      "Entries": [
+        "School technique_Sneak stab_Kick up after hit -- 流派技_忍び刺し_ヒット後蹴上がり"
+      ]
+    },
+    {
+      "ID": 5010220,
+      "Entries": [
+        "School technique_Sneak stab_After kicking up, aerial rotation slash 1 -- 流派技_忍び刺し_蹴上がり後空中回転斬り1"
+      ]
+    },
+    {
+      "ID": 5010221,
+      "Entries": [
+        "School technique_Sneak stab_After kicking up, aerial rotation slash 2 -- 流派技_忍び刺し_蹴上がり後空中回転斬り2"
+      ]
+    },
+    {
+      "ID": 5020200,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 1 -- 流派技_八艘飛びラッシュ1"
+      ]
+    },
+    {
+      "ID": 5020201,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 2 -- 流派技_八艘飛びラッシュ2"
+      ]
+    },
+    {
+      "ID": 5020202,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 3 -- 流派技_八艘飛びラッシュ3"
+      ]
+    },
+    {
+      "ID": 5020203,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 4 -- 流派技_八艘飛びラッシュ4"
+      ]
+    },
+    {
+      "ID": 5020209,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 5F -- 流派技_八艘飛びラッシュ5F"
+      ]
+    },
+    {
+      "ID": 5021200,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 1 -- 流派技_八艘飛びラッシュ1"
+      ]
+    },
+    {
+      "ID": 5021201,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 2 -- 流派技_八艘飛びラッシュ2"
+      ]
+    },
+    {
+      "ID": 5021202,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 3 -- 流派技_八艘飛びラッシュ3"
+      ]
+    },
+    {
+      "ID": 5021203,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 4 -- 流派技_八艘飛びラッシュ4"
+      ]
+    },
+    {
+      "ID": 5021204,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 5 -- 流派技_八艘飛びラッシュ5"
+      ]
+    },
+    {
+      "ID": 5021205,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 6 -- 流派技_八艘飛びラッシュ6"
+      ]
+    },
+    {
+      "ID": 5021206,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 7 -- 流派技_八艘飛びラッシュ7"
+      ]
+    },
+    {
+      "ID": 5021207,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 8 -- 流派技_八艘飛びラッシュ8"
+      ]
+    },
+    {
+      "ID": 5021208,
+      "Entries": [
+        "School Technique_Hachiman Flying Rush 9F -- 流派技_八艘飛びラッシュ9F"
+      ]
+    },
+    {
+      "ID": 5021220,
+      "Entries": [
+        "School technique_Hachiman flying rush 1_There is a form fee -- 流派技_八艘飛びラッシュ1_形代あり"
+      ]
+    },
+    {
+      "ID": 5021221,
+      "Entries": [
+        "School technique_Hachimanbuki Rush 2_There is a form fee -- 流派技_八艘飛びラッシュ2_形代あり"
+      ]
+    },
+    {
+      "ID": 5021222,
+      "Entries": [
+        "School technique_Hachiman flying rush 3_There is a form fee -- 流派技_八艘飛びラッシュ3_形代あり"
+      ]
+    },
+    {
+      "ID": 5021223,
+      "Entries": [
+        "School technique_Hachiman flying rush 4_There is a form fee -- 流派技_八艘飛びラッシュ4_形代あり"
+      ]
+    },
+    {
+      "ID": 5021224,
+      "Entries": [
+        "School technique_Hachiman flying rush 5_There is a form fee -- 流派技_八艘飛びラッシュ5_形代あり"
+      ]
+    },
+    {
+      "ID": 5021225,
+      "Entries": [
+        "School technique_Hachimanbuki Rush 6_There is a form fee -- 流派技_八艘飛びラッシュ6_形代あり"
+      ]
+    },
+    {
+      "ID": 5021226,
+      "Entries": [
+        "School technique_Hachiman flying rush 7_There is a form fee -- 流派技_八艘飛びラッシュ7_形代あり"
+      ]
+    },
+    {
+      "ID": 5021227,
+      "Entries": [
+        "School technique_Hachiman flying rush 8_There is a form fee -- 流派技_八艘飛びラッシュ8_形代あり"
+      ]
+    },
+    {
+      "ID": 5021228,
+      "Entries": [
+        "School technique_Hachiman Flying Rush 9F_There is a form fee -- 流派技_八艘飛びラッシュ9F_形代あり"
+      ]
+    },
+    {
+      "ID": 5030200,
+      "Entries": [
+        "School technique_new technique 1 -- 流派技_新技1"
+      ]
+    },
+    {
+      "ID": 5030201,
+      "Entries": [
+        "School technique_new technique 2 -- 流派技_新技2"
+      ]
+    },
+    {
+      "ID": 5030202,
+      "Entries": [
+        "School technique_new technique 3 -- 流派技_新技3"
+      ]
+    },
+    {
+      "ID": 5030205,
+      "Entries": [
+        "School technique_new technique 1_no form fee -- 流派技_新技1_形代なし"
+      ]
+    },
+    {
+      "ID": 5030206,
+      "Entries": [
+        "School technique_new technique 2_no form fee -- 流派技_新技2_形代なし"
+      ]
+    },
+    {
+      "ID": 5030207,
+      "Entries": [
+        "School technique_new technique 3_no form fee -- 流派技_新技3_形代なし"
+      ]
+    },
+    {
+      "ID": 5030210,
+      "Entries": [
+        "School Technique_New Technique 1_Weak Thunder Enchantment Additional Attack -- 流派技_新技1_弱雷エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5030211,
+      "Entries": [
+        "School Technique_New Technique 2_Weak Thunder Enchantment Additional Attack -- 流派技_新技2_弱雷エンチャント追加攻撃"
+      ]
+    },
+    {
+      "ID": 5030212,
+      "Entries": [
+        "School Technique_New Technique 3_Weak Thunder Enchantment Additional Attack (Lightning Return) -- 流派技_新技3_弱雷エンチャント追加攻撃（雷返し）"
+      ]
+    },
+    {
+      "ID": 7000100,
+      "Entries": [
+        "Shuriken_Reservoir 1/3 Throw_1Hit -- 手裏剣_溜め1/3投目_1Hit"
+      ]
+    },
+    {
+      "ID": 7000102,
+      "Entries": [
+        "Shuriken_Reservoir 1/3 Throw_2Hit -- 手裏剣_溜め1/3投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7000104,
+      "Entries": [
+        "Shuriken _ Reservoir 1/3 Throw _ 3 Hit -- 手裏剣_溜め1/3投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7000110,
+      "Entries": [
+        "Shuriken_2nd throw -- 手裏剣_溜め2投目"
+      ]
+    },
+    {
+      "ID": 7000112,
+      "Entries": [
+        "Shuriken_Reservoir 2nd Throw_2Hit -- 手裏剣_溜め2投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7000114,
+      "Entries": [
+        "Shuriken _ 2nd throw _ 3 Hit -- 手裏剣_溜め2投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7000150,
+      "Entries": [
+        "Shuriken_1 / 3rd throw -- 手裏剣_1/3投目"
+      ]
+    },
+    {
+      "ID": 7000160,
+      "Entries": [
+        "Shuriken_2 throws -- 手裏剣_2投目"
+      ]
+    },
+    {
+      "ID": 7002100,
+      "Entries": [
+        "Shuriken LV3-A_ Reservoir 1/3 Throw _1 Hit -- 手裏剣LV3-A_溜め1/3投目_1Hit"
+      ]
+    },
+    {
+      "ID": 7002102,
+      "Entries": [
+        "Shuriken LV3-A_ Reservoir 1/3 Throw _2 Hit -- 手裏剣LV3-A_溜め1/3投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7002104,
+      "Entries": [
+        "Shuriken LV3-A_Reservoir 1/3 Throw_3 Hit -- 手裏剣LV3-A_溜め1/3投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7002110,
+      "Entries": [
+        "Shuriken LV3-A_ 2nd throw -- 手裏剣LV3-A_溜め2投目"
+      ]
+    },
+    {
+      "ID": 7002112,
+      "Entries": [
+        "Shuriken LV3-A_ Reservoir 2nd Throw_2Hit -- 手裏剣LV3-A_溜め2投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7002114,
+      "Entries": [
+        "Shuriken LV3-A_Reservoir 2nd throw_3Hit -- 手裏剣LV3-A_溜め2投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7002150,
+      "Entries": [
+        "Shuriken LV3-A_1 / 3 throw -- 手裏剣LV3-A_1/3投目"
+      ]
+    },
+    {
+      "ID": 7002160,
+      "Entries": [
+        "Shuriken LV3-A_2 throw -- 手裏剣LV3-A_2投目"
+      ]
+    },
+    {
+      "ID": 7003100,
+      "Entries": [
+        "Shuriken LV3-B_1 / 3 throw -- 手裏剣LV3-B_1/3投目"
+      ]
+    },
+    {
+      "ID": 7003110,
+      "Entries": [
+        "Shuriken LV3-B_2 throw -- 手裏剣LV3-B_2投目"
+      ]
+    },
+    {
+      "ID": 7003120,
+      "Entries": [
+        "Shuriken LV3-B_guided bullet_reservoir -- 手裏剣LV3-B_誘導弾丸_溜め"
+      ]
+    },
+    {
+      "ID": 7003130,
+      "Entries": [
+        "Shuriken LV3-B_ Guided Bullet -- 手裏剣LV3-B_誘導弾丸"
+      ]
+    },
+    {
+      "ID": 7004100,
+      "Entries": [
+        "Shuriken LV3-C_Reservoir 1/3 Throw_LV1 -- 手裏剣LV3-C_溜め1/3投目_LV1"
+      ]
+    },
+    {
+      "ID": 7004101,
+      "Entries": [
+        "Shuriken LV3-C_Reservoir 1/3 Throw_LV2 -- 手裏剣LV3-C_溜め1/3投目_LV2"
+      ]
+    },
+    {
+      "ID": 7004102,
+      "Entries": [
+        "Shuriken LV3-C_Reservoir 1/3 Throw_LV3 -- 手裏剣LV3-C_溜め1/3投目_LV3"
+      ]
+    },
+    {
+      "ID": 7004110,
+      "Entries": [
+        "Shuriken LV3-C_2nd throw _LV1 -- 手裏剣LV3-C_溜め2投目_LV1"
+      ]
+    },
+    {
+      "ID": 7004111,
+      "Entries": [
+        "Shuriken LV3-C_2nd throw _LV2 -- 手裏剣LV3-C_溜め2投目_LV2"
+      ]
+    },
+    {
+      "ID": 7004112,
+      "Entries": [
+        "Shuriken LV3-C_2nd throw _LV3 -- 手裏剣LV3-C_溜め2投目_LV3"
+      ]
+    },
+    {
+      "ID": 7004150,
+      "Entries": [
+        "Shuriken LV3-C_1 / 3 Throw _LV1 -- 手裏剣LV3-C_1/3投目_LV1"
+      ]
+    },
+    {
+      "ID": 7004151,
+      "Entries": [
+        "Shuriken LV3-C_1 / 3 Throw _LV2 -- 手裏剣LV3-C_1/3投目_LV2"
+      ]
+    },
+    {
+      "ID": 7004152,
+      "Entries": [
+        "Shuriken LV3-C_1 / 3 Throw _LV3 -- 手裏剣LV3-C_1/3投目_LV3"
+      ]
+    },
+    {
+      "ID": 7004160,
+      "Entries": [
+        "Shuriken LV3-C_2 Throw _LV1 -- 手裏剣LV3-C_2投目_LV1"
+      ]
+    },
+    {
+      "ID": 7004161,
+      "Entries": [
+        "Shuriken LV3-C_2 Throw _LV2 -- 手裏剣LV3-C_2投目_LV2"
+      ]
+    },
+    {
+      "ID": 7004162,
+      "Entries": [
+        "Shuriken LV3-C_2 Throw _LV3 -- 手裏剣LV3-C_2投目_LV3"
+      ]
+    },
+    {
+      "ID": 7005100,
+      "Entries": [
+        "Shuriken LV4_ Reservoir 1/3 Throw _1 Hit -- 手裏剣LV4_溜め1/3投目_1Hit"
+      ]
+    },
+    {
+      "ID": 7005102,
+      "Entries": [
+        "Shuriken LV4_ Reservoir 1/3 Throw _2 Hit -- 手裏剣LV4_溜め1/3投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7005104,
+      "Entries": [
+        "Shuriken LV4_Reservoir 1/3 Throw_3 Hit -- 手裏剣LV4_溜め1/3投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7005110,
+      "Entries": [
+        "Shuriken LV4_ 2nd throw -- 手裏剣LV4_溜め2投目"
+      ]
+    },
+    {
+      "ID": 7005112,
+      "Entries": [
+        "Shuriken LV4_ Reservoir 2nd Throw_2Hit -- 手裏剣LV4_溜め2投目_2Hit"
+      ]
+    },
+    {
+      "ID": 7005114,
+      "Entries": [
+        "Shuriken LV4_Reservoir 2nd throw_3Hit -- 手裏剣LV4_溜め2投目_3Hit"
+      ]
+    },
+    {
+      "ID": 7005150,
+      "Entries": [
+        "Shuriken LV4_1 / 3 throw -- 手裏剣LV4_1/3投目"
+      ]
+    },
+    {
+      "ID": 7005160,
+      "Entries": [
+        "Shuriken LV4_2 -- 手裏剣LV4_2投目"
+      ]
+    },
+    {
+      "ID": 7100100,
+      "Entries": [
+        "Firecracker_dummy bullet_do not hit the enemy -- 爆竹_ダミー弾丸_敵に当たらない"
+      ]
+    },
+    {
+      "ID": 7100101,
+      "Entries": [
+        "Firecracker _ Dummy bullet _ Do not hit the enemy _ See per map _ Normal -- 爆竹_ダミー弾丸_敵に当たらない_マップあたり参照_通常"
+      ]
+    },
+    {
+      "ID": 7100103,
+      "Entries": [
+        "Firecracker_Fear other than animals -- 爆竹_動物以外怯み"
+      ]
+    },
+    {
+      "ID": 7100104,
+      "Entries": [
+        "Firecracker_animal frightening -- 爆竹_動物怯み"
+      ]
+    },
+    {
+      "ID": 7200100,
+      "Entries": [
+        "Ignition_Pump shot 1 -- 発火_溜め撃ち1"
+      ]
+    },
+    {
+      "ID": 7200101,
+      "Entries": [
+        "Ignition_Pump shot 2 -- 発火_溜め撃ち2"
+      ]
+    },
+    {
+      "ID": 7200110,
+      "Entries": [
+        "Ignition_normal shooting -- 発火_通常撃ち"
+      ]
+    },
+    {
+      "ID": 7200120,
+      "Entries": [
+        "Ignition_Aerial shooting -- 発火_空中撃ち"
+      ]
+    },
+    {
+      "ID": 7200130,
+      "Entries": [
+        "Ignition_flamethrower_start -- 発火_火炎放射_開始"
+      ]
+    },
+    {
+      "ID": 7200131,
+      "Entries": [
+        "Ignition_flamethrower_loop -- 発火_火炎放射_ループ"
+      ]
+    },
+    {
+      "ID": 7203100,
+      "Entries": [
+        "Ignition LV4_Pump shot 1 -- 発火LV4_溜め撃ち1"
+      ]
+    },
+    {
+      "ID": 7203101,
+      "Entries": [
+        "Ignition LV4_Pump shot 2 -- 発火LV4_溜め撃ち2"
+      ]
+    },
+    {
+      "ID": 7203110,
+      "Entries": [
+        "Ignition LV4_normal shooting -- 発火LV4_通常撃ち"
+      ]
+    },
+    {
+      "ID": 7203120,
+      "Entries": [
+        "Ignition LV4_Aerial shooting -- 発火LV4_空中撃ち"
+      ]
+    },
+    {
+      "ID": 7203130,
+      "Entries": [
+        "Ignition LV4_flamethrower_start -- 発火LV4_火炎放射_開始"
+      ]
+    },
+    {
+      "ID": 7203131,
+      "Entries": [
+        "Ignition LV4_flamethrower_loop -- 発火LV4_火炎放射_ループ"
+      ]
+    },
+    {
+      "ID": 7300100,
+      "Entries": [
+        "Ax_Pump Attack 1 -- 斧_溜め攻撃1"
+      ]
+    },
+    {
+      "ID": 7300101,
+      "Entries": [
+        "Ax_Pump Attack 2 / Single Attack -- 斧_溜め攻撃2/単発攻撃"
+      ]
+    },
+    {
+      "ID": 7300110,
+      "Entries": [
+        "Ax _ front slash _ ax -- 斧_前宙斬り_斧"
+      ]
+    },
+    {
+      "ID": 7300120,
+      "Entries": [
+        "Ax_Aerial attack -- 斧_空中攻撃"
+      ]
+    },
+    {
+      "ID": 7300121,
+      "Entries": [
+        "Ax_Aerial Attack_Loop / Landing -- 斧_空中攻撃_ループ/着地"
+      ]
+    },
+    {
+      "ID": 7302100,
+      "Entries": [
+        "Ax LV3_ Reservoir Attack 1 -- 斧LV3_溜め攻撃1"
+      ]
+    },
+    {
+      "ID": 7302101,
+      "Entries": [
+        "Ax LV3_ Accumulation Attack 2 / Single Attack -- 斧LV3_溜め攻撃2/単発攻撃"
+      ]
+    },
+    {
+      "ID": 7302110,
+      "Entries": [
+        "Ax LV3_Front Slasher_Ax -- 斧LV3_前宙斬り_斧"
+      ]
+    },
+    {
+      "ID": 7302120,
+      "Entries": [
+        "Ax LV3_ aerial attack -- 斧LV3_空中攻撃"
+      ]
+    },
+    {
+      "ID": 7302121,
+      "Entries": [
+        "Ax LV3_Aerial Attack_Loop / Landing -- 斧LV3_空中攻撃_ループ/着地"
+      ]
+    },
+    {
+      "ID": 7302130,
+      "Entries": [
+        "Ax LV3_ shock wave -- 斧LV3_衝撃波"
+      ]
+    },
+    {
+      "ID": 7303100,
+      "Entries": [
+        "Ax LV4_ Reservoir Attack 1 -- 斧LV4_溜め攻撃1"
+      ]
+    },
+    {
+      "ID": 7303101,
+      "Entries": [
+        "Ax LV4_ Accumulation Attack 2 / Single Attack -- 斧LV4_溜め攻撃2/単発攻撃"
+      ]
+    },
+    {
+      "ID": 7303110,
+      "Entries": [
+        "Ax LV4_Front Slasher_Ax -- 斧LV4_前宙斬り_斧"
+      ]
+    },
+    {
+      "ID": 7303120,
+      "Entries": [
+        "Ax LV4_ aerial attack -- 斧LV4_空中攻撃"
+      ]
+    },
+    {
+      "ID": 7303121,
+      "Entries": [
+        "Ax LV4_Aerial Attack_Loop / Landing -- 斧LV4_空中攻撃_ループ/着地"
+      ]
+    },
+    {
+      "ID": 7303130,
+      "Entries": [
+        "Ax LV4_ shock wave -- 斧LV4_衝撃波"
+      ]
+    },
+    {
+      "ID": 7303140,
+      "Entries": [
+        "Ax LV4_Shockwave_Phantom Eraser -- 斧LV4_衝撃波_幻影消し"
+      ]
+    },
+    {
+      "ID": 7402100,
+      "Entries": [
+        "Transformation LV3_ activation impact -- 変わり身LV3_発動衝撃"
+      ]
+    },
+    {
+      "ID": 7500100,
+      "Entries": [
+        "Kodachi_Table 1st stage_Left hand sword -- 小太刀_表1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500102,
+      "Entries": [
+        "Kodachi _ Table 3rd _ Left hand sword -- 小太刀_表3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500104,
+      "Entries": [
+        "Kodachi _ Table 5th _ Left hand sword -- 小太刀_表5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500105,
+      "Entries": [
+        "Kodachi _ Table 6th _ Left hand sword -- 小太刀_表6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500110,
+      "Entries": [
+        "Kodachi _ back 1st stage _ left hand sword -- 小太刀_裏1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500111,
+      "Entries": [
+        "Kodachi _ back 2nd stage _ left hand sword -- 小太刀_裏2段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500112,
+      "Entries": [
+        "Kodachi_back 3rd stage_left hand sword -- 小太刀_裏3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500113,
+      "Entries": [
+        "Kodachi_back 4th stage_left hand sword -- 小太刀_裏4段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500114,
+      "Entries": [
+        "Kodachi_back 5th stage_left hand sword -- 小太刀_裏5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500115,
+      "Entries": [
+        "Kodachi_back 6th stage_left hand sword -- 小太刀_裏6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7500140,
+      "Entries": [
+        "Kodachi_Aerial 1_Left Hand Sword -- 小太刀_空中1_左手刀"
+      ]
+    },
+    {
+      "ID": 7500141,
+      "Entries": [
+        "Kodachi_Aerial 2_Left Hand Sword -- 小太刀_空中2_左手刀"
+      ]
+    },
+    {
+      "ID": 7502100,
+      "Entries": [
+        "Kodachi LV3-A_Table 1st stage_Left hand sword -- 小太刀LV3-A_表1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502102,
+      "Entries": [
+        "Kodachi LV3-A_Table 3rd stage_Left hand sword -- 小太刀LV3-A_表3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502104,
+      "Entries": [
+        "Kodachi LV3-A_Table 5th stage_Left hand sword -- 小太刀LV3-A_表5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502105,
+      "Entries": [
+        "Kodachi LV3-A_Table 6th row_Left hand sword -- 小太刀LV3-A_表6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502110,
+      "Entries": [
+        "Kodachi LV3-A_back 1st stage_left hand sword -- 小太刀LV3-A_裏1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502111,
+      "Entries": [
+        "Kodachi LV3-A_back 2nd stage_left hand sword -- 小太刀LV3-A_裏2段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502112,
+      "Entries": [
+        "Kodachi LV3-A_back 3rd stage_left hand sword -- 小太刀LV3-A_裏3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502113,
+      "Entries": [
+        "Kodachi LV3-A_back 4th stage_left hand sword -- 小太刀LV3-A_裏4段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502114,
+      "Entries": [
+        "Kodachi LV3-A_back 5th stage_left hand sword -- 小太刀LV3-A_裏5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502115,
+      "Entries": [
+        "Kodachi LV3-A_Back 6th stage_Left hand sword -- 小太刀LV3-A_裏6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7502140,
+      "Entries": [
+        "Kodachi LV3-A_Aerial 1_Left Hand Sword -- 小太刀LV3-A_空中1_左手刀"
+      ]
+    },
+    {
+      "ID": 7502141,
+      "Entries": [
+        "Kodachi LV3-A_Aerial 2_Left Hand Sword -- 小太刀LV3-A_空中2_左手刀"
+      ]
+    },
+    {
+      "ID": 7503100,
+      "Entries": [
+        "Kodachi LV3-B_Table 1st stage_Left hand sword -- 小太刀LV3-B_表1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503102,
+      "Entries": [
+        "Kodachi LV3-B_Table 3rd stage_Left hand sword -- 小太刀LV3-B_表3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503104,
+      "Entries": [
+        "Kodachi LV3-B_Table 5th stage_Left hand sword -- 小太刀LV3-B_表5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503105,
+      "Entries": [
+        "Kodachi LV3-B_Table 6th row_Left hand sword -- 小太刀LV3-B_表6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503110,
+      "Entries": [
+        "Kodachi LV3-B_Back 1st stage_Left hand sword -- 小太刀LV3-B_裏1段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503111,
+      "Entries": [
+        "Kodachi LV3-B_Back 2nd stage_Left hand sword -- 小太刀LV3-B_裏2段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503112,
+      "Entries": [
+        "Kodachi LV3-B_back 3rd stage_left hand sword -- 小太刀LV3-B_裏3段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503113,
+      "Entries": [
+        "Kodachi LV3-B_back 4th stage_left hand sword -- 小太刀LV3-B_裏4段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503114,
+      "Entries": [
+        "Kodachi LV3-B_back 5th stage_left hand sword -- 小太刀LV3-B_裏5段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503115,
+      "Entries": [
+        "Kodachi LV3-B_Back 6th stage_Left hand sword -- 小太刀LV3-B_裏6段目_左手刀"
+      ]
+    },
+    {
+      "ID": 7503140,
+      "Entries": [
+        "Kodachi LV3-B_Aerial 1_Left Hand Sword -- 小太刀LV3-B_空中1_左手刀"
+      ]
+    },
+    {
+      "ID": 7503141,
+      "Entries": [
+        "Kodachi LV3-B_Aerial 2_Left Hand Sword -- 小太刀LV3-B_空中2_左手刀"
+      ]
+    },
+    {
+      "ID": 7503150,
+      "Entries": [
+        "Kodachi LV3-B_ poison fog -- 小太刀LV3-B_毒霧"
+      ]
+    },
+    {
+      "ID": 7600100,
+      "Entries": [
+        "Iron fan_guard -- 鉄扇_ガード"
+      ]
+    },
+    {
+      "ID": 7600200,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Iron fan bullet LV1 -- 鉄扇_放ち斬り_鉄扇弾丸LV1"
+      ]
+    },
+    {
+      "ID": 7600210,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Iron fan bullet LV2 -- 鉄扇_放ち斬り_鉄扇弾丸LV2"
+      ]
+    },
+    {
+      "ID": 7600220,
+      "Entries": [
+        "Iron fan _ Unleashed slash _ Iron fan bullet LV3 -- 鉄扇_放ち斬り_鉄扇弾丸LV3"
+      ]
+    },
+    {
+      "ID": 7700100,
+      "Entries": [
+        "Enemy turning _ wind release -- 敵回し_風放ち"
+      ]
+    },
+    {
+      "ID": 7701100,
+      "Entries": [
+        "Enemy turning LV2_ wind release -- 敵回しLV2_風放ち"
+      ]
+    },
+    {
+      "ID": 7702100,
+      "Entries": [
+        "Enemy turning LV3_ wind release -- 敵回しLV3_風放ち"
+      ]
+    },
+    {
+      "ID": 7800100,
+      "Entries": [
+        "Spear_Pump Charge 1 -- 槍_溜め突撃1"
+      ]
+    },
+    {
+      "ID": 7800101,
+      "Entries": [
+        "Spear_Pump Charge 2 -- 槍_溜め突撃2"
+      ]
+    },
+    {
+      "ID": 7800105,
+      "Entries": [
+        "Spear _ Accumulation Assault 3 / Single Thrust _ Tip -- 槍_溜め突撃3/単発突き_先端"
+      ]
+    },
+    {
+      "ID": 7800106,
+      "Entries": [
+        "Spear_Pump Charge 3 / Single-shot Charge_Intermediate -- 槍_溜め突撃3/単発突き_中間"
+      ]
+    },
+    {
+      "ID": 7800107,
+      "Entries": [
+        "Spear _ Reservoir Assault 3 / Single Thrust _ Root -- 槍_溜め突撃3/単発突き_根元"
+      ]
+    },
+    {
+      "ID": 7800110,
+      "Entries": [
+        "Spear_Attract 1 -- 槍_引き寄せ1"
+      ]
+    },
+    {
+      "ID": 7800115,
+      "Entries": [
+        "Spear_pull 2_tip -- 槍_引き寄せ2_先端"
+      ]
+    },
+    {
+      "ID": 7800116,
+      "Entries": [
+        "Spear_Attract 2_Intermediate -- 槍_引き寄せ2_中間"
+      ]
+    },
+    {
+      "ID": 7800117,
+      "Entries": [
+        "Spear_Attract 2_Root -- 槍_引き寄せ2_根元"
+      ]
+    },
+    {
+      "ID": 7802100,
+      "Entries": [
+        "Spear LV2-B_ Reservoir _ Tip -- 槍LV2-B_溜めなぎ払い_先端"
+      ]
+    },
+    {
+      "ID": 7802101,
+      "Entries": [
+        "Spear LV2-B_Reservoir _Intermediate -- 槍LV2-B_溜めなぎ払い_中間"
+      ]
+    },
+    {
+      "ID": 7802102,
+      "Entries": [
+        "Spear LV2-B_ Reservoir _ Root -- 槍LV2-B_溜めなぎ払い_根元"
+      ]
+    },
+    {
+      "ID": 7802105,
+      "Entries": [
+        "Spear LV2-B_single thrust_tip -- 槍LV2-B_単発突き_先端"
+      ]
+    },
+    {
+      "ID": 7802106,
+      "Entries": [
+        "Spear LV2-B_single thrust_intermediate -- 槍LV2-B_単発突き_中間"
+      ]
+    },
+    {
+      "ID": 7802107,
+      "Entries": [
+        "Spear LV2-B_single thrust_root -- 槍LV2-B_単発突き_根元"
+      ]
+    },
+    {
+      "ID": 7802110,
+      "Entries": [
+        "Spear LV2-B_Attract 1 -- 槍LV2-B_引き寄せ1"
+      ]
+    },
+    {
+      "ID": 7802115,
+      "Entries": [
+        "Spear LV2-B_Pulling 2_Tip -- 槍LV2-B_引き寄せ2_先端"
+      ]
+    },
+    {
+      "ID": 7802116,
+      "Entries": [
+        "Spear LV2-B_Attract 2_Intermediate -- 槍LV2-B_引き寄せ2_中間"
+      ]
+    },
+    {
+      "ID": 7802117,
+      "Entries": [
+        "Spear LV2-B_Attract 2_Root -- 槍LV2-B_引き寄せ2_根元"
+      ]
+    },
+    {
+      "ID": 7803100,
+      "Entries": [
+        "Spear LV3-A_ Reservoir Charge 1 -- 槍LV3-A_溜め突撃1"
+      ]
+    },
+    {
+      "ID": 7803101,
+      "Entries": [
+        "Spear LV3-A_ Reservoir Assault 2 -- 槍LV3-A_溜め突撃2"
+      ]
+    },
+    {
+      "ID": 7803105,
+      "Entries": [
+        "Spear LV3-A_Reservoir Assault 3 / Single Thrust_Tips -- 槍LV3-A_溜め突撃3/単発突き_先端"
+      ]
+    },
+    {
+      "ID": 7803106,
+      "Entries": [
+        "Spear LV3-A_Reservoir Assault 3 / Single-shot Assault_Intermediate -- 槍LV3-A_溜め突撃3/単発突き_中間"
+      ]
+    },
+    {
+      "ID": 7803107,
+      "Entries": [
+        "Spear LV3-A_Reservoir Assault 3 / Single Thrust_Root -- 槍LV3-A_溜め突撃3/単発突き_根元"
+      ]
+    },
+    {
+      "ID": 7803110,
+      "Entries": [
+        "Spear LV3-A_Attract 1 -- 槍LV3-A_引き寄せ1"
+      ]
+    },
+    {
+      "ID": 7803115,
+      "Entries": [
+        "Spear LV3-A_Attract 2_ Tip -- 槍LV3-A_引き寄せ2_先端"
+      ]
+    },
+    {
+      "ID": 7803116,
+      "Entries": [
+        "Spear LV3-A_Attract 2_Intermediate -- 槍LV3-A_引き寄せ2_中間"
+      ]
+    },
+    {
+      "ID": 7803117,
+      "Entries": [
+        "Spear LV3-A_Attract 2_Root -- 槍LV3-A_引き寄せ2_根元"
+      ]
+    },
+    {
+      "ID": 7804100,
+      "Entries": [
+        "Spear LV3-B-B_ Reservoir _ Tip -- 槍LV3-B-B_溜めなぎ払い_先端"
+      ]
+    },
+    {
+      "ID": 7804101,
+      "Entries": [
+        "Spear LV3-B-B_Pump-up _Intermediate -- 槍LV3-B-B_溜めなぎ払い_中間"
+      ]
+    },
+    {
+      "ID": 7804102,
+      "Entries": [
+        "Spear LV3-B-B_ Reservoir _ Root -- 槍LV3-B-B_溜めなぎ払い_根元"
+      ]
+    },
+    {
+      "ID": 7804105,
+      "Entries": [
+        "Spear LV3-B-B_single thrust_tip -- 槍LV3-B-B_単発突き_先端"
+      ]
+    },
+    {
+      "ID": 7804106,
+      "Entries": [
+        "Spear LV3-B-B_single thrust_intermediate -- 槍LV3-B-B_単発突き_中間"
+      ]
+    },
+    {
+      "ID": 7804107,
+      "Entries": [
+        "Spear LV3-B-B_single thrust_root -- 槍LV3-B-B_単発突き_根元"
+      ]
+    },
+    {
+      "ID": 7804110,
+      "Entries": [
+        "Spear LV3-B-B_Attract 1 -- 槍LV3-B-B_引き寄せ1"
+      ]
+    },
+    {
+      "ID": 7804115,
+      "Entries": [
+        "Spear LV3-B-B_Pulling 2_Tip -- 槍LV3-B-B_引き寄せ2_先端"
+      ]
+    },
+    {
+      "ID": 7804116,
+      "Entries": [
+        "Spear LV3-B-B_Attract 2_Intermediate -- 槍LV3-B-B_引き寄せ2_中間"
+      ]
+    },
+    {
+      "ID": 7804117,
+      "Entries": [
+        "Spear LV3-B-B_Attract 2_Root -- 槍LV3-B-B_引き寄せ2_根元"
+      ]
+    },
+    {
+      "ID": 7900100,
+      "Entries": [
+        "Finger whistle_no lock_AI sound -- 指笛_ノーロック_AI音"
+      ]
+    },
+    {
+      "ID": 9500000,
+      "Entries": [
+        "When the wire is stabbed -- ワイヤー_刺さったとき"
+      ]
+    },
+    {
+      "ID": 9500001,
+      "Entries": [
+        "When the wire_pulls -- ワイヤー_引っ張ったとき"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+      ]
+    },
+    {
+      "ID": 50400010,
+      "Entries": [
+        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+      ]
+    }
+  ]
+}

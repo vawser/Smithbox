@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <saleItem Refs="ItemParam" />
+        <price />
+        <saleFlag FlagAlias="" />
+        <saleEndFlag FlagAlias="" />
+        <saleFlagItem Refs="ItemParam" />
+        <saleEndFlagItem Refs="ItemParam" />
+        <displayOrder />
+        <priceRate />
+        <unitSales />
+        <padding Padding="" />
+    </Field>
+</PARAMMETA>

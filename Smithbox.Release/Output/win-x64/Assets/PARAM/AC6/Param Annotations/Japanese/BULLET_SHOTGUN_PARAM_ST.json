@@ -1,0 +1,583 @@
+{
+  "Param": "BULLET_SHOTGUN_PARAM_ST",
+  "Type": "BULLET_SHOTGUN_PARAM_ST",
+  "Name": "BULLET_SHOTGUN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "coordErrorType",
+      "Name": "座標誤差方向",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "リザーブ",
+      "Description": ""
+    },
+    {
+      "Field": "coordErrorDist",
+      "Name": "座標誤差量(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos0_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos0_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos0_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosX",
+      "Name": "座標X(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosY",
+      "Name": "座標Y(m)",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosZ",
+      "Name": "座標Z(m)",
+      "Description": ""
+    }
+  ]
+}

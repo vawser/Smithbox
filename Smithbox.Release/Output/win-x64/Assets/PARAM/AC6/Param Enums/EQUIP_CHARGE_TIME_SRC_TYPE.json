@@ -1,0 +1,29 @@
+{
+  "Key": "EQUIP_CHARGE_TIME_SRC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CHARGE_TIME_SRC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1st Stage"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2nd Stage"
+        }
+      ]
+    }
+  ]
+}

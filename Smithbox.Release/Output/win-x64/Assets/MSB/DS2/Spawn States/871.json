@@ -1,0 +1,14 @@
+{
+  "id": "871",
+  "name": "Maldron the Assassin",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

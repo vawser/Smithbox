@@ -1,0 +1,353 @@
+{
+  "Param": "DAMAGE_PARAM",
+  "Type": "DAMAGE_PARAM",
+  "Name": "DAMAGE_PARAM",
+  "Description": "Defines attack damage behavior, hit detection, collision settings, special effects, knockback, and damage interaction rules.",
+  "Fields": [
+    {
+      "Field": "damageCategory",
+      "Name": "Damage Category",
+      "Description": "Category type used to classify the damage behavior."
+    },
+    {
+      "Field": "childDamage",
+      "Name": "Child Damage ID",
+      "Description": "Reference ID for an additional or chained damage entry triggered by this attack."
+    },
+    {
+      "Field": "damageGroup",
+      "Name": "Damage Group ID",
+      "Description": "Group identifier used for shared damage interaction logic."
+    },
+    {
+      "Field": "damage01",
+      "Name": "Damage Value: 1",
+      "Description": "Primary damage value dealt by the attack."
+    },
+    {
+      "Field": "damage02",
+      "Name": "Damage Value: 2",
+      "Description": "Secondary damage value dealt by the attack."
+    },
+    {
+      "Field": "damage03",
+      "Name": "Damage Value: 3",
+      "Description": "Tertiary damage value dealt by the attack."
+    },
+    {
+      "Field": "damageLower",
+      "Name": "Minimum Guaranteed Damage",
+      "Description": "Minimum amount of damage guaranteed regardless of defenses or scaling."
+    },
+    {
+      "Field": "damageType01",
+      "Name": "Damage Attribute: 1",
+      "Description": "Primary damage attribute type used by the attack."
+    },
+    {
+      "Field": "damageType02",
+      "Name": "Damage Attribute: 2",
+      "Description": "Secondary damage attribute type used by the attack."
+    },
+    {
+      "Field": "damageType03",
+      "Name": "Damage Attribute: 3",
+      "Description": "Tertiary damage attribute type used by the attack."
+    },
+    {
+      "Field": "damageRate",
+      "Name": "Final Damage %",
+      "Description": "Multiplier applied to the attack's final damage."
+    },
+    {
+      "Field": "counterDamageRate",
+      "Name": "Counter Damage %",
+      "Description": "Damage multiplier applied when hitting a target during a counter state."
+    },
+    {
+      "Field": "staminaDamage",
+      "Name": "Stamina Damage",
+      "Description": "Amount of stamina removed from the target on hit."
+    },
+    {
+      "Field": "durabilityDamage",
+      "Name": "Durability Damage",
+      "Description": "Amount of equipment durability damage inflicted."
+    },
+    {
+      "Field": "knockBackPower",
+      "Name": "Knockback Distance [m]",
+      "Description": "Distance the target is pushed back by the attack."
+    },
+    {
+      "Field": "stiff",
+      "Name": "Stagger Duration [sec]",
+      "Description": "Duration of hitstun or stagger caused by the attack."
+    },
+    {
+      "Field": "hitDummyPolyType",
+      "Name": "Source Type",
+      "Description": "Type of dummy polygon used as the attack origin."
+    },
+    {
+      "Field": "hitDummyPolyId",
+      "Name": "Source Dummy Poly ID",
+      "Description": "Dummy polygon ID used as the attack origin point."
+    },
+    {
+      "Field": "hitAttackMotionType",
+      "Name": "Attack Motion Attribute",
+      "Description": "Motion attribute type associated with the attack."
+    },
+    {
+      "Field": "hitModelType",
+      "Name": "Shape Type",
+      "Description": "Shape used for hit detection collision."
+    },
+    {
+      "Field": "radius",
+      "Name": "Radius [m]",
+      "Description": "Radius of the attack hitbox."
+    },
+    {
+      "Field": "length",
+      "Name": "Length [m]",
+      "Description": "Length of the attack hitbox."
+    },
+    {
+      "Field": "hitDistance",
+      "Name": "Continuous Hit Interval",
+      "Description": "Controls repeated hit detection behavior."
+    },
+    {
+      "Field": "downAttackFlag",
+      "Name": "Downed Attack Flag",
+      "Description": "Determines whether the attack can hit downed targets."
+    },
+    {
+      "Field": "onceFlag",
+      "Name": "Single Target Flag",
+      "Description": "Restricts the attack to hitting only one target."
+    },
+    {
+      "Field": "hitFlagOwner",
+      "Name": "Allow Owner Hit",
+      "Description": "Determines whether the attack can hit its owner."
+    },
+    {
+      "Field": "hitFlagFriend",
+      "Name": "Allow Friendly Hit",
+      "Description": "Determines whether the attack can hit allies."
+    },
+    {
+      "Field": "hitFlagEnemy",
+      "Name": "Allow Enemy Hit",
+      "Description": "Determines whether the attack can hit enemies."
+    },
+    {
+      "Field": "hitFlagNeutral",
+      "Name": "Allow Neutral Hit",
+      "Description": "Determines whether the attack can hit neutral entities."
+    },
+    {
+      "Field": "hitFlagMap",
+      "Name": "Allow Map Hit",
+      "Description": "Determines whether the attack can collide with map geometry."
+    },
+    {
+      "Field": "hitFlagObj",
+      "Name": "Allow Object Hit",
+      "Description": "Determines whether the attack can collide with objects."
+    },
+    {
+      "Field": "directionType",
+      "Name": "Knockback Direction",
+      "Description": "Controls the direction targets are pushed when hit."
+    },
+    {
+      "Field": "guardDirectionType",
+      "Name": "Guard Detection Direction",
+      "Description": "Direction used when determining guard effectiveness."
+    },
+    {
+      "Field": "hitPosType",
+      "Name": "Hit Vertical Position",
+      "Description": "Vertical hit position category used for reaction logic."
+    },
+    {
+      "Field": "hitAngleXZ",
+      "Name": "Forced Hit Angle XZ",
+      "Description": "Horizontal angle applied to the hit reaction."
+    },
+    {
+      "Field": "hitAngleY",
+      "Name": "Forced Hit Angle Y",
+      "Description": "Vertical angle applied to the hit reaction."
+    },
+    {
+      "Field": "isDamageGroupChr",
+      "Name": "Character Group Check",
+      "Description": "Enables damage group checks for characters."
+    },
+    {
+      "Field": "isDamageGroupMap",
+      "Name": "Map Group Check",
+      "Description": "Enables damage group checks for map geometry."
+    },
+    {
+      "Field": "isDamageGroupObj",
+      "Name": "Object Group Check",
+      "Description": "Enables damage group checks for objects."
+    },
+    {
+      "Field": "spEffectIdWhenHit",
+      "Name": "Special Effect ID: On Hit",
+      "Description": "Special effect applied when the attack hits."
+    },
+    {
+      "Field": "spEffectTarget",
+      "Name": "Special Effect Target",
+      "Description": "Target affected by the special effect triggered on hit."
+    },
+    {
+      "Field": "spEffectTargetRegion",
+      "Name": "Special Effect Management Category",
+      "Description": "Category used for managing special effect application."
+    },
+    {
+      "Field": "spEffectDuplication",
+      "Name": "Special Effect Duplication Check",
+      "Description": "Controls whether duplicate special effects can stack."
+    },
+    {
+      "Field": "materialSize",
+      "Name": "Material Size",
+      "Description": "Size category used for material impact effects."
+    },
+    {
+      "Field": "material",
+      "Name": "Material",
+      "Description": "Material type used for impact effects and sounds."
+    },
+    {
+      "Field": "traceSfx",
+      "Name": "Trail SFX",
+      "Description": "Visual trail effect used by the attack."
+    },
+    {
+      "Field": "traceSfxColor",
+      "Name": "Trail SFX Dummy Poly Color",
+      "Description": "Color category for the trail effect attachment point."
+    },
+    {
+      "Field": "traceSfxPos",
+      "Name": "Trail SFX Position",
+      "Description": "Position setting for the trail effect."
+    },
+    {
+      "Field": "overKilledBlowPower",
+      "Name": "Overkill Launch Speed [m/sec]",
+      "Description": "Initial launch speed applied when overkilling a target."
+    },
+    {
+      "Field": "movementPowerType",
+      "Name": "Movement Power",
+      "Description": "Movement power parameter type used for knockback calculations."
+    },
+    {
+      "Field": "attackTypeRateType",
+      "Name": "Attack Type %",
+      "Description": "Multiplier category applied based on attack type."
+    },
+    {
+      "Field": "styleRateType",
+      "Name": "Stance %",
+      "Description": "Multiplier category applied based on weapon handling style."
+    },
+    {
+      "Field": "eventDamage",
+      "Name": "Event Damage",
+      "Description": "Determines whether the damage is treated as event-related."
+    },
+    {
+      "Field": "flipHitDummyPolyType",
+      "Name": "Deflection Hit Source Type",
+      "Description": "Dummy polygon type used for deflection hit calculations."
+    },
+    {
+      "Field": "flipHitDummyPolyId",
+      "Name": "Deflection Hit Dummy Poly ID",
+      "Description": "Dummy polygon ID used for deflection hit calculations."
+    },
+    {
+      "Field": "flipHitModelType",
+      "Name": "Deflection Hit Shape Type",
+      "Description": "Collision shape type used for deflection hit detection."
+    },
+    {
+      "Field": "damagOverwrite",
+      "Name": "Forced Damage Override",
+      "Description": "Overrides the normal damage reaction behavior."
+    },
+    {
+      "Field": "disallowInvincible",
+      "Name": "Disable Invincibility Flag",
+      "Description": "Allows the attack to ignore invincibility states."
+    },
+    {
+      "Field": "flipFlagMapFloor",
+      "Name": "Disable Map Floor Deflection",
+      "Description": "Prevents the attack from being deflected by map floors."
+    },
+    {
+      "Field": "flipFlagMapWall",
+      "Name": "Disable Map Wall Deflection",
+      "Description": "Prevents the attack from being deflected by map walls."
+    },
+    {
+      "Field": "flipFlagObj",
+      "Name": "Disable Object Deflection",
+      "Description": "Prevents the attack from being deflected by objects."
+    },
+    {
+      "Field": "isDoorCheck",
+      "Name": "Enable Door Check",
+      "Description": "Determines whether the attack checks for door collisions."
+    },
+    {
+      "Field": "expandSfxDisable",
+      "Name": "Disable SFX Scaling",
+      "Description": "Disables scaling of visual effects with attack size."
+    },
+    {
+      "Field": "dummy5",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "flipHitRadius",
+      "Name": "Deflection Hit Radius [m]",
+      "Description": "Radius of the deflection hitbox."
+    },
+    {
+      "Field": "flipHitLength",
+      "Name": "Deflection Hit Length [m]",
+      "Description": "Length of the deflection hitbox."
+    },
+    {
+      "Field": "grabParamId",
+      "Name": "Grab Parameter ID",
+      "Description": "Reference ID for grab or throw behavior parameters."
+    },
+    {
+      "Field": "expandSize",
+      "Name": "Expansion Size [m]",
+      "Description": "Maximum expanded size of the attack hitbox."
+    },
+    {
+      "Field": "expandTime",
+      "Name": "Expansion Time [sec]",
+      "Description": "Time required for the hitbox expansion to complete."
+    }
+  ]
+}

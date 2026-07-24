@@ -1,0 +1,78 @@
+{
+  "Param": "ANTIQUE_STAND_PARAM_ST",
+  "Type": "ANTIQUE_STAND_PARAM_ST",
+  "Name": "ANTIQUE_STAND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "heroType",
+      "Name": "heroType",
+      "Description": ""
+    },
+    {
+      "Field": "relicSlot1",
+      "Name": "relicSlot1",
+      "Description": ""
+    },
+    {
+      "Field": "relicSlot2",
+      "Name": "relicSlot2",
+      "Description": ""
+    },
+    {
+      "Field": "relicSlot3",
+      "Name": "relicSlot3",
+      "Description": ""
+    },
+    {
+      "Field": "unlockFlag",
+      "Name": "unlockFlag",
+      "Description": ""
+    },
+    {
+      "Field": "goodsId",
+      "Name": "goodsId",
+      "Description": ""
+    },
+    {
+      "Field": "deepRelicSlot1",
+      "Name": "deepRelicSlot1",
+      "Description": ""
+    },
+    {
+      "Field": "deepRelicSlot2",
+      "Name": "deepRelicSlot2",
+      "Description": ""
+    },
+    {
+      "Field": "deepRelicSlot3",
+      "Name": "deepRelicSlot3",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

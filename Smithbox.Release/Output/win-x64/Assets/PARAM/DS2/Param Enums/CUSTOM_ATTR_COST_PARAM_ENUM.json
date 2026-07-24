@@ -1,0 +1,56 @@
+{
+  "Key": "CUSTOM_ATTR_COST_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CUSTOM_ATTR_COST_PARAM_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not change attributes"
+        }
+      ]
+    },
+    {
+      "Key": "100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute enhancement - normal"
+        }
+      ]
+    },
+    {
+      "Key": "100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute Enhancement - Dragon Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute Enhancement - Light Stone"
+        }
+      ]
+    },
+    {
+      "Key": "900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
+    }
+  ]
+}

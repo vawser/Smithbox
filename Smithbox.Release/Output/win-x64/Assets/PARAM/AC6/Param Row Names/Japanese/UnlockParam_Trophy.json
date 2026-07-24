@@ -1,0 +1,179 @@
+{
+  "Name": "UnlockParam_Trophy",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "perfect mercenary -- パーフェクトマーセナリー"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "stargazer -- スターゲイザー"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "breaker -- ブレイカー"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "asset holder -- アセットホルダー"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "tune master -- チューンマスター"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Raven's fire -- レイヴンの火"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Mercenary who protected the star system -- 星系を守った傭兵"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "selective coevolution -- 淘汰的共進化"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "weapon collector -- 武器コレクター"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "exterior collector -- 外装コレクター"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "interior collector -- 内装コレクター"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "extension collector -- 拡張機能コレクター"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "battle log collector -- 戦闘ログコレクター"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "information log collector -- 情報ログコレクター"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "top ranker -- トップランカー"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Stowaway -- 密航"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "over the wall -- 壁越え"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "communication -- 交信"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "central ice field -- 中央氷原"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "cooperation -- 協商"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "air and coral -- エアとコーラル"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "To unexplored territory -- 未踏領域へ"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Discarded piece -- 捨て駒"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "rising city -- 浮上する都市"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "all mind -- オールマインド"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Completion of training course -- 教習課程修了"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Aircraft engineer -- 機体エンジニア"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "control engineer -- 制御エンジニア"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "design designer -- 意匠デザイナー"
+      ]
+    }
+  ]
+}

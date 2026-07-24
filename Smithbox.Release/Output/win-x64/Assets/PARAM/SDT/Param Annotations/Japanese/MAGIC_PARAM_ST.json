@@ -1,0 +1,418 @@
+{
+  "Param": "MAGIC_PARAM_ST",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "MAGIC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Yes/NoダイアログメッセージID",
+      "Description": "魔法使用時に出すYes/NoダイアログのメッセージID"
+    },
+    {
+      "Field": "limitCancelSpEffectId",
+      "Name": "使用制限から外れる特殊効果ID",
+      "Description": "指定した特殊効果IDが発動している時は使用制限を無視できる"
+    },
+    {
+      "Field": "sortId",
+      "Name": "SortID",
+      "Description": "ソートID(-1:集めない)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド1",
+      "Description": "PAD1"
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP[スロット1]",
+      "Description": "消費MP"
+    },
+    {
+      "Field": "stamina",
+      "Name": "消費スタミナ[スロット1]",
+      "Description": "消費スタミナ"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンを指定\u3000＞メニュー用"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "行動IDを設定する"
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "必要アイテムID",
+      "Description": "購入に必要なアイテムID"
+    },
+    {
+      "Field": "replaceMagicId",
+      "Name": "差し替える魔法ID",
+      "Description": "状態変化一致時に差し替えるID(-1:無効)"
+    },
+    {
+      "Field": "maxQuantity",
+      "Name": "最大個数",
+      "Description": "１個当たりの個数(-1:無限)"
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "消費人間性[スロット1]",
+      "Description": "消費人間性"
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "技量オーバー開始値",
+      "Description": "技量オーバー開始値"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "バリエーションID",
+      "Description": "ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）"
+    },
+    {
+      "Field": "slotLength",
+      "Name": "必要スロット",
+      "Description": "装備に必要なスロット数 ＞メニュー用"
+    },
+    {
+      "Field": "requirementIntellect",
+      "Name": "装備条件【知力】",
+      "Description": "PCの知力がこれ以上無いと装備できない"
+    },
+    {
+      "Field": "requirementFaith",
+      "Name": "装備条件【理力】",
+      "Description": "PCの理力がこれ以上無いと装備できない"
+    },
+    {
+      "Field": "analogDexterityMin",
+      "Name": "アナログ最低技量",
+      "Description": "モーションキャンセルアナログ化：最低技量値"
+    },
+    {
+      "Field": "analogDexterityMax",
+      "Name": "アナログ最大技量",
+      "Description": "モーションキャンセルアナログ化：最高技量値"
+    },
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "カテゴリ",
+      "Description": "並べ替えに使用\u3000＞メニュー用"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "IDカテゴリ[スロット1]",
+      "Description": "↓のIDのカテゴリ[攻撃、飛び道具、特殊]"
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "特殊効果カテゴリ",
+      "Description": "スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する\r\n"
+    },
+    {
+      "Field": "refType",
+      "Name": "モーションカテゴリ",
+      "Description": "モーションを指定\u3000＞EzState用"
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "使用時メニュータイプ",
+      "Description": "魔法使用時に出すメニュータイプ"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pading",
+      "Description": "pad"
+    },
+    {
+      "Field": "hasSpEffectType",
+      "Name": "どの常態か？",
+      "Description": "魔法IDを差し替える必要がある状態変化を指定"
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "差し替えカテゴリ",
+      "Description": "魔法IDを差し替える時の追加条件"
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "特殊効果カテゴリによる使用制限",
+      "Description": "特殊効果によって使用可能かどうかを制御する為に指定"
+    },
+    {
+      "Field": "vowType0",
+      "Name": "誓約0",
+      "Description": "誓約0"
+    },
+    {
+      "Field": "vowType1",
+      "Name": "誓約1",
+      "Description": "誓約1"
+    },
+    {
+      "Field": "vowType2",
+      "Name": "誓約2",
+      "Description": "誓約2"
+    },
+    {
+      "Field": "vowType3",
+      "Name": "誓約3",
+      "Description": "誓約3"
+    },
+    {
+      "Field": "vowType4",
+      "Name": "誓約4",
+      "Description": "誓約4"
+    },
+    {
+      "Field": "vowType5",
+      "Name": "誓約5",
+      "Description": "誓約5"
+    },
+    {
+      "Field": "vowType6",
+      "Name": "誓約6",
+      "Description": "誓約6"
+    },
+    {
+      "Field": "vowType7",
+      "Name": "誓約7",
+      "Description": "誓約7"
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "マルチでも使用可能か",
+      "Description": "マルチでも使用できるか。シングル、マルチ両方で使える"
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "マルチ専用か",
+      "Description": "マルチ専用か。シングルのときには使えない。マルチのときは使える。"
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "エンチャントか",
+      "Description": "エンチャントする魔法か"
+    },
+    {
+      "Field": "isShieldEnchant",
+      "Name": "盾エンチャントか",
+      "Description": "ガード・盾エンチャントする魔法か"
+    },
+    {
+      "Field": "enable_live",
+      "Name": "生存使用可",
+      "Description": "生存キャラが使用可能か"
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "グレイ使用可",
+      "Description": "グレイキャラが使用可能か"
+    },
+    {
+      "Field": "enable_white",
+      "Name": "白使用可",
+      "Description": "白ゴーストキャラが使用可能か"
+    },
+    {
+      "Field": "enable_black",
+      "Name": "黒使用可",
+      "Description": "黒ゴーストキャラが使用可能か"
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "オフラインで使用不可か",
+      "Description": "オフラインで使用不可か"
+    },
+    {
+      "Field": "castResonanceMagic",
+      "Name": "共鳴魔法配信するか",
+      "Description": "共鳴魔法配信するか"
+    },
+    {
+      "Field": "isValidTough_ProtSADmg",
+      "Name": "防具SAダメージ倍率が初期値でも有効か？",
+      "Description": "防具SAが初期値でも強靭度計算が行われるかどうか。詳細は強靭度仕様書.xlsxを確認してください"
+    },
+    {
+      "Field": "isWarpMagic",
+      "Name": "ワープ魔法か",
+      "Description": "ワープする魔法か。ここにチェックが入っている魔法は特殊効果「ワープ禁止」により使用が禁止されます"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "pading",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "誓約8",
+      "Description": "誓約8"
+    },
+    {
+      "Field": "vowType9",
+      "Name": "誓約9",
+      "Description": "誓約9"
+    },
+    {
+      "Field": "vowType10",
+      "Name": "誓約10",
+      "Description": "誓約10"
+    },
+    {
+      "Field": "vowType11",
+      "Name": "誓約11",
+      "Description": "誓約11"
+    },
+    {
+      "Field": "vowType12",
+      "Name": "誓約12",
+      "Description": "誓約12"
+    },
+    {
+      "Field": "vowType13",
+      "Name": "誓約13",
+      "Description": "誓約13"
+    },
+    {
+      "Field": "vowType14",
+      "Name": "誓約14",
+      "Description": "誓約14"
+    },
+    {
+      "Field": "vowType15",
+      "Name": "誓約15",
+      "Description": "誓約15"
+    },
+    {
+      "Field": "castSfxId",
+      "Name": "詠唱SFXID",
+      "Description": "魔法詠唱中のSFXID"
+    },
+    {
+      "Field": "fireSfxId",
+      "Name": "発動SFXID",
+      "Description": "魔法発動時のSFXID"
+    },
+    {
+      "Field": "effectSfxId",
+      "Name": "効果SFXID",
+      "Description": "魔法効果中のSFXID"
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "強靭度 補正倍率",
+      "Description": "強靭度の基本値を補正する倍率です"
+    },
+    {
+      "Field": "ReplacementStatusType",
+      "Name": "差し替えステータスタイプ",
+      "Description": "差し替えステータスタイプ"
+    },
+    {
+      "Field": "ReplacementStatus1",
+      "Name": "差し替えステータス値1",
+      "Description": "差し替えステータス値1"
+    },
+    {
+      "Field": "ReplacementStatus2",
+      "Name": "差し替えステータス値2",
+      "Description": "差し替えステータス値2"
+    },
+    {
+      "Field": "ReplacementStatus3",
+      "Name": "差し替えステータス値3",
+      "Description": "差し替えステータス値3"
+    },
+    {
+      "Field": "ReplacementStatus4",
+      "Name": "差し替えステータス値4",
+      "Description": "差し替えステータス値4"
+    },
+    {
+      "Field": "refCategory_slot2",
+      "Name": "IDカテゴリ[スロット2]",
+      "Description": "特殊効果カテゴリのカテゴリ[攻撃、飛び道具、特殊][スロット2]"
+    },
+    {
+      "Field": "pad10",
+      "Name": "PAD10",
+      "Description": "PAD10"
+    },
+    {
+      "Field": "ReplacementMagic1",
+      "Name": "差し替えID1",
+      "Description": "差し替えID1"
+    },
+    {
+      "Field": "ReplacementMagic2",
+      "Name": "差し替えID2",
+      "Description": "差し替えID2"
+    },
+    {
+      "Field": "ReplacementMagic3",
+      "Name": "差し替えID3",
+      "Description": "差し替えID3"
+    },
+    {
+      "Field": "ReplacementMagic4",
+      "Name": "差し替えID4",
+      "Description": "差し替えID4"
+    },
+    {
+      "Field": "mp_slot2",
+      "Name": "消費MP[スロット2]",
+      "Description": "消費MP[スロット2]"
+    },
+    {
+      "Field": "stamina_slot2",
+      "Name": "消費スタミナ[スロット2]",
+      "Description": "消費スタミナ[スロット2]"
+    },
+    {
+      "Field": "createLimitGroupId",
+      "Name": "作成制限グループId",
+      "Description": "0なら未使用。指定したグループIdの弾丸作成数を確認し、上限に達していたら魔法の使用をできなくする。"
+    },
+    {
+      "Field": "refCategory_slot3",
+      "Name": "IDカテゴリ[スロット3]",
+      "Description": "特殊効果カテゴリのカテゴリ[攻撃、飛び道具、特殊][スロット3]"
+    },
+    {
+      "Field": "pad11",
+      "Name": "PAD11",
+      "Description": "PAD11"
+    },
+    {
+      "Field": "mp_slot3",
+      "Name": "消費MP[スロット3]",
+      "Description": "消費MP[スロット3]"
+    },
+    {
+      "Field": "stamina_slot3",
+      "Name": "消費スタミナ[スロット3]",
+      "Description": "消費スタミナ[スロット3]"
+    },
+    {
+      "Field": "refId",
+      "Name": "呼び出しID[スロット1]",
+      "Description": "魔法から呼び出すID"
+    },
+    {
+      "Field": "refId_slot2",
+      "Name": "呼び出しID[スロット2]",
+      "Description": "魔法から呼び出すID[スロット2]"
+    },
+    {
+      "Field": "refId_slot3",
+      "Name": "呼び出しID[スロット3]",
+      "Description": "魔法から呼び出すID[スロット3]"
+    }
+  ]
+}

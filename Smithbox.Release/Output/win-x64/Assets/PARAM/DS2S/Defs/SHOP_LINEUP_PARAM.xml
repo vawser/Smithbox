@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>SHOP_LINEUP_PARAM</ParamType>
+    <DataVersion>4</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 saleItem = -1">
+            <DisplayName>販売アイテムID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s32 price">
+            <DisplayName>販売価格</DisplayName>
+            <Maximum>8388607</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s32 saleFlag = -1">
+            <DisplayName>販売開始フラグ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 saleEndFlag = -1">
+            <DisplayName>販売終了フラグ</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>410</SortID>
+        </Field>
+        <Field Def="u32 saleFlagItem">
+            <DisplayName>販売開始条件アイテム</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="u32 saleEndFlagItem">
+            <DisplayName>販売終了条件アイテム</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>510</SortID>
+        </Field>
+        <Field Def="u32 displayOrder">
+            <DisplayName>陳列順序</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="f32 priceRate = 1">
+            <DisplayName>価格倍率</DisplayName>
+            <Maximum>30</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s8 unitSales">
+            <DisplayName>販売個数</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>127</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="dummy8 padding[3]">
+            <DisplayName>予約</DisplayName>
+            <SortID>701</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

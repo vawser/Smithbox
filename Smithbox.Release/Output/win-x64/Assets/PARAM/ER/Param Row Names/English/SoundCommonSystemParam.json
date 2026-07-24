@@ -1,0 +1,23 @@
+{
+  "Name": "SoundCommonSystemParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "ダメージ音(ダイナミックダイアログ)のSEID"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy屋外(PC屋内)時のAuxSendBusID【GR】SEQ15746 【サウンド】敵・NPCの現在位置によるリバーブ変更"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Enemy屋内(PC屋内)時のAuxSendBusID【GR】SEQ15746 【サウンド】敵・NPCの現在位置によるリバーブ変更"
+      ]
+    }
+  ]
+}

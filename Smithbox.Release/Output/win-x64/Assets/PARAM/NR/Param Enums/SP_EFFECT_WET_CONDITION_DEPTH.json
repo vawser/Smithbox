@@ -1,0 +1,38 @@
+{
+  "Key": "SP_EFFECT_WET_CONDITION_DEPTH",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_WET_CONDITION_DEPTH"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Body"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower Body"
+        }
+      ]
+    }
+  ]
+}

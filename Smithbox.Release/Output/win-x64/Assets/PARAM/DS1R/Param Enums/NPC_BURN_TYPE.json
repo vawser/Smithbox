@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_BURN_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_BURN_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh"
+        }
+      ]
+    }
+  ]
+}

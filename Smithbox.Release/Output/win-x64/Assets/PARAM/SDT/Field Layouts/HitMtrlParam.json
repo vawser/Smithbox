@@ -1,0 +1,94 @@
+{
+  "Name": "HitMtrlParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "aiVolumeRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "footEffectHeightType",
+        "footEffectDirType",
+        "floorHeightType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "fallDeathDist",
+        "fallDamageRate",
+        "disableFallDamage"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hardnessType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "wetTiming",
+        "spEffectId_forWet"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectIdOnHit0",
+        "spEffectIdOnHit0_ClearCount_2",
+        "spEffectIdOnHit0_ClearCount_3",
+        "spEffectIdOnHit0_ClearCount_4",
+        "spEffectIdOnHit0_ClearCount_5",
+        "spEffectIdOnHit0_ClearCount_6",
+        "spEffectIdOnHit0_ClearCount_7",
+        "spEffectIdOnHit0_ClearCount_8"
+      ]
+    }
+  ]
+}

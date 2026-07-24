@@ -1,0 +1,5591 @@
+{
+  "Key": "ENEMY_LIST_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_LIST_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Data test]"
+        }
+      ]
+    },
+    {
+      "Key": "2235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant rat (test debilitated)"
+        }
+      ]
+    },
+    {
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Knight (test ignition)"
+        }
+      ]
+    },
+    {
+      "Key": "3096",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Advanced Soldier (Test)"
+        }
+      ]
+    },
+    {
+      "Key": "3180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant (Test: Enhanced LV1)"
+        }
+      ]
+    },
+    {
+      "Key": "3181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant (for testing: Enhanced LV2)"
+        }
+      ]
+    },
+    {
+      "Key": "3260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butcher (test left arm amputated)"
+        }
+      ]
+    },
+    {
+      "Key": "3320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A (test both hands)"
+        }
+      ]
+    },
+    {
+      "Key": "5030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion ♀ (test tail amputation)"
+        }
+      ]
+    },
+    {
+      "Key": "8100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White phantom test"
+        }
+      ]
+    },
+    {
+      "Key": "9100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant boss test (Morinaga)"
+        }
+      ]
+    },
+    {
+      "Key": "9101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Test)"
+        }
+      ]
+    },
+    {
+      "Key": "9111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ueda Test (Goblin) Yoshida Param Adjusted Version"
+        }
+      ]
+    },
+    {
+      "Key": "9113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ueda test (Goblin: floating)"
+        }
+      ]
+    },
+    {
+      "Key": "9120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Guard Captain (Morinaga Test)"
+        }
+      ]
+    },
+    {
+      "Key": "9140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Okochi test"
+        }
+      ]
+    },
+    {
+      "Key": "9150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For NPC testing"
+        }
+      ]
+    },
+    {
+      "Key": "9160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Imazu test"
+        }
+      ]
+    },
+    {
+      "Key": "9170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For bullet play test"
+        }
+      ]
+    },
+    {
+      "Key": "9200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New bone structure character"
+        }
+      ]
+    },
+    {
+      "Key": "9300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For GGD-Dead: Traveler's Clothes♂"
+        }
+      ]
+    },
+    {
+      "Key": "9400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For damage test"
+        }
+      ]
+    },
+    {
+      "Key": "9500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Spirit Double Swordsman"
+        }
+      ]
+    },
+    {
+      "Key": "9501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 0"
+        }
+      ]
+    },
+    {
+      "Key": "9502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 1"
+        }
+      ]
+    },
+    {
+      "Key": "9503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 2"
+        }
+      ]
+    },
+    {
+      "Key": "9504",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red spirit level 3"
+        }
+      ]
+    },
+    {
+      "Key": "9601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 0"
+        }
+      ]
+    },
+    {
+      "Key": "9602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 1"
+        }
+      ]
+    },
+    {
+      "Key": "9603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 2"
+        }
+      ]
+    },
+    {
+      "Key": "9604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue spirit level 3"
+        }
+      ]
+    },
+    {
+      "Key": "9605",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kojiro Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9606",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9607",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kogane Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9608",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9609",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Spirit Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyss phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9612",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bonfire Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9613",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grave spirit phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9614",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Servant phantom"
+        }
+      ]
+    },
+    {
+      "Key": "9620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Spirit-Remaining Time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9621",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 1-Remaining time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9622",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 2-Remaining time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9623",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 3-Remaining time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9624",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 4-Remaining time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9625",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Xiaobai-Remaining time-Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9626",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White - Remaining time - Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9627",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small money - remaining time - medium"
+        }
+      ]
+    },
+    {
+      "Key": "9628",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fri - Remaining time - Medium"
+        }
+      ]
+    },
+    {
+      "Key": "9640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Spirit-Remaining Time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9641",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 1-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9642",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 2-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9643",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 3-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9644",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Spirit 4-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9645",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small white - remaining time - small"
+        }
+      ]
+    },
+    {
+      "Key": "9646",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "9647",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small money - Remaining time - Small"
+        }
+      ]
+    },
+    {
+      "Key": "9648",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold-Remaining time-Small"
+        }
+      ]
+    },
+    {
+      "Key": "100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living): Bare-handed: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "100008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living): Bare-handed: Hollow Shadow Forest: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "100009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living): Bare hands: Gap Cave: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "100010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living): Sword: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "100020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living): Sling: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kobold: Cave of the Gap"
+        }
+      ]
+    },
+    {
+      "Key": "101001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kobold: Hall of An Deel"
+        }
+      ]
+    },
+    {
+      "Key": "102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased): Spear: Medium Shield: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "102010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased): Two-handed Sword: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "102011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Dead): Two-Handed Sword: Soul Black: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "102020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (deceased): Two-handed long ax: Forest of the fallen giant"
+        }
+      ]
+    },
+    {
+      "Key": "102030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased): Piercing Sword: Medium Shield: Decayed Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "102040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Dead): Bow: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "102100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Spear: Medium shield: Giant's memory"
+        }
+      ]
+    },
+    {
+      "Key": "102110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword: Bow: Giant's memory"
+        }
+      ]
+    },
+    {
+      "Key": "102140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Living): Bow: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Bare-handed: Forest of Decayed Giants"
+        }
+      ]
+    },
+    {
+      "Key": "103010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased): Dagger: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "103020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): One-handed sword: Small shield: Decayed Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "103022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): One-handed sword: Small shield: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "103030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): One-handed ax: Forest of the Decayed Giant"
+        }
+      ]
+    },
+    {
+      "Key": "103032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): One-handed ax: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "103040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Two-handed bow: Forest of the Decayed Giant"
+        }
+      ]
+    },
+    {
+      "Key": "103051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Two-handed bow (fire arrow): Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "103111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (living): One-handed sword: Giant's memory"
+        }
+      ]
+    },
+    {
+      "Key": "103121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (living): One-handed ax: Giant's memory"
+        }
+      ]
+    },
+    {
+      "Key": "103131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living): Bow: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fairy Priestess: Bare Hands: Amana Altar"
+        }
+      ]
+    },
+    {
+      "Key": "105010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fairy Priestess: Staff: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "106001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (Deceased): Color ①_No Mask, Jeldra Zakovos Battle"
+        }
+      ]
+    },
+    {
+      "Key": "106009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (Dead): Color ①: Soul Black: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "106021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (dead): Color ①_With mask: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "106200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (Dead): Color ③_Head C: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "107000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider (parasitic): Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "107001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider (parasitic): Poison: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (Dead): Dagger x 2: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "108010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (dead): Hammer x 2: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "108020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (dead): Two-handed bow x 2: Hunting forest"
+        }
+      ]
+    },
+    {
+      "Key": "113000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (dead): One-handed sword: Small shield: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "113010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (dead): Curved sword x 2: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "113020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (dead): Two-handed bow: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "115000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Traveler's clothes ♂: Bare hands: Madura (modern day)"
+        }
+      ]
+    },
+    {
+      "Key": "115006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Traveler's Clothes♂: Bare Hands: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "115014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Traveler's Clothes♂: Dagger: Spider City"
+        }
+      ]
+    },
+    {
+      "Key": "115015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Traveler's Clothes♂: Dagger: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "117000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue: Pawn: Spear: Shield: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "117010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue: Pawn: Spear: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "118000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Wizard (Dead): Color ①: Head A: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "118001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark wizard (deceased): Color ①: Head A: Immortal arena"
+        }
+      ]
+    },
+    {
+      "Key": "118201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Wizard (Dead): Color ③: Head B: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "119000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Black Mage (Living): Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "121000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Bare Hands: Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "121001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Bare Hands: Flying Appearance: Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "121010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Two-handed Club: Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "121020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier Poison (Titan): Bare Hands: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "121030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier Fire (Titan): Bare Hands: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "123002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange shadow (living): Mask A: Two swords claws: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "123010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living): Mask A: Dagger: Piercing Sword: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "123022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living): Mask B: Two Swords Claws: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "124000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask A: 2 sword claws: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask A: Dagger: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask A: Curved Sword: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask A: Bow: Tani no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask B: 2 sword claws: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask B: Dagger: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask B: Curved sword: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "124070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living): Mask B: Bow: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "125004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Explosion: Tomb of Saints"
+        }
+      ]
+    },
+    {
+      "Key": "125009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Explosion: Soul Black: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "125010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Explosion: Trap after Boss"
+        }
+      ]
+    },
+    {
+      "Key": "125011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Normal: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "125012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Normal: Prison of Oblivion (Tower of Sinners)"
+        }
+      ]
+    },
+    {
+      "Key": "125013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Normal: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "125014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Acid: Guardian Dragon's Den"
+        }
+      ]
+    },
+    {
+      "Key": "125015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Petrified: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "125016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen: Explosion: Soul Black: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "127000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased): Bare Hands: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "127001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased): Bare Hands: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "127002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Dead): Bare Hands: Geldra Zakovos Battle"
+        }
+      ]
+    },
+    {
+      "Key": "127003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead worker (deceased): Bare hands: Valley of accumulation"
+        }
+      ]
+    },
+    {
+      "Key": "127004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased): Bare Hands: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "127005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased): Bare Hands: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "127010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased): Torches: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "127011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead worker (dead): Torch: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "127020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Worker (Dead): Broken Straight Sword: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "127030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead worker (dead): bare hands (equipment 4): pool valley"
+        }
+      ]
+    },
+    {
+      "Key": "129000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian of the Forest: Staff: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "129010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keeper of the Forest: Bell: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "131000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric: Warhammer: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "131010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric: Bell: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "131020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric: Staff: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "132003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: Dual Wield: Tamari no Tani *Death"
+        }
+      ]
+    },
+    {
+      "Key": "132013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: One-handed curved sword: Madura *Death"
+        }
+      ]
+    },
+    {
+      "Key": "132020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: One-handed stab: Hunting Forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "132022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: One-handed stab: Hunting Forest *Death/Skeleton Noble War version"
+        }
+      ]
+    },
+    {
+      "Key": "132030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: Bow: Hunting Forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "132090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton: For cutscenes: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "133001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel Skeleton: Bare Hands: Hunting Forest/Skeleton Noble War Version"
+        }
+      ]
+    },
+    {
+      "Key": "133010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel Skeleton: Curved Sword: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "133020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel Skeleton: Omagari Sword: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "134000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Pathway to Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "135000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf: Two-handed ax x 2: Head A: Pharos doorway"
+        }
+      ]
+    },
+    {
+      "Key": "135010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf: Two-handed Hammer: Head A: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "135020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf: Bow: Head A: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "135030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf: Two-handed ax x 2: Head B: Pharos doorway"
+        }
+      ]
+    },
+    {
+      "Key": "135040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf: Two-handed Hammer: Head B: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "135050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf: Bow: Head B: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "137010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer (Immortal): Shield: Staff: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "137021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer (Immortal): Shield: Staff: For boss battle: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "137022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer (Immortal): Shield: Staff: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "138000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer: Torture Instrument: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "138001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer: Torture Instrument: Soul Black: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "138010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer: Whip: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "138011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer: Whip: Soul Black: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "139000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal: Sickle: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "139001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal: Sickle: Valley of Damage"
+        }
+      ]
+    },
+    {
+      "Key": "139008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal: Sickle: Soul Black: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "139009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial immortal: Sickle: Soul black: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "139010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal: Bare Hands: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "141000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced Immortal: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "141002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced Immortal: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "146000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Wealthy people's clothes ♂: Dagger: Shinsekigai Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "146010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Wealthy people's clothes ♂: Piercing sword: Shinsekigai Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "147001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Sick Man's Clothes ♂: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "147004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Sick Man's Clothes♂: Geldra Zakovos Battle"
+        }
+      ]
+    },
+    {
+      "Key": "148000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Farmer's clothes ♂: Two-handed hammer: Head part 1: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "148010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Peasant's clothes ♂: Two-handed hammer: Head parts 2: Shinsekigai Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "148020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Farmer's clothes ♂: Two-handed sickle: Head part 1: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "148030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Farmer's clothes ♂: Two-handed sickle: Head part 2: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "148040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Farmer's clothes ♂: Torch: Head parts 1: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "148041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead person: Farmer's clothes ♂: Torch: Head parts 2: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "149010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead: Steelworks worker_no apron: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue: Knight: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "151000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Heavy Warrior: Color ①: Two-handed War Hammer: Molten Castle"
+        }
+      ]
+    },
+    {
+      "Key": "151200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior: Color ③: Two-handed Warhammer: Forest of Rotting Giants"
+        }
+      ]
+    },
+    {
+      "Key": "151208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier Heavy Warrior: Color ③: Two-handed War Hammer: Soul Black: Luminous Stone City Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "151209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior: Color ③: Two-handed War Hammer: Soul Black: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "151210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior: Color ③: One-handed club: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "152000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior: Two-handed Sword: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "152001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior: Two-handed Sword: Royal Castle Drangraig: Infinite Spring Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "152002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Warrior: Two-handed Sword: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "152010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior: Crossbow: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "152011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Warrior: Crossbow: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "153000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard: Ax and Spear: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "153002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard: Ax and Spear: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "153003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard: Ax and Spear: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "153010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard: Extra Large Sword: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "153012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard: Extra Large Sword: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "153013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard: Extra Large Sword: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "154000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Noble: Ax Spear: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "154010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Noble: Sickle: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "154020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Noble: Staff: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "155000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lizardman: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "156011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Helmet skeleton: No armor: Helmet: Curved sword & shield: Hunting forest *Death"
+        }
+      ]
+    },
+    {
+      "Key": "157000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword x 2: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Curved sword x 2: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword x 2: Hunting forest *Death"
+        }
+      ]
+    },
+    {
+      "Key": "157003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: With armor: Crown: Curved sword x 2: Hunting forest *Death"
+        }
+      ]
+    },
+    {
+      "Key": "157004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Bandana: Curved sword x 2: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword x 2: Immortal arena *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Curved sword x 2: Immortal arena *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword & shield: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor Skeleton: No Armor: Helmet: Curved Sword & Shield: Hunting Forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword & shield: Hunting forest *Death"
+        }
+      ]
+    },
+    {
+      "Key": "157013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armored skeleton: With armor: Helmet: Curved sword & shield: Hunting forest *Death/Skeleton Noble War version"
+        }
+      ]
+    },
+    {
+      "Key": "157014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Curved sword & shield: Immortal arena *Immortal"
+        }
+      ]
+    },
+    {
+      "Key": "157015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Curved sword & shield: Immortal arena *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Piercing sword: Hunting Forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Piercing sword: Hunting Forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Piercing sword: Hunting forest *Death"
+        }
+      ]
+    },
+    {
+      "Key": "157023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Piercing sword: Immortal arena *Immortal"
+        }
+      ]
+    },
+    {
+      "Key": "157024",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Piercing sword: Immortality *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: No head equipment: Two-handed bow: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Two-handed bow: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Crown: Two-handed bow: Hunting forest *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "157033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor skeleton: No armor: Helmet: Two-handed bow: Immortality *Immortality"
+        }
+      ]
+    },
+    {
+      "Key": "201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slave beast: Pig: Madura (also used for Geldra, Shinseki Town)"
+        }
+      ]
+    },
+    {
+      "Key": "202100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slave beast (wild): Can also be used as Geldra in Shining Stone Town"
+        }
+      ]
+    },
+    {
+      "Key": "203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "203001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider: Poison: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "203002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider: For Boss Battle: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "203009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider: Soul Black: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "204000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Moss: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "205000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison hornworm: Poison: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "205001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm: Poison: Kudzubottom"
+        }
+      ]
+    },
+    {
+      "Key": "205100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm: Acid: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "205102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm: Acid: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "206000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Needle maggot: kudzu bottom"
+        }
+      ]
+    },
+    {
+      "Key": "209000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Dog: Color ①: House of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "209002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting dog: Color ①: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk: Color ①: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "210001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk: Color ①: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "210002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk: Color ①: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "210003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk: Color ①: Saint’s Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "210010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk: Eyeball Crushed: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "212000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "212001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern: Guardian Dragon’s Nest ①"
+        }
+      ]
+    },
+    {
+      "Key": "212002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern: Guardian Dragon’s Nest ②"
+        }
+      ]
+    },
+    {
+      "Key": "212003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern: Guardian Dragon’s Nest ③"
+        }
+      ]
+    },
+    {
+      "Key": "213000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "213002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "213003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone guard: scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "213004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Keeper: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "213005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "213006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "213007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "213008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "213009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "213010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone guard: Valley of reservoir"
+        }
+      ]
+    },
+    {
+      "Key": "213011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "213012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Saint’s Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "213100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Explosion: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "213101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian: Explosion: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "214001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fanged Beast: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "216000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Door Possessed: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "217000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden in the Dark: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "220000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant poisonous hornworm: Acid: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "220001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Poisonous Hornworm: Acid: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "220002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant poisonous hornworm: Acid: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "222000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Basilisk: Color ②: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "222001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Basilisk: Color 2: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "223000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corpse Scavenging Rat: Color 1: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "224000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar: scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "226000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog Mouse: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "226001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog and Mouse: For Boss Battle: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "226100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog Mouse: Color ②: Saint’s Cemetery"
+        }
+      ]
+    },
+    {
+      "Key": "226200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "226201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "226202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "227000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wild Dog: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "227001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wild dog: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "227009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wild Dog: Soul Black: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living): Color ①: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "300001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living): Color 1: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "300002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living): Color ①: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "301001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): One-handed Sword: Forest of the Decayed Giant"
+        }
+      ]
+    },
+    {
+      "Key": "301003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): One-handed Sword: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "301010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): Spear A: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "301011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): Spear A: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "301020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): Spear B: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "301030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead): Spear C: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner (Dead): Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "302009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner (Dead): Prison of Oblivion: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "303300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-faced Warrior: Snake Head: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "303301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-sided Warrior: Snake Head: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "304010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Banshee (dead): Beautiful face: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "305000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Knight (Dead): Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "306000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead): Sword: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "306008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor (Dead): Sword: Melted Iron Castle: Full body flame soul black"
+        }
+      ]
+    },
+    {
+      "Key": "306009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead): Sword: Molten Castle: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "306010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead): Bow: Molten Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "306011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "デーモン鎧（亡者）：弓：王城ドラングレイグ"
+        }
+      ]
+    },
+    {
+      "Key": "307000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (dead): One-handed sword/shield: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "307001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (Dead): Dual Wield: Shinsekigai Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "307101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living): Ghost: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "307108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living): White Spirit: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "307109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living): White Spirit: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "307110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living): Head only: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "308000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Warrior: Forest of Hollow Shadows"
+        }
+      ]
+    },
+    {
+      "Key": "308100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Warrior ②: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "309000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan Senior Soldier (Titan): Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "309001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan Senior Soldier (Titan): Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "309600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Senior Soldier (Deceased): Decayed Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "309700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Senior Soldier (Living): Titan's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "311000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cavalry: Mounted Soldier: Valley of the Pool"
+        }
+      ]
+    },
+    {
+      "Key": "312000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Sickle; Robe: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "312001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal): Sickle; Robe: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "312010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Spear: Robe: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "312011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Spear: Robe: Valley of Pool"
+        }
+      ]
+    },
+    {
+      "Key": "312021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal): Sickle: Armor: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "312031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Spear: Armor: Valley of Pools"
+        }
+      ]
+    },
+    {
+      "Key": "312032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal): Spear: Armor: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "312040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Sickle: Naked: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "312050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal): Spear: Naked: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "313000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior: Straight Sword & Shield: No Falcon: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "313010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior: Sword & Shield: No Falcon: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "313021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior: Sword & Hawk: Gap Cave (2nd lap)"
+        }
+      ]
+    },
+    {
+      "Key": "313031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior: Bow: No Falcon: Gap Cave (2nd round)"
+        }
+      ]
+    },
+    {
+      "Key": "314000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant (dead): Spear ax: Pharos doorway"
+        }
+      ]
+    },
+    {
+      "Key": "315000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant (living): Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "316001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Captured Wizard (Living): Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "317000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Professor Dragon: Anne Diehl's Hall"
+        }
+      ]
+    },
+    {
+      "Key": "318000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: No luggage: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "318010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: With luggage: Forest of Decayed Giants"
+        }
+      ]
+    },
+    {
+      "Key": "318011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: With luggage: Fallen Giant Forest Field Arrangement"
+        }
+      ]
+    },
+    {
+      "Key": "318020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: With luggage: Zako the Iron Fortress"
+        }
+      ]
+    },
+    {
+      "Key": "319000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor (dead): Mass production type: Sword: Melted Iron Fortress"
+        }
+      ]
+    },
+    {
+      "Key": "319009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor (Dead): Mass production type: Sword: Melted Iron Fortress: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "319010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead): Mass-produced type: Bow: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "321000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Tree: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "321001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Wood: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "321002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Wood: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "321003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Tree: Valley of Reservoirs"
+        }
+      ]
+    },
+    {
+      "Key": "321004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Tree: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "321010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Iron: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "321011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Iron: Molten Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "321012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic: Iron: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "324000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "325000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior in the Mirror: Oblivion Prison Boss"
+        }
+      ]
+    },
+    {
+      "Key": "325010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior in the Mirror: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "326000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butcher: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "327000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone Dragon: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "330000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior: Two-Handed Sword & Medium Shield: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior: Oversized Sword: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "330019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior: Oversized Sword: Strong: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "330040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior: Hammer: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "330049",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior: Hammer: Strong: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "331002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier: Two-handed Sword & Medium Shield: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "331011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier: Oversized Sword: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "331021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier: Two-Handed Long Ax: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "331031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier: Two-Handed Hammer: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "331041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier: One-handed Hammer: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "332000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "333000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight B: Immortal Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "334000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "337000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Bare Hands: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "337002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Bare Hands: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "337003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Bare Hands: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "337010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Torch: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "337011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Torch: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "337020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Sword: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "337022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Sword: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "337023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead: Sword: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jabba the Hutt: Valley of the Pool"
+        }
+      ]
+    },
+    {
+      "Key": "501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Naga: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♂: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "502001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♂: Ghost: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "502009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♂: White Spirit: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "503000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♀: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "504000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "506100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's Stand: The Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "506101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's stand (alter ego): Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "506200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wormhole: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "506500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tombkeeper: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "506501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tombkeeper: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "506509",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grave Keeper: White Spirit: Immortal Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "509000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Bishop: Masked: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "509009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Bishop: Masked: Immortal Temple: Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "511000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight (Spiritual Body): Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "512000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Mage (Spiritual): Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "514600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old King: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon: 2nd time: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "601000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "602000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful Frog: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "603000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "603100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen (Cliff): Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "607000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Demon: Molten Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "608000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Decay insect (outer shell): Kudzu bottom"
+        }
+      ]
+    },
+    {
+      "Key": "611010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry: Soldier only (black): Bow: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "611500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry: Soldiers only (red): Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "611510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Cavalry: Soldiers Only (Red): Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "619110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot: Combined: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "625000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornstein: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "626000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forgotten Sinner: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "627000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's armor form: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "628000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Rat: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "700500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "700501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "700502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "700503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game: Immortal Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "700504",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "701500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden (Child)_In-game: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "703600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Queen: Ojo Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "704500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop_In-game use: Tamari no Tani (also used as Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "704501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop_In-game use: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "704510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop_cutscene: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "705000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 1_For cutscene: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 2_For cutscene: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 4_For cutscene: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 1_In-game use: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 1_In-game use: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "705600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 2_In-game use: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 2_In-game: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "705800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 3_In-game use: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "705801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired Firekeeper 3_In-game use: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "721100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit of the Prime Minister: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "723000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper: Gap-no-do"
+        }
+      ]
+    },
+    {
+      "Key": "723001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "723010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper_For cutscene: Gap cave"
+        }
+      ]
+    },
+    {
+      "Key": "724000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain: Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "724001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "724002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain: White Spirit: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "725000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Forest of Hollow Shadows"
+        }
+      ]
+    },
+    {
+      "Key": "725001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Ghost: Universal"
+        }
+      ]
+    },
+    {
+      "Key": "725002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "725003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "726000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "726001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "726002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Valley of Reservoir"
+        }
+      ]
+    },
+    {
+      "Key": "726003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "726004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Doorway to Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "726005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "726006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Gabalan: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "730000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant 1_ Extra Large Sword: Mirror Knight Battle"
+        }
+      ]
+    },
+    {
+      "Key": "730001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant 1_Extra Large Sword: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "731010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's servant 2_Two-handed long ax: Mirror Knight battle"
+        }
+      ]
+    },
+    {
+      "Key": "731011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant 2_Two-Handed Long Ax: Anne Deal's Hall"
+        }
+      ]
+    },
+    {
+      "Key": "732000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 1: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "733000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 2: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "741000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "741001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Warrior: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "742000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior One-Handed Ax: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "742001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "742002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior One-handed Ax: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "742003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior One-handed Ax: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "743000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: Forest of the Decayed Giant"
+        }
+      ]
+    },
+    {
+      "Key": "743001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "743002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: Forest of Hollow Shadows"
+        }
+      ]
+    },
+    {
+      "Key": "743003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "743004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "743006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: White Spirit: For Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "743007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: White Spirit: For final boss"
+        }
+      ]
+    },
+    {
+      "Key": "743008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: White Spirit: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "743009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man: White Spirit: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "744000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "744001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch: Ghost: Generic"
+        }
+      ]
+    },
+    {
+      "Key": "744002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "744003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch: Valley of Reservoirs"
+        }
+      ]
+    },
+    {
+      "Key": "744009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch: White Spirit: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "751000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map drawing: Forest of the Decayed Giant (also used for Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "751001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map writer: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "752000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertira: Hall of An Deel"
+        }
+      ]
+    },
+    {
+      "Key": "752001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Arkertilla: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "752002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertilla: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "752003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertira: Valley of the Pool"
+        }
+      ]
+    },
+    {
+      "Key": "752004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertira: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "752005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Arkertilla: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "752006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Arkertilla: White Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "752007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertilla: White Spirit: Molten Castle"
+        }
+      ]
+    },
+    {
+      "Key": "752008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertira: White Spirit: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "752009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertilla: White Spirit: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "753000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bellkeeper: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "753001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bellkeeper: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "753002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "753003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper: Zako: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "753004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper: Zako: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "753008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper: Dark Spirit: Molten Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "753009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper: Dark Spirit: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "754000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Hag: Forest of the Decayed Giant (also used as Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "754001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu hag: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "760000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "760001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1: Ghost: General"
+        }
+      ]
+    },
+    {
+      "Key": "760100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2: Amana Altar"
+        }
+      ]
+    },
+    {
+      "Key": "760101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2: Ghost: General"
+        }
+      ]
+    },
+    {
+      "Key": "760200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner Girl: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "760201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner Girl: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "761000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "761001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "762000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "762001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "762002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "763000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer: Hollow Shadow Forest (also used by Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "763001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "764000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith: Hammer & Fire Scissors: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "764001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "764300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EX Blacksmith: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "764309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EX Blacksmith: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "766000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician: Hidden Port (also used as Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "766001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "768000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spellmania: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "768001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spellmania: Ghost: General"
+        }
+      ]
+    },
+    {
+      "Key": "769000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Man Leash: Heide Great Fire Tower (also used as Madura)"
+        }
+      ]
+    },
+    {
+      "Key": "769001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Man Leash: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "770000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician: Staff: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "770001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "771000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The Contained: The Manor of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "771001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contained Person: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "771004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person: Dark Spirit: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "771005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person: Dark Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "771006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person: Dark Spirit: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "771007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contained Person: Dark Spirit: Mansion of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "771009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person: Dark Spirit: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "771010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person: Dark Spirit: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "772000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curious item shop: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "772001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curiosities shop: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "776000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top Weapon Shop: Bird Goal: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "776001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top weapon shop: Bird goal: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "776002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top Weapon Shop: Birdgoal: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "777000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cat: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "783000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "783001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "784000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Indulgence: Geldra, Shinsekigai"
+        }
+      ]
+    },
+    {
+      "Key": "784001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Absolution: Ghost: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "785000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight: Two-handed long ax & medium shield: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "785001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight: Ghost: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "786000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kirakira Musume: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "805000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cutscene player"
+        }
+      ]
+    },
+    {
+      "Key": "810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male): Red Phantom: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "810001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male): White Spirit: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "810002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male): Bell Keeper Area"
+        }
+      ]
+    },
+    {
+      "Key": "810003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male): White Spirit: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "811000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Archer (male): White Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "812000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Sage (Female): White Spirit: Forgotten Prison"
+        }
+      ]
+    },
+    {
+      "Key": "812001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Sage (female): White Spirit: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "813000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Lancer (female): White Spirit: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "814000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Flesh Cut (Female): White Spirit: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "814008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Meat Cut (Female): Dark Spirit: Ojo Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "814009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Flesh Cut (Female): Dark Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "820000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Spearman (male): Dark Spirit: Forgotten Prison"
+        }
+      ]
+    },
+    {
+      "Key": "821000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Grim Reaper (female): Dark Spirit: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "821001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Grim Reaper (female): Dark Spirit: Mansion of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "822000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male): Dark Spirit: Doorway of Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "822001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male): Ash Spirit: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "822002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male): Dark Spirit: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "822003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male): Dark Spirit: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "823000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Ancient Dragon Swordsman (Male): Dark Spirit: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "824000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Female Swordsman's Brother: Dark Spirit: Andir"
+        }
+      ]
+    },
+    {
+      "Key": "831000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Tomb: Abandoned Saint"
+        }
+      ]
+    },
+    {
+      "Key": "831100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Tomb: Saint's Knight"
+        }
+      ]
+    },
+    {
+      "Key": "832000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 1: Sniper"
+        }
+      ]
+    },
+    {
+      "Key": "832100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 2: Axman"
+        }
+      ]
+    },
+    {
+      "Key": "832200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 3: Huang Yifu"
+        }
+      ]
+    },
+    {
+      "Key": "832300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 4: Yellow Robe Wife"
+        }
+      ]
+    },
+    {
+      "Key": "832400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 5: Traveler"
+        }
+      ]
+    },
+    {
+      "Key": "832500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 6: Knight"
+        }
+      ]
+    },
+    {
+      "Key": "832600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Pit: Abyssal Spirit 7: Heavy Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "832700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 8: Queen"
+        }
+      ]
+    },
+    {
+      "Key": "833000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar: Cannibal Chief"
+        }
+      ]
+    },
+    {
+      "Key": "835000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine: Dragon Knight: Dual Wield"
+        }
+      ]
+    },
+    {
+      "Key": "835001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ann Diehl's House: Painting Keeper (Female)"
+        }
+      ]
+    },
+    {
+      "Key": "835100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine: Dragon Knight: One-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "835200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine: Dragon Knight: Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "836000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle: Samurai Sorcerer: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "836100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Fortress: Bell Keeper 1: Extra Large Sword & Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "836200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Fortress: Bell Keeper 2: Crossbow & Crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "836300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Bell Keeper 3: Staff & Spear"
+        }
+      ]
+    },
+    {
+      "Key": "836400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress: Light Heavy Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "837000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: 2nd round hunting"
+        }
+      ]
+    },
+    {
+      "Key": "837100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Melee"
+        }
+      ]
+    },
+    {
+      "Key": "837200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Shooting"
+        }
+      ]
+    },
+    {
+      "Key": "838000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 1"
+        }
+      ]
+    },
+    {
+      "Key": "838100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 2"
+        }
+      ]
+    },
+    {
+      "Key": "840000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy NPC for Conqueror's Pledge"
+        }
+      ]
+    },
+    {
+      "Key": "841000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy NPC for the Pledge of the Sun"
+        }
+      ]
+    },
+    {
+      "Key": "842000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Fallen Giant: In front of the King's Door: 2nd lap Red Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "843000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Fallen Giant: In front of the King's Door: 2nd lap Red Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "844000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant's Forest: Fissure Square: 2nd lap Red Spirit 3"
+        }
+      ]
+    },
+    {
+      "Key": "845000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant Forest: 2nd round dark spirit"
+        }
+      ]
+    },
+    {
+      "Key": "846000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shining Stone Town Geldra: Dark Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "847000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower: 2nd round Dark Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "847100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower: 2nd round Dark Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "848000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: 2nd round dark spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "848100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: Dark Spirit 2 (Ghost)"
+        }
+      ]
+    },
+    {
+      "Key": "849000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig: Dark Spirit 1 (Ghost)"
+        }
+      ]
+    },
+    {
+      "Key": "849001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: Dark Spirit 1 (Ghost)"
+        }
+      ]
+    },
+    {
+      "Key": "849100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clown: White Spirit: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "849200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Tomb: Dark Spirit 3 (Transparent Armor)"
+        }
+      ]
+    },
+    {
+      "Key": "850000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hall of Anne Deal: 2nd round dark spirit"
+        }
+      ]
+    },
+    {
+      "Key": "851000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valley of accumulation: dark spirit"
+        }
+      ]
+    },
+    {
+      "Key": "852000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Red Spirit Level 3"
+        }
+      ]
+    },
+    {
+      "Key": "853000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pharos Doorway: Dual Wielding Avelin: Dark Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "853100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Geldra: Luminous Stone City: Leroy: White Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "853200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd lap Dark Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "853300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd lap Dark Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "853400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd lap Dark Spirit 3"
+        }
+      ]
+    },
+    {
+      "Key": "853500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: Dark Spirit Key Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "854000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port: Dark Spirit (Darth Maul)"
+        }
+      ]
+    },
+    {
+      "Key": "855000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shinseki Town Geldra-: Talking Treasure Box"
+        }
+      ]
+    },
+    {
+      "Key": "890000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For player control testing"
+        }
+      ]
+    }
+  ]
+}

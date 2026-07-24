@@ -1,0 +1,103 @@
+{
+  "Param": "TUTORIAL_PARAM_ST",
+  "Type": "TUTORIAL_PARAM_ST",
+  "Name": "TUTORIAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "menuType",
+      "Name": "表示タイプ",
+      "Description": "表示するチュートリアルメニューの種類を指定します"
+    },
+    {
+      "Field": "triggerType",
+      "Name": "表示タイミング",
+      "Description": "表示タイミング（デフォルト: 0:\"-\"）。このメニューを開いたときに、このチュートリアルを表示します。メニューを開いたときに表示しない場合は 0:\"-\" を指定します"
+    },
+    {
+      "Field": "repeatType",
+      "Name": "表示回数",
+      "Description": "表示する回数（デフォルト: 0:ゲーム中1回）"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "imageId",
+      "Name": "イメージID",
+      "Description": "表示するチュートリアル画像IDを指定します（デフォルト: 0）。画像を表示しない場合は、0 を指定します"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "unlockEventFlagId",
+      "Name": "表示許可フラグ",
+      "Description": "表示許可用のイベントフラグID（デフォルト: 0）。このフラグが立つまでは表示されません。常に許可したい場合は 0 を指定します"
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "チュートリアルに表示するテキストのID[TutorialText.xlsm]。「タイトル」も「本文」もこのテキストIDが使われる"
+    },
+    {
+      "Field": "displayMinTime",
+      "Name": "最短",
+      "Description": "最短表示保障時間[秒]。イベントなどから閉じられたとしても、少なくともこの時間は表示してから閉じられるます。トースト専用なのでモーダルでは無視されます"
+    },
+    {
+      "Field": "displayTime",
+      "Name": "最長",
+      "Description": "表示時間[秒]。トーストが表示されてからこの時間経過すると自動的に閉じられます。トースト専用なのでモーダルでは無視されます"
+    },
+    {
+      "Field": "tutorialCategoryId",
+      "Name": "tutorialCategoryId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "unknown_1b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

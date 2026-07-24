@@ -1,0 +1,203 @@
+{
+  "Param": "MOVE_PARAM_ST",
+  "Type": "MOVE_PARAM_ST",
+  "Name": "MOVE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "stayId",
+      "Name": "待機",
+      "Description": "待機"
+    },
+    {
+      "Field": "walkF",
+      "Name": "歩行 前",
+      "Description": "歩行 前"
+    },
+    {
+      "Field": "walkB",
+      "Name": "歩行 後",
+      "Description": "歩行 後"
+    },
+    {
+      "Field": "walkL",
+      "Name": "歩行 左",
+      "Description": "歩行 左"
+    },
+    {
+      "Field": "walkR",
+      "Name": "歩行 右",
+      "Description": "歩行 右"
+    },
+    {
+      "Field": "dashF",
+      "Name": "走行 前",
+      "Description": "走行 前"
+    },
+    {
+      "Field": "dashB",
+      "Name": "走行 後",
+      "Description": "走行 後"
+    },
+    {
+      "Field": "dashL",
+      "Name": "走行 左",
+      "Description": "走行 左"
+    },
+    {
+      "Field": "dashR",
+      "Name": "走行 右",
+      "Description": "走行 右"
+    },
+    {
+      "Field": "superDash",
+      "Name": "ダッシュ移動",
+      "Description": "ダッシュ移動"
+    },
+    {
+      "Field": "escapeF",
+      "Name": "緊急回避 前",
+      "Description": "緊急回避 前"
+    },
+    {
+      "Field": "escapeB",
+      "Name": "緊急回避 後",
+      "Description": "緊急回避 後"
+    },
+    {
+      "Field": "escapeL",
+      "Name": "緊急回避 左",
+      "Description": "緊急回避 左"
+    },
+    {
+      "Field": "escapeR",
+      "Name": "緊急回避 右",
+      "Description": "緊急回避 右"
+    },
+    {
+      "Field": "turnL",
+      "Name": "90度旋回 左",
+      "Description": "90度旋回 左"
+    },
+    {
+      "Field": "trunR",
+      "Name": "90度旋回 右",
+      "Description": "90度旋回 右"
+    },
+    {
+      "Field": "largeTurnL",
+      "Name": "180度旋回 左",
+      "Description": "180度旋回 左"
+    },
+    {
+      "Field": "largeTurnR",
+      "Name": "180度旋回 右",
+      "Description": "180度旋回 右"
+    },
+    {
+      "Field": "stepMove",
+      "Name": "ステップ移動",
+      "Description": "180度旋回 右"
+    },
+    {
+      "Field": "flyStay",
+      "Name": "飛行待機",
+      "Description": "飛行待機"
+    },
+    {
+      "Field": "flyWalkF",
+      "Name": "飛行前進",
+      "Description": "飛行前進"
+    },
+    {
+      "Field": "flyWalkFL",
+      "Name": "飛行左前進",
+      "Description": "飛行左前進。低回転"
+    },
+    {
+      "Field": "flyWalkFR",
+      "Name": "飛行右前進",
+      "Description": "飛行右前進。低回転"
+    },
+    {
+      "Field": "flyWalkFL2",
+      "Name": "飛行左前進2",
+      "Description": "飛行左前進2。高回転"
+    },
+    {
+      "Field": "flyWalkFR2",
+      "Name": "飛行右前進2",
+      "Description": "飛行右前進2。高回転"
+    },
+    {
+      "Field": "flyDashF",
+      "Name": "高速飛行前進",
+      "Description": "高速飛行前進"
+    },
+    {
+      "Field": "flyDashFL",
+      "Name": "高速飛行左前進",
+      "Description": "高速飛行左前進。低回転"
+    },
+    {
+      "Field": "flyDashFR",
+      "Name": "高速飛行右前進",
+      "Description": "高速飛行右前進。低回転"
+    },
+    {
+      "Field": "flyDashFL2",
+      "Name": "高速飛行左前進2",
+      "Description": "高速飛行左前進2。高回転"
+    },
+    {
+      "Field": "flyDashFR2",
+      "Name": "高速飛行右前進2",
+      "Description": "高速飛行右前進2。高回転"
+    },
+    {
+      "Field": "dashEscapeF",
+      "Name": "ダッシュ緊急回避前",
+      "Description": "ダッシュ緊急回避前"
+    },
+    {
+      "Field": "dashEscapeB",
+      "Name": "ダッシュ緊急回避後",
+      "Description": "ダッシュ緊急回避後"
+    },
+    {
+      "Field": "dashEscapeL",
+      "Name": "ダッシュ緊急回避左",
+      "Description": "ダッシュ緊急回避左"
+    },
+    {
+      "Field": "dashEscapeR",
+      "Name": "ダッシュ緊急回避右",
+      "Description": "ダッシュ緊急回避右"
+    },
+    {
+      "Field": "analogMoveParamId",
+      "Name": "アナログ移動パラＩＤ",
+      "Description": "移動アニメブレンドで使用される移動アニメパラメータＩＤ"
+    },
+    {
+      "Field": "turnNoAnimAngle",
+      "Name": "アニメなし旋回角度[deg]",
+      "Description": "旋回角度がこの値以下だと旋回アニメを再生しません（敵旋回制御のみ有効）"
+    },
+    {
+      "Field": "turn45Angle",
+      "Name": "45度旋回アニメ角度[deg]",
+      "Description": "旋回角度がこの値以下だと45度旋回アニメを再生します（ボス2足のみ有効）"
+    },
+    {
+      "Field": "turn90Angle",
+      "Name": "90度旋回アニメ角度[deg]",
+      "Description": "旋回角度がこの値以下だと90度旋回アニメを再生します（敵旋回制御のみ有効）"
+    },
+    {
+      "Field": "turnWaitNoAnimAngle",
+      "Name": "停止時アニメなし旋回角度[deg]",
+      "Description": "旋回角度がこの値以下だと旋回アニメを再生しません[停止時]（ボス2足のみ有効）"
+    }
+  ]
+}

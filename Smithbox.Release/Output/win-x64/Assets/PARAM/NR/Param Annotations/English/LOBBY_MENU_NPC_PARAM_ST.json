@@ -1,0 +1,38 @@
+{
+  "Param": "LOBBY_MENU_NPC_PARAM_ST",
+  "Type": "LOBBY_MENU_NPC_PARAM_ST",
+  "Name": "LOBBY_MENU_NPC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon ID"
+    },
+    {
+      "Field": "iconId_2",
+      "Name": "Alt Icon ID",
+      "Description": "Alt Icon ID"
+    },
+    {
+      "Field": "arrivalEventFlag",
+      "Name": "Arrival Flag",
+      "Description": "The event flag that marks the arrival of the NPC."
+    },
+    {
+      "Field": "showMapIconEventFlag",
+      "Name": "Use Alt Map Icon Flag",
+      "Description": "The event flag that triggers the display of the alternate map icon."
+    },
+    {
+      "Field": "hideMapIconEventFlag",
+      "Name": "Hide Map Icon Flag",
+      "Description": "The event flag that hides the display of the map icon."
+    }
+  ]
+}

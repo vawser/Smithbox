@@ -1,0 +1,29 @@
+{
+  "Key": "AREA_PARAM_INTRUDE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AREA_PARAM_INTRUDE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Permission"
+        }
+      ]
+    }
+  ]
+}

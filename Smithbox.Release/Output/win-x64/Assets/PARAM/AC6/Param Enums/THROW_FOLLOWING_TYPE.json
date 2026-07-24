@@ -1,0 +1,20 @@
+{
+  "Key": "THROW_FOLLOWING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_FOLLOWING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 230"
+        }
+      ]
+    }
+  ]
+}

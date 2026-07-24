@@ -1,0 +1,551 @@
+{
+  "Name": "BulletShotgunParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Default shotgun -- デフォルト散弾"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "EN shotgun (spread) -- ENショットガン（拡散）"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "EN shotgun (vertical) -- ENショットガン（垂直）"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "shotgun (napalm) -- 散弾銃（ナパーム）"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Shotgun (napalm) charge -- 散弾銃（ナパーム）チャージ"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "pulse shotgun -- パルスショットガン"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "stun machine electric -- スタン機電"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "Former communist country general purpose MT shotgun -- 旧共産圏汎用MT\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "Former Communist bloc general purpose MT missile -- 旧共産圏汎用MT\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 32500310,
+      "Entries": [
+        "Regular Army AC (Heavy Firepower) Diffusion Buzz Diffusion -- 正規軍AC（重火力）\u3000拡散バズ 拡散"
+      ]
+    },
+    {
+      "ID": 32504000,
+      "Entries": [
+        "Regular army AC (high mobility) for appearance production -- 正規軍AC(高機動)\u3000登場演出用"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "Regular army heavy AC missile rapid fire left -- 正規軍重AC\u3000ミサイル\u3000連射\u3000左"
+      ]
+    },
+    {
+      "ID": 32600310,
+      "Entries": [
+        "Regular army heavy AC missile rapid fire right -- 正規軍重AC\u3000ミサイル\u3000連射\u3000右"
+      ]
+    },
+    {
+      "ID": 32600560,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Jab Ejection Left -- 正規軍重AC\u3000AIミサイル\u3000ジャブ\u3000射出\u3000左"
+      ]
+    },
+    {
+      "ID": 32600561,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Jab Deployment Left -- 正規軍重AC\u3000AIミサイル\u3000ジャブ\u3000展開\u3000左"
+      ]
+    },
+    {
+      "ID": 32600570,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Jab Ejection Right -- 正規軍重AC\u3000AIミサイル\u3000ジャブ\u3000射出\u3000右"
+      ]
+    },
+    {
+      "ID": 32600571,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Jab Deployment Right -- 正規軍重AC\u3000AIミサイル\u3000ジャブ\u3000展開\u3000右"
+      ]
+    },
+    {
+      "ID": 32601200,
+      "Entries": [
+        "Regular army heavy AC missile Gadob from standby left -- 正規軍重AC\u3000ミサイル\u3000ガドブ\u3000待機から\u3000左"
+      ]
+    },
+    {
+      "ID": 32601201,
+      "Entries": [
+        "Regular army heavy AC missile Gadob from standby right -- 正規軍重AC\u3000ミサイル\u3000ガドブ\u3000待機から\u3000右"
+      ]
+    },
+    {
+      "ID": 32601202,
+      "Entries": [
+        "Regular Army Heavy AC Missile Gadobu Right from shield stance -- 正規軍重AC\u3000ミサイル\u3000ガドブ\u3000シールド構えから\u3000右"
+      ]
+    },
+    {
+      "ID": 32601300,
+      "Entries": [
+        "Regular army heavy AC missile close spread -- 正規軍重AC\u3000ミサイル\u3000至近拡散"
+      ]
+    },
+    {
+      "ID": 32601400,
+      "Entries": [
+        "Regular army heavy AC missile check start left -- 正規軍重AC\u3000ミサイル\u3000牽制開始\u3000左"
+      ]
+    },
+    {
+      "ID": 32601410,
+      "Entries": [
+        "Regular Army Heavy AC Missile Check Start Right -- 正規軍重AC\u3000ミサイル\u3000牽制開始\u3000右"
+      ]
+    },
+    {
+      "ID": 32601500,
+      "Entries": [
+        "Regular army heavy AC missile mountain retreat -- 正規軍重AC\u3000ミサイル\u3000山なり後退"
+      ]
+    },
+    {
+      "ID": 32601600,
+      "Entries": [
+        "Regular Army Heavy AC Missile Dynamic CS -- 正規軍重AC\u3000ミサイル\u3000ダイナミックCS"
+      ]
+    },
+    {
+      "ID": 32608000,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Gadob Ejection Left -- 正規軍重AC\u3000AIミサイル\u3000ガドブ\u3000射出\u3000左"
+      ]
+    },
+    {
+      "ID": 32608001,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Gadob Deployment Left -- 正規軍重AC\u3000AIミサイル\u3000ガドブ\u3000展開\u3000左"
+      ]
+    },
+    {
+      "ID": 32608010,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Gadob Ejection Right -- 正規軍重AC\u3000AIミサイル\u3000ガドブ\u3000射出\u3000右"
+      ]
+    },
+    {
+      "ID": 32608011,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Gadob Deployment Right -- 正規軍重AC\u3000AIミサイル\u3000ガドブ\u3000展開\u3000右"
+      ]
+    },
+    {
+      "ID": 32608100,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Dynamic CS Ejection Left -- 正規軍重AC\u3000AIミサイル\u3000ダイナミックCS\u3000射出\u3000左"
+      ]
+    },
+    {
+      "ID": 32608101,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Dynamic CS Deployment Left -- 正規軍重AC\u3000AIミサイル\u3000ダイナミックCS\u3000展開\u3000左"
+      ]
+    },
+    {
+      "ID": 32608110,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Dynamic CS Ejection Right -- 正規軍重AC\u3000AIミサイル\u3000ダイナミックCS\u3000射出\u3000右"
+      ]
+    },
+    {
+      "ID": 32608111,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Dynamic CS Deployment Right -- 正規軍重AC\u3000AIミサイル\u3000ダイナミックCS\u3000展開\u3000右"
+      ]
+    },
+    {
+      "ID": 32609200,
+      "Entries": [
+        "Regular Army Heavy AC Missile Side Steer -- 正規軍重AC\u3000ミサイル\u3000横ステ"
+      ]
+    },
+    {
+      "ID": 32609300,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Side Steer Ejection Left -- 正規軍重AC\u3000AIミサイル\u3000横ステ\u3000射出\u3000左"
+      ]
+    },
+    {
+      "ID": 32609301,
+      "Entries": [
+        "Regular army heavy AC AI missile sideways deployment left -- 正規軍重AC\u3000AIミサイル\u3000横ステ\u3000展開\u3000左"
+      ]
+    },
+    {
+      "ID": 32609310,
+      "Entries": [
+        "Regular Army Heavy AC AI Missile Side Steer Ejection Right -- 正規軍重AC\u3000AIミサイル\u3000横ステ\u3000射出\u3000右"
+      ]
+    },
+    {
+      "ID": 32609311,
+      "Entries": [
+        "Regular army heavy AC AI missile sideways deployment right -- 正規軍重AC\u3000AIミサイル\u3000横ステ\u3000展開\u3000右"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "Quadruped MT shotgun -- 四脚MT ショットガン"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "Quadruped MT for shotgun zigzag -- 四脚MT ショットガンジグザグ用"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "Quadruped MT Throwing Gun Master -- 四脚MT 投擲銃親"
+      ]
+    },
+    {
+      "ID": 34000101,
+      "Entries": [
+        "Quadruped MT throwing gun -- 四脚MT 投擲銃子"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Old World MT Chest Missile Left Ejection -- 旧世界MT 胸部ミサイル 左 射出"
+      ]
+    },
+    {
+      "ID": 35000001,
+      "Entries": [
+        "Old world MT chest missile left guidance -- 旧世界MT 胸部ミサイル 左 誘導"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Old World MT Chest Missile Right Ejection -- 旧世界MT 胸部ミサイル 右 射出"
+      ]
+    },
+    {
+      "ID": 35000011,
+      "Entries": [
+        "Old world MT chest missile right guidance -- 旧世界MT 胸部ミサイル 右 誘導"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "c4000 ADF EN shotgun opening -- c4000 ADF\u3000ENショットガン 開き"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "valkyria shotgun single shot -- ヴァルキュリア ショットガン 単発"
+      ]
+    },
+    {
+      "ID": 41000320,
+      "Entries": [
+        "Valkyria shotgun 2 guns at the same time -- ヴァルキュリア ショットガン 2門同時"
+      ]
+    },
+    {
+      "ID": 41000330,
+      "Entries": [
+        "Valkyria shotgun 4 guns at the same time -- ヴァルキュリア ショットガン 4門同時"
+      ]
+    },
+    {
+      "ID": 42000400,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC\u3000マイクロミサイル（左）"
+      ]
+    },
+    {
+      "ID": 42000401,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Glide Shooting Left) -- c4200 次世代プロトAC\u3000マイクロミサイル（滑空射撃左）"
+      ]
+    },
+    {
+      "ID": 42000402,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Flight Throw Left) -- c4200 次世代プロトAC\u3000マイクロミサイル（飛行投げ左）"
+      ]
+    },
+    {
+      "ID": 42000500,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC\u3000マイクロミサイル（右）"
+      ]
+    },
+    {
+      "ID": 42000501,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Glide Shooting Right) -- c4200 次世代プロトAC\u3000マイクロミサイル（滑空射撃右）"
+      ]
+    },
+    {
+      "ID": 42000502,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Flight Throw Right) -- c4200 次世代プロトAC\u3000マイクロミサイル（飛行投げ右）"
+      ]
+    },
+    {
+      "ID": 42503100,
+      "Entries": [
+        "Orbit Seed Ob Active Jab -- オービットシード\u3000Ob\u3000能動ジャブ"
+      ]
+    },
+    {
+      "ID": 42505004,
+      "Entries": [
+        "Orbit Seed Ob Left HA Left Approach -- オービットシード\u3000Ob\u3000左HA\u3000左\u3000接近"
+      ]
+    },
+    {
+      "ID": 42505005,
+      "Entries": [
+        "Orbit Seed Ob Left HA Right Approach -- オービットシード\u3000Ob\u3000左HA\u3000右\u3000接近"
+      ]
+    },
+    {
+      "ID": 42505104,
+      "Entries": [
+        "Orbit Seed Ob Left HA Left 2nd Stage Follow -- オービットシード\u3000Ob\u3000左HA\u3000左\u30002段目\u3000追従"
+      ]
+    },
+    {
+      "ID": 42505105,
+      "Entries": [
+        "Orbit Seed Ob Left HA Right 2nd Stage Follow -- オービットシード\u3000Ob\u3000左HA\u3000右\u30002段目\u3000追従"
+      ]
+    },
+    {
+      "ID": 42505800,
+      "Entries": [
+        "Orbit Seed Ob Large Turn Back Left New -- オービットシード\u3000Ob\u3000大回り後退\u3000左\u3000新"
+      ]
+    },
+    {
+      "ID": 42505810,
+      "Entries": [
+        "Orbit Seed Ob Large Turn Back Right New -- オービットシード\u3000Ob\u3000大回り後退\u3000右\u3000新"
+      ]
+    },
+    {
+      "ID": 42506300,
+      "Entries": [
+        "Orbit Seed Ob Assault Left Retreat Counter Deployment -- オービットシード\u3000Obアサルト\u3000左\u3000後退カウンター\u3000展開"
+      ]
+    },
+    {
+      "ID": 42506301,
+      "Entries": [
+        "Orbit Seed Ob Assault Right Retreat Counter Deployment -- オービットシード\u3000Obアサルト\u3000右\u3000後退カウンター\u3000展開"
+      ]
+    },
+    {
+      "ID": 42506302,
+      "Entries": [
+        "Orbit Seed Ob Assault Left Retreat Counter Approach -- オービットシード\u3000Obアサルト\u3000左\u3000後退カウンター\u3000接近"
+      ]
+    },
+    {
+      "ID": 42506303,
+      "Entries": [
+        "Orbit Seed Ob Assault Right Retreat Counter Approach -- オービットシード\u3000Obアサルト\u3000右\u3000後退カウンター\u3000接近"
+      ]
+    },
+    {
+      "ID": 42506306,
+      "Entries": [
+        "Orbit Seed Ob Assault Left Retreat Counter Redirection -- オービットシード\u3000Obアサルト\u3000左\u3000後退カウンター\u3000再誘導"
+      ]
+    },
+    {
+      "ID": 42506307,
+      "Entries": [
+        "Orbit Seed Ob Assault Right Retreat Counter Redirection -- オービットシード\u3000Obアサルト\u3000右\u3000後退カウンター\u3000再誘導"
+      ]
+    },
+    {
+      "ID": 42508005,
+      "Entries": [
+        "Orbit Seed Old Ob HU Dispensing Left Seed Tracking -- オービットシード\u3000古Ob\u3000HU\u3000小出し左\u3000シード追尾"
+      ]
+    },
+    {
+      "ID": 42508015,
+      "Entries": [
+        "Orbit Seed Old Ob HU Dispensing Right Seed Tracking -- オービットシード\u3000古Ob\u3000HU\u3000小出し右\u3000シード追尾"
+      ]
+    },
+    {
+      "ID": 42508204,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring A surfacing -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きA\u3000浮上"
+      ]
+    },
+    {
+      "ID": 42508205,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring A Cling -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きA\u3000纏わりつき"
+      ]
+    },
+    {
+      "ID": 42508206,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring A Approach -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きA\u3000接近"
+      ]
+    },
+    {
+      "ID": 42508214,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring B Surfacing -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きB\u3000浮上"
+      ]
+    },
+    {
+      "ID": 42508215,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring B Clinging -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きB\u3000纏わりつき"
+      ]
+    },
+    {
+      "ID": 42508216,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring B Approach -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きB\u3000接近"
+      ]
+    },
+    {
+      "ID": 42508224,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring C Surfacing -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きC\u3000浮上"
+      ]
+    },
+    {
+      "ID": 42508225,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring C Tangled -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きC\u3000纏わりつき"
+      ]
+    },
+    {
+      "ID": 42508226,
+      "Entries": [
+        "Orbit Seed Old Ob HU Doba Spring C Approach -- オービットシード\u3000古Ob\u3000HU\u3000ドバ湧きC\u3000接近"
+      ]
+    },
+    {
+      "ID": 42508432,
+      "Entries": [
+        "Orbit Seed Old Ob Active Jab New Ver Right Deployment Emerging -- オービットシード\u3000古Ob\u3000能動ジャブ\u3000新ver\u3000右\u3000展開浮上"
+      ]
+    },
+    {
+      "ID": 42508433,
+      "Entries": [
+        "Orbit Seed Old Ob Active Jab New ver Right Movement -- オービットシード\u3000古Ob\u3000能動ジャブ\u3000新ver\u3000右\u3000移動"
+      ]
+    },
+    {
+      "ID": 42508605,
+      "Entries": [
+        "Orbit Seed Old Ob Long Distance Approach Follow-up Seed Tracking -- オービットシード\u3000古Ob\u3000遠距離接近\u3000追従\u3000シード追尾"
+      ]
+    },
+    {
+      "ID": 61010200,
+      "Entries": [
+        "sea ​​spider diffusion gun -- ウミグモ 拡散砲"
+      ]
+    },
+    {
+      "ID": 64201300,
+      "Entries": [
+        "Mining ship highlight missile -- 採掘艦目玉\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "6 plasma missiles -- プラズマミサイル 6連"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "D layer giant cannon anemone laser fire -- D層巨大砲台 アネモネ\u3000レーザー連射"
+      ]
+    },
+    {
+      "ID": 73900110,
+      "Entries": [
+        "D-layer giant battery Anemone Placon Misako -- D層巨大砲台 アネモネ\u3000プラコンミサ\u3000子"
+      ]
+    }
+  ]
+}

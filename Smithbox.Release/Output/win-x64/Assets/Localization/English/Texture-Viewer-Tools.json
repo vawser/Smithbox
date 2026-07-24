@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Tools_Header_View",
+      "Text": "View"
+    },
+    {
+      "Key": "TEXVIEW_Tools_Header_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "TEXVIEW_Tools_View_Export_Texture",
+      "Text": "Export Texture"
+    },
+    {
+      "Key": "TEXVIEW_Tools_Action_Export_Texture",
+      "Text": "Export Texture"
+    },
+    {
+      "Key": "TEXVIEW_Tools_Action_Export_Texture_TT",
+      "Text": "Export currently selected texture."
+    }
+  ]
+}

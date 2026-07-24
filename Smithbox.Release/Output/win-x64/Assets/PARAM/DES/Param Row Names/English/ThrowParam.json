@@ -1,0 +1,239 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 4,
+      "Entries": [
+        "PC → Snake Soldier (Swordsman) Stabbing after Paris (front)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "PC → Snake Soldier (Swordsman) Stabbing after Paris (after)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "PC → Snake Soldier (Swordsman) Back spinal cord stab"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "PC → crocodile stop"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "PC → crocodile stop"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "PC → slave soldier (dagger) Back stab"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "PC → slave soldier (dagger) throw after parry"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "PC → general soldier (long sword) back stabbing"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "PC→general soldier (long sword) throw after parry"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "PC → knight back stab"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "PC → Knight Throw after parry"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "PC → Assassin back stabbing"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "PC→Assassin Throw after Parry"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "PC → Corrupt Back stabbing"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "PC → Corrupt Throw after parry"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "PC → Skeleton Swordsman back stabbing"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "PC → Skeleton Swordsman Parry Post-Throw"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "PC→Skeleton Swordsman/Different color back stabbing"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "PC→Skeleton Swordsman・Different Color Parry Post Throw"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "PC → scale miner (pickle) back stab"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "PC → Scale Miner (Pickle) Parry Throw"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "PC → Jailer Stab in the back"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "PC → Jailer Throw after parry"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "PC → Prisoner Stab in the back"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "PC → Prisoner Parry back throw"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "PC → octopus head stabbed in the back"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "PC → Octopus head throw after parry"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "PC → Skeleton swordsman black back stabbing"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "PC → Skeleton Swordsman Black Parry Throw"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Kagejo → PC back stab"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Hawk → PC Throw"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Octopus → PC brain combo"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "King's sword → PC frontal stab"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Large mosquito → PC blood sucker"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Worm → PC front stab"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "King Lendl → PC grab throw"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "PC → NPC back stab"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "PC → PC back stabbing"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "PC → PC Parry Throw"
+      ]
+    }
+  ]
+}

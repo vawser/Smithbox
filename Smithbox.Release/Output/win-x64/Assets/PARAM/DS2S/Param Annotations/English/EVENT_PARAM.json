@@ -1,0 +1,58 @@
+{
+  "Param": "EVENT_PARAM",
+  "Type": "EVENT_PARAM",
+  "Name": "EVENT_PARAM",
+  "Description": "Defines configuration settings for a gameplay or map event, including ownership, startup behavior, state handling, and execution conditions.",
+  "Fields": [
+    {
+      "Field": "stateMapId",
+      "Name": "State Map ID",
+      "Description": "Identifier of the state map associated with this event. Used to determine event state transitions or conditions."
+    },
+    {
+      "Field": "ownerId",
+      "Name": "Owner Entity ID",
+      "Description": "Identifier of the owner entity or object associated with this event."
+    },
+    {
+      "Field": "bonfireId",
+      "Name": "Bonfire ID",
+      "Description": "References the bonfire tied to this event, if applicable."
+    },
+    {
+      "Field": "resourceType",
+      "Name": "Resource Type",
+      "Description": "Specifies the type of resource or asset used by the event."
+    },
+    {
+      "Field": "bootType",
+      "Name": "Boot Type",
+      "Description": "Determines how or when the event is initialized or started."
+    },
+    {
+      "Field": "ownerType",
+      "Name": "Owner Type",
+      "Description": "Specifies the category or classification of the event owner."
+    },
+    {
+      "Field": "bGroupConditionSync",
+      "Name": "Group Condition Sync",
+      "Description": "Controls whether event group conditions are synchronized across related events."
+    },
+    {
+      "Field": "bPlayerDeadPlaying",
+      "Name": "Run While Player Is Dead",
+      "Description": "If enabled, the event continues to execute even while the player character is dead."
+    },
+    {
+      "Field": "bDemoPlaying",
+      "Name": "Run During Cutscenes",
+      "Description": "If enabled, the event remains active during cutscenes or demo playback."
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

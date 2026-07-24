@@ -1,0 +1,1043 @@
+{
+  "Name": "PlayRegionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid data (deletion prohibited) -- 無効データ（削除禁止）"
+      ]
+    },
+    {
+      "ID": 100090,
+      "Entries": [
+        "Samurai residence _ saveable -- 武家屋敷_セーブ可"
+      ]
+    },
+    {
+      "ID": 100091,
+      "Entries": [
+        "Samurai residence _ cannot be saved -- 武家屋敷_セーブ不可"
+      ]
+    },
+    {
+      "ID": 100092,
+      "Entries": [
+        "Samurai residence _ Saveable (defeating butterflies) -- 武家屋敷_セーブ可（お蝶撃破）"
+      ]
+    },
+    {
+      "ID": 100093,
+      "Entries": [
+        "Samurai residence _ Saveable (Shura Samurai) -- 武家屋敷_セーブ可（修羅侍）"
+      ]
+    },
+    {
+      "ID": 100094,
+      "Entries": [
+        "Samurai residence_save possible (spear monk soldier) -- 武家屋敷_セーブ可（槍僧兵）"
+      ]
+    },
+    {
+      "ID": 100095,
+      "Entries": [
+        "Samurai residence _ Saveable (Kageshu) -- 武家屋敷_セーブ可（孤影衆）"
+      ]
+    },
+    {
+      "ID": 110090,
+      "Entries": [
+        "Castle_save possible -- 城下_セーブ可"
+      ]
+    },
+    {
+      "ID": 110091,
+      "Entries": [
+        "Castle_cannot save -- 城下_セーブ不可"
+      ]
+    },
+    {
+      "ID": 110092,
+      "Entries": [
+        "Castle_save possible (defeat the Buddhist priest) -- 城下_セーブ可（仏師撃破）"
+      ]
+    },
+    {
+      "ID": 110093,
+      "Entries": [
+        "Castle_save possible (defeat the horse-riding warrior) -- 城下_セーブ可（騎馬武者撃破）"
+      ]
+    },
+    {
+      "ID": 110094,
+      "Entries": [
+        "Castle_save possible (defeat the big snake) -- 城下_セーブ可（大蛇撃破）"
+      ]
+    },
+    {
+      "ID": 110095,
+      "Entries": [
+        "Castle_save possible (Samurai General 1) -- 城下_セーブ可（侍大将１）"
+      ]
+    },
+    {
+      "ID": 110096,
+      "Entries": [
+        "Castle_Saveable (Akaoni) -- 城下_セーブ可（赤鬼）"
+      ]
+    },
+    {
+      "ID": 110097,
+      "Entries": [
+        "Castle_save possible (Toraguchi) -- 城下_セーブ可（虎口）"
+      ]
+    },
+    {
+      "ID": 110098,
+      "Entries": [
+        "Castle_save possible (no neck) -- 城下_セーブ可（首無し）"
+      ]
+    },
+    {
+      "ID": 111090,
+      "Entries": [
+        "Honjo_save is possible -- 本城_セーブ可"
+      ]
+    },
+    {
+      "ID": 111091,
+      "Entries": [
+        "Honjo_cannot be saved -- 本城_セーブ不可"
+      ]
+    },
+    {
+      "ID": 111092,
+      "Entries": [
+        "Honjo_Save possible (Rival / Ninja army long defeat) -- 本城_セーブ可（ライバル/忍軍の長撃破）"
+      ]
+    },
+    {
+      "ID": 111093,
+      "Entries": [
+        "Honjo_Save (Middle Boss_Defeat Fire Cow) -- 本城_セーブ（中ボス_火牛撃破）"
+      ]
+    },
+    {
+      "ID": 111094,
+      "Entries": [
+        "Honjo_Save (Middle Boss_Swordsman / Defeat the Shadows) -- 本城_セーブ（中ボス_剣客/孤影衆撃破）"
+      ]
+    },
+    {
+      "ID": 111095,
+      "Entries": [
+        "Honjo_Save (Middle Boss_Defeat Samurai General) -- 本城_セーブ（中ボス_侍大将撃破）"
+      ]
+    },
+    {
+      "ID": 111096,
+      "Entries": [
+        "Honjo_Save (Defeat the lonely shadows whose younger brother was killed) -- 本城_セーブ（中ボス_弟を殺された孤影衆撃破）"
+      ]
+    },
+    {
+      "ID": 111097,
+      "Entries": [
+        "Honjo_Save (Middle Boss_Defeat Red Demon) -- 本城_セーブ（中ボス_赤鬼撃破）"
+      ]
+    },
+    {
+      "ID": 111098,
+      "Entries": [
+        "Honjo_Save (Middle Boss_Swordsman_Red Eye Defeat) -- 本城_セーブ（中ボス_剣客_赤目撃破）"
+      ]
+    },
+    {
+      "ID": 111099,
+      "Entries": [
+        "Honjo_Save (Middle Boss_No Underwater Neck) -- 本城_セーブ（中ボス_水中首なし）"
+      ]
+    },
+    {
+      "ID": 112090,
+      "Entries": [
+        "Hidden prison _ saveable -- 隠し牢_セーブ可"
+      ]
+    },
+    {
+      "ID": 112091,
+      "Entries": [
+        "Hidden prison_cannot save -- 隠し牢_セーブ不可"
+      ]
+    },
+    {
+      "ID": 112092,
+      "Entries": [
+        "Hidden prison_save possible (rival / sword sacred defeat) -- 隠し牢_セーブ可（ライバル/剣聖撃破）"
+      ]
+    },
+    {
+      "ID": 112093,
+      "Entries": [
+        "Hidden prison_save possible (middle boss_samurai general_tutorial defeat) -- 隠し牢_セーブ可（中ボス_侍大将_チュートリアル撃破）"
+      ]
+    },
+    {
+      "ID": 112094,
+      "Entries": [
+        "Hidden prison_save possible (middle boss_defeat the lone shadows) -- 隠し牢_セーブ可（中ボス_孤影衆撃破）"
+      ]
+    },
+    {
+      "ID": 112095,
+      "Entries": [
+        "Hidden prison _ saveable (middle boss _ samurai general _ four heavenly kings defeated) -- 隠し牢_セーブ可（中ボス_侍大将_四天王平常撃破）"
+      ]
+    },
+    {
+      "ID": 112096,
+      "Entries": [
+        "Hidden prison _ saveable (middle boss _ samurai general _ defeat Shitenno Tokugawa) -- 隠し牢_セーブ可（中ボス_侍大将_四天王徳川撃破）"
+      ]
+    },
+    {
+      "ID": 130090,
+      "Entries": [
+        "Dungeon_save possible -- 地下牢_セーブ可"
+      ]
+    },
+    {
+      "ID": 130091,
+      "Entries": [
+        "Dungeon_cannot be saved -- 地下牢_セーブ不可"
+      ]
+    },
+    {
+      "ID": 130092,
+      "Entries": [
+        "Dungeon_save possible (middle boss_seven-faced warrior) -- 地下牢_セーブ可（中ボス_七面武者）"
+      ]
+    },
+    {
+      "ID": 150090,
+      "Entries": [
+        "Sick village_save is possible -- 病み村_セーブ可"
+      ]
+    },
+    {
+      "ID": 150091,
+      "Entries": [
+        "Sick village_cannot save -- 病み村_セーブ不可"
+      ]
+    },
+    {
+      "ID": 150092,
+      "Entries": [
+        "Sick village_save possible (defeat false priests) -- 病み村_セーブ可（偽破戒僧撃破）"
+      ]
+    },
+    {
+      "ID": 150093,
+      "Entries": [
+        "Sick village_save possible (defeat middle boss_Innsmouth) -- 病み村_セーブ可（中ボス_インスマウス撃破）"
+      ]
+    },
+    {
+      "ID": 150094,
+      "Entries": [
+        "Sick village_save possible (middle boss_shura samurai defeated) -- 病み村_セーブ可（中ボス_修羅侍撃破）"
+      ]
+    },
+    {
+      "ID": 150095,
+      "Entries": [
+        "Sick village_save possible (defeat the middle boss female player) -- 病み村_セーブ可（中ボス女奏者撃破）"
+      ]
+    },
+    {
+      "ID": 170090,
+      "Entries": [
+        "Valley_saveable -- 渓谷_セーブ可"
+      ]
+    },
+    {
+      "ID": 170091,
+      "Entries": [
+        "Valley_cannot be saved -- 渓谷_セーブ不可"
+      ]
+    },
+    {
+      "ID": 170092,
+      "Entries": [
+        "Valley_save possible (defeat Yasha Ape) -- 渓谷_セーブ可（夜叉猿撃破）"
+      ]
+    },
+    {
+      "ID": 170093,
+      "Entries": [
+        "Valley_save possible (temporary defeat without Yasha Ape Neck) -- 渓谷_セーブ可（夜叉猿首なし一時撃破）"
+      ]
+    },
+    {
+      "ID": 170094,
+      "Entries": [
+        "Valley_save possible (defeat headless) -- 渓谷_セーブ可（首なし撃破）"
+      ]
+    },
+    {
+      "ID": 170095,
+      "Entries": [
+        "Valley_save possible (defeat the upper female sniper) -- 渓谷_セーブ可（上層女スナイパー撃破）"
+      ]
+    },
+    {
+      "ID": 170096,
+      "Entries": [
+        "Valley_save possible (Centipede defeat) -- 渓谷_セーブ可（ムカデ大撃破）"
+      ]
+    },
+    {
+      "ID": 170097,
+      "Entries": [
+        "Valley_save possible (defeat the lower female sniper) -- 渓谷_セーブ可（下層女スナイパー撃破）"
+      ]
+    },
+    {
+      "ID": 200090,
+      "Entries": [
+        "Temple_save possible -- 寺_セーブ可"
+      ]
+    },
+    {
+      "ID": 200091,
+      "Entries": [
+        "Temple_cannot be saved -- 寺_セーブ不可"
+      ]
+    },
+    {
+      "ID": 200092,
+      "Entries": [
+        "Temple_cannot be saved (infinite corridor) -- 寺_セーブ不可（無限回廊）"
+      ]
+    },
+    {
+      "ID": 200093,
+      "Entries": [
+        "Temple_save possible (defeat Nanban armor) -- 寺_セーブ可（南蛮甲冑撃破）"
+      ]
+    },
+    {
+      "ID": 200094,
+      "Entries": [
+        "Temple_save possible (Defeat Centipede) -- 寺_セーブ可（ムカデ大撃破）"
+      ]
+    },
+    {
+      "ID": 250090,
+      "Entries": [
+        "Submerged city_save possible -- 水没都_セーブ可"
+      ]
+    },
+    {
+      "ID": 250091,
+      "Entries": [
+        "Submerged city_cannot save -- 水没都_セーブ不可"
+      ]
+    },
+    {
+      "ID": 250092,
+      "Entries": [
+        "Submerged city_save possible (defeat the priest) -- 水没都_セーブ可（破戒僧撃破）"
+      ]
+    },
+    {
+      "ID": 250093,
+      "Entries": [
+        "Submerged city_save possible (defeat Nishikigoi) -- 水没都_セーブ可（錦鯉撃破）"
+      ]
+    },
+    {
+      "ID": 250094,
+      "Entries": [
+        "Submerged city_save possible (middle boss_thunder kemari Genpei warrior defeated) -- 水没都_セーブ可（中ボス_雷蹴鞠源平武者撃破）"
+      ]
+    },
+    {
+      "ID": 250095,
+      "Entries": [
+        "Submerged city_save possible (middle boss_innsmouth fire cow defeated) -- 水没都_セーブ可（中ボス_インスマウス火牛撃破）"
+      ]
+    },
+    {
+      "ID": 250096,
+      "Entries": [
+        "Submerged city_save possible (middle boss_seven-faced warrior defeated) -- 水没都_セーブ可（中ボス_七面武者撃破）"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Royal Castle 1_01 -- 王城1_01"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "Royal Castle 1_02 -- 王城1_02"
+      ]
+    },
+    {
+      "ID": 300003,
+      "Entries": [
+        "Royal Castle 1_03 -- 王城1_03"
+      ]
+    },
+    {
+      "ID": 300004,
+      "Entries": [
+        "Royal Castle 1_04 -- 王城1_04"
+      ]
+    },
+    {
+      "ID": 300006,
+      "Entries": [
+        "Royal Castle 1_06 -- 王城1_06"
+      ]
+    },
+    {
+      "ID": 300007,
+      "Entries": [
+        "Royal Castle 1_07 -- 王城1_07"
+      ]
+    },
+    {
+      "ID": 300008,
+      "Entries": [
+        "Royal Castle 1_08 -- 王城1_08"
+      ]
+    },
+    {
+      "ID": 300009,
+      "Entries": [
+        "Royal Castle 1_09 -- 王城1_09"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "Royal Castle 1_20 -- 王城1_20"
+      ]
+    },
+    {
+      "ID": 300021,
+      "Entries": [
+        "Royal Castle 1_21 -- 王城1_21"
+      ]
+    },
+    {
+      "ID": 300022,
+      "Entries": [
+        "Royal Castle 1_22 -- 王城1_22"
+      ]
+    },
+    {
+      "ID": 300023,
+      "Entries": [
+        "Royal Castle 1_24 -- 王城1_24"
+      ]
+    },
+    {
+      "ID": 300024,
+      "Entries": [
+        "Royal Castle 1_25 -- 王城1_25"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Royal Castle 2_00 -- 王城2_00"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Royal Castle 2_01 -- 王城2_01"
+      ]
+    },
+    {
+      "ID": 301002,
+      "Entries": [
+        "Royal Castle 2_02 -- 王城2_02"
+      ]
+    },
+    {
+      "ID": 301003,
+      "Entries": [
+        "Royal Castle 2_03 -- 王城2_03"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Royal Castle 2_10 -- 王城2_10"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Royal Castle 2_11 -- 王城2_11"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Tower Town_00 -- 塔の街_00"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Tower Town_01 -- 塔の街_01"
+      ]
+    },
+    {
+      "ID": 310002,
+      "Entries": [
+        "Tower Town_02 -- 塔の街_02"
+      ]
+    },
+    {
+      "ID": 310003,
+      "Entries": [
+        "Tower Town_03 -- 塔の街_03"
+      ]
+    },
+    {
+      "ID": 310004,
+      "Entries": [
+        "Tower Town_04 -- 塔の街_04"
+      ]
+    },
+    {
+      "ID": 310020,
+      "Entries": [
+        "Tower Town_20 -- 塔の街_20"
+      ]
+    },
+    {
+      "ID": 310021,
+      "Entries": [
+        "Tower Town_21 -- 塔の街_21"
+      ]
+    },
+    {
+      "ID": 320001,
+      "Entries": [
+        "Bridge_01 -- 橋_01"
+      ]
+    },
+    {
+      "ID": 320002,
+      "Entries": [
+        "Bridge_02 -- 橋_02"
+      ]
+    },
+    {
+      "ID": 320010,
+      "Entries": [
+        "Bridge_10 -- 橋_10"
+      ]
+    },
+    {
+      "ID": 320011,
+      "Entries": [
+        "Bridge_11 -- 橋_11"
+      ]
+    },
+    {
+      "ID": 320012,
+      "Entries": [
+        "Bridge_12 -- 橋_12"
+      ]
+    },
+    {
+      "ID": 320013,
+      "Entries": [
+        "Bridge_13 -- 橋_13"
+      ]
+    },
+    {
+      "ID": 320020,
+      "Entries": [
+        "Bridge_20 -- 橋_20"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Poison Swamp Forest_00 -- 毒沼の森_00"
+      ]
+    },
+    {
+      "ID": 330001,
+      "Entries": [
+        "Poison Swamp Forest_01 -- 毒沼の森_01"
+      ]
+    },
+    {
+      "ID": 330002,
+      "Entries": [
+        "Poison Swamp Forest_02 -- 毒沼の森_02"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Poison Swamp Forest_10 -- 毒沼の森_10"
+      ]
+    },
+    {
+      "ID": 330011,
+      "Entries": [
+        "Poison Swamp Forest_11 -- 毒沼の森_11"
+      ]
+    },
+    {
+      "ID": 330012,
+      "Entries": [
+        "Poison Swamp Forest_12 -- 毒沼の森_12"
+      ]
+    },
+    {
+      "ID": 330013,
+      "Entries": [
+        "Poison Swamp Forest_13 -- 毒沼の森_13"
+      ]
+    },
+    {
+      "ID": 330014,
+      "Entries": [
+        "Poison Swamp Forest_14 -- 毒沼の森_14"
+      ]
+    },
+    {
+      "ID": 330015,
+      "Entries": [
+        "Poison Swamp Forest_15 -- 毒沼の森_15"
+      ]
+    },
+    {
+      "ID": 330020,
+      "Entries": [
+        "Poison Swamp Forest_20 -- 毒沼の森_20"
+      ]
+    },
+    {
+      "ID": 330021,
+      "Entries": [
+        "Poison Swamp Forest_21 -- 毒沼の森_21"
+      ]
+    },
+    {
+      "ID": 330022,
+      "Entries": [
+        "Poison Swamp Forest_22 -- 毒沼の森_22"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Royal Castle 3_00 -- 王城3_00"
+      ]
+    },
+    {
+      "ID": 341001,
+      "Entries": [
+        "Royal Castle 3_01 -- 王城3_01"
+      ]
+    },
+    {
+      "ID": 341002,
+      "Entries": [
+        "Royal Castle 3_02 -- 王城3_02"
+      ]
+    },
+    {
+      "ID": 341003,
+      "Entries": [
+        "Royal Castle 3_03 -- 王城3_03"
+      ]
+    },
+    {
+      "ID": 341010,
+      "Entries": [
+        "Royal Castle 3_10 -- 王城3_10"
+      ]
+    },
+    {
+      "ID": 341011,
+      "Entries": [
+        "Royal Castle 3_11 -- 王城3_11"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Basilica Church_00 -- 聖堂教会_00"
+      ]
+    },
+    {
+      "ID": 350001,
+      "Entries": [
+        "Basilica Church_01 -- 聖堂教会_01"
+      ]
+    },
+    {
+      "ID": 350002,
+      "Entries": [
+        "Basilica Church_02 -- 聖堂教会_02"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "Basilica Church_03 -- 聖堂教会_03"
+      ]
+    },
+    {
+      "ID": 350004,
+      "Entries": [
+        "Basilica Church_04 -- 聖堂教会_04"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "Basilica Church_05 -- 聖堂教会_05"
+      ]
+    },
+    {
+      "ID": 350010,
+      "Entries": [
+        "Basilica Church_10 -- 聖堂教会_10"
+      ]
+    },
+    {
+      "ID": 350011,
+      "Entries": [
+        "Basilica Church_11 -- 聖堂教会_11"
+      ]
+    },
+    {
+      "ID": 350020,
+      "Entries": [
+        "Basilica Church_20 -- 聖堂教会_20"
+      ]
+    },
+    {
+      "ID": 360001,
+      "Entries": [
+        "God Tomb_01 -- 神墓_01"
+      ]
+    },
+    {
+      "ID": 360002,
+      "Entries": [
+        "God Tomb_02 -- 神墓_02"
+      ]
+    },
+    {
+      "ID": 360003,
+      "Entries": [
+        "God Tomb_03 -- 神墓_03"
+      ]
+    },
+    {
+      "ID": 370001,
+      "Entries": [
+        "Anor Ruins_01 -- アノール遺跡_01"
+      ]
+    },
+    {
+      "ID": 370002,
+      "Entries": [
+        "Anor Ruins_02 -- アノール遺跡_02"
+      ]
+    },
+    {
+      "ID": 370003,
+      "Entries": [
+        "Anor Ruins_03 -- アノール遺跡_03"
+      ]
+    },
+    {
+      "ID": 370004,
+      "Entries": [
+        "Anor Ruins_04 -- アノール遺跡_04"
+      ]
+    },
+    {
+      "ID": 370005,
+      "Entries": [
+        "Anor Ruins_05 -- アノール遺跡_05"
+      ]
+    },
+    {
+      "ID": 370006,
+      "Entries": [
+        "Anor Ruins_06 -- アノール遺跡_06"
+      ]
+    },
+    {
+      "ID": 370007,
+      "Entries": [
+        "Anor Ruins_07 -- アノール遺跡_07"
+      ]
+    },
+    {
+      "ID": 370008,
+      "Entries": [
+        "Anor Ruins_08 -- アノール遺跡_08"
+      ]
+    },
+    {
+      "ID": 370010,
+      "Entries": [
+        "Anor Ruins_10 -- アノール遺跡_10"
+      ]
+    },
+    {
+      "ID": 370011,
+      "Entries": [
+        "Anor Ruins_11 -- アノール遺跡_11"
+      ]
+    },
+    {
+      "ID": 370012,
+      "Entries": [
+        "Anor Ruins_12 -- アノール遺跡_12"
+      ]
+    },
+    {
+      "ID": 370013,
+      "Entries": [
+        "Anor Ruins_13 -- アノール遺跡_13"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Dungeon_00 -- ダンジョン_00"
+      ]
+    },
+    {
+      "ID": 380001,
+      "Entries": [
+        "Dungeon_01 -- ダンジョン_01"
+      ]
+    },
+    {
+      "ID": 380002,
+      "Entries": [
+        "Dungeon_02 -- ダンジョン_02"
+      ]
+    },
+    {
+      "ID": 380003,
+      "Entries": [
+        "Dungeon_03 -- ダンジョン_03"
+      ]
+    },
+    {
+      "ID": 380010,
+      "Entries": [
+        "Dungeon_10 -- ダンジョン_10"
+      ]
+    },
+    {
+      "ID": 380011,
+      "Entries": [
+        "Dungeon_11 -- ダンジョン_11"
+      ]
+    },
+    {
+      "ID": 380012,
+      "Entries": [
+        "Dungeon_12 -- ダンジョン_12"
+      ]
+    },
+    {
+      "ID": 380013,
+      "Entries": [
+        "Dungeon_13 -- ダンジョン_13"
+      ]
+    },
+    {
+      "ID": 380014,
+      "Entries": [
+        "Dungeon_14 -- ダンジョン_14"
+      ]
+    },
+    {
+      "ID": 380015,
+      "Entries": [
+        "Dungeon_15 -- ダンジョン_15"
+      ]
+    },
+    {
+      "ID": 380016,
+      "Entries": [
+        "Dungeon_16 -- ダンジョン_16"
+      ]
+    },
+    {
+      "ID": 380020,
+      "Entries": [
+        "Dungeon_20 -- ダンジョン_20"
+      ]
+    },
+    {
+      "ID": 380021,
+      "Entries": [
+        "Dungeon_21 -- ダンジョン_21"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Dungeon_01 -- 地下牢_01"
+      ]
+    },
+    {
+      "ID": 390001,
+      "Entries": [
+        "Dungeon_02 -- 地下牢_02"
+      ]
+    },
+    {
+      "ID": 390002,
+      "Entries": [
+        "Dungeon_03 -- 地下牢_03"
+      ]
+    },
+    {
+      "ID": 390003,
+      "Entries": [
+        "Dungeon_04 -- 地下牢_04"
+      ]
+    },
+    {
+      "ID": 390004,
+      "Entries": [
+        "Dungeon_05 -- 地下牢_05"
+      ]
+    },
+    {
+      "ID": 390005,
+      "Entries": [
+        "Dungeon_06 -- 地下牢_06"
+      ]
+    },
+    {
+      "ID": 390006,
+      "Entries": [
+        "Dungeon_07 -- 地下牢_07"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Base_00 -- 拠点_00"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "Base_01 -- 拠点_01"
+      ]
+    },
+    {
+      "ID": 400002,
+      "Entries": [
+        "Base_02 -- 拠点_02"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Base_10 -- 拠点_10"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Base_100 -- 拠点_100"
+      ]
+    },
+    {
+      "ID": 400101,
+      "Entries": [
+        "Base_101 -- 拠点_101"
+      ]
+    },
+    {
+      "ID": 400102,
+      "Entries": [
+        "Base_102 -- 拠点_102"
+      ]
+    },
+    {
+      "ID": 400110,
+      "Entries": [
+        "Base_110 -- 拠点_110"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Last map_00 -- ラストマップ_00"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "Last map_01 -- ラストマップ_01"
+      ]
+    },
+    {
+      "ID": 410002,
+      "Entries": [
+        "Last map_02 -- ラストマップ_02"
+      ]
+    },
+    {
+      "ID": 962000,
+      "Entries": [
+        "Proto_00 -- プロト_00"
+      ]
+    },
+    {
+      "ID": 990001,
+      "Entries": [
+        "PG test map 1 -- PGテストマップ1"
+      ]
+    },
+    {
+      "ID": 999990,
+      "Entries": [
+        "〇〇_ can be saved -- 〇〇_セーブ可"
+      ]
+    },
+    {
+      "ID": 999991,
+      "Entries": [
+        "〇〇_ cannot be saved -- 〇〇_セーブ不可"
+      ]
+    },
+    {
+      "ID": 999992,
+      "Entries": [
+        "〇〇_Save possible (conditions apply) -- 〇〇_セーブ可（条件あり）"
+      ]
+    }
+  ]
+}

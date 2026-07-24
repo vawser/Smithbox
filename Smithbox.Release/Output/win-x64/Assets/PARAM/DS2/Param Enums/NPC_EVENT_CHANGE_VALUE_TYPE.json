@@ -1,0 +1,47 @@
+{
+  "Key": "NPC_EVENT_CHANGE_VALUE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_EVENT_CHANGE_VALUE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Barter"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Repair or strengthen"
+        }
+      ]
+    }
+  ]
+}

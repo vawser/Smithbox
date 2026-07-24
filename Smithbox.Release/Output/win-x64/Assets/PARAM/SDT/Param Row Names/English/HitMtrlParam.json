@@ -1,0 +1,311 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Dirt"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grass"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Bamboo"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Straw"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Straw"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Tiles"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Dead Leaves"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water Puddle"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (Walkable)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (Diveable)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (with slowing)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Tatami"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Bush"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Wood Indoors"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Autumn Leaves"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Ice"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Water Slope"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Water Slope (swimming)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Grass In Water"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Grass In Water (swimming)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Cloud"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater Dirt"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater Stone"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Underwater Wood"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Miasma"
+      ]
+    }
+  ]
+}

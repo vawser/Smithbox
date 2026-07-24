@@ -1,0 +1,29 @@
+{
+  "Key": "MISSION_ALT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MISSION_ALT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Original"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alternate"
+        }
+      ]
+    }
+  ]
+}

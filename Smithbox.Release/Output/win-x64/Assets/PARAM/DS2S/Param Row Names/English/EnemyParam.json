@@ -1,0 +1,5861 @@
+{
+  "Name": "EnemyParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Data Test"
+      ]
+    },
+    {
+      "ID": 2235,
+      "Entries": [
+        "[Test] Royal Rat Authority (Weak)"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Test] Smelter Demon (Burn)"
+      ]
+    },
+    {
+      "ID": 3096,
+      "Entries": [
+        "[Test] Last Giant"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "[Test] The Pursuer - LV1"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "[Test] The Pursuer - LV2"
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "[Test] The Rotten (Left Arm Cut)"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "[Test] Throne Defender (Two Handed)"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[Test] Scorpioness Najka (Tail Cut)"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9113,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9160,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "[Test] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "For Damage Test"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[Test] Dark Spirit"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "[Test] Red Spirit Level 0"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "[Test] Red Spirit Level 1"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "[Test] Red Spirit Level 2"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "[Test] Red Spirit Level 3"
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        "[Test] Blue Spirit Level 0"
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        "[Test] Blue Spirit Level 1"
+      ]
+    },
+    {
+      "ID": 9603,
+      "Entries": [
+        "[Test] Blue Spirit Level 2"
+      ]
+    },
+    {
+      "ID": 9604,
+      "Entries": [
+        "[Test] Blue Spirit Level 3"
+      ]
+    },
+    {
+      "ID": 9605,
+      "Entries": [
+        "[Test] White Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9606,
+      "Entries": [
+        "[Test] White Phantom"
+      ]
+    },
+    {
+      "ID": 9607,
+      "Entries": [
+        "[Test] Gold Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9608,
+      "Entries": [
+        "[Test] Gold Phantom"
+      ]
+    },
+    {
+      "ID": 9609,
+      "Entries": [
+        "[Test] Dragon Spirit"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "[Test] Abyss Phantom"
+      ]
+    },
+    {
+      "ID": 9611,
+      "Entries": [
+        "[Test] Normal Ghost"
+      ]
+    },
+    {
+      "ID": 9612,
+      "Entries": [
+        "[Test] Bonfire Ghost"
+      ]
+    },
+    {
+      "ID": 9613,
+      "Entries": [
+        "[Test] Gravestone Phantom"
+      ]
+    },
+    {
+      "ID": 9614,
+      "Entries": [
+        "[Test] Abyss Phantom"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "[Test] Dark Spirit"
+      ]
+    },
+    {
+      "ID": 9621,
+      "Entries": [
+        "[Test] Red Spirit Level 0"
+      ]
+    },
+    {
+      "ID": 9622,
+      "Entries": [
+        "[Test] Red Spirit Level 1"
+      ]
+    },
+    {
+      "ID": 9623,
+      "Entries": [
+        "[Test] Red Spirit Level 2"
+      ]
+    },
+    {
+      "ID": 9624,
+      "Entries": [
+        "[Test] Red Spirit Level 3"
+      ]
+    },
+    {
+      "ID": 9625,
+      "Entries": [
+        "[Test] White Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9626,
+      "Entries": [
+        "[Test] White Phantom"
+      ]
+    },
+    {
+      "ID": 9627,
+      "Entries": [
+        "[Test] Gold Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9628,
+      "Entries": [
+        "[Test] Gold Phantom"
+      ]
+    },
+    {
+      "ID": 9640,
+      "Entries": [
+        "[Test] Dark Spirit"
+      ]
+    },
+    {
+      "ID": 9641,
+      "Entries": [
+        "[Test] Red Spirit Level 0"
+      ]
+    },
+    {
+      "ID": 9642,
+      "Entries": [
+        "[Test] Red Spirit Level 1"
+      ]
+    },
+    {
+      "ID": 9643,
+      "Entries": [
+        "[Test] Red Spirit Level 2"
+      ]
+    },
+    {
+      "ID": 9644,
+      "Entries": [
+        "[Test] Red Spirit Level 3"
+      ]
+    },
+    {
+      "ID": 9645,
+      "Entries": [
+        "[Test] White Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9646,
+      "Entries": [
+        "[Test] White Phantom"
+      ]
+    },
+    {
+      "ID": 9647,
+      "Entries": [
+        "[Test] Gold Shade Phantom"
+      ]
+    },
+    {
+      "ID": 9648,
+      "Entries": [
+        "[Test] Gold Phantom"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Forest Grotesque (Unarmed)"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Forest Grotesque (Unarmed, Black Phantom) - Shaded Woods_NG+"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Forest Grotesque (Unarmed, Black Phantom) - Things Betwixt_NG+"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Forest Grotesque (Bone Club)"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Forest Grotesque (Rock Thrower)"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Kobold - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "Kobold - Shaded Woods / Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Hollow Soldier (Spear & Shield)"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Hollow Soldier (Bastard Sword)"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "Hollow Soldier (Bastard Sword, Black Phantom)_NG+"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "Hollow Soldier (Halberd)"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Hollow Soldier (Estoc & Shield)"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Hollow Soldier (Bow)"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Royal Soldier (Spear & Shield)"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "Royal Soldier (Bastard Sword)"
+      ]
+    },
+    {
+      "ID": 102140,
+      "Entries": [
+        "Royal Soldier (Bow)"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Hollow Infantry (Unarmed)"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "Hollow Infantry (Bandit's Knife)"
+      ]
+    },
+    {
+      "ID": 103020,
+      "Entries": [
+        "Hollow Infantry (Sword & Shield) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 103022,
+      "Entries": [
+        "Hollow Infantry (Sword & Shield) - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 103030,
+      "Entries": [
+        "Hollow Infantry (Axe) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 103032,
+      "Entries": [
+        "Hollow Infantry (Axe) - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 103040,
+      "Entries": [
+        "Hollow Infantry (Bow) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 103051,
+      "Entries": [
+        "Hollow Infantry (Bow) - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 103111,
+      "Entries": [
+        "Drangleic Infantry (Sword)"
+      ]
+    },
+    {
+      "ID": 103121,
+      "Entries": [
+        "Drangleic Infantry (Axe)"
+      ]
+    },
+    {
+      "ID": 103131,
+      "Entries": [
+        "Drangleic Infantry (Bow)"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "Amana Shrine Maiden (Healer)"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "Amana Shrine Maiden (Sorceress)"
+      ]
+    },
+    {
+      "ID": 106001,
+      "Entries": [
+        "Hollow Priest (Boss - Prowling Magus & Congregation)"
+      ]
+    },
+    {
+      "ID": 106009,
+      "Entries": [
+        "Hollow Priest (Black Phantom) - Brightstone Cove Tseldora_NG+"
+      ]
+    },
+    {
+      "ID": 106021,
+      "Entries": [
+        "Hollow Priest - Unused"
+      ]
+    },
+    {
+      "ID": 106200,
+      "Entries": [
+        "Hollow Priestess"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 107001,
+      "Entries": [
+        "Parasitized Undead - Before Freja"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "Hollow Rogue (Daggers)"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "Hollow Rogue (Club)"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "Hollow Rogue (Bow)"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Varangian Sailor (Sword & Shield)"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Varangian Sailor (Scimitars)"
+      ]
+    },
+    {
+      "ID": 113020,
+      "Entries": [
+        "Varangian Sailor (Bow)"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Undead Traveler (Unarmed) - Statues"
+      ]
+    },
+    {
+      "ID": 115006,
+      "Entries": [
+        "Undead Traveler (Unarmed) - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 115014,
+      "Entries": [
+        "Undead Traveler - Unused"
+      ]
+    },
+    {
+      "ID": 115015,
+      "Entries": [
+        "Undead Traveler (Dagger) - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 115016,
+      "Entries": [
+        "Undead Traveler (Dagger) - Things Betwixt (Behind Statue)"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Stone Soldier (Spear & Shield)"
+      ]
+    },
+    {
+      "ID": 117010,
+      "Entries": [
+        "Stone Soldier (Spear)"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Black Hollow Mage - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 118001,
+      "Entries": [
+        "Black Hollow Mage (Boss - Executioner's Chariot)"
+      ]
+    },
+    {
+      "ID": 118201,
+      "Entries": [
+        "White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 119001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Giant (Unarmed)"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "Giant (Unarmed, Dive Bomber)"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Giant (Club)"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "Giant (Pyromancer, Poison Variant)"
+      ]
+    },
+    {
+      "ID": 121030,
+      "Entries": [
+        "Giant (Pyromancer, Fire Variant)"
+      ]
+    },
+    {
+      "ID": 123002,
+      "Entries": [
+        "Suspicious Shadow - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 123003,
+      "Entries": [
+        "Suspicious Shadow - Unused"
+      ]
+    },
+    {
+      "ID": 123004,
+      "Entries": [
+        "Suspicious Shadow - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 123005,
+      "Entries": [
+        "Suspicious Shadow - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 123010,
+      "Entries": [
+        "Suspicious Shadow - Unused"
+      ]
+    },
+    {
+      "ID": 123022,
+      "Entries": [
+        "Suspicious Shadow (Flexile Sentry)_NG+"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Manikin (Claws) - Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 124010,
+      "Entries": [
+        "Manikin (Knife & Shield)"
+      ]
+    },
+    {
+      "ID": 124020,
+      "Entries": [
+        "Manikin (Sabre & Shield)"
+      ]
+    },
+    {
+      "ID": 124030,
+      "Entries": [
+        "Manikin (Bow)"
+      ]
+    },
+    {
+      "ID": 124040,
+      "Entries": [
+        "Manikin (Claws) - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 124041,
+      "Entries": [
+        "Manikin (Claws) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 124050,
+      "Entries": [
+        "Manikin - Unused"
+      ]
+    },
+    {
+      "ID": 124060,
+      "Entries": [
+        "Manikin - Unused"
+      ]
+    },
+    {
+      "ID": 124070,
+      "Entries": [
+        "Manikin (Bow)"
+      ]
+    },
+    {
+      "ID": 125004,
+      "Entries": [
+        "Rupturing Hollow (Red Core) - Majula Pit"
+      ]
+    },
+    {
+      "ID": 125009,
+      "Entries": [
+        "Rupturing Hollow (Red Core, Black Phantom) - Sinner's Rise_NG+"
+      ]
+    },
+    {
+      "ID": 125010,
+      "Entries": [
+        "Rupturing Hollow (Red Core) - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 125011,
+      "Entries": [
+        "Rupturing Hollow (Black Core) - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 125012,
+      "Entries": [
+        "Rupturing Hollow (Black Core) - Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 125013,
+      "Entries": [
+        "Rupturing Hollow (Black Core) - The Gutter"
+      ]
+    },
+    {
+      "ID": 125014,
+      "Entries": [
+        "Rupturing Hollow (Brown Core) - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 125015,
+      "Entries": [
+        "Rupturing Hollow (Yellow Core) - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 125016,
+      "Entries": [
+        "Rupturing Hollow (Red Core, Black Phantom) - The Gutter_NG+"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "Undead Laborer - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 127001,
+      "Entries": [
+        "Undead Laborer - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 127002,
+      "Entries": [
+        "Undead Laborer (Boss - Prowling Magus & Congregation)"
+      ]
+    },
+    {
+      "ID": 127003,
+      "Entries": [
+        "Undead Laborer - Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 127004,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 127005,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 127006,
+      "Entries": [
+        "Undead Laborer - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 127010,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 127011,
+      "Entries": [
+        "Undead Laborer (Torch) - No-man's Wharf / Undead Crypt"
+      ]
+    },
+    {
+      "ID": 127020,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 127030,
+      "Entries": [
+        "Undead Laborer (Inside Pots) - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 127100,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 127101,
+      "Entries": [
+        "Undead Laborer (Unarmed) - Frozen Eleum Loyce / Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 127110,
+      "Entries": [
+        "Undead Laborer (Torch) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 127111,
+      "Entries": [
+        "Undead Laborer - Unused"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "Forest Spirit - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "Forest Spirit - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 129200,
+      "Entries": [
+        "Forest Spirit - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 131010,
+      "Entries": [
+        "Lindelt Cleric - Unused"
+      ]
+    },
+    {
+      "ID": 131020,
+      "Entries": [
+        "Lindelt Cleric - Unused"
+      ]
+    },
+    {
+      "ID": 132003,
+      "Entries": [
+        "Skeleton (Falchions) - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 132004,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132005,
+      "Entries": [
+        "Skeleton (Falchions) - Majula Basement"
+      ]
+    },
+    {
+      "ID": 132006,
+      "Entries": [
+        "Skeleton (Falchions) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 132007,
+      "Entries": [
+        "Skeleton (Falchions) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 132013,
+      "Entries": [
+        "Skeleton (Falchion & Shield) - Majula Basement"
+      ]
+    },
+    {
+      "ID": 132014,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132015,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132016,
+      "Entries": [
+        "Skeleton (Falchion & Shield) - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 132020,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132022,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132024,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132025,
+      "Entries": [
+        "Skeleton (Estoc & Shield) - Majula Basement (NG+2)"
+      ]
+    },
+    {
+      "ID": 132026,
+      "Entries": [
+        "Skeleton (Estoc & Shield) - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 132030,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132033,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 132090,
+      "Entries": [
+        "Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 133001,
+      "Entries": [
+        "Bonewheel Skeleton (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 133002,
+      "Entries": [
+        "Bonewheel Skeleton - Majula Basement (NG+6, NG+7)"
+      ]
+    },
+    {
+      "ID": 133010,
+      "Entries": [
+        "Bonewheel Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 133020,
+      "Entries": [
+        "Bonewheel Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Gyrm"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Gyrm Warrior (Greataxe Thrower)"
+      ]
+    },
+    {
+      "ID": 135001,
+      "Entries": [
+        "Gyrm Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 135010,
+      "Entries": [
+        "Gyrm Warrior (Great Hammer & Greatshield)"
+      ]
+    },
+    {
+      "ID": 135020,
+      "Entries": [
+        "Gyrm Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 135030,
+      "Entries": [
+        "Gyrm Warrior (Greataxes)"
+      ]
+    },
+    {
+      "ID": 135040,
+      "Entries": [
+        "Gyrm Warrior (Great Hammer & Greatshield)"
+      ]
+    },
+    {
+      "ID": 135050,
+      "Entries": [
+        "Gyrm Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 137010,
+      "Entries": [
+        "Prowling Magus - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 137021,
+      "Entries": [
+        "Prowling Magus (Boss - Prowling Magus & Congregation)"
+      ]
+    },
+    {
+      "ID": 137022,
+      "Entries": [
+        "Prowling Magus - Unused"
+      ]
+    },
+    {
+      "ID": 138000,
+      "Entries": [
+        "Torturer (Catch Pole)"
+      ]
+    },
+    {
+      "ID": 138001,
+      "Entries": [
+        "Torturer (Catch Pole, Black Phantom) -_NG+"
+      ]
+    },
+    {
+      "ID": 138002,
+      "Entries": [
+        "Torturer - Unused"
+      ]
+    },
+    {
+      "ID": 138010,
+      "Entries": [
+        "Torturer (Whip)"
+      ]
+    },
+    {
+      "ID": 138011,
+      "Entries": [
+        "Torturer (Whip, Black Phantom) -_NG+"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Artificial Undead - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 139001,
+      "Entries": [
+        "Artificial Undead - Harvest Valley "
+      ]
+    },
+    {
+      "ID": 139002,
+      "Entries": [
+        "Artificial Undead - Unused"
+      ]
+    },
+    {
+      "ID": 139008,
+      "Entries": [
+        "Artificial Undead (Black Phantom) - Huntsman's Copse_NG+"
+      ]
+    },
+    {
+      "ID": 139009,
+      "Entries": [
+        "Artificial Undead (Black Phantom) - Harvest Valley_NG+"
+      ]
+    },
+    {
+      "ID": 139010,
+      "Entries": [
+        "Artificial Undead - Unused"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Undead Aberration - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 141002,
+      "Entries": [
+        "Undead Aberration - Sinner's Rise_NG+"
+      ]
+    },
+    {
+      "ID": 146000,
+      "Entries": [
+        "Lord Tseldora - Unused"
+      ]
+    },
+    {
+      "ID": 146010,
+      "Entries": [
+        "Lord Tseldora"
+      ]
+    },
+    {
+      "ID": 147001,
+      "Entries": [
+        "Undead Supplicant - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 147004,
+      "Entries": [
+        "Undead Supplicant (Boss - Prowling Magus & Congregation)"
+      ]
+    },
+    {
+      "ID": 147005,
+      "Entries": [
+        "Undead Supplicant - Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 148000,
+      "Entries": [
+        "Undead Peasant (Pickaxe)"
+      ]
+    },
+    {
+      "ID": 148010,
+      "Entries": [
+        "Undead Peasant (Pickaxe)"
+      ]
+    },
+    {
+      "ID": 148020,
+      "Entries": [
+        "Undead Peasant (Scythe)"
+      ]
+    },
+    {
+      "ID": 148030,
+      "Entries": [
+        "Undead Peasant (Scythe)"
+      ]
+    },
+    {
+      "ID": 148040,
+      "Entries": [
+        "Undead Peasant (Torch)"
+      ]
+    },
+    {
+      "ID": 148041,
+      "Entries": [
+        "Undead Peasant (Torch)"
+      ]
+    },
+    {
+      "ID": 149010,
+      "Entries": [
+        "Undead Steelworker - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 149011,
+      "Entries": [
+        "Undead Steelworker - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Stone Knight"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Ironclad Soldier - Iron Keep"
+      ]
+    },
+    {
+      "ID": 151001,
+      "Entries": [
+        "Ironclad Soldier - Giant Memories"
+      ]
+    },
+    {
+      "ID": 151200,
+      "Entries": [
+        "Old Ironclad Soldier - Forest of Fallen Giants (Cardinal Tower)"
+      ]
+    },
+    {
+      "ID": 151202,
+      "Entries": [
+        "Old Ironclad Soldier - Forest of Fallen Giants (Soldier's Rest)"
+      ]
+    },
+    {
+      "ID": 151208,
+      "Entries": [
+        "Old Ironclad Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 151209,
+      "Entries": [
+        "Old Ironclad Soldier (Black Phantom) - Forest of Fallen Giants (Soldier's Rest)_NG+"
+      ]
+    },
+    {
+      "ID": 151210,
+      "Entries": [
+        "Old Ironclad Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Royal Swordsman (Greatsword) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 152001,
+      "Entries": [
+        "Royal Swordsman (Greatsword) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 152002,
+      "Entries": [
+        "Royal Swordsman (Greatsword) - Forest of Fallen Giants / Lost Bastille"
+      ]
+    },
+    {
+      "ID": 152010,
+      "Entries": [
+        "Royal Swordsman (Crossbow) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 152011,
+      "Entries": [
+        "Royal Swordsman (Crossbow) - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Syan Knight (Spear) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 153002,
+      "Entries": [
+        "Syan Knight (Spear) - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 153003,
+      "Entries": [
+        "Syan Knight (Spear) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 153004,
+      "Entries": [
+        "Syan Knight - Unused"
+      ]
+    },
+    {
+      "ID": 153005,
+      "Entries": [
+        "Syan Knight (Spear) - Huntsman's Copse / Unseen Path to Heide"
+      ]
+    },
+    {
+      "ID": 153010,
+      "Entries": [
+        "Syan Knight (Sword) - Forest of Fallen Giants / Shaded Woods / Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 153012,
+      "Entries": [
+        "Syan Knight - Unused"
+      ]
+    },
+    {
+      "ID": 153013,
+      "Entries": [
+        "Syan Knight (Sword) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 153014,
+      "Entries": [
+        "Syan Knight - Unused"
+      ]
+    },
+    {
+      "ID": 153015,
+      "Entries": [
+        "Syan Knight (Sword) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 153016,
+      "Entries": [
+        "Syan Knight (Sword) - Majula Pit"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Lord (Halberd) (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 154001,
+      "Entries": [
+        "Skeleton Lord - Unused"
+      ]
+    },
+    {
+      "ID": 154010,
+      "Entries": [
+        "Skeleton Lord (Reaper) (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 154011,
+      "Entries": [
+        "Skeleton Lord - Unused"
+      ]
+    },
+    {
+      "ID": 154020,
+      "Entries": [
+        "Skeleton Lord (Staff) (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 154021,
+      "Entries": [
+        "Skeleton Lord - Unused"
+      ]
+    },
+    {
+      "ID": 155000,
+      "Entries": [
+        "Amana Aberration"
+      ]
+    },
+    {
+      "ID": 155001,
+      "Entries": [
+        "Amana Aberration - Unused"
+      ]
+    },
+    {
+      "ID": 156011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 157000,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157001,
+      "Entries": [
+        "Armored Skeleton (Falchions) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157002,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157003,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157004,
+      "Entries": [
+        "Armored Skeleton (Falchions) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157005,
+      "Entries": [
+        "Armored Skeleton (Falchions) (Executioner's Chariot)"
+      ]
+    },
+    {
+      "ID": 157006,
+      "Entries": [
+        "Armored Skeleton (Falchions) (Executioner's Chariot)"
+      ]
+    },
+    {
+      "ID": 157007,
+      "Entries": [
+        "Armored Skeleton (Falchions) - Majula Basement (NG+5)"
+      ]
+    },
+    {
+      "ID": 157008,
+      "Entries": [
+        "Armored Skeleton (Falchions) (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 157010,
+      "Entries": [
+        "Armored Skeleton (Falchion & Shield) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157011,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157012,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157013,
+      "Entries": [
+        "Armored Skeleton (Falchion & Shield) - Boss (Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 157014,
+      "Entries": [
+        "Armored Skeleton (Falchion & Shield) (Executioner's Chariot)"
+      ]
+    },
+    {
+      "ID": 157015,
+      "Entries": [
+        "Armored Skeleton (Falchion & Shield) (Executioner's Chariot)"
+      ]
+    },
+    {
+      "ID": 157016,
+      "Entries": [
+        "Armored Skeleton (Falchion & Shield) - Majula Basement (NG+3, NG+4)"
+      ]
+    },
+    {
+      "ID": 157020,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157021,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157022,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157023,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 157024,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 157025,
+      "Entries": [
+        "Armored Skeleton (Estoc & Shield) (Boss - Skeleton Lords)"
+      ]
+    },
+    {
+      "ID": 157030,
+      "Entries": [
+        "Armored Skeleton (Bow) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157031,
+      "Entries": [
+        "Armored Skeleton - Unused"
+      ]
+    },
+    {
+      "ID": 157032,
+      "Entries": [
+        "Armored Skeleton (Bow) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 157033,
+      "Entries": [
+        "Armored Skeleton (Bow) - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Small Boar - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 201101,
+      "Entries": [
+        "Small Boar - Majula"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Undead Boar - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 202101,
+      "Entries": [
+        "Undead Boar - Unused"
+      ]
+    },
+    {
+      "ID": 202102,
+      "Entries": [
+        "Undead Boar - Majula"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Parasite Spider"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "Parasite Spider"
+      ]
+    },
+    {
+      "ID": 203002,
+      "Entries": [
+        "Parasite Spider (The Duke's Dear Freja)"
+      ]
+    },
+    {
+      "ID": 203009,
+      "Entries": [
+        "Parasite Spider (Black Phantom) -_NG+"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Poison Moth"
+      ]
+    },
+    {
+      "ID": 204002,
+      "Entries": [
+        "Poison Moth - Shrine of Amana / Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Poison Horn Beetle - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 205001,
+      "Entries": [
+        "Poison Horn Beetle - The Gutter"
+      ]
+    },
+    {
+      "ID": 205100,
+      "Entries": [
+        "Acid Horn Beetle - Unused"
+      ]
+    },
+    {
+      "ID": 205102,
+      "Entries": [
+        "Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Razorback Nightcrawler - Black Gulch"
+      ]
+    },
+    {
+      "ID": 206001,
+      "Entries": [
+        "Razorback Nightcrawler - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Hunting Dog - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 209002,
+      "Entries": [
+        "Hunting Dog - The Gutter"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Basilisk - Things Betwixt / Old Akelarre / Shaded Woods"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Basilisk - Unused"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Basilisk - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "Basilisk - Unused"
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "Basilisk - Unseen Path to Heide"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "Basilisk - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Basilisk - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Guardian Dragon (Boss)"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "Guardian Dragon - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "Guardian Dragon - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 212003,
+      "Entries": [
+        "Guardian Dragon - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 212004,
+      "Entries": [
+        "Guardian Dragon - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Crystal Lizard - Forest of Fallen Giants / Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 213002,
+      "Entries": [
+        "Crystal Lizard - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 213003,
+      "Entries": [
+        "Crystal Lizard - Unused"
+      ]
+    },
+    {
+      "ID": 213004,
+      "Entries": [
+        "Crystal Lizard - Unused"
+      ]
+    },
+    {
+      "ID": 213005,
+      "Entries": [
+        "Crystal Lizard - Iron Keep"
+      ]
+    },
+    {
+      "ID": 213006,
+      "Entries": [
+        "Crystal Lizard - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 213007,
+      "Entries": [
+        "Crystal Lizard - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 213008,
+      "Entries": [
+        "Crystal Lizard - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 213009,
+      "Entries": [
+        "Crystal Lizard - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 213010,
+      "Entries": [
+        "Crystal Lizard - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 213011,
+      "Entries": [
+        "Crystal Lizard - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 213012,
+      "Entries": [
+        "Crystal Lizard - Majula Pit"
+      ]
+    },
+    {
+      "ID": 213013,
+      "Entries": [
+        "Crystal Lizard - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 213014,
+      "Entries": [
+        "Crystal Lizard - Brume Tower"
+      ]
+    },
+    {
+      "ID": 213100,
+      "Entries": [
+        "Red Crystal Lizard - Brightstone Cove Tseldora / Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 213101,
+      "Entries": [
+        "Red Crystal Lizard - Unused"
+      ]
+    },
+    {
+      "ID": 214001,
+      "Entries": [
+        "Giant Undead Boar - Brightstone Cove Tseldora_NG+"
+      ]
+    },
+    {
+      "ID": 214002,
+      "Entries": [
+        "Giant Undead Boar - Unused"
+      ]
+    },
+    {
+      "ID": 214003,
+      "Entries": [
+        "Giant Undead Boar - Majula"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Wall Ghost - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 216005,
+      "Entries": [
+        "Wall Ghost - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "Dark Stalker - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 217001,
+      "Entries": [
+        "Dark Stalker - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Giant Acid Horn Beetle - Unused"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "Giant Acid Horn Beetle - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 220002,
+      "Entries": [
+        "Giant Acid Horn Beetle - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Giant Basilisk - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 222001,
+      "Entries": [
+        "Giant Basilisk - Unused"
+      ]
+    },
+    {
+      "ID": 222002,
+      "Entries": [
+        "Giant Basilisk - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Mongrel Rat"
+      ]
+    },
+    {
+      "ID": 224000,
+      "Entries": [
+        "Darksucker"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 226001,
+      "Entries": [
+        "Corpse Rat (Royal Rat Vanguard)"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Royal Rat Vanguard (Boss)"
+      ]
+    },
+    {
+      "ID": 226200,
+      "Entries": [
+        "Rat King - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 226201,
+      "Entries": [
+        "Rat King (Dead)"
+      ]
+    },
+    {
+      "ID": 226202,
+      "Entries": [
+        "Rat King - Grave of Saints"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "Stray Dog - Lost Bastille / Belfry Luna"
+      ]
+    },
+    {
+      "ID": 227001,
+      "Entries": [
+        "Stray Dog - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 227002,
+      "Entries": [
+        "Stray Dog - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 227009,
+      "Entries": [
+        "Stray Dog (Black Phantom) - Belfry Luna_NG+"
+      ]
+    },
+    {
+      "ID": 227100,
+      "Entries": [
+        "Stray Dog - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 227101,
+      "Entries": [
+        "Stray Dog - Unused"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Ogre - Things Betwixt / Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Ogre - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "Ogre - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 301003,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 301005,
+      "Entries": [
+        "Heide Knight (Sword) - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Heide Knight (Spear) - Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 301013,
+      "Entries": [
+        "Heide Knight (Spear) - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 301014,
+      "Entries": [
+        "Heide Knight (Iron Mask & Spear) - The Gutter"
+      ]
+    },
+    {
+      "ID": 301020,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 301030,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 301031,
+      "Entries": [
+        "Heide Knight - Unused"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Undead Jailer - No-man's Wharf / Lost Bastille"
+      ]
+    },
+    {
+      "ID": 302009,
+      "Entries": [
+        "Undead Jailer (Black Phantom) - Sinner's Rise_NG+"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flexile Sentry (Boss)"
+      ]
+    },
+    {
+      "ID": 303301,
+      "Entries": [
+        "Flexile Sentry - Unused"
+      ]
+    },
+    {
+      "ID": 303302,
+      "Entries": [
+        "Flexile Sentry - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 303303,
+      "Entries": [
+        "Flexile Sentry - Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Injured Milfanito"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Smelter Demon (Boss)"
+      ]
+    },
+    {
+      "ID": 305200,
+      "Entries": [
+        "Blue Smelter Demon (Boss)"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Alonne Captain (Katana) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 306006,
+      "Entries": [
+        "Alonne Captain (Katana, Black Phantom) - Memory of the Old Iron King (NG+2)"
+      ]
+    },
+    {
+      "ID": 306007,
+      "Entries": [
+        "Alonne Captain (Katana) - Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 306008,
+      "Entries": [
+        "Alonne Captain (Katana, Black Phantom) - Iron Keep_NG+"
+      ]
+    },
+    {
+      "ID": 306009,
+      "Entries": [
+        "Alonne Captain (Katana, Black Phantom) - Iron Keep_NG+"
+      ]
+    },
+    {
+      "ID": 306010,
+      "Entries": [
+        "Alonne Captain (Greatbow) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 306011,
+      "Entries": [
+        "Alonne Captain (Greatbow) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 306019,
+      "Entries": [
+        "Alonne Captain (Greatbow, Black Phantom) - Memory of the Old Iron King (NG+2)"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Body of Vengarl (Unused)"
+      ]
+    },
+    {
+      "ID": 307001,
+      "Entries": [
+        "Body of Vengarl"
+      ]
+    },
+    {
+      "ID": 307101,
+      "Entries": [
+        "Head of Vengarl (NPC) (Dead)"
+      ]
+    },
+    {
+      "ID": 307107,
+      "Entries": [
+        "Head of Vengarl (Summon) - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 307108,
+      "Entries": [
+        "Head of Vengarl (Summon) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 307109,
+      "Entries": [
+        "Head of Vengarl (Summon) - Throne of Want"
+      ]
+    },
+    {
+      "ID": 307110,
+      "Entries": [
+        "Head of Vengarl (NPC)"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 308100,
+      "Entries": [
+        "Golden Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Elite Giant - Giant Memories"
+      ]
+    },
+    {
+      "ID": 309001,
+      "Entries": [
+        "Elite Giant - Black Gulch"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "Last Giant (Boss)"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Giant Lord (Boss)"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Grave Warden - Unused"
+      ]
+    },
+    {
+      "ID": 312001,
+      "Entries": [
+        "Grave Warden (Sickle) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 312010,
+      "Entries": [
+        "Grave Warden - Unused"
+      ]
+    },
+    {
+      "ID": 312011,
+      "Entries": [
+        "Grave Warden (Spear) - Earthen Peak (Before Mytha)"
+      ]
+    },
+    {
+      "ID": 312021,
+      "Entries": [
+        "Grave Warden (Sickle) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 312031,
+      "Entries": [
+        "Grave Warden (Spear) - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 312032,
+      "Entries": [
+        "Grave Warden (Spear) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 312040,
+      "Entries": [
+        "Grave Warden (Sickle) - Unused"
+      ]
+    },
+    {
+      "ID": 312050,
+      "Entries": [
+        "Grave Warden (Spear) - Unused"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Hollow Falconer - Unused"
+      ]
+    },
+    {
+      "ID": 313002,
+      "Entries": [
+        "Hollow Falconer (Curved Sword) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 313003,
+      "Entries": [
+        "Hollow Falconer (Curved Sword) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 313010,
+      "Entries": [
+        "Hollow Falconer - Unused"
+      ]
+    },
+    {
+      "ID": 313012,
+      "Entries": [
+        "Hollow Falconer (Straight Sword) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 313013,
+      "Entries": [
+        "Hollow Falconer (Straight Sword) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 313021,
+      "Entries": [
+        "Hollow Falconer (Falcon) - Things Betwixt_NG+"
+      ]
+    },
+    {
+      "ID": 313031,
+      "Entries": [
+        "Hollow Falconer (Bow) - Things Betwixt_NG+"
+      ]
+    },
+    {
+      "ID": 313032,
+      "Entries": [
+        "Hollow Falconer (Bow) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 313033,
+      "Entries": [
+        "Hollow Falconer (Bow) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Hollow Primal Knight - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 314002,
+      "Entries": [
+        "Hollow Primal Knight - Unseen Path to Heide"
+      ]
+    },
+    {
+      "ID": 314003,
+      "Entries": [
+        "Hollow Primal Knight - Unused"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Primal Knight - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "Desert Sorceress - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 316001,
+      "Entries": [
+        "Desert Sorceress - Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Dragon Acolyte - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "The Pursuer - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 318010,
+      "Entries": [
+        "The Pursuer - Forest of Fallen Giants (Boss)"
+      ]
+    },
+    {
+      "ID": 318011,
+      "Entries": [
+        "The Pursuer - Forest of Fallen Giants (Encounter)"
+      ]
+    },
+    {
+      "ID": 318020,
+      "Entries": [
+        "The Pursuer - Iron Keep"
+      ]
+    },
+    {
+      "ID": 318030,
+      "Entries": [
+        "The Pursuer - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 318040,
+      "Entries": [
+        "The Pursuer - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 319000,
+      "Entries": [
+        "Alonne Knight (Katana) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 319008,
+      "Entries": [
+        "Alonne Knight (Katana) - Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 319009,
+      "Entries": [
+        "Alonne Knight (Katana, Black Phantom) - Iron Keep_NG+"
+      ]
+    },
+    {
+      "ID": 319010,
+      "Entries": [
+        "Alonne Knight (Greatbow) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 319011,
+      "Entries": [
+        "Alonne Knight (Greatbow) - Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Mimic (Wooden Chest) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 321001,
+      "Entries": [
+        "Mimic - Unused"
+      ]
+    },
+    {
+      "ID": 321002,
+      "Entries": [
+        "Mimic - Unused"
+      ]
+    },
+    {
+      "ID": 321003,
+      "Entries": [
+        "Mimic (Wooden Chest) - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 321004,
+      "Entries": [
+        "Mimic (Wooden Chest) - The Gutter"
+      ]
+    },
+    {
+      "ID": 321005,
+      "Entries": [
+        "Mimic (Wooden Chest) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 321010,
+      "Entries": [
+        "Mimic (Metal Chest) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 321011,
+      "Entries": [
+        "Mimic (Metal Chest) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 321012,
+      "Entries": [
+        "Mimic - Unused"
+      ]
+    },
+    {
+      "ID": 321014,
+      "Entries": [
+        "Mimic (Metal Chest) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 321015,
+      "Entries": [
+        "Mimic (Metal Chest) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 321016,
+      "Entries": [
+        "Mimic (Metal Chest) - Majula_NG+"
+      ]
+    },
+    {
+      "ID": 321017,
+      "Entries": [
+        "Mimic (Metal Chest) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Belfry Gargoyle (Boss)"
+      ]
+    },
+    {
+      "ID": 324010,
+      "Entries": [
+        "Belfry Gargoyle - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 324011,
+      "Entries": [
+        "Belfry Gargoyle - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Ruin Sentinel (Boss)"
+      ]
+    },
+    {
+      "ID": 325010,
+      "Entries": [
+        "Ruin Sentinel - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "The Rotten (Boss)"
+      ]
+    },
+    {
+      "ID": 327000,
+      "Entries": [
+        "Dragon Skeleton"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Old Knight (Sword & Shield) - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 330001,
+      "Entries": [
+        "Old Knight (Sword & Shield) - Heide's Tower of Flame (Path to Cathedral of Blue)"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Old Knight (Ultra Greatsword) - Heide's Tower of Flame / Unseen Path to Heide"
+      ]
+    },
+    {
+      "ID": 330012,
+      "Entries": [
+        "Old Knight (Ultra Greatsword) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 330019,
+      "Entries": [
+        "Old Knight (Ultra Greatsword) - Heide's Tower of Flame_NG+"
+      ]
+    },
+    {
+      "ID": 330040,
+      "Entries": [
+        "Old Knight (Great Hammer) - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 330043,
+      "Entries": [
+        "Old Knight (Great Hammer) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 330044,
+      "Entries": [
+        "Old Knight (Great Hammer) - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 330049,
+      "Entries": [
+        "Old Knight (Great Hammer) - Heide's Tower of Flame_NG+"
+      ]
+    },
+    {
+      "ID": 331002,
+      "Entries": [
+        "Drakekeeper (Sword & Shield)"
+      ]
+    },
+    {
+      "ID": 331011,
+      "Entries": [
+        "Drakekeeper (Ultra Greatsword)"
+      ]
+    },
+    {
+      "ID": 331021,
+      "Entries": [
+        "Drakekeeper - Unused"
+      ]
+    },
+    {
+      "ID": 331031,
+      "Entries": [
+        "Drakekeeper (Great Hammer)"
+      ]
+    },
+    {
+      "ID": 331041,
+      "Entries": [
+        "Drakekeeper (Warpick & Greatshield)"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne Defender (Boss)"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Velstadt, the Royal Aegis (Boss)"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Throne Watcher (Boss)"
+      ]
+    },
+    {
+      "ID": 337000,
+      "Entries": [
+        "Captive Undead (Unarmed) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 337002,
+      "Entries": [
+        "Captive Undead (Unarmed) - The Gutter"
+      ]
+    },
+    {
+      "ID": 337003,
+      "Entries": [
+        "Captive Undead (Unarmed) - Grave of Saints"
+      ]
+    },
+    {
+      "ID": 337010,
+      "Entries": [
+        "Captive Undead (Torch) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 337011,
+      "Entries": [
+        "Captive Undead (Torch) - The Gutter"
+      ]
+    },
+    {
+      "ID": 337020,
+      "Entries": [
+        "Captive Undead (Broken Straight Sword) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 337022,
+      "Entries": [
+        "Captive Undead (Dark Broken Straight Sword) - The Gutter"
+      ]
+    },
+    {
+      "ID": 337023,
+      "Entries": [
+        "Captive Undead - Unused"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Covetous Demon (Boss)"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "Covetous Demon - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Mytha, the Baneful Queen (Boss)"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Manscorpion Tark (NPC)"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "Manscorpion Tark (Dead)"
+      ]
+    },
+    {
+      "ID": 502009,
+      "Entries": [
+        "Manscorpion Tark (Summon)"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Scorpioness Najka (Boss)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Looking Glass Knight (Boss)"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Darklurker (Boss)"
+      ]
+    },
+    {
+      "ID": 506101,
+      "Entries": [
+        "Darklurker (Clone) (Boss)"
+      ]
+    },
+    {
+      "ID": 506200,
+      "Entries": [
+        "Darklurker (Portal) (Boss)"
+      ]
+    },
+    {
+      "ID": 506500,
+      "Entries": [
+        "Grave Warden Agdayne (NPC)"
+      ]
+    },
+    {
+      "ID": 506501,
+      "Entries": [
+        "Grave Warden Agdayne (Dead)"
+      ]
+    },
+    {
+      "ID": 506509,
+      "Entries": [
+        "Grave Warden Agdayne (Summon)"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Leydia Witch"
+      ]
+    },
+    {
+      "ID": 509009,
+      "Entries": [
+        "Leydia Witch - Unused"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Imperious Knight"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Vendrick (Boss)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Ancient Dragon (Boss)"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Flame Lizard - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 601001,
+      "Entries": [
+        "Flame Lizard - Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Demon of Song (Boss)"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Duke's Dear Freja (Boss)"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "The Duke's Dear Freja (Encounter) -_NG+"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Old Iron King (Boss)"
+      ]
+    },
+    {
+      "ID": 608000,
+      "Entries": [
+        "Corrosive Ant Queen"
+      ]
+    },
+    {
+      "ID": 611010,
+      "Entries": [
+        "Dragonrider (Bow) (Boss) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 611500,
+      "Entries": [
+        "Dragonrider (Halberd) (Boss) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 611510,
+      "Entries": [
+        "Dragonrider (Halberd) (Boss) - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 611520,
+      "Entries": [
+        "Dragonrider (Halberd) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 611530,
+      "Entries": [
+        "Dragonrider (Halberd) - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 619110,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 619111,
+      "Entries": [
+        "Executioner's Chariot - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Old Dragonslayer (Boss)"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "The Lost Sinner (Boss)"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Nashandra (Boss)"
+      ]
+    },
+    {
+      "ID": 628000,
+      "Entries": [
+        "Royal Rat Authority (Boss)"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Iron Warrior (Smelter Hammer) - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 650001,
+      "Entries": [
+        "Iron Warrior (Smelter Hammer) - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 650002,
+      "Entries": [
+        "Iron Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 650003,
+      "Entries": [
+        "Iron Warrior (Smelter Hammer, Black Phantom) - Brume Tower (NG+7)"
+      ]
+    },
+    {
+      "ID": 650004,
+      "Entries": [
+        "Iron Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 650010,
+      "Entries": [
+        "Iron Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 650011,
+      "Entries": [
+        "Iron Warrior (Mace) - Brume Tower"
+      ]
+    },
+    {
+      "ID": 650012,
+      "Entries": [
+        "Iron Warrior (Mace) - Iron Passage"
+      ]
+    },
+    {
+      "ID": 650013,
+      "Entries": [
+        "Iron Warrior (Mace, Black Phantom) - Brume Tower (NG+7) / Iron Passage (NG+2)"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Fume Sorcerer (Brume Tower) (Upper)"
+      ]
+    },
+    {
+      "ID": 651001,
+      "Entries": [
+        "Fume Sorcerer (Brume Tower) (Lower)"
+      ]
+    },
+    {
+      "ID": 651002,
+      "Entries": [
+        "Fume Sorcerer (Iron Passage)"
+      ]
+    },
+    {
+      "ID": 651003,
+      "Entries": [
+        "Fume Sorcerer - Unused"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        "Ashen Warrior (Axes) - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 653001,
+      "Entries": [
+        "Ashen Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 653002,
+      "Entries": [
+        "Ashen Warrior (Axes) - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 653003,
+      "Entries": [
+        "Ashen Warrior (Axes) - Iron Passage"
+      ]
+    },
+    {
+      "ID": 653004,
+      "Entries": [
+        "Ashen Warrior (Fire Axes) - Brume Tower"
+      ]
+    },
+    {
+      "ID": 653005,
+      "Entries": [
+        "Ashen Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 653006,
+      "Entries": [
+        "Ashen Warrior (Axes, Black Phantom) - Brume Tower (NG+2 / NG+7)"
+      ]
+    },
+    {
+      "ID": 653010,
+      "Entries": [
+        "Ashen Warrior (Sword) - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 653011,
+      "Entries": [
+        "Ashen Warrior (Sword) - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 653012,
+      "Entries": [
+        "Ashen Warrior (Sword) - Iron Passage"
+      ]
+    },
+    {
+      "ID": 653020,
+      "Entries": [
+        "Ashen Warrior (Halberd & Shield) - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 653021,
+      "Entries": [
+        "Ashen Warrior (Halberd & Shield) - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 653022,
+      "Entries": [
+        "Ashen Warrior (Halberd & Shield) - Iron Passage"
+      ]
+    },
+    {
+      "ID": 653029,
+      "Entries": [
+        "Ashen Warrior (Halberd & Shield, Black Phantom) - Brume Tower (NG+2)"
+      ]
+    },
+    {
+      "ID": 653030,
+      "Entries": [
+        "Ashen Warrior (Bow) - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 653031,
+      "Entries": [
+        "Ashen Warrior (Bow) - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 653032,
+      "Entries": [
+        "Ashen Warrior - Unused"
+      ]
+    },
+    {
+      "ID": 654000,
+      "Entries": [
+        "Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 654001,
+      "Entries": [
+        "Ashen Crawler - Unused"
+      ]
+    },
+    {
+      "ID": 656000,
+      "Entries": [
+        "Possessed Armor - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 656001,
+      "Entries": [
+        "Possessed Armor - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 656002,
+      "Entries": [
+        "Possessed Armor - Unused"
+      ]
+    },
+    {
+      "ID": 656003,
+      "Entries": [
+        "Possessed Armor - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 656004,
+      "Entries": [
+        "Possessed Armor - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 656005,
+      "Entries": [
+        "Possessed Armor - Iron Passage"
+      ]
+    },
+    {
+      "ID": 656006,
+      "Entries": [
+        "Possessed Armor (Black Phantom) - Iron Passage (NG+2) / Brume Tower (NG+7)"
+      ]
+    },
+    {
+      "ID": 657000,
+      "Entries": [
+        "Barrel Carrier - Brume Tower (Upper)"
+      ]
+    },
+    {
+      "ID": 657001,
+      "Entries": [
+        "Barrel Carrier - Brume Tower (Lower)"
+      ]
+    },
+    {
+      "ID": 658000,
+      "Entries": [
+        "Alsanna, Silent Oracle"
+      ]
+    },
+    {
+      "ID": 659000,
+      "Entries": [
+        "Rampart Golem - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 659001,
+      "Entries": [
+        "Rampart Golem - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 659002,
+      "Entries": [
+        "Rampart Golem - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 659003,
+      "Entries": [
+        "Rampart Golem (Black Phantom) - Frozen Eleum Loyce (NG+2)"
+      ]
+    },
+    {
+      "ID": 659004,
+      "Entries": [
+        "Rampart Golem - Unused"
+      ]
+    },
+    {
+      "ID": 659005,
+      "Entries": [
+        "Rampart Golem (Black Phantom) - Frigid Outskirts (NG+2)"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Ice Golem"
+      ]
+    },
+    {
+      "ID": 660001,
+      "Entries": [
+        "Ice Golem - Unused"
+      ]
+    },
+    {
+      "ID": 660002,
+      "Entries": [
+        "Ice Golem (Black Phantom) - (NG+2)"
+      ]
+    },
+    {
+      "ID": 660003,
+      "Entries": [
+        "Ice Golem - Unused"
+      ]
+    },
+    {
+      "ID": 661000,
+      "Entries": [
+        "Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 661001,
+      "Entries": [
+        "Frozen Reindeer (Black Phantom) - Unused"
+      ]
+    },
+    {
+      "ID": 662000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 662001,
+      "Entries": [
+        "Rampart Hedgehog (Black Phantom) - (NG+2)"
+      ]
+    },
+    {
+      "ID": 663000,
+      "Entries": [
+        "Rampart Spearman (Ice Rapier, Armored)"
+      ]
+    },
+    {
+      "ID": 663001,
+      "Entries": [
+        "Rampart Spearman (Ice Rapier)"
+      ]
+    },
+    {
+      "ID": 663002,
+      "Entries": [
+        "Rampart Spearman - Unused"
+      ]
+    },
+    {
+      "ID": 663003,
+      "Entries": [
+        "Rampart Spearman - Unused"
+      ]
+    },
+    {
+      "ID": 663004,
+      "Entries": [
+        "Rampart Spearman (Ice Rapier, Armored, Black Phantom) - (NG+2)"
+      ]
+    },
+    {
+      "ID": 663005,
+      "Entries": [
+        "Rampart Spearman - Unused"
+      ]
+    },
+    {
+      "ID": 663010,
+      "Entries": [
+        "Rampart Spearman (Spear & Shield, Armored)"
+      ]
+    },
+    {
+      "ID": 663011,
+      "Entries": [
+        "Rampart Spearman (Spear & Shield)"
+      ]
+    },
+    {
+      "ID": 663012,
+      "Entries": [
+        "Rampart Spearman - Unused"
+      ]
+    },
+    {
+      "ID": 663013,
+      "Entries": [
+        "Rampart Spearman - Unused"
+      ]
+    },
+    {
+      "ID": 665000,
+      "Entries": [
+        "Sanctum Knight (Scimitars)"
+      ]
+    },
+    {
+      "ID": 665001,
+      "Entries": [
+        "Sanctum Knight - Unused"
+      ]
+    },
+    {
+      "ID": 665010,
+      "Entries": [
+        "Sanctum Knight (Crossbows)"
+      ]
+    },
+    {
+      "ID": 665011,
+      "Entries": [
+        "Sanctum Knight - Unused"
+      ]
+    },
+    {
+      "ID": 666000,
+      "Entries": [
+        "Sanctum Soldier (Mace) - Shulva"
+      ]
+    },
+    {
+      "ID": 666001,
+      "Entries": [
+        "Sanctum Soldier (Mace) - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 666002,
+      "Entries": [
+        "Sanctum Soldier (Mace) - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 666010,
+      "Entries": [
+        "Sanctum Soldier (Lance) - Shulva"
+      ]
+    },
+    {
+      "ID": 666011,
+      "Entries": [
+        "Sanctum Soldier (Lance) - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 666012,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666020,
+      "Entries": [
+        "Sanctum Soldier (Bow) - Shulva"
+      ]
+    },
+    {
+      "ID": 666021,
+      "Entries": [
+        "Sanctum Soldier (Bow) - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 666022,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666030,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666040,
+      "Entries": [
+        "Sanctum Soldier (Mace, Poison Aura) - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 666041,
+      "Entries": [
+        "Sanctum Soldier (Mace, Poison Aura) - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 666050,
+      "Entries": [
+        "Sanctum Soldier (Lance, Poison Aura) - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 666051,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666060,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666061,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666070,
+      "Entries": [
+        "Sanctum Soldier - Unused"
+      ]
+    },
+    {
+      "ID": 666080,
+      "Entries": [
+        "Sanctum Soldier (Torch, Poison Aura) - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        "Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Poison Statue Cluster - Shulva"
+      ]
+    },
+    {
+      "ID": 671001,
+      "Entries": [
+        "Poison Statue Cluster - Black Gulch_NG+"
+      ]
+    },
+    {
+      "ID": 671100,
+      "Entries": [
+        "Petrifying Statue Cluster"
+      ]
+    },
+    {
+      "ID": 672000,
+      "Entries": [
+        "Corrosive Egg Insect - Shulva"
+      ]
+    },
+    {
+      "ID": 672001,
+      "Entries": [
+        "Corrosive Egg Insect - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 672002,
+      "Entries": [
+        "Corrosive Egg Insect - The Gutter"
+      ]
+    },
+    {
+      "ID": 674000,
+      "Entries": [
+        "Pagan Tree"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight (Boss)"
+      ]
+    },
+    {
+      "ID": 675001,
+      "Entries": [
+        "Fume Knight - Unused"
+      ]
+    },
+    {
+      "ID": 675010,
+      "Entries": [
+        "Fume Knight - Unused"
+      ]
+    },
+    {
+      "ID": 675011,
+      "Entries": [
+        "Fume Knight - Unused"
+      ]
+    },
+    {
+      "ID": 677000,
+      "Entries": [
+        "Retainer Sorcerer (Short Sword)"
+      ]
+    },
+    {
+      "ID": 677001,
+      "Entries": [
+        "Retainer Sorcerer - Unused"
+      ]
+    },
+    {
+      "ID": 677010,
+      "Entries": [
+        "Retainer Sorcerer (Staff)"
+      ]
+    },
+    {
+      "ID": 677011,
+      "Entries": [
+        "Retainer Sorcerer - Unused"
+      ]
+    },
+    {
+      "ID": 678000,
+      "Entries": [
+        "Frozen Golem (Dormant) - Frozen Eleum Loyce (Inner Wall)"
+      ]
+    },
+    {
+      "ID": 678001,
+      "Entries": [
+        "Frozen Golem (Active) - Frozen Eleum Loyce (Lower Garrison)"
+      ]
+    },
+    {
+      "ID": 678010,
+      "Entries": [
+        "Frozen Golem (Dormant) - Frozen Eleum Loyce (Lower Garrison)"
+      ]
+    },
+    {
+      "ID": 678011,
+      "Entries": [
+        "Frozen Golem - Unused"
+      ]
+    },
+    {
+      "ID": 678099,
+      "Entries": [
+        "Frozen Golem - Unused"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Lud, the King's Pet (Boss)"
+      ]
+    },
+    {
+      "ID": 679001,
+      "Entries": [
+        "Lud, the King's Pet - Unused"
+      ]
+    },
+    {
+      "ID": 679002,
+      "Entries": [
+        "Zallen, the King's Pet (Boss)"
+      ]
+    },
+    {
+      "ID": 679100,
+      "Entries": [
+        "Aava, the King's Pet (Boss)"
+      ]
+    },
+    {
+      "ID": 679101,
+      "Entries": [
+        "Aava, the King's Pet - Unused"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Sir Alonne (Boss)"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh, the Slumbering Dragon (Boss)"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana, the Squalid Queen (Boss)"
+      ]
+    },
+    {
+      "ID": 683000,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 684000,
+      "Entries": [
+        "Vendrick (NPC)"
+      ]
+    },
+    {
+      "ID": 685000,
+      "Entries": [
+        "Skeleton (Falchion & Shield) (Boss - Elana, the Squalid Queen)"
+      ]
+    },
+    {
+      "ID": 686000,
+      "Entries": [
+        "Small Undead Boar (Boss - Elana, the Squalid Queen)"
+      ]
+    },
+    {
+      "ID": 687000,
+      "Entries": [
+        "Velstadt, the Royal Aegis (Boss - Elana, the Squalid Queen)"
+      ]
+    },
+    {
+      "ID": 688000,
+      "Entries": [
+        "Loyce Knight (Greatsword)"
+      ]
+    },
+    {
+      "ID": 688010,
+      "Entries": [
+        "Loyce Knight (Bardiche)"
+      ]
+    },
+    {
+      "ID": 688020,
+      "Entries": [
+        "Loyce Knight (Axe)"
+      ]
+    },
+    {
+      "ID": 688030,
+      "Entries": [
+        "Loyce Knight (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Charred Loyce Knight (Greatsword)"
+      ]
+    },
+    {
+      "ID": 689010,
+      "Entries": [
+        "Charred Loyce Knight (Axe)"
+      ]
+    },
+    {
+      "ID": 689020,
+      "Entries": [
+        "Charred Loyce Knight (Warpick)"
+      ]
+    },
+    {
+      "ID": 689030,
+      "Entries": [
+        "Charred Loyce Knight (Pyromancer)"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Burnt Ivory King (Boss)"
+      ]
+    },
+    {
+      "ID": 690001,
+      "Entries": [
+        "Burnt Ivory King - Unused"
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        "Aldia, Scholar of the First Sin (Boss)"
+      ]
+    },
+    {
+      "ID": 693000,
+      "Entries": [
+        "Aldia, Scholar of the First Sin (NPC)"
+      ]
+    },
+    {
+      "ID": 694000,
+      "Entries": [
+        "Forlorn (Greatsword) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 694001,
+      "Entries": [
+        "Forlorn (Greatsword) - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 694002,
+      "Entries": [
+        "Forlorn (Greatsword) - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 694003,
+      "Entries": [
+        "Forlorn (Greatsword) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 694004,
+      "Entries": [
+        "Forlorn (Greatsword) - Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 694005,
+      "Entries": [
+        "Forlorn (Greatsword) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 694006,
+      "Entries": [
+        "Forlorn (Greatsword) - Black Gulch"
+      ]
+    },
+    {
+      "ID": 694007,
+      "Entries": [
+        "Forlorn (Greatsword) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 694008,
+      "Entries": [
+        "Forlorn (Greatsword) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 694009,
+      "Entries": [
+        "Forlorn (Greatsword) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 695000,
+      "Entries": [
+        "Forlorn (Scythe) - Unused"
+      ]
+    },
+    {
+      "ID": 695001,
+      "Entries": [
+        "Forlorn (Scythe) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 695002,
+      "Entries": [
+        "Forlorn (Scythe) - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 695003,
+      "Entries": [
+        "Forlorn (Scythe) - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 695004,
+      "Entries": [
+        "Forlorn (Scythe) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 695005,
+      "Entries": [
+        "Forlorn (Scythe) - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 695006,
+      "Entries": [
+        "Forlorn (Scythe) - Shulva / Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 695007,
+      "Entries": [
+        "Forlorn (Scythe) - Brume Tower"
+      ]
+    },
+    {
+      "ID": 695008,
+      "Entries": [
+        "Forlorn (Scythe) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 696000,
+      "Entries": [
+        "Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Emerald Herald - Majula"
+      ]
+    },
+    {
+      "ID": 700501,
+      "Entries": [
+        "Emerald Herald (Dead)"
+      ]
+    },
+    {
+      "ID": 700502,
+      "Entries": [
+        "Emerald Herald - Drangleic Castle / Throne of Want"
+      ]
+    },
+    {
+      "ID": 700503,
+      "Entries": [
+        "Emerald Herald - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 700504,
+      "Entries": [
+        "Emerald Herald - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 701500,
+      "Entries": [
+        "Emerald Herald (Child) - Unused"
+      ]
+    },
+    {
+      "ID": 703600,
+      "Entries": [
+        "Nashandra (NPC)"
+      ]
+    },
+    {
+      "ID": 704500,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 704501,
+      "Entries": [
+        "Laddersmith Gilligan (Dead)"
+      ]
+    },
+    {
+      "ID": 704510,
+      "Entries": [
+        "Laddersmith Gilligan (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 705000,
+      "Entries": [
+        "Strowen (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 705100,
+      "Entries": [
+        "Morrel (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 705300,
+      "Entries": [
+        "Griant (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 705500,
+      "Entries": [
+        "Strowen"
+      ]
+    },
+    {
+      "ID": 705501,
+      "Entries": [
+        "Strowen (Dead)"
+      ]
+    },
+    {
+      "ID": 705600,
+      "Entries": [
+        "Morrel"
+      ]
+    },
+    {
+      "ID": 705601,
+      "Entries": [
+        "Morrel (Dead)"
+      ]
+    },
+    {
+      "ID": 705800,
+      "Entries": [
+        "Griant"
+      ]
+    },
+    {
+      "ID": 705801,
+      "Entries": [
+        "Griant (Dead)"
+      ]
+    },
+    {
+      "ID": 721100,
+      "Entries": [
+        "Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Milibeth"
+      ]
+    },
+    {
+      "ID": 723001,
+      "Entries": [
+        "Milibeth (Dead)"
+      ]
+    },
+    {
+      "ID": 723010,
+      "Entries": [
+        "Milibeth (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 724000,
+      "Entries": [
+        "Captain Drummond - Memory of Vammar"
+      ]
+    },
+    {
+      "ID": 724001,
+      "Entries": [
+        "Captain Drummond (Dead)"
+      ]
+    },
+    {
+      "ID": 724002,
+      "Entries": [
+        "Captain Drummond (Summon) - Memory of Jeigh"
+      ]
+    },
+    {
+      "ID": 725000,
+      "Entries": [
+        "Darkdiver Grandahl - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 725001,
+      "Entries": [
+        "Darkdiver Grandahl (Dead)"
+      ]
+    },
+    {
+      "ID": 725002,
+      "Entries": [
+        "Darkdiver Grandahl - Black Gulch"
+      ]
+    },
+    {
+      "ID": 725003,
+      "Entries": [
+        "Darkdiver Grandahl - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 726000,
+      "Entries": [
+        "Lonesome Gavlan - Unused"
+      ]
+    },
+    {
+      "ID": 726001,
+      "Entries": [
+        "Lonesome Gavlan (Dead)"
+      ]
+    },
+    {
+      "ID": 726002,
+      "Entries": [
+        "Lonesome Gavlan - Harvest Valley"
+      ]
+    },
+    {
+      "ID": 726003,
+      "Entries": [
+        "Lonesome Gavlan - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 726004,
+      "Entries": [
+        "Lonesome Gavlan - Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 726005,
+      "Entries": [
+        "Lonesome Gavlan - Unused"
+      ]
+    },
+    {
+      "ID": 726006,
+      "Entries": [
+        "Lonesome Gavlan - Unused"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Looking Glass Phantom (Faraam) - King's Passage"
+      ]
+    },
+    {
+      "ID": 730001,
+      "Entries": [
+        "Looking Glass Phantom (Faraam) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 731010,
+      "Entries": [
+        "Looking Glass Phantom (Knight) - King's Passage"
+      ]
+    },
+    {
+      "ID": 731011,
+      "Entries": [
+        "Looking Glass Phantom (Knight) - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "Lost Sinner Pyromancer Phantom (Male)"
+      ]
+    },
+    {
+      "ID": 733000,
+      "Entries": [
+        "Lost Sinner Pyromancer Phantom (Female)"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 741001,
+      "Entries": [
+        "Crestfallen Saulden (Dead)"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Creighton the Wanderer - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 742001,
+      "Entries": [
+        "Creighton the Wanderer (Dead)"
+      ]
+    },
+    {
+      "ID": 742002,
+      "Entries": [
+        "Creighton the Wanderer - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 742003,
+      "Entries": [
+        "Creighton the Wanderer - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 742009,
+      "Entries": [
+        "Creighton the Wanderer (Summon) - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Benhart of Jugo - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 743001,
+      "Entries": [
+        "Benhart of Jugo (Dead)"
+      ]
+    },
+    {
+      "ID": 743002,
+      "Entries": [
+        "Benhart of Jugo - Old Akelarre"
+      ]
+    },
+    {
+      "ID": 743003,
+      "Entries": [
+        "Benhart of Jugo - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 743004,
+      "Entries": [
+        "Benhart of Jugo - Memory of Orro"
+      ]
+    },
+    {
+      "ID": 743006,
+      "Entries": [
+        "Benhart of Jugo (Summon) - King's Passage"
+      ]
+    },
+    {
+      "ID": 743007,
+      "Entries": [
+        "Benhart of Jugo (Summon) - Throne of Want"
+      ]
+    },
+    {
+      "ID": 743008,
+      "Entries": [
+        "Benhart of Jugo (Summon) - Memory of Jeigh"
+      ]
+    },
+    {
+      "ID": 743009,
+      "Entries": [
+        "Benhart of Jugo (Summon) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 743010,
+      "Entries": [
+        "Benhart of Jugo (Summon) - Dragon's Rest"
+      ]
+    },
+    {
+      "ID": 744000,
+      "Entries": [
+        "Mild Mannered Pate - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 744001,
+      "Entries": [
+        "Mild Mannered Pate (Dead)"
+      ]
+    },
+    {
+      "ID": 744002,
+      "Entries": [
+        "Mild Mannered Pate - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 744003,
+      "Entries": [
+        "Mild Mannered Pate - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 744009,
+      "Entries": [
+        "Mild Mannered Pate (Summon) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 751001,
+      "Entries": [
+        "Cartographer Cale (Dead)"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "Lucatiel of Mirrah - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 752001,
+      "Entries": [
+        "Lucatiel of Mirrah (Dead)"
+      ]
+    },
+    {
+      "ID": 752002,
+      "Entries": [
+        "Lucatiel of Mirrah - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 752003,
+      "Entries": [
+        "Lucatiel of Mirrah - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 752004,
+      "Entries": [
+        "Lucatiel of Mirrah - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 752005,
+      "Entries": [
+        "Lucatiel of Mirrah - Black Gulch"
+      ]
+    },
+    {
+      "ID": 752006,
+      "Entries": [
+        "Lucatiel of Mirrah (Summon) - Black Gulch"
+      ]
+    },
+    {
+      "ID": 752007,
+      "Entries": [
+        "Lucatiel of Mirrah (Summon) - Iron Keep"
+      ]
+    },
+    {
+      "ID": 752008,
+      "Entries": [
+        "Lucatiel of Mirrah (Summon) - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 752009,
+      "Entries": [
+        "Lucatiel of Mirrah (Summon) - Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 752010,
+      "Entries": [
+        "Lucatiel of Mirrah (Summon) - Grand Cathedral"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Bell Keeper (NPC) - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 753001,
+      "Entries": [
+        "Bell Keeper (NPC) (Dead)"
+      ]
+    },
+    {
+      "ID": 753002,
+      "Entries": [
+        "Bell Keeper (NPC) - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 753003,
+      "Entries": [
+        "Bell Keeper - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 753004,
+      "Entries": [
+        "Bell Keeper - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 753008,
+      "Entries": [
+        "Bell Keeper (Black Phantom) - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 753009,
+      "Entries": [
+        "Bell Keeper (Black Phantom) - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 754001,
+      "Entries": [
+        "Merchant Hag Melentia (Dead)"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Milfanito - Shrine of Amana (Hut)"
+      ]
+    },
+    {
+      "ID": 760001,
+      "Entries": [
+        "Milfanito (Dead) - Shrine of Amana (Hut)"
+      ]
+    },
+    {
+      "ID": 760100,
+      "Entries": [
+        "Milfanito - Shrine of Amana (Altar)"
+      ]
+    },
+    {
+      "ID": 760101,
+      "Entries": [
+        "Milfanito (Dead) - Shrine of Amana (Altar)"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "Milfanito - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 760201,
+      "Entries": [
+        "Milfanito (Dead) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 761001,
+      "Entries": [
+        "Maughlin the Armourer (Dead)"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Stone Trader Chloanne - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 762001,
+      "Entries": [
+        "Stone Trader Chloanne (Dead)"
+      ]
+    },
+    {
+      "ID": 762002,
+      "Entries": [
+        "Stone Trader Chloanne - Majula"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 763001,
+      "Entries": [
+        "Rosabeth of Melfia (Dead)"
+      ]
+    },
+    {
+      "ID": 764000,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 764001,
+      "Entries": [
+        "Blacksmith Lenigrast (Dead)"
+      ]
+    },
+    {
+      "ID": 764300,
+      "Entries": [
+        "Steady Hand McDuff"
+      ]
+    },
+    {
+      "ID": 764309,
+      "Entries": [
+        "Steady Hand McDuff (Dead)"
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 766001,
+      "Entries": [
+        "Carhillion of the Fold (Dead)"
+      ]
+    },
+    {
+      "ID": 768000,
+      "Entries": [
+        "Straid of Olaphis"
+      ]
+    },
+    {
+      "ID": 768001,
+      "Entries": [
+        "Straid of Olaphis (Dead)"
+      ]
+    },
+    {
+      "ID": 769000,
+      "Entries": [
+        "Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 769001,
+      "Entries": [
+        "Licia of Lindeldt (Dead)"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 770001,
+      "Entries": [
+        "Felkin the Outcast (Dead)"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 771001,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Dead)"
+      ]
+    },
+    {
+      "ID": 771004,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Invader) - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 771005,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Invader) - The Gutter"
+      ]
+    },
+    {
+      "ID": 771006,
+      "Entries": [
+        "Royal Sorcerer Navlaan - Unused"
+      ]
+    },
+    {
+      "ID": 771007,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Invader) - Aldia's Keep / Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 771009,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Invader) - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 771010,
+      "Entries": [
+        "Royal Sorcerer Navlaan (Invader) - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 772001,
+      "Entries": [
+        "Magerold of Lanafir (Dead)"
+      ]
+    },
+    {
+      "ID": 776000,
+      "Entries": [
+        "Weaponsmith Ornifex - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 776001,
+      "Entries": [
+        "Weaponsmith Ornifex (Dead)"
+      ]
+    },
+    {
+      "ID": 776002,
+      "Entries": [
+        "Weaponsmith Ornifex - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 777000,
+      "Entries": [
+        "Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Titchy Gren"
+      ]
+    },
+    {
+      "ID": 783001,
+      "Entries": [
+        "Titchy Gren (Dead)"
+      ]
+    },
+    {
+      "ID": 784000,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 784001,
+      "Entries": [
+        "Cromwell the Pardoner (Dead)"
+      ]
+    },
+    {
+      "ID": 785000,
+      "Entries": [
+        "Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 785001,
+      "Entries": [
+        "Blue Sentinel Targray (Dead)"
+      ]
+    },
+    {
+      "ID": 786000,
+      "Entries": [
+        "Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 805000,
+      "Entries": [
+        "Player Character (Cutscene Model)"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Masterless Glencour - Unused"
+      ]
+    },
+    {
+      "ID": 810001,
+      "Entries": [
+        "Masterless Glencour - Unused"
+      ]
+    },
+    {
+      "ID": 810002,
+      "Entries": [
+        "Masterless Glencour - Unused"
+      ]
+    },
+    {
+      "ID": 810003,
+      "Entries": [
+        "Masterless Glencour - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 810005,
+      "Entries": [
+        "Masterless Glencour - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 810006,
+      "Entries": [
+        "Masterless Glencour - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Lone Hunter Schmidt - Black Gulch"
+      ]
+    },
+    {
+      "ID": 811001,
+      "Entries": [
+        "Lone Hunter Schmidt - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "Pilgrim Bellclaire - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 812001,
+      "Entries": [
+        "Pilgrim Bellclaire - Unused"
+      ]
+    },
+    {
+      "ID": 812002,
+      "Entries": [
+        "Pilgrim Bellclaire - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "Felicia the Brave - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 813001,
+      "Entries": [
+        "Felicia the Brave - Lost Bastille"
+      ]
+    },
+    {
+      "ID": 814000,
+      "Entries": [
+        "Melinda the Butcher (Summon) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 814008,
+      "Entries": [
+        "Melinda the Butcher - Unused"
+      ]
+    },
+    {
+      "ID": 814009,
+      "Entries": [
+        "Melinda the Butcher (Invader) - The Gutter"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "Vorgel the Sinner - Belfry Luna"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "Merciless Roenna - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 821001,
+      "Entries": [
+        "Merciless Roenna - Unused"
+      ]
+    },
+    {
+      "ID": 822000,
+      "Entries": [
+        "Peculiar Kindalur - Unused"
+      ]
+    },
+    {
+      "ID": 822001,
+      "Entries": [
+        "Peculiar Kindalur - Unused"
+      ]
+    },
+    {
+      "ID": 822002,
+      "Entries": [
+        "Peculiar Kindalur - Unused"
+      ]
+    },
+    {
+      "ID": 822003,
+      "Entries": [
+        "Peculiar Kindalur - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 823000,
+      "Entries": [
+        "Dragonfang Villard - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 824000,
+      "Entries": [
+        "Aslatiel of Mirrah - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "Dingy Cleric Phantom - Majula Pit_NG+"
+      ]
+    },
+    {
+      "ID": 831100,
+      "Entries": [
+        "Faraam Knight Phantom - Majula Pit_NG+"
+      ]
+    },
+    {
+      "ID": 832000,
+      "Entries": [
+        "Underworld Deadeye - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832100,
+      "Entries": [
+        "Abyss Ironclad - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832200,
+      "Entries": [
+        "Pretender to the Xanthous Throne (Male) - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832300,
+      "Entries": [
+        "Pretender to the Xanthous Throne (Female) - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832400,
+      "Entries": [
+        "Tenebrous Rogue - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832500,
+      "Entries": [
+        "The Ghost of Princes Past - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832600,
+      "Entries": [
+        "A Chip Off the Ol' Rock - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 832700,
+      "Entries": [
+        "Shadowveil Assassin - Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 833000,
+      "Entries": [
+        "Butcher Phantom - Shrine of Amana_NG+"
+      ]
+    },
+    {
+      "ID": 835000,
+      "Entries": [
+        "Black Dragon Knight (Greataxes) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 835001,
+      "Entries": [
+        "Painting Guardian Phantom - Unused"
+      ]
+    },
+    {
+      "ID": 835100,
+      "Entries": [
+        "Black Dragon Knight (Warpick & Shield) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 835200,
+      "Entries": [
+        "Black Dragon Knight (Sword & Shield) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 835300,
+      "Entries": [
+        "Black Dragon Knight (Sword/Greatbow & Shield) - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 836000,
+      "Entries": [
+        "Mad Warrior Phantom - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 836100,
+      "Entries": [
+        "Greatsword Bell Keeper Phantom - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 836200,
+      "Entries": [
+        "Dual Avelyn Bell Keeper Phantom - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 836300,
+      "Entries": [
+        "Mage Bell Keeper Phantom - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 836400,
+      "Entries": [
+        "Ironclad Warrior Phantom - Iron Keep_NG+"
+      ]
+    },
+    {
+      "ID": 837000,
+      "Entries": [
+        "Foreign Wanderer Phantom - Things Betwixt_NG+"
+      ]
+    },
+    {
+      "ID": 837100,
+      "Entries": [
+        "Foreign Wanderer (Broken Straight Sword) - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 837200,
+      "Entries": [
+        "Foreign Wanderer (Bow & Broken Straight Sword) - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 837201,
+      "Entries": [
+        "Foreign Wanderer (Bow & Broken Straight Sword) - Things Betwixt (Behind Statue)"
+      ]
+    },
+    {
+      "ID": 837400,
+      "Entries": [
+        "Greatsword Foreigner Phantom - Things Betwixt"
+      ]
+    },
+    {
+      "ID": 838200,
+      "Entries": [
+        "Forest Guardian (Dagger) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 838201,
+      "Entries": [
+        "Forest Guardian (Dagger) - Shaded Woods (Path to Drangleic Castle)"
+      ]
+    },
+    {
+      "ID": 838300,
+      "Entries": [
+        "Forest Guardian (Longsword) - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 838301,
+      "Entries": [
+        "Forest Guardian (Longsword) - Shaded Woods (Path to Drangleic Castle)"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Voice Marker"
+      ]
+    },
+    {
+      "ID": 841000,
+      "Entries": [
+        "Voice Marker"
+      ]
+    },
+    {
+      "ID": 842000,
+      "Entries": [
+        "Syan Knight Phantom - Forest of Fallen Giants_NG+"
+      ]
+    },
+    {
+      "ID": 843000,
+      "Entries": [
+        "Knight Phantom - Forest of Fallen Giants_NG+"
+      ]
+    },
+    {
+      "ID": 844000,
+      "Entries": [
+        "Catarina Knight Phantom - Forest of Fallen Giants_NG+"
+      ]
+    },
+    {
+      "ID": 845000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 846000,
+      "Entries": [
+        "Porcine Peasant Phantom - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 847000,
+      "Entries": [
+        "Executioner Phantom - Heide's Tower of Flame_NG+"
+      ]
+    },
+    {
+      "ID": 847100,
+      "Entries": [
+        "Sentinel Phantom - Heide's Tower of Flame_NG+"
+      ]
+    },
+    {
+      "ID": 848000,
+      "Entries": [
+        "Dual Wielding Swordsman Phantom - Brightstone Cove Tseldora_NG+"
+      ]
+    },
+    {
+      "ID": 848100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 849000,
+      "Entries": [
+        "Nameless Usurper - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 849001,
+      "Entries": [
+        "Nameless Usurper - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 849100,
+      "Entries": [
+        "Jester Thomas (Summon) - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 849200,
+      "Entries": [
+        "Rhoy the Explorer - Grave of Saints"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Painting Guardian Phantom - Aldia's Keep_NG+"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "Greatsword Phantom - Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Bowman Guthry - Doors of Pharros / Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 853100,
+      "Entries": [
+        "Ashen Knight Boyd - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 853101,
+      "Entries": [
+        "Ashen Knight Boyd - King's Passage"
+      ]
+    },
+    {
+      "ID": 853200,
+      "Entries": [
+        "Drakekeeper Knight Phantom - Drangleic Castle_NG+"
+      ]
+    },
+    {
+      "ID": 853300,
+      "Entries": [
+        "Elite Knight Phantom - Unused"
+      ]
+    },
+    {
+      "ID": 853400,
+      "Entries": [
+        "Greatbow Phantom - Unused"
+      ]
+    },
+    {
+      "ID": 853500,
+      "Entries": [
+        "Washing Pole Phantom - Drangleic Castle_NG+"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "Aurous Knight Phantom - No-man's Wharf_NG+"
+      ]
+    },
+    {
+      "ID": 855000,
+      "Entries": [
+        "Voice Marker"
+      ]
+    },
+    {
+      "ID": 860000,
+      "Entries": [
+        "Rockshield Baldyr - Shulva"
+      ]
+    },
+    {
+      "ID": 861000,
+      "Entries": [
+        "Jester Thomas - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        "Cerah the Old Explorer (Boss)"
+      ]
+    },
+    {
+      "ID": 863000,
+      "Entries": [
+        "Ancient Soldier Varg (Boss)"
+      ]
+    },
+    {
+      "ID": 864000,
+      "Entries": [
+        "Afflicted Graverobber (Boss)"
+      ]
+    },
+    {
+      "ID": 865000,
+      "Entries": [
+        "Abbess Feeva - Dragon's Rest"
+      ]
+    },
+    {
+      "ID": 865002,
+      "Entries": [
+        "Abbess Feeva - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 866000,
+      "Entries": [
+        "Ruined Aflis - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 866001,
+      "Entries": [
+        "Ruined Aflis - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 867000,
+      "Entries": [
+        "Steelheart Ellie - Dragon's Rest"
+      ]
+    },
+    {
+      "ID": 867001,
+      "Entries": [
+        "Steelheart Ellie - Brume Tower"
+      ]
+    },
+    {
+      "ID": 867100,
+      "Entries": [
+        "Steelheart Ellie - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 868000,
+      "Entries": [
+        "Transcendent Edde - Dragon's Rest"
+      ]
+    },
+    {
+      "ID": 868100,
+      "Entries": [
+        "Black Dragon Knight Phantom - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 869000,
+      "Entries": [
+        "Rapacious Andrei - Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 870000,
+      "Entries": [
+        "Quicksword Rachel - Brume Tower"
+      ]
+    },
+    {
+      "ID": 871000,
+      "Entries": [
+        "Maldron the Assassin - Brume Tower"
+      ]
+    },
+    {
+      "ID": 871100,
+      "Entries": [
+        "Maldron the Assassin - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 872000,
+      "Entries": [
+        "Astrologer - Iron Passage"
+      ]
+    },
+    {
+      "ID": 872009,
+      "Entries": [
+        "Astrologer (Black Phantom) - Iron Passage (NG+2)"
+      ]
+    },
+    {
+      "ID": 873000,
+      "Entries": [
+        "Notched Whip Phantom - Brume Tower (NG+2)"
+      ]
+    },
+    {
+      "ID": 874000,
+      "Entries": [
+        "Carhillion of the Fold (Summon) - Brume Tower"
+      ]
+    },
+    {
+      "ID": 875000,
+      "Entries": [
+        "Steel-willed Lorrie - Iron Passage"
+      ]
+    },
+    {
+      "ID": 875001,
+      "Entries": [
+        "Steel-willed Lorrie - Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 876000,
+      "Entries": [
+        "Drifter Swordsman Aidel - Brume Tower / Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 876001,
+      "Entries": [
+        "Drifter Swordsman Aidel - Unused"
+      ]
+    },
+    {
+      "ID": 876002,
+      "Entries": [
+        "Drifter Swordsman Aidel - Belfry Sol"
+      ]
+    },
+    {
+      "ID": 877000,
+      "Entries": [
+        "Castaway Witch Donna - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 878000,
+      "Entries": [
+        "Hexer Nicholai - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 879000,
+      "Entries": [
+        "Holy Knight Aurheim - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Drakeblood Knight - Dragon's Sanctum"
+      ]
+    },
+    {
+      "ID": 881000,
+      "Entries": [
+        "Prowler - Brume Tower"
+      ]
+    },
+    {
+      "ID": 882000,
+      "Entries": [
+        "Prowlers - Brume Tower"
+      ]
+    },
+    {
+      "ID": 883000,
+      "Entries": [
+        "Wall Watchman (Drakekeeper's Sword) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 883100,
+      "Entries": [
+        "Wall Watchman (Greatsword) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 883200,
+      "Entries": [
+        "Wall Watchman (Drakekeeper's Warpick) - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 884001,
+      "Entries": [
+        "Twiggy Shei - Grand Cathedral"
+      ]
+    },
+    {
+      "ID": 885000,
+      "Entries": [
+        "Exiled Brave (Faraam) - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 885001,
+      "Entries": [
+        "Exiled Brave (Faraam, Black Phantom) - Frigid Outskirts (NG+2)"
+      ]
+    },
+    {
+      "ID": 885100,
+      "Entries": [
+        "Exiled Brave (Archdrake) - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 885101,
+      "Entries": [
+        "Exiled Brave (Archdrake, Black Phantom) - Frigid Outskirts (NG+2)"
+      ]
+    },
+    {
+      "ID": 886000,
+      "Entries": [
+        "Insolent Knight - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 887000,
+      "Entries": [
+        "Gutter Denizen - The Gutter"
+      ]
+    },
+    {
+      "ID": 888000,
+      "Entries": [
+        "Pyromancer - Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 890000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 891000,
+      "Entries": [
+        "Sellsword Luet - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 891001,
+      "Entries": [
+        "Sellsword Luet - Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 891002,
+      "Entries": [
+        "Sellsword Luet - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 891003,
+      "Entries": [
+        "Sellsword Luet - Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 891004,
+      "Entries": [
+        "Sellsword Luet - Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 891500,
+      "Entries": [
+        "Devotee Scarlett - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 891501,
+      "Entries": [
+        "Devotee Scarlett - Undead Crypt"
+      ]
+    },
+    {
+      "ID": 891502,
+      "Entries": [
+        "Devotee Scarlett - Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 892000,
+      "Entries": [
+        "Manhunter O'Harrah - Iron Keep"
+      ]
+    },
+    {
+      "ID": 892001,
+      "Entries": [
+        "Manhunter O'Harrah - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 892002,
+      "Entries": [
+        "Manhunter O'Harrah - Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 892500,
+      "Entries": [
+        "Bashful Ray - Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 892501,
+      "Entries": [
+        "Bashful Ray - Earthen Peak"
+      ]
+    },
+    {
+      "ID": 892502,
+      "Entries": [
+        "Bashful Ray - Black Gulch"
+      ]
+    },
+    {
+      "ID": 892503,
+      "Entries": [
+        "Bashful Ray - Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 892504,
+      "Entries": [
+        "Bashful Ray - Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 892505,
+      "Entries": [
+        "Bashful Ray - Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 893000,
+      "Entries": [
+        "Bradley of the Old Guard - No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 893001,
+      "Entries": [
+        "Bradley of the Old Guard - Shaded Woods"
+      ]
+    },
+    {
+      "ID": 893002,
+      "Entries": [
+        "Bradley of the Old Guard - Throne of Want"
+      ]
+    },
+    {
+      "ID": 896000,
+      "Entries": [
+        "Woodland Child Victor - Black Gulch"
+      ]
+    },
+    {
+      "ID": 896500,
+      "Entries": [
+        "Woodland Child Gully - Black Gulch"
+      ]
+    },
+    {
+      "ID": 897000,
+      "Entries": [
+        "Fencer Sharron - Iron Keep"
+      ]
+    },
+    {
+      "ID": 897001,
+      "Entries": [
+        "Fencer Sharron - Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 897500,
+      "Entries": [
+        "Armorer Dennis - Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 897501,
+      "Entries": [
+        "Armorer Dennis - Iron Keep"
+      ]
+    },
+    {
+      "ID": 898000,
+      "Entries": [
+        "Oliver the Collector - Iron Keep"
+      ]
+    }
+  ]
+}

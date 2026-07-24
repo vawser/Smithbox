@@ -1,0 +1,38 @@
+{
+  "Param": "CAMERA_FADE_PARAM_ST",
+  "Type": "CAMERA_FADE_PARAM_ST",
+  "Name": "CAMERA_FADE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "NearMinDist",
+      "Name": "Proximity Fade: Minimum Near Distance",
+      "Description": "Near Fade minimum distance (m): Distance where  = 0"
+    },
+    {
+      "Field": "NearMaxDist",
+      "Name": "Proximity Fade: Maximum Near Distance",
+      "Description": "Near fade maximum distance (m): Starting distance between  = Middel Alpha"
+    },
+    {
+      "Field": "FarMinDist",
+      "Name": "Proximity Fade: Minimum Far Distance",
+      "Description": "Minimum distance of Far fade (m): End distance between  = Middle Alpha"
+    },
+    {
+      "Field": "FarMaxDist",
+      "Name": "Proximity Fade: Maximum Far Distance",
+      "Description": "Maximum Far Fade Distance (m): Distance where  = 1"
+    },
+    {
+      "Field": "MiddleAlpha",
+      "Name": "Proximity Fade: Alpha",
+      "Description": "Intermediate  value"
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

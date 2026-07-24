@@ -1,0 +1,28 @@
+{
+  "Param": "LOD_BANK",
+  "Type": "LOD_BANK",
+  "Name": "LOD_BANK",
+  "Description": "Determines the parameters for levels of detail.",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "LOD Level: 0 -> 1 - Boundary Distance",
+      "Description": "The boundary distance between LOD level 0 to level 1. In metres."
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "LOD Level: 0 -> 1 - Play Distance",
+      "Description": "The play distance (at the centre of the boundary) between LOD level 0 to level 1. In metres."
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "LOD Level: 1 -> 2 - Boundary Distance",
+      "Description": "The boundary distance between LOD level 1 to level 2. In metres."
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "LOD Level: 1 -> 2 - Play Distance",
+      "Description": "The play distance (at the centre of the boundary) between LOD level 1 to level 2. In metres."
+    }
+  ]
+}

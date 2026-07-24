@@ -1,0 +1,108 @@
+{
+  "Param": "ARENA_PARAM_ST",
+  "Type": "ARENA_PARAM_ST",
+  "Name": "ARENA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "missionParamID",
+      "Name": "ミッションパラ",
+      "Description": "ミッションパラのID"
+    },
+    {
+      "Field": "category",
+      "Name": "所属",
+      "Description": "表示タブ"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "-----"
+    },
+    {
+      "Field": "rewardTokenID",
+      "Name": "パーツトークン",
+      "Description": "報酬パーツトークンのID"
+    },
+    {
+      "Field": "rankTextID",
+      "Name": "ランク",
+      "Description": "ランク表示用メニューテキストID"
+    },
+    {
+      "Field": "ranker_accountParamID",
+      "Name": "アカウントパラ",
+      "Description": "アカウントパラのID"
+    },
+    {
+      "Field": "ranker_chrInitParamID",
+      "Name": "アーキタイプパラ",
+      "Description": "アーキタイプパラのID"
+    },
+    {
+      "Field": "ranker_npcParamID",
+      "Name": "NPCパラ",
+      "Description": "NPCパラのID"
+    },
+    {
+      "Field": "ranker_thinkParamID",
+      "Name": "NPC思考パラ",
+      "Description": "NPC思考パラのID"
+    },
+    {
+      "Field": "firstReward_cash",
+      "Name": "報酬額",
+      "Description": "報酬金額"
+    },
+    {
+      "Field": "firstReward_osExp",
+      "Name": "経験値",
+      "Description": "経験値"
+    },
+    {
+      "Field": "firstReward_reserved",
+      "Name": "予約",
+      "Description": "-----"
+    },
+    {
+      "Field": "rematchReward_cash",
+      "Name": "報酬額",
+      "Description": "報酬金額"
+    },
+    {
+      "Field": "rematchReward_osExp",
+      "Name": "経験値",
+      "Description": "経験値"
+    },
+    {
+      "Field": "rematchReward_reserved",
+      "Name": "予約",
+      "Description": "-----"
+    },
+    {
+      "Field": "startCutsceneId",
+      "Name": "登場時カットシーンID",
+      "Description": "登場時カットシーンID"
+    },
+    {
+      "Field": "bgmId",
+      "Name": "BGMID",
+      "Description": "BGMID"
+    },
+    {
+      "Field": "rankIconID",
+      "Name": "ランク",
+      "Description": "ランク表示用アイコンID"
+    },
+    {
+      "Field": "endCutsceneId",
+      "Name": "終了時カットシーンID",
+      "Description": "登場時カットシーンID"
+    },
+    {
+      "Field": "endPad",
+      "Name": "予約",
+      "Description": "-----"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "unlockFlagId",
+      "Name": "解禁フラグ",
+      "Description": "解禁フラグ(default: -1)。このイベントフラグが立っていれば解禁される（ローディング画面に表示される）。-1なら常に解禁されている。無効フラグの方が優先される"
+    },
+    {
+      "Field": "invalidFlagId",
+      "Name": "無効フラグ",
+      "Description": "無効フラグ(default: -1)。このイベントフラグが立っていると無効化（ローディング画面に表示されなくなる）。-1なら常にこのフラグは立っていないものとする"
+    },
+    {
+      "Field": "msgId",
+      "Name": "テキストID",
+      "Description": "テキストID(Loading Text.xlsx)。ローディングタイトルとローディングテキスト両方に使われる"
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

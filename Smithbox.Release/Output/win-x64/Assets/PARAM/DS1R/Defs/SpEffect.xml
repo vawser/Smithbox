@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>SP_EFFECT_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s32 iconId = -1">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンID(-1の時は、アイコン必要なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 conditionHp = -1">
+      <DisplayName>発動条件　残りHP比率[%]</DisplayName>
+      <Description>残りHPが、maxHPの何%になったら発動するかを設定</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="f32 effectEndurance">
+      <DisplayName>効果持続時間　時間[s]</DisplayName>
+      <Description>変化持続時間　/-1で永続 /0で瞬間1回限り</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 motionInterval">
+      <DisplayName>発動間隔[s]</DisplayName>
+      <Description>何秒間隔で発生するのかを設定</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 maxHpRate = 1">
+      <DisplayName>最大HP倍率[%]</DisplayName>
+      <Description>最大HPに補正をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 maxMpRate = 1">
+      <DisplayName>最大MP倍率[%]</DisplayName>
+      <Description>最大MPに補正をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="f32 maxStaminaRate = 1">
+      <DisplayName>最大スタミナ倍率[%]</DisplayName>
+      <Description>最大SPに補正をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="f32 slashDamageCutRate = 1">
+      <DisplayName>防御側：斬撃ダメージ倍率</DisplayName>
+      <Description>斬撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2910</SortID>
+    </Field>
+    <Field Def="f32 blowDamageCutRate = 1">
+      <DisplayName>防御側：打撃ダメージ倍率</DisplayName>
+      <Description>打撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2920</SortID>
+    </Field>
+    <Field Def="f32 thrustDamageCutRate = 1">
+      <DisplayName>防御側：刺突ダメージ倍率</DisplayName>
+      <Description>刺突ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2930</SortID>
+    </Field>
+    <Field Def="f32 neutralDamageCutRate = 1">
+      <DisplayName>防御側：無属性ダメージ倍率</DisplayName>
+      <Description>無属性ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>2940</SortID>
+    </Field>
+    <Field Def="f32 magicDamageCutRate = 1">
+      <DisplayName>防御側：魔法ダメージ倍率</DisplayName>
+      <Description>魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 fireDamageCutRate = 1">
+      <DisplayName>防御側：炎ダメージ倍率</DisplayName>
+      <Description>炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="f32 thunderDamageCutRate = 1">
+      <DisplayName>防御側：電撃ダメージ倍率</DisplayName>
+      <Description>炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3110</SortID>
+    </Field>
+    <Field Def="f32 physicsAttackRate = 1">
+      <DisplayName>攻撃側：物理ダメージ倍率</DisplayName>
+      <Description>物理ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="f32 magicAttackRate = 1">
+      <DisplayName>攻撃側：魔法ダメージ倍率</DisplayName>
+      <Description>魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="f32 fireAttackRate = 1">
+      <DisplayName>攻撃側：炎ダメージ倍率</DisplayName>
+      <Description>炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="f32 thunderAttackRate = 1">
+      <DisplayName>攻撃側：電撃ダメージ倍率</DisplayName>
+      <Description>電撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3410</SortID>
+    </Field>
+    <Field Def="f32 physicsAttackPowerRate = 1">
+      <DisplayName>物理攻撃力倍率</DisplayName>
+      <Description>物理攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="f32 magicAttackPowerRate = 1">
+      <DisplayName>魔法攻撃力倍率</DisplayName>
+      <Description>魔法攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3600</SortID>
+    </Field>
+    <Field Def="f32 fireAttackPowerRate = 1">
+      <DisplayName>炎攻撃力倍率</DisplayName>
+      <Description>炎攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3700</SortID>
+    </Field>
+    <Field Def="f32 thunderAttackPowerRate = 1">
+      <DisplayName>電撃攻撃力倍率</DisplayName>
+      <Description>電撃攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3710</SortID>
+    </Field>
+    <Field Def="s32 physicsAttackPower">
+      <DisplayName>物理攻撃力[point]</DisplayName>
+      <Description>物理攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3800</SortID>
+    </Field>
+    <Field Def="s32 magicAttackPower">
+      <DisplayName>魔法攻撃力[point]</DisplayName>
+      <Description>魔法攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3900</SortID>
+    </Field>
+    <Field Def="s32 fireAttackPower">
+      <DisplayName>炎攻撃力[point]</DisplayName>
+      <Description>炎攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 thunderAttackPower">
+      <DisplayName>電撃攻撃力[point]</DisplayName>
+      <Description>電撃攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="f32 physicsDiffenceRate = 1">
+      <DisplayName>物理防御力倍率</DisplayName>
+      <Description>物理防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="f32 magicDiffenceRate = 1">
+      <DisplayName>魔法防御力倍率</DisplayName>
+      <Description>魔法防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="f32 fireDiffenceRate = 1">
+      <DisplayName>炎防御力倍率</DisplayName>
+      <Description>炎防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4300</SortID>
+    </Field>
+    <Field Def="f32 thunderDiffenceRate = 1">
+      <DisplayName>電撃防御力倍率</DisplayName>
+      <Description>電撃防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4310</SortID>
+    </Field>
+    <Field Def="s32 physicsDiffence">
+      <DisplayName>物理防御力[point]</DisplayName>
+      <Description>物理防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4400</SortID>
+    </Field>
+    <Field Def="s32 magicDiffence">
+      <DisplayName>魔法防御力[point]</DisplayName>
+      <Description>魔法防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="s32 fireDiffence">
+      <DisplayName>炎防御力[point]</DisplayName>
+      <Description>炎防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4600</SortID>
+    </Field>
+    <Field Def="s32 thunderDiffence">
+      <DisplayName>電撃防御力[point]</DisplayName>
+      <Description>電撃防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4610</SortID>
+    </Field>
+    <Field Def="f32 NoGuardDamageRate = 1">
+      <DisplayName>隙ダメージ倍率</DisplayName>
+      <Description>隙のときのダメージ倍率を、設定した数値に置き換える（ダメージ側に設定）</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4700</SortID>
+    </Field>
+    <Field Def="f32 vitalSpotChangeRate = -1">
+      <DisplayName>スィートスポット倍率</DisplayName>
+      <Description>スィートスポットのダメージ計算を指定した数値に差し替える(急所ダメージ補正) -1.0で無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4800</SortID>
+    </Field>
+    <Field Def="f32 normalSpotChangeRate = -1">
+      <DisplayName>ノーマルヒット倍率</DisplayName>
+      <Description>ノーマルヒットのダメージ計算を指定した数値に差し替える  -1.0で無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>4900</SortID>
+    </Field>
+    <Field Def="f32 maxHpChangeRate">
+      <DisplayName>最大HP変化倍率</DisplayName>
+      <Description>最大HPに対して、設定された倍率をかけて増減させる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="s32 behaviorId = -1">
+      <DisplayName>行動ID指定枠</DisplayName>
+      <Description>特殊効果から行動IDを使ってダメージを与える場合に指定-1で無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>5010</SortID>
+    </Field>
+    <Field Def="f32 changeHpRate">
+      <DisplayName>HPダメージ量[%]</DisplayName>
+      <Description>最大HPの何%分を毎秒加算（または減算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="s32 changeHpPoint">
+      <DisplayName>HPダメージ[point]</DisplayName>
+      <Description>1秒間に何ポイント加算（または減算）するかを設定</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5200</SortID>
+    </Field>
+    <Field Def="f32 changeMpRate">
+      <DisplayName>MPダメージ量[%]</DisplayName>
+      <Description>最大MPの何%分を毎秒加算（または減算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5300</SortID>
+    </Field>
+    <Field Def="s32 changeMpPoint">
+      <DisplayName>MPダメージ[point]</DisplayName>
+      <Description>1秒間に何ポイント加算（または減算）するかを設定</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5400</SortID>
+    </Field>
+    <Field Def="s32 mpRecoverChangeSpeed">
+      <DisplayName>MP回復速度変化[point]</DisplayName>
+      <Description>回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5500</SortID>
+    </Field>
+    <Field Def="f32 changeStaminaRate">
+      <DisplayName>スタミナダメージ量[%]</DisplayName>
+      <Description>最大スタミナの何%分を毎秒加算（または減算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>5600</SortID>
+    </Field>
+    <Field Def="s32 changeStaminaPoint">
+      <DisplayName>スタミナダメージ[point]</DisplayName>
+      <Description>1秒間に何ポイント加算（または減算）するかを設定</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5700</SortID>
+    </Field>
+    <Field Def="s32 staminaRecoverChangeSpeed">
+      <DisplayName>スタミナ回復速度変化[point]</DisplayName>
+      <Description>回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5800</SortID>
+    </Field>
+    <Field Def="f32 magicEffectTimeChange">
+      <DisplayName>魔法効果時間変化</DisplayName>
+      <Description>効果持続時間に0.1秒以上設定されている魔法のみ、効果持続時間に設定されている時間を加減算する</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="s32 insideDurability">
+      <DisplayName>耐久度変化：内部損耗度[point]</DisplayName>
+      <Description>内部損耗度に数値分を加減算する</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="s32 maxDurability">
+      <DisplayName>耐久度変化：最大損耗度変化[point]</DisplayName>
+      <Description>耐久度の内部損耗度の最大値に、設定された数値を加算する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 staminaAttackRate = 1">
+      <DisplayName>スタミナ攻撃力倍率</DisplayName>
+      <Description>スタミナ攻撃力に、倍率をかける(1.0 1倍 0.5 半分）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="s32 poizonAttackPower">
+      <DisplayName>毒耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【毒耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>6400</SortID>
+    </Field>
+    <Field Def="s32 registIllness">
+      <DisplayName>疫病耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【疫病耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>6500</SortID>
+    </Field>
+    <Field Def="s32 registBlood">
+      <DisplayName>出血耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【出血耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>6600</SortID>
+    </Field>
+    <Field Def="s32 registCurse">
+      <DisplayName>呪耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【呪耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>6610</SortID>
+    </Field>
+    <Field Def="f32 fallDamageRate">
+      <DisplayName>落下ダメージ倍率</DisplayName>
+      <Description>落下時のダメージ計算に倍率をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>6700</SortID>
+    </Field>
+    <Field Def="f32 soulRate">
+      <DisplayName>取得ソウル倍率</DisplayName>
+      <Description>敵を倒した時の取得ソウル量が、指定倍数分上乗せされる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>6800</SortID>
+    </Field>
+    <Field Def="f32 equipWeightChangeRate">
+      <DisplayName>装備重量変化倍率</DisplayName>
+      <Description>最大装備重量に、設定された倍率をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>6900</SortID>
+    </Field>
+    <Field Def="f32 allItemWeightChangeRate">
+      <DisplayName>所持重量変化倍率</DisplayName>
+      <Description>最大所持重量に、設定された倍率をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 soul">
+      <DisplayName>ソウル加算</DisplayName>
+      <Description>所持ソウルに、設定値を加算する</Description>
+      <Minimum>-1E+08</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="s32 animIdOffset">
+      <DisplayName>アニメIDオフセット</DisplayName>
+      <Description>アニメIDオフセット</Description>
+      <Minimum>-1E+08</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11150</SortID>
+    </Field>
+    <Field Def="f32 haveSoulRate = 1">
+      <DisplayName>所持ソウル率</DisplayName>
+      <Description>敵周回効果用。設定されているキャラから外にソウルが出て行く時に適用されます。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7200</SortID>
+    </Field>
+    <Field Def="f32 targetPriority">
+      <DisplayName>ターゲット優先度加算分</DisplayName>
+      <Description>マルチプレイ時、敵から優先的にターゲットとして狙われるようになる。プライオリティの加算。０がデフォルト。プラス値でよく狙われるようになる。マイナスは、－１まで。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>7300</SortID>
+    </Field>
+    <Field Def="s32 sightSearchEnemyCut">
+      <DisplayName>視覚索敵カット</DisplayName>
+      <Description>AIの視覚索敵対象から外れやすくなる。０がデフォルト。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7400</SortID>
+    </Field>
+    <Field Def="s32 hearingSearchEnemyCut">
+      <DisplayName>聴覚索敵カット</DisplayName>
+      <Description>AIの聴覚索敵対象から外れやすくなる。０がデフォルト。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="f32 grabityRate = 1">
+      <DisplayName>グラビティ率</DisplayName>
+      <Description>グラビティ率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8700</SortID>
+    </Field>
+    <Field Def="f32 registPoizonChangeRate">
+      <DisplayName>毒耐性変化倍率</DisplayName>
+      <Description>毒耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8800</SortID>
+    </Field>
+    <Field Def="f32 registIllnessChangeRate">
+      <DisplayName>疫病耐性変化倍率</DisplayName>
+      <Description>疫病耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8900</SortID>
+    </Field>
+    <Field Def="f32 registBloodChangeRate">
+      <DisplayName>出血耐性変化倍率</DisplayName>
+      <Description>出血耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="f32 registCurseChangeRate">
+      <DisplayName>呪耐性変化倍率</DisplayName>
+      <Description>呪耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="f32 soulStealRate">
+      <DisplayName>ソウルスティール係数</DisplayName>
+      <Description>NPCがソウルスティールで奪われるHPに対する防御力</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="f32 lifeReductionRate">
+      <DisplayName>防御：寿命係数</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="f32 hpRecoverRate">
+      <DisplayName>HP回復量係数</DisplayName>
+      <Description>HPが減るときは、効かない。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10100</SortID>
+    </Field>
+    <Field Def="s32 replaceSpEffectId = -1">
+      <DisplayName>差し替える特殊効果</DisplayName>
+      <Description>寿命が尽きた時に追加される特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11100</SortID>
+    </Field>
+    <Field Def="s32 cycleOccurrenceSpEffectId = -1">
+      <DisplayName>周期発生特殊効果</DisplayName>
+      <Description>発動周期毎に発生する特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11101</SortID>
+    </Field>
+    <Field Def="s32 atkOccurrenceSpEffectId = -1">
+      <DisplayName>攻撃発生特殊効果</DisplayName>
+      <Description>攻撃Hit時に発生する特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11102</SortID>
+    </Field>
+    <Field Def="f32 guardDefFlickPowerRate = 1">
+      <DisplayName>ガード時はじき防御力アップ倍率</DisplayName>
+      <Description>ガード時のはじき防御力補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2753</SortID>
+    </Field>
+    <Field Def="f32 guardStaminaCutRate = 1">
+      <DisplayName>ガード時スタミナカット倍率</DisplayName>
+      <Description>ガード時のスタミナカット率補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6210</SortID>
+    </Field>
+    <Field Def="s16 rayCastPassedTime = -1">
+      <DisplayName>視線通過：発動時間[ms]</DisplayName>
+      <Description>視線通過：発動時間[ms]（邪眼用）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>30000</Maximum>
+      <SortID>10800</SortID>
+    </Field>
+    <Field Def="s16 changeSuperArmorPoint">
+      <DisplayName>SA値[point]</DisplayName>
+      <Description>スーパーアーマー値に加算する値</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5810</SortID>
+    </Field>
+    <Field Def="s16 bowDistRate">
+      <DisplayName>弓飛距離補正[％]</DisplayName>
+      <Description>武器の飛距離補正に加算される補正値</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6220</SortID>
+    </Field>
+    <Field Def="u16 spCategory">
+      <DisplayName>特殊効果カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_SPCATEGORY</Enum>
+      <Description>特殊効果の上書きなどの挙動を決めるカテゴリ</Description>
+      <Maximum>60000</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="u8 categoryPriority">
+      <DisplayName>カテゴリ内優先度</DisplayName>
+      <Description>同一カテゴリ内での優先度（低い方が優先）</Description>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="s8 saveCategory = -1">
+      <DisplayName>保存カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_SAVE_CATEGORY</Enum>
+      <Description>特殊効果を保存するカテゴリ</Description>
+      <Minimum>-1</Minimum>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="u8 changeMagicSlot">
+      <DisplayName>魔法登録枠変化　魔法スロット</DisplayName>
+      <Description>魔法登録枠を指定数増やすことが出来る</Description>
+      <Maximum>3</Maximum>
+      <SortID>8300</SortID>
+    </Field>
+    <Field Def="u8 changeMiracleSlot">
+      <DisplayName>奇跡登録枠変化　奇跡スロット</DisplayName>
+      <Description>軌跡登録枠を指定数増やすことが出来る</Description>
+      <Maximum>3</Maximum>
+      <SortID>8400</SortID>
+    </Field>
+    <Field Def="s8 heroPointDamage">
+      <DisplayName>人間性ダメージ値</DisplayName>
+      <Description>人間性値に与えるダメージ値</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>11200</SortID>
+    </Field>
+    <Field Def="u8 defFlickPower">
+      <DisplayName>はじき防御力_上書き</DisplayName>
+      <Description>はじき防御力を上書きする値を設定</Description>
+      <SortID>2751</SortID>
+    </Field>
+    <Field Def="u8 flickDamageCutRate">
+      <DisplayName>はじき時ダメージ減衰率[%]_上書き</DisplayName>
+      <Description>はじき時のダメージ減衰率を上書きする値を設定</Description>
+      <Maximum>100</Maximum>
+      <SortID>2752</SortID>
+    </Field>
+    <Field Def="u8 bloodDamageRate = 100">
+      <DisplayName>出血ダメージ補正倍率</DisplayName>
+      <SortID>9020</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_None">
+      <DisplayName>DL_ダメージなし（0）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv0を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2711</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_S">
+      <DisplayName>DL_小（1）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv1を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2713</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_M">
+      <DisplayName>DL_中（2）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv2を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2714</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_L">
+      <DisplayName>DL_大（3）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv3を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2715</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_BlowM">
+      <DisplayName>DL_吹っ飛び（4）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv4を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2717</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_Push">
+      <DisplayName>DL_プッシュ（5）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv5を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2720</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_Strike">
+      <DisplayName>DL_叩きつけ（6）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv6を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2718</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_BlowS">
+      <DisplayName>DL_小吹っ飛び（7）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv7を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2716</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_Min">
+      <DisplayName>DL_極小（8）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv8を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2712</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_Uppercut">
+      <DisplayName>DL_打ち上げ（9）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv9を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2719</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_BlowLL">
+      <DisplayName>DL_特大吹っ飛び(10)</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv10を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2720</SortID>
+    </Field>
+    <Field Def="s8 dmgLv_Breath">
+      <DisplayName>DL_ブレス(11)</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv11を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>2721</SortID>
+    </Field>
+    <Field Def="u8 atkAttribute">
+      <DisplayName>物理属性</DisplayName>
+      <Enum>ATKPARAM_ATKATTR_TYPE</Enum>
+      <Description>特殊効果に設定する物理属性</Description>
+      <SortID>2740</SortID>
+    </Field>
+    <Field Def="u8 spAttribute">
+      <DisplayName>特殊属性</DisplayName>
+      <Enum>ATKPARAM_SPATTR_TYPE</Enum>
+      <Description>特殊効果に設定する特殊属性</Description>
+      <SortID>2750</SortID>
+    </Field>
+    <Field Def="u8 stateInfo">
+      <DisplayName>状態変化タイプ</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <Description>状態変化の判定フラグ</Description>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 wepParamChange">
+      <DisplayName>対武器パラメータ変化</DisplayName>
+      <Enum>SP_EFE_WEP_CHANGE_PARAM</Enum>
+      <Description>どの武器に対して効果を発揮するかを指定する。制限無しの場合は敵も含めた全ての攻撃・防御が対象</Description>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u8 moveType">
+      <DisplayName>移動タイプ</DisplayName>
+      <Enum>SP_EFFECT_MOVE_TYPE</Enum>
+      <Description>移動タイプ。移動速度を変更する。</Description>
+      <SortID>8500</SortID>
+    </Field>
+    <Field Def="u8 lifeReductionType">
+      <DisplayName>防御：寿命減少タイプ</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <SortID>9900</SortID>
+    </Field>
+    <Field Def="u8 throwCondition">
+      <DisplayName>投げ条件</DisplayName>
+      <Enum>SP_EFFECT_THROW_CONDITION_TYPE</Enum>
+      <Description>投げ条件。投げマスクに影響する。</Description>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="s8 addBehaviorJudgeId_condition = -1">
+      <DisplayName>行動判定IDに加算する条件値</DisplayName>
+      <Description>行動判定ＩＤに値を加算する条件値(Def:-1)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>11300</SortID>
+    </Field>
+    <Field Def="u8 addBehaviorJudgeId_add">
+      <DisplayName>行動判定IDに加算する加算値</DisplayName>
+      <Description>行動判定IDの加算値 ０の場合は行動を切り替えるのではなく、行動しなくなります。</Description>
+      <SortID>11400</SortID>
+    </Field>
+    <Field Def="u8 effectTargetSelf:1">
+      <DisplayName>効果対象：所属　自分</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 effectTargetFriend:1">
+      <DisplayName>効果対象：所属　味方</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 effectTargetEnemy:1">
+      <DisplayName>効果対象：所属　敵</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 effectTargetPlayer:1">
+      <DisplayName>効果対象：操作　PC</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 effectTargetAI:1">
+      <DisplayName>効果対象：操作　AI</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 effectTargetLive:1">
+      <DisplayName>効果対象：状態　生存</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 effectTargetGhost:1">
+      <DisplayName>効果対象：状態　全ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 effectTargetWhiteGhost:1">
+      <DisplayName>効果対象：状態　白ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 effectTargetBlackGhost:1">
+      <DisplayName>効果対象：状態　黒ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 effectTargetAttacker:1">
+      <DisplayName>効果対象：攻撃者に発動</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ダメージ後に攻撃者に特殊効果を適用（防御側には入れない）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 dispIconNonactive:1">
+      <DisplayName>発動してなくてもアイコン表示</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発動待ちの状態でもアイコンを表示する。</Description>
+      <Maximum>1</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u8 useSpEffectEffect:1">
+      <DisplayName>特殊効果エフェクトを使用するか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特殊効果エフェクトを使用するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 bAdjustMagicAblity:1">
+      <DisplayName>魔力補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>魔力補正するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 bAdjustFaithAblity:1">
+      <DisplayName>信仰補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>信仰補正するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 bGameClearBonus:1">
+      <DisplayName>周回ボーナス用か？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ゲームクリア周回ボーナス用かどうか。</Description>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="u8 magParamChange:1">
+      <DisplayName>対魔法パラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>魔法に対して効果を発揮するかしないかを設定する</Description>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 miracleParamChange:1">
+      <DisplayName>対奇跡パラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>奇跡に対して効果を発揮するかしないかを設定する</Description>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 clearSoul:1">
+      <DisplayName>所持ソウルクリアするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>所持ソウルが0になります。</Description>
+      <Maximum>1</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="u8 requestSOS:1">
+      <DisplayName>SOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にSOSサイン要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>7600</SortID>
+    </Field>
+    <Field Def="u8 requestBlackSOS:1">
+      <DisplayName>ブラックSOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にブラックSOSサイン要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>7700</SortID>
+    </Field>
+    <Field Def="u8 requestForceJoinBlackSOS:1">
+      <DisplayName>ブラック強制参加SOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にブラック強制参加SOSサイン要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>7800</SortID>
+    </Field>
+    <Field Def="u8 requestKickSession:1">
+      <DisplayName>キック　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にキック要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>7900</SortID>
+    </Field>
+    <Field Def="u8 requestLeaveSession:1">
+      <DisplayName>退出　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時に退出要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="u8 requestNpcInveda:1">
+      <DisplayName>NPCへの侵入　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にNPCへの侵入要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="u8 noDead:1">
+      <DisplayName>成仏不可　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>死体状態になれるかどうか。このチェックが付いていると、死亡状態にならない</Description>
+      <Maximum>1</Maximum>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="u8 bCurrHPIndependeMaxHP:1">
+      <DisplayName>最大HPが増減しても、現在HPは影響しないか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>最大HPが増減しても、現在HPは影響しないか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="u8 corrosionIgnore:1">
+      <DisplayName>腐食無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>【状態変化タイプ】が【腐食】による【耐久度】減少を無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="u8 sightSearchCutIgnore:1">
+      <DisplayName>視覚索敵カット無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>視覚索敵無効を無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>9300</SortID>
+    </Field>
+    <Field Def="u8 hearingSearchCutIgnore:1">
+      <DisplayName>聴覚索敵カット無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>聴覚索敵無効を無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>9400</SortID>
+    </Field>
+    <Field Def="u8 antiMagicIgnore:1">
+      <DisplayName>アンチマジック無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>アンチマジック範囲でも魔法を使用できる</Description>
+      <Maximum>1</Maximum>
+      <SortID>9500</SortID>
+    </Field>
+    <Field Def="u8 fakeTargetIgnore:1">
+      <DisplayName>偽ターゲット無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した偽ターゲットに引っかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>9600</SortID>
+    </Field>
+    <Field Def="u8 fakeTargetIgnoreUndead:1">
+      <DisplayName>偽ターゲット無効_不死系</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した不死系の偽ターゲットに引っかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>9650</SortID>
+    </Field>
+    <Field Def="u8 fakeTargetIgnoreAnimal:1">
+      <DisplayName>偽ターゲット無効_獣系</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した獣系の偽ターゲットに引っかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>9660</SortID>
+    </Field>
+    <Field Def="u8 grabityIgnore:1">
+      <DisplayName>グラビティ無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>グラビティ効果無効</Description>
+      <Maximum>1</Maximum>
+      <SortID>9700</SortID>
+    </Field>
+    <Field Def="u8 disablePoison:1">
+      <DisplayName>毒無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると毒にかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10200</SortID>
+    </Field>
+    <Field Def="u8 disableDisease:1">
+      <DisplayName>疫病無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると疫病にかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10300</SortID>
+    </Field>
+    <Field Def="u8 disableBlood:1">
+      <DisplayName>出血無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると出血にかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400</SortID>
+    </Field>
+    <Field Def="u8 disableCurse:1">
+      <DisplayName>呪無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると呪いにかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400</SortID>
+    </Field>
+    <Field Def="u8 enableCharm:1">
+      <DisplayName>魅了有効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると魅了にかかるようになる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10410</SortID>
+    </Field>
+    <Field Def="u8 enableLifeTime:1">
+      <DisplayName>寿命延長するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>TAEによるフラグ設定時に寿命延長するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10500</SortID>
+    </Field>
+    <Field Def="u8 hasTarget:1">
+      <DisplayName>敵を把握しているか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>敵を把握しているか？：[発動条件](邪眼使用者用)</Description>
+      <Maximum>1</Maximum>
+      <SortID>10900</SortID>
+    </Field>
+    <Field Def="u8 isFireDamageCancel:1">
+      <DisplayName>解除条件:炎ダメージ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>炎ダメージによる特殊効果の解除を行うか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10910</SortID>
+    </Field>
+    <Field Def="u8 isExtendSpEffectLife:1">
+      <DisplayName>寿命延長効果で延長するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>寿命延長効果が掛かっている時に延長対象になるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10510</SortID>
+    </Field>
+    <Field Def="u8 requestLeaveColiseumSession:1">
+      <DisplayName>闘技場退出　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時に闘技場退出要求を発行</Description>
+      <Maximum>1</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_2:4">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>13001</SortID>
+    </Field>
+    <Field Def="u8 vowType0:1">
+      <DisplayName>誓約0</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約0</Description>
+      <Maximum>1</Maximum>
+      <SortID>11500</SortID>
+    </Field>
+    <Field Def="u8 vowType1:1">
+      <DisplayName>誓約1</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約1</Description>
+      <Maximum>1</Maximum>
+      <SortID>11600</SortID>
+    </Field>
+    <Field Def="u8 vowType2:1">
+      <DisplayName>誓約2</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約2</Description>
+      <Maximum>1</Maximum>
+      <SortID>11700</SortID>
+    </Field>
+    <Field Def="u8 vowType3:1">
+      <DisplayName>誓約3</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約3</Description>
+      <Maximum>1</Maximum>
+      <SortID>11800</SortID>
+    </Field>
+    <Field Def="u8 vowType4:1">
+      <DisplayName>誓約4</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約4</Description>
+      <Maximum>1</Maximum>
+      <SortID>11900</SortID>
+    </Field>
+    <Field Def="u8 vowType5:1">
+      <DisplayName>誓約5</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約5</Description>
+      <Maximum>1</Maximum>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="u8 vowType6:1">
+      <DisplayName>誓約6</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約6</Description>
+      <Maximum>1</Maximum>
+      <SortID>12100</SortID>
+    </Field>
+    <Field Def="u8 vowType7:1">
+      <DisplayName>誓約7</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約7</Description>
+      <Maximum>1</Maximum>
+      <SortID>12200</SortID>
+    </Field>
+    <Field Def="u8 vowType8:1">
+      <DisplayName>誓約8</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約8</Description>
+      <Maximum>1</Maximum>
+      <SortID>12300</SortID>
+    </Field>
+    <Field Def="u8 vowType9:1">
+      <DisplayName>誓約9</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約9</Description>
+      <Maximum>1</Maximum>
+      <SortID>12400</SortID>
+    </Field>
+    <Field Def="u8 vowType10:1">
+      <DisplayName>誓約10</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約10</Description>
+      <Maximum>1</Maximum>
+      <SortID>12500</SortID>
+    </Field>
+    <Field Def="u8 vowType11:1">
+      <DisplayName>誓約11</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約11</Description>
+      <Maximum>1</Maximum>
+      <SortID>12600</SortID>
+    </Field>
+    <Field Def="u8 vowType12:1">
+      <DisplayName>誓約12</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約12</Description>
+      <Maximum>1</Maximum>
+      <SortID>12700</SortID>
+    </Field>
+    <Field Def="u8 vowType13:1">
+      <DisplayName>誓約13</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約13</Description>
+      <Maximum>1</Maximum>
+      <SortID>12800</SortID>
+    </Field>
+    <Field Def="u8 vowType14:1">
+      <DisplayName>誓約14</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約14</Description>
+      <Maximum>1</Maximum>
+      <SortID>12900</SortID>
+    </Field>
+    <Field Def="u8 vowType15:1">
+      <DisplayName>誓約15</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約15</Description>
+      <Maximum>1</Maximum>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[11]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>13002</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

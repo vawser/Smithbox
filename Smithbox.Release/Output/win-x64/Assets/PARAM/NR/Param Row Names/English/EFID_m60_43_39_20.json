@@ -1,0 +1,119 @@
+{
+  "Name": "EFID_m60_43_39_20",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 1039204350,
+      "Entries": [
+        "Fire Monk Passage for fixing respawn point"
+      ]
+    },
+    {
+      "ID": 1043390000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 1043390050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 1043390100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 1043390200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1043390400,
+      "Entries": [
+        "Character flag: Small exploration (do not reset)"
+      ]
+    },
+    {
+      "ID": 1043390500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1043390700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 1043390800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1043390900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1043392100,
+      "Entries": [
+        "System flags"
+      ]
+    },
+    {
+      "ID": 1043392200,
+      "Entries": [
+        "Character flags (reset)"
+      ]
+    },
+    {
+      "ID": 1043392400,
+      "Entries": [
+        "Character flags: Small exploration (reset)"
+      ]
+    },
+    {
+      "ID": 1043392500,
+      "Entries": [
+        "Object flags (reset)"
+      ]
+    },
+    {
+      "ID": 1043392700,
+      "Entries": [
+        "Conversation flags"
+      ]
+    },
+    {
+      "ID": 1043392800,
+      "Entries": [
+        "Boss flags (reset)"
+      ]
+    },
+    {
+      "ID": 1043392900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1043398500,
+      "Entries": [
+        "Object action flags"
+      ]
+    }
+  ]
+}

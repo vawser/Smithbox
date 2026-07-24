@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DEFAULT_KEY_ASSIGN_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 gameAction = -1">
+      <DisplayName>ゲーム機能</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_GAME_ACTION</Enum>
+      <Description>ゲーム機能</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 padKeyId = -1">
+      <DisplayName>パッド</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_PAD_KEY</Enum>
+      <Description>パッド（物理キー）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 keyboardKeyId = -1">
+      <DisplayName>キーボード</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_KEYBOARD_KEY</Enum>
+      <Description>キーボード（物理キー）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 keyboardModifyKey">
+      <DisplayName>キーボード修飾</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_MODIFY_KEY</Enum>
+      <Description>キーボード修飾キー</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 mouseKeyId">
+      <DisplayName>マウス</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_MOUSE_KEY</Enum>
+      <Description>マウス（物理キー）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 mouseModifyKey">
+      <DisplayName>マウス修飾</DisplayName>
+      <Enum>DEFAULT_KEY_ASSIGN_MODIFY_KEY</Enum>
+      <Description>マウス修飾キー</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

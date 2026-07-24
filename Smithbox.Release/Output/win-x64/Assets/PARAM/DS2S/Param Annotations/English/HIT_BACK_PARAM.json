@@ -1,0 +1,58 @@
+{
+  "Param": "HIT_BACK_PARAM",
+  "Type": "HIT_BACK_PARAM",
+  "Name": "HIT_BACK_PARAM",
+  "Description": "Defines recoil distance and stagger duration values for different attack deflection strength levels.",
+  "Fields": [
+    {
+      "Field": "superSmallHitBackDistance",
+      "Name": "Attack Deflection Recoil Distance: Very Small",
+      "Description": "Recoil movement distance applied for extremely weak attack deflections."
+    },
+    {
+      "Field": "superSmallHitBackDuration",
+      "Name": "Attack Deflection Stagger Duration: Very Small",
+      "Description": "Stagger or recovery duration applied for extremely weak attack deflections."
+    },
+    {
+      "Field": "smallHitBackDistance",
+      "Name": "Attack Deflection Recoil Distance: Small",
+      "Description": "Recoil movement distance applied for weak attack deflections."
+    },
+    {
+      "Field": "smallHitBackDuration",
+      "Name": "Attack Deflection Stagger Duration: Small",
+      "Description": "Stagger or recovery duration applied for weak attack deflections."
+    },
+    {
+      "Field": "normalHitBackDistance",
+      "Name": "Attack Deflection Recoil Distance: Medium",
+      "Description": "Recoil movement distance applied for standard attack deflections."
+    },
+    {
+      "Field": "normalHitBackDuration",
+      "Name": "Attack Deflection Stagger Duration: Medium",
+      "Description": "Stagger or recovery duration applied for standard attack deflections."
+    },
+    {
+      "Field": "largeHitBackDistance",
+      "Name": "Attack Deflection Recoil Distance: Large",
+      "Description": "Recoil movement distance applied for strong attack deflections."
+    },
+    {
+      "Field": "largeHitBackDuration",
+      "Name": "Attack Deflection Stagger Duration: Large",
+      "Description": "Stagger or recovery duration applied for strong attack deflections."
+    },
+    {
+      "Field": "superLargeHitBackDistance",
+      "Name": "Attack Deflection Recoil Distance: Very Large",
+      "Description": "Recoil movement distance applied for extremely strong attack deflections."
+    },
+    {
+      "Field": "superLargeHitBackDuration",
+      "Name": "Attack Deflection Stagger Duration: Very Large",
+      "Description": "Stagger or recovery duration applied for extremely strong attack deflections."
+    }
+  ]
+}

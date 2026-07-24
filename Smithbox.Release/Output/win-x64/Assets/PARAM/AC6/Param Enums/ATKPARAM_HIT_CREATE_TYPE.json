@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_HIT_CREATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_HIT_CREATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Connect between DummyPolys"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extend same direction as DummyPoly 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fan"
+        }
+      ]
+    }
+  ]
+}

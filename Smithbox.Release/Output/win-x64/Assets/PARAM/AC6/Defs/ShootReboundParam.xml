@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SHOOT_REBOUND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr strCtrlBoneName[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr subCtrlBoneName1[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr subCtrlBoneName2[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr subCtrlBoneName3[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 reboundLength">
+      <DisplayName>反動距離(m)</DisplayName>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 animFrame">
+      <DisplayName>アニメ尺(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 dummy01[14]">
+      <DisplayName>予約</DisplayName>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="u16 boundKey1_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey1</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey1_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey1</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey1_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>302</SortID>
+      <UnkB8>boundKey1</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey2_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey2</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey2_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey2</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey2_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>303</SortID>
+      <UnkB8>boundKey2</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey3_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey3</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey3_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey3</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey3_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>304</SortID>
+      <UnkB8>boundKey3</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey4_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey4</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey4_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey4</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey4_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>305</SortID>
+      <UnkB8>boundKey4</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey5_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey5</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey5_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey5</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey5_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>306</SortID>
+      <UnkB8>boundKey5</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey6_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey6</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey6_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey6</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey6_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>307</SortID>
+      <UnkB8>boundKey6</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey7_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey7</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey7_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey7</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey7_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>308</SortID>
+      <UnkB8>boundKey7</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey8_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey8</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey8_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey8</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey8_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>309</SortID>
+      <UnkB8>boundKey8</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey9_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey9</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey9_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey9</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey9_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>310</SortID>
+      <UnkB8>boundKey9</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey10_boundFrame">
+      <DisplayName>反動キー(フレーム)</DisplayName>
+      <Maximum>1000</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey10</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="u16 boundKey10_boundRate">
+      <DisplayName>反動割合(％)</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>boundKey10</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+    <Field Def="dummy8 boundKey10_dummy[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>311</SortID>
+      <UnkB8>boundKey10</UnkB8>
+      <UnkC0>BOUND_KEY_ST</UnkC0>
+      <UnkC8>反動キー</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,20 @@
+{
+  "Key": "SOUND_SPECIAL_EQUIPMENT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_SPECIAL_EQUIPMENT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloak"
+        }
+      ]
+    }
+  ]
+}

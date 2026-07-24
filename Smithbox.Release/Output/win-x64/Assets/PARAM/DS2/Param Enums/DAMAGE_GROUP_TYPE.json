@@ -1,0 +1,38 @@
+{
+  "Key": "DAMAGE_GROUP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_GROUP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Own army"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Neutral"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy army"
+        }
+      ]
+    }
+  ]
+}

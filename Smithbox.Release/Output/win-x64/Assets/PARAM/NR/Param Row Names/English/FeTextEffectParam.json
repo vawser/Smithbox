@@ -1,0 +1,377 @@
+{
+  "Name": "FeTextEffectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "DEMIGOD FELLED"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "LEGEND FELLED"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "GREAT ENEMY FELLED"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "ENEMY FELLED"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "NIGHTLORD SLAIN"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "NIGHT REPULSED"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "NIGHTLORD FELLED"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "RIVAL FELLED"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "DARKNESS BANISHED"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "VICTORY ACHIEVED"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "HEIR OF FIRE DESTROYED"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "INVADER VANQUISHED"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "COMMENCE"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "VICTORY"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "LOST GRACE DISCOVERED"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "POWER GAINED"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "LEGEND FORGED"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "OBJECTIVE ACHIEVED"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "YOU DIED"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "YOU DIED"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "POISON"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "SCARLET ROT"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "BLOOD LOSS"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "FROSTBITE"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "SLEEP"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "MADNESS"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "DEATH BLIGHTED"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "LEVEL LOST"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "LEVEL ABSORBED"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "VICTORY"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "DEFEAT"
+      ]
+    },
+    {
+      "ID": 4099,
+      "Entries": [
+        "DAY I"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "DAY II"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "DAY III"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "The Night's tide grows stronger"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Rains gather,\nportending the tide of Night"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "The threat of Night emerges"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Matchmaking..."
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Preparing..."
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Matchmaking complete"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Ready to commence expedition"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "Matchmaking cancelled"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "A Fell Omen arrives"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Giant bubbles are forming"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "A demon casts its curse"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "A plague of locusts befalls the land"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "The Night threatens us anew"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "A meteorite has fallen"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "The Night hordes multiply..."
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "Other worlds spur the hordes"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "A flame of frenzy appears"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "<?playerName1?>"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

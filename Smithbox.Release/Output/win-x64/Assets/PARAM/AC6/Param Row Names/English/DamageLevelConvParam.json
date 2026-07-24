@@ -1,0 +1,797 @@
+{
+  "Name": "DamageLevelConvParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "For DL ​​direct value confirmation"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "bazooka"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "shotgun"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "bolt action rifle"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "missile"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Blade (light attack)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Blade (strong attack)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "semi-automatic rifle"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "└Semi-auto rifle (single charge)"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "assault rifle"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "gatling gun"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "bazooka"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "shotgun"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "grenade rifle"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "Handgun (fire)"
+      ]
+    },
+    {
+      "ID": 10710,
+      "Entries": [
+        "Handgun (single shot)"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "throwing gun"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "hand missile"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "hand rocket"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "laser rifle"
+      ]
+    },
+    {
+      "ID": 11101,
+      "Entries": [
+        "└Laser rifle (charge)"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "plasma rifle"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "pulse gun"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "laser bazooka"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "laser shotgun"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "flamethrower"
+      ]
+    },
+    {
+      "ID": 11700,
+      "Entries": [
+        "Degraded uranium bazooka"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "[test] stun gun"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "laser blade"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "└Laser blade (reservoir)"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "PA breaker"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "└PA breaker (reservoir)"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "└PA Breaker (body attack)"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "plasma broadsword"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "└Plasma broadsword (reservoir)"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "laser naginata"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "└Laser naginata (charged rotation)"
+      ]
+    },
+    {
+      "ID": 20311,
+      "Entries": [
+        "└Laser naginata (damage finish)"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "laser dagger"
+      ]
+    },
+    {
+      "ID": 20410,
+      "Entries": [
+        "└Laser dagger (reservoir)"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Laser Lance (Charge)"
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        "└Laser Lance (Finish)"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "Chainsaw (light attack)"
+      ]
+    },
+    {
+      "ID": 20610,
+      "Entries": [
+        "└Chainsaw (rotating loop)"
+      ]
+    },
+    {
+      "ID": 20620,
+      "Entries": [
+        "└Chainsaw (strong attack finish)"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "electromagnetic hammer"
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        "└Electromagnetic hammer (loop)"
+      ]
+    },
+    {
+      "ID": 20710,
+      "Entries": [
+        "└Electromagnetic hammer (reservoir)"
+      ]
+    },
+    {
+      "ID": 20711,
+      "Entries": [
+        "└Electromagnetic hammer (charge/explosion)"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "Explosive pile (weak)"
+      ]
+    },
+    {
+      "ID": 20810,
+      "Entries": [
+        "└Explosive pile (strong)"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "Electromagnetic baton (weak)"
+      ]
+    },
+    {
+      "ID": 20910,
+      "Entries": [
+        "└Electromagnetic baton (strong)"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "plasma missile"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "AI missile"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "twin missiles"
+      ]
+    },
+    {
+      "ID": 30300,
+      "Entries": [
+        "special plasma missile"
+      ]
+    },
+    {
+      "ID": 30400,
+      "Entries": [
+        "vertical missile"
+      ]
+    },
+    {
+      "ID": 30500,
+      "Entries": [
+        "depleted uranium missile"
+      ]
+    },
+    {
+      "ID": 30600,
+      "Entries": [
+        "large missile"
+      ]
+    },
+    {
+      "ID": 30700,
+      "Entries": [
+        "special missile"
+      ]
+    },
+    {
+      "ID": 30800,
+      "Entries": [
+        "Back missile_middle 1"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "Back missile_slightly heavy 3"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "rocket"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "shoulder bazooka"
+      ]
+    },
+    {
+      "ID": 32100,
+      "Entries": [
+        "shoulder grenade"
+      ]
+    },
+    {
+      "ID": 32200,
+      "Entries": [
+        "shoulder laser cannon"
+      ]
+    },
+    {
+      "ID": 32300,
+      "Entries": [
+        "shoulder plasma cannon"
+      ]
+    },
+    {
+      "ID": 32400,
+      "Entries": [
+        "shoulder pulse gun"
+      ]
+    },
+    {
+      "ID": 32500,
+      "Entries": [
+        "shoulder laser bazooka"
+      ]
+    },
+    {
+      "ID": 32700,
+      "Entries": [
+        "Anti-worm firearm"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "assault boost"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Assault Boost_Kick"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "No reaction"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "until addition"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "until hit back"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Even a slight wobble"
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        "Until the big stagger"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "Until it blows away"
+      ]
+    },
+    {
+      "ID": 100060,
+      "Entries": [
+        "Forced blow-off"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "■Machine gun"
+      ]
+    },
+    {
+      "ID": 99900010,
+      "Entries": [
+        "■Gatling gun"
+      ]
+    },
+    {
+      "ID": 99900020,
+      "Entries": [
+        "■Assault rifle"
+      ]
+    },
+    {
+      "ID": 99900030,
+      "Entries": [
+        "■Semi-auto rifle"
+      ]
+    },
+    {
+      "ID": 99900040,
+      "Entries": [
+        "■Shotgun"
+      ]
+    },
+    {
+      "ID": 99900050,
+      "Entries": [
+        "■Hand gun"
+      ]
+    },
+    {
+      "ID": 99900060,
+      "Entries": [
+        "■Sniper rifle"
+      ]
+    },
+    {
+      "ID": 99900070,
+      "Entries": [
+        "■Railgun"
+      ]
+    },
+    {
+      "ID": 99900080,
+      "Entries": [
+        "■Bazooka"
+      ]
+    },
+    {
+      "ID": 99900090,
+      "Entries": [
+        "■Grenade"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "■Cluster grenade"
+      ]
+    },
+    {
+      "ID": 99900110,
+      "Entries": [
+        "■Napalm"
+      ]
+    },
+    {
+      "ID": 99900120,
+      "Entries": [
+        "■Rocket"
+      ]
+    },
+    {
+      "ID": 99900130,
+      "Entries": [
+        "■Missile"
+      ]
+    },
+    {
+      "ID": 99900140,
+      "Entries": [
+        "■Throwing gun"
+      ]
+    },
+    {
+      "ID": 99900150,
+      "Entries": [
+        "■Mine"
+      ]
+    },
+    {
+      "ID": 99900160,
+      "Entries": [
+        "■F Mine"
+      ]
+    },
+    {
+      "ID": 99900170,
+      "Entries": [
+        "■Laser machine gun"
+      ]
+    },
+    {
+      "ID": 99900180,
+      "Entries": [
+        "■Laser shotgun"
+      ]
+    },
+    {
+      "ID": 99900190,
+      "Entries": [
+        "■Laser rifle"
+      ]
+    },
+    {
+      "ID": 99900200,
+      "Entries": [
+        "■High laser"
+      ]
+    },
+    {
+      "ID": 99900210,
+      "Entries": [
+        "■Sniper laser"
+      ]
+    },
+    {
+      "ID": 99900220,
+      "Entries": [
+        "■Irradiation laser"
+      ]
+    },
+    {
+      "ID": 99900230,
+      "Entries": [
+        "■Pulse gun"
+      ]
+    },
+    {
+      "ID": 99900240,
+      "Entries": [
+        "■Plasma gun"
+      ]
+    },
+    {
+      "ID": 99900250,
+      "Entries": [
+        "■Orbit"
+      ]
+    },
+    {
+      "ID": 99900260,
+      "Entries": [
+        "■Orbit (Yarijuku)"
+      ]
+    },
+    {
+      "ID": 99900270,
+      "Entries": [
+        "■Flame radiation"
+      ]
+    },
+    {
+      "ID": 99900280,
+      "Entries": [
+        "■Substance shield"
+      ]
+    },
+    {
+      "ID": 99900290,
+      "Entries": [
+        "■PA shield"
+      ]
+    },
+    {
+      "ID": 99900300,
+      "Entries": [
+        "■Bash shield"
+      ]
+    },
+    {
+      "ID": 99900310,
+      "Entries": [
+        "■Laser blade"
+      ]
+    },
+    {
+      "ID": 99900320,
+      "Entries": [
+        "■Heat ax"
+      ]
+    },
+    {
+      "ID": 99900330,
+      "Entries": [
+        "■Kick"
+      ]
+    },
+    {
+      "ID": 99900340,
+      "Entries": [
+        "■Laser whip"
+      ]
+    },
+    {
+      "ID": 99900350,
+      "Entries": [
+        "■EN Lance"
+      ]
+    },
+    {
+      "ID": 99900360,
+      "Entries": [
+        "■Plasma pile"
+      ]
+    },
+    {
+      "ID": 99900370,
+      "Entries": [
+        "■Flare"
+      ]
+    },
+    {
+      "ID": 99901000,
+      "Entries": [
+        "■Fighting general purpose"
+      ]
+    },
+    {
+      "ID": 99902000,
+      "Entries": [
+        "■Blast general purpose"
+      ]
+    },
+    {
+      "ID": 99902100,
+      "Entries": [
+        "■Blast general purpose (small)"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "■Up to addition"
+      ]
+    },
+    {
+      "ID": 99990010,
+      "Entries": [
+        "■(Small) Up to medium stagger"
+      ]
+    },
+    {
+      "ID": 99990020,
+      "Entries": [
+        "■Until the big stagger"
+      ]
+    },
+    {
+      "ID": 99990030,
+      "Entries": [
+        "■Until it blows away"
+      ]
+    },
+    {
+      "ID": 99990040,
+      "Entries": [
+        "■No major staggers"
+      ]
+    },
+    {
+      "ID": 99990120,
+      "Entries": [
+        "■Minimum small stagger _ up to large stagger"
+      ]
+    },
+    {
+      "ID": 99990130,
+      "Entries": [
+        "■Minimum slight stagger_until blown away"
+      ]
+    },
+    {
+      "ID": 99996420,
+      "Entries": [
+        "■Mining ship eyeball main gun (spread)"
+      ]
+    }
+  ]
+}

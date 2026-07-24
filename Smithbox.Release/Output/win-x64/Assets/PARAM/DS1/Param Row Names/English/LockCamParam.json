@@ -1,0 +1,228 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default value"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Summon Magic for range designation"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Short"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Medium"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Distant"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Centipede Demon"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Undead Dragon"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Dark"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dark - Close"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Dark - Medium"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Dark - Distant"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Dark",
+        "Dark"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Manus"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[DLC] Camera for al-Tri-race"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Kalameet"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Chained Prisonmer"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "[DLC] Camera for Go warfare"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Gargoyle"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "1st Map - Distant"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "1st Map - Boss Room"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "1st Map - Boss Room (old)"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Sanctuary Guardian"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Grave - Close"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Grave - Distant"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Dedicated to the abolition of the visor]"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Gargoyle"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "Gargoyle - Dark"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Sheath Combat Camera]"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Camera - Short"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Camera - Medium"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Camera - Distant"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Camera - Dark"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Camera - Dark"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Camera - Wide"
+      ]
+    }
+  ]
+}

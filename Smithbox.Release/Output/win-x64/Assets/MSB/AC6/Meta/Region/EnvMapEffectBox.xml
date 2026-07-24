@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an environmental map effect box in the map." />
+  
+  <Field>
+    <EnableDist
+    AltName="Display Distance"
+    Wiki="Distance from camera required before enabling envmap. 0 = always enabled." />
+    
+    <TransitionDist
+    AltName="Transition Distance"
+    Wiki="Distance it takes for an envmap to fully transition into view." />
+    
+    <EnvMapEffectBox_UnkT09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+    
+    <EnvMapEffectBox_UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <EnvMapEffectBox_UnkT0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
+    <SpecularLightMult
+    AltName="Specular Light Intensity"
+    Wiki="Strength of specular light in region." />
+    
+    <PointLightMult
+    AltName="Point Light Intensity"
+    Wiki="Strength of direct light in region." />
+    
+    <EnvMapEffectBox_UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <IsModifyLight
+    AltName="Modify Light"
+    Wiki="Affects lighting with other fields when true. Possibly normalizes light when false."
+    IsBool="" />
+    
+    <EnvMapEffectBox_UnkT2F
+    AltName="Unknown: 0x2F"
+    Wiki="" />
+    
+    <EnvMapEffectBox_UnkT30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <EnvMapEffectBox_UnkT32
+    AltName="Unknown: 0x32"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,11 @@
+{
+  "Params": [
+    "AttachEffectTableParam",
+    "ItemTableParam",
+    "MagicTableParam",
+    "SwordArtsTableParam",
+    "MenuPropertyLayoutParam",
+    "NPCBotTableParam",
+    "RandomAppearParam"
+  ]
+}

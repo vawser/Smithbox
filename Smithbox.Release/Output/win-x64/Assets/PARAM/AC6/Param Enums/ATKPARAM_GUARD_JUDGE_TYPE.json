@@ -1,0 +1,47 @@
+{
+  "Key": "ATKPARAM_GUARD_JUDGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_GUARD_JUDGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character who attacked"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center of attack judgment"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet movement direction"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Omnidirectional guard possible"
+        }
+      ]
+    }
+  ]
+}

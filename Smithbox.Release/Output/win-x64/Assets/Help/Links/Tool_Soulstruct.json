@@ -1,0 +1,16 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: soulstruct",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/github.com/Grimrukh/soulstruct@soulstruct]",
+        "[Header]Description",
+        "Python tools for inspecting and modding From Software games, including an all-in-one graphical interface.",
+        "Mainly supports DS1 and DS1R."
+    ]
+}

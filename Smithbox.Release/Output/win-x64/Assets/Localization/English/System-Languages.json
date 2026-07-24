@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "SYS_Language_English",
+      "Text": "English"
+    },
+    {
+      "Key": "SYS_Language_Chinese",
+      "Text": "Chinese"
+    },
+    {
+      "Key": "SYS_Language_Test",
+      "Text": "Test"
+    }
+  ]
+}

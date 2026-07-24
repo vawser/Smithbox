@@ -1,0 +1,38 @@
+{
+  "Key": "NPCType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPCType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
+    }
+  ]
+}

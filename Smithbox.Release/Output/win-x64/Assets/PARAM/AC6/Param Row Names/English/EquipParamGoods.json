@@ -1,0 +1,1313 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 25,
+      "Entries": [
+        "Repair Kit (Unknown)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Repair Kit (Default)"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Repair Kit (Upgrade 0)"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Repair Kit (Upgrade 1)"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Repair Kit (Upgrade 2)"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Repair Kit (Upgrade 3)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Test archive_garage acquisition_log"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Test archive_garage acquisition_terms"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Test archive_garage tips"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Test archive_mission_log"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Test Archive_Mission_Term"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "Exchange item small"
+      ]
+    },
+    {
+      "ID": 10091000,
+      "Entries": [
+        "Items being exchanged for cash"
+      ]
+    },
+    {
+      "ID": 10092000,
+      "Entries": [
+        "Large exchange item"
+      ]
+    },
+    {
+      "ID": 10099000,
+      "Entries": [
+        "garbage scraps"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Est bottle imitation test"
+      ]
+    },
+    {
+      "ID": 13020000,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020010,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020020,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020030,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020040,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020050,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020060,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020070,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020080,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020090,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020100,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020110,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020120,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020130,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020140,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020150,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020160,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020170,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020180,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020190,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020200,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020210,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020220,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020230,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020240,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020250,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020260,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020270,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020280,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020290,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020300,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020310,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020320,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020330,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020340,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020350,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020360,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020370,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020380,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020390,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020400,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020410,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020420,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020430,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020440,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020450,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020460,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020470,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020480,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020490,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020500,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020510,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020520,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020530,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020540,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020550,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020560,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020570,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020580,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020590,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020600,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020610,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020620,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020630,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020640,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020650,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020660,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020670,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020680,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020690,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020700,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020710,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020720,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020730,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020740,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020750,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020760,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020770,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020780,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020790,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020800,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020810,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020820,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020830,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020840,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020850,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020860,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020870,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020880,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020890,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020900,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020910,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020920,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020930,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020940,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020950,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020960,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020970,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020980,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13020990,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021000,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021010,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021020,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021030,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021040,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021050,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021060,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021070,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021080,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021090,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021100,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021110,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021120,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021130,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021140,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021150,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021160,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021170,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021180,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021190,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021200,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021210,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021220,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021230,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021240,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021250,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021260,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021270,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021280,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021290,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021300,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021310,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021320,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021330,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021340,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021350,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021360,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021370,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021380,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021390,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021400,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021410,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021420,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021430,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021440,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021450,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021460,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021470,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021480,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021490,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 13021500,
+      "Entries": [
+        "License Code: Thomas Kirk"
+      ]
+    },
+    {
+      "ID": 13021510,
+      "Entries": [
+        "License Code: Monkey Gordo"
+      ]
+    },
+    {
+      "ID": 13021520,
+      "Entries": [
+        "License Code: G7 Hakra"
+      ]
+    },
+    {
+      "ID": 13021525,
+      "Entries": [
+        "License Code: Raven"
+      ]
+    },
+    {
+      "ID": 13021530,
+      "Entries": [
+        "System Log: One-Sided Engagement"
+      ]
+    },
+    {
+      "ID": 13021540,
+      "Entries": [
+        "System Log: The Deserter"
+      ]
+    },
+    {
+      "ID": 13021550,
+      "Entries": [
+        "Video Record: STEEL HAZE"
+      ]
+    },
+    {
+      "ID": 13021560,
+      "Entries": [
+        "Video Record: BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 13021570,
+      "Entries": [
+        "Comms Record: Rusty's Encoded Comms"
+      ]
+    },
+    {
+      "ID": 13021580,
+      "Entries": [
+        "Text Data: The Well Dries"
+      ]
+    },
+    {
+      "ID": 13021590,
+      "Entries": [
+        "Video Record: Communication Attempt"
+      ]
+    },
+    {
+      "ID": 13021600,
+      "Entries": [
+        "Comms Record: Friendly Comms"
+      ]
+    },
+    {
+      "ID": 13021610,
+      "Entries": [
+        "Observation Data: Coral Density Survey"
+      ]
+    },
+    {
+      "ID": 13021620,
+      "Entries": [
+        "Observation Data: Terrain Survey"
+      ]
+    },
+    {
+      "ID": 13021630,
+      "Entries": [
+        "Observation Data: Installations Survey"
+      ]
+    },
+    {
+      "ID": 13021640,
+      "Entries": [
+        "Observation Data: Offshore Survey"
+      ]
+    },
+    {
+      "ID": 13021650,
+      "Entries": [
+        "Video Record: Rubiconian Invective"
+      ]
+    },
+    {
+      "ID": 13021660,
+      "Entries": [
+        "Comms Record: Doser Ravings"
+      ]
+    },
+    {
+      "ID": 13021670,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (1)"
+      ]
+    },
+    {
+      "ID": 13021680,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (2)"
+      ]
+    },
+    {
+      "ID": 13021690,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (3)"
+      ]
+    },
+    {
+      "ID": 13021700,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (4)"
+      ]
+    },
+    {
+      "ID": 13021710,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (5)"
+      ]
+    },
+    {
+      "ID": 13021720,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (1)"
+      ]
+    },
+    {
+      "ID": 13021730,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (2)"
+      ]
+    },
+    {
+      "ID": 13021740,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (3)"
+      ]
+    },
+    {
+      "ID": 13021750,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (4)"
+      ]
+    },
+    {
+      "ID": 13021760,
+      "Entries": [
+        "Video Record: The Fires of Ibis"
+      ]
+    },
+    {
+      "ID": 13021770,
+      "Entries": [
+        "Image Data: STV Sketch (3)"
+      ]
+    },
+    {
+      "ID": 13021780,
+      "Entries": [
+        "Image Data: STV Sketch (4)"
+      ]
+    },
+    {
+      "ID": 13021790,
+      "Entries": [
+        "Image Data: STV Sketch (1)"
+      ]
+    },
+    {
+      "ID": 13021800,
+      "Entries": [
+        "Image Data: STV Sketch (2)"
+      ]
+    },
+    {
+      "ID": 13021810,
+      "Entries": [
+        "Image Data: STV Sketch (6)"
+      ]
+    },
+    {
+      "ID": 13021820,
+      "Entries": [
+        "Image Data: STV Sketch (5)"
+      ]
+    },
+    {
+      "ID": 13021830,
+      "Entries": [
+        "Image Data: STK Sketch"
+      ]
+    },
+    {
+      "ID": 13021840,
+      "Entries": [
+        "Observation Data: The City of Xylem"
+      ]
+    },
+    {
+      "ID": 13021850,
+      "Entries": [
+        "Video Record: G4's Last Words"
+      ]
+    },
+    {
+      "ID": 13021860,
+      "Entries": [
+        "Text Data: The Re-education Center"
+      ]
+    },
+    {
+      "ID": 13021880,
+      "Entries": [
+        "Video Record: Testing New Components"
+      ]
+    },
+    {
+      "ID": 13021890,
+      "Entries": [
+        "Video Record: BAWS Guard's Last Words"
+      ]
+    },
+    {
+      "ID": 13021900,
+      "Entries": [
+        "Video Record: The Collector's Last Words"
+      ]
+    },
+    {
+      "ID": 13021910,
+      "Entries": [
+        "Comms Record: Message for Uncle"
+      ]
+    },
+    {
+      "ID": 13021920,
+      "Entries": [
+        "Comms Record: Doser Chatter"
+      ]
+    },
+    {
+      "ID": 13021930,
+      "Entries": [
+        "Comms Record: Coyote Chatter"
+      ]
+    },
+    {
+      "ID": 13021940,
+      "Entries": [
+        "Comms Record: Independent Merc Comms"
+      ]
+    },
+    {
+      "ID": 13021950,
+      "Entries": [
+        "Comms Record: Enforcement Squad Comms"
+      ]
+    },
+    {
+      "ID": 13021960,
+      "Entries": [
+        "Observation Data: Wave Mutation Detected"
+      ]
+    },
+    {
+      "ID": 13021970,
+      "Entries": [
+        "Observation Data: Blind Spots"
+      ]
+    },
+    {
+      "ID": 13021980,
+      "Entries": [
+        "Observation Data: The Enforcement System"
+      ]
+    },
+    {
+      "ID": 13021990,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (5)"
+      ]
+    },
+    {
+      "ID": 13022000,
+      "Entries": [
+        "Placement Archive_Mission"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "dummy image"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "WaypointParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

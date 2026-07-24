@@ -1,0 +1,108 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Upgrader_Header",
+      "Text": "Param Upgrader"
+    },
+    {
+      "Key": "PARAM_Upgrader_Version_Mismatch_Hint",
+      "Text": "Project primary bank version is below current game version: {0} < {1} -- Open the Param Upgrader tool in the Tools window."
+    },
+    {
+      "Key": "PARAM_Upgrader_Hint",
+      "Text": "Upgrade the param version for this project's params."
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Version",
+      "Text": "Version"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Version_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Upgrader_Primary_Version",
+      "Text": "Primary Param Version: {0}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Source_Version",
+      "Text": "Source Param Version: {0}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Start",
+      "Text": "Start"
+    },
+    {
+      "Key": "PARAM_Upgrader_No_Upgrade_Needed",
+      "Text": "No need to upgrade params."
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Check_for_Conflicts",
+      "Text": "Check for Conflicts"
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Apply_Upgrade",
+      "Text": "Apply Upgrade"
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Apply_Mass_Edits",
+      "Text": "Apply Mass Edits"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Conflicts",
+      "Text": "Conflicts"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Conflicts_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Upgrader_Log_Missing_Upgrader_Info",
+      "Text": "Failed to find load upgrader information."
+    },
+    {
+      "Key": "PARAM_Upgrader_Log_Missing_Old_Regulation_File",
+      "Text": "Failed to find old regulation file."
+    },
+    {
+      "Key": "PARAM_Upgrader_Upgraded_Primary_Bank_Params",
+      "Text": "Upgraded primary bank params successfully."
+    },
+    {
+      "Key": "PARAM_Upgrader_Primary_Already_Upgraded",
+      "Text": "Primary bank is already fully upgraded."
+    },
+    {
+      "Key": "PARAM_Upgrader_Failed_SpEffect_Store",
+      "Text": "Failed to store SpEffect data."
+    },
+    {
+      "Key": "PARAM_Upgrader_Applied_MassEdit_Commands",
+      "Text": "Applied upgrader mass edit commands."
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Check_Passed",
+      "Text": "Checked for conflicts successfully."
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Check_Failed",
+      "Text": "Failed to check for conflicts."
+    },
+    {
+      "Key": "PARAM_Upgrader_Deserialize_Upgrader_Info_Failed",
+      "Text": "Failed to deserialize Upgrader Information."
+    },
+    {
+      "Key": "PARAM_Upgrader_Read_Upgrader_Info_Failed",
+      "Text": "Failed to load Upgrader Information."
+    }
+  ]
+}

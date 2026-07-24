@@ -1,0 +1,29 @@
+{
+  "Key": "MENU_PROPERTY_DISPLAY_CONDITION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_PROPERTY_DISPLAY_CONDITION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Booster only"
+        }
+      ]
+    }
+  ]
+}

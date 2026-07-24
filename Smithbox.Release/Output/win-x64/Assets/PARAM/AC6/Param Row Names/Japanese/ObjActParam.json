@@ -1,0 +1,335 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "need -- 必要"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "treasure chest -- 宝箱"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "treasure chest -- 宝箱"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "m93_01_door_candle room -- m93_01_扉_蝋燭部屋"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "m93_01_door_candle room -- m93_01_扉_蝋燭部屋"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "m96_00 Door Concept Map_Entrance -- m96_00 扉 コンセプトマップ_入口"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "m96_00 Door Concept Map_Cathedral Entrance -- m96_00 扉 コンセプトマップ_聖堂入口"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "m96_00 Door Concept Map_Long View Entrance -- m96_00 扉 コンセプトマップ_遠景入口"
+      ]
+    },
+    {
+      "ID": 475,
+      "Entries": [
+        "m20_01_Door_Orphanage 2F_Small -- m20_01_扉_孤児院2F_小"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "test_door test -- test_扉テスト"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "test_door test -- test_扉テスト"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "m30_00_door_mausoleum shortcut -- m30_00_扉_霊廟ショートカット"
+      ]
+    },
+    {
+      "ID": 300310,
+      "Entries": [
+        "m30_00_door_castle wall shortcut -- m30_00_扉_城壁ショートカット"
+      ]
+    },
+    {
+      "ID": 300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut -- m30_00_扉_城壁ショートカット"
+      ]
+    },
+    {
+      "ID": 300312,
+      "Entries": [
+        "m30_00_door_mausoleum shortcut -- m30_00_扉_霊廟ショートカット"
+      ]
+    },
+    {
+      "ID": 300320,
+      "Entries": [
+        "m30_01_door_old garden building -- m30_01_扉_旧ガーデン建物"
+      ]
+    },
+    {
+      "ID": 300371,
+      "Entries": [
+        "m30_00_door_mausoleum exit door -- m30_00_扉_霊廟出口扉"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "m30_00_lever_mausoleum front elevator -- m30_00_レバー_霊廟正面エレベータ"
+      ]
+    },
+    {
+      "ID": 300510,
+      "Entries": [
+        "m30_00_lever_castle wall elevator -- m30_00_レバー_城壁エレベーター"
+      ]
+    },
+    {
+      "ID": 304873,
+      "Entries": [
+        "m30_01_Lever_Large elevator -- m30_01_レバー_大広間エレベータ"
+      ]
+    },
+    {
+      "ID": 302420,
+      "Entries": [
+        "m30_02_lever_archive elevator -- m30_02_レバー_書庫エレベータ"
+      ]
+    },
+    {
+      "ID": 314027,
+      "Entries": [
+        "m31_00_door_in front of boss room -- m31_00_扉_ボス部屋前"
+      ]
+    },
+    {
+      "ID": 324012,
+      "Entries": [
+        "m32_00 lever_big bell -- m32_00 レバー_大鐘"
+      ]
+    },
+    {
+      "ID": 324051,
+      "Entries": [
+        "m32_00 lever_bridge elevator -- m32_00 レバー_橋エレベーター"
+      ]
+    },
+    {
+      "ID": 331312,
+      "Entries": [
+        "m33_00 Lever Poison Swamp Forest Elevator -- m33_00 レバー 毒沼の森エレベーター"
+      ]
+    },
+    {
+      "ID": 331321,
+      "Entries": [
+        "m33_00 Double door in front of boss -- m33_00 両開き扉 ボス前"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "m35_00 lever_elevator -- m35_00 レバー_エレベーター"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "m35_00 Large door_Both sides of the cathedral -- m35_00 大扉_聖堂両脇"
+      ]
+    },
+    {
+      "ID": 350021,
+      "Entries": [
+        "m35_00 Lever_Shutter -- m35_00 レバー_シャッター"
+      ]
+    },
+    {
+      "ID": 350206,
+      "Entries": [
+        "m35_00 Big door_Cathedral main gate -- m35_00 大扉_聖堂正門"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "m35_00 double door -- m35_00 両開き扉"
+      ]
+    },
+    {
+      "ID": 360320,
+      "Entries": [
+        "m36_00 Double door in front of middle boss -- m36_00 両開き扉 中ボス前"
+      ]
+    },
+    {
+      "ID": 360330,
+      "Entries": [
+        "m36_00 Double door shotoka -- m36_00 両開き扉 ショトカ"
+      ]
+    },
+    {
+      "ID": 370301,
+      "Entries": [
+        "m37_00_door_Landmark church square -- m37_00_扉_ランドマーク教会前広場"
+      ]
+    },
+    {
+      "ID": 370502,
+      "Entries": [
+        "m37_00_lever -- m37_00_レバー"
+      ]
+    },
+    {
+      "ID": 390301,
+      "Entries": [
+        "m39_00 Shotka door -- m39_00 ショトカ扉"
+      ]
+    },
+    {
+      "ID": 394051,
+      "Entries": [
+        "m39_00_Dungeon Shotka Elevator -- m39_00_地下牢ショトカエレベーター"
+      ]
+    },
+    {
+      "ID": 394027,
+      "Entries": [
+        "m39_00_Underground prison door -- m39_00_地下牢獄扉"
+      ]
+    },
+    {
+      "ID": 394028,
+      "Entries": [
+        "m39_01_dungeon shotka door -- m39_01_地下牢ショトカ扉"
+      ]
+    },
+    {
+      "ID": 400340,
+      "Entries": [
+        "m40_00_Last boss room door -- m40_00_ラスボス部屋扉"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut 1 -- m30_00_扉_城壁ショートカット1"
+      ]
+    },
+    {
+      "ID": 2300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut 2 -- m30_00_扉_城壁ショートカット2"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "GR_Test_General purpose door (double door) -- GR_テスト用_汎用扉（両開き）"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "GR_Test_Door with key (double door) -- GR_テスト用_鍵付扉（両開き）"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "GR_Test_Inner key door -- GR_テスト用_内鍵扉"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "GR_For testing_General purpose door (single opening) -- GR_テスト用_汎用扉（片開き）"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "GR_Test_Door with key (single opening) -- GR_テスト用_鍵付扉（片開き）"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "GR_For testing_Inner key door (single opening) -- GR_テスト用_内鍵扉（片開き）"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation A -- GR_テスト用_プレイアブル動作確認Ａ"
+      ]
+    },
+    {
+      "ID": 90014,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation B -- GR_テスト用_プレイアブル動作確認Ｂ"
+      ]
+    },
+    {
+      "ID": 90015,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation B -- GR_テスト用_プレイアブル動作確認Ｂ"
+      ]
+    },
+    {
+      "ID": 90016,
+      "Entries": [
+        "GR_For testing_For hanging event response -- GR_テスト用_ぶら下がりイベント対応用"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "FNR_Test_Door (temporary model) -- FNR_テスト用_扉（仮モデル）"
+      ]
+    },
+    {
+      "ID": 990001,
+      "Entries": [
+        "FNR_Test_Door (temporary model) -- FNR_テスト用_扉（仮モデル）"
+      ]
+    }
+  ]
+}

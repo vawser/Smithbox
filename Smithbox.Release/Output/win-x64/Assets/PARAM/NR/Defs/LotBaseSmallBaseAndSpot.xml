@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>LOT_BASE_SMALBASE_AND_SPOT_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="u8 unknown_2a"/>
+    <!-- Maybe a bitflag -->
+    <Field Def="u8 unknown_2b"/>
+    <Field Def="u8 unknown_2c"/>
+    <Field Def="u8 unknown_2d"/>
+    <Field Def="u8 unknown_3a"/>
+    <Field Def="u8 unknown_3b"/>
+    <Field Def="u8 unknown_3c"/>
+    <Field Def="u8 unknown_3d"/>
+    <Field Def="s32 modifier1"/>
+    <Field Def="s32 modifier2"/>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,38 @@
+{
+  "Key": "MULT_END_RESPAWN_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULT_END_RESPAWN_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Original Position"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Last Bonfire"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Same Location"
+        }
+      ]
+    }
+  ]
+}

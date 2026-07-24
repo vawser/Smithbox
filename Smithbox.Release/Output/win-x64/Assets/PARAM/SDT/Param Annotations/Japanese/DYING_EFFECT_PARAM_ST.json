@@ -1,0 +1,38 @@
+{
+  "Param": "DYING_EFFECT_PARAM_ST",
+  "Type": "DYING_EFFECT_PARAM_ST",
+  "Name": "DYING_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fadeTime_NormalToDyingBegin",
+      "Name": "通常→瀕死開始フェード時間[秒]",
+      "Description": "通常→瀕死開始フェード時間[秒]"
+    },
+    {
+      "Field": "fadeTime_DyingBeginToDyingLoop",
+      "Name": "瀕死開始→瀕死中フェード時間[秒]",
+      "Description": "瀕死開始→瀕死中フェード時間[秒]"
+    },
+    {
+      "Field": "fadeTime_DyingLoopToNormal",
+      "Name": "瀕死中→通常フェード時間[秒]",
+      "Description": "瀕死中→通常フェード時間[秒]"
+    },
+    {
+      "Field": "fadeTime_DyingLoopToWaitBegin",
+      "Name": "瀕死中→復活待機開始フェード時間[秒]",
+      "Description": "瀕死中→復活待機開始フェード時間[秒]"
+    },
+    {
+      "Field": "fadeTime_WaitToNormal",
+      "Name": "復活待機→通常フェード時間[秒]",
+      "Description": "復活待機→通常フェード時間[秒]"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    }
+  ]
+}

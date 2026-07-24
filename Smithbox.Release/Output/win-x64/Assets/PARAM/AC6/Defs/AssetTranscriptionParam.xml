@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSET_TRANSCRIPTION_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 slodConvertType = 2">
+      <DisplayName>SLOD変換設定</DisplayName>
+      <Enum>ASSET_SLOD_CONVERT_TYPE</Enum>
+      <Description>SLOD変換で使用する設定、転写実行時のモデルの表示on/offに使用</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 imposterCaptureType">
+      <DisplayName>インポスター撮影方法</DisplayName>
+      <Enum>ASSET_IMPOSTER_TYPE</Enum>
+      <Description>インポスターの撮影方法</Description>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 bakeAssetLodLv">
+      <DisplayName>転写先のLodLv</DisplayName>
+      <Description>転写先のモデルのLodLv</Description>
+      <Maximum>3</Maximum>
+      <SortID>115</SortID>
+    </Field>
+    <Field Def="u8 isHemiOctahedral:1">
+      <DisplayName>半球撮影か（LockCamBillboardのみ影響）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>LockCamBillboardの撮影で上半分だけ撮影するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="dummy8 pad:7">
+      <Description>パディング5</Description>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 bakeAssetId = -1">
+      <DisplayName>転写先アセットID</DisplayName>
+      <Description>SLODの転写先のモデル-1のときは元モデルと同じID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 lockCamBillboard_imposterCamOffset">
+      <DisplayName>カメラのオフセット距離(cm) </DisplayName>
+      <Description>オフセット距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>320</SortID>
+      <UnkB8>lockCamBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>LockCamBillboard</UnkC8>
+    </Field>
+    <Field Def="u16 lockCamBillboard_imposterTexSize = 128">
+      <DisplayName>テクスチャ出力解像度</DisplayName>
+      <Enum>ASSET_SLOD_TEX_SIZE_TYPE</Enum>
+      <Description>一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります</Description>
+      <Minimum>64</Minimum>
+      <Maximum>4096</Maximum>
+      <Increment>64</Increment>
+      <SortID>300</SortID>
+      <UnkB8>lockCamBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>LockCamBillboard</UnkC8>
+    </Field>
+    <Field Def="u8 lockCamBillboard_imposterTexNum_CapAngle = 16">
+      <DisplayName>撮影枚数</DisplayName>
+      <Enum>ASSET_SLOD_CAP_DIR_NUM_TYPE</Enum>
+      <Description>撮影する枚数</Description>
+      <Minimum>8</Minimum>
+      <Maximum>32</Maximum>
+      <SortID>310</SortID>
+      <UnkB8>lockCamBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>LockCamBillboard</UnkC8>
+    </Field>
+    <Field Def="u8 lockCamBillboard_imposterLockCamTexPad">
+      <DisplayName>テクスチャパディング</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description> 余白があるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>330</SortID>
+      <UnkB8>lockCamBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>LockCamBillboard</UnkC8>
+    </Field>
+    <Field Def="f32 crossBillboard_imposterCamOffset">
+      <DisplayName>カメラのオフセット距離(cm) </DisplayName>
+      <Description>オフセット距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>420</SortID>
+      <UnkB8>crossBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>CrossBillboard</UnkC8>
+    </Field>
+    <Field Def="u16 crossBillboard_imposterTexSize = 128">
+      <DisplayName>テクスチャ出力解像度</DisplayName>
+      <Enum>ASSET_SLOD_TEX_SIZE_TYPE</Enum>
+      <Description>一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります</Description>
+      <Minimum>64</Minimum>
+      <Maximum>4096</Maximum>
+      <Increment>64</Increment>
+      <SortID>400</SortID>
+      <UnkB8>crossBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>CrossBillboard</UnkC8>
+    </Field>
+    <Field Def="u8 crossBillboard_imposterTexNum_CapAngle = 45">
+      <DisplayName>撮影角度</DisplayName>
+      <Enum>ASSET_SLOD_CAP_ANGLE_TYPE</Enum>
+      <Description>撮影する角度</Description>
+      <Minimum>15</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>15</Increment>
+      <SortID>410</SortID>
+      <UnkB8>crossBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>CrossBillboard</UnkC8>
+    </Field>
+    <Field Def="u8 crossBillboard_imposterLockCamTexPad">
+      <DisplayName>テクスチャパディング</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description> 余白があるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>430</SortID>
+      <UnkB8>crossBillboard</UnkB8>
+      <UnkC0>ImposterSetting</UnkC0>
+      <UnkC8>CrossBillboard</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

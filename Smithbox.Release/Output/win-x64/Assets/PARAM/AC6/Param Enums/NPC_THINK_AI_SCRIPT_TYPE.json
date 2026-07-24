@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_THINK_AI_SCRIPT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_AI_SCRIPT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Operation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goal"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Behavior"
+        }
+      ]
+    }
+  ]
+}

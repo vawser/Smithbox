@@ -1,0 +1,108 @@
+{
+  "Param": "OBJ_ACT_PARAM_ST",
+  "Type": "OBJ_ACT_PARAM_ST",
+  "Name": "OBJ_ACT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "actionEnableMsgId",
+      "Name": "アクション有効時のMsgID",
+      "Description": "アクションが有効時に表示するメニューのMsgIDです。"
+    },
+    {
+      "Field": "actionFailedMsgId",
+      "Name": "アクション失敗時のMsgID",
+      "Description": "アクションが失敗時に表示するメニューのMsgIDです。"
+    },
+    {
+      "Field": "spQualifiedPassEventFlag",
+      "Name": "特殊条件パス用イベントフラグ",
+      "Description": "特殊条件を無条件パスするためのイベントフラグ."
+    },
+    {
+      "Field": "playerAnimId",
+      "Name": "プレイヤのアニメID0",
+      "Description": "プレイヤーキャラのアクション時のアニメIDです。"
+    },
+    {
+      "Field": "chrAnimId",
+      "Name": "キャラのアニメID0",
+      "Description": "敵などのアクション時のアニメID"
+    },
+    {
+      "Field": "validDist",
+      "Name": "アクションの有効距離[cm]",
+      "Description": "アクションの有効距離です。"
+    },
+    {
+      "Field": "spQualifiedId",
+      "Name": "特殊条件のID",
+      "Description": "特殊条件のID"
+    },
+    {
+      "Field": "spQualifiedId2",
+      "Name": "特殊条件のID 2",
+      "Description": "特殊条件のIDその2"
+    },
+    {
+      "Field": "objDummyId",
+      "Name": "オブジェのダミポリID0",
+      "Description": "オブジェクトのアクション位置となるダミポリIDです"
+    },
+    {
+      "Field": "isEventKickSync",
+      "Name": "イベントキックを同期させるか",
+      "Description": "ObjAct実行判定で使用されるイベントを同期させるか。基本×に設定する。アクターが重要ではない場合のみ○に設定しても良い。"
+    },
+    {
+      "Field": "objAnimId",
+      "Name": "オブジェのアニメID0",
+      "Description": "オブジェクトのアクション時のアニメＩＤです。"
+    },
+    {
+      "Field": "validPlayerAngle",
+      "Name": "プレイヤのアクション有効角度",
+      "Description": "プレイヤのアクションの有効角度です。プレイヤの向きベクトルとオブジェへの方向ベクトルの有効角度差"
+    },
+    {
+      "Field": "spQualifiedType",
+      "Name": "特殊条件のタイプ",
+      "Description": "特殊条件の種類"
+    },
+    {
+      "Field": "spQualifiedType2",
+      "Name": "特殊条件のタイプ2",
+      "Description": "特殊条件の種類2"
+    },
+    {
+      "Field": "validObjAngle",
+      "Name": "オブジェのアクション有効角度",
+      "Description": "オブジェのアクション有効角度です。オブジェのアクションベクトルとキャラベクトルの有効角度差"
+    },
+    {
+      "Field": "chrSorbType",
+      "Name": "キャラの吸着タイプ",
+      "Description": "オブジェアクション時のキャラの吸着方法です"
+    },
+    {
+      "Field": "eventKickTiming",
+      "Name": "イベント発動タイミング",
+      "Description": "イベントの実行タイミング"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": "pad0"
+    },
+    {
+      "Field": "actionButtonParamId",
+      "Name": "アクションボタンパラメータID",
+      "Description": "アクションボタンパラメータID"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": "pad0"
+    }
+  ]
+}

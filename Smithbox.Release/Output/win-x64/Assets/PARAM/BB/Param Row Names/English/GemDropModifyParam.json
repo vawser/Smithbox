@@ -1,0 +1,71 @@
+{
+  "Name": "GemDropModifyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Holy Grail Type Group Test"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Pthumerian Labyrinth - Depth 1"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Central Pthumerian Labyrinth - Depth 2"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Lower Pthumerian Labyrinth - Depth 3"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Pthumerian Defilement - Depth 4"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Hintertomb - Depth 2"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Lower Hintertomb - Depth 3"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Ailing Loran - Depth 4"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        "Lower Loran - Depth 5"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        "Isz Gravestone - Depth 5"
+      ]
+    }
+  ]
+}

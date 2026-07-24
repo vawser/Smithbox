@@ -1,0 +1,761 @@
+{
+  "Name": "NpcAiActionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "NPC_ATK_R1 "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "NPC_ATK_R1_Hold "
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "NPC_ATK_R2 "
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "NPC_ATK_R2_Hold "
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "NPC_ATK_L1 "
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "NPC_ATK_L1Hold "
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "NPC_ATK_L2 "
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "NPC_ATK_L2Hold "
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "NPC_ATK_L3 "
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "NPC_ATK_Up_R1 "
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "NPC_ATK_Up_R2 "
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "NPC_ATK_ButtonTriangle "
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "NPC_ATK_ButtonSquare "
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "NPC_ATK_ButtonCircle "
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "NPC_ATK_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "NPC_ATK_ArrowKeyLeft "
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "NPC_ATK_ArrowKeyRight "
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "NPC_ATK_Up "
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "NPC_ATK_UpLeft "
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "NPC_ATK_UpRight "
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "NPC_ATK_Left "
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "NPC_ATK_Right "
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "NPC_ATK_Down "
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "NPC_ATK_DownLeft "
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "NPC_ATK_DownRight "
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "NPC_ATK_Up_L1Hold "
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "NPC_ATK_UpLeft_L1Hold "
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "NPC_ATK_UpRight_L1Hold "
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "NPC_ATK_Left_L1Hold "
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "NPC_ATK_Right_L1Hold "
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "NPC_ATK_Down_L1Hold "
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "NPC_ATK_DownLeft_L1Hold "
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "NPC_ATK_DownRight_L1Hold "
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "NPC_ATK_UpHold_ButtonXmarkHold "
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "NPC_ATK_UpHold_ButtonXmarkHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "NPC_ATK_Up_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "NPC_ATK_UpLeft_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "NPC_ATK_UpRight_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "NPC_ATK_Left_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "NPC_ATK_Right_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "NPC_ATK_Down_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "NPC_ATK_DownLeft_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "NPC_ATK_DownRight_ButtonXmark "
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "NPC_ATK_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "NPC_ATK_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "NPC_ATK_Up_L2 "
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "NPC_ATK_UpLeft_L2 "
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "NPC_ATK_UpRight_L2 "
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "NPC_ATK_Left_L2 "
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "NPC_ATK_Right_L2 "
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "NPC_ATK_Down_L2 "
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "NPC_ATK_DownLeft_L2 "
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "NPC_ATK_DownRight_L2 "
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "NPC_ATK_UpHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "NPC_ATK_UpLeftHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "NPC_ATK_UpRightHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "NPC_ATK_LeftHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "NPC_ATK_RightHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "NPC_ATK_DownHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "NPC_ATK_DownLeftHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "NPC_ATK_DownRightHold_L2Hold "
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "NPC_ATK_UpHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "NPC_ATK_UpLeftHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "NPC_ATK_UpRightHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "NPC_ATK_LeftHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "NPC_ATK_RightHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "NPC_ATK_DownHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "NPC_ATK_DownLeftHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "NPC_ATK_DownRightHold_L2Hold_R1 "
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "NPC_ATK_UpHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "NPC_ATK_UpLeftHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "NPC_ATK_UpRightHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "NPC_ATK_LeftHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "NPC_ATK_RightHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "NPC_ATK_DownHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "NPC_ATK_DownLeftHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "NPC_ATK_DownRightHold_L2Hold_R2 "
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "NPC_ATK_L1Hold_R1 "
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "NPC_ATK_L1Hold_R2 "
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "NPC_ATK_LadderUp "
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "NPC_ATK_LadderDown "
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "left handed weapon two handed"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "NPC_ATK_RideMount "
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "NPC_ATK_RideDismount "
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "NPC_ATK_Gesture00 "
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "NPC_ATK_Gesture01 "
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "NPC_ATK_Gesture02 "
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "NPC_ATK_Gesture03 "
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "NPC_ATK_Gesture04 "
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "NPC_ATK_Gesture05 "
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "NPC_ATK_Gesture06 "
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "NPC_ATK_Gesture07 "
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "NPC_ATK_Gesture08 "
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "NPC_ATK_Gesture09 "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "NPC_ATK_Gesture10 "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "NPC_ATK_Gesture11 "
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "NPC_ATK_Gesture12 "
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "NPC_ATK_Gesture13 "
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "NPC_ATK_Gesture14 "
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "NPC_ATK_Gesture15 "
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "NPC_ATK_Gesture16 "
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "NPC_ATK_Gesture17 "
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "NPC_ATK_Gesture18 "
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "NPC_ATK_Gesture19 "
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "NPC_ATK_Gesture20 "
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "NPC_ATK_Gesture21 "
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "NPC_ATK_Gesture22 "
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "NPC_ATK_Gesture23 "
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "NPC_ATK_Gesture24 "
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "NPC_ATK_Gesture25 "
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "NPC_ATK_Gesture26 "
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "NPC_ATK_Gesture27 "
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "NPC_ATK_Gesture28 "
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "NPC_ATK_Gesture29 "
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "NPC_ATK_Gesture30 "
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "NPC_ATK_Gesture31 "
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "NPC_ATK_Gesture32 "
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "NPC_ATK_Gesture33 "
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "NPC_ATK_Gesture34 "
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "NPC_ATK_Gesture35 "
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "NPC_ATK_Gesture36 "
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "NPC_ATK_Gesture37 "
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "NPC_ATK_Gesture38 "
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "NPC_ATK_Gesture39 "
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Gesture ID40"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Non-input"
+      ]
+    }
+  ]
+}

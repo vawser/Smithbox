@@ -1,0 +1,1482 @@
+[
+  {
+    "ID": "c0000_000",
+    "Name": "Default",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_002",
+    "Name": "Idle: One Hand on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_003",
+    "Name": "Idle: One Hand down and behind Hip",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_010",
+    "Name": "Idle: Both Hands in Front",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_012",
+    "Name": "Idle: Both Hands on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_013",
+    "Name": "Idle: Both Hands in Spear Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_014",
+    "Name": "Idle: Both Hands in Bow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_015",
+    "Name": "Idle: Both Hands in Shield Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_016",
+    "Name": "Idle: Both Hands in Crossbow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_020",
+    "Name": "Base: Dagger",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_023",
+    "Name": "Base: Straight Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_025",
+    "Name": "Base: Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_026",
+    "Name": "Base: Ultra Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_027",
+    "Name": "Base: Thrusting Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_028",
+    "Name": "Base: Curved Sword / Curved Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_029",
+    "Name": "Base: Katana",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_030",
+    "Name": "Base: Axe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_032",
+    "Name": "Base: Greataxe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_033",
+    "Name": "Base: Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_035",
+    "Name": "Base: Great Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_036",
+    "Name": "Base: Spear",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_038",
+    "Name": "Base: Halberd",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_041",
+    "Name": "Base: Catalyst",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_042",
+    "Name": "Base: Fist",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_043",
+    "Name": "Base: Whip",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_044",
+    "Name": "Base: Bow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_046",
+    "Name": "Base: Crossbow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_047",
+    "Name": "Base: Greatshield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_048",
+    "Name": "Base: Small / Medium Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_049",
+    "Name": "Base: Torch",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_050",
+    "Name": "Override: Great Scythe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_051",
+    "Name": "Override: Carthus Curved Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_053",
+    "Name": "Override: Broadsword / Broken Straight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_054",
+    "Name": "Override: Lothric Knight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_057",
+    "Name": "Override: Dark Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_059",
+    "Name": "Override: Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_063",
+    "Name": "Override: Partizan",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_067",
+    "Name": "Override: Pike",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_068",
+    "Name": "Override: Dragonslayer Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_069",
+    "Name": "Override: Large Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_070",
+    "Name": "Override: Smough's Great Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_071",
+    "Name": "Override: Parrying Dagger    ",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_072",
+    "Name": "Override: Corvian Greatknife",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_074",
+    "Name": "Override: Claymore",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_075",
+    "Name": "Override: Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_080",
+    "Name": "Override: Black Knight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_081",
+    "Name": "Override: Composite Bow / Short Bow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_082",
+    "Name": "Override: Black Bow of Pharis",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_083",
+    "Name": "Override: Dragonslayer Greatbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_084",
+    "Name": "Override: Avelyn",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_085",
+    "Name": "Override: Sniper Crossbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_090",
+    "Name": "Override: Black Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_091",
+    "Name": "Override: Buckler",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_093",
+    "Name": "Override: Pierce Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_094",
+    "Name": "Override: Havel's Greatshield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_095",
+    "Name": "Override: Cathedral Knight Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_099",
+    "Name": "Override: Shotel",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_101",
+    "Name": "Override: Painting Guardian's Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_102",
+    "Name": "Override: Hand Axe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_103",
+    "Name": "Override: Butcher Knife",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_107",
+    "Name": "Override: Black Knight Greataxe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_108",
+    "Name": "Override: Halberd",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_112",
+    "Name": "Override: Black Knight Glaive",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_113",
+    "Name": "Override: Estoc",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_115",
+    "Name": "Override: Ricard's Rapier",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_123",
+    "Name": "Override: Dark Hand",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_126",
+    "Name": "Override: Bonewheel Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_127",
+    "Name": "Override: Talisman",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_128",
+    "Name": "Override: Black Knight Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_131",
+    "Name": "Override: Wolf Knight's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_134",
+    "Name": "Override: Four-Pronged Plow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_137",
+    "Name": "Override: Sellsword Twinblades",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_138",
+    "Name": "Override: Winged Knight Twinaxes",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_139",
+    "Name": "Override: Dancer's Enchanted Swords",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_141",
+    "Name": "Override: Brigand Twindaggers",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_142",
+    "Name": "Override: Gotthard Twinswords",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_143",
+    "Name": "Override: Ciaran's Tracers",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_144",
+    "Name": "Override: Onikiri and Ubadachi",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_145",
+    "Name": "Override: Drang Twinspears",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_146",
+    "Name": "Override: Claw",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_148",
+    "Name": "Override: Drang Hammers",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_149",
+    "Name": "Override: Pyromancy Flame",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_150",
+    "Name": "Override: Medium Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_151",
+    "Name": "Override: Scimitar",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_152",
+    "Name": "Override: Caestus",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_153",
+    "Name": "Override: Bandit's Knife",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_154",
+    "Name": "Override: Greatsword of Judgment",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_155",
+    "Name": "Override: Twin Princes' Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_156",
+    "Name": "Override: Wolnir's Holy Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_157",
+    "Name": "Override: Hollowslayer Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_158",
+    "Name": "Override: Moonlight Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_159",
+    "Name": "Override: Firelink Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_160",
+    "Name": "Override: Astora Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_161",
+    "Name": "Override: Farron Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_162",
+    "Name": "Override: Profaned Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_163",
+    "Name": "Override: Fume Ultra Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_164",
+    "Name": "Override: Pontiff Knight Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_165",
+    "Name": "Override: Crescent Moon Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_166",
+    "Name": "Override: Old Wolf Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_167",
+    "Name": "Override: Eleonora",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_168",
+    "Name": "Override: Demon's Greataxe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_169",
+    "Name": "Override: Yhorm's Great Machete",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_171",
+    "Name": "Override: Pickaxe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_172",
+    "Name": "Override: Gargoyle Flame Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_173",
+    "Name": "Override: Vordt's Great Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_174",
+    "Name": "Override: Old King's Great Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_175",
+    "Name": "Override: Gargoyle Flame Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_176",
+    "Name": "Override: Dragonslayer Swordspear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_177",
+    "Name": "Override: Greatlance",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_178",
+    "Name": "Override: Golden Ritual Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_179",
+    "Name": "Override: Pontiff Knight Great Scythe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_184",
+    "Name": "Override: Onislayer Greatbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_185",
+    "Name": "Override: Chime",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_187",
+    "Name": "Override: Irithyll Rapier",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_188",
+    "Name": "Override: Lothric's Holy Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_189",
+    "Name": "Override: Lorian's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_193",
+    "Name": "Override: Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_195",
+    "Name": "Override: Curved Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_196",
+    "Name": "Override: Drakeblood Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_197",
+    "Name": "Override: Yorshka's Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_198",
+    "Name": "Override: Bloodlust",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_199",
+    "Name": "Override: Dragonslayer Greataxe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_200",
+    "Name": "Override: Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_201",
+    "Name": "Override: Winged Knight Halberd",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_202",
+    "Name": "Override: Lothric Knight Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_203",
+    "Name": "Override: Zweihander",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_204",
+    "Name": "Override: Tailbone Short Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_205",
+    "Name": "Override: Mail Breaker",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_206",
+    "Name": "Override: Scholar's Candlestick",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_207",
+    "Name": "Override: Cleric's Candlestick",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_208",
+    "Name": "Override: Irithyll Straight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_209",
+    "Name": "Override: Sunlight Straight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_210",
+    "Name": "Override: Reinforced Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_211",
+    "Name": "Override: Morne's Great Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_212",
+    "Name": "Override: Storm Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_213",
+    "Name": "Override: Great Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_214",
+    "Name": "Override: Sacred Bloom Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_215",
+    "Name": "Override: Gundyr's Halberd",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_217",
+    "Name": "Override: Immolation Tinder",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_218",
+    "Name": "Override: Rapier",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_220",
+    "Name": "Override: Heysel Pick",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_221",
+    "Name": "Override: Executioner's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_222",
+    "Name": "Override: Moaning Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_223",
+    "Name": "Override: Sage's Crystal Staff",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_224",
+    "Name": "Override: Storyteller's Staff",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_225",
+    "Name": "Override: Dragonslayer Greatshield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_227",
+    "Name": "Override: Spiked Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_228",
+    "Name": "Override: Warpick",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_229",
+    "Name": "Override: Witch's Locks",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_230",
+    "Name": "Override: Darkmoon Longbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_231",
+    "Name": "Override: Whip",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_232",
+    "Name": "Override: Friede's Great Scythe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_234",
+    "Name": "Override: Rose of Ariandel",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_235",
+    "Name": "Override: Crow Talons",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_236",
+    "Name": "Override: Valorheart",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_237",
+    "Name": "Override: Crow Quills",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_239",
+    "Name": "Override: Pyromancer's Parting Flame",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_240",
+    "Name": "Override: Follower Torch",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_241",
+    "Name": "Override: Millwood Battle Axe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_242",
+    "Name": "Override: Earth Seeker",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_243",
+    "Name": "Override: Quakestone Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_244",
+    "Name": "Override: Millwood Greatbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_245",
+    "Name": "Override: Onyx Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_246",
+    "Name": "Override: Follower Javelin",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_247",
+    "Name": "Override: Follower Sabre",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_248",
+    "Name": "Override: Splitleaf Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_249",
+    "Name": "Override: White Birch Bow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_250",
+    "Name": "Override: Giant Door Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_251",
+    "Name": "Override: Ringed Knight Straight Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_252",
+    "Name": "Override: Ringed Knight Spear   ",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_253",
+    "Name": "Override: Ringed Knight Paired Greatswords",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_254",
+    "Name": "Override: Dragonhead Shield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_255",
+    "Name": "Override: Dragonhead Greatshield",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_256",
+    "Name": "Override: Aquamarine Dagger",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_257",
+    "Name": "Override: Demon's Scar",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_258",
+    "Name": "Override: Frayed Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_259",
+    "Name": "Override: Ledo's Great Hammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_260",
+    "Name": "Override: Lothric War Banner",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_261",
+    "Name": "Override: Crucifix of the Mad King",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_262",
+    "Name": "Override: Repeating Crossbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_263",
+    "Name": "Override: Gael's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_264",
+    "Name": "Override: Harald Curved Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_265",
+    "Name": "Override: Preacher's Right Arm",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_266",
+    "Name": "Override: Murky Longstaff",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_267",
+    "Name": "Override: Sacred Chime of Filianore",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  }
+]

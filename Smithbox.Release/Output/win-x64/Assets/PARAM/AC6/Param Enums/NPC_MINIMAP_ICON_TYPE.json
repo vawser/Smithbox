@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_MINIMAP_ICON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_MINIMAP_ICON_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rader"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "CHR_EQUIP_MODEL_PARAM_ST",
+  "Type": "CHR_EQUIP_MODEL_PARAM_ST",
+  "Name": "CHR_EQUIP_MODEL_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "equipModelCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0x7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown0xa",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+"NPC_RECEIVE_DMG_DIR_FOR_STOP_BULLET_TYPE"
+"u8"
+"弾丸位置→キャラカプセル","0"
+"弾丸位置→ヒット位置","1"

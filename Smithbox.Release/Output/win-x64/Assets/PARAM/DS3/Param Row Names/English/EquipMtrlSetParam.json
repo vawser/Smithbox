@@ -1,0 +1,1331 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Upgrade Path: Standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Upgrade Path: Standard +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Upgrade Path: Standard +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Upgrade Path: Standard +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Upgrade Path: Standard +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Upgrade Path: Standard +5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Upgrade Path: Standard +6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Upgrade Path: Standard +7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Upgrade Path: Standard +8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Upgrade Path: Standard +9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Upgrade Path: Standard +10"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Upgrade Path: Sharp"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Upgrade Path: Sharp +1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Upgrade Path: Sharp +2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Upgrade Path: Sharp +3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Upgrade Path: Sharp +4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Upgrade Path: Sharp +5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Upgrade Path: Sharp +6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Upgrade Path: Sharp +7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Upgrade Path: Sharp +8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Upgrade Path: Sharp +9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Upgrade Path: Sharp +10"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Upgrade Path: Heavy"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Upgrade Path: Heavy +1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Upgrade Path: Heavy +2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Upgrade Path: Heavy +3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Upgrade Path: Heavy +4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Upgrade Path: Heavy +5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Upgrade Path: Heavy +6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Upgrade Path: Heavy +7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Upgrade Path: Heavy +8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Upgrade Path: Heavy +9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Upgrade Path: Heavy +10"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Upgrade Path: Refined"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Upgrade Path: Refined +1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Upgrade Path: Refined +2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Upgrade Path: Refined +3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Upgrade Path: Refined +4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Upgrade Path: Refined +5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Upgrade Path: Refined +6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Upgrade Path: Refined +7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Upgrade Path: Refined +8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Upgrade Path: Refined +9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Upgrade Path: Refined +10"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Upgrade Path: Crystal"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Upgrade Path: Crystal +1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Upgrade Path: Crystal +2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Upgrade Path: Crystal +3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Upgrade Path: Crystal +4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Upgrade Path: Crystal +5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Upgrade Path: Crystal +6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Upgrade Path: Crystal +7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Upgrade Path: Crystal +8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Upgrade Path: Crystal +9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Upgrade Path: Crystal +10"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Upgrade Path: Simple"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Upgrade Path: Simple +1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Upgrade Path: Simple +2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Upgrade Path: Simple +3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Upgrade Path: Simple +4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Upgrade Path: Simple +5"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Upgrade Path: Simple +6"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Upgrade Path: Simple +7"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Upgrade Path: Simple +8"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Upgrade Path: Simple +9"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Upgrade Path: Simple +10"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Upgrade Path: Fire"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Upgrade Path: Fire +1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Upgrade Path: Fire +2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Upgrade Path: Fire +3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Upgrade Path: Fire +4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Upgrade Path: Fire +5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Upgrade Path: Fire +6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Upgrade Path: Fire +7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Upgrade Path: Fire +8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Upgrade Path: Fire +9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Upgrade Path: Fire +10"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Upgrade Path: Chaos"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Upgrade Path: Chaos +1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Upgrade Path: Chaos +2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Upgrade Path: Chaos +3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Upgrade Path: Chaos +4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Upgrade Path: Chaos +5"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Upgrade Path: Chaos +6"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Upgrade Path: Chaos +7"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Upgrade Path: Chaos +8"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Upgrade Path: Chaos +9"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Upgrade Path: Chaos +10"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Upgrade Path: Lightning"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Upgrade Path: Lightning +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Upgrade Path: Lightning +2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Upgrade Path: Lightning +3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Upgrade Path: Lightning +4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Upgrade Path: Lightning +5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Upgrade Path: Lightning +6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Upgrade Path: Lightning +7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Upgrade Path: Lightning +8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Upgrade Path: Lightning +9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Upgrade Path: Lightning +10"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Upgrade Path: Deep "
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Upgrade Path: Deep +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Upgrade Path: Deep +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Upgrade Path: Deep +3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Upgrade Path: Deep +4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Upgrade Path: Deep +5"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "Upgrade Path: Deep +6"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "Upgrade Path: Deep +7"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "Upgrade Path: Deep +8"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "Upgrade Path: Deep +9"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Upgrade Path: Deep +10"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Upgrade Path: Dark"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Upgrade Path: Dark +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Upgrade Path: Dark +2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Upgrade Path: Dark +3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Upgrade Path: Dark +4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Upgrade Path: Dark +5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Upgrade Path: Dark +6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Upgrade Path: Dark +7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Upgrade Path: Dark +8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Upgrade Path: Dark +9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Upgrade Path: Dark +10"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Upgrade Path: Poison "
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Upgrade Path: Poison +1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Upgrade Path: Poison +2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Upgrade Path: Poison +3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Upgrade Path: Poison +4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Upgrade Path: Poison +5"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Upgrade Path: Poison +6"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Upgrade Path: Poison +7"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Upgrade Path: Poison +8"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Upgrade Path: Poison +9"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Upgrade Path: Poison +10"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Upgrade Path: Blood"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Upgrade Path: Blood +1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Upgrade Path: Blood +2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Upgrade Path: Blood +3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Upgrade Path: Blood +4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Upgrade Path: Blood +5"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Upgrade Path: Blood +6"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "Upgrade Path: Blood +7"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "Upgrade Path: Blood +8"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "Upgrade Path: Blood +9"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Upgrade Path: Blood +10"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Upgrade Path: Raw"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Upgrade Path: Raw +1"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Upgrade Path: Raw +2"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Upgrade Path: Raw +3"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Upgrade Path: Raw +4"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Upgrade Path: Raw +5"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Upgrade Path: Raw +6"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Upgrade Path: Raw +7"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "Upgrade Path: Raw +8"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "Upgrade Path: Raw +9"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Upgrade Path: Raw +10"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Upgrade Path: Blessed"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Upgrade Path: Blessed +1"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Upgrade Path: Blessed +2"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Upgrade Path: Blessed +3"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Upgrade Path: Blessed +4"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Upgrade Path: Blessed +5"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "Upgrade Path: Blessed +6"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "Upgrade Path: Blessed +7"
+      ]
+    },
+    {
+      "ID": 1408,
+      "Entries": [
+        "Upgrade Path: Blessed +8"
+      ]
+    },
+    {
+      "ID": 1409,
+      "Entries": [
+        "Upgrade Path: Blessed +9"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Upgrade Path: Blessed +10"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Upgrade Path: Hollow"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Upgrade Path: Hollow +1"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Upgrade Path: Hollow +2"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Upgrade Path: Hollow +3"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Upgrade Path: Hollow +4"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Upgrade Path: Hollow +5"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "Upgrade Path: Hollow +6"
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        "Upgrade Path: Hollow +7"
+      ]
+    },
+    {
+      "ID": 1508,
+      "Entries": [
+        "Upgrade Path: Hollow +8"
+      ]
+    },
+    {
+      "ID": 1509,
+      "Entries": [
+        "Upgrade Path: Hollow +9"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Upgrade Path: Hollow +10"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Upgrade Path: Titanite Scale"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Upgrade Path: Titanite Scale +1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Upgrade Path: Titanite Scale +2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Upgrade Path: Titanite Scale +3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Upgrade Path: Titanite Scale +4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Upgrade Path: Titanite Scale +5"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Upgrade Path: Dragon Scale"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Upgrade Path: Dragon Scale +1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Upgrade Path: Dragon Scale +2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Upgrade Path: Dragon Scale +3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Upgrade Path: Dragon Scale +4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Upgrade Path: Dragon Scale +5"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite +1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite +2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite +3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite +4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Upgrade Path: Twinkling Titanite +5"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Soul Transposition: Champion Gundyr"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Soul Transposition: "
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Soul Transposition: Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Soul Transposition: Crystal Sage"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Soul Transposition: Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "Soul Transposition: Consumed King Oceiros"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "Soul Transposition: Boreal Valley Vordt"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "Soul Transposition: Old Demon King"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Soul Transposition: Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Soul Transposition: Nameless King"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Soul Transposition: "
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Soul Transposition: Pontiff Sulyvahn"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Soul Transposition: Aldrich"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "Soul Transposition: High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "Soul Transposition: Rotted Greatwood"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "Soul Transposition: Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "Soul Transposition: Twin Princes"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "Soul Transposition: Yhorm the Giant"
+      ]
+    },
+    {
+      "ID": 100018,
+      "Entries": [
+        "Soul Transposition: Soul of Cinder"
+      ]
+    },
+    {
+      "ID": 100019,
+      "Entries": [
+        "Soul Transposition: Demon"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Soul Transposition: "
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "Soul Transposition: Rosaria"
+      ]
+    },
+    {
+      "ID": 100022,
+      "Entries": [
+        "Soul Transposition: Stray Demon"
+      ]
+    },
+    {
+      "ID": 100023,
+      "Entries": [
+        "Soul Transposition: Sister Friede"
+      ]
+    },
+    {
+      "ID": 100024,
+      "Entries": [
+        "Soul Transposition: Slave Knight Gael"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Soul Transposition: Demon Prince"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "Soul Transposition: Darkeater Midir"
+      ]
+    }
+  ]
+}

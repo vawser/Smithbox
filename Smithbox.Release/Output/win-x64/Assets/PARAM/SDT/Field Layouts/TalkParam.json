@@ -1,0 +1,124 @@
+{
+  "Name": "TalkParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "textId",
+        "textId_female",
+        "timeout"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "soundId_pc",
+        "soundId0",
+        "soundId1",
+        "soundId2",
+        "soundId3",
+        "soundId4",
+        "soundId5",
+        "soundId6",
+        "soundId7"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "soundId0_pc_female",
+        "soundId0_female",
+        "soundId1_female",
+        "soundId2_female",
+        "soundId3_female",
+        "soundId4_female",
+        "soundId5_female",
+        "soundId6_female",
+        "soundId7_female"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lookAtTarget_pc",
+        "lookAtTarget0",
+        "lookAtTarget1",
+        "lookAtTarget2",
+        "lookAtTarget3",
+        "lookAtTarget4",
+        "lookAtTarget5",
+        "lookAtTarget6",
+        "lookAtTarget7"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "talkAnimation_pc",
+        "talkAnimation0",
+        "talkAnimation1",
+        "talkAnimation2",
+        "talkAnimation3",
+        "talkAnimation4",
+        "talkAnimation5",
+        "talkAnimation6",
+        "talkAnimation7"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lipSyncStart_pc",
+        "lipSyncStart0",
+        "lipSyncStart1",
+        "lipSyncStart2",
+        "lipSyncStart3",
+        "lipSyncStart4",
+        "lipSyncStart5",
+        "lipSyncStart6",
+        "lipSyncStart7"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "Name": "RoleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Host of Embers"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Phantom"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Dark Spirit"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Wandering Enemy"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wandering NPC"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Animal"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Boss"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Grey Ghost"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Friendly NPC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Replay"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Display"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Invader"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Arean - Invader"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Blade of the Darkmoon - Coop"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Blade of the Darkmoon - Invader"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Blade of the Darkmoon - Invader"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Warrior of Sunlight - Coop"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Warrior of Sunlight - Invader"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Warrior of Sunlight - Invader"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Mound-makers - Mad Coop"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Mound-makers - Mad Invader"
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "Mound-makers - Invader"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Spear of the Church - Coop"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Spear of the Church - Invader"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "Spear of the Church - Invader"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Rosaria's Fingers - Coop"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Rosaria's Fingers - Invader"
+      ]
+    },
+    {
+      "ID": 50013,
+      "Entries": [
+        "Rosaria's Fingers - Invader"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "Watchdogs of Farron - Coop"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Watchdogs of Farron - Invader"
+      ]
+    },
+    {
+      "ID": 60013,
+      "Entries": [
+        "Watchdogs of Farron - Invader"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "Aldrich Faithful - Coop"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Aldrich Faithful - Invader"
+      ]
+    },
+    {
+      "ID": 70013,
+      "Entries": [
+        "Aldrich Faithful - Invader"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Phantom - Coop"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Dark Spirit - Invader"
+      ]
+    },
+    {
+      "ID": 80013,
+      "Entries": [
+        "Dark Spirit - Invader"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Blue Sentinels - Coop"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Blue Sentinels - Invader"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "Blue Sentinels - Invader"
+      ]
+    }
+  ]
+}

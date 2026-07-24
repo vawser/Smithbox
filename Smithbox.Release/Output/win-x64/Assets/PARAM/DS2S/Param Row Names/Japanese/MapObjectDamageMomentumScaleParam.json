@@ -1,0 +1,41 @@
+{
+  "Name": "MapObjectDamageMomentumScaleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "ダメージ運動量_無"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "ダメージ運動量_極小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "ダメージ運動量_小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "ダメージ運動量_中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "ダメージ運動量_大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "ダメージ運動量_特大"
+      ]
+    }
+  ]
+}

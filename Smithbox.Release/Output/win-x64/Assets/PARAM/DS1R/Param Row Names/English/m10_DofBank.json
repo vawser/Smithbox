@@ -1,0 +1,389 @@
+{
+  "Name": "m10_DofBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1基本"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1屋内"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2（拠点）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2(中景にフォーカス)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "PolyG-scn100000-接近"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "PolyG-scn100000"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PolyG-scn100100-cut00"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PolyG-scn100100-cut01A"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PolyG-scn100100-cut01B"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "PolyG-scn100100-cut02"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "PolyG-scn100100-cut03_pv"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PolyG-scn100100-cut06(巨人)A"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "PolyG-scn100100-cut06(巨人)B"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "PolyG-scn100100-cut10"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-scn100100-cut14(柵ごし)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-scn100110-遠景ぼかし"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-scn100235_PV3-b"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-scn100235_PV3-a"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn100201_PV2_ラストカット"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn100201_PV2"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn100235"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-scn100235"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-scn100235"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn100225"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn100111_pvダーク召喚"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn100113_PV2召喚"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn100113_PV2召喚"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn100113_PV2召喚"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "polyG-scn100220_OP"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "polyG-scn100220_OP"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "polyG-scn100220_OP"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "polyG-scn100220_OP"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "polyG-scn100220_OP"
+      ]
+    }
+  ]
+}

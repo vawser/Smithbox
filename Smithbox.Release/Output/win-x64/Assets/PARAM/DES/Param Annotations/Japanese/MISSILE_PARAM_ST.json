@@ -1,0 +1,98 @@
+{
+  "Param": "MISSILE_PARAM_ST",
+  "Type": "MISSILE_PARAM_ST",
+  "Name": "MISSILE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "FFXID",
+      "Name": "FFXID",
+      "Description": "ＦＦＸエディタ上のＩＤ"
+    },
+    {
+      "Field": "LifeTime",
+      "Name": "生存時間[frame]",
+      "Description": "生存時間。"
+    },
+    {
+      "Field": "HitSphereRadius",
+      "Name": "当たり球半径[cm]",
+      "Description": "当たり球半径。単位cm"
+    },
+    {
+      "Field": "HitDamage",
+      "Name": "着弾ダメージ",
+      "Description": "着弾時のダメージ量"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "InitVelocity",
+      "Name": "初速度[m/s]",
+      "Description": "初速度[m/s]"
+    },
+    {
+      "Field": "distance",
+      "Name": "射程距離",
+      "Description": "射程距離"
+    },
+    {
+      "Field": "gravityInRange",
+      "Name": "射程距離内重力",
+      "Description": "射程距離内重力"
+    },
+    {
+      "Field": "gravityOutRange",
+      "Name": "射程距離外重力",
+      "Description": "射程距離外重力"
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP",
+      "Description": "消費MP"
+    },
+    {
+      "Field": "accelInRange",
+      "Name": "射程距離内加速度",
+      "Description": "射程距離内加速度"
+    },
+    {
+      "Field": "accelOutRange",
+      "Name": "射程距離外加速度",
+      "Description": "射程距離外加速度"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "HitMissileID",
+      "Name": "着弾ＩＤ",
+      "Description": "着弾ＩＤ"
+    },
+    {
+      "Field": "DiedNaturaly",
+      "Name": "寿命で死ぬか？",
+      "Description": "着弾しても、死なずに、寿命を使い切るか？"
+    },
+    {
+      "Field": "ExplosionDie",
+      "Name": "寿命が切れたときに着弾するか",
+      "Description": "寿命が切れたときに着弾するか"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "ヒット時行動ID",
+      "Description": "ダメージを与えたとき相手に与える行動ID"
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

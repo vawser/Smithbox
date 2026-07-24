@@ -1,0 +1,353 @@
+{
+  "Name": "KeyAssignDisplayParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Move operation -- 移動操作"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Move before -- 移動 前"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "After moving -- 移動 後"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "move left -- 移動 左"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "move right -- 移動 右"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "boost -- ブースト"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "quick boost -- クイックブースト"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Jump / Climb -- ジャンプ / 上昇"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "assault boost -- アサルトブースト"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "camera operation -- カメラ操作"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera operation top -- カメラ操作 上"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera operation bottom -- カメラ操作 下"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Camera operation left -- カメラ操作 左"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Camera operation right -- カメラ操作 右"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "target assist -- ターゲットアシスト"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "attack operation -- 攻撃操作"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "left hand weapon -- 左手武器"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "right hand weapon -- 右手武器"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "left shoulder weapon -- 左肩武器"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "right shoulder weapon -- 右肩武器"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "special operations -- 特殊操作"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "shift operation -- シフト操作"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "repair kit -- リペアキット"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "access -- アクセス"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "scan -- スキャン"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "weapon purge -- 武器パージ"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Choice left -- 選択肢 左"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "choice right -- 選択肢 右"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

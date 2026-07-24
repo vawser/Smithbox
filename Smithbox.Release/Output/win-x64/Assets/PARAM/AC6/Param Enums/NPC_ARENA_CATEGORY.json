@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_ARENA_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_ARENA_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arena"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Simulator"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "Name": "m13_FogBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0室内"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0ボス部屋"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B1樹内"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "かまど"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B2巨樹内"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B2遠景"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B2遠景溶岩"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0屋外"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0屋外地底"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1屋外上層"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1暗部"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B2外下層"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B2座禅"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2天球"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2遠景霧"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1霧"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B2天井霧"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "m9900B0"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1鍾乳洞"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1地底湖"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B1地底湖水"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B1ボス"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "屋内"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "B1鍾乳洞\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "天球"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "B2遠景用"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B1ボス\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "B0キャラ\u3000ボス"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "B2切り替え１"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "B2切り替え2"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn130100-<CHR_OBJ_MAP>-1st"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn130100-<CHR_OBJ_MAP>-2"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn130100-<CHR_OBJ_MAP>-3"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-scn130100-<CHR_OBJ_MAP>-4 FaceUp"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-scn130100-<CHR_OBJ_MAP>-6Lst"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn130000-1"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn130000-2全景"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    }
+  ]
+}

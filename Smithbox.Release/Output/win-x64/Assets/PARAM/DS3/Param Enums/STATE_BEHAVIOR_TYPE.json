@@ -1,0 +1,47 @@
+{
+  "Key": "STATE_BEHAVIOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "STATE_BEHAVIOR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
+    }
+  ]
+}

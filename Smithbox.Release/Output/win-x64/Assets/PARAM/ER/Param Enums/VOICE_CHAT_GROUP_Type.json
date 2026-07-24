@@ -1,0 +1,29 @@
+{
+  "Key": "VOICE_CHAT_GROUP_Type",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "VOICE_CHAT_GROUP_Type"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hostile"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Friendly"
+        }
+      ]
+    }
+  ]
+}

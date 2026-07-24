@@ -1,0 +1,38 @@
+{
+  "Param": "MENUPROPERTY_LAYOUT",
+  "Type": "MENUPROPERTY_LAYOUT",
+  "Name": "MENUPROPERTY_LAYOUT",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "LayoutPath",
+      "Name": "レイアウトパス",
+      "Description": ""
+    },
+    {
+      "Field": "PropertyID",
+      "Name": "プロパティID",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionTextID",
+      "Name": "項目名テキストID",
+      "Description": "有効なテキストIDが設定されている場合、プロパティ名よりもこちらを優先して表示します。"
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "ヘルプテキストID",
+      "Description": "有効なテキストIDが設定されている場合、プロパティヘルプよりもこちらを優先して表示します。"
+    },
+    {
+      "Field": "DisplayCondition",
+      "Name": "表示条件",
+      "Description": "プロパティの表示条件"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

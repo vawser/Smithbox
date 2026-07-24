@@ -1,0 +1,158 @@
+{
+  "Param": "REINFORCE_COST_PARAM",
+  "Type": "REINFORCE_COST_PARAM",
+  "Name": "REINFORCE_COST_PARAM",
+  "Description": "Defines the soul and item costs required to reinforce an equipment across upgrade levels.",
+  "Fields": [
+    {
+      "Field": "lv1Soul",
+      "Name": "Soul Cost (Level 1)",
+      "Description": "Amount of souls required to reinforce to level 1."
+    },
+    {
+      "Field": "lv2Soul",
+      "Name": "Soul Cost (Level 2)",
+      "Description": "Amount of souls required to reinforce to level 2."
+    },
+    {
+      "Field": "lv3Soul",
+      "Name": "Soul Cost (Level 3)",
+      "Description": "Amount of souls required to reinforce to level 3."
+    },
+    {
+      "Field": "lv4Soul",
+      "Name": "Soul Cost (Level 4)",
+      "Description": "Amount of souls required to reinforce to level 4."
+    },
+    {
+      "Field": "lv5Soul",
+      "Name": "Soul Cost (Level 5)",
+      "Description": "Amount of souls required to reinforce to level 5."
+    },
+    {
+      "Field": "lv6Soul",
+      "Name": "Soul Cost (Level 6)",
+      "Description": "Amount of souls required to reinforce to level 6."
+    },
+    {
+      "Field": "lv7Soul",
+      "Name": "Soul Cost (Level 7)",
+      "Description": "Amount of souls required to reinforce to level 7."
+    },
+    {
+      "Field": "lv8Soul",
+      "Name": "Soul Cost (Level 8)",
+      "Description": "Amount of souls required to reinforce to level 8."
+    },
+    {
+      "Field": "lv9Soul",
+      "Name": "Soul Cost (Level 9)",
+      "Description": "Amount of souls required to reinforce to level 9."
+    },
+    {
+      "Field": "lv10Soul",
+      "Name": "Soul Cost (Level 10)",
+      "Description": "Amount of souls required to reinforce to level 10."
+    },
+    {
+      "Field": "lv1ItemID",
+      "Name": "Required Item ID (Level 1)",
+      "Description": "Item ID required for reinforcement to level 1."
+    },
+    {
+      "Field": "lv2ItemID",
+      "Name": "Required Item ID (Level 2)",
+      "Description": "Item ID required for reinforcement to level 2."
+    },
+    {
+      "Field": "lv3ItemID",
+      "Name": "Required Item ID (Level 3)",
+      "Description": "Item ID required for reinforcement to level 3."
+    },
+    {
+      "Field": "lv4ItemID",
+      "Name": "Required Item ID (Level 4)",
+      "Description": "Item ID required for reinforcement to level 4."
+    },
+    {
+      "Field": "lv5ItemID",
+      "Name": "Required Item ID (Level 5)",
+      "Description": "Item ID required for reinforcement to level 5."
+    },
+    {
+      "Field": "lv6ItemID",
+      "Name": "Required Item ID (Level 6)",
+      "Description": "Item ID required for reinforcement to level 6."
+    },
+    {
+      "Field": "lv7ItemID",
+      "Name": "Required Item ID (Level 7)",
+      "Description": "Item ID required for reinforcement to level 7."
+    },
+    {
+      "Field": "lv8ItemID",
+      "Name": "Required Item ID (Level 8)",
+      "Description": "Item ID required for reinforcement to level 8."
+    },
+    {
+      "Field": "lv9ItemID",
+      "Name": "Required Item ID (Level 9)",
+      "Description": "Item ID required for reinforcement to level 9."
+    },
+    {
+      "Field": "lv10ItemID",
+      "Name": "Required Item ID (Level 10)",
+      "Description": "Item ID required for reinforcement to level 10."
+    },
+    {
+      "Field": "lv1ItemCount",
+      "Name": "Required Item Count (Level 1)",
+      "Description": "Number of items required for reinforcement to level 1."
+    },
+    {
+      "Field": "lv2ItemCount",
+      "Name": "Required Item Count (Level 2)",
+      "Description": "Number of items required for reinforcement to level 2."
+    },
+    {
+      "Field": "lv3ItemCount",
+      "Name": "Required Item Count (Level 3)",
+      "Description": "Number of items required for reinforcement to level 3."
+    },
+    {
+      "Field": "lv4ItemCount",
+      "Name": "Required Item Count (Level 4)",
+      "Description": "Number of items required for reinforcement to level 4."
+    },
+    {
+      "Field": "lv5ItemCount",
+      "Name": "Required Item Count (Level 5)",
+      "Description": "Number of items required for reinforcement to level 5."
+    },
+    {
+      "Field": "lv6ItemCount",
+      "Name": "Required Item Count (Level 6)",
+      "Description": "Number of items required for reinforcement to level 6."
+    },
+    {
+      "Field": "lv7ItemCount",
+      "Name": "Required Item Count (Level 7)",
+      "Description": "Number of items required for reinforcement to level 7."
+    },
+    {
+      "Field": "lv8ItemCount",
+      "Name": "Required Item Count (Level 8)",
+      "Description": "Number of items required for reinforcement to level 8."
+    },
+    {
+      "Field": "lv9ItemCount",
+      "Name": "Required Item Count (Level 9)",
+      "Description": "Number of items required for reinforcement to level 9."
+    },
+    {
+      "Field": "lv10ItemCount",
+      "Name": "Required Item Count (Level 10)",
+      "Description": "Number of items required for reinforcement to level 10."
+    }
+  ]
+}

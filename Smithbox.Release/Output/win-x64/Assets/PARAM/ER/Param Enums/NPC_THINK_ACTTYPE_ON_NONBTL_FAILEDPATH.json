@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_THINK_ACTTYPE_ON_NONBTL_FAILEDPATH",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_ACTTYPE_ON_NONBTL_FAILEDPATH"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

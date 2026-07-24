@@ -1,0 +1,47 @@
+{
+  "Key": "THROW_ENABLE_STATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_ENABLE_STATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Waiting"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stealth"
+        }
+      ]
+    }
+  ]
+}

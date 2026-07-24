@@ -1,0 +1,33 @@
+{
+  "Param": "SIGN_PUDDLE_PARAM_ST",
+  "Type": "SIGN_PUDDLE_PARAM_ST",
+  "Name": "SIGN_PUDDLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "matchAreaId",
+      "Name": "Match Area ID",
+      "Description": "ID of the simple match area to which it belongs"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

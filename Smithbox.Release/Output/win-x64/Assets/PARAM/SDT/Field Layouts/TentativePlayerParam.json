@@ -1,0 +1,38 @@
+{
+  "Name": "TentativePlayerParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "DyingHp",
+        "DebtSp",
+        "MoneyLostRate",
+        "SkillPointLostRate",
+        "ResistRecoverPoint_Poision_Player",
+        "ResistRecoverPoint_Desease_Player",
+        "ResistRecoverPoint_Blood_Player",
+        "ResistRecoverPoint_Curse_Player",
+        "ResistRecoverPoint_Freeze_Player",
+        "ResistRecoverPoint_Poision_Enemy",
+        "ResistRecoverPoint_Desease_Enemy",
+        "ResistRecoverPoint_Blood_Enemy",
+        "ResistRecoverPoint_Curse_Enemy",
+        "ResistRecoverPoint_Freeze_Enemy",
+        "WetOverrideInterpolateTime",
+        "PlayerFootEffect_bySFX",
+        "ToughnessRecoverCorrection"
+      ]
+    }
+  ]
+}

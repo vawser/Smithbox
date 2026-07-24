@@ -1,0 +1,28 @@
+{
+  "Param": "MENU_ERRORHANDLING_PARAM",
+  "Type": "MENU_ERRORHANDLING_PARAM",
+  "Name": "MENU_ERRORHANDLING_PARAM",
+  "Description": "Determines the error handling for actions in the menu.",
+  "Fields": [
+    {
+      "Field": "ErrorCode",
+      "Name": "Error Code",
+      "Description": "The error code for this error message."
+    },
+    {
+      "Field": "MsgID",
+      "Name": "Error Message ID",
+      "Description": "The text ID to display for this error message."
+    },
+    {
+      "Field": "MsgCategory",
+      "Name": "Error Message Category",
+      "Description": "The category this error message belongs to."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Type": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Name": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Description": "Defines camera positioning and viewing settings used during facial editing montage or character customization scenes.",
+  "Fields": [
+    {
+      "Field": "fov",
+      "Name": "Field of View",
+      "Description": "Camera field of view angle used during the face editing montage."
+    },
+    {
+      "Field": "positionX",
+      "Name": "Camera Position: X",
+      "Description": "X-axis position of the camera."
+    },
+    {
+      "Field": "positionY",
+      "Name": "Camera Position: Y",
+      "Description": "Y-axis position of the camera."
+    },
+    {
+      "Field": "positionZ",
+      "Name": "Camera Position: Z",
+      "Description": "Z-axis position of the camera."
+    },
+    {
+      "Field": "lookAtX",
+      "Name": "Camera Focus: X",
+      "Description": "X-axis coordinate of the camera focus target."
+    },
+    {
+      "Field": "lookAtY",
+      "Name": "Camera Focus: Y",
+      "Description": "Y-axis coordinate of the camera focus target."
+    },
+    {
+      "Field": "lookAtZ",
+      "Name": "Camera Focus: Z",
+      "Description": "Z-axis coordinate of the camera focus target."
+    }
+  ]
+}

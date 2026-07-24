@@ -1,0 +1,108 @@
+{
+  "Param": "WEATHER_ASSET_REPLACE_PARAM_ST",
+  "Type": "WEATHER_ASSET_REPLACE_PARAM_ST",
+  "Name": "WEATHER_ASSET_REPLACE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mapId",
+      "Name": "マップ番号",
+      "Description": "マップ番号を8桁で指定します。オープン、レガシーの天球配置マップのみ指定可能です"
+    },
+    {
+      "Field": "TransitionSrcWeather",
+      "Name": "天候",
+      "Description": "この天候で有効になるアセットを指定します。"
+    },
+    {
+      "Field": "padding0",
+      "Name": "reserved0",
+      "Description": ""
+    },
+    {
+      "Field": "isFireAsh",
+      "Name": "「火の灰」後か？",
+      "Description": "マップの「火の灰」状態での適応の有無を指定します。"
+    },
+    {
+      "Field": "padding1",
+      "Name": "padding0",
+      "Description": ""
+    },
+    {
+      "Field": "reserved2",
+      "Name": "reserved2",
+      "Description": ""
+    },
+    {
+      "Field": "AssetId0",
+      "Name": "表示アセット1",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId1",
+      "Name": "表示アセット2",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId2",
+      "Name": "表示アセット3",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId3",
+      "Name": "表示アセット4",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId4",
+      "Name": "表示アセット5",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId5",
+      "Name": "表示アセット6",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId6",
+      "Name": "表示アセット7",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "AssetId7",
+      "Name": "表示アセット8",
+      "Description": "-1:無効 生成するアセットIDを指定します。AEG999_999 -> 999999"
+    },
+    {
+      "Field": "reserved0",
+      "Name": "reserved0",
+      "Description": ""
+    },
+    {
+      "Field": "CreateAssetLimitId0",
+      "Name": "生成制限ID0",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId1",
+      "Name": "生成制限ID1",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId2",
+      "Name": "生成制限ID2",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "CreateAssetLimitId3",
+      "Name": "生成制限ID3",
+      "Description": "生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "reserved1",
+      "Description": ""
+    }
+  ]
+}

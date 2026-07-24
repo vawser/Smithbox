@@ -1,0 +1,3977 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Do not erase"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Noconata"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Axe Rod"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Cane Whip"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Atelier Handguns"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Atelier Head Gun"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Ludleth - Champion Gundyr - Gundyr's Halberd"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Ludleth - Champion Gundyr - Prisoner's Chain"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Ludleth - Dancer - Dancer's Enchanted Swords"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "Ludleth - Dancer - Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Ludleth - Crystal Sage - Crystal Sage's Rapier"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "Ludleth - Crystal Sage - Crystal Hail"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "Ludleth - Abyss Watchers - Farron Greatsword"
+      ]
+    },
+    {
+      "ID": 30041,
+      "Entries": [
+        "Ludleth - Abyss Watchers - Wolf Knight's Greatsword"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "Ludleth - Oceiros - Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 30051,
+      "Entries": [
+        "Ludleth - Oceiros - White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "Ludleth - Vordt - Vordt's Great Hammer"
+      ]
+    },
+    {
+      "ID": 30061,
+      "Entries": [
+        "Ludleth - Vordt - Pontiff's Left Eye"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "Ludleth - Old Demon King - Old King's Great Hammer"
+      ]
+    },
+    {
+      "ID": 30071,
+      "Entries": [
+        "Ludleth - Old Demon King - Chaos Bed Vestiges"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "Ludleth - Dragonslayer Armour - Dragonslayer Greataxe"
+      ]
+    },
+    {
+      "ID": 30081,
+      "Entries": [
+        "Ludleth - Dragonslayer Armour - Dragonslayer Greatshield"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "Ludleth - Nameless King - Dragonslayer Swordspear"
+      ]
+    },
+    {
+      "ID": 30091,
+      "Entries": [
+        "Ludleth - Nameless King - Storm Curved Sword"
+      ]
+    },
+    {
+      "ID": 30092,
+      "Entries": [
+        "Ludleth - Nameless King - Lightning Storm"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Ludleth - Pontiff Sulyvahn - Greatsword of Judgment"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "Ludleth - Pontiff Sulyvahn - Profaned Greatsword"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "Ludleth - Aldrich - Darkmoon Longbow"
+      ]
+    },
+    {
+      "ID": 30121,
+      "Entries": [
+        "Ludleth - Aldrich - Lifehunt Scythe"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "Ludleth - Wolnir - Wolnir's Holy Sword"
+      ]
+    },
+    {
+      "ID": 30131,
+      "Entries": [
+        "Ludleth - Wolnir - Black Serpent"
+      ]
+    },
+    {
+      "ID": 30140,
+      "Entries": [
+        "Ludleth - Curse-rotted Greatwood - Arstor's Spear"
+      ]
+    },
+    {
+      "ID": 30141,
+      "Entries": [
+        "Ludleth - Curse-rotted Greatwood - Hollowslayer Greatsword"
+      ]
+    },
+    {
+      "ID": 30153,
+      "Entries": [
+        "Ludleth - Rosaria - Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 30160,
+      "Entries": [
+        "Ludleth - Deacons of the Deep - Deep Soul"
+      ]
+    },
+    {
+      "ID": 30161,
+      "Entries": [
+        "Ludleth - Deacons of the Deep - Cleric's Candlestick"
+      ]
+    },
+    {
+      "ID": 30170,
+      "Entries": [
+        "Ludleth - Twin Princes - Lorian's Greatsword"
+      ]
+    },
+    {
+      "ID": 30171,
+      "Entries": [
+        "Ludleth - Twin Princes - Lothric's Holy Sword"
+      ]
+    },
+    {
+      "ID": 30180,
+      "Entries": [
+        "Ludleth - Yhorm - Yhorm's Great Machete"
+      ]
+    },
+    {
+      "ID": 30181,
+      "Entries": [
+        "Ludleth - Yhorm - Yhorm's Greatshield"
+      ]
+    },
+    {
+      "ID": 30190,
+      "Entries": [
+        "Ludleth - Soul of Cinder - Firelink Greatsword"
+      ]
+    },
+    {
+      "ID": 30191,
+      "Entries": [
+        "Ludleth - Soul of Cinder - Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "Ludleth - Demon - Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 30201,
+      "Entries": [
+        "Ludleth - Demon - Demon's Fist"
+      ]
+    },
+    {
+      "ID": 30210,
+      "Entries": [
+        "Ludleth - Stray Demon - Boulder Heave"
+      ]
+    },
+    {
+      "ID": 30211,
+      "Entries": [
+        "Ludleth - Stray Demon - Havel's Ring"
+      ]
+    },
+    {
+      "ID": 30220,
+      "Entries": [
+        "Ludleth - Sister Friede - Friede's Great Scythe"
+      ]
+    },
+    {
+      "ID": 30221,
+      "Entries": [
+        "Ludleth - Sister Friede - Rose of Ariandel"
+      ]
+    },
+    {
+      "ID": 30230,
+      "Entries": [
+        "Ludleth - Slave Knight Gael - Gael's Greatsword"
+      ]
+    },
+    {
+      "ID": 30231,
+      "Entries": [
+        "Ludleth - Slave Knight Gael - Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 30240,
+      "Entries": [
+        "Ludleth - Demon Prince - Demon's Scar"
+      ]
+    },
+    {
+      "ID": 30241,
+      "Entries": [
+        "Ludleth - Demon Prince - Seething Chaos"
+      ]
+    },
+    {
+      "ID": 30250,
+      "Entries": [
+        "Ludleth - Darkeater Midir - Frayed Blade"
+      ]
+    },
+    {
+      "ID": 30251,
+      "Entries": [
+        "Ludleth - Darkeater Midir - Old Moonlight"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Yoel - Dark Hand"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Yoel - Londor Braille Divine Tome"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Yoel - Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "Yoel - Untrue White Ring"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "Yoel - Untrue Dark Ring"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "Yoel - Purging Stone"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "Yoel - Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Yoel - Spells -Soul Arrow"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Yoel - Spells -Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Yoel - Spells -Magic Weapon"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Yoel - Spells -Magic Shield"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Yoel - Spells -Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Shrine Handmaid - Dagger"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "Shrine Handmaid - Shortsword"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Shrine Handmaid - Scimitar"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Shrine Handmaid - Halberd"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Shrine Handmaid - Talisman"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Shrine Handmaid - Sorcerer's Staff"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "Shrine Handmaid - Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 110008,
+      "Entries": [
+        "Shrine Handmaid - Warrior's Round Shield"
+      ]
+    },
+    {
+      "ID": 110009,
+      "Entries": [
+        "Shrine Handmaid - Leather Shield"
+      ]
+    },
+    {
+      "ID": 110011,
+      "Entries": [
+        "Shrine Handmaid - Crimson Parma"
+      ]
+    },
+    {
+      "ID": 110012,
+      "Entries": [
+        "Shrine Handmaid - Torch"
+      ]
+    },
+    {
+      "ID": 110013,
+      "Entries": [
+        "Shrine Handmaid - Chain Helm"
+      ]
+    },
+    {
+      "ID": 110014,
+      "Entries": [
+        "Shrine Handmaid - Chain Armor"
+      ]
+    },
+    {
+      "ID": 110015,
+      "Entries": [
+        "Shrine Handmaid - Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 110016,
+      "Entries": [
+        "Shrine Handmaid - Chain Leggings"
+      ]
+    },
+    {
+      "ID": 110017,
+      "Entries": [
+        "Shrine Handmaid - Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 110018,
+      "Entries": [
+        "Shrine Handmaid - Repair Powder"
+      ]
+    },
+    {
+      "ID": 110019,
+      "Entries": [
+        "Shrine Handmaid - Firebomb"
+      ]
+    },
+    {
+      "ID": 110020,
+      "Entries": [
+        "Shrine Handmaid - Homeward Bone"
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        "Shrine Handmaid - Prism Stone"
+      ]
+    },
+    {
+      "ID": 110022,
+      "Entries": [
+        "Shrine Handmaid - White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 110023,
+      "Entries": [
+        "Shrine Handmaid - Dried Finger"
+      ]
+    },
+    {
+      "ID": 110024,
+      "Entries": [
+        "Shrine Handmaid - Ember"
+      ]
+    },
+    {
+      "ID": 110025,
+      "Entries": [
+        "Shrine Handmaid - Tower Key"
+      ]
+    },
+    {
+      "ID": 110026,
+      "Entries": [
+        "Shrine Handmaid - Farron Dart"
+      ]
+    },
+    {
+      "ID": 110027,
+      "Entries": [
+        "Shrine Handmaid - Soul Arrow"
+      ]
+    },
+    {
+      "ID": 110028,
+      "Entries": [
+        "Shrine Handmaid - Heal Aid"
+      ]
+    },
+    {
+      "ID": 110029,
+      "Entries": [
+        "Shrine Handmaid - Wood Arrow"
+      ]
+    },
+    {
+      "ID": 110030,
+      "Entries": [
+        "Shrine Handmaid - Wood Bolt"
+      ]
+    },
+    {
+      "ID": 110050,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Alluring Skull"
+      ]
+    },
+    {
+      "ID": 110051,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 110052,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Human Pine Resin"
+      ]
+    },
+    {
+      "ID": 110053,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Charcoal Pine Bundle"
+      ]
+    },
+    {
+      "ID": 110054,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Ember"
+      ]
+    },
+    {
+      "ID": 110055,
+      "Entries": [
+        "Shrine Handmaid - Mortician's Ashes - Grave Key"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Composite Bow"
+      ]
+    },
+    {
+      "ID": 110101,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Leather Armor"
+      ]
+    },
+    {
+      "ID": 110102,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Leather Gloves"
+      ]
+    },
+    {
+      "ID": 110103,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Leather Boots"
+      ]
+    },
+    {
+      "ID": 110104,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Life Ring"
+      ]
+    },
+    {
+      "ID": 110105,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Green Blossom"
+      ]
+    },
+    {
+      "ID": 110106,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 110107,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Gold Pine Bundle"
+      ]
+    },
+    {
+      "ID": 110108,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 110109,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Black Bug Pellet"
+      ]
+    },
+    {
+      "ID": 110110,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Feather Arrow"
+      ]
+    },
+    {
+      "ID": 110111,
+      "Entries": [
+        "Shrine Handmaid - Dreamchaser Ashes - Titanite Shard"
+      ]
+    },
+    {
+      "ID": 110150,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Morning Star"
+      ]
+    },
+    {
+      "ID": 110151,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Crescent Axe"
+      ]
+    },
+    {
+      "ID": 110152,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Canvas Talisman"
+      ]
+    },
+    {
+      "ID": 110153,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Lloyd's Shield Ring"
+      ]
+    },
+    {
+      "ID": 110154,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 110155,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 110156,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Undead Hunter Charm"
+      ]
+    },
+    {
+      "ID": 110157,
+      "Entries": [
+        "Shrine Handmaid - Paladin's Ashes - Duel Charm"
+      ]
+    },
+    {
+      "ID": 110200,
+      "Entries": [
+        "Shrine Handmaid - Grave Warden's Ashes - Kukri"
+      ]
+    },
+    {
+      "ID": 110201,
+      "Entries": [
+        "Shrine Handmaid - Grave Warden's Ashes - Carthus Rouge"
+      ]
+    },
+    {
+      "ID": 110202,
+      "Entries": [
+        "Shrine Handmaid - Grave Warden's Ashes - Yellow Bug Pellet"
+      ]
+    },
+    {
+      "ID": 110203,
+      "Entries": [
+        "Shrine Handmaid - Grave Warden's Ashes - Ember"
+      ]
+    },
+    {
+      "ID": 110204,
+      "Entries": [
+        "Shrine Handmaid - Grave Warden's Ashes - Titanite Shard"
+      ]
+    },
+    {
+      "ID": 110250,
+      "Entries": [
+        "Shrine Handmaid - Excrement-Covered Ashes - Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 110251,
+      "Entries": [
+        "Shrine Handmaid - Excrement-Covered Ashes - Dung Pie"
+      ]
+    },
+    {
+      "ID": 110252,
+      "Entries": [
+        "Shrine Handmaid - Excrement-Covered Ashes - Stalk Dung Pie"
+      ]
+    },
+    {
+      "ID": 110253,
+      "Entries": [
+        "Shrine Handmaid - Excrement-Covered Ashes - Blue Bug Pellet"
+      ]
+    },
+    {
+      "ID": 110300,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Rime-blue Moss Clump"
+      ]
+    },
+    {
+      "ID": 110301,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Pale Pine Resin"
+      ]
+    },
+    {
+      "ID": 110302,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Karla's Pointed Hat"
+      ]
+    },
+    {
+      "ID": 110303,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Karla's Coat"
+      ]
+    },
+    {
+      "ID": 110304,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Karla's Gloves"
+      ]
+    },
+    {
+      "ID": 110305,
+      "Entries": [
+        "Shrine Handmaid - Prisoner Chief's Ashes - Karla's Trousers"
+      ]
+    },
+    {
+      "ID": 110350,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 110351,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Gold Pine Bundle"
+      ]
+    },
+    {
+      "ID": 110352,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Young White Branch"
+      ]
+    },
+    {
+      "ID": 110353,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Xanthous Overcoat"
+      ]
+    },
+    {
+      "ID": 110354,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Xanthous Gloves"
+      ]
+    },
+    {
+      "ID": 110355,
+      "Entries": [
+        "Shrine Handmaid - Xanthous Ashes - Xanthous Trousers"
+      ]
+    },
+    {
+      "ID": 110400,
+      "Entries": [
+        "Shrine Handmaid - Hollow's Ashes - Purging Stone"
+      ]
+    },
+    {
+      "ID": 110401,
+      "Entries": [
+        "Shrine Handmaid - Hollow's Ashes - Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 110402,
+      "Entries": [
+        "Shrine Handmaid - Hollow's Ashes - Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 110450,
+      "Entries": [
+        "Shrine Handmaid - Dragon Chaser's Ashes - Ember"
+      ]
+    },
+    {
+      "ID": 110451,
+      "Entries": [
+        "Shrine Handmaid - Dragon Chaser's Ashes - Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 110452,
+      "Entries": [
+        "Shrine Handmaid - Dragon Chaser's Ashes - Titanite Scale"
+      ]
+    },
+    {
+      "ID": 110453,
+      "Entries": [
+        "Shrine Handmaid - Dragon Chaser's Ashes - Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 110500,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Washing Pole"
+      ]
+    },
+    {
+      "ID": 110502,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Eastern Iron Shield"
+      ]
+    },
+    {
+      "ID": 110503,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Wood Grain Ring"
+      ]
+    },
+    {
+      "ID": 110504,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Eastern Helm"
+      ]
+    },
+    {
+      "ID": 110505,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Eastern Armor"
+      ]
+    },
+    {
+      "ID": 110506,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Eastern Gauntlets"
+      ]
+    },
+    {
+      "ID": 110507,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Eastern Leggings"
+      ]
+    },
+    {
+      "ID": 110508,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Dark Arrow"
+      ]
+    },
+    {
+      "ID": 110509,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Onislayer Greatarrow"
+      ]
+    },
+    {
+      "ID": 110510,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 110511,
+      "Entries": [
+        "Shrine Handmaid - Easterner's Ashes - Mossfruit"
+      ]
+    },
+    {
+      "ID": 110550,
+      "Entries": [
+        "Shrine Handmaid - Soul of Cinder - Firelink Helm"
+      ]
+    },
+    {
+      "ID": 110551,
+      "Entries": [
+        "Shrine Handmaid - Soul of Cinder - Firelink Armor"
+      ]
+    },
+    {
+      "ID": 110552,
+      "Entries": [
+        "Shrine Handmaid - Soul of Cinder - Firelink Gauntlets"
+      ]
+    },
+    {
+      "ID": 110553,
+      "Entries": [
+        "Shrine Handmaid - Soul of Cinder - Firelink Leggings"
+      ]
+    },
+    {
+      "ID": 110600,
+      "Entries": [
+        "Shrine Handmaid - Nameless King - Golden Crown"
+      ]
+    },
+    {
+      "ID": 110601,
+      "Entries": [
+        "Shrine Handmaid - Nameless King - Dragonscale Armor"
+      ]
+    },
+    {
+      "ID": 110602,
+      "Entries": [
+        "Shrine Handmaid - Nameless King - Golden Bracelets"
+      ]
+    },
+    {
+      "ID": 110603,
+      "Entries": [
+        "Shrine Handmaid - Nameless King - Dragonscale Waistcloth"
+      ]
+    },
+    {
+      "ID": 110650,
+      "Entries": [
+        "Shrine Handmaid - Abyss Watchers - Undead Legion Helm"
+      ]
+    },
+    {
+      "ID": 110651,
+      "Entries": [
+        "Shrine Handmaid - Abyss Watchers - Undead Legion Armor"
+      ]
+    },
+    {
+      "ID": 110652,
+      "Entries": [
+        "Shrine Handmaid - Abyss Watchers - Undead Legion Gauntlet"
+      ]
+    },
+    {
+      "ID": 110653,
+      "Entries": [
+        "Shrine Handmaid - Abyss Watchers - Undead Legion Leggings"
+      ]
+    },
+    {
+      "ID": 110700,
+      "Entries": [
+        "Shrine Handmaid - Aldrich - Smough's Helm"
+      ]
+    },
+    {
+      "ID": 110701,
+      "Entries": [
+        "Shrine Handmaid - Aldrich - Smough's Armor"
+      ]
+    },
+    {
+      "ID": 110702,
+      "Entries": [
+        "Shrine Handmaid - Aldrich - Smough's Gauntlets"
+      ]
+    },
+    {
+      "ID": 110703,
+      "Entries": [
+        "Shrine Handmaid - Aldrich - Smough's Leggings"
+      ]
+    },
+    {
+      "ID": 110750,
+      "Entries": [
+        "Shrine Handmaid - Twin Princes - Lorian's Helm"
+      ]
+    },
+    {
+      "ID": 110751,
+      "Entries": [
+        "Shrine Handmaid - Twin Princes - Lorian's Armor"
+      ]
+    },
+    {
+      "ID": 110752,
+      "Entries": [
+        "Shrine Handmaid - Twin Princes - Lorian's Gauntlets"
+      ]
+    },
+    {
+      "ID": 110753,
+      "Entries": [
+        "Shrine Handmaid - Twin Princes - Lorian's Leggings"
+      ]
+    },
+    {
+      "ID": 110800,
+      "Entries": [
+        "Shrine Handmaid - Champion Gundyr - Gundyr's Helm"
+      ]
+    },
+    {
+      "ID": 110801,
+      "Entries": [
+        "Shrine Handmaid - Champion Gundyr - Gundyr's Armor"
+      ]
+    },
+    {
+      "ID": 110802,
+      "Entries": [
+        "Shrine Handmaid - Champion Gundyr - Gundyr's Gauntlets"
+      ]
+    },
+    {
+      "ID": 110803,
+      "Entries": [
+        "Shrine Handmaid - Champion Gundyr - Gundyr's Leggings"
+      ]
+    },
+    {
+      "ID": 110850,
+      "Entries": [
+        "Shrine Handmaid - Dancer - Dancer's Crown"
+      ]
+    },
+    {
+      "ID": 110851,
+      "Entries": [
+        "Shrine Handmaid - Dancer - Dancer's Armor"
+      ]
+    },
+    {
+      "ID": 110852,
+      "Entries": [
+        "Shrine Handmaid - Dancer - Dancer's Gauntlets"
+      ]
+    },
+    {
+      "ID": 110853,
+      "Entries": [
+        "Shrine Handmaid - Dancer - Dancer's Leggings"
+      ]
+    },
+    {
+      "ID": 110900,
+      "Entries": [
+        "Shrine Handmaid - Wolnir - Wolnir's Crown"
+      ]
+    },
+    {
+      "ID": 110950,
+      "Entries": [
+        "Shrine Handmaid - Crystal Sage - Sage's Big Hat"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Shrine Handmaid - Yuria - Billed Mask"
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        "Shrine Handmaid - Yuria - Black Dress"
+      ]
+    },
+    {
+      "ID": 111002,
+      "Entries": [
+        "Shrine Handmaid - Yuria - Black Gauntlets"
+      ]
+    },
+    {
+      "ID": 111003,
+      "Entries": [
+        "Shrine Handmaid - Yuria - Black Leggings"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111051,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111052,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111053,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111102,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111103,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111150,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111151,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111152,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111153,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111250,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111251,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111252,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111253,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111302,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111303,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111350,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111351,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111352,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111353,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111400,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111401,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111402,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111403,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111450,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111451,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111452,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111453,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111500,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111550,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111551,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111552,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111553,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111560,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111561,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111562,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111563,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111600,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111601,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111602,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111650,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111651,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111652,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111653,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111654,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111655,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111656,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111950,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111951,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 111952,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112001,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112002,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112003,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112004,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112005,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112006,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112500,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112501,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112502,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112503,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 112600,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113001,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113002,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113003,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113004,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113005,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113006,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113007,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113008,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113009,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113011,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113012,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113013,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113014,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113015,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113016,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113017,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113018,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113019,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113020,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113021,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113022,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113102,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113103,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113104,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113105,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113106,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113107,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113108,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113109,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113110,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113111,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113112,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113113,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113114,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113115,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113116,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113117,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113118,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113119,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113120,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113121,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113122,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113124,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113125,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113201,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113202,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113203,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113204,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113205,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113206,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113207,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113208,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113209,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113210,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113211,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113212,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113213,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113214,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113302,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 113303,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114102,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114103,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114104,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114105,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114106,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114107,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114108,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114109,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114110,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114302,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114303,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114400,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114401,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114500,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114501,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114502,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114600,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114601,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 114602,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115001,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115002,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115003,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115102,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115103,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115104,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115201,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115202,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115302,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115400,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 115401,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116201,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116202,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116400,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116401,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116500,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116501,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 116502,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117101,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117102,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117103,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117201,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117202,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117301,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117302,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117400,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117401,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117500,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117501,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 117502,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118001,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118002,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118003,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118004,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118005,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118011,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118012,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118013,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118014,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118015,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118016,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118017,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118018,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118200,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 118300,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119001,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119002,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119003,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119004,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119005,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119900,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119901,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119902,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119903,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119904,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119905,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119906,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119907,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119950,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119951,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119952,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 119953,
+      "Entries": [
+        "Shrine Handmaid -"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120003,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120004,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120007,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120008,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120009,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120010,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120011,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120012,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120013,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120014,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120015,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120016,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120017,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120018,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120019,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120020,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120021,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120022,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120102,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120103,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120104,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120105,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120106,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120107,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120108,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120109,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120110,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120111,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120112,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120113,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120114,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120115,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120116,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120117,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120118,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120119,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120120,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120121,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120122,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120124,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120125,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120200,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120201,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120202,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120203,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120204,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120205,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120206,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120207,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120208,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120209,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120210,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120211,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120212,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120213,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120214,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120300,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120301,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120302,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 120303,
+      "Entries": [
+        "Greirat -"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130101,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130102,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130103,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130104,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130105,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130106,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130107,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130108,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130109,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130110,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130300,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130301,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130400,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130401,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130500,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130501,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130502,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130600,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130601,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130602,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130603,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 130604,
+      "Entries": [
+        "Orbeck -"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140002,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140003,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140101,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140102,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140103,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140200,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140201,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140202,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140203,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140300,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140301,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140302,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140400,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 140401,
+      "Entries": [
+        "Cornyx -"
+      ]
+    },
+    {
+      "ID": 150100,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150101,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150200,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150201,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150202,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150300,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150301,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150400,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150401,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150500,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150501,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 150502,
+      "Entries": [
+        "Karla -"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160100,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160101,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160102,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160103,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160200,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160201,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160202,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160300,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160301,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160302,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160400,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160401,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160500,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160501,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 160502,
+      "Entries": [
+        "Irina -"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Patches - Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Patches - Shotel"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "Patches - Winged Spear"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "Patches - Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 200004,
+      "Entries": [
+        "Patches - Black Leather Gloves"
+      ]
+    },
+    {
+      "ID": 200005,
+      "Entries": [
+        "Patches - Black Leather Boots"
+      ]
+    },
+    {
+      "ID": 200006,
+      "Entries": [
+        "Patches - Catarina Helm"
+      ]
+    },
+    {
+      "ID": 200007,
+      "Entries": [
+        "Patches - Catarina Armor"
+      ]
+    },
+    {
+      "ID": 200008,
+      "Entries": [
+        "Patches - Catarina Gauntlets"
+      ]
+    },
+    {
+      "ID": 200009,
+      "Entries": [
+        "Patches - Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Patches - Pierce Shield"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "Patches - Alluring Skull"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "Patches - Black Firebomb"
+      ]
+    },
+    {
+      "ID": 200013,
+      "Entries": [
+        "Patches - Rope Black Firebomb"
+      ]
+    },
+    {
+      "ID": 200014,
+      "Entries": [
+        "Patches - Human Pine Resin"
+      ]
+    },
+    {
+      "ID": 200015,
+      "Entries": [
+        "Patches - Rubbish"
+      ]
+    },
+    {
+      "ID": 200016,
+      "Entries": [
+        "Patches - Rusted Coin"
+      ]
+    },
+    {
+      "ID": 200017,
+      "Entries": [
+        "Patches - Red Bug Pellet"
+      ]
+    },
+    {
+      "ID": 200018,
+      "Entries": [
+        "Patches - Poison Arrow"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Patches - Ember"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Patches - Hidden Blessing"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Patches - Horsehoof Ring"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 760001,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 760002,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 760003,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 760004,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 760005,
+      "Entries": [
+        "Stone-humped Hag -"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Sword: Short Sword"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Shield: Buckler"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Bow: Short Bow"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "Catalyst: Magician's Wand"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "Armor _ Head 1: Funeral Knights"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "Armor _ Head 2: Crimson Knight"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        "Armor _ Torso 1: Funeral Knight"
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        "Armor _ Torso 2: Crimson Knight"
+      ]
+    },
+    {
+      "ID": 900008,
+      "Entries": [
+        "Armor _ Hand 1: Funeral Knights"
+      ]
+    },
+    {
+      "ID": 900009,
+      "Entries": [
+        "Armor _ Hand 2: Crimson Knight"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Armor _ Foot 1: Funeral Knight"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Armor _ Foot Two:"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "Ring 1: Equipment weight up"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "Ring 2: Pinch attack power up"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "Ring 3: The Dark Moon God's ring"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "Ring 4: Ring of Thieves"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "Ring 5: Stamina Recovery up"
+      ]
+    },
+    {
+      "ID": 900017,
+      "Entries": [
+        "Arrow 1: Normal arrow"
+      ]
+    },
+    {
+      "ID": 900018,
+      "Entries": [
+        "Arrow 2: Arrows"
+      ]
+    },
+    {
+      "ID": 900019,
+      "Entries": [
+        "Arrow 3: Mantella"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "Tool 1: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "Tool 2: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "Tool 3: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "Tool 4: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "Tool 5: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900025,
+      "Entries": [
+        "Tool 6: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900026,
+      "Entries": [
+        "Tool 7: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900027,
+      "Entries": [
+        "Tool 8: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900028,
+      "Entries": [
+        "Tool 9: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900029,
+      "Entries": [
+        "Tool 10: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900030,
+      "Entries": [
+        "Tool 11: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900031,
+      "Entries": [
+        "Tool 12: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900032,
+      "Entries": [
+        "Tool 13: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900033,
+      "Entries": [
+        "Tool 14: Reinforcement items"
+      ]
+    },
+    {
+      "ID": 900034,
+      "Entries": [
+        "Tool 15: Seoul"
+      ]
+    },
+    {
+      "ID": 900035,
+      "Entries": [
+        "Tool 16: Seoul"
+      ]
+    },
+    {
+      "ID": 900036,
+      "Entries": [
+        "Tool 17: Seoul"
+      ]
+    },
+    {
+      "ID": 900037,
+      "Entries": [
+        "Tool 18: Seoul"
+      ]
+    },
+    {
+      "ID": 900038,
+      "Entries": [
+        "Tool 19: Seoul"
+      ]
+    },
+    {
+      "ID": 900039,
+      "Entries": [
+        "Tool 20: Seoul"
+      ]
+    },
+    {
+      "ID": 900040,
+      "Entries": [
+        "Tool 21: Seoul"
+      ]
+    },
+    {
+      "ID": 900041,
+      "Entries": [
+        "Tool 22: Seoul"
+      ]
+    },
+    {
+      "ID": 900042,
+      "Entries": [
+        "Tool 23: Seoul"
+      ]
+    },
+    {
+      "ID": 900043,
+      "Entries": [
+        "Tool 24: Seoul"
+      ]
+    },
+    {
+      "ID": 900044,
+      "Entries": [
+        "Tool 25: Seoul"
+      ]
+    },
+    {
+      "ID": 900045,
+      "Entries": [
+        "Tool 26: Seoul"
+      ]
+    },
+    {
+      "ID": 900046,
+      "Entries": [
+        "Tool 27: Seoul"
+      ]
+    },
+    {
+      "ID": 900047,
+      "Entries": [
+        "Tool 28: Seoul"
+      ]
+    },
+    {
+      "ID": 900048,
+      "Entries": [
+        "Tool 29: Seoul"
+      ]
+    },
+    {
+      "ID": 900049,
+      "Entries": [
+        "Tool 30: Seoul"
+      ]
+    },
+    {
+      "ID": 900050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900053,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900054,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900056,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900057,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900058,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900059,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900065,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

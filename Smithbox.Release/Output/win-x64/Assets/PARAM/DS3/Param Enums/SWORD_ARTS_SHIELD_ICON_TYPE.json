@@ -1,0 +1,56 @@
+{
+  "Key": "SWORD_ARTS_SHIELD_ICON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SWORD_ARTS_SHIELD_ICON_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Skill"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Bash"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unique Skill"
+        }
+      ]
+    }
+  ]
+}

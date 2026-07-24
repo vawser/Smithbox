@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_OBJ_GENERATE_TIMING",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_OBJ_GENERATE_TIMING"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On Shoot"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On Hit"
+        }
+      ]
+    }
+  ]
+}

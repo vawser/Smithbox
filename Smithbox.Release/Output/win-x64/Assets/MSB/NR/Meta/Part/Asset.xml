@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
+  
+  <Field>
+    <AssetSfxParamRelativeID
+    AltName="Model Particle Offset ID"
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
+    
+    <ItemLotParamMapID
+    AltName="Item Lot Param (map) ID"
+    Wiki="The item lot generated when interacting with this asset."
+    ParamRef="ItemLotParam_map" />
+    
+    <PartName1
+    AltName="Part Name: 1"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartName2
+    AltName="Part Name: 2"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartName3
+    AltName="Part Name: 3"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartName4
+    AltName="Part Name: 4"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartName5
+    AltName="Part Name: 5"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartName6
+    AltName="Part Name: 6"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartIndex1
+    IndexProperty="" />
+    
+    <PartIndex2
+    IndexProperty="" />
+    
+    <PartIndex3
+    IndexProperty="" />
+    
+    <PartIndex4
+    IndexProperty="" />
+    
+    <PartIndex5
+    IndexProperty="" />
+    
+    <PartIndex6
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

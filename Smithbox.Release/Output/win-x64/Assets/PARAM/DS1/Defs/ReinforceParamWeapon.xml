@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>REINFORCE_PARAM_WEAPON_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="f32 physicsAtkRate = 1">
+      <DisplayName>物理攻撃力基本値</DisplayName>
+      <Description>物理攻撃力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 magicAtkRate = 1">
+      <DisplayName>魔法攻撃力基本値</DisplayName>
+      <Description>魔法攻撃力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 fireAtkRate = 1">
+      <DisplayName>炎攻撃力基本値</DisplayName>
+      <Description>炎攻撃力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 thunderAtkRate = 1">
+      <DisplayName>電撃攻撃力基本値</DisplayName>
+      <Description>電撃攻撃力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 staminaAtkRate = 1">
+      <DisplayName>スタミナ攻撃力</DisplayName>
+      <Description>スタミナ攻撃力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 saWeaponAtkRate = 1">
+      <DisplayName>SA武器攻撃力</DisplayName>
+      <Description>スーパーアーマー武器攻撃色の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="f32 saDurabilityRate = 1">
+      <DisplayName>SA耐久値</DisplayName>
+      <Description>SA耐久力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 correctStrengthRate = 1">
+      <DisplayName>筋力補正</DisplayName>
+      <Description>筋力補正の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 correctAgilityRate = 1">
+      <DisplayName>俊敏補正</DisplayName>
+      <Description>俊敏補正の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 correctMagicRate = 1">
+      <DisplayName>魔力補正</DisplayName>
+      <Description>魔力補正の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 correctFaithRate = 1">
+      <DisplayName>信仰補正</DisplayName>
+      <Description>信仰補正の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 physicsGuardCutRate = 1">
+      <DisplayName>ガード時物理攻撃カット率</DisplayName>
+      <Description>ガード時物理攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 magicGuardCutRate = 1">
+      <DisplayName>ガード時魔法攻撃カット率</DisplayName>
+      <Description>ガード時魔法攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 fireGuardCutRate = 1">
+      <DisplayName>ガード時炎攻撃カット率</DisplayName>
+      <Description>ガード時炎攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 thunderGuardCutRate = 1">
+      <DisplayName>ガード時電撃攻撃カット率</DisplayName>
+      <Description>ガード時電撃攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 poisonGuardResistRate = 1">
+      <DisplayName>ガード時毒攻撃カット率</DisplayName>
+      <Description>ガード時毒攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 diseaseGuardResistRate = 1">
+      <DisplayName>ガード時疫病攻撃カット率</DisplayName>
+      <Description>ガード時疫病攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="f32 bloodGuardResistRate = 1">
+      <DisplayName>ガード時出血攻撃カット率</DisplayName>
+      <Description>ガード時出血攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="f32 curseGuardResistRate = 1">
+      <DisplayName>ガード時呪攻撃カット率</DisplayName>
+      <Description>ガード時呪い攻撃カット率の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 staminaGuardDefRate = 1">
+      <DisplayName>ガード時スタミナ防御力</DisplayName>
+      <Description>ガード時スタミナ防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u8 spEffectId1">
+      <DisplayName>特殊効果ID1</DisplayName>
+      <Description>特殊効果ID1の加算補正値</Description>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 spEffectId2">
+      <DisplayName>特殊効果ID2</DisplayName>
+      <Description>特殊効果ID2の加算補正値</Description>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="u8 spEffectId3">
+      <DisplayName>特殊効果ID3</DisplayName>
+      <Description>特殊効果ID3の加算補正値</Description>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId1">
+      <DisplayName>常駐特殊効果ID1</DisplayName>
+      <Description>常駐特殊効果ID1の加算補正値</Description>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId2">
+      <DisplayName>常駐特殊効果ID2</DisplayName>
+      <Description>常駐特殊効果ID2の加算補正値</Description>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId3">
+      <DisplayName>常駐特殊効果ID3</DisplayName>
+      <Description>常駐特殊効果ID3の加算補正値</Description>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 materialSetId">
+      <DisplayName>素材ID加算値</DisplayName>
+      <Description>素材パラメータIDの加算補正値</Description>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="dummy8 pad[9]">
+      <DisplayName>pading</DisplayName>
+      <SortID>2701</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

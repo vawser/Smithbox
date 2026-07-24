@@ -1,0 +1,38 @@
+{
+  "Key": "WEP_INVISIBLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_INVISIBLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sheath"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two Swords Left Hand"
+        }
+      ]
+    }
+  ]
+}

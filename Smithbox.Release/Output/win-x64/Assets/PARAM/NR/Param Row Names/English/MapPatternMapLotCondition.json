@@ -1,0 +1,167 @@
+{
+  "Name": "MapPatternMapLotCondition",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Lot for Personal Scenario (Wylder): Mission 1 - Grindstone Collection"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Lot for Personal Scenario (Wylder): Mission 2 - Silver Droplet"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Lot for Personal Scenario (Guardian): Mission 2 - Defeat Golem"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Lot for Personal Scenario (Guardian): Mission 3 - Baphomet Trade"
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        "Lot for Personal Scenario (Ironeye): Mission 1 - Eliminate the Sick"
+      ]
+    },
+    {
+      "ID": 10302,
+      "Entries": [
+        "Lot for Personal Scenario (Ironeye): Mission 2 - Defeat the Sinners"
+      ]
+    },
+    {
+      "ID": 10303,
+      "Entries": [
+        "Lot for Personal Scenario (Ironeye): Mission 3 - Defeat the Centaur"
+      ]
+    },
+    {
+      "ID": 10401,
+      "Entries": [
+        "Lot for Personal Scenario (Duchess): Mission 1 - Collect Flowers"
+      ]
+    },
+    {
+      "ID": 10403,
+      "Entries": [
+        "Lot for Personal Scenario (Duchess): Mission 2 - Find News"
+      ]
+    },
+    {
+      "ID": 10601,
+      "Entries": [
+        "Lot for Personal Scenario (Revenant): Mission 1 - Defeat the Night Servant"
+      ]
+    },
+    {
+      "ID": 10701,
+      "Entries": [
+        "Lot for Personal Scenario (Recluse): Mission 1 - ?"
+      ]
+    },
+    {
+      "ID": 10702,
+      "Entries": [
+        "Lot for Personal Scenario (Recluse): Mission 2 - ?"
+      ]
+    },
+    {
+      "ID": 10802,
+      "Entries": [
+        "Lot for Personal Scenario (Executor): Mission 2 - ?"
+      ]
+    },
+    {
+      "ID": 10803,
+      "Entries": [
+        "Lot for Personal Scenario (Executor): Mission 3 - ?"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "Param": "DEPTH_LINE_ST",
+  "Type": "DEPTH_LINE_ST",
+  "Name": "DEPTH_LINE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "BeginDist",
+      "Name": "開始距離[m]",
+      "Description": "走査開始距離"
+    },
+    {
+      "Field": "EndDist",
+      "Name": "終了距離[m]",
+      "Description": "走査終了距離"
+    },
+    {
+      "Field": "StepDist",
+      "Name": "更新ステップ[m]",
+      "Description": "1フレームで移動する距離"
+    },
+    {
+      "Field": "LineLength",
+      "Name": "ラインの長さ[m]",
+      "Description": "ラインの長さ"
+    },
+    {
+      "Field": "FadeOutTime",
+      "Name": "フェードアウト時間[s]",
+      "Description": "フェードアウトまでの時間[s]"
+    },
+    {
+      "Field": "AccelTime",
+      "Name": "加速時間[s]",
+      "Description": "加速していく時間[s]"
+    },
+    {
+      "Field": "MoveCount",
+      "Name": "走査回数",
+      "Description": "演出回数"
+    },
+    {
+      "Field": "MoveType",
+      "Name": "描画タイプ",
+      "Description": "円状に広がるようになる"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "ダミ－",
+      "Description": ""
+    },
+    {
+      "Field": "R",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "G",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "B",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "A",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "texParam00_texScale",
+      "Name": "テクスチャスケール",
+      "Description": ""
+    },
+    {
+      "Field": "texParam00_texOffsetSpeed",
+      "Name": "テクスチャアニメ速度",
+      "Description": "１秒でアニメションするU値"
+    },
+    {
+      "Field": "texParam01_texScale",
+      "Name": "テクスチャスケール",
+      "Description": ""
+    },
+    {
+      "Field": "texParam01_texOffsetSpeed",
+      "Name": "テクスチャアニメ速度",
+      "Description": "１秒でアニメションするU値"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "ダミ－",
+      "Description": ""
+    }
+  ]
+}

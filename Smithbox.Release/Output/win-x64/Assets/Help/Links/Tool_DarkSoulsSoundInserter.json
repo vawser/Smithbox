@@ -1,0 +1,16 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: Dark Souls Sound Inserter",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/www.nexusmods.com/darksouls/mods/1193@Dark Souls Sound Inserter]",
+        "[Header]Description",
+        "Modding tool. Used for swapping out in-game sound effects & music with custom sounds.",
+        "Supports DS1, DS1:R, DS2 and DS3."
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "690",
+  "name": "Burnt Ivory King",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

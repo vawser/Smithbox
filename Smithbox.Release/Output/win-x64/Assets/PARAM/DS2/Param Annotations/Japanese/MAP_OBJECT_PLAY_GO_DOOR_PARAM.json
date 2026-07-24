@@ -1,0 +1,48 @@
+{
+  "Param": "MAP_OBJECT_PLAY_GO_DOOR_PARAM",
+  "Type": "MAP_OBJECT_PLAY_GO_DOOR_PARAM",
+  "Name": "MAP_OBJECT_PLAY_GO_DOOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "Unk00",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "Unk05",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "Unk06",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "Unk07",
+      "Description": ""
+    }
+  ]
+}

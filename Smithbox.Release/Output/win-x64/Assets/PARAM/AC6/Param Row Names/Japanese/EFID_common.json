@@ -1,0 +1,4169 @@
+{
+  "Name": "EFID_common",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Unban flag at game start ゲーム開始時解禁フラグ"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "System reservation_participating in session システム予約_セッション参加中"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "system reserved_no session システム予約_セッションなし"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "system reserved_host システム予約_ホスト"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "System reservation_guest システム予約_ゲスト"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "system reservation_is the local player normal システム予約_ローカルプレイヤが通常か"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "System reservation_Is the local player a white spirit? システム予約_ローカルプレイヤが白霊か"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "System reservation_Is the local player a dark spirit? システム予約_ローカルプレイヤが闇霊か"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Leave the loading screen off ロード画面使用OFFのまま"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Event flag for PlayGo PlayGo用イベントフラグ"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Arena Event Flag_Are you playing Arena? アリーナイベントフラグ_アリーナをプレイ中か"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Chapter Judgment Flag_In Chapter 1 章判定フラグ_一章中"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 1 章判定フラグ_一章終わり"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Chapter Judgment Flag_Chapter 2 章判定フラグ_二章中"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 2 章判定フラグ_二章終わり"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Chapter Judgment Flag_Chapter 3 章判定フラグ_三章中"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 3 章判定フラグ_三章終わり"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Chapter Judgment Flag_Chapter 4 章判定フラグ_四章中"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 4 章判定フラグ_四章終わり"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Chapter Judgment Flag_Chapter 5 章判定フラグ_五章中"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 5 章判定フラグ_五章終わり"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Chapter Judgment Flag_Chapter 6 章判定フラグ_六章中"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Chapter Judgment Flag_End of Chapter 6 章判定フラグ_六章終わり"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Garage general-purpose same notification window opened ガレージ汎用\u3000同じ告知ウインドウ開いた"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Message_Visible Flag Message_表示可能フラグ"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Archive_visible flag Achive_表示可能フラグ"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Mission_visible flag Mission_表示可能フラグ"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Assemble_visible Assemble_表示可能"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Paint_Visible Paint_表示可能"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Design_ visible Design_表示可能"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "AC_Test_Visible AC_Test_表示可能"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Market_ visible Market_表示可能"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "Black_Market_ visible Black_Market_表示可能"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "Talk_ visible Talk_表示可能"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "AC_Arena_Visible AC_Arena_表示可能"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "OS_Update_Visible OS_Update_表示可能"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Simulator_ can be displayed Simulator_表示可能"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "ONLINE_Arena_Visible ONLINE_Arena_表示可能"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "Spare 02 予備02"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "spare 03 予備03"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "spare 04 予備04"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "spare 05 予備05"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "spare 06 予備06"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "Preliminary 07 予備07"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Message_cannot be selected Message_選択不可能"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Achiive_Unlocking Achive_解禁用"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Mission_Unlocking Mission_解禁用"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Assemble_Unlocking Assemble_解禁用"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "Paint_Unlocking Paint_解禁用"
+      ]
+    },
+    {
+      "ID": 3125,
+      "Entries": [
+        "Design_Unlocking Design_解禁用"
+      ]
+    },
+    {
+      "ID": 3126,
+      "Entries": [
+        "AC_Test_Unban AC_Test_解禁用"
+      ]
+    },
+    {
+      "ID": 3127,
+      "Entries": [
+        "Market_Unlocking Market_解禁用"
+      ]
+    },
+    {
+      "ID": 3128,
+      "Entries": [
+        "Black_Market_Unlocking Black_Market_解禁用"
+      ]
+    },
+    {
+      "ID": 3129,
+      "Entries": [
+        "Talk_Unlocking Talk_解禁用"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "AC_Arena_Unban AC_Arena_解禁用"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "OS_Update_Unban OS_Update_解禁用"
+      ]
+    },
+    {
+      "ID": 3132,
+      "Entries": [
+        "Simulator_Unlocking Simulator_解禁用"
+      ]
+    },
+    {
+      "ID": 3133,
+      "Entries": [
+        "ONLINE_Arena_Unlocking ONLINE_Arena_解禁用"
+      ]
+    },
+    {
+      "ID": 3134,
+      "Entries": [
+        "replaymission for unlocking replaymission 解禁用"
+      ]
+    },
+    {
+      "ID": 3135,
+      "Entries": [
+        "mission grayed out ミッショングレーアウト"
+      ]
+    },
+    {
+      "ID": 3136,
+      "Entries": [
+        "reserve 11 予備11"
+      ]
+    },
+    {
+      "ID": 3137,
+      "Entries": [
+        "Reserve 12 予備12"
+      ]
+    },
+    {
+      "ID": 3138,
+      "Entries": [
+        "reserve 13 予備13"
+      ]
+    },
+    {
+      "ID": 3139,
+      "Entries": [
+        "reserve 14 予備14"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Arena unlock progress 1 アリーナ解禁進行度1"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "Arena unlock progress 2 アリーナ解禁進行度2"
+      ]
+    },
+    {
+      "ID": 3152,
+      "Entries": [
+        "Arena unlock progress 3 アリーナ解禁進行度3"
+      ]
+    },
+    {
+      "ID": 3153,
+      "Entries": [
+        "Arena unlock progress 4 アリーナ解禁進行度4"
+      ]
+    },
+    {
+      "ID": 3154,
+      "Entries": [
+        "Arena unlock progress 5 アリーナ解禁進行度5"
+      ]
+    },
+    {
+      "ID": 3155,
+      "Entries": [
+        "Arena unlock progress 6 アリーナ解禁進行度6"
+      ]
+    },
+    {
+      "ID": 3156,
+      "Entries": [
+        "Arena unlock progress 7 アリーナ解禁進行度7"
+      ]
+    },
+    {
+      "ID": 3157,
+      "Entries": [
+        "Arena unlock progress 8 アリーナ解禁進行度8"
+      ]
+    },
+    {
+      "ID": 3158,
+      "Entries": [
+        "Arena unlock progress 9 アリーナ解禁進行度9"
+      ]
+    },
+    {
+      "ID": 3159,
+      "Entries": [
+        "Arena unlock progress 10 アリーナ解禁進行度10"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Arena unlock progress 11 アリーナ解禁進行度11"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Menu non-display judgment メニュー非表示判定"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Silent start determination 無音スタート判定"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "BGM reset judgment at garage IN ガレージIN時のBGMリセット判定"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Conversation end judgment 会話終了判定"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター1進行度1"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター1進行度2"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター1進行度3"
+      ]
+    },
+    {
+      "ID": 3403,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター1進行度4"
+      ]
+    },
+    {
+      "ID": 3404,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター1進行度5"
+      ]
+    },
+    {
+      "ID": 3405,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター1進行度6"
+      ]
+    },
+    {
+      "ID": 3406,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 7 【ガレージ】ストーリー演出を見た判定_チャプター1進行度7"
+      ]
+    },
+    {
+      "ID": 3407,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 8 【ガレージ】ストーリー演出を見た判定_チャプター1進行度8"
+      ]
+    },
+    {
+      "ID": 3408,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 9 【ガレージ】ストーリー演出を見た判定_チャプター1進行度9"
+      ]
+    },
+    {
+      "ID": 3409,
+      "Entries": [
+        "[Garage] Judgment by watching the story production_Chapter 1 Entered the garage for the first time 【ガレージ】ストーリー演出を見た判定_チャプター1初めてガレージに入った"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 2 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター2進行度1"
+      ]
+    },
+    {
+      "ID": 3411,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 2 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター2進行度2"
+      ]
+    },
+    {
+      "ID": 3412,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 2 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター2進行度3"
+      ]
+    },
+    {
+      "ID": 3413,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 1 【ガレージ】ストーリー演出を見た判定チャプター2予備1"
+      ]
+    },
+    {
+      "ID": 3414,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 2 【ガレージ】ストーリー演出を見た判定チャプター2予備2"
+      ]
+    },
+    {
+      "ID": 3415,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 3 【ガレージ】ストーリー演出を見た判定チャプター2予備3"
+      ]
+    },
+    {
+      "ID": 3416,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 4 【ガレージ】ストーリー演出を見た判定チャプター2予備4"
+      ]
+    },
+    {
+      "ID": 3417,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 5 【ガレージ】ストーリー演出を見た判定チャプター2予備5"
+      ]
+    },
+    {
+      "ID": 3418,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 6 【ガレージ】ストーリー演出を見た判定チャプター2予備6"
+      ]
+    },
+    {
+      "ID": 3419,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 2 Preliminary 7 【ガレージ】ストーリー演出を見た判定チャプター2予備7"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress 1 【ガレージ】ストーリー演出を見た判定チャプター3進行度1"
+      ]
+    },
+    {
+      "ID": 3421,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress 2 【ガレージ】ストーリー演出を見た判定チャプター3進行度2"
+      ]
+    },
+    {
+      "ID": 3422,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress 3 【ガレージ】ストーリー演出を見た判定チャプター3進行度3"
+      ]
+    },
+    {
+      "ID": 3423,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 Progress 4 【ガレージ】ストーリー演出を見た判定チャプター3進行度4"
+      ]
+    },
+    {
+      "ID": 3424,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 5 【ガレージ】ストーリー演出を見た判定チャプター3進行度5"
+      ]
+    },
+    {
+      "ID": 3425,
+      "Entries": [
+        "[Garage] Judgment after seeing the story production Chapter 3 progress 6 【ガレージ】ストーリー演出を見た判定チャプター3進行度6"
+      ]
+    },
+    {
+      "ID": 3426,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 7 【ガレージ】ストーリー演出を見た判定チャプター3進行度7"
+      ]
+    },
+    {
+      "ID": 3427,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 8 【ガレージ】ストーリー演出を見た判定チャプター3進行度8"
+      ]
+    },
+    {
+      "ID": 3428,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress level 9 【ガレージ】ストーリー演出を見た判定チャプター3進行度9"
+      ]
+    },
+    {
+      "ID": 3429,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress 10 【ガレージ】ストーリー演出を見た判定チャプター3進行度10"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター4進行度1"
+      ]
+    },
+    {
+      "ID": 3431,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター4進行度2"
+      ]
+    },
+    {
+      "ID": 3432,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター4進行度3"
+      ]
+    },
+    {
+      "ID": 3433,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター4進行度4"
+      ]
+    },
+    {
+      "ID": 3434,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター4進行度5"
+      ]
+    },
+    {
+      "ID": 3435,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター4進行度6"
+      ]
+    },
+    {
+      "ID": 3436,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 4 progress level 7 【ガレージ】ストーリー演出を見た判定_チャプター4進行度7"
+      ]
+    },
+    {
+      "ID": 3437,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 4 Preliminary 1 【ガレージ】ストーリー演出を見た判定チャプター4予備1"
+      ]
+    },
+    {
+      "ID": 3438,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 4 Preliminary 2 【ガレージ】ストーリー演出を見た判定チャプター4予備2"
+      ]
+    },
+    {
+      "ID": 3439,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 4 Preliminary 3 【ガレージ】ストーリー演出を見た判定チャプター4予備3"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター5進行度1"
+      ]
+    },
+    {
+      "ID": 3441,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター5進行度2"
+      ]
+    },
+    {
+      "ID": 3442,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター5進行度3"
+      ]
+    },
+    {
+      "ID": 3443,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター5進行度4"
+      ]
+    },
+    {
+      "ID": 3444,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター5進行度5"
+      ]
+    },
+    {
+      "ID": 3445,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター5進行度6"
+      ]
+    },
+    {
+      "ID": 3446,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 5 progress 7 【ガレージ】ストーリー演出を見た判定_チャプター5進行度7"
+      ]
+    },
+    {
+      "ID": 3447,
+      "Entries": [
+        "[Garage] Current Route C 【ガレージ】現在Cルート"
+      ]
+    },
+    {
+      "ID": 3448,
+      "Entries": [
+        "[Garage] I just saw the start of the arena 【ガレージ】今更アリーナ開始見た"
+      ]
+    },
+    {
+      "ID": 3449,
+      "Entries": [
+        "[Garage] Arena now open 【ガレージ】今更アリーナ開"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 10 【ガレージ】ストーリー演出を見た判定_チャプター1進行度10"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 11 【ガレージ】ストーリー演出を見た判定_チャプター1進行度11"
+      ]
+    },
+    {
+      "ID": 3452,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 12 【ガレージ】ストーリー演出を見た判定_チャプター1進行度12"
+      ]
+    },
+    {
+      "ID": 3453,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 13 【ガレージ】ストーリー演出を見た判定_チャプター1進行度13"
+      ]
+    },
+    {
+      "ID": 3454,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 14 【ガレージ】ストーリー演出を見た判定_チャプター1進行度14"
+      ]
+    },
+    {
+      "ID": 3455,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 15 【ガレージ】ストーリー演出を見た判定_チャプター1進行度15"
+      ]
+    },
+    {
+      "ID": 3456,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 16 【ガレージ】ストーリー演出を見た判定_チャプター1進行度16"
+      ]
+    },
+    {
+      "ID": 3457,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 17 【ガレージ】ストーリー演出を見た判定_チャプター1進行度17"
+      ]
+    },
+    {
+      "ID": 3458,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production_Chapter 1 progress 18 【ガレージ】ストーリー演出を見た判定_チャプター1進行度18"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 11 【ガレージ】ストーリー演出を見た判定チャプター3進行度11"
+      ]
+    },
+    {
+      "ID": 3461,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 12 【ガレージ】ストーリー演出を見た判定チャプター3進行度12"
+      ]
+    },
+    {
+      "ID": 3462,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress level 13 【ガレージ】ストーリー演出を見た判定チャプター3進行度13"
+      ]
+    },
+    {
+      "ID": 3463,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress level 14 【ガレージ】ストーリー演出を見た判定チャプター3進行度14"
+      ]
+    },
+    {
+      "ID": 3464,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress level 15 【ガレージ】ストーリー演出を見た判定チャプター3進行度15"
+      ]
+    },
+    {
+      "ID": 3465,
+      "Entries": [
+        "[Garage] Judgment after seeing the story production Chapter 3 progress 16 【ガレージ】ストーリー演出を見た判定チャプター3進行度16"
+      ]
+    },
+    {
+      "ID": 3466,
+      "Entries": [
+        "[Garage] Judgment by seeing the story production Chapter 3 progress level 17 【ガレージ】ストーリー演出を見た判定チャプター3進行度17"
+      ]
+    },
+    {
+      "ID": 3467,
+      "Entries": [
+        "[Garage] Judgment by watching the story production Chapter 3 progress level 18 【ガレージ】ストーリー演出を見た判定チャプター3進行度18"
+      ]
+    },
+    {
+      "ID": 3468,
+      "Entries": [
+        "[Garage] Judgment after seeing the story production Chapter 3 progress level 19 【ガレージ】ストーリー演出を見た判定チャプター3進行度19"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[Garage] Indigenous flag Dam betrayal 1st PT 【ガレージ】土着フラグ\u3000ダム裏切り1PT目"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "[Garage] Indigenous flag Dam betrayal 2nd PT 【ガレージ】土着フラグ\u3000ダム裏切り2PT目"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "[Garage] Indigenous Flag Sabumi: 1st clearing of open-air quarry 【ガレージ】土着フラグ\u3000サブミ：露天採掘場クリア1PT目"
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        "[Garage] Indigenous Flag Sabumi: 2nd Pt. 【ガレージ】土着フラグ\u3000サブミ：露天採掘場クリア2PT目"
+      ]
+    },
+    {
+      "ID": 3504,
+      "Entries": [
+        "[Garage] Indigenous flag Do not accept begging for life in front of the wall 【ガレージ】土着フラグ\u3000壁前命乞いを受け入れない"
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        "[Garage] Indigenous flag Unknown aircraft elimination cleared 【ガレージ】土着フラグ\u3000不明機体排除クリア"
+      ]
+    },
+    {
+      "ID": 3506,
+      "Entries": [
+        "[Garage] Indigenous flag AC battle clear at the power plant 【ガレージ】土着フラグ\u3000発電所でのAC戦クリア"
+      ]
+    },
+    {
+      "ID": 3507,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 2 【ガレージ】土着フラグ\u3000予備2"
+      ]
+    },
+    {
+      "ID": 3508,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 3 【ガレージ】土着フラグ\u3000予備3"
+      ]
+    },
+    {
+      "ID": 3509,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 4 【ガレージ】土着フラグ\u3000予備4"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 5 【ガレージ】土着フラグ\u3000予備5"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 6 【ガレージ】土着フラグ\u3000予備6"
+      ]
+    },
+    {
+      "ID": 3512,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 7 【ガレージ】土着フラグ\u3000予備7"
+      ]
+    },
+    {
+      "ID": 3513,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 8 【ガレージ】土着フラグ\u3000予備8"
+      ]
+    },
+    {
+      "ID": 3514,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 9 【ガレージ】土着フラグ\u3000予備9"
+      ]
+    },
+    {
+      "ID": 3515,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 10 【ガレージ】土着フラグ\u3000予備10"
+      ]
+    },
+    {
+      "ID": 3516,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 11 【ガレージ】土着フラグ\u3000予備11"
+      ]
+    },
+    {
+      "ID": 3517,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 12 【ガレージ】土着フラグ\u3000予備12"
+      ]
+    },
+    {
+      "ID": 3518,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 13 【ガレージ】土着フラグ\u3000予備13"
+      ]
+    },
+    {
+      "ID": 3519,
+      "Entries": [
+        "[Garage] Indigenous Flag Spare 14 【ガレージ】土着フラグ\u3000予備14"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[Garage] Flag to go to Route B 【ガレージ】Bルートに行けるフラグ"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "[Garage] Flag to go to route B (Bioweapon ALT clear) 【ガレージ】Bルートに行けるフラグ(生体兵器ALTクリア)"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Menu] Communist for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用\u3000共産"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "[Menu] Quadruped for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用\u3000四脚"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "[Menu] NPAC for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用\u3000NPAC"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "[Menu] For AC Test Enemy Gene None 【メニュー】ACテスト敵ジェネ用\u3000なし"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "[Menu] AC test for enemy AI ON 【メニュー】ACテスト敵AI用\u3000ON"
+      ]
+    },
+    {
+      "ID": 3705,
+      "Entries": [
+        "[Menu] AC test for enemy AI OFF 【メニュー】ACテスト敵AI用\u3000OFF"
+      ]
+    },
+    {
+      "ID": 3706,
+      "Entries": [
+        "[Menu] AC Test Preliminary 1 【メニュー】ACテスト予備1"
+      ]
+    },
+    {
+      "ID": 3707,
+      "Entries": [
+        "[Menu] AC Test Preliminary 2 【メニュー】ACテスト予備2"
+      ]
+    },
+    {
+      "ID": 3708,
+      "Entries": [
+        "[Menu] AC Test Preliminary 3 【メニュー】ACテスト予備3"
+      ]
+    },
+    {
+      "ID": 3709,
+      "Entries": [
+        "[Menu] AC Test Preliminary 4 【メニュー】ACテスト予備4"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "assembled アセンブルを行った"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "did the coloring カラーリングを行った"
+      ]
+    },
+    {
+      "ID": 3802,
+      "Entries": [
+        "Enhanced OS OS強化を行った"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Garage debug flag #1 ガレージ用デバッグフラグその1"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "Garage debug flag #2 ガレージ用デバッグフラグその2"
+      ]
+    },
+    {
+      "ID": 3902,
+      "Entries": [
+        "Garage debug flag #3 ガレージ用デバッグフラグその3"
+      ]
+    },
+    {
+      "ID": 3903,
+      "Entries": [
+        "Garage debug flag #4 ガレージ用デバッグフラグその4"
+      ]
+    },
+    {
+      "ID": 3904,
+      "Entries": [
+        "Garage debug flag #5 ガレージ用デバッグフラグその5"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "Archive debug flag_front of the wall アーカイブ用デバッグフラグ_壁前"
+      ]
+    },
+    {
+      "ID": 3920,
+      "Entries": [
+        "whispered flag ひそひそ話をしたフラグ"
+      ]
+    },
+    {
+      "ID": 3999,
+      "Entries": [
+        "A flag that blocks emblems that are not available 入手させないエンブレムをふさぐフラグ"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Archive item retrieved flag 00 アーカイブアイテム取得済みフラグ00"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Archive Item Acquired Flag 01 アーカイブアイテム取得済みフラグ01"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Archive Item Acquired Flag 02 アーカイブアイテム取得済みフラグ02"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Archive Item Obtained Flag 03 アーカイブアイテム取得済みフラグ03"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Archive Item Obtained Flag 04 アーカイブアイテム取得済みフラグ04"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Archive Item Acquired Flag 05 アーカイブアイテム取得済みフラグ05"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Archive Item Acquired Flag 06 アーカイブアイテム取得済みフラグ06"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Archive Item Obtained Flag 07 アーカイブアイテム取得済みフラグ07"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Archive Item Acquired Flag 08 アーカイブアイテム取得済みフラグ08"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Archive Item Acquired Flag 09 アーカイブアイテム取得済みフラグ09"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Archive Item Obtained Flag 10 アーカイブアイテム取得済みフラグ10"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Archive item retrieved flag 11 アーカイブアイテム取得済みフラグ11"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Archive item retrieved flag 12 アーカイブアイテム取得済みフラグ12"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Archive Item Acquired Flag 13 アーカイブアイテム取得済みフラグ13"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Archive Item Acquired Flag 14 アーカイブアイテム取得済みフラグ14"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Archive Item Acquired Flag 15 アーカイブアイテム取得済みフラグ15"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "Archive item retrieved flag 16 アーカイブアイテム取得済みフラグ16"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "Archive item retrieved flag 17 アーカイブアイテム取得済みフラグ17"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "Archive Item Acquired Flag 18 アーカイブアイテム取得済みフラグ18"
+      ]
+    },
+    {
+      "ID": 4019,
+      "Entries": [
+        "Archive Item Acquired Flag 19 アーカイブアイテム取得済みフラグ19"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Archive Item Obtained Flag 20 アーカイブアイテム取得済みフラグ20"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Archive Item Acquired Flag 21 アーカイブアイテム取得済みフラグ21"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Archive Item Acquired Flag 22 アーカイブアイテム取得済みフラグ22"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Archive Item Acquired Flag 23 アーカイブアイテム取得済みフラグ23"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "Archive Item Acquired Flag 24 アーカイブアイテム取得済みフラグ24"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "Archive Item Acquired Flag 25 アーカイブアイテム取得済みフラグ25"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "Archive item retrieved flag 26 アーカイブアイテム取得済みフラグ26"
+      ]
+    },
+    {
+      "ID": 4027,
+      "Entries": [
+        "Archive Item Acquired Flag 27 アーカイブアイテム取得済みフラグ27"
+      ]
+    },
+    {
+      "ID": 4028,
+      "Entries": [
+        "Archive Item Acquired Flag 28 アーカイブアイテム取得済みフラグ28"
+      ]
+    },
+    {
+      "ID": 4029,
+      "Entries": [
+        "Archive Item Acquired Flag 29 アーカイブアイテム取得済みフラグ29"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Archive Item Obtained Flag 30 アーカイブアイテム取得済みフラグ30"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Archive item retrieved flag 31 アーカイブアイテム取得済みフラグ31"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Archive item retrieved flag 32 アーカイブアイテム取得済みフラグ32"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "Archive Item Acquired Flag 33 アーカイブアイテム取得済みフラグ33"
+      ]
+    },
+    {
+      "ID": 4034,
+      "Entries": [
+        "Archive Item Acquired Flag 34 アーカイブアイテム取得済みフラグ34"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "Archive Item Acquired Flag 35 アーカイブアイテム取得済みフラグ35"
+      ]
+    },
+    {
+      "ID": 4036,
+      "Entries": [
+        "Archive item retrieved flag 36 アーカイブアイテム取得済みフラグ36"
+      ]
+    },
+    {
+      "ID": 4037,
+      "Entries": [
+        "Archive Item Acquired Flag 37 アーカイブアイテム取得済みフラグ37"
+      ]
+    },
+    {
+      "ID": 4038,
+      "Entries": [
+        "Archive Item Obtained Flag 38 アーカイブアイテム取得済みフラグ38"
+      ]
+    },
+    {
+      "ID": 4039,
+      "Entries": [
+        "Archive Item Acquired Flag 39 アーカイブアイテム取得済みフラグ39"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Archive Item Acquired Flag 40 アーカイブアイテム取得済みフラグ40"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "Archive item retrieved flag 41 アーカイブアイテム取得済みフラグ41"
+      ]
+    },
+    {
+      "ID": 4042,
+      "Entries": [
+        "Archive item retrieved flag 42 アーカイブアイテム取得済みフラグ42"
+      ]
+    },
+    {
+      "ID": 4043,
+      "Entries": [
+        "Archive Item Acquired Flag 43 アーカイブアイテム取得済みフラグ43"
+      ]
+    },
+    {
+      "ID": 4044,
+      "Entries": [
+        "Archive item retrieved flag 44 アーカイブアイテム取得済みフラグ44"
+      ]
+    },
+    {
+      "ID": 4045,
+      "Entries": [
+        "Archive Item Acquired Flag 45 アーカイブアイテム取得済みフラグ45"
+      ]
+    },
+    {
+      "ID": 4046,
+      "Entries": [
+        "Archive item retrieved flag 46 アーカイブアイテム取得済みフラグ46"
+      ]
+    },
+    {
+      "ID": 4047,
+      "Entries": [
+        "Archive Item Acquired Flag 47 アーカイブアイテム取得済みフラグ47"
+      ]
+    },
+    {
+      "ID": 4048,
+      "Entries": [
+        "Archive Item Acquired Flag 48 アーカイブアイテム取得済みフラグ48"
+      ]
+    },
+    {
+      "ID": 4049,
+      "Entries": [
+        "Archive Item Acquired Flag 49 アーカイブアイテム取得済みフラグ49"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Archive Item Obtained Flag 50 アーカイブアイテム取得済みフラグ50"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "Archive item retrieved flag 51 アーカイブアイテム取得済みフラグ51"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "Archive item retrieved flag 52 アーカイブアイテム取得済みフラグ52"
+      ]
+    },
+    {
+      "ID": 4053,
+      "Entries": [
+        "Archive item retrieved flag 53 アーカイブアイテム取得済みフラグ53"
+      ]
+    },
+    {
+      "ID": 4054,
+      "Entries": [
+        "Archive item retrieved flag 54 アーカイブアイテム取得済みフラグ54"
+      ]
+    },
+    {
+      "ID": 4055,
+      "Entries": [
+        "Archive item retrieved flag 55 アーカイブアイテム取得済みフラグ55"
+      ]
+    },
+    {
+      "ID": 4056,
+      "Entries": [
+        "Archive item retrieved flag 56 アーカイブアイテム取得済みフラグ56"
+      ]
+    },
+    {
+      "ID": 4057,
+      "Entries": [
+        "Archive item retrieved flag 57 アーカイブアイテム取得済みフラグ57"
+      ]
+    },
+    {
+      "ID": 4058,
+      "Entries": [
+        "Archive Item Acquired Flag 58 アーカイブアイテム取得済みフラグ58"
+      ]
+    },
+    {
+      "ID": 4059,
+      "Entries": [
+        "Archive Item Acquired Flag 59 アーカイブアイテム取得済みフラグ59"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Archive Item Acquired Flag 60 アーカイブアイテム取得済みフラグ60"
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        "Archive item retrieved flag 61 アーカイブアイテム取得済みフラグ61"
+      ]
+    },
+    {
+      "ID": 4062,
+      "Entries": [
+        "Archive item retrieved flag 62 アーカイブアイテム取得済みフラグ62"
+      ]
+    },
+    {
+      "ID": 4063,
+      "Entries": [
+        "Archive item retrieved flag 63 アーカイブアイテム取得済みフラグ63"
+      ]
+    },
+    {
+      "ID": 4064,
+      "Entries": [
+        "Archive item retrieved flag 64 アーカイブアイテム取得済みフラグ64"
+      ]
+    },
+    {
+      "ID": 4065,
+      "Entries": [
+        "Archive item retrieved flag 65 アーカイブアイテム取得済みフラグ65"
+      ]
+    },
+    {
+      "ID": 4066,
+      "Entries": [
+        "Archive item retrieved flag 66 アーカイブアイテム取得済みフラグ66"
+      ]
+    },
+    {
+      "ID": 4067,
+      "Entries": [
+        "Archive item retrieved flag 67 アーカイブアイテム取得済みフラグ67"
+      ]
+    },
+    {
+      "ID": 4068,
+      "Entries": [
+        "Archive item retrieved flag 68 アーカイブアイテム取得済みフラグ68"
+      ]
+    },
+    {
+      "ID": 4069,
+      "Entries": [
+        "Archive item retrieved flag 69 アーカイブアイテム取得済みフラグ69"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Archive Item Obtained Flag 70 アーカイブアイテム取得済みフラグ70"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "Archive item retrieved flag 71 アーカイブアイテム取得済みフラグ71"
+      ]
+    },
+    {
+      "ID": 4072,
+      "Entries": [
+        "Archive item retrieved flag 72 アーカイブアイテム取得済みフラグ72"
+      ]
+    },
+    {
+      "ID": 4073,
+      "Entries": [
+        "Archive item retrieved flag 73 アーカイブアイテム取得済みフラグ73"
+      ]
+    },
+    {
+      "ID": 4074,
+      "Entries": [
+        "Archive item retrieved flag 74 アーカイブアイテム取得済みフラグ74"
+      ]
+    },
+    {
+      "ID": 4075,
+      "Entries": [
+        "Archive Item Acquired Flag 75 アーカイブアイテム取得済みフラグ75"
+      ]
+    },
+    {
+      "ID": 4076,
+      "Entries": [
+        "Archive item retrieved flag 76 アーカイブアイテム取得済みフラグ76"
+      ]
+    },
+    {
+      "ID": 4077,
+      "Entries": [
+        "Archive Item Acquired Flag 77 アーカイブアイテム取得済みフラグ77"
+      ]
+    },
+    {
+      "ID": 4078,
+      "Entries": [
+        "Archive item retrieved flag 78 アーカイブアイテム取得済みフラグ78"
+      ]
+    },
+    {
+      "ID": 4079,
+      "Entries": [
+        "Archive Item Acquired Flag 79 アーカイブアイテム取得済みフラグ79"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Archive Item Acquired Flag 80 アーカイブアイテム取得済みフラグ80"
+      ]
+    },
+    {
+      "ID": 4081,
+      "Entries": [
+        "Archive item retrieved flag 81 アーカイブアイテム取得済みフラグ81"
+      ]
+    },
+    {
+      "ID": 4082,
+      "Entries": [
+        "Archive item retrieved flag 82 アーカイブアイテム取得済みフラグ82"
+      ]
+    },
+    {
+      "ID": 4083,
+      "Entries": [
+        "Archive item retrieved flag 83 アーカイブアイテム取得済みフラグ83"
+      ]
+    },
+    {
+      "ID": 4084,
+      "Entries": [
+        "Archive item retrieved flag 84 アーカイブアイテム取得済みフラグ84"
+      ]
+    },
+    {
+      "ID": 4085,
+      "Entries": [
+        "Archive item retrieved flag 85 アーカイブアイテム取得済みフラグ85"
+      ]
+    },
+    {
+      "ID": 4086,
+      "Entries": [
+        "Archive item retrieved flag 86 アーカイブアイテム取得済みフラグ86"
+      ]
+    },
+    {
+      "ID": 4087,
+      "Entries": [
+        "Archive item retrieved flag 87 アーカイブアイテム取得済みフラグ87"
+      ]
+    },
+    {
+      "ID": 4088,
+      "Entries": [
+        "Archive item retrieved flag 88 アーカイブアイテム取得済みフラグ88"
+      ]
+    },
+    {
+      "ID": 4089,
+      "Entries": [
+        "Archive Item Acquired Flag 89 アーカイブアイテム取得済みフラグ89"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Archive Item Acquired Flag 90 アーカイブアイテム取得済みフラグ90"
+      ]
+    },
+    {
+      "ID": 4091,
+      "Entries": [
+        "Archive Item Acquired Flag 91 アーカイブアイテム取得済みフラグ91"
+      ]
+    },
+    {
+      "ID": 4092,
+      "Entries": [
+        "Archive item retrieved flag 92 アーカイブアイテム取得済みフラグ92"
+      ]
+    },
+    {
+      "ID": 4093,
+      "Entries": [
+        "Archive Item Acquired Flag 93 アーカイブアイテム取得済みフラグ93"
+      ]
+    },
+    {
+      "ID": 4094,
+      "Entries": [
+        "Archive item retrieved flag 94 アーカイブアイテム取得済みフラグ94"
+      ]
+    },
+    {
+      "ID": 4095,
+      "Entries": [
+        "Archive Item Acquired Flag 95 アーカイブアイテム取得済みフラグ95"
+      ]
+    },
+    {
+      "ID": 4096,
+      "Entries": [
+        "Archive item retrieved flag 96 アーカイブアイテム取得済みフラグ96"
+      ]
+    },
+    {
+      "ID": 4097,
+      "Entries": [
+        "Archive item retrieved flag 97 アーカイブアイテム取得済みフラグ97"
+      ]
+    },
+    {
+      "ID": 4098,
+      "Entries": [
+        "Archive Item Acquired Flag 98 アーカイブアイテム取得済みフラグ98"
+      ]
+    },
+    {
+      "ID": 4099,
+      "Entries": [
+        "Archive Item Acquired Flag 99 アーカイブアイテム取得済みフラグ99"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Archive Item Acquired Flag 100 アーカイブアイテム取得済みフラグ100"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Archive item retrieved flag 101 アーカイブアイテム取得済みフラグ101"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "Archive item retrieved flag 102 アーカイブアイテム取得済みフラグ102"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "Archive item retrieved flag 103 アーカイブアイテム取得済みフラグ103"
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        "Archive item retrieved flag 104 アーカイブアイテム取得済みフラグ104"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "Archive item retrieved flag 105 アーカイブアイテム取得済みフラグ105"
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        "Archive item retrieved flag 106 アーカイブアイテム取得済みフラグ106"
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        "Archive item retrieved flag 107 アーカイブアイテム取得済みフラグ107"
+      ]
+    },
+    {
+      "ID": 4108,
+      "Entries": [
+        "Archive item retrieved flag 108 アーカイブアイテム取得済みフラグ108"
+      ]
+    },
+    {
+      "ID": 4109,
+      "Entries": [
+        "Archive item retrieved flag 109 アーカイブアイテム取得済みフラグ109"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Archive Item Acquired Flag 110 アーカイブアイテム取得済みフラグ110"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "Archive item retrieved flag 111 アーカイブアイテム取得済みフラグ111"
+      ]
+    },
+    {
+      "ID": 4112,
+      "Entries": [
+        "Archive item retrieved flag 112 アーカイブアイテム取得済みフラグ112"
+      ]
+    },
+    {
+      "ID": 4113,
+      "Entries": [
+        "Archive item retrieved flag 113 アーカイブアイテム取得済みフラグ113"
+      ]
+    },
+    {
+      "ID": 4114,
+      "Entries": [
+        "Archive item retrieved flag 114 アーカイブアイテム取得済みフラグ114"
+      ]
+    },
+    {
+      "ID": 4115,
+      "Entries": [
+        "Archive item retrieved flag 115 アーカイブアイテム取得済みフラグ115"
+      ]
+    },
+    {
+      "ID": 4116,
+      "Entries": [
+        "Archive item retrieved flag 116 アーカイブアイテム取得済みフラグ116"
+      ]
+    },
+    {
+      "ID": 4117,
+      "Entries": [
+        "Archive item retrieved flag 117 アーカイブアイテム取得済みフラグ117"
+      ]
+    },
+    {
+      "ID": 4118,
+      "Entries": [
+        "Archive item retrieved flag 118 アーカイブアイテム取得済みフラグ118"
+      ]
+    },
+    {
+      "ID": 4119,
+      "Entries": [
+        "Archive Item Acquired Flag 119 アーカイブアイテム取得済みフラグ119"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Archive Item Acquired Flag 120 アーカイブアイテム取得済みフラグ120"
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        "Archive item retrieved flag 121 アーカイブアイテム取得済みフラグ121"
+      ]
+    },
+    {
+      "ID": 4122,
+      "Entries": [
+        "Archive item retrieved flag 122 アーカイブアイテム取得済みフラグ122"
+      ]
+    },
+    {
+      "ID": 4123,
+      "Entries": [
+        "Archive item retrieved flag 123 アーカイブアイテム取得済みフラグ123"
+      ]
+    },
+    {
+      "ID": 4124,
+      "Entries": [
+        "Archive item retrieved flag 124 アーカイブアイテム取得済みフラグ124"
+      ]
+    },
+    {
+      "ID": 4125,
+      "Entries": [
+        "Archive item retrieved flag 125 アーカイブアイテム取得済みフラグ125"
+      ]
+    },
+    {
+      "ID": 4126,
+      "Entries": [
+        "Archive item retrieved flag 126 アーカイブアイテム取得済みフラグ126"
+      ]
+    },
+    {
+      "ID": 4127,
+      "Entries": [
+        "Archive item retrieved flag 127 アーカイブアイテム取得済みフラグ127"
+      ]
+    },
+    {
+      "ID": 4128,
+      "Entries": [
+        "Archive item retrieved flag 128 アーカイブアイテム取得済みフラグ128"
+      ]
+    },
+    {
+      "ID": 4129,
+      "Entries": [
+        "Archive item retrieved flag 129 アーカイブアイテム取得済みフラグ129"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Archive Item Acquired Flag 130 アーカイブアイテム取得済みフラグ130"
+      ]
+    },
+    {
+      "ID": 4131,
+      "Entries": [
+        "Archive item retrieved flag 131 アーカイブアイテム取得済みフラグ131"
+      ]
+    },
+    {
+      "ID": 4132,
+      "Entries": [
+        "Archive item retrieved flag 132 アーカイブアイテム取得済みフラグ132"
+      ]
+    },
+    {
+      "ID": 4133,
+      "Entries": [
+        "Archive item retrieved flag 133 アーカイブアイテム取得済みフラグ133"
+      ]
+    },
+    {
+      "ID": 4134,
+      "Entries": [
+        "Archive item retrieved flag 134 アーカイブアイテム取得済みフラグ134"
+      ]
+    },
+    {
+      "ID": 4135,
+      "Entries": [
+        "Archive Item Acquired Flag 135 アーカイブアイテム取得済みフラグ135"
+      ]
+    },
+    {
+      "ID": 4136,
+      "Entries": [
+        "Archive item retrieved flag 136 アーカイブアイテム取得済みフラグ136"
+      ]
+    },
+    {
+      "ID": 4137,
+      "Entries": [
+        "Archive item retrieved flag 137 アーカイブアイテム取得済みフラグ137"
+      ]
+    },
+    {
+      "ID": 4138,
+      "Entries": [
+        "Archive item retrieved flag 138 アーカイブアイテム取得済みフラグ138"
+      ]
+    },
+    {
+      "ID": 4139,
+      "Entries": [
+        "Archive Item Acquired Flag 139 アーカイブアイテム取得済みフラグ139"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Archive Item Acquired Flag 140 アーカイブアイテム取得済みフラグ140"
+      ]
+    },
+    {
+      "ID": 4141,
+      "Entries": [
+        "Archive item retrieved flag 141 アーカイブアイテム取得済みフラグ141"
+      ]
+    },
+    {
+      "ID": 4142,
+      "Entries": [
+        "Archive item retrieved flag 142 アーカイブアイテム取得済みフラグ142"
+      ]
+    },
+    {
+      "ID": 4143,
+      "Entries": [
+        "Archive item retrieved flag 143 アーカイブアイテム取得済みフラグ143"
+      ]
+    },
+    {
+      "ID": 4144,
+      "Entries": [
+        "Archive item retrieved flag 144 アーカイブアイテム取得済みフラグ144"
+      ]
+    },
+    {
+      "ID": 4145,
+      "Entries": [
+        "Archive item retrieved flag 145 アーカイブアイテム取得済みフラグ145"
+      ]
+    },
+    {
+      "ID": 4146,
+      "Entries": [
+        "Archive item retrieved flag 146 アーカイブアイテム取得済みフラグ146"
+      ]
+    },
+    {
+      "ID": 4147,
+      "Entries": [
+        "Archive item retrieved flag 147 アーカイブアイテム取得済みフラグ147"
+      ]
+    },
+    {
+      "ID": 4148,
+      "Entries": [
+        "Archive item retrieved flag 148 アーカイブアイテム取得済みフラグ148"
+      ]
+    },
+    {
+      "ID": 4149,
+      "Entries": [
+        "Archive Item Acquired Flag 149 アーカイブアイテム取得済みフラグ149"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Archive Item Obtained Flag 150 アーカイブアイテム取得済みフラグ150"
+      ]
+    },
+    {
+      "ID": 4151,
+      "Entries": [
+        "Archive item retrieved flag 151 アーカイブアイテム取得済みフラグ151"
+      ]
+    },
+    {
+      "ID": 4152,
+      "Entries": [
+        "Archive item retrieved flag 152 アーカイブアイテム取得済みフラグ152"
+      ]
+    },
+    {
+      "ID": 4153,
+      "Entries": [
+        "Archive Item Acquired Flag 153 アーカイブアイテム取得済みフラグ153"
+      ]
+    },
+    {
+      "ID": 4154,
+      "Entries": [
+        "Archive item retrieved flag 154 アーカイブアイテム取得済みフラグ154"
+      ]
+    },
+    {
+      "ID": 4155,
+      "Entries": [
+        "Archive Item Acquired Flag 155 アーカイブアイテム取得済みフラグ155"
+      ]
+    },
+    {
+      "ID": 4156,
+      "Entries": [
+        "Archive item retrieved flag 156 アーカイブアイテム取得済みフラグ156"
+      ]
+    },
+    {
+      "ID": 4157,
+      "Entries": [
+        "Archive item retrieved flag 157 アーカイブアイテム取得済みフラグ157"
+      ]
+    },
+    {
+      "ID": 4158,
+      "Entries": [
+        "Archive item retrieved flag 158 アーカイブアイテム取得済みフラグ158"
+      ]
+    },
+    {
+      "ID": 4159,
+      "Entries": [
+        "Archive Item Acquired Flag 159 アーカイブアイテム取得済みフラグ159"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Archive item retrieved flag 160 アーカイブアイテム取得済みフラグ160"
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        "Archive item retrieved flag 161 アーカイブアイテム取得済みフラグ161"
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        "Archive item retrieved flag 162 アーカイブアイテム取得済みフラグ162"
+      ]
+    },
+    {
+      "ID": 4163,
+      "Entries": [
+        "Archive item retrieved flag 163 アーカイブアイテム取得済みフラグ163"
+      ]
+    },
+    {
+      "ID": 4164,
+      "Entries": [
+        "Archive item retrieved flag 164 アーカイブアイテム取得済みフラグ164"
+      ]
+    },
+    {
+      "ID": 4165,
+      "Entries": [
+        "Archive item retrieved flag 165 アーカイブアイテム取得済みフラグ165"
+      ]
+    },
+    {
+      "ID": 4166,
+      "Entries": [
+        "Archive item retrieved flag 166 アーカイブアイテム取得済みフラグ166"
+      ]
+    },
+    {
+      "ID": 4167,
+      "Entries": [
+        "Archive item retrieved flag 167 アーカイブアイテム取得済みフラグ167"
+      ]
+    },
+    {
+      "ID": 4168,
+      "Entries": [
+        "Archive item retrieved flag 168 アーカイブアイテム取得済みフラグ168"
+      ]
+    },
+    {
+      "ID": 4169,
+      "Entries": [
+        "Archive item retrieved flag 169 アーカイブアイテム取得済みフラグ169"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Archive Item Obtained Flag 170 アーカイブアイテム取得済みフラグ170"
+      ]
+    },
+    {
+      "ID": 4171,
+      "Entries": [
+        "Archive item retrieved flag 171 アーカイブアイテム取得済みフラグ171"
+      ]
+    },
+    {
+      "ID": 4172,
+      "Entries": [
+        "Archive item retrieved flag 172 アーカイブアイテム取得済みフラグ172"
+      ]
+    },
+    {
+      "ID": 4173,
+      "Entries": [
+        "Archive item retrieved flag 173 アーカイブアイテム取得済みフラグ173"
+      ]
+    },
+    {
+      "ID": 4174,
+      "Entries": [
+        "Archive item retrieved flag 174 アーカイブアイテム取得済みフラグ174"
+      ]
+    },
+    {
+      "ID": 4175,
+      "Entries": [
+        "Archive item retrieved flag 175 アーカイブアイテム取得済みフラグ175"
+      ]
+    },
+    {
+      "ID": 4176,
+      "Entries": [
+        "Archive item retrieved flag 176 アーカイブアイテム取得済みフラグ176"
+      ]
+    },
+    {
+      "ID": 4177,
+      "Entries": [
+        "Archive item retrieved flag 177 アーカイブアイテム取得済みフラグ177"
+      ]
+    },
+    {
+      "ID": 4178,
+      "Entries": [
+        "Archive item retrieved flag 178 アーカイブアイテム取得済みフラグ178"
+      ]
+    },
+    {
+      "ID": 4179,
+      "Entries": [
+        "Archive Item Acquired Flag 179 アーカイブアイテム取得済みフラグ179"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Archive Item Acquired Flag 180 アーカイブアイテム取得済みフラグ180"
+      ]
+    },
+    {
+      "ID": 4181,
+      "Entries": [
+        "Archive item retrieved flag 181 アーカイブアイテム取得済みフラグ181"
+      ]
+    },
+    {
+      "ID": 4182,
+      "Entries": [
+        "Archive item retrieved flag 182 アーカイブアイテム取得済みフラグ182"
+      ]
+    },
+    {
+      "ID": 4183,
+      "Entries": [
+        "Archive item retrieved flag 183 アーカイブアイテム取得済みフラグ183"
+      ]
+    },
+    {
+      "ID": 4184,
+      "Entries": [
+        "Archive item retrieved flag 184 アーカイブアイテム取得済みフラグ184"
+      ]
+    },
+    {
+      "ID": 4185,
+      "Entries": [
+        "Archive item retrieved flag 185 アーカイブアイテム取得済みフラグ185"
+      ]
+    },
+    {
+      "ID": 4186,
+      "Entries": [
+        "Archive item retrieved flag 186 アーカイブアイテム取得済みフラグ186"
+      ]
+    },
+    {
+      "ID": 4187,
+      "Entries": [
+        "Archive item retrieved flag 187 アーカイブアイテム取得済みフラグ187"
+      ]
+    },
+    {
+      "ID": 4188,
+      "Entries": [
+        "Archive item retrieved flag 188 アーカイブアイテム取得済みフラグ188"
+      ]
+    },
+    {
+      "ID": 4189,
+      "Entries": [
+        "Archive Item Acquired Flag 189 アーカイブアイテム取得済みフラグ189"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Archive Item Acquired Flag 190 アーカイブアイテム取得済みフラグ190"
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        "Archive item retrieved flag 191 アーカイブアイテム取得済みフラグ191"
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        "Archive item retrieved flag 192 アーカイブアイテム取得済みフラグ192"
+      ]
+    },
+    {
+      "ID": 4193,
+      "Entries": [
+        "Archive item retrieved flag 193 アーカイブアイテム取得済みフラグ193"
+      ]
+    },
+    {
+      "ID": 4194,
+      "Entries": [
+        "Archive item retrieved flag 194 アーカイブアイテム取得済みフラグ194"
+      ]
+    },
+    {
+      "ID": 4195,
+      "Entries": [
+        "Archive item retrieved flag 195 アーカイブアイテム取得済みフラグ195"
+      ]
+    },
+    {
+      "ID": 4196,
+      "Entries": [
+        "Archive item retrieved flag 196 アーカイブアイテム取得済みフラグ196"
+      ]
+    },
+    {
+      "ID": 4197,
+      "Entries": [
+        "Archive item retrieved flag 197 アーカイブアイテム取得済みフラグ197"
+      ]
+    },
+    {
+      "ID": 4198,
+      "Entries": [
+        "Archive item retrieved flag 198 アーカイブアイテム取得済みフラグ198"
+      ]
+    },
+    {
+      "ID": 4199,
+      "Entries": [
+        "Archive Item Acquired Flag 199 アーカイブアイテム取得済みフラグ199"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Archive Item Acquired Flag 200 アーカイブアイテム取得済みフラグ200"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "Item monitoring flag_wrap reset_00 アイテム監視用フラグ_周回リセット_00"
+      ]
+    },
+    {
+      "ID": 4441,
+      "Entries": [
+        "Item monitoring flag_wrap reset_01 アイテム監視用フラグ_周回リセット_01"
+      ]
+    },
+    {
+      "ID": 4442,
+      "Entries": [
+        "Item monitoring flag_wrap reset_02 アイテム監視用フラグ_周回リセット_02"
+      ]
+    },
+    {
+      "ID": 4443,
+      "Entries": [
+        "Item monitoring flag_wrap reset_03 アイテム監視用フラグ_周回リセット_03"
+      ]
+    },
+    {
+      "ID": 4444,
+      "Entries": [
+        "Item monitoring flag_wrap reset_04 アイテム監視用フラグ_周回リセット_04"
+      ]
+    },
+    {
+      "ID": 4445,
+      "Entries": [
+        "Item monitoring flag_wrap reset_05 アイテム監視用フラグ_周回リセット_05"
+      ]
+    },
+    {
+      "ID": 4446,
+      "Entries": [
+        "Item monitoring flag_wrap reset_06 アイテム監視用フラグ_周回リセット_06"
+      ]
+    },
+    {
+      "ID": 4447,
+      "Entries": [
+        "Item monitoring flag_wrap reset_07 アイテム監視用フラグ_周回リセット_07"
+      ]
+    },
+    {
+      "ID": 4448,
+      "Entries": [
+        "Item monitoring flag_wrap reset_08 アイテム監視用フラグ_周回リセット_08"
+      ]
+    },
+    {
+      "ID": 4449,
+      "Entries": [
+        "Item monitoring flag_wrap reset_09 アイテム監視用フラグ_周回リセット_09"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "Item monitoring flag_return reset_10 アイテム監視用フラグ_周回リセット_10"
+      ]
+    },
+    {
+      "ID": 4451,
+      "Entries": [
+        "Item monitoring flag_wrap reset_11 アイテム監視用フラグ_周回リセット_11"
+      ]
+    },
+    {
+      "ID": 4452,
+      "Entries": [
+        "Item monitoring flag_wrap reset_12 アイテム監視用フラグ_周回リセット_12"
+      ]
+    },
+    {
+      "ID": 4453,
+      "Entries": [
+        "Item monitoring flag_wrap reset_13 アイテム監視用フラグ_周回リセット_13"
+      ]
+    },
+    {
+      "ID": 4454,
+      "Entries": [
+        "Item monitoring flag_wrap reset_14 アイテム監視用フラグ_周回リセット_14"
+      ]
+    },
+    {
+      "ID": 4455,
+      "Entries": [
+        "Item monitoring flag_wrap reset_15 アイテム監視用フラグ_周回リセット_15"
+      ]
+    },
+    {
+      "ID": 4456,
+      "Entries": [
+        "Item monitoring flag_wrap reset_16 アイテム監視用フラグ_周回リセット_16"
+      ]
+    },
+    {
+      "ID": 4457,
+      "Entries": [
+        "Item monitoring flag_wrap reset_17 アイテム監視用フラグ_周回リセット_17"
+      ]
+    },
+    {
+      "ID": 4458,
+      "Entries": [
+        "Item monitoring flag_wrap reset_18 アイテム監視用フラグ_周回リセット_18"
+      ]
+    },
+    {
+      "ID": 4459,
+      "Entries": [
+        "Item monitoring flag_wrap reset_19 アイテム監視用フラグ_周回リセット_19"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "Item monitoring flag_wrap reset_20 アイテム監視用フラグ_周回リセット_20"
+      ]
+    },
+    {
+      "ID": 4461,
+      "Entries": [
+        "Item monitoring flag_wrap reset_21 アイテム監視用フラグ_周回リセット_21"
+      ]
+    },
+    {
+      "ID": 4462,
+      "Entries": [
+        "Item monitoring flag_wrap reset_22 アイテム監視用フラグ_周回リセット_22"
+      ]
+    },
+    {
+      "ID": 4463,
+      "Entries": [
+        "Item monitoring flag_wrap reset_23 アイテム監視用フラグ_周回リセット_23"
+      ]
+    },
+    {
+      "ID": 4464,
+      "Entries": [
+        "Item monitoring flag_wrap reset_24 アイテム監視用フラグ_周回リセット_24"
+      ]
+    },
+    {
+      "ID": 4465,
+      "Entries": [
+        "Item monitoring flag_wrap reset_25 アイテム監視用フラグ_周回リセット_25"
+      ]
+    },
+    {
+      "ID": 4466,
+      "Entries": [
+        "Item monitoring flag_wrap reset_26 アイテム監視用フラグ_周回リセット_26"
+      ]
+    },
+    {
+      "ID": 4467,
+      "Entries": [
+        "Item monitoring flag_wrap reset_27 アイテム監視用フラグ_周回リセット_27"
+      ]
+    },
+    {
+      "ID": 4468,
+      "Entries": [
+        "Item monitoring flag_wrap reset_28 アイテム監視用フラグ_周回リセット_28"
+      ]
+    },
+    {
+      "ID": 4469,
+      "Entries": [
+        "Item monitoring flag_wrap reset_29 アイテム監視用フラグ_周回リセット_29"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "Item monitoring flag_return reset_30 アイテム監視用フラグ_周回リセット_30"
+      ]
+    },
+    {
+      "ID": 4471,
+      "Entries": [
+        "Item monitoring flag_wrap reset_31 アイテム監視用フラグ_周回リセット_31"
+      ]
+    },
+    {
+      "ID": 4472,
+      "Entries": [
+        "Item monitoring flag_wrap reset_32 アイテム監視用フラグ_周回リセット_32"
+      ]
+    },
+    {
+      "ID": 4473,
+      "Entries": [
+        "Item monitoring flag_wrap reset_33 アイテム監視用フラグ_周回リセット_33"
+      ]
+    },
+    {
+      "ID": 4474,
+      "Entries": [
+        "Item monitoring flag_wrap reset_34 アイテム監視用フラグ_周回リセット_34"
+      ]
+    },
+    {
+      "ID": 4475,
+      "Entries": [
+        "Item monitoring flag_wrap reset_35 アイテム監視用フラグ_周回リセット_35"
+      ]
+    },
+    {
+      "ID": 4476,
+      "Entries": [
+        "Item monitoring flag_wrap reset_36 アイテム監視用フラグ_周回リセット_36"
+      ]
+    },
+    {
+      "ID": 4477,
+      "Entries": [
+        "Item monitoring flag_wrap reset_37 アイテム監視用フラグ_周回リセット_37"
+      ]
+    },
+    {
+      "ID": 4478,
+      "Entries": [
+        "Item monitoring flag_wrap reset_38 アイテム監視用フラグ_周回リセット_38"
+      ]
+    },
+    {
+      "ID": 4479,
+      "Entries": [
+        "Item Monitoring Flag_Orbital Reset_39 アイテム監視用フラグ_周回リセット_39"
+      ]
+    },
+    {
+      "ID": 4480,
+      "Entries": [
+        "Item monitoring flag_return reset_40 アイテム監視用フラグ_周回リセット_40"
+      ]
+    },
+    {
+      "ID": 4481,
+      "Entries": [
+        "Item monitoring flag_wrap reset_41 アイテム監視用フラグ_周回リセット_41"
+      ]
+    },
+    {
+      "ID": 4482,
+      "Entries": [
+        "Item monitoring flag_wrap reset_42 アイテム監視用フラグ_周回リセット_42"
+      ]
+    },
+    {
+      "ID": 4483,
+      "Entries": [
+        "Item Monitoring Flag_Orbital Reset_43 アイテム監視用フラグ_周回リセット_43"
+      ]
+    },
+    {
+      "ID": 4484,
+      "Entries": [
+        "Item Monitoring Flag_Orbital Reset_44 アイテム監視用フラグ_周回リセット_44"
+      ]
+    },
+    {
+      "ID": 4485,
+      "Entries": [
+        "Item monitoring flag_return reset_45 アイテム監視用フラグ_周回リセット_45"
+      ]
+    },
+    {
+      "ID": 4486,
+      "Entries": [
+        "Item monitoring flag_wrap reset_46 アイテム監視用フラグ_周回リセット_46"
+      ]
+    },
+    {
+      "ID": 4487,
+      "Entries": [
+        "Item monitoring flag_wrap reset_47 アイテム監視用フラグ_周回リセット_47"
+      ]
+    },
+    {
+      "ID": 4488,
+      "Entries": [
+        "Item monitoring flag_wrap reset_48 アイテム監視用フラグ_周回リセット_48"
+      ]
+    },
+    {
+      "ID": 4489,
+      "Entries": [
+        "Item Monitoring Flag_Orbital Reset_49 アイテム監視用フラグ_周回リセット_49"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Event flag for selection _Deploy 選択時用イベントフラグ_Deploy"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Event flag for determination _Deploy 決定時用イベントフラグ_Deploy"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Event flag for decision_sortie preparation screen 決定時用イベントフラグ_出撃準備画面"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Decision time event flag_Briefing 決定時用イベントフラグ_ブリーフィング"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Event flag for selection _AC 選択時用イベントフラグ_AC"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Decision event flag _AC 決定時用イベントフラグ_AC"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Event flag for selection _Deal 選択時用イベントフラグ_Deal"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Decision time event flag _Deal 決定時用イベントフラグ_Deal"
+      ]
+    },
+    {
+      "ID": 5031,
+      "Entries": [
+        "Event flag for selection _PC 選択時用イベントフラグ_PC"
+      ]
+    },
+    {
+      "ID": 5032,
+      "Entries": [
+        "Event flag for determination _PC 決定時用イベントフラグ_PC"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Event flag for selection_default 選択時時用イベントフラグ_デフォルト"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Event flag that makes it possible to return 帰還可能になるイベントフラグ"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "eventflag to execute feedback 帰還を実行するイベントフラグ"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "For events in the garage, an event flag that makes it impossible to talk ガレージ内イベント用\u3000トーク不可能にするイベントフラグ"
+      ]
+    },
+    {
+      "ID": 5061,
+      "Entries": [
+        "Event flag for events in the garage when the talk button is pressed ガレージ内イベント用\u3000トークを押したイベントフラグ"
+      ]
+    },
+    {
+      "ID": 5062,
+      "Entries": [
+        "Self-made animation fixed flag for events in the garage ガレージ内イベント用\u3000自機アニメ固定フラグ"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "slow-mo mode event flag スローモーモードイベントフラグ"
+      ]
+    },
+    {
+      "ID": 5071,
+      "Entries": [
+        "Garage connection event flag_with warp ガレージ接続用イベントフラグ_ワープ付き"
+      ]
+    },
+    {
+      "ID": 5072,
+      "Entries": [
+        "Past garage connection event flag_with warp 過去ガレージ接続用イベントフラグ_ワープ付き"
+      ]
+    },
+    {
+      "ID": 5073,
+      "Entries": [
+        "Event flag for A layer garage connection_with warp A層ガレージ接続用イベントフラグ_ワープ付き"
+      ]
+    },
+    {
+      "ID": 5074,
+      "Entries": [
+        "mute background music BGM無音化"
+      ]
+    },
+    {
+      "ID": 5075,
+      "Entries": [
+        "D layer garage movement event flag D層ガレージ移動用イベントフラグ"
+      ]
+    },
+    {
+      "ID": 5081,
+      "Entries": [
+        "[Cut scene] Notification event flag 01 【カットシーン】通知用イベントフラグ01"
+      ]
+    },
+    {
+      "ID": 5082,
+      "Entries": [
+        "[Cut scene] Notification event flag 02 【カットシーン】通知用イベントフラグ02"
+      ]
+    },
+    {
+      "ID": 5083,
+      "Entries": [
+        "[Cutscene] Notification event flag 03 【カットシーン】通知用イベントフラグ03"
+      ]
+    },
+    {
+      "ID": 5084,
+      "Entries": [
+        "[Cut scene] Notification event flag 04 【カットシーン】通知用イベントフラグ04"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "A route clear Aルートクリア"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "B route clear Bルートクリア"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "C route clear Cルートクリア"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Lap_clear event flag_03 周回用_クリアイベントフラグ_03"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Lap_clear event flag_04 周回用_クリアイベントフラグ_04"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Lap_clear event flag_05 周回用_クリアイベントフラグ_05"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Lap_clear event flag_06 周回用_クリアイベントフラグ_06"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Lap_clear event flag_07 周回用_クリアイベントフラグ_07"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Lap_clear event flag_08 周回用_クリアイベントフラグ_08"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Lap_clear event flag_09 周回用_クリアイベントフラグ_09"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Arena unlocking progress 1 take over アリーナ解禁進行度1\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Arena Unlocking Progress Level 2 Transferred アリーナ解禁進行度2\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Arena Unlocking Progress Level 3 Takeover アリーナ解禁進行度3\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Arena unlocking progress 4 takeover アリーナ解禁進行度4\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Arena Unlocking Progress Level 5 Transferred アリーナ解禁進行度5\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Arena unlocking progress 6 take over アリーナ解禁進行度6\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "Arena unlocking progress 7 take over アリーナ解禁進行度7\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        "Arena unlocking progress level 8 takeover アリーナ解禁進行度8\u3000引継ぎ"
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        "let the air out even once 一度でもエアを出した"
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "Lap_clear event flag_19 周回用_クリアイベントフラグ_19"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Complete Arena F アリーナF完遂"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "Complete Arena E アリーナE完遂"
+      ]
+    },
+    {
+      "ID": 6052,
+      "Entries": [
+        "Complete Arena D アリーナD完遂"
+      ]
+    },
+    {
+      "ID": 6053,
+      "Entries": [
+        "Complete Arena C アリーナC完遂"
+      ]
+    },
+    {
+      "ID": 6054,
+      "Entries": [
+        "Complete Arena B アリーナB完遂"
+      ]
+    },
+    {
+      "ID": 6055,
+      "Entries": [
+        "Complete Arena A アリーナA完遂"
+      ]
+    },
+    {
+      "ID": 6056,
+      "Entries": [
+        "Complete Arena S アリーナS完遂"
+      ]
+    },
+    {
+      "ID": 6057,
+      "Entries": [
+        "Alpha simulator completed αシミュレーター完遂"
+      ]
+    },
+    {
+      "ID": 6058,
+      "Entries": [
+        "Beta simulator completed βシミュレーター完遂"
+      ]
+    },
+    {
+      "ID": 6059,
+      "Entries": [
+        "Completion of γ simulator γシミュレーター完遂"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Defeat Rusty Simulator ラスティシミュレーター撃破"
+      ]
+    },
+    {
+      "ID": 6061,
+      "Entries": [
+        "Defeat Walter Simulator ウォルターシミュレーター撃破"
+      ]
+    },
+    {
+      "ID": 6062,
+      "Entries": [
+        "Defeat Air エア撃破"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "let out air エアまで出した"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Event flag for branching within the mission_Ruins ミッション内分岐用イベントフラグ_廃墟"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "Flag for skipping cutscenes when retrying リトライ時カットシーンスキップ用フラグ"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Chapter 1 beginning submi x 2 １章冒頭サブミ×２"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Mining Ship & Dam Destruction 採掘艦＆ダム破壊"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "over the wall 壁越え"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "the coordinates indicated by the string 文字列が示す座標"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "continental crust 大陸殻"
+      ]
+    },
+    {
+      "ID": 6245,
+      "Entries": [
+        "旧宇宙港襲撃 直前"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Defeat Iceworm アイスワーム撃破"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "prison break 脱獄"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Coordinates indicated by the character string: 2nd round 文字列が示す座標：２周目"
+      ]
+    },
+    {
+      "ID": 6275,
+      "Entries": [
+        "Continental crust: 2nd lap 大陸殻：２周目"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Defeat Iceworm: Round 2 アイスワーム撃破：２周目"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Jailbreak: Round 2 脱獄：２周目"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Reach Mercenary Rank 1 傭兵ランク１到達"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "Reach Mercenary Rank 2 傭兵ランク２到達"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "Reach Mercenary Rank 3 傭兵ランク３到達"
+      ]
+    },
+    {
+      "ID": 6404,
+      "Entries": [
+        "Reach Mercenary Rank 4 傭兵ランク４到達"
+      ]
+    },
+    {
+      "ID": 6405,
+      "Entries": [
+        "Reach Mercenary Rank 5 傭兵ランク５到達"
+      ]
+    },
+    {
+      "ID": 6406,
+      "Entries": [
+        "Reach Mercenary Rank 6 傭兵ランク６到達"
+      ]
+    },
+    {
+      "ID": 6407,
+      "Entries": [
+        "Reach Mercenary Rank 7 傭兵ランク７到達"
+      ]
+    },
+    {
+      "ID": 6408,
+      "Entries": [
+        "Reach Mercenary Rank 8 傭兵ランク８到達"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "Reach Mercenary Rank 9 傭兵ランク９到達"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Reach Mercenary Rank 10 傭兵ランク１０到達"
+      ]
+    },
+    {
+      "ID": 6411,
+      "Entries": [
+        "Reach Mercenary Rank 11 傭兵ランク１１到達"
+      ]
+    },
+    {
+      "ID": 6412,
+      "Entries": [
+        "Reach Mercenary Rank 12 傭兵ランク１２到達"
+      ]
+    },
+    {
+      "ID": 6413,
+      "Entries": [
+        "Reach Mercenary Rank 13 傭兵ランク１３到達"
+      ]
+    },
+    {
+      "ID": 6414,
+      "Entries": [
+        "Reach Mercenary Rank 14 傭兵ランク１４到達"
+      ]
+    },
+    {
+      "ID": 6415,
+      "Entries": [
+        "Reach Mercenary Rank 15 傭兵ランク１５到達"
+      ]
+    },
+    {
+      "ID": 6416,
+      "Entries": [
+        "Reach Mercenary Rank 16 傭兵ランク１６到達"
+      ]
+    },
+    {
+      "ID": 6417,
+      "Entries": [
+        "Reach Mercenary Rank 17 傭兵ランク１７到達"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "Tremo 1 clear トレモ１クリア"
+      ]
+    },
+    {
+      "ID": 6432,
+      "Entries": [
+        "Tremo 2 clear トレモ２クリア"
+      ]
+    },
+    {
+      "ID": 6433,
+      "Entries": [
+        "Tremo 3 clear トレモ３クリア"
+      ]
+    },
+    {
+      "ID": 6434,
+      "Entries": [
+        "Clear Tremo 4 トレモ４クリア"
+      ]
+    },
+    {
+      "ID": 6435,
+      "Entries": [
+        "clear tremo 5 トレモ５クリア"
+      ]
+    },
+    {
+      "ID": 6436,
+      "Entries": [
+        "clear tremo 6 トレモ６クリア"
+      ]
+    },
+    {
+      "ID": 6437,
+      "Entries": [
+        "clear tremo 7 トレモ７クリア"
+      ]
+    },
+    {
+      "ID": 6438,
+      "Entries": [
+        "Tremo 7 released トレモ７出した"
+      ]
+    },
+    {
+      "ID": 6447,
+      "Entries": [
+        "Arena clear: 01 (S) アリーナクリア：01(S)"
+      ]
+    },
+    {
+      "ID": 6448,
+      "Entries": [
+        "Arena clear: TEST-09 [γ3] アリーナクリア：TEST-09【γ3】"
+      ]
+    },
+    {
+      "ID": 6449,
+      "Entries": [
+        "Arena clear: TEST-R [δ1] アリーナクリア：TEST-R【δ1】"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "Arena clear: TEST-W [δ2] アリーナクリア：TEST-W【δ2】"
+      ]
+    },
+    {
+      "ID": 6451,
+      "Entries": [
+        "Arena clear: TEST-A [δ3] アリーナクリア：TEST-A【δ3】"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "collapsed continental crust 1 崩落した大陸殻１"
+      ]
+    },
+    {
+      "ID": 6461,
+      "Entries": [
+        "straight city invasion ストレート市街侵攻"
+      ]
+    },
+    {
+      "ID": 6462,
+      "Entries": [
+        "offshore city 洋上の都市"
+      ]
+    },
+    {
+      "ID": 6463,
+      "Entries": [
+        "Mine sabotage 坑道破壊工作"
+      ]
+    },
+    {
+      "ID": 6464,
+      "Entries": [
+        "collapsed continental crust 2 崩落した大陸殻２"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Acquire OS enhancement points Clear the wall OS強化ポイント入手\u3000壁越えクリア"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Collected all information logs 情報ログをすべて集めた"
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        "Cleared all missions すべてのミッションをクリアした"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Cleared all missions with S rank すべてのミッションをSランクでクリアした"
+      ]
+    },
+    {
+      "ID": 6503,
+      "Entries": [
+        "Cleared all missions in hard mode すべてのミッションをハードモードでクリアした"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Obtain a medal for collecting all information logs 情報ログをすべて集めた勲章入手"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Obtain a medal for clearing all missions すべてのミッションをクリアした勲章入手"
+      ]
+    },
+    {
+      "ID": 6512,
+      "Entries": [
+        "Obtain a medal for clearing all missions with S rank. すべてのミッションをSランクでクリアした勲章入手"
+      ]
+    },
+    {
+      "ID": 6513,
+      "Entries": [
+        "Obtain a medal for clearing all missions in hard mode すべてのミッションをハードモードでクリアした勲章入手"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Obtain parts by clearing the rail レイルクリアでパーツ入手"
+      ]
+    },
+    {
+      "ID": 6521,
+      "Entries": [
+        "Obtain parts by clearing the final battle B 決戦Bクリアでパーツ入手"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Get parts by clearing jailbreak 脱獄クリアでパーツ入手"
+      ]
+    },
+    {
+      "ID": 6523,
+      "Entries": [
+        "Get parts by clearing the atmosphere breakthrough 大気圏突破クリアでパーツ入手"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Observers' Association \"Overseer\" 観測者たちの結社「オーバーシアー」"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Rubycon 3 research technology laboratory ルビコン3調査技術研究所"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "all mind オールマインド"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "Rubiconist ルビコニスト"
+      ]
+    },
+    {
+      "ID": 6604,
+      "Entries": [
+        "RaD RaD"
+      ]
+    },
+    {
+      "ID": 6605,
+      "Entries": [
+        "Archibus Corporation アーキバス・コーポレーション"
+      ]
+    },
+    {
+      "ID": 6606,
+      "Entries": [
+        "Archibus Group Enhanced Human Corps アーキバスグループ強化人間部隊"
+      ]
+    },
+    {
+      "ID": 6607,
+      "Entries": [
+        "bay rum industry ベイラム・インダストリー"
+      ]
+    },
+    {
+      "ID": 6608,
+      "Entries": [
+        "Bairam exclusive mercenary unit ベイラム専属傭兵部隊"
+      ]
+    },
+    {
+      "ID": 6609,
+      "Entries": [
+        "Archibus ADD アーキバスADD"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Predecessor Raven 先代レイヴン"
+      ]
+    },
+    {
+      "ID": 6611,
+      "Entries": [
+        "Kate ケイト"
+      ]
+    },
+    {
+      "ID": 6612,
+      "Entries": [
+        "Rusty ラスティ"
+      ]
+    },
+    {
+      "ID": 6613,
+      "Entries": [
+        "Walter ウォルター"
+      ]
+    },
+    {
+      "ID": 6614,
+      "Entries": [
+        "red gun 13 レッドガン13"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[11 end version] A layer garage available 【11末版】A層ガレージ使用可能"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[End of November] A layer garage in use 【11末版】A層ガレージ使用中"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[11 end version] past garage available 【11末版】過去ガレージ使用可能"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "[11 end version] Past garage in use 【11末版】過去ガレージ使用中"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "[End of November] Tier A Garage Event Completion Flag 【11末版】A層ガレージイベント完了フラグ"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[11 End Edition] Past Garage Event Completion Flag 【11末版】過去ガレージイベント完了フラグ"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "[11th Edition] Tier A Garage Conversation Event Available 【11末版】A層ガレージ会話イベント開始可能"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "[11 end version] Past garage conversation event can be started 【11末版】過去ガレージ会話イベント開始可能"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "[End of November] Flag for catapult event 【11末版】カタパルトイベント用フラグ"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "[End of November] The second half of the sortie cutscene ends 【11末版】出撃カットシーン後半終了"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[End of November] Playing prologue mission 【11末版】プロローグミッションプレイ中"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "[End of November] Pharaon Destruction Flag 【11末版】ファラオン撃破フラグ"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "[11 end version] Yotuel appearance defeat flag 【11末版】ヨトゥエル登場撃破フラグ"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "[End of November] Yotuel Appearance Loss Event Flag 【11末版】ヨトゥエル登場負けイベントフラグ"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "[End of November] Result notification flag 【11末版】リザルト通知フラグ"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "[End of November] Checkpoint passage flag_01 【11末版】チェックポイント通過フラグ_01"
+      ]
+    },
+    {
+      "ID": 8016,
+      "Entries": [
+        "[End of November] Checkpoint Pass Flag_02 【11末版】チェックポイント通過フラグ_02"
+      ]
+    },
+    {
+      "ID": 8017,
+      "Entries": [
+        "[End of November] Checkpoint passage flag_03 【11末版】チェックポイント通過フラグ_03"
+      ]
+    },
+    {
+      "ID": 8018,
+      "Entries": [
+        "[End of November] Checkpoint Pass Flag_04 【11末版】チェックポイント通過フラグ_04"
+      ]
+    },
+    {
+      "ID": 8019,
+      "Entries": [
+        "[11th Edition] Yotuel Battle Event Notification Flag 【11末版】ヨトゥエル戦イベント通知フラグ"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Straight street reverse run _ No 2 defeated flag _ production ストレート市街逆走_No2撃破したフラグ_本番"
+      ]
+    },
+    {
+      "ID": 8021,
+      "Entries": [
+        "Scavenging_Ziyi Defeated Flag スカベンジング_ツィイ撃破したフラグ"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "sherpa_busy flag シェルパ_使用中フラグ"
+      ]
+    },
+    {
+      "ID": 8031,
+      "Entries": [
+        "sherpa_used flag シェルパ_使用済みフラグ"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "8101_In-mission branching event flag_dam destruction_betrayal route_ 8101_ミッション内分岐用イベントフラグ_ダム破壊_裏切りルート_"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "8102_In-mission branching event flag_dam destruction_cooperation route_result 8102_ミッション内分岐用イベントフラグ_ダム破壊_協力ルート_結果"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "8103 _ Event flag for branching in mission _ Search in front of wall _ Route A (don't miss it) 8103_ミッション内分岐用イベントフラグ_壁前探索_ルートA（見逃さない）"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "8104_Event flag for branching in mission_Search in front of wall_Route B (miss) 8104_ミッション内分岐用イベントフラグ_壁前探索_ルートB（見逃す）"
+      ]
+    },
+    {
+      "ID": 8106,
+      "Entries": [
+        "8106_In-mission branching event flag_No2 defeated route_result 8106_ミッション内分岐用イベントフラグ_No2倒したルート_結果"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Control Flag 00 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ00"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Control Flag 01 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ01"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Control Flag 02 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ02"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Control Flag 03 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ03"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "2170 In front of the exploration wall_Estella appearance flag 2170探索壁前_エステラ登場フラグ"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "2170 Exploration wall front_Joffe appearance flag 2170探索壁前_ヨッフェ登場フラグ"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "End of June support_item monitoring flag 00 6末対応_アイテム監視フラグ00"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "6 end support_item monitoring flag 01 6末対応_アイテム監視フラグ01"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "Support for the end of June_Item monitoring flag 02 6末対応_アイテム監視フラグ02"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "Support for the end of June_Item monitoring flag 03 6末対応_アイテム監視フラグ03"
+      ]
+    },
+    {
+      "ID": 8404,
+      "Entries": [
+        "Support for the end of June_Item monitoring flag 04 6末対応_アイテム監視フラグ04"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "End of June support_item monitoring flag 05 6末対応_アイテム監視フラグ05"
+      ]
+    },
+    {
+      "ID": 8406,
+      "Entries": [
+        "6 end support_item monitoring flag 06 6末対応_アイテム監視フラグ06"
+      ]
+    },
+    {
+      "ID": 8407,
+      "Entries": [
+        "6 end response_item monitoring flag 07 6末対応_アイテム監視フラグ07"
+      ]
+    },
+    {
+      "ID": 8408,
+      "Entries": [
+        "End of June support_item monitoring flag 08 6末対応_アイテム監視フラグ08"
+      ]
+    },
+    {
+      "ID": 8409,
+      "Entries": [
+        "End of June support_item monitoring flag 09 6末対応_アイテム監視フラグ09"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "6 end support_item monitoring flag 10 6末対応_アイテム監視フラグ10"
+      ]
+    },
+    {
+      "ID": 8411,
+      "Entries": [
+        "6 end support_item monitoring flag 11 6末対応_アイテム監視フラグ11"
+      ]
+    },
+    {
+      "ID": 8412,
+      "Entries": [
+        "End of June support_item monitoring flag 12 6末対応_アイテム監視フラグ12"
+      ]
+    },
+    {
+      "ID": 8413,
+      "Entries": [
+        "6 end support_item monitoring flag 13 6末対応_アイテム監視フラグ13"
+      ]
+    },
+    {
+      "ID": 8414,
+      "Entries": [
+        "End of June support_item monitoring flag 14 6末対応_アイテム監視フラグ14"
+      ]
+    },
+    {
+      "ID": 8415,
+      "Entries": [
+        "End of June support_item monitoring flag 15 6末対応_アイテム監視フラグ15"
+      ]
+    },
+    {
+      "ID": 8416,
+      "Entries": [
+        "6 end support_item monitoring flag 16 6末対応_アイテム監視フラグ16"
+      ]
+    },
+    {
+      "ID": 8417,
+      "Entries": [
+        "End of June support_item monitoring flag 17 6末対応_アイテム監視フラグ17"
+      ]
+    },
+    {
+      "ID": 8418,
+      "Entries": [
+        "6 end support_item monitoring flag 18 6末対応_アイテム監視フラグ18"
+      ]
+    },
+    {
+      "ID": 8419,
+      "Entries": [
+        "6 end support_item monitoring flag 19 6末対応_アイテム監視フラグ19"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "End of June support_item monitoring flag 20 6末対応_アイテム監視フラグ20"
+      ]
+    },
+    {
+      "ID": 8430,
+      "Entries": [
+        "11 correspondence_item monitoring flag_recovery item 十一対応_アイテム監視フラグ_回復アイテム"
+      ]
+    },
+    {
+      "ID": 8441,
+      "Entries": [
+        "Eleven Correspondence_Item Monitoring Flag_Daisy's Note 十一対応_アイテム監視フラグ_デイジーのメモ"
+      ]
+    },
+    {
+      "ID": 8442,
+      "Entries": [
+        "Eleven correspondence _ Item monitoring flag _ Crypto assets 十一対応_アイテム監視フラグ_暗号資産"
+      ]
+    },
+    {
+      "ID": 8443,
+      "Entries": [
+        "11 Correspondence_Item Monitoring Flag_Opposition Communication Log 十一対応_アイテム監視フラグ_野党の通信ログ"
+      ]
+    },
+    {
+      "ID": 8444,
+      "Entries": [
+        "11 Correspondence_Item Surveillance Flag_Laser Naginata 十一対応_アイテム監視フラグ_レーザーナギナタ"
+      ]
+    },
+    {
+      "ID": 8445,
+      "Entries": [
+        "11 Correspondence_Item Surveillance Flag_Ulan Bazooka 十一対応_アイテム監視フラグ_ウランバズーカ"
+      ]
+    },
+    {
+      "ID": 8446,
+      "Entries": [
+        "11 Correspondence_Item Surveillance Flag_Eqbal Booster 十一対応_アイテム監視フラグ_イクバールブースター"
+      ]
+    },
+    {
+      "ID": 8450,
+      "Entries": [
+        "Item monitoring flag_for checking treasure container behavior_01 アイテム監視フラグ_宝コンテナ挙動確認用_01"
+      ]
+    },
+    {
+      "ID": 8451,
+      "Entries": [
+        "Item monitoring flag_for checking treasure container behavior_02 アイテム監視フラグ_宝コンテナ挙動確認用_02"
+      ]
+    },
+    {
+      "ID": 8452,
+      "Entries": [
+        "Item monitoring flag_For checking treasure container behavior_03 アイテム監視フラグ_宝コンテナ挙動確認用_03"
+      ]
+    },
+    {
+      "ID": 8460,
+      "Entries": [
+        "Archive confirmation flag 00 アーカイブ確認用フラグ00"
+      ]
+    },
+    {
+      "ID": 8461,
+      "Entries": [
+        "Archive confirmation flag 01 アーカイブ確認用フラグ01"
+      ]
+    },
+    {
+      "ID": 8462,
+      "Entries": [
+        "Archive confirmation flag 02 アーカイブ確認用フラグ02"
+      ]
+    },
+    {
+      "ID": 8463,
+      "Entries": [
+        "Archive confirmation flag 03 アーカイブ確認用フラグ03"
+      ]
+    },
+    {
+      "ID": 8470,
+      "Entries": [
+        "50070300 FB_M_8040 HEAD 50070300\u3000FB_M_8040\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 8471,
+      "Entries": [
+        "51070300 FB_M_8040 BODY 51070300\u3000FB_M_8040\u3000BODY"
+      ]
+    },
+    {
+      "ID": 8472,
+      "Entries": [
+        "52070300 FB_M_8040 ARMS 52070300\u3000FB_M_8040\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 8473,
+      "Entries": [
+        "53070300 FB_M_8040 LEGS 53070300\u3000FB_M_8040\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 8474,
+      "Entries": [
+        "50070600 FB_M_8150 HEAD 50070600\u3000FB_M_8150\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 8475,
+      "Entries": [
+        "10180000 WP_A_3020 ARM UNIT stun gun 10180000\u3000WP_A_3020\u3000ARM UNIT\u3000スタンガン"
+      ]
+    },
+    {
+      "ID": 8476,
+      "Entries": [
+        "65010400 WP_A_8985 GENERATOR 2nd generation C 65010400\u3000WP_A_8985\u3000GENERATOR\u3000第2世代C"
+      ]
+    },
+    {
+      "ID": 8477,
+      "Entries": [
+        "20100000 WP_L_0510 ARM UNIT L bomb scatter 20100000\u3000WP_L_0510\u3000ARM UNIT L\u3000ボムスキャッター"
+      ]
+    },
+    {
+      "ID": 8478,
+      "Entries": [
+        "30350100 WP_A_5620 BACK UINIT Additional booster 3 30350100\u3000WP_A_5620\u3000BACK UINIT\u3000追加ブースタ3"
+      ]
+    },
+    {
+      "ID": 8479,
+      "Entries": [
+        "51080100 FB_M_8020 BODY 51080100\u3000FB_M_8020\u3000BODY"
+      ]
+    },
+    {
+      "ID": 8480,
+      "Entries": [
+        "52080100 FB_M_8020 ARMS 52080100\u3000FB_M_8020\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 8481,
+      "Entries": [
+        "60070100 BS_A_8020 booster Miyatake booster (special) 60070100\u3000BS_A_8020\u3000ブースター\u3000ミヤタケブースター（特殊）"
+      ]
+    },
+    {
+      "ID": 8482,
+      "Entries": [
+        "70030100 WP_A_8969 FCS melange type 2 (K AI) 70030100\u3000WP_A_8969\u3000FCS\u3000メランジ系2（K・AI）"
+      ]
+    },
+    {
+      "ID": 8483,
+      "Entries": [
+        "65030100\u3000WP_A_8989\u3000Generator (Mera) Melange type 2 65030100\u3000WP_A_8989\u3000ジェネレータ\u3000（メラ）メランジ系2"
+      ]
+    },
+    {
+      "ID": 8484,
+      "Entries": [
+        "53080100 FB_M_8020 LEGS 53080100\u3000FB_M_8020\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 8485,
+      "Entries": [
+        "50080100 FB_M_8020 HEAD 50080100\u3000FB_M_8020\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 8486,
+      "Entries": [
+        "30030000 WP_R_4240 BACK UINIT Coral Missile 30030000\u3000WP_R_4240\u3000BACK UINIT\u3000コーラルミサイル"
+      ]
+    },
+    {
+      "ID": 8487,
+      "Entries": [
+        "25010300 WP_L_4970 Shield Coral Shield 25010300\u3000WP_L_4970\u3000シールド\u3000コーラルシールド"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[Speaker] General-purpose com 【話者】汎用com"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "[Speaker] Eph6 【話者】Eph6"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "[COM Voice] Preliminary 01 【COMボイス】予備01"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "[COM Voice] Preliminary 02 【COMボイス】予備02"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "[COM Voice] Preliminary 03 【COMボイス】予備03"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "[COM Voice] Preliminary 04 【COMボイス】予備04"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "[COM Voice] Preliminary 05 【COMボイス】予備05"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "[COM Voice] Preliminary 06 【COMボイス】予備06"
+      ]
+    },
+    {
+      "ID": 8508,
+      "Entries": [
+        "[COM Voice] Preliminary 07 【COMボイス】予備07"
+      ]
+    },
+    {
+      "ID": 8509,
+      "Entries": [
+        "[COM Voice] Preliminary 08 【COMボイス】予備08"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Mission loadable event flag 05 ミッションロード可能イベントフラグ05"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Mission clear completion event flag 05 ミッションクリア完了イベントフラグ05"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Mission load prohibited event flag 05 ミッションロード禁止イベントフラグ05"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Mission Loadable Event Flag 06 ミッションロード可能イベントフラグ06"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Mission clear completion event flag 06 ミッションクリア完了イベントフラグ06"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Mission load prohibited event flag 06 ミッションロード禁止イベントフラグ06"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Refactoring Mission: Loadable リファクタリングミッション：ロード可能"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Refactoring Mission: Completed リファクタリングミッション：クリア完了"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Refactoring Mission: No Loading リファクタリングミッション：ロード禁止"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Player_I'm in a mountain town プレイヤ_山岳の街に居る"
+      ]
+    },
+    {
+      "ID": 9231,
+      "Entries": [
+        "stay in player_dam プレイヤ_ダムに居る"
+      ]
+    },
+    {
+      "ID": 9232,
+      "Entries": [
+        "Player_At the connection point in front of the wall プレイヤ_壁前接続地点に居る"
+      ]
+    },
+    {
+      "ID": 9233,
+      "Entries": [
+        "Player_I'm on the roof of the wall プレイヤ_壁屋上に居る"
+      ]
+    },
+    {
+      "ID": 9234,
+      "Entries": [
+        "spare 予備"
+      ]
+    },
+    {
+      "ID": 9235,
+      "Entries": [
+        "Garage Helicopter_In a mountain town ガレージヘリ_山岳の街に居る"
+      ]
+    },
+    {
+      "ID": 9236,
+      "Entries": [
+        "Garage Helicopter_At the dam ガレージヘリ_ダムに居る"
+      ]
+    },
+    {
+      "ID": 9237,
+      "Entries": [
+        "Garage Helicopter_At the connection point in front of the wall ガレージヘリ_壁前接続地点に居る"
+      ]
+    },
+    {
+      "ID": 9238,
+      "Entries": [
+        "Garage Helicopter_I'm on the roof of the wall. ガレージヘリ_壁屋上に居る"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <TargetEntityGroupID
+    AltName="Enemy Entity Group ID" />
+
+    <FirstItemLot
+    AltName="ItemLot - First"
+    ParamRef="ItemLotParam_enemy" />
+
+    <SecondItemLot
+    AltName="ItemLot - Second"
+    ParamRef="ItemLotParam_enemy" />
+
+    <LeaderEntityID
+    AltName="Leader Entity ID" />
+
+    <UnkItemLot
+    AltName="ItemLot - Unknown"
+    ParamRef="ItemLotParam_enemy" />    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,6510 @@
+{
+  "Name": "ObjectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すな"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Item drawstring -- アイテム巾着"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Bloody Smoke Shinobi Gaze Shielding Dummy -- 血煙忍殺視線遮蔽ダミー"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Falling ninja debug scaffolding -- 落下忍殺デバッグ足場"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Destruction and anime debugging -- 破壊とアニメデバッグ"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "White door_small -- 白扉_小"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "White door_middle -- 白扉_中"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "White door_large -- 白扉_大"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Plot twist door -- どんでん返し扉"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Riding pine (turn left) _ Criteria -- 乗れる松（左曲がり）_基準"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Riding pine (turn left) _ fall prevention -- 乗れる松（左曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Riding pine (turn right) _ standard -- 乗れる松（右曲がり）_基準"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Riding pine (turn right) _ fall prevention -- 乗れる松（右曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Riding pine (S-shaped) _ standard -- 乗れる松（S字）_基準"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Riding pine (S-shaped) _ fall prevention -- 乗れる松（S字）_落下防止"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Riding pine (right L-shaped) _ standard -- 乗れる松（右L字）_基準"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Riding pine (L-shaped on the right) _ fall prevention -- 乗れる松（右L字）_落下防止"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Riding pine (from the ground) _ standard -- 乗れる松（地面から）_基準"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Riding pine (from the ground) _ fall prevention -- 乗れる松（地面から）_落下防止"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "Riding pine (from the ground) _ hit -- 乗れる松（地面から）_ヒット"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Riding pine (from the ground / large) _ standard -- 乗れる松（地面から/大）_基準"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Riding pine (from the ground / large) _ fall prevention -- 乗れる松（地面から/大）_落下防止"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Riding pine (from the ground / large) _ hit -- 乗れる松（地面から/大）_ヒット"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Unable to ride pine (straight line) _ standard -- 乗れない松（直線）_基準"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Unable to ride pine (curve) _ standard -- 乗れない松（曲線）_基準"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Unable to ride pine (swell) _ standard -- 乗れない松（うねり）_基準"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Snow-covered pine that you can ride (turn left) -- 乗れる雪被り松（左曲がり）"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Snow-covered pine (turn left) _ fall prevention -- 乗れる雪被り松（左曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Snow-covered pine that you can ride (turn right) -- 乗れる雪被り松（右曲がり）"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "Riding snow-covered pine (turn right) _ fall prevention -- 乗れる雪被り松（右曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "Snow-covered pine (S-shaped) -- 乗れる雪被り松（S字）"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "Riding snow-covered pine (S-shaped) _ fall prevention -- 乗れる雪被り松（S字）_落下防止"
+      ]
+    },
+    {
+      "ID": 2530,
+      "Entries": [
+        "Snow-covered pine (L-shaped on the right) -- 乗れる雪被り松（右L字）"
+      ]
+    },
+    {
+      "ID": 2531,
+      "Entries": [
+        "Snow-covered pine (L-shaped on the right) _ fall prevention -- 乗れる雪被り松（右L字）_落下防止"
+      ]
+    },
+    {
+      "ID": 2540,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) -- 乗れる雪被り松（地面から）"
+      ]
+    },
+    {
+      "ID": 2541,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) _ fall prevention -- 乗れる雪被り松（地面から）_落下防止"
+      ]
+    },
+    {
+      "ID": 2542,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) _ hit -- 乗れる雪被り松（地面から）_ヒット"
+      ]
+    },
+    {
+      "ID": 2550,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) -- 乗れる雪被り松（地面から）"
+      ]
+    },
+    {
+      "ID": 2551,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) _ fall prevention -- 乗れる雪被り松（地面から）_落下防止"
+      ]
+    },
+    {
+      "ID": 2552,
+      "Entries": [
+        "Riding snow-covered pine (from the ground) _ hit -- 乗れる雪被り松（地面から）_ヒット"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Snow-covered pine that cannot be ridden (straight line) -- 乗れない雪被り松（直線）"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Snow-covered pine (curve) that cannot be ridden -- 乗れない雪被り松（曲線）"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "Snow-covered pine that can&#39;t ride -- 乗れない雪被り松（うねり）"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "kite -- 凧"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "For roots in general _ fall prevention -- 根全般用_落下防止"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Shachi (wire Pt) -- 鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Shachi (wire Pt) -- 鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Snake metal fittings -- 蛇の金具"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Snake metal fittings -- 蛇の金具"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Power God&#39;s nail hiding -- 力神の釘隠し"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Root (wire Pt) -- 根(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Shachi (wire Pt) -- 鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "Shachi (wire Pt) inversion -- 鯱(ワイヤーPt)反転"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Shachi (wire Pt) -- 鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3650,
+      "Entries": [
+        "Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3660,
+      "Entries": [
+        "Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Fossil bone 1 (wire Pt) -- 化石骨1(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Fossil bone 2 (wire Pt) -- 化石骨2(ワイヤーPt)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Katayo Jizo (Large) -- 形代地蔵（大）"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Katashiro Jizo (middle) -- 形代地蔵（中）"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Katayo Jizo (Small) -- 形代地蔵（小）"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[Snow] Jizo Katashiro (Large) -- 【雪】形代地蔵（大）"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "[Snow] Jizo Katashiro (middle) -- 【雪】形代地蔵（中）"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "[Snow] Yukigata Jizo (Small) -- 【雪】形代地蔵（小）"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Checkpoint -- チェックポイント"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Lower man large shield (destruction object) -- 下男大盾(破壊オブジェ)"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Bandit Shield (Destruction Object) -- 野盗盾(破壊オブジェ)"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Rappa Kikasa (Destruction Object) -- らっぱ木笠(破壊オブジェ)"
+      ]
+    },
+    {
+      "ID": 5222,
+      "Entries": [
+        "[Tokugawa] Shura Samurai body black armor (peeled object) -- 【徳川】修羅侍胴黒い鎧(剥がしオブジェ)"
+      ]
+    },
+    {
+      "ID": 5223,
+      "Entries": [
+        "[Tokugawa] Shura Samurai Torso Red Armor (Peeling Object) -- 【徳川】修羅侍胴赤い鎧(剥がしオブジェ)"
+      ]
+    },
+    {
+      "ID": 5224,
+      "Entries": [
+        "Lower man body armor 01 (peeled object) -- 下男胴鎧01(剥がしオブジェ)"
+      ]
+    },
+    {
+      "ID": 5225,
+      "Entries": [
+        "Lower man body armor 02 (peeled object) -- 下男胴鎧02(剥がしオブジェ)"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "General-purpose treasure chest -- 汎用宝箱"
+      ]
+    },
+    {
+      "ID": 5380,
+      "Entries": [
+        "Bird&#39;s nest (low) -- 鳥の巣（低）"
+      ]
+    },
+    {
+      "ID": 5381,
+      "Entries": [
+        "Bird&#39;s nest (low, no drawstring purse) -- 鳥の巣（低・巾着なし）"
+      ]
+    },
+    {
+      "ID": 5390,
+      "Entries": [
+        "Bird&#39;s nest (for high and slope 15 °) -- 鳥の巣（高・斜度15°用）"
+      ]
+    },
+    {
+      "ID": 5391,
+      "Entries": [
+        "Bird&#39;s nest (for high and slope 30 °) -- 鳥の巣（高・斜度30°用）"
+      ]
+    },
+    {
+      "ID": 5392,
+      "Entries": [
+        "Bird&#39;s nest (for high and slope 45 °) -- 鳥の巣（高・斜度45°用）"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Checkpoint / snow -- チェックポイント・雪"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "shop -- ショップ"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Shop / snow -- ショップ・雪"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Nezasa -- ネザサ"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Nezasa (more) -- ネザサ（多め）"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Nezasa (less) -- ネザサ（少なめ）"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Fern -- シダ"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Miscanthus -- ススキ"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "Tall pampas grass -- 背の高いススキ"
+      ]
+    },
+    {
+      "ID": 7023,
+      "Entries": [
+        "Miscanthus (specify angle) -- ススキ(角度指定)"
+      ]
+    },
+    {
+      "ID": 7024,
+      "Entries": [
+        "Japanese pampas grass + tall Japanese pampas grass (angle designation) -- ススキ+背の高いススキ(角度指定)"
+      ]
+    },
+    {
+      "ID": 7026,
+      "Entries": [
+        "Miscanthus -- ススキ"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Carex lenta -- ナキリスゲ"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "Akinokirinsou -- アキノキリンソウ"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Needlesa -- センダングサ"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "Imperata cylindrica -- チガヤ"
+      ]
+    },
+    {
+      "ID": 7070,
+      "Entries": [
+        "Yabutachibana -- ヤブタチバナ"
+      ]
+    },
+    {
+      "ID": 7071,
+      "Entries": [
+        "Ardisia japonica -- ヤブコウジ"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "Kobanogamazumi -- コバノガマズミ"
+      ]
+    },
+    {
+      "ID": 7090,
+      "Entries": [
+        "General-purpose grass A -- 汎用草A"
+      ]
+    },
+    {
+      "ID": 7091,
+      "Entries": [
+        "General-purpose grass B -- 汎用草B"
+      ]
+    },
+    {
+      "ID": 7092,
+      "Entries": [
+        "General-purpose grass C -- 汎用草C"
+      ]
+    },
+    {
+      "ID": 7093,
+      "Entries": [
+        "General-purpose grass D -- 汎用草D"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Dead grass_large -- 枯草_大"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Dead grass_small -- 枯草_小"
+      ]
+    },
+    {
+      "ID": 7111,
+      "Entries": [
+        "Dead grass _ large _ flat -- 枯草_大_平べったい"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "narcissus -- 水仙"
+      ]
+    },
+    {
+      "ID": 7130,
+      "Entries": [
+        "Village Nezasa Set -- 村用ネザサセット"
+      ]
+    },
+    {
+      "ID": 7140,
+      "Entries": [
+        "Selaginella moell -- イヌカタヒバ"
+      ]
+    },
+    {
+      "ID": 7150,
+      "Entries": [
+        "Monotropastrum humilis -- ギンリョウソウ"
+      ]
+    },
+    {
+      "ID": 7160,
+      "Entries": [
+        "Fuchisou (angle designation) -- フウチソウ（角度指定）"
+      ]
+    },
+    {
+      "ID": 7170,
+      "Entries": [
+        "Swertia japonica -- センブリ"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Waterthyme -- クロモ"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Waterthyme -- クロモ"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Chromo (shallow) -- クロモ(浅瀬)"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Hanashobu (purple) -- ハナショウブ(紫)"
+      ]
+    },
+    {
+      "ID": 7211,
+      "Entries": [
+        "Hanashobu (white) -- ハナショウブ(白)"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "lotus -- 蓮"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Withering lotus -- 枯れかけの蓮"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "moss -- 苔"
+      ]
+    },
+    {
+      "ID": 7250,
+      "Entries": [
+        "Akami moss -- アカミゴケ"
+      ]
+    },
+    {
+      "ID": 7270,
+      "Entries": [
+        "Stalagmite_small -- 石筍_小"
+      ]
+    },
+    {
+      "ID": 7280,
+      "Entries": [
+        "reed -- 葦"
+      ]
+    },
+    {
+      "ID": 7281,
+      "Entries": [
+        "Tall reeds (1 bunch) -- 背の高い葦(1房"
+      ]
+    },
+    {
+      "ID": 7282,
+      "Entries": [
+        "Tall reeds (7 bunches) -- 背の高い葦(7房"
+      ]
+    },
+    {
+      "ID": 7283,
+      "Entries": [
+        "Underwater high reeds (less) -- 水中高い葦(少なめ)"
+      ]
+    },
+    {
+      "ID": 7284,
+      "Entries": [
+        "Underwater high reeds (more) -- 水中高い葦(多め)"
+      ]
+    },
+    {
+      "ID": 7285,
+      "Entries": [
+        "Underwater high reeds (more) -- 水中高い葦(多め)"
+      ]
+    },
+    {
+      "ID": 7286,
+      "Entries": [
+        "Hydrangea 01 -- 紫陽花01"
+      ]
+    },
+    {
+      "ID": 7287,
+      "Entries": [
+        "Hydrangea 02 -- 紫陽花02"
+      ]
+    },
+    {
+      "ID": 7290,
+      "Entries": [
+        "Algae -- 藻"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "Syneilesis -- ヤブレガサ"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Ramie -- カラムシ"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Ostrich Fern -- クサソテツ"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "Cattail -- ガマ"
+      ]
+    },
+    {
+      "ID": 7340,
+      "Entries": [
+        "Completely dead lotus -- 完全に枯れた蓮"
+      ]
+    },
+    {
+      "ID": 7350,
+      "Entries": [
+        "Cliff grass -- 崖用草"
+      ]
+    },
+    {
+      "ID": 7351,
+      "Entries": [
+        "Cliff grass -- 崖用草"
+      ]
+    },
+    {
+      "ID": 7352,
+      "Entries": [
+        "Cliff grass_green -- 崖用草_緑"
+      ]
+    },
+    {
+      "ID": 7360,
+      "Entries": [
+        "Underwater lotus -- 水中の蓮"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Nezasa -- ネザサ"
+      ]
+    },
+    {
+      "ID": 7501,
+      "Entries": [
+        "Nezasa (more) -- ネザサ（多め）"
+      ]
+    },
+    {
+      "ID": 7502,
+      "Entries": [
+        "Nezasa (less) -- ネザサ（少なめ）"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Fern -- シダ"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "Miscanthus -- ススキ"
+      ]
+    },
+    {
+      "ID": 7521,
+      "Entries": [
+        "Tall pampas grass -- 背の高いススキ"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "Carex lenta -- ナキリスゲ"
+      ]
+    },
+    {
+      "ID": 7540,
+      "Entries": [
+        "Akinokirinsou -- アキノキリンソウ"
+      ]
+    },
+    {
+      "ID": 7550,
+      "Entries": [
+        "Needlesa -- センダングサ"
+      ]
+    },
+    {
+      "ID": 7560,
+      "Entries": [
+        "Imperata cylindrica -- チガヤ"
+      ]
+    },
+    {
+      "ID": 7570,
+      "Entries": [
+        "Yabutachibana -- ヤブタチバナ"
+      ]
+    },
+    {
+      "ID": 7571,
+      "Entries": [
+        "Ardisia japonica -- ヤブコウジ"
+      ]
+    },
+    {
+      "ID": 7580,
+      "Entries": [
+        "Kobanogamazumi -- コバノガマズミ"
+      ]
+    },
+    {
+      "ID": 7590,
+      "Entries": [
+        "General-purpose grass A (snow) -- 汎用草A（雪）"
+      ]
+    },
+    {
+      "ID": 7592,
+      "Entries": [
+        "General-purpose grass (snow) -- 汎用草（雪）"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Dead grass_large (snow) -- 枯草_大（雪）"
+      ]
+    },
+    {
+      "ID": 7610,
+      "Entries": [
+        "Dead grass_small (snow) -- 枯草_小（雪）"
+      ]
+    },
+    {
+      "ID": 7630,
+      "Entries": [
+        "Set of Nezasa, Dwarf lilyturf and fallen leaves -- ネザサとジャノヒゲ、落ち葉のセット"
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        "Fuchisou (angle designation) / (snow) -- フウチソウ（角度指定）･（雪）"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Ramie (snow) -- カラムシ（雪）"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Straw doll scaffolding_right leg 0 -- 藁人形足場_右脚0"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Straw doll scaffolding_right leg 1 -- 藁人形足場_右脚1"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Straw doll scaffolding_right leg 2 -- 藁人形足場_右脚2"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Straw doll scaffolding_right leg 3 -- 藁人形足場_右脚3"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "Straw doll scaffolding_right leg 4 -- 藁人形足場_右脚4"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "Straw doll scaffolding_right leg 5 -- 藁人形足場_右脚5"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "Straw doll scaffolding_right leg 6 -- 藁人形足場_右脚6"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "Straw doll scaffolding_right leg 7 -- 藁人形足場_右脚7"
+      ]
+    },
+    {
+      "ID": 9018,
+      "Entries": [
+        "Straw doll scaffolding_right leg 8 -- 藁人形足場_右脚8"
+      ]
+    },
+    {
+      "ID": 9019,
+      "Entries": [
+        "Straw doll scaffolding_right leg 9 -- 藁人形足場_右脚9"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Straw doll scaffolding_left leg 1 -- 藁人形足場_左脚1"
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        "Straw doll scaffolding_left leg 2 -- 藁人形足場_左脚2"
+      ]
+    },
+    {
+      "ID": 9022,
+      "Entries": [
+        "Straw doll scaffolding_left leg 3 -- 藁人形足場_左脚3"
+      ]
+    },
+    {
+      "ID": 9023,
+      "Entries": [
+        "Straw doll scaffolding_left leg 4 -- 藁人形足場_左脚4"
+      ]
+    },
+    {
+      "ID": 9024,
+      "Entries": [
+        "Straw doll scaffolding_left leg 5 -- 藁人形足場_左脚5"
+      ]
+    },
+    {
+      "ID": 9025,
+      "Entries": [
+        "Straw doll scaffolding_left leg 6 -- 藁人形足場_左脚6"
+      ]
+    },
+    {
+      "ID": 9026,
+      "Entries": [
+        "Straw doll scaffolding_left leg 7 -- 藁人形足場_左脚7"
+      ]
+    },
+    {
+      "ID": 9027,
+      "Entries": [
+        "Straw doll scaffolding_left leg 8 -- 藁人形足場_左脚8"
+      ]
+    },
+    {
+      "ID": 9028,
+      "Entries": [
+        "Straw doll scaffolding_right arm 0 -- 藁人形足場_右腕0"
+      ]
+    },
+    {
+      "ID": 9029,
+      "Entries": [
+        "Straw doll scaffolding_right arm 1 -- 藁人形足場_右腕1"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Straw doll scaffolding_right arm 2 -- 藁人形足場_右腕2"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "Straw doll scaffolding_right arm 3 -- 藁人形足場_右腕3"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "Straw doll scaffolding_left arm 1 -- 藁人形足場_左腕1"
+      ]
+    },
+    {
+      "ID": 9033,
+      "Entries": [
+        "Straw doll scaffolding_left arm 2 -- 藁人形足場_左腕2"
+      ]
+    },
+    {
+      "ID": 9034,
+      "Entries": [
+        "Straw doll scaffolding_left arm 3 -- 藁人形足場_左腕3"
+      ]
+    },
+    {
+      "ID": 9035,
+      "Entries": [
+        "Straw doll scaffolding_left arm 4 -- 藁人形足場_左腕4",
+        "Straw doll scaffolding_left arm 4 -- 藁人形足場_左腕4"
+      ]
+    },
+    {
+      "ID": 9036,
+      "Entries": [
+        "Straw doll scaffolding_body 0 -- 藁人形足場_胴体0"
+      ]
+    },
+    {
+      "ID": 9037,
+      "Entries": [
+        "Straw doll scaffolding_body 1 -- 藁人形足場_胴体1"
+      ]
+    },
+    {
+      "ID": 9038,
+      "Entries": [
+        "Straw doll scaffolding_body 2 -- 藁人形足場_胴体2"
+      ]
+    },
+    {
+      "ID": 9039,
+      "Entries": [
+        "Straw doll scaffolding_body 3 -- 藁人形足場_胴体3"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Straw doll scaffolding_body 4 -- 藁人形足場_胴体4"
+      ]
+    },
+    {
+      "ID": 9041,
+      "Entries": [
+        "Straw doll scaffolding_body 5 -- 藁人形足場_胴体5"
+      ]
+    },
+    {
+      "ID": 9042,
+      "Entries": [
+        "Straw doll scaffolding_body 6 -- 藁人形足場_胴体6"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "For hit-and-miss verification -- あたり抜け検証用"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "Suspended corpse (FDPo319180) -- 吊るされた死体(FDPo319180)"
+      ]
+    },
+    {
+      "ID": 9530,
+      "Entries": [
+        "General-purpose door_small B (normal) -- 汎用扉_小B（通常）"
+      ]
+    },
+    {
+      "ID": 9540,
+      "Entries": [
+        "General-purpose door_medium (normal) -- 汎用扉_中（通常）"
+      ]
+    },
+    {
+      "ID": 9541,
+      "Entries": [
+        "General-purpose door_middle (with bar) -- 汎用扉_中（閂有り）"
+      ]
+    },
+    {
+      "ID": 9550,
+      "Entries": [
+        "General-purpose door_large (normal) -- 汎用扉_大（通常）"
+      ]
+    },
+    {
+      "ID": 9551,
+      "Entries": [
+        "General-purpose door_large (with bar) -- 汎用扉_大（閂有り）"
+      ]
+    },
+    {
+      "ID": 9560,
+      "Entries": [
+        "General-purpose door_extra large (normal) -- 汎用扉_特大（通常）"
+      ]
+    },
+    {
+      "ID": 9561,
+      "Entries": [
+        "General-purpose door_extra large (with bar) -- 汎用扉_特大（閂有り）"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Boss room door -- ボス部屋の扉"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "Mie tower door -- 三重塔の扉"
+      ]
+    },
+    {
+      "ID": 101050,
+      "Entries": [
+        "Toki Buddhist temple door -- 時仏堂の扉"
+      ]
+    },
+    {
+      "ID": 101070,
+      "Entries": [
+        "Yaguramon door -- 櫓門の扉"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Plot twist door -- どんでん返し扉"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "boat -- 舟"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "firewood -- 薪"
+      ]
+    },
+    {
+      "ID": 104050,
+      "Entries": [
+        "Spear stand -- 槍立て"
+      ]
+    },
+    {
+      "ID": 104060,
+      "Entries": [
+        "Sword rack -- 刀掛け"
+      ]
+    },
+    {
+      "ID": 104090,
+      "Entries": [
+        "Tsuitate (wood grain) -- 衝立(木目)"
+      ]
+    },
+    {
+      "ID": 104100,
+      "Entries": [
+        "desk -- 机"
+      ]
+    },
+    {
+      "ID": 104110,
+      "Entries": [
+        "Liner -- 行器"
+      ]
+    },
+    {
+      "ID": 104120,
+      "Entries": [
+        "Aside -- 脇息"
+      ]
+    },
+    {
+      "ID": 104130,
+      "Entries": [
+        "Two gradations and one tool -- 二階調一具"
+      ]
+    },
+    {
+      "ID": 104140,
+      "Entries": [
+        "Kitchen shelves -- 厨子棚"
+      ]
+    },
+    {
+      "ID": 104150,
+      "Entries": [
+        "Mirror stand -- 鏡面台"
+      ]
+    },
+    {
+      "ID": 104160,
+      "Entries": [
+        "Desk_small -- 机_小"
+      ]
+    },
+    {
+      "ID": 104170,
+      "Entries": [
+        "Clothes -- 衣掛け"
+      ]
+    },
+    {
+      "ID": 104171,
+      "Entries": [
+        "Clothes -- 衣掛け"
+      ]
+    },
+    {
+      "ID": 104172,
+      "Entries": [
+        "Clothes -- 衣掛け"
+      ]
+    },
+    {
+      "ID": 104180,
+      "Entries": [
+        "Bamboo fence -- 竹柵"
+      ]
+    },
+    {
+      "ID": 104181,
+      "Entries": [
+        "Bamboo fence_3 steps -- 竹柵_3段"
+      ]
+    },
+    {
+      "ID": 104182,
+      "Entries": [
+        "Bamboo fence_3 steps_destroy -- 竹柵_3段_破壊"
+      ]
+    },
+    {
+      "ID": 104190,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees -- 竹柵_斜め30度"
+      ]
+    },
+    {
+      "ID": 104191,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊"
+      ]
+    },
+    {
+      "ID": 104192,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊"
+      ]
+    },
+    {
+      "ID": 104193,
+      "Entries": [
+        "Bamboo fence_low -- 竹柵_低"
+      ]
+    },
+    {
+      "ID": 104200,
+      "Entries": [
+        "Vase_with letter -- 壺_書状入り"
+      ]
+    },
+    {
+      "ID": 104201,
+      "Entries": [
+        "Rolling paper alone -- 巻き紙単体"
+      ]
+    },
+    {
+      "ID": 104210,
+      "Entries": [
+        "Vase -- 花器"
+      ]
+    },
+    {
+      "ID": 104220,
+      "Entries": [
+        "Hatchet -- 鉈"
+      ]
+    },
+    {
+      "ID": 104230,
+      "Entries": [
+        "Hatchet -- 鉈"
+      ]
+    },
+    {
+      "ID": 104240,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 104250,
+      "Entries": [
+        "Vase_with cassotte -- 壺_柄杓付"
+      ]
+    },
+    {
+      "ID": 104260,
+      "Entries": [
+        "Vase_without lid -- 壺_蓋無し"
+      ]
+    },
+    {
+      "ID": 104300,
+      "Entries": [
+        "Barrel_open lid -- 樽_蓋開き"
+      ]
+    },
+    {
+      "ID": 104310,
+      "Entries": [
+        "Barrel_closed lid -- 樽_蓋閉じ"
+      ]
+    },
+    {
+      "ID": 104350,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 104370,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 104380,
+      "Entries": [
+        "Tub (large) -- 桶(大)"
+      ]
+    },
+    {
+      "ID": 104390,
+      "Entries": [
+        "Fertilizer -- 肥桶"
+      ]
+    },
+    {
+      "ID": 104400,
+      "Entries": [
+        "Destructed bamboo -- 破壊竹"
+      ]
+    },
+    {
+      "ID": 104410,
+      "Entries": [
+        "Destructed bamboo -- 破壊竹"
+      ]
+    },
+    {
+      "ID": 104420,
+      "Entries": [
+        "Destructed bamboo -- 破壊竹"
+      ]
+    },
+    {
+      "ID": 104430,
+      "Entries": [
+        "Bamboo shoot _ small -- 筍_小"
+      ]
+    },
+    {
+      "ID": 104440,
+      "Entries": [
+        "Bamboo shoot _ large -- 筍_大"
+      ]
+    },
+    {
+      "ID": 104450,
+      "Entries": [
+        "Bamboo material_destruction -- 竹材_破壊"
+      ]
+    },
+    {
+      "ID": 104460,
+      "Entries": [
+        "Broken bamboo -- 割れた竹"
+      ]
+    },
+    {
+      "ID": 104500,
+      "Entries": [
+        "Daihachiguruma -- 大八車"
+      ]
+    },
+    {
+      "ID": 104501,
+      "Entries": [
+        "Daihachiguruma_Luggage -- 大八車_荷物"
+      ]
+    },
+    {
+      "ID": 104502,
+      "Entries": [
+        "Daihachiguruma_Luggage_茣 蓙 -- 大八車_荷物_茣蓙"
+      ]
+    },
+    {
+      "ID": 104503,
+      "Entries": [
+        "Daihachiguruma_bamboo -- 大八車_竹材"
+      ]
+    },
+    {
+      "ID": 104510,
+      "Entries": [
+        "Daihachiguruma_destroy -- 大八車_破壊"
+      ]
+    },
+    {
+      "ID": 104511,
+      "Entries": [
+        "Daihachiguruma_Luggage_茣 蓙_Destroy -- 大八車_荷物_茣蓙_破壊"
+      ]
+    },
+    {
+      "ID": 104630,
+      "Entries": [
+        "Gyo Lee_Opening -- 行李_蓋開き"
+      ]
+    },
+    {
+      "ID": 104640,
+      "Entries": [
+        "Yuki Lee_two steps -- 行李_二段"
+      ]
+    },
+    {
+      "ID": 104650,
+      "Entries": [
+        "Bamboo basket -- 竹籠"
+      ]
+    },
+    {
+      "ID": 104660,
+      "Entries": [
+        "With basket charcoal -- 籠\u3000炭入り"
+      ]
+    },
+    {
+      "ID": 104661,
+      "Entries": [
+        "With basket bamboo shoots -- 籠\u3000筍入り"
+      ]
+    },
+    {
+      "ID": 104680,
+      "Entries": [
+        "Laundry -- 洗濯物"
+      ]
+    },
+    {
+      "ID": 104700,
+      "Entries": [
+        "Chest -- 櫃"
+      ]
+    },
+    {
+      "ID": 104701,
+      "Entries": [
+        "Chest -- 櫃"
+      ]
+    },
+    {
+      "ID": 104702,
+      "Entries": [
+        "Chest alone -- 櫃単体"
+      ]
+    },
+    {
+      "ID": 104710,
+      "Entries": [
+        "Chest -- 櫃"
+      ]
+    },
+    {
+      "ID": 104711,
+      "Entries": [
+        "Chest -- 櫃"
+      ]
+    },
+    {
+      "ID": 104720,
+      "Entries": [
+        "Lacquer _ box -- 漆_箱"
+      ]
+    },
+    {
+      "ID": 104721,
+      "Entries": [
+        "Lacquer _ box -- 漆_箱"
+      ]
+    },
+    {
+      "ID": 104750,
+      "Entries": [
+        "sake bottle -- 徳利"
+      ]
+    },
+    {
+      "ID": 104760,
+      "Entries": [
+        "Tokkuri_defeat -- 徳利_倒"
+      ]
+    },
+    {
+      "ID": 104770,
+      "Entries": [
+        "Props -- 小道具"
+      ]
+    },
+    {
+      "ID": 104771,
+      "Entries": [
+        "Props 2 -- 小道具2"
+      ]
+    },
+    {
+      "ID": 104780,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 104781,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 104790,
+      "Entries": [
+        "hearth -- 囲炉裏"
+      ]
+    },
+    {
+      "ID": 104800,
+      "Entries": [
+        "shelf -- 棚"
+      ]
+    },
+    {
+      "ID": 104801,
+      "Entries": [
+        "Shelf_for walls -- 棚_壁用"
+      ]
+    },
+    {
+      "ID": 104802,
+      "Entries": [
+        "Shelf_2 steps -- 棚_2段"
+      ]
+    },
+    {
+      "ID": 104803,
+      "Entries": [
+        "shelf -- 棚"
+      ]
+    },
+    {
+      "ID": 104804,
+      "Entries": [
+        "Bookshelf_small -- 本棚_小"
+      ]
+    },
+    {
+      "ID": 104810,
+      "Entries": [
+        "Shoji 01 -- 障子01"
+      ]
+    },
+    {
+      "ID": 104811,
+      "Entries": [
+        "Shoji 02 -- 障子02"
+      ]
+    },
+    {
+      "ID": 104812,
+      "Entries": [
+        "Shoji -- 障子"
+      ]
+    },
+    {
+      "ID": 104813,
+      "Entries": [
+        "Shoji -- 障子"
+      ]
+    },
+    {
+      "ID": 104814,
+      "Entries": [
+        "Shoji -- 障子"
+      ]
+    },
+    {
+      "ID": 104815,
+      "Entries": [
+        "Shoji -- 障子"
+      ]
+    },
+    {
+      "ID": 104820,
+      "Entries": [
+        "Fusuma single unit 01 -- 襖\u3000単体01"
+      ]
+    },
+    {
+      "ID": 104830,
+      "Entries": [
+        "Fusuma single unit 02 -- 襖\u3000単体02"
+      ]
+    },
+    {
+      "ID": 104840,
+      "Entries": [
+        "Fusuma single size 01 -- 襖\u3000単体大01"
+      ]
+    },
+    {
+      "ID": 104850,
+      "Entries": [
+        "Fusuma single size 02 -- 襖\u3000単体大02"
+      ]
+    },
+    {
+      "ID": 104860,
+      "Entries": [
+        "Fusuma single large foil 01 -- 襖\u3000単体大 箔01"
+      ]
+    },
+    {
+      "ID": 104870,
+      "Entries": [
+        "Fusuma single large foil 02 -- 襖\u3000単体大 箔02"
+      ]
+    },
+    {
+      "ID": 104880,
+      "Entries": [
+        "Fusuma picture 01 -- 襖\u3000絵01"
+      ]
+    },
+    {
+      "ID": 104881,
+      "Entries": [
+        "Fusuma picture 02 -- 襖\u3000絵02"
+      ]
+    },
+    {
+      "ID": 104882,
+      "Entries": [
+        "Fusuma picture 03 -- 襖\u3000絵03"
+      ]
+    },
+    {
+      "ID": 104883,
+      "Entries": [
+        "Fusuma picture 04 -- 襖\u3000絵04"
+      ]
+    },
+    {
+      "ID": 104890,
+      "Entries": [
+        "Bamboo door -- 竹扉"
+      ]
+    },
+    {
+      "ID": 104900,
+      "Entries": [
+        "Armor warrior -- 鎧武者"
+      ]
+    },
+    {
+      "ID": 105100,
+      "Entries": [
+        "cadaver -- 死体"
+      ]
+    },
+    {
+      "ID": 105200,
+      "Entries": [
+        "Corpse_servant man -- 死体_奉公人の男性"
+      ]
+    },
+    {
+      "ID": 105210,
+      "Entries": [
+        "Corpse_servant woman -- 死体_奉公人の女性"
+      ]
+    },
+    {
+      "ID": 105211,
+      "Entries": [
+        "Corpse_servant woman -- 死体_奉公人の女性"
+      ]
+    },
+    {
+      "ID": 105220,
+      "Entries": [
+        "Corpse_Samurai -- 死体_侍"
+      ]
+    },
+    {
+      "ID": 105221,
+      "Entries": [
+        "Corpse_Samurai -- 死体_侍"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "High lighthouse -- 高燈台"
+      ]
+    },
+    {
+      "ID": 106010,
+      "Entries": [
+        "Hanging lantern -- 吊り灯篭",
+        "Hanging lantern -- 吊り灯篭"
+      ]
+    },
+    {
+      "ID": 106050,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 106060,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 106070,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 106051,
+      "Entries": [
+        "Bonfire (without charcoal) -- 篝火(炭なし)"
+      ]
+    },
+    {
+      "ID": 106100,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 106150,
+      "Entries": [
+        "fire -- 焚火"
+      ]
+    },
+    {
+      "ID": 106220,
+      "Entries": [
+        "Straw bundle _ small -- 藁束_小"
+      ]
+    },
+    {
+      "ID": 106221,
+      "Entries": [
+        "Straw bundle_burning_small -- 藁束_燃焼_小"
+      ]
+    },
+    {
+      "ID": 106225,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event -- 藁束_竹林坂イベント用"
+      ]
+    },
+    {
+      "ID": 106226,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event -- 藁束_竹林坂イベント用"
+      ]
+    },
+    {
+      "ID": 106227,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event _ Hit only _ Damage judgment -- 藁束_竹林坂イベント用_ヒットのみ_ダメージ判定用"
+      ]
+    },
+    {
+      "ID": 106228,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event _ Hit only _ Damage judgment -- 藁束_竹林坂イベント用_ヒットのみ_ダメージ判定用"
+      ]
+    },
+    {
+      "ID": 106229,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event _ Hit only -- 藁束_竹林坂イベント用_ヒットのみ"
+      ]
+    },
+    {
+      "ID": 106230,
+      "Entries": [
+        "Straw bundle _ Takebayashizaka event _ Hit only -- 藁束_竹林坂イベント用_ヒットのみ"
+      ]
+    },
+    {
+      "ID": 106300,
+      "Entries": [
+        "Straw bundle (large) _normal -- 藁束(大)_通常"
+      ]
+    },
+    {
+      "ID": 106301,
+      "Entries": [
+        "Straw bundle (large) _ truth -- 藁束(大)_真相"
+      ]
+    },
+    {
+      "ID": 106310,
+      "Entries": [
+        "Straw bundle (medium) _normal -- 藁束(中)_通常"
+      ]
+    },
+    {
+      "ID": 106311,
+      "Entries": [
+        "Straw bundle (middle) _ truth -- 藁束(中)_真相"
+      ]
+    },
+    {
+      "ID": 106320,
+      "Entries": [
+        "Straw bundle (small) _normal -- 藁束(小)_通常"
+      ]
+    },
+    {
+      "ID": 106321,
+      "Entries": [
+        "Straw bundle (small) _ truth -- 藁束(小)_真相"
+      ]
+    },
+    {
+      "ID": 106400,
+      "Entries": [
+        "Burnt tree_normal -- 燃えた木_通常"
+      ]
+    },
+    {
+      "ID": 106401,
+      "Entries": [
+        "Burning tree_truth -- 燃えた木_真相"
+      ]
+    },
+    {
+      "ID": 106500,
+      "Entries": [
+        "Flame entrance_door_closed_normal -- 炎上玄関_扉_閉_通常"
+      ]
+    },
+    {
+      "ID": 106501,
+      "Entries": [
+        "Flame entrance_door_open_truth -- 炎上玄関_扉_開_真相"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Wire point for bridge -- 橋用ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 107010,
+      "Entries": [
+        "Shachi wire point -- 鯱ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 107020,
+      "Entries": [
+        "Thatched wire point -- 杮葺ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 107100,
+      "Entries": [
+        "Reien_well -- 霊園_井戸"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "Falling beam for cutscenes 1 -- カットシーン用落下梁1"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "Falling beam for cutscenes 2 -- カットシーン用落下梁2"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "Falling beam for cutscenes 3 -- カットシーン用落下梁3"
+      ]
+    },
+    {
+      "ID": 108100,
+      "Entries": [
+        "Big Buddha for cutscenes -- カットシーン用大仏"
+      ]
+    },
+    {
+      "ID": 109050,
+      "Entries": [
+        "Falling beam -- 落下梁"
+      ]
+    },
+    {
+      "ID": 109100,
+      "Entries": [
+        "Flame entrance gate (normal) -- 炎上玄関の門(通常)"
+      ]
+    },
+    {
+      "ID": 109101,
+      "Entries": [
+        "Flame entrance gate (burning) -- 炎上玄関の門(燃焼)"
+      ]
+    },
+    {
+      "ID": 109150,
+      "Entries": [
+        "Flame entrance fence (normal) -- 炎上玄関の塀(通常)"
+      ]
+    },
+    {
+      "ID": 109151,
+      "Entries": [
+        "Fence of the burning entrance (burning) -- 炎上玄関の塀(燃焼)"
+      ]
+    },
+    {
+      "ID": 109800,
+      "Entries": [
+        "Falling beam_small -- 落下梁_小"
+      ]
+    },
+    {
+      "ID": 109850,
+      "Entries": [
+        "Falling beam_small -- 落下梁_小"
+      ]
+    },
+    {
+      "ID": 109910,
+      "Entries": [
+        "Burning pillar -- 燃えている柱"
+      ]
+    },
+    {
+      "ID": 109920,
+      "Entries": [
+        "Burning pillar -- 燃えている柱"
+      ]
+    },
+    {
+      "ID": 109930,
+      "Entries": [
+        "Burning pillar -- 燃えている柱"
+      ]
+    },
+    {
+      "ID": 109950,
+      "Entries": [
+        "tatami -- 畳"
+      ]
+    },
+    {
+      "ID": 109990,
+      "Entries": [
+        "Character test object -- キャラテスト用オブジェ"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Hidden prison_Tsukimi turret door -- 隠し牢_月見櫓の扉"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "Plot twist door -- どんでん返し扉(かけじく)"
+      ]
+    },
+    {
+      "ID": 111300,
+      "Entries": [
+        "Koryomon_Latch -- 高麗門_閂有り"
+      ]
+    },
+    {
+      "ID": 111310,
+      "Entries": [
+        "Fire cow open space gate -- 火牛広場門"
+      ]
+    },
+    {
+      "ID": 111320,
+      "Entries": [
+        "Gate with a bar (main tower entrance) -- 閂付きの門扉（天守入口）"
+      ]
+    },
+    {
+      "ID": 111330,
+      "Entries": [
+        "Battlefield door -- 戦場跡扉"
+      ]
+    },
+    {
+      "ID": 113370,
+      "Entries": [
+        "When Tokugawa attacks _ Breakthrough prevention fence 0 -- 徳川襲来時_突破防止柵0",
+        "When Tokugawa attacks _ Breakthrough prevention fence 0 -- 徳川襲来時_突破防止柵0"
+      ]
+    },
+    {
+      "ID": 111400,
+      "Entries": [
+        "Koryomon_Latch -- 高麗門_閂有り"
+      ]
+    },
+    {
+      "ID": 111410,
+      "Entries": [
+        "Middle door_push open -- 中扉_押し開き"
+      ]
+    },
+    {
+      "ID": 111500,
+      "Entries": [
+        "Indoor door with a bar (entrance room) -- 閂付きの屋内扉（玄関部屋）"
+      ]
+    },
+    {
+      "ID": 111510,
+      "Entries": [
+        "General-purpose door -- 汎用扉"
+      ]
+    },
+    {
+      "ID": 111520,
+      "Entries": [
+        "Door for attacking Tokugawa (for Koguchi only) -- 徳川襲来用扉（虎口専用）"
+      ]
+    },
+    {
+      "ID": 111540,
+      "Entries": [
+        "Downhill door -- 下り坂の扉"
+      ]
+    },
+    {
+      "ID": 111550,
+      "Entries": [
+        "Fire cow square door -- 火牛広場の扉"
+      ]
+    },
+    {
+      "ID": 111600,
+      "Entries": [
+        "Large sliding door 1 -- 大襖１"
+      ]
+    },
+    {
+      "ID": 111610,
+      "Entries": [
+        "Large sliding door 2 -- 大襖2"
+      ]
+    },
+    {
+      "ID": 111620,
+      "Entries": [
+        "Large sliding door 3 -- 大襖3"
+      ]
+    },
+    {
+      "ID": 111630,
+      "Entries": [
+        "Large sliding door 4 -- 大襖4"
+      ]
+    },
+    {
+      "ID": 111650,
+      "Entries": [
+        "Set of 2 large sliding doors -- 大襖2枚セット"
+      ]
+    },
+    {
+      "ID": 111750,
+      "Entries": [
+        "Shoji -- 障子"
+      ]
+    },
+    {
+      "ID": 111810,
+      "Entries": [
+        "Single swing sliding door -- 片開き引き戸"
+      ]
+    },
+    {
+      "ID": 111850,
+      "Entries": [
+        "Double door sliding door -- 両開き引き戸"
+      ]
+    },
+    {
+      "ID": 111860,
+      "Entries": [
+        "Castle tower door -- 天守閣扉"
+      ]
+    },
+    {
+      "ID": 111900,
+      "Entries": [
+        "Locked window -- 鍵付き窓"
+      ]
+    },
+    {
+      "ID": 112400,
+      "Entries": [
+        "Bamboo 0 -- 竹0"
+      ]
+    },
+    {
+      "ID": 112410,
+      "Entries": [
+        "Bamboo 1 -- 竹1"
+      ]
+    },
+    {
+      "ID": 112420,
+      "Entries": [
+        "Bamboo 2 -- 竹2"
+      ]
+    },
+    {
+      "ID": 112430,
+      "Entries": [
+        "Bamboo 3 -- 竹3"
+      ]
+    },
+    {
+      "ID": 112440,
+      "Entries": [
+        "Bamboo diagonal -- 竹斜め"
+      ]
+    },
+    {
+      "ID": 112700,
+      "Entries": [
+        "Hosoki -- 細木"
+      ]
+    },
+    {
+      "ID": 112710,
+      "Entries": [
+        "Autumn leaves -- 紅葉"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Stone (small) -- 積み石（小）"
+      ]
+    },
+    {
+      "ID": 113001,
+      "Entries": [
+        "Stone (middle) -- 積み石（中）"
+      ]
+    },
+    {
+      "ID": 113002,
+      "Entries": [
+        "Stone (Large) -- 積み石（大）"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Small five-wheeled tower -- 小さい五輪塔"
+      ]
+    },
+    {
+      "ID": 113100,
+      "Entries": [
+        "Headquarters flag_white -- 本家陣旗_白"
+      ]
+    },
+    {
+      "ID": 113110,
+      "Entries": [
+        "Headquarters flag_black -- 本家陣旗_黒"
+      ]
+    },
+    {
+      "ID": 113120,
+      "Entries": [
+        "Headquarters flag_Assault flag -- 本家陣旗_突撃旗"
+      ]
+    },
+    {
+      "ID": 113200,
+      "Entries": [
+        "Branch flag_red (small deterioration) -- 分家陣旗_赤（劣化小）"
+      ]
+    },
+    {
+      "ID": 113201,
+      "Entries": [
+        "Branch flag_red (deteriorating) -- 分家陣旗_赤（劣化中）"
+      ]
+    },
+    {
+      "ID": 113202,
+      "Entries": [
+        "Branch flag_red (large deterioration) -- 分家陣旗_赤（劣化大）"
+      ]
+    },
+    {
+      "ID": 113210,
+      "Entries": [
+        "Branch flag _ white (small deterioration) -- 分家陣旗_白（劣化小）"
+      ]
+    },
+    {
+      "ID": 113211,
+      "Entries": [
+        "Branch flag_white (deteriorating) -- 分家陣旗_白（劣化中）"
+      ]
+    },
+    {
+      "ID": 113220,
+      "Entries": [
+        "Branch flag_elite unit -- 分家陣旗_精鋭部隊"
+      ]
+    },
+    {
+      "ID": 113300,
+      "Entries": [
+        "Hand-held flag_yellow (small deterioration) -- 寄せ手陣旗_黄（劣化小）"
+      ]
+    },
+    {
+      "ID": 113301,
+      "Entries": [
+        "Hand-held flag_yellow (deteriorating) -- 寄せ手陣旗_黄（劣化中）"
+      ]
+    },
+    {
+      "ID": 113302,
+      "Entries": [
+        "Hand-held flag_yellow (large deterioration) -- 寄せ手陣旗_黄（劣化大）"
+      ]
+    },
+    {
+      "ID": 113310,
+      "Entries": [
+        "Hands-on flag_black -- 寄せ手陣旗_黒"
+      ]
+    },
+    {
+      "ID": 113320,
+      "Entries": [
+        "Hands-on flag_black and white -- 寄せ手陣旗_白黒"
+      ]
+    },
+    {
+      "ID": 113360,
+      "Entries": [
+        "When Tokugawa invades _ Honjin fence -- 徳川襲来時_本陣の柵"
+      ]
+    },
+    {
+      "ID": 113371,
+      "Entries": [
+        "When Tokugawa attacks _ Breakthrough prevention fence 1 -- 徳川襲来時_突破防止柵1"
+      ]
+    },
+    {
+      "ID": 113372,
+      "Entries": [
+        "When Tokugawa attacks _ Breakthrough prevention fence (low) -- 徳川襲来時_突破防止柵（低）"
+      ]
+    },
+    {
+      "ID": 113373,
+      "Entries": [
+        "When Tokugawa attacks _ Breakthrough prevention fence (door) -- 徳川襲来時_突破防止柵（扉）"
+      ]
+    },
+    {
+      "ID": 113380,
+      "Entries": [
+        "Hanging prevention fence_for stairs (7 on the right) -- ぶら下がり防止柵_階段用（右7本）"
+      ]
+    },
+    {
+      "ID": 113381,
+      "Entries": [
+        "Hanging prevention fence_for stairs (3 on the left) -- ぶら下がり防止柵_階段用（左3本）"
+      ]
+    },
+    {
+      "ID": 113382,
+      "Entries": [
+        "Hanging prevention fence_for stairs (4 on the left) -- ぶら下がり防止柵_階段用（左4本）"
+      ]
+    },
+    {
+      "ID": 113390,
+      "Entries": [
+        "Hanging prevention fence_for stairs (6 on the right) -- ぶら下がり防止柵_階段用（右6本）"
+      ]
+    },
+    {
+      "ID": 113391,
+      "Entries": [
+        "Hanging prevention fence_for stairs (6 on the left) -- ぶら下がり防止柵_階段用（左6本）"
+      ]
+    },
+    {
+      "ID": 113392,
+      "Entries": [
+        "Hanging prevention fence_for stairs (4 on the right) -- ぶら下がり防止柵_階段用（右4本）"
+      ]
+    },
+    {
+      "ID": 113393,
+      "Entries": [
+        "Hanging prevention fence_for stairs (3 on the left) -- ぶら下がり防止柵_階段用（左3本）"
+      ]
+    },
+    {
+      "ID": 113398,
+      "Entries": [
+        "Hanging prevention fence_for low steps (6) -- ぶら下がり防止柵_低段用（6本）"
+      ]
+    },
+    {
+      "ID": 113399,
+      "Entries": [
+        "Hanging prevention fence_for low steps (3) -- ぶら下がり防止柵_低段用（3本）"
+      ]
+    },
+    {
+      "ID": 113400,
+      "Entries": [
+        "Shield -- 掻楯"
+      ]
+    },
+    {
+      "ID": 113401,
+      "Entries": [
+        "Shield (damaged) -- 掻楯（破損）"
+      ]
+    },
+    {
+      "ID": 113402,
+      "Entries": [
+        "Shield (collapse) -- 掻楯（倒壊）"
+      ]
+    },
+    {
+      "ID": 113403,
+      "Entries": [
+        "Shield (for turret installation) -- 掻楯(櫓設置用）"
+      ]
+    },
+    {
+      "ID": 113404,
+      "Entries": [
+        "When Tokugawa invades _ Shield (iron _ for leaning) -- 徳川襲来時_掻楯（鉄_立てかけ用）"
+      ]
+    },
+    {
+      "ID": 113405,
+      "Entries": [
+        "Floor -- 床几"
+      ]
+    },
+    {
+      "ID": 113406,
+      "Entries": [
+        "When Tokugawa attacks _ Shield (iron) -- 徳川襲来時_掻楯（鉄）"
+      ]
+    },
+    {
+      "ID": 113407,
+      "Entries": [
+        "When Tokugawa invades _ Shield (iron _ high) -- 徳川襲来時_掻楯（鉄_高）"
+      ]
+    },
+    {
+      "ID": 113410,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113411,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113412,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113413,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113414,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113415,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113416,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113417,
+      "Entries": [
+        "fence -- 柵"
+      ]
+    },
+    {
+      "ID": 113418,
+      "Entries": [
+        "Wooden fence (with thorns) -- 木柵（棘付）"
+      ]
+    },
+    {
+      "ID": 113420,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 113430,
+      "Entries": [
+        "Long spear (with lid) -- 長槍（蓋あり）"
+      ]
+    },
+    {
+      "ID": 113431,
+      "Entries": [
+        "Long spear (without lid) -- 長槍（蓋なし）"
+      ]
+    },
+    {
+      "ID": 113440,
+      "Entries": [
+        "Tub (with lid) -- 桶（蓋あり）"
+      ]
+    },
+    {
+      "ID": 113450,
+      "Entries": [
+        "A table with a shield laid down -- 楯を寝かせたテーブル"
+      ]
+    },
+    {
+      "ID": 113451,
+      "Entries": [
+        "Table with a shield laid down (shield removed) -- 楯を寝かせたテーブル（盾外れ）"
+      ]
+    },
+    {
+      "ID": 113460,
+      "Entries": [
+        "Stone oven -- 石窯"
+      ]
+    },
+    {
+      "ID": 113470,
+      "Entries": [
+        "Charcoal -- 炭"
+      ]
+    },
+    {
+      "ID": 113480,
+      "Entries": [
+        "Goza -- 御座"
+      ]
+    },
+    {
+      "ID": 113490,
+      "Entries": [
+        "Tub (without lid) -- 桶（蓋無し）"
+      ]
+    },
+    {
+      "ID": 113500,
+      "Entries": [
+        "A turret that the boss can break -- ボスが壊せる櫓A"
+      ]
+    },
+    {
+      "ID": 113501,
+      "Entries": [
+        "A turret that can be broken by the boss A_ Fall prevention hit -- ボスが壊せる櫓A_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 113510,
+      "Entries": [
+        "Tower B that the boss can break -- ボスが壊せる櫓B"
+      ]
+    },
+    {
+      "ID": 113511,
+      "Entries": [
+        "Boss can break turret B_ fall prevention hit -- ボスが壊せる櫓B_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 113515,
+      "Entries": [
+        "Legs for extension of turret B that the boss can break -- ボスが壊せる櫓Bの延長用の脚"
+      ]
+    },
+    {
+      "ID": 113521,
+      "Entries": [
+        "Lower turret -- 物見櫓下段"
+      ]
+    },
+    {
+      "ID": 113522,
+      "Entries": [
+        "Upper turret -- 物見櫓上段"
+      ]
+    },
+    {
+      "ID": 113530,
+      "Entries": [
+        "Temporary camp that the boss can break -- ボスが壊せる仮設陣屋"
+      ]
+    },
+    {
+      "ID": 113540,
+      "Entries": [
+        "At the time of the Tokugawa invasion_temporary turret -- 徳川襲来時_仮設陣櫓"
+      ]
+    },
+    {
+      "ID": 113550,
+      "Entries": [
+        "Jinnai hut A -- 陣内小屋A"
+      ]
+    },
+    {
+      "ID": 113560,
+      "Entries": [
+        "Jinnai hut B -- 陣内小屋B"
+      ]
+    },
+    {
+      "ID": 113570,
+      "Entries": [
+        "Jinnai hut C -- 陣内小屋C"
+      ]
+    },
+    {
+      "ID": 113580,
+      "Entries": [
+        "Jinnai stand -- 陣内の台"
+      ]
+    },
+    {
+      "ID": 113600,
+      "Entries": [
+        "Stand -- 立てかけ台"
+      ]
+    },
+    {
+      "ID": 113610,
+      "Entries": [
+        "Shelf A -- 棚A"
+      ]
+    },
+    {
+      "ID": 113611,
+      "Entries": [
+        "Shelf B -- 棚B"
+      ]
+    },
+    {
+      "ID": 113630,
+      "Entries": [
+        "Bamboo tube -- 竹筒"
+      ]
+    },
+    {
+      "ID": 113631,
+      "Entries": [
+        "Bamboo tube (horizontal) -- 竹筒（横）"
+      ]
+    },
+    {
+      "ID": 113640,
+      "Entries": [
+        "Latch (Zashiki Jail) -- 閂（座敷牢）"
+      ]
+    },
+    {
+      "ID": 113650,
+      "Entries": [
+        "map -- 地図"
+      ]
+    },
+    {
+      "ID": 114000,
+      "Entries": [
+        "Bookshelf -- 書棚"
+      ]
+    },
+    {
+      "ID": 114001,
+      "Entries": [
+        "Bookshelf_small -- 書棚_小"
+      ]
+    },
+    {
+      "ID": 114010,
+      "Entries": [
+        "Bookshelf_extra large -- 書棚_特大"
+      ]
+    },
+    {
+      "ID": 114050,
+      "Entries": [
+        "Spear stand -- 槍立て"
+      ]
+    },
+    {
+      "ID": 114100,
+      "Entries": [
+        "desk -- 机"
+      ]
+    },
+    {
+      "ID": 114110,
+      "Entries": [
+        "Liner -- 行器"
+      ]
+    },
+    {
+      "ID": 114120,
+      "Entries": [
+        "Accoudoir -- 肘掛"
+      ]
+    },
+    {
+      "ID": 114130,
+      "Entries": [
+        "Two gradations and one tool -- 二階調一具"
+      ]
+    },
+    {
+      "ID": 114140,
+      "Entries": [
+        "Kitchen shelves -- 厨子棚"
+      ]
+    },
+    {
+      "ID": 114150,
+      "Entries": [
+        "Mirror stand -- 鏡面台"
+      ]
+    },
+    {
+      "ID": 114160,
+      "Entries": [
+        "Desk_small -- 机_小"
+      ]
+    },
+    {
+      "ID": 114180,
+      "Entries": [
+        "Bamboo fence -- 竹柵"
+      ]
+    },
+    {
+      "ID": 114181,
+      "Entries": [
+        "Bamboo fence_3 steps -- 竹柵_3段"
+      ]
+    },
+    {
+      "ID": 114182,
+      "Entries": [
+        "Bamboo fence_3 steps_destroy -- 竹柵_3段_破壊"
+      ]
+    },
+    {
+      "ID": 114190,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees -- 竹柵_斜め30度"
+      ]
+    },
+    {
+      "ID": 114191,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊"
+      ]
+    },
+    {
+      "ID": 114192,
+      "Entries": [
+        "Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊"
+      ]
+    },
+    {
+      "ID": 114193,
+      "Entries": [
+        "Bamboo fence_low -- 竹柵_低"
+      ]
+    },
+    {
+      "ID": 114200,
+      "Entries": [
+        "Vase_cover with cassotte -- 壺_蓋、柄杓付"
+      ]
+    },
+    {
+      "ID": 114210,
+      "Entries": [
+        "Vase_without lid -- 壺_蓋無し"
+      ]
+    },
+    {
+      "ID": 114240,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 114241,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 114250,
+      "Entries": [
+        "Tsuitate A -- 衝立A"
+      ]
+    },
+    {
+      "ID": 114251,
+      "Entries": [
+        "Tsuitate B -- 衝立B"
+      ]
+    },
+    {
+      "ID": 114255,
+      "Entries": [
+        "Tsuitate (wood grain) -- 衝立(木目)"
+      ]
+    },
+    {
+      "ID": 114260,
+      "Entries": [
+        "Cushion (Goza) -- 座布団（ゴザ）"
+      ]
+    },
+    {
+      "ID": 114270,
+      "Entries": [
+        "Vase with lid -- 蓋つき壺"
+      ]
+    },
+    {
+      "ID": 114280,
+      "Entries": [
+        "Large jar -- 大きい壺"
+      ]
+    },
+    {
+      "ID": 114290,
+      "Entries": [
+        "Japanese cushion -- 座布団"
+      ]
+    },
+    {
+      "ID": 114300,
+      "Entries": [
+        "Barrel_open version -- 樽_蓋開きバージョン"
+      ]
+    },
+    {
+      "ID": 114310,
+      "Entries": [
+        "Barrel_closed version -- 樽_蓋閉じバージョン"
+      ]
+    },
+    {
+      "ID": 114350,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 114351,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 114370,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 114380,
+      "Entries": [
+        "Tub (large) -- 桶(大)"
+      ]
+    },
+    {
+      "ID": 114400,
+      "Entries": [
+        "Flag_white_destroy -- 旗_白_破壊",
+        "Flag_white_destroy -- 旗_白_破壊"
+      ]
+    },
+    {
+      "ID": 114410,
+      "Entries": [
+        "Flag_white_destructive strength -- 旗_白_破壊強",
+        "Flag_white_destructive strength -- 旗_白_破壊強"
+      ]
+    },
+    {
+      "ID": 114450,
+      "Entries": [
+        "Bamboo material_destruction -- 竹材_破壊"
+      ]
+    },
+    {
+      "ID": 114500,
+      "Entries": [
+        "Vase -- 壺"
+      ]
+    },
+    {
+      "ID": 114501,
+      "Entries": [
+        "Vase (covering) -- 壺(蓋立てかけ)"
+      ]
+    },
+    {
+      "ID": 114502,
+      "Entries": [
+        "Vase size (with lid and cassotte) -- 壺大(蓋と柄杓付)"
+      ]
+    },
+    {
+      "ID": 114503,
+      "Entries": [
+        "pot -- 壷"
+      ]
+    },
+    {
+      "ID": 114505,
+      "Entries": [
+        "Pot size (with shimenawa) -- 壺大(しめ縄付)"
+      ]
+    },
+    {
+      "ID": 114506,
+      "Entries": [
+        "Amulet pot (large) -- 魔除けの壷（大）"
+      ]
+    },
+    {
+      "ID": 114507,
+      "Entries": [
+        "Amulet pot (small) -- 魔除けの壷（小）"
+      ]
+    },
+    {
+      "ID": 114508,
+      "Entries": [
+        "Vase (with Sakaki) -- 壺(榊入り)"
+      ]
+    },
+    {
+      "ID": 114510,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 114511,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 114512,
+      "Entries": [
+        "Sake set and cup -- 酒器と杯"
+      ]
+    },
+    {
+      "ID": 114515,
+      "Entries": [
+        "Medicine box -- 薬箱"
+      ]
+    },
+    {
+      "ID": 114520,
+      "Entries": [
+        "Tea set -- 茶器"
+      ]
+    },
+    {
+      "ID": 114525,
+      "Entries": [
+        "Tea set -- 茶器"
+      ]
+    },
+    {
+      "ID": 114530,
+      "Entries": [
+        "brazier -- 火鉢"
+      ]
+    },
+    {
+      "ID": 114531,
+      "Entries": [
+        "brazier -- 火鉢"
+      ]
+    },
+    {
+      "ID": 114533,
+      "Entries": [
+        "brazier -- 火鉢"
+      ]
+    },
+    {
+      "ID": 114540,
+      "Entries": [
+        "firewood -- 薪"
+      ]
+    },
+    {
+      "ID": 114541,
+      "Entries": [
+        "Firewood (with snow) -- 薪（雪付き）"
+      ]
+    },
+    {
+      "ID": 114560,
+      "Entries": [
+        "spear -- 槍"
+      ]
+    },
+    {
+      "ID": 114565,
+      "Entries": [
+        "Spear (for wall hanging) -- 槍(壁掛け用)"
+      ]
+    },
+    {
+      "ID": 114570,
+      "Entries": [
+        "gun -- 銃"
+      ]
+    },
+    {
+      "ID": 114575,
+      "Entries": [
+        "Bow stand -- 弓立て"
+      ]
+    },
+    {
+      "ID": 114580,
+      "Entries": [
+        "Daihachiguruma -- 大八車"
+      ]
+    },
+    {
+      "ID": 114585,
+      "Entries": [
+        "Daihachiguruma (with corpse) -- 大八車(死体有)"
+      ]
+    },
+    {
+      "ID": 114590,
+      "Entries": [
+        "Daihachiguruma (broken) -- 大八車(壊)"
+      ]
+    },
+    {
+      "ID": 114595,
+      "Entries": [
+        "Daihachiguruma -- 大八車"
+      ]
+    },
+    {
+      "ID": 114630,
+      "Entries": [
+        "Horse sign -- 馬印"
+      ]
+    },
+    {
+      "ID": 114640,
+      "Entries": [
+        "Flamethrower stacking -- 火炎放射積み"
+      ]
+    },
+    {
+      "ID": 114641,
+      "Entries": [
+        "Flamethrower stacking (low) -- 火炎放射積み（低）"
+      ]
+    },
+    {
+      "ID": 114650,
+      "Entries": [
+        "Bamboo basket -- 竹籠"
+      ]
+    },
+    {
+      "ID": 114655,
+      "Entries": [
+        "Bamboo basket (large) -- 竹籠（大）"
+      ]
+    },
+    {
+      "ID": 114660,
+      "Entries": [
+        "With basket charcoal -- 籠\u3000炭入り"
+      ]
+    },
+    {
+      "ID": 114661,
+      "Entries": [
+        "With basket bamboo shoots -- 籠\u3000筍入り"
+      ]
+    },
+    {
+      "ID": 114670,
+      "Entries": [
+        "Cannon -- 大砲"
+      ]
+    },
+    {
+      "ID": 114680,
+      "Entries": [
+        "weapon -- 武器"
+      ]
+    },
+    {
+      "ID": 114690,
+      "Entries": [
+        "Wheel iron -- 車輪の鉄"
+      ]
+    },
+    {
+      "ID": 114700,
+      "Entries": [
+        "General-purpose chest (1 step) -- 汎用櫃(1段)"
+      ]
+    },
+    {
+      "ID": 114701,
+      "Entries": [
+        "General-purpose chest (1 step) version difference -- 汎用櫃(1段)バージョン違い"
+      ]
+    },
+    {
+      "ID": 114702,
+      "Entries": [
+        "Chest desk -- 櫃机"
+      ]
+    },
+    {
+      "ID": 114710,
+      "Entries": [
+        "General-purpose chest (2 steps) -- 汎用櫃(2段)"
+      ]
+    },
+    {
+      "ID": 114711,
+      "Entries": [
+        "General-purpose chest (2 steps) version difference -- 汎用櫃(2段)バージョン違い"
+      ]
+    },
+    {
+      "ID": 114712,
+      "Entries": [
+        "General-purpose chest (1 step) -- 汎用櫃(1段)"
+      ]
+    },
+    {
+      "ID": 114720,
+      "Entries": [
+        "General-purpose chest (1 step) Small version -- 汎用櫃(1段)小さいバージョン"
+      ]
+    },
+    {
+      "ID": 114730,
+      "Entries": [
+        "Lacquer _ box -- 漆_箱"
+      ]
+    },
+    {
+      "ID": 114731,
+      "Entries": [
+        "Lacquer _ box (open) -- 漆_箱(開き)"
+      ]
+    },
+    {
+      "ID": 114740,
+      "Entries": [
+        "Non-destructive box -- 非破壊箱"
+      ]
+    },
+    {
+      "ID": 114741,
+      "Entries": [
+        "Non-destructive box (with flame radiation) -- 非破壊箱（火炎放射入り）"
+      ]
+    },
+    {
+      "ID": 114750,
+      "Entries": [
+        "Gunpowder box -- 火薬箱"
+      ]
+    },
+    {
+      "ID": 114760,
+      "Entries": [
+        "Shop box -- ショップ箱"
+      ]
+    },
+    {
+      "ID": 114765,
+      "Entries": [
+        "Shop box -- ショップ箱"
+      ]
+    },
+    {
+      "ID": 114770,
+      "Entries": [
+        "Crate pile -- 木箱の山"
+      ]
+    },
+    {
+      "ID": 114780,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 114781,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 114785,
+      "Entries": [
+        "Book pile (large) -- 本の山(大)"
+      ]
+    },
+    {
+      "ID": 114800,
+      "Entries": [
+        "Rockfall (snow cover) -- 落石(積雪)"
+      ]
+    },
+    {
+      "ID": 114801,
+      "Entries": [
+        "Rockfall -- 落石"
+      ]
+    },
+    {
+      "ID": 114805,
+      "Entries": [
+        "Rockfall + soil -- 落石+土"
+      ]
+    },
+    {
+      "ID": 114806,
+      "Entries": [
+        "Rockfall + soil (snow cover) -- 落石+土(積雪)"
+      ]
+    },
+    {
+      "ID": 114809,
+      "Entries": [
+        "Rockfall (hanging) -- 落石(ぶら下がり)"
+      ]
+    },
+    {
+      "ID": 114810,
+      "Entries": [
+        "Snowfall -- 落雪"
+      ]
+    },
+    {
+      "ID": 114820,
+      "Entries": [
+        "Masonry -- 石積"
+      ]
+    },
+    {
+      "ID": 114900,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114901,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114902,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114903,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114904,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114905,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114906,
+      "Entries": [
+        "Samurai armor -- 武者鎧"
+      ]
+    },
+    {
+      "ID": 114910,
+      "Entries": [
+        "Censer of sacred treasure -- 神器の香炉"
+      ]
+    },
+    {
+      "ID": 114920,
+      "Entries": [
+        "vase -- 花瓶"
+      ]
+    },
+    {
+      "ID": 114930,
+      "Entries": [
+        "The size of the sword -- 刀の大小"
+      ]
+    },
+    {
+      "ID": 114940,
+      "Entries": [
+        "Mitsu-gusoku -- 三具足"
+      ]
+    },
+    {
+      "ID": 114950,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 114960,
+      "Entries": [
+        "Deer horn bundle -- 鹿の角束"
+      ]
+    },
+    {
+      "ID": 114990,
+      "Entries": [
+        "hanging scroll -- 掛け軸"
+      ]
+    },
+    {
+      "ID": 115300,
+      "Entries": [
+        "Aristocratic corpse -- 貴族死体"
+      ]
+    },
+    {
+      "ID": 115400,
+      "Entries": [
+        "Litter (OBJ that hides the valley) -- 輿（谷の隠れるOBJ）"
+      ]
+    },
+    {
+      "ID": 115410,
+      "Entries": [
+        "Takebashi (short) -- 竹橋（短）"
+      ]
+    },
+    {
+      "ID": 115411,
+      "Entries": [
+        "Takebashi (short) _ fall prevention -- 竹橋（短）_落下防止"
+      ]
+    },
+    {
+      "ID": 115420,
+      "Entries": [
+        "Takebashi (middle) -- 竹橋（中）"
+      ]
+    },
+    {
+      "ID": 115421,
+      "Entries": [
+        "Takebashi (middle) _ fall prevention -- 竹橋（中）_落下防止"
+      ]
+    },
+    {
+      "ID": 115430,
+      "Entries": [
+        "Takebashi (Large) -- 竹橋（大）"
+      ]
+    },
+    {
+      "ID": 115431,
+      "Entries": [
+        "Takebashi (Large) _ Fall prevention -- 竹橋（大）_落下防止"
+      ]
+    },
+    {
+      "ID": 115440,
+      "Entries": [
+        "Takebashi (middle) 1_root -- 竹橋（中）1_根元"
+      ]
+    },
+    {
+      "ID": 115441,
+      "Entries": [
+        "Takebashi (middle) 1_root_fall prevention -- 竹橋（中）1_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115450,
+      "Entries": [
+        "Takebashi (middle) 2_root -- 竹橋（中）2_根元"
+      ]
+    },
+    {
+      "ID": 115451,
+      "Entries": [
+        "Takebashi (middle) 2_root_fall prevention -- 竹橋（中）2_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115460,
+      "Entries": [
+        "Takebashi (middle) 3_root -- 竹橋（中）3_根元"
+      ]
+    },
+    {
+      "ID": 115461,
+      "Entries": [
+        "Takebashi (middle) 3_root_fall prevention -- 竹橋（中）3_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115470,
+      "Entries": [
+        "Takebashi (middle) 4_root -- 竹橋（中）4_根元"
+      ]
+    },
+    {
+      "ID": 115471,
+      "Entries": [
+        "Takebashi (middle) 4_root_fall prevention -- 竹橋（中）4_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115480,
+      "Entries": [
+        "Takebashi (Large) 1_Root -- 竹橋（大）1_根元"
+      ]
+    },
+    {
+      "ID": 115481,
+      "Entries": [
+        "Takebashi (Large) 1_Root_Fall prevention -- 竹橋（大）1_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115490,
+      "Entries": [
+        "Takebashi (Large) 2_Root -- 竹橋（大）2_根元"
+      ]
+    },
+    {
+      "ID": 115491,
+      "Entries": [
+        "Takebashi (Large) 2_Root_Fall prevention -- 竹橋（大）2_根元_落下防止"
+      ]
+    },
+    {
+      "ID": 115500,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 115510,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 115520,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 115550,
+      "Entries": [
+        "Snake metal fittings 1 -- 蛇の金具1"
+      ]
+    },
+    {
+      "ID": 115560,
+      "Entries": [
+        "Snake metal fittings 2 -- 蛇の金具2"
+      ]
+    },
+    {
+      "ID": 115600,
+      "Entries": [
+        "Power God&#39;s nail hiding -- 力神の釘隠し"
+      ]
+    },
+    {
+      "ID": 115700,
+      "Entries": [
+        "Wooden Shachihoko (Large) -- 木製しゃちほこ(大)"
+      ]
+    },
+    {
+      "ID": 115710,
+      "Entries": [
+        "Wooden shachihoko (small) -- 木製しゃちほこ(小)"
+      ]
+    },
+    {
+      "ID": 115720,
+      "Entries": [
+        "Iro turret_Gathering hand (decoration) -- 井楼櫓_寄せ手（飾り）"
+      ]
+    },
+    {
+      "ID": 115730,
+      "Entries": [
+        "Well turret_floor (nails) -- 井楼櫓_床（釘）"
+      ]
+    },
+    {
+      "ID": 115750,
+      "Entries": [
+        "Decorative tile _ large -- 飾り瓦_大"
+      ]
+    },
+    {
+      "ID": 115760,
+      "Entries": [
+        "Decorative tile_small -- 飾り瓦_小"
+      ]
+    },
+    {
+      "ID": 115790,
+      "Entries": [
+        "Giant Shachihoko -- 巨大しゃちほこ"
+      ]
+    },
+    {
+      "ID": 115800,
+      "Entries": [
+        "Burning straw bundle (large) -- 燃える藁束（大）"
+      ]
+    },
+    {
+      "ID": 115810,
+      "Entries": [
+        "Burning straw bundle (middle) -- 燃える藁束（中）"
+      ]
+    },
+    {
+      "ID": 115820,
+      "Entries": [
+        "Burning straw bundle (small) -- 燃える藁束（小）"
+      ]
+    },
+    {
+      "ID": 115830,
+      "Entries": [
+        "Burning Tokugawa corpse -- 燃える徳川死体"
+      ]
+    },
+    {
+      "ID": 115840,
+      "Entries": [
+        "Burning wood -- 燃える木材"
+      ]
+    },
+    {
+      "ID": 115850,
+      "Entries": [
+        "Burning straw bundle (for hidden prison only) -- 燃える藁束（隠し牢専用）"
+      ]
+    },
+    {
+      "ID": 115921,
+      "Entries": [
+        "Corpse of the Lonely People_Hit -- 孤影衆の死体_ヒット"
+      ]
+    },
+    {
+      "ID": 115923,
+      "Entries": [
+        "Corpse of the Lonely People_Hit -- 孤影衆の死体_ヒット"
+      ]
+    },
+    {
+      "ID": 115980,
+      "Entries": [
+        "Roof guidance OBJ -- 屋根上誘導OBJ"
+      ]
+    },
+    {
+      "ID": 116000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 116010,
+      "Entries": [
+        "Hanging bonfire -- 吊り下げ篝火"
+      ]
+    },
+    {
+      "ID": 116020,
+      "Entries": [
+        "Suspended bonfire (half destroyed) -- 吊り下げ篝火(半壊)"
+      ]
+    },
+    {
+      "ID": 116050,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 116051,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 116060,
+      "Entries": [
+        "Smoke signal -- 狼煙"
+      ]
+    },
+    {
+      "ID": 116100,
+      "Entries": [
+        "Torch plate (with stand) -- 燈明皿(台あり)"
+      ]
+    },
+    {
+      "ID": 116101,
+      "Entries": [
+        "Torch plate (with stand) (for prince only) -- 燈明皿(台あり)(皇子専用)"
+      ]
+    },
+    {
+      "ID": 116110,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 116120,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 116140,
+      "Entries": [
+        "High lighthouse -- 高燈台"
+      ]
+    },
+    {
+      "ID": 116210,
+      "Entries": [
+        "Stone lantern -- 石灯籠"
+      ]
+    },
+    {
+      "ID": 116300,
+      "Entries": [
+        "Stone lantern_castle -- 石灯篭_城下"
+      ]
+    },
+    {
+      "ID": 116310,
+      "Entries": [
+        "Stone lantern_castle -- 石灯篭_城下"
+      ]
+    },
+    {
+      "ID": 116320,
+      "Entries": [
+        "Stone lantern_castle -- 石灯篭_城下"
+      ]
+    },
+    {
+      "ID": 116220,
+      "Entries": [
+        "Straw bundle -- 藁束"
+      ]
+    },
+    {
+      "ID": 116501,
+      "Entries": [
+        "Daihachiguruma_Luggage -- 大八車_荷物"
+      ]
+    },
+    {
+      "ID": 116600,
+      "Entries": [
+        "Fishing lantern (without cross) -- 釣り灯篭(クロスなし)"
+      ]
+    },
+    {
+      "ID": 116601,
+      "Entries": [
+        "Fishing lantern (with cross) -- 釣り灯篭(クロス有り)"
+      ]
+    },
+    {
+      "ID": 116602,
+      "Entries": [
+        "Fishing lantern (with cross_short) -- 釣り灯篭(クロス有り_短)"
+      ]
+    },
+    {
+      "ID": 116710,
+      "Entries": [
+        "Stone lantern (indoor) -- 石灯籠（屋内）"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Hikibashi -- 引き橋"
+      ]
+    },
+    {
+      "ID": 117020,
+      "Entries": [
+        "Invasion of Tokugawa_Floor of the main team -- 徳川襲来_本陣の床"
+      ]
+    },
+    {
+      "ID": 117200,
+      "Entries": [
+        "Stone -- 石材"
+      ]
+    },
+    {
+      "ID": 117600,
+      "Entries": [
+        "Well lid _ open -- 井戸蓋_開"
+      ]
+    },
+    {
+      "ID": 117601,
+      "Entries": [
+        "Well lid _ closed -- 井戸蓋_閉"
+      ]
+    },
+    {
+      "ID": 118200,
+      "Entries": [
+        "dead tree -- 枯れ木"
+      ]
+    },
+    {
+      "ID": 118201,
+      "Entries": [
+        "dead tree -- 枯れ木"
+      ]
+    },
+    {
+      "ID": 118202,
+      "Entries": [
+        "dead tree -- 枯れ木"
+      ]
+    },
+    {
+      "ID": 118203,
+      "Entries": [
+        "dead tree -- 枯れ木"
+      ]
+    },
+    {
+      "ID": 118204,
+      "Entries": [
+        "dead tree -- 枯れ木"
+      ]
+    },
+    {
+      "ID": 118300,
+      "Entries": [
+        "Karesansuiiwa -- 枯山水岩"
+      ]
+    },
+    {
+      "ID": 118301,
+      "Entries": [
+        "Karesansuiiwa -- 枯山水岩"
+      ]
+    },
+    {
+      "ID": 118302,
+      "Entries": [
+        "Karesansuiiwa -- 枯山水岩"
+      ]
+    },
+    {
+      "ID": 118500,
+      "Entries": [
+        "Door to loophole -- 抜け道への扉"
+      ]
+    },
+    {
+      "ID": 118170,
+      "Entries": [
+        "Sentence to drop towards the hero OBJ (hidden prison) -- 主人公に向けて落とす文OBJ（隠し牢）"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Stone (small) -- 積み石（小）"
+      ]
+    },
+    {
+      "ID": 133001,
+      "Entries": [
+        "Stone (middle) -- 積み石（中）"
+      ]
+    },
+    {
+      "ID": 133002,
+      "Entries": [
+        "Stone (Large) -- 積み石（大）"
+      ]
+    },
+    {
+      "ID": 134200,
+      "Entries": [
+        "Vase_cover with cassotte -- 壺_蓋、柄杓付"
+      ]
+    },
+    {
+      "ID": 134210,
+      "Entries": [
+        "Vase_without lid -- 壺_蓋無し"
+      ]
+    },
+    {
+      "ID": 134290,
+      "Entries": [
+        "Vase_insect -- 壺_虫"
+      ]
+    },
+    {
+      "ID": 134300,
+      "Entries": [
+        "Barrel_open version -- 樽_蓋開きバージョン"
+      ]
+    },
+    {
+      "ID": 134310,
+      "Entries": [
+        "Barrel_closed version -- 樽_蓋閉じバージョン"
+      ]
+    },
+    {
+      "ID": 134350,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 134370,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 134380,
+      "Entries": [
+        "Tub (large) -- 桶(大)"
+      ]
+    },
+    {
+      "ID": 134390,
+      "Entries": [
+        "Memorial rice -- 供養飯"
+      ]
+    },
+    {
+      "ID": 134450,
+      "Entries": [
+        "Bamboo material_destruction -- 竹材_破壊"
+      ]
+    },
+    {
+      "ID": 134460,
+      "Entries": [
+        "Door_ jail -- 扉_牢屋"
+      ]
+    },
+    {
+      "ID": 134501,
+      "Entries": [
+        "Daihachiguruma_Luggage -- 大八車_荷物"
+      ]
+    },
+    {
+      "ID": 134510,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 134511,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 134540,
+      "Entries": [
+        "firewood -- 薪"
+      ]
+    },
+    {
+      "ID": 134650,
+      "Entries": [
+        "Bamboo basket -- 竹籠"
+      ]
+    },
+    {
+      "ID": 134660,
+      "Entries": [
+        "With basket charcoal -- 籠\u3000炭入り"
+      ]
+    },
+    {
+      "ID": 134661,
+      "Entries": [
+        "With basket bamboo shoots -- 籠\u3000筍入り"
+      ]
+    },
+    {
+      "ID": 134700,
+      "Entries": [
+        "Saw A -- 鋸A"
+      ]
+    },
+    {
+      "ID": 134701,
+      "Entries": [
+        "Saw B -- 鋸B"
+      ]
+    },
+    {
+      "ID": 134702,
+      "Entries": [
+        "Saw C -- 鋸C"
+      ]
+    },
+    {
+      "ID": 135100,
+      "Entries": [
+        "Experimental zombie -- 実験体ゾンビ"
+      ]
+    },
+    {
+      "ID": 136000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 136010,
+      "Entries": [
+        "Hanging lantern -- 吊り灯篭"
+      ]
+    },
+    {
+      "ID": 136100,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 136110,
+      "Entries": [
+        "Torch plate stand -- 灯明皿立て"
+      ]
+    },
+    {
+      "ID": 136200,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 136210,
+      "Entries": [
+        "Stone lantern 2 -- 石灯篭2"
+      ]
+    },
+    {
+      "ID": 136250,
+      "Entries": [
+        "Stone lantern (shrine) -- 石灯篭(祠)"
+      ]
+    },
+    {
+      "ID": 136450,
+      "Entries": [
+        "Incense stick (without light) -- 線香（灯なし）"
+      ]
+    },
+    {
+      "ID": 136455,
+      "Entries": [
+        "Incense stick (with light) -- 線香（灯あり）"
+      ]
+    },
+    {
+      "ID": 136460,
+      "Entries": [
+        "Incense stick_bundle (without light) -- 線香_束（灯なし）"
+      ]
+    },
+    {
+      "ID": 136465,
+      "Entries": [
+        "Incense stick_bundle (with light) -- 線香_束（灯あり）"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Shrine door -- 祠の扉"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "boat -- 舟"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Firewood -- 薪(たきぎ)"
+      ]
+    },
+    {
+      "ID": 154010,
+      "Entries": [
+        "Firewood (Takigi) _ single unit -- 薪(たきぎ)_単体"
+      ]
+    },
+    {
+      "ID": 154100,
+      "Entries": [
+        "Carrying pole -- 天秤棒"
+      ]
+    },
+    {
+      "ID": 154110,
+      "Entries": [
+        "Fertilizer -- 肥桶"
+      ]
+    },
+    {
+      "ID": 154120,
+      "Entries": [
+        "Censer of Araji Temple -- 荒れ寺の香炉"
+      ]
+    },
+    {
+      "ID": 154200,
+      "Entries": [
+        "Vase_cover with cassotte -- 壺_蓋、柄杓付"
+      ]
+    },
+    {
+      "ID": 154201,
+      "Entries": [
+        "Vase_without lid -- 壺_蓋無し"
+      ]
+    },
+    {
+      "ID": 154210,
+      "Entries": [
+        "Vase_without lid -- 壺_蓋無し"
+      ]
+    },
+    {
+      "ID": 154300,
+      "Entries": [
+        "Barrel_open version -- 樽_蓋開きバージョン"
+      ]
+    },
+    {
+      "ID": 154310,
+      "Entries": [
+        "Barrel_closed version -- 樽_蓋閉じバージョン"
+      ]
+    },
+    {
+      "ID": 154320,
+      "Entries": [
+        "Barrel_Large -- 樽_大"
+      ]
+    },
+    {
+      "ID": 154350,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 154360,
+      "Entries": [
+        "Oke_with blood-dyed cloth -- 桶_血染め布付"
+      ]
+    },
+    {
+      "ID": 154370,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 154500,
+      "Entries": [
+        "Daihachiguruma -- 大八車"
+      ]
+    },
+    {
+      "ID": 154510,
+      "Entries": [
+        "Daihachiguruma_destroy -- 大八車_破壊"
+      ]
+    },
+    {
+      "ID": 154600,
+      "Entries": [
+        "Basket_with charcoal -- 籠_炭入り"
+      ]
+    },
+    {
+      "ID": 154620,
+      "Entries": [
+        "Bamboo basket with persimmon -- 竹籠_柿入り"
+      ]
+    },
+    {
+      "ID": 154630,
+      "Entries": [
+        "Season_with lid -- 行季_蓋付き"
+      ]
+    },
+    {
+      "ID": 154650,
+      "Entries": [
+        "Basket_cocoon -- 籠_繭入り"
+      ]
+    },
+    {
+      "ID": 154640,
+      "Entries": [
+        "Season_two steps -- 行季_二段"
+      ]
+    },
+    {
+      "ID": 154700,
+      "Entries": [
+        "sake bottle -- 徳利"
+      ]
+    },
+    {
+      "ID": 154710,
+      "Entries": [
+        "Tokkuri_defeat -- 徳利_倒"
+      ]
+    },
+    {
+      "ID": 154750,
+      "Entries": [
+        "hearth -- 囲炉裏"
+      ]
+    },
+    {
+      "ID": 154800,
+      "Entries": [
+        "shelf -- 棚"
+      ]
+    },
+    {
+      "ID": 154809,
+      "Entries": [
+        "Stupa destruction -- 卒塔婆 破壊"
+      ]
+    },
+    {
+      "ID": 154810,
+      "Entries": [
+        "stupa -- 卒塔婆"
+      ]
+    },
+    {
+      "ID": 154811,
+      "Entries": [
+        "General-purpose fence -- 汎用柵"
+      ]
+    },
+    {
+      "ID": 154812,
+      "Entries": [
+        "Bamboo fence -- 竹柵"
+      ]
+    },
+    {
+      "ID": 154813,
+      "Entries": [
+        "Bamboo fence -- 竹柵"
+      ]
+    },
+    {
+      "ID": 154814,
+      "Entries": [
+        "General-purpose fence_destruction -- 汎用柵_破壊"
+      ]
+    },
+    {
+      "ID": 154815,
+      "Entries": [
+        "General-purpose fence_destruction -- 汎用柵_破壊"
+      ]
+    },
+    {
+      "ID": 154816,
+      "Entries": [
+        "Bamboo fence_destroy -- 竹柵_破壊"
+      ]
+    },
+    {
+      "ID": 154817,
+      "Entries": [
+        "Fence_cave -- 柵_洞窟"
+      ]
+    },
+    {
+      "ID": 154818,
+      "Entries": [
+        "Fence_cave_destroy -- 柵_洞窟_破壊"
+      ]
+    },
+    {
+      "ID": 154819,
+      "Entries": [
+        "Bamboo fence_15 degrees for slopes -- 竹柵_坂用15度"
+      ]
+    },
+    {
+      "ID": 154820,
+      "Entries": [
+        "Bamboo fence_15 degrees for slopes -- 竹柵_坂用15度"
+      ]
+    },
+    {
+      "ID": 154900,
+      "Entries": [
+        "Offerings -- お供え物"
+      ]
+    },
+    {
+      "ID": 154910,
+      "Entries": [
+        "Vase with lid -- 蓋付き壺"
+      ]
+    },
+    {
+      "ID": 154950,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 155000,
+      "Entries": [
+        "Monk corpse -- 僧侶の死体"
+      ]
+    },
+    {
+      "ID": 155010,
+      "Entries": [
+        "Monk corpse -- 僧侶の死体"
+      ]
+    },
+    {
+      "ID": 155020,
+      "Entries": [
+        "Sokushinbutsu -- 即身仏"
+      ]
+    },
+    {
+      "ID": 155030,
+      "Entries": [
+        "Upside-down hanging corpse of a monk -- 僧侶の逆さ吊り死体"
+      ]
+    },
+    {
+      "ID": 155040,
+      "Entries": [
+        "Sukekiyo -- スケキヨ"
+      ]
+    },
+    {
+      "ID": 155041,
+      "Entries": [
+        "Sukekiyo -- スケキヨ"
+      ]
+    },
+    {
+      "ID": 155042,
+      "Entries": [
+        "Sukekiyo -- スケキヨ"
+      ]
+    },
+    {
+      "ID": 155100,
+      "Entries": [
+        "Donden floor -- どんでん床"
+      ]
+    },
+    {
+      "ID": 155200,
+      "Entries": [
+        "Disliked House_Rock -- 嫌われ者の家_岩"
+      ]
+    },
+    {
+      "ID": 155210,
+      "Entries": [
+        "House of hated _ fallen tree -- 嫌われ者の家_倒木"
+      ]
+    },
+    {
+      "ID": 155220,
+      "Entries": [
+        "Wire point for thatched roof -- 茅葺屋根用ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 155230,
+      "Entries": [
+        "Saw sickle wire point -- 鋸鎌ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 155300,
+      "Entries": [
+        "Meppajiki -- メッパジキ"
+      ]
+    },
+    {
+      "ID": 155400,
+      "Entries": [
+        "Sacred treasure -- 神器"
+      ]
+    },
+    {
+      "ID": 155500,
+      "Entries": [
+        "Vase_for conversation -- 壺_会話用"
+      ]
+    },
+    {
+      "ID": 156000,
+      "Entries": [
+        "fire -- 焚火"
+      ]
+    },
+    {
+      "ID": 156100,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 156110,
+      "Entries": [
+        "Torch plate stand -- 灯明皿立て"
+      ]
+    },
+    {
+      "ID": 156111,
+      "Entries": [
+        "Torch plate stand -- 灯明皿立て"
+      ]
+    },
+    {
+      "ID": 156150,
+      "Entries": [
+        "Candlestick (small) -- 燭台（小）"
+      ]
+    },
+    {
+      "ID": 156160,
+      "Entries": [
+        "Candlestick (Large) -- 燭台（大）"
+      ]
+    },
+    {
+      "ID": 156170,
+      "Entries": [
+        "Fishing lantern -- 釣り灯篭"
+      ]
+    },
+    {
+      "ID": 156300,
+      "Entries": [
+        "Lantern -- 燈籠"
+      ]
+    },
+    {
+      "ID": 156310,
+      "Entries": [
+        "General-purpose light source_with lid -- 汎用光源_蓋付き"
+      ]
+    },
+    {
+      "ID": 156320,
+      "Entries": [
+        "General-purpose light source_closed lid -- 汎用光源_蓋閉じ"
+      ]
+    },
+    {
+      "ID": 156350,
+      "Entries": [
+        "Shrine_with red cloth -- 祠_赤い布付き"
+      ]
+    },
+    {
+      "ID": 156400,
+      "Entries": [
+        "Gomadan -- 護摩壇"
+      ]
+    },
+    {
+      "ID": 156500,
+      "Entries": [
+        "Firefly basket -- 蛍籠"
+      ]
+    },
+    {
+      "ID": 156820,
+      "Entries": [
+        "Shelf_for walls -- 棚_壁用"
+      ]
+    },
+    {
+      "ID": 157000,
+      "Entries": [
+        "Cloth with moth -- 蛾付布"
+      ]
+    },
+    {
+      "ID": 157001,
+      "Entries": [
+        "Cloth with moth -- 蛾付布"
+      ]
+    },
+    {
+      "ID": 157002,
+      "Entries": [
+        "Cloth with moth -- 蛾付布"
+      ]
+    },
+    {
+      "ID": 157200,
+      "Entries": [
+        "Canopy (swaying) -- 天蓋（揺れる）"
+      ]
+    },
+    {
+      "ID": 157300,
+      "Entries": [
+        "Hanging corpse -- 首つり死体"
+      ]
+    },
+    {
+      "ID": 158000,
+      "Entries": [
+        "Weaving wood -- 機織木"
+      ]
+    },
+    {
+      "ID": 158100,
+      "Entries": [
+        "Litter -- 輿"
+      ]
+    },
+    {
+      "ID": 158110,
+      "Entries": [
+        "Litter_after destruction -- 輿_破壊後"
+      ]
+    },
+    {
+      "ID": 158200,
+      "Entries": [
+        "Trees for cutscenes -- カットシーン用樹木"
+      ]
+    },
+    {
+      "ID": 159020,
+      "Entries": [
+        "Rough Temple_Floor -- 荒れ寺_床"
+      ]
+    },
+    {
+      "ID": 159030,
+      "Entries": [
+        "Rough Temple_Floor_After the illusion is released -- 荒れ寺_床_幻術解除後"
+      ]
+    },
+    {
+      "ID": 159100,
+      "Entries": [
+        "For ladder test -- 梯子テスト用"
+      ]
+    },
+    {
+      "ID": 174100,
+      "Entries": [
+        "Censer -- 香炉"
+      ]
+    },
+    {
+      "ID": 174300,
+      "Entries": [
+        "Flame glass barrel (closed lid) -- 焔硝樽(蓋閉じ)"
+      ]
+    },
+    {
+      "ID": 174301,
+      "Entries": [
+        "Flame glass barrel (open lid) -- 焔硝樽(蓋開き)"
+      ]
+    },
+    {
+      "ID": 174310,
+      "Entries": [
+        "Salt saltpeter box A -- 塩硝木箱A"
+      ]
+    },
+    {
+      "ID": 174311,
+      "Entries": [
+        "Salt saltpeter box B -- 塩硝木箱B"
+      ]
+    },
+    {
+      "ID": 174330,
+      "Entries": [
+        "Wick box -- 灯心箱"
+      ]
+    },
+    {
+      "ID": 174340,
+      "Entries": [
+        "Flint box -- 火打ち石箱"
+      ]
+    },
+    {
+      "ID": 174350,
+      "Entries": [
+        "Roasted ball -- 焙烙玉"
+      ]
+    },
+    {
+      "ID": 174400,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 174410,
+      "Entries": [
+        "Pail -- 手桶"
+      ]
+    },
+    {
+      "ID": 174700,
+      "Entries": [
+        "General-purpose chest (1 step) -- 汎用櫃(1段)"
+      ]
+    },
+    {
+      "ID": 174800,
+      "Entries": [
+        "Rockfall -- 落石"
+      ]
+    },
+    {
+      "ID": 174805,
+      "Entries": [
+        "Rockfall + soil -- 落石+土"
+      ]
+    },
+    {
+      "ID": 174806,
+      "Entries": [
+        "Rockfall + soil (snow cover) -- 落石+土(積雪)"
+      ]
+    },
+    {
+      "ID": 174850,
+      "Entries": [
+        "Sat (snow cover) -- 土(積雪)"
+      ]
+    },
+    {
+      "ID": 174540,
+      "Entries": [
+        "firewood -- 薪"
+      ]
+    },
+    {
+      "ID": 174550,
+      "Entries": [
+        "Hatchet ① -- 鉈①"
+      ]
+    },
+    {
+      "ID": 174551,
+      "Entries": [
+        "Hatchet ② -- 鉈②"
+      ]
+    },
+    {
+      "ID": 174560,
+      "Entries": [
+        "Vase with lid -- 蓋つき壺"
+      ]
+    },
+    {
+      "ID": 174561,
+      "Entries": [
+        "Shimenawa pot A -- 注連縄の壺A"
+      ]
+    },
+    {
+      "ID": 174562,
+      "Entries": [
+        "Shimenawa pot B -- 注連縄の壺B"
+      ]
+    },
+    {
+      "ID": 175000,
+      "Entries": [
+        "Suspension bridge (for hits) -- 吊り橋(ヒット用)"
+      ]
+    },
+    {
+      "ID": 175100,
+      "Entries": [
+        "Suspension bridge (for events) -- 吊り橋(イベント用)"
+      ]
+    },
+    {
+      "ID": 175101,
+      "Entries": [
+        "Suspension bridge (for events, for broken) -- 吊り橋(イベント用、壊れた用)"
+      ]
+    },
+    {
+      "ID": 175200,
+      "Entries": [
+        "Geyser -- 間欠泉"
+      ]
+    },
+    {
+      "ID": 175300,
+      "Entries": [
+        "Company door -- 社の扉"
+      ]
+    },
+    {
+      "ID": 175400,
+      "Entries": [
+        "Stone (Large) -- 積み石（大）"
+      ]
+    },
+    {
+      "ID": 175500,
+      "Entries": [
+        "Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175510,
+      "Entries": [
+        "Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175520,
+      "Entries": [
+        "Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175600,
+      "Entries": [
+        "The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根\u3000基準"
+      ]
+    },
+    {
+      "ID": 175610,
+      "Entries": [
+        "The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根\u3000基準"
+      ]
+    },
+    {
+      "ID": 175620,
+      "Entries": [
+        "The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根\u3000基準"
+      ]
+    },
+    {
+      "ID": 175700,
+      "Entries": [
+        "Company wall (for events) -- 社の壁(イベント用)"
+      ]
+    },
+    {
+      "ID": 175701,
+      "Entries": [
+        "Company wall_after destruction (for events) -- 社の壁_破壊後(イベント用)"
+      ]
+    },
+    {
+      "ID": 175800,
+      "Entries": [
+        "Dead tree (wire point) -- 立ち枯れ木(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175810,
+      "Entries": [
+        "Dead tree (wire point) -- 立ち枯れ木(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175900,
+      "Entries": [
+        "Bodhisattva crack (wire point) -- 菩薩のヒビ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175901,
+      "Entries": [
+        "Bodhisattva crack (wire point) (thin) -- 菩薩のヒビ(ワイヤーポイント)(細)"
+      ]
+    },
+    {
+      "ID": 175910,
+      "Entries": [
+        "Bodhisattva crack (wire point) -- 菩薩のヒビ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 175911,
+      "Entries": [
+        "Bodhisattva crack (wire point) (thin) -- 菩薩のヒビ(ワイヤーポイント)(細)"
+      ]
+    },
+    {
+      "ID": 176000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 176010,
+      "Entries": [
+        "Hanging lantern -- 吊り灯篭"
+      ]
+    },
+    {
+      "ID": 176020,
+      "Entries": [
+        "Hanging lantern (half destroyed) -- 吊り灯篭(半壊)"
+      ]
+    },
+    {
+      "ID": 176050,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 176100,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 176110,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 176120,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 176125,
+      "Entries": [
+        "Torch plate (summary for rock cave) -- 灯明皿(岩窟用まとめ)"
+      ]
+    },
+    {
+      "ID": 176140,
+      "Entries": [
+        "Torch pottery -- 灯明土器"
+      ]
+    },
+    {
+      "ID": 176141,
+      "Entries": [
+        "Torch pottery -- 灯明土器"
+      ]
+    },
+    {
+      "ID": 176200,
+      "Entries": [
+        "Shrine (snow) -- 祠(雪)"
+      ]
+    },
+    {
+      "ID": 176210,
+      "Entries": [
+        "Shrine -- 祠"
+      ]
+    },
+    {
+      "ID": 177100,
+      "Entries": [
+        "Valley Enemy Weapon_Shotgun -- 谷敵の武器_ショットガン"
+      ]
+    },
+    {
+      "ID": 177110,
+      "Entries": [
+        "Valley Enemy Weapon_Cannon -- 谷敵の武器_大砲"
+      ]
+    },
+    {
+      "ID": 177120,
+      "Entries": [
+        "Valley Enemy Weapon_Gun -- 谷敵の武器_銃"
+      ]
+    },
+    {
+      "ID": 177130,
+      "Entries": [
+        "Valley Enemy Weapon_Gun (Normal) -- 谷敵の武器_銃（通常）"
+      ]
+    },
+    {
+      "ID": 177700,
+      "Entries": [
+        "Carp carp -- 鯉の死骸"
+      ]
+    },
+    {
+      "ID": 177800,
+      "Entries": [
+        "Sacred lotus -- 神器蓮"
+      ]
+    },
+    {
+      "ID": 177900,
+      "Entries": [
+        "Snake liver -- 蛇の肝"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Main hall door -- 本堂の扉"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "The door that connects the hidden hall and the main hall -- 隠し堂と本堂をつなぐ扉"
+      ]
+    },
+    {
+      "ID": 201020,
+      "Entries": [
+        "Five-storied pagoda door -- 五重塔の扉"
+      ]
+    },
+    {
+      "ID": 201030,
+      "Entries": [
+        "Bell tower door -- 鐘楼堂の扉"
+      ]
+    },
+    {
+      "ID": 201040,
+      "Entries": [
+        "Light source room door -- 光源部屋の扉"
+      ]
+    },
+    {
+      "ID": 201050,
+      "Entries": [
+        "The front door of the hidden hall -- 隠し堂の正面扉"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Maple that can ride -- 乗れるモミジ"
+      ]
+    },
+    {
+      "ID": 202010,
+      "Entries": [
+        "Maple that can ride -- 乗れるモミジ"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Tsutenbashi _ 蔀 degree -- 通天橋_蔀度"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "Tsutenbashi _ 蔀 degree _ opening -- 通天橋_蔀度_開き"
+      ]
+    },
+    {
+      "ID": 203002,
+      "Entries": [
+        "Tsutenbashi _ 蔀 degree _ lower part -- 通天橋_蔀度_下部"
+      ]
+    },
+    {
+      "ID": 203005,
+      "Entries": [
+        "Tsutenbashi_railing -- 通天橋_手すり"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "Windmill -- 風車"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "Windmill (white) -- 風車(白)"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "Windmill (red and white) -- 風車（赤白）"
+      ]
+    },
+    {
+      "ID": 203100,
+      "Entries": [
+        "Bodhisattva statue set -- 菩薩像セット"
+      ]
+    },
+    {
+      "ID": 204100,
+      "Entries": [
+        "Burner with incense burner -- 火舎香炉"
+      ]
+    },
+    {
+      "ID": 204105,
+      "Entries": [
+        "Platform set -- 壇具セット"
+      ]
+    },
+    {
+      "ID": 204106,
+      "Entries": [
+        "Platform set -- 壇具セット"
+      ]
+    },
+    {
+      "ID": 204110,
+      "Entries": [
+        "Censer -- 香炉"
+      ]
+    },
+    {
+      "ID": 204120,
+      "Entries": [
+        "Censer -- 香炉"
+      ]
+    },
+    {
+      "ID": 204260,
+      "Entries": [
+        "Vase -- 壺"
+      ]
+    },
+    {
+      "ID": 204270,
+      "Entries": [
+        "Vase with lid -- 蓋つき壺"
+      ]
+    },
+    {
+      "ID": 204280,
+      "Entries": [
+        "Bug jar -- 虫壺"
+      ]
+    },
+    {
+      "ID": 204290,
+      "Entries": [
+        "Hanging insect jar -- 吊り虫壺"
+      ]
+    },
+    {
+      "ID": 204291,
+      "Entries": [
+        "Hanging insect jar -- 吊り虫壺"
+      ]
+    },
+    {
+      "ID": 204500,
+      "Entries": [
+        "Bookshelf -- 本棚"
+      ]
+    },
+    {
+      "ID": 204700,
+      "Entries": [
+        "Chest -- 櫃"
+      ]
+    },
+    {
+      "ID": 204710,
+      "Entries": [
+        "Keiki -- 経机"
+      ]
+    },
+    {
+      "ID": 204715,
+      "Entries": [
+        "Keiki (meat piece) -- 経机(肉片)"
+      ]
+    },
+    {
+      "ID": 204720,
+      "Entries": [
+        "Sutra box -- 経箱"
+      ]
+    },
+    {
+      "ID": 204730,
+      "Entries": [
+        "Bamboo basket -- 竹籠"
+      ]
+    },
+    {
+      "ID": 204781,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 204782,
+      "Entries": [
+        "Book pile -- 本の山"
+      ]
+    },
+    {
+      "ID": 204790,
+      "Entries": [
+        "Scroll set -- 巻物セット"
+      ]
+    },
+    {
+      "ID": 204800,
+      "Entries": [
+        "Gomadou_Folding screen -- 護摩堂_屏風"
+      ]
+    },
+    {
+      "ID": 204801,
+      "Entries": [
+        "Gomadou_Folding screen -- 護摩堂_屏風",
+        "Gomadou_Folding screen -- 護摩堂_屏風"
+      ]
+    },
+    {
+      "ID": 204810,
+      "Entries": [
+        "Infinite Corridor_Folding Screen_Before Defeat -- 無限回廊_屏風_撃破前"
+      ]
+    },
+    {
+      "ID": 204811,
+      "Entries": [
+        "Infinite Corridor_Folding Screen_After Defeat -- 無限回廊_屏風_撃破後"
+      ]
+    },
+    {
+      "ID": 204820,
+      "Entries": [
+        "Folding screen _Before defeating_ ■ □□□ -- 屏風_撃破前_■□□□"
+      ]
+    },
+    {
+      "ID": 204821,
+      "Entries": [
+        "Folding screen _Before defeat _ □ ■ □□ -- 屏風_撃破前_□■□□"
+      ]
+    },
+    {
+      "ID": 204822,
+      "Entries": [
+        "Folding screen _Before defeat _ □□ ■ □ -- 屏風_撃破前_□□■□"
+      ]
+    },
+    {
+      "ID": 204823,
+      "Entries": [
+        "Folding screen _Before defeat _ □□□ ■ -- 屏風_撃破前_□□□■"
+      ]
+    },
+    {
+      "ID": 204830,
+      "Entries": [
+        "Folding screen _ After defeat _ ■ □□□ -- 屏風_撃破後_■□□□"
+      ]
+    },
+    {
+      "ID": 204831,
+      "Entries": [
+        "Folding screen _ After defeat _ □ ■ □□ -- 屏風_撃破後_□■□□"
+      ]
+    },
+    {
+      "ID": 204832,
+      "Entries": [
+        "Folding screen _ After defeat _ □□ ■ □ -- 屏風_撃破後_□□■□"
+      ]
+    },
+    {
+      "ID": 204833,
+      "Entries": [
+        "Folding screen _ After defeat _ □□□ ■ -- 屏風_撃破後_□□□■"
+      ]
+    },
+    {
+      "ID": 204850,
+      "Entries": [
+        "Hidden main hall_altar object -- 隠し本堂_祭壇オブジェ"
+      ]
+    },
+    {
+      "ID": 204851,
+      "Entries": [
+        "Hidden main hall_altar object -- 隠し本堂_祭壇オブジェ"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Elevator -- エレベーター"
+      ]
+    },
+    {
+      "ID": 205010,
+      "Entries": [
+        "Elevator_lever -- エレベーター_レバー"
+      ]
+    },
+    {
+      "ID": 205100,
+      "Entries": [
+        "bell -- 鐘"
+      ]
+    },
+    {
+      "ID": 205101,
+      "Entries": [
+        "Bell_for infinite corridor -- 鐘_無限回廊用"
+      ]
+    },
+    {
+      "ID": 205300,
+      "Entries": [
+        "kite -- 凧"
+      ]
+    },
+    {
+      "ID": 205550,
+      "Entries": [
+        "Hanging lantern_for events -- 吊り灯篭_イベント用"
+      ]
+    },
+    {
+      "ID": 205570,
+      "Entries": [
+        "Stage equipment_for events -- 壇具_イベント用"
+      ]
+    },
+    {
+      "ID": 205600,
+      "Entries": [
+        "Kuri_folding screen -- 庫裏_屏風"
+      ]
+    },
+    {
+      "ID": 205700,
+      "Entries": [
+        "Poster -- 張り紙"
+      ]
+    },
+    {
+      "ID": 205900,
+      "Entries": [
+        "Sokushinbutsu -- 即身仏"
+      ]
+    },
+    {
+      "ID": 205910,
+      "Entries": [
+        "Sokushinbutsu (purple) -- 即身仏（紫）"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Stone lantern -- 石灯篭"
+      ]
+    },
+    {
+      "ID": 206010,
+      "Entries": [
+        "High cup lighthouse -- 高杯燈台"
+      ]
+    },
+    {
+      "ID": 206020,
+      "Entries": [
+        "High lighthouse -- 高燈台"
+      ]
+    },
+    {
+      "ID": 206030,
+      "Entries": [
+        "Torch plate -- 灯明皿"
+      ]
+    },
+    {
+      "ID": 206040,
+      "Entries": [
+        "Candlestick -- 連燭台"
+      ]
+    },
+    {
+      "ID": 206050,
+      "Entries": [
+        "Desktop candlestick -- 卓上燭台"
+      ]
+    },
+    {
+      "ID": 206051,
+      "Entries": [
+        "Desktop candlestick (small) -- 卓上燭台(小)"
+      ]
+    },
+    {
+      "ID": 206052,
+      "Entries": [
+        "Desktop candlestick (small) _ for children only -- 卓上燭台(小)_稚児専用"
+      ]
+    },
+    {
+      "ID": 206060,
+      "Entries": [
+        "Candlestick for the main hall -- 本堂用燭台"
+      ]
+    },
+    {
+      "ID": 206070,
+      "Entries": [
+        "Hidden main hall_candle stand (large) -- 隠し本堂_燭台(大)"
+      ]
+    },
+    {
+      "ID": 206071,
+      "Entries": [
+        "Hidden main hall_candlestick (small) set -- 隠し本堂_燭台(小)セット"
+      ]
+    },
+    {
+      "ID": 206080,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 206100,
+      "Entries": [
+        "Fishing lantern -- 釣り灯篭"
+      ]
+    },
+    {
+      "ID": 206101,
+      "Entries": [
+        "Fishing lantern (without light source) -- 釣り灯篭(光源なし)"
+      ]
+    },
+    {
+      "ID": 206110,
+      "Entries": [
+        "Fishing lantern -- 釣り灯篭"
+      ]
+    },
+    {
+      "ID": 206111,
+      "Entries": [
+        "Fishing lantern (without light source) -- 釣り灯篭(光源なし)"
+      ]
+    },
+    {
+      "ID": 206150,
+      "Entries": [
+        "Handheld candlestick -- 手持ち燭台"
+      ]
+    },
+    {
+      "ID": 206160,
+      "Entries": [
+        "Hidden main hall_handheld candlestick -- 隠し本堂_手持ち燭台"
+      ]
+    },
+    {
+      "ID": 206200,
+      "Entries": [
+        "Bodhisattva statue -- 菩蕯像"
+      ]
+    },
+    {
+      "ID": 206300,
+      "Entries": [
+        "Marking object -- 目印オブジェ"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "Sokushinbutsu -- 即身仏"
+      ]
+    },
+    {
+      "ID": 207100,
+      "Entries": [
+        "Roof general purpose wire point -- 屋根汎用ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 207110,
+      "Entries": [
+        "Indoor general purpose wire point -- 屋内汎用ワイヤーポイント"
+      ]
+    },
+    {
+      "ID": 207300,
+      "Entries": [
+        "Human canopy -- 人天蓋"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "Redo bell -- やり直しの鐘"
+      ]
+    },
+    {
+      "ID": 208100,
+      "Entries": [
+        "Immortal Slash Box -- 不死斬りの箱"
+      ]
+    },
+    {
+      "ID": 208200,
+      "Entries": [
+        "Hidden main hall 2 tatami mats -- 隠し本堂二畳台"
+      ]
+    },
+    {
+      "ID": 208210,
+      "Entries": [
+        "Hidden main hall cushion -- 隠し本堂座布団"
+      ]
+    },
+    {
+      "ID": 208300,
+      "Entries": [
+        "Immortal sword and a stand to put a box on -- 不死斬りと箱を乗せる台"
+      ]
+    },
+    {
+      "ID": 208500,
+      "Entries": [
+        "Prince pillow -- 皇子の枕"
+      ]
+    },
+    {
+      "ID": 208600,
+      "Entries": [
+        "Trees for cutscenes -- カットシーン用樹木"
+      ]
+    },
+    {
+      "ID": 251000,
+      "Entries": [
+        "Rear door -- 後宮後扉"
+      ]
+    },
+    {
+      "ID": 251100,
+      "Entries": [
+        "Rear door -- 後宮前扉"
+      ]
+    },
+    {
+      "ID": 252000,
+      "Entries": [
+        "Riding cherry blossoms (turn left) -- 乗れる桜（左曲がり）"
+      ]
+    },
+    {
+      "ID": 252001,
+      "Entries": [
+        "Riding cherry blossoms (turn left) _ fall prevention -- 乗れる桜（左曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 252010,
+      "Entries": [
+        "Riding cherry blossoms (turn right) -- 乗れる桜（右曲がり）"
+      ]
+    },
+    {
+      "ID": 252011,
+      "Entries": [
+        "Riding cherry blossoms (turn right) _ fall prevention -- 乗れる桜（右曲がり）_落下防止"
+      ]
+    },
+    {
+      "ID": 252020,
+      "Entries": [
+        "Riding cherry blossoms (S-shaped) -- 乗れる桜（S字）"
+      ]
+    },
+    {
+      "ID": 252021,
+      "Entries": [
+        "Riding cherry blossoms (S-shaped) _ fall prevention -- 乗れる桜（S字）_落下防止"
+      ]
+    },
+    {
+      "ID": 252030,
+      "Entries": [
+        "Riding cherry blossoms (L-shaped on the right) -- 乗れる桜（右L字）"
+      ]
+    },
+    {
+      "ID": 252031,
+      "Entries": [
+        "Riding cherry blossoms (L-shaped on the right) _ fall prevention -- 乗れる桜（右L字）_落下防止"
+      ]
+    },
+    {
+      "ID": 252040,
+      "Entries": [
+        "Riding cherry blossoms (from the ground) -- 乗れる桜（地面から）"
+      ]
+    },
+    {
+      "ID": 252041,
+      "Entries": [
+        "Riding cherry blossoms (from the ground) _ fall prevention -- 乗れる桜（地面から）_落下防止"
+      ]
+    },
+    {
+      "ID": 252042,
+      "Entries": [
+        "Riding cherry blossoms (from the ground) _ hit -- 乗れる桜（地面から）_ヒット"
+      ]
+    },
+    {
+      "ID": 252050,
+      "Entries": [
+        "Riding cherry blossoms (from the ground / large) -- 乗れる桜（地面から/大）"
+      ]
+    },
+    {
+      "ID": 252051,
+      "Entries": [
+        "Riding cherry blossoms (from the ground / large) _ fall prevention -- 乗れる桜（地面から/大）_落下防止"
+      ]
+    },
+    {
+      "ID": 252052,
+      "Entries": [
+        "Riding cherry blossoms (from the ground / large) _ hit -- 乗れる桜（地面から/大）_ヒット"
+      ]
+    },
+    {
+      "ID": 252200,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252201,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252202,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252203,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252212,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252213,
+      "Entries": [
+        "Maple (wire point) -- モミジ(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 252550,
+      "Entries": [
+        "Genpei warrior corpse mask -- 源平武者死体の仮面"
+      ]
+    },
+    {
+      "ID": 252551,
+      "Entries": [
+        "Genpei warrior corpse mask (plural) -- 源平武者死体の仮面(複数)"
+      ]
+    },
+    {
+      "ID": 25300,
+      "Entries": [
+        "Ox cart -- 牛車"
+      ]
+    },
+    {
+      "ID": 253100,
+      "Entries": [
+        "Insect cage (cylinder) -- 虫かご（円筒）"
+      ]
+    },
+    {
+      "ID": 253110,
+      "Entries": [
+        "Insect cage (box type) -- 虫かご（箱型）"
+      ]
+    },
+    {
+      "ID": 253500,
+      "Entries": [
+        "Underwater corridor (roof) that carp breaks -- 鯉が壊す水中廊下（屋根）"
+      ]
+    },
+    {
+      "ID": 253510,
+      "Entries": [
+        "Underwater corridor broken by carp (wall with window) -- 鯉が壊す水中廊下（窓付き壁）"
+      ]
+    },
+    {
+      "ID": 253520,
+      "Entries": [
+        "Underwater corridor (wall) that carp breaks -- 鯉が壊す水中廊下（壁）"
+      ]
+    },
+    {
+      "ID": 253530,
+      "Entries": [
+        "Underwater corridor (floor) destroyed by carp -- 鯉が壊す水中廊下（床）"
+      ]
+    },
+    {
+      "ID": 253600,
+      "Entries": [
+        "Underwater turret that carp breaks (above) -- 鯉が壊す水中櫓(上)"
+      ]
+    },
+    {
+      "ID": 253610,
+      "Entries": [
+        "Underwater turret that carp breaks (bottom) -- 鯉が壊す水中櫓(下)"
+      ]
+    },
+    {
+      "ID": 254000,
+      "Entries": [
+        "Folding screen (small) -- 屏風（小）",
+        "Folding screen (small) -- 屏風（小）"
+      ]
+    },
+    {
+      "ID": 254001,
+      "Entries": [
+        "Folding screen (broken) -- 屏風（壊れ）"
+      ]
+    },
+    {
+      "ID": 254002,
+      "Entries": [
+        "Folding screen -- 屏風（畳み）"
+      ]
+    },
+    {
+      "ID": 254003,
+      "Entries": [
+        "Folding screen (Okina Ryu left) -- 屏風(翁龍左)"
+      ]
+    },
+    {
+      "ID": 254004,
+      "Entries": [
+        "Folding screen (Okina Ryu right) -- 屏風(翁龍右)"
+      ]
+    },
+    {
+      "ID": 254005,
+      "Entries": [
+        "Folding screen (Okina Dragon left) _ tilt -- 屏風(翁龍左)_傾き"
+      ]
+    },
+    {
+      "ID": 254006,
+      "Entries": [
+        "Folding screen (Okina Ryu right) _ tilt -- 屏風(翁龍右)_傾き"
+      ]
+    },
+    {
+      "ID": 254010,
+      "Entries": [
+        "screen -- 几帳"
+      ]
+    },
+    {
+      "ID": 254020,
+      "Entries": [
+        "screen -- 衝立"
+      ]
+    },
+    {
+      "ID": 254050,
+      "Entries": [
+        "folding screen -- 屏風"
+      ]
+    },
+    {
+      "ID": 254051,
+      "Entries": [
+        "Folding screen (Okina Ryu left) _ Damaged -- 屏風(翁龍左)_破損"
+      ]
+    },
+    {
+      "ID": 254052,
+      "Entries": [
+        "Folding screen (Okina Ryu right) _damaged -- 屏風(翁龍右)_破損"
+      ]
+    },
+    {
+      "ID": 254100,
+      "Entries": [
+        "Clothing girder -- 衣桁"
+      ]
+    },
+    {
+      "ID": 254110,
+      "Entries": [
+        "Upstairs shelf -- 二階棚一具"
+      ]
+    },
+    {
+      "ID": 254120,
+      "Entries": [
+        "Rooting mirror stand -- 根こじ鏡台"
+      ]
+    },
+    {
+      "ID": 254130,
+      "Entries": [
+        "Weapons -- 角だらい"
+      ]
+    },
+    {
+      "ID": 254140,
+      "Entries": [
+        "Kara Kushige -- 唐櫛笥"
+      ]
+    },
+    {
+      "ID": 254150,
+      "Entries": [
+        "Bow stand -- 弓立て"
+      ]
+    },
+    {
+      "ID": 254151,
+      "Entries": [
+        "Bow stand (desk only) -- 弓立て（机のみ）"
+      ]
+    },
+    {
+      "ID": 254200,
+      "Entries": [
+        "Kara -- 唐櫃"
+      ]
+    },
+    {
+      "ID": 254270,
+      "Entries": [
+        "Vase with lid -- 蓋つき壺"
+      ]
+    },
+    {
+      "ID": 254300,
+      "Entries": [
+        "Fortune-telling set A -- 占いセットA"
+      ]
+    },
+    {
+      "ID": 254310,
+      "Entries": [
+        "Fortune-telling set B -- 占いセットB"
+      ]
+    },
+    {
+      "ID": 254350,
+      "Entries": [
+        "Sake set -- 酒器セット"
+      ]
+    },
+    {
+      "ID": 254900,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 254901,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 254902,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 255000,
+      "Entries": [
+        "Taikobashi that carp breaks -- 鯉が壊す太鼓橋"
+      ]
+    },
+    {
+      "ID": 255001,
+      "Entries": [
+        "Only hits on the floor of the drum bridge that the carp breaks -- 鯉が壊す太鼓橋の床のヒットのみ"
+      ]
+    },
+    {
+      "ID": 255500,
+      "Entries": [
+        "Bell calling a carp -- 鯉を呼ぶ鐘"
+      ]
+    },
+    {
+      "ID": 255110,
+      "Entries": [
+        "Parasitic cherry blossoms (large) -- 寄生桜（大）"
+      ]
+    },
+    {
+      "ID": 255600,
+      "Entries": [
+        "Decorative tile (Pt) -- 飾り瓦(Pt)"
+      ]
+    },
+    {
+      "ID": 255610,
+      "Entries": [
+        "Parasitic cherry blossoms -- 寄生桜"
+      ]
+    },
+    {
+      "ID": 256000,
+      "Entries": [
+        "Stone lantern 1 -- 石灯篭1"
+      ]
+    },
+    {
+      "ID": 256010,
+      "Entries": [
+        "Stone lantern 2 -- 石灯篭2"
+      ]
+    },
+    {
+      "ID": 256020,
+      "Entries": [
+        "Hanging lantern -- 吊り下げ灯篭"
+      ]
+    },
+    {
+      "ID": 256030,
+      "Entries": [
+        "Hanging incense burner -- 吊り香炉"
+      ]
+    },
+    {
+      "ID": 256100,
+      "Entries": [
+        "High lighthouse -- 高灯台"
+      ]
+    },
+    {
+      "ID": 256110,
+      "Entries": [
+        "High cup lighthouse -- 高杯灯台"
+      ]
+    },
+    {
+      "ID": 259900,
+      "Entries": [
+        "Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ"
+      ]
+    },
+    {
+      "ID": 259910,
+      "Entries": [
+        "Mermaid Dragon_Seven-Branched Sword Attached Object -- 人魚竜_七支刀アタッチオブジェ"
+      ]
+    },
+    {
+      "ID": 259911,
+      "Entries": [
+        "Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ"
+      ]
+    },
+    {
+      "ID": 259912,
+      "Entries": [
+        "Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 259920,
+      "Entries": [
+        "Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ"
+      ]
+    },
+    {
+      "ID": 259921,
+      "Entries": [
+        "Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ"
+      ]
+    },
+    {
+      "ID": 259922,
+      "Entries": [
+        "Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ"
+      ]
+    },
+    {
+      "ID": 259923,
+      "Entries": [
+        "Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 259924,
+      "Entries": [
+        "Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 259925,
+      "Entries": [
+        "Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット"
+      ]
+    },
+    {
+      "ID": 950010,
+      "Entries": [
+        "Ogawa test door -- 小川テストドア"
+      ]
+    },
+    {
+      "ID": 950100,
+      "Entries": [
+        "Water drop test door -- 水落テストドア"
+      ]
+    },
+    {
+      "ID": 959000,
+      "Entries": [
+        "Tsukamoto test -- 塚本テスト"
+      ]
+    },
+    {
+      "ID": 959010,
+      "Entries": [
+        "Bank test -- 土手テスト"
+      ]
+    },
+    {
+      "ID": 961500,
+      "Entries": [
+        "Exit door of the Great Buddha Hall -- 大仏殿の出口扉"
+      ]
+    },
+    {
+      "ID": 961598,
+      "Entries": [
+        "Great Buddha Hall Exit Door Test 2 -- 大仏殿の出口扉テスト2"
+      ]
+    },
+    {
+      "ID": 961599,
+      "Entries": [
+        "Exit door test of the Great Buddha Hall 1 -- 大仏殿の出口扉テスト1"
+      ]
+    },
+    {
+      "ID": 963000,
+      "Entries": [
+        "Stone (small) -- 積み石（小）"
+      ]
+    },
+    {
+      "ID": 963001,
+      "Entries": [
+        "Stone (middle) -- 積み石（中）"
+      ]
+    },
+    {
+      "ID": 963002,
+      "Entries": [
+        "Stone (Large) -- 積み石（大）"
+      ]
+    },
+    {
+      "ID": 964450,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 964451,
+      "Entries": [
+        "Tub -- 桶"
+      ]
+    },
+    {
+      "ID": 964500,
+      "Entries": [
+        "Vase -- 壺"
+      ]
+    },
+    {
+      "ID": 964501,
+      "Entries": [
+        "Vase (covering) -- 壺(蓋立てかけ)"
+      ]
+    },
+    {
+      "ID": 964502,
+      "Entries": [
+        "Vase size (with lid and cassotte) -- 壺大(蓋と柄杓付)"
+      ]
+    },
+    {
+      "ID": 964510,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 964511,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 964512,
+      "Entries": [
+        "Sake set -- 酒器"
+      ]
+    },
+    {
+      "ID": 964530,
+      "Entries": [
+        "brazier -- 火鉢"
+      ]
+    },
+    {
+      "ID": 964540,
+      "Entries": [
+        "firewood -- 薪"
+      ]
+    },
+    {
+      "ID": 964560,
+      "Entries": [
+        "spear -- 槍"
+      ]
+    },
+    {
+      "ID": 964570,
+      "Entries": [
+        "gun -- 銃"
+      ]
+    },
+    {
+      "ID": 964580,
+      "Entries": [
+        "Daihachiguruma -- 大八車"
+      ]
+    },
+    {
+      "ID": 964590,
+      "Entries": [
+        "Daihachiguruma (broken) -- 大八車(壊)"
+      ]
+    },
+    {
+      "ID": 964700,
+      "Entries": [
+        "General-purpose chest (1 step) -- 汎用櫃(1段)"
+      ]
+    },
+    {
+      "ID": 964701,
+      "Entries": [
+        "General-purpose chest (1 step) version difference -- 汎用櫃(1段)バージョン違い"
+      ]
+    },
+    {
+      "ID": 964710,
+      "Entries": [
+        "General-purpose chest (2 steps) -- 汎用櫃(2段)"
+      ]
+    },
+    {
+      "ID": 964711,
+      "Entries": [
+        "General-purpose chest (2 steps) version difference -- 汎用櫃(2段)バージョン違い"
+      ]
+    },
+    {
+      "ID": 964800,
+      "Entries": [
+        "Rockfall -- 落石"
+      ]
+    },
+    {
+      "ID": 964805,
+      "Entries": [
+        "Rockfall + soil -- 落石+土"
+      ]
+    },
+    {
+      "ID": 964806,
+      "Entries": [
+        "Rockfall + soil (snow cover) -- 落石+土(積雪)"
+      ]
+    },
+    {
+      "ID": 964810,
+      "Entries": [
+        "Snowfall -- 落雪"
+      ]
+    },
+    {
+      "ID": 964820,
+      "Entries": [
+        "Masonry -- 石積"
+      ]
+    },
+    {
+      "ID": 964900,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 964901,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 964902,
+      "Entries": [
+        "Maple branch -- モミジの枝"
+      ]
+    },
+    {
+      "ID": 965200,
+      "Entries": [
+        "Suspension bridge (FDP transplant) -- 吊り橋(FDP移植)"
+      ]
+    },
+    {
+      "ID": 965210,
+      "Entries": [
+        "Suspension bridge (for hits) -- 吊り橋(ヒット用)"
+      ]
+    },
+    {
+      "ID": 965220,
+      "Entries": [
+        "Suspension bridge (for events) -- 吊り橋(イベント用)"
+      ]
+    },
+    {
+      "ID": 965300,
+      "Entries": [
+        "Aristocratic corpse -- 貴族死体"
+      ]
+    },
+    {
+      "ID": 965400,
+      "Entries": [
+        "Litter (OBJ that hides the valley) -- 輿（谷の隠れるOBJ）"
+      ]
+    },
+    {
+      "ID": 965500,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 965510,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 965520,
+      "Entries": [
+        "Root (wire point) -- 根(ワイヤーポイント)"
+      ]
+    },
+    {
+      "ID": 965550,
+      "Entries": [
+        "Snake metal fittings 1 -- 蛇の金具1"
+      ]
+    },
+    {
+      "ID": 965560,
+      "Entries": [
+        "Snake metal fittings 2 -- 蛇の金具2"
+      ]
+    },
+    {
+      "ID": 965600,
+      "Entries": [
+        "Power God&#39;s nail hiding -- 力神の釘隠し"
+      ]
+    },
+    {
+      "ID": 965700,
+      "Entries": [
+        "Wooden Shachihoko (Large) -- 木製しゃちほこ(大)"
+      ]
+    },
+    {
+      "ID": 965710,
+      "Entries": [
+        "Wooden shachihoko (small) -- 木製しゃちほこ(小)"
+      ]
+    },
+    {
+      "ID": 965800,
+      "Entries": [
+        "Shachihoko (Large) -- しゃちほこ(大)"
+      ]
+    },
+    {
+      "ID": 965810,
+      "Entries": [
+        "Shachihoko (Small) -- しゃちほこ(小)"
+      ]
+    },
+    {
+      "ID": 965900,
+      "Entries": [
+        "Baluster -- 欄干"
+      ]
+    },
+    {
+      "ID": 966000,
+      "Entries": [
+        "Kagaribi -- 篝火"
+      ]
+    },
+    {
+      "ID": 966050,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 966051,
+      "Entries": [
+        "Bonfire with pot -- 鍋付焚火"
+      ]
+    },
+    {
+      "ID": 966060,
+      "Entries": [
+        "Smoke signal -- 狼煙"
+      ]
+    },
+    {
+      "ID": 966100,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 966110,
+      "Entries": [
+        "Candlestick -- 燭台"
+      ]
+    },
+    {
+      "ID": 966210,
+      "Entries": [
+        "Shrine -- 祠"
+      ]
+    },
+    {
+      "ID": 969000,
+      "Entries": [
+        "Nezasa -- ネザサ"
+      ]
+    },
+    {
+      "ID": 969001,
+      "Entries": [
+        "Nezasa (more) -- ネザサ（多め）"
+      ]
+    },
+    {
+      "ID": 969002,
+      "Entries": [
+        "Nezasa (less) -- ネザサ（少なめ）"
+      ]
+    },
+    {
+      "ID": 969010,
+      "Entries": [
+        "Fern -- シダ"
+      ]
+    },
+    {
+      "ID": 969020,
+      "Entries": [
+        "Miscanthus -- ススキ"
+      ]
+    },
+    {
+      "ID": 969021,
+      "Entries": [
+        "Tall pampas grass -- 背の高いススキ"
+      ]
+    },
+    {
+      "ID": 969030,
+      "Entries": [
+        "Carex lenta -- ナキリスゲ"
+      ]
+    },
+    {
+      "ID": 969040,
+      "Entries": [
+        "Akinokirinsou -- アキノキリンソウ"
+      ]
+    },
+    {
+      "ID": 969050,
+      "Entries": [
+        "Needlesa -- センダングサ"
+      ]
+    },
+    {
+      "ID": 969060,
+      "Entries": [
+        "Imperata cylindrica -- チガヤ"
+      ]
+    },
+    {
+      "ID": 969070,
+      "Entries": [
+        "Yabutachibana -- ヤブタチバナ"
+      ]
+    },
+    {
+      "ID": 969071,
+      "Entries": [
+        "Ardisia japonica -- ヤブコウジ"
+      ]
+    },
+    {
+      "ID": 969080,
+      "Entries": [
+        "Kobanogamazumi -- コバノガマズミ"
+      ]
+    },
+    {
+      "ID": 969900,
+      "Entries": [
+        "Nezasa (with a lot of collisions) -- ネザサ（多めコリジョンあり）"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    }
+  ]
+}

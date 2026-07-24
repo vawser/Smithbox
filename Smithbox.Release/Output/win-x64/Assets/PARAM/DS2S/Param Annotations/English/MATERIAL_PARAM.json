@@ -1,0 +1,23 @@
+{
+  "Param": "MATERIAL_PARAM",
+  "Type": "MATERIAL_PARAM",
+  "Name": "MATERIAL_PARAM",
+  "Description": "Defines material properties used for physical and gameplay interactions such as fluid behavior and projectile penetration.",
+  "Fields": [
+    {
+      "Field": "isLiquid",
+      "Name": "Is Liquid",
+      "Description": "Determines whether the material behaves as a liquid (e.g., water, lava)."
+    },
+    {
+      "Field": "isArrowPenetrate",
+      "Name": "Allows Arrow Penetration",
+      "Description": "Determines whether arrows can stick into or pass through the material."
+    },
+    {
+      "Field": "padding",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

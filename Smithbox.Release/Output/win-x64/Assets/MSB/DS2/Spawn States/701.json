@@ -1,0 +1,14 @@
+{
+  "id": "701",
+  "name": "Child Shanalotte",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

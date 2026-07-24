@@ -1,0 +1,83 @@
+{
+  "Name": "SkeletonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "does not move"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "NPC common neck"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "NPC Common Torso 1"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "NPC Common Torso 2"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "heroine"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "important person"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Blacksmith Edo"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "slave soldier"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "former aristocratic lady"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "puppeteer"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "beggar woman"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Baldwin"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "beggar man"
+      ]
+    }
+  ]
+}

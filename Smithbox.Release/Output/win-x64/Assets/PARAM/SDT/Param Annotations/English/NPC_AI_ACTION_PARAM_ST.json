@@ -1,0 +1,63 @@
+{
+  "Param": "NPC_AI_ACTION_PARAM_ST",
+  "Type": "NPC_AI_ACTION_PARAM_ST",
+  "Name": "NPC_AI_ACTION_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "moveDir",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "key1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "key2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "key3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bMoveDirHold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bKeyHold1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bKeyHold2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bKeyHold3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bLifeEndSuccess",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

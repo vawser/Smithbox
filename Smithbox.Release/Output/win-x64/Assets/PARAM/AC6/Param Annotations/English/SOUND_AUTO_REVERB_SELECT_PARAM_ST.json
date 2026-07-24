@@ -1,0 +1,63 @@
+{
+  "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "reverbType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AreaNo",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IndoorOutdoor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useDistNoA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useDistNoB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistMinA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistMaxA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistMinB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistMaxB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NoHitNumMin",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

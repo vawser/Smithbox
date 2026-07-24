@@ -1,0 +1,118 @@
+{
+  "Param": "CAMERA_RUMBLE_PARAM_ST",
+  "Type": "CAMERA_RUMBLE_PARAM_ST",
+  "Name": "CAMERA_RUMBLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "rumbleId",
+      "Name": "振動ID",
+      "Description": "振動ID"
+    },
+    {
+      "Field": "hdPadRumbleId",
+      "Name": "HDパッド振動ID",
+      "Description": "HD振動ID"
+    },
+    {
+      "Field": "beginDist",
+      "Name": "減衰開始距離[m]",
+      "Description": "減衰開始距離[m](TAEでの指定時に-1のときは距離減衰処理無効)"
+    },
+    {
+      "Field": "endDist",
+      "Name": "減衰終了距離[m]",
+      "Description": "減衰終了距離[m]"
+    },
+    {
+      "Field": "fovApplyType",
+      "Name": "画角適用方法",
+      "Description": "画角適用方法"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "値が大きいほど優先される"
+    },
+    {
+      "Field": "targetType",
+      "Name": "振動対象（PC用）",
+      "Description": "PCのTAEから呼び出し時のみ有効\r\nこちらを「PCのみ」にすると距離減衰関連パラメーターは無効化される"
+    },
+    {
+      "Field": "isUpdateDist",
+      "Name": "距離減衰リアルタイム反映",
+      "Description": "距離減衰リアルタイム反映"
+    },
+    {
+      "Field": "isUpdateLand",
+      "Name": "空中地上倍率リアルタイム反映",
+      "Description": "空中地上倍率リアルタイム反映"
+    },
+    {
+      "Field": "hdPadSlotIdx",
+      "Name": "HD振動再生スロットIdx",
+      "Description": "HD振動再生スロットインデックス(0～3)"
+    },
+    {
+      "Field": "pad03",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "lifeTimeSec",
+      "Name": "寿命[s]",
+      "Description": "寿命"
+    },
+    {
+      "Field": "stopRate",
+      "Name": "減衰一時停止時倍率[％]",
+      "Description": "減衰一時停止時倍率[％]"
+    },
+    {
+      "Field": "stopBeginDist",
+      "Name": "減衰一時停止開始距離[m]",
+      "Description": "減衰一時停止開始距離[m]"
+    },
+    {
+      "Field": "stopEndDist",
+      "Name": "減衰一時停止終了距離[m]",
+      "Description": "減衰一時停止終了距離[m]"
+    },
+    {
+      "Field": "timeChangeRate",
+      "Name": "時間変化振動倍率[％]",
+      "Description": "振動終端倍率[％]"
+    },
+    {
+      "Field": "changeTime",
+      "Name": "変化時間[s]",
+      "Description": "時間変化振動倍率[s]"
+    },
+    {
+      "Field": "airRateSelf",
+      "Name": "空中倍率_自分[％]",
+      "Description": "空中倍率_自分[％]"
+    },
+    {
+      "Field": "landRateSelf",
+      "Name": "地上倍率_自分[％]",
+      "Description": "地上倍率_自分[％]"
+    },
+    {
+      "Field": "airRateAnother",
+      "Name": "空中倍率_相手[％]",
+      "Description": "空中倍率_相手[％]"
+    },
+    {
+      "Field": "landRateAnother",
+      "Name": "地上倍率_相手[％]",
+      "Description": "地上倍率_相手[％]"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

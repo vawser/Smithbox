@@ -1,0 +1,344 @@
+{
+  "Key": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
+    },
+    {
+      "Key": "10020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size"
+        }
+      ]
+    },
+    {
+      "Key": "10030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium size"
+        }
+      ]
+    },
+    {
+      "Key": "10040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    },
+    {
+      "Key": "10050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
+    },
+    {
+      "Key": "10060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
+    },
+    {
+      "Key": "10070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special special large size"
+        }
+      ]
+    },
+    {
+      "Key": "21540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Skeleton Aristocrat"
+        }
+      ]
+    },
+    {
+      "Key": "22120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated-Wyvern"
+        }
+      ]
+    },
+    {
+      "Key": "22235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Giant Rat"
+        }
+      ]
+    },
+    {
+      "Key": "23033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Double-sided Warrior: Snake Head"
+        }
+      ]
+    },
+    {
+      "Key": "23050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Demon Knight"
+        }
+      ]
+    },
+    {
+      "Key": "23096",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-New Titan Senior Soldier (Deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "23097",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - New Titan Advanced Soldier (Living)"
+        }
+      ]
+    },
+    {
+      "Key": "23180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Vagrant"
+        }
+      ]
+    },
+    {
+      "Key": "23240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated-Gargoyle"
+        }
+      ]
+    },
+    {
+      "Key": "23250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Warrior in the Mirror"
+        }
+      ]
+    },
+    {
+      "Key": "23260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Butcher"
+        }
+      ]
+    },
+    {
+      "Key": "23320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight A"
+        }
+      ]
+    },
+    {
+      "Key": "23330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight B"
+        }
+      ]
+    },
+    {
+      "Key": "23340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight C"
+        }
+      ]
+    },
+    {
+      "Key": "25000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Jabba the Hutt"
+        }
+      ]
+    },
+    {
+      "Key": "25010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Naga"
+        }
+      ]
+    },
+    {
+      "Key": "25030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Man Scorpion♀"
+        }
+      ]
+    },
+    {
+      "Key": "25040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "25061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Agaduran's Stand"
+        }
+      ]
+    },
+    {
+      "Key": "25146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Old King"
+        }
+      ]
+    },
+    {
+      "Key": "26000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "26020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Beautiful Frog"
+        }
+      ]
+    },
+    {
+      "Key": "26030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Spider Queen"
+        }
+      ]
+    },
+    {
+      "Key": "26031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Spider Queen (Cliff)"
+        }
+      ]
+    },
+    {
+      "Key": "26070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Molten Demon"
+        }
+      ]
+    },
+    {
+      "Key": "26110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Heavy Cavalry"
+        }
+      ]
+    },
+    {
+      "Key": "26191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Silver Chariot"
+        }
+      ]
+    },
+    {
+      "Key": "26250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Ornstein"
+        }
+      ]
+    },
+    {
+      "Key": "26260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Forgotten Sinners"
+        }
+      ]
+    },
+    {
+      "Key": "26270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's armor form"
+        }
+      ]
+    }
+  ]
+}

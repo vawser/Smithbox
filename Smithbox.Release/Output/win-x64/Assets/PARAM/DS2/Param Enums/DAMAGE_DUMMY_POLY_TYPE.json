@@ -1,0 +1,29 @@
+{
+  "Key": "DAMAGE_DUMMY_POLY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_DUMMY_POLY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    }
+  ]
+}

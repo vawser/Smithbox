@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CAMERA_RUMBLE_PARAM_ST</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 rumbleId = -1">
+      <DisplayName>振動ID</DisplayName>
+      <Description>振動ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 hdPadRumbleId">
+      <DisplayName>HDパッド振動ID</DisplayName>
+      <Description>HD振動ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1002</SortID>
+    </Field>
+    <Field Def="f32 beginDist = 1">
+      <DisplayName>減衰開始距離[m]</DisplayName>
+      <Description>減衰開始距離[m](TAEでの指定時に-1のときは距離減衰処理無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="f32 endDist = 5">
+      <DisplayName>減衰終了距離[m]</DisplayName>
+      <Description>減衰終了距離[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="u8 fovApplyType">
+      <DisplayName>画角適用方法</DisplayName>
+      <Enum>CAMERA_RUMBLE_PARAM_FOV_TYPE</Enum>
+      <Description>画角適用方法</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 priority">
+      <DisplayName>優先度</DisplayName>
+      <Description>値が大きいほど優先される</Description>
+      <SortID>1003</SortID>
+    </Field>
+    <Field Def="u8 targetType">
+      <DisplayName>振動対象（PC用）</DisplayName>
+      <Enum>CAMERA_RUMBLE_PARAM_TARGET_TYPE</Enum>
+      <Description>PCのTAEから呼び出し時のみ有効
+こちらを「PCのみ」にすると距離減衰関連パラメーターは無効化される</Description>
+      <Maximum>1</Maximum>
+      <SortID>1004</SortID>
+    </Field>
+    <Field Def="u8 isUpdateDist:1 = 1">
+      <DisplayName>距離減衰リアルタイム反映</DisplayName>
+      <Description>距離減衰リアルタイム反映</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 isUpdateLand:1 = 1">
+      <DisplayName>空中地上倍率リアルタイム反映</DisplayName>
+      <Description>空中地上倍率リアルタイム反映</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 hdPadSlotIdx:2">
+      <DisplayName>HD振動再生スロットIdx</DisplayName>
+      <Description>HD振動再生スロットインデックス(0～3)</Description>
+      <Maximum>3</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="dummy8 pad03:4">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="f32 lifeTimeSec">
+      <DisplayName>寿命[s]</DisplayName>
+      <Description>寿命</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 stopRate">
+      <DisplayName>減衰一時停止時倍率[％]</DisplayName>
+      <Description>減衰一時停止時倍率[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="f32 stopBeginDist = -1">
+      <DisplayName>減衰一時停止開始距離[m]</DisplayName>
+      <Description>減衰一時停止開始距離[m]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1030</SortID>
+    </Field>
+    <Field Def="f32 stopEndDist = -1">
+      <DisplayName>減衰一時停止終了距離[m]</DisplayName>
+      <Description>減衰一時停止終了距離[m]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1040</SortID>
+    </Field>
+    <Field Def="f32 timeChangeRate = 100">
+      <DisplayName>時間変化振動倍率[％]</DisplayName>
+      <Description>振動終端倍率[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 changeTime">
+      <DisplayName>変化時間[s]</DisplayName>
+      <Description>時間変化振動倍率[s]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 airRateSelf = 100">
+      <DisplayName>空中倍率_自分[％]</DisplayName>
+      <Description>空中倍率_自分[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 landRateSelf = 100">
+      <DisplayName>地上倍率_自分[％]</DisplayName>
+      <Description>地上倍率_自分[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 airRateAnother = 100">
+      <DisplayName>空中倍率_相手[％]</DisplayName>
+      <Description>空中倍率_相手[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 landRateAnother = 100">
+      <DisplayName>地上倍率_相手[％]</DisplayName>
+      <Description>地上倍率_相手[％]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[28]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1102</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

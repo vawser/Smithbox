@@ -1,0 +1,1571 @@
+{
+  "Name": "ResourceItemLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 1980,
+      "Entries": [
+        "Spirit Emblem x2 - 90%, Spirit Emblem x1 - 10%"
+      ]
+    },
+    {
+      "ID": 1985,
+      "Entries": [
+        "Regenerative Power Fragemnt x10"
+      ]
+    },
+    {
+      "ID": 1986,
+      "Entries": [
+        "Regenerative Power Fragemnt x10"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000040,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000050,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000060,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000070,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1000080,
+      "Entries": [
+        "Hirata Estate - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100020,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100030,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100040,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100050,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100060,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100070,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100080,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100090,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1100910,
+      "Entries": [
+        "Ashina Outskirts - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110010,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110020,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110030,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110040,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110050,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110051,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110052,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1110053,
+      "Entries": [
+        "Ashina Castle - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1120000,
+      "Entries": [
+        "Ashina Reservoir - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1120010,
+      "Entries": [
+        "Ashina Reservoir - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1120020,
+      "Entries": [
+        "Ashina Reservoir - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300010,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300020,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300030,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300040,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1300050,
+      "Entries": [
+        "Abandoned Dungeon - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500020,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500030,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500040,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500050,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500060,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500070,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500080,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500090,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500110,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500120,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1500130,
+      "Entries": [
+        "Mibu Village - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700010,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700020,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700030,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700040,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700050,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700060,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700070,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700080,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700090,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700100,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700110,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700120,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700130,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700140,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700150,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700160,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700170,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700180,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700190,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700200,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700210,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700220,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 1700230,
+      "Entries": [
+        "Sunken Valley - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000020,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000030,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000040,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000050,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000060,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000070,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000080,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000090,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000110,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000120,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000130,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000140,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000150,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000160,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000170,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000180,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000190,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000200,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000210,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000220,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000230,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000240,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000250,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000260,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000270,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000280,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000290,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000300,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2000310,
+      "Entries": [
+        "Senpou Temple - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500010,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500020,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500030,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500040,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500050,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500060,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500070,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500080,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500090,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500100,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500110,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500120,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500130,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 2500140,
+      "Entries": [
+        "Fountainhead Palace - Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620000,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620010,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620020,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620030,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620040,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620050,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620060,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620070,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620080,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620090,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620100,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620110,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620120,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620130,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620140,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620150,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620160,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620170,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620180,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620190,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620200,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620210,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620220,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620230,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620240,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620250,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620260,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620270,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620280,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9620900,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623000,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623010,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623020,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623030,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623040,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623050,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9623900,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626000,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626010,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626020,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626030,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626040,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626050,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626060,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626070,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626080,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626090,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626100,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626110,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626120,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626130,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626140,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626150,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626160,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 9626900,
+      "Entries": [
+        "Spirit Emblem x1"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Spirit Emblem x1 - 50%"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Spirit Emblem x1 - 50%, Spirit Emblem x2 - 20%"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Spirit Emblem x1 - 30%"
+      ]
+    },
+    {
+      "ID": 10000090,
+      "Entries": [
+        "Spirit Emblem x3 - 75%"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Spirit Emblem x2 - 80%, Spirit Emblem x5 - 20%"
+      ]
+    },
+    {
+      "ID": 10000190,
+      "Entries": [
+        "Spirit Emblem x9"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Spirit Emblem x1 - 40%"
+      ]
+    },
+    {
+      "ID": 10000290,
+      "Entries": [
+        "Spirit Emblem x3 - 40%"
+      ]
+    },
+    {
+      "ID": 10000300,
+      "Entries": [
+        "Spirit Emblem x2 - 80%, Spirit Emblem x5 - 20%"
+      ]
+    },
+    {
+      "ID": 10000400,
+      "Entries": [
+        "Spirit Emblem x1 - 10%"
+      ]
+    },
+    {
+      "ID": 10000410,
+      "Entries": [
+        "Spirit Emblem x1 - 10%, Spirit Emblem x2 - 10%"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "Spirit Emblem x2 - 20%"
+      ]
+    },
+    {
+      "ID": 10000590,
+      "Entries": [
+        "Spirit Emblem x2 - 70%"
+      ]
+    },
+    {
+      "ID": 10000600,
+      "Entries": [
+        "Spirit Emblem x1 - 70%, Spirit Emblem x3 - 30%"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "Spirit Emblems x15"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "Regenerative Power Fragment x5"
+      ]
+    },
+    {
+      "ID": 10005001,
+      "Entries": [
+        "Regenerative Power Fragment x2"
+      ]
+    },
+    {
+      "ID": 10005010,
+      "Entries": [
+        "Regenerative Power Fragment x7 - 30%"
+      ]
+    },
+    {
+      "ID": 10005011,
+      "Entries": [
+        "Regenerative Power Fragment x3"
+      ]
+    },
+    {
+      "ID": 10005020,
+      "Entries": [
+        "Regenerative Power Fragment x3 - 30%"
+      ]
+    },
+    {
+      "ID": 10005021,
+      "Entries": [
+        "Regenerative Power Fragment x2"
+      ]
+    },
+    {
+      "ID": 10005100,
+      "Entries": [
+        "Regenerative Power Fragment x12"
+      ]
+    },
+    {
+      "ID": 10005101,
+      "Entries": [
+        "Regenerative Power Fragment x6"
+      ]
+    },
+    {
+      "ID": 10005200,
+      "Entries": [
+        "Regenerative Power Fragment x5 - 30%"
+      ]
+    },
+    {
+      "ID": 10005201,
+      "Entries": [
+        "Regenerative Power Fragment x2 - 30%"
+      ]
+    },
+    {
+      "ID": 10005300,
+      "Entries": [
+        "Regenerative Power Fragment x12"
+      ]
+    },
+    {
+      "ID": 10005301,
+      "Entries": [
+        "Regenerative Power Fragment x6"
+      ]
+    },
+    {
+      "ID": 10005400,
+      "Entries": [
+        "Regenerative Power Fragment x2 - 30%"
+      ]
+    },
+    {
+      "ID": 10005401,
+      "Entries": [
+        "Regenerative Power Fragment x1"
+      ]
+    },
+    {
+      "ID": 10005410,
+      "Entries": [
+        "Regenerative Power Fragment x3 - 30%"
+      ]
+    },
+    {
+      "ID": 10005411,
+      "Entries": [
+        "Regenerative Power Fragment x2"
+      ]
+    },
+    {
+      "ID": 10005500,
+      "Entries": [
+        "Regenerative Power Fragment x3 - 30%"
+      ]
+    },
+    {
+      "ID": 10005501,
+      "Entries": [
+        "Regenerative Power Fragment x2"
+      ]
+    },
+    {
+      "ID": 10005600,
+      "Entries": [
+        "Regenerative Power Fragment x7 - 30%"
+      ]
+    },
+    {
+      "ID": 10005601,
+      "Entries": [
+        "Regenerative Power Fragment x3"
+      ]
+    },
+    {
+      "ID": 10005800,
+      "Entries": [
+        "Regenerative Power Fragment x10"
+      ]
+    },
+    {
+      "ID": 10005801,
+      "Entries": [
+        "Regenerative Power Fragment x5"
+      ]
+    },
+    {
+      "ID": 10005900,
+      "Entries": [
+        "Regenerative Power Fragment x67"
+      ]
+    },
+    {
+      "ID": 10005901,
+      "Entries": [
+        "Regenerative Power Fragment x33"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Spirit Emblem x5"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 10205000,
+      "Entries": [
+        "Regenerative Power Fragment x50"
+      ]
+    },
+    {
+      "ID": 10205010,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 10405000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 10705000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 10805000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 11305000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 13505000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 13705000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 50205000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Spirit Emblem x10"
+      ]
+    },
+    {
+      "ID": 70005000,
+      "Entries": [
+        "Regenerative Power x1"
+      ]
+    },
+    {
+      "ID": 999999100,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999110,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999120,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999130,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999140,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999150,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999151,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999152,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999160,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999161,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999162,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999170,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999171,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999172,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999180,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999190,
+      "Entries": [
+        "For Testing"
+      ]
+    },
+    {
+      "ID": 999999200,
+      "Entries": [
+        "For Testing"
+      ]
+    }
+  ]
+}

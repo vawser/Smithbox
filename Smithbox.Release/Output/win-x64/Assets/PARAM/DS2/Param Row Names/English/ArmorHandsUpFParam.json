@@ -1,0 +1,89 @@
+{
+  "Name": "ArmorHandsUpFParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test -- テストデータ"
+      ]
+    },
+    {
+      "ID": 204310,
+      "Entries": [
+        "Fist_Both Hands_Stance -- 拳_両手_構え"
+      ]
+    },
+    {
+      "ID": 214310,
+      "Entries": [
+        "Dagger_Both Hands_Stance -- 短剣_両手_構え"
+      ]
+    },
+    {
+      "ID": 244310,
+      "Entries": [
+        "Double-edged sword_both hands_stance -- 双刃剣_両手_構え"
+      ]
+    },
+    {
+      "ID": 254310,
+      "Entries": [
+        "Spear_Both Hands_Stance -- 槍_両手_構え"
+      ]
+    },
+    {
+      "ID": 294310,
+      "Entries": [
+        "Straight sword_both hands_stance -- 直剣_両手_構え"
+      ]
+    },
+    {
+      "ID": 364310,
+      "Entries": [
+        "Two-handed axe_both hands_stance -- 両手斧_両手_構え"
+      ]
+    },
+    {
+      "ID": 364311,
+      "Entries": [
+        "Two-handed axe_both-handed_stance_thick weapon -- 両手斧_両手_構え_太い武器"
+      ]
+    },
+    {
+      "ID": 404310,
+      "Entries": [
+        "Two-handed bow_both-handed_stance -- 両手弓_両手_構え"
+      ]
+    },
+    {
+      "ID": 414310,
+      "Entries": [
+        "Two hands large bow_both hands_stance -- 両手大弓_両手_構え"
+      ]
+    },
+    {
+      "ID": 424310,
+      "Entries": [
+        "One-handed bow_both hands_stance -- 片手ボウ_両手_構え"
+      ]
+    },
+    {
+      "ID": 444310,
+      "Entries": [
+        "Small shield_both hands_stance -- 小盾_両手_構え"
+      ]
+    },
+    {
+      "ID": 454310,
+      "Entries": [
+        "Medium Shield_Both Hands_Stance -- 中盾_両手_構え"
+      ]
+    },
+    {
+      "ID": 464310,
+      "Entries": [
+        "Large shield_both hands_stance -- 大盾_両手_構え"
+      ]
+    }
+  ]
+}

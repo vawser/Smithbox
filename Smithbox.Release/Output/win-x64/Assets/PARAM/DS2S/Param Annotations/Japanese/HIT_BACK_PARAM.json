@@ -1,0 +1,58 @@
+{
+  "Param": "HIT_BACK_PARAM",
+  "Type": "HIT_BACK_PARAM",
+  "Name": "HIT_BACK_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "superSmallHitBackDistance",
+      "Name": "攻撃弾き 反動 極小",
+      "Description": ""
+    },
+    {
+      "Field": "superSmallHitBackDuration",
+      "Name": "攻撃弾き 硬直 極小",
+      "Description": ""
+    },
+    {
+      "Field": "smallHitBackDistance",
+      "Name": "攻撃弾き 反動 小",
+      "Description": ""
+    },
+    {
+      "Field": "smallHitBackDuration",
+      "Name": "攻撃弾き 硬直 小",
+      "Description": ""
+    },
+    {
+      "Field": "normalHitBackDistance",
+      "Name": "攻撃弾き 反動 中",
+      "Description": ""
+    },
+    {
+      "Field": "normalHitBackDuration",
+      "Name": "攻撃弾き 硬直 中",
+      "Description": ""
+    },
+    {
+      "Field": "largeHitBackDistance",
+      "Name": "攻撃弾き 反動 大",
+      "Description": ""
+    },
+    {
+      "Field": "largeHitBackDuration",
+      "Name": "攻撃弾き 硬直 大",
+      "Description": ""
+    },
+    {
+      "Field": "superLargeHitBackDistance",
+      "Name": "攻撃弾き 反動 特大",
+      "Description": ""
+    },
+    {
+      "Field": "superLargeHitBackDuration",
+      "Name": "攻撃弾き 硬直 特大",
+      "Description": ""
+    }
+  ]
+}

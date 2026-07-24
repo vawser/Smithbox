@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>SPELL_SOUL_CONSUME_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 consumeType">
+            <DisplayName>計算式</DisplayName>
+            <Enum>SPELL_SOUL_CONSUME_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[3]">
+            <DisplayName>パディング用ダミー</DisplayName>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u32 consumeSoul">
+            <DisplayName>消費ソウル量</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageId01">
+            <DisplayName>バレット&amp;ダメージID 1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageId02">
+            <DisplayName>バレット&amp;ダメージID 2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageId03">
+            <DisplayName>バレット&amp;ダメージID 3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageId04">
+            <DisplayName>バレット&amp;ダメージID 4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageId05">
+            <DisplayName>バレット&amp;ダメージID 5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageLeftId01">
+            <DisplayName>バレット&amp;ダメージID 左1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageLeftId02">
+            <DisplayName>バレット&amp;ダメージID 左2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageLeftId03">
+            <DisplayName>バレット&amp;ダメージID 左3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageLeftId04">
+            <DisplayName>バレット&amp;ダメージID 左4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u32 bulletAndDamageLeftId05">
+            <DisplayName>バレット&amp;ダメージID 左5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

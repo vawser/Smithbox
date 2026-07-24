@@ -1,0 +1,140 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Project_Enable_Auto_Load",
+      "Text": "启用 Smithbox 启动时自动加载"
+    },
+    {
+      "Key": "PREF_Project_Enable_Auto_Load_TT",
+      "Text": "启用后，启动 Smithbox 时将自动加载先前加载的项目。"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment",
+      "Text": "启用自动加载分配"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment_TT",
+      "Text": "启用后，加载项目将自动将其标记为'自动加载'。"
+    },
+    {
+      "Key": "PREF_Project_Default_Mod_Directory",
+      "Text": "默认项目目录"
+    },
+    {
+      "Key": "PREF_Project_Default_Mod_Directory_TT",
+      "Text": "创建新项目时在项目目录选择中使用的默认目录。"
+    },
+    {
+      "Key": "PREF_Project_Default_Data_Directory",
+      "Text": "默认数据目录"
+    },
+    {
+      "Key": "PREF_Project_Default_Data_Directory_TT",
+      "Text": "创建新项目时在数据目录选择中使用的默认目录。"
+    },
+    {
+      "Key": "PREF_Project_Enable_Backup_Saves",
+      "Text": "启用备份保存"
+    },
+    {
+      "Key": "PREF_Project_Enable_Backup_Saves_TT",
+      "Text": "启用后，保存事件期间会创建备份文件（即 .bak 和 .prev 文件）。"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_For_Additions",
+      "Text": "启用项目目录新增检测"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_For_Additions_TT",
+      "Text": "启用后，将检测仅存在于项目目录中的新文件。如果您使用自定义文件并希望它们出现在 Smithbox 中，则需要此项。\n禁用后，项目启动更快。"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_Strict_Mode",
+      "Text": "启用严格项目目录扫描"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_Strict_Mode_TT",
+      "Text": "启用后，在将文件添加到项目文件列表之前将执行额外验证。"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Save",
+      "Text": "启用自动保存"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Save_TT",
+      "Text": "启用后，所有已启用的编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Interval",
+      "Text": "自动保存间隔"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Interval_TT",
+      "Text": "自动保存的频率。以秒为单位。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Map_Editor",
+      "Text": "包含地图编辑器"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Map_Editor_TT",
+      "Text": "启用后，地图编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Param_Editor",
+      "Text": "包含 Param 编辑器"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Param_Editor_TT",
+      "Text": "启用后，Param 编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Text_Editor",
+      "Text": "包含文本编辑器"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Text_Editor_TT",
+      "Text": "启用后，文本编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor",
+      "Text": "包含 Graphics Param 编辑器"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor_TT",
+      "Text": "启用后，Graphics Param 编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Material_Editor",
+      "Text": "包含材质编辑器"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Material_Editor_TT",
+      "Text": "启用后，材质编辑器将自动保存。"
+    },
+    {
+      "Key": "PREF_Project_ME3_Profile_Directory",
+      "Text": "ME3 配置文件目录"
+    },
+    {
+      "Key": "PREF_Project_ME3_Profile_Directory_TT",
+      "Text": "选择要放置生成的 ME3 配置文件的目录。"
+    },
+    {
+      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects",
+      "Text": "在 Dark Souls：重制版项目中使用 PTDE 碰撞体"
+    },
+    {
+      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects_TT",
+      "Text": "启用后，如果存在 Dark Souls：准备赴死版安装，将使用其中的碰撞文件进行碰撞体和导航网格。"
+    },
+    {
+      "Key": "PREF_PTDE_Data_Path",
+      "Text": "PTDE 安装路径"
+    },
+    {
+      "Key": "PREF_PTDE_Data_Path_TT",
+      "Text": "Dark Souls：准备赴死版的安装目录。"
+    }
+  ]
+}

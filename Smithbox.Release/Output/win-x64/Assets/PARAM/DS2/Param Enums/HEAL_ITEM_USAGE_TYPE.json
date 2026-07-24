@@ -1,0 +1,38 @@
+{
+  "Key": "HEAL_ITEM_USAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HEAL_ITEM_USAGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Permitted"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited if invaded"
+        }
+      ]
+    }
+  ]
+}

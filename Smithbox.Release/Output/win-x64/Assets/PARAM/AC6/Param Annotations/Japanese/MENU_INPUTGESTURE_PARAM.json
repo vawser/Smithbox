@@ -1,0 +1,38 @@
+{
+  "Param": "MENU_INPUTGESTURE_PARAM",
+  "Type": "MENU_INPUTGESTURE_PARAM",
+  "Name": "MENU_INPUTGESTURE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "key",
+      "Name": "メイン",
+      "Description": "メイン入力判定キー"
+    },
+    {
+      "Field": "shiftInput",
+      "Name": "シフト",
+      "Description": "シフト入力判定キー"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "----",
+      "Description": "予約"
+    },
+    {
+      "Field": "enableSimpleGuide",
+      "Name": "簡易表示",
+      "Description": "簡易キーガイドに表示するか\r\n×：詳細キーガイドのみ表示"
+    },
+    {
+      "Field": "guideTextID",
+      "Name": "テキストID",
+      "Description": "キーガイドに表示するテキストのID\r\n-1： 「データ説明」を表示(デバッグ用機能)\r\n-1以外の負の値：SystemMessageのID"
+    },
+    {
+      "Field": "seID",
+      "Name": "SE ID",
+      "Description": "入力時に再生するSEのID"
+    }
+  ]
+}

@@ -1,0 +1,839 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "----"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Item] Name"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Item] Simple description"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Item] Trivia"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Item] Number of possessions"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Item] Warehouse possession number"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Item] Sort ID"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Item] Maximum number of items"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Item] Maximum number of items in the warehouse"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Consumables] Number of bullets consumed"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Consumables] Consumable upon use"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Consumables] Ability Modifier: Strength"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[Consumables] Ability Modifier: Skill"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "[Consumables] Ability Modifier: Shooting"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[Consumables] Ability Modifier: Magic"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "[Consumables] Required ability: Strength"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[Consumables] Required ability: Skill"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "[Consumables] Required ability: Shooting"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "[Consumables] Required ability: Magic"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Weapon] Type"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "[Weapon] Attack type name"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Weapon] Melee attack power"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Weapon] Gun Attack Power"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "[Weapon] Magic attack power"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "[Weapon] Fire attack power"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "[Weapon] Lightning attack power"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Weapon] Physical attack power"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "[Weapon] Gunfire additional attack power"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "[Weapon] Magical attack power"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "[Weapon] Fire attack power"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "[Weapon] Lightning additional attack power"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "[Weapon] Melee attribute attack power"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "[Weapon] Piercing attribute attack power"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "[Weapon] Strike melee attribute attack power"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "[Weapon] Number of bullets consumed"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "[Weapon] Critical attack power"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "[Weapon] Effect: Poison"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "[Weapon] Effect: Bleeding"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "[Weapon] Special damage effect: Moon"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "[Weapon] Special damage effect: Beast"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "[Weapon] Ability Modifier: Strength"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "[Weapon] Ability Modifier: Skill"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "[Weapon] Ability Modifier: Shooting"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "[Weapon] Ability Modifier: Magic"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Weapon] Required ability: Strength"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "[Weapon] Required ability: Skill"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "[Weapon] Required ability: Shooting"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "[Weapon] Required ability: Magic"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Weapon] Current durability"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "[Weapon] Maximum durability"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[Weapon] Number of magic stones equipped"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "[Weapon] Number of magic stone slots"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 1"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 2"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 3"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 4"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 5"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 6"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 7"
+      ]
+    },
+    {
+      "ID": 387,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 8"
+      ]
+    },
+    {
+      "ID": 388,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 9"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Armor] Damage reduction rate: Slashing"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Armor] Damage reduction rate: Piercing"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Armor] Damage reduction rate: Impact"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "[Armor] Damage reduction rate: Gunfire"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "[Armor] Damage reduction rate: Magic"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Armor] Damage reduction rate: Fire"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Armor] Damage reduction rate: Lightning"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Armor] Poison Resistance"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Armor] Bleeding resistance"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "[Armor] Madness Resistance"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "[Armor] Beastification Resistance"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Magic Stone] Color"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Magic Stone] Rank"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "[Magic Stone] Effect 0"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "[Magic Stone] Effect 1"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "[Magic Stone] Effect 2"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "[Magic Stone] Effect 3"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "[Magic Stone] Effect 4"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "[Magic Stone] Effect 5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Weapon Magic Stone] Slot Shape"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Body Gem] Type"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[Holy Grail] Type"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "[Holy Grail] Ritual Level"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "[Holy Grail] Sub-characteristic candidates 1"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "[Holy Grail] Sub-characteristic candidates 2"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "[Holy Grail] Sub-characteristic candidates 3"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "[Holy Grail] Sub-characteristic candidates 4"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "[Holy Grail] Sub-characteristic candidates 5"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[ PC Basics: Name"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[ PC Basics: Background"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[ PC Basics: Gifts"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[ PC Basics: Gender"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[ PC Basic Level"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[ PC Basic: Souls owned"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "[ PC Basics: Pledge"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "[ PC Basics SAN value"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[ PC Basic: Required Souls"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[ PC 1st: Physical strength"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "[ PC 1st: Mental strength"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "[ PC 1st: Muscle strength"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "[ PC 1st: Skills"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "[ PC1st: Shooting"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "[ PC 1st: Magic"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "[ PC Secondary HP"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "[ PC Secondary: Maximum HP"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "[ PC Secondary: Stamina"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "[ PC Secondary: Equipment weight"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "[ PC 2nd: Item discovery ability"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "[ PC Secondary: Right Weapon 1 Attack Power"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "[ PC Secondary: Right Weapon 2 Attack Power"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "[ PC Secondary: Left Weapon 1 Attack Power"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "[ PC Secondary: Left Weapon 2 Attack Power"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "[ PC Secondary: Slash defense"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "[ PC Secondary: Pierce defense"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "[ PC Secondary: Strike defense"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "[ PC Secondary: Gunfire defense"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "[ PC Secondary Magic Defense"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "[ PC 2nd: Fire defense"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "[ PC Secondary: Lightning defense"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "[ PC Secondary: Slash cut rate"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "[ PC Secondary: Piercing cut rate"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "[ PCSecondary: Hitting cut rate"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "[ PC Secondary: Shooting cut rate"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "[ PC Secondary Magic Cut Rate"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "[ PC Secondary: Fire cut rate"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "[ PC Secondary: Lightning cut rate"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "[ PC 2nd: Poison Resistance"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "[ PC 2nd: Bleeding resistance"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "[ PC Secondary: Madness Resistance"
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        "[ PC 2nd: Beast Resistance"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "[ PC 】Body Gem Effect 1"
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        "[ PC 】Body Gem Effect 2"
+      ]
+    },
+    {
+      "ID": 10302,
+      "Entries": [
+        "[ PC 】Body Gem Effect 3"
+      ]
+    },
+    {
+      "ID": 10303,
+      "Entries": [
+        "[ PC 】Body Gem Effect 4"
+      ]
+    },
+    {
+      "ID": 10304,
+      "Entries": [
+        "[ PC 】Body Gem Effect 5"
+      ]
+    },
+    {
+      "ID": 10305,
+      "Entries": [
+        "[ PC 】Body Gem Effect 6"
+      ]
+    },
+    {
+      "ID": 10306,
+      "Entries": [
+        "[ PC 】Body Gem Effect 7"
+      ]
+    },
+    {
+      "ID": 10307,
+      "Entries": [
+        "[ PC 】Body Gem Effect 8"
+      ]
+    }
+  ]
+}

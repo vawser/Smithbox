@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="SOTFS">
+	<event id="100" name="Event 100"></event>
+	<event id="200" name="Event 200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="201" name="Event 201">
+		<s32 name="ID"/>
+		<s32 />
+		<s16 />
+		<s16 name="Dummy Poly ID"/>
+		<s32 />
+		<s16 />
+		<s16 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="202" name="Event 202">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="300" name="Event 300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="301" name="Event 301">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1220" name="Event 1220">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1230" name="Event 1230">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1420" name="Event 1420">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1502" name="Event 1502">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1504" name="Event 1504">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="1505" name="Event 1505">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2100" name="Event 2100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2101" name="Event 2101">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2103" name="Event 2103">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2104" name="Event 2104">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2105" name="Event 2105">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2106" name="Event 2106">
+		<s32 />
+		<s32 />
+		<!-- FFX ID? -->
+		<s32 />
+		<!-- Dummy Poly ID? -->
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2200" name="Event 2200">
+		<s32 name="ID"/>
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2201" name="Event 2201">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2202" name="Bullet Behavior">
+		<s32 name="Player Damage ID" ref="PlayerDamageParam"/>
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2203" name="Event 2203">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2204" name="Event 2204">
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2300" name="Event 2300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2301" name="Event 2301">
+		<s32 name="ID 1"/>
+		<s32 name="ID 2"/>
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2401" name="Event 2401">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2402" name="Event 2402">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2500" name="Event 2500">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2501" name="Event 2501">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2502" name="Event 2502">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="2600" name="Event 2600">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="101100" name="Event 101100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110000" name="Event 110000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110100" name="Event 110100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110200" name="Event 110200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110210" name="Event 110210">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110300" name="Event 110300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110400" name="Event 110400">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110500" name="Event 110500">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110600" name="Event 110600">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="110700" name="Event 110700">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111000" name="Event 111000">
+		<f32/>
+		<s32/>
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111100" name="Event 111100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111300" name="Event 111300">
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111400" name="Event 111400">
+		<f32/>
+		<s32/>
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111500" name="Event 111500">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111600" name="Event 111600">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111700" name="Event 111700">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111800" name="Event 111800">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="111900" name="Event 111900">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="120100" name="Event 120100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="120200" name="Event 120200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="120300" name="Event 120300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="210000" name="Event 210000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="210100" name="Event 210100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="210200" name="Event 210200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="210099" name="Event 210099">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="220000" name="Event 220000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="220100" name="Event 220100">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="220200" name="Event 220200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="220300" name="Event 220300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="230000" name="Event 230000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="230001" name="Event 230001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="240000" name="Event 240000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="250000" name="Event 250000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260000" name="Event 260000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260001" name="Event 260001">
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260002" name="Event 260002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260003" name="Event 260003">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260004" name="Event 260004">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260005" name="Event 260005">
+		<f32 />
+		<f32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="260006" name="Event 260006">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="270000" name="Event 270000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="270001" name="Event 270001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="270002" name="Event 270002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="280000" name="Event 280000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="280100" name="Set Character Turn Rate">
+		<f32 name="Turn Rate"/>
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="290000" name="Event 290000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="290001" name="Event 290001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="290002" name="Event 290002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="300000" name="Event 300000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="300100" name="Event 300100">
+		<s32 />
+		<s32 name="Pad Rumble ID" ref="PadRumbleParam"/>
+		<f32 />
+		<f32 />
+		<f32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="300200" name="Event 300200">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="300300" name="Event 300300">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="310000" name="Event 310000">
+		<s32 name="Enemy Damage ID" ref="EnemyDamageParam"/>
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="500000" name="Event 500000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="500001" name="Event 500001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="500002" name="Event 500002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="500003" name="Event 500003">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="500004" name="Event 500004">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="502000" name="Event 502000">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="502001" name="Event 502001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="502002" name="Event 502002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="503001" name="Event 503001">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="503002" name="Event 503002">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="503004" name="Event 503004">
+		<s32 />
+		<s32 />
+		<s32 />
+		<s32 />
+	</event>
+	<event id="503005" name="Event 503005">
+		<s32 />
+		<s32 />
+	</event>
+</event_template>

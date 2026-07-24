@@ -1,0 +1,23 @@
+{
+  "Param": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
+  "Type": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
+  "Name": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minLv",
+      "Name": "最小値・初期値",
+      "Description": ""
+    },
+    {
+      "Field": "maxLv",
+      "Name": "最大値",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

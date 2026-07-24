@@ -1,0 +1,88 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Slash_M",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Slash_LLL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Thrust_M",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Thrust_LLL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Blow_M",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Blow_LLL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 PropertyLayoutID">
+      <DisplayName>プロパティレイアウトID</DisplayName>
+      <Description>メニューで表示するパラメータリストを メニュープロパティレイアウト.xlsmのIDで指定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 CategoryNameTextID">
+      <DisplayName>カテゴリ名ID</DisplayName>
+      <Description>カテゴリ名(メニューテキスト.xlsm)のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 CategoryIconID">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>カテゴリアイコン(EquipCategory)のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 SortID">
+      <DisplayName>ソートID</DisplayName>
+      <Description>カテゴリの並び順ソート用ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 HelpID">
+      <DisplayName>ヘルプID</DisplayName>
+      <Description>ヘルプ動画のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[12]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

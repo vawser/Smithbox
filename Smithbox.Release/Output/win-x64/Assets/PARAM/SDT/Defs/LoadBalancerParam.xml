@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>LOAD_BALANCER_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 lowerFpsThreshold = 23">
+      <Description>このFPSを下回ったら、ロードバランスレベルを1上げる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>1</Increment>
+      <SortID>1</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="f32 upperFpsThreshold = 27">
+      <Description>このFPSを上回ったら、ロードバランスレベルを1下げる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>1</Increment>
+      <SortID>2</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="u32 lowerFpsContinousCount = 5">
+      <Description>このフレーム連続してしきい値を下回ったら、レベルアップ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="u32 upperFpsContinousCount = 20">
+      <Description>このフレーム連続してしきい値を上回ったら、レベルダウン</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="u32 downAfterChangeSleep = 30">
+      <Description>レベルダウン後のスリープフレームカウント</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="u32 upAfterChangeSleep = 10">
+      <Description>レベルアップ後のスリープフレームカウント</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>6</SortID>
+      <UnkC8>基本設定</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessLightShaft = 20">
+      <DisplayName>ライトシャフト</DisplayName>
+      <Description>フィルタのライトシャフト</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessBloom = 20">
+      <DisplayName>Bloom</DisplayName>
+      <Description>ブルーム</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessGlow = 20">
+      <DisplayName>Glow</DisplayName>
+      <Description>グロー</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessAA = 20">
+      <DisplayName>AA</DisplayName>
+      <Description>アンチエイリアス</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>10</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessSSAO = 20">
+      <DisplayName>SSAO</DisplayName>
+      <Description>SSAO</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>11</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessDOF = 20">
+      <DisplayName>DOF</DisplayName>
+      <Description>DOF</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>12</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessMotionBlur = 20">
+      <DisplayName>MotionBlur</DisplayName>
+      <Description>MotionBlur</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>13</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 postProcessMotionBlurIteration = 20">
+      <DisplayName>MotionBlurIteration</DisplayName>
+      <Description>MotionBlurのイテレーション回数を下げる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>14</SortID>
+      <UnkC8>ポストプロセス</UnkC8>
+    </Field>
+    <Field Def="u8 shadowResolutionHalf = 20">
+      <DisplayName>Shadow ResolutionHalf</DisplayName>
+      <Description>影の解像度を半分に下げる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>15</SortID>
+      <UnkC8>シャドウ</UnkC8>
+    </Field>
+    <Field Def="u8 shadowBlur = 20">
+      <DisplayName>Shadow Blur</DisplayName>
+      <Description>影のブラーを切る</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>16</SortID>
+      <UnkC8>シャドウ</UnkC8>
+    </Field>
+    <Field Def="u8 sfxParticleHalf = 20">
+      <DisplayName>SFXのエミット回り</DisplayName>
+      <Description>エミット間隔、エミット数、LOD距離をグラフィックスコンフィグの半分に</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>17</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxReflection = 20">
+      <DisplayName>SFXの反射</DisplayName>
+      <Description>反射シーンSFXをオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>18</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxWaterInteraction = 20">
+      <DisplayName>水面インタラクション</DisplayName>
+      <Description>水面インタラクトSFXをオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>19</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxGlow = 20">
+      <DisplayName>SFXのグロー</DisplayName>
+      <Description>SFXでかけてるGlowをオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>20</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxDistortion = 20">
+      <DisplayName>SFXの歪み</DisplayName>
+      <Description>SFXでかけてる歪みのオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>21</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sftSoftSprite = 20">
+      <DisplayName>ソフトスプライト</DisplayName>
+      <Description>SFXでかけてるソフトスプライトのオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>22</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxLightShaft = 20">
+      <DisplayName>ライトシャフト</DisplayName>
+      <Description>SFXのライトシャフトのオミット</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>23</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="u8 sfxScaleRenderDistanceScale = 20">
+      <DisplayName>動的に縮小バッファに登録されるエフェクトの距離判定にスケール</DisplayName>
+      <Description>SFXの距離で動的に縮小バッファに登録されるエフェクトの距離判定にスケール</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>21</Maximum>
+      <SortID>24</SortID>
+      <UnkC8>SFX</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve[38]">
+      <DisplayName>予備</DisplayName>
+      <Description>予備</Description>
+      <SortID>26</SortID>
+      <UnkC8>その他</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

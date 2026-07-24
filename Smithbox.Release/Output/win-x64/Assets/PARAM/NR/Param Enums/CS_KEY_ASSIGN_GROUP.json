@@ -1,0 +1,29 @@
+{
+  "Key": "CS_KEY_ASSIGN_GROUP",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CS_KEY_ASSIGN_GROUP"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "In-game UI"
+        }
+      ]
+    }
+  ]
+}

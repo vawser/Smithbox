@@ -1,0 +1,14 @@
+{
+  "id": "504",
+  "name": "Looking Glass Knight",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

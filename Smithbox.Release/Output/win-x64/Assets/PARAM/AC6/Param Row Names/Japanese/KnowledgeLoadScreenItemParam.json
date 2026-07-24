@@ -1,0 +1,35 @@
+{
+  "Name": "KnowledgeLoadScreenItemParam",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "Bering Special District -- ベーリング分領特区"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "PBA"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "shell plant -- シェル・プラント"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "bayram industry -- ベイラム・インダストリー"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "central ice field -- 中央氷原"
+      ]
+    }
+  ]
+}

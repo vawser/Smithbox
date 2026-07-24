@@ -1,0 +1,48 @@
+{
+  "Param": "FALLING_PARAM",
+  "Type": "FALLING_PARAM",
+  "Name": "FALLING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fallingDamageSafety",
+      "Name": "《着地 落下ダメージ 安全》",
+      "Description": "《着地 落下ダメージ 安全》"
+    },
+    {
+      "Field": "fallingDamageNormal",
+      "Name": "《着地 落下ダメージ 通常》",
+      "Description": "《着地 落下ダメージ 通常》"
+    },
+    {
+      "Field": "fallingDamageDanger",
+      "Name": "《着地 落下ダメージ 危険》",
+      "Description": "《着地 落下ダメージ 危険》"
+    },
+    {
+      "Field": "fallingDamageDead",
+      "Name": "《着地 落下ダメージ 死亡》",
+      "Description": "《着地 落下ダメージ 死亡》"
+    },
+    {
+      "Field": "fallingDamageMitigationDodge",
+      "Name": "《着地 落下ダメージ軽減 回避》",
+      "Description": "《着地 落下ダメージ軽減 回避》"
+    },
+    {
+      "Field": "fallingDamageMitigationMagic",
+      "Name": "《着地 落下ダメージ軽減 魔法》",
+      "Description": "《着地 落下ダメージ軽減 魔法》"
+    },
+    {
+      "Field": "fallingDamageMitigationRing",
+      "Name": "《着地 落下ダメージ軽減 指輪》",
+      "Description": "《着地 落下ダメージ軽減 指輪》"
+    },
+    {
+      "Field": "fallingDamageMitigationTramp",
+      "Name": "《着地 落下ダメージ軽減 踏み付け》",
+      "Description": "《着地 落下ダメージ軽減 踏み付け》"
+    }
+  ]
+}

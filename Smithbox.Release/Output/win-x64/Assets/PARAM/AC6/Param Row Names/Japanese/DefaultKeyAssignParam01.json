@@ -1,0 +1,509 @@
+{
+  "Name": "DefaultKeyAssignParam01",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Running (before) -- 走行(前)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Running (after) -- 走行(後)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Running (left) -- 走行(左)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Running (right) -- 走行(右)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "jump -- ジャンプ"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Camera (top) -- カメラ(上)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Camera (bottom) -- カメラ(下)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Camera (left) -- カメラ(左)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Camera (right) -- カメラ(右)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Lock on/Camera reset -- ロックオン/カメラリセット"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "stealth -- ステルス"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Tool switching -- 道具切替"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Right weapon switch -- 右武器切替"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Left weapon switch -- 左武器切替"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Use right hand weapon -- 右手武器使用"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "QB/swooping QB -- QB/急降下QB"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Use left hand weapon -- 左手武器使用"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "boost -- ブースト"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "item use -- アイテム使用"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Two-handed switch/action panel switch -- 両手持ち切替/アクションパネル切替"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Auxiliary menu -- 補助メニュー"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Open menu -- メニュー開く"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Move cursor (up) -- カーソル移動（上）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Move cursor (down) -- カーソル移動（下）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Move cursor (left) -- カーソル移動（左）"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Move cursor (right) -- カーソル移動（右）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "decision -- 決定"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "cancel -- キャンセル"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Menu:RU -- メニュー：RU"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Menu: RL -- メニュー：RL"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Menu: L1 -- メニュー：L1"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Menu: R1 -- メニュー：R1"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Menu: L2 -- メニュー：L2"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Menu: R2 -- メニュー：R2"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Menu: L3 -- メニュー：L3"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Menu: R3 -- メニュー：R3"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Menu: BACK -- メニュー：BACK"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Menu: Scroll (top) -- メニュー：スクロール(上)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Menu: Scroll (bottom) -- メニュー：スクロール(下)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Menu: Conversation response (left) -- メニュー：会話応答(左)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Menu: Conversation response (right) -- メニュー：会話応答(右)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Menu: Left stick (top) -- メニュー：左スティック(上)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Menu: Left stick (down) -- メニュー：左スティック(下)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Menu: Left stick (left) -- メニュー：左スティック(左)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Menu: Left stick (right) -- メニュー：左スティック(右)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Menu: Right stick (top) -- メニュー：右スティック(上)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Menu: Right stick (down) -- メニュー：右スティック(下)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Menu: Right stick (left) -- メニュー：右スティック(左)"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Menu: Right stick (right) -- メニュー：右スティック(右)"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Mouse: left button -- マウス：左ボタン"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Mouse: right button -- マウス：右ボタン"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "context menu -- コンテキストメニュー"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Debugging: LU -- デバッグ：LU"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Debugging: LD -- デバッグ：LD"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Debug: LL -- デバッグ：LL"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Debug: LR -- デバッグ：LR"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Debug: RU -- デバッグ：RU"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Debugging: RD -- デバッグ：RD"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Debugging: RL -- デバッグ：RL"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Debug: RR -- デバッグ：RR"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Debug: L1 -- デバッグ：L1"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Debug: R1 -- デバッグ：R1"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Debug: L2 -- デバッグ：L2"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Debug: R2 -- デバッグ：R2"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Debugging: L3 -- デバッグ：L3"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Debug: R3 -- デバッグ：R3"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Player: Action -- プレイヤー：アクション"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Player: Shift operation -- プレイヤー：シフト操作"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Player: Precision shooting stance -- プレイヤー：精密射撃構え"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Text input: Confirm -- テキスト入力：決定"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Text input: Cancel -- テキスト入力：キャンセル"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Debugging: Map missing -- デバッグ：マップ抜け"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Debug: Debug Move OnOff -- デバッグ：デバッグ移動OnOff"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Debugging: super dash -- デバッグ：超ダッシュ"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Debugging: Camera mode switching (next) -- デバッグ：カメラモード切替(次)"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Debugging: Camera mode switching (previous) -- デバッグ：カメラモード切替(前)"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Player: Use left back weapon -- プレイヤー：左背武器使用"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Player: Use right back weapon -- プレイヤー：右背武器使用"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Conversation sending -- 会話送り"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Player: Use extension -- プレイヤー：エクステンション使用"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Player: Assault Boost -- プレイヤー：アサルトブースト"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Menu: Shift operation (left) -- メニュー：シフト操作(左)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Menu: Shift operation (right) -- メニュー：シフト操作(右)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Player: Purge -- プレイヤー：パージ"
+      ]
+    }
+  ]
+}

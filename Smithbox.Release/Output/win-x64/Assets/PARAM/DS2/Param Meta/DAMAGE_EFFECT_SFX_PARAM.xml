@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <sfxIdSmall0 ParticleAlias="" />
+        <sfxIdNormal0 ParticleAlias="" />
+        <sfxIdLarge0 ParticleAlias="" />
+        <sfxIdSuperLarge0 ParticleAlias="" />
+        <sfxIdHyperLarge0 ParticleAlias="" />
+        <sfxIdSmall1 ParticleAlias="" />
+        <sfxIdNormal1 ParticleAlias="" />
+        <sfxIdLarge1 ParticleAlias="" />
+        <sfxIdSuperLarge1 ParticleAlias="" />
+        <sfxIdHyperLarge1 ParticleAlias="" />
+        <sfxIdSmall2 ParticleAlias="" />
+        <sfxIdNormal2 ParticleAlias="" />
+        <sfxIdLarge2 ParticleAlias="" />
+        <sfxIdSuperLarge2 ParticleAlias="" />
+        <sfxIdHyperLarge2 ParticleAlias="" />
+        <sfxIdSmall3 ParticleAlias="" />
+        <sfxIdNormal3 ParticleAlias="" />
+        <sfxIdLarge3 ParticleAlias="" />
+        <sfxIdSuperLarge3 ParticleAlias="" />
+        <sfxIdHyperLarge3 ParticleAlias="" />
+        <sfxIdSmall4 ParticleAlias="" />
+        <sfxIdNormal4 ParticleAlias="" />
+        <sfxIdLarge4 ParticleAlias="" />
+        <sfxIdSuperLarge4 ParticleAlias="" />
+        <sfxIdHyperLarge4 ParticleAlias="" />
+        <sfxIdCritical ParticleAlias="" />
+        <isTrace IsBool="" />
+        <soundLevelSmall />
+        <soundLevelNormal />
+        <soundLevelLarge />
+        <soundLevelSuperLarge />
+        <soundLevelHyperLarge />
+        <soundLevelBody />
+        <soundLevelCritical />
+        <spatterId />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,257 @@
+{
+  "Name": "GuardLevelMotionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Mini Attack -- 極小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Small Attack -- 小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Medium Attack -- 中\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Major Attack -- 大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Oversized attack -- 特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Extra-large attack -- 特特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Special Attacks -- 特殊\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mini Attack -- 極小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Small Attack -- 小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Medium Attack -- 中\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Major Attack -- 大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Oversized attack -- 特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Extra-large attack -- 特特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Special Attacks -- 特殊\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Stance Guard Minimal Attack -- 構えガード 極小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Poise Guard Small Attack -- 構えガード 小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Poise Guard Medium Attack -- 構えガード 中\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Poise Guard Large Attack -- 構えガード 大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Poise Guard Extra Large Attack -- 構えガード 特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Stance Guard Special Attack -- 構えガード 特特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Stance Guard Special Attack -- 構えガード 特殊\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Stance Guard Minimal Attack -- 構えガード 極小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Poise Guard Small Attack -- 構えガード 小\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Poise Guard Medium Attack -- 構えガード 中\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Poise Guard Large Attack -- 構えガード 大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Poise Guard Extra Large Attack -- 構えガード 特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Stance Guard Special Attack -- 構えガード 特特大\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Stance Guard Special Attack -- 構えガード 特殊\u3000攻撃"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20106,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

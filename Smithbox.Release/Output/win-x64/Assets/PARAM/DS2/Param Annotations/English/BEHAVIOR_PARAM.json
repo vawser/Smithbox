@@ -1,0 +1,1258 @@
+{
+  "Param": "BEHAVIOR_PARAM",
+  "Type": "BEHAVIOR_PARAM",
+  "Name": "BEHAVIOR_PARAM",
+  "Description": "Defines AI behavior actions, attack properties, damage references, projectile usage, reload timings, and movement/combat tuning.",
+  "Fields": [
+    {
+      "Field": "action0DamageId00",
+      "Name": "Action 0: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 0."
+    },
+    {
+      "Field": "action0DamageId01",
+      "Name": "Action 0: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 0."
+    },
+    {
+      "Field": "action0DamageId02",
+      "Name": "Action 0: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 0."
+    },
+    {
+      "Field": "action0GrabDamageId00",
+      "Name": "Action 0: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 0."
+    },
+    {
+      "Field": "action0GrabDamageId01",
+      "Name": "Action 0: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 0."
+    },
+    {
+      "Field": "action0GrabDamageId02",
+      "Name": "Action 0: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 0."
+    },
+    {
+      "Field": "action0AttackWalkMoveAttack",
+      "Name": "Action 0: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 0."
+    },
+    {
+      "Field": "action0AttackInvincible",
+      "Name": "Action 0: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 0."
+    },
+    {
+      "Field": "action0HandType",
+      "Name": "Action 0: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 0."
+    },
+    {
+      "Field": "action0IsSpell",
+      "Name": "Action 0: Is Spell",
+      "Description": "Determines whether action 0 is treated as a spell action."
+    },
+    {
+      "Field": "action0BladeCtrlType",
+      "Name": "Action 0: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 0."
+    },
+    {
+      "Field": "action0BulletId00",
+      "Name": "Action 0: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 0."
+    },
+    {
+      "Field": "action0BulletId01",
+      "Name": "Action 0: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 0."
+    },
+    {
+      "Field": "action0BulletId02",
+      "Name": "Action 0: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 0."
+    },
+    {
+      "Field": "action0ShotStanceTime",
+      "Name": "Action 0: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 0."
+    },
+    {
+      "Field": "action0AttackRange",
+      "Name": "Action 0: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 0."
+    },
+    {
+      "Field": "fAction0AttackBackSwingSpeed",
+      "Name": "Action 0: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 0."
+    },
+    {
+      "Field": "fAction0AttackFollowSwingSpeed",
+      "Name": "Action 0: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 0."
+    },
+    {
+      "Field": "fAction0AttackEstimateFutureTime",
+      "Name": "Action 0: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 0."
+    },
+    {
+      "Field": "fAction0AttackAngle",
+      "Name": "Action 0: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 0."
+    },
+    {
+      "Field": "fAction0AttackRotateHigh",
+      "Name": "Action 0: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 0."
+    },
+    {
+      "Field": "fAction0AttackRotateLow",
+      "Name": "Action 0: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 0."
+    },
+    {
+      "Field": "action0ChantSfx",
+      "Name": "Action 0: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 0."
+    },
+    {
+      "Field": "action0ReloadTimeMin",
+      "Name": "Action 0: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 0."
+    },
+    {
+      "Field": "action0ReloadTimeMax",
+      "Name": "Action 0: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 0."
+    },
+    {
+      "Field": "action1DamageId00",
+      "Name": "Action 1: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 1."
+    },
+    {
+      "Field": "action1DamageId01",
+      "Name": "Action 1: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 1."
+    },
+    {
+      "Field": "action1DamageId02",
+      "Name": "Action 1: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 1."
+    },
+    {
+      "Field": "action1GrabDamageId00",
+      "Name": "Action 1: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 1."
+    },
+    {
+      "Field": "action1GrabDamageId01",
+      "Name": "Action 1: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 1."
+    },
+    {
+      "Field": "action1GrabDamageId02",
+      "Name": "Action 1: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 1."
+    },
+    {
+      "Field": "action1AttackWalkMoveAttack",
+      "Name": "Action 1: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 1."
+    },
+    {
+      "Field": "action1AttackInvincible",
+      "Name": "Action 1: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 1."
+    },
+    {
+      "Field": "action1HandType",
+      "Name": "Action 1: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 1."
+    },
+    {
+      "Field": "action1IsSpell",
+      "Name": "Action 1: Is Spell",
+      "Description": "Determines whether action 0 is treated as a spell action."
+    },
+    {
+      "Field": "action1BladeCtrlType",
+      "Name": "Action 1: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 1."
+    },
+    {
+      "Field": "action1BulletId00",
+      "Name": "Action 1: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 1."
+    },
+    {
+      "Field": "action1BulletId01",
+      "Name": "Action 1: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 1."
+    },
+    {
+      "Field": "action1BulletId02",
+      "Name": "Action 1: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 1."
+    },
+    {
+      "Field": "action1ShotStanceTime",
+      "Name": "Action 1: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 1."
+    },
+    {
+      "Field": "action1AttackRange",
+      "Name": "Action 1: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 1."
+    },
+    {
+      "Field": "fAction1AttackBackSwingSpeed",
+      "Name": "Action 1: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 1."
+    },
+    {
+      "Field": "fAction1AttackFollowSwingSpeed",
+      "Name": "Action 1: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 1."
+    },
+    {
+      "Field": "fAction1AttackEstimateFutureTime",
+      "Name": "Action 1: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 1."
+    },
+    {
+      "Field": "fAction1AttackAngle",
+      "Name": "Action 1: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 1."
+    },
+    {
+      "Field": "fAction1AttackRotateHigh",
+      "Name": "Action 1: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 0."
+    },
+    {
+      "Field": "fAction1AttackRotateLow",
+      "Name": "Action 1: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 0."
+    },
+    {
+      "Field": "action1ChantSfx",
+      "Name": "Action 1: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 0."
+    },
+    {
+      "Field": "action1ReloadTimeMin",
+      "Name": "Action 1: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 0."
+    },
+    {
+      "Field": "action1ReloadTimeMax",
+      "Name": "Action 1: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 0."
+    },
+    {
+      "Field": "action2DamageId00",
+      "Name": "Action 2: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 2."
+    },
+    {
+      "Field": "action2DamageId01",
+      "Name": "Action 2: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 2."
+    },
+    {
+      "Field": "action2DamageId02",
+      "Name": "Action 2: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 2."
+    },
+    {
+      "Field": "action2GrabDamageId00",
+      "Name": "Action 2: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 2."
+    },
+    {
+      "Field": "action2GrabDamageId01",
+      "Name": "Action 2: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 2."
+    },
+    {
+      "Field": "action2GrabDamageId02",
+      "Name": "Action 2: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 2."
+    },
+    {
+      "Field": "action2AttackWalkMoveAttack",
+      "Name": "Action 2: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 2."
+    },
+    {
+      "Field": "action2AttackInvincible",
+      "Name": "Action 2: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 2."
+    },
+    {
+      "Field": "action2HandType",
+      "Name": "Action 2: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 2."
+    },
+    {
+      "Field": "action2IsSpell",
+      "Name": "Action 2: Is Spell",
+      "Description": "Determines whether action 2 is treated as a spell action."
+    },
+    {
+      "Field": "action2BladeCtrlType",
+      "Name": "Action 2: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 2."
+    },
+    {
+      "Field": "action2BulletId00",
+      "Name": "Action 2: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 2."
+    },
+    {
+      "Field": "action2BulletId01",
+      "Name": "Action 2: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 2."
+    },
+    {
+      "Field": "action2BulletId02",
+      "Name": "Action 2: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 2."
+    },
+    {
+      "Field": "action2ShotStanceTime",
+      "Name": "Action 2: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 2."
+    },
+    {
+      "Field": "action2AttackRange",
+      "Name": "Action 2: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 2."
+    },
+    {
+      "Field": "fAction2AttackBackSwingSpeed",
+      "Name": "Action 2: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 2."
+    },
+    {
+      "Field": "fAction2AttackFollowSwingSpeed",
+      "Name": "Action 2: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 2."
+    },
+    {
+      "Field": "fAction2AttackEstimateFutureTime",
+      "Name": "Action 2: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 2."
+    },
+    {
+      "Field": "fAction2AttackAngle",
+      "Name": "Action 2: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 2."
+    },
+    {
+      "Field": "fAction2AttackRotateHigh",
+      "Name": "Action 2: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 2."
+    },
+    {
+      "Field": "fAction2AttackRotateLow",
+      "Name": "Action 2: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 2."
+    },
+    {
+      "Field": "action2ChantSfx",
+      "Name": "Action 2: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 2."
+    },
+    {
+      "Field": "action2ReloadTimeMin",
+      "Name": "Action 2: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 2."
+    },
+    {
+      "Field": "action2ReloadTimeMax",
+      "Name": "Action 2: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 2."
+    },
+    {
+      "Field": "action3DamageId00",
+      "Name": "Action 3: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 3."
+    },
+    {
+      "Field": "action3DamageId01",
+      "Name": "Action 3: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 3."
+    },
+    {
+      "Field": "action3DamageId02",
+      "Name": "Action 3: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 3."
+    },
+    {
+      "Field": "action3GrabDamageId00",
+      "Name": "Action 3: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 3."
+    },
+    {
+      "Field": "action3GrabDamageId01",
+      "Name": "Action 3: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 3."
+    },
+    {
+      "Field": "action3GrabDamageId02",
+      "Name": "Action 3: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 3."
+    },
+    {
+      "Field": "action3AttackWalkMoveAttack",
+      "Name": "Action 3: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 3."
+    },
+    {
+      "Field": "action3AttackInvincible",
+      "Name": "Action 3: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 3."
+    },
+    {
+      "Field": "action3HandType",
+      "Name": "Action 3: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 3."
+    },
+    {
+      "Field": "action3IsSpell",
+      "Name": "Action 3: Is Spell",
+      "Description": "Determines whether action 3 is treated as a spell action."
+    },
+    {
+      "Field": "action3BladeCtrlType",
+      "Name": "Action 3: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 3."
+    },
+    {
+      "Field": "action3BulletId00",
+      "Name": "Action 3: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 3."
+    },
+    {
+      "Field": "action3BulletId01",
+      "Name": "Action 3: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 3."
+    },
+    {
+      "Field": "action3BulletId02",
+      "Name": "Action 3: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 3."
+    },
+    {
+      "Field": "action3ShotStanceTime",
+      "Name": "Action 3: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 3."
+    },
+    {
+      "Field": "action3AttackRange",
+      "Name": "Action 3: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 3."
+    },
+    {
+      "Field": "fAction3AttackBackSwingSpeed",
+      "Name": "Action 3: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 3."
+    },
+    {
+      "Field": "fAction3AttackFollowSwingSpeed",
+      "Name": "Action 3: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 3."
+    },
+    {
+      "Field": "fAction3AttackEstimateFutureTime",
+      "Name": "Action 3: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 3."
+    },
+    {
+      "Field": "fAction3AttackAngle",
+      "Name": "Action 3: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 3."
+    },
+    {
+      "Field": "fAction3AttackRotateHigh",
+      "Name": "Action 3: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 3."
+    },
+    {
+      "Field": "fAction3AttackRotateLow",
+      "Name": "Action 3: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 3."
+    },
+    {
+      "Field": "action3ChantSfx",
+      "Name": "Action 3: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 3."
+    },
+    {
+      "Field": "action3ReloadTimeMin",
+      "Name": "Action 3: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 3."
+    },
+    {
+      "Field": "action3ReloadTimeMax",
+      "Name": "Action 3: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 3."
+    },
+    {
+      "Field": "action4DamageId00",
+      "Name": "Action 4: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 4."
+    },
+    {
+      "Field": "action4DamageId01",
+      "Name": "Action 4: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 4."
+    },
+    {
+      "Field": "action4DamageId02",
+      "Name": "Action 4: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 4."
+    },
+    {
+      "Field": "action4GrabDamageId00",
+      "Name": "Action 4: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 4."
+    },
+    {
+      "Field": "action4GrabDamageId01",
+      "Name": "Action 4: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 4."
+    },
+    {
+      "Field": "action4GrabDamageId02",
+      "Name": "Action 4: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 4."
+    },
+    {
+      "Field": "action4AttackWalkMoveAttack",
+      "Name": "Action 4: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 4."
+    },
+    {
+      "Field": "action4AttackInvincible",
+      "Name": "Action 4: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 4."
+    },
+    {
+      "Field": "action4HandType",
+      "Name": "Action 4: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 4."
+    },
+    {
+      "Field": "action4IsSpell",
+      "Name": "Action 4: Is Spell",
+      "Description": "Determines whether action 4 is treated as a spell action."
+    },
+    {
+      "Field": "action4BladeCtrlType",
+      "Name": "Action 4: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 4."
+    },
+    {
+      "Field": "action4BulletId00",
+      "Name": "Action 4: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 4."
+    },
+    {
+      "Field": "action4BulletId01",
+      "Name": "Action 4: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 4."
+    },
+    {
+      "Field": "action4BulletId02",
+      "Name": "Action 4: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 4."
+    },
+    {
+      "Field": "action4ShotStanceTime",
+      "Name": "Action 4: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 4."
+    },
+    {
+      "Field": "action4AttackRange",
+      "Name": "Action 4: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 4."
+    },
+    {
+      "Field": "fAction4AttackBackSwingSpeed",
+      "Name": "Action 4: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 4."
+    },
+    {
+      "Field": "fAction4AttackFollowSwingSpeed",
+      "Name": "Action 4: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 4."
+    },
+    {
+      "Field": "fAction4AttackEstimateFutureTime",
+      "Name": "Action 4: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 4."
+    },
+    {
+      "Field": "fAction4AttackAngle",
+      "Name": "Action 4: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 4."
+    },
+    {
+      "Field": "fAction4AttackRotateHigh",
+      "Name": "Action 4: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 4."
+    },
+    {
+      "Field": "fAction4AttackRotateLow",
+      "Name": "Action 4: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 4."
+    },
+    {
+      "Field": "action4ChantSfx",
+      "Name": "Action 4: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 4."
+    },
+    {
+      "Field": "action4ReloadTimeMin",
+      "Name": "Action 4: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 4."
+    },
+    {
+      "Field": "action4ReloadTimeMax",
+      "Name": "Action 4: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 4."
+    },
+    {
+      "Field": "action5DamageId00",
+      "Name": "Action 5: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 5."
+    },
+    {
+      "Field": "action5DamageId01",
+      "Name": "Action 5: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 5."
+    },
+    {
+      "Field": "action5DamageId02",
+      "Name": "Action 5: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 5."
+    },
+    {
+      "Field": "action5GrabDamageId00",
+      "Name": "Action 5: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 5."
+    },
+    {
+      "Field": "action5GrabDamageId01",
+      "Name": "Action 5: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 5."
+    },
+    {
+      "Field": "action5GrabDamageId02",
+      "Name": "Action 5: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 5."
+    },
+    {
+      "Field": "action5AttackWalkMoveAttack",
+      "Name": "Action 5: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 5."
+    },
+    {
+      "Field": "action5AttackInvincible",
+      "Name": "Action 5: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 5."
+    },
+    {
+      "Field": "action5HandType",
+      "Name": "Action 5: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 5."
+    },
+    {
+      "Field": "action5IsSpell",
+      "Name": "Action 5: Is Spell",
+      "Description": "Determines whether action 5 is treated as a spell action."
+    },
+    {
+      "Field": "action5BladeCtrlType",
+      "Name": "Action 5: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 5."
+    },
+    {
+      "Field": "action5BulletId00",
+      "Name": "Action 5: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 5."
+    },
+    {
+      "Field": "action5BulletId01",
+      "Name": "Action 5: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 5."
+    },
+    {
+      "Field": "action5BulletId02",
+      "Name": "Action 5: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 5."
+    },
+    {
+      "Field": "action5ShotStanceTime",
+      "Name": "Action 5: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 5."
+    },
+    {
+      "Field": "action5AttackRange",
+      "Name": "Action 5: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 5."
+    },
+    {
+      "Field": "fAction5AttackBackSwingSpeed",
+      "Name": "Action 5: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 5."
+    },
+    {
+      "Field": "fAction5AttackFollowSwingSpeed",
+      "Name": "Action 5: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 5."
+    },
+    {
+      "Field": "fAction5AttackEstimateFutureTime",
+      "Name": "Action 5: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 5."
+    },
+    {
+      "Field": "fAction5AttackAngle",
+      "Name": "Action 5: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 5."
+    },
+    {
+      "Field": "fAction5AttackRotateHigh",
+      "Name": "Action 5: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 5."
+    },
+    {
+      "Field": "fAction5AttackRotateLow",
+      "Name": "Action 5: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 5."
+    },
+    {
+      "Field": "action5ChantSfx",
+      "Name": "Action 5: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 5."
+    },
+    {
+      "Field": "action5ReloadTimeMin",
+      "Name": "Action 5: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 5."
+    },
+    {
+      "Field": "action5ReloadTimeMax",
+      "Name": "Action 5: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 5."
+    },
+    {
+      "Field": "action6DamageId00",
+      "Name": "Action 6: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 6."
+    },
+    {
+      "Field": "action6DamageId01",
+      "Name": "Action 6: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 6."
+    },
+    {
+      "Field": "action6DamageId02",
+      "Name": "Action 6: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 6."
+    },
+    {
+      "Field": "action6GrabDamageId00",
+      "Name": "Action 6: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 6."
+    },
+    {
+      "Field": "action6GrabDamageId01",
+      "Name": "Action 6: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 6."
+    },
+    {
+      "Field": "action6GrabDamageId02",
+      "Name": "Action 6: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 6."
+    },
+    {
+      "Field": "action6AttackWalkMoveAttack",
+      "Name": "Action 6: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 6."
+    },
+    {
+      "Field": "action6AttackInvincible",
+      "Name": "Action 6: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 6."
+    },
+    {
+      "Field": "action6HandType",
+      "Name": "Action 6: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 6."
+    },
+    {
+      "Field": "action6IsSpell",
+      "Name": "Action 6: Is Spell",
+      "Description": "Determines whether action 6 is treated as a spell action."
+    },
+    {
+      "Field": "action6BladeCtrlType",
+      "Name": "Action 6: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 6."
+    },
+    {
+      "Field": "action6BulletId00",
+      "Name": "Action 6: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 6."
+    },
+    {
+      "Field": "action6BulletId01",
+      "Name": "Action 6: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 6."
+    },
+    {
+      "Field": "action6BulletId02",
+      "Name": "Action 6: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 6."
+    },
+    {
+      "Field": "action6ShotStanceTime",
+      "Name": "Action 6: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 6."
+    },
+    {
+      "Field": "action6AttackRange",
+      "Name": "Action 6: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 6."
+    },
+    {
+      "Field": "fAction6AttackBackSwingSpeed",
+      "Name": "Action 6: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 6."
+    },
+    {
+      "Field": "fAction6AttackFollowSwingSpeed",
+      "Name": "Action 6: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 6."
+    },
+    {
+      "Field": "fAction6AttackEstimateFutureTime",
+      "Name": "Action 6: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 6."
+    },
+    {
+      "Field": "fAction6AttackAngle",
+      "Name": "Action 6: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 6."
+    },
+    {
+      "Field": "fAction6AttackRotateHigh",
+      "Name": "Action 6: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 6."
+    },
+    {
+      "Field": "fAction6AttackRotateLow",
+      "Name": "Action 6: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 6."
+    },
+    {
+      "Field": "action6ChantSfx",
+      "Name": "Action 6: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 6."
+    },
+    {
+      "Field": "action6ReloadTimeMin",
+      "Name": "Action 6: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 6."
+    },
+    {
+      "Field": "action6ReloadTimeMax",
+      "Name": "Action 6: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 6."
+    },
+    {
+      "Field": "action7DamageId00",
+      "Name": "Action 7: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 7."
+    },
+    {
+      "Field": "action7DamageId01",
+      "Name": "Action 7: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 7."
+    },
+    {
+      "Field": "action7DamageId02",
+      "Name": "Action 7: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 7."
+    },
+    {
+      "Field": "action7GrabDamageId00",
+      "Name": "Action 7: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 7."
+    },
+    {
+      "Field": "action7GrabDamageId01",
+      "Name": "Action 7: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 7."
+    },
+    {
+      "Field": "action7GrabDamageId02",
+      "Name": "Action 7: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 7."
+    },
+    {
+      "Field": "action7AttackWalkMoveAttack",
+      "Name": "Action 7: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 7."
+    },
+    {
+      "Field": "action7AttackInvincible",
+      "Name": "Action 7: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 7."
+    },
+    {
+      "Field": "action7HandType",
+      "Name": "Action 7: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 7."
+    },
+    {
+      "Field": "action7IsSpell",
+      "Name": "Action 7: Is Spell",
+      "Description": "Determines whether action 7 is treated as a spell action."
+    },
+    {
+      "Field": "action7BladeCtrlType",
+      "Name": "Action 7: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 7."
+    },
+    {
+      "Field": "action7BulletId00",
+      "Name": "Action 7: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 7."
+    },
+    {
+      "Field": "action7BulletId01",
+      "Name": "Action 7: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 7."
+    },
+    {
+      "Field": "action7BulletId02",
+      "Name": "Action 7: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 7."
+    },
+    {
+      "Field": "action7ShotStanceTime",
+      "Name": "Action 7: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 7."
+    },
+    {
+      "Field": "action7AttackRange",
+      "Name": "Action 7: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 7."
+    },
+    {
+      "Field": "fAction7AttackBackSwingSpeed",
+      "Name": "Action 7: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 7."
+    },
+    {
+      "Field": "fAction7AttackFollowSwingSpeed",
+      "Name": "Action 7: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 7."
+    },
+    {
+      "Field": "fAction7AttackEstimateFutureTime",
+      "Name": "Action 7: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 7."
+    },
+    {
+      "Field": "fAction7AttackAngle",
+      "Name": "Action 7: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 7."
+    },
+    {
+      "Field": "fAction7AttackRotateHigh",
+      "Name": "Action 7: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 7."
+    },
+    {
+      "Field": "fAction7AttackRotateLow",
+      "Name": "Action 7: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 7."
+    },
+    {
+      "Field": "action7ChantSfx",
+      "Name": "Action 7: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 7."
+    },
+    {
+      "Field": "action7ReloadTimeMin",
+      "Name": "Action 7: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 7."
+    },
+    {
+      "Field": "action7ReloadTimeMax",
+      "Name": "Action 7: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 7."
+    },
+    {
+      "Field": "action8DamageId00",
+      "Name": "Action 8: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 8."
+    },
+    {
+      "Field": "action8DamageId01",
+      "Name": "Action 8: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 8."
+    },
+    {
+      "Field": "action8DamageId02",
+      "Name": "Action 8: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 8."
+    },
+    {
+      "Field": "action8GrabDamageId00",
+      "Name": "Action 8: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 8."
+    },
+    {
+      "Field": "action8GrabDamageId01",
+      "Name": "Action 8: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 8."
+    },
+    {
+      "Field": "action8GrabDamageId02",
+      "Name": "Action 8: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 8."
+    },
+    {
+      "Field": "action8AttackWalkMoveAttack",
+      "Name": "Action 8: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 8."
+    },
+    {
+      "Field": "action8AttackInvincible",
+      "Name": "Action 8: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 8."
+    },
+    {
+      "Field": "action8HandType",
+      "Name": "Action 8: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 8."
+    },
+    {
+      "Field": "action8IsSpell",
+      "Name": "Action 8: Is Spell",
+      "Description": "Determines whether action 8 is treated as a spell action."
+    },
+    {
+      "Field": "action8BladeCtrlType",
+      "Name": "Action 8: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 8."
+    },
+    {
+      "Field": "action8BulletId00",
+      "Name": "Action 8: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 8."
+    },
+    {
+      "Field": "action8BulletId01",
+      "Name": "Action 8: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 8."
+    },
+    {
+      "Field": "action8BulletId02",
+      "Name": "Action 8: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 8."
+    },
+    {
+      "Field": "action8ShotStanceTime",
+      "Name": "Action 8: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 8."
+    },
+    {
+      "Field": "action8AttackRange",
+      "Name": "Action 8: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 8."
+    },
+    {
+      "Field": "fAction8AttackBackSwingSpeed",
+      "Name": "Action 8: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 8."
+    },
+    {
+      "Field": "fAction8AttackFollowSwingSpeed",
+      "Name": "Action 8: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 8."
+    },
+    {
+      "Field": "fAction8AttackEstimateFutureTime",
+      "Name": "Action 8: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 8."
+    },
+    {
+      "Field": "fAction8AttackAngle",
+      "Name": "Action 8: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 8."
+    },
+    {
+      "Field": "fAction8AttackRotateHigh",
+      "Name": "Action 8: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 8."
+    },
+    {
+      "Field": "fAction8AttackRotateLow",
+      "Name": "Action 8: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 8."
+    },
+    {
+      "Field": "action8ChantSfx",
+      "Name": "Action 8: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 8."
+    },
+    {
+      "Field": "action8ReloadTimeMin",
+      "Name": "Action 8: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 8."
+    },
+    {
+      "Field": "action8ReloadTimeMax",
+      "Name": "Action 8: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 8."
+    },
+    {
+      "Field": "action9DamageId00",
+      "Name": "Action 9: Damage ID 1",
+      "Description": "Damage parameter ID used for the first damage slot of action 9."
+    },
+    {
+      "Field": "action9DamageId01",
+      "Name": "Action 9: Damage ID 2",
+      "Description": "Damage parameter ID used for the second damage slot of action 9."
+    },
+    {
+      "Field": "action9DamageId02",
+      "Name": "Action 9: Damage ID 3",
+      "Description": "Damage parameter ID used for the third damage slot of action 9."
+    },
+    {
+      "Field": "action9GrabDamageId00",
+      "Name": "Action 9: Grab Damage ID 1",
+      "Description": "Throw/grab damage parameter ID used for the first slot of action 9."
+    },
+    {
+      "Field": "action9GrabDamageId01",
+      "Name": "Action 9: Grab Damage ID 2",
+      "Description": "Throw/grab damage parameter ID used for the second slot of action 9."
+    },
+    {
+      "Field": "action9GrabDamageId02",
+      "Name": "Action 9: Grab Damage ID 3",
+      "Description": "Throw/grab damage parameter ID used for the third slot of action 9."
+    },
+    {
+      "Field": "action9AttackWalkMoveAttack",
+      "Name": "Action 9: Walking Attack ID",
+      "Description": "Attack behavior ID used while moving/walking during action 9."
+    },
+    {
+      "Field": "action9AttackInvincible",
+      "Name": "Action 9: Interrupt Immunity Type",
+      "Description": "Determines the interruption resistance or invincibility type during action 9."
+    },
+    {
+      "Field": "action9HandType",
+      "Name": "Action 9: Attack Hand",
+      "Description": "Specifies which hand or weapon slot is used for action 9."
+    },
+    {
+      "Field": "action9IsSpell",
+      "Name": "Action 9: Is Spell",
+      "Description": "Determines whether action 9 is treated as a spell action."
+    },
+    {
+      "Field": "action9BladeCtrlType",
+      "Name": "Action 9: Melee Control Type",
+      "Description": "Defines the melee/blade control behavior type for action 9."
+    },
+    {
+      "Field": "action9BulletId00",
+      "Name": "Action 9: Bullet ID 1",
+      "Description": "Projectile/Bullet parameter ID used for the first slot of action 9."
+    },
+    {
+      "Field": "action9BulletId01",
+      "Name": "Action 9: Bullet ID 2",
+      "Description": "Projectile/Bullet parameter ID used for the second slot of action 9."
+    },
+    {
+      "Field": "action9BulletId02",
+      "Name": "Action 9: Bullet ID 3",
+      "Description": "Projectile/Bullet parameter ID used for the third slot of action 9."
+    },
+    {
+      "Field": "action9ShotStanceTime",
+      "Name": "Action 9: Shot Stance Time",
+      "Description": "Time spent preparing or aiming before firing during action 9."
+    },
+    {
+      "Field": "action9AttackRange",
+      "Name": "Action 9: Walking Attack Range",
+      "Description": "Effective attack range while performing a walking attack during action 9."
+    },
+    {
+      "Field": "fAction9AttackBackSwingSpeed",
+      "Name": "Action 9: Attack Startup Speed Multiplier",
+      "Description": "Speed multiplier applied to the startup/wind-up phase of action 9."
+    },
+    {
+      "Field": "fAction9AttackFollowSwingSpeed",
+      "Name": "Action 9: Attack Recovery Speed Multiplier",
+      "Description": "Speed multiplier applied to the recovery/follow-through phase of action 9."
+    },
+    {
+      "Field": "fAction9AttackEstimateFutureTime",
+      "Name": "Action 9: Position Prediction Time",
+      "Description": "Prediction time used for future target position estimation during action 9."
+    },
+    {
+      "Field": "fAction9AttackAngle",
+      "Name": "Action 9: Angle Correction [deg]",
+      "Description": "Angular correction applied to targeting or attack direction during action 9."
+    },
+    {
+      "Field": "fAction9AttackRotateHigh",
+      "Name": "Action 9: Rotation Interpolation Start Distance [m]",
+      "Description": "Distance at which rotation interpolation begins during action 9."
+    },
+    {
+      "Field": "fAction9AttackRotateLow",
+      "Name": "Action 9: Rotation Interpolation End Distance [m]",
+      "Description": "Distance at which rotation interpolation ends during action 9."
+    },
+    {
+      "Field": "action9ChantSfx",
+      "Name": "Action 9: Chant SFX",
+      "Description": "Sound effect ID played for chanting/casting during action 9."
+    },
+    {
+      "Field": "action9ReloadTimeMin",
+      "Name": "Action 9: Minimum Reload Time",
+      "Description": "Minimum reload/cooldown duration for action 9."
+    },
+    {
+      "Field": "action9ReloadTimeMax",
+      "Name": "Action 9: Maximum Reload Time",
+      "Description": "Maximum reload/cooldown duration for action 9."
+    }
+  ]
+}

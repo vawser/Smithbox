@@ -1,0 +1,28 @@
+{
+  "Param": "ONLINE_EVENT_PARAM",
+  "Type": "ONLINE_EVENT_PARAM",
+  "Name": "ONLINE_EVENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "newMoon",
+      "Name": "新月イベント開催中か",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayEvent",
+      "Name": "マルチプレイイベント開催中か",
+      "Description": ""
+    },
+    {
+      "Field": "itemPresentEventId",
+      "Name": "アイテム配布宝箱イベント世代ID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

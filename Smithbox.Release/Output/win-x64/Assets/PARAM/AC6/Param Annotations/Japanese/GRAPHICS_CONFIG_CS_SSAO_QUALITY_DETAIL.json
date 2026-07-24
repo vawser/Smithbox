@@ -1,0 +1,28 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_SSAO_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_SSAO_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_SSAO_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "SSAO有効",
+      "Description": "SSAO有効"
+    },
+    {
+      "Field": "cs_reprojEnabledType",
+      "Name": "リプロジェクション有効",
+      "Description": "リプロジェクション強制有効の時は、PreventGhostも有効になる"
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "バイラテラルアップスケール有効",
+      "Description": "バイラテラルアップスケール有効"
+    },
+    {
+      "Field": "cs_useNormalEnabledType",
+      "Name": "法線使用有効",
+      "Description": "法線使用有効"
+    }
+  ]
+}

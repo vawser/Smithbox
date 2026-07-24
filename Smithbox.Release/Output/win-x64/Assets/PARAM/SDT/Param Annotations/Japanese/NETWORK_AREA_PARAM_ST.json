@@ -1,0 +1,73 @@
+{
+  "Param": "NETWORK_AREA_PARAM_ST",
+  "Type": "NETWORK_AREA_PARAM_ST",
+  "Name": "NETWORK_AREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cellSizeX",
+      "Name": "セルサイズX",
+      "Description": "セルサイズX"
+    },
+    {
+      "Field": "cellSizeY",
+      "Name": "セルサイズY",
+      "Description": "セルサイズY"
+    },
+    {
+      "Field": "cellSizeZ",
+      "Name": "セルサイズZ",
+      "Description": "セルサイズZ"
+    },
+    {
+      "Field": "cellOffsetX",
+      "Name": "セルオフセットX",
+      "Description": "セルオフセットX"
+    },
+    {
+      "Field": "cellOffsetY",
+      "Name": "セルオフセットY",
+      "Description": "セルオフセットY"
+    },
+    {
+      "Field": "cellOffsetZ",
+      "Name": "セルオフセットZ",
+      "Description": "セルオフセットZ"
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "血痕・死亡幻影有効",
+      "Description": "血痕・死亡幻影有効"
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "血文字有効",
+      "Description": "血文字有効"
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "幻影有効",
+      "Description": "幻影有効"
+    },
+    {
+      "Field": "enableMultiPlay",
+      "Name": "マルチプレイ有効",
+      "Description": "マルチプレイ有効"
+    },
+    {
+      "Field": "enableRingSearch",
+      "Name": "指輪検索有効",
+      "Description": "指輪検索の検索対象か？（鐘守灰霊・救援青霊として呼ばれるエリア）"
+    },
+    {
+      "Field": "enableBreakInSearch",
+      "Name": "乱入検索有効",
+      "Description": "乱入検索の対象か？"
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

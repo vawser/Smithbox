@@ -1,0 +1,153 @@
+{
+  "Param": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
+  "Type": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
+  "Name": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "ContactLandSeId",
+      "Name": "地面接触SEID",
+      "Description": "死亡後、地面と接触したときに発音するSEID。(-1：無効)。SEIDカテゴリーはc固定"
+    },
+    {
+      "Field": "ContactLandAddSeId",
+      "Name": "地面接触追加SEID(材質用)",
+      "Description": "死亡後、地面と接触したときに発音する追加SEID(材質用)。(-1：無効)。SEIDカテゴリーはc固定"
+    },
+    {
+      "Field": "ContactLandPlayNum",
+      "Name": "地面接触発音回数",
+      "Description": "死亡後、地面接触時に発音する回数"
+    },
+    {
+      "Field": "IsEnablePlayCountPerRigid",
+      "Name": "地面接触発音回数を剛体単位でカウントするか？",
+      "Description": "死亡後地、面接触発音回数を剛体単位でカウントするか？(〇：剛体単位、×：キャラ単位)"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "ContactLandMinImpuse",
+      "Name": "地面接触最小力積値",
+      "Description": "死亡後、地面接触判定に必要な最小力積値"
+    },
+    {
+      "Field": "ContactLandMinSpeed",
+      "Name": "地面接触最小速度値",
+      "Description": "死亡後、地面接触判定に必要な最小速度値"
+    },
+    {
+      "Field": "ContactPlayerSeId",
+      "Name": "Player接触SEID",
+      "Description": "死亡後、Playerと接触したときに鳴らすSEID。(-1：無効)。SEIDカテゴリーはc固定"
+    },
+    {
+      "Field": "ContactPlayerMinImpuse",
+      "Name": "Player接触最小力積値",
+      "Description": "死亡後、Player接触判定に必要な最小力積値"
+    },
+    {
+      "Field": "ContactPlayerMinSpeed",
+      "Name": "Player接触最小速度値",
+      "Description": "死亡後、Player接触判定に必要な最小速度値"
+    },
+    {
+      "Field": "ContactCheckRigidIdx0",
+      "Name": "接触判定剛体IDX0",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx1",
+      "Name": "接触判定剛体IDX1",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx2",
+      "Name": "接触判定剛体IDX2",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx3",
+      "Name": "接触判定剛体IDX3",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx4",
+      "Name": "接触判定剛体IDX4",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx5",
+      "Name": "接触判定剛体IDX5",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx6",
+      "Name": "接触判定剛体IDX6",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx7",
+      "Name": "接触判定剛体IDX7",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx8",
+      "Name": "接触判定剛体IDX8",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx9",
+      "Name": "接触判定剛体IDX9",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx10",
+      "Name": "接触判定剛体IDX10",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx11",
+      "Name": "接触判定剛体IDX11",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx12",
+      "Name": "接触判定剛体IDX12",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx13",
+      "Name": "接触判定剛体IDX13",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx14",
+      "Name": "接触判定剛体IDX14",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    },
+    {
+      "Field": "ContactCheckRigidIdx15",
+      "Name": "接触判定剛体IDX15",
+      "Description": "接触判定する剛体のINDEXを指定します。SEを付けたい剛体だけ指定します"
+    }
+  ]
+}

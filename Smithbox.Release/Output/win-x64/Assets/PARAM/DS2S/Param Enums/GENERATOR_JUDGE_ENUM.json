@@ -1,0 +1,74 @@
+{
+  "Key": "GENERATOR_JUDGE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_JUDGE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 AND Condition 2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 OR Condition 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 AND Condition 2 AND Condition 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 OR Condition 2 OR Condition 3"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Condition 1 AND Condition 2) OR Condition 3"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Condition 1 OR Condition 2) AND Condition 3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "FALL_CONTROL_PARAM_ST",
+  "Type": "FALL_CONTROL_PARAM_ST",
+  "Name": "FALL_CONTROL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "verticalVelocityChange",
+      "Name": "verticalVelocityChange",
+      "Description": ""
+    },
+    {
+      "Field": "horizontalVelocityChange",
+      "Name": "horizontalVelocityChange",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    }
+  ]
+}

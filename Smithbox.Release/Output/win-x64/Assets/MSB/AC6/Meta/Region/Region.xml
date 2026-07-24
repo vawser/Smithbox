@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a region within the map." />
+  
+  <Field>
+    <TypeIndex
+    AltName="Type Index"
+    Wiki="The index of a region based on the region type." />
+    
+    <Shape
+    AltName="Region Shape"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the region."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the region, in degrees."
+    RotationProperty="" />
+    
+    <Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <Unk78
+    AltName="Unknown: 0x78"
+    Wiki="" />
+    
+    <Unk7C
+    AltName="Unknown: 0x7C"
+    Wiki="" />
+    
+    <ParentRegionNames
+    AltName="Parent Region"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <ParentListIndices
+    IndexProperty="" />
+    
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <ChildListIndices
+    IndexProperty="" />
+    
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
+    
+    <ActivationPartIndex
+    IndexProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
+    
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <EntityGroupID
+    AltName="Entity Group ID"
+    Wiki="The entity group ID this region belongs to." />
+    
+    <UnkC10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkC28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

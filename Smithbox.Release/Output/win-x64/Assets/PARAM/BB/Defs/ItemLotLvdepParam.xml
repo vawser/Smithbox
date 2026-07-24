@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ITEMLOT_LVDEP_PARAM_ST</ParamType>
+  <Unk06>2</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 itemCategory">
+      <DisplayName>アイテムカテゴリ</DisplayName>
+      <Enum>ITEMLOT_LVDEP_ITEMCATEGORY</Enum>
+      <Description>取得できるアイテムのカテゴリ</Description>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 itemId">
+      <DisplayName>アイテムID</DisplayName>
+      <Description>取得できるアイテムのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

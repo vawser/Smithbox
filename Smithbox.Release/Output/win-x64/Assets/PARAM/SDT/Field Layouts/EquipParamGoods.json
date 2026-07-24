@@ -1,0 +1,247 @@
+{
+  "Name": "EquipParamGoods",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "refId_default",
+        "refId_1",
+        "refCategory",
+        "behaviorId",
+        "replaceCategory",
+        "refVirtualWepId",
+        "consumeResourceItemA",
+        "consumeResourceItemB",
+        "consumeResourceItemC",
+        "consumeHpRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "maxNum",
+        "maxRepositoryNum",
+        "overEquipPtyMaxType",
+        "autoReplenishType",
+        "maxReplaceItemId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "iconId",
+        "modelId",
+        "sortId",
+        "shopLv",
+        "spEffectCategory",
+        "itemUIDisplayType",
+        "yesNoDialogMessageId",
+        "opmeMenuType",
+        "goodsType",
+        "goodsCategory",
+        "goodsUseAnim",
+        "actionUnlockParamId",
+        "compTrophySedId",
+        "trophySeqId",
+        "firstGetEventFlagId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "useGetItemId",
+        "useGetItemNum",
+        "useGetItemCate",
+        "useGetItem"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "replaceItemId",
+        "suppleType",
+        "isSuppleItem",
+        "isFullSuppleItem"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "basicPrice",
+        "saleValue",
+        "sellValue"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "castSfxId",
+        "fireSfxId",
+        "effectSfxId",
+        "sfxVariationId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "useLimitCategory",
+        "useLimitSpEffectType0",
+        "useLimitSpEffectType1",
+        "useLimitSpEffectType2",
+        "useLimitSpEffectType3",
+        "useLimitSpEffectType4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isEquip",
+        "isAutoEquip",
+        "isConsume",
+        "isDeposit",
+        "isDiscard",
+        "isDrop",
+        "isDisableHand",
+        "isEnableFastUseItem",
+        "isApplySpecialEffect",
+        "isEstablishment",
+        "isEnhance",
+        "isOnlyOne",
+        "IsTravelItem",
+        "isBonfireWarpItem",
+        "canMultiUse",
+        "isUseMultiPlayPreparation",
+        "isUseRefId1ForEnchant",
+        "isWarpProhibited",
+        "isNoticeLog",
+        "isNoticeDialog"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enable_live",
+        "enable_gray",
+        "enable_white",
+        "enable_black",
+        "enable_multi",
+        "enable_LoadOfCinder",
+        "enable_Ladder",
+        "enable_EmptyHand",
+        "enable_Swimming",
+        "enable_Diving",
+        "enable_CantStand",
+        "enable_CantClimbHang",
+        "enable_FallWallCling",
+        "enable_DragonsCough",
+        "enable_Hang"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "vowType0",
+        "vowType1",
+        "vowType2",
+        "vowType3",
+        "vowType4",
+        "vowType5",
+        "vowType6",
+        "vowType7",
+        "vowType8",
+        "vowType9",
+        "vowType10",
+        "vowType11",
+        "vowType12",
+        "vowType13",
+        "vowType14",
+        "vowType15"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "overDexterity",
+        "syncNumVaryId",
+        "getGrowthType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "Name": "ThrowParam",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "AtkChrId",
+        "atkAnimId",
+        "atkSorbDmyId",
+        "DefChrId",
+        "defAnimId",
+        "defSorbDmyId"
+      ]
+    },
+    {
+      "Key": "Throw Configuration",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Throw Configuration"
+        }
+      ],
+      "Fields": [
+        "throwTypeId",
+        "PadType",
+        "AtkEnableState",
+        "throwType",
+        "dmyHasChrDirType",
+        "isTurnAtker",
+        "isSkipWepCate",
+        "isSkipSphereCast"
+      ]
+    },
+    {
+      "Key": "Throw Detection",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Throw Detection"
+        }
+      ],
+      "Fields": [
+        "Dist",
+        "DiffAngMin",
+        "DiffAngMax",
+        "upperYRange",
+        "lowerYRange",
+        "diffAngMyToDef",
+        "sphereCastRadiusRateTop",
+        "sphereCastRadiusRateLow"
+      ]
+    },
+    {
+      "Key": "Throw Escape",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Throw Escape"
+        }
+      ],
+      "Fields": [
+        "escHp",
+        "selfEscCycleTime",
+        "selfEscCycleCnt"
+      ]
+    }
+  ]
+}

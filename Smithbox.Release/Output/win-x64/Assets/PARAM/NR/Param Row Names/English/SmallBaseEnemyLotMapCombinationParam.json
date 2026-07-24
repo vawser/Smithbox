@@ -1,0 +1,41 @@
+{
+  "Name": "SmallBaseEnemyLotMapCombinationParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Blank"
+      ]
+    },
+    {
+      "ID": 20601,
+      "Entries": [
+        "Evergaol"
+      ]
+    },
+    {
+      "ID": 20602,
+      "Entries": [
+        "Evergaol"
+      ]
+    },
+    {
+      "ID": 20603,
+      "Entries": [
+        "Evergaol"
+      ]
+    },
+    {
+      "ID": 20604,
+      "Entries": [
+        "Evergaol"
+      ]
+    },
+    {
+      "ID": 20605,
+      "Entries": [
+        "Evergaol"
+      ]
+    }
+  ]
+}

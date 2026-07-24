@@ -1,0 +1,163 @@
+{
+  "Param": "ACROSS_DAY_CORRECT_PARAM_ST",
+  "Type": "ACROSS_DAY_CORRECT_PARAM_ST",
+  "Name": "ACROSS_DAY_CORRECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0a",
+      "Name": "unknown_0a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0b",
+      "Name": "unknown_0b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0c",
+      "Name": "unknown_0c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0d",
+      "Name": "unknown_0d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "padding_1",
+      "Name": "padding_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "unknown_23",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27",
+      "Name": "unknown_27",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28",
+      "Name": "unknown_28",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_29",
+      "Name": "unknown_29",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "unknown_30",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_31",
+      "Name": "unknown_31",
+      "Description": ""
+    }
+  ]
+}

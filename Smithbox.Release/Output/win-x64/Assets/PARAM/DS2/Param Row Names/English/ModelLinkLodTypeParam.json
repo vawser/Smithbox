@@ -1,0 +1,197 @@
+{
+  "Name": "ModelLinkLodTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Map -- マップ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Map Medium -- マップ\u3000中物"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Map Accessories -- マップ\u3000小物"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Map (50 m) -- マップ\u3000（影50m）"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Map (Tree) -- マップ（木）"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Chara Small (within 1m) -- キャラ\u3000小\u3000(1m以内)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Character Medium (1~2.5m) -- キャラ\u3000中\u3000(1～2.5m)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Chara Dai (2.5-10m) -- キャラ\u3000大\u3000(2.5～10m)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Character Boss -- キャラ\u3000ボス"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Chara Oversized Boss -- キャラ\u3000特大ボス"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "NPC Human Size -- NPC\u3000人間サイズ"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Player Armor -- プレイヤー防具"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Player Eyebrows -- プレイヤー眉毛"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Player beard and hair -- プレイヤーヒゲ・髪"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Player Face -- プレイヤー顔"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Player Weapon Small -- プレイヤー武器\u3000小"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Player Weapon In -- プレイヤー武器\u3000中"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Player Weapons Large -- プレイヤー武器\u3000大"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Player Phantom Simple Model -- プレイヤー幻影簡易モデル"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Auga (Fossil Forest) -- オーガ(化石の森)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Chara GGD c1350 Heavy Dwarf -- キャラ\u3000GGD\u3000c1350重ドワーフ"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "c3180 Bay ground -- c3180\u3000ベイグランド"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "c3270 Dragon Bone -- c3270 竜の骨"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "c7055 Old Woman -- c7055\u3000老婆"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "c7036 Queen -- c7036\u3000王妃"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "c2120 Wyvern -- c2120\u3000ワイバーン"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "c6000 Old Dragon -- c6000\u3000古龍"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

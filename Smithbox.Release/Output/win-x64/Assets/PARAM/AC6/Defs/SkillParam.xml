@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SKILL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 iconId = -1">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンを指定　＞メニュー用</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 behaviorId = -1">
+      <DisplayName>行動ID</DisplayName>
+      <Description>行動IDを設定する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 NecessityStr">
+      <DisplayName>必要筋力値</DisplayName>
+      <Description>スキル習得に必要な筋力(Strength)</Description>
+      <Maximum>99</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 NecessityDex">
+      <DisplayName>必要俊敏値</DisplayName>
+      <Description>スキル習得に必要な筋力(Dex)</Description>
+      <Maximum>99</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 NecessityMag">
+      <DisplayName>必要魔力値</DisplayName>
+      <Description>スキル習得に必要な筋力(Magic)</Description>
+      <Maximum>99</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 NecessityFai">
+      <DisplayName>必要信仰値</DisplayName>
+      <Description>スキル習得に必要な筋力(Faith)</Description>
+      <Maximum>99</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 consumeSoul">
+      <DisplayName>消費ソウル</DisplayName>
+      <Description>スキル習得時に消費するSOUL</Description>
+      <Maximum>999999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 sortId = -1">
+      <DisplayName>ソートID</DisplayName>
+      <Description>スキルリストの並び用ID(-1：非表示)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 slotLength">
+      <DisplayName>必要スロット数</DisplayName>
+      <Description>装備に必要なスロット数 ＞メニュー用</Description>
+      <Maximum>3</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="dummy8 pad_1[7]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

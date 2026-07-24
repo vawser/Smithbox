@@ -1,0 +1,1367 @@
+{
+  "Name": "PersonalScenarioParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Wylder: Chapter 1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Wylder: Chapter 2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Wylder: Chapter 3"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Wylder: [Obj] Find a whetstone in Limveld"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Wylder: [Obj] Give slate whetstone to Iron Menial"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Wylder: [Obj] Look at the mended finery offered by the Iron Menial"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Wylder: [Obj] Hold both earrings up to light"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Wylder: [Obj] Return the mended earring to\nthe Duchess"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "Wylder: Chapter 4"
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        "Wylder: Chapter 5"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Wylder: [Obj] Find the change to the Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Duchess"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "Wylder: Chapter 6"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "Wylder: Chapter 7"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Wylder: [Obj] Examine letter"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Wylder: [Obj] Find the chest that the key will fit"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Recluse"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Iron Menial about finding a silver tear"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Wylder: [Obj] Find a silver tear in Limveld"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "Wylder: [Obj] Talk to the Iron Menial about finding a silver tear"
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "Wylder: Chapter 8"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Wylder: "
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Wylder: Chapter 9"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Duchess: Chapter 1"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Duchess: Chapter 2"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Duchess: Chapter 3"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Raider"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Wylder"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Raider"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Duchess: [Obj] Find armament maintenance materials in Limveld"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Duchess: [Obj] Give golden dew to the Wylder"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Raider"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Revenant"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Iron Menial about the Wylder"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "Duchess: Chapter 4"
+      ]
+    },
+    {
+      "ID": 2082,
+      "Entries": [
+        "Duchess: Chapter 5"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Duchess: [Obj] Find the Wylder"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Iron Menial about pita bread"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Duchess: Chapter 6"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Raider or the Revenant"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Duchess: [Obj] Find the message in Limveld"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Raider or the Revenant"
+      ]
+    },
+    {
+      "ID": 2135,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Revenant"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Duchess: [Obj] Confront the Revenant"
+      ]
+    },
+    {
+      "ID": 2141,
+      "Entries": [
+        "Duchess: Chapter 7"
+      ]
+    },
+    {
+      "ID": 2142,
+      "Entries": [
+        "Duchess: Chapter 8"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Duchess: [Obj] Bless the iron coin"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Duchess: [Obj] Give the blessed iron coin to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Wylder"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Duchess: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "Duchess: Chapter 9"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Raider: Chapter 1"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Raider: Chapter 2"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Raider:"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Raider: [Obj] Touch the stone monument"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Raider: [Obj] Touch the stone monument"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Raider: [Obj] Touch the stone monument"
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Raider: Chapter 3"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Raider: Chapter 4"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Raider: "
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Raider: [Obj] Touch the stone monument"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Raider: Chapter 5"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Raider: Chapter 6"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Raider: Chapter 7"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Raider: "
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "Raider: [Obj] Head to the shore"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3190,
+      "Entries": [
+        "Raider: [Obj] Touch the stone monument"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Raider: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Raider: [Obj] Make an offering at the White Horn's grave"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Raider: Chapter 8"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Executor: Chapter 1"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Executor: Chapter 2"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Executor: [Obj] Talk to the Guardian"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Executor: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Executor: [Obj] Find flowers in Limveld"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Executor: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Executor: [Obj] Give the blessed flowers to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Executor: [Obj] Paint a picture"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Executor: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "Executor: Chapter 3"
+      ]
+    },
+    {
+      "ID": 4072,
+      "Entries": [
+        "Executor: Chapter 4"
+      ]
+    },
+    {
+      "ID": 4073,
+      "Entries": [
+        "Executor: Chapter 5"
+      ]
+    },
+    {
+      "ID": 4074,
+      "Entries": [
+        "Executor: Chapter 6"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Executor: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Executor: [Obj] Find a golden sprout in Limveld"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Executor: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Executor: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "Executor: Chapter 7"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Recluse: Chapter 1"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Recluse: Chapter 2"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Recluse: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Recluse: [Obj] Vanquish Night-tainted foes in Limveld and take evidence of the deed"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Recluse: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Recluse: [Obj] Ask the Iron Menial for help"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "Recluse: Chapter 3"
+      ]
+    },
+    {
+      "ID": 5042,
+      "Entries": [
+        "Recluse: Chapter 4"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Recluse: [Obj] Take the Night Shard from the Iron Menial"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Recluse: [Obj] Take the Night Shard from the Iron Menial"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "Recluse: [Obj] Find Vestige of Night"
+      ]
+    },
+    {
+      "ID": 5071,
+      "Entries": [
+        "Recluse: Chapter 5"
+      ]
+    },
+    {
+      "ID": 5072,
+      "Entries": [
+        "Recluse: Chapter 6"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "Recluse: [Obj] Find the person lurking in the Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        "Recluse: [Obj] Talk to the Witch of the Wheel"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Recluse: [Obj] Find the Iron Menial"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Recluse: [Obj] Talk to the Iron Menial about the Witch of the Wheel"
+      ]
+    },
+    {
+      "ID": 5121,
+      "Entries": [
+        "Recluse: Chapter 7"
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        "Recluse: [Obj] Perform a relic rite upon the bone-like stone and defeat the latest Nightlord"
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        "Recluse: [Obj] Talk to the Witch of the Wheel"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "Recluse: [Obj] Examine the robe left by the Witch of the Wheel"
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        "Recluse: Chapter 8"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Ironeye: Chapter 1"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Ironeye: Chapter 2"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Ironeye: Chapter 3"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Ironeye: Chapter 4"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the Priestess about the task"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Ironeye: [Obj] Defeat the other Ironeye who has appeared in a cataclysm in Limveld"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Ironeye: Chapter 5"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Ironeye: Chapter 6"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the traitor"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the traitor"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Ironeye: [Obj] Defeat the Darkdrift Knight in Limveld"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Ironeye: [Obj] Execute the traitor"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Ironeye: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Ironeye: Chapter 7"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Ironeye: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Ironeye: Chapter 8"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Guardian: Chapter 1"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Guardian: Chapter 2"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Guardian: Chapter 3"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Guardian: Chapter 4"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Guardian: [Obj] Defeat the Guardian Golem in Limveld"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "Guardian: Chapter 5"
+      ]
+    },
+    {
+      "ID": 7052,
+      "Entries": [
+        "Guardian: Chapter 6"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "Guardian: [Obj] Speak to the visitor"
+      ]
+    },
+    {
+      "ID": 7070,
+      "Entries": [
+        "Guardian: [Obj] Speak to the visitor"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "Guardian: [Obj] Look around the Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 7090,
+      "Entries": [
+        "Guardian: [Obj] Speak to the visitor"
+      ]
+    },
+    {
+      "ID": 7091,
+      "Entries": [
+        "Guardian: Chapter 7"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Guardian: [Obj] Find the demon merchant in Limveld"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7130,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7140,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 7141,
+      "Entries": [
+        "Guardian: Chapter 8"
+      ]
+    },
+    {
+      "ID": 7142,
+      "Entries": [
+        "Guardian: Chapter 9"
+      ]
+    },
+    {
+      "ID": 7150,
+      "Entries": [
+        "Guardian: [Obj] Investigate the study bookshelf"
+      ]
+    },
+    {
+      "ID": 7160,
+      "Entries": [
+        "Guardian: [Obj] Investigate the study bookshelf"
+      ]
+    },
+    {
+      "ID": 7170,
+      "Entries": [
+        "Guardian: [Obj] Talk to the Recluse"
+      ]
+    },
+    {
+      "ID": 7180,
+      "Entries": [
+        "Guardian: [Obj] Punish or forgive the Recluse"
+      ]
+    },
+    {
+      "ID": 7190,
+      "Entries": [
+        "Guardian: [Obj] Punish or forgive the Recluse"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Guardian: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Guardian: Chapter 10"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Revenant: Chapter 1"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Duchess"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Guardian"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Revenant: [Obj] Defeat the Tricephalos or the\nDarkdrift Knight in Limveld"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Guardian"
+      ]
+    },
+    {
+      "ID": 8041,
+      "Entries": [
+        "Revenant: Chapter 2"
+      ]
+    },
+    {
+      "ID": 8042,
+      "Entries": [
+        "Revenant: Chapter 3"
+      ]
+    },
+    {
+      "ID": 8043,
+      "Entries": [
+        "Revenant: Chapter 4"
+      ]
+    },
+    {
+      "ID": 8044,
+      "Entries": [
+        "Revenant: Chapter 5"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Duchess"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Recluse"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "Revenant: [Obj] Sit upon the bench and face yourself"
+      ]
+    },
+    {
+      "ID": 8071,
+      "Entries": [
+        "Revenant: Chapter 6"
+      ]
+    },
+    {
+      "ID": 8072,
+      "Entries": [
+        "Revenant: Chapter 7"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "Revenant: [Obj] Talk to the Recluse"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "Revenant: [Obj] Sit upon the bench and face yourself"
+      ]
+    },
+    {
+      "ID": 8091,
+      "Entries": [
+        "Revenant: Chapter 8"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Scholar: Chapter 1"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Scholar: Chapter 2"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Scholar: Chapter 3"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "Scholar: [Obj] Search the underground chamber below the marsh. N.B. Only occurs with Downloadable content targets."
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Scholar: [Obj] Search the underground chamber below the marsh. N.B. Only occurs with Downloadable content targets."
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Scholar: [Obj] Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Scholar: Chapter 4"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Scholar: Chapter 5"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Small Jar Merchant"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Scholar: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Scholar: Chapter 6"
+      ]
+    },
+    {
+      "ID": 9141,
+      "Entries": [
+        "Scholar: Chapter 7"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "Scholar: Chapter 8"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9171,
+      "Entries": [
+        "Scholar: [Obj] Check dresser mirror"
+      ]
+    },
+    {
+      "ID": 9180,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9190,
+      "Entries": [
+        "Scholar: [Obj] Defeat the Dreglord in Limveld"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Scholar: [Obj] Defeat the Dreglord in Limveld"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Scholar: [Obj] Talk to the Undertaker"
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        "Scholar: [Obj] Continue analysis in chapel"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Scholar: [Obj] Conclude the remembrance"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Undertaker: Chapter 1"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Undertaker: Chapter 2"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "Undertaker: [Obj] Check disturbance in chapel"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "Undertaker: [Obj] Determine source of footsteps"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Undertaker: Chapter 4"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Undertaker: Chapter 5"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Priestess"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Undertaker: [Obj] Offer prayer in chapel"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Iron Menial"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Undertaker: [Obj] Search for the Scholar in Limveld N.B. Only occurs with Downloadable content targets"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "Undertaker: [Obj] Talk to the Scholar"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "Undertaker: Chapter 6"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Undertaker: Chapter 7"
+      ]
+    }
+  ]
+}

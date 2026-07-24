@@ -1,0 +1,251 @@
+{
+  "Name": "MissionSystemMsgAnswerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 120300101,
+      "Entries": [
+        "AP50% or less -- AP50％以下"
+      ]
+    },
+    {
+      "ID": 120300201,
+      "Entries": [
+        "AP30% or less -- AP30％以下"
+      ]
+    },
+    {
+      "ID": 121700201,
+      "Entries": [
+        "AP30% or less_NO6 -- AP30％以下_NO6"
+      ]
+    },
+    {
+      "ID": 121700202,
+      "Entries": [
+        "AP30% or less_Rokumonsen -- AP30％以下_六文銭"
+      ]
+    },
+    {
+      "ID": 121700203,
+      "Entries": [
+        "AP30% or less_Rokumonsen -- AP30％以下_六文銭"
+      ]
+    },
+    {
+      "ID": 121700204,
+      "Entries": [
+        "For stopping -- 停止用"
+      ]
+    },
+    {
+      "ID": 121800201,
+      "Entries": [
+        "AP30% or less_HU front sea spider -- AP30％以下_HU前ウミグモ"
+      ]
+    },
+    {
+      "ID": 121800202,
+      "Entries": [
+        "AP30% or less_Sea spider after HU -- AP30％以下_HU後ウミグモ"
+      ]
+    },
+    {
+      "ID": 122400201,
+      "Entries": [
+        "AP30% or less -- AP30％以下"
+      ]
+    },
+    {
+      "ID": 130110201,
+      "Entries": [
+        "AP30% or less -- AP30％以下"
+      ]
+    },
+    {
+      "ID": 132300201,
+      "Entries": [
+        "AP30% or less_Iguazu survival -- AP30％以下_イグアス生存"
+      ]
+    },
+    {
+      "ID": 132300202,
+      "Entries": [
+        "AP 30% or less_ Chatty survival -- AP30％以下_チャティ生存"
+      ]
+    },
+    {
+      "ID": 132300203,
+      "Entries": [
+        "AP30% or less_No2 survival -- AP30％以下_No2生存"
+      ]
+    },
+    {
+      "ID": 132300204,
+      "Entries": [
+        "AP30% or less_Rusty survival -- AP30％以下_ラスティ生存"
+      ]
+    },
+    {
+      "ID": 140100101,
+      "Entries": [
+        "AP50% or less_Miyatake strong enemy first half -- AP50％以下_宮武強敵前半"
+      ]
+    },
+    {
+      "ID": 140100102,
+      "Entries": [
+        "AP30% or less_Miyatake strong enemy second half -- AP30％以下_宮武強敵後半"
+      ]
+    },
+    {
+      "ID": 140210101,
+      "Entries": [
+        "AP50% or less_Rusty battle -- AP50％以下_ラスティ戦"
+      ]
+    },
+    {
+      "ID": 140300201,
+      "Entries": [
+        "AP30% or less_Orbit Seed first half -- AP30％以下_オービットシード前半"
+      ]
+    },
+    {
+      "ID": 140300202,
+      "Entries": [
+        "AP30% or less_Orbit Seed second half -- AP30％以下_オービットシード後半"
+      ]
+    },
+    {
+      "ID": 140300203,
+      "Entries": [
+        "AP30% or less_ALT_Iguazu -- AP30％以下_ALT_イグアス"
+      ]
+    },
+    {
+      "ID": 140300204,
+      "Entries": [
+        "AP30% or less_ALT_Snail -- AP30％以下_ALT_スネイル"
+      ]
+    },
+    {
+      "ID": 141100201,
+      "Entries": [
+        "AP 30% or less_Two bodies survive_With air -- AP30％以下_二体生存_エアつき"
+      ]
+    },
+    {
+      "ID": 141100202,
+      "Entries": [
+        "AP30% or less_No4 survival_with air -- AP30％以下_No4生存_エアつき"
+      ]
+    },
+    {
+      "ID": 141100203,
+      "Entries": [
+        "AP30% or less_No7 survival_with air -- AP30％以下_No7生存_エアつき"
+      ]
+    },
+    {
+      "ID": 142000500,
+      "Entries": [
+        "No repair kit_during battle -- リペアキットなし_戦闘中"
+      ]
+    },
+    {
+      "ID": 142000501,
+      "Entries": [
+        "No repair kit_non-combat -- リペアキットなし_非戦闘"
+      ]
+    },
+    {
+      "ID": 150300201,
+      "Entries": [
+        "AP30% or less_Heavy guard mech battle -- AP30％以下_重ガードメカ戦"
+      ]
+    },
+    {
+      "ID": 150300202,
+      "Entries": [
+        "AP30% or less_Normal time -- AP30％以下_通常時"
+      ]
+    },
+    {
+      "ID": 150400201,
+      "Entries": [
+        "AP 30% or less_Ash battle first half -- AP30％以下_アッシュ戦前半"
+      ]
+    },
+    {
+      "ID": 150400202,
+      "Entries": [
+        "AP30% or less_Second half of Ash battle -- AP30％以下_アッシュ戦後半"
+      ]
+    },
+    {
+      "ID": 150500201,
+      "Entries": [
+        "AP30% or less_No2 battle -- AP30％以下_No2戦"
+      ]
+    },
+    {
+      "ID": 150500202,
+      "Entries": [
+        "AP 30% or less_Boss battle_1 (Both people survive and Kara's AP is 30% or more) -- AP30％以下_ボス戦_1（両名生存かつカーラのAPが30パー以上）"
+      ]
+    },
+    {
+      "ID": 150500203,
+      "Entries": [
+        "AP 30% or less_Boss battle_1 (one of them is dead and Kara's AP is 30% or more) -- AP30％以下_ボス戦_1（いずれかが死んでいるかつカーラのAPが30パー以上）"
+      ]
+    },
+    {
+      "ID": 150500204,
+      "Entries": [
+        "AP 30% or less_Boss battle_2 (Kara survives and Kara's AP is 30% or higher) -- AP30％以下_ボス戦_2（カーラ生存かつカーラのAPが30パー以上）"
+      ]
+    },
+    {
+      "ID": 160000202,
+      "Entries": [
+        "AP30% or less_after HU2 -- AP30％以下_HU2後"
+      ]
+    },
+    {
+      "ID": 160200201,
+      "Entries": [
+        "AP30% or less_first half_1 -- AP30％以下_前半_1"
+      ]
+    },
+    {
+      "ID": 160200202,
+      "Entries": [
+        "AP30% or less_first half_2 -- AP30％以下_前半_2"
+      ]
+    },
+    {
+      "ID": 160200203,
+      "Entries": [
+        "AP30% or less_second half_1 -- AP30％以下_後半_1"
+      ]
+    },
+    {
+      "ID": 160200204,
+      "Entries": [
+        "AP30% or less_second half_2 -- AP30％以下_後半_2"
+      ]
+    },
+    {
+      "ID": 179500201,
+      "Entries": [
+        "AP30% or less_Previous Raven -- AP30％以下_先代レイヴン"
+      ]
+    }
+  ]
+}

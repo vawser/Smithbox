@@ -1,0 +1,148 @@
+{
+  "Param": "EQUIP_MTRL_SET_PARAM_ST",
+  "Type": "EQUIP_MTRL_SET_PARAM_ST",
+  "Name": "EQUIP_MTRL_SET_PARAM_ST",
+  "Description": "Defines costs associated with trades or upgrades. ID incrementation is used in places.",
+  "Fields": [
+    {
+      "Field": "materialId01",
+      "Name": "Material ID [1]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "materialId02",
+      "Name": "Material ID [2]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "materialId03",
+      "Name": "Material ID [3]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "materialId04",
+      "Name": "Material ID [4]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "materialId05",
+      "Name": "Material ID [5]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "materialId06",
+      "Name": "Material ID [6]",
+      "Description": "Material item ID required to strengthen armor."
+    },
+    {
+      "Field": "pad_id",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "Material Amount [1]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "Material Amount [2]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "Material Amount [3]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "Material Amount [4]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "Material Amount [5]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "itemNum06",
+      "Name": "Material Amount [6]",
+      "Description": "The number of material items required to strengthen armor."
+    },
+    {
+      "Field": "pad_num",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialCate01",
+      "Name": "Material Category [1]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "materialCate02",
+      "Name": "Material Category [2]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "materialCate03",
+      "Name": "Material Category [3]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "materialCate04",
+      "Name": "Material Category [4]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "materialCate05",
+      "Name": "Material Category [5]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "materialCate06",
+      "Name": "Material Category [6]",
+      "Description": "This is a category of material items required for strengthening armor."
+    },
+    {
+      "Field": "pad_cate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableDispNum01",
+      "Name": "Disable Display Number [1]",
+      "Description": "Disable the number display (for enhanced shops)"
+    },
+    {
+      "Field": "isDisableDispNum02",
+      "Name": "Disable Display Number [2]",
+      "Description": "Whether to disable the number display"
+    },
+    {
+      "Field": "isDisableDispNum03",
+      "Name": "Disable Display Number [3]",
+      "Description": "Whether to disable the number display"
+    },
+    {
+      "Field": "isDisableDispNum04",
+      "Name": "Disable Display Number [4]",
+      "Description": "Whether to disable the number display"
+    },
+    {
+      "Field": "isDisableDispNum05",
+      "Name": "Disable Display Number [5]",
+      "Description": "Whether to disable the number display"
+    },
+    {
+      "Field": "isDisableDispNum06",
+      "Name": "Disable Display Number [6]",
+      "Description": "Whether to disable the number display"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

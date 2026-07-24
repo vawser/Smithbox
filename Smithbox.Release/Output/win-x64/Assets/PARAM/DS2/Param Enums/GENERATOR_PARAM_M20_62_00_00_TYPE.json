@@ -1,0 +1,272 @@
+{
+  "Key": "GENERATOR_PARAM_M20_62_00_00_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_PARAM_M20_62_00_00_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Waterway_Running Assault] Kingdom Soldier (Dead): Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Waterway_Running Assault] Kingdom Soldier (Deceased): Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "1660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Lattice gate passage_mimicry] Lower-class soldier (deceased): One-handed ax_surprise attack when you come to retrieve the treasure corpse"
+        }
+      ]
+    },
+    {
+      "Key": "1750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Private room at the exit of the lattice gate_proximity] Kingdom heavy soldier: Color 1: Breaking the wall"
+        }
+      ]
+    },
+    {
+      "Key": "4000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Waterway_Mimitation] Kingdom soldier (dead): Two-handed sword: Ahead of the waterway bridge_Get up after taking the treasure"
+        }
+      ]
+    },
+    {
+      "Key": "4010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Dark Passage_Mimitation] Kingdom Soldier (Dead): Two-handed long ax: Dark Passage_For pretending to be a corpse and surprise attack from behind"
+        }
+      ]
+    },
+    {
+      "Key": "4011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Dark Passage] Kingdom Soldier (Dead): Two-handed Sword: Dark Passage_Molotov Cocktail"
+        }
+      ]
+    },
+    {
+      "Key": "4012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Dark Passage] Wandering Knight (Dead): Assault Spear_Head C_Dark Passage"
+        }
+      ]
+    },
+    {
+      "Key": "4013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Dark Passage] Kingdom Soldier (Dead): Two-handed sword: Dark Passage_Surprise attack from behind"
+        }
+      ]
+    },
+    {
+      "Key": "4020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (dead): Bow: Ground Crack Square 2F Sniper 1"
+        }
+      ]
+    },
+    {
+      "Key": "4021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (deceased): Bow: Ground Crack Square 2F Sniper 2"
+        }
+      ]
+    },
+    {
+      "Key": "4022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Outside the Fissure Plaza] Kingdom Soldier (Dead): Spear: Medium Shield: Fissure Plaza_Blocks the outside passage"
+        }
+      ]
+    },
+    {
+      "Key": "4030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 1F] Lower-class soldier (deceased): One-handed ax_Crack Square Building 1F_Surprise attack from behind the door"
+        }
+      ]
+    },
+    {
+      "Key": "4031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Fissure Square Building 1F] Lower-class soldier (deceased): Dagger: Ground Fissure Square Building 1F_Surprise attack from behind the door"
+        }
+      ]
+    },
+    {
+      "Key": "4032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Fissure Square Building 1F] Lower-class soldier (deceased): One-handed sword: Small shield: Assault outside Fissure Square 1F"
+        }
+      ]
+    },
+    {
+      "Key": "4033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 1F] Lower-class soldier (deceased): One-handed ax: Ground Crack Square 1F_Surprise attack outside"
+        }
+      ]
+    },
+    {
+      "Key": "4034",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 1F] Lower-class soldier (deceased): Bow: Assault outside the Ground Crack Square 1F"
+        }
+      ]
+    },
+    {
+      "Key": "4040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (deceased): Dagger; Ground Crack Square 2F_Go up the stairs and backstab 1"
+        }
+      ]
+    },
+    {
+      "Key": "4041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (deceased): Dagger; Ground Crack Square 2F_For backstab"
+        }
+      ]
+    },
+    {
+      "Key": "4042",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (deceased): Dagger: Ground Crack Square 2F_Mimicry near the wooden box"
+        }
+      ]
+    },
+    {
+      "Key": "4043",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class Soldier (Dead): Dagger: Ground Crack Square 2F_Mimicry near the front ladder"
+        }
+      ]
+    },
+    {
+      "Key": "4044",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Crack Square Building 2F] Lower-class soldier (deceased): Dagger: Ground Crack Square 2F_Mimicry behind the archer"
+        }
+      ]
+    },
+    {
+      "Key": "4050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Outside the Fissure Square] Low-class soldier (deceased): One-handed sword: Small shield: Fissure Square_Tag with the mid-boss"
+        }
+      ]
+    },
+    {
+      "Key": "4051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Outside the Fissure Square] Kingdom Soldier (Dead): Two-handed sword: Fissure Square_Tag with the mid-boss"
+        }
+      ]
+    },
+    {
+      "Key": "4060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Outside the Fissure Square] Lower-class soldier (deceased): One-handed ax: Jump from the scaffolding to the submerged square"
+        }
+      ]
+    },
+    {
+      "Key": "4061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Outside the Fissure Square] Lower-class soldier (deceased): Dagger: Jump from the scaffolding to the Fissure Square and the submerged plaza."
+        }
+      ]
+    },
+    {
+      "Key": "9961",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Behind the Dark Passage] Lower-class Soldier (Dead): Bow: Dark Passage"
+        }
+      ]
+    },
+    {
+      "Key": "9976",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Lighthouse room_Rising surprise attack] Kingdom soldier (deceased): Two-handed sword: Mimicking as a corpse_Very close range"
+        }
+      ]
+    },
+    {
+      "Key": "9980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E3 [Dark Passage_Proximity] Kingdom Heavy Soldier: Color ①"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <DataID
+    AltName="Data ID"
+    Wiki="" />
+    
+    <Color
+    AltName="Color"
+    Wiki="" />
+    
+    <Distance
+    AltName="Distance"
+    Wiki="" />
+    
+    <HeightBase
+    AltName="Height Base"
+    Wiki="" />
+    
+    <HeightDensity
+    AltName="Height Density"
+    Wiki="" />
+    
+    <IsUpper
+    AltName="Is Upper"
+    Wiki="" 
+    IsBool="" />
+    
+    <Alpha
+    AltName="Alpha"
+    Wiki="" />
+    
+    <Contrast
+    AltName="Contrast"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

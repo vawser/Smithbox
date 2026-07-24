@@ -1,0 +1,38 @@
+{
+  "Key": "GENERATOR_WORLD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_WORLD_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal World Only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom World Only"
+        }
+      ]
+    }
+  ]
+}

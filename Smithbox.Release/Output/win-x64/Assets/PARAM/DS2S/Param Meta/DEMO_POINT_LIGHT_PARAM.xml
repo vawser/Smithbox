@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Diffuse Color" Fields="diffuseR,diffuseG,diffuseB,diffuseA" PlacedField="diffuseA" />
+    <ColorEditor Name="Specular Color" Fields="specularR,specularG,specularB,specularA" PlacedField="specularA" />
+  </ColorEdit>
+    <Field>
+        <offsetX />
+        <offsetY />
+        <offsetZ />
+        <diffuseR />
+        <diffuseG />
+        <diffuseB />
+        <diffuseA />
+        <specularR />
+        <specularG />
+        <specularB />
+        <specularA />
+        <radius />
+        <priority />
+        <depthShadow />
+        <blinkTimeMax />
+        <blinkTimeMin />
+        <blinkPower />
+        <enableShadow  IsBool=""/>
+        <dummy Padding="" />
+    </Field>
+</PARAMMETA>

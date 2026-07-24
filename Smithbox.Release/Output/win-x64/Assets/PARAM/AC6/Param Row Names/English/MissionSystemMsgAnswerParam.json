@@ -1,0 +1,251 @@
+{
+  "Name": "MissionSystemMsgAnswerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 120300101,
+      "Entries": [
+        "You okay? Keep your head in the game, Raven."
+      ]
+    },
+    {
+      "ID": 120300201,
+      "Entries": [
+        "Gah... That thing's as tough as it looks."
+      ]
+    },
+    {
+      "ID": 121700201,
+      "Entries": [
+        "You've got skills... Shame you don't put them to good use."
+      ]
+    },
+    {
+      "ID": 121700202,
+      "Entries": [
+        "Another star fades."
+      ]
+    },
+    {
+      "ID": 121700203,
+      "Entries": [
+        "He's got the upper hand..."
+      ]
+    },
+    {
+      "ID": 121700204,
+      "Entries": [
+        "For stopping"
+      ]
+    },
+    {
+      "ID": 121800201,
+      "Entries": [
+        "Raven, your AC is damaged. Focus on evasive action!"
+      ]
+    },
+    {
+      "ID": 121800202,
+      "Entries": [
+        "Push back, tourist!"
+      ]
+    },
+    {
+      "ID": 122400201,
+      "Entries": [
+        "...No, Raven."
+      ]
+    },
+    {
+      "ID": 130110201,
+      "Entries": [
+        "Raven, your AC's damaged!"
+      ]
+    },
+    {
+      "ID": 132300201,
+      "Entries": [
+        "Looking pretty beat up there, freelancer..."
+      ]
+    },
+    {
+      "ID": 132300202,
+      "Entries": [
+        "Don't forget to smile, tourist."
+      ]
+    },
+    {
+      "ID": 132300203,
+      "Entries": [
+        "You seem to have been hit badly, independent mercenary."
+      ]
+    },
+    {
+      "ID": 132300204,
+      "Entries": [
+        "Don't die on us now, buddy."
+      ]
+    },
+    {
+      "ID": 140100101,
+      "Entries": [
+        "Evasive maneuvers, Raven!"
+      ]
+    },
+    {
+      "ID": 140100102,
+      "Entries": [
+        "Raven, you're the only one who can complete this survey."
+      ]
+    },
+    {
+      "ID": 140210101,
+      "Entries": [
+        "I know you can do better than that."
+      ]
+    },
+    {
+      "ID": 140300201,
+      "Entries": [
+        "Raven, we're in danger!"
+      ]
+    },
+    {
+      "ID": 140300202,
+      "Entries": [
+        "...You can take it, 621!"
+      ]
+    },
+    {
+      "ID": 140300203,
+      "Entries": [
+        "You know what? I never liked you."
+      ]
+    },
+    {
+      "ID": 140300204,
+      "Entries": [
+        "Legacy augmentation... You disgust me."
+      ]
+    },
+    {
+      "ID": 141100201,
+      "Entries": [
+        "Now—let's finish this, Pater."
+      ]
+    },
+    {
+      "ID": 141100202,
+      "Entries": [
+        "The situation's under control... Watch me, Pater."
+      ]
+    },
+    {
+      "ID": 141100203,
+      "Entries": [
+        "...Hawkins' number is mine. How I've waited for this..."
+      ]
+    },
+    {
+      "ID": 142000500,
+      "Entries": [
+        "We're out of repair kits..."
+      ]
+    },
+    {
+      "ID": 142000501,
+      "Entries": [
+        "...We're out of repair kits now."
+      ]
+    },
+    {
+      "ID": 150300201,
+      "Entries": [
+        "...Stay focused, Raven. You've beaten this mech before."
+      ]
+    },
+    {
+      "ID": 150300202,
+      "Entries": [
+        "AP30% or less_Normal time"
+      ]
+    },
+    {
+      "ID": 150400201,
+      "Entries": [
+        "Always were at your best under pressure, buddy."
+      ]
+    },
+    {
+      "ID": 150400202,
+      "Entries": [
+        "Must be heavy... This purpose you found."
+      ]
+    },
+    {
+      "ID": 150500201,
+      "Entries": [
+        "Howl into the abyss, dog!"
+      ]
+    },
+    {
+      "ID": 150500202,
+      "Entries": [
+        "Hang in there, Raven!"
+      ]
+    },
+    {
+      "ID": 150500203,
+      "Entries": [
+        "AP 30% or less_Boss battle_1 (one of them is dead and Kara's AP is 30% or more)"
+      ]
+    },
+    {
+      "ID": 150500204,
+      "Entries": [
+        "She's...tougher than I thought!"
+      ]
+    },
+    {
+      "ID": 160000202,
+      "Entries": [
+        "I'll end this... Raven!"
+      ]
+    },
+    {
+      "ID": 160200201,
+      "Entries": [
+        "...You can do better than that, freelancer."
+      ]
+    },
+    {
+      "ID": 160200202,
+      "Entries": [
+        "Raven, you have to hold out..."
+      ]
+    },
+    {
+      "ID": 160200203,
+      "Entries": [
+        "This is your chance, Iguazu."
+      ]
+    },
+    {
+      "ID": 160200204,
+      "Entries": [
+        "I know how this goes."
+      ]
+    },
+    {
+      "ID": 179500201,
+      "Entries": [
+        "This AC's tough..."
+      ]
+    }
+  ]
+}

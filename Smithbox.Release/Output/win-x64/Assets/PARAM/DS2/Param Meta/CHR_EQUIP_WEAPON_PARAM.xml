@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Self FieldLayout="ChrEquipWeaponParam"/>
+    <Field>
+        <behaviorId />
+        <cullingId00 />
+        <cullingId01 />
+        <reserved00 Padding="" />
+        <durability />
+        <material  Enum="MATERIAL_TYPE_ENUM"/>
+        <rightBrokenSfxId />
+        <leftBrokenSfxId />
+        <rightBrokenDummyPolyId />
+        <leftBrokenDummyPolyId />
+        <emissiveType  Enum="CHR_EMISSIVE_TYPE"/>
+        <reserved01 Padding="" />
+        <brokenSoundType  Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE"/>
+        <residentSfxId00 ParticleAlias="" />
+        <residentSfxId01 ParticleAlias="" />
+        <residentSfxId02 ParticleAlias="" />
+        <residentSfxId03 ParticleAlias="" />
+        <residentSfxAttachType00  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType01  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType02  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType03  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxDummyPolyId00 />
+        <residentSfxDummyPolyId01 />
+        <residentSfxDummyPolyId02 />
+        <residentSfxDummyPolyId03 />
+        <residentSfxDummyPolyIdEnd00 />
+        <residentSfxDummyPolyIdEnd01 />
+        <residentSfxDummyPolyIdEnd02 />
+        <residentSfxDummyPolyIdEnd03 />
+        <residentSfxIdInterval00 />
+        <residentSfxIdInterval01 />
+        <residentSfxIdInterval02 />
+        <residentSfxIdInterval03 />
+        <residentSfxSetType00  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType01  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType02  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType03  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxEndType00  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType01  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType02  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType03  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a region within the map." />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of this region." />
+    
+    <Shape
+    AltName="Region Shape"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the region."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the region, in degrees."
+    RotationProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

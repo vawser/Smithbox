@@ -1,0 +1,56 @@
+{
+  "Key": "DAMAGE_SFX_TRACE_DP_COLOR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_SFX_TRACE_DP_COLOR_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stabbing test"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword test"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear test"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax test"
+        }
+      ]
+    }
+  ]
+}

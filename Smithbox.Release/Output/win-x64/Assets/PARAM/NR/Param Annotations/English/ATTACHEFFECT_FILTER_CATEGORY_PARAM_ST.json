@@ -1,0 +1,18 @@
+{
+  "Param": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
+  "Type": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
+  "Name": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId",
+      "Name": "Category Name ID",
+      "Description": "The text ID to use for the name of the category."
+    },
+    {
+      "Field": "category",
+      "Name": "Category ID",
+      "Description": "The ID of this category."
+    }
+  ]
+}

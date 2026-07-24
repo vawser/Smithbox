@@ -1,0 +1,83 @@
+{
+  "Name": "generatorregistparam_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 12900000,
+      "Entries": [
+        "[REG:12900000] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 12903000,
+      "Entries": [
+        "[REG:12903000] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 50610000,
+      "Entries": [
+        "[REG:50610000] Darklurker (Boss)"
+      ]
+    },
+    {
+      "ID": 50610001,
+      "Entries": [
+        "[REG:50610001] Darklurker (Clone)"
+      ]
+    },
+    {
+      "ID": 50620000,
+      "Entries": [
+        "[REG:50620000] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 81200000,
+      "Entries": [
+        "[REG:81200000] Underworld Deadeye"
+      ]
+    },
+    {
+      "ID": 81210000,
+      "Entries": [
+        "[REG:81210000] Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 81220000,
+      "Entries": [
+        "[REG:81220000] Pretender to the Xanthous Throne (Male)"
+      ]
+    },
+    {
+      "ID": 81230000,
+      "Entries": [
+        "[REG:81230000] Pretender to the Xanthous Throne (Female)"
+      ]
+    },
+    {
+      "ID": 81240000,
+      "Entries": [
+        "[REG:81240000] Tenebrous Rogue"
+      ]
+    },
+    {
+      "ID": 81250000,
+      "Entries": [
+        "[REG:81250000] The Ghost of Princes Past"
+      ]
+    },
+    {
+      "ID": 81260000,
+      "Entries": [
+        "[REG:81260000] A Chip Off the Ol Rock"
+      ]
+    },
+    {
+      "ID": 81270000,
+      "Entries": [
+        "[REG:81270000] Shadowveil Assasin"
+      ]
+    }
+  ]
+}

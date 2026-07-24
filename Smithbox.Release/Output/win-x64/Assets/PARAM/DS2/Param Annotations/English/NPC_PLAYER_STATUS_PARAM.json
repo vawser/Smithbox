@@ -1,0 +1,343 @@
+{
+  "Param": "NPC_PLAYER_STATUS_PARAM",
+  "Type": "NPC_PLAYER_STATUS_PARAM",
+  "Name": "NPC_PLAYER_STATUS_PARAM",
+  "Description": "Defines a player-style NPC's appearance, stats, covenant data, equipment loadout, spell setup, and inventory configuration.",
+  "Fields": [
+    {
+      "Field": "genderType",
+      "Name": "Gender",
+      "Description": "Specifies the character's gender."
+    },
+    {
+      "Field": "livingType",
+      "Name": "Living State",
+      "Description": "Defines whether the character is alive, undead, hollow, or another life state."
+    },
+    {
+      "Field": "bodyType",
+      "Name": "Body Type",
+      "Description": "Specifies the character's physique or body build."
+    },
+    {
+      "Field": "faceType",
+      "Name": "Face Type",
+      "Description": "Determines the facial structure category."
+    },
+    {
+      "Field": "faceId",
+      "Name": "Face ID",
+      "Description": "References the selected face preset or facial data."
+    },
+    {
+      "Field": "vowType",
+      "Name": "Covenant",
+      "Description": "Specifies the covenant affiliation."
+    },
+    {
+      "Field": "vowLevel",
+      "Name": "Covenant Level",
+      "Description": "Defines the character's covenant rank or progression level."
+    },
+    {
+      "Field": "lifeForceLevel",
+      "Name": "Vigor",
+      "Description": "Character level for maximum HP and survivability."
+    },
+    {
+      "Field": "stayingPowerLevel",
+      "Name": "Endurance",
+      "Description": "Character level affecting stamina capacity."
+    },
+    {
+      "Field": "attunementLevel",
+      "Name": "Attunement",
+      "Description": "Character level affecting spell slots and spell usage."
+    },
+    {
+      "Field": "vitalityLevel",
+      "Name": "Vitality",
+      "Description": "Character level affecting equipment load and defense."
+    },
+    {
+      "Field": "strengthLevel",
+      "Name": "Strength",
+      "Description": "Character strength stat level."
+    },
+    {
+      "Field": "dexterityLevel",
+      "Name": "Dexterity",
+      "Description": "Character dexterity stat level."
+    },
+    {
+      "Field": "intelligenceLevel",
+      "Name": "Intelligence",
+      "Description": "Character intelligence stat level."
+    },
+    {
+      "Field": "faithLevel",
+      "Name": "Faith",
+      "Description": "Character faith stat level."
+    },
+    {
+      "Field": "enduranceLevel",
+      "Name": "Durability",
+      "Description": "Character durability or equipment degradation resistance stat."
+    },
+    {
+      "Field": "quicknessLevel",
+      "Name": "Adaptability",
+      "Description": "Character agility or quickness-related stat."
+    },
+    {
+      "Field": "luckLevel",
+      "Name": "Luck",
+      "Description": "Character luck stat affecting item discovery or related mechanics."
+    },
+    {
+      "Field": "pad00",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "loadWeightPercent",
+      "Name": "Equipment Load Percentage [%]",
+      "Description": "Current equipment burden as a percentage of maximum load."
+    },
+    {
+      "Field": "evasionInvincibleTimePercent",
+      "Name": "Evasion Invincibility Percentage [%]",
+      "Description": "Modifier affecting invincibility frames during dodges."
+    },
+    {
+      "Field": "beltItem01",
+      "Name": "Belt Slot 01 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem02",
+      "Name": "Belt Slot 02 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem03",
+      "Name": "Belt Slot 03 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem04",
+      "Name": "Belt Slot 04 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem05",
+      "Name": "Belt Slot 05 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem06",
+      "Name": "Belt Slot 06 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem07",
+      "Name": "Belt Slot 07 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem08",
+      "Name": "Belt Slot 08 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem09",
+      "Name": "Belt Slot 09 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "beltItem10",
+      "Name": "Belt Slot 10 [Item]",
+      "Description": "Assigned quick-access belt item slot."
+    },
+    {
+      "Field": "spellSlotItem01",
+      "Name": "Spell Slot 01",
+      "Description": "Spell assigned to spell slot 1."
+    },
+    {
+      "Field": "spellSlotItem02",
+      "Name": "Spell Slot 02",
+      "Description": "Spell assigned to spell slot 2."
+    },
+    {
+      "Field": "spellSlotItem03",
+      "Name": "Spell Slot 03",
+      "Description": "Spell assigned to spell slot 3."
+    },
+    {
+      "Field": "spellSlotItem04",
+      "Name": "Spell Slot 04",
+      "Description": "Spell assigned to spell slot 4."
+    },
+    {
+      "Field": "spellSlotItem05",
+      "Name": "Spell Slot 05",
+      "Description": "Spell assigned to spell slot 5."
+    },
+    {
+      "Field": "spellSlotItem06",
+      "Name": "Spell Slot 06",
+      "Description": "Spell assigned to spell slot 6."
+    },
+    {
+      "Field": "spellSlotItem07",
+      "Name": "Spell Slot 07",
+      "Description": "Spell assigned to spell slot 7."
+    },
+    {
+      "Field": "spellSlotItem08",
+      "Name": "Spell Slot 08",
+      "Description": "Spell assigned to spell slot 8."
+    },
+    {
+      "Field": "spellSlotItem09",
+      "Name": "Spell Slot 09",
+      "Description": "Spell assigned to spell slot 9."
+    },
+    {
+      "Field": "spellSlotItem10",
+      "Name": "Spell Slot 10",
+      "Description": "Spell assigned to spell slot 10."
+    },
+    {
+      "Field": "rightWeapon01",
+      "Name": "Right Weapon 01",
+      "Description": "Primary right-hand weapon slot."
+    },
+    {
+      "Field": "rightWeapon02",
+      "Name": "Right Weapon 02",
+      "Description": "Secondary right-hand weapon slot."
+    },
+    {
+      "Field": "rightWeapon03",
+      "Name": "Right Weapon 03",
+      "Description": "Tertiary right-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon01",
+      "Name": "Left Weapon 01",
+      "Description": "Primary left-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon02",
+      "Name": "Left Weapon 02",
+      "Description": "Secondary left-hand weapon slot."
+    },
+    {
+      "Field": "leftWeapon03",
+      "Name": "Left Weapon 03",
+      "Description": "Tertiary left-hand weapon slot."
+    },
+    {
+      "Field": "headArmor",
+      "Name": "Head Armor",
+      "Description": "Equipped helmet or head armor."
+    },
+    {
+      "Field": "bodyArmor",
+      "Name": "Body Armor",
+      "Description": "Equipped chest armor."
+    },
+    {
+      "Field": "armArmor",
+      "Name": "Arm Armor",
+      "Description": "Equipped gauntlets or arm armor."
+    },
+    {
+      "Field": "legArmor",
+      "Name": "Leg Armor",
+      "Description": "Equipped leggings or leg armor."
+    },
+    {
+      "Field": "ringSlot01",
+      "Name": "Ring 01",
+      "Description": "Ring equipped in slot 1."
+    },
+    {
+      "Field": "ringSlot02",
+      "Name": "Ring 02",
+      "Description": "Ring equipped in slot 2."
+    },
+    {
+      "Field": "ringSlot03",
+      "Name": "Ring 03",
+      "Description": "Ring equipped in slot 3."
+    },
+    {
+      "Field": "ringSlot04",
+      "Name": "Ring 04",
+      "Description": "Ring equipped in slot 4."
+    },
+    {
+      "Field": "arrowSlot01",
+      "Name": "Arrow 01",
+      "Description": "Arrow ammunition slot 1."
+    },
+    {
+      "Field": "arrowSlot02",
+      "Name": "Arrow 02",
+      "Description": "Arrow ammunition slot 2."
+    },
+    {
+      "Field": "boltSlot01",
+      "Name": "Bolt 01",
+      "Description": "Bolt ammunition slot 1."
+    },
+    {
+      "Field": "boltSlot02",
+      "Name": "Bolt 02",
+      "Description": "Bolt ammunition slot 2."
+    },
+    {
+      "Field": "gestureSlot01",
+      "Name": "Gesture 01",
+      "Description": "Assigned gesture slot 1."
+    },
+    {
+      "Field": "gestureSlot02",
+      "Name": "Gesture 02",
+      "Description": "Assigned gesture slot 2."
+    },
+    {
+      "Field": "gestureSlot03",
+      "Name": "Gesture 03",
+      "Description": "Assigned gesture slot 3."
+    },
+    {
+      "Field": "gestureSlot04",
+      "Name": "Gesture 04",
+      "Description": "Assigned gesture slot 4."
+    },
+    {
+      "Field": "gestureSlot05",
+      "Name": "Gesture 05",
+      "Description": "Assigned gesture slot 5."
+    },
+    {
+      "Field": "gestureSlot06",
+      "Name": "Gesture 06",
+      "Description": "Assigned gesture slot 6."
+    },
+    {
+      "Field": "gestureSlot07",
+      "Name": "Gesture 07",
+      "Description": "Assigned gesture slot 7."
+    },
+    {
+      "Field": "gestureSlot08",
+      "Name": "Gesture 08",
+      "Description": "Assigned gesture slot 8."
+    }
+  ]
+}

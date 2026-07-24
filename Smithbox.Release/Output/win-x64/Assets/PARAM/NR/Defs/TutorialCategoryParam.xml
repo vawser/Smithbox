@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>TUTORIAL_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 categoryTextId"/>
+    <Field Def="s32 unknown_1"/>
+    
+    <Field Def="dummy8 endPadding[8]"/>
+  </Fields>
+</PARAMDEF>

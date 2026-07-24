@@ -1,0 +1,137 @@
+{
+  "Name": "generatorregistparam_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "[REG:10210000] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10211000,
+      "Entries": [
+        "[REG:10211000] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10212000,
+      "Entries": [
+        "[REG:10212000] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "[REG:10310000] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 10310010,
+      "Entries": [
+        "[REG:10310010] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 10310020,
+      "Entries": [
+        "[REG:10310020] Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "[REG:12100000] Giant"
+      ]
+    },
+    {
+      "ID": 12100005,
+      "Entries": [
+        "[REG:12100005] Giant"
+      ]
+    },
+    {
+      "ID": 12100010,
+      "Entries": [
+        "[REG:12100010] Giant"
+      ]
+    },
+    {
+      "ID": 12101000,
+      "Entries": [
+        "[REG:12101000] Giant"
+      ]
+    },
+    {
+      "ID": 12102000,
+      "Entries": [
+        "[REG:12102000] Giant"
+      ]
+    },
+    {
+      "ID": 12103000,
+      "Entries": [
+        "[REG:12103000] Giant"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "[REG:15100000] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "[REG:30900000] Elite Giant"
+      ]
+    },
+    {
+      "ID": 30970000,
+      "Entries": [
+        "[REG:30970000] Giant Lord [Boss]"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "[REG:72400000] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 72400001,
+      "Entries": [
+        "[REG:72400001] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 72400003,
+      "Entries": [
+        "[REG:72400003] Captain Drummond"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "[REG:74300000] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74300001,
+      "Entries": [
+        "[REG:74300001] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74300002,
+      "Entries": [
+        "[REG:74300002] Benhart of Jugo"
+      ]
+    }
+  ]
+}

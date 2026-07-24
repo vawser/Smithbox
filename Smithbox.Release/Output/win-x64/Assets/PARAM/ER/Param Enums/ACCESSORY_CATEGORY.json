@@ -1,0 +1,20 @@
+{
+  "Key": "ACCESSORY_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ACCESSORY_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Category 0"
+        }
+      ]
+    }
+  ]
+}

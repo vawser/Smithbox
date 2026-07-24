@@ -1,0 +1,9 @@
+{
+  "Name": "Menu",
+  "File": "01_common_h",
+  "InternalFiles": [
+    "SB_MenuIcon_0",
+    "SB_MenuIcon_1"
+  ],
+  "SubTexturePrefix": "MENU_MenuIcon_"
+}

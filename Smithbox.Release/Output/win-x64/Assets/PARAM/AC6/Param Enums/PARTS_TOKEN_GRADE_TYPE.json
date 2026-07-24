@@ -1,0 +1,47 @@
+{
+  "Key": "PARTS_TOKEN_GRADE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PARTS_TOKEN_GRADE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bronze"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Platinum"
+        }
+      ]
+    }
+  ]
+}

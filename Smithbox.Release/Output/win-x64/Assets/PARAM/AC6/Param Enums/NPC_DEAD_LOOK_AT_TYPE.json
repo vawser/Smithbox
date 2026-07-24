@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_DEAD_LOOK_AT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_DEAD_LOOK_AT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed after death immediately"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed after death flag"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Never fixed"
+        }
+      ]
+    }
+  ]
+}

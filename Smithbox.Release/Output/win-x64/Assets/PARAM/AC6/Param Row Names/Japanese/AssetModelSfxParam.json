@@ -1,0 +1,2179 @@
+{
+  "Name": "AssetModelSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100001,
+      "Entries": [
+        "Antenna facility -- アンテナ\u3000施設"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "giant mining machine -- 巨大採掘機"
+      ]
+    },
+    {
+      "ID": 13160000,
+      "Entries": [
+        "searchlight -- サーチライト"
+      ]
+    },
+    {
+      "ID": 13161000,
+      "Entries": [
+        "searchlight -- サーチライト"
+      ]
+    },
+    {
+      "ID": 13161001,
+      "Entries": [
+        "Searchlight (lightweight) -- サーチライト(軽量）"
+      ]
+    },
+    {
+      "ID": 13310000,
+      "Entries": [
+        "AEG013_310 Power generation facility -- AEG013_310 発電施設"
+      ]
+    },
+    {
+      "ID": 13318000,
+      "Entries": [
+        "AEG013_318 Power generation facility -- AEG013_318 発電施設"
+      ]
+    },
+    {
+      "ID": 13411000,
+      "Entries": [
+        "Parabolic facility -- パラボラ施設"
+      ]
+    },
+    {
+      "ID": 13513000,
+      "Entries": [
+        "wall gate -- 壁\u3000ゲート"
+      ]
+    },
+    {
+      "ID": 13540000,
+      "Entries": [
+        "MT wreckage -- MT残骸"
+      ]
+    },
+    {
+      "ID": 16010000,
+      "Entries": [
+        "AEG016_010 AC debris raising smoke -- AEG016_010\u3000AC残骸\u3000狼煙上げ"
+      ]
+    },
+    {
+      "ID": 22140000,
+      "Entries": [
+        "Light_for wide range -- ライト_広範囲用"
+      ]
+    },
+    {
+      "ID": 22140001,
+      "Entries": [
+        "Light_for wide range (lightweight) -- ライト_広範囲用(軽量）"
+      ]
+    },
+    {
+      "ID": 22141000,
+      "Entries": [
+        "Light_1 light -- ライト_1灯"
+      ]
+    },
+    {
+      "ID": 22141001,
+      "Entries": [
+        "Light_1 light (lightweight) -- ライト_1灯(軽量）"
+      ]
+    },
+    {
+      "ID": 22142000,
+      "Entries": [
+        "Search light_enemy search light -- サーチライト_索敵ライト"
+      ]
+    },
+    {
+      "ID": 22142001,
+      "Entries": [
+        "Searchlight_Small light -- サーチライト_小ライト"
+      ]
+    },
+    {
+      "ID": 22142002,
+      "Entries": [
+        "Searchlight_Indoor use_With light source -- サーチライト_室内用_光源あり"
+      ]
+    },
+    {
+      "ID": 22143000,
+      "Entries": [
+        "hydro power cube -- ハイドロパワーキューブ"
+      ]
+    },
+    {
+      "ID": 22144000,
+      "Entries": [
+        "mounted light -- 設置型ライト"
+      ]
+    },
+    {
+      "ID": 22144001,
+      "Entries": [
+        "Installed light (no light source) -- 設置型ライト(光源なし）"
+      ]
+    },
+    {
+      "ID": 22144002,
+      "Entries": [
+        "Installed light (lightweight) -- 設置型ライト(軽量）"
+      ]
+    },
+    {
+      "ID": 22146000,
+      "Entries": [
+        "Lighting (red light_large) -- 照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 22146001,
+      "Entries": [
+        "Lighting (red light_large) -- 照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 22146002,
+      "Entries": [
+        "Lighting (red light_large) -- 照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 22150000,
+      "Entries": [
+        "Light_for wide range (snow) -- ライト_広範囲用(雪）"
+      ]
+    },
+    {
+      "ID": 22150001,
+      "Entries": [
+        "Light_for wide range (snow) (lightweight) -- ライト_広範囲用(雪）(軽量）"
+      ]
+    },
+    {
+      "ID": 22151000,
+      "Entries": [
+        "Light_1 light (snow) -- ライト_1灯(雪)"
+      ]
+    },
+    {
+      "ID": 22151001,
+      "Entries": [
+        "Light_1 light (snow) (lightweight) -- ライト_1灯(雪)(軽量）"
+      ]
+    },
+    {
+      "ID": 22152000,
+      "Entries": [
+        "Searchlight (snow) -- サーチライト(雪)"
+      ]
+    },
+    {
+      "ID": 22152001,
+      "Entries": [
+        "Searchlight (snow)_Small light -- サーチライト(雪)_小ライト"
+      ]
+    },
+    {
+      "ID": 22153000,
+      "Entries": [
+        "Hydro power cube (snow) -- ハイドロパワーキューブ（雪）"
+      ]
+    },
+    {
+      "ID": 22154000,
+      "Entries": [
+        "Installed light (snow) -- 設置型ライト（雪)"
+      ]
+    },
+    {
+      "ID": 22154001,
+      "Entries": [
+        "Installed light (snow) (no light source) -- 設置型ライト（雪)(光源なし）"
+      ]
+    },
+    {
+      "ID": 22154002,
+      "Entries": [
+        "Installed light (snow) (lightweight) -- 設置型ライト（雪)(軽量）"
+      ]
+    },
+    {
+      "ID": 23102000,
+      "Entries": [
+        "Factory equipment_Watchtower 3 -- 工場設備_監視塔3"
+      ]
+    },
+    {
+      "ID": 23110000,
+      "Entries": [
+        "Factory equipment_watchtower 1 snow -- 工場設備_監視塔1雪"
+      ]
+    },
+    {
+      "ID": 23110001,
+      "Entries": [
+        "Factory equipment_Watchtower 1 snow (light) -- 工場設備_監視塔1雪(軽量)"
+      ]
+    },
+    {
+      "ID": 23112000,
+      "Entries": [
+        "Factory equipment_watchtower 3 snow -- 工場設備_監視塔3雪"
+      ]
+    },
+    {
+      "ID": 23120000,
+      "Entries": [
+        "small truss antenna -- トラス型アンテナ小"
+      ]
+    },
+    {
+      "ID": 23120001,
+      "Entries": [
+        "small truss antenna -- トラス型アンテナ小"
+      ]
+    },
+    {
+      "ID": 23130000,
+      "Entries": [
+        "truss antenna koyuki -- トラス型アンテナ小雪"
+      ]
+    },
+    {
+      "ID": 23650000,
+      "Entries": [
+        "heliport -- ヘリポート"
+      ]
+    },
+    {
+      "ID": 23660000,
+      "Entries": [
+        "helipad with snow -- ヘリポート雪付き"
+      ]
+    },
+    {
+      "ID": 23661000,
+      "Entries": [
+        "With helipad hatch for missions -- ヘリポートハッチ付き\u3000ミッション用"
+      ]
+    },
+    {
+      "ID": 27640000,
+      "Entries": [
+        "Heavy oil splash -- 重油飛沫"
+      ]
+    },
+    {
+      "ID": 32212000,
+      "Entries": [
+        "Sortie production assets (contact destruction) -- 出撃演出アセット（接触破壊）"
+      ]
+    },
+    {
+      "ID": 32270000,
+      "Entries": [
+        "Lift (tilt) -- 昇降機（傾斜）"
+      ]
+    },
+    {
+      "ID": 33321000,
+      "Entries": [
+        "PP (control rod) -- PP（制御棒)"
+      ]
+    },
+    {
+      "ID": 33322000,
+      "Entries": [
+        "PP (nuclear reactor) -- PP（原子炉)"
+      ]
+    },
+    {
+      "ID": 33323000,
+      "Entries": [
+        "PP (control rod_after destruction) -- PP（制御棒_破壊後)"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        "Landing ship (after crash) -- 揚陸艦（墜落後）"
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "Chimney (high) -- 煙突（高）"
+      ]
+    },
+    {
+      "ID": 33510000,
+      "Entries": [
+        "Chimney (middle) -- 煙突（中）"
+      ]
+    },
+    {
+      "ID": 33520000,
+      "Entries": [
+        "chimney (low) -- 煙突（低）"
+      ]
+    },
+    {
+      "ID": 33530000,
+      "Entries": [
+        "Chimney (thick) -- 煙突（太）"
+      ]
+    },
+    {
+      "ID": 33640000,
+      "Entries": [
+        "gantry crane -- ガントリークレーン"
+      ]
+    },
+    {
+      "ID": 33770000,
+      "Entries": [
+        "Wind power generation (middle_windmill) -- 風力発電（中_風車）"
+      ]
+    },
+    {
+      "ID": 33820000,
+      "Entries": [
+        "Ice field mining area_elevator -- 氷原採掘エリア＿エレベーター"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Power equipment (second generator) -- 電力装置（第2ジェネレータ）"
+      ]
+    },
+    {
+      "ID": 34101000,
+      "Entries": [
+        "1st generator (core connection) -- 第１ジェネレータ（基幹接続）"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "1st generator (base) -- 第１ジェネレータ（土台）"
+      ]
+    },
+    {
+      "ID": 34121000,
+      "Entries": [
+        "1st generator (cable) -- 第１ジェネレータ（ケーブル）"
+      ]
+    },
+    {
+      "ID": 34150000,
+      "Entries": [
+        "Power equipment (1st generator) -- 電力装置（第1ジェネレータ）"
+      ]
+    },
+    {
+      "ID": 34201000,
+      "Entries": [
+        "Reinforced pile (broken) -- 補強杭（破断）"
+      ]
+    },
+    {
+      "ID": 34202000,
+      "Entries": [
+        "Reinforced pile (broken) -- 補強杭（破断）"
+      ]
+    },
+    {
+      "ID": 34203000,
+      "Entries": [
+        "Reinforced pile (broken) -- 補強杭（破断）"
+      ]
+    },
+    {
+      "ID": 34236000,
+      "Entries": [
+        "Elevator code (destruction_back) -- 昇降機コード(破壊_裏)"
+      ]
+    },
+    {
+      "ID": 34281000,
+      "Entries": [
+        "Protective pillar (low) -- 防護柱（低）"
+      ]
+    },
+    {
+      "ID": 34284000,
+      "Entries": [
+        "Protective pillar lighting (with light source) -- 防護柱照明(光源あり)"
+      ]
+    },
+    {
+      "ID": 34288000,
+      "Entries": [
+        "Protective pillar lighting (high_damaged) -- 防護柱照明(高_破損)"
+      ]
+    },
+    {
+      "ID": 34521000,
+      "Entries": [
+        "Lighting (District 2_Damaged) -- 照明（第2地区_破損）"
+      ]
+    },
+    {
+      "ID": 34522000,
+      "Entries": [
+        "Lighting_With light source (Second District) -- 照明_光源あり（第2地区）"
+      ]
+    },
+    {
+      "ID": 34048000,
+      "Entries": [
+        "Swamp_table -- 沼_表"
+      ]
+    },
+    {
+      "ID": 34049000,
+      "Entries": [
+        "Swamp_back -- 沼_裏"
+      ]
+    },
+    {
+      "ID": 34581000,
+      "Entries": [
+        "Daimon_back -- 大門_裏"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "Cable (broken) -- ケーブル（破断）"
+      ]
+    },
+    {
+      "ID": 35560000,
+      "Entries": [
+        "Landing ship wreckage_front 1 -- 揚陸艦残骸_前1"
+      ]
+    },
+    {
+      "ID": 35570000,
+      "Entries": [
+        "Landing ship wreckage_middle 1 -- 揚陸艦残骸_中1"
+      ]
+    },
+    {
+      "ID": 35580000,
+      "Entries": [
+        "Landing ship wreckage_back 1 -- 揚陸艦残骸_後1"
+      ]
+    },
+    {
+      "ID": 35593000,
+      "Entries": [
+        "For landing ship back missions_for distant views) -- 揚陸艦裏ミッション用_遠景用）"
+      ]
+    },
+    {
+      "ID": 39110000,
+      "Entries": [
+        "Melange tank (stationary) -- メランジタンク（据え置き）"
+      ]
+    },
+    {
+      "ID": 39470000,
+      "Entries": [
+        "Lighting (downward) -- 照明（下向き）"
+      ]
+    },
+    {
+      "ID": 39471000,
+      "Entries": [
+        "Lighting (upward) -- 照明（上向き）"
+      ]
+    },
+    {
+      "ID": 39473000,
+      "Entries": [
+        "Lighting (red light_large) -- 照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 39473001,
+      "Entries": [
+        "Lighting (red light_large) -- 照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 39474000,
+      "Entries": [
+        "Hanging lighting (white light_flashing) -- 吊型照明（白色灯_点滅）"
+      ]
+    },
+    {
+      "ID": 39474001,
+      "Entries": [
+        "Hanging lighting (white light_flashing) -- 吊型照明（白色灯_点滅）"
+      ]
+    },
+    {
+      "ID": 39475000,
+      "Entries": [
+        "Lighting (for humans) -- 照明（人間用）"
+      ]
+    },
+    {
+      "ID": 39585000,
+      "Entries": [
+        "Cable (broken) -- ケーブル（破断）"
+      ]
+    },
+    {
+      "ID": 39586000,
+      "Entries": [
+        "Cable (broken) -- ケーブル（破断）"
+      ]
+    },
+    {
+      "ID": 39587000,
+      "Entries": [
+        "Cable (broken) -- ケーブル（破断）"
+      ]
+    },
+    {
+      "ID": 39588000,
+      "Entries": [
+        "Cable (broken) -- ケーブル（破断）"
+      ]
+    },
+    {
+      "ID": 39980000,
+      "Entries": [
+        "For effect placement (ground blizzard) -- エフェクト配置用（地吹雪）"
+      ]
+    },
+    {
+      "ID": 39981000,
+      "Entries": [
+        "For effect placement (smoke) -- エフェクト配置用（煙）"
+      ]
+    },
+    {
+      "ID": 39982000,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）"
+      ]
+    },
+    {
+      "ID": 39982001,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）"
+      ]
+    },
+    {
+      "ID": 39982002,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）"
+      ]
+    },
+    {
+      "ID": 39982003,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）"
+      ]
+    },
+    {
+      "ID": 39983000,
+      "Entries": [
+        "For effect placement (decontamination flame) -- エフェクト配置用（除染炎）"
+      ]
+    },
+    {
+      "ID": 39983001,
+      "Entries": [
+        "For effect placement (decontamination flame) -- エフェクト配置用（除染炎）"
+      ]
+    },
+    {
+      "ID": 39983002,
+      "Entries": [
+        "For effect placement (decontamination flame) -- エフェクト配置用（除染炎）"
+      ]
+    },
+    {
+      "ID": 39984000,
+      "Entries": [
+        "For effect placement (barrier sparks) -- エフェクト配置用（防壁火花）"
+      ]
+    },
+    {
+      "ID": 39989000,
+      "Entries": [
+        "For effect placement (white smoke) -- エフェクト配置用（白煙）"
+      ]
+    },
+    {
+      "ID": 53001000,
+      "Entries": [
+        "Lakeside base_building_1 -- 湖畔の拠点_建物_1"
+      ]
+    },
+    {
+      "ID": 53002000,
+      "Entries": [
+        "Lakeside base_building_2 -- 湖畔の拠点_建物_2"
+      ]
+    },
+    {
+      "ID": 53070000,
+      "Entries": [
+        "Lakeside Twin Towers -- 湖畔\u3000ツインタワー"
+      ]
+    },
+    {
+      "ID": 53071000,
+      "Entries": [
+        "In front of the lakeside twin tower foundation -- 湖畔\u3000ツインタワー土台\u3000前"
+      ]
+    },
+    {
+      "ID": 53072000,
+      "Entries": [
+        "Lakeside twin tower foundation rear -- 湖畔\u3000ツインタワー土台\u3000後ろ"
+      ]
+    },
+    {
+      "ID": 53201000,
+      "Entries": [
+        "Lakeside large facility -- 湖畔\u3000大型施設"
+      ]
+    },
+    {
+      "ID": 53100000,
+      "Entries": [
+        "Lakeside base_Boss area watchtower -- 湖畔の拠点_ボスエリア監視塔"
+      ]
+    },
+    {
+      "ID": 53701000,
+      "Entries": [
+        "Lakeside boss area building -- 湖畔\u3000ボスエリア建物"
+      ]
+    },
+    {
+      "ID": 53701001,
+      "Entries": [
+        "Lakeside boss area building -- 湖畔\u3000ボスエリア建物"
+      ]
+    },
+    {
+      "ID": 53900000,
+      "Entries": [
+        "Search light_enemy search light -- サーチライト_索敵ライト"
+      ]
+    },
+    {
+      "ID": 53900001,
+      "Entries": [
+        "Searchlight_Enemy search light lightweight -- サーチライト_索敵ライト軽量"
+      ]
+    },
+    {
+      "ID": 53919000,
+      "Entries": [
+        "Lakeside battery light -- 湖畔\u3000砲台用ライト"
+      ]
+    },
+    {
+      "ID": 53905000,
+      "Entries": [
+        "Lakeside data center bottom -- 湖畔\u3000データセンター底"
+      ]
+    },
+    {
+      "ID": 54418000,
+      "Entries": [
+        "Lakeside boss area building -- 湖畔\u3000ボスエリア建物"
+      ]
+    },
+    {
+      "ID": 54700000,
+      "Entries": [
+        "Lakeside Boss Area Flaming Asset -- 湖畔\u3000ボスエリア\u3000炎上アセット"
+      ]
+    },
+    {
+      "ID": 62000000,
+      "Entries": [
+        "Lighting tower A -- 照明塔A"
+      ]
+    },
+    {
+      "ID": 62001000,
+      "Entries": [
+        "Lighting tower B -- 照明塔B"
+      ]
+    },
+    {
+      "ID": 62001001,
+      "Entries": [
+        "Lighting tower B (lightweight) -- 照明塔B(軽量）"
+      ]
+    },
+    {
+      "ID": 62004000,
+      "Entries": [
+        "ceiling lighting -- 天井照明"
+      ]
+    },
+    {
+      "ID": 62320000,
+      "Entries": [
+        "crane -- クレーン"
+      ]
+    },
+    {
+      "ID": 62323000,
+      "Entries": [
+        "Wincher crane balance -- ウィンチャークレーン\u3000天秤"
+      ]
+    },
+    {
+      "ID": 62800000,
+      "Entries": [
+        "[VOB] Smoke dummy poly -- 【VOB】煙ダミポリ"
+      ]
+    },
+    {
+      "ID": 63225000,
+      "Entries": [
+        "VOB insertion port -- VOB差込入口"
+      ]
+    },
+    {
+      "ID": 65630000,
+      "Entries": [
+        "c3020 communist MT_original form_remains -- c3020共産MT_原形_残骸"
+      ]
+    },
+    {
+      "ID": 65631000,
+      "Entries": [
+        "c3400 quadruped MT_original form_remains -- c3400四脚MT_原形_残骸"
+      ]
+    },
+    {
+      "ID": 65632000,
+      "Entries": [
+        "c3020 Communist MT_Scattered_No snow -- c3020共産MT_飛散_雪無し"
+      ]
+    },
+    {
+      "ID": 65632001,
+      "Entries": [
+        "c3021 Communist MT_Scattered_No snow -- c3021共産MT_飛散_雪無し"
+      ]
+    },
+    {
+      "ID": 65500000,
+      "Entries": [
+        "[Snowy Mountain] Large helicopter wreckage -- 【雪山】残骸ヘリ大"
+      ]
+    },
+    {
+      "ID": 65513000,
+      "Entries": [
+        "[Snowy Mountain] Large helicopter wreckage (non-destructive)_Normal -- 【雪山】残骸ヘリ大(非破壊）_通常"
+      ]
+    },
+    {
+      "ID": 65600000,
+      "Entries": [
+        "[Snowy Mountain] Jagano remains (non-destructive) -- 【雪山】残骸ジャガノ（非破壊）"
+      ]
+    },
+    {
+      "ID": 65610000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65611000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65650000,
+      "Entries": [
+        "Wreckage_c3050 regular army MT_original form -- 残骸_c3050正規軍MT_原形"
+      ]
+    },
+    {
+      "ID": 65651000,
+      "Entries": [
+        "Wreckage_c3050 Regular Army MT_Scattered -- 残骸_c3050正規軍MT_飛散"
+      ]
+    },
+    {
+      "ID": 65660000,
+      "Entries": [
+        "Wreckage_c3250 regular army AC_original form -- 残骸_c3250正規軍AC_原形"
+      ]
+    },
+    {
+      "ID": 65661000,
+      "Entries": [
+        "Wreckage_c3250 Regular Army AC_Scattered -- 残骸_c3250正規軍AC_飛散"
+      ]
+    },
+    {
+      "ID": 65800000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 65801000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 65802000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 65802001,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 65802002,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 65803000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 65810000,
+      "Entries": [
+        "[Snowy Mountain] Damipoly for flowing smoke -- 【雪山】流れる煙用ダミポリ"
+      ]
+    },
+    {
+      "ID": 66201000,
+      "Entries": [
+        "[VOB] Melange water surface smoke -- 【VOB】メランジ水面煙"
+      ]
+    },
+    {
+      "ID": 100009000,
+      "Entries": [
+        "A tier station -- A層\u3000駅"
+      ]
+    },
+    {
+      "ID": 100811000,
+      "Entries": [
+        "Light source for A layer orange -- A層用光源 オレンジ"
+      ]
+    },
+    {
+      "ID": 100812000,
+      "Entries": [
+        "Light source for A layer white -- A層用光源 白"
+      ]
+    },
+    {
+      "ID": 100810000,
+      "Entries": [
+        "catapult aerial point light -- カタパルト空中ポイントライト"
+      ]
+    },
+    {
+      "ID": 100900000,
+      "Entries": [
+        "Communist MT wreckage -- 共産MT残骸"
+      ]
+    },
+    {
+      "ID": 101050001,
+      "Entries": [
+        "8 consecutive lighting_short_no light source -- 8連照明_短_光源なし"
+      ]
+    },
+    {
+      "ID": 101050002,
+      "Entries": [
+        "8 consecutive lighting_short_with light source -- 8連照明_短_光源あり"
+      ]
+    },
+    {
+      "ID": 101050003,
+      "Entries": [
+        "8 consecutive lighting_long_no light source -- 8連照明_長_光源なし"
+      ]
+    },
+    {
+      "ID": 101050004,
+      "Entries": [
+        "8 consecutive lighting_long_with light source -- 8連照明_長_光源あり"
+      ]
+    },
+    {
+      "ID": 101051001,
+      "Entries": [
+        "Ceiling lighting (yellow)_no light source -- 天井照明（黄）_光源なし"
+      ]
+    },
+    {
+      "ID": 101051002,
+      "Entries": [
+        "Ceiling lighting (yellow)_with light source -- 天井照明（黄）_光源あり"
+      ]
+    },
+    {
+      "ID": 101052001,
+      "Entries": [
+        "Ceiling lighting (small)_no light source -- 天井照明（小）_光源なし"
+      ]
+    },
+    {
+      "ID": 101052002,
+      "Entries": [
+        "Ceiling lighting (small)_with light source -- 天井照明（小）_光源あり"
+      ]
+    },
+    {
+      "ID": 101053000,
+      "Entries": [
+        "Side lighting (white) -- 側面照明（白色）"
+      ]
+    },
+    {
+      "ID": 101053001,
+      "Entries": [
+        "Side lighting (white) -- 側面照明（白色）"
+      ]
+    },
+    {
+      "ID": 101053002,
+      "Entries": [
+        "Side lighting (white) -- 側面照明（白色）"
+      ]
+    },
+    {
+      "ID": 101054000,
+      "Entries": [
+        "red light -- 赤色灯"
+      ]
+    },
+    {
+      "ID": 101055000,
+      "Entries": [
+        "Lighting (downward) -- 照明（下向き）"
+      ]
+    },
+    {
+      "ID": 101056000,
+      "Entries": [
+        "Lighting (upward) -- 照明（上向き）"
+      ]
+    },
+    {
+      "ID": 101057000,
+      "Entries": [
+        "Side lighting (yellow) -- 側面照明（黄色）"
+      ]
+    },
+    {
+      "ID": 101058000,
+      "Entries": [
+        "Ceiling lighting (small_flashing) -- 天井照明（小_点滅）"
+      ]
+    },
+    {
+      "ID": 101090000,
+      "Entries": [
+        "Shielding asset (red light) -- 遮蔽アセット（赤色灯）"
+      ]
+    },
+    {
+      "ID": 101100000,
+      "Entries": [
+        "Melange tank (hanging) -- メランジタンク（吊り下げ）"
+      ]
+    },
+    {
+      "ID": 101110000,
+      "Entries": [
+        "Melange tank (stationary) -- メランジタンク（据え置き）"
+      ]
+    },
+    {
+      "ID": 101112000,
+      "Entries": [
+        "Big bridge_small crane -- ビックブリッジ_小クレーン"
+      ]
+    },
+    {
+      "ID": 101113000,
+      "Entries": [
+        "Exhaust port (BB) -- 排気口（BB）"
+      ]
+    },
+    {
+      "ID": 101113001,
+      "Entries": [
+        "Exhaust port (tutorial) -- 排気口（チュートリアル）"
+      ]
+    },
+    {
+      "ID": 101210000,
+      "Entries": [
+        "Railroad bulletin board -- 線路脇掲示板"
+      ]
+    },
+    {
+      "ID": 101260000,
+      "Entries": [
+        "street light -- 街灯"
+      ]
+    },
+    {
+      "ID": 101261000,
+      "Entries": [
+        "Street light_pillar side -- 街灯_柱側面"
+      ]
+    },
+    {
+      "ID": 101142000,
+      "Entries": [
+        "On the continental shell_Electric warhead for injection -- 大陸殻上_射出用通電弾頭"
+      ]
+    },
+    {
+      "ID": 101440000,
+      "Entries": [
+        "Transmission (placed) -- トランスミッション（置）"
+      ]
+    },
+    {
+      "ID": 101441000,
+      "Entries": [
+        "Transmission (position_gear) -- トランスミッション（置_歯車）"
+      ]
+    },
+    {
+      "ID": 101909000,
+      "Entries": [
+        "Distant view_after destroying the mining ship -- 遠景_採掘艦破壊後"
+      ]
+    },
+    {
+      "ID": 102340000,
+      "Entries": [
+        "Heavy oil splash -- 重油飛沫"
+      ]
+    },
+    {
+      "ID": 109980009,
+      "Entries": [
+        "Ceiling collapse rubble -- 天井崩落瓦礫"
+      ]
+    },
+    {
+      "ID": 109981000,
+      "Entries": [
+        "plume -- 噴煙"
+      ]
+    },
+    {
+      "ID": 109981001,
+      "Entries": [
+        "plume -- 噴煙"
+      ]
+    },
+    {
+      "ID": 109982000,
+      "Entries": [
+        "spark -- 火花"
+      ]
+    },
+    {
+      "ID": 109988000,
+      "Entries": [
+        "collapse -- 崩落"
+      ]
+    },
+    {
+      "ID": 109989000,
+      "Entries": [
+        "collapse -- 崩落"
+      ]
+    },
+    {
+      "ID": 120095000,
+      "Entries": [
+        "A layer tutorial_exit lighting -- A層チュートリアル_出口照明"
+      ]
+    },
+    {
+      "ID": 120106000,
+      "Entries": [
+        "Crane (red light) -- クレーン（赤色灯）"
+      ]
+    },
+    {
+      "ID": 120109000,
+      "Entries": [
+        "spotlight -- スポットライト"
+      ]
+    },
+    {
+      "ID": 120153001,
+      "Entries": [
+        "Ceiling lighting (minimum_weak) -- 天井照明（最小_弱）",
+        "Ceiling lighting (minimum_weak) -- 天井照明（最小_弱）"
+      ]
+    },
+    {
+      "ID": 120153002,
+      "Entries": [
+        "Ceiling lighting (minimum)_with light source -- 天井照明（最小）_光源あり"
+      ]
+    },
+    {
+      "ID": 120154000,
+      "Entries": [
+        "Ceiling lighting (white_long)_no light source -- 天井照明（白_長）_光源なし"
+      ]
+    },
+    {
+      "ID": 120154001,
+      "Entries": [
+        "Ceiling lighting (white)_no light source -- 天井照明（白）_光源なし"
+      ]
+    },
+    {
+      "ID": 120154002,
+      "Entries": [
+        "Ceiling lighting (white)_with light source -- 天井照明（白）_光源あり"
+      ]
+    },
+    {
+      "ID": 120155000,
+      "Entries": [
+        "stage lighting -- 演出照明"
+      ]
+    },
+    {
+      "ID": 101240000,
+      "Entries": [
+        "Side tank (red light) -- 側面タンク（赤色灯）"
+      ]
+    },
+    {
+      "ID": 120262000,
+      "Entries": [
+        "smoke after landing -- 着地後煙"
+      ]
+    },
+    {
+      "ID": 120268000,
+      "Entries": [
+        "tank hanging device -- タンク吊り下げ装置"
+      ]
+    },
+    {
+      "ID": 120298000,
+      "Entries": [
+        "chimney smoke -- 煙突煙"
+      ]
+    },
+    {
+      "ID": 120298001,
+      "Entries": [
+        "Chimney (red light) -- 煙突（赤色灯）"
+      ]
+    },
+    {
+      "ID": 120303000,
+      "Entries": [
+        "Damaged cable earth leakage -- 破損ケーブル漏電"
+      ]
+    },
+    {
+      "ID": 120329000,
+      "Entries": [
+        "A layer__point light source -- A層__点光源"
+      ]
+    },
+    {
+      "ID": 120487000,
+      "Entries": [
+        "Overhang -- 張り出し"
+      ]
+    },
+    {
+      "ID": 120682000,
+      "Entries": [
+        "mining crane -- 採掘クレーン"
+      ]
+    },
+    {
+      "ID": 120618000,
+      "Entries": [
+        "Aisle (long) -- 通路（長）"
+      ]
+    },
+    {
+      "ID": 120807000,
+      "Entries": [
+        "up in flames -- 炎上"
+      ]
+    },
+    {
+      "ID": 120847000,
+      "Entries": [
+        "blast furnace -- 溶鉱炉"
+      ]
+    },
+    {
+      "ID": 120961000,
+      "Entries": [
+        "Elevator door red light -- エレベーター扉\u3000赤色灯"
+      ]
+    },
+    {
+      "ID": 120962000,
+      "Entries": [
+        "Passage in front of elevator lighting -- エレベーター前通路\u3000照明"
+      ]
+    },
+    {
+      "ID": 120963001,
+      "Entries": [
+        "Elevator lighting_no light source -- エレベーター\u3000照明_光源なし"
+      ]
+    },
+    {
+      "ID": 120963002,
+      "Entries": [
+        "Elevator lighting_with light source -- エレベーター\u3000照明_光源あり"
+      ]
+    },
+    {
+      "ID": 120969000,
+      "Entries": [
+        "Ground floor with continental shell elevator switch -- 大陸殻エレベータスイッチがある地面"
+      ]
+    },
+    {
+      "ID": 120960000,
+      "Entries": [
+        "Wall with continental shell elevator switch -- 大陸殻エレベータスイッチがある壁"
+      ]
+    },
+    {
+      "ID": 200004000,
+      "Entries": [
+        "wall breakwater large -- 壁 防波堤 大"
+      ]
+    },
+    {
+      "ID": 200055000,
+      "Entries": [
+        "city ​​facility large antenna -- 街 施設 大アンテナ"
+      ]
+    },
+    {
+      "ID": 200063000,
+      "Entries": [
+        "bridge -- 橋"
+      ]
+    },
+    {
+      "ID": 200070000,
+      "Entries": [
+        "Facility parts small -- 施設パーツ 小"
+      ]
+    },
+    {
+      "ID": 200071000,
+      "Entries": [
+        "Facility parts small with antenna -- 施設パーツ 小 アンテナ有"
+      ]
+    },
+    {
+      "ID": 200071001,
+      "Entries": [
+        "Facility parts small with antenna -- 施設パーツ 小 アンテナ有"
+      ]
+    },
+    {
+      "ID": 200120000,
+      "Entries": [
+        "Antenna small A -- アンテナ\u3000小\u3000A"
+      ]
+    },
+    {
+      "ID": 200500000,
+      "Entries": [
+        "orbital elevator -- 軌道エレベーター"
+      ]
+    },
+    {
+      "ID": 203402000,
+      "Entries": [
+        "Power supply facility_damage -- 電力供給施設_破損"
+      ]
+    },
+    {
+      "ID": 204512000,
+      "Entries": [
+        "Half-destructed power equipment -- 半壊電力装置"
+      ]
+    },
+    {
+      "ID": 204521000,
+      "Entries": [
+        "rotating water device -- 回転水装置"
+      ]
+    },
+    {
+      "ID": 223010000,
+      "Entries": [
+        "[B tier] Sailor building (column building) -- 【B層】帆ビル（円柱ビル）"
+      ]
+    },
+    {
+      "ID": 223425000,
+      "Entries": [
+        "Dome floor for invasion lower level destruction A -- ドーム 床\u3000侵攻用\u3000下段\u3000破壊A"
+      ]
+    },
+    {
+      "ID": 223426000,
+      "Entries": [
+        "Dome floor for invasion upper level destruction A -- ドーム 床\u3000侵攻用\u3000上段\u3000破壊A"
+      ]
+    },
+    {
+      "ID": 223800000,
+      "Entries": [
+        "[B layer] Spotlight 1st grade -- 【B層】スポットライト 小1"
+      ]
+    },
+    {
+      "ID": 223801000,
+      "Entries": [
+        "[B layer] Spotlight 2nd grade -- 【B層】スポットライト 小2"
+      ]
+    },
+    {
+      "ID": 224900000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット"
+      ]
+    },
+    {
+      "ID": 224901000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット"
+      ]
+    },
+    {
+      "ID": 224902000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット"
+      ]
+    },
+    {
+      "ID": 233110000,
+      "Entries": [
+        "[B layer] General purpose_Construction scaffolding_35m -- 【B層】汎用_建設足場_35m"
+      ]
+    },
+    {
+      "ID": 233115000,
+      "Entries": [
+        "[B layer] General purpose_Construction scaffolding_20m -- 【B層】汎用_建設足場_20m"
+      ]
+    },
+    {
+      "ID": 233980000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット"
+      ]
+    },
+    {
+      "ID": 234970000,
+      "Entries": [
+        "c3600 construction machine spider_normal debris -- c3600建機クモ_通常残骸"
+      ]
+    },
+    {
+      "ID": 234971000,
+      "Entries": [
+        "c3600 construction machine spider_scattering type -- c3600建機クモ_飛散型"
+      ]
+    },
+    {
+      "ID": 234980000,
+      "Entries": [
+        "c4150 special attack MT_normal wreckage -- c4150特攻MT_通常残骸"
+      ]
+    },
+    {
+      "ID": 234981000,
+      "Entries": [
+        "c4150 special attack MT_scattering type -- c4150特攻MT_飛散型"
+      ]
+    },
+    {
+      "ID": 300270000,
+      "Entries": [
+        "C layer communication device -- C層通信装置"
+      ]
+    },
+    {
+      "ID": 300271000,
+      "Entries": [
+        "C layer communication device -- C層通信装置"
+      ]
+    },
+    {
+      "ID": 410170000,
+      "Entries": [
+        "[D layer] EV_red light -- 【D層】EV_赤色灯"
+      ]
+    },
+    {
+      "ID": 410208000,
+      "Entries": [
+        "[D layer] Passage_Truss -- 【D層】通路_トラス"
+      ]
+    },
+    {
+      "ID": 410312000,
+      "Entries": [
+        "[D layer] Crane -- 【D層】クレーン"
+      ]
+    },
+    {
+      "ID": 410361000,
+      "Entries": [
+        "[D layer] Under the floor_white smoke -- 【D層】床下_白煙"
+      ]
+    },
+    {
+      "ID": 410381000,
+      "Entries": [
+        "[D layer] Living weapon ceiling -- 【D層】生体兵器天井"
+      ]
+    },
+    {
+      "ID": 410386000,
+      "Entries": [
+        "[D layer] Biological weapon ceiling_code -- 【D層】生体兵器天井_コード"
+      ]
+    },
+    {
+      "ID": 410420000,
+      "Entries": [
+        "[D layer] EV_red light -- 【D層】EV_赤色灯"
+      ]
+    },
+    {
+      "ID": 410450000,
+      "Entries": [
+        "[D layer] Power plant_furnace -- 【D層】発電所_炉"
+      ]
+    },
+    {
+      "ID": 410470000,
+      "Entries": [
+        "[D layer] Vertical hole_Beam upward + 100m column -- 【D層】縦穴_梁上向き+100m柱"
+      ]
+    },
+    {
+      "ID": 410471000,
+      "Entries": [
+        "[D layer] Vertical hole_beam downward + 100m column -- 【D層】縦穴_梁下向き+100m柱"
+      ]
+    },
+    {
+      "ID": 410474000,
+      "Entries": [
+        "[D layer] Vertical hole_small room + 100m wall -- 【D層】縦穴_小部屋+100m壁"
+      ]
+    },
+    {
+      "ID": 410551000,
+      "Entries": [
+        "[D layer] Piping -- 【D層】配管"
+      ]
+    },
+    {
+      "ID": 410602000,
+      "Entries": [
+        "[D layer] Overhead crane -- 【D層】天井クレーン"
+      ]
+    },
+    {
+      "ID": 410776000,
+      "Entries": [
+        "[D layer] Vertical hole_Beam upward + 100m column -- 【D層】縦穴_梁上向き+100m柱"
+      ]
+    },
+    {
+      "ID": 410776001,
+      "Entries": [
+        "[D layer] Vertical hole_beam downward + 100m column -- 【D層】縦穴_梁下向き+100m柱"
+      ]
+    },
+    {
+      "ID": 410777000,
+      "Entries": [
+        "[D layer] Vertical hole_small room + 100m wall -- 【D層】縦穴_小部屋+100m壁"
+      ]
+    },
+    {
+      "ID": 410861000,
+      "Entries": [
+        "[D layer] Destruction target -- 【D層】破壊目標"
+      ]
+    },
+    {
+      "ID": 410862000,
+      "Entries": [
+        "[D layer] Destruction target -- 【D層】破壊目標"
+      ]
+    },
+    {
+      "ID": 410920000,
+      "Entries": [
+        "[D layer] General purpose_Construction scaffolding_35m -- 【D層】汎用_建設足場_35m"
+      ]
+    },
+    {
+      "ID": 410921000,
+      "Entries": [
+        "[D layer] General purpose_Construction scaffolding_20m -- 【D層】汎用_建設足場_20m"
+      ]
+    },
+    {
+      "ID": 410930000,
+      "Entries": [
+        "[D layer] Light_for wide range -- 【D層】ライト_広範囲用"
+      ]
+    },
+    {
+      "ID": 410931000,
+      "Entries": [
+        "[D layer] Light_1 light -- 【D層】ライト_1灯"
+      ]
+    },
+    {
+      "ID": 410933000,
+      "Entries": [
+        "[D layer] Lighting (red light_large) -- 【D層】照明（赤色灯_大）"
+      ]
+    },
+    {
+      "ID": 410932001,
+      "Entries": [
+        "[D layer] 8 consecutive lighting_no light source -- 【D層】8連照明_光源なし"
+      ]
+    },
+    {
+      "ID": 410932002,
+      "Entries": [
+        "[D layer] 8 consecutive lighting_with light source -- 【D層】8連照明_光源あり"
+      ]
+    },
+    {
+      "ID": 410934000,
+      "Entries": [
+        "[D layer] Searchlight -- 【D層】サーチライト"
+      ]
+    },
+    {
+      "ID": 410937000,
+      "Entries": [
+        "[D layer] Lighting -- 【D層】照明"
+      ]
+    },
+    {
+      "ID": 411574000,
+      "Entries": [
+        "[Geo] Large pipe -- 【ジオ】大パイプ"
+      ]
+    },
+    {
+      "ID": 411581000,
+      "Entries": [
+        "[Geo] Pipe passage T-junction -- 【ジオ】パイプ通路T字路"
+      ]
+    },
+    {
+      "ID": 411582000,
+      "Entries": [
+        "[Geo] Pipe passage -- 【ジオ】パイプ通路"
+      ]
+    },
+    {
+      "ID": 500240000,
+      "Entries": [
+        "bucket wheel excavator -- バケットホイールエクスカベーター"
+      ]
+    },
+    {
+      "ID": 500411001,
+      "Entries": [
+        "Mining ship 1st car A -- 採掘艦1両目\u3000A"
+      ]
+    },
+    {
+      "ID": 500412001,
+      "Entries": [
+        "Mining ship 1st car B -- 採掘艦1両目\u3000B"
+      ]
+    },
+    {
+      "ID": 500420001,
+      "Entries": [
+        "3rd mining ship -- 採掘艦3両目"
+      ]
+    },
+    {
+      "ID": 500421001,
+      "Entries": [
+        "2nd mining ship -- 採掘艦2両目"
+      ]
+    },
+    {
+      "ID": 500631000,
+      "Entries": [
+        "Large ground wall light -- 地表大壁\u3000ライト"
+      ]
+    },
+    {
+      "ID": 500632000,
+      "Entries": [
+        "Ground surface large wall door light -- 地表大壁扉\u3000ライト"
+      ]
+    },
+    {
+      "ID": 500633000,
+      "Entries": [
+        "Large ground wall elevator light -- 地表大壁\u3000エレベーター\u3000ライト"
+      ]
+    },
+    {
+      "ID": 501800000,
+      "Entries": [
+        "blizzard -- 地吹雪"
+      ]
+    },
+    {
+      "ID": 501801000,
+      "Entries": [
+        "smoke -- 煙"
+      ]
+    },
+    {
+      "ID": 501810000,
+      "Entries": [
+        "Flaming Damipoli -- 炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 501811000,
+      "Entries": [
+        "Flaming Damipoli -- 炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 501812000,
+      "Entries": [
+        "Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 501812001,
+      "Entries": [
+        "Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 501812002,
+      "Entries": [
+        "Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）"
+      ]
+    },
+    {
+      "ID": 501813000,
+      "Entries": [
+        "Flaming Damipoli -- 炎上ダミポリ"
+      ]
+    },
+    {
+      "ID": 506830000,
+      "Entries": [
+        "Wreckage_c3000 security MT_original form -- 残骸_c3000警備MT_原形"
+      ]
+    },
+    {
+      "ID": 506831000,
+      "Entries": [
+        "Wreckage_c3000 Security MT_Scattered -- 残骸_c3000警備MT_飛散"
+      ]
+    },
+    {
+      "ID": 506840000,
+      "Entries": [
+        "Wreckage_c3020 communist MT_original form -- 残骸_c3020共産MT_原形"
+      ]
+    },
+    {
+      "ID": 506841000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Scattered -- 残骸_c3020共産MT_飛散"
+      ]
+    },
+    {
+      "ID": 506845000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Original form_No snow -- 残骸_c3020共産MT_原形_雪無し"
+      ]
+    },
+    {
+      "ID": 506846000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Scattered_No snow -- 残骸_c3020共産MT_飛散_雪無し"
+      ]
+    },
+    {
+      "ID": 506850000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_original form -- 残骸_c3400四脚MT_原形"
+      ]
+    },
+    {
+      "ID": 506851000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_scattered -- 残骸_c3400四脚MT_飛散"
+      ]
+    },
+    {
+      "ID": 506855000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_original form_no snow -- 残骸_c3400四脚MT_原形_雪無し"
+      ]
+    },
+    {
+      "ID": 506856000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_scattered_no snow -- 残骸_c3400四脚MT_飛散_雪無し"
+      ]
+    },
+    {
+      "ID": 506880000,
+      "Entries": [
+        "Wreckage_Armed helicopter_Original form -- 残骸_武装ヘリ_原形"
+      ]
+    },
+    {
+      "ID": 506890000,
+      "Entries": [
+        "Wreckage_Combat vehicle_Original form -- 残骸_戦闘車両_原形"
+      ]
+    },
+    {
+      "ID": 506690000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 506699000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 511020000,
+      "Entries": [
+        "AEG511_020 Management facility light -- AEG511_020 管理施設\u3000ライト"
+      ]
+    },
+    {
+      "ID": 840250000,
+      "Entries": [
+        "recon assets -- リコンアセット"
+      ]
+    },
+    {
+      "ID": 860011000,
+      "Entries": [
+        "Planets with coral resonance -- コーラル共鳴している惑星"
+      ]
+    },
+    {
+      "ID": 860013000,
+      "Entries": [
+        "Planets with strong coral resonance -- コーラル共鳴が強い惑星"
+      ]
+    },
+    {
+      "ID": 980104000,
+      "Entries": [
+        "container -- コンテナ"
+      ]
+    },
+    {
+      "ID": 986010000,
+      "Entries": [
+        "Planning light source test D layer (orange) -- 企画用光源テストD層（オレンジ）"
+      ]
+    },
+    {
+      "ID": 986010001,
+      "Entries": [
+        "Planning light source test D layer (blue) -- 企画用光源テストD層（ブルー）"
+      ]
+    },
+    {
+      "ID": 986010002,
+      "Entries": [
+        "Planning light source test D layer (red) -- 企画用光源テストD層（レッド）"
+      ]
+    },
+    {
+      "ID": 986010003,
+      "Entries": [
+        "Planning light source test D layer A (white) -- 企画用光源テストD層A（ホワイト)"
+      ]
+    },
+    {
+      "ID": 995020000,
+      "Entries": [
+        "Ground supply facility -- 地上補給施設"
+      ]
+    },
+    {
+      "ID": 995801000,
+      "Entries": [
+        "A layer floating island -- A層浮き島"
+      ]
+    },
+    {
+      "ID": 995810000,
+      "Entries": [
+        "B layer connection -- B層接続"
+      ]
+    },
+    {
+      "ID": 995811000,
+      "Entries": [
+        "B layer connection elevator -- B層接続 エレベーター"
+      ]
+    },
+    {
+      "ID": 997995000,
+      "Entries": [
+        "light bulb barrier -- 電球バリア"
+      ]
+    },
+    {
+      "ID": 998351000,
+      "Entries": [
+        "Lakeside temporary boss area -- 湖畔\u3000仮ボスエリア"
+      ]
+    },
+    {
+      "ID": 998600000,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 999278000,
+      "Entries": [
+        "scaffolding test -- 足場テスト"
+      ]
+    },
+    {
+      "ID": 999523000,
+      "Entries": [
+        "[Medium] Target object -- 【中】目標用オブジェクト"
+      ]
+    },
+    {
+      "ID": 999530000,
+      "Entries": [
+        "B tier giant gun pedestal -- B層巨大砲台台座"
+      ]
+    },
+    {
+      "ID": 999530001,
+      "Entries": [
+        "B tier giant gun pedestal -- B層巨大砲台台座"
+      ]
+    },
+    {
+      "ID": 999580000,
+      "Entries": [
+        "watat test -- watatテスト"
+      ]
+    },
+    {
+      "ID": 999600000,
+      "Entries": [
+        "192204sfx for placement -- 192204sfx配置用"
+      ]
+    },
+    {
+      "ID": 999640000,
+      "Entries": [
+        "building smoke test -- 建物煙テスト"
+      ]
+    },
+    {
+      "ID": 999710000,
+      "Entries": [
+        "Cliff_Building_Ironwall -- 崖_建築物_鉄壁",
+        "Cliff_Building_Ironwall -- 崖_建築物_鉄壁"
+      ]
+    },
+    {
+      "ID": 999712000,
+      "Entries": [
+        "Cliff_Building_Small -- 崖_建築物_小"
+      ]
+    },
+    {
+      "ID": 999713000,
+      "Entries": [
+        "Cliff_Building_Factory -- 崖_建築物_工場"
+      ]
+    },
+    {
+      "ID": 999713001,
+      "Entries": [
+        "Cliff_Building_Factory -- 崖_建築物_工場"
+      ]
+    },
+    {
+      "ID": 999714000,
+      "Entries": [
+        "Cliff_Building_Bridge_Steel frame_Three steps -- 崖_建築物_橋_鉄骨_三段"
+      ]
+    },
+    {
+      "ID": 999715000,
+      "Entries": [
+        "Cliff_Architecture_Bridge -- 崖_建築物_橋"
+      ]
+    },
+    {
+      "ID": 999715001,
+      "Entries": [
+        "Cliff_Architecture_Bridge -- 崖_建築物_橋"
+      ]
+    },
+    {
+      "ID": 999716000,
+      "Entries": [
+        "Cliff_Building_Bridge_Steel frame -- 崖_建築物_橋_鉄骨"
+      ]
+    },
+    {
+      "ID": 999717000,
+      "Entries": [
+        "Cliff_Crane_A -- 崖_クレーン_A"
+      ]
+    },
+    {
+      "ID": 999717001,
+      "Entries": [
+        "Cliff_Crane_A -- 崖_クレーン_A"
+      ]
+    },
+    {
+      "ID": 999722000,
+      "Entries": [
+        "Cliff_Building_Steel elevator -- 崖_建築物_鉄骨エレベーター"
+      ]
+    },
+    {
+      "ID": 999723000,
+      "Entries": [
+        "Cliff_Crane_B -- 崖_クレーン_B"
+      ]
+    },
+    {
+      "ID": 999723001,
+      "Entries": [
+        "Cliff_Crane_B -- 崖_クレーン_B"
+      ]
+    },
+    {
+      "ID": 999724000,
+      "Entries": [
+        "Cliff_Building_Small_A -- 崖_建築物_小_A"
+      ]
+    },
+    {
+      "ID": 999725000,
+      "Entries": [
+        "Cliff_Building_Scaffolding -- 崖_建築物_足場"
+      ]
+    },
+    {
+      "ID": 999728000,
+      "Entries": [
+        "Cliff_Building_Bridge pillar -- 崖_建築物_橋柱"
+      ]
+    },
+    {
+      "ID": 999730000,
+      "Entries": [
+        "small lookout tower -- 小型見張り台"
+      ]
+    },
+    {
+      "ID": 999754000,
+      "Entries": [
+        "storage tank -- 貯蔵タンク"
+      ]
+    },
+    {
+      "ID": 999760000,
+      "Entries": [
+        "Cliff_Crane_C -- 崖_クレーン_C"
+      ]
+    },
+    {
+      "ID": 999771000,
+      "Entries": [
+        "Light_for wide range -- ライト_広範囲用"
+      ]
+    },
+    {
+      "ID": 999772000,
+      "Entries": [
+        "Light_1 light -- ライト_1灯"
+      ]
+    },
+    {
+      "ID": 999778000,
+      "Entries": [
+        "Light_vertical red light -- ライト_縦長赤色灯"
+      ]
+    },
+    {
+      "ID": 999781000,
+      "Entries": [
+        "bridge_damaged -- 橋_破損"
+      ]
+    },
+    {
+      "ID": 999782000,
+      "Entries": [
+        "bridge -- 橋"
+      ]
+    },
+    {
+      "ID": 999783000,
+      "Entries": [
+        "work scaffolding -- 作業用足場"
+      ]
+    },
+    {
+      "ID": 999784000,
+      "Entries": [
+        "work scaffolding -- 作業用足場"
+      ]
+    },
+    {
+      "ID": 999784001,
+      "Entries": [
+        "work scaffolding -- 作業用足場"
+      ]
+    },
+    {
+      "ID": 999795000,
+      "Entries": [
+        "ground supply pod -- 地上補給ポッド"
+      ]
+    },
+    {
+      "ID": 999796000,
+      "Entries": [
+        "repair facility -- 修理施設"
+      ]
+    },
+    {
+      "ID": 999797000,
+      "Entries": [
+        "floating scaffolding -- 浮遊足場"
+      ]
+    },
+    {
+      "ID": 999825000,
+      "Entries": [
+        "elevator -- エレベーター"
+      ]
+    },
+    {
+      "ID": 999830000,
+      "Entries": [
+        "Assets for spotlight -- スポットライト用アセット"
+      ]
+    },
+    {
+      "ID": 999831000,
+      "Entries": [
+        "flashing light assets -- 点滅灯アセット"
+      ]
+    },
+    {
+      "ID": 999833000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット"
+      ]
+    }
+  ]
+}

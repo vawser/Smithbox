@@ -1,0 +1,521 @@
+{
+  "Name": "TutorialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Keybind: Camera Controls"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Keybind: Using Items"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Sites of Grace"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Keybind:"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Keybind:"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Keybind:"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Sorceries and Incantations"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Guarding"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Keybind:"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Keybind: Dashing"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Wielding Armaments"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Keybind: Lock-on Target Change"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Keybind: Guarding"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Bows"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Crouching"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Keybind: Backstab"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Stance Breaking"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Keybind: HUD Display"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Guard Counters"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Stakes of Marika"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Skills"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Dodging"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "The Map"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Guidance of Grace"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "Horseback Riding"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "Summoning Spirits"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "Materials"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "Item Crafting"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "Containers"
+      ]
+    },
+    {
+      "ID": 1590,
+      "Entries": [
+        "Flask of Wonderous Physick"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Adding Skills"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Birdseye Telescopes"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Spiritspring Jumping"
+      ]
+    },
+    {
+      "ID": 1630,
+      "Entries": [
+        "Vanquishing Enemy Groups"
+      ]
+    },
+    {
+      "ID": 1640,
+      "Entries": [
+        "Teardrop Scarabs"
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        "Summoning Other Players"
+      ]
+    },
+    {
+      "ID": 1660,
+      "Entries": [
+        "Cooperative Multiplayer"
+      ]
+    },
+    {
+      "ID": 1670,
+      "Entries": [
+        "Competitive Multiplayer"
+      ]
+    },
+    {
+      "ID": 1680,
+      "Entries": [
+        "Invasion Multiplayer"
+      ]
+    },
+    {
+      "ID": 1690,
+      "Entries": [
+        "Summoning Pools"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Hunter Multiplayer"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "Monument Icon"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "Requesting Aid from a Hunter"
+      ]
+    },
+    {
+      "ID": 1730,
+      "Entries": [
+        "Fast Travel to Sites of Grace"
+      ]
+    },
+    {
+      "ID": 1740,
+      "Entries": [
+        "Strengthening Armaments"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "Adding Affinities"
+      ]
+    },
+    {
+      "ID": 1760,
+      "Entries": [
+        "Multiplayer"
+      ]
+    },
+    {
+      "ID": 1770,
+      "Entries": [
+        "Pouches"
+      ]
+    },
+    {
+      "ID": 1780,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Keybind: Mounted Double Jump"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "Great Runes"
+      ]
+    },
+    {
+      "ID": 1820,
+      "Entries": [
+        "The Cave of Knowledge"
+      ]
+    },
+    {
+      "ID": 1850,
+      "Entries": [
+        "Duels"
+      ]
+    },
+    {
+      "ID": 1860,
+      "Entries": [
+        "United Combat and Combat Ordeals"
+      ]
+    },
+    {
+      "ID": 1870,
+      "Entries": [
+        "Combat with Spirit Ashes"
+      ]
+    },
+    {
+      "ID": 1880,
+      "Entries": [
+        "Marika's Effigy at Roundtable"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Scadutree Blessing"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Revered Spirit Ash Belssing"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "New Inventory Features"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Equipment Menu"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Item Crafting Menu"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Inventory Menu"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Status Menu"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Message Menu"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Multiplayer Menu"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Level Up Menu"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Allocating Flask Uses"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Memorize Spells Menu"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Sorting the Chest"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Shop Menu"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Ashes of War Menu"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Spirit Tuning Menu"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Remembrance Duplication Menu"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Great Rune Menu"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Mixing Physicks"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Rebirth Menu"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Remnant Crafting Menu"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Map Menu"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Smithing Menu"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Colosseum Menu"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Scadutree Blessing Menu"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Revered Spirit Ash Blessing Menu"
+      ]
+    }
+  ]
+}

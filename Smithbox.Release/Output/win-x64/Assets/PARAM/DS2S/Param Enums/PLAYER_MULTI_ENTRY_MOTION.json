@@ -1,0 +1,47 @@
+{
+  "Key": "PLAYER_MULTI_ENTRY_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_MULTI_ENTRY_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crouching"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standing"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Praise the Sun"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enter through Mirror"
+        }
+      ]
+    }
+  ]
+}

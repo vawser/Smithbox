@@ -1,0 +1,113 @@
+{
+  "Param": "MAP_GRID_CREATE_HEIGHT_LIMIT_DETAIL_INFO_PARAM_ST",
+  "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_DETAIL_INFO_PARAM_ST",
+  "Name": "MAP_GRID_CREATE_HEIGHT_LIMIT_DETAIL_INFO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mapId",
+      "Name": "mapId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x4",
+      "Name": "unknown_0x4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x8",
+      "Name": "unknown_0x8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "unknown_0xc",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "unknown_0x10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "unknown_0x14",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "unknown_0x18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1c",
+      "Name": "unknown_0x1c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x20",
+      "Name": "unknown_0x20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x24",
+      "Name": "unknown_0x24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x28",
+      "Name": "unknown_0x28",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2c",
+      "Name": "unknown_0x2c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2d",
+      "Name": "unknown_0x2d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2e",
+      "Name": "unknown_0x2e",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2f",
+      "Name": "unknown_0x2f",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x30",
+      "Name": "unknown_0x30",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x31",
+      "Name": "unknown_0x31",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x32",
+      "Name": "unknown_0x32",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x34",
+      "Name": "unknown_0x34",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x38",
+      "Name": "unknown_0x38",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x3c",
+      "Name": "unknown_0x3c",
+      "Description": ""
+    }
+  ]
+}

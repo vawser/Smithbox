@@ -1,0 +1,38 @@
+{
+  "Param": "PLURSL_SELECT_MENU_PARAM",
+  "Type": "PLURSL_SELECT_MENU_PARAM",
+  "Name": "PLURSL_SELECT_MENU_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "displayTextId",
+      "Name": "表示テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "consumptionSoul",
+      "Name": "選択時消費ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "kickEventId",
+      "Name": "選択時キックイベントID",
+      "Description": ""
+    },
+    {
+      "Field": "checkEventFlagId",
+      "Name": "表示確認用イベントID",
+      "Description": ""
+    },
+    {
+      "Field": "enableFlagType",
+      "Name": "項目を消すフラグの状態",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

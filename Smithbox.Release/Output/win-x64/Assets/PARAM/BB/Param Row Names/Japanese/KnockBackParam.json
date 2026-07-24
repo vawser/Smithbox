@@ -1,0 +1,23 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "汎用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC用"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "敵汎用old"
+      ]
+    }
+  ]
+}

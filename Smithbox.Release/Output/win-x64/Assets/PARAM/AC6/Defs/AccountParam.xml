@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACCOUNT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 nameTextID">
+      <DisplayName>名前</DisplayName>
+      <Description>NPC Character.xlsm のIDを指定
+指定IDから下記オフセットでテキストを登録しておくこと
++0…FE機体名
++1…FEパイロット名
++2…メニュー機体名
++3…メニューパイロット名　/　会話話者名
++4…機体名/パイロット名</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 emblemImageID">
+      <DisplayName>エンブレム</DisplayName>
+      <Description>エンブレムイメージのIDを指定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

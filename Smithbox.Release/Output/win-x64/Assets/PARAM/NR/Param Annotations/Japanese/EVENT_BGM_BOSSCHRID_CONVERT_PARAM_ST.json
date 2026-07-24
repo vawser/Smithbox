@@ -1,0 +1,33 @@
+{
+  "Param": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Type": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Name": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "ParamStr",
+      "Name": "Wwiseパラメータ文字列",
+      "Description": "Wwiseパラメータ文字列"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    }
+  ]
+}

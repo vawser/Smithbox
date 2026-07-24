@@ -1,0 +1,56 @@
+{
+  "Key": "BULLET_EMITTE_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_EMITTE_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "From Dummy Polygon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "From the ground around the shooter"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slightly above the Dummy Polygon"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generated from the shooter's target"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generated in a random area around the shooter's target"
+        }
+      ]
+    }
+  ]
+}

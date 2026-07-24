@@ -1,0 +1,65 @@
+{
+  "Key": "OBJ_WHITE_DOOR_CATEGORY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_WHITE_DOOR_CATEGORY_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End of Multiplayer Section"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss Room"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss Room Exit"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host Goal Point"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rat King Goal Point"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scenario Fog Gate"
+        }
+      ]
+    }
+  ]
+}

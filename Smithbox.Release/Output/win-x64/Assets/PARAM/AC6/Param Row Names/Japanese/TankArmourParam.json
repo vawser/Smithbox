@@ -1,0 +1,36 @@
+{
+  "Name": "TankArmourParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ]
+}

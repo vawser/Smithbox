@@ -1,0 +1,103 @@
+{
+  "Param": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
+  "Type": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
+  "Name": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "unk_01a",
+      "Name": "unk_01a",
+      "Description": ""
+    },
+    {
+      "Field": "unk_01b",
+      "Name": "unk_01b",
+      "Description": ""
+    },
+    {
+      "Field": "unk_02",
+      "Name": "unk_02",
+      "Description": ""
+    },
+    {
+      "Field": "unk_03",
+      "Name": "unk_03",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04a",
+      "Name": "unk_04a",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04b",
+      "Name": "unk_04b",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04c",
+      "Name": "unk_04c",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04d",
+      "Name": "unk_04d",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05a",
+      "Name": "unk_05a",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05b",
+      "Name": "unk_05b",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05c",
+      "Name": "unk_05c",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05d",
+      "Name": "unk_05d",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06a",
+      "Name": "unk_06a",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06b",
+      "Name": "unk_06b",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06c",
+      "Name": "unk_06c",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06d",
+      "Name": "unk_06d",
+      "Description": ""
+    },
+    {
+      "Field": "unk_07",
+      "Name": "unk_07",
+      "Description": ""
+    },
+    {
+      "Field": "unk_08",
+      "Name": "unk_08",
+      "Description": ""
+    }
+  ]
+}

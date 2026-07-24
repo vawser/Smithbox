@@ -1,0 +1,41 @@
+{
+  "Name": "BulletAttachParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Arrow -- 矢"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Oya -- 大矢"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Bolt -- ボルト"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Throwing Axe -- 投げ斧"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Disk Shield -- 円盤盾"
+      ]
+    }
+  ]
+}

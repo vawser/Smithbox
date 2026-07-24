@@ -1,0 +1,356 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Category_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Category_Developer",
+      "Text": "Developer"
+    },
+    {
+      "Key": "PREF_Category_Loggers",
+      "Text": "Loggers"
+    },
+    {
+      "Key": "PREF_Category_Automatic_Save",
+      "Text": "Automatic Save"
+    },
+    {
+      "Key": "PREF_Category_ME3",
+      "Text": "ME3"
+    },
+    {
+      "Key": "PREF_Category_Data_Overrides",
+      "Text": "Data Overrides"
+    },
+    {
+      "Key": "PREF_Category_UI_Fonts",
+      "Text": "Fonts"
+    },
+    {
+      "Key": "PREF_Category_UI_Theme",
+      "Text": "Theme"
+    },
+    {
+      "Key": "PREF_Category_UI_Theme_Builder",
+      "Text": "Theme Builder"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Rendering",
+      "Text": "Rendering"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Model_Rendering",
+      "Text": "Model Rendering"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Selection",
+      "Text": "Selection"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Coloring",
+      "Text": "Coloring"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Filter_Presets",
+      "Text": "Filter Presets"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_List",
+      "Text": "Map List"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_Contents",
+      "Text": "Map Contents"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_Object_Properties",
+      "Text": "Map Object Properties"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Additional_Property_Information",
+      "Text": "Additional Property Information"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Character_Substitution",
+      "Text": "Character Substitution"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Model_Selector",
+      "Text": "Model Selector"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Selection_Groups",
+      "Text": "Selection Groups"
+    },
+    {
+      "Key": "PREF_Category_ModelEditor_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Regulation",
+      "Text": "Regulation"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_List",
+      "Text": "Param List"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Row_List",
+      "Text": "Row List"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_List",
+      "Text": "Field List"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Input",
+      "Text": "Field Input"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_Context_Menu",
+      "Text": "Param Context Menu"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Row_Context_Menu",
+      "Text": "Row Context Menu"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Context_Menu",
+      "Text": "Field Context Menu"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Mass_Edit",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_Reloader",
+      "Text": "Param Reloader"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Metadata",
+      "Text": "Metadata"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Layouts",
+      "Text": "Field Layouts"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Container_List",
+      "Text": "Container List"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_File_List",
+      "Text": "Text File List"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Entry_List",
+      "Text": "Text Entry List"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Entries",
+      "Text": "Text Entries"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Export",
+      "Text": "Text Export"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Language_Sync",
+      "Text": "Language Sync"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Clipboard",
+      "Text": "Text Clipboard"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Group_List",
+      "Text": "Group List"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Field_List",
+      "Text": "Field List"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Value_List",
+      "Text": "Value List"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Color_Edit",
+      "Text": "Color Edit"
+    },
+    {
+      "Key": "PREF_Category_TextureViewer_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "PREF_Category_TextureViewer_Texture_List",
+      "Text": "Texture List"
+    },
+    {
+      "Key": "PREF_Category_MaterialEditor_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "PREF_Category_MapDataEditor_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Category_MapDataEditor_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Category_AnimEditor_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Menu_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PREF_Menu_Save_Action",
+      "Text": "Save"
+    },
+    {
+      "Key": "PREF_Menu_Revert_Action",
+      "Text": "Reset to Default"
+    },
+    {
+      "Key": "PREF_Preferences_Saved",
+      "Text": "Preferences saved."
+    },
+    {
+      "Key": "PREF_Tab_System",
+      "Text": "System"
+    },
+    {
+      "Key": "PREF_Tab_Project",
+      "Text": "Project"
+    },
+    {
+      "Key": "PREF_Tab_Interface",
+      "Text": "Interface"
+    },
+    {
+      "Key": "PREF_Tab_Viewport",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "PREF_Tab_Map_Editor",
+      "Text": "Map Editor"
+    },
+    {
+      "Key": "PREF_Tab_Model_Editor",
+      "Text": "Model Editor"
+    },
+    {
+      "Key": "PREF_Tab_Param_Editor",
+      "Text": "Param Editor"
+    },
+    {
+      "Key": "PREF_Tab_Text_Editor",
+      "Text": "Text Editor"
+    },
+    {
+      "Key": "PREF_Tab_Graphics_Param_Editor",
+      "Text": "Graphics Param Editor"
+    },
+    {
+      "Key": "PREF_Tab_Material_Editor",
+      "Text": "Material Editor"
+    },
+    {
+      "Key": "PREF_Tab_Texture_Viewer",
+      "Text": "Texture Viewer"
+    },
+    {
+      "Key": "PREF_Tab_Map_Data_Editor",
+      "Text": "Map Data Editor"
+    },
+    {
+      "Key": "PREF_Tab_Anim_Editor",
+      "Text": "Animation Editor"
+    },
+    {
+      "Key": "PREF_Search_Filter_Hint",
+      "Text": "Search preferences..."
+    },
+    {
+      "Key": "PREF_Action_Prompt",
+      "Text": "Are you sure?"
+    },
+    {
+      "Key": "PREF_Action_Revert_All",
+      "Text": "All"
+    },
+    {
+      "Key": "PREF_Action_Revert_All_TT",
+      "Text": "Reverts all preferences to their default value."
+    },
+    {
+      "Key": "PREF_Menu_Header_Viewport",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "PREF_Action_Viewport_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PREF_Action_Viewport_General_TT",
+      "Text": "Reverts all preferences in the Viewport General section to their default value."
+    },
+    {
+      "Key": "PREF_Action_Viewport_Rendering",
+      "Text": "Rendering"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Rendering_TT",
+      "Text": "Reverts all preferences in the Viewport Rendering section to their default value."
+    },
+    {
+      "Key": "PREF_Action_Viewport_Model_Rendering",
+      "Text": "Model Rendering"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Model_Rendering_TT",
+      "Text": "Reverts all preferences in the Viewport Model Rendering section to their default value."
+    },
+    {
+      "Key": "PREF_Action_Viewport_Selection",
+      "Text": "Selection"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Selection_TT",
+      "Text": "Reverts all preferences in the Viewport Selection section to their default value."
+    },
+    {
+      "Key": "PREF_Action_Viewport_Coloring",
+      "Text": "Coloring"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Coloring_TT",
+      "Text": "Reverts all preferences in the Viewport Coloring section to their default value."
+    },
+    {
+      "Key": "PREF_Action_Viewport_Display_Preset",
+      "Text": "Display Preset"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Display_Preset_TT",
+      "Text": "Reverts all preferences in the Viewport Display Preset section to their default value."
+    },
+    {
+      "Key": "PREF_No_Preferences_Yet",
+      "Text": "No preferences yet for this editor."
+    }
+  ]
+}

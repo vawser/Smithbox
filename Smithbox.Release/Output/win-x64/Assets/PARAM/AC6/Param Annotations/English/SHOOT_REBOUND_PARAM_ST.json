@@ -1,0 +1,193 @@
+{
+  "Param": "SHOOT_REBOUND_PARAM_ST",
+  "Type": "SHOOT_REBOUND_PARAM_ST",
+  "Name": "SHOOT_REBOUND_PARAM_ST",
+  "Description": "Recoil-related parameters.",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "Control Bone Name [1]",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName1",
+      "Name": "Control Bone Name [2]",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName2",
+      "Name": "Control Bone Name [3]",
+      "Description": ""
+    },
+    {
+      "Field": "subCtrlBoneName3",
+      "Name": "Control Bone Name [4]",
+      "Description": ""
+    },
+    {
+      "Field": "reboundLength",
+      "Name": "Recoil Distance",
+      "Description": "In metres."
+    },
+    {
+      "Field": "animFrame",
+      "Name": "Recoil Distance Animation Scale",
+      "Description": "Frame"
+    },
+    {
+      "Field": "dummy01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey1_boundFrame",
+      "Name": "Recoil Key [1]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey1_boundRate",
+      "Name": "Recoil Percentage [1]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey1_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey2_boundFrame",
+      "Name": "Recoil Key [2]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey2_boundRate",
+      "Name": "Recoil Percentage [2]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey2_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey3_boundFrame",
+      "Name": "Recoil Key [3]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey3_boundRate",
+      "Name": "Recoil Percentage [3]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey3_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey4_boundFrame",
+      "Name": "Recoil Key [4]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey4_boundRate",
+      "Name": "Recoil Percentage [4]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey4_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey5_boundFrame",
+      "Name": "Recoil Key [5]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey5_boundRate",
+      "Name": "Recoil Percentage [5]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey5_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey6_boundFrame",
+      "Name": "Recoil Key [6]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey6_boundRate",
+      "Name": "Recoil Percentage [6]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey6_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey7_boundFrame",
+      "Name": "Recoil Key [7]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey7_boundRate",
+      "Name": "Recoil Percentage [7]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey7_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey8_boundFrame",
+      "Name": "Recoil Key [8]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey8_boundRate",
+      "Name": "Recoil Percentage [8]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey8_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey9_boundFrame",
+      "Name": "Recoil Key [9]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey9_boundRate",
+      "Name": "Recoil Percentage [9]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey9_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey10_boundFrame",
+      "Name": "Recoil Key [10]",
+      "Description": "Frame"
+    },
+    {
+      "Field": "boundKey10_boundRate",
+      "Name": "Recoil Percentage [10]",
+      "Description": ""
+    },
+    {
+      "Field": "boundKey10_dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ATK_OPERATION_PARTS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 parts0">
+      <DisplayName>下半身</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 parts1">
+      <DisplayName>右腕</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 parts2">
+      <DisplayName>左腕</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 parts3">
+      <DisplayName>右肩</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 parts4">
+      <DisplayName>左肩</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 parts5">
+      <DisplayName>右腕構え</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 parts6">
+      <DisplayName>左腕構え</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 parts7">
+      <DisplayName>上体</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 parts8">
+      <DisplayName>ガード</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 parts9">
+      <DisplayName>アサルトブースト</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 parts10">
+      <DisplayName>右肩構え</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 parts11">
+      <DisplayName>左肩構え</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 parts12">
+      <DisplayName>右手リロード</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 parts13">
+      <DisplayName>左手リロード</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u8 parts14">
+      <DisplayName>右肩同時射撃_移動キャンセル用</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 parts15">
+      <DisplayName>左肩同時射撃_移動キャンセル用</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 parts16">
+      <DisplayName>パーツ16</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 parts17">
+      <DisplayName>パーツ17</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 parts18">
+      <DisplayName>パーツ18</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 parts19">
+      <DisplayName>パーツ19</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 parts20">
+      <DisplayName>パーツ20</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 parts21">
+      <DisplayName>パーツ21</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 parts22">
+      <DisplayName>パーツ22</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 parts23">
+      <DisplayName>パーツ23</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 parts24">
+      <DisplayName>パーツ24</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 parts25">
+      <DisplayName>パーツ25</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u8 parts26">
+      <DisplayName>パーツ26</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u8 parts27">
+      <DisplayName>パーツ27</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u8 parts28">
+      <DisplayName>パーツ28</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 parts29">
+      <DisplayName>パーツ29</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 parts30">
+      <DisplayName>パーツ30</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 parts31">
+      <DisplayName>パーツ31</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Maximum>0</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="dummy8 dummy2[16]">
+      <DisplayName>※パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>34</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

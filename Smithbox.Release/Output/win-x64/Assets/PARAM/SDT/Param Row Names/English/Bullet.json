@@ -1,0 +1,9191 @@
+{
+  "Name": "Bullet",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "For destroying automatic patrol objects"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Dummy for debug"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Idol Recovery Effect"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Anti-Apparition Force"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Red Eyes Scare Child"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 377,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 379,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "Poison Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 396,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 397,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 398,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 399,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Lifesteal Bloodsmoke Ninjutsu"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "Prosthetic Tool - Spirit Emblem Consumption Dummy"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Finger Whistle Lock"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Finger Whistle Lock"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Finger Whistle Lock"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Finger Whistle Lock"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Finger Whistle Lock"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Malcontent Lock"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Malcontent Lock"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Malcontent Lock"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Malcontent Lock"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Malcontent Lock"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Pottery - Bullet to fly from the enemy"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Miasma Dummy Parent"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Miasma Dummy Child"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Miasma Dummy Grandson"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "Miasma Body Parent"
+      ]
+    },
+    {
+      "ID": 1706,
+      "Entries": [
+        "Miasma Body Child"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Pellet"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "Pellet - Effect"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Divine Grass"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Divine Grass - All Status Cure"
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        "Divine Grass - Remove Poison Buildup"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Divine Grass"
+      ]
+    },
+    {
+      "ID": 3044,
+      "Entries": [
+        "Divine Grass - Remove Burn Buildup"
+      ]
+    },
+    {
+      "ID": 3045,
+      "Entries": [
+        "Divine Grass - Remove Terror Buildup"
+      ]
+    },
+    {
+      "ID": 3046,
+      "Entries": [
+        "Divine Grass"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Red Lump"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "Red Lump - Effect"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Sweet Rice Ball"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Sweet Rice Ball - Heal"
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        "Sweet Rice Ball - Posture Recovery"
+      ]
+    },
+    {
+      "ID": 3063,
+      "Entries": [
+        "Sweet Rice Ball"
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        "Sweet Rice Ball 2"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Persimmon"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "Persimmon - Effect"
+      ]
+    },
+    {
+      "ID": 3075,
+      "Entries": [
+        "Taro Persimmon"
+      ]
+    },
+    {
+      "ID": 3076,
+      "Entries": [
+        "Taro Persimmon - Effect"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Rice"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "Rice - Effect"
+      ]
+    },
+    {
+      "ID": 3085,
+      "Entries": [
+        "Fine Snow"
+      ]
+    },
+    {
+      "ID": 3086,
+      "Entries": [
+        "Fine Snow - Effect"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Antidote Powder"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Antidote Powder - Remove Poison Buildup"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Antitode Powder - Poison Cure"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Antidote Powder - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Antidote Powder"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Dousing Powder"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "Dousing Powder - Remove Burn Buildup"
+      ]
+    },
+    {
+      "ID": 3212,
+      "Entries": [
+        "Dousing Powder - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3213,
+      "Entries": [
+        "Dousing Powder"
+      ]
+    },
+    {
+      "ID": 3215,
+      "Entries": [
+        "Ministry Dousing Powder"
+      ]
+    },
+    {
+      "ID": 3216,
+      "Entries": [
+        "Ministry Dousing Powder - Remove Burn Buildup"
+      ]
+    },
+    {
+      "ID": 3217,
+      "Entries": [
+        "Ministry Dousing Powder - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3218,
+      "Entries": [
+        "Dousing Powder"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "Pacifying Agent"
+      ]
+    },
+    {
+      "ID": 3221,
+      "Entries": [
+        "Pacifying Agent - Remove Terror Buildup"
+      ]
+    },
+    {
+      "ID": 3222,
+      "Entries": [
+        "Pacifying Agent - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3223,
+      "Entries": [
+        "Pacifying Agent"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "Eel Liver"
+      ]
+    },
+    {
+      "ID": 3231,
+      "Entries": [
+        "Eel Liver - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "Cure Enfeeble"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        "Enfeeble Buildup Removal"
+      ]
+    },
+    {
+      "ID": 3242,
+      "Entries": [
+        "Enfeebled Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Contact Medicine"
+      ]
+    },
+    {
+      "ID": 3270,
+      "Entries": [
+        "Spontaneous"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Green Mossy Gourd"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Green Mossy Gourd - Remove Poison Buildup"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "Green Mossy Gourd - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Withered Red Gourd"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "Withered Red Gourd - Remove Burn Buildup"
+      ]
+    },
+    {
+      "ID": 3312,
+      "Entries": [
+        "Withered Red Gourd - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Mottled Purple Gourd"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "Mottled Purple Gourd - Remove Terror Buildup"
+      ]
+    },
+    {
+      "ID": 3322,
+      "Entries": [
+        "Mottled Purple Gourd - Resistance Boost"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Ako's Spiritfall"
+      ]
+    },
+    {
+      "ID": 3351,
+      "Entries": [
+        "Ako's Spiritfall - Effect"
+      ]
+    },
+    {
+      "ID": 3360,
+      "Entries": [
+        "Yashariku's Spiritfall"
+      ]
+    },
+    {
+      "ID": 3361,
+      "Entries": [
+        "Yashariku's Spiritfall - Effect"
+      ]
+    },
+    {
+      "ID": 3370,
+      "Entries": [
+        "Ungo's Spiritfall"
+      ]
+    },
+    {
+      "ID": 3371,
+      "Entries": [
+        "Ungo's Spiritfall - Effect"
+      ]
+    },
+    {
+      "ID": 3380,
+      "Entries": [
+        "Gokan's Spiritfall"
+      ]
+    },
+    {
+      "ID": 3381,
+      "Entries": [
+        "Gokan's Spiritfall - Effect"
+      ]
+    },
+    {
+      "ID": 3390,
+      "Entries": [
+        "Gachiin's Spiritfall"
+      ]
+    },
+    {
+      "ID": 3391,
+      "Entries": [
+        "Gachiin's Spiritfall - Effect"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Ako's Sugar"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "Ako's Sugar - Effect"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Yashariku's Sugar"
+      ]
+    },
+    {
+      "ID": 3411,
+      "Entries": [
+        "Yashariku's Sugar - Effect"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Ungo's Sugar"
+      ]
+    },
+    {
+      "ID": 3421,
+      "Entries": [
+        "Ungo's Sugar - Effect"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Gokan's Sugar"
+      ]
+    },
+    {
+      "ID": 3431,
+      "Entries": [
+        "Gokan's Sugar - Effect"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "Gachiin's Sugar"
+      ]
+    },
+    {
+      "ID": 3441,
+      "Entries": [
+        "Gachiin's Sugar - Effect"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "Divine Confetti"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "Divine Confetti - Effect"
+      ]
+    },
+    {
+      "ID": 3490,
+      "Entries": [
+        "Ceramic Shard"
+      ]
+    },
+    {
+      "ID": 3491,
+      "Entries": [
+        "Ceramic Shard - Throw"
+      ]
+    },
+    {
+      "ID": 3492,
+      "Entries": [
+        "Ceramic Shard - Hit"
+      ]
+    },
+    {
+      "ID": 3495,
+      "Entries": [
+        "Ceramic Shard - Ledge Hang"
+      ]
+    },
+    {
+      "ID": 3496,
+      "Entries": [
+        "Ceramic Shard - Ledge Hang - Throw"
+      ]
+    },
+    {
+      "ID": 3497,
+      "Entries": [
+        "Ceramic Shard - Ledge Hang - Hit"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Ceramic Shard - Peeping Left"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "Ceramic Shard - Peeping Left - Throw"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "Ceramic Shard - Peeping Left - Hit"
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        "Ceramic Shard - Peeping Right"
+      ]
+    },
+    {
+      "ID": 3506,
+      "Entries": [
+        "Ceramic Shard - Peeping Right - Throw"
+      ]
+    },
+    {
+      "ID": 3507,
+      "Entries": [
+        "Ceramic Shard - Peeping Right - Hit"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Fistful of Ash"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "Fistful of Ash - Throw"
+      ]
+    },
+    {
+      "ID": 3512,
+      "Entries": [
+        "Fistful of Ash - Hit"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Oil"
+      ]
+    },
+    {
+      "ID": 3521,
+      "Entries": [
+        "Oil - Throw"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Snap Seed"
+      ]
+    },
+    {
+      "ID": 3580,
+      "Entries": [
+        "Five-color Rice"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Mibu Balloon of Wealth"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "Mibu Balloon of Wealth - Effect"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Mibu Balloon of Soul"
+      ]
+    },
+    {
+      "ID": 3611,
+      "Entries": [
+        "Mibu Balloon of Soul - Effect"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "Mibu Possession Balloon"
+      ]
+    },
+    {
+      "ID": 3621,
+      "Entries": [
+        "Mibu Possession Balloon - Effect"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "Mibu Balloon of Spirit"
+      ]
+    },
+    {
+      "ID": 3631,
+      "Entries": [
+        "Mibu Balloon of Spirit - Effect"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        "Mibu Pilgrimage Balloon"
+      ]
+    },
+    {
+      "ID": 3641,
+      "Entries": [
+        "Mibu Pilgrimage Balloon - Money"
+      ]
+    },
+    {
+      "ID": 3643,
+      "Entries": [
+        "Mibu Pilgrimage Balloon - Resurrection"
+      ]
+    },
+    {
+      "ID": 3645,
+      "Entries": [
+        "Mibu Pilgrimage Balloon - Items"
+      ]
+    },
+    {
+      "ID": 3647,
+      "Entries": [
+        "Mibu Pilgrimage Balloon - Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Damage Level Confirmation - None (0)"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "Damage Level Confirmation - Weak (1)"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "Damage Level Confirmation - Medium (2)"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "Damage Level Confirmation - Large (3)"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "Damage Level Confirmation - Blow back (4)"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "Damage Level Confirmation - Flatten (5)"
+      ]
+    },
+    {
+      "ID": 9906,
+      "Entries": [
+        "Damage Level Confirmation - Slam (6)"
+      ]
+    },
+    {
+      "ID": 9907,
+      "Entries": [
+        "Damage Level Confirmation - Jump Kick (7)"
+      ]
+    },
+    {
+      "ID": 9908,
+      "Entries": [
+        "Damage Level Confirmation - Minimal (8)"
+      ]
+    },
+    {
+      "ID": 9909,
+      "Entries": [
+        "Damage Level Confirmation - Launch Up (9)"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "Damage Level Confirmation - Very Large Blow Back (10)"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "Damage Level Confirmation - Unused (11)"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "Damage Level Confirmation - Break (20)"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "Damage Level Confirmation - Flame (15)"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "AI sound confirmation normal sound"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "AI sound confirmation important sound"
+      ]
+    },
+    {
+      "ID": 500052,
+      "Entries": [
+        "Projected Force - Umbrella"
+      ]
+    },
+    {
+      "ID": 500053,
+      "Entries": [
+        "Projected Force - Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 500054,
+      "Entries": [
+        "Projected Force - Poison Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 500055,
+      "Entries": [
+        "Projected Force - Lifesteal Bestowal Ninjutsu"
+      ]
+    },
+    {
+      "ID": 500056,
+      "Entries": [
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Orange Wind Enchantment "
+      ]
+    },
+    {
+      "ID": 500057,
+      "Entries": [
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Gold Wind Enchantment "
+      ]
+    },
+    {
+      "ID": 500184,
+      "Entries": [
+        "Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 500190,
+      "Entries": [
+        "Bestowal Ninjutsu Thrust Attack"
+      ]
+    },
+    {
+      "ID": 500191,
+      "Entries": [
+        "Bestowal Ninjutsu Poison Thrust Attack"
+      ]
+    },
+    {
+      "ID": 500192,
+      "Entries": [
+        "Bestowal Ninjutsu Lifesteal Thrust Attack"
+      ]
+    },
+    {
+      "ID": 500193,
+      "Entries": [
+        "Non Divine Dragon Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 500410,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 1"
+      ]
+    },
+    {
+      "ID": 500415,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 2 - Dummy Parent"
+      ]
+    },
+    {
+      "ID": 500416,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 2 - Dummy Parent"
+      ]
+    },
+    {
+      "ID": 500417,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 2 - Dummy Parent"
+      ]
+    },
+    {
+      "ID": 500418,
+      "Entries": [
+        "Dragon Flash - Charged - Bullet 2"
+      ]
+    },
+    {
+      "ID": 500430,
+      "Entries": [
+        "Dragon Flash - Bullet"
+      ]
+    },
+    {
+      "ID": 500510,
+      "Entries": [
+        "One Mind - Initial Attack"
+      ]
+    },
+    {
+      "ID": 500511,
+      "Entries": [
+        "One Mind - Initial Attack - Bestowal"
+      ]
+    },
+    {
+      "ID": 500512,
+      "Entries": [
+        "One Mind - Initial Attack - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 500513,
+      "Entries": [
+        "One Mind - Initial Attack - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 500514,
+      "Entries": [
+        "One Mind - Initial Attack - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 500515,
+      "Entries": [
+        "One Mind - Initial Attack - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 500516,
+      "Entries": [
+        "One Mind - Initial Attack - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 500520,
+      "Entries": [
+        "One Mind - Continuous Attack Parent"
+      ]
+    },
+    {
+      "ID": 500521,
+      "Entries": [
+        "One Mind - Continuous Attack 1"
+      ]
+    },
+    {
+      "ID": 500522,
+      "Entries": [
+        "One Mind - Continuous Attack 2"
+      ]
+    },
+    {
+      "ID": 500523,
+      "Entries": [
+        "One Mind - Continuous Attack 3"
+      ]
+    },
+    {
+      "ID": 500524,
+      "Entries": [
+        "One Mind - Continuous Attack 4"
+      ]
+    },
+    {
+      "ID": 500530,
+      "Entries": [
+        "One Mind - Continuous Attack SFX"
+      ]
+    },
+    {
+      "ID": 500531,
+      "Entries": [
+        "One Mind - Continuous Attack SFX"
+      ]
+    },
+    {
+      "ID": 500540,
+      "Entries": [
+        "One Mind - Final Attack"
+      ]
+    },
+    {
+      "ID": 500541,
+      "Entries": [
+        "One Mind - Final Attack - Bestowal"
+      ]
+    },
+    {
+      "ID": 500542,
+      "Entries": [
+        "One Mind - Final Attack - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 500543,
+      "Entries": [
+        "One Mind - Final Attack - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 500544,
+      "Entries": [
+        "One Mind - Final Attack - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 500545,
+      "Entries": [
+        "One Mind - Final Attack - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 500546,
+      "Entries": [
+        "One Mind - Final Attack - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 503010,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 503011,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 503012,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 503015,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 503016,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 503017,
+      "Entries": [
+        "Sakura Dance - No Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 503020,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 503021,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 503022,
+      "Entries": [
+        "Sakura Dance - Flame"
+      ]
+    },
+    {
+      "ID": 503025,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 503026,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 503027,
+      "Entries": [
+        "Sakura Dance - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 503030,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 503031,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 503032,
+      "Entries": [
+        "Sakura Dance - Divine Abduction Living Force"
+      ]
+    },
+    {
+      "ID": 503035,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 503036,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 503037,
+      "Entries": [
+        "Sakura Dance - Golden Vortex Living Force"
+      ]
+    },
+    {
+      "ID": 503040,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 503041,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 503042,
+      "Entries": [
+        "Sakura Dance - Bestowal"
+      ]
+    },
+    {
+      "ID": 503045,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 503046,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 503047,
+      "Entries": [
+        "Sakura Dance - Poison Bestowal"
+      ]
+    },
+    {
+      "ID": 503050,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 503051,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 503052,
+      "Entries": [
+        "Sakura Dance - Lifesteal Bestowal"
+      ]
+    },
+    {
+      "ID": 503055,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 503056,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 503057,
+      "Entries": [
+        "Sakura Dance - Lightning"
+      ]
+    },
+    {
+      "ID": 503060,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 503061,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 503062,
+      "Entries": [
+        "Sakura Dance - Petals"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700001,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Wait 1"
+      ]
+    },
+    {
+      "ID": 700002,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700003,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700004,
+      "Entries": [
+        "Shuriken Charge - Throw 1 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700011,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Wait 1"
+      ]
+    },
+    {
+      "ID": 700012,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700013,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700014,
+      "Entries": [
+        "Shuriken Charge - Throw 2 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700050,
+      "Entries": [
+        "Shuriken Throw 1"
+      ]
+    },
+    {
+      "ID": 700060,
+      "Entries": [
+        "Shuriken Throw 2"
+      ]
+    },
+    {
+      "ID": 700200,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700201,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Wait 1"
+      ]
+    },
+    {
+      "ID": 700202,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700203,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700204,
+      "Entries": [
+        "Gouging Top Charge - Throw 1 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700210,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700211,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Wait 1 "
+      ]
+    },
+    {
+      "ID": 700212,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700213,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700214,
+      "Entries": [
+        "Gouging Top Charge - Throw 2 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700250,
+      "Entries": [
+        "Gouging Top - Throw 1"
+      ]
+    },
+    {
+      "ID": 700260,
+      "Entries": [
+        "Gouging Top - Throw 2"
+      ]
+    },
+    {
+      "ID": 700300,
+      "Entries": [
+        "Phantom Kunai Charge - Throw 1"
+      ]
+    },
+    {
+      "ID": 700310,
+      "Entries": [
+        "Phantom Kunai Charge - Throw 2"
+      ]
+    },
+    {
+      "ID": 700320,
+      "Entries": [
+        "Phantom Kunai Charge - Butterfly - Parent"
+      ]
+    },
+    {
+      "ID": 700321,
+      "Entries": [
+        "Phantom Kunai Charge - Butterfly"
+      ]
+    },
+    {
+      "ID": 700350,
+      "Entries": [
+        "Phantom Kunai - Throw 1"
+      ]
+    },
+    {
+      "ID": 700360,
+      "Entries": [
+        "Phantom Kunai - Throw 2"
+      ]
+    },
+    {
+      "ID": 700370,
+      "Entries": [
+        "Phantom Kunai - Butterfly Parent"
+      ]
+    },
+    {
+      "ID": 700371,
+      "Entries": [
+        "Phantom Kunai - Butterfly"
+      ]
+    },
+    {
+      "ID": 700400,
+      "Entries": [
+        "Sen Throw Charge - No Money"
+      ]
+    },
+    {
+      "ID": 700401,
+      "Entries": [
+        "Sen Throw Charge - Little Money"
+      ]
+    },
+    {
+      "ID": 700402,
+      "Entries": [
+        "Sen Throw Charge - Some Money"
+      ]
+    },
+    {
+      "ID": 700403,
+      "Entries": [
+        "Sen Throw Charge - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 700410,
+      "Entries": [
+        "Sen Throw - No Money"
+      ]
+    },
+    {
+      "ID": 700411,
+      "Entries": [
+        "Sen Throw - Little Money"
+      ]
+    },
+    {
+      "ID": 700412,
+      "Entries": [
+        "Sen Throw - Some Money"
+      ]
+    },
+    {
+      "ID": 700413,
+      "Entries": [
+        "Sen Throw - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 700450,
+      "Entries": [
+        "Sen Throw Charge - No Money"
+      ]
+    },
+    {
+      "ID": 700451,
+      "Entries": [
+        "Sen Throw Charge - Little Money"
+      ]
+    },
+    {
+      "ID": 700452,
+      "Entries": [
+        "Sen Throw Charge - Some Money"
+      ]
+    },
+    {
+      "ID": 700453,
+      "Entries": [
+        "Sen Throw Charge - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 700460,
+      "Entries": [
+        "Sen Throw - No Money"
+      ]
+    },
+    {
+      "ID": 700461,
+      "Entries": [
+        "Sen Throw - Little Money"
+      ]
+    },
+    {
+      "ID": 700462,
+      "Entries": [
+        "Sen Throw - Some Money"
+      ]
+    },
+    {
+      "ID": 700463,
+      "Entries": [
+        "Sen Throw - A Lot of Money"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700501,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Wait 1"
+      ]
+    },
+    {
+      "ID": 700502,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700503,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700504,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 1 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700510,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Hit 1"
+      ]
+    },
+    {
+      "ID": 700511,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Wait 1"
+      ]
+    },
+    {
+      "ID": 700512,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Hit 2"
+      ]
+    },
+    {
+      "ID": 700513,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Wait 2"
+      ]
+    },
+    {
+      "ID": 700514,
+      "Entries": [
+        "Lazulite Shuriken Charge - Throw 2 - Hit 3"
+      ]
+    },
+    {
+      "ID": 700550,
+      "Entries": [
+        "Lazulite Shuriken - Throw 1"
+      ]
+    },
+    {
+      "ID": 700560,
+      "Entries": [
+        "Lazulite Shuriken - Throw 2"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "Firecracker - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710001,
+      "Entries": [
+        "Firecracker - Child 1"
+      ]
+    },
+    {
+      "ID": 710002,
+      "Entries": [
+        "Firecracker - Child 2"
+      ]
+    },
+    {
+      "ID": 710003,
+      "Entries": [
+        "Firecracker - Child 3"
+      ]
+    },
+    {
+      "ID": 710010,
+      "Entries": [
+        "Firecracker Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710011,
+      "Entries": [
+        "Firecracker Against Beast - Child 1"
+      ]
+    },
+    {
+      "ID": 710012,
+      "Entries": [
+        "Firecracker Against Beast - Child 2"
+      ]
+    },
+    {
+      "ID": 710013,
+      "Entries": [
+        "Firecracker Against Beast - Child 3"
+      ]
+    },
+    {
+      "ID": 710020,
+      "Entries": [
+        "Firecracker - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710030,
+      "Entries": [
+        "Firecracker Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710050,
+      "Entries": [
+        "Firecracker - Parent"
+      ]
+    },
+    {
+      "ID": 710060,
+      "Entries": [
+        "Firecracker Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 710200,
+      "Entries": [
+        "Long Spark - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710201,
+      "Entries": [
+        "Long Spark - Child 1"
+      ]
+    },
+    {
+      "ID": 710202,
+      "Entries": [
+        "Long Spark - Child 2"
+      ]
+    },
+    {
+      "ID": 710203,
+      "Entries": [
+        "Long Spark - Child 3"
+      ]
+    },
+    {
+      "ID": 710210,
+      "Entries": [
+        "Long Spark Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710211,
+      "Entries": [
+        "Long Spark Against Beast - Child 1"
+      ]
+    },
+    {
+      "ID": 710212,
+      "Entries": [
+        "Long Spark Against Beast - Child 2"
+      ]
+    },
+    {
+      "ID": 710213,
+      "Entries": [
+        "Long Spark Against Beast - Child 3"
+      ]
+    },
+    {
+      "ID": 710220,
+      "Entries": [
+        "Long Spark - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710230,
+      "Entries": [
+        "Long Spark Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710250,
+      "Entries": [
+        "Long Spark - Parent"
+      ]
+    },
+    {
+      "ID": 710260,
+      "Entries": [
+        "Long Spark Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 710300,
+      "Entries": [
+        "Purple Fume Spark - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710301,
+      "Entries": [
+        "Purple Fume Spark - Child 1"
+      ]
+    },
+    {
+      "ID": 710302,
+      "Entries": [
+        "Purple Fume Spark - Child 2"
+      ]
+    },
+    {
+      "ID": 710303,
+      "Entries": [
+        "Purple Fume Spark - Child 3"
+      ]
+    },
+    {
+      "ID": 710310,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Charge Parent"
+      ]
+    },
+    {
+      "ID": 710311,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Child 1"
+      ]
+    },
+    {
+      "ID": 710312,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Child 2"
+      ]
+    },
+    {
+      "ID": 710313,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Child 3"
+      ]
+    },
+    {
+      "ID": 710320,
+      "Entries": [
+        "Purple Fume Spark - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710330,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Aerial Parent"
+      ]
+    },
+    {
+      "ID": 710350,
+      "Entries": [
+        "Purple Fume Spark - Parent"
+      ]
+    },
+    {
+      "ID": 710360,
+      "Entries": [
+        "Purple Fume Spark Against Beast - Parent"
+      ]
+    },
+    {
+      "ID": 720000,
+      "Entries": [
+        "Flame Vent Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 720001,
+      "Entries": [
+        "Flame Vent Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 720010,
+      "Entries": [
+        "Flame Vent - Normal"
+      ]
+    },
+    {
+      "ID": 720020,
+      "Entries": [
+        "Flame Vent - Aerial"
+      ]
+    },
+    {
+      "ID": 720030,
+      "Entries": [
+        "Flame Vent - Flamethrower Start"
+      ]
+    },
+    {
+      "ID": 720031,
+      "Entries": [
+        "Flame Vent - Flamethrower Loop"
+      ]
+    },
+    {
+      "ID": 720040,
+      "Entries": [
+        "Flame Vent - Dummy for Living Force"
+      ]
+    },
+    {
+      "ID": 720300,
+      "Entries": [
+        "Lazulite Sacred Flame - Charge - Hit 1"
+      ]
+    },
+    {
+      "ID": 720301,
+      "Entries": [
+        "Lazulite Sacred Flame - Charge - Hit 2"
+      ]
+    },
+    {
+      "ID": 720310,
+      "Entries": [
+        "Lazulite Sacred Flame - Normal"
+      ]
+    },
+    {
+      "ID": 720320,
+      "Entries": [
+        "Lazulite Sacred Flame - Aerial"
+      ]
+    },
+    {
+      "ID": 720330,
+      "Entries": [
+        "Lazulite Sacred Flame - Flamethrower Start"
+      ]
+    },
+    {
+      "ID": 720331,
+      "Entries": [
+        "Lazulite Sacred Flame - Flamethrower Loop"
+      ]
+    },
+    {
+      "ID": 720340,
+      "Entries": [
+        "Lazulite Sacred Flame - Dummy for Living Force"
+      ]
+    },
+    {
+      "ID": 720350,
+      "Entries": [
+        "Lazulite Sacred Flame - Far reaching Anti-apparition"
+      ]
+    },
+    {
+      "ID": 730200,
+      "Entries": [
+        "Sparking Axe - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 730201,
+      "Entries": [
+        "Sparking Axe - Red Eyes Scare Child"
+      ]
+    },
+    {
+      "ID": 740200,
+      "Entries": [
+        "Great Feather Mist Raven - Activation Parent"
+      ]
+    },
+    {
+      "ID": 740201,
+      "Entries": [
+        "Great Feather Mist Raven - Explosion"
+      ]
+    },
+    {
+      "ID": 740210,
+      "Entries": [
+        "Great Feather Mist Raven - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 740211,
+      "Entries": [
+        "Great Feather Mist Raven - Red Eyes Scare Child"
+      ]
+    },
+    {
+      "ID": 750300,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 750301,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 750302,
+      "Entries": [
+        "Lazulite Sabimaru - Poison Mist"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 1"
+      ]
+    },
+    {
+      "ID": 760010,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 2"
+      ]
+    },
+    {
+      "ID": 760011,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 2 SFX"
+      ]
+    },
+    {
+      "ID": 760020,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 3"
+      ]
+    },
+    {
+      "ID": 760021,
+      "Entries": [
+        "Projected Force - Loaded Umbrella - Level 3 SFX"
+      ]
+    },
+    {
+      "ID": 760070,
+      "Entries": [
+        "Suzaku's Lotus Umbrella Weapon Effect"
+      ]
+    },
+    {
+      "ID": 760071,
+      "Entries": [
+        "Phoenix's Lilac Umbrella Weapon Effect"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "Suzaku's Lotus Umbrella - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 760201,
+      "Entries": [
+        "Suzaku's Lotus Umbrella - Red Eyes Scare Child"
+      ]
+    },
+    {
+      "ID": 760300,
+      "Entries": [
+        "Phoenix's Lilac Umbrella - Anti-apparition"
+      ]
+    },
+    {
+      "ID": 760301,
+      "Entries": [
+        "Phoenix's Lilac Umbrella - Anti-apparition far reach"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 770020,
+      "Entries": [
+        "Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 770040,
+      "Entries": [
+        "Divine Abduction - Living Force Dummy"
+      ]
+    },
+    {
+      "ID": 770100,
+      "Entries": [
+        "Double Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 770101,
+      "Entries": [
+        "Double Divine Abduction - Turn"
+      ]
+    },
+    {
+      "ID": 770120,
+      "Entries": [
+        "Double Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 770121,
+      "Entries": [
+        "Double Divine Abduction - Wind Gather"
+      ]
+    },
+    {
+      "ID": 770200,
+      "Entries": [
+        "Golden Vortex - Turn"
+      ]
+    },
+    {
+      "ID": 770201,
+      "Entries": [
+        "Golden Vortex - Turn"
+      ]
+    },
+    {
+      "ID": 770220,
+      "Entries": [
+        "Golden Vortex - Wind Gather"
+      ]
+    },
+    {
+      "ID": 770221,
+      "Entries": [
+        "Golden Vortex - Wind Gather"
+      ]
+    },
+    {
+      "ID": 770240,
+      "Entries": [
+        "Golden Vortex - Living Force Dummy"
+      ]
+    },
+    {
+      "ID": 780400,
+      "Entries": [
+        "Leaping Flame - Red Eyes Scare Parent"
+      ]
+    },
+    {
+      "ID": 780401,
+      "Entries": [
+        "Leaping Flame - Red Eyes Scare Child"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Finger Whistle No Lock - Charge Parent"
+      ]
+    },
+    {
+      "ID": 790001,
+      "Entries": [
+        "Finger Whistle No Lock - Parent"
+      ]
+    },
+    {
+      "ID": 790002,
+      "Entries": [
+        "Finger Whistle No Lock - Charge Child"
+      ]
+    },
+    {
+      "ID": 790003,
+      "Entries": [
+        "Finger Whistle No Lock - Child 1"
+      ]
+    },
+    {
+      "ID": 790004,
+      "Entries": [
+        "Finger Whistle No Lock - Child 2"
+      ]
+    },
+    {
+      "ID": 790005,
+      "Entries": [
+        "Finger Whistle - Living Force - Charge Bullet"
+      ]
+    },
+    {
+      "ID": 790006,
+      "Entries": [
+        "Finger Whistle - Living Force - Bullet"
+      ]
+    },
+    {
+      "ID": 790010,
+      "Entries": [
+        "Finger Whistle Lock - Charge"
+      ]
+    },
+    {
+      "ID": 790011,
+      "Entries": [
+        "Finger Whistle Lock - Charge Release"
+      ]
+    },
+    {
+      "ID": 790012,
+      "Entries": [
+        "Finger Whistle Lock - Hanging"
+      ]
+    },
+    {
+      "ID": 790014,
+      "Entries": [
+        "Finger Whistle Lock - Peeping Left"
+      ]
+    },
+    {
+      "ID": 790015,
+      "Entries": [
+        "Finger Whistle Lock - Peeping Right"
+      ]
+    },
+    {
+      "ID": 790200,
+      "Entries": [
+        "Malcontent No Lock - Charge Parent"
+      ]
+    },
+    {
+      "ID": 790201,
+      "Entries": [
+        "Malcontent No Lock - Parent"
+      ]
+    },
+    {
+      "ID": 790202,
+      "Entries": [
+        "Malcontent No Lock - Charge Child"
+      ]
+    },
+    {
+      "ID": 790203,
+      "Entries": [
+        "Malcontent No Lock - Child 1"
+      ]
+    },
+    {
+      "ID": 790204,
+      "Entries": [
+        "Malcontent No Lock - Child 2"
+      ]
+    },
+    {
+      "ID": 790205,
+      "Entries": [
+        "Malcontent - Living Force - Charge Bullet"
+      ]
+    },
+    {
+      "ID": 790206,
+      "Entries": [
+        "Malcontent - Living Force - Bullet"
+      ]
+    },
+    {
+      "ID": 790210,
+      "Entries": [
+        "Malcontent Lock - Charge"
+      ]
+    },
+    {
+      "ID": 790211,
+      "Entries": [
+        "Malcontent Lock - Charge Release"
+      ]
+    },
+    {
+      "ID": 790212,
+      "Entries": [
+        "Malcontent Lock - Hanging"
+      ]
+    },
+    {
+      "ID": 790214,
+      "Entries": [
+        "Malcontent Lock - Peeping Left"
+      ]
+    },
+    {
+      "ID": 790215,
+      "Entries": [
+        "Malcontent Lock - Peeping Right"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Spirit Emblem Placed On Map"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Red Spirit Emblem Placed On Map (Unused)"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Blue Spirit Emblem Placed On Map (Unused)"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Gunpowder Box Explosion"
+      ]
+    },
+    {
+      "ID": 1000201,
+      "Entries": [
+        "Gunpowder Box Explosion"
+      ]
+    },
+    {
+      "ID": 1000202,
+      "Entries": [
+        "Gunpowder Box Explosion"
+      ]
+    },
+    {
+      "ID": 1000203,
+      "Entries": [
+        "Gunpowder Box Explosion"
+      ]
+    },
+    {
+      "ID": 1001200,
+      "Entries": [
+        "Ashina Reservoir Lightning Strikes (during Sword Saint fight)"
+      ]
+    },
+    {
+      "ID": 1001201,
+      "Entries": [
+        "Ashina Reservoir Lightning Strikes (during Sword Saint fight)"
+      ]
+    },
+    {
+      "ID": 1002500,
+      "Entries": [
+        "Fountainhead Palace Lightning Strike"
+      ]
+    },
+    {
+      "ID": 1002501,
+      "Entries": [
+        "Fountainhead Palace Lightning Strike"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Fire spread"
+      ]
+    },
+    {
+      "ID": 10001500,
+      "Entries": [
+        "Dummy Bullet Pseudo Platoon AI Sound"
+      ]
+    },
+    {
+      "ID": 10001600,
+      "Entries": [
+        "Perilous Attack Earning"
+      ]
+    },
+    {
+      "ID": 10002100,
+      "Entries": [
+        "Dummy Bullet Find Judgment"
+      ]
+    },
+    {
+      "ID": 10002200,
+      "Entries": [
+        "Dummy Bullet Jump Kick Back Circumference Judgment"
+      ]
+    },
+    {
+      "ID": 10002300,
+      "Entries": [
+        "Dummy Bullet - Divine Abduction AI Sound Bullet"
+      ]
+    },
+    {
+      "ID": 10002400,
+      "Entries": [
+        "Dummy Bullet - Resurrection AI Sound"
+      ]
+    },
+    {
+      "ID": 10002500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100190,
+      "Entries": [
+        "Ashina Soldier - Stone Throw"
+      ]
+    },
+    {
+      "ID": 10100910,
+      "Entries": [
+        "Ashina Solider One Handed - AI Sound at start of battle"
+      ]
+    },
+    {
+      "ID": 10101910,
+      "Entries": [
+        "Ashina Solider Two Handed - AI Sound at start of battle"
+      ]
+    },
+    {
+      "ID": 10102910,
+      "Entries": [
+        "Ashina Solider Spear - AI Sound at start of battle"
+      ]
+    },
+    {
+      "ID": 10102980,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102981,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102982,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102983,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102984,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102985,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102986,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102987,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102988,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10102989,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10103100,
+      "Entries": [
+        "Ashina Solider Matchlock - Shoot"
+      ]
+    },
+    {
+      "ID": 10103130,
+      "Entries": [
+        "Ashina Solider Matchlock - Shoot Not Accurate"
+      ]
+    },
+    {
+      "ID": 10103140,
+      "Entries": [
+        "Ashina Solider Matchlock - Shoot Underwater"
+      ]
+    },
+    {
+      "ID": 10103141,
+      "Entries": [
+        "Ashina Solider Matchlock - Shoot Underwater"
+      ]
+    },
+    {
+      "ID": 10103910,
+      "Entries": [
+        "Ashina Solider Matchlock - AI Sound at start of battle"
+      ]
+    },
+    {
+      "ID": 10103920,
+      "Entries": [
+        "Ashina Solider Matchlock - AI Sound"
+      ]
+    },
+    {
+      "ID": 10200980,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10200981,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10200982,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10200983,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10200984,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10200985,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10201980,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10201981,
+      "Entries": [
+        "Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10300200,
+      "Entries": [
+        "Small Centipede - Explode"
+      ]
+    },
+    {
+      "ID": 10300210,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10300220,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10300221,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10300230,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10300231,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10300240,
+      "Entries": [
+        "Small Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400210,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400220,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400221,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400230,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400231,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400240,
+      "Entries": [
+        "Long-arm Centipede - Burning Ball"
+      ]
+    },
+    {
+      "ID": 10400981,
+      "Entries": [
+        "Long-arm Centipede - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10500980,
+      "Entries": [
+        "Shinobi Hunter - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10600500,
+      "Entries": [
+        "Spear Adept - Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10600510,
+      "Entries": [
+        "Spear Adept - Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10600980,
+      "Entries": [
+        "Spear Adept - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10600981,
+      "Entries": [
+        "Spear Adept - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10700360,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700361,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700362,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700363,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700364,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700365,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700366,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700367,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700369,
+      "Entries": [
+        "Shura Samurai - Poison Spit"
+      ]
+    },
+    {
+      "ID": 10700380,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700381,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700382,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700383,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700384,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700385,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700386,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700387,
+      "Entries": [
+        "Shura Samurai - Flame Spit"
+      ]
+    },
+    {
+      "ID": 10700910,
+      "Entries": [
+        "Shura Samurai - Sake Bottle Throw"
+      ]
+    },
+    {
+      "ID": 10700920,
+      "Entries": [
+        "Shura Samurai - Armor"
+      ]
+    },
+    {
+      "ID": 10700921,
+      "Entries": [
+        "Shura Samurai - Armor"
+      ]
+    },
+    {
+      "ID": 10700930,
+      "Entries": [
+        "Shura Samurai - Armor Destruction"
+      ]
+    },
+    {
+      "ID": 10700980,
+      "Entries": [
+        "Shura Samurai - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10700981,
+      "Entries": [
+        "Shura Samurai - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10700982,
+      "Entries": [
+        "Shura Samurai - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 10800500,
+      "Entries": [
+        "Shichimen Warrior - Burst"
+      ]
+    },
+    {
+      "ID": 10800501,
+      "Entries": [
+        "Shichimen Warrior - Burst"
+      ]
+    },
+    {
+      "ID": 10800510,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800511,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800512,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800520,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800521,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800522,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800530,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800531,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800532,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800600,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800601,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800602,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800603,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800604,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800605,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800610,
+      "Entries": [
+        "Shichimen Warrior - Bullet"
+      ]
+    },
+    {
+      "ID": 10800611,
+      "Entries": [
+        "Shichimen Warrior - Rapid Fire"
+      ]
+    },
+    {
+      "ID": 10800612,
+      "Entries": [
+        "Shichimen Warrior - Rapid Fire"
+      ]
+    },
+    {
+      "ID": 10800620,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800621,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800622,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800630,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800631,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800632,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800633,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800634,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800635,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800636,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800637,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800638,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800639,
+      "Entries": [
+        "Shichimen Warrior - Large Bullet"
+      ]
+    },
+    {
+      "ID": 10800640,
+      "Entries": [
+        "Shichimen Warrior - Guided Bullet"
+      ]
+    },
+    {
+      "ID": 10800641,
+      "Entries": [
+        "Shichimen Warrior - Guided Bullet"
+      ]
+    },
+    {
+      "ID": 10800642,
+      "Entries": [
+        "Shichimen Warrior - Guided Bullet"
+      ]
+    },
+    {
+      "ID": 10800650,
+      "Entries": [
+        "Shichimen Warrior"
+      ]
+    },
+    {
+      "ID": 10800651,
+      "Entries": [
+        "Shichimen Warrior"
+      ]
+    },
+    {
+      "ID": 10800660,
+      "Entries": [
+        "Shichimen Warrior - Terror Beam"
+      ]
+    },
+    {
+      "ID": 10800700,
+      "Entries": [
+        "Shichimen Warrior"
+      ]
+    },
+    {
+      "ID": 10800800,
+      "Entries": [
+        "Shichimen Warrior - Remove Bullets on Death"
+      ]
+    },
+    {
+      "ID": 10900110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10900900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11000010,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000011,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000020,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000021,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000030,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000031,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000040,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000041,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000050,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000051,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000100,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000101,
+      "Entries": [
+        "Gecko - Poison Spit"
+      ]
+    },
+    {
+      "ID": 11000110,
+      "Entries": [
+        "White Gecko - Spit"
+      ]
+    },
+    {
+      "ID": 11000111,
+      "Entries": [
+        "White Gecko - Spit"
+      ]
+    },
+    {
+      "ID": 11000300,
+      "Entries": [
+        "White Gecko - Spit"
+      ]
+    },
+    {
+      "ID": 11000310,
+      "Entries": [
+        "White Gecko - Spit"
+      ]
+    },
+    {
+      "ID": 11100010,
+      "Entries": [
+        "Old Maid - AI Sound"
+      ]
+    },
+    {
+      "ID": 11200120,
+      "Entries": [
+        "Sentry - Gong"
+      ]
+    },
+    {
+      "ID": 11200130,
+      "Entries": [
+        "Sentry - Gong"
+      ]
+    },
+    {
+      "ID": 11300900,
+      "Entries": [
+        "Armored Warrior - Collision Detection"
+      ]
+    },
+    {
+      "ID": 11300901,
+      "Entries": [
+        "Armored Warrior - Collision Detection"
+      ]
+    },
+    {
+      "ID": 11300980,
+      "Entries": [
+        "Armored Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400980,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400981,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400982,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400983,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400984,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11400985,
+      "Entries": [
+        "Rock Diver - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11500120,
+      "Entries": [
+        "Hound - Barking AI Sound"
+      ]
+    },
+    {
+      "ID": 11510110,
+      "Entries": [
+        "Palace Hound - Lightning"
+      ]
+    },
+    {
+      "ID": 11510111,
+      "Entries": [
+        "Palace Hound - Lightning"
+      ]
+    },
+    {
+      "ID": 11510500,
+      "Entries": [
+        "Palace Hound - Lightning"
+      ]
+    },
+    {
+      "ID": 11510501,
+      "Entries": [
+        "Palace Hound - Lightning"
+      ]
+    },
+    {
+      "ID": 11510980,
+      "Entries": [
+        "Palace Hound - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11800910,
+      "Entries": [
+        "Taro Troop - Armor"
+      ]
+    },
+    {
+      "ID": 11800911,
+      "Entries": [
+        "Taro Troop - Armor"
+      ]
+    },
+    {
+      "ID": 11800980,
+      "Entries": [
+        "Taro Troop - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11800981,
+      "Entries": [
+        "Taro Troop - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11801910,
+      "Entries": [
+        "Taro Troop - Armor"
+      ]
+    },
+    {
+      "ID": 11801911,
+      "Entries": [
+        "Taro Troop - Armor"
+      ]
+    },
+    {
+      "ID": 11801980,
+      "Entries": [
+        "Taro Troop - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11802910,
+      "Entries": [
+        "Taro Troop Bell - Armor"
+      ]
+    },
+    {
+      "ID": 11802911,
+      "Entries": [
+        "Taro Troop Bell - Armor"
+      ]
+    },
+    {
+      "ID": 11802980,
+      "Entries": [
+        "Taro Troop Bell - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11802981,
+      "Entries": [
+        "Taro Troop Bell - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11804500,
+      "Entries": [
+        "Taro Troop Shield"
+      ]
+    },
+    {
+      "ID": 11804910,
+      "Entries": [
+        "Taro Troop Shield"
+      ]
+    },
+    {
+      "ID": 11804911,
+      "Entries": [
+        "Taro Troop Shield"
+      ]
+    },
+    {
+      "ID": 11900100,
+      "Entries": [
+        "Sunken Valley Clan Rifle"
+      ]
+    },
+    {
+      "ID": 11900101,
+      "Entries": [
+        "Sunken Valley Clan Rifle"
+      ]
+    },
+    {
+      "ID": 11900980,
+      "Entries": [
+        "Sunken Valley Clan Rifle - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11900981,
+      "Entries": [
+        "Sunken Valley Clan Rifle - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11900982,
+      "Entries": [
+        "Sunken Valley Clan Rifle - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11901100,
+      "Entries": [
+        "Snake Eyes - Shoot"
+      ]
+    },
+    {
+      "ID": 11901101,
+      "Entries": [
+        "Snake Eyes - Shoot"
+      ]
+    },
+    {
+      "ID": 11901102,
+      "Entries": [
+        "Snake Eyes - Shoot"
+      ]
+    },
+    {
+      "ID": 11901103,
+      "Entries": [
+        "Snake Eyes - Shoot"
+      ]
+    },
+    {
+      "ID": 11901980,
+      "Entries": [
+        "Snake Eyes - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11901981,
+      "Entries": [
+        "Snake Eyes - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 11902100,
+      "Entries": [
+        "Sunken Valley Clan Shotgun"
+      ]
+    },
+    {
+      "ID": 11902101,
+      "Entries": [
+        "Sunken Valley Clan Shotgun"
+      ]
+    },
+    {
+      "ID": 11902102,
+      "Entries": [
+        "Sunken Valley Clan Shotgun"
+      ]
+    },
+    {
+      "ID": 11902103,
+      "Entries": [
+        "Sunken Valley Clan Shotgun"
+      ]
+    },
+    {
+      "ID": 11903100,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903101,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903102,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903103,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903104,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903105,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903106,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903107,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903108,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903109,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903120,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903130,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903131,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903132,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903190,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903191,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903192,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903193,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903194,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903300,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903310,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 11903311,
+      "Entries": [
+        "Sunken Valley Clan Cannon"
+      ]
+    },
+    {
+      "ID": 12000980,
+      "Entries": [
+        "Infested Seeker Parasite - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12000981,
+      "Entries": [
+        "Infested Seeker Parasite - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12100100,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100101,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100105,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100110,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100111,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100120,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100121,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100130,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100131,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100140,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100141,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100142,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100143,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100147,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100148,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100149,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100150,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100151,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100152,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100160,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100161,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100162,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100170,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100171,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100172,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100175,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100176,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100177,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100180,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100181,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100182,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100185,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100186,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100187,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100190,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100191,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100192,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100193,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100194,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12100210,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12120100,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12120101,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12120102,
+      "Entries": [
+        "Infested Seeker"
+      ]
+    },
+    {
+      "ID": 12200120,
+      "Entries": [
+        "Seeker - Throwing"
+      ]
+    },
+    {
+      "ID": 12200860,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200861,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200862,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200863,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200864,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200865,
+      "Entries": [
+        "Seeker - Bomb Throwing"
+      ]
+    },
+    {
+      "ID": 12200980,
+      "Entries": [
+        "Seeker - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12201980,
+      "Entries": [
+        "Seeker - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12201981,
+      "Entries": [
+        "Seeker - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12201990,
+      "Entries": [
+        "Lure Bullet"
+      ]
+    },
+    {
+      "ID": 12500100,
+      "Entries": [
+        "Monkey - Sand Throw"
+      ]
+    },
+    {
+      "ID": 12500120,
+      "Entries": [
+        "Monkey - Poison Claw"
+      ]
+    },
+    {
+      "ID": 12500121,
+      "Entries": [
+        "Monkey - Poison Claw"
+      ]
+    },
+    {
+      "ID": 12500122,
+      "Entries": [
+        "Monkey - Poison Claw"
+      ]
+    },
+    {
+      "ID": 12500300,
+      "Entries": [
+        "Monkey - Rifle Shot"
+      ]
+    },
+    {
+      "ID": 12500350,
+      "Entries": [
+        "Monkey - Rifle Shot"
+      ]
+    },
+    {
+      "ID": 12500650,
+      "Entries": [
+        "Monkey - Sword Throw"
+      ]
+    },
+    {
+      "ID": 12500850,
+      "Entries": [
+        "Monkey - Sword Throw Poison"
+      ]
+    },
+    {
+      "ID": 12503980,
+      "Entries": [
+        "Dual Sword Monkey - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 12504100,
+      "Entries": [
+        "Folding Screen Monkey - AI Sound"
+      ]
+    },
+    {
+      "ID": 13000120,
+      "Entries": [
+        "Palace Noble - Call Okami"
+      ]
+    },
+    {
+      "ID": 13000200,
+      "Entries": [
+        "Palace Noble - Enfeeble Bullet"
+      ]
+    },
+    {
+      "ID": 13000201,
+      "Entries": [
+        "Palace Noble - Enfeeble Bullet"
+      ]
+    },
+    {
+      "ID": 13000900,
+      "Entries": [
+        "Palace Noble"
+      ]
+    },
+    {
+      "ID": 13000980,
+      "Entries": [
+        "Palace Noble - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13000981,
+      "Entries": [
+        "Palace Noble - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13100520,
+      "Entries": [
+        "Okami Warrior - Bow Shot"
+      ]
+    },
+    {
+      "ID": 13100521,
+      "Entries": [
+        "Okami Warrior - Bow Shot"
+      ]
+    },
+    {
+      "ID": 13100980,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13100981,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13101980,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13101981,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13101982,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13101983,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13101985,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13102500,
+      "Entries": [
+        "Okami Warrior - Bow Shot"
+      ]
+    },
+    {
+      "ID": 13102501,
+      "Entries": [
+        "Okami Warrior - Bow Shot"
+      ]
+    },
+    {
+      "ID": 13103100,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103101,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103110,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103111,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103112,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103120,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103121,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103140,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103160,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103161,
+      "Entries": [
+        "Okami Warrior - Ball"
+      ]
+    },
+    {
+      "ID": 13103180,
+      "Entries": [
+        "Okami Warrior - Lightning"
+      ]
+    },
+    {
+      "ID": 13103190,
+      "Entries": [
+        "Okami Warrior - Lightning"
+      ]
+    },
+    {
+      "ID": 13103191,
+      "Entries": [
+        "Okami Warrior - Lightning"
+      ]
+    },
+    {
+      "ID": 13103192,
+      "Entries": [
+        "Okami Warrior - Lightning"
+      ]
+    },
+    {
+      "ID": 13103980,
+      "Entries": [
+        "Okami Warrior - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13200900,
+      "Entries": [
+        "Treasure Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13200901,
+      "Entries": [
+        "Treasure Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13200902,
+      "Entries": [
+        "Treasure Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13200903,
+      "Entries": [
+        "Treasure Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13400600,
+      "Entries": [
+        "Underwater Headless - Light Wave"
+      ]
+    },
+    {
+      "ID": 13400601,
+      "Entries": [
+        "Underwater Headless - Light Wave"
+      ]
+    },
+    {
+      "ID": 13400610,
+      "Entries": [
+        "Underwater Headless Illusion - Light Wave"
+      ]
+    },
+    {
+      "ID": 13400640,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400641,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400642,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400643,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400644,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400645,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400646,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400647,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400648,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400649,
+      "Entries": [
+        "Underwater Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13400650,
+      "Entries": [
+        "Underwater Headless"
+      ]
+    },
+    {
+      "ID": 13400980,
+      "Entries": [
+        "Underwater Headless - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13500300,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13500310,
+      "Entries": [
+        "Headless"
+      ]
+    },
+    {
+      "ID": 13500640,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500641,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500642,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500643,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500644,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500645,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500646,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500647,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500648,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500649,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500650,
+      "Entries": [
+        "Headless - Hair"
+      ]
+    },
+    {
+      "ID": 13500980,
+      "Entries": [
+        "Headless - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13600130,
+      "Entries": [
+        "Senpou Assassin - Poison"
+      ]
+    },
+    {
+      "ID": 13600131,
+      "Entries": [
+        "Senpou Assassin - Poison"
+      ]
+    },
+    {
+      "ID": 13600132,
+      "Entries": [
+        "Senpou Assassin - Poison"
+      ]
+    },
+    {
+      "ID": 13600136,
+      "Entries": [
+        "Senpou Assassin - Poison"
+      ]
+    },
+    {
+      "ID": 13600141,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600160,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600161,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600170,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600171,
+      "Entries": [
+        "Senpou Assassin"
+      ]
+    },
+    {
+      "ID": 13600800,
+      "Entries": [
+        "Senpou Assassin - Hat Destruction"
+      ]
+    },
+    {
+      "ID": 13600910,
+      "Entries": [
+        "Senpou Assassin - Hat Destruction"
+      ]
+    },
+    {
+      "ID": 13600980,
+      "Entries": [
+        "Senpou Assassin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 13700920,
+      "Entries": [
+        "Bull - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13700921,
+      "Entries": [
+        "Bull - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13700922,
+      "Entries": [
+        "Bull - Collision Detection"
+      ]
+    },
+    {
+      "ID": 13700923,
+      "Entries": [
+        "Bull - Collision Detection"
+      ]
+    },
+    {
+      "ID": 14000980,
+      "Entries": [
+        "Fencer - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 14500100,
+      "Entries": [
+        "Nightjar - Explode"
+      ]
+    },
+    {
+      "ID": 14500102,
+      "Entries": [
+        "Nightjar - Explode"
+      ]
+    },
+    {
+      "ID": 14500150,
+      "Entries": [
+        "Nightjar - Weapon Ignition"
+      ]
+    },
+    {
+      "ID": 14500151,
+      "Entries": [
+        "Nightjar - Weapon Ignition"
+      ]
+    },
+    {
+      "ID": 14500250,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14500251,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14500701,
+      "Entries": [
+        "Nightjar - Explosion Activation"
+      ]
+    },
+    {
+      "ID": 14501000,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501001,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501002,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501003,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501010,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501011,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501012,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501013,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501020,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501021,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501022,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501023,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501030,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501031,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501032,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501033,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501040,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501041,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501042,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501043,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501044,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501045,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501046,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501047,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501051,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501061,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501100,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501101,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501120,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501121,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501130,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501131,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501140,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501141,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501300,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501301,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501302,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501303,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501310,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501311,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501312,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501313,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501320,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501321,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501322,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501323,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501330,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501331,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501332,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501333,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501340,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501341,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501342,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501343,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501750,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501751,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501752,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501753,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501754,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501755,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501756,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501757,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501758,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501759,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501760,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501761,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501762,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14501910,
+      "Entries": [
+        "First appearance 1_1 -- 初回登場1_1"
+      ]
+    },
+    {
+      "ID": 14501911,
+      "Entries": [
+        "First appearance 2_1 -- 初回登場2_1"
+      ]
+    },
+    {
+      "ID": 14501912,
+      "Entries": [
+        "First appearance 1_2 -- 初回登場1_2"
+      ]
+    },
+    {
+      "ID": 14501913,
+      "Entries": [
+        "First appearance 2_2 -- 初回登場2_2"
+      ]
+    },
+    {
+      "ID": 14502000,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502001,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502002,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502003,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502010,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502011,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502012,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502013,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502020,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502021,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502022,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502023,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502030,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502031,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502032,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502033,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502040,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502041,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502042,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502043,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502044,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502045,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502046,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502047,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502051,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502061,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502100,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502101,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502120,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502121,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502130,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502131,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502140,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502141,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502300,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502301,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502302,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502303,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502310,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502311,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502312,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502313,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502320,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502321,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502322,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502323,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502330,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502331,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502332,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502333,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502340,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502341,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502342,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502343,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502750,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502751,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502752,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502753,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502754,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502755,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502756,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502757,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502758,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502759,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502760,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502761,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502762,
+      "Entries": [
+        "Nightjar - Throwing"
+      ]
+    },
+    {
+      "ID": 14502900,
+      "Entries": [
+        "Nightjar"
+      ]
+    },
+    {
+      "ID": 14700290,
+      "Entries": [
+        "Lone Shadow - Kunai Throw"
+      ]
+    },
+    {
+      "ID": 14700500,
+      "Entries": [
+        "Lone Shadow - Dog Whistle"
+      ]
+    },
+    {
+      "ID": 14700980,
+      "Entries": [
+        "Lone Shadow - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 14700981,
+      "Entries": [
+        "Lone Shadow - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15000010,
+      "Entries": [
+        "Mibu Villager - Throw Stone"
+      ]
+    },
+    {
+      "ID": 15000030,
+      "Entries": [
+        "Mibu Villager - Throw Stone"
+      ]
+    },
+    {
+      "ID": 15000031,
+      "Entries": [
+        "Mibu Villager - Terror Ball"
+      ]
+    },
+    {
+      "ID": 15000032,
+      "Entries": [
+        "Mibu Villager - Terror Ball"
+      ]
+    },
+    {
+      "ID": 15000280,
+      "Entries": [
+        "Mibu Villager - Terror Ball"
+      ]
+    },
+    {
+      "ID": 15000800,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000801,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000802,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000810,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000811,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000812,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000820,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000821,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000822,
+      "Entries": [
+        "Mibu Villager - Illusion"
+      ]
+    },
+    {
+      "ID": 15000850,
+      "Entries": [
+        "Mibu Villager - Sand Throw"
+      ]
+    },
+    {
+      "ID": 15000980,
+      "Entries": [
+        "Mibu Villager - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15000981,
+      "Entries": [
+        "Mibu Villager - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15000982,
+      "Entries": [
+        "Mibu Villager - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15000983,
+      "Entries": [
+        "Mibu Villager - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15500290,
+      "Entries": [
+        "Bandit Torch - Ally Call"
+      ]
+    },
+    {
+      "ID": 15500390,
+      "Entries": [
+        "Mibu Villager - Shield"
+      ]
+    },
+    {
+      "ID": 15500420,
+      "Entries": [
+        "Mibu Villager - Shield"
+      ]
+    },
+    {
+      "ID": 15500430,
+      "Entries": [
+        "Mibu Villager - Shield"
+      ]
+    },
+    {
+      "ID": 15500600,
+      "Entries": [
+        "Bandit - Fire Arrow"
+      ]
+    },
+    {
+      "ID": 15500610,
+      "Entries": [
+        "Bandit - Poison Arrow"
+      ]
+    },
+    {
+      "ID": 15500620,
+      "Entries": [
+        "Bandit - Normal Arrow"
+      ]
+    },
+    {
+      "ID": 15500621,
+      "Entries": [
+        "Bandit Illusion - Normal Arrow"
+      ]
+    },
+    {
+      "ID": 15500700,
+      "Entries": [
+        "Bandit - Oil Throw"
+      ]
+    },
+    {
+      "ID": 15500800,
+      "Entries": [
+        "Bandit - Sand Throw"
+      ]
+    },
+    {
+      "ID": 15500980,
+      "Entries": [
+        "Bandit - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 15500981,
+      "Entries": [
+        "Bandit - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 17000650,
+      "Entries": [
+        "Interior Ministry Samurai - Flame Shot"
+      ]
+    },
+    {
+      "ID": 17000651,
+      "Entries": [
+        "Interior Ministry Samurai - Flame Shot"
+      ]
+    },
+    {
+      "ID": 17000699,
+      "Entries": [
+        "Interior Ministry Samurai - Flame Shot"
+      ]
+    },
+    {
+      "ID": 17000800,
+      "Entries": [
+        "Interior Ministry Samurai - Flamethrower"
+      ]
+    },
+    {
+      "ID": 17000801,
+      "Entries": [
+        "Interior Ministry Samurai - Flamethrower"
+      ]
+    },
+    {
+      "ID": 17000980,
+      "Entries": [
+        "Interior Ministry Samurai - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 20210110,
+      "Entries": [
+        "Dog Barking AI Sound"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000301,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000302,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000310,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000311,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000400,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000401,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000402,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000408,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000409,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 50000980,
+      "Entries": [
+        "Corrupted Monk - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50000981,
+      "Entries": [
+        "Corrupted Monk - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50100100,
+      "Entries": [
+        "Great Serpent - Snow"
+      ]
+    },
+    {
+      "ID": 50100101,
+      "Entries": [
+        "Great Serpent - Snow"
+      ]
+    },
+    {
+      "ID": 50100990,
+      "Entries": [
+        "Great Serpent - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50102800,
+      "Entries": [
+        "Great Serpent"
+      ]
+    },
+    {
+      "ID": 50103930,
+      "Entries": [
+        "Great Serpent - Cave Poison Mist"
+      ]
+    },
+    {
+      "ID": 50103940,
+      "Entries": [
+        "Great Serpent - Cave Poison Mist"
+      ]
+    },
+    {
+      "ID": 50200101,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200102,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200103,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200104,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200105,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200106,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200107,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200108,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200109,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200110,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200111,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200112,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200560,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200561,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200562,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200563,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200564,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200565,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200566,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200600,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200601,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200602,
+      "Entries": [
+        "Chained Ogre - Breakable Object Attack"
+      ]
+    },
+    {
+      "ID": 50200980,
+      "Entries": [
+        "Chained Ogre - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50200981,
+      "Entries": [
+        "Chained Ogre - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50200982,
+      "Entries": [
+        "Chained Ogre - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50200983,
+      "Entries": [
+        "Chained Ogre - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50200984,
+      "Entries": [
+        "Chained Ogre - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50310110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50500071,
+      "Entries": [
+        "Great Colored Carp - Attack"
+      ]
+    },
+    {
+      "ID": 50500900,
+      "Entries": [
+        "Great Colored Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 50500901,
+      "Entries": [
+        "Great Colored Carp - Collision Detection"
+      ]
+    },
+    {
+      "ID": 50500980,
+      "Entries": [
+        "Great Colored Carp - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50500981,
+      "Entries": [
+        "Great Colored Carp - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50600131,
+      "Entries": [
+        "Owl - Kickoff Shuriken"
+      ]
+    },
+    {
+      "ID": 50600150,
+      "Entries": [
+        "Owl - Shuriken"
+      ]
+    },
+    {
+      "ID": 50600160,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600161,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600162,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600163,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600164,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600165,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600166,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600167,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600168,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600190,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600195,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600200,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600201,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50600250,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600251,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600252,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600253,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600254,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600255,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600256,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600257,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600258,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600259,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600260,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600261,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50600700,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600701,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600702,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600710,
+      "Entries": [
+        "Owl - Heal Block"
+      ]
+    },
+    {
+      "ID": 50600711,
+      "Entries": [
+        "Owl - Heal Block"
+      ]
+    },
+    {
+      "ID": 50600720,
+      "Entries": [
+        "Owl - Smoke Bomb"
+      ]
+    },
+    {
+      "ID": 50600721,
+      "Entries": [
+        "Owl - Smoke Bomb"
+      ]
+    },
+    {
+      "ID": 50600730,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600731,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600732,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600740,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600741,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600742,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50600980,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50600981,
+      "Entries": [
+        "Owl - Firecracker Powder"
+      ]
+    },
+    {
+      "ID": 50600982,
+      "Entries": [
+        "Owl - Firecracker Powder"
+      ]
+    },
+    {
+      "ID": 50600983,
+      "Entries": [
+        "Owl - Firecracker Explosion Powder"
+      ]
+    },
+    {
+      "ID": 50600984,
+      "Entries": [
+        "Owl - Firecracker Explosion Powder"
+      ]
+    },
+    {
+      "ID": 50600985,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50600986,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50600987,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50600990,
+      "Entries": [
+        "Owl - Warp SFX"
+      ]
+    },
+    {
+      "ID": 50601131,
+      "Entries": [
+        "Owl - Kickoff Shuriken"
+      ]
+    },
+    {
+      "ID": 50601150,
+      "Entries": [
+        "Owl - Shuriken"
+      ]
+    },
+    {
+      "ID": 50601160,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601161,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601162,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601163,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601164,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601165,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601166,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601167,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601168,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601190,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601195,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601200,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601201,
+      "Entries": [
+        "Owl - Firecracker"
+      ]
+    },
+    {
+      "ID": 50601250,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601251,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601252,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601253,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601254,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601255,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601256,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601257,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601258,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601259,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601260,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601261,
+      "Entries": [
+        "Owl - Firecracker Explosion Attack"
+      ]
+    },
+    {
+      "ID": 50601700,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601701,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601702,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601710,
+      "Entries": [
+        "Owl - Heal Block"
+      ]
+    },
+    {
+      "ID": 50601711,
+      "Entries": [
+        "Owl - Heal Block"
+      ]
+    },
+    {
+      "ID": 50601720,
+      "Entries": [
+        "Owl - Smoke Bomb"
+      ]
+    },
+    {
+      "ID": 50601721,
+      "Entries": [
+        "Owl - Smoke Bomb"
+      ]
+    },
+    {
+      "ID": 50601730,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601731,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601732,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601740,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601741,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601742,
+      "Entries": [
+        "Owl - Poison Throw"
+      ]
+    },
+    {
+      "ID": 50601980,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50601981,
+      "Entries": [
+        "Owl - Firecracker Powder"
+      ]
+    },
+    {
+      "ID": 50601982,
+      "Entries": [
+        "Owl - Firecracker Powder"
+      ]
+    },
+    {
+      "ID": 50601983,
+      "Entries": [
+        "Owl - Firecracker Explosion Powder"
+      ]
+    },
+    {
+      "ID": 50601984,
+      "Entries": [
+        "Owl - Firecracker Explosion Powder"
+      ]
+    },
+    {
+      "ID": 50601985,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50601986,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50601987,
+      "Entries": [
+        "Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50601990,
+      "Entries": [
+        "Owl - Warp SFX"
+      ]
+    },
+    {
+      "ID": 50700100,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700600,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700610,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700620,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700630,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700640,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700650,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700660,
+      "Entries": [
+        "Owl's Pet Owl"
+      ]
+    },
+    {
+      "ID": 50700980,
+      "Entries": [
+        "Owl's Pet Owl - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50800930,
+      "Entries": [
+        "Gyoubu - Collision Detection"
+      ]
+    },
+    {
+      "ID": 50800931,
+      "Entries": [
+        "Gyoubu - Collision Detection"
+      ]
+    },
+    {
+      "ID": 50800980,
+      "Entries": [
+        "Gyoubu - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50800981,
+      "Entries": [
+        "Gyoubu - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50900160,
+      "Entries": [
+        "Lady Butterfly - Kunai"
+      ]
+    },
+    {
+      "ID": 50900170,
+      "Entries": [
+        "Lady Butterfly - Kunai"
+      ]
+    },
+    {
+      "ID": 50900100,
+      "Entries": [
+        "Lady Butterfly - Kunai"
+      ]
+    },
+    {
+      "ID": 50900300,
+      "Entries": [
+        "Lady Butterfly - Kunai"
+      ]
+    },
+    {
+      "ID": 50900310,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900311,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900320,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900321,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900330,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900331,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900420,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900421,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900430,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900520,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900521,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900530,
+      "Entries": [
+        "Lady Butterfly - Butterflies"
+      ]
+    },
+    {
+      "ID": 50900920,
+      "Entries": [
+        "Lady Butterfly - Illusion Activation"
+      ]
+    },
+    {
+      "ID": 50900921,
+      "Entries": [
+        "Lady Butterfly - Release Illusion"
+      ]
+    },
+    {
+      "ID": 50900930,
+      "Entries": [
+        "Lady Butterfly - Release Illusion On Death"
+      ]
+    },
+    {
+      "ID": 50900980,
+      "Entries": [
+        "Lady Butterfly - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50900981,
+      "Entries": [
+        "Lady Butterfly - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50900982,
+      "Entries": [
+        "Lady Butterfly - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50900983,
+      "Entries": [
+        "Lady Butterfly - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 50900984,
+      "Entries": [
+        "Lady Butterfly - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 51000280,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    },
+    {
+      "ID": 51000290,
+      "Entries": [
+        "Guardian Ape - Poo Throw"
+      ]
+    },
+    {
+      "ID": 51000291,
+      "Entries": [
+        "Guardian Ape - Poo Throw Underwater"
+      ]
+    },
+    {
+      "ID": 51000310,
+      "Entries": [
+        "Guardian Ape - Fart"
+      ]
+    },
+    {
+      "ID": 51000311,
+      "Entries": [
+        "Guardian Ape - Fart"
+      ]
+    },
+    {
+      "ID": 51000330,
+      "Entries": [
+        "Guardian Ape - Poo Remains"
+      ]
+    },
+    {
+      "ID": 51000331,
+      "Entries": [
+        "Guardian Ape - Poo Remains"
+      ]
+    },
+    {
+      "ID": 51000332,
+      "Entries": [
+        "Guardian Ape - Poo Remains"
+      ]
+    },
+    {
+      "ID": 51000333,
+      "Entries": [
+        "Guardian Ape - Poo Remains"
+      ]
+    },
+    {
+      "ID": 51000480,
+      "Entries": [
+        "Guardian Ape - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 51000580,
+      "Entries": [
+        "Guardian Ape - Roar"
+      ]
+    },
+    {
+      "ID": 51000581,
+      "Entries": [
+        "Guardian Ape - Roar Remainings"
+      ]
+    },
+    {
+      "ID": 51000630,
+      "Entries": [
+        "Guardian Ape - Summon Wife"
+      ]
+    },
+    {
+      "ID": 51000900,
+      "Entries": [
+        "Guardian Ape - Wife Command"
+      ]
+    },
+    {
+      "ID": 51000980,
+      "Entries": [
+        "Guardian Ape - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 52000500,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000501,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000502,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000503,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000504,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000505,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000510,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000511,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000512,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000513,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000514,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000515,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000516,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000517,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000518,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000519,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000520,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000521,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000530,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000531,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000532,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000533,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000534,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000535,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000540,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000541,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000542,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000543,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000544,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000545,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000550,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000555,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000600,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000601,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000602,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000603,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000610,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000611,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000612,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000613,
+      "Entries": [
+        "Divine Dragon - Lightning"
+      ]
+    },
+    {
+      "ID": 52000620,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000629,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000630,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000639,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000640,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000650,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000660,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000661,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000665,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000670,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000679,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000680,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000689,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000700,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000701,
+      "Entries": [
+        "Divine Dragon - Sword Projectile"
+      ]
+    },
+    {
+      "ID": 52000800,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000801,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000820,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000830,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000850,
+      "Entries": [
+        "Divine Dragon - Storm Jump"
+      ]
+    },
+    {
+      "ID": 52000899,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000910,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000911,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000912,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000913,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000914,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000920,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000930,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 52000980,
+      "Entries": [
+        "Divine Dragon - Perilous Attack"
+      ]
+    },
+    {
+      "ID": 53000140,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53000150,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53000160,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53000180,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53100210,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100600,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100610,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100620,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100630,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100640,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100650,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100661,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100662,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100663,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100664,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100665,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100666,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100667,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100668,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100669,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100671,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100672,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100673,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100674,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100675,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100676,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100677,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100678,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100679,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100681,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100682,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100683,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100684,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100685,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100686,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100687,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100688,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53100689,
+      "Entries": [
+        "Old Dragon Tentacle"
+      ]
+    },
+    {
+      "ID": 53200030,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53200031,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53200032,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53200033,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 53200035,
+      "Entries": [
+        "Old Dragon"
+      ]
+    },
+    {
+      "ID": 54000250,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000251,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000252,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000253,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000270,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000271,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000272,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000273,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000274,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000275,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000310,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000311,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000350,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000355,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000360,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000361,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000362,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000370,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000371,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000372,
+      "Entries": [
+        "Isshin Ashina - Fire"
+      ]
+    },
+    {
+      "ID": 54000380,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000381,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000382,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000383,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000385,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000391,
+      "Entries": [
+        "Sword Saint Isshin"
+      ]
+    },
+    {
+      "ID": 54000392,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000393,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000630,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000631,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000632,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000635,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000639,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000691,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000692,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000693,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000694,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 54000800,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000801,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000810,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000811,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000812,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000813,
+      "Entries": [
+        "Sword Saint Isshin - Pistol"
+      ]
+    },
+    {
+      "ID": 54000820,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000821,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000822,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000828,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000829,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000830,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000831,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000832,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000833,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000834,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000835,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000836,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000837,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000838,
+      "Entries": [
+        "Inner Isshin"
+      ]
+    },
+    {
+      "ID": 54000980,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000981,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000982,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000983,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000984,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000985,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000986,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000987,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 54000988,
+      "Entries": [
+        "Isshin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70000980,
+      "Entries": [
+        "O'Rin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70000981,
+      "Entries": [
+        "O'Rin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70000982,
+      "Entries": [
+        "O'Rin - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70100000,
+      "Entries": [
+        "Sculptor"
+      ]
+    },
+    {
+      "ID": 70200122,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200123,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200124,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200125,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200126,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200222,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200223,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200224,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200225,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200231,
+      "Entries": [
+        "Demon of Hatred - Self-explosion Shockwave"
+      ]
+    },
+    {
+      "ID": 70200232,
+      "Entries": [
+        "Demon of Hatred - Self-explosion Shockwave"
+      ]
+    },
+    {
+      "ID": 70200233,
+      "Entries": [
+        "Demon of Hatred - Self-explosion Shockwave"
+      ]
+    },
+    {
+      "ID": 70200234,
+      "Entries": [
+        "Demon of Hatred - Self-explosion Shockwave"
+      ]
+    },
+    {
+      "ID": 70200270,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200271,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200272,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200273,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200274,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200280,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200281,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200282,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200290,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200300,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200301,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200310,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200311,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200312,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200313,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200315,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200316,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200320,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200321,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200322,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200323,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200350,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200351,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200352,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200353,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200354,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200355,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200356,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200357,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200358,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200359,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200360,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200361,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200362,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200363,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200364,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200365,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200366,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200367,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200368,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200369,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200370,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200380,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200390,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200440,
+      "Entries": [
+        "Demon of Hatred - Flame Wall"
+      ]
+    },
+    {
+      "ID": 70200441,
+      "Entries": [
+        "Demon of Hatred - Flame Wall"
+      ]
+    },
+    {
+      "ID": 70200450,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200451,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200452,
+      "Entries": [
+        "Demon of Hatred - Self-explosion"
+      ]
+    },
+    {
+      "ID": 70200460,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200461,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200462,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200463,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200500,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200501,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200502,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200503,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200504,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200505,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200506,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200507,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200508,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200509,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200510,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200511,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200512,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200513,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200514,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200515,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200516,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200517,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200518,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200519,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200520,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200530,
+      "Entries": [
+        "Demon of Hatred - Flame Ground"
+      ]
+    },
+    {
+      "ID": 70200950,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 70200960,
+      "Entries": [
+        "Delete Demon of Hatred's Bullets"
+      ]
+    },
+    {
+      "ID": 70200980,
+      "Entries": [
+        "Demon of Hatred - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70200981,
+      "Entries": [
+        "Demon of Hatred - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70200982,
+      "Entries": [
+        "Demon of Hatred - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 70210100,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 71000500,
+      "Entries": [
+        "Genichiro - Bow Short Distance"
+      ]
+    },
+    {
+      "ID": 71000501,
+      "Entries": [
+        "Genichiro - Bow Long Distance"
+      ]
+    },
+    {
+      "ID": 71000502,
+      "Entries": [
+        "Genichiro - Bow Short Distance"
+      ]
+    },
+    {
+      "ID": 71000503,
+      "Entries": [
+        "Genichiro - Bow Long Distance"
+      ]
+    },
+    {
+      "ID": 71000510,
+      "Entries": [
+        "Genichiro - Charged Bow"
+      ]
+    },
+    {
+      "ID": 71000520,
+      "Entries": [
+        "Genichiro"
+      ]
+    },
+    {
+      "ID": 71000530,
+      "Entries": [
+        "Genichiro - Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 71000531,
+      "Entries": [
+        "Genichiro - Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 71000532,
+      "Entries": [
+        "Genichiro - Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 71000533,
+      "Entries": [
+        "Genichiro - Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 71000540,
+      "Entries": [
+        "Genichiro - Bow"
+      ]
+    },
+    {
+      "ID": 71000600,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000601,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000602,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000610,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000611,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000612,
+      "Entries": [
+        "Inner Genichiro - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71000980,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71000981,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71000982,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71000983,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71000984,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71000985,
+      "Entries": [
+        "Genichiro - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100500,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Bow Short Distance"
+      ]
+    },
+    {
+      "ID": 71100501,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Bow Long Distance"
+      ]
+    },
+    {
+      "ID": 71100502,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Bow Short Distance"
+      ]
+    },
+    {
+      "ID": 71100503,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Bow Long Distance"
+      ]
+    },
+    {
+      "ID": 71100510,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Charged Bow"
+      ]
+    },
+    {
+      "ID": 71100520,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 71100521,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 71100530,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Quadruple Shot"
+      ]
+    },
+    {
+      "ID": 71100531,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Quadruple Shot"
+      ]
+    },
+    {
+      "ID": 71100532,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Quadruple Shot"
+      ]
+    },
+    {
+      "ID": 71100533,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Quadruple Shot"
+      ]
+    },
+    {
+      "ID": 71100540,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Bow"
+      ]
+    },
+    {
+      "ID": 71100600,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100601,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100602,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100610,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100611,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100612,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance"
+      ]
+    },
+    {
+      "ID": 71100620,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 71100621,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 71100622,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
+      ]
+    },
+    {
+      "ID": 71100980,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100981,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100982,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100983,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100984,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100985,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100986,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100987,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100988,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 71100989,
+      "Entries": [
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000980,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000981,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000982,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000983,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000984,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000985,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000986,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    },
+    {
+      "ID": 74000987,
+      "Entries": [
+        "Emma - Perilous Attack Warning"
+      ]
+    }
+  ]
+}

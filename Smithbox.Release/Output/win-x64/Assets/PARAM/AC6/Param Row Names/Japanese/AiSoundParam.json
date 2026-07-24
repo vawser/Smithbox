@@ -1,0 +1,209 @@
+{
+  "Name": "AiSoundParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (do not edit) -- デフォルト（編集しない）"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "walking -- 歩き"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "running -- 走り"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "boost move -- ブースト移動"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "QB"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "jump -- ジャンプ"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Boost increase -- ブースト上昇"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Landing small -- 着地小"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Large landing -- 着地大"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "assault boost -- アサルトブースト"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "wall kick -- 壁キック"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "4 legs: hovering -- 4脚：ホバリング"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Tank: Drift -- タンク：ドリフト"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "spare -- 予備"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Attack hit sound_small -- 攻撃ヒット音_小"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Attack hit sound_medium -- 攻撃ヒット音_中"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack hit sound_Large -- 攻撃ヒット音_大"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Attack hit sound_extra large -- 攻撃ヒット音_特大"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Attack hit sound_Big landing that lures you -- 攻撃ヒット音_おびき寄せる大着弾"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Attack hit sound_extremely small -- 攻撃ヒット音_極小"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Attack occurrence sound_small -- 攻撃発生音_小"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Attack sound_medium -- 攻撃発生音_中"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Attack generation sound_Large -- 攻撃発生音_大"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Attack occurrence sound_stealth throw -- 攻撃発生音_ステルス投げ"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Attack occurrence sound_silencer -- 攻撃発生音_サイレンサー"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Object destruction sound small -- オブジェクト破壊音小"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Object destruction sound -- オブジェクト破壊音中"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Object destruction sound loud -- オブジェクト破壊音大"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "death sound -- 死亡音"
+      ]
+    }
+  ]
+}

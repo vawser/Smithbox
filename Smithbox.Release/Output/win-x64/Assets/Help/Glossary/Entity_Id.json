@@ -1,0 +1,18 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Entity Id",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A numerical identifier for any object, enemy, NPC, spawn point, map part, collision, region, ObjAct, etc. in a map.",
+        "Not all entities need to have entity ids, and having an id does not do anything by itself.",
+        "",
+        "Typically an entity id is referred to in EMEVD or Params.",
+        "Entity ids are often prefixed by the map ids",
+        "For instance, most entity ids in Great Hollow (m13_02_00_00) are 7-digit numbers like 132XXXX."
+    ]
+}

@@ -1,0 +1,118 @@
+{
+  "Param": "DEMO_SPOT_LIGHT_PARAM",
+  "Type": "DEMO_SPOT_LIGHT_PARAM",
+  "Name": "DEMO_SPOT_LIGHT_PARAM",
+  "Description": "Defines configuration for spotlight behavior in demo scenes, including position, color, cone shape, range, shadowing, and flicker effects.",
+  "Fields": [
+    {
+      "Field": "offsetX",
+      "Name": "Position: X",
+      "Description": "X-axis offset of the spotlight position."
+    },
+    {
+      "Field": "offsetY",
+      "Name": "Position: Y",
+      "Description": "Y-axis offset of the spotlight position."
+    },
+    {
+      "Field": "offsetZ",
+      "Name": "Position: Z",
+      "Description": "Z-axis offset of the spotlight position."
+    },
+    {
+      "Field": "diffuseR",
+      "Name": "Diffuse: Red",
+      "Description": "Red channel of the diffuse light color."
+    },
+    {
+      "Field": "diffuseG",
+      "Name": "Diffuse: Green",
+      "Description": "Green channel of the diffuse light color."
+    },
+    {
+      "Field": "diffuseB",
+      "Name": "Diffuse: Blue",
+      "Description": "Blue channel of the diffuse light color."
+    },
+    {
+      "Field": "diffuseA",
+      "Name": "Diffuse: Alpha",
+      "Description": "Intensity/opacity component of the diffuse light."
+    },
+    {
+      "Field": "specularR",
+      "Name": "Specular: Red",
+      "Description": "Red channel of the specular highlight color."
+    },
+    {
+      "Field": "specularG",
+      "Name": "Specular: Green",
+      "Description": "Green channel of the specular highlight color."
+    },
+    {
+      "Field": "specularB",
+      "Name": "Specular: Blue",
+      "Description": "Blue channel of the specular highlight color."
+    },
+    {
+      "Field": "specularA",
+      "Name": "Specular: Alpha",
+      "Description": "Intensity component of the specular highlight."
+    },
+    {
+      "Field": "nearLength",
+      "Name": "Near Distance",
+      "Description": "Distance at which the spotlight begins affecting objects."
+    },
+    {
+      "Field": "farLength",
+      "Name": "Far Distance",
+      "Description": "Maximum distance at which the spotlight has effect."
+    },
+    {
+      "Field": "width",
+      "Name": "Width",
+      "Description": "Horizontal spread of the spotlight cone."
+    },
+    {
+      "Field": "height",
+      "Name": "Height",
+      "Description": "Vertical spread of the spotlight cone."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Rendering or evaluation priority of the spotlight."
+    },
+    {
+      "Field": "depthShadow",
+      "Name": "Shadow Strength",
+      "Description": "Controls intensity of shadows cast by the spotlight."
+    },
+    {
+      "Field": "blinkTimeMax",
+      "Name": "Blink Duration: Maximum",
+      "Description": "Maximum duration of light flicker cycles."
+    },
+    {
+      "Field": "blinkTimeMin",
+      "Name": "Blink Duration: Minimum",
+      "Description": "Minimum duration of light flicker cycles."
+    },
+    {
+      "Field": "blinkPower",
+      "Name": "Blink Intensity",
+      "Description": "Strength of spotlight flickering effect."
+    },
+    {
+      "Field": "enableShadow",
+      "Name": "Enable Shadow Casting",
+      "Description": "Determines whether the spotlight casts shadows."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

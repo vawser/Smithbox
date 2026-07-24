@@ -1,0 +1,1235 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "[OBJ] Burning grass (defard) -- 【OBJ】草\u3000燃え跡（デファード）"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "[Item] Aburatsubo landing oil (character) -- 【アイテム】油壺\u3000着弾\u3000油(キャラ)"
+      ]
+    },
+    {
+      "ID": 50011,
+      "Entries": [
+        "[Item] Aburatsubo landing oil map) -- 【アイテム】油壺\u3000着弾\u3000油マップ）"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (attacking side) Blood (character) -- 【忍殺・中】刀刺し（攻撃側）\u3000血\u3000中\u3000（キャラ）"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (attacking side) Blood (map) -- 【忍殺・中】刀刺し（攻撃側）\u3000血\u3000中\u3000（マップ）"
+      ]
+    },
+    {
+      "ID": 610010,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (Defender) Blood (Character) -- 【忍殺・中】刀刺し（防御側）\u3000血\u3000中\u3000（キャラ）"
+      ]
+    },
+    {
+      "ID": 610011,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (Defender) Blood (Map) -- 【忍殺・中】刀刺し（防御側）\u3000血\u3000中\u3000（マップ）"
+      ]
+    },
+    {
+      "ID": 620010,
+      "Entries": [
+        "[Shinobi / Middle] Sword-paying Blood (Character) -- 【忍殺・中】刀払い\u3000血\u3000中\u3000（キャラ）"
+      ]
+    },
+    {
+      "ID": 620011,
+      "Entries": [
+        "[Shinobi / Medium] Sword-paying Blood (Map) -- 【忍殺・中】刀払い\u3000血\u3000中\u3000（マップ）"
+      ]
+    },
+    {
+      "ID": 710011,
+      "Entries": [
+        "[Shinobi / Medium] Massive bleeding Blood (Map) -- 【忍殺・中】大量出血\u3000血\u3000中（マップ）"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "[NTC] Prototype Mud splash walking (character) -- 【NTC】プロト\u3000泥はね\u3000歩行\u3000(キャラ)"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "[NTC] Prototype Mud splash running (character) -- 【NTC】プロト\u3000泥はね\u3000走行\u3000(キャラ)"
+      ]
+    },
+    {
+      "ID": 800002,
+      "Entries": [
+        "[NTC] Proto Mud Splash Dash (Character) -- 【NTC】プロト\u3000泥はね\u3000ダッシュ\u3000(キャラ)"
+      ]
+    },
+    {
+      "ID": 800003,
+      "Entries": [
+        "[NTC] Prototype mud splash walking (map) -- 【NTC】プロト\u3000泥はね\u3000歩行\u3000(マップ)"
+      ]
+    },
+    {
+      "ID": 800004,
+      "Entries": [
+        "[NTC] Prototype mud splash running (map) -- 【NTC】プロト\u3000泥はね\u3000走行\u3000(マップ)"
+      ]
+    },
+    {
+      "ID": 800005,
+      "Entries": [
+        "[NTC] Proto Mud Splash Dash (Map) -- 【NTC】プロト\u3000泥はね\u3000ダッシュ\u3000(マップ)"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "[Attack] Blood (dead) Middle front (for characters) -- 【攻撃】血(亡者)中\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801001,
+      "Entries": [
+        "[Attack] Blood (dead) Nakagami (for characters) -- 【攻撃】血(亡者)中\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801002,
+      "Entries": [
+        "[Attack] Blood (dead) Nakashita (for characters) -- 【攻撃】血(亡者)中\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801003,
+      "Entries": [
+        "[Attack] Blood (dead) Middle left (for characters) -- 【攻撃】血(亡者)中\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801004,
+      "Entries": [
+        "[Attack] Blood (dead) Middle right (for characters) -- 【攻撃】血(亡者)中\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801010,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801011,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）上"
+      ]
+    },
+    {
+      "ID": 801012,
+      "Entries": [
+        "[Special Attack] Under the blood (for characters) -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）下"
+      ]
+    },
+    {
+      "ID": 801013,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) Diagonally in front -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）斜め前"
+      ]
+    },
+    {
+      "ID": 801014,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) Diagonally behind -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）斜め後"
+      ]
+    },
+    {
+      "ID": 801015,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) Back -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）背面"
+      ]
+    },
+    {
+      "ID": 801016,
+      "Entries": [
+        "[Special Attack] Blood Potapota (for characters) -- 【必殺攻撃】血\u3000中\u3000ポタポタ（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801030,
+      "Entries": [
+        "[Attack] Meat under armor Fresh blood (PC) Front (for characters) -- 【攻撃】鎧の下の肉\u3000鮮血中(PC)\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801031,
+      "Entries": [
+        "[Attack] Meat under armor (for characters) -- 【攻撃】鎧の下の肉\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801032,
+      "Entries": [
+        "[Attack] Under the flesh under the armor (for characters) -- 【攻撃】鎧の下の肉\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801033,
+      "Entries": [
+        "[Attack] Meat under armor Left (for characters) -- 【攻撃】鎧の下の肉\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801034,
+      "Entries": [
+        "[Attack] Meat under armor Right (for characters) -- 【攻撃】鎧の下の肉\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 801100,
+      "Entries": [
+        "[Attack] Blood (dead) in front (for map) -- 【攻撃】血(亡者)中\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 801101,
+      "Entries": [
+        "[Attack] Blood (dead) Nakagami (for map) -- 【攻撃】血(亡者)中\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 801102,
+      "Entries": [
+        "[Attack] Blood (dead) Nakashita (for map) -- 【攻撃】血(亡者)中\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 801103,
+      "Entries": [
+        "[Attack] Blood (dead) Middle left (for map) -- 【攻撃】血(亡者)中\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 801104,
+      "Entries": [
+        "[Attack] Blood (dead) Middle right (for map) -- 【攻撃】血(亡者)中\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 801110,
+      "Entries": [
+        "[Special Attack] Blood Doba (for map) Front -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）正面"
+      ]
+    },
+    {
+      "ID": 801111,
+      "Entries": [
+        "[Special Attack] Blood Doba (for map) -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）上"
+      ]
+    },
+    {
+      "ID": 801112,
+      "Entries": [
+        "[Special Attack] Under Blood (for Map) -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）下"
+      ]
+    },
+    {
+      "ID": 801115,
+      "Entries": [
+        "[Special Attack] Blood Doba (for map) Diagonally in front -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）斜め前"
+      ]
+    },
+    {
+      "ID": 801116,
+      "Entries": [
+        "[Special Attack] Blood Doba (for map) diagonally behind -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）斜め後"
+      ]
+    },
+    {
+      "ID": 801117,
+      "Entries": [
+        "[Special Attack] Blood Doba (for map) Back -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）背面"
+      ]
+    },
+    {
+      "ID": 801120,
+      "Entries": [
+        "[Special Attack] Blood Potapota (for map) Front -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）正面"
+      ]
+    },
+    {
+      "ID": 801121,
+      "Entries": [
+        "[Special Attack] Bloody Potapota (for map) -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）上"
+      ]
+    },
+    {
+      "ID": 801122,
+      "Entries": [
+        "[Special Attack] Under Blood Potapota (for Map) -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）下"
+      ]
+    },
+    {
+      "ID": 801125,
+      "Entries": [
+        "[Special Attack] Blood Potapota (for map) Diagonally in front -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）斜め前"
+      ]
+    },
+    {
+      "ID": 801126,
+      "Entries": [
+        "[Special attack] Blood potapota (for map) diagonally behind -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）斜め後"
+      ]
+    },
+    {
+      "ID": 801127,
+      "Entries": [
+        "[Special attack] Blood potapota (for map) back -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）背面"
+      ]
+    },
+    {
+      "ID": 801130,
+      "Entries": [
+        "[Attack] Meat under armor Front (for map) -- 【攻撃】鎧の下の肉\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 801131,
+      "Entries": [
+        "[Attack] Meat under armor (for map) -- 【攻撃】鎧の下の肉\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 801132,
+      "Entries": [
+        "[Attack] Under the armor (for maps) -- 【攻撃】鎧の下の肉\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 801133,
+      "Entries": [
+        "[Attack] Meat under armor Left (for map) -- 【攻撃】鎧の下の肉\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 801134,
+      "Entries": [
+        "[Attack] Meat under armor Right (for map) -- 【攻撃】鎧の下の肉\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "[Shinobi] Blood World Under (Character) -- 【忍殺】血\u3000ワールド\u3000下（キャラ）"
+      ]
+    },
+    {
+      "ID": 802100,
+      "Entries": [
+        "[Shinobi] Blood World Below (Map) -- 【忍殺】血\u3000ワールド\u3000下（マップ）"
+      ]
+    },
+    {
+      "ID": 802200,
+      "Entries": [
+        "[Attack] Blood (dead) Middle front (for characters) -- 【攻撃】血(亡者)中\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 803010,
+      "Entries": [
+        "c5010 Large snake falling shinobi blood killing -- ｃ5010\u3000大蛇\u3000落下忍殺血"
+      ]
+    },
+    {
+      "ID": 803011,
+      "Entries": [
+        "c5010 Large snake litter hidden shinobi blood killing -- ｃ5010\u3000大蛇\u3000輿隠れ忍殺血"
+      ]
+    },
+    {
+      "ID": 803021,
+      "Entries": [
+        "c1200 In front of Sokushinbutsu Gero (character) -- c1200\u3000即身仏\u3000ゲロ（キャラ）前"
+      ]
+    },
+    {
+      "ID": 803022,
+      "Entries": [
+        "c1200 After Sokushinbutsu Gero (Character) -- c1200\u3000即身仏\u3000ゲロ（キャラ）後"
+      ]
+    },
+    {
+      "ID": 803025,
+      "Entries": [
+        "c1200 Immediate Buddha Gero (Character) For foot range attack Before -- c1200\u3000即身仏\u3000ゲロ（キャラ）足元範囲攻撃用\u3000前"
+      ]
+    },
+    {
+      "ID": 803026,
+      "Entries": [
+        "c1200 Immediate Buddha Gero (Character) For foot range attack After -- c1200\u3000即身仏\u3000ゲロ（キャラ）足元範囲攻撃用\u3000後"
+      ]
+    },
+    {
+      "ID": 803030,
+      "Entries": [
+        "c1500 Villager Zombie Fertilizer Reservoir Landing (Map) -- c1500\u3000村人ゾンビ\u3000肥溜め着弾(マップ)"
+      ]
+    },
+    {
+      "ID": 803031,
+      "Entries": [
+        "c1500 Villager Zombie Fertilizer Accumulation Landing (Character) -- c1500\u3000村人ゾンビ\u3000肥溜め着弾(キャラ)"
+      ]
+    },
+    {
+      "ID": 803040,
+      "Entries": [
+        "c1360 Rappa Poison Ball Landing (Map) -- c1360\u3000らっぱ\u3000毒玉着弾(マップ)"
+      ]
+    },
+    {
+      "ID": 803050,
+      "Entries": [
+        "c1260 Chigo Monkey Luminous Footprint Left Foot (Map) -- c1260\u3000稚児猿\u3000発光足跡\u3000左足(マップ)"
+      ]
+    },
+    {
+      "ID": 803060,
+      "Entries": [
+        "c1260 Chigo Monkey Luminous Footprint Right Foot (Map) -- c1260\u3000稚児猿\u3000発光足跡\u3000右足(マップ)"
+      ]
+    },
+    {
+      "ID": 9990000,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 9990001,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 9990002,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 9990003,
+      "Entries": [
+        "Random decal test -- ランダムデカールテスト"
+      ]
+    },
+    {
+      "ID": 9990004,
+      "Entries": [
+        "Random decal test -- ランダムデカールテスト"
+      ]
+    },
+    {
+      "ID": 9990005,
+      "Entries": [
+        "Normal test -- ノーマルテスト"
+      ]
+    },
+    {
+      "ID": 9990006,
+      "Entries": [
+        "Normal test -- ノーマルテスト"
+      ]
+    },
+    {
+      "ID": 9990007,
+      "Entries": [
+        "Normal test -- ノーマルテスト"
+      ]
+    },
+    {
+      "ID": 9990008,
+      "Entries": [
+        "Normal test -- ノーマルテスト"
+      ]
+    },
+    {
+      "ID": 100600010,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (attacking side) Blood (Character) [MILD] -- 【忍殺・中】刀刺し（攻撃側）\u3000血\u3000中\u3000（キャラ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100600011,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (attacking side) Blood (Map) [MILD] -- 【忍殺・中】刀刺し（攻撃側）\u3000血\u3000中\u3000（マップ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100610010,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (Defender) Blood (Character) [MILD] -- 【忍殺・中】刀刺し（防御側）\u3000血\u3000中\u3000（キャラ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100610011,
+      "Entries": [
+        "[Shinobi / Medium] Sword stab (Defender) Blood (Map) [MILD] -- 【忍殺・中】刀刺し（防御側）\u3000血\u3000中\u3000（マップ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100620010,
+      "Entries": [
+        "[Shinobi / Medium] Sword-paying Blood (Character) [MILD] -- 【忍殺・中】刀払い\u3000血\u3000中\u3000（キャラ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100620011,
+      "Entries": [
+        "[Shinobi / Medium] Sword-paying Blood (Map) [MILD] -- 【忍殺・中】刀払い\u3000血\u3000中\u3000（マップ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100710011,
+      "Entries": [
+        "[Shinobi / Medium] Massive bleeding Blood (Map) [MILD] -- 【忍殺・中】大量出血\u3000血\u3000中（マップ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100801000,
+      "Entries": [
+        "[Attack] Blood (dead) Middle Front (for characters) Blood MILD -- 【攻撃】血(亡者)中\u3000正面（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801001,
+      "Entries": [
+        "[Attack] Blood (dead) Nakagami (for characters) Blood MILD -- 【攻撃】血(亡者)中\u3000上（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801002,
+      "Entries": [
+        "[Attack] Blood (dead) Nakashita (for characters) Blood MILD -- 【攻撃】血(亡者)中\u3000下（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801003,
+      "Entries": [
+        "[Attack] Blood (dead) Middle Left (for characters) Blood MILD -- 【攻撃】血(亡者)中\u3000左（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801004,
+      "Entries": [
+        "[Attack] Blood (dead) Middle right (for characters) Blood MILD -- 【攻撃】血(亡者)中\u3000右（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801010,
+      "Entries": [
+        "[Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血\u3000中\u3000どばっ（キャラ用）"
+      ]
+    },
+    {
+      "ID": 100801100,
+      "Entries": [
+        "[Attack] Blood (dead) Middle Front (for map) Blood MILD -- 【攻撃】血(亡者)中\u3000正面（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801101,
+      "Entries": [
+        "[Attack] Blood (dead) Nakagami (for map) Blood MILD -- 【攻撃】血(亡者)中\u3000上（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801102,
+      "Entries": [
+        "[Attack] Blood (dead) Middle and lower (for map) Blood MILD -- 【攻撃】血(亡者)中\u3000下（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801103,
+      "Entries": [
+        "[Attack] Blood (dead) Middle Left (for map) Blood MILD -- 【攻撃】血(亡者)中\u3000左（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801104,
+      "Entries": [
+        "[Attack] Blood (dead) Middle right (for map) Blood MILD -- 【攻撃】血(亡者)中\u3000右（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 100801112,
+      "Entries": [
+        "[Special Attack] Under Blood (for Map) -- 【必殺攻撃】血\u3000中\u3000どばっ（マップ用）下"
+      ]
+    },
+    {
+      "ID": 100801122,
+      "Entries": [
+        "[Special Attack] Under Blood Potapota (for Map) -- 【必殺攻撃】血\u3000中\u3000ポタポタ（マップ用）下"
+      ]
+    },
+    {
+      "ID": 100802000,
+      "Entries": [
+        "[Shinobi] Blood World Under (Character) [MILD] -- 【忍殺】血\u3000ワールド\u3000下（キャラ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100802100,
+      "Entries": [
+        "[Shinobi] Blood World Below (Map) [MILD] -- 【忍殺】血\u3000ワールド\u3000下（マップ）【MILD】"
+      ]
+    },
+    {
+      "ID": 100803010,
+      "Entries": [
+        "c5010 Large Snake Falling Shinobi Blood [MILD] -- ｃ5010\u3000大蛇\u3000落下忍殺血\u3000【MILD】"
+      ]
+    },
+    {
+      "ID": 100803011,
+      "Entries": [
+        "c5010 Large Serpent Litter Hidden Shinobi Blood Killing [MILD] -- ｃ5010\u3000大蛇\u3000輿隠れ忍殺血\u3000【MILD】"
+      ]
+    },
+    {
+      "ID": 300027201,
+      "Entries": [
+        "[PC feet] Mud shoes -- 【PC足】泥\u3000靴"
+      ]
+    },
+    {
+      "ID": 300030201,
+      "Entries": [
+        "[NTC] Snow footprint shoes -- 【NTC】雪足跡\u3000靴"
+      ]
+    },
+    {
+      "ID": 600109000,
+      "Entries": [
+        "[Attack] Blood (fresh blood) in front (for characters) -- 【攻撃】血(鮮血)中\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600109001,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Nakagami (for characters) -- 【攻撃】血(鮮血)中\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600109002,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle and lower (for characters) -- 【攻撃】血(鮮血)中\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600109003,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle Left (for characters) -- 【攻撃】血(鮮血)中\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600109004,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle right (for characters) -- 【攻撃】血(鮮血)中\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600109100,
+      "Entries": [
+        "[Attack] Blood (fresh blood) in front (for map) -- 【攻撃】血(鮮血)中\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 600109101,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Medium Top (for map) -- 【攻撃】血(鮮血)中\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 600109102,
+      "Entries": [
+        "[Attack] Blood (fresh blood) middle and lower (for map) -- 【攻撃】血(鮮血)中\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 600109103,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle Left (for map) -- 【攻撃】血(鮮血)中\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 600109104,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle right (for map) -- 【攻撃】血(鮮血)中\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 600114000,
+      "Entries": [
+        "[Attack] Meat under armor Fresh blood (PC) Front (for characters) -- 【攻撃】鎧の下の肉\u3000鮮血中(PC)\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600114001,
+      "Entries": [
+        "[Attack] Meat under armor (for characters) -- 【攻撃】鎧の下の肉\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600114002,
+      "Entries": [
+        "[Attack] Under the flesh under the armor (for characters) -- 【攻撃】鎧の下の肉\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600114003,
+      "Entries": [
+        "[Attack] Meat under armor Left (for characters) -- 【攻撃】鎧の下の肉\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600114004,
+      "Entries": [
+        "[Attack] Meat under armor Right (for characters) -- 【攻撃】鎧の下の肉\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600114100,
+      "Entries": [
+        "[Attack] Meat under armor Front (for map) -- 【攻撃】鎧の下の肉\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 600114101,
+      "Entries": [
+        "[Attack] Meat under armor (for map) -- 【攻撃】鎧の下の肉\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 600114102,
+      "Entries": [
+        "[Attack] Under the armor (for maps) -- 【攻撃】鎧の下の肉\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 600114103,
+      "Entries": [
+        "[Attack] Meat under armor Left (for map) -- 【攻撃】鎧の下の肉\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 600114104,
+      "Entries": [
+        "[Attack] Meat under armor Right (for map) -- 【攻撃】鎧の下の肉\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 600134000,
+      "Entries": [
+        "[Attack] Poisonous meat in front (for characters) -- 【攻撃】毒肉\u3000中\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600134001,
+      "Entries": [
+        "[Attack] Poisonous meat Nakagami (for characters) -- 【攻撃】毒肉\u3000中\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600134002,
+      "Entries": [
+        "[Attack] Poisonous meat Nakashita (for characters) -- 【攻撃】毒肉\u3000中\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600134003,
+      "Entries": [
+        "[Attack] Poisonous meat middle left (for characters) -- 【攻撃】毒肉\u3000中\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600134004,
+      "Entries": [
+        "[Attack] Poisonous meat middle right (for characters) -- 【攻撃】毒肉\u3000中\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600134100,
+      "Entries": [
+        "[Attack] Poisonous meat in front (for map) -- 【攻撃】毒肉\u3000中\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 600134101,
+      "Entries": [
+        "[Attack] Poisonous meat Nakagami (for map) -- 【攻撃】毒肉\u3000中\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 600134102,
+      "Entries": [
+        "[Attack] Poisonous meat Nakashita (for map) -- 【攻撃】毒肉\u3000中\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 600134103,
+      "Entries": [
+        "[Attack] Poisonous meat middle left (for map) -- 【攻撃】毒肉\u3000中\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 600134104,
+      "Entries": [
+        "[Attack] Poisonous meat middle right (for map) -- 【攻撃】毒肉\u3000中\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 600135000,
+      "Entries": [
+        "[Attack] White meat in front (for characters) -- 【攻撃】白肉\u3000中\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600135001,
+      "Entries": [
+        "[Attack] White meat Nakagami (for characters) -- 【攻撃】白肉\u3000中\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600135002,
+      "Entries": [
+        "[Attack] White meat Nakashita (for characters) -- 【攻撃】白肉\u3000中\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600135003,
+      "Entries": [
+        "[Attack] White meat middle left (for characters) -- 【攻撃】白肉\u3000中\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600135004,
+      "Entries": [
+        "[Attack] White meat middle right (for characters) -- 【攻撃】白肉\u3000中\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600135100,
+      "Entries": [
+        "[Attack] White meat in front (for map) -- 【攻撃】白肉\u3000中\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 600135101,
+      "Entries": [
+        "[Attack] White meat Nakagami (for map) -- 【攻撃】白肉\u3000中\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 600135102,
+      "Entries": [
+        "[Attack] White meat middle bottom (for map) -- 【攻撃】白肉\u3000中\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 600135103,
+      "Entries": [
+        "[Attack] White meat middle left (for map) -- 【攻撃】白肉\u3000中\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 600135104,
+      "Entries": [
+        "[Attack] White meat middle right (for map) -- 【攻撃】白肉\u3000中\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 600146000,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Front (for characters) -- 【攻撃】鮮血中(PC)\u3000正面（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600146001,
+      "Entries": [
+        "[Attack] Fresh blood (PC) on (for characters) -- 【攻撃】鮮血中(PC)\u3000上（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600146002,
+      "Entries": [
+        "[Attack] In fresh blood (PC) Under (for characters) -- 【攻撃】鮮血中(PC)\u3000下（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600146003,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Left (for characters) -- 【攻撃】鮮血中(PC)\u3000左（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600146004,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Right (for characters) -- 【攻撃】鮮血中(PC)\u3000右（キャラ用）"
+      ]
+    },
+    {
+      "ID": 600146100,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Front (for map) -- 【攻撃】鮮血中(PC)\u3000正面（マップ用）"
+      ]
+    },
+    {
+      "ID": 600146101,
+      "Entries": [
+        "[Attack] On fresh blood (PC) (for map) -- 【攻撃】鮮血中(PC)\u3000上（マップ用）"
+      ]
+    },
+    {
+      "ID": 600146102,
+      "Entries": [
+        "[Attack] In fresh blood (PC) Below (for map) -- 【攻撃】鮮血中(PC)\u3000下（マップ用）"
+      ]
+    },
+    {
+      "ID": 600146103,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Left (for map) -- 【攻撃】鮮血中(PC)\u3000左（マップ用）"
+      ]
+    },
+    {
+      "ID": 600146104,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Right (for map) -- 【攻撃】鮮血中(PC)\u3000右（マップ用）"
+      ]
+    },
+    {
+      "ID": 700109000,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle front (for characters) Blood MILD -- 【攻撃】血(鮮血)中\u3000正面（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109001,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Nakagami (for characters) Blood MILD -- 【攻撃】血(鮮血)中\u3000上（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109002,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle and lower (for characters) Blood MILD -- 【攻撃】血(鮮血)中\u3000下（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109003,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle Left (for characters) Blood MILD -- 【攻撃】血(鮮血)中\u3000左（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109004,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle right (for characters) Blood MILD -- 【攻撃】血(鮮血)中\u3000右（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109100,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle front (for map) Blood MILD -- 【攻撃】血(鮮血)中\u3000正面（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109101,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Medium (for map) Blood MILD -- 【攻撃】血(鮮血)中\u3000上（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109102,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle bottom (for map) Blood MILD -- 【攻撃】血(鮮血)中\u3000下（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109103,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle Left (for map) Blood MILD -- 【攻撃】血(鮮血)中\u3000左（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700109104,
+      "Entries": [
+        "[Attack] Blood (fresh blood) Middle right (for map) Blood MILD -- 【攻撃】血(鮮血)中\u3000右（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114000,
+      "Entries": [
+        "[Attack] Meat under armor Fresh blood (PC) Front (for characters) Blood MILD -- 【攻撃】鎧の下の肉\u3000鮮血中(PC)\u3000正面（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114001,
+      "Entries": [
+        "[Attack] Meat under armor (for characters) Blood MILD -- 【攻撃】鎧の下の肉\u3000上（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114002,
+      "Entries": [
+        "[Attack] Under the flesh under the armor (for characters) Blood MILD -- 【攻撃】鎧の下の肉\u3000下（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114003,
+      "Entries": [
+        "[Attack] Meat under armor Left (for characters) Blood MILD -- 【攻撃】鎧の下の肉\u3000左（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114004,
+      "Entries": [
+        "[Attack] Meat under armor Right (for characters) Blood MILD -- 【攻撃】鎧の下の肉\u3000右（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114100,
+      "Entries": [
+        "[Attack] Meat under armor Front (for map) Blood MILD -- 【攻撃】鎧の下の肉\u3000正面（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114101,
+      "Entries": [
+        "[Attack] Meat under armor (for map) Blood MILD -- 【攻撃】鎧の下の肉\u3000上（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114102,
+      "Entries": [
+        "[Attack] Under the flesh under the armor (for maps) Blood MILD -- 【攻撃】鎧の下の肉\u3000下（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114103,
+      "Entries": [
+        "[Attack] Meat under armor Left (for map) Blood MILD -- 【攻撃】鎧の下の肉\u3000左（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700114104,
+      "Entries": [
+        "[Attack] Meat under armor Right (for map) Blood MILD -- 【攻撃】鎧の下の肉\u3000右（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134000,
+      "Entries": [
+        "[Attack] Poisonous meat in front (for characters) Blood MILD -- 【攻撃】毒肉\u3000中\u3000正面（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134001,
+      "Entries": [
+        "[Attack] Poisonous meat Nakagami (for characters) Blood MILD -- 【攻撃】毒肉\u3000中\u3000上（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134002,
+      "Entries": [
+        "[Attack] Poisonous meat Nakashita (for characters) Blood MILD -- 【攻撃】毒肉\u3000中\u3000下（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134003,
+      "Entries": [
+        "[Attack] Poisonous meat middle left (for characters) Blood MILD -- 【攻撃】毒肉\u3000中\u3000左（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134004,
+      "Entries": [
+        "[Attack] Poisonous meat middle right (for characters) Blood MILD -- 【攻撃】毒肉\u3000中\u3000右（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134100,
+      "Entries": [
+        "[Attack] Poisonous meat in front (for map) Blood MILD -- 【攻撃】毒肉\u3000中\u3000正面（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134101,
+      "Entries": [
+        "[Attack] Poisonous meat Nakagami (for map) Blood MILD -- 【攻撃】毒肉\u3000中\u3000上（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134102,
+      "Entries": [
+        "[Attack] Poisonous meat Nakashita (for map) Blood MILD -- 【攻撃】毒肉\u3000中\u3000下（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134103,
+      "Entries": [
+        "[Attack] Poisonous meat middle left (for map) Blood MILD -- 【攻撃】毒肉\u3000中\u3000左（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700134104,
+      "Entries": [
+        "[Attack] Poisonous meat middle right (for map) Blood MILD -- 【攻撃】毒肉\u3000中\u3000右（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135000,
+      "Entries": [
+        "[Attack] White meat in front (for characters) Blood MILD -- 【攻撃】白肉\u3000中\u3000正面（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135001,
+      "Entries": [
+        "[Attack] White meat Nakagami (for characters) Blood MILD -- 【攻撃】白肉\u3000中\u3000上（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135002,
+      "Entries": [
+        "[Attack] White meat Nakashita (for characters) Blood MILD -- 【攻撃】白肉\u3000中\u3000下（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135003,
+      "Entries": [
+        "[Attack] White meat Middle left (for characters) Blood MILD -- 【攻撃】白肉\u3000中\u3000左（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135004,
+      "Entries": [
+        "[Attack] White meat Middle right (for characters) Blood MILD -- 【攻撃】白肉\u3000中\u3000右（キャラ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135100,
+      "Entries": [
+        "[Attack] White meat in front (for map) Blood MILD -- 【攻撃】白肉\u3000中\u3000正面（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135101,
+      "Entries": [
+        "[Attack] White meat Nakagami (for map) Blood MILD -- 【攻撃】白肉\u3000中\u3000上（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135102,
+      "Entries": [
+        "[Attack] White meat Nakashita (for map) Blood MILD -- 【攻撃】白肉\u3000中\u3000下（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135103,
+      "Entries": [
+        "[Attack] White meat Middle left (for map) Blood MILD -- 【攻撃】白肉\u3000中\u3000左（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700135104,
+      "Entries": [
+        "[Attack] White meat Middle right (for map) Blood MILD -- 【攻撃】白肉\u3000中\u3000右（マップ用）\u3000血MILD"
+      ]
+    },
+    {
+      "ID": 700146000,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Front (for characters) Blood MILD -- 【攻撃】鮮血中(PC)\u3000正面（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146001,
+      "Entries": [
+        "[Attack] Fresh blood (PC) on (for characters) Blood MILD -- 【攻撃】鮮血中(PC)\u3000上（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146002,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Under (for characters) Blood MILD -- 【攻撃】鮮血中(PC)\u3000下（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146003,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Left (for characters) Blood MILD -- 【攻撃】鮮血中(PC)\u3000左（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146004,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Right (for characters) Blood MILD -- 【攻撃】鮮血中(PC)\u3000右（キャラ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146100,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Front (for map) Blood MILD -- 【攻撃】鮮血中(PC)\u3000正面（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146101,
+      "Entries": [
+        "[Attack] Fresh blood (PC) on (for map) Blood MILD -- 【攻撃】鮮血中(PC)\u3000上（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146102,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Under (for map) Blood MILD -- 【攻撃】鮮血中(PC)\u3000下（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146103,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Left (for map) Blood MILD -- 【攻撃】鮮血中(PC)\u3000左（マップ用）血MILD"
+      ]
+    },
+    {
+      "ID": 700146104,
+      "Entries": [
+        "[Attack] Fresh blood (PC) Right (for map) Blood MILD -- 【攻撃】鮮血中(PC)\u3000右（マップ用）血MILD"
+      ]
+    }
+  ]
+}

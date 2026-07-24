@@ -1,0 +1,83 @@
+{
+  "Key": "BEHAVIOR_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BEHAVIOR_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Kusabimaru attacks and combat arts"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Prosthetics"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Throws"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Default"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Offsets blocked/deflected reactions by 2"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Offsets blocked/deflected reactions by 4"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Bullets attached to combat arts"
+        }
+      ]
+    }
+  ]
+}

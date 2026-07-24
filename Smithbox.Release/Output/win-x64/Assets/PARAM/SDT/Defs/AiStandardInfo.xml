@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_STANDARD_INFO_BANK</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u16 RadarRange = 20">
+      <DisplayName>認識距離[m]</DisplayName>
+      <Description>敵性キャラクタを認識する距離</Description>
+      <Maximum>30000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 RadarAngleX = 30">
+      <DisplayName>認識角度Ｘ[deg]</DisplayName>
+      <Description>敵性キャラクタを認識するX角度　現在の視線方向を０度として、上が＋。</Description>
+      <Maximum>90</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 RadarAngleY = 60">
+      <DisplayName>認識角度Y[deg]</DisplayName>
+      <Description>敵性キャラクタを認識するY角度　現在の視線方向を０度として、右が＋。</Description>
+      <Maximum>180</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 TerritorySize = 20">
+      <DisplayName>縄張り距離[m]</DisplayName>
+      <Description>自分の縄張りの距離。認識しているプレイヤーがこの距離から外れると初期位置に戻ります。</Description>
+      <Maximum>30000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 ThreatBeforeAttackRate = 50">
+      <DisplayName>攻撃前威嚇率[0～100]</DisplayName>
+      <Description>攻撃前に威嚇する確率</Description>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 ForceThreatOnFirstLocked">
+      <DisplayName>初回認識威嚇</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>初回プレイヤー認識時に必ず威嚇するかどうか</Description>
+      <Maximum>0</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[24]">
+      <DisplayName>予約</DisplayName>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u16 Attack1_Distance">
+      <DisplayName>攻撃１　間合い[m]</DisplayName>
+      <Description>攻撃するときの間合い[m]</Description>
+      <Maximum>30000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 Attack1_Margin">
+      <DisplayName>攻撃１　間合い遊び[m]</DisplayName>
+      <Description>攻撃間合いの遊び。間合い距離近辺で、振動しないように</Description>
+      <Maximum>100</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 Attack1_Rate = 50">
+      <DisplayName>攻撃１　割合[0～100]</DisplayName>
+      <Description>攻撃の頻度</Description>
+      <Maximum>100</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 Attack1_ActionID">
+      <DisplayName>攻撃１　種類</DisplayName>
+      <Enum>ACTION_PATTERN</Enum>
+      <Description>攻撃の種類</Description>
+      <Maximum>0</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 Attack1_DelayMin">
+      <DisplayName>攻撃１　最小遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最小。</Description>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 Attack1_DelayMax">
+      <DisplayName>攻撃１　最長遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最長。</Description>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 Attack1_ConeAngle = 30">
+      <DisplayName>攻撃１　攻撃許可円錐の角度[deg]</DisplayName>
+      <Description>視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。</Description>
+      <Maximum>180</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="dummy8 reserve10[7]">
+      <DisplayName>予約</DisplayName>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u16 Attack2_Distance">
+      <DisplayName>攻撃２　間合い[m]</DisplayName>
+      <Description>攻撃するときの間合い[m]</Description>
+      <Maximum>30000</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 Attack2_Margin">
+      <DisplayName>攻撃２　間合い遊び[m]</DisplayName>
+      <Description>攻撃間合いの遊び。間合い距離近辺で、振動しないように</Description>
+      <Maximum>100</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 Attack2_Rate = 50">
+      <DisplayName>攻撃１　割合[0～100]</DisplayName>
+      <Description>攻撃の頻度</Description>
+      <Maximum>100</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 Attack2_ActionID">
+      <DisplayName>攻撃２　種類</DisplayName>
+      <Enum>ACTION_PATTERN</Enum>
+      <Description>攻撃の種類</Description>
+      <Maximum>0</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 Attack2_DelayMin">
+      <DisplayName>攻撃2　最小遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最小。</Description>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 Attack2_DelayMax">
+      <DisplayName>攻撃2　最長遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最長。</Description>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 Attack2_ConeAngle = 30">
+      <DisplayName>攻撃2　攻撃許可円錐の角度[deg]</DisplayName>
+      <Description>視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。</Description>
+      <Maximum>180</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="dummy8 reserve11[7]">
+      <DisplayName>予約</DisplayName>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u16 Attack3_Distance">
+      <DisplayName>攻撃３　間合い[m]</DisplayName>
+      <Description>攻撃するときの間合い[m]</Description>
+      <Maximum>30000</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u16 Attack3_Margin">
+      <DisplayName>攻撃３　間合い遊び[m]</DisplayName>
+      <Description>攻撃間合いの遊び。間合い距離近辺で、振動しないように</Description>
+      <Maximum>100</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 Attack3_Rate = 50">
+      <DisplayName>攻撃１　割合[0～100]</DisplayName>
+      <Description>攻撃の頻度</Description>
+      <Maximum>100</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 Attack3_ActionID">
+      <DisplayName>攻撃３　種類</DisplayName>
+      <Enum>ACTION_PATTERN</Enum>
+      <Description>攻撃の種類</Description>
+      <Maximum>0</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 Attack3_DelayMin">
+      <DisplayName>攻撃3　最小遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最小。</Description>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 Attack3_DelayMax">
+      <DisplayName>攻撃3　最長遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最長。</Description>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u8 Attack3_ConeAngle = 30">
+      <DisplayName>攻撃3　攻撃許可円錐の角度[deg]</DisplayName>
+      <Description>視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。</Description>
+      <Maximum>180</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="dummy8 reserve12[7]">
+      <DisplayName>予約</DisplayName>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u16 Attack4_Distance">
+      <DisplayName>攻撃４　間合い[m]</DisplayName>
+      <Description>攻撃するときの間合い[m]</Description>
+      <Maximum>30000</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u16 Attack4_Margin">
+      <DisplayName>攻撃４　間合い遊び[m]</DisplayName>
+      <Description>攻撃間合いの遊び。間合い距離近辺で、振動しないように</Description>
+      <Maximum>100</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 Attack4_Rate = 50">
+      <DisplayName>攻撃１　割合[0～100]</DisplayName>
+      <Description>攻撃の頻度</Description>
+      <Maximum>100</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 Attack4_ActionID">
+      <DisplayName>攻撃４　種類</DisplayName>
+      <Enum>ACTION_PATTERN</Enum>
+      <Description>攻撃の種類</Description>
+      <Maximum>0</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 Attack4_DelayMin">
+      <DisplayName>攻撃4　最小遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最小。</Description>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u8 Attack4_DelayMax">
+      <DisplayName>攻撃4　最長遅延時間[frame]</DisplayName>
+      <Description>攻撃可能になった時点から、攻撃するまでの遅延時間の最長。</Description>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="u8 Attack4_ConeAngle = 30">
+      <DisplayName>攻撃4　攻撃許可円錐の角度[deg]</DisplayName>
+      <Description>視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。</Description>
+      <Maximum>180</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="dummy8 reserve13[7]">
+      <DisplayName>予約</DisplayName>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="dummy8 reserve_last[32]">
+      <DisplayName>予約</DisplayName>
+      <SortID>46</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

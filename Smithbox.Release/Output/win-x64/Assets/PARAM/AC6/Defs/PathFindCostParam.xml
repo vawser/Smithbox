@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PATH_FIND_COST_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 groundCostScale = 1">
+      <DisplayName>地上ノードコスト倍率</DisplayName>
+      <Description>地上ノードのコスト倍率</Description>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 airCostScale = 1">
+      <DisplayName>空中ノードコスト倍率</DisplayName>
+      <Description>空中ノードのコスト倍率</Description>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 reserved4[24]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>201</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

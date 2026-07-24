@@ -1,0 +1,515 @@
+{
+  "Name": "KnowledgeLoadScreenItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Fixed target -- ターゲット固定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Thrust attack -- 突き攻撃"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Step -- ステップ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Closeout -- 見切り"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Items used -- 使用アイテム"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dash jump -- ダッシュジャンプ"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Trampling -- 踏みつけ"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Breaking back -- 崩し裏回り"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Eavesdropping -- 盗み聞き"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dash slash -- ダッシュ斬り"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Avoid rolling -- 転がり回避"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Lightning return -- 雷返し"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Relic acquisition -- 遺物取得"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Gourd seeds -- 瓢箪の種"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Growth of physical strength -- 身体力の成長"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Growth of offensive power -- 攻め力の成長"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Stealth effect -- 隠密効果"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "HP and core -- HPと体幹"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "On fire -- 炎上"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Warning display -- 警戒表示"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Demon Buddha -- 鬼仏"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Night eyes -- 夜目"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "The power of regeneration -- 回生の力"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Toxic -- 病毒"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Scary -- 怖気"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Thunder -- 打雷"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Skill acquisition -- スキル習得"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Stealth technique -- 忍び技"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Ninja prosthetic hand style -- 忍び義手流"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Ashina style -- 葦名流"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Senmineji Kenpo -- 仙峯寺拳法"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Strengthening prosthetic hand ninja -- 義手忍具の強化"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Demon Buddha warehouse function -- 鬼仏の倉庫機能"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Revenge spirit -- 復讐霊"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Form fee -- 形代"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Crawling on the ground -- 地を這うヤモリ"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Stop Shinobi -- とどめ忍殺"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Regenerative surgery recurrence -- 回生の術の再発動"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Help probability -- 冥助確率"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Coughing sound -- 咳の音"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Flow Hitohira -- 流れひとひら"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Dragon cough -- 竜咳"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "A school technique that consumes form charges -- 形代を消費する流派技"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Enemy thrust attack -- 敵の突き攻撃"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Enemy lower attack -- 敵の下段攻撃"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Enemy grab attack -- 敵の掴み攻撃"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Continuous playing -- 連続弾き"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Training -- 修練"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Reinforced prosthetic hand ninja -- 強化義手忍具"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Trunk and shinobi -- 体幹と忍殺"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Play -- 弾き"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Slash back attack -- 斬り返し攻撃"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Wound medicine gourd -- 傷薬瓢箪"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Hanging shinobi -- ぶら下がり忍殺"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shinobi with wall -- 壁張り付き忍殺"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Proper use of artificial hand ninja -- 義手忍具の使い分け"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Red eyes -- 赤目"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Distant grappling hook target -- 遠くの鉤縄ターゲット"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "beast -- 獣"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Destruction of wooden shield -- 木盾の破壊"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Armor -- 鎧剝ぎ"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Recovery speed of the trunk -- 体幹の回復速度"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Blue rust poison -- 青錆の毒"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Shuriken -- 手裏剣"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "candy -- 飴"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "School technique -- 流派技"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Skill classification -- スキルの分類"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Playing is a moment -- 弾きは刹那"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Those who live in poisonous areas -- 毒地で暮らすもの"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Dealing with missiles -- 飛び道具への対処"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Enemy core recovery -- 敵の体幹回復"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Derived attack -- 派生攻撃"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Derivative attack / chasing slash -- 派生攻撃・追い斬り"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Memorial -- 供養衆"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Immortal warrior -- 不死落武者"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Treasure carp -- 宝鯉"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Buddhist priest -- 仏師"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Message -- 伝書"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Sharp attack -- 鋭利な攻撃"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Jump to the first slot of the item used -- 使用アイテムの先頭スロットへのジャンプ"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Afterglow -- 残影"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Rematch with a rare strong man -- 類稀な強者との再戦"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "A series of battles with a rare strong man -- 類稀な強者との連戦"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Another memory -- 別の記憶"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Jump hanging tips -- ジャンプぶら下がりのコツ"
+      ]
+    }
+  ]
+}

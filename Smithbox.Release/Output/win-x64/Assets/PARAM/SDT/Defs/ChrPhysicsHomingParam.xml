@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHR_PHYSICS_HOMING_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 targetOffsetX">
+      <DisplayName>目標地点オフセットX[m]</DisplayName>
+      <Description>基準位置からこの値だけ左右にオフセットした位置を目標地点とする。</Description>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>60000</SortID>
+    </Field>
+    <Field Def="f32 targetOffsetY">
+      <DisplayName>目標地点オフセットY[m]</DisplayName>
+      <Description>基準位置からこの値だけ上下にオフセットした位置を目標地点とする。</Description>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>61000</SortID>
+    </Field>
+    <Field Def="f32 targetOffsetZ">
+      <DisplayName>目標地点オフセットZ[m]</DisplayName>
+      <Description>基準位置からこの値だけ前後にオフセットした位置を目標地点とする。</Description>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>62000</SortID>
+    </Field>
+    <Field Def="s16 targetBaseDmyPolyId = -1">
+      <DisplayName>目標地点基準ダミポリ（キャラへのホーミング時のみ）</DisplayName>
+      <Description>目標地点の基準位置とするキャラのダミポリ。-1ならキャラの原点を使用する。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>50000</SortID>
+    </Field>
+    <Field Def="u8 fallCorrectionChase">
+      <DisplayName>落下補正（追尾）</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>移動する目標地点に対して追尾するように落下中の速度に補正をかけるかどうか。</Description>
+      <Maximum>1</Maximum>
+      <SortID>20000</SortID>
+    </Field>
+    <Field Def="u8 fallCorrectionTurn">
+      <DisplayName>ホーミングターゲットをシステム旋回目標にするか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>速度変化してからホーミングターゲットが無効になるまでの間、システム旋回の目標をホーミングターゲットに上書き変更するかどうか。"×"の場合は通常通り、ロック中のキャラや敵ターゲットに対してシステム旋回する。</Description>
+      <Maximum>1</Maximum>
+      <SortID>40000</SortID>
+    </Field>
+    <Field Def="f32 fallCorrectionChaseMaxAcceleration">
+      <DisplayName>落下補正（追尾）加速度上限[m/s^2]</DisplayName>
+      <Description>落下補正（追尾）で掛ける加速度の上限値。目標地点の移動に対する追尾性能に影響する。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>30000</SortID>
+    </Field>
+    <Field Def="u8 initialVelocityCorrection">
+      <DisplayName>初速補正</DisplayName>
+      <Enum>ChrPhysicsHomingParamInitialVelocityCorrection</Enum>
+      <Description>速度変化パラメータの設定値の代わりに目標地点に到達するような初速をかけるかどうか。なお、初速補正をしない場合、または補正できない場合（補正の計算方法による）は元の速度変化パラメータの設定に従い速度を変化させる。</Description>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="u8 fallCorrectionGuaranteeArrival">
+      <DisplayName>落下補正（到達保証）</DisplayName>
+      <Enum>ChrPhysicsHomingParamFallCorrectionGuaranteeArrivalType</Enum>
+      <Description>落下先と目標地点のズレを吸収するよう、落下中の速度に補正をかけるかどうか。</Description>
+      <SortID>21000</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>62001</SortID>
+    </Field>
+    <Field Def="f32 fallCorrectionChaseMaxVelocityRate = 1">
+      <DisplayName>落下補正（追尾）最大速度割合</DisplayName>
+      <Description>ホーミング開始時の平面速度に対してこの割合を掛けた値を、落下補正（追尾）有効時に加速できる最大速度とする。</Description>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>31000</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[4]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>62002</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,23 @@
+{
+  "Name": "NpcSystemMsgParam",
+  "Entries": [
+    {
+      "ID": 2000,
+      "Entries": [
+        "When winning"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "At the time of defeat"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "At the start of the match"
+      ]
+    }
+  ]
+}

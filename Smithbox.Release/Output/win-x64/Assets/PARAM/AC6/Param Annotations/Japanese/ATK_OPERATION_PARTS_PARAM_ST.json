@@ -1,0 +1,173 @@
+{
+  "Param": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Type": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Name": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "parts0",
+      "Name": "下半身",
+      "Description": ""
+    },
+    {
+      "Field": "parts1",
+      "Name": "右腕",
+      "Description": ""
+    },
+    {
+      "Field": "parts2",
+      "Name": "左腕",
+      "Description": ""
+    },
+    {
+      "Field": "parts3",
+      "Name": "右肩",
+      "Description": ""
+    },
+    {
+      "Field": "parts4",
+      "Name": "左肩",
+      "Description": ""
+    },
+    {
+      "Field": "parts5",
+      "Name": "右腕構え",
+      "Description": ""
+    },
+    {
+      "Field": "parts6",
+      "Name": "左腕構え",
+      "Description": ""
+    },
+    {
+      "Field": "parts7",
+      "Name": "上体",
+      "Description": ""
+    },
+    {
+      "Field": "parts8",
+      "Name": "ガード",
+      "Description": ""
+    },
+    {
+      "Field": "parts9",
+      "Name": "アサルトブースト",
+      "Description": ""
+    },
+    {
+      "Field": "parts10",
+      "Name": "右肩構え",
+      "Description": ""
+    },
+    {
+      "Field": "parts11",
+      "Name": "左肩構え",
+      "Description": ""
+    },
+    {
+      "Field": "parts12",
+      "Name": "右手リロード",
+      "Description": ""
+    },
+    {
+      "Field": "parts13",
+      "Name": "左手リロード",
+      "Description": ""
+    },
+    {
+      "Field": "parts14",
+      "Name": "右肩同時射撃_移動キャンセル用",
+      "Description": ""
+    },
+    {
+      "Field": "parts15",
+      "Name": "左肩同時射撃_移動キャンセル用",
+      "Description": ""
+    },
+    {
+      "Field": "parts16",
+      "Name": "パーツ16",
+      "Description": ""
+    },
+    {
+      "Field": "parts17",
+      "Name": "パーツ17",
+      "Description": ""
+    },
+    {
+      "Field": "parts18",
+      "Name": "パーツ18",
+      "Description": ""
+    },
+    {
+      "Field": "parts19",
+      "Name": "パーツ19",
+      "Description": ""
+    },
+    {
+      "Field": "parts20",
+      "Name": "パーツ20",
+      "Description": ""
+    },
+    {
+      "Field": "parts21",
+      "Name": "パーツ21",
+      "Description": ""
+    },
+    {
+      "Field": "parts22",
+      "Name": "パーツ22",
+      "Description": ""
+    },
+    {
+      "Field": "parts23",
+      "Name": "パーツ23",
+      "Description": ""
+    },
+    {
+      "Field": "parts24",
+      "Name": "パーツ24",
+      "Description": ""
+    },
+    {
+      "Field": "parts25",
+      "Name": "パーツ25",
+      "Description": ""
+    },
+    {
+      "Field": "parts26",
+      "Name": "パーツ26",
+      "Description": ""
+    },
+    {
+      "Field": "parts27",
+      "Name": "パーツ27",
+      "Description": ""
+    },
+    {
+      "Field": "parts28",
+      "Name": "パーツ28",
+      "Description": ""
+    },
+    {
+      "Field": "parts29",
+      "Name": "パーツ29",
+      "Description": ""
+    },
+    {
+      "Field": "parts30",
+      "Name": "パーツ30",
+      "Description": ""
+    },
+    {
+      "Field": "parts31",
+      "Name": "パーツ31",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "※パディング",
+      "Description": ""
+    }
+  ]
+}

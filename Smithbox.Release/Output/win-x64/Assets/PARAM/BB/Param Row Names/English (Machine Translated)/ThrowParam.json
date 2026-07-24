@@ -1,0 +1,1331 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[ SP 】Rear PC → Hammer Demon"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[ SP 】 Parry PC → Hammer Demon"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[ SP 】【Enhanced】Parry PC → Hammer Demon"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[ SP 】 Left side PC → Hammer Demon"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Rear PC to PC"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Gun Breaker PC to PC"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Back collapse PC → Hound"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Back collapse PC → Sacrificial Hound"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Back collapse PC → Priest"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Back collapse PC → Burned corpse"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Back collapse PC → Wandering Widow"
+      ]
+    },
+    {
+      "ID": 11051,
+      "Entries": [
+        "Back collapse PC → Wandering Widow ( Lightweight )"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Back collapse PC → Brain Eater"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "Back collapse PC → Strange Beast"
+      ]
+    },
+    {
+      "ID": 11091,
+      "Entries": [
+        "Back collapse PC → Strange Beast ( NPC )"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "Back collapse PC →Young fruit bat"
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        "Back collapse PC → Vampire pig"
+      ]
+    },
+    {
+      "ID": 11271,
+      "Entries": [
+        "Back collapse PC → Vampire pig (nightmare)"
+      ]
+    },
+    {
+      "ID": 11290,
+      "Entries": [
+        "Back collapse PC → Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Back collapse PC → Executioner"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Back collapse PC → Dungeon Man (Grave Digger)"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Back collapse PC → Kidnapper"
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        "Back collapse PC → Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Back collapse PC → Crazy Demon"
+      ]
+    },
+    {
+      "ID": 12090,
+      "Entries": [
+        "Back collapse PC → Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "Back collapse PC → Eye Collector"
+      ]
+    },
+    {
+      "ID": 12110,
+      "Entries": [
+        "Back collapse PC → Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        "Back collapse PC → Dark Brigade"
+      ]
+    },
+    {
+      "ID": 12150,
+      "Entries": [
+        "Back collapse PC → The Demon of the Old Castle"
+      ]
+    },
+    {
+      "ID": 12160,
+      "Entries": [
+        "Back collapse PC → Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 12170,
+      "Entries": [
+        "Back collapse PC → Messenger from Snake Swamp"
+      ]
+    },
+    {
+      "ID": 12180,
+      "Entries": [
+        "Back collapse PC → Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 12250,
+      "Entries": [
+        "Back collapse PC → Jailer A"
+      ]
+    },
+    {
+      "ID": 12260,
+      "Entries": [
+        "Back collapse PC → Jailer B"
+      ]
+    },
+    {
+      "ID": 12320,
+      "Entries": [
+        "Back collapse PC → King's Reaper"
+      ]
+    },
+    {
+      "ID": 12330,
+      "Entries": [
+        "Back collapse PC → The King's Servant"
+      ]
+    },
+    {
+      "ID": 12400,
+      "Entries": [
+        "Back collapse PC → Foundling Giant"
+      ]
+    },
+    {
+      "ID": 12500,
+      "Entries": [
+        "Back collapse PC → Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 12560,
+      "Entries": [
+        "Back collapse PC → Ground Cherry"
+      ]
+    },
+    {
+      "ID": 12600,
+      "Entries": [
+        "Back collapse PC → Terrifying crowd"
+      ]
+    },
+    {
+      "ID": 12610,
+      "Entries": [
+        "Back collapse PC → Crowd Woman"
+      ]
+    },
+    {
+      "ID": 12630,
+      "Entries": [
+        "Back collapse PC → crowd A (large)"
+      ]
+    },
+    {
+      "ID": 12631,
+      "Entries": [
+        "Back collapse PC → crowd A (Large) Executioner Costume"
+      ]
+    },
+    {
+      "ID": 12632,
+      "Entries": [
+        "Back collapse PC → crowd A (O) Mori Costume"
+      ]
+    },
+    {
+      "ID": 12640,
+      "Entries": [
+        "Back collapse PC → crowd B (large)"
+      ]
+    },
+    {
+      "ID": 12700,
+      "Entries": [
+        "Back collapse PC → Church Emissary"
+      ]
+    },
+    {
+      "ID": 12710,
+      "Entries": [
+        "Back collapse PC → Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 12720,
+      "Entries": [
+        "Back collapse PC → Father Gascoigne (Beast)"
+      ]
+    },
+    {
+      "ID": 12740,
+      "Entries": [
+        "Back collapse PC → student"
+      ]
+    },
+    {
+      "ID": 12800,
+      "Entries": [
+        "Back collapse PC →Burnt corpse variation (poison)"
+      ]
+    },
+    {
+      "ID": 12810,
+      "Entries": [
+        "Back collapse PC → Burnt Corpse Warrior (Large)"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Back collapse PC → Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Back collapse PC → Dungeon people (slaves)"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Back collapse PC → Dungeon Guardian"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Back collapse PC → Dungeon Man (Madman)"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "Back collapse PC → Dungeon Man (Fat)"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Back collapse PC → Dungeon Lord"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "Back collapse PC → Dungeon Person (Bride)"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Back collapse PC → Evil spirit (male)"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Back collapse PC → Evil spirit (female)"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Back collapse PC → Fallen Hunter"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Back collapse PC → The Executioner (Nightmare)"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Back collapse PC → patient A"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "Back collapse PC → patient B"
+      ]
+    },
+    {
+      "ID": 14040,
+      "Entries": [
+        "Back collapse PC → Fishman A"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "Back collapse PC → Fishman B"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "Back collapse PC → Fishman Large"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "Back collapse PC → crowd A (Great) Saint D"
+      ]
+    },
+    {
+      "ID": 14120,
+      "Entries": [
+        "Back collapse PC → patient A (Blood transfusion table)"
+      ]
+    },
+    {
+      "ID": 14140,
+      "Entries": [
+        "Back collapse PC → Strange Beast Saint D"
+      ]
+    },
+    {
+      "ID": 14150,
+      "Entries": [
+        "Back collapse PC → patient A (conversation)"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Back collapse PC → Clock Tower Boss"
+      ]
+    },
+    {
+      "ID": 14540,
+      "Entries": [
+        "Back collapse PC → Final Boss HU before"
+      ]
+    },
+    {
+      "ID": 14541,
+      "Entries": [
+        "Back collapse PC → Final Boss HU rear"
+      ]
+    },
+    {
+      "ID": 17010,
+      "Entries": [
+        "Back collapse PC → Avatar B"
+      ]
+    },
+    {
+      "ID": 17500,
+      "Entries": [
+        "Back collapse PC → Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 18050,
+      "Entries": [
+        "Back collapse PC → Base Elderly (Awakened)"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Gun Breaker PC → Hound"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "Gun Breaker PC → Sacrificial Hound"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Gun Breaker PC → Priest"
+      ]
+    },
+    {
+      "ID": 21020,
+      "Entries": [
+        "Gun Breaker PC → crowd A"
+      ]
+    },
+    {
+      "ID": 21030,
+      "Entries": [
+        "Gun Breaker PC → crowdB"
+      ]
+    },
+    {
+      "ID": 21040,
+      "Entries": [
+        "Gun Breaker PC → Burned corpse"
+      ]
+    },
+    {
+      "ID": 21050,
+      "Entries": [
+        "Gun Breaker PC → Wandering Widow"
+      ]
+    },
+    {
+      "ID": 21051,
+      "Entries": [
+        "Gun Breaker PC → Wandering Widow (Light)"
+      ]
+    },
+    {
+      "ID": 21060,
+      "Entries": [
+        "Gun Breaker PC → Brain Eater"
+      ]
+    },
+    {
+      "ID": 21090,
+      "Entries": [
+        "Gun Breaker PC → Strange Beast"
+      ]
+    },
+    {
+      "ID": 21091,
+      "Entries": [
+        "Gun Breaker PC → Strange Beast ( NPC )"
+      ]
+    },
+    {
+      "ID": 21220,
+      "Entries": [
+        "Gun Breaker PC → Young fruit bat"
+      ]
+    },
+    {
+      "ID": 21270,
+      "Entries": [
+        "Gun Breaker PC → Vampire pig"
+      ]
+    },
+    {
+      "ID": 21271,
+      "Entries": [
+        "Gun Breaker PC → Vampire pig (nightmare)"
+      ]
+    },
+    {
+      "ID": 21290,
+      "Entries": [
+        "Gun Breaker PC → Strange Beast (female)"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Gun Breaker PC → Executioner"
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Man (Grave Digger)"
+      ]
+    },
+    {
+      "ID": 22020,
+      "Entries": [
+        "Gun Breaker PC → Kidnapper"
+      ]
+    },
+    {
+      "ID": 22040,
+      "Entries": [
+        "Gun Breaker PC → Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 22050,
+      "Entries": [
+        "Gun Breaker PC → Crazy Demon"
+      ]
+    },
+    {
+      "ID": 22090,
+      "Entries": [
+        "Gun Breaker PC → Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "Gun Breaker PC → Eye Collector"
+      ]
+    },
+    {
+      "ID": 22110,
+      "Entries": [
+        "Gun Breaker PC →Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 22120,
+      "Entries": [
+        "Gun Breaker PC → Dark Brigade"
+      ]
+    },
+    {
+      "ID": 22150,
+      "Entries": [
+        "Gun Breaker PC → The Demon of the Old Castle"
+      ]
+    },
+    {
+      "ID": 22160,
+      "Entries": [
+        "Gun Breaker PC → Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 22170,
+      "Entries": [
+        "Gun Breaker PC → Messenger from Snake Swamp"
+      ]
+    },
+    {
+      "ID": 22180,
+      "Entries": [
+        "Gun Breaker PC → Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 22250,
+      "Entries": [
+        "Gun Breaker PC → Jailer A"
+      ]
+    },
+    {
+      "ID": 22260,
+      "Entries": [
+        "Gun Breaker PC → Jailer B"
+      ]
+    },
+    {
+      "ID": 22320,
+      "Entries": [
+        "Gun Breaker PC → King's Reaper"
+      ]
+    },
+    {
+      "ID": 22330,
+      "Entries": [
+        "Gun Breaker PC → The King's Servant"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "Gun Breaker PC → Foundling Giant"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "Gun Breaker PC → Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 22560,
+      "Entries": [
+        "Gun Breaker PC → Ground Cherry"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "Gun Breaker PC → Terrifying crowd"
+      ]
+    },
+    {
+      "ID": 22610,
+      "Entries": [
+        "Gun Breaker PC → Crowd Woman"
+      ]
+    },
+    {
+      "ID": 22630,
+      "Entries": [
+        "Gun Breaker PC → crowd A (large)"
+      ]
+    },
+    {
+      "ID": 22631,
+      "Entries": [
+        "Gun Breaker PC → crowd A (Large) Executioner Costume"
+      ]
+    },
+    {
+      "ID": 22632,
+      "Entries": [
+        "Gun Breaker PC → crowd A (Large) Mori Costume"
+      ]
+    },
+    {
+      "ID": 22640,
+      "Entries": [
+        "Gun Breaker PC → crowd B (large)"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "Gun Breaker PC → Church Emissary"
+      ]
+    },
+    {
+      "ID": 22710,
+      "Entries": [
+        "Gun Breaker PC → Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 22720,
+      "Entries": [
+        "Gun Breaker PC → Father Gascoigne (Beast)"
+      ]
+    },
+    {
+      "ID": 22740,
+      "Entries": [
+        "Gun Breaker PC → student"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "Gun Breaker PC → Burned Corpse Variation (Poison)"
+      ]
+    },
+    {
+      "ID": 22810,
+      "Entries": [
+        "Gun Breaker PC → Burnt Corpse Warrior (Large)"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "Gun Breaker PC → Dungeon people (slaves)"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Guardian"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Man (Madman)"
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Man (Fat)"
+      ]
+    },
+    {
+      "ID": 23050,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Lord"
+      ]
+    },
+    {
+      "ID": 23060,
+      "Entries": [
+        "Gun Breaker PC → Dungeon Person (Bride)"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "Gun Breaker PC → Evil spirit (male)"
+      ]
+    },
+    {
+      "ID": 23120,
+      "Entries": [
+        "Gun Breaker PC → Evil spirit (female)"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Gun Breaker PC → Fallen Hunter"
+      ]
+    },
+    {
+      "ID": 24010,
+      "Entries": [
+        "Gun Breaker PC → The Executioner (Nightmare)"
+      ]
+    },
+    {
+      "ID": 24020,
+      "Entries": [
+        "Gun Breaker PC → patient A"
+      ]
+    },
+    {
+      "ID": 24030,
+      "Entries": [
+        "Gun Breaker PC → patient B"
+      ]
+    },
+    {
+      "ID": 24040,
+      "Entries": [
+        "Gun Breaker PC → Fishman A"
+      ]
+    },
+    {
+      "ID": 24050,
+      "Entries": [
+        "Gun Breaker PC → Fishman B"
+      ]
+    },
+    {
+      "ID": 24060,
+      "Entries": [
+        "Gun Breaker PC → Fishman Large"
+      ]
+    },
+    {
+      "ID": 24110,
+      "Entries": [
+        "Gun Breaker PC → crowd A (Great) Saint D"
+      ]
+    },
+    {
+      "ID": 24120,
+      "Entries": [
+        "Gun Breaker PC → patient A( Blood transfusion table )"
+      ]
+    },
+    {
+      "ID": 24140,
+      "Entries": [
+        "Gun Breaker PC → Strange Beast"
+      ]
+    },
+    {
+      "ID": 24150,
+      "Entries": [
+        "Gun Breaker PC → patient A (conversation)"
+      ]
+    },
+    {
+      "ID": 24520,
+      "Entries": [
+        "Gun Breaker PC → Clock Tower Boss"
+      ]
+    },
+    {
+      "ID": 24540,
+      "Entries": [
+        "Gun Breaker PC → Final Boss HU before"
+      ]
+    },
+    {
+      "ID": 24541,
+      "Entries": [
+        "Gun Breaker PC → Final Boss HU rear"
+      ]
+    },
+    {
+      "ID": 27010,
+      "Entries": [
+        "Gun Breaker PC → Avatar B"
+      ]
+    },
+    {
+      "ID": 27500,
+      "Entries": [
+        "Gun Breaker PC → Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 28050,
+      "Entries": [
+        "Gun Breaker PC → Base Elderly (Awakened)"
+      ]
+    },
+    {
+      "ID": 32510,
+      "Entries": [
+        "Special Throw PC → Child of the Moon"
+      ]
+    },
+    {
+      "ID": 32730,
+      "Entries": [
+        "Special Throw PC → Frankenstein of the Medical Church"
+      ]
+    },
+    {
+      "ID": 33130,
+      "Entries": [
+        "Special Throw PC → Fresh Golem"
+      ]
+    },
+    {
+      "ID": 34500,
+      "Entries": [
+        "Special Throw PC → Parishioner Ω"
+      ]
+    },
+    {
+      "ID": 34510,
+      "Entries": [
+        "Special Throw PC → Ludwig (Beast)"
+      ]
+    },
+    {
+      "ID": 34511,
+      "Entries": [
+        "Special Throw PC → Ludwig (human)"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "Special Throw PC → Parishioner"
+      ]
+    },
+    {
+      "ID": 35020,
+      "Entries": [
+        "Special Throw PC → Saint Beast"
+      ]
+    },
+    {
+      "ID": 35040,
+      "Entries": [
+        "Special Throw PC → Storm Beast"
+      ]
+    },
+    {
+      "ID": 35080,
+      "Entries": [
+        "Special Throw PC → Storm Beast (Bone)"
+      ]
+    },
+    {
+      "ID": 35090,
+      "Entries": [
+        "Special Throw PC → Founder Beast"
+      ]
+    },
+    {
+      "ID": 35110,
+      "Entries": [
+        "Special Throw PC → Silver Beast"
+      ]
+    },
+    {
+      "ID": 35120,
+      "Entries": [
+        "Special Throw PC → Evil God"
+      ]
+    },
+    {
+      "ID": 35400,
+      "Entries": [
+        "Special Throw PC → Inheritor of Nightmares"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Hound → PC Throw"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Sacrificial Hound → PC Throw"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "Brain Eater → PC Throw"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "Slime → PC Drop Throw"
+      ]
+    },
+    {
+      "ID": 1150010,
+      "Entries": [
+        "Slime → PC Falling throw"
+      ]
+    },
+    {
+      "ID": 1220000,
+      "Entries": [
+        "Young Fruit Bat → PC Falling Jump Throw"
+      ]
+    },
+    {
+      "ID": 1220010,
+      "Entries": [
+        "Young Fruit Bat → PC Jumping Throw"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "Digging → PC Throw"
+      ]
+    },
+    {
+      "ID": 1230010,
+      "Entries": [
+        "Digging ( Reversed ) → PC Throw"
+      ]
+    },
+    {
+      "ID": 1290000,
+      "Entries": [
+        "Aberrant Beast Female → PC Throw"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Executioner → PC Throw"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Grave Digger (Hook) → PC Throw"
+      ]
+    },
+    {
+      "ID": 2020000,
+      "Entries": [
+        "Kidnapper → PC Throw"
+      ]
+    },
+    {
+      "ID": 2090000,
+      "Entries": [
+        "Bloodthirsty Beast _ → PC Carotid artery bite"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Eye Collector → PC Throw"
+      ]
+    },
+    {
+      "ID": 2100010,
+      "Entries": [
+        "Eye Collector → PC Back Throw"
+      ]
+    },
+    {
+      "ID": 2100050,
+      "Entries": [
+        "Eye Collector Saint D → PC Throw"
+      ]
+    },
+    {
+      "ID": 2100060,
+      "Entries": [
+        "Eye Collector Saint D → PC Back Throw"
+      ]
+    },
+    {
+      "ID": 2110000,
+      "Entries": [
+        "Spider Cthulhu → PC Throw"
+      ]
+    },
+    {
+      "ID": 2150000,
+      "Entries": [
+        "The Evil Spirit of the Old Castle → PC Throw"
+      ]
+    },
+    {
+      "ID": 2150010,
+      "Entries": [
+        "The Evil Spirit of the Old Castle → PC Back Throw"
+      ]
+    },
+    {
+      "ID": 2170000,
+      "Entries": [
+        "Messenger from Snake Swamp → PC Throw"
+      ]
+    },
+    {
+      "ID": 2180000,
+      "Entries": [
+        "Silver Beast's Kin → PC Throw"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Foundling Giant → PC Throw"
+      ]
+    },
+    {
+      "ID": 2510000,
+      "Entries": [
+        "Moon Child → PC Throw"
+      ]
+    },
+    {
+      "ID": 2530000,
+      "Entries": [
+        "Star Flower → PC Throw"
+      ]
+    },
+    {
+      "ID": 2560000,
+      "Entries": [
+        "Ground Cherry → PC Throw"
+      ]
+    },
+    {
+      "ID": 2610000,
+      "Entries": [
+        "Crowd Woman → PC Throw"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Church Messenger → PC Throw"
+      ]
+    },
+    {
+      "ID": 2740000,
+      "Entries": [
+        "Student → PC Drop Throw"
+      ]
+    },
+    {
+      "ID": 3060000,
+      "Entries": [
+        "Dungeon Person (Bride) → PC Throw"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Mimic → PC Throw"
+      ]
+    },
+    {
+      "ID": 3130000,
+      "Entries": [
+        "Flesh Golem → PC Throw"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "Fallen Hunter → PC"
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        "Executioner (Nightmare) → PCThrow"
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        "patient A (Poison hand) → PC Throw"
+      ]
+    },
+    {
+      "ID": 4021000,
+      "Entries": [
+        "patient A (Poison hand) → PC Throw with voice"
+      ]
+    },
+    {
+      "ID": 4022000,
+      "Entries": [
+        "patient A (Head only) → PC Drop Throw"
+      ]
+    },
+    {
+      "ID": 4023000,
+      "Entries": [
+        "patient A (Poison hand) → PC Throw (from the front)"
+      ]
+    },
+    {
+      "ID": 4040000,
+      "Entries": [
+        "Fishman A (Kitchen knife) → PC Throw"
+      ]
+    },
+    {
+      "ID": 4060000,
+      "Entries": [
+        "Fishman Large → PC Throw"
+      ]
+    },
+    {
+      "ID": 4070000,
+      "Entries": [
+        "Hermit crab → PC Throw"
+      ]
+    },
+    {
+      "ID": 4500000,
+      "Entries": [
+        "Parishioner Ω → PC Throw (normal)"
+      ]
+    },
+    {
+      "ID": 4500010,
+      "Entries": [
+        "Parishioner Ω → PC Throw (Rush)"
+      ]
+    },
+    {
+      "ID": 4520000,
+      "Entries": [
+        "Clock Tower Boss → PC Throw"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Rector → PC Throw (normal)"
+      ]
+    },
+    {
+      "ID": 5000010,
+      "Entries": [
+        "Rector → PC Throw (Rush)"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Saint Beast → PC Throw (normal)"
+      ]
+    },
+    {
+      "ID": 5020010,
+      "Entries": [
+        "Saint Beast → PC Throw (Anger)"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "Snake Ball → PC Throw"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "Primordial Beast → PC Throw"
+      ]
+    },
+    {
+      "ID": 5140000,
+      "Entries": [
+        "Evil God ( large ) → PC Throw"
+      ]
+    },
+    {
+      "ID": 5140005,
+      "Entries": [
+        "Evil God ( large ) → PC Throw 3 Cathedral Quarter A"
+      ]
+    },
+    {
+      "ID": 5140010,
+      "Entries": [
+        "Evil God ( large ) → PC Throw 5"
+      ]
+    },
+    {
+      "ID": 7500000,
+      "Entries": [
+        "Enemy Avatar → PC Throw"
+      ]
+    },
+    {
+      "ID": 8050000,
+      "Entries": [
+        "Base Elderly (Awakened) → PC"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <SoundID
+    AltName="Sound ID"
+    Wiki="The ID of the sound to play."
+    SoundAlias="" />
+    
+    <UnkT08
+    AltName="Unknown 0x8"
+    Wiki="" />
+  </Field>
+    
+  <Enums>
+  </Enums>
+</MSBMETA>

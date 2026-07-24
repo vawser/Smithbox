@@ -1,0 +1,35 @@
+{
+  "Name": "CustomAttrCostParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not change attributes -- 属性変更しない"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Attribute Enhancement - Normal -- 属性強化-通常"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Attribute Enhancement - Dragon Weapon -- 属性強化-ドラゴンウェポン"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Attribute Enhancement - Photostones -- 属性強化-光石"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Test -- テスト"
+      ]
+    }
+  ]
+}

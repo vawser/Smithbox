@@ -1,0 +1,123 @@
+{
+  "Param": "DAMAGE_LEVEL_CONV_THRESHOLD_PARAM_ST",
+  "Type": "DAMAGE_LEVEL_CONV_THRESHOLD_PARAM_ST",
+  "Name": "DAMAGE_LEVEL_CONV_THRESHOLD_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "threshold_00",
+      "Name": "閾値0衝撃値",
+      "Description": "区間0になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad0_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_01",
+      "Name": "閾値1衝撃値",
+      "Description": "区間1になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad1_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_002",
+      "Name": "閾値2衝撃値",
+      "Description": "区間2になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad2_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_03",
+      "Name": "閾値3衝撃値",
+      "Description": "区間3になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad3_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_04",
+      "Name": "閾値4衝撃値",
+      "Description": "区間4になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad4_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_05",
+      "Name": "閾値5衝撃値",
+      "Description": "区間5になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad5_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_06",
+      "Name": "閾値6衝撃値",
+      "Description": "区間6になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad6_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_07",
+      "Name": "閾値7衝撃値",
+      "Description": "区間7になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad7_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_08",
+      "Name": "閾値8衝撃値",
+      "Description": "区間8になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad8_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_09",
+      "Name": "閾値9衝撃値",
+      "Description": "区間9になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad9_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "threshold_10",
+      "Name": "閾値10衝撃値",
+      "Description": "区間10になる衝撃値の閾値"
+    },
+    {
+      "Field": "pad10_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

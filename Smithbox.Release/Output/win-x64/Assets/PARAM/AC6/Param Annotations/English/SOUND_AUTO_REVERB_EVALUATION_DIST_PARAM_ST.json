@@ -1,0 +1,48 @@
+{
+  "Param": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Type": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Name": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "NoHitDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isCollectNoHitPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isCollectOutdoorPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isCollectFloorPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distValCalcType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxDistRecordNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ignoreDistNumForMax",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "generatorlocation_m50_38_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Vendrick"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Velstadt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "ATKPARAM_MULTI_HIT_MAX_BEH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_MULTI_HIT_MAX_BEH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Hit"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hit: Ignore Damage"
+        }
+      ]
+    }
+  ]
+}

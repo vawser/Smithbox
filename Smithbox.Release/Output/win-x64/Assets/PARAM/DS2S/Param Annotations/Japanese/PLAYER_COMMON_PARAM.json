@@ -1,0 +1,563 @@
+{
+  "Param": "PLAYER_COMMON_PARAM",
+  "Type": "PLAYER_COMMON_PARAM",
+  "Name": "PLAYER_COMMON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "parallelWalkMaxInput",
+      "Name": "平行移動 入力感度 最大 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "parallelWalkKeepInputTime",
+      "Name": "平行移動 発生入力時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeInputTime",
+      "Name": "回避 入力判定時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "keepDashFinishStateTime",
+      "Name": "ダッシュ 継続時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dashIntervalTime",
+      "Name": "ダッシュ インターバル [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "keepDashEndMoveMaxInput",
+      "Name": "ダッシュ終了移動 入力感度 最大 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "keepDashEndMoveStateTime",
+      "Name": "ダッシュ終了移動 継続時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpTriggerMinSpeed",
+      "Name": "ジャンプ可能速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpTriggerMaxSpeed",
+      "Name": "スタンドジャンプ可能速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "turnTriggerMinAngleIdleAndWalk",
+      "Name": "待機＆歩き急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "turnTriggerMinAngleJog",
+      "Name": "走り急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "turnTriggerMinAngleDash",
+      "Name": "ダッシュ急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "turnWalkSpeedPercentage",
+      "Name": "待機＆歩き急旋回 速度割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleWalk",
+      "Name": "攻撃後歩き出し時 待機＆歩き急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleJog",
+      "Name": "攻撃後歩き出し時 走り急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "atkEndTurnTriggerMinAngleDash",
+      "Name": "攻撃後歩き出し時 ダッシュ急旋回 入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "atkEndTurnWalkSpeedPercentage",
+      "Name": "攻撃後歩き出し時 待機＆歩き急旋回 速度割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGraspAngleMax",
+      "Name": "はしご つかみ発生 左右角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGraspHeightMax",
+      "Name": "はしご つかみ発生 上下高さ [m]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGraspInputTime",
+      "Name": "はしご つかみ発生 必要入力時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGraspTimeLimit",
+      "Name": "はしご つかみ発生 制限時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderMoveInputTime",
+      "Name": "はしご 移動発生 必要入力時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderFallInputTime",
+      "Name": "はしご落下 入力判定時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "nearDeathAnimMaxBlendHpRate",
+      "Name": "瀕死アニメ 最大ブレンド HP割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "nearDeathAnimMinBlendHpRate",
+      "Name": "瀕死アニメ 最小ブレンド HP割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "precedingCmdKeepTime",
+      "Name": "入力 保持時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "flickInputKeepTime",
+      "Name": "弾き入力 保持時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "flickInputFrame",
+      "Name": "弾き入力 弾き感知入力フレーム数",
+      "Description": ""
+    },
+    {
+      "Field": "flickInputPower",
+      "Name": "弾き入力 弾き感知入力強度",
+      "Description": ""
+    },
+    {
+      "Field": "flickNeutralKeepTime",
+      "Name": "弾き入力 ニュートラル時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "flickAngleMax",
+      "Name": "弾き入力 判定角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "reviveInputTime",
+      "Name": "蘇生確定入力時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "twoHandedInputTime",
+      "Name": "両手持ち 入力判定時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dashAttackTriggerMinSpeed",
+      "Name": "ダッシュ攻撃可能速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dashAttackMinSpeedAnimScale",
+      "Name": "ダッシュ攻撃 最小速度 アニメ速度倍率",
+      "Description": ""
+    },
+    {
+      "Field": "dashAttackMaxSpeedAnimScale",
+      "Name": "ダッシュ攻撃 最大速度 アニメ速度倍率",
+      "Description": ""
+    },
+    {
+      "Field": "autoPivotRotateNeutoralTime",
+      "Name": "向き変更旋回 ニュートラル時間",
+      "Description": ""
+    },
+    {
+      "Field": "autoPivotInputTime",
+      "Name": "向き変更旋回 入力判定時間",
+      "Description": ""
+    },
+    {
+      "Field": "dashBlendWeightMax",
+      "Name": "ダッシュブレンド最大値",
+      "Description": ""
+    },
+    {
+      "Field": "dashBlendInSpeed",
+      "Name": "ダッシュブレンド入り速度",
+      "Description": ""
+    },
+    {
+      "Field": "dashBlendOutSpeed",
+      "Name": "ダッシュブレンド戻り速度",
+      "Description": ""
+    },
+    {
+      "Field": "dashBlendInWalkSpeed",
+      "Name": "ダッシュブレンド入り判定速度（通常） [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dashBlendInLockOnWalkSpeed",
+      "Name": "ダッシュブレンド入り判定速度（ロック移動）[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "quickStopSpeed",
+      "Name": "急停止判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "quickStopDelay",
+      "Name": "急停止判定時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "equipDurabilityRateMin",
+      "Name": "装備耐久値 減少量 補正倍率 最小[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "equipDurabilityRateMax",
+      "Name": "装備耐久値 減少量 補正倍率 最大[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "torchFireLowSwichHeight",
+      "Name": "松明 点火アニメ切替高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "noTargetAttackMaxUpperAngle",
+      "Name": "攻撃時上半身角度 上制限",
+      "Description": ""
+    },
+    {
+      "Field": "noTargetAttackMaxLowerAngle",
+      "Name": "攻撃時上半身角度 下制限",
+      "Description": ""
+    },
+    {
+      "Field": "torchTimeFirst",
+      "Name": "松明加算時間 初回 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "torchTimeAddition",
+      "Name": "松明加算時間 追加 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "torchMaxTime",
+      "Name": "松明の最大時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackWeaponIntPercent",
+      "Name": "闇攻撃力反映割合 理力 武器 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackWeaponFaithPercent",
+      "Name": "闇攻撃力反映割合 信仰 武器 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackMagicIntPercent",
+      "Name": "闇攻撃力反映割合 理力 闇魔術 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackMagicFaithPercent",
+      "Name": "闇攻撃力反映割合 信仰 闇魔術 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackMiracleIntPercent",
+      "Name": "闇攻撃力反映割合 理力 闇奇蹟 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttackMiracleFaithPercent",
+      "Name": "闇攻撃力反映割合 信仰 闇奇蹟 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkResistIntPercent",
+      "Name": "闇抵抗反映割合 理力 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "darkResistFaithPercent",
+      "Name": "闇抵抗反映割合 信仰 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationLeftMax",
+      "Name": "LookAt 旋回限界角度 左 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationRightMax",
+      "Name": "LookAt 旋回限界角度 右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationUpperMax",
+      "Name": "LookAt 旋回限界角度 上 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationLownerMax",
+      "Name": "LookAt 旋回限界角度 下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtVisibilitySideMax",
+      "Name": "LookAt 認識限界角度 左右 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtVisibilityUpperMax",
+      "Name": "LookAt 認識限界角度 上下 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationSideSpeedMax",
+      "Name": "LookAt 左右旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationUpperSpeedMax",
+      "Name": "LookAt 上下旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound1",
+      "Name": "アイテム抽選補正 １周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound2",
+      "Name": "アイテム抽選補正 ２周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound3",
+      "Name": "アイテム抽選補正 ３周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound4",
+      "Name": "アイテム抽選補正 ４周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound5",
+      "Name": "アイテム抽選補正 ５周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound6",
+      "Name": "アイテム抽選補正 ６周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound7",
+      "Name": "アイテム抽選補正 ７周目",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropRevisedLotValueRound8",
+      "Name": "アイテム抽選補正 ８周目",
+      "Description": ""
+    },
+    {
+      "Field": "equipDurabilityCoverRate",
+      "Name": "装備耐久値 肩代わり時 減少量 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "wallHeight",
+      "Name": "壁判定高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "repairCostUpRate",
+      "Name": "装備修理コスト上昇倍率",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusS",
+      "Name": "盾カット率ボーナス倍率 S",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusA",
+      "Name": "盾カット率ボーナス倍率 A",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusB",
+      "Name": "盾カット率ボーナス倍率 B",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusC",
+      "Name": "盾カット率ボーナス倍率 C",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusD",
+      "Name": "盾カット率ボーナス倍率 D",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCutBonusE",
+      "Name": "盾カット率ボーナス倍率 E",
+      "Description": ""
+    },
+    {
+      "Field": "hitDurabilitySubValue",
+      "Name": "近接攻撃時武器耐久減少量",
+      "Description": ""
+    },
+    {
+      "Field": "guardDurabilitySubValue",
+      "Name": "ガード時武器耐久減少量",
+      "Description": ""
+    },
+    {
+      "Field": "shootDurabilitySubValue",
+      "Name": "射撃時武器耐久減少量",
+      "Description": ""
+    },
+    {
+      "Field": "meleeShootDurabilitySubValue",
+      "Name": "近接攻撃バレット発射時武器耐久減少量",
+      "Description": ""
+    },
+    {
+      "Field": "unk164",
+      "Name": "unk164",
+      "Description": ""
+    },
+    {
+      "Field": "unk168",
+      "Name": "unk168",
+      "Description": ""
+    },
+    {
+      "Field": "unk16C",
+      "Name": "unk16C",
+      "Description": ""
+    },
+    {
+      "Field": "unk170",
+      "Name": "unk170",
+      "Description": ""
+    },
+    {
+      "Field": "unk174",
+      "Name": "unk174",
+      "Description": ""
+    },
+    {
+      "Field": "unk178",
+      "Name": "unk178",
+      "Description": ""
+    },
+    {
+      "Field": "unk17C",
+      "Name": "unk17C",
+      "Description": ""
+    },
+    {
+      "Field": "pcBackstabDamageRate",
+      "Name": "pcBackstabDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "pcParryBreakStabDamageRate",
+      "Name": "pcParryBreakStabDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "pcGuardBreakStabDamageRate",
+      "Name": "pcGuardBreakStabDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18C",
+      "Name": "Unk18C",
+      "Description": ""
+    },
+    {
+      "Field": "Unk190",
+      "Name": "Unk190",
+      "Description": ""
+    },
+    {
+      "Field": "Unk194",
+      "Name": "Unk194",
+      "Description": ""
+    },
+    {
+      "Field": "Unk198",
+      "Name": "Unk198",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19C",
+      "Name": "Unk19C",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A0",
+      "Name": "Unk1A0",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A4",
+      "Name": "Unk1A4",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A8",
+      "Name": "Unk1A8",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1AC",
+      "Name": "Unk1AC",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B0",
+      "Name": "Unk1B0",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B4",
+      "Name": "Unk1B4",
+      "Description": ""
+    }
+  ]
+}

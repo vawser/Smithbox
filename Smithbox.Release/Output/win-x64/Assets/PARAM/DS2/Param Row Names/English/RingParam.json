@@ -1,0 +1,761 @@
+{
+  "Name": "RingParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40010000,
+      "Entries": [
+        "Life Ring"
+      ]
+    },
+    {
+      "ID": 40010001,
+      "Entries": [
+        "Life Ring+1"
+      ]
+    },
+    {
+      "ID": 40010002,
+      "Entries": [
+        "Life Ring+2"
+      ]
+    },
+    {
+      "ID": 40010003,
+      "Entries": [
+        "Life Ring+3"
+      ]
+    },
+    {
+      "ID": 40020000,
+      "Entries": [
+        "Chloranthy Ring"
+      ]
+    },
+    {
+      "ID": 40020001,
+      "Entries": [
+        "Chloranthy Ring+1"
+      ]
+    },
+    {
+      "ID": 40020002,
+      "Entries": [
+        "Chloranthy Ring+2"
+      ]
+    },
+    {
+      "ID": 40030000,
+      "Entries": [
+        "Royal Soldier's Ring"
+      ]
+    },
+    {
+      "ID": 40030001,
+      "Entries": [
+        "Royal Soldier's Ring+1"
+      ]
+    },
+    {
+      "ID": 40030002,
+      "Entries": [
+        "Royal Soldier's Ring+2"
+      ]
+    },
+    {
+      "ID": 40040000,
+      "Entries": [
+        "First Dragon Ring"
+      ]
+    },
+    {
+      "ID": 40040001,
+      "Entries": [
+        "Second Dragon Ring"
+      ]
+    },
+    {
+      "ID": 40040002,
+      "Entries": [
+        "Third Dragon Ring"
+      ]
+    },
+    {
+      "ID": 40050000,
+      "Entries": [
+        "Ring of Steel Protection"
+      ]
+    },
+    {
+      "ID": 40050001,
+      "Entries": [
+        "Ring of Steel Protection+1"
+      ]
+    },
+    {
+      "ID": 40050002,
+      "Entries": [
+        "Ring of Steel Protection+2"
+      ]
+    },
+    {
+      "ID": 40060000,
+      "Entries": [
+        "Spell Quartz Ring"
+      ]
+    },
+    {
+      "ID": 40060001,
+      "Entries": [
+        "Spell Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 40060002,
+      "Entries": [
+        "Spell Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 40060003,
+      "Entries": [
+        "Spell Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 40070000,
+      "Entries": [
+        "Flame Quartz Ring"
+      ]
+    },
+    {
+      "ID": 40070001,
+      "Entries": [
+        "Flame Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 40070002,
+      "Entries": [
+        "Flame Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 40070003,
+      "Entries": [
+        "Flame Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 40080000,
+      "Entries": [
+        "Thunder Quartz Ring"
+      ]
+    },
+    {
+      "ID": 40080001,
+      "Entries": [
+        "Thunder Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 40080002,
+      "Entries": [
+        "Thunder Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 40080003,
+      "Entries": [
+        "Thunder Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 40090000,
+      "Entries": [
+        "Dark Quartz Ring"
+      ]
+    },
+    {
+      "ID": 40090001,
+      "Entries": [
+        "Dark Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 40090002,
+      "Entries": [
+        "Dark Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 40090003,
+      "Entries": [
+        "Dark Quartz Ring+3"
+      ]
+    },
+    {
+      "ID": 40100000,
+      "Entries": [
+        "Poisonbite Ring"
+      ]
+    },
+    {
+      "ID": 40100001,
+      "Entries": [
+        "Poisonbite Ring+1"
+      ]
+    },
+    {
+      "ID": 40110000,
+      "Entries": [
+        "Bloodbite Ring"
+      ]
+    },
+    {
+      "ID": 40110001,
+      "Entries": [
+        "Bloodbite Ring+1"
+      ]
+    },
+    {
+      "ID": 40120000,
+      "Entries": [
+        "Bracing Knuckle Ring"
+      ]
+    },
+    {
+      "ID": 40120001,
+      "Entries": [
+        "Bracing Knuckle Ring+1"
+      ]
+    },
+    {
+      "ID": 40120002,
+      "Entries": [
+        "Bracing Knuckle Ring+2"
+      ]
+    },
+    {
+      "ID": 40130000,
+      "Entries": [
+        "Cursebite Ring"
+      ]
+    },
+    {
+      "ID": 40135000,
+      "Entries": [
+        "Ash Knuckle Ring"
+      ]
+    },
+    {
+      "ID": 40140000,
+      "Entries": [
+        "Dispelling Ring"
+      ]
+    },
+    {
+      "ID": 40140001,
+      "Entries": [
+        "Dispelling Ring+1"
+      ]
+    },
+    {
+      "ID": 40150000,
+      "Entries": [
+        "Ring of Resistance"
+      ]
+    },
+    {
+      "ID": 40150001,
+      "Entries": [
+        "Ring of Resistance+1"
+      ]
+    },
+    {
+      "ID": 40160000,
+      "Entries": [
+        "Ring of Blades"
+      ]
+    },
+    {
+      "ID": 40160001,
+      "Entries": [
+        "Ring of Blades+1"
+      ]
+    },
+    {
+      "ID": 40160002,
+      "Entries": [
+        "Ring of Blades+2"
+      ]
+    },
+    {
+      "ID": 40210000,
+      "Entries": [
+        "Ring of Knowledge"
+      ]
+    },
+    {
+      "ID": 40220000,
+      "Entries": [
+        "Ring of Prayer"
+      ]
+    },
+    {
+      "ID": 40230000,
+      "Entries": [
+        "Stone Ring"
+      ]
+    },
+    {
+      "ID": 40260000,
+      "Entries": [
+        "Red Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 40280000,
+      "Entries": [
+        "Blue Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 40290000,
+      "Entries": [
+        "Ring of Giants"
+      ]
+    },
+    {
+      "ID": 40290001,
+      "Entries": [
+        "Ring of Giants+1"
+      ]
+    },
+    {
+      "ID": 40290002,
+      "Entries": [
+        "Ring of Giants+2"
+      ]
+    },
+    {
+      "ID": 40295000,
+      "Entries": [
+        "Old Leo Ring"
+      ]
+    },
+    {
+      "ID": 40300000,
+      "Entries": [
+        "Ring of Soul Protection"
+      ]
+    },
+    {
+      "ID": 40310000,
+      "Entries": [
+        "Ring of Life Protection"
+      ]
+    },
+    {
+      "ID": 40320000,
+      "Entries": [
+        "Lingering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 40320001,
+      "Entries": [
+        "Lingering Dragoncrest Ring+1"
+      ]
+    },
+    {
+      "ID": 40320002,
+      "Entries": [
+        "Lingering Dragoncrest Ring+2"
+      ]
+    },
+    {
+      "ID": 40330000,
+      "Entries": [
+        "Clear Bluestone Ring"
+      ]
+    },
+    {
+      "ID": 40330001,
+      "Entries": [
+        "Clear Bluestone Ring+1"
+      ]
+    },
+    {
+      "ID": 40330002,
+      "Entries": [
+        "Clear Bluestone Ring+2"
+      ]
+    },
+    {
+      "ID": 40340000,
+      "Entries": [
+        "Northern Ritual Band"
+      ]
+    },
+    {
+      "ID": 40340001,
+      "Entries": [
+        "Northern Ritual Band+1"
+      ]
+    },
+    {
+      "ID": 40340002,
+      "Entries": [
+        "Northern Ritual Band+2"
+      ]
+    },
+    {
+      "ID": 40350000,
+      "Entries": [
+        "Southern Ritual Band"
+      ]
+    },
+    {
+      "ID": 40350001,
+      "Entries": [
+        "Southern Ritual Band+1"
+      ]
+    },
+    {
+      "ID": 40350002,
+      "Entries": [
+        "Southern Ritual Band+2"
+      ]
+    },
+    {
+      "ID": 40360000,
+      "Entries": [
+        "Covetous Gold Serpent Ring"
+      ]
+    },
+    {
+      "ID": 40360001,
+      "Entries": [
+        "Covetous Gold Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 40360002,
+      "Entries": [
+        "Covetous Gold Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 40370000,
+      "Entries": [
+        "Covetous Silver Serpent Ring"
+      ]
+    },
+    {
+      "ID": 40370001,
+      "Entries": [
+        "Covetous Silver Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 40370002,
+      "Entries": [
+        "Covetous Silver Serpent Ring+2"
+      ]
+    },
+    {
+      "ID": 40390000,
+      "Entries": [
+        "Ring of the Evil Eye"
+      ]
+    },
+    {
+      "ID": 40390001,
+      "Entries": [
+        "Ring of the Evil Eye+1"
+      ]
+    },
+    {
+      "ID": 40390002,
+      "Entries": [
+        "Ring of the Evil Eye+2"
+      ]
+    },
+    {
+      "ID": 40400000,
+      "Entries": [
+        "Ring of Restoration"
+      ]
+    },
+    {
+      "ID": 40410000,
+      "Entries": [
+        "Ring of Binding"
+      ]
+    },
+    {
+      "ID": 40420000,
+      "Entries": [
+        "Silvercat Ring"
+      ]
+    },
+    {
+      "ID": 40430000,
+      "Entries": [
+        "Redeye Ring"
+      ]
+    },
+    {
+      "ID": 40440000,
+      "Entries": [
+        "Gower's Ring of Protection"
+      ]
+    },
+    {
+      "ID": 40450000,
+      "Entries": [
+        "Name-engraved Ring"
+      ]
+    },
+    {
+      "ID": 40460000,
+      "Entries": [
+        "Slumbering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 40470000,
+      "Entries": [
+        "Hawk Ring"
+      ]
+    },
+    {
+      "ID": 40480000,
+      "Entries": [
+        "Old Sun Ring"
+      ]
+    },
+    {
+      "ID": 40500000,
+      "Entries": [
+        "Illusory Ring of a Conqueror"
+      ]
+    },
+    {
+      "ID": 40510000,
+      "Entries": [
+        "King's Ring"
+      ]
+    },
+    {
+      "ID": 40520000,
+      "Entries": [
+        "Ring of the Dead"
+      ]
+    },
+    {
+      "ID": 40530000,
+      "Entries": [
+        "Ring of Thorns"
+      ]
+    },
+    {
+      "ID": 40530001,
+      "Entries": [
+        "Ring of Thorns+1"
+      ]
+    },
+    {
+      "ID": 40530002,
+      "Entries": [
+        "Ring of Thorns+2"
+      ]
+    },
+    {
+      "ID": 40540000,
+      "Entries": [
+        "Delicate String"
+      ]
+    },
+    {
+      "ID": 40550000,
+      "Entries": [
+        "White Ring"
+      ]
+    },
+    {
+      "ID": 40560000,
+      "Entries": [
+        "Illusory Ring of the Vengeful"
+      ]
+    },
+    {
+      "ID": 40570000,
+      "Entries": [
+        "Illusory Ring of the Guilty"
+      ]
+    },
+    {
+      "ID": 40610000,
+      "Entries": [
+        "Ring of Whispers"
+      ]
+    },
+    {
+      "ID": 40620000,
+      "Entries": [
+        "Illusory Ring of the Exalted"
+      ]
+    },
+    {
+      "ID": 40700000,
+      "Entries": [
+        "Crest of the Rat"
+      ]
+    },
+    {
+      "ID": 40710000,
+      "Entries": [
+        "Bell Keeper's Seal"
+      ]
+    },
+    {
+      "ID": 40720000,
+      "Entries": [
+        "Guardian's Seal"
+      ]
+    },
+    {
+      "ID": 40730000,
+      "Entries": [
+        "Crest of Blood"
+      ]
+    },
+    {
+      "ID": 40740000,
+      "Entries": [
+        "Blue Seal"
+      ]
+    },
+    {
+      "ID": 40750000,
+      "Entries": [
+        "Abyss Seal"
+      ]
+    },
+    {
+      "ID": 40760000,
+      "Entries": [
+        "Vanquisher's Seal"
+      ]
+    },
+    {
+      "ID": 40770000,
+      "Entries": [
+        "Sun Seal"
+      ]
+    },
+    {
+      "ID": 40780000,
+      "Entries": [
+        "Ancient Dragon Seal"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Simpleton's Ring"
+      ]
+    },
+    {
+      "ID": 41010000,
+      "Entries": [
+        "Strength Ring"
+      ]
+    },
+    {
+      "ID": 41020000,
+      "Entries": [
+        "Dexterity Ring"
+      ]
+    },
+    {
+      "ID": 41030000,
+      "Entries": [
+        "Ivory Warrior Ring"
+      ]
+    },
+    {
+      "ID": 41040000,
+      "Entries": [
+        "Sorcery Clutch Ring"
+      ]
+    },
+    {
+      "ID": 41050000,
+      "Entries": [
+        "Lightning Clutch Ring"
+      ]
+    },
+    {
+      "ID": 41060000,
+      "Entries": [
+        "Fire Clutch Ring"
+      ]
+    },
+    {
+      "ID": 41070000,
+      "Entries": [
+        "Dark Clutch Ring"
+      ]
+    },
+    {
+      "ID": 41090000,
+      "Entries": [
+        "Baneful Bird Ring"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "Flynn's Ring"
+      ]
+    },
+    {
+      "ID": 41110000,
+      "Entries": [
+        "Ring of the Embedded"
+      ]
+    },
+    {
+      "ID": 41120000,
+      "Entries": [
+        "Ring of the Living"
+      ]
+    },
+    {
+      "ID": 41130000,
+      "Entries": [
+        "Yorgh's Ring"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "Agape Ring"
+      ]
+    }
+  ]
+}

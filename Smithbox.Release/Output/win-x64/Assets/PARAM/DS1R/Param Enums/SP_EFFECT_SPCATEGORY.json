@@ -1,0 +1,128 @@
+{
+  "Key": "SP_EFFECT_SPCATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_SPCATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unlimited: same ID will stack with previous instances"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overwrite: same ID will overwrite previous instance"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Replace Previous: same ID will replace previous instance"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Priority: use categoryPriority, delay low priorities"
+        }
+      ]
+    },
+    {
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Priority: use categoryPriority, delay low priorities"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    },
+    {
+      "Key": "10006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retain Current: same ID will ignore new instance"
+        }
+      ]
+    }
+  ]
+}

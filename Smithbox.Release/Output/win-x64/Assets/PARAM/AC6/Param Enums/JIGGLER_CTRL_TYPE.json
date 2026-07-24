@@ -1,0 +1,29 @@
+{
+  "Key": "JIGGLER_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "JIGGLER_CTRL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton"
+        }
+      ]
+    }
+  ]
+}

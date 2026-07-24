@@ -1,0 +1,228 @@
+{
+  "Param": "GRAPHICS_PARAM_ST",
+  "Type": "GRAPHICS_PARAM_ST",
+  "Name": "GRAPHICS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "HitBulletDecalOffset_HitIns",
+      "Name": "HIT INSに弾丸が当たった時のデカール発生位置オフセット",
+      "Description": "HIT INSに当たった時に発生するデカールの発生位置を法線方向にこの値だけオフセットする"
+    },
+    {
+      "Field": "TorchEmissiveIntensity",
+      "Name": "松明エミッシブ強度",
+      "Description": "松明のエミッシブ強度の最大値。指定フレームかけてこの値になる。"
+    },
+    {
+      "Field": "TorchEmissiveFadeFrame",
+      "Name": "松明エミッシブ強度フェードフレーム",
+      "Description": "松明のエミッシブ強度が変更されるときのフェード時間。60フレームで１秒換算。"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "CharaWetDecalFadeRange",
+      "Name": "キャラが濡れた時のデカールフェード範囲",
+      "Description": "キャラが濡れた時にデカールを消すフェード範囲"
+    },
+    {
+      "Field": "pad_04",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "pad_06",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "pad_02",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "BulletMultiFrameHitSfxIntervalTimeSec",
+      "Name": "弾丸が多段ヒットしたときのヒットSFXの発生間隔[秒]",
+      "Description": "弾丸が多段ヒットしたときのヒットSFX発生間隔"
+    },
+    {
+      "Field": "PaintDecalFadeOutTimeSec",
+      "Name": "ペイントデカールのフェードアウト時間[秒]",
+      "Description": "ダメージのペイントデカールのフェードアウト時間"
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "GrassLod_0_0",
+      "Name": "草LOD0：0[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_0_1",
+      "Name": "草LOD0：0-1[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_0_2",
+      "Name": "草LOD0：1-2[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_0_3",
+      "Name": "草LOD0：2-3[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "pad_100",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "GrassLod_1_0",
+      "Name": "草LOD1：0[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_1_1",
+      "Name": "草LOD1：0-1[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_1_2",
+      "Name": "草LOD1：1-2[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_1_3",
+      "Name": "草LOD1：2-3[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "pad_101",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "GrassLod_2_0",
+      "Name": "草LOD2：0[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_2_1",
+      "Name": "草LOD2：0-1[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_2_2",
+      "Name": "草LOD2：1-2[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "GrassLod_2_3",
+      "Name": "草LOD2：2-3[m]",
+      "Description": "草ジェネレータのLOD"
+    },
+    {
+      "Field": "pad_102",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "SubWindow_Width",
+      "Name": "サブウインドウ：幅[Pixel]",
+      "Description": "サブウインドウのフレームの幅"
+    },
+    {
+      "Field": "SubWindow_Height",
+      "Name": "サブウインドウ：高[Pixel]",
+      "Description": "サブウインドウのフレームの高"
+    },
+    {
+      "Field": "pad_103",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "MenuBackBoke_FadeInTime",
+      "Name": "【メニュー背景ぼかし】フェードイン時間[秒]",
+      "Description": "アセンブルなどの全体表示メニューを表示した際の背景をぼかすまでの時間"
+    },
+    {
+      "Field": "MenuBackBoke_FadeOutTime",
+      "Name": "【メニュー背景ぼかし】フェードアウト時間[秒]",
+      "Description": "アセンブルなどの全体表示メニューを表示した際の背景をぼかし解除までの時間"
+    },
+    {
+      "Field": "pad_104",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "ZoomBlur_ThresholdSpeedKmH",
+      "Name": "【ズームブラー】閾値速度[Km/H]",
+      "Description": "ブースト移動中のズームブラーがかかる速度"
+    },
+    {
+      "Field": "ZoomBlur_InterpolationTime",
+      "Name": "【ズームブラー】補間時間[秒]",
+      "Description": "ブラーが最大値になるまでの時間"
+    },
+    {
+      "Field": "ZoomBlur_Pow",
+      "Name": "【ズームブラー】ブラー強度",
+      "Description": "ブラーの強度"
+    },
+    {
+      "Field": "ZoomBlur_CenterOffset",
+      "Name": "【ズームブラー】中央薄め値",
+      "Description": "自キャラの周辺にブラーがかからないように"
+    },
+    {
+      "Field": "ZoomBlur_Contrast",
+      "Name": "【ズームブラー】コントラスト",
+      "Description": "コントラスト値"
+    },
+    {
+      "Field": "ZoomBlur_UVOffsetUp",
+      "Name": "【ズームブラー】UVオフセット上",
+      "Description": "UV値オフセット（画面上）"
+    },
+    {
+      "Field": "ZoomBlur_UVOffsetDown",
+      "Name": "【ズームブラー】UVオフセット下",
+      "Description": "UV値オフセット（画面下）"
+    },
+    {
+      "Field": "HitInsDamageNearSfxNumMax",
+      "Name": "【SFX】ヒットSFX発生制限個数",
+      "Description": ""
+    },
+    {
+      "Field": "HitInsDamageNearSfxDist",
+      "Name": "【SFX】ヒットSFX発生制限距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "ShadowFixedFov",
+      "Name": "【シャドウ】固定画角[度]",
+      "Description": "プレイヤーが移動を繰り返していると影が線のように伸びることがあるの解決のための影の画角固定"
+    },
+    {
+      "Field": "pad_999",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

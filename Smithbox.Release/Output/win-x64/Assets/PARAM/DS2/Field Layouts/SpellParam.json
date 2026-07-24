@@ -1,0 +1,229 @@
+{
+  "Name": "SpellParam",
+  "Groups": [
+    {
+      "Key": "Reference List",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reference List"
+        }
+      ],
+      "Fields": [
+        "right_bullet_id",
+        "right_damage_id",
+        "left_bullet_id",
+        "left_damage_id"
+      ]
+    },
+    {
+      "Key": "Spell Class",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Spell Class"
+        }
+      ],
+      "Fields": [
+        "spell_class",
+        "spell_function",
+        "spell_soul_consume_id"
+      ]
+    },
+    {
+      "Key": "Requirements",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Requirements"
+        }
+      ],
+      "Fields": [
+        "int_requirement",
+        "fth_requirement"
+      ]
+    },
+    {
+      "Key": "Cast Speed",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cast Speed"
+        }
+      ],
+      "Fields": [
+        "startup_speed",
+        "cast_speed"
+      ]
+    },
+    {
+      "Key": "Cast Limits",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cast Limits"
+        }
+      ],
+      "Fields": [
+        "slots_used",
+        "casts_tier_1",
+        "casts_tier_2",
+        "casts_tier_3",
+        "casts_tier_4",
+        "casts_tier_5",
+        "casts_tier_6",
+        "casts_tier_7",
+        "casts_tier_8",
+        "casts_tier_9",
+        "casts_tier_10"
+      ]
+    },
+    {
+      "Key": "SFX",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SFX"
+        }
+      ],
+      "Fields": [
+        "staff_sfx",
+        "staff_sfx_dmy_poly_id_1",
+        "staff_sfx_dmy_poly_id_2",
+        "body_sfx",
+        "body_sfx_dmy_poly_id_1",
+        "body_sfx_dmy_poly_id_2",
+        "is_spawn_on_body",
+        "is_spawn_on_weapon"
+      ]
+    },
+    {
+      "Key": "Left 1H Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Left 1H Cast"
+        }
+      ],
+      "Fields": [
+        "left_1h_startup_duration",
+        "left_1h_unknown_duration",
+        "left_1h_anim_startup",
+        "left_1h_anim_cast",
+        "left_1h_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Right 1H Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Right 1H Cast"
+        }
+      ],
+      "Fields": [
+        "right_1h_startup_duration",
+        "right_1h_unknown_duration",
+        "right_1h_anim_startup",
+        "right_1h_anim_cast",
+        "right_1h_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Left 2H Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Left 2H Cast"
+        }
+      ],
+      "Fields": [
+        "left_2h_startup_duration",
+        "left_2h_unknown_duration",
+        "left_2h_anim_startup",
+        "left_2h_anim_cast",
+        "left_2h_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Right 2H Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Right 2H Cast"
+        }
+      ],
+      "Fields": [
+        "right_2h_startup_duration",
+        "right_2h_unknown_duration",
+        "right_2h_anim_startup",
+        "right_2h_anim_cast",
+        "right_2h_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Left Unk A Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Left Unk A Cast"
+        }
+      ],
+      "Fields": [
+        "left_unkA_startup_duration",
+        "left_unkA_unknown_duration",
+        "left_unkA_anim_startup",
+        "left_unkA_anim_cast",
+        "left_unkA_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Right Unk A Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Right Unk A Cast"
+        }
+      ],
+      "Fields": [
+        "right_unkA_startup_duration",
+        "right_unkA_unknown_duration",
+        "right_unkA_anim_startup",
+        "right_unkA_anim_cast",
+        "right_unkA_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Left Unk B Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Left Unk B Cast"
+        }
+      ],
+      "Fields": [
+        "left_unkB_startup_duration",
+        "left_unkB_unknown_duration",
+        "left_unkB_anim_startup",
+        "left_unkB_anim_cast",
+        "left_unkB_stamina_cost"
+      ]
+    },
+    {
+      "Key": "Right Unk B Cast",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Right Unk B Cast"
+        }
+      ],
+      "Fields": [
+        "right_unkB_startup_duration",
+        "right_unkB_unknown_duration",
+        "right_unkB_anim_startup",
+        "right_unkB_anim_cast",
+        "right_unkB_stamina_cost"
+      ]
+    }
+  ]
+}

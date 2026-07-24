@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="/menu/tex/icon/ic_0023250100.tpf" width="128" height="256" type="Item">
+    <SubTexture name="ICON_23250100.png" x="0" y="0" width="128"  height="256" originalWidth="128" originalHeight="256" half="0"/>
+</TextureAtlas>

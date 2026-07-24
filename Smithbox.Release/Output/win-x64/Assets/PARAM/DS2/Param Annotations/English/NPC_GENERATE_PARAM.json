@@ -1,0 +1,133 @@
+{
+  "Param": "NPC_GENERATE_PARAM",
+  "Type": "NPC_GENERATE_PARAM",
+  "Name": "NPC_GENERATE_PARAM",
+  "Description": "Defines generated NPC appearance, body type, equipment loadout, and character customization settings.",
+  "Fields": [
+    {
+      "Field": "chrId",
+      "Name": "Character ID",
+      "Description": "References the base character definition used for the NPC."
+    },
+    {
+      "Field": "gender",
+      "Name": "Gender",
+      "Description": "Specifies the NPC's gender."
+    },
+    {
+      "Field": "bodyScaleType",
+      "Name": "Body Type",
+      "Description": "Determines the NPC's body size or physique variation."
+    },
+    {
+      "Field": "deceased",
+      "Name": "Human/Hollow State",
+      "Description": "Specifies whether the NPC appears human or hollow/undead."
+    },
+    {
+      "Field": "equipType",
+      "Name": "Equipment Type",
+      "Description": "Defines the NPC's equipment configuration category."
+    },
+    {
+      "Field": "faceType",
+      "Name": "Face Type",
+      "Description": "Specifies the facial structure or face generation category."
+    },
+    {
+      "Field": "skinNo",
+      "Name": "Skin Number",
+      "Description": "Selects the skin texture variation."
+    },
+    {
+      "Field": "facePresetNo",
+      "Name": "Face Preset Number",
+      "Description": "References a predefined face customization preset."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Dummy",
+      "Description": "Unused placeholder field."
+    },
+    {
+      "Field": "skinR",
+      "Name": "Skin Red",
+      "Description": "Red color component for skin tone customization."
+    },
+    {
+      "Field": "skinG",
+      "Name": "Skin Green",
+      "Description": "Green color component for skin tone customization."
+    },
+    {
+      "Field": "skinB",
+      "Name": "Skin Blue",
+      "Description": "Blue color component for skin tone customization."
+    },
+    {
+      "Field": "faceId",
+      "Name": "Face ID",
+      "Description": "References the face model or face data entry."
+    },
+    {
+      "Field": "equipWeaponIdL1",
+      "Name": "Left-Hand Weapon 1",
+      "Description": "Primary weapon equipped in the left-hand slot."
+    },
+    {
+      "Field": "equipWeaponIdL2",
+      "Name": "Left-Hand Weapon 2",
+      "Description": "Secondary weapon equipped in the left-hand slot."
+    },
+    {
+      "Field": "equipWeaponIdL3",
+      "Name": "Left-Hand Weapon 3",
+      "Description": "Tertiary weapon equipped in the left-hand slot."
+    },
+    {
+      "Field": "equipWeaponIdR1",
+      "Name": "Right-Hand Weapon 1",
+      "Description": "Primary weapon equipped in the right-hand slot."
+    },
+    {
+      "Field": "equipWeaponIdR2",
+      "Name": "Right-Hand Weapon 2",
+      "Description": "Secondary weapon equipped in the right-hand slot."
+    },
+    {
+      "Field": "equipWeaponIdR3",
+      "Name": "Right-Hand Weapon 3",
+      "Description": "Tertiary weapon equipped in the right-hand slot."
+    },
+    {
+      "Field": "equipHeadId",
+      "Name": "Helmet",
+      "Description": "Head armor equipped by the NPC."
+    },
+    {
+      "Field": "equipBodyId",
+      "Name": "Armor",
+      "Description": "Body armor equipped by the NPC."
+    },
+    {
+      "Field": "equipArmId",
+      "Name": "Gauntlets",
+      "Description": "Arm armor equipped by the NPC."
+    },
+    {
+      "Field": "equipLegId",
+      "Name": "Leggings",
+      "Description": "Leg armor equipped by the NPC."
+    },
+    {
+      "Field": "equipQuiverId",
+      "Name": "Quiver",
+      "Description": "Quiver or ammunition holder equipped by the NPC."
+    },
+    {
+      "Field": "equipArrowId",
+      "Name": "Arrow",
+      "Description": "Arrow or ammunition item equipped by the NPC."
+    }
+  ]
+}

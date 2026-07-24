@@ -1,0 +1,635 @@
+{
+  "Name": "SoundCutsceneParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default data. Deletion prohibited."
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "s00_10_0000_General purpose first half of sortie"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "s00_10_2010_First half of sortie (2010 only)"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "s00_10_2011_First half of sortie (2011 only)"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "s00_20_0000_General sortie (from standby)"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "s00_20_0010_General purpose sortie (stand up)"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "s00_20_0011_General sortie (descent)"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "s00_20_0012_General sortie (boost movement)"
+      ]
+    },
+    {
+      "ID": 200110,
+      "Entries": [
+        "s00_20_0110_Special sortie_Prologue"
+      ]
+    },
+    {
+      "ID": 50400040,
+      "Entries": [
+        "s50_40_0040_Dedicated sortie_descent (string)"
+      ]
+    },
+    {
+      "ID": 3600050,
+      "Entries": [
+        "s03_60_0050_Special sortie_Descent (defeat Iceworm)"
+      ]
+    },
+    {
+      "ID": 41100030,
+      "Entries": [
+        "s41_10_0030_Special sortie_Descent (Ruins)"
+      ]
+    },
+    {
+      "ID": 202010,
+      "Entries": [
+        "s00_20_2010_Second half of sortie (Tutorial only)"
+      ]
+    },
+    {
+      "ID": 202011,
+      "Entries": [
+        "s00_20_2011_Last half of sortie (past only)"
+      ]
+    },
+    {
+      "ID": 202030,
+      "Entries": [
+        "s00_20_2030_Last half of sortie (prototype)"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "s00_21_0000 Online arena appearance_1V1_A position"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "s00_21_0001 Online arena appearance_1V1_B position"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "s00_22_0000 Online arena appearance_3V3_A position"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "s00_22_0001 Online arena appearance_3V3_B position"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "s00_23_0000 Offline arena appearance_NPAC"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "s00_23_0010_Offline arena appearance_NPAC_2"
+      ]
+    },
+    {
+      "ID": 230020,
+      "Entries": [
+        "s00_23_0020_Offline arena appearance_NPAC_3"
+      ]
+    },
+    {
+      "ID": 230030,
+      "Entries": [
+        "s00_23_0030_Offline arena appearance_NPAC_4"
+      ]
+    },
+    {
+      "ID": 230040,
+      "Entries": [
+        "s00_23_0040_Offline arena appearance_NPAC_5"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "s00_23_0100_Offline arena appearance_NPAC (simulator)"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "s00_24_0000_Offline arena appearance_NPAC_AR generation production"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "s00_24_0100_Offline arena appearance_AR_Analysis_Last boss_B"
+      ]
+    },
+    {
+      "ID": 240200,
+      "Entries": [
+        "s00_24_0200 Offline Arena Appearance_AR_Record_Last Boss_A"
+      ]
+    },
+    {
+      "ID": 240300,
+      "Entries": [
+        "s00_24_0300 Offline Arena Appearance_AR_Analysis_Boss_B"
+      ]
+    },
+    {
+      "ID": 240400,
+      "Entries": [
+        "s00_24_0400 Offline Arena Appearance_AR_Record_Boss_A"
+      ]
+    },
+    {
+      "ID": 240500,
+      "Entries": [
+        "s00_24_0500 Offline Arena Appearance_AR_Analysis_Abyss_B"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "s00_25_0000_Offline Arena_Turnoff boss defeat_Arena end point"
+      ]
+    },
+    {
+      "ID": 250010,
+      "Entries": [
+        "s00_25_0010_Offline Arena_Killing milestone boss defeat_Simulator end point"
+      ]
+    },
+    {
+      "ID": 250020,
+      "Entries": [
+        "s00_25_0020_Offline Arena_Turnaround Boss Defeat_Simulator Extra End Point"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "s00_30_0000_Return general purpose (with time elapsed)"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "s00_30_2010_Return (2010 only)"
+      ]
+    },
+    {
+      "ID": 302011,
+      "Entries": [
+        "s00_30_2011_Return (2011 only)"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "s00_30_2020_Return (2020 only)"
+      ]
+    },
+    {
+      "ID": 302030,
+      "Entries": [
+        "s00_30_2030_Return (2030 only)"
+      ]
+    },
+    {
+      "ID": 309900,
+      "Entries": [
+        "s00_30_9900_Carry-in test"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "s00_50_0000_General purpose supply effect"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "s00_50_0010_General purpose supply effect fade-in adjustment"
+      ]
+    },
+    {
+      "ID": 3300010,
+      "Entries": [
+        "s03_30_0010_Catapult to the mine shaft (first half)"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "s03_20_0010_Fleet appears"
+      ]
+    },
+    {
+      "ID": 3300015,
+      "Entries": [
+        "s03_30_0015_Catapult to the mine shaft (second half)"
+      ]
+    },
+    {
+      "ID": 3300020,
+      "Entries": [
+        "s03_30_0020_ Avalanche appears"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "s03_40_0000_Railgun firing (Will's perspective)"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "s03_40_0010_Ice worm movement"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "s03_40_0020_NPAC appears_Old spaceport attack"
+      ]
+    },
+    {
+      "ID": 3400030,
+      "Entries": [
+        "s03_40_0030_NPAC appears_SBM Imperial Base"
+      ]
+    },
+    {
+      "ID": 3600030,
+      "Entries": [
+        "s03_60_0030_second half start"
+      ]
+    },
+    {
+      "ID": 3600010,
+      "Entries": [
+        "s03_60_0010_Railgun firing"
+      ]
+    },
+    {
+      "ID": 3600020,
+      "Entries": [
+        "s03_60_0020_Defeat Ice Worm"
+      ]
+    },
+    {
+      "ID": 3600040,
+      "Entries": [
+        "s03_60_0040_Defeat Ice Worm"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "s10_00_0000_opening"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "s10_00_0020_Stowaway"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "s10_00_0010_Catapult to the mountain town (first half)"
+      ]
+    },
+    {
+      "ID": 10000015,
+      "Entries": [
+        "s10_00_0015_Catapult to the mountain town (second half)"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "s10_00_0030_Worldview talk"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "s10_10_0000_Fly to the ice field"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Climb to s10_10_0010_A layer"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "s10_10_0020 NPAC appearance_A layer indoor search"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "s20_00_0000_New B layer emerging"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "s20_20_0000_Ash reappears (breaks through the atmosphere)"
+      ]
+    },
+    {
+      "ID": 20200010,
+      "Entries": [
+        "s20_20_0010_Alive Lester appears"
+      ]
+    },
+    {
+      "ID": 20200020,
+      "Entries": [
+        "s20_20_0020_Ash reappears (breaks through the atmosphere)"
+      ]
+    },
+    {
+      "ID": 20200030,
+      "Entries": [
+        "s20_20_0030_B end"
+      ]
+    },
+    {
+      "ID": 20200040,
+      "Entries": [
+        "s20_20_0040 NPAC appearance_Straight city reverse driving"
+      ]
+    },
+    {
+      "ID": 20200050,
+      "Entries": [
+        "s20_20_0050 Sanitary cannon again"
+      ]
+    },
+    {
+      "ID": 20200060,
+      "Entries": [
+        "s20_20_0060 NPAC appearance_Straight urban invasion"
+      ]
+    },
+    {
+      "ID": 20200070,
+      "Entries": [
+        "s20_20_0070_CS_B end after end roll and before lap"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "s20_30_0000_Ash reappears (new B-tier people)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "s30_00_0000_Next generation proto AC released"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "s30_00_0010_A end"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "s30_00_0020_Last boss AC unit appears"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "s30_00_0030_C end"
+      ]
+    },
+    {
+      "ID": 30000040,
+      "Entries": [
+        "s30_00_0040_C root final boss appears"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "s30_00_0050_After end roll and before lap CS_A end"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "s41_00_0000_Electromagnetic net release"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "s41_00_0010_Ash reappears (biological weapon area)"
+      ]
+    },
+    {
+      "ID": 41000020,
+      "Entries": [
+        "s41_00_0020_Ash retreat (living weapon area)"
+      ]
+    },
+    {
+      "ID": 41000030,
+      "Entries": [
+        "Enter s41_00_0030_D layer"
+      ]
+    },
+    {
+      "ID": 41000040,
+      "Entries": [
+        "s41_00_0040_M Strong enemy appears"
+      ]
+    },
+    {
+      "ID": 41000050,
+      "Entries": [
+        "s41_00_0050_Ruins reached"
+      ]
+    },
+    {
+      "ID": 41000060,
+      "Entries": [
+        "s41_00_0060_Ruins reached_ALT"
+      ]
+    },
+    {
+      "ID": 41000065,
+      "Entries": [
+        "s41_00_0065_Dark CS for biological weapon ALT"
+      ]
+    },
+    {
+      "ID": 41000070,
+      "Entries": [
+        "s41_00_0070_Ash withdrawal_ALT (biological weapon area)"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "s41_10_0000_Orbit Seed appears"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "s41_10_0010_Defeat Orbit Seed"
+      ]
+    },
+    {
+      "ID": 41100020,
+      "Entries": [
+        "s41_10_0020 NPAC appearance_Jailbreak"
+      ]
+    },
+    {
+      "ID": 41100040,
+      "Entries": [
+        "s41_10_0040 (Briefing) Walter's will"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "s50_00_0000_Jotuel appears"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "s50_00_0010_Thought restriction"
+      ]
+    },
+    {
+      "ID": 50000015,
+      "Entries": [
+        "s50_00_0015 Thought restriction (second half_current)"
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        "s50_00_0020_Flashback scene starts"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "s50_30_0000_Rick appears"
+      ]
+    },
+    {
+      "ID": 50000030,
+      "Entries": [
+        "s50_00_0030_Pharaon appears (Mountain Town)"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "s50_10_0000 NPAC appears_Multiple dam defense"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "s50_30_0010_Ash appears"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "s50_30_0020 NPAC appearance_Exploration: In front of the wall"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "s50_40_0000_Heroine appears"
+      ]
+    },
+    {
+      "ID": 50400010,
+      "Entries": [
+        "s50_40_0010_Data center explosion"
+      ]
+    },
+    {
+      "ID": 50400020,
+      "Entries": [
+        "s50_40_0020_Melange small explosion"
+      ]
+    },
+    {
+      "ID": 50400030,
+      "Entries": [
+        "s50_40_0030 NPAC appearance_coordinates indicated by string"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "s50_50_0000 NPAC appears_Intruder elimination"
+      ]
+    }
+  ]
+}

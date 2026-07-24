@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <strengthX />
+        <strengthY />
+        <strengthZ />
+        <frequency />
+        <startScale />
+        <middleScale />
+        <lastScale />
+        <octavesNum />
+        <lacunarity />
+        <gain />
+    </Field>
+</PARAMMETA>

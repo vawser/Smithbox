@@ -1,0 +1,14 @@
+{
+  "id": "849",
+  "name": "Rhoy the Explorer",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

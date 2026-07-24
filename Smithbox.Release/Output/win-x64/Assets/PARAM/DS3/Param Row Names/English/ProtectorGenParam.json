@@ -1,0 +1,35 @@
+{
+  "Name": "ProtectorGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "The Impossible -- ぬのきれ"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "(Proto) Hunter _ head _ New joint -- 【プロト】ハンター_頭_新関節"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "(Proto) Hunter _ torso _ New Joint -- 【プロト】ハンター_胴_新関節"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "(Proto) Hunter _ arms _ New Joints -- 【プロト】ハンター_腕_新関節"
+      ]
+    },
+    {
+      "ID": 773000,
+      "Entries": [
+        "(Proto) Hunter _ leg _ New joint -- 【プロト】ハンター_脚_新関節"
+      ]
+    }
+  ]
+}

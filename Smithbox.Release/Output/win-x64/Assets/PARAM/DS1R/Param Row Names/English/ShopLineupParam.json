@@ -1,0 +1,2351 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Undead Merchant - Male] Orange Guidance Soapstone"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[Undead Merchant - Male] Repair Powder"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Undead Merchant - Male] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[Undead Merchant - Male] Firebomb"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "[Undead Merchant - Male] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "[Undead Merchant - Male] Residence Key"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "[Undead Merchant - Male] Repairbox"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "[Undead Merchant - Male] Dagger"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "[Undead Merchant - Male] Shortsword"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Undead Merchant - Male] Scimitar"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Undead Merchant - Male] Rapier"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[Undead Merchant - Male] Hand Axe"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[Undead Merchant - Male] Club"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "[Undead Merchant - Male] Reinforced Club"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "[Undead Merchant - Male] Spear"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "[Undead Merchant - Male] Short Bow"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "[Undead Merchant - Male] East-West Shield"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "[Undead Merchant - Male] Small Leather Shield"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "[Undead Merchant - Male] Buckler"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[Undead Merchant - Male] Leather Shield"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "[Undead Merchant - Male] Heater Shield"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "[Undead Merchant - Male] Warrior's Round Shield"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "[Undead Merchant - Male] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 1124,
+      "Entries": [
+        "[Undead Merchant - Male] Large Arrow"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "[Undead Merchant - Male] Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 1126,
+      "Entries": [
+        "[Undead Merchant - Male] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 1127,
+      "Entries": [
+        "[Undead Merchant - Male] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 1128,
+      "Entries": [
+        "[Undead Merchant - Male] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 1129,
+      "Entries": [
+        "[Undead Merchant - Male] Chain Helm"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[Undead Merchant - Male] Chain Armor"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "[Undead Merchant - Male] Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "[Undead Merchant - Male] Chain Leggings"
+      ]
+    },
+    {
+      "ID": 1133,
+      "Entries": [
+        "[Undead Merchant - Male] Bottomless Box"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Undead Merchant - Female] Bloodred Moss Clump"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "[Undead Merchant - Female] Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "[Undead Merchant - Female] Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "[Undead Merchant - Female] Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "[Undead Merchant - Female] Dung Pie"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "[Undead Merchant - Female] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "[Undead Merchant - Female] Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "[Undead Merchant - Female] Transient Curse"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "[Undead Merchant - Female] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "[Undead Merchant - Female] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[Undead Merchant - Female] Prism Stone"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[Undead Merchant - Female] Humanity"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "[Undead Merchant - Female] Fire Arrow"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "[Undead Merchant - Female] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "[Undead Merchant - Female] Purging Stone"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "[Undead Merchant - Female] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "[Undead Merchant - Female] Large Arrow"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "[Undead Merchant - Female] Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "[Undead Merchant - Female] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 1219,
+      "Entries": [
+        "[Undead Merchant - Female] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[Undead Merchant - Female] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "[Crestfallen Merchant] Green Blossom"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "[Crestfallen Merchant] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        "[Crestfallen Merchant] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 5303,
+      "Entries": [
+        "[Crestfallen Merchant] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 5304,
+      "Entries": [
+        "[Crestfallen Merchant] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 5306,
+      "Entries": [
+        "[Crestfallen Merchant] Thunder Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 5307,
+      "Entries": [
+        "[Crestfallen Merchant] Spell Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 5308,
+      "Entries": [
+        "[Crestfallen Merchant] Greatsword"
+      ]
+    },
+    {
+      "ID": 5309,
+      "Entries": [
+        "[Crestfallen Merchant] Greataxe"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "[Crestfallen Merchant] Balder Shield"
+      ]
+    },
+    {
+      "ID": 5311,
+      "Entries": [
+        "[Crestfallen Merchant] Tower Shield"
+      ]
+    },
+    {
+      "ID": 5312,
+      "Entries": [
+        "[Crestfallen Merchant] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 5313,
+      "Entries": [
+        "[Crestfallen Merchant] Large Arrow"
+      ]
+    },
+    {
+      "ID": 5314,
+      "Entries": [
+        "[Crestfallen Merchant] Feather Arrow"
+      ]
+    },
+    {
+      "ID": 5315,
+      "Entries": [
+        "[Crestfallen Merchant] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 5316,
+      "Entries": [
+        "[Crestfallen Merchant] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 5317,
+      "Entries": [
+        "[Crestfallen Merchant] Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 5318,
+      "Entries": [
+        "[Crestfallen Merchant] Catarina Helm"
+      ]
+    },
+    {
+      "ID": 5319,
+      "Entries": [
+        "[Crestfallen Merchant] Catarina Armor"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "[Crestfallen Merchant] Catarina Gauntlets"
+      ]
+    },
+    {
+      "ID": 5321,
+      "Entries": [
+        "[Crestfallen Merchant] Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 5322,
+      "Entries": [
+        "[Crestfallen Merchant] Steel Helm"
+      ]
+    },
+    {
+      "ID": 5323,
+      "Entries": [
+        "[Crestfallen Merchant] Steel Armor"
+      ]
+    },
+    {
+      "ID": 5324,
+      "Entries": [
+        "[Crestfallen Merchant] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 5325,
+      "Entries": [
+        "[Crestfallen Merchant] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 5326,
+      "Entries": [
+        "[Crestfallen Merchant] Balder Helm"
+      ]
+    },
+    {
+      "ID": 5327,
+      "Entries": [
+        "[Crestfallen Merchant] Balder Armor"
+      ]
+    },
+    {
+      "ID": 5328,
+      "Entries": [
+        "[Crestfallen Merchant] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 5329,
+      "Entries": [
+        "[Crestfallen Merchant] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Andre] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "[Andre] Crest of Artorias"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "[Andre] Weapon Smithbox"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "[Andre] Armor Smithbox"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "[Andre] Repairbox"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "[Andre] Longsword"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "[Andre] Broadsword"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "[Andre] Bastard Sword"
+      ]
+    },
+    {
+      "ID": 1408,
+      "Entries": [
+        "[Andre] Battle Axe"
+      ]
+    },
+    {
+      "ID": 1409,
+      "Entries": [
+        "[Andre] Warpick"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Andre] Caestus"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "[Andre] Pike"
+      ]
+    },
+    {
+      "ID": 1412,
+      "Entries": [
+        "[Andre] Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 1413,
+      "Entries": [
+        "[Andre] Tower Kite Shield"
+      ]
+    },
+    {
+      "ID": 1414,
+      "Entries": [
+        "[Andre] Caduceus Kite Shield"
+      ]
+    },
+    {
+      "ID": 1415,
+      "Entries": [
+        "[Andre] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 1416,
+      "Entries": [
+        "[Andre] Large Arrow"
+      ]
+    },
+    {
+      "ID": 1417,
+      "Entries": [
+        "[Andre] Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 1418,
+      "Entries": [
+        "[Andre] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 1419,
+      "Entries": [
+        "[Andre] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[Andre] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Domhnall of Zena] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[Domhnall of Zena] Bottomless Box"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "[Domhnall of Zena] Crystal Straight Sword"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "[Domhnall of Zena] Crystal Greatsword"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "[Domhnall of Zena] Crystal Shield"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "[Domhnall of Zena] Helm of the Wise"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "[Domhnall of Zena] Armor of the Glorious"
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        "[Domhnall of Zena] Gauntlets of the Vanquisher"
+      ]
+    },
+    {
+      "ID": 1508,
+      "Entries": [
+        "[Domhnall of Zena] Boots of the Explorer"
+      ]
+    },
+    {
+      "ID": 1509,
+      "Entries": [
+        "[Domhnall of Zena] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[Domhnall of Zena] Large Arrow"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "[Domhnall of Zena] Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "[Domhnall of Zena] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "[Domhnall of Zena] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "[Domhnall of Zena] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "[Domhnall of Zena] Golem Helm"
+      ]
+    },
+    {
+      "ID": 1551,
+      "Entries": [
+        "[Domhnall of Zena] Golem Armor"
+      ]
+    },
+    {
+      "ID": 1552,
+      "Entries": [
+        "[Domhnall of Zena] Golem Gauntlets"
+      ]
+    },
+    {
+      "ID": 1553,
+      "Entries": [
+        "[Domhnall of Zena] Golem Leggings"
+      ]
+    },
+    {
+      "ID": 1554,
+      "Entries": [
+        "[Domhnall of Zena] Smough's Helm"
+      ]
+    },
+    {
+      "ID": 1555,
+      "Entries": [
+        "[Domhnall of Zena] Smough's Armor"
+      ]
+    },
+    {
+      "ID": 1556,
+      "Entries": [
+        "[Domhnall of Zena] Smough's Gauntlets"
+      ]
+    },
+    {
+      "ID": 1557,
+      "Entries": [
+        "[Domhnall of Zena] Smough's Leggings"
+      ]
+    },
+    {
+      "ID": 1558,
+      "Entries": [
+        "[Domhnall of Zena] Ornstein's Helm"
+      ]
+    },
+    {
+      "ID": 1559,
+      "Entries": [
+        "[Domhnall of Zena] Ornstein's Armor"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "[Domhnall of Zena] Ornstein's Gauntlets"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "[Domhnall of Zena] Ornstein's Leggings"
+      ]
+    },
+    {
+      "ID": 1562,
+      "Entries": [
+        "[Domhnall of Zena] Crown of the Dark Sun"
+      ]
+    },
+    {
+      "ID": 1563,
+      "Entries": [
+        "[Domhnall of Zena] Moonlight Robe"
+      ]
+    },
+    {
+      "ID": 1564,
+      "Entries": [
+        "[Domhnall of Zena] Moonlight Gloves"
+      ]
+    },
+    {
+      "ID": 1565,
+      "Entries": [
+        "[Domhnall of Zena] Moonlight Waistcloth"
+      ]
+    },
+    {
+      "ID": 1566,
+      "Entries": [
+        "[Domhnall of Zena] Moonlight Waistcloth"
+      ]
+    },
+    {
+      "ID": 1567,
+      "Entries": [
+        "[Domhnall of Zena] Robe of the Great Lord"
+      ]
+    },
+    {
+      "ID": 1568,
+      "Entries": [
+        "[Domhnall of Zena] Bracelet of the Great Lord"
+      ]
+    },
+    {
+      "ID": 1569,
+      "Entries": [
+        "[Domhnall of Zena] Anklet of the Great Lord"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "[Domhnall of Zena] Master Key"
+      ]
+    },
+    {
+      "ID": 1581,
+      "Entries": [
+        "[Domhnall of Zena] Helm of Artorias"
+      ]
+    },
+    {
+      "ID": 1582,
+      "Entries": [
+        "[Domhnall of Zena] Armor of Artorias"
+      ]
+    },
+    {
+      "ID": 1583,
+      "Entries": [
+        "[Domhnall of Zena] Gauntlets of Artorias"
+      ]
+    },
+    {
+      "ID": 1584,
+      "Entries": [
+        "[Domhnall of Zena] Leggings of Artorias"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Patches] Eye of Death"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[Patches] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "[Patches] Prism Stone"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "[Patches] Humanity"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "[Patches] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "[Patches] Heal"
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        "[Patches] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        "[Patches] Crescent Axe"
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        "[Patches] Mace"
+      ]
+    },
+    {
+      "ID": 1609,
+      "Entries": [
+        "[Patches] Canvas Talisman"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "[Patches] Thorolund Talisman"
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        "[Patches] Mask of the Father"
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        "[Patches] Mask of the Mother"
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        "[Patches] Mask of the Child"
+      ]
+    },
+    {
+      "ID": 1614,
+      "Entries": [
+        "[Patches] Cleric Helm"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "[Patches] Cleric Armor"
+      ]
+    },
+    {
+      "ID": 1616,
+      "Entries": [
+        "[Patches] Cleric Gauntlets"
+      ]
+    },
+    {
+      "ID": 1617,
+      "Entries": [
+        "[Patches] Cleric Leggings"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Shiva of the East] East Wood Grain Ring"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[Shiva of the East] Flamberge"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "[Shiva of the East] Stone Greatsword"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "[Shiva of the East] Demon Great Machete"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "[Shiva of the East] Shotel"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "[Shiva of the East] Uchigatana"
+      ]
+    },
+    {
+      "ID": 1706,
+      "Entries": [
+        "[Shiva of the East] Washing Pole"
+      ]
+    },
+    {
+      "ID": 1707,
+      "Entries": [
+        "[Shiva of the East] Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 1708,
+      "Entries": [
+        "[Shiva of the East] Claw"
+      ]
+    },
+    {
+      "ID": 1709,
+      "Entries": [
+        "[Shiva of the East] Demon's Spear"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Griggs of Vinheim] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Griggs of Vinheim] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Griggs of Vinheim] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Griggs of Vinheim] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Griggs of Vinheim] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Griggs of Vinheim] Magic Shield"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[Griggs of Vinheim] Aural Decoy"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "[Griggs of Vinheim] Fall Control"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "[Griggs of Vinheim] Bellowing Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "[Griggs of Vinheim] Lingering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Griggs of Vinheim] Sorcerer's Catalyst"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Griggs of Vinheim] Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "[Griggs of Vinheim] Soul Spear"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Griggs of Vinheim - Initial] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[Griggs of Vinheim - Initial] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[Rickert of Vinheim] Sorcerer's Catalyst"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Dusk of Oolacile] Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[Dusk of Oolacile] Hidden Body"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "[Dusk of Oolacile] Cast Light"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "[Dusk of Oolacile] Repair"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "[Dusk of Oolacile] Chameleon"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "[Dusk of Oolacile] Oolacile Ivory Catalyst"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Ingward] Resist Curse"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[Ingward] Transient Curse"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Laurentius] Fireball"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Laurentius] Fire Orb"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Laurentius] Combustion"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Laurentius] Iron Flesh"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[Laurentius] Flash Sweat"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Eingyi] Servant Roster"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Eingyi] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "[Eingyi] Poison Mist"
+      ]
+    },
+    {
+      "ID": 3212,
+      "Entries": [
+        "[Eingyi] Toxic Mist"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Quelana of Izalith] Fireball"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[Quelana of Izalith] Fire Orb"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[Quelana of Izalith] Great Fireball"
+      ]
+    },
+    {
+      "ID": 3403,
+      "Entries": [
+        "[Quelana of Izalith] Firestorm"
+      ]
+    },
+    {
+      "ID": 3404,
+      "Entries": [
+        "[Quelana of Izalith] Fire Whip"
+      ]
+    },
+    {
+      "ID": 3405,
+      "Entries": [
+        "[Quelana of Izalith] Combustion"
+      ]
+    },
+    {
+      "ID": 3406,
+      "Entries": [
+        "[Quelana of Izalith] Great Combustion"
+      ]
+    },
+    {
+      "ID": 3407,
+      "Entries": [
+        "[Quelana of Izalith] Undead Rapport"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Petrus of Thorolund] Heal"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Petrus of Thorolund] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[Petrus of Thorolund] Homeward"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Petrus of Thorolund] Force"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "[Petrus of Thorolund] Seek Guidance"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "[Petrus of Thorolund] Talisman"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "[Petrus of Thorolund] Thorolund Talisman"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Rhea of Thorolund] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "[Rhea of Thorolund] Heal"
+      ]
+    },
+    {
+      "ID": 4205,
+      "Entries": [
+        "[Rhea of Thorolund] Great Heal"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "[Rhea of Thorolund] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 4203,
+      "Entries": [
+        "[Rhea of Thorolund] Homeward"
+      ]
+    },
+    {
+      "ID": 4204,
+      "Entries": [
+        "[Rhea of Thorolund] Force"
+      ]
+    },
+    {
+      "ID": 4206,
+      "Entries": [
+        "[Rhea of Thorolund] Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 4207,
+      "Entries": [
+        "[Rhea of Thorolund] Seek Guidance"
+      ]
+    },
+    {
+      "ID": 4208,
+      "Entries": [
+        "[Rhea of Thorolund] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 4209,
+      "Entries": [
+        "[Rhea of Thorolund] Talisman"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[Oswald of Carim] Book of the Guilty"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[Oswald of Carim] Purging Stone"
+      ]
+    },
+    {
+      "ID": 4402,
+      "Entries": [
+        "[Oswald of Carim] Indictment"
+      ]
+    },
+    {
+      "ID": 4403,
+      "Entries": [
+        "[Oswald of Carim] Karmic Justice"
+      ]
+    },
+    {
+      "ID": 4404,
+      "Entries": [
+        "[Oswald of Carim] Velka's Talisman"
+      ]
+    },
+    {
+      "ID": 4405,
+      "Entries": [
+        "[Oswald of Carim] Bloodbite Ring"
+      ]
+    },
+    {
+      "ID": 4406,
+      "Entries": [
+        "[Oswald of Carim] Poisonbite Ring"
+      ]
+    },
+    {
+      "ID": 4407,
+      "Entries": [
+        "[Oswald of Carim] Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 4408,
+      "Entries": [
+        "[Oswald of Carim] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Soul Spear"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Magic Shield"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "[Griggs of Vinheim - Logan in DA] Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[Darkstalker Kaathe] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[Giant Blacksmith] Giant's Halberd"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "[Giant Blacksmith] Giant Shield"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "[Giant Blacksmith] Moonlight Arrow"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "[Giant Blacksmith] Dragonslayer Arrow"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "[Giant Blacksmith] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "[Giant Blacksmith] Large Arrow"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "[Giant Blacksmith] Feather Arrow"
+      ]
+    },
+    {
+      "ID": 6207,
+      "Entries": [
+        "[Giant Blacksmith] Poison Arrow"
+      ]
+    },
+    {
+      "ID": 6208,
+      "Entries": [
+        "[Giant Blacksmith] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "[Giant Blacksmith] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "[Giant Blacksmith] Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        "[Giant Blacksmith] Giant Helm"
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        "[Giant Blacksmith] Giant Armor"
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        "[Giant Blacksmith] Giant Gauntlets"
+      ]
+    },
+    {
+      "ID": 6214,
+      "Entries": [
+        "[Giant Blacksmith] Giant Leggings"
+      ]
+    },
+    {
+      "ID": 6215,
+      "Entries": [
+        "[Giant Blacksmith] Weapon Smithbox"
+      ]
+    },
+    {
+      "ID": 6216,
+      "Entries": [
+        "[Giant Blacksmith] Armor Smithbox"
+      ]
+    },
+    {
+      "ID": 6217,
+      "Entries": [
+        "[Giant Blacksmith] Repairbox"
+      ]
+    },
+    {
+      "ID": 6218,
+      "Entries": [
+        "[Giant Blacksmith] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6219,
+      "Entries": [
+        "[Giant Blacksmith] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "[Giant Blacksmith] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        "[Giant Blacksmith] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[Vamos] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "[Vamos] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "[Vamos] Weapon Smithbox"
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        "[Vamos] Armor Smithbox"
+      ]
+    },
+    {
+      "ID": 6304,
+      "Entries": [
+        "[Vamos] Repairbox"
+      ]
+    },
+    {
+      "ID": 6305,
+      "Entries": [
+        "[Vamos] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 6306,
+      "Entries": [
+        "[Vamos] Large Arrow"
+      ]
+    },
+    {
+      "ID": 6307,
+      "Entries": [
+        "[Vamos] Wooden Arrow"
+      ]
+    },
+    {
+      "ID": 6308,
+      "Entries": [
+        "[Vamos] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        "[Vamos] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[Vamos] Wood Bolt"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "[Marvellous Chester] Green Blossom"
+      ]
+    },
+    {
+      "ID": 6411,
+      "Entries": [
+        "[Marvellous Chester] Bloodred Moss Clump"
+      ]
+    },
+    {
+      "ID": 6412,
+      "Entries": [
+        "[Marvellous Chester] Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 6413,
+      "Entries": [
+        "[Marvellous Chester] Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 6414,
+      "Entries": [
+        "[Marvellous Chester] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 6415,
+      "Entries": [
+        "[Marvellous Chester] Firebomb"
+      ]
+    },
+    {
+      "ID": 6416,
+      "Entries": [
+        "[Marvellous Chester] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 6417,
+      "Entries": [
+        "[Marvellous Chester] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 6418,
+      "Entries": [
+        "[Marvellous Chester] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 6419,
+      "Entries": [
+        "[Marvellous Chester] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "[Marvellous Chester] Humanity"
+      ]
+    },
+    {
+      "ID": 6421,
+      "Entries": [
+        "[Marvellous Chester] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 6422,
+      "Entries": [
+        "[Marvellous Chester] Large Arrow"
+      ]
+    },
+    {
+      "ID": 6423,
+      "Entries": [
+        "[Marvellous Chester] Feather Arrow"
+      ]
+    },
+    {
+      "ID": 6424,
+      "Entries": [
+        "[Marvellous Chester] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 6425,
+      "Entries": [
+        "[Marvellous Chester] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 6426,
+      "Entries": [
+        "[Marvellous Chester] Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[Elizabeth] Repair Powder"
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        "[Elizabeth] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "[Elizabeth] Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 6503,
+      "Entries": [
+        "[Elizabeth] Hidden Body"
+      ]
+    },
+    {
+      "ID": 6504,
+      "Entries": [
+        "[Elizabeth] Cast Light"
+      ]
+    },
+    {
+      "ID": 6505,
+      "Entries": [
+        "[Elizabeth] Repair"
+      ]
+    },
+    {
+      "ID": 6506,
+      "Entries": [
+        "[Elizabeth] Chameleon"
+      ]
+    },
+    {
+      "ID": 6507,
+      "Entries": [
+        "[Elizabeth] Oolacile Ivory Catalyst"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[Hawkeye Gough] Dung Pie"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "[Hawkeye Gough] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "[Hawkeye Gough] Prism Stone"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "[Hawkeye Gough] Hello Carving"
+      ]
+    },
+    {
+      "ID": 6604,
+      "Entries": [
+        "[Hawkeye Gough] Thank you Carving"
+      ]
+    },
+    {
+      "ID": 6608,
+      "Entries": [
+        "[Hawkeye Gough] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6609,
+      "Entries": [
+        "[Hawkeye Gough] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "[Hawkeye Gough] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 6611,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Great Arrow"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Attunement] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[Attunement] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[Attunement] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[Attunement] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[Attunement] Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[Attunement] Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "[Attunement] Soul Spear"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[Attunement] Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[Attunement] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "[Attunement] Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "[Attunement] Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "[Attunement] Magic Shield"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "[Attunement] Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "[Attunement] Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "[Attunement] Hidden Body"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "[Attunement] Cast Light"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "[Attunement] Hush"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "[Attunement] Aural Decoy"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "[Attunement] Repair"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "[Attunement] Fall Control"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "[Attunement] Chameleon"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "[Attunement] Resist Curse"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "[Attunement] Remedy"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "[Attunement] White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "[Attunement] Fireball"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "[Attunement] Fire Orb"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "[Attunement] Great Fireball"
+      ]
+    },
+    {
+      "ID": 10029,
+      "Entries": [
+        "[Attunement] Firestorm"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "[Attunement] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "[Attunement] Fire Surge"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "[Attunement] Fire Whip"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "[Attunement] Combustion"
+      ]
+    },
+    {
+      "ID": 10036,
+      "Entries": [
+        "[Attunement] Great Combustion"
+      ]
+    },
+    {
+      "ID": 10037,
+      "Entries": [
+        "[Attunement] Poison Mist"
+      ]
+    },
+    {
+      "ID": 10038,
+      "Entries": [
+        "[Attunement] Toxic Mist"
+      ]
+    },
+    {
+      "ID": 10039,
+      "Entries": [
+        "[Attunement] Acid Surge"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "[Attunement] Iron Flesh"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "[Attunement] Flash Sweat"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "[Attunement] Undead Rapport"
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        "[Attunement] Power Within"
+      ]
+    },
+    {
+      "ID": 10044,
+      "Entries": [
+        "[Attunement] Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 10045,
+      "Entries": [
+        "[Attunement] Chaos Storm"
+      ]
+    },
+    {
+      "ID": 10046,
+      "Entries": [
+        "[Attunement] Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 10047,
+      "Entries": [
+        "[Attunement] Heal"
+      ]
+    },
+    {
+      "ID": 10048,
+      "Entries": [
+        "[Attunement] Great Heal"
+      ]
+    },
+    {
+      "ID": 10049,
+      "Entries": [
+        "[Attunement] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "[Attunement] Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "[Attunement] Replenishment"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "[Attunement] Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "[Attunement] Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 10054,
+      "Entries": [
+        "[Attunement] Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "[Attunement] Escape Death"
+      ]
+    },
+    {
+      "ID": 10056,
+      "Entries": [
+        "[Attunement] Homeward"
+      ]
+    },
+    {
+      "ID": 10057,
+      "Entries": [
+        "[Attunement] Force"
+      ]
+    },
+    {
+      "ID": 10058,
+      "Entries": [
+        "[Attunement] Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 10059,
+      "Entries": [
+        "[Attunement] Emit Force"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "[Attunement] Seek Guidance"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "[Attunement] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "[Attunement] Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "[Attunement] Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 10064,
+      "Entries": [
+        "[Attunement] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 10065,
+      "Entries": [
+        "[Attunement] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 10066,
+      "Entries": [
+        "[Attunement] Karmic Justice"
+      ]
+    },
+    {
+      "ID": 10068,
+      "Entries": [
+        "[Attunement] Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 10069,
+      "Entries": [
+        "[Attunement] Vow of Silence"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "[Attunement] Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "[Attunement] Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "[Attunement] Dark Orb"
+      ]
+    },
+    {
+      "ID": 10073,
+      "Entries": [
+        "[Attunement] Dark Bead"
+      ]
+    },
+    {
+      "ID": 10074,
+      "Entries": [
+        "[Attunement] Dark Fog"
+      ]
+    },
+    {
+      "ID": 10075,
+      "Entries": [
+        "[Attunement] Pursuers"
+      ]
+    },
+    {
+      "ID": 10076,
+      "Entries": [
+        "[Attunement] Black Flame"
+      ]
+    }
+  ]
+}

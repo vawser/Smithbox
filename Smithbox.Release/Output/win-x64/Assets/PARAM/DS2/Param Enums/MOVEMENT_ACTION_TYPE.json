@@ -1,0 +1,38 @@
+{
+  "Key": "MOVEMENT_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MOVEMENT_ACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall action"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Climbing steps"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump"
+        }
+      ]
+    }
+  ]
+}

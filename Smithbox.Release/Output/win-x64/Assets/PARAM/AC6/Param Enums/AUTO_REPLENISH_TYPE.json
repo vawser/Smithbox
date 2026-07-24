@@ -1,0 +1,38 @@
+{
+  "Key": "AUTO_REPLENISH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AUTO_REPLENISH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Allow Automatic Replenishment: Default to Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Allow Automatic Replenishment: Default to Enabled"
+        }
+      ]
+    }
+  ]
+}

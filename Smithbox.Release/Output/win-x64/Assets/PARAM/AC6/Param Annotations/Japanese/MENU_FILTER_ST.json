@@ -1,0 +1,73 @@
+{
+  "Param": "MENU_FILTER_ST",
+  "Type": "MENU_FILTER_ST",
+  "Name": "MENU_FILTER_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ToneLateralDispersion0",
+      "Name": "ToneLateralDispersion0",
+      "Description": "色収差のズレ具合"
+    },
+    {
+      "Field": "ToneLateralDispersion1",
+      "Name": "ToneLateralDispersion1",
+      "Description": "色収差のズレ具合"
+    },
+    {
+      "Field": "NoiseTexIdx",
+      "Name": "ノイズテクスチャ",
+      "Description": "ノイズのテクスチャ番号"
+    },
+    {
+      "Field": "NoizeMaskTexIdx",
+      "Name": "ノイズマスクテクスチャ",
+      "Description": "ノイズのマスクのテクスチャ番号"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "NoiseTexScaleX",
+      "Name": "ノイズテクスチャスケール横",
+      "Description": "値が大きいほど大きく表示されます"
+    },
+    {
+      "Field": "NoiseTexScaleY",
+      "Name": "ノイズテクスチャスケール縦",
+      "Description": "値が大きいほど大きく表示されます"
+    },
+    {
+      "Field": "NoiseTexBlendRate",
+      "Name": "ノイズテクスチャブレンド率",
+      "Description": "ノイズのブレンド率"
+    },
+    {
+      "Field": "NoiseTexNoMenuDrawBlendRate",
+      "Name": "メニュー描画以外へのノイズ適用率",
+      "Description": "メニューを描画していない箇所に対してのノイズの適用率(0でメニュー描画箇所のみ、1で画面全体)"
+    },
+    {
+      "Field": "NoiseTexUpdateTime",
+      "Name": "ノイズ更新間隔(秒)",
+      "Description": "ノイズのUVのランダムに更新する間隔"
+    },
+    {
+      "Field": "Contrast",
+      "Name": "コントラスト",
+      "Description": "コントラスト値"
+    },
+    {
+      "Field": "CenterThin",
+      "Name": "ノイズの中央の薄め値",
+      "Description": "-１で中央付近はかからない、１で中央もノイズが表示されます"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

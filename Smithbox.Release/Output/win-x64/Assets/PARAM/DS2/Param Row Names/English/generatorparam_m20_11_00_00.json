@@ -1,0 +1,791 @@
+{
+  "Name": "generatorparam_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 20,
+      "Entries": [
+        "[GEN:20] Milfanito"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[GEN:21] Milfanito"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[GEN:25] Milfanito"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[GEN:26] Milfanito"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "[GEN:660] Peculiar Kindalur"
+      ]
+    },
+    {
+      "ID": 666,
+      "Entries": [
+        "[GEN:666] Felicia the Brave"
+      ]
+    },
+    {
+      "ID": 667,
+      "Entries": [
+        "[GEN:667] Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "[GEN:802] Demon of Song"
+      ]
+    },
+    {
+      "ID": 965,
+      "Entries": [
+        "[GEN:965] Forlorn"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[GEN:1500] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[GEN:1501] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[GEN:1810] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "[GEN:2302] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "[GEN:2303] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "[GEN:2304] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "[GEN:2305] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[GEN:2310] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[GEN:2410] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[GEN:2800] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[GEN:2810] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[GEN:2900] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "[GEN:2901] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2902,
+      "Entries": [
+        "[GEN:2902] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[GEN:2910] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "[GEN:2911] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[GEN:3001] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[GEN:3002] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[GEN:3003] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Butcher Phantom"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[GEN:3201] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[GEN:3210] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[GEN:3300] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "[GEN:3311] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "[GEN:3320] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "[GEN:3321] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3323,
+      "Entries": [
+        "[GEN:3323] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3324,
+      "Entries": [
+        "[GEN:3324] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3325,
+      "Entries": [
+        "[GEN:3325] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3340,
+      "Entries": [
+        "[GEN:3340] Ogre"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[GEN:3400] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "[GEN:3501] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "[GEN:3502] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        "[GEN:3503] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3504,
+      "Entries": [
+        "[GEN:3504] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3650,
+      "Entries": [
+        "[GEN:3650] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3651,
+      "Entries": [
+        "[GEN:3651] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 3670,
+      "Entries": [
+        "[GEN:3670] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3671,
+      "Entries": [
+        "[GEN:3671] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3672,
+      "Entries": [
+        "[GEN:3672] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3673,
+      "Entries": [
+        "[GEN:3673] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3680,
+      "Entries": [
+        "[GEN:3680] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3681,
+      "Entries": [
+        "[GEN:3681] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3682,
+      "Entries": [
+        "[GEN:3682] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3683,
+      "Entries": [
+        "[GEN:3683] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3684,
+      "Entries": [
+        "[GEN:3684] Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[GEN:3710] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[GEN:3800] Ogre"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "[GEN:3900] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] Injured Milfanito"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[GEN:4210] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "[GEN:4220] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "[GEN:4250] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "[GEN:4260] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 4270,
+      "Entries": [
+        "[GEN:4270] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "[GEN:4280] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "[GEN:4300] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[GEN:4400] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[GEN:4401] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "[GEN:4410] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[GEN:5001] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[GEN:5002] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "[GEN:5300] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Syan Knight"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[GEN:6020] Pyromancer"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "[GEN:6021] Pyromancer"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "[GEN:6022] Pyromancer"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[GEN:6110] Old Knight"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[GEN:6200] Basilisk"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "[GEN:6210] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[GEN:6300] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "[GEN:6301] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "[GEN:6302] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        "[GEN:6303] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[GEN:6310] Basilisk"
+      ]
+    },
+    {
+      "ID": 6311,
+      "Entries": [
+        "[GEN:6311] Basilisk"
+      ]
+    },
+    {
+      "ID": 6312,
+      "Entries": [
+        "[GEN:6312] Basilisk"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "[GEN:6400] Poison Moth"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "[GEN:6402] Poison Moth"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "[GEN:6403] Poison Moth"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[GEN:6500] Dragonrider"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[GEN:6600] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "[GEN:6601] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 8033,
+      "Entries": [
+        "[GEN:8033] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8051,
+      "Entries": [
+        "[GEN:8051] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 8052,
+      "Entries": [
+        "[GEN:8052] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8053,
+      "Entries": [
+        "[GEN:8053] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8055,
+      "Entries": [
+        "[GEN:8055] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8056,
+      "Entries": [
+        "[GEN:8056] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8057,
+      "Entries": [
+        "[GEN:8057] Lindelt Cleric\t"
+      ]
+    },
+    {
+      "ID": 8058,
+      "Entries": [
+        "[GEN:8058] Lindelt Cleric\t"
+      ]
+    },
+    {
+      "ID": 8059,
+      "Entries": [
+        "[GEN:8059] Lindelt Cleric\t"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "[GEN:8060] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8061,
+      "Entries": [
+        "[GEN:8061] Lindelt Cleric\t"
+      ]
+    },
+    {
+      "ID": 8062,
+      "Entries": [
+        "[GEN:8062] Lindelt Cleric\t"
+      ]
+    },
+    {
+      "ID": 8063,
+      "Entries": [
+        "[GEN:8063] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[GEN:8500] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8521,
+      "Entries": [
+        "[GEN:8521] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8531,
+      "Entries": [
+        "[GEN:8531] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8532,
+      "Entries": [
+        "[GEN:8532] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "[GEN:8540] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 8541,
+      "Entries": [
+        "[GEN:8541] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 8542,
+      "Entries": [
+        "[GEN:8542] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 8543,
+      "Entries": [
+        "[GEN:8543] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 8544,
+      "Entries": [
+        "[GEN:8544] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 8551,
+      "Entries": [
+        "[GEN:8551] Lindelt Cleric"
+      ]
+    }
+  ]
+}

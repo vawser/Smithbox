@@ -1,0 +1,173 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Equipment weight up"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Increased load weight"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "pinch attack power up"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Pinch defense up"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Stamina recovery up"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "MP recovery up"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Weak “Regenerate”"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "fire resistance"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "poison resistance"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "magic sensitive"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "magic desensitization"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "magical nature"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "sincere prayer"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "strong ghost"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "white hope"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "black hope"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Weak “Hidden”"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Light \"Ghost Camouflage\""
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "cat landing"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Pheromones"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "greed"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "cherish"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Aim for vital points"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "miraculous nature"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Bleed resistance"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "plague resistance"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Gull Gold Run Enhancement"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Okina Summon Black NPC Enhancement"
+      ]
+    }
+  ]
+}

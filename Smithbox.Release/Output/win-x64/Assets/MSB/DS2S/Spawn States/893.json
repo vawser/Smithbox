@@ -1,0 +1,14 @@
+{
+  "id": "893",
+  "name": "Bradley of the Old Guard",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

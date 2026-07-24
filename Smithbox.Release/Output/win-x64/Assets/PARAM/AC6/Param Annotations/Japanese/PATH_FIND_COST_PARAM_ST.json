@@ -1,0 +1,23 @@
+{
+  "Param": "PATH_FIND_COST_PARAM_ST",
+  "Type": "PATH_FIND_COST_PARAM_ST",
+  "Name": "PATH_FIND_COST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "groundCostScale",
+      "Name": "地上ノードコスト倍率",
+      "Description": "地上ノードのコスト倍率"
+    },
+    {
+      "Field": "airCostScale",
+      "Name": "空中ノードコスト倍率",
+      "Description": "空中ノードのコスト倍率"
+    },
+    {
+      "Field": "reserved4",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

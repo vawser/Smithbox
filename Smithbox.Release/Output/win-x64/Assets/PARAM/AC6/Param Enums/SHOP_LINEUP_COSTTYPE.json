@@ -1,0 +1,20 @@
+{
+  "Key": "SHOP_LINEUP_COSTTYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHOP_LINEUP_COSTTYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "COAM"
+        }
+      ]
+    }
+  ]
+}

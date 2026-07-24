@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Program_Language",
+      "Text": "程序语言"
+    },
+    {
+      "Key": "PREF_Program_Language_TT",
+      "Text": "用于本地化 Smithbox 中所有文本的语言。"
+    },
+    {
+      "Key": "PREF_System_Check_Program_Update",
+      "Text": "启动时检查 Smithbox 新版本"
+    },
+    {
+      "Key": "PREF_System_Check_Program_Update_TT",
+      "Text": "启用后，Smithbox 将在程序启动时自动检查新版本。"
+    },
+    {
+      "Key": "PREF_System_Ignore_Read_Asserts",
+      "Text": "忽略读取断言"
+    },
+    {
+      "Key": "PREF_System_Ignore_Read_Asserts_TT",
+      "Text": "启用后，读取文件时将忽略断言。"
+    },
+    {
+      "Key": "PREF_System_Apply_DCX_Heuristic",
+      "Text": "读取时使用 DCX 启发式"
+    },
+    {
+      "Key": "PREF_System_Apply_DCX_Heuristic_TT",
+      "Text": "启用后，如果 DCX 无法读取其压缩类型，则使用启发式方法猜测。"
+    },
+    {
+      "Key": "PREF_System_RenderingBackend",
+      "Text": "渲染后端"
+    },
+    {
+      "Key": "PREF_System_RenderingBackend_TT",
+      "Text": "决定使用哪个渲染后端。需要重启才能生效。"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Action_Log",
+      "Text": "启用事件日志"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Action_Log_TT",
+      "Text": "启用后，事件日志将显示在菜单栏中。"
+    },
+    {
+      "Key": "PREF_Logger_Action_Fade_Time",
+      "Text": "事件可见持续时间"
+    },
+    {
+      "Key": "PREF_Logger_Action_Fade_Time_TT",
+      "Text": "事件日志消息在菜单栏中保持可见的帧数。\n也决定消息颜色淡化的时间。\n-1 表示消息永不消失或淡化。"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Warning_Log",
+      "Text": "启用错误日志"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Warning_Log_TT",
+      "Text": "启用后，错误日志将显示在菜单栏中。"
+    },
+    {
+      "Key": "PREF_Logger_Warning_Fade_Time",
+      "Text": "错误可见持续时间"
+    },
+    {
+      "Key": "PREF_Logger_Warning_Fade_Time_TT",
+      "Text": "错误日志消息在菜单栏中保持可见的帧数。\n也决定消息颜色淡化的时间。\n-1 表示消息永不消失或淡化。"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Color_Fade",
+      "Text": "启用日志消息颜色淡化"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Color_Fade_TT",
+      "Text": "启用后，日志消息将从原始颜色逐渐淡化。"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Log_Popups",
+      "Text": "日志弹出"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Log_Popups_TT",
+      "Text": "启用后，高优先级日志消息将弹出消息框。"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Scope_Logging",
+      "Text": "启用作用域日志"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Scope_Logging_TT",
+      "Text": "启用后，发送日志消息的作用域将包含在日志消息中。"
+    },
+    {
+      "Key": "PREF_Developer_Enable_Tools",
+      "Text": "启用开发者工具"
+    },
+    {
+      "Key": "PREF_Developer_Enable_Tools_TT",
+      "Text": "启用仅供 Smithbox 开发者使用的各种工具。"
+    },
+    {
+      "Key": "PREF_Developer_Smithbox_Build_Folder",
+      "Text": "Smithbox 构建文件夹"
+    },
+    {
+      "Key": "PREF_Developer_Smithbox_Build_Folder_TT",
+      "Text": "选择 Smithbox 的构建目录（Smithbox.sln 所在位置）。"
+    }
+  ]
+}

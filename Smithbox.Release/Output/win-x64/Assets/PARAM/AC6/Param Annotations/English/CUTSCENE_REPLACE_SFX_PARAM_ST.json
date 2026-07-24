@@ -1,0 +1,13 @@
+{
+  "Param": "CUTSCENE_REPLACE_SFX_PARAM_ST",
+  "Type": "CUTSCENE_REPLACE_SFX_PARAM_ST",
+  "Name": "CUTSCENE_REPLACE_SFX_PARAM_ST",
+  "Description": "Determines particle replacement parameters for a cutscene.",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFX ID",
+      "Description": "ID of SFX to be replaced during cutscene"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_SLOD_CAP_DIR_NUM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_SLOD_CAP_DIR_NUM_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16 Directions"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "32 Directions"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64 Directions"
+        }
+      ]
+    }
+  ]
+}

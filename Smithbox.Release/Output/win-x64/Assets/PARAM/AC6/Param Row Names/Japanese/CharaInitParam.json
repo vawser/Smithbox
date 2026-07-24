@@ -1,0 +1,4817 @@
+{
+  "Name": "CharaInitParam",
+  "Entries": [
+    {
+      "ID": 200,
+      "Entries": [
+        "200_[For proto confirmation] FNR confirmation model -- 200_【プロト確認用】\u3000FNR確認モデル"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "201_[For prototype confirmation] 75% size model -- 201_【プロト確認用】 75％サイズモデル"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "202_[For prototype confirmation] 120% size model -- 202_【プロト確認用】 120％サイズモデル"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "203_[For proto confirmation] FNR Assemble_Scavenger -- 203_【プロト確認用】 FNRアセンブル_スカベンジャー"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "204_[For proto confirmation] FNR Assemble_Scavenger 2 -- 204_【プロト確認用】 FNRアセンブル_スカベンジャー2"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "205_[For proto confirmation] FNR assembly_Troll -- 205_【プロト確認用】 FNRアセンブル_トロル"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "206_[For proto confirmation] FNR Assemble_Troll 2 -- 206_【プロト確認用】 FNRアセンブル_トロル2"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "207_[For prototype confirmation] FNR assembly_Spacesuit -- 207_【プロト確認用】 FNRアセンブル_宇宙服"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "210_[For proto confirmation] FNR assembly_For testing -- 210_【プロト確認用】 FNRアセンブル_テスト用"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "211_[For proto confirmation] FNR assembly_for testing_002 -- 211_【プロト確認用】 FNRアセンブル_テスト用_002"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Nakanishi test_dexterity poor -- 中西テスト_器用貧乏"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Nakanishi test_tikitoku EN -- 中西テスト_引き撃ちEN"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Nakanishi test -- 中西テスト"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Nakanishi test -- 中西テスト"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Nakanishi test_ -- 中西テスト_"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Nakanishi test_ -- 中西テスト_"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Nakanishi test_ -- 中西テスト_"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Nakanishi test_ -- 中西テスト_"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "900_[For proto confirmation] FNR Assemble_Troll 3_Test -- 900_【プロト確認用】 FNRアセンブル_トロル3_テスト"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "910_[Ascentest] FNR assembly test aircraft 4 legs -- 910_【アセンテスト】FNRアセンブルテスト機体4脚"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "1000_[Weapon confirmation] Needle missile equipment -- 1000_【武器確認】ニードルミサイル装備"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "1001_[Weapon confirmation] Container missile equipment -- 1001_【武器確認】コンテナミサイル装備"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "1002_[Weapon confirmation] Cluster missile equipment -- 1002_【武器確認】クラスターミサイル装備"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "1100_[Weapon confirmation] Breho adjustment_Plasma broadsword -- 1100_【武器確認】ブレホ調整_プラズマブロードソード"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "1101_[Weapon confirmation] Breho adjustment_Lance -- 1101_【武器確認】ブレホ調整_ランス"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "1200_[Performance check] Fastest movement -- 1200_【パフォーマンス確認】移動最速"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "1201_[Performance confirmation] Bullet scattering (Mashi + Palkya) -- 1201_【パフォーマンス確認】弾丸ばらまき（マシ+パルキャ）"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "1202_[Performance confirmation] Bullet scattering (Mashi + Cluster Mass) -- 1202_【パフォーマンス確認】弾丸ばらまき（マシ+クラスターミサ）"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "1210_[Performance confirmation] Maximum memory aircraft ① -- 1210_【パフォーマンス確認】メモリ最大機体①"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "1211_[Performance confirmation] Maximum memory aircraft ② -- 1211_【パフォーマンス確認】メモリ最大機体②"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "1212_[Performance confirmation] Maximum memory aircraft ③ -- 1212_【パフォーマンス確認】メモリ最大機体③"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "1213_[Performance confirmation] Maximum memory aircraft ④ -- 1213_【パフォーマンス確認】メモリ最大機体④"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "1214_[Performance confirmation] Maximum memory aircraft ⑤ -- 1214_【パフォーマンス確認】メモリ最大機体⑤"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "1215_[Performance confirmation] Maximum memory aircraft ⑥ -- 1215_【パフォーマンス確認】メモリ最大機体⑥"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "1216_[Performance confirmation] Maximum memory aircraft ⑦ -- 1216_【パフォーマンス確認】メモリ最大機体⑦"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "1217_[Performance confirmation] Maximum memory aircraft ⑧ -- 1217_【パフォーマンス確認】メモリ最大機体⑧"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "1300_[Performance confirmation] Multi-load confirmation aircraft -- 1300_【パフォーマンス確認】マルチ負荷確認機体"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "2000_est bottle imitation test character -- 2000_エスト瓶もどきテストキャラ"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "8800_For inertia confirmation_All brake related OFF -- 8800_慣性確認用_ブレーキ関連すべてOFF"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "8900_Default equipment_Minimum boost speed test character -- 8900_デフォルト装備_最低ブースト速度テストキャラ"
+      ]
+    },
+    {
+      "ID": 8950,
+      "Entries": [
+        "8950_Default equipment_Maximum boost speed test character -- 8950_デフォルト装備_最高ブースト速度テストキャラ"
+      ]
+    },
+    {
+      "ID": 8999,
+      "Entries": [
+        "8999_default equipment (flare equipment) -- 8999_デフォルト装備(フレア装備)"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "9000_default equipment -- 9000_デフォルト装備"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "9001_Reverse joint equipment -- 9001_逆関節装備"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "9002_tank equipment -- 9002_タンク装備"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "9003_quadruped equipment -- 9003_四脚装備"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "9004_quadruped equipment_c0101 -- 9004_四脚装備_c0101"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "9005_quadruped equipment_c0102 -- 9005_四脚装備_c0102"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "9006_quadruped equipment_c0103 -- 9006_四脚装備_c0103"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "9007_quadruped equipment_c0104 -- 9007_四脚装備_c0104"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "9008_quadruped equipment_c0111 -- 9008_四脚装備_c0111"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "9009_quadruped equipment_c0112 -- 9009_四脚装備_c0112"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "9010_quadruped equipment_c0113 -- 9010_四脚装備_c0113"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "9011_quadruped equipment_c0114 -- 9011_四脚装備_c0114"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "9012_ Bay rum tank equipment -- 9012_ベイラムタンク装備"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "9030_Combined weapon equipment -- 9030_合体武器装備"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "9040_For weapon mount -- 9040_武器マウント用"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "9050_For new aircraft confirmation -- 9050_新機体確認用"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "9060_Lightweight aircraft prototype test -- 9060_軽量機プロトテスト"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "9070_Equipped with lightweight propeller -- 9070_軽量プロペラ装備"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "9100_enemy_rifle equipment -- 9100_敵_ライフル装備"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "9110_enemy_shotgun equipment -- 9110_敵_ショットガン装備"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "9120_enemy_bazooka equipment -- 9120_敵_バズーカ装備"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "9130_enemy_sniper equipment -- 9130_敵_スナイパー装備"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "9140_enemy_cannon equipment -- 9140_敵_キャノン装備"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "9200_enemy_rifle equipment -- 9200_敵_ライフル装備"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "9210_enemy_shotgun equipment -- 9210_敵_ショットガン装備"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "9220_enemy_bazooka equipment -- 9220_敵_バズーカ装備"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "9230_enemy_sniper equipment -- 9230_敵_スナイパー装備"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "9240_enemy_cannon equipment -- 9240_敵_キャノン装備"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "9300_Mission Equipment World State 1 -- 9300_ミッション用装備ワールドステート1"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "9301_Mission equipment World State 2 -- 9301_ミッション用装備ワールドステート2"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "9302_Mission equipment World State 3 -- 9302_ミッション用装備ワールドステート3"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "9800_stealth equipment -- 9800_ステルス装備"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "9801_Two-handed rifle equipment -- 9801_両手ライフル装備"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "9810_6 end aircraft confirmation -- 9810_6末機体確認用"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "9820_6 end aircraft confirmation_no shoulder weapon -- 9820_6末機体確認用_肩武器無し"
+      ]
+    },
+    {
+      "ID": 9830,
+      "Entries": [
+        "9830_6 end aircraft confirmation_Two-handed rifle equipped -- 9830_6末機体確認用_両手ライフル装備"
+      ]
+    },
+    {
+      "ID": 9850,
+      "Entries": [
+        "9850_Old default equipment -- 9850_旧デフォルト装備"
+      ]
+    },
+    {
+      "ID": 9860,
+      "Entries": [
+        "9860_Reverse joint equipment -- 9860_逆関節装備"
+      ]
+    },
+    {
+      "ID": 9870,
+      "Entries": [
+        "For 9870_6 end aircraft stealth cloak -- 9870_6末機体ステルスマント用"
+      ]
+    },
+    {
+      "ID": 9890,
+      "Entries": [
+        "9890_Murata debugging_SEQ02043_01995 -- 9890_村田デバッグ用_SEQ02043_01995"
+      ]
+    },
+    {
+      "ID": 9899,
+      "Entries": [
+        "9899_Left and right 3 weapon equipment test -- 9899_左右3武器装備テスト"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "9900_[old][For anime confirmation] Rifle equipment -- 9900_【old】【アニメ確認用】ライフル装備"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "9901_[old][For anime confirmation] Shotgun equipment -- 9901_【old】【アニメ確認用】ショットガン装備"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "9902_[old][For anime confirmation] Suna equipment -- 9902_【old】【アニメ確認用】スナ装備"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "9903_[old][For anime confirmation] Laser rifle equipment -- 9903_【old】【アニメ確認用】レーザーライフル装備"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "9904_[old][For anime confirmation] Leg deformation equipment when jumping -- 9904_【old】【アニメ確認用】ジャンプ時脚部変形装備"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "9905_[old][For anime confirmation] Rifle & blade equipment -- 9905_【old】【アニメ確認用】ライフル＆ブレード装備"
+      ]
+    },
+    {
+      "ID": 9906,
+      "Entries": [
+        "9906_[old][For anime confirmation] Equipped with 3 weapons on left and right -- 9906_【old】【アニメ確認用】左右3武器装備"
+      ]
+    },
+    {
+      "ID": 9907,
+      "Entries": [
+        "9907_[old][For anime confirmation] Combustion buzz & laser snare equipment -- 9907_【old】【アニメ確認用】燃焼バズ&レーザースナ装備"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "9910_[For anime confirmation] Equipped with both shoulder cannons -- 9910_【アニメ確認用】両肩キャノン装備"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "9911_[For anime confirmation] Left shoulder sniper cannon equipped (L1: Aim mode) -- 9911_【アニメ確認用】左肩スナイパーキャノン装備（L1：エイムモード）"
+      ]
+    },
+    {
+      "ID": 9912,
+      "Entries": [
+        "9912_[For anime confirmation] Right shoulder sniper cannon equipped (L1: Aim mode) -- 9912_【アニメ確認用】右肩スナイパーキャノン装備（L1：エイムモード）"
+      ]
+    },
+    {
+      "ID": 9913,
+      "Entries": [
+        "9913_[For anime confirmation] Left shoulder cannon equipment (L1: reload mode) -- 9913_【アニメ確認用】左肩キャノン装備（L1：リロードモード）"
+      ]
+    },
+    {
+      "ID": 9914,
+      "Entries": [
+        "9914_[For anime confirmation] Left shoulder cannon equipment -- 9914_【アニメ確認用】左肩キャノン装備"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "9915_[For anime confirmation] Right shoulder cannon equipment -- 9915_【アニメ確認用】右肩キャノン装備"
+      ]
+    },
+    {
+      "ID": 9916,
+      "Entries": [
+        "9916_[For anime confirmation] Laser rifle equipment (after charging: high laser) -- 9916_【アニメ確認用】レーザーライフル装備（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 9917,
+      "Entries": [
+        "9917_[For anime confirmation] Laser rifle equipment (after charging: shotgun) -- 9917_【アニメ確認用】レーザーライフル装備（チャージ後：ショットガン）"
+      ]
+    },
+    {
+      "ID": 9918,
+      "Entries": [
+        "9918_[For anime confirmation] Laser rifle equipment (after charging: plasma gun) -- 9918_【アニメ確認用】レーザーライフル装備（チャージ後：プラズマガン）"
+      ]
+    },
+    {
+      "ID": 9919,
+      "Entries": [
+        "9919_[For anime confirmation] Hand gun equipment (one hand: quick shot) -- 9919_【アニメ確認用】ハンドガン装備（片手：クイックショット）"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "9920_[For anime confirmation] Hand gun equipment (both hands: double trigger) -- 9920_【アニメ確認用】ハンドガン装備（両手：ダブルトリガー）"
+      ]
+    },
+    {
+      "ID": 9921,
+      "Entries": [
+        "9921_[For anime confirmation] Laser whip & PA shield equipment -- 9921_【アニメ確認用】レーザーウィップ＆PA盾装備"
+      ]
+    },
+    {
+      "ID": 9922,
+      "Entries": [
+        "9922_[For anime confirmation] Laser whip only -- 9922_【アニメ確認用】レーザーウィップのみ"
+      ]
+    },
+    {
+      "ID": 9923,
+      "Entries": [
+        "9923_[For anime confirmation] Long range missile equipment -- 9923_【アニメ確認用】遠距離ミサイル装備"
+      ]
+    },
+    {
+      "ID": 9924,
+      "Entries": [
+        "9924_[For anime confirmation] AI missile equipment -- 9924_【アニメ確認用】AIミサイル装備"
+      ]
+    },
+    {
+      "ID": 9925,
+      "Entries": [
+        "9925_[For anime confirmation] Orbit cannon equipment -- 9925_【アニメ確認用】オービットキャノン装備"
+      ]
+    },
+    {
+      "ID": 9926,
+      "Entries": [
+        "9926_[For anime confirmation] Surface control missile equipment -- 9926_【アニメ確認用】面制圧型ミサイル装備"
+      ]
+    },
+    {
+      "ID": 9927,
+      "Entries": [
+        "9927_[For anime confirmation] Chain hammer equipment -- 9927_【アニメ確認用】チェインハンマー装備"
+      ]
+    },
+    {
+      "ID": 9928,
+      "Entries": [
+        "9928_[For anime confirmation] Silencer rifle equipment -- 9928_【アニメ確認用】サイレンサーライフル装備"
+      ]
+    },
+    {
+      "ID": 9929,
+      "Entries": [
+        "9929_[For anime confirmation] Vertical missile equipment on both shoulders -- 9929_【アニメ確認用】両肩垂直ミサイル装備"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "9930_[For anime confirmation] Proximity fuse missile equipment -- 9930_【アニメ確認用】近接信管ミサイル装備"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "9931_[For anime confirmation] Plasma missile equipment -- 9931_【アニメ確認用】プラズマミサイル装備"
+      ]
+    },
+    {
+      "ID": 9932,
+      "Entries": [
+        "9932_[For anime confirmation] Multi-missile equipment -- 9932_【アニメ確認用】マルチミサイル装備"
+      ]
+    },
+    {
+      "ID": 9933,
+      "Entries": [
+        "9933_[For anime confirmation] Rocket equipment -- 9933_【アニメ確認用】ロケット装備"
+      ]
+    },
+    {
+      "ID": 9934,
+      "Entries": [
+        "9934_[For anime confirmation] Hand missile equipment -- 9934_【アニメ確認用】ハンドミサイル装備"
+      ]
+    },
+    {
+      "ID": 9935,
+      "Entries": [
+        "9935_[For anime confirmation] Hand rocket equipment -- 9935_【アニメ確認用】ハンドロケット装備"
+      ]
+    },
+    {
+      "ID": 9936,
+      "Entries": [
+        "9936_[For anime confirmation] Sniper rifle equipment -- 9936_【アニメ確認用】スナイパーライフル装備"
+      ]
+    },
+    {
+      "ID": 9937,
+      "Entries": [
+        "9937_[For anime confirmation] Plasma rifle equipment -- 9937_【アニメ確認用】プラズマライフル装備"
+      ]
+    },
+    {
+      "ID": 9938,
+      "Entries": [
+        "9938_[For anime confirmation] Guided bullet rifle equipment -- 9938_【アニメ確認用】誘導弾ライフル装備"
+      ]
+    },
+    {
+      "ID": 9939,
+      "Entries": [
+        "9939_[For anime confirmation] Pulse machine gun equipment -- 9939_【アニメ確認用】パルスマシンガン装備"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "9950_[test] Quadruped equipment_turret mode -- 9950_【test】四脚装備_砲台モード"
+      ]
+    },
+    {
+      "ID": 9951,
+      "Entries": [
+        "9951_[test] FootIK confirmation model -- 9951_【test】FootIK確認用モデル"
+      ]
+    },
+    {
+      "ID": 9952,
+      "Entries": [
+        "9952_[test] Left and right weapon switching test -- 9952_【test】左右武器切り替えテスト"
+      ]
+    },
+    {
+      "ID": 9953,
+      "Entries": [
+        "9953_[test] Weight bipod equipment -- 9953_【test】重量二脚装備"
+      ]
+    },
+    {
+      "ID": 9954,
+      "Entries": [
+        "9954_Weapon mount waist side test equipment -- 9954_武器マウント腰横付けテスト装備"
+      ]
+    },
+    {
+      "ID": 9955,
+      "Entries": [
+        "9955_Missile lock count confirmation equipment -- 9955_ミサイルロックカウント確認装備"
+      ]
+    },
+    {
+      "ID": 9956,
+      "Entries": [
+        "9956_[Tsuruoka test] c0900_operation change test aircraft -- 9956_【鶴岡テスト】c0900_操作変更テスト機体"
+      ]
+    },
+    {
+      "ID": 9957,
+      "Entries": [
+        "9957_Vehicle confirmation aircraft -- 9957_ビークル確認用機体"
+      ]
+    },
+    {
+      "ID": 9958,
+      "Entries": [
+        "9958_Jiggler confirmation aircraft -- 9958_Jiggler確認用機体"
+      ]
+    },
+    {
+      "ID": 9959,
+      "Entries": [
+        "9959_Reverse joint equipment_Balance verification model 1 (Part ID: 3001) -- 9959_逆関節装備_バランス検証用モデル1(パーツID：3001)"
+      ]
+    },
+    {
+      "ID": 9960,
+      "Entries": [
+        "9960_Reverse joint equipment_Balance verification model 2 (Part ID: 3002) -- 9960_逆関節装備_バランス検証用モデル2(パーツID：3002)"
+      ]
+    },
+    {
+      "ID": 9961,
+      "Entries": [
+        "9961_Quadrupod equipment_Balance verification model 1 (Part ID: 2005) -- 9961_四脚装備_バランス検証用モデル1(パーツID：2005)"
+      ]
+    },
+    {
+      "ID": 9962,
+      "Entries": [
+        "9962_Quadrupod equipment_Balance verification model 2 (Part ID: 2006) -- 9962_四脚装備_バランス検証用モデル2(パーツID：2006)"
+      ]
+    },
+    {
+      "ID": 9963,
+      "Entries": [
+        "9963_Quadrupod equipment_Balance verification model 3 (Part ID: 2007) -- 9963_四脚装備_バランス検証用モデル3(パーツID：2007)"
+      ]
+    },
+    {
+      "ID": 9964,
+      "Entries": [
+        "9964_Quadrupod equipment_Balance verification model 4 (Part ID: 4410) -- 9964_四脚装備_バランス検証用モデル4(パーツID：4410)"
+      ]
+    },
+    {
+      "ID": 9965,
+      "Entries": [
+        "9965_Quadrupod equipment_Balance verification model 5 (Part ID: 4411) -- 9965_四脚装備_バランス検証用モデル5(パーツID：4411)"
+      ]
+    },
+    {
+      "ID": 9970,
+      "Entries": [
+        "9970_Double trigger equipment -- 9970_ダブルトリガー装備"
+      ]
+    },
+    {
+      "ID": 9971,
+      "Entries": [
+        "9971_Equipment for checking posture addition animation -- 9971_姿勢加算アニメ確認用装備"
+      ]
+    },
+    {
+      "ID": 9972,
+      "Entries": [
+        "9972_Equipment for damage confirmation_DL direct (DL2: Hit stop) -- 9972_ダメージ確認用装備_DL直（DL2：ヒットストップ）"
+      ]
+    },
+    {
+      "ID": 9973,
+      "Entries": [
+        "9973_Damage confirmation equipment_DL Direct (DL3: Small stagger) -- 9973_ダメージ確認用装備_DL直（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 9974,
+      "Entries": [
+        "9974_Equipment for damage confirmation_DL direct (DL4: Great stagger/DL5: Blow away) -- 9974_ダメージ確認用装備_DL直（DL4：大よろけ/DL5：吹っ飛び）"
+      ]
+    },
+    {
+      "ID": 9975,
+      "Entries": [
+        "9975_Damage confirmation equipment_Impact value (DL1: stage addition) -- 9975_ダメージ確認用装備_衝撃値（DL1：段階加算）"
+      ]
+    },
+    {
+      "ID": 9976,
+      "Entries": [
+        "9976_Damage confirmation equipment_Impact value (DL1: 100% addition) -- 9976_ダメージ確認用装備_衝撃値（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 9977,
+      "Entries": [
+        "9977_Damage confirmation equipment_Impact value (DL2: Hit stop) -- 9977_ダメージ確認用装備_衝撃値（DL2：ヒットストップ）"
+      ]
+    },
+    {
+      "ID": 9978,
+      "Entries": [
+        "9978_Damage confirmation equipment_Impact value (DL3: Small stagger) -- 9978_ダメージ確認用装備_衝撃値（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 9979,
+      "Entries": [
+        "9979_Damage confirmation equipment_Impact value (DL4: Great stagger/DL5: Blow away) -- 9979_ダメージ確認用装備_衝撃値（DL4：大よろけ/DL5：吹っ飛び）"
+      ]
+    },
+    {
+      "ID": 9980,
+      "Entries": [
+        "9980_Scavenger test aircraft (model with extremely short spine1) -- 9980_スカベンジャーテスト機体（極端にspine1が短いモデル）"
+      ]
+    },
+    {
+      "ID": 9981,
+      "Entries": [
+        "9981_Scavenger test aircraft (model with extremely long spine1) -- 9981_スカベンジャーテスト機体（極端にspine1が長いモデル）"
+      ]
+    },
+    {
+      "ID": 9982,
+      "Entries": [
+        "9982_[FNR-8065] FB_M_3010 confirmed aircraft -- 9982_【FNR-8065】FB_M_3010確認機体"
+      ]
+    },
+    {
+      "ID": 9983,
+      "Entries": [
+        "9983_L/R equipment test confirmation aircraft -- 9983_L/R装備テスト確認機体"
+      ]
+    },
+    {
+      "ID": 9984,
+      "Entries": [
+        "9984_c0900_Test model (FB_M_9930) -- 9984_c0900_テスト用モデル(FB_M_9930)"
+      ]
+    },
+    {
+      "ID": 9985,
+      "Entries": [
+        "9985_c0900_Test model (FB_M_9940) -- 9985_c0900_テスト用モデル(FB_M_9940)"
+      ]
+    },
+    {
+      "ID": 9986,
+      "Entries": [
+        "9986_c0900_Test model (FB_M_9930+Arm FB_M_9940) -- 9986_c0900_テスト用モデル(FB_M_9930+腕FB_M_9940)"
+      ]
+    },
+    {
+      "ID": 9987,
+      "Entries": [
+        "9987_c0903_Test model (FB_M_9950 tank) -- 9987_c0903_テスト用モデル(FB_M_9950 タンク)"
+      ]
+    },
+    {
+      "ID": 9988,
+      "Entries": [
+        "9988_Bayram bonus aircraft [not used] -- 9988_ベイラム特典機体【使用していない】"
+      ]
+    },
+    {
+      "ID": 9989,
+      "Entries": [
+        "9989_Equipment for confirming 3x critical hit when staggered -- 9989_よろけ時クリティカル3倍確認用装備"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "9990_Knockback confirmation equipment (DL3)_Power: 60-90 -- 9990_ノックバック確認用装備（DL3）_威力：60-90"
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        "9991_Knockback confirmation equipment (DL3)_Power: 120-150 -- 9991_ノックバック確認用装備（DL3）_威力：120-150"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        "9992_Knockback confirmation equipment (DL3)_Power: 180-210 -- 9992_ノックバック確認用装備（DL3）_威力：180-210"
+      ]
+    },
+    {
+      "ID": 9993,
+      "Entries": [
+        "9993_Knockback confirmation equipment (DL4)_Power: 60-90 -- 9993_ノックバック確認用装備（DL4）_威力：60-90"
+      ]
+    },
+    {
+      "ID": 9994,
+      "Entries": [
+        "9994_Knockback confirmation equipment (DL4)_Power: 120-150 -- 9994_ノックバック確認用装備（DL4）_威力：120-150"
+      ]
+    },
+    {
+      "ID": 9995,
+      "Entries": [
+        "9995_Knockback confirmation equipment (DL4)_Power: 180-210 -- 9995_ノックバック確認用装備（DL4）_威力：180-210"
+      ]
+    },
+    {
+      "ID": 9996,
+      "Entries": [
+        "9996_Knockback confirmation equipment (DL5)_Power: 60-90 -- 9996_ノックバック確認用装備（DL5）_威力：60-90"
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "9997_Knockback confirmation equipment (DL5)_Power: 120-150 -- 9997_ノックバック確認用装備（DL5）_威力：120-150"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "9998_Knockback confirmation equipment (DL5)_Power: 180-210 -- 9998_ノックバック確認用装備（DL5）_威力：180-210"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "9999_Dress-up NPAC for checking the appearance of melee attacks -- 9999_着せ替えNPAC 近接攻撃見た目確認用"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "1000000_[Shimokawabe Test] Ally AC -- 1000000_【下河邉テスト】味方AC"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "1100000_Heavyweight equipment -- 1100000_重量級装備"
+      ]
+    },
+    {
+      "ID": 7970000,
+      "Entries": [
+        "7970000_[For stagger critical rate test] PA breaker equipment -- 7970000_【よろけクリティカル率テスト用】PAブレイカー装備"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "8000000_[3rd edition] Standard bipod_Standard/suitable for timers -- 8000000_【3末版】基準二脚_標準/タイマン向き"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "8000001_[End of 3rd edition] Standard bipod_Dubtry/for road trip (number of moves/range) -- 8000001_【3末版】基準二脚_ダブトリ/道中向き（手数/範囲）"
+      ]
+    },
+    {
+      "ID": 8000002,
+      "Entries": [
+        "8000002_[3rd edition] Standard bipod_Attack specialization A (annihilation power + one blow) -- 8000002_【3末版】基準二脚_攻撃特化A（殲滅力+一撃）"
+      ]
+    },
+    {
+      "ID": 8000003,
+      "Entries": [
+        "8000003_[3rd edition] Standard bipod_Attack specialization B (breaking performance + melee) -- 8000003_【3末版】基準二脚_攻撃特化B（崩し性能＋近接）"
+      ]
+    },
+    {
+      "ID": 8000010,
+      "Entries": [
+        "8000010_[3rd edition] Standard reverse joint_Standard/for timers -- 8000010_【3末版】基準逆関節_標準/タイマン向き"
+      ]
+    },
+    {
+      "ID": 8000011,
+      "Entries": [
+        "8000011_[End of 3rd edition] Standard reverse joint_Daboutori/Michichu (number of moves/range) -- 8000011_【3末版】基準逆関節_ダブトリ/道中向き（手数/範囲）"
+      ]
+    },
+    {
+      "ID": 8000012,
+      "Entries": [
+        "8000012_[3rd edition] Standard reverse joint_Attack specialization A (annihilation power + one blow) -- 8000012_【3末版】基準逆関節_攻撃特化A（殲滅力+一撃）"
+      ]
+    },
+    {
+      "ID": 8000013,
+      "Entries": [
+        "8000013_[3rd edition] Standard reverse joint_Attack specialization B (breaking performance + melee) -- 8000013_【3末版】基準逆関節_攻撃特化B（崩し性能＋近接）"
+      ]
+    },
+    {
+      "ID": 8000020,
+      "Entries": [
+        "8000020_[3rd edition] Standard quadruped_Standard/Suitable for timers -- 8000020_【3末版】基準四脚_標準/タイマン向き"
+      ]
+    },
+    {
+      "ID": 8000021,
+      "Entries": [
+        "8000021_[End of 3rd edition] Standard four-legged_doubutori/for road trip (number of moves/range) -- 8000021_【3末版】基準四脚_ダブトリ/道中向き（手数/範囲）"
+      ]
+    },
+    {
+      "ID": 8000022,
+      "Entries": [
+        "8000022_[3rd edition] Standard quadruped_Attack specialization A (annihilation power + one blow) -- 8000022_【3末版】基準四脚_攻撃特化A（殲滅力+一撃）"
+      ]
+    },
+    {
+      "ID": 8000023,
+      "Entries": [
+        "8000023_[3rd edition] Standard quadruped_Attack specialization B (breaking performance + melee) -- 8000023_【3末版】基準四脚_攻撃特化B（崩し性能＋近接）"
+      ]
+    },
+    {
+      "ID": 8000030,
+      "Entries": [
+        "8000030_[3rd edition] Standard tank_Standard/For timer -- 8000030_【3末版】基準タンク_標準/タイマン向き"
+      ]
+    },
+    {
+      "ID": 8000031,
+      "Entries": [
+        "8000031_[End of 3rd edition] Standard tank_Dubtry/For on-the-road (number of moves/range) -- 8000031_【3末版】基準タンク_ダブトリ/道中向き（手数/範囲）"
+      ]
+    },
+    {
+      "ID": 8000032,
+      "Entries": [
+        "8000032_[3rd edition] Standard tank_Attack specialization A (annihilation power + one blow) -- 8000032_【3末版】基準タンク_攻撃特化A（殲滅力+一撃）"
+      ]
+    },
+    {
+      "ID": 8000033,
+      "Entries": [
+        "8000033_[3rd edition] Standard tank_Attack specialization B (breaking performance + melee) -- 8000033_【3末版】基準タンク_攻撃特化B（崩し性能＋近接）"
+      ]
+    },
+    {
+      "ID": 8000100,
+      "Entries": [
+        "8000100_[10th edition] H2L_WT_CS -- 8000100_【10末版】H2L_WT_CS"
+      ]
+    },
+    {
+      "ID": 8000101,
+      "Entries": [
+        "8000101_[10th edition] L2L_ST_SL -- 8000101_【10末版】L2L_ST_SL"
+      ]
+    },
+    {
+      "ID": 8000102,
+      "Entries": [
+        "8000102_[10th edition]M2L_ST_MB -- 8000102_【10末版】M2L_ST_MB"
+      ]
+    },
+    {
+      "ID": 8000103,
+      "Entries": [
+        "8000103_[10th edition] M2L_WT_LC -- 8000103_【10末版】M2L_WT_LC"
+      ]
+    },
+    {
+      "ID": 8000200,
+      "Entries": [
+        "8000200_[10th edition]MGL_WT_MM -- 8000200_【10末版】MGL_WT_MM"
+      ]
+    },
+    {
+      "ID": 8000300,
+      "Entries": [
+        "8000300_[10th edition] M4L_WT_VM -- 8000300_【10末版】M4L_WT_VM"
+      ]
+    },
+    {
+      "ID": 8000400,
+      "Entries": [
+        "8000400_[10th edition] HTK_GF_CM -- 8000400_【10末版】HTK_GF_CM"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "9000000_[Kenneth test] For parameter behavior confirmation -- 9000000_【ケネステスト】パラメータ挙動確認用"
+      ]
+    },
+    {
+      "ID": 9970000,
+      "Entries": [
+        "9970000_[For UI implementation test] Insufficient EN output -- 9970000_【UI実装テスト向け】EN出力不足"
+      ]
+    },
+    {
+      "ID": 9970100,
+      "Entries": [
+        "9970100_[For UI implementation test] Within EN output range -- 9970100_【UI実装テスト向け】EN出力範囲内"
+      ]
+    },
+    {
+      "ID": 9970200,
+      "Entries": [
+        "9970200_[For UI implementation test] Excessive weight -- 9970200_【UI実装テスト向け】重量過多"
+      ]
+    },
+    {
+      "ID": 9900007,
+      "Entries": [
+        "9900007_Ito Test_Dam_Patrick -- 9900007_伊藤テスト_ダム_パトリック"
+      ]
+    },
+    {
+      "ID": 9900008,
+      "Entries": [
+        "9900008_Ito test_Dam_Joffe -- 9900008_伊藤テスト_ダム_ヨッフェ"
+      ]
+    },
+    {
+      "ID": 9900009,
+      "Entries": [
+        "9900009_Search in front of the wall_Patrick -- 9900009_壁前探索_パトリック"
+      ]
+    },
+    {
+      "ID": 9900010,
+      "Entries": [
+        "9900010_Search in front of the wall_Evgeny -- 9900010_壁前探索_エフゲニー"
+      ]
+    },
+    {
+      "ID": 9900011,
+      "Entries": [
+        "9900011 Over the wall_Jonathan_For when you can't get to the rig in time -- 9900011壁越え_ジョナサン_リグ対応間に合わなかった時用"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "70000000_Ricochet confirmation_Actual bullet cut height -- 70000000_跳弾確認_実弾カット高"
+      ]
+    },
+    {
+      "ID": 70000001,
+      "Entries": [
+        "70000001_Ricochet confirmation_EN cut height -- 70000001_跳弾確認_ENカット高"
+      ]
+    },
+    {
+      "ID": 70000010,
+      "Entries": [
+        "70000010_Ricochet confirmation_Live bullet cut low -- 70000010_跳弾確認_実弾カット低"
+      ]
+    },
+    {
+      "ID": 70000011,
+      "Entries": [
+        "70000011_Ricochet confirmation_EN cut low -- 70000011_跳弾確認_ENカット低"
+      ]
+    },
+    {
+      "ID": 70000020,
+      "Entries": [
+        "70000020_Ricochet confirmation_Actual bullet cut close to 0 -- 70000020_跳弾確認_実弾カット0に近い"
+      ]
+    },
+    {
+      "ID": 70000021,
+      "Entries": [
+        "70000021_Ricochet confirmation_Near EN cut 0 -- 70000021_跳弾確認_ENカット0に近い"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "70000100_Asab fastest two legs -- 70000100_アサブ最速２脚"
+      ]
+    },
+    {
+      "ID": 70000101,
+      "Entries": [
+        "70000101_Asabu's slowest two legs -- 70000101_アサブ最遅２脚"
+      ]
+    },
+    {
+      "ID": 70000102,
+      "Entries": [
+        "70000102_Asab's slowest two legs due to excessive weight -- 70000102_重量過多によるアサブ最遅２脚"
+      ]
+    },
+    {
+      "ID": 70000200,
+      "Entries": [
+        "70000200_Asabu fastest backward foot -- 70000200_アサブ最速逆足"
+      ]
+    },
+    {
+      "ID": 70000201,
+      "Entries": [
+        "70000201_Asabu slowest opposite foot -- 70000201_アサブ最遅逆足"
+      ]
+    },
+    {
+      "ID": 70000202,
+      "Entries": [
+        "70000202_Asab's slowest negative foot due to excess weight -- 70000202_重量過多によるアサブ最遅逆足"
+      ]
+    },
+    {
+      "ID": 70000300,
+      "Entries": [
+        "70000300_Asabu fastest 4 legs -- 70000300_アサブ最速４脚"
+      ]
+    },
+    {
+      "ID": 70000301,
+      "Entries": [
+        "70000301_Asabu slowest 4 legs -- 70000301_アサブ最遅４脚"
+      ]
+    },
+    {
+      "ID": 70000302,
+      "Entries": [
+        "70000302_Asab's slowest 4 legs due to excessive weight -- 70000302_重量過多によるアサブ最遅４脚"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "80000000_For enemy damage animation comprehensive check -- 80000000_敵ダメージアニメ網羅チェック用"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "80000100_Performance check for automatic testing -- 80000100_パフォーマンスチェック自動テスト用"
+      ]
+    },
+    {
+      "ID": 90000130,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500000_Balance_Single Battle_Default Unit] -- 【強化0】 プロローグ～大陸殻 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90000140,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500010_For balance_Multiple annihilation (stronger scraping by EN)] -- 【強化0】 プロローグ～大陸殻 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90000150,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500020_For balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化0】 プロローグ～大陸殻 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90000160,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500030_For balance_General purpose medium weight (strong dabutori)] -- 【強化0】 プロローグ～大陸殻 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90000170,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500040_For balance_General purpose medium weight (live bullets main)] -- 【強化0】 プロローグ～大陸殻 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90000180,
+      "Entries": [
+        "[Enhancement 0] Prologue ~ Continental Shell [45500050_For balance_General purpose medium amount (drip)] -- 【強化0】 プロローグ～大陸殻 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90001130,
+      "Entries": [
+        "[Enhancement 1] Encounter with the organization ~ Spaceport attack [45500000_Balance_Single battle_Default aircraft] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90001140,
+      "Entries": [
+        "[Enhancement 1] Encounter with the organization ~ Spaceport attack [45500010_Balance_Multiple annihilation (stronger scraping with EN)] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90001150,
+      "Entries": [
+        "[Enhancement 1] Encounter with the organization ~ Spaceport attack [45500020_Balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90001160,
+      "Entries": [
+        "[Strengthening 1] Encounter with the organization ~ Spaceport attack [45500030_Balance_General purpose medium weight (strong dubtor)] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90001170,
+      "Entries": [
+        "[Enhancement 1] Encounter with the organization ~ Spaceport attack [45500040_Balance_General purpose medium weight (live ammunition main)] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90001180,
+      "Entries": [
+        "[Enhancement 1] Encounter with the organization ~ Spaceport attack [45500050_For balance_General purpose medium amount (drip)] -- 【強化1】 組織との出会い～宇宙港襲撃 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90002130,
+      "Entries": [
+        "[Enhancement 2] Collapsed continental shell ~ Great hollow and furnace [45500000_Balance_Single battle_Default unit] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90002140,
+      "Entries": [
+        "[Strengthening 2] Collapsed continental shell ~ Large hollow and furnace [45500010_For balance_Multiple annihilation (stronger scraping by EN)] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90002150,
+      "Entries": [
+        "[Enhancement 2] Collapsed continental shell ~ Great hollow and furnace [45500020_For balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90002160,
+      "Entries": [
+        "[Strengthening 2] Collapsed Continental Shell ~ Large Cavity and Furnace [45500030_For balance_General purpose medium weight (strong dabutori)] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90002170,
+      "Entries": [
+        "[Enhancement 2] Collapsed Continental Shell ~ Large Cavity and Furnace [45500040_For balance_General purpose medium (mainly live ammunition)] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90002180,
+      "Entries": [
+        "[Strengthening 2] Collapsed Continental Shell ~ Large Cavity and Furnace [45500050_For balance_General purpose medium quantity (drip)] -- 【強化2】 崩落した大陸殻～大空洞と炉 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90003130,
+      "Entries": [
+        "[Enhancement 3] Sabumi Icefield Hole ~ Fuel Base Detonation (2nd lap) [45500000_Balance_Single Battle_Default Unit] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90003140,
+      "Entries": [
+        "[Strengthening 3] Sabumi Icefield Hole ~ Fuel base explosion (2nd lap) [45500010_For balance_Multiple annihilation (stronger scraping by EN)] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90003150,
+      "Entries": [
+        "[Strengthening 3] Sabumi Icefield Hole ~ Fuel base explosion (2nd lap) [45500020_For balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90003160,
+      "Entries": [
+        "[Strengthening 3] Sabumi Icefield Hole ~ Fuel Base Explosion (2nd round) [45500030_For balance_General purpose medium (strong dabutori)] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90003170,
+      "Entries": [
+        "[Strengthening 3] Sabumi Ice Field Hole ~ Fuel Base Detonation (2nd lap) [45500040_For balance_General purpose medium (mainly live ammunition)] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90003180,
+      "Entries": [
+        "[Enhancement 3] Sabumi Ice Field Hole ~ Fuel Base Detonation (2nd lap) [45500050_For balance_General purpose medium amount (drip)] -- 【強化3】 サブミ氷原の穴～燃料基地爆破（2周目） 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90004130,
+      "Entries": [
+        "[Enhancement 4] City on the Sea (2nd lap) ~ Ice Worm (2nd lap) [45500000_Balance_Single Battle_Default Unit] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90004140,
+      "Entries": [
+        "[Enhancement 4] City on the Ocean (2nd lap) ~ Ice Worm (2nd lap) [45500010_For balance_Multiple annihilation (stronger scraping by EN)] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90004150,
+      "Entries": [
+        "[Enhancement 4] City on the Sea (2nd lap) ~ Ice Worm (2nd lap) [45500020_For balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90004160,
+      "Entries": [
+        "[Strengthening 4] City on the Ocean (2nd lap) ~ Ice Worm (2nd lap) [45500030_For balance_General purpose medium weight (strong dabutori)] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90004170,
+      "Entries": [
+        "[Strengthening 4] City on the Sea (2nd lap) ~ Ice Worm (2nd lap) [45500040_Balance_General purpose medium weight (mainly live ammunition)] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90004180,
+      "Entries": [
+        "[Strengthening 4] City on the Ocean (2nd lap) ~ Ice Worm (2nd lap) [45500050_For balance_General purpose medium amount (drip)] -- 【強化4】 洋上の都市（2周目）～アイスワーム（2周目） 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90005130,
+      "Entries": [
+        "[Enhancement 5] Ice Worm (2nd round) ~ ■Full enhancement [45500000_Balance_Single battle_Default unit] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500000_バランス用_単体戦_デフォルト機体】"
+      ]
+    },
+    {
+      "ID": 90005140,
+      "Entries": [
+        "[Enhancement 5] Ice Worm (2nd round) ~ ■Full enhancement [45500010_For balance_Multiple annihilation (strengthened sharpening by EN)] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500010_バランス用_複数殲滅（ENによる削り強め）】"
+      ]
+    },
+    {
+      "ID": 90005150,
+      "Entries": [
+        "[Enhancement 5] Ice Worm (2nd round) ~ ■Full enhancement [45500020_For balance_High mobility (annihilation & EN cannon decisive power)] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）】"
+      ]
+    },
+    {
+      "ID": 90005160,
+      "Entries": [
+        "[Strengthening 5] Ice Worm (2nd round) ~ ■Full Enhancement [45500030_For balance_General purpose medium weight (strong dabutori)] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500030_バランス用_汎用中量（強めのダブトリ）】"
+      ]
+    },
+    {
+      "ID": 90005170,
+      "Entries": [
+        "[Enhancement 5] Ice Worm (2nd round) ~ ■Full enhancement [45500040_For balance_General purpose medium weight (live bullet main)] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500040_バランス用_汎用中量（実弾メイン）】"
+      ]
+    },
+    {
+      "ID": 90005180,
+      "Entries": [
+        "[Enhancement 5] Ice Worm (2nd round) ~ ■Full enhancement [45500050_For balance_General purpose medium amount (drip)] -- 【強化5】 アイスワーム（2周目）～\u3000■フル強化 【45500050_バランス用_汎用中量（垂れ流し）】"
+      ]
+    },
+    {
+      "ID": 90010000,
+      "Entries": [
+        "90010000_For object destruction confirmation_obj attack power right 510 -- 90010000_オブジェクト破壊確認用_obj攻撃力右510"
+      ]
+    },
+    {
+      "ID": 90010010,
+      "Entries": [
+        "90010010_Object destruction confirmation_obj attack power right 410 -- 90010010_オブジェクト破壊確認用_obj攻撃力右410"
+      ]
+    },
+    {
+      "ID": 90020000,
+      "Entries": [
+        "90020000_For ice worm defeat mission -- 90020000_アイスワーム撃破ミッション用"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "[For CS debug confirmation] 99900000_Online Arena 3v3_Maximum total height -- 【CSデバッグ確認用】99900000_オンラインアリーナ3ｖ3_全高最大"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "[For CS debug confirmation] 99900100_Online Arena 3v3_Maximum width -- 【CSデバッグ確認用】99900100_オンラインアリーナ3ｖ3_全幅最大"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "40000000_Medium weight 2 legs_Double trigger_PA -- 40000000_中量2脚_ダブルトリガー_PA"
+      ]
+    },
+    {
+      "ID": 40000001,
+      "Entries": [
+        "40000001_Medium weight 2 legs_Single linear medium shield_AA -- 40000001_中量2脚_シングルリニア中盾_AA"
+      ]
+    },
+    {
+      "ID": 40000002,
+      "Entries": [
+        "40000002_Lightweight 2 legs_Double trigger live ammunition_PA -- 40000002_軽量2脚_ダブルトリガー実弾_PA"
+      ]
+    },
+    {
+      "ID": 40000003,
+      "Entries": [
+        "40000003_Lightweight 2 legs_Double trigger EN_Emergency PA -- 40000003_軽量2脚_ダブルトリガーEN_緊急PA"
+      ]
+    },
+    {
+      "ID": 40000004,
+      "Entries": [
+        "40000004_Weight 2 legs_Double trigger live ammunition_Installation PA -- 40000004_重量2脚_ダブルトリガー実弾_設置PA"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "40000100_lightest class_fastest aircraft -- 40000100_最軽量級_一番速い機体"
+      ]
+    },
+    {
+      "ID": 40000101,
+      "Entries": [
+        "40000101_Heaviest class_Slowest aircraft -- 40000101_最重量級_一番遅い機体"
+      ]
+    },
+    {
+      "ID": 40000400,
+      "Entries": [
+        "40000400_lightest class_fastest aircraft (tank) -- 40000400_最軽量級_一番速い機体（タンク）"
+      ]
+    },
+    {
+      "ID": 40000402,
+      "Entries": [
+        "40000401_Heaviest class_Slowest aircraft (tank) -- 40000401_最重量級_一番遅い機体（タンク）"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "40000200_Medium class default aircraft (reverse leg) -- 40000200_中量級デフォルト機体（逆脚）"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "40000300_Medium class default aircraft (quadruped) -- 40000300_中量級デフォルト機体（四脚）"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "40001000_[5th end presentation version] Scaven bipod for railroad -- 40001000_【5末プレゼン版】レイルロード用スカベン二脚"
+      ]
+    },
+    {
+      "ID": 40001100,
+      "Entries": [
+        "40001100_[Presentation version at the end of May] Four bay ram legs for big bridge -- 40001100_【5末プレゼン版】ビッグブリッジ用ベイラム四脚"
+      ]
+    },
+    {
+      "ID": 40001200,
+      "Entries": [
+        "40001200_[5th end presentation version] Reilena reverse leg for mining ship -- 40001200_【5末プレゼン版】採掘艦用レイレナ逆脚"
+      ]
+    },
+    {
+      "ID": 45500000,
+      "Entries": [
+        "45500000_Balance_Single battle_Default aircraft -- 45500000_バランス用_単体戦_デフォルト機体"
+      ]
+    },
+    {
+      "ID": 45500010,
+      "Entries": [
+        "45500010_For balance_Multiple annihilation (stronger cutting with EN) -- 45500010_バランス用_複数殲滅（ENによる削り強め）"
+      ]
+    },
+    {
+      "ID": 45500020,
+      "Entries": [
+        "45500020_For balance_High mobility (annihilation & EN cannon decisive power) -- 45500020_バランス用_高機動（殲滅＆ENキャノンの決定力）"
+      ]
+    },
+    {
+      "ID": 45500030,
+      "Entries": [
+        "45500030_For balance_General purpose medium weight (strong dabutori) -- 45500030_バランス用_汎用中量（強めのダブトリ）"
+      ]
+    },
+    {
+      "ID": 45500040,
+      "Entries": [
+        "45500040_For balance_General purpose medium weight (mainly live ammunition) -- 45500040_バランス用_汎用中量（実弾メイン）"
+      ]
+    },
+    {
+      "ID": 45500050,
+      "Entries": [
+        "45500050_For balance_General purpose medium amount (drip) -- 45500050_バランス用_汎用中量（垂れ流し）"
+      ]
+    },
+    {
+      "ID": 45501000,
+      "Entries": [
+        "45501000_For load check -- 45501000_負荷チェック用"
+      ]
+    },
+    {
+      "ID": 46000000,
+      "Entries": [
+        "46000000_Arm interference test 2 legs -- 46000000_腕部干渉テスト２脚"
+      ]
+    },
+    {
+      "ID": 46000001,
+      "Entries": [
+        "46000001_Arm interference test 4 legs -- 46000001_腕部干渉テスト４脚"
+      ]
+    },
+    {
+      "ID": 49000000,
+      "Entries": [
+        "49000000_[Behavior confirmation] Blade homing injection time short, 10F -- 49000000_【挙動確認】ブレードホーミング噴射時間短、10F"
+      ]
+    },
+    {
+      "ID": 49000001,
+      "Entries": [
+        "49000001__ [Behavior confirmation] During blade homing injection time, 15F -- 49000001__【挙動確認】ブレードホーミング噴射時間中、15F"
+      ]
+    },
+    {
+      "ID": 49000002,
+      "Entries": [
+        "49000002__ [Behavior confirmation] Blade homing injection time length, 20F -- 49000002__【挙動確認】ブレードホーミング噴射時間長、20F"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "10000000_Ace of Battle A -- 10000000_決戦のエースA"
+      ]
+    },
+    {
+      "ID": 10001010,
+      "Entries": [
+        "10001010_Ace of decisive battle A Dam defense -- 10001010_決戦のエースA\u3000ダム防衛"
+      ]
+    },
+    {
+      "ID": 10009000,
+      "Entries": [
+        "10000000_Ace of Decisive Battle A for doping -- 10000000_決戦のエースA\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "10100000_Ace of Battle B -- 10100000_決戦のエースB"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "10200000_String AC -- 10200000_文字列AC"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "10300000_Yuriya -- 10300000_ユーリヤ"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "10310000_Yuriya (All Mind) -- 10310000_ユーリヤ（オールマインド）"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "10400000_Assassin -- 10400000_刺客"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "10500000_Ash (early model) -- 10500000_アッシュ（前期機体）"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "10500000_Ash (early model) For wingman -- 10500000_アッシュ（前期機体）\u3000僚機用"
+      ]
+    },
+    {
+      "ID": 10501100,
+      "Entries": [
+        "10500000_Ash (early model) For wingman_Former spaceport -- 10500000_アッシュ（前期機体）\u3000僚機用_旧宇宙港"
+      ]
+    },
+    {
+      "ID": 10509000,
+      "Entries": [
+        "10500000_Ash (early model) for doping -- 10500000_アッシュ（前期機体）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "10600000_Ash (late model) -- 10600000_アッシュ（後期機体）"
+      ]
+    },
+    {
+      "ID": 10609000,
+      "Entries": [
+        "10600000_Ash (late model) for doping -- 10600000_アッシュ（後期機体）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "10700000_Number 2 -- 10700000_ナンバー2"
+      ]
+    },
+    {
+      "ID": 10710000,
+      "Entries": [
+        "10710000_Number 2 (Defeat Ice Worm) -- 10710000_ナンバー2（アイスワーム撃破）"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "10800000_Number 4 (Reinforced Human Company A) -- 10800000_ナンバー4（強化人間中隊A）"
+      ]
+    },
+    {
+      "ID": 10900000,
+      "Entries": [
+        "10900000_Number 7 (Reinforced Human Company B) -- 10900000_ナンバー7（強化人間中隊B）"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "11000000_Collapse A layer AC -- 11000000_崩落A層AC"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "11100000_Unmanned AC in the reactor core -- 11100000_炉心の無人AC"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "11200000_Carla -- 11200000_カーラ"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "11300000_Leicester -- 11300000_レスター"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "11300000_Lester for decisive battle B -- 11300000_レスター 決戦B用"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "11400000_G5 Iguazu -- 11400000_G5 イグアス"
+      ]
+    },
+    {
+      "ID": 11409000,
+      "Entries": [
+        "11409000_Bayram light frame initial equipment [for bonus] -- 11409000_ベイラム軽フレーム初期装備【特典用】"
+      ]
+    },
+    {
+      "ID": 11410000,
+      "Entries": [
+        "11410000_G5 Iguazu (all-mind involvement) -- 11410000_G5 イグアス（オールマインド関与）"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "11500000_Wild Geese B -- 11500000_ワイルド・ギースB"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "11600000_Wild Geese C -- 11600000_ワイルド・ギースC"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "11700000_Ash People A -- 11700000_灰の民A"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "11800000_Ash People B -- 11800000_灰の民B"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "11900000_Ash People C -- 11900000_灰の民C"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "12000000_Number 1 -- 12000000_ナンバー1"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "12100000_Karla's subordinate -- 12100000_カーラの部下"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "12200000_Nest unmanned AC (shooting) -- 12200000_ネストの無人AC（射撃）"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "12300000_Nest unmanned AC (proximity) -- 12300000_ネストの無人AC（近接）"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "12400000_Nest unmanned AC (strong small fish) -- 12400000_ネストの無人AC（強雑魚）"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "12500000_win -- 12500000_ウィン"
+      ]
+    },
+    {
+      "ID": 12509000,
+      "Entries": [
+        "12500000_Win for doping -- 12500000_ウィン\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 12600000,
+      "Entries": [
+        "12600000_Test teacher -- 12600000_テスト先生"
+      ]
+    },
+    {
+      "ID": 12600001,
+      "Entries": [
+        "12600001_Test teacher_Camera interference -- 12600001_テスト先生_カメラ妨害"
+      ]
+    },
+    {
+      "ID": 12600002,
+      "Entries": [
+        "12600002_Test teacher_Forced discharge -- 12600002_テスト先生_強制放電"
+      ]
+    },
+    {
+      "ID": 12600003,
+      "Entries": [
+        "12600003_Test teacher_ACS disorder -- 12600003_テスト先生_ACS障害"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "12700000_for onboarding -- 12700000_オンボーディング用"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "20000000_Wild Geese D -- 20000000_ワイルドギースD"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "20100000_Wild Geese E -- 20100000_ワイルドギースE"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "20200000_Wild Geese F -- 20200000_ワイルドギースF"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "20300000_Bayram battle data -- 20300000_ベイラムの戦闘データ"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "20400000_Number 6 -- 20400000_ナンバー6"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "20500000_Number 5 -- 20500000_ナンバー5"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "20600000_Number 3 -- 20600000_ナンバー3"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "20700000_Ash People D -- 20700000_灰の民D"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "20800000_Ash People E (Strong JUDO) -- 20800000_灰の民E（強JUDO）"
+      ]
+    },
+    {
+      "ID": 20809000,
+      "Entries": [
+        "20800000_Ash Folk E (Strong JUDO) For doping -- 20800000_灰の民E（強JUDO）\u3000ドーピング用"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "20900000_Drunker -- 20900000_ドランカー"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "21000000_Drunker battle data -- 21000000_ドランカーの戦闘データ"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "21100000_Independent Mercenary A -- 21100000_独立傭兵A"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "21200000_Independent Mercenary B -- 21200000_独立傭兵B"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "21300000_dead strong man -- 21300000_死んだ強者"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "21400000_Simulator unmanned AC -- 21400000_シミュレーター無人AC"
+      ]
+    },
+    {
+      "ID": 29000000,
+      "Entries": [
+        "Wreckage: Previous Raven -- 残骸：先代レイヴン"
+      ]
+    },
+    {
+      "ID": 29000010,
+      "Entries": [
+        "Wreckage: Wild Geese B -- 残骸：ワイルドギースB"
+      ]
+    },
+    {
+      "ID": 29000020,
+      "Entries": [
+        "Wreckage: Nameless Independent Mercenary A -- 残骸：名も無き独立傭兵A"
+      ]
+    },
+    {
+      "ID": 29000030,
+      "Entries": [
+        "Wreckage: Nameless Independent Mercenary B -- 残骸：名も無き独立傭兵B"
+      ]
+    },
+    {
+      "ID": 29000040,
+      "Entries": [
+        "Wreckage: Nameless Rubiconian -- 残骸：名も無きルビコニアン"
+      ]
+    },
+    {
+      "ID": 29000050,
+      "Entries": [
+        "Wreckage: Nameless Dozer -- 残骸：名も無きドーザー"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "30000000_equipment for jailbreak mission -- 30000000_脱獄ミッション用装備"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "30000020_For prologue mission_Initial aircraft -- 30000020_プロローグミッション用_初期機体"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "31000000__C End cutscene aircraft 00 -- 31000000__Cエンドカットシーン用機体00"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "31000010__C End cutscene aircraft 01 -- 31000010__Cエンドカットシーン用機体01"
+      ]
+    },
+    {
+      "ID": 31000020,
+      "Entries": [
+        "31000020__C End cutscene aircraft 02 -- 31000020__Cエンドカットシーン用機体02"
+      ]
+    },
+    {
+      "ID": 31000030,
+      "Entries": [
+        "31000030__C End cutscene aircraft 03 -- 31000030__Cエンドカットシーン用機体03"
+      ]
+    },
+    {
+      "ID": 31000040,
+      "Entries": [
+        "31000040__C End cutscene aircraft 04 -- 31000040__Cエンドカットシーン用機体04"
+      ]
+    },
+    {
+      "ID": 31000050,
+      "Entries": [
+        "31000050__C End cutscene aircraft 05 -- 31000050__Cエンドカットシーン用機体05"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "50000000_for tremo 1 -- 50000000_トレモ1用"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "50100000_for tremo 2 -- 50100000_トレモ2用"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "50200000_for tremo 3 -- 50200000_トレモ3用"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "50300000_for tremo 4 -- 50300000_トレモ4用"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "50400000_for tremo 5 -- 50400000_トレモ5用"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "50500000_for tremo 6 -- 50500000_トレモ6用"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "50600000_for tank tutorial -- 50600000_タンクチュートリアル用"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "52000000_Initial aircraft for presentation -- 52000000_プレゼン用初期機体"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "60000000_Mining ship destroyed -- 60000000_採掘艦破壊"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "60100000_Big Bridge -- 60100000_ビッグ・ブリッジ"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "60200000_for development tutorial -- 60200000_発展チュートリアル用"
+      ]
+    },
+    {
+      "ID": 909999999,
+      "Entries": [
+        "==\u3000Hand\u3000== -- ==\u3000手\u3000=="
+      ]
+    },
+    {
+      "ID": 910000000,
+      "Entries": [
+        "Weapon confirmation_2 legs_grenade_WP_R_1310 -- 武器確認_2脚_グレネード_WP_R_1310"
+      ]
+    },
+    {
+      "ID": 910000001,
+      "Entries": [
+        "Weapon confirmation_2 legs_grenade 2_WP_R_1320 -- 武器確認_2脚_グレネード2_WP_R_1320"
+      ]
+    },
+    {
+      "ID": 910000002,
+      "Entries": [
+        "Weapon confirmation_2 legs_bazooka 3_WP_R_1410 -- 武器確認_2脚_バズーカ3_WP_R_1410"
+      ]
+    },
+    {
+      "ID": 910000003,
+      "Entries": [
+        "Weapon confirmation_2 legs_bazooka 2_WP_R_1420 -- 武器確認_2脚_バズーカ2_WP_R_1420"
+      ]
+    },
+    {
+      "ID": 910000004,
+      "Entries": [
+        "Weapon confirmation_2 legs_bazooka_WP_R_1430 -- 武器確認_2脚_バズーカ_WP_R_1430"
+      ]
+    },
+    {
+      "ID": 910000005,
+      "Entries": [
+        "Weapon confirmation_2 legs_shotgun 3_WP_R_1510 -- 武器確認_2脚_ショットガン3_WP_R_1510"
+      ]
+    },
+    {
+      "ID": 910000006,
+      "Entries": [
+        "Weapon confirmation_2 legs_shotgun_WP_R_1520 -- 武器確認_2脚_ショットガン_WP_R_1520"
+      ]
+    },
+    {
+      "ID": 910000007,
+      "Entries": [
+        "Weapon confirmation_2 legs_shotgun 2_WP_R_1530 -- 武器確認_2脚_ショットガン2_WP_R_1530"
+      ]
+    },
+    {
+      "ID": 910000008,
+      "Entries": [
+        "Weapon confirmation_2 legs_burst rifle_WP_R_1610 -- 武器確認_2脚_バーストライフル_WP_R_1610"
+      ]
+    },
+    {
+      "ID": 910000009,
+      "Entries": [
+        "Weapon confirmation_2 legs_linear rifle_WP_R_1620 -- 武器確認_2脚_リニアライフル_WP_R_1620"
+      ]
+    },
+    {
+      "ID": 910000010,
+      "Entries": [
+        "Weapon confirmation_2 legs_linear rifle 2_WP_R_1630 -- 武器確認_2脚_リニアライフル2_WP_R_1630"
+      ]
+    },
+    {
+      "ID": 910000011,
+      "Entries": [
+        "Weapon confirmation_2 legs_burst assault rifle_WP_R_1710 -- 武器確認_2脚_バーストアサルトライフル_WP_R_1710"
+      ]
+    },
+    {
+      "ID": 910000012,
+      "Entries": [
+        "Weapon confirmation_2 legs_assault rifle_WP_R_1720 -- 武器確認_2脚_アサルトライフル_WP_R_1720"
+      ]
+    },
+    {
+      "ID": 910000013,
+      "Entries": [
+        "Weapon confirmation_2 legs_assault rifle 2_WP_R_1730 -- 武器確認_2脚_アサルトライフル2_WP_R_1730"
+      ]
+    },
+    {
+      "ID": 910000014,
+      "Entries": [
+        "Weapon confirmation_2 legs_burst machine gun_WP_R_1810 -- 武器確認_2脚_バーストマシンガン_WP_R_1810"
+      ]
+    },
+    {
+      "ID": 910000015,
+      "Entries": [
+        "Weapon confirmation_2 legs_machine gun_WP_R_1820 -- 武器確認_2脚_マシンガン_WP_R_1820"
+      ]
+    },
+    {
+      "ID": 910000016,
+      "Entries": [
+        "Weapon confirmation_2 legs_machine gun 2_WP_R_1830 -- 武器確認_2脚_マシンガン2_WP_R_1830"
+      ]
+    },
+    {
+      "ID": 910000017,
+      "Entries": [
+        "Weapon confirmation_2 legs_Gatling gun_WP_R_1910 -- 武器確認_2脚_ガトリングガン_WP_R_1910"
+      ]
+    },
+    {
+      "ID": 910000018,
+      "Entries": [
+        "Weapon confirmation_2 legs_needle gun_WP_R_2010 -- 武器確認_2脚_ニードルガン_WP_R_2010"
+      ]
+    },
+    {
+      "ID": 910000019,
+      "Entries": [
+        "Weapon confirmation_2 legs_Burst handgun_WP_R_2020 -- 武器確認_2脚_バーストハンドガン_WP_R_2020"
+      ]
+    },
+    {
+      "ID": 910000020,
+      "Entries": [
+        "Weapon confirmation_2 legs_handgun_WP_R_2030 -- 武器確認_2脚_ハンドガン_WP_R_2030"
+      ]
+    },
+    {
+      "ID": 910000021,
+      "Entries": [
+        "Weapon confirmation_2 legs_hand gun 2_WP_R_2040 -- 武器確認_2脚_ハンドガン2_WP_R_2040"
+      ]
+    },
+    {
+      "ID": 910000022,
+      "Entries": [
+        "Weapon confirmation_2 legs_Jamming bomb launcher_WP_R_2110 -- 武器確認_2脚_ジャミングボムランチャー_WP_R_2110"
+      ]
+    },
+    {
+      "ID": 910000023,
+      "Entries": [
+        "Weapon confirmation_2 legs_Napalm bomb launcher_WP_R_2120 -- 武器確認_2脚_ナパームボムランチャー_WP_R_2120"
+      ]
+    },
+    {
+      "ID": 910000024,
+      "Entries": [
+        "Weapon confirmation_2 legs_Stun bomb launcher_WP_R_2130 -- 武器確認_2脚_スタンボムランチャー_WP_R_2130"
+      ]
+    },
+    {
+      "ID": 910000025,
+      "Entries": [
+        "Weapon confirmation_2 legs_hand missile_WP_R_2210 -- 武器確認_2脚_ハンドミサイル_WP_R_2210"
+      ]
+    },
+    {
+      "ID": 910000026,
+      "Entries": [
+        "Weapon confirmation_2 legs_splitting hand missile_WP_R_2220 -- 武器確認_2脚_分裂ハンドミサイル_WP_R_2220"
+      ]
+    },
+    {
+      "ID": 910000027,
+      "Entries": [
+        "Weapon confirmation_2 legs_grenade 3_WP_R_2310 -- 武器確認_2脚_グレネード3_WP_R_2310"
+      ]
+    },
+    {
+      "ID": 910000028,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser/plasma rifle_WP_A_2420 -- 武器確認_2脚_レーザー/プラズマライフル_WP_A_2420"
+      ]
+    },
+    {
+      "ID": 910000029,
+      "Entries": [
+        "Weapon confirmation_2 legs_Plasma rifle_WP_A_2410 -- 武器確認_2脚_プラズマライフル_WP_A_2410"
+      ]
+    },
+    {
+      "ID": 910000030,
+      "Entries": [
+        "Weapon confirmation_2 legs_double laser rifle_WP_A_2510 -- 武器確認_2脚_ダブルレーザーライフル_WP_A_2510"
+      ]
+    },
+    {
+      "ID": 910000031,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser shotgun 2_WP_A_2610 -- 武器確認_2脚_レーザーショットガン2_WP_A_2610"
+      ]
+    },
+    {
+      "ID": 910000032,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser shotgun_WP_A_2620 -- 武器確認_2脚_レーザーショットガン_WP_A_2620"
+      ]
+    },
+    {
+      "ID": 910000033,
+      "Entries": [
+        "Weapon confirmation_2 legs_Plasma rifle 2_WP_A_2630 -- 武器確認_2脚_プラズマライフル2_WP_A_2630"
+      ]
+    },
+    {
+      "ID": 910000034,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser handgun_WP_A_2710 -- 武器確認_2脚_レーザーハンドガン_WP_A_2710"
+      ]
+    },
+    {
+      "ID": 910000035,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser rifle_WP_A_2720 -- 武器確認_2脚_レーザーライフル_WP_A_2720"
+      ]
+    },
+    {
+      "ID": 910000036,
+      "Entries": [
+        "Weapon confirmation_2 legs_Coral rifle_WP_A_2730 -- 武器確認_2脚_コーラルライフル_WP_A_2730"
+      ]
+    },
+    {
+      "ID": 910000037,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser rifle 2_WP_A_2740 -- 武器確認_2脚_レーザーライフル2_WP_A_2740"
+      ]
+    },
+    {
+      "ID": 910000038,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse gun 2_WP_A_2810 -- 武器確認_2脚_パルスガン2_WP_A_2810"
+      ]
+    },
+    {
+      "ID": 910000039,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse gun_WP_A_2820 -- 武器確認_2脚_パルスガン_WP_A_2820"
+      ]
+    },
+    {
+      "ID": 910000040,
+      "Entries": [
+        "Weapon confirmation_2 legs_Flamethrower_WP_A_2910 -- 武器確認_2脚_火炎放射器_WP_A_2910"
+      ]
+    },
+    {
+      "ID": 910000041,
+      "Entries": [
+        "Weapon confirmation_2 legs_Penetrating bazooka_WP_A_3010 -- 武器確認_2脚_浸徹バズーカ_WP_A_3010"
+      ]
+    },
+    {
+      "ID": 910000042,
+      "Entries": [
+        "Weapon confirmation_2 legs_stun gun_WP_A_3020 -- 武器確認_2脚_スタンガン_WP_A_3020"
+      ]
+    },
+    {
+      "ID": 910000043,
+      "Entries": [
+        "Weapon confirmation_2 legs_assault hand missile_WP_A_3030 -- 武器確認_2脚_強襲ハンドミサイル_WP_A_3030"
+      ]
+    },
+    {
+      "ID": 910000999,
+      "Entries": [
+        "==\u3000Blade\u3000== -- ==\u3000ブレード\u3000=="
+      ]
+    },
+    {
+      "ID": 910001000,
+      "Entries": [
+        "Weapon confirmation_2 legs_Pile bunker_WP_L_0010 -- 武器確認_2脚_パイルバンカー_WP_L_0010"
+      ]
+    },
+    {
+      "ID": 910001001,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse blade_WP_L_0210 -- 武器確認_2脚_パルスブレード_WP_L_0210"
+      ]
+    },
+    {
+      "ID": 910001002,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser blade_WP_L_0220 -- 武器確認_2脚_レーザーブレード_WP_L_0220"
+      ]
+    },
+    {
+      "ID": 910001003,
+      "Entries": [
+        "Weapon confirmation_2 legs_Coral blade_WP_L_0230 -- 武器確認_2脚_コーラルブレード_WP_L_0230"
+      ]
+    },
+    {
+      "ID": 910001004,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser dagger_WP_L_0240 -- 武器確認_2脚_レーザーダガー_WP_L_0240"
+      ]
+    },
+    {
+      "ID": 910001005,
+      "Entries": [
+        "Weapon confirmation_2 legs_Light wave blade_WP_L_0250 -- 武器確認_2脚_光波ブレード_WP_L_0250"
+      ]
+    },
+    {
+      "ID": 910001006,
+      "Entries": [
+        "Weapon confirmation_2 legs_Laser Naginata_WP_L_0410 -- 武器確認_2脚_レーザーナギナタ_WP_L_0410"
+      ]
+    },
+    {
+      "ID": 910001007,
+      "Entries": [
+        "Weapon confirmation_2 legs_Bomb scatter_WP_L_0510 -- 武器確認_2脚_ボムスキャッター_WP_L_0510"
+      ]
+    },
+    {
+      "ID": 910001008,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser lance_WP_L_0610 -- 武器確認_2脚_レーザーランス_WP_L_0610"
+      ]
+    },
+    {
+      "ID": 910001009,
+      "Entries": [
+        "Weapon confirmation_2 legs_stun baton_WP_L_0910 -- 武器確認_2脚_スタンバトン_WP_L_0910"
+      ]
+    },
+    {
+      "ID": 910001010,
+      "Entries": [
+        "Weapon confirmation_2 legs_chainsaw_WP_L_1010 -- 武器確認_2脚_チェーンソー_WP_L_1010"
+      ]
+    },
+    {
+      "ID": 910001011,
+      "Entries": [
+        "Weapon confirmation_2 legs_Plasma spinner_WP_L_1210 -- 武器確認_2脚_プラズマスピナー_WP_L_1210"
+      ]
+    },
+    {
+      "ID": 910001999,
+      "Entries": [
+        "==\u3000Shoulder\u3000== -- ==\u3000肩\u3000=="
+      ]
+    },
+    {
+      "ID": 910002000,
+      "Entries": [
+        "Weapon confirmation_2 legs_Grenade cannon_WP_R_4010 -- 武器確認_2脚_グレネードキャノン_WP_R_4010"
+      ]
+    },
+    {
+      "ID": 910002001,
+      "Entries": [
+        "Weapon confirmation_2 legs_Spreading bazooka cannon_WP_R_4110 -- 武器確認_2脚_拡散バズーカキャノン_WP_R_4110"
+      ]
+    },
+    {
+      "ID": 910002002,
+      "Entries": [
+        "Weapon confirmation_2 legs_triple plasma missile_WP_R_4210 -- 武器確認_2脚_3連プラズマミサイル_WP_R_4210"
+      ]
+    },
+    {
+      "ID": 910002003,
+      "Entries": [
+        "Weapon confirmation_2 legs_6 series plasma missile_WP_R_4211 -- 武器確認_2脚_6連プラズマミサイル_WP_R_4211"
+      ]
+    },
+    {
+      "ID": 910002004,
+      "Entries": [
+        "Weapon confirmation_2 legs_Plasma missile 2_WP_R_4220 -- 武器確認_2脚_プラズマミサイル2_WP_R_4220"
+      ]
+    },
+    {
+      "ID": 910002005,
+      "Entries": [
+        "Weapon confirmation_2 legs_multi-stage tracking missile_WP_R_4230 -- 武器確認_2脚_多段追尾ミサイル_WP_R_4230"
+      ]
+    },
+    {
+      "ID": 910002006,
+      "Entries": [
+        "Weapon confirmation_2 legs_tracking missile_WP_R_4231 -- 武器確認_2脚_追尾ミサイル_WP_R_4231"
+      ]
+    },
+    {
+      "ID": 910002007,
+      "Entries": [
+        "Weapon confirmation_2 legs_Coral missile_WP_R_4240 -- 武器確認_2脚_コーラルミサイル_WP_R_4240"
+      ]
+    },
+    {
+      "ID": 910002008,
+      "Entries": [
+        "Weapon confirmation_2 legs_12 vertical missiles_WP_R_4250 -- 武器確認_2脚_12連垂直ミサイル_WP_R_4250"
+      ]
+    },
+    {
+      "ID": 910002009,
+      "Entries": [
+        "Weapon confirmation_2 legs_8 vertical missiles_WP_R_4251 -- 武器確認_2脚_8連垂直ミサイル_WP_R_4251"
+      ]
+    },
+    {
+      "ID": 910002010,
+      "Entries": [
+        "Weapon confirmation_2 legs_4 vertical missiles_WP_R_4252 -- 武器確認_2脚_4連垂直ミサイル_WP_R_4252"
+      ]
+    },
+    {
+      "ID": 910002011,
+      "Entries": [
+        "Weapon confirmation_2 legs_penetrating missile_WP_R_4260 -- 武器確認_2脚_浸徹ミサイル_WP_R_4260"
+      ]
+    },
+    {
+      "ID": 910002012,
+      "Entries": [
+        "Weapon confirmation_2 legs_back missile heavy 1_WP_R_4270 -- 武器確認_2脚_背ミサイル重1_WP_R_4270"
+      ]
+    },
+    {
+      "ID": 910002013,
+      "Entries": [
+        "Weapon confirmation_2 legs_Raid missile_WP_R_4280 -- 武器確認_2脚_レイドミサイル_WP_R_4280"
+      ]
+    },
+    {
+      "ID": 910002014,
+      "Entries": [
+        "Weapon confirmation_2 legs_6 missiles_WP_R_4290 -- 武器確認_2脚_6連装ミサイル_WP_R_4290"
+      ]
+    },
+    {
+      "ID": 910002015,
+      "Entries": [
+        "Weapon confirmation_2 legs_quadruple missile_WP_R_4291 -- 武器確認_2脚_4連装ミサイル_WP_R_4291"
+      ]
+    },
+    {
+      "ID": 910002016,
+      "Entries": [
+        "Weapon confirmation_2 legs_10 twin missiles_WP_R_4292 -- 武器確認_2脚_10連装ミサイル_WP_R_4292"
+      ]
+    },
+    {
+      "ID": 910002017,
+      "Entries": [
+        "Weapon confirmation_2 legs_pincer missile_WP_R_4300 -- 武器確認_2脚_挟撃ミサイル_WP_R_4300"
+      ]
+    },
+    {
+      "ID": 910002018,
+      "Entries": [
+        "Weapon confirmation_2 legs_triple 2way medium-sized missile_WP_R_4301 -- 武器確認_2脚_3連2way中型ミサイル_WP_R_4301"
+      ]
+    },
+    {
+      "ID": 910002019,
+      "Entries": [
+        "Weapon confirmation_2 legs_2 series 12 fission missile_WP_R_4302 -- 武器確認_2脚_2連12分裂ミサイル_WP_R_4302"
+      ]
+    },
+    {
+      "ID": 910002020,
+      "Entries": [
+        "Weapon confirmation_2 legs_double 2way missile_WP_R_4303 -- 武器確認_2脚_2連2wayミサイル_WP_R_4303"
+      ]
+    },
+    {
+      "ID": 910002021,
+      "Entries": [
+        "Weapon confirmation_2 legs_double 6-fission missile_WP_R_4310 -- 武器確認_2脚_2連6分裂ミサイル_WP_R_4310"
+      ]
+    },
+    {
+      "ID": 910002022,
+      "Entries": [
+        "Weapon confirmation_2 legs_fission missile_WP_R_4311 -- 武器確認_2脚_分裂ミサイル_WP_R_4311"
+      ]
+    },
+    {
+      "ID": 910002023,
+      "Entries": [
+        "Weapon confirmation_2 legs_container missile_WP_R_4320 -- 武器確認_2脚_コンテナミサイル_WP_R_4320"
+      ]
+    },
+    {
+      "ID": 910002024,
+      "Entries": [
+        "Weapon confirmation_2 legs_needle missile_WP_R_4330 -- 武器確認_2脚_ニードルミサイル_WP_R_4330"
+      ]
+    },
+    {
+      "ID": 910002025,
+      "Entries": [
+        "Weapon confirmation_2 legs_cluster missile_WP_R_4340 -- 武器確認_2脚_クラスタミサイル_WP_R_4340"
+      ]
+    },
+    {
+      "ID": 910002026,
+      "Entries": [
+        "Weapon confirmation_2 legs_Grenade cannon 2_WP_R_4410 -- 武器確認_2脚_グレネードキャノン2_WP_R_4410"
+      ]
+    },
+    {
+      "ID": 910002027,
+      "Entries": [
+        "Weapon confirmation_2 legs_Plasma cannon_WP_R_4510 -- 武器確認_2脚_プラズマキャノン_WP_R_4510"
+      ]
+    },
+    {
+      "ID": 910002028,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser cannon_WP_R_4610 -- 武器確認_2脚_レーザーキャノン_WP_R_4610"
+      ]
+    },
+    {
+      "ID": 910002029,
+      "Entries": [
+        "Weapon confirmation_2 legs_triple laser cannon_WP_R_4710 -- 武器確認_2脚_三連レーザーキャノン_WP_R_4710"
+      ]
+    },
+    {
+      "ID": 910002030,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse cannon_WP_R_4810 -- 武器確認_2脚_パルスキャノン_WP_R_4810"
+      ]
+    },
+    {
+      "ID": 910002031,
+      "Entries": [
+        "Weapon confirmation_2 legs_diffuse laser cannon_WP_R_5010 -- 武器確認_2脚_拡散レーザーキャノン_WP_R_5010"
+      ]
+    },
+    {
+      "ID": 910002032,
+      "Entries": [
+        "Weapon confirmation_2 legs_additional booster_WP_A_5610 -- 武器確認_2脚_追加ブースタ_WP_A_5610"
+      ]
+    },
+    {
+      "ID": 910002033,
+      "Entries": [
+        "Weapon confirmation_2 legs_Additional booster 3_WP_A_5620 -- 武器確認_2脚_追加ブースタ3_WP_A_5620"
+      ]
+    },
+    {
+      "ID": 910002034,
+      "Entries": [
+        "Weapon confirmation_2 legs_Additional booster 2_WP_A_5630 -- 武器確認_2脚_追加ブースタ2_WP_A_5630"
+      ]
+    },
+    {
+      "ID": 910002035,
+      "Entries": [
+        "Weapon confirmation_2 legs_live ammunition orbit_WP_R_5710 -- 武器確認_2脚_実弾オービット_WP_R_5710"
+      ]
+    },
+    {
+      "ID": 910002036,
+      "Entries": [
+        "Weapon confirmation_2 legs_Laser Orbit_WP_R_5720 -- 武器確認_2脚_レーザーオービット_WP_R_5720"
+      ]
+    },
+    {
+      "ID": 910002037,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser drone_WP_R_5810 -- 武器確認_2脚_レーザードローン_WP_R_5810"
+      ]
+    },
+    {
+      "ID": 910002038,
+      "Entries": [
+        "Weapon confirmation_2 legs_laser turret_WP_R_5820 -- 武器確認_2脚_レーザータレット_WP_R_5820"
+      ]
+    },
+    {
+      "ID": 910002039,
+      "Entries": [
+        "Weapon confirmation_2 legs_Pulse shield launcher_WP_R_4820 -- 武器確認_2脚_パルスシールドランチャー_WP_R_4820"
+      ]
+    },
+    {
+      "ID": 910002040,
+      "Entries": [
+        "Weapon confirmation_2 legs_stun needle launcher_WP_R_4830 -- 武器確認_2脚_スタンニードルランチャー_WP_R_4830"
+      ]
+    },
+    {
+      "ID": 910002999,
+      "Entries": [
+        "== Shield == -- ==\u3000シールド\u3000=="
+      ]
+    },
+    {
+      "ID": 910003000,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse buckler_WP_L_4910 -- 武器確認_2脚_パルスバックラー_WP_L_4910"
+      ]
+    },
+    {
+      "ID": 910003001,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse shield 2_WP_L_4920 -- 武器確認_2脚_パルスシールド2_WP_L_4920"
+      ]
+    },
+    {
+      "ID": 910003002,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse shield_WP_L_4940 -- 武器確認_2脚_パルスシールド_WP_L_4940"
+      ]
+    },
+    {
+      "ID": 910003003,
+      "Entries": [
+        "Weapon confirmation_2 legs_pulse shield 3_WP_L_4950 -- 武器確認_2脚_パルスシールド3_WP_L_4950"
+      ]
+    },
+    {
+      "ID": 910003004,
+      "Entries": [
+        "Weapon confirmation_2 legs_Pulse buckler 2_WP_L_4960 -- 武器確認_2脚_パルスバックラー2_WP_L_4960"
+      ]
+    },
+    {
+      "ID": 910003005,
+      "Entries": [
+        "Weapon confirmation_2 legs_Coral shield_WP_L_4970 -- 武器確認_2脚_コーラルシールド_WP_L_4970"
+      ]
+    },
+    {
+      "ID": 910003006,
+      "Entries": [
+        "Weapon confirmation_2 legs_Pulse Scutum_WP_L_4980 -- 武器確認_2脚_パルススクトゥム_WP_L_4980"
+      ]
+    },
+    {
+      "ID": 919999999,
+      "Entries": [
+        "==\u3000Hand\u3000== -- ==\u3000手\u3000=="
+      ]
+    },
+    {
+      "ID": 920000000,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Grenade_WP_R_1310 -- 武器確認_逆脚_グレネード_WP_R_1310"
+      ]
+    },
+    {
+      "ID": 920000001,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Grenade 2_WP_R_1320 -- 武器確認_逆脚_グレネード2_WP_R_1320"
+      ]
+    },
+    {
+      "ID": 920000002,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Bazooka 3_WP_R_1410 -- 武器確認_逆脚_バズーカ3_WP_R_1410"
+      ]
+    },
+    {
+      "ID": 920000003,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Bazooka 2_WP_R_1420 -- 武器確認_逆脚_バズーカ2_WP_R_1420"
+      ]
+    },
+    {
+      "ID": 920000004,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Bazooka_WP_R_1430 -- 武器確認_逆脚_バズーカ_WP_R_1430"
+      ]
+    },
+    {
+      "ID": 920000005,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Shotgun 3_WP_R_1510 -- 武器確認_逆脚_ショットガン3_WP_R_1510"
+      ]
+    },
+    {
+      "ID": 920000006,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Shotgun_WP_R_1520 -- 武器確認_逆脚_ショットガン_WP_R_1520"
+      ]
+    },
+    {
+      "ID": 920000007,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Shotgun 2_WP_R_1530 -- 武器確認_逆脚_ショットガン2_WP_R_1530"
+      ]
+    },
+    {
+      "ID": 920000008,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Burst rifle_WP_R_1610 -- 武器確認_逆脚_バーストライフル_WP_R_1610"
+      ]
+    },
+    {
+      "ID": 920000009,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Linear rifle_WP_R_1620 -- 武器確認_逆脚_リニアライフル_WP_R_1620"
+      ]
+    },
+    {
+      "ID": 920000010,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Linear rifle 2_WP_R_1630 -- 武器確認_逆脚_リニアライフル2_WP_R_1630"
+      ]
+    },
+    {
+      "ID": 920000011,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Burst assault rifle_WP_R_1710 -- 武器確認_逆脚_バーストアサルトライフル_WP_R_1710"
+      ]
+    },
+    {
+      "ID": 920000012,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Assault rifle_WP_R_1720 -- 武器確認_逆脚_アサルトライフル_WP_R_1720"
+      ]
+    },
+    {
+      "ID": 920000013,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Assault rifle 2_WP_R_1730 -- 武器確認_逆脚_アサルトライフル2_WP_R_1730"
+      ]
+    },
+    {
+      "ID": 920000014,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Burst machine gun_WP_R_1810 -- 武器確認_逆脚_バーストマシンガン_WP_R_1810"
+      ]
+    },
+    {
+      "ID": 920000015,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Machine gun_WP_R_1820 -- 武器確認_逆脚_マシンガン_WP_R_1820"
+      ]
+    },
+    {
+      "ID": 920000016,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Machine gun 2_WP_R_1830 -- 武器確認_逆脚_マシンガン2_WP_R_1830"
+      ]
+    },
+    {
+      "ID": 920000017,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Gatling gun_WP_R_1910 -- 武器確認_逆脚_ガトリングガン_WP_R_1910"
+      ]
+    },
+    {
+      "ID": 920000018,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Needle gun_WP_R_2010 -- 武器確認_逆脚_ニードルガン_WP_R_2010"
+      ]
+    },
+    {
+      "ID": 920000019,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Burst handgun_WP_R_2020 -- 武器確認_逆脚_バーストハンドガン_WP_R_2020"
+      ]
+    },
+    {
+      "ID": 920000020,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Handgun_WP_R_2030 -- 武器確認_逆脚_ハンドガン_WP_R_2030"
+      ]
+    },
+    {
+      "ID": 920000021,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Handgun 2_WP_R_2040 -- 武器確認_逆脚_ハンドガン2_WP_R_2040"
+      ]
+    },
+    {
+      "ID": 920000022,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Jamming bomb launcher_WP_R_2110 -- 武器確認_逆脚_ジャミングボムランチャー_WP_R_2110"
+      ]
+    },
+    {
+      "ID": 920000023,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Napalm bomb launcher_WP_R_2120 -- 武器確認_逆脚_ナパームボムランチャー_WP_R_2120"
+      ]
+    },
+    {
+      "ID": 920000024,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Stun bomb launcher_WP_R_2130 -- 武器確認_逆脚_スタンボムランチャー_WP_R_2130"
+      ]
+    },
+    {
+      "ID": 920000025,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Hand missile_WP_R_2210 -- 武器確認_逆脚_ハンドミサイル_WP_R_2210"
+      ]
+    },
+    {
+      "ID": 920000026,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Split hand missile_WP_R_2220 -- 武器確認_逆脚_分裂ハンドミサイル_WP_R_2220"
+      ]
+    },
+    {
+      "ID": 920000027,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Grenade 3_WP_R_2310 -- 武器確認_逆脚_グレネード3_WP_R_2310"
+      ]
+    },
+    {
+      "ID": 920000028,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser/Plasma rifle_WP_A_2420 -- 武器確認_逆脚_レーザー/プラズマライフル_WP_A_2420"
+      ]
+    },
+    {
+      "ID": 920000029,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Plasma rifle_WP_A_2410 -- 武器確認_逆脚_プラズマライフル_WP_A_2410"
+      ]
+    },
+    {
+      "ID": 920000030,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Double laser rifle_WP_A_2510 -- 武器確認_逆脚_ダブルレーザーライフル_WP_A_2510"
+      ]
+    },
+    {
+      "ID": 920000031,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser shotgun 2_WP_A_2610 -- 武器確認_逆脚_レーザーショットガン2_WP_A_2610"
+      ]
+    },
+    {
+      "ID": 920000032,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser shotgun_WP_A_2620 -- 武器確認_逆脚_レーザーショットガン_WP_A_2620"
+      ]
+    },
+    {
+      "ID": 920000033,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Plasma rifle 2_WP_A_2630 -- 武器確認_逆脚_プラズマライフル2_WP_A_2630"
+      ]
+    },
+    {
+      "ID": 920000034,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser handgun_WP_A_2710 -- 武器確認_逆脚_レーザーハンドガン_WP_A_2710"
+      ]
+    },
+    {
+      "ID": 920000035,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser rifle_WP_A_2720 -- 武器確認_逆脚_レーザーライフル_WP_A_2720"
+      ]
+    },
+    {
+      "ID": 920000036,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Coral rifle_WP_A_2730 -- 武器確認_逆脚_コーラルライフル_WP_A_2730"
+      ]
+    },
+    {
+      "ID": 920000037,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser rifle 2_WP_A_2740 -- 武器確認_逆脚_レーザーライフル2_WP_A_2740"
+      ]
+    },
+    {
+      "ID": 920000038,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse gun 2_WP_A_2810 -- 武器確認_逆脚_パルスガン2_WP_A_2810"
+      ]
+    },
+    {
+      "ID": 920000039,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse gun_WP_A_2820 -- 武器確認_逆脚_パルスガン_WP_A_2820"
+      ]
+    },
+    {
+      "ID": 920000040,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Flamethrower_WP_A_2910 -- 武器確認_逆脚_火炎放射器_WP_A_2910"
+      ]
+    },
+    {
+      "ID": 920000041,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Penetrating bazooka_WP_A_3010 -- 武器確認_逆脚_浸徹バズーカ_WP_A_3010"
+      ]
+    },
+    {
+      "ID": 920000042,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Stun gun_WP_A_3020 -- 武器確認_逆脚_スタンガン_WP_A_3020"
+      ]
+    },
+    {
+      "ID": 920000043,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Assault hand missile_WP_A_3030 -- 武器確認_逆脚_強襲ハンドミサイル_WP_A_3030"
+      ]
+    },
+    {
+      "ID": 920000999,
+      "Entries": [
+        "==\u3000Blade\u3000== -- ==\u3000ブレード\u3000=="
+      ]
+    },
+    {
+      "ID": 920001000,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pile bunker_WP_L_0010 -- 武器確認_逆脚_パイルバンカー_WP_L_0010"
+      ]
+    },
+    {
+      "ID": 920001001,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse blade_WP_L_0210 -- 武器確認_逆脚_パルスブレード_WP_L_0210"
+      ]
+    },
+    {
+      "ID": 920001002,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser blade_WP_L_0220 -- 武器確認_逆脚_レーザーブレード_WP_L_0220"
+      ]
+    },
+    {
+      "ID": 920001003,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Coral Blade_WP_L_0230 -- 武器確認_逆脚_コーラルブレード_WP_L_0230"
+      ]
+    },
+    {
+      "ID": 920001004,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser dagger_WP_L_0240 -- 武器確認_逆脚_レーザーダガー_WP_L_0240"
+      ]
+    },
+    {
+      "ID": 920001005,
+      "Entries": [
+        "Weapon confirmation_Gyaku leg_Light wave blade_WP_L_0250 -- 武器確認_逆脚_光波ブレード_WP_L_0250"
+      ]
+    },
+    {
+      "ID": 920001006,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Laser Naginata_WP_L_0410 -- 武器確認_逆脚_レーザーナギナタ_WP_L_0410"
+      ]
+    },
+    {
+      "ID": 920001007,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Bomb scatter_WP_L_0510 -- 武器確認_逆脚_ボムスキャッター_WP_L_0510"
+      ]
+    },
+    {
+      "ID": 920001008,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser lance_WP_L_0610 -- 武器確認_逆脚_レーザーランス_WP_L_0610"
+      ]
+    },
+    {
+      "ID": 920001009,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Stun baton_WP_L_0910 -- 武器確認_逆脚_スタンバトン_WP_L_0910"
+      ]
+    },
+    {
+      "ID": 920001010,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Chainsaw_WP_L_1010 -- 武器確認_逆脚_チェーンソー_WP_L_1010"
+      ]
+    },
+    {
+      "ID": 920001011,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Plasma spinner_WP_L_1210 -- 武器確認_逆脚_プラズマスピナー_WP_L_1210"
+      ]
+    },
+    {
+      "ID": 920001999,
+      "Entries": [
+        "==\u3000Shoulder\u3000== -- ==\u3000肩\u3000=="
+      ]
+    },
+    {
+      "ID": 920002000,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Grenade cannon_WP_R_4010 -- 武器確認_逆脚_グレネードキャノン_WP_R_4010"
+      ]
+    },
+    {
+      "ID": 920002001,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Spreading bazooka cannon_WP_R_4110 -- 武器確認_逆脚_拡散バズーカキャノン_WP_R_4110"
+      ]
+    },
+    {
+      "ID": 920002002,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Triple plasma missile_WP_R_4210 -- 武器確認_逆脚_3連プラズマミサイル_WP_R_4210"
+      ]
+    },
+    {
+      "ID": 920002003,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_6 series plasma missile_WP_R_4211 -- 武器確認_逆脚_6連プラズマミサイル_WP_R_4211"
+      ]
+    },
+    {
+      "ID": 920002004,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Plasma missile 2_WP_R_4220 -- 武器確認_逆脚_プラズマミサイル2_WP_R_4220"
+      ]
+    },
+    {
+      "ID": 920002005,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Multi-stage tracking missile_WP_R_4230 -- 武器確認_逆脚_多段追尾ミサイル_WP_R_4230"
+      ]
+    },
+    {
+      "ID": 920002006,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Tracking missile_WP_R_4231 -- 武器確認_逆脚_追尾ミサイル_WP_R_4231"
+      ]
+    },
+    {
+      "ID": 920002007,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Coral missile_WP_R_4240 -- 武器確認_逆脚_コーラルミサイル_WP_R_4240"
+      ]
+    },
+    {
+      "ID": 920002008,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_12 vertical missiles_WP_R_4250 -- 武器確認_逆脚_12連垂直ミサイル_WP_R_4250"
+      ]
+    },
+    {
+      "ID": 920002009,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_8 vertical missiles_WP_R_4251 -- 武器確認_逆脚_8連垂直ミサイル_WP_R_4251"
+      ]
+    },
+    {
+      "ID": 920002010,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_4 vertical missiles_WP_R_4252 -- 武器確認_逆脚_4連垂直ミサイル_WP_R_4252"
+      ]
+    },
+    {
+      "ID": 920002011,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Penetrating missile_WP_R_4260 -- 武器確認_逆脚_浸徹ミサイル_WP_R_4260"
+      ]
+    },
+    {
+      "ID": 920002012,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Back missile heavy 1_WP_R_4270 -- 武器確認_逆脚_背ミサイル重1_WP_R_4270"
+      ]
+    },
+    {
+      "ID": 920002013,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Raid missile_WP_R_4280 -- 武器確認_逆脚_レイドミサイル_WP_R_4280"
+      ]
+    },
+    {
+      "ID": 920002014,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_6 missiles_WP_R_4290 -- 武器確認_逆脚_6連装ミサイル_WP_R_4290"
+      ]
+    },
+    {
+      "ID": 920002015,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_quadruple missile_WP_R_4291 -- 武器確認_逆脚_4連装ミサイル_WP_R_4291"
+      ]
+    },
+    {
+      "ID": 920002016,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_10 twin missiles_WP_R_4292 -- 武器確認_逆脚_10連装ミサイル_WP_R_4292"
+      ]
+    },
+    {
+      "ID": 920002017,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pincer missile_WP_R_4300 -- 武器確認_逆脚_挟撃ミサイル_WP_R_4300"
+      ]
+    },
+    {
+      "ID": 920002018,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Triple 2way medium-sized missile_WP_R_4301 -- 武器確認_逆脚_3連2way中型ミサイル_WP_R_4301"
+      ]
+    },
+    {
+      "ID": 920002019,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_2 series 12 fission missile_WP_R_4302 -- 武器確認_逆脚_2連12分裂ミサイル_WP_R_4302"
+      ]
+    },
+    {
+      "ID": 920002020,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Double 2way missile_WP_R_4303 -- 武器確認_逆脚_2連2wayミサイル_WP_R_4303"
+      ]
+    },
+    {
+      "ID": 920002021,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Dual 6-fission missile_WP_R_4310 -- 武器確認_逆脚_2連6分裂ミサイル_WP_R_4310"
+      ]
+    },
+    {
+      "ID": 920002022,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Flision missile_WP_R_4311 -- 武器確認_逆脚_分裂ミサイル_WP_R_4311"
+      ]
+    },
+    {
+      "ID": 920002023,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Container missile_WP_R_4320 -- 武器確認_逆脚_コンテナミサイル_WP_R_4320"
+      ]
+    },
+    {
+      "ID": 920002024,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Needle missile_WP_R_4330 -- 武器確認_逆脚_ニードルミサイル_WP_R_4330"
+      ]
+    },
+    {
+      "ID": 920002025,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Cluster missile_WP_R_4340 -- 武器確認_逆脚_クラスタミサイル_WP_R_4340"
+      ]
+    },
+    {
+      "ID": 920002026,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Grenade cannon 2_WP_R_4410 -- 武器確認_逆脚_グレネードキャノン2_WP_R_4410"
+      ]
+    },
+    {
+      "ID": 920002027,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Plasma cannon_WP_R_4510 -- 武器確認_逆脚_プラズマキャノン_WP_R_4510"
+      ]
+    },
+    {
+      "ID": 920002028,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser cannon_WP_R_4610 -- 武器確認_逆脚_レーザーキャノン_WP_R_4610"
+      ]
+    },
+    {
+      "ID": 920002029,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Triple laser cannon_WP_R_4710 -- 武器確認_逆脚_三連レーザーキャノン_WP_R_4710"
+      ]
+    },
+    {
+      "ID": 920002030,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse cannon_WP_R_4810 -- 武器確認_逆脚_パルスキャノン_WP_R_4810"
+      ]
+    },
+    {
+      "ID": 920002031,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Diffuse laser cannon_WP_R_5010 -- 武器確認_逆脚_拡散レーザーキャノン_WP_R_5010"
+      ]
+    },
+    {
+      "ID": 920002032,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Additional booster_WP_A_5610 -- 武器確認_逆脚_追加ブースタ_WP_A_5610"
+      ]
+    },
+    {
+      "ID": 920002033,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Additional booster 3_WP_A_5620 -- 武器確認_逆脚_追加ブースタ3_WP_A_5620"
+      ]
+    },
+    {
+      "ID": 920002034,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Additional booster 2_WP_A_5630 -- 武器確認_逆脚_追加ブースタ2_WP_A_5630"
+      ]
+    },
+    {
+      "ID": 920002035,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Live bullet orbit_WP_R_5710 -- 武器確認_逆脚_実弾オービット_WP_R_5710"
+      ]
+    },
+    {
+      "ID": 920002036,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser orbit_WP_R_5720 -- 武器確認_逆脚_レーザーオービット_WP_R_5720"
+      ]
+    },
+    {
+      "ID": 920002037,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser drone_WP_R_5810 -- 武器確認_逆脚_レーザードローン_WP_R_5810"
+      ]
+    },
+    {
+      "ID": 920002038,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Laser turret_WP_R_5820 -- 武器確認_逆脚_レーザータレット_WP_R_5820"
+      ]
+    },
+    {
+      "ID": 920002039,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse shield launcher_WP_R_4820 -- 武器確認_逆脚_パルスシールドランチャー_WP_R_4820"
+      ]
+    },
+    {
+      "ID": 920002040,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Stun needle launcher_WP_R_4830 -- 武器確認_逆脚_スタンニードルランチャー_WP_R_4830"
+      ]
+    },
+    {
+      "ID": 920002999,
+      "Entries": [
+        "== Shield == -- ==\u3000シールド\u3000=="
+      ]
+    },
+    {
+      "ID": 920003000,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse buckler_WP_L_4910 -- 武器確認_逆脚_パルスバックラー_WP_L_4910"
+      ]
+    },
+    {
+      "ID": 920003001,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse shield 2_WP_L_4920 -- 武器確認_逆脚_パルスシールド2_WP_L_4920"
+      ]
+    },
+    {
+      "ID": 920003002,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse shield_WP_L_4940 -- 武器確認_逆脚_パルスシールド_WP_L_4940"
+      ]
+    },
+    {
+      "ID": 920003003,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse shield 3_WP_L_4950 -- 武器確認_逆脚_パルスシールド3_WP_L_4950"
+      ]
+    },
+    {
+      "ID": 920003004,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse buckler 2_WP_L_4960 -- 武器確認_逆脚_パルスバックラー2_WP_L_4960"
+      ]
+    },
+    {
+      "ID": 920003005,
+      "Entries": [
+        "Weapon confirmation_Gyakuleg_Coral Shield_WP_L_4970 -- 武器確認_逆脚_コーラルシールド_WP_L_4970"
+      ]
+    },
+    {
+      "ID": 920003006,
+      "Entries": [
+        "Weapon confirmation_Reverse leg_Pulse Scutum_WP_L_4980 -- 武器確認_逆脚_パルススクトゥム_WP_L_4980"
+      ]
+    },
+    {
+      "ID": 929999999,
+      "Entries": [
+        "==\u3000Hand\u3000== -- ==\u3000手\u3000=="
+      ]
+    },
+    {
+      "ID": 930000000,
+      "Entries": [
+        "Weapon confirmation_quadruped_grenade_WP_R_1310 -- 武器確認_四脚_グレネード_WP_R_1310"
+      ]
+    },
+    {
+      "ID": 930000001,
+      "Entries": [
+        "Weapon confirmation_quadruped_grenade 2_WP_R_1320 -- 武器確認_四脚_グレネード2_WP_R_1320"
+      ]
+    },
+    {
+      "ID": 930000002,
+      "Entries": [
+        "Weapon confirmation_quadruped_bazooka 3_WP_R_1410 -- 武器確認_四脚_バズーカ3_WP_R_1410"
+      ]
+    },
+    {
+      "ID": 930000003,
+      "Entries": [
+        "Weapon confirmation_quadruped_bazooka 2_WP_R_1420 -- 武器確認_四脚_バズーカ2_WP_R_1420"
+      ]
+    },
+    {
+      "ID": 930000004,
+      "Entries": [
+        "Weapon confirmation_quadruped_bazooka_WP_R_1430 -- 武器確認_四脚_バズーカ_WP_R_1430"
+      ]
+    },
+    {
+      "ID": 930000005,
+      "Entries": [
+        "Weapon confirmation_quadruped_shotgun 3_WP_R_1510 -- 武器確認_四脚_ショットガン3_WP_R_1510"
+      ]
+    },
+    {
+      "ID": 930000006,
+      "Entries": [
+        "Weapon confirmation_quadruped_shotgun_WP_R_1520 -- 武器確認_四脚_ショットガン_WP_R_1520"
+      ]
+    },
+    {
+      "ID": 930000007,
+      "Entries": [
+        "Weapon confirmation_quadruped_shotgun 2_WP_R_1530 -- 武器確認_四脚_ショットガン2_WP_R_1530"
+      ]
+    },
+    {
+      "ID": 930000008,
+      "Entries": [
+        "Weapon confirmation_quadruped_burst rifle_WP_R_1610 -- 武器確認_四脚_バーストライフル_WP_R_1610"
+      ]
+    },
+    {
+      "ID": 930000009,
+      "Entries": [
+        "Weapon confirmation_quadruped_linear rifle_WP_R_1620 -- 武器確認_四脚_リニアライフル_WP_R_1620"
+      ]
+    },
+    {
+      "ID": 930000010,
+      "Entries": [
+        "Weapon confirmation_quadruped_linear rifle 2_WP_R_1630 -- 武器確認_四脚_リニアライフル2_WP_R_1630"
+      ]
+    },
+    {
+      "ID": 930000011,
+      "Entries": [
+        "Weapon confirmation_quadruped_burst assault rifle_WP_R_1710 -- 武器確認_四脚_バーストアサルトライフル_WP_R_1710"
+      ]
+    },
+    {
+      "ID": 930000012,
+      "Entries": [
+        "Weapon confirmation_quadruped_assault rifle_WP_R_1720 -- 武器確認_四脚_アサルトライフル_WP_R_1720"
+      ]
+    },
+    {
+      "ID": 930000013,
+      "Entries": [
+        "Weapon confirmation_quadruped_assault rifle 2_WP_R_1730 -- 武器確認_四脚_アサルトライフル2_WP_R_1730"
+      ]
+    },
+    {
+      "ID": 930000014,
+      "Entries": [
+        "Weapon confirmation_quadruped_burst machine gun_WP_R_1810 -- 武器確認_四脚_バーストマシンガン_WP_R_1810"
+      ]
+    },
+    {
+      "ID": 930000015,
+      "Entries": [
+        "Weapon confirmation_quadruped_machine gun_WP_R_1820 -- 武器確認_四脚_マシンガン_WP_R_1820"
+      ]
+    },
+    {
+      "ID": 930000016,
+      "Entries": [
+        "Weapon confirmation_quadruped_machine gun 2_WP_R_1830 -- 武器確認_四脚_マシンガン2_WP_R_1830"
+      ]
+    },
+    {
+      "ID": 930000017,
+      "Entries": [
+        "Weapon confirmation_quadruped_Gatling gun_WP_R_1910 -- 武器確認_四脚_ガトリングガン_WP_R_1910"
+      ]
+    },
+    {
+      "ID": 930000018,
+      "Entries": [
+        "Weapon confirmation_quadruped_needle gun_WP_R_2010 -- 武器確認_四脚_ニードルガン_WP_R_2010"
+      ]
+    },
+    {
+      "ID": 930000019,
+      "Entries": [
+        "Weapon confirmation_quadruped_burst handgun_WP_R_2020 -- 武器確認_四脚_バーストハンドガン_WP_R_2020"
+      ]
+    },
+    {
+      "ID": 930000020,
+      "Entries": [
+        "Weapon confirmation_quadruped_handgun_WP_R_2030 -- 武器確認_四脚_ハンドガン_WP_R_2030"
+      ]
+    },
+    {
+      "ID": 930000021,
+      "Entries": [
+        "Weapon confirmation_quadruped_handgun 2_WP_R_2040 -- 武器確認_四脚_ハンドガン2_WP_R_2040"
+      ]
+    },
+    {
+      "ID": 930000022,
+      "Entries": [
+        "Weapon confirmation_quadruped_jamming bomb launcher_WP_R_2110 -- 武器確認_四脚_ジャミングボムランチャー_WP_R_2110"
+      ]
+    },
+    {
+      "ID": 930000023,
+      "Entries": [
+        "Weapon confirmation_quadruped_napalm bomb launcher_WP_R_2120 -- 武器確認_四脚_ナパームボムランチャー_WP_R_2120"
+      ]
+    },
+    {
+      "ID": 930000024,
+      "Entries": [
+        "Weapon confirmation_quadruped_stun bomb launcher_WP_R_2130 -- 武器確認_四脚_スタンボムランチャー_WP_R_2130"
+      ]
+    },
+    {
+      "ID": 930000025,
+      "Entries": [
+        "Weapon confirmation_quadruped_hand missile_WP_R_2210 -- 武器確認_四脚_ハンドミサイル_WP_R_2210"
+      ]
+    },
+    {
+      "ID": 930000026,
+      "Entries": [
+        "Weapon confirmation_quadruped_splitting hand missile_WP_R_2220 -- 武器確認_四脚_分裂ハンドミサイル_WP_R_2220"
+      ]
+    },
+    {
+      "ID": 930000027,
+      "Entries": [
+        "Weapon confirmation_quadruped_grenade 3_WP_R_2310 -- 武器確認_四脚_グレネード3_WP_R_2310"
+      ]
+    },
+    {
+      "ID": 930000028,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser/plasma rifle_WP_A_2420 -- 武器確認_四脚_レーザー/プラズマライフル_WP_A_2420"
+      ]
+    },
+    {
+      "ID": 930000029,
+      "Entries": [
+        "Weapon confirmation_quadruped_plasma rifle_WP_A_2410 -- 武器確認_四脚_プラズマライフル_WP_A_2410"
+      ]
+    },
+    {
+      "ID": 930000030,
+      "Entries": [
+        "Weapon confirmation_quadruped_double laser rifle_WP_A_2510 -- 武器確認_四脚_ダブルレーザーライフル_WP_A_2510"
+      ]
+    },
+    {
+      "ID": 930000031,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser shotgun 2_WP_A_2610 -- 武器確認_四脚_レーザーショットガン2_WP_A_2610"
+      ]
+    },
+    {
+      "ID": 930000032,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser shotgun_WP_A_2620 -- 武器確認_四脚_レーザーショットガン_WP_A_2620"
+      ]
+    },
+    {
+      "ID": 930000033,
+      "Entries": [
+        "Weapon confirmation_quadruped_plasma rifle 2_WP_A_2630 -- 武器確認_四脚_プラズマライフル2_WP_A_2630"
+      ]
+    },
+    {
+      "ID": 930000034,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser handgun_WP_A_2710 -- 武器確認_四脚_レーザーハンドガン_WP_A_2710"
+      ]
+    },
+    {
+      "ID": 930000035,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser rifle_WP_A_2720 -- 武器確認_四脚_レーザーライフル_WP_A_2720"
+      ]
+    },
+    {
+      "ID": 930000036,
+      "Entries": [
+        "Weapon confirmation_quadruped_coral rifle_WP_A_2730 -- 武器確認_四脚_コーラルライフル_WP_A_2730"
+      ]
+    },
+    {
+      "ID": 930000037,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser rifle 2_WP_A_2740 -- 武器確認_四脚_レーザーライフル2_WP_A_2740"
+      ]
+    },
+    {
+      "ID": 930000038,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse gun 2_WP_A_2810 -- 武器確認_四脚_パルスガン2_WP_A_2810"
+      ]
+    },
+    {
+      "ID": 930000039,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse gun_WP_A_2820 -- 武器確認_四脚_パルスガン_WP_A_2820"
+      ]
+    },
+    {
+      "ID": 930000040,
+      "Entries": [
+        "Weapon confirmation_quadruped_flamethrower_WP_A_2910 -- 武器確認_四脚_火炎放射器_WP_A_2910"
+      ]
+    },
+    {
+      "ID": 930000041,
+      "Entries": [
+        "Weapon confirmation_quadruped_impregnation bazooka_WP_A_3010 -- 武器確認_四脚_浸徹バズーカ_WP_A_3010"
+      ]
+    },
+    {
+      "ID": 930000042,
+      "Entries": [
+        "Weapon confirmation_quadruped_stun gun_WP_A_3020 -- 武器確認_四脚_スタンガン_WP_A_3020"
+      ]
+    },
+    {
+      "ID": 930000043,
+      "Entries": [
+        "Weapon confirmation_quadruped_assault hand missile_WP_A_3030 -- 武器確認_四脚_強襲ハンドミサイル_WP_A_3030"
+      ]
+    },
+    {
+      "ID": 930000999,
+      "Entries": [
+        "==\u3000Blade\u3000== -- ==\u3000ブレード\u3000=="
+      ]
+    },
+    {
+      "ID": 930001000,
+      "Entries": [
+        "Weapon confirmation_quadruped_pile bunker_WP_L_0010 -- 武器確認_四脚_パイルバンカー_WP_L_0010"
+      ]
+    },
+    {
+      "ID": 930001001,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse blade_WP_L_0210 -- 武器確認_四脚_パルスブレード_WP_L_0210"
+      ]
+    },
+    {
+      "ID": 930001002,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser blade_WP_L_0220 -- 武器確認_四脚_レーザーブレード_WP_L_0220"
+      ]
+    },
+    {
+      "ID": 930001003,
+      "Entries": [
+        "Weapon confirmation_quadruped_coral blade_WP_L_0230 -- 武器確認_四脚_コーラルブレード_WP_L_0230"
+      ]
+    },
+    {
+      "ID": 930001004,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser dagger_WP_L_0240 -- 武器確認_四脚_レーザーダガー_WP_L_0240"
+      ]
+    },
+    {
+      "ID": 930001005,
+      "Entries": [
+        "Weapon confirmation_quadruped_light wave blade_WP_L_0250 -- 武器確認_四脚_光波ブレード_WP_L_0250"
+      ]
+    },
+    {
+      "ID": 930001006,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser naginata_WP_L_0410 -- 武器確認_四脚_レーザーナギナタ_WP_L_0410"
+      ]
+    },
+    {
+      "ID": 930001007,
+      "Entries": [
+        "Weapon confirmation_quadruped_bomb scatter_WP_L_0510 -- 武器確認_四脚_ボムスキャッター_WP_L_0510"
+      ]
+    },
+    {
+      "ID": 930001008,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser lance_WP_L_0610 -- 武器確認_四脚_レーザーランス_WP_L_0610"
+      ]
+    },
+    {
+      "ID": 930001009,
+      "Entries": [
+        "Weapon confirmation_quadruped_stun baton_WP_L_0910 -- 武器確認_四脚_スタンバトン_WP_L_0910"
+      ]
+    },
+    {
+      "ID": 930001010,
+      "Entries": [
+        "Weapon confirmation_quadruped_chainsaw_WP_L_1010 -- 武器確認_四脚_チェーンソー_WP_L_1010"
+      ]
+    },
+    {
+      "ID": 930001011,
+      "Entries": [
+        "Weapon confirmation_quadruped_plasma spinner_WP_L_1210 -- 武器確認_四脚_プラズマスピナー_WP_L_1210"
+      ]
+    },
+    {
+      "ID": 930001999,
+      "Entries": [
+        "==\u3000Shoulder\u3000== -- ==\u3000肩\u3000=="
+      ]
+    },
+    {
+      "ID": 930002000,
+      "Entries": [
+        "Weapon confirmation_quadruped_grenade cannon_WP_R_4010 -- 武器確認_四脚_グレネードキャノン_WP_R_4010"
+      ]
+    },
+    {
+      "ID": 930002001,
+      "Entries": [
+        "Weapon confirmation_quadruped_spread bazooka cannon_WP_R_4110 -- 武器確認_四脚_拡散バズーカキャノン_WP_R_4110"
+      ]
+    },
+    {
+      "ID": 930002002,
+      "Entries": [
+        "Weapon confirmation_quadruped_triple plasma missile_WP_R_4210 -- 武器確認_四脚_3連プラズマミサイル_WP_R_4210"
+      ]
+    },
+    {
+      "ID": 930002003,
+      "Entries": [
+        "Weapon confirmation_quadruped_6-barreled plasma missile_WP_R_4211 -- 武器確認_四脚_6連プラズマミサイル_WP_R_4211"
+      ]
+    },
+    {
+      "ID": 930002004,
+      "Entries": [
+        "Weapon confirmation_quadruped_plasma missile 2_WP_R_4220 -- 武器確認_四脚_プラズマミサイル2_WP_R_4220"
+      ]
+    },
+    {
+      "ID": 930002005,
+      "Entries": [
+        "Weapon confirmation_quadruped_multi-stage tracking missile_WP_R_4230 -- 武器確認_四脚_多段追尾ミサイル_WP_R_4230"
+      ]
+    },
+    {
+      "ID": 930002006,
+      "Entries": [
+        "Weapon confirmation_quadruped_tracking missile_WP_R_4231 -- 武器確認_四脚_追尾ミサイル_WP_R_4231"
+      ]
+    },
+    {
+      "ID": 930002007,
+      "Entries": [
+        "Weapon confirmation_quadruped_coral missile_WP_R_4240 -- 武器確認_四脚_コーラルミサイル_WP_R_4240"
+      ]
+    },
+    {
+      "ID": 930002008,
+      "Entries": [
+        "Weapon confirmation_quadruped_12 vertical missiles_WP_R_4250 -- 武器確認_四脚_12連垂直ミサイル_WP_R_4250"
+      ]
+    },
+    {
+      "ID": 930002009,
+      "Entries": [
+        "Weapon confirmation_quadruped_8 vertical missiles_WP_R_4251 -- 武器確認_四脚_8連垂直ミサイル_WP_R_4251"
+      ]
+    },
+    {
+      "ID": 930002010,
+      "Entries": [
+        "Weapon confirmation_quadruped_quadruple vertical missile_WP_R_4252 -- 武器確認_四脚_4連垂直ミサイル_WP_R_4252"
+      ]
+    },
+    {
+      "ID": 930002011,
+      "Entries": [
+        "Weapon confirmation_quadruped_penetrating missile_WP_R_4260 -- 武器確認_四脚_浸徹ミサイル_WP_R_4260"
+      ]
+    },
+    {
+      "ID": 930002012,
+      "Entries": [
+        "Weapon confirmation_quadruped_back missile heavy 1_WP_R_4270 -- 武器確認_四脚_背ミサイル重1_WP_R_4270"
+      ]
+    },
+    {
+      "ID": 930002013,
+      "Entries": [
+        "Weapon confirmation_quadruped_raid missile_WP_R_4280 -- 武器確認_四脚_レイドミサイル_WP_R_4280"
+      ]
+    },
+    {
+      "ID": 930002014,
+      "Entries": [
+        "Weapon confirmation_quadruped_six missiles_WP_R_4290 -- 武器確認_四脚_6連装ミサイル_WP_R_4290"
+      ]
+    },
+    {
+      "ID": 930002015,
+      "Entries": [
+        "Weapon confirmation_quadruped_quadruple missile_WP_R_4291 -- 武器確認_四脚_4連装ミサイル_WP_R_4291"
+      ]
+    },
+    {
+      "ID": 930002016,
+      "Entries": [
+        "Weapon confirmation_quadruped_10 twin missiles_WP_R_4292 -- 武器確認_四脚_10連装ミサイル_WP_R_4292"
+      ]
+    },
+    {
+      "ID": 930002017,
+      "Entries": [
+        "Weapon confirmation_quadruped_pincer missile_WP_R_4300 -- 武器確認_四脚_挟撃ミサイル_WP_R_4300"
+      ]
+    },
+    {
+      "ID": 930002018,
+      "Entries": [
+        "Weapon confirmation_Quadruped_Triple 2way medium-sized missile_WP_R_4301 -- 武器確認_四脚_3連2way中型ミサイル_WP_R_4301"
+      ]
+    },
+    {
+      "ID": 930002019,
+      "Entries": [
+        "Weapon confirmation_quadruped_dual 12-fission missile_WP_R_4302 -- 武器確認_四脚_2連12分裂ミサイル_WP_R_4302"
+      ]
+    },
+    {
+      "ID": 930002020,
+      "Entries": [
+        "Weapon confirmation_quadruped_double 2way missile_WP_R_4303 -- 武器確認_四脚_2連2wayミサイル_WP_R_4303"
+      ]
+    },
+    {
+      "ID": 930002021,
+      "Entries": [
+        "Weapon confirmation_quadruped_dual 6-fission missile_WP_R_4310 -- 武器確認_四脚_2連6分裂ミサイル_WP_R_4310"
+      ]
+    },
+    {
+      "ID": 930002022,
+      "Entries": [
+        "Weapon confirmation_quadruped_fission missile_WP_R_4311 -- 武器確認_四脚_分裂ミサイル_WP_R_4311"
+      ]
+    },
+    {
+      "ID": 930002023,
+      "Entries": [
+        "Weapon confirmation_quadruped_container missile_WP_R_4320 -- 武器確認_四脚_コンテナミサイル_WP_R_4320"
+      ]
+    },
+    {
+      "ID": 930002024,
+      "Entries": [
+        "Weapon confirmation_quadruped_needle missile_WP_R_4330 -- 武器確認_四脚_ニードルミサイル_WP_R_4330"
+      ]
+    },
+    {
+      "ID": 930002025,
+      "Entries": [
+        "Weapon confirmation_quadruped_cluster missile_WP_R_4340 -- 武器確認_四脚_クラスタミサイル_WP_R_4340"
+      ]
+    },
+    {
+      "ID": 930002026,
+      "Entries": [
+        "Weapon confirmation_quadruped_grenade cannon 2_WP_R_4410 -- 武器確認_四脚_グレネードキャノン2_WP_R_4410"
+      ]
+    },
+    {
+      "ID": 930002027,
+      "Entries": [
+        "Weapon confirmation_quadruped_plasma cannon_WP_R_4510 -- 武器確認_四脚_プラズマキャノン_WP_R_4510"
+      ]
+    },
+    {
+      "ID": 930002028,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser cannon_WP_R_4610 -- 武器確認_四脚_レーザーキャノン_WP_R_4610"
+      ]
+    },
+    {
+      "ID": 930002029,
+      "Entries": [
+        "Weapon confirmation_quadruped_triple laser cannon_WP_R_4710 -- 武器確認_四脚_三連レーザーキャノン_WP_R_4710"
+      ]
+    },
+    {
+      "ID": 930002030,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse cannon_WP_R_4810 -- 武器確認_四脚_パルスキャノン_WP_R_4810"
+      ]
+    },
+    {
+      "ID": 930002031,
+      "Entries": [
+        "Weapon confirmation_quadruped_diffuse laser cannon_WP_R_5010 -- 武器確認_四脚_拡散レーザーキャノン_WP_R_5010"
+      ]
+    },
+    {
+      "ID": 930002032,
+      "Entries": [
+        "Weapon confirmation_quadruped_additional booster_WP_A_5610 -- 武器確認_四脚_追加ブースタ_WP_A_5610"
+      ]
+    },
+    {
+      "ID": 930002033,
+      "Entries": [
+        "Weapon confirmation_quadruped_additional booster 3_WP_A_5620 -- 武器確認_四脚_追加ブースタ3_WP_A_5620"
+      ]
+    },
+    {
+      "ID": 930002034,
+      "Entries": [
+        "Weapon confirmation_quadruped_additional booster 2_WP_A_5630 -- 武器確認_四脚_追加ブースタ2_WP_A_5630"
+      ]
+    },
+    {
+      "ID": 930002035,
+      "Entries": [
+        "Weapon confirmation_quadruped_live ammunition orbit_WP_R_5710 -- 武器確認_四脚_実弾オービット_WP_R_5710"
+      ]
+    },
+    {
+      "ID": 930002036,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser orbit_WP_R_5720 -- 武器確認_四脚_レーザーオービット_WP_R_5720"
+      ]
+    },
+    {
+      "ID": 930002037,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser drone_WP_R_5810 -- 武器確認_四脚_レーザードローン_WP_R_5810"
+      ]
+    },
+    {
+      "ID": 930002038,
+      "Entries": [
+        "Weapon confirmation_quadruped_laser turret_WP_R_5820 -- 武器確認_四脚_レーザータレット_WP_R_5820"
+      ]
+    },
+    {
+      "ID": 930002039,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse shield launcher_WP_R_4820 -- 武器確認_四脚_パルスシールドランチャー_WP_R_4820"
+      ]
+    },
+    {
+      "ID": 930002040,
+      "Entries": [
+        "Weapon confirmation_quadruped_stun needle launcher_WP_R_4830 -- 武器確認_四脚_スタンニードルランチャー_WP_R_4830"
+      ]
+    },
+    {
+      "ID": 930002999,
+      "Entries": [
+        "== Shield == -- ==\u3000シールド\u3000=="
+      ]
+    },
+    {
+      "ID": 930003000,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse buckler_WP_L_4910 -- 武器確認_四脚_パルスバックラー_WP_L_4910"
+      ]
+    },
+    {
+      "ID": 930003001,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse shield 2_WP_L_4920 -- 武器確認_四脚_パルスシールド2_WP_L_4920"
+      ]
+    },
+    {
+      "ID": 930003002,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse shield_WP_L_4940 -- 武器確認_四脚_パルスシールド_WP_L_4940"
+      ]
+    },
+    {
+      "ID": 930003003,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse shield 3_WP_L_4950 -- 武器確認_四脚_パルスシールド3_WP_L_4950"
+      ]
+    },
+    {
+      "ID": 930003004,
+      "Entries": [
+        "Weapon confirmation_quadruped_pulse buckler 2_WP_L_4960 -- 武器確認_四脚_パルスバックラー2_WP_L_4960"
+      ]
+    },
+    {
+      "ID": 930003005,
+      "Entries": [
+        "Weapon confirmation_quadruped_coral shield_WP_L_4970 -- 武器確認_四脚_コーラルシールド_WP_L_4970"
+      ]
+    },
+    {
+      "ID": 930003006,
+      "Entries": [
+        "Weapon confirmation_quadruped_Pulse Scutum_WP_L_4980 -- 武器確認_四脚_パルススクトゥム_WP_L_4980"
+      ]
+    },
+    {
+      "ID": 939999999,
+      "Entries": [
+        "==\u3000Hand\u3000== -- ==\u3000手\u3000=="
+      ]
+    },
+    {
+      "ID": 940000000,
+      "Entries": [
+        "Weapon confirmation_Tank_Grenade_WP_R_1310 -- 武器確認_タンク_グレネード_WP_R_1310"
+      ]
+    },
+    {
+      "ID": 940000001,
+      "Entries": [
+        "Weapon confirmation_Tank_Grenade 2_WP_R_1320 -- 武器確認_タンク_グレネード2_WP_R_1320"
+      ]
+    },
+    {
+      "ID": 940000002,
+      "Entries": [
+        "Weapon confirmation_Tank_Bazooka 3_WP_R_1410 -- 武器確認_タンク_バズーカ3_WP_R_1410"
+      ]
+    },
+    {
+      "ID": 940000003,
+      "Entries": [
+        "Weapon confirmation_Tank_Bazooka 2_WP_R_1420 -- 武器確認_タンク_バズーカ2_WP_R_1420"
+      ]
+    },
+    {
+      "ID": 940000004,
+      "Entries": [
+        "Weapon confirmation_Tank_Bazooka_WP_R_1430 -- 武器確認_タンク_バズーカ_WP_R_1430"
+      ]
+    },
+    {
+      "ID": 940000005,
+      "Entries": [
+        "Weapon confirmation_Tank_Shotgun 3_WP_R_1510 -- 武器確認_タンク_ショットガン3_WP_R_1510"
+      ]
+    },
+    {
+      "ID": 940000006,
+      "Entries": [
+        "Weapon confirmation_Tank_Shotgun_WP_R_1520 -- 武器確認_タンク_ショットガン_WP_R_1520"
+      ]
+    },
+    {
+      "ID": 940000007,
+      "Entries": [
+        "Weapon confirmation_Tank_Shotgun 2_WP_R_1530 -- 武器確認_タンク_ショットガン2_WP_R_1530"
+      ]
+    },
+    {
+      "ID": 940000008,
+      "Entries": [
+        "Weapon confirmation_Tank_Burst rifle_WP_R_1610 -- 武器確認_タンク_バーストライフル_WP_R_1610"
+      ]
+    },
+    {
+      "ID": 940000009,
+      "Entries": [
+        "Weapon confirmation_Tank_Linear rifle_WP_R_1620 -- 武器確認_タンク_リニアライフル_WP_R_1620"
+      ]
+    },
+    {
+      "ID": 940000010,
+      "Entries": [
+        "Weapon confirmation_Tank_Linear rifle 2_WP_R_1630 -- 武器確認_タンク_リニアライフル2_WP_R_1630"
+      ]
+    },
+    {
+      "ID": 940000011,
+      "Entries": [
+        "Weapon confirmation_Tank_Burst assault rifle_WP_R_1710 -- 武器確認_タンク_バーストアサルトライフル_WP_R_1710"
+      ]
+    },
+    {
+      "ID": 940000012,
+      "Entries": [
+        "Weapon confirmation_Tank_Assault rifle_WP_R_1720 -- 武器確認_タンク_アサルトライフル_WP_R_1720"
+      ]
+    },
+    {
+      "ID": 940000013,
+      "Entries": [
+        "Weapon confirmation_Tank_Assault rifle 2_WP_R_1730 -- 武器確認_タンク_アサルトライフル2_WP_R_1730"
+      ]
+    },
+    {
+      "ID": 940000014,
+      "Entries": [
+        "Weapon confirmation_Tank_Burst machine gun_WP_R_1810 -- 武器確認_タンク_バーストマシンガン_WP_R_1810"
+      ]
+    },
+    {
+      "ID": 940000015,
+      "Entries": [
+        "Weapon confirmation_Tank_Machine gun_WP_R_1820 -- 武器確認_タンク_マシンガン_WP_R_1820"
+      ]
+    },
+    {
+      "ID": 940000016,
+      "Entries": [
+        "Weapon confirmation_Tank_Machine gun 2_WP_R_1830 -- 武器確認_タンク_マシンガン2_WP_R_1830"
+      ]
+    },
+    {
+      "ID": 940000017,
+      "Entries": [
+        "Weapon confirmation_Tank_Gatling gun_WP_R_1910 -- 武器確認_タンク_ガトリングガン_WP_R_1910"
+      ]
+    },
+    {
+      "ID": 940000018,
+      "Entries": [
+        "Weapon confirmation_Tank_Needle gun_WP_R_2010 -- 武器確認_タンク_ニードルガン_WP_R_2010"
+      ]
+    },
+    {
+      "ID": 940000019,
+      "Entries": [
+        "Weapon confirmation_Tank_Burst handgun_WP_R_2020 -- 武器確認_タンク_バーストハンドガン_WP_R_2020"
+      ]
+    },
+    {
+      "ID": 940000020,
+      "Entries": [
+        "Weapon confirmation_Tank_Handgun_WP_R_2030 -- 武器確認_タンク_ハンドガン_WP_R_2030"
+      ]
+    },
+    {
+      "ID": 940000021,
+      "Entries": [
+        "Weapon confirmation_Tank_Handgun 2_WP_R_2040 -- 武器確認_タンク_ハンドガン2_WP_R_2040"
+      ]
+    },
+    {
+      "ID": 940000022,
+      "Entries": [
+        "Weapon confirmation_Tank_Jamming bomb launcher_WP_R_2110 -- 武器確認_タンク_ジャミングボムランチャー_WP_R_2110"
+      ]
+    },
+    {
+      "ID": 940000023,
+      "Entries": [
+        "Weapon confirmation_Tank_Napalm bomb launcher_WP_R_2120 -- 武器確認_タンク_ナパームボムランチャー_WP_R_2120"
+      ]
+    },
+    {
+      "ID": 940000024,
+      "Entries": [
+        "Weapon confirmation_Tank_Stun bomb launcher_WP_R_2130 -- 武器確認_タンク_スタンボムランチャー_WP_R_2130"
+      ]
+    },
+    {
+      "ID": 940000025,
+      "Entries": [
+        "Weapon confirmation_Tank_Hand missile_WP_R_2210 -- 武器確認_タンク_ハンドミサイル_WP_R_2210"
+      ]
+    },
+    {
+      "ID": 940000026,
+      "Entries": [
+        "Weapon confirmation_Tank_Split hand missile_WP_R_2220 -- 武器確認_タンク_分裂ハンドミサイル_WP_R_2220"
+      ]
+    },
+    {
+      "ID": 940000027,
+      "Entries": [
+        "Weapon confirmation_Tank_Grenade 3_WP_R_2310 -- 武器確認_タンク_グレネード3_WP_R_2310"
+      ]
+    },
+    {
+      "ID": 940000028,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser/Plasma rifle_WP_A_2420 -- 武器確認_タンク_レーザー/プラズマライフル_WP_A_2420"
+      ]
+    },
+    {
+      "ID": 940000029,
+      "Entries": [
+        "Weapon confirmation_Tank_Plasma rifle_WP_A_2410 -- 武器確認_タンク_プラズマライフル_WP_A_2410"
+      ]
+    },
+    {
+      "ID": 940000030,
+      "Entries": [
+        "Weapon confirmation_Tank_Double laser rifle_WP_A_2510 -- 武器確認_タンク_ダブルレーザーライフル_WP_A_2510"
+      ]
+    },
+    {
+      "ID": 940000031,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser shotgun 2_WP_A_2610 -- 武器確認_タンク_レーザーショットガン2_WP_A_2610"
+      ]
+    },
+    {
+      "ID": 940000032,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser shotgun_WP_A_2620 -- 武器確認_タンク_レーザーショットガン_WP_A_2620"
+      ]
+    },
+    {
+      "ID": 940000033,
+      "Entries": [
+        "Weapon confirmation_Tank_Plasma rifle 2_WP_A_2630 -- 武器確認_タンク_プラズマライフル2_WP_A_2630"
+      ]
+    },
+    {
+      "ID": 940000034,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser handgun_WP_A_2710 -- 武器確認_タンク_レーザーハンドガン_WP_A_2710"
+      ]
+    },
+    {
+      "ID": 940000035,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser rifle_WP_A_2720 -- 武器確認_タンク_レーザーライフル_WP_A_2720"
+      ]
+    },
+    {
+      "ID": 940000036,
+      "Entries": [
+        "Weapon confirmation_Tank_Coral rifle_WP_A_2730 -- 武器確認_タンク_コーラルライフル_WP_A_2730"
+      ]
+    },
+    {
+      "ID": 940000037,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser rifle 2_WP_A_2740 -- 武器確認_タンク_レーザーライフル2_WP_A_2740"
+      ]
+    },
+    {
+      "ID": 940000038,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse gun 2_WP_A_2810 -- 武器確認_タンク_パルスガン2_WP_A_2810"
+      ]
+    },
+    {
+      "ID": 940000039,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse gun_WP_A_2820 -- 武器確認_タンク_パルスガン_WP_A_2820"
+      ]
+    },
+    {
+      "ID": 940000040,
+      "Entries": [
+        "Weapon confirmation_Tank_Flamethrower_WP_A_2910 -- 武器確認_タンク_火炎放射器_WP_A_2910"
+      ]
+    },
+    {
+      "ID": 940000041,
+      "Entries": [
+        "Weapon confirmation_Tank_Infiltration bazooka_WP_A_3010 -- 武器確認_タンク_浸徹バズーカ_WP_A_3010"
+      ]
+    },
+    {
+      "ID": 940000042,
+      "Entries": [
+        "Weapon confirmation_Tank_Stun gun_WP_A_3020 -- 武器確認_タンク_スタンガン_WP_A_3020"
+      ]
+    },
+    {
+      "ID": 940000043,
+      "Entries": [
+        "Weapon confirmation_Tank_Assault hand missile_WP_A_3030 -- 武器確認_タンク_強襲ハンドミサイル_WP_A_3030"
+      ]
+    },
+    {
+      "ID": 940000999,
+      "Entries": [
+        "==\u3000Blade\u3000== -- ==\u3000ブレード\u3000=="
+      ]
+    },
+    {
+      "ID": 940001000,
+      "Entries": [
+        "Weapon confirmation_Tank_Pile Bunker_WP_L_0010 -- 武器確認_タンク_パイルバンカー_WP_L_0010"
+      ]
+    },
+    {
+      "ID": 940001001,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Blade_WP_L_0210 -- 武器確認_タンク_パルスブレード_WP_L_0210"
+      ]
+    },
+    {
+      "ID": 940001002,
+      "Entries": [
+        "Weapon confirmation_Tank_Laserblade_WP_L_0220 -- 武器確認_タンク_レーザーブレード_WP_L_0220"
+      ]
+    },
+    {
+      "ID": 940001003,
+      "Entries": [
+        "Weapon confirmation_Tank_Coral Blade_WP_L_0230 -- 武器確認_タンク_コーラルブレード_WP_L_0230"
+      ]
+    },
+    {
+      "ID": 940001004,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser dagger_WP_L_0240 -- 武器確認_タンク_レーザーダガー_WP_L_0240"
+      ]
+    },
+    {
+      "ID": 940001005,
+      "Entries": [
+        "Weapon confirmation_Tank_Light wave blade_WP_L_0250 -- 武器確認_タンク_光波ブレード_WP_L_0250"
+      ]
+    },
+    {
+      "ID": 940001006,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser Naginata_WP_L_0410 -- 武器確認_タンク_レーザーナギナタ_WP_L_0410"
+      ]
+    },
+    {
+      "ID": 940001007,
+      "Entries": [
+        "Weapon confirmation_Tank_Bombscatter_WP_L_0510 -- 武器確認_タンク_ボムスキャッター_WP_L_0510"
+      ]
+    },
+    {
+      "ID": 940001008,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser Lance_WP_L_0610 -- 武器確認_タンク_レーザーランス_WP_L_0610"
+      ]
+    },
+    {
+      "ID": 940001009,
+      "Entries": [
+        "Weapon confirmation_Tank_Stun baton_WP_L_0910 -- 武器確認_タンク_スタンバトン_WP_L_0910"
+      ]
+    },
+    {
+      "ID": 940001010,
+      "Entries": [
+        "Weapon confirmation_Tank_Chainsaw_WP_L_1010 -- 武器確認_タンク_チェーンソー_WP_L_1010"
+      ]
+    },
+    {
+      "ID": 940001011,
+      "Entries": [
+        "Weapon confirmation_Tank_Plasma spinner_WP_L_1210 -- 武器確認_タンク_プラズマスピナー_WP_L_1210"
+      ]
+    },
+    {
+      "ID": 940001999,
+      "Entries": [
+        "==\u3000Shoulder\u3000== -- ==\u3000肩\u3000=="
+      ]
+    },
+    {
+      "ID": 940002000,
+      "Entries": [
+        "Weapon confirmation_Tank_Grenade cannon_WP_R_4010 -- 武器確認_タンク_グレネードキャノン_WP_R_4010"
+      ]
+    },
+    {
+      "ID": 940002001,
+      "Entries": [
+        "Weapon confirmation_Tank_Spreading bazooka cannon_WP_R_4110 -- 武器確認_タンク_拡散バズーカキャノン_WP_R_4110"
+      ]
+    },
+    {
+      "ID": 940002002,
+      "Entries": [
+        "Weapon confirmation_Tank_Triple plasma missile_WP_R_4210 -- 武器確認_タンク_3連プラズマミサイル_WP_R_4210"
+      ]
+    },
+    {
+      "ID": 940002003,
+      "Entries": [
+        "Weapon confirmation_Tank_6-barreled plasma missile_WP_R_4211 -- 武器確認_タンク_6連プラズマミサイル_WP_R_4211"
+      ]
+    },
+    {
+      "ID": 940002004,
+      "Entries": [
+        "Weapon confirmation_Tank_Plasma missile 2_WP_R_4220 -- 武器確認_タンク_プラズマミサイル2_WP_R_4220"
+      ]
+    },
+    {
+      "ID": 940002005,
+      "Entries": [
+        "Weapon confirmation_Tank_Multi-stage tracking missile_WP_R_4230 -- 武器確認_タンク_多段追尾ミサイル_WP_R_4230"
+      ]
+    },
+    {
+      "ID": 940002006,
+      "Entries": [
+        "Weapon confirmation_Tank_Tracking missile_WP_R_4231 -- 武器確認_タンク_追尾ミサイル_WP_R_4231"
+      ]
+    },
+    {
+      "ID": 940002007,
+      "Entries": [
+        "Weapon confirmation_Tank_Coral missile_WP_R_4240 -- 武器確認_タンク_コーラルミサイル_WP_R_4240"
+      ]
+    },
+    {
+      "ID": 940002008,
+      "Entries": [
+        "Weapon confirmation_Tank_12 vertical missiles_WP_R_4250 -- 武器確認_タンク_12連垂直ミサイル_WP_R_4250"
+      ]
+    },
+    {
+      "ID": 940002009,
+      "Entries": [
+        "Weapon confirmation_Tank_8 vertical missiles_WP_R_4251 -- 武器確認_タンク_8連垂直ミサイル_WP_R_4251"
+      ]
+    },
+    {
+      "ID": 940002010,
+      "Entries": [
+        "Weapon confirmation_Tank_4 vertical missiles_WP_R_4252 -- 武器確認_タンク_4連垂直ミサイル_WP_R_4252"
+      ]
+    },
+    {
+      "ID": 940002011,
+      "Entries": [
+        "Weapon confirmation_Tank_Penetrating missile_WP_R_4260 -- 武器確認_タンク_浸徹ミサイル_WP_R_4260"
+      ]
+    },
+    {
+      "ID": 940002012,
+      "Entries": [
+        "Weapon confirmation_Tank_Back missile heavy 1_WP_R_4270 -- 武器確認_タンク_背ミサイル重1_WP_R_4270"
+      ]
+    },
+    {
+      "ID": 940002013,
+      "Entries": [
+        "Weapon confirmation_Tank_Raid missile_WP_R_4280 -- 武器確認_タンク_レイドミサイル_WP_R_4280"
+      ]
+    },
+    {
+      "ID": 940002014,
+      "Entries": [
+        "Weapon confirmation_Tank_6 missiles_WP_R_4290 -- 武器確認_タンク_6連装ミサイル_WP_R_4290"
+      ]
+    },
+    {
+      "ID": 940002015,
+      "Entries": [
+        "Weapon confirmation_Tank_Quadruple missile_WP_R_4291 -- 武器確認_タンク_4連装ミサイル_WP_R_4291"
+      ]
+    },
+    {
+      "ID": 940002016,
+      "Entries": [
+        "Weapon confirmation_Tank_10 twin missiles_WP_R_4292 -- 武器確認_タンク_10連装ミサイル_WP_R_4292"
+      ]
+    },
+    {
+      "ID": 940002017,
+      "Entries": [
+        "Weapon confirmation_Tank_Pincer missile_WP_R_4300 -- 武器確認_タンク_挟撃ミサイル_WP_R_4300"
+      ]
+    },
+    {
+      "ID": 940002018,
+      "Entries": [
+        "Weapon confirmation_Tank_Triple 2way medium-sized missile_WP_R_4301 -- 武器確認_タンク_3連2way中型ミサイル_WP_R_4301"
+      ]
+    },
+    {
+      "ID": 940002019,
+      "Entries": [
+        "Weapon confirmation_Tank_2 series 12 fission missile_WP_R_4302 -- 武器確認_タンク_2連12分裂ミサイル_WP_R_4302"
+      ]
+    },
+    {
+      "ID": 940002020,
+      "Entries": [
+        "Weapon confirmation_Tank_Double 2way missile_WP_R_4303 -- 武器確認_タンク_2連2wayミサイル_WP_R_4303"
+      ]
+    },
+    {
+      "ID": 940002021,
+      "Entries": [
+        "Weapon confirmation_Tank_Double 6-fission missile_WP_R_4310 -- 武器確認_タンク_2連6分裂ミサイル_WP_R_4310"
+      ]
+    },
+    {
+      "ID": 940002022,
+      "Entries": [
+        "Weapon confirmation_tank_fission missile_WP_R_4311 -- 武器確認_タンク_分裂ミサイル_WP_R_4311"
+      ]
+    },
+    {
+      "ID": 940002023,
+      "Entries": [
+        "Weapon confirmation_Tank_Container missile_WP_R_4320 -- 武器確認_タンク_コンテナミサイル_WP_R_4320"
+      ]
+    },
+    {
+      "ID": 940002024,
+      "Entries": [
+        "Weapon confirmation_Tank_Needle missile_WP_R_4330 -- 武器確認_タンク_ニードルミサイル_WP_R_4330"
+      ]
+    },
+    {
+      "ID": 940002025,
+      "Entries": [
+        "Weapon confirmation_Tank_Cluster missile_WP_R_4340 -- 武器確認_タンク_クラスタミサイル_WP_R_4340"
+      ]
+    },
+    {
+      "ID": 940002026,
+      "Entries": [
+        "Weapon confirmation_Tank_Grenade Cannon 2_WP_R_4410 -- 武器確認_タンク_グレネードキャノン2_WP_R_4410"
+      ]
+    },
+    {
+      "ID": 940002027,
+      "Entries": [
+        "Weapon confirmation_Tank_Plasma cannon_WP_R_4510 -- 武器確認_タンク_プラズマキャノン_WP_R_4510"
+      ]
+    },
+    {
+      "ID": 940002028,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser cannon_WP_R_4610 -- 武器確認_タンク_レーザーキャノン_WP_R_4610"
+      ]
+    },
+    {
+      "ID": 940002029,
+      "Entries": [
+        "Weapon confirmation_Tank_Triple laser cannon_WP_R_4710 -- 武器確認_タンク_三連レーザーキャノン_WP_R_4710"
+      ]
+    },
+    {
+      "ID": 940002030,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse cannon_WP_R_4810 -- 武器確認_タンク_パルスキャノン_WP_R_4810"
+      ]
+    },
+    {
+      "ID": 940002031,
+      "Entries": [
+        "Weapon confirmation_Tank_Diffusion laser cannon_WP_R_5010 -- 武器確認_タンク_拡散レーザーキャノン_WP_R_5010"
+      ]
+    },
+    {
+      "ID": 940002032,
+      "Entries": [
+        "Weapon confirmation_Tank_Additional booster_WP_A_5610 -- 武器確認_タンク_追加ブースタ_WP_A_5610"
+      ]
+    },
+    {
+      "ID": 940002033,
+      "Entries": [
+        "Weapon confirmation_Tank_Additional booster 3_WP_A_5620 -- 武器確認_タンク_追加ブースタ3_WP_A_5620"
+      ]
+    },
+    {
+      "ID": 940002034,
+      "Entries": [
+        "Weapon confirmation_Tank_Additional booster 2_WP_A_5630 -- 武器確認_タンク_追加ブースタ2_WP_A_5630"
+      ]
+    },
+    {
+      "ID": 940002035,
+      "Entries": [
+        "Weapon confirmation_Tank_Live ammunition orbit_WP_R_5710 -- 武器確認_タンク_実弾オービット_WP_R_5710"
+      ]
+    },
+    {
+      "ID": 940002036,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser Orbit_WP_R_5720 -- 武器確認_タンク_レーザーオービット_WP_R_5720"
+      ]
+    },
+    {
+      "ID": 940002037,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser drone_WP_R_5810 -- 武器確認_タンク_レーザードローン_WP_R_5810"
+      ]
+    },
+    {
+      "ID": 940002038,
+      "Entries": [
+        "Weapon confirmation_Tank_Laser turret_WP_R_5820 -- 武器確認_タンク_レーザータレット_WP_R_5820"
+      ]
+    },
+    {
+      "ID": 940002039,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse shield launcher_WP_R_4820 -- 武器確認_タンク_パルスシールドランチャー_WP_R_4820"
+      ]
+    },
+    {
+      "ID": 940002040,
+      "Entries": [
+        "Weapon confirmation_Tank_Stun needle launcher_WP_R_4830 -- 武器確認_タンク_スタンニードルランチャー_WP_R_4830"
+      ]
+    },
+    {
+      "ID": 940002999,
+      "Entries": [
+        "== Shield == -- ==\u3000シールド\u3000=="
+      ]
+    },
+    {
+      "ID": 940003000,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Buckler_WP_L_4910 -- 武器確認_タンク_パルスバックラー_WP_L_4910"
+      ]
+    },
+    {
+      "ID": 940003001,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Shield 2_WP_L_4920 -- 武器確認_タンク_パルスシールド2_WP_L_4920"
+      ]
+    },
+    {
+      "ID": 940003002,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse shield_WP_L_4940 -- 武器確認_タンク_パルスシールド_WP_L_4940"
+      ]
+    },
+    {
+      "ID": 940003003,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Shield 3_WP_L_4950 -- 武器確認_タンク_パルスシールド3_WP_L_4950"
+      ]
+    },
+    {
+      "ID": 940003004,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Buckler 2_WP_L_4960 -- 武器確認_タンク_パルスバックラー2_WP_L_4960"
+      ]
+    },
+    {
+      "ID": 940003005,
+      "Entries": [
+        "Weapon confirmation_Tank_Coral Shield_WP_L_4970 -- 武器確認_タンク_コーラルシールド_WP_L_4970"
+      ]
+    },
+    {
+      "ID": 940003006,
+      "Entries": [
+        "Weapon confirmation_Tank_Pulse Scutum_WP_L_4980 -- 武器確認_タンク_パルススクトゥム_WP_L_4980"
+      ]
+    }
+  ]
+}

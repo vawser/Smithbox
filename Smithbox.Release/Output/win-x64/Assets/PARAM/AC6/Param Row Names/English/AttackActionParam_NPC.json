@@ -1,0 +1,8231 @@
+{
+  "Name": "AttackActionParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for testing"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Battleship_Left battery (missile)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Battleship_Right battery (missile)"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Battleship_Left battery (laser)"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Battleship_Right battery (laser)"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Battleship_front main gun"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Battleship_Front main gun (anime control ver)"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Battleship_Big Cannon (anime control)"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Battleship_Blade rotation (anime control)"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Battleship_Small laser cannon (anime only)"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Battleship_Right arm transformation laser"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Battery_Cannonball"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Artillery_Missile"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Battery_Gato"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Gun turret_laser"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Turret_Cannonball (for attachment)"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Battery_Missile (for attachment)"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Turret_Gato (for attachment)"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Turret_Laser (for attachment)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Battleship_Left arm transformation laser"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Stiglo_Big Cannon"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Stiglo_Right arm laser_[Extension] Beam A"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Stiglo_Left arm laser_[Stretch] Beam A"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Stiglo_4 lasers_random salvo"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Stiglo_Both arm laser *Old blade control"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Stiglo_Right arm laser_[Okonobu] Beam A"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Stiglo_Left arm laser_[Okonobu] Beam A"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Stiglo_Right arm laser_[Okonobu] Beam B"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Stiglo_Left arm laser_[Okonobu] Beam B"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Stiglo_Left arm laser_[Okonobu] Beam B-2"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Stiglo_Left arm laser_[Okonobu] Beam B-2"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Stiglo_Left Arm Laser_[Short] Beam A"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "Stiglo_Left Arm Laser_[Short] Beam A"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short height] Beam B"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short height] Beam B"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Stiglo_Left arm laser_[Stretch] Beam A"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Stiglo_Left arm laser_[Stretch] Beam A"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Stiglo_Left arm laser_[Extension] Beam B"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Stiglo_Left arm laser_[Extension] Beam B"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Stiglo_Left arm laser_[Stretch] Beam B-2"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Stiglo_Left arm laser_[Stretch] Beam B-2"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short] Beam A"
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short] Beam A"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short] Beam B"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Stiglo_Left arm laser_[Short] Beam B"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Stiglo_4 lasers_front salvo"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Stiglo_4 lasers_left and right salvo"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Stiglo_4 lasers_random salvo"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Ueda test machine_shooting weapon"
+      ]
+    },
+    {
+      "ID": 930100,
+      "Entries": [
+        "Ueda test machine_fighting"
+      ]
+    },
+    {
+      "ID": 930200,
+      "Entries": [
+        "Ueda test machine_shield"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Machine gun for copying"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "copy shotgun"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "Bazooka for copying"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "Copy sniper rifle"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "Missile for copying"
+      ]
+    },
+    {
+      "ID": 10000510,
+      "Entries": [
+        "Proximity for copying"
+      ]
+    },
+    {
+      "ID": 10000520,
+      "Entries": [
+        "Extending proximity for copying"
+      ]
+    },
+    {
+      "ID": 10000610,
+      "Entries": [
+        "Shield for copying"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000300,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000400,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30003100,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30004000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30004100,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30004200,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30010900,
+      "Entries": [
+        "Junker Coyotes \"Puncher\" MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200400,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201300,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201400,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201500,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201600,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201700,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201800,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201900,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30203100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30204000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30204100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30204200,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30205000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30205100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30206000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30206100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30206200,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30209000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500100,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500200,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500300,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500400,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500420,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500500,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500600,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500700,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500800,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30500900,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501100,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501200,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501300,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501400,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501500,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30501600,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30502000,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30502500,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30502600,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 30502700,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 31000100,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31000200,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31000300,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31000400,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31000500,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31001100,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31001200,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31002000,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31002100,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500100,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500200,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500300,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500400,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500500,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500600,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500700,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31502100,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32000500,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32000600,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32000700,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32001300,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32001500,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32001700,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32001800,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32001900,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002100,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002200,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002300,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002400,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002500,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002600,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002700,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002800,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32002900,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32003000,
+      "Entries": [
+        "PCA SP EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500300,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500500,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500800,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501000,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501100,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501200,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501300,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501400,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501500,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501600,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501700,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501800,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32501900,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32502000,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32502100,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32502200,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32502300,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32503100,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32504000,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600020,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600200,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600220,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600500,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600510,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600600,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600610,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600620,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601200,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601210,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601220,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601230,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601240,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601250,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601260,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601270,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601800,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601900,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601910,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32602000,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32602100,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32602200,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32602300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32602900,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32603000,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32603100,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607000,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607010,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607020,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607030,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607040,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607050,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607060,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32607070,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000200,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000300,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000400,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000500,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000600,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000700,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000800,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000900,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001200,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001300,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001700,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001800,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001900,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33001950,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33002100,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33002200,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33002500,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33003100,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004000,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004100,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004200,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004300,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004400,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33004500,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33005000,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000300,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000400,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000500,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000600,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000700,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000800,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000900,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001200,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001300,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001400,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001500,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001600,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001700,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34001800,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002200,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002300,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002400,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002500,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002600,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002700,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002800,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34002900,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34003100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000110,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000300,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000400,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000500,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000600,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000700,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000800,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000900,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35001000,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35001200,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002000,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002100,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002200,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002300,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002500,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002600,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35002700,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35003100,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000100,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000200,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000300,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000400,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000410,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000500,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000600,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000610,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000620,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000630,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000700,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36002000,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36008000,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36009000,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000100,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000200,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000400,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000500,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000600,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000700,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000800,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001100,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001200,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001300,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001400,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37001500,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37002000,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37002100,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37002200,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37003100,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000400,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000600,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000700,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000900,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001100,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001200,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001300,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001400,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001500,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001600,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001700,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002000,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002100,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002200,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002300,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002400,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002500,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002600,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002700,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40002800,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40003100,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000400,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000500,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000600,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000700,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000800,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000900,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001100,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001200,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001300,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001400,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001500,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001600,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41001900,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002000,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002100,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002200,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002300,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002400,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002500,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002600,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002700,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002800,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41002900,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41003000,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41003100,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41003500,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004000,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004010,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004020,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004030,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004040,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004050,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004060,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004070,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004080,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004090,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004100,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004110,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004120,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004130,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004140,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004150,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004160,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004170,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004180,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41004190,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41009990,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500010,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500100,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500110,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500200,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500210,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500300,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500400,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500500,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500510,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500600,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500700,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500800,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500900,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501100,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501200,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501210,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501300,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501310,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501400,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501410,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501500,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501600,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41502000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41503100,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000100,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000200,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000300,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000400,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000500,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000600,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000700,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000800,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000900,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001100,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001200,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001300,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001400,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001500,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001600,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001700,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001800,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42001900,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002100,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002200,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002300,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002400,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002500,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002600,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002700,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42002800,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42003000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42003100,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010100,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010200,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010300,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010400,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010500,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010600,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010700,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010800,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42010900,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011100,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011200,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011300,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011400,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011500,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011600,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011700,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011800,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42011900,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012100,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012200,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012300,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012400,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012500,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012600,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012700,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012800,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42012900,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42013000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42013001,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42019500,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42019600,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42019700,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42019800,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42100100,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42100200,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42102000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42102300,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42102400,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42102500,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42102800,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500100,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500200,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42501300,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42502000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42502100,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42502200,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505100,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505200,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505300,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505400,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505600,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505700,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505800,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505900,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42507000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42507010,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42600200,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis) Drones"
+      ]
+    },
+    {
+      "ID": 42602000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis) Drones"
+      ]
+    },
+    {
+      "ID": 42602100,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis) Drones"
+      ]
+    },
+    {
+      "ID": 42602200,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis) Drones"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50003100,
+      "Entries": [
+        "Helicopter Drone"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50100100,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50100200,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50100300,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50100310,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50100400,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50102000,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50103100,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200100,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200200,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200300,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200400,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200500,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200600,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200700,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200800,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200900,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201100,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201200,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201300,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201400,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201500,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201600,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201700,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50202000,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50202100,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50202200,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50203100,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000200,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51002100,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51003100,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "Transport Helicopter Gatling Gun"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51200100,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51200200,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51201000,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51202000,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51500100,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 51500300,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 51500400,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 51503100,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52000200,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52000400,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52000500,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52000600,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52002000,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52002100,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52002900,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52003000,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52003100,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500100,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500200,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500300,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500400,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500500,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500600,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500700,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500800,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52500900,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501000,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501100,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501200,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501300,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501400,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501500,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501600,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501700,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501800,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52501900,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502000,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502100,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502200,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502300,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502400,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52502500,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 52503100,
+      "Entries": [
+        "HELIANTHUS Wheel"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000200,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000500,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000600,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000700,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000800,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000900,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000910,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001100,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001200,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001300,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001400,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001500,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001600,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001700,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001800,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001900,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002100,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002300,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002400,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002500,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53002600,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000100,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000200,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000300,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000400,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000401,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000402,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000500,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000600,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000700,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000800,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55000900,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001000,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001100,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001101,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001102,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55003100,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "c6000 Necklace Keeper Main Gun"
+      ]
+    },
+    {
+      "ID": 60000100,
+      "Entries": [
+        "c6000 Necklace Keeper Extra Thick Laser"
+      ]
+    },
+    {
+      "ID": 60000200,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A Front"
+      ]
+    },
+    {
+      "ID": 60000300,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Strong ①"
+      ]
+    },
+    {
+      "ID": 60000400,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ①"
+      ]
+    },
+    {
+      "ID": 60000500,
+      "Entries": [
+        "c6000 Necklace Keeper Face Missile (favorite)"
+      ]
+    },
+    {
+      "ID": 60000600,
+      "Entries": [
+        "c6000 Necklace Keeper Giant Missile"
+      ]
+    },
+    {
+      "ID": 60000700,
+      "Entries": [
+        "c6000 Necklace Keeper Face Missile (Enthusiasm)"
+      ]
+    },
+    {
+      "ID": 60000800,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Strong ②"
+      ]
+    },
+    {
+      "ID": 60000900,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Strong ③"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A Back"
+      ]
+    },
+    {
+      "ID": 60001100,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm B Back"
+      ]
+    },
+    {
+      "ID": 60001300,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Strong ④"
+      ]
+    },
+    {
+      "ID": 60001400,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ②"
+      ]
+    },
+    {
+      "ID": 60001500,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ③"
+      ]
+    },
+    {
+      "ID": 60001600,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ④"
+      ]
+    },
+    {
+      "ID": 60001700,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ⑤"
+      ]
+    },
+    {
+      "ID": 60001800,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak ⑥"
+      ]
+    },
+    {
+      "ID": 60002000,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 00"
+      ]
+    },
+    {
+      "ID": 60002100,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 01"
+      ]
+    },
+    {
+      "ID": 60002200,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 02"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "c6010 barrier unit laser machine gun"
+      ]
+    },
+    {
+      "ID": 60102000,
+      "Entries": [
+        "c6010 barrier unit one shot"
+      ]
+    },
+    {
+      "ID": 60103000,
+      "Entries": [
+        "c6010 barrier unit shield"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500100,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500110,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500120,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500200,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500210,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500220,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500300,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500350,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500400,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500450,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500500,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500600,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500700,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501200,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501500,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501600,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501700,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501800,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60502000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60502100,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60502500,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60502600,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60503000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60503010,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60504000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60504100,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505001,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505002,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505003,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505004,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505005,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505006,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505007,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60505008,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000200,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000300,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000400,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000500,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000600,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000700,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000800,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000900,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001100,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001200,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001300,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001400,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001500,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001600,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001700,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61001800,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002200,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002300,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002400,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002500,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002600,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002700,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002800,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61002900,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61003000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61003100,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004100,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004200,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004300,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004400,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004500,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004600,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61004700,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61010000,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61010100,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61010200,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61012000,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61012100,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61012200,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61013100,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61014200,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61019999,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500010,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500090,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500091,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500100,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500110,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500200,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500210,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500900,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62502000,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62502100,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62502200,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62502300,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62509000,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62509989,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62509990,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "c6260 Sandworm small body missile"
+      ]
+    },
+    {
+      "ID": 62600100,
+      "Entries": [
+        "c6260 Sandworm small tail missile_left"
+      ]
+    },
+    {
+      "ID": 62600200,
+      "Entries": [
+        "c6260 Sandworm small tail missile_right"
+      ]
+    },
+    {
+      "ID": 62602000,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_00"
+      ]
+    },
+    {
+      "ID": 62602100,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_01"
+      ]
+    },
+    {
+      "ID": 62602200,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_02"
+      ]
+    },
+    {
+      "ID": 63500000,
+      "Entries": [
+        "c6350 Dora Dora gun"
+      ]
+    },
+    {
+      "ID": 63510000,
+      "Entries": [
+        "c6351 Dora secondary gun secondary gun fire"
+      ]
+    },
+    {
+      "ID": 63520000,
+      "Entries": [
+        "c6352 Dora missile missile"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "STRIDER"
+      ]
+    },
+    {
+      "ID": 64000100,
+      "Entries": [
+        "STRIDER"
+      ]
+    },
+    {
+      "ID": 64000200,
+      "Entries": [
+        "STRIDER"
+      ]
+    },
+    {
+      "ID": 64002000,
+      "Entries": [
+        "STRIDER"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200100,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200101,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200200,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200201,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200300,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200400,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200500,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200600,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200700,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200800,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64200900,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64201000,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64201300,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202000,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202100,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202200,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202300,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202400,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202500,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202600,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202700,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64202800,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 64203100,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "c7220 field missile (repeat type) missile"
+      ]
+    },
+    {
+      "ID": 72210000,
+      "Entries": [
+        "c7221 field missile (vertical type) missile"
+      ]
+    },
+    {
+      "ID": 72230000,
+      "Entries": [
+        "c7223 field missile (simultaneous launch type) missile"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "c7230 Ground Force Battery Grenade (Large) Grenade"
+      ]
+    },
+    {
+      "ID": 72305000,
+      "Entries": [
+        "c7230 Ground Force Battery Grenade (Large) Grenade for Mining Ship"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "c7240 Ground Force Artillery Bazooka (Large) Bazooka"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "c7250 Ground force battery Gatling (large) machine gun"
+      ]
+    },
+    {
+      "ID": 72500010,
+      "Entries": [
+        "c7250 Ground force battery Gatling (large) machine gun tutorial use"
+      ]
+    },
+    {
+      "ID": 72500020,
+      "Entries": [
+        "c7250 Ground force artillery gatling (large) machine gun for large missiles firing adjustment"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "c7260 Ground Force Artillery Missile (Large) Twin Missile"
+      ]
+    },
+    {
+      "ID": 72600010,
+      "Entries": [
+        "c7260 Ground Force Artillery Missile (Large) Twin missile simultaneous launch"
+      ]
+    },
+    {
+      "ID": 72610000,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical Missile"
+      ]
+    },
+    {
+      "ID": 72610010,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical Missile Bullet Number Limit"
+      ]
+    },
+    {
+      "ID": 72610020,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical Missile Bullet Limit 10"
+      ]
+    },
+    {
+      "ID": 72610030,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical Missile for Mining Ship"
+      ]
+    },
+    {
+      "ID": 72620000,
+      "Entries": [
+        "c7262 Ground Force Artillery Missile (Large) Horizontal Missile"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 Ground Force Battery Sniper (Large) Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 72700100,
+      "Entries": [
+        "c7270 Ground Force Battery Sniper (Large) Hacking Sniper Rifle Regular Battery"
+      ]
+    },
+    {
+      "ID": 72800100,
+      "Entries": [
+        "c7280 Ground Force Artillery Laser Rifle Laser Rifle"
+      ]
+    },
+    {
+      "ID": 72900000,
+      "Entries": [
+        "c7290 Ground Force Artillery Laser Bazooka Laser Bazooka"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "c7300 speaker antenna turret"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 State-of-the-art EN battery plasma rifle"
+      ]
+    },
+    {
+      "ID": 73100100,
+      "Entries": [
+        "c7310 State-of-the-art EN battery plasma rifle for new B tier"
+      ]
+    },
+    {
+      "ID": 73103000,
+      "Entries": [
+        "c7310 State-of-the-art EN battery for PA deployment"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "c7320 State-of-the-art EN battery plasma missile"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900100,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900200,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900300,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900400,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900500,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900600,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900700,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900800,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900900,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73902000,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000100,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000200,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000210,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000230,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000300,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000301,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000400,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000500,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000600,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000700,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000800,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74000900,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74001000,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74001500,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74001600,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74001700,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74002000,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74002100,
+      "Entries": [
+        "PCA Heavy Warship"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "c7401 amphibious assault ship main gun main gun"
+      ]
+    },
+    {
+      "ID": 74011000,
+      "Entries": [
+        "c7401 amphibious assault ship main gun main gun for mining ship"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "c7402 amphibious assault ship secondary gun secondary gun"
+      ]
+    },
+    {
+      "ID": 74025000,
+      "Entries": [
+        "c7402 Amphibious assault ship secondary gun secondary gun for mining ship"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "c7403 amphibious assault ship missile cannon missile"
+      ]
+    },
+    {
+      "ID": 74031000,
+      "Entries": [
+        "c7403 amphibious assault ship missile cannon missile"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100100,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100110,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100120,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100130,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100200,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74102000,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 74109000,
+      "Entries": [
+        "PCA Warship Drone"
+      ]
+    },
+    {
+      "ID": 80101000,
+      "Entries": [
+        "c8010 high altitude sniper rifle"
+      ]
+    },
+    {
+      "ID": 80101010,
+      "Entries": [
+        "c8010 High Place Sniper Rifle Underground"
+      ]
+    },
+    {
+      "ID": 80101100,
+      "Entries": [
+        "c8010 High Altitude Sna Gatling"
+      ]
+    },
+    {
+      "ID": 80101200,
+      "Entries": [
+        "c8010 High altitude snapper laser sight"
+      ]
+    },
+    {
+      "ID": 80201000,
+      "Entries": [
+        "c8020 Mortar MT Cannon Mortar"
+      ]
+    },
+    {
+      "ID": 80201100,
+      "Entries": [
+        "c8020 Mortar MT hand rocket"
+      ]
+    },
+    {
+      "ID": 80201900,
+      "Entries": [
+        "B layer naval gun fire substitute cannon mortar"
+      ]
+    },
+    {
+      "ID": 80210100,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 100"
+      ]
+    },
+    {
+      "ID": 80210200,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 200"
+      ]
+    },
+    {
+      "ID": 80210300,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 300"
+      ]
+    },
+    {
+      "ID": 80210400,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 400"
+      ]
+    },
+    {
+      "ID": 80210500,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 500"
+      ]
+    },
+    {
+      "ID": 80210600,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 600"
+      ]
+    },
+    {
+      "ID": 80210700,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 700"
+      ]
+    },
+    {
+      "ID": 80210800,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 800"
+      ]
+    },
+    {
+      "ID": 80210900,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 900"
+      ]
+    },
+    {
+      "ID": 80220100,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 100"
+      ]
+    },
+    {
+      "ID": 80220200,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 200"
+      ]
+    },
+    {
+      "ID": 80220300,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 300"
+      ]
+    },
+    {
+      "ID": 80220400,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 400"
+      ]
+    },
+    {
+      "ID": 80220500,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 500"
+      ]
+    },
+    {
+      "ID": 80220600,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 600"
+      ]
+    },
+    {
+      "ID": 80220700,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 700"
+      ]
+    },
+    {
+      "ID": 80220800,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 800"
+      ]
+    },
+    {
+      "ID": 80220900,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 900"
+      ]
+    },
+    {
+      "ID": 80301000,
+      "Entries": [
+        "c8030 Pile MT (Shotgun Pile"
+      ]
+    },
+    {
+      "ID": 80301100,
+      "Entries": [
+        "c8030 pile MT (shotgun shotgun"
+      ]
+    },
+    {
+      "ID": 80301200,
+      "Entries": [
+        "c8030 pile MT (shotgun sliding)"
+      ]
+    },
+    {
+      "ID": 80401000,
+      "Entries": [
+        "c8040 Large drone (calling friends sonar)"
+      ]
+    },
+    {
+      "ID": 80401100,
+      "Entries": [
+        "c8040 Large drone (call for friends, call for friends)"
+      ]
+    },
+    {
+      "ID": 80401200,
+      "Entries": [
+        "c8040 Large drone (calling friends, barrier deployment)"
+      ]
+    },
+    {
+      "ID": 80409000,
+      "Entries": [
+        "c8040 large drone (AI missile test)"
+      ]
+    },
+    {
+      "ID": 80409100,
+      "Entries": [
+        "c8040 large drone (orbit)"
+      ]
+    },
+    {
+      "ID": 80501000,
+      "Entries": [
+        "c8050 dropship dispatch"
+      ]
+    },
+    {
+      "ID": 80501100,
+      "Entries": [
+        "c8050 dropship machine gun"
+      ]
+    },
+    {
+      "ID": 80601000,
+      "Entries": [
+        "c8060 gunship (strong enemy diffusion missile left)"
+      ]
+    },
+    {
+      "ID": 80601100,
+      "Entries": [
+        "c8060 gunship (strong enemy rocket)"
+      ]
+    },
+    {
+      "ID": 80601200,
+      "Entries": [
+        "c8060 Gunship (Formidable Enemy Gatling)"
+      ]
+    },
+    {
+      "ID": 80601300,
+      "Entries": [
+        "c8060 gunship (strong enemy diffusion missile right)"
+      ]
+    },
+    {
+      "ID": 80701000,
+      "Entries": [
+        "c8070 Irradiation laser Irradiation laser"
+      ]
+    },
+    {
+      "ID": 80709000,
+      "Entries": [
+        "c8070 Irradiation laser Irradiation laser For situation test"
+      ]
+    },
+    {
+      "ID": 80801000,
+      "Entries": [
+        "c8080 fire blowing MT flame radiation straight line"
+      ]
+    },
+    {
+      "ID": 80801100,
+      "Entries": [
+        "c8080 Fire-breathing MT Flame radiation mowing down"
+      ]
+    },
+    {
+      "ID": 80901000,
+      "Entries": [
+        "c8090 fighter machine gun"
+      ]
+    },
+    {
+      "ID": 80901900,
+      "Entries": [
+        "c8090 fighter aircraft carrier-based aircraft beam"
+      ]
+    },
+    {
+      "ID": 81000600,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Laser Whip 2nd stage"
+      ]
+    },
+    {
+      "ID": 81001000,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Handgun"
+      ]
+    },
+    {
+      "ID": 81001100,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Laser Whip Rush"
+      ]
+    },
+    {
+      "ID": 81001200,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Guard"
+      ]
+    },
+    {
+      "ID": 81001300,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Laser Whip Combo"
+      ]
+    },
+    {
+      "ID": 81001400,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip Guard Modified)"
+      ]
+    },
+    {
+      "ID": 81100600,
+      "Entries": [
+        "c8110 Colorless MT Reload Test"
+      ]
+    },
+    {
+      "ID": 81101000,
+      "Entries": [
+        "c8110 Colorless MT Rifle"
+      ]
+    },
+    {
+      "ID": 81101010,
+      "Entries": [
+        "c8110 Colorless MT Burst Rifle"
+      ]
+    },
+    {
+      "ID": 81101100,
+      "Entries": [
+        "c8110 Colorless MT blade"
+      ]
+    },
+    {
+      "ID": 81101200,
+      "Entries": [
+        "c8110 Colorless MT Cover Medium Rifle"
+      ]
+    },
+    {
+      "ID": 81101300,
+      "Entries": [
+        "c8110 Colorless MT blade 2nd stage test"
+      ]
+    },
+    {
+      "ID": 81101400,
+      "Entries": [
+        "c8110 Colorless MT look around"
+      ]
+    },
+    {
+      "ID": 81102100,
+      "Entries": [
+        "c8110_10 Colorless MT Addition Small (Lv1)"
+      ]
+    },
+    {
+      "ID": 81102200,
+      "Entries": [
+        "c8110_10 Colorless MT Stagger Small (Lv1)"
+      ]
+    },
+    {
+      "ID": 81102300,
+      "Entries": [
+        "c8110_11 Colorless MT Additive Small (Lv1) Rapid Fire"
+      ]
+    },
+    {
+      "ID": 81102400,
+      "Entries": [
+        "c8110_11 Colorless MT Small stagger (Lv1) Rapid fire"
+      ]
+    },
+    {
+      "ID": 81102500,
+      "Entries": [
+        "c8110_20 Colorless MT Addition Large (Lv2)"
+      ]
+    },
+    {
+      "ID": 81102600,
+      "Entries": [
+        "c8110_20 Colorless MT Staggering (Lv2)"
+      ]
+    },
+    {
+      "ID": 81102700,
+      "Entries": [
+        "c8110_20 Colorless MT Addition Large (Lv2) Rapid Fire"
+      ]
+    },
+    {
+      "ID": 81102800,
+      "Entries": [
+        "c8110_20 Colorless MT Staggering (Lv2) Rapid fire"
+      ]
+    },
+    {
+      "ID": 81102900,
+      "Entries": [
+        "c8110_30 Colorless MT Large stagger (Lv3)"
+      ]
+    },
+    {
+      "ID": 81103000,
+      "Entries": [
+        "c8110_30 Colorless MT Large stagger (Lv3) rapid fire"
+      ]
+    },
+    {
+      "ID": 81103100,
+      "Entries": [
+        "c8110_30 Colorless MT blown away (Lv4)"
+      ]
+    },
+    {
+      "ID": 81103200,
+      "Entries": [
+        "c8110_30 Colorless MT blow away (Lv4) rapid fire"
+      ]
+    },
+    {
+      "ID": 81103300,
+      "Entries": [
+        "c8110_30 Colorless MT Forced Break (Lv3)"
+      ]
+    },
+    {
+      "ID": 81103400,
+      "Entries": [
+        "c8110_30 Colorless MT Forced Break (Lv3) Rapid Fire"
+      ]
+    },
+    {
+      "ID": 81103500,
+      "Entries": [
+        "c8110_30 Colorless MT Blowout Break (Lv4)"
+      ]
+    },
+    {
+      "ID": 81103600,
+      "Entries": [
+        "c8110_30 Colorless MT Blowout Break (Lv4) Rapid Fire"
+      ]
+    },
+    {
+      "ID": 81103700,
+      "Entries": [
+        "c8110_80 Colorless MT Damage Lv8"
+      ]
+    },
+    {
+      "ID": 81110100,
+      "Entries": [
+        "c8111 Colorless MT machine gun for control confirmation"
+      ]
+    },
+    {
+      "ID": 81110200,
+      "Entries": [
+        "c8111 Colorless MT normal machine gun for control confirmation"
+      ]
+    },
+    {
+      "ID": 81170100,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 81170200,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity"
+      ]
+    },
+    {
+      "ID": 81170300,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Missile"
+      ]
+    },
+    {
+      "ID": 81170400,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity"
+      ]
+    },
+    {
+      "ID": 81190100,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Machine Gun"
+      ]
+    },
+    {
+      "ID": 81190200,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity"
+      ]
+    },
+    {
+      "ID": 81190300,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Missile"
+      ]
+    },
+    {
+      "ID": 81190400,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity"
+      ]
+    },
+    {
+      "ID": 81301000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) short-range missile"
+      ]
+    },
+    {
+      "ID": 81301100,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) medium-range missile"
+      ]
+    },
+    {
+      "ID": 81301700,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) Pile shooting (repeat shooting)"
+      ]
+    },
+    {
+      "ID": 81301900,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) Pile shooting (single shot)"
+      ]
+    },
+    {
+      "ID": 81302000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) close range pile"
+      ]
+    },
+    {
+      "ID": 81302100,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) medium range pile"
+      ]
+    },
+    {
+      "ID": 81302200,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) pile on the spot"
+      ]
+    },
+    {
+      "ID": 81302300,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) Turning pile"
+      ]
+    },
+    {
+      "ID": 81302400,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) small jump pile"
+      ]
+    },
+    {
+      "ID": 81302500,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) large jump pile"
+      ]
+    },
+    {
+      "ID": 81302600,
+      "Entries": [
+        "c8130 Strong Enemy (Humanoid) Self-centered Explosive Pile"
+      ]
+    },
+    {
+      "ID": 81302700,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) wrap around small jump pile"
+      ]
+    },
+    {
+      "ID": 81302900,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) close range combo"
+      ]
+    },
+    {
+      "ID": 81303900,
+      "Entries": [
+        "c8130 Strong Enemy (Humanoid) Guard"
+      ]
+    },
+    {
+      "ID": 81304000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) Specified direction QB"
+      ]
+    },
+    {
+      "ID": 81304200,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) Previous step (combo compatible)"
+      ]
+    },
+    {
+      "ID": 81308000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) for exhaust heat production"
+      ]
+    },
+    {
+      "ID": 81309000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) attachment dummy pile"
+      ]
+    },
+    {
+      "ID": 81309100,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) attachment dummy shield"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "c8131 Control prototype character shield"
+      ]
+    },
+    {
+      "ID": 81310100,
+      "Entries": [
+        "c8131 Control prototype character machine gun"
+      ]
+    },
+    {
+      "ID": 81310200,
+      "Entries": [
+        "c8131 Control prototype character reload"
+      ]
+    },
+    {
+      "ID": 81310300,
+      "Entries": [
+        "c8131 control prototype character missile"
+      ]
+    },
+    {
+      "ID": 81310400,
+      "Entries": [
+        "c8131 Control prototype character Charge (Stance)"
+      ]
+    },
+    {
+      "ID": 81310500,
+      "Entries": [
+        "c8131 Control prototype character charge shot"
+      ]
+    },
+    {
+      "ID": 81310600,
+      "Entries": [
+        "c8131 Control prototype character charge pile"
+      ]
+    },
+    {
+      "ID": 81310700,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 1 kesa"
+      ]
+    },
+    {
+      "ID": 81310800,
+      "Entries": [
+        "c8131 Control prototype character Melee basic combo 2 Sakanagi"
+      ]
+    },
+    {
+      "ID": 81310900,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 3 storage thrust"
+      ]
+    },
+    {
+      "ID": 81311000,
+      "Entries": [
+        "c8131 Control prototype character melee test jump pile"
+      ]
+    },
+    {
+      "ID": 81319000,
+      "Entries": [
+        "c8131 Control prototype character lower body control state"
+      ]
+    },
+    {
+      "ID": 81319100,
+      "Entries": [
+        "c8131 Control prototype character upper body control state"
+      ]
+    },
+    {
+      "ID": 81319200,
+      "Entries": [
+        "c8131 Control prototype character shoulder weapon control state"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350100,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350200,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350300,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350400,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350500,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81350600,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81351000,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81351100,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81351200,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81352000,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81352100,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "ENFORCER (Defense Mode)"
+      ]
+    },
+    {
+      "ID": 81450100,
+      "Entries": [
+        "ENFORCER (Defense Mode)"
+      ]
+    },
+    {
+      "ID": 81452000,
+      "Entries": [
+        "ENFORCER (Defense Mode)"
+      ]
+    },
+    {
+      "ID": 82000100,
+      "Entries": [
+        "c8200 Walla Walla Insect Scratch"
+      ]
+    },
+    {
+      "ID": 82000200,
+      "Entries": [
+        "c8200 Walla Walla Bug Pounce"
+      ]
+    },
+    {
+      "ID": 82000300,
+      "Entries": [
+        "c8200 Walla Walla Mushi Attack"
+      ]
+    },
+    {
+      "ID": 82100100,
+      "Entries": [
+        "c8210 Walla Walla Bug (Large) Scratch"
+      ]
+    },
+    {
+      "ID": 82100200,
+      "Entries": [
+        "c8210 Walla Walla Insect (Large) Pounce"
+      ]
+    },
+    {
+      "ID": 82100300,
+      "Entries": [
+        "c8210 Walla Walla Insect (Large) Assault"
+      ]
+    },
+    {
+      "ID": 82100400,
+      "Entries": [
+        "c8210 Walla Walla Insect (Large) Assault"
+      ]
+    },
+    {
+      "ID": 82100500,
+      "Entries": [
+        "c8210 Walla Walla Bug (Large) Light Bullet"
+      ]
+    },
+    {
+      "ID": 82500000,
+      "Entries": [
+        "c8250 D layer giant elevator missile"
+      ]
+    },
+    {
+      "ID": 82500100,
+      "Entries": [
+        "c8250 D layer huge elevator for transportation"
+      ]
+    },
+    {
+      "ID": 82500200,
+      "Entries": [
+        "c8250 D layer giant elevator weak point opening/closing"
+      ]
+    },
+    {
+      "ID": 82500900,
+      "Entries": [
+        "c8250 D layer giant elevator laser sight"
+      ]
+    },
+    {
+      "ID": 82501000,
+      "Entries": [
+        "c8250 D layer giant elevator container missile"
+      ]
+    },
+    {
+      "ID": 82501100,
+      "Entries": [
+        "c8250 D layer giant elevator container missile"
+      ]
+    },
+    {
+      "ID": 82501200,
+      "Entries": [
+        "c8250 D layer giant elevator container missile"
+      ]
+    },
+    {
+      "ID": 82501300,
+      "Entries": [
+        "c8250 D layer giant elevator container missile"
+      ]
+    },
+    {
+      "ID": 82502000,
+      "Entries": [
+        "c8250 D layer giant elevator jump rope laser"
+      ]
+    },
+    {
+      "ID": 82502100,
+      "Entries": [
+        "c8250 D layer giant elevator jump rope laser"
+      ]
+    },
+    {
+      "ID": 82502200,
+      "Entries": [
+        "c8250 D layer giant elevator jump rope laser"
+      ]
+    },
+    {
+      "ID": 82502300,
+      "Entries": [
+        "c8250 D layer giant elevator jump rope laser"
+      ]
+    },
+    {
+      "ID": 82512000,
+      "Entries": [
+        "c8251 Jump rope laser control character Jump rope laser"
+      ]
+    },
+    {
+      "ID": 82512100,
+      "Entries": [
+        "c8251 Jump rope laser control character Jump rope laser"
+      ]
+    },
+    {
+      "ID": 82512200,
+      "Entries": [
+        "c8251 Jump rope laser control character Jump rope laser"
+      ]
+    },
+    {
+      "ID": 82512300,
+      "Entries": [
+        "c8251 Jump rope laser control character Jump rope laser"
+      ]
+    },
+    {
+      "ID": 83001000,
+      "Entries": [
+        "c8300 Sandworm Charge"
+      ]
+    },
+    {
+      "ID": 83001100,
+      "Entries": [
+        "c8300 Sandworm Straight Laser"
+      ]
+    },
+    {
+      "ID": 83001200,
+      "Entries": [
+        "c8300 Sandworm pouncing"
+      ]
+    },
+    {
+      "ID": 83001300,
+      "Entries": [
+        "c8300 sandworm"
+      ]
+    },
+    {
+      "ID": 83001400,
+      "Entries": [
+        "c8300 Sandworm Rush Kai"
+      ]
+    },
+    {
+      "ID": 84001000,
+      "Entries": [
+        "c8400 Maritime Super Huge Cannon Cannon"
+      ]
+    },
+    {
+      "ID": 84001100,
+      "Entries": [
+        "c8400 Maritime super huge gun battery right missile"
+      ]
+    },
+    {
+      "ID": 84001200,
+      "Entries": [
+        "c8400 Maritime super huge gun battery left missile"
+      ]
+    },
+    {
+      "ID": 84009000,
+      "Entries": [
+        "c8400 Maritime super huge gun battery mining ship attach cannon"
+      ]
+    },
+    {
+      "ID": 84009100,
+      "Entries": [
+        "c8400 Maritime super huge gun battery mining ship attach right missile"
+      ]
+    },
+    {
+      "ID": 84009200,
+      "Entries": [
+        "c8400 Maritime super huge gun battery mining ship attach left missile"
+      ]
+    },
+    {
+      "ID": 84201000,
+      "Entries": [
+        "c8420 marine carrier"
+      ]
+    },
+    {
+      "ID": 99800100,
+      "Entries": [
+        "c9980 Dummy character for event pattern A"
+      ]
+    },
+    {
+      "ID": 99800200,
+      "Entries": [
+        "c9980 Dummy character for event pattern B"
+      ]
+    },
+    {
+      "ID": 99800300,
+      "Entries": [
+        "c9980 Dummy character for event pattern C"
+      ]
+    },
+    {
+      "ID": 99800400,
+      "Entries": [
+        "c9980 Dummy character for event pattern D"
+      ]
+    },
+    {
+      "ID": 99802000,
+      "Entries": [
+        "c9980 Dummy character event one shot"
+      ]
+    },
+    {
+      "ID": 85000000,
+      "Entries": [
+        "Bomber anti-aircraft gun left"
+      ]
+    },
+    {
+      "ID": 85001000,
+      "Entries": [
+        "Bomber anti-aircraft gun right"
+      ]
+    },
+    {
+      "ID": 85002000,
+      "Entries": [
+        "Bomber ground gun left"
+      ]
+    },
+    {
+      "ID": 85003000,
+      "Entries": [
+        "Bomber ground gun right"
+      ]
+    },
+    {
+      "ID": 85004000,
+      "Entries": [
+        "bomber bombing"
+      ]
+    },
+    {
+      "ID": 85005000,
+      "Entries": [
+        "Bomber sortie order"
+      ]
+    },
+    {
+      "ID": 85100000,
+      "Entries": [
+        "Strong Zako Grenade"
+      ]
+    },
+    {
+      "ID": 85101000,
+      "Entries": [
+        "Strong Shield"
+      ]
+    },
+    {
+      "ID": 85102000,
+      "Entries": [
+        "Strong Zako 8 consecutive vertical missiles_right shoulder"
+      ]
+    },
+    {
+      "ID": 85102900,
+      "Entries": [
+        "Strong Zako 8-barreled vertical missile_right shoulder guidance test"
+      ]
+    },
+    {
+      "ID": 85103000,
+      "Entries": [
+        "Strong Zako 8 consecutive vertical missiles_left shoulder"
+      ]
+    },
+    {
+      "ID": 85103900,
+      "Entries": [
+        "Strong Zako 8-barreled vertical missile_Left shoulder guidance test"
+      ]
+    },
+    {
+      "ID": 85104000,
+      "Entries": [
+        "Strong Zako Turning Boost"
+      ]
+    },
+    {
+      "ID": 85104100,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka"
+      ]
+    },
+    {
+      "ID": 85104200,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile)"
+      ]
+    },
+    {
+      "ID": 85104300,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka"
+      ]
+    },
+    {
+      "ID": 85104700,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile)"
+      ]
+    },
+    {
+      "ID": 85109000,
+      "Entries": [
+        "Strong Zako Grenade"
+      ]
+    },
+    {
+      "ID": 85350000,
+      "Entries": [
+        "c8535 Mining ship main gun center"
+      ]
+    },
+    {
+      "ID": 85350100,
+      "Entries": [
+        "c8535 Mining ship main gun inner frame"
+      ]
+    },
+    {
+      "ID": 85350200,
+      "Entries": [
+        "c8535 Mining ship main gun outer frame"
+      ]
+    },
+    {
+      "ID": 85350300,
+      "Entries": [
+        "c8535 mining ship eyeball missile long range"
+      ]
+    },
+    {
+      "ID": 85350400,
+      "Entries": [
+        "c8535 mining ship eyeball missile short range"
+      ]
+    },
+    {
+      "ID": 92012000,
+      "Entries": [
+        "c9201 reverse joint machine gun"
+      ]
+    },
+    {
+      "ID": 92030100,
+      "Entries": [
+        "c9203 Reverse joint damage Lv1 interval 2 seconds machine gun"
+      ]
+    },
+    {
+      "ID": 92040100,
+      "Entries": [
+        "c9204 Reverse joint damage Lv1 interval 0.1 seconds machine gun"
+      ]
+    },
+    {
+      "ID": 93070100,
+      "Entries": [
+        "c9307 Colorless poured communist MT machine gun"
+      ]
+    },
+    {
+      "ID": 93080100,
+      "Entries": [
+        "c9308 Tank control verification missile"
+      ]
+    },
+    {
+      "ID": 93081000,
+      "Entries": [
+        "c9308 Proximity for tank control verification"
+      ]
+    },
+    {
+      "ID": 93081100,
+      "Entries": [
+        "c9308 Proximity for tank control verification"
+      ]
+    },
+    {
+      "ID": 93083100,
+      "Entries": [
+        "c9308 Constant LookAt for tank control verification"
+      ]
+    },
+    {
+      "ID": 93093100,
+      "Entries": [
+        "c9309 Machine gun for quadruped control test"
+      ]
+    },
+    {
+      "ID": 93200000,
+      "Entries": [
+        "c9320 planning training aircraft shield"
+      ]
+    },
+    {
+      "ID": 93200100,
+      "Entries": [
+        "c9320 Planning training machine Bazooka"
+      ]
+    },
+    {
+      "ID": 93200200,
+      "Entries": [
+        "c9320 planning training aircraft missile right"
+      ]
+    },
+    {
+      "ID": 93200300,
+      "Entries": [
+        "c9320 planning training aircraft missile left"
+      ]
+    },
+    {
+      "ID": 93200400,
+      "Entries": [
+        "c9320 planning training machine machine gun"
+      ]
+    },
+    {
+      "ID": 85110000,
+      "Entries": [
+        "c8511 Bazooka for strong-strike practice"
+      ]
+    },
+    {
+      "ID": 85110100,
+      "Entries": [
+        "c8511 Strong Zako practice missile"
+      ]
+    },
+    {
+      "ID": 85110200,
+      "Entries": [
+        "c8511 Shield for strong zako practice"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "Mining ship eyeball laser 1"
+      ]
+    },
+    {
+      "ID": 85300100,
+      "Entries": [
+        "Mining ship eyeball laser 2"
+      ]
+    },
+    {
+      "ID": 85300200,
+      "Entries": [
+        "Mining ship eyeball laser 3"
+      ]
+    },
+    {
+      "ID": 85303000,
+      "Entries": [
+        "Mining ship mining rock circular saw"
+      ]
+    },
+    {
+      "ID": 85303100,
+      "Entries": [
+        "Mining ship mining rock drill 1"
+      ]
+    },
+    {
+      "ID": 85303200,
+      "Entries": [
+        "Mining ship mining rock drill 2"
+      ]
+    },
+    {
+      "ID": 85304000,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304100,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304200,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304300,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304400,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304500,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304600,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304700,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85304800,
+      "Entries": [
+        "mining ship missile"
+      ]
+    },
+    {
+      "ID": 85305000,
+      "Entries": [
+        "Mining ship interceptor machine gun"
+      ]
+    },
+    {
+      "ID": 85308000,
+      "Entries": [
+        "Mining ship mining rock eyeball death control 0"
+      ]
+    },
+    {
+      "ID": 85308100,
+      "Entries": [
+        "Mining ship mining rock eyeball death control 1"
+      ]
+    },
+    {
+      "ID": 85308200,
+      "Entries": [
+        "Mining ship mining rock eyeball death control 2"
+      ]
+    },
+    {
+      "ID": 85309000,
+      "Entries": [
+        "Mining ship mining rock for movement control 0"
+      ]
+    },
+    {
+      "ID": 85309100,
+      "Entries": [
+        "Mining ship mining rock for movement control 1"
+      ]
+    },
+    {
+      "ID": 85309200,
+      "Entries": [
+        "Mining ship mining rock for movement control 2"
+      ]
+    },
+    {
+      "ID": 85309300,
+      "Entries": [
+        "Mining ship mining rock for movement control 3"
+      ]
+    },
+    {
+      "ID": 85309400,
+      "Entries": [
+        "Mining ship mining rock for movement control 4"
+      ]
+    },
+    {
+      "ID": 85309500,
+      "Entries": [
+        "Mining ship mining rock for movement control 5"
+      ]
+    },
+    {
+      "ID": 85326000,
+      "Entries": [
+        "Mining ship drill for opening and closing"
+      ]
+    },
+    {
+      "ID": 85327000,
+      "Entries": [
+        "Mining ship launch catapult 1st car"
+      ]
+    },
+    {
+      "ID": 85327100,
+      "Entries": [
+        "Mining ship launch catapult 2nd car"
+      ]
+    },
+    {
+      "ID": 85327200,
+      "Entries": [
+        "Mining ship launch catapult 3rd car"
+      ]
+    },
+    {
+      "ID": 85330000,
+      "Entries": [
+        "c8533 Mining ship attach super huge gun battery"
+      ]
+    },
+    {
+      "ID": 85331000,
+      "Entries": [
+        "c8533 Mining ship attach super huge gun battery"
+      ]
+    },
+    {
+      "ID": 85332000,
+      "Entries": [
+        "c8533 Mining ship attach super huge gun battery map layout"
+      ]
+    },
+    {
+      "ID": 85351000,
+      "Entries": [
+        "mining ship eyeball laser"
+      ]
+    },
+    {
+      "ID": 85351100,
+      "Entries": [
+        "Mining ship eyeball laser right"
+      ]
+    },
+    {
+      "ID": 85351200,
+      "Entries": [
+        "Mining ship eyeball laser left"
+      ]
+    },
+    {
+      "ID": 85351300,
+      "Entries": [
+        "Mining ship eyeball diffused beam"
+      ]
+    },
+    {
+      "ID": 85352100,
+      "Entries": [
+        "mining ship eyeball blink"
+      ]
+    },
+    {
+      "ID": 85352200,
+      "Entries": [
+        "Mining ship eyeball stage destruction"
+      ]
+    },
+    {
+      "ID": 85360000,
+      "Entries": [
+        "Mining ship drill"
+      ]
+    },
+    {
+      "ID": 85361000,
+      "Entries": [
+        "Mining Ship Drill Attack while standing"
+      ]
+    },
+    {
+      "ID": 85362100,
+      "Entries": [
+        "Mining ship drill for controlling part destruction"
+      ]
+    },
+    {
+      "ID": 85371000,
+      "Entries": [
+        "Mining ship knee cover for deployment"
+      ]
+    },
+    {
+      "ID": 85371100,
+      "Entries": [
+        "Mining ship knee cover for part destruction"
+      ]
+    },
+    {
+      "ID": 85381000,
+      "Entries": [
+        "Mining ship below control deployment use"
+      ]
+    },
+    {
+      "ID": 85381100,
+      "Entries": [
+        "Mining ship below control for destruction of parts"
+      ]
+    },
+    {
+      "ID": 85401000,
+      "Entries": [
+        "Strong enemy (heavy class) Missile: Normal"
+      ]
+    },
+    {
+      "ID": 85401100,
+      "Entries": [
+        "Formidable Enemy (Heavy Class) Missile: Review"
+      ]
+    },
+    {
+      "ID": 85401200,
+      "Entries": [
+        "Strong enemy (heavy class) Rocket: Normal"
+      ]
+    },
+    {
+      "ID": 85401300,
+      "Entries": [
+        "Formidable Enemy (Heavyweight) Rocket: Review"
+      ]
+    },
+    {
+      "ID": 85401400,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Normal"
+      ]
+    },
+    {
+      "ID": 85401500,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Extraction attack"
+      ]
+    },
+    {
+      "ID": 85401600,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Turn around attack"
+      ]
+    },
+    {
+      "ID": 85401700,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Giant blade"
+      ]
+    },
+    {
+      "ID": 85401800,
+      "Entries": [
+        "Formidable Enemy (Heavy Class) Plasma Rifle"
+      ]
+    },
+    {
+      "ID": 85401900,
+      "Entries": [
+        "Strong Enemy (Heavyweight) Pulse Gun"
+      ]
+    },
+    {
+      "ID": 85402000,
+      "Entries": [
+        "Strong enemy (heavy class) Shield: Guard"
+      ]
+    },
+    {
+      "ID": 85402100,
+      "Entries": [
+        "Strong enemy (heavy class) Shield: Charge"
+      ]
+    },
+    {
+      "ID": 85402200,
+      "Entries": [
+        "Strong enemy (heavy class) Shield: Short charge"
+      ]
+    },
+    {
+      "ID": 85402300,
+      "Entries": [
+        "Strong Enemy (Heavyweight) Heat Up"
+      ]
+    },
+    {
+      "ID": 85402400,
+      "Entries": [
+        "Strong Enemy (Heavyweight) Charge Plasma"
+      ]
+    },
+    {
+      "ID": 85402500,
+      "Entries": [
+        "Strong enemy (heavyweight) QB"
+      ]
+    },
+    {
+      "ID": 85402600,
+      "Entries": [
+        "Strong Enemy (Heavyweight) Plasma Rifle (Back Step)"
+      ]
+    },
+    {
+      "ID": 85402700,
+      "Entries": [
+        "Strong enemy (heavy class) Left blade vertical slash"
+      ]
+    },
+    {
+      "ID": 85405000,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Vertical slash"
+      ]
+    },
+    {
+      "ID": 85405100,
+      "Entries": [
+        "Strong enemy (heavy class) Left blade: Normal"
+      ]
+    },
+    {
+      "ID": 85405200,
+      "Entries": [
+        "Strong enemy (heavy class) Blade: Dual sword x-shaped slash"
+      ]
+    },
+    {
+      "ID": 85405300,
+      "Entries": [
+        "Formidable Enemy (Heavyweight) QB Pattern 2"
+      ]
+    },
+    {
+      "ID": 85406000,
+      "Entries": [
+        "Strong enemy (heavy class) extraction attack (no movement)"
+      ]
+    },
+    {
+      "ID": 85406100,
+      "Entries": [
+        "Strong enemy (heavy class) Right vertical slash (no movement)"
+      ]
+    },
+    {
+      "ID": 85406200,
+      "Entries": [
+        "Strong enemy (heavy class) Left vertical slash (no movement)"
+      ]
+    },
+    {
+      "ID": 85406300,
+      "Entries": [
+        "Strong enemy (heavy class) Blade (no movement)"
+      ]
+    },
+    {
+      "ID": 88000000,
+      "Entries": [
+        "Bug (heavy class rare)"
+      ]
+    },
+    {
+      "ID": 88100000,
+      "Entries": [
+        "Bug (normal type)"
+      ]
+    },
+    {
+      "ID": 88200000,
+      "Entries": [
+        "Bug (long leg jump type)"
+      ]
+    },
+    {
+      "ID": 88300000,
+      "Entries": [
+        "Bug (Flying type)"
+      ]
+    },
+    {
+      "ID": 88400000,
+      "Entries": [
+        "Bug (wall-mounted type)"
+      ]
+    },
+    {
+      "ID": 90100000,
+      "Entries": [
+        "Test battery machine gun for mining ships"
+      ]
+    },
+    {
+      "ID": 90310000,
+      "Entries": [
+        "Flying enemy_small laser"
+      ]
+    },
+    {
+      "ID": 90311000,
+      "Entries": [
+        "Flying enemy_scan laser"
+      ]
+    },
+    {
+      "ID": 90312000,
+      "Entries": [
+        "Reverse indirect_missile"
+      ]
+    },
+    {
+      "ID": 90313000,
+      "Entries": [
+        "Flying enemy_for charging shot confirmation (test)"
+      ]
+    },
+    {
+      "ID": 92010000,
+      "Entries": [
+        "Reverse indirect machine gun"
+      ]
+    },
+    {
+      "ID": 92010080,
+      "Entries": [
+        "Reverse indirect_machine gun_anti-aircraft specification"
+      ]
+    },
+    {
+      "ID": 92011000,
+      "Entries": [
+        "Reverse indirect_missile"
+      ]
+    },
+    {
+      "ID": 92019000,
+      "Entries": [
+        "Reverse indirect machine gun test"
+      ]
+    },
+    {
+      "ID": 92020100,
+      "Entries": [
+        "c9202 reverse joint armament test missile"
+      ]
+    },
+    {
+      "ID": 93010100,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 100"
+      ]
+    },
+    {
+      "ID": 93010200,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 200"
+      ]
+    },
+    {
+      "ID": 93010300,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 300"
+      ]
+    },
+    {
+      "ID": 93010400,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 400"
+      ]
+    },
+    {
+      "ID": 93010500,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 500"
+      ]
+    },
+    {
+      "ID": 93010600,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 600"
+      ]
+    },
+    {
+      "ID": 93010700,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 700"
+      ]
+    },
+    {
+      "ID": 93010800,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 800"
+      ]
+    },
+    {
+      "ID": 93010900,
+      "Entries": [
+        "General-purpose state equipment for TEST Attack ID: 900"
+      ]
+    },
+    {
+      "ID": 93050400,
+      "Entries": [
+        "c9305 Morinaga Test Machine 2 Rifle"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        "c9321 link test machine gun"
+      ]
+    },
+    {
+      "ID": 93210100,
+      "Entries": [
+        "c9321 link test machine gun reload"
+      ]
+    },
+    {
+      "ID": 93210200,
+      "Entries": [
+        "c9321 link test blade"
+      ]
+    },
+    {
+      "ID": 93210300,
+      "Entries": [
+        "c9321 link test missile"
+      ]
+    },
+    {
+      "ID": 93210400,
+      "Entries": [
+        "c9321 Link Test Assault Armor"
+      ]
+    },
+    {
+      "ID": 93211000,
+      "Entries": [
+        "c9321 Link test LookAt test"
+      ]
+    },
+    {
+      "ID": 93213100,
+      "Entries": [
+        "c9321 Link test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93221000,
+      "Entries": [
+        "c9322 Enomoto test guard"
+      ]
+    },
+    {
+      "ID": 93221100,
+      "Entries": [
+        "c9322 Enomoto test shooting"
+      ]
+    },
+    {
+      "ID": 93221300,
+      "Entries": [
+        "c9322 Enomoto test missile"
+      ]
+    },
+    {
+      "ID": 93221400,
+      "Entries": [
+        "c9322 Enomoto test missile"
+      ]
+    },
+    {
+      "ID": 93222000,
+      "Entries": [
+        "c9322 Enomoto test cooling"
+      ]
+    },
+    {
+      "ID": 93222100,
+      "Entries": [
+        "c9322 Enomoto test reload"
+      ]
+    },
+    {
+      "ID": 93222200,
+      "Entries": [
+        "c9322 Enomoto test radome"
+      ]
+    },
+    {
+      "ID": 93223000,
+      "Entries": [
+        "c9322 Enomoto test diving pile"
+      ]
+    },
+    {
+      "ID": 93224000,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 1 1st stage"
+      ]
+    },
+    {
+      "ID": 93224100,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 2 2nd stage"
+      ]
+    },
+    {
+      "ID": 93224200,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-1 Thrust"
+      ]
+    },
+    {
+      "ID": 93224300,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-2 Charge Thrust"
+      ]
+    },
+    {
+      "ID": 93225000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 1"
+      ]
+    },
+    {
+      "ID": 93225100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 2"
+      ]
+    },
+    {
+      "ID": 93226000,
+      "Entries": [
+        "c9322 Enomoto test side right"
+      ]
+    },
+    {
+      "ID": 93226100,
+      "Entries": [
+        "c9322 Enomoto test side left"
+      ]
+    },
+    {
+      "ID": 93227000,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 1"
+      ]
+    },
+    {
+      "ID": 93227100,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93227200,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 3"
+      ]
+    },
+    {
+      "ID": 93228000,
+      "Entries": [
+        "c9322 Enomoto test Supervisor rush cut"
+      ]
+    },
+    {
+      "ID": 93229000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga Test 1"
+      ]
+    },
+    {
+      "ID": 93229100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga-san Test 2"
+      ]
+    },
+    {
+      "ID": 93229800,
+      "Entries": [
+        "c9322 Enomoto test mono-eye behavior"
+      ]
+    },
+    {
+      "ID": 93229900,
+      "Entries": [
+        "c9322 Enomoto test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93231000,
+      "Entries": [
+        "c9323 Hagiya Test Guard"
+      ]
+    },
+    {
+      "ID": 93231100,
+      "Entries": [
+        "c9323 Hagiya Test Shooting"
+      ]
+    },
+    {
+      "ID": 93231300,
+      "Entries": [
+        "c9323 Hagiya Test Missile"
+      ]
+    },
+    {
+      "ID": 93232000,
+      "Entries": [
+        "c9323 Hagiya Test Cooling"
+      ]
+    },
+    {
+      "ID": 93232100,
+      "Entries": [
+        "c9323 Hagiya Test Reload"
+      ]
+    },
+    {
+      "ID": 93232200,
+      "Entries": [
+        "c9323 Hagiya Test Radome"
+      ]
+    },
+    {
+      "ID": 93233000,
+      "Entries": [
+        "c9323 Hagiya Test Diving Pile"
+      ]
+    },
+    {
+      "ID": 93234000,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 1 1st stage"
+      ]
+    },
+    {
+      "ID": 93234100,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 2 2nd stage"
+      ]
+    },
+    {
+      "ID": 93234200,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-1 Thrust"
+      ]
+    },
+    {
+      "ID": 93234300,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-2 Charge Thrust"
+      ]
+    },
+    {
+      "ID": 93235000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 1"
+      ]
+    },
+    {
+      "ID": 93235100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 2"
+      ]
+    },
+    {
+      "ID": 93236000,
+      "Entries": [
+        "c9323 Hagiya Test Side Right"
+      ]
+    },
+    {
+      "ID": 93236100,
+      "Entries": [
+        "c9323 Hagiya Test Side Left"
+      ]
+    },
+    {
+      "ID": 93236200,
+      "Entries": [
+        "c9323 Hagiya Test Side Left 2"
+      ]
+    },
+    {
+      "ID": 93237000,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 1"
+      ]
+    },
+    {
+      "ID": 93237100,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93237200,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2"
+      ]
+    },
+    {
+      "ID": 93238000,
+      "Entries": [
+        "c9323 Hagiya Test Watcher Rush Cut"
+      ]
+    },
+    {
+      "ID": 93239000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga Test 1"
+      ]
+    },
+    {
+      "ID": 93239100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga-san Test 2"
+      ]
+    },
+    {
+      "ID": 93239800,
+      "Entries": [
+        "c9323 Hagiya Test Mono-Eye Behavior"
+      ]
+    },
+    {
+      "ID": 93239900,
+      "Entries": [
+        "c9323 Hagiya Test Always LookAt"
+      ]
+    },
+    {
+      "ID": 93300000,
+      "Entries": [
+        "c9330 Large ragdoll confirmation confirmation dummy"
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 00"
+      ]
+    },
+    {
+      "ID": 94000100,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 01"
+      ]
+    },
+    {
+      "ID": 94000200,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 02"
+      ]
+    },
+    {
+      "ID": 94000300,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 03"
+      ]
+    },
+    {
+      "ID": 94000400,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 04"
+      ]
+    },
+    {
+      "ID": 94000500,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 05"
+      ]
+    },
+    {
+      "ID": 94000600,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 06"
+      ]
+    },
+    {
+      "ID": 94000700,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 07"
+      ]
+    },
+    {
+      "ID": 94000800,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 08"
+      ]
+    },
+    {
+      "ID": 94000900,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 09"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "c9401 Map team test bazooka turret large test bazooka 00"
+      ]
+    },
+    {
+      "ID": 94010100,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 01"
+      ]
+    },
+    {
+      "ID": 94010200,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 02"
+      ]
+    },
+    {
+      "ID": 94010300,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 03"
+      ]
+    },
+    {
+      "ID": 94010400,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 04"
+      ]
+    },
+    {
+      "ID": 94010500,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 05"
+      ]
+    },
+    {
+      "ID": 94010600,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 06"
+      ]
+    },
+    {
+      "ID": 94010700,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 07"
+      ]
+    },
+    {
+      "ID": 94010800,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 08"
+      ]
+    },
+    {
+      "ID": 94010900,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 09"
+      ]
+    },
+    {
+      "ID": 94100000,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 00"
+      ]
+    },
+    {
+      "ID": 94100100,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 01"
+      ]
+    },
+    {
+      "ID": 94100200,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 02"
+      ]
+    },
+    {
+      "ID": 94100300,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 03"
+      ]
+    },
+    {
+      "ID": 94100400,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 04"
+      ]
+    },
+    {
+      "ID": 94100500,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 05"
+      ]
+    },
+    {
+      "ID": 94100600,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 06"
+      ]
+    },
+    {
+      "ID": 94100700,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 07"
+      ]
+    },
+    {
+      "ID": 94100800,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 08"
+      ]
+    },
+    {
+      "ID": 94100900,
+      "Entries": [
+        "c9411 Map team test sniper battery small test sniper rifle 09"
+      ]
+    },
+    {
+      "ID": 94110000,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 00"
+      ]
+    },
+    {
+      "ID": 94110100,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 01"
+      ]
+    },
+    {
+      "ID": 94110200,
+      "Entries": [
+        "c9411 Suna Battery_Large Vertical Hole Verification Exit Test"
+      ]
+    },
+    {
+      "ID": 94110300,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 03"
+      ]
+    },
+    {
+      "ID": 94110400,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 04"
+      ]
+    },
+    {
+      "ID": 94110500,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 05"
+      ]
+    },
+    {
+      "ID": 94110600,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 06"
+      ]
+    },
+    {
+      "ID": 94110700,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 07"
+      ]
+    },
+    {
+      "ID": 94110800,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 08"
+      ]
+    },
+    {
+      "ID": 94110900,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 09"
+      ]
+    },
+    {
+      "ID": 94200000,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200100,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200200,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200300,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200400,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200500,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200600,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200700,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200800,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94200900,
+      "Entries": [
+        "c9420 Map team test missile battery small missile"
+      ]
+    },
+    {
+      "ID": 94310000,
+      "Entries": [
+        "c9431 machine gun battery machine gun"
+      ]
+    },
+    {
+      "ID": 99600000,
+      "Entries": [
+        "c9960 Bullet generation dummy character Bullet generation A"
+      ]
+    },
+    {
+      "ID": 99600100,
+      "Entries": [
+        "c9960 Bullet generation dummy character Bullet generation B"
+      ]
+    },
+    {
+      "ID": 99600200,
+      "Entries": [
+        "c9960 Bullet generation dummy character Bullet generation C"
+      ]
+    },
+    {
+      "ID": 99600300,
+      "Entries": [
+        "c9960 Bullet generation dummy character poison tank test"
+      ]
+    },
+    {
+      "ID": 99600400,
+      "Entries": [
+        "c9960 Bullet generation dummy character Treasure corpse exploding bullet"
+      ]
+    },
+    {
+      "ID": 99600600,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper left_6560"
+      ]
+    },
+    {
+      "ID": 99600601,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower left_6560"
+      ]
+    },
+    {
+      "ID": 99600602,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper left_6504"
+      ]
+    },
+    {
+      "ID": 99600603,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower left_6504"
+      ]
+    },
+    {
+      "ID": 99600604,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper left_6505"
+      ]
+    },
+    {
+      "ID": 99600605,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower left_6505"
+      ]
+    },
+    {
+      "ID": 99600610,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper right stage_6560"
+      ]
+    },
+    {
+      "ID": 99600611,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower right_6560"
+      ]
+    },
+    {
+      "ID": 99600612,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper right_6503"
+      ]
+    },
+    {
+      "ID": 99600613,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower right_6503"
+      ]
+    },
+    {
+      "ID": 99600614,
+      "Entries": [
+        "c9960 Tail missile for sandworm_upper right_6505"
+      ]
+    },
+    {
+      "ID": 99600615,
+      "Entries": [
+        "c9960 Tail missile for sandworm_lower right_6505"
+      ]
+    },
+    {
+      "ID": 99800050,
+      "Entries": [
+        "c9980 Dummy character installation for PA generation"
+      ]
+    },
+    {
+      "ID": 99970000,
+      "Entries": [
+        "Single-shot standard"
+      ]
+    },
+    {
+      "ID": 99970100,
+      "Entries": [
+        "Single shot system slow"
+      ]
+    },
+    {
+      "ID": 99970200,
+      "Entries": [
+        "Single-shot type, fast"
+      ]
+    },
+    {
+      "ID": 99970300,
+      "Entries": [
+        "Single-shot type, super fast"
+      ]
+    },
+    {
+      "ID": 99970400,
+      "Entries": [
+        "Single shot type with laser sight"
+      ]
+    },
+    {
+      "ID": 99970500,
+      "Entries": [
+        "Single-shot system, no prediction"
+      ]
+    },
+    {
+      "ID": 99970600,
+      "Entries": [
+        "Single-shot shotgun"
+      ]
+    },
+    {
+      "ID": 99973000,
+      "Entries": [
+        "Missile system standard"
+      ]
+    },
+    {
+      "ID": 99973100,
+      "Entries": [
+        "Missile series continuous firing"
+      ]
+    },
+    {
+      "ID": 99973200,
+      "Entries": [
+        "Missile system simultaneous launch"
+      ]
+    },
+    {
+      "ID": 99973300,
+      "Entries": [
+        "Missile type mountain trajectory"
+      ]
+    },
+    {
+      "ID": 99973400,
+      "Entries": [
+        "Missile type vertical"
+      ]
+    },
+    {
+      "ID": 99973500,
+      "Entries": [
+        "Missile type: 1 tempo delay"
+      ]
+    },
+    {
+      "ID": 99973600,
+      "Entries": [
+        "Missile system VFT"
+      ]
+    },
+    {
+      "ID": 99973700,
+      "Entries": [
+        "Missile type plasma"
+      ]
+    },
+    {
+      "ID": 99973800,
+      "Entries": [
+        "Missile type AS missile"
+      ]
+    },
+    {
+      "ID": 99973900,
+      "Entries": [
+        "Missile system PM missile"
+      ]
+    },
+    {
+      "ID": 99974000,
+      "Entries": [
+        "Missile Stalker"
+      ]
+    },
+    {
+      "ID": 99974100,
+      "Entries": [
+        "Missile container"
+      ]
+    },
+    {
+      "ID": 99974200,
+      "Entries": [
+        "Missile type multi"
+      ]
+    },
+    {
+      "ID": 99974300,
+      "Entries": [
+        "Missile stealth"
+      ]
+    },
+    {
+      "ID": 99974400,
+      "Entries": [
+        "Missile type depth charge"
+      ]
+    },
+    {
+      "ID": 99974500,
+      "Entries": [
+        "Missile system ignition"
+      ]
+    },
+    {
+      "ID": 99980000,
+      "Entries": [
+        "General-purpose control Common attack ID 800 Head LookAt control"
+      ]
+    },
+    {
+      "ID": 99992090,
+      "Entries": [
+        "enemy general purpose laser sight"
+      ]
+    }
+  ]
+}

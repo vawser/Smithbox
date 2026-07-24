@@ -1,0 +1,393 @@
+{
+  "Param": "TENTATIVE_PLAYER_PARAM_ST",
+  "Type": "TENTATIVE_PLAYER_PARAM_ST",
+  "Name": "TENTATIVE_PLAYER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PlayerFootEffect_bySFX",
+      "Name": "プレイヤーの自動フットエフェクトのSFX識別子[3桁]",
+      "Description": "フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。"
+    },
+    {
+      "Field": "SnipeModeDrawAlpha_FadeTime",
+      "Name": "精密射撃時プレイヤー非表示フェード時間",
+      "Description": "精密射撃時にプレイヤーを非表示にするときのフェード時間です。単位は秒。"
+    },
+    {
+      "Field": "ToughnessRecoverCorrection",
+      "Name": "プレイヤー強靭度 回復時間補正値",
+      "Description": "プレイヤーの強靭度回復時間の計算に使われる補正値です。"
+    },
+    {
+      "Field": "DeceasedThreshold",
+      "Name": "亡者化する亡者度の閾値",
+      "Description": "亡者度がこの値以上の時に死亡したとき、亡者になります"
+    },
+    {
+      "Field": "Reserved03",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "GiantNutGetRand_MaxProbability",
+      "Name": "侵入された時の巨人の木の実抽選上限確率",
+      "Description": "侵入された時の巨人の木の実抽選上限確率"
+    },
+    {
+      "Field": "AnimeID_DropItemPick",
+      "Name": "ドロップアイテム取得アニメーションID",
+      "Description": "ドロップアイテムを拾った時のアニメーションID"
+    },
+    {
+      "Field": "AnimeID_CofferItemPick",
+      "Name": "宝箱アイテム取得アニメーションID",
+      "Description": "宝箱からアイテムを拾った時のアニメーションID（使われてない？）"
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId1",
+      "Name": "薪の王時特殊効果１",
+      "Description": "薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId2",
+      "Name": "薪の王時特殊効果２",
+      "Description": "薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId3",
+      "Name": "薪の王時特殊効果３",
+      "Description": "薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId4",
+      "Name": "薪の王時特殊効果４",
+      "Description": "薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId5",
+      "Name": "薪の王時特殊効果５",
+      "Description": "薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "LowStatus_AtkPowDown",
+      "Name": "ステータス不足 基本攻撃力低下量",
+      "Description": "ステータス不足 基本攻撃力低下量"
+    },
+    {
+      "Field": "LowStatus_ConsumeStaminaRate",
+      "Name": "ステータス不足 スタミナ消費倍率",
+      "Description": "ステータス不足 スタミナ消費倍率"
+    },
+    {
+      "Field": "LowStatus_AtkGuardBreak",
+      "Name": "ステータス不足 弾き攻撃力",
+      "Description": "ステータス不足 弾き攻撃力"
+    },
+    {
+      "Field": "GuardStatusCorrect_MaxStatusVal",
+      "Name": "盾ステータス補正 判定ステータス最大値",
+      "Description": "盾の性能のステータス補正値を計算するときに使う、性能が上昇する最大ステータス値"
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId1",
+      "Name": "マルチプレイ時引継ぎ薪の王特殊効果１",
+      "Description": "マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId2",
+      "Name": "マルチプレイ時引継ぎ薪の王特殊効果２",
+      "Description": "マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId3",
+      "Name": "マルチプレイ時引継ぎ薪の王特殊効果３",
+      "Description": "マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId4",
+      "Name": "マルチプレイ時引継ぎ薪の王特殊効果４",
+      "Description": "マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId5",
+      "Name": "マルチプレイ時引継ぎ薪の王特殊効果５",
+      "Description": "マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。"
+    },
+    {
+      "Field": "DebtSp",
+      "Name": "最大借金スタミナ",
+      "Description": "最大マイナススタミナ"
+    },
+    {
+      "Field": "WetOverrideInterpolateTime",
+      "Name": "濡れ上書き補間時間",
+      "Description": "重複して濡れた時のマテリアル切り替え補間時間"
+    },
+    {
+      "Field": "EstusFlaskAllocateRate",
+      "Name": "マルチ時クライアント瓶補正倍率",
+      "Description": "マルチ時クライアント瓶補正倍率(0.5指定で所持数半分に)"
+    },
+    {
+      "Field": "GiantNutGetRand_Base",
+      "Name": "侵入された時の巨人の木の実抽選基本確率（％）",
+      "Description": "侵入された時の巨人の木の実抽選基本確率"
+    },
+    {
+      "Field": "GiantNutGetRand_Bonus",
+      "Name": "侵入された時の巨人の木の実抽選ボーナス確率（％）",
+      "Description": "侵入された時の巨人の木の実抽選ボーナス確率"
+    },
+    {
+      "Field": "KickAcceptanceDeg",
+      "Name": "プレイヤー正面から見てキックを出せる角度",
+      "Description": "プレイヤー正面から見てキックを出せる角度"
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Light",
+      "Name": "NPCプレイヤー用アナログ重量比率_軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。軽量。"
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Normal",
+      "Name": "NPCプレイヤー用アナログ重量比率_中量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。中量。"
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Heavy",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量。"
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_WeightOver",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量過多",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量過多。"
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_SuperLight",
+      "Name": "NPCプレイヤー用アナログ重量比率_超軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。超軽量。"
+    },
+    {
+      "Field": "GiantNutClientEffectId",
+      "Name": "巨人の木の実の種_闇霊効果用ID",
+      "Description": "巨人の木の実の種の闇霊にかける特殊効果のID"
+    },
+    {
+      "Field": "ClearCountCorrectBaseSpEffectId",
+      "Name": "周回補正特殊効果基準ID",
+      "Description": "周回補正のためにかける特殊効果の基準ID"
+    },
+    {
+      "Field": "ArrowBoltModelIdOffset",
+      "Name": "矢、ボルトのモデルIdオフセット",
+      "Description": "矢、ボルトモデルを表示する際に、スロット１に装備された場合のモデルIDに加えるオフセット。（モデルId+オフセット値）"
+    },
+    {
+      "Field": "ArrowBoltRemainingNumModelMaskThreshold1",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_1段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の１段階判定値[%]。（この値より多ければ１段階表示）"
+    },
+    {
+      "Field": "ArrowBoltRemainingNumModelMaskThreshold2",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_2段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の２段階判定値[%]。（この値より多ければ２段階表示）"
+    },
+    {
+      "Field": "Reserved27",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Poision_Player",
+      "Name": "プレイヤー耐性値回復量_毒[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Desease_Player",
+      "Name": "プレイヤー耐性値回復量_疫病[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Blood_Player",
+      "Name": "プレイヤー耐性値回復量_出血[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Curse_Player",
+      "Name": "プレイヤー耐性値回復量_呪い[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Freeze_Player",
+      "Name": "プレイヤー耐性値回復量_冷気[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Poision_Enemy",
+      "Name": "敵耐性値回復量_毒[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Desease_Enemy",
+      "Name": "敵耐性値回復量_疫病[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Blood_Enemy",
+      "Name": "敵耐性値回復量_出血[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Curse_Enemy",
+      "Name": "敵耐性値回復量_呪い[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "ResistRecoverPoint_Freeze_Enemy",
+      "Name": "敵耐性値回復量_冷気[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "DyingHp",
+      "Name": "瀕死HP",
+      "Description": "現在HPがこの値以下ならプレイヤーは瀕死状態になる"
+    },
+    {
+      "Field": "SystemEnchant_LoadOfCinder",
+      "Name": "システム経由薪の王化用特殊効果ID",
+      "Description": "システムからの薪の王化を行う際に呼び出す特殊効果Id"
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalDuel",
+      "Name": "マルチ時クライアント瓶補正倍率(闘技場・決闘)",
+      "Description": "マルチ時クライアント瓶の所持数の補正倍率(闘技場・決闘)"
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalDuel",
+      "Name": "マルチ時クライアント瓶オフセット(闘技場・決闘)",
+      "Description": "マルチ時クライアント瓶の所持数のオフセット(闘技場・決闘)"
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalFree",
+      "Name": "マルチ時クライアント瓶補正倍率(闘技場・乱闘)",
+      "Description": "マルチ時クライアント瓶の所持数の補正倍率(闘技場・乱闘)"
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalFree",
+      "Name": "マルチ時クライアント瓶オフセット(闘技場・乱闘)",
+      "Description": "マルチ時クライアント瓶の所持数のオフセット(闘技場・乱闘)"
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalTeam",
+      "Name": "マルチ時クライアント瓶補正倍率(闘技場・共闘)",
+      "Description": "マルチ時クライアント瓶の所持数の補正倍率(闘技場・共闘)"
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalTeam",
+      "Name": "マルチ時クライアント瓶オフセット(闘技場・共闘)",
+      "Description": "マルチ時クライアント瓶の所持数のオフセット(闘技場・共闘)"
+    },
+    {
+      "Field": "HpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣HPエスト瓶補正倍率 ",
+      "Description": "黄衣HPエスト瓶補正倍率 "
+    },
+    {
+      "Field": "HpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣HPエスト瓶オフセット",
+      "Description": "黄衣HPエスト瓶オフセット"
+    },
+    {
+      "Field": "MpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣MPエスト瓶補正倍率",
+      "Description": "黄衣MPエスト瓶補正倍率"
+    },
+    {
+      "Field": "MpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣MPエスト瓶オフセット",
+      "Description": "黄衣MPエスト瓶オフセット"
+    },
+    {
+      "Field": "MoneyLostRate",
+      "Name": "死亡時のお金ロスト率（％）",
+      "Description": "死亡時のお金ロスト率（％）"
+    },
+    {
+      "Field": "SkillPointLostRate",
+      "Name": "死亡時のスキル経験値ロスト率（％）",
+      "Description": "死亡時のスキル経験値ロスト率（％）"
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved62",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved63",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

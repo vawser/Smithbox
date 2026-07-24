@@ -1,0 +1,168 @@
+{
+  "Param": "ROLE_PARAM_ST",
+  "Type": "ROLE_PARAM_ST",
+  "Name": "ROLE_PARAM_ST",
+  "Description": "Player params for different multiplayer roles",
+  "Fields": [
+    {
+      "Field": "teamType",
+      "Name": "",
+      "Description": "Default Team Type"
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamId",
+      "Name": "",
+      "Description": "PhantomParam applied when at +0 convenant rank"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "",
+      "Description": "Applies speffect to players with this Role"
+    },
+    {
+      "Field": "sosSignSfxId",
+      "Name": "",
+      "Description": "SOS sign SFX ID issued by another person"
+    },
+    {
+      "Field": "mySosSignSfxId",
+      "Name": "",
+      "Description": "My SOS sign SFX ID"
+    },
+    {
+      "Field": "summonStartAnimId",
+      "Name": "",
+      "Description": "Anime ID that plays when you are summoned and start the game"
+    },
+    {
+      "Field": "itemlotParamId",
+      "Name": "",
+      "Description": "ItemLot awarded when completing your multiplayer goal"
+    },
+    {
+      "Field": "voiceChatGroup",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roleNameColor",
+      "Name": "",
+      "Description": "Color of role name text displayed on FE of network PC"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "",
+      "Description": "Text ID of role name displayed on FE of network PC"
+    },
+    {
+      "Field": "teamTypeByGiantNut",
+      "Name": "",
+      "Description": "This will be the Team Type of this role when a Seed of the Giant Tree is used"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamId_vowRank1",
+      "Name": "",
+      "Description": "PhantomParam applied when at +1 convenant rank"
+    },
+    {
+      "Field": "phantomParamId_vowRank2",
+      "Name": "",
+      "Description": "PhantomParam applied when at +2 convenant rank"
+    },
+    {
+      "Field": "phantomParamId_vowRank3",
+      "Name": "",
+      "Description": "PhantomParam applied when at +3 convenant rank"
+    },
+    {
+      "Field": "spEffectID_vowRank0",
+      "Name": "",
+      "Description": "SpEffect added when you are at +0 covenant rank"
+    },
+    {
+      "Field": "spEffectID_vowRank1",
+      "Name": "",
+      "Description": "SpEffect added when you are at +1 covenant rank"
+    },
+    {
+      "Field": "spEffectID_vowRank2",
+      "Name": "",
+      "Description": "SpEffect added when you are at +2 covenant rank"
+    },
+    {
+      "Field": "spEffectID_vowRank3",
+      "Name": "",
+      "Description": "SpEffect added when you are at +3 covenant rank"
+    },
+    {
+      "Field": "signPhantomId",
+      "Name": "",
+      "Description": "Phantom ID specification for signature illusion for multiplayer pledged spirits"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

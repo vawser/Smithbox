@@ -1,0 +1,731 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 50000000,
+      "Entries": [
+        "1010_Baylum_HEAD_A -- 1010_ベイラム_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "1080_Hekantokeil_HEAD_A -- 1080_へカントケイル_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "1110_Baylum_HEAD_C -- 1110_ベイラム_HEAD_C"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "1011_Baylum_HEAD_B -- 1011_ベイラム_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        "2010_heavy crest_HEAD_A -- 2010_重クレスト_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50020000,
+      "Entries": [
+        "3010_Ray Leonard_HEAD_A -- 3010_レイレナード_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50020100,
+      "Entries": [
+        "3110_Ray Leonard_HEAD_B -- 3110_レイレナード_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50030000,
+      "Entries": [
+        "4010_Mirage_HEAD_A -- 4010_ミラージュ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50030100,
+      "Entries": [
+        "4110_Mirage_HEAD_B -- 4110_ミラージュ_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50040000,
+      "Entries": [
+        "5010_Label_HEAD_A -- 5010_ラベール_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50040100,
+      "Entries": [
+        "5110_Label_HEAD_B -- 5110_ラベール_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50050000,
+      "Entries": [
+        "6010_Iqbal_HEAD_A -- 6010_イクバール_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50050100,
+      "Entries": [
+        "6110_Iqbal_HEAD_B -- 6110_イクバール_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50060000,
+      "Entries": [
+        "7010_Cuba_HEAD_A -- 7010_キューバ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50070200,
+      "Entries": [
+        "8030_JUDO_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50070300,
+      "Entries": [
+        "8040_Troll_HEAD_A -- 8040_トロル_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50070400,
+      "Entries": [
+        "1400_Scavenger_HEAD_A -- 1400_スカベンジャー_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50070600,
+      "Entries": [
+        "8150_Scavenger_HEAD_B -- 8150_スカベンジャー_HEAD_B"
+      ]
+    },
+    {
+      "ID": 50080000,
+      "Entries": [
+        "8010_Kawamori_HEAD_A -- 8010_カワモリ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50080100,
+      "Entries": [
+        "8020_Miyatake_HEAD_A -- 8020_ミヤタケ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50080200,
+      "Entries": [
+        "8060_Yanase_HEAD_A -- 8060_ヤナセ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 50080300,
+      "Entries": [
+        "HEAD - LAMMERGEIER/44F"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "8031_JUDO_HEAD_A for jailbreak mission -- 8031_脱獄ミッション用JUDO_HEAD_A"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "1010_Baylum_CORE_A -- 1010_ベイラム_CORE_A"
+      ]
+    },
+    {
+      "ID": 51000300,
+      "Entries": [
+        "1011_Baylum_CORE_B -- 1011_ベイラム_CORE_B"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "1080_Hekantokeir_CORE_A -- 1080_へカントケイル_CORE_A"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "2010_Heavy Crest_CORE_A -- 2010_重クレスト_CORE_A"
+      ]
+    },
+    {
+      "ID": 51020000,
+      "Entries": [
+        "3010_Ray Leonard_CORE_A -- 3010_レイレナード_CORE_A"
+      ]
+    },
+    {
+      "ID": 51030000,
+      "Entries": [
+        "4010_Mirage_CORE_A -- 4010_ミラージュ_CORE_A"
+      ]
+    },
+    {
+      "ID": 51040000,
+      "Entries": [
+        "5010_Label_CORE_A -- 5010_ラベール_CORE_A"
+      ]
+    },
+    {
+      "ID": 51050000,
+      "Entries": [
+        "6010_Iqbal_CORE_A -- 6010_イクバール_CORE_A"
+      ]
+    },
+    {
+      "ID": 51060000,
+      "Entries": [
+        "7010_Cuba_CORE_A -- 7010_キューバ_CORE_A"
+      ]
+    },
+    {
+      "ID": 51070200,
+      "Entries": [
+        "8030_JUDO_CORE_A"
+      ]
+    },
+    {
+      "ID": 51070300,
+      "Entries": [
+        "8040_Troll_CORE_A -- 8040_トロル_CORE_A"
+      ]
+    },
+    {
+      "ID": 51070400,
+      "Entries": [
+        "1400_Scavenger_CORE_A -- 1400_スカベンジャー_CORE_A"
+      ]
+    },
+    {
+      "ID": 51080000,
+      "Entries": [
+        "8010_Kawamori_CORE_A -- 8010_カワモリ_CORE_A"
+      ]
+    },
+    {
+      "ID": 51080100,
+      "Entries": [
+        "8020_Miyatake_CORE_A -- 8020_ミヤタケ_CORE_A"
+      ]
+    },
+    {
+      "ID": 51080200,
+      "Entries": [
+        "8060_Yanase_CORE_A -- 8060_ヤナセ_CORE_A"
+      ]
+    },
+    {
+      "ID": 51080300,
+      "Entries": [
+        "CORE - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 51800000,
+      "Entries": [
+        "3011_Cutscene_Wreck_RayLeonard_CORE_A -- 3011_カットシーン用_大破_レイレナード_CORE_A"
+      ]
+    },
+    {
+      "ID": 51900000,
+      "Entries": [
+        "8031_Jailbreak mission_JUDO_CORE_A -- 8031_脱獄ミッション用_JUDO_CORE_A"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "1010_Baylum_ARMS_A -- 1010_ベイラム_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        "1011_Baylum_ARMS_B -- 1011_ベイラム_ARMS_B"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "1080_Hekantokeir_ARMS_A -- 1080_へカントケイル_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52010000,
+      "Entries": [
+        "2010_Heavy Crest_ARMS_A -- 2010_重クレスト_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52010100,
+      "Entries": [
+        "2210_Heavy Crest_ARMS_B -- 2210_重クレスト_ARMS_B"
+      ]
+    },
+    {
+      "ID": 52020000,
+      "Entries": [
+        "3010_Ray Leonard_ARMS_A -- 3010_レイレナード_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52030000,
+      "Entries": [
+        "4010_Mirage_ARMS_A -- 4010_ミラージュ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52030100,
+      "Entries": [
+        "4210_Mirage_ARMS_B -- 4210_ミラージュ_ARMS_B"
+      ]
+    },
+    {
+      "ID": 52040000,
+      "Entries": [
+        "5010_Label_ARMS_A -- 5010_ラベール_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52050000,
+      "Entries": [
+        "6010_Iqbal_ARMS_A -- 6010_イクバール_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52060000,
+      "Entries": [
+        "7010_Cuba_ARMS_A -- 7010_キューバ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52070200,
+      "Entries": [
+        "8030_JUDO_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52070300,
+      "Entries": [
+        "8040_Troll_ARMS_A -- 8040_トロル_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52070400,
+      "Entries": [
+        "1400_Scavenger_ARMS_A -- 1400_スカベンジャー_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52080000,
+      "Entries": [
+        "8010_Kawamori_ARMS_A -- 8010_カワモリ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52080100,
+      "Entries": [
+        "8020_Miyatake_ARMS_A -- 8020_ミヤタケ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52080200,
+      "Entries": [
+        "8060_Yanase_ARMS_A -- 8060_ヤナセ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 52080300,
+      "Entries": [
+        "ARMS - LAMMERGEIER/46F"
+      ]
+    },
+    {
+      "ID": 52900000,
+      "Entries": [
+        "8031_Jailbreak mission_JUDO_ARMS_A -- 8031_脱獄ミッション用_JUDO_ARMS_A"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "1010_Baylum_LEGS_Bipod_A -- 1010_ベイラム_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "1011_Baylum_LEGS_Bipod_B -- 1011_ベイラム_LEGS_二脚_B"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "1080_Hekantokeir_LEGS_Bipod_A -- 1080_へカントケイル_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53010000,
+      "Entries": [
+        "2010_Heavy Crest_LEGS_Bipod_A -- 2010_重クレスト_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53020000,
+      "Entries": [
+        "3010_Ray Leonard_LEGS_Bipod_A -- 3010_レイレナード_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53030000,
+      "Entries": [
+        "4010_Mirage_LEGS_Bipod_A -- 4010_ミラージュ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53040000,
+      "Entries": [
+        "5010_Label_LEGS_Bipod_A -- 5010_ラベール_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53050000,
+      "Entries": [
+        "6010_Iqbal_LEGS_Bipod_A -- 6010_イクバール_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53060000,
+      "Entries": [
+        "7010_Cuba_LEGS_Bipod_A -- 7010_キューバ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53070200,
+      "Entries": [
+        "8030_JUDO_LEGS_Bipod_A -- 8030_JUDO_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53070300,
+      "Entries": [
+        "8040_Troll_LEGS_Bipod_A -- 8040_トロル_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53070400,
+      "Entries": [
+        "1400_Scavenger_LEGS_Bipod_A -- 1400_スカベンジャー_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53080000,
+      "Entries": [
+        "8010_Kawamori_LEGS_Bipod_A -- 8010_カワモリ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53080100,
+      "Entries": [
+        "8020_Miyatake_LEGS_bipod_A -- 8020_ミヤタケ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53080200,
+      "Entries": [
+        "8060_Yanase_LEGS_Bipod_A -- 8060_ヤナセ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53900000,
+      "Entries": [
+        "8031_Jailbreak Mission_JUDO_LEGS_Bipod_A -- 8031_脱獄ミッション用_JUDO_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 53120000,
+      "Entries": [
+        "3310_Ray Leonard_LEGS_reverse joint_A -- 3310_レイレナード_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 53150000,
+      "Entries": [
+        "6320_Iqbal_LEGS_Reverse joint_A -- 6320_イクバール_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 53170400,
+      "Entries": [
+        "8350_Scavenger_LEGS_Reverse joint_A -- 8350_スカベンジャー_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 53200000,
+      "Entries": [
+        "1410_Baylum_LEGS_quadruped_A -- 1410_ベイラム_LEGS_四脚_A"
+      ]
+    },
+    {
+      "ID": 53230000,
+      "Entries": [
+        "4410_Mirage_LEGS_quadruped_A -- 4410_ミラージュ_LEGS_四脚_A"
+      ]
+    },
+    {
+      "ID": 53280300,
+      "Entries": [
+        "LEGS - LAMMERGEIER/42F"
+      ]
+    },
+    {
+      "ID": 53300000,
+      "Entries": [
+        "1510_Baylum_LEGS_Tank_A -- 1510_ベイラム_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 53340000,
+      "Entries": [
+        "5510_Label_LEGS_Tank_A -- 5510_ラベール_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 53360000,
+      "Entries": [
+        "7510_Cuba_LEGS_Tank_A -- 7510_キューバ_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 59001000,
+      "Entries": [
+        "Tremo 01 HEAD -- トレモ01\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59001100,
+      "Entries": [
+        "Tremo 01 CORE -- トレモ01\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59001200,
+      "Entries": [
+        "Tremo 01 ARMS -- トレモ01\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59001300,
+      "Entries": [
+        "Tremo 01 LEGS -- トレモ01\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59002000,
+      "Entries": [
+        "Tremo 02 HEAD -- トレモ02\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59002100,
+      "Entries": [
+        "Tremo 02 CORE -- トレモ02\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59002200,
+      "Entries": [
+        "Tremo 02 ARMS -- トレモ02\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59002300,
+      "Entries": [
+        "Tremo 02 LEGS -- トレモ02\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59003000,
+      "Entries": [
+        "Tremo 03 HEAD -- トレモ03\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59003100,
+      "Entries": [
+        "Tremo 03 CORE -- トレモ03\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59003200,
+      "Entries": [
+        "Tremo 03 ARMS -- トレモ03\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59003300,
+      "Entries": [
+        "Tremo 03 LEGS -- トレモ03\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59004000,
+      "Entries": [
+        "Tremo 04 HEAD -- トレモ04\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59004100,
+      "Entries": [
+        "Tremo 04 CORE -- トレモ04\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59004200,
+      "Entries": [
+        "Tremo 04 ARMS -- トレモ04\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59004300,
+      "Entries": [
+        "Tremo 04 LEGS -- トレモ04\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59005000,
+      "Entries": [
+        "Tremo 05 HEAD -- トレモ05\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59005100,
+      "Entries": [
+        "Tremo 05 CORE -- トレモ05\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59005200,
+      "Entries": [
+        "Tremo 05 ARMS -- トレモ05\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59005300,
+      "Entries": [
+        "Tremo 05 LEGS -- トレモ05\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59006000,
+      "Entries": [
+        "Tremo 06 HEAD -- トレモ06\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59006100,
+      "Entries": [
+        "Tremo 06 CORE -- トレモ06\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59006200,
+      "Entries": [
+        "Tremo 06 ARMS -- トレモ06\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59006300,
+      "Entries": [
+        "Tremo 06 LEGS -- トレモ06\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59007000,
+      "Entries": [
+        "Proro HEAD -- プロロ\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59007100,
+      "Entries": [
+        "Prolo CORE -- プロロ\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59007200,
+      "Entries": [
+        "Proro ARMS -- プロロ\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59007300,
+      "Entries": [
+        "Proro LEGS -- プロロ\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 59008000,
+      "Entries": [
+        "Jailbreak HEAD -- 脱獄\u3000HEAD"
+      ]
+    },
+    {
+      "ID": 59008100,
+      "Entries": [
+        "Jailbreak CORE -- 脱獄\u3000CORE"
+      ]
+    },
+    {
+      "ID": 59008200,
+      "Entries": [
+        "Jailbreak ARMS -- 脱獄\u3000ARMS"
+      ]
+    },
+    {
+      "ID": 59008300,
+      "Entries": [
+        "Jailbreak LEGS -- 脱獄\u3000LEGS"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "9400_Cutscene_Scavenger_HEAD_A -- 9400_カットシーン用_スカベンジャー_HEAD_A"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "9400_Cutscene_Scavenger_CORE_A -- 9400_カットシーン用_スカベンジャー_CORE_A"
+      ]
+    },
+    {
+      "ID": 99900200,
+      "Entries": [
+        "9400_For cutscene_Scavenger_ARMS_A -- 9400_カットシーン用_スカベンジャー_ARMS_A"
+      ]
+    },
+    {
+      "ID": 99900300,
+      "Entries": [
+        "9400_cutscene_scavenger_LEGS_bipod_A -- 9400_カットシーン用_スカベンジャー_LEGS_二脚_A"
+      ]
+    }
+  ]
+}

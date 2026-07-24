@@ -1,0 +1,125 @@
+{
+  "Name": "MapMimicryEstablishmentParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 300000000,
+      "Entries": [
+        "m30_00_00_00: Royal Castle of Eclipse 1: Wall -- m30_00_00_00：蝕の王城１：城壁"
+      ]
+    },
+    {
+      "ID": 300000001,
+      "Entries": [
+        "m30_00_00_00: Royal Castle of Eclipse 1: Fat Square ~ -- m30_00_00_00：蝕の王城１：デブ広場～"
+      ]
+    },
+    {
+      "ID": 300100000,
+      "Entries": [
+        "m30_01_00_00: The royal castle of eclipse 2 -- m30_01_00_00：蝕の王城２"
+      ]
+    },
+    {
+      "ID": 310000000,
+      "Entries": [
+        "m31_00_00_00: Tower Town -- m31_00_00_00：塔の街"
+      ]
+    },
+    {
+      "ID": 320000000,
+      "Entries": [
+        "m32_00_00_00: Bridge -- m32_00_00_00：橋"
+      ]
+    },
+    {
+      "ID": 330000000,
+      "Entries": [
+        "m33_00_00_00: Poison Swamp Forest: Second half -- m33_00_00_00：毒沼の森：後半"
+      ]
+    },
+    {
+      "ID": 330000001,
+      "Entries": [
+        "m33_00_00_00: Poison Swamp Forest: First half -- m33_00_00_00：毒沼の森：前半"
+      ]
+    },
+    {
+      "ID": 340100000,
+      "Entries": [
+        "m34_01_00_00: The royal castle of eclipse 3: indoors -- m34_01_00_00：蝕の王城３：屋内"
+      ]
+    },
+    {
+      "ID": 340100001,
+      "Entries": [
+        "m34_01_00_00: The royal castle of eclipse 3: Outdoors -- m34_01_00_00：蝕の王城３：屋外"
+      ]
+    },
+    {
+      "ID": 350000000,
+      "Entries": [
+        "m35_00_00_00: Basilica Church: Inside -- m35_00_00_00：聖堂教会：内部"
+      ]
+    },
+    {
+      "ID": 350000001,
+      "Entries": [
+        "m35_00_00_00: Basilica Church: Cemetery -- m35_00_00_00：聖堂教会：墓地"
+      ]
+    },
+    {
+      "ID": 370000000,
+      "Entries": [
+        "m37_00_00_00: Anor Ruins -- m37_00_00_00：アノール遺跡"
+      ]
+    },
+    {
+      "ID": 370000001,
+      "Entries": [
+        "m37_00_00_00: Anor Ruins: Hall -- m37_00_00_00：アノール遺跡：館"
+      ]
+    },
+    {
+      "ID": 370000002,
+      "Entries": [
+        "m37_00_00_00: Anor Ruins: Anor Honjin -- m37_00_00_00：アノール遺跡：アノール本陣"
+      ]
+    },
+    {
+      "ID": 380000000,
+      "Entries": [
+        "m38_00_00_00: Dungeon; upper layer -- m38_00_00_00：ダンジョン；上層"
+      ]
+    },
+    {
+      "ID": 380000001,
+      "Entries": [
+        "m38_00_00_00: Dungeon: Lower layer -- m38_00_00_00：ダンジョン：下層"
+      ]
+    },
+    {
+      "ID": 390000000,
+      "Entries": [
+        "m39_00_00_00: Dungeon -- m39_00_00_00：地下牢"
+      ]
+    },
+    {
+      "ID": 400000000,
+      "Entries": [
+        "m40_00_00_00: Base -- m40_00_00_00：拠点"
+      ]
+    },
+    {
+      "ID": 410000000,
+      "Entries": [
+        "m41_00_00_00: Last boss area -- m41_00_00_00：ラスボスエリア"
+      ]
+    }
+  ]
+}

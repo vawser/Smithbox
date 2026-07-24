@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>QWC_JUDGE_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="f32 pcJudgeUnderWB = -200">
+      <DisplayName>PC-黒条件（下限）</DisplayName>
+      <Description>PC白黒属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 pcJudgeTopWB = 200">
+      <DisplayName>PC-白条件（上限）</DisplayName>
+      <Description>PC白黒属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 pcJudgeUnderLR = -200">
+      <DisplayName>PC-左条件（下限）</DisplayName>
+      <Description>PC左右属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 pcJudgeTopLR = 200">
+      <DisplayName>PC-右条件（上限）</DisplayName>
+      <Description>PC左右属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 areaJudgeUnderWB = -200">
+      <DisplayName>エリア-黒条件（下限）</DisplayName>
+      <Description>エリア白黒属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 areaJudgeTopWB = 200">
+      <DisplayName>エリア-白条件（上限）</DisplayName>
+      <Description>エリア白黒属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 areaJudgeUnderLR = -200">
+      <DisplayName>エリア-左条件（下限）</DisplayName>
+      <Description>エリア左右属性条件（下限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 areaJudgeTopLR = 200">
+      <DisplayName>エリア-右条件（上限）</DisplayName>
+      <Description>エリア左右属性条件（上限）</Description>
+      <Minimum>-200</Minimum>
+      <Maximum>200</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,208 @@
+{
+  "Param": "PLAYER_STATUS_ITEM_PARAM",
+  "Type": "PLAYER_STATUS_ITEM_PARAM",
+  "Name": "PLAYER_STATUS_ITEM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "item01",
+      "Name": "アイテム 01",
+      "Description": ""
+    },
+    {
+      "Field": "item02",
+      "Name": "アイテム 02",
+      "Description": ""
+    },
+    {
+      "Field": "item03",
+      "Name": "アイテム 03",
+      "Description": ""
+    },
+    {
+      "Field": "item04",
+      "Name": "アイテム 04",
+      "Description": ""
+    },
+    {
+      "Field": "item05",
+      "Name": "アイテム 05",
+      "Description": ""
+    },
+    {
+      "Field": "item06",
+      "Name": "アイテム 06",
+      "Description": ""
+    },
+    {
+      "Field": "item07",
+      "Name": "アイテム 07",
+      "Description": ""
+    },
+    {
+      "Field": "item08",
+      "Name": "アイテム 08",
+      "Description": ""
+    },
+    {
+      "Field": "item09",
+      "Name": "アイテム 09",
+      "Description": ""
+    },
+    {
+      "Field": "item10",
+      "Name": "アイテム 10",
+      "Description": ""
+    },
+    {
+      "Field": "item11",
+      "Name": "アイテム 11",
+      "Description": ""
+    },
+    {
+      "Field": "item12",
+      "Name": "アイテム 12",
+      "Description": ""
+    },
+    {
+      "Field": "item13",
+      "Name": "アイテム 13",
+      "Description": ""
+    },
+    {
+      "Field": "item14",
+      "Name": "アイテム 14",
+      "Description": ""
+    },
+    {
+      "Field": "item15",
+      "Name": "アイテム 15",
+      "Description": ""
+    },
+    {
+      "Field": "item16",
+      "Name": "アイテム 16",
+      "Description": ""
+    },
+    {
+      "Field": "item17",
+      "Name": "アイテム 17",
+      "Description": ""
+    },
+    {
+      "Field": "item18",
+      "Name": "アイテム 18",
+      "Description": ""
+    },
+    {
+      "Field": "item19",
+      "Name": "アイテム 19",
+      "Description": ""
+    },
+    {
+      "Field": "item20",
+      "Name": "アイテム 20",
+      "Description": ""
+    },
+    {
+      "Field": "item01Num",
+      "Name": "アイテム数 01",
+      "Description": ""
+    },
+    {
+      "Field": "item02Num",
+      "Name": "アイテム数 02",
+      "Description": ""
+    },
+    {
+      "Field": "item03Num",
+      "Name": "アイテム数 03",
+      "Description": ""
+    },
+    {
+      "Field": "item04Num",
+      "Name": "アイテム数 04",
+      "Description": ""
+    },
+    {
+      "Field": "item05Num",
+      "Name": "アイテム数 05",
+      "Description": ""
+    },
+    {
+      "Field": "item06Num",
+      "Name": "アイテム数 06",
+      "Description": ""
+    },
+    {
+      "Field": "item07Num",
+      "Name": "アイテム数 07",
+      "Description": ""
+    },
+    {
+      "Field": "item08Num",
+      "Name": "アイテム数 08",
+      "Description": ""
+    },
+    {
+      "Field": "item09Num",
+      "Name": "アイテム数 09",
+      "Description": ""
+    },
+    {
+      "Field": "item10Num",
+      "Name": "アイテム数 10",
+      "Description": ""
+    },
+    {
+      "Field": "item11Num",
+      "Name": "アイテム数 11",
+      "Description": ""
+    },
+    {
+      "Field": "item12Num",
+      "Name": "アイテム数 12",
+      "Description": ""
+    },
+    {
+      "Field": "item13Num",
+      "Name": "アイテム数 13",
+      "Description": ""
+    },
+    {
+      "Field": "item14Num",
+      "Name": "アイテム数 14",
+      "Description": ""
+    },
+    {
+      "Field": "item15Num",
+      "Name": "アイテム数 15",
+      "Description": ""
+    },
+    {
+      "Field": "item16Num",
+      "Name": "アイテム数 16",
+      "Description": ""
+    },
+    {
+      "Field": "item17Num",
+      "Name": "アイテム数 17",
+      "Description": ""
+    },
+    {
+      "Field": "item18Num",
+      "Name": "アイテム数 18",
+      "Description": ""
+    },
+    {
+      "Field": "item19Num",
+      "Name": "アイテム数 19",
+      "Description": ""
+    },
+    {
+      "Field": "item20Num",
+      "Name": "アイテム数 20",
+      "Description": ""
+    }
+  ]
+}

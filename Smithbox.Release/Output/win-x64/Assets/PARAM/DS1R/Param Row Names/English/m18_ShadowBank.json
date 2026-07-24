@@ -1,0 +1,389 @@
+{
+  "Name": "m18_ShadowBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0大部屋"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0反対向き"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0基本 キャラ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "m8300B0_王の封印_拠点"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "m8000B0_王の封印_廃都"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "m8100B0_王の封印_結晶"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "m8200B0_王の封印_ニト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1最初の部屋"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1カラス降り場"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B1フリューテッド部屋"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn180101_Knight"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn180101_Faceup"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn180101_1st"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn180101"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn180101"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn180100"
+      ]
+    }
+  ]
+}

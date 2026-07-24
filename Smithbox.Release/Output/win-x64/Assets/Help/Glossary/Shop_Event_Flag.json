@@ -1,0 +1,21 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Shop Event Flag",
+    "Tags": [
+        "Term",
+        "Flag",
+        "Shop"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "There are up to two of these per shop slot: to track whether a fixed-quantity shop item has been sold, in all games, and for items conditionally showing up in shops based on the event flag in Bloodborne onwards.",
+        "",
+        "Visibility flags are used quite heavily in Dark Souls III, where all items are in the Handmaid's shop from the start but only show up depending on which ashes you hand in.",
+        "",
+        "It's also used for tomes/scrolls for the other NPCs.",
+        "The quantity event flag is the base of an event value storing how many",
+        "items have been sold - on/off in the case of quantity of 1."
+    ]
+}

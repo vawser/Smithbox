@@ -1,0 +1,317 @@
+{
+  "Name": "MoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Lightweight "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Lightweight + "
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Medium Amount "
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Medium Amount + "
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weight "
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Over weight "
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Super light "
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Mimicry _ Light Weight "
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Mimicry _ lightweight + "
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Mimicry _ Medium Volume "
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Mimicry _ Medium Amount + "
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Mimicry weight "
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Mimicry _ over Weight "
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Mimicry _ ultra-light "
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Underwater (deep) _ Lightweight "
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Underwater (deep) _ Lightweight + "
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater (deep) _ Medium volume "
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater (deep) _ Medium Volume + "
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Underwater (deep) _ Weight "
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Underwater (deep) _ Over weight "
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Underwater (deep) _ Ultra-Light "
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "【 SP 】 Guard Vigilance _ Lightweight "
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【 SP 】 Guard Vigilance _ lightweight + "
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "【 SP 】 Guard Vigilance _ medium volume "
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "【 SP 】 Guard Vigilance _ Medium Amount + "
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "【 SP 】 Guard Vigilance _ Weight "
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "(SP) Guard vigilance _ over weight "
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "(SP) Guard Vigilance _ ultra-light "
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy Base Combat "
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Bird Standard "
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Guard "
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Dog "
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dragon Demon "
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy base non-combat time "
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Scale miners during combat "
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Scales Miners Non-combat (bag) "
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Scales Miners Non-combat (pick) "
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Big Spider Peeping "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Gargoyletest "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon Demon (mine) "
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "For the beast of the Storm "
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Storm Beast (CUB) Bichibichi wait "
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Scales Miners Non-combat (bare hands) "
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Octopus head when fighting "
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gargoyle aerial (for 3050) "
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gargoyle Ground (for 3050) "
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Shadow woman _ for disappearing "
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Blood mites only "
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Paris AIM "
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "(DLC) Enemy Basic combat (running/swirling anime without version) "
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Four-legged type for PG "
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "(FDP) Test _ First time "
+      ]
+    }
+  ]
+}

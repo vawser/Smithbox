@@ -1,0 +1,731 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 50000000,
+      "Entries": [
+        "HEAD - HD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "HEAD - HS-5000 APPETIZER"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "HEAD - HD-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "HEAD - HD-012 MELANDER C3"
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        "HEAD - DF-HD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 50020000,
+      "Entries": [
+        "HEAD - NACHTREIHER/44E"
+      ]
+    },
+    {
+      "ID": 50020100,
+      "Entries": [
+        "HEAD - KASUAR/44Z"
+      ]
+    },
+    {
+      "ID": 50030000,
+      "Entries": [
+        "HEAD - VP-44S"
+      ]
+    },
+    {
+      "ID": 50030100,
+      "Entries": [
+        "HEAD - VP-44D"
+      ]
+    },
+    {
+      "ID": 50040000,
+      "Entries": [
+        "HEAD - VE-44A"
+      ]
+    },
+    {
+      "ID": 50040100,
+      "Entries": [
+        "HEAD - VE-44B"
+      ]
+    },
+    {
+      "ID": 50050000,
+      "Entries": [
+        "HEAD - 20-081 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 50050100,
+      "Entries": [
+        "HEAD - 20-082 MIND BETA"
+      ]
+    },
+    {
+      "ID": 50060000,
+      "Entries": [
+        "HEAD - EL-TH-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 50070200,
+      "Entries": [
+        "HEAD - AH-J-124 BASHO"
+      ]
+    },
+    {
+      "ID": 50070300,
+      "Entries": [
+        "HEAD - HC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 50070400,
+      "Entries": [
+        "HEAD - HC-2000 FINDER EYE"
+      ]
+    },
+    {
+      "ID": 50070600,
+      "Entries": [
+        "HEAD - HC-2000/BC SHADE EYE"
+      ]
+    },
+    {
+      "ID": 50080000,
+      "Entries": [
+        "HEAD - IB-C03H: HAL 826"
+      ]
+    },
+    {
+      "ID": 50080100,
+      "Entries": [
+        "HEAD - IA-C01H: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 50080200,
+      "Entries": [
+        "HEAD - EL-PH-00 ALBA"
+      ]
+    },
+    {
+      "ID": 50080300,
+      "Entries": [
+        "HEAD - LAMMERGEIER/44F"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "HEAD - AH-J-124/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "CORE - BD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 51000300,
+      "Entries": [
+        "CORE - BD-012 MELANDER C3"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "CORE - CS-5000 MAIN DISH"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "CORE - DF-BD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 51020000,
+      "Entries": [
+        "CORE - NACHTREIHER/40E"
+      ]
+    },
+    {
+      "ID": 51030000,
+      "Entries": [
+        "CORE - VP-40S"
+      ]
+    },
+    {
+      "ID": 51040000,
+      "Entries": [
+        "CORE - VE-40A"
+      ]
+    },
+    {
+      "ID": 51050000,
+      "Entries": [
+        "CORE - 07-061 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 51060000,
+      "Entries": [
+        "CORE - EL-TC-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 51070200,
+      "Entries": [
+        "CORE - AC-J-120 BASHO"
+      ]
+    },
+    {
+      "ID": 51070300,
+      "Entries": [
+        "CORE - CC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 51070400,
+      "Entries": [
+        "CORE - CC-2000 ORBITER"
+      ]
+    },
+    {
+      "ID": 51080000,
+      "Entries": [
+        "CORE - IB-C03C: HAL 826"
+      ]
+    },
+    {
+      "ID": 51080100,
+      "Entries": [
+        "CORE - IA-C01C: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 51080200,
+      "Entries": [
+        "CORE - EL-PC-00 ALBA"
+      ]
+    },
+    {
+      "ID": 51080300,
+      "Entries": [
+        "CORE - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 51800000,
+      "Entries": [
+        "CORE [NPC] - NACHTREIHER/40E (Damaged)"
+      ]
+    },
+    {
+      "ID": 51900000,
+      "Entries": [
+        "CORE - AC-J-120/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "ARMS - AR-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        "ARMS - AR-012 MELANDER C3"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "ARMS - AS-5000 SALAD"
+      ]
+    },
+    {
+      "ID": 52010000,
+      "Entries": [
+        "ARMS - DF-AR-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 52010100,
+      "Entries": [
+        "ARMS - DF-AR-09 TIAN-LAO"
+      ]
+    },
+    {
+      "ID": 52020000,
+      "Entries": [
+        "ARMS - NACHTREIHER/46E"
+      ]
+    },
+    {
+      "ID": 52030000,
+      "Entries": [
+        "ARMS - VP-46S"
+      ]
+    },
+    {
+      "ID": 52030100,
+      "Entries": [
+        "ARMS - VP-46D"
+      ]
+    },
+    {
+      "ID": 52040000,
+      "Entries": [
+        "ARMS - VE-46A"
+      ]
+    },
+    {
+      "ID": 52050000,
+      "Entries": [
+        "ARMS - 04-101 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 52060000,
+      "Entries": [
+        "ARMS - EL-TA-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 52070200,
+      "Entries": [
+        "ARMS - AA-J-123 BASHO"
+      ]
+    },
+    {
+      "ID": 52070300,
+      "Entries": [
+        "ARMS - AC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 52070400,
+      "Entries": [
+        "ARMS - AC-2000 TOOL ARM"
+      ]
+    },
+    {
+      "ID": 52080000,
+      "Entries": [
+        "ARMS - IB-C03A: HAL 826"
+      ]
+    },
+    {
+      "ID": 52080100,
+      "Entries": [
+        "ARMS - IA-C01A: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 52080200,
+      "Entries": [
+        "ARMS - EL-PA-00 ALBA"
+      ]
+    },
+    {
+      "ID": 52080300,
+      "Entries": [
+        "ARMS - LAMMERGEIER/46F"
+      ]
+    },
+    {
+      "ID": 52900000,
+      "Entries": [
+        "ARMS - AA-J-123/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "LEGS - LG-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "LEGS - LG-012 MELANDER C3"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "LEGS - 2S-5000 DESSERT"
+      ]
+    },
+    {
+      "ID": 53010000,
+      "Entries": [
+        "LEGS - DF-LG-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 53020000,
+      "Entries": [
+        "LEGS - NACHTREIHER/42E"
+      ]
+    },
+    {
+      "ID": 53030000,
+      "Entries": [
+        "LEGS - VP-422"
+      ]
+    },
+    {
+      "ID": 53040000,
+      "Entries": [
+        "LEGS - VE-42A"
+      ]
+    },
+    {
+      "ID": 53050000,
+      "Entries": [
+        "LEGS - 06-041 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 53060000,
+      "Entries": [
+        "LEGS - EL-TL-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 53070200,
+      "Entries": [
+        "LEGS - AL-J-121 BASHO"
+      ]
+    },
+    {
+      "ID": 53070300,
+      "Entries": [
+        "LEGS - 2C-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 53070400,
+      "Entries": [
+        "LEGS - 2C-2000 CRAWLER"
+      ]
+    },
+    {
+      "ID": 53080000,
+      "Entries": [
+        "LEGS - IB-C03L: HAL 826"
+      ]
+    },
+    {
+      "ID": 53080100,
+      "Entries": [
+        "LEGS - IA-C01L: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 53080200,
+      "Entries": [
+        "LEGS - EL-PL-00 ALBA"
+      ]
+    },
+    {
+      "ID": 53900000,
+      "Entries": [
+        "LEGS - AL-J-121/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 53120000,
+      "Entries": [
+        "LEGS - KASUAR/42Z"
+      ]
+    },
+    {
+      "ID": 53150000,
+      "Entries": [
+        "LEGS - 06-042 MIND BETA"
+      ]
+    },
+    {
+      "ID": 53170400,
+      "Entries": [
+        "LEGS - RC-2000 SPRING CHICKEN"
+      ]
+    },
+    {
+      "ID": 53200000,
+      "Entries": [
+        "LEGS - LG-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 53230000,
+      "Entries": [
+        "LEGS - VP-424"
+      ]
+    },
+    {
+      "ID": 53280300,
+      "Entries": [
+        "LEGS - LAMMERGEIER/42F"
+      ]
+    },
+    {
+      "ID": 53300000,
+      "Entries": [
+        "LEGS - LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 53340000,
+      "Entries": [
+        "LEGS - VE-42B"
+      ]
+    },
+    {
+      "ID": 53360000,
+      "Entries": [
+        "LEGS - EL-TL-11 FORTALEZA"
+      ]
+    },
+    {
+      "ID": 59001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59001100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59001200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59001300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59002100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59002200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59002300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59003100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59003200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59003300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59004100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59004200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59004300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59005100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59005200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59005300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59006100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59006200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59006300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59007100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59007200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59007300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59008000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59008100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59008200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59008300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "HEAD [NPC] - HC-2000 FINDER EYE (Damaged)"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "CORE [NPC] - CC-2000 ORBITER (Damaged)"
+      ]
+    },
+    {
+      "ID": 99900200,
+      "Entries": [
+        "ARMS [NPC] - AC-2000 TOOL ARM (Damaged)"
+      ]
+    },
+    {
+      "ID": 99900300,
+      "Entries": [
+        "LEGS [NPC] - 2C-2000 CRAWLER (Damaged)"
+      ]
+    }
+  ]
+}

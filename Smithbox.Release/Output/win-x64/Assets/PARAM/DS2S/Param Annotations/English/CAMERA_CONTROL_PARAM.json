@@ -1,0 +1,43 @@
+{
+  "Param": "CAMERA_CONTROL_PARAM",
+  "Type": "CAMERA_CONTROL_PARAM",
+  "Name": "CAMERA_CONTROL_PARAM",
+  "Description": "Defines parameters relating to the control of the camera.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

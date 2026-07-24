@@ -1,0 +1,2837 @@
+{
+  "Name": "WorldMapPointParam",
+  "Entries": [
+    {
+      "ID": 78500,
+      "Entries": [
+        "Guidance of Grace: Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start"
+      ]
+    },
+    {
+      "ID": 78501,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold"
+      ]
+    },
+    {
+      "ID": 78502,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins"
+      ]
+    },
+    {
+      "ID": 78503,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - Before Freezing Lake, Heretical Rise"
+      ]
+    },
+    {
+      "ID": 78504,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - First Church of Marika"
+      ]
+    },
+    {
+      "ID": 78505,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - Whiteridge Road, Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 78506,
+      "Entries": [
+        "Guidance of Grace: Flame Peak - Northeast Giants' Gravepost"
+      ]
+    },
+    {
+      "ID": 78507,
+      "Entries": [
+        "Guidance of Grace: Flame Peak - Northwest Fire Giant Arena, Foot of the Forge"
+      ]
+    },
+    {
+      "ID": 78510,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook"
+      ]
+    },
+    {
+      "ID": 78511,
+      "Entries": [
+        "Guidance of Grace: Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook"
+      ]
+    },
+    {
+      "ID": 78520,
+      "Entries": [
+        "Guidance of Grace: Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area"
+      ]
+    },
+    {
+      "ID": 78521,
+      "Entries": [
+        "Guidance of Grace: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 95100,
+      "Entries": [
+        "Guidance of Grace: Limgrave - Church of Elleh, Stranded Graveyard Exit"
+      ]
+    },
+    {
+      "ID": 95101,
+      "Entries": [
+        "Guidance of Grace: Limgrave - Church of Elleh, Stranded Graveyard Exit"
+      ]
+    },
+    {
+      "ID": 95102,
+      "Entries": [
+        "Guidance of Grace: Limgrave - Gatefront, Stormhill Evergaol, Groveside Cave Entrance, Limgrave Tunnels Entrance"
+      ]
+    },
+    {
+      "ID": 95103,
+      "Entries": [
+        "Guidance of Grace: Stormhill - Stormhill Shack, Stormveil Castle Entrance"
+      ]
+    },
+    {
+      "ID": 95104,
+      "Entries": [
+        "Guidance of Grace: Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 95110,
+      "Entries": [
+        "Guidance of Grace: Limgrave - Agheel Lake South, Forlorn Hound Evergaol"
+      ]
+    },
+    {
+      "ID": 95111,
+      "Entries": [
+        "Guidance of Grace: Weeping Peninsula - Bridge of Sacrifice, Forest Lookout Tower, Earthbore Cave Entrance"
+      ]
+    },
+    {
+      "ID": 95112,
+      "Entries": [
+        "Guidance of Grace: Weeping Peninsula - Castle Morne Rampart, Ailing Village Outskirts"
+      ]
+    },
+    {
+      "ID": 95113,
+      "Entries": [
+        "Guidance of Grace: Weeping Peninsula - Castle Morne"
+      ]
+    },
+    {
+      "ID": 95200,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Lake-Facing Cliffs, Stormveil Castle Exit, Stillwater Cave Entrance"
+      ]
+    },
+    {
+      "ID": 95201,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Liurnia Lake Shore"
+      ]
+    },
+    {
+      "ID": 95202,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Laskyar Ruins, Malefactor's Evergaol"
+      ]
+    },
+    {
+      "ID": 95203,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Scenic Isle, Laskyar Ruins"
+      ]
+    },
+    {
+      "ID": 95204,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Gate Town Southeast"
+      ]
+    },
+    {
+      "ID": 95205,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - South Raya Lucaria Gate"
+      ]
+    },
+    {
+      "ID": 95206,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Main Academy Gate, Academy of Raya Lucaria Entrance"
+      ]
+    },
+    {
+      "ID": 95210,
+      "Entries": [
+        "Guidance of Grace: Bellum Highway - East Raya Lucaria Gate"
+      ]
+    },
+    {
+      "ID": 95211,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Southeast Ravine, Lake at Caria Manor Entrance; Bellum Highway - Bellum Church"
+      ]
+    },
+    {
+      "ID": 95212,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Ravine-Veiled Village, Bellum Highway, Altus Plateau, Ruin-Strewn Precipice Entrance"
+      ]
+    },
+    {
+      "ID": 95220,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Foot of the Four Belfries"
+      ]
+    },
+    {
+      "ID": 95221,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Sorcerer's Isle West, East Belfry"
+      ]
+    },
+    {
+      "ID": 95222,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Northern Liurnia Lake Shore, Kingsrealm Ruins"
+      ]
+    },
+    {
+      "ID": 95223,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Road to the Manor"
+      ]
+    },
+    {
+      "ID": 95224,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Caria Manor"
+      ]
+    },
+    {
+      "ID": 95230,
+      "Entries": [
+        "Guidance of Grace: Liurnia of the Lakes - Ranni's Rise, Seluvis's Rise"
+      ]
+    },
+    {
+      "ID": 95300,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit"
+      ]
+    },
+    {
+      "ID": 95301,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Erdtree-Gazing Hill, Lux Ruins"
+      ]
+    },
+    {
+      "ID": 95302,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Altus Highway Junction"
+      ]
+    },
+    {
+      "ID": 95303,
+      "Entries": [
+        "Guidance of Grace: Capital Outskirts - Outer Wall Phantom Tree"
+      ]
+    },
+    {
+      "ID": 95304,
+      "Entries": [
+        "Guidance of Grace: Capital Outskirts - Northeast Outer Wall Battleground, Hermit Merchant's Shack"
+      ]
+    },
+    {
+      "ID": 95310,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 95311,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - West Windmill Village"
+      ]
+    },
+    {
+      "ID": 95350,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Road of Iniquity Side Path"
+      ]
+    },
+    {
+      "ID": 95351,
+      "Entries": [
+        "Guidance of Grace: Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity"
+      ]
+    },
+    {
+      "ID": 95352,
+      "Entries": [
+        "Guidance of Grace: Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle"
+      ]
+    },
+    {
+      "ID": 95353,
+      "Entries": [
+        "Guidance of Grace: Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance"
+      ]
+    },
+    {
+      "ID": 95400,
+      "Entries": [
+        "Guidance of Grace: Caelid - Smoldering Church, Rotview Balcony"
+      ]
+    },
+    {
+      "ID": 95401,
+      "Entries": [
+        "Guidance of Grace: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 95402,
+      "Entries": [
+        "Guidance of Grace: Caelid - Smoldering Wall, Abandoned Cave Entrance"
+      ]
+    },
+    {
+      "ID": 95403,
+      "Entries": [
+        "Guidance of Grace: Caelid - West Aeonia Swamp"
+      ]
+    },
+    {
+      "ID": 95404,
+      "Entries": [
+        "Guidance of Grace: Caelid - West Aeonia Swamp"
+      ]
+    },
+    {
+      "ID": 95405,
+      "Entries": [
+        "Guidance of Grace: Caelid - East Aeonia Swamp"
+      ]
+    },
+    {
+      "ID": 95406,
+      "Entries": [
+        "Guidance of Grace: Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol"
+      ]
+    },
+    {
+      "ID": 95407,
+      "Entries": [
+        "Guidance of Grace: Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol"
+      ]
+    },
+    {
+      "ID": 95410,
+      "Entries": [
+        "Guidance of Grace: Caelid - Caelid Highway South"
+      ]
+    },
+    {
+      "ID": 95411,
+      "Entries": [
+        "Guidance of Grace: Caelid - Cathedral of Dragon Communion, Caelid Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 95412,
+      "Entries": [
+        "Guidance of Grace: Caelid - Impassable Greatbridge"
+      ]
+    },
+    {
+      "ID": 95413,
+      "Entries": [
+        "Guidance of Grace: Caelid - Redmane Castle"
+      ]
+    },
+    {
+      "ID": 95414,
+      "Entries": [
+        "Guidance of Grace: Caelid - Redmane Castle"
+      ]
+    },
+    {
+      "ID": 95600,
+      "Entries": [
+        "Guidance of Grace: Siofra River / Nokron"
+      ]
+    },
+    {
+      "ID": 95800,
+      "Entries": [
+        "Guidance of Grace: Belurat, Tower Settlement"
+      ]
+    },
+    {
+      "ID": 95900,
+      "Entries": [
+        "Guidance of Grace: Specimen Storehouse"
+      ]
+    },
+    {
+      "ID": 95901,
+      "Entries": [
+        "Guidance of Grace: Specimen Storehouse (West Rampart)"
+      ]
+    },
+    {
+      "ID": 95902,
+      "Entries": [
+        "Guidance of Grace: Ancient Ruins of Rauh - Viaduct Minor Tower"
+      ]
+    },
+    {
+      "ID": 95903,
+      "Entries": [
+        "Guidance of Grace: Ancient Ruins of Rauh - Rauh Ancient Ruins, East"
+      ]
+    },
+    {
+      "ID": 95904,
+      "Entries": [
+        "Guidance of Grace: Ancient Ruins of Rauh - Rauh Ancient Ruins, West"
+      ]
+    },
+    {
+      "ID": 95905,
+      "Entries": [
+        "Guidance of Grace: Ancient Ruins of Rauh - Church of the Bud, Main Entrance"
+      ]
+    },
+    {
+      "ID": 95906,
+      "Entries": [
+        "Guidance of Grace: Ancient Ruins of Rauh - Ancient Ruins, Grand Stairway"
+      ]
+    },
+    {
+      "ID": 96100,
+      "Entries": [
+        "Starlight Guidance: Limgrave - Church of Elleh, Stranded Graveyard Exit"
+      ]
+    },
+    {
+      "ID": 96101,
+      "Entries": [
+        "Catacomb Guidance: Limgrave - Church of Elleh, Stranded Graveyard Exit"
+      ]
+    },
+    {
+      "ID": 96102,
+      "Entries": [
+        "Starlight Guidance: Stormhill - Saintsbridge, Deathtouched Catacombs Entrance, Highroad Cave Entrance"
+      ]
+    },
+    {
+      "ID": 96103,
+      "Entries": [
+        "Catacomb Guidance: Stormhill - Saintsbridge, Deathtouched Catacombs Entrance, Highroad Cave Entrance"
+      ]
+    },
+    {
+      "ID": 96104,
+      "Entries": [
+        "Starlight Guidance: Limgrave - Murkwater Coast, Murkwater Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96105,
+      "Entries": [
+        "Catacomb Guidance: Limgrave - Murkwater Coast, Murkwater Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96106,
+      "Entries": [
+        "Starlight Guidance: Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins"
+      ]
+    },
+    {
+      "ID": 96107,
+      "Entries": [
+        "Catacomb Guidance: Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins"
+      ]
+    },
+    {
+      "ID": 96108,
+      "Entries": [
+        "Starlight Guidance: Weeping Peninsula - Impaler's Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96109,
+      "Entries": [
+        "Catacomb Guidance: Weeping Peninsula - Impaler's Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96200,
+      "Entries": [
+        "Starlight Guidance: Bellum Highway - Frenzied Flame Village, Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 96201,
+      "Entries": [
+        "Catacomb Guidance: Bellum Highway - Frenzied Flame Village, Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 96202,
+      "Entries": [
+        "Starlight Guidance: Liurnia of the Lakes - Revenger's Shack"
+      ]
+    },
+    {
+      "ID": 96203,
+      "Entries": [
+        "Catacomb Guidance: Liurnia of the Lakes - Revenger's Shack"
+      ]
+    },
+    {
+      "ID": 96204,
+      "Entries": [
+        "Starlight Guidance: Liurnia of the Lakes - Liurnia Highway North"
+      ]
+    },
+    {
+      "ID": 96205,
+      "Entries": [
+        "Catacomb Guidance: Liurnia of the Lakes - Liurnia Highway North"
+      ]
+    },
+    {
+      "ID": 96300,
+      "Entries": [
+        "Starlight Guidance: Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96301,
+      "Entries": [
+        "Catacomb Guidance: Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96302,
+      "Entries": [
+        "Starlight Guidance: Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96303,
+      "Entries": [
+        "Catacomb Guidance: Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96304,
+      "Entries": [
+        "Starlight Guidance: Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance"
+      ]
+    },
+    {
+      "ID": 96305,
+      "Entries": [
+        "Catacomb Guidance: Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance"
+      ]
+    },
+    {
+      "ID": 96400,
+      "Entries": [
+        "Starlight Guidance: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96401,
+      "Entries": [
+        "Catacomb Guidance: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 96402,
+      "Entries": [
+        "Starlight Guidance: Caelid - Southwest of Caelid Highway South"
+      ]
+    },
+    {
+      "ID": 96403,
+      "Entries": [
+        "Catacomb Guidance: Caelid - Southwest of Caelid Highway South"
+      ]
+    },
+    {
+      "ID": 96404,
+      "Entries": [
+        "Starlight Guidance: Greyoll's Dragonbarrow - Fort Faroth"
+      ]
+    },
+    {
+      "ID": 96405,
+      "Entries": [
+        "Catacomb Guidance: Greyoll's Dragonbarrow - Fort Faroth"
+      ]
+    },
+    {
+      "ID": 96502,
+      "Entries": [
+        "Starlight Guidance: Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 96503,
+      "Entries": [
+        "Catacomb Guidance: Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 96510,
+      "Entries": [
+        "Starlight Guidance: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 96511,
+      "Entries": [
+        "Catacomb Guidance: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Legacy Dungeon - Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Legacy Dungeon - Leyndell Royal Capital"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Legacy Dungeon - Unused"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Legacy Dungeon - Crumbling Farum Azula"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Legacy Dungeon - Academy of Raya Lucaria"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Legacy Dungeon - Miquella's Haligtree"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "Legacy Dungeon - Elphael Brace of the Haligtree"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "Legacy Dungeon - Volcano Manor"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Limgrave - Stranded Graveyard"
+      ]
+    },
+    {
+      "ID": 180001,
+      "Entries": [
+        "Limgrave - Fringefolk Hero's Grave"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Legacy Dungeon - Belurat, Tower Settlement"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Legacy Dungeon - Belurat, Tower Settlement (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Legacy Dungeon - Enir-Ilim"
+      ]
+    },
+    {
+      "ID": 200101,
+      "Entries": [
+        "Legacy Dungeon - Enir-Ilim (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Legacy Dungeon - Shadow Keep"
+      ]
+    },
+    {
+      "ID": 210101,
+      "Entries": [
+        "Legacy Dungeon - Shadow Keep (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Legacy Dungeon - Stone Coffin Fissure"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "Legacy Dungeon - Stone Coffin Fissure (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Legacy Dungeon - Midra's Manse"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Weeping Peninsula - Tombsward Catacombs"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Weeping Peninsula - Impaler's Catacombs"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Limgrave - Stormfoot Catacombs"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Limgrave - Road's End Catacombs"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Limgrave - Murkwater Catacombs"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Limgrave - Black Knife Catacombs"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Liurnia - Cliffbottom Catacombs"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "Altus Plateau - Wyndham Catacombs"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Altus Plateau - Sainted Hero's Grave"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "Mt. Gelmir - Gelmir Hero's Grave"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Capital Outskirts - Auriza Hero's Grave"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Limgrave - Deathtouched Catacombs"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Altus Plateau - Unsightly Catacombs"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Capital Outskirts - Auriza Side Tomb"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "Caelid - Minor Erdtree Catacombs"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "Caelid - Caelid Catacombs"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "Caelid - War-Dead Catacombs"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "Mountaintops of the Giants - Giant-Conquering Hero's Grave"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Mountaintops of the Giants - Giants' Mountaintop Catacombs"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "Consecrated Snowfield - Consecrated Snowfield Catacombs"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Consecrated Snowfield - Hidden Path to the Haligtree"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Limgrave - Murkwater Cave"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "Weeping Peninsula - Earthbore Cave"
+      ]
+    },
+    {
+      "ID": 310200,
+      "Entries": [
+        "Weeping Peninsula - Tombsward Cave"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "Limgrave - Groveside Cave"
+      ]
+    },
+    {
+      "ID": 310400,
+      "Entries": [
+        "Liurnia - Stillwater Cave"
+      ]
+    },
+    {
+      "ID": 310500,
+      "Entries": [
+        "Liurnia - Lakeside Crystal Cave"
+      ]
+    },
+    {
+      "ID": 310600,
+      "Entries": [
+        "Liurnia - Academy Crystal Cave"
+      ]
+    },
+    {
+      "ID": 310700,
+      "Entries": [
+        "Mt. Gelmir - Seethewater Cave"
+      ]
+    },
+    {
+      "ID": 310900,
+      "Entries": [
+        "Mt. Gelmir - Volcano Cave"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Dragonbarrow - Dragonbarrow Cave"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "Dragonbarrow - Sellia Hideaway"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "Consecrated Snowfield - Cave of the Forlorn"
+      ]
+    },
+    {
+      "ID": 311500,
+      "Entries": [
+        "Limgrave - Coastal Cave"
+      ]
+    },
+    {
+      "ID": 311700,
+      "Entries": [
+        "Limgrave - Highroad Cave"
+      ]
+    },
+    {
+      "ID": 311800,
+      "Entries": [
+        "Capital Outskirts - Perfumer's Grotto"
+      ]
+    },
+    {
+      "ID": 311900,
+      "Entries": [
+        "Altus Plateau - Sage's Cave"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Dragonbarrow - Abandoned Cave"
+      ]
+    },
+    {
+      "ID": 312100,
+      "Entries": [
+        "Caelid - Gaol Cave"
+      ]
+    },
+    {
+      "ID": 312200,
+      "Entries": [
+        "Mountaintops of the Giants - Spiritcaller's Cave"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Weeping Peninsula - Morne Tunnel"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Limgrave - Limgrave Tunnels"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "Liurnia - Raya Lucaria Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "Altus Plateau - Old Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "Altus Plateau - Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 320700,
+      "Entries": [
+        "Caelid - Gael Tunnel"
+      ]
+    },
+    {
+      "ID": 320800,
+      "Entries": [
+        "Caelid - Sellia Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 321100,
+      "Entries": [
+        "Consecrated Snowfield - Yelough Anix Tunnel"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Limgrave - Divine Tower of Limgrave"
+      ]
+    },
+    {
+      "ID": 341100,
+      "Entries": [
+        "Liurnia - Carian Study Hall"
+      ]
+    },
+    {
+      "ID": 341101,
+      "Entries": [
+        "Liurnia - Divine Tower of Liurnia"
+      ]
+    },
+    {
+      "ID": 341200,
+      "Entries": [
+        "Capital Outskirts - Sealed Tunnel"
+      ]
+    },
+    {
+      "ID": 341201,
+      "Entries": [
+        "Leyndell - Divine Tower of West Altus"
+      ]
+    },
+    {
+      "ID": 341300,
+      "Entries": [
+        "Dragonbarrow - Divine Tower of Caelid"
+      ]
+    },
+    {
+      "ID": 341400,
+      "Entries": [
+        "Leyndell - Divine Tower of East Altus"
+      ]
+    },
+    {
+      "ID": 341500,
+      "Entries": [
+        "Leyndell - Isolated Divine Tower"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Legacy Dungeon - Subterranean Shunning-Grounds"
+      ]
+    },
+    {
+      "ID": 392000,
+      "Entries": [
+        "Legacy Dungeon - Ruin-Strewn Precipice"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Scadu Altus - Fog Rift Catacombs"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Rauh Base - Scorpion River Catacombs"
+      ]
+    },
+    {
+      "ID": 400200,
+      "Entries": [
+        "Scadu Altus - Darklight Catacombs"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Gravesite Plain - Belurat Gaol"
+      ]
+    },
+    {
+      "ID": 410100,
+      "Entries": [
+        "Scadu Altus - Bonny Gaol"
+      ]
+    },
+    {
+      "ID": 410200,
+      "Entries": [
+        "Charo's Hidden Grave - Lamenter's Gaol"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Gravesite Plain - Ruined Forge Lava Intake"
+      ]
+    },
+    {
+      "ID": 420100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 420200,
+      "Entries": [
+        "Scadu Altus - Ruined Forge of Starfall Past"
+      ]
+    },
+    {
+      "ID": 420300,
+      "Entries": [
+        "Rauh Base - Taylew's Ruined Forge"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "Gravesite Plain - Rivermouth Cave"
+      ]
+    },
+    {
+      "ID": 430100,
+      "Entries": [
+        "Jagged Peak - Dragon's Pit"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Leyndell - Royal Colosseum"
+      ]
+    },
+    {
+      "ID": 450100,
+      "Entries": [
+        "Limgrave - Limgrave Colosseum"
+      ]
+    },
+    {
+      "ID": 450200,
+      "Entries": [
+        "Caelid - Caelid Colosseum"
+      ]
+    },
+    {
+      "ID": 61413200,
+      "Entries": [
+        "Weeping Penisula - Isolated Merchant's Shack"
+      ]
+    },
+    {
+      "ID": 61413300,
+      "Entries": [
+        "Weeping Penisula - Fourth Church of Marika"
+      ]
+    },
+    {
+      "ID": 61413301,
+      "Entries": [
+        "Weeping Penisula - Witchbane Ruins"
+      ]
+    },
+    {
+      "ID": 61413500,
+      "Entries": [
+        "Limgrave - Church of Dragon Communion"
+      ]
+    },
+    {
+      "ID": 61413800,
+      "Entries": [
+        "Limgrave - Stormhill Shack"
+      ]
+    },
+    {
+      "ID": 61423200,
+      "Entries": [
+        "Weeping Peninsula - Tower of Return"
+      ]
+    },
+    {
+      "ID": 61423300,
+      "Entries": [
+        "Weeping Peninsula - Weeping Evergaol"
+      ]
+    },
+    {
+      "ID": 61423400,
+      "Entries": [
+        "Weeping Peninsula - Tombsward Ruins"
+      ]
+    },
+    {
+      "ID": 61423600,
+      "Entries": [
+        "Limgrave - Church of Elleh"
+      ]
+    },
+    {
+      "ID": 61423700,
+      "Entries": [
+        "Limgrave - Gatefront Ruins"
+      ]
+    },
+    {
+      "ID": 61423701,
+      "Entries": [
+        "Limgrave - Stormhill Evergaol"
+      ]
+    },
+    {
+      "ID": 61423702,
+      "Entries": [
+        "Limgrave - Stormgate"
+      ]
+    },
+    {
+      "ID": 61423800,
+      "Entries": [
+        "Limgrave - Warmaster's Shack"
+      ]
+    },
+    {
+      "ID": 61433100,
+      "Entries": [
+        "Weeping Peninsula - Castle Morne"
+      ]
+    },
+    {
+      "ID": 61433301,
+      "Entries": [
+        "Weeping Peninsula - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 61433400,
+      "Entries": [
+        "Weeping Peninsula - Church of Pilgrimage"
+      ]
+    },
+    {
+      "ID": 61433401,
+      "Entries": [
+        "Demi-Human Forest Ruins"
+      ]
+    },
+    {
+      "ID": 61433600,
+      "Entries": [
+        "Limgrave - Dragon-Burnt Ruins"
+      ]
+    },
+    {
+      "ID": 61443300,
+      "Entries": [
+        "Weeping Peninsula - Callu Baptismal Church"
+      ]
+    },
+    {
+      "ID": 61443302,
+      "Entries": [
+        "Weeping Peninsula - Ailing Village"
+      ]
+    },
+    {
+      "ID": 61443400,
+      "Entries": [
+        "Weeping Peninsula - Bridge of Sacrifice"
+      ]
+    },
+    {
+      "ID": 61443401,
+      "Entries": [
+        "Weeping Peninsula - Forest Lookout Tower"
+      ]
+    },
+    {
+      "ID": 61443500,
+      "Entries": [
+        "Limgrave - Forlorn Hound Evergaol"
+      ]
+    },
+    {
+      "ID": 61443600,
+      "Entries": [
+        "Limgrave - Waypoint Ruins"
+      ]
+    },
+    {
+      "ID": 61443800,
+      "Entries": [
+        "Limgrave - Artist's Shack"
+      ]
+    },
+    {
+      "ID": 61453300,
+      "Entries": [
+        "Limgrave - Oridys's Rise"
+      ]
+    },
+    {
+      "ID": 61453600,
+      "Entries": [
+        "Limgrave - Starfall Crater"
+      ]
+    },
+    {
+      "ID": 61453700,
+      "Entries": [
+        "Limgrave - Siofra River Well"
+      ]
+    },
+    {
+      "ID": 61453701,
+      "Entries": [
+        "Limgrave - Mistwood Ruins"
+      ]
+    },
+    {
+      "ID": 61453702,
+      "Entries": [
+        "Limgrave - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 61453900,
+      "Entries": [
+        "Limgrave - Summonwater Village"
+      ]
+    },
+    {
+      "ID": 61463600,
+      "Entries": [
+        "Limgrave - Fort Haight"
+      ]
+    },
+    {
+      "ID": 61463800,
+      "Entries": [
+        "Limgrave - Third Church of Marika"
+      ]
+    },
+    {
+      "ID": 62334000,
+      "Entries": [
+        "Liurnia - Chelona's Rise"
+      ]
+    },
+    {
+      "ID": 62334200,
+      "Entries": [
+        "Liurnia - Ringleader's Evergaol"
+      ]
+    },
+    {
+      "ID": 62334300,
+      "Entries": [
+        "Liurnia - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 62334400,
+      "Entries": [
+        "Liurnia - Revenger's Shack"
+      ]
+    },
+    {
+      "ID": 62334500,
+      "Entries": [
+        "Liurnia - Cuckoo's Evergaol"
+      ]
+    },
+    {
+      "ID": 62334700,
+      "Entries": [
+        "Liurnia - The Four Belfries"
+      ]
+    },
+    {
+      "ID": 62344100,
+      "Entries": [
+        "Liurnia - Deep Ainsel Well"
+      ]
+    },
+    {
+      "ID": 62344200,
+      "Entries": [
+        "Liurnia - Moonfolk Ruins"
+      ]
+    },
+    {
+      "ID": 62344300,
+      "Entries": [
+        "Liurnia - Converted Tower"
+      ]
+    },
+    {
+      "ID": 62344400,
+      "Entries": [
+        "Liurnia - Temple Quarter"
+      ]
+    },
+    {
+      "ID": 62344800,
+      "Entries": [
+        "Liurnia - Kingsrealm Ruins"
+      ]
+    },
+    {
+      "ID": 62345000,
+      "Entries": [
+        "Liurnia - Seluvis's Rise"
+      ]
+    },
+    {
+      "ID": 62345001,
+      "Entries": [
+        "Liurnia - Ranni's Rise"
+      ]
+    },
+    {
+      "ID": 62345002,
+      "Entries": [
+        "Liurnia - Three Sisters"
+      ]
+    },
+    {
+      "ID": 62345100,
+      "Entries": [
+        "Liurnia - Renna's Rise"
+      ]
+    },
+    {
+      "ID": 62354100,
+      "Entries": [
+        "Liurnia - Lunar Estate Ruins"
+      ]
+    },
+    {
+      "ID": 62354200,
+      "Entries": [
+        "Liurnia - Village of the Albinaurics"
+      ]
+    },
+    {
+      "ID": 62354201,
+      "Entries": [
+        "Liurnia - Cathedral of Manus Celes"
+      ]
+    },
+    {
+      "ID": 62354400,
+      "Entries": [
+        "Liurnia - Rose Church"
+      ]
+    },
+    {
+      "ID": 62354700,
+      "Entries": [
+        "Liurnia - Testu's Rise"
+      ]
+    },
+    {
+      "ID": 62355000,
+      "Entries": [
+        "Liurnia - Caria Manor"
+      ]
+    },
+    {
+      "ID": 62364100,
+      "Entries": [
+        "Liurnia - Slumbering Wolf's Shack"
+      ]
+    },
+    {
+      "ID": 62364300,
+      "Entries": [
+        "Liurnia - Boilprawn Shack"
+      ]
+    },
+    {
+      "ID": 62364900,
+      "Entries": [
+        "Liurnia - Bellum Church"
+      ]
+    },
+    {
+      "ID": 62365000,
+      "Entries": [
+        "Liurnia - Royal Grave Evergaol"
+      ]
+    },
+    {
+      "ID": 62374200,
+      "Entries": [
+        "Liurnia - Laskyar Ruins"
+      ]
+    },
+    {
+      "ID": 62374400,
+      "Entries": [
+        "Liurnia - Academy Gate Town"
+      ]
+    },
+    {
+      "ID": 62374600,
+      "Entries": [
+        "Liurnia - Church of Vows"
+      ]
+    },
+    {
+      "ID": 62374900,
+      "Entries": [
+        "Liurnia - Church of Inhibition"
+      ]
+    },
+    {
+      "ID": 62384100,
+      "Entries": [
+        "Liurnia - Malefactor's Evergaol"
+      ]
+    },
+    {
+      "ID": 62384200,
+      "Entries": [
+        "Liurnia - Highway Lookout Tower"
+      ]
+    },
+    {
+      "ID": 62384500,
+      "Entries": [
+        "Liurnia - Artist's Shack"
+      ]
+    },
+    {
+      "ID": 62384600,
+      "Entries": [
+        "Liurnia - Ainsel River Well"
+      ]
+    },
+    {
+      "ID": 62384700,
+      "Entries": [
+        "Liurnia - Uld Palace Ruins"
+      ]
+    },
+    {
+      "ID": 62384800,
+      "Entries": [
+        "Liurnia - Frenzied Flame Village"
+      ]
+    },
+    {
+      "ID": 62384801,
+      "Entries": [
+        "Liurnia - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 62384900,
+      "Entries": [
+        "Liurnia - Frenzy-Flaming Tower"
+      ]
+    },
+    {
+      "ID": 62393900,
+      "Entries": [
+        "Liurnia - Church of Irith"
+      ]
+    },
+    {
+      "ID": 62394100,
+      "Entries": [
+        "Liurnia - Purified Ruins"
+      ]
+    },
+    {
+      "ID": 62394400,
+      "Entries": [
+        "Liurnia - Jarburg"
+      ]
+    },
+    {
+      "ID": 62394800,
+      "Entries": [
+        "Liurnia - Converted Fringe Tower"
+      ]
+    },
+    {
+      "ID": 63355400,
+      "Entries": [
+        "Mt. Gelmir - Fort Laiedd"
+      ]
+    },
+    {
+      "ID": 63365100,
+      "Entries": [
+        "Altus Plateau - Perfumer's Ruins"
+      ]
+    },
+    {
+      "ID": 63365200,
+      "Entries": [
+        "Mt. Gelmir - Hermit's Shack"
+      ]
+    },
+    {
+      "ID": 63365203,
+      "Entries": [
+        "Mt. Gelmir - Craftsman's Shack"
+      ]
+    },
+    {
+      "ID": 63375100,
+      "Entries": [
+        "Altus Plateau - Stormcaller Church"
+      ]
+    },
+    {
+      "ID": 63375200,
+      "Entries": [
+        "Mt. Gelmir - Hermit Village"
+      ]
+    },
+    {
+      "ID": 63375400,
+      "Entries": [
+        "Mt. Gelmir - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 63385000,
+      "Entries": [
+        "Altus Plateau - Grand Lift of Dectus"
+      ]
+    },
+    {
+      "ID": 63385100,
+      "Entries": [
+        "Altus Plateau - Lux Ruins"
+      ]
+    },
+    {
+      "ID": 63385200,
+      "Entries": [
+        "Altus Plateau - Wyndham Ruins"
+      ]
+    },
+    {
+      "ID": 63385400,
+      "Entries": [
+        "Mt. Gelmir - Corpse-Stench Shack"
+      ]
+    },
+    {
+      "ID": 63395000,
+      "Entries": [
+        "Altus Plateau - Golden Lineage Evergaol"
+      ]
+    },
+    {
+      "ID": 63395200,
+      "Entries": [
+        "Altus Plateau - Second Church of Marika"
+      ]
+    },
+    {
+      "ID": 63395300,
+      "Entries": [
+        "Altus Plateau - Mirage Rise"
+      ]
+    },
+    {
+      "ID": 63395400,
+      "Entries": [
+        "Altus Plateau - The Shaded Castle"
+      ]
+    },
+    {
+      "ID": 63405200,
+      "Entries": [
+        "Altus Plateau - St. Trina's Hideaway"
+      ]
+    },
+    {
+      "ID": 63405300,
+      "Entries": [
+        "Altus Plateau - Writheblood Ruins"
+      ]
+    },
+    {
+      "ID": 63405500,
+      "Entries": [
+        "Altus Plateau - West Windmill Pasture"
+      ]
+    },
+    {
+      "ID": 63415300,
+      "Entries": [
+        "Altus Plateau - Woodfolk Ruins"
+      ]
+    },
+    {
+      "ID": 63415301,
+      "Entries": [
+        "Altus Plateau - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 63415400,
+      "Entries": [
+        "Altus Plateau - Dominula Windmill Village"
+      ]
+    },
+    {
+      "ID": 63415500,
+      "Entries": [
+        "Altus Plateau - East Windmill Pasture"
+      ]
+    },
+    {
+      "ID": 63415501,
+      "Entries": [
+        "Altus Plateau - Village Windmill Pasture"
+      ]
+    },
+    {
+      "ID": 63425400,
+      "Entries": [
+        "Altus Plateau - Highway Lookout Tower"
+      ]
+    },
+    {
+      "ID": 63435000,
+      "Entries": [
+        "Capital Outskirts - Minor Erdtree Church"
+      ]
+    },
+    {
+      "ID": 63435300,
+      "Entries": [
+        "Capital Outskirts - Hermit Merchant's Shack"
+      ]
+    },
+    {
+      "ID": 63445300,
+      "Entries": [
+        "Capital Outskirts - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 64464000,
+      "Entries": [
+        "Caelid - Smoldering Church"
+      ]
+    },
+    {
+      "ID": 64464001,
+      "Entries": [
+        "Caelid - Shack of the Rotting"
+      ]
+    },
+    {
+      "ID": 64473800,
+      "Entries": [
+        "Caelid - Caelid Waypoint Ruins"
+      ]
+    },
+    {
+      "ID": 64473801,
+      "Entries": [
+        "Caelid - Fort Gael"
+      ]
+    },
+    {
+      "ID": 64474000,
+      "Entries": [
+        "Caelid - Forsaken Ruins"
+      ]
+    },
+    {
+      "ID": 64474001,
+      "Entries": [
+        "Caelid - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 64474002,
+      "Entries": [
+        "Caelid - Caelem Ruins"
+      ]
+    },
+    {
+      "ID": 64483600,
+      "Entries": [
+        "Caelid - Cathedral of Dragon Communion"
+      ]
+    },
+    {
+      "ID": 64483800,
+      "Entries": [
+        "Caelid - Street of Sages Ruins"
+      ]
+    },
+    {
+      "ID": 64484100,
+      "Entries": [
+        "Dragonbarrow - Isolated Merchant's Shack"
+      ]
+    },
+    {
+      "ID": 64493800,
+      "Entries": [
+        "Caelid - Swamp Lookout Tower"
+      ]
+    },
+    {
+      "ID": 64493801,
+      "Entries": [
+        "Caelid - Sellia Gateway"
+      ]
+    },
+    {
+      "ID": 64493900,
+      "Entries": [
+        "Caelid - Sellia Evergaol"
+      ]
+    },
+    {
+      "ID": 64494000,
+      "Entries": [
+        "Caelid - Deep Siofra Well"
+      ]
+    },
+    {
+      "ID": 64503800,
+      "Entries": [
+        "Caelid - Gowry's Shack"
+      ]
+    },
+    {
+      "ID": 64503900,
+      "Entries": [
+        "Caelid - Church of the Plague"
+      ]
+    },
+    {
+      "ID": 64503901,
+      "Entries": [
+        "Caelid - Sellia Town of Sorcery"
+      ]
+    },
+    {
+      "ID": 64513600,
+      "Entries": [
+        "Caelid - Redmane Castle"
+      ]
+    },
+    {
+      "ID": 64513700,
+      "Entries": [
+        "Caelid - Wailing Dunes"
+      ]
+    },
+    {
+      "ID": 64513900,
+      "Entries": [
+        "Dragonbarrow - Fort Faroth"
+      ]
+    },
+    {
+      "ID": 64514000,
+      "Entries": [
+        "Dragonbarrow - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 64514300,
+      "Entries": [
+        "Dragonbarrow - Bestial Sanctum"
+      ]
+    },
+    {
+      "ID": 64524100,
+      "Entries": [
+        "Dragonbarrow - Lenne's Rise"
+      ]
+    },
+    {
+      "ID": 65475500,
+      "Entries": [
+        "Consecrated Snowfield - Yelough Anix Ruins"
+      ]
+    },
+    {
+      "ID": 65475800,
+      "Entries": [
+        "Consecrated Snowfield - Apostate Derelict"
+      ]
+    },
+    {
+      "ID": 65485700,
+      "Entries": [
+        "Consecrated Snowfield - Ordina Liturgical Town"
+      ]
+    },
+    {
+      "ID": 65495300,
+      "Entries": [
+        "Mountaintops of the Giants - Zamor Ruins"
+      ]
+    },
+    {
+      "ID": 65495301,
+      "Entries": [
+        "Mountaintops of the Giants - Grand Lift of Rold"
+      ]
+    },
+    {
+      "ID": 65505600,
+      "Entries": [
+        "Mountaintops of the Giants - Shack of the Lofty"
+      ]
+    },
+    {
+      "ID": 65505601,
+      "Entries": [
+        "Consecrated Snowfield - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 65505602,
+      "Entries": [
+        "Consecrated Snowfield - Albinauric Rise"
+      ]
+    },
+    {
+      "ID": 65515300,
+      "Entries": [
+        "Mountaintops of the Giants - Church of Repose"
+      ]
+    },
+    {
+      "ID": 65515600,
+      "Entries": [
+        "Mountaintops of the Giants - Stargazers' Ruins"
+      ]
+    },
+    {
+      "ID": 65515700,
+      "Entries": [
+        "Mountaintops of the Giants - Castle Sol"
+      ]
+    },
+    {
+      "ID": 65525500,
+      "Entries": [
+        "Mountaintops of the Giants - Guardians' Garrison"
+      ]
+    },
+    {
+      "ID": 65525600,
+      "Entries": [
+        "Mountaintops of the Giants - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 65525700,
+      "Entries": [
+        "Mountaintops of the Giants - Heretical Rise"
+      ]
+    },
+    {
+      "ID": 65535600,
+      "Entries": [
+        "Mountaintops of the Giants - Lord Contender's Evergaol"
+      ]
+    },
+    {
+      "ID": 65545300,
+      "Entries": [
+        "Mountaintops of the Giants - Forge of the Giants"
+      ]
+    },
+    {
+      "ID": 65545500,
+      "Entries": [
+        "Mountaintops of the Giants - First Church of Marika"
+      ]
+    },
+    {
+      "ID": 66120100,
+      "Entries": [
+        "Ainsel River - Uhl Palace Ruins"
+      ]
+    },
+    {
+      "ID": 66120102,
+      "Entries": [
+        "Ainsel River - Uhl Palace Ruins"
+      ]
+    },
+    {
+      "ID": 66120103,
+      "Entries": [
+        "Ainsel River - Nokstella Eternal City"
+      ]
+    },
+    {
+      "ID": 66120104,
+      "Entries": [
+        "Lake of Rot - Grand Cloister"
+      ]
+    },
+    {
+      "ID": 66120200,
+      "Entries": [
+        "Siofra River - Night's Sacred Ground"
+      ]
+    },
+    {
+      "ID": 66120201,
+      "Entries": [
+        "Siofra River - Siofra Aqueduct"
+      ]
+    },
+    {
+      "ID": 66120202,
+      "Entries": [
+        "Siofra River - Hallowhorn Grounds"
+      ]
+    },
+    {
+      "ID": 66120203,
+      "Entries": [
+        "Siofra River - Hallowhorn Grounds"
+      ]
+    },
+    {
+      "ID": 66120500,
+      "Entries": [
+        "Mohgwyn Palace - Mohgwyn Dynasty Mausoleum"
+      ]
+    },
+    {
+      "ID": 66120700,
+      "Entries": [
+        "Nokron - Nokron Eternal City"
+      ]
+    },
+    {
+      "ID": 68454100,
+      "Entries": [
+        "Gravesite Plain - Prospect Town"
+      ]
+    },
+    {
+      "ID": 68454200,
+      "Entries": [
+        "Gravesite Plain - Prospect Town (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 68463800,
+      "Entries": [
+        "Cerulean Coast - Southern Nameless Mausoleum"
+      ]
+    },
+    {
+      "ID": 68464000,
+      "Entries": [
+        "Gravesite Plain - Church of Benediction"
+      ]
+    },
+    {
+      "ID": 68464001,
+      "Entries": [
+        "Gravesite Plain - Artist's Shack"
+      ]
+    },
+    {
+      "ID": 68464100,
+      "Entries": [
+        "Gravesite Plain - Western Nameless Mausoleum"
+      ]
+    },
+    {
+      "ID": 68464200,
+      "Entries": [
+        "Gravesite Plain - Miquella's Cross"
+      ]
+    },
+    {
+      "ID": 68464201,
+      "Entries": [
+        "Gravesite Plain - Scorched Ruins"
+      ]
+    },
+    {
+      "ID": 68464300,
+      "Entries": [
+        "Gravesite Plain - Run-Down Traveler's Rest"
+      ]
+    },
+    {
+      "ID": 68464301,
+      "Entries": [
+        "Gravesite Plain - Ellac Greatbridge"
+      ]
+    },
+    {
+      "ID": 68464400,
+      "Entries": [
+        "Gravesite Plain - Abandoned Ailing Village"
+      ]
+    },
+    {
+      "ID": 68474400,
+      "Entries": [
+        "Gravesite Plain - Castle Ensis"
+      ]
+    },
+    {
+      "ID": 68474401,
+      "Entries": [
+        "Gravesite Plain - Castle Ensis (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 68483700,
+      "Entries": [
+        "Cerulean Coast - Miquella's Cross"
+      ]
+    },
+    {
+      "ID": 68483800,
+      "Entries": [
+        "Cerulean Coast - Finger-Weaver's Hovel"
+      ]
+    },
+    {
+      "ID": 68484100,
+      "Entries": [
+        "Gravesite Plain - Church of Consolation"
+      ]
+    },
+    {
+      "ID": 68484101,
+      "Entries": [
+        "Gravesite Plain - Suppressing Pillar"
+      ]
+    },
+    {
+      "ID": 68484300,
+      "Entries": [
+        "Abyssal Woods - Miquella's Cross"
+      ]
+    },
+    {
+      "ID": 68493900,
+      "Entries": [
+        "Jagged Peak - Grand Altar of Dragon Communion"
+      ]
+    },
+    {
+      "ID": 68494200,
+      "Entries": [
+        "Abyssal Woods - Elder's Hovel"
+      ]
+    },
+    {
+      "ID": 68503800,
+      "Entries": [
+        "Finger Ruins of Rhia - Finger Ruins of Rhia"
+      ]
+    },
+    {
+      "ID": 68504000,
+      "Entries": [
+        "Finger Ruins of Rhia - Finger Ruins of Rhia"
+      ]
+    },
+    {
+      "ID": 68534100,
+      "Entries": [
+        "Abyssal Woods - Abandoned Church"
+      ]
+    },
+    {
+      "ID": 69464500,
+      "Entries": [
+        "Rauh Base - Temple Town Ruins"
+      ]
+    },
+    {
+      "ID": 69464501,
+      "Entries": [
+        "Gravesite Plain - Northern Nameless Mausoleum"
+      ]
+    },
+    {
+      "ID": 69464700,
+      "Entries": [
+        "Ancient Ruins of Rauh - Rauh Ancient Ruins (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 69474500,
+      "Entries": [
+        "Gravesite Plain - Fog Rift Fort"
+      ]
+    },
+    {
+      "ID": 69474600,
+      "Entries": [
+        "Scadu Altus - Church of the Crusade"
+      ]
+    },
+    {
+      "ID": 69484500,
+      "Entries": [
+        "Scadu Altus - ? - Miquella's Cross"
+      ]
+    },
+    {
+      "ID": 69494300,
+      "Entries": [
+        "Scadu Altus - Scaduview Cross (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 69494301,
+      "Entries": [
+        "Scadu Altus - Fort of Reprimand"
+      ]
+    },
+    {
+      "ID": 69494400,
+      "Entries": [
+        "Scadu Altus - Moorth Ruins (Miquella's Cross)"
+      ]
+    },
+    {
+      "ID": 69494500,
+      "Entries": [
+        "Scadu Altus - Moorth Ruins"
+      ]
+    },
+    {
+      "ID": 69494901,
+      "Entries": [
+        "Scaduview - Scadutree Chalice"
+      ]
+    },
+    {
+      "ID": 69494902,
+      "Entries": [
+        "Scaduview - Albinauric's Shack"
+      ]
+    },
+    {
+      "ID": 69504400,
+      "Entries": [
+        "Scadu Altus - Whipping Hut"
+      ]
+    },
+    {
+      "ID": 69504401,
+      "Entries": [
+        "Scadu Altus - Bonny Village"
+      ]
+    },
+    {
+      "ID": 69504402,
+      "Entries": [
+        "Scadu Altus - Village of Flies"
+      ]
+    },
+    {
+      "ID": 69504600,
+      "Entries": [
+        "Scadu Altus - Ruins of Unte"
+      ]
+    },
+    {
+      "ID": 69504800,
+      "Entries": [
+        "Scaduview - Scadutree Base"
+      ]
+    },
+    {
+      "ID": 69514400,
+      "Entries": [
+        "Scadu Altus - Eastern Nameless Mausoleum"
+      ]
+    },
+    {
+      "ID": 69514500,
+      "Entries": [
+        "Scadu Altus - Cathedral of Manus Metyr"
+      ]
+    },
+    {
+      "ID": 69514501,
+      "Entries": [
+        "Scadu Altus - Finger Ruins of Miyr"
+      ]
+    },
+    {
+      "ID": 69514600,
+      "Entries": [
+        "Scadu Altus - Rabbath's Rise"
+      ]
+    },
+    {
+      "ID": 69514601,
+      "Entries": [
+        "Scadu Altus - Finger Ruins of Miyr"
+      ]
+    },
+    {
+      "ID": 69514700,
+      "Entries": [
+        "Scaduview - Shaman Village"
+      ]
+    },
+    {
+      "ID": 69534600,
+      "Entries": [
+        "Scaduview - Finger Ruins of Dheo"
+      ]
+    },
+    {
+      "ID": 69534700,
+      "Entries": [
+        "Scaduview - Finger Ruins of Dheo"
+      ]
+    },
+    {
+      "ID": 80100000,
+      "Entries": [
+        "Stormveil Castle - Gatekeeper Gostoc"
+      ]
+    },
+    {
+      "ID": 80100010,
+      "Entries": [
+        "Stormveil Castle - Sorcerer Rogier"
+      ]
+    },
+    {
+      "ID": 80100015,
+      "Entries": [
+        "Stormveil Castle - Nepheli Loux, Warrior"
+      ]
+    },
+    {
+      "ID": 80100016,
+      "Entries": [
+        "Stormveil Castle - Nepheli Loux, Warrior + Kenneth Haight, Limgrave Heir"
+      ]
+    },
+    {
+      "ID": 80110000,
+      "Entries": [
+        "Leyndell - Volcano Manor Request: Vargram"
+      ]
+    },
+    {
+      "ID": 80110005,
+      "Entries": [
+        "Leyndell - The Noble Goldmask"
+      ]
+    },
+    {
+      "ID": 80110510,
+      "Entries": [
+        "Ashen Leyndell - Scribe Corhyn"
+      ]
+    },
+    {
+      "ID": 80130000,
+      "Entries": [
+        "Crumbling Farum Azula - Alexander, Warrior Jar"
+      ]
+    },
+    {
+      "ID": 80140010,
+      "Entries": [
+        "Academy of Raya Lucaria - Castellan Jerren"
+      ]
+    },
+    {
+      "ID": 80150001,
+      "Entries": [
+        "Miquella's Haligtree - Millicent"
+      ]
+    },
+    {
+      "ID": 80160011,
+      "Entries": [
+        "Volcano Manor - Zorayas the Scout"
+      ]
+    },
+    {
+      "ID": 80350005,
+      "Entries": [
+        "Subterranean Shunning-Grounds - Dung Eater"
+      ]
+    },
+    {
+      "ID": 80350006,
+      "Entries": [
+        "Subterranean Shunning-Grounds - Dung Eater"
+      ]
+    },
+    {
+      "ID": 80392000,
+      "Entries": [
+        "Ruin-Strewn Precipice - Volcano Manor Request: Tragoth"
+      ]
+    },
+    {
+      "ID": 81413600,
+      "Entries": [
+        "Limgrave: Coastal Cave Entrance - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 81413900,
+      "Entries": [
+        "Stormhill: North of Stormhill Shack - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 81423900,
+      "Entries": [
+        "Stormhill: North of Warmaster's Shack - Volcano Manor Request: Istvan"
+      ]
+    },
+    {
+      "ID": 81433100,
+      "Entries": [
+        "Weeping Peninsula: Castle Morne - Castellan Edgar"
+      ]
+    },
+    {
+      "ID": 81433500,
+      "Entries": [
+        "Limgrave: Seaside Ruins - Yura, Hunter of Bloody Fingers"
+      ]
+    },
+    {
+      "ID": 81433700,
+      "Entries": [
+        "Limgrave: Agheel Lake North - Demi-Human Boc"
+      ]
+    },
+    {
+      "ID": 81433900,
+      "Entries": [
+        "Stormhill: Saintsbridge - Alexander, Warrior Jar"
+      ]
+    },
+    {
+      "ID": 81443800,
+      "Entries": [
+        "Limgrave: Artist's Shack - Yura, Hunter of Bloody Fingers"
+      ]
+    },
+    {
+      "ID": 81443900,
+      "Entries": [
+        "Limgrave: Summonwater Village Outskirts - D, Hunter of the Dead"
+      ]
+    },
+    {
+      "ID": 81443905,
+      "Entries": [
+        "Limgrave: Summonwater Village Outskirts - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 81453400,
+      "Entries": [
+        "Weeping Peninsula: Impaler's Catacombs Entrance - Irina of Morne"
+      ]
+    },
+    {
+      "ID": 81453600,
+      "Entries": [
+        "Limgrave: Fort Haight West - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 81453800,
+      "Entries": [
+        "Limgrave: South of Summonwater Village - Kenneth Haight, Limgrave Heir"
+      ]
+    },
+    {
+      "ID": 81453900,
+      "Entries": [
+        "Limgrave: Summonwater Village - D, Hunter of the Dead"
+      ]
+    },
+    {
+      "ID": 81463900,
+      "Entries": [
+        "Limgrave: Rear Gael Tunnel Entrance - Sending Gate"
+      ]
+    },
+    {
+      "ID": 82344200,
+      "Entries": [
+        "Liurnia: Village of the Albinaurics - Nepheli Loux, Warrior"
+      ]
+    },
+    {
+      "ID": 82345020,
+      "Entries": [
+        "Liurnia: Ranni's Rise - Sorceress Sellen"
+      ]
+    },
+    {
+      "ID": 82354200,
+      "Entries": [
+        "Moonlight Altar: Cathedral of Manus Celes - Ranni the Witch"
+      ]
+    },
+    {
+      "ID": 82354205,
+      "Entries": [
+        "Liurnia: West Albinauric Village - Old Albus"
+      ]
+    },
+    {
+      "ID": 82354500,
+      "Entries": [
+        "Liurnia: South Raya Lucaria Gate - Isolated Merchant"
+      ]
+    },
+    {
+      "ID": 82354600,
+      "Entries": [
+        "Liurnia: Main Academy Gate - Yura, Hunter of Bloody Fingers"
+      ]
+    },
+    {
+      "ID": 82355000,
+      "Entries": [
+        "Liurnia: Caria Manor - Pidia, Carian Servant"
+      ]
+    },
+    {
+      "ID": 82364400,
+      "Entries": [
+        "Liurnia: Gate Town Southwest - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 82364805,
+      "Entries": [
+        "Bellum Highway: East Raya Lucaria Gate - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 82364900,
+      "Entries": [
+        "Liurnia: Southeast Ravine - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 82374205,
+      "Entries": [
+        "Liurnia: Scenic Isle - Rya the Scout"
+      ]
+    },
+    {
+      "ID": 82374400,
+      "Entries": [
+        "Liurnia: Gate Town Southeast - Knight Diallos"
+      ]
+    },
+    {
+      "ID": 82384100,
+      "Entries": [
+        "Liurnia: Laskyar Ruins - Lightseeker Hyetta"
+      ]
+    },
+    {
+      "ID": 82384300,
+      "Entries": [
+        "Liurnia: Gate Town Bridge - Lightseeker Hyetta"
+      ]
+    },
+    {
+      "ID": 82394400,
+      "Entries": [
+        "Liurnia: Jarburg - Alexander, Warrior Jar"
+      ]
+    },
+    {
+      "ID": 83355300,
+      "Entries": [
+        "Mt. Gelmir: Seethewater Terminus - Alexander, Warrior Jar"
+      ]
+    },
+    {
+      "ID": 83375400,
+      "Entries": [
+        "Mt. Gelmir: Seethewater Cave Entrance - Patches"
+      ]
+    },
+    {
+      "ID": 83375405,
+      "Entries": [
+        "Mt. Gelmir: Seethewater Cave Entrance - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 83385105,
+      "Entries": [
+        "Altus Plateau: Erdtree-Gazing Hill - Millicent"
+      ]
+    },
+    {
+      "ID": 83395300,
+      "Entries": [
+        "Mt. Gelmir: Bridge of Iniquity - Volcano Manor Request: Rileigh"
+      ]
+    },
+    {
+      "ID": 83395405,
+      "Entries": [
+        "Altus Plateau: Shaded Castle - Patches"
+      ]
+    },
+    {
+      "ID": 83405200,
+      "Entries": [
+        "Altus Plateau: Forest-Spanning Greatbridge - Brother Corhyn"
+      ]
+    },
+    {
+      "ID": 83405205,
+      "Entries": [
+        "Altus Plateau: Forest-Spanning Greatbridge - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 83405415,
+      "Entries": [
+        "Altus Plateau: Road of Iniquity Side Path - The Noble Goldmask"
+      ]
+    },
+    {
+      "ID": 83435200,
+      "Entries": [
+        "Capital Outskirts: Southeast Outer Wall Battleground - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 83445200,
+      "Entries": [
+        "Capital Outskirts: South of Minor Erdtree - Blackguard"
+      ]
+    },
+    {
+      "ID": 84483805,
+      "Entries": [
+        "Caelid: West Aeonia Swamp - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 84483905,
+      "Entries": [
+        "Caelid: Smoldering Wall - Finger Reader Crone"
+      ]
+    },
+    {
+      "ID": 84493700,
+      "Entries": [
+        "Caelid: Southern Aeonia Swamp Bank - Nomadic Merchant"
+      ]
+    },
+    {
+      "ID": 84513610,
+      "Entries": [
+        "Caelid: Redmane Castle - Castellan Jerren"
+      ]
+    },
+    {
+      "ID": 85495300,
+      "Entries": [
+        "Mountaintops of the Giants - Grand Lift of Rold"
+      ]
+    },
+    {
+      "ID": 85495301,
+      "Entries": [
+        "Divine Tower of East Altus - The Rold Route"
+      ]
+    },
+    {
+      "ID": 85505600,
+      "Entries": [
+        "Mountaintops of the Giants: Shack of the Lofty - Volcano Manor Request: Juno Hoslow"
+      ]
+    },
+    {
+      "ID": 85515600,
+      "Entries": [
+        "Mountaintops of the Giants: Ancient Snow Valley Ruins - The Noble Goldmask"
+      ]
+    },
+    {
+      "ID": 85515620,
+      "Entries": [
+        "Mountaintops of the Giants: Ancient Snow Valley Ruins - Hermit Merchant"
+      ]
+    },
+    {
+      "ID": 86120100,
+      "Entries": [
+        "Ainsel River - Hermit Merchant"
+      ]
+    },
+    {
+      "ID": 86120200,
+      "Entries": [
+        "Siofra River / Nokron - Blaidd the Half-Wolf"
+      ]
+    },
+    {
+      "ID": 86120205,
+      "Entries": [
+        "Siofra River / Nokron - D, Beholder of Death"
+      ]
+    },
+    {
+      "ID": 86120215,
+      "Entries": [
+        "Siofra River / Nokron - Abandoned Merchant"
+      ]
+    },
+    {
+      "ID": 86120500,
+      "Entries": [
+        "Mohgwyn Palace - Imprisoned Merchant"
+      ]
+    },
+    {
+      "ID": 86120520,
+      "Entries": [
+        "Mohgwyn Palace - White Mask Varre"
+      ]
+    },
+    {
+      "ID": 87200000,
+      "Entries": [
+        "Belurat - Hornsent Grandam"
+      ]
+    },
+    {
+      "ID": 87200100,
+      "Entries": [
+        "Enir-Ilim - Needle Knight Leda + Hornsent + Dryleaf Dane"
+      ]
+    },
+    {
+      "ID": 87200101,
+      "Entries": [
+        "Enir-Ilim - Pureblood Knight Ansbach"
+      ]
+    },
+    {
+      "ID": 87200102,
+      "Entries": [
+        "Enir-Ilim - Pureblood Knight Ansbach + Thiollier"
+      ]
+    },
+    {
+      "ID": 87200103,
+      "Entries": [
+        "Enir-Ilim - Needle Knight Leda"
+      ]
+    },
+    {
+      "ID": 87210000,
+      "Entries": [
+        "Shadow Keep - Fire Knight Queelign"
+      ]
+    },
+    {
+      "ID": 87210100,
+      "Entries": [
+        "Specimen Storehouse - Sir Ansbach"
+      ]
+    },
+    {
+      "ID": 88484200,
+      "Entries": [
+        "Jagged Peak - Igon"
+      ]
+    },
+    {
+      "ID": 88524000,
+      "Entries": [
+        "Jagged Peak: Foot of the Jagged Peak - Igon"
+      ]
+    }
+  ]
+}

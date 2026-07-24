@@ -1,0 +1,53 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_BGMStatus",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "usually -- 通常"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "in battle -- 戦闘中"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Heating up 1 -- ヒートアップ中1"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Heat up 2 -- ヒートアップ中2"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Heat up 3 -- ヒートアップ中3"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Heat up 4 -- ヒートアップ中4"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "heating up 5 -- ヒートアップ中5"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "death -- 死亡"
+      ]
+    }
+  ]
+}

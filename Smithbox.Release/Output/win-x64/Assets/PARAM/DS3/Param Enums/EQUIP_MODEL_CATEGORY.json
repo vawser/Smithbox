@@ -1,0 +1,47 @@
+{
+  "Key": "EQUIP_MODEL_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_MODEL_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hands"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Legs"
+        }
+      ]
+    }
+  ]
+}

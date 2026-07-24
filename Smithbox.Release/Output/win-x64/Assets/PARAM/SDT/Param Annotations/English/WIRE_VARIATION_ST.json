@@ -1,0 +1,53 @@
+{
+  "Param": "WIRE_VARIATION_ST",
+  "Type": "WIRE_VARIATION_ST",
+  "Name": "WIRE_VARIATION_ST",
+  "Description": "Grapples for Npc's",
+  "Fields": [
+    {
+      "Field": "targetMarkerType",
+      "Name": "",
+      "Description": "Type of marker (FE) to display at target position"
+    },
+    {
+      "Field": "extendWireActionDistance",
+      "Name": "",
+      "Description": "If a value other than 0 is set, the wire action (action possible/recognition) distance will be extended by that distance. It is assumed that it will be used on a limited basis as it will be searched regardless of the grid."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "recognitionAngleUp",
+      "Name": "",
+      "Description": "With the reference direction of the wire edge as the front, only characters within this angle above can perform wire actions."
+    },
+    {
+      "Field": "recognitionAngleDown",
+      "Name": "",
+      "Description": "With the reference direction of the wire edge as the front, only characters within this angle below can perform wire actions."
+    },
+    {
+      "Field": "recognitionAngleLeft",
+      "Name": "",
+      "Description": "Only characters within this angle on the left side can perform wire actions when the reference direction of the wire edge is the front."
+    },
+    {
+      "Field": "recognitionAngleRight",
+      "Name": "",
+      "Description": "Only characters within this angle on the right side can perform wire actions when the reference direction of the wire edge is the front."
+    },
+    {
+      "Field": "chrPhysicsHomingIdOffset",
+      "Name": "",
+      "Description": "Offset the character physical homing parameter ID with this value. Use this when you want to shift the homing target position for each wire edge."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

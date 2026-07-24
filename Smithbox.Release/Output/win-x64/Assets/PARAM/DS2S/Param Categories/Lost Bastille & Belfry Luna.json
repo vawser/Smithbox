@@ -1,0 +1,26 @@
+{
+  "Key": "Lost Bastille & Belfry Luna",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Lost Bastille & Belfry Luna"
+      }
+  ],
+  "Params": [
+    "demopointlight_scn101610",
+    "demopointlight_scn101620",
+    "demospotlight_scn101610",
+    "demospotlight_scn101620",
+    "eventlocation_m10_16_00_00",
+    "eventparam_m10_16_00_00",
+    "generatorlocation_m10_16_00_00",
+    "generatorparam_m10_16_00_00",
+    "generatorregistparam_m10_16_00_00",
+    "hitgroupparam_m10_16_00_00",
+    "intrudepointparam_m10_16_00_00",
+    "mapobjectinstanceparam_m10_16_00_00",
+    "maptargetdirparam_m10_16_00_00",
+    "npctalkparam_m10_16_00_00",
+    "treasureboxparam_m10_16_00_00"
+  ]
+}

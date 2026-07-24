@@ -1,0 +1,313 @@
+{
+  "Param": "DAMAGE_CTRL_PARAM",
+  "Type": "DAMAGE_CTRL_PARAM",
+  "Name": "DAMAGE_CTRL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "attackType",
+      "Name": "攻撃属性",
+      "Description": ""
+    },
+    {
+      "Field": "objBreak",
+      "Name": "OBJ破壊",
+      "Description": ""
+    },
+    {
+      "Field": "armorBreak",
+      "Name": "アーマー無効",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreak",
+      "Name": "防御アクション無効",
+      "Description": ""
+    },
+    {
+      "Field": "negatePoiseRate",
+      "Name": "強靭度無効化割合",
+      "Description": ""
+    },
+    {
+      "Field": "negateCutDamageRate",
+      "Name": "盾カット率無効化割合",
+      "Description": ""
+    },
+    {
+      "Field": "damageWeightType",
+      "Name": "攻撃時ウェイト",
+      "Description": ""
+    },
+    {
+      "Field": "damageMotion",
+      "Name": "ダメージモーション",
+      "Description": ""
+    },
+    {
+      "Field": "deadMotion",
+      "Name": "死亡モーション",
+      "Description": ""
+    },
+    {
+      "Field": "deadDamageMotion",
+      "Name": "死亡時ダメージモーション",
+      "Description": ""
+    },
+    {
+      "Field": "isInstantDeath",
+      "Name": "即死フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "stun",
+      "Name": "気絶値",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageStaminaAlways",
+      "Name": "スタミナダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "isHollowOnlyDamage",
+      "Name": "亡者ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "downStiff",
+      "Name": "ダウン硬直時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "downStiffShortCut",
+      "Name": "ダウン硬直時間\u3000短縮時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "damageRotateSpeed",
+      "Name": "ダメージ旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "blowUpAccel",
+      "Name": "吹き飛び\u3000上昇速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "blowBrake",
+      "Name": "吹き飛び\u3000停止加速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgStartTimeRate",
+      "Name": "下半身ダメージ しゃがみ行き時間 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgEndTimeRate",
+      "Name": "下半身ダメージ しゃがみ戻り時間 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardStiffRate",
+      "Name": "ガード硬直 倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardReactionSpeed",
+      "Name": "ガード反動 速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardReactionAddRate",
+      "Name": "ガード反動 加算自補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "guardReactionDecelerationSpeed",
+      "Name": "ガード反動 減速速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardReactionDecelerationTime",
+      "Name": "ガード反動 減速開始時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardRotationSpeed",
+      "Name": "ガード旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "guardAttackLevelType",
+      "Name": "ガード ガード弾きレベル",
+      "Description": ""
+    },
+    {
+      "Field": "isForceLower",
+      "Name": "強制下半身ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "objDamage",
+      "Name": "OBJダメージ値",
+      "Description": ""
+    },
+    {
+      "Field": "objAttackAttr",
+      "Name": "OBJ攻撃属性",
+      "Description": ""
+    },
+    {
+      "Field": "cameraRumble",
+      "Name": "カメラノイズパラメータＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "padRumble",
+      "Name": "パッド振動パラメータＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "rumbleTime",
+      "Name": "振動時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rumbleDecStartRange",
+      "Name": "振動減衰開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "rumbleDecEndRange",
+      "Name": "振動減衰終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "windPriority",
+      "Name": "風：優先度",
+      "Description": ""
+    },
+    {
+      "Field": "windRadius",
+      "Name": "風：半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "windMinSpeed",
+      "Name": "風：最小風力[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "windMaxSpeed",
+      "Name": "風：最大風力[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "windFrequency",
+      "Name": "風：周波数",
+      "Description": ""
+    },
+    {
+      "Field": "windGinStartDistance",
+      "Name": "風：減衰開始処理",
+      "Description": ""
+    },
+    {
+      "Field": "windLife",
+      "Name": "風：延長寿命",
+      "Description": ""
+    },
+    {
+      "Field": "windCateId",
+      "Name": "風：影響カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "staggerTime",
+      "Name": "よろけ時間",
+      "Description": ""
+    },
+    {
+      "Field": "staggerMoveRate",
+      "Name": "よろけ移動倍率",
+      "Description": ""
+    },
+    {
+      "Field": "staggerRotRate",
+      "Name": "よろけ旋回倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageMotionWeightDisable",
+      "Name": "ウェイト計算無効",
+      "Description": ""
+    },
+    {
+      "Field": "headShotDisable",
+      "Name": "ヘッドショット無効設定",
+      "Description": ""
+    },
+    {
+      "Field": "isWet",
+      "Name": "濡れる",
+      "Description": ""
+    },
+    {
+      "Field": "damageImpactPowerType",
+      "Name": "ダメージ衝撃力タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "wetId",
+      "Name": "濡れカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "pushBackRate",
+      "Name": "押し返し反映割合[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "poiseDamage",
+      "Name": "強靭度削り値",
+      "Description": ""
+    },
+    {
+      "Field": "damageDistDecrementStart",
+      "Name": "ダメージ減衰距離 開始",
+      "Description": ""
+    },
+    {
+      "Field": "damageDistDecrementEnd",
+      "Name": "ダメージ減衰距離 終了",
+      "Description": ""
+    },
+    {
+      "Field": "damageDecrementHpMaxRate",
+      "Name": "ダメージ値 最大減衰倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageDecrementStaminaMaxRate",
+      "Name": "スタミナ奪取量 最大減衰倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageDecrementStunMaxRate",
+      "Name": "気絶値 最大減衰倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageDecrementPoiseMaxRate",
+      "Name": "強靭削り値 最大減衰倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageDecrementKnockBackMaxRate",
+      "Name": "ノックバック距離 最大減衰倍率",
+      "Description": ""
+    }
+  ]
+}

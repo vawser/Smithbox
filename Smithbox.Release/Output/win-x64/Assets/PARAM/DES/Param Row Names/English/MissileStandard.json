@@ -1,0 +1,143 @@
+{
+  "Name": "MissileStandard",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid (should not be deleted)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Fireball landing"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Fireball (for Dora Demo)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Fireball landing (for Dora Demo)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Arrow (arrow model + trajectory)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Arrow (arrow model + trajectory) Spear shot"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Arrow (arrow model + trajectory) All spear firing"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Arrow (arrow model + trajectory) Rain of spears from the wall"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "phalanx spear"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "king's shield javelin"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "c5060_Kamisama_Fireball"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Kamisama_Magic Square Attack"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Kami-Sama_fireball landing"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "c1001_ Snake soldier (bow) _ bow attack"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Judge's Rubble"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "c2011_ Bowguns of general soldiers (bowguns)"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "c2030_assassin's knife"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "c2050_Barbarian/bear rubble"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "c4050_ flame monster flame thrower"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "c2010_general soldier (long sword) molotov cocktail"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Molotov cocktail landing"
+      ]
+    }
+  ]
+}

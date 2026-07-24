@@ -1,0 +1,333 @@
+{
+  "Param": "GRAPHICS_PARAM_ST",
+  "Type": "GRAPHICS_PARAM_ST",
+  "Name": "GRAPHICS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "HitBulletDecalOffset_HitIns",
+      "Name": "HIT INSに弾丸が当たった時のデカール発生位置オフセット",
+      "Description": "HIT INSに当たった時に発生するデカールの発生位置を法線方向にこの値だけオフセットする"
+    },
+    {
+      "Field": "TorchEmissiveIntensity",
+      "Name": "松明エミッシブ強度",
+      "Description": "松明のエミッシブ強度の最大値。指定フレームかけてこの値になる。"
+    },
+    {
+      "Field": "TorchEmissiveFadeFrame",
+      "Name": "松明エミッシブ強度フェードフレーム",
+      "Description": "松明のエミッシブ強度が変更されるときのフェード時間。60フレームで１秒換算。"
+    },
+    {
+      "Field": "Reserved02",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "CharaWetDecalFadeRange",
+      "Name": "キャラが濡れた時のデカールフェード範囲",
+      "Description": "キャラが濡れた時にデカールを消すフェード範囲"
+    },
+    {
+      "Field": "ClothGravityYInWater",
+      "Name": "水中時のクロス重力（Y軸）",
+      "Description": "水中時のクロス重力（Y軸）。現実世界の重力の場合は、-9.8になります。"
+    },
+    {
+      "Field": "ClothDampingInWater",
+      "Name": "水中時のクロスダンピング",
+      "Description": "水中時のクロスダンピング"
+    },
+    {
+      "Field": "Reserved06",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved07",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved08",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved09",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved10",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved11",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved12",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved13",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved14",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved15",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved16",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved17",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved18",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved19",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved20",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved21",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved22",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved23",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved24",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved25",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved26",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved27",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved28",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved29",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved30",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved31",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved32",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved33",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved34",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved35",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved36",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved37",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved38",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved39",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved40",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved41",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved62",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved63",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

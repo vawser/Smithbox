@@ -1,0 +1,256 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Creator_Modal_Name",
+      "Text": "文本条目创建器"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Modal_Name",
+      "Text": "模板选择"
+    },
+    {
+      "Key": "TEXT_Creator_Select_Entry_First",
+      "Text": "请先选择一个文本条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Select_Non_Null_First",
+      "Text": "请先选择一个非空的文本条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Action_Create_Entries",
+      "Text": "创建条目"
+    },
+    {
+      "Key": "TEXT_Creator_Action_Create_Entries_TT",
+      "Text": "根据指定参数创建新的文本条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Parameters",
+      "Text": "参数"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Parameters_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Header_Base_ID",
+      "Text": "基础 ID"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Base_ID_TT",
+      "Text": "用于创建文本条目的基础 ID。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Amount",
+      "Text": "数量"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Amount_TT",
+      "Text": "要创建的文本条目数量。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_ID_Spacing",
+      "Text": "ID 间隔"
+    },
+    {
+      "Key": "TEXT_Creator_Header_ID_Spacing_TT",
+      "Text": "每个条目 ID 的递增量（如果创建多个条目）。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Update_On_Selection",
+      "Text": "允许在选择时更新"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Update_On_Selection_TT",
+      "Text": "启用后，选择FMG条目时基础 ID 和其他参数将更新。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Entries",
+      "Text": "条目"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Title",
+      "Text": "标题"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Title_TT",
+      "Text": "所创建标题条目的文本。"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Title",
+      "Text": "创建标题"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Title_TT",
+      "Text": "启用后，将创建标题条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Summary",
+      "Text": "摘要"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Summary_TT",
+      "Text": "所创建摘要条目的文本。"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Summary",
+      "Text": "创建摘要"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Summary_TT",
+      "Text": "启用后，将创建摘要条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Description",
+      "Text": "描述"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Description_TT",
+      "Text": "所创建描述条目的文本。"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Description",
+      "Text": "创建描述"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Description_TT",
+      "Text": "启用后，将创建描述条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Effect",
+      "Text": "效果"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Effect_TT",
+      "Text": "所创建效果条目的文本。"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Effect",
+      "Text": "创建效果"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Effect_TT",
+      "Text": "启用后，将创建效果条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Basic",
+      "Text": "基础文本"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Basic_TT",
+      "Text": "所创建独立条目的文本。"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Incremental_Template",
+      "Text": "增量模板"
+    },
+    {
+      "Key": "TEXT_Creator_Incremental_Template_Hint",
+      "Text": "为每个'增量'调整文本内容。便于创建质变武器条目等。"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Enable",
+      "Text": "启用模板"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Enable_TT",
+      "Text": "启用后，创建条目时将使用增量模板。"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Apply_Prefix",
+      "Text": "作为前缀应用"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Apply_Prefix_TT",
+      "Text": "启用后，文本将作为前缀添加到基础文本之前。否则，将作为后缀添加。"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Templates",
+      "Text": "模板"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Templates_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Add_TT",
+      "Text": "向模板添加新条目。"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Remove_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Reset_Action",
+      "Text": "重置"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Reset_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Entry_TT",
+      "Text": "此条目将应用于第 {0} 次出现"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Select_None",
+      "Text": "无"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_3",
+      "Text": "强化 +3"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_5",
+      "Text": "强化 +5"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_10",
+      "Text": "强化 +10"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_15",
+      "Text": "强化 +15"
+    },
+    {
+      "Key": "TEXT_Template_ER_Infusions",
+      "Text": "Elden Ring 质变"
+    },
+    {
+      "Key": "TEXT_Template_DS3_Infusions",
+      "Text": "Dark Souls III 质变"
+    },
+    {
+      "Key": "TEXT_Template_DS1_Infusions",
+      "Text": "Dark Souls 质变"
+    },
+    {
+      "Key": "TEXT_Creator_Entries_ID_Collision",
+      "Text": "ID 已被使用或无效: {0}"
+    }
+  ]
+}

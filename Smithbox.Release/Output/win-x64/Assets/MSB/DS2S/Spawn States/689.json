@@ -1,0 +1,30 @@
+{
+  "id": "689",
+  "name": "Charred Loyce Knight ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sitting -> Crystal Away"
+    },
+    {
+      "value": "3",
+      "name": "Kneeling"
+    },
+    {
+      "value": "4",
+      "name": "Exit Portal"
+    },
+    {
+      "value": "5",
+      "name": "Raise Sword"
+    }
+  ]
+}

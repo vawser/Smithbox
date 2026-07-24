@@ -1,0 +1,29 @@
+{
+  "Key": "WEAPON_PHYS_PWR_STAT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_PHYS_PWR_STAT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Muscle strength"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skill"
+        }
+      ]
+    }
+  ]
+}

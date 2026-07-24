@@ -1,0 +1,93 @@
+{
+  "Param": "HERO_STATUS_PARAM",
+  "Type": "HERO_STATUS_PARAM",
+  "Name": "HERO_STATUS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "totalLevel",
+      "Name": "totalLevel",
+      "Description": ""
+    },
+    {
+      "Field": "statVigor",
+      "Name": "statVigor",
+      "Description": ""
+    },
+    {
+      "Field": "statMind",
+      "Name": "statMind",
+      "Description": ""
+    },
+    {
+      "Field": "statEndurance",
+      "Name": "statEndurance",
+      "Description": ""
+    },
+    {
+      "Field": "statStrength",
+      "Name": "statStrength",
+      "Description": ""
+    },
+    {
+      "Field": "statDexterity",
+      "Name": "statDexterity",
+      "Description": ""
+    },
+    {
+      "Field": "statIntelligence",
+      "Name": "statIntelligence",
+      "Description": ""
+    },
+    {
+      "Field": "statFaith",
+      "Name": "statFaith",
+      "Description": ""
+    },
+    {
+      "Field": "statArcane",
+      "Name": "statArcane",
+      "Description": ""
+    },
+    {
+      "Field": "abilityReinforce",
+      "Name": "abilityReinforce",
+      "Description": ""
+    },
+    {
+      "Field": "revenantSpiritReinforce",
+      "Name": "revenantSpiritReinforce",
+      "Description": ""
+    },
+    {
+      "Field": "attackRate",
+      "Name": "attackRate",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "executorBeastReinforce",
+      "Name": "executorBeastReinforce",
+      "Description": ""
+    }
+  ]
+}

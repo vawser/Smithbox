@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Names",
+      "Text": "显示社区名称"
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Names_TT",
+      "Text": "启用后，FLVER 属性名称显示社区名称。"
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions",
+      "Text": "显示社区描述"
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions_TT",
+      "Text": "启用后，FLVER 属性的工具提示中显示社区描述。"
+    }
+  ]
+}

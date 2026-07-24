@@ -1,0 +1,7 @@
+{
+  "ID": "WaterInteraction-Editor",
+  "Name": "Water Interaction",
+  "Description": "Covers parameters relating to water interactions.",
+  "IsObsolete": true,
+  "Fields": []
+}

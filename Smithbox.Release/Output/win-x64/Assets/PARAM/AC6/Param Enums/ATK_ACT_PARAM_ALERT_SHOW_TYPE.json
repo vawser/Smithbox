@@ -1,0 +1,29 @@
+{
+  "Key": "ATK_ACT_PARAM_ALERT_SHOW_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_ACT_PARAM_ALERT_SHOW_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not release"
+        }
+      ]
+    }
+  ]
+}

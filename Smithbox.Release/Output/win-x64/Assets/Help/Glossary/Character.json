@@ -1,0 +1,17 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Character",
+    "Tags": [
+        "Term",
+        "Chr", "Human", "Player"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A character (also refered to as Chr) refers to any entity under the Enemy map object type.",
+        "Character data is present in several formats and locations.",
+        "",
+        "This includes models, textures, animations, behavior, AI, dialogue, and some SFX/SE which are associated with the character directly."
+    ]
+}

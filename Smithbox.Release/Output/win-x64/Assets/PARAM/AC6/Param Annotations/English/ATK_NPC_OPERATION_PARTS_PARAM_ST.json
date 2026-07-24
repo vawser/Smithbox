@@ -1,0 +1,168 @@
+{
+  "Param": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Type": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Name": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Description": "Determines the operation state of various joints. For non-players.",
+  "Fields": [
+    {
+      "Field": "parts0",
+      "Name": "Weapon Enable Type [00]",
+      "Description": ""
+    },
+    {
+      "Field": "parts1",
+      "Name": "Weapon Enable Type [01]",
+      "Description": ""
+    },
+    {
+      "Field": "parts2",
+      "Name": "Weapon Enable Type [02]",
+      "Description": ""
+    },
+    {
+      "Field": "parts3",
+      "Name": "Weapon Enable Type [03]",
+      "Description": ""
+    },
+    {
+      "Field": "parts4",
+      "Name": "Weapon Enable Type [04]",
+      "Description": ""
+    },
+    {
+      "Field": "parts5",
+      "Name": "Weapon Enable Type [05]",
+      "Description": ""
+    },
+    {
+      "Field": "parts6",
+      "Name": "Weapon Enable Type [06]",
+      "Description": ""
+    },
+    {
+      "Field": "parts7",
+      "Name": "Weapon Enable Type [07]",
+      "Description": ""
+    },
+    {
+      "Field": "parts8",
+      "Name": "Weapon Enable Type [08]",
+      "Description": ""
+    },
+    {
+      "Field": "parts9",
+      "Name": "Weapon Enable Type [09]",
+      "Description": ""
+    },
+    {
+      "Field": "parts10",
+      "Name": "Weapon Enable Type [10]",
+      "Description": ""
+    },
+    {
+      "Field": "parts11",
+      "Name": "Weapon Enable Type [11]",
+      "Description": ""
+    },
+    {
+      "Field": "parts12",
+      "Name": "Weapon Enable Type [12]",
+      "Description": ""
+    },
+    {
+      "Field": "parts13",
+      "Name": "Weapon Enable Type [13]",
+      "Description": ""
+    },
+    {
+      "Field": "parts14",
+      "Name": "Weapon Enable Type [14]",
+      "Description": ""
+    },
+    {
+      "Field": "parts15",
+      "Name": "Weapon Enable Type [15]",
+      "Description": ""
+    },
+    {
+      "Field": "parts16",
+      "Name": "Weapon Enable Type [16]",
+      "Description": ""
+    },
+    {
+      "Field": "parts17",
+      "Name": "Weapon Enable Type [17]",
+      "Description": ""
+    },
+    {
+      "Field": "parts18",
+      "Name": "Weapon Enable Type [18]",
+      "Description": ""
+    },
+    {
+      "Field": "parts19",
+      "Name": "Weapon Enable Type [19]",
+      "Description": ""
+    },
+    {
+      "Field": "parts20",
+      "Name": "Weapon Enable Type [20]",
+      "Description": ""
+    },
+    {
+      "Field": "parts21",
+      "Name": "Weapon Enable Type [21]",
+      "Description": ""
+    },
+    {
+      "Field": "parts22",
+      "Name": "Weapon Enable Type [22]",
+      "Description": ""
+    },
+    {
+      "Field": "parts23",
+      "Name": "Weapon Enable Type [23]",
+      "Description": ""
+    },
+    {
+      "Field": "parts24",
+      "Name": "Weapon Enable Type [24]",
+      "Description": ""
+    },
+    {
+      "Field": "parts25",
+      "Name": "Weapon Enable Type [25]",
+      "Description": ""
+    },
+    {
+      "Field": "parts26",
+      "Name": "Weapon Enable Type [26]",
+      "Description": ""
+    },
+    {
+      "Field": "parts27",
+      "Name": "Weapon Enable Type [27]",
+      "Description": ""
+    },
+    {
+      "Field": "parts28",
+      "Name": "Weapon Enable Type [28]",
+      "Description": ""
+    },
+    {
+      "Field": "parts29",
+      "Name": "Weapon Enable Type [29]",
+      "Description": ""
+    },
+    {
+      "Field": "parts30",
+      "Name": "Weapon Enable Type [30]",
+      "Description": ""
+    },
+    {
+      "Field": "parts31",
+      "Name": "Weapon Enable Type [31]",
+      "Description": ""
+    }
+  ]
+}

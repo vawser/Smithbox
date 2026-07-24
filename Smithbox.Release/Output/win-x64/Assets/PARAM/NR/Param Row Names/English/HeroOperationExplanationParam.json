@@ -1,0 +1,185 @@
+{
+  "Name": "HeroOperationExplanationParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "[Wylder] Passive Ability"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Wylder] Character Skill"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Wylder] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Guardian] Passive Ability"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Guardian] Character Skill"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Guardian] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Ironeye] Passive Ability"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "[Ironeye] Character Skill"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "[Ironeye] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Duchess] Passive Ability"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Duchess] Character Skill"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Duchess] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Raider] Passive Ability"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Raider] Character Skill"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "[Raider] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Revenant] Passive Ability"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "[Revenant] Character Skill"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "[Revenant] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Recluse] Passive Ability"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "[Recluse] Character Skill"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "[Recluse] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[Executor] Passive Ability"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "[Executor] Character Skill"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "[Executor] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Scholar] Passive Ability"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[Scholar] Character Skill"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "[Scholar] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Undertaker] Passive Ability"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Undertaker] Character Skill"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Undertaker] Ultimate Art"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a form of collision. Typically used to block player or enemy movement, but also used for detection such as for kill planes, or the generation of special footstep visual effects, such as in water or lava." />
+  
+  <Field>
+    <HitFilterID
+    AltName="Hit Filter ID"
+    Wiki="Determines the behavior of the collision with other entities." 
+    Enum="HIT_FILTER_TYPE" />
+    
+    <SoundSpaceType
+    AltName="Sound Space Type"
+    Wiki="The sound space type this collision applies to sounds." 
+    Enum="SOUND_SPACE_TYPE" />
+    
+    <EnvLightMapSpotName
+    AltName="Environmental Lighting Map Spot"
+    Wiki="" 
+    MapRef="Event-Environment" />
+    
+    <EnvLightMapSpotIndex
+    IndexProperty="" />
+    
+    <ReflectPlaneHeight
+    AltName="Reflection Plane Height"
+    Wiki="" />
+    
+    <NvmGroups
+    AltName="Navigation Group"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <VagrantEntityIDs
+    AltName="Vagrant Entity ID"
+    Wiki="" 
+    ArrayProperty="" />
+    
+    <MapNameID
+    AltName="Map Name ID"
+    Wiki="" />
+    
+    <DisableStart
+    AltName="Disable Start"
+    Wiki=""
+    IsBool="" />
+    
+    <UnkT27
+    AltName="Unknown: 0x27"
+    Wiki="" />
+    
+    <DisableBonfireEntityID
+    AltName="Disable Bonfire Entity on Enemy Presence"
+    Wiki="The entity ID of the bonfire to disable if enemy is on this collision." />
+    
+    <M99Unk00
+    AltName="M99 Unknown: 0x0"
+    Wiki="" />
+    
+    <M99Unk04
+    AltName="M99 Unknown: 0x4"
+    Wiki="" />
+    
+    <M99Unk08
+    AltName="M99 Unknown: 0x8"
+    Wiki="" />
+    
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="" />
+    
+    <LockCamParamID1
+    AltName="Lock-cam Param ID: 1"
+    Wiki="" 
+    ParamRef="LockCamParam" />
+    
+    
+    <LockCamParamID2
+    AltName="Lock-cam Param ID: 2"
+    Wiki="" 
+    ParamRef="LockCamParam" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="HIT_FILTER_TYPE">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="8" Name="Collide with all characters" />
+        <Option Value="9" Name="Collide with camera only" />
+        <Option Value="11" Name="Collide with non-player characters only" />
+        <Option Value="13" Name="Trigger fall death camera in collision" />
+        <Option Value="15" Name="Trigger instant death in collision" />
+        <Option Value="16" Name="Type 16" />
+        <Option Value="17" Name="Type 17" />
+        <Option Value="19" Name="Type 19" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="21" Name="Type 21" />
+        <Option Value="22" Name="Type 22" />
+        <Option Value="23" Name="Type 23" />
+        <Option Value="24" Name="Type 24" />
+        <Option Value="29" Name="Type 29" />
+    </Enum>
+    <Enum Name="SOUND_SPACE_TYPE">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+    </Enum>
+  </Enums>
+</MSBMETA>

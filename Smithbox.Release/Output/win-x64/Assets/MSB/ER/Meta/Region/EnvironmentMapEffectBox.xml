@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an environmental map effect box in the map." />
+  
+  <Field>
+    <DisplayDistance
+    AltName="Display Distance"
+    Wiki="The distance from camera required before enabling envmap. 0 = always enabled." />
+    
+    <FadeDistance
+    AltName="Transition Distance"
+    Wiki="The distance it takes for an envmap to fully transition into view." />
+    
+    <ParallaxCorrection
+    AltName="Parallax Correction"
+    Wiki="" />
+    
+    <Priority
+    AltName="Priority"
+    Wiki="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <AmbientDiffuseIntensity
+    AltName="Ambient Diffuse Intensity"
+    Wiki="Strength of ambient diffuse light." />
+    
+    <AmbientSpecularIntensity
+    AltName="Ambient Specular Intensity"
+    Wiki="Strength of ambient specular light." />
+    
+    <UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <IsModifyLight
+    AltName="Modify Light"
+    Wiki="Affects lighting with other fields when true. Possibly normalizes light when false." 
+    IsBool="" />
+    
+    <UnkT2F
+    AltName="Unknown: 0x2F"
+    Wiki="" />
+    
+    <UnkT30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <UnkT32
+    AltName="Unknown: 0x32"
+    Wiki="" />
+    
+    <UnkT33
+    AltName="Unknown: 0x33"
+    Wiki="" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <UnkT36
+    AltName="Unknown: 0x36"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

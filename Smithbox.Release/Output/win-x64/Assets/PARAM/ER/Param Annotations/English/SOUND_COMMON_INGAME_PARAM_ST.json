@@ -1,0 +1,18 @@
+{
+  "Param": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Type": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Name": "SOUND_COMMON_INGAME_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "ParamKeyStr",
+      "Name": "Param Key",
+      "Description": "Key string of the parameter"
+    },
+    {
+      "Field": "ParamValueStr",
+      "Name": "Param Value",
+      "Description": "Value string of the parameter"
+    }
+  ]
+}

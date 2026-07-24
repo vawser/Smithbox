@@ -1,0 +1,168 @@
+{
+  "Param": "ACTIONBUTTON_PARAM_ST",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ACTIONBUTTON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "範囲タイプ",
+      "Description": "範囲形状(円柱、角柱、カプセル)"
+    },
+    {
+      "Field": "category",
+      "Name": "カテゴリ",
+      "Description": "カテゴリ。名前の左側の数字は複数のアクションボタンが重なっていた場合の優先度(0に近い程優先表示)。"
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "ダミポリ1",
+      "Description": "範囲の底面の中心となるダミポリIDを指定する\u3000ダミポリがない場合 or -1が入力されている場合は、中心座標が基準になる"
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "ダミポリ2",
+      "Description": "範囲タイプがカプセルの場合のみ使用\u3000ダミポリ2つで線分を作る追加ダミポリ(カプセル)"
+    },
+    {
+      "Field": "radius",
+      "Name": "半径",
+      "Description": "半径(円柱・カプセル)"
+    },
+    {
+      "Field": "angle",
+      "Name": "角度",
+      "Description": "角度(円柱)"
+    },
+    {
+      "Field": "depth",
+      "Name": "奥行き",
+      "Description": "奥行き(角柱)"
+    },
+    {
+      "Field": "width",
+      "Name": "幅",
+      "Description": "幅(角柱)"
+    },
+    {
+      "Field": "height",
+      "Name": "高さ",
+      "Description": "高さ(円柱・角柱)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか(円柱・角柱)"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "角度差判定タイプ",
+      "Description": "角度差判定タイプ(円柱・角柱)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング2",
+      "Description": ""
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "許容角度差",
+      "Description": "許容角度差(円柱・角柱)"
+    },
+    {
+      "Field": "spotDummyPoly",
+      "Name": "アクションスポットダミポリ",
+      "Description": "アクションスポットの位置となるダミポリIDを指定する ダミポリがない場合 or -1が入力されている場合は、中心座標が基準となる"
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "テキストボックスタイプ",
+      "Description": "テキストボックスタイプ"
+    },
+    {
+      "Field": "padding3",
+      "Name": "パディング3",
+      "Description": ""
+    },
+    {
+      "Field": "padding5",
+      "Name": "パディング5",
+      "Description": ""
+    },
+    {
+      "Field": "isInvalidForRide",
+      "Name": "騎乗時無効か",
+      "Description": "この項目がYESだと騎乗時にアクションボタンが出なくなり、判定も行われない"
+    },
+    {
+      "Field": "isGrayoutForRide",
+      "Name": "騎乗時グレーアウトか",
+      "Description": "この項目がYESだと騎乗時にアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "isInvalidForCrouching",
+      "Name": "しゃがみ時無効か",
+      "Description": "この項目がYESだとしゃがみ時にアクションボタンが出なくなり、判定も行われない"
+    },
+    {
+      "Field": "isGrayoutForCrouching",
+      "Name": "しゃがみ時グレーアウトか",
+      "Description": "この項目がYESだとしゃがみ時にアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "padding4",
+      "Name": "パディング4",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "表示するテキストID"
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "無効フラグ",
+      "Description": "このフラグがONだとアクションボタンが出ず、判定も行われない"
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "グレーアウトフラグ",
+      "Description": "このフラグがONだとアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "overrideActionButtonIdForRide",
+      "Name": "騎乗時差し替えアクションボタンID",
+      "Description": "騎乗中はこのアクションボタンIDのパラメータに差し替える（-1：差し替え無し）"
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "実行後無効時間",
+      "Description": "実行後無効時間(-値で無限)"
+    },
+    {
+      "Field": "interactIconOffset_X",
+      "Name": "interactIconOffset_X",
+      "Description": ""
+    },
+    {
+      "Field": "interactIconOffset_Y",
+      "Name": "interactIconOffset_Y",
+      "Description": ""
+    },
+    {
+      "Field": "interactIconOffset_Z",
+      "Name": "interactIconOffset_Z",
+      "Description": ""
+    },
+    {
+      "Field": "padding6",
+      "Name": "パディング6",
+      "Description": ""
+    }
+  ]
+}

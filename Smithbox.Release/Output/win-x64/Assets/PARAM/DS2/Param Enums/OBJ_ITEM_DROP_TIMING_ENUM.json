@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_ITEM_DROP_TIMING_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_ITEM_DROP_TIMING_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not set"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After destruction"
+        }
+      ]
+    }
+  ]
+}

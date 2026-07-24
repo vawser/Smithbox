@@ -1,0 +1,299 @@
+{
+  "Name": "RoleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Host of Fingers - Vow 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Furled Finger - Vow 0"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Duelist - Vow 0"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Ghost"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bloodstain Ghost"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Bonfire Ghost"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Arena - Vow 0"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Message Ghost - Vow 0"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Bloody Finger - Vow 0"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Recusant - Vow 0"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Hunter - Vow 0"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Festering Bloody Finger - Vow 0"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "NPC Furled Finger - Vow 0"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "NPC Bloody Finger - Vow 0"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "NPC Recusant - Vow 0"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Furled Finger - Vow 1"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Duelist - Vow 1"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Furled Finger - Vow 2"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Duelist - Vow 2"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Furled Finger - Vow 3"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Duelist - Vow 3"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Furled Finger - Vow 4"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Duelist - Vow 4"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Furled Finger - Vow 5"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Duelist - Vow 5"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "Furled Finger - Vow 6"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Duelist - Vow 6"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "Furled Finger - Vow 7"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Duelist - Vow 7"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Furled Finger - Vow 8"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Duelist - Vow 8"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Furled Finger - Vow 9"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Duelist - Vow 9"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Group Password Furled Finger"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Group Password Duelist"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Group Password Ghost"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Group Password Bloodstain Ghost"
+      ]
+    },
+    {
+      "ID": 1000014,
+      "Entries": [
+        "Group Password Message Ghost"
+      ]
+    },
+    {
+      "ID": 1000000001,
+      "Entries": [
+        "Npc Pseudo Invasion Session Host"
+      ]
+    },
+    {
+      "ID": 1000000002,
+      "Entries": [
+        "Npc Pseudo Invasion Session Guest"
+      ]
+    }
+  ]
+}

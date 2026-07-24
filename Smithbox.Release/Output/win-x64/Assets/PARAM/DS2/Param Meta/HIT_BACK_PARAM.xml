@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <superSmallHitBackDistance />
+        <superSmallHitBackDuration />
+        <smallHitBackDistance />
+        <smallHitBackDuration />
+        <normalHitBackDistance />
+        <normalHitBackDuration />
+        <largeHitBackDistance />
+        <largeHitBackDuration />
+        <superLargeHitBackDistance />
+        <superLargeHitBackDuration />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a particle emitter within the map." />
+  
+  <Field>
+    <EffectID
+    AltName="Particle ID"
+    Wiki="The ID of the effect in the ffxbnds."
+    ParticleAlias="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

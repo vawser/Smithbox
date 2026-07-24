@@ -1,0 +1,10325 @@
+{
+  "Name": "ItemLotParam_map",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Lot] Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Lot] <Table> Dagger"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Lot] <Table> Reduvia"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "[Lot] <Table> Bloodstained Dagger"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Lot] <Table> Bloodstained Dagger"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Lot] <Table> Longsword"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Lot] <Table> Longbow"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Lot] <Table> Serpent Bow"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Lot] <Table> Glintstone Staff"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[Lot] <Table> Prince of Death's Staff"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "[Lot] Stonesword Key"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "[Lot] Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "[Lot] Smithing Stone [3]"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 3920,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "[Lot] <Table> Old Pocketwatch"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4511,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4512,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4513,
+      "Entries": [
+        "[Lot] <Table> Old Pocketwatch"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4521,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4522,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4523,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4524,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4525,
+      "Entries": [
+        "[Lot] <Table> Old Pocketwatch"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4531,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4532,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4533,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4534,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4535,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4536,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4537,
+      "Entries": [
+        "[Lot] <Table> Old Pocketwatch"
+      ]
+    },
+    {
+      "ID": 4538,
+      "Entries": [
+        "[Lot] <Table> Night of the Beast"
+      ]
+    },
+    {
+      "ID": 4540,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4541,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4551,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4552,
+      "Entries": [
+        "[Lot] <Table> Delicate Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4561,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4562,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4563,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4564,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4570,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4571,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4572,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4573,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4574,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4575,
+      "Entries": [
+        "[Lot] <Table> Polished Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4576,
+      "Entries": [
+        "[Lot] <Table> Grand Tranquil Scene"
+      ]
+    },
+    {
+      "ID": 4577,
+      "Entries": [
+        "[Lot] <Table> Night of the Beast"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5044,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5066,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5123,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5124,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5142,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5143,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5144,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5145,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5162,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5163,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5164,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5166,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5168,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5222,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5223,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5224,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5226,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5227,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5242,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5243,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5244,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5246,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5247,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5248,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5249,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5262,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5263,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5264,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5265,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5266,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5267,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5268,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5269,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5326,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5327,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5328,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5342,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5343,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5344,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5345,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5346,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5347,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5348,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5349,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5361,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5363,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5364,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5365,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5366,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5367,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5368,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5369,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5371,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5422,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5423,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5424,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5425,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5426,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5427,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5428,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5429,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5443,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5444,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5445,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5446,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5447,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5448,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5449,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5463,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5464,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5465,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5466,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5467,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5468,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5469,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5473,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5474,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Lot] <Table> Longbow"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[Lot] <Table> Longbow"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[Lot] <Table> Longbow"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "[Lot] <Table> Albinauric Bow"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "[Lot] <Table> Glintstone Staff"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "[Lot] <Table> Glintstone Staff"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "[Lot] <Table> Glintstone Staff"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "[Lot] <Table> Crystal Staff"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10081,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10082,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10290,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10291,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10292,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10310,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10311,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10312,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10313,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10314,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10317,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10318,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10322,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10323,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10324,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10325,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10326,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10390,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10391,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 10392,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11111,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11112,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11113,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11114,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11117,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11118,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11201,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11211,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11212,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11213,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11214,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11221,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11222,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11223,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11224,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11310,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11311,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11312,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11313,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11320,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11321,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11322,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11323,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11330,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11331,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11332,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 11333,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 12021,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 12022,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 12023,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 13011,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20112,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20113,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20190,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20191,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20201,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20202,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20203,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20311,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20312,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 20313,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "[Lot] <Table> "
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "[Lot] Fell Omen Fetish"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "[Lot] The Wylder's Earring"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 101011,
+      "Entries": [
+        "[Lot] Silver Tear"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "[Lot] Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 101030,
+      "Entries": [
+        "[Lot] Slate Whetstone"
+      ]
+    },
+    {
+      "ID": 101040,
+      "Entries": [
+        "[Lot] Delicate Burning Scene"
+      ]
+    },
+    {
+      "ID": 101050,
+      "Entries": [
+        "[Lot] Delicate Burning Scene"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "[Lot] Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "[Lot] Crown Medal"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "[Lot] Blessed Iron Coin"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "[Lot] Golden Dew"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "[Lot] Torn Braided Cord"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "[Lot] Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 103020,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 103030,
+      "Entries": [
+        "[Lot] Black Claw Necklace"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 104010,
+      "Entries": [
+        "[Lot] Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 104011,
+      "Entries": [
+        "[Lot] Blessed Flowers"
+      ]
+    },
+    {
+      "ID": 104030,
+      "Entries": [
+        "[Lot] Golden Sprout"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "[Lot] Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "[Lot] Vestige of Night"
+      ]
+    },
+    {
+      "ID": 105020,
+      "Entries": [
+        "[Lot] Bone-Like Stone"
+      ]
+    },
+    {
+      "ID": 105030,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "[Lot] Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 106001,
+      "Entries": [
+        "[Lot] Cracked Sealing Wax"
+      ]
+    },
+    {
+      "ID": 106020,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 106030,
+      "Entries": [
+        "[Lot] Edge of Order"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "[Lot] Stone Stake"
+      ]
+    },
+    {
+      "ID": 107010,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 107011,
+      "Entries": [
+        "[Lot] Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 107020,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 107021,
+      "Entries": [
+        "[Lot] Cracked Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 107030,
+      "Entries": [
+        "[Lot] Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 107040,
+      "Entries": [
+        "[Lot] Third Volume"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "[Lot] Small Makeup Brush"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "[Lot] Remembrance"
+      ]
+    },
+    {
+      "ID": 108011,
+      "Entries": [
+        "[Lot] Old Portrait"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "[Lot] Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "[Lot] "
+      ]
+    },
+    {
+      "ID": 109010,
+      "Entries": [
+        "[Lot] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 109020,
+      "Entries": [
+        "[Lot] Vyke's War Spear"
+      ]
+    },
+    {
+      "ID": 12460000,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 12460001,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 12460002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1000000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1000000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1000100000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1000100001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1001000000,
+      "Entries": [
+        "Consumable/Common/Uncommon Weapon (30/60/10%)"
+      ]
+    },
+    {
+      "ID": 1001000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1001000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1002000000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/46/21/4%)"
+      ]
+    },
+    {
+      "ID": 1002000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1002000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1002000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1003000000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/18/42/11%)"
+      ]
+    },
+    {
+      "ID": 1003000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1003000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1003000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1004000000,
+      "Entries": [
+        "Consumable/Uncommon/Rare/Legendary Weapon (30/18/49/4%)"
+      ]
+    },
+    {
+      "ID": 1004000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1004000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1004000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1005000000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005000001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005000002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (14/6%)"
+      ]
+    },
+    {
+      "ID": 1005100000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005100001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005100002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (8/12%)"
+      ]
+    },
+    {
+      "ID": 1005200000,
+      "Entries": [
+        "Uncommon/Rare Ranged Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005200001,
+      "Entries": [
+        "Uncommon/Rare Ranged Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005200002,
+      "Entries": [
+        "Uncommon/Rare Ranged Weapon (13/7%)"
+      ]
+    },
+    {
+      "ID": 1005300000,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005300001,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005300002,
+      "Entries": [
+        "Common/Uncommon Staff (14/6%)"
+      ]
+    },
+    {
+      "ID": 1005400000,
+      "Entries": [
+        "Common/Uncommon Staff (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005400001,
+      "Entries": [
+        "Common/Uncommon Staff (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005400002,
+      "Entries": [
+        "Common/Uncommon Staff (8/12%)"
+      ]
+    },
+    {
+      "ID": 1005500000,
+      "Entries": [
+        "Uncommon/Rare Staff (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005500001,
+      "Entries": [
+        "Uncommon/Rare Staff (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005500002,
+      "Entries": [
+        "Uncommon/Rare Staff (13/7%)"
+      ]
+    },
+    {
+      "ID": 1005600000,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005600001,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1005600002,
+      "Entries": [
+        "Common/Uncommon Seal (14/6%)"
+      ]
+    },
+    {
+      "ID": 1005700000,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005700001,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1005700002,
+      "Entries": [
+        "Common/Uncommon Seal (8/12%)"
+      ]
+    },
+    {
+      "ID": 1005800000,
+      "Entries": [
+        "Uncommon/Rare Seal (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005800001,
+      "Entries": [
+        "Uncommon/Rare Seal (65/35%)"
+      ]
+    },
+    {
+      "ID": 1005800002,
+      "Entries": [
+        "Uncommon/Rare Seal (13/7%)"
+      ]
+    },
+    {
+      "ID": 1007000000,
+      "Entries": [
+        "Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1007000001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1007000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1007100000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1007100001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1007100002,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1007100003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1007200000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/14/46/11%)"
+      ]
+    },
+    {
+      "ID": 1007200001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1007200002,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1007200003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1009000000,
+      "Entries": [
+        "Boiled Crab"
+      ]
+    },
+    {
+      "ID": 1009000010,
+      "Entries": [
+        "Boiled Prawn"
+      ]
+    },
+    {
+      "ID": 1010000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1010000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1010050000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1010050001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1010060000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1010060001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1011000000,
+      "Entries": [
+        "[Mixed Frost+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1011000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1011000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1011000003,
+      "Entries": [
+        "[Mixed Frost+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1011050000,
+      "Entries": [
+        "[Mixed Frost~] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1011050001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1011050002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1011050003,
+      "Entries": [
+        "[Mixed Frost~] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1011060000,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1011060001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1011060002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1011060003,
+      "Entries": [
+        "[Mixed Mixed Frost-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1012000000,
+      "Entries": [
+        "[Mountaintop Crystal] [Mixed Frost+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1012000001,
+      "Entries": [
+        "[Mountaintop Crystal] Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1012000002,
+      "Entries": [
+        "[Mountaintop Crystal] Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1012000003,
+      "Entries": [
+        "[Mountaintop Crystal] [Mixed Frost+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1012050000,
+      "Entries": [
+        "[Mixed Frost~] Consumable/Common/Uncommon/Rare Weapon (30/28/35/7%)"
+      ]
+    },
+    {
+      "ID": 1012050001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1012050002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1012050003,
+      "Entries": [
+        "[Mixed Frost~] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/35/4/4%)"
+      ]
+    },
+    {
+      "ID": 1017000000,
+      "Entries": [
+        "[Mixed Frost+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1017000001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1017000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1017000003,
+      "Entries": [
+        "[Mixed Frost+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1017100000,
+      "Entries": [
+        "[Mixed Frost+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1017100001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1017100002,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1017100003,
+      "Entries": [
+        "[Mixed Frost+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1018000000,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1018000001,
+      "Entries": [
+        "[Mixed Frost+] Uncommon/Unique/Legendary Weapon (75/20/5%)"
+      ]
+    },
+    {
+      "ID": 1018000002,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1020000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1020000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1020070000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1020070001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1021000000,
+      "Entries": [
+        "[Mixed Fire+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1021000001,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (90/10%)"
+      ]
+    },
+    {
+      "ID": 1021000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1021000003,
+      "Entries": [
+        "[Mixed Fire+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1022000000,
+      "Entries": [
+        "[Mixed Fire+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1022000001,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (90/10%)"
+      ]
+    },
+    {
+      "ID": 1022000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1022000003,
+      "Entries": [
+        "[Mixed Fire+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1027000000,
+      "Entries": [
+        "[Mixed Fire+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1027000001,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1027000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1027000003,
+      "Entries": [
+        "[Mixed Fire+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1027070000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1027070001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1027070002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1027070003,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1027100000,
+      "Entries": [
+        "[Mixed Fire+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1027100001,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1027100002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1027100003,
+      "Entries": [
+        "[Mixed Fire+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1028000000,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1028000001,
+      "Entries": [
+        "[Mixed Fire+] Uncommon/Unique/Legendary Weapon (75/20/5%)"
+      ]
+    },
+    {
+      "ID": 1028000002,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1030000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1030000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1030050000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1030050001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1030060000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1030060001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1030070000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1030070001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1031000000,
+      "Entries": [
+        "[Mixed Rot+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1031000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1031000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1031000003,
+      "Entries": [
+        "[Mixed Rot+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1031050000,
+      "Entries": [
+        "[Mixed Rot~] Consumable/Common/Uncommon/Rare Weapon (30/49/18/4%)"
+      ]
+    },
+    {
+      "ID": 1031050001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (85/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1031050002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1031050003,
+      "Entries": [
+        "[Mixed Rot~] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1031060000,
+      "Entries": [
+        "[Mixed Rot-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1031060001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1031060002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1031060003,
+      "Entries": [
+        "[Mixed Rot-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1032000000,
+      "Entries": [
+        "[Mixed Rot+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1032000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1032000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1032000003,
+      "Entries": [
+        "[Mixed Rot+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1032050000,
+      "Entries": [
+        "[Mixed Rot~] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1032050001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (85/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1032050002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1032050003,
+      "Entries": [
+        "[Mixed Rot~] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1035060000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1035060001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1035060002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (14/6%)"
+      ]
+    },
+    {
+      "ID": 1035350000,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1035350001,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1035350002,
+      "Entries": [
+        "Common/Uncommon Staff (14/6%)"
+      ]
+    },
+    {
+      "ID": 1037000000,
+      "Entries": [
+        "[Mixed Rot+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1037000001,
+      "Entries": [
+        "Consumable/Preserving Boluses (35/15%)"
+      ]
+    },
+    {
+      "ID": 1037000002,
+      "Entries": [
+        "Consumable/Preserving Boluses (10/10%)"
+      ]
+    },
+    {
+      "ID": 1037000003,
+      "Entries": [
+        "[Mixed Rot+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1037100000,
+      "Entries": [
+        "[Mixed Rot+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1037100001,
+      "Entries": [
+        "Consumable/Preserving Boluses (35/15%)"
+      ]
+    },
+    {
+      "ID": 1037100002,
+      "Entries": [
+        "Consumable/Preserving Boluses (10/10%)"
+      ]
+    },
+    {
+      "ID": 1037100003,
+      "Entries": [
+        "[Mixed Rot+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1038000000,
+      "Entries": [
+        "[Mixed Rot+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1038000001,
+      "Entries": [
+        "[Mixed Rot+] Uncommon/Unique/Legendary Weapon (75/20/5%)"
+      ]
+    },
+    {
+      "ID": 1038000002,
+      "Entries": [
+        "[Mixed Rot+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1040000000,
+      "Entries": [
+        "Magic Pot"
+      ]
+    },
+    {
+      "ID": 1040000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1040070000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1040070001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1041000000,
+      "Entries": [
+        "[Mixed Magic+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1041000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1041000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1041000003,
+      "Entries": [
+        "[Mixed Magic+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1042000000,
+      "Entries": [
+        "[Mixed Magic+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1042000001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1042000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1042000003,
+      "Entries": [
+        "[Mixed Magic+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1046000000,
+      "Entries": [
+        "[Mixed Magic+] Rare Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1046000001,
+      "Entries": [
+        "[Mixed Magic+] Rare/Legendary Weapon (80/20%)"
+      ]
+    },
+    {
+      "ID": 1047000000,
+      "Entries": [
+        "[Mixed Magic+] Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1047000001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1047000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1047000003,
+      "Entries": [
+        "[Mixed Magic+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1047100000,
+      "Entries": [
+        "[Mixed Magic+] Common/Uncommon/Rare/Legendary Weapon (25/55/15/5%)"
+      ]
+    },
+    {
+      "ID": 1047100001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1047100002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1047100003,
+      "Entries": [
+        "[Mixed Magic+] Common/Uncommon/Rare/Legendary/Unique Weapon (25/55/8/5/8%)"
+      ]
+    },
+    {
+      "ID": 1048000000,
+      "Entries": [
+        "[Mixed Magic+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1048000001,
+      "Entries": [
+        "[Mixed Magic+] Uncommon/Unique/Legendary Weapon (75/20/5%)"
+      ]
+    },
+    {
+      "ID": 1048000002,
+      "Entries": [
+        "[Mixed Magic+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1100000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1100000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1100000500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1100000501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1100000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1101000000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1101000001,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1101000002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (15/5%)"
+      ]
+    },
+    {
+      "ID": 1101000003,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1101000004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1101000500,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1101000501,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1101000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1101000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1101000504,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1101000505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1102000000,
+      "Entries": [
+        "Common/Uncommon/Rare Weapon (25/60/15%)"
+      ]
+    },
+    {
+      "ID": 1102000001,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1102000002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (95/5%)"
+      ]
+    },
+    {
+      "ID": 1102000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1102000004,
+      "Entries": [
+        "Common/Uncommon/Rare/Unique Weapon (25/60/8/8%)"
+      ]
+    },
+    {
+      "ID": 1102000005,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1102000500,
+      "Entries": [
+        "Common/Uncommon/Rare Weapon (25/60/15%)"
+      ]
+    },
+    {
+      "ID": 1102000501,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1102000502,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (90/10%)"
+      ]
+    },
+    {
+      "ID": 1102000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1102000504,
+      "Entries": [
+        "Common/Uncommon/Rare/Unique Weapon (25/60/8/8%)"
+      ]
+    },
+    {
+      "ID": 1102000505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1103000000,
+      "Entries": [
+        "Consumable/Uncommon/Rare/Legendary Weapon (30/18/49/4%)"
+      ]
+    },
+    {
+      "ID": 1103000001,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (95/5%)"
+      ]
+    },
+    {
+      "ID": 1103000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1103000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1103000500,
+      "Entries": [
+        "Consumable/Uncommon/Rare/Legendary Weapon (30/18/49/4%)"
+      ]
+    },
+    {
+      "ID": 1103000501,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (90/10%)"
+      ]
+    },
+    {
+      "ID": 1103000502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1103000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1105100000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1105100001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1105100002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (8/12%)"
+      ]
+    },
+    {
+      "ID": 1105100500,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1105100501,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1105100502,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1106000000,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1106000001,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1106000002,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1106000500,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1106000501,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1106000502,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 1107000000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1107000001,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (35/5/10%)"
+      ]
+    },
+    {
+      "ID": 1107000002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (15/5%)"
+      ]
+    },
+    {
+      "ID": 1107000003,
+      "Entries": [
+        "Consumable/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1107000004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (35/5/10%)"
+      ]
+    },
+    {
+      "ID": 1107000500,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/28/39/4%)"
+      ]
+    },
+    {
+      "ID": 1107000501,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1107000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1107000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1107000504,
+      "Entries": [
+        "Consumable/Uncommon/Rare/Unique Weapon (30/28/39/2/2%)"
+      ]
+    },
+    {
+      "ID": 1107000505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1107100000,
+      "Entries": [
+        "Common/Uncommon/Rare Weapon (25/60/15%)"
+      ]
+    },
+    {
+      "ID": 1107100001,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (35/5/10%)"
+      ]
+    },
+    {
+      "ID": 1107100002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1107100003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1107100004,
+      "Entries": [
+        "Common/Uncommon/Rare/Unique Weapon (25/60/8/8%)"
+      ]
+    },
+    {
+      "ID": 1107100005,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (35/5/10%)"
+      ]
+    },
+    {
+      "ID": 1107100500,
+      "Entries": [
+        "Common/Uncommon/Rare Weapon (25/60/15%)"
+      ]
+    },
+    {
+      "ID": 1107100501,
+      "Entries": [
+        "Consumable/C-U-R Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1107100502,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1107100503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (40/10%)"
+      ]
+    },
+    {
+      "ID": 1107100504,
+      "Entries": [
+        "Common/Uncommon/Rare/Unique Weapon (25/60/8/8%)"
+      ]
+    },
+    {
+      "ID": 1107100505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Medium/Great Shield (70/10/20%)"
+      ]
+    },
+    {
+      "ID": 1110000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1110000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1110000500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1110000501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1110000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1110011000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1110011001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1110011500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1110011501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1110011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1111000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111000001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (85/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1111000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1111000010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111000011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1111000012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111000013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1111000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111000501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1111000503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1111000510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111000511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1111000512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111000513,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1111011000,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111011001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (85/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1111011002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1111011010,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111011011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1111011012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111011013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1111011500,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1111011503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1111011510,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1111011511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1111011512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1111011513,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1112000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1112000001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1112000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1112000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1112000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1112000501,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1112000502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1112000503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1112011000,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1112011001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1112011002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1112011003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1112011500,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1112011501,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1112011502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1112011503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1115010000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115010001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115010002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (14/6%)"
+      ]
+    },
+    {
+      "ID": 1115010500,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115010501,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115010502,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115300000,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115300001,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115300002,
+      "Entries": [
+        "Common/Uncommon Staff (14/6%)"
+      ]
+    },
+    {
+      "ID": 1115300500,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115300501,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1115300502,
+      "Entries": [
+        "Common/Uncommon Staff (70/30%)"
+      ]
+    },
+    {
+      "ID": 1117000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117000001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (35/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1117000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1117000010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117000011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1117000012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117000013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1117000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117000501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1117000503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1117000510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117000511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1117000512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117000513,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1117011000,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117011001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (35/5/5/5%)"
+      ]
+    },
+    {
+      "ID": 1117011002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1117011010,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117011011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1117011012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117011013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1117011500,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1117011503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1117011510,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1117011511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1117011512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1117011513,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1118000000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1118000001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1118001000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1118001001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1118010000,
+      "Entries": [
+        "Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1118010001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1118011000,
+      "Entries": [
+        "[Mixed Magic+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1118011001,
+      "Entries": [
+        "Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1119000000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1119000001,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1119000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1119000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1119000500,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1119000501,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (25/25/25/25%)"
+      ]
+    },
+    {
+      "ID": 1119000502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1119000503,
+      "Entries": [
+        "Consumable/Boiled Crab/Prawn/Pickled Turtle Neck (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1120000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120000500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120000501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120010000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120010001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120010500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120010501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120011000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120011001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120011500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120011501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120012000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120012001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120012500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120012501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120012502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120020000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120020001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120020500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120020501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120020502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120021000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120021001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1120021500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1120021501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1120021502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121000001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Greatshield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121000002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121000003,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121000004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121000501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121000504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121000505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121010000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121010001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121010002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121010003,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121010004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121010500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121010501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121010503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121010504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121010505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121011000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121011001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121011002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121011003,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121011004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121011500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121011501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121011503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121011504,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121011505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121012000,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121012001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121012002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121012003,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121012004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121012500,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121012501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121012502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121012503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121012504,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121012505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121020000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121020001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121020002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121020003,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121020004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121020500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121020501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121020502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121020503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121020504,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121020505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121021000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121021001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121021002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1121021003,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121021004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121021500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1121021501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1121021502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1121021503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1121021504,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1121021505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1125000000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1125000001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1125000002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (14/6%)"
+      ]
+    },
+    {
+      "ID": 1125000500,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1125000501,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1125000502,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (70/30%)"
+      ]
+    },
+    {
+      "ID": 1125100000,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1125100001,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1125100002,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (8/12%)"
+      ]
+    },
+    {
+      "ID": 1125100500,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1125100501,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1125100502,
+      "Entries": [
+        "Common/Uncommon Ranged Weapon (40/60%)"
+      ]
+    },
+    {
+      "ID": 1127000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127000001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127000002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1127000003,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127000004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127000501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1127000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1127000503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1127000504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127000505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1127020000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127020001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127020002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1127020003,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127020004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127020500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127020501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1127020502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1127020503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1127020504,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127020505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1127021000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127021001,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127021002,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (18/3%)"
+      ]
+    },
+    {
+      "ID": 1127021003,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127021004,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (35/3/5/8%)"
+      ]
+    },
+    {
+      "ID": 1127021500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1127021501,
+      "Entries": [
+        "Consumable/C-U-R Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1127021502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1127021503,
+      "Entries": [
+        "Consumable/Smithing Stone 1 (45/5%)"
+      ]
+    },
+    {
+      "ID": 1127021504,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/42/25/2/2%)"
+      ]
+    },
+    {
+      "ID": 1127021505,
+      "Entries": [
+        "Consumable/C-U-R-UQ Small/Medium/Great Shield (70/5/10/15%)"
+      ]
+    },
+    {
+      "ID": 1128000000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128000001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128000002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128001000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128001001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128001002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128010000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128010001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128010002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128011000,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128011001,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128011002,
+      "Entries": [
+        "[Mixed Fire-] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128012000,
+      "Entries": [
+        "[Mixed Lightning+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128012001,
+      "Entries": [
+        "[Mixed Lightning+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128012002,
+      "Entries": [
+        "[Mixed Lightning-] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128020000,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128020001,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Class Weapon/Uncommon/Unique Weapon (15/65/20%)"
+      ]
+    },
+    {
+      "ID": 1128020002,
+      "Entries": [
+        "[Mixed Fire-] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1128021000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1128021001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Class Weapon/Uncommon/Unique/Madness Weapon (15/65/12/8%)"
+      ]
+    },
+    {
+      "ID": 1128021002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1130000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130000500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130000501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130001000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130001001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130001500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130001501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130001502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130002000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130002001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130002500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130002501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130002502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130003000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130003001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130003500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130003501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130003502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130010000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130010001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130010500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130010501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130011000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130011001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130011500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130011501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130012000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130012001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130012500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130012501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130012502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130013000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130013001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130013500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130013501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130013502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130014000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130014001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130014500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130014501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130014502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130020000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130020001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130020500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130020501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130020502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130021000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130021001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1130021500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1130021501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1130021502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131000001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131000003,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131000501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131000503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131000504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131001000,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131001001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131001002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131001003,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131001500,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131001501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131001502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131001503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131001504,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131002000,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131002001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131002002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131002003,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131002500,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131002501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131002502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131002503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131002504,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131003000,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131003001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131003002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131003003,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131003500,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131003501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131003502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131003503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131003504,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131010000,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131010001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131010002,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1131010003,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131010500,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131010501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131010503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131010504,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131011000,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131011001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131011002,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1131011003,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131011500,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131011503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131011504,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131012000,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131012001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131012002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131012003,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131012500,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131012501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131012502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131012503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131012504,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131013000,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131013001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131013002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131013003,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131013500,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131013501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131013502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131013503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131013504,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131014000,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131014001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131014002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131014003,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131014500,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131014501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131014502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131014503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131014504,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131020000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131020001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131020002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131020003,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131020500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131020501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131020502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131020503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131020504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131021000,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131021001,
+      "Entries": [
+        "Consumable/Starlight Shards (90/10%)"
+      ]
+    },
+    {
+      "ID": 1131021002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1131021003,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1131021500,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/48/19/4%)"
+      ]
+    },
+    {
+      "ID": 1131021501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1131021502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1131021503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1131021504,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1132000000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132000001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132000004,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132000500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132000501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132000502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132000503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132000504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132001000,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132001001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132001002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132001003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132001004,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132001500,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132001501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132001502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132001503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132001504,
+      "Entries": [
+        "[Mixed Blood-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132002000,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132002001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132002002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132002003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132002004,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132002500,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132002501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132002502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132002503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132002504,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132003000,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132003001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132003002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132003003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132003004,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132003500,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132003501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132003502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132003503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132003504,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132010000,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132010001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132010002,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1132010003,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1132010004,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132010500,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132010501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132010502,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1132010503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132010504,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132011000,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132011001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132011002,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1132011003,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1132011004,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132011500,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132011501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132011502,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1132011503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132011504,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132012000,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132012001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132012002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132012003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132012004,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132012500,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132012501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132012502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132012503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132012504,
+      "Entries": [
+        "[Mixed Magic-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132013000,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132013001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132013002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132013003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132013004,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132013500,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132013501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132013502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132013503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132013504,
+      "Entries": [
+        "[Mixed Frost-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132014000,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132014001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132014002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132014003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132014004,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132014500,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132014501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132014502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132014503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132014504,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132020000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132020001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132020002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132020003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132020004,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132020500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132020501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132020502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132020503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132020504,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132021000,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132021001,
+      "Entries": [
+        "Consumable/Starlight Shards/Talisman (50/15/35%)"
+      ]
+    },
+    {
+      "ID": 1132021002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132021003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1132021004,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1132021500,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare Weapon (30/35/28/7%)"
+      ]
+    },
+    {
+      "ID": 1132021501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1132021502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1132021503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1132021504,
+      "Entries": [
+        "[Mixed Lightning-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/35/28/4/4%)"
+      ]
+    },
+    {
+      "ID": 1135600000,
+      "Entries": [
+        "Common/Uncommon Seal (93/7%)"
+      ]
+    },
+    {
+      "ID": 1135600001,
+      "Entries": [
+        "Common/Uncommon Seal (93/7%)"
+      ]
+    },
+    {
+      "ID": 1135600002,
+      "Entries": [
+        "Common/Uncommon Seal (93/7%)"
+      ]
+    },
+    {
+      "ID": 1135600500,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135600501,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135600502,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135700000,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135700001,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135700002,
+      "Entries": [
+        "Common/Uncommon/Rare Seal (35/60/5%)"
+      ]
+    },
+    {
+      "ID": 1135700500,
+      "Entries": [
+        "Uncommon/Rare Seal (30/70%)"
+      ]
+    },
+    {
+      "ID": 1135700501,
+      "Entries": [
+        "Uncommon/Rare Seal (30/70%)"
+      ]
+    },
+    {
+      "ID": 1135700502,
+      "Entries": [
+        "Uncommon/Rare Seal (30/70%)"
+      ]
+    },
+    {
+      "ID": 1137011000,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/49/18/4%)"
+      ]
+    },
+    {
+      "ID": 1137011001,
+      "Entries": [
+        "Consumable/Starlight Shards (40/10%)"
+      ]
+    },
+    {
+      "ID": 1137011002,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1137011003,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1137011500,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare Weapon (30/49/18/4%)"
+      ]
+    },
+    {
+      "ID": 1137011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1137011502,
+      "Entries": [
+        "Perfume (50%)"
+      ]
+    },
+    {
+      "ID": 1137011503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1137011504,
+      "Entries": [
+        "[Mixed Poison-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1137014000,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/49/18/4%)"
+      ]
+    },
+    {
+      "ID": 1137014001,
+      "Entries": [
+        "Consumable/Starlight Shards (40/10%)"
+      ]
+    },
+    {
+      "ID": 1137014002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1137014003,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1137014500,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare Weapon (30/49/18/4%)"
+      ]
+    },
+    {
+      "ID": 1137014501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1137014502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1137014503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1137014504,
+      "Entries": [
+        "[Mixed Sleep-] Consumable/Common/Uncommon/Rare/Unique Weapon (30/49/18/2/2%)"
+      ]
+    },
+    {
+      "ID": 1138000000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138000001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138000002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138001000,
+      "Entries": [
+        "[Mixed Blood+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138001001,
+      "Entries": [
+        "[Mixed Blood+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138001002,
+      "Entries": [
+        "[Mixed Blood+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138002000,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138002001,
+      "Entries": [
+        "[Mixed Frost+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138002002,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138003000,
+      "Entries": [
+        "[Mixed Holy+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138003001,
+      "Entries": [
+        "[Mixed Holy+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138003002,
+      "Entries": [
+        "[Mixed Holy+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138010000,
+      "Entries": [
+        "[Mixed Poison+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138010001,
+      "Entries": [
+        "[Mixed Poison+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138010002,
+      "Entries": [
+        "[Mixed Poison+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138011000,
+      "Entries": [
+        "[Mixed Poison+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138011001,
+      "Entries": [
+        "[Mixed Poison+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138011002,
+      "Entries": [
+        "[Mixed Poison+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138012000,
+      "Entries": [
+        "[Mixed Magic+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138012001,
+      "Entries": [
+        "[Mixed Magic+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138012002,
+      "Entries": [
+        "[Mixed Magic+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138013000,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138013001,
+      "Entries": [
+        "[Mixed Frost+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138013002,
+      "Entries": [
+        "[Mixed Frost+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138014000,
+      "Entries": [
+        "[Mixed Sleep+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138014001,
+      "Entries": [
+        "[Mixed Sleep+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138014002,
+      "Entries": [
+        "[Mixed Sleep+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138020000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138020001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138020002,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1138021000,
+      "Entries": [
+        "[Mixed Lightning+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1138021001,
+      "Entries": [
+        "[Mixed Lightning+] Uncommon/Unique Weapon/Class Weapon (65/20/15%)"
+      ]
+    },
+    {
+      "ID": 1138021002,
+      "Entries": [
+        "[Mixed Lightning+] Uncommon Weapon/Permanent Buff (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139000000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139000001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139000002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139000003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139000004,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139000500,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139000501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139000502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139000503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139000504,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139001000,
+      "Entries": [
+        "[Mixed Blood-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139001001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139001002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139001003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139001004,
+      "Entries": [
+        "[Mixed Blood-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139001500,
+      "Entries": [
+        "[Mixed Blood-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139001501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139001502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139001503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139001504,
+      "Entries": [
+        "[Mixed Blood-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139002000,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139002001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139002002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139002003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139002004,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139002500,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139002501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139002502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139002503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139002504,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139003000,
+      "Entries": [
+        "[Mixed Holy-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139003001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139003002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139003003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139003004,
+      "Entries": [
+        "[Mixed Holy-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139003500,
+      "Entries": [
+        "[Mixed Holy-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139003501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139003502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139003503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139003504,
+      "Entries": [
+        "[Mixed Holy-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139010000,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139010001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139010002,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1139010003,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1139010004,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139010500,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139010501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139010502,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1139010503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139010504,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139011000,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139011001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139011002,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1139011003,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1139011004,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139011500,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139011501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139011502,
+      "Entries": [
+        "Consumable/Perfume (50/50%)"
+      ]
+    },
+    {
+      "ID": 1139011503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139011504,
+      "Entries": [
+        "[Mixed Poison-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139012000,
+      "Entries": [
+        "[Mixed Magic-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139012001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139012002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139012003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139012004,
+      "Entries": [
+        "[Mixed Magic-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139012500,
+      "Entries": [
+        "[Mixed Magic-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139012501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139012502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139012503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139012504,
+      "Entries": [
+        "[Mixed Magic-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139013000,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139013001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139013002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139013003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139013004,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139013500,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139013501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139013502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139013503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139013504,
+      "Entries": [
+        "[Mixed Frost-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139014000,
+      "Entries": [
+        "[Mixed Sleep-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139014001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139014002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139014003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139014004,
+      "Entries": [
+        "[Mixed Sleep-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139014500,
+      "Entries": [
+        "[Mixed Sleep-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139014501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139014502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139014503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139014504,
+      "Entries": [
+        "[Mixed Sleep-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139020000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139020001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139020002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139020003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139020004,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139020500,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139020501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139020502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139020503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139020504,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139021000,
+      "Entries": [
+        "[Mixed Lightning-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139021001,
+      "Entries": [
+        "Consumable/Starlight Shards (85/15%)"
+      ]
+    },
+    {
+      "ID": 1139021002,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139021003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1139021004,
+      "Entries": [
+        "[Mixed Lightning-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139021500,
+      "Entries": [
+        "[Mixed Lightning-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1139021501,
+      "Entries": [
+        "Consumable/Talisman (65/35%)"
+      ]
+    },
+    {
+      "ID": 1139021502,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1139021503,
+      "Entries": [
+        "Consumable/Starlight Shards (30/20%)"
+      ]
+    },
+    {
+      "ID": 1139021504,
+      "Entries": [
+        "[Mixed Lightning-] Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1140000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1140000002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140000500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140000501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140000503,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140001000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140001001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1140001002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140001500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140001501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140001502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140001503,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140010000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140010001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1140010002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140010500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140010501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140010503,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140011000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140011001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1140011002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1140011500,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1140011501,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1140011503,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141000000,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141000001,
+      "Entries": [
+        "Consumable/Warming Stone (93/7%)"
+      ]
+    },
+    {
+      "ID": 1141000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141000003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141000010,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141000011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141000012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141000013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141000014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141000500,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141000501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1141000503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141000504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141000510,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141000511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141000512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141000513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141000514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141001000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141001001,
+      "Entries": [
+        "Consumable/Warming Stone (93/7%)"
+      ]
+    },
+    {
+      "ID": 1141001002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141001003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141001010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141001011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141001012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141001013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141001014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141001500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141001501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141001502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1141001503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141001504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141001510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141001511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141001512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141001513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141001514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141010000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141010001,
+      "Entries": [
+        "Consumable/Warming Stone (93/7%)"
+      ]
+    },
+    {
+      "ID": 1141010002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141010003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141010010,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141010011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141010012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141010013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141010014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141010500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141010501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1141010503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141010504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141010510,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141010511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141010512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141010513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141010514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141011000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141011001,
+      "Entries": [
+        "Consumable/Warming Stone (93/7%)"
+      ]
+    },
+    {
+      "ID": 1141011002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141011003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141011010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141011011,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141011012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141011013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1141011014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141011500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1141011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1141011503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141011504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1141011510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/49/21%)"
+      ]
+    },
+    {
+      "ID": 1141011511,
+      "Entries": [
+        "Consumable/Stonesword Key (20/80%)"
+      ]
+    },
+    {
+      "ID": 1141011512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1141011513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1141011514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1145600000,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1145600001,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1145600002,
+      "Entries": [
+        "Common/Uncommon Seal (14/6%)"
+      ]
+    },
+    {
+      "ID": 1145600500,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1145600501,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1145600502,
+      "Entries": [
+        "Common/Uncommon Seal (70/30%)"
+      ]
+    },
+    {
+      "ID": 1145700000,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1145700001,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1145700002,
+      "Entries": [
+        "Common/Uncommon Seal (8/12%)"
+      ]
+    },
+    {
+      "ID": 1145700500,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1145700501,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1145700502,
+      "Entries": [
+        "Common/Uncommon Seal (40/60%)"
+      ]
+    },
+    {
+      "ID": 1147000000,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147000001,
+      "Entries": [
+        "Consumable/Warming Stone (43/8%)"
+      ]
+    },
+    {
+      "ID": 1147000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147000003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147000010,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147000011,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147000012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147000013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147000014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147000500,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147000501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147000502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1147000503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147000504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147000510,
+      "Entries": [
+        "[Mixed Holy-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147000511,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147000512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147000513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147000514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147001000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147001001,
+      "Entries": [
+        "Consumable/Warming Stone (43/8%)"
+      ]
+    },
+    {
+      "ID": 1147001002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147001003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147001010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147001011,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147001012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147001013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147001014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147001500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147001501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147001502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1147001503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147001504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147001510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147001511,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147001512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147001513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147001514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147010000,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147010001,
+      "Entries": [
+        "Consumable/Warming Stone (43/8%)"
+      ]
+    },
+    {
+      "ID": 1147010002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147010003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147010010,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147010011,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147010012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147010013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147010014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147010500,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147010501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147010502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1147010503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147010504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147010510,
+      "Entries": [
+        "[Mixed Fire-] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147010511,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147010512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147010513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147010514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147011000,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147011001,
+      "Entries": [
+        "Consumable/Warming Stone (43/8%)"
+      ]
+    },
+    {
+      "ID": 1147011002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147011003,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147011010,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147011011,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147011012,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147011013,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1147011014,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147011500,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1147011501,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147011502,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1147011503,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147011504,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1147011510,
+      "Entries": [
+        "[Mixed Untyped+] Consumable/Common/Uncommon Weapon (33/55/12%)"
+      ]
+    },
+    {
+      "ID": 1147011511,
+      "Entries": [
+        "Consumable/Warming Stone (50/50%)"
+      ]
+    },
+    {
+      "ID": 1147011512,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1147011513,
+      "Entries": [
+        "Consumable/Warming Stone (35/15%)"
+      ]
+    },
+    {
+      "ID": 1147011514,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1148000000,
+      "Entries": [
+        "[Mixed Holy+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1148000001,
+      "Entries": [
+        "[Mixed Holy-] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1148001000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1148001001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1148010000,
+      "Entries": [
+        "[Mixed Fire+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1148010001,
+      "Entries": [
+        "[Mixed Fire-] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1148011000,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon Weapon/Class Weapon (65/35%)"
+      ]
+    },
+    {
+      "ID": 1148011001,
+      "Entries": [
+        "[Mixed Untyped+] Uncommon/Unique Weapon (88/12%)"
+      ]
+    },
+    {
+      "ID": 1200000000,
+      "Entries": [
+        "[Sorcerer's Rise Crate] Starlight Shards (100%)"
+      ]
+    },
+    {
+      "ID": 1200000001,
+      "Entries": [
+        "[Sorcerer's Rise Crate] Starlight Shards (10%)"
+      ]
+    },
+    {
+      "ID": 1206000000,
+      "Entries": [
+        "[Sorcerer's Rise Reward] Uncommon Staff (100%)"
+      ]
+    },
+    {
+      "ID": 1206000001,
+      "Entries": [
+        "[Sorcerer's Rise Reward] Uncommon Magic Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1206000002,
+      "Entries": [
+        "[Sorcerer's Rise Reward] Sorcerer's Rise Reward (100%)"
+      ]
+    },
+    {
+      "ID": 1206010000,
+      "Entries": [
+        "[Ruined Rise Reward] Rare/Unique Staff (50/50%)"
+      ]
+    },
+    {
+      "ID": 1206010001,
+      "Entries": [
+        "[Ruined Rise Reward] [Magic] Rare/Legendary/Unique Weapon (49/3/49%)"
+      ]
+    },
+    {
+      "ID": 1206010002,
+      "Entries": [
+        "[Ruined Rise Reward] Ruined Rise Reward (100%)"
+      ]
+    },
+    {
+      "ID": 1210000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1210000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1210000002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1220000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1220000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1230000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1230000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1230010000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1230010001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1230020000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1230020001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1231000000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1231010000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1231020000,
+      "Entries": [
+        "Common Weapon/Fire Weapon (85/15%)"
+      ]
+    },
+    {
+      "ID": 1237000000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1237010000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1237020000,
+      "Entries": [
+        "Common Weapon/Fire Weapon (85/15%)"
+      ]
+    },
+    {
+      "ID": 1247000000,
+      "Entries": [
+        "Consumable/Common Weapon (30/70%)"
+      ]
+    },
+    {
+      "ID": 1247000001,
+      "Entries": [
+        "Consumable/Silver/Gold-Pickled Fowl Foot/Stonesword Key (20/10/10/10%)"
+      ]
+    },
+    {
+      "ID": 1247000002,
+      "Entries": [
+        "Perfume (20%)"
+      ]
+    },
+    {
+      "ID": 1306000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1306000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1306000002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1316000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1316000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1316000002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1320000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1320000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1320000010,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1320000011,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1337000000,
+      "Entries": [
+        "Consumable/Crystal Tear (30/70%)"
+      ]
+    },
+    {
+      "ID": 1337000001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1337000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1346000000,
+      "Entries": [
+        "Gravity Stone Fan/Chunk (100%)"
+      ]
+    },
+    {
+      "ID": 1346000001,
+      "Entries": [
+        "Gravity Stone Fan/Chunk (10%)"
+      ]
+    },
+    {
+      "ID": 1356000000,
+      "Entries": [
+        "Uncommon Weapon/Seal (50/50%)"
+      ]
+    },
+    {
+      "ID": 1356000001,
+      "Entries": [
+        "Smithing Stone 1/Smithing Stone 2 (85/15%)"
+      ]
+    },
+    {
+      "ID": 1366000000,
+      "Entries": [
+        "Uncommon Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1366000001,
+      "Entries": [
+        "Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1366000500,
+      "Entries": [
+        "Uncommon Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1366000501,
+      "Entries": [
+        "Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1370000000,
+      "Entries": [
+        "Consumable/Tunnel Consumable (50/50%)"
+      ]
+    },
+    {
+      "ID": 1370000001,
+      "Entries": [
+        "Tunnel Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1371000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1371000001,
+      "Entries": [
+        "Tunnel Consumable (70%)"
+      ]
+    },
+    {
+      "ID": 1371000002,
+      "Entries": [
+        "Common/Uncommon Weapon (85/15%)"
+      ]
+    },
+    {
+      "ID": 1371000003,
+      "Entries": [
+        "Common/Uncommon Weapon (26/5%)"
+      ]
+    },
+    {
+      "ID": 1377000000,
+      "Entries": [
+        "Consumable/Tunnel Consumable (50/50%)"
+      ]
+    },
+    {
+      "ID": 1377000001,
+      "Entries": [
+        "Tunnel Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1377000002,
+      "Entries": [
+        "Common Weapon (70%)"
+      ]
+    },
+    {
+      "ID": 1377100000,
+      "Entries": [
+        "Consumable/Tunnel Consumable (50/50%)"
+      ]
+    },
+    {
+      "ID": 1377100001,
+      "Entries": [
+        "Tunnel Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1377100002,
+      "Entries": [
+        "Uncommon Weapon (70%)"
+      ]
+    },
+    {
+      "ID": 1383000000,
+      "Entries": [
+        "Rare Weapon/Stonesword Key/Crystal Tear (35/30/35%)"
+      ]
+    },
+    {
+      "ID": 1383000001,
+      "Entries": [
+        "Uncommon/Rare Weapon/Perfume (55/10/35%)"
+      ]
+    },
+    {
+      "ID": 1383000002,
+      "Entries": [
+        "Uncommon/Rare Weapon (90/10%)"
+      ]
+    },
+    {
+      "ID": 1383000003,
+      "Entries": [
+        "Consumable/Crystal Tear (35/35%)"
+      ]
+    },
+    {
+      "ID": 1383000004,
+      "Entries": [
+        "Consumable/Perfume (35/35%)"
+      ]
+    },
+    {
+      "ID": 1397000000,
+      "Entries": [
+        "Consumable/Common/Uncommon Weapon (30/60/11%)"
+      ]
+    },
+    {
+      "ID": 1397000001,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1397000002,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1397100000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/42/25/4%)"
+      ]
+    },
+    {
+      "ID": 1397100001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1397100002,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1397100003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1397200000,
+      "Entries": [
+        "Consumable/Common/Uncommon/Rare Weapon (30/14/46/11%)"
+      ]
+    },
+    {
+      "ID": 1397200001,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1397200002,
+      "Entries": [
+        "Consumable (50%)"
+      ]
+    },
+    {
+      "ID": 1397200003,
+      "Entries": [
+        "Consumable (20%)"
+      ]
+    },
+    {
+      "ID": 1406000000,
+      "Entries": [
+        "Sacrificial Twig"
+      ]
+    },
+    {
+      "ID": 1406000001,
+      "Entries": [
+        "Sacrificial Twig"
+      ]
+    },
+    {
+      "ID": 1406000002,
+      "Entries": [
+        "Sacrificial Twig"
+      ]
+    },
+    {
+      "ID": 1608000000,
+      "Entries": [
+        "Katar"
+      ]
+    },
+    {
+      "ID": 1608000001,
+      "Entries": [
+        "Duelist Greataxe"
+      ]
+    },
+    {
+      "ID": 1608000010,
+      "Entries": [
+        "Lordsworn's Straight Sword"
+      ]
+    },
+    {
+      "ID": 1608000011,
+      "Entries": [
+        "Rogier's Rapier"
+      ]
+    },
+    {
+      "ID": 1608100000,
+      "Entries": [
+        "Fire Pot"
+      ]
+    },
+    {
+      "ID": 1608100001,
+      "Entries": [
+        "Lightning Grease"
+      ]
+    },
+    {
+      "ID": 1608100002,
+      "Entries": [
+        "Warming Stone"
+      ]
+    },
+    {
+      "ID": 1608200000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1608200001,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1650000000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1650000001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1650001000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1650001001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1650010000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1650010001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1650010002,
+      "Entries": [
+        "Cord End (0.036%)"
+      ]
+    },
+    {
+      "ID": 1650020000,
+      "Entries": [
+        "Consumable/Perfume (70/30%)"
+      ]
+    },
+    {
+      "ID": 1650020001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1650030000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1650030001,
+      "Entries": [
+        "Consumable (10%)"
+      ]
+    },
+    {
+      "ID": 1651000000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1651001000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1651020000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1651020010,
+      "Entries": [
+        "Stonesword Key (100%)"
+      ]
+    },
+    {
+      "ID": 1651030000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1655001000,
+      "Entries": [
+        "Common Ranged Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1655001001,
+      "Entries": [
+        "Common Ranged Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1655630000,
+      "Entries": [
+        "Common/Uncommon Seal (85/15%)"
+      ]
+    },
+    {
+      "ID": 1655630001,
+      "Entries": [
+        "Common/Uncommon Seal (85/15%)"
+      ]
+    },
+    {
+      "ID": 1655630002,
+      "Entries": [
+        "Common/Uncommon Seal (85/15%)"
+      ]
+    },
+    {
+      "ID": 1657000000,
+      "Entries": [
+        "Common Weapon (100%)"
+      ]
+    },
+    {
+      "ID": 1657020000,
+      "Entries": [
+        "Consumable (100%)"
+      ]
+    },
+    {
+      "ID": 1657030000,
+      "Entries": [
+        "Common Weapon/Crystal Tear (70/30%)"
+      ]
+    }
+  ]
+}

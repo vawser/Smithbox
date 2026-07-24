@@ -1,0 +1,38 @@
+{
+  "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Description": "Determines the timezone conversion parameters for a cutscene.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SrcTimezoneStart",
+      "Name": "Current Time for Conversion",
+      "Description": "Start time of the time zone to be converted to cutscene time. In hours."
+    },
+    {
+      "Field": "DstCutscenTime",
+      "Name": "Cutscene Time after Conversion",
+      "Description": "Enter the time used during cutscene playback. In hours."
+    }
+  ]
+}

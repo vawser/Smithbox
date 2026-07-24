@@ -1,0 +1,53 @@
+{
+  "Param": "SUB_WINDOW_CAM_PARAM_ST",
+  "Type": "SUB_WINDOW_CAM_PARAM_ST",
+  "Name": "SUB_WINDOW_CAM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camFov",
+      "Name": "画角[deg]",
+      "Description": "カメラの画角"
+    },
+    {
+      "Field": "camTargetDmyPolyId",
+      "Name": "注視点ダミポリID",
+      "Description": "ターゲットの注視点ダミポリID"
+    },
+    {
+      "Field": "camTargetDist",
+      "Name": "注視点からのカメラ距離",
+      "Description": "注視点からのカメラ距離"
+    },
+    {
+      "Field": "camRotationType",
+      "Name": "カメラ角度指定方法",
+      "Description": "カメラの角度指定方法(0固定)"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Target_RotationX",
+      "Name": "X軸回転角度[deg]",
+      "Description": "キャラ正面基準でのX軸の回転角度"
+    },
+    {
+      "Field": "Target_RotationY",
+      "Name": "Y軸回転角度[deg]",
+      "Description": "キャラ正面基準でのY軸の回転角度"
+    },
+    {
+      "Field": "Target_RotationZ",
+      "Name": "Z軸回転角度[deg]",
+      "Description": "キャラ正面基準でのZ軸の回転角度"
+    },
+    {
+      "Field": "reserve100",
+      "Name": "予約100",
+      "Description": ""
+    }
+  ]
+}

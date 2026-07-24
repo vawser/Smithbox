@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <materialNone Refs="DamageEffectMaterialParam"/>
+        <materialMetal Refs="DamageEffectMaterialParam"/>
+        <materialHeavyMetal Refs="DamageEffectMaterialParam"/>
+        <materialWood Refs="DamageEffectMaterialParam"/>
+        <materialWater Refs="DamageEffectMaterialParam"/>
+        <materialSwamp Refs="DamageEffectMaterialParam"/>
+        <materialLumber Refs="DamageEffectMaterialParam"/>
+        <materialMeat Refs="DamageEffectMaterialParam"/>
+        <materialDeadMeat Refs="DamageEffectMaterialParam"/>
+        <materialInsect Refs="DamageEffectMaterialParam"/>
+        <materialGiant Refs="DamageEffectMaterialParam"/>
+        <materialBone Refs="DamageEffectMaterialParam"/>
+        <materialCopper Refs="DamageEffectMaterialParam"/>
+        <materialEnergy Refs="DamageEffectMaterialParam"/>
+        <materialFire Refs="DamageEffectMaterialParam"/>
+        <materialThunder Refs="DamageEffectMaterialParam"/>
+        <materialDark Refs="DamageEffectMaterialParam"/>
+        <materialMagicalPower Refs="DamageEffectMaterialParam"/>
+        <materialStone Refs="DamageEffectMaterialParam"/>
+        <materialDirt Refs="DamageEffectMaterialParam"/>
+        <materialCarpet Refs="DamageEffectMaterialParam"/>
+        <materialGrass Refs="DamageEffectMaterialParam"/>
+        <materialBallast Refs="DamageEffectMaterialParam"/>
+        <materialCloth Refs="DamageEffectMaterialParam"/>
+        <materialSand Refs="DamageEffectMaterialParam"/>
+        <materialAsh Refs="DamageEffectMaterialParam"/>
+        <materialPoisonSwamp Refs="DamageEffectMaterialParam"/>
+        <materialOil Refs="DamageEffectMaterialParam"/>
+        <materialCoalTar Refs="DamageEffectMaterialParam"/>
+        <materialLava Refs="DamageEffectMaterialParam"/>
+        <materialThread Refs="DamageEffectMaterialParam"/>
+        <materialCrystal Refs="DamageEffectMaterialParam"/>
+        <materialSoul Refs="DamageEffectMaterialParam"/>
+        <materialFrog Refs="DamageEffectMaterialParam"/>
+        <unkMaterial0 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial1 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial2 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial3 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial4 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial5 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial6 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial7 Refs="DamageEffectMaterialParam"/>
+        <unkMaterial8 Refs="DamageEffectMaterialParam"/>
+        <dummy />
+    </Field>
+</PARAMMETA>

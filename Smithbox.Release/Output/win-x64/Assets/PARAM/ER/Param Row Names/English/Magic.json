@@ -1,0 +1,1907 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Sorcery] Great Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Sorcery] Swift Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Sorcery] Glintstone Cometshard"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "[Sorcery] Comet"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Sorcery] Shard Spiral"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Sorcery] Glintstone Stars"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Sorcery] Star Shower"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Sorcery] Crystal Barrage"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "[Sorcery] Glintstone Arc"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "[Sorcery] Cannon of Haima"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "[Sorcery] Crystal Burst"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Sorcery] Shatter Earth"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[Sorcery] Rock Blaster"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[Sorcery] Gavel of Haima"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "[Sorcery] Terra Magicus"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "[Sorcery] Starlight"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Sorcery] Comet Azur"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[Sorcery] Founding Rain of Stars"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "[Sorcery] Stars of Ruin"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "[Sorcery] Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "[Sorcery] Carian Phalanx"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "[Sorcery] Greatblade Phalanx"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "[Sorcery] Rennala's Full Moon"
+      ]
+    },
+    {
+      "ID": 4361,
+      "Entries": [
+        "[Sorcery] Ranni's Dark Moon"
+      ]
+    },
+    {
+      "ID": 4370,
+      "Entries": [
+        "[Sorcery] Magic Downpour"
+      ]
+    },
+    {
+      "ID": 4380,
+      "Entries": [
+        "[Sorcery] Loretta's Greatbow"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "[Sorcery] Loretta's Mastery"
+      ]
+    },
+    {
+      "ID": 4390,
+      "Entries": [
+        "[Sorcery] Magic Glintblade"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[Sorcery] Glintstone Icecrag"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "[Sorcery] Zamor Ice Storm"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "[Sorcery] Freezing Mist"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "[Sorcery] Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 4431,
+      "Entries": [
+        "[Sorcery] Adula's Moonblade"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "[Sorcery] Carian Slicer"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "[Sorcery] Carian Piercer"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "[Sorcery] Scholar's Armament"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "[Sorcery] Scholar's Shield"
+      ]
+    },
+    {
+      "ID": 4480,
+      "Entries": [
+        "[Sorcery] Lucidity"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "[Sorcery] Frozen Armament"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[Sorcery] Shattering Crystal"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "[Sorcery] Crystal Release"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "[Sorcery] Crystal Torrent"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[Sorcery] Ambush Shard"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[Sorcery] Night Shard"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "[Sorcery] Night Comet"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "[Sorcery] Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "[Sorcery] Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 4641,
+      "Entries": [
+        "[Sorcery] Carian Retaliation (Unused 1)"
+      ]
+    },
+    {
+      "ID": 4642,
+      "Entries": [
+        "[Sorcery] Carian Retaliation (Unused 2)"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "[Sorcery] Eternal Darkness"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "[Sorcery] Unseen Blade"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "[Sorcery] Unseen Form"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "[Sorcery] Meteorite"
+      ]
+    },
+    {
+      "ID": 4701,
+      "Entries": [
+        "[Sorcery] Meteorite of Astel"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "[Sorcery] Rock Sling"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "[Sorcery] Gravity Well"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "[Sorcery] Collapsing Stars"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "[Sorcery] Magma Shot"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "[Sorcery] Gelmir's Fury"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "[Sorcery] Roiling Magma"
+      ]
+    },
+    {
+      "ID": 4830,
+      "Entries": [
+        "[Sorcery] Rykard's Rancor"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "[Sorcery] Briars of Sin"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "[Sorcery] Briars of Punishment"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Sorcery] Rancorcall"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Sorcery] Ancient Death Rancor"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Sorcery] Explosive Ghostflame"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Sorcery] Fia's Mist"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[Sorcery] Tibia's Summons"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "[Sorcery] Death Lightning"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[Sorcery] Oracle Bubbles"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "[Sorcery] Great Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Incantation] Catch Flame"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Incantation] O, Flame!"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Incantation] Flame Sling"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[Incantation] Flame Fall Upon Them"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "[Incantation] Whirl, O Flame"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "[Incantation] Flame Cleanse Me"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "[Incantation] Flame Grant Me Strength"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "[Incantation] Flame Protect Me"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[Incantation] Giantsflame Take Thee"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[Incantation] Flame of The Fell God"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "[Incantation] Burn, O Flame!"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "[Incantation] Black Flame"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "[Incantation] Surge, O Flame"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "[Incantation] Scouring Black Flame"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "[Incantation] Black Flame Ritual"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "[Incantation] Black Flame Blade"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "[Incantation] Black Flame's Protection"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "[Incantation] Noble Presence"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[Incantation] Bloodflame Talons"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[Incantation] Bloodboon"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "[Incantation] Bloodflame Blade"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "[Incantation] Barrier of Gold"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "[Incantation] Protection of The Erdtree"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "[Incantation] Rejection"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "[Incantation] Wrath of Gold"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "[Incantation] Urgent Heal"
+      ]
+    },
+    {
+      "ID": 6421,
+      "Entries": [
+        "[Incantation] Heal"
+      ]
+    },
+    {
+      "ID": 6422,
+      "Entries": [
+        "[Incantation] Great Heal"
+      ]
+    },
+    {
+      "ID": 6423,
+      "Entries": [
+        "[Incantation] Lord's Heal"
+      ]
+    },
+    {
+      "ID": 6424,
+      "Entries": [
+        "[Incantation] Erdtree Heal"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "[Incantation] Blessing's Boon"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "[Incantation] Blessing of The Erdtree"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "[Incantation] Cure Poison"
+      ]
+    },
+    {
+      "ID": 6441,
+      "Entries": [
+        "[Incantation] Lord's Aid"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "[Incantation] Flame Fortification"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "[Incantation] Magic Fortification"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "[Incantation] Lightning Fortification"
+      ]
+    },
+    {
+      "ID": 6480,
+      "Entries": [
+        "[Incantation] Divine Fortification"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "[Incantation] Lord's Divine Fortification"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[Incantation] Night Maiden's Mist"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "[Incantation] Assassin's Approach"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "[Incantation] Shadow Bait"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "[Incantation] Darkness"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[Incantation] Golden Vow"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "[Incantation] Discus of Light"
+      ]
+    },
+    {
+      "ID": 6701,
+      "Entries": [
+        "[Incantation] Triple Rings of Light"
+      ]
+    },
+    {
+      "ID": 6710,
+      "Entries": [
+        "[Incantation] Radagon's Rings of Light"
+      ]
+    },
+    {
+      "ID": 6720,
+      "Entries": [
+        "[Incantation] Elden Stars"
+      ]
+    },
+    {
+      "ID": 6730,
+      "Entries": [
+        "[Incantation] Law of Regression"
+      ]
+    },
+    {
+      "ID": 6740,
+      "Entries": [
+        "[Incantation] Immutable Shield"
+      ]
+    },
+    {
+      "ID": 6750,
+      "Entries": [
+        "[Incantation] Litany of Proper Death"
+      ]
+    },
+    {
+      "ID": 6760,
+      "Entries": [
+        "[Incantation] Law of Causality"
+      ]
+    },
+    {
+      "ID": 6770,
+      "Entries": [
+        "[Incantation] Order's Blade"
+      ]
+    },
+    {
+      "ID": 6780,
+      "Entries": [
+        "[Incantation] Order Healing"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "[Incantation] Bestial Sling"
+      ]
+    },
+    {
+      "ID": 6810,
+      "Entries": [
+        "[Incantation] Stone of Gurranq"
+      ]
+    },
+    {
+      "ID": 6820,
+      "Entries": [
+        "[Incantation] Beast Claw"
+      ]
+    },
+    {
+      "ID": 6830,
+      "Entries": [
+        "[Incantation] Gurranq's Beast Claw"
+      ]
+    },
+    {
+      "ID": 6840,
+      "Entries": [
+        "[Incantation] Bestial Vitality"
+      ]
+    },
+    {
+      "ID": 6850,
+      "Entries": [
+        "[Incantation] Bestial Constitution"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "[Incantation] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "[Incantation] Ancient Dragons' Light Strike"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "[Incantation] Lightning Strike"
+      ]
+    },
+    {
+      "ID": 6921,
+      "Entries": [
+        "[Incantation] Frozen Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        "[Incantation] Honed Bolt"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "[Incantation] Ancient Dragons' Light Spear"
+      ]
+    },
+    {
+      "ID": 6941,
+      "Entries": [
+        "[Incantation] Fortissax's Light Spear"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "[Incantation] Lansseax's Glaive"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "[Incantation] Electrify Armament"
+      ]
+    },
+    {
+      "ID": 6970,
+      "Entries": [
+        "[Incantation] Vyke's Dragonbolt"
+      ]
+    },
+    {
+      "ID": 6971,
+      "Entries": [
+        "[Incantation] Dragonbolt Blessing"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Incantation] Dragonfire"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Incantation] Agheel's Flame"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Incantation] Magma Breath"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[Incantation] Theodorix's Magma"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[Incantation] Dragonice"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "[Incantation] Borealis's Mist"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[Incantation] Rotten Breath"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "[Incantation] Ekzykes's Decay"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "[Incantation] Glintstone Breath"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "[Incantation] Smarag's Glint Breath"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "[Incantation] Placidusax's Ruin"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "[Incantation] Dragonclaw"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "[Incantation] Dragonmaw"
+      ]
+    },
+    {
+      "ID": 7090,
+      "Entries": [
+        "[Incantation] Greyoll's Roar"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "[Incantation] Pest Threads"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "[Incantation] Swarm of Flies"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "[Incantation] Poison Mist"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "[Incantation] Poison Armament"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "[Incantation] Scarlet Aeonia"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "[Incantation] Inescapable Frenzy"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "[Incantation] The Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "[Incantation] Unendurable Frenzy"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "[Incantation] Frenzied Burst"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "[Incantation] Howl of Shabriri"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Tail"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Horns"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Breath"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "[Incantation] Black Blade"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "[Incantation] Fire's Deadly Sin"
+      ]
+    },
+    {
+      "ID": 7903,
+      "Entries": [
+        "[Incantation] Golden Light Fortification"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Incantation] Briars of Sin"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[Incantation] Briars of Punishment"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "[NPC: Incantation] Catch Flame"
+      ]
+    },
+    {
+      "ID": 53011,
+      "Entries": [
+        "[NPC: Incantation] Bloodflame Blade"
+      ]
+    },
+    {
+      "ID": 53012,
+      "Entries": [
+        "[NPC: Incantation] Swarm of Flies 1"
+      ]
+    },
+    {
+      "ID": 53040,
+      "Entries": [
+        "[NPC: Incantation] Lightning Strike"
+      ]
+    },
+    {
+      "ID": 53041,
+      "Entries": [
+        "[NPC: Incantation] Fortissax's Lightning Spear"
+      ]
+    },
+    {
+      "ID": 53042,
+      "Entries": [
+        "[NPC: Incantation] Vyke's Dragonbolt"
+      ]
+    },
+    {
+      "ID": 53043,
+      "Entries": [
+        "[NPC: Incantation] The Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 53044,
+      "Entries": [
+        "[NPC: Incantation] Frenzied Burst"
+      ]
+    },
+    {
+      "ID": 53045,
+      "Entries": [
+        "[NPC: Incantation] Howl of Shabriri (Variant)"
+      ]
+    },
+    {
+      "ID": 53110,
+      "Entries": [
+        "[NPC: Incantation] Wrath of Gold 1"
+      ]
+    },
+    {
+      "ID": 53111,
+      "Entries": [
+        "[NPC: Incantation] Golden Vow 1"
+      ]
+    },
+    {
+      "ID": 53120,
+      "Entries": [
+        "[NPC: Sorcery] Magic Glintblade 1"
+      ]
+    },
+    {
+      "ID": 53160,
+      "Entries": [
+        "[NPC: Sorcery] Glintstone Cometshard"
+      ]
+    },
+    {
+      "ID": 53161,
+      "Entries": [
+        "[NPC: Sorcery] Founding Rain of Stars"
+      ]
+    },
+    {
+      "ID": 53162,
+      "Entries": [
+        "[NPC: Sorcery] Shattering Crystal"
+      ]
+    },
+    {
+      "ID": 53163,
+      "Entries": [
+        "[NPC: Sorcery] Crystal Release"
+      ]
+    },
+    {
+      "ID": 53180,
+      "Entries": [
+        "[NPC: Incantation] Inescapable Frenzy (Variant)"
+      ]
+    },
+    {
+      "ID": 53181,
+      "Entries": [
+        "[NPC: Incantation] Unendurable Frenzy (Variant)"
+      ]
+    },
+    {
+      "ID": 53182,
+      "Entries": [
+        "[NPC: Incantation] Unendurable Frenzy (Variant)"
+      ]
+    },
+    {
+      "ID": 53183,
+      "Entries": [
+        "[NPC: Incantation] Howl of Shabriri (Variant)"
+      ]
+    },
+    {
+      "ID": 53190,
+      "Entries": [
+        "[NPC: Incantation] Litany of Proper Death"
+      ]
+    },
+    {
+      "ID": 53191,
+      "Entries": [
+        "[NPC: Incantation] Beast Claw 1"
+      ]
+    },
+    {
+      "ID": 53192,
+      "Entries": [
+        "[NPC: Incantation] Discus of Light"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "[NPC: Incantation] Wrath of Gold 2"
+      ]
+    },
+    {
+      "ID": 53240,
+      "Entries": [
+        "[NPC: Sorcery] Comet"
+      ]
+    },
+    {
+      "ID": 53241,
+      "Entries": [
+        "[NPC: Sorcery] Comet Azur"
+      ]
+    },
+    {
+      "ID": 53242,
+      "Entries": [
+        "[NPC: Sorcery] Carian Phalanx"
+      ]
+    },
+    {
+      "ID": 53243,
+      "Entries": [
+        "[NPC: Incantation] Black Flame Ritual"
+      ]
+    },
+    {
+      "ID": 53244,
+      "Entries": [
+        "[NPC: Incantation] Triple Rings of Light 1"
+      ]
+    },
+    {
+      "ID": 53245,
+      "Entries": [
+        "[NPC: Incantation] Law of Causality"
+      ]
+    },
+    {
+      "ID": 53246,
+      "Entries": [
+        "[NPC: Sorcery] Rykard's Rancor"
+      ]
+    },
+    {
+      "ID": 53247,
+      "Entries": [
+        "[NPC: Incantation] Bloodboon"
+      ]
+    },
+    {
+      "ID": 53248,
+      "Entries": [
+        "[NPC: Incantation] Scarlet Aeonia"
+      ]
+    },
+    {
+      "ID": 53250,
+      "Entries": [
+        "[NPC: Sorcery] Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 53251,
+      "Entries": [
+        "[NPC: Sorcery] Magic Downpour 1"
+      ]
+    },
+    {
+      "ID": 53252,
+      "Entries": [
+        "[NPC: Sorcery] Scholar's Armament"
+      ]
+    },
+    {
+      "ID": 53260,
+      "Entries": [
+        "[NPC: Incantation] Protection of The Erdtree"
+      ]
+    },
+    {
+      "ID": 53261,
+      "Entries": [
+        "[NPC: Incantation] Golden Vow 2"
+      ]
+    },
+    {
+      "ID": 53270,
+      "Entries": [
+        "[NPC: Incantation] Agheel's Flame"
+      ]
+    },
+    {
+      "ID": 53271,
+      "Entries": [
+        "[NPC: Incantation] Greyoll's Roar"
+      ]
+    },
+    {
+      "ID": 53290,
+      "Entries": [
+        "[NPC: Sorcery] Rancorcall"
+      ]
+    },
+    {
+      "ID": 53291,
+      "Entries": [
+        "[NPC: Sorcery] Fia's Mist"
+      ]
+    },
+    {
+      "ID": 53330,
+      "Entries": [
+        "[NPC: Sorcery] Great Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 53350,
+      "Entries": [
+        "[NPC: Incantation] Triple Rings of Light 2"
+      ]
+    },
+    {
+      "ID": 53390,
+      "Entries": [
+        "[NPC: Sorcery] Collapsing Stars"
+      ]
+    },
+    {
+      "ID": 53510,
+      "Entries": [
+        "[NPC: Incantation] Heal"
+      ]
+    },
+    {
+      "ID": 53520,
+      "Entries": [
+        "[NPC: Sorcery] Loretta's Greatbow 1"
+      ]
+    },
+    {
+      "ID": 53521,
+      "Entries": [
+        "[NPC: Sorcery] Loretta's Greatbow 2"
+      ]
+    },
+    {
+      "ID": 53522,
+      "Entries": [
+        "[NPC: Sorcery] Greatblade Phalanx"
+      ]
+    },
+    {
+      "ID": 53523,
+      "Entries": [
+        "[NPC: Sorcery] Magic Downpour 2"
+      ]
+    },
+    {
+      "ID": 53524,
+      "Entries": [
+        "[NPC: Sorcery] Carian Slicer 1"
+      ]
+    },
+    {
+      "ID": 53560,
+      "Entries": [
+        "[NPC: Incantation] O, Flame!"
+      ]
+    },
+    {
+      "ID": 53561,
+      "Entries": [
+        "[NPC: Incantation] Flame of The Fell God"
+      ]
+    },
+    {
+      "ID": 53590,
+      "Entries": [
+        "[NPC: Sorcery] Carian Piercer"
+      ]
+    },
+    {
+      "ID": 53610,
+      "Entries": [
+        "[NPC: Sorcery] Carian Slicer 2"
+      ]
+    },
+    {
+      "ID": 53630,
+      "Entries": [
+        "[NPC: Incantation] Great Heal"
+      ]
+    },
+    {
+      "ID": 53720,
+      "Entries": [
+        "[NPC: Incantation] Poison Mist"
+      ]
+    },
+    {
+      "ID": 53750,
+      "Entries": [
+        "[NPC: Sorcery] Carian Phalanx"
+      ]
+    },
+    {
+      "ID": 53751,
+      "Entries": [
+        "[NPC: Sorcery] Magic Glintblade 2"
+      ]
+    },
+    {
+      "ID": 53760,
+      "Entries": [
+        "[NPC: Incantation] Tibia's Summons"
+      ]
+    },
+    {
+      "ID": 53770,
+      "Entries": [
+        "[NPC: Sorcery] Great Glintstone Shard"
+      ]
+    },
+    {
+      "ID": 53800,
+      "Entries": [
+        "[NPC: Sorcery] Crystal Burst"
+      ]
+    },
+    {
+      "ID": 53801,
+      "Entries": [
+        "[NPC: Sorcery] Stars of Ruin"
+      ]
+    },
+    {
+      "ID": 53802,
+      "Entries": [
+        "[NPC: Sorcery] Ambush Shard 1"
+      ]
+    },
+    {
+      "ID": 53803,
+      "Entries": [
+        "[NPC: Sorcery] Night Comet 1"
+      ]
+    },
+    {
+      "ID": 53804,
+      "Entries": [
+        "[NPC: Sorcery] Ambush Shard 2"
+      ]
+    },
+    {
+      "ID": 53805,
+      "Entries": [
+        "[NPC: Sorcery] Night Comet 2"
+      ]
+    },
+    {
+      "ID": 53820,
+      "Entries": [
+        "[NPC: Incantation] Catch Flame"
+      ]
+    },
+    {
+      "ID": 53821,
+      "Entries": [
+        "[NPC: Incantation] Burn, O Flame!"
+      ]
+    },
+    {
+      "ID": 53822,
+      "Entries": [
+        "[NPC: Incantation] Surge, O Flame!"
+      ]
+    },
+    {
+      "ID": 53830,
+      "Entries": [
+        "[NPC: Incantation] Whirl, O Flame!"
+      ]
+    },
+    {
+      "ID": 53850,
+      "Entries": [
+        "[NPC: Sorcery] Glintstone Icecrag"
+      ]
+    },
+    {
+      "ID": 53851,
+      "Entries": [
+        "[NPC: Sorcery] Freezing Mist"
+      ]
+    },
+    {
+      "ID": 53852,
+      "Entries": [
+        "[NPC: Sorcery] Briars of Sin"
+      ]
+    },
+    {
+      "ID": 53860,
+      "Entries": [
+        "[NPC: Sorcery] Bloodflame Talons"
+      ]
+    },
+    {
+      "ID": 53861,
+      "Entries": [
+        "[NPC: Sorcery] Swarm of Flies 2"
+      ]
+    },
+    {
+      "ID": 53900,
+      "Entries": [
+        "[NPC: Sorcery] Pest Threads"
+      ]
+    },
+    {
+      "ID": 53910,
+      "Entries": [
+        "[NPC: Incantation] Bestial Sling"
+      ]
+    },
+    {
+      "ID": 53911,
+      "Entries": [
+        "[NPC: Incantation] Beast Claw 2"
+      ]
+    },
+    {
+      "ID": 53912,
+      "Entries": [
+        "[NPC: Incantation] Gurranq's Beast Claw"
+      ]
+    },
+    {
+      "ID": 2004300,
+      "Entries": [
+        "[Sorcery] Miriam's Vanishing"
+      ]
+    },
+    {
+      "ID": 2004310,
+      "Entries": [
+        "[Sorcery] Glintblade Trio"
+      ]
+    },
+    {
+      "ID": 2004320,
+      "Entries": [
+        "[Sorcery] Rellana's Twin Moons"
+      ]
+    },
+    {
+      "ID": 2004500,
+      "Entries": [
+        "[Sorcery] Glintstone Nail"
+      ]
+    },
+    {
+      "ID": 2004510,
+      "Entries": [
+        "[Sorcery] Glintstone Nails"
+      ]
+    },
+    {
+      "ID": 2004700,
+      "Entries": [
+        "[Sorcery] Blades of Stone"
+      ]
+    },
+    {
+      "ID": 2004710,
+      "Entries": [
+        "[Sorcery] Gravitational Missile"
+      ]
+    },
+    {
+      "ID": 2004900,
+      "Entries": [
+        "[Sorcery] Mantle of Thorns"
+      ]
+    },
+    {
+      "ID": 2004910,
+      "Entries": [
+        "[Sorcery] Impenetrable Thorns"
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        "[Sorcery] Rings of Spectral Light"
+      ]
+    },
+    {
+      "ID": 2006200,
+      "Entries": [
+        "[Sorcery] Vortex of Putrescence"
+      ]
+    },
+    {
+      "ID": 2006210,
+      "Entries": [
+        "[Sorcery] Mass of Putrescence"
+      ]
+    },
+    {
+      "ID": 2006300,
+      "Entries": [
+        "[Incantation] Furious Blade of Ansbach"
+      ]
+    },
+    {
+      "ID": 2006400,
+      "Entries": [
+        "[Incantation] Heal from Afar"
+      ]
+    },
+    {
+      "ID": 2006650,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Thorns"
+      ]
+    },
+    {
+      "ID": 2006660,
+      "Entries": [
+        "[Incantation] Aspects of the Crucible: Bloom"
+      ]
+    },
+    {
+      "ID": 2006670,
+      "Entries": [
+        "[Incantation] Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 2006680,
+      "Entries": [
+        "[Incantation] Land of Shadow"
+      ]
+    },
+    {
+      "ID": 2006690,
+      "Entries": [
+        "[Incantation] Wrath from Afar"
+      ]
+    },
+    {
+      "ID": 2006700,
+      "Entries": [
+        "[Incantation] Light of Miquella"
+      ]
+    },
+    {
+      "ID": 2006710,
+      "Entries": [
+        "[Incantation] Multilayered Ring of Light"
+      ]
+    },
+    {
+      "ID": 2006800,
+      "Entries": [
+        "[Incantation] Roar of Rugalea"
+      ]
+    },
+    {
+      "ID": 2006900,
+      "Entries": [
+        "[Incantation] Knight's Lightning Spear"
+      ]
+    },
+    {
+      "ID": 2006910,
+      "Entries": [
+        "[Incantation] Dragonbolt of Florissax"
+      ]
+    },
+    {
+      "ID": 2006920,
+      "Entries": [
+        "[Incantation] Electrocharge"
+      ]
+    },
+    {
+      "ID": 2007000,
+      "Entries": [
+        "[Incantation] Bayle's Tyranny"
+      ]
+    },
+    {
+      "ID": 2007010,
+      "Entries": [
+        "[Incantation] Bayle's Flame Lightning"
+      ]
+    },
+    {
+      "ID": 2007020,
+      "Entries": [
+        "[Incantation] Ghostflame Breath"
+      ]
+    },
+    {
+      "ID": 2007200,
+      "Entries": [
+        "[Incantation] Rotten Butterflies"
+      ]
+    },
+    {
+      "ID": 2007210,
+      "Entries": [
+        "[Incantation] Pest-Thread Spears"
+      ]
+    },
+    {
+      "ID": 2007300,
+      "Entries": [
+        "[Incantation] Midra's Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 2007410,
+      "Entries": [
+        "[Sorcery] Fleeting Microcosm"
+      ]
+    },
+    {
+      "ID": 2007420,
+      "Entries": [
+        "[Sorcery] Cherishing Fingers"
+      ]
+    },
+    {
+      "ID": 2007600,
+      "Entries": [
+        "[Sorcery] Watchful Spirit"
+      ]
+    },
+    {
+      "ID": 2007700,
+      "Entries": [
+        "[Sorcery] Golden Arcs"
+      ]
+    },
+    {
+      "ID": 2007710,
+      "Entries": [
+        "[Sorcery] Giant Golden Arc"
+      ]
+    },
+    {
+      "ID": 2007720,
+      "Entries": [
+        "[Sorcery] Spira"
+      ]
+    },
+    {
+      "ID": 2007730,
+      "Entries": [
+        "[Incantation] Divine Beast Tornado"
+      ]
+    },
+    {
+      "ID": 2007740,
+      "Entries": [
+        "[Incantation] Divine Bird Feathers"
+      ]
+    },
+    {
+      "ID": 2007800,
+      "Entries": [
+        "[Incantation] Fire Serpent"
+      ]
+    },
+    {
+      "ID": 2007810,
+      "Entries": [
+        "[Incantation] Rain of Fire"
+      ]
+    },
+    {
+      "ID": 2007820,
+      "Entries": [
+        "[Incantation] Messmer's Orb"
+      ]
+    },
+    {
+      "ID": 2050000,
+      "Entries": [
+        "[NPC: Incantation] Dragonclaw"
+      ]
+    },
+    {
+      "ID": 2050001,
+      "Entries": [
+        "[NPC: Incantation] Greyoll's Roar"
+      ]
+    },
+    {
+      "ID": 2050010,
+      "Entries": [
+        "[NPC: Incantation]"
+      ]
+    },
+    {
+      "ID": 2050011,
+      "Entries": [
+        "[NPC: Incantation] Dragonbolt of Florissax"
+      ]
+    },
+    {
+      "ID": 2050020,
+      "Entries": [
+        "[NPC: Incantation] Magma Breath"
+      ]
+    },
+    {
+      "ID": 2050021,
+      "Entries": [
+        "[NPC: Incantation] Dragonmaw"
+      ]
+    },
+    {
+      "ID": 2050030,
+      "Entries": [
+        "[NPC: Incantation] Fire Serpent"
+      ]
+    },
+    {
+      "ID": 2050040,
+      "Entries": [
+        "[NPC: Incantation] Multilayered Ring of Light"
+      ]
+    },
+    {
+      "ID": 2050050,
+      "Entries": [
+        "[NPC: Incantation] Furious Blade of Ansbach"
+      ]
+    },
+    {
+      "ID": 2050060,
+      "Entries": [
+        "[NPC: Sorcery] Miriam's Vanishing"
+      ]
+    },
+    {
+      "ID": 2050061,
+      "Entries": [
+        "[NPC: Sorcery] Glintstone Nails"
+      ]
+    },
+    {
+      "ID": 2050062,
+      "Entries": [
+        "[NPC: Sorcery] Cherishing Fingers"
+      ]
+    },
+    {
+      "ID": 2050063,
+      "Entries": [
+        "[NPC: Sorcery] Fleeting Microcosm"
+      ]
+    },
+    {
+      "ID": 2050064,
+      "Entries": [
+        "[NPC: Sorcery] Fleeting Microcosm"
+      ]
+    },
+    {
+      "ID": 2050070,
+      "Entries": [
+        "[NPC: Incantation] Roar of Rugalea"
+      ]
+    },
+    {
+      "ID": 2050080,
+      "Entries": [
+        "[NPC: Incantation] Lord's Heal"
+      ]
+    },
+    {
+      "ID": 2050081,
+      "Entries": [
+        "[NPC: Incantation] Golden Vow"
+      ]
+    },
+    {
+      "ID": 2050082,
+      "Entries": [
+        "[NPC: Incantation] Discus of Light"
+      ]
+    },
+    {
+      "ID": 2050090,
+      "Entries": [
+        "[NPC: Incantation] The Flame of Frenzy"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "[NPC: Incantation] Golden Lightning Fortification"
+      ]
+    }
+  ]
+}

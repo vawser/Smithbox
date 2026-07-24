@@ -1,0 +1,148 @@
+{
+  "Param": "BUDGET_PARAM_ST",
+  "Type": "BUDGET_PARAM_ST",
+  "Name": "BUDGET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "vram_all",
+      "Name": "VRAM:ALL",
+      "Description": "VRAM:ALL(単位はMB)"
+    },
+    {
+      "Field": "vram_mapobj_tex",
+      "Name": "VRAM:マップ/オブジェ テクスチャ",
+      "Description": "VRAM:マップ/オブジェ テクスチャ(単位はMB)"
+    },
+    {
+      "Field": "vram_mapobj_mdl",
+      "Name": "VRAM:マップ/オブジェ モデル",
+      "Description": "VRAM:マップ/オブジェ モデル(単位はMB)"
+    },
+    {
+      "Field": "vram_map",
+      "Name": "VRAM:マップ",
+      "Description": "VRAM:マップ(単位はMB)"
+    },
+    {
+      "Field": "vram_chr",
+      "Name": "VRAM:キャラ",
+      "Description": "VRAM:キャラ(単位はMB)"
+    },
+    {
+      "Field": "vram_parts",
+      "Name": "VRAM:パーツ",
+      "Description": "VRAM:パーツ(単位はMB)"
+    },
+    {
+      "Field": "vram_sfx",
+      "Name": "VRAM:SFX",
+      "Description": "VRAM:SFX(単位はMB)"
+    },
+    {
+      "Field": "vram_chr_tex",
+      "Name": "VRAM:キャラ テクスチャ",
+      "Description": "VRAM:キャラ テクスチャ(単位はMB)"
+    },
+    {
+      "Field": "vram_chr_mdl",
+      "Name": "VRAM:キャラ モデル",
+      "Description": "VRAM:キャラ モデル(単位はMB)"
+    },
+    {
+      "Field": "vram_parts_tex",
+      "Name": "VRAM:パーツ テクスチャ",
+      "Description": "VRAM:パーツ テクスチャ(単位はMB)"
+    },
+    {
+      "Field": "vram_parts_mdl",
+      "Name": "VRAM:パーツ モデル",
+      "Description": "VRAM:パーツ モデル(単位はMB)"
+    },
+    {
+      "Field": "vram_sfx_tex",
+      "Name": "VRAM:SFX テクスチャ",
+      "Description": "VRAM:SFX テクスチャ(単位はMB)"
+    },
+    {
+      "Field": "vram_sfx_mdl",
+      "Name": "VRAM:SFX モデル",
+      "Description": "VRAM:SFX モデル(単位はMB)"
+    },
+    {
+      "Field": "vram_gi",
+      "Name": "VRAM:Gi",
+      "Description": "VRAM:Gi(単位はMB)"
+    },
+    {
+      "Field": "vram_menu_tex",
+      "Name": "VRAM:メニュー",
+      "Description": "VRAM:メニュー(単位はMB)"
+    },
+    {
+      "Field": "vram_decal_rt",
+      "Name": "VRAM:DECAL_RT",
+      "Description": "VRAM:DECALレンダーターゲット(単位はMB)"
+    },
+    {
+      "Field": "vram_decal",
+      "Name": "VRAM:DECAL",
+      "Description": "VRAM:DECAL(単位はMB)"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "vram_other_tex",
+      "Name": "VRAM:その他 テクスチャ",
+      "Description": "VRAM:その他 モデル(単位はMB)"
+    },
+    {
+      "Field": "vram_other_mdl",
+      "Name": "VRAM:その他 モデル",
+      "Description": "VRAM:その他 テクスチャ(単位はMB)"
+    },
+    {
+      "Field": "havok_anim",
+      "Name": "HAVOK:アニメ",
+      "Description": "HAVOK:アニメ(単位はMB)"
+    },
+    {
+      "Field": "havok_ins",
+      "Name": "HAVOK:配置",
+      "Description": "HAVOK:配置(単位はMB)"
+    },
+    {
+      "Field": "havok_hit",
+      "Name": "HAVOK:ヒット",
+      "Description": "HAVOK:ヒット(単位はMB)"
+    },
+    {
+      "Field": "vram_other",
+      "Name": "VRAM:その他",
+      "Description": "VRAM:その他(単位はMB)"
+    },
+    {
+      "Field": "vram_detail_all",
+      "Name": "VRAM:合算値",
+      "Description": "VRAM:合算値(単位はMB)"
+    },
+    {
+      "Field": "vram_chr_and_parts",
+      "Name": "VRAM:キャラ&パーツ",
+      "Description": "VRAM:キャラとパーツ合算値(単位はMB)"
+    },
+    {
+      "Field": "havok_navimesh",
+      "Name": "HAVOK:ナビメッシュ",
+      "Description": "HAVOK:ナビメッシュ(単位はMB)"
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "予約領域",
+      "Description": "予約領域"
+    }
+  ]
+}

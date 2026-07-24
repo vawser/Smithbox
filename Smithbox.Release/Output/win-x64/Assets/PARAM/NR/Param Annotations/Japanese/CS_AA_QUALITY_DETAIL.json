@@ -1,0 +1,23 @@
+{
+  "Param": "CS_AA_QUALITY_DETAIL",
+  "Type": "CS_AA_QUALITY_DETAIL",
+  "Name": "CS_AA_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "AA有効",
+      "Description": "AA有効"
+    },
+    {
+      "Field": "forceFXAA2",
+      "Name": "強制的にFXAA2",
+      "Description": "強制的にFXAA2"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": ""
+    }
+  ]
+}

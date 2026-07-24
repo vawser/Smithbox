@@ -1,0 +1,83 @@
+{
+  "Param": "WEAPON_GEN_PARAM_ST",
+  "Type": "WEAPON_GEN_PARAM_ST",
+  "Name": "WEAPON_GEN_PARAM_ST",
+  "Description": "Determine the blood gem generation parameters for a weapon generation.",
+  "Fields": [
+    {
+      "Field": "wepParamId",
+      "Name": "Weapon ID",
+      "Description": "The item ID for the weapon used by this generation."
+    },
+    {
+      "Field": "gemSlotType_0",
+      "Name": "Blood Gem Shape: Slot 0",
+      "Description": "The blood gem shape type for slot 0."
+    },
+    {
+      "Field": "gemGenId_0",
+      "Name": "Blood Gem Effect: Slot 0",
+      "Description": "The blood gem effect generation for slot 0."
+    },
+    {
+      "Field": "gemSlotType_1",
+      "Name": "Blood Gem Shape: Slot 1",
+      "Description": "The blood gem shape type for slot 1."
+    },
+    {
+      "Field": "gemGenId_1",
+      "Name": "Blood Gem Effect: Slot 1",
+      "Description": "The blood gem effect generation for slot 1."
+    },
+    {
+      "Field": "gemSlotType_2",
+      "Name": "Blood Gem Shape: Slot 2",
+      "Description": "The blood gem shape type for slot 2."
+    },
+    {
+      "Field": "gemGenId_2",
+      "Name": "Blood Gem Effect: Slot 2",
+      "Description": "The blood gem effect generation for slot 2."
+    },
+    {
+      "Field": "gemSlotType_3",
+      "Name": "Blood Gem Shape: Slot 3",
+      "Description": "The blood gem shape type for slot 3."
+    },
+    {
+      "Field": "gemGenId_3",
+      "Name": "Blood Gem Effect: Slot 3",
+      "Description": "The blood gem effect generation for slot 3."
+    },
+    {
+      "Field": "gemSlotType_4",
+      "Name": "Blood Gem Shape: Slot 4",
+      "Description": "The blood gem shape type for slot 4."
+    },
+    {
+      "Field": "gemGenId_4",
+      "Name": "Blood Gem Effect: Slot 4",
+      "Description": "The blood gem effect generation for slot 4."
+    },
+    {
+      "Field": "equipableGemSegmentMask",
+      "Name": "Blood Gem Classification Mask",
+      "Description": "The classification mask used for this generation."
+    },
+    {
+      "Field": "reserveGemSlotNo_0",
+      "Name": "Reserved Blood Gem Slot: 0",
+      "Description": "The reversed blood gem slot for slot 0."
+    },
+    {
+      "Field": "reserveGemSlotNo_1",
+      "Name": "Reserved Blood Gem Slot: 1",
+      "Description": "The reversed blood gem slot for slot1."
+    },
+    {
+      "Field": "reserveGemSlotNo_2",
+      "Name": "Reserved Blood Gem Slot: 2",
+      "Description": "The reversed blood gem slot for slot 2."
+    }
+  ]
+}

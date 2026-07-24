@@ -1,0 +1,109 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECT_Enum_ProjectType_Undefined",
+      "Text": "Undefined"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DES",
+      "Text": "Demon's Souls"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS1",
+      "Text": "Dark Souls: Prepare to Die"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS1R",
+      "Text": "Dark Souls: Remastered"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS2",
+      "Text": "Dark Souls II"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS2S",
+      "Text": "Dark Souls II: Scholar of the First Sin"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DS3",
+      "Text": "Dark Souls III"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_BB",
+      "Text": "Bloodborne"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_SDT",
+      "Text": "Sekiro: Shadows Die Twice"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_ER",
+      "Text": "Elden Ring"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_AC6",
+      "Text": "Armored Core VI: Fires of Rubicon"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectType_NR",
+      "Text": "Elden Ring: Nightreign"
+    },
+    
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_None",
+      "Text": "None"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Cutscenes",
+      "Text": "Cutscenes"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Event_Flags",
+      "Text": "Event Flags"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Gparams",
+      "Text": "Graphics Params"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Pieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Names",
+      "Text": "Map Names"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Movies",
+      "Text": "Movies"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Particles",
+      "Text": "Particles"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Sounds",
+      "Text": "Sounds"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Talk_Scripts",
+      "Text": "Talk Scripts"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Time_Acts",
+      "Text": "Time Acts"
+    }
+  ]
+}

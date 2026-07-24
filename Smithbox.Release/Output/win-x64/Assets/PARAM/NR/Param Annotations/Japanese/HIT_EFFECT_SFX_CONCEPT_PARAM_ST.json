@@ -1,0 +1,78 @@
+{
+  "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "鉄製：概念１",
+      "Description": "鉄製：概念１"
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "鉄製：概念２",
+      "Description": "鉄製：概念２"
+    },
+    {
+      "Field": "atkLeather_1",
+      "Name": "革製：概念１",
+      "Description": "革：概念１"
+    },
+    {
+      "Field": "atkLeather_2",
+      "Name": "革製：概念２",
+      "Description": "革：概念２"
+    },
+    {
+      "Field": "atkWood_1",
+      "Name": "木製：概念１",
+      "Description": "木製：概念１"
+    },
+    {
+      "Field": "atkWood_2",
+      "Name": "木製：概念２",
+      "Description": "木製：概念２"
+    },
+    {
+      "Field": "atkBody_1",
+      "Name": "肉：概念１",
+      "Description": "肉：概念１"
+    },
+    {
+      "Field": "atkBody_2",
+      "Name": "肉：概念２",
+      "Description": "肉：概念２"
+    },
+    {
+      "Field": "atkStone_1",
+      "Name": "石製：概念１",
+      "Description": "蝕：概念１"
+    },
+    {
+      "Field": "atkStone_2",
+      "Name": "石製：概念２",
+      "Description": "蝕：概念２"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "なし：概念１",
+      "Description": "なし：概念１"
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "なし：概念２",
+      "Description": "なし：概念２"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "reserved0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundTargetTryApproachTime",
+      "Name": "Sound - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "searchTargetTryApproachTime",
+      "Name": "Search - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "memoryTargetTryApproachTime",
+      "Name": "Memory - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "reserved5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "activateChrByTime_PhantomId",
+      "Name": "Activate Chr by Time - Phantom ID",
+      "Description": "Phantom shader ID used for directing the appearance and disappearance of enemies placed in a specific time zone"
+    },
+    {
+      "Field": "findUnfavorableFailedPointDist",
+      "Name": "Find Unfavourable Failed Point Distance",
+      "Description": "Distance to generate an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+    },
+    {
+      "Field": "findUnfavorableFailedPointHeight",
+      "Name": "Find Unfavourable Failed Point Height",
+      "Description": "The height that causes an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+    },
+    {
+      "Field": "zone1InitialAggro",
+      "Name": "Zone 1 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 1."
+    },
+    {
+      "Field": "zone2InitialAggro",
+      "Name": "Zone 2 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 2."
+    },
+    {
+      "Field": "zone3InitialAggro",
+      "Name": "Zone 3 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 3."
+    },
+    {
+      "Field": "zone4InitialAggro",
+      "Name": "Zone 4 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 4."
+    },
+    {
+      "Field": "distanceThreshold1",
+      "Name": "Distance Threshold 1",
+      "Description": "Distance threshold separating Zone 1 and Zone 2."
+    },
+    {
+      "Field": "distanceThreshold2",
+      "Name": "Distance Threshold 2",
+      "Description": "Distance threshold separating Zone 2 and Zone 3."
+    },
+    {
+      "Field": "distanceThreshold3",
+      "Name": "Distance Threshold 3",
+      "Description": "Distance threshold separating Zone 3 and Zone 4."
+    },
+    {
+      "Field": "dmgLevel0Aggro",
+      "Name": "DMG Level 0 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 0: No Impact."
+    },
+    {
+      "Field": "dmgLevel1Aggro",
+      "Name": "DMG Level 1 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 1: Small Impact."
+    },
+    {
+      "Field": "dmgLevel2Aggro",
+      "Name": "DMG Level 2 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 2: Medium Impact."
+    },
+    {
+      "Field": "dmgLevel3Aggro",
+      "Name": "DMG Level 3 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 3: Large Impact."
+    },
+    {
+      "Field": "dmgLevel4Aggro",
+      "Name": "DMG Level 4 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 4: Medium Blow."
+    },
+    {
+      "Field": "dmgLevel5Aggro",
+      "Name": "DMG Level 5 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 5: Push."
+    },
+    {
+      "Field": "dmgLevel6Aggro",
+      "Name": "DMG Level 6 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 6: Strike."
+    },
+    {
+      "Field": "dmgLevel7Aggro",
+      "Name": "DMG Level 7 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 7: Small Blow."
+    },
+    {
+      "Field": "dmgLevel8Aggro",
+      "Name": "DMG Level 8 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 8: Minimal."
+    },
+    {
+      "Field": "dmgLevel9Aggro",
+      "Name": "DMG Level 9 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 9: Uppercut."
+    },
+    {
+      "Field": "dmgLevel10Aggro",
+      "Name": "DMG Level 10 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 10: Blow Backward."
+    },
+    {
+      "Field": "dmgLevel11Aggro",
+      "Name": "DMG Level 11 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 11: Breath."
+    },
+    {
+      "Field": "offTargetMultiplier1",
+      "Name": "Off-Target Multiplier 1",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 1 is reached."
+    },
+    {
+      "Field": "offTargetMultiplier2",
+      "Name": "Off-Target Multiplier 2",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 2 is reached."
+    },
+    {
+      "Field": "offTargetMultiplier3",
+      "Name": "Off-Target Multiplier 3",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 3 is reached."
+    },
+    {
+      "Field": "offTargetTimePoint1",
+      "Name": "Off-Target Time Point 1",
+      "Description": "First elapsed time point after the off-target aggro timer begins."
+    },
+    {
+      "Field": "offTargetTimePoint2",
+      "Name": "Off-Target Time Point 2",
+      "Description": "Second elapsed time point after the off-target aggro timer begins."
+    },
+    {
+      "Field": "offTargetTimePoint3",
+      "Name": "Off-Target Time Point 3",
+      "Description": "Third elapsed time point after the off-target aggro timer begins."
+    },
+    {
+      "Field": "aggroTransferAdditionalValue",
+      "Name": "Aggro Transfer Additional Value",
+      "Description": "Additional aggro applied when aggro is transferred to a new target."
+    },
+    {
+      "Field": "aggroTransferAdditionalValueDuration",
+      "Name": "Additional Aggro Duration",
+      "Description": "Time window during which aggro transfer additional value is applied."
+    },
+    {
+      "Field": "playerReviveDamageAggro",
+      "Name": "Revive Damage Extra Aggro",
+      "Description": "Amount of extra aggro generated each interval after player deals Revive Damage."
+    },
+    {
+      "Field": "reviveDamageBonusAggroInterval",
+      "Name": "Revive Damage Extra Aggro Interval",
+      "Description": "Time interval between each extra aggro tick after Revive Damage is triggered."
+    },
+    {
+      "Field": "reviveDamageBonusAggroDuration",
+      "Name": "Revive Damage Extra Aggro Duration",
+      "Description": "Total duration during which periodic extra aggro is generated after player deals Revive Damage."
+    },
+    {
+      "Field": "reserved18",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

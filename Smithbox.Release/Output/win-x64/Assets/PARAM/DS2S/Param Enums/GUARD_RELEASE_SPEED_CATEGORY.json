@@ -1,0 +1,47 @@
+{
+  "Key": "GUARD_RELEASE_SPEED_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARD_RELEASE_SPEED_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fast"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very Slow"
+        }
+      ]
+    }
+  ]
+}

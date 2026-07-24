@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <dryRate />
+        <metalDryRate />
+        <wetParamId  Enum="CHR_WET_TYPE"/>
+        <dryType  Enum="CHR_WET_DRY_TYPE"/>
+        <aReserved />
+    </Field>
+</PARAMMETA>

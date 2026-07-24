@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an environmental map effect box in the map." />
+  
+  <Field>
+    <EnableDist
+    AltName="Enable Distance"
+    Wiki="Distance from camera required before enabling envmap. 0 = always enabled." />
+    
+    <TransitionDist
+    AltName="Transition Distance"
+    Wiki="Distance it takes for an envmap to fully transition into view." />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki=""
+    IsBool="" />
+    
+    <UnkT09
+    AltName="Unknown: 0x9"
+    Wiki=""
+    IsBool="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki=""
+    IsBool="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

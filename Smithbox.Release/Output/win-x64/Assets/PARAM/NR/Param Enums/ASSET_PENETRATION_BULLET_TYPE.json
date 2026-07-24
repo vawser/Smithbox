@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_PENETRATION_BULLET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_PENETRATION_BULLET_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 4"
+        }
+      ]
+    }
+  ]
+}

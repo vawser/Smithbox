@@ -1,0 +1,43 @@
+{
+  "Param": "CHARMAKEMENUTOP_PARAM_ST",
+  "Type": "CHARMAKEMENUTOP_PARAM_ST",
+  "Name": "CHARMAKEMENUTOP_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "CommandID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TableID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ViewCondition",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PreviewMode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

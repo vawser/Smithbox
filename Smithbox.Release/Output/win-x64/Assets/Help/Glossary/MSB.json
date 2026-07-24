@@ -1,0 +1,18 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "MSB",
+    "Tags": [
+        "Format"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A map is contained with in a .MSB file.",
+        "The MSB format contains with position and some configuration of everything which exists in the game world.",
+        "",
+        "Many of these things have entity ids, which allows in-game scripts to interact with things by id.",
+        "",
+        "MSB names so far are structured like m30_01_00_00, with the first two numbers as a unique area and block id, and the last digit sometimes incrementing for different versions."
+    ]
+}

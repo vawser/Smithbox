@@ -1,0 +1,389 @@
+{
+  "Name": "s17_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_Outdoors"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0_indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0_Prison"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0_cave"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0_Aisle to the room of the sheath"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0_Sheath's room"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0_Old writing room"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0_Woods"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B0_Indoor object"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0_Outdoor _ Character"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0_Indoor_characters"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0_Prick character"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0_Cave_character"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0_Passage of a sheath's room _ Character"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B0_Sheath room _ character"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B0_Character of old library room"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B0_Mori_Character"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PolyG-scn170000-Character"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "PolyG-scn170000-background"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

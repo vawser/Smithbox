@@ -1,0 +1,47 @@
+{
+  "Key": "GOODS_SUPPLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GOODS_SUPPLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fill to HP Flask Limit"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fill to MP Flask Limit"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fill to Inventory Limit"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1493 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Head] HD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Head] HD-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Head] DF-HD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Head] NACHTREIHER/44E"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[Head] KASUAR/44Z"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Head] VP-44S"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Head] VP-44D"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Head] VE-44A"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[Head] VE-44B"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Head] 20-081 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Head] 20-082 MIND BETA"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Head] EL-TH-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[Head] AH-J-124 BASHO"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[Head] HC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[Head] HC-2000 FINDER EYE"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[Head] HC-2000/BC SHADE EYE"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "[Head] IB-C03H: HAL 826"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "[Head] EL-PH-00 ALBA"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[Head] AH-J-124/RC JAILBREAK"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Core] BD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Core] DF-BD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Core] NACHTREIHER/40E"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Core] VP-40S"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Core] VE-40A"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Core] 07-061 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Core] EL-TC-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "[Core] AC-J-120 BASHO"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "[Core] CC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "[Core] CC-2000 ORBITER"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Core] IB-C03C: HAL 826"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Core] EL-PC-00 ALBA"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Arms] AR-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Arms] DF-AR-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Arms] NACHTREIHER/46E"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Arms] VP-46S"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Arms] VP-46D"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Arms] VE-46A"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Arms] 04-101 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Arms] EL-TA-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Arms] AA-J-123 BASHO"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[Arms] AC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Arms] AC-2000 TOOL ARM"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Arms] IB-C03A: HAL 826"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Arms] EL-PA-00 ALBA"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Legs] LG-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Legs] DF-LG-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Legs] NACHTREIHER/42E"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Legs] VP-422"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Legs] VE-42A"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Legs] 06-041 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Legs] EL-TL-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "[Legs] AL-J-121 BASHO"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "[Legs] 2C-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "[Legs] 2C-2000 CRAWLER"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Legs] IB-C03L: HAL 826"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[Legs] EL-PL-00 ALBA"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Legs] KASUAR/42Z"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Legs] 06-042 MIND BETA"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Legs] RC-2000 SPRING CHICKEN"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Legs] VP-424"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Legs] LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Legs] VE-42B"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[Legs] EL-TL-11 FORTALEZA"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Booster] BST-G2/P04"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "BS_A_1080 Hekanto Cale Booster"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[Booster] BC-0600 12345"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "[Booster] ALULA/21E"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "[Booster] FLUEGEL/21Z"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "[Booster] BUERZEL/21D"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "[Booster] BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "[Booster] BC-0200 GRIDWALKER"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "[Booster] IB-C03B: NGI 001"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "[Booster] IA-C01B: GILLS"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[Booster] AB-J-137 KIKAKU"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "[Booster] BC-0400 MULE"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "[Booster] BST-G1/P10"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "BS_A_8060 Yanase Booster"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Generator] AG-J-098 JOSO"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[Generator] DF-GN-02 LING-TAI"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "[Generator] DF-GN-06 MING-TANG"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "[Generator] VP-20S"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "[Generator] VP-20C"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "[Generator] AG-E-013 YABA"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "[Generator] VE-20A"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "[Generator] VE-20B"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "[Generator] IA-C01G: AORTA"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "[Generator] IB-C03G: NGI 000"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[FCS] FCS-G1/P01"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[FCS] FCS-G2/P05"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "[FCS] FCS-G2/P10SLT"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "[FCS] FCS-G2/P12SML"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "[FCS] FC-006 ABBOT"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "[FCS] FC-008 TALBOT"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "[FCS] VE-21A"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "[FCS] VE-21B"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "[FCS] IA-C01F: OCELLUS"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "[FCS] IB-C03F: WLT 001"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Weapon] MA-J-200 RANSETSU-RF"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Weapon] LR-036 CURTIS"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "[Weapon] LR-037 HARRIS"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "[Weapon] MA-J-201 RANSETSU-AR"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "[Weapon] RF-024 TURNER"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "[Weapon] RF-025 SCUDDER"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "[Weapon] MA-E-210 ETSUJIN"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "[Weapon] MG-014 LUDLOW"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "[Weapon] DF-MG-02 CHANG-CHEN"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "[Weapon] DF-GA-08 HU-BEN"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "[Weapon] LITTLE GEM"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "[Weapon] MAJESTIC"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "[Weapon] DF-BA-06 XUAN-GE"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "[Weapon] WR-0777 SWEET SIXTEEN"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "[Weapon] SG-026 HALDEMAN"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "[Weapon] SG-027 ZIMMERMAN"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "[Weapon] DF-GR-07 GOU-CHEN"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "[Weapon] DIZZY"
+      ]
+    },
+    {
+      "ID": 11180,
+      "Entries": [
+        "[Weapon] EL-PW-00 VIENTO"
+      ]
+    },
+    {
+      "ID": 11190,
+      "Entries": [
+        "[Weapon] MA-E-211 SAMPU"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "[Weapon] HG-003 COQUILLETT"
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "[Weapon] HG-004 DUCKETT"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "[Weapon] MA-T-223 KYORIKU"
+      ]
+    },
+    {
+      "ID": 11230,
+      "Entries": [
+        "[Weapon] MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 11240,
+      "Entries": [
+        "[Weapon] WS-1200 THERAPIST"
+      ]
+    },
+    {
+      "ID": 11250,
+      "Entries": [
+        "[Weapon] IRIDIUM"
+      ]
+    },
+    {
+      "ID": 11260,
+      "Entries": [
+        "[Weapon] VP-66LH"
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        "[Weapon] VP-66LR"
+      ]
+    },
+    {
+      "ID": 11280,
+      "Entries": [
+        "[Weapon] VE-66LRA"
+      ]
+    },
+    {
+      "ID": 11290,
+      "Entries": [
+        "[Weapon] Vvc-760PR"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "[Weapon] HI-16: GU-Q1"
+      ]
+    },
+    {
+      "ID": 11310,
+      "Entries": [
+        "[Weapon] VE-66LRB"
+      ]
+    },
+    {
+      "ID": 11320,
+      "Entries": [
+        "[Weapon] WB-0000 BAD COOK"
+      ]
+    },
+    {
+      "ID": 11330,
+      "Entries": [
+        "[Weapon] 44-141 JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 11340,
+      "Entries": [
+        "Machine gun for escape mission_Standard type"
+      ]
+    },
+    {
+      "ID": 11350,
+      "Entries": [
+        "Shotgun for escape mission_Lucky 13"
+      ]
+    },
+    {
+      "ID": 11360,
+      "Entries": [
+        "[Weapon] MA-J-200 RANSETSU-RF"
+      ]
+    },
+    {
+      "ID": 11370,
+      "Entries": [
+        "[Weapon] LR-036 CURTIS"
+      ]
+    },
+    {
+      "ID": 11380,
+      "Entries": [
+        "[Weapon] LR-037 HARRIS (Left)"
+      ]
+    },
+    {
+      "ID": 11390,
+      "Entries": [
+        "[Weapon] MA-J-201 RANSETSU-AR"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "[Weapon] RF-024 TURNER"
+      ]
+    },
+    {
+      "ID": 11410,
+      "Entries": [
+        "[Weapon] RF-025 SCUDDER (Left)"
+      ]
+    },
+    {
+      "ID": 11420,
+      "Entries": [
+        "[Weapon] MA-E-210 ETSUJIN (Left)"
+      ]
+    },
+    {
+      "ID": 11430,
+      "Entries": [
+        "[Weapon] MG-014 LUDLOW"
+      ]
+    },
+    {
+      "ID": 11440,
+      "Entries": [
+        "[Weapon] DF-MG-02 CHANG-CHEN (Left)"
+      ]
+    },
+    {
+      "ID": 11450,
+      "Entries": [
+        "[Weapon] DF-GA-08 HU-BEN"
+      ]
+    },
+    {
+      "ID": 11460,
+      "Entries": [
+        "[Weapon] LITTLE GEM (Left)"
+      ]
+    },
+    {
+      "ID": 11470,
+      "Entries": [
+        "[Weapon] MAJESTIC (Left)"
+      ]
+    },
+    {
+      "ID": 11480,
+      "Entries": [
+        "[Weapon] DF-BA-06 XUAN-GE"
+      ]
+    },
+    {
+      "ID": 11490,
+      "Entries": [
+        "[Weapon] WR-0777 SWEET SIXTEEN (Left)"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "[Weapon] SG-026 HALDEMAN"
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "[Weapon] SG-027 ZIMMERMAN (Left)"
+      ]
+    },
+    {
+      "ID": 11520,
+      "Entries": [
+        "[Weapon] DF-GR-07 GOU-CHEN"
+      ]
+    },
+    {
+      "ID": 11530,
+      "Entries": [
+        "[Weapon] DIZZY (Left)"
+      ]
+    },
+    {
+      "ID": 11540,
+      "Entries": [
+        "[Weapon] EL-PW-00 VIENTO (Left)"
+      ]
+    },
+    {
+      "ID": 11550,
+      "Entries": [
+        "[Weapon] MA-E-211 SAMPU (Left)"
+      ]
+    },
+    {
+      "ID": 11560,
+      "Entries": [
+        "[Weapon] HG-003 COQUILLETT"
+      ]
+    },
+    {
+      "ID": 11570,
+      "Entries": [
+        "[Weapon] HG-004 DUCKETT (Left)"
+      ]
+    },
+    {
+      "ID": 11580,
+      "Entries": [
+        "[Weapon] MA-T-223 KYORIKU (Left)"
+      ]
+    },
+    {
+      "ID": 11590,
+      "Entries": [
+        "[Weapon] MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "[Weapon] WS-1200 THERAPIST (Left)"
+      ]
+    },
+    {
+      "ID": 11610,
+      "Entries": [
+        "[Weapon] IRIDIUM"
+      ]
+    },
+    {
+      "ID": 11620,
+      "Entries": [
+        "[Weapon] VP-66LH"
+      ]
+    },
+    {
+      "ID": 11630,
+      "Entries": [
+        "[Weapon] VP-66LR"
+      ]
+    },
+    {
+      "ID": 11640,
+      "Entries": [
+        "[Weapon] VE-66LRA (Left)"
+      ]
+    },
+    {
+      "ID": 11650,
+      "Entries": [
+        "[Weapon] Vvc-760PR"
+      ]
+    },
+    {
+      "ID": 11660,
+      "Entries": [
+        "[Weapon] HI-16: GU-Q1"
+      ]
+    },
+    {
+      "ID": 11670,
+      "Entries": [
+        "[Weapon] VE-66LRB (Left)"
+      ]
+    },
+    {
+      "ID": 11680,
+      "Entries": [
+        "[Weapon] WB-0000 BAD COOK (Left)"
+      ]
+    },
+    {
+      "ID": 11690,
+      "Entries": [
+        "[Weapon] 44-141 JVLN ALPHA (Left)"
+      ]
+    },
+    {
+      "ID": 11700,
+      "Entries": [
+        "Bazooka for jailbreak mission_Standard type"
+      ]
+    },
+    {
+      "ID": 11710,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke)"
+      ]
+    },
+    {
+      "ID": 11720,
+      "Entries": [
+        "[Weapon] IA-C01W2: MOONLIGHT"
+      ]
+    },
+    {
+      "ID": 11730,
+      "Entries": [
+        "[Weapon] HI-32: BU-TT/A"
+      ]
+    },
+    {
+      "ID": 11740,
+      "Entries": [
+        "[Weapon] Vvc-770LB"
+      ]
+    },
+    {
+      "ID": 11750,
+      "Entries": [
+        "[Weapon] Vvc-774LS"
+      ]
+    },
+    {
+      "ID": 11760,
+      "Entries": [
+        "[Weapon] VP-67LD"
+      ]
+    },
+    {
+      "ID": 11770,
+      "Entries": [
+        "[Weapon] WB-0010 DOUBLE TROUBLE"
+      ]
+    },
+    {
+      "ID": 11780,
+      "Entries": [
+        "[Weapon] 44-143 HMMR"
+      ]
+    },
+    {
+      "ID": 11790,
+      "Entries": [
+        "[Weapon] PB-033M ASHMEAD"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "[Weapon] VP-67EB"
+      ]
+    },
+    {
+      "ID": 11810,
+      "Entries": [
+        "[Weapon] DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "[Weapon] SI-24: SU-Q5"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "[Weapon] VP-61PS"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "[Weapon] Vvc-703PM"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "[Weapon] Vvc-70VPM"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "[Weapon] BML-G3/P05ACT-02"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "[Weapon] BML-G2/P03MLT-06"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "[Weapon] BML-G1/P07VTC-12"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "[Weapon] 45-091 JVLN BETA"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "[Weapon] BML-G1/P32DUO-03"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "[Weapon] BML-G2/P19SPL-12"
+      ]
+    },
+    {
+      "ID": 13080,
+      "Entries": [
+        "[Weapon] SONGBIRDS"
+      ]
+    },
+    {
+      "ID": 13090,
+      "Entries": [
+        "[Weapon] SB-033M MORLEY"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "[Weapon] EARSHOT"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "[Weapon] FASAN/60E"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "[Weapon] KRANICH/60Z"
+      ]
+    },
+    {
+      "ID": 13130,
+      "Entries": [
+        "[Weapon] VE-60SNA"
+      ]
+    },
+    {
+      "ID": 13140,
+      "Entries": [
+        "[Weapon] Vvc-703PM"
+      ]
+    },
+    {
+      "ID": 13150,
+      "Entries": [
+        "[Weapon] Vvc-70VPM"
+      ]
+    },
+    {
+      "ID": 13160,
+      "Entries": [
+        "[Weapon] BML-G3/P05ACT-02 (Left)"
+      ]
+    },
+    {
+      "ID": 13170,
+      "Entries": [
+        "[Weapon] BML-G2/P03MLT-06 (Left)"
+      ]
+    },
+    {
+      "ID": 13180,
+      "Entries": [
+        "[Weapon] BML-G1/P07VTC-12 (Left)"
+      ]
+    },
+    {
+      "ID": 13190,
+      "Entries": [
+        "[Weapon] 45-091 JVLN BETA (Left)"
+      ]
+    },
+    {
+      "ID": 13200,
+      "Entries": [
+        "[Weapon] BML-G1/P32DUO-03 (Left)"
+      ]
+    },
+    {
+      "ID": 13210,
+      "Entries": [
+        "[Weapon] BML-G2/P19SPL-12 (Left)"
+      ]
+    },
+    {
+      "ID": 13220,
+      "Entries": [
+        "[Weapon] SONGBIRDS"
+      ]
+    },
+    {
+      "ID": 13230,
+      "Entries": [
+        "[Weapon] EL-PW-01 TRUENO (Left)"
+      ]
+    },
+    {
+      "ID": 13240,
+      "Entries": [
+        "[test] Needle missile_typeB"
+      ]
+    },
+    {
+      "ID": 13250,
+      "Entries": [
+        "[Weapon] BML-G1/P29CNT (Left)"
+      ]
+    },
+    {
+      "ID": 13260,
+      "Entries": [
+        "[test] Container missile_typeB"
+      ]
+    },
+    {
+      "ID": 13270,
+      "Entries": [
+        "[Weapon] WR-0999 DELIVERY BOY (Left)"
+      ]
+    },
+    {
+      "ID": 13280,
+      "Entries": [
+        "[test] Cluster missile_typeB"
+      ]
+    },
+    {
+      "ID": 13290,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst)"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "[Weapon] Vvc-700LD (Left)"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka)"
+      ]
+    },
+    {
+      "ID": 13320,
+      "Entries": [
+        "[Weapon] VP-60LT (Left)"
+      ]
+    },
+    {
+      "ID": 13330,
+      "Entries": [
+        "[Weapon] SB-033M MORLEY (Left)"
+      ]
+    },
+    {
+      "ID": 13340,
+      "Entries": [
+        "[Weapon] EARSHOT (Left)"
+      ]
+    },
+    {
+      "ID": 13350,
+      "Entries": [
+        "[Weapon] FASAN/60E (Left)"
+      ]
+    },
+    {
+      "ID": 13360,
+      "Entries": [
+        "[Weapon] KRANICH/60Z (Left)"
+      ]
+    },
+    {
+      "ID": 13370,
+      "Entries": [
+        "[Weapon] VE-60SNA (Left)"
+      ]
+    },
+    {
+      "ID": 13380,
+      "Entries": [
+        "Auxiliary booster_EN silhouette"
+      ]
+    },
+    {
+      "ID": 13390,
+      "Entries": [
+        "[Weapon] IA-C01W3: AURORA (Left)"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "Auxiliary booster_live bullet silhouette"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "[Booster] ALULA/21E"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "[Booster] FLUEGEL/21Z"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "[Booster] BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "[Booster] BST-G1/P10"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "[FCS] FCS-G1/P01"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "[FCS] FCS-G2/P05"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        "[Generator] AG-J-098 JOSO"
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        "[Generator] DF-GN-02 LING-TAI"
+      ]
+    },
+    {
+      "ID": 900008,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(HD)2"
+      ]
+    },
+    {
+      "ID": 900009,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(BD)2"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "[For Ascentest] Mirage AC_SB(AM)2"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "[For Ascentest] Mirage AC_TR(LG)2_M"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_SB(HD)2"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_SB(BD)2"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "[For Ascentest] Heavy live bullet AC_SB(AM)2"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "[For Ascentest] Heavy bullet AC_TR(LG)2_M"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "FNR left shoulder_orbit cannon"
+      ]
+    },
+    {
+      "ID": 900017,
+      "Entries": [
+        "FNR\u3000Left shoulder_surface control missile"
+      ]
+    },
+    {
+      "ID": 900018,
+      "Entries": [
+        "FNR right hand_silencer rifle"
+      ]
+    },
+    {
+      "ID": 900019,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (left dummy)"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "FNR left hand_blade"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "FNR left hand_laser whip"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "FNR left hand_chain hammer (WP_A_9210)"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "FNR left hand pile"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "80_Nakanishi test shield"
+      ]
+    }
+  ]
+}

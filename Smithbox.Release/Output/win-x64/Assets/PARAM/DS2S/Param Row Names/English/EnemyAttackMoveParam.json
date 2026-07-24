@@ -1,0 +1,743 @@
+{
+  "Name": "EnemyAttackMoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Template -- テンプレート"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Walking 1 -- 歩行 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Walking 2 -- 歩行 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Walking 3 -- 歩行 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Walking 4 -- 歩行 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Walking 5 -- 歩行 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Walking 6 -- 歩行 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Walking 7 -- 歩行 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Walking 8 -- 歩行 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Walking 9 -- 歩行 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Walking 10 -- 歩行 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Walking 11 -- 歩行 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Walking 12 -- 歩行 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Walking 13 -- 歩行 13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Walking 14 -- 歩行 14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Walking 15 -- 歩行 15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Walking 16 -- 歩行 16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Walking 17 -- 歩行 17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Walking 18 -- 歩行 18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Walking 19 -- 歩行 19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "On the spot 1 -- その場 1"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "On the spot 2 -- その場 2"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "On the spot 3 -- その場 3"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "On the spot 4 -- その場 4"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "On the spot 5 -- その場 5"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "On the spot 6 -- その場 6"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Place 7 -- その場 7"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "On the spot 8 -- その場 8"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "On the spot 9 -- その場 9"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "On the spot 10 -- その場 10"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Place 11 -- その場 11"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Place 12 -- その場 12"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Place 13 -- その場 13"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Place 14 -- その場 14"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Place 15 -- その場 15"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Place 16 -- その場 16"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Place 17 -- その場 17"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Place 18 -- その場 18"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Place 19 -- その場 19"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "On the spot 20 -- その場 20"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Place 21 -- その場 21"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "On the spot 22 -- その場 22"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Place 23 -- その場 23"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Place 24 -- その場 24"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Place 25 -- その場 25"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Place 26 -- その場 26"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Place 27 -- その場 27"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Place 28 -- その場 28"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Shooting 1 -- 射撃 1"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Shooting 2 -- 射撃 2"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shooting 3 -- 射撃 3"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shooting 4 -- 射撃 4"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Shooting 5 -- 射撃 5"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Shooting 6 -- 射撃 6"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shooting 7 -- 射撃 7"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Slow walking 1 -- 低速歩行 1"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Slow Walking 2 -- 低速歩行 2"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Slow Walking 3 -- 低速歩行 3"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Slow walking 4 -- 低速歩行 4"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Slow walking 5 -- 低速歩行 5"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Slow Walking 6 -- 低速歩行 6"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Slow Walking 7 -- 低速歩行 7"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Slow walking 8 -- 低速歩行 8"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Slow Walking 9 -- 低速歩行 9"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Slow Walking 10 -- 低速歩行10"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mirror Knight 1 -- ミラーナイト1"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Silver Chariot 1 -- シルバーチャリオット1"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Ornstein Action 18 Boost Thrust -- オーンスタイン\u3000行動18\u3000ブースト突き"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Kingdom Heavy Warrior 1 -- 王国重戦士1"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Kingdom Heavy Warrior 2 -- 王国重戦士2"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Wheel Skeleton 1 -- 車輪スケルトン1"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Man-made Immortal 1 -- 人造不死人1"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Rogue One -- ローグ1"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Small general purpose 1 speed 1.0x swivel 120 -- 小型汎用1\u3000速度1.0倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Small general purpose 2 speed 1.0x swivel 180 -- 小型汎用2\u3000速度1.0倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Small general purpose 10 speed 1.2x swivel 120 -- 小型汎用10\u3000速度1.2倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Small general purpose 11 speed 1.2x swivel 180 -- 小型汎用11\u3000速度1.2倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Small general purpose 20 speed 1.4x swivel 120 -- 小型汎用20\u3000速度1.4倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Small general purpose 21 speed 1.4x swivel 180 -- 小型汎用21\u3000速度1.4倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Small general purpose 30 speed 1.6x swivel 120 -- 小型汎用30\u3000速度1.6倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "Small general purpose 31 speed 1.6x swivel 180 -- 小型汎用31\u3000速度1.6倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Small stop 1 speed 1.0x turning 120 -- 小型中止有1\u3000速度1.0倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Small stop 2 speed 1.0x swivel 180 -- 小型中止有2\u3000速度1.0倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Small stop 10 speed 1.2x turning 120 -- 小型中止有10\u3000速度1.2倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Small stop 11 speed 1.2x swivel 180 -- 小型中止有11\u3000速度1.2倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Small stop 20 speed 1.4x swivel 120 -- 小型中止有20\u3000速度1.4倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Small stop 21 speed 1.4x swivel 180 -- 小型中止有21\u3000速度1.4倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Small stop 30 speed 1.6x turning 120 -- 小型中止有30\u3000速度1.6倍\u3000旋回120"
+      ]
+    },
+    {
+      "ID": 631,
+      "Entries": [
+        "Small stop 31 speed 1.6x swivel 180 -- 小型中止有31\u3000速度1.6倍\u3000旋回180"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Boss General Purpose 1 Speed 1.0x Attack Swivel 120 -- ボス汎用1\u3000速度1.0倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Boss General Purpose 2 Speed 1.0x Attack Swivel 180 -- ボス汎用2\u3000速度1.0倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Boss General Purpose 3 Speed 1.0x Attack Swivel 240 -- ボス汎用3\u3000速度1.0倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Boss General Purpose 4 Speed 1.0x Attack Swivel 90 -- ボス汎用4\u3000速度1.0倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Boss General Purpose 10 Speed 1.2x Attack Swivel 120 -- ボス汎用10\u3000速度1.2倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Boss General Purpose 11 Speed 1.2x Attack Swivel 180 -- ボス汎用11\u3000速度1.2倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Boss General Purpose 12 Speed 1.2x Attack Swivel 240 -- ボス汎用12\u3000速度1.2倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Boss General Purpose 13 Speed 1.2x Attack Swivel 90 -- ボス汎用13\u3000速度1.2倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Boss General Purpose 20 Speed 1.4x Attack Swivel 120 -- ボス汎用20\u3000速度1.4倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Boss General Purpose 21 Speed 1.4x Attack Swivel 180 -- ボス汎用21\u3000速度1.4倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Boss General Purpose 22 Speed 1.4x Attack Swivel 240 -- ボス汎用22\u3000速度1.4倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "Boss General Purpose 23 Speed 1.4x Attack Swivel 90 -- ボス汎用23\u3000速度1.4倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Boss General Purpose 30 Speed 1.6x Attack Swivel 120 -- ボス汎用30\u3000速度1.6倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Boss General Purpose 31 Speed 1.6x Attack Swivel 180 -- ボス汎用31\u3000速度1.6倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "Boss General Purpose 32 Speed 1.6x Attack Swivel 240 -- ボス汎用32\u3000速度1.6倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Boss General Purpose 33 Speed 1.6x Attack Swivel 90 -- ボス汎用33\u3000速度1.6倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Boss General Purpose 40 Speed 1.8x Attack Swivel 120 -- ボス汎用40\u3000速度1.8倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Boss General Purpose 41 Speed 1.8x Attack Swivel 180 -- ボス汎用41\u3000速度1.8倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "Boss General Purpose 42 Speed 1.8x Attack Swivel 240 -- ボス汎用42\u3000速度1.8倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "Boss General Purpose 43 Speed 1.8x Attack Swivel 90 -- ボス汎用43\u3000速度1.8倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Boss General Purpose 50 Speed 2.0x Attack Swivel 120 -- ボス汎用50\u3000速度2.0倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Boss General Purpose 51 Speed 2.0x Attack Swivel 180 -- ボス汎用51\u3000速度2.0倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "Boss General Purpose 52 Speed 2.0x Attack Swivel 240 -- ボス汎用52\u3000速度2.0倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "Boss General Purpose 53 Speed 2.0x Attack Swivel 90 -- ボス汎用53\u3000速度2.0倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Boss General Purpose 60 Speed 0.8x Attack Swivel 120 -- ボス汎用60\u3000速度0.8倍\u3000攻撃旋回120"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Boss General Purpose 61 Speed 0.8x Attack Swivel 180 -- ボス汎用61\u3000速度0.8倍\u3000攻撃旋回180"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Boss General Purpose 62 Speed 0.8x Attack Swivel 240 -- ボス汎用62\u3000速度0.8倍\u3000攻撃旋回240"
+      ]
+    },
+    {
+      "ID": 1630,
+      "Entries": [
+        "Boss General Purpose 63 Speed 0.8x Attack Swivel 90 -- ボス汎用63\u3000速度0.8倍\u3000攻撃旋回90"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Where the right foot 120 turn Damipoli 5 -- その場 右足120旋回\u3000ダミポリ5"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Where the right foot 180 turn Damipoli 5 -- その場 右足180旋回\u3000ダミポリ5"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Where left foot 120 turn Damipoli 6 -- その場 左足120旋回\u3000ダミポリ6"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Where left foot 180 turn Damipoli 6 -- その場 左足180旋回\u3000ダミポリ6"
+      ]
+    }
+  ]
+}

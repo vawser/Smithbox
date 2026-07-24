@@ -1,0 +1,308 @@
+{
+  "Key": "PLAYER_WEAPON_STANCE_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_WEAPON_STANCE_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "204110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "204111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Stance - Torch"
+        }
+      ]
+    },
+    {
+      "Key": "204113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: 1H Stance - Binoculars"
+        }
+      ]
+    },
+    {
+      "Key": "204310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - 2H Position"
+        }
+      ]
+    },
+    {
+      "Key": "204610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist: DW 2H Position"
+        }
+      ]
+    },
+    {
+      "Key": "214110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: 1H Position"
+        }
+      ]
+    },
+    {
+      "Key": "214310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: 2H Ready"
+        }
+      ]
+    },
+    {
+      "Key": "214610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger: DW 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "244110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 1H Position"
+        }
+      ]
+    },
+    {
+      "Key": "244310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword: 2H Position"
+        }
+      ]
+    },
+    {
+      "Key": "254110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "254310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "254610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear: DW 2H: Stand"
+        }
+      ]
+    },
+    {
+      "Key": "294310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "364110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "364111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 1H Stance (Thick)" 
+        }
+      ]
+    },
+    {
+      "Key": "364210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 2H Position" 
+        }
+      ]
+    },
+    {
+      "Key": "364310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 2H Stance" 
+        }
+      ]
+    },
+    {
+      "Key": "364311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: 2H Stance (Thick)" 
+        }
+      ]
+    },
+    {
+      "Key": "364610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: DW 2H Stance" 
+        }
+      ]
+    },
+    {
+      "Key": "364611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe: DW 2H Stance (Thick)" 
+        }
+      ]
+    },
+    {
+      "Key": "404110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow: 1H Position"
+        }
+      ]
+    },
+    {
+      "Key": "404310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "414110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "414310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "424110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "424310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "424610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow: DW 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "444310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Shield: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "454110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Shield: 1H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "454310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Shield: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "464310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield: 2H Stance"
+        }
+      ]
+    },
+    {
+      "Key": "464610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield: DW 2H Stance"
+        }
+      ]
+    }
+  ]
+}

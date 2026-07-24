@@ -1,0 +1,43 @@
+{
+  "Param": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Type": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Name": "TUTORIAL_ACTJUDGE_PARAM_ST",
+  "Description": "Judgement for whether tutorial inputs happen.",
+  "Fields": [
+    {
+      "Field": "State0_ActionSlot",
+      "Name": "Slot [0]",
+      "Description": ""
+    },
+    {
+      "Field": "State0_ActionType",
+      "Name": "Behavior Type [0]",
+      "Description": ""
+    },
+    {
+      "Field": "State0_reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "State1_ActionSlot",
+      "Name": "Slot [1]",
+      "Description": ""
+    },
+    {
+      "Field": "State1_ActionType",
+      "Name": "Behavior Type [1",
+      "Description": ""
+    },
+    {
+      "Field": "State1_reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ExtActionType",
+      "Name": "Extended Behavior Type",
+      "Description": ""
+    }
+  ]
+}

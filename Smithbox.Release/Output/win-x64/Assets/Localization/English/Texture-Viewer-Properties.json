@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Properties_Header_Properties",
+      "Text": "Properties of {0}"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Header_Properties_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_Properties_Controls_Hint",
+      "Text": "Hold Left-Control and scroll the mouse wheel to zoom in and out.\nPress {0} to reset zoom level to 100%."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_SizeY",
+      "Text": "Size: Y"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_SizeX",
+      "Text": "Size: X"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_RelPosX",
+      "Text": "Relative Position: X"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_RelPosY",
+      "Text": "Relative Position: Y"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Format",
+      "Text": "Format"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Column_Header_Icon",
+      "Text": "Icon"
+    }
+  ]
+}

@@ -1,0 +1,899 @@
+{
+  "Name": "SwordArtsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test data -- テストデータ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "No arts -- アーツなし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bare hand: Right hand arts activated -- 素手：右手アーツ発動"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Small shield: Right hand arts activated -- 小盾：右手アーツ発動"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Large shield: Right hand arts activated -- 大盾：右手アーツ発動"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Middle shield: Right hand arts activated -- 中盾：右手アーツ発動"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Small shield: Parry -- 小盾：パリィ"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Middle shield: Parry -- 中盾：パリィ"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Small Shield: Spell Parry -- 小盾：スペルパリィ"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Middle shield: Spell Parry -- 中盾：スペルパリィ"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Dagger: Parry -- 短剣：パリィ"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Dagger: Strong Rock Step -- 短剣：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Dagger: Shield Penetration: Do not store one-shot weapons -- 短剣：盾貫通：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Dagger: Underground Prisoner: One Shot -- 短剣：地下の囚人：ワンショット"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Dagger: Candlestick: Do not store one-shot weapons -- 短剣：燭台：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dagger: Rosalia: One Shot -- 短剣：ロザリア：ワンショット"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Dagger: Fang: Do not store one-shot weapons -- 短剣：牙突：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Straight sword: stance -- 直剣：構え"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Straight sword: Stepping on -- 直剣：踏み込み"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Straight sword: Candlestick: One-shot Weapon not stored -- 直剣：燭台：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Straight sword: Sun: Do not store one-shot weapons -- 直剣：太陽：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Straight sword: Brother: Ready -- 直剣：弟：構え"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Straight Sword: Dark Knight: Ready -- 直剣：ダークナイト：構え"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Great sword: stance -- 大剣：構え"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Great Sword: King of the Dead: One Shot -- 大剣：死霊の王：ワンショット"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Great Sword: Last Boss: One Shot -- 大剣：ラスボス：ワンショット"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Great Sword: Moonlight: One Shot -- 大剣：月光：ワンショット"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Great Sword: Old King: Ready -- 大剣：老王：構え"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Great Sword: Twin Princes Combined: Ready -- 大剣：双皇子合体：構え"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Great Sword: Altri: Ready -- 大剣：アルトリ：構え"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Great Sword: Executioner Sword: Stepping on -- 大剣：エグゼキューショナーソード：踏み込み"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Great Sword: Bastard Sword: Stepping on -- 大剣：バスタードソード：踏み込み"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Great Sword: Storm Ruler: Special Position -- 大剣：ストームルーラー：特殊構え"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Great sword: Patience -- 大剣：我慢"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Oversized sword: Stepping on -- 特大剣：踏み込み"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Oversized Sword: Watcher: Parry -- 特大剣：監視者：パリィ"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Oversized sword: assault -- 特大剣：突撃"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Oversized Sword: Old King: Stepping on -- 特大剣：老王：踏み込み"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Oversized sword: Twin prince brother: Stepping on -- 特大剣：双皇子兄：踏み込み"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Oversized sword: Step on (horizontal rotation) -- 特大剣：踏み込み（横回転）"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Oversized Sword: Black Knight: Stepping on -- 特大剣：黒騎士：踏み込み"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Oversized Sword: Smoke: Stepping on -- 特大剣：煙：踏み込み"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Sword: Ready -- 刺剣：構え"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Sword: Fang: One Shot -- 刺剣：牙突：ワンショット"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Sword: Ricard: One-shot Weapon not stored -- 刺剣：リカール：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Curved sword: Rotate -- 曲剣：回転"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Sword: Missing month: One shot -- 曲剣：欠月：ワンショット"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Sword: King of Storms: Rotation -- 曲剣：嵐の王：回転"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Curved Sword: Sulliburn: Rotate -- 曲剣：サリバーン：回転"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Sword: Shortel: Rotate -- 曲剣：ショーテル：回転"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Light sword: Rotate -- 軽曲剣：回転"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Light sword: Painting protection: Rotation -- 軽曲剣：絵画守り：回転"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Omagari Sword: Rotation -- 大曲剣：回転"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Omagari Sword: Wolf: Rotate -- 大曲剣：オオカミ：回転"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Omagari Sword: Skeleton: Rotate -- 大曲剣：スケルトン：回転"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Omagari Sword: Forest Keeper: Rotation -- 大曲剣：森の番人：回転"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Sword: stance -- 刀：構え"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Sword: Seppuku sword: One shot -- 刀：腹切り刀：ワンショット"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Sword: Clothesline: Ready -- 刀：物干し竿：構え"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Sword: Fang: One shot -- 刀：牙突：ワンショット"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Ax: Walk Rye -- 斧：ウォークライ"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Ax: Cut meat: One shot -- 斧：肉断ち：ワンショット"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Ax: 4 Knights: One Shot -- 斧：4騎士：ワンショット"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Ax: Strong Rock Step -- 斧：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Large Ax: Walk Rye -- 大斧：ウォークライ"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Large Ax: Dragon King: One Shot -- 大斧：竜王：ワンショット"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Large Ax: Firewood Demon: One Shot -- 大斧：薪デーモン：ワンショット"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Large Ax: Guardian Knight: One Shot -- 大斧：守護騎士：ワンショット"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Large Ax: Harek: Walk Rye -- 大斧：ハレック：ウォークライ"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Large ax: Sharpen: One shot -- 大斧：研ぐ：ワンショット"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Hammer: Patience -- 槌：我慢"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Hammer: Walk Rye -- 槌：ウォークライ"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Hammer: Magic enhancement -- 槌：魔法強化"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Hammer: Pick: Patience -- 槌：ピック：我慢（気合）"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Otsuchi: Patience -- 大槌：我慢"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Otsuchi: Ash Demon: Patience -- 大槌：灰デーモン：我慢"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Otsuchi: Gargoyle: Patience -- 大槌：ガーゴイル：我慢"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Otsuchi: Walk Rye -- 大槌：ウォークライ"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Otsuchi: Black dog: Patience -- 大槌：黒犬：我慢"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Gavel: Rotation -- 大槌：回転"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Otsuchi: Ice ax: Patience -- 大槌：ピッケル：我慢（気合）"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Spear: Assault -- 槍：突撃"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Spear: King of Storms: One Shot -- 槍：嵐の王：ワンショット"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Spear: Rosalia: One Shot -- 槍：ロザリア：ワンショット"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Spear: Fang: One Shot -- 槍：牙突：ワンショット"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Spear: Sullivan: Magical Enhancement -- 槍：サリヴァーン：魔法強化"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Spear: Not good: One shot -- 槍：なりそこない：ワンショット"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Spear: Lance: Assault -- 槍：ランス：突撃"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Spear: Fork: Assault -- 槍：フォーク：突撃"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "Spear: Dragon hunting: Assault -- 槍：竜狩り：突撃"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "Spear: Gargoyle: Assault -- 槍：ガーゴイル：突撃"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Spear: Cardinal: Assault -- 槍：枢機卿：突撃"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "Spear: Rotate -- 槍：回転"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Halberd: Rotate -- 斧槍：回転"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Halberd: Royal Castle Fat: Rotating -- 斧槍：王城デブ：回転"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Halberd: Gunda: Assault -- 斧槍：グンダ：突撃"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Halberd: Mother Dragon: One Shot -- 斧槍：母ドラゴン：ワンショット"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Halberd: Moonlight Witch: One Shot -- 斧槍：月光魔女：ワンショット"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Halberd: Crescent: Walk Rye -- 斧槍：三日月：ウォークライ"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "Halberd: Charge -- 斧槍：突撃"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "Halberd: Patience -- 斧槍：我慢"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Sickle: Headshot -- 鎌：ヘッドショット"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Sickle: Thirsty: One shot -- 鎌：渇望：ワンショット"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Sickle: Sullivan: One Shot -- 鎌：サリヴァーン：ワンショット"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Sickle: Twin Prince: One Shot -- 鎌：双皇子：ワンショット"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Whip: Do not store one-shot weapons -- 鞭：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Whip: Ash Demon: Do not store one-shot weapons -- 鞭：灰デーモン：ワンショット武器収納しない"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Fist: Strong rock step -- 拳：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Fist: Firewood Demon Knuckle: Rotate -- 拳：薪のデーモンナックル：回転"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Fist: Dark Hand: Throw -- 拳：ダークハンド：投げ"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Fist: Cestvs: Patience -- 拳：セスタス：我慢"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Claws: Headshot -- 爪：ヘッドショット"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Nail: One shot -- 爪：ワンショット"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "Claw: Strong lock step -- 爪：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Koyumi: Rapid fire -- 小弓：連射"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Koyumi: Shot -- 小弓：強射"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Small bow: diffusion -- 小弓：拡散"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "Koyumi: Sullivan: Strong fire -- 小弓：サリヴァーン：強射"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Large bow: Penetration -- 大弓：貫通"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Large bow: Penetration -- 大弓：貫通"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Crossbow: One shot -- クロスボウ：ワンショット"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Crossbow: Strong rock step -- クロスボウ：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Wand: Magic enhancement -- 杖：魔法強化"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Wand: Crystal Elder: Magical Enhancement -- 杖：結晶古老：魔法強化"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Wand: Zombie Crow: Magical Enhancement -- 杖：ゾンビ烏：魔法強化"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Wand: Logan: Magic enhancement -- 杖：ローガン：魔法強化"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Talisman: Patience Chant (Middle) -- タリスマン：我慢詠唱（中）"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Bell: Magic enhancement (regeneration) -- 鈴：魔法強化（リジェネ）"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Talisman: One Shot (Full) -- タリスマン：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Talisman: Patience Chant (Weak) -- タリスマン：我慢詠唱（弱）"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Talisman: Patience Chant (Strong) -- タリスマン：我慢詠唱（強）"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Fire of Magic: One Shot (Full) -- 呪術の火：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Twin Dagger: Strong Rock Step -- 双短剣：強ロックステップ"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Double sword: Rotate -- 双直剣：回転"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Hyperbolic sword: Rotate -- 双曲剣：回転"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "Hyperbolic Sword: Elite: Rotate -- 双曲剣：エリート：回転"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "Hyperbolic Sword: Kiaran: Rotation -- 双曲剣：キアラン：回転"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "Hyperbolic Sword: Tracker: Rotate -- 双曲剣：追跡者：回転"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Twin sword: Headshot -- 双刀：ヘッドショット"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Twin spear: Charge -- 双槍：突撃"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Twin ax: Rotate -- 双斧：回転"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Twin mallet: Rotation -- 双槌：回転"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Middle shield: One shot (full) -- 中盾：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Middle shield: Thorn shield: One shot (full) -- 中盾：トゲの盾：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Pavise: One Shot (Full) -- 大盾：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Large shield: Gunda: One shot (full) -- 大盾：グンダ：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Large shield: Havel: One shot (full) -- 大盾：ハベル：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Large shield: Skeleton: One shot (full) -- 大盾：骸骨：ワンショット（フル）"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Small shield: One shot (full) -- 小盾：ワンショット（フル）"
+      ]
+    }
+  ]
+}

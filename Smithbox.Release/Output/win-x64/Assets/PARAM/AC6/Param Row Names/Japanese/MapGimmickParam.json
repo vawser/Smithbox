@@ -1,0 +1,65 @@
+{
+  "Name": "MapGimmickParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test catapult 00 -- テストカタパルト00"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test catapult 01 -- テストカタパルト01"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test catapult 02 -- テストカタパルト02"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "test gimmick c4200 -- テストギミックc4200"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "test elevator 00 -- テストエレベータ00"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Test elevator 01 -- テストエレベータ01"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Great Ice Field_Test Catapult -- 大氷原_テストカタパルト"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "new catapult -- 新カタパルト"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tutorial A layer catapult -- チュートリアルA層用カタパルト"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "fuel base catapult -- 燃料基地カタパルト"
+      ]
+    }
+  ]
+}

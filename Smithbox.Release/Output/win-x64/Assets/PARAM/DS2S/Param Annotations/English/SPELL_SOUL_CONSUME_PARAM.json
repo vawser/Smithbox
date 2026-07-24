@@ -1,0 +1,73 @@
+{
+  "Param": "SPELL_SOUL_CONSUME_PARAM",
+  "Type": "SPELL_SOUL_CONSUME_PARAM",
+  "Name": "SPELL_SOUL_CONSUME_PARAM",
+  "Description": "Defines soul consumption behavior for spells, including cost calculation type and associated bullet/damage mappings for both right and left-hand casting.",
+  "Fields": [
+    {
+      "Field": "consumeType",
+      "Name": "Calculation Type",
+      "Description": "Defines the formula or method used to calculate soul consumption."
+    },
+    {
+      "Field": "dummy0",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "consumeSoul",
+      "Name": "Soul Cost",
+      "Description": "Base amount of souls consumed when casting the spell."
+    },
+    {
+      "Field": "bulletAndDamageId01",
+      "Name": "Bullet & Damage ID 1",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 1."
+    },
+    {
+      "Field": "bulletAndDamageId02",
+      "Name": "Bullet & Damage ID 2",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 2."
+    },
+    {
+      "Field": "bulletAndDamageId03",
+      "Name": "Bullet & Damage ID 3",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 3."
+    },
+    {
+      "Field": "bulletAndDamageId04",
+      "Name": "Bullet & Damage ID 4",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 4."
+    },
+    {
+      "Field": "bulletAndDamageId05",
+      "Name": "Bullet & Damage ID 5",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 5."
+    },
+    {
+      "Field": "bulletAndDamageLeftId01",
+      "Name": "Left-Hand Bullet & Damage ID 1",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 1."
+    },
+    {
+      "Field": "bulletAndDamageLeftId02",
+      "Name": "Left-Hand Bullet & Damage ID 2",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 2."
+    },
+    {
+      "Field": "bulletAndDamageLeftId03",
+      "Name": "Left-Hand Bullet & Damage ID 3",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 3."
+    },
+    {
+      "Field": "bulletAndDamageLeftId04",
+      "Name": "Left-Hand Bullet & Damage ID 4",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 4."
+    },
+    {
+      "Field": "bulletAndDamageLeftId05",
+      "Name": "Left-Hand Bullet & Damage ID 5",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 5."
+    }
+  ]
+}

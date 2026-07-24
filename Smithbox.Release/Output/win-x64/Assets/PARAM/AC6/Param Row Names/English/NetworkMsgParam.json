@@ -1,0 +1,335 @@
+{
+  "Name": "NetworkMsgParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Write a summoning sign with the password set"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Start of session establishment with host (host)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Start of session establishment with host (new guest)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Start establishing session with host (existing guest)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Session established with host (new guest)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Searching for connection destination (intrusion destination)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

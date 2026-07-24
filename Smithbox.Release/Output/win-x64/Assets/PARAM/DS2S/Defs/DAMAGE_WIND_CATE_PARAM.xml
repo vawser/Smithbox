@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>DAMAGE_WIND_CATE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 cloth">
+            <DisplayName>クロス</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 model">
+            <DisplayName>草</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 obj">
+            <DisplayName>オブジェ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 sfx">
+            <DisplayName>SFX</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 dmgSfx">
+            <DisplayName>着弾SFX</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 eraseSfx">
+            <DisplayName>SFXヒット時に消去制御に遷移させる</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>10000</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[2]">
+            <DisplayName>ダミー0</DisplayName>
+            <SortID>10001</SortID>
+        </Field>
+        <Field Def="f32 fadeInTime">
+            <DisplayName>フェードイン時間[sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 fadeOutTime">
+            <DisplayName>フェードアウト時間[sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>101</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

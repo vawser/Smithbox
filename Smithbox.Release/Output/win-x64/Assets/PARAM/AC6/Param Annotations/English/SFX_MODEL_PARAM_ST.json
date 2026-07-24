@@ -1,0 +1,48 @@
+{
+  "Param": "SFX_MODEL_PARAM_ST",
+  "Type": "SFX_MODEL_PARAM_ST",
+  "Name": "SFX_MODEL_PARAM_ST",
+  "Description": "Relates to models and FXR particles. Unknown fields.",
+  "Fields": [
+    {
+      "Field": "unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk0c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk1c",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>NPC_NAME_SWAP_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 changeNameFlagId">
+            <DisplayName>差し替えフラグ</DisplayName>
+            <Enum>EVENT_FLAG_GLOBAL_TALK</Enum>
+            <DisplayFormat>%s</DisplayFormat>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u32 beforeNameTextId">
+            <DisplayName>差し替え前名前テキストID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1100</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

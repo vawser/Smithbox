@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>ANTIQUE_STAND_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s32 iconId"/>
+    
+    <Field Def="s8 heroType"/>
+    <Field Def="s8 relicSlot1"/>
+    <Field Def="s8 relicSlot2"/>
+    <Field Def="s8 relicSlot3"/>
+    
+    <Field Def="s32 unlockFlag"/>
+    <Field Def="s32 goodsId"/>
+    
+    <Field Def="s8 deepRelicSlot1" FirstVersion="10200000"/>
+    <Field Def="s8 deepRelicSlot2" FirstVersion="10200000"/>
+    <Field Def="s8 deepRelicSlot3" FirstVersion="10200000"/>
+    
+    <Field Def="dummy8 endPadding[1]" FirstVersion="10200000"/>
+  </Fields>
+  
+</PARAMDEF>

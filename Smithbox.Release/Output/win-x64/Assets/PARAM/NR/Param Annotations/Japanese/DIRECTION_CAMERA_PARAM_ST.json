@@ -1,0 +1,23 @@
+{
+  "Param": "DIRECTION_CAMERA_PARAM_ST",
+  "Type": "DIRECTION_CAMERA_PARAM_ST",
+  "Name": "DIRECTION_CAMERA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isUseOption",
+      "Name": "オプションの影響を受けるか",
+      "Description": "演出カメラON/OFFオプションの影響を受けるか？"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": "pad"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

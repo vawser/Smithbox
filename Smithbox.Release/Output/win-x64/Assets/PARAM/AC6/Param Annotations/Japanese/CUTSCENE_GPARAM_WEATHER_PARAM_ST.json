@@ -1,0 +1,103 @@
+{
+  "Param": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Name": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "DstWeather_Sunny",
+      "Name": "晴れ",
+      "Description": "晴れ"
+    },
+    {
+      "Field": "DstWeather_ClearSky",
+      "Name": "快晴",
+      "Description": "快晴"
+    },
+    {
+      "Field": "DstWeather_WeakCloudy",
+      "Name": "薄曇り",
+      "Description": "薄曇り"
+    },
+    {
+      "Field": "DstWeather_Cloud",
+      "Name": "曇り",
+      "Description": "曇り"
+    },
+    {
+      "Field": "DstWeather_Rain",
+      "Name": "雨",
+      "Description": "雨"
+    },
+    {
+      "Field": "DstWeather_HeavyRain",
+      "Name": "豪雨",
+      "Description": "豪雨"
+    },
+    {
+      "Field": "DstWeather_Storm",
+      "Name": "嵐",
+      "Description": "嵐"
+    },
+    {
+      "Field": "DstWeather_StormForBattle",
+      "Name": "嵐（守護者の末裔との戦闘用）",
+      "Description": "嵐（守護者の末裔との戦闘用）"
+    },
+    {
+      "Field": "DstWeather_Snow",
+      "Name": "雪",
+      "Description": "雪"
+    },
+    {
+      "Field": "DstWeather_HeavySnow",
+      "Name": "大雪",
+      "Description": "大雪"
+    },
+    {
+      "Field": "DstWeather_Fog",
+      "Name": "霧",
+      "Description": "霧"
+    },
+    {
+      "Field": "DstWeather_HeavyFog",
+      "Name": "濃霧",
+      "Description": "濃霧"
+    },
+    {
+      "Field": "DstWeather_SandStorm",
+      "Name": "砂嵐",
+      "Description": "砂嵐"
+    },
+    {
+      "Field": "DstWeather_HeavyFogRain",
+      "Name": "濃霧（雨）",
+      "Description": "濃霧（雨）"
+    },
+    {
+      "Field": "reserved",
+      "Name": "reserved",
+      "Description": "reserved"
+    }
+  ]
+}

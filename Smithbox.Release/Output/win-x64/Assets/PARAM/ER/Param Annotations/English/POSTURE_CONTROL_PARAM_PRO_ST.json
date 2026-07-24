@@ -1,0 +1,193 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Type": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Name": "POSTURE_CONTROL_PARAM_PRO_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "a000_rightArmIO",
+      "Name": "[a000] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a000_rightArmFB",
+      "Name": "[a000] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a000_leftArmIO",
+      "Name": "[a000] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a000_leftArmFB",
+      "Name": "[a000] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a002_rightArmIO",
+      "Name": "[a002] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a002_rightArmFB",
+      "Name": "[a002] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a002_leftArmIO",
+      "Name": "[a002] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a002_leftArmFB",
+      "Name": "[a002] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a003_rightArmIO",
+      "Name": "[a003] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a003_rightArmFB",
+      "Name": "[a003] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a003_leftArmIO",
+      "Name": "[a003] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a003_leftArmFB",
+      "Name": "[a003] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a010_rightArmIO",
+      "Name": "[a010] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a010_rightArmFB",
+      "Name": "[a010] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a010_leftArmIO",
+      "Name": "[a010] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a010_leftArmFB",
+      "Name": "[a010] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a012_rightArmIO",
+      "Name": "[a012] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a012_rightArmFB",
+      "Name": "[a012] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a012_leftArmIO",
+      "Name": "[a012] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a012_leftArmFB",
+      "Name": "[a012] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a013_rightArmIO",
+      "Name": "[a013] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a013_rightArmFB",
+      "Name": "[a013] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a013_leftArmIO",
+      "Name": "[a013] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a013_leftArmFB",
+      "Name": "[a013] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a014_rightArmIO",
+      "Name": "[a014] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a014_rightArmFB",
+      "Name": "[a014] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a014_leftArmIO",
+      "Name": "[a014] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a014_leftArmFB",
+      "Name": "[a014] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a015_rightArmIO",
+      "Name": "[a015] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a015_rightArmFB",
+      "Name": "[a015] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a015_leftArmIO",
+      "Name": "[a015] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a015_leftArmFB",
+      "Name": "[a015] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a016_rightArmIO",
+      "Name": "[a016] Right Arm - Inside/Outside",
+      "Description": "Right arm_inside and outside"
+    },
+    {
+      "Field": "a016_rightArmFB",
+      "Name": "[a016] Right Arm - Front/Back",
+      "Description": "Right arm_front and back"
+    },
+    {
+      "Field": "a016_leftArmIO",
+      "Name": "[a016] Left Arm - Inside/Outside",
+      "Description": "Left arm_inside and outside"
+    },
+    {
+      "Field": "a016_leftArmFB",
+      "Name": "[a016] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

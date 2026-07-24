@@ -1,0 +1,58 @@
+{
+  "Param": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
+  "Type": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
+  "Name": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "modifier1",
+      "Name": "modifier1",
+      "Description": ""
+    },
+    {
+      "Field": "modifier2",
+      "Name": "modifier2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "unknown_4a",
+      "Description": ""
+    },
+    {
+      "Field": "targetBoss1",
+      "Name": "targetBoss1",
+      "Description": ""
+    },
+    {
+      "Field": "targetBoss2",
+      "Name": "targetBoss2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4d",
+      "Name": "unknown_4d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_00",
+      "Name": "fh_unknown_00",
+      "Description": ""
+    }
+  ]
+}

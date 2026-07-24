@@ -1,0 +1,38 @@
+{
+  "Param": "LOBBY_MENU_NPC_PARAM_ST",
+  "Type": "LOBBY_MENU_NPC_PARAM_ST",
+  "Name": "LOBBY_MENU_NPC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "iconId_2",
+      "Name": "iconId_2",
+      "Description": ""
+    },
+    {
+      "Field": "arrivalEventFlag",
+      "Name": "arrivalEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "showMapIconEventFlag",
+      "Name": "showMapIconEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "hideMapIconEventFlag",
+      "Name": "hideMapIconEventFlag",
+      "Description": ""
+    }
+  ]
+}

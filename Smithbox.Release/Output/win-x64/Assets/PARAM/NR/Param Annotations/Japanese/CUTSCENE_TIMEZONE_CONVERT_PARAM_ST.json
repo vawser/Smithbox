@@ -1,0 +1,18 @@
+{
+  "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SrcTimezoneStart",
+      "Name": "変換前時間帯開始時刻[hour]",
+      "Description": "カットシーン時刻に変換する時間帯の開始時刻[hour]"
+    },
+    {
+      "Field": "DstCutscenTime",
+      "Name": "変換後カットシーン時刻[hour]",
+      "Description": "カットシーン再生中に使われる時刻を時間単位で入力[hour]"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CUSTOM_ATTR_SPEC_PARAM</ParamType>
+    <DataVersion>4</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 physical:1">
+            <DisplayName>物理</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 fire:1">
+            <DisplayName>炎</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 magic:1">
+            <DisplayName>魔法</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 thunder:1">
+            <DisplayName>雷</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 dark:1">
+            <DisplayName>闇</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 poison:1">
+            <DisplayName>毒</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 bleed:1">
+            <DisplayName>出血</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 physicalByCrude:1">
+            <DisplayName>物理(粗製)</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 physicalByEnchanted:1">
+            <DisplayName>物理(魔力)</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 physicalByAbyss:1">
+            <DisplayName>物理(深淵)</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="dummy8 padding[2]">
+            <DisplayName>予約</DisplayName>
+            <SortID>12</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

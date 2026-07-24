@@ -1,0 +1,183 @@
+{
+  "Param": "ACTIONBUTTON_PARAM_ST",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ACTIONBUTTON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "範囲タイプ",
+      "Description": "範囲形状(円柱、角柱、カプセル柱)"
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "ダミポリ1",
+      "Description": "範囲の底面の中心となるダミポリIDを指定する\u3000ダミポリがない場合 or -1が入力されている場合は、中心座標が基準になる"
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "ダミポリ2",
+      "Description": "範囲タイプがカプセル柱の場合のみ使用\u3000ダミポリ2つで線分を作る追加ダミポリ(カプセル柱)"
+    },
+    {
+      "Field": "radius",
+      "Name": "半径",
+      "Description": "半径(円柱・カプセル柱)"
+    },
+    {
+      "Field": "angle",
+      "Name": "角度",
+      "Description": "角度(円柱)"
+    },
+    {
+      "Field": "depth",
+      "Name": "奥行き",
+      "Description": "奥行き(角柱)"
+    },
+    {
+      "Field": "width",
+      "Name": "幅",
+      "Description": "幅(角柱)"
+    },
+    {
+      "Field": "height",
+      "Name": "高さ",
+      "Description": "高さ(円柱・角柱・カプセル柱)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "角度差判定タイプ",
+      "Description": "角度差判定タイプ(円柱・角柱)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング2",
+      "Description": "角度差判定タイプ(点・線)"
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "許容角度差",
+      "Description": "許容角度差"
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "テキストボックスタイプ",
+      "Description": "テキストボックスタイプ"
+    },
+    {
+      "Field": "raycastType",
+      "Name": "遮蔽判定タイプ",
+      "Description": "遮蔽判定タイプ"
+    },
+    {
+      "Field": "padding3",
+      "Name": "パディング3",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "表示するテキストID"
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "無効フラグ",
+      "Description": "このフラグがONだとアクションボタンが出ず、判定も行われない"
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "グレーアウトフラグ",
+      "Description": "このフラグがONだとアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "priority",
+      "Name": "重なり時優先度",
+      "Description": "複数のアクションボタンが重なっていた場合の優先度(0～99、0に近い程優先)"
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "実行後無効時間",
+      "Description": "実行後無効時間(-値で無限)"
+    },
+    {
+      "Field": "actionGroupId",
+      "Name": "実行判定用グループID（Behavior参照）",
+      "Description": "actからグループ単位で有効にするためのID。ぶら下がり中はアイテム取得は出来るが扉は開けられないなど"
+    },
+    {
+      "Field": "sameCategoryActionDisplay",
+      "Name": "同じカテゴリ内での重なり表示",
+      "Description": "プログラムから指定してるカテゴリが同じアクションボタン同士が重なって表示されるかどうか。"
+    },
+    {
+      "Field": "gameKey",
+      "Name": "ゲームキー",
+      "Description": "アクションボタンと対応するゲームキー。アイコン表示にも連動。"
+    },
+    {
+      "Field": "iconType",
+      "Name": "ポイントアイコン表示タイプ",
+      "Description": "アイコンの見た目"
+    },
+    {
+      "Field": "pointRadius",
+      "Name": "半径",
+      "Description": "半径(ポイント表示範囲は円柱固定)"
+    },
+    {
+      "Field": "pointHeight",
+      "Name": "高さ",
+      "Description": "高さ(ポイント表示範囲は円柱固定)。-1 でアクション実行可能範囲の数値を参照。"
+    },
+    {
+      "Field": "pointBaseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか"
+    },
+    {
+      "Field": "textRadius",
+      "Name": "半径",
+      "Description": "半径(ボタンアイコン表示範囲は円柱固定)。-1 でアクション実行可能範囲の数値を参照。"
+    },
+    {
+      "Field": "textHeight",
+      "Name": "高さ",
+      "Description": "高さ(ボタンアイコン表示範囲は円柱固定)。-1 でアクション実行可能範囲の数値を参照。"
+    },
+    {
+      "Field": "textBaseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか"
+    },
+    {
+      "Field": "iconOffsetX",
+      "Name": "表示位置オフセットX軸",
+      "Description": "ダミポリ1で指定されたダミポリの位置からX軸方向にオフセットする値"
+    },
+    {
+      "Field": "iconOffsetY",
+      "Name": "表示位置オフセットY軸",
+      "Description": "ダミポリ1で指定されたダミポリの位置からY軸方向にオフセットする値"
+    },
+    {
+      "Field": "iconOffsetZ",
+      "Name": "表示位置オフセットZ軸",
+      "Description": "ダミポリ1で指定されたダミポリの位置からZ軸方向にオフセットする値"
+    },
+    {
+      "Field": "doneFlag",
+      "Name": "実行済みフラグ",
+      "Description": "実行済みかのフラグ管理用のイベントフラグID（-1:管理イベントフラグなし)"
+    }
+  ]
+}

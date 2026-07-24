@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextMerge_Hint",
+      "Text": "使用此功能将目标项目的文本文件合并到当前项目。\n\n合并将把目标项目的所有独有文本带入您的项目。\n启用后包含修改的文本。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Target_Project",
+      "Text": "目标项目"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Target_Project_TT",
+      "Text": "您想要从中合并文本的项目。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang",
+      "Text": "仅合并主要语言"
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT",
+      "Text": "启用后，仅合并主要语言的FMG。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified",
+      "Text": "替换修改条目"
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified_TT",
+      "Text": "启用后，目标中的修改行将覆盖当前项目中的现有行。否则，它们将被忽略，仅合并独有的行。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Merge",
+      "Text": "合并"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Merge_TT",
+      "Text": "将所选项目的文本合并到此项目。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_No_Target_Project",
+      "Text": "尚未选择目标项目。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merge_In_Progress",
+      "Text": "合并已在进行中。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merged_Text_PASS",
+      "Text": "已将 {0} 的文本合并到此项目。"
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merged_Text_FAIL",
+      "Text": "从 {0} 合并文本失败"
+    }
+  ]
+}

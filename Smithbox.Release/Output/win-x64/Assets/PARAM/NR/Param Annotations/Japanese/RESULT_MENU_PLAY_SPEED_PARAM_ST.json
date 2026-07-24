@@ -1,0 +1,23 @@
+{
+  "Param": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
+  "Type": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
+  "Name": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "playbackSpeed",
+      "Name": "playbackSpeed",
+      "Description": ""
+    },
+    {
+      "Field": "optionTextId",
+      "Name": "optionTextId",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "113",
+  "name": "Varangian",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sitting on Stool"
+    },
+    {
+      "value": "3",
+      "name": "Sleeping on Table"
+    },
+    {
+      "value": "4",
+      "name": "Climb from Ledge"
+    },
+    {
+      "value": "5",
+      "name": "Crouching"
+    }
+  ]
+}

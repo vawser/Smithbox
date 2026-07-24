@@ -1,0 +1,20 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Fog Gate",
+    "Tags": [
+        "Format",
+        "Boss",
+        "Fog",
+        "Wall"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "An object in maps which is solid and has corresponding opaque visual effect.",
+        "For the most part, these are all managed by EMEVD and have entity ids.",
+        "",
+        "Traversing them is implemented as an action button followed by a scripted animation.",
+        "They are also enabled at play region boundaries during invasions/co-op."
+    ]
+}

@@ -1,0 +1,635 @@
+{
+  "Name": "generatorregistparam_m50_37_00_00",
+  "Entries": [
+    {
+      "ID": 30710000,
+      "Entries": [
+        "[REG:30710000] Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 32100010,
+      "Entries": [
+        "[REG:32100010] Mimic"
+      ]
+    },
+    {
+      "ID": 65800000,
+      "Entries": [
+        "[REG:65800000] Alsanna, Silent Oracle"
+      ]
+    },
+    {
+      "ID": 65900000,
+      "Entries": [
+        "[REG:65900000] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900001,
+      "Entries": [
+        "[REG:65900001] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900010,
+      "Entries": [
+        "[REG:65900010] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900011,
+      "Entries": [
+        "[REG:65900011] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900020,
+      "Entries": [
+        "[REG:65900020] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900021,
+      "Entries": [
+        "[REG:65900021] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900022,
+      "Entries": [
+        "[REG:65900022] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900023,
+      "Entries": [
+        "[REG:65900023] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 65900300,
+      "Entries": [
+        "[REG:65900300] Rampart Golem"
+      ]
+    },
+    {
+      "ID": 66000000,
+      "Entries": [
+        "[REG:66000000] Ice Golem"
+      ]
+    },
+    {
+      "ID": 66000001,
+      "Entries": [
+        "[REG:66000001] Ice Golem"
+      ]
+    },
+    {
+      "ID": 66000200,
+      "Entries": [
+        "[REG:66000200] Ice Golem"
+      ]
+    },
+    {
+      "ID": 66100000,
+      "Entries": [
+        "[REG:66100000] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 66100001,
+      "Entries": [
+        "[REG:66100001] Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 66200000,
+      "Entries": [
+        "[REG:66200000] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66200001,
+      "Entries": [
+        "[REG:66200001] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66200002,
+      "Entries": [
+        "[REG:66200002] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66200010,
+      "Entries": [
+        "[REG:66200010] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66200011,
+      "Entries": [
+        "[REG:66200011] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66200012,
+      "Entries": [
+        "[REG:66200012] Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66300000,
+      "Entries": [
+        "[REG:66300000] Spellsword"
+      ]
+    },
+    {
+      "ID": 66300001,
+      "Entries": [
+        "[REG:66300001] Spellsword"
+      ]
+    },
+    {
+      "ID": 66300100,
+      "Entries": [
+        "[REG:66300100] Spellsword"
+      ]
+    },
+    {
+      "ID": 66300101,
+      "Entries": [
+        "[REG:66300101] Spellsword"
+      ]
+    },
+    {
+      "ID": 66300400,
+      "Entries": [
+        "[REG:66300400] Spellsword"
+      ]
+    },
+    {
+      "ID": 66301000,
+      "Entries": [
+        "[REG:66301000] Spellsword"
+      ]
+    },
+    {
+      "ID": 66301001,
+      "Entries": [
+        "[REG:66301001] Spellsword"
+      ]
+    },
+    {
+      "ID": 66301100,
+      "Entries": [
+        "[REG:66301100] Spellsword"
+      ]
+    },
+    {
+      "ID": 66301101,
+      "Entries": [
+        "[REG:66301101] Spellsword"
+      ]
+    },
+    {
+      "ID": 67700000,
+      "Entries": [
+        "[REG:67700000] Retainer"
+      ]
+    },
+    {
+      "ID": 67700001,
+      "Entries": [
+        "[REG:67700001] Retainer"
+      ]
+    },
+    {
+      "ID": 67700100,
+      "Entries": [
+        "[REG:67700100] Retainer"
+      ]
+    },
+    {
+      "ID": 67700101,
+      "Entries": [
+        "[REG:67700101] Retainer"
+      ]
+    },
+    {
+      "ID": 67800000,
+      "Entries": [
+        "[REG:67800000] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800001,
+      "Entries": [
+        "[REG:67800001] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800002,
+      "Entries": [
+        "[REG:67800002] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800010,
+      "Entries": [
+        "[REG:67800010] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800011,
+      "Entries": [
+        "[REG:67800011] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800012,
+      "Entries": [
+        "[REG:67800012] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800100,
+      "Entries": [
+        "[REG:67800100] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800101,
+      "Entries": [
+        "[REG:67800101] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800102,
+      "Entries": [
+        "[REG:67800102] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800110,
+      "Entries": [
+        "[REG:67800110] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800111,
+      "Entries": [
+        "[REG:67800111] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67800112,
+      "Entries": [
+        "[REG:67800112] Frozen Golem"
+      ]
+    },
+    {
+      "ID": 67900000,
+      "Entries": [
+        "[REG:67900000] Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 67900100,
+      "Entries": [
+        "[REG:67900100] Lud, the King's Pet"
+      ]
+    },
+    {
+      "ID": 67900200,
+      "Entries": [
+        "[REG:67900200] Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 75201000,
+      "Entries": [
+        "[REG:75201000] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 80000010,
+      "Entries": [
+        "[REG:80000010] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000011,
+      "Entries": [
+        "[REG:80000011] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000020,
+      "Entries": [
+        "[REG:80000020] Burnt Ivory King [Boss]"
+      ]
+    },
+    {
+      "ID": 80000030,
+      "Entries": [
+        "[REG:80000030] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000031,
+      "Entries": [
+        "[REG:80000031] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000032,
+      "Entries": [
+        "[REG:80000032] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000033,
+      "Entries": [
+        "[REG:80000033] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000034,
+      "Entries": [
+        "[REG:80000034] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000035,
+      "Entries": [
+        "[REG:80000035] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000036,
+      "Entries": [
+        "[REG:80000036] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000037,
+      "Entries": [
+        "[REG:80000037] Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "[REG:80000100] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000101,
+      "Entries": [
+        "[REG:80000101] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000200,
+      "Entries": [
+        "[REG:80000200] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000201,
+      "Entries": [
+        "[REG:80000201] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000300,
+      "Entries": [
+        "[REG:80000300] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 80000301,
+      "Entries": [
+        "[REG:80000301] Loyce Knight"
+      ]
+    },
+    {
+      "ID": 81000500,
+      "Entries": [
+        "[REG:81000500] Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 83710001,
+      "Entries": [
+        "[REG:83710001] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 83720000,
+      "Entries": [
+        "[REG:83720000] Greatsword Foreigner Phantom"
+      ]
+    },
+    {
+      "ID": 84100000,
+      "Entries": [
+        "[REG:84100000] Voice Marker (Alsanna)"
+      ]
+    },
+    {
+      "ID": 86200000,
+      "Entries": [
+        "[REG:86200000] Twiggy Shei"
+      ]
+    },
+    {
+      "ID": 86500000,
+      "Entries": [
+        "[REG:86500000] Abbess Feeva"
+      ]
+    },
+    {
+      "ID": 86710000,
+      "Entries": [
+        "[REG:86710000] Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 87110000,
+      "Entries": [
+        "[REG:87110000] Teeth-chattering Dan"
+      ]
+    },
+    {
+      "ID": 87700000,
+      "Entries": [
+        "[REG:87700000] Castaway Witch Donna"
+      ]
+    },
+    {
+      "ID": 87800000,
+      "Entries": [
+        "[REG:87800000] Hexer Nicholai"
+      ]
+    },
+    {
+      "ID": 87900000,
+      "Entries": [
+        "[REG:87900000] Holy Knight Aurheim"
+      ]
+    },
+    {
+      "ID": 88300000,
+      "Entries": [
+        "[REG:88300000] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 88310000,
+      "Entries": [
+        "[REG:88310000] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 88320000,
+      "Entries": [
+        "[REG:88320000] Wall Watchman"
+      ]
+    },
+    {
+      "ID": 88500000,
+      "Entries": [
+        "[REG:88500000] Exile Brave"
+      ]
+    },
+    {
+      "ID": 88500001,
+      "Entries": [
+        "[REG:88500001] Exile Brave"
+      ]
+    },
+    {
+      "ID": 88510000,
+      "Entries": [
+        "[REG:88510000] Exile Brave"
+      ]
+    },
+    {
+      "ID": 88510001,
+      "Entries": [
+        "[REG:88510001] Exile Brave"
+      ]
+    },
+    {
+      "ID": 89000000,
+      "Entries": [
+        "[REG:89000000] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 89100400,
+      "Entries": [
+        "[REG:89100400] Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 89200200,
+      "Entries": [
+        "[REG:89200200] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 90000010,
+      "Entries": [
+        "[REG:90000010] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 90000020,
+      "Entries": [
+        "[REG:90000020] Covetous Demon (snow)"
+      ]
+    },
+    {
+      "ID": 90000030,
+      "Entries": [
+        "[REG:90000030] Stray Dog"
+      ]
+    },
+    {
+      "ID": 90000040,
+      "Entries": [
+        "[REG:90000040] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000041,
+      "Entries": [
+        "[REG:90000041] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000042,
+      "Entries": [
+        "[REG:90000042] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000043,
+      "Entries": [
+        "[REG:90000043] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000044,
+      "Entries": [
+        "[REG:90000044] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000045,
+      "Entries": [
+        "[REG:90000045] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000046,
+      "Entries": [
+        "[REG:90000046] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000047,
+      "Entries": [
+        "[REG:90000047] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000048,
+      "Entries": [
+        "[REG:90000048] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 90000050,
+      "Entries": [
+        "[REG:90000050] Flexile Sentry"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1121 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test One"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Regain The Lost Life"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Take a Life"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Read Tombstone"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Read a letter (summons)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Read a letter (summon red sign)"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Check your letter (summons)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Read the letter (blood character)"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Check your letters (blood letters)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up Items"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "They take a relic"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "They take a relic"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "They take a memento"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "t"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Ok"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Rise Up a ladder"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Hiccup The Ladder"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Skip Conversation"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Light a bonfire"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "They rest in bonfire"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Talk (Used for most NPCs)"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6132,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6641,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6690,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Open Doors _ General purpose"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Open Doors _ General-purpose 101 standards"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Close the door _ generic"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Open the door _ generic (disabled guest)"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Open Treasure Chest"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Open Treasure Chest"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Lift Open the Door"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Start a gimmick"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Launch lever"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Ojo 1 vertical lever to launch lever"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Entering the wall of Light (test)"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Entering the wall of Light (test 2)"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "Pull out a sword from the Segunda grave"
+      ]
+    },
+    {
+      "ID": 8901,
+      "Entries": [
+        "Pull a sword from the Segunda Grave 2"
+      ]
+    },
+    {
+      "ID": 8910,
+      "Entries": [
+        "Simple Bonfire message"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "Behind the door open"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "For events"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "FDP Play kneel for events _ the evil spirits"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "FDP play for events seal the evil spirits"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Warp from the event base"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Warp from event base to Las Boss"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Examining (for basilica brought)"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "M37_ Anole Revolving Bridge _ Lever (right)"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "M37_ Anole Revolving Bridge _ Lever (left)"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "M38 (right)"
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        "M38 (left)"
+      ]
+    },
+    {
+      "ID": 9322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        "M33 Poison swamp forest fire Jigitai"
+      ]
+    },
+    {
+      "ID": 9331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9342,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9343,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9344,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9352,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9355,
+      "Entries": [
+        "Pillage remains"
+      ]
+    },
+    {
+      "ID": 9356,
+      "Entries": [
+        "Read Engraving"
+      ]
+    },
+    {
+      "ID": 9360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9361,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9371,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9372,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9373,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9390,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9391,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Messenger Tombstone (not ignited)"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "Messenger Tombstone (already ignited) * Text difference"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Messenger Tombstone (not ignited)"
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        "Messenger Tombstone (already ignited) * Text difference"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "Find out (Ojo 1 saloon)"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Inspect (for City/bridge warp obj)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Interaction - Traverse the fog"
+      ]
+    },
+    {
+      "ID": 3000250,
+      "Entries": [
+        "For the treasure corpse that broke from the vase"
+      ]
+    },
+    {
+      "ID": 3001800,
+      "Entries": [
+        "Fogwall - Vordt of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 3001810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001830,
+      "Entries": [
+        "Fogwall - Oceiros"
+      ]
+    },
+    {
+      "ID": 3001890,
+      "Entries": [
+        "Fogwall - Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 3001895,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3011800,
+      "Entries": [
+        "Fogwall - Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Should probably rely to servant"
+      ]
+    },
+    {
+      "ID": 3101510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3101800,
+      "Entries": [
+        "Fogwall - Curse-rotted Greatwood"
+      ]
+    },
+    {
+      "ID": 3201800,
+      "Entries": [
+        "Fogwall - Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 3201850,
+      "Entries": [
+        "Fogwall - Nameless King"
+      ]
+    },
+    {
+      "ID": 3301800,
+      "Entries": [
+        "Fogwall - Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 3301850,
+      "Entries": [
+        "Fogwall - Crystal Sage"
+      ]
+    },
+    {
+      "ID": 3411000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3411830,
+      "Entries": [
+        "Fogwall - Twin Princes"
+      ]
+    },
+    {
+      "ID": 3411860,
+      "Entries": [
+        "Entering the wall of Light (Ojo 2)"
+      ]
+    },
+    {
+      "ID": 3501700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3501800,
+      "Entries": [
+        "Fogwall - Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 3501850,
+      "Entries": [
+        "Entering the wall of Light (Basilica Church _ Rosalia)"
+      ]
+    },
+    {
+      "ID": 3601800,
+      "Entries": [
+        "Entering the wall of the light (God's Tomb _ the Angel of the Dragon)"
+      ]
+    },
+    {
+      "ID": 3701000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3701800,
+      "Entries": [
+        "Fogwall - Aldrich"
+      ]
+    },
+    {
+      "ID": 3701850,
+      "Entries": [
+        "Fogwall - Pontiff Sulyvahn"
+      ]
+    },
+    {
+      "ID": 3801800,
+      "Entries": [
+        "Fogwall - High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 3801830,
+      "Entries": [
+        "Fogwall - Old Demon King"
+      ]
+    },
+    {
+      "ID": 3801860,
+      "Entries": [
+        "Entering the wall of light (disused city _ the demon of Ashes)"
+      ]
+    },
+    {
+      "ID": 3901800,
+      "Entries": [
+        "Fogwall - Yhorm the Giant"
+      ]
+    },
+    {
+      "ID": 4001800,
+      "Entries": [
+        "Fogwall - Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 4001830,
+      "Entries": [
+        "Fogwall - Champion Gundyr"
+      ]
+    },
+    {
+      "ID": 4001860,
+      "Entries": [
+        "Entering the wall of light (stronghold _ Russ Boss)"
+      ]
+    },
+    {
+      "ID": 4101800,
+      "Entries": [
+        "Fogwall - Soul of Cinder"
+      ]
+    },
+    {
+      "ID": 4501800,
+      "Entries": [
+        "Fogwall - Sister Friede"
+      ]
+    },
+    {
+      "ID": 4501860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5001800,
+      "Entries": [
+        "Fogwall - Demon Prince"
+      ]
+    },
+    {
+      "ID": 5101800,
+      "Entries": [
+        "Fogwall - Halflight"
+      ]
+    },
+    {
+      "ID": 5101850,
+      "Entries": [
+        "Fogwall - Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 5111800,
+      "Entries": [
+        "Fogwall - Slave Knight Gael"
+      ]
+    },
+    {
+      "ID": 5111850,
+      "Entries": [
+        "Fogwall - Shira Encounter"
+      ]
+    },
+    {
+      "ID": 5111851,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9990800,
+      "Entries": [
+        "Entering the wall of Light (test)"
+      ]
+    },
+    {
+      "ID": 9999000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

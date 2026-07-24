@@ -1,0 +1,183 @@
+{
+  "ID": "カスケードシャドウ",
+  "Name": "Cascade Shadow",
+  "Description": "Controls cascaded shadow map rendering used for large-scale directional shadows. Splits the camera frustum into multiple depth ranges (cascades) to improve shadow quality near the camera while maintaining efficient long-distance shadow coverage.",
+  "Fields": [
+    {
+      "ID": "Near",
+      "Name": "Near",
+      "Description": "Near clipping distance used as the starting range for cascade shadow calculations.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cascade Dist 0->1",
+      "Name": "Cascade Distance 0 -> 1",
+      "Description": "Distance threshold between cascade layer 0 and cascade layer 1.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cascade Dist 1->2",
+      "Name": "Cascade Distance 1 -> 2",
+      "Description": "Distance threshold between cascade layer 1 and cascade layer 2.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cascade Dist 2->3",
+      "Name": "Cascade Distance 2 -> 3",
+      "Description": "Distance threshold between cascade layer 2 and cascade layer 3.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Far Fade Start",
+      "Name": "Far Fade Start Distance",
+      "Description": "Distance at which shadow fading begins for distant geometry.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Far Fade Dist",
+      "Name": "Far Fade Distance",
+      "Description": "Distance range over which shadows gradually fade out completely.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "計算モード",
+      "Name": "Calculation Mode",
+      "Description": "Selects the shadow calculation or projection method used for cascade shadow generation.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "影に使用するライトID",
+      "Name": "Light ID for Shadows",
+      "Description": "Specifies which light source is used to generate directional shadow maps.",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "影終了フェード開始距離[m]",
+      "Name": "Shadow Fade-out Start Distance",
+      "Description": "Distance in metres at which shadow fading begins.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "影終了フェード距離[m]",
+      "Name": "Shadow Fade Distance",
+      "Description": "Fade-out range in metres over which shadows disappear completely.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Zオフセット",
+      "Name": "Z Offset",
+      "Description": "Depth offset applied to shadow calculations to reduce shadow acne and self-shadowing artifacts.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Zオフセット(PSM用)",
+      "Name": "Perspective Shadow Mapping: Z Offset",
+      "Description": "Depth offset specifically applied when using Perspective Shadow Mapping (PSM).",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ﾌｧｰｸﾘｯﾌﾟ自動調整距離ﾚｰﾄ(PSM用)",
+      "Name": "Perspective Shadow Mapping: Fork Clip Auto-Adjust Distance Rate",
+      "Description": "Controls automatic far clip distance adjustment scaling used by Perspective Shadow Mapping.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ﾊﾟｰｽ調整ﾊﾟﾗﾒｰﾀ(PSM用)",
+      "Name": "Perspective Shadow Mapping: Pass Adjustment Parameter",
+      "Description": "Adjustment parameter used to tune projection or perspective correction behavior for Perspective Shadow Mapping.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "シャドウボリュームの長さ[m]",
+      "Name": "Shadow Volume Length",
+      "Description": "Length of the shadow casting volume in metres used for directional shadow projection.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "深度比較スムージング",
+      "Name": "Depth Comparison Smoothing",
+      "Description": "Length of the shadow casting volume in metres used for directional shadow projection.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "影マップ生成時の深度バイアス",
+      "Name": "Depth Bias during Shadow Map Generation",
+      "Description": "Depth bias applied while rendering shadow maps to reduce precision artifacts and surface acne.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "影マップ生成時フリップ",
+      "Name": "Flip when Generating Shadow Map",
+      "Description": "Enables coordinate or projection flipping during shadow map generation to match rendering conventions.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ピクセルアライメントを行う",
+      "Name": "Perform Pixel Alignment",
+      "Description": "Aligns cascade shadow projections to pixel boundaries to reduce shimmering and temporal instability during camera movement.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "Cascade 影の色",
+      "Name": "Cascade Shadow Color",
+      "Description": "Color tint applied to cascade shadows, controlling overall shadow coloration.",
+      "Type": "ColorField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ファークリップ自動調整距離レート(PSM用)",
+      "Name": "Perspective Shadow Mapping: Fork Clip Auto-Adjust Distance Rate",
+      "Description": "Controls automatic adjustment scaling for far clip distance calculations in Perspective Shadow Mapping mode.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "パース調整パラメータ(PSM用)",
+      "Name": "Perspective Shadow Mapping: Adjustment Parameters",
+      "Description": "Controls perspective correction and projection adjustment behavior used by Perspective Shadow Mapping.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

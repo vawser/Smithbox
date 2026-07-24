@@ -1,0 +1,29 @@
+{
+  "Key": "SPELL_SOUL_CONSUME_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_SOUL_CONSUME_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Percentage"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,929 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Oil pots (floor)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1090000,
+      "Entries": [
+        "Attack - Blood (dead) - Front Character"
+      ]
+    },
+    {
+      "ID": 1090001,
+      "Entries": [
+        "Attack - Blood (dead) - Middle Upper Character"
+      ]
+    },
+    {
+      "ID": 1090002,
+      "Entries": [
+        "Attack - Blood (dead) - Middle Lower Character"
+      ]
+    },
+    {
+      "ID": 1090003,
+      "Entries": [
+        "Attack - Blood (dead) - Left Character"
+      ]
+    },
+    {
+      "ID": 1090004,
+      "Entries": [
+        "Attack - Blood (dead) - Right Character"
+      ]
+    },
+    {
+      "ID": 1090100,
+      "Entries": [
+        "Attack - Blood (dead) - Front Map"
+      ]
+    },
+    {
+      "ID": 1090101,
+      "Entries": [
+        "Attack - Blood (dead) - Middle Upper Map"
+      ]
+    },
+    {
+      "ID": 1090102,
+      "Entries": [
+        "Attack - Blood (dead) - Middle Lower Map"
+      ]
+    },
+    {
+      "ID": 1090103,
+      "Entries": [
+        "Attack - Blood (dead) - Left Map"
+      ]
+    },
+    {
+      "ID": 1090104,
+      "Entries": [
+        "Attack - Blood (dead) - Right Map"
+      ]
+    },
+    {
+      "ID": 1091000,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Front Character"
+      ]
+    },
+    {
+      "ID": 1091001,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Middle Upper Character"
+      ]
+    },
+    {
+      "ID": 1091002,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Middle Lower Character"
+      ]
+    },
+    {
+      "ID": 1091003,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Left Character"
+      ]
+    },
+    {
+      "ID": 1091004,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Right Character"
+      ]
+    },
+    {
+      "ID": 1091100,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Front Map"
+      ]
+    },
+    {
+      "ID": 1091101,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Middle Upper Map"
+      ]
+    },
+    {
+      "ID": 1091102,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Middle Lower Map"
+      ]
+    },
+    {
+      "ID": 1091103,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Left Map"
+      ]
+    },
+    {
+      "ID": 1091104,
+      "Entries": [
+        "Attack - Mild Blood (dead) - Right Map"
+      ]
+    },
+    {
+      "ID": 1410000,
+      "Entries": [
+        "Attack - Curse - Front"
+      ]
+    },
+    {
+      "ID": 1410001,
+      "Entries": [
+        "Attack - Curse - Middle Upper"
+      ]
+    },
+    {
+      "ID": 1410002,
+      "Entries": [
+        "Attack - Curse - Middle Lower"
+      ]
+    },
+    {
+      "ID": 1410003,
+      "Entries": [
+        "Attack - Curse - Left"
+      ]
+    },
+    {
+      "ID": 1410004,
+      "Entries": [
+        "Attack - Curse - Right"
+      ]
+    },
+    {
+      "ID": 1420000,
+      "Entries": [
+        "Attack - Maggots - Front"
+      ]
+    },
+    {
+      "ID": 1420001,
+      "Entries": [
+        "Attack - Maggots - Middle Upper"
+      ]
+    },
+    {
+      "ID": 1420002,
+      "Entries": [
+        "Attack - Maggots - Middle Lower"
+      ]
+    },
+    {
+      "ID": 1420003,
+      "Entries": [
+        "Attack - Maggots - Left"
+      ]
+    },
+    {
+      "ID": 1420004,
+      "Entries": [
+        "Attack - Maggots - Right"
+      ]
+    },
+    {
+      "ID": 1460000,
+      "Entries": [
+        "Attack - Blood (PC) - Front Character"
+      ]
+    },
+    {
+      "ID": 1460001,
+      "Entries": [
+        "Attack - Blood (PC) - Middle Upper Character"
+      ]
+    },
+    {
+      "ID": 1460002,
+      "Entries": [
+        "Attack - Blood (PC) - Middle Lower Character"
+      ]
+    },
+    {
+      "ID": 1460003,
+      "Entries": [
+        "Attack - Blood (PC) - Left Character"
+      ]
+    },
+    {
+      "ID": 1460004,
+      "Entries": [
+        "Attack - Blood (PC) - Right Character"
+      ]
+    },
+    {
+      "ID": 1460100,
+      "Entries": [
+        "Attack - Blood (PC) - Front Map"
+      ]
+    },
+    {
+      "ID": 1460101,
+      "Entries": [
+        "Attack - Blood (PC) - Middle Upper Map"
+      ]
+    },
+    {
+      "ID": 1460102,
+      "Entries": [
+        "Attack - Blood (PC) - Middle Lower Map"
+      ]
+    },
+    {
+      "ID": 1460103,
+      "Entries": [
+        "Attack - Blood (PC) - Left Map"
+      ]
+    },
+    {
+      "ID": 1460104,
+      "Entries": [
+        "Attack - Blood (PC) - Right Map"
+      ]
+    },
+    {
+      "ID": 1461000,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Front Character"
+      ]
+    },
+    {
+      "ID": 1461001,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Middle Upper Character"
+      ]
+    },
+    {
+      "ID": 1461002,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Middle Lower Character"
+      ]
+    },
+    {
+      "ID": 1461003,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Left Character"
+      ]
+    },
+    {
+      "ID": 1461004,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Right Character"
+      ]
+    },
+    {
+      "ID": 1461100,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Front Map"
+      ]
+    },
+    {
+      "ID": 1461101,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Middle Upper Map"
+      ]
+    },
+    {
+      "ID": 1461102,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Middle Lower Map"
+      ]
+    },
+    {
+      "ID": 1461103,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Left Map"
+      ]
+    },
+    {
+      "ID": 1461104,
+      "Entries": [
+        "Attack - Mild Blood (PC) - Right Map"
+      ]
+    },
+    {
+      "ID": 7000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7000102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7010100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7010101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7010102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7020100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7020101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7020102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000300,
+      "Entries": [
+        "Dark Flame"
+      ]
+    },
+    {
+      "ID": 8000301,
+      "Entries": [
+        "Oil pots (for pairs of characters)"
+      ]
+    },
+    {
+      "ID": 8010510,
+      "Entries": [
+        "Dark Knight Beast - Frost"
+      ]
+    },
+    {
+      "ID": 8010511,
+      "Entries": [
+        "Dark Knight Beast - Frost attack"
+      ]
+    },
+    {
+      "ID": 8010512,
+      "Entries": [
+        "Dark Knight Beast - Frost attack (wide range)"
+      ]
+    },
+    {
+      "ID": 8010513,
+      "Entries": [
+        "Dark Knight Beast - Frost attack (3008)"
+      ]
+    },
+    {
+      "ID": 8010514,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010520,
+      "Entries": [
+        "c1090 dead Soldier: Evil spirits - knocked back against caries"
+      ]
+    },
+    {
+      "ID": 8010530,
+      "Entries": [
+        "The tracker (red) knocked back against attack"
+      ]
+    },
+    {
+      "ID": 8010531,
+      "Entries": [
+        "The tracker (red) Nagi 90 degrees"
+      ]
+    },
+    {
+      "ID": 8010532,
+      "Entries": [
+        "The tracker (red) ground stabbing and line-catching attack"
+      ]
+    },
+    {
+      "ID": 8010533,
+      "Entries": [
+        "The tracker (red) Ground stab attack"
+      ]
+    },
+    {
+      "ID": 8010534,
+      "Entries": [
+        "The tracker (red) Horizontal Nagi attack"
+      ]
+    },
+    {
+      "ID": 8010535,
+      "Entries": [
+        "The tracker (red) Nagi-90 degrees"
+      ]
+    },
+    {
+      "ID": 8010536,
+      "Entries": [
+        "The tracker (red) Nagi (3005)"
+      ]
+    },
+    {
+      "ID": 8010537,
+      "Entries": [
+        "The tracker (red) Horizontal Nagi (3025)"
+      ]
+    },
+    {
+      "ID": 8010538,
+      "Entries": [
+        "The tracker (red) Horizontal Nagi (3014, 1003017)"
+      ]
+    },
+    {
+      "ID": 8010539,
+      "Entries": [
+        "The tracker (red) Horizontal rotation finish (1003020)"
+      ]
+    },
+    {
+      "ID": 8010540,
+      "Entries": [
+        "tracker - cut scene of caries large"
+      ]
+    },
+    {
+      "ID": 8010541,
+      "Entries": [
+        "tracker - cut scene caries small"
+      ]
+    },
+    {
+      "ID": 8010542,
+      "Entries": [
+        "tracker - cut scene caries foot"
+      ]
+    },
+    {
+      "ID": 8010550,
+      "Entries": [
+        "The tracker (red) Horizontal rotation loop (1003019)"
+      ]
+    },
+    {
+      "ID": 8010560,
+      "Entries": [
+        "The tracker (caries sword) knocked back against"
+      ]
+    },
+    {
+      "ID": 8010561,
+      "Entries": [
+        "The tracker (Caries sword) Stab"
+      ]
+    },
+    {
+      "ID": 8010562,
+      "Entries": [
+        "The tracker (Caries Sword)"
+      ]
+    },
+    {
+      "ID": 8010563,
+      "Entries": [
+        "The tracker (Caries sword) continuous lull"
+      ]
+    },
+    {
+      "ID": 8010564,
+      "Entries": [
+        "The tracker (caries sword) Continuous stab"
+      ]
+    },
+    {
+      "ID": 8010565,
+      "Entries": [
+        "The tracker (caries sword) knocked back against"
+      ]
+    },
+    {
+      "ID": 8010566,
+      "Entries": [
+        "The tracker (Caries Sword)"
+      ]
+    },
+    {
+      "ID": 8010567,
+      "Entries": [
+        "The tracker (Caries Sword)"
+      ]
+    },
+    {
+      "ID": 8010570,
+      "Entries": [
+        "Full Armor Beast - Frost"
+      ]
+    },
+    {
+      "ID": 8010571,
+      "Entries": [
+        "Full Armor Beast - Frost attack"
+      ]
+    },
+    {
+      "ID": 8010572,
+      "Entries": [
+        "Full Armor Beast - Frost attack (knocked back against)"
+      ]
+    },
+    {
+      "ID": 8010573,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010580,
+      "Entries": [
+        "Ojo 3 - Bleeding"
+      ]
+    },
+    {
+      "ID": 8010590,
+      "Entries": [
+        "Dead Wax - wax bullet (floor)"
+      ]
+    },
+    {
+      "ID": 8010591,
+      "Entries": [
+        "Dead Wax - wax bullet Character"
+      ]
+    },
+    {
+      "ID": 8010600,
+      "Entries": [
+        "Hel Kite - at the time of erosion SAG appearance"
+      ]
+    },
+    {
+      "ID": 8010601,
+      "Entries": [
+        "Hellfire Kite - dripping drip"
+      ]
+    },
+    {
+      "ID": 8010602,
+      "Entries": [
+        "Hel Kite - at the time of Eclipse appearance"
+      ]
+    },
+    {
+      "ID": 8010603,
+      "Entries": [
+        "Hel kite - erosion appearance at the time of the ceiling"
+      ]
+    },
+    {
+      "ID": 8010610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010632,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010633,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010716,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8010720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8011580,
+      "Entries": [
+        "Ojo 3 - bleeding blood mild"
+      ]
+    },
+    {
+      "ID": 8023000,
+      "Entries": [
+        "m30_00 - Hell kite Breath Burn marks"
+      ]
+    },
+    {
+      "ID": 8023900,
+      "Entries": [
+        "M39_00 - in blood (dead)"
+      ]
+    },
+    {
+      "ID": 8023901,
+      "Entries": [
+        "【 m39_00 】 Large Blood (dead)"
+      ]
+    },
+    {
+      "ID": 8025101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9000100,
+      "Entries": [
+        "PC bleeding - footprints blood feet"
+      ]
+    },
+    {
+      "ID": 9000101,
+      "Entries": [
+        "PC bleeding - footprint blood stains shoes"
+      ]
+    },
+    {
+      "ID": 9000102,
+      "Entries": [
+        "PC bleeding - footprints blood stains large shoes"
+      ]
+    },
+    {
+      "ID": 9000110,
+      "Entries": [
+        "PC Bleeding - PC Bleeding"
+      ]
+    },
+    {
+      "ID": 9000111,
+      "Entries": [
+        "PC Bleeding - PC Bleeding (Large)"
+      ]
+    },
+    {
+      "ID": 9001100,
+      "Entries": [
+        "PC bleeding - footprints blood mild"
+      ]
+    },
+    {
+      "ID": 9001101,
+      "Entries": [
+        "PC bleeding - footprints blood stains shoes mild"
+      ]
+    },
+    {
+      "ID": 9001102,
+      "Entries": [
+        "PC bleeding - footprints blood mild large shoes"
+      ]
+    },
+    {
+      "ID": 9001110,
+      "Entries": [
+        "PC Bleeding - PC Bleeding Blood Mild"
+      ]
+    },
+    {
+      "ID": 9001111,
+      "Entries": [
+        "PC Bleeding - PC bleeding (large) blood mild"
+      ]
+    },
+    {
+      "ID": 9990000,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 9990001,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 9990002,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 9999900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999901,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

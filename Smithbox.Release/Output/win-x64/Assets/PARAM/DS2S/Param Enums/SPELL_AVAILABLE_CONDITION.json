@@ -1,0 +1,56 @@
+{
+  "Key": "SPELL_AVAILABLE_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_AVAILABLE_CONDITION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Conditions"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon: Equipped in Reverse Arm"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Equipped in Reverse Arm"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not in Multiplayer"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not as Client"
+        }
+      ]
+    }
+  ]
+}

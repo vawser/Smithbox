@@ -1,0 +1,158 @@
+{
+  "Param": "MENU_STATS_PARAM",
+  "Type": "MENU_STATS_PARAM",
+  "Name": "MENU_STATS_PARAM",
+  "Description": "Defines how player statistics are displayed in the in-game menu, including offensive power, defenses, resistances, and derived combat attributes.",
+  "Fields": [
+    {
+      "Field": "hpMax",
+      "Name": "Max HP",
+      "Description": "Maximum health value displayed in the menu."
+    },
+    {
+      "Field": "staminaMax",
+      "Name": "Max Stamina",
+      "Description": "Maximum stamina value displayed in the menu."
+    },
+    {
+      "Field": "poise",
+      "Name": "Poise",
+      "Description": "Displays the player's poise (stagger resistance) in the menu."
+    },
+    {
+      "Field": "spellUsesLevel",
+      "Name": "Spell Uses Level",
+      "Description": "Determines spell usage scaling level shown in the menu."
+    },
+    {
+      "Field": "spellSlot",
+      "Name": "Spell Slots",
+      "Description": "Number of available spell memory slots shown in the menu."
+    },
+    {
+      "Field": "chantingTimeCorrectScale",
+      "Name": "Casting Speed",
+      "Description": "Multiplier affecting spell casting speed displayed in the menu."
+    },
+    {
+      "Field": "physicalAttackByStrength",
+      "Name": "Physical Attack (Strength)",
+      "Description": "Strength-based physical attack power displayed in the menu."
+    },
+    {
+      "Field": "physicalAttackByDexterity",
+      "Name": "Physical Attack (Dexterity)",
+      "Description": "Dexterity-based physical attack power displayed in the menu."
+    },
+    {
+      "Field": "magicAttack",
+      "Name": "Magic Attack",
+      "Description": "Magic attack power displayed in the menu."
+    },
+    {
+      "Field": "fireAttack",
+      "Name": "Fire Attack",
+      "Description": "Fire-based attack power displayed in the menu."
+    },
+    {
+      "Field": "thunderAttack",
+      "Name": "Lightning Attack",
+      "Description": "Lightning-based attack power displayed in the menu."
+    },
+    {
+      "Field": "darkAttack",
+      "Name": "Dark Attack",
+      "Description": "Dark-element attack power displayed in the menu."
+    },
+    {
+      "Field": "poisonAttack",
+      "Name": "Poison Attack",
+      "Description": "Poison buildup or damage value displayed in the menu."
+    },
+    {
+      "Field": "bleedingAttack",
+      "Name": "Bleed Attack",
+      "Description": "Bleed buildup or damage value displayed in the menu."
+    },
+    {
+      "Field": "weaponBreakAttack",
+      "Name": "Durability Attack",
+      "Description": "Damage value contributing to weapon durability reduction."
+    },
+    {
+      "Field": "defense",
+      "Name": "Defense",
+      "Description": "Overall physical defense value displayed in the menu."
+    },
+    {
+      "Field": "magicResistance",
+      "Name": "Magic Resistance",
+      "Description": "Resistance against magic damage."
+    },
+    {
+      "Field": "fireResistance",
+      "Name": "Fire Resistance",
+      "Description": "Resistance against fire damage."
+    },
+    {
+      "Field": "thunderResistance",
+      "Name": "Lightning Resistance",
+      "Description": "Resistance against lightning damage."
+    },
+    {
+      "Field": "darkResistance",
+      "Name": "Dark Resistance",
+      "Description": "Resistance against dark damage."
+    },
+    {
+      "Field": "poisonResistance",
+      "Name": "Poison Resistance",
+      "Description": "Resistance against poison buildup."
+    },
+    {
+      "Field": "bleedingResistance",
+      "Name": "Bleed Resistance",
+      "Description": "Resistance against bleed buildup."
+    },
+    {
+      "Field": "weaponBreakResistance",
+      "Name": "Durability Resistance",
+      "Description": "Resistance against durability loss from attacks."
+    },
+    {
+      "Field": "petrifactionResistance",
+      "Name": "Petrification Resistance",
+      "Description": "Resistance against petrification effects."
+    },
+    {
+      "Field": "curseResistance",
+      "Name": "Curse Resistance",
+      "Description": "Resistance against curse status effects."
+    },
+    {
+      "Field": "evasionInvincibleTime",
+      "Name": "Evasion Invincibility Time",
+      "Description": "Duration of invincibility frames during evasive actions."
+    },
+    {
+      "Field": "actionSpeed",
+      "Name": "Action Speed",
+      "Description": "Overall speed modifier for various player actions."
+    },
+    {
+      "Field": "physicalAttackByAbyss",
+      "Name": "Physical Attack (Hollow)",
+      "Description": "Physical attack power associated with hollow-related scaling."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "Padding",
+      "Description": ""
+    },
+    {
+      "Field": "equipLoadMax",
+      "Name": "Max Equip Load",
+      "Description": "Maximum equipment weight the player can carry without penalty."
+    }
+  ]
+}

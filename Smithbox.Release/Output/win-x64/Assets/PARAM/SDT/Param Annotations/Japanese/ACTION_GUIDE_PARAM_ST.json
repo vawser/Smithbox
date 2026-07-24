@@ -1,0 +1,23 @@
+{
+  "Param": "ACTION_GUIDE_PARAM_ST",
+  "Type": "ACTION_GUIDE_PARAM_ST",
+  "Name": "ACTION_GUIDE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId",
+      "Name": "テキストID ",
+      "Description": "アクションガイドとして表示するテキストのID "
+    },
+    {
+      "Field": "priority",
+      "Name": "表示順優先度 ",
+      "Description": "複数のアクションガイドを同時に表示したときの優先度(0～99、0に近い程優先) "
+    },
+    {
+      "Field": "pad1",
+      "Name": "padding",
+      "Description": "padding"
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "Name": "GestureParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Polite Bow"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "My Thanks"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Curtsy"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Reverential Bow"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "My Lord"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Warm Welcome"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Casual Greeting"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Strength!"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "As You Wish"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Point Forwards"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Point Upwards"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Point Downwards"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Beckon"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Wait!"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Calm Down!"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Nod In Thought"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Extreme Repentance"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Grovel For Mercy"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Rallying Cry"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Heartening Cry"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "By My Sword"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Hoslow's Oath"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Fire Spur Me"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "The Carian Oath (Cut?)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Bravo!"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Jump for Joy"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Triumphant Delight"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Fancy Spin"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Finger Snap"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Dejection"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Patches' Crouch"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Crossed Legs"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Rest"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Sitting Sideways"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Dozing Cross-Legged"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Spread Out"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Fetal Position (Cut?)"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Balled Up"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "What Do You Want?"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Prayer"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Desperate Prayer"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Rapture"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Erudition"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Outer Order"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Inner Order"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Golden Order Totality"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "The Ring"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "The Ring (Duplicate?)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

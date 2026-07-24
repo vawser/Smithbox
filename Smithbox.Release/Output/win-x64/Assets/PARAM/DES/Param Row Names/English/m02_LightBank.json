@@ -1,0 +1,389 @@
+{
+  "Name": "m02_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0 basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0 Indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0 phalanx floor"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0 character (basic)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0 character (indoor)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0 character (shade)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1 basic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1 Indoor"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1 Distant town"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1 character (basic)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1 character (indoor)"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1 character (shade)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2 basic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2 Indoor"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B2 character (basic)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B2 character (indoor)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B2 character (shade)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B2 flag object"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B3 Basic"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B3 Indoor"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B3 character (basic)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "B3 character (indoor)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "B3 character (shade)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "For poly drama (p20001-OBJ"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "For poly drama (p20001-PC"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "For poly drama (p20001-BG"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "For polyplay (p20202-Prisoner"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "For police drama (p20202-Soldier and Prisoner"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "For poly drama (p20001-Phalanx"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Poly drama (p20100-King's Shield"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Poly drama (p20100-King's shield-c02"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "For TGS Poly Drama (p20002-King's Shield-A"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "For polyplay (p20100-Prisoner"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "For poly drama (p20100-Soldier"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "For poly drama (p20204-Prisoner"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Poly drama (p20100-BG-general"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "For poly drama (p20100-BG-c06"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "For poly drama (p20201-Prisoner"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Polyplay (p20201-King's Sword-General"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Poly drama (p20202-King's sword-cut08"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "For TGS Poly Drama (p20002-King's Shield-B"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-04"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-03"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-02"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c01"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-01"
+      ]
+    }
+  ]
+}

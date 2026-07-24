@@ -1,0 +1,2177 @@
+{
+  "Name": "SmallBaseMapVariationParam",
+  "Entries": [
+    {
+      "ID": 3000,
+      "Entries": [
+        "Fort A (Open Fort)"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Fort B (Sewer Fort)"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Encampment A (Standard)"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Encampment B (Tower)"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "Encampment C (Ruined)"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Ruins A"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Ruins B"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Ruins C"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Ruins D"
+      ]
+    },
+    {
+      "ID": 3790,
+      "Entries": [
+        "Township"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Temple A (Above ground)"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Temple B (Underground)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Sorcerer's Rise A"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Sorcerer's Rise B"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Church A (Standard)"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Church B (Starter)"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Church (Rotted Woods)"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Camp A"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "Camp B"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "Camp C"
+      ]
+    },
+    {
+      "ID": 4330,
+      "Entries": [
+        "Camp (Rotted Woods)"
+      ]
+    },
+    {
+      "ID": 4340,
+      "Entries": [
+        "Camp D"
+      ]
+    },
+    {
+      "ID": 4341,
+      "Entries": [
+        "Camp E"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "Camp F"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "Shack"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Caravans A"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Caravans B"
+      ]
+    },
+    {
+      "ID": 4551,
+      "Entries": [
+        "Field Boss - Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 4552,
+      "Entries": [
+        "Boss Raid - Augur (Maris)"
+      ]
+    },
+    {
+      "ID": 4553,
+      "Entries": [
+        "Boss Raid - Sentient Pest (Gnoster)"
+      ]
+    },
+    {
+      "ID": 4555,
+      "Entries": [
+        "Boss Raid - Demon (Libra)"
+      ]
+    },
+    {
+      "ID": 4590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4591,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Night Horde - Royal Army"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "Night Horde - Giant Dogs and Crows"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "Night Horde - Giant Ants"
+      ]
+    },
+    {
+      "ID": 4603,
+      "Entries": [
+        "Night Horde - Fingercreepers"
+      ]
+    },
+    {
+      "ID": 4604,
+      "Entries": [
+        "Night Horde - Dragons"
+      ]
+    },
+    {
+      "ID": 4605,
+      "Entries": [
+        "Night Horde - Guardian Golems"
+      ]
+    },
+    {
+      "ID": 4606,
+      "Entries": [
+        "Night Horde - Mounted Revenant Followers"
+      ]
+    },
+    {
+      "ID": 4608,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4609,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4617,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4618,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4626,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4627,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4628,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4632,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4633,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4635,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4636,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4637,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4638,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4641,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4642,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4643,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Evergaol A - Tier 1"
+      ]
+    },
+    {
+      "ID": 4651,
+      "Entries": [
+        "Field Boss - Red Wolf of the King Consort"
+      ]
+    },
+    {
+      "ID": 4652,
+      "Entries": [
+        "Field Boss - Draconic Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 4653,
+      "Entries": [
+        "Field Boss - Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 4654,
+      "Entries": [
+        "Field Boss - Royal Carian Knight"
+      ]
+    },
+    {
+      "ID": 4655,
+      "Entries": [
+        "Field Boss - Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 4656,
+      "Entries": [
+        "Field Boss - Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 4657,
+      "Entries": [
+        "Field Boss - Elder Lion"
+      ]
+    },
+    {
+      "ID": 4658,
+      "Entries": [
+        "Field Boss - Flying Dragon of the Hills"
+      ]
+    },
+    {
+      "ID": 4659,
+      "Entries": [
+        "Field Boss - Royal Revenant"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "Evergaol B - Tier 2"
+      ]
+    },
+    {
+      "ID": 4661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4662,
+      "Entries": [
+        "Field Boss - Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 4663,
+      "Entries": [
+        "Field Boss - Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 4664,
+      "Entries": [
+        "Field Boss - Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 4665,
+      "Entries": [
+        "Field Boss - Grafted Scion"
+      ]
+    },
+    {
+      "ID": 4666,
+      "Entries": [
+        "Field Boss - Black Blade Kindred"
+      ]
+    },
+    {
+      "ID": 4667,
+      "Entries": [
+        "Field Boss - Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 4668,
+      "Entries": [
+        "Field Boss - Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 4669,
+      "Entries": [
+        "Field Boss - Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "Evergaol C - Tier 2"
+      ]
+    },
+    {
+      "ID": 4671,
+      "Entries": [
+        "Field Boss - Miranda Blossom"
+      ]
+    },
+    {
+      "ID": 4672,
+      "Entries": [
+        "Field Boss - Golden Hippopotamus"
+      ]
+    },
+    {
+      "ID": 4673,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4674,
+      "Entries": [
+        "Field Boss - Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 4675,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4676,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4677,
+      "Entries": [
+        "Field Boss - Demi-Human Queen"
+      ]
+    },
+    {
+      "ID": 4678,
+      "Entries": [
+        "Boss Raid - Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 4680,
+      "Entries": [
+        "Evergaol D - Tier 3"
+      ]
+    },
+    {
+      "ID": 4681,
+      "Entries": [
+        "Basement Boss - Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 4682,
+      "Entries": [
+        "Basement Boss - Red Wolf of the King Consort"
+      ]
+    },
+    {
+      "ID": 4686,
+      "Entries": [
+        "Basement Boss - Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 4687,
+      "Entries": [
+        "Basement Boss - Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 4688,
+      "Entries": [
+        "Basement Boss - Royal Revenant"
+      ]
+    },
+    {
+      "ID": 4691,
+      "Entries": [
+        "Basement Boss - Grafted Scion"
+      ]
+    },
+    {
+      "ID": 4695,
+      "Entries": [
+        "Basement Boss - Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4740,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4770,
+      "Entries": [
+        "Night Boss - Tibia Mariner/Those Who Live in Death"
+      ]
+    },
+    {
+      "ID": 4780,
+      "Entries": [
+        "Night Boss - Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 4790,
+      "Entries": [
+        "Night Boss - Centipede Demon"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Night Boss - Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "Night Boss - Smelter Demon"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "Night Boss - Nameless King"
+      ]
+    },
+    {
+      "ID": 4830,
+      "Entries": [
+        "Night Boss - Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 4840,
+      "Entries": [
+        "Night Boss - Fell Omen (Morgott)"
+      ]
+    },
+    {
+      "ID": 4850,
+      "Entries": [
+        "Night Boss - Draconic Tree Sentinel/Royal Cavalrymen"
+      ]
+    },
+    {
+      "ID": 4860,
+      "Entries": [
+        "Night Boss - Tree Sentinel/Royal Cavalrymen"
+      ]
+    },
+    {
+      "ID": 4870,
+      "Entries": [
+        "Night Boss - Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 4880,
+      "Entries": [
+        "Night Boss - Godskin Duo"
+      ]
+    },
+    {
+      "ID": 4890,
+      "Entries": [
+        "Night Boss - Wormface"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "Night Boss - Tibia Mariner/Those Who Live in Death"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "Night Boss - Grafted Monarch (Godrick)"
+      ]
+    },
+    {
+      "ID": 4917,
+      "Entries": [
+        "Night Boss - Valiant Gargoyle"
+      ]
+    },
+    {
+      "ID": 4918,
+      "Entries": [
+        "Night Boss - Great Wyrm"
+      ]
+    },
+    {
+      "ID": 4919,
+      "Entries": [
+        "Night Boss - Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 4920,
+      "Entries": [
+        "Night Boss - Full-Grown Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 4921,
+      "Entries": [
+        "Night Boss - Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 4923,
+      "Entries": [
+        "Night Boss - Nox Dragonkin Soldier"
+      ]
+    },
+    {
+      "ID": 4924,
+      "Entries": [
+        "Night Boss - Bell-bearing Hunter (Elemer)"
+      ]
+    },
+    {
+      "ID": 4925,
+      "Entries": [
+        "Night Boss - Crucible Knight/Golden Hippopotamus"
+      ]
+    },
+    {
+      "ID": 4926,
+      "Entries": [
+        "Night Boss - Outland Commander (Niall)"
+      ]
+    },
+    {
+      "ID": 4927,
+      "Entries": [
+        "Night Boss - Battlefield Commander (O'Neil)"
+      ]
+    },
+    {
+      "ID": 4928,
+      "Entries": [
+        "Night Boss - Night's Cavalry Duo"
+      ]
+    },
+    {
+      "ID": 4929,
+      "Entries": [
+        "Night Boss - Demi-Human Queen/Demi-Human Swordmaster"
+      ]
+    },
+    {
+      "ID": 4930,
+      "Entries": [
+        "Night Boss - Royal Revenant"
+      ]
+    },
+    {
+      "ID": 4940,
+      "Entries": [
+        "Scale-bearing Merchant (Libra)"
+      ]
+    },
+    {
+      "ID": 4941,
+      "Entries": [
+        "Castle A - Banished Knights"
+      ]
+    },
+    {
+      "ID": 4942,
+      "Entries": [
+        "Castle B - Pot Trolls"
+      ]
+    },
+    {
+      "ID": 4943,
+      "Entries": [
+        "Castle C - Crucible Knights"
+      ]
+    },
+    {
+      "ID": 4990,
+      "Entries": [
+        "Night Boss - Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 4991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4992,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Marsh A - Poison"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Marsh B - Poison"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Marsh A - Frost"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Marsh A - Sleep"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Marsh A - Rot"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Marsh B - Madness"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Marsh B - Blood"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Blacksmith Village A (Upper Boss)"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Blacksmith Village B (Spread Group)"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Church - Great Hollow"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "Small Camp - Great Hollow"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Sorcerer's Rise - Great Hollow"
+      ]
+    },
+    {
+      "ID": 5115,
+      "Entries": [
+        "Caravans - Great Hollow"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Night Boss - Curseblade/Divine Beast Warrior"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Night Boss - Great Red Bear"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Night Boss - Death Knights"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "Night Boss - Demon in Pain/Demon from Below"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Night Boss - Lord of Blood (Mohg)"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "Night Boss - Divine Beast Dancing Lion"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "Night Boss - Knight Artorias"
+      ]
+    },
+    {
+      "ID": 5213,
+      "Entries": [
+        "Night Boss - Demon Prince"
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        "Great Church A - Holy (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5242,
+      "Entries": [
+        "Great Church A - Frost (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5245,
+      "Entries": [
+        "Great Church B - Sleep (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5246,
+      "Entries": [
+        "Great Church B - Lightning (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "Ruins A - Blood (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5252,
+      "Entries": [
+        "Ruins A - Poison (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5255,
+      "Entries": [
+        "Ruins B - Magic (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5257,
+      "Entries": [
+        "Ruins B - Sleep (Great Hollow)"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Boss Raid - Tricephalos (Gladius)"
+      ]
+    },
+    {
+      "ID": 5305,
+      "Entries": [
+        "Boss Raid - Fissure in the Fog (Caligo)"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5349,
+      "Entries": [
+        "Western Underground Fort (Underground Part) - Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 5350,
+      "Entries": [
+        "Western Underground Fort (Main) - Fire"
+      ]
+    },
+    {
+      "ID": 5351,
+      "Entries": [
+        "Western Underground Fort (Main) - Magic"
+      ]
+    },
+    {
+      "ID": 5352,
+      "Entries": [
+        "Western Underground Fort (Underground) - Omenkillers"
+      ]
+    },
+    {
+      "ID": 5353,
+      "Entries": [
+        "Western Underground Fort (Underground) - Bloodhound Knights"
+      ]
+    },
+    {
+      "ID": 5354,
+      "Entries": [
+        "Western Underground Fort (Icon) - Fire"
+      ]
+    },
+    {
+      "ID": 5355,
+      "Entries": [
+        "Western Underground Fort (Library) - Sorcerers"
+      ]
+    },
+    {
+      "ID": 5356,
+      "Entries": [
+        "Western Underground Fort (Library) - Carians"
+      ]
+    },
+    {
+      "ID": 5357,
+      "Entries": [
+        "Western Underground Fort (Icon) - Magic"
+      ]
+    },
+    {
+      "ID": 5358,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5359,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5361,
+      "Entries": [
+        "Western Underground Fort (Underground Part)"
+      ]
+    },
+    {
+      "ID": 5362,
+      "Entries": [
+        "Western Underground Fort (Outside) - Fire Knights"
+      ]
+    },
+    {
+      "ID": 5363,
+      "Entries": [
+        "Western Underground Fort (Outside) - Blackflame Monks"
+      ]
+    },
+    {
+      "ID": 5364,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5367,
+      "Entries": [
+        "Eastern Underground Fort (Main) - Rot"
+      ]
+    },
+    {
+      "ID": 5368,
+      "Entries": [
+        "Eastern Underground Fort (Main) - Holy"
+      ]
+    },
+    {
+      "ID": 5370,
+      "Entries": [
+        "Eastern Underground Fort (Interior) - Banished Knights"
+      ]
+    },
+    {
+      "ID": 5371,
+      "Entries": [
+        "Eastern Underground Fort (Interior) - Curseblades"
+      ]
+    },
+    {
+      "ID": 5372,
+      "Entries": [
+        "Eastern Underground Fort (Interior) - Omen"
+      ]
+    },
+    {
+      "ID": 5380,
+      "Entries": [
+        "Eastern Underground Fort (Icon) - Rot"
+      ]
+    },
+    {
+      "ID": 5381,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5382,
+      "Entries": [
+        "Eastern Underground Fort (Icon) - Holy"
+      ]
+    },
+    {
+      "ID": 5383,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5386,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5387,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5388,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5389,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5390,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5391,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5399,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23790,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24552,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24553,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24555,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24591,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24608,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24609,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24617,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24618,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24626,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24627,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24628,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24632,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24633,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24635,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24636,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24637,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24638,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24641,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24642,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24643,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24653,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24654,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24655,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24656,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24657,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24658,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24659,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24662,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24663,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24664,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24665,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24666,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24667,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24668,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24669,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24671,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24672,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24673,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24674,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24675,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24676,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24677,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24678,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24680,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24681,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24682,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24686,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24687,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24688,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24691,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24695,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24740,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24770,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24780,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24790,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24870,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24880,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24890,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24917,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24918,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24919,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24921,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24923,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24926,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24927,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24928,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24929,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24990,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24992,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

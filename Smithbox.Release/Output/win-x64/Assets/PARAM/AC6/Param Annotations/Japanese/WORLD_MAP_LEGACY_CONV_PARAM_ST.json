@@ -1,0 +1,93 @@
+{
+  "Param": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
+  "Type": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
+  "Name": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "srcAreaNo",
+      "Name": "変換元マップID：エリア番号",
+      "Description": "変換元マップID：エリア番号"
+    },
+    {
+      "Field": "srcGridXNo",
+      "Name": "変換元マップID：グリッドX",
+      "Description": "変換元マップID：グリッドX"
+    },
+    {
+      "Field": "srcGridZNo",
+      "Name": "変換元マップID：グリッドZ",
+      "Description": "変換元マップID：グリッドZ"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング１",
+      "Description": "パディング１"
+    },
+    {
+      "Field": "srcPosX",
+      "Name": "変換元マップ基準座標X",
+      "Description": "変換元マップ基準座標X"
+    },
+    {
+      "Field": "srcPosY",
+      "Name": "変換元マップ基準座標Y",
+      "Description": "変換元マップ基準座標Y"
+    },
+    {
+      "Field": "srcPosZ",
+      "Name": "変換元マップ基準座標Z",
+      "Description": "変換元マップ基準座標Z"
+    },
+    {
+      "Field": "dstAreaNo",
+      "Name": "変換先マップID：エリア番号",
+      "Description": "変換先マップID：エリア番号"
+    },
+    {
+      "Field": "dstGridXNo",
+      "Name": "変換先マップID：グリッドX",
+      "Description": "変換先マップID：グリッドX"
+    },
+    {
+      "Field": "dstGridZNo",
+      "Name": "変換先マップID：グリッドZ",
+      "Description": "変換先マップID：グリッドZ"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング２",
+      "Description": "パディング２"
+    },
+    {
+      "Field": "dstPosX",
+      "Name": "変換先マップ基準座標X",
+      "Description": "変換先マップ基準座標X"
+    },
+    {
+      "Field": "dstPosY",
+      "Name": "変換先マップ基準座標Y",
+      "Description": "変換先マップ基準座標Y"
+    },
+    {
+      "Field": "dstPosZ",
+      "Name": "変換先マップ基準座標Z",
+      "Description": "変換先マップ基準座標Z"
+    },
+    {
+      "Field": "isBasePoint",
+      "Name": "基準となる接続点か",
+      "Description": "基準となる接続点か。１つの変換元マップIDには必ず一つは基準となる接続点が設定される"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング３",
+      "Description": "パディング３"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング４",
+      "Description": "パディング４"
+    }
+  ]
+}

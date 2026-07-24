@@ -1,0 +1,12 @@
+{
+  "Languages": [
+        {
+          "Name": "English",
+          "Folder": "English"
+        },
+        {
+          "Name": "Test Language",
+          "Folder": "Test Language"
+        }
+    ]
+}

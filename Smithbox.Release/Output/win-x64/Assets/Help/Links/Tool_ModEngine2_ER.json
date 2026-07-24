@@ -1,0 +1,15 @@
+{
+    "ProjectType": 8,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: Mod Engine 2",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/github.com/soulsmods/ModEngine2@Mod Engine 2]",
+        "[Header]Description",
+        "Mod Engine 2 is a ground up rewrite of Mod Engine, a runtime code patching and injection library used for adding modding functionality to the Souls games by FROM Software."
+    ]
+}

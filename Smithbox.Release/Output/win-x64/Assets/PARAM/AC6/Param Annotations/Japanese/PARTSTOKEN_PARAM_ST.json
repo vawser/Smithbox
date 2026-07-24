@@ -1,0 +1,48 @@
+{
+  "Param": "PARTSTOKEN_PARAM_ST",
+  "Type": "PARTSTOKEN_PARAM_ST",
+  "Name": "PARTSTOKEN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "point",
+      "Name": "ポイント",
+      "Description": "傭兵ランク用のポイント"
+    },
+    {
+      "Field": "grade",
+      "Name": "等級",
+      "Description": "メニュー表示用のカテゴリ"
+    },
+    {
+      "Field": "usage",
+      "Name": "獲得経路",
+      "Description": "獲得経路"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "----"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "Param": "WIRE_SET_PARAM_ST",
+  "Type": "WIRE_SET_PARAM_ST",
+  "Name": "WIRE_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "wirePointSearchParamId0",
+      "Name": "識別子1",
+      "Description": "識別子1：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId1",
+      "Name": "識別子2",
+      "Description": "識別子2：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId2",
+      "Name": "識別子3",
+      "Description": "識別子3：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId3",
+      "Name": "識別子4",
+      "Description": "識別子4：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId4",
+      "Name": "識別子5",
+      "Description": "識別子5：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId5",
+      "Name": "識別子6",
+      "Description": "識別子6：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId6",
+      "Name": "識別子7",
+      "Description": "識別子7：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId7",
+      "Name": "識別子8",
+      "Description": "識別子8：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId8",
+      "Name": "識別子9",
+      "Description": "識別子9：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId9",
+      "Name": "識別子10",
+      "Description": "識別子10：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId10",
+      "Name": "識別子11",
+      "Description": "識別子11：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId11",
+      "Name": "識別子12",
+      "Description": "識別子12：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId12",
+      "Name": "識別子13",
+      "Description": "識別子13：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId13",
+      "Name": "識別子14",
+      "Description": "識別子14：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId14",
+      "Name": "識別子15",
+      "Description": "識別子15：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId15",
+      "Name": "識別子16",
+      "Description": "識別子16：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId16",
+      "Name": "識別子17",
+      "Description": "識別子17：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId17",
+      "Name": "識別子18",
+      "Description": "識別子18：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId18",
+      "Name": "識別子19",
+      "Description": "識別子19：ワイヤーポイント検索パラメータID"
+    },
+    {
+      "Field": "wirePointSearchParamId19",
+      "Name": "識別子20",
+      "Description": "識別子20：ワイヤーポイント検索パラメータID"
+    }
+  ]
+}

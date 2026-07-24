@@ -1,0 +1,18 @@
+{
+  "Param": "CS_WATER_QUALITY_DETAIL",
+  "Type": "CS_WATER_QUALITY_DETAIL",
+  "Name": "CS_WATER_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "interactionEnabled",
+      "Name": "Interaction Enabled",
+      "Description": "Interaction enabled"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

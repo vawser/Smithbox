@@ -1,0 +1,63 @@
+{
+  "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "reverbType",
+      "Name": "リバーブタイプ",
+      "Description": "リバーブタイプ"
+    },
+    {
+      "Field": "AreaNo",
+      "Name": "エリアNo",
+      "Description": "条件：エリアNo(-1:無効)"
+    },
+    {
+      "Field": "IndoorOutdoor",
+      "Name": "屋内外",
+      "Description": "条件：屋内外指定(0:屋外,1:屋内)(-1:無効)"
+    },
+    {
+      "Field": "useDistNoA",
+      "Name": "使用評価距離番号A",
+      "Description": "条件：使用する評価距離の番号A(-1:無効)"
+    },
+    {
+      "Field": "useDistNoB",
+      "Name": "使用評価距離番号B",
+      "Description": "条件：使用する評価距離の番号B(-1:無効)"
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad0",
+      "Description": "pad0"
+    },
+    {
+      "Field": "DistMinA",
+      "Name": "距離MinA[m]",
+      "Description": "条件：評価距離最小指定A用(0より小さい:無効)"
+    },
+    {
+      "Field": "DistMaxA",
+      "Name": "距離MaxA[m]",
+      "Description": "条件：評価距離最大指定A用(0より小さい:無効)"
+    },
+    {
+      "Field": "DistMinB",
+      "Name": "距離MinB[m]",
+      "Description": "条件：評価距離最小指定A用(0より小さい:無効)"
+    },
+    {
+      "Field": "DistMaxB",
+      "Name": "距離MaxB[m]",
+      "Description": "条件：評価距離最大指定A用(0より小さい:無効)"
+    },
+    {
+      "Field": "NoHitNumMin",
+      "Name": "衝突点NoHit数最小数",
+      "Description": "条件：NoHit数(-1:無効)"
+    }
+  ]
+}

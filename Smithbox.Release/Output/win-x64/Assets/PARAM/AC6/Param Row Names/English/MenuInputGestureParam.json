@@ -1,0 +1,1025 @@
+{
+  "Name": "MenuInputGestureParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "help"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "End of help"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Non-view mode: Model translation (up and down)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Non-view mode: Model translation (left and right)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Non-view mode: model scaling"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Status display switching"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "sort"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "previous tab"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Next tab"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Go to previous page"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Move to next page"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Start selecting all at once"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Deselect all"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "(collectively) selection"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Help video playback"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "ascending order"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "descending order"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "close"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Start view mode"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Exit view mode"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "View mode Model translation (up and down)"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "View mode Model translation (left and right)"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "View mode Model scaling"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Color picker: H"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Color picker: S"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Color picker: V"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "remove equipment"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Change aircraft name"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Attend AC test"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "automatic adjustment"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Purchase (in bulk)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Sale (in bulk)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Purchase (in bulk)"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Try-on release"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "peel off the image"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Applying the pilot emblem"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "remove pilot emblem"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Editing: Decal image selection"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Layer selection: context menu"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Decal top: Arm: Reverse reproduction"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Editing: Stamp"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Editing: Invert image"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Editing: Paste detailed settings"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Decal display switching"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Decal top: Delete all decals"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Decal top: Decal deletion operation"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Multiple selection: start"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Multiple selection: selection"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Multiple selection: deselect"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Multiple selection: command list"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Multiple selection: Exit"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Base point/position: Reset"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Base point/position: X"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Base point/position: Y"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Image: Scale shift operation"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Image: Scale X"
+      ]
+    },
+    {
+      "ID": 1155,
+      "Entries": [
+        "Image: Scale Y"
+      ]
+    },
+    {
+      "ID": 1156,
+      "Entries": [
+        "Image: rotation"
+      ]
+    },
+    {
+      "ID": 1158,
+      "Entries": [
+        "Image: Scale reset"
+      ]
+    },
+    {
+      "ID": 1198,
+      "Entries": [
+        "Base point/rotation For resource placement key icon display"
+      ]
+    },
+    {
+      "ID": 1199,
+      "Entries": [
+        "Base point/rotation For resource placement key icon display"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Camouflage OFF"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Camouflage ON"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Color: copy"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Color: Paste"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Color: Reset"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Color: Register"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "image manipulation"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Image creation screen → Management screen"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "Image creation screen ← Management screen",
+        "〃〃Additional operations"
+      ]
+    },
+    {
+      "ID": 1912,
+      "Entries": [
+        "Delete a shared image"
+      ]
+    },
+    {
+      "ID": 1913,
+      "Entries": [
+        "Management screen: Displaying shared information"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Editing: context menu"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "previous tool"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Next tool"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Layer selection"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Open display settings"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Close display settings"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Grid switching"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Single layer selection: Adjust"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "piece delete"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "command"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "piece duplication"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Piece display switching"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Piece Edit: Invert"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Piece editing: Scale reset"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Piece Edit: Scale X"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Piece editing: Scale Y"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Edit piece: Reset position"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Piece Edit: Move X"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Piece editing: Move Y"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Piece editing: Rotate"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Piece editing: Opacity"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Piece editing: Scale shift operation"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Multiple selection: start"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Multiple selection: selection"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Multiple selection: deselect"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "Multiple selection: command list"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "Multiple selection: Exit"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Aircraft data screen → management screen"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "Aircraft data screen ← Management screen",
+        "〃〃Additional operations"
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        "Deleting shared aircraft data"
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        "Management screen: Displaying shared information"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Reinforcement reset"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Details: Attachment extraction"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Details: Close"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Details: Show next block"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Details: Show next page"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Details: Show previous page"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Details: Close (for archive screen)"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Details: Close (for archive dialog)"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Details: Show next page"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Details: Show previous page"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Hardcore mode switch"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "close"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Detailed display"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Details: Close",
+        "Details: Close"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "chat"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Member selection"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Exit"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Cancel ready"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Gamer card/profile"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Detailed display"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Forced ejection"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Report"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "Gamer card/profile"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "team change"
+      ]
+    },
+    {
+      "ID": 8700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "End of results screen"
+      ]
+    },
+    {
+      "ID": 8801,
+      "Entries": [
+        "Match history: End of result screen"
+      ]
+    },
+    {
+      "ID": 8802,
+      "Entries": [
+        "Member selection"
+      ]
+    },
+    {
+      "ID": 8803,
+      "Entries": [
+        "Spectator display"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "close"
+      ]
+    },
+    {
+      "ID": 8901,
+      "Entries": [
+        "Gamer card/profile"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Initialization"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "slider cancel"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Slider value operation"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Deallocate"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Initialization"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Cancel assignment"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Go to previous category"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Move to next category"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Delete custom settings"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "HUD: Position X"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "HUD: Position Y"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "HUD: Scale X"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "HUD: Scale Y"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "HUD: Opacity"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Setting initialization"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "end",
+        "end"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Start photo mode"
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        "UI display switching"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Save: Overwrite"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Save: Create"
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        "Save load: Delete"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "SYSTEM menu"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "SYSTEM menu: Back"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "Mercenary data details"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "Mercenary data details: Close",
+        "Mercenary data details: Close"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Modal type: Close"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "close",
+        "close"
+      ]
+    }
+  ]
+}

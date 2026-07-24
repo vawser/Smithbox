@@ -1,0 +1,213 @@
+{
+  "Param": "CHR_GROWTH_PARAM",
+  "Type": "CHR_GROWTH_PARAM",
+  "Name": "CHR_GROWTH_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soulLevelMax",
+      "Name": "Maximum Soul Level",
+      "Description": "The maximum soul level possible."
+    },
+    {
+      "Field": "growthPointsPerLevelUp",
+      "Name": "Growth Points per Level Up",
+      "Description": "The amount of growth points given per level up."
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enemyOverKillSoulRate",
+      "Name": "Enemy: Soul % - Overkill",
+      "Description": "The soul multiplier applied on enemy overkill."
+    },
+    {
+      "Field": "enemyFinishSoulRate",
+      "Name": "Enemy: Soul % - Finish",
+      "Description": "The soul multiplier applied on enemy finish."
+    },
+    {
+      "Field": "enemyVeryEasySoulRate",
+      "Name": "Enemy: Soul % - Very Easy",
+      "Description": "The soul multiplier applied to enemies with the 'very easy' difficulty adjustment modifier."
+    },
+    {
+      "Field": "enemyEasySoulRate",
+      "Name": "Enemy: Soul % - Easy",
+      "Description": "The soul multiplier applied to enemies with the 'easy' difficulty adjustment modifier."
+    },
+    {
+      "Field": "enemyNormalSoulRate",
+      "Name": "Enemy: Soul % - Normal",
+      "Description": "The soul multiplier applied to enemies with the 'normal' difficulty adjustment modifier."
+    },
+    {
+      "Field": "enemyHardSoulRate",
+      "Name": "Enemy: Soul % - Hard",
+      "Description": "The soul multiplier applied to enemies with the 'hard' difficulty adjustment modifier."
+    },
+    {
+      "Field": "enemyVeryHardSoulRate",
+      "Name": "Enemy: Soul % - Very Hard",
+      "Description": "The soul multiplier applied to enemies with the 'very hard' difficulty adjustment modifier."
+    },
+    {
+      "Field": "enemyHellSoulRate",
+      "Name": "Enemy: Soul % - Hell",
+      "Description": "The soul multiplier applied to enemies with the 'hell' modifier."
+    },
+    {
+      "Field": "enemyCoop1SoulRate",
+      "Name": "Enemy: Soul % - Co-op 1",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 1' modifier."
+    },
+    {
+      "Field": "enemyCoop2SoulRate",
+      "Name": "Enemy: Soul % - Co-op 2",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 2' modifier."
+    },
+    {
+      "Field": "enemyCoop3SoulRate",
+      "Name": "Enemy: Soul % - Co-op 3",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 3' modifier."
+    },
+    {
+      "Field": "enemyCoop4SoulRate",
+      "Name": "Enemy: Soul % - Co-op 4",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 4' modifier."
+    },
+    {
+      "Field": "enemyCoop5SoulRate",
+      "Name": "Enemy: Soul % - Co-op 5",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 5' modifier."
+    },
+    {
+      "Field": "enemyCoop6SoulRate",
+      "Name": "Enemy: Soul % - Co-op 6",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 6' modifier."
+    },
+    {
+      "Field": "enemyLap1SoulRate",
+      "Name": "Enemy: Soul % - New Game 1",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 1' modifier."
+    },
+    {
+      "Field": "enemyLap2SoulRate",
+      "Name": "Enemy: Soul % - New Game 2",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 2' modifier."
+    },
+    {
+      "Field": "enemyLap3SoulRate",
+      "Name": "Enemy: Soul % - New Game 3",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 3' modifier."
+    },
+    {
+      "Field": "enemyLap4SoulRate",
+      "Name": "Enemy: Soul % - New Game 4",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 4' modifier."
+    },
+    {
+      "Field": "enemyLap5SoulRate",
+      "Name": "Enemy: Soul % - New Game 5",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 5' modifier."
+    },
+    {
+      "Field": "enemyLap6SoulRate",
+      "Name": "Enemy: Soul % - New Game 6",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 6' modifier."
+    },
+    {
+      "Field": "enemyLap7SoulRate",
+      "Name": "Enemy: Soul % - New Game 7",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 7' modifier."
+    },
+    {
+      "Field": "enemyLap8SoulRate",
+      "Name": "Enemy: Soul % - New Game 8",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 8' modifier."
+    },
+    {
+      "Field": "enemyLap9SoulRate",
+      "Name": "Enemy: Soul % - New Game 9",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 9' modifier."
+    },
+    {
+      "Field": "enemyLap10SoulRate",
+      "Name": "Enemy: Soul % - New Game 10",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 10' modifier."
+    },
+    {
+      "Field": "enemyLevelMinSoulRate",
+      "Name": "Enemy: Minimum Soul %: Soul Level",
+      "Description": "The minimum soul multiplier applied to enemies based on soul level."
+    },
+    {
+      "Field": "enemyLevelMaxSoulRate",
+      "Name": "Enemy: Maximum Soul %: Soul Level",
+      "Description": "The maximum soul multiplier applied to enemies based on soul level."
+    },
+    {
+      "Field": "enemyHostBlackSoulRate",
+      "Name": "Enemy: Soul %: Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a black tendency."
+    },
+    {
+      "Field": "enemyHostRedSoulRate",
+      "Name": "Enemy: Soul %: Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a red tendency."
+    },
+    {
+      "Field": "enemyWhiteBlackSoulRate",
+      "Name": "Enemy: Soul %: White-Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-black tendency."
+    },
+    {
+      "Field": "enemyWhiteRedSoulRate",
+      "Name": "Enemy: Soul %: White-Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-red tendency."
+    },
+    {
+      "Field": "enemyBlueBlackSoulRate",
+      "Name": "Enemy: Soul %: Blue-Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-black tendency."
+    },
+    {
+      "Field": "enemyBlueRedSoulRate",
+      "Name": "Enemy: Soul %: Blue-Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-red tendency."
+    },
+    {
+      "Field": "enemyBlackHostSoulRate",
+      "Name": "Enemy: Soul %: Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a black tendency and the host is defeated."
+    },
+    {
+      "Field": "enemyBlackWhiteSoulRate",
+      "Name": "Enemy: Soul %: White-Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-black tendency and the host is defeated."
+    },
+    {
+      "Field": "enemyBlackBlueSoulRate",
+      "Name": "Enemy: Soul %: Blue-Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-black tendency and the host is defeated."
+    },
+    {
+      "Field": "enemyRedHostSoulRate",
+      "Name": "Enemy: Soul %: Red - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red tendency and the host is defeated."
+    },
+    {
+      "Field": "enemyRedWhiteSoulRate",
+      "Name": "Enemy: Soul %: Red-White - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red-white tendency and the host is defeated."
+    },
+    {
+      "Field": "enemyRedBlueSoulRate",
+      "Name": "Enemy: Soul %: Red-Blue - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red-blue tendency and the host is defeated."
+    }
+  ]
+}

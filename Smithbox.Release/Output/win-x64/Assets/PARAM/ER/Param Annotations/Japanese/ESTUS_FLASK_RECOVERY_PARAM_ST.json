@@ -1,0 +1,113 @@
+{
+  "Param": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Type": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Name": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "ホスト",
+      "Description": "ホストのエスト回復数"
+    },
+    {
+      "Field": "invadeOrb_None",
+      "Name": "侵入経路_オーブ_なし",
+      "Description": "侵入経路がオーブの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeOrb_Umbasa",
+      "Name": "侵入経路_オーブ_太陽",
+      "Description": "侵入経路がオーブの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeOrb_Berserker",
+      "Name": "侵入経路_オーブ_バーサーカー",
+      "Description": "侵入経路がオーブの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeOrb_Sinners",
+      "Name": "侵入経路_オーブ_罪人",
+      "Description": "侵入経路がオーブの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeSign_None",
+      "Name": "侵入経路_サイン_なし",
+      "Description": "侵入経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeSign_Umbasa",
+      "Name": "侵入経路_サイン_太陽",
+      "Description": "侵入経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeSign_Berserker",
+      "Name": "侵入経路_サイン_バーサーカー",
+      "Description": "侵入経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeSign_Sinners",
+      "Name": "侵入経路_サイン_罪人",
+      "Description": "侵入経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeRing_Sinners",
+      "Name": "侵入経路_指輪_罪人",
+      "Description": "侵入経路が指輪の勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeRing_Rosalia",
+      "Name": "侵入経路_指輪_ボス守(ロザリア)",
+      "Description": "侵入経路が指輪の勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeRing_Forest",
+      "Name": "侵入経路_指輪_マップ守(森)",
+      "Description": "侵入経路が指輪の勢力のエスト回復数"
+    },
+    {
+      "Field": "coopSign_None",
+      "Name": "協力経路_サイン_なし",
+      "Description": "協力経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "coopSign_Umbasa",
+      "Name": "協力経路_サイン_太陽",
+      "Description": "協力経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "coopSign_Berserker",
+      "Name": "協力経路_サイン_バーサーカー",
+      "Description": "協力経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "coopSign_Sinners",
+      "Name": "協力経路_サイン_罪人",
+      "Description": "協力経路がサインの勢力のエスト回復数"
+    },
+    {
+      "Field": "coopRing_RedHunter",
+      "Name": "協力経路_指輪 _赤狩り",
+      "Description": "協力経路が指輪の勢力のエスト回復数"
+    },
+    {
+      "Field": "invadeRing_Anor",
+      "Name": "侵入経路_指輪_マップ守(アノール)",
+      "Description": "侵入経路が指輪の勢力のエスト回復数"
+    },
+    {
+      "Field": "paramReplaceRate",
+      "Name": "回復数パラメータ差し替え率",
+      "Description": "回復数パラメータ差し替え率"
+    },
+    {
+      "Field": "paramReplaceId",
+      "Name": "回復数パラメータ差し替え先ID",
+      "Description": "回復数パラメータ差し替え先ID"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

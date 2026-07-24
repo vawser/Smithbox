@@ -1,0 +1,53 @@
+{
+  "Param": "LOT_BASE_MAP_PATTERN_FLAG_ST",
+  "Type": "LOT_BASE_MAP_PATTERN_FLAG_ST",
+  "Name": "LOT_BASE_MAP_PATTERN_FLAG_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "modifierSet",
+      "Name": "modifierSet",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier1",
+      "Name": "requireModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier2",
+      "Name": "requireModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier1",
+      "Name": "excludeModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier2",
+      "Name": "excludeModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "modifier",
+      "Name": "modifier",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "eventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "weight",
+      "Description": ""
+    }
+  ]
+}

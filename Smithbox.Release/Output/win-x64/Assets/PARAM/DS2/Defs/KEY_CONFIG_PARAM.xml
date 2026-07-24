@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>KEY_CONFIG_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 moveAdvance">
+            <DisplayName>歩行（前進）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 moveAdvanceAdd">
+            <DisplayName>歩行（前進）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 moveRecession">
+            <DisplayName>歩行（後退）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 moveRecessionAdd">
+            <DisplayName>歩行（後退）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 moveRight">
+            <DisplayName>歩行（右移動）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 moveRightAdd">
+            <DisplayName>歩行（右移動）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 moveLeft">
+            <DisplayName>歩行（左移動）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 moveLeftAdd">
+            <DisplayName>歩行（左移動）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 parallelMoveAdvance">
+            <DisplayName>平行移動</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 dashMoveAdvance">
+            <DisplayName>ダッシュ</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="dummy8 cameraUp[1]">
+            <DisplayName>カメラ上移動</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="dummy8 cameraUpAdd[1]">
+            <DisplayName>カメラ上移動[追加入力]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="dummy8 cameraDown[1]">
+            <DisplayName>カメラ下移動</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="dummy8 cameraDownAdd[1]">
+            <DisplayName>カメラ下移動[追加入力]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="dummy8 cameraRight[1]">
+            <DisplayName>カメラ右移動</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="dummy8 cameraRightAdd[1]">
+            <DisplayName>カメラ右移動[追加入力]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="dummy8 cameraLeft[1]">
+            <DisplayName>カメラ左移動</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="dummy8 cameraLeftAdd[1]">
+            <DisplayName>カメラ左移動[追加入力]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 lockonAndReset">
+            <DisplayName>ロックオン／カメラリセット</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 lockonAndResetAdd">
+            <DisplayName>ロックオン／カメラリセット[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 changeSelectMagic">
+            <DisplayName>魔法切り替え</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 changeSelectMagicAdd">
+            <DisplayName>魔法切り替え[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 changeSelectItem">
+            <DisplayName>道具切り替え</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 changeSelectItemAdd">
+            <DisplayName>道具切り替え[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 changeSelectRWeapon">
+            <DisplayName>右武器切り替え</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 changeSelectRWeaponAdd">
+            <DisplayName>右武器切り替え[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u8 changeSelectLWeapon">
+            <DisplayName>左武器切り替え</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u8 changeSelectLWeaponAdd">
+            <DisplayName>左武器切り替え[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u8 weakAttackRight">
+            <DisplayName>右手アクション（弱攻撃）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="u8 weakAttackRightAdd">
+            <DisplayName>右手アクション（弱攻撃）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="u8 strongAttackRight">
+            <DisplayName>右手アクション（強攻撃）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u8 strongAttackRightAdd">
+            <DisplayName>右手アクション（強攻撃）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="u8 weakAttackLeft">
+            <DisplayName>左手アクション（弱攻撃）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="u8 weakAttackLeftAdd">
+            <DisplayName>左手アクション（弱攻撃）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="u8 strongAttackLeft">
+            <DisplayName>左手アクション（強攻撃）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="u8 strongAttackLeftAdd">
+            <DisplayName>左手アクション（強攻撃）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u8 useItem">
+            <DisplayName>アイテム使用</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u8 useItemAdd">
+            <DisplayName>アイテム使用[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="u8 operation">
+            <DisplayName>操作アクション</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u8 operationAdd">
+            <DisplayName>操作アクション[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="u8 switchingTwoHandsRight">
+            <DisplayName>両手持ち切り替え</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="u8 switchingTwoHandsRightAdd">
+            <DisplayName>両手持ち切り替え[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="u8 showMenu">
+            <DisplayName>メニュー表示</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="u8 showMenuAdd">
+            <DisplayName>メニュー表示[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="u8 selectUp">
+            <DisplayName>選択（上）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="u8 selectUpAdd">
+            <DisplayName>選択（上）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="u8 selectDown">
+            <DisplayName>選択（下）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="u8 selectDownAdd">
+            <DisplayName>選択（下）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="u8 selectRight">
+            <DisplayName>選択（右）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 selectRightAdd">
+            <DisplayName>選択（右）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u8 selectLeft">
+            <DisplayName>選択（左）</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="u8 selectLeftAdd">
+            <DisplayName>選択（左）[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="u8 select">
+            <DisplayName>決定</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="u8 selectAdd">
+            <DisplayName>決定[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="u8 cancel">
+            <DisplayName>キャンセル</DisplayName>
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="u8 cancelAdd">
+            <DisplayName>キャンセル[追加入力]</DisplayName>
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="u8 unk58">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk59">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk60">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk61">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk62">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk63">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk64">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk65">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk66">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk67">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk68">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk69">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk70">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk71">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk72">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk73">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk74">
+            <Enum>INPUT_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="u8 unk75">
+            <Enum>INPUT_ADD_KEY_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+        </Field>
+        <Field Def="dummy8 padding[2]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>76</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

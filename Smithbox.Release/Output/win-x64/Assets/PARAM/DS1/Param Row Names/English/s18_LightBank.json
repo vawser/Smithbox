@@ -1,0 +1,389 @@
+{
+  "Name": "s18_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_Basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0_Towers and shell"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0_Boss room"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0_Basic_Character"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0_Indoor_characters"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0_Boss room_Character"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0_During sealing"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0_White aisle"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0_Bridging with bases_1"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0_Bridging with bases_2"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0_Bridging with bases_3"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "m8300B0_King's Seal_Base"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "m8000B0_King seal seal_waste capital"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "m8100B0_King seal_crystal"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "m8200B0_King seal_Nito"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1_Indoor (passage)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B1_Outdoor"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1_sewage"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1_A church"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1_A tether"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1_Crowse desk"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B1_Distant view"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1_Spherical ball"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1_Character general purpose (light)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B1_Indoor OBJ general purpose"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B1_Crow Downstairs (Character)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B1_Passage through the ceiling"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "B1_Character general purpose (dark)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "B1_The first prison"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "B1_Character (courtyard terrace)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B1_Character (church)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "PolyG-scn100100-<c0000>-cutAll"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "PolyG-scn100100-<c2860>-cutAll"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "PolyG-scn100100-<MAP>-cut second half (church panorama)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-titl"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn180101_map"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn180101_chr_nezumi"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn180101_chr"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn180100_c0000Dark"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn180100_c0000"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn180100_KarasPV"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "Name": "LockOnCameraOffsetParam",
+  "Entries": [
+    {
+      "ID": 10010,
+      "Entries": [
+        "Very small -- 極小型"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Small -- 小型"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Medium -- 中型"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Large -- 大型"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Extra large -- 特大型"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "Special size -- 特特大型"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Special size -- 特特特大型"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21540,
+      "Entries": [
+        "Dedicated - Skeleton Aristocracy -- 専用-スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 22120,
+      "Entries": [
+        "Dedicated - Wyburn -- 専用-ワイバーン"
+      ]
+    },
+    {
+      "ID": 22235,
+      "Entries": [
+        "Dedicated - Giant Rat -- 専用-巨大ネズミ"
+      ]
+    },
+    {
+      "ID": 23033,
+      "Entries": [
+        "Dedicated - Double Sided Warrior: Snake Head -- 専用-両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 23050,
+      "Entries": [
+        "Dedicated - Daemon Night -- 専用-デーモンナイト"
+      ]
+    },
+    {
+      "ID": 23096,
+      "Entries": [
+        "Dedicated - New Giant Senior Soldier (Deceased) -- 専用-新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 23097,
+      "Entries": [
+        "Dedicated - New Giant Senior Soldier (Live) -- 専用-新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 23180,
+      "Entries": [
+        "Dedicated - Bay Grant -- 専用-ベイグラント"
+      ]
+    },
+    {
+      "ID": 23240,
+      "Entries": [
+        "Dedicated - Gargoil -- 専用-ガーゴイル"
+      ]
+    },
+    {
+      "ID": 23250,
+      "Entries": [
+        "Dedicated - Warrior in the Mirror -- 専用-鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 23260,
+      "Entries": [
+        "Dedicated - Butcher -- 専用-ブッチャー"
+      ]
+    },
+    {
+      "ID": 23320,
+      "Entries": [
+        "Dedicated - Queen Knight A -- 専用-王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 23330,
+      "Entries": [
+        "Dedicated - Queen Knight B -- 専用-王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 23340,
+      "Entries": [
+        "Dedicated - Queen Knight C -- 専用-王妃の騎士C"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "Dedicated - Javaza Hat -- 専用-ジャバザハット"
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Dedicated - Naga -- 専用-ナーガ"
+      ]
+    },
+    {
+      "ID": 25030,
+      "Entries": [
+        "Dedicated - Manscorpion ♀ -- 専用-マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 25040,
+      "Entries": [
+        "Dedicated - Mirror Night -- 専用-ミラーナイト"
+      ]
+    },
+    {
+      "ID": 25061,
+      "Entries": [
+        "Dedicated - Agaduran Stand -- 専用-アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 25146,
+      "Entries": [
+        "Dedicated - Old King -- 専用-年老いた王"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "Dedicated - Old Dragon -- 専用-古の龍"
+      ]
+    },
+    {
+      "ID": 26020,
+      "Entries": [
+        "Dedicated - Beautiful Voice Frog -- 専用-美声カエル"
+      ]
+    },
+    {
+      "ID": 26030,
+      "Entries": [
+        "Dedicated - Spider Queen -- 専用-蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 26031,
+      "Entries": [
+        "Dedicated - Spider Queen (Cliff) -- 専用-蜘蛛の女王（崖）"
+      ]
+    },
+    {
+      "ID": 26070,
+      "Entries": [
+        "Dedicated - Molten Iron Daemon -- 専用-熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 26110,
+      "Entries": [
+        "Dedicated - Heavy Cavalry -- 専用-重騎馬兵"
+      ]
+    },
+    {
+      "ID": 26191,
+      "Entries": [
+        "Exclusive - Silver Chariot -- 専用-シルバーチャリオット"
+      ]
+    },
+    {
+      "ID": 26250,
+      "Entries": [
+        "Dedicated - Ornstein -- 専用-オーンスタイン"
+      ]
+    },
+    {
+      "ID": 26260,
+      "Entries": [
+        "Dedicated - Forgotten Sinner -- 専用-忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 26270,
+      "Entries": [
+        "Dedicated - Queen's Armor Form -- 専用-王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 26750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26790,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26890,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26920,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

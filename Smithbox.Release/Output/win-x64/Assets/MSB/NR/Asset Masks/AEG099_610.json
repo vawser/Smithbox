@@ -1,0 +1,125 @@
+{
+  "model": "AEG099_610",
+  "section_one": [
+    {
+      "mask": "10",
+      "name": "Naked Commoner"
+    },
+    {
+      "mask": "20",
+      "name": "Clothed Commoner"
+    },
+    {
+      "mask": "30",
+      "name": "Commoner with Ropes"
+    },
+    {
+      "mask": "40",
+      "name": "Commoner with Ropes"
+    },
+    {
+      "mask": "50",
+      "name": "Commoner with Ropes"
+    }
+  ],
+  "section_two": [
+    {
+      "mask": "10",
+      "name": "Unarmed"
+    }
+  ],
+  "section_three": [
+    {
+      "mask": "00",
+      "name": "Sitting down, legs bend upwards"
+    },
+    {
+      "mask": "01",
+      "name": "Sitting up, legs forward"
+    },
+    {
+      "mask": "02",
+      "name": "Sitting up, cross legged"
+    },
+    {
+      "mask": "03",
+      "name": "Sitting slouched, legs down a ledge"
+    },
+    {
+      "mask": "10",
+      "name": "Laying face down, arms up"
+    },
+    {
+      "mask": "11",
+      "name": "Laying face down, arms down"
+    },
+    {
+      "mask": "12",
+      "name": "Sitting down, legs bend upwards"
+    },
+    {
+      "mask": "20",
+      "name": "Laying face up, left hand on chest"
+    },
+    {
+      "mask": "21",
+      "name": "Laying face up, arms down"
+    },
+    {
+      "mask": "22",
+      "name": "Laying face up, left hand on chest, right arm reaching for the sky"
+    },
+    {
+      "mask": "30",
+      "name": "Laying face down, legs and left arm hanging over object"
+    },
+    {
+      "mask": "31",
+      "name": "Laying face down, slumped over ledge, hanging by legs"
+    },
+    {
+      "mask": "32",
+      "name": "Laying face down, slumped over ledge, hanging by spread legs"
+    },
+    {
+      "mask": "40",
+      "name": "Laying face down, arms and legs hanging over a wall"
+    },
+    {
+      "mask": "41",
+      "name": "Laying face down, arms and legs hanging over a wall"
+    },
+    {
+      "mask": "42",
+      "name": "Laying face down, slumped over legde, legs facing ground"
+    },
+    {
+      "mask": "70",
+      "name": "Kneeling on left knee, holding invisible weapon (Serpent Hunter)"
+    },
+    {
+      "mask": "80",
+      "name": "Sitting in a chair with arms resting on arm-rests"
+    },
+    {
+      "mask": "81",
+      "name": "Sitting in a chair while praying"
+    },
+    {
+      "mask": "82",
+      "name": "Sitting in a chair with arms resting on lap"
+    },
+    {
+      "mask": "83",
+      "name": "Sitting in a chair with hands holding item VFX"
+    },
+    {
+      "mask": "84",
+      "name": "Sitting in chair with body slouched over"
+    },
+    {
+      "mask": "85",
+      "name": "Laying on left side"
+    }
+  ]
+}

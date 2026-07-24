@@ -1,0 +1,638 @@
+{
+  "Param": "MAP_PATTERN_SET_PARAM_ST",
+  "Type": "MAP_PATTERN_SET_PARAM_ST",
+  "Name": "MAP_PATTERN_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weight",
+      "Name": "weight",
+      "Description": ""
+    },
+    {
+      "Field": "patternCount",
+      "Name": "patternCount",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "unknown_2a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "unknown_2b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "unknown_3a",
+      "Description": ""
+    },
+    {
+      "Field": "chaosMatchWeight",
+      "Name": "chaosMatchWeight",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier1",
+      "Name": "eventModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier2",
+      "Name": "eventModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier3",
+      "Name": "eventModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier4",
+      "Name": "eventModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier5",
+      "Name": "eventModifier5",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier6",
+      "Name": "eventModifier6",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier7",
+      "Name": "eventModifier7",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier8",
+      "Name": "eventModifier8",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier1_Count",
+      "Name": "eventModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier2_Count",
+      "Name": "eventModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier3_Count",
+      "Name": "eventModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier4_Count",
+      "Name": "eventModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier5_Count",
+      "Name": "eventModifier5_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier6_Count",
+      "Name": "eventModifier6_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier7_Count",
+      "Name": "eventModifier7_Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier8_Count",
+      "Name": "eventModifier8_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier1",
+      "Name": "night1BossModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier2",
+      "Name": "night1BossModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier3",
+      "Name": "night1BossModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier4",
+      "Name": "night1BossModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier5",
+      "Name": "night1BossModifier5",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier6",
+      "Name": "night1BossModifier6",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier7",
+      "Name": "night1BossModifier7",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier8",
+      "Name": "night1BossModifier8",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier9",
+      "Name": "night1BossModifier9",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier10",
+      "Name": "night1BossModifier10",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier11",
+      "Name": "night1BossModifier11",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier12",
+      "Name": "night1BossModifier12",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier13",
+      "Name": "night1BossModifier13",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier14",
+      "Name": "night1BossModifier14",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier15",
+      "Name": "night1BossModifier15",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier16",
+      "Name": "night1BossModifier16",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier1_Count",
+      "Name": "night1BossModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier2_Count",
+      "Name": "night1BossModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier3_Count",
+      "Name": "night1BossModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier4_Count",
+      "Name": "night1BossModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier5_Count",
+      "Name": "night1BossModifier5_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier6_Count",
+      "Name": "night1BossModifier6_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier7_Count",
+      "Name": "night1BossModifier7_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier8_Count",
+      "Name": "night1BossModifier8_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier9_Count",
+      "Name": "night1BossModifier9_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier10_Count",
+      "Name": "night1BossModifier10_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier11_Count",
+      "Name": "night1BossModifier11_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier12_Count",
+      "Name": "night1BossModifier12_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier13_Count",
+      "Name": "night1BossModifier13_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier14_Count",
+      "Name": "night1BossModifier14_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier15_Count",
+      "Name": "night1BossModifier15_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier16_Count",
+      "Name": "night1BossModifier16_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier1",
+      "Name": "night2BossModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier2",
+      "Name": "night2BossModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier3",
+      "Name": "night2BossModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier4",
+      "Name": "night2BossModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier5",
+      "Name": "night2BossModifier5",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier6",
+      "Name": "night2BossModifier6",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier7",
+      "Name": "night2BossModifier7",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier8",
+      "Name": "night2BossModifier8",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier9",
+      "Name": "night2BossModifier9",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier10",
+      "Name": "night2BossModifier10",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier11",
+      "Name": "night2BossModifier11",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier12",
+      "Name": "night2BossModifier12",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier13",
+      "Name": "night2BossModifier13",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier14",
+      "Name": "night2BossModifier14",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier15",
+      "Name": "night2BossModifier15",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier16",
+      "Name": "night2BossModifier16",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier1_Count",
+      "Name": "night2BossModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier2_Count",
+      "Name": "night2BossModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier3_Count",
+      "Name": "night2BossModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier4_Count",
+      "Name": "night2BossModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier5_Count",
+      "Name": "night2BossModifier5_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier6_Count",
+      "Name": "night2BossModifier6_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier7_Count",
+      "Name": "night2BossModifier7_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier8_Count",
+      "Name": "night2BossModifier8_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier9_Count",
+      "Name": "night2BossModifier9_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier10_Count",
+      "Name": "night2BossModifier10_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier11_Count",
+      "Name": "night2BossModifier11_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier12_Count",
+      "Name": "night2BossModifier12_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier13_Count",
+      "Name": "night2BossModifier13_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier14_Count",
+      "Name": "night2BossModifier14_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier15_Count",
+      "Name": "night2BossModifier15_Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier16_Count",
+      "Name": "night2BossModifier16_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier1",
+      "Name": "greatHollowEastFortMainModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier2",
+      "Name": "greatHollowEastFortMainModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier3",
+      "Name": "greatHollowEastFortMainModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier4",
+      "Name": "greatHollowEastFortMainModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier1_Count",
+      "Name": "greatHollowEastFortMainModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier2_Count",
+      "Name": "greatHollowEastFortMainModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier3_Count",
+      "Name": "greatHollowEastFortMainModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier4_Count",
+      "Name": "greatHollowEastFortMainModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier1",
+      "Name": "greatHollowEastFortInteriorModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier2",
+      "Name": "greatHollowEastFortInteriorModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier3",
+      "Name": "greatHollowEastFortInteriorModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier4",
+      "Name": "greatHollowEastFortInteriorModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier1_Count",
+      "Name": "greatHollowEastFortInteriorModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier2_Count",
+      "Name": "greatHollowEastFortInteriorModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier3_Count",
+      "Name": "greatHollowEastFortInteriorModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier4_Count",
+      "Name": "greatHollowEastFortInteriorModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier1",
+      "Name": "greatHollowWestFortMainModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier2",
+      "Name": "greatHollowWestFortMainModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier3",
+      "Name": "greatHollowWestFortMainModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier4",
+      "Name": "greatHollowWestFortMainModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier1_Count",
+      "Name": "greatHollowWestFortMainModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier2_Count",
+      "Name": "greatHollowWestFortMainModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier3_Count",
+      "Name": "greatHollowWestFortMainModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier4_Count",
+      "Name": "greatHollowWestFortMainModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier1",
+      "Name": "greatHollowWestFortUnderModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier2",
+      "Name": "greatHollowWestFortUnderModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier3",
+      "Name": "greatHollowWestFortUnderModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier4",
+      "Name": "greatHollowWestFortUnderModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier1_Count",
+      "Name": "greatHollowWestFortUnderModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier2_Count",
+      "Name": "greatHollowWestFortUnderModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier3_Count",
+      "Name": "greatHollowWestFortUnderModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier4_Count",
+      "Name": "greatHollowWestFortUnderModifier4_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier1",
+      "Name": "greatHollowWestFortLibraryModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier2",
+      "Name": "greatHollowWestFortLibraryModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier3",
+      "Name": "greatHollowWestFortLibraryModifier3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier4",
+      "Name": "greatHollowWestFortLibraryModifier4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier1_Count",
+      "Name": "greatHollowWestFortLibraryModifier1_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier2_Count",
+      "Name": "greatHollowWestFortLibraryModifier2_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier3_Count",
+      "Name": "greatHollowWestFortLibraryModifier3_Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier4_Count",
+      "Name": "greatHollowWestFortLibraryModifier4_Count",
+      "Description": ""
+    }
+  ]
+}

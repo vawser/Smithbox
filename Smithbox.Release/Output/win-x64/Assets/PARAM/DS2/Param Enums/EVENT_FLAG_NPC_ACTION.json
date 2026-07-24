@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_FLAG_NPC_ACTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_NPC_ACTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "999999999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
+    }
+  ]
+}

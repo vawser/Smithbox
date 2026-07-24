@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a player spawnpoint within the map." />
+  
+  <Field>
+    <SpawnPointName
+    AltName="Spawn Point"
+    Wiki="Point for the SpawnPoint to spawn at."
+    MapRef="Region-Region" />
+    
+    <SpawnPointIndex
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

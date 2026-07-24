@@ -1,0 +1,809 @@
+{
+  "Name": "PostureControlParam_WepLeft",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Scythe"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Staff"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Sword"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Large Weapon"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Small Shield"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Medium Shield"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Wylder] Default"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Wylder] Scythe"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Wylder] Staff"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Wylder] Greatshield"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Wylder] Torch"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Wylder] Sword"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Wylder] Fist"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Wylder] Large Weapon"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Wylder] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[Wylder] Twinblade"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Wylder] Small Shield"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Wylder] Medium Shield"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Guardian] Default"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Guardian] Scythe"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Guardian] Staff"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[Guardian] Greatshield"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "[Guardian] Torch"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[Guardian] Sword"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "[Guardian] Fist"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[Guardian] Large Weapon"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "[Guardian] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "[Guardian] Twinblade"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[Guardian] Small Shield"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[Guardian] Medium Shield"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Ironeye] Default"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "[Ironeye] Scythe"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "[Ironeye] Staff"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "[Ironeye] Greatshield"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "[Ironeye] Torch"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "[Ironeye] Sword"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "[Ironeye] Fist"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "[Ironeye] Large Weapon"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "[Ironeye] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "[Ironeye] Twinblade"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Ironeye] Small Shield"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Ironeye] Medium Shield"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Duchess] Default"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Duchess] Scythe"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Duchess] Staff"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "[Duchess] Greatshield"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "[Duchess] Torch"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Duchess] Sword"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Duchess] Fist"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "[Duchess] Large Weapon"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "[Duchess] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "[Duchess] Twinblade"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Duchess] Small Shield"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Duchess] Medium Shield"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Raider] Default"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Raider] Scythe"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "[Raider] Staff"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "[Raider] Greatshield"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "[Raider] Torch"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "[Raider] Sword"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "[Raider] Fist"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "[Raider] Large Weapon"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "[Raider] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "[Raider] Twinblade"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "[Raider] Small Shield"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "[Raider] Medium Shield"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Revenant] Default"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "[Revenant] Scythe"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "[Revenant] Staff"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "[Revenant] Greatshield"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "[Revenant] Torch"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "[Revenant] Sword"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "[Revenant] Fist"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "[Revenant] Large Weapon"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "[Revenant] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "[Revenant] Twinblade"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "[Revenant] Small Shield"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "[Revenant] Medium Shield"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "[Revenant]"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Recluse] Default"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "[Recluse] Scythe"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "[Recluse] Staff"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "[Recluse] Greatshield"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "[Recluse] Torch"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "[Recluse] Sword"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "[Recluse] Fist"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "[Recluse] Large Weapon"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "[Recluse] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "[Recluse] Twinblade"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "[Recluse] Small Shield"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[Recluse] Medium Shield"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[Executor] Default"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "[Executor] Scythe"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "[Executor] Staff"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "[Executor] Greatshield"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "[Executor] Torch"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "[Executor] Sword"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "[Executor] Fist"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "[Executor] Large Weapon"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "[Executor] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "[Executor] Twinblade"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "[Executor] Small Shield"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "[Executor] Medium Shield"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Scholar] Default"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[Scholar] Scythe"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "[Scholar] Staff"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "[Scholar] Greatshield"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "[Scholar] Torch"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "[Scholar] Sword"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "[Scholar] Fist"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "[Scholar] Large Weapon"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "[Scholar] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "[Scholar] Twinblade"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[Scholar] Small Shield"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "[Scholar] Medium Shield"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Undertaker] Default"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Undertaker] Scythe"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Undertaker] Staff"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Undertaker] Greatshield"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Undertaker] Torch"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Undertaker] Sword"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[Undertaker] Fist"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[Undertaker] Large Weapon"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[Undertaker] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[Undertaker] Twinblade"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Undertaker] Small Shield"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[Undertaker] Medium Shield"
+      ]
+    }
+  ]
+}

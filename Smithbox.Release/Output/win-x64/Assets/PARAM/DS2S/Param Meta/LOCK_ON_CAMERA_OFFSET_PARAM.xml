@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <time />
+        <fovY />
+        <targetOffsetX />
+        <targetOffsetY />
+        <targetOffsetZ />
+        <distance />
+        <targetChaseRateAtLockXZ />
+        <targetChaseRateAtLockY />
+        <targetChaseRateMinAngAtLock />
+        <targetChaseRateMaxAngAtLock />
+        <rotRangeMinXAtLock />
+        <rotRangeMaxXAtLock />
+        <rotRangeLerpBeginHeight />
+        <rotRangeLerpEndHeight />
+        <lockRotChaseRate />
+        <lockRotChasePlayAng />
+        <lockRotXShiftRatio />
+    </Field>
+</PARAMMETA>

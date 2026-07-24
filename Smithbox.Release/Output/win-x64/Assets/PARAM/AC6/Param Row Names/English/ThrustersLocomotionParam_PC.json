@@ -1,0 +1,159 @@
+{
+  "Name": "ThrustersLocomotionParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC default"
+      ]
+    },
+    {
+      "ID": 3035,
+      "Entries": [
+        "Auxiliary booster left",
+        "Auxiliary booster right"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Bayram 4-legged main booster right booster",
+        "Bayram 4-legged main booster left booster",
+        "Bayram 4-legged main booster back booster",
+        "Bayram 4-legged main booster back booster"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "For main [rear]",
+        "For back booster [front right]",
+        "For back booster [front left]",
+        "For turning/turning [side right]",
+        "For turning/turning [side left]",
+        "For climbing [side front right]",
+        "For climbing [side front left]",
+        "For climbing [side rear right]",
+        "For climbing [side rear left]",
+        "[Side rear right]",
+        "[Side rear left]",
+        "For ascending [bottom]"
+      ]
+    },
+    {
+      "ID": 37100,
+      "Entries": [
+        "Scavenger Core Right Booster",
+        "Scavenger Core Left Booster"
+      ]
+    },
+    {
+      "ID": 37200,
+      "Entries": [
+        "Scavenger arm right booster",
+        "Scavenger arm right arm turn booster",
+        "Scavenger arm left booster",
+        "Scavenger arm left arm turn booster"
+      ]
+    },
+    {
+      "ID": 37300,
+      "Entries": [
+        "Scavenger leg right leg sub booster",
+        "Scavenger leg left leg sub booster",
+        "Scavenger leg right foot turn booster",
+        "Scavenger leg left foot turn booster",
+        "Scavenger leg right leg back booster",
+        "Scavenger leg left leg back booster"
+      ]
+    },
+    {
+      "ID": 44100,
+      "Entries": [
+        "Bayram 4-legged main booster right booster",
+        "Bayram 4-legged main booster left booster"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "For main [rear]",
+        "For back booster [front right]",
+        "For back booster [front left]",
+        "For turning/turning [side right]",
+        "For turning/turning [side left]",
+        "[Side rear right]",
+        "[Side rear left]",
+        "For ascending [bottom]",
+        "For Assault Boost [Rear Center] *Unique addition",
+        "For walking movement [rear right side] *Unique addition",
+        "For walking movement [rear left side] *Unique addition"
+      ]
+    },
+    {
+      "ID": 55100,
+      "Entries": [
+        "For climbing [side front right]",
+        "For climbing [side front left]",
+        "For climbing [side rear right]",
+        "For climbing [side rear left]"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Iqbal Core Upper Booster",
+        "Iqbal core lower booster"
+      ]
+    },
+    {
+      "ID": 75100,
+      "Entries": [
+        "For main [rear]",
+        "For back booster [front right]",
+        "For back booster [front left]",
+        "For turning/turning [side right]",
+        "For turning/turning [side left]",
+        "For climbing [side front right]",
+        "For climbing [side front left]",
+        "For climbing [side rear right]",
+        "For climbing [side rear left]",
+        "[Side rear right]",
+        "[Side rear left]",
+        "For ascending [bottom]",
+        "Assault boost [bottom center] *Unique addition"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Kawamori core right booster",
+        "Kawamori core left booster"
+      ]
+    },
+    {
+      "ID": 80700,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 83500,
+      "Entries": [
+        "Scavenger leg right leg sub booster",
+        "Scavenger leg left leg sub booster",
+        "Scavenger leg right foot turn booster",
+        "Scavenger leg left foot turn booster",
+        "Scavenger leg right leg back booster",
+        "Scavenger leg left leg back booster"
+      ]
+    }
+  ]
+}

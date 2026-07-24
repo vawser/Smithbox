@@ -1,0 +1,33 @@
+{
+  "Param": "CHR_EQUIP_LOAD_PARAM",
+  "Type": "CHR_EQUIP_LOAD_PARAM",
+  "Name": "CHR_EQUIP_LOAD_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "valueOnLightLoad",
+      "Name": "Value on Light Load",
+      "Description": "The value to apply for light load."
+    },
+    {
+      "Field": "valueOnMiddleLoad",
+      "Name": "Value on Medium Load",
+      "Description": "The value to apply for medium load."
+    },
+    {
+      "Field": "valueOnHeavyLoad",
+      "Name": "Value on Heavy Load",
+      "Description": "The value to apply for heavy load."
+    },
+    {
+      "Field": "valueOnTooHeavyLoad",
+      "Name": "Value on Excessive Load",
+      "Description": "The value to apply for excessive load."
+    },
+    {
+      "Field": "valueOnOverWeightLoad",
+      "Name": "Value on Overweight Load",
+      "Description": "The value to apply for overweight load."
+    }
+  ]
+}

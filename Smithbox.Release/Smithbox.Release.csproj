@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <OutputType>Library</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\src\Smithbox.Vulkan\Smithbox.Vulkan.csproj">
+        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      </ProjectReference>
+      <ProjectReference Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj">
+        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      </ProjectReference>
+    </ItemGroup>
+
+  <Target Name="AssembleRelease" AfterTargets="Build">
+
+    <PropertyGroup>
+      <ReleaseDir>$(SolutionDir)Smithbox.Release\Output\</ReleaseDir>
+      <VulkanOutDir>$(SolutionDir)src\Smithbox.Vulkan\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</VulkanOutDir>
+      <OpenGLOutDir>$(SolutionDir)src\Smithbox.OpenGL\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</OpenGLOutDir>
+    </PropertyGroup>
+
+    <RemoveDir Directories="$(ReleaseDir)" Condition="Exists('$(ReleaseDir)')" />
+
+    <ItemGroup>
+      <VulkanFiles Include="$(VulkanOutDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(VulkanFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="true" />
+
+    <ItemGroup>
+      <OpenGLFiles Include="$(OpenGLOutDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(OpenGLFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="true" />
+
+    <Message Importance="high" Text="Release folder assembled at $(ReleaseDir)" />
+
+  </Target>
+
+</Project>

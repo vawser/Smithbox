@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_FAIL",
+      "Text": "Failed to setup the Primary Texture bank."
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_PASS",
+      "Text": "Setup the Primary Texture bank."
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_FAIL",
+      "Text": "Failed to setup the Preview Texture bank."
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_PASS",
+      "Text": "Setup the Preview Texture bank."
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_TPF_Read",
+      "Text": "Failed to read {0} as TPF in {1}."
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_BND4_Read",
+      "Text": "Failed to read {0} as BND4 in {1}"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Read",
+      "Text": "Failed to read {0} from VFS in {1}"
+    }
+  ]
+}

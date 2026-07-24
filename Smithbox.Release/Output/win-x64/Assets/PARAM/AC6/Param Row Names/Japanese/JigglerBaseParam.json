@@ -1,0 +1,2106 @@
+{
+  "Name": "JigglerBaseParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Left shoulder_L_ClavicleLink -- 左肩_L_ClavicleLink"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Right shoulder_R_ClavicleLink -- 右肩_R_ClavicleLink"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Torso_SpineB -- 胴体_SpineB"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Middle part of the fuselage -- 胴体の中間パーツ"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Middle part of the fuselage -- 胴体の中間パーツ"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Resident: Body -- 常駐：Body"
+      ]
+    },
+    {
+      "ID": 3020001,
+      "Entries": [
+        "Resident: L_Clavicle -- 常駐：L_Clavicle"
+      ]
+    },
+    {
+      "ID": 3020002,
+      "Entries": [
+        "Resident: L_Shoulder -- 常駐：L_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020003,
+      "Entries": [
+        "Resident: R_Clavicle -- 常駐：R_Clavicle"
+      ]
+    },
+    {
+      "ID": 3020004,
+      "Entries": [
+        "Resident: R_Shoulder -- 常駐：R_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020006,
+      "Entries": [
+        "For transportation: L_Shoulder -- 運搬用：L_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020007,
+      "Entries": [
+        "For transportation: L_Arm_03 -- 運搬用：L_Arm_03"
+      ]
+    },
+    {
+      "ID": 3020008,
+      "Entries": [
+        "For transportation: R_Shoulder -- 運搬用：R_Shoulder"
+      ]
+    },
+    {
+      "ID": 3020009,
+      "Entries": [
+        "For transportation: R_Arm_03 -- 運搬用：R_Arm_03"
+      ]
+    },
+    {
+      "ID": 3020010,
+      "Entries": [
+        "For transportation: L_Leg_01 -- 運搬用：L_Leg_01"
+      ]
+    },
+    {
+      "ID": 3020011,
+      "Entries": [
+        "For transportation: L_Leg_03 -- 運搬用：L_Leg_03"
+      ]
+    },
+    {
+      "ID": 3020012,
+      "Entries": [
+        "For transportation: R_Leg_01 -- 運搬用：R_Leg_01"
+      ]
+    },
+    {
+      "ID": 3020013,
+      "Entries": [
+        "For transportation: R_Leg_03 -- 運搬用：R_Leg_03"
+      ]
+    },
+    {
+      "ID": 3050000,
+      "Entries": [
+        "Resident: L_body_ex_01 -- 常駐：L_body_ex_01"
+      ]
+    },
+    {
+      "ID": 3050001,
+      "Entries": [
+        "Resident: R_body_ex_01 -- 常駐：R_body_ex_01"
+      ]
+    },
+    {
+      "ID": 3150000,
+      "Entries": [
+        "Resident: LG_L_Track0_Armor2 -- 常駐：LG_L_Track0_Armor2"
+      ]
+    },
+    {
+      "ID": 3150001,
+      "Entries": [
+        "Resident: LG_L_Track1_Armor2 -- 常駐：LG_L_Track1_Armor2"
+      ]
+    },
+    {
+      "ID": 3150002,
+      "Entries": [
+        "Resident: LG_R_Track0_Armor2 -- 常駐：LG_R_Track0_Armor2"
+      ]
+    },
+    {
+      "ID": 3150003,
+      "Entries": [
+        "Resident: LG_R_Track1_Armor2 -- 常駐：LG_R_Track1_Armor2"
+      ]
+    },
+    {
+      "ID": 3150004,
+      "Entries": [
+        "Resident: Assault_13 -- 常駐：Assault_13"
+      ]
+    },
+    {
+      "ID": 3150005,
+      "Entries": [
+        "Resident: Assault_14 -- 常駐：Assault_14"
+      ]
+    },
+    {
+      "ID": 3150006,
+      "Entries": [
+        "Resident: Assault_15 -- 常駐：Assault_15"
+      ]
+    },
+    {
+      "ID": 3150007,
+      "Entries": [
+        "Resident: Assault_17 -- 常駐：Assault_17"
+      ]
+    },
+    {
+      "ID": 3150008,
+      "Entries": [
+        "Resident: Assault_18 -- 常駐：Assault_18"
+      ]
+    },
+    {
+      "ID": 3150009,
+      "Entries": [
+        "Resident: Assault_19 -- 常駐：Assault_19"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Resident: Cannon_002 -- 常駐：Cannon_002"
+      ]
+    },
+    {
+      "ID": 5020001,
+      "Entries": [
+        "Resident: Body_EX_000 -- 常駐：Body_EX_000"
+      ]
+    },
+    {
+      "ID": 5020002,
+      "Entries": [
+        "Resident: Body_EX_001 -- 常駐：Body_EX_001"
+      ]
+    },
+    {
+      "ID": 5020003,
+      "Entries": [
+        "Resident: Skirt_000 -- 常駐：Skirt_000"
+      ]
+    },
+    {
+      "ID": 5020004,
+      "Entries": [
+        "Resident: Skirt_001 -- 常駐：Skirt_001"
+      ]
+    },
+    {
+      "ID": 5020005,
+      "Entries": [
+        "Resident: Skirt_002 -- 常駐：Skirt_002"
+      ]
+    },
+    {
+      "ID": 5020006,
+      "Entries": [
+        "Resident: Skirt_003 -- 常駐：Skirt_003"
+      ]
+    },
+    {
+      "ID": 5020007,
+      "Entries": [
+        "Resident: Skirt_004 -- 常駐：Skirt_004"
+      ]
+    },
+    {
+      "ID": 5020008,
+      "Entries": [
+        "Resident: Skirt_005 -- 常駐：Skirt_005"
+      ]
+    },
+    {
+      "ID": 5020009,
+      "Entries": [
+        "Resident: Skirt_006 -- 常駐：Skirt_006"
+      ]
+    },
+    {
+      "ID": 5020010,
+      "Entries": [
+        "Resident: Skirt_007 -- 常駐：Skirt_007"
+      ]
+    },
+    {
+      "ID": 5020011,
+      "Entries": [
+        "Resident: Skirt_008 -- 常駐：Skirt_008"
+      ]
+    },
+    {
+      "ID": 5020012,
+      "Entries": [
+        "Resident: Skirt_009 -- 常駐：Skirt_009"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "For transportation: 4 light bodies_right front -- 運搬用：軽4体_右前"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "For transportation: 4 light bodies_left front -- 運搬用：軽4体_左前"
+      ]
+    },
+    {
+      "ID": 5100002,
+      "Entries": [
+        "For transportation: 4 light bodies_right rear -- 運搬用：軽4体_右後"
+      ]
+    },
+    {
+      "ID": 5100003,
+      "Entries": [
+        "For transportation: 4 light bodies_left rear -- 運搬用：軽4体_左後"
+      ]
+    },
+    {
+      "ID": 5100004,
+      "Entries": [
+        "For transportation: 2 light bodies_front -- 運搬用：軽2体_前"
+      ]
+    },
+    {
+      "ID": 5100005,
+      "Entries": [
+        "For transportation: 2 light bodies_rear -- 運搬用：軽2体_後"
+      ]
+    },
+    {
+      "ID": 5100006,
+      "Entries": [
+        "For transportation: 2 heavy bodies_front -- 運搬用：重2体_前"
+      ]
+    },
+    {
+      "ID": 5100007,
+      "Entries": [
+        "For transportation: 2 heavy bodies_back -- 運搬用：重2体_後"
+      ]
+    },
+    {
+      "ID": 5100008,
+      "Entries": [
+        "For transportation: 2 light bodies_right -- 運搬用：軽2体_右"
+      ]
+    },
+    {
+      "ID": 5100009,
+      "Entries": [
+        "For transportation: 2 light bodies_left -- 運搬用：軽2体_左"
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        "For transportation: 2 heavy bodies_right -- 運搬用：重2体_右"
+      ]
+    },
+    {
+      "ID": 5100011,
+      "Entries": [
+        "For transportation: 2 heavy bodies_left -- 運搬用：重2体_左"
+      ]
+    },
+    {
+      "ID": 5100012,
+      "Entries": [
+        "For transportation: 1 light body_center -- 運搬用：軽1体_中央"
+      ]
+    },
+    {
+      "ID": 5100013,
+      "Entries": [
+        "For transportation: 1 heavy body_center -- 運搬用：重1体_中央"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "Resident: L_FrontCable_Root_01 -- 常駐：L_FrontCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "Resident: L_FrontCable_Root_02 -- 常駐：L_FrontCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300002,
+      "Entries": [
+        "Resident: L_FrontCable_Root_03 -- 常駐：L_FrontCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300003,
+      "Entries": [
+        "Resident: L_FrontCable_Root_04 -- 常駐：L_FrontCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300004,
+      "Entries": [
+        "Resident: L_FrontCable_Root_05 -- 常駐：L_FrontCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300005,
+      "Entries": [
+        "Resident: L_FrontCable_Root_06 -- 常駐：L_FrontCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300006,
+      "Entries": [
+        "Resident: L_FrontCable_Root_07 -- 常駐：L_FrontCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300007,
+      "Entries": [
+        "Resident: L_FrontCable_Root_08 -- 常駐：L_FrontCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300008,
+      "Entries": [
+        "Resident: L_FrontCable_Root_09 -- 常駐：L_FrontCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300009,
+      "Entries": [
+        "Resident: L_FrontCable_Root_10 -- 常駐：L_FrontCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300010,
+      "Entries": [
+        "Resident: L_FrontCable_Root_11 -- 常駐：L_FrontCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300011,
+      "Entries": [
+        "Resident: L_FrontCable_Root_12 -- 常駐：L_FrontCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300012,
+      "Entries": [
+        "Resident: R_FrontCable_Root_01 -- 常駐：R_FrontCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300013,
+      "Entries": [
+        "Resident: R_FrontCable_Root_02 -- 常駐：R_FrontCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300014,
+      "Entries": [
+        "Resident: R_FrontCable_Root_03 -- 常駐：R_FrontCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300015,
+      "Entries": [
+        "Resident: R_FrontCable_Root_04 -- 常駐：R_FrontCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300016,
+      "Entries": [
+        "Resident: R_FrontCable_Root_05 -- 常駐：R_FrontCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300017,
+      "Entries": [
+        "Resident: R_FrontCable_Root_06 -- 常駐：R_FrontCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300018,
+      "Entries": [
+        "Resident: R_FrontCable_Root_07 -- 常駐：R_FrontCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300019,
+      "Entries": [
+        "Resident: R_FrontCable_Root_08 -- 常駐：R_FrontCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300020,
+      "Entries": [
+        "Resident: R_FrontCable_Root_09 -- 常駐：R_FrontCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300021,
+      "Entries": [
+        "Resident: R_FrontCable_Root_10 -- 常駐：R_FrontCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300022,
+      "Entries": [
+        "Resident: R_FrontCable_Root_11 -- 常駐：R_FrontCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300023,
+      "Entries": [
+        "Resident: R_FrontCable_Root_12 -- 常駐：R_FrontCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300024,
+      "Entries": [
+        "Resident: L_RearCable_Root_01 -- 常駐：L_RearCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300025,
+      "Entries": [
+        "Resident: L_RearCable_Root_02 -- 常駐：L_RearCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300026,
+      "Entries": [
+        "Resident: L_RearCable_Root_03 -- 常駐：L_RearCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300027,
+      "Entries": [
+        "Resident: L_RearCable_Root_04 -- 常駐：L_RearCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300028,
+      "Entries": [
+        "Resident: L_RearCable_Root_05 -- 常駐：L_RearCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300029,
+      "Entries": [
+        "Resident: L_RearCable_Root_06 -- 常駐：L_RearCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300030,
+      "Entries": [
+        "Resident: L_RearCable_Root_07 -- 常駐：L_RearCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300031,
+      "Entries": [
+        "Resident: L_RearCable_Root_08 -- 常駐：L_RearCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300032,
+      "Entries": [
+        "Resident: L_RearCable_Root_09 -- 常駐：L_RearCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300033,
+      "Entries": [
+        "Resident: L_RearCable_Root_10 -- 常駐：L_RearCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300034,
+      "Entries": [
+        "Resident: L_RearCable_Root_11 -- 常駐：L_RearCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300035,
+      "Entries": [
+        "Resident: L_RearCable_Root_12 -- 常駐：L_RearCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5300036,
+      "Entries": [
+        "Resident: R_RearCable_Root_01 -- 常駐：R_RearCable_Root_01"
+      ]
+    },
+    {
+      "ID": 5300037,
+      "Entries": [
+        "Resident: R_RearCable_Root_02 -- 常駐：R_RearCable_Root_02"
+      ]
+    },
+    {
+      "ID": 5300038,
+      "Entries": [
+        "Resident: R_RearCable_Root_03 -- 常駐：R_RearCable_Root_03"
+      ]
+    },
+    {
+      "ID": 5300039,
+      "Entries": [
+        "Resident: R_RearCable_Root_04 -- 常駐：R_RearCable_Root_04"
+      ]
+    },
+    {
+      "ID": 5300040,
+      "Entries": [
+        "Resident: R_RearCable_Root_05 -- 常駐：R_RearCable_Root_05"
+      ]
+    },
+    {
+      "ID": 5300041,
+      "Entries": [
+        "Resident: R_RearCable_Root_06 -- 常駐：R_RearCable_Root_06"
+      ]
+    },
+    {
+      "ID": 5300042,
+      "Entries": [
+        "Resident: R_RearCable_Root_07 -- 常駐：R_RearCable_Root_07"
+      ]
+    },
+    {
+      "ID": 5300043,
+      "Entries": [
+        "Resident: R_RearCable_Root_08 -- 常駐：R_RearCable_Root_08"
+      ]
+    },
+    {
+      "ID": 5300044,
+      "Entries": [
+        "Resident: R_RearCable_Root_09 -- 常駐：R_RearCable_Root_09"
+      ]
+    },
+    {
+      "ID": 5300045,
+      "Entries": [
+        "Resident: R_RearCable_Root_10 -- 常駐：R_RearCable_Root_10"
+      ]
+    },
+    {
+      "ID": 5300046,
+      "Entries": [
+        "Resident: R_RearCable_Root_11 -- 常駐：R_RearCable_Root_11"
+      ]
+    },
+    {
+      "ID": 5300047,
+      "Entries": [
+        "Resident: R_RearCable_Root_12 -- 常駐：R_RearCable_Root_12"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "Resident: Thoracic_Scale_01 -- 常駐：Thoracic_Scale_01"
+      ]
+    },
+    {
+      "ID": 5500001,
+      "Entries": [
+        "Resident: Thoracic_Scale_02 -- 常駐：Thoracic_Scale_02"
+      ]
+    },
+    {
+      "ID": 5500002,
+      "Entries": [
+        "Resident: Thoracic_Scale_03 -- 常駐：Thoracic_Scale_03"
+      ]
+    },
+    {
+      "ID": 5500003,
+      "Entries": [
+        "Resident: Thoracic_Scale_04 -- 常駐：Thoracic_Scale_04"
+      ]
+    },
+    {
+      "ID": 5500004,
+      "Entries": [
+        "Resident: Thoracic_Scale_05 -- 常駐：Thoracic_Scale_05"
+      ]
+    },
+    {
+      "ID": 5500005,
+      "Entries": [
+        "Resident: Thoracic_Scale_06 -- 常駐：Thoracic_Scale_06"
+      ]
+    },
+    {
+      "ID": 5500006,
+      "Entries": [
+        "Resident: Abdomen_Scale_01 -- 常駐：Abdomen_Scale_01"
+      ]
+    },
+    {
+      "ID": 5500007,
+      "Entries": [
+        "Resident: Abdomen_Scale_02 -- 常駐：Abdomen_Scale_02"
+      ]
+    },
+    {
+      "ID": 5500008,
+      "Entries": [
+        "Resident: Abdomen_Scale_03 -- 常駐：Abdomen_Scale_03"
+      ]
+    },
+    {
+      "ID": 5500009,
+      "Entries": [
+        "Resident: Abdomen_Scale_04 -- 常駐：Abdomen_Scale_04"
+      ]
+    },
+    {
+      "ID": 5500010,
+      "Entries": [
+        "Resident: Abdomen_Scale_05 -- 常駐：Abdomen_Scale_05"
+      ]
+    },
+    {
+      "ID": 5500011,
+      "Entries": [
+        "Resident: Abdomen_Scale_06 -- 常駐：Abdomen_Scale_06"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Resident: L1_leg_ex_17 -- 常駐：L1_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100001,
+      "Entries": [
+        "Resident: L1_leg_ex_18 -- 常駐：L1_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100002,
+      "Entries": [
+        "Resident: L2_leg_ex_17 -- 常駐：L2_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100003,
+      "Entries": [
+        "Resident: L2_leg_ex_18 -- 常駐：L2_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100004,
+      "Entries": [
+        "Resident: L3_leg_ex_17 -- 常駐：L3_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100005,
+      "Entries": [
+        "Resident: L3_leg_ex_18 -- 常駐：L3_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100006,
+      "Entries": [
+        "Resident: R1_leg_ex_17 -- 常駐：R1_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100007,
+      "Entries": [
+        "Resident: R1_leg_ex_18 -- 常駐：R1_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100008,
+      "Entries": [
+        "Resident: R2_leg_ex_17 -- 常駐：R2_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100009,
+      "Entries": [
+        "Resident: R2_leg_ex_18 -- 常駐：R2_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100010,
+      "Entries": [
+        "Resident: R3_leg_ex_17 -- 常駐：R3_leg_ex_17"
+      ]
+    },
+    {
+      "ID": 6100011,
+      "Entries": [
+        "Resident: R3_leg_ex_18 -- 常駐：R3_leg_ex_18"
+      ]
+    },
+    {
+      "ID": 6100012,
+      "Entries": [
+        "Resident: L1_leg_ex_10 -- 常駐：L1_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100013,
+      "Entries": [
+        "Resident: L1_leg_ex_12 -- 常駐：L1_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100014,
+      "Entries": [
+        "Resident: L2_leg_ex_10 -- 常駐：L2_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100015,
+      "Entries": [
+        "Resident: L2_leg_ex_12 -- 常駐：L2_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100016,
+      "Entries": [
+        "Resident: L3_leg_ex_10 -- 常駐：L3_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100017,
+      "Entries": [
+        "Resident: L3_leg_ex_12 -- 常駐：L3_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100018,
+      "Entries": [
+        "Resident: R1_leg_ex_10 -- 常駐：R1_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100019,
+      "Entries": [
+        "Resident: R1_leg_ex_12 -- 常駐：R1_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100020,
+      "Entries": [
+        "Resident: R2_leg_ex_10 -- 常駐：R2_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100021,
+      "Entries": [
+        "Resident: R2_leg_ex_12 -- 常駐：R2_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100022,
+      "Entries": [
+        "Resident: R3_leg_ex_10 -- 常駐：R3_leg_ex_10"
+      ]
+    },
+    {
+      "ID": 6100023,
+      "Entries": [
+        "Resident: R3_leg_ex_12 -- 常駐：R3_leg_ex_12"
+      ]
+    },
+    {
+      "ID": 6100024,
+      "Entries": [
+        "Resident: L1_leg_ex_14 -- 常駐：L1_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100025,
+      "Entries": [
+        "Resident: L2_leg_ex_14 -- 常駐：L2_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100026,
+      "Entries": [
+        "Resident: L3_leg_ex_14 -- 常駐：L3_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100027,
+      "Entries": [
+        "Resident: R1_leg_ex_14 -- 常駐：R1_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100028,
+      "Entries": [
+        "Resident: R2_leg_ex_14 -- 常駐：R2_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 6100029,
+      "Entries": [
+        "Resident: R3_leg_ex_14 -- 常駐：R3_leg_ex_14"
+      ]
+    },
+    {
+      "ID": 7390000,
+      "Entries": [
+        "Resident: BarrelCable_A_01 -- 常駐：BarrelCable_A_01"
+      ]
+    },
+    {
+      "ID": 7390001,
+      "Entries": [
+        "Resident: BarrelCable_A_02 -- 常駐：BarrelCable_A_02"
+      ]
+    },
+    {
+      "ID": 7390002,
+      "Entries": [
+        "Resident: BarrelCable_B_01 -- 常駐：BarrelCable_B_01"
+      ]
+    },
+    {
+      "ID": 7390003,
+      "Entries": [
+        "Resident: BarrelCable_B_02 -- 常駐：BarrelCable_B_02"
+      ]
+    },
+    {
+      "ID": 7390004,
+      "Entries": [
+        "Resident: BarrelCable_C_01 -- 常駐：BarrelCable_C_01"
+      ]
+    },
+    {
+      "ID": 7390005,
+      "Entries": [
+        "Resident: BarrelCable_C_02 -- 常駐：BarrelCable_C_02"
+      ]
+    },
+    {
+      "ID": 7390006,
+      "Entries": [
+        "Resident: BarrelCable_D_01 -- 常駐：BarrelCable_D_01"
+      ]
+    },
+    {
+      "ID": 7390007,
+      "Entries": [
+        "Resident: BarrelCable_D_02 -- 常駐：BarrelCable_D_02"
+      ]
+    },
+    {
+      "ID": 7390008,
+      "Entries": [
+        "Resident: BarrelCable_E_01 -- 常駐：BarrelCable_E_01"
+      ]
+    },
+    {
+      "ID": 7390009,
+      "Entries": [
+        "Resident: BarrelCable_E_02 -- 常駐：BarrelCable_E_02"
+      ]
+    },
+    {
+      "ID": 7390010,
+      "Entries": [
+        "Resident: BarrelCable_F_01 -- 常駐：BarrelCable_F_01"
+      ]
+    },
+    {
+      "ID": 7390011,
+      "Entries": [
+        "Resident: BarrelCable_F_02 -- 常駐：BarrelCable_F_02"
+      ]
+    },
+    {
+      "ID": 8131000,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131001,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131002,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131003,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131004,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131005,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131006,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131007,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131008,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131009,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131010,
+      "Entries": [
+        "Enforcer (Unknown)"
+      ]
+    },
+    {
+      "ID": 8131011,
+      "Entries": [
+        "Main body poly test -- 本体だみポリテスト"
+      ]
+    },
+    {
+      "ID": 8135000,
+      "Entries": [
+        "Resident: Radar_arm_02 -- 常駐：Radar_arm_02"
+      ]
+    },
+    {
+      "ID": 8135001,
+      "Entries": [
+        "Resident: Radar_arm_03 -- 常駐：Radar_arm_03"
+      ]
+    },
+    {
+      "ID": 8135002,
+      "Entries": [
+        "Resident: L_shoulder_arm_04 -- 常駐：L_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8135003,
+      "Entries": [
+        "Resident: R_shoulder_arm_04 -- 常駐：R_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8135004,
+      "Entries": [
+        "Permanent: Shield parts -- 常駐：シールドパーツ"
+      ]
+    },
+    {
+      "ID": 8135005,
+      "Entries": [
+        "Permanent: Missile pod -- 常駐：ミサイルポッド"
+      ]
+    },
+    {
+      "ID": 8145000,
+      "Entries": [
+        "Resident: Radar_arm_02 -- 常駐：Radar_arm_02"
+      ]
+    },
+    {
+      "ID": 8145001,
+      "Entries": [
+        "Resident: Radar_arm_03 -- 常駐：Radar_arm_03"
+      ]
+    },
+    {
+      "ID": 8145002,
+      "Entries": [
+        "Resident: L_shoulder_arm_04 -- 常駐：L_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8145003,
+      "Entries": [
+        "Resident: R_shoulder_arm_04 -- 常駐：R_shoulder_arm_04"
+      ]
+    },
+    {
+      "ID": 8145005,
+      "Entries": [
+        "Permanent: Missile pod -- 常駐：ミサイルポッド"
+      ]
+    },
+    {
+      "ID": 9307000,
+      "Entries": [
+        "body test -- ボディテスト"
+      ]
+    },
+    {
+      "ID": 9307001,
+      "Entries": [
+        "waist test -- 腰テスト"
+      ]
+    },
+    {
+      "ID": 9307002,
+      "Entries": [
+        "right arm test -- 右腕テスト"
+      ]
+    },
+    {
+      "ID": 9307003,
+      "Entries": [
+        "left arm test -- 左腕テスト"
+      ]
+    },
+    {
+      "ID": 9307004,
+      "Entries": [
+        "right thigh test -- 右モモテスト"
+      ]
+    },
+    {
+      "ID": 9307005,
+      "Entries": [
+        "left thigh test -- 左モモテスト"
+      ]
+    },
+    {
+      "ID": 9307006,
+      "Entries": [
+        "right shin test -- 右スネテスト"
+      ]
+    },
+    {
+      "ID": 9307007,
+      "Entries": [
+        "left shin test -- 左スネテスト"
+      ]
+    },
+    {
+      "ID": 9307008,
+      "Entries": [
+        "right cover test -- 右カバーテスト"
+      ]
+    },
+    {
+      "ID": 9307009,
+      "Entries": [
+        "left cover test -- 左カバーテスト"
+      ]
+    },
+    {
+      "ID": 9308000,
+      "Entries": [
+        "Track L_1 -- 履帯L_1"
+      ]
+    },
+    {
+      "ID": 9308001,
+      "Entries": [
+        "Track L_2 -- 履帯L_2"
+      ]
+    },
+    {
+      "ID": 9308002,
+      "Entries": [
+        "Track L_3 -- 履帯L_3"
+      ]
+    },
+    {
+      "ID": 9308003,
+      "Entries": [
+        "Track L_4 -- 履帯L_4"
+      ]
+    },
+    {
+      "ID": 9308004,
+      "Entries": [
+        "Track L_5 -- 履帯L_5"
+      ]
+    },
+    {
+      "ID": 9308005,
+      "Entries": [
+        "Track L_6 -- 履帯L_6"
+      ]
+    },
+    {
+      "ID": 9308006,
+      "Entries": [
+        "Track R_1 -- 履帯R_1"
+      ]
+    },
+    {
+      "ID": 9308007,
+      "Entries": [
+        "Track R_2 -- 履帯R_2"
+      ]
+    },
+    {
+      "ID": 9308008,
+      "Entries": [
+        "Track R_3 -- 履帯R_3"
+      ]
+    },
+    {
+      "ID": 21080000,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080001,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080002,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080003,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080004,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21080005,
+      "Entries": [
+        "Hecatoncheir torso test -- ヘカトンケイル胴体テスト"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Attach parts test on core -- コアについたアタッチパーツテスト"
+      ]
+    },
+    {
+      "ID": 21400001,
+      "Entries": [
+        "Attach parts test on core -- コアについたアタッチパーツテスト"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "percentage rotation -- 割合回転",
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 31400001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 41510000,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510001,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510002,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510003,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510004,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510005,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510006,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510007,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510008,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510009,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510010,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510011,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510012,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510013,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510014,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510015,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510016,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510017,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510018,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510019,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510020,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 41510021,
+      "Entries": [
+        "tank parts test -- タンクパーツテスト"
+      ]
+    },
+    {
+      "ID": 43010000,
+      "Entries": [
+        "Proportional rotation test for thighs -- 太ももに対して割合回転テスト"
+      ]
+    },
+    {
+      "ID": 43010001,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010002,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010003,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010004,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010005,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010006,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 43010007,
+      "Entries": [
+        "Proportional rotation test for thighs -- 太ももに対して割合回転テスト"
+      ]
+    },
+    {
+      "ID": 44010000,
+      "Entries": [
+        "Percent rotation relative to thigh -- 太ももに対して割合回転"
+      ]
+    },
+    {
+      "ID": 44010001,
+      "Entries": [
+        "Percent rotation relative to thigh -- 太ももに対して割合回転"
+      ]
+    },
+    {
+      "ID": 46320000,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 46320001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 46320002,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 46320003,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 37010000,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 37010001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 37010002,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 37010003,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010000,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010002,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010003,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010004,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010005,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010006,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010007,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010008,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010009,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010010,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010011,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010012,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010013,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010014,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47010015,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 47510000,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510001,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510002,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510003,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510004,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510005,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510006,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510007,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510008,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 47510009,
+      "Entries": [
+        "tank exterior parts -- タンク外装パーツ"
+      ]
+    },
+    {
+      "ID": 48030000,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48030001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48030002,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48030003,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48031000,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48031001,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48031002,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48031003,
+      "Entries": [
+        "percentage rotation -- 割合回転"
+      ]
+    },
+    {
+      "ID": 48060000,
+      "Entries": [
+        "Parallel to the ground test -- 地面と平行テスト"
+      ]
+    },
+    {
+      "ID": 48060001,
+      "Entries": [
+        "Proportional rotation test for thighs -- 太ももに対して割合回転テスト"
+      ]
+    },
+    {
+      "ID": 48060002,
+      "Entries": [
+        "Proportional rotation test for thighs -- 太ももに対して割合回転テスト"
+      ]
+    },
+    {
+      "ID": 48060003,
+      "Entries": [
+        "Rear armor test -- 背面装甲テスト"
+      ]
+    },
+    {
+      "ID": 29100000,
+      "Entries": [
+        "Biped torso test -- 2脚胴体テスト"
+      ]
+    },
+    {
+      "ID": 29100001,
+      "Entries": [
+        "Biped torso test -- 2脚胴体テスト"
+      ]
+    },
+    {
+      "ID": 39100000,
+      "Entries": [
+        "bipedal arm test -- 2脚腕テスト"
+      ]
+    },
+    {
+      "ID": 39100001,
+      "Entries": [
+        "bipedal arm test -- 2脚腕テスト"
+      ]
+    },
+    {
+      "ID": 39100002,
+      "Entries": [
+        "bipedal arm test -- 2脚腕テスト"
+      ]
+    },
+    {
+      "ID": 39100003,
+      "Entries": [
+        "bipedal arm test -- 2脚腕テスト"
+      ]
+    },
+    {
+      "ID": 49100000,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100001,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100002,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100003,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100004,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100005,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100006,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100007,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 49100008,
+      "Entries": [
+        "Bipod foot test -- 2脚足テスト"
+      ]
+    },
+    {
+      "ID": 50910000,
+      "Entries": [
+        "rifle test -- ライフルテスト"
+      ]
+    },
+    {
+      "ID": 59810000,
+      "Entries": [
+        "Attach parts test -- アタッチパーツテスト"
+      ]
+    },
+    {
+      "ID": 59810001,
+      "Entries": [
+        "Attach parts test -- アタッチパーツテスト"
+      ]
+    },
+    {
+      "ID": 55710000,
+      "Entries": [
+        "WP_L/R_5710 (Ixceed EN)_Body -- WP_L/R_5710(イクシードEN)_本体"
+      ]
+    },
+    {
+      "ID": 55710001,
+      "Entries": [
+        "WP_R_5710_Feather_L -- WP_R_5710_羽_L"
+      ]
+    },
+    {
+      "ID": 55710002,
+      "Entries": [
+        "WP_R_5710_Feather_R -- WP_R_5710_羽_R"
+      ]
+    },
+    {
+      "ID": 55710011,
+      "Entries": [
+        "WP_L_5710_Feather_L -- WP_L_5710_羽_L"
+      ]
+    },
+    {
+      "ID": 55710012,
+      "Entries": [
+        "WP_L_5710_Feather_R -- WP_L_5710_羽_R"
+      ]
+    },
+    {
+      "ID": 55710100,
+      "Entries": [
+        "WP_L_5710 For swinging weapons -- WP_L_5710武器の揺れ用"
+      ]
+    },
+    {
+      "ID": 55710110,
+      "Entries": [
+        "WP_R_5710 For swinging weapons -- WP_R_5710武器の揺れ用"
+      ]
+    },
+    {
+      "ID": 55720000,
+      "Entries": [
+        "WP_L/R_5720 (Ixceed EN)_Body -- WP_L/R_5720(イクシードEN)_本体"
+      ]
+    },
+    {
+      "ID": 55720001,
+      "Entries": [
+        "WP_R_5720_Feather_L -- WP_R_5720_羽_L"
+      ]
+    },
+    {
+      "ID": 55720002,
+      "Entries": [
+        "WP_R_5720_Feather_R -- WP_R_5720_羽_R"
+      ]
+    },
+    {
+      "ID": 55720011,
+      "Entries": [
+        "WP_L_5720_feather_L -- WP_L_5720_羽_L"
+      ]
+    },
+    {
+      "ID": 55720012,
+      "Entries": [
+        "WP_L_5720_Feather_R -- WP_L_5720_羽_R"
+      ]
+    },
+    {
+      "ID": 55720100,
+      "Entries": [
+        "WP_L_5720 For swinging weapons -- WP_L_5720武器の揺れ用"
+      ]
+    },
+    {
+      "ID": 55720110,
+      "Entries": [
+        "WP_R_5720 For swinging weapons -- WP_R_5720武器の揺れ用"
+      ]
+    },
+    {
+      "ID": 60420000,
+      "Entries": [
+        "Resident: WP_E_0420_01 -- 常駐：WP_E_0420_01"
+      ]
+    },
+    {
+      "ID": 60420001,
+      "Entries": [
+        "Resident: WP_E_0420_16 -- 常駐：WP_E_0420_16"
+      ]
+    },
+    {
+      "ID": 63000000,
+      "Entries": [
+        "Resident: WP_E_3000_02 -- 常駐：WP_E_3000_02"
+      ]
+    },
+    {
+      "ID": 63000001,
+      "Entries": [
+        "Resident: WP_E_3000_03 -- 常駐：WP_E_3000_03"
+      ]
+    },
+    {
+      "ID": 63020000,
+      "Entries": [
+        "Resident: WP_E_3020_02 -- 常駐：WP_E_3020_02"
+      ]
+    },
+    {
+      "ID": 63040000,
+      "Entries": [
+        "Resident: WP_E_3040_01 -- 常駐：WP_E_3040_01"
+      ]
+    },
+    {
+      "ID": 63040001,
+      "Entries": [
+        "Resident: WP_E_3040_02 -- 常駐：WP_E_3040_02"
+      ]
+    },
+    {
+      "ID": 63161000,
+      "Entries": [
+        "Resident: WP_E_3161_03 -- 常駐：WP_E_3161_03"
+      ]
+    },
+    {
+      "ID": 63161001,
+      "Entries": [
+        "Resident: WP_E_3161_07 -- 常駐：WP_E_3161_07"
+      ]
+    },
+    {
+      "ID": 63350000,
+      "Entries": [
+        "Resident: L_WP_E_3350_01 -- 常駐：L_WP_E_3350_01"
+      ]
+    },
+    {
+      "ID": 63350001,
+      "Entries": [
+        "Resident: R_WP_E_3350_01 -- 常駐：R_WP_E_3350_01"
+      ]
+    },
+    {
+      "ID": 63350002,
+      "Entries": [
+        "Resident: L_WP_E_3350_02 -- 常駐：L_WP_E_3350_02"
+      ]
+    },
+    {
+      "ID": 63350003,
+      "Entries": [
+        "Resident: R_WP_E_3350_02 -- 常駐：R_WP_E_3350_02"
+      ]
+    },
+    {
+      "ID": 63351000,
+      "Entries": [
+        "Resident: L_WP_E_3351_01 -- 常駐：L_WP_E_3351_01"
+      ]
+    },
+    {
+      "ID": 63351001,
+      "Entries": [
+        "Resident: R_WP_E_3351_01 -- 常駐：R_WP_E_3351_01"
+      ]
+    },
+    {
+      "ID": 63351002,
+      "Entries": [
+        "Resident: L_WP_E_3351_02 -- 常駐：L_WP_E_3351_02"
+      ]
+    },
+    {
+      "ID": 63351003,
+      "Entries": [
+        "Resident: R_WP_E_3351_02 -- 常駐：R_WP_E_3351_02"
+      ]
+    },
+    {
+      "ID": 63370000,
+      "Entries": [
+        "Umigumo main gun vertical vibration -- ウミグモ主砲上下振動"
+      ]
+    },
+    {
+      "ID": 63460000,
+      "Entries": [
+        "Resident: L_WP_E_3460_02 -- 常駐：L_WP_E_3460_02"
+      ]
+    },
+    {
+      "ID": 63460001,
+      "Entries": [
+        "Resident: R_WP_E_3460_02 -- 常駐：R_WP_E_3460_02"
+      ]
+    },
+    {
+      "ID": 63760000,
+      "Entries": [
+        "Resident: WP_E_3760_02 -- 常駐：WP_E_3760_02"
+      ]
+    },
+    {
+      "ID": 66000000,
+      "Entries": [
+        "Resident: WP_E_6000_04 -- 常駐：WP_E_6000_04"
+      ]
+    },
+    {
+      "ID": 66000001,
+      "Entries": [
+        "Resident: WP_E_6000_05 -- 常駐：WP_E_6000_05"
+      ]
+    },
+    {
+      "ID": 66050000,
+      "Entries": [
+        "Resident: WP_E_6050_05 -- 常駐：WP_E_6050_05"
+      ]
+    },
+    {
+      "ID": 66190000,
+      "Entries": [
+        "Resident: WP_E_6190_R_Shield_001 -- 常駐：WP_E_6190_R_Shield_001"
+      ]
+    },
+    {
+      "ID": 66190001,
+      "Entries": [
+        "Resident: WP_E_6190_L_Shield_001 -- 常駐：WP_E_6190_L_Shield_001"
+      ]
+    },
+    {
+      "ID": 66190002,
+      "Entries": [
+        "Resident: WP_E_6190_R_Shield_004 -- 常駐：WP_E_6190_R_Shield_004"
+      ]
+    },
+    {
+      "ID": 66190003,
+      "Entries": [
+        "Resident: WP_E_6190_L_Shield_004 -- 常駐：WP_E_6190_L_Shield_004"
+      ]
+    }
+  ]
+}

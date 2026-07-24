@@ -1,0 +1,365 @@
+{
+  "Name": "ActionUnlockParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Resurrection"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Kusabimaru"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Shinobi Prosthetic"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Spirit Emblems - Prosthetic"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "Spirit Emblems - Combat Arts"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Spirit Emblems - Items"
+      ]
+    },
+    {
+      "ID": 2390,
+      "Entries": [
+        "Night Eye"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Mortal Blade"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Diving"
+      ]
+    },
+    {
+      "ID": 2440,
+      "Entries": [
+        "Vault Over"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "Anti-air Deathblow"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Grappling Hook Attack"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Mid-air Deflection"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Mid-air Prosthetic Tools"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Mikiri"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Run and Slide"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Mid-air Combat Arts"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Chasing Slice"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Fang and Blade"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Projected Force"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Living Force"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Unused Thrust Unlock"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Nothing"
+      ]
+    },
+    {
+      "ID": 910010,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910020,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910030,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910040,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910050,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910060,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910070,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910080,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910090,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910110,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910120,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910130,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910140,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 910150,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920010,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920020,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920030,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920040,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920050,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920060,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920070,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920080,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920090,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920110,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920120,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920130,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920140,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 920150,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 999996,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 999997,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 999998,
+      "Entries": [
+        "\n"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "\n"
+      ]
+    }
+  ]
+}

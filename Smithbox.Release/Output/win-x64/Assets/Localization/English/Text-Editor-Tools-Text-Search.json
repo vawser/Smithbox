@@ -1,0 +1,108 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextSearch_Header_Search_Filter",
+      "Text": "Search Filter"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Search_Filter_TT",
+      "Text": "The search term to filter by.\nCan use regular expressions."
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Filter_Type",
+      "Text": "Filter Type"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Filter_Type_TT",
+      "Text": "Which text category the search will include."
+    },
+    {
+      "Key": "TEXT_TextSearch_Filter_Type_TT",
+      "Text": "The filter type used for the search."
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Match_Type",
+      "Text": "Match Type"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Match_Type_TT",
+      "Text": "Which element of a text entry is matched against."
+    },
+    {
+      "Key": "TEXT_TextSearch_Match_Type_TT",
+      "Text": "The element of a text entry that is matched against."
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextSearch_Checkbox_Ignore_Case",
+      "Text": "Ignore Case"
+    },
+    {
+      "Key": "TEXT_TextSearch_Checkbox_Ignore_Case_TT",
+      "Text": "Ignore case sensitivity if enabled."
+    },
+    {
+      "Key": "TEXT_TextSearch_Heder_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_TextSearch_Heder_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Search_TT",
+      "Text": "Execute the text search with the specified parameters."
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Clear_Result",
+      "Text": "Clear Result List"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Clear_Result_TT",
+      "Text": "Clears the result list."
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Copy_Results",
+      "Text": "Copy Results to Clipboard"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Copy_Results_TT",
+      "Text": "Copy the result list to clipboard."
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Results",
+      "Text": "Results"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Results_TT",
+      "Text": "The results from a text search."
+    },
+    {
+      "Key": "TEXT_TextSearch_Already_Searched",
+      "Text": "No text entries found matching the filter."
+    },
+    {
+      "Key": "TEXT_TextSearch_No_Search_Term",
+      "Text": "No search term specified."
+    },
+    {
+      "Key": "TEXT_TextSearch_Invalid_Regex",
+      "Text": "Invalid regex in search filter."
+    },
+    {
+      "Key": "TEXT_TextSearch_No_Results_To_Copy",
+      "Text": "No results to copy."
+    }
+  ]
+}

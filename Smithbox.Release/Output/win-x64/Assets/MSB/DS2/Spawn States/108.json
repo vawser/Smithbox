@@ -1,0 +1,30 @@
+{
+  "id": "108",
+  "name": "Rogue",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Crouching"
+    },
+    {
+      "value": "3",
+      "name": "Hug Wall"
+    },
+    {
+      "value": "4",
+      "name": "Prone"
+    },
+    {
+      "value": "5",
+      "name": "Lying Down"
+    }
+  ]
+}

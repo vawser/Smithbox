@@ -1,0 +1,851 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default value "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Summon Magic for range designation "
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "【 SP 】 Test Map for Hammer warfare _ Normal Time "
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "【 SP 】 Test Map for hammer warfare _ near "
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Short "
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Medium "
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Long distance "
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Centipede only "
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Dragon Zombie Only "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "usually dark "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Close range _ Darkness "
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Medium Range _ Darkness "
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Distant Darkness "
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "【 Protomap 】 Darkness "
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "(DLC) warmonger camera of the abyss "
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "(DLC) Camera for al-Tri-race "
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "(DLC) black dragon Warfare camera "
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "(DLC) chain person war camera "
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "(DLC) Camera for Go warfare "
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "(DLC) Exclusive lock camera for the arena "
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Phagocytic Dragon Only "
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Camera for Gargoyle "
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【 1st map 】 Suspension Bridge "
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "(1st map) Long distance "
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "(1st map) Boss Room "
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "(1st map) Old boss Room "
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "(DLC) Gold Chimera Camera "
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Near the grave "
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Grave distance "
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Dedicated to the abolition of the visor "
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Camera for Gargoyle "
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "Camera for Gargoyle Night "
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Sheath Combat Camera "
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "(SP) vs Parish General "
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "(SP) vs Parish Long distance "
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "【 SP 】 Ohashi "
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "【 SP 】 Full of statues "
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "【 SP 】 Avoiding sunflowers "
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "(SP) vs fire Beast usually "
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "(SP) vs Beast of flames close range "
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "(FDP) vs Tracker "
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "(FDP) vs Tracker (throw camera) "
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "(FDP) vs Tracker (2-knife-throwing camera) "
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "(FDP) Camera for distant view "
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "(FDP) Ceremonial camera "
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "(FDP) Ceremonial cameras _ on the way "
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "(FDP) Camera for flame ritual changed on the way "
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "(FDP) Forest Sacred Beast _ lock-on camera "
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "(FDP) Guardian Knight of the Dragon "
+      ]
+    },
+    {
+      "ID": 3161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "(FDP) for Segunda "
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "(FDP) for snake spirits possession segunda "
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "(FDP) for the snake spirits "
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "(FDP) for elevators "
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "(FDP) Possession segunda-throwing snake spirits "
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "(FDP) Full Armor Beast "
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "(FDP) Stench crab "
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "(FDP) Crimson Bat "
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "(FDP) King of the Storm (cowgirl) "
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        "(FDP) The old king of caries "
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        "(FDP) King of the Dead "
+      ]
+    },
+    {
+      "ID": 5180,
+      "Entries": [
+        "(FDP) Cursed Colossus test "
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        "(FDP) King of the disused city: the first half "
+      ]
+    },
+    {
+      "ID": 5191,
+      "Entries": [
+        "(FDP) King of the disused city: Late war "
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "(FDP) Mother Dragon "
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "(FDP) Prince of Darkness "
+      ]
+    },
+    {
+      "ID": 5251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        "(FDP) Mad Warrior Hallec "
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5290,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "(FDP) Crystal elders _ only when throwing "
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6215,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6281,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6998,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6999,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7370,
+      "Entries": [
+        "(FDP) Anole _ starting point "
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "(FDP) Ceiling Low Place "
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "(FDP) for servant ride "
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Short distance camera "
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Medium Range Camera "
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Long Distance Camera "
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Dark Rock "
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "【 Protomap 】 Darkness "
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "(Protomap) a little wide "
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "(FDP) Test "
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "(FDP) Narrow-wide test _ narrow camera "
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "(FDP) Narrow to wide test _ wide Camera "
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "(FDP) Stoning machine test "
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "(FDP) Death of a stoned machine "
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "(FDP) death-following stoning machine "
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "(FDP) is swallowed slime "
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "(FDP) is swallowed slime "
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "(FDP) Entrance door of the candle room "
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "(FDP) Candle Room camera "
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "(FDP) Candle room warp camera "
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "(FDP) Wolf Kara "
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "(FDP) Player map start "
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Covert Camera-Zoom in "
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Covert Camera-Zoom Out "
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "Monster House Boss Camera "
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

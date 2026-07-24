@@ -1,0 +1,75 @@
+{
+  "Name": "ReTargetAnimSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stand-by",
+        "Own machine_hit addition small_front",
+        "Own machine_hit addition small_front",
+        "Own machine_hit addition small_after",
+        "Own machine_hit addition small_left",
+        "Own machine_hit addition small_right",
+        "Own machine_hit addition large_before",
+        "Own machine_large addition of hit_after",
+        "Own aircraft_large hit addition_left",
+        "Own machine_Large hit addition_Right",
+        "Own machine_guard addition",
+        "Own machine_weapon switch",
+        "supply",
+        "Own machine_stealth standby",
+        "Own machine_stealth transition",
+        "Own machine_stealth movement",
+        "Own machine_stealth movement",
+        "Own machine_stealth movement",
+        "Own machine_stealth movement",
+        "Own machine_stealth movement",
+        "Own machine_stealth movement",
+        "Own machine_shooting anime",
+        "Own machine_shooting animation independent addition test",
+        "Own machine_shooting anime",
+        "cutscene catapult jump",
+        "For copying"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "cutscene catapult jump"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "cutscene catapult jump",
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "cutscene catapult jump"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "For checking tank waist height",
+        "For checking tank waist height"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "For checking tank waist height",
+        "For checking tank waist height"
+      ]
+    }
+  ]
+}

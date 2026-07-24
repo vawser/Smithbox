@@ -1,0 +1,93 @@
+{
+  "Param": "CAMERA_GPAPPLER_PARAM",
+  "Type": "CAMERA_GPAPPLER_PARAM",
+  "Name": "CAMERA_GPAPPLER_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "copyStartDirection",
+      "Name": "開始時向きを元のカメラに合わせる",
+      "Description": ""
+    },
+    {
+      "Field": "startTransType",
+      "Name": "切り替え開始時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "endTransType",
+      "Name": "切り替え終了時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "inCameraStartTransType",
+      "Name": "カメラ開始時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "inCameraEndTransType",
+      "Name": "カメラ終了時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "rayCollidesExecType",
+      "Name": "レイヒット時処理タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "sphereCollidesExecType",
+      "Name": "球ヒット時処理タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "selectType",
+      "Name": "複数存在時の分岐判定タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "startTransTime",
+      "Name": "切り替え開始時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "endTransTime",
+      "Name": "切り替え終了時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "inCameraStartTransTime",
+      "Name": "カメラ開始時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "inCameraEndTransTime",
+      "Name": "カメラ終了時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "rayWidth",
+      "Name": "レイ太さ",
+      "Description": ""
+    },
+    {
+      "Field": "sphereSize",
+      "Name": "球サイズ",
+      "Description": ""
+    }
+  ]
+}

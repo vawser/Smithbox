@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>TALK_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1501</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1502</SortID>
+    </Field>
+    
+    <Field Def="s32 dialogueTextId_Male" />
+    
+    <Field Def="f32 unknown_1" />
+    <Field Def="s32 unknown_2" />
+    <Field Def="s32 unknown_3" />
+    <Field Def="s32 unknown_4" />
+    <Field Def="s32 unknown_5" />
+    <Field Def="s32 unknown_6" />
+    <Field Def="s32 unknown_7" />
+    <Field Def="s32 unknown_8" />
+    <Field Def="s32 unknown_9" />
+    <Field Def="s32 dialogueTextId_Female" />
+    
+    <Field Def="s32 unknown_10" />
+    <Field Def="s32 unknown_11" />
+    <Field Def="s32 unknown_12" />
+    <Field Def="s32 unknown_13" />
+    <Field Def="s32 unknown_14" />
+    <Field Def="s32 unknown_15" />
+    <Field Def="s32 unknown_16" />
+    <Field Def="s32 unknown_17" />
+    <Field Def="s32 unknown_18" />
+    <Field Def="u8 unknown_19a" />
+    <Field Def="u8 unknown_19b" />
+    <Field Def="u8 unknown_19c" />
+    <Field Def="u8 unknown_19d" />
+    <Field Def="s32 dialogueAnimationId" />
+    <Field Def="s32 unknown_21" />
+    <Field Def="s32 unknown_22" />
+    <Field Def="s32 unknown_23" />
+    <Field Def="s32 unknown_24" />
+    <Field Def="s32 unknown_25" />
+    <Field Def="s32 unknown_26" />
+    <Field Def="s32 unknown_27" />
+    <Field Def="u8 unknown_28a" />
+    <Field Def="u8 unknown_28b" />
+    <Field Def="u8 unknown_28c" />
+    <Field Def="u8 unknown_28d" />
+    <Field Def="s32 unknown_29" />
+    <Field Def="s32 unknown_30" />
+    <Field Def="s32 unknown_31" />
+    <Field Def="s32 unknown_32" />
+    <Field Def="s32 unknown_33" />
+    <Field Def="s32 unknown_34" />
+    <Field Def="s32 unknown_35" />
+    <Field Def="f32 unknown_36" />
+    <Field Def="s32 unknown_37" />
+    <Field Def="s32 unknown_38" />
+    <Field Def="s32 unknown_39" />
+    <Field Def="s32 unknown_40" />
+    <Field Def="s32 unknown_41" />
+    <Field Def="f32 unknown_42" />
+    <Field Def="f32 unknown_43" />
+    <Field Def="f32 unknown_44" />
+    <Field Def="f32 unknown_45" />
+    <Field Def="f32 unknown_46" />
+    <Field Def="f32 unknown_47" />
+    <Field Def="f32 unknown_48" />
+    <Field Def="f32 unknown_49" />
+  </Fields>
+</PARAMDEF>

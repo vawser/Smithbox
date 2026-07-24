@@ -1,0 +1,63 @@
+{
+  "Param": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Type": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Name": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "horizontalVelocityScale",
+      "Name": "平面速度倍率",
+      "Description": "現在のXZ平面速度をどれだけの割合残すか。1.0で現在の速度がそのまま残る。"
+    },
+    {
+      "Field": "verticalVelocityScale",
+      "Name": "鉛直速度倍率",
+      "Description": "現在のY軸速度をどれだけの割合残すか。1.0で現在の速度がそのまま残る。"
+    },
+    {
+      "Field": "horizontalVelocityChange",
+      "Name": "平面速度変化[m/s]",
+      "Description": "この速度のベクトルを現フレームでキャラに与える。最終的な速度ベクトルは《平面速度倍率》で補正した現在の速度ベクトルとの合算で決まる。"
+    },
+    {
+      "Field": "verticalVelocityChange",
+      "Name": "鉛直速度変化[m/s]",
+      "Description": "この速度のベクトルを現フレームでキャラに与える。最終的な速度ベクトルは《鉛直速度倍率》で補正した現在の速度ベクトルとの合算で決まる。"
+    },
+    {
+      "Field": "horizontalVelocityAngle",
+      "Name": "平面速度変化ベクトル方向[度]",
+      "Description": "キャラの正面を0度としたときの《平面速度変化[m/s]》のベクトル方向。"
+    },
+    {
+      "Field": "deleted0",
+      "Name": "削除済み項目",
+      "Description": "削除済み項目"
+    },
+    {
+      "Field": "fallType",
+      "Name": "速度変化後の落下タイプ",
+      "Description": "この速度変化が適用された以降、指定した落下タイプで落下制御を行う。落下タイプは落下速度やスティック入力による微調整が可能かどうかに影響する。"
+    },
+    {
+      "Field": "homingTargetType",
+      "Name": "ホーミングターゲットタイプ",
+      "Description": "指定したタイプのターゲットが有効になっているなら、そのターゲットに到達するようキャラ物理ホーミングを行う。\"なし\"の場合はホーミングを行わない。"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "homingId",
+      "Name": "ホーミングID",
+      "Description": "キャラ物理ホーミングパラメータの番号。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

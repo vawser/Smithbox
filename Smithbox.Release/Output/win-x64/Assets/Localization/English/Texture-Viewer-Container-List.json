@@ -1,0 +1,64 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_ContainerList_Header_Containers",
+      "Text": "Containers"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Header_Containers_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project",
+      "Text": "Copy to Project"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project_TT",
+      "Text": "Copy this file into your project."
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Header_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_TPFs",
+      "Text": "All TPFs"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_TPFs_TT",
+      "Text": "Export all the TPFs in this container to your current export directory : {0}"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_Textures",
+      "Text": "All Textures"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_Textures_TT",
+      "Text": "Export all textures files within the TPFs in this container to your current export directory: {0}"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Path",
+      "Text": "Copy Path"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Path_TT",
+      "Text": "Copy the file path to the clipboard."
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Filename",
+      "Text": "Copy Filename"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Filename_TT",
+      "Text": "Copy the file name to the clipboard."
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Alias",
+      "Text": "Copy Alias"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Alias_TT",
+      "Text": "Copy the alias name to the clipboard."
+    }
+  ]
+}

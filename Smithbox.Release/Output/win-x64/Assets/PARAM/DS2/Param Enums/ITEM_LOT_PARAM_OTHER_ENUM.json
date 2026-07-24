@@ -1,0 +1,8426 @@
+{
+  "Key": "ITEM_LOT_PARAM_OTHER_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_PARAM_OTHER_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host - “Strong” pledge success reward"
+        }
+      ]
+    },
+    {
+      "Key": "10010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host - “Mouse King” pledge success reward"
+        }
+      ]
+    },
+    {
+      "Key": "10020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host - Dragon Spirit Repulsion Reward"
+        }
+      ]
+    },
+    {
+      "Key": "10030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host - Abyssal Spirit Repulsion Reward"
+        }
+      ]
+    },
+    {
+      "Key": "10040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host - Golden Spirit Successful Return Reward"
+        }
+      ]
+    },
+    {
+      "Key": "10050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Spirit Time - White Spirit: Successful return (time limit expired)"
+        }
+      ]
+    },
+    {
+      "Key": "10060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Spirit Time Golden Spirit: Success period (time limit expired)"
+        }
+      ]
+    },
+    {
+      "Key": "10070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small spirit time - Small spirit: Successful return (time limit expired)"
+        }
+      ]
+    },
+    {
+      "Key": "10080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small spirit time - Small gold spirit: Successful return (time limit expired)"
+        }
+      ]
+    },
+    {
+      "Key": "10090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rescue Blue Spirit - Successful return (host passes through boss white door)"
+        }
+      ]
+    },
+    {
+      "Key": "10100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rescue Blue Spirit - Successful return (host passes through goal white door)"
+        }
+      ]
+    },
+    {
+      "Key": "10110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rescue Blue Spirit - Dark Spirit: Successful return (Dark Spirit dies)"
+        }
+      ]
+    },
+    {
+      "Key": "10120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rescue Blue Spirit - Red Spirit: Successful return (Dark Spirit dies)"
+        }
+      ]
+    },
+    {
+      "Key": "10130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revenge Seirei - Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark spirit time - Dark spirit: Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Spirit Time - Red Spirit: Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Spirit Time - Dark Spirit: Successful Return (Relief Blue Spirit dies)"
+        }
+      ]
+    },
+    {
+      "Key": "10170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark spirit time - red spirit: successful return (relief blue spirit dies)"
+        }
+      ]
+    },
+    {
+      "Key": "10180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper Haireiji - Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King Ash Spirit Time - Successful return (passing the Goal Ash Door)"
+        }
+      ]
+    },
+    {
+      "Key": "10200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King Ash Spirit Time - Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon spirit time - Successful return (host death)"
+        }
+      ]
+    },
+    {
+      "Key": "10220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyssal Reiji - Successful return (defeat the host with your own attack)"
+        }
+      ]
+    },
+    {
+      "Key": "10230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duel Blue Spirit Time - Duel Victory Return"
+        }
+      ]
+    },
+    {
+      "Key": "10240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duel Dark Spirit Time - Duel Victory Return"
+        }
+      ]
+    },
+    {
+      "Key": "106000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shining Stone Town Geldra: Zakobos Battle"
+        }
+      ]
+    },
+    {
+      "Key": "154000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Skeleton Noble"
+        }
+      ]
+    },
+    {
+      "Key": "154001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Skeleton Noble_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "212000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hall of An Deal: Wyvern"
+        }
+      ]
+    },
+    {
+      "Key": "223500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pharos Doorway: Mouse King"
+        }
+      ]
+    },
+    {
+      "Key": "226100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sewer: Dog and Rat: Color ②"
+        }
+      ]
+    },
+    {
+      "Key": "303300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port: Double-sided Warrior: Snake Head"
+        }
+      ]
+    },
+    {
+      "Key": "305000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle: Demon Knight"
+        }
+      ]
+    },
+    {
+      "Key": "309600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant Forest: New Titan Advanced Soldier (Dead)"
+        }
+      ]
+    },
+    {
+      "Key": "309610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: Heavy Cavalry"
+        }
+      ]
+    },
+    {
+      "Key": "309700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory: New Titan Advanced Soldier (Living)"
+        }
+      ]
+    },
+    {
+      "Key": "309701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory: New Titan Advanced Soldier (Living)_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "318000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of Fallen Giants: Vagrant"
+        }
+      ]
+    },
+    {
+      "Key": "324000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle battle"
+        }
+      ]
+    },
+    {
+      "Key": "324001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle battle_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "325000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Warrior in the Mirror"
+        }
+      ]
+    },
+    {
+      "Key": "326000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw away: Butcher"
+        }
+      ]
+    },
+    {
+      "Key": "326001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Discarded hole: Butcher_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "332000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firelink Throne 1: Queen's Knight A"
+        }
+      ]
+    },
+    {
+      "Key": "332001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firelink Throne 1: Queen's Knight A_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "333000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: Queen's Knight B"
+        }
+      ]
+    },
+    {
+      "Key": "333001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: Queen's Knight B_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valley of Water: Jabba the Hutt"
+        }
+      ]
+    },
+    {
+      "Key": "501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valley of pools: Naga"
+        }
+      ]
+    },
+    {
+      "Key": "501001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valley of pools: Naga_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "503000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Man Scorpion♀"
+        }
+      ]
+    },
+    {
+      "Key": "503001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Man Scorpion ♀_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "504000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig: Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "504001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: Mirror Knight_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "506100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Agaduran's Stand"
+        }
+      ]
+    },
+    {
+      "Key": "514500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: King (Modern)"
+        }
+      ]
+    },
+    {
+      "Key": "600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Dragon's Nest: Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "602000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar: Beautiful Frog"
+        }
+      ]
+    },
+    {
+      "Key": "603000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shinseki Town Jeldora: Spider Queen"
+        }
+      ]
+    },
+    {
+      "Key": "603001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shinseki Town Geldra: Spider Queen_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "607000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Molten Iron Demon"
+        }
+      ]
+    },
+    {
+      "Key": "607001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Molten Iron Demon_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "611000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower: Heavy Cavalry: Soldiers only"
+        }
+      ]
+    },
+    {
+      "Key": "619100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Silver Chariot"
+        }
+      ]
+    },
+    {
+      "Key": "619101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Silver Chariot_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "625000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Tower of Fire: Ornstein"
+        }
+      ]
+    },
+    {
+      "Key": "626000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Forgotten Sinners"
+        }
+      ]
+    },
+    {
+      "Key": "626001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Forgotten Sinner_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "627000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firelink Throne 2: Queen's armor form"
+        }
+      ]
+    },
+    {
+      "Key": "1307000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1307100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (headless) -?"
+        }
+      ]
+    },
+    {
+      "Key": "1502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Man Scorpion (male) - Defeat - Petrification removal item"
+        }
+      ]
+    },
+    {
+      "Key": "1502010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion (male) - Equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1506000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grave Keeper - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Shrine Maiden - First Conversation - Est Bottle"
+        }
+      ]
+    },
+    {
+      "Key": "1701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine Maiden (Child) - Conversation - Feather of Estintia"
+        }
+      ]
+    },
+    {
+      "Key": "1704000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1705000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire guard 1-Equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1705100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire protection woman 2-?"
+        }
+      ]
+    },
+    {
+      "Key": "1705300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire guard 3-?"
+        }
+      ]
+    },
+    {
+      "Key": "1721000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit of the Prime Minister - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1723000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firekeeper's Housekeeper-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1724000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1725000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1726000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1741000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1741010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Qing Sect Warriors - Number of Immigrants - MAX"
+        }
+      ]
+    },
+    {
+      "Key": "1742000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Avenge Warrior - Thanks for your help - Patch's House Key"
+        }
+      ]
+    },
+    {
+      "Key": "1742010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Avenge Warrior - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1743000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Old Man - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1744000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Patch - Thank you for your help - Patch's house key"
+        }
+      ]
+    },
+    {
+      "Key": "1744010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1744020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Patch - Giant's Forest Conversation - White Sign Wax Stone"
+        }
+      ]
+    },
+    {
+      "Key": "1751000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Map Drawing - Giant's Forest Conversation - A House Key"
+        }
+      ]
+    },
+    {
+      "Key": "1751010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map drawing: equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1752000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1752010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - 2nd Encounter - Human Statue"
+        }
+      ]
+    },
+    {
+      "Key": "1752020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight - 3rd Encounter - Iron Ring of Protection +1"
+        }
+      ]
+    },
+    {
+      "Key": "1753000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1753010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bellkeeper-?"
+        }
+      ]
+    },
+    {
+      "Key": "1753020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "1754000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Hag - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1756000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "1757000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters A-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1758000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters B-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1759000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Three Sisters C-Event 1"
+        }
+      ]
+    },
+    {
+      "Key": "1760000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1760010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1-Conversation-Tsursube Elementary School"
+        }
+      ]
+    },
+    {
+      "Key": "1760020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1 - Rescue of the Prisoner Girl - Goddess' Blessing"
+        }
+      ]
+    },
+    {
+      "Key": "1760100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1760110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2 - Conversation - Hanging Stone"
+        }
+      ]
+    },
+    {
+      "Key": "1760120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard's Girl 2 - Rescue of a Prisoner Girl - Sparks of Magic"
+        }
+      ]
+    },
+    {
+      "Key": "1760200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner Girl - Conversation - Fire of Magic (Revised)"
+        }
+      ]
+    },
+    {
+      "Key": "1761000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1762000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1763000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jujutsuya - Thanks for the rescue"
+        }
+      ]
+    },
+    {
+      "Key": "1764000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1764300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EX blacksmith - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1766000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1768000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spellmania-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1769000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Worker - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1770000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1771000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1771010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - 1st Person (Ladder Shop) - All Exorcism Rings"
+        }
+      ]
+    },
+    {
+      "Key": "1771020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person - 2nd person (map writer) - Withdrawal logic"
+        }
+      ]
+    },
+    {
+      "Key": "1771030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - Third Person (Spellmania) - Sun of Chaos"
+        }
+      ]
+    },
+    {
+      "Key": "1771040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed Person - 4th Person (Priestess) - Magic Release"
+        }
+      ]
+    },
+    {
+      "Key": "1772000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curious item shop - equipment transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1776000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top weapon shop-?"
+        }
+      ]
+    },
+    {
+      "Key": "1777000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cat-?"
+        }
+      ]
+    },
+    {
+      "Key": "1783040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1784000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Indulgence - Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1785040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight-Equipment Transfer"
+        }
+      ]
+    },
+    {
+      "Key": "1786000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sparkling girl-?"
+        }
+      ]
+    },
+    {
+      "Key": "1787000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Ancient Dragon-Dragon Chaos"
+        }
+      ]
+    },
+    {
+      "Key": "2001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Seikyo - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2001011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 1 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2001012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2001013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Blue Sect - Level 3 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Blue Guardian - First time pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2002011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2002012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2002013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blue Guardian-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Dark Spirit of Blood - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2003011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2003013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Blood Spirit-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Bell Keeper - First Pledge - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "2004011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 1 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2004012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2004013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Bell Keeper - Level 3 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Mouse - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2005011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2005012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2005013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Mouse-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge-Abyss-First time pledge-Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2006011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2006013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Abyss-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Sun - First pledge - Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2007011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Sun-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Sun-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2007013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Sun-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge-Ancient Dragon-First time pledge-Pledge ring"
+        }
+      ]
+    },
+    {
+      "Key": "2008011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Ancient Dragon-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2008012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge - Ancient Dragon - Level 2 Reward -?"
+        }
+      ]
+    },
+    {
+      "Key": "2008013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge-Ancient Dragon-Level 3 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Strong people - First pledge - List of strong people"
+        }
+      ]
+    },
+    {
+      "Key": "2009011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Strong Person-Level 1 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant-Strong Person-Level 2 Reward-?"
+        }
+      ]
+    },
+    {
+      "Key": "2009013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "◆Pledge - Strong Man - Level 3 Reward - Pledge Ring"
+        }
+      ]
+    },
+    {
+      "Key": "3001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Pointing\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Come on\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "``One Bow'' Book"
+        }
+      ]
+    },
+    {
+      "Key": "3005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Welcome\" letter"
+        }
+      ]
+    },
+    {
+      "Key": "3006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Opening Ceremony\""
+        }
+      ]
+    },
+    {
+      "Key": "3007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Wave your hand\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Guts Pose”"
+        }
+      ]
+    },
+    {
+      "Key": "3009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Joy”"
+        }
+      ]
+    },
+    {
+      "Key": "3010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Battle Cry”"
+        }
+      ]
+    },
+    {
+      "Key": "3011000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Getting used to your shoulders”"
+        }
+      ]
+    },
+    {
+      "Key": "3012000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Ei Ei O\""
+        }
+      ]
+    },
+    {
+      "Key": "3013000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Letter of “understanding”"
+        }
+      ]
+    },
+    {
+      "Key": "3014000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Negation”"
+        }
+      ]
+    },
+    {
+      "Key": "3015000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\"Leave it to me\" book"
+        }
+      ]
+    },
+    {
+      "Key": "3016000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Begging for Life”"
+        }
+      ]
+    },
+    {
+      "Key": "3017000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Dogeza”"
+        }
+      ]
+    },
+    {
+      "Key": "3018000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Beheading”"
+        }
+      ]
+    },
+    {
+      "Key": "3019000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Provocation\""
+        }
+      ]
+    },
+    {
+      "Key": "3020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of \"Make fun of\""
+        }
+      ]
+    },
+    {
+      "Key": "3021000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book of “Sun Praise”"
+        }
+      ]
+    },
+    {
+      "Key": "10025010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 01] Fire Guardian's House_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10026000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Grass rustling area_ Cliff on the right"
+        }
+      ]
+    },
+    {
+      "Key": "10026001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Grass rustling area_Right hand cliff_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10026020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] Ogre front"
+        }
+      ]
+    },
+    {
+      "Key": "10026030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Under the waterfall"
+        }
+      ]
+    },
+    {
+      "Key": "10026031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Under the waterfall_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10026040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 05] Tutorial 1 exit"
+        }
+      ]
+    },
+    {
+      "Key": "10026050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Inside the Fire Guardian's House_Shadow of the Cart"
+        }
+      ]
+    },
+    {
+      "Key": "10026060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07] [Red Eye Orb] Behind the door of tutorial stage 2"
+        }
+      ]
+    },
+    {
+      "Key": "10026070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08] [Dagger] Behind the door of tutorial stage 2"
+        }
+      ]
+    },
+    {
+      "Key": "10026080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 09] [Shizukuishi x1] Behind the door of tutorial stage 2"
+        }
+      ]
+    },
+    {
+      "Key": "10026090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Tutorial 2_Scaffolding to jump"
+        }
+      ]
+    },
+    {
+      "Key": "10027000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Special OBJ] “Line theory” item display"
+        }
+      ]
+    },
+    {
+      "Key": "10045000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 03] Blacksmith 2F"
+        }
+      ]
+    },
+    {
+      "Key": "10045001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03] Blacksmith 2F_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10045002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 03] Blacksmith 2F_3rd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10045010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 02] Village chief's house 2F"
+        }
+      ]
+    },
+    {
+      "Key": "10045020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 02] Big hole room"
+        }
+      ]
+    },
+    {
+      "Key": "10045030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 03] Big hole room"
+        }
+      ]
+    },
+    {
+      "Key": "10045040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 01] Blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "10045050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 01] Big hole room"
+        }
+      ]
+    },
+    {
+      "Key": "10045060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Passage to the Giant's Forest"
+        }
+      ]
+    },
+    {
+      "Key": "10045070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 05] Passage to Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "10045500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Server Treasure Chest] Item distribution"
+        }
+      ]
+    },
+    {
+      "Key": "10045600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Server Treasure Chest] Normal"
+        }
+      ]
+    },
+    {
+      "Key": "10046000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Pulled out of the well"
+        }
+      ]
+    },
+    {
+      "Key": "10046010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] In front of the gate on the gap side"
+        }
+      ]
+    },
+    {
+      "Key": "10046020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Scaffolding under Kirakira Girl"
+        }
+      ]
+    },
+    {
+      "Key": "10046030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Cliff path"
+        }
+      ]
+    },
+    {
+      "Key": "10046040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 05] Obelisk side"
+        }
+      ]
+    },
+    {
+      "Key": "10046050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] Scaffolding in the large hole"
+        }
+      ]
+    },
+    {
+      "Key": "10046060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Scaffolding in the large hole"
+        }
+      ]
+    },
+    {
+      "Key": "10046070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] Mr. A's house_basement"
+        }
+      ]
+    },
+    {
+      "Key": "10046080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 09] Path to the hunting forest *Visible through the revolving window"
+        }
+      ]
+    },
+    {
+      "Key": "10046090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Scaffolding to the big hole_just before the bottom of the trash"
+        }
+      ]
+    },
+    {
+      "Key": "10046100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 11] Mr. A's house 1F"
+        }
+      ]
+    },
+    {
+      "Key": "10046110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12] Next to the pledge stone monument"
+        }
+      ]
+    },
+    {
+      "Key": "10046120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Outside the house in front of the revolving door"
+        }
+      ]
+    },
+    {
+      "Key": "10046130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 14] Big hole_1st board"
+        }
+      ]
+    },
+    {
+      "Key": "10105010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 02] Main tower 2F_Room behind the breakable royal door"
+        }
+      ]
+    },
+    {
+      "Key": "10105020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 01] Starting Cave"
+        }
+      ]
+    },
+    {
+      "Key": "10105021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 01] Starting Cave_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10105030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 05] Knock and the room behind the sticky door"
+        }
+      ]
+    },
+    {
+      "Key": "10105040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 05_trap] Barista room basement"
+        }
+      ]
+    },
+    {
+      "Key": "10105041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 05_Trap] Barista room basement_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10105050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 03] Waterway_Behind the Royal Soldier's Door"
+        }
+      ]
+    },
+    {
+      "Key": "10105070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 01] Main tower 2F_Beyond the royal door room"
+        }
+      ]
+    },
+    {
+      "Key": "10105080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Barista Room Basement_Room behind hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10105090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Barista Room Basement_Room behind hidden door_Left"
+        }
+      ]
+    },
+    {
+      "Key": "10105100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 06] Above the Flaming Barrel Square_Scaffolding of the Flaming Jar Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "10105110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 09] Under the waterway"
+        }
+      ]
+    },
+    {
+      "Key": "10105120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 09] Ground crack plaza_wooden scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "10105130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 07] Next to the flame cave"
+        }
+      ]
+    },
+    {
+      "Key": "10105140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 08] Hidden room in the patch passage"
+        }
+      ]
+    },
+    {
+      "Key": "10106000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Starting River_Downstream"
+        }
+      ]
+    },
+    {
+      "Key": "10106010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 18] Ground crack plaza_rooftop"
+        }
+      ]
+    },
+    {
+      "Key": "10106020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Starting river_opposite bank"
+        }
+      ]
+    },
+    {
+      "Key": "10106030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 37] Back of the passage under the giant sword"
+        }
+      ]
+    },
+    {
+      "Key": "10106050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Caught on a branch of the main tower"
+        }
+      ]
+    },
+    {
+      "Key": "10106060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Exterior wall passage_Behind the shelf in the small room"
+        }
+      ]
+    },
+    {
+      "Key": "10106061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 06] Exterior wall passage_Behind the shelf in the small room_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10106070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 15] Dark passage_front"
+        }
+      ]
+    },
+    {
+      "Key": "10106080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 16] Dark passage_back"
+        }
+      ]
+    },
+    {
+      "Key": "10106090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 31] Lower Giant Sword_Upper the Royal Guard Door to Vagrant"
+        }
+      ]
+    },
+    {
+      "Key": "10106100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 27] Giant Sword"
+        }
+      ]
+    },
+    {
+      "Key": "10106110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 38] Start upstream"
+        }
+      ]
+    },
+    {
+      "Key": "10106120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 17] Ground crack plaza_inside the building"
+        }
+      ]
+    },
+    {
+      "Key": "10106130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 20] Submerged plaza_In front of the lattice where you can see the crack plaza"
+        }
+      ]
+    },
+    {
+      "Key": "10106140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07] Outside wall passage _ Rooftop hollow"
+        }
+      ]
+    },
+    {
+      "Key": "10106150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Submerged Square_Back of Rocks"
+        }
+      ]
+    },
+    {
+      "Key": "10106160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 24] Patch passage"
+        }
+      ]
+    },
+    {
+      "Key": "10106170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Scaffold jumping from the arena stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10106180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 36] At the end of the L-shaped passage_beside the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10106190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25] Flame barrel plaza_In front of the castle wall leading to the flame barrel soldier"
+        }
+      ]
+    },
+    {
+      "Key": "10106200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Circular Arena_Upper Passage"
+        }
+      ]
+    },
+    {
+      "Key": "10106210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Wooden Scaffold Back_Tree trunk going up to the scaffold"
+        }
+      ]
+    },
+    {
+      "Key": "10106220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 26] Flame Barrel Square_Behind the castle wall leading to the Flame Barrel Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "10106230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 33] Circular arena_Leaning on the tree in the center"
+        }
+      ]
+    },
+    {
+      "Key": "10106240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 19] Submerged plaza_caught in a collapsed building"
+        }
+      ]
+    },
+    {
+      "Key": "10106250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 28] Room in front of the elevator_In front of the door under the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10106260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 34] Circular arena_Lie face down in the center"
+        }
+      ]
+    },
+    {
+      "Key": "10106270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Wooden Scaffold Back_Scaffolding to jump on the return path"
+        }
+      ]
+    },
+    {
+      "Key": "10106280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 35] Circular Arena_Face up at the back of the front"
+        }
+      ]
+    },
+    {
+      "Key": "10106290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 32] Path of return from the Vagrant battlefield"
+        }
+      ]
+    },
+    {
+      "Key": "10106300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Waterway_In front of the royal soldier's door"
+        }
+      ]
+    },
+    {
+      "Key": "10106310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Cave near the Flame Cave"
+        }
+      ]
+    },
+    {
+      "Key": "10106320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] Inside the Mapmaker's Cave"
+        }
+      ]
+    },
+    {
+      "Key": "10106321",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] Inside the Map Craftsman's Cave_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10106340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11_Human Bones_Whole Body] Flame Cave"
+        }
+      ]
+    },
+    {
+      "Key": "10106350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 29_Human bones_Full body] Salamander Cave_Boss passage side"
+        }
+      ]
+    },
+    {
+      "Key": "10106360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 30_Human bones_Full body] Salamander Cave_Flame Cave side"
+        }
+      ]
+    },
+    {
+      "Key": "10106370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 40] In front of Vagrant room"
+        }
+      ]
+    },
+    {
+      "Key": "10106371",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 40] In front of Vagrant room_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10106380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 41] Circular Arena_Outside of the upper passage"
+        }
+      ]
+    },
+    {
+      "Key": "10106390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 42] Next to the main tower"
+        }
+      ]
+    },
+    {
+      "Key": "10106400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 43] Wooden scaffolding bottom_main tower side"
+        }
+      ]
+    },
+    {
+      "Key": "10106410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 44] In front of the elevator in front of the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10106420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 45] Wooden Scaffold_Scaffolding by the King's Door"
+        }
+      ]
+    },
+    {
+      "Key": "10106430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 46] Ground crack plaza _ In front of the lattice with a view of the submerged plaza"
+        }
+      ]
+    },
+    {
+      "Key": "10106440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 47] Barista room_face down"
+        }
+      ]
+    },
+    {
+      "Key": "10106450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 48] Barista room_face up"
+        }
+      ]
+    },
+    {
+      "Key": "10106460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 49_human bones_whole body] Under the waterway_face down"
+        }
+      ]
+    },
+    {
+      "Key": "10106470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 50_Human bones_Whole body] Under the waterway_Lean on the wall"
+        }
+      ]
+    },
+    {
+      "Key": "10106480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 51_Human bones_Skull] Under the waterway"
+        }
+      ]
+    },
+    {
+      "Key": "10106490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 52] Main tower 2F"
+        }
+      ]
+    },
+    {
+      "Key": "10106500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 53] On the Flame Barrel Plaza_Scaffolding above the Royal Soldiers"
+        }
+      ]
+    },
+    {
+      "Key": "10145050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 01] Room proceeding from the starting well"
+        }
+      ]
+    },
+    {
+      "Key": "10145060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03] Spider room 2"
+        }
+      ]
+    },
+    {
+      "Key": "10145061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03] Spider room 2_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10145070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Chest 04] Sand Door House_Left Treasure Chest"
+        }
+      ]
+    },
+    {
+      "Key": "10145080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 08] Sand Door House_Treasure Chest on the Right"
+        }
+      ]
+    },
+    {
+      "Key": "10145110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tetsu Treasure Chest 02] Back of the bar"
+        }
+      ]
+    },
+    {
+      "Key": "10145120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Middle floor_Down with wall hole lever"
+        }
+      ]
+    },
+    {
+      "Key": "10145130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Key door room of Shinseki Street_Front"
+        }
+      ]
+    },
+    {
+      "Key": "10146000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] [Key to Pixel Street] Church in front of the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10146010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Corpse in Urn 05] Room next to the bar"
+        }
+      ]
+    },
+    {
+      "Key": "10146020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Church attic"
+        }
+      ]
+    },
+    {
+      "Key": "10146030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] In front of the collapsing balcony"
+        }
+      ]
+    },
+    {
+      "Key": "10146040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] Church 2F window"
+        }
+      ]
+    },
+    {
+      "Key": "10146050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Starting well"
+        }
+      ]
+    },
+    {
+      "Key": "10146051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Starting well_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10146060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Farmer's Surroundings 1"
+        }
+      ]
+    },
+    {
+      "Key": "10146070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04] Outpost Battle Scaffold"
+        }
+      ]
+    },
+    {
+      "Key": "10146080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Bonfire room in front of the church"
+        }
+      ]
+    },
+    {
+      "Key": "10146090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Scaffolding jumping from rope 1 scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "10146100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] On the building in front of Ant Hell"
+        }
+      ]
+    },
+    {
+      "Key": "10146110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 31] Tent square_Burial corpse face down 2"
+        }
+      ]
+    },
+    {
+      "Key": "10146120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 18] On the building beyond the hole in the wall of the Chanbara room"
+        }
+      ]
+    },
+    {
+      "Key": "10146130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 32] Tent Square_Bottom of the Well"
+        }
+      ]
+    },
+    {
+      "Key": "10146140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 27] Farmer's Surroundings 2"
+        }
+      ]
+    },
+    {
+      "Key": "10146150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 28] Farmer's Surroundings 3"
+        }
+      ]
+    },
+    {
+      "Key": "10146160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 33] Food for large rocks"
+        }
+      ]
+    },
+    {
+      "Key": "10146170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 36] Large hole room_above the hole"
+        }
+      ]
+    },
+    {
+      "Key": "10146180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17_Human Bones_Full Body] Room entered from the side street of the bar"
+        }
+      ]
+    },
+    {
+      "Key": "10146181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17_Human bones_Full body] Room entered from the side street of the bar_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10146190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 37] Room next to the bar_behind the shelves"
+        }
+      ]
+    },
+    {
+      "Key": "10146200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone Treasure Corpse (Human Bones_Mountain of Bones)"
+        }
+      ]
+    },
+    {
+      "Key": "10146210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 34] Mid-level scaffolding to jump into"
+        }
+      ]
+    },
+    {
+      "Key": "10146220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 35] Chambara Room Back_Blocked Stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10146230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 30] If you break the jar, it will come out."
+        }
+      ]
+    },
+    {
+      "Key": "10146240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 23] Church attic_ face down in the left corner"
+        }
+      ]
+    },
+    {
+      "Key": "10146250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 24] Church attic_Back left side facing forward"
+        }
+      ]
+    },
+    {
+      "Key": "10146260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 25] Church attic_Clinging to the middle right"
+        }
+      ]
+    },
+    {
+      "Key": "10146270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 26] Church attic _ prone in front of the ladder"
+        }
+      ]
+    },
+    {
+      "Key": "10146280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 29] Church 2_Behind the lever door"
+        }
+      ]
+    },
+    {
+      "Key": "10146290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 30] Fallen due to turret destruction"
+        }
+      ]
+    },
+    {
+      "Key": "10146300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bottle Urn 01] Entrance from Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "10146310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Corp 03] Room in front of the rope"
+        }
+      ]
+    },
+    {
+      "Key": "10146320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bottle Corpse 04] Chanbara Room"
+        }
+      ]
+    },
+    {
+      "Key": "10146330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Corp 06] Spider web area"
+        }
+      ]
+    },
+    {
+      "Key": "10146340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 38] Spider web area_Beyond the first web"
+        }
+      ]
+    },
+    {
+      "Key": "10146350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 39] Spider web area_The web that descends in front of the white door"
+        }
+      ]
+    },
+    {
+      "Key": "10146360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 40] Spider web area_bottom floor_opposite side of white door"
+        }
+      ]
+    },
+    {
+      "Key": "10146370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 41] Spider web area_lowest floor_under the web descending in front of the white door"
+        }
+      ]
+    },
+    {
+      "Key": "10146380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 42] Scaffolding above Treasure Corpse 40"
+        }
+      ]
+    },
+    {
+      "Key": "10146381",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 42] Scaffolding above Treasure Corpse 40_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10146390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 43] Large rock rumbling_behind the rock in the back"
+        }
+      ]
+    },
+    {
+      "Key": "10146400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 44] For spider trap deep in ant hell"
+        }
+      ]
+    },
+    {
+      "Key": "10146500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Special OBJ] Mushroom Damipoly"
+        }
+      ]
+    },
+    {
+      "Key": "10155000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] At the back of the hallway between Mirror Knights"
+        }
+      ]
+    },
+    {
+      "Key": "10155010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] At the back of the passage on the top floor"
+        }
+      ]
+    },
+    {
+      "Key": "10155020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Ogre Passage_Behind the wall that will be destroyed by the Ogre"
+        }
+      ]
+    },
+    {
+      "Key": "10156000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Entrance lobby_In front of Bone Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "10156010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Mirror Night Room"
+        }
+      ]
+    },
+    {
+      "Key": "10156020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] Entrance lobby_In front of the giant cage"
+        }
+      ]
+    },
+    {
+      "Key": "10156030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Ogre passage_In front of the suspended cage"
+        }
+      ]
+    },
+    {
+      "Key": "10156031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Ogre passage_In front of the hanging cage_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10156040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Cage room next to the ogre passage"
+        }
+      ]
+    },
+    {
+      "Key": "10156050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 09] In front of the second wall-breaking ogre"
+        }
+      ]
+    },
+    {
+      "Key": "10156060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10_Human bones_Full body] In front of the giant basilisk"
+        }
+      ]
+    },
+    {
+      "Key": "10156070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Dungeon_Front right"
+        }
+      ]
+    },
+    {
+      "Key": "10156080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Outside the building_beside the bonfire hut"
+        }
+      ]
+    },
+    {
+      "Key": "10156090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12] Outside the building_back left"
+        }
+      ]
+    },
+    {
+      "Key": "10156100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06_Human bones_Full body] Dungeon_Beside the wall"
+        }
+      ]
+    },
+    {
+      "Key": "10156130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Room in front of the dungeon_behind the shelves"
+        }
+      ]
+    },
+    {
+      "Key": "10156140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 15] Experiment room_on the dissecting table"
+        }
+      ]
+    },
+    {
+      "Key": "10156150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 16] In front of the lift to the guardian dragon"
+        }
+      ]
+    },
+    {
+      "Key": "10156160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17_Human bones_Full body] Dungeon_Left hand wall"
+        }
+      ]
+    },
+    {
+      "Key": "10156161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17_Human bones_Full body] Dungeon_Left hand wall_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10156170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 18] Outside the building_root of the tree on the left side"
+        }
+      ]
+    },
+    {
+      "Key": "10156180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 19] Outside the building_Waterhole"
+        }
+      ]
+    },
+    {
+      "Key": "10156190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] Outside the building_to the left of the entrance"
+        }
+      ]
+    },
+    {
+      "Key": "10165000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 10] Treasure Box"
+        }
+      ]
+    },
+    {
+      "Key": "10165010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 10] Behind the insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10165020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 12] Treasure Box"
+        }
+      ]
+    },
+    {
+      "Key": "10165040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 06] Warrior room in the mirror_behind the hidden door on the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10165041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 06] Warrior room in the mirror_Behind the hidden door on the stairs_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10165050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 02] Between the castle wall and the building"
+        }
+      ]
+    },
+    {
+      "Key": "10165070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 11] Room with insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10165080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 05] Warrior room in the mirror_hidden door back"
+        }
+      ]
+    },
+    {
+      "Key": "10165110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Behind the insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10165120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 03] Treasure room after the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10165130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 06] Dining room_basement"
+        }
+      ]
+    },
+    {
+      "Key": "10165140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 04] Vagrant Hawk Root Area"
+        }
+      ]
+    },
+    {
+      "Key": "10165150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 05] Treasure chest where the blacksmith is sitting"
+        }
+      ]
+    },
+    {
+      "Key": "10165160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 12] Blacksmith room_to the left of the anvil"
+        }
+      ]
+    },
+    {
+      "Key": "10165170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 13] Blacksmith room_to the right of the anvil"
+        }
+      ]
+    },
+    {
+      "Key": "10165180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 14] Blacksmith room_In front of the blacksmith shop"
+        }
+      ]
+    },
+    {
+      "Key": "10165190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 15] Blacksmith room_Entrance room"
+        }
+      ]
+    },
+    {
+      "Key": "10165200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 16] Bell Keeper Area_Under the Bell"
+        }
+      ]
+    },
+    {
+      "Key": "10165210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 07] Warrior Battle in the Mirror_Hidden Door Back_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10165220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 08] Bell Keeper Area_Room entered by falling from above"
+        }
+      ]
+    },
+    {
+      "Key": "10165230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 09] Gargoyle War_Inside the Tower"
+        }
+      ]
+    },
+    {
+      "Key": "10166000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 13] Warrior room in the mirror 2F"
+        }
+      ]
+    },
+    {
+      "Key": "10166010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] On top of the wooden structure_Falling due to destruction"
+        }
+      ]
+    },
+    {
+      "Key": "10166020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 40] Outside the dining room_behind the door"
+        }
+      ]
+    },
+    {
+      "Key": "10166030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Starting outer wall_Behind the collapsed wall"
+        }
+      ]
+    },
+    {
+      "Key": "10166040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 41] Above the castle wall _ Above the EX blacksmith's room"
+        }
+      ]
+    },
+    {
+      "Key": "10166050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 06] Flame barrel room_Grate on the ladder"
+        }
+      ]
+    },
+    {
+      "Key": "10166060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 42] Collapsed floor above detached tower"
+        }
+      ]
+    },
+    {
+      "Key": "10166070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08] Side path where you can take a shortcut to the door"
+        }
+      ]
+    },
+    {
+      "Key": "10166080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 10] Collapsed staircase room_caught on the wall outside the window"
+        }
+      ]
+    },
+    {
+      "Key": "10166090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 43] Dungeon_Second on the right"
+        }
+      ]
+    },
+    {
+      "Key": "10166100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 14] Warrior room in the mirror_hidden door back"
+        }
+      ]
+    },
+    {
+      "Key": "10166110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 26] Lift to the underground waterway_Scaffolding to jump on on the way"
+        }
+      ]
+    },
+    {
+      "Key": "10166120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 30] Dungeon_1st room on the left"
+        }
+      ]
+    },
+    {
+      "Key": "10166130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 23] Room leading to the detached tower_Behind the door"
+        }
+      ]
+    },
+    {
+      "Key": "10166140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Pledge Area_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10166150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 35] The prison next to the passage after the warrior in the mirror"
+        }
+      ]
+    },
+    {
+      "Key": "10166160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16] Pledge Area_Room entered by falling"
+        }
+      ]
+    },
+    {
+      "Key": "10166170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Pledge Area_Rooftop"
+        }
+      ]
+    },
+    {
+      "Key": "10166180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 19] Collapsed castle wall in front of the dining room"
+        }
+      ]
+    },
+    {
+      "Key": "10166190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25] Bridge leading to the detached tower"
+        }
+      ]
+    },
+    {
+      "Key": "10166191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 25] Bridge leading to the detached tower_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10166200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] Return path from hidden passage"
+        }
+      ]
+    },
+    {
+      "Key": "10166230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 28] Outside the dungeon"
+        }
+      ]
+    },
+    {
+      "Key": "10166250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 18] [Prison Key] Under the stairs after the gargoyle"
+        }
+      ]
+    },
+    {
+      "Key": "10166260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Separate scaffolding at the end of the hidden passage"
+        }
+      ]
+    },
+    {
+      "Key": "10166270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] In front of both broken doors"
+        }
+      ]
+    },
+    {
+      "Key": "10166280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 32] Dungeon_4th room on the left"
+        }
+      ]
+    },
+    {
+      "Key": "10166290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 44] Roof above the well plaza"
+        }
+      ]
+    },
+    {
+      "Key": "10166300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01_Human bones_Full body] Prison in the starting passage"
+        }
+      ]
+    },
+    {
+      "Key": "10166310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05_Human bones_Full body] Room leading to well plaza_Prison"
+        }
+      ]
+    },
+    {
+      "Key": "10166320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 24_Human bones_Full body] Room leading to the detached tower_Upper prison"
+        }
+      ]
+    },
+    {
+      "Key": "10166330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 33_Human bones_Full body] Dungeon_Top left 2nd room"
+        }
+      ]
+    },
+    {
+      "Key": "10166350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 45] Room in front of Forgotten Sinner Battle_Right"
+        }
+      ]
+    },
+    {
+      "Key": "10166360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 46] Next to the stairs in front of the Forgotten Sinner Battle_Left"
+        }
+      ]
+    },
+    {
+      "Key": "10166370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 47] Well Plaza_Roof to jump to"
+        }
+      ]
+    },
+    {
+      "Key": "10166380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 48] Below the dining room"
+        }
+      ]
+    },
+    {
+      "Key": "10166390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 49] Gargoyle War_On the Stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10166400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 50] Gargoyle battle_back left"
+        }
+      ]
+    },
+    {
+      "Key": "10166410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 51] Lift platform_Kamioku"
+        }
+      ]
+    },
+    {
+      "Key": "10166420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 52] Outer wall tower_2nd floor window"
+        }
+      ]
+    },
+    {
+      "Key": "10166421",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 52] Outer wall tower_2nd floor window_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10166430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 53] Flame barrel room_hidden door back"
+        }
+      ]
+    },
+    {
+      "Key": "10166440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 54] Room leading to the detached tower_Prison on the top floor"
+        }
+      ]
+    },
+    {
+      "Key": "10166441",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 54] Room leading to the detached tower_Top floor prison_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10166450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 55] Separate Tower_Collapsed Stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10166460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 56] Prison at the lift platform to the hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "10166470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 57] Lift to the hidden port_side hole entered from the ceiling"
+        }
+      ]
+    },
+    {
+      "Key": "10175020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Poison fog area 1_Back of the cave"
+        }
+      ]
+    },
+    {
+      "Key": "10175021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Poison fog area 1_Back of the cave_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10175030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] At the end of the poison fog tunnel that you descend from the ladder"
+        }
+      ]
+    },
+    {
+      "Key": "10175040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 06] Gear atrium_lowest floor passage destination"
+        }
+      ]
+    },
+    {
+      "Key": "10175050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 10] Behind the hidden door above the boss room"
+        }
+      ]
+    },
+    {
+      "Key": "10175060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 02] Cross room"
+        }
+      ]
+    },
+    {
+      "Key": "10175070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 05_Trap] Room before the battle with Jabba the Hutt"
+        }
+      ]
+    },
+    {
+      "Key": "10175090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 08_trap] In front of the rotating floor"
+        }
+      ]
+    },
+    {
+      "Key": "10175110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Poison Fog Area 1_Cave Poison Hole"
+        }
+      ]
+    },
+    {
+      "Key": "10175120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 07] Behind the collapsing terrace"
+        }
+      ]
+    },
+    {
+      "Key": "10175130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Behind the insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10175140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 05] Gear atrium_At the back of the passage where you jump off the collapsing bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10175150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 06] Gear atrium_Under the passageway jumping off the collapsing bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10175160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 08] Above the suspended ceiling"
+        }
+      ]
+    },
+    {
+      "Key": "10176000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 10] Wood board square_Front hole"
+        }
+      ]
+    },
+    {
+      "Key": "10176010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 16] Gear atrium_Behind the collapsed bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10176020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Poison fog area 1_Scaffolding in front"
+        }
+      ]
+    },
+    {
+      "Key": "10176030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Poison fog area 1_On the slope in the direction of the path"
+        }
+      ]
+    },
+    {
+      "Key": "10176040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Terrace behind the hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10176050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 19] Under the suspended ceiling"
+        }
+      ]
+    },
+    {
+      "Key": "10176060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] On the narrow road to the village"
+        }
+      ]
+    },
+    {
+      "Key": "10176070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 41_Human bones_Full body] Wooden board square_Behind the board to be destroyed by the enemy"
+        }
+      ]
+    },
+    {
+      "Key": "10176080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 11] Wood board square_upper right hole"
+        }
+      ]
+    },
+    {
+      "Key": "10176090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Wooden Board Square_Diameter between boards destroyed by enemies"
+        }
+      ]
+    },
+    {
+      "Key": "10176100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Back of the passage in front of the insect key room"
+        }
+      ]
+    },
+    {
+      "Key": "10176110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Before the battle with Jabba the Hutt_Back of the waterway"
+        }
+      ]
+    },
+    {
+      "Key": "10176120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Room in front of the gear atrium"
+        }
+      ]
+    },
+    {
+      "Key": "10176130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 42] Wooden Board Square_Behind the board that the enemy will destroy_Clinging"
+        }
+      ]
+    },
+    {
+      "Key": "10176140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 20] Under the ladder of the ladder shop"
+        }
+      ]
+    },
+    {
+      "Key": "10176150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Terrace in front of the suspended ceiling"
+        }
+      ]
+    },
+    {
+      "Key": "10176160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 43] Wooden Board Square_Behind the board that the enemy will destroy_Hold your knees"
+        }
+      ]
+    },
+    {
+      "Key": "10176170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 23] Passage outside the gear room"
+        }
+      ]
+    },
+    {
+      "Key": "10176171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 23] Passage outside the gear room_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10176180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 30] Poison fog area 1_inside the cave"
+        }
+      ]
+    },
+    {
+      "Key": "10176190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 39] Cross room"
+        }
+      ]
+    },
+    {
+      "Key": "10176200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02_Human bones_Full body] Poison fog area 1_Under the observation deck"
+        }
+      ]
+    },
+    {
+      "Key": "10176210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07_Human bones_Full body] Under the tower_Under the small pit"
+        }
+      ]
+    },
+    {
+      "Key": "10176220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08_Human bones_Full body] Poison fog area 2_Back of the cave"
+        }
+      ]
+    },
+    {
+      "Key": "10176221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08_Human bones_Full body] Poison fog area 2_Back of the cave_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10176230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03_Human bones_Full body] Poison fog area 1_Back right corner"
+        }
+      ]
+    },
+    {
+      "Key": "10176231",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03_Human bones_Full body] Poison fog area 1_Back on the right side_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10176250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 24_Human bones_Full body] Poison fog area 1_Right"
+        }
+      ]
+    },
+    {
+      "Key": "10176260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25_Human bones_Full body] Poison fog area 1_Front"
+        }
+      ]
+    },
+    {
+      "Key": "10176270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 26_Human bones_Full body] Poison fog area 1_Face down in the back right"
+        }
+      ]
+    },
+    {
+      "Key": "10176280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 27_Human bones_Full body] Poison fog area 1_Left"
+        }
+      ]
+    },
+    {
+      "Key": "10176290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 28_Human bones_Full body] Poison fog area 1_Left hill"
+        }
+      ]
+    },
+    {
+      "Key": "10176300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 29_Human bones_Full body] Poison fog area 1_Next to the cave in front"
+        }
+      ]
+    },
+    {
+      "Key": "10176340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 34_Human bones_Full body] Poison fog area 2_Return route from the pit"
+        }
+      ]
+    },
+    {
+      "Key": "10176350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 35_Human bones_Full body] Poison fog area 2_In front of the cave"
+        }
+      ]
+    },
+    {
+      "Key": "10176370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 37_Human bones_Full body] Poison fog area 2_Wall sitting"
+        }
+      ]
+    },
+    {
+      "Key": "10176390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 40] Wooden Square Treasure Route"
+        }
+      ]
+    },
+    {
+      "Key": "10176400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 44] Wood board square_hole with enemy"
+        }
+      ]
+    },
+    {
+      "Key": "10176410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 46_human bones_whole body] Poison fog tunnel"
+        }
+      ]
+    },
+    {
+      "Key": "10176420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 47] Windmill Tower_Arrow Trap Switch"
+        }
+      ]
+    },
+    {
+      "Key": "10176430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 48] Windmill Tower_At the end of the passage where Treasure Corpse 47 is located"
+        }
+      ]
+    },
+    {
+      "Key": "10176440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 49] Windmill Tower_Recovery Spring Room"
+        }
+      ]
+    },
+    {
+      "Key": "10176450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 50_human bones_whole body] Poison pond in front of the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10176460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 51] Wood board square_Correct route"
+        }
+      ]
+    },
+    {
+      "Key": "10176461",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 51] Wood board square_Correct route_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10176470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 52] Wood board square_hole on the left hand side"
+        }
+      ]
+    },
+    {
+      "Key": "10176480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 53] Wood board square_hole on the left"
+        }
+      ]
+    },
+    {
+      "Key": "10176490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 54] Wood board plaza_In front of the slope of the plaza"
+        }
+      ]
+    },
+    {
+      "Key": "10185000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 02] 1st house_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10185001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 02] 1st house_2F_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10185030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 04] Bar 2F"
+        }
+      ]
+    },
+    {
+      "Key": "10185040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tetsu Treasure Box 07] Bar_Behind the counter"
+        }
+      ]
+    },
+    {
+      "Key": "10185050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 02] Dark nest_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10185060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tetsu Treasure Box 03] Drinking House_Hidden Room"
+        }
+      ]
+    },
+    {
+      "Key": "10185070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 05] 3-story house_hidden room_right"
+        }
+      ]
+    },
+    {
+      "Key": "10185071",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 05] 3-story house_hidden room_right_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10185080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 06] 3-story house_hidden room_front"
+        }
+      ]
+    },
+    {
+      "Key": "10185081",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 06] 3-story house_hidden room_front_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10185100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 08_Trap] Dark nest_2F"
+        }
+      ]
+    },
+    {
+      "Key": "10185110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tetsu Treasure Box 04] Drinking House"
+        }
+      ]
+    },
+    {
+      "Key": "10185120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 06] Boss back cabin"
+        }
+      ]
+    },
+    {
+      "Key": "10186000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] 1st house_2F balcony"
+        }
+      ]
+    },
+    {
+      "Key": "10186010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Stuck on a stranded ship"
+        }
+      ]
+    },
+    {
+      "Key": "10186020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] House at the end of the ship call lever_stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10186021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] House at the end of the ship call lever_Stairs_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10186030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Space behind the shelf"
+        }
+      ]
+    },
+    {
+      "Key": "10186050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] The water hole just before the lighthouse"
+        }
+      ]
+    },
+    {
+      "Key": "10186070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] House hidden in the darkness next to lighthouse 1"
+        }
+      ]
+    },
+    {
+      "Key": "10186071",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] House hidden in the darkness next to lighthouse 1_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10186100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] Roof of the house hidden in the darkness next to lighthouse 1"
+        }
+      ]
+    },
+    {
+      "Key": "10186110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Scaffolding protruding in front of the dark nest"
+        }
+      ]
+    },
+    {
+      "Key": "10186120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 19] Human bones_Skull drinking house_Hidden room_Right"
+        }
+      ]
+    },
+    {
+      "Key": "10186130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] House at the end of the ship call lever_Rooftop"
+        }
+      ]
+    },
+    {
+      "Key": "10186140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] Human bones_Skull drinking house_Hidden room_Left"
+        }
+      ]
+    },
+    {
+      "Key": "10186150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 16] Abandoned house to the left of lighthouse 1"
+        }
+      ]
+    },
+    {
+      "Key": "10186160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Human bones_Drink the whole body_Hidden room"
+        }
+      ]
+    },
+    {
+      "Key": "10186170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] Drinking House"
+        }
+      ]
+    },
+    {
+      "Key": "10195000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Chest 07] Room with upper and lower scaffolding, high ground in front of the right hand side as seen from the entrance"
+        }
+      ]
+    },
+    {
+      "Key": "10195001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Chest 07] Upper and lower scaffolding room, high ground in front of the right hand side as seen from the entrance_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10195030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 09] Molten Iron Furnace Area_Front right"
+        }
+      ]
+    },
+    {
+      "Key": "10195040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 11] Molten Iron Furnace Area__On the left back ladder"
+        }
+      ]
+    },
+    {
+      "Key": "10195050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 06] Return path from the Bell Keeper Area_Hidden Room_Left"
+        }
+      ]
+    },
+    {
+      "Key": "10195060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 07] Return path from the Bell Keeper Area_Hidden Room_Right"
+        }
+      ]
+    },
+    {
+      "Key": "10195090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 08] Rooftop above the giant molten iron pot"
+        }
+      ]
+    },
+    {
+      "Key": "10195100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Molten Iron Furnace Area_Bottom right center"
+        }
+      ]
+    },
+    {
+      "Key": "10195110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Under the falling scaffold_Damaged floor"
+        }
+      ]
+    },
+    {
+      "Key": "10195120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 10] Bell Keeper Goal Destination"
+        }
+      ]
+    },
+    {
+      "Key": "10195130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Near the bonfire in front of the bell keeper"
+        }
+      ]
+    },
+    {
+      "Key": "10195140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 13] On the stairs after the Demon Knight battle"
+        }
+      ]
+    },
+    {
+      "Key": "10195150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 05] Treasure room after the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10196000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Bell Keeper Area_Behind the Tower"
+        }
+      ]
+    },
+    {
+      "Key": "10196010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Bell Keeper Area_Roof Edge"
+        }
+      ]
+    },
+    {
+      "Key": "10196020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Bell Keeper Area_Before the goal"
+        }
+      ]
+    },
+    {
+      "Key": "10196030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Molten Iron Furnace Area_Scaffolding at the bottom left back"
+        }
+      ]
+    },
+    {
+      "Key": "10196040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Rooftop above the giant molten iron cauldron"
+        }
+      ]
+    },
+    {
+      "Key": "10196050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 21] Inside the cow statue_In front of the fire-breathing cow"
+        }
+      ]
+    },
+    {
+      "Key": "10196060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] Molten iron furnace area_Right pillar"
+        }
+      ]
+    },
+    {
+      "Key": "10196070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Behind the ladder after passing through the scorching furnace"
+        }
+      ]
+    },
+    {
+      "Key": "10196080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04] [Key of Fire] Next to the fire-breathing statue just after entering the castle"
+        }
+      ]
+    },
+    {
+      "Key": "10196090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Water jar room beyond the hidden door above the fire-breathing statue"
+        }
+      ]
+    },
+    {
+      "Key": "10196100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] On the beam above the giant molten iron cauldron_2"
+        }
+      ]
+    },
+    {
+      "Key": "10196110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 17] Fallen scaffolding_back left"
+        }
+      ]
+    },
+    {
+      "Key": "10196111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Fallen Scaffold_Back left_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10196120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 23] Switch molten iron kettle_1st"
+        }
+      ]
+    },
+    {
+      "Key": "10196130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 19] Fallen Scaffold_In front of the white door"
+        }
+      ]
+    },
+    {
+      "Key": "10196140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02_Human Bones_Full Body] Jump onto the scaffolding immediately after the start"
+        }
+      ]
+    },
+    {
+      "Key": "10196150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Before the molten iron furnace area_Behind the hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10196160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08_Human bones_Full body] Molten iron furnace area_Under the stairs in front of the center"
+        }
+      ]
+    },
+    {
+      "Key": "10196170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 20] Giant molten iron cauldron_half-body bath"
+        }
+      ]
+    },
+    {
+      "Key": "10196180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01_Human bones_Skull] Immediately after the start_Behind the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10196190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16_Human Bones_Skull] Fallen Scaffold_Top of Molten Iron Cauldron"
+        }
+      ]
+    },
+    {
+      "Key": "10196200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Return path from the bell guard area_side the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10196210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 25] Inside the scorching furnace"
+        }
+      ]
+    },
+    {
+      "Key": "10196211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 25] Inside the scorching furnace_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10235010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Mushroom Cave Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "10236000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Behind the pier"
+        }
+      ]
+    },
+    {
+      "Key": "10236010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 30] Colosseum 2F_Behind the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10236020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Bridge to the forest_back left"
+        }
+      ]
+    },
+    {
+      "Key": "10236021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 09] Bridge to the forest_back left_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10236030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] In front of the bridge to the forest"
+        }
+      ]
+    },
+    {
+      "Key": "10236040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 14] Cliff in front of the bridge to the Colosseum"
+        }
+      ]
+    },
+    {
+      "Key": "10236050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 23] Cave Route_ Immediately to the right after entering"
+        }
+      ]
+    },
+    {
+      "Key": "10236060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 25] Cave route_collapsed bridge at the back"
+        }
+      ]
+    },
+    {
+      "Key": "10236070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Immortal Corridor_Edge of the Hole"
+        }
+      ]
+    },
+    {
+      "Key": "10236071",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Immortal Corridor_Edge of the Hole_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10236080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Corridor of Immortality_Scaffolding below the rooftop"
+        }
+      ]
+    },
+    {
+      "Key": "10236090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 10] Bridge to the forest _ Pillbox in front"
+        }
+      ]
+    },
+    {
+      "Key": "10236100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Treasure Corpse Pillbox_Leaning on the wall"
+        }
+      ]
+    },
+    {
+      "Key": "10236110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 13] Treasure corpse pillbox _ kneeling"
+        }
+      ]
+    },
+    {
+      "Key": "10236120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Immortal Corridor_Bottom_Corner on the door side"
+        }
+      ]
+    },
+    {
+      "Key": "10236130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Bridge to the forest_front left"
+        }
+      ]
+    },
+    {
+      "Key": "10236131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Bridge to the forest_front left_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10236140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 31] Cave route_near the iron grate lever"
+        }
+      ]
+    },
+    {
+      "Key": "10236150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 16] Collapsed pier"
+        }
+      ]
+    },
+    {
+      "Key": "10236160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 26] Cliff route_on the slope"
+        }
+      ]
+    },
+    {
+      "Key": "10236170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 27] Cliff route_Intermediate scaffolding between the top of the slope and the pillbox"
+        }
+      ]
+    },
+    {
+      "Key": "10236180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 18] Chariots Battle_1st body"
+        }
+      ]
+    },
+    {
+      "Key": "10236190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 19] Chariots Battle_2nd body"
+        }
+      ]
+    },
+    {
+      "Key": "10236200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] Chariots Battle_3rd body"
+        }
+      ]
+    },
+    {
+      "Key": "10236210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Chariots Battle_4th body"
+        }
+      ]
+    },
+    {
+      "Key": "10236220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 22] Chariots battle_5th body_end"
+        }
+      ]
+    },
+    {
+      "Key": "10236230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 28] Cliff route_Leaning on the wall inside the pillbox"
+        }
+      ]
+    },
+    {
+      "Key": "10236240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] In front of the Colosseum _ Jumping scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "10236250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 06] Under the torture lift"
+        }
+      ]
+    },
+    {
+      "Key": "10236260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Mushroom Cave Middle Level"
+        }
+      ]
+    },
+    {
+      "Key": "10255010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Chest 04] Scaffolding beyond suspension bridge 1"
+        }
+      ]
+    },
+    {
+      "Key": "10255020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Chest 01] Treasure tower next to the loop route to Bonfire 1"
+        }
+      ]
+    },
+    {
+      "Key": "10255030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Chest 05] Ladder Area_Scaffolding going up from the lower level"
+        }
+      ]
+    },
+    {
+      "Key": "10255040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 07] Loop route to Bonfire 1_Scaffolding to jump from the turret"
+        }
+      ]
+    },
+    {
+      "Key": "10255050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Chest 09] Side hole in front of the boss room_above the tar"
+        }
+      ]
+    },
+    {
+      "Key": "10255090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 02] Next to the giant room"
+        }
+      ]
+    },
+    {
+      "Key": "10255100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] In front of the ladder area_side hole where the dead are located"
+        }
+      ]
+    },
+    {
+      "Key": "10255110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 06] Additional for rings"
+        }
+      ]
+    },
+    {
+      "Key": "10255120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 04] Treasure room after the boss"
+        }
+      ]
+    },
+    {
+      "Key": "10255130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 05] Cave Area_Tar Pool Side Hole"
+        }
+      ]
+    },
+    {
+      "Key": "10256000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bottle Corpse 04] Kokeshi Room"
+        }
+      ]
+    },
+    {
+      "Key": "10256030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Corp 23] Small room in the turret where you can hold on to the rope"
+        }
+      ]
+    },
+    {
+      "Key": "10256060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bottle Corpse 06] Return path from Kokeshi room"
+        }
+      ]
+    },
+    {
+      "Key": "10256090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Corp 11] Beyond suspension bridge 2_bottom"
+        }
+      ]
+    },
+    {
+      "Key": "10256130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Case 17] Ladder area_lower level"
+        }
+      ]
+    },
+    {
+      "Key": "10256160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] In front of the white door"
+        }
+      ]
+    },
+    {
+      "Key": "10256170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 12-2]"
+        }
+      ]
+    },
+    {
+      "Key": "10256210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 20] Boss room"
+        }
+      ]
+    },
+    {
+      "Key": "10256220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 01]"
+        }
+      ]
+    },
+    {
+      "Key": "10256230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 02]"
+        }
+      ]
+    },
+    {
+      "Key": "10256240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 03]"
+        }
+      ]
+    },
+    {
+      "Key": "10256250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 05]"
+        }
+      ]
+    },
+    {
+      "Key": "10256260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 07]"
+        }
+      ]
+    },
+    {
+      "Key": "10256270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 08]"
+        }
+      ]
+    },
+    {
+      "Key": "10256280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 09]"
+        }
+      ]
+    },
+    {
+      "Key": "10256290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 10]"
+        }
+      ]
+    },
+    {
+      "Key": "10256300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Url Corpse 12-1]"
+        }
+      ]
+    },
+    {
+      "Key": "10256310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Case in urn 13]"
+        }
+      ]
+    },
+    {
+      "Key": "10256320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Case in urn 14]"
+        }
+      ]
+    },
+    {
+      "Key": "10256330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Case in urn 15]"
+        }
+      ]
+    },
+    {
+      "Key": "10256340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Case in urn 16]"
+        }
+      ]
+    },
+    {
+      "Key": "10256350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Urn Corpse 19]"
+        }
+      ]
+    },
+    {
+      "Key": "10256360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Urn Corpse 20]"
+        }
+      ]
+    },
+    {
+      "Key": "10256370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bottle urn 21-1]"
+        }
+      ]
+    },
+    {
+      "Key": "10256380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Urn Corpse 21-2]"
+        }
+      ]
+    },
+    {
+      "Key": "10256390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Urn Corpse 22]"
+        }
+      ]
+    },
+    {
+      "Key": "10256500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse] Butcher's Arm"
+        }
+      ]
+    },
+    {
+      "Key": "10275000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Castle Area_Room with a collapsed wall"
+        }
+      ]
+    },
+    {
+      "Key": "10275010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 03] Ancient Dragon Egg Route_Next to Mimic"
+        }
+      ]
+    },
+    {
+      "Key": "10275020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wood treasure box 02] Roof of the building in front of the hill"
+        }
+      ]
+    },
+    {
+      "Key": "10275021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 02] Rooftop of the building in front of the hill_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10275030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 01] Castle area_Scaffolding to jump from high ground"
+        }
+      ]
+    },
+    {
+      "Key": "10275040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Ancient Dragon Egg Route_Under the Spiral Stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10275050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Ancient Dragon Egg Route_Return Route"
+        }
+      ]
+    },
+    {
+      "Key": "10275060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 05] Castle Area_Behind the insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "10275070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 06] Right of the ancient dragon egg"
+        }
+      ]
+    },
+    {
+      "Key": "10276000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 06] Dragon's nest_right_outer cliff_front"
+        }
+      ]
+    },
+    {
+      "Key": "10276010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Dragon's nest_left_next to the egg"
+        }
+      ]
+    },
+    {
+      "Key": "10276020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Dragon's Nest_Left_Center"
+        }
+      ]
+    },
+    {
+      "Key": "10276030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04] Dragon's Nest_Left_In front of the suspension bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10276040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Dragon's Nest_Left_Inner passageway"
+        }
+      ]
+    },
+    {
+      "Key": "10276041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Dragon's Nest_Left_Back of the internal passage_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10276050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08] Dragon's nest_right_outer cliff_back"
+        }
+      ]
+    },
+    {
+      "Key": "10276060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07] Dragon's nest_right_back of the egg"
+        }
+      ]
+    },
+    {
+      "Key": "10276061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07] Dragon's Nest_Right_Behind the Egg_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10276070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] Ahead of the dragon's nest on the left_by the cliff"
+        }
+      ]
+    },
+    {
+      "Key": "10276080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Dragon's Nest_Right_Inside the upper layer"
+        }
+      ]
+    },
+    {
+      "Key": "10276090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Dragon's Nest_Right_Next to the egg storage area"
+        }
+      ]
+    },
+    {
+      "Key": "10276100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Dragon's Nest_Right_Lower Inside"
+        }
+      ]
+    },
+    {
+      "Key": "10276110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12] Dragon's nest_right_lower layer outside"
+        }
+      ]
+    },
+    {
+      "Key": "10276120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 18] Dragon's nest_left_caught in the hole"
+        }
+      ]
+    },
+    {
+      "Key": "10276130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Scaffolding above the first bonfire"
+        }
+      ]
+    },
+    {
+      "Key": "10276140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Castle area_Elevated railing"
+        }
+      ]
+    },
+    {
+      "Key": "10276150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16] Elder Dragon Egg Route_In front of the spiral staircase"
+        }
+      ]
+    },
+    {
+      "Key": "10276160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Kojima jumping from the rope"
+        }
+      ]
+    },
+    {
+      "Key": "10276170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 19] Dragon's nest_right_lower floor_under the jumping scaffold"
+        }
+      ]
+    },
+    {
+      "Key": "10276180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 20] Dragon's nest_right_upper layer outside"
+        }
+      ]
+    },
+    {
+      "Key": "10295000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Room on the left side of the hollow side"
+        }
+      ]
+    },
+    {
+      "Key": "10296000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Madura side back right room"
+        }
+      ]
+    },
+    {
+      "Key": "10296010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Madura side_before the entrance"
+        }
+      ]
+    },
+    {
+      "Key": "10296020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] Hollow side_front left"
+        }
+      ]
+    },
+    {
+      "Key": "10305010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Port side_Upper floor_Elevator side"
+        }
+      ]
+    },
+    {
+      "Key": "10306000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Upper floor_Right at the end"
+        }
+      ]
+    },
+    {
+      "Key": "10306010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Upper floor_handrail at the end"
+        }
+      ]
+    },
+    {
+      "Key": "10306020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Upper floor_Right at the end_Leaning on the wall"
+        }
+      ]
+    },
+    {
+      "Key": "10315000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Scaffolding before the heavy cavalry battle"
+        }
+      ]
+    },
+    {
+      "Key": "10315001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 01] Scaffolding before the heavy cavalry battle_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10315010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] After Ornstein War"
+        }
+      ]
+    },
+    {
+      "Key": "10315020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 03] After Ornstein War"
+        }
+      ]
+    },
+    {
+      "Key": "10315030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 01] [Iron Treasure Box 01] Beyond the operational bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10316010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Bird head statue scaffold_caught on the handrail"
+        }
+      ]
+    },
+    {
+      "Key": "10316040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] On the spiral staircase after the heavy cavalry battle"
+        }
+      ]
+    },
+    {
+      "Key": "10316041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] On the spiral staircase after the heavy cavalry battle_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10316050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Ornstein Route_Interrupted Stairs"
+        }
+      ]
+    },
+    {
+      "Key": "10316090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 10] Connection with Madura_Madura side"
+        }
+      ]
+    },
+    {
+      "Key": "10316100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 11] In front of the first gimmick lever"
+        }
+      ]
+    },
+    {
+      "Key": "10316101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 11] In front of the first gimmick lever_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10316110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Before Ornstein battle"
+        }
+      ]
+    },
+    {
+      "Key": "10325000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 02] Bridge Ruins_Central Interior"
+        }
+      ]
+    },
+    {
+      "Key": "10325001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 02] Bridge ruins_Central interior_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10325010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 01] Bridge ruins"
+        }
+      ]
+    },
+    {
+      "Key": "10325020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Ring 2_Lost Forest_Petrification Stop Building"
+        }
+      ]
+    },
+    {
+      "Key": "10325030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 07] Man Scorpion's Dwelling_2nd Floor"
+        }
+      ]
+    },
+    {
+      "Key": "10325040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 08] House with Dullahan"
+        }
+      ]
+    },
+    {
+      "Key": "10325050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Ring 1_Lost Forest_Gate Ruins"
+        }
+      ]
+    },
+    {
+      "Key": "10325060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 03] Basilisk's nest_next to the magic circle"
+        }
+      ]
+    },
+    {
+      "Key": "10325080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 05] Ring 5_ Ruins of the house next to the ruins of the bridge"
+        }
+      ]
+    },
+    {
+      "Key": "10325100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 04] House ruins_old gate location"
+        }
+      ]
+    },
+    {
+      "Key": "10325110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 09] Bridge Ruins_Hidden Room"
+        }
+      ]
+    },
+    {
+      "Key": "10326000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01]"
+        }
+      ]
+    },
+    {
+      "Key": "10326010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Manscorpion's residence_near the outer wall"
+        }
+      ]
+    },
+    {
+      "Key": "10326020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03]"
+        }
+      ]
+    },
+    {
+      "Key": "10326030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04]"
+        }
+      ]
+    },
+    {
+      "Key": "10326040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] House in front of the bridge ruins_2nd floor"
+        }
+      ]
+    },
+    {
+      "Key": "10326060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07]"
+        }
+      ]
+    },
+    {
+      "Key": "10326070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08]"
+        }
+      ]
+    },
+    {
+      "Key": "10326080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09]"
+        }
+      ]
+    },
+    {
+      "Key": "10326081",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09]_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10326090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10]"
+        }
+      ]
+    },
+    {
+      "Key": "10326100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11]"
+        }
+      ]
+    },
+    {
+      "Key": "10326101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11]_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10326110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Passage from the connecting path_eaten by goblins"
+        }
+      ]
+    },
+    {
+      "Key": "10326120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13]"
+        }
+      ]
+    },
+    {
+      "Key": "10326130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15]"
+        }
+      ]
+    },
+    {
+      "Key": "10326140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16]"
+        }
+      ]
+    },
+    {
+      "Key": "10326141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16]_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10326150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] House in front of Manscorpion's residence"
+        }
+      ]
+    },
+    {
+      "Key": "10326160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 18]"
+        }
+      ]
+    },
+    {
+      "Key": "10326170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 19] Connection to An Deal_Pond"
+        }
+      ]
+    },
+    {
+      "Key": "10326180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20]"
+        }
+      ]
+    },
+    {
+      "Key": "10326190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21]"
+        }
+      ]
+    },
+    {
+      "Key": "10326191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21]_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10326200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 22] Boss room"
+        }
+      ]
+    },
+    {
+      "Key": "10326210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] House on the left side of the bridge ruins_Behind the large barrel"
+        }
+      ]
+    },
+    {
+      "Key": "10326220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 23] Connection to the royal castle_behind the gate"
+        }
+      ]
+    },
+    {
+      "Key": "10326230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 24] Scorpion's Dwelling_Entrance"
+        }
+      ]
+    },
+    {
+      "Key": "10326240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25] Lost Forest_Dullahan Ruins_Outside"
+        }
+      ]
+    },
+    {
+      "Key": "10326250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 26] Road to the Royal Castle_Wandering Front"
+        }
+      ]
+    },
+    {
+      "Key": "10326260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 27] Road to the royal castle_Wandering depths"
+        }
+      ]
+    },
+    {
+      "Key": "10335000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01_Trap] Hidden passage_Under the spiral slope"
+        }
+      ]
+    },
+    {
+      "Key": "10335010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 02_Trap] 2F_Between the thorny passageways"
+        }
+      ]
+    },
+    {
+      "Key": "10335020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03_Trap] 2F_ Small room ahead of hidden passage"
+        }
+      ]
+    },
+    {
+      "Key": "10335021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03_Trap] 2F_Small room ahead of hidden passage_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10335030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 04] Regular route_Pathway next to the first lighthouse"
+        }
+      ]
+    },
+    {
+      "Key": "10335031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 04] Regular route_Pathway next to the first lighthouse_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10335040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 01] Pledge Route_1F Plaza_Behind the Elephant Cage"
+        }
+      ]
+    },
+    {
+      "Key": "10336000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Before the pledge route"
+        }
+      ]
+    },
+    {
+      "Key": "10336010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Regular route_under the spiral staircase"
+        }
+      ]
+    },
+    {
+      "Key": "10336011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Regular route_under the spiral staircase_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10336020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Pledge Route_2F_Behind the Elephant Cage"
+        }
+      ]
+    },
+    {
+      "Key": "10336040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Pledge Route_1F_Before the gate"
+        }
+      ]
+    },
+    {
+      "Key": "10336041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 05] Pledge route_1F_Before the gate_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10336050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 06] Pledge route_1F_High ground"
+        }
+      ]
+    },
+    {
+      "Key": "10336060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07] Pledge Route_2F_Ladder Top"
+        }
+      ]
+    },
+    {
+      "Key": "10336070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08] Pledge Route_2F_Beside the stairs in front of the gate"
+        }
+      ]
+    },
+    {
+      "Key": "10336080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 09] Pledge route_2F_Five discs in front"
+        }
+      ]
+    },
+    {
+      "Key": "10345000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] Scaffolding at the end of the suspension bridge on the lower level"
+        }
+      ]
+    },
+    {
+      "Key": "10345010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 01] In front of the bottom of the trash_Shadow of the scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "10346000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Wooden Scaffolding for Scum Bottom_Scaffolding Lean"
+        }
+      ]
+    },
+    {
+      "Key": "10346010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12] Wooden scaffolding to the bottom of the trash _ face up"
+        }
+      ]
+    },
+    {
+      "Key": "10346020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11_Human bones_Full body] Rotating staircase room_Coffin holder above"
+        }
+      ]
+    },
+    {
+      "Key": "10346030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04_human bones_whole body] Circular waterway_corridor side"
+        }
+      ]
+    },
+    {
+      "Key": "10346031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04_human bones_whole body] Circular waterway_corridor side_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "10346040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "【宝死体06_人骨_全身】\u30002F_廊下の突き当たり"
+        }
+      ]
+    },
+    {
+      "Key": "10346050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 07_human bones_whole body] Rotating staircase room"
+        }
+      ]
+    },
+    {
+      "Key": "10346060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08_Human bones_Whole body] Circular waterway_Inside"
+        }
+      ]
+    },
+    {
+      "Key": "10346070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10_Human bones_Full body] Lower floor_At the end of the passage"
+        }
+      ]
+    },
+    {
+      "Key": "10346080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05_Human bones_Skull] 1F_Corridor shelf"
+        }
+      ]
+    },
+    {
+      "Key": "10346090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12_human bones_whole body] Connection to the bottom of the scum_lattice back"
+        }
+      ]
+    },
+    {
+      "Key": "10346091",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12_human bones_whole body] Connection to the bottom of the scum_lattice_back_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "10346100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13_Human bones_Skull] Connection to Kuzubota_High difficulty level jump"
+        }
+      ]
+    },
+    {
+      "Key": "20105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Stage 1_Behind the door of the start passage"
+        }
+      ]
+    },
+    {
+      "Key": "20105001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Stage 1_Behind the door of the start passage_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20105010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Stage 1_After the Arc de Triomphe_Beside the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "20105020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03_Trap] Stage 2_ In front of hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "20105030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 01] Stage 2_Hidden door back"
+        }
+      ]
+    },
+    {
+      "Key": "20105040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Stage 2_Hidden door back"
+        }
+      ]
+    },
+    {
+      "Key": "20105050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Stage 2_Room where you can get off using the lift"
+        }
+      ]
+    },
+    {
+      "Key": "20105060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 05] Stage 2_Room where you can get off using the lift"
+        }
+      ]
+    },
+    {
+      "Key": "20106000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01] Stage 1_Back of the starting passage"
+        }
+      ]
+    },
+    {
+      "Key": "20106010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Stage 1_ Square at the end of the tunnel_ On the wooden scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "20106011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02] Stage 1_ Square at the end of the tunnel_ On the wooden scaffolding_ 2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20106020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Stage 1_After the Arc de Triomphe_Roof of the house on the left"
+        }
+      ]
+    },
+    {
+      "Key": "20106030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 04] Stage 1_After the Arc de Triomphe_Back right"
+        }
+      ]
+    },
+    {
+      "Key": "20106040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Stage 1_Before the goal"
+        }
+      ]
+    },
+    {
+      "Key": "20106050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Stage 2_In front of the insect key hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "20106060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16] Stage 1_Beside the stairs in front of the goal"
+        }
+      ]
+    },
+    {
+      "Key": "20106061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16] Stage 1_Beside the stairs in front of the goal_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20106070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08] Stage 2_ Passageway going down from the rooftop"
+        }
+      ]
+    },
+    {
+      "Key": "20106080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09] Stage 2_ Immediately to the right after going outside"
+        }
+      ]
+    },
+    {
+      "Key": "20106090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10] Stage 2_Outdoor_In front of the ballista"
+        }
+      ]
+    },
+    {
+      "Key": "20106100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 11] Stage 3_1st observation deck"
+        }
+      ]
+    },
+    {
+      "Key": "20106110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 12] Stage 3_head rumbling front"
+        }
+      ]
+    },
+    {
+      "Key": "20106111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Stage 3_Before head rumbling_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20106120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Stage 3_ Head Rumbling Observation Deck"
+        }
+      ]
+    },
+    {
+      "Key": "20106130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Stage 2_Roof exiting from the room where you get off by lift"
+        }
+      ]
+    },
+    {
+      "Key": "20106140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Stage 2_Outdoor_On the wooden scaffolding"
+        }
+      ]
+    },
+    {
+      "Key": "20106141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Stage 2_Outdoor_On wooden scaffolding_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20106150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17] Stage 1_ Caught on a cliff beside the goal"
+        }
+      ]
+    },
+    {
+      "Key": "20115000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 01] Sub route 1_end"
+        }
+      ]
+    },
+    {
+      "Key": "20115010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 02] Outside tower 1_left hand"
+        }
+      ]
+    },
+    {
+      "Key": "20115020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03] In front of the cave 1 house ahead"
+        }
+      ]
+    },
+    {
+      "Key": "20115030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 04] Next to house 1"
+        }
+      ]
+    },
+    {
+      "Key": "20115040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 06] Inside the cave 1 house ahead"
+        }
+      ]
+    },
+    {
+      "Key": "20115050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 06] Next to the tower to the girl 2"
+        }
+      ]
+    },
+    {
+      "Key": "20115051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden Treasure Box 06] Next to the Tower to Girl 2_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "20115060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Subroute 3_End"
+        }
+      ]
+    },
+    {
+      "Key": "20115070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure box 01] Behind the door of the living"
+        }
+      ]
+    },
+    {
+      "Key": "20115080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 04] Cliff next to house 2"
+        }
+      ]
+    },
+    {
+      "Key": "20115090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 08] Green Grass Area_Behind the Insect Key Hidden Door"
+        }
+      ]
+    },
+    {
+      "Key": "20115100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 05] Outside the Tower of Girl 2_Next to the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "20115110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 07] Outside the Tower of Girl 2_Next to the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "20115500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Special OBJ] Chair_King's Soul"
+        }
+      ]
+    },
+    {
+      "Key": "20116000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Cave to Oyagi_Exit to the right"
+        }
+      ]
+    },
+    {
+      "Key": "20116010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03] Tower 1_1F"
+        }
+      ]
+    },
+    {
+      "Key": "20116011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 03] Tower 1_1F_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20116020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05] Kojima 1 house away_Face down"
+        }
+      ]
+    },
+    {
+      "Key": "20116030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 23] Sub route 3"
+        }
+      ]
+    },
+    {
+      "Key": "20116040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08] Ahead of the green grass area_Between the gates"
+        }
+      ]
+    },
+    {
+      "Key": "20116060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Oyagi Square_Face down"
+        }
+      ]
+    },
+    {
+      "Key": "20116070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13] Oyagi Square_Kneeling"
+        }
+      ]
+    },
+    {
+      "Key": "20116080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14] Oyagi Square_Cling"
+        }
+      ]
+    },
+    {
+      "Key": "20116090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15] Oyagi Square_On top of a fallen pillar"
+        }
+      ]
+    },
+    {
+      "Key": "20116100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16] Oyagi Plaza Ahead_At the end of the passage"
+        }
+      ]
+    },
+    {
+      "Key": "20116110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 18] Hole next to girl 2"
+        }
+      ]
+    },
+    {
+      "Key": "20116120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 20] Kojima 1 house away_ facing forward"
+        }
+      ]
+    },
+    {
+      "Key": "20116130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 02] Sub route 1_branch removal"
+        }
+      ]
+    },
+    {
+      "Key": "20116140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 24] House 2 ahead_ Cliff next to the white door"
+        }
+      ]
+    },
+    {
+      "Key": "20116150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 01] Behind the roots of the start"
+        }
+      ]
+    },
+    {
+      "Key": "20116160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 21] Kojima 1 house ahead_Cling"
+        }
+      ]
+    },
+    {
+      "Key": "20116170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25] Inside House 2_Facing up"
+        }
+      ]
+    },
+    {
+      "Key": "20116171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 25] Inside House 2_Facing Up_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20116190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10_Human Bones_Skull] Collapsed pillar next to the white door 2 houses ahead"
+        }
+      ]
+    },
+    {
+      "Key": "20116200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 22] Side street beyond house 2_Behind the roots"
+        }
+      ]
+    },
+    {
+      "Key": "20215000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 03] Above the acid pool"
+        }
+      ]
+    },
+    {
+      "Key": "20215010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 02] Acid pool back"
+        }
+      ]
+    },
+    {
+      "Key": "20215011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 02] Acid pool back_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20215020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 05] Golem room destination"
+        }
+      ]
+    },
+    {
+      "Key": "20215021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure chest 05] Golem room_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "20215040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 04_trap] Upper hall"
+        }
+      ]
+    },
+    {
+      "Key": "20215041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 04_Trap] Upper hall_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20215050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 02] Behind the golem door"
+        }
+      ]
+    },
+    {
+      "Key": "20215060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 05] Upper Corridor_Front"
+        }
+      ]
+    },
+    {
+      "Key": "20215070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 01] Near the lever"
+        }
+      ]
+    },
+    {
+      "Key": "20215080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 03] Right side of main gate"
+        }
+      ]
+    },
+    {
+      "Key": "20215090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] Above the Great Hall"
+        }
+      ]
+    },
+    {
+      "Key": "20215100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 06] On the Corridor"
+        }
+      ]
+    },
+    {
+      "Key": "20215110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 07] On the Corridor"
+        }
+      ]
+    },
+    {
+      "Key": "20215120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 11] Machine room destination_right"
+        }
+      ]
+    },
+    {
+      "Key": "20215130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 08] Golem door back_center right"
+        }
+      ]
+    },
+    {
+      "Key": "20215140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Box 12] Machine room destination_left"
+        }
+      ]
+    },
+    {
+      "Key": "20215150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron treasure chest 10] Next to the elevator to Amana"
+        }
+      ]
+    },
+    {
+      "Key": "20216000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01_Human bones_Full body] Golem door room_Back of center left door"
+        }
+      ]
+    },
+    {
+      "Key": "20216010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 02_Human Bones_Full Body] Abyss NPC Cave"
+        }
+      ]
+    },
+    {
+      "Key": "20216020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03_Human Bones_Full Body] Under the stairs in front of the golem door"
+        }
+      ]
+    },
+    {
+      "Key": "20216021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 03_Human bones_Full body] Under the stairs in front of the golem door_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "20216030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04_Human bones_Whole body] Acid pool_Next to the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "20216040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05_Human Bones_Whole Body] Between the Masks"
+        }
+      ]
+    },
+    {
+      "Key": "20216050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 10_Human bones_Full body] Outside the hidden bonfire room"
+        }
+      ]
+    },
+    {
+      "Key": "20216060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08_Human bones_Full body] Corridor to Mirror Knight_Left"
+        }
+      ]
+    },
+    {
+      "Key": "20216061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 08_Human bones_Full body] Corridor to Mirror Knight_Left_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20216070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 09_Human bones_Full body] Corridor to Mirror Knight_Right"
+        }
+      ]
+    },
+    {
+      "Key": "20216080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 07_Human bones_Skull] In front of the corridor to Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "20216090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11] Slope to the Royal Castle_Shadow of the Rock"
+        }
+      ]
+    },
+    {
+      "Key": "20216100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06] Room with one-way door"
+        }
+      ]
+    },
+    {
+      "Key": "20245000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 02] Under the shortcut drawbridge_inside"
+        }
+      ]
+    },
+    {
+      "Key": "20245010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Wooden treasure box 03] In front of the corridor area"
+        }
+      ]
+    },
+    {
+      "Key": "20245020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 04] High ground in the grave area"
+        }
+      ]
+    },
+    {
+      "Key": "20245030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 01] High ground above Phantom Knight 1 blocking the path"
+        }
+      ]
+    },
+    {
+      "Key": "20245040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 02] Beyond the hidden bug key door in the bell area"
+        }
+      ]
+    },
+    {
+      "Key": "20245050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Iron Treasure Chest 03] Behind the hidden door without a key guide in the grave area"
+        }
+      ]
+    },
+    {
+      "Key": "20246000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 01_Human Bones_Whole Body] Right side of the stairs at the starting point"
+        }
+      ]
+    },
+    {
+      "Key": "20246010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Grave Keeper's Room"
+        }
+      ]
+    },
+    {
+      "Key": "20246011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 12] Grave Keeper's Room_2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "20246030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 04_Human Bones_Full Body] Passage under Phantom Knight 1 blocking the path"
+        }
+      ]
+    },
+    {
+      "Key": "20246040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 05_Human bones_Full body] Graveyard area_Enter on the right hand side"
+        }
+      ]
+    },
+    {
+      "Key": "20246050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 06_Human bones_Mountain of bones] Graveyard area_Under the hill"
+        }
+      ]
+    },
+    {
+      "Key": "20246070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 08_human bones_bone pile] Bell area_cul-de-sac"
+        }
+      ]
+    },
+    {
+      "Key": "20246100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 13_Human bones_Pile of bones] Hidden route on the ladder"
+        }
+      ]
+    },
+    {
+      "Key": "20246110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14_Human bones_Full body] Graveyard area_Corner on the right after entering"
+        }
+      ]
+    },
+    {
+      "Key": "20246111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 14_Human bones_Full body] Graveyard area_Corner on the right after entering_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20246120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15_Human bones_Full body] Graveyard area_Under the stairs"
+        }
+      ]
+    },
+    {
+      "Key": "20246121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 15_Human bones_Full body] Graveyard area_Under the stairs_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20246130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 16_Human bones_Full body] Room with hidden door"
+        }
+      ]
+    },
+    {
+      "Key": "20246140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 17_Human Bones_Mountain of Bones] Graveyard Area 2_In front of the exit"
+        }
+      ]
+    },
+    {
+      "Key": "20246150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 18_Human bones_Full body] Graveyard area 2_Opposite side of exit"
+        }
+      ]
+    },
+    {
+      "Key": "20246151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure corpse 18_Human bones_Full body] Graveyard area 2_Opposite the exit_2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "20246500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse 11_King's Armor] Deepest part of the map"
+        }
+      ]
+    },
+    {
+      "Key": "20265000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[tentative] 43"
+        }
+      ]
+    },
+    {
+      "Key": "20266000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[tentative] 44"
+        }
+      ]
+    },
+    {
+      "Key": "40035000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[tentative] 45"
+        }
+      ]
+    },
+    {
+      "Key": "40036000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[tentative] 46"
+        }
+      ]
+    },
+    {
+      "Key": "50000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For small vines] Table 1"
+        }
+      ]
+    },
+    {
+      "Key": "50000001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For small vines] Table 2"
+        }
+      ]
+    },
+    {
+      "Key": "50000002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For small vines] Table 3"
+        }
+      ]
+    },
+    {
+      "Key": "50000003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For small vines] Table 4"
+        }
+      ]
+    },
+    {
+      "Key": "50000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For hanging] Table 1"
+        }
+      ]
+    },
+    {
+      "Key": "50000101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For hanging] Table 2"
+        }
+      ]
+    },
+    {
+      "Key": "50000102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For hanging] Table 3"
+        }
+      ]
+    },
+    {
+      "Key": "50000103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For hanging] Table 4"
+        }
+      ]
+    },
+    {
+      "Key": "50000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For egg fossils] Table 1"
+        }
+      ]
+    },
+    {
+      "Key": "50000201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For egg fossils] Table 2"
+        }
+      ]
+    },
+    {
+      "Key": "50000202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For egg fossils] Table 3"
+        }
+      ]
+    },
+    {
+      "Key": "50000203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For egg fossils] Table 4"
+        }
+      ]
+    },
+    {
+      "Key": "50000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For seven-colored stones] Table 1"
+        }
+      ]
+    },
+    {
+      "Key": "50000301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For seven-colored stones] Table 2"
+        }
+      ]
+    },
+    {
+      "Key": "50000302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For seven-colored stones] Table 3"
+        }
+      ]
+    },
+    {
+      "Key": "50000303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[For seven-colored stones] Table 4"
+        }
+      ]
+    },
+    {
+      "Key": "50001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For destroying treasure chests"
+        }
+      ]
+    },
+    {
+      "Key": "60001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kudzu Bottom] Dropped by the last giant soldier"
+        }
+      ]
+    },
+    {
+      "Key": "60002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Rotten Giant Forest] Giant Fruit"
+        }
+      ]
+    },
+    {
+      "Key": "60003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Guardian Dragon's Nest] Dragon Egg Fossil"
+        }
+      ]
+    },
+    {
+      "Key": "60004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Titan] Access the corpse of the giant"
+        }
+      ]
+    },
+    {
+      "Key": "60005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Ancient Dragon] Access the corpse of the Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "60006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[NPC Event] Reward for defeating the Miracle Man"
+        }
+      ]
+    },
+    {
+      "Key": "60007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Reward] Defeat dark spirits 1000 times"
+        }
+      ]
+    },
+    {
+      "Key": "60007100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Reward] Defeat the host 1000 times"
+        }
+      ]
+    },
+    {
+      "Key": "60007200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Reward] Clear without dying"
+        }
+      ]
+    },
+    {
+      "Key": "60007300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Reward] Clear the bonfire without resting"
+        }
+      ]
+    },
+    {
+      "Key": "60008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For defeating Vagrant on the way"
+        }
+      ]
+    },
+    {
+      "Key": "60009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For defeating petrified lion warriors"
+        }
+      ]
+    },
+    {
+      "Key": "60010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soldier's key"
+        }
+      ]
+    },
+    {
+      "Key": "60011000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Core of ash mist"
+        }
+      ]
+    },
+    {
+      "Key": "70000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Bonus] Black flame stone dagger & round shield"
+        }
+      ]
+    },
+    {
+      "Key": "90000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ito test 1"
+        }
+      ]
+    },
+    {
+      "Key": "90000001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ito test 2"
+        }
+      ]
+    },
+    {
+      "Key": "99995000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-treasure box 00"
+        }
+      ]
+    },
+    {
+      "Key": "99995001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-treasure box 01"
+        }
+      ]
+    },
+    {
+      "Key": "99995002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 02"
+        }
+      ]
+    },
+    {
+      "Key": "99995003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 03"
+        }
+      ]
+    },
+    {
+      "Key": "99995004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 04"
+        }
+      ]
+    },
+    {
+      "Key": "99995005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 05"
+        }
+      ]
+    },
+    {
+      "Key": "99995006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-treasure box 06"
+        }
+      ]
+    },
+    {
+      "Key": "99995007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 07"
+        }
+      ]
+    },
+    {
+      "Key": "99995008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure box 08"
+        }
+      ]
+    },
+    {
+      "Key": "99996000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 00"
+        }
+      ]
+    },
+    {
+      "Key": "99996001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 01"
+        }
+      ]
+    },
+    {
+      "Key": "99996002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging -OBJ-Treasure Corpse 02"
+        }
+      ]
+    },
+    {
+      "Key": "99996003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 03"
+        }
+      ]
+    },
+    {
+      "Key": "99996004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging -OBJ-Treasure Corpse 04"
+        }
+      ]
+    },
+    {
+      "Key": "99996005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 05"
+        }
+      ]
+    },
+    {
+      "Key": "99996006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging -OBJ-Treasure Corpse 06"
+        }
+      ]
+    },
+    {
+      "Key": "99996007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 07"
+        }
+      ]
+    },
+    {
+      "Key": "99996008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For debugging-OBJ-Treasure Corpse 08"
+        }
+      ]
+    }
+  ]
+}

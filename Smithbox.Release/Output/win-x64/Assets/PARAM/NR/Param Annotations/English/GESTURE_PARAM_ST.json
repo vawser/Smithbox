@@ -1,0 +1,48 @@
+{
+  "Param": "GESTURE_PARAM_ST",
+  "Type": "GESTURE_PARAM_ST",
+  "Name": "GESTURE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemId",
+      "Name": "Item ID",
+      "Description": "Reference item ID. Used to bring in the gesture text ID, icon ID, and sort ID for each menu. Register the tool ID of the equipment parameter"
+    },
+    {
+      "Field": "msgAnimId",
+      "Name": "Message Anim ID",
+      "Description": "Anime ID for attaching messages. Specify the animation ID when attaching a message"
+    },
+    {
+      "Field": "cannotUseRiding",
+      "Name": "Cannot Use while Riding",
+      "Description": "Is it prohibited to use while riding (default )? If , it cannot be used while riding"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

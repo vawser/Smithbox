@@ -1,0 +1,221 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Move -- 動かない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok Default Value -- Havokのデフォルト値"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "ムカデの頭部"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "ムカデの尻尾"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "血ダニの本体"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "血ダニのふくろ"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Segunda: The Evil Spirits -- グンダ：邪霊"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "テスト飛竜の尻尾"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "テスト飛竜の右翼"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "騎士の頭部"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Snake Spirit: Right arm -- 蛇霊：右腕"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "ムカデボスの尻尾"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "ムカデボスの右腕"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "墓王の本体"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "King of the Dead: Crown -- 死霊の王：王冠"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "King of the Dead: torso -- 死霊の王：胴体"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "King of the dead: right arm -- 死霊の王：右腕"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "墓王のマント"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Mad Warrior Hallec: Head -- 狂戦士ハレック：頭"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "湖獣の首①"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Dead Slug (dumpling): Dead dumpling -- 蝕のナメクジ（亡者団子）：亡者団子"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "湖獣の首③"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "湖獣の首④"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "湖獣の首⑤"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "湖獣の首⑥"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "湖獣の首⑦"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Hell Kite: Before your left ankle -- ヘルカイト：左足の足首より先"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "ヒロインの尻尾"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "ヘルカイトの尻尾"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "座禅ドラゴンの尻尾"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "ガーゴイルの尻尾"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "ガーゴイル2体目破損部位"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "ガーゴイル（色違い）の尻尾"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "白竜シースの尻尾"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "金キメラの尻尾"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "黒竜の尻尾"
+      ]
+    }
+  ]
+}

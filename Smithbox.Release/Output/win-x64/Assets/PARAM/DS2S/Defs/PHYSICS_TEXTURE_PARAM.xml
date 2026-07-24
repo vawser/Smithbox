@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>PHYSICS_TEXTURE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="u8 layerType">
+            <DisplayName>レイヤータイプ</DisplayName>
+            <Enum>PXT_LAYER_TYPE</Enum>
+            <Description>レイヤータイプ</Description>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[3]">
+            <DisplayName>ダミー0</DisplayName>
+            <Description>ダミー0</Description>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 refractiveReal">
+            <DisplayName>屈折率</DisplayName>
+            <Description>屈折率</Description>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 refractiveImag">
+            <DisplayName>屈折率の虚数部</DisplayName>
+            <Description>屈折率の虚数部.</Description>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 fresnel">
+            <DisplayName>垂直反射率</DisplayName>
+            <Description>垂直反射率</Description>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="s32 fresnelInt">
+            <DisplayName>垂直反射率(255基準)</DisplayName>
+            <Description>255基準の垂直反射率.テクスチャにはここの値が使用される.</Description>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 roughness">
+            <DisplayName>滑らかさ</DisplayName>
+            <Description>滑らかさ</Description>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="s32 roughnessInt">
+            <DisplayName>滑らかさ(255基準)</DisplayName>
+            <Description>255基準の滑らかさ.テクスチャにはここの値が使用される.</Description>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

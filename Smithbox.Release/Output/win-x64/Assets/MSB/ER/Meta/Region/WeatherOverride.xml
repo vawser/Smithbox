@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a weather override region in the map." />
+  
+  <Field>
+    <WeatherLotParamID
+    AltName="Weather Lot Param ID"
+    Wiki="Determines which WeatherLotParam ID to use."
+    ParamRef="WeatherLotParam" />
+  
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+  
+    <UnkT09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+  
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+  
+    <UnkT0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

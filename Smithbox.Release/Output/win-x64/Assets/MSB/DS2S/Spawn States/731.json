@@ -1,0 +1,14 @@
+{
+  "id": "731",
+  "name": "Mirror Squire (Syan's Halberd) ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

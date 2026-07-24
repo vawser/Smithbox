@@ -1,0 +1,527 @@
+{
+  "Name": "RideParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Player -> Torrent"
+      ]
+    },
+    {
+      "ID": 300081001,
+      "Entries": [
+        "Exile Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 300081011,
+      "Entries": [
+        "Exile Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 300081101,
+      "Entries": [
+        "Exile Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 300090090,
+      "Entries": [
+        "Exile Soldier -> Unk c9009"
+      ]
+    },
+    {
+      "ID": 300090091,
+      "Entries": [
+        "Exile Soldier -> Unk c9009"
+      ]
+    },
+    {
+      "ID": 300090092,
+      "Entries": [
+        "Exile Soldier -> Unk c9009"
+      ]
+    },
+    {
+      "ID": 300090093,
+      "Entries": [
+        "Exile Soldier -> Unk c9009"
+      ]
+    },
+    {
+      "ID": 315031600,
+      "Entries": [
+        "Night's Cavalry -> Funeral Steed"
+      ]
+    },
+    {
+      "ID": 315031601,
+      "Entries": [
+        "Night's Cavalry -> Funeral Steed"
+      ]
+    },
+    {
+      "ID": 315031602,
+      "Entries": [
+        "Night's Cavalry -> Funeral Steed"
+      ]
+    },
+    {
+      "ID": 315031603,
+      "Entries": [
+        "Night's Cavalry -> Funeral Steed"
+      ]
+    },
+    {
+      "ID": 317031802,
+      "Entries": [
+        "Albinauric Archer -> Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 317031803,
+      "Entries": [
+        "Albinauric Archer -> Archer's Wolf"
+      ]
+    },
+    {
+      "ID": 320032102,
+      "Entries": [
+        "Nomadic Merchant -> Nomad's Mule"
+      ]
+    },
+    {
+      "ID": 320032103,
+      "Entries": [
+        "Nomadic Merchant -> Nomad's Mule"
+      ]
+    },
+    {
+      "ID": 330042800,
+      "Entries": [
+        "Nox Swordstress -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 330042801,
+      "Entries": [
+        "Nox Swordstress -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 330042802,
+      "Entries": [
+        "Nox Swordstress -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 330042803,
+      "Entries": [
+        "Nox Swordstress -> Giant Ant"
+      ]
+    },
+    {
+      "ID": 350081001,
+      "Entries": [
+        "Grave Skeleton -> Ballista"
+      ]
+    },
+    {
+      "ID": 350081011,
+      "Entries": [
+        "Grave Skeleton -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 350081101,
+      "Entries": [
+        "Grave Skeleton -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 405040601,
+      "Entries": [
+        "Kaiden Sellsword -> Kaiden's Horse"
+      ]
+    },
+    {
+      "ID": 405040602,
+      "Entries": [
+        "Kaiden Sellsword -> Kaiden's Horse"
+      ]
+    },
+    {
+      "ID": 405040603,
+      "Entries": [
+        "Kaiden Sellsword -> Kaiden's Horse"
+      ]
+    },
+    {
+      "ID": 435043601,
+      "Entries": [
+        "Lordsworn Knight -> Lordsworn Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435043602,
+      "Entries": [
+        "Lordsworn Knight -> Lordsworn Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435043603,
+      "Entries": [
+        "Lordsworn Knight -> Lordsworn Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435143611,
+      "Entries": [
+        "Godrick Knight -> Godrick Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435143612,
+      "Entries": [
+        "Godrick Knight -> Godrick Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435143613,
+      "Entries": [
+        "Godrick Knight -> Godrick Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435243621,
+      "Entries": [
+        "Cuckoo Knight -> Cuckoo Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435243622,
+      "Entries": [
+        "Cuckoo Knight -> Cuckoo Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435243623,
+      "Entries": [
+        "Cuckoo Knight -> Cuckoo Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435343631,
+      "Entries": [
+        "Leyndell Knight -> Leyndell Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435343632,
+      "Entries": [
+        "Leyndell Knight -> Leyndell Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435343633,
+      "Entries": [
+        "Leyndell Knight -> Leyndell Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435443641,
+      "Entries": [
+        "Redmane Knight -> Redmane Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435443642,
+      "Entries": [
+        "Redmane Knight -> Redmane Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435443643,
+      "Entries": [
+        "Redmane Knight -> Redmane Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435543651,
+      "Entries": [
+        "Mausoleum Knight -> Mausoleum Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435543652,
+      "Entries": [
+        "Mausoleum Knight -> Mausoleum Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435543653,
+      "Entries": [
+        "Mausoleum Knight -> Mausoleum Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435643661,
+      "Entries": [
+        "Haligtree Knight -> Haligtree Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435643662,
+      "Entries": [
+        "Haligtree Knight -> Haligtree Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435643663,
+      "Entries": [
+        "Haligtree Knight -> Haligtree Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435843681,
+      "Entries": [
+        "Unk Knight -> Unk Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435843682,
+      "Entries": [
+        "Unk Knight -> Unk Knight's Horse"
+      ]
+    },
+    {
+      "ID": 435843683,
+      "Entries": [
+        "Unk Knight -> Unk Knight's Horse"
+      ]
+    },
+    {
+      "ID": 437081001,
+      "Entries": [
+        "Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437081011,
+      "Entries": [
+        "Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437081101,
+      "Entries": [
+        "Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437181001,
+      "Entries": [
+        "Godrick Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437181011,
+      "Entries": [
+        "Godrick Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437181101,
+      "Entries": [
+        "Godrick Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437281001,
+      "Entries": [
+        "Cuckoo Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437281011,
+      "Entries": [
+        "Cuckoo Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437281101,
+      "Entries": [
+        "Cuckoo Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437381001,
+      "Entries": [
+        "Leyndell Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437381011,
+      "Entries": [
+        "Leyndell Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437381101,
+      "Entries": [
+        "Leyndell Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437481001,
+      "Entries": [
+        "Radahn Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437481011,
+      "Entries": [
+        "Radahn Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437481101,
+      "Entries": [
+        "Radahn Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437581001,
+      "Entries": [
+        "Mausoleum Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437581011,
+      "Entries": [
+        "Mausoleum Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437581101,
+      "Entries": [
+        "Mausoleum Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437681001,
+      "Entries": [
+        "Haligtree Foot Soldier -> Ballista"
+      ]
+    },
+    {
+      "ID": 437681011,
+      "Entries": [
+        "Haligtree Foot Soldier -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437681101,
+      "Entries": [
+        "Haligtree Foot Soldier -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 437781001,
+      "Entries": [
+        "Highwayman -> Ballista"
+      ]
+    },
+    {
+      "ID": 437781011,
+      "Entries": [
+        "Highwayman -> Large Ballista"
+      ]
+    },
+    {
+      "ID": 437781101,
+      "Entries": [
+        "Highwayman -> Dragon-faced Flamethrower"
+      ]
+    },
+    {
+      "ID": 473047400,
+      "Entries": [
+        "Starscourge Radahn -> Leonard"
+      ]
+    },
+    {
+      "ID": 473047401,
+      "Entries": [
+        "Starscourge Radahn -> Leonard"
+      ]
+    },
+    {
+      "ID": 473047402,
+      "Entries": [
+        "Starscourge Radahn -> Leonard"
+      ]
+    },
+    {
+      "ID": 473047403,
+      "Entries": [
+        "Starscourge Radahn -> Leonard"
+      ]
+    },
+    {
+      "ID": 495149500,
+      "Entries": [
+        "Unk -> Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 495149501,
+      "Entries": [
+        "Unk -> Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 495149502,
+      "Entries": [
+        "Unk -> Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 495149503,
+      "Entries": [
+        "Unk -> Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 752075300,
+      "Entries": [
+        "Gnoster (Moth) -> Faurtis (Shears)"
+      ]
+    },
+    {
+      "ID": 752075301,
+      "Entries": [
+        "Gnoster (Moth) -> Faurtis (Shears)"
+      ]
+    },
+    {
+      "ID": 752075302,
+      "Entries": [
+        "Gnoster (Moth) -> Faurtis (Shears)"
+      ]
+    },
+    {
+      "ID": 752075303,
+      "Entries": [
+        "Gnoster (Moth) -> Faurtis (Shears)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "Name": "BossParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 212003,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 305200,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "The Last Giant"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 318010,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 318020,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 325010,
+      "Entries": [
+        "Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Velstadt- The Royal Aegis"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Throne Defender"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Mytha- the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 502009,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 506101,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Vendrick (hollow)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 611010,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 611500,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 611510,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 619110,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Lost Sinner"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 628000,
+      "Entries": [
+        "Royal Rat Authority"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 675010,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Aava"
+      ]
+    },
+    {
+      "ID": 679002,
+      "Entries": [
+        "Aava"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh- the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana- Squalid Queen"
+      ]
+    },
+    {
+      "ID": 683000,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689010,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689020,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689030,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    }
+  ]
+}

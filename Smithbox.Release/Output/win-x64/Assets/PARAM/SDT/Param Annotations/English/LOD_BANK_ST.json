@@ -1,0 +1,88 @@
+{
+  "Param": "LOD_BANK_ST",
+  "Type": "LOD_BANK_ST",
+  "Name": "LOD_BANK_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureLod",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "draw_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "draw_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shadowDraw_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shadowDraw_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "motionBlur_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "motionBlur_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "type",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lodCrossFadeEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lodCrossFadeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

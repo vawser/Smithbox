@@ -1,0 +1,1148 @@
+{
+  "Param": "GARAGE_CAMERA_ANIM_PARAM_ST",
+  "Type": "GARAGE_CAMERA_ANIM_PARAM_ST",
+  "Name": "GARAGE_CAMERA_ANIM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "set00_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set00_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set00_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set00_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set00_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set00_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set00_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set00_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set00_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set00_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set00_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set00_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set00_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set00_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set01_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set01_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set01_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set01_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set01_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set01_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set01_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set01_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set01_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set01_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set01_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set01_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set01_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set01_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set02_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set02_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set02_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set02_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set02_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set02_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set02_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set02_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set02_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set02_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set02_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set02_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set02_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set02_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set03_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set03_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set03_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set03_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set03_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set03_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set03_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set03_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set03_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set03_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set03_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set03_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set03_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set03_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set04_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set04_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set04_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set04_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set04_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set04_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set04_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set04_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set04_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set04_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set04_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set04_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set04_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set04_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set05_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set05_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set05_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set05_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set05_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set05_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set05_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set05_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set05_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set05_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set05_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set05_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set05_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set05_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set06_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set06_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set06_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set06_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set06_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set06_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set06_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set06_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set06_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set06_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set06_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set06_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set06_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set06_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set07_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set07_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set07_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set07_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set07_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set07_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set07_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set07_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set07_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set07_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set07_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set07_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set07_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set07_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set08_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set08_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set08_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set08_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set08_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set08_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set08_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set08_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set08_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set08_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set08_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set08_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set08_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set08_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set09_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set09_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set09_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set09_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set09_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set09_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set09_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set09_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set09_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set09_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set09_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set09_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set09_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set09_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set10_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set10_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set10_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set10_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set10_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set10_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set10_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set10_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set10_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set10_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set10_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set10_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set10_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set10_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set11_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set11_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set11_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set11_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set11_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set11_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set11_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set11_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set11_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set11_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set11_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set11_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set11_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set11_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set12_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set12_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set12_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set12_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set12_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set12_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set12_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set12_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set12_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set12_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set12_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set12_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set12_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set12_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set13_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set13_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set13_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set13_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set13_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set13_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set13_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set13_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set13_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set13_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set13_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set13_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set13_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set13_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set14_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set14_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set14_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set14_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set14_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set14_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set14_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set14_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set14_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set14_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set14_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set14_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set14_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set14_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    },
+    {
+      "Field": "set15_beginCameraId",
+      "Name": "開始カメラID",
+      "Description": "開始時に再生する振動カメラID"
+    },
+    {
+      "Field": "set15_endCameraId",
+      "Name": "終了カメラID",
+      "Description": "終了時に再生する振動カメラID"
+    },
+    {
+      "Field": "set15_bNoWait",
+      "Name": "すぐに再生",
+      "Description": "すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生"
+    },
+    {
+      "Field": "set15_bFade",
+      "Name": "フェード",
+      "Description": "カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set15_bBoke",
+      "Name": "ボケ",
+      "Description": "カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)"
+    },
+    {
+      "Field": "set15_bOtherAnimCancel",
+      "Name": "切替時に他のアニメは再生しない",
+      "Description": "このカメラを再生開始する前のカメラの終了再生をキャンセルするか"
+    },
+    {
+      "Field": "set15_bFilterAnimOnly",
+      "Name": "画面効果のみ",
+      "Description": "画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します"
+    },
+    {
+      "Field": "set15_bCameraHightFixed",
+      "Name": "視点の高さを固定化",
+      "Description": "視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします"
+    },
+    {
+      "Field": "set15_padbit",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "set15_laneCamStartFrame",
+      "Name": "レーンカメラ初期フレーム",
+      "Description": "カメラ切り替え時のレーンカメラアニメの初期フレーム"
+    },
+    {
+      "Field": "set15_baseDmyPolyId",
+      "Name": "基準ダミポリID",
+      "Description": "指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)"
+    },
+    {
+      "Field": "set15_laneCamLockAtEntityId",
+      "Name": "レーンカメラ視点エンティティID",
+      "Description": "レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機"
+    },
+    {
+      "Field": "set15_laneCamPointIdx",
+      "Name": "レーンカメラポイントID",
+      "Description": "レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)"
+    },
+    {
+      "Field": "set15_laneCamLookAtDmyPolyId",
+      "Name": "レーンカメラ視点ダミポリID",
+      "Description": "レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)"
+    }
+  ]
+}

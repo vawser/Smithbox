@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MISSILE_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s32 FFXID">
+      <Description>ＦＦＸエディタ上のＩＤ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+    </Field>
+    <Field Def="u16 LifeTime">
+      <DisplayName>生存時間[frame]</DisplayName>
+      <Description>生存時間。</Description>
+      <Maximum>30000</Maximum>
+    </Field>
+    <Field Def="u16 HitSphereRadius">
+      <DisplayName>当たり球半径[cm]</DisplayName>
+      <Description>当たり球半径。単位cm</Description>
+      <Maximum>3000</Maximum>
+    </Field>
+    <Field Def="u16 HitDamage">
+      <DisplayName>着弾ダメージ</DisplayName>
+      <Description>着弾時のダメージ量</Description>
+      <Maximum>30000</Maximum>
+    </Field>
+    <Field Def="dummy8 reserve0[6]">
+      <DisplayName>予約</DisplayName>
+    </Field>
+    <Field Def="f32 InitVelocity">
+      <DisplayName>初速度[m/s]</DisplayName>
+      <Description>初速度[m/s]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.5</Increment>
+    </Field>
+    <Field Def="f32 distance">
+      <DisplayName>射程距離</DisplayName>
+      <Description>射程距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.5</Increment>
+    </Field>
+    <Field Def="f32 gravityInRange">
+      <DisplayName>射程距離内重力</DisplayName>
+      <Description>射程距離内重力</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 gravityOutRange">
+      <DisplayName>射程距離外重力</DisplayName>
+      <Description>射程距離外重力</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.5</Increment>
+    </Field>
+    <Field Def="s32 mp">
+      <DisplayName>消費MP</DisplayName>
+      <Description>消費MP</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="f32 accelInRange">
+      <DisplayName>射程距離内加速度</DisplayName>
+      <Description>射程距離内加速度</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 accelOutRange">
+      <DisplayName>射程距離外加速度</DisplayName>
+      <Description>射程距離外加速度</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="dummy8 reserve1[20]">
+      <DisplayName>予約</DisplayName>
+    </Field>
+    <Field Def="u16 HitMissileID">
+      <DisplayName>着弾ＩＤ</DisplayName>
+      <Description>着弾ＩＤ</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 DiedNaturaly">
+      <DisplayName>寿命で死ぬか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>着弾しても、死なずに、寿命を使い切るか？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ExplosionDie">
+      <DisplayName>寿命が切れたときに着弾するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>寿命が切れたときに着弾するか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="s32 behaviorId">
+      <DisplayName>ヒット時行動ID</DisplayName>
+      <Description>ダメージを与えたとき相手に与える行動ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="dummy8 reserve_last[56]">
+      <DisplayName>予約</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,4208 @@
+{
+  "Name": "ObjectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "arrow"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "wooden [2]"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "box"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Skeleton [Pattern 1]"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Skeleton [Pattern 2]"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Skeleton [Pattern 3]"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Skeleton [Pattern 4]"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "candlestick (large)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "barrel"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "wooden box"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "shield"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "broken broadsword"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "broken sword"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "candlestick (small)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "arrow"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "stone statue"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Destroyed Stone Statue [Pattern 1]"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Destroyed Stone Statue [Pattern 2]"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Destroyed Stone Statue [Pattern 3]"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "rock"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "rock"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "skull"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "stone pillar (below)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "stone pillar (above)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "gunpowder barrel"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "gunpowder barrel"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "brick rubble"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Chain meat A"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "chain meat B"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "chain"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "chain"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "chain"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "switch"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "switch door"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "exit door"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Collapsed Arch A"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Collapsed Arch B"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "collapsing pillar"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Collapsed Arch C"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "collapsed ceiling"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "collapsed ceiling"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "After collapsing arch"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "After collapsing arch"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Equipment"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Equipment"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Equipment"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "lantern"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Treasure Corpse (Normal)"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Keystone (provisional)"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Treasure Corpse (warrior weight)"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Treasure Corpse (Light Cleric)"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Treasure Corpse (Warrior Weight) Arrow"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Diffusion Mono [Last Boss]"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "flock of birds"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "VIP OBJ"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "wooden door"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "wooden door"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "stump"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "tree branch"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Heroine corpse OBJ"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "The sword stuck in the heroine"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "magic square"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "wall of light"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "merchant set 1"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "merchant set 2"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "merchant set 3"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "merchant set 4"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "merchant set 5"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "merchant set 6"
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        "merchant set 7"
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        "merchant set 8"
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        "merchant set 9"
+      ]
+    },
+    {
+      "ID": 1609,
+      "Entries": [
+        "merchant set 10"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "merchant set 11"
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        "merchant set 12"
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        "merchant set 13"
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        "merchant set 14"
+      ]
+    },
+    {
+      "ID": 1614,
+      "Entries": [
+        "merchant set 15"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "merchant set 16"
+      ]
+    },
+    {
+      "ID": 1616,
+      "Entries": [
+        "merchant set 17"
+      ]
+    },
+    {
+      "ID": 1617,
+      "Entries": [
+        "merchant set 18"
+      ]
+    },
+    {
+      "ID": 1618,
+      "Entries": [
+        "merchant set 19"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "flag"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "phalanx spear"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Lendl's sword"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "destruction object"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "floating corpse"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "hut"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "chains for hanging corpses"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Rumble Cannonball Container"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "iron ball"
+      ]
+    },
+    {
+      "ID": 2122,
+      "Entries": [
+        "Single iron ball"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "hut"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "gear mechanism"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "enemy door"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Door to execution ground"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "burning door"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "mausoleum door"
+      ]
+    },
+    {
+      "ID": 2195,
+      "Entries": [
+        "soldier's corpse"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "cadaver"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "lever (switch)"
+      ]
+    },
+    {
+      "ID": 2221,
+      "Entries": [
+        "Lever compatible door (front)"
+      ]
+    },
+    {
+      "ID": 2231,
+      "Entries": [
+        "door to the castle"
+      ]
+    },
+    {
+      "ID": 2241,
+      "Entries": [
+        "Lever compatible door (right)"
+      ]
+    },
+    {
+      "ID": 2251,
+      "Entries": [
+        "Lever compatible door (left)"
+      ]
+    },
+    {
+      "ID": 2261,
+      "Entries": [
+        "door (kicking)"
+      ]
+    },
+    {
+      "ID": 2271,
+      "Entries": [
+        "Ladder"
+      ]
+    },
+    {
+      "ID": 2280,
+      "Entries": [
+        "Large barista [base]"
+      ]
+    },
+    {
+      "ID": 2281,
+      "Entries": [
+        "Large varistor [Body]"
+      ]
+    },
+    {
+      "ID": 2282,
+      "Entries": [
+        "Large varistor [launching device]"
+      ]
+    },
+    {
+      "ID": 2290,
+      "Entries": [
+        "wrecking wooden board"
+      ]
+    },
+    {
+      "ID": 2291,
+      "Entries": [
+        "wrecking wooden board"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Kaesong fence"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Karakuri stairs"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "dog carriage"
+      ]
+    },
+    {
+      "ID": 2317,
+      "Entries": [
+        "blood pool"
+      ]
+    },
+    {
+      "ID": 2318,
+      "Entries": [
+        "broken tree ledge"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "falling straw"
+      ]
+    },
+    {
+      "ID": 2321,
+      "Entries": [
+        "Iron fence door (for sub-event)"
+      ]
+    },
+    {
+      "ID": 2322,
+      "Entries": [
+        "falling carriage"
+      ]
+    },
+    {
+      "ID": 2323,
+      "Entries": [
+        "straw doll"
+      ]
+    },
+    {
+      "ID": 2324,
+      "Entries": [
+        "Falling straw (single item)"
+      ]
+    },
+    {
+      "ID": 2325,
+      "Entries": [
+        "Fence destroyed"
+      ]
+    },
+    {
+      "ID": 2326,
+      "Entries": [
+        "Falling straw (single item)"
+      ]
+    },
+    {
+      "ID": 2328,
+      "Entries": [
+        "crates and barrels"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Masonry in boss room (sword holder)"
+      ]
+    },
+    {
+      "ID": 2331,
+      "Entries": [
+        "Masonry in the boss room (shield holder)"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Shelf [with luggage Ver.1]"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Shelf [with luggage Ver.2]"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Shelf [with luggage Ver.3]"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "wine shelf"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "wine cellar"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "With desk and chair [With luggage Ver.1]"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "With desk and chair [With luggage Ver.2]"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "With desk and chair [With luggage Ver.3]"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "With desk and chair [With luggage Ver.4]"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Cart [with luggage Ver.1]"
+      ]
+    },
+    {
+      "ID": 2411,
+      "Entries": [
+        "Cart [with luggage Ver.2]"
+      ]
+    },
+    {
+      "ID": 2412,
+      "Entries": [
+        "Cart [with luggage Ver.3]"
+      ]
+    },
+    {
+      "ID": 2413,
+      "Entries": [
+        "Cart [no luggage]"
+      ]
+    },
+    {
+      "ID": 2414,
+      "Entries": [
+        "Cart [no luggage]"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "sword stand"
+      ]
+    },
+    {
+      "ID": 2421,
+      "Entries": [
+        "bed"
+      ]
+    },
+    {
+      "ID": 2422,
+      "Entries": [
+        "chest of drawers"
+      ]
+    },
+    {
+      "ID": 2423,
+      "Entries": [
+        "desk"
+      ]
+    },
+    {
+      "ID": 2424,
+      "Entries": [
+        "table"
+      ]
+    },
+    {
+      "ID": 2425,
+      "Entries": [
+        "Weapon Stand A"
+      ]
+    },
+    {
+      "ID": 2426,
+      "Entries": [
+        "Weapon stand B"
+      ]
+    },
+    {
+      "ID": 2427,
+      "Entries": [
+        "luxury chair"
+      ]
+    },
+    {
+      "ID": 2428,
+      "Entries": [
+        "Small box A"
+      ]
+    },
+    {
+      "ID": 2429,
+      "Entries": [
+        "Small box B"
+      ]
+    },
+    {
+      "ID": 2430,
+      "Entries": [
+        "stool"
+      ]
+    },
+    {
+      "ID": 2431,
+      "Entries": [
+        "settee"
+      ]
+    },
+    {
+      "ID": 2432,
+      "Entries": [
+        "Arrow protection"
+      ]
+    },
+    {
+      "ID": 2433,
+      "Entries": [
+        "Broken arrow"
+      ]
+    },
+    {
+      "ID": 2434,
+      "Entries": [
+        "broken cart"
+      ]
+    },
+    {
+      "ID": 2435,
+      "Entries": [
+        "broken cart"
+      ]
+    },
+    {
+      "ID": 2440,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2441,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2442,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2443,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2444,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2445,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2446,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2447,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2448,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2449,
+      "Entries": [
+        "King's Room Rubble"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "flag"
+      ]
+    },
+    {
+      "ID": 2451,
+      "Entries": [
+        "flag"
+      ]
+    },
+    {
+      "ID": 2452,
+      "Entries": [
+        "flag"
+      ]
+    },
+    {
+      "ID": 2455,
+      "Entries": [
+        "slave soldier"
+      ]
+    },
+    {
+      "ID": 2456,
+      "Entries": [
+        "gear"
+      ]
+    },
+    {
+      "ID": 2460,
+      "Entries": [
+        "Royal Castle 4 Before Terrain Destruction"
+      ]
+    },
+    {
+      "ID": 2461,
+      "Entries": [
+        "Royal Castle 4 Terrain Destruction"
+      ]
+    },
+    {
+      "ID": 2462,
+      "Entries": [
+        "Royal Castle 4 After terrain destruction"
+      ]
+    },
+    {
+      "ID": 2470,
+      "Entries": [
+        "Royal Castle 4 Before Tower Destruction"
+      ]
+    },
+    {
+      "ID": 2471,
+      "Entries": [
+        "Royal Castle 4 Tower Destroyed"
+      ]
+    },
+    {
+      "ID": 2472,
+      "Entries": [
+        "Royal Castle 4 After Tower Destruction"
+      ]
+    },
+    {
+      "ID": 2480,
+      "Entries": [
+        "Ojo Gondola"
+      ]
+    },
+    {
+      "ID": 2490,
+      "Entries": [
+        "Horse"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Keystone (provisional)"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 2513,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 2515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 2523,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 2525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 2531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 2533,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 2534,
+      "Entries": [
+        "For Ojo 3"
+      ]
+    },
+    {
+      "ID": 2535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 2541,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 2543,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 2545,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 2551,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 2552,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 2553,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 2554,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "02_01 [Castle Basement] Door (Prison)"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "02_01 [Castle basement] Door (entrance)"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "02_01 wooden door"
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "Shudai"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Royal Castle 1 Corpse Ladder"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "ladder"
+      ]
+    },
+    {
+      "ID": 2750,
+      "Entries": [
+        "king sword statue"
+      ]
+    },
+    {
+      "ID": 2760,
+      "Entries": [
+        "king shield statue"
+      ]
+    },
+    {
+      "ID": 2761,
+      "Entries": [
+        "king shield statue"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "King Lendor Cloak"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "King's Shield Square Door"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "King's sword",
+        "King's sword"
+      ]
+    },
+    {
+      "ID": 9509,
+      "Entries": [
+        "king's shield",
+        "king's shield"
+      ]
+    },
+    {
+      "ID": 9499,
+      "Entries": [
+        "For temporary character placement",
+        "For temporary character placement"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Bar door (double door)"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Boss room entrance door (double doors)"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Boss room exit door (double doors)"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Rock (SEQ9)"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "boss room entrance event"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "prison door"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "glowing fog"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "ladder"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3125,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3126,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3127,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3128,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3129,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3132,
+      "Entries": [
+        "Boss room collapsing floor (3rd floor)"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3141,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3142,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3143,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3144,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3145,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3146,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3147,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3148,
+      "Entries": [
+        "Boss room collapsing floor (2nd floor)"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "boss room broken pillar"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Stone door (double doors)"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "magic door"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "door with lock"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "magic door"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "floor switch"
+      ]
+    },
+    {
+      "ID": 3221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "skeleton soldier"
+      ]
+    },
+    {
+      "ID": 3231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "skull"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "floor board"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "skeleton statue"
+      ]
+    },
+    {
+      "ID": 3261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3270,
+      "Entries": [
+        "demon statue"
+      ]
+    },
+    {
+      "ID": 3271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3280,
+      "Entries": [
+        "skeleton statue"
+      ]
+    },
+    {
+      "ID": 3290,
+      "Entries": [
+        "storm warrior"
+      ]
+    },
+    {
+      "ID": 3291,
+      "Entries": [
+        "Storm Warrior Substitution Rubble"
+      ]
+    },
+    {
+      "ID": 3292,
+      "Entries": [
+        "storm warrior figurine"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Gravestone a"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "tombstone b"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "tombstone c"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "tombstone d"
+      ]
+    },
+    {
+      "ID": 3304,
+      "Entries": [
+        "tombstone e"
+      ]
+    },
+    {
+      "ID": 3305,
+      "Entries": [
+        "Tombstone (extra large)"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "broken tree"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Jar A"
+      ]
+    },
+    {
+      "ID": 3411,
+      "Entries": [
+        "Jar B"
+      ]
+    },
+    {
+      "ID": 3412,
+      "Entries": [
+        "Jar C"
+      ]
+    },
+    {
+      "ID": 3413,
+      "Entries": [
+        "Jar D"
+      ]
+    },
+    {
+      "ID": 3414,
+      "Entries": [
+        "Jar E"
+      ]
+    },
+    {
+      "ID": 3415,
+      "Entries": [
+        "Jar F"
+      ]
+    },
+    {
+      "ID": 3419,
+      "Entries": [
+        "broken flag"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "flag"
+      ]
+    },
+    {
+      "ID": 3421,
+      "Entries": [
+        "Heavy carriage damage"
+      ]
+    },
+    {
+      "ID": 3422,
+      "Entries": [
+        "Damaged carriage A"
+      ]
+    },
+    {
+      "ID": 3423,
+      "Entries": [
+        "Damaged carriage B"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Large wooden box damage"
+      ]
+    },
+    {
+      "ID": 3431,
+      "Entries": [
+        "Damaged wooden box B"
+      ]
+    },
+    {
+      "ID": 3432,
+      "Entries": [
+        "Damaged wooden box C"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "barricade"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "Broken shelf A"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "broken shelf B"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Skeleton A"
+      ]
+    },
+    {
+      "ID": 3461,
+      "Entries": [
+        "Skeleton B."
+      ]
+    },
+    {
+      "ID": 3462,
+      "Entries": [
+        "Skeleton C."
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "Broken barrel A"
+      ]
+    },
+    {
+      "ID": 3471,
+      "Entries": [
+        "Barrel B"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 3512,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 3515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 3521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 3522,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 3525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 3531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 3532,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 3535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 3998,
+      "Entries": [
+        "corpse chest"
+      ]
+    },
+    {
+      "ID": 3999,
+      "Entries": [
+        "corpse chest"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "gargoyle statue"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "wheel punishment [torture device]"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Gargoyle statue (after destruction)"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Keystone (starting point)"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Captive corpse (handled as a chair)"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "puppeteer chair"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "chain [ceiling]"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Desk [equipment included]"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Chair"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Chain [with captive]"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Desk [no equipment]"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "bucket"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "God statue [Body]"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Statue of God [Center]"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "God Statue [Gimmick Base]"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Jail Door [Large]"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Jail Door [Large]"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Jail Door [Small]"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "prison door"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Prison entrance door"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "prison guard passage door"
+      ]
+    },
+    {
+      "ID": 4141,
+      "Entries": [
+        "Prison Guard Passage Door (Double Door)"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "church front door"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "church upper door"
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        "church upper door"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "church [chair]"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Church [Queen] (Left)"
+      ]
+    },
+    {
+      "ID": 4181,
+      "Entries": [
+        "Church [couch] (center)"
+      ]
+    },
+    {
+      "ID": 4182,
+      "Entries": [
+        "Church [Queen] (Right)"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "terrace door"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Pot ①"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "Pot ②"
+      ]
+    },
+    {
+      "ID": 4212,
+      "Entries": [
+        "Pot ③"
+      ]
+    },
+    {
+      "ID": 4213,
+      "Entries": [
+        "Jar (after destruction) ①"
+      ]
+    },
+    {
+      "ID": 4214,
+      "Entries": [
+        "Jar (after destruction) ②"
+      ]
+    },
+    {
+      "ID": 4215,
+      "Entries": [
+        "prisoner's jar"
+      ]
+    },
+    {
+      "ID": 4216,
+      "Entries": [
+        "3 tiered coffins"
+      ]
+    },
+    {
+      "ID": 4217,
+      "Entries": [
+        "incense burner"
+      ]
+    },
+    {
+      "ID": 4218,
+      "Entries": [
+        "coffin"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "iron maiden"
+      ]
+    },
+    {
+      "ID": 4221,
+      "Entries": [
+        "bunch of keys"
+      ]
+    },
+    {
+      "ID": 4231,
+      "Entries": [
+        "Merchant Temporary Model"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Shelf ①"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Shelf ②"
+      ]
+    },
+    {
+      "ID": 4242,
+      "Entries": [
+        "desk"
+      ]
+    },
+    {
+      "ID": 4243,
+      "Entries": [
+        "Small box A"
+      ]
+    },
+    {
+      "ID": 4244,
+      "Entries": [
+        "Small box B"
+      ]
+    },
+    {
+      "ID": 4245,
+      "Entries": [
+        "chaise longue"
+      ]
+    },
+    {
+      "ID": 4261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Elevator [moving 5 floors]"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "Elevator [4-floor movement]"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "Elevator [moving 3 floors]"
+      ]
+    },
+    {
+      "ID": 4305,
+      "Entries": [
+        "Air Prison (without contents)"
+      ]
+    },
+    {
+      "ID": 4306,
+      "Entries": [
+        "Air Prison (with content)"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "iron plate"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Large chain ①"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "Large chain②"
+      ]
+    },
+    {
+      "ID": 4402,
+      "Entries": [
+        "Large chain ③"
+      ]
+    },
+    {
+      "ID": 4403,
+      "Entries": [
+        "Large chain ④"
+      ]
+    },
+    {
+      "ID": 4404,
+      "Entries": [
+        "Large chain⑤"
+      ]
+    },
+    {
+      "ID": 4405,
+      "Entries": [
+        "Post-break chain ①"
+      ]
+    },
+    {
+      "ID": 4406,
+      "Entries": [
+        "Post-break chain ②"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "pillar"
+      ]
+    },
+    {
+      "ID": 4412,
+      "Entries": [
+        "poly drama pillars"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "Flag ①"
+      ]
+    },
+    {
+      "ID": 4421,
+      "Entries": [
+        "Flag ②"
+      ]
+    },
+    {
+      "ID": 4422,
+      "Entries": [
+        "Flag ③"
+      ]
+    },
+    {
+      "ID": 4423,
+      "Entries": [
+        "Flag ④"
+      ]
+    },
+    {
+      "ID": 4424,
+      "Entries": [
+        "Flag ⑤"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Boss Battle Pillar"
+      ]
+    },
+    {
+      "ID": 4435,
+      "Entries": [
+        "tentacles (thin)"
+      ]
+    },
+    {
+      "ID": 4436,
+      "Entries": [
+        "Tentacles (thick) ver.1"
+      ]
+    },
+    {
+      "ID": 4437,
+      "Entries": [
+        "Tentacles (thick) ver.2"
+      ]
+    },
+    {
+      "ID": 4438,
+      "Entries": [
+        "Tentacles (thick) ver.3"
+      ]
+    },
+    {
+      "ID": 4439,
+      "Entries": [
+        "Tentacles (thick) ver.4"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "Tentacles (thick) ver.5"
+      ]
+    },
+    {
+      "ID": 4441,
+      "Entries": [
+        "Tentacles (thick) ver.6"
+      ]
+    },
+    {
+      "ID": 4442,
+      "Entries": [
+        "Tentacles (thick) ver.7"
+      ]
+    },
+    {
+      "ID": 4445,
+      "Entries": [
+        "Winding Tentacles (Lively)"
+      ]
+    },
+    {
+      "ID": 4446,
+      "Entries": [
+        "Horizontal Tentacles (Lively)"
+      ]
+    },
+    {
+      "ID": 4511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 4512,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 4515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 4521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 4522,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 4525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 4531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 4532,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 4535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 4750,
+      "Entries": [
+        "Light from heaven in church (only for poly play)"
+      ]
+    },
+    {
+      "ID": 4751,
+      "Entries": [
+        "Light from heaven in church (only for poly play)"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "luxury chair"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Chimera ball (temporary)"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "Chimera ball (after falling)"
+      ]
+    },
+    {
+      "ID": 4850,
+      "Entries": [
+        "Okina clothes"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "wall of light"
+      ]
+    },
+    {
+      "ID": 4901,
+      "Entries": [
+        "Wall of light [for the front door of the church]"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "Wall of Light [Large]"
+      ]
+    },
+    {
+      "ID": 4911,
+      "Entries": [
+        "Wall of Light [Small]"
+      ]
+    },
+    {
+      "ID": 4980,
+      "Entries": [
+        "chain test"
+      ]
+    },
+    {
+      "ID": 4998,
+      "Entries": [
+        "elevator test"
+      ]
+    },
+    {
+      "ID": 4999,
+      "Entries": [
+        "foundation test"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Collapsed floor (board)_1"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "mouse corpse"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "dog corpse"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "deer carcass"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Collapsed floor (roof)_2"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Itabashi collapsed_1"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Itabashi collapsed_2"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Ladder_1"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Ladder_2"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Ladder_3 (for Subquest)"
+      ]
+    },
+    {
+      "ID": 5070,
+      "Entries": [
+        "Plank on the suspension bridge_1"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "Plank on the suspension bridge_2"
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        "Plank on the suspension bridge_3"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Plank on the suspension bridge_4"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Burnt corpse A"
+      ]
+    },
+    {
+      "ID": 5111,
+      "Entries": [
+        "Burnt corpse B"
+      ]
+    },
+    {
+      "ID": 5112,
+      "Entries": [
+        "Burnt corpse C"
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        "wood"
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        "Stone (large)"
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        "stone (medium)"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "Trees, plates, destruction OBJ_A"
+      ]
+    },
+    {
+      "ID": 5151,
+      "Entries": [
+        "Trees, plates, destruction OBJ_B"
+      ]
+    },
+    {
+      "ID": 5152,
+      "Entries": [
+        "Trees, plates, destruction OBJ_C"
+      ]
+    },
+    {
+      "ID": 5153,
+      "Entries": [
+        "Trees, plates, destruction OBJ_D"
+      ]
+    },
+    {
+      "ID": 5154,
+      "Entries": [
+        "Destruction OBJ such as shelves and bags"
+      ]
+    },
+    {
+      "ID": 5155,
+      "Entries": [
+        "ship"
+      ]
+    },
+    {
+      "ID": 5156,
+      "Entries": [
+        "door"
+      ]
+    },
+    {
+      "ID": 5157,
+      "Entries": [
+        "broken carriage"
+      ]
+    },
+    {
+      "ID": 5158,
+      "Entries": [
+        "wheels, crates, barrels"
+      ]
+    },
+    {
+      "ID": 5159,
+      "Entries": [
+        "broken wooden box"
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        "wooden fence_A"
+      ]
+    },
+    {
+      "ID": 5161,
+      "Entries": [
+        "wooden fence_B"
+      ]
+    },
+    {
+      "ID": 5162,
+      "Entries": [
+        "wooden fence_C"
+      ]
+    },
+    {
+      "ID": 5163,
+      "Entries": [
+        "wooden fence_D"
+      ]
+    },
+    {
+      "ID": 5164,
+      "Entries": [
+        "wooden fence_E"
+      ]
+    },
+    {
+      "ID": 5165,
+      "Entries": [
+        "wooden fence_F"
+      ]
+    },
+    {
+      "ID": 5170,
+      "Entries": [
+        "tick_moving tick"
+      ]
+    },
+    {
+      "ID": 5180,
+      "Entries": [
+        "tick_swaying tick"
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        "Tick _ a tick that moves its legs"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "suspension bridge_1"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "suspension bridge_2"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "suspension bridge_3"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "suspension bridge_4"
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        "Collapsed rubble (at the post)"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "swaying ivy"
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        "broken suspension bridge"
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        "Pebble_01"
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        "floating board"
+      ]
+    },
+    {
+      "ID": 5290,
+      "Entries": [
+        "clump of straw"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "moonlight sword"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "Ladder A [Libra area]"
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        "Ladder B [Libra area]"
+      ]
+    },
+    {
+      "ID": 5303,
+      "Entries": [
+        "Corpse OBJ_A"
+      ]
+    },
+    {
+      "ID": 5304,
+      "Entries": [
+        "Corpse OBJ_B"
+      ]
+    },
+    {
+      "ID": 5305,
+      "Entries": [
+        "Corpse OBJ_C"
+      ]
+    },
+    {
+      "ID": 5306,
+      "Entries": [
+        "Istarel"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "giant corpse"
+      ]
+    },
+    {
+      "ID": 5511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5512,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 5521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5522,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 5531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5532,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Unclean 0_ beggar woman camp set"
+      ]
+    },
+    {
+      "ID": 5601,
+      "Entries": [
+        "Impure 1_Beggar Woman Camp Set"
+      ]
+    },
+    {
+      "ID": 5602,
+      "Entries": [
+        "Unclean 1_Selenium Camp Set"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Havok Jellyfish"
+      ]
+    },
+    {
+      "ID": 5874,
+      "Entries": [
+        "Flycatcher Demon OBJ_V"
+      ]
+    },
+    {
+      "ID": 5875,
+      "Entries": [
+        "Flycatcher Demon OBJ_W"
+      ]
+    },
+    {
+      "ID": 5876,
+      "Entries": [
+        "Flycatcher Demon OBJ_X"
+      ]
+    },
+    {
+      "ID": 5877,
+      "Entries": [
+        "Flycatcher Demon OBJ_Y"
+      ]
+    },
+    {
+      "ID": 5878,
+      "Entries": [
+        "Flycatcher Demon OBJ_Z"
+      ]
+    },
+    {
+      "ID": 5879,
+      "Entries": [
+        "Flycatcher Demon OBJ_A"
+      ]
+    },
+    {
+      "ID": 5880,
+      "Entries": [
+        "Flycatcher Demon OBJ_B"
+      ]
+    },
+    {
+      "ID": 5881,
+      "Entries": [
+        "Flycatcher Demon OBJ_C"
+      ]
+    },
+    {
+      "ID": 5882,
+      "Entries": [
+        "Flycatcher Demon OBJ_D"
+      ]
+    },
+    {
+      "ID": 5883,
+      "Entries": [
+        "Flycatcher Demon OBJ_E"
+      ]
+    },
+    {
+      "ID": 5884,
+      "Entries": [
+        "Flycatcher Demon OBJ_F"
+      ]
+    },
+    {
+      "ID": 5885,
+      "Entries": [
+        "Flycatcher Demon OBJ_G"
+      ]
+    },
+    {
+      "ID": 5886,
+      "Entries": [
+        "Flycatcher Demon OBJ_H"
+      ]
+    },
+    {
+      "ID": 5887,
+      "Entries": [
+        "Flycatcher Demon OBJ_I"
+      ]
+    },
+    {
+      "ID": 5888,
+      "Entries": [
+        "Flycatcher Demon OBJ_J"
+      ]
+    },
+    {
+      "ID": 5889,
+      "Entries": [
+        "Flycatcher Demon OBJ_K"
+      ]
+    },
+    {
+      "ID": 5890,
+      "Entries": [
+        "Flycatcher Demon OBJ_L"
+      ]
+    },
+    {
+      "ID": 5891,
+      "Entries": [
+        "Flycatcher Demon OBJ_M"
+      ]
+    },
+    {
+      "ID": 5892,
+      "Entries": [
+        "Flycatcher Demon OBJ_N"
+      ]
+    },
+    {
+      "ID": 5893,
+      "Entries": [
+        "Flycatcher Demon OBJ_O"
+      ]
+    },
+    {
+      "ID": 5894,
+      "Entries": [
+        "Flycatcher Demon OBJ_P"
+      ]
+    },
+    {
+      "ID": 5895,
+      "Entries": [
+        "Flycatcher Demon OBJ_Q"
+      ]
+    },
+    {
+      "ID": 5896,
+      "Entries": [
+        "Flycatcher Demon OBJ_R"
+      ]
+    },
+    {
+      "ID": 5897,
+      "Entries": [
+        "Flycatcher Demon OBJ_S"
+      ]
+    },
+    {
+      "ID": 5898,
+      "Entries": [
+        "Flycatcher Demon OBJ_T"
+      ]
+    },
+    {
+      "ID": 5899,
+      "Entries": [
+        "Flycatcher Demon OBJ_U"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Leech 1 for Leech Demon"
+      ]
+    },
+    {
+      "ID": 5901,
+      "Entries": [
+        "Leech 2 for Leech Demon"
+      ]
+    },
+    {
+      "ID": 5902,
+      "Entries": [
+        "Leech 3 for Leech Demon"
+      ]
+    },
+    {
+      "ID": 5903,
+      "Entries": [
+        "Leech 4 for Leech Demon"
+      ]
+    },
+    {
+      "ID": 5904,
+      "Entries": [
+        "Hill Demon Water"
+      ]
+    },
+    {
+      "ID": 5985,
+      "Entries": [
+        "Unclean 02 Boss magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5986,
+      "Entries": [
+        "Unclean 01 Boss magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5987,
+      "Entries": [
+        "Unclean 01 Boss magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5988,
+      "Entries": [
+        "Unclean 01 Waypoint magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5989,
+      "Entries": [
+        "Unclean 01 Waypoint magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5990,
+      "Entries": [
+        "Unclean 00 Waypoint magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 5991,
+      "Entries": [
+        "Unclean 00 Waypoint magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 5993,
+      "Entries": [
+        "crow waiting"
+      ]
+    },
+    {
+      "ID": 5994,
+      "Entries": [
+        "Waiting for jellyfish"
+      ]
+    },
+    {
+      "ID": 5995,
+      "Entries": [
+        "Crow flight + flapping wings"
+      ]
+    },
+    {
+      "ID": 5996,
+      "Entries": [
+        "crow flying away"
+      ]
+    },
+    {
+      "ID": 5997,
+      "Entries": [
+        "Crow waiting 2"
+      ]
+    },
+    {
+      "ID": 5998,
+      "Entries": [
+        "crow waiting flight"
+      ]
+    },
+    {
+      "ID": 5999,
+      "Entries": [
+        "crow glide"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Gear_00 Lever"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Door A"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Gear_01 Switch"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Gear_02 Double water wheel"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Gear_03 Switch"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Gear_04 Operation screw"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "giant water wheel"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Treasure Corpse A"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Treasure Corpse B"
+      ]
+    },
+    {
+      "ID": 6085,
+      "Entries": [
+        "Treasure Corpse C"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Door B"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Ladder_00 In front of the huge elevator"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "giant elevator"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "giant elevator"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Ladder_01 Near the huge blast furnace"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Gondola A"
+      ]
+    },
+    {
+      "ID": 6140,
+      "Entries": [
+        "Gondola B"
+      ]
+    },
+    {
+      "ID": 6150,
+      "Entries": [
+        "Various interlocking gimmicks (pseudonym)"
+      ]
+    },
+    {
+      "ID": 6160,
+      "Entries": [
+        "Water surface for poly drama"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Water surface for polyplay (irrigation channel)"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "collapsed wooden bridge"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "trolley"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "trolley"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "trolley"
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        "Bucket_D"
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        "Bucket_D"
+      ]
+    },
+    {
+      "ID": 6215,
+      "Entries": [
+        "wooden scaffolding A"
+      ]
+    },
+    {
+      "ID": 6216,
+      "Entries": [
+        "wooden scaffold B"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "sieve"
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        "unicycle cart"
+      ]
+    },
+    {
+      "ID": 6222,
+      "Entries": [
+        "coal crate"
+      ]
+    },
+    {
+      "ID": 6223,
+      "Entries": [
+        "Bucket_A"
+      ]
+    },
+    {
+      "ID": 6224,
+      "Entries": [
+        "Bucket_A"
+      ]
+    },
+    {
+      "ID": 6225,
+      "Entries": [
+        "Tub _B"
+      ]
+    },
+    {
+      "ID": 6226,
+      "Entries": [
+        "Tub _B"
+      ]
+    },
+    {
+      "ID": 6227,
+      "Entries": [
+        "Bucket _C"
+      ]
+    },
+    {
+      "ID": 6228,
+      "Entries": [
+        "Bucket _C"
+      ]
+    },
+    {
+      "ID": 6251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6261,
+      "Entries": [
+        "spider web"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "tube worm"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "tube worm"
+      ]
+    },
+    {
+      "ID": 6272,
+      "Entries": [
+        "tube worm"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "blacksmith chair"
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        "blacksmith desk"
+      ]
+    },
+    {
+      "ID": 6232,
+      "Entries": [
+        "blacksmith anvil"
+      ]
+    },
+    {
+      "ID": 6233,
+      "Entries": [
+        "blacksmith bucket"
+      ]
+    },
+    {
+      "ID": 6234,
+      "Entries": [
+        "Blacksmith tool table (small)"
+      ]
+    },
+    {
+      "ID": 6235,
+      "Entries": [
+        "Blacksmith tool table (large)"
+      ]
+    },
+    {
+      "ID": 6236,
+      "Entries": [
+        "Blacksmith Weapon Stand ①"
+      ]
+    },
+    {
+      "ID": 6237,
+      "Entries": [
+        "Blacksmith Weapon Stand ②"
+      ]
+    },
+    {
+      "ID": 6238,
+      "Entries": [
+        "workshop tool table"
+      ]
+    },
+    {
+      "ID": 6239,
+      "Entries": [
+        "2-tiered barrel ①"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "3 tiers of barrels ②"
+      ]
+    },
+    {
+      "ID": 6241,
+      "Entries": [
+        "2 wooden boxes②"
+      ]
+    },
+    {
+      "ID": 6242,
+      "Entries": [
+        "Small box 3 steps②"
+      ]
+    },
+    {
+      "ID": 6243,
+      "Entries": [
+        "beggar man set"
+      ]
+    },
+    {
+      "ID": 6244,
+      "Entries": [
+        "collection of pots"
+      ]
+    },
+    {
+      "ID": 6245,
+      "Entries": [
+        "Small box 3 steps②"
+      ]
+    },
+    {
+      "ID": 6247,
+      "Entries": [
+        "exploding barrel"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "spider web (for hanging)"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6350,
+      "Entries": [
+        "Molten deposit before cooling (event)"
+      ]
+    },
+    {
+      "ID": 6351,
+      "Entries": [
+        "Chilled Smelt Deposit (Event)"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Broken handrail A"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Broken handrail B"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "Broken handrail C"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "Broken handrail D"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "Broken Pillar __ Before Destruction (Event)"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "Broken Pillar __Destroying (Event)"
+      ]
+    },
+    {
+      "ID": 6432,
+      "Entries": [
+        "Broken pillar __ After destruction __ Scatter on the floor (event)"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "rock block wall"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6451,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6452,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6453,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6454,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6455,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6456,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6457,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6478,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6458,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6459,
+      "Entries": [
+        "unbreakable pillar"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "Pillar player destruction A"
+      ]
+    },
+    {
+      "ID": 6461,
+      "Entries": [
+        "Pillar player destruction B"
+      ]
+    },
+    {
+      "ID": 6462,
+      "Entries": [
+        "Pillar player destruction B"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "Dragon Demon Destruction Pillar (3 pieces)"
+      ]
+    },
+    {
+      "ID": 6471,
+      "Entries": [
+        "Dragon Demon Destruction Pillar"
+      ]
+    },
+    {
+      "ID": 6472,
+      "Entries": [
+        "dragon demon breaking wall"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "magic sword gram"
+      ]
+    },
+    {
+      "ID": 6504,
+      "Entries": [
+        "Half Hand Camp Set (Small)"
+      ]
+    },
+    {
+      "ID": 6505,
+      "Entries": [
+        "half hand camp lamp"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "half hand camp set"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 6512,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 6515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 6521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 6525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 6535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Wall of light Checkpoint 1"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Wall of light Checkpoint 2"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "Wall of light Checkpoint 3"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "injection machine"
+      ]
+    },
+    {
+      "ID": 6701,
+      "Entries": [
+        "Injection machine (no arrow)"
+      ]
+    },
+    {
+      "ID": 6702,
+      "Entries": [
+        "Injection machine (base only)"
+      ]
+    },
+    {
+      "ID": 6750,
+      "Entries": [
+        "tardigrade shell"
+      ]
+    },
+    {
+      "ID": 6751,
+      "Entries": [
+        "tardigrade shell"
+      ]
+    },
+    {
+      "ID": 6752,
+      "Entries": [
+        "earthworm shell"
+      ]
+    },
+    {
+      "ID": 6753,
+      "Entries": [
+        "earthworm shell"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "wall of light"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "wall of light"
+      ]
+    },
+    {
+      "ID": 6999,
+      "Entries": [
+        "Invisible wall (temporary)"
+      ]
+    },
+    {
+      "ID": 9986,
+      "Entries": [
+        "spear of light (old version"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Candelabra [4 sides open]"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Candelabra [2 sides open]"
+      ]
+    },
+    {
+      "ID": 7511,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 7512,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 7515,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 7521,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 7522,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 7525,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 7531,
+      "Entries": [
+        "Boss room magic barrier (entrance)"
+      ]
+    },
+    {
+      "ID": 7532,
+      "Entries": [
+        "Boss room magic barrier (exit)"
+      ]
+    },
+    {
+      "ID": 7535,
+      "Entries": [
+        "Magic Barrier for Multi (Entrance)"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "planaria"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "test object"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "ladder"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "magic wall"
+      ]
+    },
+    {
+      "ID": 8111,
+      "Entries": [
+        "wall of light (normal)"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "fallen pillar"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "ladder (10 degrees)"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "forest door"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Pillar 01-01"
+      ]
+    },
+    {
+      "ID": 9121,
+      "Entries": [
+        "Pillar 01-02"
+      ]
+    },
+    {
+      "ID": 9122,
+      "Entries": [
+        "Pillar 01-03"
+      ]
+    },
+    {
+      "ID": 9123,
+      "Entries": [
+        "Pillar 02-01"
+      ]
+    },
+    {
+      "ID": 9124,
+      "Entries": [
+        "Pillar 01-04"
+      ]
+    },
+    {
+      "ID": 9125,
+      "Entries": [
+        "Pillar 03-01"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "candlestick 01-01"
+      ]
+    },
+    {
+      "ID": 9141,
+      "Entries": [
+        "candlestick 02-01"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "bonfire"
+      ]
+    },
+    {
+      "ID": 9160,
+      "Entries": [
+        "Pillar 01-05"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "WP_A_0250 Magic Sword"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "WP_A_0450 No pattern"
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        "WP_A_0251"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "c3050_ Gargoyle"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "c3100_rock earthworm"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "c3020_ gray wolf"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9507,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9570,
+      "Entries": [
+        "boss spider"
+      ]
+    },
+    {
+      "ID": 9580,
+      "Entries": [
+        "ninja dragon"
+      ]
+    },
+    {
+      "ID": 9599,
+      "Entries": [
+        "For character model confirmation"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "weight wizard women"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "lightweight cleric female"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "underwear women"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "mipmap test model"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Default"
+      ]
+    }
+  ]
+}

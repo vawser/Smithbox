@@ -1,0 +1,38 @@
+{
+  "Key": "AI_SOUND_RATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AI_SOUND_RATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Direct sound"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Movement sound"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack sound"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Description": "Determines the parameters of each shader quality level.",
+  "Fields": [
+    {
+      "Field": "sssEnabled",
+      "Name": "Enable Subsurface Scattering",
+      "Description": "If ON, enable subsurface scattering via shaders."
+    },
+    {
+      "Field": "tessellationEnabled",
+      "Name": "Enable Tessellation",
+      "Description": "If ON, enable texture tessellation via shaders."
+    },
+    {
+      "Field": "highPrecisionNormalEnabled",
+      "Name": "Enable High Precision Normals",
+      "Description": "If ON, high precision normal maps are used within the graphics buffer."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

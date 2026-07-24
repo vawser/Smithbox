@@ -1,0 +1,29 @@
+{
+  "Name": "WwiseValueToStrParam_ReflectAuxBusType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Reflect"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "undefined -- 未定義"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "undefined -- 未定義"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "undefined -- 未定義"
+      ]
+    }
+  ]
+}

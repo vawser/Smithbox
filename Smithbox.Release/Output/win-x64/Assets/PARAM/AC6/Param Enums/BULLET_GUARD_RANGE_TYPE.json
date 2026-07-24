@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_GUARD_RANGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_GUARD_RANGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet position"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooter position"
+        }
+      ]
+    }
+  ]
+}

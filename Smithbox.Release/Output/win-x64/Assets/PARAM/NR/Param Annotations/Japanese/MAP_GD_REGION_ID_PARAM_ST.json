@@ -1,0 +1,33 @@
+{
+  "Param": "MAP_GD_REGION_ID_PARAM_ST",
+  "Type": "MAP_GD_REGION_ID_PARAM_ST",
+  "Name": "MAP_GD_REGION_ID_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "mapRegionId",
+      "Name": "マップ地方ID ",
+      "Description": "GD用途のマップ地方識別ID[00-99：オープン、1000-9999：レガシー]"
+    },
+    {
+      "Field": "Reserve",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

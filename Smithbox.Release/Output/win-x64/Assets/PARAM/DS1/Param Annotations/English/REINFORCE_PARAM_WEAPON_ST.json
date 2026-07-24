@@ -1,0 +1,148 @@
+{
+  "Param": "REINFORCE_PARAM_WEAPON_ST",
+  "Type": "REINFORCE_PARAM_WEAPON_ST",
+  "Name": "REINFORCE_PARAM_WEAPON_ST",
+  "Description": "Determines the parameters for reinforcing weapons.",
+  "Fields": [
+    {
+      "Field": "physicsAtkRate",
+      "Name": "Physical Damage",
+      "Description": "The multiplier to apply to base physical damage for this tier of reinforcement."
+    },
+    {
+      "Field": "magicAtkRate",
+      "Name": "Magic Damage",
+      "Description": "The multiplier to apply to base magic damage for this tier of reinforcement."
+    },
+    {
+      "Field": "fireAtkRate",
+      "Name": "Fire Damage",
+      "Description": "The multiplier to apply to base fire damage for this tier of reinforcement."
+    },
+    {
+      "Field": "thunderAtkRate",
+      "Name": "Lightning Damage",
+      "Description": "The multiplier to apply to base lightning damage for this tier of reinforcement."
+    },
+    {
+      "Field": "staminaAtkRate",
+      "Name": "Stamina Damage",
+      "Description": "The multiplier to apply to base stamina damage for this tier of reinforcement."
+    },
+    {
+      "Field": "saWeaponAtkRate",
+      "Name": "Poise Damage",
+      "Description": "The multiplier to apply to base poise damage for this tier of reinforcement."
+    },
+    {
+      "Field": "saDurabilityRate",
+      "Name": "Poise",
+      "Description": "The multiplier to apply to base poise for this tier of reinforcement."
+    },
+    {
+      "Field": "correctStrengthRate",
+      "Name": "Correction: STR",
+      "Description": "The multiplier to apply to base STR correction for this tier of reinforcement."
+    },
+    {
+      "Field": "correctAgilityRate",
+      "Name": "Correction: DEX",
+      "Description": "The multiplier to apply to base DEX correction for this tier of reinforcement."
+    },
+    {
+      "Field": "correctMagicRate",
+      "Name": "Correction: INT",
+      "Description": "The multiplier to apply to base INT correction for this tier of reinforcement."
+    },
+    {
+      "Field": "correctFaithRate",
+      "Name": "Correction: FTH",
+      "Description": "The multiplier to apply to base FTH correction for this tier of reinforcement."
+    },
+    {
+      "Field": "physicsGuardCutRate",
+      "Name": "Guard Absorption %: Physical",
+      "Description": "The multiplier to apply to base physical guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "magicGuardCutRate",
+      "Name": "Guard Absorption %: Magic",
+      "Description": "The multiplier to apply to base magic guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption %: Fire",
+      "Description": "The multiplier to apply to base fire guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "thunderGuardCutRate",
+      "Name": "Guard Absorption %: Lightning",
+      "Description": "The multiplier to apply to base lightning guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "poisonGuardResistRate",
+      "Name": "Guard Absorption %: Poison",
+      "Description": "The multiplier to apply to base poison guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "diseaseGuardResistRate",
+      "Name": "Guard Absorption %: Toxic",
+      "Description": "The multiplier to apply to base toxic guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "bloodGuardResistRate",
+      "Name": "Guard Absorption %: Bleed",
+      "Description": "The multiplier to apply to base bleed guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "curseGuardResistRate",
+      "Name": "Guard Absorption %: Curse",
+      "Description": "The multiplier to apply to base curse guard absorption for this tier of reinforcement."
+    },
+    {
+      "Field": "staminaGuardDefRate",
+      "Name": "Guard Stability",
+      "Description": "The multiplier to apply to base guard stability for this tier of reinforcement."
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Hit SpEffect Offset: 1",
+      "Description": "The ID offset applied to the weapon's spEffectId1 field value."
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "Hit SpEffect Offset: 2",
+      "Description": "The ID offset applied to the weapon's spEffectId2 field value."
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "Hit SpEffect Offset: 3",
+      "Description": "The ID offset applied to the weapon's spEffectId3 field value."
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "Resident SpEffect Offset: 1",
+      "Description": "The ID offset applied to the weapon's residentSpEffectId1 field value."
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Resident SpEffect Offset: 2",
+      "Description": "The ID offset applied to the weapon's residentSpEffectId1 field value."
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Resident SpEffect Offset: 3",
+      "Description": "The ID offset applied to the weapon's residentSpEffectId1 field value."
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Material Set Offset",
+      "Description": "The ID offset applied to the weapon's materialSetId field value."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

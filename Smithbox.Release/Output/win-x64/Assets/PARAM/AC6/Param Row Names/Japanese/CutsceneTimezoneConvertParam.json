@@ -1,0 +1,47 @@
+{
+  "Name": "CutsceneTimezoneConvertParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "morning -- 朝"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Daytime A -- 昼A"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Daytime B -- 昼B"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "evening -- 夕"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "night -- 夜"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Late night A -- 深夜A"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Late night B -- 深夜B"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4307 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[All] Name"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[All] Description (Short)"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[All] Description (Large)"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[All] Weight"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[All] Sort ID"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Item] Current no. in slot"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[Item] Max no. in slot"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "[Item] Max no. per slot"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "[Item] Max no. per slot"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "[Item] Total carried"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1056,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1057,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1058,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1066,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1067,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1068,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1099,
+      "Entries": [
+        "[Grief Weapon] Name"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Item] Item Type (Consumable vs Reusable)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Item] Strength Scaling"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Item] Dexterity Scaling"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Item] Intelligence Scaling"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Item] Faith Scaling"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Item] Arcane Scaling"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Item] FP Cost"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Vessel] Hero Icon"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "[Vessel] Slot 1 Color"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "[Vessel] Slot 2 Color"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "[Vessel] Slot 3 Color"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Vessel] Hero Icon (DoN)"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "[Vessel] Slot 1 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "[Vessel] Slot 2 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "[Vessel] Slot 3 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "[Vessel] Slot 4 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2055,
+      "Entries": [
+        "[Vessel] Slot 5 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2056,
+      "Entries": [
+        "[Vessel] Slot 6 Color (DoN)"
+      ]
+    },
+    {
+      "ID": 2057,
+      "Entries": [
+        "[Item] Item Category (Bagcraft)"
+      ]
+    },
+    {
+      "ID": 2058,
+      "Entries": [
+        "[Item] Category Icon"
+      ]
+    },
+    {
+      "ID": 2059,
+      "Entries": [
+        "[Item] Category XP Progress"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Item] Category Level"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "[Item] Max no. per slot (Standard)"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "[Item] Max no. per slot (Bagcraft)"
+      ]
+    },
+    {
+      "ID": 2063,
+      "Entries": [
+        "[Item] Category XP (Maxed)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Weapon] Armament Type"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Weapon] Attack Affinity"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Grief Weapon] Player Name"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[Weapon] Min. Level"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Holy Damage"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Range"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "Critical"
+      ]
+    },
+    {
+      "ID": 3026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3038,
+      "Entries": [
+        "Sorcery Scaling"
+      ]
+    },
+    {
+      "ID": 3039,
+      "Entries": [
+        "Incant Scaling"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Physical Guard"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Magic Guard"
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        "Fire Guard"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Lightning Guard"
+      ]
+    },
+    {
+      "ID": 3044,
+      "Entries": [
+        "Holy Guard"
+      ]
+    },
+    {
+      "ID": 3045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3046,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3047,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3048,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3049,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Guard Boost"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "Guard Boost Bonus"
+      ]
+    },
+    {
+      "ID": 3059,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3066,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3067,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3068,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3069,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Weapon] Strength Scaling"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "[Weapon] Dexterity Scaling"
+      ]
+    },
+    {
+      "ID": 3072,
+      "Entries": [
+        "[Weapon] Intelligence Scaling"
+      ]
+    },
+    {
+      "ID": 3073,
+      "Entries": [
+        "[Weapon] Faith Scaling"
+      ]
+    },
+    {
+      "ID": 3074,
+      "Entries": [
+        "[Weapon] Arcane Scaling"
+      ]
+    },
+    {
+      "ID": 3075,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 3076,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 3077,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 3078,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 3079,
+      "Entries": [
+        "Holy Damage"
+      ]
+    },
+    {
+      "ID": 3091,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3092,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3093,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Attach Effect] Effect 1 (Name)"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[Attach Effect] Effect 2 (Name)"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "[Attach Effect] Effect 3 (Name)"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "[Legend Weapon] Unique Effect (Name)"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "[Grief Weapon] Grief Effect (Name)"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Attach Effect] Effect 1 (Value)"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[Attach Effect] Effect 2 (Value)"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "[Attach Effect] Effect 3 (Value)"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "[Legend Weapon] Unique Effect (Value)"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "[Grief Weapon] Grief Effect (Value)"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Attach Effect] Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[Attach Effect] Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "[Attach Effect] Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "[Legend Weapon] Unique Effect (Icon)"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "[Grief Weapon] Grief Effect (Icon)"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[Weapon] Status Ailment 1 Value"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "[Weapon] Status Ailment 2 Value"
+      ]
+    },
+    {
+      "ID": 3132,
+      "Entries": [
+        "[Weapon] Status Ailment Bonus"
+      ]
+    },
+    {
+      "ID": 3133,
+      "Entries": [
+        "[Weapon] Status Ailments (Icons Only)"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[Weapon] Status Ailment 1 (Value)"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "[Weapon] Status Ailment 2 (Value)"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[Weapon] Status Ailment 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 3161,
+      "Entries": [
+        "[Weapon] Status Ailment 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "[Attach Effect] Effect 1 (Unk)"
+      ]
+    },
+    {
+      "ID": 3171,
+      "Entries": [
+        "[Attach Effect] Effect 2 (Unk)"
+      ]
+    },
+    {
+      "ID": 3172,
+      "Entries": [
+        "[Attach Effect] Effect 3 (Unk)"
+      ]
+    },
+    {
+      "ID": 3173,
+      "Entries": [
+        "[Legend Weapon] Unique Effect (Unk)"
+      ]
+    },
+    {
+      "ID": 3174,
+      "Entries": [
+        "[Grief Weapon] Grief Effect (Unk)"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Weapon] Attack"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Weapon] Attack Bonus"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "[Weapon] Skill (Name)"
+      ]
+    },
+    {
+      "ID": 3221,
+      "Entries": [
+        "[Weapon] Skill (Icon)"
+      ]
+    },
+    {
+      "ID": 3222,
+      "Entries": [
+        "[Weapon] Skill (Attack Power)"
+      ]
+    },
+    {
+      "ID": 3223,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[Catalyst] Slot 1 Spell (Name)"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[Catalyst] Slot 2 Spell (Name)"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "[Catalyst] Slot 1 Spell (Icon)"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "[Catalyst] Slot 2 Spell (Icon)"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "[Catalyst] Slot 1 Spell (Attack Power)"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "[Catalyst] Slot 2 Spell (Attack Power)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Spell] Spell Type"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Spell] FP Cost"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "[Spell] Followup FP Cost"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Critical"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Holy Damage"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Skill] L2 FP Cost (Value)"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[Skill] R1 FP Cost (Value)"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[Skill] R2 FP Cost (Value)"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[Skill] L2 FP Cost"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "[Skill] R1 FP Cost"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "[Skill] R2 FP Cost"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[Skill] Usable Armament Types"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Character] Player Name"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "[Character] Level"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[Character] Runes Held"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[Character] Runes Needed"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "[Character] Platform ID"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "[Character] Sovereign Sigils"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "[Status] HP"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "[Status] HP (Max)"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "[Status] FP"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "[Status] FP (Max)"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "[Status] Stamina"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10228,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10229,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10258,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10259,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10274,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10275,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10276,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10281,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10282,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10283,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10284,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10285,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10286,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10303,
+      "Entries": [
+        "[Status] Hero Name"
+      ]
+    },
+    {
+      "ID": 10304,
+      "Entries": [
+        "[Status] Hero Icon"
+      ]
+    },
+    {
+      "ID": 10310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10336,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10337,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10338,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10339,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10342,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10344,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10352,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10354,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10355,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10356,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10357,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10358,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10359,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10361,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10363,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10364,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10371,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10372,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10373,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10374,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10375,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10376,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10377,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10378,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10379,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10381,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10382,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10383,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10384,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10510,
+      "Entries": [
+        "[Status] RH Slot 1 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10511,
+      "Entries": [
+        "[Status] RH Slot 2 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10512,
+      "Entries": [
+        "[Status] RH Slot 3 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10513,
+      "Entries": [
+        "[Status] LH Slot 1 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10514,
+      "Entries": [
+        "[Status] LH Slot 2 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10515,
+      "Entries": [
+        "[Status] LH Slot 3 Weapon (Icon)"
+      ]
+    },
+    {
+      "ID": 10520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10524,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10525,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10530,
+      "Entries": [
+        "[Status] RH Slot 1 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10531,
+      "Entries": [
+        "[Status] RH Slot 2 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10532,
+      "Entries": [
+        "[Status] RH Slot 3 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10533,
+      "Entries": [
+        "[Status] LH Slot 1 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10534,
+      "Entries": [
+        "[Status] LH Slot 2 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10535,
+      "Entries": [
+        "[Status] LH Slot 3 Weapon (Attack Power)"
+      ]
+    },
+    {
+      "ID": 10540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10541,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10542,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10543,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10544,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10545,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10552,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10553,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10554,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10555,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10562,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10563,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10564,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10565,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10570,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10571,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10572,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10580,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10581,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10582,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10590,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10591,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10592,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10610,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10611,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10612,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10620,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10621,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10622,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10630,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10631,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10632,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10662,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10671,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10672,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10690,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 1"
+      ]
+    },
+    {
+      "ID": 10691,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 2"
+      ]
+    },
+    {
+      "ID": 10692,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 3"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 1"
+      ]
+    },
+    {
+      "ID": 10701,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 2"
+      ]
+    },
+    {
+      "ID": 10702,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 3"
+      ]
+    },
+    {
+      "ID": 10710,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 1"
+      ]
+    },
+    {
+      "ID": 10711,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 2"
+      ]
+    },
+    {
+      "ID": 10712,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 3"
+      ]
+    },
+    {
+      "ID": 10720,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10721,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10722,
+      "Entries": [
+        "[Status - Relics] Slot 1 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10730,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10731,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10732,
+      "Entries": [
+        "[Status - Relics] Slot 2 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10740,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10741,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10742,
+      "Entries": [
+        "[Status - Relics] Slot 3 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10750,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10751,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10752,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10760,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10761,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10762,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10770,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 1 (Description)"
+      ]
+    },
+    {
+      "ID": 10771,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 2 (Description)"
+      ]
+    },
+    {
+      "ID": 10772,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 3 (Description)"
+      ]
+    },
+    {
+      "ID": 10780,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10781,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10782,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10790,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10791,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10792,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 1 (Icon)"
+      ]
+    },
+    {
+      "ID": 10801,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 2 (Icon)"
+      ]
+    },
+    {
+      "ID": 10802,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 3 (Icon)"
+      ]
+    },
+    {
+      "ID": 10810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10821,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10822,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10831,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10832,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10840,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 1"
+      ]
+    },
+    {
+      "ID": 10841,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 2"
+      ]
+    },
+    {
+      "ID": 10842,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 3"
+      ]
+    },
+    {
+      "ID": 10850,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 1"
+      ]
+    },
+    {
+      "ID": 10851,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 2"
+      ]
+    },
+    {
+      "ID": 10852,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 3"
+      ]
+    },
+    {
+      "ID": 10860,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 1"
+      ]
+    },
+    {
+      "ID": 10861,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 2"
+      ]
+    },
+    {
+      "ID": 10862,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 3"
+      ]
+    },
+    {
+      "ID": 10870,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10871,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10872,
+      "Entries": [
+        "[Status - Relics] Slot 4 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10880,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10881,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10882,
+      "Entries": [
+        "[Status - Relics] Slot 5 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10890,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 1 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10891,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 2 (Stacks)"
+      ]
+    },
+    {
+      "ID": 10892,
+      "Entries": [
+        "[Status - Relics] Slot 6 Effect 3 (Stacks)"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Hero] Character Skill (Caption)"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "[Hero] Character Skill (Name)"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "[Hero] Character Skill (Description)"
+      ]
+    },
+    {
+      "ID": 11003,
+      "Entries": [
+        "[Hero] Character Skill (Icon)"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "[Hero] Ultimate Art (Caption)"
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        "[Hero] Ultimate Art (Name)"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "[Hero] Ultimate Art (Description)"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "[Hero] Ultimate Art (Icon)"
+      ]
+    },
+    {
+      "ID": 11008,
+      "Entries": [
+        "[Hero] Passive Ability (Caption)"
+      ]
+    },
+    {
+      "ID": 11009,
+      "Entries": [
+        "[Hero] Passive Ability (Name)"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Hero] Passive Ability (Description)"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "[Hero] Passive Ability (Icon)"
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "[Visual Codex] Battle Record - Character"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "[Visual Codex] No. of Expeditions"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11019,
+      "Entries": [
+        "[Hero] Character Skill (Extra)"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "[Hero] Ultimate Art (Extra)"
+      ]
+    },
+    {
+      "ID": 11021,
+      "Entries": [
+        "[Hero] Passive Ability (Extra)"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "[Hero] Grade - HP"
+      ]
+    },
+    {
+      "ID": 11051,
+      "Entries": [
+        "[Hero] Grade - FP"
+      ]
+    },
+    {
+      "ID": 11052,
+      "Entries": [
+        "[Hero] Grade - Stamina"
+      ]
+    },
+    {
+      "ID": 11053,
+      "Entries": [
+        "[Hero] Grade - Strength"
+      ]
+    },
+    {
+      "ID": 11054,
+      "Entries": [
+        "[Hero] Grade - Dexterity"
+      ]
+    },
+    {
+      "ID": 11055,
+      "Entries": [
+        "[Hero] Grade - Intelligence"
+      ]
+    },
+    {
+      "ID": 11056,
+      "Entries": [
+        "[Hero] Grade - Faith"
+      ]
+    },
+    {
+      "ID": 11057,
+      "Entries": [
+        "[Hero] Grade - Arcane"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "[Relic] Characteristics (Color)"
+      ]
+    },
+    {
+      "ID": 12002,
+      "Entries": [
+        "[Relic] Size"
+      ]
+    },
+    {
+      "ID": 12003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "[Expedition] Boss Title"
+      ]
+    },
+    {
+      "ID": 13001,
+      "Entries": [
+        "[Expedition] Boss Name"
+      ]
+    },
+    {
+      "ID": 13002,
+      "Entries": [
+        "[Expedition] Boss Description"
+      ]
+    },
+    {
+      "ID": 13003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13004,
+      "Entries": [
+        "[Expedition] Background Icon"
+      ]
+    },
+    {
+      "ID": 13005,
+      "Entries": [
+        "[Expedition] Effective"
+      ]
+    },
+    {
+      "ID": 13006,
+      "Entries": [
+        "[Expedition] Boss Icon"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "[Battle Record - Summary] Play time"
+      ]
+    },
+    {
+      "ID": 22001,
+      "Entries": [
+        "[Battle Record - Summary] Expedition time"
+      ]
+    },
+    {
+      "ID": 22002,
+      "Entries": [
+        "[Battle Record - Summary] Total expeditions"
+      ]
+    },
+    {
+      "ID": 22003,
+      "Entries": [
+        "[Battle Record - Summary] Wins"
+      ]
+    },
+    {
+      "ID": 22004,
+      "Entries": [
+        "[Battle Record - Summary] Win streak"
+      ]
+    },
+    {
+      "ID": 22005,
+      "Entries": [
+        "[Battle Record - Summary] 'Win streak (Depths)'"
+      ]
+    },
+    {
+      "ID": 22006,
+      "Entries": [
+        "[Battle Record - All] Runes acquired"
+      ]
+    },
+    {
+      "ID": 22007,
+      "Entries": [
+        "[Battle Record - All] Runes used"
+      ]
+    },
+    {
+      "ID": 22008,
+      "Entries": [
+        "[Battle Record - All] Murk acquired"
+      ]
+    },
+    {
+      "ID": 22009,
+      "Entries": [
+        "[Battle Record - All] Sovereign Sigils acquired"
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "[Battle Record - All] Ending reached"
+      ]
+    },
+    {
+      "ID": 22011,
+      "Entries": [
+        "[Battle Record - All] Enemies felled"
+      ]
+    },
+    {
+      "ID": 22012,
+      "Entries": [
+        "[Battle Record - All] Great enemies felled"
+      ]
+    },
+    {
+      "ID": 22013,
+      "Entries": [
+        "[Battle Record - All] Chests opened"
+      ]
+    },
+    {
+      "ID": 22014,
+      "Entries": [
+        "[Battle Record - All] Grace discovered"
+      ]
+    },
+    {
+      "ID": 22015,
+      "Entries": [
+        "[Battle Record - All] Encounters with shifting earth"
+      ]
+    },
+    {
+      "ID": 22016,
+      "Entries": [
+        "[Battle Record - All] Raid events completed"
+      ]
+    },
+    {
+      "ID": 22017,
+      "Entries": [
+        "[Battle Record - Personal Bests] Greatest attack"
+      ]
+    },
+    {
+      "ID": 22018,
+      "Entries": [
+        "[Battle Record - Personal Bests] Runes acquired"
+      ]
+    },
+    {
+      "ID": 22019,
+      "Entries": [
+        "[Battle Record - Personal Bests] Runes used"
+      ]
+    },
+    {
+      "ID": 22020,
+      "Entries": [
+        "[Battle Record - Personal Bests] Enemies felled"
+      ]
+    },
+    {
+      "ID": 22021,
+      "Entries": [
+        "[Battle Record - Personal Bests] Great enemies felled"
+      ]
+    },
+    {
+      "ID": 22022,
+      "Entries": [
+        "[Battle Record - Personal Bests] Chests opened"
+      ]
+    },
+    {
+      "ID": 22023,
+      "Entries": [
+        "[Battle Record - Personal Bests] Grace discovered "
+      ]
+    },
+    {
+      "ID": 22024,
+      "Entries": [
+        "[Battle Record - All] Rescues performed"
+      ]
+    },
+    {
+      "ID": 22025,
+      "Entries": [
+        "[Battle Record - Personal Bests] Rescues performed"
+      ]
+    },
+    {
+      "ID": 22026,
+      "Entries": [
+        "[Battle Record - All] Effects & powers gained"
+      ]
+    },
+    {
+      "ID": 22027,
+      "Entries": [
+        "[Battle Record - Personal Bests] Special effects obtained"
+      ]
+    },
+    {
+      "ID": 22028,
+      "Entries": [
+        "[Battle Record - All] Armaments discovered"
+      ]
+    },
+    {
+      "ID": 22029,
+      "Entries": [
+        "[Battle Record - Personal Bests] Runes lost"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22300,
+      "Entries": [
+        "[Battle Record - Character Usage] Wylder (Name)"
+      ]
+    },
+    {
+      "ID": 22301,
+      "Entries": [
+        "[Battle Record - Character Usage] Guardian (Name)"
+      ]
+    },
+    {
+      "ID": 22302,
+      "Entries": [
+        "[Battle Record - Character Usage] Ironeye (Name)"
+      ]
+    },
+    {
+      "ID": 22303,
+      "Entries": [
+        "[Battle Record - Character Usage] Duchess (Name)"
+      ]
+    },
+    {
+      "ID": 22304,
+      "Entries": [
+        "[Battle Record - Character Usage] Raider (Name)"
+      ]
+    },
+    {
+      "ID": 22305,
+      "Entries": [
+        "[Battle Record - Character Usage] Revenant (Name)"
+      ]
+    },
+    {
+      "ID": 22306,
+      "Entries": [
+        "[Battle Record - Character Usage] Recluse (Name)"
+      ]
+    },
+    {
+      "ID": 22307,
+      "Entries": [
+        "[Battle Record - Character Usage] Executor (Name)"
+      ]
+    },
+    {
+      "ID": 22308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22310,
+      "Entries": [
+        "[Battle Record - Character Usage] Wylder (Uses)"
+      ]
+    },
+    {
+      "ID": 22311,
+      "Entries": [
+        "[Battle Record - Character Usage] Guardian (Uses)"
+      ]
+    },
+    {
+      "ID": 22312,
+      "Entries": [
+        "[Battle Record - Character Usage] Ironeye (Uses)"
+      ]
+    },
+    {
+      "ID": 22313,
+      "Entries": [
+        "[Battle Record - Character Usage] Duchess (Uses)"
+      ]
+    },
+    {
+      "ID": 22314,
+      "Entries": [
+        "[Battle Record - Character Usage] Raider (Uses)"
+      ]
+    },
+    {
+      "ID": 22315,
+      "Entries": [
+        "[Battle Record - Character Usage] Revenant (Uses)"
+      ]
+    },
+    {
+      "ID": 22316,
+      "Entries": [
+        "[Battle Record - Character Usage] Recluse (Uses)"
+      ]
+    },
+    {
+      "ID": 22317,
+      "Entries": [
+        "[Battle Record - Character Usage] Executor (Uses)"
+      ]
+    },
+    {
+      "ID": 22318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Gladius (Name)"
+      ]
+    },
+    {
+      "ID": 22401,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Adel (Name)"
+      ]
+    },
+    {
+      "ID": 22402,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Gnoster (Name)"
+      ]
+    },
+    {
+      "ID": 22403,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Maris (Name)"
+      ]
+    },
+    {
+      "ID": 22404,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Libra (Name)"
+      ]
+    },
+    {
+      "ID": 22405,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Fulghor (Name)"
+      ]
+    },
+    {
+      "ID": 22406,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Caligo (Name)"
+      ]
+    },
+    {
+      "ID": 22407,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Heolstor (Name)"
+      ]
+    },
+    {
+      "ID": 22408,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22409,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22410,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Gladius (Victories)"
+      ]
+    },
+    {
+      "ID": 22411,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Adel (Victories)"
+      ]
+    },
+    {
+      "ID": 22412,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Gnoster (Victories)"
+      ]
+    },
+    {
+      "ID": 22413,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Maris (Victories)"
+      ]
+    },
+    {
+      "ID": 22414,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Libra (Victories)"
+      ]
+    },
+    {
+      "ID": 22415,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Fulghor (Victories)"
+      ]
+    },
+    {
+      "ID": 22416,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Caligo (Victories)"
+      ]
+    },
+    {
+      "ID": 22417,
+      "Entries": [
+        "[Battle Record - Victories Achieved] Heolstor (Victories)"
+      ]
+    },
+    {
+      "ID": 22418,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22419,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22422,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22423,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22424,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22425,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22426,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22427,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22428,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22429,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Caption] Attribute Scaling"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "[Caption] Scholar: Bagcraft"
+      ]
+    },
+    {
+      "ID": 39999,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

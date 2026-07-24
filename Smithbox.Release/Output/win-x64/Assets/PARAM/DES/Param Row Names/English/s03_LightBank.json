@@ -1,0 +1,389 @@
+{
+  "Name": "s03_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B1 basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B1 Indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B1 shade"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B1 character"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B1 character (indoor)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B1 character (shining water)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B2 basic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B2 Indoor"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Near B2 Shrine"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B2 door"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B2 character"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B2 character (indoor)"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B2 Character (Shrine)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B2 baby ray carcass"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B3 Basic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B3 character"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[For m03_01_00_99] Basic"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[For m03_01_00_99] Distant view"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[for m03_01_00_99] 2011 basement room"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[For m03_01_00_99] Celestial sphere"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[For m03_01_00_99] m03_01 character (shining water)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "[For m03_01_00_99] m03_01 character (indoor)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[For m03_01_00_99] m03_01 character"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Rubble A"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Rubble B"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "m03_01 character (shining water)"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "m03_01 character (indoor)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "m03_01 character"
+      ]
+    }
+  ]
+}

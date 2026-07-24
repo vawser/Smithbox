@@ -1,0 +1,208 @@
+{
+  "Param": "AI_STANDARD_INFO_BANK",
+  "Type": "AI_STANDARD_INFO_BANK",
+  "Name": "AI_STANDARD_INFO_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "RadarRange",
+      "Name": "認識距離[m]",
+      "Description": "敵性キャラクタを認識する距離"
+    },
+    {
+      "Field": "RadarAngleX",
+      "Name": "認識角度Ｘ[deg]",
+      "Description": "敵性キャラクタを認識するX角度\u3000現在の視線方向を０度として、上が＋。"
+    },
+    {
+      "Field": "RadarAngleY",
+      "Name": "認識角度Y[deg]",
+      "Description": "敵性キャラクタを認識するY角度\u3000現在の視線方向を０度として、右が＋。"
+    },
+    {
+      "Field": "TerritorySize",
+      "Name": "縄張り距離[m]",
+      "Description": "自分の縄張りの距離。認識しているプレイヤーがこの距離から外れると初期位置に戻ります。"
+    },
+    {
+      "Field": "ThreatBeforeAttackRate",
+      "Name": "攻撃前威嚇率[0～100]",
+      "Description": "攻撃前に威嚇する確率"
+    },
+    {
+      "Field": "ForceThreatOnFirstLocked",
+      "Name": "初回認識威嚇",
+      "Description": "初回プレイヤー認識時に必ず威嚇するかどうか"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_Distance",
+      "Name": "攻撃１\u3000間合い[m]",
+      "Description": "攻撃するときの間合い[m]"
+    },
+    {
+      "Field": "Attack1_Margin",
+      "Name": "攻撃１\u3000間合い遊び[m]",
+      "Description": "攻撃間合いの遊び。間合い距離近辺で、振動しないように"
+    },
+    {
+      "Field": "Attack1_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": "攻撃の頻度"
+    },
+    {
+      "Field": "Attack1_ActionID",
+      "Name": "攻撃１\u3000種類",
+      "Description": "攻撃の種類"
+    },
+    {
+      "Field": "Attack1_DelayMin",
+      "Name": "攻撃１\u3000最小遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最小。"
+    },
+    {
+      "Field": "Attack1_DelayMax",
+      "Name": "攻撃１\u3000最長遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最長。"
+    },
+    {
+      "Field": "Attack1_ConeAngle",
+      "Name": "攻撃１\u3000攻撃許可円錐の角度[deg]",
+      "Description": "視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。"
+    },
+    {
+      "Field": "reserve10",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_Distance",
+      "Name": "攻撃２\u3000間合い[m]",
+      "Description": "攻撃するときの間合い[m]"
+    },
+    {
+      "Field": "Attack2_Margin",
+      "Name": "攻撃２\u3000間合い遊び[m]",
+      "Description": "攻撃間合いの遊び。間合い距離近辺で、振動しないように"
+    },
+    {
+      "Field": "Attack2_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": "攻撃の頻度"
+    },
+    {
+      "Field": "Attack2_ActionID",
+      "Name": "攻撃２\u3000種類",
+      "Description": "攻撃の種類"
+    },
+    {
+      "Field": "Attack2_DelayMin",
+      "Name": "攻撃2\u3000最小遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最小。"
+    },
+    {
+      "Field": "Attack2_DelayMax",
+      "Name": "攻撃2\u3000最長遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最長。"
+    },
+    {
+      "Field": "Attack2_ConeAngle",
+      "Name": "攻撃2\u3000攻撃許可円錐の角度[deg]",
+      "Description": "視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。"
+    },
+    {
+      "Field": "reserve11",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_Distance",
+      "Name": "攻撃３\u3000間合い[m]",
+      "Description": "攻撃するときの間合い[m]"
+    },
+    {
+      "Field": "Attack3_Margin",
+      "Name": "攻撃３\u3000間合い遊び[m]",
+      "Description": "攻撃間合いの遊び。間合い距離近辺で、振動しないように"
+    },
+    {
+      "Field": "Attack3_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": "攻撃の頻度"
+    },
+    {
+      "Field": "Attack3_ActionID",
+      "Name": "攻撃３\u3000種類",
+      "Description": "攻撃の種類"
+    },
+    {
+      "Field": "Attack3_DelayMin",
+      "Name": "攻撃3\u3000最小遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最小。"
+    },
+    {
+      "Field": "Attack3_DelayMax",
+      "Name": "攻撃3\u3000最長遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最長。"
+    },
+    {
+      "Field": "Attack3_ConeAngle",
+      "Name": "攻撃3\u3000攻撃許可円錐の角度[deg]",
+      "Description": "視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。"
+    },
+    {
+      "Field": "reserve12",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_Distance",
+      "Name": "攻撃４\u3000間合い[m]",
+      "Description": "攻撃するときの間合い[m]"
+    },
+    {
+      "Field": "Attack4_Margin",
+      "Name": "攻撃４\u3000間合い遊び[m]",
+      "Description": "攻撃間合いの遊び。間合い距離近辺で、振動しないように"
+    },
+    {
+      "Field": "Attack4_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": "攻撃の頻度"
+    },
+    {
+      "Field": "Attack4_ActionID",
+      "Name": "攻撃４\u3000種類",
+      "Description": "攻撃の種類"
+    },
+    {
+      "Field": "Attack4_DelayMin",
+      "Name": "攻撃4\u3000最小遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最小。"
+    },
+    {
+      "Field": "Attack4_DelayMax",
+      "Name": "攻撃4\u3000最長遅延時間[frame]",
+      "Description": "攻撃可能になった時点から、攻撃するまでの遅延時間の最長。"
+    },
+    {
+      "Field": "Attack4_ConeAngle",
+      "Name": "攻撃4\u3000攻撃許可円錐の角度[deg]",
+      "Description": "視線方向とターゲットへの方向ベクトルのなす角が、この角度以内の場合、攻撃ＯＫ。"
+    },
+    {
+      "Field": "reserve13",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

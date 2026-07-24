@@ -1,0 +1,1733 @@
+{
+  "Name": "AssetTranscriptionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Asset default parameters -- アセットデフォルトパラメータ"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Antenna facility -- アンテナ\u3000施設"
+      ]
+    },
+    {
+      "ID": 13150,
+      "Entries": [
+        "On the wall_Facility A -- 壁上_施設A"
+      ]
+    },
+    {
+      "ID": 13151,
+      "Entries": [
+        "On the wall_Facility B -- 壁上_施設B"
+      ]
+    },
+    {
+      "ID": 13152,
+      "Entries": [
+        "On the wall_Facility C -- 壁上_施設C"
+      ]
+    },
+    {
+      "ID": 13412,
+      "Entries": [
+        "Detour route_Facility A -- 迂回ルート_施設A"
+      ]
+    },
+    {
+      "ID": 13413,
+      "Entries": [
+        "Detour route_Facility B -- 迂回ルート_施設B"
+      ]
+    },
+    {
+      "ID": 13414,
+      "Entries": [
+        "Detour route_Facility C -- 迂回ルート_施設C"
+      ]
+    },
+    {
+      "ID": 13415,
+      "Entries": [
+        "Detour route_Facility D -- 迂回ルート_施設D"
+      ]
+    },
+    {
+      "ID": 13416,
+      "Entries": [
+        "Detour route_Facility E -- 迂回ルート_施設E"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "Moat_under construction -- 堀_建設中"
+      ]
+    },
+    {
+      "ID": 13512,
+      "Entries": [
+        "Moat_under construction -- 堀_建設中"
+      ]
+    },
+    {
+      "ID": 13594,
+      "Entries": [
+        "Wall_Elevator_Interior_Door -- 壁_エレベーター_内部_扉"
+      ]
+    },
+    {
+      "ID": 13625,
+      "Entries": [
+        "Wall_inside_passage_length -- 壁_内側_通路_長"
+      ]
+    },
+    {
+      "ID": 13900,
+      "Entries": [
+        "Snowy mountain_wall A -- 雪山_壁A"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Midoriki_Snowfall A -- 緑木_積雪A"
+      ]
+    },
+    {
+      "ID": 21101,
+      "Entries": [
+        "Midoriki_Snowfall B -- 緑木_積雪B"
+      ]
+    },
+    {
+      "ID": 21108,
+      "Entries": [
+        "Forest_Snowfall A -- 森林_積雪A"
+      ]
+    },
+    {
+      "ID": 21109,
+      "Entries": [
+        "Forest_Snowfall B -- 森林_積雪B"
+      ]
+    },
+    {
+      "ID": 21110,
+      "Entries": [
+        "Dead tree_snowfall A -- 枯れ木_積雪A"
+      ]
+    },
+    {
+      "ID": 21111,
+      "Entries": [
+        "Dead tree_Snowfall B -- 枯れ木_積雪B"
+      ]
+    },
+    {
+      "ID": 21112,
+      "Entries": [
+        "Dead tree_snow C -- 枯れ木_積雪C"
+      ]
+    },
+    {
+      "ID": 21113,
+      "Entries": [
+        "Dead tree_snow D -- 枯れ木_積雪D"
+      ]
+    },
+    {
+      "ID": 23102,
+      "Entries": [
+        "Buildings_Steel scaffolding -- 建築物_鉄骨足場"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "radio tower -- 電波鉄塔"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "Fuel tank_general purpose -- 燃料タンク_汎用"
+      ]
+    },
+    {
+      "ID": 25100,
+      "Entries": [
+        "Air purification tower base -- 空気清浄塔土台"
+      ]
+    },
+    {
+      "ID": 25110,
+      "Entries": [
+        "air purification tower -- 空気清浄塔"
+      ]
+    },
+    {
+      "ID": 34491,
+      "Entries": [
+        "D layer entrance cross section part 1 -- D層入口断面パーツ1"
+      ]
+    },
+    {
+      "ID": 34492,
+      "Entries": [
+        "D layer entrance cross section part 2 -- D層入口断面パーツ2"
+      ]
+    },
+    {
+      "ID": 34493,
+      "Entries": [
+        "D layer entrance cross section part 3 -- D層入口断面パーツ3"
+      ]
+    },
+    {
+      "ID": 34494,
+      "Entries": [
+        "D layer entrance cross section part 4 -- D層入口断面パーツ4"
+      ]
+    },
+    {
+      "ID": 34495,
+      "Entries": [
+        "D layer entrance cross section part 5 -- D層入口断面パーツ5"
+      ]
+    },
+    {
+      "ID": 34496,
+      "Entries": [
+        "D layer entrance cross section part 6 -- D層入口断面パーツ6"
+      ]
+    },
+    {
+      "ID": 34497,
+      "Entries": [
+        "D layer entrance cross section part 7 -- D層入口断面パーツ7"
+      ]
+    },
+    {
+      "ID": 34498,
+      "Entries": [
+        "D layer entrance cross section SLOD -- D層入口断面SLOD"
+      ]
+    },
+    {
+      "ID": 53071,
+      "Entries": [
+        "Landmark foundation first half -- ランドマーク土台前半"
+      ]
+    },
+    {
+      "ID": 53072,
+      "Entries": [
+        "Landmark foundation second half -- ランドマーク土台後半"
+      ]
+    },
+    {
+      "ID": 53100,
+      "Entries": [
+        "watchtower -- 監視塔"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "Extra A -- 上乗せA"
+      ]
+    },
+    {
+      "ID": 53211,
+      "Entries": [
+        "Extra B -- 上乗せB"
+      ]
+    },
+    {
+      "ID": 53212,
+      "Entries": [
+        "Additional C -- 上乗せC"
+      ]
+    },
+    {
+      "ID": 53213,
+      "Entries": [
+        "Additional D -- 上乗せD"
+      ]
+    },
+    {
+      "ID": 53214,
+      "Entries": [
+        "Extra E -- 上乗せE"
+      ]
+    },
+    {
+      "ID": 53215,
+      "Entries": [
+        "Additional F -- 上乗せF"
+      ]
+    },
+    {
+      "ID": 53216,
+      "Entries": [
+        "Additional G -- 上乗せG"
+      ]
+    },
+    {
+      "ID": 53217,
+      "Entries": [
+        "Extra H -- 上乗せH"
+      ]
+    },
+    {
+      "ID": 53230,
+      "Entries": [
+        "Add-on 1 -- 上乗せ 1"
+      ]
+    },
+    {
+      "ID": 53231,
+      "Entries": [
+        "Top-up 2 -- 上乗せ 2"
+      ]
+    },
+    {
+      "ID": 53232,
+      "Entries": [
+        "Top-up 3 -- 上乗せ 3"
+      ]
+    },
+    {
+      "ID": 53700,
+      "Entries": [
+        "data center edge -- データセンター縁"
+      ]
+    },
+    {
+      "ID": 53701,
+      "Entries": [
+        "data center base wall -- データセンターベース壁"
+      ]
+    },
+    {
+      "ID": 53702,
+      "Entries": [
+        "data center rooftop -- データセンター屋上"
+      ]
+    },
+    {
+      "ID": 53704,
+      "Entries": [
+        "Data center square -- データセンター前広場"
+      ]
+    },
+    {
+      "ID": 53705,
+      "Entries": [
+        "Facility in front of data center -- データセンター前施設"
+      ]
+    },
+    {
+      "ID": 53708,
+      "Entries": [
+        "Breakwater in front of the data center -- データセンター前防波堤"
+      ]
+    },
+    {
+      "ID": 53710,
+      "Entries": [
+        "data center gate -- データセンターゲート"
+      ]
+    },
+    {
+      "ID": 54000,
+      "Entries": [
+        "highway -- ハイウェイ"
+      ]
+    },
+    {
+      "ID": 54800,
+      "Entries": [
+        "Data center summary -- データセンターまとめ"
+      ]
+    },
+    {
+      "ID": 101910,
+      "Entries": [
+        "Distant view_first half 15 -- 遠景_前半15"
+      ]
+    },
+    {
+      "ID": 101911,
+      "Entries": [
+        "Distant view_first half 14 -- 遠景_前半14"
+      ]
+    },
+    {
+      "ID": 101912,
+      "Entries": [
+        "Distant view_first half 12 -- 遠景_前半12"
+      ]
+    },
+    {
+      "ID": 101916,
+      "Entries": [
+        "Distant view_first half 16 -- 遠景_前半16"
+      ]
+    },
+    {
+      "ID": 101917,
+      "Entries": [
+        "Distant view_first half 17 -- 遠景_前半17"
+      ]
+    },
+    {
+      "ID": 101923,
+      "Entries": [
+        "Distant view_first half 23 -- 遠景_前半23"
+      ]
+    },
+    {
+      "ID": 101930,
+      "Entries": [
+        "Distant view_second half 30 -- 遠景_後半30"
+      ]
+    },
+    {
+      "ID": 101931,
+      "Entries": [
+        "Distant view_second half 31 -- 遠景_後半31"
+      ]
+    },
+    {
+      "ID": 101940,
+      "Entries": [
+        "Distant view_continental shell -- 遠景_大陸殻"
+      ]
+    },
+    {
+      "ID": 101945,
+      "Entries": [
+        "Distant view_first half of continental shell -- 遠景_大陸殻前半"
+      ]
+    },
+    {
+      "ID": 101950,
+      "Entries": [
+        "Distant view_second half of continental shell (passage) -- 遠景_大陸殻後半（通路）"
+      ]
+    },
+    {
+      "ID": 101955,
+      "Entries": [
+        "Distant view_second half of continental shell (boss area) -- 遠景_大陸殻後半（ボスエリア）"
+      ]
+    },
+    {
+      "ID": 101959,
+      "Entries": [
+        "Distant view_Continental shell_Transportation system -- 遠景_大陸殻_輸送システム"
+      ]
+    },
+    {
+      "ID": 101990,
+      "Entries": [
+        "Distant view_black sand dunes 1 -- 遠景_黒砂丘1"
+      ]
+    },
+    {
+      "ID": 101991,
+      "Entries": [
+        "Distant view_Black sand dunes 2 -- 遠景_黒砂丘2"
+      ]
+    },
+    {
+      "ID": 101992,
+      "Entries": [
+        "Distant view_black sand dunes 3 -- 遠景_黒砂丘3"
+      ]
+    },
+    {
+      "ID": 101993,
+      "Entries": [
+        "Distant view_black sand dunes 4 -- 遠景_黒砂丘4"
+      ]
+    },
+    {
+      "ID": 101994,
+      "Entries": [
+        "Distant view_Black sand dunes 5 -- 遠景_黒砂丘5"
+      ]
+    },
+    {
+      "ID": 101995,
+      "Entries": [
+        "Distant view_black sand dunes 6 -- 遠景_黒砂丘6"
+      ]
+    },
+    {
+      "ID": 101996,
+      "Entries": [
+        "Distant view_Black sand dunes 7 -- 遠景_黒砂丘7"
+      ]
+    },
+    {
+      "ID": 101997,
+      "Entries": [
+        "Distant view_black sand dunes 8 -- 遠景_黒砂丘8"
+      ]
+    },
+    {
+      "ID": 101998,
+      "Entries": [
+        "Distant view_black sand dunes 9 -- 遠景_黒砂丘9"
+      ]
+    },
+    {
+      "ID": 101999,
+      "Entries": [
+        "Distant view_The deepest part of the black sand dunes -- 遠景_黒砂丘最奥"
+      ]
+    },
+    {
+      "ID": 102950,
+      "Entries": [
+        "Distant view_collapse 01 -- 遠景_崩落01"
+      ]
+    },
+    {
+      "ID": 102951,
+      "Entries": [
+        "Distant view_collapse 02 -- 遠景_崩落02"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "[A layer] Ceiling -- 【A層】天井"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "[A layer] Ceiling -- 【A層】天井"
+      ]
+    },
+    {
+      "ID": 120059,
+      "Entries": [
+        "[A layer] Ceiling -- 【A層】天井"
+      ]
+    },
+    {
+      "ID": 120062,
+      "Entries": [
+        "[A layer] Ceiling -- 【A層】天井"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "[New B tier] Landmark Main Tower -- 【新B層】ランドマークメインタワー"
+      ]
+    },
+    {
+      "ID": 203011,
+      "Entries": [
+        "[New B layer] Landmark right foot -- 【新B層】ランドマーク右足"
+      ]
+    },
+    {
+      "ID": 203012,
+      "Entries": [
+        "[New B layer] Landmark left foot -- 【新B層】ランドマーク左足"
+      ]
+    },
+    {
+      "ID": 203013,
+      "Entries": [
+        "[New B tier] Landmark subtower -- 【新B層】ランドマークサブタワー"
+      ]
+    },
+    {
+      "ID": 203014,
+      "Entries": [
+        "[New B layer] Inside the landmark subtower -- 【新B層】ランドマークサブタワー内部"
+      ]
+    },
+    {
+      "ID": 203015,
+      "Entries": [
+        "[New B layer] Landmark subtower buttress -- 【新B層】ランドマークサブタワーバットレス"
+      ]
+    },
+    {
+      "ID": 203016,
+      "Entries": [
+        "[New B layer] Inside Landmark Main Tower -- 【新B層】ランドマークメインタワー内部"
+      ]
+    },
+    {
+      "ID": 203017,
+      "Entries": [
+        "[New B layer] Landmark foundation -- 【新B層】ランドマーク土台"
+      ]
+    },
+    {
+      "ID": 203018,
+      "Entries": [
+        "[New B layer] Landmark main tower buttress -- 【新B層】ランドマークメインタワーバットレス"
+      ]
+    },
+    {
+      "ID": 203019,
+      "Entries": [
+        "[New B layer] Landmark foundation B -- 【新B層】ランドマーク土台B"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "[New B tier] General purpose building_A high -- 【新B層】汎用ビル_A\u3000高"
+      ]
+    },
+    {
+      "ID": 203021,
+      "Entries": [
+        "[New B tier] General purpose building_A low -- 【新B層】汎用ビル_A\u3000低"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "[New B tier] General purpose building_B high -- 【新B層】汎用ビル_B\u3000高"
+      ]
+    },
+    {
+      "ID": 203031,
+      "Entries": [
+        "[New B tier] General purpose building_B medium -- 【新B層】汎用ビル_B\u3000中"
+      ]
+    },
+    {
+      "ID": 203032,
+      "Entries": [
+        "[New B tier] General purpose building_B small -- 【新B層】汎用ビル_B\u3000小"
+      ]
+    },
+    {
+      "ID": 203033,
+      "Entries": [
+        "[New B tier] General purpose building_B medium wide ceiling -- 【新B層】汎用ビル_B\u3000中\u3000天井広め"
+      ]
+    },
+    {
+      "ID": 203034,
+      "Entries": [
+        "[New B tier] General purpose building_B large, wide ceiling -- 【新B層】汎用ビル_B\u3000大\u3000天井広め"
+      ]
+    },
+    {
+      "ID": 203040,
+      "Entries": [
+        "[New B tier] General purpose building_C_medium -- 【新B層】汎用ビル_C_中"
+      ]
+    },
+    {
+      "ID": 203041,
+      "Entries": [
+        "[New B tier] General purpose building_C_02_medium -- 【新B層】汎用ビル_C_02_中"
+      ]
+    },
+    {
+      "ID": 203042,
+      "Entries": [
+        "[New B tier] General purpose building_C_03_medium -- 【新B層】汎用ビル_C_03_中"
+      ]
+    },
+    {
+      "ID": 203043,
+      "Entries": [
+        "[New B tier] General purpose building_C_04_Small -- 【新B層】汎用ビル_C_04_小"
+      ]
+    },
+    {
+      "ID": 203050,
+      "Entries": [
+        "[New B tier] General purpose building_7 Trapezoid -- 【新B層】汎用ビル_7 台形"
+      ]
+    },
+    {
+      "ID": 203060,
+      "Entries": [
+        "[New B tier] Diagonal building -- 【新B層】斜めビル"
+      ]
+    },
+    {
+      "ID": 203061,
+      "Entries": [
+        "[New B tier] Diagonal building -- 【新B層】斜めビル"
+      ]
+    },
+    {
+      "ID": 203062,
+      "Entries": [
+        "[New B tier] Diagonal building -- 【新B層】斜めビル"
+      ]
+    },
+    {
+      "ID": 203070,
+      "Entries": [
+        "[New B tier] Kamaboko Building -- 【新B層】かまぼこビル"
+      ]
+    },
+    {
+      "ID": 203071,
+      "Entries": [
+        "[New B tier] Kamaboko Building B -- 【新B層】かまぼこビルB"
+      ]
+    },
+    {
+      "ID": 203080,
+      "Entries": [
+        "[New B tier] Curved building -- 【新B層】曲面ビル"
+      ]
+    },
+    {
+      "ID": 203081,
+      "Entries": [
+        "[New B tier] Curved building attached -- 【新B層】曲面ビル 付随"
+      ]
+    },
+    {
+      "ID": 203090,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A high -- 【新B層】小型汎用ビル_A\u3000高"
+      ]
+    },
+    {
+      "ID": 203091,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A medium -- 【新B層】小型汎用ビル_A\u3000中"
+      ]
+    },
+    {
+      "ID": 203092,
+      "Entries": [
+        "[New B tier] Small general-purpose building_A low -- 【新B層】小型汎用ビル_A\u3000低"
+      ]
+    },
+    {
+      "ID": 203093,
+      "Entries": [
+        "[New B tier] Small general-purpose building_B Thin rectangle -- 【新B層】小型汎用ビル_B\u3000薄長方形"
+      ]
+    },
+    {
+      "ID": 203094,
+      "Entries": [
+        "[New B tier] Small general-purpose building_C Small -- 【新B層】小型汎用ビル_C\u3000小"
+      ]
+    },
+    {
+      "ID": 203400,
+      "Entries": [
+        "[New B layer] Power supply facilities -- 【新B層】電力供給施設"
+      ]
+    },
+    {
+      "ID": 203401,
+      "Entries": [
+        "[New B layer] Power supply facility_Small -- 【新B層】電力供給施設_小"
+      ]
+    },
+    {
+      "ID": 203455,
+      "Entries": [
+        "Outdoor unit A -- 室外機A"
+      ]
+    },
+    {
+      "ID": 203456,
+      "Entries": [
+        "Outdoor unit B -- 室外機B"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "on the highway -- ハイウェイ中"
+      ]
+    },
+    {
+      "ID": 204007,
+      "Entries": [
+        "highway large -- ハイウェイ大"
+      ]
+    },
+    {
+      "ID": 204210,
+      "Entries": [
+        "[Foundation] [Wall] Base 200x45 -- 【土台】【壁】ベース 200x45"
+      ]
+    },
+    {
+      "ID": 204220,
+      "Entries": [
+        "[Foundation] [Wall] External corner 40 -- 【土台】【壁】外角 40"
+      ]
+    },
+    {
+      "ID": 204225,
+      "Entries": [
+        "[Foundation] [Wall] Projection half -- 【土台】【壁】 でっぱり半"
+      ]
+    },
+    {
+      "ID": 204226,
+      "Entries": [
+        "[Foundation] [Wall] Projection -- 【土台】【壁】 でっぱり"
+      ]
+    },
+    {
+      "ID": 204230,
+      "Entries": [
+        "[New B layer] Left wing -- 【新B層】左翼"
+      ]
+    },
+    {
+      "ID": 204231,
+      "Entries": [
+        "[New B layer] Right wing -- 【新B層】右翼"
+      ]
+    },
+    {
+      "ID": 204235,
+      "Entries": [
+        "[New B layer] AS -- 【新B層】AS"
+      ]
+    },
+    {
+      "ID": 204236,
+      "Entries": [
+        "[New B layer] Wind shield -- 【新B層】風よけ"
+      ]
+    },
+    {
+      "ID": 204406,
+      "Entries": [
+        "[Foundation] [Floor] C concave left and right 200x50 -- 【土台】【床】 C凹左右 200x50"
+      ]
+    },
+    {
+      "ID": 204420,
+      "Entries": [
+        "[New B layer] Left wing center -- 【新B層】左翼中"
+      ]
+    },
+    {
+      "ID": 204421,
+      "Entries": [
+        "[New B layer] Right wing center -- 【新B層】右翼中"
+      ]
+    },
+    {
+      "ID": 204422,
+      "Entries": [
+        "[New B layer] Left wing far -- 【新B層】左翼遠"
+      ]
+    },
+    {
+      "ID": 204423,
+      "Entries": [
+        "[New B layer] Right wing far -- 【新B層】右翼遠"
+      ]
+    },
+    {
+      "ID": 204424,
+      "Entries": [
+        "[New B layer] Front left wing -- 【新B層】左翼前"
+      ]
+    },
+    {
+      "ID": 204425,
+      "Entries": [
+        "[New B layer] Front right wing -- 【新B層】右翼前"
+      ]
+    },
+    {
+      "ID": 204426,
+      "Entries": [
+        "[New B layer] Front and lower left wing [Straight city] -- 【新B層】左翼前下 [ストレート市街]"
+      ]
+    },
+    {
+      "ID": 204427,
+      "Entries": [
+        "[New B layer] Front and lower right wing [Straight city] -- 【新B層】右翼前下 [ストレート市街]"
+      ]
+    },
+    {
+      "ID": 204430,
+      "Entries": [
+        "[New B layer] Wing addition A -- 【新B層】翼上乗せA"
+      ]
+    },
+    {
+      "ID": 204431,
+      "Entries": [
+        "[New B layer] Wing addition B -- 【新B層】翼上乗せB"
+      ]
+    },
+    {
+      "ID": 204432,
+      "Entries": [
+        "[New B layer] Wing mounting slope -- 【新B層】翼上乗せスロープ"
+      ]
+    },
+    {
+      "ID": 204440,
+      "Entries": [
+        "[Foundation] [Floor] Tower back A -- 【土台】【床】 タワー裏A"
+      ]
+    },
+    {
+      "ID": 204441,
+      "Entries": [
+        "[Foundation] [Floor] Tower back B -- 【土台】【床】 タワー裏B"
+      ]
+    },
+    {
+      "ID": 204442,
+      "Entries": [
+        "[Foundation] [Floor] Tower back C -- 【土台】【床】 タワー裏C"
+      ]
+    },
+    {
+      "ID": 204443,
+      "Entries": [
+        "[Foundation] [Floor] Tower back D -- 【土台】【床】 タワー裏D"
+      ]
+    },
+    {
+      "ID": 204461,
+      "Entries": [
+        "[Foundation] [Floor] [Unique] In front of the tower -- 【土台】【床】【ユニーク】  タワー前"
+      ]
+    },
+    {
+      "ID": 204500,
+      "Entries": [
+        "[Additional] Surveillance passage -- 【上乗せ】監視通路"
+      ]
+    },
+    {
+      "ID": 204504,
+      "Entries": [
+        "[Additional] Solar panel -- 【上乗せ】ソーラーパネル"
+      ]
+    },
+    {
+      "ID": 204506,
+      "Entries": [
+        "[Additional] Shielding -- 【上乗せ】遮蔽"
+      ]
+    },
+    {
+      "ID": 204509,
+      "Entries": [
+        "[Additional] Road signboard -- 【上乗せ】道路看板"
+      ]
+    },
+    {
+      "ID": 204510,
+      "Entries": [
+        "[Additional] Road bulletin board -- 【上乗せ】道路掲示板"
+      ]
+    },
+    {
+      "ID": 204511,
+      "Entries": [
+        "[Additional] Building storage A -- 【上乗せ】建物収納A"
+      ]
+    },
+    {
+      "ID": 204513,
+      "Entries": [
+        "Additional energy storage A -- 上乗せ蓄電A"
+      ]
+    },
+    {
+      "ID": 204514,
+      "Entries": [
+        "Additional energy storage B -- 上乗せ蓄電B"
+      ]
+    },
+    {
+      "ID": 204520,
+      "Entries": [
+        "[Additional] Floor information_Building□ -- 【上乗せ】床情報_ビル□"
+      ]
+    },
+    {
+      "ID": 204521,
+      "Entries": [
+        "[Additional] Floor information_Building〇 -- 【上乗せ】床情報_ビル〇"
+      ]
+    },
+    {
+      "ID": 204522,
+      "Entries": [
+        "[Additional] Floor information_Building storage -- 【上乗せ】床情報_建物収納"
+      ]
+    },
+    {
+      "ID": 204524,
+      "Entries": [
+        "[Additional] Floor information_Elongated (destruction) -- 【上乗せ】床情報_細長(破壊）"
+      ]
+    },
+    {
+      "ID": 204525,
+      "Entries": [
+        "[Additional] Floor information_12.5 squares -- 【上乗せ】床情報_12.5四角"
+      ]
+    },
+    {
+      "ID": 204526,
+      "Entries": [
+        "[Additional] Floor information_next to the battery -- 【上乗せ】床情報_砲台横"
+      ]
+    },
+    {
+      "ID": 204527,
+      "Entries": [
+        "[Additional] Floor information_12.5.25 -- 【上乗せ】床情報_12.5.25"
+      ]
+    },
+    {
+      "ID": 204550,
+      "Entries": [
+        "[New B tier] Straight city start connection -- 【新B層】ストレート市街スタート接続"
+      ]
+    },
+    {
+      "ID": 204701,
+      "Entries": [
+        "[Additional] Monorail_50m -- 【上乗せ】モノレール_50m"
+      ]
+    },
+    {
+      "ID": 204721,
+      "Entries": [
+        "[Additional] Monorail_Station -- 【上乗せ】モノレール_駅"
+      ]
+    },
+    {
+      "ID": 204998,
+      "Entries": [
+        "[New B layer] External reference source Highway -- 【新B層】外部参照元\u3000ハイウェイ"
+      ]
+    },
+    {
+      "ID": 204999,
+      "Entries": [
+        "[New B layer] External reference source floor -- 【新B層】外部参照元\u3000床"
+      ]
+    },
+    {
+      "ID": 213200,
+      "Entries": [
+        "[New B layer] Generator (rectangle) -- 【新B層】ジェネレータ（長方形）"
+      ]
+    },
+    {
+      "ID": 213201,
+      "Entries": [
+        "[New B layer] Generator (trapezoid) -- 【新B層】ジェネレータ（台形）"
+      ]
+    },
+    {
+      "ID": 213210,
+      "Entries": [
+        "[New B layer] Generator (Cylinder) -- 【新B層】ジェネレータ(円柱)"
+      ]
+    },
+    {
+      "ID": 223010,
+      "Entries": [
+        "[New B-tier] New B-tier building -- 【新B層】新B層ビル"
+      ]
+    },
+    {
+      "ID": 223020,
+      "Entries": [
+        "[New B tier] Straight city diagonal building -- 【新B層】ストレート市街\u3000斜めビル"
+      ]
+    },
+    {
+      "ID": 223021,
+      "Entries": [
+        "[New B tier] Straight city diagonal building -- 【新B層】ストレート市街\u3000斜めビル"
+      ]
+    },
+    {
+      "ID": 223025,
+      "Entries": [
+        "[New B tier] Straight city diagonal building large -- 【新B層】ストレート市街\u3000斜めビル 大"
+      ]
+    },
+    {
+      "ID": 223026,
+      "Entries": [
+        "[New B tier] Straight city, diagonal building, large base -- 【新B層】ストレート市街\u3000斜めビル 大の土台"
+      ]
+    },
+    {
+      "ID": 223030,
+      "Entries": [
+        "[New B tier] Straight city diagonal trapezoidal building -- 【新B層】ストレート市街\u3000斜め台形ビル"
+      ]
+    },
+    {
+      "ID": 223430,
+      "Entries": [
+        "[New B tier] Dome exterior -- 【新B層】ドーム\u3000外装"
+      ]
+    },
+    {
+      "ID": 224100,
+      "Entries": [
+        "[New B Tier] Straight City Cleaning Equipment Unique Central -- 【新B層】ストレート市街\u3000洗浄装置\u3000ユニーク中央"
+      ]
+    },
+    {
+      "ID": 224101,
+      "Entries": [
+        "[New B layer] Straight city cleaning device unique sideA -- 【新B層】ストレート市街\u3000洗浄装置\u3000ユニークsideA"
+      ]
+    },
+    {
+      "ID": 224102,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment unique sideB -- 【新B層】ストレート市街\u3000洗浄装置\u3000ユニークsideB"
+      ]
+    },
+    {
+      "ID": 224103,
+      "Entries": [
+        "[New B layer] Straight city cleaning device central part -- 【新B層】ストレート市街\u3000洗浄装置\u3000中央パーツ"
+      ]
+    },
+    {
+      "ID": 224104,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment X-shaped base -- 【新B層】ストレート市街\u3000洗浄装置\u3000X字土台"
+      ]
+    },
+    {
+      "ID": 224105,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment roof -- 【新B層】ストレート市街\u3000洗浄装置\u3000屋根"
+      ]
+    },
+    {
+      "ID": 224106,
+      "Entries": [
+        "[New B layer] Straight city cleaning device 2 pipes -- 【新B層】ストレート市街\u3000洗浄装置\u3000パイプ２つ"
+      ]
+    },
+    {
+      "ID": 224107,
+      "Entries": [
+        "[New B layer] Straight city, cleaning device, many exhaust ports -- 【新B層】ストレート市街\u3000洗浄装置\u3000排気口多数"
+      ]
+    },
+    {
+      "ID": 224108,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment floor -- 【新B層】ストレート市街\u3000洗浄装置\u3000床"
+      ]
+    },
+    {
+      "ID": 224109,
+      "Entries": [
+        "[New B layer] Straight city cleaning device side wall parts -- 【新B層】ストレート市街\u3000洗浄装置\u3000側面壁パーツ"
+      ]
+    },
+    {
+      "ID": 224110,
+      "Entries": [
+        "[New B layer] Straight city cleaning equipment floor parts -- 【新B層】ストレート市街\u3000洗浄装置\u3000床パーツ"
+      ]
+    },
+    {
+      "ID": 224401,
+      "Entries": [
+        "[New B tier] Straight city, glass scaffolding, no glass -- 【新B層】ストレート市街\u3000ガラス足場\u3000ガラス無し"
+      ]
+    },
+    {
+      "ID": 224420,
+      "Entries": [
+        "[New B tier] Straight city glass scaffolding frame -- 【新B層】ストレート市街\u3000ガラス足場\u3000フレーム"
+      ]
+    },
+    {
+      "ID": 224421,
+      "Entries": [
+        "[New B layer] Straight city glass scaffolding frame base (thick) -- 【新B層】ストレート市街\u3000ガラス足場\u3000フレーム土台(太)"
+      ]
+    },
+    {
+      "ID": 224422,
+      "Entries": [
+        "[New B tier] Straight city glass scaffolding frame base (thin) -- 【新B層】ストレート市街\u3000ガラス足場\u3000フレーム土台(細)"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "[New B Tier] Trench City Housing Foundation -- 【新B層】塹壕都市\u3000住居\u3000土台"
+      ]
+    },
+    {
+      "ID": 233001,
+      "Entries": [
+        "[New B Tier] Trench City Residence Upper Tier A -- 【新B層】塹壕都市\u3000住居\u3000上段A"
+      ]
+    },
+    {
+      "ID": 233100,
+      "Entries": [
+        "[New B Tier] Trench City Management System Tower -- 【新B層】塹壕都市\u3000管理システム塔"
+      ]
+    },
+    {
+      "ID": 233200,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device A -- 【新B層】塹壕都市\u3000天井装置A"
+      ]
+    },
+    {
+      "ID": 233201,
+      "Entries": [
+        "[New B Tier] Trench City Ceiling Device A_Small -- 【新B層】塹壕都市\u3000天井装置A_小"
+      ]
+    },
+    {
+      "ID": 233202,
+      "Entries": [
+        "[New B layer] Trench city ceiling device A_pipe 50m -- 【新B層】塹壕都市\u3000天井装置A_パイプ50m"
+      ]
+    },
+    {
+      "ID": 233210,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device B -- 【新B層】塹壕都市\u3000天井装置B"
+      ]
+    },
+    {
+      "ID": 233220,
+      "Entries": [
+        "[New B layer] Trench City Ceiling Device C -- 【新B層】塹壕都市\u3000天井装置C"
+      ]
+    },
+    {
+      "ID": 233230,
+      "Entries": [
+        "[New B Tier] Trench City General Equipment A -- 【新B層】塹壕都市\u3000汎用装置A"
+      ]
+    },
+    {
+      "ID": 233235,
+      "Entries": [
+        "[New B layer] Trench City General Equipment B -- 【新B層】塹壕都市\u3000汎用装置B"
+      ]
+    },
+    {
+      "ID": 233250,
+      "Entries": [
+        "[New B Tier] Trench City Gate in Trench City -- 【新B層】塹壕都市\u3000塹壕都市内ゲート"
+      ]
+    },
+    {
+      "ID": 233300,
+      "Entries": [
+        "[New B Tier] Trench City Generator A Large -- 【新B層】塹壕都市\u3000発電機A\u3000大"
+      ]
+    },
+    {
+      "ID": 233310,
+      "Entries": [
+        "[New B Tier] Trench City Generator B -- 【新B層】塹壕都市\u3000発電機B"
+      ]
+    },
+    {
+      "ID": 233320,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine -- 【新B層】塹壕都市\u3000貯蓄機"
+      ]
+    },
+    {
+      "ID": 233321,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine Thin Width -- 【新B層】塹壕都市\u3000貯蓄機 幅細"
+      ]
+    },
+    {
+      "ID": 233332,
+      "Entries": [
+        "[New B Tier] Trench City Savings Machine Attached Pipe -- 【新B層】塹壕都市\u3000貯蓄機 付随パイプ"
+      ]
+    },
+    {
+      "ID": 233400,
+      "Entries": [
+        "[New B Tier] Trench City Rail Stopper -- 【新B層】塹壕都市\u3000レールストッパー"
+      ]
+    },
+    {
+      "ID": 233410,
+      "Entries": [
+        "[New B Tier] Trench City Crane Line -- 【新B層】塹壕都市\u3000クレーンライン"
+      ]
+    },
+    {
+      "ID": 233430,
+      "Entries": [
+        "[New B Tier] Trench City Supply Device A -- 【新B層】塹壕都市\u3000供給装置A"
+      ]
+    },
+    {
+      "ID": 233433,
+      "Entries": [
+        "[New B layer] Trench City Supply Device B -- 【新B層】塹壕都市\u3000供給装置B"
+      ]
+    },
+    {
+      "ID": 233434,
+      "Entries": [
+        "[New B Tier] Trench City Supply Device C -- 【新B層】塹壕都市\u3000供給装置C"
+      ]
+    },
+    {
+      "ID": 233450,
+      "Entries": [
+        "[New B Tier] Trench City Attached Supply Device A -- 【新B層】塹壕都市\u3000付属供給装置A"
+      ]
+    },
+    {
+      "ID": 233451,
+      "Entries": [
+        "[New B Tier] Trench City Attached Supply Device B -- 【新B層】塹壕都市\u3000付属供給装置B"
+      ]
+    },
+    {
+      "ID": 233600,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 233605,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 233610,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 233611,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 233612,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 233620,
+      "Entries": [
+        "[New B Tier] Trench City Water Purification Area -- 【新B層】塹壕都市\u3000浄水エリア"
+      ]
+    },
+    {
+      "ID": 234100,
+      "Entries": [
+        "[New B Tier] Trench City Connecting Bridge -- 【新B層】塹壕都市\u3000接続橋"
+      ]
+    },
+    {
+      "ID": 234210,
+      "Entries": [
+        "[New B Tier] Trench City Central Wall -- 【新B層】塹壕都市\u3000中央壁"
+      ]
+    },
+    {
+      "ID": 234220,
+      "Entries": [
+        "[New B Tier] Trench City Central Wall -- 【新B層】塹壕都市\u3000中央壁"
+      ]
+    },
+    {
+      "ID": 234260,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall A -- 【新B層】塹壕都市\u3000フェンス壁A"
+      ]
+    },
+    {
+      "ID": 234261,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall B -- 【新B層】塹壕都市\u3000フェンス壁B"
+      ]
+    },
+    {
+      "ID": 234262,
+      "Entries": [
+        "[New B Tier] Trench City Fence Wall B -- 【新B層】塹壕都市\u3000フェンス壁B"
+      ]
+    },
+    {
+      "ID": 234280,
+      "Entries": [
+        "[New B Tier] Trench City Wall Both Sides -- 【新B層】塹壕都市\u3000壁\u3000両面"
+      ]
+    },
+    {
+      "ID": 234291,
+      "Entries": [
+        "[New B layer] Trench city boss area wall middle view -- 【新B層】塹壕都市\u3000ボスエリア\u3000壁\u3000中景"
+      ]
+    },
+    {
+      "ID": 234300,
+      "Entries": [
+        "[New B Tier] Trench City - Lower part of the giant pillar -- 【新B層】塹壕都市\u3000巨大支柱下部"
+      ]
+    },
+    {
+      "ID": 234310,
+      "Entries": [
+        "[New B Tier] Trench City Giant Pillar Upper Instance -- 【新B層】塹壕都市\u3000巨大支柱上部\u3000インスタンス"
+      ]
+    },
+    {
+      "ID": 234340,
+      "Entries": [
+        "[New B tier] Trench City X-shaped giant pillar -- 【新B層】塹壕都市\u3000X字巨大支柱"
+      ]
+    },
+    {
+      "ID": 234341,
+      "Entries": [
+        "[New B layer] Trench City X-shaped giant pillar extension -- 【新B層】塹壕都市\u3000X字巨大支柱\u3000延長部"
+      ]
+    },
+    {
+      "ID": 234346,
+      "Entries": [
+        "[New B tier] Trench City X-shaped pillar parts -- 【新B層】塹壕都市\u3000X字 支柱パーツ"
+      ]
+    },
+    {
+      "ID": 234373,
+      "Entries": [
+        "[New B Tier] Trench City General Purpose Pillar A 20*20*100 -- 【新B層】塹壕都市\u3000汎用 柱A 20*20*100"
+      ]
+    },
+    {
+      "ID": 234400,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding -- 【新B層】塹壕都市\u3000増設\u3000足場"
+      ]
+    },
+    {
+      "ID": 234401,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding Small -- 【新B層】塹壕都市\u3000増設\u3000足場 小"
+      ]
+    },
+    {
+      "ID": 234402,
+      "Entries": [
+        "[New B Tier] Trench City Expansion Scaffolding Extension -- 【新B層】塹壕都市\u3000増設\u3000足場 延長"
+      ]
+    },
+    {
+      "ID": 234405,
+      "Entries": [
+        "[New B Tier] Trench City Middle Tier Side Street Area Scaffolding -- 【新B層】塹壕都市\u3000中段\u3000脇道エリア\u3000足場"
+      ]
+    },
+    {
+      "ID": 234410,
+      "Entries": [
+        "[New B Tier] Trench City Huge Foundation -- 【新B層】塹壕都市\u3000巨大土台"
+      ]
+    },
+    {
+      "ID": 234420,
+      "Entries": [
+        "[New B Tier] Trench City Exterior Floor 150m -- 【新B層】塹壕都市\u3000外装床150m"
+      ]
+    },
+    {
+      "ID": 234460,
+      "Entries": [
+        "[New B Tier] Trench City Middle Ceiling Long -- 【新B層】塹壕都市\u3000中段 天井 長"
+      ]
+    },
+    {
+      "ID": 234470,
+      "Entries": [
+        "[New B layer] Trench City Scaffold A 50*100*20 -- 【新B層】塹壕都市\u3000足場A\u300050*100*20"
+      ]
+    },
+    {
+      "ID": 234471,
+      "Entries": [
+        "[New B Tier] Trench City Scaffold A 50*50*20 -- 【新B層】塹壕都市\u3000足場A\u300050*50*20"
+      ]
+    },
+    {
+      "ID": 234500,
+      "Entries": [
+        "[New B Tier] Trench City Boss Area Gate -- 【新B層】塹壕都市\u3000ボスエリア\u3000ゲート"
+      ]
+    },
+    {
+      "ID": 234510,
+      "Entries": [
+        "[New B Tier] Trench City Boss Area Foundation -- 【新B層】塹壕都市\u3000ボスエリア\u3000土台"
+      ]
+    },
+    {
+      "ID": 410570,
+      "Entries": [
+        "[D layer] Vertical hole_bottom_floor -- 【D層】縦穴_底_床"
+      ]
+    },
+    {
+      "ID": 410572,
+      "Entries": [
+        "[D layer] Vertical hole_bottom_floor -- 【D層】縦穴_底_床"
+      ]
+    },
+    {
+      "ID": 411300,
+      "Entries": [
+        "[Geofront] Building A -- 【ジオフロント】建物A"
+      ]
+    },
+    {
+      "ID": 411301,
+      "Entries": [
+        "[Geofront] Building B -- 【ジオフロント】建物B"
+      ]
+    },
+    {
+      "ID": 411302,
+      "Entries": [
+        "[Geofront] Building C -- 【ジオフロント】建物C"
+      ]
+    },
+    {
+      "ID": 411303,
+      "Entries": [
+        "[Geofront] Building D -- 【ジオフロント】建物D"
+      ]
+    },
+    {
+      "ID": 411304,
+      "Entries": [
+        "[Geofront] Building E -- 【ジオフロント】建物E"
+      ]
+    },
+    {
+      "ID": 411305,
+      "Entries": [
+        "[Geofront] Building F -- 【ジオフロント】建物F"
+      ]
+    },
+    {
+      "ID": 411306,
+      "Entries": [
+        "[Geofront] Building G -- 【ジオフロント】建物G"
+      ]
+    },
+    {
+      "ID": 411307,
+      "Entries": [
+        "[Geofront] Building H -- 【ジオフロント】建物H"
+      ]
+    },
+    {
+      "ID": 411308,
+      "Entries": [
+        "[Geofront] Building I -- 【ジオフロント】建物I"
+      ]
+    },
+    {
+      "ID": 411309,
+      "Entries": [
+        "[Geofront] Building J -- 【ジオフロント】建物J"
+      ]
+    },
+    {
+      "ID": 411310,
+      "Entries": [
+        "[Geofront] Building K -- 【ジオフロント】建物K"
+      ]
+    },
+    {
+      "ID": 411311,
+      "Entries": [
+        "[Geofront] Building L -- 【ジオフロント】建物L"
+      ]
+    },
+    {
+      "ID": 501801,
+      "Entries": [
+        "communist tree -- 共産圏系樹木"
+      ]
+    },
+    {
+      "ID": 990016,
+      "Entries": [
+        "caterpillar -- キャタピラ"
+      ]
+    },
+    {
+      "ID": 990250,
+      "Entries": [
+        "dam slod -- ダムslod"
+      ]
+    },
+    {
+      "ID": 990268,
+      "Entries": [
+        "[Distant view A layer] AEG990_428⇒AEG990_268 -- 【遠景Ａ層】\u3000AEG990_428⇒AEG990_268"
+      ]
+    },
+    {
+      "ID": 990850,
+      "Entries": [
+        "[Dam] Managed facilities group -- 【ダム】\u3000管理施設群"
+      ]
+    },
+    {
+      "ID": 990851,
+      "Entries": [
+        "[Mountains] Communist bloc building -- 【山岳】\u3000共産圏ビル"
+      ]
+    },
+    {
+      "ID": 990852,
+      "Entries": [
+        "[Mountains] Building in front of Landmark -- 【山岳】\u3000ランドマーク前建物"
+      ]
+    },
+    {
+      "ID": 990853,
+      "Entries": [
+        "[Mountains] Natural terrain behind landmarks -- 【山岳】\u3000ランドマーク裏自然地形"
+      ]
+    },
+    {
+      "ID": 990854,
+      "Entries": [
+        "[Mountains] Summary of the lightest buildings -- 【山岳】\u3000建物最軽量まとめ"
+      ]
+    },
+    {
+      "ID": 990855,
+      "Entries": [
+        "[VOB] 2 nomaru assets -- 【VOB】\u30002ノ丸アセット"
+      ]
+    },
+    {
+      "ID": 990856,
+      "Entries": [
+        "[In front of the wall] Distant view data -- 【壁前】\u3000遠景用データ"
+      ]
+    },
+    {
+      "ID": 990857,
+      "Entries": [
+        "[VOB] Distant view data -- 【VOB】\u3000遠景用データ"
+      ]
+    },
+    {
+      "ID": 990858,
+      "Entries": [
+        "[Lakeside] Distant view data -- 【湖畔】\u3000遠景用データ"
+      ]
+    },
+    {
+      "ID": 990859,
+      "Entries": [
+        "[In front of the wall] Distant view data (100%) -- 【壁前】\u3000遠景用データ(100%)"
+      ]
+    },
+    {
+      "ID": 990861,
+      "Entries": [
+        "[In front of the wall] Slope surface -- 【壁前】\u3000のり面"
+      ]
+    },
+    {
+      "ID": 995989,
+      "Entries": [
+        "Gas tank A separate version [SFX setting with TAE] (SLOD compatible) -- ガスタンクA別ver【TAEでSFX設定】（SLOD対応）"
+      ]
+    },
+    {
+      "ID": 995990,
+      "Entries": [
+        "Coniferous forest [SFX setting in Asepara] (SLOD compatible) -- 針葉樹林 【アセパラでSFX設定】（SLOD対応）"
+      ]
+    },
+    {
+      "ID": 995995,
+      "Entries": [
+        "Destruction model test 01 [SFX settings with TAE] -- 破壊モデルテスト01【TAEでSFX設定】"
+      ]
+    },
+    {
+      "ID": 990153,
+      "Entries": [
+        "watat_test"
+      ]
+    },
+    {
+      "ID": 999602,
+      "Entries": [
+        "Imposter test 01 -- インポスターテスト01"
+      ]
+    },
+    {
+      "ID": 999604,
+      "Entries": [
+        "Destructive object for planning test placement 1 -- 企画テスト配置用破壊オブジェクト1"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "Test model -- テスト用モデル"
+      ]
+    }
+  ]
+}

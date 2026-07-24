@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CHR_WET_ASPECT_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 colorR">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 colorG">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 colorB">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 colorA">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 shiness">
+            <DisplayName>オーバーライド</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1024</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 shinessRate">
+            <DisplayName>オーバーライド率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 fresnel">
+            <DisplayName>オーバーライド</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 fresnelRate">
+            <DisplayName>オーバーライド率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>8</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

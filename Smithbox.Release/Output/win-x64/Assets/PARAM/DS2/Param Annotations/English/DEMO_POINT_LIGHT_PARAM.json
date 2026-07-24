@@ -1,0 +1,103 @@
+{
+  "Param": "DEMO_POINT_LIGHT_PARAM",
+  "Type": "DEMO_POINT_LIGHT_PARAM",
+  "Name": "DEMO_POINT_LIGHT_PARAM",
+  "Description": "Defines configuration for point lights in demo scenes, including position, color, intensity, shadow behavior, and flicker (blink) effects.",
+  "Fields": [
+    {
+      "Field": "offsetX",
+      "Name": "Position: X",
+      "Description": "X-axis offset of the point light position."
+    },
+    {
+      "Field": "offsetY",
+      "Name": "Position: Y",
+      "Description": "Y-axis offset of the point light position."
+    },
+    {
+      "Field": "offsetZ",
+      "Name": "Position: Z",
+      "Description": "Z-axis offset of the point light position."
+    },
+    {
+      "Field": "diffuseR",
+      "Name": "Diffuse: Red",
+      "Description": "Red component of the diffuse light color."
+    },
+    {
+      "Field": "diffuseG",
+      "Name": "Diffuse: Green",
+      "Description": "Green component of the diffuse light color."
+    },
+    {
+      "Field": "diffuseB",
+      "Name": "Diffuse: Blue",
+      "Description": "Blue component of the diffuse light color."
+    },
+    {
+      "Field": "diffuseA",
+      "Name": "Diffuse: Alpha",
+      "Description": "Alpha (intensity/opacity) component of the diffuse light."
+    },
+    {
+      "Field": "specularR",
+      "Name": "Specular: Red",
+      "Description": "Red component of the specular highlight color."
+    },
+    {
+      "Field": "specularG",
+      "Name": "Specular: Green",
+      "Description": "Green component of the specular highlight color."
+    },
+    {
+      "Field": "specularB",
+      "Name": "Specular: Blue",
+      "Description": "Blue component of the specular highlight color."
+    },
+    {
+      "Field": "specularA",
+      "Name": "Specular: Alpha",
+      "Description": "Alpha (intensity) component of the specular highlight."
+    },
+    {
+      "Field": "radius",
+      "Name": "Light Radius",
+      "Description": "Effective range of the point light."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Rendering or evaluation priority of the light."
+    },
+    {
+      "Field": "depthShadow",
+      "Name": "Shadow Strength",
+      "Description": "Controls the intensity/darkness of shadows cast by the light."
+    },
+    {
+      "Field": "blinkTimeMax",
+      "Name": "Blink Duration: Maximum",
+      "Description": "Maximum duration of light blinking cycles."
+    },
+    {
+      "Field": "blinkTimeMin",
+      "Name": "Blink Duration: Minimum",
+      "Description": "Minimum duration of light blinking cycles."
+    },
+    {
+      "Field": "blinkPower",
+      "Name": "Blink Intensity",
+      "Description": "Strength of the light flickering effect."
+    },
+    {
+      "Field": "enableShadow",
+      "Name": "Enable Shadow Casting",
+      "Description": "Determines whether this light casts shadows."
+    },
+    {
+      "Field": "dummy",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

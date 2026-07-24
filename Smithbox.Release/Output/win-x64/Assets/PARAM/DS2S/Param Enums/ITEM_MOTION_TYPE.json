@@ -1,0 +1,47 @@
+{
+  "Key": "ITEM_MOTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_MOTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scatter"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crush"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "GRASS_DISTRIBUTION_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRASS_DISTRIBUTION_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

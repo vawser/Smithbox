@@ -1,0 +1,14 @@
+{
+  "id": "220",
+  "name": "Giant Horn Beetle",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

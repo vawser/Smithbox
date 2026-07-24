@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SOUND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 CounterBoostPlayInterval = 0.1">
+      <DisplayName>カウンターブーストSEを鳴らす間隔[s]</DisplayName>
+      <Description>カウンターブーストSEを連続で鳴らす際の最低間隔[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 BulletHitSoundRestrictionTime = 0.15">
+      <DisplayName>弾ヒット時の連続再生の制限時間[s]</DisplayName>
+      <Description>一度再生キック後に同じパラメータで再生が出来るまでの時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 BulletHitSoundRestrictionEnebleDist = 1000">
+      <DisplayName>弾ヒット時の連続再生の制限時間の有効距離[m]</DisplayName>
+      <Description>弾ヒット時の連続再生の制限時間の有効距離[m]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 EffectiveHitSEDelayTime">
+      <DisplayName>クリティカルFE音再生ディレイ[sec]</DisplayName>
+      <Description>有効着弾FE非表示後にクリティカルFE音を再生するまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="dummy8 pad_999[52]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

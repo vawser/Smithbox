@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <RegionTypeMaybe 
+    AltName="Region Type" 
+    Wiki="" 
+    Enum="REGION_TYPE" />
+    
+    <Unk19
+    AltName="Unknown: 0x19"
+    Wiki="" />
+    
+    <Unk1A
+    AltName="Unknown: 0x1A"
+    Wiki="" />
+    
+    <Unk1B
+    AltName="Unknown: 0x1B"
+    Wiki="" />
+    
+    <ScaleX 
+    AltName="Scale: X" 
+    Wiki="" />
+    
+    <ScaleY 
+    AltName="Scale: Y" 
+    Wiki="" />
+    
+    <ScaleZ 
+    AltName="Scale: Z" 
+    Wiki="" />
+    
+    <Unk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <Unk2A
+    AltName="Unknown: 0x2A"
+    Wiki="" />
+    
+    <Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="REGION_TYPE" >
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+    </Enum>
+  </Enums>
+</MSBMETA>

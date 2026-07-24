@@ -1,0 +1,864 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "talk"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Conversation skip"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "[FNR] General purpose_Sherpa startup"
+      ]
+    },
+    {
+      "ID": 10000080,
+      "Entries": [
+        "[FNR] General purpose_Use a jumping platform"
+      ]
+    },
+    {
+      "ID": 20100010,
+      "Entries": [
+        "[FNR] Proro_Catapult"
+      ]
+    },
+    {
+      "ID": 20100020,
+      "Entries": [
+        "[FNR] Proro_Hacking 01"
+      ]
+    },
+    {
+      "ID": 20100030,
+      "Entries": [
+        "[FNR] Proro_Hacking 02"
+      ]
+    },
+    {
+      "ID": 20100040,
+      "Entries": [
+        "[FNR] Proro_Hacking 03"
+      ]
+    },
+    {
+      "ID": 20100050,
+      "Entries": [
+        "[FNR] Prolo_A layer additional door 01"
+      ]
+    },
+    {
+      "ID": 20100060,
+      "Entries": [
+        "[FNR] Prolo_A layer additional door 02"
+      ]
+    },
+    {
+      "ID": 20100070,
+      "Entries": [
+        "[FNR] Proro_Hacking 04"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "[FNR] Over the wall_button inside the elevator"
+      ]
+    },
+    {
+      "ID": 20300010,
+      "Entries": [
+        "[FNR] Over the wall_Boss room door"
+      ]
+    },
+    {
+      "ID": 20300011,
+      "Entries": [
+        "[FNR] Over the wall_outer door_bottom"
+      ]
+    },
+    {
+      "ID": 20300012,
+      "Entries": [
+        "[FNR] Over the wall_Outer door_Top"
+      ]
+    },
+    {
+      "ID": 20300013,
+      "Entries": [
+        "[FNR] Over the wall_Room 1 entrance_Bottom"
+      ]
+    },
+    {
+      "ID": 20300014,
+      "Entries": [
+        "[FNR] Over the wall_Room 1 entrance_Top"
+      ]
+    },
+    {
+      "ID": 20300015,
+      "Entries": [
+        "[FNR] Over the wall_Room 2 exit"
+      ]
+    },
+    {
+      "ID": 20300020,
+      "Entries": [
+        "[FNR] Over the wall for archive debris Volta"
+      ]
+    },
+    {
+      "ID": 20300021,
+      "Entries": [
+        "[FNR] Over the wall Rubiconian for archive debris"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "[FNR] Character string_Data center door"
+      ]
+    },
+    {
+      "ID": 20500010,
+      "Entries": [
+        "[FNR] String_Archive_Nameless Mercenary A (General Purpose)"
+      ]
+    },
+    {
+      "ID": 20500020,
+      "Entries": [
+        "[FNR] For string archive debris_Ghost debris"
+      ]
+    },
+    {
+      "ID": 33200010,
+      "Entries": [
+        "[FNR] Collapse A layer Examine Ghost Archive",
+        "[FNR] Collapse A layer Examine Ghost Archive"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Hacking_Door_Back"
+      ]
+    },
+    {
+      "ID": 20600030,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Hacking_Door_Front"
+      ]
+    },
+    {
+      "ID": 20600040,
+      "Entries": [
+        "[FNR] Former VOB arsenal survey_Rubiconian for archive debris_Wall leaning"
+      ]
+    },
+    {
+      "ID": 20600050,
+      "Entries": [
+        "[FNR] Old VOB Arsenal Investigation_Rubiconian for Archive Debris_Prone"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[FNR] Scavenging_Communist MT remains"
+      ]
+    },
+    {
+      "ID": 21000010,
+      "Entries": [
+        "[FNR] Scavenging_Heli"
+      ]
+    },
+    {
+      "ID": 21000020,
+      "Entries": [
+        "[FNR] Scavenging_Juggernaut"
+      ]
+    },
+    {
+      "ID": 21000030,
+      "Entries": [
+        "[FNR] Scavenging_4-legged MT debris"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[FNR] Big Bridge_For indoor entry hacking"
+      ]
+    },
+    {
+      "ID": 21300010,
+      "Entries": [
+        "[FNR] Big Bridge_For indoor exit hacking"
+      ]
+    },
+    {
+      "ID": 21300020,
+      "Entries": [
+        "[FNR] Big Bridge Inspect Treasure Container"
+      ]
+    },
+    {
+      "ID": 21300030,
+      "Entries": [
+        "[FNR] Big Bridge for archive debris"
+      ]
+    },
+    {
+      "ID": 21300040,
+      "Entries": [
+        "[FNR] Big Bridge Archive Remnants_Mercenary Remains"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "[FNR] Exploration: In front of the wall, for archive debris, nameless mercenary B (general purpose)"
+      ]
+    },
+    {
+      "ID": 21700010,
+      "Entries": [
+        "[FNR] Exploration: In front of the wall for archive debris_Ghost debris"
+      ]
+    },
+    {
+      "ID": 21800000,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell elevator"
+      ]
+    },
+    {
+      "ID": 21800010,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell_Sea spider appears"
+      ]
+    },
+    {
+      "ID": 21800020,
+      "Entries": [
+        "[FNR] For continental shell archive debris_Ghost debris"
+      ]
+    },
+    {
+      "ID": 21800030,
+      "Entries": [
+        "[FNR] Continental shell_Archive debris_Dozer"
+      ]
+    },
+    {
+      "ID": 21800040,
+      "Entries": [
+        "[FNR] Continental shell_Continental shell_For end event"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "[FNR] A layer indoor search_for hacking door 1"
+      ]
+    },
+    {
+      "ID": 22300010,
+      "Entries": [
+        "[FNR] A layer indoor exploration_For hacking door_Entrance Lv3"
+      ]
+    },
+    {
+      "ID": 22300020,
+      "Entries": [
+        "[FNR] A layer indoor search archive debris_NPAC debris"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "[FNR] Organization_Hacking Drone"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "[FNR] Fuel base explosion_Ghost for archive debris"
+      ]
+    },
+    {
+      "ID": 30300010,
+      "Entries": [
+        "[FNR] Fuel base explosion_Archive debris_Regular army MT"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "[FNR] Collapse A layer Investigate treasure container range expansion"
+      ]
+    },
+    {
+      "ID": 33200020,
+      "Entries": [
+        "[FNR] Collapse layer A - Investigate NPAC archive"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 01 Hacking Lv3"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 02 Hacking Lv3"
+      ]
+    },
+    {
+      "ID": 35000020,
+      "Entries": [
+        "[FNR] Mine shaft revisited Archive 03 Hacking Lv3"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "[FNR] Mine shaft revisited - Item acquisition_Very expensive_Under the cliff"
+      ]
+    },
+    {
+      "ID": 35000110,
+      "Entries": [
+        "[FNR] Mine shaft revisited Item acquisition_High price_EV"
+      ]
+    },
+    {
+      "ID": 35000120,
+      "Entries": [
+        "[FNR] Mine shaft revisited - item acquisition_small amount"
+      ]
+    },
+    {
+      "ID": 35000130,
+      "Entries": [
+        "[FNR] Mine shaft revisited - Item acquisition_Medium amount_Point A"
+      ]
+    },
+    {
+      "ID": 35000140,
+      "Entries": [
+        "[FNR] Mine shaft revisited, item acquisition_on the way"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "[FNR] Hole in the Ice Field Large Elevator"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "[FNR] Hole in the ice field_For unlocking the bulkhead"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "[FNR] Hole in the Ice Field Investigate Treasure Container"
+      ]
+    },
+    {
+      "ID": 40100000,
+      "Entries": [
+        "[FNR] Rail Road Elevator"
+      ]
+    },
+    {
+      "ID": 40100010,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_170"
+      ]
+    },
+    {
+      "ID": 40100011,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_171"
+      ]
+    },
+    {
+      "ID": 40100020,
+      "Entries": [
+        "[FNR] Rail Road Opening Door_Hacking"
+      ]
+    },
+    {
+      "ID": 40100021,
+      "Entries": [
+        "[FNR] Rail Road Railroad Lock Door_Hacking Lv1"
+      ]
+    },
+    {
+      "ID": 40100022,
+      "Entries": [
+        "[FNR] Railroad Railroad Lock Door_Hacking Lv2"
+      ]
+    },
+    {
+      "ID": 40100030,
+      "Entries": [
+        "[FNR] Railroad Breaker Hacking"
+      ]
+    },
+    {
+      "ID": 40100040,
+      "Entries": [
+        "[FNR] Railroad Inspect Treasure Container 01"
+      ]
+    },
+    {
+      "ID": 40100050,
+      "Entries": [
+        "[FNR] Railroad Inspect Treasure Container 02"
+      ]
+    },
+    {
+      "ID": 40100060,
+      "Entries": [
+        "[FNR] Railroad boss front door"
+      ]
+    },
+    {
+      "ID": 40100100,
+      "Entries": [
+        "[FNR] For Railroad Archive Remnants_Ghost Remains"
+      ]
+    },
+    {
+      "ID": 40100110,
+      "Entries": [
+        "[FNR] Railroad ALT Archive Remnants_Ghost Remnants 02"
+      ]
+    },
+    {
+      "ID": 40100120,
+      "Entries": [
+        "[FNR] Rail_Archive_Ghost 03"
+      ]
+    },
+    {
+      "ID": 40100130,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace_Archive Remnants_M.AI Remains"
+      ]
+    },
+    {
+      "ID": 40100140,
+      "Entries": [
+        "[FNR] Rail_Archive_Drone 01"
+      ]
+    },
+    {
+      "ID": 40100150,
+      "Entries": [
+        "[FNR] Rail_Archive_Judau 01"
+      ]
+    },
+    {
+      "ID": 40200000,
+      "Entries": [
+        "[FNR] Cavern and Furnace_Hacking_Dummy Character_AEG410_360"
+      ]
+    },
+    {
+      "ID": 40200010,
+      "Entries": [
+        "[FNR] Large Cavity and Furnace_Opening Large Door"
+      ]
+    },
+    {
+      "ID": 40200020,
+      "Entries": [
+        "[FNR] Cavern and Furnace Hacking Safe Door_Return"
+      ]
+    },
+    {
+      "ID": 40200030,
+      "Entries": [
+        "[FNR] Great Cavern and Furnace Investigate Treasure Container"
+      ]
+    },
+    {
+      "ID": 40200040,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace Investigate Treasure Container 02"
+      ]
+    },
+    {
+      "ID": 40200050,
+      "Entries": [
+        "[FNR] Large cavity and furnace hacking furnace entrance door"
+      ]
+    },
+    {
+      "ID": 40200060,
+      "Entries": [
+        "[FNR] Cavern and Furnace Hacking Safe Door_Outbound"
+      ]
+    },
+    {
+      "ID": 40200100,
+      "Entries": [
+        "[FNR] Great Cavity and Furnace_Archive Remnants_M.AI Remains"
+      ]
+    },
+    {
+      "ID": 40200110,
+      "Entries": [
+        "[FNR] Cavern and Furnace_Archive Remnants_Ghost Remnants"
+      ]
+    },
+    {
+      "ID": 40210000,
+      "Entries": [
+        "[FNR] Biological Weapon Inspect Treasure Container 01"
+      ]
+    },
+    {
+      "ID": 40210010,
+      "Entries": [
+        "[FNR] Biological Weapon Archive Remnants_Nameless Rubiconian"
+      ]
+    },
+    {
+      "ID": 40300000,
+      "Entries": [
+        "[FNR] Ruins Investigate Treasure Container_Lake"
+      ]
+    },
+    {
+      "ID": 40300001,
+      "Entries": [
+        "[FNR] Ruins Investigate Treasure Container_Escape Point"
+      ]
+    },
+    {
+      "ID": 40300010,
+      "Entries": [
+        "[FNR] Ruins Archive Remnants_Ghost MT"
+      ]
+    },
+    {
+      "ID": 40300011,
+      "Entries": [
+        "[FNR] Ruins Archive Remnants_MAI Remnants"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "[FNR] Railroad Reverse Run Door Hacking"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "[FNR] Jailbreak Hacking Beacon Launch"
+      ]
+    },
+    {
+      "ID": 42000010,
+      "Entries": [
+        "[FNR] Jailbreak Archive Remnants_Communist MT"
+      ]
+    },
+    {
+      "ID": 50100010,
+      "Entries": [
+        "[FNR] Gun pedestal"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "[FNR] Straight city_for dome entrance"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "[FNR] Straight city_for dome exit"
+      ]
+    },
+    {
+      "ID": 50200011,
+      "Entries": [
+        "[FNR] Straight city_passage exit"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "[FNR] New B-tier people hacking_a little bit?"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "[FNR] New B-tier people Hacking Lv2"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "[FNR] Strike street reverse run_trap room door hacking"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "[FNR] City at Sea_US Drone Hacking"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "[FNR] Ocean City Control Device Hacking"
+      ]
+    },
+    {
+      "ID": 51000020,
+      "Entries": [
+        "[FNR] City on the Ocean - Final hack of the control device"
+      ]
+    },
+    {
+      "ID": 51000030,
+      "Entries": [
+        "[FNR] Ocean City Search Treasure Container"
+      ]
+    },
+    {
+      "ID": 51000040,
+      "Entries": [
+        "[FNR] City at Sea Archive Remnants_Rubiconian"
+      ]
+    },
+    {
+      "ID": 51000050,
+      "Entries": [
+        "[FNR] City on the Sea_Hacking_c3100_Flight MT"
+      ]
+    },
+    {
+      "ID": 51100000,
+      "Entries": [
+        "[FNR] Recover underground facility_hacking_c9980_dummy character"
+      ]
+    },
+    {
+      "ID": 51100001,
+      "Entries": [
+        "[FNR] Recapture of underground facilities_for door assets"
+      ]
+    },
+    {
+      "ID": 51100010,
+      "Entries": [
+        "[FNR] Recapture of underground facilities_for control room battery"
+      ]
+    },
+    {
+      "ID": 79200050,
+      "Entries": [
+        "[FNR] Submission Tute A layer_Door 01"
+      ]
+    },
+    {
+      "ID": 79900010,
+      "Entries": [
+        "[FNR] Exterminate behind walls_for indoor entrance hacking"
+      ]
+    },
+    {
+      "ID": 79900020,
+      "Entries": [
+        "[FNR] Exterminate the back of the wall_for indoor second room hacking"
+      ]
+    },
+    {
+      "ID": 79900030,
+      "Entries": [
+        "[FNR] Annihilation behind the wall for archive debris"
+      ]
+    },
+    {
+      "ID": 79900040,
+      "Entries": [
+        "[FNR] Annihilation behind the wall for archive debris_Ghost debris"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[FNR] Test Check Treasure Container"
+      ]
+    },
+    {
+      "ID": 90000100,
+      "Entries": [
+        "[FNR] Test Hacking"
+      ]
+    },
+    {
+      "ID": 90000200,
+      "Entries": [
+        "[FNR] Test Hacking Lv2"
+      ]
+    },
+    {
+      "ID": 90000300,
+      "Entries": [
+        "[FNR] Test Hacking Lv3"
+      ]
+    },
+    {
+      "ID": 90000400,
+      "Entries": [
+        "[FNR] Template_AEG008_030"
+      ]
+    },
+    {
+      "ID": 99000001,
+      "Entries": [
+        "[FNR] Template_What to display from the wall"
+      ]
+    },
+    {
+      "ID": 99000100,
+      "Entries": [
+        "[FNR] Template_What to display in the air"
+      ]
+    },
+    {
+      "ID": 99000200,
+      "Entries": [
+        "[FNR] Template_AEG008_030"
+      ]
+    },
+    {
+      "ID": 99000201,
+      "Entries": [
+        "[FNR] Template_AEG084_910"
+      ]
+    },
+    {
+      "ID": 99000202,
+      "Entries": [
+        "[FNR] Template_AEG084_920"
+      ]
+    },
+    {
+      "ID": 99000203,
+      "Entries": [
+        "[FNR] Template_AEG203_910"
+      ]
+    },
+    {
+      "ID": 99000204,
+      "Entries": [
+        "[FNR] Template_Archive debris_Ghost_Locus"
+      ]
+    },
+    {
+      "ID": 99000205,
+      "Entries": [
+        "[FNR] Template_Archive debris_Ghost_Sleeping"
+      ]
+    },
+    {
+      "ID": 99001001,
+      "Entries": [
+        "[FNR] Template_hacking_c3150_Juggernaut"
+      ]
+    },
+    {
+      "ID": 99001002,
+      "Entries": [
+        "[FNR] Template_Hacking_c5000_Guard Mecha (Aerial)"
+      ]
+    },
+    {
+      "ID": 99001003,
+      "Entries": [
+        "[FNR] Template_Hacking_c7270_Ground Force Artillery Sniper (Large)"
+      ]
+    },
+    {
+      "ID": 99001004,
+      "Entries": [
+        "[FNR] Template_hacking_c9980_dummy character"
+      ]
+    },
+    {
+      "ID": 99001005,
+      "Entries": [
+        "[FNR] Template_Hacking_AEG410_360_Dummy character"
+      ]
+    },
+    {
+      "ID": 99001100,
+      "Entries": [
+        "[FNR] Template_Hacking_Communist MT remains"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "[FNR] Template_What to display from the wall"
+      ]
+    },
+    {
+      "ID": 99990010,
+      "Entries": [
+        "[FNR] Template_What to display in the air"
+      ]
+    },
+    {
+      "ID": 99990020,
+      "Entries": [
+        "[FNR] Template_Things to consider about OBJ itself"
+      ]
+    },
+    {
+      "ID": 99990030,
+      "Entries": [
+        "[FNR] Template_Hacking"
+      ]
+    }
+  ]
+}

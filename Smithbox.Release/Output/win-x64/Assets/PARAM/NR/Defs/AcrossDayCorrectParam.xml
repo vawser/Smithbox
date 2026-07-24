@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>ACROSS_DAY_CORRECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="u8 unknown_0a"/>
+    <Field Def="u8 unknown_0b"/>
+    <Field Def="u8 unknown_0c"/>
+    <Field Def="u8 unknown_0d"/>
+    
+    <Field Def="f32 unknown_1"/>
+    <Field Def="f32 unknown_2"/>
+    <Field Def="f32 unknown_3"/>
+    <Field Def="f32 unknown_4"/>
+    <Field Def="f32 unknown_5"/>
+    <Field Def="f32 unknown_6"/>
+    <Field Def="f32 unknown_7"/>
+    <Field Def="f32 unknown_8"/>
+    <Field Def="f32 unknown_9"/>
+    <Field Def="f32 unknown_10"/>
+    <Field Def="f32 unknown_11"/>
+    <Field Def="f32 unknown_12"/>
+    
+    <Field Def="dummy8 padding_1[20]"/>
+    
+    <Field Def="f32 unknown_18"/>
+    <Field Def="f32 unknown_19"/>
+    <Field Def="f32 unknown_20"/>
+    <Field Def="f32 unknown_21"/>
+    <Field Def="f32 unknown_22"/>
+    <Field Def="f32 unknown_23"/>
+    <Field Def="f32 unknown_24"/>
+    <Field Def="f32 unknown_25"/>
+    <Field Def="f32 unknown_26"/>
+    <Field Def="f32 unknown_27"/>
+    <Field Def="f32 unknown_28"/>
+    <Field Def="f32 unknown_29"/>
+    <Field Def="f32 unknown_30"/>
+    <Field Def="f32 unknown_31"/>
+  </Fields>
+</PARAMDEF>

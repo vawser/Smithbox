@@ -1,0 +1,14 @@
+{
+  "id": "304",
+  "name": "Milfanito (Hollow)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "Name": "UnlockParam_MenuCommand",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "AC lifted -- AC解禁"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Assembly lifted -- アセンブル解禁"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Paint ban lifted -- ペイント解禁"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Coloring lifted -- カラーリング解禁"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Marking lifted -- マーキング解禁"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Decal pasting ban lifted -- デカール貼り付け解禁"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Image creation lifted -- イメージ作成解禁"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "AC DATA ban lifted -- AC DATA解禁"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "AC TEST lifted -- AC TEST解禁"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "SHOP lifted -- SHOP解禁"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "BUY lifted -- BUY解禁"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "SALE lifted -- SALE解禁"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "TRY ON SHOP lifted -- TRY ON SHOP解禁"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "ONLINE ARENA lifted -- ONLINE ARENA解禁"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "AC ARENA lifted -- AC ARENA解禁"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "DEPLOY lifted -- DEPLOY解禁"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "MISSION lifted -- MISSION解禁"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "FREE MISSION lifted -- FREE MISSION解禁"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "OS enhancement lifted -- OS強化解禁"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Mercenary rank unlocked -- 傭兵ランク解禁"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Training ban lifted -- トレーニング解禁"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "for testing -- テスト用"
+      ]
+    }
+  ]
+}

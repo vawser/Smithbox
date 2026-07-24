@@ -1,0 +1,3003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SP_EFFECT_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10010000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10020000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 iconId = -1">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンID(-1の時は、アイコン必要なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10160000</SortID>
+    </Field>
+    <Field Def="f32 conditionHp = -1">
+      <DisplayName>発動条件　残りHP比率[%]</DisplayName>
+      <Description>残りHPが、maxHPの何%になったら発動するかを設定</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070000</SortID>
+      <UnkC8>発動内容</UnkC8>
+    </Field>
+    <Field Def="f32 effectEndurance">
+      <DisplayName>効果持続時間　時間[s]</DisplayName>
+      <Description>変化持続時間　/-1で永続 /0で瞬間1回限り</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070020</SortID>
+      <UnkC8>発動内容</UnkC8>
+    </Field>
+    <Field Def="f32 motionInterval">
+      <DisplayName>発動間隔[s]</DisplayName>
+      <Description>何秒間隔で発生するのかを設定</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070030</SortID>
+      <UnkC8>発動内容</UnkC8>
+    </Field>
+    <Field Def="f32 maxHpRate = 1">
+      <DisplayName>最大HP倍率[%]</DisplayName>
+      <Description>最大HPに補正をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10250000</SortID>
+      <UnkC8>最大倍率</UnkC8>
+    </Field>
+    <Field Def="f32 maxMpRate = 1">
+      <DisplayName>最大MP倍率[%]</DisplayName>
+      <Description>最大MPに補正をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 maxStaminaRate = 1">
+      <DisplayName>最大スタミナ倍率[%]</DisplayName>
+      <Description>最大SPに補正をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 slashDamageCutRate = 1">
+      <DisplayName>防御側：斬撃ダメージ倍率</DisplayName>
+      <Description>斬撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 blowDamageCutRate = 1">
+      <DisplayName>防御側：打撃ダメージ倍率</DisplayName>
+      <Description>打撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 thrustDamageCutRate = 1">
+      <DisplayName>防御側：刺突ダメージ倍率</DisplayName>
+      <Description>刺突ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 neutralDamageCutRate = 1">
+      <DisplayName>防御側：無属性ダメージ倍率</DisplayName>
+      <Description>無属性ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370000</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 magicDamageCutRate = 1">
+      <DisplayName>防御側：ENダメージ倍率</DisplayName>
+      <Description>ENダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370010</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 fireDamageCutRate = 1">
+      <DisplayName>防御側：爆発/燃焼ダメージ倍率</DisplayName>
+      <Description>爆発/燃焼ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370020</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 thunderDamageCutRate = 1">
+      <DisplayName>防御側：コーラルダメージ倍率</DisplayName>
+      <Description>コーラルダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370030</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 physicsAttackRate = 1">
+      <DisplayName>攻撃側：実弾ダメージ倍率</DisplayName>
+      <Description>実弾ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370040</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 magicAttackRate = 1">
+      <DisplayName>攻撃側：ENダメージ倍率</DisplayName>
+      <Description>ENダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370060</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 fireAttackRate = 1">
+      <DisplayName>攻撃側：爆発/燃焼ダメージ倍率</DisplayName>
+      <Description>爆発/燃焼ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370070</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 thunderAttackRate = 1">
+      <DisplayName>攻撃側：コーラルダメージ倍率</DisplayName>
+      <Description>コーラルダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370080</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 physicsAttackPowerRate = 1">
+      <DisplayName>実弾攻撃力倍率</DisplayName>
+      <Description>実弾攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10330000</SortID>
+      <UnkC8>攻撃力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 magicAttackPowerRate = 1">
+      <DisplayName>EN攻撃力倍率</DisplayName>
+      <Description>EN攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10330020</SortID>
+      <UnkC8>攻撃力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 fireAttackPowerRate = 1">
+      <DisplayName>爆発/燃焼攻撃力倍率</DisplayName>
+      <Description>爆発/燃焼攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10330030</SortID>
+      <UnkC8>攻撃力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 thunderAttackPowerRate = 1">
+      <DisplayName>コーラル攻撃力倍率</DisplayName>
+      <Description>コーラル攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10330040</SortID>
+      <UnkC8>攻撃力倍率</UnkC8>
+    </Field>
+    <Field Def="s32 physicsAttackPower">
+      <DisplayName>実弾攻撃力[point]</DisplayName>
+      <Description>実弾攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10340000</SortID>
+      <UnkC8>攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 magicAttackPower">
+      <DisplayName>EN攻撃力[point]</DisplayName>
+      <Description>EN攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10340020</SortID>
+      <UnkC8>攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 fireAttackPower">
+      <DisplayName>爆発/燃焼攻撃力[point]</DisplayName>
+      <Description>爆発/燃焼攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10340030</SortID>
+      <UnkC8>攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 thunderAttackPower">
+      <DisplayName>コーラル攻撃力[point]</DisplayName>
+      <Description>コーラル攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10340040</SortID>
+      <UnkC8>攻撃力</UnkC8>
+    </Field>
+    <Field Def="f32 physicsDiffenceRate = 1">
+      <DisplayName>実弾防御力倍率</DisplayName>
+      <Description>実弾防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10350000</SortID>
+      <UnkC8>防御力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 magicDiffenceRate = 1">
+      <DisplayName>EN防御力倍率</DisplayName>
+      <Description>EN防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10350010</SortID>
+      <UnkC8>防御力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 fireDiffenceRate = 1">
+      <DisplayName>爆発/燃焼防御力倍率</DisplayName>
+      <Description>爆発/燃焼防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10350020</SortID>
+      <UnkC8>防御力倍率</UnkC8>
+    </Field>
+    <Field Def="f32 thunderDiffenceRate = 1">
+      <DisplayName>コーラル防御力倍率</DisplayName>
+      <Description>コーラル防御力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10350030</SortID>
+      <UnkC8>防御力倍率</UnkC8>
+    </Field>
+    <Field Def="s32 physicsDiffence">
+      <DisplayName>実弾防御力[point]</DisplayName>
+      <Description>実弾防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10360000</SortID>
+      <UnkC8>防御力</UnkC8>
+    </Field>
+    <Field Def="s32 magicDiffence">
+      <DisplayName>EN防御力[point]</DisplayName>
+      <Description>EN防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10360010</SortID>
+      <UnkC8>防御力</UnkC8>
+    </Field>
+    <Field Def="s32 fireDiffence">
+      <DisplayName>爆発/燃焼防御力[point]</DisplayName>
+      <Description>爆発/燃焼防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10360020</SortID>
+      <UnkC8>防御力</UnkC8>
+    </Field>
+    <Field Def="s32 thunderDiffence">
+      <DisplayName>コーラル防御力[point]</DisplayName>
+      <Description>コーラル防御力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10360030</SortID>
+      <UnkC8>防御力</UnkC8>
+    </Field>
+    <Field Def="f32 NoGuardDamageRate = 1">
+      <DisplayName>隙ダメージ倍率</DisplayName>
+      <Description>隙のときのダメージ倍率を、設定した数値に置き換える（ダメージ側に設定）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 vitalSpotChangeRate = -1">
+      <DisplayName>スィートスポット倍率</DisplayName>
+      <Description>スィートスポットのダメージ計算を指定した数値に差し替える(急所ダメージ補正) -1.0で無効</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 normalSpotChangeRate = -1">
+      <DisplayName>ノーマルヒット倍率</DisplayName>
+      <Description>ノーマルヒットのダメージ計算を指定した数値に差し替える  -1.0で無効</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 maxHpChangeRate">
+      <DisplayName>最大HP変化倍率</DisplayName>
+      <Description>最大HPに対して、設定された倍率をかけて増減させる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10250010</SortID>
+      <UnkC8>最大倍率</UnkC8>
+    </Field>
+    <Field Def="s32 behaviorId = -1">
+      <DisplayName>行動ID指定枠</DisplayName>
+      <Description>特殊効果から行動IDを使ってダメージを与える場合に指定-1で無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10230000</SortID>
+    </Field>
+    <Field Def="f32 changeHpRate">
+      <DisplayName>HPダメージ量[%]</DisplayName>
+      <Description>一度の発動で最大HPの何%分を減算（または加算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280000</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="s32 changeHpPoint">
+      <DisplayName>HPダメージ[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <Minimum>-99999999</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10280010</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="f32 changeMpRate">
+      <DisplayName>MPダメージ量[%]</DisplayName>
+      <Description>一度の発動で最大MPの何%分を減算（または加算）するかを設定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeMpPoint">
+      <DisplayName>MPダメージ[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 mpRecoverChangeSpeed">
+      <DisplayName>MP回復速度変化[point]</DisplayName>
+      <Description>回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 changeStaminaRate">
+      <DisplayName>スタミナダメージ量[%]</DisplayName>
+      <Description>一度の発動で最大スタミナの何%分を減算（または加算）するかを設定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeStaminaPoint">
+      <DisplayName>スタミナダメージ[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 staminaRecoverChangeSpeed">
+      <DisplayName>スタミナ回復速度変化[point]</DisplayName>
+      <Description>回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 magicEffectTimeChange">
+      <DisplayName>魔法効果時間変化</DisplayName>
+      <Description>効果持続時間に0.1秒以上設定されている魔法のみ、効果持続時間に設定されている時間を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 insideDurability">
+      <DisplayName>耐久度変化：内部損耗度[point]</DisplayName>
+      <Description>内部損耗度に数値分を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 maxDurability">
+      <DisplayName>耐久度変化：最大損耗度変化[point]</DisplayName>
+      <Description>耐久度の内部損耗度の最大値に、設定された数値を加算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 staminaAttackRate = 1">
+      <DisplayName>スタミナ攻撃力倍率</DisplayName>
+      <Description>スタミナ攻撃力に、倍率をかける(1.0 1倍 0.5 半分）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 burnAttackPower">
+      <DisplayName>炎上耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【炎上耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10430000</SortID>
+      <UnkC8>耐性攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 registStun">
+      <DisplayName>スタン耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【スタン耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10430010</SortID>
+      <UnkC8>耐性攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 registHighPlasma">
+      <DisplayName>強プラズマ耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【強プラズマ耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10430020</SortID>
+      <UnkC8>耐性攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 registCurse">
+      <DisplayName>呪耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【呪耐性値】に加算する数値</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 fallDamageRate">
+      <DisplayName>落下ダメージ倍率</DisplayName>
+      <Description>落下時のダメージ計算に倍率をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 soulRate">
+      <DisplayName>取得ソウル倍率</DisplayName>
+      <Description>敵を倒した時の取得ソウル量が、指定倍数分上乗せされる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10450000</SortID>
+    </Field>
+    <Field Def="f32 equipWeightChangeRate">
+      <DisplayName>装備重量変化倍率</DisplayName>
+      <Description>最大装備重量に、設定された倍率をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 allItemWeightChangeRate">
+      <DisplayName>所持重量変化倍率</DisplayName>
+      <Description>最大所持重量に、設定された倍率をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 soul">
+      <DisplayName>ソウル加算</DisplayName>
+      <Description>所持ソウルに、設定値を加算する</Description>
+      <Minimum>-99999999</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10460000</SortID>
+    </Field>
+    <Field Def="s32 animIdOffset = -1">
+      <DisplayName>アニメIDオフセット(無効-1)</DisplayName>
+      <Description>アニメIDオフセット(無効-1)</Description>
+      <Minimum>-99999999</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10240000</SortID>
+    </Field>
+    <Field Def="f32 haveSoulRate = 1">
+      <DisplayName>所持ソウル率</DisplayName>
+      <Description>敵周回効果用。設定されているキャラから外にソウルが出て行く時に適用されます。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 targetPriority">
+      <DisplayName>ターゲット優先度加算分</DisplayName>
+      <Description>マルチプレイ時、敵から優先的にターゲットとして狙われるようになる。プライオリティの加算。０がデフォルト。プラス値でよく狙われるようになる。マイナスは、－１まで。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>10481000</SortID>
+    </Field>
+    <Field Def="f32 sightRangeMag_forEnemy = 1">
+      <DisplayName>視覚距離倍率_見られる側_非戦闘</DisplayName>
+      <Description>視覚距離倍率_見られる側_非戦闘</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490110</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMag_forEnemyBattle = 1">
+      <DisplayName>視覚距離倍率_見られる側_戦闘中</DisplayName>
+      <Description>視覚距離倍率_見られる側_戦闘中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490120</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 hearingSearchEnemyRate = 1">
+      <DisplayName>音半径倍率(発する方)</DisplayName>
+      <Description>AIの聴覚索敵範囲の倍率。1がデフォルト。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10490150</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="s32 setCurseResistPoint = -1">
+      <DisplayName>呪耐性上書き[point]</DisplayName>
+      <Description>状態耐性値をこの値にする</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 registBurnChangeRate = 1">
+      <DisplayName>炎上耐性変化倍率</DisplayName>
+      <Description>炎上耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10420000</SortID>
+      <UnkC8>耐性変化倍率</UnkC8>
+    </Field>
+    <Field Def="f32 registStunChangeRate = 1">
+      <DisplayName>スタン耐性変化倍率</DisplayName>
+      <Description>スタン耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10420010</SortID>
+      <UnkC8>耐性変化倍率</UnkC8>
+    </Field>
+    <Field Def="f32 registHighPlasmaChangeRate = 1">
+      <DisplayName>強プラズマ耐性変化倍率</DisplayName>
+      <Description>強プラズマ耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10420020</SortID>
+      <UnkC8>耐性変化倍率</UnkC8>
+    </Field>
+    <Field Def="f32 registCurseChangeRate = 1">
+      <DisplayName>呪耐性変化倍率</DisplayName>
+      <Description>呪耐性値に設定された倍率をかける</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 soulStealRate">
+      <DisplayName>ソウルスティール係数</DisplayName>
+      <Description>NPCがソウルスティールで奪われるHPに対する防御力</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 lifeReductionRate">
+      <DisplayName>防御：寿命係数</DisplayName>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 hpRecoverRate = 1">
+      <DisplayName>HP回復量係数</DisplayName>
+      <Description>HPが減るときは、効かない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 replaceSpEffectId = -1">
+      <DisplayName>差し替える特殊効果</DisplayName>
+      <Description>寿命が尽きた時に追加される特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10090000</SortID>
+    </Field>
+    <Field Def="s32 cycleOccurrenceSpEffectId = -1">
+      <DisplayName>周期発生特殊効果</DisplayName>
+      <Description>発動周期毎に発生する特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10080000</SortID>
+    </Field>
+    <Field Def="s32 atkOccurrenceSpEffectId = -1">
+      <DisplayName>攻撃発生特殊効果</DisplayName>
+      <Description>攻撃Hit時に発生する特殊効果ID(-1は無視)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10100000</SortID>
+    </Field>
+    <Field Def="f32 guardDefFlickPowerRate = 1">
+      <DisplayName>ガード時はじき防御力アップ倍率</DisplayName>
+      <Description>ガード時のはじき防御力補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 guardStaminaCutRate = 1">
+      <DisplayName>ガード時スタミナカット倍率</DisplayName>
+      <Description>ガード時のスタミナカット率補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s16 rayCastPassedTime = -1">
+      <DisplayName>視線通過：発動時間[ms]</DisplayName>
+      <Description>視線通過：発動時間[ms]（邪眼用）</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>30000</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s16 changeSuperArmorPoint">
+      <DisplayName>最大SA加算値[point]</DisplayName>
+      <Description>スーパーアーマー値に加算する値</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s16 bowDistRate">
+      <DisplayName>弓飛距離補正[％]</DisplayName>
+      <Description>武器の飛距離補正に加算される補正値</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 spCategory">
+      <DisplayName>特殊効果カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_SPCATEGORY</Enum>
+      <Description>特殊効果の上書きなどの挙動を決めるカテゴリ</Description>
+      <Maximum>60000</Maximum>
+      <SortID>10030000</SortID>
+    </Field>
+    <Field Def="u8 categoryPriority">
+      <DisplayName>カテゴリ内優先度</DisplayName>
+      <Description>同一カテゴリ内での優先度（低い方が優先）</Description>
+      <SortID>10040000</SortID>
+    </Field>
+    <Field Def="s8 saveCategory = -1">
+      <DisplayName>保存カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_SAVE_CATEGORY</Enum>
+      <Description>特殊効果を保存するカテゴリ</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 changeMagicSlot">
+      <DisplayName>魔法登録枠変化　魔法スロット</DisplayName>
+      <Description>魔法登録枠を指定数増やすことが出来る</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 changeMiracleSlot">
+      <DisplayName>奇跡登録枠変化　奇跡スロット</DisplayName>
+      <Description>軌跡登録枠を指定数増やすことが出来る</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 heroPointDamage">
+      <DisplayName>人間性ダメージ値</DisplayName>
+      <Description>人間性値に与えるダメージ値</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 defFlickPower">
+      <DisplayName>はじき防御力_上書き</DisplayName>
+      <Description>はじき防御力を上書きする値を設定</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 flickDamageCutRate">
+      <DisplayName>はじき時ダメージ減衰率[%]_上書き</DisplayName>
+      <Description>はじき時のダメージ減衰率を上書きする値を設定</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 highPlasmaDamageRate = 100">
+      <DisplayName>強プラズマダメージ補正倍率</DisplayName>
+      <SortID>10380170</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_None">
+      <DisplayName>DL0（無反応）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv0を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290000</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_S">
+      <DisplayName>DL1（加算）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv1を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290010</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_M">
+      <DisplayName>DL2（被弾ストップ）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv2を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290020</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_L">
+      <DisplayName>DL3（小よろけ）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv3を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290030</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_BlowM">
+      <DisplayName>DL4（大よろけ）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv4を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290040</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_Push">
+      <DisplayName>DL5（吹っ飛び）</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv5を差し替えるタイプを指定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290050</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_Strike">
+      <DisplayName>ダメージレベル差し替え_DL6</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv6を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_BlowS">
+      <DisplayName>ダメージレベル差し替え_DL7</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv7を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_Min">
+      <DisplayName>ダメージレベル差し替え_DL8</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv8を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_Uppercut">
+      <DisplayName>ダメージレベル差し替え_DL9</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv9を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_BlowLL">
+      <DisplayName>ダメージレベル差し替え_DL10</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv10を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 dmgLv_Breath">
+      <DisplayName>ダメージレベル差し替え_DL11</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>ダメージLv11を差し替えるタイプを指定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 atkAttribute">
+      <DisplayName>実弾属性</DisplayName>
+      <Enum>ATKPARAM_ATKATTR_TYPE</Enum>
+      <Description>特殊効果に設定する実弾属性</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 spAttribute">
+      <DisplayName>特殊属性</DisplayName>
+      <Enum>ATKPARAM_SPATTR_TYPE</Enum>
+      <Description>特殊効果に設定する特殊属性</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 stateInfo">
+      <DisplayName>状態変化タイプ</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <Description>状態変化の判定フラグ</Description>
+      <Maximum>60000</Maximum>
+      <SortID>10060000</SortID>
+    </Field>
+    <Field Def="u8 wepParamChange">
+      <DisplayName>対武器パラメータ変化</DisplayName>
+      <Enum>SP_EFE_WEP_CHANGE_PARAM</Enum>
+      <Description>どの武器に対して効果を発揮するかを指定する。制限無しの場合は敵も含めた全ての攻撃・防御が対象</Description>
+      <SortID>10110000</SortID>
+    </Field>
+    <Field Def="u8 moveType">
+      <DisplayName>移動タイプ</DisplayName>
+      <Enum>SP_EFFECT_MOVE_TYPE</Enum>
+      <Description>移動タイプ。移動速度を変更する。</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 lifeReductionType">
+      <DisplayName>防御：寿命減少タイプ</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <EditFlags>17</EditFlags>
+      <Maximum>255</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 throwCondition">
+      <DisplayName>投げ条件</DisplayName>
+      <Enum>SP_EFFECT_THROW_CONDITION_TYPE</Enum>
+      <Description>投げ条件。投げマスクに影響する。</Description>
+      <SortID>10220000</SortID>
+    </Field>
+    <Field Def="s8 addBehaviorJudgeId_condition = -1">
+      <DisplayName>行動判定IDに加算する条件値</DisplayName>
+      <Description>行動判定ＩＤに値を加算する条件値(Def:-1)</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 addBehaviorJudgeId_add">
+      <DisplayName>行動判定IDに加算する加算値</DisplayName>
+      <Description>行動判定IDの加算値 ０の場合は行動を切り替えるのではなく、行動しなくなります。</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetSelf:1">
+      <DisplayName>効果対象：所属　自分</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetFriend:1">
+      <DisplayName>効果対象：所属　味方</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetEnemy:1">
+      <DisplayName>効果対象：所属　敵</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetPlayer:1">
+      <DisplayName>効果対象：操作　PC</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetAI:1">
+      <DisplayName>効果対象：操作　AI</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetLive:1">
+      <DisplayName>効果対象：状態　生存</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetGhost:1">
+      <DisplayName>効果対象：状態　全ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetWhiteGhost:1">
+      <DisplayName>効果対象：状態　白ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetBlackGhost:1">
+      <DisplayName>効果対象：状態　黒ゴースト</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetAttacker:1">
+      <DisplayName>効果対象：攻撃者に発動</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ダメージ後に攻撃者に特殊効果を適用（防御側には入れない）</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 dispIconNonactive:1">
+      <DisplayName>発動してなくてもアイコン表示</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発動待ちの状態でもアイコンを表示する。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 useSpEffectEffect:1">
+      <DisplayName>特殊効果エフェクトを使用するか（未使用）</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特殊効果エフェクトを使用するか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 bAdjustMagicAblity:1">
+      <DisplayName>魔力補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>魔力補正するか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 bAdjustFaithAblity:1">
+      <DisplayName>信仰補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>信仰補正するか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 bGameClearBonus:1">
+      <DisplayName>周回ボーナス用か？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ゲームクリア周回ボーナス用かどうか。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10200000</SortID>
+    </Field>
+    <Field Def="u8 magParamChange:1">
+      <DisplayName>対魔法パラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>魔法に対して効果を発揮するかしないかを設定する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 miracleParamChange:1">
+      <DisplayName>対奇跡パラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>奇跡に対して効果を発揮するかしないかを設定する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 clearSoul:1">
+      <DisplayName>所持ソウルクリアするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>所持ソウルが0になります。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestSOS:1">
+      <DisplayName>SOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にSOSサイン要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestBlackSOS:1">
+      <DisplayName>ブラックSOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にブラックSOSサイン要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestForceJoinBlackSOS:1">
+      <DisplayName>ブラック強制参加SOSサイン　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にブラック強制参加SOSサイン要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestKickSession:1">
+      <DisplayName>キック　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にキック要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestLeaveSession:1">
+      <DisplayName>退出　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時に退出要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 requestNpcInveda:1">
+      <DisplayName>NPCへの侵入　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>チェックが付いている場合、発動時にNPCへの侵入要求を発行</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 noDead:1">
+      <DisplayName>成仏不可　判定フラグ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>死体状態になれるかどうか。このチェックが付いていると、死亡状態にならない</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 bCurrHPIndependeMaxHP:1">
+      <DisplayName>最大HPが増減しても、現在HPは影響しないか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>最大HPが増減しても、現在HPは影響しないか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10210000</SortID>
+    </Field>
+    <Field Def="u8 corrosionIgnore:1">
+      <DisplayName>腐食無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>【状態変化タイプ】が【腐食】による【耐久度】減少を無視する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 sightSearchCutIgnore:1">
+      <DisplayName>視覚索敵カット無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>視覚索敵無効を無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>10490030</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u8 hearingSearchCutIgnore:1">
+      <DisplayName>聴覚索敵カット無視</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>聴覚索敵無効を無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>10490040</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u8 antiMagicIgnore:1">
+      <DisplayName>アンチマジック無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>アンチマジック範囲でも魔法を使用できる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 fakeTargetIgnore:1">
+      <DisplayName>偽ターゲット無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した偽ターゲットに引っかからなくなる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 fakeTargetIgnoreUndead:1">
+      <DisplayName>偽ターゲット無効_不死系</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した不死系の偽ターゲットに引っかからなくなる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 fakeTargetIgnoreAnimal:1">
+      <DisplayName>偽ターゲット無効_獣系</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発生した獣系の偽ターゲットに引っかからなくなる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 disableDepletedUraniumToxic:1">
+      <DisplayName>劣化ウラン毒無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると劣化ウラン毒にかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10300030</SortID>
+      <UnkC8>状態異常無効</UnkC8>
+    </Field>
+    <Field Def="u8 disableBurn:1">
+      <DisplayName>炎上無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると炎上にかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10300000</SortID>
+      <UnkC8>状態異常無効</UnkC8>
+    </Field>
+    <Field Def="u8 disableStun:1">
+      <DisplayName>スタン無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっているとスタンにかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10300010</SortID>
+      <UnkC8>状態異常無効</UnkC8>
+    </Field>
+    <Field Def="u8 disableHighPlasma:1">
+      <DisplayName>強プラズマ無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると強プラズマにかからなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10300020</SortID>
+      <UnkC8>状態異常無効</UnkC8>
+    </Field>
+    <Field Def="u8 disableCurse:1">
+      <DisplayName>呪無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると呪いにかからなくなる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 stopCurse:1">
+      <DisplayName>呪停止</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この効果がかかっていると呪の増減がなくなる</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 enableLifeTime:1">
+      <DisplayName>寿命延長するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>TAEによるフラグ設定時に寿命延長するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10120000</SortID>
+    </Field>
+    <Field Def="u8 hasTarget:1">
+      <DisplayName>敵を把握しているか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>敵を把握しているか？：[発動条件](邪眼使用者用)</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isFireDamageCancel:1">
+      <DisplayName>解除条件:爆発/燃焼ダメージ</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>炎ダメージによる特殊効果の解除を行うか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isExtendSpEffectLife:1">
+      <DisplayName>寿命延長効果で延長するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>寿命延長効果が掛かっている時に延長対象になるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10130000</SortID>
+    </Field>
+    <Field Def="u8 isDisableNetSync:1">
+      <DisplayName>ネット同期無効</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>同期を無効にするフラグ</Description>
+      <Maximum>1</Maximum>
+      <SortID>10135000</SortID>
+    </Field>
+    <Field Def="u8 bAdjustStrengthAblity:1">
+      <DisplayName>筋力補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>筋力補正するか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 bAdjustAgilityAblity:1">
+      <DisplayName>技量補正するか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>技量補正するか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 chargeAttackParamChange:1">
+      <DisplayName>対溜めパラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>溜め攻撃に対して効果を発揮するかしないかを設定する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 throwAttackParamChange:1">
+      <DisplayName>対投げパラメータ変化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>投げ攻撃に対して効果を発揮するかしないかを設定する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType0:1 = 1">
+      <DisplayName>誓約0</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約0</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType1:1 = 1">
+      <DisplayName>誓約1</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約1</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType2:1 = 1">
+      <DisplayName>誓約2</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約2</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType3:1 = 1">
+      <DisplayName>誓約3</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約3</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType4:1 = 1">
+      <DisplayName>誓約4</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約4</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType5:1 = 1">
+      <DisplayName>誓約5</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約5</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType6:1 = 1">
+      <DisplayName>誓約6</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約6</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType7:1 = 1">
+      <DisplayName>誓約7</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約7</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType8:1 = 1">
+      <DisplayName>誓約8</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約8</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType9:1 = 1">
+      <DisplayName>誓約9</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約9</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType10:1 = 1">
+      <DisplayName>誓約10</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約10</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType11:1 = 1">
+      <DisplayName>誓約11</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約11</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType12:1 = 1">
+      <DisplayName>誓約12</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約12</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType13:1 = 1">
+      <DisplayName>誓約13</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約13</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType14:1 = 1">
+      <DisplayName>誓約14</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約14</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 vowType15:1 = 1">
+      <DisplayName>誓約15</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>誓約15</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 repAtkDmgLv">
+      <DisplayName>攻撃側ダメージレベル差し替え</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>攻撃側のダメージレベルがこの値に指し換わる</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290060</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMag_forMe = 1">
+      <DisplayName>視覚距離倍率_見る側_非戦闘</DisplayName>
+      <Description>視覚距離倍率_見る側_非戦闘</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490050</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMag_forMeBattle = 1">
+      <DisplayName>視覚距離倍率_見る側_戦闘中</DisplayName>
+      <Description>視覚距離倍率_見る側_戦闘中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490060</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetOpposeTarget:1">
+      <DisplayName>効果対象：●敵対</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140000</SortID>
+      <UnkC8>効果対象</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetFriendlyTarget:1">
+      <DisplayName>効果対象：○味方</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140010</SortID>
+      <UnkC8>効果対象</UnkC8>
+    </Field>
+    <Field Def="u8 effectTargetSelfTarget:1">
+      <DisplayName>効果対象：自分</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140020</SortID>
+      <UnkC8>効果対象</UnkC8>
+    </Field>
+    <Field Def="s8 changeTeamType = -1">
+      <DisplayName>チームタイプ変更</DisplayName>
+      <Enum>SP_EFFECT_CHANGE_TEAM_TYPE</Enum>
+      <Description>指定したチームタイプに上書きする</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10150000</SortID>
+    </Field>
+    <Field Def="s16 dmypolyId = -1">
+      <DisplayName>ダミポリID</DisplayName>
+      <Description>ダミポリID。ダミポリID範囲は0～999.1000,10000の位はカテゴリ番号.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>10170000</SortID>
+    </Field>
+    <Field Def="s32 vfxId = -1">
+      <DisplayName>特殊効果VfxId_０</DisplayName>
+      <Description>特殊効果VfxId(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180000</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 accumuOverFireId = -1">
+      <DisplayName>元気玉上限時発動特殊効果Id</DisplayName>
+      <Description>元気玉上限時発動特殊効果Id</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10320000</SortID>
+      <UnkC8>元気玉</UnkC8>
+    </Field>
+    <Field Def="s32 accumuOverVal = -1">
+      <DisplayName>元気玉上限値</DisplayName>
+      <Description>元気玉上限値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10320010</SortID>
+      <UnkC8>元気玉</UnkC8>
+    </Field>
+    <Field Def="s32 accumuUnderFireId = -1">
+      <DisplayName>元気玉下限時発動特殊効果Id</DisplayName>
+      <Description>元気玉下限時発動特殊効果Id</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10320020</SortID>
+      <UnkC8>元気玉</UnkC8>
+    </Field>
+    <Field Def="s32 accumuUnderVal = -1">
+      <DisplayName>元気玉下限値</DisplayName>
+      <Description>元気玉下限値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10320030</SortID>
+      <UnkC8>元気玉</UnkC8>
+    </Field>
+    <Field Def="s32 accumuVal">
+      <DisplayName>元気玉蓄積値</DisplayName>
+      <Description>元気玉蓄積値</Description>
+      <Minimum>-99999999</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10320040</SortID>
+      <UnkC8>元気玉</UnkC8>
+    </Field>
+    <Field Def="s32 hearingSearchEnemyCut">
+      <DisplayName>聴覚索敵カット(聞く方)</DisplayName>
+      <Description>AI音が聞こえにくくなる。０がデフォルト。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10490000</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u8 eye_angX">
+      <DisplayName>視覚角度（高さ）[deg]</DisplayName>
+      <Description>視覚角度の設定</Description>
+      <Maximum>180</Maximum>
+      <SortID>10490010</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u8 eye_angY">
+      <DisplayName>視覚角度（幅）[deg]</DisplayName>
+      <Description>視覚角度の設定</Description>
+      <Maximum>180</Maximum>
+      <SortID>10490020</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="s16 addDeceasedLv">
+      <DisplayName>亡者度 変更</DisplayName>
+      <Description>この値分亡者度を加算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId1 = -1">
+      <DisplayName>特殊効果VfxId_１</DisplayName>
+      <Description>特殊効果VfxId１(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180010</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId2 = -1">
+      <DisplayName>特殊効果VfxId_２</DisplayName>
+      <Description>特殊効果VfxId２(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180020</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId3 = -1">
+      <DisplayName>特殊効果VfxId_３</DisplayName>
+      <Description>特殊効果VfxId３(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180030</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId4 = -1">
+      <DisplayName>特殊効果VfxId_４</DisplayName>
+      <Description>特殊効果VfxId４(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180040</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId5 = -1">
+      <DisplayName>特殊効果VfxId_５</DisplayName>
+      <Description>特殊効果VfxId５(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180050</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId6 = -1">
+      <DisplayName>特殊効果VfxId_６</DisplayName>
+      <Description>特殊効果VfxId６(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180060</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 vfxId7 = -1">
+      <DisplayName>特殊効果VfxId_７</DisplayName>
+      <Description>特殊効果VfxId７(-1無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10180070</SortID>
+      <UnkC8>特殊効果VFXID</UnkC8>
+    </Field>
+    <Field Def="s32 registDepletedUraniumToxic">
+      <DisplayName>劣化ウラン毒耐性攻撃力[point]</DisplayName>
+      <Description>ヒットした時に、対象の【劣化ウラン毒耐性値】に加算する数値</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10430030</SortID>
+      <UnkC8>耐性攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 AppearAiSoundId">
+      <DisplayName>弾丸着弾時発生AI音ID</DisplayName>
+      <Description>ソウルコインや幻聴で使うAI音のID。弾丸着弾時に発動。誘い頭蓋骨など</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10480000</SortID>
+    </Field>
+    <Field Def="s16 addFootEffectSfxId = -1">
+      <DisplayName>追加フットエフェクト識別子</DisplayName>
+      <Description>特殊効果時に追加で発生させるフットエフェクトの識別子。XYYZZZのZZZ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10190000</SortID>
+    </Field>
+    <Field Def="s8 repDefDmgLv">
+      <DisplayName>防御側ダメージレベル</DisplayName>
+      <Enum>ATKPARAM_REP_DMGTYPE</Enum>
+      <Description>防御側のダメージレベルにこの値を設定</Description>
+      <Minimum>0</Minimum>
+      <SortID>10290070</SortID>
+      <UnkC8>ダメージレベル差し替え</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 toughnessDamageCutRate = 1">
+      <DisplayName>強靭度 被ダメージ倍率</DisplayName>
+      <Description>強靭度版カット率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateA = 1">
+      <DisplayName>特攻Aダメージ倍率補正</DisplayName>
+      <Description>特攻Aダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410000</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateB = 1">
+      <DisplayName>特攻Bダメージ倍率補正</DisplayName>
+      <Description>特攻Bダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410010</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateC = 1">
+      <DisplayName>特攻Cダメージ倍率補正</DisplayName>
+      <Description>特攻Cダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410020</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateD = 1">
+      <DisplayName>特攻Dダメージ倍率補正</DisplayName>
+      <Description>特攻Dダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410030</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateE = 1">
+      <DisplayName>特攻Eダメージ倍率補正</DisplayName>
+      <Description>特攻Eダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410040</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 weakDmgRateF = 1">
+      <DisplayName>特攻Fダメージ倍率補正</DisplayName>
+      <Description>特攻Fダメージ倍率に補正をかけます。１が通常。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10410050</SortID>
+      <UnkC8>特攻ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 darkDamageCutRate = 1">
+      <DisplayName>防御側：闇ダメージ倍率</DisplayName>
+      <Description>闇ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 darkDiffenceRate = 1">
+      <DisplayName>闇防御力倍率</DisplayName>
+      <Description>闇防御力に設定した数値をかけます</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 darkDiffence">
+      <DisplayName>闇防御力[point]</DisplayName>
+      <Description>闇防御力に設定した数値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 darkAttackRate = 1">
+      <DisplayName>攻撃側：闇ダメージ倍率</DisplayName>
+      <Description>闇ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 darkAttackPowerRate = 1">
+      <DisplayName>闇攻撃力倍率</DisplayName>
+      <Description>闇攻撃力に設定した数値をかけます</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 darkAttackPower">
+      <DisplayName>闇攻撃力[point]</DisplayName>
+      <Description>闇攻撃力に設定した数値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 antiDarkSightRadius">
+      <DisplayName>暗闇丸見え半径[m]</DisplayName>
+      <Description>暗闇丸見え半径[m]。この距離内にいる場合は暗所でも通常距離で見えるようになります</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 antiDarkSightDmypolyId = -1">
+      <DisplayName>暗闇丸見えダミポリID</DisplayName>
+      <Description>暗闇丸見えダミポリID(-1:マスター)。このダミポリを中心に丸見え領域を作成します</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 conditionHpRate = -1">
+      <DisplayName>発動条件　残りHP比率が一定以上[%]</DisplayName>
+      <Description>指定された値以上のHPを持っている時にしか発動しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10070010</SortID>
+      <UnkC8>発動内容</UnkC8>
+    </Field>
+    <Field Def="f32 consumeStaminaRate = 1">
+      <DisplayName>消費スタミナ倍率</DisplayName>
+      <Description>行動パラメータの消費スタミナの値にかける倍率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 itemDropRate">
+      <DisplayName>アイテムドロップ補正</DisplayName>
+      <Description>設定された値が【アイテムドロップ補正】に加算される </Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99.99</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 hearingSearchRate = 1">
+      <DisplayName>AI聴覚距離倍率</DisplayName>
+      <Description>AI聴覚距離に、設定された倍率をかける</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490180</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="s32 changeBurnResistPoint">
+      <DisplayName>炎上耐性変化[point]</DisplayName>
+      <Description>状態耐性値を増減させる</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10310000</SortID>
+      <UnkC8>耐性変化</UnkC8>
+    </Field>
+    <Field Def="s32 changeStunResistPoint">
+      <DisplayName>スタン耐性変化[point]</DisplayName>
+      <Description>状態耐性値を増減させる</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10310010</SortID>
+      <UnkC8>耐性変化</UnkC8>
+    </Field>
+    <Field Def="s32 changeHighPlasmaResistPoint">
+      <DisplayName>強プラズマ耐性変化[point]</DisplayName>
+      <Description>状態耐性値を増減させる</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10310020</SortID>
+      <UnkC8>耐性変化</UnkC8>
+    </Field>
+    <Field Def="s32 changeCurseResistPoint">
+      <DisplayName>呪耐性変化[point]</DisplayName>
+      <Description>状態耐性値を増減させる</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeDepletedUraniumToxicResistPoint">
+      <DisplayName>劣化ウラン毒耐性変化[point]</DisplayName>
+      <Description>状態耐性値を増減させる</Description>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10310030</SortID>
+      <UnkC8>耐性変化</UnkC8>
+    </Field>
+    <Field Def="f32 slashAttackRate = 1">
+      <DisplayName>攻撃側：斬撃ダメージ倍率</DisplayName>
+      <Description>斬撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 blowAttackRate = 1">
+      <DisplayName>攻撃側：打撃ダメージ倍率</DisplayName>
+      <Description>打撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 thrustAttackRate = 1">
+      <DisplayName>攻撃側：刺突ダメージ倍率</DisplayName>
+      <Description>刺突ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 neutralAttackRate = 1">
+      <DisplayName>攻撃側：無属性ダメージ倍率</DisplayName>
+      <Description>無属性ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10370050</SortID>
+      <UnkC8>ダメージ倍率</UnkC8>
+    </Field>
+    <Field Def="f32 slashAttackPowerRate = 1">
+      <DisplayName>斬撃攻撃力倍率</DisplayName>
+      <Description>斬撃攻撃力に設定した数値をかけます</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 blowAttackPowerRate = 1">
+      <DisplayName>打撃攻撃力倍率</DisplayName>
+      <Description>打撃攻撃力に設定した数値をかけます</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 thrustAttackPowerRate = 1">
+      <DisplayName>刺突攻撃力倍率</DisplayName>
+      <Description>刺突攻撃力に設定した数値をかけます</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 neutralAttackPowerRate = 1">
+      <DisplayName>無属性攻撃力倍率</DisplayName>
+      <Description>無属性攻撃力に設定した数値をかけます</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10330010</SortID>
+      <UnkC8>攻撃力倍率</UnkC8>
+    </Field>
+    <Field Def="s32 slashAttackPower">
+      <DisplayName>斬撃攻撃力[point]</DisplayName>
+      <Description>斬撃攻撃力に設定した数値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 blowAttackPower">
+      <DisplayName>打撃攻撃力[point]</DisplayName>
+      <Description>打撃攻撃力に設定した数値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 thrustAttackPower">
+      <DisplayName>刺突攻撃力[point]</DisplayName>
+      <Description>刺突攻撃力に設定した数値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 neutralAttackPower">
+      <DisplayName>無属性攻撃力[point]</DisplayName>
+      <Description>無属性攻撃力に設定した数値を加減算する</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10340010</SortID>
+      <UnkC8>攻撃力</UnkC8>
+    </Field>
+    <Field Def="s32 changeStrengthPoint">
+      <DisplayName>筋力補正変化[point]</DisplayName>
+      <Description>武器の補正値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeAgilityPoint">
+      <DisplayName>俊敏補正変化[point]</DisplayName>
+      <Description>武器の補正値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeMagicPoint">
+      <DisplayName>魔力補正変化[point]</DisplayName>
+      <Description>武器の補正値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeFaithPoint">
+      <DisplayName>信仰補正変化[point]</DisplayName>
+      <Description>武器の補正値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 changeLuckPoint">
+      <DisplayName>運補正変化[point]</DisplayName>
+      <Description>武器の補正値を加減算する</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 recoverArtsPoint_Str">
+      <DisplayName>アーツポイント回復 筋力系</DisplayName>
+      <Description>アーツポイント筋力を回復させる</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 recoverArtsPoint_Dex">
+      <DisplayName>アーツポイント回復 技量系</DisplayName>
+      <Description>アーツポイント技量を回復させる</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 recoverArtsPoint_Magic">
+      <DisplayName>アーツポイント回復 魔法系</DisplayName>
+      <Description>アーツポイント魔法を回復させる</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s8 recoverArtsPoint_Miracle">
+      <DisplayName>アーツポイント回復 奇跡系</DisplayName>
+      <Description>アーツポイント奇跡を回復させる</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 wetConditionType">
+      <DisplayName>濡れタイプ</DisplayName>
+      <Enum>SP_EFFECT_WET_CONDITION_TYPE</Enum>
+      <Description>濡れの見た目の種類。デカールIDの算出などに使われる。</Description>
+      <EditFlags>17</EditFlags>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 unk26d_0:1" />
+    <Field Def="u8 isUseStatusAilmentAtkPowerCorrect:1">
+      <DisplayName>状態異常攻撃力倍率補正を適応するか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>○なら攻撃パラの状態異常攻撃力倍率補正を適応します。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isUseAtkParamAtkPowerCorrect:1">
+      <DisplayName>攻撃パラメータの攻撃力倍率補正を適応するか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>○なら攻撃パラの攻撃力倍率補正を適応します。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10440000</SortID>
+    </Field>
+    <Field Def="u8 dontDeleteOnDead:1">
+      <DisplayName>死亡時に削除しない</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>○ならキャラが死亡しても削除しません。主に死亡エフェクトに使います。</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isWaitModeDelete:1">
+      <DisplayName>待ち状態に入ると削除</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>「待ち状態」とは発動状態変化タイプや発動HPを満たすまで監視し、発動を待っている状態。対して「スリープ」とは上書きカテゴリなどにより優先度が下がった状態</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isForgotTarget:1">
+      <DisplayName>ターゲットを忘れるか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>このパラメータに"○"が入っている特殊効果がエネミーにかかると、特殊効果がかかっている間、ターゲットリストがクリアされつづける。(かかっている間は、ターゲットを見失い続ける)</Description>
+      <Maximum>1</Maximum>
+      <SortID>10470000</SortID>
+    </Field>
+    <Field Def="u8 isNoDeadEventBody:1">
+      <DisplayName>部位不死</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>部位不死</Description>
+      <Maximum>1</Maximum>
+      <SortID>10520000</SortID>
+      <UnkC8>部位</UnkC8>
+    </Field>
+    <Field Def="u8 isReceiveDamageStagger:1">
+      <DisplayName>被ダメージがよろけクリティカル化</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>被ダメージがよろけクリティカルになるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400000</SortID>
+    </Field>
+    <Field Def="u8 isRadarExclusion:1">
+      <DisplayName>レーダーの表示対象外とするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>リングレーダーの表示対象外にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10530000</SortID>
+    </Field>
+    <Field Def="u8 isForceUpdate:1">
+      <DisplayName>発動時に強制的にキャラ更新を行うか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発動時に更新レベル関係なく強制的にキャラ更新をおこう</Description>
+      <Maximum>1</Maximum>
+      <SortID>10540000</SortID>
+    </Field>
+    <Field Def="dummy8 pad10:6">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad5[1]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 saReceiveDamageRate = 1">
+      <DisplayName>SA値_被ダメージ倍率</DisplayName>
+      <Description>SAダメージかかる倍率</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Physics = 1">
+      <DisplayName>防御側 プレイヤー 実弾ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380080</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Magic = 1">
+      <DisplayName>防御側 プレイヤー ENダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380090</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Fire = 1">
+      <DisplayName>防御側 プレイヤー 爆発/燃焼ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380100</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Thunder = 1">
+      <DisplayName>防御側 プレイヤー コーラルダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380110</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Dark = 1">
+      <DisplayName>防御側 プレイヤー 闇ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Physics = 1">
+      <DisplayName>防御側 敵 実弾ダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380120</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Magic = 1">
+      <DisplayName>防御側 敵 ENダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380130</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Fire = 1">
+      <DisplayName>防御側 敵 爆発/燃焼ダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380140</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Thunder = 1">
+      <DisplayName>防御側 敵 コーラルダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380150</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Dark = 1">
+      <DisplayName>防御側 敵 闇ダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 defObjDmgCorrectRate = 1">
+      <DisplayName>防御側 オブジェクトダメージ補正倍率</DisplayName>
+      <Description>OBJから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380160</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Physics = 1">
+      <DisplayName>攻撃側 プレイヤー 実弾ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380000</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Magic = 1">
+      <DisplayName>攻撃側 プレイヤー ENダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380010</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Fire = 1">
+      <DisplayName>攻撃側 プレイヤー 爆発/燃焼ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380020</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Thunder = 1">
+      <DisplayName>攻撃側 プレイヤー コーラルダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380030</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Dark = 1">
+      <DisplayName>攻撃側 プレイヤー 闇ダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Physics = 1">
+      <DisplayName>攻撃側 敵 実弾ダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380040</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Magic = 1">
+      <DisplayName>攻撃側 敵 ENダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380050</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Fire = 1">
+      <DisplayName>攻撃側 敵 爆発/燃焼ダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380060</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Thunder = 1">
+      <DisplayName>攻撃側 敵 コーラルダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10380070</SortID>
+      <UnkC8>ダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Dark = 1">
+      <DisplayName>攻撃側 敵 闇ダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 registDepletedUraniumToxicChangeRate = 1">
+      <DisplayName>劣化ウラン毒耐性変化倍率</DisplayName>
+      <Description>劣化ウラン毒耐性値に設定された倍率をかける</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10420030</SortID>
+      <UnkC8>耐性変化倍率</UnkC8>
+    </Field>
+    <Field Def="u16 invocationConditionsStateChange1">
+      <DisplayName>発動条件状態変化タイプ1</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <Description>発動条件状態変化タイプ1</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 invocationConditionsStateChange2">
+      <DisplayName>発動条件状態変化タイプ2</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <Description>発動条件状態変化タイプ2</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u16 invocationConditionsStateChange3">
+      <DisplayName>発動条件状態変化タイプ3</DisplayName>
+      <Enum>SP_EFFECT_TYPE</Enum>
+      <Description>発動条件状態変化タイプ3</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad[2]">
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 chrProxyHeightRate = 1">
+      <DisplayName>カプセルサイズ倍率</DisplayName>
+      <Description>キャラカプセルの高さに掛かる倍率</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 addAwarePointCorrectValue_forMe">
+      <DisplayName>索敵度加算補正_見る側</DisplayName>
+      <Description>索敵度加算補正_見る側</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10490070</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 addAwarePointCorrectValue_forTarget">
+      <DisplayName>索敵度加算補正_見られる側</DisplayName>
+      <Description>索敵度加算補正_見られる側</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10490080</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 normalLockRangeAddVal">
+      <DisplayName>通常ロック距離延長[m]</DisplayName>
+      <Description>通常ロック距離延長[m]</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10500000</SortID>
+      <UnkC8>ロックオン補正</UnkC8>
+    </Field>
+    <Field Def="f32 normalLockRangeAddPer">
+      <DisplayName>通常ロック距離上昇率[％]</DisplayName>
+      <Description>通常ロック距離上昇率[％]</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10500010</SortID>
+      <UnkC8>ロックオン補正</UnkC8>
+    </Field>
+    <Field Def="f32 missileLockRangeAddVal">
+      <DisplayName>ミサイルロック距離延長[m]</DisplayName>
+      <Description>ミサイルロック距離延長[m]</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10510000</SortID>
+      <UnkC8>ミサイル補正</UnkC8>
+    </Field>
+    <Field Def="f32 missileLockRangeAddPer">
+      <DisplayName>ミサイルロック距離上昇率[％]</DisplayName>
+      <Description>ミサイルロック距離上昇率[％]</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10510010</SortID>
+      <UnkC8>ミサイル補正</UnkC8>
+    </Field>
+    <Field Def="u8 missileMultiLockNumAdd">
+      <DisplayName>ミサイルマルチロック数増加</DisplayName>
+      <Description>ミサイルマルチロック数増加</Description>
+      <SortID>10510020</SortID>
+      <UnkC8>ミサイル補正</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad7[3]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 missileMultiLockNumMul = 1">
+      <DisplayName>ミサイルマルチロック数倍率</DisplayName>
+      <Description>ミサイルマルチロック数倍率</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10510030</SortID>
+      <UnkC8>ミサイル補正</UnkC8>
+    </Field>
+    <Field Def="f32 magAwarePointCorrectValue_forMe = 1">
+      <DisplayName>索敵度倍率補正_見る側</DisplayName>
+      <Description>索敵度倍率補正_見る側</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10490090</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 magAwarePointCorrectValue_forTarget = 1">
+      <DisplayName>索敵度倍率補正_見られる側</DisplayName>
+      <Description>索敵度倍率補正_見られる側</Description>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10490100</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMagSearch_forEnemy = 1">
+      <DisplayName>索敵視覚距離倍率_見られる側_非戦闘</DisplayName>
+      <Description>索敵視覚距離倍率_見られる側_非戦闘</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490130</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMagSearch_forEnemyBattle = 1">
+      <DisplayName>索敵視覚距離倍率_見られる側_戦闘中</DisplayName>
+      <Description>索敵視覚距離倍率_見られる側_戦闘中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490140</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMagSearch_forMe = 1">
+      <DisplayName>索敵視覚距離倍率_見る側_非戦闘</DisplayName>
+      <Description>索敵視覚距離倍率_見る側_非戦闘</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490160</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 sightRangeMagSearch_forMeBattle = 1">
+      <DisplayName>索敵視覚距離倍率_見る側_戦闘中</DisplayName>
+      <Description>索敵視覚距離倍率_見る側_戦闘中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490170</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="s16 changeSaPoint">
+      <DisplayName>SAダメージ量[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad2[2]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="f32 heightRateOfJudgmentCapsule = -1">
+      <DisplayName>視線判定_カプセル高さ倍率 </DisplayName>
+      <Description>視線判定_カプセル高さ倍率 (複数適応時は一番低い値が適応される)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10490200</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 noseDist_overWrite = -1">
+      <DisplayName>嗅覚上書き範囲[m]</DisplayName>
+      <Description>思考パラメータで定義された嗅覚範囲を上書きする値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10490210</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="f32 staminaRecoverSpeedRate = 1">
+      <DisplayName>スタミナ回復速度倍率</DisplayName>
+      <Description>スタミナ回復速度倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 maxEnergyRate = 1">
+      <DisplayName>最大EN倍率</DisplayName>
+      <Description>機体の合計EN最大値に対して、指定された倍率を掛ける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 energyRecoverSpeedRate = 1">
+      <DisplayName>EN回復速度倍率</DisplayName>
+      <Description>機体の合計EN回復量に対して、指定された倍率を掛ける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10260000</SortID>
+      <UnkC8>回復倍率</UnkC8>
+    </Field>
+    <Field Def="f32 consumeEnergyRate = 1">
+      <DisplayName>消費EN倍率</DisplayName>
+      <Description>　機体のすべてのEN消費に対して、指定された倍率を掛ける　 </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10270000</SortID>
+      <UnkC8>消費倍率</UnkC8>
+    </Field>
+    <Field Def="f32 changeEnRate">
+      <DisplayName>ENダメージ量[%]</DisplayName>
+      <Description>一度の発動で最大ENの何%分を減算（または加算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>10280020</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="s32 changeEnPoint">
+      <DisplayName>ENダメージ[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10280030</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="f32 energyLastRecoverRate = 1">
+      <DisplayName>最終EN回復倍率</DisplayName>
+      <Description>（機体のEN回復量 - EN消費全般）がプラスならこの値をかけてEN回復量にする</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>10260010</SortID>
+      <UnkC8>回復倍率</UnkC8>
+    </Field>
+    <Field Def="s32 eventPartsId = -1">
+      <DisplayName>対象部位ID</DisplayName>
+      <Description>対象部位ID -1はすべての部位</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10520010</SortID>
+      <UnkC8>部位</UnkC8>
+    </Field>
+    <Field Def="f32 eventPartsDamageRate = 1">
+      <DisplayName>部位ダメージ倍率</DisplayName>
+      <Description>部位ダメージ倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10520020</SortID>
+      <UnkC8>部位</UnkC8>
+    </Field>
+    <Field Def="f32 eventPartsReviveRate">
+      <DisplayName>部位HP復活[%]</DisplayName>
+      <Description>部位HP復活[%]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520030</SortID>
+      <UnkC8>部位</UnkC8>
+    </Field>
+    <Field Def="f32 eventPartsRecoverRate">
+      <DisplayName>部位HP回復[%]</DisplayName>
+      <Description>部位HP回復[%]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10520040</SortID>
+      <UnkC8>部位</UnkC8>
+    </Field>
+    <Field Def="f32 changePaRate">
+      <DisplayName>PAダメージ量[%]</DisplayName>
+      <Description>一度の発動で最大PAの何%分を減算（または加算）するかを設定</Description>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280040</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="s32 changePaPoint">
+      <DisplayName>PAダメージ[point]</DisplayName>
+      <Description>一度の発動で何ポイント減算（または加算）するかを設定</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10280050</SortID>
+      <UnkC8>ダメージ</UnkC8>
+    </Field>
+    <Field Def="f32 energyDrawRate_GroundBoost = 1">
+      <DisplayName>地上ブーストEN消費倍率</DisplayName>
+      <Description>地上ブーストのEN消費にこの倍率をかける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10270010</SortID>
+      <UnkC8>消費倍率</UnkC8>
+    </Field>
+    <Field Def="f32 energyDrawRate_FlyBoost = 1">
+      <DisplayName>空中ブーストEN消費倍率</DisplayName>
+      <Description>空中ブーストのEN消費にこの倍率をかける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10270020</SortID>
+      <UnkC8>消費倍率</UnkC8>
+    </Field>
+    <Field Def="f32 energyDrawRate_UpBoost = 1">
+      <DisplayName>上昇ブーストEN消費倍率</DisplayName>
+      <Description>上昇ブーストのEN消費にこの倍率をかける</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>10270030</SortID>
+      <UnkC8>消費倍率</UnkC8>
+    </Field>
+    <Field Def="s32 stealthPowerCorrectValue">
+      <DisplayName>ステルス性能補正</DisplayName>
+      <Description>ステルス性能の補正値</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10490190</SortID>
+      <UnkC8>索敵</UnkC8>
+    </Field>
+    <Field Def="u32 overwriteGroupId">
+      <DisplayName>上書きグループID</DisplayName>
+      <Description>上書きカテゴリの枠</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>10050000</SortID>
+    </Field>
+    <Field Def="f32 defPlayerImpactCorrectRate = 1">
+      <DisplayName>防御側 プレイヤー 衝撃値補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対する衝撃値補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390020</SortID>
+      <UnkC8>衝撃値補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyImpactCorrectRate = 1">
+      <DisplayName>防御側 敵 衝撃値補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対する衝撃値補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390030</SortID>
+      <UnkC8>衝撃値補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerImpactCorrectRate = 1">
+      <DisplayName>攻撃側 プレイヤー 衝撃値補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対する衝撃値補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390000</SortID>
+      <UnkC8>衝撃値補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyImpactCorrectRate = 1">
+      <DisplayName>攻撃側 敵 衝撃値補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対する衝撃値補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390010</SortID>
+      <UnkC8>衝撃値補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 normalLockRangeOverwriteDist">
+      <DisplayName>通常ロック距離変更[m]</DisplayName>
+      <Description>状態変化タイプが「通常ロック距離変更」に設定されているときに通常ロック距離をこの距離に上書き</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10500020</SortID>
+      <UnkC8>ロックオン補正</UnkC8>
+    </Field>
+    <Field Def="f32 residualImpactSubSpeedRate = 1">
+      <DisplayName>残留衝撃値揮発速度倍率</DisplayName>
+      <Description>残留衝撃値の揮発速度倍率</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390040</SortID>
+      <UnkC8>衝撃値補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkPlayerDmgCorrectRate_Pa = 1">
+      <DisplayName>攻撃側 プレイヤー PAダメージ補正倍率</DisplayName>
+      <Description>プレイヤーに与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390100</SortID>
+      <UnkC8>PAダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkEnemyDmgCorrectRate_Pa = 1">
+      <DisplayName>攻撃側 敵 PAダメージ補正倍率</DisplayName>
+      <Description>敵に与えるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390100</SortID>
+      <UnkC8>PAダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defPlayerDmgCorrectRate_Pa = 1">
+      <DisplayName>防御側 プレイヤー PAダメージ補正倍率</DisplayName>
+      <Description>プレイヤーから受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390100</SortID>
+      <UnkC8>PAダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 defEnemyDmgCorrectRate_Pa = 1">
+      <DisplayName>防御側 敵 PAダメージ補正倍率</DisplayName>
+      <Description>敵から受けるダメージ値に対するダメージ補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10390100</SortID>
+      <UnkC8>PAダメージ補正倍率</UnkC8>
+    </Field>
+    <Field Def="f32 atkImpactCorrectRate = 1">
+      <DisplayName>攻撃側：衝撃値倍率</DisplayName>
+      <Description>衝撃値補正。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10385000</SortID>
+      <UnkC8>衝撃値倍率</UnkC8>
+    </Field>
+    <Field Def="s32 unk390" />
+    <Field Def="dummy8 pad8[40]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

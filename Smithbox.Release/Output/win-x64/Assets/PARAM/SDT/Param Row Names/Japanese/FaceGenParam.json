@@ -1,0 +1,887 @@
+{
+  "Name": "FaceGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "testData -- testData"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Male_Prototype 1 -- 男性_試作1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Male_Prototype 2 -- 男性_試作2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Male_Prototype 3 -- 男性_試作3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Male_Prototype 4 -- 男性_試作4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Male_Prototype 5 -- 男性_試作5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Male_Prototype 6 -- 男性_試作6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Male_Prototype 7 -- 男性_試作7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Male_Prototype 8 -- 男性_試作8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Male_Prototype 9 -- 男性_試作9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Male_Prototype 10 -- 男性_試作10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Male_Prototype 11 -- 男性_試作11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Male_Prototype 12 -- 男性_試作12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Male_Prototype 13 -- 男性_試作13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Male_Prototype 14 -- 男性_試作14"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Female_Prototype 1 -- 女性_試作1"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Female_Prototype 2 -- 女性_試作2"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "4 Final Edition Warrior_Man -- ４末版\u3000戦士_男"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "4 Final Edition Knight_Man -- ４末版\u3000騎士_男"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "4 Final Edition Wizard_Woman -- ４末版\u3000魔法使い_女"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "4 Final Edition Shaman_Man -- ４末版\u3000呪術師_男"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "E3 Sun Knight_Man -- E3\u3000太陽騎士_男"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Default face test_01 -- デフォルト顔テスト_01"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Default face test_02 -- デフォルト顔テスト_02"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Default face test_03 -- デフォルト顔テスト_03"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Default face test_04 -- デフォルト顔テスト_04"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Default face test_05 -- デフォルト顔テスト_05"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Default face test_06 -- デフォルト顔テスト_06"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Default face test_07 -- デフォルト顔テスト_07"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Default face test_08 -- デフォルト顔テスト_08"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Default face test_09 -- デフォルト顔テスト_09"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Default face test_10 -- デフォルト顔テスト_10"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Default face test_11 -- デフォルト顔テスト_11"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Default face test_12 -- デフォルト顔テスト_12"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Default face test_13 -- デフォルト顔テスト_13"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Default face test_14 -- デフォルト顔テスト_14"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Default face test_15 -- デフォルト顔テスト_15"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Default face test_16 -- デフォルト顔テスト_16"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Default face test_17 -- デフォルト顔テスト_17"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Default face test_18 -- デフォルト顔テスト_18"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Default face test_19 -- デフォルト顔テスト_19"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Default face test_20 -- デフォルト顔テスト_20"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Default face test_21 -- デフォルト顔テスト_21"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Default face test_22 -- デフォルト顔テスト_22"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Default face test_23 -- デフォルト顔テスト_23"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Default face test_24 -- デフォルト顔テスト_24"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Default face test_25 -- デフォルト顔テスト_25"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Default face test _26 -- デフォルト顔テスト_26"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Default face test _27 -- デフォルト顔テスト_27"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Default face test _28 -- デフォルト顔テスト_28"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Default face test _29 -- デフォルト顔テスト_29"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Default face test_30 -- デフォルト顔テスト_30"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Default face test_31 -- デフォルト顔テスト_31"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Default face test _32 -- デフォルト顔テスト_32"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Default face test_33 -- デフォルト顔テスト_33"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Default face test_34 -- デフォルト顔テスト_34"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Default face test_35 -- デフォルト顔テスト_35"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Default face test _36 -- デフォルト顔テスト_36"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Default face test _37 -- デフォルト顔テスト_37"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Default face test _38 -- デフォルト顔テスト_38"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Default face test _39 -- デフォルト顔テスト_39"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Default face test_40 -- デフォルト顔テスト_40"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Default face test_41 -- デフォルト顔テスト_41"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Default face test _42 -- デフォルト顔テスト_42"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Default face test_43 -- デフォルト顔テスト_43"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Default face test_44 -- デフォルト顔テスト_44"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Default face test_45 -- デフォルト顔テスト_45"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Default face test_46 -- デフォルト顔テスト_46"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Default face test _47 -- デフォルト顔テスト_47"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Default face test _48 -- デフォルト顔テスト_48"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Default face test _49 -- デフォルト顔テスト_49"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Default face test_50 -- デフォルト顔テスト_50"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Gray saint -- 灰色の聖女"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Commoner face -- 平民顔"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Peasant face of the Gosashi River -- 五指河の農民顔"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Astra noble face -- アストラの貴族顔"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Ryu Gakuin&#39;s student face -- 竜学院の書生顔"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Sol Rondo saint face -- ソルロンドの聖者顔"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Catalina&#39;s cheerful face -- カタリナの陽気顔"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Karim&#39;s gloomy face -- カリムの陰気顔"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Zena&#39;s old face -- ゼナの古顔"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Onuma&#39;s different phase -- 大沼の異相"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "East strange face -- 東の異人顔"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Commoner face -- 平民顔"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Peasant face of the Gosashi River -- 五指河の農民顔"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Astra noble face -- アストラの貴族顔"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Ryu Gakuin&#39;s student face -- 竜学院の書生顔"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Sol Rondo saint face -- ソルロンドの聖者顔"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Catalina&#39;s cheerful face -- カタリナの陽気顔"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Karim&#39;s gloomy face -- カリムの陰気顔"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Zena&#39;s old face -- ゼナの古顔"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Onuma&#39;s different phase -- 大沼の異相"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "East strange face -- 東の異人顔"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Knight of the sun -- 太陽の騎士"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Knight of the Sun (Sunworm Ver) -- 太陽の騎士（太陽虫Ver）"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Knight of the Sun (Dead) -- 太陽の騎士（亡者）"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Knight of the dark moon -- 暗月の騎士"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Knight Ostra -- 騎士オストラ"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Knight Ostra (hostile) -- 騎士オストラ（敵対）"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "&quot;Big Hat&quot; Logan -- ”ビッグハット”ロガーン"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "&quot;Big Hat&quot; Logan (Dead) -- ”ビッグハット”ロガーン（亡者）"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Logan&#39;s disciple -- ロガーンの弟子"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Logan&#39;s disciple (dead) -- ロガーンの弟子（亡者）"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Princess of the exiled country -- 亡国の王女"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Gray saint -- 灰色の聖女"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "White saint -- 白の聖女"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "White saint (dead) -- 白の聖女（亡者）"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Knight of the Saint A -- 聖女の騎士A"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Knight of the Saint B -- 聖女の騎士B"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Knight of the Saint B (Dead) -- 聖女の騎士B （亡者）"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Knight of the Saint C -- 聖女の騎士C"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Knight of the Saint C (Dead) -- 聖女の騎士C （亡者）"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Vase Shaman -- 壺の呪術師"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Vase Shaman (Dead) -- 壺の呪術師（亡者）"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Wandering chaos -- さまよう混沌"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Healer -- 癒し手"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Blacksmith Rickert -- 鍛冶屋リッケルト"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "A broken merchant -- 心折れた商人"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Trickster -- トリックスター"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "A broken warrior -- 心折れた戦士"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "Broken heart warrior (dead) -- 心折れた戦士（亡者）"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Onion knight -- たまねぎ騎士"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Onion knight&#39;s daughter -- たまねぎ騎士の娘"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Embraced Knight Lautrec -- 抱かれ騎士ロートレク"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Nobushi -- 野武士"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Cemetery coward patch -- 墓地の卑怯者パッチ"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Dragon priest -- ドラゴンの神官"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Black Knight Tarkus -- 黒騎士タルカス"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Belka Knight -- ベルカ騎士"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Witch Marose -- 魔女マロース"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Ninja -- 忍者"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Lautrec&#39;s companion 1 -- ロートレクのお供１"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Lautrec&#39;s companion 2 -- ロートレクのお供２"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Swamp Woman (NPC Multi) -- 沼女（NPCマルチ）"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Temple Knight (NPC Multi) -- 神殿騎士（NPCマルチ）"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Thorn Knight (NPC Multi) -- トゲ騎士（NPCマルチ）"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Yellow robe (NPC multi) -- 黄衣（NPCマルチ）"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Castle Tower NPC (Havell) -- 城下塔のNPC（ハベル）"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "NPC (Ricard) of the 1st Tower of the Royal Castle -- 王城1塔のNPC（リカール）"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Crystal Knight -- 結晶騎士"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "Bandit A Gatekeeper -- 山賊A\u3000門番"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "Bandit B Warrior -- 山賊B\u3000戦士"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "Bandit C Bower -- 山賊C\u3000弓使い"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "Bandit D Magic (Attack) -- 山賊D\u3000魔法（攻撃）"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "Bandit E Magic (Recovery) -- 山賊E\u3000魔法（回復）"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "Bandit F covert -- 山賊F\u3000隠密"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Phantom (without face) -- 幻影（顔なし）"
+      ]
+    }
+  ]
+}

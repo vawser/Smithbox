@@ -1,0 +1,88 @@
+{
+  "Param": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Type": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Name": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Description": "Defines momentum scaling factors applied to map objects based on size categories and two separate object channels or instances.",
+  "Fields": [
+    {
+      "Field": "noneObj0",
+      "Name": "None (Obj 0)",
+      "Description": "No momentum scaling applied for object slot 0."
+    },
+    {
+      "Field": "superSmallObj0",
+      "Name": "Super Small (Obj 0)",
+      "Description": "Momentum scaling for extremely small objects in slot 0."
+    },
+    {
+      "Field": "smallObj0",
+      "Name": "Small (Obj 0)",
+      "Description": "Momentum scaling for small objects in slot 0."
+    },
+    {
+      "Field": "normalObj0",
+      "Name": "Normal (Obj 0)",
+      "Description": "Momentum scaling for medium-sized objects in slot 0."
+    },
+    {
+      "Field": "largeObj0",
+      "Name": "Large (Obj 0)",
+      "Description": "Momentum scaling for large objects in slot 0."
+    },
+    {
+      "Field": "superLargeObj0",
+      "Name": "Super Large (Obj 0)",
+      "Description": "Momentum scaling for very large objects in slot 0."
+    },
+    {
+      "Field": "hyperLargeObj0",
+      "Name": "Hyper Large (Obj 0)",
+      "Description": "Momentum scaling for extremely large objects in slot 0."
+    },
+    {
+      "Field": "infiniteObj0",
+      "Name": "Infinite (Obj 0)",
+      "Description": "Momentum scaling treated as effectively infinite for slot 0."
+    },
+    {
+      "Field": "noneObj1",
+      "Name": "None (Obj 1)",
+      "Description": "No momentum scaling applied for object slot 1."
+    },
+    {
+      "Field": "superSmallObj1",
+      "Name": "Super Small (Obj 1)",
+      "Description": "Momentum scaling for extremely small objects in slot 1."
+    },
+    {
+      "Field": "smallObj1",
+      "Name": "Small (Obj 1)",
+      "Description": "Momentum scaling for small objects in slot 1."
+    },
+    {
+      "Field": "normalObj1",
+      "Name": "Normal (Obj 1)",
+      "Description": "Momentum scaling for medium-sized objects in slot 1."
+    },
+    {
+      "Field": "largeObj1",
+      "Name": "Large (Obj 1)",
+      "Description": "Momentum scaling for large objects in slot 1."
+    },
+    {
+      "Field": "superLargeObj1",
+      "Name": "Super Large (Obj 1)",
+      "Description": "Momentum scaling for very large objects in slot 1."
+    },
+    {
+      "Field": "hyperLargeObj1",
+      "Name": "Hyper Large (Obj 1)",
+      "Description": "Momentum scaling for extremely large objects in slot 1."
+    },
+    {
+      "Field": "infiniteObj1",
+      "Name": "Infinite (Obj 1)",
+      "Description": "Momentum scaling treated as effectively infinite for slot 1."
+    }
+  ]
+}

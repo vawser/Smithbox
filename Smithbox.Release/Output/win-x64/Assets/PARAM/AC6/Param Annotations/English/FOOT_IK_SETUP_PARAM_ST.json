@@ -1,0 +1,198 @@
+{
+  "Param": "FOOT_IK_SETUP_PARAM_ST",
+  "Type": "FOOT_IK_SETUP_PARAM_ST",
+  "Name": "FOOT_IK_SETUP_PARAM_ST",
+  "Description": "Determines to Havok parameters to use for foot inverse kinematics (IK) setup.",
+  "Fields": [
+    {
+      "Field": "kneeAxisType",
+      "Name": "Knee Axis Type",
+      "Description": "The axial direction of the knee to use."
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "Use Foot Locking",
+      "Description": "If ON, feet and ankles will be locked."
+    },
+    {
+      "Field": "useFootEndRay",
+      "Name": "Use Foot Ray-cast",
+      "Description": "If ON, a ray-cast from the toe is used."
+    },
+    {
+      "Field": "heightOffsetUpDir",
+      "Name": "Apply Height Offset Upwards Only",
+      "Description": "If ON, height offset is only applied in the vertical direction."
+    },
+    {
+      "Field": "padflag",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "Height from Origin to Ground",
+      "Description": "In metres."
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "Minimum Ankle Height",
+      "Description": "The minimum height at which the ankle can be raised. In metres."
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "Maximum Ankle Height",
+      "Description": "The maximum height at which the ankle can be raised. In metres."
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "Maximum Bend Angle",
+      "Description": "Maximum angle at which the knee can be bent (cosine value). In degrees."
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "Minimum Bend Angle",
+      "Description": "Minimum angle at which the knee can be bent (cosine value). In degrees."
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "Lowest Ankle Height",
+      "Description": "If the ankle is lower than this height, assume they are together. In centimetres."
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "Highest Ankle Height",
+      "Description": "If the ankle is higher than this height, assume they are apart. In centimetres."
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "Ankle Raycast: Upward Distance",
+      "Description": "The distance above the ankle at which the raycast occurs. In centimetres."
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "Ankle Raycast: Downward Distance",
+      "Description": "The distance below the ankle at which the raycast occurs. In centimetres."
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "Toe Position: X",
+      "Description": "The x-coordinate of the toe."
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "Toe Position: Y",
+      "Description": "The y-coordinate of the toe."
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "Toe Position: Z",
+      "Description": "The z-coordinate of the toe."
+    },
+    {
+      "Field": "maxFootPitchRadians",
+      "Name": "Maximum Ankle Pitch",
+      "Description": "The maximum pitch (up/down) angle for the ankle. In radians."
+    },
+    {
+      "Field": "minFootPitchRadians",
+      "Name": "Minimum Ankle Pitch",
+      "Description": "The minimum pitch (up/down) angle for the ankle. In radians."
+    },
+    {
+      "Field": "maxFootRollRadians",
+      "Name": "Maximum Ankle Roll",
+      "Description": "The maximum roll (left/right) angle for the ankle. In radians."
+    },
+    {
+      "Field": "minFootRollRadians",
+      "Name": "Minimum Ankle Roll",
+      "Description": "The minimum roll (left/right) angle for the ankle. In radians."
+    },
+    {
+      "Field": "heightOffsetLimit",
+      "Name": "IK Error Height Correction Limit",
+      "Description": "The clamp value (+/-) for IK error height correction."
+    },
+    {
+      "Field": "heightOffsetOnGain",
+      "Name": "Gain if Height Correction is Enabled",
+      "Description": "The amount of gain to apply if height correction is on to reach target height."
+    },
+    {
+      "Field": "heightOffsetOffGain",
+      "Name": "Gain if Height Correction is Disabled",
+      "Description": "The amount of gain to apply if height correction is off to reach original height."
+    },
+    {
+      "Field": "forwardUndulationRate",
+      "Name": "Slope: Forward Lean Ratio",
+      "Description": "Specifies the amount of front/back lean against the slope when the slope is tilted."
+    },
+    {
+      "Field": "sideUndulationRate",
+      "Name": "Slope: Side Lean Ratio",
+      "Description": "Specifies the amount of right/left lean against the slope when the slope is tilted."
+    },
+    {
+      "Field": "forwardUndulationRateSlide",
+      "Name": "Slope: Forward Lean Ratio during Slide",
+      "Description": "Specifies the amount of front/back lean against the slope when the slope is tilted, during a slide."
+    },
+    {
+      "Field": "sideUndulationRateSlide",
+      "Name": "Slope: Side Lean Ratio during Slide",
+      "Description": "Specifies the amount of right/left lean against the slope when the slope is tilted, during a slide."
+    },
+    {
+      "Field": "undulationGain",
+      "Name": "Slope: Gain",
+      "Description": "The gain value used for tilting the slope when the slope is tilted."
+    },
+    {
+      "Field": "undulationGainSlide",
+      "Name": "Slope: Gain during Slide",
+      "Description": "The gain value used for tilting the slope when the slope is tilted, during a slide."
+    },
+    {
+      "Field": "undulationGainDefaultToSlide",
+      "Name": "Slope: Gain Correction from Normal to Slide",
+      "Description": "Interpolated gain value when the slope enters a slide from normal."
+    },
+    {
+      "Field": "undulationGainSlideToDefault",
+      "Name": "Slope: Gain Correction from Slide to Normal",
+      "Description": "Interpolated gain value when the slope returns to normal after a slide."
+    },
+    {
+      "Field": "lockedDisableMinAngle",
+      "Name": "Minimum Knee Unlock Angle",
+      "Description": "The minimum knee angle to unlock foot/ankle when locked. In degrees."
+    },
+    {
+      "Field": "lockedDisableMaxAngle",
+      "Name": "Maximum Knee Unlock Angle",
+      "Description": "The maximum knee angle to unlock foot/ankle when locked. In degrees."
+    },
+    {
+      "Field": "lockedDisableDirAngle",
+      "Name": "Knee Unlock Direction Angle",
+      "Description": "The angle of the cone to unlock foot/ankle when locked. In degrees."
+    },
+    {
+      "Field": "nextLockFactorThreshold",
+      "Name": "Relock Threshold after Unlock",
+      "Description": "The threshold of the coefficient after the foot/ankle is unlocked at which it can be relocked."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

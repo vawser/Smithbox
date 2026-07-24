@@ -1,0 +1,48 @@
+{
+  "Param": "CHARMAKEMENUTOP_PARAM_ST",
+  "Type": "CHARMAKEMENUTOP_PARAM_ST",
+  "Name": "CHARMAKEMENUTOP_PARAM_ST",
+  "Description": "Layout Data for the Character Make Menu",
+  "Fields": [
+    {
+      "Field": "CommandID",
+      "Name": "Command ID",
+      "Description": ""
+    },
+    {
+      "Field": "FaceParamID",
+      "Name": "Caption ID",
+      "Description": ""
+    },
+    {
+      "Field": "TableID",
+      "Name": "Face Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "ViewCondition",
+      "Name": "Slider Caption/Parts Group ID",
+      "Description": "Slider Caption ID if a slider\nParts Group ID from CharMakeMenuListItemParam if something like hair"
+    },
+    {
+      "Field": "PreviewMode",
+      "Name": "View Condition",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MenuType",
+      "Name": "Preview Mode",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

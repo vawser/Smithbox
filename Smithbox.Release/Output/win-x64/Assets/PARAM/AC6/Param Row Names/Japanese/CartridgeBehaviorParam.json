@@ -1,0 +1,463 @@
+{
+  "Name": "CartridgeBehaviorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Rifle (standard) -- ライフル(標準)"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Shotgun (shotshell) -- ショットガン(ショットシェル）"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Shotgun (hexagonal) -- ショットガン(6角型）"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Shotgun (multiple regular bullets) -- ショットガン(通常弾複数）"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Gatling (rifle bullet) -- ガトリング（ライフル弾）"
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        "Handgun (standard) -- ハンドガン(標準)"
+      ]
+    },
+    {
+      "ID": 100041,
+      "Entries": [
+        "Handgun (large caliber) -- ハンドガン(大口径)"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "grenade -- グレネード"
+      ]
+    },
+    {
+      "ID": 100051,
+      "Entries": [
+        "grenade wp_1310 -- グレネードwp_1310"
+      ]
+    },
+    {
+      "ID": 100060,
+      "Entries": [
+        "curved cannon -- 曲射砲"
+      ]
+    },
+    {
+      "ID": 101050,
+      "Entries": [
+        "Grenade_back weapon -- グレネード_背中武器"
+      ]
+    },
+    {
+      "ID": 101090,
+      "Entries": [
+        "stun needle launcher -- スタンニードルランチャー"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Orbit_live bullets -- オービット_実弾"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400003,
+      "Entries": [
+        "rifle -- ライフル"
+      ]
+    },
+    {
+      "ID": 400013,
+      "Entries": [
+        "shotgun -- ショットガン"
+      ]
+    },
+    {
+      "ID": 400023,
+      "Entries": [
+        "Gatling (machine gun) -- ガトリング（マシンガン）"
+      ]
+    },
+    {
+      "ID": 400033,
+      "Entries": [
+        "bazooka -- バズーカ"
+      ]
+    },
+    {
+      "ID": 400043,
+      "Entries": [
+        "hand gun -- ハンドガン"
+      ]
+    },
+    {
+      "ID": 400053,
+      "Entries": [
+        "sniper rifle -- スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 400063,
+      "Entries": [
+        "canon -- キャノン"
+      ]
+    },
+    {
+      "ID": 400073,
+      "Entries": [
+        "deformed cannon -- 変形キャノン"
+      ]
+    },
+    {
+      "ID": 6011002,
+      "Entries": [
+        "Semi-automatic rifle (small) -- セミオートライフル（小)"
+      ]
+    },
+    {
+      "ID": 6011102,
+      "Entries": [
+        "Semi-automatic rifle (medium) -- セミオートライフル（中)"
+      ]
+    },
+    {
+      "ID": 6011202,
+      "Entries": [
+        "Semi-automatic rifle (large) -- セミオートライフル（大)"
+      ]
+    },
+    {
+      "ID": 6012102,
+      "Entries": [
+        "assault rifle -- アサルトライフル"
+      ]
+    },
+    {
+      "ID": 6013102,
+      "Entries": [
+        "hand gun -- ハンドガン"
+      ]
+    },
+    {
+      "ID": 6014002,
+      "Entries": [
+        "Machine gun (small) -- マシンガン(小)"
+      ]
+    },
+    {
+      "ID": 6014102,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 6014202,
+      "Entries": [
+        "Machine gun (large) -- マシンガン(大)"
+      ]
+    },
+    {
+      "ID": 6015102,
+      "Entries": [
+        "Gatling gun (medium) -- ガトリングガン(中)"
+      ]
+    },
+    {
+      "ID": 6015202,
+      "Entries": [
+        "Gatling gun (large) -- ガトリングガン(大)"
+      ]
+    },
+    {
+      "ID": 6021102,
+      "Entries": [
+        "Shotgun (medium) -- ショットガン(中)"
+      ]
+    },
+    {
+      "ID": 6021202,
+      "Entries": [
+        "Shotgun (large) -- ショットガン(大)"
+      ]
+    },
+    {
+      "ID": 6031102,
+      "Entries": [
+        "Grenade rifle (medium) -- グレネードライフル(中)"
+      ]
+    },
+    {
+      "ID": 6031202,
+      "Entries": [
+        "Grenade rifle (large) -- グレネードライフル(大)"
+      ]
+    },
+    {
+      "ID": 6041102,
+      "Entries": [
+        "bazooka -- バズーカ"
+      ]
+    },
+    {
+      "ID": 6041202,
+      "Entries": [
+        "Bazooka (large) -- バズーカ（大）"
+      ]
+    },
+    {
+      "ID": 6042102,
+      "Entries": [
+        "diffusion bazooka -- 拡散バズーカ"
+      ]
+    },
+    {
+      "ID": 6051102,
+      "Entries": [
+        "Throwing gun (high-explosive bullet) -- 投擲銃（榴弾)"
+      ]
+    },
+    {
+      "ID": 6081002,
+      "Entries": [
+        "Normal missile small (simultaneous launch system) -- ノーマルミサイル小(同時発射系)"
+      ]
+    },
+    {
+      "ID": 6081102,
+      "Entries": [
+        "Normal missile medium (combined type) -- ノーマルミサイル中（連装系)"
+      ]
+    },
+    {
+      "ID": 6081202,
+      "Entries": [
+        "Normal missile large (single-shot type) -- ノーマルミサイル大(単発系)"
+      ]
+    },
+    {
+      "ID": 6082102,
+      "Entries": [
+        "vertical missile -- 垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 6083102,
+      "Entries": [
+        "plasma missile -- プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 6084102,
+      "Entries": [
+        "depleted uranium missile -- 劣化ウランミサイル"
+      ]
+    },
+    {
+      "ID": 6085102,
+      "Entries": [
+        "AI multi-stage guided missile -- AI多段誘導ミサイル"
+      ]
+    },
+    {
+      "ID": 6086102,
+      "Entries": [
+        "interceptor missile -- 迎撃ミサイル"
+      ]
+    },
+    {
+      "ID": 6087102,
+      "Entries": [
+        "fission missile -- 分裂ミサイル"
+      ]
+    },
+    {
+      "ID": 6121102,
+      "Entries": [
+        "flare -- フレア"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 security MT rifle -- c3000 警備MT\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT machine gun -- c3020 旧共産圏汎用MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "c3020 former communist country general purpose MT rifle -- c3020 旧共産圏汎用MT\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "c3020 Former communist country general purpose MT shotgun -- c3020 旧共産圏汎用MT\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT double machine gun -- c3020 旧共産圏汎用MT\u3000ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 30500500,
+      "Entries": [
+        "c3050_grenade rifle -- c3050_グレネードライフル"
+      ]
+    },
+    {
+      "ID": 32001300,
+      "Entries": [
+        "c3200 avalanche double machine gun -- c3200 アバランチ\u3000ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 32002100,
+      "Entries": [
+        "c3200 Avalanche Rifle (Ace) -- c3200 アバランチ\u3000ライフル（エース）"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Rifle A -- c3250 正規軍AC（ノーマル）\u3000ライフルA"
+      ]
+    },
+    {
+      "ID": 32500001,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Rifle A for Full Burst -- c3250 正規軍AC（ノーマル）\u3000ライフルA フルバースト用"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "c3250 Regular Army AC (Heavy Firepower) Grenade -- c3250 正規軍AC（重火力）\u3000グレネード"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 Regular Army AC (Support) Rifle B -- c3250 正規軍AC（支援）\u3000ライフルB"
+      ]
+    },
+    {
+      "ID": 34000800,
+      "Entries": [
+        "c3400_sniper rifle -- c3400_スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 34001200,
+      "Entries": [
+        "c3400_grenade rifle -- c3400_グレネードライフル"
+      ]
+    },
+    {
+      "ID": 34001500,
+      "Entries": [
+        "c3400 shotgun -- c3400\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 Deleteer Vulcan -- c3700 デリーター\u3000バルカン"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Gatling gun right hand -- c4100 人型重量級ボス\u3000ガトリング砲 右手"
+      ]
+    },
+    {
+      "ID": 41000210,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost C -- c4100 人型重量級ボス\u3000ガトリング砲 突進/ブースト用\u3000C",
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost C -- c4100 人型重量級ボス\u3000ガトリング砲 突進/ブースト用\u3000C",
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost C -- c4100 人型重量級ボス\u3000ガトリング砲 突進/ブースト用\u3000C"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand -- c4100 人型重量級ボス\u3000ショットガン 左手"
+      ]
+    },
+    {
+      "ID": 41000310,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Shotgun Left Hand Slide -- c4100 人型重量級ボス\u3000ショットガン 左手 スライド"
+      ]
+    },
+    {
+      "ID": 41000320,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand slide simultaneous firing -- c4100 人型重量級ボス\u3000ショットガン 左手 スライド同時発射"
+      ]
+    },
+    {
+      "ID": 41000330,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand fires all bullets -- c4100 人型重量級ボス\u3000ショットガン 左手 全弾発射"
+      ]
+    },
+    {
+      "ID": 41000340,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand all shots fired all loaded -- c4100 人型重量級ボス\u3000ショットガン 左手 全弾発射 全部盛"
+      ]
+    },
+    {
+      "ID": 41001300,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Grenade Cannon -- c4100 人型重量級ボス\u3000グレネードキャノン"
+      ]
+    }
+  ]
+}

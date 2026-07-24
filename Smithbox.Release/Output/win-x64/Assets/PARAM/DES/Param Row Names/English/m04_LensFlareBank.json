@@ -1,0 +1,125 @@
+{
+  "Name": "m04_LensFlareBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "flare"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "flare"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "flare"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "flare"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "ghost"
+      ]
+    }
+  ]
+}

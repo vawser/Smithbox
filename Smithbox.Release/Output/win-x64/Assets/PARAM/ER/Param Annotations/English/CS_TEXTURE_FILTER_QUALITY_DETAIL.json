@@ -1,0 +1,23 @@
+{
+  "Param": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Type": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Name": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "filter",
+      "Name": "Texture Filter",
+      "Description": "filter"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnisoLevel",
+      "Name": "Anisotropic Level",
+      "Description": "Aniso level"
+    }
+  ]
+}

@@ -1,0 +1,9983 @@
+{
+  "Name": "EquipParamCustomWeapon",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Longsword +6 - test gem 1"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Blank +6 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Blank +6 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Blank +6 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Blank +6 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Heavy Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Keen Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Quality Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Fire Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Flame Art Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Lightning Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Sacred Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Magic Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Cold Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Poison Longsword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bastard Sword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Longsword +0 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Uchigatana +0 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Longsword +0 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Bastard Sword +0 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Lance +0 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Bastard Sword +0 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Greatsword +0 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Longsword +0 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Longsword +0 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Battle Axe +0 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Halberd +0 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Uchigatana +0 - Double Slash"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Prelate's Inferno Crozier +0 - Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Uchigatana +0 - Unsheathe"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Longsword +0 - Square Off"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Lance +0 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Torch +0 - Torch Attack"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Twinblade +0 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Longsword +0 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Longsword +0 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Longsword +0 -"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Banished Knight's Halberd +0 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Banished Knight's Halberd +0 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Longsword +0 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Longsword +0 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Short Spear +0 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Longsword +0 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Longsword +0 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Caestus +0 - Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Great Mace +0 - Eruption"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Great Mace +0 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Blank +0 - Gravitas"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Longsword +0 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Nightrider Glaive +0 - Phantom Slash"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Great Mace +0 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Great Mace +0 - Golden Land"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Longsword +0 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Short Spear +0 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Uchigatana +0 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Longsword +0 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Longsword +0 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Longsword +0 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Twinblade +0 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Short Spear +0 - Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Short Spear +0 - Spectral Lance"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Kite Shield +0 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Kite Shield +0 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Kite Shield +0 - Parry"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Buckler +0 - Buckler Parry"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Kite Shield +0 - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Kite Shield +0 - Storm Wall"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Kite Shield +0 - Golden Parry"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Kite Shield +0 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Lion Greatbow +0 - Through and Through"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Longbow +0 - Barrage"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Longbow +0 - Mighty Shot"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Longbow +0 - Enchanted Shot"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Longbow +0 - Sky Shot"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Lion Greatbow +0 - Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Longbow +0 -"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Longsword +0 -"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Longsword +0 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Longsword +0 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Longsword +0 - Kick"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Longsword +0 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Longsword +0 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Longsword +0 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Longsword +0 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Great Mace +0 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Caestus +0 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Longsword +0 - Determination"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Longsword +0 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Longsword +0 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Longsword +0 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Longsword +0 - Seppuku"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Greatsword +0 - Cragblade"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Longsword +0 - Shared Order"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Longsword +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Longsword +0 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Longsword +0 -"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Longsword +0 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Longsword +0 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Mace +0 - Endure"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Kite Shield +0 - Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Kite Shield +0 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Great Club +0 - Endure"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Caestus +0 - Endure"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Longsword +0 - Quickstep"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Longsword +0 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Longsword +0 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Longsword +0 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Longsword +0 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Twinblade +0 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Short Spear +0 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "Short Spear +0 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Short Spear +0 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Short Spear +0 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Longsword +0 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Bastard Sword +0 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Short Spear +0 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Torch +0 - Firebreather"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Longsword +0 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Dragon Towershield +0 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Buckler +0 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Dragon Towershield +0 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Buckler +0 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Buckler +0 - Parry"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Dagger +0 - Parry"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Falchion +0 - Parry"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Dragon Towershield +0 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Buckler +0 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Kite Shield +0 - Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Short Spear +0 - Determination"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Short Spear +0 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Lance +0 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Lucerne +0 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Scythe +0 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Hookclaws +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Longsword +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Twinblade +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Bastard Sword +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Greatsword +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Falchion +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Uchigatana +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Battle Axe +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Duelist Greataxe +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Watchdog's Staff +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Greataxe +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Mace +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Flail +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Great Mace +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Short Spear +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Mohgwyn's Sacred Spear +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Halberd +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Blank +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Caestus +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Scythe +0 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Hookclaws +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Longsword +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Twinblade +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Bastard Sword +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Greatsword +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Falchion +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Uchigatana +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "Battle Axe +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "Duelist Greataxe +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "Watchdog's Staff +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Greataxe +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Mace +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Flail +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Great Mace +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Short Spear +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "Mohgwyn's Sacred Spear +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Halberd +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Blank +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Caestus +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Scythe +0 - War Cry"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Bastard Sword +0 - Double Slash"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Banished Knight's Halberd +0 - Double Slash"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Bastard Sword +0 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Twinblade +0 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Longsword +0 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Longsword +0 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Twinblade +0 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Caestus +0 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Banished Knight's Halberd +0 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Scimitar +0 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Spear +0 - Determination"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Club +0 - Blank"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Rickety Shield +0 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Bastard Sword +0 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Bastard Sword +0 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Longsword +0 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Longsword +0 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Short Spear +0 -"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Flame Art Longsword +0 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Poison Longsword +0 -"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Sacred Bastard Sword +0 - Eruption"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Quality Bastard Sword +0 - Gravitas"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Quality Longsword +0 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Heavy Bastard Sword +0 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Magic Longsword +0 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Cold Short Spear +0 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Flame Art Longsword +0 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Heavy Longsword +0 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Quality Longsword +0 - Determination"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Fire Longsword +0 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Keen Longsword +0 - Quickstep"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Keen Longsword +0 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Blank +4 - No Skill"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Blank +4 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        "Blank +5 - No Skill"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Spear +7 - Kick"
+      ]
+    },
+    {
+      "ID": 3091,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3092,
+      "Entries": [
+        "Spear +0 - Kick"
+      ]
+    },
+    {
+      "ID": 3093,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Banished Knight's Halberd +8 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Flamberge +9 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Blank +0 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Hoslow's Petal Whip +3 - Kick"
+      ]
+    },
+    {
+      "ID": 3141,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Blank +6 - No Skill"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Nagakiba +7 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3182,
+      "Entries": [
+        "Uchigatana +5 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 3183,
+      "Entries": [
+        "Blank +7 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 3190,
+      "Entries": [
+        "Inseparable Sword +1 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 3191,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3192,
+      "Entries": [
+        "Blank +1 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 3193,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Erdsteel Dagger +10 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "Sword of Milos +10 - Blank"
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "Blank +7 - No Skill"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        "Blank +8 - No Skill"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Rogier's Rapier +10 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "Blank +6 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 3261,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3262,
+      "Entries": [
+        "Devourer's Scepter +7 - Blank"
+      ]
+    },
+    {
+      "ID": 3270,
+      "Entries": [
+        "Eleonora's Poleblade +2 - Blank"
+      ]
+    },
+    {
+      "ID": 3271,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3290,
+      "Entries": [
+        "Great epee +8 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 3291,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3292,
+      "Entries": [
+        "Blank +0 - Blank"
+      ]
+    },
+    {
+      "ID": 3293,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Iron Ball +7 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 3330,
+      "Entries": [
+        "Blank +5 - No Skill"
+      ]
+    },
+    {
+      "ID": 3340,
+      "Entries": [
+        "Stormhawk Axe +4 - Blank"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Scavenger's Curved Sword +10 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 3351,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3390,
+      "Entries": [
+        "Clinging Bone +3 - Blank"
+      ]
+    },
+    {
+      "ID": 3391,
+      "Entries": [
+        "Blank +6 - No Skill"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Raptor Talons +8 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Reduvia +10 - Blank"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "Blank +8 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 3441,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3442,
+      "Entries": [
+        "Blank +0 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 3443,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "Blank +6 - Gravitas"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Scorpion's Stinger +5 - Quickstep"
+      ]
+    },
+    {
+      "ID": 3461,
+      "Entries": [
+        "Crepus's Black-Key Crossbow +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "Hoslow's Petal Whip +9 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Flail +5 - Blank"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "Blank +5 - No Skill"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Blank +6 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 3531,
+      "Entries": [
+        "Sacred Butchering Knife +6 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 3532,
+      "Entries": [
+        "Sacred Butchering Knife +7 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Rivers of Blood +4 - Blank"
+      ]
+    },
+    {
+      "ID": 3551,
+      "Entries": [
+        "Wakizashi +10 - Quickstep"
+      ]
+    },
+    {
+      "ID": 3552,
+      "Entries": [
+        "Rivers of Blood +0 - Blank"
+      ]
+    },
+    {
+      "ID": 3553,
+      "Entries": [
+        "Wakizashi +0 - Quickstep"
+      ]
+    },
+    {
+      "ID": 3560,
+      "Entries": [
+        "Flail +10 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 3561,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3590,
+      "Entries": [
+        "Carian Knight's Sword +2 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 3591,
+      "Entries": [
+        "Carian Knight's Shield +10 - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 3592,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Godslayer's Greatsword +6 - Blank"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Quality Twinblade +18 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 3611,
+      "Entries": [
+        "Iron Roundshield +18 - No Skill"
+      ]
+    },
+    {
+      "ID": 3612,
+      "Entries": [
+        "Quality Twinblade +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 3613,
+      "Entries": [
+        "Iron Roundshield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 3670,
+      "Entries": [
+        "Blank +7 - Seppuku"
+      ]
+    },
+    {
+      "ID": 3671,
+      "Entries": [
+        "Wakizashi +8 - No Skill"
+      ]
+    },
+    {
+      "ID": 3680,
+      "Entries": [
+        "Light Crossbow +9 - Kick"
+      ]
+    },
+    {
+      "ID": 3681,
+      "Entries": [
+        "Mace +8 - Kick"
+      ]
+    },
+    {
+      "ID": 3682,
+      "Entries": [
+        "Blank +6 - Kick"
+      ]
+    },
+    {
+      "ID": 3683,
+      "Entries": [
+        "Short Spear +6 - Kick"
+      ]
+    },
+    {
+      "ID": 3684,
+      "Entries": [
+        "Inverted Hawk Towershield +9 - No Skill"
+      ]
+    },
+    {
+      "ID": 3690,
+      "Entries": [
+        "Blank +6 - Eruption"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Blank +18 - Endure"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "Blank +18 - No Skill"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "Blank +25 - Endure"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "Blank +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Blank +18 - Quickstep"
+      ]
+    },
+    {
+      "ID": 3711,
+      "Entries": [
+        "Heater Shield +18 - No Skill"
+      ]
+    },
+    {
+      "ID": 3712,
+      "Entries": [
+        "Blank +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 3713,
+      "Entries": [
+        "Heater Shield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Antspur Rapier +10 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 3721,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Keen Misericorde +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 3731,
+      "Entries": [
+        "Buckler +25 - Parry"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "Heavy Great Mace +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 3741,
+      "Entries": [
+        "Banished Knight's Shield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 3750,
+      "Entries": [
+        "Magic Estoc +25 - Parry"
+      ]
+    },
+    {
+      "ID": 3751,
+      "Entries": [
+        "Albinauric Staff +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 3760,
+      "Entries": [
+        "Black Knife +3 - Blank"
+      ]
+    },
+    {
+      "ID": 3761,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3770,
+      "Entries": [
+        "Blood Misericorde +10 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 3771,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Blank +6 - No Skill"
+      ]
+    },
+    {
+      "ID": 3820,
+      "Entries": [
+        "Blank +0 - No Skill"
+      ]
+    },
+    {
+      "ID": 3821,
+      "Entries": [
+        "One-Eyed Shield +10 - Blank"
+      ]
+    },
+    {
+      "ID": 3830,
+      "Entries": [
+        "Torchpole +2 - Kick"
+      ]
+    },
+    {
+      "ID": 3831,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3840,
+      "Entries": [
+        "Ghiza's Wheel +7 - Blank"
+      ]
+    },
+    {
+      "ID": 3850,
+      "Entries": [
+        "Cold Scythe +7 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 3851,
+      "Entries": [
+        "Staff of the Guilty +7 - No Skill"
+      ]
+    },
+    {
+      "ID": 3860,
+      "Entries": [
+        "Reduvia +10 - Blank"
+      ]
+    },
+    {
+      "ID": 3861,
+      "Entries": [
+        "Blank +10 - No Skill"
+      ]
+    },
+    {
+      "ID": 3870,
+      "Entries": [
+        "Halo Scythe +3 - Blank"
+      ]
+    },
+    {
+      "ID": 3880,
+      "Entries": [
+        "Blank +6 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 3890,
+      "Entries": [
+        "Flowing Curved Sword +7 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Blank +7 - Blank"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "Blank +7 - No Skill"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4091,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4092,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4132,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4163,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4164,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4171,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4172,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4182,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4242,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4253,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4271,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4281,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Banished Knight's Halberd +8 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Rogier's Rapier +8 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Spear +7 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Nagakiba +0 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Iron Ball +0 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Magic Ice Crest Shield +25 - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Heavy Giant-Crusher +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Heavy Stone Club +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Heavy Greatsword +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Quality Grossmesser +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Banished Knight's Quality Greatsword +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Hoslow's Keen Petal Whip +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Composite Bow +25 - Barrage"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Heavy Longsword +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Heavy Greatsword +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Heavy Falchion +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Heavy Dismounter +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Heavy Uchigatana +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Heavy Twinblade +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Heavy Battle Axe +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Heavy Greataxe +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Heavy Mace +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Heavy Large Club +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Keen Dagger +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "Keen Longsword +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "Keen Bastard Sword +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10056,
+      "Entries": [
+        "Keen Uchigatana +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10057,
+      "Entries": [
+        "Keen Twinblade +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10058,
+      "Entries": [
+        "Keen Rapier +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10059,
+      "Entries": [
+        "Keen Great epee +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10065,
+      "Entries": [
+        "Keen Short Spear +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10066,
+      "Entries": [
+        "Keen Lance +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10067,
+      "Entries": [
+        "Keen Halberd +25 - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Keen Longsword +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Keen Bastard Sword +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Keen Uchigatana +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Keen Twinblade +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Keen Rapier +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Keen Great epee +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "Keen Short Spear +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "Keen Lance +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "Keen Halberd +25 - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "Keen Dagger +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "Keen Longsword +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "Keen Bastard Sword +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "Keen Falchion +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "Keen Dismounter +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10156,
+      "Entries": [
+        "Keen Uchigatana +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10157,
+      "Entries": [
+        "Keen Twinblade +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Keen Battle Axe +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10161,
+      "Entries": [
+        "Keen Greataxe +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10165,
+      "Entries": [
+        "Keen Short Spear +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10166,
+      "Entries": [
+        "Keen Lance +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10167,
+      "Entries": [
+        "Keen Halberd +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10168,
+      "Entries": [
+        "Keen Scythe +25 - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "Quality Twinblade +25 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "Quality Great epee +25 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "Quality Short Spear +25 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "Quality Lance +25 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "Quality Halberd +25 - Charge Forth"
+      ]
+    },
+    {
+      "ID": 10252,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10253,
+      "Entries": [
+        "Heavy Greatsword +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10255,
+      "Entries": [
+        "Heavy Dismounter +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "Heavy Battle Axe +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        "Heavy Greataxe +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        "Heavy Mace +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10263,
+      "Entries": [
+        "Heavy Large Club +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10264,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 10302,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10303,
+      "Entries": [
+        "Heavy Greatsword +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10305,
+      "Entries": [
+        "Heavy Dismounter +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10310,
+      "Entries": [
+        "Heavy Battle Axe +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10311,
+      "Entries": [
+        "Heavy Greataxe +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10312,
+      "Entries": [
+        "Heavy Mace +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10313,
+      "Entries": [
+        "Heavy Large Club +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10314,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10322,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 10350,
+      "Entries": [
+        "Blood Dagger +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10351,
+      "Entries": [
+        "Bloody Longsword +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10352,
+      "Entries": [
+        "Bloody Bastard Sword +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10356,
+      "Entries": [
+        "Blood Uchigatana +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10357,
+      "Entries": [
+        "Bloody Twinblade +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10358,
+      "Entries": [
+        "Blood Rapier +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10359,
+      "Entries": [
+        "Blood Great epee +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10365,
+      "Entries": [
+        "Blood Short Spear +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10366,
+      "Entries": [
+        "Bloody Lance +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10367,
+      "Entries": [
+        "Blood Halberd +25 - Blood Tax"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "Keen Dagger +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10401,
+      "Entries": [
+        "Keen Longsword +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10402,
+      "Entries": [
+        "Keen Bastard Sword +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10406,
+      "Entries": [
+        "Keen Uchigatana +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10407,
+      "Entries": [
+        "Keen Twinblade +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10408,
+      "Entries": [
+        "Keen Rapier +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10409,
+      "Entries": [
+        "Keen Great epee +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10415,
+      "Entries": [
+        "Keen Short Spear +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10416,
+      "Entries": [
+        "Keen Lance +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10417,
+      "Entries": [
+        "Keen Halberd +25 - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 10452,
+      "Entries": [
+        "Quality Bastard Sword +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10454,
+      "Entries": [
+        "Quality Falchion +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10455,
+      "Entries": [
+        "Quality Dismounter +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10460,
+      "Entries": [
+        "Quality Battle Axe +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10461,
+      "Entries": [
+        "Quality Greataxe +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10462,
+      "Entries": [
+        "Quality Mace +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10463,
+      "Entries": [
+        "Quality Large Club +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10464,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10468,
+      "Entries": [
+        "Quality Scythe +25 - Wild Strikes"
+      ]
+    },
+    {
+      "ID": 10515,
+      "Entries": [
+        "Heavy Short Spear +25 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 10517,
+      "Entries": [
+        "Heavy Halberd +25 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 10518,
+      "Entries": [
+        "Heavy Scythe +25 - Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 10550,
+      "Entries": [
+        "Keen Dagger +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10551,
+      "Entries": [
+        "Keen Longsword +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10552,
+      "Entries": [
+        "Keen Bastard Sword +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10554,
+      "Entries": [
+        "Keen Falchion +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10555,
+      "Entries": [
+        "Keen Dismounter +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10556,
+      "Entries": [
+        "Keen Uchigatana +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10557,
+      "Entries": [
+        "Keen Twinblade +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10567,
+      "Entries": [
+        "Keen Halberd +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10568,
+      "Entries": [
+        "Keen Scythe +25 - Double Slash"
+      ]
+    },
+    {
+      "ID": 10611,
+      "Entries": [
+        "Flame Art Greataxe +25 - Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 10613,
+      "Entries": [
+        "Flame Art Large Club +25 - Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 10622,
+      "Entries": [
+        "Flame Art Duelist Greataxe +25 - Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 10656,
+      "Entries": [
+        "Keen Uchigatana +25 - Unsheathe"
+      ]
+    },
+    {
+      "ID": 10701,
+      "Entries": [
+        "Quality Longsword +25 - Square Off"
+      ]
+    },
+    {
+      "ID": 10752,
+      "Entries": [
+        "Quality Bastard Sword +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10753,
+      "Entries": [
+        "Quality Greatsword +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10757,
+      "Entries": [
+        "Quality Twinblade +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10759,
+      "Entries": [
+        "Quality Great epee +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10765,
+      "Entries": [
+        "Quality Short Spear +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10766,
+      "Entries": [
+        "Quality Lance +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10767,
+      "Entries": [
+        "Quality Halberd +25 - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 10807,
+      "Entries": [
+        "Magic Twinblade +25 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 10815,
+      "Entries": [
+        "Magic Short Spear +25 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 10816,
+      "Entries": [
+        "Magic Lance +25 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 10817,
+      "Entries": [
+        "Magic Halberd +25 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 10818,
+      "Entries": [
+        "Magic Scythe +25 - Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 10850,
+      "Entries": [
+        "Poison Dagger +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 10851,
+      "Entries": [
+        "Poison Longsword +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 10854,
+      "Entries": [
+        "Poison Falchion +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 10856,
+      "Entries": [
+        "Poison Uchigatana +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 10858,
+      "Entries": [
+        "Poison Rapier +25 - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "Magic Dagger +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10901,
+      "Entries": [
+        "Magic Longsword +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10904,
+      "Entries": [
+        "Magic Falchion +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10906,
+      "Entries": [
+        "Magic Uchigatana +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10907,
+      "Entries": [
+        "Magic Twinblade +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10908,
+      "Entries": [
+        "Magic Rapier +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10910,
+      "Entries": [
+        "Magic Battle Axe +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10912,
+      "Entries": [
+        "Magic Mace +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10914,
+      "Entries": [
+        "Magic Nightrider Flail +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10915,
+      "Entries": [
+        "Magic Short Spear +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10917,
+      "Entries": [
+        "Magic Halberd +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10918,
+      "Entries": [
+        "Magic Scythe +25 - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 10957,
+      "Entries": [
+        "Quality Twinblade +25 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 10959,
+      "Entries": [
+        "Quality Great epee +25 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 10965,
+      "Entries": [
+        "Quality Short Spear +25 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 10966,
+      "Entries": [
+        "Quality Lance +25 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 10967,
+      "Entries": [
+        "Quality Halberd +25 - Storm Assault"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Quality Longsword +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "Quality Bastard Sword +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "Quality Falchion +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        "Quality Dismounter +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "Quality Uchigatana +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "Quality Twinblade +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Quality Battle Axe +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "Quality Greataxe +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "Quality Mace +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "Quality Large Club +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        "Quality Short Spear +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        "Quality Lance +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        "Quality Halberd +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        "Quality Scythe +25 - Stormcaller"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Keen Dagger +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11051,
+      "Entries": [
+        "Keen Longsword +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11052,
+      "Entries": [
+        "Keen Bastard Sword +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11054,
+      "Entries": [
+        "Keen Falchion +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11055,
+      "Entries": [
+        "Keen Dismounter +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11056,
+      "Entries": [
+        "Keen Uchigatana +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11057,
+      "Entries": [
+        "Keen Twinblade +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Keen Battle Axe +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11061,
+      "Entries": [
+        "Keen Greataxe +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11067,
+      "Entries": [
+        "Keen Halberd +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11068,
+      "Entries": [
+        "Keen Scythe +25 - Sword Dance"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Magic Dagger +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11101,
+      "Entries": [
+        "Magic Longsword +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11102,
+      "Entries": [
+        "Magic Bastard Sword +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11104,
+      "Entries": [
+        "Magic Falchion +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11105,
+      "Entries": [
+        "Magic Dismounter +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11106,
+      "Entries": [
+        "Magic Uchigatana +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11107,
+      "Entries": [
+        "Magic Twinblade +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11108,
+      "Entries": [
+        "Magic Rapier +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11109,
+      "Entries": [
+        "Magic Great epee +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11115,
+      "Entries": [
+        "Magic Short Spear +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11116,
+      "Entries": [
+        "Magic Lance +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11117,
+      "Entries": [
+        "Magic Halberd +25 - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "Sacred Dagger +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11151,
+      "Entries": [
+        "Sacred Longsword +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11152,
+      "Entries": [
+        "Sacred Bastard Sword +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11153,
+      "Entries": [
+        "Sacred Greatsword +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11154,
+      "Entries": [
+        "Sacred Falchion +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11155,
+      "Entries": [
+        "Sacred Dismounter +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11156,
+      "Entries": [
+        "Sacred Uchigatana +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11157,
+      "Entries": [
+        "Sacred Twinblade +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11158,
+      "Entries": [
+        "Sacred Rapier +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11159,
+      "Entries": [
+        "Sacred Great epee +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "Sacred Battle Axe +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11161,
+      "Entries": [
+        "Sacred Greataxe +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11162,
+      "Entries": [
+        "Sacred Mace +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11163,
+      "Entries": [
+        "Sacred Large Club +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11164,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11165,
+      "Entries": [
+        "Sacred Short Spear +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11166,
+      "Entries": [
+        "Sacred Lance +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11167,
+      "Entries": [
+        "Sacred Halberd +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11168,
+      "Entries": [
+        "Sacred Scythe +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11169,
+      "Entries": [
+        "Sacred Caestus +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "Sacred Hookclaws +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11172,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Sacred Blade"
+      ]
+    },
+    {
+      "ID": 11207,
+      "Entries": [
+        "Cold Twinblade +25 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 11215,
+      "Entries": [
+        "Cold Short Spear +25 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 11216,
+      "Entries": [
+        "Cold Lance +25 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 11217,
+      "Entries": [
+        "Cold Halberd +25 - Ice Spear"
+      ]
+    },
+    {
+      "ID": 11250,
+      "Entries": [
+        "Magic Dagger +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11251,
+      "Entries": [
+        "Magic Longsword +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11252,
+      "Entries": [
+        "Magic Bastard Sword +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11254,
+      "Entries": [
+        "Magic Falchion +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11255,
+      "Entries": [
+        "Magic Dismounter +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11256,
+      "Entries": [
+        "Magic Uchigatana +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11257,
+      "Entries": [
+        "Magic Twinblade +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11258,
+      "Entries": [
+        "Magic Rapier +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11259,
+      "Entries": [
+        "Magic Great epee +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11265,
+      "Entries": [
+        "Magic Short Spear +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11266,
+      "Entries": [
+        "Magic Lance +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11267,
+      "Entries": [
+        "Magic Halberd +25 - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Blood Dagger +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11301,
+      "Entries": [
+        "Bloody Longsword +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11302,
+      "Entries": [
+        "Bloody Bastard Sword +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11304,
+      "Entries": [
+        "Blood Falchion +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11305,
+      "Entries": [
+        "Blood Dismounter +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11306,
+      "Entries": [
+        "Blood Uchigatana +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11307,
+      "Entries": [
+        "Bloody Twinblade +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11308,
+      "Entries": [
+        "Blood Rapier +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11309,
+      "Entries": [
+        "Blood Great epee +25 - Bloody Slash"
+      ]
+    },
+    {
+      "ID": 11369,
+      "Entries": [
+        "Blood Caestus +25 - Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 11370,
+      "Entries": [
+        "Blood Hookclaws +25 - Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 11402,
+      "Entries": [
+        "Fire Bastard Sword +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11403,
+      "Entries": [
+        "Fire Greatsword +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11405,
+      "Entries": [
+        "Fire Dismounter +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11411,
+      "Entries": [
+        "Fire Greataxe +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11413,
+      "Entries": [
+        "Fire Large Club +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11422,
+      "Entries": [
+        "Fire Duelist Greataxe +25 - Eruption"
+      ]
+    },
+    {
+      "ID": 11460,
+      "Entries": [
+        "Sacred Battle Axe +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11461,
+      "Entries": [
+        "Sacred Greataxe +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11462,
+      "Entries": [
+        "Sacred Mace +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11463,
+      "Entries": [
+        "Sacred Large Club +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11464,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11472,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 11501,
+      "Entries": [
+        "Magic Longsword +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11502,
+      "Entries": [
+        "Magic Bastard Sword +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11503,
+      "Entries": [
+        "Magic Greatsword +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11504,
+      "Entries": [
+        "Magic Falchion +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11505,
+      "Entries": [
+        "Magic Dismounter +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11506,
+      "Entries": [
+        "Magic Uchigatana +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11507,
+      "Entries": [
+        "Magic Twinblade +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11508,
+      "Entries": [
+        "Magic Rapier +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11509,
+      "Entries": [
+        "Magic Great epee +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "Magic Battle Axe +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11511,
+      "Entries": [
+        "Magic Greataxe +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11512,
+      "Entries": [
+        "Magic Mace +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11513,
+      "Entries": [
+        "Magic Large Club +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11514,
+      "Entries": [
+        "Magic Nightrider Flail +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11515,
+      "Entries": [
+        "Magic Short Spear +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11516,
+      "Entries": [
+        "Magic Lance +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11517,
+      "Entries": [
+        "Magic Halberd +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11518,
+      "Entries": [
+        "Magic Scythe +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11522,
+      "Entries": [
+        "Magic Duelist Greataxe +25 - Gravitas"
+      ]
+    },
+    {
+      "ID": 11550,
+      "Entries": [
+        "Quality Dagger +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11551,
+      "Entries": [
+        "Quality Longsword +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11552,
+      "Entries": [
+        "Quality Bastard Sword +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11554,
+      "Entries": [
+        "Quality Falchion +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11555,
+      "Entries": [
+        "Quality Dismounter +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11556,
+      "Entries": [
+        "Quality Uchigatana +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11558,
+      "Entries": [
+        "Quality Rapier +25 - Storm Blade"
+      ]
+    },
+    {
+      "ID": 11603,
+      "Entries": [
+        "Heavy Greatsword +25 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 11611,
+      "Entries": [
+        "Heavy Greataxe +25 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 11613,
+      "Entries": [
+        "Heavy Large Club +25 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 11616,
+      "Entries": [
+        "Heavy Lance +25 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 11622,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Earthshaker"
+      ]
+    },
+    {
+      "ID": 11653,
+      "Entries": [
+        "Sacred Greatsword +25 - Golden Land"
+      ]
+    },
+    {
+      "ID": 11661,
+      "Entries": [
+        "Sacred Greataxe +25 - Golden Land"
+      ]
+    },
+    {
+      "ID": 11663,
+      "Entries": [
+        "Sacred Large Club +25 - Golden Land"
+      ]
+    },
+    {
+      "ID": 11666,
+      "Entries": [
+        "Sacred Lance +25 - Golden Land"
+      ]
+    },
+    {
+      "ID": 11672,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Golden Land"
+      ]
+    },
+    {
+      "ID": 11700,
+      "Entries": [
+        "Fire Dagger +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11701,
+      "Entries": [
+        "Fire Longsword +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11702,
+      "Entries": [
+        "Fire Bastard Sword +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11703,
+      "Entries": [
+        "Fire Greatsword +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11704,
+      "Entries": [
+        "Fire Falchion +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11705,
+      "Entries": [
+        "Fire Dismounter +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11706,
+      "Entries": [
+        "Fire Uchigatana +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11707,
+      "Entries": [
+        "Fire Twinblade +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11708,
+      "Entries": [
+        "Fire Rapier +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11709,
+      "Entries": [
+        "Fire Great epee +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11710,
+      "Entries": [
+        "Fire Battle Axe +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11711,
+      "Entries": [
+        "Fire Greataxe +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11712,
+      "Entries": [
+        "Fire Mace +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11713,
+      "Entries": [
+        "Fire Large Club +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11714,
+      "Entries": [
+        "Fire Nightrider Flail +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11715,
+      "Entries": [
+        "Fire Short Spear +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11716,
+      "Entries": [
+        "Fire Lance +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11717,
+      "Entries": [
+        "Fire Halberd +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11718,
+      "Entries": [
+        "Fire Scythe +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11719,
+      "Entries": [
+        "Fire Caestus +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11720,
+      "Entries": [
+        "Fire Hookclaws +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11722,
+      "Entries": [
+        "Fire Duelist Greataxe +25 - Flaming Strike"
+      ]
+    },
+    {
+      "ID": 11750,
+      "Entries": [
+        "Lightning Dagger +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11751,
+      "Entries": [
+        "Lightning Longsword +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11752,
+      "Entries": [
+        "Lightning Bastard Sword +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11753,
+      "Entries": [
+        "Lightning Greatsword +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11754,
+      "Entries": [
+        "Lightning Falchion +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11755,
+      "Entries": [
+        "Lightning Dismounter +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11756,
+      "Entries": [
+        "Lightning Uchigatana +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11757,
+      "Entries": [
+        "Lightning Twinblade +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11758,
+      "Entries": [
+        "Lightning Rapier +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11759,
+      "Entries": [
+        "Lightning Great epee +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11760,
+      "Entries": [
+        "Lightning Battle Axe +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11761,
+      "Entries": [
+        "Lightning Greataxe +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11762,
+      "Entries": [
+        "Lightning Mace +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11763,
+      "Entries": [
+        "Lightning Large Club +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11764,
+      "Entries": [
+        "Lightning Nightrider Flail +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11765,
+      "Entries": [
+        "Lightning Short Spear +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11766,
+      "Entries": [
+        "Lightning Lance +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11767,
+      "Entries": [
+        "Lightning Halberd +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11768,
+      "Entries": [
+        "Lightning Scythe +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11769,
+      "Entries": [
+        "Lightning Caestus +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11770,
+      "Entries": [
+        "Lightning Hookclaws +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11771,
+      "Entries": [
+        "Lightning Whip +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11772,
+      "Entries": [
+        "Lightning Duelist Greataxe +25 - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "Lightning Dagger +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11801,
+      "Entries": [
+        "Lightning Longsword +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11802,
+      "Entries": [
+        "Lightning Bastard Sword +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11803,
+      "Entries": [
+        "Lightning Greatsword +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11804,
+      "Entries": [
+        "Lightning Falchion +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11805,
+      "Entries": [
+        "Lightning Dismounter +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11806,
+      "Entries": [
+        "Lightning Uchigatana +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11807,
+      "Entries": [
+        "Lightning Twinblade +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11808,
+      "Entries": [
+        "Lightning Rapier +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11809,
+      "Entries": [
+        "Lightning Great epee +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11810,
+      "Entries": [
+        "Lightning Battle Axe +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11811,
+      "Entries": [
+        "Lightning Greataxe +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11812,
+      "Entries": [
+        "Lightning Mace +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11813,
+      "Entries": [
+        "Lightning Large Club +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11814,
+      "Entries": [
+        "Lightning Nightrider Flail +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11822,
+      "Entries": [
+        "Lightning Duelist Greataxe +25 - Lightning Slash"
+      ]
+    },
+    {
+      "ID": 11850,
+      "Entries": [
+        "Magic Dagger +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11851,
+      "Entries": [
+        "Magic Longsword +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11852,
+      "Entries": [
+        "Magic Bastard Sword +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11854,
+      "Entries": [
+        "Magic Falchion +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11855,
+      "Entries": [
+        "Magic Dismounter +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11856,
+      "Entries": [
+        "Magic Uchigatana +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11857,
+      "Entries": [
+        "Magic Twinblade +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11858,
+      "Entries": [
+        "Magic Rapier +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11859,
+      "Entries": [
+        "Magic Great epee +25 - Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 11900,
+      "Entries": [
+        "Magic Dagger +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11901,
+      "Entries": [
+        "Magic Longsword +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11902,
+      "Entries": [
+        "Magic Bastard Sword +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11904,
+      "Entries": [
+        "Magic Falchion +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11905,
+      "Entries": [
+        "Magic Dismounter +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11906,
+      "Entries": [
+        "Magic Uchigatana +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11907,
+      "Entries": [
+        "Magic Twinblade +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11908,
+      "Entries": [
+        "Magic Rapier +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11909,
+      "Entries": [
+        "Magic Great epee +25 - Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 11950,
+      "Entries": [
+        "Quality Dagger +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11951,
+      "Entries": [
+        "Quality Longsword +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11952,
+      "Entries": [
+        "Quality Bastard Sword +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11953,
+      "Entries": [
+        "Quality Greatsword +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11954,
+      "Entries": [
+        "Quality Falchion +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11955,
+      "Entries": [
+        "Quality Dismounter +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11956,
+      "Entries": [
+        "Quality Uchigatana +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11957,
+      "Entries": [
+        "Quality Twinblade +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11958,
+      "Entries": [
+        "Quality Rapier +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11959,
+      "Entries": [
+        "Quality Great epee +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11960,
+      "Entries": [
+        "Quality Battle Axe +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 11961,
+      "Entries": [
+        "Quality Greataxe +25 - Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 12007,
+      "Entries": [
+        "Flame Art Twinblade +25 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 12015,
+      "Entries": [
+        "Flame Art Short Spear +25 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 12016,
+      "Entries": [
+        "Flame Art Lance +25 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 12017,
+      "Entries": [
+        "Flame Art Halberd +25 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 12018,
+      "Entries": [
+        "Flame Art Scythe +25 - Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 12065,
+      "Entries": [
+        "Sacred Short Spear +25 - Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 12067,
+      "Entries": [
+        "Sacred Halberd +25 - Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 12068,
+      "Entries": [
+        "Sacred Scythe +25 - Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "Blood Dagger +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12101,
+      "Entries": [
+        "Bloody Longsword +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12104,
+      "Entries": [
+        "Blood Falchion +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12106,
+      "Entries": [
+        "Blood Uchigatana +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12107,
+      "Entries": [
+        "Bloody Twinblade +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12108,
+      "Entries": [
+        "Blood Rapier +25 - Blood Blade"
+      ]
+    },
+    {
+      "ID": 12157,
+      "Entries": [
+        "Quality Twinblade +25 - Phantom Slash"
+      ]
+    },
+    {
+      "ID": 12165,
+      "Entries": [
+        "Quality Short Spear +25 - Phantom Slash"
+      ]
+    },
+    {
+      "ID": 12167,
+      "Entries": [
+        "Quality Halberd +25 - Phantom Slash"
+      ]
+    },
+    {
+      "ID": 12168,
+      "Entries": [
+        "Quality Scythe +25 - Phantom Slash"
+      ]
+    },
+    {
+      "ID": 12215,
+      "Entries": [
+        "Occult Short Spear +25 - Spectral Lance"
+      ]
+    },
+    {
+      "ID": 12216,
+      "Entries": [
+        "Occult Lance +25 - Spectral Lance"
+      ]
+    },
+    {
+      "ID": 12217,
+      "Entries": [
+        "Occult Halberd +25 - Spectral Lance"
+      ]
+    },
+    {
+      "ID": 12250,
+      "Entries": [
+        "Cold Dagger +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12251,
+      "Entries": [
+        "Cold Longsword +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12252,
+      "Entries": [
+        "Cold Bastard Sword +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12253,
+      "Entries": [
+        "Cold Greatsword +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12254,
+      "Entries": [
+        "Cold Falchion +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12255,
+      "Entries": [
+        "Cold Dismounter +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12256,
+      "Entries": [
+        "Cold Uchigatana +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12257,
+      "Entries": [
+        "Cold Twinblade +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12258,
+      "Entries": [
+        "Cold Rapier +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12259,
+      "Entries": [
+        "Cold Great epee +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12260,
+      "Entries": [
+        "Cold Battle Axe +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12261,
+      "Entries": [
+        "Cold Greataxe +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12262,
+      "Entries": [
+        "Cold Mace +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12263,
+      "Entries": [
+        "Cold Large Club +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12264,
+      "Entries": [
+        "Cold Nightrider Flail +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12265,
+      "Entries": [
+        "Cold Short Spear +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12266,
+      "Entries": [
+        "Cold Lance +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12267,
+      "Entries": [
+        "Cold Halberd +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12268,
+      "Entries": [
+        "Cold Scythe +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12269,
+      "Entries": [
+        "Cold Caestus +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12270,
+      "Entries": [
+        "Cold Hookclaws +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12272,
+      "Entries": [
+        "Cold Duelist Greataxe +25 - Chilling Mist"
+      ]
+    },
+    {
+      "ID": 12300,
+      "Entries": [
+        "Poison Dagger +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12301,
+      "Entries": [
+        "Poison Longsword +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12302,
+      "Entries": [
+        "Poison Bastard Sword +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12303,
+      "Entries": [
+        "Poison Greatsword +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12304,
+      "Entries": [
+        "Poison Falchion +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12305,
+      "Entries": [
+        "Poison Dismounter +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12306,
+      "Entries": [
+        "Poison Uchigatana +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12307,
+      "Entries": [
+        "Poison Twinblade +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12308,
+      "Entries": [
+        "Poison Rapier +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12309,
+      "Entries": [
+        "Poison Great epee +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12310,
+      "Entries": [
+        "Poison Battle Axe +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12311,
+      "Entries": [
+        "Poison Greataxe +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12312,
+      "Entries": [
+        "Poison Mace +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12313,
+      "Entries": [
+        "Poison Large Club +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12314,
+      "Entries": [
+        "Poison Nightrider Flail +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12315,
+      "Entries": [
+        "Poison Short Spear +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12316,
+      "Entries": [
+        "Poison Lance +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12317,
+      "Entries": [
+        "Poison Halberd +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12318,
+      "Entries": [
+        "Poison Scythe +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12319,
+      "Entries": [
+        "Poison Caestus +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12320,
+      "Entries": [
+        "Poison Hookclaws +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12322,
+      "Entries": [
+        "Poison Duelist Greataxe +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12378,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 12379,
+      "Entries": [
+        "Kite Shield +25 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 12380,
+      "Entries": [
+        "Dragon Towershield +25 - Shield Bash"
+      ]
+    },
+    {
+      "ID": 12428,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 12429,
+      "Entries": [
+        "Kite Shield +25 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 12430,
+      "Entries": [
+        "Dragon Towershield +25 - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 12450,
+      "Entries": [
+        "Dagger +25 - Parry"
+      ]
+    },
+    {
+      "ID": 12454,
+      "Entries": [
+        "Falchion +25 - Parry"
+      ]
+    },
+    {
+      "ID": 12458,
+      "Entries": [
+        "Rapier +25 - Parry"
+      ]
+    },
+    {
+      "ID": 12469,
+      "Entries": [
+        "Caestus +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12470,
+      "Entries": [
+        "Hookclaws +25 - Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 12478,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Parry"
+      ]
+    },
+    {
+      "ID": 12479,
+      "Entries": [
+        "Kite Shield +25 - Parry"
+      ]
+    },
+    {
+      "ID": 12528,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 12529,
+      "Entries": [
+        "Kite Shield +25 - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 12578,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Storm Wall"
+      ]
+    },
+    {
+      "ID": 12579,
+      "Entries": [
+        "Kite Shield +25 - Storm Wall"
+      ]
+    },
+    {
+      "ID": 12628,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Golden Parry"
+      ]
+    },
+    {
+      "ID": 12629,
+      "Entries": [
+        "Kite Shield +25 - Golden Parry"
+      ]
+    },
+    {
+      "ID": 12678,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 12679,
+      "Entries": [
+        "Kite Shield +25 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 12680,
+      "Entries": [
+        "Dragon Towershield +25 - Shield Crash"
+      ]
+    },
+    {
+      "ID": 12728,
+      "Entries": [
+        "Red Thorn Roundshield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 12729,
+      "Entries": [
+        "Kite Shield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 12730,
+      "Entries": [
+        "Dragon Towershield +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 12731,
+      "Entries": [
+        "Torch +25 - No Skill"
+      ]
+    },
+    {
+      "ID": 12778,
+      "Entries": [
+        "Red Thorn Roundshield +25 - Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 12779,
+      "Entries": [
+        "Kite Shield +25 - Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 12825,
+      "Entries": [
+        "Greatbow +25 - Through and Through"
+      ]
+    },
+    {
+      "ID": 12873,
+      "Entries": [
+        "Composite Bow +25 - Barrage"
+      ]
+    },
+    {
+      "ID": 12874,
+      "Entries": [
+        "Longbow +25 - Barrage"
+      ]
+    },
+    {
+      "ID": 12923,
+      "Entries": [
+        "Composite Bow +25 - Mighty Shot"
+      ]
+    },
+    {
+      "ID": 12924,
+      "Entries": [
+        "Longbow +25 - Mighty Shot"
+      ]
+    },
+    {
+      "ID": 12973,
+      "Entries": [
+        "Composite Bow +25 - Enchanted Shot"
+      ]
+    },
+    {
+      "ID": 12974,
+      "Entries": [
+        "Longbow +25 - Enchanted Shot"
+      ]
+    },
+    {
+      "ID": 13023,
+      "Entries": [
+        "Composite Bow +25 - Sky Shot"
+      ]
+    },
+    {
+      "ID": 13024,
+      "Entries": [
+        "Longbow +25 - Sky Shot"
+      ]
+    },
+    {
+      "ID": 13073,
+      "Entries": [
+        "Composite Bow +25 - Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 13074,
+      "Entries": [
+        "Longbow +25 - Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 13075,
+      "Entries": [
+        "Greatbow +25 - Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Cold Dagger +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13101,
+      "Entries": [
+        "Cold Longsword +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13102,
+      "Entries": [
+        "Cold Bastard Sword +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13103,
+      "Entries": [
+        "Cold Greatsword +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13104,
+      "Entries": [
+        "Cold Falchion +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13105,
+      "Entries": [
+        "Cold Dismounter +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13106,
+      "Entries": [
+        "Cold Uchigatana +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13107,
+      "Entries": [
+        "Cold Twinblade +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13108,
+      "Entries": [
+        "Cold Rapier +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13109,
+      "Entries": [
+        "Cold Great epee +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Cold Battle Axe +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13111,
+      "Entries": [
+        "Cold Greataxe +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13112,
+      "Entries": [
+        "Cold Mace +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13113,
+      "Entries": [
+        "Cold Large Club +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13114,
+      "Entries": [
+        "Cold Nightrider Flail +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13115,
+      "Entries": [
+        "Cold Short Spear +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13116,
+      "Entries": [
+        "Cold Lance +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13117,
+      "Entries": [
+        "Cold Halberd +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13118,
+      "Entries": [
+        "Cold Scythe +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13119,
+      "Entries": [
+        "Cold Caestus +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Cold Hookclaws +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13121,
+      "Entries": [
+        "Cold Whip +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13122,
+      "Entries": [
+        "Cold Duelist Greataxe +25 - Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 13150,
+      "Entries": [
+        "Quality Dagger +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13151,
+      "Entries": [
+        "Quality Longsword +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13152,
+      "Entries": [
+        "Quality Bastard Sword +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13153,
+      "Entries": [
+        "Quality Greatsword +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13154,
+      "Entries": [
+        "Quality Falchion +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13155,
+      "Entries": [
+        "Quality Dismounter +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13156,
+      "Entries": [
+        "Quality Uchigatana +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13157,
+      "Entries": [
+        "Quality Twinblade +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13158,
+      "Entries": [
+        "Quality Rapier +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13159,
+      "Entries": [
+        "Quality Great epee +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13160,
+      "Entries": [
+        "Quality Battle Axe +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13161,
+      "Entries": [
+        "Quality Greataxe +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13162,
+      "Entries": [
+        "Quality Mace +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13163,
+      "Entries": [
+        "Quality Large Club +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13164,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13165,
+      "Entries": [
+        "Quality Short Spear +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13166,
+      "Entries": [
+        "Quality Lance +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13167,
+      "Entries": [
+        "Quality Halberd +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13168,
+      "Entries": [
+        "Quality Scythe +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13169,
+      "Entries": [
+        "Quality Caestus +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13170,
+      "Entries": [
+        "Quality Hookclaws +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13171,
+      "Entries": [
+        "Quality Whip +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13172,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Storm Stomp"
+      ]
+    },
+    {
+      "ID": 13200,
+      "Entries": [
+        "Heavy Dagger +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13201,
+      "Entries": [
+        "Heavy Longsword +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13202,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13203,
+      "Entries": [
+        "Heavy Greatsword +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13204,
+      "Entries": [
+        "Heavy Falchion +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13205,
+      "Entries": [
+        "Heavy Dismounter +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13206,
+      "Entries": [
+        "Heavy Uchigatana +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13207,
+      "Entries": [
+        "Heavy Twinblade +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13208,
+      "Entries": [
+        "Heavy Rapier +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13209,
+      "Entries": [
+        "Heavy Great epee +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13210,
+      "Entries": [
+        "Heavy Battle Axe +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13211,
+      "Entries": [
+        "Heavy Greataxe +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13212,
+      "Entries": [
+        "Heavy Mace +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13213,
+      "Entries": [
+        "Heavy Large Club +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13214,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13215,
+      "Entries": [
+        "Heavy Short Spear +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13216,
+      "Entries": [
+        "Heavy Lance +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13217,
+      "Entries": [
+        "Heavy Halberd +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13218,
+      "Entries": [
+        "Heavy Scythe +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13219,
+      "Entries": [
+        "Heavy Caestus +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13220,
+      "Entries": [
+        "Heavy Hookclaws +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13221,
+      "Entries": [
+        "Heavy Whip +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13222,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Kick"
+      ]
+    },
+    {
+      "ID": 13250,
+      "Entries": [
+        "Lightning Dagger +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13251,
+      "Entries": [
+        "Lightning Longsword +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13252,
+      "Entries": [
+        "Lightning Bastard Sword +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13253,
+      "Entries": [
+        "Lightning Greatsword +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13254,
+      "Entries": [
+        "Lightning Falchion +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13255,
+      "Entries": [
+        "Lightning Dismounter +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13256,
+      "Entries": [
+        "Lightning Uchigatana +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13257,
+      "Entries": [
+        "Lightning Twinblade +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13258,
+      "Entries": [
+        "Lightning Rapier +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13259,
+      "Entries": [
+        "Lightning Great epee +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13260,
+      "Entries": [
+        "Lightning Battle Axe +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13261,
+      "Entries": [
+        "Lightning Greataxe +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13262,
+      "Entries": [
+        "Lightning Mace +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13263,
+      "Entries": [
+        "Lightning Large Club +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13264,
+      "Entries": [
+        "Lightning Nightrider Flail +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13265,
+      "Entries": [
+        "Lightning Short Spear +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13266,
+      "Entries": [
+        "Lightning Lance +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13267,
+      "Entries": [
+        "Lightning Halberd +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13268,
+      "Entries": [
+        "Lightning Scythe +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13269,
+      "Entries": [
+        "Lightning Caestus +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13270,
+      "Entries": [
+        "Lightning Hookclaws +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13271,
+      "Entries": [
+        "Lightning Whip +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13272,
+      "Entries": [
+        "Lightning Duelist Greataxe +25 - Lightning Ram"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "Fire Dagger +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13301,
+      "Entries": [
+        "Fire Longsword +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13302,
+      "Entries": [
+        "Fire Bastard Sword +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13303,
+      "Entries": [
+        "Fire Greatsword +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13304,
+      "Entries": [
+        "Fire Falchion +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13305,
+      "Entries": [
+        "Fire Dismounter +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13306,
+      "Entries": [
+        "Fire Uchigatana +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13307,
+      "Entries": [
+        "Fire Twinblade +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13308,
+      "Entries": [
+        "Fire Rapier +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13309,
+      "Entries": [
+        "Fire Great epee +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "Fire Battle Axe +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13311,
+      "Entries": [
+        "Fire Greataxe +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13312,
+      "Entries": [
+        "Fire Mace +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13313,
+      "Entries": [
+        "Fire Large Club +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13314,
+      "Entries": [
+        "Fire Nightrider Flail +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13315,
+      "Entries": [
+        "Fire Short Spear +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13316,
+      "Entries": [
+        "Fire Lance +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13317,
+      "Entries": [
+        "Fire Halberd +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13318,
+      "Entries": [
+        "Fire Scythe +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13319,
+      "Entries": [
+        "Fire Caestus +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13320,
+      "Entries": [
+        "Fire Hookclaws +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13321,
+      "Entries": [
+        "Fire Whip +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13322,
+      "Entries": [
+        "Fire Duelist Greataxe +25 - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 13350,
+      "Entries": [
+        "Heavy Dagger +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13351,
+      "Entries": [
+        "Heavy Longsword +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13352,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13353,
+      "Entries": [
+        "Heavy Greatsword +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13354,
+      "Entries": [
+        "Heavy Falchion +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13355,
+      "Entries": [
+        "Heavy Dismounter +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13356,
+      "Entries": [
+        "Heavy Uchigatana +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13357,
+      "Entries": [
+        "Heavy Twinblade +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13358,
+      "Entries": [
+        "Heavy Rapier +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13359,
+      "Entries": [
+        "Heavy Great epee +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13360,
+      "Entries": [
+        "Heavy Battle Axe +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13361,
+      "Entries": [
+        "Heavy Greataxe +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13362,
+      "Entries": [
+        "Heavy Mace +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13363,
+      "Entries": [
+        "Heavy Large Club +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13364,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13365,
+      "Entries": [
+        "Heavy Short Spear +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13366,
+      "Entries": [
+        "Heavy Lance +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13367,
+      "Entries": [
+        "Heavy Halberd +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13368,
+      "Entries": [
+        "Heavy Scythe +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13369,
+      "Entries": [
+        "Heavy Caestus +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13370,
+      "Entries": [
+        "Heavy Hookclaws +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13371,
+      "Entries": [
+        "Heavy Whip +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13372,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Ground Slam"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "Sacred Dagger +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13401,
+      "Entries": [
+        "Sacred Longsword +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13402,
+      "Entries": [
+        "Sacred Bastard Sword +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13403,
+      "Entries": [
+        "Sacred Greatsword +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13404,
+      "Entries": [
+        "Sacred Falchion +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13405,
+      "Entries": [
+        "Sacred Dismounter +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13406,
+      "Entries": [
+        "Sacred Uchigatana +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13407,
+      "Entries": [
+        "Sacred Twinblade +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13408,
+      "Entries": [
+        "Sacred Rapier +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13409,
+      "Entries": [
+        "Sacred Great epee +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13410,
+      "Entries": [
+        "Sacred Battle Axe +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13411,
+      "Entries": [
+        "Sacred Greataxe +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13412,
+      "Entries": [
+        "Sacred Mace +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13413,
+      "Entries": [
+        "Sacred Large Club +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13414,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13415,
+      "Entries": [
+        "Sacred Short Spear +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13416,
+      "Entries": [
+        "Sacred Lance +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13417,
+      "Entries": [
+        "Sacred Halberd +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13418,
+      "Entries": [
+        "Sacred Scythe +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13419,
+      "Entries": [
+        "Sacred Caestus +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13420,
+      "Entries": [
+        "Sacred Hookclaws +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13421,
+      "Entries": [
+        "Sacred Whip +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13422,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Golden Slam"
+      ]
+    },
+    {
+      "ID": 13453,
+      "Entries": [
+        "Magic Greatsword +25 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 13461,
+      "Entries": [
+        "Magic Greataxe +25 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 13463,
+      "Entries": [
+        "Magic Large Club +25 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 13466,
+      "Entries": [
+        "Magic Lance +25 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 13472,
+      "Entries": [
+        "Magic Duelist Greataxe +25 - Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "Heavy Dagger +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13501,
+      "Entries": [
+        "Heavy Longsword +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13502,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13503,
+      "Entries": [
+        "Heavy Greatsword +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13504,
+      "Entries": [
+        "Heavy Falchion +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13505,
+      "Entries": [
+        "Heavy Dismounter +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13506,
+      "Entries": [
+        "Heavy Uchigatana +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13507,
+      "Entries": [
+        "Heavy Twinblade +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13508,
+      "Entries": [
+        "Heavy Rapier +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13509,
+      "Entries": [
+        "Heavy Great epee +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "Heavy Battle Axe +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13511,
+      "Entries": [
+        "Heavy Greataxe +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13512,
+      "Entries": [
+        "Heavy Mace +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13513,
+      "Entries": [
+        "Heavy Large Club +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13514,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13515,
+      "Entries": [
+        "Heavy Short Spear +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13516,
+      "Entries": [
+        "Heavy Lance +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13517,
+      "Entries": [
+        "Heavy Halberd +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13518,
+      "Entries": [
+        "Heavy Scythe +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13519,
+      "Entries": [
+        "Heavy Caestus +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "Heavy Hookclaws +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13521,
+      "Entries": [
+        "Heavy Whip +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13522,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 13550,
+      "Entries": [
+        "Quality Dagger +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13551,
+      "Entries": [
+        "Quality Longsword +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13552,
+      "Entries": [
+        "Quality Bastard Sword +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13553,
+      "Entries": [
+        "Quality Greatsword +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13554,
+      "Entries": [
+        "Quality Falchion +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13555,
+      "Entries": [
+        "Quality Dismounter +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13556,
+      "Entries": [
+        "Quality Uchigatana +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13557,
+      "Entries": [
+        "Quality Twinblade +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13558,
+      "Entries": [
+        "Quality Rapier +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13559,
+      "Entries": [
+        "Quality Great epee +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13560,
+      "Entries": [
+        "Quality Battle Axe +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13561,
+      "Entries": [
+        "Quality Greataxe +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13562,
+      "Entries": [
+        "Quality Mace +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13563,
+      "Entries": [
+        "Quality Large Club +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13564,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13565,
+      "Entries": [
+        "Quality Short Spear +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13566,
+      "Entries": [
+        "Quality Lance +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13567,
+      "Entries": [
+        "Quality Halberd +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13568,
+      "Entries": [
+        "Quality Scythe +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13569,
+      "Entries": [
+        "Quality Caestus +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13570,
+      "Entries": [
+        "Quality Hookclaws +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13571,
+      "Entries": [
+        "Quality Whip +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13572,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Determination"
+      ]
+    },
+    {
+      "ID": 13600,
+      "Entries": [
+        "Quality Dagger +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13601,
+      "Entries": [
+        "Quality Longsword +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13602,
+      "Entries": [
+        "Quality Bastard Sword +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13603,
+      "Entries": [
+        "Quality Greatsword +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13604,
+      "Entries": [
+        "Quality Falchion +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13605,
+      "Entries": [
+        "Quality Dismounter +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13606,
+      "Entries": [
+        "Quality Uchigatana +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13607,
+      "Entries": [
+        "Quality Twinblade +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13608,
+      "Entries": [
+        "Quality Rapier +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13609,
+      "Entries": [
+        "Quality Great epee +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13610,
+      "Entries": [
+        "Quality Battle Axe +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13611,
+      "Entries": [
+        "Quality Greataxe +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13612,
+      "Entries": [
+        "Quality Mace +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13613,
+      "Entries": [
+        "Quality Large Club +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13614,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13615,
+      "Entries": [
+        "Quality Short Spear +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13616,
+      "Entries": [
+        "Quality Lance +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13617,
+      "Entries": [
+        "Quality Halberd +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13618,
+      "Entries": [
+        "Quality Scythe +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13619,
+      "Entries": [
+        "Quality Caestus +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13620,
+      "Entries": [
+        "Quality Hookclaws +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13621,
+      "Entries": [
+        "Quality Whip +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13622,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 13650,
+      "Entries": [
+        "Blood Dagger +25 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 13651,
+      "Entries": [
+        "Bloody Longsword +25 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 13656,
+      "Entries": [
+        "Blood Uchigatana +25 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 13657,
+      "Entries": [
+        "Bloody Twinblade +25 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 13658,
+      "Entries": [
+        "Blood Rapier +25 - Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 13700,
+      "Entries": [
+        "Sacred Dagger +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13701,
+      "Entries": [
+        "Sacred Longsword +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13702,
+      "Entries": [
+        "Sacred Bastard Sword +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13703,
+      "Entries": [
+        "Sacred Greatsword +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13704,
+      "Entries": [
+        "Sacred Falchion +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13705,
+      "Entries": [
+        "Sacred Dismounter +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13706,
+      "Entries": [
+        "Sacred Uchigatana +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13707,
+      "Entries": [
+        "Sacred Twinblade +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13708,
+      "Entries": [
+        "Sacred Rapier +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13709,
+      "Entries": [
+        "Sacred Great epee +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13710,
+      "Entries": [
+        "Sacred Battle Axe +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13711,
+      "Entries": [
+        "Sacred Greataxe +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13712,
+      "Entries": [
+        "Sacred Mace +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13713,
+      "Entries": [
+        "Sacred Large Club +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13714,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13715,
+      "Entries": [
+        "Sacred Short Spear +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13716,
+      "Entries": [
+        "Sacred Lance +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13717,
+      "Entries": [
+        "Sacred Halberd +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13718,
+      "Entries": [
+        "Sacred Scythe +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13719,
+      "Entries": [
+        "Sacred Caestus +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13720,
+      "Entries": [
+        "Sacred Hookclaws +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13721,
+      "Entries": [
+        "Sacred Whip +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13722,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Golden Vow"
+      ]
+    },
+    {
+      "ID": 13750,
+      "Entries": [
+        "Sacred Dagger +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13751,
+      "Entries": [
+        "Sacred Longsword +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13752,
+      "Entries": [
+        "Sacred Bastard Sword +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13753,
+      "Entries": [
+        "Sacred Greatsword +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13754,
+      "Entries": [
+        "Sacred Falchion +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13755,
+      "Entries": [
+        "Sacred Dismounter +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13756,
+      "Entries": [
+        "Sacred Uchigatana +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13757,
+      "Entries": [
+        "Sacred Twinblade +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13758,
+      "Entries": [
+        "Sacred Rapier +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13759,
+      "Entries": [
+        "Sacred Great epee +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13760,
+      "Entries": [
+        "Sacred Battle Axe +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13761,
+      "Entries": [
+        "Sacred Greataxe +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13762,
+      "Entries": [
+        "Sacred Mace +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13763,
+      "Entries": [
+        "Sacred Large Club +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13764,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13765,
+      "Entries": [
+        "Sacred Short Spear +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13766,
+      "Entries": [
+        "Sacred Lance +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13767,
+      "Entries": [
+        "Sacred Halberd +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13768,
+      "Entries": [
+        "Sacred Scythe +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13769,
+      "Entries": [
+        "Sacred Caestus +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13770,
+      "Entries": [
+        "Sacred Hookclaws +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13771,
+      "Entries": [
+        "Sacred Whip +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13772,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Sacred Order"
+      ]
+    },
+    {
+      "ID": 13800,
+      "Entries": [
+        "Sacred Dagger +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13801,
+      "Entries": [
+        "Sacred Longsword +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13802,
+      "Entries": [
+        "Sacred Bastard Sword +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13803,
+      "Entries": [
+        "Sacred Greatsword +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13804,
+      "Entries": [
+        "Sacred Falchion +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13805,
+      "Entries": [
+        "Sacred Dismounter +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13806,
+      "Entries": [
+        "Sacred Uchigatana +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13807,
+      "Entries": [
+        "Sacred Twinblade +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13808,
+      "Entries": [
+        "Sacred Rapier +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13809,
+      "Entries": [
+        "Sacred Great epee +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13810,
+      "Entries": [
+        "Sacred Battle Axe +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13811,
+      "Entries": [
+        "Sacred Greataxe +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13812,
+      "Entries": [
+        "Sacred Mace +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13813,
+      "Entries": [
+        "Sacred Large Club +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13814,
+      "Entries": [
+        "Sacred Nightrider Flail +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13815,
+      "Entries": [
+        "Sacred Short Spear +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13816,
+      "Entries": [
+        "Sacred Lance +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13817,
+      "Entries": [
+        "Sacred Halberd +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13818,
+      "Entries": [
+        "Sacred Scythe +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13819,
+      "Entries": [
+        "Sacred Caestus +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13820,
+      "Entries": [
+        "Sacred Hookclaws +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13821,
+      "Entries": [
+        "Sacred Whip +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13822,
+      "Entries": [
+        "Sacred Duelist Greataxe +25 - Shared Order"
+      ]
+    },
+    {
+      "ID": 13850,
+      "Entries": [
+        "Blood Dagger +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13851,
+      "Entries": [
+        "Bloody Longsword +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13852,
+      "Entries": [
+        "Bloody Bastard Sword +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13854,
+      "Entries": [
+        "Blood Falchion +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13855,
+      "Entries": [
+        "Blood Dismounter +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13856,
+      "Entries": [
+        "Blood Uchigatana +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13857,
+      "Entries": [
+        "Bloody Twinblade +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13858,
+      "Entries": [
+        "Blood Rapier +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13859,
+      "Entries": [
+        "Blood Great epee +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13865,
+      "Entries": [
+        "Blood Short Spear +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13866,
+      "Entries": [
+        "Bloody Lance +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13867,
+      "Entries": [
+        "Blood Halberd +25 - Seppuku"
+      ]
+    },
+    {
+      "ID": 13900,
+      "Entries": [
+        "Heavy Dagger +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13901,
+      "Entries": [
+        "Heavy Longsword +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13902,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13903,
+      "Entries": [
+        "Heavy Greatsword +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13904,
+      "Entries": [
+        "Heavy Falchion +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13905,
+      "Entries": [
+        "Heavy Dismounter +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13906,
+      "Entries": [
+        "Heavy Uchigatana +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13907,
+      "Entries": [
+        "Heavy Twinblade +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13908,
+      "Entries": [
+        "Heavy Rapier +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13909,
+      "Entries": [
+        "Heavy Great epee +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13910,
+      "Entries": [
+        "Heavy Battle Axe +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13911,
+      "Entries": [
+        "Heavy Greataxe +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13912,
+      "Entries": [
+        "Heavy Mace +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13913,
+      "Entries": [
+        "Heavy Large Club +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13914,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13915,
+      "Entries": [
+        "Heavy Short Spear +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13916,
+      "Entries": [
+        "Heavy Lance +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13917,
+      "Entries": [
+        "Heavy Halberd +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13918,
+      "Entries": [
+        "Heavy Scythe +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13919,
+      "Entries": [
+        "Heavy Caestus +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13920,
+      "Entries": [
+        "Heavy Hookclaws +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13922,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Cragblade"
+      ]
+    },
+    {
+      "ID": 13951,
+      "Entries": [
+        "Heavy Longsword +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13952,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13953,
+      "Entries": [
+        "Heavy Greatsword +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13954,
+      "Entries": [
+        "Heavy Falchion +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13955,
+      "Entries": [
+        "Heavy Dismounter +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13956,
+      "Entries": [
+        "Heavy Uchigatana +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13957,
+      "Entries": [
+        "Heavy Twinblade +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13960,
+      "Entries": [
+        "Heavy Battle Axe +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13961,
+      "Entries": [
+        "Heavy Greataxe +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13962,
+      "Entries": [
+        "Heavy Mace +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13963,
+      "Entries": [
+        "Heavy Large Club +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13964,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13965,
+      "Entries": [
+        "Heavy Short Spear +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13966,
+      "Entries": [
+        "Heavy Lance +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13967,
+      "Entries": [
+        "Heavy Halberd +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13968,
+      "Entries": [
+        "Heavy Scythe +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13969,
+      "Entries": [
+        "Heavy Caestus +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13970,
+      "Entries": [
+        "Heavy Hookclaws +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 13972,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 14001,
+      "Entries": [
+        "Heavy Longsword +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14002,
+      "Entries": [
+        "Heavy Bastard Sword +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14003,
+      "Entries": [
+        "Heavy Greatsword +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14004,
+      "Entries": [
+        "Heavy Falchion +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14005,
+      "Entries": [
+        "Heavy Dismounter +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14006,
+      "Entries": [
+        "Heavy Uchigatana +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14007,
+      "Entries": [
+        "Heavy Twinblade +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Heavy Battle Axe +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14011,
+      "Entries": [
+        "Heavy Greataxe +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14012,
+      "Entries": [
+        "Heavy Mace +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14013,
+      "Entries": [
+        "Heavy Large Club +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14014,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14015,
+      "Entries": [
+        "Heavy Short Spear +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14016,
+      "Entries": [
+        "Heavy Lance +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14017,
+      "Entries": [
+        "Heavy Halberd +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14018,
+      "Entries": [
+        "Heavy Scythe +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14019,
+      "Entries": [
+        "Heavy Caestus +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Heavy Hookclaws +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14022,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - War Cry"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "Keen Dagger +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14051,
+      "Entries": [
+        "Keen Longsword +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14052,
+      "Entries": [
+        "Keen Bastard Sword +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14053,
+      "Entries": [
+        "Keen Greatsword +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14054,
+      "Entries": [
+        "Keen Falchion +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14055,
+      "Entries": [
+        "Keen Dismounter +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14056,
+      "Entries": [
+        "Keen Uchigatana +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14057,
+      "Entries": [
+        "Keen Twinblade +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14058,
+      "Entries": [
+        "Keen Rapier +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14059,
+      "Entries": [
+        "Keen Great epee +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "Keen Battle Axe +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14061,
+      "Entries": [
+        "Keen Greataxe +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14062,
+      "Entries": [
+        "Keen Mace +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14063,
+      "Entries": [
+        "Keen Large Club +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14064,
+      "Entries": [
+        "Keen Nightrider Flail +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14065,
+      "Entries": [
+        "Keen Short Spear +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14066,
+      "Entries": [
+        "Keen Lance +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14067,
+      "Entries": [
+        "Keen Halberd +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14068,
+      "Entries": [
+        "Keen Scythe +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14069,
+      "Entries": [
+        "Keen Caestus +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14070,
+      "Entries": [
+        "Keen Hookclaws +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14071,
+      "Entries": [
+        "Keen Whip +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14072,
+      "Entries": [
+        "Keen Duelist Greataxe +25 - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 14102,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14103,
+      "Entries": [
+        "Heavy Greatsword +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14105,
+      "Entries": [
+        "Heavy Dismounter +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14111,
+      "Entries": [
+        "Heavy Greataxe +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14113,
+      "Entries": [
+        "Heavy Large Club +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14122,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Troll's Roar"
+      ]
+    },
+    {
+      "ID": 14151,
+      "Entries": [
+        "Heavy Longsword +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14152,
+      "Entries": [
+        "Heavy Bastard Sword +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14153,
+      "Entries": [
+        "Heavy Greatsword +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14154,
+      "Entries": [
+        "Heavy Falchion +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14155,
+      "Entries": [
+        "Heavy Dismounter +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14156,
+      "Entries": [
+        "Heavy Uchigatana +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14157,
+      "Entries": [
+        "Heavy Twinblade +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14160,
+      "Entries": [
+        "Heavy Battle Axe +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14161,
+      "Entries": [
+        "Heavy Greataxe +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14162,
+      "Entries": [
+        "Heavy Mace +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14163,
+      "Entries": [
+        "Heavy Large Club +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14164,
+      "Entries": [
+        "Heavy Nightrider Flail +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14165,
+      "Entries": [
+        "Heavy Short Spear +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14166,
+      "Entries": [
+        "Heavy Lance +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14167,
+      "Entries": [
+        "Heavy Halberd +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14168,
+      "Entries": [
+        "Heavy Scythe +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14169,
+      "Entries": [
+        "Heavy Caestus +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14170,
+      "Entries": [
+        "Heavy Hookclaws +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14172,
+      "Entries": [
+        "Heavy Duelist Greataxe +25 - Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "Quality Dagger +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14201,
+      "Entries": [
+        "Quality Longsword +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14202,
+      "Entries": [
+        "Quality Bastard Sword +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14203,
+      "Entries": [
+        "Quality Greatsword +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14204,
+      "Entries": [
+        "Quality Falchion +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14205,
+      "Entries": [
+        "Quality Dismounter +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14206,
+      "Entries": [
+        "Quality Uchigatana +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14207,
+      "Entries": [
+        "Quality Twinblade +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14208,
+      "Entries": [
+        "Quality Rapier +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14209,
+      "Entries": [
+        "Quality Great epee +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14210,
+      "Entries": [
+        "Quality Battle Axe +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14211,
+      "Entries": [
+        "Quality Greataxe +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14212,
+      "Entries": [
+        "Quality Mace +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14213,
+      "Entries": [
+        "Quality Large Club +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14214,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14215,
+      "Entries": [
+        "Quality Short Spear +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14216,
+      "Entries": [
+        "Quality Lance +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14217,
+      "Entries": [
+        "Quality Halberd +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14218,
+      "Entries": [
+        "Quality Scythe +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14219,
+      "Entries": [
+        "Quality Caestus +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14220,
+      "Entries": [
+        "Quality Hookclaws +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14221,
+      "Entries": [
+        "Quality Whip +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14222,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Endure"
+      ]
+    },
+    {
+      "ID": 14278,
+      "Entries": [
+        "Quality Red Thorn Roundshield +25 - Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 14279,
+      "Entries": [
+        "Quality Kite Shield +25 - Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 14280,
+      "Entries": [
+        "Quality Dragon Towershield +25 - Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 14328,
+      "Entries": [
+        "Quality Red Thorn Roundshield +25 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 14329,
+      "Entries": [
+        "Quality Kite Shield +25 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 14330,
+      "Entries": [
+        "Quality Dragon Towershield +25 - Holy Ground"
+      ]
+    },
+    {
+      "ID": 14350,
+      "Entries": [
+        "Quality Dagger +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14351,
+      "Entries": [
+        "Quality Longsword +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14352,
+      "Entries": [
+        "Quality Bastard Sword +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14353,
+      "Entries": [
+        "Quality Greatsword +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14354,
+      "Entries": [
+        "Quality Falchion +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14355,
+      "Entries": [
+        "Quality Dismounter +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14356,
+      "Entries": [
+        "Quality Uchigatana +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14357,
+      "Entries": [
+        "Quality Twinblade +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14358,
+      "Entries": [
+        "Quality Rapier +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14359,
+      "Entries": [
+        "Quality Great epee +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14360,
+      "Entries": [
+        "Quality Battle Axe +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14361,
+      "Entries": [
+        "Quality Greataxe +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14362,
+      "Entries": [
+        "Quality Mace +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14363,
+      "Entries": [
+        "Quality Large Club +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14364,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14365,
+      "Entries": [
+        "Quality Short Spear +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14366,
+      "Entries": [
+        "Quality Lance +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14367,
+      "Entries": [
+        "Quality Halberd +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14368,
+      "Entries": [
+        "Quality Scythe +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14369,
+      "Entries": [
+        "Quality Caestus +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14370,
+      "Entries": [
+        "Quality Hookclaws +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14371,
+      "Entries": [
+        "Quality Whip +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14372,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Quickstep"
+      ]
+    },
+    {
+      "ID": 14400,
+      "Entries": [
+        "Quality Dagger +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14401,
+      "Entries": [
+        "Quality Longsword +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14402,
+      "Entries": [
+        "Quality Bastard Sword +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14403,
+      "Entries": [
+        "Quality Greatsword +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14404,
+      "Entries": [
+        "Quality Falchion +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14405,
+      "Entries": [
+        "Quality Dismounter +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14406,
+      "Entries": [
+        "Quality Uchigatana +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14407,
+      "Entries": [
+        "Quality Twinblade +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14408,
+      "Entries": [
+        "Quality Rapier +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14409,
+      "Entries": [
+        "Quality Great epee +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14410,
+      "Entries": [
+        "Quality Battle Axe +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14411,
+      "Entries": [
+        "Quality Greataxe +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14412,
+      "Entries": [
+        "Quality Mace +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14413,
+      "Entries": [
+        "Quality Large Club +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14414,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14415,
+      "Entries": [
+        "Quality Short Spear +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14416,
+      "Entries": [
+        "Quality Lance +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14417,
+      "Entries": [
+        "Quality Halberd +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14418,
+      "Entries": [
+        "Quality Scythe +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14419,
+      "Entries": [
+        "Quality Caestus +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14420,
+      "Entries": [
+        "Quality Hookclaws +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14421,
+      "Entries": [
+        "Quality Whip +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14422,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 14450,
+      "Entries": [
+        "Quality Dagger +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14451,
+      "Entries": [
+        "Quality Longsword +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14452,
+      "Entries": [
+        "Quality Bastard Sword +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14453,
+      "Entries": [
+        "Quality Greatsword +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14454,
+      "Entries": [
+        "Quality Falchion +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14455,
+      "Entries": [
+        "Quality Dismounter +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14456,
+      "Entries": [
+        "Quality Uchigatana +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14457,
+      "Entries": [
+        "Quality Twinblade +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14458,
+      "Entries": [
+        "Quality Rapier +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14459,
+      "Entries": [
+        "Quality Great epee +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14460,
+      "Entries": [
+        "Quality Battle Axe +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14461,
+      "Entries": [
+        "Quality Greataxe +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14462,
+      "Entries": [
+        "Quality Mace +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14463,
+      "Entries": [
+        "Quality Large Club +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14464,
+      "Entries": [
+        "Quality Nightrider Flail +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14465,
+      "Entries": [
+        "Quality Short Spear +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14466,
+      "Entries": [
+        "Quality Lance +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14467,
+      "Entries": [
+        "Quality Halberd +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14468,
+      "Entries": [
+        "Quality Scythe +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14469,
+      "Entries": [
+        "Quality Caestus +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14470,
+      "Entries": [
+        "Quality Hookclaws +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14471,
+      "Entries": [
+        "Quality Whip +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14472,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 14500,
+      "Entries": [
+        "Quality Dagger +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14501,
+      "Entries": [
+        "Quality Longsword +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14502,
+      "Entries": [
+        "Quality Bastard Sword +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14503,
+      "Entries": [
+        "Quality Greatsword +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14504,
+      "Entries": [
+        "Quality Falchion +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14505,
+      "Entries": [
+        "Quality Dismounter +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14506,
+      "Entries": [
+        "Quality Uchigatana +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14507,
+      "Entries": [
+        "Quality Twinblade +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14508,
+      "Entries": [
+        "Quality Rapier +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14509,
+      "Entries": [
+        "Quality Great epee +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14510,
+      "Entries": [
+        "Quality Battle Axe +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14511,
+      "Entries": [
+        "Quality Greataxe +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14512,
+      "Entries": [
+        "Quality Mace +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14513,
+      "Entries": [
+        "Quality Large Club +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14514,
+      "Entries": [
+        "Quality Nightrider Flail +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14515,
+      "Entries": [
+        "Quality Short Spear +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14516,
+      "Entries": [
+        "Quality Lance +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14517,
+      "Entries": [
+        "Quality Halberd +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14518,
+      "Entries": [
+        "Quality Scythe +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14519,
+      "Entries": [
+        "Quality Caestus +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Quality Hookclaws +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14521,
+      "Entries": [
+        "Quality Whip +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 14522,
+      "Entries": [
+        "Quality Duelist Greataxe +25 - White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Longsword - No Skill"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Short Spear - No Skill"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Greatsword - No Skill"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Dueling Shield - No Skill"
+      ]
+    },
+    {
+      "ID": 1200055,
+      "Entries": [
+        "Dryleaf Arts - Dryleaf Whirlwind"
+      ]
+    },
+    {
+      "ID": 1200120,
+      "Entries": [
+        "Sacred Dagger - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200123,
+      "Entries": [
+        "Sacred Longsword - Aspect of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200124,
+      "Entries": [
+        "Sacred Twinblade - Aspects of Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200125,
+      "Entries": [
+        "Sacred Bastard Sword - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200126,
+      "Entries": [
+        "Sacred Greatsword - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200127,
+      "Entries": [
+        "Sacred Rapier - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200128,
+      "Entries": [
+        "Sacred Falchion - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200129,
+      "Entries": [
+        "Sacred Uchigatana - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200136,
+      "Entries": [
+        "Sacred Short Spear - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200137,
+      "Entries": [
+        "Sacred Lance - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200138,
+      "Entries": [
+        "Sacred Halberd - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200139,
+      "Entries": [
+        "Sacred Great Epee - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200140,
+      "Entries": [
+        "Sacred Dismounter - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200153,
+      "Entries": [
+        "Sacted Smithscript Dagger - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200160,
+      "Entries": [
+        "Sacted Milady - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1200161,
+      "Entries": [
+        "Sacred Great Katana - Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 1400025,
+      "Entries": [
+        "Heavy Bastard Sword - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 1400026,
+      "Entries": [
+        "Heavy Dismounter - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 1400039,
+      "Entries": [
+        "Heavy Great Epee - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 1400040,
+      "Entries": [
+        "Heavy Greatsword - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 1400061,
+      "Entries": [
+        "Heavy Great Katana - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 1401055,
+      "Entries": [
+        "Dryleaf Arts - Palm Blast"
+      ]
+    },
+    {
+      "ID": 1402053,
+      "Entries": [
+        "Keen Smithscript Dagger - Piercing Throw"
+      ]
+    },
+    {
+      "ID": 1403053,
+      "Entries": [
+        "Keen Smithscript Dagger - Scattershot Throw"
+      ]
+    },
+    {
+      "ID": 1404056,
+      "Entries": [
+        "Firespark Perfume Bottle - Wall of Sparks"
+      ]
+    },
+    {
+      "ID": 1405056,
+      "Entries": [
+        "Firespark Perfume Bottle - Rolling Sparks"
+      ]
+    },
+    {
+      "ID": 1406062,
+      "Entries": [
+        "Keen Beast Claw - Raging Beast"
+      ]
+    },
+    {
+      "ID": 1407062,
+      "Entries": [
+        "Keen Beast Claw - Savage Claws"
+      ]
+    },
+    {
+      "ID": 1408062,
+      "Entries": [
+        "Red Bear's Claw"
+      ]
+    },
+    {
+      "ID": 1409058,
+      "Entries": [
+        "Keen Backhand Blade - Blind Spot"
+      ]
+    },
+    {
+      "ID": 1410058,
+      "Entries": [
+        "Keen Backhand Blade - Swift Slash"
+      ]
+    },
+    {
+      "ID": 1411061,
+      "Entries": [
+        "Keen Great Kanata - Overhead Stance"
+      ]
+    },
+    {
+      "ID": 1412060,
+      "Entries": [
+        "Quality Milady - Wing Stance"
+      ]
+    },
+    {
+      "ID": 1413020,
+      "Entries": [
+        "Lightning Dagger - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413022,
+      "Entries": [
+        "Lightning Hookclaws - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413023,
+      "Entries": [
+        "Lightning Longsword - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413024,
+      "Entries": [
+        "Lightning Twinblade - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413025,
+      "Entries": [
+        "Lightning Bastard Sword - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413026,
+      "Entries": [
+        "Lightning Greatsword - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413027,
+      "Entries": [
+        "Lightning Rapier - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413028,
+      "Entries": [
+        "Lightning Falchion - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413029,
+      "Entries": [
+        "Lightning Uchigatana - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413030,
+      "Entries": [
+        "Lightning Battle Axe - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413031,
+      "Entries": [
+        "Lightning Duelist Greataxe - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413032,
+      "Entries": [
+        "Lightning Greataxe - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413033,
+      "Entries": [
+        "Lightning Mace - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413034,
+      "Entries": [
+        "Lightning Nightrider Flail - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413035,
+      "Entries": [
+        "Lightning Large Club - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413036,
+      "Entries": [
+        "Lightning Short Spear - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413037,
+      "Entries": [
+        "Lightning Lance - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413038,
+      "Entries": [
+        "Lightning Halberd - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413039,
+      "Entries": [
+        "Lightning Great Epee - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413040,
+      "Entries": [
+        "Lightning Dismounter - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413042,
+      "Entries": [
+        "Lightning Caestus - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413043,
+      "Entries": [
+        "Lightning Whip - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413050,
+      "Entries": [
+        "Lightning Scythe - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413053,
+      "Entries": [
+        "Lightning Smithscript Dagger - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413055,
+      "Entries": [
+        "Lightning Dryleaf Arts - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413057,
+      "Entries": [
+        "Lightning Dueling Shield - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413058,
+      "Entries": [
+        "Lightning Backhand Blade - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413060,
+      "Entries": [
+        "Lightning Milady - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413061,
+      "Entries": [
+        "Lightning Great Katana - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1413062,
+      "Entries": [
+        "Lightning Beast Claw - Blinkbolt"
+      ]
+    },
+    {
+      "ID": 1414024,
+      "Entries": [
+        "Flame Art Twinblade - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414025,
+      "Entries": [
+        "Flame Art Claymore - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414026,
+      "Entries": [
+        "Flame Art Greatsword - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414036,
+      "Entries": [
+        "Flame Art Short Spear - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414037,
+      "Entries": [
+        "Flame Art Lance - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414039,
+      "Entries": [
+        "Flame Art Great Epee - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414057,
+      "Entries": [
+        "Flame Art Dueling Shield - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414060,
+      "Entries": [
+        "Flame Art Milady - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1414061,
+      "Entries": [
+        "Flame Art Great Katana - Flame Skewer"
+      ]
+    },
+    {
+      "ID": 1415024,
+      "Entries": [
+        "Heavy Longsword - Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1415025,
+      "Entries": [
+        "Heavy Claymore - Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1415026,
+      "Entries": [
+        "Heavy Greatsword - Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1415028,
+      "Entries": [
+        "Heavy Falchion - Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1415040,
+      "Entries": [
+        "Heavy Dismounter - Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 1416020,
+      "Entries": [
+        "Cold Dagger - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416022,
+      "Entries": [
+        "Cold Hookclaws - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416023,
+      "Entries": [
+        "Cold Longsword - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416024,
+      "Entries": [
+        "Cold Twinblade - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416025,
+      "Entries": [
+        "Cold Bastard Sword - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416026,
+      "Entries": [
+        "Cold Greatsword - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416027,
+      "Entries": [
+        "Cold Rapier - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416028,
+      "Entries": [
+        "Cold Falchion - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416029,
+      "Entries": [
+        "Cold Uchigatana - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416030,
+      "Entries": [
+        "Cold Battle Axe - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416031,
+      "Entries": [
+        "Cold Duelist Greataxe - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416032,
+      "Entries": [
+        "Cold Greataxe - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416033,
+      "Entries": [
+        "Cold Mace - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416034,
+      "Entries": [
+        "Cold Nightrider Flail - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416035,
+      "Entries": [
+        "Cold Large Club - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416036,
+      "Entries": [
+        "Cold Short Spear - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416037,
+      "Entries": [
+        "Cold Lance - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416038,
+      "Entries": [
+        "Cold Halberd - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416039,
+      "Entries": [
+        "Cold Great Epee - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416040,
+      "Entries": [
+        "Cold Dismounter - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416042,
+      "Entries": [
+        "Cold Caestus - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416043,
+      "Entries": [
+        "Cold Whip - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416050,
+      "Entries": [
+        "Cold Scythe - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416053,
+      "Entries": [
+        "Cold Smithscript Dagger - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416055,
+      "Entries": [
+        "Cold Dryleaf Arts - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416057,
+      "Entries": [
+        "Cold Dueling Shield - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416058,
+      "Entries": [
+        "Cold Backhand Blade - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416060,
+      "Entries": [
+        "Cold Milady - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416061,
+      "Entries": [
+        "Cold Great Katana - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1416062,
+      "Entries": [
+        "Cold Beast Claw - Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 1417026,
+      "Entries": [
+        "Zweihander - Flame Spear"
+      ]
+    },
+    {
+      "ID": 1418023,
+      "Entries": [
+        "Longsword - Carain Sovereignty"
+      ]
+    },
+    {
+      "ID": 1419020,
+      "Entries": [
+        "Occult Dagger - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419022,
+      "Entries": [
+        "Occult Hookclaws - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419023,
+      "Entries": [
+        "Occult Longsword - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419024,
+      "Entries": [
+        "Occult Twinblade - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419025,
+      "Entries": [
+        "Occult Bastard Sword - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419026,
+      "Entries": [
+        "Occult Greatsword - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419027,
+      "Entries": [
+        "Occult Rapier - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419028,
+      "Entries": [
+        "Occult Falchion - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419029,
+      "Entries": [
+        "Occult Uchigatana - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419030,
+      "Entries": [
+        "Occult Battle Axe - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419031,
+      "Entries": [
+        "Occult Duelist Greataxe - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419032,
+      "Entries": [
+        "Occult Greataxe - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419033,
+      "Entries": [
+        "Occult Mace - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419034,
+      "Entries": [
+        "Occult Nightrider Flail - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419035,
+      "Entries": [
+        "Occult Large Club - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419036,
+      "Entries": [
+        "Occult Short Spear - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419037,
+      "Entries": [
+        "Occult Lance - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419038,
+      "Entries": [
+        "Occult Halberd - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419039,
+      "Entries": [
+        "Occult Great Epee - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419040,
+      "Entries": [
+        "Occult Dismounter - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419042,
+      "Entries": [
+        "Occult Caestus - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419043,
+      "Entries": [
+        "Occult Whip - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419050,
+      "Entries": [
+        "Occult Scythe - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419053,
+      "Entries": [
+        "Occult Smithscript Dagger - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419055,
+      "Entries": [
+        "Occult Dryleaf Arts - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419057,
+      "Entries": [
+        "Occult Dueling Shield - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419058,
+      "Entries": [
+        "Occult Backhand Blade - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419060,
+      "Entries": [
+        "Occult Milady - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419061,
+      "Entries": [
+        "Occult Great Katana - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1419062,
+      "Entries": [
+        "Occult Beast Claw - Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 1422023,
+      "Entries": [
+        "Cold Longsword - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422025,
+      "Entries": [
+        "Poison Claymore - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422026,
+      "Entries": [
+        "Poison Greatsword - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422027,
+      "Entries": [
+        "Blood Rapier - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422028,
+      "Entries": [
+        "Poison Falchion - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422029,
+      "Entries": [
+        "Blood Uchigatana - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422036,
+      "Entries": [
+        "Blood Short Spear - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422037,
+      "Entries": [
+        "Bloody Lance - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422038,
+      "Entries": [
+        "Blood Halberd - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422039,
+      "Entries": [
+        "Blood Great Epee - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422040,
+      "Entries": [
+        "Poison Dismounter - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422060,
+      "Entries": [
+        "Cold Milady - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1422061,
+      "Entries": [
+        "Cold Great Katana - Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 1505020,
+      "Entries": [
+        "Poison Dagger - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505022,
+      "Entries": [
+        "Poison Hookclaws - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505023,
+      "Entries": [
+        "Poison Longsword - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505024,
+      "Entries": [
+        "Poison Twinblade - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505025,
+      "Entries": [
+        "Poison Bastard Sword - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505026,
+      "Entries": [
+        "Poison Greatsword - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505027,
+      "Entries": [
+        "Poison Rapier - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505028,
+      "Entries": [
+        "Poison Falchion - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505029,
+      "Entries": [
+        "Poison Uchigatana - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505030,
+      "Entries": [
+        "Poison Battle Axe - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505031,
+      "Entries": [
+        "Poison Duelist Greataxe - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505032,
+      "Entries": [
+        "Poison Greataxe - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505033,
+      "Entries": [
+        "Poison Mace - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505034,
+      "Entries": [
+        "Poison Nightrider Flail - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505035,
+      "Entries": [
+        "Poison Large Club - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505036,
+      "Entries": [
+        "Poison Short Spear - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505037,
+      "Entries": [
+        "Poison Lance - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505038,
+      "Entries": [
+        "Poison Halberd - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505039,
+      "Entries": [
+        "Poison Great Epee - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505040,
+      "Entries": [
+        "Poison Dismounter - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505042,
+      "Entries": [
+        "Poison Caestus - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505043,
+      "Entries": [
+        "Poison Whip - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505050,
+      "Entries": [
+        "Poison Scythe - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505053,
+      "Entries": [
+        "Poison Smithscript Dagger - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505055,
+      "Entries": [
+        "Poison Dryleaf Arts - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505057,
+      "Entries": [
+        "Poison Dueling Shield - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505058,
+      "Entries": [
+        "Poison Backhand Blade - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505060,
+      "Entries": [
+        "Poison Milady - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505061,
+      "Entries": [
+        "Poison Great Katana - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1505062,
+      "Entries": [
+        "Poison Beast Claw - The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 1548045,
+      "Entries": [
+        "Greatbow - Igon's Drake Hunt"
+      ]
+    },
+    {
+      "ID": 1800057,
+      "Entries": [
+        "Dueling Shield - Shield Strike"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Quality Longsword - Square Off"
+      ]
+    },
+    {
+      "ID": 2000001,
+      "Entries": [
+        "Quality Claymore - Storm Blade"
+      ]
+    },
+    {
+      "ID": 2000002,
+      "Entries": [
+        "Quality Halberd - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Heavy Greatsword - Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 2000101,
+      "Entries": [
+        "Heavy Stone Club - Wild Stikes"
+      ]
+    },
+    {
+      "ID": 2000102,
+      "Entries": [
+        "Heavy Iron Ball - Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 2000103,
+      "Entries": [
+        "Heavy Fingerprint Stone Shield - No Skill"
+      ]
+    },
+    {
+      "ID": 2000104,
+      "Entries": [
+        "Heavy Giant-Crusher - Lion's Claw"
+      ]
+    },
+    {
+      "ID": 2000105,
+      "Entries": [
+        "Heavy Giant-Crusher - Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 2000106,
+      "Entries": [
+        "Heavy Misericorde - Golden Vow"
+      ]
+    },
+    {
+      "ID": 2000107,
+      "Entries": [
+        "Brass Shield - Golden Parry"
+      ]
+    },
+    {
+      "ID": 2001002,
+      "Entries": [
+        "Magic Rift Shield - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 2001103,
+      "Entries": [
+        "Carian Knight's Magic Shield - Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Dueling Shield - Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 3000001,
+      "Entries": [
+        "Dueling Shield - Piercing Fang"
+      ]
+    },
+    {
+      "ID": 3000002,
+      "Entries": [
+        "Dueling Shield - Charge Forth"
+      ]
+    },
+    {
+      "ID": 3000003,
+      "Entries": [
+        "Dueling Shield - Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 3000004,
+      "Entries": [
+        "Dueling Shield - Giant Hunt"
+      ]
+    },
+    {
+      "ID": 3000005,
+      "Entries": [
+        "Dueling Shield - Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 3000006,
+      "Entries": [
+        "Dueling Shield - Storm Assault"
+      ]
+    },
+    {
+      "ID": 3000007,
+      "Entries": [
+        "Dueling Shield - Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 3000008,
+      "Entries": [
+        "Dueling Shield - Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 3000009,
+      "Entries": [
+        "Dueling Shield - Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 3000010,
+      "Entries": [
+        "Dueling Shield - Gravitas"
+      ]
+    },
+    {
+      "ID": 3000011,
+      "Entries": [
+        "Dueling Shield - Thunderbolt"
+      ]
+    },
+    {
+      "ID": 3000012,
+      "Entries": [
+        "Dueling Shield - Barricade Shield"
+      ]
+    },
+    {
+      "ID": 3000013,
+      "Entries": [
+        "Dueling Shield - Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 3000014,
+      "Entries": [
+        "Dueling Shield - Sacred Order"
+      ]
+    },
+    {
+      "ID": 3000015,
+      "Entries": [
+        "Dueling Shield - Shared Order"
+      ]
+    },
+    {
+      "ID": 3000016,
+      "Entries": [
+        "Dueling Shield - Beast's Roar"
+      ]
+    },
+    {
+      "ID": 3000017,
+      "Entries": [
+        "Dueling Shield - Endure"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "Backhand Blade - Spinning Slash"
+      ]
+    },
+    {
+      "ID": 3000101,
+      "Entries": [
+        "Backhand Blade - Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 3000102,
+      "Entries": [
+        "Backhand Blade - Sword Dance"
+      ]
+    },
+    {
+      "ID": 3000103,
+      "Entries": [
+        "Backhand Blade - Gravitas"
+      ]
+    },
+    {
+      "ID": 3000104,
+      "Entries": [
+        "Backhand Blade - Blood Blade"
+      ]
+    },
+    {
+      "ID": 3000105,
+      "Entries": [
+        "Backhand Blade - Cragblade"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "Chilling Perfume Bottle - Wall of Sparks"
+      ]
+    },
+    {
+      "ID": 3001001,
+      "Entries": [
+        "Frenzyflame Perfume Bottle - Wall of Sparks"
+      ]
+    },
+    {
+      "ID": 3001002,
+      "Entries": [
+        "Lightning Perfume Bottle - Wall of Sparks"
+      ]
+    },
+    {
+      "ID": 3001010,
+      "Entries": [
+        "Chilling Perfume Bottle - Rolling Sparks"
+      ]
+    },
+    {
+      "ID": 3001011,
+      "Entries": [
+        "Frenzyflame Perfume Bottle - Rolling Sparks"
+      ]
+    },
+    {
+      "ID": 3001012,
+      "Entries": [
+        "Lightning Perfume Bottle - Rolling Sparks"
+      ]
+    },
+    {
+      "ID": 4400039,
+      "Entries": [
+        "Sword Lance - Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 4401055,
+      "Entries": [
+        "Dryleaf Arts - Palm Blast"
+      ]
+    },
+    {
+      "ID": 4407062,
+      "Entries": [
+        "Beast Claw - Savage Claws"
+      ]
+    },
+    {
+      "ID": 4409058,
+      "Entries": [
+        "Backhand Blade - Blind Spot"
+      ]
+    },
+    {
+      "ID": 4411061,
+      "Entries": [
+        "Great Katana - Overhead Stance"
+      ]
+    },
+    {
+      "ID": 4548045,
+      "Entries": [
+        "Igon's Greatbow - Igon's Great Hunt"
+      ]
+    },
+    {
+      "ID": 4800057,
+      "Entries": [
+        "Dueling Shield - Shield Strike"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "FaceEditParamMontageCamera",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Systemic -- 全身"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Bust-up -- バストアップ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "The whole face -- 顔全体"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Face shape -- 顔形状"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Mayu -- まゆ"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Eyes -- 目"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Nose -- 鼻"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Mouth -- 口"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Chin -- あご"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Beard -- 髭"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For status center -- ステータス中央用"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For status bust-up -- ステータスバストアップ用"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For recall signs -- 召還サイン用"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For data lists -- データリスト用"
+      ]
+    }
+  ]
+}

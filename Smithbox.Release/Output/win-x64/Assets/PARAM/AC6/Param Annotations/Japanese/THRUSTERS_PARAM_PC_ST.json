@@ -1,0 +1,3203 @@
+{
+  "Param": "THRUSTERS_PARAM_PC_ST",
+  "Type": "THRUSTERS_PARAM_PC_ST",
+  "Name": "THRUSTERS_PARAM_PC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "DummyID",
+      "Name": "ダミポリID",
+      "Description": "SFX発生ダミポリ位置(-1:配置位置)ダミポリID。ブースター指定の場合はブースターにあるダミポリのIDになる。"
+    },
+    {
+      "Field": "main_SFXID",
+      "Name": "main_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "main_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "main_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "main_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "main_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "main_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "main_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "main_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "main_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "main_pad1",
+      "Name": "main_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "main_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subFront_SFXID",
+      "Name": "subFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "subFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_pad1",
+      "Name": "subFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subBack_SFXID",
+      "Name": "subBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "subBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_pad1",
+      "Name": "subBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subLeft_SFXID",
+      "Name": "subLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "subLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_pad1",
+      "Name": "subLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subRight_SFXID",
+      "Name": "subRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "subRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_pad1",
+      "Name": "subRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbFront_SFXID",
+      "Name": "qbFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "qbFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_pad1",
+      "Name": "qbFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbBack_SFXID",
+      "Name": "qbBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "qbBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_pad1",
+      "Name": "qbBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbLeft_SFXID",
+      "Name": "qbLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "qbLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_pad1",
+      "Name": "qbLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbRight_SFXID",
+      "Name": "qbRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "qbRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_pad1",
+      "Name": "qbRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "lift_SFXID",
+      "Name": "lift_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "lift_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "lift_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "lift_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "lift_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "lift_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "lift_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "lift_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "lift_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "lift_pad1",
+      "Name": "lift_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "lift_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankFront_SFXID",
+      "Name": "tankFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_pad1",
+      "Name": "tankFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankBack_SFXID",
+      "Name": "tankBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_pad1",
+      "Name": "tankBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankDriftLeft_SFXID",
+      "Name": "tankDriftLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankDriftLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankDriftLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankDriftLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankDriftLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankDriftLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankDriftLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankDriftLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankDriftLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_pad1",
+      "Name": "tankDriftLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankDriftRight_SFXID",
+      "Name": "tankDriftRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankDriftRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankDriftRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankDriftRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankDriftRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankDriftRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankDriftRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankDriftRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankDriftRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_pad1",
+      "Name": "tankDriftRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "quickTurnLeft_SFXID",
+      "Name": "quickTurnLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "quickTurnLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "quickTurnLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "quickTurnLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "quickTurnLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "quickTurnLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "quickTurnLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "quickTurnLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "quickTurnLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_pad1",
+      "Name": "quickTurnLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "quickTurnRight_SFXID",
+      "Name": "quickTurnRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "quickTurnRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "quickTurnRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "quickTurnRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "quickTurnRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "quickTurnRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "quickTurnRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "quickTurnRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "quickTurnRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_pad1",
+      "Name": "quickTurnRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "assaultBoost_SFXID",
+      "Name": "assaultBoost_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "assaultBoost_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "assaultBoost_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "assaultBoost_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "assaultBoost_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "assaultBoost_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "assaultBoost_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "assaultBoost_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "assaultBoost_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_pad1",
+      "Name": "assaultBoost_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringStart_SFXID",
+      "Name": "hoveringStart_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringStart_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringStart_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringStart_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringStart_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringStart_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringStart_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringStart_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringStart_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_pad1",
+      "Name": "hoveringStart_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringStay_SFXID",
+      "Name": "hoveringStay_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringStay_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringStay_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringStay_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringStay_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringStay_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringStay_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringStay_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringStay_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_pad1",
+      "Name": "hoveringStay_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringFront_SFXID",
+      "Name": "hoveringFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_pad1",
+      "Name": "hoveringFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringBack_SFXID",
+      "Name": "hoveringBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_pad1",
+      "Name": "hoveringBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringLeft_SFXID",
+      "Name": "hoveringLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_pad1",
+      "Name": "hoveringLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hoveringRight_SFXID",
+      "Name": "hoveringRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hoveringRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hoveringRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hoveringRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hoveringRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hoveringRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hoveringRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hoveringRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hoveringRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_pad1",
+      "Name": "hoveringRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "turnLeft_SFXID",
+      "Name": "turnLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "turnLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "turnLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "turnLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "turnLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "turnLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "turnLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "turnLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "turnLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_pad1",
+      "Name": "turnLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "turnRight_SFXID",
+      "Name": "turnRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "turnRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "turnRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "turnRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "turnRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "turnRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "turnRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "turnRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "turnRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_pad1",
+      "Name": "turnRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "mainStart_SFXID",
+      "Name": "mainStart_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "mainStart_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "mainStart_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "mainStart_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "mainStart_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "mainStart_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "mainStart_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "mainStart_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "mainStart_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_pad1",
+      "Name": "mainStart_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "assaultBoostFinish_SFXID",
+      "Name": "assaultBoostFinish_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "assaultBoostFinish_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "assaultBoostFinish_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "assaultBoostFinish_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "assaultBoostFinish_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "assaultBoostFinish_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "assaultBoostFinish_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "assaultBoostFinish_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "assaultBoostFinish_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_pad1",
+      "Name": "assaultBoostFinish_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "falling_SFXID",
+      "Name": "falling_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "falling_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "falling_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "falling_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "falling_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "falling_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "falling_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "falling_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "falling_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "falling_pad1",
+      "Name": "falling_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "falling_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "boostExhaustFront_SFXID",
+      "Name": "boostExhaustFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "boostExhaustFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "boostExhaustFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "boostExhaustFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "boostExhaustFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "boostExhaustFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "boostExhaustFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "boostExhaustFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "boostExhaustFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_pad1",
+      "Name": "boostExhaustFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "boostExhaustBack_SFXID",
+      "Name": "boostExhaustBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "boostExhaustBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "boostExhaustBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "boostExhaustBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "boostExhaustBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "boostExhaustBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "boostExhaustBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "boostExhaustBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "boostExhaustBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_pad1",
+      "Name": "boostExhaustBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "boostExhaustLeft_SFXID",
+      "Name": "boostExhaustLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "boostExhaustLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "boostExhaustLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "boostExhaustLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "boostExhaustLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "boostExhaustLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "boostExhaustLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "boostExhaustLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "boostExhaustLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_pad1",
+      "Name": "boostExhaustLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "boostExhaustRight_SFXID",
+      "Name": "boostExhaustRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "boostExhaustRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "boostExhaustRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "boostExhaustRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "boostExhaustRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "boostExhaustRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "boostExhaustRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "boostExhaustRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "boostExhaustRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_pad1",
+      "Name": "boostExhaustRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "boostExhaustFalling_SFXID",
+      "Name": "boostExhaustFalling_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "boostExhaustFalling_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "boostExhaustFalling_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "boostExhaustFalling_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "boostExhaustFalling_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "boostExhaustFalling_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "boostExhaustFalling_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "boostExhaustFalling_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "boostExhaustFalling_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_pad1",
+      "Name": "boostExhaustFalling_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeFront_SFXID",
+      "Name": "brakeFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "brakeFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_pad1",
+      "Name": "brakeFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeBack_SFXID",
+      "Name": "brakeBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "brakeBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_pad1",
+      "Name": "brakeBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeLeft_SFXID",
+      "Name": "brakeLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "brakeLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_pad1",
+      "Name": "brakeLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeRight_SFXID",
+      "Name": "brakeRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "brakeRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_pad1",
+      "Name": "brakeRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeFalling_SFXID",
+      "Name": "brakeFalling_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeFalling_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeFalling_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeFalling_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeFalling_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeFalling_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeFalling_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeFalling_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "brakeFalling_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_pad1",
+      "Name": "brakeFalling_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "assaultBoostLoop_SFXID",
+      "Name": "assaultBoostLoop_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "assaultBoostLoop_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "assaultBoostLoop_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "assaultBoostLoop_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "assaultBoostLoop_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "assaultBoostLoop_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "assaultBoostLoop_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "assaultBoostLoop_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "assaultBoostLoop_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_pad1",
+      "Name": "assaultBoostLoop_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkFront_SFXID",
+      "Name": "hover2LegsWalkFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_pad1",
+      "Name": "hover2LegsWalkFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkBack_SFXID",
+      "Name": "hover2LegsWalkBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_pad1",
+      "Name": "hover2LegsWalkBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_SFXID",
+      "Name": "hover2LegsWalkLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_pad1",
+      "Name": "hover2LegsWalkLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkRight_SFXID",
+      "Name": "hover2LegsWalkRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_pad1",
+      "Name": "hover2LegsWalkRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_SFXID",
+      "Name": "hover2LegsWalkLeftTurn_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_pad1",
+      "Name": "hover2LegsWalkLeftTurn_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_SFXID",
+      "Name": "hover2LegsWalkRightTurn_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_pad1",
+      "Name": "hover2LegsWalkRightTurn_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunFront_SFXID",
+      "Name": "hover2LegsRunFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_pad1",
+      "Name": "hover2LegsRunFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunBack_SFXID",
+      "Name": "hover2LegsRunBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_pad1",
+      "Name": "hover2LegsRunBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunLeft_SFXID",
+      "Name": "hover2LegsRunLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_pad1",
+      "Name": "hover2LegsRunLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunRight_SFXID",
+      "Name": "hover2LegsRunRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_pad1",
+      "Name": "hover2LegsRunRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_SFXID",
+      "Name": "hover2LegsRunLeftTurn_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_pad1",
+      "Name": "hover2LegsRunLeftTurn_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_SFXID",
+      "Name": "hover2LegsRunRightTurn_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_pad1",
+      "Name": "hover2LegsRunRightTurn_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankQbFront_SFXID",
+      "Name": "tankQbFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankQbFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankQbFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankQbFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankQbFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankQbFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankQbFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankQbFront_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankQbFront_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_pad1",
+      "Name": "tankQbFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankQbBack_SFXID",
+      "Name": "tankQbBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankQbBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankQbBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankQbBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankQbBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankQbBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankQbBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankQbBack_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankQbBack_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_pad1",
+      "Name": "tankQbBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankQbLeft_SFXID",
+      "Name": "tankQbLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankQbLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankQbLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankQbLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankQbLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankQbLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankQbLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankQbLeft_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankQbLeft_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_pad1",
+      "Name": "tankQbLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "tankQbRight_SFXID",
+      "Name": "tankQbRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "tankQbRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "tankQbRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "tankQbRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "tankQbRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "tankQbRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "tankQbRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "tankQbRight_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "tankQbRight_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_pad1",
+      "Name": "tankQbRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hovertTankGround_SFXID",
+      "Name": "hovertTankGround_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hovertTankGround_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hovertTankGround_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hovertTankGround_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hovertTankGround_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hovertTankGround_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hovertTankGround_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hovertTankGround_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hovertTankGround_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_pad1",
+      "Name": "hovertTankGround_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hovertTankGroundWater_SFXID",
+      "Name": "hovertTankGroundWater_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hovertTankGroundWater_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hovertTankGroundWater_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hovertTankGroundWater_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hovertTankGroundWater_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hovertTankGroundWater_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hovertTankGroundWater_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hovertTankGroundWater_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hovertTankGroundWater_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_pad1",
+      "Name": "hovertTankGroundWater_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_SFXID",
+      "Name": "hovertTankGroundWaterShallow_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_DoPlaySFXForTankLeg",
+      "Name": "タンク脚部の場合SFXを再生するか",
+      "Description": "0(OFF):再生しない、1(ON):再生する"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_pad",
+      "Name": "pad:2",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_pad1",
+      "Name": "hovertTankGroundWaterShallow_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    }
+  ]
+}

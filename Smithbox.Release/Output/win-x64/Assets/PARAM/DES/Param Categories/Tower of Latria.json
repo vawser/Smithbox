@@ -1,0 +1,23 @@
+{
+  "Key": "Tower of Latria",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Tower of Latria"
+      }
+  ],
+  "Params": [
+    "m04_DofBank",
+    "m04_EnvLightTexBank",
+    "m04_FogBank",
+    "m04_LensFlareBank",
+    "m04_LensFlareExBank",
+    "m04_LightBank",
+    "m04_LightScatteringBank",
+    "m04_PointLightBank",
+    "m04_ShadowBank",
+    "m04_ToneCorrectBank",
+    "m04_ToneMapBank",
+    "s04_LightBank"
+  ]
+}

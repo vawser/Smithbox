@@ -1,0 +1,547 @@
+{
+  "Name": "EFID_m40_90_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 40900000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 40900050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 40900100,
+      "Entries": [
+        "Received event share",
+        "Received event share"
+      ]
+    },
+    {
+      "ID": 40900101,
+      "Entries": [
+        "Sent event share"
+      ]
+    },
+    {
+      "ID": 40900102,
+      "Entries": [
+        "Event share lottery_win"
+      ]
+    },
+    {
+      "ID": 40900103,
+      "Entries": [
+        "Event share lottery_lose"
+      ]
+    },
+    {
+      "ID": 40900200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 40900500,
+      "Entries": [
+        "Unlocked the Difficult Magician's Tower",
+        "Unlocked the Difficult Magician's Tower"
+      ]
+    },
+    {
+      "ID": 40900501,
+      "Entries": [
+        "Phantom A destroyed"
+      ]
+    },
+    {
+      "ID": 40900502,
+      "Entries": [
+        "Phantom B destroyed"
+      ]
+    },
+    {
+      "ID": 40900503,
+      "Entries": [
+        "Phantom C destroyed"
+      ]
+    },
+    {
+      "ID": 40900504,
+      "Entries": [
+        "Phantom A appeared"
+      ]
+    },
+    {
+      "ID": 40900505,
+      "Entries": [
+        "Phantom B appeared"
+      ]
+    },
+    {
+      "ID": 40900506,
+      "Entries": [
+        "Phantom C appeared"
+      ]
+    },
+    {
+      "ID": 40900600,
+      "Entries": [
+        "0_Moving tree_destroyed"
+      ]
+    },
+    {
+      "ID": 40900601,
+      "Entries": [
+        "0_Moving tree_appeared"
+      ]
+    },
+    {
+      "ID": 40900602,
+      "Entries": [
+        "0_Moving tree_position 1"
+      ]
+    },
+    {
+      "ID": 40900603,
+      "Entries": [
+        "0_Moving tree_position 2"
+      ]
+    },
+    {
+      "ID": 40900604,
+      "Entries": [
+        "0_Move moving tree_position 3"
+      ]
+    },
+    {
+      "ID": 40900606,
+      "Entries": [
+        "0_pretending coat of arms_destroyed"
+      ]
+    },
+    {
+      "ID": 40900607,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900608,
+      "Entries": [
+        "0_disappearing door_destroyed"
+      ]
+    },
+    {
+      "ID": 40900609,
+      "Entries": [
+        "0_disappearing door_appeared"
+      ]
+    },
+    {
+      "ID": 40900610,
+      "Entries": [
+        "1_moving tree_destroyed"
+      ]
+    },
+    {
+      "ID": 40900611,
+      "Entries": [
+        "1_moving tree_appeared"
+      ]
+    },
+    {
+      "ID": 40900612,
+      "Entries": [
+        "1_moving tree_position 1"
+      ]
+    },
+    {
+      "ID": 40900613,
+      "Entries": [
+        "1_moving tree_position 2"
+      ]
+    },
+    {
+      "ID": 40900614,
+      "Entries": [
+        "1_moving tree_position 3"
+      ]
+    },
+    {
+      "ID": 40900616,
+      "Entries": [
+        "1_imp statue pretending_destroyed"
+      ]
+    },
+    {
+      "ID": 40900617,
+      "Entries": [
+        "1_imp statue pretending_appeared"
+      ]
+    },
+    {
+      "ID": 40900618,
+      "Entries": [
+        "1_running grass_destroyed"
+      ]
+    },
+    {
+      "ID": 40900619,
+      "Entries": [
+        "1_running grass_appeared"
+      ]
+    },
+    {
+      "ID": 40900620,
+      "Entries": [
+        "2_moving tree_destroyed"
+      ]
+    },
+    {
+      "ID": 40900621,
+      "Entries": [
+        "2_moving tree_appeared"
+      ]
+    },
+    {
+      "ID": 40900622,
+      "Entries": [
+        "2_moving tree_position 1"
+      ]
+    },
+    {
+      "ID": 40900623,
+      "Entries": [
+        "2_moving tree_position Place 2"
+      ]
+    },
+    {
+      "ID": 40900624,
+      "Entries": [
+        "2_Moving tree_Position 3"
+      ]
+    },
+    {
+      "ID": 40900626,
+      "Entries": [
+        "2_Water surface reflection_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900627,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900628,
+      "Entries": [
+        "2_Disappearing torch_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900629,
+      "Entries": [
+        "2_Disappearing torch_Appeared"
+      ]
+    },
+    {
+      "ID": 40900630,
+      "Entries": [
+        "3_Spot the difference_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900631,
+      "Entries": [
+        "3_Spot the difference_Incorrect answer 1 destroyed"
+      ]
+    },
+    {
+      "ID": 40900632,
+      "Entries": [
+        "3_Spot the difference_Incorrect answer 2 destroyed"
+      ]
+    },
+    {
+      "ID": 40900636,
+      "Entries": [
+        "3_Pretending to be a coat of arms_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900637,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900638,
+      "Entries": [
+        "3_Non-green trees_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900639,
+      "Entries": [
+        "3_Non-green trees_Already appeared"
+      ]
+    },
+    {
+      "ID": 40900640,
+      "Entries": [
+        "4_Find the difference_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900641,
+      "Entries": [
+        "4_Find the difference_Wrong answer 1 destroyed"
+      ]
+    },
+    {
+      "ID": 40900642,
+      "Entries": [
+        "4_Find the difference_Wrong answer 2 destroyed"
+      ]
+    },
+    {
+      "ID": 40900646,
+      "Entries": [
+        "4_Water reflection_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900647,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900648,
+      "Entries": [
+        "4_Side building_ Destroyed"
+      ]
+    },
+    {
+      "ID": 40900649,
+      "Entries": [
+        "4_Side-by-side building_Already appeared"
+      ]
+    },
+    {
+      "ID": 40900650,
+      "Entries": [
+        "5_Find the difference_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900651,
+      "Entries": [
+        "5_Find the difference_Wrong answer 1 destroyed"
+      ]
+    },
+    {
+      "ID": 40900652,
+      "Entries": [
+        "5_Find the difference_Wrong answer 2 destroyed"
+      ]
+    },
+    {
+      "ID": 40900656,
+      "Entries": [
+        "5_Imp statue pretending_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900657,
+      "Entries": [
+        "5_Imp statue pretending_Already appeared"
+      ]
+    },
+    {
+      "ID": 40900658,
+      "Entries": [
+        "5_Swaying bush_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900659,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900660,
+      "Entries": [
+        "6_Painting_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900666,
+      "Entries": [
+        "6_Swaying bush_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900667,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40900668,
+      "Entries": [
+        "6_Fleeing grass_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900669,
+      "Entries": [
+        "6_Fleeing grass_Appeared"
+      ]
+    },
+    {
+      "ID": 40900670,
+      "Entries": [
+        "7_Painting_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900676,
+      "Entries": [
+        "7_Side building_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900677,
+      "Entries": [
+        "7_Side building_Appeared"
+      ]
+    },
+    {
+      "ID": 40900678,
+      "Entries": [
+        "7_Extinguished torch_Destroyed"
+      ]
+    },
+    {
+      "ID": 40900679,
+      "Entries": [
+        "7_Disappearing torches_already appeared"
+      ]
+    },
+    {
+      "ID": 40900680,
+      "Entries": [
+        "8_Paintings_destroyed"
+      ]
+    },
+    {
+      "ID": 40900686,
+      "Entries": [
+        "8_Non-green trees_destroyed"
+      ]
+    },
+    {
+      "ID": 40900687,
+      "Entries": [
+        "8_Non-green trees_already appeared"
+      ]
+    },
+    {
+      "ID": 40900688,
+      "Entries": [
+        "8_Disappearing doors_destroyed"
+      ]
+    },
+    {
+      "ID": 40900689,
+      "Entries": [
+        "8_Disappearing doors_already appeared"
+      ]
+    },
+    {
+      "ID": 40900700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 40900800,
+      "Entries": [
+        "Boss flag (does not reset)"
+      ]
+    },
+    {
+      "ID": 40900900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 40901200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 40901500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 40902100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 40902200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 40902500,
+      "Entries": [
+        "Object flag (reset)"
+      ]
+    },
+    {
+      "ID": 40902700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 40902800,
+      "Entries": [
+        "Boss flag (reset)"
+      ]
+    },
+    {
+      "ID": 40902900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 40908500,
+      "Entries": [
+        "Object act flag"
+      ]
+    }
+  ]
+}

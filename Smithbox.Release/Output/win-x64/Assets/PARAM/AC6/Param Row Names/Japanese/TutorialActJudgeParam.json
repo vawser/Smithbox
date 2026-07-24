@@ -1,0 +1,191 @@
+{
+  "Name": "TutorialActJudgeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "jump -- ジャンプ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Boost increase -- ブースト上昇"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "quick boost -- クイックブースト"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "boost move -- ブースト移動"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "assault boost -- アサルトブースト"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "vertical catapult -- 垂直カタパルト"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Assault boost stop -- アサルトブースト停止"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "repair -- 修復"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Target switching -- ターゲット切替"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Target assist ON/OFF -- ターゲットアシストON/OFF"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "dabutori -- ダブトリ"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "drift turn -- ドリフトターン"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "hovering -- ホバリング"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Right hand: Normal shooting -- 右手：通常射撃"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Right hand: Charge shot -- 右手：チャージショット"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Right hand: Guard attack -- 右手：ガード攻撃"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Right hand: reload -- 右手：リロード"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Left hand: normal shooting -- 左手：通常射撃"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Left hand: Charge shot -- 左手：チャージショット"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "blade -- ブレード"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Blade: continuous attack -- ブレード：連続攻撃"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Blade: Charge attack -- ブレード：チャージ攻撃"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Left hand: reload -- 左手：リロード"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Right hand: Charge interruption -- 右手：チャージ中断"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Left hand: Charge interruption -- 左手：チャージ中断"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Right back: Normal shooting -- 右背：通常射撃"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Right back: Guard attack -- 右背：ガード攻撃"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Right back: Multi-lock missile attack -- 右背：マルチロックミサイル攻撃"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Left back: Normal shooting -- 左背：通常射撃"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "shield -- シールド"
+      ]
+    }
+  ]
+}

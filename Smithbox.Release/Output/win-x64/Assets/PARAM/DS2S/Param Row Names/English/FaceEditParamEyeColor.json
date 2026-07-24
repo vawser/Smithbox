@@ -1,0 +1,65 @@
+{
+  "Name": "FaceEditParamEyeColor",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Eye Color Set 1 -- 瞳の色セット1"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Eye Color Set 2 -- 瞳の色セット2"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Eye Color Set 3 -- 瞳の色セット3"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Eye Color Set 4 -- 瞳の色セット4"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Eye Color Set 5 -- 瞳の色セット5"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Eye Color Set 6 -- 瞳の色セット6"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Eye Color Set 7 -- 瞳の色セット7"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Eye Color Set 8 -- 瞳の色セット8"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Eye Color Set 9 -- 瞳の色セット9"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Eye Color Set 10 -- 瞳の色セット10"
+      ]
+    }
+  ]
+}

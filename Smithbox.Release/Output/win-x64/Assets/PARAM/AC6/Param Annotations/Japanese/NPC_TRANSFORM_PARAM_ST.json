@@ -1,0 +1,73 @@
+{
+  "Param": "NPC_TRANSFORM_PARAM_ST",
+  "Type": "NPC_TRANSFORM_PARAM_ST",
+  "Name": "NPC_TRANSFORM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "lockDmyPoly0",
+      "Name": "ロックオンダミポリ220",
+      "Description": "ロックオンダミポリ220 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly1",
+      "Name": "ロックオンダミポリ221",
+      "Description": "ロックオンダミポリ221 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly2",
+      "Name": "ロックオンダミポリ222",
+      "Description": "ロックオンダミポリ222 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly3",
+      "Name": "ロックオンダミポリ223",
+      "Description": "ロックオンダミポリ223 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly4",
+      "Name": "ロックオンダミポリ224",
+      "Description": "ロックオンダミポリ224 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly5",
+      "Name": "ロックオンダミポリ225",
+      "Description": "ロックオンダミポリ225 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly6",
+      "Name": "ロックオンダミポリ226",
+      "Description": "ロックオンダミポリ226 が使用可能"
+    },
+    {
+      "Field": "lockDmyPoly7",
+      "Name": "ロックオンダミポリ227",
+      "Description": "ロックオンダミポリ227 が使用可能"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

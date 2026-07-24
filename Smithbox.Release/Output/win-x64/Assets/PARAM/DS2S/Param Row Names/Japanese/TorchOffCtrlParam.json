@@ -1,0 +1,23 @@
+{
+  "Name": "TorchOffCtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "通常：時間経過"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "水"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "風"
+      ]
+    }
+  ]
+}

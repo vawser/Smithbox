@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_BLUR_RAND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_BLUR_RAND_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rectangle"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oblong"
+        }
+      ]
+    }
+  ]
+}

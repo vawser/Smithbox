@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <!-- FirstVersion="10200000" -->
+  <Fields>
+    <Field Def="s32 unk_00"/>
+  </Fields>
+</PARAMDEF>

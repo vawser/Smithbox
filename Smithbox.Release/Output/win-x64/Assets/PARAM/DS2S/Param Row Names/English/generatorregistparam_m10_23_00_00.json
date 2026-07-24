@@ -1,0 +1,569 @@
+{
+  "Name": "generatorregistparam_m10_23_00_00",
+  "Entries": [
+    {
+      "ID": 10800000,
+      "Entries": [
+        "[REG:10800000] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800001,
+      "Entries": [
+        "[REG:10800001] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800002,
+      "Entries": [
+        "[REG:10800002] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800003,
+      "Entries": [
+        "[REG:10800003] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800004,
+      "Entries": [
+        "[REG:10800004] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800005,
+      "Entries": [
+        "[REG:10800005] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800006,
+      "Entries": [
+        "[REG:10800006] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800007,
+      "Entries": [
+        "[REG:10800007] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800008,
+      "Entries": [
+        "[REG:10800008] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800010,
+      "Entries": [
+        "[REG:10800010] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800013,
+      "Entries": [
+        "[REG:10800013] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800014,
+      "Entries": [
+        "[REG:10800014] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800015,
+      "Entries": [
+        "[REG:10800015] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800016,
+      "Entries": [
+        "[REG:10800016] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800021,
+      "Entries": [
+        "[REG:10800021] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800030,
+      "Entries": [
+        "[REG:10800030] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800031,
+      "Entries": [
+        "[REG:10800031] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800050,
+      "Entries": [
+        "[REG:10800050] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800051,
+      "Entries": [
+        "[REG:10800051] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10800055,
+      "Entries": [
+        "[REG:10800055] Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "[REG:11800000] Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 11800001,
+      "Entries": [
+        "[REG:11800001] Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "[REG:12700000] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700001,
+      "Entries": [
+        "[REG:12700001] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700002,
+      "Entries": [
+        "[REG:12700002] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700003,
+      "Entries": [
+        "[REG:12700003] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700009,
+      "Entries": [
+        "[REG:12700009] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700050,
+      "Entries": [
+        "[REG:12700050] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700051,
+      "Entries": [
+        "[REG:12700051] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700052,
+      "Entries": [
+        "[REG:12700052] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700099,
+      "Entries": [
+        "[REG:12700099] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12701009,
+      "Entries": [
+        "[REG:12701009] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 13200003,
+      "Entries": [
+        "[REG:13200003] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 13200010,
+      "Entries": [
+        "[REG:13200010] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 13200032,
+      "Entries": [
+        "[REG:13200032] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 13202235,
+      "Entries": [
+        "[REG:13202235] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 13205000,
+      "Entries": [
+        "[REG:13205000] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 13209000,
+      "Entries": [
+        "[REG:13209000] Skeleton"
+      ]
+    },
+    {
+      "ID": 13300101,
+      "Entries": [
+        "[REG:13300101] Bonewheel Skeleton"
+      ]
+    },
+    {
+      "ID": 13800000,
+      "Entries": [
+        "[REG:13800000] Torturer"
+      ]
+    },
+    {
+      "ID": 13800001,
+      "Entries": [
+        "[REG:13800001] Torturer"
+      ]
+    },
+    {
+      "ID": 13800002,
+      "Entries": [
+        "[REG:13800002] Torturer"
+      ]
+    },
+    {
+      "ID": 13800004,
+      "Entries": [
+        "[REG:13800004] Torturer"
+      ]
+    },
+    {
+      "ID": 13800005,
+      "Entries": [
+        "[REG:13800005] Torturer"
+      ]
+    },
+    {
+      "ID": 13800010,
+      "Entries": [
+        "[REG:13800010] Torturer"
+      ]
+    },
+    {
+      "ID": 13900000,
+      "Entries": [
+        "[REG:13900000] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 13900001,
+      "Entries": [
+        "[REG:13900001] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 13900900,
+      "Entries": [
+        "[REG:13900900] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 13900901,
+      "Entries": [
+        "[REG:13900901] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "[REG:15300000] Syan Knight"
+      ]
+    },
+    {
+      "ID": 15400000,
+      "Entries": [
+        "[REG:15400000] Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15400001,
+      "Entries": [
+        "[REG:15400001] Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15400002,
+      "Entries": [
+        "[REG:15400002] Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15600000,
+      "Entries": [
+        "[REG:15600000] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700012,
+      "Entries": [
+        "[REG:15700012] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700014,
+      "Entries": [
+        "[REG:15700014] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700020,
+      "Entries": [
+        "[REG:15700020] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700022,
+      "Entries": [
+        "[REG:15700022] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700023,
+      "Entries": [
+        "[REG:15700023] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700500,
+      "Entries": [
+        "[REG:15700500] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700600,
+      "Entries": [
+        "[REG:15700600] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15701400,
+      "Entries": [
+        "[REG:15701400] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15701500,
+      "Entries": [
+        "[REG:15701500] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15702300,
+      "Entries": [
+        "[REG:15702300] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15702600,
+      "Entries": [
+        "[REG:15702600] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15703300,
+      "Entries": [
+        "[REG:15703300] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15705800,
+      "Entries": [
+        "[REG:15705800] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15706802,
+      "Entries": [
+        "[REG:15706802] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 22200000,
+      "Entries": [
+        "[REG:22200000] Giant Basilisk"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "[REG:22700000] Stray Dog"
+      ]
+    },
+    {
+      "ID": 32700010,
+      "Entries": [
+        "[REG:32700010] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700020,
+      "Entries": [
+        "[REG:32700020] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700021,
+      "Entries": [
+        "[REG:32700021] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700022,
+      "Entries": [
+        "[REG:32700022] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700023,
+      "Entries": [
+        "[REG:32700023] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700024,
+      "Entries": [
+        "[REG:32700024] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700031,
+      "Entries": [
+        "[REG:32700031] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700033,
+      "Entries": [
+        "[REG:32700033] Captive Undead"
+      ]
+    },
+    {
+      "ID": 32700039,
+      "Entries": [
+        "[REG:32700039] Captive Undead"
+      ]
+    },
+    {
+      "ID": 61910000,
+      "Entries": [
+        "[REG:61910000] Executioner's Chariot [Boss]"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "[REG:74200000] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74200001,
+      "Entries": [
+        "[REG:74200001] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "[REG:77000000] Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 77000001,
+      "Entries": [
+        "[REG:77000001] Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "[REG:78300000] Titchy Gren"
+      ]
+    },
+    {
+      "ID": 78300001,
+      "Entries": [
+        "[REG:78300001] Titchy Gren"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "[REG:82100000] Merciless Roenna"
+      ]
+    },
+    {
+      "ID": 85200000,
+      "Entries": [
+        "[REG:85200000] Greatsword Phantom"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[REG:90000000] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 90000100,
+      "Entries": [
+        "[REG:90000100] Bashful Ray"
+      ]
+    }
+  ]
+}

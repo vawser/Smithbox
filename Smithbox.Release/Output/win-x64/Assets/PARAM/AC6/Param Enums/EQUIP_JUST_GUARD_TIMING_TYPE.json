@@ -1,0 +1,29 @@
+{
+  "Key": "EQUIP_JUST_GUARD_TIMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_JUST_GUARD_TIMING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Before the Initial Guard threshold"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After the Initial Guard threshold"
+        }
+      ]
+    }
+  ]
+}

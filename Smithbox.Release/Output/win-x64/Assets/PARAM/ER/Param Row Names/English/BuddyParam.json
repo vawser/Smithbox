@@ -1,0 +1,1025 @@
+{
+  "Name": "BuddyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Black Knife Tiche"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Banished Knight Oleg"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "Banished Knight Engvall"
+      ]
+    },
+    {
+      "ID": 20228000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20229000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Fanged Imps"
+      ]
+    },
+    {
+      "ID": 20300001,
+      "Entries": [
+        "Fanged Imps"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Latenna the Albinauric"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "Nomad"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "Nightmaiden & Swordstress"
+      ]
+    },
+    {
+      "ID": 20600001,
+      "Entries": [
+        "Nightmaiden & Swordstress"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "Mimic Tear"
+      ]
+    },
+    {
+      "ID": 20700001,
+      "Entries": [
+        "Mimic Tear"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "Crystalian"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "Ancestral Follower"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Winged Misbegotten"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "Albinauric Ashes"
+      ]
+    },
+    {
+      "ID": 21100001,
+      "Entries": [
+        "Albinauric Ashes"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "Skeletal Militiaman"
+      ]
+    },
+    {
+      "ID": 21200001,
+      "Entries": [
+        "Skeletal Militiaman"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "Skeletal Bandit"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 21400001,
+      "Entries": [
+        "Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 21400002,
+      "Entries": [
+        "Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 21400003,
+      "Entries": [
+        "Oracle Envoy"
+      ]
+    },
+    {
+      "ID": 21500000,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 21500001,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 21500002,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 21500003,
+      "Entries": [
+        "Putrid Corpse"
+      ]
+    },
+    {
+      "ID": 21600000,
+      "Entries": [
+        "Depraved Perfumer"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "Perfumer Tricia"
+      ]
+    },
+    {
+      "ID": 21800000,
+      "Entries": [
+        "Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 21900000,
+      "Entries": [
+        "Twinsage Sorcerer"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "Page Ashes"
+      ]
+    },
+    {
+      "ID": 22100000,
+      "Entries": [
+        "Battlemage Hugues"
+      ]
+    },
+    {
+      "ID": 22200000,
+      "Entries": [
+        "Clayman"
+      ]
+    },
+    {
+      "ID": 22200001,
+      "Entries": [
+        "Clayman"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "Cleanrot Knight Finlay"
+      ]
+    },
+    {
+      "ID": 22400000,
+      "Entries": [
+        "Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 22500000,
+      "Entries": [
+        "Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 22500001,
+      "Entries": [
+        "Marionette Soldier"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "Avionette Soldier"
+      ]
+    },
+    {
+      "ID": 22600001,
+      "Entries": [
+        "Avionette Soldier"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "Fire Monk"
+      ]
+    },
+    {
+      "ID": 22800000,
+      "Entries": [
+        "Blackflame Monk"
+      ]
+    },
+    {
+      "ID": 22900000,
+      "Entries": [
+        "Man-Serpent"
+      ]
+    },
+    {
+      "ID": 23000000,
+      "Entries": [
+        "Azula Beastman"
+      ]
+    },
+    {
+      "ID": 23000001,
+      "Entries": [
+        "Azula Beastman"
+      ]
+    },
+    {
+      "ID": 23100000,
+      "Entries": [
+        "Kaiden Sellsword"
+      ]
+    },
+    {
+      "ID": 23200000,
+      "Entries": [
+        "Lone Wolf"
+      ]
+    },
+    {
+      "ID": 23200001,
+      "Entries": [
+        "Lone Wolf"
+      ]
+    },
+    {
+      "ID": 23200002,
+      "Entries": [
+        "Lone Wolf"
+      ]
+    },
+    {
+      "ID": 23300000,
+      "Entries": [
+        "Giant Rat"
+      ]
+    },
+    {
+      "ID": 23300001,
+      "Entries": [
+        "Giant Rat"
+      ]
+    },
+    {
+      "ID": 23300002,
+      "Entries": [
+        "Giant Rat"
+      ]
+    },
+    {
+      "ID": 23310000,
+      "Entries": [
+        "Giant Rat - Additional Set 1"
+      ]
+    },
+    {
+      "ID": 23310001,
+      "Entries": [
+        "Giant Rat - Additional Set 1"
+      ]
+    },
+    {
+      "ID": 23310002,
+      "Entries": [
+        "Giant Rat - Additional Set 1"
+      ]
+    },
+    {
+      "ID": 23310003,
+      "Entries": [
+        "Giant Rat - Additional Set 1"
+      ]
+    },
+    {
+      "ID": 23320000,
+      "Entries": [
+        "Giant Rat - Additional Set 2"
+      ]
+    },
+    {
+      "ID": 23320001,
+      "Entries": [
+        "Giant Rat - Additional Set 2"
+      ]
+    },
+    {
+      "ID": 23320002,
+      "Entries": [
+        "Giant Rat - Additional Set 2"
+      ]
+    },
+    {
+      "ID": 23320003,
+      "Entries": [
+        "Giant Rat - Additional Set 2"
+      ]
+    },
+    {
+      "ID": 23320004,
+      "Entries": [
+        "Giant Rat - Additional Set 2"
+      ]
+    },
+    {
+      "ID": 23400000,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 23400001,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 23400002,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 23400003,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 23400004,
+      "Entries": [
+        "Demi-Human"
+      ]
+    },
+    {
+      "ID": 23500000,
+      "Entries": [
+        "Rotten Stray"
+      ]
+    },
+    {
+      "ID": 23600000,
+      "Entries": [
+        "Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 23700000,
+      "Entries": [
+        "Warhawk"
+      ]
+    },
+    {
+      "ID": 23800000,
+      "Entries": [
+        "Stormhawk"
+      ]
+    },
+    {
+      "ID": 23900000,
+      "Entries": [
+        "Bloodhound Knight Floh"
+      ]
+    },
+    {
+      "ID": 24000000,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 24000001,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 24000002,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 24000003,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 24000004,
+      "Entries": [
+        "Wandering Noble"
+      ]
+    },
+    {
+      "ID": 24100000,
+      "Entries": [
+        "Noble Sorcerer"
+      ]
+    },
+    {
+      "ID": 24200000,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 24200001,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 24200002,
+      "Entries": [
+        "Vulgar Militia"
+      ]
+    },
+    {
+      "ID": 24300000,
+      "Entries": [
+        "Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 24400000,
+      "Entries": [
+        "Land Squirt"
+      ]
+    },
+    {
+      "ID": 24400001,
+      "Entries": [
+        "Land Squirt"
+      ]
+    },
+    {
+      "ID": 24400002,
+      "Entries": [
+        "Land Squirt"
+      ]
+    },
+    {
+      "ID": 24500000,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 24500001,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 24500002,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 24500003,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 24500004,
+      "Entries": [
+        "Miranda Sprout"
+      ]
+    },
+    {
+      "ID": 24600000,
+      "Entries": [
+        "Soldjars of Fortune"
+      ]
+    },
+    {
+      "ID": 24600001,
+      "Entries": [
+        "Soldjars of Fortune"
+      ]
+    },
+    {
+      "ID": 24600002,
+      "Entries": [
+        "Soldjars of Fortune"
+      ]
+    },
+    {
+      "ID": 24700000,
+      "Entries": [
+        "Omenkiller"
+      ]
+    },
+    {
+      "ID": 24800000,
+      "Entries": [
+        "Greatshield Soldier"
+      ]
+    },
+    {
+      "ID": 24800001,
+      "Entries": [
+        "Greatshield Soldier"
+      ]
+    },
+    {
+      "ID": 24800002,
+      "Entries": [
+        "Greatshield Soldier"
+      ]
+    },
+    {
+      "ID": 24800003,
+      "Entries": [
+        "Greatshield Soldier"
+      ]
+    },
+    {
+      "ID": 24800004,
+      "Entries": [
+        "Greatshield Soldier"
+      ]
+    },
+    {
+      "ID": 24900000,
+      "Entries": [
+        "Archer"
+      ]
+    },
+    {
+      "ID": 24900001,
+      "Entries": [
+        "Archer"
+      ]
+    },
+    {
+      "ID": 24900002,
+      "Entries": [
+        "Archer"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 25000001,
+      "Entries": [
+        "Godrick Soldier"
+      ]
+    },
+    {
+      "ID": 25100000,
+      "Entries": [
+        "Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 25100001,
+      "Entries": [
+        "Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 25100002,
+      "Entries": [
+        "Raya Lucaria Soldier"
+      ]
+    },
+    {
+      "ID": 25200000,
+      "Entries": [
+        "Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 25200001,
+      "Entries": [
+        "Leyndell Soldier"
+      ]
+    },
+    {
+      "ID": 25300000,
+      "Entries": [
+        "Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 25300001,
+      "Entries": [
+        "Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 25400000,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 25400001,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 25400002,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 25400003,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 25400004,
+      "Entries": [
+        "Mausoleum Soldier"
+      ]
+    },
+    {
+      "ID": 25500000,
+      "Entries": [
+        "Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 25500001,
+      "Entries": [
+        "Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 25500002,
+      "Entries": [
+        "Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 25500003,
+      "Entries": [
+        "Haligtree Soldier"
+      ]
+    },
+    {
+      "ID": 25600000,
+      "Entries": [
+        "Ancient Dragon Knight Kristoff"
+      ]
+    },
+    {
+      "ID": 25700000,
+      "Entries": [
+        "Redmane Knight Ogha"
+      ]
+    },
+    {
+      "ID": 25800000,
+      "Entries": [
+        "Lhutel the Headless"
+      ]
+    },
+    {
+      "ID": 25900000,
+      "Entries": [
+        "Nepheli Loux Puppet"
+      ]
+    },
+    {
+      "ID": 26000000,
+      "Entries": [
+        "Dung Eater Puppet"
+      ]
+    },
+    {
+      "ID": 26100000,
+      "Entries": [
+        "Finger Maiden Therolina Puppet"
+      ]
+    },
+    {
+      "ID": 26200000,
+      "Entries": [
+        "Dolores the Sleeping Arrow"
+      ]
+    },
+    {
+      "ID": 26300000,
+      "Entries": [
+        "Jarwight Puppet"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Curseblade Meera"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Bloodfiend Hexer"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "Gravebird Ashes"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "Fire Knight Hilde"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "Spider Scorpion"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30500001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30500003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "Inquisitor 1"
+      ]
+    },
+    {
+      "ID": 30600001,
+      "Entries": [
+        "Inquisitor 2"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "Demi-Human Swordsman Yosh"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "Messmer Soldier 1"
+      ]
+    },
+    {
+      "ID": 30800001,
+      "Entries": [
+        "Messmer Soldier 2"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "Black Knight Commander Andreas"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Black Knight Captain Huw"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Bigmouth Imp"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "Man-Fly 1"
+      ]
+    },
+    {
+      "ID": 31200001,
+      "Entries": [
+        "Man-Fly 2"
+      ]
+    },
+    {
+      "ID": 31200002,
+      "Entries": [
+        "Man-Fly 3"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "Golem Smith"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "Divine Bird Warrior Ornis"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "Horned Warrior"
+      ]
+    },
+    {
+      "ID": 31600000,
+      "Entries": [
+        "Fingercreeper"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "Ancient Dragon Florissax"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31900000,
+      "Entries": [
+        "Fire Knight Queelign"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Swordhand of Night Jolan"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Jolan and Anna"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Jolan and Anna"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32800000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32900000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

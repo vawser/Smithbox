@@ -1,0 +1,28 @@
+{
+  "Param": "ATTACHEFFECT_TABLE_PARAM_ST",
+  "Type": "ATTACHEFFECT_TABLE_PARAM_ST",
+  "Name": "ATTACHEFFECT_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectId",
+      "Name": "attachEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "chanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "chanceWeight_dlc",
+      "Name": "chanceWeight_dlc",
+      "Description": ""
+    }
+  ]
+}

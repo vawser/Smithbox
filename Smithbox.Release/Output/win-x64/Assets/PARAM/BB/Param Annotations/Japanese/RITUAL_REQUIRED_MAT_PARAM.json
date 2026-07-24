@@ -1,0 +1,63 @@
+{
+  "Param": "RITUAL_REQUIRED_MAT_PARAM",
+  "Type": "RITUAL_REQUIRED_MAT_PARAM",
+  "Name": "RITUAL_REQUIRED_MAT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "useSoul",
+      "Name": "ソウル量",
+      "Description": "必要ソウル量(0:なし)"
+    },
+    {
+      "Field": "materialItemId_1",
+      "Name": "①素材アイテムID",
+      "Description": "①素材アイテムID"
+    },
+    {
+      "Field": "materialItemId_2",
+      "Name": "②素材アイテムID",
+      "Description": "②素材アイテムID"
+    },
+    {
+      "Field": "materialItemId_3",
+      "Name": "③素材アイテムID",
+      "Description": "③素材アイテムID"
+    },
+    {
+      "Field": "materialItemId_4",
+      "Name": "④素材アイテムID",
+      "Description": "④素材アイテムID"
+    },
+    {
+      "Field": "materialItemId_5",
+      "Name": "⑤素材アイテムID",
+      "Description": "⑤素材アイテムID"
+    },
+    {
+      "Field": "num_1",
+      "Name": "①数量",
+      "Description": "①数量(0:なし)"
+    },
+    {
+      "Field": "num_2",
+      "Name": "②数量",
+      "Description": "②数量(0:なし)"
+    },
+    {
+      "Field": "num_3",
+      "Name": "③数量",
+      "Description": "③数量(0:なし)"
+    },
+    {
+      "Field": "num_4",
+      "Name": "④数量",
+      "Description": "④数量(0:なし)"
+    },
+    {
+      "Field": "num_5",
+      "Name": "⑤数量",
+      "Description": "⑤数量(0:なし)"
+    }
+  ]
+}

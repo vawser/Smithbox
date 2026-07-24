@@ -1,0 +1,65 @@
+{
+  "Name": "PostureControlParam_Pro",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Fat (Raider)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

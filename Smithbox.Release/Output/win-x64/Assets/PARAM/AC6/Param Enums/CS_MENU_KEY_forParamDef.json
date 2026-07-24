@@ -1,0 +1,245 @@
+{
+  "Key": "CS_MENU_KEY_forParamDef",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CS_MENU_KEY_forParamDef"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Down"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Decision"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Triangle"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Square"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L1"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "R1"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L2"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "R2"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L3"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "R3"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Auxiliary Menu"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Stick: Left / Right"
+        }
+      ]
+    },
+    {
+      "Key": "10001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Stick: Up / Down"
+        }
+      ]
+    },
+    {
+      "Key": "10002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Stick: Left / Right"
+        }
+      ]
+    },
+    {
+      "Key": "10003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Stick: Up / Down"
+        }
+      ]
+    },
+    {
+      "Key": "10004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up / Down"
+        }
+      ]
+    },
+    {
+      "Key": "10005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left / Right"
+        }
+      ]
+    },
+    {
+      "Key": "10006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L1 / R1"
+        }
+      ]
+    },
+    {
+      "Key": "10007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L2 / R2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Consumable"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Reusable"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "S"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "A"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "B"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "C"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "D"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "E"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "-"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "-"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Colossal Sword"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Heavy Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Hammer"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Great Hammer"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Flail"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Great Spear"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Reaper"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Claw"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Colossal Weapon"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Light Bow"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Greatbow"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Glintstone Staff"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Tattoo"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Sacred Seal"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Small Shield"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Medium Shield"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Arrow"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Greatarrow"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Bolt"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Greatbolt"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "First Day"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "First Day"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Second Day"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Second Day"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Final Day"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "First Day: Noontide"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "First Day: Night"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Second Day: Noontide"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Second Day: Night"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Final Day"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Please select"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Style of play"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Player name"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Please select"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "—"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Cheating"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Bug exploitation"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "Unattended games"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Obstruction or harassment"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Stalking"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Threats"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Discrimination"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "Obscene content"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Commercial advertising"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Personal information"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Defamation"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Infringing on others' rights"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Please select"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "—"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Cheating"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Bug exploitation"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Unattended games"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Obstruction or harassment"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Stalking"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Threats"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Please select"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "—"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Discrimination"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Obscene content"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Commercial advertising"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Personal information"
+      ]
+    },
+    {
+      "ID": 826,
+      "Entries": [
+        "Defamation"
+      ]
+    },
+    {
+      "ID": 827,
+      "Entries": [
+        "Infringing on others' rights"
+      ]
+    }
+  ]
+}

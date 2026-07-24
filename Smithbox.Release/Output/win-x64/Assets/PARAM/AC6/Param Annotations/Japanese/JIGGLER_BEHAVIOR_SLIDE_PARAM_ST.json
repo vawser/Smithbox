@@ -1,0 +1,93 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minAccelMPSS",
+      "Name": "効き始める最小加速度[m/s^2]",
+      "Description": "移動し始める最小加速度"
+    },
+    {
+      "Field": "maxAccelMPSS",
+      "Name": "効きが最大になる加速度[m/s^2]",
+      "Description": "移動力が最大になる加速度"
+    },
+    {
+      "Field": "minSpeedKMH",
+      "Name": "効き始める最小速度[km/h]",
+      "Description": "移動し始める最小速度"
+    },
+    {
+      "Field": "maxSpeedKMH",
+      "Name": "効きが最大になる速度[km/h]",
+      "Description": "移動力が最大になる速度"
+    },
+    {
+      "Field": "moveAccelScaleX",
+      "Name": "移動力（X軸）",
+      "Description": "X軸の速度、加速度を移動させる係数"
+    },
+    {
+      "Field": "moveAccelScaleY",
+      "Name": "移動力（Y軸）",
+      "Description": "Y軸の速度、加速度を移動させる係数"
+    },
+    {
+      "Field": "moveAccelScaleZ",
+      "Name": "移動力（Z軸）",
+      "Description": "Z軸の速度、加速度を移動させる係数"
+    },
+    {
+      "Field": "moveDecayValueX",
+      "Name": "減衰力（X軸）",
+      "Description": "X軸の速度を減衰させる係数"
+    },
+    {
+      "Field": "moveDecayValueY",
+      "Name": "減衰力（Y軸）",
+      "Description": "Y軸の速度を減衰させる係数"
+    },
+    {
+      "Field": "moveDecayValueZ",
+      "Name": "減衰力（Z軸）",
+      "Description": "Z軸の速度を減衰させる係数"
+    },
+    {
+      "Field": "limitMinAngReflecRateX",
+      "Name": "X軸が最小限界位置になったときの跳ね返り率",
+      "Description": "X軸が最小限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMaxAngReflecRateX",
+      "Name": "X軸が最大限界位置になったときの跳ね返り率",
+      "Description": "X軸が最大限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMinAngReflecRateY",
+      "Name": "Y軸が最小限界位置になったときの跳ね返り率",
+      "Description": "Y軸が最小限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMaxAngReflecRateY",
+      "Name": "Y軸が最大限界位置になったときの跳ね返り率",
+      "Description": "Y軸が最大限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMinAngReflecRateZ",
+      "Name": "Z軸が最小限界位置になったときの跳ね返り率",
+      "Description": "Z軸が最小限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMaxAngReflecRateZ",
+      "Name": "Z軸が最大限界位置になったときの跳ね返り率",
+      "Description": "Z軸が最大限界位置になったときの跳ね返り率"
+    },
+    {
+      "Field": "reserved3",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

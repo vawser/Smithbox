@@ -1,0 +1,65 @@
+{
+  "Key": "REPLACE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "REPLACE_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add cooperation value to Call ID"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add resonance value to the Call ID"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add Blade of the Dark Moon rank value to Call ID"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add Gravelord Servant rank value to Call ID"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add Path of the Dragon rank value to Call ID"
+        }
+      ]
+    }
+  ]
+}

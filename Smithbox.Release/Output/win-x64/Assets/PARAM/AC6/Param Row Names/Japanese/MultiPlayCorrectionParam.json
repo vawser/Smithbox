@@ -1,0 +1,17 @@
+{
+  "Name": "MultiPlayCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test(unused) -- test(未使用)"
+      ]
+    }
+  ]
+}

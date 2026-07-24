@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 fogEnabled = 1">
+      <DisplayName>フォグ有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>フォグ有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 fogShadowEnabled = 1">
+      <DisplayName>フォグシャドウ許可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>フォグシャドウ許可</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 dmy[2] = 1">
+      <Description>dmy</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 fogShadowSampleCountBias">
+      <DisplayName>シャドウのサンプルカウントオフセット。</DisplayName>
+      <Description>シャドウのサンプルカウントオフセット。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-16</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 fogLocalLightDistScale">
+      <DisplayName>ローカルライト計算距離スケール (0にするとローカルライト計算をしない)</DisplayName>
+      <Description>ローカルライト計算距離スケール (0にするとローカルライト計算をしない)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 fogVolueSizeScaler = 1">
+      <DisplayName>フォグボリュームサイズスケーラ</DisplayName>
+      <Description>フォグボリュームサイズスケーラ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 fogVolueSizeDivider = 1">
+      <DisplayName>フォグボリュームサイズ除算</DisplayName>
+      <Description>フォグボリュームサイズ除算</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

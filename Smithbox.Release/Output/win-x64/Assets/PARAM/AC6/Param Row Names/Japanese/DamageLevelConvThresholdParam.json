@@ -1,0 +1,347 @@
+{
+  "Name": "DamageLevelConvThresholdParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "own machine basics -- 自機基本"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Security MT -- 警備MT"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Security MT -- 警備MT"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Security MT -- 警備MT"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "Former communist country general purpose MT -- 旧共産圏汎用MT"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "For former communist countries general purpose MT_tremo -- 旧共産圏汎用MT_トレモ用"
+      ]
+    },
+    {
+      "ID": 30200101,
+      "Entries": [
+        "For former communist countries general purpose MT_tremo -- 旧共産圏汎用MT_トレモ用"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "regular army MT -- 正規軍MT"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "flight MT -- 飛行MT"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "juggernaut -- ジャガーノート"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "avalanche -- アバランチ"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "regular army AC -- 正規軍AC"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "Regular Army AC Diffusion Buzz -- 正規軍AC 拡散バズ"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "Regular army AC sniper -- 正規軍AC 狙撃"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "Regular Army AC Enhanced Heavy Firepower -- 正規軍AC 強化重火力"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "Regular Army AC High Mobility -- 正規軍AC 高機動"
+      ]
+    },
+    {
+      "ID": 32501400,
+      "Entries": [
+        "Regular Army AC Sniper For Old Spaceport Attack -- 正規軍AC\u3000狙撃\u3000旧宇宙港襲撃用"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "Regular Army AC (Heavyweight) -- 正規軍AC（重量級）"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Ghost MT Stealth -- ゴーストMTステルス"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "Ghost MTPA -- ゴーストMTPA"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "Quadruped MT -- 四脚MT"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "Quadruped MT tutorial use -- 四脚MT\u3000チュートリアル用"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "Quadruped MT for tremo 1 -- 四脚MT\u3000トレモ1用"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "Quadruped MT for tremo 2 -- 四脚MT\u3000トレモ2用"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "old world MT -- 旧世界MT"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "construction machinery spider -- 建機クモ"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "Deleter -- デリーター"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "Deleteer Ace Strong Enemy -- デリーター\u3000エース強敵"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "ADF"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "valkyria -- ヴァルキュリア"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "Special attack MT -- 特攻MT"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "Next generation proto AC -- 次世代プロトAC"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "Next generation proto AC C end -- 次世代プロトAC\u3000Cエンド"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "orbit seed -- オービットシード"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "bug -- バグ"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "heavy guard mechanism -- 重ガードメカ"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "large transport helicopter -- 大型輸送ヘリ"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "military us drone -- 軍事用USドローン"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "combat helicopter -- 戦闘ヘリ"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "tank -- 戦車"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "sunflower -- サンフラワー"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "suicide satellite -- 自爆衛星"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "Pharaon -- ファラオン"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "Pharaon_City on the Sea -- ファラオン_洋上の都市"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "sea ​​spider -- ウミグモ"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "Sea spider decisive battle C -- ウミグモ\u3000決戦C"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "sand worm -- サンドワーム"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "amphibious assault carrier -- 強襲揚陸艦子機"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "Miyatake strong enemy -- 宮武強敵"
+      ]
+    },
+    {
+      "ID": 93500004,
+      "Entries": [
+        "For blade addition confirmation -- ブレード加算確認用"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "enemy basics -- 敵基本"
+      ]
+    },
+    {
+      "ID": 99900010,
+      "Entries": [
+        "Enemy basics Recommended by Hagiya Enemies that move frequently -- 敵基本 萩谷推薦 よく動く敵"
+      ]
+    },
+    {
+      "ID": 99900020,
+      "Entries": [
+        "Enemy basics Recommended by Hagiya Enemies that don't move much -- 敵基本 萩谷推薦 あまり動かない敵"
+      ]
+    },
+    {
+      "ID": 99970000,
+      "Entries": [
+        "Kira for situation verification -- シチュ検証用\u3000吉良"
+      ]
+    },
+    {
+      "ID": 99970010,
+      "Entries": [
+        "Kira for situation verification -- シチュ検証用\u3000吉良"
+      ]
+    },
+    {
+      "ID": 99999998,
+      "Entries": [
+        "For medium stagger only -- 中よろけのみ用"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "For large stagger only -- 大よろけのみ用"
+      ]
+    }
+  ]
+}

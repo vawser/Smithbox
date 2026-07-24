@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <chrId />
+        <gender  Enum="NPC_GENDER_TYPE"/>
+        <bodyScaleType />
+        <deceased  Enum="NPC_DECEASED_TYPE"/>
+        <equipType  Enum="NPC_EQUIP_TYPE"/>
+        <faceType  Enum="NPC_FACE_TYPE"/>
+        <skinNo />
+        <facePresetNo />
+        <dummy Padding="" />
+        <skinR />
+        <skinG />
+        <skinB />
+        <faceId />
+        <equipWeaponIdL1 Refs="ItemParam" />
+        <equipWeaponIdL2 Refs="ItemParam" />
+        <equipWeaponIdL3 Refs="ItemParam" />
+        <equipWeaponIdR1 Refs="ItemParam" />
+        <equipWeaponIdR2 Refs="ItemParam" />
+        <equipWeaponIdR3 Refs="ItemParam" />
+        <equipHeadId Refs="ArmorParam" />
+        <equipBodyId Refs="ArmorParam" />
+        <equipArmId Refs="ArmorParam" />
+        <equipLegId Refs="ArmorParam" />
+        <equipQuiverId />
+        <equipArrowId />
+    </Field>
+</PARAMMETA>

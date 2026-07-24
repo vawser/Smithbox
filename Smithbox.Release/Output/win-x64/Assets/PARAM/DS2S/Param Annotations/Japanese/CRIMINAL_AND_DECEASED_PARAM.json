@@ -1,0 +1,68 @@
+{
+  "Param": "CRIMINAL_AND_DECEASED_PARAM",
+  "Type": "CRIMINAL_AND_DECEASED_PARAM",
+  "Name": "CRIMINAL_AND_DECEASED_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "criminalUpNetwork",
+      "Name": "《罪人カウンター加算値（ネットワーク）》",
+      "Description": ""
+    },
+    {
+      "Field": "criminalDownNetwork",
+      "Name": "《罪人カウンター減算値（ネットワーク）》",
+      "Description": ""
+    },
+    {
+      "Field": "criminalUpNpc",
+      "Name": "《罪人カウンター加算値（NPC）》",
+      "Description": ""
+    },
+    {
+      "Field": "criminalThreshold1",
+      "Name": "《罪人レベル閾値（一般⇔罪人）》",
+      "Description": ""
+    },
+    {
+      "Field": "criminalThreshold2",
+      "Name": "《大罪人レベル閾値（罪人⇔大罪人）》",
+      "Description": ""
+    },
+    {
+      "Field": "deceasedUpNormal",
+      "Name": "《亡者カウンター加算値（通常）》",
+      "Description": ""
+    },
+    {
+      "Field": "deceasedUpCursed",
+      "Name": "《亡者カウンター加算値（呪死）》",
+      "Description": ""
+    },
+    {
+      "Field": "deceasedThreshold1",
+      "Name": "《亡者レベル閾値（亡者⇔すごい亡者）》",
+      "Description": ""
+    },
+    {
+      "Field": "hpLowerBound1",
+      "Name": "《HP下限%（一般/罪人）》",
+      "Description": ""
+    },
+    {
+      "Field": "hpLowerBound2",
+      "Name": "《HP下限%（大罪人）》",
+      "Description": ""
+    },
+    {
+      "Field": "hpUpperBound1",
+      "Name": "《HP上限%（呪い）》",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "dummy",
+      "Description": ""
+    }
+  ]
+}

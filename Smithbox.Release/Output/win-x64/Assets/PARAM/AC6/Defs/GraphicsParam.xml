@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GRAPHICS_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 HitBulletDecalOffset_HitIns = 0.05">
+      <DisplayName>HIT INSに弾丸が当たった時のデカール発生位置オフセット</DisplayName>
+      <Description>HIT INSに当たった時に発生するデカールの発生位置を法線方向にこの値だけオフセットする</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 TorchEmissiveIntensity = 10">
+      <DisplayName>松明エミッシブ強度</DisplayName>
+      <Description>松明のエミッシブ強度の最大値。指定フレームかけてこの値になる。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u16 TorchEmissiveFadeFrame = 40">
+      <DisplayName>松明エミッシブ強度フェードフレーム</DisplayName>
+      <Description>松明のエミッシブ強度が変更されるときのフェード時間。60フレームで１秒換算。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 pad_01">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 CharaWetDecalFadeRange = 0.6">
+      <DisplayName>キャラが濡れた時のデカールフェード範囲</DisplayName>
+      <Description>キャラが濡れた時にデカールを消すフェード範囲</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 pad_04">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s32 pad_05">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s32 pad_06">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s32 pad_02">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 BulletMultiFrameHitSfxIntervalTimeSec = 0.2">
+      <DisplayName>弾丸が多段ヒットしたときのヒットSFXの発生間隔[秒]</DisplayName>
+      <Description>弾丸が多段ヒットしたときのヒットSFX発生間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 PaintDecalFadeOutTimeSec = 0.2">
+      <DisplayName>ペイントデカールのフェードアウト時間[秒]</DisplayName>
+      <Description>ダメージのペイントデカールのフェードアウト時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="dummy8 pad_03[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_0_0">
+      <DisplayName>草LOD0：0[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_0_1">
+      <DisplayName>草LOD0：0-1[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_0_2">
+      <DisplayName>草LOD0：1-2[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_0_3">
+      <DisplayName>草LOD0：2-3[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="dummy8 pad_100[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_1_0">
+      <DisplayName>草LOD1：0[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_1_1">
+      <DisplayName>草LOD1：0-1[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_1_2">
+      <DisplayName>草LOD1：1-2[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_1_3">
+      <DisplayName>草LOD1：2-3[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="dummy8 pad_101[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_2_0">
+      <DisplayName>草LOD2：0[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_2_1">
+      <DisplayName>草LOD2：0-1[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_2_2">
+      <DisplayName>草LOD2：1-2[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="f32 GrassLod_2_3">
+      <DisplayName>草LOD2：2-3[m]</DisplayName>
+      <Description>草ジェネレータのLOD</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="dummy8 pad_102[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="u16 SubWindow_Width = 512">
+      <DisplayName>サブウインドウ：幅[Pixel]</DisplayName>
+      <Description>サブウインドウのフレームの幅</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u16 SubWindow_Height = 288">
+      <DisplayName>サブウインドウ：高[Pixel]</DisplayName>
+      <Description>サブウインドウのフレームの高</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="dummy8 pad_103[12]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="f32 MenuBackBoke_FadeInTime = 0.4">
+      <DisplayName>【メニュー背景ぼかし】フェードイン時間[秒]</DisplayName>
+      <Description>アセンブルなどの全体表示メニューを表示した際の背景をぼかすまでの時間</Description>
+      <DisplayFormat>%0.01f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="f32 MenuBackBoke_FadeOutTime = 0.1">
+      <DisplayName>【メニュー背景ぼかし】フェードアウト時間[秒]</DisplayName>
+      <Description>アセンブルなどの全体表示メニューを表示した際の背景をぼかし解除までの時間</Description>
+      <DisplayFormat>%0.01f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>1</Increment>
+      <SortID>1021</SortID>
+    </Field>
+    <Field Def="dummy8 pad_104[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>10001</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_ThresholdSpeedKmH = 100">
+      <DisplayName>【ズームブラー】閾値速度[Km/H]</DisplayName>
+      <Description>ブースト移動中のズームブラーがかかる速度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_InterpolationTime = 0.4">
+      <DisplayName>【ズームブラー】補間時間[秒]</DisplayName>
+      <Description>ブラーが最大値になるまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>1501</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_Pow = 0.002">
+      <DisplayName>【ズームブラー】ブラー強度</DisplayName>
+      <Description>ブラーの強度</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0.05</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1502</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_CenterOffset = -1.7">
+      <DisplayName>【ズームブラー】中央薄め値</DisplayName>
+      <Description>自キャラの周辺にブラーがかからないように</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-2</Minimum>
+      <Maximum>2</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1503</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_Contrast">
+      <DisplayName>【ズームブラー】コントラスト</DisplayName>
+      <Description>コントラスト値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1504</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_UVOffsetUp = 0.03">
+      <DisplayName>【ズームブラー】UVオフセット上</DisplayName>
+      <Description>UV値オフセット（画面上）</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0.5</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1505</SortID>
+    </Field>
+    <Field Def="f32 ZoomBlur_UVOffsetDown = 0.03">
+      <DisplayName>【ズームブラー】UVオフセット下</DisplayName>
+      <Description>UV値オフセット（画面下）</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0.5</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>1506</SortID>
+    </Field>
+    <Field Def="u32 HitInsDamageNearSfxNumMax">
+      <DisplayName>【SFX】ヒットSFX発生制限個数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 HitInsDamageNearSfxDist = 5">
+      <DisplayName>【SFX】ヒットSFX発生制限距離[m]</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1601</SortID>
+    </Field>
+    <Field Def="f32 ShadowFixedFov = 45">
+      <DisplayName>【シャドウ】固定画角[度]</DisplayName>
+      <Description>プレイヤーが移動を繰り返していると影が線のように伸びることがあるの解決のための影の画角固定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="dummy8 pad_999[24]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

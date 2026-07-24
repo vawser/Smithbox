@@ -1,0 +1,38 @@
+{
+  "Key": "GRAPHICS_CONFIG_GX_SHADOW_FILTER_LEVEL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAPHICS_CONFIG_GX_SHADOW_FILTER_LEVEL"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Percentage Closer Filtering 4"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Percentage Closer Filtering 9"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SOFT"
+        }
+      ]
+    }
+  ]
+}

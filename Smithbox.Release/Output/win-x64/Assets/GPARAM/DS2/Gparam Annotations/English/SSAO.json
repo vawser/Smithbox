@@ -1,0 +1,143 @@
+{
+  "ID": "SSAO",
+  "Name": "SSAO",
+  "Description": "Screen Space Ambient Occlusion (SSAO) post-processing technique that approximates soft shadowing in creases, corners, and contact areas by analyzing depth differences in screen space to simulate indirect ambient light occlusion.",
+  "Fields": [
+    {
+      "ID": "SampleOffset",
+      "Name": "Sample Offset",
+      "Description": "Offset applied to sampling kernel positions used in SSAO calculations, influencing noise distribution and occlusion pattern variation.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthClipRange",
+      "Name": "Depth Clip Range",
+      "Description": "Maximum depth range used for occlusion evaluation, limiting how far SSAO considers geometry for ambient shadowing.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 0",
+      "Name": "Depth Evaluation Range: 0",
+      "Description": "Primary depth range used in SSAO sampling pass 0, defining near-field occlusion sensitivity.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 1",
+      "Name": "Depth Evaluation Range: 1",
+      "Description": "Secondary depth evaluation range used to refine mid-range ambient occlusion contribution.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 2",
+      "Name": "Depth Evaluation Range: 2",
+      "Description": "Tertiary depth evaluation range controlling far-field occlusion influence in SSAO blending.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Scale",
+      "Name": "Ambient Occlusion Scale",
+      "Description": "Global intensity multiplier for ambient occlusion, controlling overall shadow depth in crevices and contact areas.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Offset",
+      "Name": "Ambient Occlusion Offset",
+      "Description": "Bias adjustment for ambient occlusion, used to shift baseline brightness and reduce self-shadowing artifacts.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 0",
+      "Name": "Ambient Occlusion Blend Scale: 0",
+      "Description": "Blend factor for first AO layer, controlling contribution strength in multi-pass occlusion accumulation.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 1",
+      "Name": "Ambient Occlusion Blend Scale: 1",
+      "Description": "Blend factor for second AO layer, refining mid-frequency occlusion detail.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 2",
+      "Name": "Ambient Occlusion Blend Scale: 2",
+      "Description": "Blend factor for third AO layer, used for fine-grained or distant occlusion contribution.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 0",
+      "Name": "Blur Radius: 0",
+      "Description": "Blur radius for first SSAO pass, smoothing raw occlusion noise into softer ambient shadowing.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 1",
+      "Name": "Blur Radius: 1",
+      "Description": "Blur radius for second SSAO pass, further refining occlusion smoothness across surfaces.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 2",
+      "Name": "Blur Radius: 2",
+      "Description": "Blur radius for third SSAO pass, applied for high-quality smoothing of occlusion results.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Final Blur Radius",
+      "Name": "Final Blur Radius: 1",
+      "Description": "Final-stage blur radius applied to SSAO output, controlling overall softness of ambient shadowing.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Final Blur Radius2",
+      "Name": "Final Blur Radius: 2",
+      "Description": "Secondary final blur radius used for additional smoothing or multi-directional blur refinement.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FinalBlur4x2",
+      "Name": "Final Blur 4x2",
+      "Description": "Enables a specific 4x2 separable blur kernel for final SSAO smoothing, improving performance or quality trade-offs.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Alpha",
+      "Name": "Alpha",
+      "Description": "Overall opacity of the SSAO effect, controlling how strongly ambient occlusion darkening affects the final image.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

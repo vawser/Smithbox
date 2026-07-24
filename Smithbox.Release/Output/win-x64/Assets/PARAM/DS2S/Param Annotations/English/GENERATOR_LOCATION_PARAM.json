@@ -1,0 +1,48 @@
+{
+  "Param": "GENERATOR_LOCATION_PARAM",
+  "Type": "GENERATOR_LOCATION_PARAM",
+  "Name": "GENERATOR_LOCATION_PARAM",
+  "Description": "Defines a spawn or generator placement in world space, including position and orientation data.",
+  "Fields": [
+    {
+      "Field": "PositionX",
+      "Name": "Placement Position: X",
+      "Description": "World-space X coordinate where the generator is placed."
+    },
+    {
+      "Field": "PositionY",
+      "Name": "Placement Position: Y",
+      "Description": "World-space Y coordinate where the generator is placed."
+    },
+    {
+      "Field": "PositionZ",
+      "Name": "Placement Position: Z",
+      "Description": "World-space Z coordinate where the generator is placed."
+    },
+    {
+      "Field": "RotationX",
+      "Name": "Placement Rotation: X",
+      "Description": "Rotation around the X-axis (pitch) for generator orientation."
+    },
+    {
+      "Field": "RotationY",
+      "Name": "Placement Rotation: Y",
+      "Description": "Rotation around the Y-axis (yaw) for generator orientation."
+    },
+    {
+      "Field": "RotationZ",
+      "Name": "Placement Rotation: Z",
+      "Description": "Rotation around the Z-axis (roll) for generator orientation."
+    },
+    {
+      "Field": "Unk18",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "InheritInstanceParamId",
+      "Name": "Inherit Instance Param ID",
+      "Description": "Inherit the instance param properties from the target ID."
+    }
+  ]
+}

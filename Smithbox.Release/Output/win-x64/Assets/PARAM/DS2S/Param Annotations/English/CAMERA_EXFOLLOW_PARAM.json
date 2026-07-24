@@ -1,0 +1,403 @@
+{
+  "Param": "CAMERA_EXFOLLOW_PARAM",
+  "Type": "CAMERA_EXFOLLOW_PARAM",
+  "Name": "CAMERA_EXFOLLOW_PARAM",
+  "Description": "Defines parameters relating to the camera during boss fights.",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "Camera Behavior Type",
+      "Description": "The behavior to use for this camera."
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "Camera Reference Point Type",
+      "Description": "The reference point to use for this camera."
+    },
+    {
+      "Field": "reserved0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "Horizontal Field of View",
+      "Description": "The field of view (in degrees)."
+    },
+    {
+      "Field": "hitCollision",
+      "Name": "Collision Size",
+      "Description": "The collision size of the camera."
+    },
+    {
+      "Field": "targetOffsetX",
+      "Name": "Reference Point Offset: X-Axis",
+      "Description": "The reference point position offset on the x-axis (in metres)."
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "Reference Point Offset: Y-Axis",
+      "Description": "The reference point position offset on the y-axis (in metres)."
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "Reference Point Offset: Z-Axis",
+      "Description": "The reference point position offset on the z-axis (in metres)."
+    },
+    {
+      "Field": "distance",
+      "Name": "Reference Point Distance",
+      "Description": "The distance the camera is pushed back from the reference point (in metres)."
+    },
+    {
+      "Field": "lrMoveDistanceMax",
+      "Name": "Horizontal Movement: Maximum Distance",
+      "Description": "The maximum distance (in metres) of the horizontal movement distance ratio for the camera."
+    },
+    {
+      "Field": "lrMoveRateMin",
+      "Name": "Horizontal Movement: Minimum Distance %",
+      "Description": "The minimum distance rate for the horizontal movement distance ratio used by the camera."
+    },
+    {
+      "Field": "lrMoveRateMax",
+      "Name": "Horizontal Movement: Maximum Distance %",
+      "Description": "The maximum distance rate for the horizontal movement distance ratio used by the camera."
+    },
+    {
+      "Field": "fulcrumDistRate",
+      "Name": "Fulcrum Distance %",
+      "Description": "The support distance ratio."
+    },
+    {
+      "Field": "transChaseRate",
+      "Name": "Character: X-Axis Position Tracking %",
+      "Description": "The camera position tracking rate on the x-axis for character."
+    },
+    {
+      "Field": "transChaseRateEscapeWall",
+      "Name": "Character: X-Axis Position Tracking % (Wall Avoidance)",
+      "Description": "The camera position tracking rate on the x-axis for charactert."
+    },
+    {
+      "Field": "targetTransChaseRate",
+      "Name": "Target: X-Axis Position Tracking %",
+      "Description": "The camera position tracking rate on the x-axis for a target."
+    },
+    {
+      "Field": "targetRotXChaseRate",
+      "Name": "Target: X-Axis Rotation Tracking %",
+      "Description": "The camera rotation tracking rate on the x-axis for a target."
+    },
+    {
+      "Field": "targetChaseRateXZForNormal",
+      "Name": "Target: Normalized XZ-Axis Tracking %",
+      "Description": "The camera tracking rate on normalized x/z-axis for a target."
+    },
+    {
+      "Field": "targetChaseRateXZForEscapeWall",
+      "Name": "Target: Normalized XZ-Axis Tracking % (Wall Avoidance)",
+      "Description": "The camera tracking rate on normalized x/z-axis for a target."
+    },
+    {
+      "Field": "targetChaseRateY",
+      "Name": "Target: Y-Axis Position Tracking %",
+      "Description": "The camera position tracking rate on the y-axis for a target."
+    },
+    {
+      "Field": "targetChaseRateMinAng",
+      "Name": "Target: Y-Axis - Minimum Angle",
+      "Description": "The minimum angle (in degrees) when tracking on the y-axis for a target."
+    },
+    {
+      "Field": "targetChaseRateMaxAng",
+      "Name": "Target: Y-Axis - Maximum Angle",
+      "Description": "The maximum angle (in degrees) when tracking on the y-axis for a target."
+    },
+    {
+      "Field": "targetChaseDistRate",
+      "Name": "Target: Distance Tracking %",
+      "Description": "The camera distance tracking rate for a target."
+    },
+    {
+      "Field": "targetChaseRateAtLockXZ",
+      "Name": "Locked Target: XZ-Axis Tracking %",
+      "Description": "The camera tracking rate on x/z-axis for a locked target.."
+    },
+    {
+      "Field": "targetChaseRateAtLockY",
+      "Name": "Locked Target: Y-Axis Tracking %",
+      "Description": "The camera tracking rate on y-axis for a locked target.."
+    },
+    {
+      "Field": "targetChaseRateMinAngAtLock",
+      "Name": "Locked Target: Minimum Tracking Angle",
+      "Description": "The minimum tracking angle (in degrees), for a locked target."
+    },
+    {
+      "Field": "targetChaseRateMaxAngAtLock",
+      "Name": "Locked Target: Maximum Tracking Angle",
+      "Description": "The maximum tracking angle (in degrees), for a locked target."
+    },
+    {
+      "Field": "transChaseByCtrlEndWaitTime",
+      "Name": "Position Tracking Wait Time",
+      "Description": "The position tracking wait duration (in seconds) after operation completion."
+    },
+    {
+      "Field": "transChaseByCtrlEndReleaseTime",
+      "Name": "Position Tracking Release Time",
+      "Description": "The position tracking release duration (in seconds) after operation completion."
+    },
+    {
+      "Field": "rotCtrlEndWaitTime",
+      "Name": "Rotation Tracking Wait Time",
+      "Description": "The rotation tracking wait duration (in seconds) after operation completion."
+    },
+    {
+      "Field": "rotCtrlEndReleaseTime",
+      "Name": "Rotation Tracking Release Time",
+      "Description": "The rotation tracking release duration (in seconds) after operation completion."
+    },
+    {
+      "Field": "rotHiSpeedRateIncTime",
+      "Name": "Fast Turn Speed Increase Time",
+      "Description": "The increase time (in seconds) for fast turn rate."
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "Rotation: X-Axis - Minimum Angle",
+      "Description": "The minimum value (in degrees) of the x-axis rotation."
+    },
+    {
+      "Field": "rotRangeMaxX",
+      "Name": "Rotation: X-Axis - Maximum Angle",
+      "Description": "The maximum value (in degrees) of the x-axis rotation."
+    },
+    {
+      "Field": "rotRangeMinXAtLock",
+      "Name": "Lock-on Rotation: X-Axis - Minimum Angle",
+      "Description": "The minimum value (in degrees) of the x-axis rotation when locked-on."
+    },
+    {
+      "Field": "rotRangeMaxXAtLock",
+      "Name": "Lock-on Rotation: X-Axis - Maximum Angle",
+      "Description": "The maximum value (in degrees) of the x-axis rotation when locked-on."
+    },
+    {
+      "Field": "rotRangeLerpBeginHeight",
+      "Name": "Lock-on Rotation: X-Axis - Interpolation Start Height",
+      "Description": "The interpolation lerp start height (in metres) during lock-on x-axis rotation."
+    },
+    {
+      "Field": "rotRangeLerpEndHeight",
+      "Name": "Lock-on Rotation: X-Axis - Interpolation End Height",
+      "Description": "The interpolation lerp end height (in metres) during lock-on x-axis rotation."
+    },
+    {
+      "Field": "rotSpeedX_Min",
+      "Name": "Rotation: X-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the x-axis rotation."
+    },
+    {
+      "Field": "rotSpeedX_Max",
+      "Name": "Rotation: X-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the x-axis rotation."
+    },
+    {
+      "Field": "rotSpeedY_Min",
+      "Name": "Rotation: Y-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the y-axis rotation."
+    },
+    {
+      "Field": "rotSpeedY_Max",
+      "Name": "Rotation: Y-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the y-axis rotation."
+    },
+    {
+      "Field": "rotHiSpeedX_Min",
+      "Name": "Fast Turn Speed: X-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the fast turn on the x-axis."
+    },
+    {
+      "Field": "rotHiSpeedX_Max",
+      "Name": "Fast Turn Speed: X-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the fast turn on the x-axis."
+    },
+    {
+      "Field": "rotHiSpeedY_Min",
+      "Name": "Fast Turn Speed: Y-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the fast turn on the y-axis."
+    },
+    {
+      "Field": "rotHiSpeedY_Max",
+      "Name": "Fast Turn Speed: Y-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the fast turn on the y-axis."
+    },
+    {
+      "Field": "directPitchAng",
+      "Name": "Direct Pitch Angle",
+      "Description": "The direct pitching angle of the camera (in degrees)."
+    },
+    {
+      "Field": "directPitchRate",
+      "Name": "Direct Pitch %",
+      "Description": "The direct pitching rate of the camera."
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "Lock-on Rotation: Tracking %",
+      "Description": "The lock-on rotation tracking rate for the camera."
+    },
+    {
+      "Field": "lockRotChasePlayAng",
+      "Name": "Lock-on Rotation: Tracking Play Angle",
+      "Description": "The lock-on rotation tracking play angle (in degrees) for the camera."
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "Lock-on Rotation: X-Axis Shift %",
+      "Description": "The shift rate of the lock-on rotation for the camera."
+    },
+    {
+      "Field": "forceFrontLockTime",
+      "Name": "Forced Forward Lock Time",
+      "Description": "The duration (in seconds) of the forced forward lock for the camera."
+    },
+    {
+      "Field": "updateTargetRotXByLock",
+      "Name": "Update Target X-Axis Rotation on Lock",
+      "Description": "If enabled, the target x-axis rotation is updated upon camera lock."
+    },
+    {
+      "Field": "updateTargetRotXByFrontLock",
+      "Name": "Update Target X-Axis Rotation on Forward Lock",
+      "Description": "If enabled, the target x-axis rotation is updated upon camera forward lock."
+    },
+    {
+      "Field": "enableLockCamAdjust",
+      "Name": "Enable Lock Camera Adjustments",
+      "Description": "If enabled, lock adjustments are applied to the camera"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockCamAdjustRotX_Max",
+      "Name": "Lock Camera: X-Axis Rotation - Maximum",
+      "Description": "The maximum value (in degrees) of x-axis rotation applied via lock camera adjustments."
+    },
+    {
+      "Field": "lockCamAdjustRotY_Max",
+      "Name": "Lock Camera: Y-Axis Rotation - Maximum",
+      "Description": "The maximum value (in degrees) of y-axis rotation applied via lock camera adjustments."
+    },
+    {
+      "Field": "lockCamAdjustRotChaseRate",
+      "Name": "Lock Camera: Rotation Tracking %",
+      "Description": "The rotation trackin rate of the lock camera adjustments."
+    },
+    {
+      "Field": "escapeWallRotAddY",
+      "Name": "Wall Avoidance: Y-Axis Rotation - Addition",
+      "Description": "The y-axis rotation (in degrees per second) added during wall avoidance for this camera."
+    },
+    {
+      "Field": "escapeWallRotMaxY",
+      "Name": "Wall Avoidance: Y-Axis Rotation - Maximum",
+      "Description": "The y-axis rotation (in degrees per second) maximum used during wall avoidance for this camera."
+    },
+    {
+      "Field": "escapeWallRotDampRatio",
+      "Name": "Wall Avoidance: Rotation Decay %",
+      "Description": "The rotation decay rate of rotation adjustments during wall avoidance."
+    },
+    {
+      "Field": "escapeWallWingAngY",
+      "Name": "Wall Avoidance: Wing Angle",
+      "Description": "The wing angle (in degrees) used during wall avoidance."
+    },
+    {
+      "Field": "escapeWallWingLen",
+      "Name": "Wall Avoidance: Wing Length",
+      "Description": "The wing length (in metres) used during wall avoidance."
+    },
+    {
+      "Field": "escapeWallWingRadius",
+      "Name": "Wall Avoidance: Wing Radius",
+      "Description": "The wing radius (in metres) used during wall avoidance."
+    },
+    {
+      "Field": "escapeWallWingSeparate",
+      "Name": "Wall Avoidance: Wing Spacing",
+      "Description": "The wing spacing (in metres) used during wall avoidance."
+    },
+    {
+      "Field": "resetMinTime",
+      "Name": "Minimum Reset Time",
+      "Description": "The minimum duration (in seconds) for camera reset."
+    },
+    {
+      "Field": "resetMaxTime",
+      "Name": "Maximum Reset Time",
+      "Description": "The maximum duration (in seconds) for camera reset."
+    },
+    {
+      "Field": "resetSpeedChangeRate",
+      "Name": "Reset Speed Change %",
+      "Description": "The camera reset speed change rate for this camera."
+    },
+    {
+      "Field": "parameterApplyTime",
+      "Name": "Parameter Application Time",
+      "Description": "The duration (in seconds) for parameter application for this camera."
+    },
+    {
+      "Field": "transChaseRateLock",
+      "Name": "Locked Character: Position Tracking %",
+      "Description": "The position tracking rate used by the camera when a character is locked-on."
+    },
+    {
+      "Field": "targetChaseDistRateLock",
+      "Name": "Locked Target: Position Tracking %",
+      "Description": "The position tracking rate used by the camera when a target is locked-on."
+    },
+    {
+      "Field": "lockRotChaseRateMaxTime",
+      "Name": "Lock-on Rotation: Tracking % Application Time",
+      "Description": "The tracking rate application time (in seconds) during lock-on rotation."
+    },
+    {
+      "Field": "useRotationBrake",
+      "Name": "Enable Rotation Brake",
+      "Description": "If enabled, rotation brake may be used."
+    },
+    {
+      "Field": "useRotationBrakeReverseAdjust",
+      "Name": "Enable Reverse Brake Correction",
+      "Description": "If enabled, reverse brake correction may be used."
+    },
+    {
+      "Field": "rotaitionBrakeTimeNormalSpeedX",
+      "Name": "Rotation Brake: X-Axis Rotation Brake Time",
+      "Description": "The braking time (in seconds) for brake action on the x-axis."
+    },
+    {
+      "Field": "rotationBrakeAddTimelHighSpeedX",
+      "Name": "Rotation Brake: Fast Turn X-Axis Brake Time",
+      "Description": "The braking time (in seconds) for brake action for the fast turn on the x-axis."
+    },
+    {
+      "Field": "rotaitionBrakeTimeNormalSpeedY",
+      "Name": "Rotation Brake: Y-Axis Rotation Brake Time",
+      "Description": "The braking time (in seconds) for brake action on the y-axis."
+    },
+    {
+      "Field": "rotationBrakeAddTimelHighSpeedY",
+      "Name": "Rotation Brake: Fast Turn Y-Axis Brake Time",
+      "Description": "The braking time (in seconds) for brake action for the fast turn on the y-axis."
+    }
+  ]
+}

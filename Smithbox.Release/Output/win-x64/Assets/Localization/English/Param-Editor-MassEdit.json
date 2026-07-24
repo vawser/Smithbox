@@ -1,0 +1,476 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Params",
+      "Text": "Select params..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Rows",
+      "Text": "Select rows..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Fields",
+      "Text": "Select fields..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Add_Command",
+      "Text": "Add command..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Param_And_Rows",
+      "Text": "Select param and rows..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Field_Op",
+      "Text": "Select field operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Row_Op",
+      "Text": "Select row operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Global_Op",
+      "Text": "Select global operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Variables",
+      "Text": "Select variables..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Value_Op",
+      "Text": "Select value operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Defined_Variables",
+      "Text": "Defined variables..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Exactly",
+      "Text": "Exactly..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_LiteralVal_Hint",
+      "Text": "Literal value..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_InvertSelection",
+      "Text": "Invert selection?"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_AddCondition",
+      "Text": "Add another condition?"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_DefaultFilter",
+      "Text": "Default filter..."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Hint",
+      "Text": "param PARAM: id VALUE: FIELD: = VALUE;"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input",
+      "Text": "Input"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input_TT",
+      "Text": "Type in the mass edit commands you wish to apply here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output",
+      "Text": "Output"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Submit",
+      "Text": "Execute"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Submit_TT",
+      "Text": "Execute the current mass edit commands."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export",
+      "Text": "CSV Export"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard_TT",
+      "Text": "Copy the current output to clipboard."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_Field",
+      "Text": "CSV Export ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import",
+      "Text": "CSV Import"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Delimiter",
+      "Text": "Delimiter"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Delimiter_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode",
+      "Text": "Append New Rows"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode_TT",
+      "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing",
+      "Text": "Replace Existing Rows"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing_TT",
+      "Text": "Replace existing rows instead of updating them (they will be moved to the end)"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV_TT",
+      "Text": "Import the current CSV."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result",
+      "Text": "Result"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import_Field",
+      "Text": "CSV Import ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Command_Palette",
+      "Text": "Command Palette"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Templates",
+      "Text": "Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Command_Palette_TT",
+      "Text": "Write and execute mass edit commands here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input",
+      "Text": "Input"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input_TT",
+      "Text": "Type in the mass edit commands you wish to apply here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script",
+      "Text": "Apply"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script_TT",
+      "Text": "Apply this script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
+      "Text": "Clear this script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates",
+      "Text": "Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Load_Script",
+      "Text": "Load"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Load_Script_TT",
+      "Text": "Load this script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output_Command_Palette",
+      "Text": "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Hint",
+      "Text": "Create and edit mass edit templates here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing",
+      "Text": "Existing Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script_TT",
+      "Text": "Edit the currently selected template script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List",
+      "Text": "Update Template List"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List_TT",
+      "Text": "Update the sourcing of the template list to reflect the addition of new scripts."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder",
+      "Text": "Open Template Directory"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder_TT",
+      "Text": "Opens the directory that stores the templates with a file explorer."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents",
+      "Text": "Template Contents"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script",
+      "Text": "Save"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script_TT",
+      "Text": "Save the script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
+      "Text": "Clear the script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template",
+      "Text": "New Template"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template_TT",
+      "Text": "The file name used for this template."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Empty",
+      "Text": "Mass Edit Template name must not be empty."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Saved_Template",
+      "Text": "Saved Mass Edit Template {0} at {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Save_Template",
+      "Text": "Failed to save Mass Edit Template {0} at {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Exists",
+      "Text": "Mass Edit template with this name already exists: {0}."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Template_Load",
+      "Text": "Failed to load Mass Edit template: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Missing_Template_Dir",
+      "Text": "Failed to find Mass Edit template directory: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Delimiter_Hint",
+      "Text": "Define the delimiter symbol..."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Success_Cells_Affected",
+      "Text": "{0} cells affected."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Unknown",
+      "Text": "Unknown parsing error on line {0}: {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op",
+      "Text": "Unknown global operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1}) - Read {2} args, expected {3}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Variable_Filter",
+      "Text": "Could not find variable filter. Add : and one of {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op",
+      "Text": "Could not find var operation. Check your colon placement. (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol",
+      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Var_Op_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Row_Filter_Missing",
+      "Text": "Could not find paramrow filter. Add : and one of {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing",
+      "Text": "Could not find cell filter or row operation. Check your colon placement. (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Filter_Missing",
+      "Text": "Could not find param filter. Add : and one of {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing",
+      "Text": "Could not find row filter. Check your colon placement. (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing_Op",
+      "Text": "Could not find row filter. Add : and one of {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Missing",
+      "Text": "Could not find cell/property filter. Add : and one of {0} or Name (0 args) (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Cell_Op",
+      "Text": "Could not find operation to perform. Check your colon placement. (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Unknown",
+      "Text": "Unknown row operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Missing_Symbol",
+      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown",
+      "Text": "Unknown cell operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_On_Line",
+      "Text": "Error on line {0}\n{1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Global_Op",
+      "Text": "Error performing global operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Var_Op",
+      "Text": "Error performing var operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Stage_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Row_Op",
+      "Text": "Could not perform operation {0} {1} on row (line {2})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Type",
+      "Text": "Type is not correct: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Cast",
+      "Text": "Cannot cast to correct type: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown_Error",
+      "Text": "Unknown error: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_ID",
+      "Text": "Could not perform operation {0} {1} on ID ({2}) (line {3})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Name",
+      "Text": "Could not perform operation {0} {1} on Name ({2}) (line {3})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field",
+      "Text": "Could not perform operation {0} {1} on field {2} ({3}) (line {4})"
+    }
+  ]
+}

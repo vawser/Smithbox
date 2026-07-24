@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>FACE_EDIT_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 minValue">
+            <DisplayName>最低変動値</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 maxValue">
+            <DisplayName>最大変動値</DisplayName>
+            <Minimum>-100</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="fixstr faceParamType[64]">
+            <DisplayName>FaceGenParam名</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 faceParamCategory">
+            <DisplayName>カテゴリ</DisplayName>
+            <Enum>CHR_EDIT_FACE_PARAM_CATEGORY</Enum>
+            <Maximum>30</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 montageUsed">
+            <DisplayName>モンタージュ使用</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 menuReverse">
+            <DisplayName>メニュー反転操作</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[9]">
+            <DisplayName>ダミー　</DisplayName>
+            <SortID>8</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

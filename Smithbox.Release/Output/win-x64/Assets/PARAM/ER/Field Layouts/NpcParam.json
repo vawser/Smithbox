@@ -1,0 +1,674 @@
+{
+  "Name": "NpcParam",
+  "Groups": [
+    {
+      "Key": "AI",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "AI"
+        }
+      ],
+      "Fields": [
+        "behaviorVariationId",
+        "AiThinkId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "nameId",
+        "faceIconId",
+        "hp",
+        "mp",
+        "stamina",
+        "staminaRecoverBaseVel",
+        "getSoul"
+      ]
+    },
+    {
+      "Key": "Item Drop",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item Drop"
+        }
+      ],
+      "Fields": [
+        "itemLotId_enemy",
+        "itemLotId_map",
+        "dropType"
+      ]
+    },
+    {
+      "Key": "Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Absorption"
+        }
+      ],
+      "Fields": [
+        "neutralDamageCutRate",
+        "slashDamageCutRate",
+        "blowDamageCutRate",
+        "thrustDamageCutRate",
+        "magicDamageCutRate",
+        "fireDamageCutRate",
+        "thunderDamageCutRate",
+        "darkDamageCutRate"
+      ]
+    },
+    {
+      "Key": "Defence",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Defence"
+        }
+      ],
+      "Fields": [
+        "def_phys",
+        "def_slash",
+        "def_blow",
+        "def_thrust",
+        "def_mag",
+        "def_fire",
+        "def_thunder",
+        "def_dark"
+      ]
+    },
+    {
+      "Key": "Resistance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Resistance"
+        }
+      ],
+      "Fields": [
+        "resist_poison",
+        "resist_desease",
+        "resist_blood",
+        "resist_curse",
+        "resist_freeze",
+        "resist_sleep",
+        "resist_madness"
+      ]
+    },
+    {
+      "Key": "Resistance Correction Curve",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Resistance Correction Curve"
+        }
+      ],
+      "Fields": [
+        "resistCorrectId_poison",
+        "resistCorrectId_disease",
+        "resistCorrectId_blood",
+        "resistCorrectId_curse",
+        "resistCorrectId_freeze",
+        "resistCorrectId_sleep",
+        "resistCorrectId_madness"
+      ]
+    },
+    {
+      "Key": "Guard",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard"
+        }
+      ],
+      "Fields": [
+        "defFlickPower",
+        "flickDamageCutRate",
+        "guardLevel",
+        "guardAngle",
+        "staminaGuardDef"
+      ]
+    },
+    {
+      "Key": "Guard Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard Absorption"
+        }
+      ],
+      "Fields": [
+        "saGuardCutRate",
+        "physGuardCutRate",
+        "slashGuardCutRate",
+        "blowGuardCutRate",
+        "thrustGuardCutRate",
+        "magGuardCutRate",
+        "fireGuardCutRate",
+        "thunGuardCutRate",
+        "darkGuardCutRate"
+      ]
+    },
+    {
+      "Key": "Guard Resistance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard Resistance"
+        }
+      ],
+      "Fields": [
+        "poisonGuardResist",
+        "diseaseGuardResist",
+        "bloodGuardResist",
+        "curseGuardResist",
+        "freezeGuardResist",
+        "sleepGuardResist",
+        "madnessGuardResist"
+      ]
+    },
+    {
+      "Key": "Poise",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Poise"
+        }
+      ],
+      "Fields": [
+        "toughness",
+        "toughnessRecoverCorrection",
+        "saRecoveryRate",
+        "superArmorDurability",
+        "superArmorRecoverCorrection",
+        "superArmorBrakeKnockbackDist"
+      ]
+    },
+    {
+      "Key": "Knockback",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Knockback"
+        }
+      ],
+      "Fields": [
+        "knockbackRate",
+        "knockbackParamId"
+      ]
+    },
+    {
+      "Key": "Parry",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parry"
+        }
+      ],
+      "Fields": [
+        "parryAttack",
+        "parryDefence"
+      ]
+    },
+    {
+      "Key": "Weak Parts",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weak Parts"
+        }
+      ],
+      "Fields": [
+        "partsDamageType",
+        "weakPartsDamageRate",
+        "partsDamageRate1",
+        "partsDamageRate2",
+        "partsDamageRate3",
+        "partsDamageRate4",
+        "partsDamageRate5",
+        "partsDamageRate6",
+        "partsDamageRate7",
+        "partsDamageRate8"
+      ]
+    },
+    {
+      "Key": "Weakness Types",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weakness Types"
+        }
+      ],
+      "Fields": [
+        "isWeakA",
+        "isWeakB",
+        "isWeakC",
+        "isWeakD",
+        "isWeakE",
+        "isWeakF"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "GameClearSpEffectID",
+        "spEffectID0",
+        "spEffectID1",
+        "spEffectID2",
+        "spEffectID3",
+        "spEffectID4",
+        "spEffectID5",
+        "spEffectID6",
+        "spEffectID7",
+        "spEffectID8",
+        "spEffectID9",
+        "spEffectID10",
+        "spEffectID11",
+        "spEffectID12",
+        "spEffectID13",
+        "spEffectID14",
+        "spEffectID15",
+        "spEffectID16",
+        "spEffectID17",
+        "spEffectID18",
+        "spEffectID19",
+        "spEffectID20",
+        "spEffectID21",
+        "spEffectID22",
+        "spEffectID23",
+        "spEffectID24",
+        "spEffectID25",
+        "spEffectID26",
+        "spEffectID27",
+        "spEffectID28",
+        "spEffectID29",
+        "spEffectID30",
+        "spEffectID31"
+      ]
+    },
+    {
+      "Key": "Estus Flask",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Estus Flask"
+        }
+      ],
+      "Fields": [
+        "estusFlaskRecoveryParamId",
+        "estusFlaskLotPoint",
+        "hpEstusFlaskLotPoint",
+        "mpEstusFlaskLotPoint",
+        "estusFlaskRecovery_failedLotPointAdd",
+        "hpEstusFlaskRecovery_failedLotPointAdd",
+        "mpEstusFlaskRecovery_failedLotPointAdd"
+      ]
+    },
+    {
+      "Key": "NPC Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "NPC Parameters"
+        }
+      ],
+      "Fields": [
+        "teamType",
+        "subTeamType",
+        "npcType",
+        "drawType",
+        "moveType",
+        "vowType",
+        "defaultLodParamId",
+        "roleNameId",
+        "multiPlayCorrectionParamId",
+        "itemSearchRadius",
+        "loadAssetId"
+      ]
+    },
+    {
+      "Key": "Threat",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Threat"
+        }
+      ],
+      "Fields": [
+        "threatLv",
+        "enableSoundObjDist",
+        "chrActivateConditionParamId",
+        "updateActivatePriolity",
+        "deactivateDist",
+        "deactiveMoveSpeed",
+        "deactiveMoveDist"
+      ]
+    },
+    {
+      "Key": "Camera",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Camera"
+        }
+      ],
+      "Fields": [
+        "lockCameraParamId",
+        "lockDist",
+        "lockScoreOffset",
+        "pushOutCamRegionRadius",
+        "disableLockOnAng",
+        "overlapCameraDmypolyId",
+        "lockGazePoint0",
+        "lockGazePoint1",
+        "lockGazePoint2",
+        "lockGazePoint3",
+        "lockGazePoint4",
+        "lockGazePoint5",
+        "lockGazePoint6",
+        "lockGazePoint7",
+        "enableAILockDmyPoly_212",
+        "enableAILockDmyPoly_213",
+        "enableAILockDmyPoly_214"
+      ]
+    },
+    {
+      "Key": "Collision Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Collision Parameters"
+        }
+      ],
+      "Fields": [
+        "chrHitHeight",
+        "chrHitRadius",
+        "hitYOffset",
+        "hitHeight",
+        "hitRadius",
+        "hitOffset",
+        "turnVellocity",
+        "hitStopType",
+        "specialTurnType",
+        "chrHitGroupAndNavimesh",
+        "chrNavimeshFlag_Alive",
+        "chrNavimeshFlag_Dead",
+        "weight",
+        "npcPlayerWeightType",
+        "clothOffLodLevel",
+        "clothUpdateOffset",
+        "footIkErrorOnGain",
+        "footIkErrorOffGain",
+        "footIkErrorHeightLimit",
+        "maxAnklePitchAngle",
+        "maxAnkleRollAngle",
+        "paintRenderTargetSize"
+      ]
+    },
+    {
+      "Key": "Wheel Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Wheel Parameters"
+        }
+      ],
+      "Fields": [
+        "wheelRotType",
+        "wheelRotRadius"
+      ]
+    },
+    {
+      "Key": "Animation Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Animation Parameters"
+        }
+      ],
+      "Fields": [
+        "animIdOffset",
+        "animIdOffset2",
+        "networkWarpDist",
+        "maxUndurationAng",
+        "specialTurnDistanceThreshold",
+        "isUnduration",
+        "isUseFootIKNormalByUnduration",
+        "forwardUndulationLimit",
+        "sideUndulationLimit",
+        "undulationCorrectGain",
+        "isEnableStepDispInterpolate",
+        "stepDispInterpolateTime",
+        "stepDispInterpolateTriggerValue"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "disableRespawn",
+        "disableInitializeDead",
+        "useRagdollCamHit",
+        "disableClothRigidHit",
+        "UseRagdoll",
+        "isGhost",
+        "isNoDamageMotion",
+        "isChangeWanderGhost",
+        "isEnableNeckTurn",
+        "isMoveAnimWait",
+        "isCrowd",
+        "doesAlwaysUseSpecialTurn",
+        "isHitRumble",
+        "isSmoothTurn",
+        "isSoulGetByBoss",
+        "isBulletOwner_byObject",
+        "isUseLowHitFootIk",
+        "isCalculatePvPDamage",
+        "isHostSyncChr",
+        "isSkipWeakDamageAnim",
+        "useUndulationAddAnimFB",
+        "isRideAtkTarget",
+        "isStealthTarget",
+        "isKeepHitOnRide",
+        "isSpCollide",
+        "attachHitInitializeDead",
+        "excludeGroupRewardCheck"
+      ]
+    },
+    {
+      "Key": "Retarget",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Retarget"
+        }
+      ],
+      "Fields": [
+        "RetargetReferenceChrId",
+        "retargetMoveRate"
+      ]
+    },
+    {
+      "Key": "Sound",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sound"
+        }
+      ],
+      "Fields": [
+        "SoundAddBankId",
+        "SoundBankId"
+      ]
+    },
+    {
+      "Key": "Visual Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visual Effects"
+        }
+      ],
+      "Fields": [
+        "SfxResBankId",
+        "burnsfxType",
+        "sfxSize",
+        "autoFootEffectSfxId",
+        "autoFootEffectDecalBaseId1",
+        "autoFootEffectDecalBaseId2",
+        "autoFootEffectDecalBaseId3"
+      ]
+    },
+    {
+      "Key": "Normal",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Normal"
+        }
+      ],
+      "Fields": [
+        "normalChangeModelId",
+        "normalChangeAnimChrId",
+        "normalChangeResouceId",
+        "normalChangeTexChrId"
+      ]
+    },
+    {
+      "Key": "Phantom",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Phantom"
+        }
+      ],
+      "Fields": [
+        "phantomShaderId",
+        "WanderGhostPhantomId",
+        "ghostModelId"
+      ]
+    },
+    {
+      "Key": "Material Override",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Material Override"
+        }
+      ],
+      "Fields": [
+        "residentMaterialExParamId00",
+        "residentMaterialExParamId01",
+        "residentMaterialExParamId02",
+        "residentMaterialExParamId03",
+        "residentMaterialExParamId04"
+      ]
+    },
+    {
+      "Key": "Hit Material",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit Material"
+        }
+      ],
+      "Fields": [
+        "materialVariationValue",
+        "materialVariationValue_Weak",
+        "materialSe_Weak1",
+        "materialSfx_Weak1",
+        "burnSfxType",
+        "materialSe1",
+        "materialSfx1",
+        "materialSe_Weak2",
+        "materialSfx_Weak2",
+        "materialSe2",
+        "materialSfx2"
+      ]
+    },
+    {
+      "Key": "Model Masks",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Model Masks"
+        }
+      ],
+      "Fields": [
+        "modelDispMask0",
+        "modelDispMask1",
+        "modelDispMask2",
+        "modelDispMask3",
+        "modelDispMask4",
+        "modelDispMask5",
+        "modelDispMask6",
+        "modelDispMask7",
+        "modelDispMask8",
+        "modelDispMask9",
+        "modelDispMask10",
+        "modelDispMask11",
+        "modelDispMask12",
+        "modelDispMask13",
+        "modelDispMask14",
+        "modelDispMask15",
+        "modelDispMask16",
+        "modelDispMask17",
+        "modelDispMask18",
+        "modelDispMask19",
+        "modelDispMask20",
+        "modelDispMask21",
+        "modelDispMask22",
+        "modelDispMask23",
+        "modelDispMask24",
+        "modelDispMask25",
+        "modelDispMask26",
+        "modelDispMask27",
+        "modelDispMask28",
+        "modelDispMask29",
+        "modelDispMask30",
+        "modelDispMask31"
+      ]
+    },
+    {
+      "Key": "Controller Actions",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Controller Actions"
+        }
+      ],
+      "Fields": [
+        "dbgBehaviorR1",
+        "dbgBehaviorL1",
+        "dbgBehaviorR2",
+        "dbgBehaviorL2",
+        "dbgBehaviorRL",
+        "dbgBehaviorRR",
+        "dbgBehaviorRD",
+        "dbgBehaviorRU",
+        "dbgBehaviorLL",
+        "dbgBehaviorLR",
+        "dbgBehaviorLD",
+        "dbgBehaviorLU"
+      ]
+    }
+  ]
+}

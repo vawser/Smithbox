@@ -1,0 +1,1913 @@
+{
+  "Name": "EquipmentLineupParam",
+  "Entries": [
+    {
+      "ID": 28,
+      "Entries": [
+        "Emergency PA -- 緊急時PA"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Installed PA -- 設置PA"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "primal armor -- プライマルアーマー"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "assault armor -- アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "1010_Baylum_HEAD_A -- 1010_ベイラム_HEAD_A"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "1010_Baylum_CORE_A -- 1010_ベイラム_CORE_A"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "1010_Baylum_ARMS_A -- 1010_ベイラム_ARMS_A"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "1010_Baylum_LEGS_Bipod_A -- 1010_ベイラム_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "1011_Baylum_HEAD_B -- 1011_ベイラム_HEAD_B"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "1011_Baylum_CORE_B -- 1011_ベイラム_CORE_B"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "1011_Baylum_ARMS_B -- 1011_ベイラム_ARMS_B"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "1011_Baylum_LEGS_Bipod_B -- 1011_ベイラム_LEGS_二脚_B"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "1080_Hekantokeil_HEAD_A -- 1080_へカントケイル_HEAD_A"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "1080_Hekantokeir_CORE_A -- 1080_へカントケイル_CORE_A"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "1080_Hekantokeir_ARMS_A -- 1080_へカントケイル_ARMS_A"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "1080_Hekantokeir_LEGS_Bipod_A -- 1080_へカントケイル_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "1110_Baylum_HEAD_C -- 1110_ベイラム_HEAD_C"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "1410_Baylum_LEGS_quadruped_A -- 1410_ベイラム_LEGS_四脚_A"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "1510_Baylum_LEGS_Tank_A -- 1510_ベイラム_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "2010_heavy crest_HEAD_A -- 2010_重クレスト_HEAD_A"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "2010_Heavy Crest_CORE_A -- 2010_重クレスト_CORE_A"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "2010_Heavy Crest_ARMS_A -- 2010_重クレスト_ARMS_A"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "2010_Heavy Crest_LEGS_Bipod_A -- 2010_重クレスト_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "2210_Heavy Crest_ARMS_B -- 2210_重クレスト_ARMS_B"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "3010_Ray Leonard_HEAD_A -- 3010_レイレナード_HEAD_A"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "3010_Ray Leonard_CORE_A -- 3010_レイレナード_CORE_A"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "3010_Ray Leonard_ARMS_A -- 3010_レイレナード_ARMS_A"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "3010_Ray Leonard_LEGS_Bipod_A -- 3010_レイレナード_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "3110_Ray Leonard_HEAD_B -- 3110_レイレナード_HEAD_B"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "3310_Ray Leonard_LEGS_reverse joint_A -- 3310_レイレナード_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "4010_Mirage_HEAD_A -- 4010_ミラージュ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "4010_Mirage_CORE_A -- 4010_ミラージュ_CORE_A"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "4010_Mirage_ARMS_A -- 4010_ミラージュ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "4010_Mirage_LEGS_Bipod_A -- 4010_ミラージュ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "4110_Mirage_HEAD_B -- 4110_ミラージュ_HEAD_B"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "4210_Mirage_ARMS_B -- 4210_ミラージュ_ARMS_B"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "4410_Mirage_LEGS_quadruped_A -- 4410_ミラージュ_LEGS_四脚_A"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "5010_Label_HEAD_A -- 5010_ラベール_HEAD_A"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "5010_Label_CORE_A -- 5010_ラベール_CORE_A"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "5010_Label_ARMS_A -- 5010_ラベール_ARMS_A"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "5010_Label_LEGS_Bipod_A -- 5010_ラベール_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "5110_Label_HEAD_B -- 5110_ラベール_HEAD_B"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "5510_Label_LEGS_Tank_A -- 5510_ラベール_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "6010_Iqbal_HEAD_A -- 6010_イクバール_HEAD_A"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "6010_Iqbal_CORE_A -- 6010_イクバール_CORE_A"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "6010_Iqbal_ARMS_A -- 6010_イクバール_ARMS_A"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "6010_Iqbal_LEGS_Bipod_A -- 6010_イクバール_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "6110_Iqbal_HEAD_B -- 6110_イクバール_HEAD_B"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "6320_Iqbal_LEGS_Reverse joint_A -- 6320_イクバール_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "7010_Cuba_HEAD_A -- 7010_キューバ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "7010_Cuba_CORE_A -- 7010_キューバ_CORE_A"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "7010_Cuba_ARMS_A -- 7010_キューバ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "7010_Cuba_LEGS_Bipod_A -- 7010_キューバ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "7510_Cuba_LEGS_Tank_A -- 7510_キューバ_LEGS_タンク_A"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "8010_Kawamori_HEAD_A -- 8010_カワモリ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "8010_Kawamori_CORE_A -- 8010_カワモリ_CORE_A"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "8010_Kawamori_ARMS_A -- 8010_カワモリ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "8010_Kawamori_LEGS_Bipod_A -- 8010_カワモリ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "8020_Miyatake_HEAD_A -- 8020_ミヤタケ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "8020_Miyatake_CORE_A -- 8020_ミヤタケ_CORE_A"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "8020_Miyatake_ARMS_A -- 8020_ミヤタケ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "8020_Miyatake_LEGS_bipod_A -- 8020_ミヤタケ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "8030_JUDO_HEAD_A"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "8030_JUDO_CORE_A"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "8030_JUDO_ARMS_A"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "8030_JUDO_LEGS_Bipod_A -- 8030_JUDO_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "8031_JUDO_HEAD_A for jailbreak mission -- 8031_脱獄ミッション用JUDO_HEAD_A"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "8031_Jailbreak mission_JUDO_CORE_A -- 8031_脱獄ミッション用_JUDO_CORE_A"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "8031_Jailbreak mission_JUDO_ARMS_A -- 8031_脱獄ミッション用_JUDO_ARMS_A"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "8031_Jailbreak Mission_JUDO_LEGS_Bipod_A -- 8031_脱獄ミッション用_JUDO_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "8040_Troll_HEAD_A -- 8040_トロル_HEAD_A"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "8040_Troll_CORE_A -- 8040_トロル_CORE_A"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "8040_Troll_ARMS_A -- 8040_トロル_ARMS_A"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "8040_Troll_LEGS_Bipod_A -- 8040_トロル_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "1400_Scavenger_HEAD_A -- 1400_スカベンジャー_HEAD_A"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "1400_Scavenger_CORE_A -- 1400_スカベンジャー_CORE_A"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "1400_Scavenger_ARMS_A -- 1400_スカベンジャー_ARMS_A"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "1400_Scavenger_LEGS_Bipod_A -- 1400_スカベンジャー_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "8150_Scavenger_HEAD_B -- 8150_スカベンジャー_HEAD_B"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "8350_Scavenger_LEGS_Reverse joint_A -- 8350_スカベンジャー_LEGS_逆関節_A"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "8060_Yanase_HEAD_A -- 8060_ヤナセ_HEAD_A"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "8060_Yanase_CORE_A -- 8060_ヤナセ_CORE_A"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "8060_Yanase_ARMS_A -- 8060_ヤナセ_ARMS_A"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "8060_Yanase_LEGS_Bipod_A -- 8060_ヤナセ_LEGS_二脚_A"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "CORE - LAMMERGEIER/40F"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "BS_A_8030 JUDO Booster -- BS_A_8030 JUDOブースター"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "BOOSTER - IA-C01B: GILLS"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "1st generation FCS -- 第1世代FCS"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "2nd generation FCS A-1 -- 第2世代FCS A-1"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "2nd generation FCS A-2 -- 第2世代FCS A-2"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "2nd generation FCS B-1 -- 第2世代FCS B-1"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "2nd generation FCS B-2 -- 第2世代FCS B-2"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "3rd generation FCS 1 -- 第3世代FCS 1"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "3rd generation FCS 2 -- 第3世代FCS 2"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Melange type FCS 1 -- メランジ系FCS 1"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Melange type FCS 2 -- メランジ系FCS 2"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "8980_(combustion) 1st generation -- 8980_（燃焼）第1世代"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "8981_(combustion) 2nd generation A-1 -- 8981_（燃焼）第2世代A-1"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "8982_(combustion) 2nd generation A-2 -- 8982_（燃焼）第2世代A-2"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "8991_(combustion) 2nd generation A-3 -- 8991_（燃焼）第2世代A-3"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "8983_(EN) 2nd generation B-1 -- 8983_（EN）第2世代B-1"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "8984_(EN) 2nd generation B-2 -- 8984_（EN）第2世代B-2"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "8992_(EN) 2nd generation B-3 -- 8992_（EN）第2世代B-3"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "8985_(combustion) 2nd generation C-1 -- 8985_（燃焼）第2世代C-1"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "8990_(combustion) 2nd generation C-2 -- 8990_（燃焼）第2世代C-2"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "8986_(EN) 3rd generation 1 -- 8986_（EN）第3世代1"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "8987_(EN) 3rd generation 2 -- 8987_（EN）第3世代2"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "8993_(EN) 3rd generation 3 -- 8993_（EN）第3世代3"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "8988_(Mela) melange type 1 -- 8988_（メラ）メランジ系1"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "8989_(Mela) Melange type 2 -- 8989_（メラ）メランジ系2"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "1310_Grenade gun_Right -- 1310_グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "1310_Grenade gun_Left -- 1310_グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "1320_Heavy Grenade Gun_Right -- 1320_重グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "1320_Heavy Grenade Gun_Left -- 1320_重グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "1410_light bazooka_right -- 1410_軽バズーカ_右"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "1410_light bazooka_left -- 1410_軽バズーカ_左"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "1420_Bazooka_Right -- 1420_バズーカ_右"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "1420_Bazooka_Left -- 1420_バズーカ_左"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "1430_heavy bazooka_right -- 1430_重バズーカ_右"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "1430_Heavy Bazooka_Left -- 1430_重バズーカ_左"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "1510_light shotgun_right -- 1510_軽ショットガン_右"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "1510_light shotgun_left -- 1510_軽ショットガン_左"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "1520_shotgun_right -- 1520_ショットガン_右"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "1520_shotgun_left -- 1520_ショットガン_左"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "1530_heavy shotgun_right -- 1530_重ショットガン_右"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "1530_Heavy shotgun_Left -- 1530_重ショットガン_左"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "1610_Burst Rifle_Right -- 1610_バーストライフル_右"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "1610_Burst Rifle_Left -- 1610_バーストライフル_左"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "1620_linear rifle_right -- 1620_リニアライフル_右"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "1620_linear rifle_left -- 1620_リニアライフル_左"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "1630_Heavy linear rifle_Right -- 1630_重リニアライフル_右"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "1630_Heavy linear rifle_Left -- 1630_重リニアライフル_左"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "1710_Burst Assault Rifle_Right -- 1710_バーストアサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "1710_Burst Assault Rifle_Left -- 1710_バーストアサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "1720_assault rifle_right -- 1720_アサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "1720_assault rifle_left -- 1720_アサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "1730_Heavy assault rifle_Right -- 1730_重アサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "1730_Heavy assault rifle_Left -- 1730_重アサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "1810_Burst machine gun_Right -- 1810_バーストマシンガン_右"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "1810_Burst machine gun_Left -- 1810_バーストマシンガン_左"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "1820_machine gun_right -- 1820_マシンガン_右"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "1820_machine gun_left -- 1820_マシンガン_左"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "1830_heavy machine gun_right -- 1830_重マシンガン_右"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "1830_heavy machine gun_left -- 1830_重マシンガン_左"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "1910_Gatling gun_right -- 1910_ガトリングガン_右"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "1910_Gatling gun_left -- 1910_ガトリングガン_左"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "2010_Needle gun_Right -- 2010_ニードルガン_右"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "2010_Needle gun_Left -- 2010_ニードルガン_左"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "2020_Burst Handgun_Right -- 2020_バーストハンドガン_右"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "2020_Burst Handgun_Left -- 2020_バーストハンドガン_左"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "2030_Handgun_Right -- 2030_ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "2030_Handgun_Left -- 2030_ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "2040_Heavy handgun_Right -- 2040_重ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "2040_Heavy handgun_Left -- 2040_重ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU (Right)"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU (Left)"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "HANDGUN - HG-003 COQUILLETT (Right)"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "2110_Jamming throwing gun_right -- 2110_ジャミング投擲銃_右"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "2110_Jamming throwing gun_left -- 2110_ジャミング投擲銃_左"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "2120_Napalm throwing gun_right -- 2120_ナパーム投擲銃_右"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "2210_hand missile_right -- 2210_ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "2210_hand missile_left -- 2210_ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "2220_Split hand missile_Right -- 2220_分裂ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "2220_Split hand missile_Left -- 2220_分裂ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "2310_Light grenade gun_Right -- 2310_軽グレネードガン_右"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "2310_Light grenade gun_Left -- 2310_軽グレネードガン_左"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "2420_Karasawa_Laser/Plasma Rifle_Right -- 2420_カラサワ_レーザー/プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "2420_Karasawa_Laser/Plasma Rifle_Left -- 2420_カラサワ_レーザー/プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "2410_Plasma Rifle_Right -- 2410_プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "2410_Plasma Rifle_Left -- 2410_プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "2510_double laser rifle_right -- 2510_ダブルレーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "2510_double laser rifle_left -- 2510_ダブルレーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "2610_laser shotgun/EN pile_right -- 2610_レーザーショットガン/ENパイル_右"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "2610_laser shotgun/EN pile_left -- 2610_レーザーショットガン/ENパイル_左"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "2620_Laser Shotgun/EN Grenade_Right -- 2620_レーザーショットガン/ENグレネード_右"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "2620_Laser shotgun/EN grenade_Left -- 2620_レーザーショットガン/ENグレネード_左"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "2630_Heavy Plasma Rifle_Right -- 2630_重プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "2630_Heavy plasma rifle_Left -- 2630_重プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "2631_Heavy plasma rifle (red coral ver)_Right -- 2631_重プラズマライフル（赤コーラルver）_右"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "2631_Heavy plasma rifle (red coral ver)_Left -- 2631_重プラズマライフル（赤コーラルver）_左"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "2710_laser handgun_right -- 2710_レーザーハンドガン_右"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "2710_Laser handgun_Left -- 2710_レーザーハンドガン_左"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "2720_laser rifle_right -- 2720_レーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "2720_laser rifle_left -- 2720_レーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "2730_Coral Rifle_Right -- 2730_コーラルライフル_右"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "2730_Coral Rifle_Left -- 2730_コーラルライフル_左"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "2740_Heavy laser rifle_Right -- 2740_重レーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "2740_Heavy laser rifle_Left -- 2740_重レーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "2810_rapid-fire pulse gun_right -- 2810_速射パルスガン_右"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "2810_Rapid-fire pulse gun_Left -- 2810_速射パルスガン_左"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "2820_pulse gun_right -- 2820_パルスガン_右"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "2820_Pulse gun_Left -- 2820_パルスガン_左"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "2910_Flamethrower_Right -- 2910_火炎放射器_右"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "2910_Flamethrower_Left -- 2910_火炎放射器_左"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "3010_Immersion Bazooka_Right -- 3010_浸徹バズーカ_右"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "3010_Immersion Bazooka_Left -- 3010_浸徹バズーカ_左"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "3020_stun gun_right -- 3020_スタンガン_右"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "3020_stun gun_left -- 3020_スタンガン_左"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "3030_Assault hand missile_Right -- 3030_強襲ハンドミサイル_右"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "3030_Assault hand missile_Left -- 3030_強襲ハンドミサイル_左"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Right)"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Left)"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "STUN GUN - VP-66EG (Right)"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "10_Pile Bunker_Left -- 10_パイルバンカー_左"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "211_PA breaker_left -- 211_PAブレイカー_左"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "221_Laser Blade_Left -- 221_レーザーブレード_左"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "230_Coral Blade_Left -- 230_コーラルブレード_左"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "241_Laser dagger_Left -- 241_レーザーダガー_左"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "411_Naginata_Left -- 411_ナギナタ_左"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "510_Proximity diffusion bullet_Left -- 510_近接拡散弾_左"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "610_Laser Lance_Left -- 610_レーザーランス_左"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "910_Electromagnetic baton_left -- 910_電磁警棒_左"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "1012_Chainsaw_Left -- 1012_チェーンソー_左"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "1210_Electromagnetic hammer_Left -- 1210_電磁ハンマー_左"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C)1W7: ML-REDSHIFT"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "4010_Shoulder grenade_Explosion range-Extra large_Right -- 4010_肩グレネード_爆発範囲-特大_右"
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        "4010_Shoulder grenade_Explosion range-Extra large_Left -- 4010_肩グレネード_爆発範囲-特大_左"
+      ]
+    },
+    {
+      "ID": 278,
+      "Entries": [
+        "4110_Shoulder bazooka_Spread_Right -- 4110_肩バズーカ_スプレッド_右"
+      ]
+    },
+    {
+      "ID": 279,
+      "Entries": [
+        "4110_Shoulder bazooka_Spread_Left -- 4110_肩バズーカ_スプレッド_左"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "4210_Plasma missile triple_right -- 4210_プラズマミサイル\u30003連_右"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "4210_Plasma missile triple_left -- 4210_プラズマミサイル\u30003連_左"
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        "4220_Plasma missile launch_right -- 4220_プラズマミサイル\u3000打ち上げ_右"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "4220_Plasma missile launch_left -- 4220_プラズマミサイル\u3000打ち上げ_左"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "4230_AI missile 2 series_right -- 4230_AIミサイル\u30002連_右"
+      ]
+    },
+    {
+      "ID": 287,
+      "Entries": [
+        "4230_AI missile 2 series_left -- 4230_AIミサイル\u30002連_左"
+      ]
+    },
+    {
+      "ID": 288,
+      "Entries": [
+        "4231_AI missile single shot_right -- 4231_AIミサイル\u3000単発_右"
+      ]
+    },
+    {
+      "ID": 289,
+      "Entries": [
+        "4231_AI missile single shot_left -- 4231_AIミサイル\u3000単発_左"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "4240_Coral Missile_Right -- 4240_コーラルミサイル_右"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "4240_Coral Missile_Left -- 4240_コーラルミサイル_左"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "4250_Vertical missile 12 series_Right -- 4250_垂直ミサイル\u300012連_右"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "4250_Vertical missile 12 series_Left -- 4250_垂直ミサイル\u300012連_左"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "4252_Vertical missile 8 series_Right -- 4252_垂直ミサイル\u30008連_右"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "4252_Vertical missile 8 series_Left -- 4252_垂直ミサイル\u30008連_左"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "4251_Vertical missile 4 series_Right -- 4251_垂直ミサイル\u30004連_右"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "4251_Vertical missile 4 series_Left -- 4251_垂直ミサイル\u30004連_左"
+      ]
+    },
+    {
+      "ID": 298,
+      "Entries": [
+        "4260_Explosive missile_right -- 4260_爆導炸ミサイル_右"
+      ]
+    },
+    {
+      "ID": 299,
+      "Entries": [
+        "4260_Explosive Missile_Left -- 4260_爆導炸ミサイル_左"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Right)"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Left)"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "4280_Siege Missile_Right -- 4280_包囲ミサイル_右"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "4280_Siege Missile_Left -- 4280_包囲ミサイル_左"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "4290_Twin missile 6 series_Right -- 4290_連装ミサイル\u30006連_右"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "4290_Twin missile 6 series_Left -- 4290_連装ミサイル\u30006連_左"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "4291_Twin missile 4 series_Right -- 4291_連装ミサイル\u30004連_右"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "4291_Twin missile 4 series_Left -- 4291_連装ミサイル\u30004連_左"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "4300_2way missile 3 series_right -- 4300_2wayミサイル\u30003連_右"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "4300_2way missile 3 series_left -- 4300_2wayミサイル\u30003連_左"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "4301_2way missile 3 consecutive type_right -- 4301_2wayミサイル\u30003連中型_右"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "4301_2way missile 3 consecutive type_left -- 4301_2wayミサイル\u30003連中型_左"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "4302_Split missile 2 series 12 split_Right -- 4302_分裂ミサイル\u30002連12分裂_右"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "4302_Split missile 2 series 12 split_Left -- 4302_分裂ミサイル\u30002連12分裂_左"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "4303_2way missile 2 series_right -- 4303_2wayミサイル\u30002連_右"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "4303_2way missile 2 series_left -- 4303_2wayミサイル\u30002連_左"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "4310_fission missile 2 series 6 fission_right -- 4310_分裂ミサイル\u30002連6分裂_右"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "4310_Fission missile 2 consecutive 6-fission_Left -- 4310_分裂ミサイル\u30002連6分裂_左"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "4311_fission missile single shot_right -- 4311_分裂ミサイル\u3000単発_右"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "4311_fission missile single shot_left -- 4311_分裂ミサイル\u3000単発_左"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "4320_Container Missile_Right -- 4320_コンテナミサイル_右"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "4320_Container Missile_Left -- 4320_コンテナミサイル_左"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "4330_needle missile_right -- 4330_ニードルミサイル_右"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "4330_needle missile_left -- 4330_ニードルミサイル_左"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "4340_Cluster Missile_Right -- 4340_クラスターミサイル_右"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "4340_Cluster Missile_Left -- 4340_クラスターミサイル_左"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "4350_Homing Coral Beam_Right -- 4350_ホーミングコーラルビーム_右"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "4350_Homing Coral Beam_Left -- 4350_ホーミングコーラルビーム_左"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "4410_Shoulder grenade_Light 2 series_Right -- 4410_肩グレネード_軽2連_右"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "4410_Shoulder grenade_Light double_Left -- 4410_肩グレネード_軽2連_左"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "4510_Shoulder plasma cannon_Right -- 4510_肩プラズマキャノン_右"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "4510_Shoulder Plasma Cannon_Left -- 4510_肩プラズマキャノン_左"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "4610_Shoulder laser cannon_Right -- 4610_肩レーザーキャノン_右"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "4610_Shoulder laser cannon_Left -- 4610_肩レーザーキャノン_左"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "4710_Shoulder Laser Cannon_W Laser_Right -- 4710_肩レーザーキャノン_Wレーザー_右"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "4710_Shoulder Laser Cannon_W Laser_Left -- 4710_肩レーザーキャノン_Wレーザー_左"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "4810_Shoulder pulse gun_Right -- 4810_肩パルスガン_右"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "4810_Shoulder pulse gun_Left -- 4810_肩パルスガン_左"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "5010_Shoulder laser shotgun_Right -- 5010_肩レーザーショットガン_右"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "5010_Shoulder laser shotgun_Left -- 5010_肩レーザーショットガン_左"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Right)"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Left)"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Right)"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Left)"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Right)"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Left)"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z (Right)"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "5710_Exceed Orbit (live bullet) right_right -- 5710_イクシードオービット（実弾）右_右"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "5710_Exceed Orbit (live bullet) left_left -- 5710_イクシードオービット（実弾）左_左"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "5720_Exceed Orbit (Laser) Right_Right -- 5720_イクシードオービット（レーザー）右_右"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "5720_Exceed Orbit (Laser) Left_Left -- 5720_イクシードオービット（レーザー）左_左"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "5810_Assault Orbit_Right -- 5810_アサルトオービット_右"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Right)"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Left)"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "4910_PA Buckler_Initial short, initial strong_Left -- 4910_PAバックラー_イニシャル短、イニシャル強_左"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "4920_PA Shield_Low load_Long initial_Left -- 4920_PAシールド_低負荷_イニシャル長め_左"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Right)"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "4940_PA Shield_Standard_Left -- 4940_PAシールド_標準_左"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "4950_PA Shield_Initial short_Normal guard emphasis_Left -- 4950_PAシールド_イニシャル短_通常ガード重視_左"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "4960_PA buckler_initial long, usually weak_left -- 4960_PAバックラー_イニシャル長い、通常弱い_左"
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        "4970_Coral Shield_360°_Left -- 4970_コーラルシールド_360°_左"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "4980_PA Scutum_Weak initial_Left -- 4980_PAスクトゥム_イニシャルが弱_左"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Right)"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Left)"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "PULSE BUCKLER - VP-61PB"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "PULSE SHIELD - SI-24: SU-Q5"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "PULSE SHIELD - VP-61PS"
+      ]
+    },
+    {
+      "ID": 379,
+      "Entries": [
+        "PULSE SHIELD - SI-27: SU-R8"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "PULSE BUCKLER - SI-29: SU-TT/C"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "CORAL SHIELD - IB-C03W4: NGI 028"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "PULSE SCUTUM - VE-61PSA"
+      ]
+    }
+  ]
+}

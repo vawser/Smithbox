@@ -1,0 +1,133 @@
+{
+  "Param": "ASSET_MODEL_SFX_PARAM_ST",
+  "Type": "ASSET_MODEL_SFX_PARAM_ST",
+  "Name": "ASSET_MODEL_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId_0",
+      "Name": "0:SfxID",
+      "Description": "0:SfxID"
+    },
+    {
+      "Field": "dmypolyId_0",
+      "Name": "0：ダミポリID",
+      "Description": "0：ダミポリID"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "0:予約",
+      "Description": "0:予約"
+    },
+    {
+      "Field": "sfxId_1",
+      "Name": "1:SfxID",
+      "Description": "1:SfxID"
+    },
+    {
+      "Field": "dmypolyId_1",
+      "Name": "1：ダミポリID",
+      "Description": "1：ダミポリID"
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "1:予約",
+      "Description": "1:予約"
+    },
+    {
+      "Field": "sfxId_2",
+      "Name": "2:SfxID",
+      "Description": "2:SfxID"
+    },
+    {
+      "Field": "dmypolyId_2",
+      "Name": "2：ダミポリID",
+      "Description": "2：ダミポリID"
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "2:予約",
+      "Description": "2:予約"
+    },
+    {
+      "Field": "sfxId_3",
+      "Name": "3:SfxID",
+      "Description": "3:SfxID"
+    },
+    {
+      "Field": "dmypolyId_3",
+      "Name": "3：ダミポリID",
+      "Description": "3：ダミポリID"
+    },
+    {
+      "Field": "reserve_3",
+      "Name": "3:予約",
+      "Description": "3:予約"
+    },
+    {
+      "Field": "sfxId_4",
+      "Name": "4:SfxID",
+      "Description": "4:SfxID"
+    },
+    {
+      "Field": "dmypolyId_4",
+      "Name": "4：ダミポリID",
+      "Description": "4：ダミポリID"
+    },
+    {
+      "Field": "reserve_4",
+      "Name": "4:予約",
+      "Description": "4:予約"
+    },
+    {
+      "Field": "sfxId_5",
+      "Name": "5:SfxID",
+      "Description": "5:SfxID"
+    },
+    {
+      "Field": "dmypolyId_5",
+      "Name": "5：ダミポリID",
+      "Description": "5：ダミポリID"
+    },
+    {
+      "Field": "reserve_5",
+      "Name": "5:予約",
+      "Description": "5:予約"
+    },
+    {
+      "Field": "sfxId_6",
+      "Name": "6:SfxID",
+      "Description": "6:SfxID"
+    },
+    {
+      "Field": "dmypolyId_6",
+      "Name": "6：ダミポリID",
+      "Description": "6：ダミポリID"
+    },
+    {
+      "Field": "reserve_6",
+      "Name": "6:予約",
+      "Description": "6:予約"
+    },
+    {
+      "Field": "sfxId_7",
+      "Name": "7:SfxID",
+      "Description": "7:SfxID"
+    },
+    {
+      "Field": "dmypolyId_7",
+      "Name": "7：ダミポリID",
+      "Description": "7：ダミポリID"
+    },
+    {
+      "Field": "isDisableIV",
+      "Name": "イラディアンスボリュームへの影響を無効化",
+      "Description": "有効にするとイラディアンスボリューム撮影への影響を無効化します"
+    },
+    {
+      "Field": "reserve_7",
+      "Name": "7:予約",
+      "Description": "7:予約"
+    }
+  ]
+}

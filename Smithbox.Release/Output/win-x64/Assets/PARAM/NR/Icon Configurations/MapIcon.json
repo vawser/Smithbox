@@ -1,0 +1,9 @@
+{
+  "Name": "MapIcon",
+  "File": "01_common_h",
+  "InternalFiles": [
+    "SB_MapCursor_0",
+    "SB_MapCursor_02_0"
+  ],
+  "SubTexturePrefix": "MENU_MAP_"
+}

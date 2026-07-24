@@ -1,0 +1,7 @@
+"GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM"
+"u8"
+"Disable","0"
+"Low","1"
+"Middle","2"
+"High","3"
+"Ultra","4"

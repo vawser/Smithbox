@@ -1,0 +1,13 @@
+{
+  "Name": "m13_20_00_00",
+  "Entries": [
+    {
+      "ID": "無頼漢シナリオ_初期位置指定",
+      "Name": "Outlaw Scenario - Initial Position Specification"
+    },
+    {
+      "ID": "戦闘開始エリア",
+      "Name": "Battle Start Area"
+    }
+  ]
+}

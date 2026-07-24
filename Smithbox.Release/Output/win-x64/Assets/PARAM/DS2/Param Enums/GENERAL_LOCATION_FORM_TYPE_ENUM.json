@@ -1,0 +1,47 @@
+{
+  "Key": "GENERAL_LOCATION_FORM_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERAL_LOCATION_FORM_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Point"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cylinder"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Box"
+        }
+      ]
+    }
+  ]
+}

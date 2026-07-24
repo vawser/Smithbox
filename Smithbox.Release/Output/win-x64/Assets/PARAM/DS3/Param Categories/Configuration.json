@@ -1,0 +1,22 @@
+{
+  "Key": "Configuration",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Configuration"
+      }
+  ],
+  "Params": [
+    "LoadBalancerDrawDistScaleParam",
+    "LoadBalancerParam",
+    "LodParam",
+    "LodParam_ps4",
+    "LodParam_xb1",
+    "NetworkAreaParam",
+    "NetworkMsgParam",
+    "NetworkParam",
+    "PlayRegionParam",
+    "CoolTimeParam",
+    "WhiteSignCoolTimeParam"
+  ]
+}

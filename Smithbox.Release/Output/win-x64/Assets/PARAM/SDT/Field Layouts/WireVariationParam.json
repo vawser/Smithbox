@@ -1,0 +1,24 @@
+{
+  "Name": "WireVariationParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "targetMarkerType",
+        "extendWireActionDistance",
+        "chrPhysicsHomingIdOffset"
+      ]
+    }
+  ]
+}

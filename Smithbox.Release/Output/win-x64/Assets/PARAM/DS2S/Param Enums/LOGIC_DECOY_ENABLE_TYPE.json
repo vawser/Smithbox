@@ -1,0 +1,29 @@
+{
+  "Key": "LOGIC_DECOY_ENABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_DECOY_ENABLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valid"
+        }
+      ]
+    }
+  ]
+}

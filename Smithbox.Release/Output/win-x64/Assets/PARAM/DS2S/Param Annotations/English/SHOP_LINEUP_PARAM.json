@@ -1,0 +1,58 @@
+{
+  "Param": "SHOP_LINEUP_PARAM",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "SHOP_LINEUP_PARAM",
+  "Description": "Defines a shop inventory entry, including item availability conditions, pricing, and display ordering.",
+  "Fields": [
+    {
+      "Field": "saleItem",
+      "Name": "Item ID for Sale",
+      "Description": "ID of the item available for purchase in the shop."
+    },
+    {
+      "Field": "price",
+      "Name": "Price",
+      "Description": "Base purchase price of the item."
+    },
+    {
+      "Field": "saleFlag",
+      "Name": "Sale Start Flag",
+      "Description": "Flag that enables the item to become available for sale."
+    },
+    {
+      "Field": "saleEndFlag",
+      "Name": "Sale End Flag",
+      "Description": "Flag that disables the item from being sold."
+    },
+    {
+      "Field": "saleFlagItem",
+      "Name": "Sale Unlock Item Condition",
+      "Description": "Item condition required to unlock the sale of this product."
+    },
+    {
+      "Field": "saleEndFlagItem",
+      "Name": "Sale End Condition Item",
+      "Description": "Item condition that triggers removal of this product from sale."
+    },
+    {
+      "Field": "displayOrder",
+      "Name": "Display Order",
+      "Description": "Order in which the item appears in the shop list."
+    },
+    {
+      "Field": "priceRate",
+      "Name": "Price Multiplier",
+      "Description": "Multiplier applied to the base price."
+    },
+    {
+      "Field": "unitSales",
+      "Name": "Stock Quantity",
+      "Description": "Number of units available for purchase."
+    },
+    {
+      "Field": "padding",
+      "Name": "Padding",
+      "Description": ""
+    }
+  ]
+}

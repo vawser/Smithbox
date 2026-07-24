@@ -1,0 +1,13 @@
+{
+  "Param": "SMALBASE_SFX_LOD_EXCLUSION_LIST_PARAM_ST",
+  "Type": "SMALBASE_SFX_LOD_EXCLUSION_LIST_PARAM_ST",
+  "Name": "SMALBASE_SFX_LOD_EXCLUSION_LIST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

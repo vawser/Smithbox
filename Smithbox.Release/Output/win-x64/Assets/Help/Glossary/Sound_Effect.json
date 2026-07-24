@@ -1,0 +1,17 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Sound Effect",
+    "Tags": [
+        "Term",
+        "SE"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A sound effect is an sound invoked via a param, TAE, Region, etc.",
+        "May be referred to as SE",
+        "",
+        "These can be used in many of the same circumstances as visual effects, with a numerical id keying into a sound from FMOD Sample Bank (FSB)."
+    ]
+}

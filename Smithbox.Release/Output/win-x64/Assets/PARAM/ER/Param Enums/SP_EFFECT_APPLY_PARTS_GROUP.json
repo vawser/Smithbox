@@ -1,0 +1,56 @@
+{
+  "Key": "SP_EFFECT_APPLY_PARTS_GROUP",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_APPLY_PARTS_GROUP"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 6"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 7"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 8"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 9"
+        }
+      ]
+    }
+  ]
+}

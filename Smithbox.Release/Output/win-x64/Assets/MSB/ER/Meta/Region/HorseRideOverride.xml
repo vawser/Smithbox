@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a riding override area in the map." />
+  
+  <Field>
+    <OverrideType
+    AltName="Override Type"
+    Wiki="Whether the player can ride in this area or not." 
+    Enum="HORSE_RIDE_OVERRIDE_TYPE" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="HORSE_RIDE_OVERRIDE_TYPE" >
+        <Option Value="1" Name="Block Riding" />
+        <Option Value="2" Name="Permit Riding" />
+    </Enum>
+  </Enums>
+</MSBMETA>

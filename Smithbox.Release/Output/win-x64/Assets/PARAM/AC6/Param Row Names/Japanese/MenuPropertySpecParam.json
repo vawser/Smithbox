@@ -1,0 +1,3053 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "----"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "----- ↓For items from here ----- -- ----- ↓ここからアイテム用 -----"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Common items] Name -- 【アイテム共通】 名前"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Common items] Description -- 【アイテム共通】 説明"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Common items] Unchiku -- 【アイテム共通】 うんちく"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Common items] Weight -- 【アイテム共通】 重量"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Common for items] Sort ID within category -- 【アイテム共通】 カテゴリ内ソートID"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Common items] Entering procedure (for sorting) -- 【アイテム共通】 入手順(ソート用)"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Common items] Initial order (for sorting) -- 【アイテム共通】 初期順(ソート用)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Common items] Company -- 【アイテム共通】 企業"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Common items] Menu management category -- 【アイテム共通】 メニュー管理カテゴリ"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Common items] Number of possessions -- 【アイテム共通】 所持数"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Common items] Number of possessions_maximum value -- 【アイテム共通】 所持数_最大値"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[Common items] Number of warehouse possessions -- 【アイテム共通】 倉庫所持数"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[Common items] Number of warehouse possession_maximum value -- 【アイテム共通】 倉庫所持数_最大値"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Common items] Required soul -- 【アイテム共通】 必要ソウル"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[Common items] Obtained soul -- 【アイテム共通】 獲得ソウル"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "[Common items] Consumption EN -- 【アイテム共通】 消費EN"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "[Common items] Category name -- 【アイテム共通】 カテゴリ名"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "[Common items] EN output -- 【アイテム共通】 EN出力"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Tools] Consumption type during use -- 【道具】 使用時消費タイプ"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[Weapon] Attribute_Icon -- 【武器】属性_アイコン"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "[Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "[Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "[Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "[Weapon] Characteristics_Icon -- 【武器】特性_アイコン"
+      ]
+    },
+    {
+      "ID": 1970,
+      "Entries": [
+        "[Weapon] Attack performance after charging (child bullet) -- 【武器】チャージ後攻撃性能（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1971,
+      "Entries": [
+        "[Weapon] Impact performance after charging (child bullet) -- 【武器】チャージ後衝撃性能（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1972,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging (child bullet) -- 【武器】チャージ後衝撃蓄積性能（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1973,
+      "Entries": [
+        "[Weapon] Second attack performance after charging (child bullet) -- 【武器】チャージ後攻撃性能二段目（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1974,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging (child bullet) -- 【武器】チャージ後衝撃性能二段目（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1975,
+      "Entries": [
+        "[Weapon] Second stage of impact accumulation performance after charging (child bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（子弾丸）"
+      ]
+    },
+    {
+      "ID": 1976,
+      "Entries": [
+        "[Weapon] Attack performance after charging (grandchild bullet) -- 【武器】チャージ後攻撃性能（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1977,
+      "Entries": [
+        "[Weapon] Impact performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃性能（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1978,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging (grandson bullet) -- 【武器】チャージ後衝撃蓄積性能（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1979,
+      "Entries": [
+        "[Weapon] Second attack performance after charging (grandchild bullet) -- 【武器】チャージ後攻撃性能二段目（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1980,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃性能二段目（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1981,
+      "Entries": [
+        "[Weapon] Second stage of shock accumulation performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1982,
+      "Entries": [
+        "[Weapon] Attack performance after charging (great-grandchild bullet) -- 【武器】チャージ後攻撃性能（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1983,
+      "Entries": [
+        "[Weapon] Impact performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃性能（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1984,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging (great-grand bullet) -- 【武器】チャージ後衝撃蓄積性能（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1985,
+      "Entries": [
+        "[Weapon] Second attack performance after charging (great-grandchild bullet) -- 【武器】チャージ後攻撃性能二段目（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1986,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃性能二段目（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1987,
+      "Entries": [
+        "[Weapon] Second stage of shock accumulation performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 1990,
+      "Entries": [
+        "[Weapon] Critical hit after charging -- 【武器】チャージ後クリティカル適正"
+      ]
+    },
+    {
+      "ID": 1991,
+      "Entries": [
+        "[Weapon] PA interference after charging -- 【武器】チャージ後PA干渉"
+      ]
+    },
+    {
+      "ID": 1992,
+      "Entries": [
+        "[Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲"
+      ]
+    },
+    {
+      "ID": 1993,
+      "Entries": [
+        "[Weapon] Range limit after charging -- 【武器】チャージ後射程限界"
+      ]
+    },
+    {
+      "ID": 1994,
+      "Entries": [
+        "[Weapon] Charge attack duration -- 【武器】チャージ攻撃継続時間"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Weapon] Number of bullets -- 【武器】装弾数"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Weapon] Number of magazine bullets -- 【武器】マガジン弾数"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Weapon] Lock-on distance -- 【武器】ロックオン距離"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Weapon] Defense power -- 【武器】防御力"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Weapon] Suitable for melee -- 【武器】近接適正"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Weapon] Size -- 【武器】サイズ"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[Weapon] Attribute -- 【武器】属性"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "[Weapon] Charge multiplier -- 【武器】チャージ倍率"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "[Weapon] Impact value -- 【武器】衝撃値"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Weapon] Residual impact -- 【武器】残留衝撃"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "[Weapon] Rapid fire performance -- 【武器】連射性能"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "[Weapon] Magazine reload -- 【武器】マガジンリロード"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "[Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "[Weapon] PA penetration power -- 【武器】PA貫通力"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "[Weapon] EN load while charging -- 【武器】チャージ中EN負荷"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "[Weapon] Reload type -- 【武器】リロードタイプ"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "[Weapon] Critical suitability -- 【武器】クリティカル適正"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "[Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "[Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Weapon] Maximum charge time -- 【武器】最大チャージ時間"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "[Weapon] Cooling performance -- 【武器】冷却性能"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "[Weapon] Explosion range -- 【武器】爆発範囲"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "[Weapon] Range limit -- 【武器】射程限界"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "[Weapon] Bullet unit price -- 【武器】弾単価"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "[Weapon] Impact force (subbullet) -- 【武器】衝撃力（子弾丸）"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "[Weapon] Impact force (grandchild bullet) -- 【武器】衝撃力（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "[Weapon] Residual impact (subbullet) -- 【武器】残留衝撃（子弾丸）"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "[Weapon] Residual impact (grandchild bullet) -- 【武器】残留衝撃（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "[Weapon] Explosion range (subbullet) -- 【武器】爆発範囲（子弾丸）"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Weapon] Explosion range (grandchild bullet) -- 【武器】爆発範囲（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[Weapon] Critical suitability (subbullet) -- 【武器】クリティカル適正（子弾丸）"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "[Weapon] Critical suitability (grandchild bullet) -- 【武器】クリティカル適正（孫弾丸）"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "[Weapon] Critical suitability (great-grandchild bullet) -- 【武器】クリティカル適正（ひ孫弾丸）"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        "[Weapon] Second attack performance after charging -- 【武器】チャージ後攻撃性能二段目"
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging -- 【武器】チャージ後衝撃性能二段目"
+      ]
+    },
+    {
+      "ID": 2037,
+      "Entries": [
+        "[Weapon] Second stage of impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能二段目"
+      ]
+    },
+    {
+      "ID": 2038,
+      "Entries": [
+        "[Weapon] Second charge time -- 【武器】二段チャージ時間"
+      ]
+    },
+    {
+      "ID": 2039,
+      "Entries": [
+        "[Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Weapon] Number of bullets consumed during second charge -- 【武器】二段チャージ時消費弾数"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "[Weapon] Heat value increase amount -- 【武器】ヒート値上昇量"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "[Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "[Weapon] Two-stage charge attack heat value increase amount -- 【武器】二段チャージ攻撃ヒート値上昇量"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "[Weapon] Emergency cooling performance -- 【武器】緊急冷却性能"
+      ]
+    },
+    {
+      "ID": 2045,
+      "Entries": [
+        "[Weapon] PA interference -- 【武器】PA干渉"
+      ]
+    },
+    {
+      "ID": 2046,
+      "Entries": [
+        "[Weapon] Attack duration -- 【武器】攻撃継続時間"
+      ]
+    },
+    {
+      "ID": 2047,
+      "Entries": [
+        "[Weapon] Number of bullets consumed -- 【武器】消費弾数"
+      ]
+    },
+    {
+      "ID": 2048,
+      "Entries": [
+        "[Weapon] Number of fighting combos -- 【武器】格闘コンボ数"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Blade] Consumption EN during acceleration -- 【ブレード】加速時消費EN"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "[Blade] Blade range -- 【ブレード】ブレードレンジ"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "[Blade] Depressing performance -- 【ブレード】踏み込み性能"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Shield] Guard range -- 【シールド】ガード範囲"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "[Shield] Output -- 【シールド】出力"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "[Shield] Impact resistance performance -- 【シールド】耐衝撃性能"
+      ]
+    },
+    {
+      "ID": 2063,
+      "Entries": [
+        "[Shield] Initial output performance -- 【シールド】初期出力性能"
+      ]
+    },
+    {
+      "ID": 2064,
+      "Entries": [
+        "[Shield] Initial output maintenance time -- 【シールド】初期出力維持時間"
+      ]
+    },
+    {
+      "ID": 2065,
+      "Entries": [
+        "[Shield] Durability -- 【シールド】耐久性能"
+      ]
+    },
+    {
+      "ID": 2066,
+      "Entries": [
+        "[Shield] Cooling performance -- 【シールド】冷却性能"
+      ]
+    },
+    {
+      "ID": 2067,
+      "Entries": [
+        "[Shield] Emergency cooling performance -- 【シールド】緊急冷却性能"
+      ]
+    },
+    {
+      "ID": 2068,
+      "Entries": [
+        "[Shield] Heat generation amount when deployed -- 【シールド】展開時発熱量"
+      ]
+    },
+    {
+      "ID": 2069,
+      "Entries": [
+        "[Shield] Initial output shock resistance performance -- 【シールド】初期出力耐衝撃性能"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "[Shield] Scutum attack reduction -- 【シールド】スクトゥム攻撃軽減"
+      ]
+    },
+    {
+      "ID": 2071,
+      "Entries": [
+        "[Shield] Scutum impact reduction -- 【シールド】スクトゥム衝撃軽減"
+      ]
+    },
+    {
+      "ID": 2072,
+      "Entries": [
+        "[Shield] Scutum Idol medium attack reduction -- 【シールド】スクトゥムアイドル中攻撃軽減"
+      ]
+    },
+    {
+      "ID": 2073,
+      "Entries": [
+        "[Shield] Impact reduction during Scutum Idol -- 【シールド】スクトゥムアイドル中衝撃軽減"
+      ]
+    },
+    {
+      "ID": 2074,
+      "Entries": [
+        "[Shield] Scutum Idle Time -- 【シールド】スクトゥムアイドル時間"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "[Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能"
+      ]
+    },
+    {
+      "ID": 2091,
+      "Entries": [
+        "[Melee attack] Attack performance -- 【格闘攻撃】攻撃性能"
+      ]
+    },
+    {
+      "ID": 2092,
+      "Entries": [
+        "[Melee attack] Impact value -- 【格闘攻撃】衝撃値"
+      ]
+    },
+    {
+      "ID": 2093,
+      "Entries": [
+        "[Melee attack] Residual impact -- 【格闘攻撃】残留衝撃"
+      ]
+    },
+    {
+      "ID": 2094,
+      "Entries": [
+        "[Assault Armor] Attack performance -- 【アサルトアーマー】攻撃性能"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Weapon] Enhancement level (for sorting) -- 【武器】強化レベル( ソート用 )"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Weapon] Strong melee attack performance -- 【武器】強格闘攻撃性能"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "[Weapon] Strong melee attack critical hit -- 【武器】強格闘攻撃クリティカル適正"
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        "[Weapon] Strong melee attack impact performance -- 【武器】強格闘攻撃衝撃性能"
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        "[Weapon] Strong melee attack impact accumulation performance -- 【武器】強格闘攻撃衝撃蓄積性能"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "[Weapon] Strong melee attack PA interference -- 【武器】強格闘攻撃PA干渉"
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        "[Weapon] Number of bullets consumed for strong melee attacks -- 【武器】強格闘攻撃消費弾数"
+      ]
+    },
+    {
+      "ID": 2116,
+      "Entries": [
+        "[Weapon] Strong melee attack heat value increase amount -- 【武器】強格闘攻撃ヒート値上昇量"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Assault Drive] Usable number of times -- 【アサルトドライヴ】使用可能回数"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[Assault Drive] Impact force -- 【アサルトドライヴ】衝撃力"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "[Assault Drive] Effect range -- 【アサルトドライヴ】効果範囲"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "[Assault Drive] Guaranteed performance distance -- 【アサルトドライヴ】性能保証距離"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "[Assault Drive] Durability -- 【アサルトドライヴ】耐久性能"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "[Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "[Assault Drive] Critical Aptitude -- 【アサルトドライヴ】クリティカル適性"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "[Assault Drive] Residual Impact -- 【アサルトドライヴ】残留衝撃"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Armor] AP -- 【防具】AP"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Armor] Defense power: Physical -- 【防具】 防御力：物理"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Armor] Defense power: EN -- 【防具】 防御力：EN"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Armor] Ammo recovery item capacity -- 【防具】弾薬回復アイテム容量"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Armor] KE-resistant armor -- 【防具】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "[Armor] Anti-TE armor -- 【防具】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "[Armor] CE-resistant armor -- 【防具】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "[Armor] Stable performance (text specified on layout side) -- 【防具】安定性能（レイアウト側でテキスト指定）"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[HEAD] KE-resistant armor -- 【HEAD】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "[HEAD] TE-resistant armor -- 【HEAD】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 3052,
+      "Entries": [
+        "[HEAD] CE-resistant armor -- 【HEAD】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[CORE] KE-resistant armor -- 【CORE】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "[CORE] TE-resistant armor -- 【CORE】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        "[CORE] CE-resistant armor -- 【CORE】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[ARM] KE-resistant armor -- 【ARM】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "[ARM] Anti-TE armor -- 【ARM】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 3072,
+      "Entries": [
+        "[ARM] CE-resistant armor -- 【ARM】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Legs] KE-resistant armor -- 【脚部】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "[Legs] Anti-TE armor -- 【脚部】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 3082,
+      "Entries": [
+        "[Legs] CE-resistant armor -- 【脚部】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[HEAD] Stable calculation performance -- 【HEAD】安定演算性能"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[HEAD] System restoration performance -- 【HEAD】システム復元性能"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "[HEAD] Camera performance -- 【HEAD】カメラ性能"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "[HEAD] Scan angle -- 【HEAD】スキャン角度"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "[HEAD] Scan distance -- 【HEAD】スキャン距離"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "[HEAD] Scan stiffness time -- 【HEAD】スキャン硬直時間"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "[HEAD] Scan standby time -- 【HEAD】スキャン待機時間"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[CORE] Booster EN transmission efficiency -- 【CORE】ブースターEN伝達効率"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[CORE] Stable performance -- 【CORE】安定性能"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "[CORE] Generating output transmission performance -- 【CORE】ジェネ出力伝達性能"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "[CORE] Radiator performance -- 【CORE】ラジエーター性能"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[ARM] Arm loading capacity -- 【ARM】腕部積載許容量"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[ARM] Recoil control -- 【ARM】反動制御"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "[ARM] Shooting movement performance -- 【ARM】射撃運動性能"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "[ARM] Suitable for fighting -- 【ARM】格闘適正"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Legs] Maximum loading capacity (unused) -- 【脚部】最大積載量（未使用）"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[Legs] Stability performance -- 【脚部】安定性能"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[Legs] Leg loading capacity -- 【脚部】脚部積載許容量"
+      ]
+    },
+    {
+      "ID": 3403,
+      "Entries": [
+        "[Legs] Brake performance -- 【脚部】ブレーキ性能"
+      ]
+    },
+    {
+      "ID": 3404,
+      "Entries": [
+        "[Legs] Walking performance -- 【脚部】歩行性能"
+      ]
+    },
+    {
+      "ID": 3405,
+      "Entries": [
+        "[Legs] Leg movement performance -- 【脚部】脚部運動性能"
+      ]
+    },
+    {
+      "ID": 3406,
+      "Entries": [
+        "[Legs] Jump performance -- 【脚部】ジャンプ性能"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "[Legs] Driving performance -- 【脚部】走行性能"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "[Legs] High-speed running performance -- 【脚部】高速走行性能"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "[GENE] Capacitor capacity -- 【GENE】コンデンサ容量"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "[GENE] Cooling performance -- 【GENE】冷却性能"
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        "[GENE] Emergency cooling performance -- 【GENE】緊急冷却性能"
+      ]
+    },
+    {
+      "ID": 3504,
+      "Entries": [
+        "[GENE] Emergency EN recovery rate -- 【GENE】緊急時EN回復割合"
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        "[GENE] EN weapon suitability -- 【GENE】EN武器適正"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[FCS] Missile lock performance -- 【FCS】ミサイルロック性能"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "[FCS] Secondary lock distance -- 【FCS】二次ロック距離"
+      ]
+    },
+    {
+      "ID": 3602,
+      "Entries": [
+        "[FCS] Secondary lock performance -- 【FCS】二次ロック性能"
+      ]
+    },
+    {
+      "ID": 3603,
+      "Entries": [
+        "[FCS] Multi-lock suitable -- 【FCS】マルチロック適正"
+      ]
+    },
+    {
+      "ID": 3604,
+      "Entries": [
+        "[FCS] Assist suitable short distance -- 【FCS】アシスト適正近距離"
+      ]
+    },
+    {
+      "ID": 3605,
+      "Entries": [
+        "[FCS] Suitable assist medium distance -- 【FCS】アシスト適正中距離"
+      ]
+    },
+    {
+      "ID": 3606,
+      "Entries": [
+        "[FCS] Assist suitable long distance -- 【FCS】アシスト適正遠距離"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "[Booster] Ascent thrust -- 【ブースター】上昇推力"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "[Booster] Increased consumption EN -- 【ブースター】上昇消費EN"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "[Booster] QB acceleration performance -- 【ブースター】QB加速性能"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "[Booster] QB injection time -- 【ブースター】QB噴射時間"
+      ]
+    },
+    {
+      "ID": 3705,
+      "Entries": [
+        "[Booster] QB consumption EN -- 【ブースター】QB消費EN"
+      ]
+    },
+    {
+      "ID": 3706,
+      "Entries": [
+        "[Booster] QB reload time -- 【ブースター】QBリロードタイム"
+      ]
+    },
+    {
+      "ID": 3707,
+      "Entries": [
+        "[Booster] Assault boost performance -- 【ブースター】アサルトブースト性能"
+      ]
+    },
+    {
+      "ID": 3708,
+      "Entries": [
+        "[Booster] Assault boost consumption EN -- 【ブースター】アサルトブースト消費EN"
+      ]
+    },
+    {
+      "ID": 3709,
+      "Entries": [
+        "[Booster] QB load capacity -- 【ブースター】QB耐荷重性能"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "[Booster] Melee attack acceleration performance -- 【ブースター】格闘攻撃加速性能"
+      ]
+    },
+    {
+      "ID": 3711,
+      "Entries": [
+        "[Booster] Melee attack acceleration consumption EN -- 【ブースター】格闘攻撃加速消費EN"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Bullet] Initial velocity -- 【弾丸】初速"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[Bullet] Maximum speed -- 【弾丸】最高速度"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[Bullet] EN consumption when shooting -- 【弾丸】射撃時消費EN"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[Bullet] Guidance performance -- 【弾丸】誘導性能"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[Bullets] Number of simultaneous shots -- 【弾丸】同時発射数"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[Bullets] Number of consecutive shots -- 【弾丸】連続発射数"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "[Bullet] Reload time -- 【弾丸】リロード時間"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "[Bullet] Bullet collection performance (other than missiles) -- 【弾丸】集弾性能（ミサイル以外）"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "[Bullet] Maximum number of locks -- 【弾丸】最大ロック数"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[Bullet] Shooting recoil -- 【弾丸】射撃反動"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[Bullet] Guaranteed performance range -- 【弾丸】性能保証射程"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "[Bullet] Effective range -- 【弾丸】有効射程"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "[Bullet] Consumption EN after shooting -- 【弾丸】射撃後消費EN"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "[Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "[Bullet] Bullet speed -- 【弾丸】弾速"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "[Bullet] Bullet collection performance (missile) -- 【弾丸】集弾性能（ミサイル）"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "[Bullet] Missile lock time -- 【弾丸】ミサイルロック時間"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "[Bullet] Guidance performance (small bullet) -- 【弾丸】誘導性能（小弾丸）"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "[Bullet] Guidance performance after charging -- 【弾丸】チャージ後誘導性能"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "[Bullet] Effective range after charging -- 【弾丸】チャージ後有効射程"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Attack] Physical attack power -- 【攻撃】物理攻撃力"
+      ]
+    },
+    {
+      "ID": 19900,
+      "Entries": [
+        "[For PG] Number of possessions for sorting (warehouse/inventory number of possessions automatically determined) -- 【PG用】 ソート用所持数( 倉庫/インベントリ 所持数 自動判別 )"
+      ]
+    },
+    {
+      "ID": 19998,
+      "Entries": [
+        "----- ↑For items up to this point ----- -- ----- ↑ここまでアイテム用 -----"
+      ]
+    },
+    {
+      "ID": 19999,
+      "Entries": [
+        "----- ↓For player status from here ----- -- ----- ↓ここからプレイヤーステータス用 -----"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "[PC Basics] Name -- 【PC基本】 名前"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "[PC Basics] Owned Souls -- 【PC基本】 所持ソウル"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "[PC Basics] Gender -- 【PC基本】 性別"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "[PC] Loading capacity -- 【PC】積載量"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "[PC] Maximum loading capacity -- 【PC】最大積載量"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "[PC] Total weight -- 【PC】総重量"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "[PC] Live bullet defense -- 【PC】実弾防御"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "[PC] EN defense -- 【PC】EN防御"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "[PC] Movement speed -- 【PC】移動速度"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "[PC] Total consumption EN -- 【PC】総消費EN"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "[PC] EN supply -- 【PC】EN供給"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "[PC] Armor total AP -- 【PC】防具総AP"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "[PC] Loading status -- 【PC】積載状況"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "[PC] EN consumption status -- 【PC】EN消費状況"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "[PC] Arm loading status -- 【PC】腕部積載状況"
+      ]
+    },
+    {
+      "ID": 20050,
+      "Entries": [
+        "[Body] Total weight -- 【本体】総重量"
+      ]
+    },
+    {
+      "ID": 20051,
+      "Entries": [
+        "[Body] AP -- 【本体】AP"
+      ]
+    },
+    {
+      "ID": 20052,
+      "Entries": [
+        "[Body] KE-resistant armor -- 【本体】耐KE装甲"
+      ]
+    },
+    {
+      "ID": 20053,
+      "Entries": [
+        "[Body] TE-resistant armor -- 【本体】耐TE装甲"
+      ]
+    },
+    {
+      "ID": 20054,
+      "Entries": [
+        "[Body] CE-resistant armor -- 【本体】耐CE装甲"
+      ]
+    },
+    {
+      "ID": 20055,
+      "Entries": [
+        "[Body] Bullet stability performance -- 【本体】被弾安定性能"
+      ]
+    },
+    {
+      "ID": 20056,
+      "Entries": [
+        "[Body] Stable recovery correction -- 【本体】安定回復補正"
+      ]
+    },
+    {
+      "ID": 20057,
+      "Entries": [
+        "[Body] Lock-on performance -- 【本体】ロックオン性能"
+      ]
+    },
+    {
+      "ID": 20058,
+      "Entries": [
+        "[Body] EN capacity -- 【本体】EN容量"
+      ]
+    },
+    {
+      "ID": 20059,
+      "Entries": [
+        "[Body] EN recovery performance -- 【本体】EN回復性能"
+      ]
+    },
+    {
+      "ID": 20060,
+      "Entries": [
+        "[Body] Speed ​​performance -- 【本体】速度性能"
+      ]
+    },
+    {
+      "ID": 20061,
+      "Entries": [
+        "[Body] Continuation ability -- 【本体】継戦能力"
+      ]
+    },
+    {
+      "ID": 20062,
+      "Entries": [
+        "[Main body] Repair cost -- 【本体】修理費"
+      ]
+    },
+    {
+      "ID": 20063,
+      "Entries": [
+        "[Body] QB consumption EN -- 【本体】QB消費EN"
+      ]
+    },
+    {
+      "ID": 20064,
+      "Entries": [
+        "[Body] Total arm loading -- 【本体】腕部積載合計"
+      ]
+    },
+    {
+      "ID": 20065,
+      "Entries": [
+        "[Body] Arm loading limit -- 【本体】腕部積載上限"
+      ]
+    },
+    {
+      "ID": 20066,
+      "Entries": [
+        "[Body] QB speed performance -- 【本体】QB速度性能"
+      ]
+    },
+    {
+      "ID": 20067,
+      "Entries": [
+        "[Body] QB reload time -- 【本体】QBリロード時間"
+      ]
+    },
+    {
+      "ID": 20068,
+      "Entries": [
+        "[Body] Defense performance -- 【本体】防御性能"
+      ]
+    },
+    {
+      "ID": 20069,
+      "Entries": [
+        "[Main unit] EN supply delay -- 【本体】EN供給遅延"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "[PC] AC name -- 【PC】AC名"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "[PC] Mercenary rank -- 【PC】傭兵ランク"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "[PC] Arena rank -- 【PC】アリーナランク"
+      ]
+    },
+    {
+      "ID": 20150,
+      "Entries": [
+        "[PC] Play time -- 【PC】プレイ時間"
+      ]
+    },
+    {
+      "ID": 20190,
+      "Entries": [
+        "[PC] Number of weapon parts owned -- 【PC】所持武器パーツ数"
+      ]
+    },
+    {
+      "ID": 20191,
+      "Entries": [
+        "[PC] Number of frame parts owned -- 【PC】所持フレームパーツ数"
+      ]
+    },
+    {
+      "ID": 20192,
+      "Entries": [
+        "[PC] Number of interior parts owned -- 【PC】所持内装パーツ数"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "[PC] Owned OS enhancement points -- 【PC】所持OS強化ポイント"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "[PC] Owned arena points -- 【PC】所持アリーナポイント"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "[Aircraft configuration] R-ARM UNIT parts name -- 【機体構成】R-ARM UNIT パーツ名"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "[Aircraft configuration] L-ARM UNIT parts name -- 【機体構成】L-ARM UNIT パーツ名"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "[Aircraft configuration] R-BACK UNIT parts name -- 【機体構成】R-BACK UNIT パーツ名"
+      ]
+    },
+    {
+      "ID": 21003,
+      "Entries": [
+        "[Aircraft configuration] L-BACK UNIT parts name -- 【機体構成】L-BACK UNIT パーツ名"
+      ]
+    },
+    {
+      "ID": 21004,
+      "Entries": [
+        "[Aircraft configuration] HEAD part name -- 【機体構成】HEAD パーツ名"
+      ]
+    },
+    {
+      "ID": 21005,
+      "Entries": [
+        "[Aircraft configuration] CORE parts name -- 【機体構成】CORE パーツ名"
+      ]
+    },
+    {
+      "ID": 21006,
+      "Entries": [
+        "[Aircraft configuration] ARMS parts name -- 【機体構成】ARMS パーツ名"
+      ]
+    },
+    {
+      "ID": 21007,
+      "Entries": [
+        "[Aircraft configuration] LEGS parts name -- 【機体構成】LEGS パーツ名"
+      ]
+    },
+    {
+      "ID": 21008,
+      "Entries": [
+        "[Aircraft configuration] BOOSTER parts name -- 【機体構成】BOOSTER パーツ名"
+      ]
+    },
+    {
+      "ID": 21009,
+      "Entries": [
+        "[Aircraft configuration] FCS parts name -- 【機体構成】FCS パーツ名"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "[Aircraft configuration] GENERATOR parts name -- 【機体構成】GENERATOR パーツ名"
+      ]
+    },
+    {
+      "ID": 21011,
+      "Entries": [
+        "[Aircraft configuration] EXPANSION parts name -- 【機体構成】EXPANSION パーツ名"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "[Aircraft] AC NAME -- 【機体】AC NAME"
+      ]
+    },
+    {
+      "ID": 29900,
+      "Entries": [
+        "[PC] Insufficient EN output -- 【PC】EN出力不足"
+      ]
+    },
+    {
+      "ID": 29901,
+      "Entries": [
+        "[PC] Loading limit exceeded -- 【PC】積載限界超過"
+      ]
+    },
+    {
+      "ID": 29902,
+      "Entries": [
+        "[PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過"
+      ]
+    },
+    {
+      "ID": 29903,
+      "Entries": [
+        "WARNING - Unknown"
+      ]
+    },
+    {
+      "ID": 29999,
+      "Entries": [
+        "↑This is for player status -- ↑ここまでプレイヤーステータス用"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Image] Creation date and time -- 【イメージ】作成日時"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "[Image] Creator -- 【イメージ】作成者"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "[Image] UgcID -- 【イメージ】UgcID"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[Image] Number of pieces used -- 【イメージ】使用ピース数"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "----- ↓For decal settings from here ----- -- ----- ↓ここからデカール設定用 -----"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "[Decal] Base position: X -- 【デカール】基点位置：X"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "[Decal] Base position: Y -- 【デカール】基点位置：Y"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "[Decal] Base position: Z -- 【デカール】基点位置：Z"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "[Decal] Base angle: X -- 【デカール】基点角度：X"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "[Decal] Base angle: Y -- 【デカール】基点角度：Y"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "[Decal] Pasting direction correction: X -- 【デカール】貼付向き補正：X"
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        "[Decal] Pasting direction correction: Y -- 【デカール】貼付向き補正：Y"
+      ]
+    },
+    {
+      "ID": 40008,
+      "Entries": [
+        "[Decal] Image angle: Z -- 【デカール】画像角度：Z"
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        "[Decal] Image position: X -- 【デカール】画像位置：X"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "[Decal] Image position: Y -- 【デカール】画像位置：Y"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "[Decal] Image size: X -- 【デカール】画像サイズ：X"
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "[Decal] Image size: Y -- 【デカール】画像サイズ：Y"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "[Decal] Image reversal: left and right -- 【デカール】画像反転：左右"
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        "[Decal] Target for pasting -- 【デカール】貼付対象"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "[Decal] Pasting limit distance -- 【デカール】貼付限界距離"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[Decal] Number of images used -- 【デカール】使用イメージ数"
+      ]
+    },
+    {
+      "ID": 40199,
+      "Entries": [
+        "-----↑This is for decal setting ----- -- -----↑ここまでデカール設定用 -----"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "----- ↓For OS enhancement from here ----- -- ----- ↓ここからOS強化用 -----"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "[OS enhancement] Live ammunition enhancement -- 【OS強化】実弾強化"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "[OS enhancement] EN bullet enhancement -- 【OS強化】EN弾強化"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "[OS enhancement] Explosive bullet enhancement -- 【OS強化】爆発弾強化"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "[OS Enhancement] Fighting Enhancement -- 【OS強化】格闘強化"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "[OS Enhancement] Critical Enhancement -- 【OS強化】クリティカル強化"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "[OS Enhancement] All attribute damage reduction -- 【OS強化】全属性ダメージ軽減"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "[OS enhancement] Increased recovery amount -- 【OS強化】回復量増加"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "[OS enhancement] Hacking performance enhancement -- 【OS強化】ハッキング性能強化"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "[OS enhancement] Overloaded sortie + manual purge lifted -- 【OS強化】 積載超過出撃＋手動パージ解禁"
+      ]
+    },
+    {
+      "ID": 50401,
+      "Entries": [
+        "[OS enhancement] Kick ban lifted -- 【OS強化】キック解禁"
+      ]
+    },
+    {
+      "ID": 50402,
+      "Entries": [
+        "[OS enhancement] Weapon hanger released -- 【OS強化】武器ハンガー解禁"
+      ]
+    },
+    {
+      "ID": 50403,
+      "Entries": [
+        "[OS enhancement] Free aim lifted -- 【OS強化】フリーエイム解禁"
+      ]
+    },
+    {
+      "ID": 50404,
+      "Entries": [
+        "[OS enhancement] Quick turn unlocked -- 【OS強化】クイックターン解禁"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "[OS Enhancement] Assault Armor -- 【OS強化】アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 50501,
+      "Entries": [
+        "[OS Enhancement] Follow Barrier -- 【OS強化】追従バリア"
+      ]
+    },
+    {
+      "ID": 50502,
+      "Entries": [
+        "[OS enhancement] Installation barrier -- 【OS強化】設置バリア"
+      ]
+    },
+    {
+      "ID": 50503,
+      "Entries": [
+        "[OS Enhancement] Emergency Barrier -- 【OS強化】緊急バリア"
+      ]
+    },
+    {
+      "ID": 50999,
+      "Entries": [
+        "-----↑So far for OS enhancement ----- -- -----↑ここまでOS強化用 -----"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "----- ↓For automatic assembly from here ----- -- ----- ↓ここから自動アセン用 -----"
+      ]
+    },
+    {
+      "ID": 59001,
+      "Entries": [
+        "[Automatic assembly] Leg type -- 【自動アセン】脚部タイプ"
+      ]
+    },
+    {
+      "ID": 59002,
+      "Entries": [
+        "[Auto Ascension] Ascension tendency -- 【自動アセン】アセン傾向"
+      ]
+    },
+    {
+      "ID": 59050,
+      "Entries": [
+        "[Auto assemble] Excess load -- 【自動アセン】余剰積載"
+      ]
+    },
+    {
+      "ID": 59051,
+      "Entries": [
+        "[Auto Assemble] Surplus EN -- 【自動アセン】余剰EN"
+      ]
+    },
+    {
+      "ID": 59999,
+      "Entries": [
+        "-----↑For automatic assembly so far ----- -- -----↑ここまで自動アセン用 -----"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "----- ↓For name plate from here ----- -- ----- ↓ここからネームプレート用 -----"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "[Name plate] frame -- 【ネームプレート】枠"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "[Name plate] Back plate -- 【ネームプレート】背後板"
+      ]
+    },
+    {
+      "ID": 60003,
+      "Entries": [
+        "[Name plate] Background -- 【ネームプレート】背景"
+      ]
+    },
+    {
+      "ID": 60004,
+      "Entries": [
+        "[Name plate] Color: Pilot name -- 【ネームプレート】カラー：パイロット名"
+      ]
+    },
+    {
+      "ID": 60005,
+      "Entries": [
+        "[Name plate] Color: Aircraft name -- 【ネームプレート】カラー：機体名"
+      ]
+    },
+    {
+      "ID": 60006,
+      "Entries": [
+        "[Name plate] Color: Online ID -- 【ネームプレート】カラー：オンラインID"
+      ]
+    },
+    {
+      "ID": 60050,
+      "Entries": [
+        "[Name plate] Required points -- 【ネームプレート】必要ポイント"
+      ]
+    },
+    {
+      "ID": 60999,
+      "Entries": [
+        "-----↑This is for name plate ----- -- -----↑ここまでネームプレート用 -----"
+      ]
+    },
+    {
+      "ID": 79000,
+      "Entries": [
+        "----- ↓For arena from here ----- -- ----- ↓ここからアリーナ用 -----"
+      ]
+    },
+    {
+      "ID": 79001,
+      "Entries": [
+        "[Arena] Opponent: Rank -- 【アリーナ】相手：ランク"
+      ]
+    },
+    {
+      "ID": 79002,
+      "Entries": [
+        "[Arena] Opponent: Pilot name (for menu) -- 【アリーナ】相手：パイロット名(メニュー用)"
+      ]
+    },
+    {
+      "ID": 79003,
+      "Entries": [
+        "[Arena] Opponent: Machine name (for menu) -- 【アリーナ】相手：機体名(メニュー用)"
+      ]
+    },
+    {
+      "ID": 79004,
+      "Entries": [
+        "[Arena] Opponent: Profile -- 【アリーナ】相手：プロフィール"
+      ]
+    },
+    {
+      "ID": 79005,
+      "Entries": [
+        "[Arena] Amount earned -- 【アリーナ】獲得金額"
+      ]
+    },
+    {
+      "ID": 79006,
+      "Entries": [
+        "[Arena] Obtained OS enhancement points -- 【アリーナ】獲得OS強化ポイント"
+      ]
+    },
+    {
+      "ID": 79007,
+      "Entries": [
+        "[Arena] Opponent: Pilot name (for FE) -- 【アリーナ】相手：パイロット名(FE用)"
+      ]
+    },
+    {
+      "ID": 79008,
+      "Entries": [
+        "[Arena] Opponent: Machine name (for FE) -- 【アリーナ】相手：機体名(FE用)"
+      ]
+    },
+    {
+      "ID": 79900,
+      "Entries": [
+        "[Arena] Result: Battle time -- 【アリーナ】リザルト：対戦時間"
+      ]
+    },
+    {
+      "ID": 79901,
+      "Entries": [
+        "[Arena] Result: Reward amount -- 【アリーナ】リザルト：報酬額"
+      ]
+    },
+    {
+      "ID": 79999,
+      "Entries": [
+        "-----↑For Arena so far ----- -- -----↑ここまでアリーナ用 -----"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "----- ↓For mission results from here ----- -- ----- ↓ここからミッションリザルト用 -----"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "[Result] Income: Basic compensation -- 【リザルト】収入：基本報酬"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "[Result] Income: Obtained items -- 【リザルト】収入：入手物"
+      ]
+    },
+    {
+      "ID": 80003,
+      "Entries": [
+        "[Result] Income: Special addition total -- 【リザルト】収入：特別加算合計"
+      ]
+    },
+    {
+      "ID": 80004,
+      "Entries": [
+        "[Result] Income: Special subtraction total -- 【リザルト】収入：特別減算合計"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "[Result] Income: Special addition 0 -- 【リザルト】収入：特別加算0"
+      ]
+    },
+    {
+      "ID": 80011,
+      "Entries": [
+        "[Result] Income: Special addition 1 -- 【リザルト】収入：特別加算1"
+      ]
+    },
+    {
+      "ID": 80012,
+      "Entries": [
+        "[Result] Income: Special addition 2 -- 【リザルト】収入：特別加算2"
+      ]
+    },
+    {
+      "ID": 80013,
+      "Entries": [
+        "[Result] Income: Special addition 3 -- 【リザルト】収入：特別加算3"
+      ]
+    },
+    {
+      "ID": 80014,
+      "Entries": [
+        "[Result] Income: Special addition 4 -- 【リザルト】収入：特別加算4"
+      ]
+    },
+    {
+      "ID": 80019,
+      "Entries": [
+        "[Result] Income: Total -- 【リザルト】収入：合計"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "[Result] Cost: Repair cost -- 【リザルト】費用：修理費"
+      ]
+    },
+    {
+      "ID": 80021,
+      "Entries": [
+        "[Result] Cost: Ammunition cost -- 【リザルト】費用：弾薬費"
+      ]
+    },
+    {
+      "ID": 80030,
+      "Entries": [
+        "[Result] Cost: Special deduction 0 -- 【リザルト】費用：特別減算0"
+      ]
+    },
+    {
+      "ID": 80031,
+      "Entries": [
+        "[Result] Cost: Special subtraction 1 -- 【リザルト】費用：特別減算1"
+      ]
+    },
+    {
+      "ID": 80032,
+      "Entries": [
+        "[Result] Cost: Special subtraction 2 -- 【リザルト】費用：特別減算2"
+      ]
+    },
+    {
+      "ID": 80033,
+      "Entries": [
+        "[Result] Cost: Special subtraction 3 -- 【リザルト】費用：特別減算3"
+      ]
+    },
+    {
+      "ID": 80034,
+      "Entries": [
+        "[Result] Cost: Special subtraction 4 -- 【リザルト】費用：特別減算4"
+      ]
+    },
+    {
+      "ID": 80039,
+      "Entries": [
+        "[Result] Cost: Total -- 【リザルト】費用：合計"
+      ]
+    },
+    {
+      "ID": 80040,
+      "Entries": [
+        "[Result] Corporate contribution level 0 -- 【リザルト】企業貢献度0"
+      ]
+    },
+    {
+      "ID": 80041,
+      "Entries": [
+        "[Result] Corporate contribution level 1 -- 【リザルト】企業貢献度1"
+      ]
+    },
+    {
+      "ID": 80042,
+      "Entries": [
+        "[Result] Corporate contribution level 2 -- 【リザルト】企業貢献度2"
+      ]
+    },
+    {
+      "ID": 80043,
+      "Entries": [
+        "[Result] Corporate contribution level 3 -- 【リザルト】企業貢献度3"
+      ]
+    },
+    {
+      "ID": 80044,
+      "Entries": [
+        "[Result] Corporate contribution level 4 -- 【リザルト】企業貢献度4"
+      ]
+    },
+    {
+      "ID": 80050,
+      "Entries": [
+        "[Result] Experience points gained -- 【リザルト】獲得経験値"
+      ]
+    },
+    {
+      "ID": 80090,
+      "Entries": [
+        "[Result] Balance: Total -- 【リザルト】収支：合計"
+      ]
+    },
+    {
+      "ID": 80999,
+      "Entries": [
+        "↑For mission results so far -- ↑ここまでミッションリザルト用"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "[Game option] Automatic lock-on switching -- 【ゲームオプション】ロックオン自動切換"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "[Game options] Controller vibration -- 【ゲームオプション】コントローラ振動"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "[Game options] Boost operation -- 【ゲームオプション】ブースト操作"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "[Game options] Assault boost operation -- 【ゲームオプション】アサルトブースト操作"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "[Game options] Limiter release operation -- 【ゲームオプション】リミッター解除操作"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "[Game option] Auto purge -- 【ゲームオプション】オートパージ"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "[Camera options] Camera operation up and down -- 【カメラオプション】カメラ操作\u3000上下"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "[Camera options] Camera operation left and right -- 【カメラオプション】カメラ操作\u3000左右"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "[Camera option] Camera vertical reset -- 【カメラオプション】カメラ上下リセット"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "[Camera options] Camera speed -- 【カメラオプション】カメラ速度"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "[Display options] Subtitle display -- 【表示オプション】字幕表示"
+      ]
+    },
+    {
+      "ID": 90022,
+      "Entries": [
+        "[Display options] HUD color (button) -- 【表示オプション】HUDカラー(ボタン)"
+      ]
+    },
+    {
+      "ID": 90023,
+      "Entries": [
+        "[Display options] HUD layout (button) -- 【表示オプション】HUDレイアウト(ボタン)"
+      ]
+    },
+    {
+      "ID": 90024,
+      "Entries": [
+        "[Display options] HDR -- 【表示オプション】HDR"
+      ]
+    },
+    {
+      "ID": 90025,
+      "Entries": [
+        "[Display options] Brightness adjustment (button) -- 【表示オプション】輝度調整(ボタン)"
+      ]
+    },
+    {
+      "ID": 90026,
+      "Entries": [
+        "[Display options] Image quality adjustment (button) -- 【表示オプション】画質調整(ボタン)"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "[Sound option] BGM volume -- 【音響オプション】BGM音量"
+      ]
+    },
+    {
+      "ID": 90031,
+      "Entries": [
+        "[Sound option] SE volume -- 【音響オプション】SE音量"
+      ]
+    },
+    {
+      "ID": 90032,
+      "Entries": [
+        "[Sound option] Voice volume -- 【音響オプション】ボイス音量"
+      ]
+    },
+    {
+      "ID": 90033,
+      "Entries": [
+        "[Sound option] Overall volume -- 【音響オプション】全体音量"
+      ]
+    },
+    {
+      "ID": 90040,
+      "Entries": [
+        "[Brightness adjustment] SDR brightness -- 【輝度調整】SDR輝度"
+      ]
+    },
+    {
+      "ID": 90050,
+      "Entries": [
+        "[Image quality adjustment] HDR brightness -- 【画質調整】HDR輝度"
+      ]
+    },
+    {
+      "ID": 90051,
+      "Entries": [
+        "[Image quality adjustment] HDR maximum brightness -- 【画質調整】HDR最大輝度"
+      ]
+    },
+    {
+      "ID": 90052,
+      "Entries": [
+        "[Image quality adjustment] HDR saturation -- 【画質調整】HDR彩度"
+      ]
+    },
+    {
+      "ID": 90090,
+      "Entries": [
+        "[Button settings] Button assignment -- 【ボタン設定】ボタン割り当て"
+      ]
+    },
+    {
+      "ID": 90091,
+      "Entries": [
+        "[Button settings] Button assignment details settings (button) -- 【ボタン設定】ボタン割り当て詳細設定(ボタン)"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "[Input device settings] Devices targeted for operation guide -- 【入力機器設定】操作ガイド対象デバイス"
+      ]
+    },
+    {
+      "ID": 90101,
+      "Entries": [
+        "[Input device settings] Mouse operation sensitivity -- 【入力機器設定】マウス操作 感度"
+      ]
+    },
+    {
+      "ID": 90102,
+      "Entries": [
+        "[Input device settings] Mouse operation left and right -- 【入力機器設定】マウス操作 左右"
+      ]
+    },
+    {
+      "ID": 90103,
+      "Entries": [
+        "[Input device settings] Mouse operation up and down -- 【入力機器設定】マウス操作 上下"
+      ]
+    },
+    {
+      "ID": 90104,
+      "Entries": [
+        "[Input device settings] Key settings -- 【入力機器設定】キー設定"
+      ]
+    },
+    {
+      "ID": 90130,
+      "Entries": [
+        "[Network settings] Matching region selection -- 【ネットワーク設定】マッチング地域選択"
+      ]
+    },
+    {
+      "ID": 90131,
+      "Entries": [
+        "[Network settings] Voice chat -- 【ネットワーク設定】ボイスチャット"
+      ]
+    },
+    {
+      "ID": 90132,
+      "Entries": [
+        "[Network settings] Player name display -- 【ネットワーク設定】プレイヤー名称表示"
+      ]
+    },
+    {
+      "ID": 90133,
+      "Entries": [
+        "[Network settings] Title startup settings -- 【ネットワーク設定】タイトル起動設定"
+      ]
+    },
+    {
+      "ID": 90134,
+      "Entries": [
+        "[Network settings] Consent regarding data use -- 【ネットワーク設定】データ使用に関する同意"
+      ]
+    },
+    {
+      "ID": 90135,
+      "Entries": [
+        "[Network Settings] Software Terms of Use -- 【ネットワーク設定】ソフトウェア利用規約"
+      ]
+    },
+    {
+      "ID": 90136,
+      "Entries": [
+        "[Network Settings] Privacy Policy -- 【ネットワーク設定】プライバシーポリシー"
+      ]
+    },
+    {
+      "ID": 90150,
+      "Entries": [
+        "[Language settings] Text -- 【言語設定】テキスト"
+      ]
+    },
+    {
+      "ID": 90151,
+      "Entries": [
+        "[Language settings] Voice -- 【言語設定】ボイス"
+      ]
+    },
+    {
+      "ID": 90200,
+      "Entries": [
+        "[Graphic settings] Screen mode -- 【グラフィック設定】スクリーンモード"
+      ]
+    },
+    {
+      "ID": 90201,
+      "Entries": [
+        "[Graphic settings] Screen resolution -- 【グラフィック設定】画面解像度"
+      ]
+    },
+    {
+      "ID": 90202,
+      "Entries": [
+        "[Graphic settings] Automatic drawing adjustment -- 【グラフィック設定】自動描画調整"
+      ]
+    },
+    {
+      "ID": 90203,
+      "Entries": [
+        "[Graphic settings] Quality settings -- 【グラフィック設定】品質設定"
+      ]
+    },
+    {
+      "ID": 90204,
+      "Entries": [
+        "[Graphic settings] Detailed settings (button) -- 【グラフィック設定】詳細設定(ボタン)"
+      ]
+    },
+    {
+      "ID": 90205,
+      "Entries": [
+        "[Graphic settings] Performance settings -- 【グラフィック設定】パフォーマンス設定"
+      ]
+    },
+    {
+      "ID": 90206,
+      "Entries": [
+        "[Graphic settings] Ray tracing function (PS5/Scarlett) -- 【グラフィック設定】レイトレーシング機能 (PS5/Scarlett)"
+      ]
+    },
+    {
+      "ID": 90207,
+      "Entries": [
+        "[Graphic settings] FPS limit -- 【グラフィック設定】FPS制限"
+      ]
+    },
+    {
+      "ID": 90208,
+      "Entries": [
+        "[Graphic settings] Vsync -- 【グラフィック設定】Vsync"
+      ]
+    },
+    {
+      "ID": 90210,
+      "Entries": [
+        "[Graphic details] Texture quality -- 【グラフィック詳細】テクスチャの品質"
+      ]
+    },
+    {
+      "ID": 90211,
+      "Entries": [
+        "[Graphic details] Applying anti-aliasing -- 【グラフィック詳細】アンチエイリアスの適用"
+      ]
+    },
+    {
+      "ID": 90212,
+      "Entries": [
+        "[Graphic details] SSAO -- 【グラフィック詳細】SSAO"
+      ]
+    },
+    {
+      "ID": 90213,
+      "Entries": [
+        "[Graphic details] Depth of field -- 【グラフィック詳細】被写界深度"
+      ]
+    },
+    {
+      "ID": 90214,
+      "Entries": [
+        "[Graphic details] Motion blur -- 【グラフィック詳細】モーションブラー"
+      ]
+    },
+    {
+      "ID": 90215,
+      "Entries": [
+        "[Graphic details] Shadow quality -- 【グラフィック詳細】影の品質"
+      ]
+    },
+    {
+      "ID": 90216,
+      "Entries": [
+        "[Graphic details] Writing quality -- 【グラフィック詳細】ライティングの品質"
+      ]
+    },
+    {
+      "ID": 90217,
+      "Entries": [
+        "[Graphic details] Effect quality -- 【グラフィック詳細】エフェクトの品質"
+      ]
+    },
+    {
+      "ID": 90218,
+      "Entries": [
+        "[Graphic details] Volumetric fog quality -- 【グラフィック詳細】ボリューメトリックフォグの品質"
+      ]
+    },
+    {
+      "ID": 90219,
+      "Entries": [
+        "[Graphic details] Quality of reflective expression -- 【グラフィック詳細】反射表現の品質"
+      ]
+    },
+    {
+      "ID": 90220,
+      "Entries": [
+        "[Graphic details] Water surface quality -- 【グラフィック詳細】水面の品質"
+      ]
+    },
+    {
+      "ID": 90221,
+      "Entries": [
+        "[Graphic details] Shader quality -- 【グラフィック詳細】シェーダーの品質"
+      ]
+    },
+    {
+      "ID": 90222,
+      "Entries": [
+        "[Graphic details] Ray tracing quality -- 【グラフィック詳細】レイトレーシング品質"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "[Tuning] Short-range lock suitable -- 【チューニング】近距離ロック適正"
+      ]
+    },
+    {
+      "ID": 92001,
+      "Entries": [
+        "[Tuning] Long distance lock suitable -- 【チューニング】遠距離ロック適正"
+      ]
+    },
+    {
+      "ID": 92002,
+      "Entries": [
+        "[Tuning] Missile lock appropriate -- 【チューニング】ミサイルロック適正"
+      ]
+    },
+    {
+      "ID": 92003,
+      "Entries": [
+        "[Tuning] EN attack output -- 【チューニング】EN攻撃出力"
+      ]
+    },
+    {
+      "ID": 92004,
+      "Entries": [
+        "[Tuning] Armor performance -- 【チューニング】装甲性能"
+      ]
+    },
+    {
+      "ID": 92005,
+      "Entries": [
+        "[Tuning] EN capacity -- 【チューニング】EN容量"
+      ]
+    },
+    {
+      "ID": 92006,
+      "Entries": [
+        "[Tuning] Stealth suitable -- 【チューニング】ステルス適正"
+      ]
+    },
+    {
+      "ID": 92007,
+      "Entries": [
+        "[Tuning] Loading -- 【チューニング】積載"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[Photo mode] Viewing angle -- 【フォトモード】視野角"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "[Photo mode] Tilt -- 【フォトモード】傾き"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "[Photo mode] Proximity strength -- 【フォトモード】近接強度"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "[Photo mode] Distance intensity -- 【フォトモード】遠方強度"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "[Photo mode] Focal length -- 【フォトモード】焦点距離"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "[Photo mode] F value -- 【フォトモード】F値"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "[Photo mode] Aperture value -- 【フォトモード】絞り値"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "[Photo mode] Exposure -- 【フォトモード】露出"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "[Photo mode] Hue -- 【フォトモード】色相"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "[Photo mode] Brightness -- 【フォトモード】明度"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "[Photo mode] Saturation -- 【フォトモード】彩度"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "[Photo mode] Contrast -- 【フォトモード】コントラスト"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "[Photo mode] Color scale R -- 【フォトモード】カラースケールR"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "[Photo mode] Color scale G -- 【フォトモード】カラースケールG"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "[Photo mode] Color scale B -- 【フォトモード】カラースケールB"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "[Photo Mode] Color Shift R -- 【フォトモード】カラーシフトR"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "[Photo mode] Color shift G -- 【フォトモード】カラーシフトG"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "[Photo mode] Color shift B -- 【フォトモード】カラーシフトB"
+      ]
+    },
+    {
+      "ID": 100018,
+      "Entries": [
+        "[Photo mode] Luminous level -- 【フォトモード】発光レベル"
+      ]
+    },
+    {
+      "ID": 100019,
+      "Entries": [
+        "[Photo mode] Smoothness of blur -- 【フォトモード】ぼかしの滑らかさ"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "[Photo mode] Degree of combination of light emission -- 【フォトモード】発光の合成度合い"
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "[Photo mode] Blur -- 【フォトモード】ブラー"
+      ]
+    },
+    {
+      "ID": 100022,
+      "Entries": [
+        "[Photo mode] Strength -- 【フォトモード】強度"
+      ]
+    },
+    {
+      "ID": 100023,
+      "Entries": [
+        "[Photo mode] Blur range -- 【フォトモード】ぼかしの範囲"
+      ]
+    },
+    {
+      "ID": 100024,
+      "Entries": [
+        "[Photo mode] Camera blur horizontal direction -- 【フォトモード】カメラブラー水平方向"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "[Photo mode] Camera blur vertical direction -- 【フォトモード】カメラブラー垂直方向"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "[Photo mode] Camera blur depth direction -- 【フォトモード】カメラブラー奥行方向"
+      ]
+    },
+    {
+      "ID": 100027,
+      "Entries": [
+        "[Photo mode] Bloom: Brightness -- 【フォトモード】ブルーム：明るさ"
+      ]
+    },
+    {
+      "ID": 100028,
+      "Entries": [
+        "[Photo mode] Bloom: Threshold -- 【フォトモード】ブルーム：閾値"
+      ]
+    },
+    {
+      "ID": 100029,
+      "Entries": [
+        "[Photo mode] Bloom: Saturation -- 【フォトモード】ブルーム：彩度"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "[Photo Mode] Bloom: Smoothness -- 【フォトモード】ブルーム：滑らかさ"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "[ENEMY SETTING] Enemy pattern -- 【ENEMY SETTING】敵パターン"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "【ENEMY SETTING】AI"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "[Room settings] Number of people -- 【ルーム設定】人数"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "[Room Settings] Battle Rules -- 【ルーム設定】対戦ルール"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "[Room Settings] Time limit -- 【ルーム設定】制限時間"
+      ]
+    },
+    {
+      "ID": 120003,
+      "Entries": [
+        "[Room Settings] Map -- 【ルーム設定】マップ"
+      ]
+    },
+    {
+      "ID": 120004,
+      "Entries": [
+        "[Room Settings] Team participation method -- 【ルーム設定】チーム参加方式"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "[Room settings] Publication method -- 【ルーム設定】公開方式"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "[Room Settings] Keyword -- 【ルーム設定】キーワード"
+      ]
+    },
+    {
+      "ID": 120090,
+      "Entries": [
+        "Room creation button -- ルーム作成ボタン"
+      ]
+    },
+    {
+      "ID": 120091,
+      "Entries": [
+        "Room search button -- ルーム検索ボタン"
+      ]
+    },
+    {
+      "ID": 120092,
+      "Entries": [
+        "Room settings change button -- ルーム設定変更ボタン"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "[Room search results] Host ID/Keyword -- 【ルーム検索結果】ホストID/キーワード"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "[Room search results] Current number of people in the room -- 【ルーム検索結果】ルーム現在人数"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "[Battle history] Battle mode -- 【対戦履歴】対戦モード"
+      ]
+    },
+    {
+      "ID": 180001,
+      "Entries": [
+        "[Battle history] Battle rules -- 【対戦履歴】対戦ルール"
+      ]
+    },
+    {
+      "ID": 180002,
+      "Entries": [
+        "[Match history] Match date and time -- 【対戦履歴】対戦日時"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "[Notification] Category -- 【通報】カテゴリ"
+      ]
+    },
+    {
+      "ID": 190001,
+      "Entries": [
+        "[Notification] Reason 1 -- 【通報】理由1"
+      ]
+    },
+    {
+      "ID": 190002,
+      "Entries": [
+        "[Notification] Reason 2 -- 【通報】理由2"
+      ]
+    },
+    {
+      "ID": 190003,
+      "Entries": [
+        "[Notification] Reason 3 -- 【通報】理由3"
+      ]
+    },
+    {
+      "ID": 190010,
+      "Entries": [
+        "[Report] Report button -- 【通報】通報ボタン"
+      ]
+    }
+  ]
+}

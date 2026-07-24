@@ -1,0 +1,821 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 7,
+      "Entries": [
+        "Soul of King Lendor"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "prison key"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "water prison key"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Prison castle 1st floor key"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Prison castle 2nd floor key"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Prison castle 3rd floor key"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Prison castle 4th floor key"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Key to the second floor of the prison mezzanine"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Phalanx DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "King's Shield DS"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "King's Sword DS"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Referee DS"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Storm Warrior DS"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Storm Beast DS"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Kamisama DS"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Chimera DS"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Old Man in Yellow DS"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Hiru Demon DS"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Fly Colossus DS"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Libra DS"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Large Spider DS"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Fire Giant DS"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Dragon Demon DS"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Heroine DS"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Fat Demon DS"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Hiryuko DS"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Flying dragon parent DS"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "mausoleum key"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Prison Tower Key"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Proof of Gold Run"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "jade hair ornament"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Prison Key (I)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Prison Key (II)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Prison Key (III)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Prison Key (IV)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Prison Key (II) 2"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Logan's Prison Key"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Bad End DS"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "[Seoul Lantern]"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Potion A"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Potion B"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Potion C"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Potion D"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Potion E"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "MP Potion A"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "MP Potion B"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Antidote A"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Antidote B"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Panacea"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "whetstone"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "throwing knife"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "poison throwing knife"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "soul coin"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "rosin"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Burning pine resin"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "stone of light"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "telescope"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Gate"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "resuscitation medicine"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "signpost stone"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "hemostatic agent"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "covert african throwing knives"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Nameless Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "The pure soul of an unnamed warrior"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Skilled Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Pure Soul of a Skilled Warrior"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Renowned Warrior's Soul"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Pure Soul of a Famous Warrior"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Legendary Warrior Soul"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Pure Soul of a Legendary Warrior"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "infinity gate"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "hard stone fragment"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "large piece of hardstone"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "lump of hard stone"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "pure hard stone"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "sharp stone fragment"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "large piece of sharp stone"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "chunk of sharp stone"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "pure sharp stone"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "piece of black wire"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "A large piece of black steel wire"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "lump of black steel wire"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "pure black steel wire"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Minagi Stone Fragment"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Lump of Minagi Stone"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "pure minagi stone"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Fragment of Nibi Stone"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "lump of pumice stone"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "pure nibi stone"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "piece of gold wire"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "lump of steel wire"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "pure gold steel wire"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "blade stone fragment"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "blade stone block"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "pure blade stone"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Fragment of Spider Thread Steel Wire"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Mass of spider silk steel wire"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "pure spider silk wire"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "Mercury Stone Fragment"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "lump of mercury stone"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "pure mercury stone"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "dragon stone shard"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "lump of dragon stone"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "pure dragon stone"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "sucking stone fragment"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "lump of sucking stone"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        "pure sucking stone"
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        "medulla stone fragment"
+      ]
+    },
+    {
+      "ID": 2037,
+      "Entries": [
+        "lump of medulla"
+      ]
+    },
+    {
+      "ID": 2038,
+      "Entries": [
+        "pure medulla"
+      ]
+    },
+    {
+      "ID": 2039,
+      "Entries": [
+        "Moonstone Fragment"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "lump of moonstone"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "pure moonstone"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "Moonstone Fragment"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "lump of moonstone"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "pure moonstone"
+      ]
+    },
+    {
+      "ID": 2045,
+      "Entries": [
+        "faint stone shard"
+      ]
+    },
+    {
+      "ID": 2046,
+      "Entries": [
+        "chunk of faint stone"
+      ]
+    },
+    {
+      "ID": 2047,
+      "Entries": [
+        "pure faint stone"
+      ]
+    },
+    {
+      "ID": 2048,
+      "Entries": [
+        "Magic shield stone fragment"
+      ]
+    },
+    {
+      "ID": 2049,
+      "Entries": [
+        "Block of Magic Shield Stone"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "pure magic stone"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "round stone fragment"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "chunk of stone"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "pure stone"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "[Reinforcement reset item]"
+      ]
+    },
+    {
+      "ID": 2055,
+      "Entries": [
+        "A large piece of minagi stone"
+      ]
+    },
+    {
+      "ID": 2056,
+      "Entries": [
+        "large piece of nibi stone"
+      ]
+    },
+    {
+      "ID": 2057,
+      "Entries": [
+        "Large piece of blade stone"
+      ]
+    },
+    {
+      "ID": 9995,
+      "Entries": [
+        "Black Eyes_Intrusion [System]"
+      ]
+    },
+    {
+      "ID": 9996,
+      "Entries": [
+        "Red eyes_Black_Soulsign [System]"
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "Blue eyes_Soulsign [system]"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "unused_kickout [system]"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "White eyes_leaveSession [system]"
+      ]
+    }
+  ]
+}

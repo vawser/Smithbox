@@ -1,0 +1,47 @@
+{
+  "Key": "ATKPARAM_CRITICAL_SFX_LEVEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_CRITICAL_SFX_LEVEL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    }
+  ]
+}

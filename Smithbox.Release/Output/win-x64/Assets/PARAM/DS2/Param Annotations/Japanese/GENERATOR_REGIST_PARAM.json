@@ -1,0 +1,113 @@
+{
+  "Param": "GENERATOR_REGIST_PARAM",
+  "Type": "GENERATOR_REGIST_PARAM",
+  "Name": "GENERATOR_REGIST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "EnemyId",
+      "Name": "登録エネミー",
+      "Description": ""
+    },
+    {
+      "Field": "HighLogicId",
+      "Name": "上位ロジックID",
+      "Description": ""
+    },
+    {
+      "Field": "LowLogicId",
+      "Name": "下位ロジックID",
+      "Description": ""
+    },
+    {
+      "Field": "startUpStateType",
+      "Name": "起動ステートタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bAnotherWorldGenerate",
+      "Name": "異次元空間生成",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock1",
+      "Name": "メモリ1",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock2",
+      "Name": "メモリ2",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock3",
+      "Name": "メモリ3",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock4",
+      "Name": "メモリ4",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock5",
+      "Name": "メモリ5",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock6",
+      "Name": "メモリ6",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock7",
+      "Name": "メモリ7",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock8",
+      "Name": "メモリ8",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock9",
+      "Name": "メモリ9",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock10",
+      "Name": "メモリ10",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock11",
+      "Name": "メモリ11",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock12",
+      "Name": "メモリ12",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock13",
+      "Name": "メモリ13",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock14",
+      "Name": "メモリ14",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock15",
+      "Name": "メモリ15",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock16",
+      "Name": "メモリ16",
+      "Description": ""
+    }
+  ]
+}

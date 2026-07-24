@@ -1,0 +1,13 @@
+{
+  "Param": "EZSTATE_SHARED_PARAM",
+  "Type": "EZSTATE_SHARED_PARAM",
+  "Name": "EZSTATE_SHARED_PARAM",
+  "Description": "Stores a shared configuration value used by the EZState system for state logic or behavior control.",
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "Setting Value",
+      "Description": "Shared parameter value referenced by EZState logic, state machines, or related gameplay systems."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "Name": "MapObjectBreakActionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Always Broken"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Horizontal Movement"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Walking"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Dash"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Avoidance"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Falling"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Damage"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Attack"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Falling Attack"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Unbreakable"
+      ]
+    }
+  ]
+}

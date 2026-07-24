@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MENUPROPERTY_LAYOUT</ParamType>
+  <Unk06>2</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="fixstr LayoutPath[16]">
+      <DisplayName>レイアウトパス</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 PropertyID">
+      <DisplayName>プロパティID</DisplayName>
+      <Enum>MENU_PROPERTY_ID</Enum>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 CaptionTextID">
+      <DisplayName>項目名テキストID</DisplayName>
+      <Description>有効なテキストIDの場合、プロパティのテキストIDを上書きして表示します。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 HelpTextID">
+      <DisplayName>ヘルプテキストID</DisplayName>
+      <Description>有効なテキストIDの場合、項目ヘルプで選択できるようになります。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[4]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>1</Increment>
+      <SortID>5</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

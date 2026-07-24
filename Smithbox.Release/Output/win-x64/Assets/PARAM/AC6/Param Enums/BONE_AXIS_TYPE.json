@@ -1,0 +1,38 @@
+{
+  "Key": "BONE_AXIS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BONE_AXIS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Z"
+        }
+      ]
+    }
+  ]
+}

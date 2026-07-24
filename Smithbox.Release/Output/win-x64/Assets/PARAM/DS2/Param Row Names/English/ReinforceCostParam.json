@@ -1,0 +1,3515 @@
+{
+  "Name": "ReinforceCostParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No Reinforce"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101350,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101400,
+      "Entries": [
+        "Handmaid's Ladle"
+      ]
+    },
+    {
+      "ID": 101500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101600,
+      "Entries": [
+        "Hand Axe"
+      ]
+    },
+    {
+      "ID": 101700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102600,
+      "Entries": [
+        "Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 102700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 200900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201350,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201400,
+      "Entries": [
+        "Club / Blacksmith's Hammer"
+      ]
+    },
+    {
+      "ID": 201500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 201600,
+      "Entries": [
+        "Infantry Axe"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "Bandit Greataxe"
+      ]
+    },
+    {
+      "ID": 201800,
+      "Entries": [
+        "Great Scythe"
+      ]
+    },
+    {
+      "ID": 201900,
+      "Entries": [
+        "Lucerne"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Short Bow"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 202200,
+      "Entries": [
+        "Light Crossbow"
+      ]
+    },
+    {
+      "ID": 202300,
+      "Entries": [
+        "Sorcerer's Staff"
+      ]
+    },
+    {
+      "ID": 202400,
+      "Entries": [
+        "Cleric's Sacred Chime"
+      ]
+    },
+    {
+      "ID": 202500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 202600,
+      "Entries": [
+        "Buckler / Benhart's Parma / Transgressor's Leather Shield"
+      ]
+    },
+    {
+      "ID": 202700,
+      "Entries": [
+        "Wooden Shield / Blue Wooden Shield / Hollow Soldier Shield / Yellow Quartz Shield"
+      ]
+    },
+    {
+      "ID": 202800,
+      "Entries": [
+        "Twin Dragon Greatshield"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Claws / Malformed Claws / Manikin Claws / Work Hook"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Notched Whip / Bloodied Whip"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Generic - Dagger"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Rapier / Estoc / Mail Breaker"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Generic - Spear"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "Heide Lance / Rampart Golem Lance"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Twinblade / Stone Twinblade"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "Generic - Curved Sword"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Generic - Straight Sword"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Uchigatana / Washing Pole / Blacksteel Katana"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Generic - Greatsword"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Zweihander / Greatsword / Old Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 301350,
+      "Entries": [
+        "Murakumo"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "Generic - Hammer"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "Generic - Great Hammer"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "Generic - Axe"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "Greataxe / Lion Greataxe / Gyrm Greataxe / Drakekeeper's Greataxe"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Great Machete / Full Moon Sickle / Crescent Sickle"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "Generic - Halberd"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Long Bow / Sea Bow / Bell Keeper Bow"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 302200,
+      "Entries": [
+        "Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 302300,
+      "Entries": [
+        "Generic - Staff"
+      ]
+    },
+    {
+      "ID": 302400,
+      "Entries": [
+        "Priest's Chime / Archdrake Chime / Caitha's Chime / Protective Chime"
+      ]
+    },
+    {
+      "ID": 302500,
+      "Entries": [
+        "Generic - Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 302600,
+      "Entries": [
+        "Generic - Small Shield"
+      ]
+    },
+    {
+      "ID": 302700,
+      "Entries": [
+        "Generic - Medium Shield"
+      ]
+    },
+    {
+      "ID": 302800,
+      "Entries": [
+        "Generic - Greatshield"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 400200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 400300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 400400,
+      "Entries": [
+        "Manikin Knife"
+      ]
+    },
+    {
+      "ID": 400500,
+      "Entries": [
+        "Espada Ropera / Ricard's Rapier"
+      ]
+    },
+    {
+      "ID": 400600,
+      "Entries": [
+        "Partizan / Heide Spear / Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 400700,
+      "Entries": [
+        "Grand Lance"
+      ]
+    },
+    {
+      "ID": 400800,
+      "Entries": [
+        "Red Iron Twinblade"
+      ]
+    },
+    {
+      "ID": 400900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Possessed Armor Sword"
+      ]
+    },
+    {
+      "ID": 401100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401300,
+      "Entries": [
+        "Drakekeeper's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 401350,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401400,
+      "Entries": [
+        "Mace of the Insolent"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "Great Club / Sanctum Mace"
+      ]
+    },
+    {
+      "ID": 401600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 401900,
+      "Entries": [
+        "Syan's Halberd"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Composite Bow / Hunter's Blackbow"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Alonne Greatbow / Possessed Armor Greatbow"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Sanctum Crossbow / Sanctum Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 402300,
+      "Entries": [
+        "Staff of Amana / Pilgrim's Spontoon / Retainer Staff / Sorcerer's Twinblade"
+      ]
+    },
+    {
+      "ID": 402400,
+      "Entries": [
+        "Witchtree Bellvine / Disc Chime / Sanctum Shield"
+      ]
+    },
+    {
+      "ID": 402500,
+      "Entries": [
+        "Dark Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 402600,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 402700,
+      "Entries": [
+        "Golden Wing Shield / Vessel Shield / Watchdragon Parma"
+      ]
+    },
+    {
+      "ID": 402800,
+      "Entries": [
+        "Greatshield of Glory / Wicked Eye Greatshield"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 500900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501100,
+      "Entries": [
+        "Darkdrift"
+      ]
+    },
+    {
+      "ID": 501200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501350,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 501900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502200,
+      "Entries": [
+        "Avelyn"
+      ]
+    },
+    {
+      "ID": 502300,
+      "Entries": [
+        "Black Witch's Staff"
+      ]
+    },
+    {
+      "ID": 502400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 502800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2008000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2008001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2008002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2008003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2108000,
+      "Entries": [
+        "Prisoner's Hood"
+      ]
+    },
+    {
+      "ID": 2108001,
+      "Entries": [
+        "Prisoner's Tatters"
+      ]
+    },
+    {
+      "ID": 2108002,
+      "Entries": [
+        "Prisoner's Gloves"
+      ]
+    },
+    {
+      "ID": 2108003,
+      "Entries": [
+        "Prisoner's Waistcloth"
+      ]
+    },
+    {
+      "ID": 2208004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2208005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2208006,
+      "Entries": [
+        "Hollow Soldier Gauntlets"
+      ]
+    },
+    {
+      "ID": 2208007,
+      "Entries": [
+        "Hollow Soldier Leggings"
+      ]
+    },
+    {
+      "ID": 2308008,
+      "Entries": [
+        "Hollow Skin"
+      ]
+    },
+    {
+      "ID": 2308009,
+      "Entries": [
+        "Desert Sorceress Top"
+      ]
+    },
+    {
+      "ID": 2308010,
+      "Entries": [
+        "Generic - Arms Slot"
+      ]
+    },
+    {
+      "ID": 2308011,
+      "Entries": [
+        "Gyrm Boots / Bell Keeper Trousers"
+      ]
+    },
+    {
+      "ID": 2408012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2408013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2408014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2408015,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2508016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2508017,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2508018,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2508019,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3008001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3008002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3008003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3108000,
+      "Entries": [
+        "Imported Hood"
+      ]
+    },
+    {
+      "ID": 3108001,
+      "Entries": [
+        "Imported Tunic"
+      ]
+    },
+    {
+      "ID": 3108002,
+      "Entries": [
+        "Imported Manchettes"
+      ]
+    },
+    {
+      "ID": 3108003,
+      "Entries": [
+        "Imported Trousers"
+      ]
+    },
+    {
+      "ID": 3208004,
+      "Entries": [
+        "Tseldora Cap / Peasant Hat"
+      ]
+    },
+    {
+      "ID": 3208005,
+      "Entries": [
+        "Tseldora Robe / Peasant Attire"
+      ]
+    },
+    {
+      "ID": 3208006,
+      "Entries": [
+        "Hollow Infantry Gloves / Tseldora Manchettes / Peasant Long Gloves"
+      ]
+    },
+    {
+      "ID": 3208007,
+      "Entries": [
+        "Tseldora Trousers / Peasant Trousers"
+      ]
+    },
+    {
+      "ID": 3308008,
+      "Entries": [
+        "Generic - Head Slot"
+      ]
+    },
+    {
+      "ID": 3308009,
+      "Entries": [
+        "Generic - Chest Slot"
+      ]
+    },
+    {
+      "ID": 3308010,
+      "Entries": [
+        "Generic - Arms Slot 2"
+      ]
+    },
+    {
+      "ID": 3308011,
+      "Entries": [
+        "Generic - Legs Slot 2"
+      ]
+    },
+    {
+      "ID": 3408012,
+      "Entries": [
+        "Lion Warrior Helm / Dragon Sage Hood / Mirrah Hat / Nahr Alma Hood"
+      ]
+    },
+    {
+      "ID": 3408013,
+      "Entries": [
+        "Red Lion Warrior Cape / Fume Sorcerer Robes / Lucatiel's Vest / Nahr Alma Robes"
+      ]
+    },
+    {
+      "ID": 3408014,
+      "Entries": [
+        "Fume Sorcerer Gloves / Lucatiel's Gloves"
+      ]
+    },
+    {
+      "ID": 3408015,
+      "Entries": [
+        "Faraam Boots / Flower Skirt / Fume Sorcerer Boots / Lucatiel's Trousers"
+      ]
+    },
+    {
+      "ID": 3508016,
+      "Entries": [
+        "Northwarder Hood"
+      ]
+    },
+    {
+      "ID": 3508017,
+      "Entries": [
+        "Northwarder Robe"
+      ]
+    },
+    {
+      "ID": 3508018,
+      "Entries": [
+        "Northwarder Manchettes"
+      ]
+    },
+    {
+      "ID": 3508019,
+      "Entries": [
+        "Northwarder Trousers"
+      ]
+    },
+    {
+      "ID": 4008000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4008001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4008002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4008003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4108000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4108001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4108002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4108003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4208004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4208005,
+      "Entries": [
+        "Hollow Soldier Armor / Hollow Infantry Armor"
+      ]
+    },
+    {
+      "ID": 4208006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4208007,
+      "Entries": [
+        "Hollow Infantry Boots"
+      ]
+    },
+    {
+      "ID": 4308008,
+      "Entries": [
+        "Dragon Acolyte Mask"
+      ]
+    },
+    {
+      "ID": 4308009,
+      "Entries": [
+        "Generic - Chest Slot 2"
+      ]
+    },
+    {
+      "ID": 4308010,
+      "Entries": [
+        "Pate's Gloves / Bandit Gauntlets / Shadow Gauntlets / Benhart's Gauntlets"
+      ]
+    },
+    {
+      "ID": 4308011,
+      "Entries": [
+        "Generic - Legs Slot 2"
+      ]
+    },
+    {
+      "ID": 4408012,
+      "Entries": [
+        "Lucatiel's Mask"
+      ]
+    },
+    {
+      "ID": 4408013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4408014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4408015,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4508016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4508017,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4508018,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4508019,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5008000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5008001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5008002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5008003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5108000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5108001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5108002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5108003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5208004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5208005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5208006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5208007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5308008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5308009,
+      "Entries": [
+        "Gyrm Warrior Armor / Heide Knight Chainmail / Creighton's Chainmail / Benhart's Armor"
+      ]
+    },
+    {
+      "ID": 5308010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5308011,
+      "Entries": [
+        "Creighton's Chain Leggings"
+      ]
+    },
+    {
+      "ID": 5408012,
+      "Entries": [
+        "Warlock Mask"
+      ]
+    },
+    {
+      "ID": 5408013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5408014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5408015,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5508016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5508017,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5508018,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5508019,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6008000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6008001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6008002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6008003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6108000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6108001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6108002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6108003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6208004,
+      "Entries": [
+        "Hollow Soldier Helm / Hollow Infantry Helm / Ironclad Helm / Rusted Mastodon Helm"
+      ]
+    },
+    {
+      "ID": 6208005,
+      "Entries": [
+        "Ironclad Armor / Rusted Mastodon Armor"
+      ]
+    },
+    {
+      "ID": 6208006,
+      "Entries": [
+        "Ironclad Gauntlets / Rusted Mastodon Gauntlets"
+      ]
+    },
+    {
+      "ID": 6208007,
+      "Entries": [
+        "Ironclad Leggings / Rusted Mastodon Leggings"
+      ]
+    },
+    {
+      "ID": 6308008,
+      "Entries": [
+        "Generic - Head Slot 2"
+      ]
+    },
+    {
+      "ID": 6308009,
+      "Entries": [
+        "Generic - Chest Slot 3"
+      ]
+    },
+    {
+      "ID": 6308010,
+      "Entries": [
+        "Generic - Arms Slot 3"
+      ]
+    },
+    {
+      "ID": 6308011,
+      "Entries": [
+        "Generic - Legs Slot 3"
+      ]
+    },
+    {
+      "ID": 6408012,
+      "Entries": [
+        "Generic - Head Slot 2"
+      ]
+    },
+    {
+      "ID": 6408013,
+      "Entries": [
+        "Alonne Captain Armor / Drakekeeper Armor / Faraam Armor"
+      ]
+    },
+    {
+      "ID": 6408014,
+      "Entries": [
+        "Drakekeeper Gauntlets / Faraam Gauntlets"
+      ]
+    },
+    {
+      "ID": 6408015,
+      "Entries": [
+        "Drakekeeper Boots"
+      ]
+    },
+    {
+      "ID": 6508016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6508017,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6508018,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6508019,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Royal Dirk"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Blue Flame"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Red Rust Sword"
+      ]
+    },
+    {
+      "ID": 10000300,
+      "Entries": [
+        "Chaos Rapier"
+      ]
+    },
+    {
+      "ID": 10000400,
+      "Entries": [
+        "Black Scorpion Stinger"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "Red Rust Scimitar"
+      ]
+    },
+    {
+      "ID": 10000600,
+      "Entries": [
+        "Manslayer"
+      ]
+    },
+    {
+      "ID": 10000700,
+      "Entries": [
+        "Berserker Blade"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "Drangleic Sword"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "Black Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Dragonslayer's Crescent Axe"
+      ]
+    },
+    {
+      "ID": 10001100,
+      "Entries": [
+        "Crescent Axe"
+      ]
+    },
+    {
+      "ID": 10001200,
+      "Entries": [
+        "Black Knight Greataxe"
+      ]
+    },
+    {
+      "ID": 10001300,
+      "Entries": [
+        "Craftsman's Hammer"
+      ]
+    },
+    {
+      "ID": 10001400,
+      "Entries": [
+        "Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 10001500,
+      "Entries": [
+        "Malformed Shell"
+      ]
+    },
+    {
+      "ID": 10001600,
+      "Entries": [
+        "Demon's Great Hammer"
+      ]
+    },
+    {
+      "ID": 10001700,
+      "Entries": [
+        "Pate's Spear"
+      ]
+    },
+    {
+      "ID": 10001800,
+      "Entries": [
+        "Heide Lance"
+      ]
+    },
+    {
+      "ID": 10001900,
+      "Entries": [
+        "Scythe of Nahr Alma"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "Helix Halberd"
+      ]
+    },
+    {
+      "ID": 10002100,
+      "Entries": [
+        "Santier's Spear"
+      ]
+    },
+    {
+      "ID": 10002200,
+      "Entries": [
+        "Santier's Spear"
+      ]
+    },
+    {
+      "ID": 10002300,
+      "Entries": [
+        "Blue Knight's Halberd"
+      ]
+    },
+    {
+      "ID": 10002400,
+      "Entries": [
+        "Black Knight Halberd"
+      ]
+    },
+    {
+      "ID": 10002500,
+      "Entries": [
+        "Old Whip"
+      ]
+    },
+    {
+      "ID": 10002600,
+      "Entries": [
+        "Olenford's Staff"
+      ]
+    },
+    {
+      "ID": 10002700,
+      "Entries": [
+        "Staff of Wisdom"
+      ]
+    },
+    {
+      "ID": 10002800,
+      "Entries": [
+        "Sunset Staff"
+      ]
+    },
+    {
+      "ID": 10002900,
+      "Entries": [
+        "Dragon Chime"
+      ]
+    },
+    {
+      "ID": 10003000,
+      "Entries": [
+        "Idol's Chime"
+      ]
+    },
+    {
+      "ID": 10003100,
+      "Entries": [
+        "Black Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 10003200,
+      "Entries": [
+        "Curved Twinblade"
+      ]
+    },
+    {
+      "ID": 10003300,
+      "Entries": [
+        "Llewellyn Shield"
+      ]
+    },
+    {
+      "ID": 10003400,
+      "Entries": [
+        "Cursed Bone Shield"
+      ]
+    },
+    {
+      "ID": 10003500,
+      "Entries": [
+        "Drangleic Shield"
+      ]
+    },
+    {
+      "ID": 10003600,
+      "Entries": [
+        "Grand Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 10003700,
+      "Entries": [
+        "Chaos Shield"
+      ]
+    },
+    {
+      "ID": 10003800,
+      "Entries": [
+        "Red Rust Shield"
+      ]
+    },
+    {
+      "ID": 10003900,
+      "Entries": [
+        "Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 10004000,
+      "Entries": [
+        "Reeve's Greatshield"
+      ]
+    },
+    {
+      "ID": 10004100,
+      "Entries": [
+        "Havel's Greatshield"
+      ]
+    },
+    {
+      "ID": 10004800,
+      "Entries": [
+        "Blue Dagger"
+      ]
+    },
+    {
+      "ID": 10004900,
+      "Entries": [
+        "Umbral Dagger"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 10005100,
+      "Entries": [
+        "Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 10005110,
+      "Entries": [
+        "Ice Rapier"
+      ]
+    },
+    {
+      "ID": 10005150,
+      "Entries": [
+        "Fume Sword"
+      ]
+    },
+    {
+      "ID": 10005200,
+      "Entries": [
+        "Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 10005300,
+      "Entries": [
+        "Bewitched Alonne Sword"
+      ]
+    },
+    {
+      "ID": 10005400,
+      "Entries": [
+        "Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 10005500,
+      "Entries": [
+        "Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 10005600,
+      "Entries": [
+        "Wrathful Axe"
+      ]
+    },
+    {
+      "ID": 10005700,
+      "Entries": [
+        "Azal's Staff"
+      ]
+    },
+    {
+      "ID": 10005800,
+      "Entries": [
+        "Chime of Screams"
+      ]
+    },
+    {
+      "ID": 10006000,
+      "Entries": [
+        "Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 10006100,
+      "Entries": [
+        "Charred Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 10006200,
+      "Entries": [
+        "Ivory King Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 10006300,
+      "Entries": [
+        "Loyce Shield"
+      ]
+    },
+    {
+      "ID": 10006400,
+      "Entries": [
+        "Charred Loyce Shield"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Mytha's Bent Blade"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "Black Dragon Sword"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "Spider's Silk"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "Warped Sword"
+      ]
+    },
+    {
+      "ID": 20000400,
+      "Entries": [
+        "Spider Fang"
+      ]
+    },
+    {
+      "ID": 20000500,
+      "Entries": [
+        "Chaos Blade"
+      ]
+    },
+    {
+      "ID": 20000600,
+      "Entries": [
+        "Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 20000700,
+      "Entries": [
+        "Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 20000800,
+      "Entries": [
+        "Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 20000900,
+      "Entries": [
+        "Black Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 20001000,
+      "Entries": [
+        "Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 20001100,
+      "Entries": [
+        "Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 20001200,
+      "Entries": [
+        "Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 20001300,
+      "Entries": [
+        "Giant Stone Axe"
+      ]
+    },
+    {
+      "ID": 20001400,
+      "Entries": [
+        "Black Dragon Greataxe"
+      ]
+    },
+    {
+      "ID": 20001500,
+      "Entries": [
+        "Black Dragon Warpick"
+      ]
+    },
+    {
+      "ID": 20001600,
+      "Entries": [
+        "Barbed Club"
+      ]
+    },
+    {
+      "ID": 20001700,
+      "Entries": [
+        "Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 20001800,
+      "Entries": [
+        "Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 20001900,
+      "Entries": [
+        "Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 20002000,
+      "Entries": [
+        "Gargoyle Bident"
+      ]
+    },
+    {
+      "ID": 20002100,
+      "Entries": [
+        "Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 20002200,
+      "Entries": [
+        "Chariot Lance"
+      ]
+    },
+    {
+      "ID": 20002300,
+      "Entries": [
+        "Bone Scythe"
+      ]
+    },
+    {
+      "ID": 20002400,
+      "Entries": [
+        "Scythe of Want"
+      ]
+    },
+    {
+      "ID": 20002500,
+      "Entries": [
+        "Dragonrider's Halberd"
+      ]
+    },
+    {
+      "ID": 20002600,
+      "Entries": [
+        "Roaring Halberd"
+      ]
+    },
+    {
+      "ID": 20002700,
+      "Entries": [
+        "Spotted Whip"
+      ]
+    },
+    {
+      "ID": 20002800,
+      "Entries": [
+        "Chime of Want"
+      ]
+    },
+    {
+      "ID": 20002900,
+      "Entries": [
+        "Dragonrider Bow"
+      ]
+    },
+    {
+      "ID": 20003000,
+      "Entries": [
+        "Bow of Want"
+      ]
+    },
+    {
+      "ID": 20003100,
+      "Entries": [
+        "Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 20003200,
+      "Entries": [
+        "Shield Crossbow"
+      ]
+    },
+    {
+      "ID": 20003300,
+      "Entries": [
+        "Arced Sword"
+      ]
+    },
+    {
+      "ID": 20003400,
+      "Entries": [
+        "Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 20003500,
+      "Entries": [
+        "Smelter Sword"
+      ]
+    },
+    {
+      "ID": 20003600,
+      "Entries": [
+        "Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 20003700,
+      "Entries": [
+        "King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 20003800,
+      "Entries": [
+        "Pursuer's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 20003900,
+      "Entries": [
+        "Crypt Blacksword"
+      ]
+    },
+    {
+      "ID": 20004000,
+      "Entries": [
+        "Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 20004100,
+      "Entries": [
+        "Dragonrider Twinblade"
+      ]
+    },
+    {
+      "ID": 20004200,
+      "Entries": [
+        "Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 20004300,
+      "Entries": [
+        "King's Shield"
+      ]
+    },
+    {
+      "ID": 20004400,
+      "Entries": [
+        "Defender's Shield"
+      ]
+    },
+    {
+      "ID": 20004500,
+      "Entries": [
+        "Black Dragon Shield"
+      ]
+    },
+    {
+      "ID": 20004600,
+      "Entries": [
+        "King's Mirror"
+      ]
+    },
+    {
+      "ID": 20004700,
+      "Entries": [
+        "Dragonrider Greatshield"
+      ]
+    },
+    {
+      "ID": 20004800,
+      "Entries": [
+        "Pursuer's Greatshield"
+      ]
+    },
+    {
+      "ID": 20005000,
+      "Entries": [
+        "Drakeblood Greatsword"
+      ]
+    },
+    {
+      "ID": 20005100,
+      "Entries": [
+        "Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 20005200,
+      "Entries": [
+        "Bone Fist"
+      ]
+    },
+    {
+      "ID": 20005300,
+      "Entries": [
+        "Twin-headed Greatbow"
+      ]
+    },
+    {
+      "ID": 20005400,
+      "Entries": [
+        "Curved Nil Greatsword"
+      ]
+    },
+    {
+      "ID": 20005500,
+      "Entries": [
+        "Fume Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 20005600,
+      "Entries": [
+        "Aged Smelter Sword"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "Greatsword of the Forlorn"
+      ]
+    },
+    {
+      "ID": 20020100,
+      "Entries": [
+        "Scythe of the Forlorn"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Havel's Helm"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "Havel's Armor"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "Havel's Gauntlets"
+      ]
+    },
+    {
+      "ID": 30000300,
+      "Entries": [
+        "Havel's Leggings"
+      ]
+    },
+    {
+      "ID": 30000400,
+      "Entries": [
+        "Xanthous Crown"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "Xanthous Overcoat"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "Xanthous Gloves"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "Xanthous Waistcloth"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "Mask of Judgment"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "Robe of Judgment"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "Manchettes of Judgment"
+      ]
+    },
+    {
+      "ID": 30001100,
+      "Entries": [
+        "Tights of Judgment"
+      ]
+    },
+    {
+      "ID": 30001200,
+      "Entries": [
+        "Helm of Aurous"
+      ]
+    },
+    {
+      "ID": 30001300,
+      "Entries": [
+        "Armor of Aurous"
+      ]
+    },
+    {
+      "ID": 30001400,
+      "Entries": [
+        "Gauntlets of Aurous"
+      ]
+    },
+    {
+      "ID": 30001500,
+      "Entries": [
+        "Leggings of Aurous"
+      ]
+    },
+    {
+      "ID": 30001600,
+      "Entries": [
+        "Helm of Aurous"
+      ]
+    },
+    {
+      "ID": 30001700,
+      "Entries": [
+        "Armor of Aurous"
+      ]
+    },
+    {
+      "ID": 30001800,
+      "Entries": [
+        "Gauntlets of Aurous"
+      ]
+    },
+    {
+      "ID": 30001900,
+      "Entries": [
+        "Leggings of Aurous"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "Monastery Headcloth"
+      ]
+    },
+    {
+      "ID": 30002100,
+      "Entries": [
+        "Monastery Longshirt"
+      ]
+    },
+    {
+      "ID": 30002200,
+      "Entries": [
+        "Monastery Long Gloves"
+      ]
+    },
+    {
+      "ID": 30002300,
+      "Entries": [
+        "Monastery Skirt"
+      ]
+    },
+    {
+      "ID": 30002400,
+      "Entries": [
+        "Durgo's Hat"
+      ]
+    },
+    {
+      "ID": 30002500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30002600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30002700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30002800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30002900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "Engraved Gauntlets"
+      ]
+    },
+    {
+      "ID": 30003100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30003900,
+      "Entries": [
+        "Flying Feline Boots"
+      ]
+    },
+    {
+      "ID": 30004000,
+      "Entries": [
+        "Moon Butterfly Hat"
+      ]
+    },
+    {
+      "ID": 30004100,
+      "Entries": [
+        "Moon Butterfly Wings"
+      ]
+    },
+    {
+      "ID": 30004200,
+      "Entries": [
+        "Moon Butterfly Cuffs"
+      ]
+    },
+    {
+      "ID": 30004300,
+      "Entries": [
+        "Moon Butterfly Skirt"
+      ]
+    },
+    {
+      "ID": 30004400,
+      "Entries": [
+        "Catarina Helm"
+      ]
+    },
+    {
+      "ID": 30004500,
+      "Entries": [
+        "Catarina Armor"
+      ]
+    },
+    {
+      "ID": 30004600,
+      "Entries": [
+        "Catarina Gauntlets"
+      ]
+    },
+    {
+      "ID": 30004700,
+      "Entries": [
+        "Catarina Leggings"
+      ]
+    },
+    {
+      "ID": 30004800,
+      "Entries": [
+        "Black Witch Veil"
+      ]
+    },
+    {
+      "ID": 30004900,
+      "Entries": [
+        "Black Witch Robe"
+      ]
+    },
+    {
+      "ID": 30005000,
+      "Entries": [
+        "Black Witch Gloves"
+      ]
+    },
+    {
+      "ID": 30005100,
+      "Entries": [
+        "Black Witch Trousers"
+      ]
+    },
+    {
+      "ID": 30005200,
+      "Entries": [
+        "Black Witch Hat"
+      ]
+    },
+    {
+      "ID": 30005300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30005400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30005500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30005600,
+      "Entries": [
+        "Black Witch Domino Mask"
+      ]
+    },
+    {
+      "ID": 30005700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30005800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30005900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30006000,
+      "Entries": [
+        "Dark Mask"
+      ]
+    },
+    {
+      "ID": 30006100,
+      "Entries": [
+        "Dark Armor"
+      ]
+    },
+    {
+      "ID": 30006200,
+      "Entries": [
+        "Dark Gauntlets"
+      ]
+    },
+    {
+      "ID": 30006300,
+      "Entries": [
+        "Dark Leggings"
+      ]
+    },
+    {
+      "ID": 30006400,
+      "Entries": [
+        "Bone Crown"
+      ]
+    },
+    {
+      "ID": 30006500,
+      "Entries": [
+        "Bone King Robe"
+      ]
+    },
+    {
+      "ID": 30006600,
+      "Entries": [
+        "Bone King Cuffs"
+      ]
+    },
+    {
+      "ID": 30006700,
+      "Entries": [
+        "Bone King Skirt"
+      ]
+    },
+    {
+      "ID": 30006800,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30006900,
+      "Entries": [
+        "Singer's Dress"
+      ]
+    },
+    {
+      "ID": 30007000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30007100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30007200,
+      "Entries": [
+        "Smelter Demon Helm"
+      ]
+    },
+    {
+      "ID": 30007300,
+      "Entries": [
+        "Smelter Demon Armor"
+      ]
+    },
+    {
+      "ID": 30007400,
+      "Entries": [
+        "Smelter Demon Gauntlets"
+      ]
+    },
+    {
+      "ID": 30007500,
+      "Entries": [
+        "Smelter Demon Leggings"
+      ]
+    },
+    {
+      "ID": 30007600,
+      "Entries": [
+        "Vengarl's Helm"
+      ]
+    },
+    {
+      "ID": 30007700,
+      "Entries": [
+        "Vengarl's Armor"
+      ]
+    },
+    {
+      "ID": 30007800,
+      "Entries": [
+        "Vengarl's Gloves"
+      ]
+    },
+    {
+      "ID": 30007900,
+      "Entries": [
+        "Vengarl's Boots"
+      ]
+    },
+    {
+      "ID": 30008000,
+      "Entries": [
+        "Ruin Helm"
+      ]
+    },
+    {
+      "ID": 30008100,
+      "Entries": [
+        "Ruin Armor"
+      ]
+    },
+    {
+      "ID": 30008200,
+      "Entries": [
+        "Ruin Gauntlets"
+      ]
+    },
+    {
+      "ID": 30008300,
+      "Entries": [
+        "Ruin Leggings"
+      ]
+    },
+    {
+      "ID": 30008400,
+      "Entries": [
+        "Throne Defender Helm"
+      ]
+    },
+    {
+      "ID": 30008500,
+      "Entries": [
+        "Throne Defender Armor"
+      ]
+    },
+    {
+      "ID": 30008600,
+      "Entries": [
+        "Throne Defender Gauntlets"
+      ]
+    },
+    {
+      "ID": 30008700,
+      "Entries": [
+        "Throne Defender Leggings"
+      ]
+    },
+    {
+      "ID": 30008800,
+      "Entries": [
+        "Velstadt's Helm"
+      ]
+    },
+    {
+      "ID": 30008900,
+      "Entries": [
+        "Velstadt's Armor"
+      ]
+    },
+    {
+      "ID": 30009000,
+      "Entries": [
+        "Velstadt's Gauntlets"
+      ]
+    },
+    {
+      "ID": 30009100,
+      "Entries": [
+        "Velstadt's Leggings"
+      ]
+    },
+    {
+      "ID": 30009200,
+      "Entries": [
+        "Throne Watcher Helm"
+      ]
+    },
+    {
+      "ID": 30009300,
+      "Entries": [
+        "Throne Watcher Armor"
+      ]
+    },
+    {
+      "ID": 30009400,
+      "Entries": [
+        "Throne Watcher Gauntlets"
+      ]
+    },
+    {
+      "ID": 30009500,
+      "Entries": [
+        "Throne Watcher Leggings"
+      ]
+    },
+    {
+      "ID": 30009600,
+      "Entries": [
+        "Looking Glass Mask"
+      ]
+    },
+    {
+      "ID": 30009700,
+      "Entries": [
+        "Looking Glass Armor"
+      ]
+    },
+    {
+      "ID": 30009800,
+      "Entries": [
+        "Looking Glass Gauntlets"
+      ]
+    },
+    {
+      "ID": 30009900,
+      "Entries": [
+        "Looking Glass Leggings"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "Agdayne's Black Robe"
+      ]
+    },
+    {
+      "ID": 30010200,
+      "Entries": [
+        "Agdayne's Cuffs"
+      ]
+    },
+    {
+      "ID": 30010300,
+      "Entries": [
+        "Agdayne's Kilt"
+      ]
+    },
+    {
+      "ID": 30010400,
+      "Entries": [
+        "Leydia Black Hood"
+      ]
+    },
+    {
+      "ID": 30010500,
+      "Entries": [
+        "Leydia Black Robe"
+      ]
+    },
+    {
+      "ID": 30010600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30010700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30010800,
+      "Entries": [
+        "King's Crown"
+      ]
+    },
+    {
+      "ID": 30010900,
+      "Entries": [
+        "King's Armor"
+      ]
+    },
+    {
+      "ID": 30011000,
+      "Entries": [
+        "King's Gauntlets"
+      ]
+    },
+    {
+      "ID": 30011100,
+      "Entries": [
+        "King's Leggings"
+      ]
+    },
+    {
+      "ID": 30011200,
+      "Entries": [
+        "Dragonrider Helm"
+      ]
+    },
+    {
+      "ID": 30011300,
+      "Entries": [
+        "Dragonrider Armor"
+      ]
+    },
+    {
+      "ID": 30011400,
+      "Entries": [
+        "Dragonrider Gauntlets"
+      ]
+    },
+    {
+      "ID": 30011500,
+      "Entries": [
+        "Dragonrider Leggings"
+      ]
+    },
+    {
+      "ID": 30011600,
+      "Entries": [
+        "Executioner Helm"
+      ]
+    },
+    {
+      "ID": 30011700,
+      "Entries": [
+        "Executioner Armor"
+      ]
+    },
+    {
+      "ID": 30011800,
+      "Entries": [
+        "Executioner Gauntlets"
+      ]
+    },
+    {
+      "ID": 30011900,
+      "Entries": [
+        "Executioner Leggings"
+      ]
+    },
+    {
+      "ID": 30012000,
+      "Entries": [
+        "Penal Mask"
+      ]
+    },
+    {
+      "ID": 30012100,
+      "Entries": [
+        "Penal Straightjacket"
+      ]
+    },
+    {
+      "ID": 30012200,
+      "Entries": [
+        "Penal Handcuffs"
+      ]
+    },
+    {
+      "ID": 30012300,
+      "Entries": [
+        "Penal Skirt"
+      ]
+    },
+    {
+      "ID": 30012400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30012500,
+      "Entries": [
+        "Llewellyn Armor"
+      ]
+    },
+    {
+      "ID": 30012600,
+      "Entries": [
+        "Llewellyn Gloves"
+      ]
+    },
+    {
+      "ID": 30012700,
+      "Entries": [
+        "Llewellyn Shoes"
+      ]
+    },
+    {
+      "ID": 30012800,
+      "Entries": [
+        "Drangleic Helm"
+      ]
+    },
+    {
+      "ID": 30012900,
+      "Entries": [
+        "Drangleic Mail"
+      ]
+    },
+    {
+      "ID": 30013000,
+      "Entries": [
+        "Drangleic Gauntlets"
+      ]
+    },
+    {
+      "ID": 30013100,
+      "Entries": [
+        "Drangleic Leggings"
+      ]
+    },
+    {
+      "ID": 30013200,
+      "Entries": [
+        "Mad Warrior Mask"
+      ]
+    },
+    {
+      "ID": 30013300,
+      "Entries": [
+        "Mad Warrior Armor"
+      ]
+    },
+    {
+      "ID": 30013400,
+      "Entries": [
+        "Mad Warrior Gauntlets"
+      ]
+    },
+    {
+      "ID": 30013500,
+      "Entries": [
+        "Mad Warrior Leggings"
+      ]
+    },
+    {
+      "ID": 30013600,
+      "Entries": [
+        "Black Hood"
+      ]
+    },
+    {
+      "ID": 30013700,
+      "Entries": [
+        "Black Robes"
+      ]
+    },
+    {
+      "ID": 30013800,
+      "Entries": [
+        "Black Gloves"
+      ]
+    },
+    {
+      "ID": 30013900,
+      "Entries": [
+        "Black Boots"
+      ]
+    },
+    {
+      "ID": 30014000,
+      "Entries": [
+        "Saint's Hood"
+      ]
+    },
+    {
+      "ID": 30014100,
+      "Entries": [
+        "Saint's Dress"
+      ]
+    },
+    {
+      "ID": 30014200,
+      "Entries": [
+        "Saint's Long Gloves"
+      ]
+    },
+    {
+      "ID": 30014300,
+      "Entries": [
+        "Saint's Trousers"
+      ]
+    },
+    {
+      "ID": 30014400,
+      "Entries": [
+        "Hexer's Hood"
+      ]
+    },
+    {
+      "ID": 30014500,
+      "Entries": [
+        "Hexer's Robe"
+      ]
+    },
+    {
+      "ID": 30014600,
+      "Entries": [
+        "Hexer's Gloves"
+      ]
+    },
+    {
+      "ID": 30014700,
+      "Entries": [
+        "Hexer's Boots"
+      ]
+    },
+    {
+      "ID": 30014800,
+      "Entries": [
+        "Chaos Hood"
+      ]
+    },
+    {
+      "ID": 30014900,
+      "Entries": [
+        "Chaos Robe"
+      ]
+    },
+    {
+      "ID": 30015000,
+      "Entries": [
+        "Chaos Gloves"
+      ]
+    },
+    {
+      "ID": 30015100,
+      "Entries": [
+        "Chaos Boots"
+      ]
+    },
+    {
+      "ID": 30016000,
+      "Entries": [
+        "Crown of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 30016100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016400,
+      "Entries": [
+        "Crown of the Ivory King"
+      ]
+    },
+    {
+      "ID": 30016500,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016700,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30016800,
+      "Entries": [
+        "Crown of the Sunken King"
+      ]
+    },
+    {
+      "ID": 30016900,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30017000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30017100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30017200,
+      "Entries": [
+        "Rampart Golem Helm"
+      ]
+    },
+    {
+      "ID": 30017300,
+      "Entries": [
+        "Rampart Golem Armor"
+      ]
+    },
+    {
+      "ID": 30017400,
+      "Entries": [
+        "Rampart Golem Gauntlets"
+      ]
+    },
+    {
+      "ID": 30017500,
+      "Entries": [
+        "Rampart Golem Leggings"
+      ]
+    },
+    {
+      "ID": 30017600,
+      "Entries": [
+        "Sanctum Knight Helm"
+      ]
+    },
+    {
+      "ID": 30017700,
+      "Entries": [
+        "Sanctum Knight Armor"
+      ]
+    },
+    {
+      "ID": 30017800,
+      "Entries": [
+        "Sanctum Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 30017900,
+      "Entries": [
+        "Sanctum Knight Leggings"
+      ]
+    },
+    {
+      "ID": 30018000,
+      "Entries": [
+        "Raime's Helm"
+      ]
+    },
+    {
+      "ID": 30018100,
+      "Entries": [
+        "Raime's Armor"
+      ]
+    },
+    {
+      "ID": 30018200,
+      "Entries": [
+        "Raime's Gauntlets"
+      ]
+    },
+    {
+      "ID": 30018300,
+      "Entries": [
+        "Raime's Leggings"
+      ]
+    },
+    {
+      "ID": 30018400,
+      "Entries": [
+        "Alonne's Helm"
+      ]
+    },
+    {
+      "ID": 30018500,
+      "Entries": [
+        "Alonne's Armor"
+      ]
+    },
+    {
+      "ID": 30018600,
+      "Entries": [
+        "Alonne's Gauntlets"
+      ]
+    },
+    {
+      "ID": 30018700,
+      "Entries": [
+        "Alonne's Leggings"
+      ]
+    },
+    {
+      "ID": 30018800,
+      "Entries": [
+        "Loyce Helm"
+      ]
+    },
+    {
+      "ID": 30018900,
+      "Entries": [
+        "Loyce Armor"
+      ]
+    },
+    {
+      "ID": 30019000,
+      "Entries": [
+        "Loyce Gauntlets"
+      ]
+    },
+    {
+      "ID": 30019100,
+      "Entries": [
+        "Loyce Leggings"
+      ]
+    },
+    {
+      "ID": 30019200,
+      "Entries": [
+        "Charred Loyce Helm"
+      ]
+    },
+    {
+      "ID": 30019300,
+      "Entries": [
+        "Charred Loyce Armor"
+      ]
+    },
+    {
+      "ID": 30019400,
+      "Entries": [
+        "Charred Loyce Gauntlets"
+      ]
+    },
+    {
+      "ID": 30019500,
+      "Entries": [
+        "Charred Loyce Leggings"
+      ]
+    },
+    {
+      "ID": 30019600,
+      "Entries": [
+        "Ivory King Helm"
+      ]
+    },
+    {
+      "ID": 30019700,
+      "Entries": [
+        "Ivory King Armor"
+      ]
+    },
+    {
+      "ID": 30019800,
+      "Entries": [
+        "Ivory King Gauntlets"
+      ]
+    },
+    {
+      "ID": 30019900,
+      "Entries": [
+        "Ivory King Leggings"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "Hood of the Forlorn"
+      ]
+    },
+    {
+      "ID": 30050100,
+      "Entries": [
+        "Armor of the Forlorn"
+      ]
+    },
+    {
+      "ID": 30050200,
+      "Entries": [
+        "Gauntlets of the Forlorn"
+      ]
+    },
+    {
+      "ID": 30050300,
+      "Entries": [
+        "Leggings of the Forlorn"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Black Dragon Helm"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "Black Dragon Armor"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "Black Dragon Gauntlets"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "Black Dragon Leggings"
+      ]
+    }
+  ]
+}

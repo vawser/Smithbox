@@ -1,0 +1,1139 @@
+{
+  "Name": "BossPartsParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 21200001,
+      "Entries": [
+        "Guardian Dragon - Head"
+      ]
+    },
+    {
+      "ID": 21200002,
+      "Entries": [
+        "Guardian Dragon - Torso"
+      ]
+    },
+    {
+      "ID": 21200003,
+      "Entries": [
+        "Guardian Dragon - Left Wing"
+      ]
+    },
+    {
+      "ID": 21200004,
+      "Entries": [
+        "Guardian Dragon - Right Wing"
+      ]
+    },
+    {
+      "ID": 21200005,
+      "Entries": [
+        "Guardian Dragon - Left Leg"
+      ]
+    },
+    {
+      "ID": 21200006,
+      "Entries": [
+        "Guardian Dragon - Right Leg"
+      ]
+    },
+    {
+      "ID": 21200007,
+      "Entries": [
+        "Guardian Dragon - Tail"
+      ]
+    },
+    {
+      "ID": 21200101,
+      "Entries": [
+        "Guardian Dragon - Head"
+      ]
+    },
+    {
+      "ID": 21200102,
+      "Entries": [
+        "Guardian Dragon - Torso"
+      ]
+    },
+    {
+      "ID": 21200103,
+      "Entries": [
+        "Guardian Dragon - Left Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200104,
+      "Entries": [
+        "Guardian Dragon - Right Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200105,
+      "Entries": [
+        "Guardian Dragon - Left Leg"
+      ]
+    },
+    {
+      "ID": 21200106,
+      "Entries": [
+        "Guardian Dragon - Right Leg"
+      ]
+    },
+    {
+      "ID": 21200107,
+      "Entries": [
+        "Guardian Dragon - Tail"
+      ]
+    },
+    {
+      "ID": 21200201,
+      "Entries": [
+        "Guardian Dragon - Head"
+      ]
+    },
+    {
+      "ID": 21200202,
+      "Entries": [
+        "Guardian Dragon - Torso"
+      ]
+    },
+    {
+      "ID": 21200203,
+      "Entries": [
+        "Guardian Dragon - Left Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200204,
+      "Entries": [
+        "Guardian Dragon - Right Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200205,
+      "Entries": [
+        "Guardian Dragon - Left Leg"
+      ]
+    },
+    {
+      "ID": 21200206,
+      "Entries": [
+        "Guardian Dragon - Right Leg"
+      ]
+    },
+    {
+      "ID": 21200207,
+      "Entries": [
+        "Guardian Dragon - Tail"
+      ]
+    },
+    {
+      "ID": 21200301,
+      "Entries": [
+        "Guardian Dragon - Head"
+      ]
+    },
+    {
+      "ID": 21200302,
+      "Entries": [
+        "Guardian Dragon - Torso"
+      ]
+    },
+    {
+      "ID": 21200303,
+      "Entries": [
+        "Guardian Dragon - Left Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200304,
+      "Entries": [
+        "Guardian Dragon - Right Arm (Wing)"
+      ]
+    },
+    {
+      "ID": 21200305,
+      "Entries": [
+        "Guardian Dragon - Left Leg"
+      ]
+    },
+    {
+      "ID": 21200306,
+      "Entries": [
+        "Guardian Dragon - Right Leg"
+      ]
+    },
+    {
+      "ID": 21200307,
+      "Entries": [
+        "Guardian Dragon - Tail"
+      ]
+    },
+    {
+      "ID": 30500001,
+      "Entries": [
+        "Smelter Demon - Head"
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        "Smelter Demon - Torso"
+      ]
+    },
+    {
+      "ID": 30500003,
+      "Entries": [
+        "Smelter Demon - Left Arm"
+      ]
+    },
+    {
+      "ID": 30500004,
+      "Entries": [
+        "Smelter Demon - Right Arm"
+      ]
+    },
+    {
+      "ID": 30500005,
+      "Entries": [
+        "Smelter Demon - Left Leg"
+      ]
+    },
+    {
+      "ID": 30500006,
+      "Entries": [
+        "Smelter Demon - Right Leg"
+      ]
+    },
+    {
+      "ID": 30960001,
+      "Entries": [
+        "The Last Giant - Head"
+      ]
+    },
+    {
+      "ID": 30960002,
+      "Entries": [
+        "The Last Giant - Left Arm"
+      ]
+    },
+    {
+      "ID": 30960003,
+      "Entries": [
+        "The Last Giant - Right Arm"
+      ]
+    },
+    {
+      "ID": 30960004,
+      "Entries": [
+        "The Last Giant - Torso"
+      ]
+    },
+    {
+      "ID": 30960005,
+      "Entries": [
+        "The Last Giant - Left Leg"
+      ]
+    },
+    {
+      "ID": 30960006,
+      "Entries": [
+        "The Last Giant - Right Leg"
+      ]
+    },
+    {
+      "ID": 30970001,
+      "Entries": [
+        "Giant Lord - Head"
+      ]
+    },
+    {
+      "ID": 30970002,
+      "Entries": [
+        "Giant Lord - Torso"
+      ]
+    },
+    {
+      "ID": 30970003,
+      "Entries": [
+        "Giant Lord - Left Arm"
+      ]
+    },
+    {
+      "ID": 30970004,
+      "Entries": [
+        "Giant Lord - Right Arm"
+      ]
+    },
+    {
+      "ID": 30970005,
+      "Entries": [
+        "Giant Lord - Left Leg"
+      ]
+    },
+    {
+      "ID": 30970006,
+      "Entries": [
+        "Giant Lord - Right Leg"
+      ]
+    },
+    {
+      "ID": 32600001,
+      "Entries": [
+        "The Rotten - Right Arm"
+      ]
+    },
+    {
+      "ID": 32600002,
+      "Entries": [
+        "The Rotten- Left Arm"
+      ]
+    },
+    {
+      "ID": 32600003,
+      "Entries": [
+        "The Rotten - Right Shoulder"
+      ]
+    },
+    {
+      "ID": 32600004,
+      "Entries": [
+        "The Rotten - Left Shoulder"
+      ]
+    },
+    {
+      "ID": 32600005,
+      "Entries": [
+        "The Rotten - Torso"
+      ]
+    },
+    {
+      "ID": 32600006,
+      "Entries": [
+        "The Rotten - Head"
+      ]
+    },
+    {
+      "ID": 33200001,
+      "Entries": [
+        "Throne Defender - Head"
+      ]
+    },
+    {
+      "ID": 33200002,
+      "Entries": [
+        "Throne Defender - Torso"
+      ]
+    },
+    {
+      "ID": 33200003,
+      "Entries": [
+        "Throne Defender - Left Arm"
+      ]
+    },
+    {
+      "ID": 33200004,
+      "Entries": [
+        "Throne Defender - Right Arm"
+      ]
+    },
+    {
+      "ID": 33200005,
+      "Entries": [
+        "Throne Defender - Left Leg"
+      ]
+    },
+    {
+      "ID": 33200006,
+      "Entries": [
+        "Throne Defender - Right Leg"
+      ]
+    },
+    {
+      "ID": 33200009,
+      "Entries": [
+        "Throne Defender - Shield"
+      ]
+    },
+    {
+      "ID": 33300001,
+      "Entries": [
+        "Velstadt - Torso"
+      ]
+    },
+    {
+      "ID": 33300002,
+      "Entries": [
+        "Velstadt - Torso"
+      ]
+    },
+    {
+      "ID": 33300003,
+      "Entries": [
+        "Velstadt - Left Arm"
+      ]
+    },
+    {
+      "ID": 33300004,
+      "Entries": [
+        "Velstadt - Right Arm"
+      ]
+    },
+    {
+      "ID": 33300005,
+      "Entries": [
+        "Velstadt - Left Leg"
+      ]
+    },
+    {
+      "ID": 33300006,
+      "Entries": [
+        "Velstadt - Right Leg"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Covetous Demon - Tail"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "Covetous Demon - Lower Jaw"
+      ]
+    },
+    {
+      "ID": 50000003,
+      "Entries": [
+        "Covetous Demon - Left Arm"
+      ]
+    },
+    {
+      "ID": 50000004,
+      "Entries": [
+        "Covetous Demon - Right Arm"
+      ]
+    },
+    {
+      "ID": 50000005,
+      "Entries": [
+        "Covetous Demon - Belly"
+      ]
+    },
+    {
+      "ID": 50100001,
+      "Entries": [
+        "Mytha, the Baneful Queen - Tail"
+      ]
+    },
+    {
+      "ID": 50200001,
+      "Entries": [
+        "Manscorpion Tark - Upper Body"
+      ]
+    },
+    {
+      "ID": 50200002,
+      "Entries": [
+        "Manscorpion Tark - Torso (Scorpion)"
+      ]
+    },
+    {
+      "ID": 50200003,
+      "Entries": [
+        "Manscorpion Tark - Left Claw"
+      ]
+    },
+    {
+      "ID": 50200004,
+      "Entries": [
+        "Manscorpion Tark - Right Claw"
+      ]
+    },
+    {
+      "ID": 50200005,
+      "Entries": [
+        "Manscorpion Tark - Tail"
+      ]
+    },
+    {
+      "ID": 50300001,
+      "Entries": [
+        "Scorpioness Najka - Upper Body"
+      ]
+    },
+    {
+      "ID": 50300002,
+      "Entries": [
+        "Scorpioness Najka - Torso (Scorpion)"
+      ]
+    },
+    {
+      "ID": 50300003,
+      "Entries": [
+        "Scorpioness Najka - Right Claw"
+      ]
+    },
+    {
+      "ID": 50300004,
+      "Entries": [
+        "Scorpioness Najka - Left Claw"
+      ]
+    },
+    {
+      "ID": 50300005,
+      "Entries": [
+        "Scorpioness Najka - Left Tail"
+      ]
+    },
+    {
+      "ID": 50300006,
+      "Entries": [
+        "Scorpioness Najka - Right Tail"
+      ]
+    },
+    {
+      "ID": 50400001,
+      "Entries": [
+        "Looking Glass Knight - Pelvis"
+      ]
+    },
+    {
+      "ID": 50400002,
+      "Entries": [
+        "Looking Glass Knight - Left Thigh"
+      ]
+    },
+    {
+      "ID": 50400003,
+      "Entries": [
+        "Looking Glass Knight - Left Calf"
+      ]
+    },
+    {
+      "ID": 50400004,
+      "Entries": [
+        "Looking Glass Knight - Left Foot"
+      ]
+    },
+    {
+      "ID": 50400005,
+      "Entries": [
+        "Looking Glass Knight - Right Thigh"
+      ]
+    },
+    {
+      "ID": 50400006,
+      "Entries": [
+        "Looking Glass Knight - Right Calf"
+      ]
+    },
+    {
+      "ID": 50400007,
+      "Entries": [
+        "Looking Glass Knight - Right Foot"
+      ]
+    },
+    {
+      "ID": 50400008,
+      "Entries": [
+        "Looking Glass Knight - Spine"
+      ]
+    },
+    {
+      "ID": 50400009,
+      "Entries": [
+        "Looking Glass Knight - Spine 1"
+      ]
+    },
+    {
+      "ID": 50400010,
+      "Entries": [
+        "Looking Glass Knight - Head"
+      ]
+    },
+    {
+      "ID": 50400011,
+      "Entries": [
+        "Looking Glass Knight - Left UpperArm"
+      ]
+    },
+    {
+      "ID": 50400012,
+      "Entries": [
+        "Looking Glass Knight - Left Forearm"
+      ]
+    },
+    {
+      "ID": 50400013,
+      "Entries": [
+        "Looking Glass Knight - Left Weapon (Shield)"
+      ]
+    },
+    {
+      "ID": 50400014,
+      "Entries": [
+        "Looking Glass Knight - Right UpperArm"
+      ]
+    },
+    {
+      "ID": 50400015,
+      "Entries": [
+        "Looking Glass Knight - Right Forearm"
+      ]
+    },
+    {
+      "ID": 50400016,
+      "Entries": [
+        "Looking Glass Knight - Right Weapon "
+      ]
+    },
+    {
+      "ID": 50400017,
+      "Entries": [
+        "Looking Glass Knight - Right Hand"
+      ]
+    },
+    {
+      "ID": 51460001,
+      "Entries": [
+        "Vendrick (hollow) - Head"
+      ]
+    },
+    {
+      "ID": 51460002,
+      "Entries": [
+        "Vendrick (hollow) - Torso"
+      ]
+    },
+    {
+      "ID": 51460003,
+      "Entries": [
+        "Vendrick (hollow) - Left Arm"
+      ]
+    },
+    {
+      "ID": 51460004,
+      "Entries": [
+        "Vendrick (hollow) - Right Arm"
+      ]
+    },
+    {
+      "ID": 51460005,
+      "Entries": [
+        "Vendrick (hollow) - Left Leg"
+      ]
+    },
+    {
+      "ID": 51460006,
+      "Entries": [
+        "Vendrick (hollow) - Right Leg"
+      ]
+    },
+    {
+      "ID": 60000001,
+      "Entries": [
+        "Ancient Dragon - Head"
+      ]
+    },
+    {
+      "ID": 60000002,
+      "Entries": [
+        "Ancient Dragon - Left Front Leg"
+      ]
+    },
+    {
+      "ID": 60000003,
+      "Entries": [
+        "Ancient Dragon - Right Front Leg"
+      ]
+    },
+    {
+      "ID": 60000004,
+      "Entries": [
+        "Ancient Dragon - Left Hind Leg"
+      ]
+    },
+    {
+      "ID": 60000005,
+      "Entries": [
+        "Ancient Dragon -  Right Hind Leg"
+      ]
+    },
+    {
+      "ID": 60000006,
+      "Entries": [
+        "Ancient Dragon - Tail"
+      ]
+    },
+    {
+      "ID": 60100001,
+      "Entries": [
+        "Flame Lizard - Tail"
+      ]
+    },
+    {
+      "ID": 60100002,
+      "Entries": [
+        "Flame Lizard - Throat"
+      ]
+    },
+    {
+      "ID": 60102001,
+      "Entries": [
+        "Flame Lizard (Petrifaction) - Tail"
+      ]
+    },
+    {
+      "ID": 60200001,
+      "Entries": [
+        "Demon of Song - Head"
+      ]
+    },
+    {
+      "ID": 60200002,
+      "Entries": [
+        "Demon of Song - Lower Jaw"
+      ]
+    },
+    {
+      "ID": 60200003,
+      "Entries": [
+        "Demon of Song - Left Front Leg"
+      ]
+    },
+    {
+      "ID": 60200004,
+      "Entries": [
+        "Demon of Song - Right Front Leg"
+      ]
+    },
+    {
+      "ID": 60200005,
+      "Entries": [
+        "Demon of Song - Left Hind Leg"
+      ]
+    },
+    {
+      "ID": 60200006,
+      "Entries": [
+        "Demon of Song - Right Front Leg"
+      ]
+    },
+    {
+      "ID": 60200007,
+      "Entries": [
+        "Demon of Song - Tail"
+      ]
+    },
+    {
+      "ID": 60200008,
+      "Entries": [
+        "Demon of Song - Interior"
+      ]
+    },
+    {
+      "ID": 60300001,
+      "Entries": [
+        "The Duke's Dear Freja - Body, Legs"
+      ]
+    },
+    {
+      "ID": 60300002,
+      "Entries": [
+        "The Duke's Dear Freja - Head (Front)"
+      ]
+    },
+    {
+      "ID": 60300003,
+      "Entries": [
+        "The Duke's Dear Freja - Head (Rear)"
+      ]
+    },
+    {
+      "ID": 60310001,
+      "Entries": [
+        "The Duke's Dear Freja (Cliff) - Body, Legs"
+      ]
+    },
+    {
+      "ID": 60310002,
+      "Entries": [
+        "The Duke's Dear Freja (Cliff) - Head (Front)"
+      ]
+    },
+    {
+      "ID": 60310003,
+      "Entries": [
+        "The Duke's Dear Freja (Cliff) - Head (Rear)"
+      ]
+    },
+    {
+      "ID": 60700001,
+      "Entries": [
+        "Old Iron King - Head"
+      ]
+    },
+    {
+      "ID": 60700002,
+      "Entries": [
+        "Old Iron King - Torso"
+      ]
+    },
+    {
+      "ID": 60700003,
+      "Entries": [
+        "Old Iron King - Left Arm"
+      ]
+    },
+    {
+      "ID": 60700004,
+      "Entries": [
+        "Old Iron King - Right Arm"
+      ]
+    },
+    {
+      "ID": 60700005,
+      "Entries": [
+        "Old Iron King - Left Wing"
+      ]
+    },
+    {
+      "ID": 60700006,
+      "Entries": [
+        "Old Iron King - Right Wing"
+      ]
+    },
+    {
+      "ID": 60900001,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Head"
+      ]
+    },
+    {
+      "ID": 60900002,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Left Front Arm"
+      ]
+    },
+    {
+      "ID": 60900003,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Right Front Arm"
+      ]
+    },
+    {
+      "ID": 60900004,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Left Hind Arm"
+      ]
+    },
+    {
+      "ID": 60900005,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Right Hind Arm"
+      ]
+    },
+    {
+      "ID": 60900006,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Left Leg"
+      ]
+    },
+    {
+      "ID": 60900007,
+      "Entries": [
+        "Giant Guard Captain (Unused) - Right Leg"
+      ]
+    },
+    {
+      "ID": 61910001,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Left Head"
+      ]
+    },
+    {
+      "ID": 61910002,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Right Head"
+      ]
+    },
+    {
+      "ID": 61910003,
+      "Entries": [
+        "Executioner's Chariot (Horse) - BodySpine"
+      ]
+    },
+    {
+      "ID": 61910004,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Left Front Leg"
+      ]
+    },
+    {
+      "ID": 61910005,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Right Fron Leg"
+      ]
+    },
+    {
+      "ID": 61910006,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Left Hind Leg"
+      ]
+    },
+    {
+      "ID": 61910007,
+      "Entries": [
+        "Executioner's Chariot (Horse) - Right Hind Leg"
+      ]
+    },
+    {
+      "ID": 61911001,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Left Head"
+      ]
+    },
+    {
+      "ID": 61911002,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Right Head"
+      ]
+    },
+    {
+      "ID": 61911003,
+      "Entries": [
+        "Executioner's Chariot (Boss) - BodySpine"
+      ]
+    },
+    {
+      "ID": 61911004,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Left Front Leg"
+      ]
+    },
+    {
+      "ID": 61911005,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Right Fron Leg"
+      ]
+    },
+    {
+      "ID": 61911006,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Left Hind Leg"
+      ]
+    },
+    {
+      "ID": 61911007,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Right Hind Leg"
+      ]
+    },
+    {
+      "ID": 61911008,
+      "Entries": [
+        "Executioner's Chariot (Boss) - Executioner"
+      ]
+    },
+    {
+      "ID": 62700001,
+      "Entries": [
+        "Nashandra - Head"
+      ]
+    },
+    {
+      "ID": 62700002,
+      "Entries": [
+        "Nashandra - Torso"
+      ]
+    },
+    {
+      "ID": 62700003,
+      "Entries": [
+        "Nashandra - Left Arm"
+      ]
+    },
+    {
+      "ID": 62700004,
+      "Entries": [
+        "Nashandra Right Arm"
+      ]
+    },
+    {
+      "ID": 62700005,
+      "Entries": [
+        "Nashandra - Skirt (Left)"
+      ]
+    },
+    {
+      "ID": 62700006,
+      "Entries": [
+        "Nashandra - Skirt (Right)"
+      ]
+    },
+    {
+      "ID": 62700007,
+      "Entries": [
+        "Nashandra - Skirt (Front)"
+      ]
+    },
+    {
+      "ID": 62700008,
+      "Entries": [
+        "Nashandra - Skirt (Rear)"
+      ]
+    },
+    {
+      "ID": 68100001,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100002,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100003,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100004,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100005,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100006,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100007,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100008,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68100009,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68200001,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68200002,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68200003,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68200004,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68200005,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68300001,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 68300002,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 68300003,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 68300004,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 68300005,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 69000001,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69000002,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69000003,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69000004,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69000005,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    }
+  ]
+}

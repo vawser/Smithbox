@@ -1,0 +1,28 @@
+{
+  "Param": "NPCBOT_TABLE_PARAM_ST",
+  "Type": "NPCBOT_TABLE_PARAM_ST",
+  "Name": "NPCBOT_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "npcParamId",
+      "Name": "NPC Param ID",
+      "Description": "The NPC Param to use for this bot."
+    },
+    {
+      "Field": "npcThinkId",
+      "Name": "NPC Think ID",
+      "Description": "The NPC think to use for this bot."
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "Character ID",
+      "Description": "The character setup ID to use for this bot."
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

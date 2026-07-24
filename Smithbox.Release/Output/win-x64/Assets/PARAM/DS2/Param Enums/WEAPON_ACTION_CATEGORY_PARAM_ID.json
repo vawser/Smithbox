@@ -1,0 +1,3647 @@
+{
+  "Key": "WEAPON_ACTION_CATEGORY_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_ACTION_CATEGORY_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illegal data (prohibited from use)"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Naga dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange shadow dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue dagger 1"
+        }
+      ]
+    },
+    {
+      "Key": "1070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue dagger 2"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parrying dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin's double-edged dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom tactician's dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short sword"
+        }
+      ]
+    },
+    {
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long sword"
+        }
+      ]
+    },
+    {
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broadsword"
+        }
+      ]
+    },
+    {
+      "Key": "1240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low-class soldier's one-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor's sword"
+        }
+      ]
+    },
+    {
+      "Key": "1280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Mage's one-handed sword catalyst (magic power)"
+        }
+      ]
+    },
+    {
+      "Key": "1320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight's One-Handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan's one-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword of the sun"
+        }
+      ]
+    },
+    {
+      "Key": "1370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Estoc"
+        }
+      ]
+    },
+    {
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mail breaker"
+        }
+      ]
+    },
+    {
+      "Key": "1420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen's Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom tactician's sword"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rapier"
+        }
+      ]
+    },
+    {
+      "Key": "1520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Manscorpion♂'s piercing sword"
+        }
+      ]
+    },
+    {
+      "Key": "1530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ricard's sword"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falchion"
+        }
+      ]
+    },
+    {
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shortel"
+        }
+      ]
+    },
+    {
+      "Key": "1620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-sided warrior's curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "1640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin's curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "1650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scimitar"
+        }
+      ]
+    },
+    {
+      "Key": "1660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan's curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "1670",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen's Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1680",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slave Trader's Curved Sword (Large)"
+        }
+      ]
+    },
+    {
+      "Key": "1690",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Painting Guardian's Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Uchikatana"
+        }
+      ]
+    },
+    {
+      "Key": "1710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clothesline"
+        }
+      ]
+    },
+    {
+      "Key": "1720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon sword"
+        }
+      ]
+    },
+    {
+      "Key": "1730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor (mass production type) sword"
+        }
+      ]
+    },
+    {
+      "Key": "1740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leviathan's sword"
+        }
+      ]
+    },
+    {
+      "Key": "1760",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's sword"
+        }
+      ]
+    },
+    {
+      "Key": "1770",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stalker warrior sword"
+        }
+      ]
+    },
+    {
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bastard sword"
+        }
+      ]
+    },
+    {
+      "Key": "1810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flamberge"
+        }
+      ]
+    },
+    {
+      "Key": "1820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claymore"
+        }
+      ]
+    },
+    {
+      "Key": "1850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Captain's Two-Handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1860",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1870",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The two-handed sword of the avenging warrior's father"
+        }
+      ]
+    },
+    {
+      "Key": "1871",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight sword"
+        }
+      ]
+    },
+    {
+      "Key": "1880",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanglad's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sea Solar's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sea Solar's two-handed sword ②"
+        }
+      ]
+    },
+    {
+      "Key": "1920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1930",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight sword"
+        }
+      ]
+    },
+    {
+      "Key": "1940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A's Two-handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1970",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keyman's key"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hand ax"
+        }
+      ]
+    },
+    {
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Battle ax"
+        }
+      ]
+    },
+    {
+      "Key": "2020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bandit's ax"
+        }
+      ]
+    },
+    {
+      "Key": "2030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low-class soldier's one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Avenge warrior's one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Meat cutting knife"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier's One-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crescent ax"
+        }
+      ]
+    },
+    {
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great ax"
+        }
+      ]
+    },
+    {
+      "Key": "2220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bandit's ax"
+        }
+      ]
+    },
+    {
+      "Key": "2240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Warrior's Ax"
+        }
+      ]
+    },
+    {
+      "Key": "2250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Guard Captain's Two-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "2260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old dragon two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight great ax"
+        }
+      ]
+    },
+    {
+      "Key": "2310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon heavy soldier's two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Club"
+        }
+      ]
+    },
+    {
+      "Key": "2410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mace"
+        }
+      ]
+    },
+    {
+      "Key": "2420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Morning star"
+        }
+      ]
+    },
+    {
+      "Key": "2430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reinforcement club"
+        }
+      ]
+    },
+    {
+      "Key": "2440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith's hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Priest's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper's ladle"
+        }
+      ]
+    },
+    {
+      "Key": "2520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tonkachi"
+        }
+      ]
+    },
+    {
+      "Key": "2530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon Warpick"
+        }
+      ]
+    },
+    {
+      "Key": "2540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Professor's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-faced warrior's thorn club"
+        }
+      ]
+    },
+    {
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large club"
+        }
+      ]
+    },
+    {
+      "Key": "2610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pickaxe"
+        }
+      ]
+    },
+    {
+      "Key": "2620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great club"
+        }
+      ]
+    },
+    {
+      "Key": "2630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Demon's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2670",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reinforced Immortal Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2680",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dairyuga"
+        }
+      ]
+    },
+    {
+      "Key": "2690",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant junior soldier's two-handed club"
+        }
+      ]
+    },
+    {
+      "Key": "2700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hermit Crab Castle Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Sledgehammer"
+        }
+      ]
+    },
+    {
+      "Key": "2720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior's hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight B's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "2800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short spear"
+        }
+      ]
+    },
+    {
+      "Key": "2810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long spear"
+        }
+      ]
+    },
+    {
+      "Key": "2820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pike"
+        }
+      ]
+    },
+    {
+      "Key": "2830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Partisan"
+        }
+      ]
+    },
+    {
+      "Key": "2840",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue pawn spear"
+        }
+      ]
+    },
+    {
+      "Key": "2850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander spear"
+        }
+      ]
+    },
+    {
+      "Key": "2860",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier Spear"
+        }
+      ]
+    },
+    {
+      "Key": "2870",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight's Spear"
+        }
+      ]
+    },
+    {
+      "Key": "2880",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch spear"
+        }
+      ]
+    },
+    {
+      "Key": "2890",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evangelist's trident"
+        }
+      ]
+    },
+    {
+      "Key": "2895",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle spears"
+        }
+      ]
+    },
+    {
+      "Key": "2896",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornstein's spear"
+        }
+      ]
+    },
+    {
+      "Key": "2900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight's Assault Spear A"
+        }
+      ]
+    },
+    {
+      "Key": "2920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight's Assault Spear B"
+        }
+      ]
+    },
+    {
+      "Key": "2930",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Senior Knight's Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "2940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot's Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long sickle"
+        }
+      ]
+    },
+    {
+      "Key": "3010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner's sickle"
+        }
+      ]
+    },
+    {
+      "Key": "3020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial immortal's two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "3040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Phantom Shop's Crescent Sickle"
+        }
+      ]
+    },
+    {
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantomya's two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "3060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jabba the Hutt's Two-Handed Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "3070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle in the queen's armor form"
+        }
+      ]
+    },
+    {
+      "Key": "3200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lucerne"
+        }
+      ]
+    },
+    {
+      "Key": "3210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Size"
+        }
+      ]
+    },
+    {
+      "Key": "3220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "3240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leviathan's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "3250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Brain stem sacred tree double-handed spear mallet"
+        }
+      ]
+    },
+    {
+      "Key": "3251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After the destruction of the brainstem sacred tree"
+        }
+      ]
+    },
+    {
+      "Key": "3270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant's two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "3280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Attendant 1's Two-Handed Long Ax"
+        }
+      ]
+    },
+    {
+      "Key": "3290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "3300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight spear"
+        }
+      ]
+    },
+    {
+      "Key": "3310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Guard's Two-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "3320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Nobleman's Two-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "3330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior's two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "3340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior's two-handed ax and spear"
+        }
+      ]
+    },
+    {
+      "Key": "3350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon heavy soldier's two-handed long axe"
+        }
+      ]
+    },
+    {
+      "Key": "3400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bare fist"
+        }
+      ]
+    },
+    {
+      "Key": "3401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder attack L input"
+        }
+      ]
+    },
+    {
+      "Key": "3402",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder attack R input"
+        }
+      ]
+    },
+    {
+      "Key": "3403",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC ladder attack L input"
+        }
+      ]
+    },
+    {
+      "Key": "3404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC ladder attack R input"
+        }
+      ]
+    },
+    {
+      "Key": "3405",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC bare fist"
+        }
+      ]
+    },
+    {
+      "Key": "3406",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "3407",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong bare hands: Ladder attack L input"
+        }
+      ]
+    },
+    {
+      "Key": "3408",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong bare hands: Ladder attack R input"
+        }
+      ]
+    },
+    {
+      "Key": "3410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw"
+        }
+      ]
+    },
+    {
+      "Key": "3420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hermit crab castle claw"
+        }
+      ]
+    },
+    {
+      "Key": "3430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin's Claw (left)"
+        }
+      ]
+    },
+    {
+      "Key": "3440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bag shop claw"
+        }
+      ]
+    },
+    {
+      "Key": "3500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cestus"
+        }
+      ]
+    },
+    {
+      "Key": "3600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip"
+        }
+      ]
+    },
+    {
+      "Key": "3610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thorn whip"
+        }
+      ]
+    },
+    {
+      "Key": "3620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer's whip"
+        }
+      ]
+    },
+    {
+      "Key": "3630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful frog whip"
+        }
+      ]
+    },
+    {
+      "Key": "3660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Town Elder's Whip"
+        }
+      ]
+    },
+    {
+      "Key": "3800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician's wand"
+        }
+      ]
+    },
+    {
+      "Key": "3810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fairy Shrine Maiden's One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "3820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest guard's cane"
+        }
+      ]
+    },
+    {
+      "Key": "3830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark wizard's one-handed staff (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "3850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lich's Miraculous Dark Arts Staff"
+        }
+      ]
+    },
+    {
+      "Key": "3860",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric's Wand"
+        }
+      ]
+    },
+    {
+      "Key": "3870",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark wizard's one-handed staff (upper class)"
+        }
+      ]
+    },
+    {
+      "Key": "3880",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bookstore's cane"
+        }
+      ]
+    },
+    {
+      "Key": "3890",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "3900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "4010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest's One-handed Bell (Lower)"
+        }
+      ]
+    },
+    {
+      "Key": "4020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest guard's one-handed bell"
+        }
+      ]
+    },
+    {
+      "Key": "4030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest's One-Handed Bell (Medium)"
+        }
+      ]
+    },
+    {
+      "Key": "4040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's Festival One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "4050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen bell"
+        }
+      ]
+    },
+    {
+      "Key": "4060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric's one-handed bell"
+        }
+      ]
+    },
+    {
+      "Key": "4080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Miracle) One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "4090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Phantom Shop's One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "4100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's attendant 1's one-handed bell"
+        }
+      ]
+    },
+    {
+      "Key": "4110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest's one-handed bell circle (upper)"
+        }
+      ]
+    },
+    {
+      "Key": "4150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Bishop's One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "4200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short bow"
+        }
+      ]
+    },
+    {
+      "Key": "4210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Longbow"
+        }
+      ]
+    },
+    {
+      "Key": "4220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Composite bow"
+        }
+      ]
+    },
+    {
+      "Key": "4230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor's two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "4240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "4270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sancho's two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "4280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "4290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Faris' black bow"
+        }
+      ]
+    },
+    {
+      "Key": "4400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor bow"
+        }
+      ]
+    },
+    {
+      "Key": "4420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon hunter's bow"
+        }
+      ]
+    },
+    {
+      "Key": "4600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "4610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "4630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot's one-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "4660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Avaline"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "5010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-sided warrior's Ōmagari sword"
+        }
+      ]
+    },
+    {
+      "Key": "5040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-headed wyvern's large curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "5200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Zweihänder"
+        }
+      ]
+    },
+    {
+      "Key": "5210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great sword"
+        }
+      ]
+    },
+    {
+      "Key": "5220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Knight's Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "5230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-headed wyvern oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "5240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanclad's oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "5270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant (Soul) Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "5275",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon heavy soldier's oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "5280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "5285",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "5290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight great sword"
+        }
+      ]
+    },
+    {
+      "Key": "5295",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forgotten Sinner's Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "5310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue Knight's double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "5330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "5340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traditional double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "5350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged iron sword"
+        }
+      ]
+    },
+    {
+      "Key": "5360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "5400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire of sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "5410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire of Jujutsu"
+        }
+      ]
+    },
+    {
+      "Key": "5500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "5510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus: long sword"
+        }
+      ]
+    },
+    {
+      "Key": "5520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "First time bonus: hand ax"
+        }
+      ]
+    },
+    {
+      "Key": "5530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus: Mace"
+        }
+      ]
+    },
+    {
+      "Key": "5540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus: cane"
+        }
+      ]
+    },
+    {
+      "Key": "6000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch (small)"
+        }
+      ]
+    },
+    {
+      "Key": "6100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Telescope"
+        }
+      ]
+    },
+    {
+      "Key": "6300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-dagger"
+        }
+      ]
+    },
+    {
+      "Key": "6310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "6320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "6330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-sword"
+        }
+      ]
+    },
+    {
+      "Key": "6340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "6350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "6360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-One-handed War Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "6370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - Two-handed War Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "6380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "6390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "6400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-spear"
+        }
+      ]
+    },
+    {
+      "Key": "6410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "6420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "6430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "6440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-claws"
+        }
+      ]
+    },
+    {
+      "Key": "6450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom-Torch"
+        }
+      ]
+    },
+    {
+      "Key": "6460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom-Telescope"
+        }
+      ]
+    },
+    {
+      "Key": "6470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-whip"
+        }
+      ]
+    },
+    {
+      "Key": "6480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - one-handed cane"
+        }
+      ]
+    },
+    {
+      "Key": "6490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "6500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "6510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "6520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-One-handed Bow"
+        }
+      ]
+    },
+    {
+      "Key": "6530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Two-handed Omagari Sword"
+        }
+      ]
+    },
+    {
+      "Key": "6540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion - two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "6550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "7010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cutscene servant statue"
+        }
+      ]
+    },
+    {
+      "Key": "8182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon color check"
+        }
+      ]
+    },
+    {
+      "Key": "8183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Impact check"
+        }
+      ]
+    },
+    {
+      "Key": "11000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Buckler"
+        }
+      ]
+    },
+    {
+      "Key": "11005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield of the avenging warrior's father"
+        }
+      ]
+    },
+    {
+      "Key": "11010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small leather shield"
+        }
+      ]
+    },
+    {
+      "Key": "11020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron shield"
+        }
+      ]
+    },
+    {
+      "Key": "11030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier's small shield (old)"
+        }
+      ]
+    },
+    {
+      "Key": "11040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target shield"
+        }
+      ]
+    },
+    {
+      "Key": "11050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior's Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin's shield"
+        }
+      ]
+    },
+    {
+      "Key": "11080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom tactician's small shield"
+        }
+      ]
+    },
+    {
+      "Key": "11091",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red and white round shield"
+        }
+      ]
+    },
+    {
+      "Key": "11095",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper's pot lid"
+        }
+      ]
+    },
+    {
+      "Key": "11110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest's Small Shield (A)"
+        }
+      ]
+    },
+    {
+      "Key": "11120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest Masked Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Mage's Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer's Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor's shield"
+        }
+      ]
+    },
+    {
+      "Key": "11185",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C's Small Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large leather shield"
+        }
+      ]
+    },
+    {
+      "Key": "11210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twin bird wooden shield"
+        }
+      ]
+    },
+    {
+      "Key": "11220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heater shield"
+        }
+      ]
+    },
+    {
+      "Key": "11230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard captain's middle shield"
+        }
+      ]
+    },
+    {
+      "Key": "11240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Warrior's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanglad's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sea Solar's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior's medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "11300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heraldic shield"
+        }
+      ]
+    },
+    {
+      "Key": "11310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon emblem shield"
+        }
+      ]
+    },
+    {
+      "Key": "11330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Priest's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue Knight's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Miracle) Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butterfly shield"
+        }
+      ]
+    },
+    {
+      "Key": "11390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric's Medium Shield B"
+        }
+      ]
+    },
+    {
+      "Key": "11395",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield of the four heavenly kings of spell (curse)"
+        }
+      ]
+    },
+    {
+      "Key": "11400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood shield"
+        }
+      ]
+    },
+    {
+      "Key": "11420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier's medium shield (old)"
+        }
+      ]
+    },
+    {
+      "Key": "11430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twin snake kite shield"
+        }
+      ]
+    },
+    {
+      "Key": "11450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "11470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sancho's medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "11475",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elder Dragon Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11485",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slave beast molten iron medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "11495",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Professor's Middle Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eagle shield"
+        }
+      ]
+    },
+    {
+      "Key": "11510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tower shield"
+        }
+      ]
+    },
+    {
+      "Key": "11530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight's large shield (left)"
+        }
+      ]
+    },
+    {
+      "Key": "11540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight's large shield (right)"
+        }
+      ]
+    },
+    {
+      "Key": "11550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry shield"
+        }
+      ]
+    },
+    {
+      "Key": "11570",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11590",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Havel's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy dwarf shield"
+        }
+      ]
+    },
+    {
+      "Key": "11610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch large shield"
+        }
+      ]
+    },
+    {
+      "Key": "11630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient warrior shield"
+        }
+      ]
+    },
+    {
+      "Key": "11640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon heavy soldier large shield 1"
+        }
+      ]
+    },
+    {
+      "Key": "11650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier Great Shield 2"
+        }
+      ]
+    },
+    {
+      "Key": "11700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 1: Small Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 2: Small Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 3: Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 4: Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 5: Large Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contest Shield 6: Large Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "First time bonus small shield 1"
+        }
+      ]
+    },
+    {
+      "Key": "11810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus medium shield 2"
+        }
+      ]
+    },
+    {
+      "Key": "11820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial bonus medium shield 3"
+        }
+      ]
+    },
+    {
+      "Key": "11830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "First time bonus small shield 4"
+        }
+      ]
+    },
+    {
+      "Key": "11840",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "First time bonus small shield 5"
+        }
+      ]
+    },
+    {
+      "Key": "12000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Small Shield"
+        }
+      ]
+    },
+    {
+      "Key": "12010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "12020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion-Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "732000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 1: Fire of Sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "733000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 2: Fire of Sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "741000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior: Two-handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "761000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop: curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "763000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer: One-handed staff"
+        }
+      ]
+    },
+    {
+      "Key": "766000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician: One-handed staff"
+        }
+      ]
+    },
+    {
+      "Key": "772000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curious item shop: two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "784000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Absolution: Two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male): Extra large sword"
+        }
+      ]
+    },
+    {
+      "Key": "811000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Archer (male): Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "812000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Sage (female): Cane"
+        }
+      ]
+    },
+    {
+      "Key": "813000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Lancer (Female): Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "814000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Flesh Cut (Female): White Spirit: Single-edged two-handed axe"
+        }
+      ]
+    },
+    {
+      "Key": "814009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Flesh Cut (Female): Black Spirit: Single-edged two-handed axe"
+        }
+      ]
+    },
+    {
+      "Key": "820000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi NPC: Spearman (male): Spear"
+        }
+      ]
+    },
+    {
+      "Key": "821000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Grim Reaper (female): Two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "822000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male): Staff"
+        }
+      ]
+    },
+    {
+      "Key": "823000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Ancient Dragon Swordsman (Male): Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "824000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Female swordsman's brother: Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "831000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Tomb: Abandoned Saint: One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "831100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Tomb: Saint's Knight: Two-Handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "832000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 1: Sniper: Two-handed Bow"
+        }
+      ]
+    },
+    {
+      "Key": "832100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Pit: Abyssal Spirit 2: Axeman: Two-handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "832200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 3: Yellow Robe: Fire of Magic"
+        }
+      ]
+    },
+    {
+      "Key": "832201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 3: Yellow Robe: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "832300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Pit: Abyssal Spirit 4: Yellow Robe Wife: Magical Fire"
+        }
+      ]
+    },
+    {
+      "Key": "832301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 4: Yellow Robe Wife: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "832400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 5: Traveler: Bleeding Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "832401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 5: Traveler: Poisonous Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "832500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 6: Knight: Stinging Sword"
+        }
+      ]
+    },
+    {
+      "Key": "832600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 7: Heavy Warrior: Two-handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "832700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 8: Queen: Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "832701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 8: Queen: Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "833000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Shrine: Cannibal Chief: One-handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "834000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Sorcerer: Fire of Sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "834100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Dark Knight: Double-edged Sword"
+        }
+      ]
+    },
+    {
+      "Key": "835000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceremonial place: Dragon Knight: Dual swords (right)"
+        }
+      ]
+    },
+    {
+      "Key": "835001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ritual place: Painting guardian (female): Curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "835100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine: Dragon Knight: Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "835200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrine: Dragon Knight: One-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "836000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle: Samurai Sorcerer: Sword"
+        }
+      ]
+    },
+    {
+      "Key": "836001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress: Samurai Sorcerer: Sword (Two-handed, Two-handed)"
+        }
+      ]
+    },
+    {
+      "Key": "836100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Bell Keeper 1: Extra Large Sword"
+        }
+      ]
+    },
+    {
+      "Key": "836200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Bell Keeper 2: Rapid-Fire Bow"
+        }
+      ]
+    },
+    {
+      "Key": "836300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Bell Keeper 3: Cane"
+        }
+      ]
+    },
+    {
+      "Key": "836301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Castle: Bell Keeper 3: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "836400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Fortress: Light and Heavy Soldier: Two-Handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "837000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: 2nd round hunting: One-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "837100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Melee: Broken One-Handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "837200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Long Range: Two-handed Bow"
+        }
+      ]
+    },
+    {
+      "Key": "838000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 1: Bastard Sword"
+        }
+      ]
+    },
+    {
+      "Key": "838100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 2: Mace"
+        }
+      ]
+    },
+    {
+      "Key": "842000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Decayed Giant: In front of the King's Door: 2nd lap Red Spirit 1: Elephant's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "843000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Decayed Giant: In front of the King's Door: 2nd lap Red Spirit 2: Wandering Knight's Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "843001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of Fallen Giants: In front of the King's Door: 2nd lap Red Spirit 2: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "844000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant's Forest: Fissure Plaza: 2nd lap Red Spirit 3: Dullahan's one-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "845000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant Forest: 2nd round Dark Spirit: Scimitar"
+        }
+      ]
+    },
+    {
+      "Key": "846000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shining Stone Town Geldra: Dark Spirit: Pickaxe"
+        }
+      ]
+    },
+    {
+      "Key": "847000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower: 2nd round Dark Spirit 1: Silver Chariot's Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "847100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Tower of Fire: 2nd round Dark Spirit 2: Saint's attendant's two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "848000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: 2nd round Dark Spirit 1: Phantom Mage's one-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "848100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple: Dark Spirit 2 (Ghost): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "849000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ojo Drangraig: Dark Spirit 1 (Ghost): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "849100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig: Dark Spirit 2 (Clown): Fire of Magic"
+        }
+      ]
+    },
+    {
+      "Key": "849200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig: Dark Spirit 3 (Transparent Armor): Shotel"
+        }
+      ]
+    },
+    {
+      "Key": "850000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mansion of An Deal: 2nd round Dark spirit (right): Strange shadow dagger"
+        }
+      ]
+    },
+    {
+      "Key": "850001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hall of An Deal: 2nd round Dark spirit (left): Rogue's dagger 2"
+        }
+      ]
+    },
+    {
+      "Key": "851000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pool Valley: Dark Spirit: Artificial Immortal's Two-Handed Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "852000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest: Red Spirit Level 3: Great Sword"
+        }
+      ]
+    },
+    {
+      "Key": "853000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: Dual Wield Avalin"
+        }
+      ]
+    },
+    {
+      "Key": "853100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig: Leroy: Estoc"
+        }
+      ]
+    },
+    {
+      "Key": "853200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd round Dark Spirit 1: Heavy equipment: Two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "853300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd round Dark Spirit 2: Knight: Long Sword"
+        }
+      ]
+    },
+    {
+      "Key": "853400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig: 2nd round Dark Spirit 3: Long range: Dragon hunter's longbow"
+        }
+      ]
+    },
+    {
+      "Key": "853500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ojo Drangraig: Dark Spirit Key Keeper: Clothesline Pole"
+        }
+      ]
+    },
+    {
+      "Key": "854000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port: Dark Spirit (Darth Maul): Statue Knight's Double-Edged Sword"
+        }
+      ]
+    }
+  ]
+}

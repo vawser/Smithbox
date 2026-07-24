@@ -1,0 +1,68 @@
+{
+  "Param": "NPC_INFO_PARAM",
+  "Type": "NPC_INFO_PARAM",
+  "Name": "NPC_INFO_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "graveGenerateTime",
+      "Name": "お墓生成時間",
+      "Description": ""
+    },
+    {
+      "Field": "deadTimeValueId",
+      "Name": "死亡時間格納先ID",
+      "Description": ""
+    },
+    {
+      "Field": "deadFlagId",
+      "Name": "死亡フラグID",
+      "Description": ""
+    },
+    {
+      "Field": "graveSoulValue",
+      "Name": "お墓ソウルコスト",
+      "Description": ""
+    },
+    {
+      "Field": "chrNameTextId",
+      "Name": "キャラテキストID",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "value0",
+      "Name": "汎用値0",
+      "Description": ""
+    },
+    {
+      "Field": "value1",
+      "Name": "汎用値1",
+      "Description": ""
+    },
+    {
+      "Field": "value2",
+      "Name": "汎用値2",
+      "Description": ""
+    },
+    {
+      "Field": "value3",
+      "Name": "汎用値3",
+      "Description": ""
+    },
+    {
+      "Field": "value4",
+      "Name": "汎用値4",
+      "Description": ""
+    },
+    {
+      "Field": "value5",
+      "Name": "汎用値5",
+      "Description": ""
+    }
+  ]
+}

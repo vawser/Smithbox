@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_RESIDENT_SFX_CTRL_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_RESIDENT_SFX_CTRL_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disappears when broken"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only after destruction"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Everytime"
+        }
+      ]
+    }
+  ]
+}

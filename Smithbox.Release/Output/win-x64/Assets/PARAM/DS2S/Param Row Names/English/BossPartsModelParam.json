@@ -1,0 +1,107 @@
+{
+  "Name": "BossPartsModelParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 21200001,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 21200101,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 21200201,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 21200301,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 30960001,
+      "Entries": [
+        "The Last Giant"
+      ]
+    },
+    {
+      "ID": 32600001,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 32600002,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 50100001,
+      "Entries": [
+        "Mytha- the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 50300001,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 50300002,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 60100001,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60102001,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60300001,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 60300002,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 61911001,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 68100001,
+      "Entries": [
+        "Sinh- the Slumbering Dragon"
+      ]
+    }
+  ]
+}

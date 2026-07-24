@@ -1,0 +1,47 @@
+{
+  "Key": "GENERATOR_REGIST_OBJECT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_REGIST_OBJECT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9997)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9996)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9995)"
+        }
+      ]
+    }
+  ]
+}

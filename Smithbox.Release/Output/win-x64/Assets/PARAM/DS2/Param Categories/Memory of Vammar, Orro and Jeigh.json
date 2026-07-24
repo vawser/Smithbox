@@ -1,0 +1,23 @@
+{
+  "Key": "Memory of Vammar, Orro and Jeigh",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Memory of Vammar, Orro and Jeigh"
+      }
+  ],
+  "Params": [
+    "demospotlight_scn201010",
+    "eventlocation_m20_10_00_00",
+    "eventparam_m20_10_00_00",
+    "generatorlocation_m20_10_00_00",
+    "generatorparam_m20_10_00_00",
+    "generatorregistparam_m20_10_00_00",
+    "hitgroupparam_m20_10_00_00",
+    "intrudepointparam_m20_10_00_00",
+    "mapobjectinstanceparam_m20_10_00_00",
+    "maptargetdirparam_m20_10_00_00",
+    "npctalkparam_m20_10_00_00",
+    "treasureboxparam_m20_10_00_00"
+  ]
+}

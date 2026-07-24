@@ -1,0 +1,93 @@
+{
+  "Param": "USER_DISP_LOG_PARAM_ST",
+  "Type": "USER_DISP_LOG_PARAM_ST",
+  "Name": "USER_DISP_LOG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId_1",
+      "Name": "Text ID: Standard",
+      "Description": "Typically appears in the bottom right corner"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon to display next to message"
+    },
+    {
+      "Field": "textId_2",
+      "Name": "Text ID: Results",
+      "Description": "Text displayed in result history"
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "seId_1",
+      "Name": "Sound ID: Self",
+      "Description": "Sound effect played with message to self"
+    },
+    {
+      "Field": "seId_2",
+      "Name": "Sound ID: Others",
+      "Description": "Sound effect played with message from others"
+    }
+  ]
+}

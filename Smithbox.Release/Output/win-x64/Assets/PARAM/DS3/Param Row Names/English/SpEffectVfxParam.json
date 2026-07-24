@@ -1,0 +1,5213 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Flame "
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poison "
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Hill "
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Corrosion "
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Plague "
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bleeding "
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hidden "
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Gravity user "
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "State abnormal recovery (poison) "
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "State abnormal recovery (plague) "
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "State abnormal recovery (bleeding) "
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "State abnormal recovery (Universal) "
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Soul Steele "
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Zoom "
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Warp "
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Demon's Souls "
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Black Ghost Disperse "
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Strong Ghost "
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "White Hope "
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Black Hope "
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Black Ghost "
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Resuscitation "
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Magic Prohibition "
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Miracle Motion Extension "
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Grinding wheel "
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Asphyxia Resuscitation "
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon reinforcement "
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Defense Shield "
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Covered yarn "
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "【 system 】 Ghost Rum Change "
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Incubus "
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Flies bummed "
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "(FDP proto) slime freezing "
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Flame Phantom _ Second phase "
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Flame Phantom _ Third stage "
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Flame Phantom _ Fourth stage "
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Hallucinations "
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Soul Coins "
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Strong defense Shield "
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Fire Resistant Shield "
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "HP Recovery Status "
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Forced ghosting first Stage "
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Forced ghosting Phase II "
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Forced ghosting third phase "
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Pheromones "
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Cat Landing "
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Pinch attack power up "
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Pinch defensive power up "
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Regenerate "
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Torchlight "
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weak Regenerate "
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Weak Ghost Camouflage "
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Hidden weakness "
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Tip Blood Letters "
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Hill Foot "
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Yellow Robe "
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Point Light "
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Blood character evaluation "
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon reinforcement (medium) "
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Weapon reinforcement (large) "
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Flame Enhancement "
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "flame enhancement (Large) "
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Magic Reinforcement "
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Chimera Reinforcement "
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Item Drop correction "
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "MP Regenerate "
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Weak MP Regenerate "
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Resurrection when dead "
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Poison tolerance up "
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Magic Power Up "
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic Defense Up "
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Bleeding resistance up "
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Plague resistant up "
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Stamina Recovery Up "
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Seoul gets up "
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Flame resistant up "
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "King's Shield one step left foot "
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "King's Shield 2 step left foot "
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "King's Shield three step left foot "
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "King's Shield one step right foot "
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "King's Shield 2 stage right foot "
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "King's Shield 3 stage right foot "
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Referee's belly bleeding "
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Mimicry "
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "(SP) Makeover "
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Extension "
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Detection "
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Waiting for cooperation "
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Cooperation "
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Send cooperation "
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Gravity "
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Evil Eye "
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "State lifting (waiting for cooperation) "
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Effect LV1 "
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Effect LV2 "
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Effect Lv3 "
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Evil Eye Lv1 "
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Evil Eye Lv2 "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Counter "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Planting Egg Standby "
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Planting eggs "
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Egg Head Standby "
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Egg Head "
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Super Light Movement "
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Curse "
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Petrified "
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Curse lifted "
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Human Nature Damage "
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Damage Anime Change _sa Limited time "
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Damage Anime Changes _ added "
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Underwater behavior "
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Weapon Head "
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Weapon Torso "
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Weapon hand "
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Weapon legs "
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Sleep "
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Mimic _ mimicry "
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Mimic _ Mimicry Slumber "
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Mimic _ usually "
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Mimic _ usually asleep "
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Attracted "
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Blood character acquisition "
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "A change in the "
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Mimic _ usually beginning to sleep "
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Crystallization "
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Resonance lv0 "
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Resonance LV1 "
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Resonance Lv2 "
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Resonance Lv3 "
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Resonance lv4 "
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Behavior ID Specification "
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Immortal Enemy "
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Enemy _ Asphyxia "
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "The Sacred attribute "
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Whole Body Grindstone "
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Light Magic "
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Request for Relief "
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "White Relief "
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Black Relief "
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Lightning Reinforcement "
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Poison Reinforcement "
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Strengthening the plague "
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "EST unavailable "
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "SA reinforcement "
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Endurance decrease disabled "
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Strengthening against spirituality "
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Guard Reinforcement "
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Usually dead when the ring resurrection "
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "When a curse dies, the ring revives. "
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Warp b "
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Warp C "
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Warp D "
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Warp E "
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Warp A "
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Pledge discarded "
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "【 SP 】 Systemic makeover "
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Precision Reinforcement "
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "resonance enhancement "
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Causal retribution "
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Causal retribution explosion "
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Sheath Invincible 1 "
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Sheath Invincible 2 "
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Sheath Invincible 3 "
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Revival of humanity "
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Soul Coin (Immortal) "
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Soul Coin (Beast System) "
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Ally Reinforcement Magic "
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Curse effect LV1 "
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curse effect Lv2 "
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Curse effect Lv3 "
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Curse effect Lv4 "
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "SOS Vis "
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Invisible weapon "
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "NITs effect "
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Fire Kick "
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "A death "
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Forest thieves summon Hope "
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Forest thieves in territory "
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Wang Mother brother summoned Hope "
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "King Mother Brother Territory "
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Egg Head _ Two "
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Life extension "
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Magic Use up "
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Dragon NEWT Sines "
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Prize Neck sign "
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Counter up "
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Egg condemning "
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "HP Drain "
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "The Power of Madness "
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "For magic ban effect "
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Dragon Roar "
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Magic usage Down "
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Strengthen guard (large) "
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "(DLC) Dark reinforcement "
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Arena 1 vs. 1 (small) in territory "
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Arena 2 vs. 2 (small) territory "
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Arena Battle Royal (small) territory "
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Arena 1 vs. 1 (small) summon hope a "
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Arena 1 vs. 1 (small) Summon Hope B "
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Arena 2 vs. 2 (small) summon hope A1 "
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Arena 2 vs. 2 (small) summon hope A2 "
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Arena 2 vs. 2 (small) Summon Hope B1 "
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Arena 2 vs. 2 (small) Summon hope B2 "
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Arena Battle Royal (small) summon hope a "
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Arena Battle Royal (small) summon Hope B "
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Arena Battle Royal (small) Summon hope C "
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Arena Battle Royal (small) summon hope D "
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Arena 1 to 1 (large) in territory "
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena 2 vs. 2 (large) territory "
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Arena Battle Royal 【 Dai 】 Territory "
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Arena 1 to 1 (large) Summon hope a "
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Arena 1 to 1 (large) Summon hope B "
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Arena 2 vs. 2 (large) summon request A1 "
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Arena 2 vs. 2 (large) summon hope A2 "
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Arena 2 vs. 2 (large) Summon hope B1 "
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Arena 2 vs. 2 (large) Summon hope B2 "
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Arena Battle Royal (large) summon hope a "
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Arena Battle Royal (large) Summon hope B "
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Arena Battle Royal (large) Summon hope C "
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Arena Battle Royal (large) summon hope D "
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Prohibition of use prohibited items in the arena "
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Arena dead "
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Provisional first place in the arena "
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Arena Nodead "
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Arena Equal # 1 "
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Black Dragon Ring "
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "More than ten fighting pits "
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "Over 30 wins in the arena "
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Arena 50 wins over "
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Over 100 wins in the arena "
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Blood material override "
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Blood Material _ Blood "
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Blood Material _ Flame "
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Blood Material _ blood Small "
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Stacking Magic A_LV1 "
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Stacking Magic A_lv2 "
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Stacking Magic A_lv3 "
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Stacking Magic B_LV1 "
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Stacking Magic B_lv2 "
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Stacking Magic B_lv3 "
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Covered with oil "
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Fire Daruma "
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "In the midst of being possessed "
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Dark Magic "
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "Burning Body combustion Level 1 "
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "Burning Body combustion Level 2 "
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "Sound magnification change "
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "Target Down "
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Caries "
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Maggots "
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "State abnormal recovery (maggots) "
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Bleeding state "
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Quick Match Request "
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Dead disabled during fall "
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Change Visual Range "
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "Caries deaths "
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Double chanting "
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "General ABATABAF 1 "
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "General ABATABAF 2 "
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "General ABATABAF 3 "
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "General ABATABAF 4 "
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "General ABATABAF 5 "
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 278,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 279,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 287,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 288,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 289,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 298,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 299,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Torches _ Flame Effect "
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Torches, the effect of hanging "
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "King of Firewood State Fire powder (small) "
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "King of Firewood State Fire powder (Large) "
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Wang Hua of firewood when SFX: right arm "
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Wang Hua of firewood when SFX: right elbow "
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Wang Hua of firewood when SFX: right shoulder "
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "Wang Hua of firewood when SFX: upper body "
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "Wang Hua of firewood when SFX: systemic "
+      ]
+    },
+    {
+      "ID": 5025,
+      "Entries": [
+        "Wang Hua of firewood when SFX: "
+      ]
+    },
+    {
+      "ID": 5026,
+      "Entries": [
+        "Wang Hua of firewood when SFX: "
+      ]
+    },
+    {
+      "ID": 5027,
+      "Entries": [
+        "Wang Hua of firewood when SFX: "
+      ]
+    },
+    {
+      "ID": 5028,
+      "Entries": [
+        "Wang Hua of firewood when SFX: "
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5562,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5860,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Arts: Axe: War cry "
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "Arts: Cane: strengthening Magic (right) "
+      ]
+    },
+    {
+      "ID": 6911,
+      "Entries": [
+        "Arts: Cane: strengthening Magic (left) "
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "Arts: Hammered: Patience "
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        "Arts: Talisman: Bearable chanting "
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6961,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6999,
+      "Entries": [
+        "SFX Confirmation: EST recovery "
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Fire weapon Reinforcement "
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Regen Double Chanting "
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Recovery double Chanting "
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Sun Sword "
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Great recovery "
+      ]
+    },
+    {
+      "ID": 8041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8044,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "A firm vow "
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Poison (Body Center effect) "
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40253,
+      "Entries": [
+        "Fire Daruma "
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "Caries (Body center effect) "
+      ]
+    },
+    {
+      "ID": 42300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Daemon Priest _ Mojo Small "
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Demon Priest _ in Witchcraft "
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Demon Priest _ Great Mojo "
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Demon Priest _ Flame Enchant "
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Daemon Priest _ "
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Elders of Crystals _ ally "
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Dead Wax (head) "
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "Dead of wax _ head Flame "
+      ]
+    },
+    {
+      "ID": 50029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "Firewood Daemon Head (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "Firewood Daemon _ Breast (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "Firewood Daemon _ Back (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "Firewood Daemon _ Weapons (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Daemon Hu_ Head of firewood (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        "Firewood Daemon hu_ Chest (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        "Firewood Daemon Hu_ back (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        "Wood Daemon Hu_ Weapon (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        "New Skeleton Torch (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50048,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50049,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50050,
+      "Entries": [
+        "Salivan's Reaper _ Sword Enchanted "
+      ]
+    },
+    {
+      "ID": 50051,
+      "Entries": [
+        "Salivan's Reaper _ Sickle Enchantment "
+      ]
+    },
+    {
+      "ID": 50052,
+      "Entries": [
+        "Salivan Reaper (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50053,
+      "Entries": [
+        "Salivan Reaper _ (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50054,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50055,
+      "Entries": [
+        "Tindalos _ Eyed "
+      ]
+    },
+    {
+      "ID": 50058,
+      "Entries": [
+        "Gargoyl Torch "
+      ]
+    },
+    {
+      "ID": 50059,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50060,
+      "Entries": [
+        "King of the evil miasma chest resident SFX "
+      ]
+    },
+    {
+      "ID": 50061,
+      "Entries": [
+        "King of the Evil Miasma "
+      ]
+    },
+    {
+      "ID": 50062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50066,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50067,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50068,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50069,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "The old king of caries Aura resident SFX "
+      ]
+    },
+    {
+      "ID": 50071,
+      "Entries": [
+        "The old king of caries Aura Hu-Resident SFX "
+      ]
+    },
+    {
+      "ID": 50072,
+      "Entries": [
+        "The old king caries Vane resident SFX "
+      ]
+    },
+    {
+      "ID": 50073,
+      "Entries": [
+        "The old king caries Vane resident SFX "
+      ]
+    },
+    {
+      "ID": 50074,
+      "Entries": [
+        "Old King Style resident SFX of caries "
+      ]
+    },
+    {
+      "ID": 50075,
+      "Entries": [
+        "The Old king illusion of Eclipse translucent "
+      ]
+    },
+    {
+      "ID": 50076,
+      "Entries": [
+        "The Old king illusion of caries completely transparent "
+      ]
+    },
+    {
+      "ID": 50080,
+      "Entries": [
+        "Butterfly Scales resident of caries "
+      ]
+    },
+    {
+      "ID": 50081,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50082,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50083,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50084,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50090,
+      "Entries": [
+        "Ash Daemon _ Weapon Smoke (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50091,
+      "Entries": [
+        "Ash Daemon _ Full Body smoke (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50092,
+      "Entries": [
+        "Ash Daemon _ Joint 1 (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50093,
+      "Entries": [
+        "Ash Daemon _ Joint 2 (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50094,
+      "Entries": [
+        "Ash Daemon _ Joint 3 (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50095,
+      "Entries": [
+        "Ash Daemon _ Joint 4 (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50096,
+      "Entries": [
+        "Ash Daemon _ Strain 1 (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50097,
+      "Entries": [
+        "Ash Daemon _ Strain 2 (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50098,
+      "Entries": [
+        "Ash Daemon _ Strain 3 (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50099,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "Dead soldier Hand-held lantern resident SFX "
+      ]
+    },
+    {
+      "ID": 50111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50120,
+      "Entries": [
+        "Dead soldier: Segunda State resident SFX "
+      ]
+    },
+    {
+      "ID": 50121,
+      "Entries": [
+        "Dead soldier: Segunda State resident SFX "
+      ]
+    },
+    {
+      "ID": 50122,
+      "Entries": [
+        "Dead soldier: Segunda State resident SFX "
+      ]
+    },
+    {
+      "ID": 50123,
+      "Entries": [
+        "Dead soldier: Segunda State resident SFX "
+      ]
+    },
+    {
+      "ID": 50124,
+      "Entries": [
+        "Dead soldier: Segunda State resident SFX "
+      ]
+    },
+    {
+      "ID": 50125,
+      "Entries": [
+        "Dead Soldier: Segunda status (Resident SFX) "
+      ]
+    },
+    {
+      "ID": 50130,
+      "Entries": [
+        "Dead soldier Waist Lantern resident SFX "
+      ]
+    },
+    {
+      "ID": 50150,
+      "Entries": [
+        "New Ojo Knight: Red Eye (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50152,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50153,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50154,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50156,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Dark Knight Beast _ Head (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "Dark Knight Beast _ Torso (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "Dark Knight Beast _ left arm (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "Dark Knight Beast _ right arm (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50204,
+      "Entries": [
+        "Dark Knight Beast _ right foot (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50205,
+      "Entries": [
+        "Dark Knight Beast _ Left foot (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50206,
+      "Entries": [
+        "Dark Knight Beast _ Weapons (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50207,
+      "Entries": [
+        "Dark Knight Beast Eyes (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50210,
+      "Entries": [
+        "Tracker _ Body Chill (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50211,
+      "Entries": [
+        "Tracker _ Flaming Sword (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50212,
+      "Entries": [
+        "Tracker _ The Sword of the Eclipse (cold) (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50220,
+      "Entries": [
+        "Cardinal _ Curse (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50221,
+      "Entries": [
+        "Cardinals _ Range Regen (Effect SFX) "
+      ]
+    },
+    {
+      "ID": 50222,
+      "Entries": [
+        "Cardinals _ Range Scrut (Effect SFX) "
+      ]
+    },
+    {
+      "ID": 50223,
+      "Entries": [
+        "Cardinal _ Eye Light (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50224,
+      "Entries": [
+        "Cardinal _ Aura (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50225,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50226,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50227,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50228,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50230,
+      "Entries": [
+        "Moonlight Witch (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50240,
+      "Entries": [
+        "New Shing (resident SFX) "
+      ]
+    },
+    {
+      "ID": 50241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50242,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50243,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50244,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50246,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50247,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50248,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50250,
+      "Entries": [
+        "Full Armor Beast _ Whole body chill (before HU) "
+      ]
+    },
+    {
+      "ID": 50251,
+      "Entries": [
+        "Full Armor Beast _ weapon cold (before HU) "
+      ]
+    },
+    {
+      "ID": 50252,
+      "Entries": [
+        "Full Armor Beast _ Whole body chill (after HU) "
+      ]
+    },
+    {
+      "ID": 50253,
+      "Entries": [
+        "Full Armor Beast _ weapon cold (after Hu) "
+      ]
+    },
+    {
+      "ID": 50254,
+      "Entries": [
+        "Full Armor Beast _ Eye light (after Hu) "
+      ]
+    },
+    {
+      "ID": 50260,
+      "Entries": [
+        "Salivan (NITs Sword Enchanted) "
+      ]
+    },
+    {
+      "ID": 50261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50262,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50263,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50264,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50265,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50266,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50267,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50270,
+      "Entries": [
+        "Phantom of the painting "
+      ]
+    },
+    {
+      "ID": 50280,
+      "Entries": [
+        "Hel Kite _ Ojo 1 feet "
+      ]
+    },
+    {
+      "ID": 50290,
+      "Entries": [
+        "Dead-resident SFX of Wax "
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Salivan watchdog (Large) Resident SFX "
+      ]
+    },
+    {
+      "ID": 50301,
+      "Entries": [
+        "Salivan watchdog (small) Resident SFX "
+      ]
+    },
+    {
+      "ID": 50302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50329,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50336,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50337,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50338,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50339,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50352,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50354,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50355,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50371,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50372,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50380,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50390,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50422,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50423,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50424,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50425,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50443,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50444,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50445,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50483,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50484,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50491,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50492,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50561,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50562,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50563,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50564,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50565,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50566,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50567,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50568,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50569,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50570,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50571,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50572,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50573,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50574,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62117,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90013765,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024360,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90024700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90025620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90026500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90034900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90035910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90036400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90037300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90037600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90037700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90037800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90037900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91007001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91007051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91011200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91011211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91011261,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91021100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91021110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91021400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91021601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91021651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91022210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91022401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91022451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91040700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91040701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91041000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91050200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91050401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91050451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91061701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91061751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91061800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91061850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91062761,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91063721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91069501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91069551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91069601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91069651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91070751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91071301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91071351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91080651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91081800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91081810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91081900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91083211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91083212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91083251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91083252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91091951,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91092600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91100700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91100750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91120400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91120701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91120751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91130700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91130750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91134111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91134120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91134131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91160500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91160550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91201500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92017000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92018000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92019000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92029000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92038000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92041000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92043000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92045010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92054000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92054010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92058000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92059010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92062001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92063001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92066000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92067000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92073000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92075000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92079000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92083000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 94044000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 94056000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 95900000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 96000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99000030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "138",
+  "name": "Undead Torturer ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sitting"
+    },
+    {
+      "value": "3",
+      "name": "Sitting"
+    }
+  ]
+}

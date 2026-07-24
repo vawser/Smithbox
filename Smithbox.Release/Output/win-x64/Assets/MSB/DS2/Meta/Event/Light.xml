@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <ColorT0C
+    AltName="Color: 0x0C"
+    Wiki="" />
+    
+    <ColorT10
+    AltName="Color: 0x10"
+    Wiki="" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <UnkT20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <ColorT24
+    AltName="Color: 0x24"
+    Wiki="" />
+    
+    <ColorT28
+    AltName="Color: 0x28"
+    Wiki="" />
+    
+    <ColorT34
+    AltName="Color: 0x34"
+    Wiki="" />
+    
+    <ColorT38
+    AltName="Color: 0x8"
+    Wiki="" />
+    
+    <ColorT3C
+    AltName="Color: 0x3C"
+    Wiki="" />
+    
+    <UnkT40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,158 @@
+{
+  "Name": "CutsceneParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy (for data output) -- ダミー(データ出力のため)"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Burning down samurai residence -- 焼け落ちる武家屋敷",
+        "Burning down samurai residence -- 焼け落ちる武家屋敷"
+      ]
+    },
+    {
+      "ID": 11020070,
+      "Entries": [
+        "Receive a sword from the prince -- 皇子から刀を授かる",
+        "Receive a sword from the prince -- 皇子から刀を授かる"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Temple boss battle started -- 寺ボス戦開始"
+      ]
+    },
+    {
+      "ID": 20000011,
+      "Entries": [
+        "Defeat the temple boss_day -- 寺ボス撃破＿昼"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "Defeat the temple boss -- 寺ボス撃破"
+      ]
+    },
+    {
+      "ID": 20000012,
+      "Entries": [
+        "Defeat the temple boss_evening -- 寺ボス撃破＿夕"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Butterflies appeared -- お蝶登場"
+      ]
+    },
+    {
+      "ID": 11010010,
+      "Entries": [
+        "Second appearance of rivals -- ライバル2回目登場"
+      ]
+    },
+    {
+      "ID": 11010011,
+      "Entries": [
+        "Second appearance of rivals _ noon -- ライバル2回目登場＿昼"
+      ]
+    },
+    {
+      "ID": 11010020,
+      "Entries": [
+        "Rival 2nd HU -- ライバル2回目HU"
+      ]
+    },
+    {
+      "ID": 11010030,
+      "Entries": [
+        "Defeat the second rival -- ライバル2回目撃破"
+      ]
+    },
+    {
+      "ID": 11010031,
+      "Entries": [
+        "Defeat the second rival _ evening -- ライバル2回目撃破＿夕"
+      ]
+    },
+    {
+      "ID": 11010040,
+      "Entries": [
+        "Ninja army chief appearance -- 忍軍の長登場"
+      ]
+    },
+    {
+      "ID": 11010060,
+      "Entries": [
+        "Isei&#39;s daughter battle begins -- 医聖の娘戦開始"
+      ]
+    },
+    {
+      "ID": 11010070,
+      "Entries": [
+        "Shura End -- 修羅エンド"
+      ]
+    },
+    {
+      "ID": 11020000,
+      "Entries": [
+        "Lose to rivals -- ライバルに敗れる"
+      ]
+    },
+    {
+      "ID": 11020001,
+      "Entries": [
+        "Losing to rivals_Victory -- ライバルに敗れる＿勝利"
+      ]
+    },
+    {
+      "ID": 11020040,
+      "Entries": [
+        "Resurrected Kensei Appears -- 蘇った剣聖登場"
+      ]
+    },
+    {
+      "ID": 25000020,
+      "Entries": [
+        "Moving to the sea of clouds -- 雲海への移動",
+        "Moving to the sea of clouds -- 雲海への移動"
+      ]
+    },
+    {
+      "ID": 11010080,
+      "Entries": [
+        "Kensei Appearance Castle Tower -- 剣聖登場天守閣"
+      ]
+    },
+    {
+      "ID": 11020090,
+      "Entries": [
+        "Join the prince -- 皇子と合流"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Taken to a straw doll -- 藁人形に連れて行かれる"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Date display -- 日付表示"
+      ]
+    },
+    {
+      "ID": 89000099,
+      "Entries": [
+        "Burning down samurai residence -- 焼け落ちる武家屋敷"
+      ]
+    }
+  ]
+}

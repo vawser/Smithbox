@@ -1,0 +1,6341 @@
+{
+  "Name": "DamageEffectSeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 3017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 3018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 3019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 3023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 3024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 3025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 3026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 3027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 3028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 3032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 3033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 3034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 3035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 10029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 11003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 11008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 11009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 11019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 11021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 11022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 11023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 11024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 11025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 11026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 11027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 11028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 11029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 11031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 11032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 11033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 11034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 11035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 12001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 12002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 12004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 12005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 12006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 12007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 12008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 12009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 12011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 12012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 12013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 12014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 12015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 12016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 12017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 12018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 12019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 12021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 12022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 12023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 12024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 12025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 12026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 12027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 12028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 12029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 12031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 12032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 12033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 12034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 12035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 13001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 13002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 13003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 13004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 13005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 13006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 13007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 13008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 13009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 13011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 13012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 13013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 13014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 13015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 13016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 13017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 13018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 13019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 13021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 13022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 13023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 13024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 13025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 13026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 13027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 13028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 13029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 13031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 13032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 13033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 13034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 13035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 20017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 20018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 20019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 20021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 20022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 20023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 20024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 20025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 20026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 20027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 20028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 20029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 20031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 20032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 20033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 20034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 20035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 21003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 21004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 21005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 21006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 21007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 21008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 21009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 21011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 21012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 21013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 21014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 21015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 21016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 21017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 21018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 21019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 21020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 21021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 21022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 21023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 21024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 21025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 21026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 21027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 21028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 21029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 21030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 21031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 21032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 21033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 21034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 21035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 22001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 22002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 22003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 22004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 22005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 22006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 22007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 22008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 22009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 22011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 22012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 22013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 22014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 22015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 22016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 22017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 22018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 22019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 22020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 22021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 22022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 22023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 22024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 22025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 22026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 22027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 22028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 22029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 22030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 22031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 22032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 22033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 22034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 22035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 23001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 23002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 23003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 23004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 23005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 23006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 23007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 23008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 23009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 23011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 23012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 23013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 23014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 23015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 23016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 23017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 23018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 23019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 23021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 23022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 23023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 23024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 23025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 23026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 23027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 23028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 23029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 23031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 23032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 23033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 23034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 23035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 30004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 30005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 30006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 30007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 30008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 30009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 30014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 30015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 30016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 30017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 30018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 30019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 30022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 30023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 30024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 30025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 30026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 30027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 30028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 30029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 30032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 30033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 30034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 30035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 31001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 31002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 31003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 31004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 31005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 31006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 31007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 31008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 31009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 31011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 31012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 31013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 31014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 31015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 31016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 31017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 31018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 31019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 31021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 31022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 31023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 31024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 31025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 31026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 31027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 31028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 31029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 31030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 31031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 31032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 31033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 31034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 31035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 32001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 32002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 32003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 32004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 32005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 32006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 32007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 32008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 32009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 32011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 32012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 32013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 32014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 32015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 32016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 32017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 32018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 32019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 32020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 32021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 32022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 32023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 32024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 32025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 32026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 32027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 32028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 32029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 32030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 32031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 32032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 32033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 32034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 32035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 33001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 33002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 33003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 33004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 33005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 33006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 33007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 33008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 33009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 33010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 33011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 33012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 33013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 33014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 33015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 33016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 33017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 33018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 33019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 33020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 33021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 33022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 33023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 33024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 33025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 33026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 33027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 33028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 33029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 33030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 33031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 33032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 33033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 33034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 33035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 40008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 40016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 40017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 40018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 40019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 40021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 40022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 40023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 40024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 40025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 40026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 40027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 40028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 40029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 40031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 40032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 40033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 40034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 40035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 41001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 41002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 41003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 41004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 41005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 41006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 41007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 41008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 41009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 41010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 41011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 41012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 41013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 41014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 41015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 41016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 41017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 41018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 41019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 41020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 41021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 41022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 41023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 41024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 41025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 41026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 41027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 41028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 41029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 41030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 41031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 41032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 41033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 41034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 41035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 42001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 42002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 42003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 42004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 42005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 42006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 42007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 42008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 42009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 42010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 42011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 42012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 42013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 42014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 42015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 42016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 42017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 42018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 42019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 42020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 42021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 42022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 42023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 42024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 42025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 42026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 42027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 42028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 42029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 42030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 42031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 42032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 42033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 42034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 42035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 43001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 43002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 43003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 43004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 43005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 43006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 43007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 43008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 43009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 43010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 43011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 43012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 43013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 43014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 43015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 43016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 43017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 43018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 43019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 43020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 43021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 43022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 43023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 43024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 43025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 43026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 43027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 43028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 43029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 43030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 43031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 43032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 43033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 43034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 43035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 50008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 50009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 50011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 50012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 50013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 50014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 50015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 50016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 50017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 50018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 50019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 50022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 50023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 50024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 50025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 50026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 50027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 50028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 50029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 51001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 51002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 51003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 51004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 51005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 51006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 51007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 51008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 51009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 51010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 51011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 51012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 51013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 51014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 51015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 51016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 51017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 51018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 51019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 51020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 51021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 51022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 51023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 51024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 51025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 51026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 51027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 51028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 51029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 51030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 51031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 51032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 51033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 51034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 51035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 52001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 52002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 52003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 52004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 52005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 52006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 52007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 52008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 52009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 52010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 52011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 52012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 52013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 52014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 52015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 52016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 52017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 52018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 52019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 52020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 52021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 52022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 52023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 52024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 52025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 52026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 52027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 52028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 52029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 52030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 52031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 52032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 52033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 52034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 52035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Offensive side replacement -- 攻め側置換"
+      ]
+    },
+    {
+      "ID": 53001,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 53002,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 53003,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 53004,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 53005,
+      "Entries": [
+        "Water -- 水"
+      ]
+    },
+    {
+      "ID": 53006,
+      "Entries": [
+        "Swamp -- 沼"
+      ]
+    },
+    {
+      "ID": 53007,
+      "Entries": [
+        "Wood -- 木材"
+      ]
+    },
+    {
+      "ID": 53008,
+      "Entries": [
+        "Raw Meat -- 生者肉"
+      ]
+    },
+    {
+      "ID": 53009,
+      "Entries": [
+        "Dead Meat -- 亡者肉"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "Bugs -- 虫"
+      ]
+    },
+    {
+      "ID": 53011,
+      "Entries": [
+        "Giant -- 巨人"
+      ]
+    },
+    {
+      "ID": 53012,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 53013,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 53014,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 53015,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 53016,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 53017,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 53018,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    },
+    {
+      "ID": 53019,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 53020,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 53021,
+      "Entries": [
+        "Carpet -- カーペット"
+      ]
+    },
+    {
+      "ID": 53022,
+      "Entries": [
+        "Grass -- 草"
+      ]
+    },
+    {
+      "ID": 53023,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 53024,
+      "Entries": [
+        "Cloth -- 布"
+      ]
+    },
+    {
+      "ID": 53025,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 53026,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 53027,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 53028,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 53029,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 53030,
+      "Entries": [
+        "Lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 53031,
+      "Entries": [
+        "Spider Thread -- 蜘蛛の糸"
+      ]
+    },
+    {
+      "ID": 53032,
+      "Entries": [
+        "Sulfur crystals -- 硫黄結晶"
+      ]
+    },
+    {
+      "ID": 53033,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 53034,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 53035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53043,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

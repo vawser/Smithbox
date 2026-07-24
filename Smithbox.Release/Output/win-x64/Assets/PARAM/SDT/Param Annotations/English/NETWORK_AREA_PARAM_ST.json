@@ -1,0 +1,73 @@
+{
+  "Param": "NETWORK_AREA_PARAM_ST",
+  "Type": "NETWORK_AREA_PARAM_ST",
+  "Name": "NETWORK_AREA_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "cellSizeX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cellSizeY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cellSizeZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableMultiPlay",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableRingSearch",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableBreakInSearch",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

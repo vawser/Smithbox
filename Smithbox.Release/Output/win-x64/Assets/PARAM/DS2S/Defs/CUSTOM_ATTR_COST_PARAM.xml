@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CUSTOM_ATTR_COST_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 physicalSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s32 fireSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s32 magicSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s32 thunderSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="s32 darkSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="s32 poisonSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s32 bleedSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="s32 physicalByCrudeSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s32 physicalByEnchantedSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="s32 physicalByAbyssSoul">
+            <DisplayName>必要ソウル</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s32 physicalItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s32 fireItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s32 magicItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s32 thunderItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="s32 darkItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="s32 poisonItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s32 bleedItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="s32 physicalByCrudeItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s32 physicalByEnchantedItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="s32 physicalByAbyssItemID">
+            <DisplayName>必要アイテムID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s16 physicalItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s16 fireItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s16 magicItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s16 thunderItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="s16 darkItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="s16 poisonItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s16 bleedItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="s16 physicalByCrudeItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s16 physicalByEnchantedItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="s16 physicalByAbyssItemNumber">
+            <DisplayName>必要アイテム数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

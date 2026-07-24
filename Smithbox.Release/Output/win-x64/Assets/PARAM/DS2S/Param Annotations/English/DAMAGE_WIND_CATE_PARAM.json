@@ -1,0 +1,53 @@
+{
+  "Param": "DAMAGE_WIND_CATE_PARAM",
+  "Type": "DAMAGE_WIND_CATE_PARAM",
+  "Name": "DAMAGE_WIND_CATE_PARAM",
+  "Description": "Defines how wind effects interact with different object categories and visual/sound effects, including fade behavior and hit response control.",
+  "Fields": [
+    {
+      "Field": "cloth",
+      "Name": "Apply for Cloth",
+      "Description": "Applies wind influence to cloth materials such as capes or garments."
+    },
+    {
+      "Field": "model",
+      "Name": "Apply for Grass",
+      "Description": "Applies wind influence to grass and similar foliage."
+    },
+    {
+      "Field": "obj",
+      "Name": "Apply for Object",
+      "Description": "Applies wind influence to environmental objects."
+    },
+    {
+      "Field": "sfx",
+      "Name": "Apply for SFX",
+      "Description": "Controls wind interaction with general visual effects."
+    },
+    {
+      "Field": "dmgSfx",
+      "Name": "Apply for Impact SFX",
+      "Description": "Special effects triggered on wind-related impact or collision."
+    },
+    {
+      "Field": "eraseSfx",
+      "Name": "Erase SFX on Hit Transition",
+      "Description": "Forces SFX to transition into a removal/clearing state when hit."
+    },
+    {
+      "Field": "dummy0",
+      "Name": "Dummy",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInTime",
+      "Name": "Fade-In Time",
+      "Description": "Time in seconds for wind effect to fade in."
+    },
+    {
+      "Field": "fadeOutTime",
+      "Name": "Fade-Out Time",
+      "Description": "Time in seconds for wind effect to fade out."
+    }
+  ]
+}

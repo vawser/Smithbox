@@ -1,0 +1,851 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 3000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Hidden Body"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Hush"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Aural Decoy"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 3540,
+      "Entries": [
+        "Fall Control"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Resist Curse"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Remedy"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Dark Bead"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "Pursuers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Fire Surge"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Undead Rapport"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Power Within"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "Black Flame"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Escape Death"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Seek Guidance"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Karmic Justice"
+      ]
+    },
+    {
+      "ID": 5710,
+      "Entries": [
+        "Karmic Justice (Explosion - hardcoded reference)"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "Vow of Silence"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Soul Arrow [NPC]"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Great Soul Arrow [NPC]"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Heavy Soul Arrow [NPC]"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Great Heavy Soul Arrow [NPC]"
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "Homing Soulmass [NPC]"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Homing Crystal Soulmass [NPC]"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "Soul Spear [NPC]"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "Crystal Soul Spear [NPC]"
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Magic Weapon [NPC]"
+      ]
+    },
+    {
+      "ID": 13110,
+      "Entries": [
+        "Great Magic Weapon [NPC]"
+      ]
+    },
+    {
+      "ID": 13120,
+      "Entries": [
+        "Crystal Magic Weapon [NPC]"
+      ]
+    },
+    {
+      "ID": 13300,
+      "Entries": [
+        "Magic Shield [NPC]"
+      ]
+    },
+    {
+      "ID": 13310,
+      "Entries": [
+        "Strong Magic Shield [NPC]"
+      ]
+    },
+    {
+      "ID": 13400,
+      "Entries": [
+        "Hidden Weapon [NPC]"
+      ]
+    },
+    {
+      "ID": 13410,
+      "Entries": [
+        "Hidden Body [NPC]"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "Cast Light [NPC]"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "Hush [NPC]"
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "Aural Decoy [NPC]"
+      ]
+    },
+    {
+      "ID": 13530,
+      "Entries": [
+        "Repair [NPC]"
+      ]
+    },
+    {
+      "ID": 13540,
+      "Entries": [
+        "Fall Control [NPC]"
+      ]
+    },
+    {
+      "ID": 13550,
+      "Entries": [
+        "Chameleon [NPC]"
+      ]
+    },
+    {
+      "ID": 13600,
+      "Entries": [
+        "Resist Curse [NPC]"
+      ]
+    },
+    {
+      "ID": 13610,
+      "Entries": [
+        "Remedy [NPC]"
+      ]
+    },
+    {
+      "ID": 13700,
+      "Entries": [
+        "White Dragon Breath [NPC]"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Fireball [NPC]"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Fire Orb [NPC]"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Great Fireball [NPC]"
+      ]
+    },
+    {
+      "ID": 14030,
+      "Entries": [
+        "Firestorm [NPC]"
+      ]
+    },
+    {
+      "ID": 14040,
+      "Entries": [
+        "Fire Tempest [NPC]"
+      ]
+    },
+    {
+      "ID": 14050,
+      "Entries": [
+        "Fire Surge [NPC]"
+      ]
+    },
+    {
+      "ID": 14060,
+      "Entries": [
+        "Fire Whip [NPC]"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Combustion [NPC]"
+      ]
+    },
+    {
+      "ID": 14110,
+      "Entries": [
+        "Great Combustion [NPC]"
+      ]
+    },
+    {
+      "ID": 14200,
+      "Entries": [
+        "Poison Mist [NPC]"
+      ]
+    },
+    {
+      "ID": 14210,
+      "Entries": [
+        "Toxic Mist [NPC]"
+      ]
+    },
+    {
+      "ID": 14220,
+      "Entries": [
+        "Acid Surge [NPC]"
+      ]
+    },
+    {
+      "ID": 14300,
+      "Entries": [
+        "Acid Surge [NPC]"
+      ]
+    },
+    {
+      "ID": 14310,
+      "Entries": [
+        "Flash Sweat [NPC]"
+      ]
+    },
+    {
+      "ID": 14360,
+      "Entries": [
+        "Undead Rapport [NPC]"
+      ]
+    },
+    {
+      "ID": 14400,
+      "Entries": [
+        "Power Within [NPC]"
+      ]
+    },
+    {
+      "ID": 14500,
+      "Entries": [
+        "Great Chaos Fireball [NPC]"
+      ]
+    },
+    {
+      "ID": 14510,
+      "Entries": [
+        "Chaos Storm [NPC]"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Chaos Fire Whip [NPC]"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Heal [NPC]"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Great Heal [NPC]"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Great Heal Excerpt [NPC]"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Soothing Sunlight [NPC]"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Replenishment [NPC]"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Bountiful Sunlight [NPC]"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Gravelord Sword Dance [NPC]"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "Gravelord Greatsword Dance [NPC]"
+      ]
+    },
+    {
+      "ID": 15200,
+      "Entries": [
+        "Escape Death [NPC]"
+      ]
+    },
+    {
+      "ID": 15210,
+      "Entries": [
+        "Homeward [NPC]"
+      ]
+    },
+    {
+      "ID": 15300,
+      "Entries": [
+        "Force [NPC]"
+      ]
+    },
+    {
+      "ID": 15310,
+      "Entries": [
+        "Wrath of the Gods [NPC]"
+      ]
+    },
+    {
+      "ID": 15320,
+      "Entries": [
+        "Emit Force [NPC]"
+      ]
+    },
+    {
+      "ID": 15400,
+      "Entries": [
+        "Seek Guidance [NPC]"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "Lightning Spear [NPC]"
+      ]
+    },
+    {
+      "ID": 15510,
+      "Entries": [
+        "Great Lightning Spear [NPC]"
+      ]
+    },
+    {
+      "ID": 15520,
+      "Entries": [
+        "Sunlight Spear [NPC]"
+      ]
+    },
+    {
+      "ID": 15600,
+      "Entries": [
+        "Magic Barrier [NPC]"
+      ]
+    },
+    {
+      "ID": 15610,
+      "Entries": [
+        "Great Magic Barrier [NPC]"
+      ]
+    },
+    {
+      "ID": 15700,
+      "Entries": [
+        "Karmic Justice [NPC]"
+      ]
+    },
+    {
+      "ID": 15710,
+      "Entries": [
+        "Karmic Justice"
+      ]
+    },
+    {
+      "ID": 15800,
+      "Entries": [
+        "Tranquil Walk of Peace [NPC]"
+      ]
+    },
+    {
+      "ID": 15810,
+      "Entries": [
+        "Vow of Silence [NPC]"
+      ]
+    },
+    {
+      "ID": 15900,
+      "Entries": [
+        "Sunlight Blade [NPC]"
+      ]
+    },
+    {
+      "ID": 15910,
+      "Entries": [
+        "Darkmoon Blade [NPC]"
+      ]
+    }
+  ]
+}

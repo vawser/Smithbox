@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <SoundType
+    AltName="Sound Type"
+    Wiki="" />
+    
+    <SoundID
+    AltName="Sound ID"
+    Wiki="The ID of the sound to play."
+    SoundAlias="" />
+    
+    <EventSoundID
+    AltName="Event Sound ID"
+    Wiki="" 
+    SoundAlias="" />
+  </Field>
+    
+  <Enums>
+  </Enums>
+</MSBMETA>

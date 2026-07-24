@@ -1,0 +1,1265 @@
+{
+  "Name": "KeyGuideParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[General purpose] ladder up -- 【汎用】梯子上り"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[General purpose] ladder down -- 【汎用】梯子下り"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[General purpose] ladder kicking -- 【汎用】梯子蹴り"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "【General purpose】Rope -- 【汎用】ロープ"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "【General purpose】Open one door -- 【汎用】片扉開ける"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "【General purpose】Close one door -- 【汎用】片扉閉める"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "【General purpose】Both doors open -- 【汎用】両扉開ける"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[General purpose] both doors close -- 【汎用】両扉閉める"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "【General purpose】White door S -- 【汎用】白扉S"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[General purpose] white door M -- 【汎用】白扉M"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[General purpose] white door L -- 【汎用】白扉L"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[General purpose] reverse white door S -- 【汎用】逆白扉S"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[General purpose] reverse white door M -- 【汎用】逆白扉M"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "[General purpose] reverse white door L -- 【汎用】逆白扉L"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "【General purpose】Rescue -- 【汎用】救助"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "【General purpose】 NPC Conversation -- 【汎用】NPC会話"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "【General purpose】 NPC Tomb -- 【汎用】NPC墓"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "【General purpose】Touch -- 【汎用】触れる"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "【General purpose】Magic Team -- 【汎用】魔法陣"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "【General purpose】Treasure chest -- 【汎用】宝箱"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        "【General Purpose】Mimic -- 【汎用】ミミック"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "【General purpose】Barista -- 【汎用】バリスタ"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "【General purpose】Light light -- 【汎用】篝火灯す"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "【General purpose】Bonfire menu -- 【汎用】篝火メニュー"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【General purpose】Lever pulling -- 【汎用】レバー引く"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "【General purpose】Lever continues to pull -- 【汎用】レバー引き続ける"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【General purpose】Lever (wall hole- strap) -- 【汎用】レバー（壁穴、つり革）"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "【General purpose】Valve -- 【汎用】バルブ"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【General purpose】Torch -- 【汎用】松明"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "【General purpose】Torch (wall-to-wall) -- 【汎用】松明（壁際）"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "【General purpose】Light with torches (sphere) -- 【汎用】松明で火をつける（球）"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "【General purpose】Light with torches (wall-to-wall) -- 【汎用】松明で火をつける（壁際）"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【General purpose】Stand board -- 【汎用】立て板"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "【General purpose】Boss weakness -- 【汎用】ボス弱点"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【General purpose】Insect key -- 【汎用】虫鍵"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "【General purpose】Insect key (floor) -- 【汎用】虫鍵（床）"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[General purpose] no display key guide -- 【汎用】表示無しキーガイド"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "【General purpose】No display key guide (both sides) -- 【汎用】表示無しキーガイド（両面）"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "【General purpose】Petrification stop -- 【汎用】石化ストップ"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "【General purpose】For terminating bonfire warp -- 【汎用】終端篝火ワープ用"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10020400,
+      "Entries": [
+        "Gap Sinus_ Tutorial Start Soon -- 隙間の洞_チュートリアル開始すぐ"
+      ]
+    },
+    {
+      "ID": 10020401,
+      "Entries": [
+        "Gap sinus_glitter girl front -- 隙間の洞_キラキラ娘前"
+      ]
+    },
+    {
+      "ID": 10020402,
+      "Entries": [
+        "In front of the cave in the gap_ fallen trees -- 隙間の洞_倒木の前"
+      ]
+    },
+    {
+      "ID": 10020403,
+      "Entries": [
+        "Gap Sinus_ Tutorial Second -- 隙間の洞_チュートリアル二つ目"
+      ]
+    },
+    {
+      "ID": 10020404,
+      "Entries": [
+        "Gap sinus_ tutorial goal front left hand -- 隙間の洞_チュートリアルゴール前左手"
+      ]
+    },
+    {
+      "ID": 10020405,
+      "Entries": [
+        "Gap sinus_ Tutorial goal stairs front upper passage -- 隙間の洞_チュートリアルゴール階段手前右手の上部通路"
+      ]
+    },
+    {
+      "ID": 10020410,
+      "Entries": [
+        "Gap sinus_ tutorial start soon_ reverse -- 隙間の洞_チュートリアル開始すぐ_逆"
+      ]
+    },
+    {
+      "ID": 10020411,
+      "Entries": [
+        "gap sinus_glitter daughter front_reverse -- 隙間の洞_キラキラ娘前_逆"
+      ]
+    },
+    {
+      "ID": 10020412,
+      "Entries": [
+        "In front of the cave of the gap_ fallen tree reverse -- 隙間の洞_倒木の前_逆"
+      ]
+    },
+    {
+      "ID": 10020413,
+      "Entries": [
+        "Gap sinus_ tutorial second_ reverse -- 隙間の洞_チュートリアル二つ目_逆"
+      ]
+    },
+    {
+      "ID": 10020414,
+      "Entries": [
+        "Gap sinus_ tutorial goal front left hand_reverse -- 隙間の洞_チュートリアルゴール前左手_逆"
+      ]
+    },
+    {
+      "ID": 10020415,
+      "Entries": [
+        "Gap sinus_ tutorial goal stairs front right hand upper passage_ reverse -- 隙間の洞_チュートリアルゴール階段手前右手の上部通路_逆"
+      ]
+    },
+    {
+      "ID": 10029010,
+      "Entries": [
+        "Lithographic -- 石版"
+      ]
+    },
+    {
+      "ID": 10029020,
+      "Entries": [
+        "knock down the sinus of the gap -- 隙間の洞_立板を倒す"
+      ]
+    },
+    {
+      "ID": 10029030,
+      "Entries": [
+        "go into the sinus of the gap -- 隙間の洞_かんおけに入る"
+      ]
+    },
+    {
+      "ID": 10049010,
+      "Entries": [
+        "For the gimmick of the madura_ rotating door -- マデューラ_回転扉のギミック用"
+      ]
+    },
+    {
+      "ID": 10049020,
+      "Entries": [
+        "Madura_ Strong Man's Stone Monument -- マデューラ_強者の石碑"
+      ]
+    },
+    {
+      "ID": 10049030,
+      "Entries": [
+        "Madura _NPC Cat Conversation Key Guide -- マデューラ_NPC猫の会話用キーガイド"
+      ]
+    },
+    {
+      "ID": 10049040,
+      "Entries": [
+        "Key Guide for Madura_Obelisk -- マデューラ_オベリスク用キーガイド"
+      ]
+    },
+    {
+      "ID": 10100400,
+      "Entries": [
+        "Decayed Giant Forest_ Boss New Giant Senior Soldier (Entrance) -- 朽ちた巨人の森_ボス新・巨人上級兵士(入口)"
+      ]
+    },
+    {
+      "ID": 10100401,
+      "Entries": [
+        "Decayed Giant Forest_Bosbay Grand (Entrance) -- 朽ちた巨人の森_ボスベイグランド（入口）"
+      ]
+    },
+    {
+      "ID": 10100402,
+      "Entries": [
+        "The Forest of The Decaying Giant_ Matsumei Room - Submerged Square -- 朽ちた巨人の森_松明部屋～水没広場"
+      ]
+    },
+    {
+      "ID": 10100403,
+      "Entries": [
+        "Decayed Giant Forest_ Amphitheater -- 朽ちた巨人の森_円形闘技場"
+      ]
+    },
+    {
+      "ID": 10100404,
+      "Entries": [
+        "The Forest of Decayed Giants -- 朽ちた巨人の森_巨人剣～昇降機"
+      ]
+    },
+    {
+      "ID": 10100412,
+      "Entries": [
+        "Decayed Giant Forest_ Torchroom - Submerged Square_ Reverse -- 朽ちた巨人の森_松明部屋～水没広場_逆"
+      ]
+    },
+    {
+      "ID": 10100413,
+      "Entries": [
+        "Decayed Giant Forest_Amphitheater_Reverse -- 朽ちた巨人の森_円形闘技場_逆"
+      ]
+    },
+    {
+      "ID": 10100414,
+      "Entries": [
+        "Decayed Giant Forest_ Giant Sword - Elevator_ Reverse -- 朽ちた巨人の森_巨人剣～昇降機_逆"
+      ]
+    },
+    {
+      "ID": 10109000,
+      "Entries": [
+        "The Nest of Birds in the Forest of Decayed Giants -- 朽ちた巨人の森_鳥の巣"
+      ]
+    },
+    {
+      "ID": 10109010,
+      "Entries": [
+        "For the decaying giant forest_ giant tree warp -- 朽ちた巨人の森_巨人の木ワープ用"
+      ]
+    },
+    {
+      "ID": 10109020,
+      "Entries": [
+        "Decayed Giant Forest_ Giant Tree (Practical Use of Wood) -- 朽ちた巨人の森_巨人の木（木の実用）"
+      ]
+    },
+    {
+      "ID": 10140400,
+      "Entries": [
+        "The boss of The Wedding Town Gerdra_Church (entrance) -- 輝石街ジェルドラ_教会のボス（入口）"
+      ]
+    },
+    {
+      "ID": 10140401,
+      "Entries": [
+        "The Boss Under the Web Zone of The Gelderla- Kiseki Street (Entrance) -- 輝石街ジェルドラ_蜘蛛の巣ゾーン下ボス（入口）"
+      ]
+    },
+    {
+      "ID": 10149010,
+      "Entries": [
+        "The Memory Invasion of The Kiishi-gai Gerdra_Fururyu -- 輝石街ジェルドラ_古竜の記憶侵入"
+      ]
+    },
+    {
+      "ID": 10149020,
+      "Entries": [
+        "For the acquisition of The Red Soul -- 輝石街ジェルドラ_赤いソウル取得用"
+      ]
+    },
+    {
+      "ID": 10150400,
+      "Entries": [
+        "Anne Deal's House_Boss -- アン・ディールの館_ボス前"
+      ]
+    },
+    {
+      "ID": 10159000,
+      "Entries": [
+        "Anne Deal's House -- アン・ディールの館_石化解除"
+      ]
+    },
+    {
+      "ID": 10159010,
+      "Entries": [
+        "Key Guide to The Door of The Museum of Anne Deal_Auger Destruction Wall -- アン・ディールの館_オーガ破壊壁の扉用キーガイド"
+      ]
+    },
+    {
+      "ID": 10160400,
+      "Entries": [
+        "Forgotten Prisoners -- 忘却の牢_ボス忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 10160401,
+      "Entries": [
+        "Forgetting Prison_Bosgargoyle -- 忘却の牢_ボスガーゴイル"
+      ]
+    },
+    {
+      "ID": 10160402,
+      "Entries": [
+        "The Prisoner of Oblivion_ The Warrior in the Boss Mirror -- 忘却の牢_ボス鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 10160403,
+      "Entries": [
+        "The tower entrance of the prison of oblivion -- 忘却の牢_離れの塔入口"
+      ]
+    },
+    {
+      "ID": 10160413,
+      "Entries": [
+        "The prison of oblivion _ the tower entrance of the away _ reverse -- 忘却の牢_離れの塔入口_逆"
+      ]
+    },
+    {
+      "ID": 10169000,
+      "Entries": [
+        "Forgetting Prison_ No Display Key Guide (both sides) -- 忘却の牢_表示無しキーガイド（両面）"
+      ]
+    },
+    {
+      "ID": 10170400,
+      "Entries": [
+        "Reservoir Valley_Bosjabazahat -- 溜りの谷_ボスジャバザハット"
+      ]
+    },
+    {
+      "ID": 10170401,
+      "Entries": [
+        "Valley of the reservoir_Bosnagha -- 溜りの谷_ボスナーガ"
+      ]
+    },
+    {
+      "ID": 10170412,
+      "Entries": [
+        "The valley of the reservoir_before the bonfire of the atrium_reverse -- 溜りの谷_吹き抜けの篝火前_逆"
+      ]
+    },
+    {
+      "ID": 10174002,
+      "Entries": [
+        "Before the bonfire of the valley of the reservoir -- 溜りの谷_吹き抜けの篝火前"
+      ]
+    },
+    {
+      "ID": 10179000,
+      "Entries": [
+        "light a windmill shaft -- 風車のシャフトに火をつける"
+      ]
+    },
+    {
+      "ID": 10179010,
+      "Entries": [
+        "Valley of the reservoir _ Altar of the sun -- 溜りの谷_太陽の祭壇"
+      ]
+    },
+    {
+      "ID": 10180400,
+      "Entries": [
+        "Hidden Port_Boss Double-Sided Warrior -- 隠れ港_ボス両面戦士"
+      ]
+    },
+    {
+      "ID": 10181080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10189000,
+      "Entries": [
+        "Hidden Port_Compass -- 隠れ港_羅針盤"
+      ]
+    },
+    {
+      "ID": 10190400,
+      "Entries": [
+        "Molten Castle_Boss Demon Night -- 熔鉄城_ボスデーモンナイト"
+      ]
+    },
+    {
+      "ID": 10190401,
+      "Entries": [
+        "Molten Iron Castle_Boss Molten Iron Daemon -- 熔鉄城_ボス熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 10190402,
+      "Entries": [
+        "The end of the lift ing lift -- 熔鉄城_昇降リフトの先"
+      ]
+    },
+    {
+      "ID": 10190403,
+      "Entries": [
+        "Ming-iron castle_pledge entrance -- 熔鉄城_誓約入口"
+      ]
+    },
+    {
+      "ID": 10190404,
+      "Entries": [
+        "Molten Castle_Pledge Exit -- 熔鉄城_誓約出口"
+      ]
+    },
+    {
+      "ID": 10190412,
+      "Entries": [
+        "Molten Iron Castle_Lift lift destination_reverse -- 熔鉄城_昇降リフトの先_逆"
+      ]
+    },
+    {
+      "ID": 10199000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10199010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10230400,
+      "Entries": [
+        "Hunting Forest_Boss White Door (Entrance) _ Silver Chariot -- 狩猟の森_ボス白扉(入口)_シルバーチャリオット"
+      ]
+    },
+    {
+      "ID": 10230410,
+      "Entries": [
+        "Hunting Forest_Boss White Door (Entrance) _ Skeleton Aristocracy -- 狩猟の森_ボス白扉(入口)_スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 10231020,
+      "Entries": [
+        "Hunting Forest_ Shortcut Fallen Trees -- 狩猟の森_ショートカット倒木"
+      ]
+    },
+    {
+      "ID": 10239000,
+      "Entries": [
+        "Hunting Forest_ Pledge Stone Statue_ Matching Start -- 狩猟の森_誓約の石像_マッチング開始"
+      ]
+    },
+    {
+      "ID": 10239001,
+      "Entries": [
+        "Hunting Forest_ Pledge Stone Statue_ Matching Cancellation -- 狩猟の森_誓約の石像_マッチングキャンセル"
+      ]
+    },
+    {
+      "ID": 10250400,
+      "Entries": [
+        "Kuzbottom_Boss Butcher -- クズ底_ボスブッチャー"
+      ]
+    },
+    {
+      "ID": 10250401,
+      "Entries": [
+        "Scum bottom_ ladder room -- クズ底_梯子部屋"
+      ]
+    },
+    {
+      "ID": 10250402,
+      "Entries": [
+        "In front of the bottom coal tar area -- クズ底_下層コールタールエリア前"
+      ]
+    },
+    {
+      "ID": 10250411,
+      "Entries": [
+        "Scum bottom_ladder room_reverse -- クズ底_梯子部屋_逆"
+      ]
+    },
+    {
+      "ID": 10250412,
+      "Entries": [
+        "Kuzbottom_Lower coal tar area front_reverse -- クズ底_下層コールタールエリア前_逆"
+      ]
+    },
+    {
+      "ID": 10259010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10270400,
+      "Entries": [
+        "The Nest of The Guardian Dragon_ Boss Old Dragon -- 守り竜の巣_ボス古の龍"
+      ]
+    },
+    {
+      "ID": 10279000,
+      "Entries": [
+        "Defending Dragon's Nest_ Old Dragon_ For Conversation -- 守り竜の巣_古の龍_会話用"
+      ]
+    },
+    {
+      "ID": 10310400,
+      "Entries": [
+        "Heide Great Fire Tower_Boss Heavy Cavalry -- ハイデ大火塔_ボス重騎馬兵"
+      ]
+    },
+    {
+      "ID": 10310401,
+      "Entries": [
+        "Heide Great Fire Tower_Ornstein -- ハイデ大火塔_オーンスタイン"
+      ]
+    },
+    {
+      "ID": 10319000,
+      "Entries": [
+        "Heide Great Fire Tower_Pledge Stone Statue_Matching Begins -- ハイデ大火塔_誓約石像_マッチング開始"
+      ]
+    },
+    {
+      "ID": 10319001,
+      "Entries": [
+        "Heide Great Fire Tower_Pledge Stone Statue_Matching Cancellation -- ハイデ大火塔_誓約石像_マッチングキャンセル"
+      ]
+    },
+    {
+      "ID": 10319010,
+      "Entries": [
+        "Heide Great Fire Tower_Lever Pull -- ハイデ大火塔_レバー引く"
+      ]
+    },
+    {
+      "ID": 10320400,
+      "Entries": [
+        "Forest of Shadows of The Void_Bosman Scorpion -- 虚ろの影の森_ボスマンスコーピオン"
+      ]
+    },
+    {
+      "ID": 10320401,
+      "Entries": [
+        "Forest of Shadows of The Void_ Dranggreig Connection -- 虚ろの影の森_ドラングレイグ接続"
+      ]
+    },
+    {
+      "ID": 10320411,
+      "Entries": [
+        "Forest of Shadows of The Void_ DrangGreig Connection_ Reverse -- 虚ろの影の森_ドラングレイグ接続_逆"
+      ]
+    },
+    {
+      "ID": 10329000,
+      "Entries": [
+        "Forest of The Shadow of The Void_ Gate Stone Statue -- 虚ろの影の森_ゲート石像"
+      ]
+    },
+    {
+      "ID": 10329010,
+      "Entries": [
+        "_NPC Forest of Shadows: Manscorpion -- 虚ろの影の森_NPC：マンスコーピオン"
+      ]
+    },
+    {
+      "ID": 10329020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10329030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10330400,
+      "Entries": [
+        "Faros Door Way_Boss Dog Rat -- ファロスの扉道_ボス犬ネズミ"
+      ]
+    },
+    {
+      "ID": 10330401,
+      "Entries": [
+        "Faros Door Way_Rat Pledge White Door -- ファロスの扉道_ネズミ誓約白扉"
+      ]
+    },
+    {
+      "ID": 10330411,
+      "Entries": [
+        "Faros door way_rat pledge white door_reverse -- ファロスの扉道_ネズミ誓約白扉_逆"
+      ]
+    },
+    {
+      "ID": 10340400,
+      "Entries": [
+        "Saint's Tomb_Boss Giant Rat -- 聖人墓所_ボス巨大ネズミ"
+      ]
+    },
+    {
+      "ID": 10340401,
+      "Entries": [
+        "Saint's Tomb_Pledge Goal -- 聖人墓所_誓約ゴール"
+      ]
+    },
+    {
+      "ID": 10340411,
+      "Entries": [
+        "Saint's Tomb_Pledge Goal_Reverse -- 聖人墓所_誓約ゴール_逆"
+      ]
+    },
+    {
+      "ID": 10349000,
+      "Entries": [
+        "_NPC The Saint's Cemetery: The King of Rats -- 聖人墓地_NPC：ネズミの王"
+      ]
+    },
+    {
+      "ID": 20100400,
+      "Entries": [
+        "Giant's Memory_ Boss New Giant Senior Soldier -- 巨人の記憶_ボス新・巨人上級兵"
+      ]
+    },
+    {
+      "ID": 20109000,
+      "Entries": [
+        "Giant Memory _ Giant Corpse Warp -- 巨人の記憶_巨人死体ワープ"
+      ]
+    },
+    {
+      "ID": 20110400,
+      "Entries": [
+        "Amana Altar Boss Beautiful Voice Frog -- アマナの祭壇ボス美声ガエル"
+      ]
+    },
+    {
+      "ID": 20110401,
+      "Entries": [
+        "Amana altar _ cave ahead of the house of girl 1 -- アマナの祭壇_少女１の家の先の洞窟"
+      ]
+    },
+    {
+      "ID": 20110402,
+      "Entries": [
+        "Amana altar _ cave ahead of girl 2 house -- アマナの祭壇_少女２の家の先の洞窟"
+      ]
+    },
+    {
+      "ID": 20110411,
+      "Entries": [
+        "amana altar_girl one house ahead of the cave_reverse -- アマナの祭壇_少女１の家の先の洞窟_逆"
+      ]
+    },
+    {
+      "ID": 20110412,
+      "Entries": [
+        "Amana altar_girl 2 house ahead of the cave_ reverse -- アマナの祭壇_少女２の家の先の洞窟_逆"
+      ]
+    },
+    {
+      "ID": 20119000,
+      "Entries": [
+        "Fairy's Edge Past_Altar Offering -- 妖精のほとり過去_祭壇お供え"
+      ]
+    },
+    {
+      "ID": 20119100,
+      "Entries": [
+        "Altar of Amana_The Altar Prayer Point of the Living -- アマナの祭壇_生者の祭壇祈りポイント"
+      ]
+    },
+    {
+      "ID": 20119200,
+      "Entries": [
+        "Banshee Ascension -- バンシー昇天"
+      ]
+    },
+    {
+      "ID": 20210400,
+      "Entries": [
+        "In front of The King's Castle Doran Greygrass Boss -- 王城ドラングレイグラスボス前"
+      ]
+    },
+    {
+      "ID": 20210401,
+      "Entries": [
+        "King's Castle Doran Greig Boss Miller Night -- 王城ドラングレイグボスミラーナイト"
+      ]
+    },
+    {
+      "ID": 20210402,
+      "Entries": [
+        "King's Castle Doran Greig Boss Heavy Cavalry -- 王城ドラングレイグボス重騎馬兵"
+      ]
+    },
+    {
+      "ID": 20219000,
+      "Entries": [
+        "Queen of the King's Castle _NPC Drangeig -- 王城ドラングレイグ＿NPC王妃"
+      ]
+    },
+    {
+      "ID": 20219010,
+      "Entries": [
+        "King's Castle D'Angheig_Keyman -- 王城ドラングレイグ_鍵人"
+      ]
+    },
+    {
+      "ID": 20219100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20219110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20240400,
+      "Entries": [
+        "Knight B of the Tomb Of The Lord Boss -- 不死廟ボス王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 20240401,
+      "Entries": [
+        "In front of the Tomb area -- 不死廟_墓エリア前"
+      ]
+    },
+    {
+      "ID": 20240402,
+      "Entries": [
+        "King of the Immortal Mausoleum Boss -- 不死廟ボス王"
+      ]
+    },
+    {
+      "ID": 20240411,
+      "Entries": [
+        "Immortal Mausoleum_Tomb Area Front_Reverse -- 不死廟_墓エリア前_逆"
+      ]
+    },
+    {
+      "ID": 20249000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20269000,
+      "Entries": [
+        "Memories of the Old Dragon_Feedback Point -- 古竜の記憶_帰還ポイント"
+      ]
+    },
+    {
+      "ID": 20620900,
+      "Entries": [
+        "E3 Resistance Fort_Bonfire Warp -- E3抵抗の砦_篝火ワープ"
+      ]
+    },
+    {
+      "ID": 20620910,
+      "Entries": [
+        "E3 Resistance Fort_ Bonfire -- E3抵抗の砦_篝火灯す"
+      ]
+    },
+    {
+      "ID": 20630400,
+      "Entries": [
+        "E3 Iwamine Castle_Boss White Door (Entrance) -- E3岩峰城_ボス白扉(入口)"
+      ]
+    },
+    {
+      "ID": 20630410,
+      "Entries": [
+        "E3 Iwamine Castle_Boss White Door (Entrance)_Reverse -- E3岩峰城_ボス白扉(入口)_逆"
+      ]
+    },
+    {
+      "ID": 40039000,
+      "Entries": [
+        "A light stand for the pledge -- 誓約用の灯火台"
+      ]
+    },
+    {
+      "ID": 50350400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50350414,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50359010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50359020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360406,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360414,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360415,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50360416,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50369100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370403,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370404,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50370415,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50379040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50389000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50389010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

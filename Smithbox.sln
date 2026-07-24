@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Vulkan", "src\Smit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.OpenGL", "src\Smithbox.OpenGL\Smithbox.OpenGL.csproj", "{E0BD21BF-C724-D1B6-F36C-B76FC1331D24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Release", "Smithbox.Release\Smithbox.Release.csproj", "{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -873,6 +875,38 @@ Global
 		{E0BD21BF-C724-D1B6-F36C-B76FC1331D24}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
 		{E0BD21BF-C724-D1B6-F36C-B76FC1331D24}.Release-win|x64.ActiveCfg = Release-win|Any CPU
 		{E0BD21BF-C724-D1B6-F36C-B76FC1331D24}.Release-win|x64.Build.0 = Release-win|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-linux|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-linux|Any CPU.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-linux|x64.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-linux|x64.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-osx|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-osx|Any CPU.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-osx|x64.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-osx|x64.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-win|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-win|Any CPU.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-win|x64.ActiveCfg = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Debug-win|x64.Build.0 = Debug|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release|x64.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-linux|Any CPU.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-linux|Any CPU.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-linux|x64.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-linux|x64.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-osx|Any CPU.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-osx|Any CPU.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-osx|x64.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-osx|x64.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|Any CPU.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|Any CPU.Build.0 = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|x64.ActiveCfg = Release|Any CPU
+		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

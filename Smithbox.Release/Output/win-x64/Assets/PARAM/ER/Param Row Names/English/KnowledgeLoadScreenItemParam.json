@@ -1,0 +1,437 @@
+{
+  "Name": "KnowledgeLoadScreenItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Crouching"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Guarding"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Guard Counters"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Two-Handing Armaments"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Charge and Jump Attacks"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Skill"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Parrying"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Setting a Target"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Precision Aiming"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Equipping Armaments"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Using Items"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Using Torches"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Critical Hits"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Gestures"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "The Map"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Spiritspring Jumping"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Dying and Dropping Runes"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Summoning Spirits"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Resting at Sites of Grace"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Finding Sites of Grace"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Guidance of Grace"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Sacred Flasks"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Fast Travel to Sites of Grace"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Mounted Attacks"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "No-Riding Areas"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Item Crafting"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Container Items"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Armament Customization"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Reviving After Dying"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Equip Load"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "While in Combat"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Strengthening Spirits"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Leveling Up"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Status: Poison"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Status: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Status: Blood Loss"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Status: Frost/Frostbite"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Status: Sleep"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Status: Madness"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Status: Death"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Poise"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Cooperator's Objective (Furled Finger)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Adversary's Objective (Duelist)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Multipler Maximums"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Seeing Summon Signs"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Leaving Co-op Signs"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Leaving Hostile Signs"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Invasion"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Requesting Support"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Supporting"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Summoning Pools"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Group Passwords"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Multiplayer Passwords"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Messages"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Multiplayer Movement Limits"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Phantoms"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Bloodstains"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Support Objective (Hunter)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Summon Signs"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Advanced Messages"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Colosseums"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Colosseum Ranking"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Limits of Guarding"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Stance-Breaking"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Knowcking Down Mounted Enemies"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Hardened Foes"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Teardrop Scarabs"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

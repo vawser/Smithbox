@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUTSCENE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 doPausePrevCutsceneBgm">
+      <DisplayName>カットシーン前のBGMを一時停止するか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>一時停止するか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 pad0[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 bgmFadeoutTime">
+      <DisplayName>BGMフェードアウト時間[sec]</DisplayName>
+      <Description>BGMフェードアウト時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 bgmFadeinTime">
+      <DisplayName>BGMフェードイン時間[sec]</DisplayName>
+      <Description>BGMフェードイン時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

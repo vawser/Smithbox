@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>RELATE_PHYS_STAT_TO_LEVEL_STAT</ParamType>
+    <DataVersion>6</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s8 spellSlot">
+            <DisplayName>スペルスロット</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>310</SortID>
+        </Field>
+        <Field Def="s8 spellUsesLevel">
+            <DisplayName>スペル使用回数レベル</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>330</SortID>
+        </Field>
+        <Field Def="s8 hpMax">
+            <DisplayName>最大HP</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s8 staminaMax">
+            <DisplayName>スタミナ</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s8 equipLoadMax">
+            <DisplayName>装備重量</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s8 physicalAttackByStrength">
+            <DisplayName>筋力 物理攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s8 physicalAttackByDexterity">
+            <DisplayName>技量 物理攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="s8 magicAttack">
+            <DisplayName>魔力 攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="s8 flameAttack">
+            <DisplayName>炎 攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="s8 lightningAttack">
+            <DisplayName>雷 攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s8 darkAttack">
+            <DisplayName>闇 攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s8 weaponBreakAdditionalEffect">
+            <DisplayName>武器破壊 追加効果攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s8 bleedingAdditionalEffect">
+            <DisplayName>出血 追加効果攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="s8 poisonAdditionalEffect">
+            <DisplayName>毒 追加効果攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+        <Field Def="s8 curseAdditionalEffect">
+            <DisplayName>呪 追加効果攻撃力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+        <Field Def="s8 chantingTimeCorrectScale">
+            <DisplayName>詠唱時間 補正倍率</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>320</SortID>
+        </Field>
+        <Field Def="s8 criticalAttackCorrectScale">
+            <DisplayName>クリティカル 補正倍率</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+        <Field Def="s8 fluctuationCorrectScaleMin">
+            <DisplayName>揺らぎ補正倍率 最小</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="s8 fluctuationCorrectScaleMax">
+            <DisplayName>揺らぎ補正倍率 最大</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="s8 weaponBreakResistance">
+            <DisplayName>武器破壊 耐性値</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s8 bleedingResistance">
+            <DisplayName>出血 耐性値</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="s8 poisonResistance">
+            <DisplayName>毒 耐性値</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+        <Field Def="s8 petrifactionResistance">
+            <DisplayName>石化 耐性値</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+        <Field Def="s8 curseResistance">
+            <DisplayName>呪 耐性値</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1050</SortID>
+        </Field>
+        <Field Def="s8 magicResistance">
+            <DisplayName>魔力 抵抗力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="s8 flameResistance">
+            <DisplayName>炎 抵抗力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="s8 lightningResistance">
+            <DisplayName>雷 抵抗力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s8 darkResistance">
+            <DisplayName>闇 抵抗力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s8 stepInvincibleTimeRate">
+            <DisplayName>ステップ 無敵時間割合</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="s8 rollingInvincibleTimeRate">
+            <DisplayName>ローリング 無敵時間割合</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="s8 jumpInvincibleTimeRate">
+            <DisplayName>ジャンプ 無敵時間割合</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="s8 changeEquipSpeedScale">
+            <DisplayName>装備切替 速度倍率</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>850</SortID>
+        </Field>
+        <Field Def="s8 useItemSpeedScale">
+            <DisplayName>アイテム使用 速度倍率</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>850</SortID>
+        </Field>
+        <Field Def="s8 blockSpeedScale">
+            <DisplayName>ガード構え 速度倍率</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>850</SortID>
+        </Field>
+        <Field Def="s8 defense">
+            <DisplayName>防御力</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>900</SortID>
+        </Field>
+        <Field Def="s8 itemDropTicketCount">
+            <DisplayName>アイテムドロップ チケット枚数分母</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="s8 misfireChestTrapTicketCount">
+            <DisplayName>宝箱トラップ不発 チケット枚数分母</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="s8 criticalTicketCount">
+            <DisplayName>クリティカル チケット枚数分母</DisplayName>
+            <Enum>LevelStatTypes</Enum>
+            <Maximum>11</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

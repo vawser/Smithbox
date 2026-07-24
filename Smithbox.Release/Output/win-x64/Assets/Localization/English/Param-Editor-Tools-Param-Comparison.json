@@ -1,0 +1,316 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Comparison_Header",
+      "Text": "Data Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Report",
+      "Text": "Comparison Report"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Param_Compare",
+      "Text": "Param Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Loaded_Projects",
+      "Text": "Loaded Projects"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Loaded_Projects_TT",
+      "Text": "These projects have been loaded and are displayed in the comparison column(s)."
+    },
+    {
+      "Key": "PARAM_Comparison_Project_Context_Unload",
+      "Text": "Unload"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Available_Projects",
+      "Text": "Available Projects"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Available_Projects_TT",
+      "Text": "These projects may be loaded for comparison."
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Comparison_Checkbox_Primary_Row_Name_Import",
+      "Text": "Import Row Names on Report Generation for Primary Bank"
+    },
+    {
+      "Key": "PARAM_Comparison_Checkbox_Comparison_Row_Name_Import",
+      "Text": "Import Row Names on Report Generation for Comparison Bank"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_All",
+      "Text": "Clear All"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_All_TT",
+      "Text": "Clear all current param comparisons."
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Row_Compare",
+      "Text": "Row Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Row_Compare",
+      "Text": "Current Row Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Row_Compare_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Comparison_No_Row_Compare",
+      "Text": "No row comparison target set."
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Row_Compare",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Row_Compare_TT",
+      "Text": "Clear the current row comparison target."
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Field_Compare",
+      "Text": "Field Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Field_Compare",
+      "Text": "Current Field Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Field_Compare_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Comparison_No_Field_Compare",
+      "Text": "No field comparison target set."
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Field_Compare",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Field_Compare_TT",
+      "Text": "Clear the current field comparison target."
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Report",
+      "Text": "Comparison Report"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_View_Report",
+      "Text": "View"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_View_Report_TT",
+      "Text": "View a text report that details the differences between the current project params and the vanilla params."
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Param_Compare",
+      "Text": "Param Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Select_Project",
+      "Text": "Select project for param comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Clear_Param_Compare",
+      "Text": "Clear specific param comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_All",
+      "Text": "Clear All"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_All_TT",
+      "Text": "Unloads all comparison param banks."
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Row_Compare",
+      "Text": "Row Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Row_Compare",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Row_Compare_TT",
+      "Text": "Clears the current row comparison target."
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Field_Compare",
+      "Text": "Field Comparison"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Field_Compare",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Field_Compare_TT",
+      "Text": "Clears the current field comparison target."
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Hint",
+      "Text": "# Field values follow this format: [Comparison Value] -> [Primary Value]"
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Param_Key",
+      "Text": "{0} does not exist in comparison."
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Row_ID",
+      "Text": "{0} does not exist in comparison."
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Row_ID_With_Name",
+      "Text": "  {0} ({1}) does not exist in comparison."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header",
+      "Text": "Comparison Report"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Primary_Bank_Version",
+      "Text": "Primary Bank - Param Version: {0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Comparison_Bank_Version",
+      "Text": "Comparison Bank - Param Version: {0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Comparison_Bank_No_Load",
+      "Text": "Comparison Bank - No Comparison Bank loaded."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Project_to_Compare",
+      "Text": "Project to Compare:"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Project_to_Compare_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Vanilla_Select",
+      "Text": "Vanilla"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Targeted_Params",
+      "Text": "Targeted Params"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Targeted_Params_TT",
+      "Text": "The params to target in the comparison report. Leave blank to target all params."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Add_TT",
+      "Text": "Add new param target input row."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Remove_TT",
+      "Text": "Remove last added param target input row."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Reset_TT",
+      "Text": "The param target to include."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_to_Include_TT",
+      "Text": "The param target to include."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Action",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Action_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Generate_Report",
+      "Text": "Generate Report"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Generate_Report_TT",
+      "Text": "Generate the param comparison report."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Copy_Report",
+      "Text": "Copy Report"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Copy_Report_TT",
+      "Text": "Copy the param comparison report to clipboard."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Close_Report",
+      "Text": "Close Report"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Close_Report_TT",
+      "Text": "Close the param comparison report menu."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Report",
+      "Text": "Report"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Report_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Generating_Report",
+      "Text": "Report is being generated..."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Current_Param",
+      "Text": "Current Param: {0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Task_Generate_PASS",
+      "Text": "Comparison report has been generated."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Task_Generate_FAIL",
+      "Text": "Comparison report failed to be generated."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Modal_Name",
+      "Text": "Param Comparison Report"
+    }
+  ]
+}

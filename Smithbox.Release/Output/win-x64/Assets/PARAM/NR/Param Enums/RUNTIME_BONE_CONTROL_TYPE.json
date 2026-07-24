@@ -1,0 +1,29 @@
+{
+  "Key": "RUNTIME_BONE_CONTROL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RUNTIME_BONE_CONTROL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2"
+        }
+      ]
+    }
+  ]
+}

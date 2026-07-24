@@ -1,0 +1,833 @@
+{
+  "Name": "CharMakeMenuListItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not set"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Base body type"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Base face ※Frame 90~99 is for rendering images only so ID Switch to"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Base face Female display"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "pupil ( right )"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "pupil ( left )"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "eyebrow"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "beard"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Beard: Only \"none\" for women"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Hairstyle"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Decals"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Accessories"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "pupil ( For both eyes)"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "eyelash"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "sex"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Age group"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Background"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100203,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100204,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100205,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100206,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100207,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100208,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "gift"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100302,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100303,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100304,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100305,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100306,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100307,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100308,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100309,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "voice"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100402,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "Param": "SPELL_SOUL_CONSUME_PARAM",
+  "Type": "SPELL_SOUL_CONSUME_PARAM",
+  "Name": "SPELL_SOUL_CONSUME_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "consumeType",
+      "Name": "計算式",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "パディング用ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "consumeSoul",
+      "Name": "消費ソウル量",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageId01",
+      "Name": "バレット&ダメージID 1",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageId02",
+      "Name": "バレット&ダメージID 2",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageId03",
+      "Name": "バレット&ダメージID 3",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageId04",
+      "Name": "バレット&ダメージID 4",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageId05",
+      "Name": "バレット&ダメージID 5",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageLeftId01",
+      "Name": "バレット&ダメージID 左1",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageLeftId02",
+      "Name": "バレット&ダメージID 左2",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageLeftId03",
+      "Name": "バレット&ダメージID 左3",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageLeftId04",
+      "Name": "バレット&ダメージID 左4",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAndDamageLeftId05",
+      "Name": "バレット&ダメージID 左5",
+      "Description": ""
+    }
+  ]
+}

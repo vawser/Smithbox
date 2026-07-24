@@ -1,0 +1,68 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_REFLECTION_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_REFLECTION_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_REFLECTION_QUALITY_DETAIL",
+  "Description": "Determines the parameters of each reflection quality level.",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Enable Reflections",
+      "Description": "If ON, reflections are enabled."
+    },
+    {
+      "Field": "localLightEnabled",
+      "Name": "Enable Local Light Reflections",
+      "Description": "If ON, reflections from the player's local light are enabled."
+    },
+    {
+      "Field": "localLightForceEnabled",
+      "Name": "Force Local Light Reflections",
+      "Description": "If ON, reflections from the player's local light are forcefully enabled."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resolutionDivider",
+      "Name": "Resolution Scale",
+      "Description": "The resolution scale to use for reflections."
+    },
+    {
+      "Field": "ssrEnabled",
+      "Name": "Enable Screen-space Reflections",
+      "Description": "If ON, screen-space reflections are enabled."
+    },
+    {
+      "Field": "ssrGaussianBlurEnabled",
+      "Name": "Enable Screen-space Gaussian Blur",
+      "Description": "If ON, screen-space gaussian blur is enabled."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrDepthRejectThresholdScale",
+      "Name": "Screen-space Reflection: Depth Rejection Threshold",
+      "Description": "The depth rejection threshold scale to use for screen-space reflections."
+    },
+    {
+      "Field": "ssrRayTraceStepScale",
+      "Name": "Screen-space Reflection: Raytracing Step Scale",
+      "Description": "The raytracing step scale to use with the Screen-space Reflection parameter."
+    },
+    {
+      "Field": "ssrFadeToViewerBias",
+      "Name": "Screen-space Reflection: Fade Angle Bias",
+      "Description": "The screen-space reflection angle bias to apply when fading a reflection. Smaller values result in higher quality."
+    },
+    {
+      "Field": "ssrFresnelRejectBias",
+      "Name": "Screen-space Reflection: Fresnel Rejection Bias",
+      "Description": "The screen-space reflection fresnel rejection bias to apply to a reflection. Smaller values result in higher quality."
+    }
+  ]
+}

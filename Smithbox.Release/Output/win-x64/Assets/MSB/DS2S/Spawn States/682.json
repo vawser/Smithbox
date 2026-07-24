@@ -1,0 +1,14 @@
+{
+  "id": "682",
+  "name": "Elana, the Squalid Queen",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

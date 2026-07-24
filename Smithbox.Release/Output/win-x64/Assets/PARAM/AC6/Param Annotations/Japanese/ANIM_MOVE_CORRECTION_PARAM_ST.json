@@ -1,0 +1,58 @@
+{
+  "Param": "ANIM_MOVE_CORRECTION_PARAM_ST",
+  "Type": "ANIM_MOVE_CORRECTION_PARAM_ST",
+  "Name": "ANIM_MOVE_CORRECTION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "charaId",
+      "Name": "キャラID",
+      "Description": "パラメータを適用する対象となるキャラのキャラID"
+    },
+    {
+      "Field": "pad2_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "animId",
+      "Name": "アニメID",
+      "Description": "パラメータを適用する対象となるアニメのアニメID"
+    },
+    {
+      "Field": "flagId",
+      "Name": "フラグID",
+      "Description": "パラメータを適用する対象となる\u3000TAEフラグ：移動量上書き\u3000のフラグID"
+    },
+    {
+      "Field": "calcGraphParamId",
+      "Name": "補正計算グラフパラメータID",
+      "Description": "補正移動量算出制御に渡す\u3000補正計算グラフパラメータ\u3000のID"
+    },
+    {
+      "Field": "charaWeightMax",
+      "Name": "機体重量上限",
+      "Description": "補正移動量算出制御に渡す\u3000機体重量\u3000の上限"
+    },
+    {
+      "Field": "charaWeightMin",
+      "Name": "機体重量下限",
+      "Description": "補正移動量算出制御に渡す\u3000機体重量\u3000の下限"
+    },
+    {
+      "Field": "moveMax",
+      "Name": "移動量上限",
+      "Description": "補正移動量算出制御に渡す\u3000移動量\u3000の上限"
+    },
+    {
+      "Field": "moveMin",
+      "Name": "移動量下限",
+      "Description": "補正移動量算出制御に渡す\u3000移動量\u3000の下限"
+    },
+    {
+      "Field": "pad99",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

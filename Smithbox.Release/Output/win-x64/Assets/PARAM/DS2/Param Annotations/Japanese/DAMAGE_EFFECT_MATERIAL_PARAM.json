@@ -1,0 +1,1208 @@
+{
+  "Param": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Type": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Name": "DAMAGE_EFFECT_MATERIAL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bodyEffect01",
+      "Name": "本体：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "bodyEffect02",
+      "Name": "本体：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "bodySize01",
+      "Name": "本体：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "bodySize02",
+      "Name": "本体：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "bodyDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodyEffect01",
+      "Name": "石化ボス本体：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodyEffect02",
+      "Name": "石化ボス本体：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodySize01",
+      "Name": "石化ボス本体：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodySize02",
+      "Name": "石化ボス本体：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedBossBodyDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "noneEffect01",
+      "Name": "なし：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "noneEffect02",
+      "Name": "なし：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "noneSize01",
+      "Name": "なし：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "noneSize02",
+      "Name": "なし：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "noneDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "metalEffect01",
+      "Name": "鉄：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "metalEffect02",
+      "Name": "鉄：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "metalSize01",
+      "Name": "鉄：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "metalSize02",
+      "Name": "鉄：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "metalDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalEffect01",
+      "Name": "重鉄：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalEffect02",
+      "Name": "重鉄：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalSize01",
+      "Name": "重鉄：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalSize02",
+      "Name": "重鉄：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetalDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "woodEffect01",
+      "Name": "木：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "woodEffect02",
+      "Name": "木：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "woodSize01",
+      "Name": "木：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "woodSize02",
+      "Name": "木：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "woodDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "waterEffect01",
+      "Name": "水：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "waterEffect02",
+      "Name": "水：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "waterSize01",
+      "Name": "水：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "waterSize02",
+      "Name": "水：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "waterDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "swampEffect01",
+      "Name": "沼：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "swampEffect02",
+      "Name": "沼：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "swampSize01",
+      "Name": "沼：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "swampSize02",
+      "Name": "沼：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "swampDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "lumberEffect01",
+      "Name": "木材：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "lumberEffect02",
+      "Name": "木材：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "lumberSize01",
+      "Name": "木材：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "lumberSize02",
+      "Name": "木材：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "lumberDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "meatEffect01",
+      "Name": "生者肉：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "meatEffect02",
+      "Name": "生者肉：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "meatSize01",
+      "Name": "生者肉：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "meatSize02",
+      "Name": "生者肉：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "meatDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatEffect01",
+      "Name": "亡者肉：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatEffect02",
+      "Name": "亡者肉：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatSize01",
+      "Name": "亡者肉：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatSize02",
+      "Name": "亡者肉：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeatDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "insectEffect01",
+      "Name": "虫：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "insectEffect02",
+      "Name": "虫：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "insectSize01",
+      "Name": "虫：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "insectSize02",
+      "Name": "虫：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "insectDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "giantEffect01",
+      "Name": "巨人：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "giantEffect02",
+      "Name": "巨人：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "giantSize01",
+      "Name": "巨人：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "giantSize02",
+      "Name": "巨人：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "giantDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "boneEffect01",
+      "Name": "骨：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "boneEffect02",
+      "Name": "骨：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "boneSize01",
+      "Name": "骨：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "boneSize02",
+      "Name": "骨：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "boneDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "copperEffect01",
+      "Name": "銅：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "copperEffect02",
+      "Name": "銅：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "copperSize01",
+      "Name": "銅：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "copperSize02",
+      "Name": "銅：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "copperDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "energyEffect01",
+      "Name": "エネルギー：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "energyEffect02",
+      "Name": "エネルギー：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "energySize01",
+      "Name": "エネルギー：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "energySize02",
+      "Name": "エネルギー：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "energyDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fireEffect01",
+      "Name": "炎：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "fireEffect02",
+      "Name": "炎：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "fireSize01",
+      "Name": "炎：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "fireSize02",
+      "Name": "炎：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "fireDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "thunderEffect01",
+      "Name": "雷：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "thunderEffect02",
+      "Name": "雷：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "thunderSize01",
+      "Name": "雷：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "thunderSize02",
+      "Name": "雷：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "darkEffect01",
+      "Name": "闇：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "darkEffect02",
+      "Name": "闇：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "darkSize01",
+      "Name": "闇：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "darkSize02",
+      "Name": "闇：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "darkDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "magicEffect01",
+      "Name": "魔力：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "magicEffect02",
+      "Name": "魔力：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "magicSize01",
+      "Name": "魔力：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "magicSize02",
+      "Name": "魔力：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "magicDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEffect01",
+      "Name": "石：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEffect02",
+      "Name": "石：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneSize01",
+      "Name": "石：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneSize02",
+      "Name": "石：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "dirtEffect01",
+      "Name": "土：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "dirtEffect02",
+      "Name": "土：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "dirtSize01",
+      "Name": "土：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "dirtSize02",
+      "Name": "土：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "dirtDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "carpetEffect01",
+      "Name": "カーペット：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "carpetEffect02",
+      "Name": "カーペット：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "carpetSize01",
+      "Name": "カーペット：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "carpetSize02",
+      "Name": "カーペット：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "carpetDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "grassEffect01",
+      "Name": "草：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "grassEffect02",
+      "Name": "草：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "grassSize01",
+      "Name": "草：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "grassSize02",
+      "Name": "草：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "grassDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "gravelEffect01",
+      "Name": "砂利：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "gravelEffect02",
+      "Name": "砂利：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "gravelSize01",
+      "Name": "砂利：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "gravelSize02",
+      "Name": "砂利：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "gravelDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "clothEffect01",
+      "Name": "布：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "clothEffect02",
+      "Name": "布：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "clothSize01",
+      "Name": "布：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "clothSize02",
+      "Name": "布：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "clothDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "sandEffect01",
+      "Name": "砂：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "sandEffect02",
+      "Name": "砂：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "sandSize01",
+      "Name": "砂：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "sandSize02",
+      "Name": "砂：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "sandDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "ashEffect01",
+      "Name": "灰：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "ashEffect02",
+      "Name": "灰：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "ashSize01",
+      "Name": "灰：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "ashSize02",
+      "Name": "灰：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "ashDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampEffect01",
+      "Name": "毒沼：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampEffect02",
+      "Name": "毒沼：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampSize01",
+      "Name": "毒沼：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampSize02",
+      "Name": "毒沼：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswampDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "oilEffect01",
+      "Name": "油：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "oilEffect02",
+      "Name": "油：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "oilSize01",
+      "Name": "油：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "oilSize02",
+      "Name": "油：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "oilDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarEffect01",
+      "Name": "コールタール：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarEffect02",
+      "Name": "コールタール：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarSize01",
+      "Name": "コールタール：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarSize02",
+      "Name": "コールタール：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "coaltarDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "lavaEffect01",
+      "Name": "溶岩：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "lavaEffect02",
+      "Name": "溶岩：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "lavaSize01",
+      "Name": "溶岩：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "lavaSize02",
+      "Name": "溶岩：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "lavaDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "stringEffect01",
+      "Name": "蜘蛛の糸：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "stringEffect02",
+      "Name": "蜘蛛の糸：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "stringSize01",
+      "Name": "蜘蛛の糸：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "stringSize02",
+      "Name": "蜘蛛の糸：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "stringDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalEffect01",
+      "Name": "硫黄結晶：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalEffect02",
+      "Name": "硫黄結晶：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalSize01",
+      "Name": "硫黄結晶：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalSize02",
+      "Name": "硫黄結晶：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystalDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "soulEffect01",
+      "Name": "ソウル：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "soulEffect02",
+      "Name": "ソウル：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "soulSize01",
+      "Name": "ソウル：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "soulSize02",
+      "Name": "ソウル：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "soulDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "frogEffect01",
+      "Name": "美声カエル：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "frogEffect02",
+      "Name": "美声カエル：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "frogSize01",
+      "Name": "美声カエル：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "frogSize02",
+      "Name": "美声カエル：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "frogDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterEffect01",
+      "Name": "石水：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterEffect02",
+      "Name": "石水：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterSize01",
+      "Name": "石水：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterSize02",
+      "Name": "石水：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneWaterDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergyEffect01",
+      "Name": "石エネルギー：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergyEffect02",
+      "Name": "石エネルギー：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergySize01",
+      "Name": "石エネルギー：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergySize02",
+      "Name": "石エネルギー：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "stoneEnergyDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "coverEffect01",
+      "Name": "肩代わり：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "coverEffect02",
+      "Name": "肩代わり：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "coverSize01",
+      "Name": "肩代わり：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "coverSize02",
+      "Name": "肩代わり：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "coverDummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Effect01",
+      "Name": "肩代わり：SFX1",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Effect02",
+      "Name": "肩代わり：SFX2",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Size01",
+      "Name": "肩代わり：サイズ1",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Size02",
+      "Name": "肩代わり：サイズ2",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat0Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Effect01",
+      "Name": "肩代わり：SFX1 [Mat1]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Effect02",
+      "Name": "肩代わり：SFX2 [Mat1]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Size01",
+      "Name": "肩代わり：サイズ1 [Mat1]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Size02",
+      "Name": "肩代わり：サイズ2 [Mat1]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat1Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Effect01",
+      "Name": "肩代わり：SFX1 [Mat2]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Effect02",
+      "Name": "肩代わり：SFX2 [Mat2]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Size01",
+      "Name": "肩代わり：サイズ1 [Mat2]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Size02",
+      "Name": "肩代わり：サイズ2 [Mat2]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat2Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Effect01",
+      "Name": "肩代わり：SFX1 [Mat3]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Effect02",
+      "Name": "肩代わり：SFX2 [Mat3]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Size01",
+      "Name": "肩代わり：サイズ1 [Mat3]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Size02",
+      "Name": "肩代わり：サイズ2 [Mat3]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat3Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Effect01",
+      "Name": "肩代わり：SFX1 [Mat4]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Effect02",
+      "Name": "肩代わり：SFX2 [Mat4]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Size01",
+      "Name": "肩代わり：サイズ1 [Mat4]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Size02",
+      "Name": "肩代わり：サイズ2 [Mat4]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat4Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Effect01",
+      "Name": "肩代わり：SFX1 [Mat5]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Effect02",
+      "Name": "肩代わり：SFX2 [Mat5]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Size01",
+      "Name": "肩代わり：サイズ1 [Mat5]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Size02",
+      "Name": "肩代わり：サイズ2 [Mat5]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat5Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Effect01",
+      "Name": "肩代わり：SFX1 [Mat6]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Effect02",
+      "Name": "肩代わり：SFX2 [Mat6]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Size01",
+      "Name": "肩代わり：サイズ1 [Mat6]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Size02",
+      "Name": "肩代わり：サイズ2 [Mat6]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat6Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Effect01",
+      "Name": "肩代わり：SFX1 [Mat7]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Effect02",
+      "Name": "肩代わり：SFX2 [Mat7]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Size01",
+      "Name": "肩代わり：サイズ1 [Mat7]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Size02",
+      "Name": "肩代わり：サイズ2 [Mat7]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat7Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Effect01",
+      "Name": "肩代わり：SFX1 [Mat8]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Effect02",
+      "Name": "肩代わり：SFX2 [Mat8]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Size01",
+      "Name": "肩代わり：サイズ1 [Mat8]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Size02",
+      "Name": "肩代わり：サイズ2 [Mat8]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMat8Dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

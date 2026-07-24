@@ -1,0 +1,29 @@
+{
+  "Key": "MAIL_LAYOUT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAIL_LAYOUT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Image Below"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Image Above"
+        }
+      ]
+    }
+  ]
+}

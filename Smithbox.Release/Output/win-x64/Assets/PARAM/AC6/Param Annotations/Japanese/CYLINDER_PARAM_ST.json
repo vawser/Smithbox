@@ -1,0 +1,43 @@
+{
+  "Param": "CYLINDER_PARAM_ST",
+  "Type": "CYLINDER_PARAM_ST",
+  "Name": "CYLINDER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "制御ボーン名",
+      "Description": "適用するボーン名（設定方法がスケルトンの場合のみ有効）"
+    },
+    {
+      "Field": "dmyPolyId",
+      "Name": "ターゲットダミポリID",
+      "Description": "適用するダミポリID（設定方法がダミポリの場合のみ有効）"
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "axisZ",
+      "Name": "ターゲット方向に向ける軸",
+      "Description": "ターゲット方向に向ける軸（他の軸とかぶらないように）"
+    },
+    {
+      "Field": "axisY",
+      "Name": "左右方向の回転軸",
+      "Description": "左右の回転として扱う軸（他の軸とかぶらないように）"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

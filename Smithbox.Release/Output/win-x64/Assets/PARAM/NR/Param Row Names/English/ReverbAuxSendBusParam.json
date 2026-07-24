@@ -1,0 +1,59 @@
+{
+  "Name": "ReverbAuxSendBusParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Outdoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Outdoor Narrow"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Room"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Room Large"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Hall"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Hall Large"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Underground Tunnel"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Underground HugeSpace"
+      ]
+    }
+  ]
+}

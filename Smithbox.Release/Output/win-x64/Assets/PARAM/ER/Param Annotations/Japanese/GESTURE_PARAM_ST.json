@@ -1,0 +1,48 @@
+{
+  "Param": "GESTURE_PARAM_ST",
+  "Type": "GESTURE_PARAM_ST",
+  "Name": "GESTURE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "itemId",
+      "Name": "参照アイテムID",
+      "Description": "参照アイテムID。各メニューでのジェスチャのテキストID、アイコンID、ソートIDを持ってくるのに使用される。装備品パラメータの道具IDを登録します"
+    },
+    {
+      "Field": "msgAnimId",
+      "Name": "メッセージ添付用アニメID",
+      "Description": "メッセージ添付用アニメID。メッセージ添付時のアニメIDを指定します"
+    },
+    {
+      "Field": "cannotUseRiding",
+      "Name": "騎乗中使用禁止か",
+      "Description": "騎乗中使用禁止か(デフォルト:×)。○なら騎乗中に使用できない"
+    },
+    {
+      "Field": "pad2",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "Name": "generatorregistparam_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 21200000,
+      "Entries": [
+        "[REG:21200000] Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "[REG:30100000] Heide Knight"
+      ]
+    },
+    {
+      "ID": 30100100,
+      "Entries": [
+        "[REG:30100100] Heide Knight"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "[REG:33000000] Old Knight"
+      ]
+    },
+    {
+      "ID": 33000001,
+      "Entries": [
+        "[REG:33000001] Old Knight"
+      ]
+    },
+    {
+      "ID": 33000010,
+      "Entries": [
+        "[REG:33000010] Old Knight"
+      ]
+    },
+    {
+      "ID": 33000019,
+      "Entries": [
+        "[REG:33000019] Old Knight"
+      ]
+    },
+    {
+      "ID": 33000040,
+      "Entries": [
+        "[REG:33000040] Old Knight"
+      ]
+    },
+    {
+      "ID": 33000049,
+      "Entries": [
+        "[REG:33000049] Old Knight"
+      ]
+    },
+    {
+      "ID": 61100000,
+      "Entries": [
+        "[REG:61100000] Dragonrider [Boss]"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "[REG:62500000] Old Dragonslayer [Boss]"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "[REG:76900000] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 76900001,
+      "Entries": [
+        "[REG:76900001] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "[REG:78500000] Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 78500001,
+      "Entries": [
+        "[REG:78500001] Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "[REG:81100000] Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 81250000,
+      "Entries": [
+        "[REG:81250000] Sentinel Phantom"
+      ]
+    },
+    {
+      "ID": 84700000,
+      "Entries": [
+        "[REG:84700000] Executioner Phantom"
+      ]
+    },
+    {
+      "ID": 89150000,
+      "Entries": [
+        "[REG:89150000] Devotee Scarlett"
+      ]
+    }
+  ]
+}

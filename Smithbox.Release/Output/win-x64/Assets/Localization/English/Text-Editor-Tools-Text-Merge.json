@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextMerge_Hint",
+      "Text": "Use this to merge a target project's text files into your current project.\n\nMerging will bring all unique text from the target project into your project.\nIncludes modified text if enabled."
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Target_Project",
+      "Text": "Target Project"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Target_Project_TT",
+      "Text": "The project you want to merge text from."
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang",
+      "Text": "Merge Primary Language Only"
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT",
+      "Text": "If enabled, then only the primary language FMGs will be merged."
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified",
+      "Text": "Replace Modified Entries"
+    },
+    {
+      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified_TT",
+      "Text": "If enabled, then modified rows from the target will overwrite existing rows in our project. If not, then they will be ignored, and only unique rows will be merged."
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Merge",
+      "Text": "Merge"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Merge_TT",
+      "Text": "Merge the selected project's text into this project."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_No_Target_Project",
+      "Text": "No project has been targeted."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merge_In_Progress",
+      "Text": "Merge is already in progress."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merged_Text_PASS",
+      "Text": "Merged text from {0} into this project."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Merged_Text_FAIL",
+      "Text": "Failed to merge text from {0}"
+    }
+  ]
+}

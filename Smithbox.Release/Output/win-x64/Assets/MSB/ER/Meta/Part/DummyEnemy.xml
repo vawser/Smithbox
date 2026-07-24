@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
+  
+  <Field>
+    <ThinkParamID
+    AltName="NPC Think Param ID"
+    Wiki="The AI parameters this character should use." 
+    ParamRef="NpcThinkParam" />
+    
+    <NPCParamID
+    AltName="NPC Param ID"
+    Wiki="The property parameters this character should use." 
+    ParamRef="NpcParam" />
+    
+    <TalkID
+    AltName="Talk Script ID"
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
+    
+    <UnkT15
+    AltName="Unknown: 0x15"
+    Wiki=""
+    IsBool="" />
+    
+    <PlatoonID
+    AltName="Platoon Script ID"
+    Wiki="" />
+    
+    <CharaInitID
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    ParamRef="CharaInitParam" />
+    
+    <CollisionPartName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <CollisionPartIndex
+    IndexProperty="" />
+    
+    <WalkRouteName
+    AltName="Walk Route"
+    Wiki="The walk route this enemy follows."
+    MapRef="Event-PatrolInfo" />
+    
+    <WalkRouteIndex
+    IndexProperty="" />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <ChrActivateCondParamID
+    AltName="Character Appearance Condition"
+    Wiki="The ID in ChrActivateConditionParam that affects enemy appearance conditions."
+    ParamRef="ChrActivateConditionParam" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <BackupEventAnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this enemy to idle with." />
+    
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <SpEffectSetParamID
+    AltName="SpEffect Set ID"
+    Wiki="A set of SpEffects that are applied to this enemy." 
+    ParamRef="SpEffectSetParam" />
+    
+    <UnkT84
+    AltName="Unknown: 0x84"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

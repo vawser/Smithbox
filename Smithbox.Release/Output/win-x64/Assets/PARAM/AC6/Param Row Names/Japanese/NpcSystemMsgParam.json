@@ -1,0 +1,23 @@
+{
+  "Name": "NpcSystemMsgParam",
+  "Entries": [
+    {
+      "ID": 2000,
+      "Entries": [
+        "When winning -- 勝利時"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "At the time of defeat -- 敗北時"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "At the start of the match -- 対戦開始時"
+      ]
+    }
+  ]
+}

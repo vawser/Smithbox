@@ -1,0 +1,65 @@
+{
+  "Key": "PLAY_AREA_MULTIPLAY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAY_AREA_MULTIPLAY_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal area"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyssal Pilgrimage Area"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper Area"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King area"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror knight battle area"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duel area"
+        }
+      ]
+    }
+  ]
+}

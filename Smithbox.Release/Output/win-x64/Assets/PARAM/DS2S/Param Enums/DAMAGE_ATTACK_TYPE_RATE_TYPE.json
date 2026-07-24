@@ -1,0 +1,47 @@
+{
+  "Key": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ATTACK_TYPE_RATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "弱"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "強"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falling"
+        }
+      ]
+    }
+  ]
+}

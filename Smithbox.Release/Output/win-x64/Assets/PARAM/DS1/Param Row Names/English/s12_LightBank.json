@@ -1,0 +1,389 @@
+{
+  "Name": "s12_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_Basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0_Tree"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0_CelestialSphere"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0_DistantView"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0_Basic(Character)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1_Mausoleum"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1_MausoleumIndoor"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1_Township（Character）"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1_Mausoleum(Character)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1_CelestialSphere"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1_MausoleumLightmap+"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1_BossArea"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1_ForestFirstHalf"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B1_ForestSecondHalf"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1_Township"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1_Tree"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1_Arena"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1_DistantView"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B1_ForestFirstHalf(Character)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B1_ForestSecondHalf(Character)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "B1_Township(Character)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "B1_DarkenedTownship(Character)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B1_TownshipIndoors(Character)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "B1_Coliseum(Character)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "B1_Kalameet"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "scn120002-c0000"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "scn120002-c4500"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "scn120000-c5210_B"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "scn120000-c5210_A"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "scn120000-c0000_Dark"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "scn120000-c0000"
+      ]
+    }
+  ]
+}

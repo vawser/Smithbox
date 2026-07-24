@@ -1,0 +1,48 @@
+{
+  "Param": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Type": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Name": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "RangeMin",
+      "Name": "Appearance Distance - Min",
+      "Description": "Appearance distance Min [m]"
+    },
+    {
+      "Field": "RangeMax",
+      "Name": "Appearance Distance - Max",
+      "Description": "Appearance distance Max ["
+    },
+    {
+      "Field": "LifeTimeMin",
+      "Name": "Duration - Min",
+      "Description": "Lifespan Min [seconds]"
+    },
+    {
+      "Field": "LifeTimeMax",
+      "Name": "Duration - Max",
+      "Description": "Lifespan Max [seconds]"
+    },
+    {
+      "Field": "DeleteDist",
+      "Name": "Delete Distance",
+      "Description": "Delete distance [m]"
+    },
+    {
+      "Field": "NearDist",
+      "Name": "Near Distance",
+      "Description": "Neighborhood judgment distance [m]"
+    },
+    {
+      "Field": "LimiteRotateMin",
+      "Name": "Generation Angle Limit - Min",
+      "Description": "Angle limit Min [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)"
+    },
+    {
+      "Field": "LimiteRotateMax",
+      "Name": "Generation Angle Limit - Max",
+      "Description": "Angle limit Max [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)"
+    }
+  ]
+}

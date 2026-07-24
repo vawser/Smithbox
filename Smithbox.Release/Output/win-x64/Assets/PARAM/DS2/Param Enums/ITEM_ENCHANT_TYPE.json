@@ -1,0 +1,47 @@
+{
+  "Key": "ITEM_ENCHANT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_ENCHANT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not possible"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pine resin only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell enchantment only"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pine resin and spell enchantment"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "Name": "NpcTransformParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "heavy guard mechanism -- 重ガードメカ"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "Heavy guard mechanism upper body weak point -- 重ガードメカ 上半身炉弱点"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Sea spider multi-legged mode -- ウミグモ多脚モード"
+      ]
+    },
+    {
+      "ID": 610001,
+      "Entries": [
+        "sea ​​spider flight mode -- ウミグモ飛行モード"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "sand worm -- サンドワーム"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "Amphibious assault ship_surface -- 強襲揚陸艦_水上"
+      ]
+    },
+    {
+      "ID": 740001,
+      "Entries": [
+        "Amphibious assault ship_air_phase_1 -- 強襲揚陸艦_空中_フェイズ1"
+      ]
+    },
+    {
+      "ID": 740002,
+      "Entries": [
+        "Amphibious assault ship_air_phase_2 -- 強襲揚陸艦_空中_フェイズ2"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 930001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 930002,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

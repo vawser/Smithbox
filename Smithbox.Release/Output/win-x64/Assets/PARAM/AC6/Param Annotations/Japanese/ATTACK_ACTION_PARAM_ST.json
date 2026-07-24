@@ -1,0 +1,293 @@
+{
+  "Param": "ATTACK_ACTION_PARAM_ST",
+  "Type": "ATTACK_ACTION_PARAM_ST",
+  "Name": "ATTACK_ACTION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "atkStateId",
+      "Name": "攻撃ステートID",
+      "Description": "攻撃ステートのID"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "行動判定IDデフォルト値",
+      "Description": "ChrBehaviorの制御プログラム：射撃で「行動判定IDを使用する」にチェックが入っていない場合、設定された行動判定IDを使用して射撃を行う"
+    },
+    {
+      "Field": "connectPartsSlotIndex",
+      "Name": "連動パーツ番号",
+      "Description": "敵のときにこの装備と連動するパーツ番号"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtParamId",
+      "Name": "LookAtパラメータID",
+      "Description": "使用するLookAtのパラメータID"
+    },
+    {
+      "Field": "lookAtDirType",
+      "Name": "LookAt方向タイプ",
+      "Description": "LookAtで向ける方向"
+    },
+    {
+      "Field": "bulletShootDirType",
+      "Name": "弾丸発射方向タイプ",
+      "Description": "弾丸を発射する方向"
+    },
+    {
+      "Field": "pad_02",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "triggerActionType_00",
+      "Name": "トリガー0アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_01",
+      "Name": "トリガー1アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_02",
+      "Name": "トリガー2アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_03",
+      "Name": "トリガー3アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_04",
+      "Name": "トリガー4アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_05",
+      "Name": "トリガー5アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_06",
+      "Name": "トリガー6アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_07",
+      "Name": "トリガー7アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_08",
+      "Name": "トリガー8アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_09",
+      "Name": "トリガー9アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_10",
+      "Name": "トリガー10アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_11",
+      "Name": "トリガー11アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_12",
+      "Name": "トリガー12アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_13",
+      "Name": "トリガー13アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_14",
+      "Name": "トリガー14アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_15",
+      "Name": "トリガー15アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_16",
+      "Name": "トリガー16アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_17",
+      "Name": "トリガー17アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_18",
+      "Name": "トリガー18アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_19",
+      "Name": "トリガー19アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_20",
+      "Name": "トリガー20アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_21",
+      "Name": "トリガー21アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_22",
+      "Name": "トリガー22アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_23",
+      "Name": "トリガー23アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_24",
+      "Name": "トリガー24アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_25",
+      "Name": "トリガー25アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_26",
+      "Name": "トリガー26アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_27",
+      "Name": "トリガー27アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_28",
+      "Name": "トリガー28アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_29",
+      "Name": "トリガー29アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_30",
+      "Name": "トリガー30アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "triggerActionType_31",
+      "Name": "トリガー31アクションタイプ",
+      "Description": "ChrBehaviorの条件判定タイプ"
+    },
+    {
+      "Field": "bladeHomingParamId",
+      "Name": "ブレホパラメータID ",
+      "Description": "ブレホパラメータID "
+    },
+    {
+      "Field": "isTaeShootTimingOnly",
+      "Name": "TAEからの射撃リクエストでのみ実際に射撃する",
+      "Description": "TAEからの射撃リクエストが来た時のみ実際に弾丸を出す"
+    },
+    {
+      "Field": "alertShowType",
+      "Name": "アラート表示タイプ",
+      "Description": "FEのアラート表示タイプ"
+    },
+    {
+      "Field": "alertLevel",
+      "Name": "アラート区分",
+      "Description": "FEのアラート区分"
+    },
+    {
+      "Field": "isDeadShootEnable",
+      "Name": "死亡しても射撃可能か",
+      "Description": "死亡しても射撃できるか"
+    },
+    {
+      "Field": "lockRange",
+      "Name": "ロック距離[m]",
+      "Description": "二次ロックの距離（現状NPCのみ有効）"
+    },
+    {
+      "Field": "lockTimeSec",
+      "Name": "ロック時間[sec]",
+      "Description": "二次ロックまでの時間（現状NPCのみ有効）"
+    },
+    {
+      "Field": "pad_04",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "shootIndicationType",
+      "Name": "射撃予兆表示",
+      "Description": "FEの射撃予兆表示"
+    },
+    {
+      "Field": "isReloadInputExcludeTrigger",
+      "Name": "リロード操作時にトリガーを排他する",
+      "Description": "リロード操作時にトリガー操作を排他するか（パッド操作専用）"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "shootIndicationDmypolyId",
+      "Name": "射撃予兆表示ダミポリID",
+      "Description": "FEの射撃予兆表示ダミポリID"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

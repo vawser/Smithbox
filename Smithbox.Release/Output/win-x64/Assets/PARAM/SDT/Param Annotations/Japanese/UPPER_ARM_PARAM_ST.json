@@ -1,0 +1,113 @@
+{
+  "Param": "UPPER_ARM_PARAM_ST",
+  "Type": "UPPER_ARM_PARAM_ST",
+  "Name": "UPPER_ARM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "a000_outAngle",
+      "Name": "a０００：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a000_upDownAngle",
+      "Name": "a０００：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a002_outAngle",
+      "Name": "a００２：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a002_upDownAngle",
+      "Name": "a００２：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a003_outAngle",
+      "Name": "a００３：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a003_upDownAngle",
+      "Name": "a００３：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a010_outAngle",
+      "Name": "a０１０：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a010_upDownAngle",
+      "Name": "a０１０：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a011_outAngle",
+      "Name": "a０１１：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a011_upDownAngle",
+      "Name": "a０１１：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a012_outAngle",
+      "Name": "a０１２：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a012_upDownAngle",
+      "Name": "a０１２：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a013_outAngle",
+      "Name": "a０１３：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a013_upDownAngle",
+      "Name": "a０１３：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a014_outAngle",
+      "Name": "a０１４：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a014_upDownAngle",
+      "Name": "a０１４：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a015_outAngle",
+      "Name": "a０１５：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a015_upDownAngle",
+      "Name": "a０１５：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "a016_outAngle",
+      "Name": "a０１６：外側角度",
+      "Description": "デブ装備時腕を上げる角度。脇の角度"
+    },
+    {
+      "Field": "a016_upDownAngle",
+      "Name": "a０１６：上下角度",
+      "Description": "デブ装備時腕を上げる角度。前ならえの角度"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": "予約領域"
+    }
+  ]
+}

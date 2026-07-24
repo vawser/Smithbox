@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CHR_MOVE_PARAM</ParamType>
+    <DataVersion>23</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 fParallelWalkAccelerationMax = 12">
+            <DisplayName>平行移動 加速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSpeedMin = 3">
+            <DisplayName>平行移動 最低速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSpeedMax = 3">
+            <DisplayName>平行移動 最高速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkDeceleration = 12">
+            <DisplayName>平行移動 減速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkBackAngleMax">
+            <DisplayName>平行移動 後退入力角度 [deg]</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkBackSpeedRateMax">
+            <DisplayName>平行移動 速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkAccelerationMax = 12">
+            <DisplayName>歩行 加速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkSpeedMin = 4">
+            <DisplayName>歩行 最低速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkSpeedMax = 4">
+            <DisplayName>歩行 最高速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkDeceleration = 4">
+            <DisplayName>歩行 減速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationAcceleration = 180">
+            <DisplayName>歩行 旋回加速度 [deg/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSpeedOnLowSpeed = 180">
+            <DisplayName>歩行 低速旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSpeedOnHighSpeed = 180">
+            <DisplayName>歩行 高速旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkRotSpeedMinBorder">
+            <DisplayName>歩行 低速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fWalkRotSpeedMaxBorder">
+            <DisplayName>歩行 高速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashStartSpeed">
+            <DisplayName>ダッシュ初速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashAcceleration = 15">
+            <DisplayName>ダッシュ 加速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashSpeedMin = 15">
+            <DisplayName>ダッシュ 最低速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashSpeedMax = 15">
+            <DisplayName>ダッシュ 最高速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashDeceleration = 15">
+            <DisplayName>ダッシュ 減速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationAcceleration = 180">
+            <DisplayName>ダッシュ 旋回加速度 [deg/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationSpeedMin = 180">
+            <DisplayName>ダッシュ 低速旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationSpeedMax = 180">
+            <DisplayName>ダッシュ 高速旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashRotSpeedMinBorder">
+            <DisplayName>ダッシュ 低速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fDashRotSpeedMaxBorder">
+            <DisplayName>ダッシュ 高速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkAccelerationMax = 12">
+            <DisplayName>ロック移動 加速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSpeedMin = 4">
+            <DisplayName>ロック移動 最低速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSpeedMax = 4">
+            <DisplayName>ロック移動 最高速度 [m/sec]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkDeceleration = 12">
+            <DisplayName>ロック移動 減速度 [m/sec^2]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkRotationAcceleration = 180">
+            <DisplayName>ロック移動 旋回加速度 [deg/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkRotationSpeedMax = 180">
+            <DisplayName>ロック移動 旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkAngleMax">
+            <DisplayName>ロック移動 後退入力角度 [deg]</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkBackMoveSpeedRateMax">
+            <DisplayName>ロック移動 速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashStartSpeed">
+            <DisplayName>ロックダッシュ 初速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashAcceleration = 15">
+            <DisplayName>ロックダッシュ 加速度[m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashSpeedMin = 15">
+            <DisplayName>ロックダッシュ 最低速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashSpeedMax = 15">
+            <DisplayName>ロックダッシュ 最高速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashDeceleration = 15">
+            <DisplayName>ロックダッシュ 減速度[m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnDashRotationAcceleration = 180">
+            <DisplayName>ロックダッシュ 旋回加速度[deg/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnDashRotationSpeedMin = 180">
+            <DisplayName>ロックダッシュ 低速旋回速度[deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnDashRotationSpeedMax = 180">
+            <DisplayName>ロックダッシュ 高速旋回速度[deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashRotSpeedMinBorder">
+            <DisplayName>ロックダッシュ 低速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashRotSpeedMaxBorder">
+            <DisplayName>ロックダッシュ 高速旋回判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fRotationValueMin">
+            <DisplayName>旋回 旋回量 最小 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fRotationValueMax">
+            <DisplayName>旋回 旋回量 最大 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 attackAutoPivotRotationSpeed = 180">
+            <DisplayName>攻撃 旋回ホーミング 速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 attackAutoPivotLimitAngle">
+            <DisplayName>攻撃 旋回ホーミング 限界角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 attackManualPivotRotationSpeed = 180">
+            <DisplayName>攻撃 任意旋回 速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 attackManualPivotLimitAngle">
+            <DisplayName>攻撃 任意旋回 限界角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackMoveAcceleration">
+            <DisplayName>攻撃 向き変更 加速度 [m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackMoveMaxSpeed">
+            <DisplayName>攻撃 向き変更 最大速度 [m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackMoveDeceleration">
+            <DisplayName>攻撃 向き変更 減速度 [m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 attackMoveRotationSpeed = 180">
+            <DisplayName>攻撃 向き変更 旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 rangedManualPivotRotationSpeed = 180">
+            <DisplayName>その場旋回 速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 rangedAutoPivotRotationSpeed = 180">
+            <DisplayName>自動旋回 速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 shootStanceAnimSpeedScaleMin">
+            <DisplayName>射撃構えアニメ速度 補正倍率 最小 [倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 shootStanceAnimSpeedScaleMax">
+            <DisplayName>射撃構えアニメ速度 補正倍率 最大 [倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 spellChantingAnimSpeedScaleMin">
+            <DisplayName>スペル詠唱アニメ速度 補正倍率 最小 [倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 spellChantingAnimSpeedScaleMax">
+            <DisplayName>スペル詠唱アニメ速度 補正倍率 最大 [倍]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 afterAttackAcceleration">
+            <DisplayName>攻撃後 歩き出し 加速度 [m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 afterAttackMaxSpeed">
+            <DisplayName>攻撃後 歩き出し 速度 最大 [m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 afterAttackDeceleration">
+            <DisplayName>攻撃後 歩き出し 減速度 [m/sec^2]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 afterAttackRotationSpeed = 180">
+            <DisplayName>攻撃後 歩き出し 旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 qtRearEnableMasterRotate">
+            <DisplayName>クイックターン 180度旋回マスター旋回許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 qtFrontEnableMasterRotate">
+            <DisplayName>クイックターン 90度旋回マスター旋回許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 quickTurnPad[2] = 320">
+            <DisplayName>パディング</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 quickTurnRotateSpeed = 320">
+            <DisplayName>クイックターン 旋回速度[deg/s]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepDist">
+            <DisplayName>回避 ステップ距離 [m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepStaminaEmptyDist">
+            <DisplayName>回避 スタミナ切れステップ距離 [m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 stepRotationSpeed = 180">
+            <DisplayName>回避 ステップ旋回速度[deg/s]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingDist">
+            <DisplayName>回避 ローリング距離 [m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingStaminaEmptyDist">
+            <DisplayName>回避 スタミナ切れローリング距離 [m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 rollingRotationSpeed = 180">
+            <DisplayName>回避 ローリング旋回速度[deg/s]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 damageRotationSpeed = 180">
+            <DisplayName>ダメージ方向 旋回速度 [deg/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpVerticalSpeed">
+            <DisplayName>ジャンプ 上昇速度 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 standJumpVerticalSpeed">
+            <DisplayName>スタンドジャンプ 上昇速度 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpRollLandingHeightMax">
+            <DisplayName>ジャンプ 転がり着地高さ 最大 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpForwardSpeedMin">
+            <DisplayName>ジャンプ 前方速度 最小 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpForwardSpeedMax = 1,000">
+            <DisplayName>ジャンプ 前方速度 最大 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 standJumpForwardSpeedMin">
+            <DisplayName>スタンドジャンプ 前方速度 最小 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 standJumpForwardSpeedMax = 1,000">
+            <DisplayName>スタンドジャンプ 前方速度 最大 [m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpGravityFactorMin">
+            <DisplayName>ジャンプ 重力加速度倍率 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpGravityFactorMax">
+            <DisplayName>ジャンプ 重力加速度倍率 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 standJumpGravityFactorMin">
+            <DisplayName>スタンドジャンプ 重力加速度倍率 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 standJumpGravityFactorMax">
+            <DisplayName>スタンドジャンプ 重力加速度倍率 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingInertiaStopSpeed">
+            <DisplayName>落下 停止加速度[m/Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDeadTimer">
+            <DisplayName>落下 死亡落下時間[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingRollingHeight">
+            <DisplayName>落下 転がり着地高さ[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingRollingSpeed">
+            <DisplayName>落下 転がり着地速度[m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingJumpRollingHeight">
+            <DisplayName>ジャンプ 転がり着地高さ[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingJumpRollingSpeed">
+            <DisplayName>ジャンプ 転がり着地速度[m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingStandingRate">
+            <DisplayName>着地 屈伸着地[m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingStandingCrouchRateMin">
+            <DisplayName>着地 屈伸着地 しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpCrouchRateMin">
+            <DisplayName>ジャンプ着地 しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dodgeCrouchRateMin">
+            <DisplayName>回避 しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dodgeWaitCrouchRateMin">
+            <DisplayName>回避 待機しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepCrouchRateMin">
+            <DisplayName>ステップ しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepWaitCrouchRateMin">
+            <DisplayName>ステップ 待機しゃがみ量 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingCrouchRateMin">
+            <DisplayName>着地 屈伸着地倍率 最小[倍率]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingCrouchRateMax">
+            <DisplayName>着地 屈伸着地倍率 最大[倍率]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingCrouchReturnTimeMin">
+            <DisplayName>着地 しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingCrouchReturnTimeMax">
+            <DisplayName>着地 しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpCrouchReturnTimeMin">
+            <DisplayName>ジャンプ着地 しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpCrouchReturnTimeMax">
+            <DisplayName>ジャンプ着地 しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingCrouchReturnTimeMin">
+            <DisplayName>ローリング しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingCrouchReturnTimeMax">
+            <DisplayName>ローリング しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingWaitCrouchReturnTimeMin">
+            <DisplayName>ローリング 待機しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingWaitCrouchReturnTimeMax">
+            <DisplayName>ローリング 待機しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepCrouchReturnTimeMin">
+            <DisplayName>ステップ しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepCrouchReturnTimeMax">
+            <DisplayName>ステップ しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepWaitCrouchReturnTimeMin">
+            <DisplayName>ステップ 待機しゃがみ終了時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepWaitCrouchReturnTimeMax">
+            <DisplayName>ステップ 待機しゃがみ終了時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkinvalidTimeMin">
+            <DisplayName>着地 遷移不可 時間 最小[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkinvalidTimeMax">
+            <DisplayName>着地 遷移不可 時間 最大[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkinvalidFallDistMin">
+            <DisplayName>着地 遷移不可 発生高度 最小[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkinvalidFallDistMax">
+            <DisplayName>着地 遷移不可 発生高度 最大[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveSpeedFallDistMin">
+            <DisplayName>着地 速度低下 発生高度 最小[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveSpeedFallDistMax">
+            <DisplayName>着地 速度低下 発生高度 最大[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveSpeedMin">
+            <DisplayName>着地 最大速度 低下割合 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveSpeedMax">
+            <DisplayName>着地 最大速度 低下割合 最大[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveAcceralationMin">
+            <DisplayName>着地 最大加速度 低下割合 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkMoveAcceralationMax">
+            <DisplayName>着地 最大加速度 低下割合 最大[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingMoveStopAcceralationMin">
+            <DisplayName>着地 停止加速度 増加割合 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingMoveStopAcceralationMax">
+            <DisplayName>着地 停止加速度 増加割合 最大[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkRotationSpeedMin">
+            <DisplayName>着地 旋回速度 低下割合 最小[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 landingWalkRotationSpeedMax">
+            <DisplayName>着地 旋回速度 低下割合 最大[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDistNone">
+            <DisplayName>着地 落下高度 無効[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDistSafety">
+            <DisplayName>着地 落下高度 安全[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDistNormal">
+            <DisplayName>着地 落下高度 通常[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDistDanger">
+            <DisplayName>着地 落下高度 危険[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallingDistDead">
+            <DisplayName>着地 落下高度 死亡[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 stepUpFeasibleAngleMax">
+            <DisplayName>段差乗り 角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepUpFeasibleHeightMin">
+            <DisplayName>段差乗り 高さ 最小[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepUpFeasibleHeightMax">
+            <DisplayName>段差乗り 高さ 最大[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepUpLightAnimSpeedScale = 1">
+            <DisplayName>段差乗り 軽量アニメ 速度倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 stepUpHeavyAnimSpeedScale = 1">
+            <DisplayName>段差乗り 重量アニメ 速度倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 climbStepFeasibleAngleMax">
+            <DisplayName>段差よじ登り 角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 climbStepFeasibleHeightMin">
+            <DisplayName>段差よじ登り 高さ 最小[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 climbStepFeasibleHeightMax">
+            <DisplayName>段差よじ登り 高さ 最大[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 climbStepLightAnimSpeedScale = 1">
+            <DisplayName>段差よじ登り 軽量アニメ 速度倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>2</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 climbStepHeavyAnimSpeedScale = 1">
+            <DisplayName>段差よじ登り 重量アニメ 速度倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>2</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 ladderStartStep = 1">
+            <DisplayName>はしご 初期段差[段]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ladderNormalMoveAnimRate = 1">
+            <DisplayName>はしご 移動 アニメ再生倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ladderDashMoveAnimRate = 1">
+            <DisplayName>はしご ダッシュ アニメ再生倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ladderGetOffMoveAnimRate = 1">
+            <DisplayName>はしご 滑り降り アニメ再生倍率 [倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 posFixMoveSpeed = 8">
+            <DisplayName>位置修正制御 移動速度[m/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 posFixMoveAngulerSpeed = 1,080">
+            <DisplayName>位置修正制御 旋回速度[deg/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 posFixRotationValueMax = 60">
+            <DisplayName>位置修正制御 角速度使用率最大角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpAttackVerticalSpeed = 1">
+            <DisplayName>ジャンプ攻撃 上昇速度 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 jumpAttackSideDistMin">
+            <DisplayName>ジャンプ攻撃 水平速度 最少距離 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 jumpAttackSideDistMax">
+            <DisplayName>ジャンプ攻撃 水平速度 最大距離 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 jumpAttackSideSpeedMin">
+            <DisplayName>ジャンプ攻撃 水平速度 最少 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 jumpAttackSideSpeedMax">
+            <DisplayName>ジャンプ攻撃 水平速度 最大 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 jumpFallAttackVerticalSpeed = 1">
+            <DisplayName>ジャンプ落下攻撃 上昇速度 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 jumpFallAttackSideDistMin">
+            <DisplayName>ジャンプ落下攻撃 水平速度 最少距離 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 jumpFallAttackSideDistMax">
+            <DisplayName>ジャンプ落下攻撃 水平速度 最大距離 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 jumpFallAttackSideSpeedMin">
+            <DisplayName>ジャンプ落下攻撃 水平速度 最少 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 jumpFallAttackSideSpeedMax">
+            <DisplayName>ジャンプ落下攻撃 水平速度 最大 [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="angle32 fParallelWalkSlopeAngMin">
+            <DisplayName>平行移動 斜面判定 最小角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="angle32 fParallelWalkSlopeAngMax">
+            <DisplayName>平行移動 斜面判定 最大角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSlopeSpeedRateMax">
+            <DisplayName>平行移動 斜面移動速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSlopeRotRateMax">
+            <DisplayName>平行移動 斜面旋回速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="angle32 fWalkSlopeAngMin">
+            <DisplayName>歩行 斜面判定 最小角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="angle32 fWalkSlopeAngMax">
+            <DisplayName>歩行 斜面判定 最大角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 fWalkSlopeSpeedRateMax">
+            <DisplayName>歩行 斜面移動速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 fWalkSlopeRotRateMax">
+            <DisplayName>歩行 斜面旋回速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="angle32 fDashSlopeAngMin">
+            <DisplayName>ダッシュ 斜面判定 最小角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="angle32 fDashSlopeAngMax">
+            <DisplayName>ダッシュ 斜面判定 最大角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 fDashSlopeSpeedRateMax">
+            <DisplayName>ダッシュ 斜面移動速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 fDashSlopeRotRateMax">
+            <DisplayName>ダッシュ 斜面旋回速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkSlopeAngMin">
+            <DisplayName>ロック移動 斜面判定 最小角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkSlopeAngMax">
+            <DisplayName>ロック移動 斜面判定 最大角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSlopeSpeedRateMax">
+            <DisplayName>ロック移動 斜面移動速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSlopeRotRateMax">
+            <DisplayName>ロック移動 斜面旋回速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnDashSlopeAngMin">
+            <DisplayName>ロックダッシュ 斜面判定 最小角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnDashSlopeAngMax">
+            <DisplayName>ロックダッシュ 斜面判定 最大角度 [deg]</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashSlopeSpeedRateMax">
+            <DisplayName>ロックダッシュ 斜面移動速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashSlopeRotRateMax">
+            <DisplayName>ロックダッシュ 斜面旋回速度低下割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 fDyingMoveAcceralation">
+            <DisplayName>瀕死移動 加速度[m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="f32 fDyingMoveSpeed">
+            <DisplayName>瀕死移動 最高速度[m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="f32 fDyingMoveDeceleration">
+            <DisplayName>瀕死移動 減速度[m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="angle32 fDyingMoveRotationSpeed">
+            <DisplayName>瀕死移動 旋回速度[deg/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="f32 fFloatingUpMoveAcceleration">
+            <DisplayName>浮遊制御 上昇 加速度 [m/Sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 fFloatingUpMoveSpeedMax">
+            <DisplayName>浮遊制御 上昇 最大速度 [m/Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 fFloatingUpMoveDeceleration">
+            <DisplayName>浮遊制御 上昇 減速度 [m/Sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 fFloatingDownMoveAcceleration">
+            <DisplayName>浮遊制御 下降 加速度 [m/Sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="f32 fFloatingDownMoveSpeedMax">
+            <DisplayName>浮遊制御 下降 最大速度 [m/Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="f32 fFloatingDownMoveDeceleration">
+            <DisplayName>浮遊制御 下降 減速度 [m/Sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 landingSfxHeight">
+            <DisplayName>着地SFX発生高さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="u32 landingSfxId">
+            <DisplayName>着地時足音SFXパラメータID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="u32 landingRagdollSfxId">
+            <DisplayName>着地時足音SFXパラメータID（ラグドール）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="f32 fMaterialMoveInfluenceRate">
+            <DisplayName>床材質 移動速度影響倍率 有効割合</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="f32 fMaterialTurnInfluenceRate">
+            <DisplayName>床材質 旋回速度影響倍率 有効割合</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[8]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>195</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

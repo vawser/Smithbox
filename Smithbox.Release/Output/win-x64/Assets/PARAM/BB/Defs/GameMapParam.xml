@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GAME_MAP_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 settingNo_timeSlotA">
+      <DisplayName>１５時_ライトグループID</DisplayName>
+      <Description>１５時_ライトグループID</Description>
+      <Maximum>9</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 settingNo_timeSlotB">
+      <DisplayName>夕方_ライトグループID</DisplayName>
+      <Description>夕方_ライトグループID</Description>
+      <Maximum>9</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 settingNo_timeSlotC">
+      <DisplayName>夜_ライトグループID</DisplayName>
+      <Description>夜_ライトグループID</Description>
+      <Maximum>9</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 settingNo_timeSlotD">
+      <DisplayName>異様な月_ライトグループID</DisplayName>
+      <Description>異様な月_ライトグループID</Description>
+      <Maximum>9</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

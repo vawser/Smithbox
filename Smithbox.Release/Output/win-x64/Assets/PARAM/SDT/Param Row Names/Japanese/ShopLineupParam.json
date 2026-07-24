@@ -1,0 +1,2233 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "[Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Mask Fragment A -- お面の破片A"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "[Consumption] Elixir -- 【消費】エリクサー"
+      ]
+    },
+    {
+      "ID": 1000004,
+      "Entries": [
+        "[Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）"
+      ]
+    },
+    {
+      "ID": 1000005,
+      "Entries": [
+        "Mask Fragment B -- お面の破片B"
+      ]
+    },
+    {
+      "ID": 1000006,
+      "Entries": [
+        "Master -- 原盤"
+      ]
+    },
+    {
+      "ID": 1000007,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100002,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 1100003,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100004,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100005,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100006,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100007,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100008,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100009,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100050,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 1100051,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100052,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 1100053,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100054,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100055,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100056,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100057,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100058,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100059,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 1100101,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100102,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100103,
+      "Entries": [
+        "[Consumption] Grip ash -- 【消費】握り灰"
+      ]
+    },
+    {
+      "ID": 1100104,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1100105,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100106,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100107,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100108,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100109,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100110,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100111,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100112,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1100150,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 1100151,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100152,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100153,
+      "Entries": [
+        "[Consumption] Grip ash -- 【消費】握り灰"
+      ]
+    },
+    {
+      "ID": 1100154,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1100155,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100156,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100157,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100158,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100159,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100160,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100161,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100162,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ"
+      ]
+    },
+    {
+      "ID": 1100201,
+      "Entries": [
+        "[Consumption] Ceramic piece -- 【消費】陶片"
+      ]
+    },
+    {
+      "ID": 1100202,
+      "Entries": [
+        "[Consumption] Grip ash -- 【消費】握り灰"
+      ]
+    },
+    {
+      "ID": 1100203,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100204,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100205,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100206,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100207,
+      "Entries": [
+        "[Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 1100208,
+      "Entries": [
+        "[Consumption] Strengthening the core -- 【消費】体幹強化"
+      ]
+    },
+    {
+      "ID": 1100209,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100210,
+      "Entries": [
+        "General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100211,
+      "Entries": [
+        "General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100212,
+      "Entries": [
+        "General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100213,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 1100214,
+      "Entries": [
+        "[Consumption] Attack enhancement -- 【消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 1100215,
+      "Entries": [
+        "[Consumption] Elixir -- 【消費】エリクサー"
+      ]
+    },
+    {
+      "ID": 1100216,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100217,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100218,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100250,
+      "Entries": [
+        "Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ"
+      ]
+    },
+    {
+      "ID": 1100251,
+      "Entries": [
+        "[Consumption] Ceramic piece -- 【消費】陶片"
+      ]
+    },
+    {
+      "ID": 1100252,
+      "Entries": [
+        "[Consumption] Grip ash -- 【消費】握り灰"
+      ]
+    },
+    {
+      "ID": 1100253,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100254,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100255,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100256,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100257,
+      "Entries": [
+        "[Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 1100258,
+      "Entries": [
+        "[Consumption] Strengthening the core -- 【消費】体幹強化"
+      ]
+    },
+    {
+      "ID": 1100259,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100260,
+      "Entries": [
+        "General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100261,
+      "Entries": [
+        "General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100262,
+      "Entries": [
+        "General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1100263,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 1100264,
+      "Entries": [
+        "[Consumption] Attack enhancement -- 【消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 1100265,
+      "Entries": [
+        "[Consumption] Elixir -- 【消費】エリクサー"
+      ]
+    },
+    {
+      "ID": 1100266,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100267,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100268,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100300,
+      "Entries": [
+        "Anayama partnership certificate -- 穴山の組合証"
+      ]
+    },
+    {
+      "ID": 1100400,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100401,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100402,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100403,
+      "Entries": [
+        "[Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100404,
+      "Entries": [
+        "[Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100405,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 1100406,
+      "Entries": [
+        "Kodachi hint -- 小太刀ヒント"
+      ]
+    },
+    {
+      "ID": 1100407,
+      "Entries": [
+        "Finger whistle strengthening tips -- 指笛強化ヒント"
+      ]
+    },
+    {
+      "ID": 1100408,
+      "Entries": [
+        "Transformation tips -- 変わり身ヒント"
+      ]
+    },
+    {
+      "ID": 1100409,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100410,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100411,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1100412,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100413,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100414,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100415,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100416,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100417,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1100450,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100451,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1100452,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100453,
+      "Entries": [
+        "[Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100454,
+      "Entries": [
+        "[Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1100455,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 1100456,
+      "Entries": [
+        "Kodachi hint -- 小太刀ヒント"
+      ]
+    },
+    {
+      "ID": 1100457,
+      "Entries": [
+        "Finger whistle strengthening tips -- 指笛強化ヒント"
+      ]
+    },
+    {
+      "ID": 1100458,
+      "Entries": [
+        "Transformation tips -- 変わり身ヒント"
+      ]
+    },
+    {
+      "ID": 1100459,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1100460,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1100461,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1100462,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1100463,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1100464,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1100465,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100466,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1100467,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1100500,
+      "Entries": [
+        "Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺"
+      ]
+    },
+    {
+      "ID": 1100501,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100502,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100503,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_shuriken -- 義手忍具作成_手裏剣"
+      ]
+    },
+    {
+      "ID": 1100504,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_prepared spear -- 義手忍具作成_仕込み槍"
+      ]
+    },
+    {
+      "ID": 1100505,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100506,
+      "Entries": [
+        "Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ"
+      ]
+    },
+    {
+      "ID": 1100507,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100508,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100509,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100510,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+      ]
+    },
+    {
+      "ID": 1100511,
+      "Entries": [
+        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+      ]
+    },
+    {
+      "ID": 1100512,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1100513,
+      "Entries": [
+        "Mask Fragment C -- お面の破片C"
+      ]
+    },
+    {
+      "ID": 1100514,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇"
+      ]
+    },
+    {
+      "ID": 1100515,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Shuriken -- 手裏剣"
+      ]
+    },
+    {
+      "ID": 1101001,
+      "Entries": [
+        "Firecracker -- 爆竹"
+      ]
+    },
+    {
+      "ID": 1101002,
+      "Entries": [
+        "Ignition -- 発火"
+      ]
+    },
+    {
+      "ID": 1101003,
+      "Entries": [
+        "Preparation ax -- 仕込み斧"
+      ]
+    },
+    {
+      "ID": 1101004,
+      "Entries": [
+        "Transformation -- 変わり身"
+      ]
+    },
+    {
+      "ID": 1101005,
+      "Entries": [
+        "Kodachi -- 仕込み小太刀"
+      ]
+    },
+    {
+      "ID": 1101006,
+      "Entries": [
+        "Iron fan -- 鉄扇"
+      ]
+    },
+    {
+      "ID": 1101007,
+      "Entries": [
+        "Turn the enemy -- 敵回し"
+      ]
+    },
+    {
+      "ID": 1101008,
+      "Entries": [
+        "Preparation spear -- 仕込み槍"
+      ]
+    },
+    {
+      "ID": 1101009,
+      "Entries": [
+        "Finger whistle -- 指笛"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1110001,
+      "Entries": [
+        "Mask Fragment C -- お面の破片C"
+      ]
+    },
+    {
+      "ID": 1110002,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1110003,
+      "Entries": [
+        "[Consumption] Self-illness poison -- 【消費】自病毒"
+      ]
+    },
+    {
+      "ID": 1110004,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1110005,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1110006,
+      "Entries": [
+        "[Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP"
+      ]
+    },
+    {
+      "ID": 1110007,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1110008,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1110009,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1110010,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1110011,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1110012,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1110013,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1110050,
+      "Entries": [
+        "HP / Trunk UP Fragment -- HP/体幹UPの欠片"
+      ]
+    },
+    {
+      "ID": 1110051,
+      "Entries": [
+        "Mask Fragment C -- お面の破片C"
+      ]
+    },
+    {
+      "ID": 1110052,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1110053,
+      "Entries": [
+        "[Consumption] Self-illness poison -- 【消費】自病毒"
+      ]
+    },
+    {
+      "ID": 1110054,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 1110055,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1110056,
+      "Entries": [
+        "[Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP"
+      ]
+    },
+    {
+      "ID": 1110057,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 1110058,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1110059,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1110060,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1110061,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1110062,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1110063,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1111400,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇"
+      ]
+    },
+    {
+      "ID": 1111401,
+      "Entries": [
+        "Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺"
+      ]
+    },
+    {
+      "ID": 1111402,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1111403,
+      "Entries": [
+        "[Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 1111404,
+      "Entries": [
+        "[Consumption] Suicide -- 【消費】自殺"
+      ]
+    },
+    {
+      "ID": 1111405,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1111406,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1111407,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1111408,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1111409,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1111450,
+      "Entries": [
+        "Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇"
+      ]
+    },
+    {
+      "ID": 1111451,
+      "Entries": [
+        "Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺"
+      ]
+    },
+    {
+      "ID": 1111452,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1111453,
+      "Entries": [
+        "[Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き"
+      ]
+    },
+    {
+      "ID": 1111454,
+      "Entries": [
+        "[Consumption] Suicide -- 【消費】自殺"
+      ]
+    },
+    {
+      "ID": 1111455,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1111456,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1111457,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1111458,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1111459,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Madness prevention gourd -- 発狂予防瓢箪"
+      ]
+    },
+    {
+      "ID": 1500001,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1500002,
+      "Entries": [
+        "General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）"
+      ]
+    },
+    {
+      "ID": 1500003,
+      "Entries": [
+        "[Consumption] Stealth enhancement -- 【消費】ステルス強化"
+      ]
+    },
+    {
+      "ID": 1500004,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1500005,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 1500006,
+      "Entries": [
+        "Scales -- うろこ"
+      ]
+    },
+    {
+      "ID": 1500007,
+      "Entries": [
+        "Sake (Ryusen) -- 酒（竜泉）"
+      ]
+    },
+    {
+      "ID": 1500008,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1500009,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1500011,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1500012,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1500050,
+      "Entries": [
+        "Madness prevention gourd -- 発狂予防瓢箪"
+      ]
+    },
+    {
+      "ID": 1500051,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1500052,
+      "Entries": [
+        "General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）"
+      ]
+    },
+    {
+      "ID": 1500053,
+      "Entries": [
+        "[Consumption] Stealth enhancement -- 【消費】ステルス強化"
+      ]
+    },
+    {
+      "ID": 1500054,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1500055,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 1500056,
+      "Entries": [
+        "Scales -- うろこ"
+      ]
+    },
+    {
+      "ID": 1500057,
+      "Entries": [
+        "Sake (Ryusen) -- 酒（竜泉）"
+      ]
+    },
+    {
+      "ID": 1500058,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1500059,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1500060,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1500061,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1500062,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Poison prevention gourd -- 毒予防瓢箪"
+      ]
+    },
+    {
+      "ID": 1700001,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1700002,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1700003,
+      "Entries": [
+        "General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1700004,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1700005,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり",
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1700006,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1700007,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1700008,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1700009,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1700010,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 1700050,
+      "Entries": [
+        "Poison prevention gourd -- 毒予防瓢箪"
+      ]
+    },
+    {
+      "ID": 1700051,
+      "Entries": [
+        "[Consumption] Regeneration -- 【消費】リジェネ"
+      ]
+    },
+    {
+      "ID": 1700052,
+      "Entries": [
+        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+      ]
+    },
+    {
+      "ID": 1700053,
+      "Entries": [
+        "General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）"
+      ]
+    },
+    {
+      "ID": 1700054,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 1700055,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり",
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 1700056,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 1700057,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 1700058,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 1700059,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 1700060,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Five-color rice -- 五色米"
+      ]
+    },
+    {
+      "ID": 2000001,
+      "Entries": [
+        "General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）"
+      ]
+    },
+    {
+      "ID": 2000002,
+      "Entries": [
+        "[Consumption] Attack enhancement -- 【消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 2000003,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 2000004,
+      "Entries": [
+        "persimmon -- 柿"
+      ]
+    },
+    {
+      "ID": 2000005,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 2000006,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 2000007,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 2000008,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 2000009,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 2000011,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 2000012,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 2000013,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 2000014,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 2000050,
+      "Entries": [
+        "Five-color rice -- 五色米"
+      ]
+    },
+    {
+      "ID": 2000051,
+      "Entries": [
+        "General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）"
+      ]
+    },
+    {
+      "ID": 2000052,
+      "Entries": [
+        "[Consumption] Attack enhancement -- 【消費】攻撃強化"
+      ]
+    },
+    {
+      "ID": 2000053,
+      "Entries": [
+        "[Consumption] Strengthening defense -- 【消費】防御強化"
+      ]
+    },
+    {
+      "ID": 2000054,
+      "Entries": [
+        "persimmon -- 柿"
+      ]
+    },
+    {
+      "ID": 2000055,
+      "Entries": [
+        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+      ]
+    },
+    {
+      "ID": 2000056,
+      "Entries": [
+        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+      ]
+    },
+    {
+      "ID": 2000057,
+      "Entries": [
+        "[Consumption] Gold nugget_Large -- 【消費】金塊_大"
+      ]
+    },
+    {
+      "ID": 2000058,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 2000059,
+      "Entries": [
+        "[Consumption] Release illusion -- 【消費】幻術解除"
+      ]
+    },
+    {
+      "ID": 2000060,
+      "Entries": [
+        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+      ]
+    },
+    {
+      "ID": 2000061,
+      "Entries": [
+        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+      ]
+    },
+    {
+      "ID": 2000062,
+      "Entries": [
+        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+      ]
+    },
+    {
+      "ID": 2000063,
+      "Entries": [
+        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+      ]
+    },
+    {
+      "ID": 2000064,
+      "Entries": [
+        "Dragon cough healing refill -- 竜咳治癒おかわり"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "Mask Fragment B -- お面の破片B"
+      ]
+    },
+    {
+      "ID": 2500001,
+      "Entries": [
+        "Master -- 原盤"
+      ]
+    },
+    {
+      "ID": 2500002,
+      "Entries": [
+        "Dragon cough healing -- 竜咳治癒"
+      ]
+    },
+    {
+      "ID": 2500003,
+      "Entries": [
+        "[Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）"
+      ]
+    },
+    {
+      "ID": 2500004,
+      "Entries": [
+        "Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ"
+      ]
+    },
+    {
+      "ID": 2500005,
+      "Entries": [
+        "[Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有"
+      ]
+    },
+    {
+      "ID": 2500006,
+      "Entries": [
+        "Mask Fragment A -- お面の破片A"
+      ]
+    },
+    {
+      "ID": 2500007,
+      "Entries": [
+        "[Consumption] Elixir -- 【消費】エリクサー"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 9100000,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 9620000,
+      "Entries": [
+        "Magatama Fragment 1 -- 勾玉の欠片1"
+      ]
+    },
+    {
+      "ID": 9620001,
+      "Entries": [
+        "Resource item C (blue) -- リソースアイテムC（青形代）"
+      ]
+    },
+    {
+      "ID": 9620002,
+      "Entries": [
+        "Preparation ax -- 仕込み斧"
+      ]
+    },
+    {
+      "ID": 9620003,
+      "Entries": [
+        "Magatama Fragment 2 -- 勾玉の欠片2"
+      ]
+    },
+    {
+      "ID": 9620004,
+      "Entries": [
+        "Magatama Fragment 3 -- 勾玉の欠片3"
+      ]
+    },
+    {
+      "ID": 9620006,
+      "Entries": [
+        "Whetstone Fragment 1 -- 砥石の欠片1"
+      ]
+    },
+    {
+      "ID": 9620007,
+      "Entries": [
+        "Whetstone Fragment 4 -- 砥石の欠片4"
+      ]
+    },
+    {
+      "ID": 9620008,
+      "Entries": [
+        "Whetstone Fragment 5 -- 砥石の欠片5"
+      ]
+    },
+    {
+      "ID": 9620009,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 9620010,
+      "Entries": [
+        "Ignition -- 発火"
+      ]
+    },
+    {
+      "ID": 9620011,
+      "Entries": [
+        "Firecracker -- 爆竹"
+      ]
+    },
+    {
+      "ID": 9620100,
+      "Entries": [
+        "Puppet puppet killing technique -- 傀儡忍殺の術"
+      ]
+    },
+    {
+      "ID": 9620101,
+      "Entries": [
+        "Blessing technique -- 加護の術"
+      ]
+    },
+    {
+      "ID": 9620102,
+      "Entries": [
+        "Magatama Fragment 4 -- 勾玉の欠片4"
+      ]
+    },
+    {
+      "ID": 9620103,
+      "Entries": [
+        "Whetstone Fragment 2 -- 砥石の欠片2"
+      ]
+    },
+    {
+      "ID": 9620200,
+      "Entries": [
+        "Detoxification prescription -- 毒消し処方箋"
+      ]
+    },
+    {
+      "ID": 9620201,
+      "Entries": [
+        "Magatama -- 勾玉"
+      ]
+    },
+    {
+      "ID": 9620202,
+      "Entries": [
+        "Whetstone Fragment 3 -- 砥石の欠片3"
+      ]
+    },
+    {
+      "ID": 9620300,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 9620301,
+      "Entries": [
+        "Resource item B (red) -- リソースアイテムB（赤形代）"
+      ]
+    },
+    {
+      "ID": 9620302,
+      "Entries": [
+        "Resource item C (blue) -- リソースアイテムC（青形代）"
+      ]
+    },
+    {
+      "ID": 9999000,
+      "Entries": [
+        "Preparation ax -- 仕込み斧"
+      ]
+    },
+    {
+      "ID": 9999001,
+      "Entries": [
+        "Resurrection technique -- 復活の術"
+      ]
+    },
+    {
+      "ID": 9999002,
+      "Entries": [
+        "Magatama Fragment 1 -- 勾玉の欠片1"
+      ]
+    },
+    {
+      "ID": 9999003,
+      "Entries": [
+        "Magatama Fragment 2 -- 勾玉の欠片2"
+      ]
+    },
+    {
+      "ID": 9999004,
+      "Entries": [
+        "Magatama Fragment 3 -- 勾玉の欠片3"
+      ]
+    },
+    {
+      "ID": 9999005,
+      "Entries": [
+        "Whetstone Fragment 1 -- 砥石の欠片1"
+      ]
+    },
+    {
+      "ID": 9999006,
+      "Entries": [
+        "Whetstone Fragment 4 -- 砥石の欠片4"
+      ]
+    },
+    {
+      "ID": 9999007,
+      "Entries": [
+        "Whetstone Fragment 5 -- 砥石の欠片5"
+      ]
+    },
+    {
+      "ID": 9999008,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 9999009,
+      "Entries": [
+        "Ignition -- 発火"
+      ]
+    },
+    {
+      "ID": 9999010,
+      "Entries": [
+        "Shuriken -- 手裏剣"
+      ]
+    },
+    {
+      "ID": 9999011,
+      "Entries": [
+        "Puppet puppet killing technique -- 傀儡忍殺の術"
+      ]
+    },
+    {
+      "ID": 9999012,
+      "Entries": [
+        "Blessing technique -- 加護の術"
+      ]
+    },
+    {
+      "ID": 9999013,
+      "Entries": [
+        "Magatama Fragment 4 -- 勾玉の欠片4"
+      ]
+    },
+    {
+      "ID": 9999014,
+      "Entries": [
+        "Whetstone Fragment 2 -- 砥石の欠片2"
+      ]
+    },
+    {
+      "ID": 9999015,
+      "Entries": [
+        "Detoxification prescription -- 毒消し処方箋"
+      ]
+    },
+    {
+      "ID": 9999016,
+      "Entries": [
+        "Magatama -- 勾玉"
+      ]
+    },
+    {
+      "ID": 9999017,
+      "Entries": [
+        "Whetstone Fragment 3 -- 砥石の欠片3"
+      ]
+    },
+    {
+      "ID": 9999018,
+      "Entries": [
+        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+      ]
+    },
+    {
+      "ID": 9999019,
+      "Entries": [
+        "Resource item B (red) -- リソースアイテムB（赤形代）"
+      ]
+    },
+    {
+      "ID": 9999020,
+      "Entries": [
+        "Resource item C (blue) -- リソースアイテムC（青形代）"
+      ]
+    },
+    {
+      "ID": 9999021,
+      "Entries": [
+        "Pills -- 丸薬"
+      ]
+    },
+    {
+      "ID": 9999022,
+      "Entries": [
+        "Blood smoke shinobi -- 血煙忍殺"
+      ]
+    },
+    {
+      "ID": 9999023,
+      "Entries": [
+        "Puppet ninja killing -- 傀儡忍殺"
+      ]
+    },
+    {
+      "ID": 9999024,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 9999025,
+      "Entries": [
+        "Blessing technique -- 加護の術"
+      ]
+    },
+    {
+      "ID": 9999026,
+      "Entries": [
+        "Pills_small -- 丸薬_小"
+      ]
+    },
+    {
+      "ID": 9999027,
+      "Entries": [
+        "Detoxification circle -- 解毒丸"
+      ]
+    },
+    {
+      "ID": 9999028,
+      "Entries": [
+        "Detoxification Maru prescription -- 解毒丸の処方箋"
+      ]
+    },
+    {
+      "ID": 9999029,
+      "Entries": [
+        "HP / Trunk_Heart Fragment -- HP/体幹_ハートのかけら"
+      ]
+    },
+    {
+      "ID": 9999030,
+      "Entries": [
+        "HP / Trunk_Heart vessel -- HP/体幹_ハートの器"
+      ]
+    },
+    {
+      "ID": 9999031,
+      "Entries": [
+        "Sword attack power up item -- 刀攻撃力アップアイテム"
+      ]
+    },
+    {
+      "ID": 9999032,
+      "Entries": [
+        "Recovery Ninja Frame Expansion Item -- 回復忍具枠拡張アイテム"
+      ]
+    },
+    {
+      "ID": 9999033,
+      "Entries": [
+        "Resurrection technique -- 復活の術"
+      ]
+    },
+    {
+      "ID": 9999034,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Blood Smoke -- 忍殺忍術_血煙"
+      ]
+    },
+    {
+      "ID": 9999035,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Puppet -- 忍殺忍術_傀儡"
+      ]
+    },
+    {
+      "ID": 9999036,
+      "Entries": [
+        "Ninjutsu Ninjutsu_Encha -- 忍殺忍術_エンチャ"
+      ]
+    },
+    {
+      "ID": 9999037,
+      "Entries": [
+        "Parachute_for discrimination -- 落下傘_判別用"
+      ]
+    },
+    {
+      "ID": 9999100,
+      "Entries": [
+        "Pills -- 丸薬"
+      ]
+    },
+    {
+      "ID": 9999101,
+      "Entries": [
+        "Resurrection technique -- 復活の術"
+      ]
+    },
+    {
+      "ID": 9999102,
+      "Entries": [
+        "Magatama Fragment 1 -- 勾玉の欠片1"
+      ]
+    },
+    {
+      "ID": 9999103,
+      "Entries": [
+        "Magatama Fragment 2 -- 勾玉の欠片2"
+      ]
+    },
+    {
+      "ID": 9999104,
+      "Entries": [
+        "Magatama Fragment 3 -- 勾玉の欠片3"
+      ]
+    },
+    {
+      "ID": 9999105,
+      "Entries": [
+        "Detoxification circle -- 解毒丸"
+      ]
+    },
+    {
+      "ID": 9999200,
+      "Entries": [
+        "Shuriken -- 手裏剣"
+      ]
+    },
+    {
+      "ID": 9999201,
+      "Entries": [
+        "Firecracker -- 爆竹"
+      ]
+    },
+    {
+      "ID": 9999202,
+      "Entries": [
+        "Ignition -- 発火"
+      ]
+    },
+    {
+      "ID": 9999203,
+      "Entries": [
+        "Preparation ax -- 仕込み斧"
+      ]
+    },
+    {
+      "ID": 9999204,
+      "Entries": [
+        "Transformation -- 変わり身"
+      ]
+    },
+    {
+      "ID": 9999205,
+      "Entries": [
+        "Kodachi -- 仕込み小太刀"
+      ]
+    },
+    {
+      "ID": 9999206,
+      "Entries": [
+        "Iron fan -- 鉄扇"
+      ]
+    },
+    {
+      "ID": 9999207,
+      "Entries": [
+        "Turn the enemy -- 敵回し"
+      ]
+    },
+    {
+      "ID": 9999208,
+      "Entries": [
+        "Preparation spear -- 仕込み槍"
+      ]
+    },
+    {
+      "ID": 9999209,
+      "Entries": [
+        "Finger whistle -- 指笛"
+      ]
+    }
+  ]
+}

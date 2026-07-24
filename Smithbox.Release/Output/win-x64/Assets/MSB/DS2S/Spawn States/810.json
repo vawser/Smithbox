@@ -1,0 +1,14 @@
+{
+  "id": "810",
+  "name": "Masterless Glencour",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a navigation graph within the map." />
+  
+  <Field>
+    <NavmeshRegionName
+    AltName="Region Name"
+    Wiki="The region object this navmesh targets."
+    MapRef="Region-Region" />
+    
+    <NavmeshRegionIndex
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,41 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_WeaponAtkAttribute",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Slash"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Blow"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Thrust"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Bullet "
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "DefaultKeyAssignPrioritySuppression",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DefaultKeyAssignPrioritySuppression"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "False"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "True"
+        }
+      ]
+    }
+  ]
+}

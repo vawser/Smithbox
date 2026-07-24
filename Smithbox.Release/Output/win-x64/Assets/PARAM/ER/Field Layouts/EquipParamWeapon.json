@@ -1,0 +1,492 @@
+{
+  "Name": "EquipParamWeapon",
+  "Groups": [
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "sortGroupId",
+        "equipModelId",
+        "arrowBoltEquipId",
+        "iconId",
+        "equipModelCategory",
+        "equipModelGender",
+        "absorpParamId",
+        "postureControlId_Right",
+        "postureControlId_Left"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "behaviorVariationId",
+        "swordArtsParamId",
+        "wepmotionCategory",
+        "guardmotionCategory",
+        "wepmotionOneHandId",
+        "wepmotionBothHandId",
+        "wepType",
+        "weaponCategory",
+        "weight",
+        "weaponWeightRate",
+        "staminaConsumptionRate",
+        "maxArrowQuantity",
+        "levelSyncCorrectId",
+        "wepRegainHp"
+      ]
+    },
+    {
+      "Key": "Attributes",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Attributes"
+        }
+      ],
+      "Fields": [
+        "atkAttribute",
+        "spAttribute",
+        "spAtkcategory",
+        "wepCollidableType0",
+        "wepCollidableType1",
+        "atkAttribute2"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "fixPrice",
+        "sellValue",
+        "saleValue",
+        "baseChangePrice",
+        "rarity"
+      ]
+    },
+    {
+      "Key": "Reinforcement",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reinforcement"
+        }
+      ],
+      "Fields": [
+        "isCustom",
+        "reinforcePrice",
+        "materialSetId",
+        "reinforceTypeId",
+        "reinforceShopCategory",
+        "gemMountType",
+        "disableGemAttr",
+        "restrictSpecialSwordArt",
+        "originEquipWep",
+        "originEquipWep1",
+        "originEquipWep2",
+        "originEquipWep3",
+        "originEquipWep4",
+        "originEquipWep5",
+        "originEquipWep6",
+        "originEquipWep7",
+        "originEquipWep8",
+        "originEquipWep9",
+        "originEquipWep10",
+        "originEquipWep11",
+        "originEquipWep12",
+        "originEquipWep13",
+        "originEquipWep14",
+        "originEquipWep15",
+        "originEquipWep16",
+        "originEquipWep17",
+        "originEquipWep18",
+        "originEquipWep19",
+        "originEquipWep20",
+        "originEquipWep21",
+        "originEquipWep22",
+        "originEquipWep23",
+        "originEquipWep24",
+        "originEquipWep25"
+      ]
+    },
+    {
+      "Key": "Requirements",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Requirements"
+        }
+      ],
+      "Fields": [
+        "properStrength",
+        "properAgility",
+        "properMagic",
+        "properFaith",
+        "properLuck"
+      ]
+    },
+    {
+      "Key": "Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage"
+        }
+      ],
+      "Fields": [
+        "attackBasePhysics",
+        "attackBaseMagic",
+        "attackBaseFire",
+        "attackBaseThunder",
+        "attackBaseDark",
+        "attackBaseStamina",
+        "saWeaponDamage"
+      ]
+    },
+    {
+      "Key": "Damage Multipliers",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage Multipliers"
+        }
+      ],
+      "Fields": [
+        "stealthAtkRate",
+        "throwAtkRate",
+        "bowDistRate"
+      ]
+    },
+    {
+      "Key": "Correction",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Correction"
+        }
+      ],
+      "Fields": [
+        "correctStrength",
+        "correctAgility",
+        "correctMagic",
+        "correctFaith",
+        "correctLuck"
+      ]
+    },
+    {
+      "Key": "Correction Curve Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Correction Curve Parameters"
+        }
+      ],
+      "Fields": [
+        "correctType_Physics",
+        "correctType_Magic",
+        "correctType_Fire",
+        "correctType_Thunder",
+        "correctType_Dark",
+        "correctType_Poison",
+        "correctType_Blood",
+        "correctType_Sleep",
+        "correctType_Madness",
+        "attackElementCorrectId"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "spEffectBehaviorId0",
+        "spEffectBehaviorId1",
+        "spEffectBehaviorId2",
+        "residentSpEffectId",
+        "residentSpEffectId1",
+        "residentSpEffectId2",
+        "spEffectMsgId0",
+        "spEffectMsgId1",
+        "spEffectMsgId2"
+      ]
+    },
+    {
+      "Key": "Weakness Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weakness Parameters"
+        }
+      ],
+      "Fields": [
+        "weakA_DamageRate",
+        "weakB_DamageRate",
+        "weakC_DamageRate",
+        "weakD_DamageRate",
+        "weakE_DamageRate",
+        "weakF_DamageRate"
+      ]
+    },
+    {
+      "Key": "Guard",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard"
+        }
+      ],
+      "Fields": [
+        "guardAngle",
+        "guardBaseRepel",
+        "attackBaseRepel",
+        "guardCutCancelRate",
+        "guardLevel",
+        "physGuardCutRate",
+        "magGuardCutRate",
+        "fireGuardCutRate",
+        "thunGuardCutRate",
+        "darkGuardCutRate",
+        "poisonGuardResist",
+        "diseaseGuardResist",
+        "bloodGuardResist",
+        "curseGuardResist",
+        "freezeGuardResist",
+        "sleepGuardResist",
+        "madnessGuardResist",
+        "staminaGuardDef"
+      ]
+    },
+    {
+      "Key": "Guard Curve Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard Curve Parameters"
+        }
+      ],
+      "Fields": [
+        "physGuardCutRate_MaxCorrect",
+        "magGuardCutRate_MaxCorrect",
+        "fireGuardCutRate_MaxCorrect",
+        "thunGuardCutRate_MaxCorrect",
+        "darkGuardCutRate_MaxCorrect",
+        "poisonGuardResist_MaxCorrect",
+        "diseaseGuardResist_MaxCorrect",
+        "bloodGuardResist_MaxCorrect",
+        "curseGuardResist_MaxCorrect",
+        "freezeGuardResist_MaxCorrect",
+        "sleepGuardResist_MaxCorrect",
+        "madnessGuardResist_MaxCorrect",
+        "staminaGuardDef_MaxCorrect"
+      ]
+    },
+    {
+      "Key": "Hit Material",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit Material"
+        }
+      ],
+      "Fields": [
+        "atkMaterial",
+        "defSeMaterial1",
+        "defSfxMaterial1",
+        "defSfxMaterial2",
+        "defSeMaterial2"
+      ]
+    },
+    {
+      "Key": "Equipment Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Equipment Options"
+        }
+      ],
+      "Fields": [
+        "rightHandEquipable",
+        "leftHandEquipable",
+        "bothHandEquipable",
+        "arrowSlotEquipable",
+        "boltSlotEquipable"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "enableGuard",
+        "enableParry",
+        "enableMagic",
+        "enableMiracle",
+        "enableSorcery",
+        "enableVowMagic",
+        "isDualBlade",
+        "isEnhance",
+        "quickMatchReplenish",
+        "isWeaponCatalyst",
+        "disableBaseChangeReset",
+        "disableRepair",
+        "isDarkHand",
+        "simpleModelForDlc",
+        "lanternWep",
+        "isVersusGhostWep",
+        "baseChangeCategory",
+        "isDragonSlayer",
+        "isDeposit",
+        "disableMultiDropShare",
+        "isDiscard",
+        "isDrop",
+        "isAutoEquip",
+        "enableThrow",
+        "invisibleOnRemo"
+      ]
+    },
+    {
+      "Key": "Display Types",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Display Types"
+        }
+      ],
+      "Fields": [
+        "isNormalAttackType",
+        "isBlowAttackType",
+        "isSlashAttackType",
+        "isThrustAttackType"
+      ]
+    },
+    {
+      "Key": "Log",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Log"
+        }
+      ],
+      "Fields": [
+        "showLogCondType",
+        "showDialogCondType"
+      ]
+    },
+    {
+      "Key": "Visual Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visual Effects"
+        }
+      ],
+      "Fields": [
+        "traceSfxId0",
+        "traceDmyIdHead0",
+        "traceDmyIdTail0",
+        "traceSfxId1",
+        "traceDmyIdHead1",
+        "traceDmyIdTail1",
+        "traceSfxId2",
+        "traceDmyIdHead2",
+        "traceDmyIdTail2",
+        "traceSfxId3",
+        "traceDmyIdHead3",
+        "traceDmyIdTail3",
+        "traceSfxId4",
+        "traceDmyIdHead4",
+        "traceDmyIdTail4",
+        "traceSfxId5",
+        "traceDmyIdHead5",
+        "traceDmyIdTail5",
+        "traceSfxId6",
+        "traceDmyIdHead6",
+        "traceDmyIdTail6",
+        "traceSfxId7",
+        "traceDmyIdHead7",
+        "traceDmyIdTail7",
+        "enchantSfxSize",
+        "residentSfxId_1",
+        "residentSfxId_2",
+        "residentSfxId_3",
+        "residentSfxId_4",
+        "residentSfx_DmyId_1",
+        "residentSfx_DmyId_2",
+        "residentSfx_DmyId_3",
+        "residentSfx_DmyId_4",
+        "residentSfx_1_IsVisibleForHang",
+        "residentSfx_2_IsVisibleForHang",
+        "residentSfx_3_IsVisibleForHang",
+        "residentSfx_4_IsVisibleForHang",
+        "isSoulParamIdChange_model0",
+        "isSoulParamIdChange_model1",
+        "isSoulParamIdChange_model2",
+        "isSoulParamIdChange_model3",
+        "wepSeIdOffset",
+        "defMaterialVariationValue",
+        "spAttributeVariationValue"
+      ]
+    },
+    {
+      "Key": "Poise",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Poise"
+        }
+      ],
+      "Fields": [
+        "toughnessCorrectRate",
+        "isValidTough_ProtSADmg",
+        "saGuardCutRate"
+      ]
+    },
+    {
+      "Key": "PVP Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "PVP Damage"
+        }
+      ],
+      "Fields": [
+        "vsPlayerDmgCorrectRate_Physics",
+        "vsPlayerDmgCorrectRate_Magic",
+        "vsPlayerDmgCorrectRate_Fire",
+        "vsPlayerDmgCorrectRate_Thunder",
+        "vsPlayerDmgCorrectRate_Dark",
+        "vsPlayerDmgCorrectRate_Poison",
+        "vsPlayerDmgCorrectRate_Blood",
+        "vsPlayerDmgCorrectRate_Disease",
+        "vsPlayerDmgCorrectRate_Curse",
+        "vsPlayerDmgCorrectRate_Freeze",
+        "vsPlayerDmgCorrectRate_Sleep",
+        "vsPlayerDmgCorrectRate_Madness"
+      ]
+    }
+  ]
+}

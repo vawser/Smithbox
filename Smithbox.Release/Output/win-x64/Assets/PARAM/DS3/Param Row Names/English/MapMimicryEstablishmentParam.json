@@ -1,0 +1,239 @@
+{
+  "Name": "MapMimicryEstablishmentParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not erase"
+      ]
+    },
+    {
+      "ID": 300000000,
+      "Entries": [
+        "High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 300000001,
+      "Entries": [
+        "High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 300100000,
+      "Entries": [
+        "Lothric Castle"
+      ]
+    },
+    {
+      "ID": 310000000,
+      "Entries": [
+        "Undead Settlement"
+      ]
+    },
+    {
+      "ID": 320000000,
+      "Entries": [
+        "Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 330000000,
+      "Entries": [
+        "Road of Sacrifices / Farron Keep"
+      ]
+    },
+    {
+      "ID": 330000001,
+      "Entries": [
+        "Road of Sacrifices / Farron Keep"
+      ]
+    },
+    {
+      "ID": 340100000,
+      "Entries": [
+        "Grand Archives"
+      ]
+    },
+    {
+      "ID": 340100001,
+      "Entries": [
+        "Grand Archives"
+      ]
+    },
+    {
+      "ID": 350000000,
+      "Entries": [
+        "Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 350000001,
+      "Entries": [
+        "Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 370000000,
+      "Entries": [
+        "Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 370000001,
+      "Entries": [
+        "Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 370000002,
+      "Entries": [
+        "Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 380000000,
+      "Entries": [
+        "Catacombs of Carthus / Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 380000001,
+      "Entries": [
+        "Catacombs of Carthus / Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 390000000,
+      "Entries": [
+        "Irithyll Dungeon / Profaned Capital"
+      ]
+    },
+    {
+      "ID": 400000000,
+      "Entries": [
+        "Cemetery of Ash / Untended Graves"
+      ]
+    },
+    {
+      "ID": 410000000,
+      "Entries": [
+        "Flameless Shrine"
+      ]
+    },
+    {
+      "ID": 450000000,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 450000001,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 450000002,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 450000003,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 450000004,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 450000005,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 460000000,
+      "Entries": [
+        "Arena - Grand Roof"
+      ]
+    },
+    {
+      "ID": 470000000,
+      "Entries": [
+        "Arena - Kiln of Flame"
+      ]
+    },
+    {
+      "ID": 500000000,
+      "Entries": [
+        "Dreg Heap"
+      ]
+    },
+    {
+      "ID": 500000001,
+      "Entries": [
+        "Dreg Heap"
+      ]
+    },
+    {
+      "ID": 510000000,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510000001,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510000002,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510000003,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510000004,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510000005,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 510100000,
+      "Entries": [
+        "Filianore's Rest"
+      ]
+    },
+    {
+      "ID": 530000000,
+      "Entries": [
+        "Arena - Dragon Ruins"
+      ]
+    },
+    {
+      "ID": 540000000,
+      "Entries": [
+        "Arena - Round Plaza"
+      ]
+    }
+  ]
+}

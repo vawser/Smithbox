@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <WindType
+    AltName="Wind Type"
+    Wiki="" />
+    
+    <WindTargetType
+    AltName="Target Type"
+    Wiki="" />
+    
+    <Priority
+    AltName="Priority"
+    Wiki="" />
+    
+    <MinimumSpeed
+    AltName="Minimum Speed"
+    Wiki="" />
+    
+    <MaximumSpeed
+    AltName="Maximum Speed"
+    Wiki="" />
+    
+    <Frequency
+    AltName="Frequency"
+    Wiki="" />
+    
+    <GainStartDistance
+    AltName="Gain Start Distance"
+    Wiki="" />
+  </Field>
+  <Enums>
+  </Enums>
+</MSBMETA>

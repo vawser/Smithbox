@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_CAMERA_HIT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_CAMERA_HIT_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Approach Player"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do Nothing"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Opacity"
+        }
+      ]
+    }
+  ]
+}

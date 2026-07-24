@@ -1,0 +1,191 @@
+{
+  "Name": "MenuTutorialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Main menu: Equipment_Items used -- メインメニュー：装備_使用アイテム"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Main menu: Equipment_Prosthetic hand ninja -- メインメニュー：装備_義手忍具"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Main Menu: Equipment_Ninjutsu Ninjutsu -- メインメニュー：装備_忍殺忍術"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Main Menu: Equipment_School Techniques -- メインメニュー：装備_流派技"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Main menu: What to bring -- メインメニュー：所持品"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Main menu: Skills -- メインメニュー：技能"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Dialogue menu: First time -- 対話メニュー：初回"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Dialogue menu: Transfer -- 対話メニュー：転送"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dialogue menu: Attack power up -- 対話メニュー：攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dialogue menu: Adlay -- 対話メニュー：数珠玉"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Dialogue menu: Dragon cough healing -- 対話メニュー：竜咳治癒"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Dialogue menu: Skill ban menu -- 対話メニュー：技能解禁メニュー"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Prosthetic hand ninja tool ban menu -- 義手忍具解禁メニュー"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Prosthetic hand ninja equipment strengthening menu -- 義手忍具強化メニュー"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Skill ban menu -- 技能解禁メニュー"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Change menu -- 姿変えメニュー"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Afterglow menu -- 残影メニュー"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Other work afterglow menu -- 他作残影メニュー"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Memorandum menu -- 覚え書きメニュー"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Single rematch menu -- 単発再戦メニュー"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Consecutive battle menu itself (regaining the child) -- 連戦メニューそのもの（御子奪還）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Consecutive battle menu itself (Shura) -- 連戦メニューそのもの（修羅）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Consecutive battle menu itself (immortality) -- 連戦メニューそのもの（不死断ち）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Consecutive Battle Menu_All Consecutive Battles -- 連戦メニュー_全連戦"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Consecutive battle menu_EX Genichiro lifted -- 連戦メニュー_EX弦一郎解禁"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Consecutive battle menu _EX father-in-law lifted -- 連戦メニュー_EX義父解禁"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Consecutive battle menu _EX single-minded ban lifted -- 連戦メニュー_EX一心解禁"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Dialogue menu: Change -- 対話メニュー：姿変え"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Dialogue Menu: Single Rematch -- 対話メニュー：単発再戦"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Dialogue menu: Consecutive battles -- 対話メニュー：連戦"
+      ]
+    }
+  ]
+}

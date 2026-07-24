@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MULTI_PLAY_CORRECTION_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 client1SpEffectId = -1">
+      <DisplayName>協力クライアント1名特殊効果ID</DisplayName>
+      <Description>協力クライアント1名特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 client2SpEffectId = -1">
+      <DisplayName>協力クライアント2名特殊効果ID</DisplayName>
+      <Description>協力クライアント2名特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 client3SpEffectId = -1">
+      <DisplayName>協力クライアント3名特殊効果ID</DisplayName>
+      <Description>協力クライアント3名特殊効果ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 bOverrideSpEffect">
+      <DisplayName>協力人数変動時に上書きするか</DisplayName>
+      <Enum>MULTI_PLAYER_CORRECTION_PARAM_BOOL</Enum>
+      <Description>協力人数変動時に上書きするか</Description>
+      <Minimum>-1</Minimum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[19]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>201</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

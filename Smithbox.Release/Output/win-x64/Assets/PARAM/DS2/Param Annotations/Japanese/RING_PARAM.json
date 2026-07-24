@@ -1,0 +1,33 @@
+{
+  "Param": "RING_PARAM",
+  "Type": "RING_PARAM",
+  "Name": "RING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weight",
+      "Name": "重量(kg単位)",
+      "Description": ""
+    },
+    {
+      "Field": "durability",
+      "Name": "耐久値",
+      "Description": ""
+    },
+    {
+      "Field": "repairCost",
+      "Name": "パラメータ 修理コスト [soul]",
+      "Description": ""
+    },
+    {
+      "Field": "itemDropWeight",
+      "Name": "アイテムドロップ率補正[%] x0.01",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

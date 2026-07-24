@@ -1,0 +1,18 @@
+{
+  "Param": "CS_DECAL_QUALITY_DETAIL",
+  "Type": "CS_DECAL_QUALITY_DETAIL",
+  "Name": "CS_DECAL_QUALITY_DETAIL",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Decal Enabled",
+      "Description": "Decal valid"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

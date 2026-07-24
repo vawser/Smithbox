@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a rectangle shape." />
+  
+  <Field>
+    <Radius
+    AltName="Width"
+    Wiki="The width of the rectangle." />
+    
+    <Depth
+    AltName="Depth"
+    Wiki="The depth of the rectangle." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

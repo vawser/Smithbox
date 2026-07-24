@@ -1,0 +1,29 @@
+{
+  "Key": "OBJ_EVENT_TRIGGER_COND_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_EVENT_TRIGGER_COND_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 OR Condition 2"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition 1 AND Condition 2"
+        }
+      ]
+    }
+  ]
+}

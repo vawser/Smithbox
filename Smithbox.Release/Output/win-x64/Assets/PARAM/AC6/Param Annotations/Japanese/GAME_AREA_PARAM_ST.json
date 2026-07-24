@@ -1,0 +1,73 @@
+{
+  "Param": "GAME_AREA_PARAM_ST",
+  "Type": "GAME_AREA_PARAM_ST",
+  "Name": "GAME_AREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bonusSoul_single",
+      "Name": "シングル時クリアボーナスソウル量",
+      "Description": "エリアボスを倒したときに取得できるソウル量(シングルプレイ時)"
+    },
+    {
+      "Field": "bonusSoul_multi",
+      "Name": "マルチプレイ時クリアボーナスソウル量",
+      "Description": "エリアボスを倒したときに取得できるソウル量(マルチプレイ時)"
+    },
+    {
+      "Field": "humanityPointCountFlagIdTop",
+      "Name": "人間性ドロップポイントカウント先頭フラグID",
+      "Description": "人間性ドロップポイントを管理する為の先頭フラグID(20Bit使用)"
+    },
+    {
+      "Field": "humanityDropPoint1",
+      "Name": "人間性ドロップ必要ポイント1",
+      "Description": "人間性を取得する為の閾値1"
+    },
+    {
+      "Field": "humanityDropPoint2",
+      "Name": "人間性ドロップ必要ポイント2",
+      "Description": "人間性を取得する為の閾値2"
+    },
+    {
+      "Field": "humanityDropPoint3",
+      "Name": "人間性ドロップ必要ポイント3",
+      "Description": "人間性を取得する為の閾値3"
+    },
+    {
+      "Field": "humanityDropPoint4",
+      "Name": "人間性ドロップ必要ポイント4",
+      "Description": "人間性を取得する為の閾値4"
+    },
+    {
+      "Field": "humanityDropPoint5",
+      "Name": "人間性ドロップ必要ポイント5",
+      "Description": "人間性を取得する為の閾値5"
+    },
+    {
+      "Field": "humanityDropPoint6",
+      "Name": "人間性ドロップ必要ポイント6",
+      "Description": "人間性を取得する為の閾値6"
+    },
+    {
+      "Field": "humanityDropPoint7",
+      "Name": "人間性ドロップ必要ポイント7",
+      "Description": "人間性を取得する為の閾値7"
+    },
+    {
+      "Field": "humanityDropPoint8",
+      "Name": "人間性ドロップ必要ポイント8",
+      "Description": "人間性を取得する為の閾値8"
+    },
+    {
+      "Field": "humanityDropPoint9",
+      "Name": "人間性ドロップ必要ポイント9",
+      "Description": "人間性を取得する為の閾値9"
+    },
+    {
+      "Field": "humanityDropPoint10",
+      "Name": "人間性ドロップ必要ポイント10",
+      "Description": "人間性を取得する為の閾値10"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Name": "Zoomblur",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value -- 無効値"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "boost move -- ブースト移動"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "big QB -- 大QB"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Tank_QB attack -- タンク_QBアタック"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Tank_QB Stomp -- タンク_QBストンプ"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "fast movement -- 高速移動"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Event] Catapult movement -- 【イベント】カタパルト移動"
+      ]
+    }
+  ]
+}

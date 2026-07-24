@@ -1,0 +1,281 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Move "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok Default Value "
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Gundyr - The Evil Spirits "
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Gundyr - Ragdoll Test 2 "
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Pus of Man - Right arm "
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Pus of Man - Left arm "
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Pus of Man - small feet "
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Pus of Man - Tail root "
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Pus of Man - Tail tip "
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Pus of Man - Head "
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Pus of Man - Neck "
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Wolnir - Crown "
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Wolnir - torso "
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Wolnir - right arm "
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Wolnir - left arm "
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Wolnir - Head "
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Yhorm - Head "
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Yhorm - Torso "
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Yhorm - left arm "
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Yhorm - right arm "
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Yhorm - Left Shin "
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Yhorm - Right Shin "
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Yhorm - right hand weapon "
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Slug - Dead dumpling "
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Dragon - twines in the legs "
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Dragon - Before your left ankle "
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Giant Slave - Iron Ball "
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5182,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5183,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5184,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5185,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5186,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5187,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5188,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6215,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Dummy "
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "SOUND_RESIDENT_PARAM",
+  "Type": "SOUND_RESIDENT_PARAM",
+  "Name": "SOUND_RESIDENT_PARAM",
+  "Description": "Defines resident sound configuration data linked to equipment loadouts, used to determine audio behavior based on equipped sets.",
+  "Fields": [
+    {
+      "Field": "equipId1",
+      "Name": "Equipment Set ID 1",
+      "Description": "ID of the first equipment set used for sound configuration mapping."
+    },
+    {
+      "Field": "equipId2",
+      "Name": "Equipment Set ID 2",
+      "Description": "ID of the second equipment set used for sound configuration mapping."
+    },
+    {
+      "Field": "equipId3",
+      "Name": "Equipment Set ID 3",
+      "Description": "ID of the third equipment set used for sound configuration mapping."
+    },
+    {
+      "Field": "equipId4",
+      "Name": "Equipment Set ID 4",
+      "Description": "ID of the fourth equipment set used for sound configuration mapping."
+    }
+  ]
+}

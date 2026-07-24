@@ -1,0 +1,47 @@
+{
+  "Key": "ITEMLOT_ITEMCATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEMLOT_ITEMCATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "1073741824",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Good"
+        }
+      ]
+    },
+    {
+      "Key": "268435456",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
+    }
+  ]
+}

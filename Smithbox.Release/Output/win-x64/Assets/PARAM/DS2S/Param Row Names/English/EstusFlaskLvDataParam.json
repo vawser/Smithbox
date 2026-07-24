@@ -1,0 +1,131 @@
+{
+  "Name": "EstusFlaskLvDataParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Estus Level 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Estus Level 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Estus Level 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Estus Level 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Estus Level 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Estus Level 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Estus Level 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Estus Level 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Estus Level 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Estus Level 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Estus Level 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Estus Level 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Estus Level 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Estus Level 13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Estus Level 14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Estus Level 15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Estus Level 16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Estus Level 17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Estus Level 18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Estus Level 19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Estus Level 20"
+      ]
+    }
+  ]
+}

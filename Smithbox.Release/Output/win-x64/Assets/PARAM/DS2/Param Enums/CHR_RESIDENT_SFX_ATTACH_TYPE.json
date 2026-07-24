@@ -1,0 +1,29 @@
+{
+  "Key": "CHR_RESIDENT_SFX_ATTACH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_RESIDENT_SFX_ATTACH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damipori"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ]
+    }
+  ]
+}

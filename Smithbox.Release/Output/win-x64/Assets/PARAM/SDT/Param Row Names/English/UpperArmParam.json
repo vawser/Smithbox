@@ -1,0 +1,30 @@
+{
+  "Name": "UpperArmParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Template -- テンプレ",
+        "Template -- テンプレ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Catalina -- カタリナ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Sumou -- スモウ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Forest keeper -- 森の番人"
+      ]
+    }
+  ]
+}

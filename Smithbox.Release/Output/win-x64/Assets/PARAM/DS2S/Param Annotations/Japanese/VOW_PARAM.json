@@ -1,0 +1,28 @@
+{
+  "Param": "VOW_PARAM",
+  "Type": "VOW_PARAM",
+  "Name": "VOW_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "requiredContributionLv1",
+      "Name": "誓約レベル1 必要貢献度",
+      "Description": ""
+    },
+    {
+      "Field": "requiredContributionLv2",
+      "Name": "誓約レベル2 必要貢献度",
+      "Description": ""
+    },
+    {
+      "Field": "requiredContributionLv3",
+      "Name": "誓約レベル3 必要貢献度",
+      "Description": ""
+    },
+    {
+      "Field": "padding0",
+      "Name": "パディング用のダミー",
+      "Description": ""
+    }
+  ]
+}

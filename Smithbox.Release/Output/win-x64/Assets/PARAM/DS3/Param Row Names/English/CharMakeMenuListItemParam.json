@@ -1,0 +1,1319 @@
+{
+  "Name": "CharMakeMenuListItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Unconfigured"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Build - Standard"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Build - Silm"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Build - Very Slim"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Build - Burly"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Build - Very Burly"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Build - Burly Upper-body"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Build - Burly Lower-body"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Build - Small Head"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Build - Big Head"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Musculature - Standard"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Musculature - Muscular"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Body Hair - Standard"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Body Hair - Thick"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Base Face - Commoner"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Base Face - Northern Warrior"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Base Face - Astora Noble"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Base Face - Dragon Academy Student"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Base Face - Carim Novice"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Base Face - Catarina Merrymaker"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Base Face - Serpentine Traveler"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Base Face - Great Swamp Outcast"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Base Face - Londor Shadow of Death"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Base Face - Irithyllian"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Base Face (Female) - Commoner"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Base Face (Female) - Northern Warrior"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Base Face (Female) - Astora Noble"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Base Face (Female) - Dragon Academy Student"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Base Face (Female) - Carim Novice"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Base Face (Female) - Catarina Merrymaker"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Base Face (Female) - Serpentine Traveler"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Base Face (Female) - Great Swamp Outcast"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Base Face (Female) - Londor Shadow of Death"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Base Face (Female) - Irithyllian"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Right Eye - Normal Eye (Medium)"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Right Eye - Normal Eye (Small)"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Right Eye - Normal Eye (Big)"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Right Eye - All Sclera (Medium)"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Right Eye - All Sclera (Small)"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Right Eye - All Sclera (Large)"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Right Eye - All Pupil (Medium)"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Right Eye - All Pupil (Small)"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Right Eye - All Pupil (Small)"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Left Eye - Normal Eye (Medium)"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Left Eye - Normal Eye (Small)"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Left Eye - Normal Eye (Big)"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Left Eye - All Sclera (Medium)"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Left Eye - All Sclera (Small)"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Left Eye - All Sclera (Large)"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Left Eye - All Pupil (Medium)"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Left Eye - All Pupil (Small)"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Left Eye - All Pupil (Small)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Eyebrows - None"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Eyebrows - Type 1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Eyebrows - Type 2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Eyebrows - Type 3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Eyebrows - Type 4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Eyebrows - Type 5"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Eyebrows - Type 6"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Eyebrows - Type 7"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Eyebrows - Type 8"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Eyebrows - Type 9"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Eyebrows - Type 10"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Eyebrows - Type 11"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Eyebrows - Type 12"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Eyebrows - Type 13"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Eyebrows - Type 14"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Eyebrows - Type 15"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Eyebrows - Type 16"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Beard - None"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Beard - Type 1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Beard - Type 2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Beard - Type 3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Beard - Type 4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Beard - Type 5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Beard - Type 6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Beard - Type 7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Beard - Type 8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Beard - Type 9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Beard - Type 10"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Beard - Type 11"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Beard (Female) - None"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Beard (Female) - Type 1"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Beard (Female) - Type 2"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Beard (Female) - Type 3"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Beard (Female) - Type 4"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "Beard (Female) - Type 5"
+      ]
+    },
+    {
+      "ID": 626,
+      "Entries": [
+        "Beard (Female) - Type 6"
+      ]
+    },
+    {
+      "ID": 627,
+      "Entries": [
+        "Beard (Female) - Type 7"
+      ]
+    },
+    {
+      "ID": 628,
+      "Entries": [
+        "Beard (Female) - Type 8"
+      ]
+    },
+    {
+      "ID": 629,
+      "Entries": [
+        "Beard (Female) - Type 9"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Beard (Female) - Type 10"
+      ]
+    },
+    {
+      "ID": 631,
+      "Entries": [
+        "Beard (Female) - Type 11"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Hairstyle - None"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Hairstyle - Type 1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Hairstyle - Type 2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Hairstyle - Type 3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Hairstyle - Type 4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Hairstyle - Type 5"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Hairstyle - Type 6"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Hairstyle - Type 7"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Hairstyle - Type 8"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Hairstyle - Type 9"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Hairstyle - Type 10"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Hairstyle - Type 11"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Hairstyle - Type 12"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Hairstyle - Type 13"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "Hairstyle - Type 14"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Hairstyle - Type 15"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Hairstyle - Type 16"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Hairstyle - Type 17"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Hairstyle - Type 18"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "Hairstyle - Type 19"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Hairstyle - Type 20"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Hairstyle - Type 21"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Hairstyle - Type 22"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Hairstyle - Type 23"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Tattoo - None"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Tattoo - Type 1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Tattoo - Type 2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Tattoo - Type 3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Tattoo - Type 4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Tattoo - Type 5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Tattoo - Type 6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Tattoo - Type 7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Tattoo - Type 8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Tattoo - Type 9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Tattoo - Type 10"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Tattoo - Type 11"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Tattoo - Type 12"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Tattoo - Type 13"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Tattoo - Type 14"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Tattoo - Type 15"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Tattoo - Type 16"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Tattoo - Type 17"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Tattoo - Type 18"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Tattoo - Type 19"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Tattoo - Type 20"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Tattoo - Type 21"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Tattoo - Type 22"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Tattoo - Type 23"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Tattoo - Type 24"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Tattoo - Type 25"
+      ]
+    },
+    {
+      "ID": 826,
+      "Entries": [
+        "Tattoo - Type 26"
+      ]
+    },
+    {
+      "ID": 827,
+      "Entries": [
+        "Tattoo - Type 27"
+      ]
+    },
+    {
+      "ID": 828,
+      "Entries": [
+        "Tattoo - Type 28"
+      ]
+    },
+    {
+      "ID": 829,
+      "Entries": [
+        "Tattoo - Type 29"
+      ]
+    },
+    {
+      "ID": 830,
+      "Entries": [
+        "Tattoo - Type 30"
+      ]
+    },
+    {
+      "ID": 831,
+      "Entries": [
+        "Tattoo - Type 31"
+      ]
+    },
+    {
+      "ID": 832,
+      "Entries": [
+        "Tattoo - Type 32"
+      ]
+    },
+    {
+      "ID": 833,
+      "Entries": [
+        "Tattoo - Type 33"
+      ]
+    },
+    {
+      "ID": 834,
+      "Entries": [
+        "Tattoo - Type 34"
+      ]
+    },
+    {
+      "ID": 835,
+      "Entries": [
+        "Tattoo - Type 35"
+      ]
+    },
+    {
+      "ID": 836,
+      "Entries": [
+        "Tattoo - Type 36"
+      ]
+    },
+    {
+      "ID": 837,
+      "Entries": [
+        "Tattoo - Type 37"
+      ]
+    },
+    {
+      "ID": 838,
+      "Entries": [
+        "Tattoo - Type 38"
+      ]
+    },
+    {
+      "ID": 839,
+      "Entries": [
+        "Tattoo - Type 39"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "Tattoo - Type 40"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "Tattoo - Type 41"
+      ]
+    },
+    {
+      "ID": 842,
+      "Entries": [
+        "Tattoo - Type 42"
+      ]
+    },
+    {
+      "ID": 843,
+      "Entries": [
+        "Tattoo - Type 43"
+      ]
+    },
+    {
+      "ID": 844,
+      "Entries": [
+        "Tattoo - Type 44"
+      ]
+    },
+    {
+      "ID": 845,
+      "Entries": [
+        "Tattoo - Type 45"
+      ]
+    },
+    {
+      "ID": 846,
+      "Entries": [
+        "Tattoo - Type 46"
+      ]
+    },
+    {
+      "ID": 847,
+      "Entries": [
+        "Tattoo - Type 47"
+      ]
+    },
+    {
+      "ID": 848,
+      "Entries": [
+        "Tattoo - Type 48"
+      ]
+    },
+    {
+      "ID": 849,
+      "Entries": [
+        "Tattoo - Type 49"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "Accessories -"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Pupil Type - Normal 1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Pupil Type - Normal 2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Pupil Type - Normal 3"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Pupil Type - Sclera 1"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Pupil Type - Sclera 2"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Pupil Type - Sclera 3"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Pupil Color - Cornea 1"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Pupil Color - Cornea 2"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Pupil Color - Cornea 3"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Eyelashes - None"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Eyelashes - Short"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Eyelashes - Medium"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Eyelashes - Long"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Gender - Male"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Gender - Female"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Age - Young"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "Age - Mature"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "Age - Aged"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Class - Knight"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "Class - Mercenary"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "Class - Warrior"
+      ]
+    },
+    {
+      "ID": 100203,
+      "Entries": [
+        "Class - Herald"
+      ]
+    },
+    {
+      "ID": 100204,
+      "Entries": [
+        "Class - Thief"
+      ]
+    },
+    {
+      "ID": 100205,
+      "Entries": [
+        "Class - Assassin"
+      ]
+    },
+    {
+      "ID": 100206,
+      "Entries": [
+        "Class - Sorcerer"
+      ]
+    },
+    {
+      "ID": 100207,
+      "Entries": [
+        "Class - Pyromancer"
+      ]
+    },
+    {
+      "ID": 100208,
+      "Entries": [
+        "Class - Cleric"
+      ]
+    },
+    {
+      "ID": 100209,
+      "Entries": [
+        "Class - Deprived"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Gift - None"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "Gift - Life Ring"
+      ]
+    },
+    {
+      "ID": 100302,
+      "Entries": [
+        "Gift - Divine Blessing"
+      ]
+    },
+    {
+      "ID": 100303,
+      "Entries": [
+        "Gift - Hidden Blessing"
+      ]
+    },
+    {
+      "ID": 100304,
+      "Entries": [
+        "Gift - Black Firebomb"
+      ]
+    },
+    {
+      "ID": 100305,
+      "Entries": [
+        "Gift - Fire Gem"
+      ]
+    },
+    {
+      "ID": 100306,
+      "Entries": [
+        "Gift - Sovereignless Soul"
+      ]
+    },
+    {
+      "ID": 100307,
+      "Entries": [
+        "Gift - Rusted Coin"
+      ]
+    },
+    {
+      "ID": 100308,
+      "Entries": [
+        "Gift - Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100309,
+      "Entries": [
+        "Gift - Young White Branch"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Voice - Young"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "Voice - Mature"
+      ]
+    },
+    {
+      "ID": 100402,
+      "Entries": [
+        "Voice - Aged"
+      ]
+    }
+  ]
+}

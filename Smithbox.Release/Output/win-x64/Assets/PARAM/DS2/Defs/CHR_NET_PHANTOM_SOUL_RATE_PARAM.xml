@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>CHR_NET_PHANTOM_SOUL_RATE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 none = 1">
+            <DisplayName>ホスト</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 white = 1">
+            <DisplayName>白霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 smallWhite = 1">
+            <DisplayName>小白霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 gold = 1">
+            <DisplayName>金霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 smallGold = 1">
+            <DisplayName>小金霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 coopBlue = 1">
+            <DisplayName>救援青霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 versusBlue = 1">
+            <DisplayName>報復青霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 signBlack = 1">
+            <DisplayName>闇霊（サイン）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 intrudeBlack = 1">
+            <DisplayName>闇霊（乱入）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 signRed = 1">
+            <DisplayName>赤霊（サイン）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 intrudeRed = 1">
+            <DisplayName>赤霊（乱入）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 bellGuard = 1">
+            <DisplayName>鐘守灰霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 ratKing = 1">
+            <DisplayName>ねずみの王灰霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 dragon = 1">
+            <DisplayName>竜霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 mirrorKnight = 1">
+            <DisplayName>ミラーナイト霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 abyss = 1">
+            <DisplayName>深淵霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 duelBlue = 1">
+            <DisplayName>決闘青霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 duelRed = 1">
+            <DisplayName>決闘赤霊</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>18</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

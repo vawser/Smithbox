@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_FLAG_ITEM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_ITEM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "63030100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse] Barely visible from the E3 starting point《ID:63030100》"
+        }
+      ]
+    }
+  ]
+}

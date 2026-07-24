@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ITEM_LOT_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 Unk0x0" />
+    <Field Def="s32 Unk0x1" />
+    <Field Def="s32 Unk0x2" />
+    <Field Def="s32 Unk0x3" />
+    <Field Def="s32 Unk0x4" />
+    <Field Def="s32 Unk0x5" />
+    <Field Def="s32 Unk0x6" />
+    <Field Def="s32 Unk0x7" />
+    <Field Def="s32 Unk0x8" />
+    <Field Def="s32 Unk0x9" />
+    <Field Def="s32 Unk0x10" />
+    <Field Def="s32 Unk0x11" />
+    <Field Def="s32 Unk0x12" />
+    <Field Def="s32 Unk0x13" />
+    <Field Def="s32 Unk0x14" />
+    <Field Def="s32 Unk0x15" />
+    <Field Def="s32 Unk0x16" />
+    <Field Def="s32 Unk0x17" />
+    <Field Def="s32 Unk0x18" />
+    <Field Def="s32 Unk0x19" />
+    <Field Def="s32 Unk0x20" />
+    <Field Def="s32 Unk0x21" />
+    <Field Def="s32 Unk0x22" />
+    <Field Def="s32 Unk0x23" />
+    <Field Def="s32 Unk0x24" />
+    <Field Def="s32 Unk0x25" />
+    <Field Def="s32 Unk0x26" />
+    <Field Def="s32 Unk0x27" />
+    <Field Def="s32 Unk0x28" />
+    <Field Def="s32 Unk0x29" />
+    <Field Def="s32 Unk0x30" />
+    <Field Def="s32 Unk0x31" />
+    <Field Def="s32 Unk0x32" />
+    <Field Def="s32 Unk0x33" />
+    <Field Def="s32 Unk0x34" />
+    <Field Def="s32 Unk0x35" />
+    <Field Def="s32 Unk0x36" />
+  </Fields>
+</PARAMDEF>

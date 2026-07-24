@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a form of collision. Typically used to block player or enemy movement, but also used for detection such as for kill planes, or the generation of special footstep visual effects, such as in water or lava." />
+  
+  <Field>
+    <HitFilterID
+    AltName="Hit Filter ID"
+    Wiki="Determines the behavior of the collision with other entities." 
+    Enum="HIT_FILTER_TYPE" />
+    
+    <SoundSpaceType
+    AltName="Sound Space Type"
+    Wiki="The sound space type this collision applies to sounds." 
+    Enum="SOUND_SPACE_TYPE" />
+    
+    <EnvLightMapSpotIndex
+    AltName="Environmental Lighting Map Spot Index"
+    Wiki="" />
+    
+    <ReflectPlaneHeight
+    AltName="Reflection Plane Height"
+    Wiki="" />
+    
+    <MapNameID
+    AltName="Map Name ID"
+    Wiki="Controls displays of the map name on screen or the loading menu." />
+    
+    <DisableStart
+    AltName="Disable Start"
+    Wiki=""
+    IsBool="" />
+    
+    <MapVisibilityType
+    AltName="Map Visibility Type"
+    Wiki="The type of visibility the player has when on this collision" 
+    Enum="MAP_VISIBILITY" />
+    
+    <DisableBonfireEntityID
+    AltName="Disable Bonfire Entity on Enemy Presence"
+    Wiki="The entity ID of the bonfire to disable if enemy is on this collision." />
+    
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="Determines invasion parameters." />
+    
+    <LockCamParamID1
+    AltName="Lock-cam Param ID: 1"
+    Wiki="The ID in LockCamParam determining camera properties." 
+    ParamRef="LockCamParam" />
+    
+    <LockCamParamID2
+    AltName="Lock-cam Param ID: 2"
+    Wiki="The ID in LockCamParam determining camera properties." 
+    ParamRef="LockCamParam" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="HIT_FILTER_TYPE">
+        <Option Value="0" Name="Standard: No High Collision - No Foot IK" />
+        <Option Value="1" Name="Standard: No High Collision" />
+        <Option Value="2" Name="Standard: No High Collision" />
+        <Option Value="3" Name="Standard: No High Collision" />
+        <Option Value="4" Name="Standard: No High Collision" />
+        <Option Value="5" Name="Standard: No High Collision" />
+        <Option Value="6" Name="Standard: No High Collision" />
+        <Option Value="7" Name="Standard: No High Collision" />
+        <Option Value="8" Name="Collide with all characters" />
+        <Option Value="9" Name="Collide with camera only" />
+        <Option Value="11" Name="Collide with non-player characters only (trigger return home AI)" />
+        <Option Value="13" Name="Trigger fall death camera in collision" />
+        <Option Value="14" Name="Trigger fall death camera in collision" />
+        <Option Value="15" Name="Trigger instant death on collision" />
+        <Option Value="16" Name="Collide with SFX only" />
+        <Option Value="17" Name="Trigger drawgroups" />
+        <Option Value="19" Name="Collide with non-player characters only (do not trigger return home AI)" />
+        <Option Value="20" Name="Block enemy navigation (door/entrance)" />
+        <Option Value="21" Name="Slide movement" />
+        <Option Value="22" Name="Block all fall damage" />
+        <Option Value="23" Name="Non-invasion zone at level exit" />
+        <Option Value="24" Name="Type 24" />
+    </Enum>
+    <Enum Name="SOUND_SPACE_TYPE">
+        <Option Value="0" Name="No Reverb" />
+        <Option Value="1" Name="Small Reverb: A" />
+        <Option Value="2" Name="Small Reverb: B" />
+        <Option Value="3" Name="Middle Reverb: A" />
+        <Option Value="4" Name="Middle Reverb: B" />
+        <Option Value="5" Name="Large Reverb: A" />
+        <Option Value="6" Name="Large Reverb: B" />
+        <Option Value="7" Name="Massive Reverb: A" />
+        <Option Value="8" Name="Massive Reverb: B" />
+    </Enum>
+    <Enum Name="MAP_VISIBILITY">
+        <Option Value="0" Name="Good" />
+        <Option Value="1" Name="Dark" />
+        <Option Value="2" Name="Total Dark" />
+    </Enum>
+  </Enums>
+</MSBMETA>

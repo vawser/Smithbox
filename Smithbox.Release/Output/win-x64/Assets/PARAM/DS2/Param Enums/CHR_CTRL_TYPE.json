@@ -1,0 +1,29 @@
+{
+  "Key": "CHR_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_CTRL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flight"
+        }
+      ]
+    }
+  ]
+}

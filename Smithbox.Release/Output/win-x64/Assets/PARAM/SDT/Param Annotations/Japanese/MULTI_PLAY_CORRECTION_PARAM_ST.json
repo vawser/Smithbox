@@ -1,0 +1,33 @@
+{
+  "Param": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Type": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Name": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "client1SpEffectId",
+      "Name": "協力クライアント1名特殊効果ID",
+      "Description": "協力クライアント1名特殊効果ID"
+    },
+    {
+      "Field": "client2SpEffectId",
+      "Name": "協力クライアント2名特殊効果ID",
+      "Description": "協力クライアント2名特殊効果ID"
+    },
+    {
+      "Field": "client3SpEffectId",
+      "Name": "協力クライアント3名特殊効果ID",
+      "Description": "協力クライアント3名特殊効果ID"
+    },
+    {
+      "Field": "bOverrideSpEffect",
+      "Name": "協力人数変動時に上書きするか",
+      "Description": "協力人数変動時に上書きするか"
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad",
+      "Description": "pad"
+    }
+  ]
+}

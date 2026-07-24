@@ -1,0 +1,158 @@
+{
+  "Param": "NPC_PARTS_PARAM_ST",
+  "Type": "NPC_PARTS_PARAM_ST",
+  "Name": "NPC_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "eventPartsId",
+      "Name": "イベント部位ID",
+      "Description": "イベント部位ID。作成された部位インスタンスに対するID。"
+    },
+    {
+      "Field": "partsGroupIdx",
+      "Name": "部位グループIdx",
+      "Description": "部位グループID。pwvの部位ID"
+    },
+    {
+      "Field": "hitFEType",
+      "Name": "ヒットFE設定",
+      "Description": "ヒットFE設定。この部位に被弾した時に表示されるFEタイプ"
+    },
+    {
+      "Field": "partsHp",
+      "Name": "部位HP",
+      "Description": "部位HP"
+    },
+    {
+      "Field": "partsDmgCorrect",
+      "Name": "部位ダメージ補正",
+      "Description": "部位ダメージ補正。この部位に入るダメージに乗算される"
+    },
+    {
+      "Field": "partsBulletDmgCorrect",
+      "Name": "弾丸倍率",
+      "Description": "弾丸倍率。この部位に入るダメージに乗算される"
+    },
+    {
+      "Field": "ownerDmgCorrect",
+      "Name": "本体ダメージ補正",
+      "Description": "本体ダメージ補正。本体キャラに伝わるダメージに乗算される"
+    },
+    {
+      "Field": "defMtlSE",
+      "Name": "防御材質SE",
+      "Description": "防御材質SE。ヒットエフェクトなどに使われる"
+    },
+    {
+      "Field": "defMtlSfx",
+      "Name": "防御材質SFX",
+      "Description": "防御材質SFX。ヒットエフェクトなどに使われる"
+    },
+    {
+      "Field": "hitSpEffectId",
+      "Name": "被弾時特殊効果ID",
+      "Description": "被弾時特殊効果ID。被弾時に発生する特殊効果"
+    },
+    {
+      "Field": "brakSpEffectId",
+      "Name": "破壊時特殊効果ID",
+      "Description": "破壊時特殊効果ID。HPが0以下になった瞬間にかかる特殊効果"
+    },
+    {
+      "Field": "isDmgIgnore",
+      "Name": "無敵にするか",
+      "Description": "無敵にするか。ダメージが入らなくなります。"
+    },
+    {
+      "Field": "isBreakDisableLockonDmypoly",
+      "Name": "破壊後ロックオン不可か",
+      "Description": "破壊時にロックできなくするか"
+    },
+    {
+      "Field": "isShieldGuardEnable",
+      "Name": "ガード有効部位",
+      "Description": "ガードが有効な部位か"
+    },
+    {
+      "Field": "isPaGuardEnable",
+      "Name": "PA_ガード有効部位",
+      "Description": "PAガードが有効な部位か"
+    },
+    {
+      "Field": "isPhysGuardEnable",
+      "Name": "実盾_ガード有効部位",
+      "Description": "物理ガードが有効な部位か"
+    },
+    {
+      "Field": "isBulletForceForceRicochetSfx",
+      "Name": "ヒット時弾丸SFXの強制跳弾",
+      "Description": "弾丸のSFXを強制で跳弾させる部位か[FNR-24925] 材質「身体重鉄」「盾重鉄」に設定された部位に弾丸がヒットした時、跳弾の見た目にしたい"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "AutoSightFEDispType",
+      "Name": "オートサイトFE表示",
+      "Description": "オートサイトカーソルに表示するタイプ"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "lockonDmypoly",
+      "Name": "ロックオンダミポリ",
+      "Description": "ロックオンダミポリ"
+    },
+    {
+      "Field": "hpGaugeDmypoly",
+      "Name": "HPゲージ表示ダミポリ",
+      "Description": "HPゲージ表示ダミポリ"
+    },
+    {
+      "Field": "addImpactRate",
+      "Name": "本体衝撃値補正",
+      "Description": "部位にヒットした場合、この倍率を衝撃値の最終値に掛けてから蓄積させる"
+    },
+    {
+      "Field": "hitAddSpEffectCondPartsType",
+      "Name": "ヒット時特殊効果付与条件判定用ラベル",
+      "Description": "攻撃パラに「特殊効果0付与条件_部位」が設定されているときにこの部位と同じ位置以外の場合は特殊効果を付与しない"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

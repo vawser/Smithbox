@@ -1,0 +1,14 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Jump Table",
+    "Tags": [
+        "Format",
+        "TAE"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A type of command within Time Action Events."
+    ]
+}

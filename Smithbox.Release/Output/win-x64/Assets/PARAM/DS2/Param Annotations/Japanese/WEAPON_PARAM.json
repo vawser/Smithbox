@@ -1,0 +1,278 @@
+{
+  "Param": "WEAPON_PARAM",
+  "Type": "WEAPON_PARAM",
+  "Name": "WEAPON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weaponId",
+      "Name": "武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "weaponModelId",
+      "Name": "武器モデルID",
+      "Description": ""
+    },
+    {
+      "Field": "weaponReinforceId",
+      "Name": "武器成長設定",
+      "Description": ""
+    },
+    {
+      "Field": "weaponActionCategoryId",
+      "Name": "武器アクションカテゴリ設定",
+      "Description": ""
+    },
+    {
+      "Field": "weaponTypeId",
+      "Name": "武器タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "isAtkAutoHoming",
+      "Name": "接近オートホーミング",
+      "Description": ""
+    },
+    {
+      "Field": "weaponCategory",
+      "Name": "武器系統",
+      "Description": ""
+    },
+    {
+      "Field": "clothCollidableId",
+      "Name": "クロスコリジョンID",
+      "Description": ""
+    },
+    {
+      "Field": "requiredStrength",
+      "Name": "必要ステータス 筋力",
+      "Description": ""
+    },
+    {
+      "Field": "requiredDexterity",
+      "Name": "必要ステータス 技量",
+      "Description": ""
+    },
+    {
+      "Field": "requiredIntelligence",
+      "Name": "必要ステータス 理力",
+      "Description": ""
+    },
+    {
+      "Field": "requiredFaith",
+      "Name": "必要ステータス 信仰",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "パラメータ\u3000重量 [kg]",
+      "Description": ""
+    },
+    {
+      "Field": "adjustBalanceWeight",
+      "Name": "パラメータ 分散重量 [kg]",
+      "Description": ""
+    },
+    {
+      "Field": "durability",
+      "Name": "パラメータ\u3000耐久値",
+      "Description": ""
+    },
+    {
+      "Field": "repairCost",
+      "Name": "パラメータ 修理コスト [soul]",
+      "Description": ""
+    },
+    {
+      "Field": "materialId",
+      "Name": "パラメータ\u3000材質",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAttackBaseCost",
+      "Name": "攻撃消費スタミナ 近接攻撃ベース値",
+      "Description": ""
+    },
+    {
+      "Field": "rangedAttackBaseCost",
+      "Name": "攻撃消費スタミナ 射撃攻撃ベース値",
+      "Description": ""
+    },
+    {
+      "Field": "costCategoryId",
+      "Name": "攻撃消費スタミナ 倍率カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "lockonAvailableDistanceScale",
+      "Name": "ロックオン 攻撃有効距離 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "grabMotionRate",
+      "Name": "投げつかみ 再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "grabRotationSpeed",
+      "Name": "投げつかみ 旋回加速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "grabRotationMaxSpeed",
+      "Name": "投げつかみ 最大旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabAttackDamageSmallId",
+      "Name": "投げ掴み バックスタブ投げ掴み[小]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "backStabAttackDamageMiddleId",
+      "Name": "投げ掴み バックスタブ投げ掴み[中]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "backStabAttackDamageLargeId",
+      "Name": "投げ掴み バックスタブ投げ掴み[大]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "gdBreakStabAttackDamageSmallId",
+      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[小]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "gdBreakStabAttackDamageMiddleId",
+      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[中]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "gdBreakStabAttackDamageLargeId",
+      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[大]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "parryStabAttackDamageSmallId",
+      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[小]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "parryStabAttackDamageMiddleId",
+      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[中]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "parryStabAttackDamageLargeId",
+      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[大]ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "parryEnableRate",
+      "Name": "パリィ発生期間 有効割合",
+      "Description": ""
+    },
+    {
+      "Field": "brokenSfxId",
+      "Name": "武器破損 SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "brokenSoundType",
+      "Name": "武器破損 サウンドタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "damageScale",
+      "Name": "ダメージ 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "staminaDamageScale",
+      "Name": "スタミナ奪取量 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "durabilityDamageScale",
+      "Name": "耐久削り値 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ignorePoiseRateScale",
+      "Name": "強靭度無効化割合 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "ignoreDamageCutRateScale",
+      "Name": "盾カット率無効化割合 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "stunDamageScale",
+      "Name": "気絶値 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageHitRadiusScale",
+      "Name": "HIT 半径 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageHitLengthScale",
+      "Name": "HIT 長さ 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "recoilHitRaduisScale",
+      "Name": "弾きHIT 半径 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "recoilHitLengthScale",
+      "Name": "弾きHIT 長さ 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "menuAttackCategory1",
+      "Name": "メニュー用 攻撃属性1",
+      "Description": ""
+    },
+    {
+      "Field": "menuAttackCategory2",
+      "Name": "メニュー用 攻撃属性2",
+      "Description": ""
+    },
+    {
+      "Field": "menuPoiseDamage",
+      "Name": "メニュー用 強靭削り値",
+      "Description": ""
+    },
+    {
+      "Field": "menuCounterScale",
+      "Name": "メニュー用 カウンター補正値",
+      "Description": ""
+    },
+    {
+      "Field": "menuSpellChantSpeed",
+      "Name": "メニュー用 スペル詠唱速度",
+      "Description": ""
+    },
+    {
+      "Field": "poiseDamageScalePlayer",
+      "Name": "強靭削り値補正倍率（対プレイヤー）",
+      "Description": ""
+    },
+    {
+      "Field": "poiseDamageScaleEnemy",
+      "Name": "強靭削り値補正倍率（対エネミー）",
+      "Description": ""
+    },
+    {
+      "Field": "uninterruptibleRate",
+      "Name": "Uninterruptible poise damage rate",
+      "Description": ""
+    }
+  ]
+}

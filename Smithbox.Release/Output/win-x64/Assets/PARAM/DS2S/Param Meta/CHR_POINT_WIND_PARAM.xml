@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <priority />
+        <radius />
+        <minSpeed />
+        <maxSpeed />
+        <frequency />
+        <gainStartDistance />
+        <fadeInTime />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ATTACK_ACTION_PARAM_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>990011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>990012</SortID>
+    </Field>
+    <Field Def="s16 atkStateId">
+      <DisplayName>攻撃ステートID</DisplayName>
+      <Description>攻撃ステートのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u16 behaviorJudgeId">
+      <DisplayName>行動判定IDデフォルト値</DisplayName>
+      <Description>ChrBehaviorの制御プログラム：射撃で「行動判定IDを使用する」にチェックが入っていない場合、設定された行動判定IDを使用して射撃を行う</Description>
+      <Maximum>999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s8 connectPartsSlotIndex = -1">
+      <DisplayName>連動パーツ番号</DisplayName>
+      <Description>敵のときにこの装備と連動するパーツ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_01[3]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990013</SortID>
+    </Field>
+    <Field Def="s32 lookAtParamId = -1">
+      <DisplayName>LookAtパラメータID</DisplayName>
+      <Description>使用するLookAtのパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 lookAtDirType">
+      <DisplayName>LookAt方向タイプ</DisplayName>
+      <Enum>LOOK_AT_DIR_TYPE</Enum>
+      <Description>LookAtで向ける方向</Description>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 bulletShootDirType">
+      <DisplayName>弾丸発射方向タイプ</DisplayName>
+      <Enum>BULLET_SHOOT_DIR_TYPE</Enum>
+      <Description>弾丸を発射する方向</Description>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_02[2]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990014</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_00">
+      <DisplayName>トリガー0アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_01">
+      <DisplayName>トリガー1アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_02">
+      <DisplayName>トリガー2アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_03">
+      <DisplayName>トリガー3アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_04">
+      <DisplayName>トリガー4アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_05">
+      <DisplayName>トリガー5アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_06">
+      <DisplayName>トリガー6アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_07">
+      <DisplayName>トリガー7アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_08">
+      <DisplayName>トリガー8アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_09">
+      <DisplayName>トリガー9アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_10">
+      <DisplayName>トリガー10アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_11">
+      <DisplayName>トリガー11アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_12">
+      <DisplayName>トリガー12アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_13">
+      <DisplayName>トリガー13アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_14">
+      <DisplayName>トリガー14アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_15">
+      <DisplayName>トリガー15アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_16">
+      <DisplayName>トリガー16アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_17">
+      <DisplayName>トリガー17アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_18">
+      <DisplayName>トリガー18アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_19">
+      <DisplayName>トリガー19アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_20">
+      <DisplayName>トリガー20アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_21">
+      <DisplayName>トリガー21アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_22">
+      <DisplayName>トリガー22アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_23">
+      <DisplayName>トリガー23アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_24">
+      <DisplayName>トリガー24アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_25">
+      <DisplayName>トリガー25アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_26">
+      <DisplayName>トリガー26アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_27">
+      <DisplayName>トリガー27アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_28">
+      <DisplayName>トリガー28アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_29">
+      <DisplayName>トリガー29アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_30">
+      <DisplayName>トリガー30アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 triggerActionType_31">
+      <DisplayName>トリガー31アクションタイプ</DisplayName>
+      <Enum>TRIGGER_ACTION_TYPE_TYPE</Enum>
+      <Description>ChrBehaviorの条件判定タイプ</Description>
+      <Maximum>3</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="s32 bladeHomingParamId = -1">
+      <DisplayName>ブレホパラメータID </DisplayName>
+      <Description>ブレホパラメータID </Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 isTaeShootTimingOnly">
+      <DisplayName>TAEからの射撃リクエストでのみ実際に射撃する</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>TAEからの射撃リクエストが来た時のみ実際に弾丸を出す</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 alertShowType">
+      <DisplayName>アラート表示タイプ</DisplayName>
+      <Enum>ATK_ACT_PARAM_ALERT_SHOW_TYPE</Enum>
+      <Description>FEのアラート表示タイプ</Description>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 alertLevel">
+      <DisplayName>アラート区分</DisplayName>
+      <Enum>ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL</Enum>
+      <Description>FEのアラート区分</Description>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 isDeadShootEnable">
+      <DisplayName>死亡しても射撃可能か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>死亡しても射撃できるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 lockRange">
+      <DisplayName>ロック距離[m]</DisplayName>
+      <Description>二次ロックの距離（現状NPCのみ有効）</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 lockTimeSec">
+      <DisplayName>ロック時間[sec]</DisplayName>
+      <Description>二次ロックまでの時間（現状NPCのみ有効）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_04[8]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990015</SortID>
+    </Field>
+    <Field Def="u8 shootIndicationType">
+      <DisplayName>射撃予兆表示</DisplayName>
+      <Enum>ATK_ACT_PARAM_SHOOT_INDICATION_TYPE</Enum>
+      <Description>FEの射撃予兆表示</Description>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 isReloadInputExcludeTrigger">
+      <DisplayName>リロード操作時にトリガーを排他する</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>リロード操作時にトリガー操作を排他するか（パッド操作専用）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_05[2]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990016</SortID>
+    </Field>
+    <Field Def="s32 shootIndicationDmypolyId = -1">
+      <DisplayName>射撃予兆表示ダミポリID</DisplayName>
+      <Description>FEの射撃予兆表示ダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[16]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990017</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

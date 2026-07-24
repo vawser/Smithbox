@@ -1,0 +1,16 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Selection Groups",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "The Selection Groups window hosts your stored selection groups, as well as the tools to create, edit and delete them.",
+        "Selection Groups are user-defined groupings of map objects which can then be used to quickly re-select the defined group for further use.",
+        "Support for up-to 11 keybound selection groups is provided, meaning you can press the key and instantly select all of the map objects assigned to that selection group.",
+        ""
+    ]
+}

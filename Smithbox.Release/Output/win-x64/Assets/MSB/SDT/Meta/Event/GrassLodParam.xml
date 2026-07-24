@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a grass level of detail setup in the map." />
+  
+  <Field>
+    <GrassLodRangeParamID
+    AltName="Grass LOD Range ID"
+    Wiki="The ID of a row in GrassLodRangeParam." 
+    ParamRef="GrassLodRangeParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

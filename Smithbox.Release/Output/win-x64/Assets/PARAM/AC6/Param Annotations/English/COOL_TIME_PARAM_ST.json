@@ -1,0 +1,48 @@
+{
+  "Param": "COOL_TIME_PARAM_ST",
+  "Type": "COOL_TIME_PARAM_ST",
+  "Name": "COOL_TIME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "coop0_limitationTime",
+      "Name": "Limitation Time: 0 Co-op Clients",
+      "Description": "Time limit [sec] (number of cooperating spirits 0)"
+    },
+    {
+      "Field": "coop0_observeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coop1_limitationTime",
+      "Name": "Limitation Time: 1 Co-op Clients",
+      "Description": "Time limit [sec] (number of cooperating spirits 1)"
+    },
+    {
+      "Field": "coop1_observeTime",
+      "Name": "Observation Time: 1 Co-op Clients",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 1)"
+    },
+    {
+      "Field": "coop2_limitationTime",
+      "Name": "Limitation Time: 2 Co-op Clients",
+      "Description": "Time limit [sec] (number of cooperating spirits 2)"
+    },
+    {
+      "Field": "coop2_observeTime",
+      "Name": "Observation Time: 2 Co-op Clients",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 2)"
+    },
+    {
+      "Field": "coop3_limitationTime",
+      "Name": "Limitation Time: 3 Co-op Clients",
+      "Description": "Time limit [sec] (number of cooperating spirits 3)"
+    },
+    {
+      "Field": "coop3_observeTime",
+      "Name": "Observation Time: 3 Co-op Clients",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 3)"
+    }
+  ]
+}

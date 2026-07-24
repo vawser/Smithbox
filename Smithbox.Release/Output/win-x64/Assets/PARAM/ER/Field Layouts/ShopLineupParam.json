@@ -1,0 +1,62 @@
+{
+  "Name": "ShopLineupParam",
+  "Groups": [
+    {
+      "Key": "Item",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item"
+        }
+      ],
+      "Fields": [
+        "equipId",
+        "equipType",
+        "costType",
+        "mtrlId"
+      ]
+    },
+    {
+      "Key": "Inventory",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Inventory"
+        }
+      ],
+      "Fields": [
+        "sellQuantity",
+        "setNum",
+        "eventFlag_forStock",
+        "eventFlag_forRelease"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "value",
+        "value_Add",
+        "value_Magnification"
+      ]
+    },
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "iconId",
+        "nameMsgId"
+      ]
+    }
+  ]
+}

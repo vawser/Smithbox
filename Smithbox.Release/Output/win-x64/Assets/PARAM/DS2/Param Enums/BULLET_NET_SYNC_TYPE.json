@@ -1,0 +1,56 @@
+{
+  "Key": "BULLET_NET_SYNC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_NET_SYNC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not synced"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Emitter synchronization"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet synchronization"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coordinate emitter synchronization"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Placed bullet synchronization"
+        }
+      ]
+    }
+  ]
+}

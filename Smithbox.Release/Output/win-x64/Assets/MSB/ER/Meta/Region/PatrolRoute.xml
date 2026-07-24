@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a patrol route in the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Patrol Action ID"
+    Wiki="Determines what action ID to perform on reaching this patrol route (handled in ai_common/common_patrol_behavior.lua)." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

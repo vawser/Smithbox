@@ -1,0 +1,53 @@
+{
+  "Param": "MISSION_SYS_MSG_ANSWER_PARAM_ST",
+  "Type": "MISSION_SYS_MSG_ANSWER_PARAM_ST",
+  "Name": "MISSION_SYS_MSG_ANSWER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "talkParamId",
+      "Name": "会話パラメータID",
+      "Description": "会話パラメータID"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "優先度・・・低い方が優先"
+    },
+    {
+      "Field": "dispLimitNum",
+      "Name": "メッセージの表示回数制限",
+      "Description": "メッセージの表示回数制限"
+    },
+    {
+      "Field": "dispLimitGroupId",
+      "Name": "表示回数グループID",
+      "Description": "メッセージの表示回数をグループ単位でカウントするためのもの"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

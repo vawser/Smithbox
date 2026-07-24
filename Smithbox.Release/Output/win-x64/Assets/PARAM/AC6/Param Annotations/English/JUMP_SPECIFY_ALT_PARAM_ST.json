@@ -1,0 +1,48 @@
+{
+  "Param": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Type": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Name": "JUMP_SPECIFY_ALT_PARAM_ST",
+  "Description": "Determines the configurations for vertical ascent points in missions.",
+  "Fields": [
+    {
+      "Field": "jumpSpecifyAlt_GoalAlt",
+      "Name": "Goal Altitude",
+      "Description": "The target altitude the vertical ascent platform will aim for when you jump. In metres."
+    },
+    {
+      "Field": "jumpSpecifyAlt_GravityScale",
+      "Name": "Gravity %",
+      "Description": "The gravity percentage to apply during the vertical ascent jump."
+    },
+    {
+      "Field": "jumpSpecifyAlt_PrevSpeedRateH",
+      "Name": "Previous Horizontal Speed %",
+      "Description": "The percentage of horizontal speed to retain upon triggering the vertical ascent."
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxSpeedKMPH",
+      "Name": "Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed that is retained upon triggering the vertical ascent. In kilometres per hour."
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxAccelMPSS",
+      "Name": "Horizontal Acceleration",
+      "Description": "The horizontal acceleration to apply to the user upon triggering the vertical ascent. In metres per second ^ 2."
+    },
+    {
+      "Field": "jumpSpecifyAlt_MiddleInputAngDeg",
+      "Name": "Jump Angle based on Input",
+      "Description": "The jump angle that is used upon triggering the vertical ascent, based on the current input upon triggering it."
+    },
+    {
+      "Field": "jumpSpecifyAlt_MaxInputAngDeg",
+      "Name": "Maximum Jump Angle based on Input",
+      "Description": "The maximum jump angle that is used upon triggering the vertical ascent, based on the current input upon triggering it."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

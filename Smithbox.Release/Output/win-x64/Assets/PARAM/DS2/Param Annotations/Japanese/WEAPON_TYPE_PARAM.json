@@ -1,0 +1,543 @@
+{
+  "Param": "WEAPON_TYPE_PARAM",
+  "Type": "WEAPON_TYPE_PARAM",
+  "Name": "WEAPON_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "allowMagic",
+      "Name": "使用許可スペル 魔術",
+      "Description": ""
+    },
+    {
+      "Field": "allowMiracle",
+      "Name": "使用許可スペル 奇蹟",
+      "Description": ""
+    },
+    {
+      "Field": "allowPyromancy",
+      "Name": "使用許可スペル 呪術",
+      "Description": ""
+    },
+    {
+      "Field": "allowDarkMagic",
+      "Name": "使用許可スペル 闇魔術",
+      "Description": ""
+    },
+    {
+      "Field": "rightStance1HMotionId",
+      "Name": "装備アニメ 片手 右手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "leftStance1HMotionId",
+      "Name": "装備アニメ 片手 左手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "rightStance2HMotionId",
+      "Name": "装備アニメ 両手 右手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "leftStance2HMotionId",
+      "Name": "装備アニメ 両手 左手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "rightStanceDual1HMotionId",
+      "Name": "装備アニメ 二刀流 片手 右手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "leftStanceDual1HMotionId",
+      "Name": "装備アニメ 二刀流 片手 左手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "rightStanceDual2HMotionId",
+      "Name": "装備アニメ 二刀流 両手 右手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "leftStanceDual2HMotionId",
+      "Name": "装備アニメ 二刀流 両手 左手 構え",
+      "Description": ""
+    },
+    {
+      "Field": "changeWeaponAnim",
+      "Name": "装備アニメ 装備切替",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId1HandStanceRightChr",
+      "Name": "ダミポリID 片手構え 右手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId1HandStanceRightWeapon",
+      "Name": "ダミポリID 片手構え 右手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId1HandStanceLeftChr",
+      "Name": "ダミポリID 片手構え 左手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId1HandStanceLeftWeapon",
+      "Name": "ダミポリID 片手構え 左手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdR2HandStanceChrMain",
+      "Name": "ダミポリID 右両手構え 右手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdR2HandStanceWeaponMain",
+      "Name": "ダミポリID 右両手構え 右手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdR2HandStanceChrSub",
+      "Name": "ダミポリID 右両手構え 左手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdR2HandStanceWeaponSub",
+      "Name": "ダミポリID 右両手構え 左手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdL2HandStanceChrMain",
+      "Name": "ダミポリID 左両手構え 右手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdL2HandStanceWeaponMain",
+      "Name": "ダミポリID 左両手構え 右手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdL2HandStanceChrSub",
+      "Name": "ダミポリID 左両手構え 左手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdL2HandStanceWeaponSub",
+      "Name": "ダミポリID 左両手構え 左手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdRightStoreChr",
+      "Name": "ダミポリID 収納場所 右手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdRightStoreWeapon",
+      "Name": "ダミポリID 収納場所 右手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdLeftStoreChr",
+      "Name": "ダミポリID 収納場所 左手 キャラ",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyIdLeftStoreWeapon",
+      "Name": "ダミポリID 収納場所 左手 武器",
+      "Description": ""
+    },
+    {
+      "Field": "shootCategory",
+      "Name": "装備設定 射撃設定",
+      "Description": ""
+    },
+    {
+      "Field": "weaponType",
+      "Name": "装備設定 武器種別",
+      "Description": ""
+    },
+    {
+      "Field": "attackSeCategory",
+      "Name": "装備設定 攻撃SEカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "dualWieldingPermission",
+      "Name": "装備設定 二刀流許可",
+      "Description": ""
+    },
+    {
+      "Field": "weaponStabilizeBlengWeight",
+      "Name": "装備揺れ押さえ 反映割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "weaponSpineTwistBlendWeight",
+      "Name": "装備上半身捻り 反映割合[%]",
+      "Description": ""
+    },
+    {
+      "Field": "parryStabYawCorrectAngle",
+      "Name": "スタブ 左右角度補正値 パリィブレイクスタブ [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakStabYawCorrectAngle",
+      "Name": "スタブ 左右角度補正値 ガードブレイクスタブ [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "backStabYawCorrectAngle",
+      "Name": "スタブ 左右角度補正値 バックスタブ [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "guardPassiveLevelType",
+      "Name": "ガード ガードレベル",
+      "Description": ""
+    },
+    {
+      "Field": "guardReleaseSpeedCategory",
+      "Name": "ガード ガード解除速度",
+      "Description": ""
+    },
+    {
+      "Field": "parryType",
+      "Name": "パリィ パリィ種類",
+      "Description": ""
+    },
+    {
+      "Field": "allowDarkMiracle",
+      "Name": "使用許可スペル 闇奇蹟",
+      "Description": ""
+    },
+    {
+      "Field": "leftDamageScale",
+      "Name": "左装備時 ダメージ 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "leftStaminaDamageScale",
+      "Name": "左装備時 スタミナ奪取量 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "leftDurabilityDamageScale",
+      "Name": "左装備時 耐久削り値 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rightDamageScale",
+      "Name": "右装備時 ダメージ 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rightDtaminaDamageScale",
+      "Name": "右装備時 スタミナ奪取量 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rightDurabilityDamageScale",
+      "Name": "右装備時 耐久削り値 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "counterDamageScale",
+      "Name": "カウンターダメージ\u3000補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fallStrikeFallDistRate",
+      "Name": "落下攻撃 発生落下高度 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackVerticalSpeedRate",
+      "Name": "ジャンプ攻撃 上昇速度 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMinRate",
+      "Name": "ジャンプ攻撃 水平速度 最少距離 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMaxRate",
+      "Name": "ジャンプ攻撃 水平速度 最大距離 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMinRate",
+      "Name": "ジャンプ攻撃 水平速度 最少 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMaxRate",
+      "Name": "ジャンプ攻撃 水平速度 最大 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackFallDistRate",
+      "Name": "ジャンプ落下攻撃 発生落下高度 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackVerticalSpeedRate",
+      "Name": "ジャンプ落下攻撃 上昇速度 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMinRate",
+      "Name": "ジャンプ落下攻撃 水平速度 最少距離 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMaxRate",
+      "Name": "ジャンプ落下攻撃 水平速度 最大距離 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMinRate",
+      "Name": "ジャンプ落下攻撃 水平速度 最少 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMaxRate",
+      "Name": "ジャンプ落下攻撃 水平速度 最大 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabType",
+      "Name": "落下投げ種類",
+      "Description": ""
+    },
+    {
+      "Field": "damageWeaponType",
+      "Name": "ダメージ武器タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "menuShotRange",
+      "Name": "メニュー用 射程距離",
+      "Description": ""
+    },
+    {
+      "Field": "backStabAttackAnimId",
+      "Name": "投げ掴み バックスタブ投げ掴み[中]アニメID",
+      "Description": ""
+    },
+    {
+      "Field": "gdBreakStabAttackAnimId",
+      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[中]アニメID",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationLeftRate",
+      "Name": "攻撃時LookAt 旋回限界角度 左 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationRightRate",
+      "Name": "攻撃時LookAt 旋回限界角度 右 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationUpperRate",
+      "Name": "攻撃時LookAt 旋回限界角度 上 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationLowerRate",
+      "Name": "攻撃時LookAt 旋回限界角度 下 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtVisibilitySideRate",
+      "Name": "攻撃時LookAt 認識限界角度 左右 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtVisibilityUpperRate",
+      "Name": "攻撃時LookAt 認識限界角度 上下 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationSideSpeedRate",
+      "Name": "攻撃時LookAt 左右旋回速度 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtRotationUpperSpeedRate",
+      "Name": "攻撃時LookAt 上下旋回速度 補正倍率[倍]",
+      "Description": ""
+    },
+    {
+      "Field": "staminaRecoveryScale",
+      "Name": "ガード時 スタミナ回復値 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityAddRateSingle1Hand",
+      "Name": "受け能力 加算補正値 片手 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityAddRateSingle2Handed",
+      "Name": "受け能力 加算補正値 両手 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityAddRateDual1Hand",
+      "Name": "受け能力 加算補正値 二刀流 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityAddRateDual2Handed",
+      "Name": "受け能力 加算補正値 二刀流両手 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAutoPivotRotationSpeedScale",
+      "Name": "旋回ホーミング 速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAutoPivotLimitAngleScale",
+      "Name": "旋回ホーミング 限界角度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "manualPivotRotationSpeedScale",
+      "Name": "任意旋回 速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "manualPivotLimitAngleScale",
+      "Name": "任意旋回 限界角度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "moveAccelerationScale",
+      "Name": "向き変更 加速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "moveMaxSpeedScale",
+      "Name": "向き変更 最大速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "moveDecelerationScale",
+      "Name": "向き変更 減速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "moveRotationSpeedScale",
+      "Name": "向き変更 旋回速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "canPredictShot",
+      "Name": "予測射撃許可フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "shotSeCategory",
+      "Name": "発射SEカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "rangedAutoPivotRotationSpeedScale",
+      "Name": "自動旋回 速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rangedManualPivotRotationSpeedScale",
+      "Name": "その場旋回 速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "spellChantTimeScale",
+      "Name": "詠唱時間 倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessPeriodScale",
+      "Name": "強靭度期間 倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateParallelWalk",
+      "Name": "射撃構え移動 速度減少割合 平行移動 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateWalk",
+      "Name": "射撃構え移動 速度減少割合 歩行 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateLockOnWalk",
+      "Name": "射撃構え移動 速度減少割合 ロックオン移動 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackAccelerationScale",
+      "Name": "攻撃後 歩き出し 加速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackMaxSpeedScale",
+      "Name": "攻撃後 歩き出し 速度 最大 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackDecelerationScale",
+      "Name": "攻撃後 歩き出し 減速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackRotationSpeedScale",
+      "Name": "攻撃後 歩き出し 旋回速度 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "weaponMenuCategory",
+      "Name": "(メニュー用)カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "snipeCameraParamId",
+      "Name": "精密射撃カメラID",
+      "Description": ""
+    },
+    {
+      "Field": "canGuardAttack",
+      "Name": "ガード付き攻撃許可",
+      "Description": ""
+    },
+    {
+      "Field": "unk138",
+      "Name": "unk138",
+      "Description": ""
+    },
+    {
+      "Field": "abyssRate",
+      "Name": "Mundane damage rate",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

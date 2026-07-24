@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_DECEASED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_DECEASED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greater Undead"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "Name": "DamageWeaponTypeDurabilityParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Spelling -- スペル"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Small -- 小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "In -- 中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Large -- 大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Oversized -- 特大"
+      ]
+    }
+  ]
+}

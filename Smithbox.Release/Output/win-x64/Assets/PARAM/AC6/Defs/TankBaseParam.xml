@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TANK_BASE_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 texScrollForwardSpeedScale">
+      <DisplayName>前後移動速度に対するアニメ速度係数</DisplayName>
+      <Description>スクロールが１周するまでの移動速度（Km/h)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 texScrollAngleSpeedScale">
+      <DisplayName>旋回速度に対するアニメ速度係数</DisplayName>
+      <Description>スクロールが１周するまでの旋回速度（rad/frame)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="s32 paramL_texScrollmaterialID">
+      <DisplayName>テクスチャスクロールのマテリアルID（左）</DisplayName>
+      <Description>Matxmlで指定するマテリアルID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>paramL</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="s32 paramL_texScrollMaterialParamID">
+      <DisplayName>テクスチャスクロールのパラメータID（左）</DisplayName>
+      <Description>マテリアル拡張パラメータ.xlsmのパラメータID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>111</SortID>
+      <UnkB8>paramL</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="u32 paramL_forwardAnimID">
+      <DisplayName>前進アニメID（左）</DisplayName>
+      <Description>前進移動するときの車輪部分のアニメID</Description>
+      <Maximum>999999</Maximum>
+      <SortID>130</SortID>
+      <UnkB8>paramL</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="u32 paramL_backAnimID">
+      <DisplayName>後退アニメID（左）</DisplayName>
+      <Description>後退移動するときの車輪部分のアニメID</Description>
+      <Maximum>999999</Maximum>
+      <SortID>140</SortID>
+      <UnkB8>paramL</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="s32 paramR_texScrollmaterialID">
+      <DisplayName>テクスチャスクロールのマテリアルID（右）</DisplayName>
+      <Description>Matxmlで指定するマテリアルID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>120</SortID>
+      <UnkB8>paramR</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="s32 paramR_texScrollMaterialParamID">
+      <DisplayName>テクスチャスクロールのパラメータID（右）</DisplayName>
+      <Description>マテリアル拡張パラメータ.xlsmのパラメータID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>121</SortID>
+      <UnkB8>paramR</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="u32 paramR_forwardAnimID">
+      <DisplayName>前進アニメID（右）</DisplayName>
+      <Description>前進移動するときの車輪部分のアニメID</Description>
+      <Maximum>999999</Maximum>
+      <SortID>150</SortID>
+      <UnkB8>paramR</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="u32 paramR_backAnimID">
+      <DisplayName>後退アニメID（右）</DisplayName>
+      <Description>後退移動するときの車輪部分のアニメID</Description>
+      <Maximum>999999</Maximum>
+      <SortID>160</SortID>
+      <UnkB8>paramR</UnkB8>
+      <UnkC0>MaterialAnimST</UnkC0>
+    </Field>
+    <Field Def="u8 WheelLeftBackIndex">
+      <DisplayName>ホイール左の一番後位置のインデックス</DisplayName>
+      <Description>ホイール内部制御パラメータで一番左後ろになるインデックス</Description>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="u8 WheelRightBackIndex">
+      <DisplayName>ホイール右の一番後位置のインデックス</DisplayName>
+      <Description>ホイール内部制御パラメータで一番右後ろになるインデックス</Description>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="dummy8 pad6[2]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="f32 texScrollForwardTexSpeedScale">
+      <DisplayName>前後移動速度に対するテクスチャスクロール係数</DisplayName>
+      <Description>スクロールが１周するまでの移動速度（Km/h)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="f32 texScrollAngleTexSpeedScale">
+      <DisplayName>旋回速度に対するテクスチャスクロール係数</DisplayName>
+      <Description>スクロールが１周するまでの旋回速度（rad/frame)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="f32 footIKChangeTime = 0.5">
+      <DisplayName>FootIK有効無効切り替えたときのアニメの補間時間[s]</DisplayName>
+      <Description>FootIKが有効無効切り替わったときにホイールやベルト部分のアニメの補間時間</Description>
+      <Minimum>0.01</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[8]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

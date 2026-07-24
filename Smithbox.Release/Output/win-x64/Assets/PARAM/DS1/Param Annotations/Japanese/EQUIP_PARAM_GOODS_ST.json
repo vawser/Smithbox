@@ -1,0 +1,353 @@
+{
+  "Param": "EQUIP_PARAM_GOODS_ST",
+  "Type": "EQUIP_PARAM_GOODS_ST",
+  "Name": "EQUIP_PARAM_GOODS_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "refId",
+      "Name": "呼び出しID",
+      "Description": "アイテムから呼び出されるID"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFXバリエーションID",
+      "Description": "ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "基本価格",
+      "Description": "基本価格"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "道具を使ったときに発生する効果を設定します"
+    },
+    {
+      "Field": "replaceItemId",
+      "Name": "差し替えアイテムID",
+      "Description": "差し替えるときのアイテムID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID(-1:集めない)"
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCID",
+      "Description": "QWCのパラメタiD"
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "YES/NOメッセージID",
+      "Description": "YesNoダイアログ表示時に使用するメッセージID"
+    },
+    {
+      "Field": "magicId",
+      "Name": "魔法ID",
+      "Description": "巻物と紐づいた魔法ID"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニュー用アイコンID"
+    },
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": "モデルID"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "ショップレベル",
+      "Description": "お店で販売できるレベル"
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "コンプトロフィーSEQ番号",
+      "Description": "コンプリート系トロフィのSEQ番号"
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "トロフィーSEQ番号",
+      "Description": "トロフィーのSEQ番号"
+    },
+    {
+      "Field": "maxNum",
+      "Name": "最大所持数",
+      "Description": "最大所持数"
+    },
+    {
+      "Field": "consumeHeroPoint",
+      "Name": "消費人間性",
+      "Description": "消費人間性"
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "技量オーバー開始値",
+      "Description": "技量オーバー開始値"
+    },
+    {
+      "Field": "goodsType",
+      "Name": "道具のタイプ",
+      "Description": "道具の種類"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "IDカテゴリ",
+      "Description": "↓のIDのカテゴリ[攻撃、飛び道具、特殊]"
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "特殊効果カテゴリ",
+      "Description": "スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する\r\n"
+    },
+    {
+      "Field": "goodsCategory",
+      "Name": "道具カテゴリ",
+      "Description": "道具カテゴリ"
+    },
+    {
+      "Field": "goodsUseAnim",
+      "Name": "道具使用時アニメ",
+      "Description": "道具を使ったときに再生するアニメを設定します"
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "メニュー開くか",
+      "Description": "アイテム使用時に開くメニュータイプ"
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "特殊効果カテゴリによる使用制限",
+      "Description": "かかっている特殊効果によって使用可能かを制御する為に指定"
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "差し替えカテゴリ",
+      "Description": "呼び出しIDに加算しる条件カテゴリ"
+    },
+    {
+      "Field": "vowType0",
+      "Name": "誓約0",
+      "Description": "誓約0で使用可能か"
+    },
+    {
+      "Field": "vowType1",
+      "Name": "誓約1",
+      "Description": "誓約1で使用可能か"
+    },
+    {
+      "Field": "vowType2",
+      "Name": "誓約2",
+      "Description": "誓約2で使用可能か"
+    },
+    {
+      "Field": "vowType3",
+      "Name": "誓約3",
+      "Description": "誓約3で使用可能か"
+    },
+    {
+      "Field": "vowType4",
+      "Name": "誓約4",
+      "Description": "誓約4で使用可能か"
+    },
+    {
+      "Field": "vowType5",
+      "Name": "誓約5",
+      "Description": "誓約5で使用可能か"
+    },
+    {
+      "Field": "vowType6",
+      "Name": "誓約6",
+      "Description": "誓約6で使用可能か"
+    },
+    {
+      "Field": "vowType7",
+      "Name": "誓約7",
+      "Description": "誓約7で使用可能か"
+    },
+    {
+      "Field": "vowType8",
+      "Name": "誓約8",
+      "Description": "誓約8で使用可能か"
+    },
+    {
+      "Field": "vowType9",
+      "Name": "誓約9",
+      "Description": "誓約9で使用可能か"
+    },
+    {
+      "Field": "vowType10",
+      "Name": "誓約10",
+      "Description": "誓約10で使用可能か"
+    },
+    {
+      "Field": "vowType11",
+      "Name": "誓約11",
+      "Description": "誓約11で使用可能か"
+    },
+    {
+      "Field": "vowType12",
+      "Name": "誓約12",
+      "Description": "誓約12で使用可能か"
+    },
+    {
+      "Field": "vowType13",
+      "Name": "誓約13",
+      "Description": "誓約13で使用可能か"
+    },
+    {
+      "Field": "vowType14",
+      "Name": "誓約14",
+      "Description": "誓約14で使用可能か"
+    },
+    {
+      "Field": "vowType15",
+      "Name": "誓約15",
+      "Description": "誓約15で使用可能か"
+    },
+    {
+      "Field": "enable_live",
+      "Name": "生存使用可",
+      "Description": "生存プレイヤー使用可能か"
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "グレイ使用可",
+      "Description": "グレイゴースト使用可能か"
+    },
+    {
+      "Field": "enable_white",
+      "Name": "白使用可",
+      "Description": "ホワイトゴースト使用可能か"
+    },
+    {
+      "Field": "enable_black",
+      "Name": "黒使用可",
+      "Description": "ブラックゴーストしよう可能か"
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "マルチプレイ可",
+      "Description": "マルチプレイ中に使用可能か？"
+    },
+    {
+      "Field": "disable_offline",
+      "Name": "オフラインで使用不可",
+      "Description": "オフライン中に使用不可か？"
+    },
+    {
+      "Field": "isEquip",
+      "Name": "装備可能",
+      "Description": "装備できるかどうか"
+    },
+    {
+      "Field": "isConsume",
+      "Name": "消耗品か",
+      "Description": "使用時に消耗するか(所持数が減るか)"
+    },
+    {
+      "Field": "isAutoEquip",
+      "Name": "自動装備するか？",
+      "Description": "拾った時に自動で装備するか？"
+    },
+    {
+      "Field": "isEstablishment",
+      "Name": "設置型アイテムか？",
+      "Description": "設置型アイテムか？"
+    },
+    {
+      "Field": "isOnlyOne",
+      "Name": "1個しか持てないか",
+      "Description": "1個しか持てないアイテムか"
+    },
+    {
+      "Field": "isDrop",
+      "Name": "捨てれるか",
+      "Description": "アイテムを捨てれるか？TRUE=捨てれる"
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "預けれるか",
+      "Description": "倉庫に預けれるか"
+    },
+    {
+      "Field": "isDisableHand",
+      "Name": "右素手に使えないか",
+      "Description": "右手武器が素手の場合に使用不可か"
+    },
+    {
+      "Field": "IsTravelItem",
+      "Name": "旅するアイテムか",
+      "Description": "旅するアイテム判別に使用します"
+    },
+    {
+      "Field": "isSuppleItem",
+      "Name": "補充アイテムか",
+      "Description": "補充可能アイテムを判別するのに使用します"
+    },
+    {
+      "Field": "isFullSuppleItem",
+      "Name": "補充済みアイテムか",
+      "Description": "補充済みアイテムを判別するのに使用します"
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "エンチャントするか？",
+      "Description": "武器にエンチャントするか？"
+    },
+    {
+      "Field": "isFixItem",
+      "Name": "修理アイテムか",
+      "Description": "修理するアイテムか？"
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "マルチドロップ共有禁止か",
+      "Description": "マルチドロップ共有禁止か"
+    },
+    {
+      "Field": "disableUseAtColiseum",
+      "Name": "闘技場で使用禁止か",
+      "Description": "闘技場で使用禁止か"
+    },
+    {
+      "Field": "disableUseAtOutOfColiseum",
+      "Name": "闘技場以外で使用禁止か",
+      "Description": "闘技場以外で使用禁止か"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "ベイグラント時アイテム抽選ID",
+      "Description": "-1：ベイグラントなし 0：抽選なし 1～：抽選あり"
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "ベイグラントボーナス敵ドロップアイテム抽選ID",
+      "Description": "-1：ドロップなし 0：抽選なし 1～：抽選あり"
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "ベイグラントアイテム敵ドロップアイテム抽選ID",
+      "Description": "-1：ドロップなし 0：抽選なし 1～：抽選あり"
+    }
+  ]
+}

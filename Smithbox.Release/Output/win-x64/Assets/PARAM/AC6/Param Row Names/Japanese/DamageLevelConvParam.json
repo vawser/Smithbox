@@ -1,0 +1,797 @@
+{
+  "Name": "DamageLevelConvParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "For DL ​​direct value confirmation -- DL直値確認用"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "bazooka -- バズーカ"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "shotgun -- ショットガン"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "bolt action rifle -- ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "missile -- ミサイル"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Blade (light attack) -- ブレード(弱攻撃)"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Blade (strong attack) -- ブレード(強攻撃)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "semi-automatic rifle -- セミオートライフル"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "└Semi-auto rifle (single charge) -- └セミオートライフル（単発チャージ）"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "assault rifle -- アサルトライフル"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "gatling gun -- ガトリングガン"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "bazooka -- バズーカ"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "shotgun -- ショットガン"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "grenade rifle -- グレネードライフル"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "Handgun (fire) -- ハンドガン（連射）"
+      ]
+    },
+    {
+      "ID": 10710,
+      "Entries": [
+        "Handgun (single shot) -- ハンドガン（単発）"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "throwing gun -- 投擲銃"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "hand missile -- ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "hand rocket -- ハンドロケット"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "laser rifle -- レーザーライフル"
+      ]
+    },
+    {
+      "ID": 11101,
+      "Entries": [
+        "└Laser rifle (charge) -- └レーザーライフル（チャージ）"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "plasma rifle -- プラズマライフル"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "pulse gun -- パルスガン"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "laser bazooka -- レーザーバズーカ"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "laser shotgun -- レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 11700,
+      "Entries": [
+        "Degraded uranium bazooka -- 劣化ウランバズーカ"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "[test] stun gun -- 【test】スタンガン"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "laser blade -- レーザーブレード"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "└Laser blade (reservoir) -- └レーザーブレード（溜め）"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "PA breaker -- PAブレイカー"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "└PA breaker (reservoir) -- └PAブレイカー（溜め）"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "└PA Breaker (body attack) -- └PAブレイカー（体当たり）"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "plasma broadsword -- プラズマブロードソード"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "└Plasma broadsword (reservoir) -- └プラズマブロードソード（溜め）"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "laser naginata -- レーザー薙刀"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "└Laser naginata (charged rotation) -- └レーザー薙刀（溜め回転）"
+      ]
+    },
+    {
+      "ID": 20311,
+      "Entries": [
+        "└Laser naginata (damage finish) -- └レーザー薙刀（溜めフィニッシュ）"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "laser dagger -- レーザーダガー"
+      ]
+    },
+    {
+      "ID": 20410,
+      "Entries": [
+        "└Laser dagger (reservoir) -- └レーザーダガー（溜め）"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Laser Lance (Charge) -- レーザーランス（突進）"
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        "└Laser Lance (Finish) -- └レーザーランス（フィニッシュ）"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "Chainsaw (light attack) -- チェーンソー（弱攻撃）"
+      ]
+    },
+    {
+      "ID": 20610,
+      "Entries": [
+        "└Chainsaw (rotating loop) -- └チェーンソー（回転ループ）"
+      ]
+    },
+    {
+      "ID": 20620,
+      "Entries": [
+        "└Chainsaw (strong attack finish) -- └チェーンソー（強攻撃フィニッシュ）"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "electromagnetic hammer -- 電磁ハンマー"
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        "└Electromagnetic hammer (loop) -- └電磁ハンマー（ループ）"
+      ]
+    },
+    {
+      "ID": 20710,
+      "Entries": [
+        "└Electromagnetic hammer (reservoir) -- └電磁ハンマー（溜め）"
+      ]
+    },
+    {
+      "ID": 20711,
+      "Entries": [
+        "└Electromagnetic hammer (charge/explosion) -- └電磁ハンマー（溜め・爆発）"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "Explosive pile (weak) -- 爆裂パイル（弱）"
+      ]
+    },
+    {
+      "ID": 20810,
+      "Entries": [
+        "└Explosive pile (strong) -- └爆裂パイル（強）"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "Electromagnetic baton (weak) -- 電磁警棒（弱）"
+      ]
+    },
+    {
+      "ID": 20910,
+      "Entries": [
+        "└Electromagnetic baton (strong) -- └電磁警棒（強）"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "plasma missile -- プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "AI missile -- AIミサイル"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "twin missiles -- 連装ミサイル"
+      ]
+    },
+    {
+      "ID": 30300,
+      "Entries": [
+        "special plasma missile -- 特殊プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 30400,
+      "Entries": [
+        "vertical missile -- 垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 30500,
+      "Entries": [
+        "depleted uranium missile -- 劣化ウランミサイル"
+      ]
+    },
+    {
+      "ID": 30600,
+      "Entries": [
+        "large missile -- 大型ミサイル"
+      ]
+    },
+    {
+      "ID": 30700,
+      "Entries": [
+        "special missile -- 特殊ミサイル"
+      ]
+    },
+    {
+      "ID": 30800,
+      "Entries": [
+        "Back missile_middle 1 -- 背ミサイル_中1"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "Back missile_slightly heavy 3 -- 背ミサイル_やや重3"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "rocket -- ロケット"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "shoulder bazooka -- 肩バズーカ"
+      ]
+    },
+    {
+      "ID": 32100,
+      "Entries": [
+        "shoulder grenade -- 肩グレネード"
+      ]
+    },
+    {
+      "ID": 32200,
+      "Entries": [
+        "shoulder laser cannon -- 肩レーザーキャノン"
+      ]
+    },
+    {
+      "ID": 32300,
+      "Entries": [
+        "shoulder plasma cannon -- 肩プラズマキャノン"
+      ]
+    },
+    {
+      "ID": 32400,
+      "Entries": [
+        "shoulder pulse gun -- 肩パルスガン"
+      ]
+    },
+    {
+      "ID": 32500,
+      "Entries": [
+        "shoulder laser bazooka -- 肩レーザーバズーカ"
+      ]
+    },
+    {
+      "ID": 32700,
+      "Entries": [
+        "Anti-worm firearm -- 対ワーム用火器"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "assault boost -- アサルトブースト"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Assault Boost_Kick -- アサルトブースト_キック"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "No reaction -- 反応なし"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "until addition -- 加算まで"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "until hit back -- ヒットバックまで"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Even a slight wobble -- 小よろけまで"
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        "Until the big stagger -- 大よろけまで"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "Until it blows away -- 吹っ飛びまで"
+      ]
+    },
+    {
+      "ID": 100060,
+      "Entries": [
+        "Forced blow-off -- 強制吹っ飛び"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "■Machine gun -- ■マシンガン"
+      ]
+    },
+    {
+      "ID": 99900010,
+      "Entries": [
+        "■Gatling gun -- ■ガトリングガン"
+      ]
+    },
+    {
+      "ID": 99900020,
+      "Entries": [
+        "■Assault rifle -- ■アサルトライフル"
+      ]
+    },
+    {
+      "ID": 99900030,
+      "Entries": [
+        "■Semi-auto rifle -- ■セミオートライフル"
+      ]
+    },
+    {
+      "ID": 99900040,
+      "Entries": [
+        "■Shotgun -- ■ショットガン"
+      ]
+    },
+    {
+      "ID": 99900050,
+      "Entries": [
+        "■Hand gun -- ■ハンドガン"
+      ]
+    },
+    {
+      "ID": 99900060,
+      "Entries": [
+        "■Sniper rifle -- ■スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 99900070,
+      "Entries": [
+        "■Railgun -- ■レールガン"
+      ]
+    },
+    {
+      "ID": 99900080,
+      "Entries": [
+        "■Bazooka -- ■バズーカ"
+      ]
+    },
+    {
+      "ID": 99900090,
+      "Entries": [
+        "■Grenade -- ■グレネード"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "■Cluster grenade -- ■クラスターグレネード"
+      ]
+    },
+    {
+      "ID": 99900110,
+      "Entries": [
+        "■Napalm -- ■ナパーム"
+      ]
+    },
+    {
+      "ID": 99900120,
+      "Entries": [
+        "■Rocket -- ■ロケット"
+      ]
+    },
+    {
+      "ID": 99900130,
+      "Entries": [
+        "■Missile -- ■ミサイル"
+      ]
+    },
+    {
+      "ID": 99900140,
+      "Entries": [
+        "■Throwing gun -- ■投擲銃"
+      ]
+    },
+    {
+      "ID": 99900150,
+      "Entries": [
+        "■Mine -- ■マイン"
+      ]
+    },
+    {
+      "ID": 99900160,
+      "Entries": [
+        "■F Mine -- ■Fマイン"
+      ]
+    },
+    {
+      "ID": 99900170,
+      "Entries": [
+        "■Laser machine gun -- ■レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 99900180,
+      "Entries": [
+        "■Laser shotgun -- ■レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 99900190,
+      "Entries": [
+        "■Laser rifle -- ■レーザーライフル"
+      ]
+    },
+    {
+      "ID": 99900200,
+      "Entries": [
+        "■High laser -- ■ハイレーザー"
+      ]
+    },
+    {
+      "ID": 99900210,
+      "Entries": [
+        "■Sniper laser -- ■狙撃レーザー"
+      ]
+    },
+    {
+      "ID": 99900220,
+      "Entries": [
+        "■Irradiation laser -- ■照射レーザー"
+      ]
+    },
+    {
+      "ID": 99900230,
+      "Entries": [
+        "■Pulse gun -- ■パルスガン"
+      ]
+    },
+    {
+      "ID": 99900240,
+      "Entries": [
+        "■Plasma gun -- ■プラズマガン"
+      ]
+    },
+    {
+      "ID": 99900250,
+      "Entries": [
+        "■Orbit -- ■オービット"
+      ]
+    },
+    {
+      "ID": 99900260,
+      "Entries": [
+        "■Orbit (Yarijuku) -- ■オービット（槍衾）"
+      ]
+    },
+    {
+      "ID": 99900270,
+      "Entries": [
+        "■Flame radiation -- ■火炎放射"
+      ]
+    },
+    {
+      "ID": 99900280,
+      "Entries": [
+        "■Substance shield -- ■実体シールド"
+      ]
+    },
+    {
+      "ID": 99900290,
+      "Entries": [
+        "■PA shield -- ■PAシールド"
+      ]
+    },
+    {
+      "ID": 99900300,
+      "Entries": [
+        "■Bash shield -- ■バッシュシールド"
+      ]
+    },
+    {
+      "ID": 99900310,
+      "Entries": [
+        "■Laser blade -- ■レーザーブレード"
+      ]
+    },
+    {
+      "ID": 99900320,
+      "Entries": [
+        "■Heat ax -- ■ヒートアックス"
+      ]
+    },
+    {
+      "ID": 99900330,
+      "Entries": [
+        "■Kick -- ■キック"
+      ]
+    },
+    {
+      "ID": 99900340,
+      "Entries": [
+        "■Laser whip -- ■レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 99900350,
+      "Entries": [
+        "■EN Lance -- ■ENランス"
+      ]
+    },
+    {
+      "ID": 99900360,
+      "Entries": [
+        "■Plasma pile -- ■プラズマパイル"
+      ]
+    },
+    {
+      "ID": 99900370,
+      "Entries": [
+        "■Flare -- ■フレア"
+      ]
+    },
+    {
+      "ID": 99901000,
+      "Entries": [
+        "■Fighting general purpose -- ■格闘汎用"
+      ]
+    },
+    {
+      "ID": 99902000,
+      "Entries": [
+        "■Blast general purpose -- ■爆風汎用"
+      ]
+    },
+    {
+      "ID": 99902100,
+      "Entries": [
+        "■Blast general purpose (small) -- ■爆風汎用(小）"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "■Up to addition -- ■加算まで"
+      ]
+    },
+    {
+      "ID": 99990010,
+      "Entries": [
+        "■(Small) Up to medium stagger -- ■（小）中よろけまで"
+      ]
+    },
+    {
+      "ID": 99990020,
+      "Entries": [
+        "■Until the big stagger -- ■大よろけまで"
+      ]
+    },
+    {
+      "ID": 99990030,
+      "Entries": [
+        "■Until it blows away -- ■吹っ飛びまで"
+      ]
+    },
+    {
+      "ID": 99990040,
+      "Entries": [
+        "■No major staggers -- ■大よろけのみ無し"
+      ]
+    },
+    {
+      "ID": 99990120,
+      "Entries": [
+        "■Minimum small stagger _ up to large stagger -- ■最低小よろけ_大よろけまで"
+      ]
+    },
+    {
+      "ID": 99990130,
+      "Entries": [
+        "■Minimum slight stagger_until blown away -- ■最低小よろけ_吹っ飛びまで"
+      ]
+    },
+    {
+      "ID": 99996420,
+      "Entries": [
+        "■Mining ship eyeball main gun (spread) -- ■採掘艦目玉主砲（拡散）"
+      ]
+    }
+  ]
+}

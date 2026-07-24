@@ -1,0 +1,27 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Event Flag",
+    "Tags": [
+        "Term",
+        "Flag"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A numerical identifier with an on/off value.",
+        "These are used extensively to track the game world state.",
+        "",
+        "For example, in Dark Souls III, flag 9314 is used for Aldrich being killed.",
+        "Flag 53100010 is used for whether the settlement bone shard has been picked up.",
+        "Flag 13700003 is used for whether the Anor Londo bonfire has been reached.",
+        "The first is done from emevd, and the latter two are configured in params.",
+        "",
+        "Only certain ranges of flags are persistently saved - this is hardcoded in the exe.",
+        "Any flag ending in 5xxx is never saved.",
+        "",
+        "One final place event flags come from is events themselves, when an event ends, either explicitly or from executing its final instruction, a flag is turned on for that event id.",
+        "",
+        "If an event is instantiated multiple times in different slots, event id + slot number is used instead."
+    ]
+}

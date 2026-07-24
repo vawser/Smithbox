@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a region within the map." />
+  
+  <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the part."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the part, in degrees."
+    RotationProperty="" />
+    
+    <RegionID
+    AltName="Region ID"
+    Wiki="Identifies the region in event scripts." />
+    
+    <Unk40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <MapStudioLayer
+    AltName="Map Studio Layer"
+    Wiki="Controls whether the region is active in different ceremonies." />
+    
+    <UnkA
+    AltName="Unknown A"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <UnkB
+    AltName="Unknown B"
+    Wiki=""
+    ArrayProperty="" />
+    
+    <UnkE08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki="" />
+    
+    <UnkS04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkS0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
+    
+    <ActivationPartIndex
+    IndexProperty="" />
+    
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="COMPOSITION_TYPE" >
+        <Option Value="0" Name="Addition" />
+        <Option Value="2" Name="Subtraction" />
+    </Enum>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,73 @@
+{
+  "Param": "BEHAVIOR_PARAM_ST",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BEHAVIOR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "variationId",
+      "Name": "行動バリエーションID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。実機上では直接使用しません。"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "行動判定ID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。このIDはTimeActEditorで入力される行動判定IDと一致させます。実機上では直接使用しません。"
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "IDルール用",
+      "Description": "ID算出ルール用"
+    },
+    {
+      "Field": "refType",
+      "Name": "参照IDタイプ",
+      "Description": "参照IDを間違わないように指定."
+    },
+    {
+      "Field": "wepCost",
+      "Name": "武器消費コスト",
+      "Description": "行動時に武器ごとに設定されたコストを消費するかを設定。 "
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング0",
+      "Description": "パディング0."
+    },
+    {
+      "Field": "refId",
+      "Name": "参照ID",
+      "Description": "攻撃力、飛び道具、特殊効果パラメータのID、refTypeによって使い分けられる。"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX バリエーションID",
+      "Description": "ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）"
+    },
+    {
+      "Field": "stamina",
+      "Name": "消費スタミナ",
+      "Description": "行動時の消費スタミナ量を設定."
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP",
+      "Description": "行動時の消費MP量を設定."
+    },
+    {
+      "Field": "category",
+      "Name": "カテゴリ",
+      "Description": "スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する\r\n"
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "消費人間性",
+      "Description": "行動時の消費人間性量を設定"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": "パディング1."
+    }
+  ]
+}

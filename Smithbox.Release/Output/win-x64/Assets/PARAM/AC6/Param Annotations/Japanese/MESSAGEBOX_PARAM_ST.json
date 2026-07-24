@@ -1,0 +1,43 @@
+{
+  "Param": "MESSAGEBOX_PARAM_ST",
+  "Type": "MESSAGEBOX_PARAM_ST",
+  "Name": "MESSAGEBOX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "msgCategory",
+      "Name": "カテゴリ",
+      "Description": "メッセージツールの種類"
+    },
+    {
+      "Field": "requestPause",
+      "Name": "ポーズ",
+      "Description": "ポーズをかけるか"
+    },
+    {
+      "Field": "pad0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "singleActivityCtrl",
+      "Name": "シングルプレイ",
+      "Description": "シングルプレイ用自動遷移に対する制御"
+    },
+    {
+      "Field": "pad1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "multiActivityCtrl",
+      "Name": "マルチプレイ",
+      "Description": "マルチプレイ用自動遷移に対する制御"
+    },
+    {
+      "Field": "pad2",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

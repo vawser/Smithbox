@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
+  
+  <Field>
+    <ObjPartName1
+    AltName="Part Name: 1"
+    Wiki="The collision or map piece that controls loading of the object."
+    MapRef="Part-Part" />
+    
+    <ObjPartIndex1
+    IndexProperty="" />
+    
+    <BreakTerm
+    AltName="Break Term"
+    Wiki="" />
+    
+    <NetSyncType
+    AltName="Network Synchronization Type"
+    Wiki="" 
+    IsBool="" />
+    
+    <UnkT0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <SetMainObjStructureBooleans
+    AltName="Set Main Object Structure Booleans"
+    Wiki=""
+    IsBool="" />
+    
+    <AnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this object to idle with." />
+    
+    <ModelSfxParamRelativeID
+    AltName="Model Particle Offset ID"
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
+    
+    <UnkT1A
+    AltName="Unknown: 0x1A"
+    Wiki="" />
+    
+    <ObjPartName2
+    AltName="Part Name: 2"
+    Wiki="The collision or map piece that controls loading of the object."
+    MapRef="Part-Part" />
+    
+    <ObjPartIndex2
+    IndexProperty="" />
+    
+    <ObjPartName3
+    AltName="Part Name: 3"
+    Wiki="The collision or map piece that controls loading of the object."
+    MapRef="Part-Part" />
+    
+    <ObjPartIndex3
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

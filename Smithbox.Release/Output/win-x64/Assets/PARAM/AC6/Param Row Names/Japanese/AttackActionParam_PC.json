@@ -1,0 +1,2513 @@
+{
+  "Name": "AttackActionParam_PC",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "nothing -- 何もなし"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Bare hands (fighting) -- 素手（格闘）"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "FNR right hand_rifle (weapon transformation test) -- FNR\u3000右手_ライフル（武器変形テスト）"
+      ]
+    },
+    {
+      "ID": 291100,
+      "Entries": [
+        "FNR right hand_shotgun -- FNR\u3000右手_ショットガン"
+      ]
+    },
+    {
+      "ID": 291200,
+      "Entries": [
+        "FNR right hand_machine gun -- FNR\u3000右手_マシンガン"
+      ]
+    },
+    {
+      "ID": 291300,
+      "Entries": [
+        "FNR right hand_bazooka -- FNR\u3000右手_バズーカ"
+      ]
+    },
+    {
+      "ID": 291400,
+      "Entries": [
+        "FNR Right Hand_Handgun -- FNR\u3000右手_ハンドガン"
+      ]
+    },
+    {
+      "ID": 291500,
+      "Entries": [
+        "FNR Right Hand_Railgun -- FNR\u3000右手_レールガン"
+      ]
+    },
+    {
+      "ID": 291600,
+      "Entries": [
+        "FNR Right hand_Cannon -- FNR\u3000右手_キャノン"
+      ]
+    },
+    {
+      "ID": 291700,
+      "Entries": [
+        "FNR right hand_laser rifle -- FNR\u3000右手_レーザーライフル"
+      ]
+    },
+    {
+      "ID": 291800,
+      "Entries": [
+        "FNR right hand_rifle blade -- FNR\u3000右手_ライフルブレード"
+      ]
+    },
+    {
+      "ID": 291900,
+      "Entries": [
+        "FNR right hand_rifle (weapon switching test) -- FNR\u3000右手_ライフル（武器持ち替えテスト）"
+      ]
+    },
+    {
+      "ID": 292000,
+      "Entries": [
+        "FNR right shoulder -- FNR 右肩"
+      ]
+    },
+    {
+      "ID": 292100,
+      "Entries": [
+        "FNR Right Shoulder_Bayonet (Weapon Transformation Test) -- FNR 右肩_銃剣（武器変形テスト）"
+      ]
+    },
+    {
+      "ID": 292800,
+      "Entries": [
+        "FNR Right Shoulder_Combined Weapon -- FNR\u3000右肩_合体武器"
+      ]
+    },
+    {
+      "ID": 294800,
+      "Entries": [
+        "FNR right shoulder_combined weapon (test model) -- FNR\u3000右肩_合体武器（テストモデル）"
+      ]
+    },
+    {
+      "ID": 292900,
+      "Entries": [
+        "FNR right hand_blade (weapon switching test) -- FNR\u3000右手_ブレード（武器持ち替えテスト）"
+      ]
+    },
+    {
+      "ID": 292700,
+      "Entries": [
+        "FNR right hand_blade (weapon transformation test) -- FNR\u3000右手_ブレード（武器変形テスト）"
+      ]
+    },
+    {
+      "ID": 292600,
+      "Entries": [
+        "FNR left hand_blade (weapon transformation test) -- FNR\u3000左手_ブレード（武器変形テスト）"
+      ]
+    },
+    {
+      "ID": 299000,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_double hanger) -- FNR\u3000武器マウントパーツ（右肩_ダブルハンガー）"
+      ]
+    },
+    {
+      "ID": 299100,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_single hanger) -- FNR\u3000武器マウントパーツ（右肩_シングルハンガー）"
+      ]
+    },
+    {
+      "ID": 299200,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_double hanger) -- FNR\u3000武器マウントパーツ（左肩_ダブルハンガー）"
+      ]
+    },
+    {
+      "ID": 299300,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_single hanger) -- FNR\u3000武器マウントパーツ（左肩_シングルハンガー）"
+      ]
+    },
+    {
+      "ID": 293000,
+      "Entries": [
+        "FNR left shoulder -- FNR 左肩"
+      ]
+    },
+    {
+      "ID": 293100,
+      "Entries": [
+        "FNR Left Shoulder_Gatling (Weapon Animation Test) -- FNR 左肩_ガトリング（武器アニメテスト）"
+      ]
+    },
+    {
+      "ID": 293200,
+      "Entries": [
+        "FNR Left Shoulder_Cannon (Weapon Animation Test) -- FNR 左肩_キャノン（武器アニメテスト）"
+      ]
+    },
+    {
+      "ID": 293300,
+      "Entries": [
+        "FNR left shoulder_8 vertical missiles -- FNR 左肩_8連垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 293500,
+      "Entries": [
+        "FNR left shoulder_short range missile -- FNR 左肩_近距離ミサイル"
+      ]
+    },
+    {
+      "ID": 293700,
+      "Entries": [
+        "FNR left shoulder_point-specific missile -- FNR 左肩_地点指定型ミサイル"
+      ]
+    },
+    {
+      "ID": 293800,
+      "Entries": [
+        "FNR left shoulder_AI missile -- FNR 左肩_AIミサイル"
+      ]
+    },
+    {
+      "ID": 293600,
+      "Entries": [
+        "FNR Left Shoulder_Gatling & Vertical Missile -- FNR 左肩_ガトリング＆垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 293400,
+      "Entries": [
+        "FNR left shoulder twin missile -- FNR 左肩連装ミサイル"
+      ]
+    },
+    {
+      "ID": 293900,
+      "Entries": [
+        "FNR left shoulder_2 stage launch missile -- FNR 左肩_2段階発射ミサイル"
+      ]
+    },
+    {
+      "ID": 1291000,
+      "Entries": [
+        "FNR Right hand_Rifle_After weapon switch -- FNR\u3000右手_ライフル_武器切り替え後"
+      ]
+    },
+    {
+      "ID": 1293100,
+      "Entries": [
+        "FNR left shoulder_Gatling_after weapon switching (weapon animation test) -- FNR 左肩_ガトリング_武器切り替え後（武器アニメテスト）"
+      ]
+    },
+    {
+      "ID": 1293200,
+      "Entries": [
+        "FNR Left Shoulder_Cannon_After weapon switching (weapon animation test) -- FNR 左肩_キャノン_武器切り替え後（武器アニメテスト）"
+      ]
+    },
+    {
+      "ID": 2190000,
+      "Entries": [
+        "FNR Shield -- FNR 盾"
+      ]
+    },
+    {
+      "ID": 2191000,
+      "Entries": [
+        "For FNR shield destruction test -- FNR 盾破壊テスト用"
+      ]
+    },
+    {
+      "ID": 2191500,
+      "Entries": [
+        "FNR shield gimmick test 01 -- FNR 盾ギミックテスト用01"
+      ]
+    },
+    {
+      "ID": 2191600,
+      "Entries": [
+        "FNR shield gimmick test 02 -- FNR 盾ギミックテスト用02"
+      ]
+    },
+    {
+      "ID": 2192000,
+      "Entries": [
+        "FNR Shield Temporary Troll -- FNR 盾暫定トロル用"
+      ]
+    },
+    {
+      "ID": 2193000,
+      "Entries": [
+        "FNR Shield Laser Shield -- FNR 盾レーザー盾"
+      ]
+    },
+    {
+      "ID": 2193100,
+      "Entries": [
+        "FNR Shield Laser Shield -- FNR 盾レーザー盾"
+      ]
+    },
+    {
+      "ID": 2194000,
+      "Entries": [
+        "FNR Stealth Shield -- FNR ステルス盾"
+      ]
+    },
+    {
+      "ID": 2195000,
+      "Entries": [
+        "FNR PA Shield -- FNR PA盾"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "FNR aim mode (dummy parts) -- FNR エイムモード（ダミーパーツ）"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "FNR stealth cloak test (dummy parts) -- FNR ステルスマントtest（ダミーパーツ）"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "FNR vehicle confirmation parts -- FNR ビークル確認用パーツ"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "[old] FNR Two-handed confirmation test -- 【old】FNR\u3000両手持ち確認用テスト"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "[old] FNR Laser SFX confirmation test -- 【old】FNR\u3000レーザーSFX確認用テスト"
+      ]
+    },
+    {
+      "ID": 3000200,
+      "Entries": [
+        "[old] [9 inside] FNR right hand_Rezasuna_SFX confirmation -- 【old】【9中】FNR\u3000右手_レザスナ_SFX確認用"
+      ]
+    },
+    {
+      "ID": 3000300,
+      "Entries": [
+        "[old] [9 inside] FNR right hand_Bazooka_for checking combustion settings -- 【old】【9中】FNR\u3000右手_バズーカ_燃焼設定確認用"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "FNR\u3000Both shoulders_left cannon -- FNR\u3000両肩_左キャノン"
+      ]
+    },
+    {
+      "ID": 3001100,
+      "Entries": [
+        "FNR\u3000Both shoulders_Right cannon -- FNR\u3000両肩_右キャノン"
+      ]
+    },
+    {
+      "ID": 3001200,
+      "Entries": [
+        "FNR left shoulder_sniper cannon (L1: aim mode) -- FNR\u3000左肩_スナイパーキャノン（L1：エイムモード）"
+      ]
+    },
+    {
+      "ID": 3001600,
+      "Entries": [
+        "FNR Right Shoulder_Sniper Cannon (L1: Aim Mode) -- FNR\u3000右肩_スナイパーキャノン（L1：エイムモード）"
+      ]
+    },
+    {
+      "ID": 3001300,
+      "Entries": [
+        "FNR left shoulder_cannon (L1: reload) -- FNR\u3000左肩_キャノン（L1：リロード）"
+      ]
+    },
+    {
+      "ID": 3001400,
+      "Entries": [
+        "FNR left shoulder_cannon -- FNR\u3000左肩_キャノン"
+      ]
+    },
+    {
+      "ID": 3001500,
+      "Entries": [
+        "FNR Right Shoulder_Cannon -- FNR\u3000右肩_キャノン"
+      ]
+    },
+    {
+      "ID": 3002200,
+      "Entries": [
+        "FNR Right hand_Rifle (L1: Aim mode) -- FNR\u3000右手_ライフル（L1：エイムモード）"
+      ]
+    },
+    {
+      "ID": 3002300,
+      "Entries": [
+        "FNR right hand_rifle (L1: reload) -- FNR\u3000右手_ライフル（L1：リロード）"
+      ]
+    },
+    {
+      "ID": 3002400,
+      "Entries": [
+        "FNR right hand_rifle (equipped with left shoulder cannon) -- FNR\u3000右手_ライフル（左肩キャノン装備）"
+      ]
+    },
+    {
+      "ID": 3002500,
+      "Entries": [
+        "FNR right hand_rifle (equipped with right shoulder cannon) -- FNR\u3000右手_ライフル（右肩キャノン装備）"
+      ]
+    },
+    {
+      "ID": 3003000,
+      "Entries": [
+        "FNR left hand_PA shield -- FNR\u3000左手_PA盾"
+      ]
+    },
+    {
+      "ID": 3003100,
+      "Entries": [
+        "FNR left hand_laser whip -- FNR\u3000左手_レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 3003200,
+      "Entries": [
+        "FNR left hand_laser whip (equipment location: left hand 1) -- FNR\u3000左手_レーザーウィップ（装備個所：左手1）"
+      ]
+    },
+    {
+      "ID": 3004000,
+      "Entries": [
+        "FNR Right Hand_Handgun (One Hand: Quick Shot) -- FNR\u3000右手_ハンドガン（片手：クイックショット）"
+      ]
+    },
+    {
+      "ID": 3004100,
+      "Entries": [
+        "FNR left hand_blade (one hand: quick shot) -- FNR\u3000左手_ブレード（片手：クイックショット）"
+      ]
+    },
+    {
+      "ID": 3004200,
+      "Entries": [
+        "FNR right hand_hand gun (both hands: double trigger) -- FNR\u3000右手_ハンドガン（両手：ダブルトリガー）"
+      ]
+    },
+    {
+      "ID": 3004300,
+      "Entries": [
+        "FNR left hand_handgun (both hands: double trigger) -- FNR\u3000左手_ハンドガン（両手：ダブルトリガー）"
+      ]
+    },
+    {
+      "ID": 3005000,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: high laser) -- FNR\u3000右手_レーザーライフル（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 3005100,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: shotgun) -- FNR\u3000右手_レーザーライフル（チャージ後：ショットガン）"
+      ]
+    },
+    {
+      "ID": 3005200,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: plasma gun) -- FNR\u3000右手_レーザーライフル（チャージ後：プラズマガン）"
+      ]
+    },
+    {
+      "ID": 3006000,
+      "Entries": [
+        "FNR left shoulder_orbit cannon -- FNR\u3000左肩_オービットキャノン"
+      ]
+    },
+    {
+      "ID": 3006100,
+      "Entries": [
+        "FNR\u3000Left shoulder_surface control missile -- FNR\u3000左肩_面制圧型ミサイル"
+      ]
+    },
+    {
+      "ID": 3006200,
+      "Entries": [
+        "FNR left hand_chain hammer -- FNR\u3000左手_チェインハンマー"
+      ]
+    },
+    {
+      "ID": 3006300,
+      "Entries": [
+        "FNR right hand_silencer rifle -- FNR\u3000右手_サイレンサーライフル"
+      ]
+    },
+    {
+      "ID": 3007000,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (left dummy) -- FNR\u3000両肩_垂直ミサイル(左ダミー)"
+      ]
+    },
+    {
+      "ID": 3007100,
+      "Entries": [
+        "FNR left shoulder_proximity fuze missile -- FNR\u3000左肩_近接信管ミサイル"
+      ]
+    },
+    {
+      "ID": 3007200,
+      "Entries": [
+        "FNR left shoulder_plasma missile -- FNR\u3000左肩_プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 3007300,
+      "Entries": [
+        "FNR left shoulder_multi missile -- FNR\u3000左肩_マルチミサイル"
+      ]
+    },
+    {
+      "ID": 3007400,
+      "Entries": [
+        "FNR left shoulder_rocket -- FNR\u3000左肩_ロケット"
+      ]
+    },
+    {
+      "ID": 3007900,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (right) -- FNR\u3000両肩_垂直ミサイル(右)"
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "FNR right hand_hand missile -- FNR\u3000右手_ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 3008100,
+      "Entries": [
+        "FNR Right hand_Hand rocket -- FNR\u3000右手_ハンドロケット"
+      ]
+    },
+    {
+      "ID": 3008200,
+      "Entries": [
+        "FNR right hand_sniper rifle -- FNR\u3000右手_スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 3008300,
+      "Entries": [
+        "FNR right hand_plasma rifle -- FNR\u3000右手_プラズマライフル"
+      ]
+    },
+    {
+      "ID": 3008400,
+      "Entries": [
+        "FNR Right Hand_Guided Bullet Rifle -- FNR\u3000右手_誘導弾ライフル"
+      ]
+    },
+    {
+      "ID": 3008500,
+      "Entries": [
+        "FNR right hand_pulse machine gun -- FNR\u3000右手_パルスマシンガン"
+      ]
+    },
+    {
+      "ID": 3009000,
+      "Entries": [
+        "FNR right shoulder_short range missile -- FNR\u3000右肩_近距離ミサイル"
+      ]
+    },
+    {
+      "ID": 3009100,
+      "Entries": [
+        "FNR right shoulder_point-specific missile -- FNR\u3000右肩_地点指定型ミサイル"
+      ]
+    },
+    {
+      "ID": 3009200,
+      "Entries": [
+        "FNR Right Shoulder_AI Missile -- FNR\u3000右肩_AIミサイル"
+      ]
+    },
+    {
+      "ID": 3009300,
+      "Entries": [
+        "FNR Right Shoulder_Orbit Cannon -- FNR\u3000右肩_オービットキャノン"
+      ]
+    },
+    {
+      "ID": 3009400,
+      "Entries": [
+        "FNR right shoulder_surface control missile -- FNR\u3000右肩_面制圧型ミサイル"
+      ]
+    },
+    {
+      "ID": 3009500,
+      "Entries": [
+        "FNR Right Shoulder_Proximity Fuze Missile -- FNR\u3000右肩_近接信管ミサイル"
+      ]
+    },
+    {
+      "ID": 3009600,
+      "Entries": [
+        "FNR Right Shoulder_Plasma Missile -- FNR\u3000右肩_プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 3009700,
+      "Entries": [
+        "FNR Right Shoulder_Multi Missile -- FNR\u3000右肩_マルチミサイル"
+      ]
+    },
+    {
+      "ID": 3009800,
+      "Entries": [
+        "FNR Right Shoulder_Rocket -- FNR\u3000右肩_ロケット"
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "[old] FNR two-handed confirmation test (after switching weapons) -- 【old】FNR\u3000両手持ち確認用テスト（武器切り替え後）"
+      ]
+    },
+    {
+      "ID": 3010100,
+      "Entries": [
+        "[old] FNR laser SFX confirmation test (after weapon switching) -- 【old】FNR\u3000レーザーSFX確認用テスト（武器切り替え後）"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "FNR left hand_rifle -- FNR\u3000左手_ライフル"
+      ]
+    },
+    {
+      "ID": 3020100,
+      "Entries": [
+        "FNR left hand_bazooka -- FNR\u3000左手_バズーカ"
+      ]
+    },
+    {
+      "ID": 3020200,
+      "Entries": [
+        "FNR left hand_sniper rifle -- FNR\u3000左手_スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "FNR Core Special Features_Assault Armor -- FNR\u3000コア特殊機能_アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 3100100,
+      "Entries": [
+        "FNR Core Special Features_Blade Strengthening -- FNR\u3000コア特殊機能_ブレード強化"
+      ]
+    },
+    {
+      "ID": 3800000,
+      "Entries": [
+        "FNR right hand_rifle (left and right weapon switching test) -- FNR\u3000右手_ライフル（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3800100,
+      "Entries": [
+        "FNR left hand_rifle (left and right weapon switching test) -- FNR\u3000左手_ライフル（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3800200,
+      "Entries": [
+        "FNR left hand_bazooka (left and right weapon switching test) -- FNR\u3000左手_バズーカ（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3800300,
+      "Entries": [
+        "FNR left hand_railgun (left and right weapon switching test) -- FNR\u3000左手_レールガン（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3800400,
+      "Entries": [
+        "FNR left hand_stealth shield (left and right weapon switching test) -- FNR\u3000左手_ステルス盾（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3800500,
+      "Entries": [
+        "FNR left hand_blade (left and right weapon switching test) -- FNR\u3000左手_ブレード（左右武器切り替えテスト）"
+      ]
+    },
+    {
+      "ID": 3900000,
+      "Entries": [
+        "FNR Right Hand Rifle +1 Kira Special -- FNR\u3000右手_ライフル +1\u3000吉良スペシャル"
+      ]
+    },
+    {
+      "ID": 3900100,
+      "Entries": [
+        "FNR Right Hand_Bazooka +1 Kira Special -- FNR\u3000右手_バズーカ\u3000+1\u3000吉良スペシャル"
+      ]
+    },
+    {
+      "ID": 3900200,
+      "Entries": [
+        "FNR Right hand_Suna +1 Kira Special -- FNR\u3000右手_スナ +1\u3000吉良スペシャル"
+      ]
+    },
+    {
+      "ID": 3901000,
+      "Entries": [
+        "FNR Right hand_Rifle +1 Enhancement difference -- FNR\u3000右手_ライフル +1\u3000強化差分"
+      ]
+    },
+    {
+      "ID": 3901100,
+      "Entries": [
+        "FNR Right hand_Bazooka +1 Enhancement difference -- FNR\u3000右手_バズーカ +1\u3000強化差分"
+      ]
+    },
+    {
+      "ID": 3901200,
+      "Entries": [
+        "FNR Right hand_Suna +1 Enhancement difference -- FNR\u3000右手_スナ +1\u3000強化差分"
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        "FNR left shoulder_short range missile (equipped with quadruped turret mode) -- FNR 左肩_近距離ミサイル（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4001100,
+      "Entries": [
+        "FNR right shoulder_short range missile (equipped with quadruped turret mode) -- FNR 右肩_近距離ミサイル（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4001200,
+      "Entries": [
+        "FNR left shoulder_rocket (equipped with quadruped turret mode) -- FNR 左肩_ロケット（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4001300,
+      "Entries": [
+        "FNR Right Shoulder_Rocket (equipped with quadruped turret mode) -- FNR 右肩_ロケット（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4001400,
+      "Entries": [
+        "FNR left shoulder_cannon (equipped with quadruped turret mode) -- FNR 左肩_キャノン（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4001500,
+      "Entries": [
+        "FNR right shoulder_cannon (equipped with quadruped turret mode) -- FNR 右肩_キャノン（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4005000,
+      "Entries": [
+        "FNR right hand_rifle (equipped with quadruped turret mode) -- FNR 右手_ライフル（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4006000,
+      "Entries": [
+        "FNR left hand_plasma rifle (equipped with quadruped turret mode) -- FNR 左手_プラズマライフル（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4006100,
+      "Entries": [
+        "FNR left hand_pulse machine gun (equipped with quadruped turret mode) -- FNR 左手_パルスマシンガン（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4007000,
+      "Entries": [
+        "FNR stealth shield (equipped with quadruped turret mode) -- FNR ステルス盾（四脚砲台モード装備）"
+      ]
+    },
+    {
+      "ID": 4101200,
+      "Entries": [
+        "FNR Right hand_Rifle_Initial equipment -- FNR\u3000右手_ライフル _初期装備"
+      ]
+    },
+    {
+      "ID": 4101300,
+      "Entries": [
+        "FNR left hand_chain hammer_initial equipment -- FNR\u3000左手_チェインハンマー_初期装備"
+      ]
+    },
+    {
+      "ID": 4101400,
+      "Entries": [
+        "FNR left hand_blade_initial equipment -- FNR\u3000左手_ブレード_初期装備"
+      ]
+    },
+    {
+      "ID": 4102000,
+      "Entries": [
+        "FNR Right hand_Rifle_Weapon size confirmation -- FNR\u3000右手_ライフル_武器サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102100,
+      "Entries": [
+        "FNR Right hand_Bazooka_Weapon size confirmation -- FNR\u3000右手_バズーカ_武器サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102200,
+      "Entries": [
+        "FNR Right hand_Snap_Weapon_Size confirmation -- FNR\u3000右手_スナ_武器_サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102300,
+      "Entries": [
+        "FNR right hand_machine gun_size confirmation -- FNR\u3000右手_マシンガン_サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102400,
+      "Entries": [
+        "FNR Right hand_Handgun_Size confirmation -- FNR\u3000右手_ハンドガン_サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102500,
+      "Entries": [
+        "FNR Right hand_lower weapon_weapon size confirmation -- FNR\u3000右手_下持ち武装_武器サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102600,
+      "Entries": [
+        "FNR Left hand_lower weapon_weapon size confirmation -- FNR\u3000左手_下持ち武装_武器サイズ確認"
+      ]
+    },
+    {
+      "ID": 4102700,
+      "Entries": [
+        "FNR left hand_pulse machine gun -- FNR\u3000左手_パルスマシンガン"
+      ]
+    },
+    {
+      "ID": 4102800,
+      "Entries": [
+        "FNR left hand_blade_initial equipment -- FNR\u3000左手_ブレード_初期装備"
+      ]
+    },
+    {
+      "ID": 4102900,
+      "Entries": [
+        "FNR Right hand_Hand rocket -- FNR\u3000右手_ハンドロケット"
+      ]
+    },
+    {
+      "ID": 4103000,
+      "Entries": [
+        "FNR right hand_machine gun -- FNR\u3000右手_マシンガン"
+      ]
+    },
+    {
+      "ID": 4103100,
+      "Entries": [
+        "FNR Right hand_Gatling gun -- FNR\u3000右手_ガトリングガン"
+      ]
+    },
+    {
+      "ID": 4103200,
+      "Entries": [
+        "FNR\u3000Right Hand_Flamethrower -- FNR\u3000右手_火炎放射器"
+      ]
+    },
+    {
+      "ID": 4103300,
+      "Entries": [
+        "FNR right hand_irradiation laser -- FNR\u3000右手_照射レーザー"
+      ]
+    },
+    {
+      "ID": 4103400,
+      "Entries": [
+        "FNR left hand pile -- FNR\u3000左手パイル"
+      ]
+    },
+    {
+      "ID": 4104000,
+      "Entries": [
+        "FNR left shoulder_Small missile size confirmation -- FNR\u3000左肩_小型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104100,
+      "Entries": [
+        "FNR right shoulder_Small missile size confirmation -- FNR\u3000右肩_小型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104200,
+      "Entries": [
+        "FNR left shoulder_medium missile size confirmation -- FNR\u3000左肩_中型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104300,
+      "Entries": [
+        "FNR right shoulder_medium missile size confirmation -- FNR\u3000右肩_中型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104400,
+      "Entries": [
+        "FNR left shoulder_Large missile size confirmation -- FNR\u3000左肩_大型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104500,
+      "Entries": [
+        "FNR right shoulder_Large missile size confirmation -- FNR\u3000右肩_大型ミサイルサイズ確認"
+      ]
+    },
+    {
+      "ID": 4104700,
+      "Entries": [
+        "FNR Right Shoulder_Rocket -- FNR\u3000右肩_ロケット"
+      ]
+    },
+    {
+      "ID": 4104800,
+      "Entries": [
+        "FNR left shoulder_rocket -- FNR\u3000左肩_ロケット"
+      ]
+    },
+    {
+      "ID": 4104900,
+      "Entries": [
+        "FNR Right Shoulder_Cannon -- FNR\u3000右肩_キャノン"
+      ]
+    },
+    {
+      "ID": 4105000,
+      "Entries": [
+        "FNR left shoulder_cannon -- FNR\u3000左肩_キャノン"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "FNR Rifle -- FNR\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "FNR assault rifle -- FNR\u3000アサルトライフル"
+      ]
+    },
+    {
+      "ID": 5000200,
+      "Entries": [
+        "FNR machine gun -- FNR\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 5000300,
+      "Entries": [
+        "FNR Gatling Gun -- FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5000400,
+      "Entries": [
+        "FNR Bazooka -- FNR\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 5000500,
+      "Entries": [
+        "FNR Shotgun -- FNR\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 5000600,
+      "Entries": [
+        "FNR hand missile -- FNR\u3000ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 5000700,
+      "Entries": [
+        "FNR hand rocket -- FNR\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 5000800,
+      "Entries": [
+        "FNR Grenade Rifle -- FNR\u3000グレネードライフル"
+      ]
+    },
+    {
+      "ID": 5000900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser) -- FNR\u3000レーザーライフル（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "FNR plasma rifle -- FNR\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "FNR Handgun -- FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5001200,
+      "Entries": [
+        "FNR large caliber handgun -- FNR\u3000大口径ハンドガン"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle -- FNR\u3000振動パルスライフル"
+      ]
+    },
+    {
+      "ID": 5001400,
+      "Entries": [
+        "FNR Flamethrower -- FNR\u3000火炎放射器"
+      ]
+    },
+    {
+      "ID": 5001500,
+      "Entries": [
+        "FNR irradiation laser -- FNR\u3000照射レーザー"
+      ]
+    },
+    {
+      "ID": 5001600,
+      "Entries": [
+        "FNR bolt action rifle -- FNR\u3000ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 5001700,
+      "Entries": [
+        "FNR 3-point burst rifle -- FNR\u30003点バーストライフル"
+      ]
+    },
+    {
+      "ID": 5001800,
+      "Entries": [
+        "[test] FNR semi-automatic rifle (with charge shot) -- 【test】FNR\u3000セミオートライフル（チャージショットあり）"
+      ]
+    },
+    {
+      "ID": 5005000,
+      "Entries": [
+        "FNR left hand_blade -- FNR\u3000左手_ブレード"
+      ]
+    },
+    {
+      "ID": 5005100,
+      "Entries": [
+        "FNR left hand_laser whip -- FNR\u3000左手_レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 5005200,
+      "Entries": [
+        "FNR left hand_chain hammer -- FNR\u3000左手_チェインハンマー"
+      ]
+    },
+    {
+      "ID": 5005300,
+      "Entries": [
+        "FNR left hand pile -- FNR\u3000左手パイル"
+      ]
+    },
+    {
+      "ID": 5005400,
+      "Entries": [
+        "FNR left hand_beam naginata -- FNR\u3000左手_ビーム薙刀"
+      ]
+    },
+    {
+      "ID": 5005500,
+      "Entries": [
+        "FNR left hand_PA breaker -- FNR\u3000左手_PAブレイカー"
+      ]
+    },
+    {
+      "ID": 5005600,
+      "Entries": [
+        "FNR left hand_plasma broadsword -- FNR\u3000左手_プラズマブロードソード"
+      ]
+    },
+    {
+      "ID": 5005700,
+      "Entries": [
+        "FNR left hand_explosion pile -- FNR\u3000左手_爆裂パイル"
+      ]
+    },
+    {
+      "ID": 5005800,
+      "Entries": [
+        "FNR left hand_lightweight continuous rapier -- FNR\u3000左手_軽量連突きレイピア"
+      ]
+    },
+    {
+      "ID": 5005900,
+      "Entries": [
+        "FNR left hand_laser lance -- FNR\u3000左手_レーザーランス"
+      ]
+    },
+    {
+      "ID": 5006000,
+      "Entries": [
+        "FNR left hand_chainsaw -- FNR\u3000左手_チェーンソー"
+      ]
+    },
+    {
+      "ID": 5006100,
+      "Entries": [
+        "FNR left hand_dagger -- FNR\u3000左手_ダガー"
+      ]
+    },
+    {
+      "ID": 5006200,
+      "Entries": [
+        "[test] FNR left hand_PA Breaker (strong attack finish version) -- 【test】FNR\u3000左手_PAブレイカー（強攻撃フィニッシュ版）"
+      ]
+    },
+    {
+      "ID": 5006400,
+      "Entries": [
+        "FNR left hand_electromagnetic baton -- FNR\u3000左手_電磁警棒"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "FNR Rifle (two-gun) -- FNR\u3000ライフル（二丁持ち）"
+      ]
+    },
+    {
+      "ID": 5100100,
+      "Entries": [
+        "FNR Rifle (for curved shooting confirmation) -- FNR\u3000ライフル（曲射撃ち確認用）"
+      ]
+    },
+    {
+      "ID": 5100200,
+      "Entries": [
+        "FNR Gatling Gun -- FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5100300,
+      "Entries": [
+        "FNR Handgun -- FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "FNR Rifle -- FNR\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 5500100,
+      "Entries": [
+        "FNR assault rifle -- FNR\u3000アサルトライフル"
+      ]
+    },
+    {
+      "ID": 5500200,
+      "Entries": [
+        "FNR machine gun -- FNR\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 5500300,
+      "Entries": [
+        "FNR Gatling Gun -- FNR\u3000ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5500400,
+      "Entries": [
+        "FNR Bazooka -- FNR\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 5500500,
+      "Entries": [
+        "FNR Shotgun -- FNR\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 5500600,
+      "Entries": [
+        "FNR hand missile -- FNR\u3000ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 5500700,
+      "Entries": [
+        "FNR hand rocket -- FNR\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 5500800,
+      "Entries": [
+        "FNR Grenade Rifle -- FNR\u3000グレネードライフル"
+      ]
+    },
+    {
+      "ID": 5500900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser) -- FNR\u3000レーザーライフル（チャージ後：ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 5501000,
+      "Entries": [
+        "FNR plasma rifle -- FNR\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 5501100,
+      "Entries": [
+        "FNR Handgun -- FNR\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 5501200,
+      "Entries": [
+        "FNR large caliber handgun -- FNR\u3000大口径ハンドガン"
+      ]
+    },
+    {
+      "ID": 5501300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle -- FNR\u3000振動パルスライフル"
+      ]
+    },
+    {
+      "ID": 5501400,
+      "Entries": [
+        "FNR Flamethrower -- FNR\u3000火炎放射器"
+      ]
+    },
+    {
+      "ID": 5501500,
+      "Entries": [
+        "FNR irradiation laser -- FNR\u3000照射レーザー"
+      ]
+    },
+    {
+      "ID": 5501600,
+      "Entries": [
+        "FNR bolt action rifle -- FNR\u3000ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 5501700,
+      "Entries": [
+        "FNR 3-point burst rifle -- FNR\u30003点バーストライフル"
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Right hand ①_Machine gun -- FNR\u3000武器腕_ロックマン式：右手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6001100,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Right hand ②_Bazooka -- FNR\u3000武器腕_ロックマン式：右手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6001500,
+      "Entries": [
+        "FNR Weapon Arm_Rockman style: Left hand ①_Machine gun -- FNR\u3000武器腕_ロックマン式：左手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6001600,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Left hand ②_Bazooka -- FNR\u3000武器腕_ロックマン式：左手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6002000,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Right hand ①_Machine gun -- FNR\u3000武器腕_肩関節：右手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6002100,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Right hand ②_Bazooka -- FNR\u3000武器腕_肩関節：右手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6002500,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Left hand ①_Machine gun -- FNR\u3000武器腕_肩関節：左手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6002600,
+      "Entries": [
+        "FNR\u3000Weapon arm_Shoulder joint: Left hand ②_Bazooka -- FNR\u3000武器腕_肩関節：左手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 7910000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Machine gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_マシンガン（DL1：段階加算）"
+      ]
+    },
+    {
+      "ID": 7910100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Pulse gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_パルスガン（DL1：段階加算）"
+      ]
+    },
+    {
+      "ID": 7910200,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Handgun (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_ハンドガン（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 7910300,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_プラズマライフル（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 7910400,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle (DL2: Stop hit) -- 【test】ダメージ演技確認用（衝撃値）_セミオートライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7910500,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_レーザーライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7910600,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Bazooka (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_バズーカ（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7910700,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shotgun (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_ショットガン（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7910800,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Grenade rifle (DL4: Great stagger) -- 【test】ダメージ演技確認用（衝撃値）_グレネードライフル（DL4：大よろけ）"
+      ]
+    },
+    {
+      "ID": 7910900,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shoulder bazooka (DL5: blown away) -- 【test】ダメージ演技確認用（衝撃値）_肩バズーカ（DL5：吹っ飛び）"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Joint dummy poly attach confirmation model -- 関節別ダミポリアタッチ確認モデル"
+      ]
+    },
+    {
+      "ID": 9800000,
+      "Entries": [
+        "80_ Nakanishi test rifle -- 80_中西テスト用\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 9800100,
+      "Entries": [
+        "80_ Nakanishi test bazooka -- 80_中西テスト用\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 9800200,
+      "Entries": [
+        "80_ Nakanishi test rail gun -- 80_中西テスト用\u3000レールガン"
+      ]
+    },
+    {
+      "ID": 9800300,
+      "Entries": [
+        "80_ Nakanishi test blade -- 80_中西テスト用\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 9800400,
+      "Entries": [
+        "80_ Nakanishi test missile -- 80_中西テスト用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 9800500,
+      "Entries": [
+        "80_Nakanishi test shield -- 80_中西テスト用\u3000シールド"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Semi-auto rifle_standard type -- セミオートライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Assault rifle_n-point burst -- アサルトライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "Assault rifle_standard type -- アサルトライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10010200,
+      "Entries": [
+        "Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "Machine gun_n point burst -- マシンガン_n点バースト"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "Machine gun_standard type -- マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10020200,
+      "Entries": [
+        "Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視"
+      ]
+    },
+    {
+      "ID": 10020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE"
+      ]
+    },
+    {
+      "ID": 10030000,
+      "Entries": [
+        "Gatling gun_standard type -- ガトリングガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "Bazooka_light but low power -- バズーカ_軽めだが威力-低"
+      ]
+    },
+    {
+      "ID": 10040100,
+      "Entries": [
+        "Bazooka_Standard type -- バズーカ_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10040200,
+      "Entries": [
+        "Bazooka_heavy but powerful -- バズーカ_重いが威力-大"
+      ]
+    },
+    {
+      "ID": 10050000,
+      "Entries": [
+        "Shotgun_Collection performance-Low Lucky 13 -- ショットガン_集弾性能-低\u3000ラッキー13"
+      ]
+    },
+    {
+      "ID": 10050100,
+      "Entries": [
+        "Shotgun_Standard type -- ショットガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10050200,
+      "Entries": [
+        "Shotgun_Collection performance-High -- ショットガン_集弾性能-高"
+      ]
+    },
+    {
+      "ID": 10060000,
+      "Entries": [
+        "Grenade rifle_standard type -- グレネードライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10060100,
+      "Entries": [
+        "Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大"
+      ]
+    },
+    {
+      "ID": 10070000,
+      "Entries": [
+        "Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち"
+      ]
+    },
+    {
+      "ID": 10070100,
+      "Entries": [
+        "Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射"
+      ]
+    },
+    {
+      "ID": 10070200,
+      "Entries": [
+        "Handgun_One shot is heavy -- ハンドガン_一発が重い"
+      ]
+    },
+    {
+      "ID": 10070300,
+      "Entries": [
+        "Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）"
+      ]
+    },
+    {
+      "ID": 10070400,
+      "Entries": [
+        "Hand gun ⑤ -- ハンドガン⑤"
+      ]
+    },
+    {
+      "ID": 10070500,
+      "Entries": [
+        "Hand gun ⑥ -- ハンドガン⑥"
+      ]
+    },
+    {
+      "ID": 10070600,
+      "Entries": [
+        "Hand gun ⑦ -- ハンドガン⑦"
+      ]
+    },
+    {
+      "ID": 10080000,
+      "Entries": [
+        "Throwing gun_2 shots (smoke) -- 投擲銃_2連射（スモーク）"
+      ]
+    },
+    {
+      "ID": 10080100,
+      "Entries": [
+        "Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）"
+      ]
+    },
+    {
+      "ID": 10080200,
+      "Entries": [
+        "Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "Hand missile_guided type -- ハンドミサイル_誘導タイプ"
+      ]
+    },
+    {
+      "ID": 10090100,
+      "Entries": [
+        "Hand missile ② -- ハンドミサイル②"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Hand rocket_light -- ハンドロケット_軽め"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "Laser rifle_standard type -- レーザーライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10110200,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique -- ハイレーザーライフル_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "Plasma rifle_standard type -- プラズマライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10120100,
+      "Entries": [
+        "High Laser Rifle Karasawa -- ハイレーザーライフル カラサワ"
+      ]
+    },
+    {
+      "ID": 10130000,
+      "Entries": [
+        "Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い"
+      ]
+    },
+    {
+      "ID": 10130100,
+      "Entries": [
+        "Pulse gun_standard type -- パルスガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "Plasma rifle_weight type -- プラズマライフル_重量タイプ"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "Laser shotgun_zero distance recommended -- レーザーショットガン_零距離推奨"
+      ]
+    },
+    {
+      "ID": 10150100,
+      "Entries": [
+        "Laser shotgun_wide laterally -- レーザーショットガン_横に広い"
+      ]
+    },
+    {
+      "ID": 10150200,
+      "Entries": [
+        "Laser shotgun_M・AI unique -- レーザーショットガン_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 10150300,
+      "Entries": [
+        "Laser shotgun_M・AI unique (red coral ver) -- レーザーショットガン_M・AI ユニーク（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "[test] stun gun -- 【test】スタンガン"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "[test] Stationary shooting weapon (multiple firing at the same time) -- 【test】置き射撃武器（複数同時発射）"
+      ]
+    },
+    {
+      "ID": 10190100,
+      "Entries": [
+        "[test] Stationary shooting weapon (multiple consecutive fires) -- 【test】置き射撃武器（複数連続発射）"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "laser blade -- レーザーブレード"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "Laser Blade_K・AI Unique -- レーザーブレード_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "Laser Blade_M・AI Unique -- レーザーブレード_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "Laser Blade_M・AI Unique (Red Coral ver) -- レーザーブレード_M・AI ユニーク（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "PA breaker -- PAブレイカー"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "plasma broadsword -- プラズマブロードソード"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "laser naginata -- レーザー薙刀"
+      ]
+    },
+    {
+      "ID": 20040000,
+      "Entries": [
+        "laser dagger -- レーザーダガー"
+      ]
+    },
+    {
+      "ID": 20050000,
+      "Entries": [
+        "laser lance -- レーザーランス"
+      ]
+    },
+    {
+      "ID": 20060000,
+      "Entries": [
+        "chainsaw -- チェーンソー"
+      ]
+    },
+    {
+      "ID": 20070000,
+      "Entries": [
+        "electromagnetic hammer -- 電磁ハンマー"
+      ]
+    },
+    {
+      "ID": 20080000,
+      "Entries": [
+        "exploding pile -- 爆裂パイル"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "electromagnetic baton -- 電磁警棒"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "[test] Proximity diffusion bullet -- 【test】近接拡散弾"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "PA Buckler_Standard type -- PAバックラー_標準タイプ"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "PA Buckler_High instantaneous output Jasga Shield -- PAバックラー_瞬間出力高い ジャスガシールド"
+      ]
+    },
+    {
+      "ID": 25000200,
+      "Entries": [
+        "PA Buckler_M・AI Unique -- PAバックラー_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 25010000,
+      "Entries": [
+        "PA shield_standard type -- PAシールド_標準タイプ"
+      ]
+    },
+    {
+      "ID": 25010100,
+      "Entries": [
+        "PA Shield_Strong reduction and easy to reduce damage -- PAシールド_軽減が強く被ダメ抑えやすい"
+      ]
+    },
+    {
+      "ID": 25010200,
+      "Entries": [
+        "PA shield_Strong wave regulation and difficult to break -- PAシールド_整波が強くブレイクされにくい"
+      ]
+    },
+    {
+      "ID": 25010300,
+      "Entries": [
+        "PA Shield_K・AI Unique -- PAシールド_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 25020000,
+      "Entries": [
+        "PA Scutum_Heavy, but strong in mitigation and wave regulation -- PAスクトゥム_重いが軽減も整波も強い"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Plasma missile_standard type 3 series -- プラズマミサイル_標準タイプ\u30003連"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "Plasma missile_standard type 6 units -- プラズマミサイル_標準タイプ\u30006連"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "AI missile_multi-stage guidance 2 series -- AIミサイル_多段誘導\u30002連"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "AI missile_multi-stage guidance single shot -- AIミサイル_多段誘導\u3000単発"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "6 twin missiles -- 連装ミサイル\u30006連"
+      ]
+    },
+    {
+      "ID": 30020100,
+      "Entries": [
+        "Twin missile 4 series -- 連装ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 30020200,
+      "Entries": [
+        "10 twin missiles -- 連装ミサイル\u300010連"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "Special plasma missile_K・AI unique -- 特殊プラズマミサイル_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "Vertical missile 12 series -- 垂直ミサイル\u300012連"
+      ]
+    },
+    {
+      "ID": 30040100,
+      "Entries": [
+        "Vertical missile 8 series -- 垂直ミサイル\u30008連"
+      ]
+    },
+    {
+      "ID": 30040200,
+      "Entries": [
+        "Vertical missile 4 series -- 垂直ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "depleted uranium missile -- 劣化ウランミサイル"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "Special missile_M・AI unique -- 特殊ミサイル_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "Back missile_2Way 3 consecutive -- 背ミサイル_2Way\u30003連"
+      ]
+    },
+    {
+      "ID": 30080100,
+      "Entries": [
+        "Back missile_2way 3-way type -- 背ミサイル_2Way\u30003連中型"
+      ]
+    },
+    {
+      "ID": 30080200,
+      "Entries": [
+        "Back missile_2Way 2 series -- 背ミサイル_2Way\u30002連"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "Back missile_split missile 2 consecutive 6 splits -- 背ミサイル_分裂ミサイル\u30002連6分裂"
+      ]
+    },
+    {
+      "ID": 30090100,
+      "Entries": [
+        "Back missile_fission missile single shot -- 背ミサイル_分裂ミサイル\u3000単発"
+      ]
+    },
+    {
+      "ID": 30090200,
+      "Entries": [
+        "Back missile_split missile 2 series 12 splits -- 背ミサイル_分裂ミサイル\u30002連12分裂"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "[test] Needle missile_typeA -- 【test】ニードルミサイル_typeA"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "[test] Container missile -- 【test】コンテナミサイル"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "[test] Cluster missile -- 【test】クラスターミサイル"
+      ]
+    },
+    {
+      "ID": 30140000,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst) -- 【test】単発式ファンネル（実弾3点バースト）"
+      ]
+    },
+    {
+      "ID": 30140100,
+      "Entries": [
+        "[test] Single-shot funnel (laser) -- 【test】単発式ファンネル（レーザー）"
+      ]
+    },
+    {
+      "ID": 30150000,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka) -- 【test】置き射撃武器（実弾バズーカ）"
+      ]
+    },
+    {
+      "ID": 30150100,
+      "Entries": [
+        "[test] Stationary shooting weapon (laser) -- 【test】置き射撃武器（レーザー）"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "Shoulder bazooka_spread -- 肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "Shoulder laser cannon_W laser -- 肩レーザーキャノン_Wレーザー"
+      ]
+    },
+    {
+      "ID": 30230000,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化"
+      ]
+    },
+    {
+      "ID": 30240000,
+      "Entries": [
+        "Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける"
+      ]
+    },
+    {
+      "ID": 30250000,
+      "Entries": [
+        "Shoulder laser bazooka_Can also be used with Mirage Power - medium -- 肩レーザーバズーカ_ミラージュでも扱える 威力-中"
+      ]
+    },
+    {
+      "ID": 30250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Right)"
+      ]
+    },
+    {
+      "ID": 30260000,
+      "Entries": [
+        "shoulder laser shotgun -- 肩レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 30270000,
+      "Entries": [
+        "stun needle launcher -- スタンニードルランチャー"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "[test] Exceed Orbit (live bullet) -- 【test】イクシードオービット（実弾）"
+      ]
+    },
+    {
+      "ID": 30300100,
+      "Entries": [
+        "[test] Exceed Orbit (Laser) -- 【test】イクシードオービット（レーザー）"
+      ]
+    },
+    {
+      "ID": 30310000,
+      "Entries": [
+        "[test] Shooting PA -- 【test】射撃PA"
+      ]
+    },
+    {
+      "ID": 30350000,
+      "Entries": [
+        "Auxiliary booster_EN silhouette -- 補助ブースター_EN系シルエット"
+      ]
+    },
+    {
+      "ID": 30350100,
+      "Entries": [
+        "Auxiliary booster_M・AI unique (shooting weapon ver) -- 補助ブースター_M・AI ユニーク（射撃武器ver）"
+      ]
+    },
+    {
+      "ID": 30350200,
+      "Entries": [
+        "Auxiliary booster_live bullet silhouette -- 補助ブースター_実弾系シルエット"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Right)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Plasma missile_standard type 3 series -- プラズマミサイル_標準タイプ\u30003連"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "Plasma missile_standard type 6 units -- プラズマミサイル_標準タイプ\u30006連"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "AI missile_multi-stage guidance 2 series -- AIミサイル_多段誘導\u30002連"
+      ]
+    },
+    {
+      "ID": 35010100,
+      "Entries": [
+        "AI missile_multi-stage guidance single shot -- AIミサイル_多段誘導\u3000単発"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "6 twin missiles -- 連装ミサイル\u30006連"
+      ]
+    },
+    {
+      "ID": 35020100,
+      "Entries": [
+        "Twin missile 4 series -- 連装ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 35020200,
+      "Entries": [
+        "10 twin missiles -- 連装ミサイル\u300010連"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "Special plasma missile_K・AI unique -- 特殊プラズマミサイル_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "Vertical missile 12 series -- 垂直ミサイル\u300012連"
+      ]
+    },
+    {
+      "ID": 35040100,
+      "Entries": [
+        "Vertical missile 8 series -- 垂直ミサイル\u30008連"
+      ]
+    },
+    {
+      "ID": 35040200,
+      "Entries": [
+        "Vertical missile 4 series -- 垂直ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "depleted uranium missile -- 劣化ウランミサイル"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "Special missile_M・AI unique -- 特殊ミサイル_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "Back missile_2Way 3 consecutive -- 背ミサイル_2Way\u30003連"
+      ]
+    },
+    {
+      "ID": 35080100,
+      "Entries": [
+        "Back missile_2way 3-way type -- 背ミサイル_2Way\u30003連中型"
+      ]
+    },
+    {
+      "ID": 35080200,
+      "Entries": [
+        "Back missile_2Way 2 series -- 背ミサイル_2Way\u30002連"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "Back missile_split missile 2 consecutive 6 splits -- 背ミサイル_分裂ミサイル\u30002連6分裂"
+      ]
+    },
+    {
+      "ID": 35090100,
+      "Entries": [
+        "Back missile_fission missile single shot -- 背ミサイル_分裂ミサイル\u3000単発"
+      ]
+    },
+    {
+      "ID": 35090200,
+      "Entries": [
+        "Back missile_split missile 2 series 12 splits -- 背ミサイル_分裂ミサイル\u30002連12分裂"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 35110000,
+      "Entries": [
+        "[test] Needle missile_typeA -- 【test】ニードルミサイル_typeA"
+      ]
+    },
+    {
+      "ID": 35120000,
+      "Entries": [
+        "[test] Container missile -- 【test】コンテナミサイル"
+      ]
+    },
+    {
+      "ID": 35130000,
+      "Entries": [
+        "[test] Cluster missile -- 【test】クラスターミサイル"
+      ]
+    },
+    {
+      "ID": 35140000,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst) -- 【test】単発式ファンネル（実弾3点バースト）"
+      ]
+    },
+    {
+      "ID": 35140100,
+      "Entries": [
+        "[test] Single-shot funnel (laser) -- 【test】単発式ファンネル（レーザー）"
+      ]
+    },
+    {
+      "ID": 35150000,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka) -- 【test】置き射撃武器（実弾バズーカ）"
+      ]
+    },
+    {
+      "ID": 35150100,
+      "Entries": [
+        "[test] Stationary shooting weapon (laser) -- 【test】置き射撃武器（レーザー）"
+      ]
+    },
+    {
+      "ID": 35200000,
+      "Entries": [
+        "Shoulder bazooka_spread -- 肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 35210000,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大"
+      ]
+    },
+    {
+      "ID": 35220000,
+      "Entries": [
+        "Shoulder laser cannon_W laser -- 肩レーザーキャノン_Wレーザー"
+      ]
+    },
+    {
+      "ID": 35230000,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化"
+      ]
+    },
+    {
+      "ID": 35240000,
+      "Entries": [
+        "Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける"
+      ]
+    },
+    {
+      "ID": 35250000,
+      "Entries": [
+        "Shoulder laser bazooka_Can also be used with Mirage Power - medium -- 肩レーザーバズーカ_ミラージュでも扱える 威力-中"
+      ]
+    },
+    {
+      "ID": 35250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Left)"
+      ]
+    },
+    {
+      "ID": 35260000,
+      "Entries": [
+        "shoulder laser shotgun -- 肩レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "stun needle launcher -- スタンニードルランチャー"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "[test] Exceed Orbit (live bullet) -- 【test】イクシードオービット（実弾）"
+      ]
+    },
+    {
+      "ID": 35300100,
+      "Entries": [
+        "[test] Exceed Orbit (Laser) -- 【test】イクシードオービット（レーザー）"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "[test] Shooting PA -- 【test】射撃PA"
+      ]
+    },
+    {
+      "ID": 35350100,
+      "Entries": [
+        "Auxiliary booster_M・AI unique (shooting weapon ver) -- 補助ブースター_M・AI ユニーク（射撃武器ver）"
+      ]
+    },
+    {
+      "ID": 35400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Left)"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Motion radar_standard type -- 動体レーダー_標準タイプ"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "Motion radar_high performance -- 動体レーダー_高性能"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "Dynamic radar_Orbis -- 動体レーダー_オービス"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "Wide area radar_low performance scavenging use -- 広域レーダー_低性能スカベンジング用途"
+      ]
+    },
+    {
+      "ID": 75000000,
+      "Entries": [
+        "assault armor -- アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "Deployable PA -- 展開式PA"
+      ]
+    },
+    {
+      "ID": 75020000,
+      "Entries": [
+        "Installed PA -- 設置PA"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "Emergency PA -- 緊急時PA"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "Assault Boost_Baylum -- アサルトブースト_ベイラム"
+      ]
+    },
+    {
+      "ID": 75100100,
+      "Entries": [
+        "Assault Boost_Kantokail -- アサルトブースト_へカントケイル"
+      ]
+    },
+    {
+      "ID": 75100200,
+      "Entries": [
+        "Assault Boost_Heavy Crest -- アサルトブースト_重クレスト"
+      ]
+    },
+    {
+      "ID": 75100300,
+      "Entries": [
+        "Assault Boost_Ray Leonard -- アサルトブースト_レイレナード"
+      ]
+    },
+    {
+      "ID": 75100400,
+      "Entries": [
+        "Assault Boost_Mirage -- アサルトブースト_ミラージュ"
+      ]
+    },
+    {
+      "ID": 75100500,
+      "Entries": [
+        "Assault Boost_Label -- アサルトブースト_ラベール"
+      ]
+    },
+    {
+      "ID": 75100600,
+      "Entries": [
+        "Assault Boost_Iqbal -- アサルトブースト_イクバール"
+      ]
+    },
+    {
+      "ID": 75100700,
+      "Entries": [
+        "Assault Boost_Cuba -- アサルトブースト_キューバ"
+      ]
+    },
+    {
+      "ID": 75100800,
+      "Entries": [
+        "Assault boost_JUDO -- アサルトブースト_JUDO"
+      ]
+    },
+    {
+      "ID": 75100900,
+      "Entries": [
+        "Assault Boost_Troll -- アサルトブースト_トロル"
+      ]
+    },
+    {
+      "ID": 75101000,
+      "Entries": [
+        "Assault Boost_Scavenger -- アサルトブースト_スカベンジャー"
+      ]
+    },
+    {
+      "ID": 75101100,
+      "Entries": [
+        "Assault Boost_Kawamori -- アサルトブースト_カワモリ"
+      ]
+    },
+    {
+      "ID": 75101200,
+      "Entries": [
+        "Assault Boost_Miyatake -- アサルトブースト_ミヤタケ"
+      ]
+    },
+    {
+      "ID": 75101300,
+      "Entries": [
+        "Assault Boost_Yanase -- アサルトブースト_ヤナセ"
+      ]
+    },
+    {
+      "ID": 75101400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "HEAD radar -- HEADレーダー"
+      ]
+    }
+  ]
+}

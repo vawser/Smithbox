@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "DCX",
+    "Tags": [
+        "Format"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A compression format used by most souls files.",
+        "In Sekiro and Armored Core VI, the compression makes use of an external library called Oodle.",
+        "It can be unpacked with tools such as WitchyBND or Yabber."
+    ]
+}

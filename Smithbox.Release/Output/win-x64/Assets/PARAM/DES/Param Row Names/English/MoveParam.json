@@ -1,0 +1,161 @@
+{
+  "Name": "MoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "player standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "player weight"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "overweight player"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "player dying"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Player blood swamp (overweight)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Player poison swamp (movement speed reduction)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Basic enemy battle"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "bird standard"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "guard"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "dog"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "dragon demon"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy base: non-combat"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Scale miner during battle"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Scale miner when not in combat (bag)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Scale miner when not in combat (pickle)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Large spider peering in"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "gargoyle test"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon Demon (Mine Tunnel)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "for Storm Beast"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Storm beast (baby stingray) waits"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Scale miner when not in combat (bare hands)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Octopus head in battle"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gargoyle Aerial (for 3050)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gargoyle ground (for 3050)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Kagejo_for disappearing"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "blood mite only"
+      ]
+    }
+  ]
+}

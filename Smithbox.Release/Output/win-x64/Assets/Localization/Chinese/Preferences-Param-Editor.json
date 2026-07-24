@@ -1,0 +1,748 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_ParamEditor_Annotation_Language",
+      "Text": "注释语言"
+    },
+    {
+      "Key": "PREF_ParamEditor_Annotation_Language_TT",
+      "Text": "决定元注释使用的语言（即社区字段名称）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Import_Language",
+      "Text": "行导入语言"
+    },
+    {
+      "Key": "PREF_ParamEditor_Import_Language_TT",
+      "Text": "决定社区行导入使用的语言。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Compact_Mode",
+      "Text": "启用紧凑显示"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Compact_Mode_TT",
+      "Text": "启用后，元素之间的行高减小，可显示更多 Param、行和字段。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Table_Borders",
+      "Text": "启用数据表格单元格边框"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Table_Borders_TT",
+      "Text": "启用后，数据表格单元格将显示边框。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS2",
+      "Text": "启用松散 Param 模式"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS2_TT",
+      "Text": "启用后，在 Param 加载和保存过程中会考虑松散 .param 文件。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Repack_Loose_Params_DS2",
+      "Text": "启用松散 Param 重新打包"
+    },
+    {
+      "Key": "PREF_ParamEditor_Repack_Loose_Params_DS2_TT",
+      "Text": "启用后，任何松散 .param 文件将被重新打包到 enc_regulation.bin 中。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS3",
+      "Text": "启用松散 Param 模式"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS3_TT",
+      "Text": "启用后，在 Param 加载和保存过程中会考虑松散 .param 文件。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DES",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DES_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS1",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS1_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS2",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS2_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_BB",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_BB_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS3",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS3_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_SDT",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_SDT_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_ER",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_ER_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_AC6",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_AC6_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_NR",
+      "Text": "保存时清除行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_NR_TT",
+      "Text": "启用后，保存时清除行名称，意味着规则文件中不会存储行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DES",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DES_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS1",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS1_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS2",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS2_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_BB",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_BB_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS3",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS3_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_SDT",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_SDT_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_ER",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_ER_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_AC6",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_AC6_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_NR",
+      "Text": "加载时恢复行名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_NR_TT",
+      "Text": "启用后，如果已存储清除的行名称，加载时将重新应用行名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_CompressionOverride",
+      "Text": "Param 保存压缩"
+    },
+    {
+      "Key": "PREF_ParamEditor_CompressionOverride_TT",
+      "Text": "决定对保存的规则文件应用哪种 DCX 压缩方式。"
+    },
+    {
+      "Key": "PREF_ParamReloader_Use_Latest_Offset",
+      "Text": "自动使用最新版本"
+    },
+    {
+      "Key": "PREF_ParamReloader_Use_Latest_Offset_TT",
+      "Text": "启用后，每次启动 Smithbox 时 Param 热加载器将设置为最新的可执行版本。"
+    },
+    {
+      "Key": "PREF_ParamReloader_Current_Offsets",
+      "Text": "Param 热加载器版本"
+    },
+    {
+      "Key": "PREF_ParamReloader_Current_Offsets_TT",
+      "Text": "这应与您要目标的可执行版本匹配，否则内存偏移量将不正确。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Pinned_Stay_Visible",
+      "Text": "始终显示固定条目"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Pinned_Stay_Visible_TT",
+      "Text": "启用后，固定的 Param 条目将始终显示在列表顶部，即使滚动时也是如此。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Sort_Alphabetically",
+      "Text": "按字母顺序排序列表"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Sort_Alphabetically_TT",
+      "Text": "启用后，Param 列表将按字母顺序排序。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Community_Names",
+      "Text": "显示社区名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Community_Names_TT",
+      "Text": "启用后，将使用社区名称代替原始文件名。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Categories",
+      "Text": "显示分类"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Categories_TT",
+      "Text": "启用后，Param 将分组为可折叠的分类。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Pinned_Stay_Visible",
+      "Text": "始终显示固定条目"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Pinned_Stay_Visible_TT",
+      "Text": "启用后，固定的行条目将始终显示在列表顶部，即使滚动时也是如此。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Line_Wrapping",
+      "Text": "启用行名称自动换行"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Line_Wrapping_TT",
+      "Text": "启用后，行名称将自动换行。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Row_Grouping",
+      "Text": "启用物品组行分组"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Row_Grouping_TT",
+      "Text": "启用后，Item Lot Param 中的行将被分组。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Display_Decorators",
+      "Text": "显示装饰器"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Display_Decorators_TT",
+      "Text": "启用后，显示行装饰器。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Row_FMG_Prefer_Base",
+      "Text": "行 FMG 文本优先显示基础版本"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Row_FMG_Prefer_Base_TT",
+      "Text": "启用后，优先使用基础 FMG 中的条目，而不是 DLC1/DLC2 FMG 中的条目。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Pinned_Stay_Visible",
+      "Text": "始终显示固定条目"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Pinned_Stay_Visible_TT",
+      "Text": "启用后，固定的字段条目将始终显示在列表顶部，即使滚动时也是如此。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Allow_Rearrangement",
+      "Text": "启用字段重排"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Allow_Rearrangement_TT",
+      "Text": "启用后，字段将根据 Param 元数据文件中指定的分组排列进行重排。"
+    },
+    {
+      "Key": "PREF_ParamEditor_FieldNameMode",
+      "Text": "字段名称模式"
+    },
+    {
+      "Key": "PREF_ParamEditor_FieldNameMode_TT",
+      "Text": "决定字段名称的显示方式。\nSource 是原始 Param 定义名称。\nCommunity 是更可读和描述性的名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Offsets",
+      "Text": "显示偏移量"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Offsets_TT",
+      "Text": "启用后，显示字段的数据偏移量。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Color_Picker",
+      "Text": "显示颜色选择器"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Color_Picker_TT",
+      "Text": "启用后，显示颜色选择器（适用于该字段时）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Graph",
+      "Text": "显示图表"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Graph_TT",
+      "Text": "启用后，显示图表（适用于该字段时）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Map_Link",
+      "Text": "显示地图链接"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Map_Link_TT",
+      "Text": "启用后，显示地图链接按钮（适用于该字段时）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Model_Link",
+      "Text": "显示模型链接"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Model_Link_TT",
+      "Text": "启用后，显示模型链接按钮（适用于该字段时）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Padding",
+      "Text": "显示填充字段"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Padding_TT",
+      "Text": "启用后，显示填充字段。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Decorators",
+      "Text": "显示装饰器"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Decorators_TT",
+      "Text": "启用后，显示字段装饰器。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_References",
+      "Text": "显示引用"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_References_TT",
+      "Text": "启用后，显示字段引用。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Enums",
+      "Text": "显示枚举"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Enums_TT",
+      "Text": "启用后，显示字段枚举。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Field_Attributes",
+      "Text": "显示属性"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Field_Attributes_TT",
+      "Text": "启用后，在工具提示中显示字段属性。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Icon_Preview",
+      "Text": "显示图标预览"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Icon_Preview_TT",
+      "Text": "启用后，字段旁边会直观显示引用的图标。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Icon_Preview_Scale",
+      "Text": "图标预览缩放"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Icon_Preview_Scale_TT",
+      "Text": "图标预览的图像缩放比例。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Tooltip_Mode",
+      "Text": "字段工具提示模式"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Tooltip_Mode_TT",
+      "Text": "决定字段工具提示的显示方式。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_GroupReference_DisplayCommunityName",
+      "Text": "显示组引用社区名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_GroupReference_DisplayCommunityName_TT",
+      "Text": "启用后，组引用将使用社区名称标签。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layouts",
+      "Text": "启用字段布局"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layouts_TT",
+      "Text": "启用后，字段将根据字段布局数据进行排列（如适用）。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Category_Names",
+      "Text": "启用组名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Category_Names_TT",
+      "Text": "启用后，分组标题将显示名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints",
+      "Text": "启用几率提示"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints_TT",
+      "Text": "启用后，显示物品组的几率百分比。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Field_Layout_Display_Type",
+      "Text": "字段布局模式"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Field_Layout_Display_Type_TT",
+      "Text": "决定字段布局的显示方式。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Unsorted_Field_Placement",
+      "Text": "未排序字段位置"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Unsorted_Field_Placement_TT",
+      "Text": "决定启用字段布局时未排序字段的放置位置。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage",
+      "Text": "显示传统百分比"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage_TT",
+      "Text": "启用后，表示百分比的字段将以常规方式显示，值直接表示百分比。通常该值表示为 1 - <值>。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Input",
+      "Text": "显示行名称输入"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Input_TT",
+      "Text": "启用后，在右键菜单中显示行名称输入框。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Shortcut_Tools",
+      "Text": "显示快捷工具"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Shortcut_Tools_TT",
+      "Text": "启用后，在右键菜单中显示快捷工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Pin_Options",
+      "Text": "显示固定选项"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Pin_Options_TT",
+      "Text": "启用后，在右键菜单中显示固定选项。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Comparison_Options",
+      "Text": "显示比较选项"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Comparison_Options_TT",
+      "Text": "启用后，在右键菜单中显示比较选项。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Reverse_Lookup",
+      "Text": "显示反向查找工具"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Reverse_Lookup_TT",
+      "Text": "启用后，在右键菜单中显示反向查找工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Proliferate_Name",
+      "Text": "显示扩散名称工具"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Proliferate_Name_TT",
+      "Text": "启用后，在右键菜单中显示扩散名称工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Inherit_Name",
+      "Text": "显示继承名称工具"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Inherit_Name_TT",
+      "Text": "启用后，在右键菜单中显示继承名称工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Tools",
+      "Text": "显示行名称工具"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Tools_TT",
+      "Text": "启用后，在右键菜单中显示行名称工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Name",
+      "Text": "显示字段名称"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Name_TT",
+      "Text": "启用后，在右键菜单中显示字段名称。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Description",
+      "Text": "显示字段描述"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Description_TT",
+      "Text": "启用后，在右键菜单中显示字段描述。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Attributes",
+      "Text": "显示字段属性"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Attributes_TT",
+      "Text": "启用后，在右键菜单中显示字段属性。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Pin_Options",
+      "Text": "显示字段固定选项"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Pin_Options_TT",
+      "Text": "启用后，在右键菜单中显示字段固定选项。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Comparison_Options",
+      "Text": "显示字段比较选项"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Comparison_Options_TT",
+      "Text": "启用后，在右键菜单中显示字段比较选项。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Value_Distribution",
+      "Text": "显示字段值分布"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Value_Distribution_TT",
+      "Text": "启用后，在右键菜单中显示字段值分布工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Searchbar_Options",
+      "Text": "显示字段搜索栏选项"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Searchbar_Options_TT",
+      "Text": "启用后，在右键菜单中显示字段搜索栏选项。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_References",
+      "Text": "显示字段引用"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_References_TT",
+      "Text": "启用后，在右键菜单中显示字段引用。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Reference_Search",
+      "Text": "显示字段引用搜索"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Reference_Search_TT",
+      "Text": "启用后，在右键菜单中显示字段引用搜索工具。"
+    },
+    {
+      "Key": "PREF_ParamEditor_Show_Advanced_Mass_Edit_Commands",
+      "Text": "在自动填充中显示高级命令"
+    },
+    {
+      "Key": "PREF_ParamEditor_Show_Advanced_Mass_Edit_Commands_TT",
+      "Text": "启用后，自动填充菜单中会显示更复杂的命令。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Meta_Override",
+      "Text": "启用 Param 元数据覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Meta_Override_TT",
+      "Text": "启用后，Param 编辑器将使用项目 .smithbox 文件夹中的 Param META，而不是基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Addition",
+      "Text": "启用 Param 枚举添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 枚举，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Override",
+      "Text": "启用 Param 枚举覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Override_TT",
+      "Text": "启用后，Param 编辑器将使用项目 .smithbox 文件夹中的 Param 枚举，而不是基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Addition",
+      "Text": "启用 Param 分类添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 分类，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Override",
+      "Text": "启用 Param 分类覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 分类，忽略基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Addition",
+      "Text": "启用 Param 交换群组添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 交换群组，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Override",
+      "Text": "启用 Param 交换覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 交换群组，忽略基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Addition",
+      "Text": "启用 Param 字段引用组添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 字段引用组，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Override",
+      "Text": "启用 Param 字段引用组覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 字段引用组，忽略基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Field_Layout_Addition",
+      "Text": "启用 Param 字段布局添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Field_Layout_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 字段布局，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Layout_Override",
+      "Text": "启用 Param 字段布局覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Layout_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 字段布局，忽略基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Addition",
+      "Text": "启用 Param 图标配置添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 图标配置，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Override",
+      "Text": "启用 Param 图标配置覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 图标配置，忽略基础版本。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Addition",
+      "Text": "启用 Param 图表注释添加"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Addition_TT",
+      "Text": "启用后，Param 编辑器将从项目 .smithbox 文件夹添加 Param 图表注释，与基础版本并列。"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Override",
+      "Text": "启用 Param 图表注释覆盖"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Override_TT",
+      "Text": "启用后，Param 编辑器将仅使用项目 .smithbox 文件夹中的 Param 图表注释，忽略基础版本。"
+    }
+  ]
+}

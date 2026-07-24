@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MERCENARY_RANK_RECORD_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90012</SortID>
+    </Field>
+    <Field Def="u32 totalPoint">
+      <DisplayName>累計ポイント</DisplayName>
+      <Description>ランクアップに必要な累計ポイント</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 iconID">
+      <DisplayName>ランク画像ID</DisplayName>
+      <Enum>MERCENARY_ICON_ID</Enum>
+      <Description>ランクアイコンのID(表示フレーム)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[6]">
+      <DisplayName>予約</DisplayName>
+      <Description>----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>89999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

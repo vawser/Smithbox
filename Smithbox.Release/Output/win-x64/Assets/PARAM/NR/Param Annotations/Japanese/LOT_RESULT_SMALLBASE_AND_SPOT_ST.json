@@ -1,0 +1,48 @@
+{
+  "Param": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
+  "Type": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
+  "Name": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "patternId",
+      "Description": ""
+    },
+    {
+      "Field": "attachId",
+      "Name": "attachId",
+      "Description": ""
+    },
+    {
+      "Field": "smallBaseMapId",
+      "Name": "smallBaseMapId",
+      "Description": ""
+    },
+    {
+      "Field": "mapIndex",
+      "Name": "mapIndex",
+      "Description": ""
+    },
+    {
+      "Field": "variationId",
+      "Name": "variationId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x12",
+      "Name": "unknown_0x12",
+      "Description": ""
+    },
+    {
+      "Field": "modifier",
+      "Name": "modifier",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,779 @@
+{
+  "Name": "ModelSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Message tombstone (before lighting)"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "Message tombstone (after lighting)"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "Ritual - Princess alternative obj"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "Ojo Candlestick (Low)"
+      ]
+    },
+    {
+      "ID": 1240000,
+      "Entries": [
+        "Candle ver00"
+      ]
+    },
+    {
+      "ID": 1240001,
+      "Entries": [
+        "Candle Ver01"
+      ]
+    },
+    {
+      "ID": 1240002,
+      "Entries": [
+        "Candle Ver02"
+      ]
+    },
+    {
+      "ID": 1240010,
+      "Entries": [
+        "Blue Flame バリエ 1"
+      ]
+    },
+    {
+      "ID": 1240011,
+      "Entries": [
+        "Blue Flame バリエ 2"
+      ]
+    },
+    {
+      "ID": 1240012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1510000,
+      "Entries": [
+        "Old Lantern"
+      ]
+    },
+    {
+      "ID": 2120000,
+      "Entries": [
+        "Statue Candle lit"
+      ]
+    },
+    {
+      "ID": 4660000,
+      "Entries": [
+        "General-purpose wall lighting (torches)"
+      ]
+    },
+    {
+      "ID": 4661000,
+      "Entries": [
+        "General-purpose Ceiling lighting (torches)"
+      ]
+    },
+    {
+      "ID": 4665000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4665001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9004010,
+      "Entries": [
+        "Concept Solar"
+      ]
+    },
+    {
+      "ID": 301230000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301240000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302518000,
+      "Entries": [
+        "Ojo Candles"
+      ]
+    },
+    {
+      "ID": 302525000,
+      "Entries": [
+        "Hanging Lantern 1"
+      ]
+    },
+    {
+      "ID": 302526000,
+      "Entries": [
+        "Fire of firewood"
+      ]
+    },
+    {
+      "ID": 302564000,
+      "Entries": [
+        "Burnt Corpse"
+      ]
+    },
+    {
+      "ID": 302565000,
+      "Entries": [
+        "Having a statue candle"
+      ]
+    },
+    {
+      "ID": 304517000,
+      "Entries": [
+        "Ojo 1 Lantern 1"
+      ]
+    },
+    {
+      "ID": 304783000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304849000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304857000,
+      "Entries": [
+        "Ojo Candlestick (High)"
+      ]
+    },
+    {
+      "ID": 304858000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304863000,
+      "Entries": [
+        "Ojo 2 Torch"
+      ]
+    },
+    {
+      "ID": 311010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 311011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 315100000,
+      "Entries": [
+        "Bonfires Tree"
+      ]
+    },
+    {
+      "ID": 316500000,
+      "Entries": [
+        "Hanging Lantern 1"
+      ]
+    },
+    {
+      "ID": 316500001,
+      "Entries": [
+        "Hanging Lantern 1"
+      ]
+    },
+    {
+      "ID": 319006000,
+      "Entries": [
+        "Candle with Dish"
+      ]
+    },
+    {
+      "ID": 319006001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 319010000,
+      "Entries": [
+        "Lantern"
+      ]
+    },
+    {
+      "ID": 319012000,
+      "Entries": [
+        "Hanging Torch"
+      ]
+    },
+    {
+      "ID": 319013000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 319014000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 319015000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320650000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 324014000,
+      "Entries": [
+        "Incense Burner M32"
+      ]
+    },
+    {
+      "ID": 329050000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330009000,
+      "Entries": [
+        "Skeleton Forest Candle"
+      ]
+    },
+    {
+      "ID": 330010000,
+      "Entries": [
+        "Mori Lantern"
+      ]
+    },
+    {
+      "ID": 330011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330052000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330091000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330095000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331043000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331050000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331051000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331052000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331055000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 331390000,
+      "Entries": [
+        "Mori boss Room Skeleton Candle 01"
+      ]
+    },
+    {
+      "ID": 331391000,
+      "Entries": [
+        "Mori boss Room Skeleton Candle 02"
+      ]
+    },
+    {
+      "ID": 331392000,
+      "Entries": [
+        "Mori boss Room Skeleton Candle 03"
+      ]
+    },
+    {
+      "ID": 331550000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 344857000,
+      "Entries": [
+        "Ojo 2, 3 candlestick (high)"
+      ]
+    },
+    {
+      "ID": 344859000,
+      "Entries": [
+        "Ojo 2, 3 candlesticks (Low)"
+      ]
+    },
+    {
+      "ID": 344863000,
+      "Entries": [
+        "Ojo 2, 3 torch"
+      ]
+    },
+    {
+      "ID": 349370000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 350000000,
+      "Entries": [
+        "Cathedral Church Chandelier"
+      ]
+    },
+    {
+      "ID": 350010000,
+      "Entries": [
+        "Cathedral Church Candlestick A"
+      ]
+    },
+    {
+      "ID": 350013000,
+      "Entries": [
+        "Cathedral Church Candlestick Bver00"
+      ]
+    },
+    {
+      "ID": 350013001,
+      "Entries": [
+        "Cathedral Church Candlestick Bver01"
+      ]
+    },
+    {
+      "ID": 350015000,
+      "Entries": [
+        "Cathedral church boss Room Candle"
+      ]
+    },
+    {
+      "ID": 352000000,
+      "Entries": [
+        "Cathedral Church _ Indoor Torches"
+      ]
+    },
+    {
+      "ID": 359050000,
+      "Entries": [
+        "Cathedral Church Outdoor Torches"
+      ]
+    },
+    {
+      "ID": 359106000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 359113000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 364512000,
+      "Entries": [
+        "God Tomb Lantern 2"
+      ]
+    },
+    {
+      "ID": 364517000,
+      "Entries": [
+        "God Tomb Lantern 1"
+      ]
+    },
+    {
+      "ID": 372010000,
+      "Entries": [
+        "Anol Lantan A"
+      ]
+    },
+    {
+      "ID": 373023000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 373024000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 381004000,
+      "Entries": [
+        "Candle ver00"
+      ]
+    },
+    {
+      "ID": 381008000,
+      "Entries": [
+        "Wall Lantern"
+      ]
+    },
+    {
+      "ID": 381009000,
+      "Entries": [
+        "Hanging lantern"
+      ]
+    },
+    {
+      "ID": 381040000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 381041000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 381043000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 381044000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 391000000,
+      "Entries": [
+        "Candle One"
+      ]
+    },
+    {
+      "ID": 391000001,
+      "Entries": [
+        "Candle 2"
+      ]
+    },
+    {
+      "ID": 391100000,
+      "Entries": [
+        "Incense Burner 1"
+      ]
+    },
+    {
+      "ID": 392300000,
+      "Entries": [
+        "Shaking Incense Burner 1"
+      ]
+    },
+    {
+      "ID": 392310000,
+      "Entries": [
+        "Shaking Incense Burner 2"
+      ]
+    },
+    {
+      "ID": 398000000,
+      "Entries": [
+        "Corpse Mountain 1"
+      ]
+    },
+    {
+      "ID": 399100000,
+      "Entries": [
+        "Wall Torches 1"
+      ]
+    },
+    {
+      "ID": 399100001,
+      "Entries": [
+        "Wall Torches 1"
+      ]
+    },
+    {
+      "ID": 399110000,
+      "Entries": [
+        "Wall Torches 2"
+      ]
+    },
+    {
+      "ID": 399111000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 399999000,
+      "Entries": [
+        "Candle test"
+      ]
+    },
+    {
+      "ID": 452017000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452105000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452110000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452111000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452120000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452127000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452210000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452211000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452211001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 452510000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 459030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 459200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 501010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 501030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 502007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512017000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512120000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512130000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512140000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512150000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512151000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 512152000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 513501000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 532000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 934630000,
+      "Entries": [
+        "Bonfire Candlestick Normal Fire"
+      ]
+    },
+    {
+      "ID": 962120000,
+      "Entries": [
+        "Statue Candle lit (6-digit version)"
+      ]
+    },
+    {
+      "ID": 962140000,
+      "Entries": [
+        "Hanging lighting"
+      ]
+    },
+    {
+      "ID": 969004010,
+      "Entries": [
+        "Concept Solar (6-digit version)"
+      ]
+    },
+    {
+      "ID": 969007000,
+      "Entries": [
+        "Torch 1"
+      ]
+    }
+  ]
+}

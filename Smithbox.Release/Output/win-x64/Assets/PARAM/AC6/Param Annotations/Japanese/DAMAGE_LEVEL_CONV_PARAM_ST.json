@@ -1,0 +1,188 @@
+{
+  "Param": "DAMAGE_LEVEL_CONV_PARAM_ST",
+  "Type": "DAMAGE_LEVEL_CONV_PARAM_ST",
+  "Name": "DAMAGE_LEVEL_CONV_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "damageLevel_00",
+      "Name": "初期ダメージレベル",
+      "Description": "初期状態のダメージレベル"
+    },
+    {
+      "Field": "pad0_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad0_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_01",
+      "Name": "閾値0突破時ダメージレベル",
+      "Description": "閾値0～閾値1でのダメージレベル"
+    },
+    {
+      "Field": "pad1_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad1_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_02",
+      "Name": "閾値1突破時ダメージレベル",
+      "Description": "閾値1～閾値2でのダメージレベル"
+    },
+    {
+      "Field": "pad2_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad2_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_03",
+      "Name": "閾値2突破時ダメージレベル",
+      "Description": "閾値2～閾値3でのダメージレベル"
+    },
+    {
+      "Field": "pad3_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad3_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_04",
+      "Name": "閾値3突破時ダメージレベル",
+      "Description": "閾値3～閾値4でのダメージレベル"
+    },
+    {
+      "Field": "pad4_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad4_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_05",
+      "Name": "閾値4突破時ダメージレベル",
+      "Description": "閾値4～閾値5でのダメージレベル"
+    },
+    {
+      "Field": "pad5_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad5_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_06",
+      "Name": "閾値5突破時ダメージレベル",
+      "Description": "閾値5～閾値6でのダメージレベル"
+    },
+    {
+      "Field": "pad6_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad6_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_07",
+      "Name": "閾値6突破時ダメージレベル",
+      "Description": "閾値6～閾値7でのダメージレベル"
+    },
+    {
+      "Field": "pad7_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad7_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_08",
+      "Name": "閾値7突破時ダメージレベル",
+      "Description": "閾値7～閾値8でのダメージレベル"
+    },
+    {
+      "Field": "pad8_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad8_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_09",
+      "Name": "閾値8突破時ダメージレベル",
+      "Description": "閾値8～閾値9でのダメージレベル"
+    },
+    {
+      "Field": "pad9_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad9_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_10",
+      "Name": "閾値9突破時ダメージレベル",
+      "Description": "閾値9～閾値10でのダメージレベル"
+    },
+    {
+      "Field": "pad10_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad10_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_11",
+      "Name": "閾値10突破時ダメージレベル",
+      "Description": "閾値10～でのダメージレベル"
+    },
+    {
+      "Field": "pad11_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

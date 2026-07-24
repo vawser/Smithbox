@@ -1,0 +1,276 @@
+{
+  "Name": "ObjectParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hp",
+        "defense"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "breakBulletCpId",
+        "breakBulletBehaviorId",
+        "breakStopTime",
+        "breakFallHeight",
+        "isBreakByEnemyCollide",
+        "isBreakByPlayerCollide",
+        "isBreak_ByChrRide",
+        "breakSfxId",
+        "breakSfxCpId",
+        "breakLandingSfxId",
+        "breakSfxOffsetX",
+        "breakSfxOffsetY",
+        "breakSfxOffsetZ",
+        "animBreakIdMax",
+        "BreakAiSoundID"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isAddRigidImpulse_ByDamage",
+        "isAnimBreak",
+        "isAnimPauseOnRemoPlay",
+        "isAttackBacklash",
+        "isDamageCover",
+        "isDisableBreakForFirstAppear",
+        "isDisableEnvMapCapture",
+        "isEnableWallJump",
+        "isLadder",
+        "isMoveObj",
+        "isPenetrationBulletHit",
+        "isRopeBridge",
+        "isSaveBreakState",
+        "isUserPhysicForChrCollide",
+        "doesStopPlayerDockedMove"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "SpecialEffectId_InsideHit"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "useExpandVolume",
+        "expandVolumeX_plus",
+        "expandVolumeX_minus",
+        "expandVolumeY_plus",
+        "expandVolumeY_minus",
+        "expandVolumeZ_plus",
+        "expandVolumeZ_minus"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "windEffectRate_0",
+        "windEffectRate_1",
+        "windEffectType_0",
+        "windEffectType_1"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "extRefTexId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "extHitSfx_S",
+        "extHitSfx_M",
+        "extHitSfx_L",
+        "extHitSfx_LL",
+        "extHitSfx_LLL"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "camAvoidType",
+        "camDitherFadeMaxDist",
+        "camDitherFadeMinDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "autoDrawGroupPassPixel",
+        "autoDrawGroupDisableDepthWrite"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "FragmentInvisibleTime",
+        "FragmentInvisibleWaitTime"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lifeTime_forDC",
+        "clothUpdateDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "RigidPenetrationScale_Soft",
+        "RigidPenetrationScale_Normal",
+        "RigidPenetrationScale_Hard"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "paintDecalTargetTextureSize"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialId",
+        "navimeshFlag",
+        "collisionType",
+        "LandTouchSfxId",
+        "contactSeId",
+        "defaultLodParamId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isBurn",
+        "burnTime",
+        "burnBraekRate",
+        "burnBulletInterval",
+        "burnBulletDelayTime",
+        "burnBulletBehaviorId",
+        "burnBulletBehaviorId_1",
+        "burnBulletBehaviorId_2",
+        "burnBulletBehaviorId_3",
+        "burnSfxId",
+        "burnSfxId_1",
+        "burnSfxId_2",
+        "burnSfxId_3",
+        "burnSfxDelayTimeMin",
+        "burnSfxDelayTimeMin_1",
+        "burnSfxDelayTimeMin_2",
+        "burnSfxDelayTimeMin_3",
+        "burnSfxDelayTimeMax",
+        "burnSfxDelayTimeMax_1",
+        "burnSfxDelayTimeMax_2",
+        "burnSfxDelayTimeMax_3"
+      ]
+    }
+  ]
+}

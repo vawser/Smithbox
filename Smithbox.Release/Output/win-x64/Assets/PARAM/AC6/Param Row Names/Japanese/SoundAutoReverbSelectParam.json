@@ -1,0 +1,35 @@
+{
+  "Name": "SoundAutoReverbSelectParam",
+  "Entries": [
+    {
+      "ID": 302,
+      "Entries": [
+        "Room2_Little"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "indoor default -- 屋内デフォルト"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Room5_Large"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Room7_HugeLarge"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "outdoor default -- 屋外デフォルト"
+      ]
+    }
+  ]
+}

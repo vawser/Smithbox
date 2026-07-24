@@ -1,0 +1,124 @@
+{
+  "Entries": [
+    {
+      "Key": "INPUT_CATEGORY_Common",
+      "Text": "Common"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Contextual",
+      "Text": "Contextual"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Viewport",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Map_Editor",
+      "Text": "Map Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Model_Editor",
+      "Text": "Model Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Param_Editor",
+      "Text": "Param Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Text_Editor",
+      "Text": "Text Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Graphics_Param_Editor",
+      "Text": "Graphics Param Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Material_Editor",
+      "Text": "Material Editor"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Texture_Viewer",
+      "Text": "Texture Viewer"
+    },
+    {
+      "Key": "INPUT_CATEGORY_Developer",
+      "Text": "Developer"
+    },
+    {
+      "Key": "KEY_Modifier_Ctrl_Plus",
+      "Text": "Ctrl+"
+    },
+    {
+      "Key": "KEY_Modifier_Shift_Plus",
+      "Text": "Shift+"
+    },
+    {
+      "Key": "KEY_Modifier_Alt_Plus",
+      "Text": "Alt+"
+    },
+    {
+      "Key": "INPUT_Menu_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "INPUT_Menu_Save_Action",
+      "Text": "Save"
+    },
+    {
+      "Key": "INPUT_Saved_Keybinds",
+      "Text": "Shortcuts saved."
+    },
+    {
+      "Key": "INPUT_Menu_Revert_All_Action",
+      "Text": "Revert All to Default"
+    },
+    {
+      "Key": "INPUT_Menu_Revert_All_Confirm",
+      "Text": "Are you sure?"
+    },
+    {
+      "Key": "INPUT_Tab_Keybinds",
+      "Text": "Keybinds"
+    },
+    {
+      "Key": "INPUT_Tab_Mousebinds",
+      "Text": "Mousebinds"
+    },
+    {
+      "Key": "INPUT_Keybinds_Filter_Hint",
+      "Text": "Search keybinds..."
+    },
+    {
+      "Key": "INPUT_Keybinds_Filter_Clear",
+      "Text": "X"
+    },
+    {
+      "Key": "INPUT_Mousebinds_Filter_Hint",
+      "Text": "Search mousebinds..."
+    },
+    {
+      "Key": "INPUT_Mousebinds_Filter_Clear",
+      "Text": "X"
+    },
+    {
+      "Key": "INPUT_Action_Revert_Binding",
+      "Text": "Reset the binding to its default."
+    },
+    {
+      "Key": "INPUT_Action_Clear_Binding",
+      "Text": "Clear the binding."
+    },
+    {
+      "Key": "INPUT_Action_Press_Combo",
+      "Text": "Press combo..."
+    },
+    {
+      "Key": "INPUT_Keybinds_Failed_Load",
+      "Text": "Failed to load keybinds JSON."
+    },
+    {
+      "Key": "INPUT_Mousebinds_Failed_Load",
+      "Text": "Failed to load mousebinds JSON."
+    }
+  ]
+}

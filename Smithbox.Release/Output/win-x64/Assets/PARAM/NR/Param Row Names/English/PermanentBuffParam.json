@@ -1,0 +1,743 @@
+{
+  "Name": "PermanentBuffParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "[Night Horde] Favor of the Night"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Shrouded City] Favor of Noklateo, the Shrouded City"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Rotted Woods] Favor of the Rotted Woods"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[Mountaintop] Favor of the Mountaintop"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[Failed Event] Unhealed Wound Carved by the Night"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Mountaintop] Favor of the Mountaintop"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Mountaintop] Improved Frost Resistance"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Mountaintop] Attack Boost [Dragons]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Great Hollow] Favor of the Great Hollow"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Rotted Woods vs Dreglord] Decayed Favor of the Rotted Woods"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Key Item] Slate Whetstone"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Key Item] Silver Tear"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Key Item] Golden Dew"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Key Item] Weathervane's Words"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Key Item] Blessed Flowers"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Key Item] Golden Sprout"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Key Item] Night Shard"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Key Item] Vestige of Night"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Key Item] Traitor's Letter"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Key Item] Edge of Order"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[Key Item] Stone Stake"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "[Key Item] Third Volume"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "[Key Item] Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "[Key Item] Blade of Night Fragment"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "[Key Item] Mended Earring"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "[Key Item] Faded Iron Coins"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Key Item] Eerie Charm"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[Key Item] Merchant's Ledger"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Key Item] Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[Key Item] Trace of Night"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[Key Item] Trace of Night"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "[Key Item] Trace of Night"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "[Key Item] Torn Braided Cord"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "[Key Item] Black Claw Necklace"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "[Key Item] Double Sided Coin"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "[Key Item] Crown Medal"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "[Key Item] Pita Bread"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "[Key Item] Second Volume"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "[Key Item] Iron Menial's Scrawl"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "[Key Item] Blessed Iron Coin"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "[Key Item] Cracked Witch's Brooch"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "[Key Item] Virtuous Thief's Key"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "[Key Item] Torn-Out Paper Scrap"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "[Key Item] The Wylder's Earring"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "[Key Item] Bone-Like Stone"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Key Item] Leather Monocle Case"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Key Item] Scholar's Primal Core"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Key Item] Night-Hued Glass"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Key Item] Vassal's Journal"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "[Key Item] Cleansing Tear"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "[Key Item] Returned Leather Case"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "[Key Item] Headband of the Golden Ones"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "[Key Item] Bundled Paper"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[Key Item] Dismembered Finger"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Key Item] Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Great Hollow] False vision of a Great Rune"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Increased Maximum HP (+10%)"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "Increased Maximum HP (+15%)"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Increased Maximum FP (+10%)"
+      ]
+    },
+    {
+      "ID": 8010001,
+      "Entries": [
+        "Increased Maximum FP (+15%)"
+      ]
+    },
+    {
+      "ID": 8010100,
+      "Entries": [
+        "Reduced FP Consumption (+10%)"
+      ]
+    },
+    {
+      "ID": 8010101,
+      "Entries": [
+        "Reduced FP Consumption (+15%)"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "Increased Max Stamina (+10%)"
+      ]
+    },
+    {
+      "ID": 8020001,
+      "Entries": [
+        "Increased Max Stamina (+15%)"
+      ]
+    },
+    {
+      "ID": 8020200,
+      "Entries": [
+        "Improved Stamina Recovery (+4)"
+      ]
+    },
+    {
+      "ID": 8020201,
+      "Entries": [
+        "Improved Stamina Recovery (+6)"
+      ]
+    },
+    {
+      "ID": 8100000,
+      "Entries": [
+        "Improved Physical Attack Power (+6%)"
+      ]
+    },
+    {
+      "ID": 8100001,
+      "Entries": [
+        "Improved Physical Attack Power (+9%)"
+      ]
+    },
+    {
+      "ID": 8100500,
+      "Entries": [
+        "Improved Affinity Attack Power (+5%)"
+      ]
+    },
+    {
+      "ID": 8100501,
+      "Entries": [
+        "Improved Affinity Attack Power (+8%)"
+      ]
+    },
+    {
+      "ID": 8120000,
+      "Entries": [
+        "Improved Stance-Breaking (+10%)"
+      ]
+    },
+    {
+      "ID": 8120001,
+      "Entries": [
+        "Improved Stance-Breaking (+15%)"
+      ]
+    },
+    {
+      "ID": 8200000,
+      "Entries": [
+        "Improved Physical Damage Negation (+12%)"
+      ]
+    },
+    {
+      "ID": 8200001,
+      "Entries": [
+        "Improved Physical Damage Negation (+18%)"
+      ]
+    },
+    {
+      "ID": 8200500,
+      "Entries": [
+        "Improved Affinity Damage Negation (+12%)"
+      ]
+    },
+    {
+      "ID": 8200501,
+      "Entries": [
+        "Improved Affinity Damage Negation (+18%)"
+      ]
+    },
+    {
+      "ID": 8210700,
+      "Entries": [
+        "All Resistances Up (+57)"
+      ]
+    },
+    {
+      "ID": 8210701,
+      "Entries": [
+        "All Resistances Up (+75)"
+      ]
+    },
+    {
+      "ID": 8230000,
+      "Entries": [
+        "Improved Poise (+25%)"
+      ]
+    },
+    {
+      "ID": 8230001,
+      "Entries": [
+        "Improved Poise (+38%)"
+      ]
+    },
+    {
+      "ID": 8330103,
+      "Entries": [
+        "Improved Sorceries and Incantations (+7%)"
+      ]
+    },
+    {
+      "ID": 8330104,
+      "Entries": [
+        "Improved Sorceries and Incantations (+11%)"
+      ]
+    },
+    {
+      "ID": 8330500,
+      "Entries": [
+        "Extended Sorcery and Incantation Duration (+100%)"
+      ]
+    },
+    {
+      "ID": 8330700,
+      "Entries": [
+        "Dragonwound upon Dragon Communion"
+      ]
+    },
+    {
+      "ID": 8350400,
+      "Entries": [
+        "Successful Parries Activate Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 8360000,
+      "Entries": [
+        "Improved Ultimate Art Gauge Charge Speed (+6%)"
+      ]
+    },
+    {
+      "ID": 8370000,
+      "Entries": [
+        "Character Skill Cooldown Reduction (+10%)"
+      ]
+    },
+    {
+      "ID": 8410000,
+      "Entries": [
+        "Improved Dodging"
+      ]
+    },
+    {
+      "ID": 8410100,
+      "Entries": [
+        "Lightning upon Dodging"
+      ]
+    },
+    {
+      "ID": 8420100,
+      "Entries": [
+        "Guard Counters Activate Holy Attacks"
+      ]
+    },
+    {
+      "ID": 8420200,
+      "Entries": [
+        "Guard Counters Activate Summoning Attack"
+      ]
+    },
+    {
+      "ID": 8430000,
+      "Entries": [
+        "Improved Thrusting Counterattack (+20%)"
+      ]
+    },
+    {
+      "ID": 8440000,
+      "Entries": [
+        "Improved Flask HP Restoration (+20%)"
+      ]
+    },
+    {
+      "ID": 8440001,
+      "Entries": [
+        "Improved Flask HP Restoration (+30%)"
+      ]
+    },
+    {
+      "ID": 8440200,
+      "Entries": [
+        "Gradual Restoration by Flask"
+      ]
+    },
+    {
+      "ID": 8450100,
+      "Entries": [
+        "Ice Storm Surge Sprint"
+      ]
+    },
+    {
+      "ID": 8460200,
+      "Entries": [
+        "Flame of Frenzy While Walking"
+      ]
+    },
+    {
+      "ID": 8460400,
+      "Entries": [
+        "Violent Deluge of Star Rain While Walking"
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "More Runes From Defeated Enemies (+10%)"
+      ]
+    },
+    {
+      "ID": 8500100,
+      "Entries": [
+        "Rune of the Strong (10000 Runes)"
+      ]
+    },
+    {
+      "ID": 8500101,
+      "Entries": [
+        "Rune of the Strong (20000 Runes)"
+      ]
+    },
+    {
+      "ID": 8500102,
+      "Entries": [
+        "Rune of the Strong (30000 Runes)"
+      ]
+    },
+    {
+      "ID": 8530200,
+      "Entries": [
+        "Periodical Giant Glintblades"
+      ]
+    },
+    {
+      "ID": 8600300,
+      "Entries": [
+        "Sudden Enemy Death upon Attacks"
+      ]
+    },
+    {
+      "ID": 8610000,
+      "Entries": [
+        "HP Restoration upon Successive Attacks (+3%)"
+      ]
+    },
+    {
+      "ID": 8610100,
+      "Entries": [
+        "FP Restoration upon Successive Attacks (+10%)"
+      ]
+    },
+    {
+      "ID": 8640000,
+      "Entries": [
+        "Critical Hit HP Restoration (+10%)"
+      ]
+    },
+    {
+      "ID": 8640100,
+      "Entries": [
+        "Critical Hit FP Restoration (+10%)"
+      ]
+    },
+    {
+      "ID": 8642000,
+      "Entries": [
+        "Increased Enemy Damage after Critical Hit (+15%)"
+      ]
+    },
+    {
+      "ID": 8650000,
+      "Entries": [
+        "HP Recovery From Successful Guarding (+10)"
+      ]
+    },
+    {
+      "ID": 8650100,
+      "Entries": [
+        "FP Recovery From Successful Guarding (+2)"
+      ]
+    },
+    {
+      "ID": 8660200,
+      "Entries": [
+        "Critical Hits Inflict Blood Loss"
+      ]
+    },
+    {
+      "ID": 8660300,
+      "Entries": [
+        "Creates Holy Ground at Low HP"
+      ]
+    },
+    {
+      "ID": 8700002,
+      "Entries": [
+        "Poison & Rot Trigger Continuous HP Recovery (+7)"
+      ]
+    },
+    {
+      "ID": 8710002,
+      "Entries": [
+        "Blood Loss in Vicinity Increases Attack Power (+20%)"
+      ]
+    },
+    {
+      "ID": 8970000,
+      "Entries": [
+        "[Boss Raid] Traces of Grace-Given Lord"
+      ]
+    },
+    {
+      "ID": 8970010,
+      "Entries": [
+        "[Boss Raid] Integration of Intelligence"
+      ]
+    },
+    {
+      "ID": 8970020,
+      "Entries": [
+        "[Boss Raid] Unifying Fate"
+      ]
+    },
+    {
+      "ID": 8970030,
+      "Entries": [
+        "[Boss Raid] Demon's Plating"
+      ]
+    },
+    {
+      "ID": 8970040,
+      "Entries": [
+        "[Boss Raid] Cold Mirage"
+      ]
+    },
+    {
+      "ID": 8970050,
+      "Entries": [
+        "[Boss Raid] Beast's Hunt"
+      ]
+    },
+    {
+      "ID": 8970060,
+      "Entries": [
+        "[Boss Raid] Power to Balance the World"
+      ]
+    }
+  ]
+}

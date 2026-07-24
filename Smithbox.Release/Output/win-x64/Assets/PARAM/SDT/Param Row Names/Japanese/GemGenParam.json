@@ -1,0 +1,29 @@
+{
+  "Name": "GemGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Sweet time -- あまいいしころ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Attack power up &amp; defense power up -- 攻撃力アップ\u3000＆\u3000防御力アップ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "HP regen -- HPリジェネ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Max HP up -- マックスHPアップ"
+      ]
+    }
+  ]
+}

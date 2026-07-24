@@ -1,0 +1,28 @@
+{
+  "Param": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Name": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "limitationTime_Normal",
+      "Name": "制限時間（通常・指なし）",
+      "Description": "制限時間[sec]（通常・干からびた指無）"
+    },
+    {
+      "Field": "limitationTime_NormalDriedFinger",
+      "Name": "制限時間（通常・指あり）",
+      "Description": "制限時間[sec]（通常・干からびた指有）"
+    },
+    {
+      "Field": "limitationTime_Guardian",
+      "Name": "制限時間（マップ守護・指なし）",
+      "Description": "制限時間[sec]（マップ守護・干からびた指無）"
+    },
+    {
+      "Field": "limitationTime_GuardianDriedFinger",
+      "Name": "制限時間（マップ守護・指あり）",
+      "Description": "制限時間[sec]（マップ守護・干からびた指有）"
+    }
+  ]
+}

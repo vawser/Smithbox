@@ -1,0 +1,26 @@
+{
+  "Key": "Map",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Map"
+      }
+  ],
+  "Params": [
+    "MapPatternCommon",
+    "MapPatternMapLotCondition",
+    "MapPatternSet",
+    "SmallBaseAndSpotAttachPoint",
+    "SmallBaseAndSpotDefine",
+    "SmallBaseEnemyLotMapCombinationParam",
+    "SmallbaseInvationNpcParam",
+    "LotResultSmallBaseAndSpot",
+    "LotBaseMapPatternFlag",
+    "LotBaseSmallBaseAndSpot",
+    "LotResultMapPatternFlag",
+    "LotResultPlayAreaParam",
+    "SmallBaseMapVariationParam",
+    "SmallBaseSfxLodExclusionList",
+    "SortieStartingPoint"
+  ]
+}

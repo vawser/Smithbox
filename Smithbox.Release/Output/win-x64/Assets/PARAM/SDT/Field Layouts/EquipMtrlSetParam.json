@@ -1,0 +1,70 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialId01",
+        "itemNum01",
+        "materialCate01",
+        "isDisableDispNum01"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialId02",
+        "itemNum02",
+        "materialCate02",
+        "isDisableDispNum02"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialId03",
+        "itemNum03",
+        "materialCate03",
+        "isDisableDispNum03"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialId04",
+        "itemNum04",
+        "materialCate04",
+        "isDisableDispNum04"
+      ]
+    }
+  ]
+}

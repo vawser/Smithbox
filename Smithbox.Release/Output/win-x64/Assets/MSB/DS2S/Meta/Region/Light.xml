@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <LightType
+    AltName="Light Type"
+    Wiki="" />
+    
+    <Sharpness
+    AltName="Sharpness"
+    Wiki="" />
+    
+    <EnableShadow
+    AltName="Enable Shadow"
+    Wiki="" 
+    IsBool="" />
+    
+    <DiffuseColor
+    AltName="Diffuse Color"
+    Wiki="" />
+    
+    <SpecularColor
+    AltName="Specular Color"
+    Wiki="" />
+    
+    <ShadowIntensity
+    AltName="Shadow Intensity"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,170 @@
+[
+  {
+    "ID": "m01_00_00_00",
+    "Name": "The Nexus / Below the Nexus",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m02_00_00_00",
+    "Name": "Boletarian Palace 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m02_01_00_00",
+    "Name": "Boletarian Palace 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m02_02_00_00",
+    "Name": "Boletarian Palace 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m02_03_00_00",
+    "Name": "Boletarian Palace 4",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_00_00_00",
+    "Name": "Shrine of Storms 0",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m03_01_00_00",
+    "Name": "Shrine of Storms 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_02_00_00",
+    "Name": "Shrine of Storms 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m03_03_00_00",
+    "Name": "Shrine of Storms 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m04_00_00_00",
+    "Name": "Tower of Latria 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m04_01_00_00",
+    "Name": "Tower of Latria 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m04_02_00_00",
+    "Name": "Tower of Latria 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m05_00_00_00",
+    "Name": "Valley of Defilement 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m05_01_00_00",
+    "Name": "Valley of Defilement 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m05_02_00_00",
+    "Name": "Valley of Defilement 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m06_00_00_00",
+    "Name": "Stonefang Tunnel 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m06_01_00_00",
+    "Name": "Stonefang Tunnel 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m06_02_00_00",
+    "Name": "Stonefang Tunnel 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m07_00_00_00",
+    "Name": "Northern Limit 1",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m07_01_00_00",
+    "Name": "Northern Limit 2",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m07_02_00_00",
+    "Name": "Northern Limit 3",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m08_00_00_00",
+    "Name": "Tutorial 1",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m08_01_00_00",
+    "Name": "Tutorial 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m08_02_00_00",
+    "Name": "Tutorial 3",
+    "Tags": [
+      ""
+    ]
+  }
+]

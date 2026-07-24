@@ -1,0 +1,47 @@
+{
+  "Key": "CAMERA_COLLIDES_EXEC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_COLLIDES_EXEC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do Nothing"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn off Camera"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stop Movement"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move to Safe Location"
+        }
+      ]
+    }
+  ]
+}

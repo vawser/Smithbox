@@ -1,0 +1,255 @@
+{
+  "ID": "ShadowParam ParamEditor",
+  "Name": "Shadows",
+  "Description": "Controls shadow rendering parameters including cascaded shadow maps, filtering, depth biasing, blur, and cascade distribution for directional and local light shadowing.",
+  "Fields": [
+    {
+      "ID": "hadowParam - Shadow: Angle0",
+      "Name": "Angle",
+      "Description": "Direction of the shadow-casting light, typically used for directional shadow alignment and orientation.",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "shadowParam -   Shadow:  Shadow Light Id",
+      "Name": "Shadow Light ID",
+      "Description": "Identifier for the light source that contributes to shadow rendering in this configuration.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Near",
+      "Name": "Near Clip Distance",
+      "Description": "Near clipping distance for shadow rendering, defining the closest range where shadows are calculated.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 0->1",
+      "Name": "Cascade Distance: 0 -> 1",
+      "Description": "Distance threshold defining transition from the first to the second shadow cascade.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 1->2",
+      "Name": "Cascade Distance: 1 -> 2",
+      "Description": "Distance threshold defining transition from the second to the third shadow cascade.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 2->3",
+      "Name": "Cascade Distance: 2 -> 3",
+      "Description": "Distance threshold defining transition into the fourth shadow cascade.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Far Fade Start",
+      "Name": "Far Fade Start Distance",
+      "Description": "Distance at which shadow fading begins to reduce distant shadow visibility.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Far Fade Dist",
+      "Name": "Far Fade Distance",
+      "Description": "Distance over which far shadows fully fade out.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Fade Range Scale",
+      "Name": "Cascade Fade Range Scale",
+      "Description": "Scaling factor controlling how quickly shadow cascades blend into each other.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Shadow Map FilterMode",
+      "Name": "Shadow Map Filter Mode",
+      "Description": "Filtering mode used for sampling shadow maps (e.g., PCF, linear filtering).",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Depth Offset",
+      "Name": "Depth Offset",
+      "Description": "Offsets shadow depth values to reduce surface self-shadowing artifacts (shadow spots).",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Volume Depth",
+      "Name": "Volume Depth",
+      "Description": "Controls volumetric shadow depth influence for participating media or soft shadow volumes.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Depth Bias",
+      "Name": "Depth Bias",
+      "Description": "Constant depth bias applied to shadow mapping to reduce z-fighting artifacts.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Shadow Model Cull Flip",
+      "Name": "Shadow Model Cull Flip",
+      "Description": "Flips face-culling behavior for shadow rendering, useful for correcting inverted geometry or coordinate systems.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ShadowParam - AlignTexel",
+      "Name": "Align Texel",
+      "Description": "Aligns shadow projection to texel grid to reduce shimmering and crawling artifacts.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ShadowParam - DepthRate",
+      "Name": "Depth Rate",
+      "Description": "Controls scaling of depth sensitivity in shadow computations, affecting precision distribution.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - DepthScale",
+      "Name": "Depth Scale",
+      "Description": "Global multiplier for shadow depth values, adjusting overall shadow range compression or expansion.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - KernelScale",
+      "Name": "Kernel Scale",
+      "Description": "Scales the filtering kernel size used in soft shadow blurring.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - DepthOffsetScale",
+      "Name": "Depth Offset Scale",
+      "Description": "Multiplier applied to depth offset to fine-tune shadow biasing strength.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Blur Count",
+      "Name": "Blur Count",
+      "Description": "Number of blur passes applied to soften shadow edges.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Blur Radius",
+      "Name": "Blur Radius",
+      "Description": "Radius of the shadow blur filter, controlling softness of shadow edges.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - TempAA Auto Jitter",
+      "Name": "Temporal Anti-Alias: Auto Jitter",
+      "Description": "Enables automatic jittering of shadow samples to reduce aliasing across frames.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ShadowParam - Shadow: Shadow Map Resolution",
+      "Name": "Shadow Map Resolution",
+      "Description": "Base resolution of the shadow map texture used for rendering shadows.",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Slope Scaled Depth Bias",
+      "Name": "Slope Scaled Depth Bias",
+      "Description": "Depth bias scaled by surface slope to reduce shadow acne on steep angles.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Shadow Map Mode",
+      "Name": "Shadow Map Filter Mode",
+      "Description": "Filtering mode used for sampling shadow maps (e.g., PCF, linear filtering).",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Depth Offset(forPSM)",
+      "Name": "Perspective Shadow Mapping: Depth Offset",
+      "Description": "Offsets shadow depth values to reduce surface self-shadowing artifacts (shadow spots).",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - CaliburateFarRate(forPSM)",
+      "Name": "Perspective Shadow Mapping: Calibrate Far Rate",
+      "Description": "Adjusts how far-depth values are distributed in perspective shadow mapping to improve precision at long distances.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Grad Factor(forPSM)",
+      "Name": "Perspective Shadow Mapping: Gradient Factor",
+      "Description": "Controls the gradient scaling of depth values in perspective shadow mapping, affecting shadow distribution and precision.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Depth Smooth Compare",
+      "Name": "Depth Smooth Compare",
+      "Description": "Applies smoothing to depth comparisons during shadow testing to reduce aliasing and hard shadow edges.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Shadow Color",
+      "Name": "Directional Shadow Color",
+      "Description": "Defines the tint or color applied to directional light shadows, allowing stylized or softened shadow appearance.",
+      "Type": "ColorField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "shadowParam - Shadow: Shadow Light Id",
+      "Name": "Shadow Light ID",
+      "Description": "Specifies which light source index is used for shadow casting when multiple lights are present.",
+      "Type": "SbyteField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

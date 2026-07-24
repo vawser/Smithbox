@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_InternalFileList_Header_Files",
+      "Text": "Files"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Header_Files_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Header_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_TPF",
+      "Text": "TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_TPF_TT",
+      "Text": "Export this file to your current export directory: {0}"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_All_Textures",
+      "Text": "All Textures"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_All_Textures_TT",
+      "Text": "Export all textures files within this file to your current export directory: {0}"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Path",
+      "Text": "Copy Path"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Path_TT",
+      "Text": "Copy the file path to the clipboard."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Filename",
+      "Text": "Copy Filename"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Filename_TT",
+      "Text": "Copy the file name to the clipboard."
+    }
+  ]
+}

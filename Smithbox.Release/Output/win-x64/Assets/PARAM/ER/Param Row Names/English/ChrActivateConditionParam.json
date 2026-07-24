@@ -1,0 +1,47 @@
+{
+  "Name": "ChrActivateConditionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Always"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "Always"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Appear at Night"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "Appear at Day"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Appear at Day"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "Always"
+      ]
+    },
+    {
+      "ID": 21200010,
+      "Entries": [
+        "Appear during Heavy Snow"
+      ]
+    }
+  ]
+}

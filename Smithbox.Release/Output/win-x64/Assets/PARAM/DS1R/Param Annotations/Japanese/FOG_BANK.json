@@ -1,0 +1,48 @@
+{
+  "Param": "FOG_BANK",
+  "Type": "FOG_BANK",
+  "Name": "FOG_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogBeginZ",
+      "Name": "開始距離[m]",
+      "Description": "フォグの開始距離です"
+    },
+    {
+      "Field": "fogEndZ",
+      "Name": "終了距離[m]",
+      "Description": "フォグの終了距離です"
+    },
+    {
+      "Field": "degRotZ",
+      "Name": "ダミー",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "degRotW",
+      "Name": "強度",
+      "Description": "通常100にしてください(0だとフォグが掛かりません)"
+    },
+    {
+      "Field": "colR",
+      "Name": "Ｒ",
+      "Description": "フォグカラー"
+    },
+    {
+      "Field": "colG",
+      "Name": "Ｇ",
+      "Description": "フォグカラー"
+    },
+    {
+      "Field": "colB",
+      "Name": "Ｂ",
+      "Description": "フォグカラー"
+    },
+    {
+      "Field": "colA",
+      "Name": "RGB倍率[％]",
+      "Description": "フォグカラーの倍率(100が標準)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Param": "ACCOUNT_PARAM_ST",
+  "Type": "ACCOUNT_PARAM_ST",
+  "Name": "ACCOUNT_PARAM_ST",
+  "Description": "Determines the HUD display parameters above an enemy when targeted in-game.",
+  "Fields": [
+    {
+      "Field": "nameTextID",
+      "Name": "Name Text ID",
+      "Description": "Base FMG Entry ID.\n+0 FE Aircraft Name\n+1 FE Pilot Name\n+2 Menu Aircraft Name\n+3 Menu Pilot Name / Conversation Speaker Name\n+4 Aircraft Name / Pilot Name"
+    },
+    {
+      "Field": "emblemImageID",
+      "Name": "Emblem Decal ID",
+      "Description": "ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout"
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

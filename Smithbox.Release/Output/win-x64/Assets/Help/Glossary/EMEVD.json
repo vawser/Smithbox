@@ -1,0 +1,36 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "EMEVD",
+    "Tags": [
+        "Format",
+        "Script",
+        "Event"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "EMEVD is an event scripting format used from Dark Souls I onwards.",
+        "It is responsible for managing the game state, which covers aspects such as the appearance of enemies or objects, boss fights, invasions, etc.",
+        "",
+        "The format consists of a list of events, each of which contains a list of bytecode-encoded instructions, which range from general procedural tools (initializing other events, boolean operators) to very specific (give item, check if player holding a light source).",
+        "",
+        "There is one common emevd script which is continually running while the game is loaded, and per-map emevds which run while those specific maps are loaded.",
+        "Note that Dark souls II uses ESD instead for events.",
+        "Tools for editing EMEVD include DarkScript and SoulStruct (Dark Souls I only)",
+        "",
+        "Each function within EMEVD is called an Event. An Event is a group of instructions which execute from top to bottom,",
+        "identified by a numerical id.",
+        "",
+        "Event 50 always runs first (preconstructor), then event 0 (constructor).",
+        "These events in turn initialize all other events in the file.",
+        "",
+        "Most events start with instructions which allow the event to lay dormant until some condition is met - for some event flag to turn on, or some enemy to be killed.",
+        "",
+        "Some events can be initialized multiple times with different parameters, and all such invocations run in parallel.",
+        "",
+        "While events always execute instructions in order, they may skip instructions, end early, or restart themselves.",
+        "",
+        "Events can be classified as automatically restarting on bonfire rest. All events start anew after quitting and reloading the game."
+    ]
+}

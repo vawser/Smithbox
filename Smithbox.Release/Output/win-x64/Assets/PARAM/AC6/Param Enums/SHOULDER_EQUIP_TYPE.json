@@ -1,0 +1,29 @@
+{
+  "Key": "SHOULDER_EQUIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHOULDER_EQUIP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always Expanded"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stored in Shoulder Bay"
+        }
+      ]
+    }
+  ]
+}

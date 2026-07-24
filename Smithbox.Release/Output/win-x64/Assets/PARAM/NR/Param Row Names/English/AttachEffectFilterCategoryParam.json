@@ -1,0 +1,35 @@
+{
+  "Name": "AttachEffectFilterCategoryParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Character-specific"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Armament-specific"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "General"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Demerits"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

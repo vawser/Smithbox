@@ -1,0 +1,137 @@
+{
+  "Name": "AnimMoveCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 100022400,
+      "Entries": [
+        "Own machine c000_QB_front -- 自機c000_QB_前"
+      ]
+    },
+    {
+      "ID": 100022410,
+      "Entries": [
+        "Own machine c000_locked_QB_before -- 自機c000_ロック中_QB_前"
+      ]
+    },
+    {
+      "ID": 100022411,
+      "Entries": [
+        "Own machine c000_locked_QB_after -- 自機c000_ロック中_QB_後"
+      ]
+    },
+    {
+      "ID": 100022412,
+      "Entries": [
+        "Own machine c000_Locked_QB_Left -- 自機c000_ロック中_QB_左"
+      ]
+    },
+    {
+      "ID": 100022413,
+      "Entries": [
+        "Own machine c000_Locked_QB_Right -- 自機c000_ロック中_QB_右"
+      ]
+    },
+    {
+      "ID": 100022420,
+      "Entries": [
+        "Own machine c000_boosting_QB_before -- 自機c000_ブースト中_QB_前"
+      ]
+    },
+    {
+      "ID": 100022430,
+      "Entries": [
+        "Own machine c000_lock boosting_QB_before -- 自機c000_ロックブースト中_QB_前"
+      ]
+    },
+    {
+      "ID": 100022431,
+      "Entries": [
+        "Own machine c000_during rock boost_QB_after -- 自機c000_ロックブースト中_QB_後"
+      ]
+    },
+    {
+      "ID": 100022432,
+      "Entries": [
+        "Own machine c000_Rock boosting_QB_Left -- 自機c000_ロックブースト中_QB_左"
+      ]
+    },
+    {
+      "ID": 100022433,
+      "Entries": [
+        "Own machine c000_Rock boosting_QB_Right -- 自機c000_ロックブースト中_QB_右"
+      ]
+    },
+    {
+      "ID": 100022440,
+      "Entries": [
+        "Own machine c000_guarding_QB_before -- 自機c000_ガード中_QB_前"
+      ]
+    },
+    {
+      "ID": 100022441,
+      "Entries": [
+        "Own machine c000_during guard_QB_after -- 自機c000_ガード中_QB_後"
+      ]
+    },
+    {
+      "ID": 100022442,
+      "Entries": [
+        "Own machine c000_Guarding_QB_Left -- 自機c000_ガード中_QB_左"
+      ]
+    },
+    {
+      "ID": 100022443,
+      "Entries": [
+        "Own machine c000_guarding_QB_right -- 自機c000_ガード中_QB_右"
+      ]
+    },
+    {
+      "ID": 100026800,
+      "Entries": [
+        "Own machine c000_target boost -- 自機c000_ターゲットブースト"
+      ]
+    },
+    {
+      "ID": 100026810,
+      "Entries": [
+        "Own machine c000_Target boost when locked -- 自機c000_ロック時ターゲットブースト"
+      ]
+    },
+    {
+      "ID": 100122400,
+      "Entries": [
+        "Own aircraft c000_air_QB_front -- 自機c000_空中_QB_前"
+      ]
+    },
+    {
+      "ID": 100122410,
+      "Entries": [
+        "Own aircraft c000_air_locked_QB_front -- 自機c000_空中_ロック中_QB_前"
+      ]
+    },
+    {
+      "ID": 100122411,
+      "Entries": [
+        "Own aircraft c000_air_locked_QB_after -- 自機c000_空中_ロック中_QB_後"
+      ]
+    },
+    {
+      "ID": 100122412,
+      "Entries": [
+        "Own aircraft c000_air_locked_QB_left -- 自機c000_空中_ロック中_QB_左"
+      ]
+    },
+    {
+      "ID": 100122413,
+      "Entries": [
+        "Own aircraft c000_air_locked_QB_right -- 自機c000_空中_ロック中_QB_右"
+      ]
+    }
+  ]
+}

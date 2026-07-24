@@ -1,0 +1,323 @@
+{
+  "Name": "ItemUsageParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Weapon"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Weapon - Key to the Embedded"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Armor"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Armor (Unremovable)"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Vendrick's Crowns"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Ring"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Covenant Ring"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Agape Ring"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Spell"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Estus Flask"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Allowed on ladders"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Prohibited during invasions"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "Brightbug"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Rubbish"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Prohibited on ladders"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "Ammunition"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Homeward Bone (Consumed when used)"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Soul"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Boss Soul"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Covenant Item"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Online (Multiple choice)"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Cracked Eye Orb"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 2135,
+      "Entries": [
+        "Token of Spite"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Darksign"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Aged Feather"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Bonfire Item / Reinforcement Material"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "Fragrant Branch of Yore (can't be discarded)"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Dried Fingers"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Carving"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Soapstone"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Dragon Stone"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Gesture"
+      ]
+    },
+    {
+      "ID": 2550,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Black Separation Crystal"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "Seed of a Tree of Giants"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "Bone of Order"
+      ]
+    },
+    {
+      "ID": 2635,
+      "Entries": [
+        "Champion's Tablet"
+      ]
+    },
+    {
+      "ID": 2640,
+      "Entries": [
+        "Petrified Egg"
+      ]
+    },
+    {
+      "ID": 2645,
+      "Entries": [
+        "Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "Petrified Something"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Key Item"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "Key Item (Consumable)"
+      ]
+    },
+    {
+      "ID": 2702,
+      "Entries": [
+        "Key Item - Crushed Eye Orb"
+      ]
+    },
+    {
+      "ID": 2703,
+      "Entries": [
+        "Key Item - Simpleton's Spice / Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 2704,
+      "Entries": [
+        "Smelter Wedge / Soul of Nadalia, Bride of Ash"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_SYS_MSG_COMMON_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>999998</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>1000000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>1000001</SortID>
+    </Field>
+    <Field Def="u32 playEventFlagId0">
+      <DisplayName>再生条件イベントフラグ0</DisplayName>
+      <Description>再生条件イベントフラグ0</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <Increment>0</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 talkParamId0 = -1">
+      <DisplayName>会話パラメータID0</DisplayName>
+      <Description>会話パラメータID0</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u32 playEventFlagId1">
+      <DisplayName>再生条件イベントフラグ1</DisplayName>
+      <Description>再生条件イベントフラグ1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <Increment>0</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 talkParamId1 = -1">
+      <DisplayName>会話パラメータID1</DisplayName>
+      <Description>会話パラメータID1</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u32 playEventFlagId2">
+      <DisplayName>再生条件イベントフラグ2</DisplayName>
+      <Description>再生条件イベントフラグ2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <Increment>0</Increment>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s32 talkParamId2 = -1">
+      <DisplayName>会話パラメータID2</DisplayName>
+      <Description>会話パラメータID2</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u32 playEventFlagId3">
+      <DisplayName>再生条件イベントフラグ3</DisplayName>
+      <Description>再生条件イベントフラグ3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <Increment>0</Increment>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s32 talkParamId3 = -1">
+      <DisplayName>会話パラメータID3</DisplayName>
+      <Description>会話パラメータID3</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u32 playEventFlagId4">
+      <DisplayName>再生条件イベントフラグ4</DisplayName>
+      <Description>再生条件イベントフラグ4</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <Increment>0</Increment>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s32 talkParamId4 = -1">
+      <DisplayName>会話パラメータID4</DisplayName>
+      <Description>会話パラメータID4</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u16 priority">
+      <DisplayName>優先度</DisplayName>
+      <Description>優先度・・・低い方が優先</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 dispLimitNum">
+      <DisplayName>メッセージの表示回数制限</DisplayName>
+      <Description>メッセージの表示回数制限</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <Increment>0</Increment>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 dispCoolTime">
+      <DisplayName>メッセージの最低表示間隔[s]</DisplayName>
+      <Description>メッセージの最低表示間隔[s]</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <Increment>0</Increment>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s8 answerCategoryOffsetId = -1">
+      <DisplayName>掛け合いメッセージカテゴリID</DisplayName>
+      <Description>掛け合いメッセージカテゴリID・・・-1なら掛け合いなしとする</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0</Increment>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="dummy8 pad[15]">
+      <SortID>1000002</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

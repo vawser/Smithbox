@@ -1,0 +1,113 @@
+{
+  "Param": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Type": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Name": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Description": "Defines water-related footstep SFX variations based on movement type, speed, and body immersion depth.",
+  "Fields": [
+    {
+      "Field": "standbyLowSfxId",
+      "Name": "Ankle Depth (Idle)",
+      "Description": "SFX played when standing still in water at ankle depth."
+    },
+    {
+      "Field": "standbyMiddleSfxId",
+      "Name": "Knee Depth (Idle)",
+      "Description": "SFX played when standing still in water at knee/thigh depth."
+    },
+    {
+      "Field": "standbyHighSfxId",
+      "Name": "Waist Depth (Idle)",
+      "Description": "SFX played when standing still in water at waist depth."
+    },
+    {
+      "Field": "lowSpeedLowSfxId",
+      "Name": "Ankle Depth (Slow Movement)",
+      "Description": "SFX for slow movement through shallow water."
+    },
+    {
+      "Field": "lowSpeedMiddleSfxId",
+      "Name": "Knee Depth (Slow Movement)",
+      "Description": "SFX for slow movement through mid-depth water."
+    },
+    {
+      "Field": "lowSpeedHighSfxId",
+      "Name": "Waist Depth (Slow Movement)",
+      "Description": "SFX for slow movement through deep water."
+    },
+    {
+      "Field": "middleSpeedLowSfxId",
+      "Name": "Ankle Depth (Normal Movement)",
+      "Description": "SFX for normal movement through shallow water."
+    },
+    {
+      "Field": "middleSpeedMiddleSfxId",
+      "Name": "Knee Depth (Normal Movement)",
+      "Description": "SFX for normal movement through mid-depth water."
+    },
+    {
+      "Field": "middleSpeedHighSfxId",
+      "Name": "Waist Depth (Normal Movement)",
+      "Description": "SFX for normal movement through deep water."
+    },
+    {
+      "Field": "highSpeedLowSfxId",
+      "Name": "Ankle Depth (Fast Movement)",
+      "Description": "SFX for fast movement through shallow water."
+    },
+    {
+      "Field": "highSpeedMiddleSfxId",
+      "Name": "Knee Depth (Fast Movement)",
+      "Description": "SFX for fast movement through mid-depth water."
+    },
+    {
+      "Field": "highSpeedHighSfxId",
+      "Name": "Waist Depth (Fast Movement)",
+      "Description": "SFX for fast movement through deep water."
+    },
+    {
+      "Field": "stepLowSfxId",
+      "Name": "Ankle Step",
+      "Description": "SFX triggered by stepping in shallow water."
+    },
+    {
+      "Field": "stepSpeedMiddleSfxId",
+      "Name": "Knee Step",
+      "Description": "SFX triggered by stepping in mid-depth water."
+    },
+    {
+      "Field": "stepSpeedHighSfxId",
+      "Name": "Waist Step",
+      "Description": "SFX triggered by stepping in deep water."
+    },
+    {
+      "Field": "rollingLowSfxId",
+      "Name": "Ankle Roll",
+      "Description": "SFX triggered when rolling or dodging in shallow water."
+    },
+    {
+      "Field": "rollingMiddleSfxId",
+      "Name": "Knee Roll",
+      "Description": "SFX triggered when rolling or dodging in mid-depth water."
+    },
+    {
+      "Field": "rollingHighSfxId",
+      "Name": "Waist Roll",
+      "Description": "SFX triggered when rolling or dodging in deep water."
+    },
+    {
+      "Field": "jumpLowSfxId",
+      "Name": "Ankle Jump",
+      "Description": "SFX triggered when jumping in shallow water."
+    },
+    {
+      "Field": "jumpMiddleSfxId",
+      "Name": "Knee Jump",
+      "Description": "SFX triggered when jumping in mid-depth water."
+    },
+    {
+      "Field": "jumpHighSfxId",
+      "Name": "Waist Jump",
+      "Description": "SFX triggered when jumping in deep water."
+    }
+  ]
+}

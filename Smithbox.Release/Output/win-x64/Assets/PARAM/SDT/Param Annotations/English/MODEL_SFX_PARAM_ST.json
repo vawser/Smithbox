@@ -1,0 +1,128 @@
+{
+  "Param": "MODEL_SFX_PARAM_ST",
+  "Type": "MODEL_SFX_PARAM_ST",
+  "Name": "MODEL_SFX_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "sfxId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

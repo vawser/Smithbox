@@ -1,0 +1,38 @@
+{
+  "Key": "OBJACT_SP_QUALIFIED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJACT_SP_QUALIFIED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goods"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpEffect"
+        }
+      ]
+    }
+  ]
+}

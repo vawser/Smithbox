@@ -1,0 +1,29 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "General purpose"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For PC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "enemy general old"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "c3020 communist MT for damage test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1301 @@
+{
+  "Name": "MovementEnemyTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "reverse joint -- 逆関節"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Mining ship -- 採掘艦"
+      ]
+    },
+    {
+      "ID": 883000,
+      "Entries": [
+        "Bug (Flying type) -- バグ(飛行タイプ)"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "c1000 template -- c1000 テンプレート"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "c1111 Dress-up NPC (wingman) Mike -- c1111\u3000着せ替えNPC(僚機) マイク"
+      ]
+    },
+    {
+      "ID": 11120000,
+      "Entries": [
+        "c1112 Dress-up NPC (wingman) Daisy -- c1112\u3000着せ替えNPC(僚機) デイジー"
+      ]
+    },
+    {
+      "ID": 11130000,
+      "Entries": [
+        "c1113 Dress-up NPC (wingman) Boss -- c1113\u3000着せ替えNPC(僚機) ボス"
+      ]
+    },
+    {
+      "ID": 11140000,
+      "Entries": [
+        "c1114 Dress-up NPC (wingman) Patrick -- c1114\u3000着せ替えNPC(僚機) パトリック"
+      ]
+    },
+    {
+      "ID": 11150000,
+      "Entries": [
+        "c1115 Dress-up NPC (wingman) Yoffe -- c1115\u3000着せ替えNPC(僚機) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 11160000,
+      "Entries": [
+        "c1116 Dress-up NPC (wingman) Estella -- c1116\u3000着せ替えNPC(僚機) エステラ"
+      ]
+    },
+    {
+      "ID": 11170000,
+      "Entries": [
+        "c1117 Dress-up NPC (wingman) Jonathan -- c1117\u3000着せ替えNPC(僚機) ジョナサン"
+      ]
+    },
+    {
+      "ID": 11180000,
+      "Entries": [
+        "c1118 Dress-up NPC (wingman) William -- c1118\u3000着せ替えNPC(僚機) ウィリアム"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "c1210 Dress-up NPC (enemy) Jotuel -- c1210\u3000着せ替えNPC(敵) ヨトゥエル"
+      ]
+    },
+    {
+      "ID": 12140000,
+      "Entries": [
+        "c1214 Dress-up NPC (enemy) Patrick -- c1214\u3000着せ替えNPC(敵) パトリック"
+      ]
+    },
+    {
+      "ID": 12150000,
+      "Entries": [
+        "c1215 Dress-up NPC (enemy) Yoffe -- c1215\u3000着せ替えNPC(敵) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 12160000,
+      "Entries": [
+        "c1216 Dress-up NPC (enemy) Estella -- c1216\u3000着せ替えNPC(敵) エステラ"
+      ]
+    },
+    {
+      "ID": 12170000,
+      "Entries": [
+        "c1217 Dress-up NPC (enemy) Jonathan -- c1217\u3000着せ替えNPC(敵) ジョナサン"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "c1310 Dress-up NPC (Arena) Jotuel -- c1310\u3000着せ替えNPC(アリーナ) ヨトゥエル"
+      ]
+    },
+    {
+      "ID": 13110000,
+      "Entries": [
+        "c1311 Dress-up NPC (Arena) Mike -- c1311\u3000着せ替えNPC(アリーナ) マイク"
+      ]
+    },
+    {
+      "ID": 13120000,
+      "Entries": [
+        "c1312 Dress-up NPC (Arena) Daisy -- c1312\u3000着せ替えNPC(アリーナ) デイジー"
+      ]
+    },
+    {
+      "ID": 13130000,
+      "Entries": [
+        "c1313 Dress-up NPC (Arena) Boss -- c1313\u3000着せ替えNPC(アリーナ) ボス"
+      ]
+    },
+    {
+      "ID": 13140000,
+      "Entries": [
+        "c1314 Dress-up NPC (Arena) Patrick -- c1314\u3000着せ替えNPC(アリーナ) パトリック"
+      ]
+    },
+    {
+      "ID": 13150000,
+      "Entries": [
+        "c1315 Dress-up NPC (Arena) Yoffe -- c1315\u3000着せ替えNPC(アリーナ) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 13160000,
+      "Entries": [
+        "c1316 Dress-up NPC (Arena) Estella -- c1316\u3000着せ替えNPC(アリーナ) エステラ"
+      ]
+    },
+    {
+      "ID": 13170000,
+      "Entries": [
+        "c1317 Dress-up NPC (Arena) Jonathan -- c1317\u3000着せ替えNPC(アリーナ) ジョナサン"
+      ]
+    },
+    {
+      "ID": 13180000,
+      "Entries": [
+        "c1318 Dress-up NPC (Arena) William -- c1318\u3000着せ替えNPC(アリーナ) ウィリアム"
+      ]
+    },
+    {
+      "ID": 14010000,
+      "Entries": [
+        "c1401 Dress-up NPC (test) Bipod aircraft -- c1401\u3000着せ替えNPC(テスト) 二脚機体"
+      ]
+    },
+    {
+      "ID": 14020000,
+      "Entries": [
+        "c1402 Dress-up NPC (test) Reverse legged aircraft -- c1402\u3000着せ替えNPC(テスト) 逆脚機体"
+      ]
+    },
+    {
+      "ID": 14030000,
+      "Entries": [
+        "c1403 Dress-up NPC (test) Quadruped aircraft -- c1403\u3000着せ替えNPC(テスト) 四脚機体"
+      ]
+    },
+    {
+      "ID": 14040000,
+      "Entries": [
+        "c1404 Dress-up NPC (test) Tank aircraft -- c1404\u3000着せ替えNPC(テスト) タンク機体"
+      ]
+    },
+    {
+      "ID": 14050000,
+      "Entries": [
+        "c1405 Dress-up NPC (test) NPAC appearing in missile launch support -- c1405\u3000着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "c1500 Dress-up NPC (enemy) Decisive Battle C Ace A -- c1500\u3000着せ替えNPC(敵) 決戦CのエースA"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 Security MT (Rifle) -- c3000\u3000警備MT（ライフル）"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "c3001 Security MT Enhancement A -- c3001\u3000警備MT強化A"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "c3002 Security MT Enhancement B -- c3002\u3000警備MT強化B"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 General purpose MT in former communist countries -- c3020\u3000旧共産圏汎用MT"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "c3050 Regular Army MT_Normal -- c3050\u3000正規軍MT_ノーマル"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "c3100 flight MT -- c3100\u3000飛行MT"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 juggernaut -- c3150\u3000ジャガーノート"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "c3200 Avalanche (base) -- c3200\u3000アバランチ（ベース）"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) -- c3250\u3000正規軍AC（ノーマル）"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 Regular army AC (enhanced heavy firepower) -- c3250\u3000正規軍AC（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "c3250 Regular Army AC (High Mobility) -- c3250\u3000正規軍AC（高機動）"
+      ]
+    },
+    {
+      "ID": 32509010,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Ultra-high speed type for attacking old spaceports [For testing] -- c3250\u3000正規軍AC（ノーマル）旧宇宙港襲撃用超高速タイプ【テスト用】"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) -- c3260\u3000正規軍重AC（ベース）"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for charge cutting -- c3260\u3000正規軍重AC（ブレード）\u3000チャージ斬り用"
+      ]
+    },
+    {
+      "ID": 32600101,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for starting check slash -- c3260\u3000正規軍重AC（ブレード）\u3000始動牽制斬り用"
+      ]
+    },
+    {
+      "ID": 32600102,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for counter guard reception -- c3260\u3000正規軍重AC（ブレード）\u3000カウンターガード受け用"
+      ]
+    },
+    {
+      "ID": 32600310,
+      "Entries": [
+        "c3260 Regular military heavy AC (cutting edge) for EN gripping inertia -- c3260\u3000正規軍重AC（最先端）\u3000EN掴み慣性用"
+      ]
+    },
+    {
+      "ID": 32609000,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) high speed type for missions [tentative] -- c3260\u3000正規軍重AC（ベース）ミッション用高速タイプ【仮】"
+      ]
+    },
+    {
+      "ID": 32609010,
+      "Entries": [
+        "c3260 Regular military heavy AC (base) ultra-high speed type for attacking old spaceports [for testing] -- c3260\u3000正規軍重AC（ベース）旧宇宙港襲撃用超高速タイプ【テスト用】"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "c3300 Ghost MT (Stelless) -- c3300\u3000ゴーストMT（ステレス）"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "c3310 Dummy Ghost MT -- c3310\u3000ダミーゴーストMT"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 Quadruped MT -- c3400\u3000四脚MT"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "c3500 old world MT -- c3500\u3000旧世界MT"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "c3600 construction machine spider -- c3600\u3000建機クモ"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 Deleteter -- c3700\u3000デリーター"
+      ]
+    },
+    {
+      "ID": 37000100,
+      "Entries": [
+        "c3700 Deleteer Fighting -- c3700\u3000デリーター\u3000格闘"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "c3700 Deleteer Ace -- c3700\u3000デリーター\u3000エース"
+      ]
+    },
+    {
+      "ID": 37009000,
+      "Entries": [
+        "c3700 Deleteer Geofront exclusive -- c3700\u3000デリーター\u3000ジオフロント専用"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "c4000 ADF -- c4000\u3000ADF"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss -- c4100\u3000人型重量級ボス"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "c4150 special attack MT -- c4150\u3000特攻MT"
+      ]
+    },
+    {
+      "ID": 41500001,
+      "Entries": [
+        "c4150 special attack MT -- c4150\u3000特攻MT"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "c4200 next generation proto AC -- c4200\u3000次世代プロトAC"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "c4210 Next generation proto AC_phantom -- c4210\u3000次世代プロトAC_幻影"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "c4250 Orbit Seed -- c4250\u3000オービットシード"
+      ]
+    },
+    {
+      "ID": 42500010,
+      "Entries": [
+        "c4250 Orbit Seed Skate rotation -- c4250\u3000オービットシード\u3000スケート回転時"
+      ]
+    },
+    {
+      "ID": 42600000,
+      "Entries": [
+        "c4260 Orbit control -- c4260\u3000オービット制御"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "c5000 guard mechanism (aerial) machine gun type -- c5000\u3000ガードメカ(空中) 機関銃タイプ"
+      ]
+    },
+    {
+      "ID": 50000090,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Speed ​​Adjustment Test 1 Hayame -- c5000\u3000ガードメカ(空中) 速度調整テスト1\u3000はやめ"
+      ]
+    },
+    {
+      "ID": 50000091,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Speed ​​Adjustment Test 2 Slow -- c5000\u3000ガードメカ(空中) 速度調整テスト2\u3000遅め"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "c5010 bug (work type A) -- c5010\u3000バグ（作業タイプA）"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "c5020 Heavy guard mechanism -- c5020\u3000重ガードメカ"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "c5100 large transport helicopter -- c5100\u3000大型輸送ヘリ"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "c5100 Large transport helicopter_for missions -- c5100\u3000大型輸送ヘリ_ミッション用"
+      ]
+    },
+    {
+      "ID": 51000011,
+      "Entries": [
+        "c5100 large transport helicopter for meeting organizations -- c5100\u3000大型輸送ヘリ\u3000組織との出会い用"
+      ]
+    },
+    {
+      "ID": 51000012,
+      "Entries": [
+        "c5100 Large transport helicopter Encounter with organization Reinforcement -- c5100\u3000大型輸送ヘリ 組織との出会い\u3000増援用"
+      ]
+    },
+    {
+      "ID": 51000013,
+      "Entries": [
+        "c5100 large transport helicopter area escape support escort helicopter use -- c5100\u3000大型輸送ヘリ 領域離脱援護\u3000護衛ヘリ用"
+      ]
+    },
+    {
+      "ID": 51000014,
+      "Entries": [
+        "c5100 large transport helicopter encounter with organization ver2 for production -- c5100\u3000大型輸送ヘリ 組織との出会いver2 演出用"
+      ]
+    },
+    {
+      "ID": 51000015,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 2 -- c5100\u3000大型輸送ヘリ 燃料基地掃討\u3000逃走用2"
+      ]
+    },
+    {
+      "ID": 51000016,
+      "Entries": [
+        "c5100 Large transport helicopter Collapse A layer -- c5100\u3000大型輸送ヘリ 崩落A層"
+      ]
+    },
+    {
+      "ID": 51000017,
+      "Entries": [
+        "c5100 large transport helicopter attack preparation stage production -- c5100\u3000大型輸送ヘリ\u3000襲撃準備\u3000演出用"
+      ]
+    },
+    {
+      "ID": 51000018,
+      "Entries": [
+        "c5100 large transport helicopter living area purge reinforcement use -- c5100\u3000大型輸送ヘリ 居住区パージ\u3000増援用"
+      ]
+    },
+    {
+      "ID": 51000019,
+      "Entries": [
+        "c5100 large transport helicopter large missile launch support -- c5100\u3000大型輸送ヘリ 大型ミサイル発射支援"
+      ]
+    },
+    {
+      "ID": 51000020,
+      "Entries": [
+        "c5100 Large transport helicopter New B levitation -- c5100\u3000大型輸送ヘリ\u3000新B浮上用"
+      ]
+    },
+    {
+      "ID": 51000021,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 3 -- c5100\u3000大型輸送ヘリ 燃料基地掃討\u3000逃走用3"
+      ]
+    },
+    {
+      "ID": 51000022,
+      "Entries": [
+        "c5100 Large transport helicopter SBM ice field hole -- c5100\u3000大型輸送ヘリ\u3000SBM氷原の穴"
+      ]
+    },
+    {
+      "ID": 51000023,
+      "Entries": [
+        "c5100 large transport helicopter_over walls_for wingman -- c5100\u3000大型輸送ヘリ_壁越え_僚機用"
+      ]
+    },
+    {
+      "ID": 51000024,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 4 -- c5100\u3000大型輸送ヘリ 燃料基地掃討\u3000逃走用4"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "c5100 large transport helicopter_for testing -- c5100\u3000大型輸送ヘリ_テスト用"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "c5101 large transport helicopter machine gun -- c5101\u3000大型輸送ヘリ機銃"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "c5120 military US drone -- c5120\u3000軍事用USドローン"
+      ]
+    },
+    {
+      "ID": 51201000,
+      "Entries": [
+        "c5120 military US drone new B levitation -- c5120\u3000軍事用USドローン 新B浮上用"
+      ]
+    },
+    {
+      "ID": 51201010,
+      "Entries": [
+        "c5120 military US drone for straight city production -- c5120\u3000軍事用USドローン ストレート市街演出用"
+      ]
+    },
+    {
+      "ID": 51201020,
+      "Entries": [
+        "c5120 military US drone area escape support for EN rifle -- c5120\u3000軍事用USドローン 領域離脱援護\u3000ENライフル用"
+      ]
+    },
+    {
+      "ID": 51201030,
+      "Entries": [
+        "c5120 Military US Drone Fuel Base Sweeping for Palico -- c5120\u3000軍事用USドローン 燃料基地掃討\u3000オトモ用"
+      ]
+    },
+    {
+      "ID": 51201040,
+      "Entries": [
+        "c5120 military US drone scavenging -- c5120\u3000軍事用USドローン\u3000スカベンジング"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "c5150 combat helicopter -- c5150\u3000戦闘ヘリ"
+      ]
+    },
+    {
+      "ID": 51500010,
+      "Entries": [
+        "c5150 combat helicopter high speed for production -- c5150\u3000戦闘ヘリ 演出用\u3000高速"
+      ]
+    },
+    {
+      "ID": 51501000,
+      "Entries": [
+        "c5150 combat helicopter 3x speed for dummy -- c5150\u3000戦闘ヘリ\u3000ダミー用3倍速"
+      ]
+    },
+    {
+      "ID": 51501010,
+      "Entries": [
+        "c5150 combat helicopter dummy new B floating -- c5150\u3000戦闘ヘリ\u3000ダミー用 新B浮上"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "c5200 tank -- c5200\u3000戦車"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "c5250 Sunflower -- c5250\u3000サンフラワー"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "c5300 suicide satellite -- c5300\u3000自爆衛星"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "c5500 biological weapon -- c5500\u3000生体兵器"
+      ]
+    },
+    {
+      "ID": 55100000,
+      "Entries": [
+        "c5510 Biological Weapon (Large) -- c5510\u3000生体兵器（大）"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "c6000 Necklace Keeper -- c6000\u3000首飾りの番人"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "c6010 barrier unit -- c6010\u3000バリアユニット"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "c6050 Pharaon -- c6050\u3000ファラオン"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "c6100 sea spider -- c6100\u3000ウミグモ"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "c6100 Sea spider C end -- c6100\u3000ウミグモ Cエンド"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "c6100 Sea spider C end charging -- c6100\u3000ウミグモ Cエンド\u3000チャージ中"
+      ]
+    },
+    {
+      "ID": 61010000,
+      "Entries": [
+        "c6101 Sea spider secondary gun -- c6101\u3000ウミグモ副砲"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "c6250 Sandworm -- c6250\u3000サンドワーム"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "c6260 Sandworm small -- c6260\u3000サンドワーム小"
+      ]
+    },
+    {
+      "ID": 63500000,
+      "Entries": [
+        "c6350 Dora -- c6350\u3000ドーラ"
+      ]
+    },
+    {
+      "ID": 63510000,
+      "Entries": [
+        "c6351 Dora secondary gun -- c6351\u3000ドーラ副砲"
+      ]
+    },
+    {
+      "ID": 63520000,
+      "Entries": [
+        "c6352 Dora missile -- c6352\u3000ドーラミサイル"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 mining ship -- c6400\u3000採掘艦"
+      ]
+    },
+    {
+      "ID": 64010000,
+      "Entries": [
+        "c6401 mining ship connection part weak point -- c6401\u3000採掘艦 連結部 弱点"
+      ]
+    },
+    {
+      "ID": 64020000,
+      "Entries": [
+        "c6402 mining ship wheel weakness -- c6402\u3000採掘艦 ホイール 弱点"
+      ]
+    },
+    {
+      "ID": 64100000,
+      "Entries": [
+        "c6410 mining drill -- c6410\u3000採掘ドリル"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "c6420 mining ship eyeball -- c6420\u3000採掘艦 目玉"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "c7220 field missile (repeat type) -- c7220\u3000野戦ミサイル（連射型）"
+      ]
+    },
+    {
+      "ID": 72210000,
+      "Entries": [
+        "c7221 field missile (vertical type) -- c7221\u3000野戦ミサイル（垂直型）"
+      ]
+    },
+    {
+      "ID": 72230000,
+      "Entries": [
+        "c7223 field missile (simultaneous launch type) -- c7223\u3000野戦ミサイル（同時発射型）"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "c7230 Ground Force Artillery Grenade (Large) -- c7230\u3000地上勢力砲台 グレネード(大)"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "c7240 Ground Force Artillery Bazooka (Large) -- c7240\u3000地上勢力砲台 バズーカ(大)"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "c7250 Ground Force Artillery Gatling (Large) -- c7250\u3000地上勢力砲台 ガトリング(大)"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "c7260 Ground force artillery missile (large) twin -- c7260\u3000地上勢力砲台 ミサイル(大) 連装"
+      ]
+    },
+    {
+      "ID": 72610000,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical -- c7261\u3000地上勢力砲台 ミサイル(大) 垂直"
+      ]
+    },
+    {
+      "ID": 72620000,
+      "Entries": [
+        "c7262 Ground Force Artillery Missile (Large) Horizontal -- c7262\u3000地上勢力砲台 ミサイル(大) 水平"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 Ground Force Artillery Sniper (Large) -- c7270\u3000地上勢力砲台 スナイパー(大)"
+      ]
+    },
+    {
+      "ID": 72800000,
+      "Entries": [
+        "c7280 Ground Force Artillery EN Rifle -- c7280\u3000地上勢力砲台 ENライフル"
+      ]
+    },
+    {
+      "ID": 72900000,
+      "Entries": [
+        "c7290 Old EN turret laser bazooka -- c7290\u3000旧式EN砲台 レーザーバズーカ"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "c7300 speaker antenna turret pulse -- c7300\u3000スピーカーアンテナ砲台 パルス"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 State-of-the-art EN battery plasma rifle -- c7310\u3000最新鋭EN砲台 プラズマライフル"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "c7320 state-of-the-art EN battery plasma missile -- c7320\u3000最新鋭EN砲台 プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "c7390 D-tier giant gun battery Anemone -- c7390\u3000D層巨大砲台 アネモネ"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "c7400 amphibious assault ship -- c7400\u3000強襲揚陸艦"
+      ]
+    },
+    {
+      "ID": 74000010,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Mission For Old Spaceport Assault -- c7400\u3000強襲揚陸艦 ミッション用\u3000旧宇宙港襲撃"
+      ]
+    },
+    {
+      "ID": 74000020,
+      "Entries": [
+        "c7400 amphibious assault ship mission for breaking through the atmosphere -- c7400\u3000強襲揚陸艦 ミッション用\u3000大気圏突破"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "c7401 amphibious assault ship main gun -- c7401\u3000強襲揚陸艦 主砲"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "c7402 Amphibious assault ship secondary gun -- c7402\u3000強襲揚陸艦 副砲"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "c7403 Amphibious Assault Ship Missile Cannon -- c7403\u3000強襲揚陸艦 ミサイル砲"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit -- c7410\u3000強襲揚陸艦 子機"
+      ]
+    },
+    {
+      "ID": 74100100,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit -- c7410\u3000強襲揚陸艦 子機"
+      ]
+    },
+    {
+      "ID": 74100110,
+      "Entries": [
+        "C7410 Amphibious Assault Ship Child Unit Encounter with the organization -- c7410\u3000強襲揚陸艦 子機\u3000組織との出会い"
+      ]
+    },
+    {
+      "ID": 80100000,
+      "Entries": [
+        "c8010 High altitude snapper -- c8010 高所スナ"
+      ]
+    },
+    {
+      "ID": 80200000,
+      "Entries": [
+        "c8020 Mortar MT -- c8020 迫撃MT"
+      ]
+    },
+    {
+      "ID": 80300000,
+      "Entries": [
+        "c8030 pile MT (shotgun) -- c8030 パイルMT（ショットガン"
+      ]
+    },
+    {
+      "ID": 80400000,
+      "Entries": [
+        "c8040 Large drone (call for friends) -- c8040 大ドローン（仲間呼び"
+      ]
+    },
+    {
+      "ID": 80500000,
+      "Entries": [
+        "c8050 dropship -- c8050 ドロップシップ"
+      ]
+    },
+    {
+      "ID": 80600000,
+      "Entries": [
+        "c8060 Gunship (Strong Zako) -- c8060 ガンシップ（強ザコ"
+      ]
+    },
+    {
+      "ID": 80900000,
+      "Entries": [
+        "c8090 fighter jet -- c8090 戦闘機"
+      ]
+    },
+    {
+      "ID": 80900090,
+      "Entries": [
+        "c8090 fighter, mining ship, carrier-based aircraft -- c8090 戦闘機\u3000採掘艦\u3000艦載機"
+      ]
+    },
+    {
+      "ID": 80900800,
+      "Entries": [
+        "c8090 sea fighter -- c8090 水上戦闘機"
+      ]
+    },
+    {
+      "ID": 80900900,
+      "Entries": [
+        "c8090 high speed version fighter -- c8090 高速版戦闘機"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip -- c8100 盾持ちMT（レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "c8110 Colorless MT -- c8110 無色MT"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT for control confirmation -- c8111\u3000制御確認用無色MT"
+      ]
+    },
+    {
+      "ID": 81170000,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 -- c8117\u3000無色MT\u3000コピーテスト3"
+      ]
+    },
+    {
+      "ID": 81180000,
+      "Entries": [
+        "c8118 Colorless MT Copy Test 2 -- c8118\u3000無色MT\u3000コピーテスト2"
+      ]
+    },
+    {
+      "ID": 81190000,
+      "Entries": [
+        "c8119 Colorless MT Copy Test -- c8119\u3000無色MT\u3000コピーテスト"
+      ]
+    },
+    {
+      "ID": 81300000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid) -- c8130 強敵（人型）"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "c8131 Control prototype character -- c8131\u3000制御試作用キャラ"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "c8135 Official Miyatake strong enemy -- c8135\u3000正式宮武強敵"
+      ]
+    },
+    {
+      "ID": 81400000,
+      "Entries": [
+        "c8140 Strong enemy (bird type) -- c8140 強敵（鳥型）"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Toriashi -- c8135\u3000正式宮武強敵 鳥足"
+      ]
+    },
+    {
+      "ID": 81500000,
+      "Entries": [
+        "c8150 ground moving vehicle -- c8150 地上移動車両"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "c8200 Walla Walla Mushi -- c8200\u3000ワラワラ蟲"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "c8210 Walla Walla Insect (Large) -- c8210\u3000ワラワラ蟲（大）"
+      ]
+    },
+    {
+      "ID": 82500000,
+      "Entries": [
+        "c8250 D layer huge elevator -- c8250\u3000D層\u3000巨大エレベータ"
+      ]
+    },
+    {
+      "ID": 82510000,
+      "Entries": [
+        "c8251 Jump rope laser control character -- c8251\u3000縄跳びレーザー\u3000制御用キャラ"
+      ]
+    },
+    {
+      "ID": 83000000,
+      "Entries": [
+        "c8300 sandworm -- c8300 サンドワーム"
+      ]
+    },
+    {
+      "ID": 84100000,
+      "Entries": [
+        "c8410 floating giant battleship -- c8410 浮遊巨大戦艦"
+      ]
+    },
+    {
+      "ID": 84200000,
+      "Entries": [
+        "c8420 marine carrier -- c8420 海上母艦"
+      ]
+    },
+    {
+      "ID": 84300000,
+      "Entries": [
+        "c8430 battleship (far -- c8430 戦艦（遠"
+      ]
+    },
+    {
+      "ID": 84400000,
+      "Entries": [
+        "c8440 battleship (near) -- c8440 戦艦（近"
+      ]
+    },
+    {
+      "ID": 84500000,
+      "Entries": [
+        "c8450 Stiglo (sea) -- c8450 スティグロ（海上"
+      ]
+    },
+    {
+      "ID": 84600000,
+      "Entries": [
+        "c8460 sea worm -- c8460 シーワーム"
+      ]
+    },
+    {
+      "ID": 85104000,
+      "Entries": [
+        "c8510 Strong Zako (bazooka for exit-san adjustment) -- c8510\u3000強ザコ(バズーカ 出口さん調整用"
+      ]
+    },
+    {
+      "ID": 85110000,
+      "Entries": [
+        "c8511 For practicing strong pressure -- c8511\u3000強ザコ練習用"
+      ]
+    },
+    {
+      "ID": 90310000,
+      "Entries": [
+        "c9031 flying enemy -- c9031 飛行敵"
+      ]
+    },
+    {
+      "ID": 90310090,
+      "Entries": [
+        "B-tier fighter jet substitute drone -- B層\u3000戦闘機代用ドローン"
+      ]
+    },
+    {
+      "ID": 90310091,
+      "Entries": [
+        "B-tier bomber substitute drone -- B層\u3000爆撃機代用ドローン"
+      ]
+    },
+    {
+      "ID": 92010000,
+      "Entries": [
+        "c9201 Reverse joint -- c9201 逆関節"
+      ]
+    },
+    {
+      "ID": 92030000,
+      "Entries": [
+        "c9203 Reverse joint damage Lv1 interval 2 seconds -- c9203\u3000逆関節 ダメージLv1 間隔2秒"
+      ]
+    },
+    {
+      "ID": 92040000,
+      "Entries": [
+        "c9204 Reverse joint damage Lv1 interval 0.1 seconds -- c9204\u3000逆関節 ダメージLv1 間隔0.1秒"
+      ]
+    },
+    {
+      "ID": 93070000,
+      "Entries": [
+        "c9307 Colorless pouring communist MT -- c9307\u3000無色流し込み共産MT"
+      ]
+    },
+    {
+      "ID": 93080000,
+      "Entries": [
+        "c9308 Tank control verification -- c9308\u3000タンク制御検証用"
+      ]
+    },
+    {
+      "ID": 93090000,
+      "Entries": [
+        "c9309 For quadruped control test -- c9309\u3000四脚制御テスト用"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        "c9321 Link test -- c9321\u3000リンクテスト"
+      ]
+    },
+    {
+      "ID": 93220000,
+      "Entries": [
+        "c9322 Enomoto test -- c9322\u3000榎本テスト"
+      ]
+    },
+    {
+      "ID": 93220010,
+      "Entries": [
+        "c9322 Enomoto test Vehicle escort test -- c9322\u3000榎本テスト 車両護衛テスト"
+      ]
+    },
+    {
+      "ID": 93220020,
+      "Entries": [
+        "c5300 Suicide satellite for destroying ice worms -- c5300\u3000自爆衛星\u3000アイスワーム撃破用"
+      ]
+    },
+    {
+      "ID": 93230000,
+      "Entries": [
+        "c9323 Hagiyatest -- c9323\u3000はぎやてすと"
+      ]
+    },
+    {
+      "ID": 93300000,
+      "Entries": [
+        "c9330 For checking large ragdolls -- c9330\u3000大型ラグドール確認用"
+      ]
+    },
+    {
+      "ID": 93400000,
+      "Entries": [
+        "c9340 Dress-up NPC test (enemy) -- c9340\u3000着せ替えNPCテスト（敵）"
+      ]
+    },
+    {
+      "ID": 93410000,
+      "Entries": [
+        "c9341 Dress-up NPC test (ally) -- c9341\u3000着せ替えNPCテスト（味方）"
+      ]
+    },
+    {
+      "ID": 93420000,
+      "Entries": [
+        "c9342 Dress-up NPC test (ally) -- c9342\u3000着せ替えNPCテスト（味方）"
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        "c9400 map team test bazooka turret small -- c9400\u3000マップ班テスト用 バズーカ砲台 小"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "c9401 Elevator side main turret -- c9401\u3000エレベータ側面メイン砲台"
+      ]
+    },
+    {
+      "ID": 94100000,
+      "Entries": [
+        "c9410 Elevator upper main turret -- c9410\u3000エレベータ上部メイン砲台"
+      ]
+    },
+    {
+      "ID": 94110000,
+      "Entries": [
+        "c9411 Map team test sniper battery large -- c9411\u3000マップ班テスト用 スナイパー砲台 大"
+      ]
+    },
+    {
+      "ID": 94200000,
+      "Entries": [
+        "c9420 Missile battery for adjustment -- c9420\u3000ミサイル砲台 調整用"
+      ]
+    },
+    {
+      "ID": 94310000,
+      "Entries": [
+        "c9431 machine gun turret -- c9431\u3000マシンガン砲台"
+      ]
+    },
+    {
+      "ID": 94320000,
+      "Entries": [
+        "c9432 machine gun battery predictive firing test_bullets -- c9432\u3000マシンガン砲台予測射撃テスト_弾丸"
+      ]
+    },
+    {
+      "ID": 94330000,
+      "Entries": [
+        "c9433 Machine gun battery predictive firing test_LookAt -- c9433\u3000マシンガン砲台予測射撃テスト_LookAt"
+      ]
+    },
+    {
+      "ID": 99600000,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB -- c9960\u3000VOB用弾発生ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 99800000,
+      "Entries": [
+        "c9980 Dummy character group route patrol -- c9980 ダミーキャラ\u3000集団ルート巡回"
+      ]
+    },
+    {
+      "ID": 99800060,
+      "Entries": [
+        "c9980 Dummy character for C-end platoon action -- c9980 ダミーキャラ\u3000Cエンド小隊行動用"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "c9990 Insertion test *Weapon submission prohibited -- c9990\u3000挿入テスト※武器提出禁止"
+      ]
+    },
+    {
+      "ID": 99991000,
+      "Entries": [
+        "*General-purpose type* For turrets, does not move -- ※汎用系※\u3000砲台用\u3000移動しない"
+      ]
+    }
+  ]
+}

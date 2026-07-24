@@ -1,0 +1,283 @@
+{
+  "Param": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
+  "Type": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
+  "Name": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "areaNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "gridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "gridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "attachPointEntityId",
+      "Name": "attachPointEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "defaultSmallBase",
+      "Name": "defaultSmallBase",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7a",
+      "Name": "unknown_7a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7b",
+      "Name": "unknown_7b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7c",
+      "Name": "unknown_7c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7d",
+      "Name": "unknown_7d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8a",
+      "Name": "unknown_8a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8b",
+      "Name": "unknown_8b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8c",
+      "Name": "unknown_8c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8d",
+      "Name": "unknown_8d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9a",
+      "Name": "unknown_9a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9b",
+      "Name": "unknown_9b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9c",
+      "Name": "unknown_9c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9d",
+      "Name": "unknown_9d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10a",
+      "Name": "unknown_10a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10b",
+      "Name": "unknown_10b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10c",
+      "Name": "unknown_10c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10d",
+      "Name": "unknown_10d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11a",
+      "Name": "unknown_11a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11b",
+      "Name": "unknown_11b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11c",
+      "Name": "unknown_11c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11d",
+      "Name": "unknown_11d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12a",
+      "Name": "unknown_12a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12b",
+      "Name": "unknown_12b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12c",
+      "Name": "unknown_12c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12d",
+      "Name": "unknown_12d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "posX",
+      "Description": ""
+    },
+    {
+      "Field": "posY",
+      "Name": "posY",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "posZ",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "unknown_17",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19a",
+      "Name": "unknown_19a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19b",
+      "Name": "unknown_19b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19c",
+      "Name": "unknown_19c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19d",
+      "Name": "unknown_19d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22a",
+      "Name": "unknown_22a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22b",
+      "Name": "unknown_22b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22c",
+      "Name": "unknown_22c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22d",
+      "Name": "unknown_22d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23a",
+      "Name": "unknown_23a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "unknown_23b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23c",
+      "Name": "unknown_23c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23d",
+      "Name": "unknown_23d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    }
+  ]
+}

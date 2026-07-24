@@ -1,0 +1,58 @@
+{
+  "Param": "WIRE_POINT_SEARCH_PARAM_ST",
+  "Type": "WIRE_POINT_SEARCH_PARAM_ST",
+  "Name": "WIRE_POINT_SEARCH_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "actionDistanceNear",
+      "Name": "アクション可能距離_最小",
+      "Description": "ワイヤーアクション可能な最小距離"
+    },
+    {
+      "Field": "actionDistanceFar",
+      "Name": "アクション可能距離_最大",
+      "Description": "ワイヤーアクション可能な最大距離"
+    },
+    {
+      "Field": "findDistanceFar",
+      "Name": "認識可能距離",
+      "Description": "ワイヤーアクションは出来ないが、ポイントが見える距離"
+    },
+    {
+      "Field": "filteringDistanceHeightUpper",
+      "Name": "視野フィルタリング高さ_上",
+      "Description": "四角形でフィルタリングする際の上側の高さ"
+    },
+    {
+      "Field": "filteringDistanceHeightLower",
+      "Name": "視野フィルタリング高さ_下",
+      "Description": "四角形でフィルタリングする際の下側の高さ"
+    },
+    {
+      "Field": "filteringDistanceWidth",
+      "Name": "視野フィルタリング幅",
+      "Description": "四角形でフィルタリングする際の幅"
+    },
+    {
+      "Field": "softlockDistanceHeightUpper",
+      "Name": "ターゲットソフトロック範囲高さ_上",
+      "Description": "一度捉えたターゲットをソフトロックする画面範囲の高さ（上側）"
+    },
+    {
+      "Field": "softlockDistanceHeightLower",
+      "Name": "ターゲットソフトロック範囲高さ_下",
+      "Description": "一度捉えたターゲットをソフトロックする画面範囲の高さ（下側）"
+    },
+    {
+      "Field": "softlockDistanceWidth",
+      "Name": "ターゲットソフトロック範囲幅",
+      "Description": "一度捉えたターゲットをソフトロックする画面範囲の幅"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

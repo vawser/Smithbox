@@ -1,0 +1,30 @@
+{
+  "id": "203",
+  "name": "Spider",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Wall Cling (Up)"
+    },
+    {
+      "value": "3",
+      "name": "Wall Cling (Up)"
+    },
+    {
+      "value": "4",
+      "name": "Ceiling Cling"
+    },
+    {
+      "value": "5",
+      "name": "Wall Cling (Down)"
+    }
+  ]
+}

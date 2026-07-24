@@ -1,0 +1,23 @@
+{
+  "Param": "CS_AA_QUALITY_DETAIL",
+  "Type": "CS_AA_QUALITY_DETAIL",
+  "Name": "CS_AA_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "AA Enabled",
+      "Description": "AA valid"
+    },
+    {
+      "Field": "forceFXAA2",
+      "Name": "Force FXAA2",
+      "Description": "Force FXAA2"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

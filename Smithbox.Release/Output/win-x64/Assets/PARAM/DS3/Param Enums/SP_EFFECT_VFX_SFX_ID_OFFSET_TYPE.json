@@ -1,0 +1,29 @@
+{
+  "Key": "SP_EFFECT_VFX_SFX_ID_OFFSET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_VFX_SFX_ID_OFFSET_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On"
+        }
+      ]
+    }
+  ]
+}
